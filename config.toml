@@ -60,6 +60,13 @@ languageName ="English"
 # Weight used for sorting.
 weight = 1
 
+# Navigation Bar Menu
+
+[[menu.main]]
+name = "API Docs"
+weight = 25
+url = "https://docs.axway.com/category/api"
+
 # Everything below this are Site Params
 
 [params]

@@ -1,7 +1,5 @@
 {"title":"PyDev Features","weight":"30"} 
 
-# PyDev Features
-
 The feature matrix can be seen below. You can check details for each feature by following the correspondent link
 
 Feature List

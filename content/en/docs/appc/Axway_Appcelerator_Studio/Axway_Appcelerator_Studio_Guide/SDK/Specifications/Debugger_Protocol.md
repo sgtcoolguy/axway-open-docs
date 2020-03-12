@@ -1,7 +1,5 @@
 {"title":"Debugger Protocol","weight":"10"} 
 
-# Debugger Protocol
-
 *   [Overview](#Overview)
     
 *   [Arguments encoding](#Argumentsencoding)

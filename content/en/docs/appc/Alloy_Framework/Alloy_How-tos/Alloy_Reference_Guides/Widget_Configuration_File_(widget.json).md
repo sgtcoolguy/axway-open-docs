@@ -1,7 +1,5 @@
 {"title":"Widget Configuration File (widget.json)","weight":"40"} 
 
-# Widget Configuration File (widget.json)
-
 All widgets have a configuration file called widget.json located in the root directory of the widget. The configuration file follows the [npm package.json format](https://docs.npmjs.com/files/package.json) with a few exceptions.
 
 The widget configuration file also accepts the following key-value pairs:

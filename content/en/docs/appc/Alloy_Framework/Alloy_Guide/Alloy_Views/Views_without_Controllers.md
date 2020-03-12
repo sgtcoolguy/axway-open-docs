@@ -1,7 +1,5 @@
 {"title":"Views without Controllers","weight":"40"} 
 
-# Views without Controllers
-
 *   [Introduction](#Introduction)
     
 *   [XML Markup](#XMLMarkup)

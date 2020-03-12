@@ -1,7 +1,5 @@
 {"title":"Working with JSON Data","weight":"30"} 
 
-# Working with JSON Data
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

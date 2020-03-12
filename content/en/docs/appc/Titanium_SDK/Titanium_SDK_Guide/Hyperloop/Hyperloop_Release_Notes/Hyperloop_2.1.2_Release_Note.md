@@ -1,7 +1,5 @@
 {"title":"Hyperloop 2.1.2 - 27 June 2017","weight":"70"} 
 
-# Hyperloop 2.1.2 - 27 June 2017
-
 Hyperloop 2.1.2 is a patch release that includes two bug fixes.
 
 ## Fixed issues

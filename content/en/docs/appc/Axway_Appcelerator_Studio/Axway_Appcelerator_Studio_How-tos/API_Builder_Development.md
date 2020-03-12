@@ -1,7 +1,5 @@
 {"title":"API Builder Development","weight":"10"} 
 
-# API Builder Development
-
 *   [Create a New Project](#CreateaNewProject)
     
 *   [Import an Existing Project](#ImportanExistingProject)

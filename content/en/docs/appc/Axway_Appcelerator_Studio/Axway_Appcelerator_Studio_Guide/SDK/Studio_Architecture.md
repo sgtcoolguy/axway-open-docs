@@ -1,7 +1,5 @@
 {"title":"Studio Architecture","weight":"10"} 
 
-# Studio Architecture
-
 Studio is built on top of the Eclipse platform, a layer of plugins and wrapper code around the core Eclipse infrastructure. As such, it is compatible with many existing Eclipse plugins, and can itself be extended with additional plugins built on top.
 
 ## Plugin architecture

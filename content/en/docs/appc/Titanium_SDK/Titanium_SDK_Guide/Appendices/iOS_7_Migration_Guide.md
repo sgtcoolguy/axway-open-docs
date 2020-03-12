@@ -1,7 +1,5 @@
 {"title":"iOS 7 Migration Guide","weight":"40"} 
 
-# iOS 7 Migration Guide
-
 *   [Overview](#Overview)
     
     *   [Summary of changes to the Titanium SDK](#SummaryofchangestotheTitaniumSDK)

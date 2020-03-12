@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 6.0.2.RC - 17 February 2017","weight":"180"} 
 
-# Titanium SDK 6.0.2.RC - 17 February 2017
-
 ## Contents
 
 *   [About This Release](#AboutThisRelease)

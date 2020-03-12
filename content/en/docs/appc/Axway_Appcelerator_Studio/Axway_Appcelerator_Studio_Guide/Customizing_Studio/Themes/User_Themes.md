@@ -1,7 +1,5 @@
 {"title":"User Themes","weight":"30"} 
 
-# User Themes
-
 *   [Overview](#Overview)
     
 *   [Solarized (Dark)](#Solarized(Dark))

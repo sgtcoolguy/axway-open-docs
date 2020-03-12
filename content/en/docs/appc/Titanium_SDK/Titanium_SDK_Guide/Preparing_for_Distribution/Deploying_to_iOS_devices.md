@@ -1,7 +1,5 @@
 {"title":"Deploying to iOS devices","weight":"30"} 
 
-# Deploying to iOS devices
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

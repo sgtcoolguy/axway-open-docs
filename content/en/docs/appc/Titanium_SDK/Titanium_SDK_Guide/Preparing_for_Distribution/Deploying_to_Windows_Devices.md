@@ -1,7 +1,5 @@
 {"title":"Deploying to Windows Devices","weight":"50"} 
 
-# Deploying to Windows Devices
-
 *   [Introduction](#Introduction)
     
 *   [Windows Phone](#WindowsPhone)

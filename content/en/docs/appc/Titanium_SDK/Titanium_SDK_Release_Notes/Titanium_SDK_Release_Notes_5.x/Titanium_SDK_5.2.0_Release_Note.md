@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 5.2.0 22 February 2016","weight":"160"} 
 
-# Titanium SDK 5.2.0 22 February 2016
-
 ## Contents
 
 *   [About This Release](#AboutThisRelease)

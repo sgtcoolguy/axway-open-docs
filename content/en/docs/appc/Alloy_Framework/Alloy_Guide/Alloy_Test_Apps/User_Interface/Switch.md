@@ -1,7 +1,5 @@
 {"title":"Switch","weight":"170"} 
 
-# Switch
-
 Demonstrates how to use a Switch element.
 
 Example App Source Location

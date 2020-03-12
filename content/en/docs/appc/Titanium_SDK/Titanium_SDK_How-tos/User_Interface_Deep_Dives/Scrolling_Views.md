@@ -1,7 +1,5 @@
 {"title":"Scrolling Views","weight":"30"} 
 
-# Scrolling Views
-
 *   [ScrollView vs. ScrollableView](#ScrollViewvs.ScrollableView)
     
 *   [ScrollView](#ScrollView)

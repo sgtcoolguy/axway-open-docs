@@ -1,7 +1,5 @@
 {"title":"Hyperloop 2.2.0 - 20 October 2017","weight":"50"} 
 
-# Hyperloop 2.2.0 - 20 October 2017
-
 Hyperloop 2.2.0 is a feature release that includes new features, improvements, and bug fixes.
 
 ## New features

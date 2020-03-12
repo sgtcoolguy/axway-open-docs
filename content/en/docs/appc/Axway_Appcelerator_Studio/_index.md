@@ -1,7 +1,5 @@
 {"title":"Axway Appcelerator Studio","weight":"120"} 
 
-# Axway Appcelerator Studio
-
 ## Studio Documentation and Guides
 
 Appcelerator and Titanium Studio are extended versions of [Aptana Studio](http://www.aptana.com/), the professional, open source, Integrated Development Environment (IDE) tool for web development. In addition to Aptana Studio's web features, Titanium Studio adds the opportunity to develop Appcelerator Titanium Mobile projects.

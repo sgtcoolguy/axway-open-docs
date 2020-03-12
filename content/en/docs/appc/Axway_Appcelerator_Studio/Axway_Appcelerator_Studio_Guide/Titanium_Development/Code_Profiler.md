@@ -1,7 +1,5 @@
 {"title":"Code Profiler","weight":"110"} 
 
-# Code Profiler
-
 *   [Introduction](#Introduction)
     
 *   [Profiling an Application](#ProfilinganApplication)

@@ -1,7 +1,5 @@
 {"title":"Alloy Tasks with the CLI","weight":"20"} 
 
-# Alloy Tasks with the CLI
-
 *   [Creating a new application](#Creatinganewapplication)
     
 *   [Creating a new application using a test application](#Creatinganewapplicationusingatestapplication)

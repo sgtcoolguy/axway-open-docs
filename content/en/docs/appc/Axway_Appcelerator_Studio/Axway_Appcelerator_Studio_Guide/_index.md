@@ -1,7 +1,5 @@
 {"title":"Axway Appcelerator Studio Guide","weight":"20"} 
 
-# Axway Appcelerator Studio Guide
-
 This document provides links to various guides on setting up and using Axway Appcelerator Studio.
 
 *   [Basic Concepts](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/)

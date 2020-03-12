@@ -1,7 +1,5 @@
 {"title":"Dashboard 6.5.1 Release Note","weight":"10"} 
 
-# Dashboard 6.5.1 Release Note
-
 ## Dashboard 6.5.1 - 24 July 2019
 
 Dashboard 6.5.1 is a patch release, which includes several new features and improvements.

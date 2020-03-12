@@ -1,7 +1,5 @@
 {"title":"Stepping into and over functions","weight":"90"} 
 
-# Stepping into and over functions
-
 ## Introduction
 
 Stepping into a function or stepping over a function can help you see exactly what is going on within your JavaScript code. To step into or step over a JavaScript function you will need to suspend the current thread, first, before proceeding.

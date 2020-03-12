@@ -1,7 +1,5 @@
 {"title":"Axway Appcelerator Support","weight":"20"} 
 
-# Axway Appcelerator Support
-
 *   [Available Support Channels](#AvailableSupportChannels)
     
 *   [Support Channel Overview](#SupportChannelOverview)

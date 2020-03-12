@@ -1,7 +1,5 @@
 {"title":"Accessibility","weight":"90"} 
 
-# Accessibility
-
 *   [Introduction](#Introduction)
     
 *   [Designing universal accessible applications](#Designinguniversalaccessibleapplications)

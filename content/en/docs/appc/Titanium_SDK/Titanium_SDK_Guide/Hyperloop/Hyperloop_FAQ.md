@@ -1,7 +1,5 @@
 {"title":"Hyperloop FAQ","weight":"50"} 
 
-# Hyperloop FAQ
-
 ## Can you inject the <property name="run-on-main-thread" type="bool">true</property> tag in the tiapp.xml?
 
 The tag <property name="run-on-main-thread" type="bool">true</property> should be in the tiapp.xml file by default.

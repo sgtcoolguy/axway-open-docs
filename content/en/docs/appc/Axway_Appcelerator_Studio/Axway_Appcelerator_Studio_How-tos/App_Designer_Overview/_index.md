@@ -1,7 +1,5 @@
 {"title":"App Designer Overview","weight":"30"} 
 
-# App Designer Overview
-
 ## Introduction
 
 The **Appcelerator App Designer** is an integrated WYSIWYG layout design tool for developing mobile applications using Appcelerator Titanium. App Designer features two views: **Design** and **XML**. The Design view allows you to have an editor view for both your design and layout while the XML views allows you to view your code.

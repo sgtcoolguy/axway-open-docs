@@ -1,7 +1,5 @@
 {"title":"Graphical Asset Specifications","weight":"90"} 
 
-# Graphical Asset Specifications
-
 *   [Overview](#Overview)
     
 *   [Splash Screen](#SplashScreen)

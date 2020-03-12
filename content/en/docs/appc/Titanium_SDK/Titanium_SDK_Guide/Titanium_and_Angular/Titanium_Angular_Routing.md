@@ -1,7 +1,5 @@
 {"title":"Titanium Angular Routing","weight":"30"} 
 
-# Titanium Angular Routing
-
 *   [Setting up routing](#Settinguprouting)
     
 *   [Adding another component](#Addinganothercomponent)

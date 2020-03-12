@@ -1,7 +1,5 @@
 {"title":"Widgets","weight":"50"} 
 
-# Widgets
-
 Samples in the widgets/ folder demonstrates how to create and use [Alloy widgets,](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Widgets/) which are self-contained Alloy components that can easily be shared.
 
 *   [Basic Widget](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Widgets/Basic_Widget/) — Demonstrates how to create and use a basic widget.

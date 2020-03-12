@@ -1,7 +1,5 @@
 {"title":"Android Themes","weight":"20"} 
 
-# Android Themes
-
 *   [Introduction](#Introduction)
     
 *   [Android themes](#Androidthemes)

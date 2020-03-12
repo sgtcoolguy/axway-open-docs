@@ -1,7 +1,5 @@
 {"title":"Installing the Android SDK","weight":"10"} 
 
-# Installing the Android SDK
-
 *   [Overview](#Overview)
     
 *   [Compatibility and Download](#CompatibilityandDownload)

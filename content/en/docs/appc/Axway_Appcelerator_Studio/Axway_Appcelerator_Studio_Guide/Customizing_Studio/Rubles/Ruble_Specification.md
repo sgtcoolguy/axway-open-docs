@@ -1,7 +1,5 @@
 {"title":"Ruble Specification","weight":"130"} 
 
-# Ruble Specification
-
 *   [Overview](#Overview)
     
 *   [Bundles](#Bundles)

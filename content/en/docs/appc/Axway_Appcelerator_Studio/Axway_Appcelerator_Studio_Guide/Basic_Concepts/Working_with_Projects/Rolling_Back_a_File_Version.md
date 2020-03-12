@@ -1,7 +1,5 @@
 {"title":"Rolling Back a File Version","weight":"70"} 
 
-# Rolling Back a File Version
-
 You can roll back the version of a file in your projects to an earlier version by replacing the current file version with another version from the local file history.
 
 To roll back the version of a file:

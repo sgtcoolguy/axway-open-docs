@@ -1,7 +1,5 @@
 {"title":"User Interface Fundamentals","weight":"120"} 
 
-# User Interface Fundamentals
-
 In the preceding chapters, we've covered the Titanium platform, coding strategies, and basic mobile project skills. Starting in this chapter, we'll actually start writing apps by examining how to build your user interface in Titanium. You'll explore app structure, UI layout, component positioning, and user interaction.
 
 ## Sections in this chapter

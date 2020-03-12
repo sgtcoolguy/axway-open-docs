@@ -1,7 +1,5 @@
 {"title":"JFF 1.0 Specification","weight":"40"} 
 
-# JFF 1.0 Specification
-
 *   [Overview](#Overview)
     
 *   [Top-Level Properties](#Top-LevelProperties)

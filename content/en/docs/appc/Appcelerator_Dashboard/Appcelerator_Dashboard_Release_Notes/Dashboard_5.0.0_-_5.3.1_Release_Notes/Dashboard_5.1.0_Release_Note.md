@@ -1,7 +1,5 @@
 {"title":"Dashboard 5.1.0 Release Note","weight":"110"} 
 
-# Dashboard 5.1.0 Release Note
-
 ## Dashboard 5.1.0 - 20 July 2018
 
 Dashboard 5.1.0 is a minor release, which includes new features, improvements, and several bug fixes.

@@ -1,7 +1,5 @@
 {"title":"PyDev Download","weight":"10"} 
 
-# PyDev Download
-
 This document has information about requirements for PyDev.
 
 *   [Important](#Important)

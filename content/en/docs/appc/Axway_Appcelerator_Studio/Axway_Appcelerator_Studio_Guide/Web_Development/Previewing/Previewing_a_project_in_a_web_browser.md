@@ -1,7 +1,5 @@
 {"title":"Previewing a project in a web browser","weight":"10"} 
 
-# Previewing a project in a web browser
-
 This page describes how to preview your project in a web browser.
 
 *   [Introduction](#Introduction)

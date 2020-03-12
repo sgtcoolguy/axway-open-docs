@@ -1,7 +1,5 @@
 {"title":"DashboardView","weight":"50"} 
 
-# DashboardView
-
 Demonstrates basic use of a DashboardView control in an Alloy application.
 
 Example App Source Location

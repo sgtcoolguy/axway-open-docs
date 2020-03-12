@@ -1,7 +1,5 @@
 {"title":"Coding Strategies","weight":"40"} 
 
-# Coding Strategies
-
 *   [Coding principles](#Codingprinciples)
     
     *   [Global scope](#Globalscope)

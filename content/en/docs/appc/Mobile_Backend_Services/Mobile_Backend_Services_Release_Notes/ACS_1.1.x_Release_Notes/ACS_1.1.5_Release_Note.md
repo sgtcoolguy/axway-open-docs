@@ -1,7 +1,5 @@
 {"title":"ACS 1.1.5 - 15 September 2014","weight":"50"} 
 
-# ACS 1.1.5 - 15 September 2014
-
 The 1.1.5 release of Appcelerator Cloud Services includes the following new features and bug fixes.
 
 ## New features and behavior changes

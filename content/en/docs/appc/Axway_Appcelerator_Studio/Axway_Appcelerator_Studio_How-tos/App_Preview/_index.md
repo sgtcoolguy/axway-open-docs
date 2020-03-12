@@ -1,7 +1,5 @@
 {"title":"App Preview","weight":"40"} 
 
-# App Preview
-
 *   [Overview](#Overview)
     
     *   [Plan availability](#Planavailability)

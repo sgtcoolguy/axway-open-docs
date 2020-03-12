@@ -1,7 +1,5 @@
 {"title":"Requiring Child Elements","weight":"160"} 
 
-# Requiring Child Elements
-
 Demonstrates how to use the <Require/> and <Widget/> elements to include external views and widgets. Also shows how to programmatically add child views declared inside a <Require/> or <Widget/> element to the parent.
 
 App Folder Location

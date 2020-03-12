@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 7.0.0.GA - 8 December 2017","weight":"290"} 
 
-# Titanium SDK 7.0.0.GA - 8 December 2017
-
 *   [About this release](#Aboutthisrelease)
     
 *   [Appcelerator Daemon](#AppceleratorDaemon)

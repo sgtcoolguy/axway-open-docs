@@ -1,7 +1,5 @@
 {"title":"Using native Android XML layouts in Hyperloop","weight":"20"} 
 
-# Using native Android XML layouts in Hyperloop
-
 *   [Overview](#Overview)
     
 *   [Usage](#Usage)

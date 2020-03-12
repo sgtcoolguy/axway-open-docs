@@ -1,7 +1,5 @@
 {"title":"Using JavaScript Libraries","weight":"40"} 
 
-# Using JavaScript Libraries
-
 *   [Accessing your projects](#Accessingyourprojects)
     
 *   [Adding a documented library for code assist](#Addingadocumentedlibraryforcodeassist)

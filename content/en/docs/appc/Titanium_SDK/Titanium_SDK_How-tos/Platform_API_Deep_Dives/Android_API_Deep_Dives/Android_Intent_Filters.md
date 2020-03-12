@@ -1,7 +1,5 @@
 {"title":"Android Intent Filters","weight":"20"} 
 
-# Android Intent Filters
-
 *   [Introduction](#Introduction)
     
 *   [Receive an implicit intent](#Receiveanimplicitintent)

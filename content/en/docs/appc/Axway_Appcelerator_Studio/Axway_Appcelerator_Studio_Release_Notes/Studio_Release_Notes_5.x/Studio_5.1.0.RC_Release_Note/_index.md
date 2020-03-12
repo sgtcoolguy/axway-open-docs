@@ -1,7 +1,5 @@
 {"title":"Studio 5.1.0.RC Release Note","weight":"90"} 
 
-# Studio 5.1.0.RC Release Note
-
 ## Studio 5.1.0.RC - 27 July 2018
 
 Studio 5.1.0.RC is a minor release that includes a few improvements and several bug fixes.

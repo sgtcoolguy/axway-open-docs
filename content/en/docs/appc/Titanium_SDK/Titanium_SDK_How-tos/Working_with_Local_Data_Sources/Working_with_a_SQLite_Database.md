@@ -1,7 +1,5 @@
 {"title":"Working with a SQLite Database","weight":"30"} 
 
-# Working with a SQLite Database
-
 *   [Introduction](#Introduction)
     
 *   [Creating and installing databases](#Creatingandinstallingdatabases)

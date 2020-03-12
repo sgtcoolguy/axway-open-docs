@@ -1,7 +1,5 @@
 {"title":"Executing an External Command","weight":"50"} 
 
-# Executing an External Command
-
 *   [Overview](#Overview)
     
 *   [Calling an external application and displaying the results](#Callinganexternalapplicationanddisplayingtheresults)

@@ -1,7 +1,5 @@
 {"title":"Debugging Android Apps with 3rd-party Tools","weight":"10"} 
 
-# Debugging Android Apps with 3rd-party Tools
-
 Android developers can debug using Chrome DevTools with Titanium SDK 7.0.x and later. Searching for iOS Debugging? [Here](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_iOS_Devices/Debugging_iOS_Apps_with_3rd-party_Tools/) you go!
 
 ## Debugging with Chrome DevTools

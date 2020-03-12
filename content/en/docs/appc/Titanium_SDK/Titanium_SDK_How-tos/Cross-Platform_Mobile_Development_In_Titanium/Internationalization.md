@@ -1,7 +1,5 @@
 {"title":"Internationalization","weight":"60"} 
 
-# Internationalization
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

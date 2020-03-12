@@ -1,7 +1,5 @@
 {"title":"Dashboard 6.2.1 Release Note","weight":"50"} 
 
-# Dashboard 6.2.1 Release Note
-
 ## Dashboard 6.2.1 - 22 May 2019
 
 Dashboard 6.2.1 is a patch release, which includes improvements and bug fixes.

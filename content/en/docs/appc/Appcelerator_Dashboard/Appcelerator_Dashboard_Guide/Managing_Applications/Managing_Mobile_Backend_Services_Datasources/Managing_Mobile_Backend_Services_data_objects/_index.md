@@ -1,7 +1,5 @@
 {"title":"Managing Mobile Backend Services data objects","weight":"10"} 
 
-# Managing Mobile Backend Services data objects
-
 The **Manage Data** tab in Dashboard provides a visual interface to the various [Mobile Backend Services APIs](/arrowdb/latest/#!/api) for creating, updating, deleting, and querying your application's Mobile Backend Services (MBS) objects – Photos and Chats, for example – on behalf of its users. You can also create and edit administrative MBS objects, like access control lists and email templates.
 
 *   [Editing and Deleting objects](#EditingandDeletingobjects)

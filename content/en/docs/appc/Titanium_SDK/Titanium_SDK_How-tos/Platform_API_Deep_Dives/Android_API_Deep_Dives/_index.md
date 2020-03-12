@@ -1,7 +1,5 @@
 {"title":"Android API Deep Dives","weight":"10"} 
 
-# Android API Deep Dives
-
 These topics cover Titanium APIs specific to the Android platform. For Android-specific, user interface APIs, see [Android UI Components and Conventions](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/).
 
 **[Android Intents](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Intents/)**

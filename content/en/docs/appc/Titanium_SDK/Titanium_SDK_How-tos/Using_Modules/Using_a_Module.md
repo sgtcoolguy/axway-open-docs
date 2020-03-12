@@ -1,7 +1,5 @@
 {"title":"Using a Module","weight":"20"} 
 
-# Using a Module
-
 *   [Objective](#Objective)
     
     *   [Installing modules](#Installingmodules)

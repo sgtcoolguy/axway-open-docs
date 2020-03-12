@@ -1,7 +1,5 @@
 {"title":"Available Command-Line Options","weight":"30"} 
 
-# Available Command-Line Options
-
 ## Overview
 
 If you wish a user to have additional control over their environment, you can implement properties to modify the application's behavior from the command line or configuration files.

@@ -1,7 +1,5 @@
 {"title":"Creating a new Ruble","weight":"40"} 
 
-# Creating a new Ruble
-
 *   [Overview](#Overview)
     
 *   [Creating a new Ruble Using the Wizard](#CreatinganewRubleUsingtheWizard)

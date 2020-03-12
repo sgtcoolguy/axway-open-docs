@@ -1,7 +1,5 @@
 {"title":"AMPLIFY Appcelerator Services","weight":"60"} 
 
-# AMPLIFY Appcelerator Services
-
 Appcelerator Platform is available as a service referred to as App Builder through the AMPLIFY platform.
 
 Appcelerator Services are a set of features that include:

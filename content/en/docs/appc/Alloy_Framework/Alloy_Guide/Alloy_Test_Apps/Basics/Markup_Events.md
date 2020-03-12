@@ -1,7 +1,5 @@
 {"title":"Markup Events","weight":"50"} 
 
-# Markup Events
-
 Demonstrates adding event attributes in the XML view and handling the event in the view-controller.
 
 App Folder Location

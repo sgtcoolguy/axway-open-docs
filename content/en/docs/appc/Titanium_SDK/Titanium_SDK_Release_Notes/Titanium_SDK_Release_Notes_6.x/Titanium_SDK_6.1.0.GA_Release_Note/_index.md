@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 6.1.0.GA Release Note","weight":"110"} 
 
-# Titanium SDK 6.1.0.GA Release Note
-
 ## Titanium SDK 6.1.0.GA - 26 May 2017
 
 ### Contents

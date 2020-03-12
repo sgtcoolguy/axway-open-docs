@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 7.3.1.GA - 30 August 2018","weight":"130"} 
 
-# Titanium SDK 7.3.1.GA - 30 August 2018
-
 *   [About this release](#Aboutthisrelease)
     
 *   [Community credits](#Communitycredits)

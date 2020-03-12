@@ -1,7 +1,5 @@
 {"title":"Installing Git","weight":"10"} 
 
-# Installing Git
-
 *   [Compatibility and download](#Compatibilityanddownload)
     
 *   [Installation](#Installation)

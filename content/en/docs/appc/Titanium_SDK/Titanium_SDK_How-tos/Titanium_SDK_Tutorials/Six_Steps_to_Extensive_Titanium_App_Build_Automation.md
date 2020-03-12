@@ -1,7 +1,5 @@
 {"title":"Six Steps to Extensive Titanium App Build Automation","weight":"40"} 
 
-# Six Steps to Extensive Titanium App Build Automation
-
 *   [Testing and launching is NOT time-consuming or complicated](#TestingandlaunchingisNOTtime-consumingorcomplicated)
     
 *   [Mobile build automation, a high-level overview](#Mobilebuildautomation,ahigh-leveloverview)

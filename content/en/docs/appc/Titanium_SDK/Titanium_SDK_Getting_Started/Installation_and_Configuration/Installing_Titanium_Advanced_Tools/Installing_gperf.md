@@ -1,7 +1,5 @@
 {"title":"Installing gperf","weight":"80"} 
 
-# Installing gperf
-
 ## Contents
 
 *   [Compatibility and Download](#CompatibilityandDownload)

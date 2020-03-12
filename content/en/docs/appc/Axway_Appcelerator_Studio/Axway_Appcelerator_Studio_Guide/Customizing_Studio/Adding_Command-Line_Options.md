@@ -1,7 +1,5 @@
 {"title":"Adding Command-Line Options","weight":"20"} 
 
-# Adding Command-Line Options
-
 *   [Overview](#Overview)
     
 *   [Finding Your INI Configuration File](#FindingYourINIConfigurationFile)

@@ -1,7 +1,5 @@
 {"title":"Studio Release Notes","weight":"170"} 
 
-# Studio Release Notes
-
 Studio 4.5.0 is a minor release that includes new features, improvements, and bug fixes. See the [full list of issues address in Release 4.5.0](https://jira.appcelerator.org/browse/TISTUD-7991?filter=17280).
 
 As of this release, Studio 4.4.x will not be supported six months from 4.5.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

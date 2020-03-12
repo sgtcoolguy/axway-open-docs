@@ -1,7 +1,5 @@
 {"title":"iOS Map Kit","weight":"20"} 
 
-# iOS Map Kit
-
 *   [Introduction](#Introduction)
     
 *   [Getting started](#Gettingstarted)

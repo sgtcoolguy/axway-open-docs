@@ -1,7 +1,5 @@
 {"title":"C and C++ Coding Standards","weight":"10"} 
 
-# C and C++ Coding Standards
-
 Contents
 
 *   [Synopsis](#Synopsis)

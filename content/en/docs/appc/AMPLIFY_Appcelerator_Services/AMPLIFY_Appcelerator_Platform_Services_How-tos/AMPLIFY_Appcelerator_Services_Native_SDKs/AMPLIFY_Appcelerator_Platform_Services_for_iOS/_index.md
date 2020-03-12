@@ -1,7 +1,5 @@
 {"title":"AMPLIFY Appcelerator Platform Services for iOS","weight":"20"} 
 
-# AMPLIFY Appcelerator Platform Services for iOS
-
 The following topics provide instructions on using AMPLIFY Appcelerator Platform Services for the iOS platform.
 
 ## Chapters

@@ -1,7 +1,5 @@
 {"title":"Managing Organizations","weight":"20"} 
 
-# Managing Organizations
-
 *   [Introduction](#Introduction)
     
 *   [Concepts](#Concepts)

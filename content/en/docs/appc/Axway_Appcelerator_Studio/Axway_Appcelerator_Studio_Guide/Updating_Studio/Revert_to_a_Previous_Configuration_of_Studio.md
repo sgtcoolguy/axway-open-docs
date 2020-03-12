@@ -1,7 +1,5 @@
 {"title":"Revert to a Previous Configuration of Studio","weight":"110"} 
 
-# Revert to a Previous Configuration of Studio
-
 Although Axway Appcelerator Studio does provide this feature, it is not generally recommended and can leave your Studio in an unstable state.
 
 ## Reverting a Studio configuration

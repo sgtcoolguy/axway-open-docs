@@ -1,7 +1,5 @@
 {"title":"Creating iOS Extensions - Siri Intents","weight":"20"} 
 
-# Creating iOS Extensions - Siri Intents
-
 This following tutorial will guide you through the process of creating a new iOS extension and in this case also shows you how to configure your app to communicate with Siri using the [Intents framework](https://developer.apple.com/reference/intents). This framework is different to some other extensions as it requires special capabilities, provisioning profiles, and privacy-permissions. This document will show you how to do that as well.
 
 The repository for this tutorial can be found open-source on **[Github](https://github.com/appcelerator-developer-relations/ios-extensions-sample-sirikit)** .

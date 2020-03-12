@@ -1,7 +1,5 @@
 {"title":"Workbench Actions","weight":"140"} 
 
-# Workbench Actions
-
 *   [Requirements](#Requirements)
     
 *   [Invocation](#Invocation)

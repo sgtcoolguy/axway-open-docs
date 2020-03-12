@@ -1,7 +1,5 @@
 {"title":"ButtonBar","weight":"30"} 
 
-# ButtonBar
-
 Demonstrates basic use of the ButtonBar control, an iOS-only control that presents a set of buttons joined into a single control.
 
 Example App Source Location

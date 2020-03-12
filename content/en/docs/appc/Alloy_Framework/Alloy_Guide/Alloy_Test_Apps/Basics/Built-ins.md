@@ -1,7 +1,5 @@
 {"title":"Built-ins","weight":"10"} 
 
-# Built-ins
-
 Demonstrates use of several built-in libraries included with Alloy that simplify certain functions, such as animations, string manipulation and display unit conversion.
 
 App Folder Location

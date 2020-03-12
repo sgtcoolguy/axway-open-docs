@@ -1,7 +1,5 @@
 {"title":"Studio Components","weight":"40"} 
 
-# Studio Components
-
 *   [General Guidelines](#GeneralGuidelines)
     
 *   [Editors](#Editors)

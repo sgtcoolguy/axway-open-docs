@@ -1,7 +1,5 @@
 {"title":"Importing an Existing Project","weight":"10"} 
 
-# Importing an Existing Project
-
 This page describes how to import a project into Studio.
 
 *   [Introduction](#Introduction)

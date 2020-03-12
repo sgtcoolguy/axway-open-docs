@@ -1,7 +1,5 @@
 {"title":"Configuring Cloud Services","weight":"50"} 
 
-# Configuring Cloud Services
-
 *   [Keys](#Keys)
     
 *   [Settings](#Settings)

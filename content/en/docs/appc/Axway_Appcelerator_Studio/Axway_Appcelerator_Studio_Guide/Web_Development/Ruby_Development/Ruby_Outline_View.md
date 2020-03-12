@@ -1,7 +1,5 @@
 {"title":"Ruby Outline View","weight":"20"} 
 
-# Ruby Outline View
-
 This page gives an overview of the Ruby Outline View.
 
 ## Introduction

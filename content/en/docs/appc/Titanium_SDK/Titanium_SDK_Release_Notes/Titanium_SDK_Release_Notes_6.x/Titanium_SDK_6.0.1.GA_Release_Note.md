@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 6.0.1.GA - 21 December 2016","weight":"190"} 
 
-# Titanium SDK 6.0.1.GA - 21 December 2016
-
 ## Contents
 
 *   [About this release](#Aboutthisrelease)

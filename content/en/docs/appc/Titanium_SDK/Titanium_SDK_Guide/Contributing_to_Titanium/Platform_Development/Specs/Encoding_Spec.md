@@ -1,7 +1,5 @@
 {"title":"Encoding Spec","weight":"20"} 
 
-# Encoding Spec
-
 ## Contents
 
 *   [Overview](#Overview)

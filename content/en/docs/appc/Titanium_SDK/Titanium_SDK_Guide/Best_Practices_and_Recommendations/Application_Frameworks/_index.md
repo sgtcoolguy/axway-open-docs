@@ -1,7 +1,5 @@
 {"title":"Application Frameworks","weight":"30"} 
 
-# Application Frameworks
-
 ## Alloy Framework
 
 **[Alloy](/docs/appc/Alloy_Framework/)** is a framework developed by Appcelerator based on the model-view-controller architecture and provides built-in support for various third-party, freely-distributable JavaScript libraries, such as Backbone.js and Underscore.js. Alloy abstracts the Titanium API, making it easier and quicker to write maintainable applications.

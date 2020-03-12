@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.15.0 - 10 November 2017","weight":"30"} 
 
-# Dashboard 4.15.0 - 10 November 2017
-
 Dashboard 4.15.0 is a minor release, which includes new features, behavior changes, improvements, and several bug fixes.
 
 ## New Features

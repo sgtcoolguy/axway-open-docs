@@ -1,7 +1,5 @@
 {"title":"TableViews","weight":"20"} 
 
-# TableViews
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

@@ -1,7 +1,5 @@
 {"title":"Theme Actions","weight":"90"} 
 
-# Theme Actions
-
 *   [Requirements](#Requirements)
     
 *   [Description](#Description)

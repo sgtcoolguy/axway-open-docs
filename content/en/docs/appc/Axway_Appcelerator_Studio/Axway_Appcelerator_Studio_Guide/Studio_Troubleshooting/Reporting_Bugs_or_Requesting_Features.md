@@ -1,7 +1,5 @@
 {"title":"Reporting Bugs or Requesting Features","weight":"100"} 
 
-# Reporting Bugs or Requesting Features
-
 *   [Overview](#Overview)
     
 *   [Ticket checklist](#Ticketchecklist)

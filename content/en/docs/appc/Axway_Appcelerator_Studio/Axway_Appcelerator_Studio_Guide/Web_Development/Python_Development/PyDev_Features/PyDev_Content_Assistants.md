@@ -1,7 +1,5 @@
 {"title":"PyDev Content Assistants","weight":"40"} 
 
-# PyDev Content Assistants
-
 ## Content Assistants
 
 Some content assistants to make your life easier...

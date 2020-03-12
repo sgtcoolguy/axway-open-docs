@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI 7.0.2.RC - 25 January 2018","weight":"210"} 
 
-# Appcelerator CLI 7.0.2.RC - 25 January 2018
-
 Appcelerator CLI 7.0.2.RC is a patch release that includes several improvements and bug fixes.
 
 As of this GA release, the previous CLI patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

@@ -1,7 +1,5 @@
 {"title":"Extending Studio","weight":"60"} 
 
-# Extending Studio
-
 Documents and instructions on adding new features and functionality to Studio.
 
 *   [Adding a new Publish Provider](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Extending_Studio/Adding_a_new_Publish_Provider/)

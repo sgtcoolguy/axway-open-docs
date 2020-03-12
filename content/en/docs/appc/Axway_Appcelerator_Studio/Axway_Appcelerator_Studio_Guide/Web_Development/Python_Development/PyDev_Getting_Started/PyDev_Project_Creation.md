@@ -1,7 +1,5 @@
 {"title":"PyDev Project Creation","weight":"30"} 
 
-# PyDev Project Creation
-
 ## Creating a Project
 
 Ok, now that your interpreter is configured, it is time to **create a project**.

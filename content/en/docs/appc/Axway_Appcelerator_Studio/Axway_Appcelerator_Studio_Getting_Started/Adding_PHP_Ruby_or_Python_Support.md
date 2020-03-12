@@ -1,7 +1,5 @@
 {"title":"Adding PHP Ruby or Python Support","weight":"70"} 
 
-# Adding PHP Ruby or Python Support
-
 Support for server-side languages is optional. To add them to Studio:
 
 1.  Launch Studio.

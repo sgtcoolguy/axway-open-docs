@@ -1,7 +1,5 @@
 {"title":"Android Intents","weight":"10"} 
 
-# Android Intents
-
 *   [Introduction](#Introduction)
     
 *   [Intent types](#Intenttypes)

@@ -1,7 +1,5 @@
 {"title":"Event Handling","weight":"30"} 
 
-# Event Handling
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

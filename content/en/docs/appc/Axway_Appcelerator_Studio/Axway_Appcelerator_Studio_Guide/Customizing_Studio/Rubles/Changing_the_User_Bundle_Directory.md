@@ -1,7 +1,5 @@
 {"title":"Changing the User Bundle Directory","weight":"20"} 
 
-# Changing the User Bundle Directory
-
 *   [Changing Your User Bundle Path](#ChangingYourUserBundlePath)
     
 *   [User Bundle Path Requirements](#UserBundlePathRequirements)

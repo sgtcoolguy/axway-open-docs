@@ -1,7 +1,5 @@
 {"title":"Streams","weight":"60"} 
 
-# Streams
-
 *   [Overview](#Overview)
     
 *   [BufferStream](#BufferStream)

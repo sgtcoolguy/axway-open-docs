@@ -1,7 +1,5 @@
 {"title":"Properties View","weight":"50"} 
 
-# Properties View
-
 *   [Introduction](#Introduction)
     
 *   [Opening the View](#OpeningtheView)

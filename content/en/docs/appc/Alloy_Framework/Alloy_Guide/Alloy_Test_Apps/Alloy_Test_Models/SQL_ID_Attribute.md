@@ -1,7 +1,5 @@
 {"title":"SQL ID Attribute","weight":"120"} 
 
-# SQL ID Attribute
-
 This example demonstrates how you can use a custom model identifier with the idAttribute field in the model definition file.
 
 App Folder Location

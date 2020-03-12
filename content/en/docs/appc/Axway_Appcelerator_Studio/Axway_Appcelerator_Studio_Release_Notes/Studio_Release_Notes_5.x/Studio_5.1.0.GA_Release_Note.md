@@ -1,7 +1,5 @@
 {"title":"Studio 5.1.0.GA - 13 August 2018","weight":"80"} 
 
-# Studio 5.1.0.GA - 13 August 2018
-
 Studio 5.1.0.GA is a minor release that includes new features, improvements, and bug fixes.
 
 As of this release, Studio 5.0.x will not be supported six months from 5.1.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

@@ -1,7 +1,5 @@
 {"title":"Working with Remote Data Sources","weight":"100"} 
 
-# Working with Remote Data Sources
-
 In this module, you'll explore how you can interact with remote network resources from your Titanium Mobile app. Accessing the network will enable you to interact with web APIs, social networks, and data back-ends.
 
 ## Sections in this chapter

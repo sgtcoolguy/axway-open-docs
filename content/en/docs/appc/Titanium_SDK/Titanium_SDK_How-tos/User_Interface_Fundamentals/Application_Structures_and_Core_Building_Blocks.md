@@ -1,7 +1,5 @@
 {"title":"Application Structures and Core Building Blocks","weight":"10"} 
 
-# Application Structures and Core Building Blocks
-
 *   [Tab-based applications](#Tab-basedapplications)
     
     *   [Tab recommendations](#Tabrecommendations)

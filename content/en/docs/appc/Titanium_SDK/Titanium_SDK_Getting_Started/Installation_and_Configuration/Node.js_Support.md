@@ -1,7 +1,5 @@
 {"title":"Node.js Support","weight":"80"} 
 
-# Node.js Support
-
 *   [Minor differences](#Minordifferences)
     
 *   [Algorithm summary](#Algorithmsummary)

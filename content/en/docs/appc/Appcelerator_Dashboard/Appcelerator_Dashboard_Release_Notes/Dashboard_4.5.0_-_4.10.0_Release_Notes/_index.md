@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.5.0 - 4.10.0 Release Notes","weight":"120"} 
 
-# Dashboard 4.5.0 - 4.10.0 Release Notes
-
 *   [Dashboard 4.10.0 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_4.5.0_-_4.10.0_Release_Notes/Dashboard_4.10.0_Release_Note/)
     
 *   [Dashboard 4.9.1 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_4.5.0_-_4.10.0_Release_Notes/Dashboard_4.9.1_Release_Note/)

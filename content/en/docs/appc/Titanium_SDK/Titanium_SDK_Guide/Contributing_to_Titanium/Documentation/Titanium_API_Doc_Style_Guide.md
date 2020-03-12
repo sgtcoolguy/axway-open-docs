@@ -1,7 +1,5 @@
 {"title":"Titanium API Doc Style Guide","weight":"20"} 
 
-# Titanium API Doc Style Guide
-
 *   [Overview](#Overview)
     
 *   [Guidelines](#Guidelines)

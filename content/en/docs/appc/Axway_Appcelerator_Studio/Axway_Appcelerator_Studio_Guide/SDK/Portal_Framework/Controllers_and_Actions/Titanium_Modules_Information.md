@@ -1,7 +1,5 @@
 {"title":"Titanium Modules Information","weight":"100"} 
 
-# Titanium Modules Information
-
 *   [Requirements](#Requirements)
     
 *   [Description](#Description)

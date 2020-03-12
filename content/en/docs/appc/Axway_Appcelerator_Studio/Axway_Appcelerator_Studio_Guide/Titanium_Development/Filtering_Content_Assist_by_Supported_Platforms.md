@@ -1,7 +1,5 @@
 {"title":"Filtering Content Assist by Supported Platforms","weight":"80"} 
 
-# Filtering Content Assist by Supported Platforms
-
 Studio allows you to only show API functionality available across all platforms. To tweak these settings, you can adjust the content assist preferences.
 
 *   [Introduction](#Introduction)

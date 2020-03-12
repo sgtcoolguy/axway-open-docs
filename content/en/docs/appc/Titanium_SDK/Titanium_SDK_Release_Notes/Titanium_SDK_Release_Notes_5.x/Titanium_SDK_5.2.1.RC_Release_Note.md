@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 5.2.1.RC - 10 March 2016","weight":"150"} 
 
-# Titanium SDK 5.2.1.RC - 10 March 2016
-
 ## About This Release
 
 Titanium SDK 5.2.1.RC is a patch release candidate of the SDK, addressing high-priority issues from previous releases.

@@ -1,7 +1,5 @@
 {"title":"LiveView","weight":"100"} 
 
-# LiveView
-
 *   [Introduction](#Introduction)
     
 *   [Using LiveView](#UsingLiveView)

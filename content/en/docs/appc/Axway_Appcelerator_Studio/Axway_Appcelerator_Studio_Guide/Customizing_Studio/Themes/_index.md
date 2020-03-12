@@ -1,7 +1,5 @@
 {"title":"Themes","weight":"110"} 
 
-# Themes
-
 *   [Scopes](#Scopes)
     
 *   [Token names](#Tokennames)

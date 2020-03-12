@@ -1,7 +1,5 @@
 {"title":"PyDev Quick Outline","weight":"190"} 
 
-# PyDev Quick Outline
-
 The quick outline allows you to quickly see the outline of your current file without having to change focus to another view, and allows you to quickly filter the name you want (and when the dialog is done, you will be brought to the selection you did).
 
 **KEYBINDING:** Ctrl+O

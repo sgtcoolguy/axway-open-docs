@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI Tasks","weight":"10"} 
 
-# Appcelerator CLI Tasks
-
 This document provides information on how to build cloud and mobile applications with Appcelerator CLI.
 
 *   [Build cloud applications](#Buildcloudapplications)

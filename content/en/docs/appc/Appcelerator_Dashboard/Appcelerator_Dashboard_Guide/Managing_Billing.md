@@ -1,7 +1,5 @@
 {"title":"Managing Billing","weight":"30"} 
 
-# Managing Billing
-
 To manage your account information, select **Billing** on the **User** menu. Selecting **Billing** opens the _Billing_ page.
 
 *   [Overview](#Overview)

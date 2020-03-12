@@ -1,7 +1,5 @@
 {"title":"Modifying your shortcut keys","weight":"60"} 
 
-# Modifying your shortcut keys
-
 *   [Overview](#Overview)
     
 *   [Instructions (Eclipse-based Commands)](#Instructions(Eclipse-basedCommands))

@@ -1,7 +1,5 @@
 {"title":"Installing Python","weight":"20"} 
 
-# Installing Python
-
 *   [Compatibility and download](#Compatibilityanddownload)
     
 *   [Installation](#Installation)

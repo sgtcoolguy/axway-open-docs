@@ -1,7 +1,5 @@
 {"title":"Installing App Designer","weight":"20"} 
 
-# Installing App Designer
-
 *   [Installing App Designer](#InstallingAppDesigner)
     
     *   [Studio prior to 4.6.0](#Studiopriorto4.6.0)

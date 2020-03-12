@@ -1,7 +1,5 @@
 {"title":"PHP Script Debugging","weight":"10"} 
 
-# PHP Script Debugging
-
 *   [Introduction](#Introduction)
     
 *   [Attaching a PHP Interpreter](#AttachingaPHPInterpreter)

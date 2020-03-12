@@ -1,7 +1,5 @@
 {"title":"Maps","weight":"90"} 
 
-# Maps
-
 *   [Android setup](#Androidsetup)
     
 *   [App configuration](#Appconfiguration)

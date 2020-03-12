@@ -1,7 +1,5 @@
 {"title":"Hello Titanium App Tutorial","weight":"60"} 
 
-# Hello Titanium App Tutorial
-
 Now that you've installed Studio and at least one of the native platform SDKs, you're ready to create and run an application on a device or simulator.
 
 ## Create a project

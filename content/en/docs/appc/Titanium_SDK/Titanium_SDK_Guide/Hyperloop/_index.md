@@ -1,7 +1,5 @@
 {"title":"Hyperloop","weight":"40"} 
 
-# Hyperloop
-
 *   [Introduction](#Introduction)
     
 *   [Requirements](#Requirements)

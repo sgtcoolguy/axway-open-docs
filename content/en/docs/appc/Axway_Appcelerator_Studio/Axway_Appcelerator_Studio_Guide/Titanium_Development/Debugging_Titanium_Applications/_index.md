@@ -1,7 +1,5 @@
 {"title":"Debugging Titanium Applications","weight":"50"} 
 
-# Debugging Titanium Applications
-
 Debugging a Titanium project is much like debugging any other JavaScript project. When starting a debug session for a Titanium project, you can choose the platform and environment you want to debug on:
 
 *   Android Emulator

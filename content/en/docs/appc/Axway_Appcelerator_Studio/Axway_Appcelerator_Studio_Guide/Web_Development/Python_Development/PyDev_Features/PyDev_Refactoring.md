@@ -1,7 +1,5 @@
 {"title":"PyDev Refactoring","weight":"200"} 
 
-# PyDev Refactoring
-
 Well, let's see how refactoring works... and let's make it by example.
 
 As our 'base', we will use the example below:

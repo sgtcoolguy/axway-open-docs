@@ -1,7 +1,5 @@
 {"title":"Enabling and disabling validation","weight":"20"} 
 
-# Enabling and disabling validation
-
 This page explains how to enable and disable validation in your Problems View.
 
 ## Introduction

@@ -1,7 +1,5 @@
 {"title":"Modeling a User Account and Authentication","weight":"80"} 
 
-# Modeling a User Account and Authentication
-
 Demonstrates creating a user login and authentication flow using a data model.
 
 App Folder Location

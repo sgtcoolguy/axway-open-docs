@@ -1,7 +1,5 @@
 {"title":"Titanium Angular Basics","weight":"20"} 
 
-# Titanium Angular Basics
-
 *   [Project structure](#Projectstructure)
     
 *   [Titanium Angular startup](#TitaniumAngularstartup)

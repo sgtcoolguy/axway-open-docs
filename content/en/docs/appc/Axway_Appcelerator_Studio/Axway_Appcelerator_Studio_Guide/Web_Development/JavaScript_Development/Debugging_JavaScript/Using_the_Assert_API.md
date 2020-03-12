@@ -1,7 +1,5 @@
 {"title":"Using the Assert API","weight":"110"} 
 
-# Using the Assert API
-
 This page explains how to use the Assert API feature that is part of the Studio JavaScript debugger.
 
 ## Introduction

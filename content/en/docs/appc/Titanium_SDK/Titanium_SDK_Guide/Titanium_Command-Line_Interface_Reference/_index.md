@@ -1,7 +1,5 @@
 {"title":"Titanium Command-Line Interface Reference","weight":"110"} 
 
-# Titanium Command-Line Interface Reference
-
 *   [Titanium CLI quick start](#TitaniumCLIquickstart)
     
     *   [Install Node.js](#InstallNode.js)

@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.3.1","weight":"30"} 
 
-# Dashboard 4.3.1
-
 Dashboard 4.3.1 is a patch release, which includes behavior changes, improvements, and several bug fixes.
 
 ## Behavior Changes

@@ -1,7 +1,5 @@
 {"title":"Dashboard 6.3.0 Release Note","weight":"40"} 
 
-# Dashboard 6.3.0 Release Note
-
 ## Dashboard 6.3.0 - 11 June 2019
 
 Dashboard 6.3.0 is a minor release, which includes new features, improvements, and bug fixes.

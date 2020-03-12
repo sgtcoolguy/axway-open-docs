@@ -1,7 +1,5 @@
 {"title":"Adding new JavaScript Debuggers","weight":"40"} 
 
-# Adding new JavaScript Debuggers
-
 The Studio debugger infrastructure falls under the general Eclipse debugger API. For more information on how the overall architecture is structured, see the reference documentation [here](http://www.eclipse.org/articles/Article-Debugger/how-to.html). The information below covers how to extend the Studio infrastructure to implement a debugger extension in an external product capable of talking to our JavaScript debugger implementation via the [Debugger Protocol](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/Debugger_Protocol/).
 
 ## Reference implementation

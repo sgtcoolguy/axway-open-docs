@@ -1,7 +1,5 @@
 {"title":"Plugging Studio into an existing Eclipse configuration","weight":"10"} 
 
-# Plugging Studio into an existing Eclipse configuration
-
 *   [Overview](#Overview)
     
 *   [Introduction](#Introduction)

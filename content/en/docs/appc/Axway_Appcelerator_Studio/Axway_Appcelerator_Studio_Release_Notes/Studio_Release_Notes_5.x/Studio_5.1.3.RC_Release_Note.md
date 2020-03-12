@@ -1,7 +1,5 @@
 {"title":"Studio 5.1.3.RC - 22 July 2019","weight":"30"} 
 
-# Studio 5.1.3.RC - 22 July 2019
-
 Studio 5.1.3 is a patch release that includes improvements and bug fixes.
 
 As of this release, Studio 5.1.x will not be supported six months (2020-01-22) from 5.1.3.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

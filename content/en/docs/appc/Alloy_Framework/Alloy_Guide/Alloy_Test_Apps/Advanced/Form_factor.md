@@ -1,7 +1,5 @@
 {"title":"Form factor","weight":"70"} 
 
-# Form factor
-
 Demonstrates how to conditionally apply TSS styles or include XML markup based on the form factor of the target device. Each XML element, or TSS style, can be assigned a formFactor attribute that can take a value of either **"handheld"** or **"tablet"**.
 
 App folder location

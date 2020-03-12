@@ -1,7 +1,5 @@
 {"title":"Mobile Backend Services Getting Started","weight":"10"} 
 
-# Mobile Backend Services Getting Started
-
 *   [Create a Mobile Backend Services datasource](#CreateaMobileBackendServicesdatasource)
     
     *   [Standalone Mobile Backend Services datasource](#StandaloneMobileBackendServicesdatasource)

@@ -1,7 +1,5 @@
 {"title":"Rails Development","weight":"40"} 
 
-# Rails Development
-
 *   [Rails Support](#RailsSupport)
     
     *   [Getting Started](#GettingStarted)

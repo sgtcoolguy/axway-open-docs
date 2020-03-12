@@ -1,7 +1,5 @@
 {"title":"Controllers and Actions","weight":"40"} 
 
-# Controllers and Actions
-
 This section lists the available _Controllers_ and _Actions_ that the Studio expose via the Portal API.  
 Most of the samples here are also available, and fully functional, at the [studio3-sdk](https://github.com/aptana/studio3-sdk).
 

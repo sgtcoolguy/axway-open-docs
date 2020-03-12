@@ -1,7 +1,5 @@
 {"title":"Managing Non-Titanium Client Applications in Dashboard","weight":"10"} 
 
-# Managing Non-Titanium Client Applications in Dashboard
-
 *   [Register an Application for Services](#RegisteranApplicationforServices)
     
     *   [Register an APS SDK application](#RegisteranAPSSDKapplication)

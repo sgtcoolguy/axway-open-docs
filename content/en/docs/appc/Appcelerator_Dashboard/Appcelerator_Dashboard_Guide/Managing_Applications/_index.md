@@ -1,7 +1,5 @@
 {"title":"Managing Applications","weight":"40"} 
 
-# Managing Applications
-
 To manage an application, select the application to manage from applications listed on the Dashboard home page **Apps** tab.
 
 You can manage the following types of applications:

@@ -1,7 +1,5 @@
 {"title":"HTML Metadata 1.0 Specification","weight":"70"} 
 
-# HTML Metadata 1.0 Specification
-
 *   [Overview](#Overview)
     
 *   [Introduction](#Introduction)

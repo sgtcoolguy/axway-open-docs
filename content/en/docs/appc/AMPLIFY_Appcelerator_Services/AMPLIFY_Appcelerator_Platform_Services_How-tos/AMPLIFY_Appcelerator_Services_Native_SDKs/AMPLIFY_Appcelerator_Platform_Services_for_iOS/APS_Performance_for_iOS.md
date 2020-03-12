@@ -1,7 +1,5 @@
 {"title":"APS Performance for iOS","weight":"40"} 
 
-# APS Performance for iOS
-
 Enterprise Subscription Required!
 
 This AMPLIFY Appcelerator Services feature requires an Enterprise Subscription.

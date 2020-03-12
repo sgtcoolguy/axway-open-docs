@@ -1,7 +1,5 @@
 {"title":"Performance Issues","weight":"130"} 
 
-# Performance Issues
-
 If you are having issues with the speed of Studio, this document provides information you can use to diagnose the problem.
 
 *   [Building Workspace taking longer than expected](#BuildingWorkspacetakinglongerthanexpected)

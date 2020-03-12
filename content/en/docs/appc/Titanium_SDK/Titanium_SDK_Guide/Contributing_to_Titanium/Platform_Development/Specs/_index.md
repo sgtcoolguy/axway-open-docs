@@ -1,7 +1,5 @@
 {"title":"Specs","weight":"60"} 
 
-# Specs
-
 This document provides links to various platform development spec pages.
 
 *   [Buffer Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/Buffer_Spec/)

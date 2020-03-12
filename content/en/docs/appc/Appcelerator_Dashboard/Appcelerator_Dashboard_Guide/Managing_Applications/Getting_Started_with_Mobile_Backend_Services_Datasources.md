@@ -1,7 +1,5 @@
 {"title":"Getting Started with Mobile Backend Services Datasources","weight":"10"} 
 
-# Getting Started with Mobile Backend Services Datasources
-
 This guide provides how-to instructions for getting started with Mobile Backend Services (MBS) datasources.
 
 1.  [Creating a datasource](#Creatingadatasource)

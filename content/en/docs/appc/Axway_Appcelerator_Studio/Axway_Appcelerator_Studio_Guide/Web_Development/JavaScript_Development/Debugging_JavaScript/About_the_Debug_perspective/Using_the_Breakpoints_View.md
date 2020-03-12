@@ -1,7 +1,5 @@
 {"title":"Using the Breakpoints View","weight":"10"} 
 
-# Using the Breakpoints View
-
 This page describes how to use the Breakpoints View that is part of the Debug perspective.
 
 ## Introduction

@@ -1,7 +1,5 @@
 {"title":"Debugging and Profiling","weight":"20"} 
 
-# Debugging and Profiling
-
 Debugging is a critical step in any programming project. Debugging a mobile application can involve a mix of native tools, Studio features, and your own sleuthing abilities. In this chapter, we'll take a look at the processes and tools you can use to track down bugs in your code.
 
 ## Sections

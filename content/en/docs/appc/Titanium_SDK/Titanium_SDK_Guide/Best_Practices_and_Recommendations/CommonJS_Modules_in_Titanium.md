@@ -1,7 +1,5 @@
 {"title":"CommonJS Modules in Titanium","weight":"20"} 
 
-# CommonJS Modules in Titanium
-
 *   [Synopsis](#Synopsis)
     
     *   [Definitions](#Definitions)

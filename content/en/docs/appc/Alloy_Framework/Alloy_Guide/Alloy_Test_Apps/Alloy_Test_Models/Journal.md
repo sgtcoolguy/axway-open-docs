@@ -1,7 +1,5 @@
 {"title":"Journal","weight":"60"} 
 
-# Journal
-
 Demonstrates how to create a simple personal journal application using models and collections.
 
 App Folder Location

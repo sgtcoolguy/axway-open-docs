@@ -1,7 +1,5 @@
 {"title":"OptionDialog","weight":"110"} 
 
-# OptionDialog
-
 Demonstrates how to use an OptionDialog control, a modal view that includes a message and one or more option items.
 
 Example App Source Location

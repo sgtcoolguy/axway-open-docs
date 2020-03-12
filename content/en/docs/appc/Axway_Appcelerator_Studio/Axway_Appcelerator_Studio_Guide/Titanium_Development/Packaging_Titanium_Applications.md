@@ -1,7 +1,5 @@
 {"title":"Packaging Titanium Applications","weight":"60"} 
 
-# Packaging Titanium Applications
-
 *   [Introduction](#Introduction)
     
 *   [Android](#Android)

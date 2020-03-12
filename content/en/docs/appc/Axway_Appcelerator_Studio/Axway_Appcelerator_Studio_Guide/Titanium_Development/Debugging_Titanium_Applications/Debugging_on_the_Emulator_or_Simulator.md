@@ -1,7 +1,5 @@
 {"title":"Debugging on the Emulator or Simulator","weight":"10"} 
 
-# Debugging on the Emulator or Simulator
-
 This document describes how to debug Titanium applications using an Emulator or Simulator.
 
 *   [To Debug on Android Emulator or iOS Simulator](#ToDebugonAndroidEmulatororiOSSimulator)

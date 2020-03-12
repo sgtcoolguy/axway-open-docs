@@ -1,7 +1,5 @@
 {"title":"Localization","weight":"100"} 
 
-# Localization
-
 Demonstrates how to use localized strings in your Alloy project.
 
 App folder location

@@ -1,7 +1,5 @@
 {"title":"Non-Persistent Model Bindings","weight":"90"} 
 
-# Non-Persistent Model Bindings
-
 Demonstrates using a static, non-persistent data collection.
 
 App Folder Location

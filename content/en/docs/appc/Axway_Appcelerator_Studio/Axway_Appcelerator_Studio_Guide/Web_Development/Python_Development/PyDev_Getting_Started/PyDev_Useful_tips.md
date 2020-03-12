@@ -1,7 +1,5 @@
 {"title":"PyDev Useful tips","weight":"80"} 
 
-# PyDev Useful tips
-
 Ok, now that you're already up and running with PyDev, there are some useful tips presented below to make your coding more enjoyable:
 
 *   **Learn the keybindings provided by PyDev and Eclipse**: As with any other environment, you'll have to learn what can be done (and how). In the reference manual, there is a session dedicated just to that...

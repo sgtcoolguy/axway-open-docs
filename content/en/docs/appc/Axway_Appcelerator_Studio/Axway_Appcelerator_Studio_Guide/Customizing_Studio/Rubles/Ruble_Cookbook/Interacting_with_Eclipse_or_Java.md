@@ -1,7 +1,5 @@
 {"title":"Interacting with Eclipse or Java","weight":"70"} 
 
-# Interacting with Eclipse or Java
-
 *   [Overview](#Overview)
     
 *   [Interacting with an Editor: Folding code in the editor](#InteractingwithanEditor:Foldingcodeintheeditor)

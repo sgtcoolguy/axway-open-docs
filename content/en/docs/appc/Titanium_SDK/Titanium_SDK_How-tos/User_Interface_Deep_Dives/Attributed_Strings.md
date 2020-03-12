@@ -1,7 +1,5 @@
 {"title":"Attributed Strings","weight":"80"} 
 
-# Attributed Strings
-
 *   [Introduction](#Introduction)
     
 *   [Creating an attributed string](#Creatinganattributedstring)

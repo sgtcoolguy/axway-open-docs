@@ -1,7 +1,5 @@
 {"title":"TabGroup","weight":"190"} 
 
-# TabGroup
-
 Demonstrates basic use of a TabbedGroup control to display a tabbed interface.
 
 Example App Source Location

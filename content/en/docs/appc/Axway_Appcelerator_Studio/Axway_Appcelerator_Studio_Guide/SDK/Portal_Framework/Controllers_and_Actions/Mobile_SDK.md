@@ -1,7 +1,5 @@
 {"title":"Mobile SDK","weight":"40"} 
 
-# Mobile SDK
-
 *   [Requirements](#Requirements)
     
 *   [Invocation](#Invocation)

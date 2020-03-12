@@ -1,7 +1,5 @@
 {"title":"Adding New Properties to Existing Ruble Objects","weight":"10"} 
 
-# Adding New Properties to Existing Ruble Objects
-
 *   [Update the element class](#Updatetheelementclass)
     
 *   [Update the project\_template.rb wrapper file](#Updatetheproject_template.rbwrapperfile)

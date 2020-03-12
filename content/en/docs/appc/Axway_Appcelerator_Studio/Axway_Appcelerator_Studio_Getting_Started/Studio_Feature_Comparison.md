@@ -1,7 +1,5 @@
 {"title":"Studio Feature Comparison","weight":"40"} 
 
-# Studio Feature Comparison
-
 *   [Overview](#Overview)
     
 *   [Appcelerator Studio](#AppceleratorStudio)

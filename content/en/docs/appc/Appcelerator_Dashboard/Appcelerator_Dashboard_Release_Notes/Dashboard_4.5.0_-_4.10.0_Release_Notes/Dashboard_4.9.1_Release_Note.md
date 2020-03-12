@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.9.1 - 18 October 2016","weight":"20"} 
 
-# Dashboard 4.9.1 - 18 October 2016
-
 Dashboard 4.9.1 is a patch release, which includes a behavior change, improvements, and several bug fixes.
 
 ## Behavior Change

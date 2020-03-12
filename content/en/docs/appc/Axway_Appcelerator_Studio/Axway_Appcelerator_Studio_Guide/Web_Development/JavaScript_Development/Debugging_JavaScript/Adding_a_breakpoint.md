@@ -1,7 +1,5 @@
 {"title":"Adding a breakpoint","weight":"30"} 
 
-# Adding a breakpoint
-
 *   [Introduction](#Introduction)
     
 *   [Instructions](#Instructions)

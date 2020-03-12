@@ -1,7 +1,5 @@
 {"title":"MomentJS","weight":"120"} 
 
-# MomentJS
-
 Demonstrates how to use the built-in [Moment.js](http://momentjs.com/) library in your Alloy application to format a date for different locales. Moment.js is a full featured date library for parsing, validating, manipulating, and formatting dates.
 
 App folder location

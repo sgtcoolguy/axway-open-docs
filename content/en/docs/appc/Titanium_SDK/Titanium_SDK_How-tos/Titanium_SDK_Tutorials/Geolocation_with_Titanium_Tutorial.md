@@ -1,7 +1,5 @@
 {"title":"Geolocation with Titanium Tutorial","weight":"20"} 
 
-# Geolocation with Titanium Tutorial
-
 *   [Setting up the tiapp.xml file](#Settingupthetiapp.xmlfile)
     
 *   [Ti.PlayServices](#Ti.PlayServices)

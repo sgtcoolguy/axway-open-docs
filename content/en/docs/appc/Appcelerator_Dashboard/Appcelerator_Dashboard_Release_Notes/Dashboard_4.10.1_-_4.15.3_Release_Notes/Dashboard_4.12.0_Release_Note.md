@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.12.0 - 2 May 2017","weight":"100"} 
 
-# Dashboard 4.12.0 - 2 May 2017
-
 Dashboard 4.12.0 is a minor release, which includes several improvements and bug fixes.
 
 ## Improvements

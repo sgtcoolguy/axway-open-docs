@@ -1,7 +1,5 @@
 {"title":"ACS 2013 21 January Release Note","weight":"150"} 
 
-# ACS 2013 21 January Release Note
-
 The ACS service was updated today with a number of bug fixes and improvements. Highlights include:
 
 *   Updated API usage reporting to report the number of pushes.

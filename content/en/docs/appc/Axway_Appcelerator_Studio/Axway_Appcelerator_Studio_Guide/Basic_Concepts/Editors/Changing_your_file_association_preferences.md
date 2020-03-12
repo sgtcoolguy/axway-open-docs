@@ -1,7 +1,5 @@
 {"title":"Changing your file association preferences","weight":"30"} 
 
-# Changing your file association preferences
-
 ## Overview
 
 This page describes how you can use Studio, even if you are developing with ASP or other languages not yet supported.

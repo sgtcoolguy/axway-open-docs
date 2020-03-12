@@ -1,7 +1,5 @@
 {"title":"Deprecation Notice SDK 8.x","weight":"10"} 
 
-# Deprecation Notice SDK 8.x
-
 List of all depreciation notices for SDK 8.x.
 
 *   [SDK 8.x](#SDK8.x)

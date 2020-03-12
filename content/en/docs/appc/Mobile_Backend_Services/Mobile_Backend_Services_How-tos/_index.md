@@ -1,7 +1,5 @@
 {"title":"Mobile Backend Services How-tos","weight":"30"} 
 
-# Mobile Backend Services How-tos
-
 This chapter contains several pages with information ranging from atomic increment operator to photo uploading and resizing and more.
 
 *   [Atomic Increment Operator](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_How-tos/Atomic_Increment_Operator/)

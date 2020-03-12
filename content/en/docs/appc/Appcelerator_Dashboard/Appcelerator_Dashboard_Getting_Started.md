@@ -1,7 +1,5 @@
 {"title":"Appcelerator Dashboard Getting Started","weight":"10"} 
 
-# Appcelerator Dashboard Getting Started
-
 This document provides information on how to authorize a browser or device for the AMPLIFY Platform, an overview of the AMPLIFY Platform home page, and how to access and navigate the Dashboard.
 
 *   [AMPLIFY Platform Sign-up](#SignupAMPLIFYPlatformSign-up)

@@ -1,7 +1,5 @@
 {"title":"Installing the Java Development Tools","weight":"60"} 
 
-# Installing the Java Development Tools
-
 *   [Overview](#Overview)
     
 *   [Install the Eclipse Java Development Tools plugin](#InstalltheEclipseJavaDevelopmentToolsplugin)

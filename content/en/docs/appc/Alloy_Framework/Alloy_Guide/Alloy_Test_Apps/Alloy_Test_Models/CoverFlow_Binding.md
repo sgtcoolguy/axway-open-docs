@@ -1,7 +1,5 @@
 {"title":"CoverFlow Binding","weight":"20"} 
 
-# CoverFlow Binding
-
 Demonstrates data binding with a CoverFlowView control, which presents images in carousel-like view.
 
 App Folder Location

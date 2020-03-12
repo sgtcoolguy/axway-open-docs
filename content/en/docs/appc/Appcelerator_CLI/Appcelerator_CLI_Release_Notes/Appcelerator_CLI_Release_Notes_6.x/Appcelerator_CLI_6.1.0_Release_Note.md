@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI 6.1.0 - 13 December 2016","weight":"100"} 
 
-# Appcelerator CLI 6.1.0 - 13 December 2016
-
 Appcelerator CLI 6.1.0 is a minor release that includes one new feature and one bug fix.
 
 As of this release, CLI 6.0.x will not be supported six months from 6.1.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

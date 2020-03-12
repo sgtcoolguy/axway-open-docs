@@ -1,7 +1,5 @@
 {"title":"Prerequisites","weight":"20"} 
 
-# Prerequisites
-
 *   [Overview](#Overview)
     
     *   [Memory](#Memory)

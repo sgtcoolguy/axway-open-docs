@@ -1,7 +1,5 @@
 {"title":"iOS Background Services","weight":"60"} 
 
-# iOS Background Services
-
 *   [Introduction](#Introduction)
     
 *   [URL session module](#URLsessionmodule)

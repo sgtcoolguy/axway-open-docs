@@ -1,7 +1,5 @@
 {"title":"Mobile Backend Services 1.6.0.sp3 Release Note","weight":"30"} 
 
-# Mobile Backend Services 1.6.0.sp3 Release Note
-
 ## Mobile Backend Services 1.6.0.sp3 - 26 February 2018
 
 This release of Mobile Backend Services 1.6.0.sp3 includes the following fixed issues.

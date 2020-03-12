@@ -1,7 +1,5 @@
 {"title":"Creating Custom Queries","weight":"80"} 
 
-# Creating Custom Queries
-
 *   [Introduction](#Introduction)
     
 *   [Queries Overview](#QueriesOverview)

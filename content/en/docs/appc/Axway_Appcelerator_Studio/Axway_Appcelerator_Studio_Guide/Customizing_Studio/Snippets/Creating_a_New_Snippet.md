@@ -1,7 +1,5 @@
 {"title":"Creating a New Snippet","weight":"10"} 
 
-# Creating a New Snippet
-
 *   [Overview](#Overview)
     
 *   [Creating a new snippet](#Creatinganewsnippet)

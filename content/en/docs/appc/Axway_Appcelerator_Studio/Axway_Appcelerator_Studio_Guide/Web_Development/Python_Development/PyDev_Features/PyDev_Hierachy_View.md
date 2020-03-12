@@ -1,7 +1,5 @@
 {"title":"Hierachy View","weight":"120"} 
 
-# Hierachy View
-
 In PyDev you can use **F4** to open the hierarchy view for you while over some class definition.
 
 The Hierarchy View allows you to check a class hierarchy, seeing the relations as well as methods and attributes for all the classes in the hierarchy.

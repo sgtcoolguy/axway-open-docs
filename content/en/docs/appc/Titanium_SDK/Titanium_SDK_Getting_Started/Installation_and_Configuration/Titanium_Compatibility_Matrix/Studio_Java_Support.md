@@ -1,7 +1,5 @@
 {"title":"Studio Java Support","weight":"20"} 
 
-# Studio Java Support
-
 ## Studio 5.0.0 and earlier installers
 
 Studio 5.0.0 and earlier

@@ -1,7 +1,5 @@
 {"title":"GDPR Opt Out Sample App","weight":"150"} 
 
-# GDPR Opt Out Sample App
-
 We have created a sample app that shows users how to opt out from Analytics (per the GDPR).
 
 To guide you through the GDPR compliance process for you app, we have create a [7.2.0 Sample App](https://github.com/appcelerator-developer-relations/appc-sample-ti720) that demonstrates the usage of the new optedOut property as part of Ti.Analytics.

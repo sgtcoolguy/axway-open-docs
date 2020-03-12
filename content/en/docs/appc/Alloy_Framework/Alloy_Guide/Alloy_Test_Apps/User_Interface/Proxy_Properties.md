@@ -1,7 +1,5 @@
 {"title":"Proxy Properties","weight":"140"} 
 
-# Proxy Properties
-
 Demonstrates expressing properties of Titanium objects with Alloy proxy elements.
 
 App Folder Location

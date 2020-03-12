@@ -1,7 +1,5 @@
 {"title":"Filtering Ruble Items Per-Platform","weight":"60"} 
 
-# Filtering Ruble Items Per-Platform
-
 *   [Overview](#Overview)
     
 *   [Wrapping an item in a per-platform conditional](#Wrappinganiteminaper-platformconditional)

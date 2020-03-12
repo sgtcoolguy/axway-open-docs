@@ -1,7 +1,5 @@
 {"title":"Studio 4.6.0.GA - 2 June 2016","weight":"140"} 
 
-# Studio 4.6.0.GA - 2 June 2016
-
 Studio 4.6.0.GA is a minor release that includes new features, improvements, and bug fixes.
 
 This release also includes [App Designer](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_How-tos/App_Designer_Overview/) that allows you to create and edit Alloy views using drag-drop and property editors and [App Preview](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_How-tos/App_Preview/) that allows you to distribute beta versions of your apps to testers and stakeholders.

@@ -1,7 +1,5 @@
 {"title":"Studio Compatibility Matrix","weight":"10"} 
 
-# Studio Compatibility Matrix
-
 ## Disk space
 
 We recommend the following as a guideline for estimating how much disk space is necessary to build applications using Axway Appcelerator Studio:

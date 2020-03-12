@@ -1,7 +1,5 @@
 {"title":"Getting Started with Test","weight":"10"} 
 
-# Getting Started with Test
-
 Enterprise Subscription Required!
 
 This AMPLIFY Appcelerator Services feature requires an Enterprise Subscription.

@@ -1,7 +1,5 @@
 {"title":"Hyperloop 2.0.0 - 18 October 2016","weight":"110"} 
 
-# Hyperloop 2.0.0 - 18 October 2016
-
 Hyperloop 2.0.0 is a major release that includes new improvements and bug fixes.
 
 This version only supports Titanium SDK 6.0.0 and newer.

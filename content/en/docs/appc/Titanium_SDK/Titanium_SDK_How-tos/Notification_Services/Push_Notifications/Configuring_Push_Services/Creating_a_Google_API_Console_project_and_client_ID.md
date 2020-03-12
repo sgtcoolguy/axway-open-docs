@@ -1,7 +1,5 @@
 {"title":"Creating a Google API Console project and client ID","weight":"10"} 
 
-# Creating a Google API Console project and client ID
-
 Before you can integrate Google Sign-In into your website, you must have a Google API Console project. In the project, you create a client ID, which you need to call the sign-in API.
 
 To create a Google API Console project and client ID, follow these steps:

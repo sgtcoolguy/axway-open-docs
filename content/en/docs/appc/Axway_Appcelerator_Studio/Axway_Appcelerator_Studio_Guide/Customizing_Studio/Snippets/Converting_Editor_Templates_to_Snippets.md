@@ -1,7 +1,5 @@
 {"title":"Converting Editor Templates to Snippets","weight":"20"} 
 
-# Converting Editor Templates to Snippets
-
 *   [Overview](#Overview)
     
 *   [Exporting Existing Editor Templates from Aptana Studio 2](#ExportingExistingEditorTemplatesfromAptanaStudio2)

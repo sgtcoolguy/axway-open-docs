@@ -1,7 +1,5 @@
 {"title":"Create an Organization","weight":"10"} 
 
-# Create an Organization
-
 Enterprise Subscription Required!
 
 This AMPLIFY Appcelerator Services feature requires an Enterprise Subscription.

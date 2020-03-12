@@ -1,7 +1,5 @@
 {"title":"Project Configuration File","weight":"70"} 
 
-# Project Configuration File
-
 Demonstrates use of the Alloy configuration file.
 
 App Folder Location

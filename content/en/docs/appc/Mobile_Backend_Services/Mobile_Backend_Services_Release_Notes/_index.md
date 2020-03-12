@@ -1,7 +1,5 @@
 {"title":"Mobile Backend Services Release Notes","weight":"40"} 
 
-# Mobile Backend Services Release Notes
-
 ## Mobile Backend Services 1.6.5 - 18 October 2019
 
 This release of Mobile Backend Services 1.6.5 is a minor release, which includes an improvement and bug fixes.

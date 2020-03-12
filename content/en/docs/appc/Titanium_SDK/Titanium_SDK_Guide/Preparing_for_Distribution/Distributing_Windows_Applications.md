@@ -1,7 +1,5 @@
 {"title":"Distributing Windows Applications","weight":"60"} 
 
-# Distributing Windows Applications
-
 *   [Introduction](#Introduction)
     
 *   [Create an Application](#CreateanApplication)

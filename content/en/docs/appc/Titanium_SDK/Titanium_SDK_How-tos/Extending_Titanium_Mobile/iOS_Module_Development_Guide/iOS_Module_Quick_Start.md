@@ -1,7 +1,5 @@
 {"title":"iOS Module Quick Start","weight":"10"} 
 
-# iOS Module Quick Start
-
 *   [Introduction](#Introduction)
     
 *   [iOS module prerequisites](#iOSmoduleprerequisites)

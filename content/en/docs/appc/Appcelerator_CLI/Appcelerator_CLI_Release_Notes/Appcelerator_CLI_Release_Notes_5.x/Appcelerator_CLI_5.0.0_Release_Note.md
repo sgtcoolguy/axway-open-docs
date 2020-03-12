@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI 5.0.0 - 16 September 2015","weight":"210"} 
 
-# Appcelerator CLI 5.0.0 - 16 September 2015
-
 Appcelerator CLI 5.0.0 is a major release, introducing new features, improvements and bug fixes. This release of the Appcelerator CLI includes version 4.2.0 of the NPM package and version 5.0.0 of the Core package.
 
 As of this release, CLI 4.x will not be supported one calendar year from 5.0.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

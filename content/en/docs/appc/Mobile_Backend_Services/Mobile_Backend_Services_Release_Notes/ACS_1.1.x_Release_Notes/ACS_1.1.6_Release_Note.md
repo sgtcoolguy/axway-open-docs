@@ -1,7 +1,5 @@
 {"title":"ACS 1.1.6 - 29 October 2014","weight":"40"} 
 
-# ACS 1.1.6 - 29 October 2014
-
 Appcelerator Cloud Services version 1.1.6 contains the following new features, bug fixes, and improvements.
 
 ## New features

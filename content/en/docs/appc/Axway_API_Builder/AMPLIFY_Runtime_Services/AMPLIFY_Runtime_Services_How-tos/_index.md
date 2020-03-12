@@ -1,7 +1,5 @@
 {"title":"AMPLIFY Runtime Services How-tos","weight":"20"} 
 
-# AMPLIFY Runtime Services How-tos
-
 This chapter has several sections dedicated to the how-tos of AMPLIFY Runtime Services (API Runtime Services).
 
 *   [AMPLIFY Runtime Services Best Practices](/docs/appc/Axway_API_Builder/AMPLIFY_Runtime_Services/AMPLIFY_Runtime_Services_How-tos/AMPLIFY_Runtime_Services_Best_Practices/)

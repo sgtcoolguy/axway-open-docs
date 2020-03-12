@@ -1,7 +1,5 @@
 {"title":"Debugger Troubleshooting","weight":"40"} 
 
-# Debugger Troubleshooting
-
 You got here because of an issue with the Studio debugger. Here are some information which should help you identify a cause and find possible solutions.
 
 ## Firefox Users

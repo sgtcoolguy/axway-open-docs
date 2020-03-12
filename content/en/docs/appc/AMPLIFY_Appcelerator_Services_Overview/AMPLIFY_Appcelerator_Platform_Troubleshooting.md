@@ -1,7 +1,5 @@
 {"title":"AMPLIFY Appcelerator Platform Troubleshooting","weight":"40"} 
 
-# AMPLIFY Appcelerator Platform Troubleshooting
-
 *   [Review the troubleshooting guides](#Reviewthetroubleshootingguides)
     
 *   [Common issues](#Commonissues)

@@ -1,7 +1,5 @@
 {"title":"Migrate a Titanium Application to the Platform","weight":"140"} 
 
-# Migrate a Titanium Application to the Platform
-
 *   [Titanium Community Analytics, ACS and Push, and Node.ACS Deactivation](#TitaniumCommunityAnalytics,ACSandPush,andNode.ACSDeactivation)
     
 *   [Migrate a Titanium Application to the Platform](#MigrateaTitaniumApplicationtothePlatform)

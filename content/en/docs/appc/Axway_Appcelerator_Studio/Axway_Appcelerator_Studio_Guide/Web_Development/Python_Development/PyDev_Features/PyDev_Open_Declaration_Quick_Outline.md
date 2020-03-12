@@ -1,7 +1,5 @@
 {"title":"PyDev Open Declaration Quick Outline","weight":"170"} 
 
-# PyDev Open Declaration Quick Outline
-
 The 'Open Definition Quick Outline' allows you to quickly see (and go to) all the available 'definition' tokens, including:
 
 *   Class definitions

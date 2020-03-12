@@ -1,7 +1,5 @@
 {"title":"HTTPClient and the Request Lifecycle","weight":"10"} 
 
-# HTTPClient and the Request Lifecycle
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

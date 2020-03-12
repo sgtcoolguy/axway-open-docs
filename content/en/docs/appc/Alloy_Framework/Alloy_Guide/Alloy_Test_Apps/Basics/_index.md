@@ -1,7 +1,5 @@
 {"title":"Basics","weight":"30"} 
 
-# Basics
-
 Samples in the basics/ folder demonstrates basic Alloy concepts.
 
 *   [Built-ins](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Basics/Built-ins/) — Demonstrates use of several built-in libraries included with Alloy that simplify certain functions, such as animations, string manipulation and display unit conversion.

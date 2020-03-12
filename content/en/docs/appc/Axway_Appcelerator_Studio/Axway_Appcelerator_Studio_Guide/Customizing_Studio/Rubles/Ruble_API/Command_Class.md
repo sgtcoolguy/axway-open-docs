@@ -1,7 +1,5 @@
 {"title":"Command Class","weight":"20"} 
 
-# Command Class
-
 The Command class contains methods and properties for interacting with commands inside Studio
 
 ## Usage

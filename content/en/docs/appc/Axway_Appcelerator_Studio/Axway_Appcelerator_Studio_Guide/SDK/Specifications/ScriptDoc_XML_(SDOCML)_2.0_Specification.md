@@ -1,7 +1,5 @@
 {"title":"ScriptDoc XML (SDOCML) 2.0 Specification","weight":"20"} 
 
-# ScriptDoc XML (SDOCML) 2.0 Specification
-
 *   [Overview](#Overview)
     
 *   [Introduction](#Introduction)

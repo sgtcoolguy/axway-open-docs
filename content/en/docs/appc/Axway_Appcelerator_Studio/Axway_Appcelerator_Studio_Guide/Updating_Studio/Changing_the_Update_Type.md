@@ -1,7 +1,5 @@
 {"title":"Changing the Update Type","weight":"40"} 
 
-# Changing the Update Type
-
 To change the update type, open Studio Preferences, select the **Studio > Updates** item, then select the update type you want to use.
 
 1.  Select **Preferences**:

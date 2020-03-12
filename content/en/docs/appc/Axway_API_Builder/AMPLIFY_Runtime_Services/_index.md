@@ -1,7 +1,5 @@
 {"title":"AMPLIFY Runtime Services","weight":"20"} 
 
-# AMPLIFY Runtime Services
-
 Monitor Published Applications!
 
 The status of your published applications to a production environment should be monitored using Pingdom, New Relic, or a similar website performance monitoring program. For information on Pingdom, refer to the [Pingdom](https://www.pingdom.com/) website. For information on New Relic, see the [New Relic](https://newrelic.com/) website.

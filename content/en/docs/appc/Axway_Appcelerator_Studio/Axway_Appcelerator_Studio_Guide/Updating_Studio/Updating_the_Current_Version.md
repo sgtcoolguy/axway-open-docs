@@ -1,7 +1,5 @@
 {"title":"Updating the Current Version","weight":"20"} 
 
-# Updating the Current Version
-
 *   [Updating the current version](#Updatingthecurrentversion)
     
 *   [Turn on automatic updates](#Turnonautomaticupdates)

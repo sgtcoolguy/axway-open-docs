@@ -1,7 +1,5 @@
 {"title":"Subscribing to push notifications","weight":"20"} 
 
-# Subscribing to push notifications
-
 For a push notification to reach a user, the user (or device) must be subscribed to receive push notifications on one or more notification _channels_. The application must also obtain a _device token_, which permits Mobile Backend Services (MBS) to communicate with the push service provider (Google Cloud Messaging (GCM), Firebase Cloud Messaging (FCM), or Apple Push Notification). [Firebase Cloud Messaging](http://firebase.google.com/docs/cloud-messaging/) (FCM) is the new version of GCM. This guide explains how to how obtain a device token, and how to use the [PushNotifications API](#!/api/Modules.Cloud.PushNotifications) to manage your user's notification subscriptions.
 
 *   [Obtaining a device token](#Obtainingadevicetoken)

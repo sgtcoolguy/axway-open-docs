@@ -1,7 +1,5 @@
 {"title":"CommonJS XML","weight":"20"} 
 
-# CommonJS XML
-
 Demonstrates using CommonJS modules to create UI components in an Alloy XML view.
 
 App folder location

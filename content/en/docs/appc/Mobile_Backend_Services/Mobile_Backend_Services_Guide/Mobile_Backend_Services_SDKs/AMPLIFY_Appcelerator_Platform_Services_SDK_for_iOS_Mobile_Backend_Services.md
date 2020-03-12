@@ -1,7 +1,5 @@
 {"title":"AMPLIFY Appcelerator Platform Services SDK for iOS Mobile Backend Services","weight":"30"} 
 
-# AMPLIFY Appcelerator Platform Services SDK for iOS Mobile Backend Services
-
 *   [Getting the SDK](#GettingtheSDK)
     
 *   [Running the APSCloud Example application](#RunningtheAPSCloudExampleapplication)

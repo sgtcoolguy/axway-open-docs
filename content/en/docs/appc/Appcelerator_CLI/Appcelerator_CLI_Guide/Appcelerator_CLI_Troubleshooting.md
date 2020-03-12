@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI Troubleshooting","weight":"10"} 
 
-# Appcelerator CLI Troubleshooting
-
 *   [Overview](#Overview)
     
 *   [Submitting a bug](#Submittingabug)

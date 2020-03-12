@@ -1,7 +1,5 @@
 {"title":"Managing API Builder Applications","weight":"40"} 
 
-# Managing API Builder Applications
-
 To view the details of an API Builder application, select it from the Dashboard home page **Apps** tab.
 
 *   [View API Builder Application Information](#ViewAPIBuilderApplicationInformation)

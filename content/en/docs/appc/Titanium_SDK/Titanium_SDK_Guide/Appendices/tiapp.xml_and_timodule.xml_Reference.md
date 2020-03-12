@@ -1,7 +1,5 @@
 {"title":"tiapp.xml and timodule.xml Reference","weight":"10"} 
 
-# tiapp.xml and timodule.xml Reference
-
 *   [Introductions](#Introductions)
     
 *   [Top level elements](#Toplevelelements)

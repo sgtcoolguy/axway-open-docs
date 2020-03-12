@@ -1,7 +1,5 @@
 {"title":"Dashboard 7.0.2 Release Note","weight":"60"} 
 
-# Dashboard 7.0.2 Release Note
-
 ## Dashboard 7.0.2 - 11 October 2019
 
 Dashboard 7.0.2 is a patch release which includes several bug fixes.

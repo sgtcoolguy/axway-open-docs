@@ -1,7 +1,5 @@
 {"title":"Camera and Photo Gallery APIs","weight":"40"} 
 
-# Camera and Photo Gallery APIs
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

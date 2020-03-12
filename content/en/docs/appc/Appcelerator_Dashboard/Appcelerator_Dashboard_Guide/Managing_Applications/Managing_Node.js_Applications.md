@@ -1,7 +1,5 @@
 {"title":"Managing Node.js Applications","weight":"50"} 
 
-# Managing Node.js Applications
-
 To view the details of a Node.js application, select it from the Dashboard home page **Apps** tab.
 
 *   [View Node.js Application Information](#ViewNode.jsApplicationInformation)

@@ -1,7 +1,5 @@
 {"title":"Git and Github","weight":"40"} 
 
-# Git and Github
-
 *   [Overview](#Overview)
     
 *   [Learning Git and Github](#LearningGitandGithub)

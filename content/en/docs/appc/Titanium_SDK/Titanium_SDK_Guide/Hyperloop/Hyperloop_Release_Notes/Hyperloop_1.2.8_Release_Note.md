@@ -1,7 +1,5 @@
 {"title":"Hyperloop 1.2.8 - 18 October 2016","weight":"120"} 
 
-# Hyperloop 1.2.8 - 18 October 2016
-
 Hyperloop 1.2.8 is a patch release that includes several bug fixes.
 
 This version only supports up to Titanium SDK 5.5.1. Use Hyperloop 2.0.0 and newer for Titanium SDK 6.0.0 and newer.

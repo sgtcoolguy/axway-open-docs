@@ -1,7 +1,5 @@
 {"title":"Installing the iOS SDK","weight":"20"} 
 
-# Installing the iOS SDK
-
 *   [Overview](#Overview)
     
 *   [Compatibility and download](#Compatibilityanddownload)

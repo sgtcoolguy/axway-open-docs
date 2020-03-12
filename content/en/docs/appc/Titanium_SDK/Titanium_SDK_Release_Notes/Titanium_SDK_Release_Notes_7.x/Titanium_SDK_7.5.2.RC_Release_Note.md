@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 7.5.2.RC - 5 March 2019","weight":"20"} 
 
-# Titanium SDK 7.5.2.RC - 5 March 2019
-
 *   [About this release](#Aboutthisrelease)
     
     *   [Android and iOS](#AndroidandiOS)

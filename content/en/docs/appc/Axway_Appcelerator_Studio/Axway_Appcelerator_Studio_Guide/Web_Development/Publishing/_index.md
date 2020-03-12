@@ -1,7 +1,5 @@
 {"title":"Publishing","weight":"110"} 
 
-# Publishing
-
 Studio includes a wealth of options for publishing your web projects and Titanium applications. See the linked pages below to learn more.
 
 *   [Capistrano Deployment](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Publishing/Capistrano_Deployment/)

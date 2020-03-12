@@ -1,7 +1,5 @@
 {"title":"Displaying Content Assist","weight":"20"} 
 
-# Displaying Content Assist
-
 As you code, Content Assist provides tips on available properties and methods and the parameters that a method takes. See [About Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/About_Content_Assist/) for a detailed explanation about Content Assist.
 
 *   [Instructions](#Instructions)

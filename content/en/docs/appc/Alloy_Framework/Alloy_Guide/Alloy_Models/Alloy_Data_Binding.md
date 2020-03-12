@@ -1,7 +1,5 @@
 {"title":"Alloy Data Binding","weight":"10"} 
 
-# Alloy Data Binding
-
 *   [Introduction](#Introduction)
     
 *   [Alloy binding](#Alloybinding)

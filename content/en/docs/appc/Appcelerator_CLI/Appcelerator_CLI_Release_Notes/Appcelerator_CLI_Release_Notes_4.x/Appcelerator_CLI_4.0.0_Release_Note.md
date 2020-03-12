@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI 4.0.0 - 21 May 2015","weight":"70"} 
 
-# Appcelerator CLI 4.0.0 - 21 May 2015
-
 Initial release. This release of the Appcelerator CLI includes version 4.0.0 of the NPM package and version 4.0.0 of the Core package.
 
 ## Component Versions

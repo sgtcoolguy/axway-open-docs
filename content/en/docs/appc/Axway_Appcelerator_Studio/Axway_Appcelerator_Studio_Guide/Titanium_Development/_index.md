@@ -1,7 +1,5 @@
 {"title":"Titanium Development","weight":"60"} 
 
-# Titanium Development
-
 This document contains a series of links for Titanium development.
 
 *   [Platform Support](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Platform_Support/)

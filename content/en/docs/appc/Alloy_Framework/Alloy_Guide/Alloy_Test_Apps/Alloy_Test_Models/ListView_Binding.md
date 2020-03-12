@@ -1,7 +1,5 @@
 {"title":"ListView Binding","weight":"70"} 
 
-# ListView Binding
-
 Demonstrates using binding a data collection to a ListView and applying different list item templates to each list item using a data transformer.
 
 App Folder Location

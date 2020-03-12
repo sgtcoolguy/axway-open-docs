@@ -1,7 +1,5 @@
 {"title":"Picker","weight":"120"} 
 
-# Picker
-
 Demonstrates basic use of the Picker control to let a user select one or more fixed values.
 
 Example App Source Location

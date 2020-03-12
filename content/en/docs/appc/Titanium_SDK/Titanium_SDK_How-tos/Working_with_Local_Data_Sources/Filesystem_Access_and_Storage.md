@@ -1,7 +1,5 @@
 {"title":"Filesystem Access and Storage","weight":"40"} 
 
-# Filesystem Access and Storage
-
 *   [Storage locations](#Storagelocations)
     
 *   [File operations](#Fileoperations)

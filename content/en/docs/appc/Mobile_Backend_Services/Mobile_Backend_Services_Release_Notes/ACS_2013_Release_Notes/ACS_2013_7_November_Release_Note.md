@@ -1,7 +1,5 @@
 {"title":"ACS 2013 7 November Release Note","weight":"30"} 
 
-# ACS 2013 7 November Release Note
-
 This update includes the following bug fixes and enhancements:
 
 *   Add ability to set an expiration date for push notifications with the expire\_after\_seconds parameter. See the options parameter for [push\_notification/notify.json](/arrowdb/latest/#!/api/PushNotifications-method-notify) and [push\_notification/notify\_token.json](/arrowdb/latest/#!/api/PushNotifications-method-notify_tokens).

@@ -1,7 +1,5 @@
 {"title":"Titanium CLI Options","weight":"10"} 
 
-# Titanium CLI Options
-
 *   [Introduction](#Introduction)
     
 *   [Options](#Options)

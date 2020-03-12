@@ -1,7 +1,5 @@
 {"title":"AMPLIFY Runtime Services Best Practices","weight":"10"} 
 
-# AMPLIFY Runtime Services Best Practices
-
 This topic provides best practices for creating and deploying applications to AMPLIFY Runtime Services (API Runtime Services).
 
 ## Improving application network performance

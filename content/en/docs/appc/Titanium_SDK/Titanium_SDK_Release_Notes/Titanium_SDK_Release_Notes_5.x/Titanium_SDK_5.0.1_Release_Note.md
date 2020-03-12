@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 5.0.1 General Availability - 25 September 2015","weight":"220"} 
 
-# Titanium SDK 5.0.1 General Availability - 25 September 2015
-
 ## Contents
 
 *   [About This Release](#AboutThisRelease)

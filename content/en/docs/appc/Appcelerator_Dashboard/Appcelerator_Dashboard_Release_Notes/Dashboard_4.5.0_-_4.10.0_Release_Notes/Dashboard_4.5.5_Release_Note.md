@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.5.5","weight":"140"} 
 
-# Dashboard 4.5.5
-
 Dashboard 4.5.5 is a patch release, which includes two improvements and one bug fix.
 
 ## Improvements

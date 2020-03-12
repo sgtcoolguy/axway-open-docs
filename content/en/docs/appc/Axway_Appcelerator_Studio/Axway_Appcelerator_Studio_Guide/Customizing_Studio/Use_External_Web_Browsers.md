@@ -1,7 +1,5 @@
 {"title":"Use External Web Browsers","weight":"120"} 
 
-# Use External Web Browsers
-
 To customize the browser Studio uses to launch Mobile Web applications, Studio Preferences must be updated to include additional web browsers. Open Studio Preferences and navigate to **General** \> **Web Browser**. Follow the browser specific directions below.
 
 ## Safari

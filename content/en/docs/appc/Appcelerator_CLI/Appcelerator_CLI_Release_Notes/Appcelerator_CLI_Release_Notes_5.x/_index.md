@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI Release Notes 5.x","weight":"30"} 
 
-# Appcelerator CLI Release Notes 5.x
-
 *   [Appcelerator CLI 5.5.1.GA Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_5.x/Appcelerator_CLI_5.5.1.GA_Release_Note/)
     
 *   [Appcelerator CLI 5.5.0.RC Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_5.x/Appcelerator_CLI_5.5.0.RC_Release_Note/)

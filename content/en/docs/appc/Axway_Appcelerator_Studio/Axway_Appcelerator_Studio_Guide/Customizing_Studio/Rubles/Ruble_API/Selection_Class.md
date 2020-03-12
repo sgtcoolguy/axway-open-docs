@@ -1,7 +1,5 @@
 {"title":"Selection Class","weight":"80"} 
 
-# Selection Class
-
 The Selection class contains methods and properties for interacting with a selection inside a document inside Studio
 
 ## Usage

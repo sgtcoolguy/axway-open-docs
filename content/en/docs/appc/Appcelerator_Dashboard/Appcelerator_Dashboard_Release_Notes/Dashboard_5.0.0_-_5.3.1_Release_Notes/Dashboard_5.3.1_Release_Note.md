@@ -1,7 +1,5 @@
 {"title":"Dashboard 5.3.1 Release Note","weight":"10"} 
 
-# Dashboard 5.3.1 Release Note
-
 ## Dashboard 5.3.1 - 6 March 2019
 
 Dashboard 5.3.1 is a minor release, which includes a new feature.

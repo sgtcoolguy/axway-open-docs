@@ -1,7 +1,5 @@
 {"title":"Using the Console View","weight":"120"} 
 
-# Using the Console View
-
 *   [Introduction](#Introduction)
     
 *   [Instructions](#Instructions)

@@ -1,7 +1,5 @@
 {"title":"BNAPP ebook","weight":"60"} 
 
-# BNAPP ebook
-
 You can download the _Building Mobile Applications with Titanium_ ebook as an epub or mobi file for reading on your favorite e-reader. The epub version is suitable for iBooks, Nook, and other epub-compatible devices. For Kindle, we provide the mobi format. At this time, it appears you cannot load your own content into Play Books (formerly Google Books).
 
 *   epub file - [Download here](http://assets.appcelerator.com.s3.amazonaws.com/app_u/bnapp.epub)

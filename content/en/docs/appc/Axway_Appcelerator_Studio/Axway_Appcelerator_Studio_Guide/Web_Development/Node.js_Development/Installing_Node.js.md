@@ -1,7 +1,5 @@
 {"title":"Installing Node.js","weight":"10"} 
 
-# Installing Node.js
-
 This document contains information on how to install node.js on OS X and Windows platforms.
 
 ## OS X Install

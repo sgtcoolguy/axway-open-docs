@@ -1,7 +1,5 @@
 {"title":"Setting Activation Characters","weight":"100"} 
 
-# Setting Activation Characters
-
 ## Overview
 
 In this recipe we show how it is possible to use a Ruble command to modify the activation characters for the HTML, CSS, and JS editors.

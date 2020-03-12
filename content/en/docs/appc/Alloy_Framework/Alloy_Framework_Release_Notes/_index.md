@@ -1,7 +1,5 @@
 {"title":"Alloy Framework Release Notes","weight":"40"} 
 
-# Alloy Framework Release Notes
-
 ## Alloy 1.10.5 - 17 September 2017
 
 Alloy 1.10.5 is a patch release that includes one bug fix.

@@ -1,7 +1,5 @@
 {"title":"Using density-specific resources on Android","weight":"30"} 
 
-# Using density-specific resources on Android
-
 ## Contents
 
 *   [Overview](#Overview)

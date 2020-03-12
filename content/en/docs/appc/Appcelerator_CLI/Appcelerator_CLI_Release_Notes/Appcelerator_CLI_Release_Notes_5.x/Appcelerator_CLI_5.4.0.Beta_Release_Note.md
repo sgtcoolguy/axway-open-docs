@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI 5.4.0.Beta - 13 July 2016","weight":"70"} 
 
-# Appcelerator CLI 5.4.0.Beta - 13 July 2016
-
 Appcelerator CLI 5.4.0.Beta is a minor release that includes new features, improvements, and bug fixes.
 
 As of this release, CLI 5.3.x will not be supported six months from 5.4.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

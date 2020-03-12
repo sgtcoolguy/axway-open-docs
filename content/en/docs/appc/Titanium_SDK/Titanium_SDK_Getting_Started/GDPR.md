@@ -1,7 +1,5 @@
 {"title":"GDPR","weight":"70"} 
 
-# GDPR
-
 With the enactment of European Union's General Data Protection Regulation (GDPR), we've updated our Privacy Policy and the way Axway collects and processes personal information. We welcome this change and understand the importance of data privacy as a human right. We are taking this opportunity to strengthen our global practices, expanding our robust data privacy practices, and will continue to support data privacy compliance.
 
 For more information, please refer to Axway's **[Privacy compliance program](https://www.axway.com/gdpr)**.

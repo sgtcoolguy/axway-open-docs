@@ -1,7 +1,5 @@
 {"title":"Using Titanium Modules","weight":"20"} 
 
-# Using Titanium Modules
-
 *   [Finding Modules](#FindingModules)
     
 *   [Downloading Modules](#DownloadingModules)

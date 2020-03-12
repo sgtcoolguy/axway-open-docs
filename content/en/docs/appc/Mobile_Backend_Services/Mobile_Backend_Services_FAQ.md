@@ -1,7 +1,5 @@
 {"title":"Mobile Backend Services FAQ","weight":"50"} 
 
-# Mobile Backend Services FAQ
-
 This document provides questions and answers for several frequently asked questions about MBS.
 
 ## Firebase push notification using Appcelerator

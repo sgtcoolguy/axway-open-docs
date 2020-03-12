@@ -1,7 +1,5 @@
 {"title":"Modifying Editor Colors","weight":"20"} 
 
-# Modifying Editor Colors
-
 Studio has a "Theme" preference page which allows you to set the default look and color scheme of Studio editors.
 
 *   [Introduction](#Introduction)

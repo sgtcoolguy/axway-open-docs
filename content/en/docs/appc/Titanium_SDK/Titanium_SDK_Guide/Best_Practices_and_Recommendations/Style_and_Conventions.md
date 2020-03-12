@@ -1,7 +1,5 @@
 {"title":"Style and Conventions","weight":"60"} 
 
-# Style and Conventions
-
 *   [Language rules](#Languagerules)
     
 *   [Coding style best practices](#Codingstylebestpractices)

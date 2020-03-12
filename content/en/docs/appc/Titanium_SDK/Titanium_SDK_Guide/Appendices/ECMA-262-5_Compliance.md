@@ -1,7 +1,5 @@
 {"title":"Contents","weight":"20"} 
 
-# Contents
-
 You might wonder what features of JavaScript you can use within your Titanium Mobile applications. As the tests below show, advanced features vary by platform. However, overall Titanium is highly compliant to the ECMA-262 specification: version 3 is fully supported and most of version 5 is also supported. Keep these points in mind:
 
 *   On Android, Titanium includes either the Rhino or V8 interpreter, depending on the build option you select in tiapp.xml.

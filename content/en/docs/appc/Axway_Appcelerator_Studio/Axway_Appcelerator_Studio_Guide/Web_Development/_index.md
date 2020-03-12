@@ -1,7 +1,5 @@
 {"title":"Web Development","weight":"40"} 
 
-# Web Development
-
 Studio has a large set of features designed to make your web development experience better and easier. By default, we include editors for CSS, HTML, JS, PHP\*, Python\*, and Ruby\* files. Specifics about each editor type are included in the subsections below.
 
 (\*) For Titanium and Appcelerator Studio, you need to install additional plugin to support PHP, Python and Ruby development as described in [Adding PHP Ruby or Python Support](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/Adding_PHP_Ruby_or_Python_Support/).

@@ -1,7 +1,5 @@
 {"title":"Updating Studio","weight":"20"} 
 
-# Updating Studio
-
 Axway Appcelerator Studio is easy to update. It will prompt you automatically on launch if there is a new update or you can check manually by selecting **Help** \> **Check for Titanium Updates** or **Help** \> **Check for Appcelerator Updates.**
 
 Studio also has an active release cycle with updates on a regular basis. If you wish, you can subscribe to pre-release versions of the software. They will have more features, but also the possibility of bugs. We encourage you to use these versions as they help shape the direction of the product though your early feedback.

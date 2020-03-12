@@ -1,7 +1,5 @@
 {"title":"Re-enabling Test After Service Upgrade","weight":"30"} 
 
-# Re-enabling Test After Service Upgrade
-
 Enterprise Subscription Required!
 
 This AMPLIFY Appcelerator Services feature requires an Enterprise Subscription.

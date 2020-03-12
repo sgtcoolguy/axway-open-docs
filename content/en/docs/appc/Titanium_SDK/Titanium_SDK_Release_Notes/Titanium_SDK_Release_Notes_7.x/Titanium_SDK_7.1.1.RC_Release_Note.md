@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 7.1.1.RC 20 April 2018","weight":"220"} 
 
-# Titanium SDK 7.1.1.RC 20 April 2018
-
 *   [About this release](#Aboutthisrelease)
     
 *   [Fixed issues](#Fixedissues)

@@ -1,7 +1,5 @@
 {"title":"Ruble environment variables","weight":"120"} 
 
-# Ruble environment variables
-
 *   [Overview](#Overview)
     
 *   [Referencing an environment variable](#Referencinganenvironmentvariable)

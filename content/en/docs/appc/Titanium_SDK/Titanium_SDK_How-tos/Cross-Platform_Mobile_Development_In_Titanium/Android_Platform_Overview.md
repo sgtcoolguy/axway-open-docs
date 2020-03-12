@@ -1,7 +1,5 @@
 {"title":"Android Platform Overview","weight":"10"} 
 
-# Android Platform Overview
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

@@ -1,7 +1,5 @@
 {"title":"Titanium SDK How-tos","weight":"30"} 
 
-# Titanium SDK How-tos
-
 This chapter has several sections dedicated to how-to instructions for Titanium SDK.
 
 *   [Cross-Platform Mobile Development In Titanium](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Cross-Platform_Mobile_Development_In_Titanium/)

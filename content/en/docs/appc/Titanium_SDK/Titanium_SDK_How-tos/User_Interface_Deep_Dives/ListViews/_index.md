@@ -1,7 +1,5 @@
 {"title":"ListViews","weight":"10"} 
 
-# ListViews
-
 *   [Introduction](#Introduction)
     
 *   [Concepts](#Concepts)

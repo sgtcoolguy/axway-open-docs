@@ -1,7 +1,5 @@
 {"title":"CoverFlow","weight":"40"} 
 
-# CoverFlow
-
 Demonstrates basic use of the CoverFlowView control, an iOS-only control that presents a list of scrollable images in a style consistent with that used for iPod, iTunes, and file browsing.
 
 Example App Source Location

@@ -1,7 +1,5 @@
 {"title":"ACS 2013 Release Notes","weight":"120"} 
 
-# ACS 2013 Release Notes
-
 *   [ACS 2013 18 December Release Note](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Release_Notes/ACS_2013_Release_Notes/ACS_2013_18_December_Release_Note/)
     
 *   [ACS 2013 6 December Release Note](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Release_Notes/ACS_2013_Release_Notes/ACS_2013_6_December_Release_Note/)

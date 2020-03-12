@@ -1,7 +1,5 @@
 {"title":"Alloy Samples","weight":"40"} 
 
-# Alloy Samples
-
 This document provides a top-level list of links to Alloy samples.
 
 *   [User Interface](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/User_Interface/)

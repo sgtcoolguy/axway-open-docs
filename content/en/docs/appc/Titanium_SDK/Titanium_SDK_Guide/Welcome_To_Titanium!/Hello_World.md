@@ -1,7 +1,5 @@
 {"title":"Hello World","weight":"10"} 
 
-# Hello World
-
 *   [Objective](#Objective)
     
 *   [Creating a New Mobile Project](#CreatingaNewMobileProject)

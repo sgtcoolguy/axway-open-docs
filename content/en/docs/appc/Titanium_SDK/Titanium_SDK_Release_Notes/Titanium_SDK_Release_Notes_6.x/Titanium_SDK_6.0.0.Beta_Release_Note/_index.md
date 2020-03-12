@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 6.0.0.Beta Release Note","weight":"220"} 
 
-# Titanium SDK 6.0.0.Beta Release Note
-
 ## Titanium SDK 6.0.0.Beta - 18 October 2016
 
 *   [Notice of feature and behavior changes](#Noticeoffeatureandbehaviorchanges)

@@ -1,7 +1,5 @@
 {"title":"Setting up an external web server to preview PHP and other non-HTML pages","weight":"50"} 
 
-# Setting up an external web server to preview PHP and other non-HTML pages
-
 To preview PHP pages and have them rendered appropriately you need a web server, such as [XAMPP](http://www.apachefriends.org/en/xampp.html), which can serve PHP pages. If you are using OS X, you may be able to use the pre-bundled web server that comes with the operating system, or you can download XAMPP too. In either case, the instructions will be relatively similar.
 
 *   [Install XAMPP](#InstallXAMPP)

@@ -1,7 +1,5 @@
 {"title":"PyDev Django","weight":"90"} 
 
-# PyDev Django
-
 ## Django
 
 ### Pre-requisites

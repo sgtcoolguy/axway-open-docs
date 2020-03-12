@@ -1,7 +1,5 @@
 {"title":"AMPLIFY Crash Analytics","weight":"20"} 
 
-# AMPLIFY Crash Analytics
-
 *   [Introduction](#Introduction)
     
 *   [Requirements](#Requirements)

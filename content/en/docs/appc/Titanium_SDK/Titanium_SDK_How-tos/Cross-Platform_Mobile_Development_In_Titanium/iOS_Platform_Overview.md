@@ -1,7 +1,5 @@
 {"title":"iOS Platform Overview","weight":"20"} 
 
-# iOS Platform Overview
-
 *   [User interface conventions](#Userinterfaceconventions)
     
 *   [Minimalist hardware design](#Minimalisthardwaredesign)

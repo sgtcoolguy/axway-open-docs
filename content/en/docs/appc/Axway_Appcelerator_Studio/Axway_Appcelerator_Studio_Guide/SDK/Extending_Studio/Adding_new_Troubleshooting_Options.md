@@ -1,7 +1,5 @@
 {"title":"Adding new Troubleshooting Options","weight":"50"} 
 
-# Adding new Troubleshooting Options
-
 Studio provides a sophisticated mechanism for allowing users to turn on and off various bits of logging in their code. Please see [Debugging Studio](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Studio_Troubleshooting/Debugging_Studio/) for details on the user interactions.
 
 ## Logging

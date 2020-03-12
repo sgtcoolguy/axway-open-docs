@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI 4.1.0 - 08 July 2015","weight":"40"} 
 
-# Appcelerator CLI 4.1.0 - 08 July 2015
-
 Appcelerator CLI 4.1.0 is a minor release, introducing new features, improvements and bug fixes. This release of the Appcelerator CLI includes version 4.1.0 of the NPM package and version 4.1.0 of the Core package.
 
 See the [full list of issues addressed in Release 4.1.0](https://jira.appcelerator.org/issues/?filter=16885).

@@ -1,7 +1,5 @@
 {"title":"DashboardView Binding","weight":"30"} 
 
-# DashboardView Binding
-
 Demonstrates how to use data binding with a DashboardView, which provides an iOS Springboard-like view.
 
 App Folder Location

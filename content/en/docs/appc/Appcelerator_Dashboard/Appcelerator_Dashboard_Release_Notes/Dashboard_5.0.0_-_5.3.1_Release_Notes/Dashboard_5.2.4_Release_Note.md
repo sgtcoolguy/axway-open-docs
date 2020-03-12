@@ -1,7 +1,5 @@
 {"title":"Dashboard 5.2.4 Release Note","weight":"30"} 
 
-# Dashboard 5.2.4 Release Note
-
 ## Dashboard 5.2.4 - 4 December 2018
 
 Dashboard 5.2.4 is a patch release, which includes two bug fixes.

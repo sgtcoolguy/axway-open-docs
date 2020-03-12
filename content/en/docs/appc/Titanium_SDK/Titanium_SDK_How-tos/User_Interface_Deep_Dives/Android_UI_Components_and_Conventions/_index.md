@@ -1,7 +1,5 @@
 {"title":"Android UI Components and Conventions","weight":"100"} 
 
-# Android UI Components and Conventions
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

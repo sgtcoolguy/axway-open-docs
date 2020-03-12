@@ -1,7 +1,5 @@
 {"title":"PyDev Context-insensitive completions","weight":"50"} 
 
-# PyDev Context-insensitive completions
-
 The 'context-insensitive' code completion brings up completions with tokens found it the pythonpath and automatically imports the module that contains that token when selected.
 
 It is shown only when the completion is requested for the globals and 3 characteres are already typed.

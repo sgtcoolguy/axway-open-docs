@@ -1,7 +1,5 @@
 {"title":"Software Locations and Environment Variables","weight":"60"} 
 
-# Software Locations and Environment Variables
-
 *   [Overview](#Overview)
     
 *   [Configuration](#Configuration)

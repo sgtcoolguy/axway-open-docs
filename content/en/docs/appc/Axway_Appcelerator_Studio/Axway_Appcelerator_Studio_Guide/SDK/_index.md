@@ -1,7 +1,5 @@
 {"title":"SDK","weight":"50"} 
 
-# SDK
-
 This document provides a series of links for Titanium SDK.
 
 *   [Studio Architecture](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Studio_Architecture/)

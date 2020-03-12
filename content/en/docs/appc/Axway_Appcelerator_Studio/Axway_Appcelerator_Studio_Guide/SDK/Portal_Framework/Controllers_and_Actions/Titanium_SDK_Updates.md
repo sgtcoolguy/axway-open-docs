@@ -1,7 +1,5 @@
 {"title":"Titanium SDK Updates","weight":"110"} 
 
-# Titanium SDK Updates
-
 *   [Requirements](#Requirements)
     
 *   [Description](#Description)

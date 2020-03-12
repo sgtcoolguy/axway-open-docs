@@ -1,7 +1,5 @@
 {"title":"Basic Widget","weight":"10"} 
 
-# Basic Widget
-
 Demonstrates how to create and use a basic widget.
 
 App Folder Location

@@ -1,7 +1,5 @@
 {"title":"ArrowDB 1.1.13 - 11 June 2015","weight":"40"} 
 
-# ArrowDB 1.1.13 - 11 June 2015
-
 ## New features
 
 *   Added the ability to batch create custom objects using the [objects/:classname/batch\_create.json method](/arrowdb/latest/#!/api/CustomObjects-method-batch_create).

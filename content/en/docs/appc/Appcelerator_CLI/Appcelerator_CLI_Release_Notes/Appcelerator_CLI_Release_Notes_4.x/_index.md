@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI Release Notes 4.x","weight":"40"} 
 
-# Appcelerator CLI Release Notes 4.x
-
 *   [Appcelerator CLI 4.1.3 Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_4.x/Appcelerator_CLI_4.1.3_Release_Note/)
     
 *   [Appcelerator CLI 4.1.2 Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_4.x/Appcelerator_CLI_4.1.2_Release_Note/)

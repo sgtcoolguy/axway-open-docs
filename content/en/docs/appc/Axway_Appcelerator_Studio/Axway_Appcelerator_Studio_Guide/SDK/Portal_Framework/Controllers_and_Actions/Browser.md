@@ -1,7 +1,5 @@
 {"title":"Browser","weight":"10"} 
 
-# Browser
-
 *   [Requirements](#Requirements)
     
 *   [Invocation](#Invocation)

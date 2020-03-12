@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 8.1.1.GA - 29 August 2019","weight":"10"} 
 
-# Titanium SDK 8.1.1.GA - 29 August 2019
-
 *   [About this release](#Aboutthisrelease)
     
 *   [Community credits](#Communitycredits)

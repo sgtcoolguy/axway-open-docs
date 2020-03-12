@@ -1,7 +1,5 @@
 {"title":"Managing Access Control Lists","weight":"10"} 
 
-# Managing Access Control Lists
-
 Access control lists let you control read and write access to Mobile Backend Services (MBS) objects. Read permission includes the ability to show, query, and search MBS objects. Write permission includes the ability to update and delete MBS objects. An Access Control List (ACL) consists of the following:
 
 *   A public read flag granting read permission to all users, **or** a list of users granted read permission

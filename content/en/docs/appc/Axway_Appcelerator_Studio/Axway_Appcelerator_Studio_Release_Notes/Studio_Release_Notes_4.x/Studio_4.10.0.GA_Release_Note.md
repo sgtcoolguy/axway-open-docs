@@ -1,7 +1,5 @@
 {"title":"Studio 4.10.0.GA - 4 October 2017","weight":"10"} 
 
-# Studio 4.10.0.GA - 4 October 2017
-
 Axway Appcelerator Studio 4.10.0.GA is a minor release that includes new improvements and bug fixes. This release include two main highlights: Rebranding of Studio to align with Axway/Appcelerator branding and App Designer improvements.
 
 As of this release, Studio 4.9.x will not be supported six months from 4.10.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

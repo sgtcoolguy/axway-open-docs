@@ -1,7 +1,5 @@
 {"title":"PyDev Code Analysis","weight":"20"} 
 
-# PyDev Code Analysis
-
 ## PyDev Code Analysis
 
 Code analysis provides error finding in python programs. It finds common errors such as undefined tokens, duplicated signatures and warns about things such as unused variables or unused imports.

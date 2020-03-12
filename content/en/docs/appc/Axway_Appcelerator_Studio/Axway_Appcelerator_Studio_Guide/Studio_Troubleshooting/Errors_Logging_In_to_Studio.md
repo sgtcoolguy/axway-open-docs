@@ -1,7 +1,5 @@
 {"title":"Errors Logging In to Studio","weight":"60"} 
 
-# Errors Logging In to Studio
-
 *   [Overview](#Overview)
     
 *   [Trouble logging in](#Troubleloggingin)

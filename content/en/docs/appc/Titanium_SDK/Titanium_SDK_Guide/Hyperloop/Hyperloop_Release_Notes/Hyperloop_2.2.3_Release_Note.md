@@ -1,7 +1,5 @@
 {"title":"Hyperloop 2.2.3 - 29 November 2017","weight":"20"} 
 
-# Hyperloop 2.2.3 - 29 November 2017
-
 Hyperloop 2.2.3 is a patch release that includes one bug fix.
 
 ## Fixed issues

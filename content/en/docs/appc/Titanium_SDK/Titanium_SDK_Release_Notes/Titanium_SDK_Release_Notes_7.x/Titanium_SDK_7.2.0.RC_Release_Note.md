@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 7.2.0.RC - 7 June 2018","weight":"200"} 
 
-# Titanium SDK 7.2.0.RC - 7 June 2018
-
 *   [About this release](#Aboutthisrelease)
     
 *   [GDPR](#GDPR)

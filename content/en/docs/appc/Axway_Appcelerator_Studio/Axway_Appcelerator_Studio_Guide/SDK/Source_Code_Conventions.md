@@ -1,7 +1,5 @@
 {"title":"Source Code Conventions","weight":"50"} 
 
-# Source Code Conventions
-
 For those contributing to the Aptana source code base, we follow a few conventions.
 
 *   [Code Submission Checklist](#CodeSubmissionChecklist)

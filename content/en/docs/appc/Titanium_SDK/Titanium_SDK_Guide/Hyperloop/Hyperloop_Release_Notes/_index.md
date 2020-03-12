@@ -1,7 +1,5 @@
 {"title":"Hyperloop Release Notes","weight":"30"} 
 
-# Hyperloop Release Notes
-
 ## Hyperloop 3.0.0 - 17 November 2017
 
 Hyperloop 3.0.0 is a major release that includes new features, improvements, and bug fixes.

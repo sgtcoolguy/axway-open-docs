@@ -1,7 +1,5 @@
 {"title":"Accessing the Log File","weight":"10"} 
 
-# Accessing the Log File
-
 *   [Overview](#Overview)
     
 *   [Accessing the Log](#AccessingtheLog)

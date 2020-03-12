@@ -1,7 +1,5 @@
 {"title":"Enabling Hyperloop","weight":"10"} 
 
-# Enabling Hyperloop
-
 *   [Introduction](#Introduction)
     
     *   [Requirements](#Requirements)

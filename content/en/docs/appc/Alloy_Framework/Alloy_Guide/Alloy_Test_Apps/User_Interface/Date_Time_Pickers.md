@@ -1,7 +1,5 @@
 {"title":"Date Time Pickers","weight":"60"} 
 
-# Date Time Pickers
-
 Demonstrates how to create a date/time picker using the Picker control.
 
 Example App Source Location

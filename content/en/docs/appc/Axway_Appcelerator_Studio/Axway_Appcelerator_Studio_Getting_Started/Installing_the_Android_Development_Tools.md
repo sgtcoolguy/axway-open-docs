@@ -1,7 +1,5 @@
 {"title":"Installing the Android Development Tools","weight":"50"} 
 
-# Installing the Android Development Tools
-
 *   [Overview](#Overview)
     
 *   [Install the Eclipse Java Development Tools plugin](#InstalltheEclipseJavaDevelopmentToolsplugin)

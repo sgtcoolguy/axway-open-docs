@@ -1,7 +1,5 @@
 {"title":"Alloy Debugging and Troubleshooting","weight":"20"} 
 
-# Alloy Debugging and Troubleshooting
-
 *   [Overview](#Overview)
     
 *   [Debugging](#Debugging)

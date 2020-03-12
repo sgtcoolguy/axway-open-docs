@@ -1,7 +1,5 @@
 {"title":"Audio APIs","weight":"10"} 
 
-# Audio APIs
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

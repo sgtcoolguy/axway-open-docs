@@ -1,7 +1,5 @@
 {"title":"Windows Hyperloop Programming Guide","weight":"50"} 
 
-# Windows Hyperloop Programming Guide
-
 *   [Requirements](#Requirements)
     
 *   [Classes](#Classes)

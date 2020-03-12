@@ -1,7 +1,5 @@
 {"title":"Titanium SDK New API Notices","weight":"50"} 
 
-# Titanium SDK New API Notices
-
 This document lists every SDK new API notice.
 
 *   [SDK 8.x](#SDK8.x)

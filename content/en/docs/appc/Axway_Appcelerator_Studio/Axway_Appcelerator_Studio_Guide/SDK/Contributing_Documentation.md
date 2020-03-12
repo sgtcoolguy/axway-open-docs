@@ -1,7 +1,5 @@
 {"title":"Contributing Documentation","weight":"70"} 
 
-# Contributing Documentation
-
 This document provides basic information on how to contribute to the Appcelerator documentation space within Confluence.
 
 *   [Keep it simple and consistent](#Keepitsimpleandconsistent)

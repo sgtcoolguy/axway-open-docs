@@ -1,7 +1,5 @@
 {"title":"Launch Actions","weight":"30"} 
 
-# Launch Actions
-
 *   [Requirements](#Requirements)
     
 *   [Description](#Description)

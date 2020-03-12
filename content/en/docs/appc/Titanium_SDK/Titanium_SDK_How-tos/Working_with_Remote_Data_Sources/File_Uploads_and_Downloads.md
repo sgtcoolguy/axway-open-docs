@@ -1,7 +1,5 @@
 {"title":"File Uploads and Downloads","weight":"60"} 
 
-# File Uploads and Downloads
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

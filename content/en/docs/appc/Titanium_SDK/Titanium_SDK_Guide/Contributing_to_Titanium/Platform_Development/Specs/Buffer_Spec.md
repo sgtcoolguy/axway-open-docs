@@ -1,7 +1,5 @@
 {"title":"Buffer Spec","weight":"10"} 
 
-# Buffer Spec
-
 ## Contents
 
 *   [Overview](#Overview)

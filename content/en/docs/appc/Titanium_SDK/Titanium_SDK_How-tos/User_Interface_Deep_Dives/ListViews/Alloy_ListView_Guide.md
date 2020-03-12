@@ -1,7 +1,5 @@
 {"title":"Alloy ListView Guide","weight":"10"} 
 
-# Alloy ListView Guide
-
 *   [Introduction](#Introduction)
     
 *   [ListView basics](#ListViewbasics)

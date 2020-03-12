@@ -1,7 +1,5 @@
 {"title":"Dashboard 7.1.1 Release Note","weight":"40"} 
 
-# Dashboard 7.1.1 Release Note
-
 ## Dashboard 7.1.1 - 6 November 2019
 
 Dashboard 7.1.1 is a patch release, which includes an improvement and several bug fixes.

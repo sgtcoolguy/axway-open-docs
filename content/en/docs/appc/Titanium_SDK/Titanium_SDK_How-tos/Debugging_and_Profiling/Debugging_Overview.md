@@ -1,7 +1,5 @@
 {"title":"Debugging Overview","weight":"10"} 
 
-# Debugging Overview
-
 *   [Essential elements of debugging](#Essentialelementsofdebugging)
     
 *   [Debugging techniques](#Debuggingtechniques)

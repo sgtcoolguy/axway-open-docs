@@ -1,7 +1,5 @@
 {"title":"Alloy How-tos","weight":"30"} 
 
-# Alloy How-tos
-
 This chapter has several sections dedicated to how-to instructions for Alloy.
 
 *   [Alloy Best Practices and Recommendations](/docs/appc/Alloy_Framework/Alloy_How-tos/Alloy_Best_Practices_and_Recommendations/)

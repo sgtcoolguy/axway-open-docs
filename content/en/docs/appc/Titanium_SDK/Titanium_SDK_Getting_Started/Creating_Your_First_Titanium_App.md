@@ -1,7 +1,5 @@
 {"title":"Creating Your First Titanium App","weight":"50"} 
 
-# Creating Your First Titanium App
-
 *   [Introduction](#Introduction)
     
 *   [Create a new project](#Createanewproject)

@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.9.0 - 30 August 2016","weight":"30"} 
 
-# Dashboard 4.9.0 - 30 August 2016
-
 Dashboard 4.9.0 is a minor release, which includes new features, behavior changes, improvements, and several bug fixes.
 
 ## New Features

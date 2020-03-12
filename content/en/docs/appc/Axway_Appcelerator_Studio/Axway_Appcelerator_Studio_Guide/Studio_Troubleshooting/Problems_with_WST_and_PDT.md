@@ -1,7 +1,5 @@
 {"title":"Problems with WST and PDT","weight":"110"} 
 
-# Problems with WST and PDT
-
 *   [Problem Description](#ProblemDescription)
     
 *   [Problem Source](#ProblemSource)

@@ -1,7 +1,5 @@
 {"title":"PyDev Code Coverage","weight":"30"} 
 
-# PyDev Code Coverage
-
 ## Code coverage
 
 ### Requisites

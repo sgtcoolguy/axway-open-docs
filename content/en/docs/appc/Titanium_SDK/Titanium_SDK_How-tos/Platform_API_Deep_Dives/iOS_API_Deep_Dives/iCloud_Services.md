@@ -1,7 +1,5 @@
 {"title":"iCloud Services","weight":"40"} 
 
-# iCloud Services
-
 *   [Introduction](#Introduction)
     
     *   [Apple best practices](#Applebestpractices)

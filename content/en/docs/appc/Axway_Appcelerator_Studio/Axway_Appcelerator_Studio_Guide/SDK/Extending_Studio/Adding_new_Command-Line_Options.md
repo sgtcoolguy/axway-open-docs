@@ -1,7 +1,5 @@
 {"title":"Adding new Command-Line Options","weight":"20"} 
 
-# Adding new Command-Line Options
-
 If you wish a user to have additional control over their environment, you can implement properties to modify the application's behavior from the command line or configuration files.
 
 ## Setting Properties

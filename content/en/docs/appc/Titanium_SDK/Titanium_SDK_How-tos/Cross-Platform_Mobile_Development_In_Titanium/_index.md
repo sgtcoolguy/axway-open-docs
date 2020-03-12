@@ -1,7 +1,5 @@
 {"title":"Cross-Platform Mobile Development In Titanium","weight":"10"} 
 
-# Cross-Platform Mobile Development In Titanium
-
 Titanium does much more than just build apps that run on multiple platforms. Its true power comes from how it helps you build _best of breed_, _native_ apps that take full advantage of the platforms on which they run. By this, we mean apps that:
 
 *   Use hardware-specific features, such as the Android menu button

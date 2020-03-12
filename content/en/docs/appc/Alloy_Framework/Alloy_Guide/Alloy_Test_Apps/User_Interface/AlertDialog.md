@@ -1,7 +1,5 @@
 {"title":"AlertDialog","weight":"10"} 
 
-# AlertDialog
-
 Demonstrates basic use of an AlertDialog.
 
 Example App Source Location

@@ -1,7 +1,5 @@
 {"title":"Deploying to Android Devices","weight":"10"} 
 
-# Deploying to Android Devices
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

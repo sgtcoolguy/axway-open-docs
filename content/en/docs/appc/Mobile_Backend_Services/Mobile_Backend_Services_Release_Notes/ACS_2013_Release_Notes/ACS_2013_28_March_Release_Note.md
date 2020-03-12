@@ -1,7 +1,5 @@
 {"title":"ACS 2013 28 March Release Note","weight":"110"} 
 
-# ACS 2013 28 March Release Note
-
 This update included a number of bug fixes and scalability improvements. Notable fixes include:
 
 *   Fixed an error that occurred when trying to create an event with the recurring field set.

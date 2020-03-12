@@ -1,7 +1,5 @@
 {"title":"Arrow Cloud 1.3.1","weight":"30"} 
 
-# Arrow Cloud 1.3.1
-
 This release of Arrow Cloud includes version 1.0.28 of the CLI and 1.3.1 of the server.
 
 **New Features and Improvements**

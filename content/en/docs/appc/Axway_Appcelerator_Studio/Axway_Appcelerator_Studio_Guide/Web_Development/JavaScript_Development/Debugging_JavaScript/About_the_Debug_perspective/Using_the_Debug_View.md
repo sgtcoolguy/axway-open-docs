@@ -1,7 +1,5 @@
 {"title":"Using the Debug View","weight":"20"} 
 
-# Using the Debug View
-
 This page describes how to use the Debug View that is part of the Debug perspective.
 
 ## Introduction

@@ -1,7 +1,5 @@
 {"title":"Android Module Upgrade Guide","weight":"40"} 
 
-# Android Module Upgrade Guide
-
 *   [Summary](#Summary)
     
 *   [Migration to SDK 7.0.0](#MigrationtoSDK7.0.0)

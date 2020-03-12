@@ -1,7 +1,5 @@
 {"title":"Alloy Best Practices and Recommendations","weight":"10"} 
 
-# Alloy Best Practices and Recommendations
-
 *   [Titanium-to-Alloy Guidance](#Titanium-to-AlloyGuidance)
     
     *   [In my Titanium application, I previously loaded libraries upon startup. In organizing my patterns with MVC, do I need to organize application functionality further under namespaces within controllers?](#InmyTitaniumapplication,Ipreviouslyloadedlibrariesuponstartup.InorganizingmypatternswithMVC,doIneedtoorganizeapplicationfunctionalityfurtherundernamespaceswithincontrollers?)

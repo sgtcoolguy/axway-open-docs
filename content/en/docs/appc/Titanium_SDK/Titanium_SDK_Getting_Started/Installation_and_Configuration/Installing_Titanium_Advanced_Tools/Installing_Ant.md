@@ -1,7 +1,5 @@
 {"title":"Installing Ant","weight":"70"} 
 
-# Installing Ant
-
 *   [Compatibility and download](#Compatibilityanddownload)
     
 *   [Installation](#Installation)

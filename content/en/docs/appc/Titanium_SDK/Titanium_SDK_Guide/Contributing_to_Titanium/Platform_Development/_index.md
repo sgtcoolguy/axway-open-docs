@@ -1,7 +1,5 @@
 {"title":"Platform Development","weight":"30"} 
 
-# Platform Development
-
 This document provides high level links to Platform Development documentation.
 
 *   [Building the Titanium SDK From Source](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Building_the_Titanium_SDK_From_Source/)

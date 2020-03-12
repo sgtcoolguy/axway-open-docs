@@ -1,7 +1,5 @@
 {"title":"Previewing","weight":"100"} 
 
-# Previewing
-
 Previewing your project means viewing the work you've created so far against a local or remote web server. Studio offers a variety of mechanisms to preview your work, depending on your configuration and project type. View the pages below to learn more how to enable the configurations.
 
 *   [Previewing a project in a web browser](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Previewing/Previewing_a_project_in_a_web_browser/)

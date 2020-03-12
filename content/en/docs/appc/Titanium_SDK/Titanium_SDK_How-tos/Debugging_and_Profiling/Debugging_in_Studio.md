@@ -1,7 +1,5 @@
 {"title":"Debugging in Studio","weight":"40"} 
 
-# Debugging in Studio
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

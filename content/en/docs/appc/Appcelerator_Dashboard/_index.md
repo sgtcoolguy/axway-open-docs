@@ -1,7 +1,5 @@
 {"title":"Appcelerator Dashboard","weight":"90"} 
 
-# Appcelerator Dashboard
-
 ## Introduction
 
 AMPLIFY Dashboard (Appcelerator Dashboard) is a web application you use to manage all aspects of your AMPLIFY Appcelerator Services development. You can manage Titanium applications, as well as iOS and Android applications built with Objective-C (or Swift) and Java. It enables you to create, deliver, analyze, and manage your mobile apps. Using the Dashboard you can do the following:

@@ -1,7 +1,5 @@
 {"title":"Appcelerator Dashboard Release Notes","weight":"30"} 
 
-# Appcelerator Dashboard Release Notes
-
 ## Dashboard 7.2.0 - 26 November 2018
 
 Dashboard 7.2.0 is a minor release, which includes an improvement and a bug fix.

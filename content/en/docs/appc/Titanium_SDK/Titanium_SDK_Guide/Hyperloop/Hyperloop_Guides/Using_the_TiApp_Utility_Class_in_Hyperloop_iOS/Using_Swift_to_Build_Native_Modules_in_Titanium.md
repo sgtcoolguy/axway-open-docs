@@ -1,7 +1,5 @@
 {"title":"Using Swift to Build Native Modules in Titanium","weight":"10"} 
 
-# Using Swift to Build Native Modules in Titanium
-
 *   [History](#History)
     
 *   [Getting Started](#GettingStarted)

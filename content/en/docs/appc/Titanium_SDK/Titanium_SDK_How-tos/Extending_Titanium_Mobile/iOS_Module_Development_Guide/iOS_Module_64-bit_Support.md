@@ -1,7 +1,5 @@
 {"title":"iOS Module 64-bit Support","weight":"40"} 
 
-# iOS Module 64-bit Support
-
 *   [Overview](#Overview)
     
 *   [Module Builds](#ModuleBuilds)

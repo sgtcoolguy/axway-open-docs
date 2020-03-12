@@ -1,7 +1,5 @@
 {"title":"AMPLIFY Runtime Services 1.6.5 Release Note","weight":"10"} 
 
-# AMPLIFY Runtime Services 1.6.5 Release Note
-
 ## AMPLIFY Runtime Services 1.6.5 - 18 October 2019
 
 AMPLIFY Runtime Services 1.6.5 is a minor release, which includes improvements and several bug fixes.

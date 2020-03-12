@@ -1,7 +1,5 @@
 {"title":"Database Best Practices","weight":"40"} 
 
-# Database Best Practices
-
 We recommend the following as best practices when working with databases in Titanium:
 
 *   [Open and close the database and resultset with each operation](#Openandclosethedatabaseandresultsetwitheachoperation)

@@ -1,7 +1,5 @@
 {"title":"Customizing Studio","weight":"30"} 
 
-# Customizing Studio
-
 Studio allows a wide range of customization options. Some common examples include:
 
 *   **[Rubles](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/)** **:** The base mechanism for most customization options. Use rubles to add or modify functionality in Studio.

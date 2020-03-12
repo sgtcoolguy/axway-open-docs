@@ -1,7 +1,5 @@
 {"title":"CSS Metadata 1.0 Specification","weight":"80"} 
 
-# CSS Metadata 1.0 Specification
-
 *   [Overview](#Overview)
     
 *   [Introduction](#Introduction)

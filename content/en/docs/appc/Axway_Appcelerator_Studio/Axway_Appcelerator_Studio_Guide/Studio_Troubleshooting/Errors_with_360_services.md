@@ -1,7 +1,5 @@
 {"title":"Troubleshooting enabling SOASTA","weight":"140"} 
 
-# Troubleshooting enabling SOASTA
-
 Along with the Studio log, after enabling Debug level, go to All in Preferences > Troubleshooting and then recreate the scenario.
 
 When a project has to be enabled for test module, the following steps are performed by Studio

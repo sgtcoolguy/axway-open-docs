@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.2.0","weight":"60"} 
 
-# Dashboard 4.2.0
-
 Dashboard 4.2.0 is a minor release, which includes behavior changes, new features, improvements and bug fixes.
 
 ## Behavior Changes

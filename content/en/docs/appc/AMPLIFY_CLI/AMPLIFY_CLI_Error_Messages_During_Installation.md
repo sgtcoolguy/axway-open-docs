@@ -1,7 +1,5 @@
 {"title":"AMPLIFY CLI Error Messages During Installation","weight":"30"} 
 
-# AMPLIFY CLI Error Messages During Installation
-
 At some point, you may experience error message during installation of one or more modules. This document aims to assist in those problems.
 
 *   [Permission denied to mkdir](#Permissiondeniedtomkdir)

@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.13.0 - 10 Aug 2017","weight":"70"} 
 
-# Dashboard 4.13.0 - 10 Aug 2017
-
 Dashboard 4.13.0 is a minor release, which includes new features, improvements, and several bug fixes.
 
 ## New features

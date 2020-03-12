@@ -1,7 +1,5 @@
 {"title":"Integrating Test with Jenkins","weight":"50"} 
 
-# Integrating Test with Jenkins
-
 Enterprise Subscription Required!
 
 This AMPLIFY Appcelerator Services feature requires an Enterprise Subscription.

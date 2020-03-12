@@ -1,7 +1,5 @@
 {"title":"Hyperloop 2.0.1 - 22 March 2017","weight":"100"} 
 
-# Hyperloop 2.0.1 - 22 March 2017
-
 Hyperloop 2.0.1 is a patch release that includes new bug fixes.
 
 ## Fixed issues

@@ -1,7 +1,5 @@
 {"title":"JSCA 1.0 Specification","weight":"30"} 
 
-# JSCA 1.0 Specification
-
 *   [Overview](#Overview)
     
 *   [Short Example](#ShortExample)

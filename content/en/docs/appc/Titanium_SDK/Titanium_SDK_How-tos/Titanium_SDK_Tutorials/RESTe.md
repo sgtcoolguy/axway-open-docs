@@ -1,7 +1,5 @@
 {"title":"RESTe","weight":"30"} 
 
-# RESTe
-
 *   [Introduction](#Introduction)
     
 *   [Developing apps before RESTe](#DevelopingappsbeforeRESTe)

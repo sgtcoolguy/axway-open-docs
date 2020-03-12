@@ -1,7 +1,5 @@
 {"title":"Installation and Configuration","weight":"40"} 
 
-# Installation and Configuration
-
 The documents in this section should help with specific installation and configuration tasks.
 
 *   [Setting up Studio](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Setting_up_Studio/)

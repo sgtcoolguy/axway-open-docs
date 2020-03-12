@@ -1,7 +1,5 @@
 {"title":"Project Configuration File (config.json)","weight":"30"} 
 
-# Project Configuration File (config.json)
-
 Alloy uses the config.json file, located in the project's app directory, to specify global values, conditional environment and platform values, and widget dependencies. The configuration file contains the following objects:
 
 Object

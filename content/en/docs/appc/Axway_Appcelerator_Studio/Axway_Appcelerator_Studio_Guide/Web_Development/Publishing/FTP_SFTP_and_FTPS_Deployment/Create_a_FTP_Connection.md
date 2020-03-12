@@ -1,7 +1,5 @@
 {"title":"Create a FTP Connection","weight":"10"} 
 
-# Create a FTP Connection
-
 You can create a FTP/SFTP/FTPS connection in the [deployment](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Publishing/FTP_SFTP_and_FTPS_Deployment/) process, or if you would like to add one without associating it to a project, through the Remote View.
 
 ## From the Remote View

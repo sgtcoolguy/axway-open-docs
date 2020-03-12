@@ -1,7 +1,5 @@
 {"title":"Dashboard 6.4.0 Release Note","weight":"30"} 
 
-# Dashboard 6.4.0 Release Note
-
 ## Dashboard 6.4.0 - 10 July 2019
 
 Dashboard 6.4.0 is a minor release, which includes several improvements and bug fixes.

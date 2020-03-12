@@ -1,7 +1,5 @@
 {"title":"Opening a Browser","weight":"80"} 
 
-# Opening a Browser
-
 *   [Overview](#Overview)
     
 *   [Opening a browser using the current selection](#Openingabrowserusingthecurrentselection)

@@ -1,7 +1,5 @@
 {"title":"Coding Best Practices","weight":"10"} 
 
-# Coding Best Practices
-
 *   [JavaScript and general recommendations](#JavaScriptandgeneralrecommendations)
     
     *   [Avoid the global scope](#Avoidtheglobalscope)

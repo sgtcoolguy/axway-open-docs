@@ -1,7 +1,5 @@
 {"title":"Windows UI Components and Conventions","weight":"120"} 
 
-# Windows UI Components and Conventions
-
 *   [Introduction](#Introduction)
     
 *   [Back button](#Backbutton)

@@ -1,7 +1,5 @@
 {"title":"Installing Required Python Packages","weight":"30"} 
 
-# Installing Required Python Packages
-
 *   [Overview](#Overview)
     
 *   [Compatibility and download](#Compatibilityanddownload)

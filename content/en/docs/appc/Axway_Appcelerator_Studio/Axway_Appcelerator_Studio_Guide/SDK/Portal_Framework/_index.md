@@ -1,7 +1,5 @@
 {"title":"Portal Framework","weight":"30"} 
 
-# Portal Framework
-
 Studio has a newly-developed portal infrastructure which allows a web page to interact with Studio through Eclipse browser-functions. This framework is generally used for creating "welcome" or "startup" pages, though it can be repurposed for any situation in which it would be handy to have a browser issue commands for Studio to act upon.
 
 Below are a collection of pages on setting up a new portal page, and adding functionality to it.

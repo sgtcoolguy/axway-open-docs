@@ -1,7 +1,5 @@
 {"title":"Alloy 1.7.33 - 22 February 2016","weight":"30"} 
 
-# Alloy 1.7.33 - 22 February 2016
-
 Alloy 1.7.33 is a patch release that includes new features, improvements, and bug fixes.
 
 As of this release, the previous Alloy patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

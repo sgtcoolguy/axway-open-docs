@@ -1,7 +1,5 @@
 {"title":"MVC Style App Framework","weight":"10"} 
 
-# MVC Style App Framework
-
 This document contains information on where to download the project scaffold, overview of core concepts and conventions, events, managing orientation UI and cross-platform and form factor files, and app namespace.
 
 *   [Download](#Download)

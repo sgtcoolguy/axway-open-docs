@@ -1,7 +1,5 @@
 {"title":"Titanium User Information","weight":"130"} 
 
-# Titanium User Information
-
 *   [Requirements](#Requirements)
     
 *   [Description](#Description)

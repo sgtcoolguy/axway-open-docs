@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 5.3.0.RC - 5 May 2016","weight":"110"} 
 
-# Titanium SDK 5.3.0.RC - 5 May 2016
-
 ## Contents
 
 *   [About This Release](#AboutThisRelease)

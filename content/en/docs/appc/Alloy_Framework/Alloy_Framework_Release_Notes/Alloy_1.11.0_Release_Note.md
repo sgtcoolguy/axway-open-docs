@@ -1,7 +1,5 @@
 {"title":"Alloy 1.11.0 - 5 January 2018","weight":"40"} 
 
-# Alloy 1.11.0 - 5 January 2018
-
 Alloy 1.10.0 is a patch release that includes one improvement.
 
 As of this release, Alloy 1.11.x will not be supported six months from 1.12.0's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

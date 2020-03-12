@@ -1,7 +1,5 @@
 {"title":"Viewing code changes with Quick Diff","weight":"60"} 
 
-# Viewing code changes with Quick Diff
-
 *   [Overview](#Overview)
     
 *   [Instructions](#Instructions)

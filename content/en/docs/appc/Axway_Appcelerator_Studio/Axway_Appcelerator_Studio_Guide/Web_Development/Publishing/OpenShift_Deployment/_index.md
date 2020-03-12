@@ -1,7 +1,5 @@
 {"title":"OpenShift Deployment","weight":"50"} 
 
-# OpenShift Deployment
-
 *   [Overview](#Overview)
     
 *   [Installation](#Installation)

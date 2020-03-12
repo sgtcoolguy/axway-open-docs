@@ -1,7 +1,5 @@
 {"title":"NavigationWindow","weight":"100"} 
 
-# NavigationWindow
-
 Demonstrates how to navigate a hierarchy of content using the NavigationWindow object.
 
 Example App Source Location

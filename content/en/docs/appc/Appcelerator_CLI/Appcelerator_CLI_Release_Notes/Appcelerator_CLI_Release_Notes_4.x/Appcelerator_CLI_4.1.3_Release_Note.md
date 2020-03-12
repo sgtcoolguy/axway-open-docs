@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI 4.1.3 - 09 September 2015","weight":"10"} 
 
-# Appcelerator CLI 4.1.3 - 09 September 2015
-
 Appcelerator CLI 4.1.3 is a patch release, addressing high-priority issues from previous releases. This release of the Appcelerator CLI includes version 4.1.1 of the NPM package and version 4.1.3 of the Core package.
 
 ## Component Versions

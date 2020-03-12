@@ -1,7 +1,5 @@
 {"title":"Windows Module Project","weight":"40"} 
 
-# Windows Module Project
-
 *   [Introduction](#Introduction)
     
 *   [Prerequisite](#Prerequisite)

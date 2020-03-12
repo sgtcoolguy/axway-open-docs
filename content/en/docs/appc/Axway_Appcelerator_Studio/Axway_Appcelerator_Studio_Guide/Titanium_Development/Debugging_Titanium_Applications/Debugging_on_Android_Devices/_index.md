@@ -1,7 +1,5 @@
 {"title":"Debugging on Android Devices","weight":"20"} 
 
-# Debugging on Android Devices
-
 *   [Introduction](#Introduction)
     
 *   [Starting a Debug Session](#StartingaDebugSession)

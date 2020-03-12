@@ -1,7 +1,5 @@
 {"title":"ACS 1.1.9 - 05 March 2015","weight":"20"} 
 
-# ACS 1.1.9 - 05 March 2015
-
 ## New features, improvements, and changes
 
 *   **ACL queries** — In prior ACS releases, any user could query ACLs created by another user. In applications created with ACS 1.1.9 and later, a user can only query ACLs they create, while an application admin can query ACLs for any arbitrary user by specifying the user\_id field.

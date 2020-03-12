@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI Release Notes","weight":"40"} 
 
-# Appcelerator CLI Release Notes
-
 ## Appcelerator CLI 7.1.2.GA - 25 November 2019
 
 Appcelerator CLI 7.1.2 GA is a patch release that includes improvements, and bug fixes.

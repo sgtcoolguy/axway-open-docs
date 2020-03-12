@@ -1,7 +1,5 @@
 {"title":"Complex Widget","weight":"20"} 
 
-# Complex Widget
-
 Demonstrates a widget using another widget.
 
 App Folder Location

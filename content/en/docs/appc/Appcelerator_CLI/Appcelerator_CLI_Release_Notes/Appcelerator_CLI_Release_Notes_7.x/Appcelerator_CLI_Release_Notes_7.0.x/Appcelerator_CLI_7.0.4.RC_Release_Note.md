@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI 7.0.4.RC - 7 June 2018","weight":"170"} 
 
-# Appcelerator CLI 7.0.4.RC - 7 June 2018
-
 Appcelerator CLI 7.0.4 is a patch release that includes one bug fix.
 
 This release primarily focuses on GDPR compliance and implementing them in the Analytics API.

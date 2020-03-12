@@ -1,7 +1,5 @@
 {"title":"Changing the VM Used with Studio","weight":"60"} 
 
-# Changing the VM Used with Studio
-
 Some Studio users may need to change the VM they use for running Studio. These instructions describe how to switch between GCJ and Sun's JVM.
 
 1\. Open a command prompt and type **java -version** to see which VM you are currently running. If you are running GCJ, the command output will look like:

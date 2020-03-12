@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 7.5.0.RC Release Note","weight":"60"} 
 
-# Titanium SDK 7.5.0.RC Release Note
-
 ## Titanium SDK 7.5.0.RC - 1 November 2018
 
 *   [About this release](#Aboutthisrelease)

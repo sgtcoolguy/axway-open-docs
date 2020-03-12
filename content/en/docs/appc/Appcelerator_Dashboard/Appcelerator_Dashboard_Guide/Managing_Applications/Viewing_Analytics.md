@@ -1,7 +1,5 @@
 {"title":"Viewing Analytics","weight":"60"} 
 
-# Viewing Analytics
-
 *   [Analytics tab for client services](#Analyticstabforclientservices)
     
     *   [Real-time tab](#Real-timetab)

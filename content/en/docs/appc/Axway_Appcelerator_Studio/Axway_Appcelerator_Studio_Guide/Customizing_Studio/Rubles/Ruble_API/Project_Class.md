@@ -1,7 +1,5 @@
 {"title":"Project Class","weight":"70"} 
 
-# Project Class
-
 The Project class contains methods and properties for interacting with a project inside Studio
 
 ## Usage

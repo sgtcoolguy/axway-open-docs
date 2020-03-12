@@ -1,7 +1,5 @@
 {"title":"Lightweight Persistence with the Properties API","weight":"20"} 
 
-# Lightweight Persistence with the Properties API
-
 *   [Reading and Writing Properties](#ReadingandWritingProperties)
     
 *   [Storing JS objects as JSON in properties](#StoringJSobjectsasJSONinproperties)

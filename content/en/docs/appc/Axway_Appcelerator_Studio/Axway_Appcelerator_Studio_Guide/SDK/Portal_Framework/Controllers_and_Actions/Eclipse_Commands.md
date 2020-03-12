@@ -1,7 +1,5 @@
 {"title":"Eclipse Commands","weight":"20"} 
 
-# Eclipse Commands
-
 *   [Requirements](#Requirements)
     
 *   [Description](#Description)

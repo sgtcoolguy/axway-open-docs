@@ -1,7 +1,5 @@
 {"title":"Source Control","weight":"80"} 
 
-# Source Control
-
 Studio offers source control for your projects via a variety of plugins. Git support is included, but you may add support for other common system by downloading a third-party plugin. See below for installation information.
 
 *   [CVS](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Source_Control/CVS/)

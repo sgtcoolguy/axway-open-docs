@@ -1,7 +1,5 @@
 {"title":"Alloy Widgets","weight":"60"} 
 
-# Alloy Widgets
-
 *   [Introduction](#Introduction)
     
 *   [Using widgets](#Usingwidgets)

@@ -1,7 +1,5 @@
 {"title":"Arrow Cloud 1.3.2 - 23 November 2015","weight":"20"} 
 
-# Arrow Cloud 1.3.2 - 23 November 2015
-
 This release of Arrow Cloud includes version 1.0.32 of the CLI and 1.3.2 of the server.
 
 **New Features and Improvements**

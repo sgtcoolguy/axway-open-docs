@@ -1,7 +1,5 @@
 {"title":"Java Coding Standards","weight":"20"} 
 
-# Java Coding Standards
-
 The purpose of this document is to lay out the expected coding style for Java source code used by Appcelerator. The rules laid out in this document apply to all Java source code written internally or accepted from community contributions. The coding standards laid out in this document are a modified version of the official Oracle coding standards for Java. This document only lists differences from the base standard, and certain aspects that should be highlighted. Furthermore, this document and the base standard cover not just syntax style, but some general "best practice" techniques that should also be adhered to.
 
 **Failure on any of the points outlined in the base standard or this document are grounds for refusing a PR until updates are made.**

@@ -1,7 +1,5 @@
 {"title":"Contributing to Open Source Titanium Modules","weight":"40"} 
 
-# Contributing to Open Source Titanium Modules
-
 **Contents**
 
 *   [Overview](#Overview)

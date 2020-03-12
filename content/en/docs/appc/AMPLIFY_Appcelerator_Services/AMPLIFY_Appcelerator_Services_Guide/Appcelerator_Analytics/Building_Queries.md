@@ -1,7 +1,5 @@
 {"title":"Building Queries","weight":"20"} 
 
-# Building Queries
-
 As of the Dashboard 5.3.0 release, the Query Builder feature has been replaced with Custom Queries feature. For additional information, refer to [Creating Custom Queries](#undefined).
 
 The Custom Query feature assists you in creating queries against the analytics data collected from your mobile application. You can create custom queries based on [featureEvents](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Analytics-method-featureEvent) in your Titanium SDK applications using the Custom Queries feature. If you have [featureEvents](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Analytics-method-featureEvent) enabled in your application, you can create queries like, "Show me how many times, in the last month, users on Android, tapped the login button".

@@ -1,7 +1,5 @@
 {"title":"Debugging iOS Apps with 3rd-party Tools","weight":"10"} 
 
-# Debugging iOS Apps with 3rd-party Tools
-
 You can debug your Titanium App using the Safari DevTools. No matter the route you take, you must ensure that your project is using the built-in JavaScriptCore framework. For projects running Titanium SDK 7.0.0 and later, this option is enabled by default. For older projects, it can be enabled as seen below.
 
 Searching for Android Debugging? [Here](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_Android_Devices/Debugging_Android_Apps_with_3rd-party_Tools/) you go!

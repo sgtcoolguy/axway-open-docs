@@ -1,7 +1,5 @@
 {"title":"Installing Genymotion","weight":"90"} 
 
-# Installing Genymotion
-
 *   [Overview](#Overview)
     
 *   [Compatibility and download](#Compatibilityanddownload)

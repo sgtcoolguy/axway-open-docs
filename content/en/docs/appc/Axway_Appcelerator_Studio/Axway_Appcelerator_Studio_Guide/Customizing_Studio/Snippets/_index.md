@@ -1,7 +1,5 @@
 {"title":"Snippets","weight":"100"} 
 
-# Snippets
-
 Snippets are small bits of template code that can be inserted while typing. They show up in your list of content assist items. Snippets are similar to "editor templates" in Eclipse parlance, but can be contributed via script.
 
 Some key items:

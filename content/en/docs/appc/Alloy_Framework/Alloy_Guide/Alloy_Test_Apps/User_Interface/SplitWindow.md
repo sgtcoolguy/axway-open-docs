@@ -1,7 +1,5 @@
 {"title":"SplitWindow","weight":"160"} 
 
-# SplitWindow
-
 Demonstrates how to use a SplitWindow control, an iPad-only control for managing the presentation of two views in a master-detail UI.
 
 Example App Source Location

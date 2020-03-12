@@ -1,7 +1,5 @@
 {"title":"CVS","weight":"10"} 
 
-# CVS
-
 *   [CVS Support](#CVSSupport)
     
 *   [Installation](#Installation)

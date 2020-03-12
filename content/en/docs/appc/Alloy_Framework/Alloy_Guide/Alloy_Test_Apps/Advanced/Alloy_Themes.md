@@ -1,7 +1,5 @@
 {"title":"Alloy Themes","weight":"10"} 
 
-# Alloy Themes
-
 This document demonstrates how to use Alloy themes to easily style your entire application UI for different platforms.
 
 App folder location

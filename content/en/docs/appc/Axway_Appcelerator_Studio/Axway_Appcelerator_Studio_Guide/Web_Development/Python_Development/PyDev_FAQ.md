@@ -1,7 +1,5 @@
 {"title":"PyDev FAQ","weight":"50"} 
 
-# PyDev FAQ
-
 *   [How do I Report a BUG?](#HowdoIReportaBUG?)
     
 *   [How do I Report a Feature Request?](#HowdoIReportaFeatureRequest?)

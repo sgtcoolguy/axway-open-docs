@@ -1,7 +1,5 @@
 {"title":"Dashboard 5.0.1 Release Note","weight":"120"} 
 
-# Dashboard 5.0.1 Release Note
-
 ## Dashboard 5.0.1 - 16 July 2018
 
 Dashboard 5.0.1 is a patch release, which includes improvements and several bug fixes.

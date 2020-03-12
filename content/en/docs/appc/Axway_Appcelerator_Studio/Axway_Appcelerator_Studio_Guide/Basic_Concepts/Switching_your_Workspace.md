@@ -1,7 +1,5 @@
 {"title":"Switching your Workspace","weight":"60"} 
 
-# Switching your Workspace
-
 *   [Overview](#Overview)
     
 *   [Finding your workspace from Studio](#FindingyourworkspacefromStudio)

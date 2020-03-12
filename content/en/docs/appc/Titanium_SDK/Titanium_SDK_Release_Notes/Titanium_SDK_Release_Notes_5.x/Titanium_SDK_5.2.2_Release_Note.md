@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 5.2.2.GA - 4 April 2016","weight":"130"} 
 
-# Titanium SDK 5.2.2.GA - 4 April 2016
-
 ## Contents
 
 *   [About This Release](#AboutThisRelease)

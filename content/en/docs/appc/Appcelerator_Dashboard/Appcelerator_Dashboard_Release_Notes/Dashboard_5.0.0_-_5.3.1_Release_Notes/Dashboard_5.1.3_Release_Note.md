@@ -1,7 +1,5 @@
 {"title":"Dashboard 5.1.3 Release Note","weight":"80"} 
 
-# Dashboard 5.1.3 Release Note
-
 ## Dashboard 5.1.3 - 4 September 2018
 
 Dashboard 5.1.3 is a patch release, which includes new features, several improvements, and fixed issues.

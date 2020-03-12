@@ -1,7 +1,5 @@
 {"title":"Alloy Controllers Sample","weight":"10"} 
 
-# Alloy Controllers Sample
-
 This document provides a sample of how to use an Alloy Controller.
 
 ## index.js

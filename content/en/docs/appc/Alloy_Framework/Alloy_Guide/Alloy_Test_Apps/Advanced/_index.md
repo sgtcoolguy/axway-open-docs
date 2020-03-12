@@ -1,7 +1,5 @@
 {"title":"Advanced","weight":"20"} 
 
-# Advanced
-
 Samples in the advanced/ folder demonstrate advanced Alloy topics and approaches, such as advanced styling, using modules, using CommonJS modules, and more.
 
 *   [Alloy Themes](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Advanced/Alloy_Themes/) — This document demonstrates how to use Alloy themes to easily style your entire application UI for different platforms.

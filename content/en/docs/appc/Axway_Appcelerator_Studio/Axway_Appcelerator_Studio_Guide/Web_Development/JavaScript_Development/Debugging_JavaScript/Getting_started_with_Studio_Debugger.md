@@ -1,7 +1,5 @@
 {"title":"Introduction","weight":"50"} 
 
-# Introduction
-
 This walkthrough will instruct you how to install the JavaScript debugger in Firefox, add a breakpoint to your code, and display the current values of your variables.
 
 1.  Import the debugging sample as a project.

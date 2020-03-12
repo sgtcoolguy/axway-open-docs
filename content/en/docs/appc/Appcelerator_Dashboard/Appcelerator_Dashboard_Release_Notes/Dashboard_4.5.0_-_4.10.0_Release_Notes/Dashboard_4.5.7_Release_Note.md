@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.5.7","weight":"120"} 
 
-# Dashboard 4.5.7
-
 Dashboard 4.5.7 is a patch release, which includes one bug fix.
 
 ## Fixed Issue

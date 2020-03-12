@@ -1,7 +1,5 @@
 {"title":"Ruby Development","weight":"30"} 
 
-# Ruby Development
-
 *   [Preparing for Ruby development](#PreparingforRubydevelopment)
     
 *   [Creating/Importing a Ruby project](#Creating/ImportingaRubyproject)

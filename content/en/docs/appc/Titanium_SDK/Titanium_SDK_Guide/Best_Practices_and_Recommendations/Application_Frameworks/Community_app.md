@@ -1,7 +1,5 @@
 {"title":"Community app","weight":"20"} 
 
-# Community app
-
 This document contains information on where to download the community app and overview of core concepts and conventions.
 
 *   [Download](#Download)

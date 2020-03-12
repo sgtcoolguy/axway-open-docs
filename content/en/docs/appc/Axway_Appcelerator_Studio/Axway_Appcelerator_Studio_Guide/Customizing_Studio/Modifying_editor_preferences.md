@@ -1,7 +1,5 @@
 {"title":"Modifying editor preferences","weight":"50"} 
 
-# Modifying editor preferences
-
 ## Overview
 
 This page describes how to modify or customize some editor settings in Studio. Some editor settings can be modified in preferences, and can be further modified by editing a Ruble. Follow the directions below to further customize settings.

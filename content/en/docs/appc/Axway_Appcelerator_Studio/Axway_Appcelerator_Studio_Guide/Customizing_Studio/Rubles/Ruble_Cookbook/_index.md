@@ -1,7 +1,5 @@
 {"title":"Ruble Cookbook","weight":"110"} 
 
-# Ruble Cookbook
-
 A collection of examples for solving particular problems using the Ruble scripting system. If you have additional suggestions or thoughts, please add your comments, or send us your suggestions.
 
 ## Chapters

@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI Getting Started","weight":"10"} 
 
-# Appcelerator CLI Getting Started
-
 *   [Introduction](#Introduction)
     
 *   [Installation](#Installation)

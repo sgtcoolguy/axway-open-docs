@@ -1,7 +1,5 @@
 {"title":"Errors Building Titanium Projects","weight":"50"} 
 
-# Errors Building Titanium Projects
-
 *   [Overview](#Overview)
     
 *   [Run/Debug icons are greyed out](#Run/Debugiconsaregreyedout)

@@ -1,7 +1,5 @@
 {"title":"Dashboard 6.2.0 Release Note","weight":"60"} 
 
-# Dashboard 6.2.0 Release Note
-
 ## Dashboard 6.2.0 - 17 May 2019
 
 Dashboard 6.2.0 is a minor release, which includes new features, improvements, behavior changes, and bug fixes.

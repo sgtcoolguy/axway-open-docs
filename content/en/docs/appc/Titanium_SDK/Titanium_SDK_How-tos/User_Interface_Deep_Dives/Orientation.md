@@ -1,7 +1,5 @@
 {"title":"Orientation","weight":"40"} 
 
-# Orientation
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

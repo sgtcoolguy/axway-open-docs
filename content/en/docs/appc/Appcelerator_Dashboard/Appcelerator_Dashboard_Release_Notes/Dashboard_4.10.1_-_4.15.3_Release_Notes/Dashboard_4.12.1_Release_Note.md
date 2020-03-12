@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.12.1 - 11 May 2017","weight":"110"} 
 
-# Dashboard 4.12.1 - 11 May 2017
-
 Dashboard 4.12.1 is a patch release, which includes an improvement and multiple bug fixes.
 
 ## Improvement

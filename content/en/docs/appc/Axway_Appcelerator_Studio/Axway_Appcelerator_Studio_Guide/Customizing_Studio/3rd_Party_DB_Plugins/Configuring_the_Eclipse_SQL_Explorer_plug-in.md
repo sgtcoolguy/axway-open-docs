@@ -1,7 +1,5 @@
 {"title":"Configuring the Eclipse SQL Explorer plug-in","weight":"10"} 
 
-# Configuring the Eclipse SQL Explorer plug-in
-
 ## Introduction
 
 This group of Help topics will teach you how to install the SQL Explorer plug-in and how to configure it for use with a database in RadRails.

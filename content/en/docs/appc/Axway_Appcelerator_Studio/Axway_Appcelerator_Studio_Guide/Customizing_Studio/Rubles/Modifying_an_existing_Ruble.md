@@ -1,7 +1,5 @@
 {"title":"Modifying an existing Ruble","weight":"90"} 
 
-# Modifying an existing Ruble
-
 *   [Overview](#Overview)
     
 *   [Modifying an existing Ruble](#ModifyinganexistingRuble)

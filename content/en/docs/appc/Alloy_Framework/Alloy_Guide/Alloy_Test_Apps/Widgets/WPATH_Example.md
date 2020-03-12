@@ -1,7 +1,5 @@
 {"title":"WPATH Example","weight":"40"} 
 
-# WPATH Example
-
 Demonstrates how to use the WPATH() macro to easily map image and library paths to the widget folder.
 
 App Folder Location

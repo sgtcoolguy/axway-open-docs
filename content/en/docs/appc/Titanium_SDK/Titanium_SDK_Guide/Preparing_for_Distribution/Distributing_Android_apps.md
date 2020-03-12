@@ -1,7 +1,5 @@
 {"title":"Distributing Android apps","weight":"20"} 
 
-# Distributing Android apps
-
 *   [Register with Google Play](#RegisterwithGooglePlay)
     
 *   [Generate a keypair and certificate](#Generateakeypairandcertificate)

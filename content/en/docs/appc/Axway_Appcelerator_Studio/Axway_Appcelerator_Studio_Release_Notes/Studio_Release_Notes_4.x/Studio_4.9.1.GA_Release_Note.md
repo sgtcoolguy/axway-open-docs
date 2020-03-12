@@ -1,7 +1,5 @@
 {"title":"Studio 4.9.1.GA - 3 August 2017","weight":"30"} 
 
-# Studio 4.9.1.GA - 3 August 2017
-
 Studio 4.9.1.GA is a patch release that includes one new improvement and several bug fixes.
 
 As of this GA release, the previous Studio patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

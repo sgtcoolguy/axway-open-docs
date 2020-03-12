@@ -1,7 +1,5 @@
 {"title":"Spotlight Search","weight":"70"} 
 
-# Spotlight Search
-
 *   [Introduction](#Introduction)
     
     *   [Private vs. public indexing](#Privatevs.publicindexing)

@@ -1,7 +1,5 @@
 {"title":"AMPLIFY Runtime Services Command-Line Interface Reference","weight":"10"} 
 
-# AMPLIFY Runtime Services Command-Line Interface Reference
-
 *   [Introduction](#Introduction)
     
 *   [Setup](#Setup)

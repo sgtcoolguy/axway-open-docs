@@ -1,7 +1,5 @@
 {"title":"Alloy Tasks in Studio","weight":"10"} 
 
-# Alloy Tasks in Studio
-
 *   [Creating an Alloy Project](#CreatinganAlloyProject)
     
 *   [Creating a Controller](#CreatingaController)

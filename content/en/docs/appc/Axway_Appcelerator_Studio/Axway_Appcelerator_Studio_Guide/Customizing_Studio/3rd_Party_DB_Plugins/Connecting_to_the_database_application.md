@@ -1,7 +1,5 @@
 {"title":"Connecting to the database application","weight":"20"} 
 
-# Connecting to the database application
-
 ## Introduction
 
 This Help topic will teach you how to connect to your database connection in SQL Explorer with RadRails. This is the fourth step in configuring SQL Explorer to work with RadRails. You will need to [create a new connection to your database](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Creating_a_new_connection_in_SQL_Explorer/) before following the instructions below.

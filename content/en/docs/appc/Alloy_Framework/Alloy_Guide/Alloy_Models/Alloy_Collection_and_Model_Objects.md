@@ -1,7 +1,5 @@
 {"title":"Alloy Collection and Model Objects","weight":"50"} 
 
-# Alloy Collection and Model Objects
-
 *   [Models](#Models)
     
     *   [Configuration object](#Configurationobject)

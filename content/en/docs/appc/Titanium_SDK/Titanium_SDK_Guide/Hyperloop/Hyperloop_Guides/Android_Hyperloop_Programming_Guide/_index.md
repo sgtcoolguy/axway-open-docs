@@ -1,7 +1,5 @@
 {"title":"Android Hyperloop Programming Guide","weight":"20"} 
 
-# Android Hyperloop Programming Guide
-
 *   [Requirements](#Requirements)
     
     *   [Software](#Software)

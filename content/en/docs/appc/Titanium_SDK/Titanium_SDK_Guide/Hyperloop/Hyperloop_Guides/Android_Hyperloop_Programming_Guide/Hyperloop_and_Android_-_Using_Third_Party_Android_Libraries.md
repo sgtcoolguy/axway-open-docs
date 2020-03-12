@@ -1,7 +1,5 @@
 {"title":"Hyperloop and Android - Using Third Party Android Libraries","weight":"10"} 
 
-# Hyperloop and Android - Using Third Party Android Libraries
-
 *   [The AAR file](#TheAARfile)
     
 *   [Setting up the app](#Settinguptheapp)

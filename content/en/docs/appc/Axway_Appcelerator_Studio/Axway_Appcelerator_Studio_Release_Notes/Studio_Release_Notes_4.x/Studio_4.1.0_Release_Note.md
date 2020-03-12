@@ -1,7 +1,5 @@
 {"title":"Studio 4.1.0 - 08 July 2015","weight":"240"} 
 
-# Studio 4.1.0 - 08 July 2015
-
 Studio 4.1.0 is a feature release of Studio, introducing a number of new features, improvements and bug fixes. See the [full list of issues addressed in Release 4.1.0](https://jira.appcelerator.org/issues/?filter=16877).
 
 As of this release, Studio 4.0.x will not be supported six months from 4.1.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

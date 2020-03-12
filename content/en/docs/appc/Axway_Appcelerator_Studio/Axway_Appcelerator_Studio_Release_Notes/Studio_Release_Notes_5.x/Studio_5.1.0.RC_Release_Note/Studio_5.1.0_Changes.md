@@ -1,7 +1,5 @@
 {"title":"Studio 5.1.0 Changes","weight":"10"} 
 
-# Studio 5.1.0 Changes
-
 *   [Cannot update from Studio 5.0.0 to Studio 5.1.0](#CannotupdatefromStudio5.0.0toStudio5.1.0)
     
 *   [Noteworthy changes](#Noteworthychanges)

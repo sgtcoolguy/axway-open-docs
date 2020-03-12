@@ -1,7 +1,5 @@
 {"title":"Current Theme Scopes","weight":"20"} 
 
-# Current Theme Scopes
-
 *   [Overview](#Overview)
     
 *   [General Tokens](#GeneralTokens)

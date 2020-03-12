@@ -1,7 +1,5 @@
 {"title":"Dashboard 5.3.0 Release Note","weight":"20"} 
 
-# Dashboard 5.3.0 Release Note
-
 ## Dashboard 5.3.0 - 3 January 2019
 
 Dashboard 5.3.0 is a minor release, which includes new features, improvements, and bug fixes.

@@ -1,7 +1,5 @@
 {"title":"PyDev Project Configuration","weight":"40"} 
 
-# PyDev Project Configuration
-
 Here you will learn to **further configure your project** and add Python information to an already existing project.
 
 The first thing to know about PyDev is that to use it to its 'full extent', you must have your python modules beneath a **source folder** (the source folders are the paths that are added to your PYTHONPATH).

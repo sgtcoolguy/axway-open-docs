@@ -1,7 +1,5 @@
 {"title":"AMPLIFY Appcelerator Services Overview","weight":"30"} 
 
-# AMPLIFY Appcelerator Services Overview
-
 Welcome to the AMPLIFY Appcelerator Services. The AMPLIFY Appcelerator Services extends Appcelerator's Titanium platform to help you manage the entire lifecycle of the application with debugging, testing, deployment, crash monitoring and analytic data collection. The AMPLIFY Appcelerator Services works with cross-platform, native applications built with [Alloy](/docs/appc/Alloy_Framework/) and the [Titanium SDK](/docs/appc/Titanium_SDK/), Android applications built with Java and the Android APIs, and iOS applications built with Objective-C and the iOS APIs.
 
 ## At a Glance

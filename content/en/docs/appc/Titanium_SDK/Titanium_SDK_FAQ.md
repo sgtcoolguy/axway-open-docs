@@ -1,7 +1,5 @@
 {"title":"Titanium SDK FAQ","weight":"50"} 
 
-# Titanium SDK FAQ
-
 This document provides answers and links to commonly asked questions about Titanium SDK.
 
 *   [Can I use Swift code to develop apps for Android in Hyperloop?](#CanIuseSwiftcodetodevelopappsforAndroidinHyperloop?)

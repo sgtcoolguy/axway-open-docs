@@ -1,7 +1,5 @@
 {"title":"iOS Local Notifications","weight":"20"} 
 
-# iOS Local Notifications
-
 *   [Introduction](#Introduction)
     
 *   [Notification Types](#NotificationTypes)

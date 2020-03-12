@@ -1,7 +1,5 @@
 {"title":"Configuring Push Services","weight":"10"} 
 
-# Configuring Push Services
-
 *   [Configuring push services for iOS devices](#ConfiguringpushservicesforiOSdevices)
     
     *   [Create and Upload a Push Notification Certificate](#CreateandUploadaPushNotificationCertificate)

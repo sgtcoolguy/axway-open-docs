@@ -1,7 +1,5 @@
 {"title":"Windows Asset Qualifiers","weight":"10"} 
 
-# Windows Asset Qualifiers
-
 *   [Introduction](#Introduction)
     
 *   [Scale](#Scale)

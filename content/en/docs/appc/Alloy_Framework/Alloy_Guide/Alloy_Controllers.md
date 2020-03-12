@@ -1,7 +1,5 @@
 {"title":"Alloy Controllers","weight":"20"} 
 
-# Alloy Controllers
-
 *   [Overview](#Overview)
     
 *   [Controllers](#Controllers)

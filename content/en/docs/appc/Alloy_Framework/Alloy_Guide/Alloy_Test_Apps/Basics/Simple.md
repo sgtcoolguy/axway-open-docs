@@ -1,7 +1,5 @@
 {"title":"Simple","weight":"80"} 
 
-# Simple
-
 Demonstrates a basic Alloy application consisting of a single XML view file, JavaScript controller file, and Titanium Style Sheet (TSS) file.
 
 App Folder Location

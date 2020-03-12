@@ -1,7 +1,5 @@
 {"title":"Bookmarks View","weight":"10"} 
 
-# Bookmarks View
-
 *   [Introduction](#Introduction)
     
 *   [Opening the View](#OpeningtheView)

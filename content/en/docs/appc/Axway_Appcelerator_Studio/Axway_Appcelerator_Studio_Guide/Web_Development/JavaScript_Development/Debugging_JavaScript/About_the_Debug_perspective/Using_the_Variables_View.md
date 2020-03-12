@@ -1,7 +1,5 @@
 {"title":"Using the Variables View","weight":"40"} 
 
-# Using the Variables View
-
 This page describes how to use the Variables View that is part of the Debug perspective.
 
 ## Introduction

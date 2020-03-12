@@ -1,7 +1,5 @@
 {"title":"Dealing with SOAP Web Services","weight":"50"} 
 
-# Dealing with SOAP Web Services
-
 *   [Avoid SOAP if you can](#AvoidSOAPifyoucan)
     
 *   [The low-tech approach](#Thelow-techapproach)

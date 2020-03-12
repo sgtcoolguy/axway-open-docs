@@ -1,7 +1,5 @@
 {"title":"Installing the Windows SDK","weight":"30"} 
 
-# Installing the Windows SDK
-
 *   [Overview](#Overview)
     
 *   [Requirements](#Requirements)

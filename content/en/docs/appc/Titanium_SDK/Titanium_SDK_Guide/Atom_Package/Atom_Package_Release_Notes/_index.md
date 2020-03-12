@@ -1,7 +1,5 @@
 {"title":"Atom Package Release Notes","weight":"10"} 
 
-# Atom Package Release Notes
-
 ## Atom Package 1.1.0 - 22 February 2018
 
 *   [New features](#Newfeatures)

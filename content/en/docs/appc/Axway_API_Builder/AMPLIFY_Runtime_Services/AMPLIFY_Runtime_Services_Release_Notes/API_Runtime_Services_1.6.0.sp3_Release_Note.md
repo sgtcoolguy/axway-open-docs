@@ -1,7 +1,5 @@
 {"title":"API Runtime Services 1.6.0.sp3 Release Note","weight":"30"} 
 
-# API Runtime Services 1.6.0.sp3 Release Note
-
 ## API Runtime Services 1.6.0.sp3 - 26 February 2018
 
 This release of API Runtime Services 1.6.0.sp3 includes the following fixed issues.

@@ -1,7 +1,5 @@
 {"title":"Supporting Gestures","weight":"50"} 
 
-# Supporting Gestures
-
 *   [Shake](#Shake)
     
 *   [Swipe](#Swipe)

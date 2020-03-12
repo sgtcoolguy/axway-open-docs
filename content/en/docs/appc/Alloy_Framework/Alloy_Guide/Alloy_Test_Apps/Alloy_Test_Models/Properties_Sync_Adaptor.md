@@ -1,7 +1,5 @@
 {"title":"Properties Sync Adaptor","weight":"100"} 
 
-# Properties Sync Adaptor
-
 Demonstrates using Alloy's Titanium.App.Properties sync adaptor to save data.
 
 App Folder Location

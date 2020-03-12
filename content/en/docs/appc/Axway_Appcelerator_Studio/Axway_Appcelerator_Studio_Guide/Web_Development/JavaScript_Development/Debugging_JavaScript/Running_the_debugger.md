@@ -1,7 +1,5 @@
 {"title":"Running the debugger","weight":"80"} 
 
-# Running the debugger
-
 ## Introduction
 
 Once you have the JavaScript debugger configured and installed for your browser (see [Installing the JavaScript debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Installing_the_JavaScript_debugger/)), you can run the JavaScript debugger. Use the debugger to help you troubleshoot your JavaScript code.

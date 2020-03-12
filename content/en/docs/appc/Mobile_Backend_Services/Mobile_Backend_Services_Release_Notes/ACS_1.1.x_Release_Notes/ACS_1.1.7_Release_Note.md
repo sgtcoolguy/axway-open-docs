@@ -1,7 +1,5 @@
 {"title":"ACS 1.1.7 - 05 Jan 2015","weight":"30"} 
 
-# ACS 1.1.7 - 05 Jan 2015
-
 ## New features, improvements, and changes
 
 *   **Photo resizing** — By default, ACS no longer automatically resizes photo uploads. To resize photos upon upload, include the photo\_sizes\[<size>\] parameter in the request. See [Photo Uploading & Resizing](/arrowdb/latest/#!/guide/photosizes) for details.

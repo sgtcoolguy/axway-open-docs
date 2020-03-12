@@ -1,7 +1,5 @@
 {"title":"iOS Hyperloop Programming Guide","weight":"30"} 
 
-# iOS Hyperloop Programming Guide
-
 *   [Requirements](#Requirements)
     
 *   [Classes](#Classes)

@@ -1,7 +1,5 @@
 {"title":"Servers","weight":"120"} 
 
-# Servers
-
 Studio allows you to specify existing servers you have installed on your machine to start/stop those servers, as well as to hook them up to be used as Preview sources for specific projects. We do this through the **Servers** View.
 
 ## Displaying the Servers View

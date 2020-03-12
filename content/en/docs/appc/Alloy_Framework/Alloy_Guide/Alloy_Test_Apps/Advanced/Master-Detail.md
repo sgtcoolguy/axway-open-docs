@@ -1,7 +1,5 @@
 {"title":"Master-Detail","weight":"110"} 
 
-# Master-Detail
-
 Demonstrates how to create a master-detail application that presents a list of items from which the user can select to view details about that item.
 
 App folder location

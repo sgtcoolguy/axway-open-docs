@@ -1,7 +1,5 @@
 {"title":"PyDev Unittest integration","weight":"250"} 
 
-# PyDev Unittest integration
-
 ## Unittest integration
 
 On PyDev 1.6.4, an improved unittest support was introduced. It allows using different test runners (the default PyDev test runner, nose or py.test) and allows seeing the results in a view (PyUnit view) with a red/green bar which also allows re-running tests.

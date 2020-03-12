@@ -1,7 +1,5 @@
 {"title":"Objective-C and Objective-C++ Coding Standards","weight":"40"} 
 
-# Objective-C and Objective-C++ Coding Standards
-
 Contents
 
 *   [Synopsis](#Synopsis)

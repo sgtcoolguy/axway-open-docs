@@ -1,7 +1,5 @@
 {"title":"Dashboard 6.0.0 Release Note","weight":"100"} 
 
-# Dashboard 6.0.0 Release Note
-
 ## Dashboard 6.0.0 - 30 March 2019
 
 Dashboard 6.0.0 is a major release, which includes new features, improvements, and several bug fixes.

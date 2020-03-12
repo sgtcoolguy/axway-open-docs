@@ -1,7 +1,5 @@
 {"title":"Crashes and Freezes","weight":"20"} 
 
-# Crashes and Freezes
-
 *   [Overview](#Overview)
     
 *   [Freezes](#Freezes)

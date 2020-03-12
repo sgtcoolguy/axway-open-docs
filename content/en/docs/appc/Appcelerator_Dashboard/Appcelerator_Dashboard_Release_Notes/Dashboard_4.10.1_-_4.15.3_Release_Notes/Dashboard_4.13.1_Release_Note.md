@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.13.1 - 14 August 2017","weight":"60"} 
 
-# Dashboard 4.13.1 - 14 August 2017
-
 Dashboard 4.13.1 is a patch release, which includes several improvements and bug fixes.
 
 ## Improvements

@@ -1,7 +1,5 @@
 {"title":"Keybindings quick-reference","weight":"40"} 
 
-# Keybindings quick-reference
-
 The table below shows some common keybindings used in day-to-day development. The ones in bold are the some of those that you should **really** know about.
 
 Note that this is **far from being a complete** list of keybindings (in fact, it **tries** to be short). A complete list in your environment is shown when you type **Ctrl+Shift+L**. If you type it twice, it will bring you to the place where you can edit/see the keybindings you have in your installation (including keybindings from any plugin you have installed).

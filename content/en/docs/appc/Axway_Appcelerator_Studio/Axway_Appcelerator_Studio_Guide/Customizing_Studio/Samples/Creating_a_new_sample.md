@@ -1,7 +1,5 @@
 {"title":"Creating a new sample","weight":"10"} 
 
-# Creating a new sample
-
 *   [Overview](#Overview)
     
 *   [Creating a new sample](#Creatinganewsample)

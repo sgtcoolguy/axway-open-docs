@@ -1,7 +1,5 @@
 {"title":"PyDev Configuring Eclipse","weight":"70"} 
 
-# PyDev Configuring Eclipse
-
 ## Configuring Eclipse to suit your needs
 
 Well, Eclipse has lots of things you can configure, and below are some things that really make a difference...

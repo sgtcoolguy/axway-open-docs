@@ -1,7 +1,5 @@
 {"title":"Using the Expressions View","weight":"30"} 
 
-# Using the Expressions View
-
 This page describes how to use the Expressions View that is part of the Debug perspective.
 
 ## Introduction

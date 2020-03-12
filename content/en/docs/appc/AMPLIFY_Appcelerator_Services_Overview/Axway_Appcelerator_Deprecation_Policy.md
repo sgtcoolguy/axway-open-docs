@@ -1,7 +1,5 @@
 {"title":"Axway Appcelerator Deprecation Policy","weight":"30"} 
 
-# Axway Appcelerator Deprecation Policy
-
 ## Deprecation definition
 
 Deprecation should be interpreted as an announcement and warning that the version of a component, artifact, API, or service will soon be removed or disabled. Versions are deprecated rather than immediately removed to give developers time to bring affected code into up to date versions. Developers are encouraged to upgrade their code before the deprecation period ends, at that time the version is no longer available or supported.

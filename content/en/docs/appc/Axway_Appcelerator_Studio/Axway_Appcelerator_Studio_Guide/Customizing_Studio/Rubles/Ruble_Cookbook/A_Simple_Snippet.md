@@ -1,7 +1,5 @@
 {"title":"A Simple Snippet","weight":"40"} 
 
-# A Simple Snippet
-
 *   [Overview](#Overview)
     
 *   [The Code](#TheCode)

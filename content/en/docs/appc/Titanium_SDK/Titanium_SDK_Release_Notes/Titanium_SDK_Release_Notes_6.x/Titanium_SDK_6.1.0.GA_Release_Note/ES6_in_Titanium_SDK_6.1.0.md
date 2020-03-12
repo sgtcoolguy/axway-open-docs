@@ -1,7 +1,5 @@
 {"title":"ES6 in Titanium SDK 6.1.0","weight":"10"} 
 
-# ES6 in Titanium SDK 6.1.0
-
 We're introducing the ability to write ES6 (or 7) user code in Titanium SDK 6.1.0 and Alloy 1.10.0. This is a "feature preview" since the feature is not fully implemented across all of our tooling, and because it requires some flags and/or caveats. Specifically, we have moved our tooling from using uglifyjs to babylon to parse (and sometimes transform) your JS code. While this allows us to handle newer JS versions and syntax, we have not **yet** included transpilation in our build pipeline.
 
 So what does this mean? It means you could write ES6/7 code that the target platform's JS engine does not yet support and the code will error at runtime. Or that you could write code that works on iOS 9, but not iOS 8. We have plans to eventually include transpilation during the build to convert any unsupported code and/or features down to ES5 for the older JS engines ([TIMOB-24610](https://jira.appcelerator.org/browse/TIMOB-24610)).

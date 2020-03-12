@@ -1,7 +1,5 @@
 {"title":"Alloy Styles and Themes","weight":"10"} 
 
-# Alloy Styles and Themes
-
 *   [Titanium Style Sheets](#TitaniumStyleSheets)
     
     *   [Global styles](#Globalstyles)

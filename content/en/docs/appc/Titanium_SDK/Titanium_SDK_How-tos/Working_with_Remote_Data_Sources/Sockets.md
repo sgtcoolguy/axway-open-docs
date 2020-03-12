@@ -1,7 +1,5 @@
 {"title":"Sockets","weight":"20"} 
 
-# Sockets
-
 *   [Overview](#Overview)
     
 *   [Sockets explained](#Socketsexplained)

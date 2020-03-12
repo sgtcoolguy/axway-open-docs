@@ -1,7 +1,5 @@
 {"title":"Interactive Console","weight":"130"} 
 
-# Interactive Console
-
 From PyDev 2.2.2 onwards, if IPython (0.10 or 0.11) is found in the PYTHONPATH, PyDev will use it as the backend for the console.
 
 To use it, do **Ctrl+Alt+Enter** (while in the PyDev editor) to:

@@ -1,7 +1,5 @@
 {"title":"Installing the JavaScript debugger","weight":"70"} 
 
-# Installing the JavaScript debugger
-
 *   [Introduction](#Introduction)
     
 *   [Instructions for Firefox](#InstructionsforFirefox)

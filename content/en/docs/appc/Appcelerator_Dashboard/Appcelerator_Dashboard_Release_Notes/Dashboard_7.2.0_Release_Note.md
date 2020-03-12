@@ -1,7 +1,5 @@
 {"title":"Dashboard 7.2.0 Release Note","weight":"10"} 
 
-# Dashboard 7.2.0 Release Note
-
 ## Dashboard 7.2.0 - 26 November 2018
 
 Dashboard 7.2.0 is a minor release, which includes an improvement and a bug fix.

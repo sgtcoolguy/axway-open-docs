@@ -1,7 +1,5 @@
 {"title":"APS Analytics for Android","weight":"20"} 
 
-# APS Analytics for Android
-
 Pro or Enterprise Subscription Required
 
 This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.

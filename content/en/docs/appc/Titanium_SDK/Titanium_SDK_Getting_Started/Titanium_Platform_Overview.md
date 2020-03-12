@@ -1,7 +1,5 @@
 {"title":"Titanium Platform Overview","weight":"10"} 
 
-# Titanium Platform Overview
-
 *   [Introduction](#Introduction)
     
     *   [Titanium SDK](#TitaniumSDK)

@@ -1,7 +1,5 @@
 {"title":"Leverage Custom Queries to gather insights from Crash Analytics Data","weight":"30"} 
 
-# Leverage Custom Queries to gather insights from Crash Analytics Data
-
 *   [Troubleshooting crashes reported by a user](#Troubleshootingcrashesreportedbyauser)
     
 *   [Crash Events, Feature Events, and Breadcrumbs](#CrashEvents,FeatureEvents,andBreadcrumbs)

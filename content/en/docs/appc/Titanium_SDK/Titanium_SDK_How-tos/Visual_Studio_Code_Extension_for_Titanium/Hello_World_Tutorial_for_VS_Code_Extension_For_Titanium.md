@@ -1,7 +1,5 @@
 {"title":"Hello World Tutorial for VS Code Extension For Titanium","weight":"30"} 
 
-# Hello World Tutorial for VS Code Extension For Titanium
-
 This document provides the necessary information to build the "Hello World" app using the VS Code extension for Titanium.
 
 *   [Requirements](#Requirements)

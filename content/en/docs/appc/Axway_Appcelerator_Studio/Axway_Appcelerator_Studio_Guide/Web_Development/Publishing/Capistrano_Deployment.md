@@ -1,7 +1,5 @@
 {"title":"Capistrano Deployment","weight":"10"} 
 
-# Capistrano Deployment
-
 ## Introduction
 
 if you're unfamiliar with Capistrano, it's best to take a look at their documentation first to become familiar with it as a tool: [https://github.com/capistrano/capistrano/wiki](https://github.com/capistrano/capistrano/wiki)

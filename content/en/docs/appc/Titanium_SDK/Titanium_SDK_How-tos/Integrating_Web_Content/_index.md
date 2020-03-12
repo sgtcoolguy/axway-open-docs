@@ -1,7 +1,5 @@
 {"title":"Integrating Web Content","weight":"30"} 
 
-# Integrating Web Content
-
 With Titanium SDK 8.0.0, we now use [WKWebView](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/WKWebView/) to implement Ti.UI.WebView (as Apple has deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview)).
 
 While Titanium offers the power of using native UI components, sometimes it is necessary to use web content in our apps. For this reason, Titanium has the Ti.UI.WebView component that gives you access to the platform's underlying native webview. With this component you get the full range of HTML/CSS/JS capabilities that the platform has to offer.

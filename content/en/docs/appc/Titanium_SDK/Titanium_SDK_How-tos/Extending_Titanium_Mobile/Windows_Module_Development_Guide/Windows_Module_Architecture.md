@@ -1,7 +1,5 @@
 {"title":"Windows Module Architecture","weight":"30"} 
 
-# Windows Module Architecture
-
 *   [Introduction](#Introduction)
     
 *   [Module](#Module)

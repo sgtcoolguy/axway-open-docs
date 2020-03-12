@@ -1,7 +1,5 @@
 {"title":"About the Debug perspective","weight":"10"} 
 
-# About the Debug perspective
-
 *   [Introduction](#Introduction)
     
 *   [Instructions](#Instructions)

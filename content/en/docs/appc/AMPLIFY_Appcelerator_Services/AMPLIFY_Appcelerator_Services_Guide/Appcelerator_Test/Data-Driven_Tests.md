@@ -1,7 +1,5 @@
 {"title":"Data-Driven Tests","weight":"40"} 
 
-# Data-Driven Tests
-
 Enterprise Subscription Required!
 
 This AMPLIFY Appcelerator Services feature requires an Enterprise Subscription.

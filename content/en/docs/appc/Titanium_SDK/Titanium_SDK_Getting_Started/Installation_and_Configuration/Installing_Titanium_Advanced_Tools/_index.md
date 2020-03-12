@@ -1,7 +1,5 @@
 {"title":"Installing Titanium Advanced Tools","weight":"30"} 
 
-# Installing Titanium Advanced Tools
-
 ## Contents
 
 *   [Overview](#Overview)

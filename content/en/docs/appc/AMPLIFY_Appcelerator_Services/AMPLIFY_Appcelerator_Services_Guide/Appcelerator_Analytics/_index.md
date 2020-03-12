@@ -1,7 +1,5 @@
 {"title":"Appcelerator Analytics","weight":"10"} 
 
-# Appcelerator Analytics
-
 *   [Introduction](#Introduction)
     
 *   [Terminology](#Terminology)

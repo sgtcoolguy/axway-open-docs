@@ -1,7 +1,5 @@
 {"title":"Axway Appcelerator Product Lifecycle","weight":"10"} 
 
-# Axway Appcelerator Product Lifecycle
-
 *   [Overview](#Overview)
     
 *   [Release distribution phases (nominal timelines)](#Releasedistributionphases(nominaltimelines))

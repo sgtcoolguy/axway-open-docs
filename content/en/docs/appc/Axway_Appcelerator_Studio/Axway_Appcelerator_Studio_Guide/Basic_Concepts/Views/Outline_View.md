@@ -1,7 +1,5 @@
 {"title":"Outline View","weight":"20"} 
 
-# Outline View
-
 This page describes what the Outline View is and how to display it.
 
 ## Introduction

@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 6.0.0.GA - 14 November 2016","weight":"200"} 
 
-# Titanium SDK 6.0.0.GA - 14 November 2016
-
 *   [Notice of feature and behavior changes](#Noticeoffeatureandbehaviorchanges)
     
     *   [NodeJS support](#NodeJSsupport)

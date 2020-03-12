@@ -1,7 +1,5 @@
 {"title":"Titanium Compatibility Matrix","weight":"70"} 
 
-# Titanium Compatibility Matrix
-
 *   [Overview](#Overview)
     
     *   [Supported SDK releases](#SupportedSDKreleases)

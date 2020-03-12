@@ -1,7 +1,5 @@
 {"title":"Changing the Studio UI into a Different Language","weight":"90"} 
 
-# Changing the Studio UI into a Different Language
-
 *   [Overview](#Overview)
     
 *   [Downloading Translations](#DownloadingTranslations)

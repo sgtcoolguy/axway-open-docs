@@ -1,7 +1,5 @@
 {"title":"SDK Requirements JSON","weight":"60"} 
 
-# SDK Requirements JSON
-
 *   [Overview](#Overview)
     
 *   [Versioning](#Versioning)

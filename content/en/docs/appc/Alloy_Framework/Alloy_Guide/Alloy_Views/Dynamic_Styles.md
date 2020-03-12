@@ -1,7 +1,5 @@
 {"title":"Dynamic Styles","weight":"30"} 
 
-# Dynamic Styles
-
 *   [Introduction](#Introduction)
     
 *   [Define Class Styles](#DefineClassStyles)

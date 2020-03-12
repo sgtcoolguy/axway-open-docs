@@ -1,7 +1,5 @@
 {"title":"Android Titanium SDK Development Setup","weight":"20"} 
 
-# Android Titanium SDK Development Setup
-
 *   [Overview](#Overview)
     
 *   [Getting started](#Gettingstarted)

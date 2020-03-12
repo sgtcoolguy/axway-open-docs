@@ -1,7 +1,5 @@
 {"title":"Adding Popup Windows in Rubles","weight":"20"} 
 
-# Adding Popup Windows in Rubles
-
 *   [Overview](#Overview)
     
 *   [Opening a popup window to select from a list of elements](#Openingapopupwindowtoselectfromalistofelements)

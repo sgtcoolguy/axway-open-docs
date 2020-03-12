@@ -1,7 +1,5 @@
 {"title":"Test Best Practices","weight":"20"} 
 
-# Test Best Practices
-
 Enterprise Subscription Required!
 
 This AMPLIFY Appcelerator Services feature requires an Enterprise Subscription.

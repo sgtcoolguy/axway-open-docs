@@ -1,7 +1,5 @@
 {"title":"Build Configuration File (alloy.jmk)","weight":"20"} 
 
-# Build Configuration File (alloy.jmk)
-
 Alloy provides hooks to customize the compilation process using a special JavaScript file called a JS Makefile (JMK). The file needs to be named alloy.jmk and located in the project's app directory. This file can be used for common administration tasks or to fine tune the build process. It will be loaded automatically by the Alloy command line during compilation.
 
 Example of a JMK file:

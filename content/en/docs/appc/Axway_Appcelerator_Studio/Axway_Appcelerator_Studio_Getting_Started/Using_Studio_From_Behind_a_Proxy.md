@@ -1,7 +1,5 @@
 {"title":"Using Studio From Behind a Proxy","weight":"30"} 
 
-# Using Studio From Behind a Proxy
-
 *   [Overview](#Overview)
     
 *   [Startup splash screen](#Startupsplashscreen)

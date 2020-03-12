@@ -1,7 +1,5 @@
 {"title":"Changing Your Project Type","weight":"80"} 
 
-# Changing Your Project Type
-
 If you change the type or nature of your project (i.e. you decided to start using PHP in your Web project), you will want to change how Studio processes the files in your project.
 
 *   [Introduction](#Introduction)

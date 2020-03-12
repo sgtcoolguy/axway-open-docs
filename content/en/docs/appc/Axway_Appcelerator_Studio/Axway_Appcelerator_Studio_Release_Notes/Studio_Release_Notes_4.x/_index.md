@@ -1,7 +1,5 @@
 {"title":"Studio Release Notes 4.x","weight":"20"} 
 
-# Studio Release Notes 4.x
-
 *   [Studio 4.9.1.RC Release Note](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Release_Notes/Studio_Release_Notes_4.x/Studio_4.9.1.RC_Release_Note/)
     
 *   [Studio 4.9.1.GA Release Note](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Release_Notes/Studio_Release_Notes_4.x/Studio_4.9.1.GA_Release_Note/)

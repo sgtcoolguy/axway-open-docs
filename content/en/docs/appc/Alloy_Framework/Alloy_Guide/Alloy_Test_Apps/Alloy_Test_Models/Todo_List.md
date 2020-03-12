@@ -1,7 +1,5 @@
 {"title":"Todo List","weight":"170"} 
 
-# Todo List
-
 Demonstrates how to create a basic "Todos" application by binding a data collection to a TableView.
 
 App Folder Location

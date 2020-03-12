@@ -1,7 +1,5 @@
 {"title":"Android Notifications","weight":"10"} 
 
-# Android Notifications
-
 *   [Introduction](#Introduction)
     
 *   [Configure notification settings](#Configurenotificationsettings)

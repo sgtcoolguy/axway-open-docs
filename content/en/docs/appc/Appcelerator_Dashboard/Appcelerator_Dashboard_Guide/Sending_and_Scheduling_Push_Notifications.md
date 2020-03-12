@@ -1,7 +1,5 @@
 {"title":"Sending and Scheduling Push Notifications","weight":"60"} 
 
-# Sending and Scheduling Push Notifications
-
 This guide explains how to send and schedule push notifications in the Appcelerator Dashboard.
 
 *   [Sending push notifications](#Sendingpushnotifications)

@@ -1,7 +1,5 @@
 {"title":"Modifying an existing template","weight":"30"} 
 
-# Modifying an existing template
-
 ## Overview
 
 Users can create new templates or modify existing templates in order to allow easy creation of default content.

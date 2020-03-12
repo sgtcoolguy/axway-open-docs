@@ -1,7 +1,5 @@
 {"title":"Studio 5.1.2.RC - 20 February 2019","weight":"50"} 
 
-# Studio 5.1.2.RC - 20 February 2019
-
 Studio 5.1.2.RC is a patch release that includes several bug fixes.
 
 ## Fixed issues

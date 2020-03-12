@@ -1,7 +1,5 @@
 {"title":"Markup require","weight":"60"} 
 
-# Markup require
-
 Demonstrates how to build modular views using the <Require/> element to include sub-views defined in external XML files.
 
 App Folder Location

@@ -1,7 +1,5 @@
 {"title":"TDoc Specification","weight":"50"} 
 
-# TDoc Specification
-
 To see an example of this spec in use, check out the documentation for Titanium.UI.View.
 
 **Contents**

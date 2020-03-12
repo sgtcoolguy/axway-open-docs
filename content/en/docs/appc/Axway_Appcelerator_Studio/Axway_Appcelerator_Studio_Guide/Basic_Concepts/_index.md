@@ -1,7 +1,5 @@
 {"title":"Basic Concepts","weight":"10"} 
 
-# Basic Concepts
-
 In an Eclipse-based IDE, the **Workbench** is a desktop environment where you create and manage projects. The workbench consists of **Editors** and **Views** organized into **Perspectives**. The workbench consists of several different components as described below. The screen shot below displays the workbench in the Studio Default perspective.
 
 ![WorkbenchAnnotated](/Images/appc/download/attachments/30083295/WorkbenchAnnotated.png)

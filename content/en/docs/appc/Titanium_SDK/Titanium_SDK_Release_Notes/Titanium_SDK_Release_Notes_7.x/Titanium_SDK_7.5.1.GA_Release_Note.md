@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 7.5.1.GA - 26 February 2019","weight":"30"} 
 
-# Titanium SDK 7.5.1.GA - 26 February 2019
-
 *   [About this release](#Aboutthisrelease)
     
 *   [New features](#Newfeatures)

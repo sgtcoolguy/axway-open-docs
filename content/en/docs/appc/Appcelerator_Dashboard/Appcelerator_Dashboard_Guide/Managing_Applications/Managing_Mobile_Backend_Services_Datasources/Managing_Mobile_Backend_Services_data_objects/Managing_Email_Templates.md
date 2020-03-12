@@ -1,7 +1,5 @@
 {"title":"Managing Email Templates","weight":"20"} 
 
-# Managing Email Templates
-
 The Email Templates screen lets you create and edit plain text and HTML email templates. The email template's subject and body can contain [placeholder values](#placeholder) that are dynamically replaced with values you specify when sending the email using the Mobile Backend Services (MBS) [email\_from\_template](/arrowdb/latest/#!/api/Emails-method-email_from_template) REST API, Titanium.Cloud.Emails.send() method or equivalent native [iOS](http://docs.appcelerator.com/aps-sdk-apidoc/latest/ios/Classes/APSEmails.html#//api/name/send:withBlock:) or [Android](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSEmails.html) method. The email can be sent as plain text, HTML, or multi-part using these methods.
 
 *   [Creating an email template](#Creatinganemailtemplate)

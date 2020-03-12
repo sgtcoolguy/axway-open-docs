@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.15.3 - 5 December 2017","weight":"10"} 
 
-# Dashboard 4.15.3 - 5 December 2017
-
 Dashboard 4.15.3 is a patch release, which includes the following behavior change and an improvement.
 
 ## Behavior Change

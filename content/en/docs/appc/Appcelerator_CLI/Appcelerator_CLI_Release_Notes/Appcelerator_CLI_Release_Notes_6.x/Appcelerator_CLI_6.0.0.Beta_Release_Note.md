@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI 6.0.0.Beta - 18 October 2016","weight":"130"} 
 
-# Appcelerator CLI 6.0.0.Beta - 18 October 2016
-
 Appcelerator CLI 6.0.0.Beta is a patch release that includes several improvements and bug fixes.
 
 As of this release, CLI 5.x will not be supported one calendar year from 6.0.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

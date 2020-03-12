@@ -1,7 +1,5 @@
 {"title":"Appcelerator Test","weight":"20"} 
 
-# Appcelerator Test
-
 Enterprise Subscription Required!
 
 This AMPLIFY Appcelerator Services feature requires an Enterprise Subscription.

@@ -1,7 +1,5 @@
 {"title":"Titanium SDK Release Notes","weight":"40"} 
 
-# Titanium SDK Release Notes
-
 ## Titanium SDK 8.3.0.GA - 25 November 2019
 
 *   [About this release](#Aboutthisrelease)

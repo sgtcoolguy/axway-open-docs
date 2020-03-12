@@ -1,5 +1,3 @@
 {"title":"ACS 2013 11 January Release Note","weight":"160"} 
 
-# ACS 2013 11 January Release Note
-
 The namespace used by the ACS SDKs for [Android](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_Android_Mobile_Backend_Services/) and [iOS](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_iOS_Mobile_Backend_Services/) has changed from Cocoafish to ACSClient. The documentation and sample code has been updated to reflect this change.

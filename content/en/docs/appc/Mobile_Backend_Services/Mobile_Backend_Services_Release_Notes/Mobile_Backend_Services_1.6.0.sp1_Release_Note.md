@@ -1,7 +1,5 @@
 {"title":"Mobile Backend Services 1.6.0.sp1 - 27 July 2017","weight":"50"} 
 
-# Mobile Backend Services 1.6.0.sp1 - 27 July 2017
-
 This release of Mobile Backend Services (MBS) includes version 2.0.5 of the CLI and 1.6.0.sp1 of the server and includes behavior changes, new features and improvements, and several bug fixes.
 
 MBS 1.6.0.sp1 introduces mandatory dedication of three (3) swarm manager VMs in the production cluster. If you have a production deployment using 1.6.0 on-premise cluster, you will need to add these additional swarm manager hosts by following these steps:

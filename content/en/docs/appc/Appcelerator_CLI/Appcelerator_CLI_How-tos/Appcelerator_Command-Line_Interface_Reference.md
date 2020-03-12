@@ -1,7 +1,5 @@
 {"title":"Appcelerator Command-Line Interface Reference","weight":"20"} 
 
-# Appcelerator Command-Line Interface Reference
-
 *   [appc commands](#appccommands)
     
     *   [Global options](#Globaloptions)

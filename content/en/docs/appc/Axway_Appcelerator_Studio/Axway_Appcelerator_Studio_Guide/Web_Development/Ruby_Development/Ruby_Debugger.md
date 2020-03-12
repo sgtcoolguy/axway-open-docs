@@ -1,7 +1,5 @@
 {"title":"Ruby Debugger","weight":"10"} 
 
-# Ruby Debugger
-
 *   [Pre-requisites](#Pre-requisites)
     
     *   [Using ruby-debug](#Usingruby-debug)

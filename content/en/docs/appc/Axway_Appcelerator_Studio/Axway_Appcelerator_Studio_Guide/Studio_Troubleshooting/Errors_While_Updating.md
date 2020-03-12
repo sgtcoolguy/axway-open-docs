@@ -1,7 +1,5 @@
 {"title":"Errors While Updating","weight":"80"} 
 
-# Errors While Updating
-
 *   [Overview](#Overview)
     
 *   [Updating Studio](#UpdatingStudio)

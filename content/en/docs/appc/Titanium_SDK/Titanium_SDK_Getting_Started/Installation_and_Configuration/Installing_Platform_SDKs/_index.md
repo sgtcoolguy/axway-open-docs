@@ -1,7 +1,5 @@
 {"title":"Installing Platform SDKs","weight":"20"} 
 
-# Installing Platform SDKs
-
 *   [Studio Platform Configuration Tool](#StudioPlatformConfigurationTool)
     
     *   [Android settings](#Androidsettings)

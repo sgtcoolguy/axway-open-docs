@@ -1,7 +1,5 @@
 {"title":"Titanium SDK Deprecation Notices","weight":"70"} 
 
-# Titanium SDK Deprecation Notices
-
 This document lists every SDK deprecation notice.
 
 *   [SDK 8.x](#SDK8.x)

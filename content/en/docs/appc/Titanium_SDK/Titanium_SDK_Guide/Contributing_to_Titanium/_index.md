@@ -1,7 +1,5 @@
 {"title":"Contributing to Titanium","weight":"80"} 
 
-# Contributing to Titanium
-
 *   [Overview](#Overview)
     
 *   [What is Contributing?](#WhatisContributing?)

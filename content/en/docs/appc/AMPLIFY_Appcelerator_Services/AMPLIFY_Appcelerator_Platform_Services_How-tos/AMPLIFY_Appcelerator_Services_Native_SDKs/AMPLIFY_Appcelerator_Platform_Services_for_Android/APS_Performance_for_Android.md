@@ -1,7 +1,5 @@
 {"title":"APS Performance for Android","weight":"30"} 
 
-# APS Performance for Android
-
 Pro or Enterprise Subscription Required
 
 This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.

@@ -1,7 +1,5 @@
 {"title":"PyLint can be used with PyDev","weight":"180"} 
 
-# PyLint can be used with PyDev
-
 [PyLint](http://www.logilab.org/projects/pylint) is **disabled by default**, so, if you want to activate it, you should go to the pylint preferences page, **specify its location** (it MUST be installed in the site-packages) and activate it (after activating it, you can clean your project on the project menu so that the files are checked with pylint, or you can do it on deltas as you go and change your files).
 
 ![pylint_prefs](/Images/appc/pydev.org/images/pylint/pylint_prefs.png)  

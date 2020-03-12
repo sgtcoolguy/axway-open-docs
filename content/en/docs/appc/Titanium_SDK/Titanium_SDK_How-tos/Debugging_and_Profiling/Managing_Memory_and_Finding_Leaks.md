@@ -1,7 +1,5 @@
 {"title":"Managing Memory and Finding Leaks","weight":"50"} 
 
-# Managing Memory and Finding Leaks
-
 *   [JavaScript garbage collection](#JavaScriptgarbagecollection)
     
 *   [When Titanium releases memory](#WhenTitaniumreleasesmemory)

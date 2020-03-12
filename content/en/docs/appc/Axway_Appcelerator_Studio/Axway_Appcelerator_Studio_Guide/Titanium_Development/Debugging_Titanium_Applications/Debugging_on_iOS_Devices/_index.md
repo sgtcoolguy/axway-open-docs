@@ -1,7 +1,5 @@
 {"title":"Debugging on iOS Devices","weight":"30"} 
 
-# Debugging on iOS Devices
-
 *   [Overview](#Overview)
     
 *   [Requirements](#Requirements)

@@ -1,7 +1,5 @@
 {"title":"JavaScript Development","weight":"20"} 
 
-# JavaScript Development
-
 This document contains links for JavaScript development.
 
 *   [Debugging JavaScript](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/)

@@ -1,7 +1,5 @@
 {"title":"Alloy XML Markup","weight":"20"} 
 
-# Alloy XML Markup
-
 *   [Introduction](#Introduction)
     
 *   [Collection element](#Collectionelement)

@@ -1,7 +1,5 @@
 {"title":"Integrate with Mobile Backend Services","weight":"70"} 
 
-# Integrate with Mobile Backend Services
-
 *   [Integrating Mobile Backend Services into your app](#IntegratingMobileBackendServicesintoyourapp)
     
     *   [Step 1. Register Your App with API Builder](#Step1.RegisterYourAppwithAPIBuilder)

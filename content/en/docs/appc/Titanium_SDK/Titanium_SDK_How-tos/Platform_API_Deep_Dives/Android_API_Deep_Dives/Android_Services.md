@@ -1,7 +1,5 @@
 {"title":"Android Services","weight":"40"} 
 
-# Android Services
-
 *   [Introduction](#Introduction)
     
 *   [Types of services](#Typesofservices)

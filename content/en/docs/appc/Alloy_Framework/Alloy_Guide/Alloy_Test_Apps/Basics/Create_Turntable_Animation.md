@@ -1,7 +1,5 @@
 {"title":"Create Turntable Animation","weight":"30"} 
 
-# Create Turntable Animation
-
 This document shows how to create turntable animation. ![turntable-1](/Images/appc/download/thumbnails/56296120/turntable-1.png)
 
 Turntable animation is a 360° animation in one axis that is mostly used to show 3D objects from all sides:

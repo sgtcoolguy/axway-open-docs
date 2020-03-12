@@ -1,7 +1,5 @@
 {"title":"Obtaining Modules","weight":"10"} 
 
-# Obtaining Modules
-
 *   [Appcelerator Marketplace](#AppceleratorMarketplace)
     
 *   [Appcelerator Enterprise Extensions](#AppceleratorEnterpriseExtensions)

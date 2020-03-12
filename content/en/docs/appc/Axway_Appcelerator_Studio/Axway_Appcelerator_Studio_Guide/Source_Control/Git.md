@@ -1,7 +1,5 @@
 {"title":"Git","weight":"20"} 
 
-# Git
-
 *   [Getting Started with Git](#GettingStartedwithGit)
     
     *   [Installation](#Installation)

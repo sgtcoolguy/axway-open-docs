@@ -1,7 +1,5 @@
 {"title":"Appcelerator Dashboard FAQ","weight":"40"} 
 
-# Appcelerator Dashboard FAQ
-
 This document provides questions and answers to commonly asked questions about Appcelerator Dashboard.
 
 *   [Creating custom Mobile Backend Services (MBS) objects](#CreatingcustomMobileBackendServices(MBS)objects)

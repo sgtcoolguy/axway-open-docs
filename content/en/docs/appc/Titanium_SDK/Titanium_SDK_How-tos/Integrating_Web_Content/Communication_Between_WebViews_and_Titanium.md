@@ -1,7 +1,5 @@
 {"title":"Communication Between WebViews and Titanium","weight":"20"} 
 
-# Communication Between WebViews and Titanium
-
 *   [Overview](#Overview)
     
 *   [Contents](#Contents)

@@ -1,7 +1,5 @@
 {"title":"Titanium SDK API Removal Notices","weight":"60"} 
 
-# Titanium SDK API Removal Notices
-
 This document lists every SDK removal notice.
 
 *   [SDK 8.x](#SDK8.x)

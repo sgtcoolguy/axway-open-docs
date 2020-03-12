@@ -1,7 +1,5 @@
 {"title":"Android Module Development Guide","weight":"30"} 
 
-# Android Module Development Guide
-
 ## Overview
 
 Titanium provides the ability to extend the built-in functionality of the Titanium SDK through a series of optional extensions called modules. Modules let you write code in a platform's native language (Java for Android). Through a series of components, we can expose new functionality to the JavaScript running in the Titanium SDK.

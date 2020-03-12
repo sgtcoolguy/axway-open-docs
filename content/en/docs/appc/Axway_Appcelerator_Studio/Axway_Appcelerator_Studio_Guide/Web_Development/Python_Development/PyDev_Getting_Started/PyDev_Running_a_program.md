@@ -1,7 +1,5 @@
 {"title":"PyDev Running a program","weight":"60"} 
 
-# PyDev Running a program
-
 Ok, now that you're already up and running, let's **run a program from within Eclipse** with PyDev.
 
 For that, we will extend the module we created in the previous chapter with the following program:

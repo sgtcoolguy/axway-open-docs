@@ -1,7 +1,5 @@
 {"title":"PyDev Rename Occurrences","weight":"220"} 
 
-# PyDev Rename Occurrences
-
 The rename occurrences feature enables you to rename all the occurrences of some token in a file.
 
 **KEYBINDING:** Ctrl+2+R

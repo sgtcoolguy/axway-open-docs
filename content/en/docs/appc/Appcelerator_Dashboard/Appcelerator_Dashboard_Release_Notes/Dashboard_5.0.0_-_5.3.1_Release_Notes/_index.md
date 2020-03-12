@@ -1,7 +1,5 @@
 {"title":"Dashboard 5.0.0 - 5.3.1 Release Notes","weight":"100"} 
 
-# Dashboard 5.0.0 - 5.3.1 Release Notes
-
 *   [Dashboard 5.3.1 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_5.0.0_-_5.3.1_Release_Notes/Dashboard_5.3.1_Release_Note/)
     
 *   [Dashboard 5.3.0 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_5.0.0_-_5.3.1_Release_Notes/Dashboard_5.3.0_Release_Note/)

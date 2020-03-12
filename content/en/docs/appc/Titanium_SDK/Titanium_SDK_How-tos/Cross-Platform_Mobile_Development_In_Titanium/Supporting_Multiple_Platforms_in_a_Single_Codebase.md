@@ -1,7 +1,5 @@
 {"title":"Supporting Multiple Platforms in a Single Codebase","weight":"50"} 
 
-# Supporting Multiple Platforms in a Single Codebase
-
 *   [Embrace the platform](#Embracetheplatform)
     
 *   [Cross-platform mechanics](#Cross-platformmechanics)

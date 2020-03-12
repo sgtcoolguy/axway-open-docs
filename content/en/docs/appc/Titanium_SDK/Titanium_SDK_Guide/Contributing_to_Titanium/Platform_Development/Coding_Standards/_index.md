@@ -1,7 +1,5 @@
 {"title":"Coding Standards","weight":"50"} 
 
-# Coding Standards
-
 This section lists coding standards for the Titanium SDK and related projects.
 
 Contributions to the Titanium SDK and related projects are expected to follow the language-specific coding standards listed here.

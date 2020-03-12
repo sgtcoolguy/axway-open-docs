@@ -1,7 +1,5 @@
 {"title":"PyDev Debug Console","weight":"70"} 
 
-# PyDev Debug Console
-
 ## Debug Console
 
 In PyDev once you hit a breakpoint, you can use the console for probing the program at the selected frame. The screenshot below shows it in action...

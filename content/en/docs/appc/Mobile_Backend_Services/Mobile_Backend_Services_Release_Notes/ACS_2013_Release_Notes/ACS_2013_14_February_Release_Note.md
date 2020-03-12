@@ -1,7 +1,5 @@
 {"title":"ACS 2013 14 February Release Note","weight":"130"} 
 
-# ACS 2013 14 February Release Note
-
 *   Added new admin operation:
     
     *   Admin Drop Custom Collection allows admin users to drop a Custom Object collection. For details, see [Admin Access](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Admin_Access/).

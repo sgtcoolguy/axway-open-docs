@@ -1,7 +1,5 @@
 {"title":"Uninstalling the debugger","weight":"100"} 
 
-# Uninstalling the debugger
-
 ## Introduction
 
 If you need to uninstall the Aptana debugger, you can do so directly from Firefox or Internet Explorer browser.

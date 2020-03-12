@@ -1,7 +1,5 @@
 {"title":"Analytics Architecture","weight":"10"} 
 
-# Analytics Architecture
-
 *   [Overview](#Overview)
     
 *   [Android Analytics](#AndroidAnalytics)

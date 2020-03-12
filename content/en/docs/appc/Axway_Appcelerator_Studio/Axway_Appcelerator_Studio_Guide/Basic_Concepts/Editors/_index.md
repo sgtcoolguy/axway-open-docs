@@ -1,7 +1,5 @@
 {"title":"Editors","weight":"10"} 
 
-# Editors
-
 Studio uses different editors to modify files. For example, Studio uses the TiApp editor to modify the tiapp.xml file, and the Alloy XML View editor to modify all other XML files. You can open up multiple editor, but only one can be active. Each file type (or file) can be associated with different editors or an external program within Studio.
 
 Depending on the Editor, Studio may show warning and errors. You can also add breakpoints for debugging in certain editors.

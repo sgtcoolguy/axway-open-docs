@@ -1,7 +1,5 @@
 {"title":"Camera App Tutorial","weight":"10"} 
 
-# Camera App Tutorial
-
 *   [Overview](#Overview)
     
 *   [Project setup](#Projectsetup)

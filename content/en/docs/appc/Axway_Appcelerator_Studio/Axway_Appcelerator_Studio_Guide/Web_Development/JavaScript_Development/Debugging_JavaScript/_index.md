@@ -1,7 +1,5 @@
 {"title":"Debugging JavaScript","weight":"10"} 
 
-# Debugging JavaScript
-
 The JavaScript debugger provides you with numerous tools to help you closely examine and troubleshoot your JavaScript code. The JavaScript debugger uses its own Debug perspective (see [About the Debug perspective](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/)) so that debugging tasks are separated from development tasks.
 
 Before you can use the debugger, you will need to install it into your web browser. (See [Installing the JavaScript debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Installing_the_JavaScript_debugger/).) Currently, the debugger only works with Firefox and Internet Explorer, although it will be compatible with other browsers in the future.

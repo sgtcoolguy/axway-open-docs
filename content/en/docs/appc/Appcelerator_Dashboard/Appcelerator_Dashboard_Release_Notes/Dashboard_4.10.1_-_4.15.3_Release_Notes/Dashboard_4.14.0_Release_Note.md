@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.14.0 - 29 September 2017","weight":"50"} 
 
-# Dashboard 4.14.0 - 29 September 2017
-
 Dashboard 4.14.0 is a minor release, which includes new features, improvements, and several bug fixes.
 
 ## New features

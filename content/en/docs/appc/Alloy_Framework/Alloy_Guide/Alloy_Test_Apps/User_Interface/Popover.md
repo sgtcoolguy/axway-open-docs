@@ -1,7 +1,5 @@
 {"title":"Popover","weight":"130"} 
 
-# Popover
-
 Demonstrates how to use a PopOver control iPad devices to present temporary information.
 
 Example App Source Location

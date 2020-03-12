@@ -1,7 +1,5 @@
 {"title":"Atom Package","weight":"60"} 
 
-# Atom Package
-
 *   [Overview](#Overview)
     
 *   [Installation](#Installation)

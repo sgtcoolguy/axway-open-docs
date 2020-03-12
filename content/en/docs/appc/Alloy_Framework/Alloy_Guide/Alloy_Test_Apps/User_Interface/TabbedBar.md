@@ -1,7 +1,5 @@
 {"title":"TabbedBar","weight":"180"} 
 
-# TabbedBar
-
 Demonstrates basic use of TabbedBar control.
 
 Example App Source Location

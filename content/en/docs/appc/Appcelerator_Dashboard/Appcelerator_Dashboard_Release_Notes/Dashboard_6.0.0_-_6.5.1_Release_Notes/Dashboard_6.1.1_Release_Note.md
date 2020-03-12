@@ -1,7 +1,5 @@
 {"title":"Dashboard 6.1.1 Release Note","weight":"70"} 
 
-# Dashboard 6.1.1 Release Note
-
 ## Dashboard 6.1.1 - 16 April 2018
 
 Dashboard 6.1.1 is a patch release, which includes several bug fixes.

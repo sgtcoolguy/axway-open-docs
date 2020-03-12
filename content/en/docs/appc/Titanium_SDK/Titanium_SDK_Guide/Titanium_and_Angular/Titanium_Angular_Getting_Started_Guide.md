@@ -1,7 +1,5 @@
 {"title":"Titanium Angular Getting Started Guide","weight":"10"} 
 
-# Titanium Angular Getting Started Guide
-
 *   [Creating Angular projects](#CreatingAngularprojects)
     
 *   [Running Angular projects](#RunningAngularprojects)

@@ -1,7 +1,5 @@
 {"title":"Maintaining a Custom AndroidManifest.xml","weight":"30"} 
 
-# Maintaining a Custom AndroidManifest.xml
-
 ## Contents
 
 *   [Overview](#Overview)

@@ -1,7 +1,5 @@
 {"title":"Comparing Different Versions of a File","weight":"20"} 
 
-# Comparing Different Versions of a File
-
 This page describes how to compare different versions of a file using the Local History feature.
 
 ## Introduction

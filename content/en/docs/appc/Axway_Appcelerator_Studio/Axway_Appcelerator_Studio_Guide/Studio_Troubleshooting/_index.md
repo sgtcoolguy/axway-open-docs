@@ -1,7 +1,5 @@
 {"title":"Studio Troubleshooting","weight":"90"} 
 
-# Studio Troubleshooting
-
 *   [Overview](#Overview)
     
 *   [Submitting a Bug](#SubmittingaBug)

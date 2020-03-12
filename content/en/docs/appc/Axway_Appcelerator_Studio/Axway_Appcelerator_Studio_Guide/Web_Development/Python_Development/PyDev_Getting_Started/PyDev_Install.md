@@ -1,7 +1,5 @@
 {"title":"PyDev Install","weight":"10"} 
 
-# PyDev Install
-
 ## Note for users with Aptana Studio 3 (Beta)
 
 PyDev already comes preinstalled in [Aptana Studio 3](http://aptana.com/products/studio3), so, this step can be skipped (note that if [Aptana Studio 3](http://aptana.com/products/studio3) is used,  

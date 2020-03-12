@@ -1,7 +1,5 @@
 {"title":"Widget Models","weight":"30"} 
 
-# Widget Models
-
 Demonstrates using data models with a widget.
 
 App Folder Location

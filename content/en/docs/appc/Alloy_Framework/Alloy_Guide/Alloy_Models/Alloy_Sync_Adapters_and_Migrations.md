@@ -1,7 +1,5 @@
 {"title":"Alloy Sync Adapters and Migrations","weight":"20"} 
 
-# Alloy Sync Adapters and Migrations
-
 *   [Sync Adapters](#SyncAdapters)
     
     *   [Backbone Sync](#BackboneSync)

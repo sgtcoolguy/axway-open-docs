@@ -1,7 +1,5 @@
 {"title":"Example Applications","weight":"30"} 
 
-# Example Applications
-
 *   [Overview](#Overview)
     
 *   [Kitchen Sink](#KitchenSink)

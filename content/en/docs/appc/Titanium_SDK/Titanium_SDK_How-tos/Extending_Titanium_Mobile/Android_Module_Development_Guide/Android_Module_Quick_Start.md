@@ -1,7 +1,5 @@
 {"title":"Android Module Quick Start","weight":"10"} 
 
-# Android Module Quick Start
-
 *   [Introduction](#Introduction)
     
 *   [Android module prerequisites](#Androidmoduleprerequisites)

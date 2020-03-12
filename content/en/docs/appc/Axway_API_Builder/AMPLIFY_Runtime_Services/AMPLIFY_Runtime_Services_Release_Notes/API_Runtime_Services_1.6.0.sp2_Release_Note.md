@@ -1,7 +1,5 @@
 {"title":"API Runtime Services 1.6.0.sp2 Release Note","weight":"40"} 
 
-# API Runtime Services 1.6.0.sp2 Release Note
-
 ## API Runtime Services 1.6.0.sp2 - 17 November 2017
 
 This release of API Runtime Services (APIRS) includes version 2.0.7 of the CLI and 1.6.0.sp2 of the server and includes several improvements and fixed issues.

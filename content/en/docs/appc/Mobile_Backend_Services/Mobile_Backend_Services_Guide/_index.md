@@ -1,7 +1,5 @@
 {"title":"Mobile Backend Services Guide","weight":"20"} 
 
-# Mobile Backend Services Guide
-
 This document contains links to the following topics in the Mobile Backend Services (MBS) guide.
 
 *   [Admin Access](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Admin_Access/)

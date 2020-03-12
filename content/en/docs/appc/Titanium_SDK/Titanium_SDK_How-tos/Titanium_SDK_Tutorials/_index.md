@@ -1,7 +1,5 @@
 {"title":"Titanium SDK Tutorials","weight":"170"} 
 
-# Titanium SDK Tutorials
-
 This document lists a series of Titanium SDK tutorials.
 
 *   [Camera App Tutorial](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Titanium_SDK_Tutorials/Camera_App_Tutorial/)

@@ -1,7 +1,5 @@
 {"title":"Native Android Debugging and Testing Tools","weight":"20"} 
 
-# Native Android Debugging and Testing Tools
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

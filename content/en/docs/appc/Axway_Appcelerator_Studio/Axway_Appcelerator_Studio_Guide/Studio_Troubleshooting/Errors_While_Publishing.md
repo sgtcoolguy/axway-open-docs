@@ -1,7 +1,5 @@
 {"title":"Passwords Not Saved for FTP Connections","weight":"90"} 
 
-# Passwords Not Saved for FTP Connections
-
 If you run into an issue where the FTP connection continues to prompt for password even after you checked "Save Password" option, try the following:
 
 1.  Open **Window > Preferences > General > Security > Secure Storage** preference page.

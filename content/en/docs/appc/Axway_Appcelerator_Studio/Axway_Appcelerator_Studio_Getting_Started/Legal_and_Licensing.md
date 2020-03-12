@@ -1,7 +1,5 @@
 {"title":"Legal and Licensing","weight":"90"} 
 
-# Legal and Licensing
-
 This document provides common legal and licensing questions and answers for Appcelerator Studio.
 
 *   [Can I make changes, add to, or combine Aptana products with other things and and redistribute the result?](#CanImakechanges,addto,orcombineAptanaproductswithotherthingsandandredistributetheresult?)

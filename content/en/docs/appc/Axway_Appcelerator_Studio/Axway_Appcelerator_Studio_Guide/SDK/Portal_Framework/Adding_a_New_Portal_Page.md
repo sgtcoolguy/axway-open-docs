@@ -1,7 +1,5 @@
 {"title":"Adding a New Portal Page","weight":"10"} 
 
-# Adding a New Portal Page
-
 *   [Studio Changes](#StudioChanges)
     
 *   [Setting up the Web Page](#SettinguptheWebPage)

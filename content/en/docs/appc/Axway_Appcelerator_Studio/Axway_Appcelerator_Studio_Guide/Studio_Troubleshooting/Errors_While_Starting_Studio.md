@@ -1,7 +1,5 @@
 {"title":"Errors While Starting Studio","weight":"70"} 
 
-# Errors While Starting Studio
-
 *   [Overview](#Overview)
     
 *   [Workspace in use or cannot be created, choose a different one](#Workspaceinuseorcannotbecreated,chooseadifferentone)

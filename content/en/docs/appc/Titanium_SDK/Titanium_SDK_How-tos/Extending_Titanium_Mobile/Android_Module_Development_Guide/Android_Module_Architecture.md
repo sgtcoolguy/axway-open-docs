@@ -1,7 +1,5 @@
 {"title":"Android Module Architecture","weight":"20"} 
 
-# Android Module Architecture
-
 *   [Introduction](#Introduction)
     
 *   [Module](#Module)

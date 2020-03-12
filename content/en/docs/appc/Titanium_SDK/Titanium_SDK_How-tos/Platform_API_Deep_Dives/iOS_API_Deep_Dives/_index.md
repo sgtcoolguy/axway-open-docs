@@ -1,7 +1,5 @@
 {"title":"iOS API Deep Dives","weight":"20"} 
 
-# iOS API Deep Dives
-
 These topics cover Titanium APIs specific to the iOS platform. For iOS-specific, user interface APIs, see [iOS UI Components and Conventions](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/iOS_UI_Components_and_Conventions/).
 
 ## Topics

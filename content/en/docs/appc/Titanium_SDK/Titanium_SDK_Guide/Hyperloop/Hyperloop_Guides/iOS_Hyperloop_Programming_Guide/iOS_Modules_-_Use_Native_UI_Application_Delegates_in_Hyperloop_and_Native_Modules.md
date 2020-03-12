@@ -1,7 +1,5 @@
 {"title":"iOS Modules - Use Native UI Application Delegates in Hyperloop and Native Modules","weight":"10"} 
 
-# iOS Modules - Use Native UI Application Delegates in Hyperloop and Native Modules
-
 The API's described in this document require Titanium SDK 7.3.0+ and Hyperloop 3.1.2+ (if used).
 
 ## Introduction

@@ -1,7 +1,5 @@
 {"title":"Hyperloop 2.1.0 - 28 April 2017","weight":"90"} 
 
-# Hyperloop 2.1.0 - 28 April 2017
-
 Hyperloop 2.1.0 is a minor release that includes two new features and several bug fixes.
 
 ## New features

@@ -1,7 +1,5 @@
 {"title":"Android Broadcast Intents and Receivers","weight":"30"} 
 
-# Android Broadcast Intents and Receivers
-
 *   [Introduction](#Introduction)
     
 *   [Send a broadcast](#Sendabroadcast)

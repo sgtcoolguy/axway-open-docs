@@ -1,7 +1,5 @@
 {"title":"Axway Appcelerator Studio FAQ","weight":"60"} 
 
-# Axway Appcelerator Studio FAQ
-
 This document provides answers and links to commonly asked questions about Studio.
 
 *   [Studio hangs on launch](#Studiohangsonlaunch)

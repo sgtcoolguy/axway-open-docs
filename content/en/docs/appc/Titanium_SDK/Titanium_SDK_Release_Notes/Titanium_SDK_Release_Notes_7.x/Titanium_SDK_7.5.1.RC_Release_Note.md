@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 7.5.1.RC - 13 December 2018","weight":"40"} 
 
-# Titanium SDK 7.5.1.RC - 13 December 2018
-
 *   [About this release](#Aboutthisrelease)
     
 *   [Community credits](#Communitycredits)

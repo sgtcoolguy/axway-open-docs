@@ -1,7 +1,5 @@
 {"title":"Alloy 5.4.0.GA - 10 August 2016","weight":"50"} 
 
-# Alloy 5.4.0.GA - 10 August 2016
-
 Alloy 5.4.0.GA is a minor release that includes new features, improvements, and bug fixes.
 
 As of this release, Alloy 5.3.x will not be supported six months from 5.4.0's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

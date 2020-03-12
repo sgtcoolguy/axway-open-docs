@@ -1,7 +1,5 @@
 {"title":"Deploying ConnectorJ","weight":"50"} 
 
-# Deploying ConnectorJ
-
 ## Introduction
 
 This Help topic will teach you how to deploy ConnectorJ for SQL Explorer and RadRails. This is the second step in configuring SQL Explorer to work with RadRails. You will need to [install the SQL Explorer plug-in](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Installing_the_SQL_Explorer_plug-in/) before following the instructions below.

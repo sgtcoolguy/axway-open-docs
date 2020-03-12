@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI 5.2.0 - 22 February 2016","weight":"150"} 
 
-# Appcelerator CLI 5.2.0 - 22 February 2016
-
 Appcelerator CLI 5.2.0 is a minor release that includes a few improvements and several bug fixes.
 
 As of this release, CLI 5.1.x will not be supported six months from 5.2.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

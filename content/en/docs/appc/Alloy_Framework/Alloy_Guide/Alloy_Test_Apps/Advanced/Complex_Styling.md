@@ -1,7 +1,5 @@
 {"title":"Complex Styling","weight":"30"} 
 
-# Complex Styling
-
 Demonstrates how Alloy combines several TSS styles based on their priority.
 
 App folder location

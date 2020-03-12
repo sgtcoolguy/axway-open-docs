@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 5.1.2.GA - General Availability 12 January 2016","weight":"180"} 
 
-# Titanium SDK 5.1.2.GA - General Availability 12 January 2016
-
 ## Contents
 
 *   [About This Release](#AboutThisRelease)

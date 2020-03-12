@@ -1,7 +1,5 @@
 {"title":"Creating a new driver in Eclipse","weight":"40"} 
 
-# Creating a new driver in Eclipse
-
 ## Introduction
 
 This Help topic will teach you how to create a new driver in Eclipse for SQL Explorer and RadRails. This is the second step in configuring SQL Explorer to work with RadRails. You will need to [deploy ConnectorJ](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Deploying_ConnectorJ/) before following the instructions below.

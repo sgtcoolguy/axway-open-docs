@@ -1,7 +1,5 @@
 {"title":"Working with XML Data","weight":"40"} 
 
-# Working with XML Data
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

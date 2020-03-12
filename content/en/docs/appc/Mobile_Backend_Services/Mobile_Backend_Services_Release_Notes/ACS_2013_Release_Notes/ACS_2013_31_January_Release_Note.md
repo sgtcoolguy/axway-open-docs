@@ -1,7 +1,5 @@
 {"title":"ACS 2013 31 January Release Note","weight":"140"} 
 
-# ACS 2013 31 January Release Note
-
 Fixed an unhandled exception when a file was passed as the payload of a push notification. For example, a curl command like this would cause an exception:
 
 `curl -b cookies.txt -c cookies.txt -F` `"channel=change_request"` `-F` `"to_ids=<ids>"`

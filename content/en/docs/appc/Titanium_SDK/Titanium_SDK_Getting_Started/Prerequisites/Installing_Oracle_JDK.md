@@ -1,7 +1,5 @@
 {"title":"Installing Oracle JDK","weight":"10"} 
 
-# Installing Oracle JDK
-
 *   [Compatibility and download](#Compatibilityanddownload)
     
 *   [Installation](#Installation)

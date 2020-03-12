@@ -1,7 +1,5 @@
 {"title":"Managing Client Applications","weight":"20"} 
 
-# Managing Client Applications
-
 This document provides information on app overview and service keys, what the API Builder, test, and performance tabs entail, how to view real-time and aggregated analytics, and managing application team members.
 
 *   [App Overview and Service Keys](#AppOverviewandServiceKeys)

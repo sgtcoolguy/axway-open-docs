@@ -1,7 +1,5 @@
 {"title":"Downloading and Installing Studio","weight":"20"} 
 
-# Downloading and Installing Studio
-
 *   [Overview](#Overview)
     
 *   [Installing Appcelerator Studio](#InstallingAppceleratorStudio)

@@ -1,7 +1,5 @@
 {"title":"Extending Titanium Mobile","weight":"90"} 
 
-# Extending Titanium Mobile
-
 Our basic guides to extending Titanium Mobile with additional native functionality, broken down by platform.
 
 ## Chapters

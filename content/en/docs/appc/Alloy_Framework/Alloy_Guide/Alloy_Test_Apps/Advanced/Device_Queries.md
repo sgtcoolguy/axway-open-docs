@@ -1,7 +1,5 @@
 {"title":"Device Queries","weight":"50"} 
 
-# Device Queries
-
 Demonstrates how to combine platform and formFactor attribute selectors to apply different styles and properties on different platforms and device types.
 
 App folder location

@@ -1,7 +1,5 @@
 {"title":"Using the REST API","weight":"70"} 
 
-# Using the REST API
-
 *   [REST API basics](#RESTAPIbasics)
     
 *   [Authentication](#Authentication)

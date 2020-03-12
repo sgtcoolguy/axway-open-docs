@@ -1,7 +1,5 @@
 {"title":"SSL Certificate Store Support for HTTP Clients","weight":"80"} 
 
-# SSL Certificate Store Support for HTTP Clients
-
 **Since Release 3.3.0** , the mechanisms described in this document to support SSL Certificate Stores for HTTP Clients are no longer supported. You should instead use the HTTPClient's [securityManager](#!/api/Titanium.Network.HTTPClient-property-securityManager) property to implement support for SSL Certificate Stores.
 
 *   The Android-specific Titanium.Network.HTTPClient addKeyManager and addTrustManager methods are deprecated and removed in Release 3.4.0.

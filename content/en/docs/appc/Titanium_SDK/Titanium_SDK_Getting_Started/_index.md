@@ -1,7 +1,5 @@
 {"title":"Titanium SDK Getting Started","weight":"10"} 
 
-# Titanium SDK Getting Started
-
 *   [Overview](#Overview)
     
 *   [Prerequisites](#Prerequisites)

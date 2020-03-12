@@ -1,7 +1,5 @@
 {"title":"Creating a New Titanium Module","weight":"10"} 
 
-# Creating a New Titanium Module
-
 *   [Preparing Appcelerator Studio for Module Creation](#PreparingAppceleratorStudioforModuleCreation)
     
     *   [For Android Module Development](#ForAndroidModuleDevelopment)

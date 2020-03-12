@@ -1,7 +1,5 @@
 {"title":"Titanium Module Concepts","weight":"20"} 
 
-# Titanium Module Concepts
-
 *   [Packaged Titanium modules](#PackagedTitaniummodules)
     
     *   [Native modules](#Nativemodules)

@@ -1,7 +1,5 @@
 {"title":"Perforce Support","weight":"40"} 
 
-# Perforce Support
-
 To obtain Perforce support in the Studio, you may install the [Perforce Plug-in for Eclipse](https://www.perforce.com/downloads/helix-plugin-eclipse-p4eclipse).
 
 ## Installation and Functionality

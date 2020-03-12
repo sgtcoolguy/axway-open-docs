@@ -1,7 +1,5 @@
 {"title":"Appcelerator Performance Management","weight":"30"} 
 
-# Appcelerator Performance Management
-
 Deprecation Notice
 
 In conjunction with the release of the AMPLIFY Crash module feature, this feature has been deprecated. To begin using the AMPLIFY Crash module feature, refer to [AMPLIFY Crash Analytics](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Crash_Analytics/).

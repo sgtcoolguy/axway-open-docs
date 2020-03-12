@@ -1,7 +1,5 @@
 {"title":"Studio 4.6.0.Beta Release Note - 21 April 2016","weight":"160"} 
 
-# Studio 4.6.0.Beta Release Note - 21 April 2016
-
 Studio 4.6.0.Beta is a minor release that includes new features, improvements, and bug fixes.
 
 As of this release, Studio 4.5.x will not be supported six months from 4.6.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

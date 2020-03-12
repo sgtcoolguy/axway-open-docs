@@ -1,7 +1,5 @@
 {"title":"Trigger on Save","weight":"110"} 
 
-# Trigger on Save
-
 ## Overview
 
 In this recipe we show how a Ruble command can be triggered when an editor saves its content. This allows for processing to occur immediately after the file has been saved.

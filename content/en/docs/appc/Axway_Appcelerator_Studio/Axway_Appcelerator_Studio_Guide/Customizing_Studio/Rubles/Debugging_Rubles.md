@@ -1,7 +1,5 @@
 {"title":"Debugging Rubles","weight":"50"} 
 
-# Debugging Rubles
-
 *   [Overview](#Overview)
     
 *   [Writing to the console](#Writingtotheconsole)

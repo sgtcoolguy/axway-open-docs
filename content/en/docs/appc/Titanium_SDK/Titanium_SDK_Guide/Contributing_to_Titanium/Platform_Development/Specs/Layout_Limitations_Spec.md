@@ -1,7 +1,5 @@
 {"title":"Layout Limitations Spec","weight":"60"} 
 
-# Layout Limitations Spec
-
 This document provides information on layout limitations, sizes, and positioning.
 
 *   [Layout limitations specification](#Layoutlimitationsspecification)

@@ -1,7 +1,5 @@
 {"title":"iOS Interactive Notifications","weight":"30"} 
 
-# iOS Interactive Notifications
-
 *   [Introduction](#Introduction)
     
 *   [Interactive notification types](#Interactivenotificationtypes)

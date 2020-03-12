@@ -1,7 +1,5 @@
 {"title":"Mobile Backend Services","weight":"50"} 
 
-# Mobile Backend Services
-
 **Mobile Backend Services** (formerly known as ArrowDB and Push) provides pre-built, automatically-scaled network services and data objects for your client applications.
 
 Mobile Backend Services (MBS) can be integrated with your Titanium, Node.js, Android, or iOS applications.

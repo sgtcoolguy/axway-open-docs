@@ -1,7 +1,5 @@
 {"title":"Viewing Metrics","weight":"70"} 
 
-# Viewing Metrics
-
 *   [Metrics Overview](#MetricsOverview)
     
 *   [Average Session Length](#AverageSessionLength)

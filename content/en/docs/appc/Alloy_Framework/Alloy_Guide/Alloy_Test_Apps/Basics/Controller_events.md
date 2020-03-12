@@ -1,7 +1,5 @@
 {"title":"Controller events","weight":"20"} 
 
-# Controller events
-
 Demonstrates using [Backbone events](http://backbonejs.org/#Events) to communicate between view-controllers.
 
 App Folder Location

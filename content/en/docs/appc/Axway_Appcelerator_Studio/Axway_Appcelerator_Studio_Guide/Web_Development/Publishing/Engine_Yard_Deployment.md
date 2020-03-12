@@ -1,7 +1,5 @@
 {"title":"Engine Yard Deployment","weight":"20"} 
 
-# Engine Yard Deployment
-
 ## Pre-requisites
 
 Before deploying to Engine, you will need to have the Engine Yard gem installed. If you don't have that already installed, Studio will prompt you to install it before deploying to Engine Yard. You will also need a Ruby on Rails project opened in Studio before you can proceed with the deployment.

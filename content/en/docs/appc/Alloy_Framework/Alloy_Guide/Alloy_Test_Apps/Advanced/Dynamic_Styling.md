@@ -1,7 +1,5 @@
 {"title":"Dynamic Styling","weight":"60"} 
 
-# Dynamic Styling
-
 *   [Raw style modules](#Rawstylemodules)
     
 *   [Creating and using style objects](#Creatingandusingstyleobjects)

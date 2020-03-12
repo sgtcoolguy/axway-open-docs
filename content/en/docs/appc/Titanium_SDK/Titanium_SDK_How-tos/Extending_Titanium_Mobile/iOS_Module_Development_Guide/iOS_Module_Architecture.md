@@ -1,7 +1,5 @@
 {"title":"iOS Module Architecture","weight":"20"} 
 
-# iOS Module Architecture
-
 *   [Introduction](#Introduction)
     
 *   [Example module](#Examplemodule)

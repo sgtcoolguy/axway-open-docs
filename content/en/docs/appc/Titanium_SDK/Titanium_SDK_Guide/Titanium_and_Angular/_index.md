@@ -1,7 +1,5 @@
 {"title":"Titanium and Angular","weight":"50"} 
 
-# Titanium and Angular
-
 This document will guide you on how to use Titanium and Angular together.
 
 Techical Preview

@@ -1,7 +1,5 @@
 {"title":"Windows Background Service Quick Start","weight":"20"} 
 
-# Windows Background Service Quick Start
-
 *   [Introduction](#Introduction)
     
 *   [Windows Module prerequisites](#WindowsModuleprerequisites)

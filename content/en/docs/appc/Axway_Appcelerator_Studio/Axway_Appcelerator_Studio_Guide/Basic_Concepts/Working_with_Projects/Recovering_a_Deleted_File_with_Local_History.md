@@ -1,7 +1,5 @@
 {"title":"Recovering a Deleted File with Local History","weight":"50"} 
 
-# Recovering a Deleted File with Local History
-
 Although you will usually use the Local History feature to compare versions of a file that you are editing, you can also use it as a last resort for recovering a deleted file, if you cannot find a copy of that file anywhere else on your system. You will have to have been working on the file using the **Project Explorer** View for this technique to work.
 
 To recover a deleted file using Local History:

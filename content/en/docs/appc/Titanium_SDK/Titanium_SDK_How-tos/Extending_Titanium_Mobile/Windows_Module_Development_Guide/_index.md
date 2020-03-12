@@ -1,7 +1,5 @@
 {"title":"Windows Module Development Guide","weight":"50"} 
 
-# Windows Module Development Guide
-
 ## Overview
 
 Titanium provides the ability to extend the built-in functionality of the Titanium SDK through a series of optional extensions called modules. Modules let you write code in a platform's native language (C++/CX for Windows). Through a series of components, we can expose new functionality to the JavaScript running in the Titanium SDK.

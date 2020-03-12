@@ -1,7 +1,5 @@
 {"title":"Document Class","weight":"30"} 
 
-# Document Class
-
 The Document class contains methods and properties for interacting with the current document inside Studio.
 
 ## Usage

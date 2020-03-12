@@ -1,7 +1,5 @@
 {"title":"Axway Appcelerator Studio How-tos","weight":"30"} 
 
-# Axway Appcelerator Studio How-tos
-
 This chapter has several sections dedicated to how-to instructions for Axway Appcelerator Studio.
 
 *   [API Builder Development](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_How-tos/API_Builder_Development/)

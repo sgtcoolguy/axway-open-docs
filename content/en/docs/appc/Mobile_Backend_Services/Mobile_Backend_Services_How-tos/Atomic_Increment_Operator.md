@@ -1,7 +1,5 @@
 {"title":"Atomic Increment Operator","weight":"10"} 
 
-# Atomic Increment Operator
-
 Mobile Backend Services supports the Mongo $inc atomic increment operator.
 
 ## $inc

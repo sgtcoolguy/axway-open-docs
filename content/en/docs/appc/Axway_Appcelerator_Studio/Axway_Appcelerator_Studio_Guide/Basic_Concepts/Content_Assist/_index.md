@@ -1,7 +1,5 @@
 {"title":"Content Assist","weight":"40"} 
 
-# Content Assist
-
 This page provides links to Help pages for Studio's Content Assist system.
 
 Studio's Code Assist system provides instant feedback about available properties and methods while you code. The links below provide more detailed information about what Content Assist is and how you can incorporate it into your development work.

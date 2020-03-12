@@ -1,7 +1,5 @@
 {"title":"Tasks View","weight":"60"} 
 
-# Tasks View
-
 *   [Introduction](#Introduction)
     
 *   [Opening the view](#Openingtheview)

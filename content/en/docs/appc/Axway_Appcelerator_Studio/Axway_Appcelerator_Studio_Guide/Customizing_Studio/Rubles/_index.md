@@ -1,7 +1,5 @@
 {"title":"Rubles","weight":"70"} 
 
-# Rubles
-
 Ruble (short for RUby BundLE) is a runtime environment that allows for the extensibility of IDEs and text editors using Ruby. Compatibility with TextMate bundles is a priority--we want to make it reasonably straightforward to convert an existing TextMate bundle into a Ruble bundle, while still allowing commands and snippets to be more concise and more powerful.
 
 To begin, you might wish to start with [Modifying an existing Ruble](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Modifying_an_existing_Ruble/), and then move on to [Creating a new Ruble](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Creating_a_new_Ruble/) to hold your own custom code.

@@ -1,7 +1,5 @@
 {"title":"Determining Your Studio Configuration","weight":"40"} 
 
-# Determining Your Studio Configuration
-
 *   [Overview](#Overview)
     
 *   [Why Send the Configuration Log?](#WhySendtheConfigurationLog?)

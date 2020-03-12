@@ -1,7 +1,5 @@
 {"title":"Sample Actions","weight":"80"} 
 
-# Sample Actions
-
 *   [Requirements](#Requirements)
     
 *   [Description](#Description)

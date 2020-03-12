@@ -1,7 +1,5 @@
 {"title":"PyDev Remote Debugger","weight":"210"} 
 
-# PyDev Remote Debugger
-
 ## Remote Debugger
 
 In PyDev you can debug a remote program (a file that is not launched from within Eclipse).

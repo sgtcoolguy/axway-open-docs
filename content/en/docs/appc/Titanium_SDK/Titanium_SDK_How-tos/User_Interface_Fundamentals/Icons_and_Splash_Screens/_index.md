@@ -1,7 +1,5 @@
 {"title":"Icons and Splash Screens","weight":"40"} 
 
-# Icons and Splash Screens
-
 *   [Objective](#Objective)
     
 *   [Icons, splash screens, and store requirements](#Icons,splashscreens,andstorerequirements)

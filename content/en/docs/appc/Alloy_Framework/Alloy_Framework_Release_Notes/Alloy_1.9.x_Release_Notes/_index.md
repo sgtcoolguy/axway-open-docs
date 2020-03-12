@@ -1,7 +1,5 @@
 {"title":"Alloy 1.9.x Release Notes","weight":"60"} 
 
-# Alloy 1.9.x Release Notes
-
 *   [Alloy 5.5.0 Release Note](/docs/appc/Alloy_Framework/Alloy_Framework_Release_Notes/Alloy_1.9.x_Release_Notes/Alloy_5.5.0_Release_Note/)
     
 *   [Alloy 5.4.0.GA Release Note](/docs/appc/Alloy_Framework/Alloy_Framework_Release_Notes/Alloy_1.9.x_Release_Notes/Alloy_5.4.0.GA_Release_Note/)

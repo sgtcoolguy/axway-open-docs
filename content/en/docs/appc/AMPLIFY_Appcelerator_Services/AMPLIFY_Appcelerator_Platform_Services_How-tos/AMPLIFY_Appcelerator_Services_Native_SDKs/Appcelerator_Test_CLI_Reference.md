@@ -1,7 +1,5 @@
 {"title":"Appcelerator Test CLI Reference","weight":"30"} 
 
-# Appcelerator Test CLI Reference
-
 Enterprise Subscription Required!
 
 This AMPLIFY Appcelerator Service feature requires an Enterprise Subscription.

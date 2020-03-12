@@ -1,7 +1,5 @@
 {"title":"Debugging Studio","weight":"30"} 
 
-# Debugging Studio
-
 *   [Overview](#Overview)
     
 *   [Enable Debug Logging](#EnableDebugLogging)

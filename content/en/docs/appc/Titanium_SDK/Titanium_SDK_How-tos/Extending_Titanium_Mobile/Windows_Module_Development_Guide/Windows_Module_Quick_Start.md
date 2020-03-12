@@ -1,7 +1,5 @@
 {"title":"Windows Module Quick Start","weight":"50"} 
 
-# Windows Module Quick Start
-
 *   [Introduction](#Introduction)
     
 *   [Windows module prerequisites](#Windowsmoduleprerequisites)

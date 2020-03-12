@@ -1,7 +1,5 @@
 {"title":"Alloy Test Models","weight":"40"} 
 
-# Alloy Test Models
-
 Samples in the alloy/test/apps/models/ folder demonstrates using models, collections, and data binding in Alloy.
 
 *   [ButtonBar Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Alloy_Test_Models/ButtonBar_Binding/) — Demonstrates how you can use data binding to populate the list of buttons in a ButtonBar or TabbedBar, or Toolbar component.

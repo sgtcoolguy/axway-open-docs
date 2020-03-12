@@ -1,7 +1,5 @@
 {"title":"AMPLIFY CLI Commands","weight":"20"} 
 
-# AMPLIFY CLI Commands
-
 *   [Command options](#Commandoptions)
     
 *   [auth](#auth)

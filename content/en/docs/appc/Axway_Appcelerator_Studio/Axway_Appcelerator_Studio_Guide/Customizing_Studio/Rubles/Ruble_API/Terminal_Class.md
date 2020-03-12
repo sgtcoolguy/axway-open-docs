@@ -1,7 +1,5 @@
 {"title":"Terminal Class","weight":"90"} 
 
-# Terminal Class
-
 The Terminal class contains methods and properties for interacting with the Terminal window inside Studio
 
 ## Usage

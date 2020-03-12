@@ -1,7 +1,5 @@
 {"title":"Arrow Cloud 1.1.11 - 21 April 2015","weight":"30"} 
 
-# Arrow Cloud 1.1.11 - 21 April 2015
-
 **New Features and Improvements**
 
 *   Add ability to publish a project from Github to Arrow Cloud. Use the appc cloud publish --git <options> command. For details, see the [CLI publish command](/docs/appc/Axway_API_Builder/AMPLIFY_Runtime_Services/AMPLIFY_Runtime_Services_Guide/AMPLIFY_Runtime_Services_Command-Line_Interface_Reference/).

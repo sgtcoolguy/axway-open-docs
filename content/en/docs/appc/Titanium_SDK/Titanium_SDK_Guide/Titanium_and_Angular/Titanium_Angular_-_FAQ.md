@@ -1,7 +1,5 @@
 {"title":"Titanium Angular - FAQ","weight":"60"} 
 
-# Titanium Angular - FAQ
-
 ## How do I use modules with Titanium Angular?
 
 Configure your modules as described in [Using Titanium Modules](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Titanium_Modules/Using_Titanium_Modules/) or, if it has any, follow the specific install instructions of the module itself. After that, you need to do some additional configuration in your Titanium Angular project.

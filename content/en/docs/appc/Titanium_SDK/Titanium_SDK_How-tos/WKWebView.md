@@ -1,7 +1,5 @@
 {"title":"WKWebView","weight":"190"} 
 
-# WKWebView
-
 *   [Overview](#Overview)
     
 *   [Requirements](#Requirements)

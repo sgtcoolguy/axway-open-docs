@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.0.0 Release Note","weight":"120"} 
 
-# Dashboard 4.0.0 Release Note
-
 The Dashboard 4.0.0 release is a major release, introducing new features and behavior changes from previous releases.
 
 ## Notice of Features and Behavior Changes

@@ -1,7 +1,5 @@
 {"title":"ListView","weight":"80"} 
 
-# ListView
-
 *   [Basic](#Basic)
     
 *   [Sections](#Sections)

@@ -1,7 +1,5 @@
 {"title":"Global Styles","weight":"40"} 
 
-# Global Styles
-
 Demonstrates using the global style file to apply a set of default styles to an entire Alloy project.
 
 App Folder Location

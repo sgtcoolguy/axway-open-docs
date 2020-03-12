@@ -1,7 +1,5 @@
 {"title":"Windows Runtime Direct API Access","weight":"10"} 
 
-# Windows Runtime Direct API Access
-
 *   [Introduction](#Introduction)
     
 *   [Usage](#Usage)

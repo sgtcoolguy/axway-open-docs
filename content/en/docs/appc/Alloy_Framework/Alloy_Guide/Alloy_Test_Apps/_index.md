@@ -1,7 +1,5 @@
 {"title":"Alloy Test Apps","weight":"40"} 
 
-# Alloy Test Apps
-
 The Alloy GitHub [repository](https://github.com/appcelerator/alloy) includes a number of small [test applications](https://github.com/appcelerator/alloy/tree/master/samples/apps) that demonstrates various Alloy features.
 
 To build and run one of the test applications, do the following:

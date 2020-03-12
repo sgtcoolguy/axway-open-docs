@@ -1,7 +1,5 @@
 {"title":"iOS UI Components and Conventions","weight":"110"} 
 
-# iOS UI Components and Conventions
-
 ## Objective
 
 In this section, you will learn some of the user interface and user experience components that are specific to iOS.

@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 7.0.0.Beta - 17 November 2017","weight":"310"} 
 
-# Titanium SDK 7.0.0.Beta - 17 November 2017
-
 *   [Titanium SDK 7.0.0.Beta - 17 November 2017](#TitaniumSDK7.0.0.Beta-17November2017)
     
     *   [About this release](#Aboutthisrelease)

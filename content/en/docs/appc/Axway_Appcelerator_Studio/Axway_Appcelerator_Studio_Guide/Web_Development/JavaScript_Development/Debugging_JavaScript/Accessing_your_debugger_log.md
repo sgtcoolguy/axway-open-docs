@@ -1,7 +1,5 @@
 {"title":"Accessing your debugger log","weight":"20"} 
 
-# Accessing your debugger log
-
 *   [Introduction](#Introduction)
     
 *   [Instructions](#Instructions)

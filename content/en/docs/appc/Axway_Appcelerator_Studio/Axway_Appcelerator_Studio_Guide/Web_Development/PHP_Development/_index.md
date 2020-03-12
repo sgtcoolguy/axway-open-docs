@@ -1,7 +1,5 @@
 {"title":"PHP Development","weight":"50"} 
 
-# PHP Development
-
 *   [PHP Support](#PHPSupport)
     
     *   [Creating a PHP Project](#CreatingaPHPProject)

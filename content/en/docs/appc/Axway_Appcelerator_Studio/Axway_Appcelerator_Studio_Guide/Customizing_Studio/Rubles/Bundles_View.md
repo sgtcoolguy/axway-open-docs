@@ -1,7 +1,5 @@
 {"title":"Bundles View","weight":"10"} 
 
-# Bundles View
-
 *   [Overview](#Overview)
     
 *   [Top-level items](#Top-levelitems)

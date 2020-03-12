@@ -1,7 +1,5 @@
 {"title":"Working with Projects","weight":"30"} 
 
-# Working with Projects
-
 A project is a collection of files and folders. Projects are used for builds, version management, sharing, and resource organization.
 
 To create a new project:

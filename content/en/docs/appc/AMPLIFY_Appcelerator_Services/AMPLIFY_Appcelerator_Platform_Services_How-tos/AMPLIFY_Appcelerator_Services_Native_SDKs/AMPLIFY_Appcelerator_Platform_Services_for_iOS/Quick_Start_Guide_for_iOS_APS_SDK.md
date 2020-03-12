@@ -1,7 +1,5 @@
 {"title":"Quick Start Guide for iOS APS SDK","weight":"10"} 
 
-# Quick Start Guide for iOS APS SDK
-
 Pro or Enterprise Subscription Required
 
 This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.

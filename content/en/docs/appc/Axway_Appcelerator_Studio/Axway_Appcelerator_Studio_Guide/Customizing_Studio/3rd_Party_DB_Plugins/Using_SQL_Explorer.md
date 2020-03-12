@@ -1,7 +1,5 @@
 {"title":"Using SQL Explorer","weight":"70"} 
 
-# Using SQL Explorer
-
 ## Introduction
 
 This Help topic will teach you how to use SQL Explorer with RadRails after you have connected to your database. This is the final step in configuring SQL Explorer to work with RadRails. You will need to [connect to your database](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Connecting_to_the_database_application/) before following the instructions below.

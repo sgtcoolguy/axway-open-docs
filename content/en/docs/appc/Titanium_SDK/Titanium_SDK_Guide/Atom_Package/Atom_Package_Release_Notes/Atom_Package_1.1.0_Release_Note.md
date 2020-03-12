@@ -1,7 +1,5 @@
 {"title":"Atom Package 1.1.0 - 22 February 2018","weight":"10"} 
 
-# Atom Package 1.1.0 - 22 February 2018
-
 *   [New features](#Newfeatures)
     
 *   [Improvements](#Improvements)

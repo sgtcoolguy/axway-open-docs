@@ -1,7 +1,5 @@
 {"title":"Alloy 1.7.x Release Notes","weight":"80"} 
 
-# Alloy 1.7.x Release Notes
-
 *   [Alloy 1.7.35 Release Note](/docs/appc/Alloy_Framework/Alloy_Framework_Release_Notes/Alloy_1.7.x_Release_Notes/Alloy_1.7.35_Release_Note/)
     
 *   [Alloy 1.7.34 Release Note](/docs/appc/Alloy_Framework/Alloy_Framework_Release_Notes/Alloy_1.7.x_Release_Notes/Alloy_1.7.34_Release_Note/)

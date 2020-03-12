@@ -1,7 +1,5 @@
 {"title":"Managing Mobile Backend Services Datasources","weight":"30"} 
 
-# Managing Mobile Backend Services Datasources
-
 To view service details and manage data properties for a Mobile Backend Services (MBS) datasource, select it from the Dashboard home page **Apps** tab.
 
 *   [Create a New Datasource](#CreateaNewDatasource)

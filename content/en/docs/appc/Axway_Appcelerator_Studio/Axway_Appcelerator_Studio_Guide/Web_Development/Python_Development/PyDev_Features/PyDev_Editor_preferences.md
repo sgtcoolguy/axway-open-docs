@@ -1,7 +1,5 @@
 {"title":"PyDev Editor preferences","weight":"100"} 
 
-# PyDev Editor preferences
-
 ## PyDev Editor Preferences
 
 ### Preferences

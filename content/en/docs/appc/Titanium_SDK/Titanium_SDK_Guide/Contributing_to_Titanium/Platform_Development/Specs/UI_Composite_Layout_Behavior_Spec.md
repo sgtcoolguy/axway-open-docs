@@ -1,7 +1,5 @@
 {"title":"UI Composite Layout Behavior Spec","weight":"70"} 
 
-# UI Composite Layout Behavior Spec
-
 ## Contents
 
 *   [Overview](#Overview)

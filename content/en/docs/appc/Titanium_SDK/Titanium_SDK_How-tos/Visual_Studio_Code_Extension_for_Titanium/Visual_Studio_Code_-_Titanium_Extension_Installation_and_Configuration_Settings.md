@@ -1,7 +1,5 @@
 {"title":"Visual Studio Code - Titanium Extension Installation and Configuration Settings","weight":"20"} 
 
-# Visual Studio Code - Titanium Extension Installation and Configuration Settings
-
 ## Titanium extension installation
 
 Via the browser:

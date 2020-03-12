@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 5.0.0 Release Note","weight":"230"} 
 
-# Titanium SDK 5.0.0 Release Note
-
 ## Titanium SDK 5.0.0 General Availability - 16 September 2015
 
 ### Contents

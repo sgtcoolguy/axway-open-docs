@@ -1,7 +1,5 @@
 {"title":"Core Motion Module","weight":"10"} 
 
-# Core Motion Module
-
 *   [Introduction](#Introduction)
     
     *   [Requirements](#Requirements)

@@ -1,7 +1,5 @@
 {"title":"Setting Up a Local Portal","weight":"50"} 
 
-# Setting Up a Local Portal
-
 *   [Description](#Description)
     
 *   [Importing the Portal sample from Github](#ImportingthePortalsamplefromGithub)

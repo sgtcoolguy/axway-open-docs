@@ -1,7 +1,5 @@
 {"title":"Managing Accounts","weight":"10"} 
 
-# Managing Accounts
-
 *   [User menu](#Usermenu)
     
 *   [Manage accounts](#Manageaccounts)

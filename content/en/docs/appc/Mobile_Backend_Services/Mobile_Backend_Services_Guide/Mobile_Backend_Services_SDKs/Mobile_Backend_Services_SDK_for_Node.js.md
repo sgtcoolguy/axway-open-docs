@@ -1,7 +1,5 @@
 {"title":"Mobile Backend Services SDK for Node.js","weight":"40"} 
 
-# Mobile Backend Services SDK for Node.js
-
 *   [Installation](#Installation)
     
 *   [API usage](#APIusage)

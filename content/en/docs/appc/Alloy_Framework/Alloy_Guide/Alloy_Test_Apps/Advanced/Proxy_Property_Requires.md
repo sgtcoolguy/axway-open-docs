@@ -1,7 +1,5 @@
 {"title":"Proxy Property Requires","weight":"150"} 
 
-# Proxy Property Requires
-
 Demonstrates using Require and Widget elements to create Titanium proxy properties.
 
 App folder location

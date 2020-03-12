@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI How-tos","weight":"30"} 
 
-# Appcelerator CLI How-tos
-
 This document provides links to Appcelerator CLI how-to documents.
 
 *   [Appcelerator CLI Tasks](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_How-tos/Appcelerator_CLI_Tasks/)

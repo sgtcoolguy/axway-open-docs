@@ -1,7 +1,5 @@
 {"title":"Native iOS Debugging and Testing Tools","weight":"30"} 
 
-# Native iOS Debugging and Testing Tools
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

@@ -1,7 +1,5 @@
 {"title":"App Designer Quick Start Guide","weight":"10"} 
 
-# App Designer Quick Start Guide
-
 *   [Studio Setup](#StudioSetup)
     
     *   [Manually adding views to App Designer perspective](#ManuallyaddingviewstoAppDesignerperspective)

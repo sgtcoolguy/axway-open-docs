@@ -1,7 +1,5 @@
 {"title":"Switch between Xcode 4.3 and other Xcode versions (Xcode 4.2 and lower)","weight":"90"} 
 
-# Switch between Xcode 4.3 and other Xcode versions (Xcode 4.2 and lower)
-
 Appcelerator Studio, and the Titanium CLI, uses the **xcode-select** command (typically found in /usr/bin/xcode-select) to retrieve the desired Xcode installation. If you have multiple Xcode installations and need to switch what version Studio uses, you use the same command to select the desired XCode version.
 
 **To switch the Xcode version used by Studio**:

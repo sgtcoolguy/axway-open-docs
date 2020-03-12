@@ -1,7 +1,5 @@
 {"title":"ScrollableView Binding","weight":"110"} 
 
-# ScrollableView Binding
-
 Demonstrates binding a data collection to a ScrollableView component.
 
 App Folder Location

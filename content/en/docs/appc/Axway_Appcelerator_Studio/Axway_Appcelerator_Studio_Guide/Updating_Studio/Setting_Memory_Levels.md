@@ -1,7 +1,5 @@
 {"title":"Setting Memory Levels","weight":"70"} 
 
-# Setting Memory Levels
-
 *   [Overview](#Overview)
     
 *   [Showing your current memory level](#Showingyourcurrentmemorylevel)

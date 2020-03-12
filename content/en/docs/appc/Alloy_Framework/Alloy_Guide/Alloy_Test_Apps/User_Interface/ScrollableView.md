@@ -1,7 +1,5 @@
 {"title":"ScrollableView","weight":"150"} 
 
-# ScrollableView
-
 Demonstrates basic use of ScrollableView control to present a horizontally-scrolling set of child views, called _pages._
 
 Example App Source Location

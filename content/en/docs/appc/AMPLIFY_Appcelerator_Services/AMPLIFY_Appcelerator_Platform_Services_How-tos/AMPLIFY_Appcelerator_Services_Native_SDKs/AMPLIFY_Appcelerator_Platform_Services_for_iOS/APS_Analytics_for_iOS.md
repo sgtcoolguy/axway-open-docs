@@ -1,7 +1,5 @@
 {"title":"APS Analytics for iOS","weight":"30"} 
 
-# APS Analytics for iOS
-
 Pro or Enterprise Subscription Required
 
 This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.

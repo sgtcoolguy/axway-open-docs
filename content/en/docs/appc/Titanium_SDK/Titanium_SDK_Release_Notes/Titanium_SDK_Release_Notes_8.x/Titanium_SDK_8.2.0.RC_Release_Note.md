@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 8.2.0.RC - 6 September 2019","weight":"90"} 
 
-# Titanium SDK 8.2.0.RC - 6 September 2019
-
 *   [About this release](#Aboutthisrelease)
     
 *   [Notice of feature and behavior Changes](#NoticeoffeatureandbehaviorChanges)

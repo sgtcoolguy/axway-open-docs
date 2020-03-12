@@ -1,7 +1,5 @@
 {"title":"RHTML Editor","weight":"10"} 
 
-# RHTML Editor
-
 This page gives an overview of the RHTML Editor in Aptana Rails.
 
 ## Introduction

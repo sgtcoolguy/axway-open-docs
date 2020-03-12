@@ -1,7 +1,5 @@
 {"title":"AMPLIFY Runtime Services Troubleshooting","weight":"20"} 
 
-# AMPLIFY Runtime Services Troubleshooting
-
 *   [Introduction](#Introduction)
     
 *   [Exceptions are thrown upon deployment](#Exceptionsarethrownupondeployment)

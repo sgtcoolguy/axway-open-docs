@@ -1,7 +1,5 @@
 {"title":"Search and Query APIs","weight":"60"} 
 
-# Search and Query APIs
-
 *   [Query API overview](#QueryAPIoverview)
     
     *   [Query API availability](#QueryAPIavailability)

@@ -1,7 +1,5 @@
 {"title":"Creating a New Theme","weight":"10"} 
 
-# Creating a New Theme
-
 ## Overview
 
 A brief introduction to creating a new theme.

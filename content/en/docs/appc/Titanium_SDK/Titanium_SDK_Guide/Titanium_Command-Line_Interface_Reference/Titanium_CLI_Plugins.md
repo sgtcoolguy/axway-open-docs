@@ -1,7 +1,5 @@
 {"title":"Titanium CLI Plugins","weight":"20"} 
 
-# Titanium CLI Plugins
-
 *   [Introduction](#Introduction)
     
 *   [Plugins](#Plugins)

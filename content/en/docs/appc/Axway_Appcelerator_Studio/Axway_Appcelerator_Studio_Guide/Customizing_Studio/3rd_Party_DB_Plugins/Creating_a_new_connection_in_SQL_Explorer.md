@@ -1,7 +1,5 @@
 {"title":"Creating a new connection in SQL Explorer","weight":"30"} 
 
-# Creating a new connection in SQL Explorer
-
 ## Introduction
 
 This Help topic will teach you how to create a new database connection in SQL Explorer for RadRails. This is the third step in configuring SQL Explorer to work with RadRails. You will need to [create your driver in Eclipse](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Creating_a_new_driver_in_Eclipse/) before following the instructions below.

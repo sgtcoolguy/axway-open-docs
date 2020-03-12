@@ -1,7 +1,5 @@
 {"title":"Authentication","weight":"20"} 
 
-# Authentication
-
 *   [Application key over SSL](#ApplicationkeyoverSSL)
     
 *   [2-Legged OAuth](#2-LeggedOAuth)

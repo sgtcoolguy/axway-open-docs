@@ -1,7 +1,5 @@
 {"title":"Destroying Data Bindings","weight":"50"} 
 
-# Destroying Data Bindings
-
 Demonstrates best practices for data binding memory management.
 
 App Folder Location

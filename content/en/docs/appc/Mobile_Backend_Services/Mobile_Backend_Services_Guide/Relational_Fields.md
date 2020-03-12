@@ -1,7 +1,5 @@
 {"title":"Relational Fields","weight":"50"} 
 
-# Relational Fields
-
 *   [Create a relational field](#Createarelationalfield)
     
 *   [Show a relational field](#Showarelationalfield)

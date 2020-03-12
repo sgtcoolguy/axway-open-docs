@@ -1,7 +1,5 @@
 {"title":"Contributing API Documentation","weight":"10"} 
 
-# Contributing API Documentation
-
 **Contents**
 
 *   [Overview](#Overview)

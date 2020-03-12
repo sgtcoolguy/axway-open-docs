@@ -1,7 +1,5 @@
 {"title":"Uninstalling Studio","weight":"50"} 
 
-# Uninstalling Studio
-
 This document contains information on how to uninstall Studio. Read all steps for the platform you will be uninstalling for before starting the uninstallation process.
 
 ## Mac OS X

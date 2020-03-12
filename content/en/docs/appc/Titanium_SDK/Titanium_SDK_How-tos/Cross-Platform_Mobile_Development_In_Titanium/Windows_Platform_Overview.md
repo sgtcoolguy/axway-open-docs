@@ -1,7 +1,5 @@
 {"title":"Windows Platform Overview","weight":"30"} 
 
-# Windows Platform Overview
-
 *   [Introduction](#Introduction)
     
 *   [Windows Phone](#WindowsPhone)

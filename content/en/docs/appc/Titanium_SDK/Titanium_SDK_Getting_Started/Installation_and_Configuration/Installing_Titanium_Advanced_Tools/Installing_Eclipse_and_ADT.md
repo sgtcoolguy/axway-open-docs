@@ -1,7 +1,5 @@
 {"title":"Installing Eclipse and ADT","weight":"60"} 
 
-# Installing Eclipse and ADT
-
 ## Contents
 
 *   [Compatibility and download](#Compatibilityanddownload)

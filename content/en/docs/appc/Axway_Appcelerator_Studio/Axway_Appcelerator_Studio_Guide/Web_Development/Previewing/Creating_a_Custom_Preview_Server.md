@@ -1,7 +1,5 @@
 {"title":"Creating a Custom Preview Server","weight":"40"} 
 
-# Creating a Custom Preview Server
-
 You can customize the URLs used during previewing to accommodate the case where the web root of your site does not match your project structure, or you can't use the internal server.
 
 *   [Using a Local Web Server](#UsingaLocalWebServer)

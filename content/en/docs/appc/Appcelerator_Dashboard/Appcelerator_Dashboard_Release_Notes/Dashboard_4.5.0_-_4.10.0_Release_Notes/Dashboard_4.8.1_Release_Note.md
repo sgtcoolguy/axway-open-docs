@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.8.1 - 1 July 2016","weight":"50"} 
 
-# Dashboard 4.8.1 - 1 July 2016
-
 Dashboard 4.8.1 is a patch release, which includes new features, improvements, and several bug fixes.
 
 ## New Features

@@ -1,7 +1,5 @@
 {"title":"Installation Troubleshooting","weight":"50"} 
 
-# Installation Troubleshooting
-
 This document provides basic installation troubleshooting information.
 
 *   [All platforms](#Allplatforms)

@@ -1,7 +1,5 @@
 {"title":"Image Best Practices","weight":"50"} 
 
-# Image Best Practices
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

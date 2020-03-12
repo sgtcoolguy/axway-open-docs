@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 6.0.0 Changes","weight":"10"} 
 
-# Titanium SDK 6.0.0 Changes
-
 With the release of Titanium SDK 6.0.0, we introduced many great features and improvements. However, some of these changes broke features in previous releases. This document lists all the breaking changes as well as how to handle them.
 
 *   [Rebuilding Android Modules](#RebuildingAndroidModules)

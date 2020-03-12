@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI 7.1.1.GA - 6 September 2019","weight":"50"} 
 
-# Appcelerator CLI 7.1.1.GA - 6 September 2019
-
 Appcelerator CLI 7.1.1.GA is a patch release that includes one improvement and several bug fixes.
 
 As of this GA release, the previous CLI patch release is no longer supported. End of support for this version will be up to 2020-03-06 or until the next patch release. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

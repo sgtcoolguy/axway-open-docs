@@ -1,7 +1,5 @@
 {"title":"Create Alloy Application Templates Using Rubles","weight":"10"} 
 
-# Create Alloy Application Templates Using Rubles
-
 To create Alloy templates via Rubles, add the following block to bundle.rb:
 
 `project_template` `"Alloy Template Test"`  `do` `|t|`

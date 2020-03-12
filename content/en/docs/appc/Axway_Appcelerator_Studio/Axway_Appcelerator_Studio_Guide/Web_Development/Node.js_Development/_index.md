@@ -1,7 +1,5 @@
 {"title":"Node.js Development","weight":"90"} 
 
-# Node.js Development
-
 Node.js is a high-performance platform for developing networked applications, built on top of the Chrome V8 JavaScript engine.
 
 Inside Titanium Studio, Node.js is used for a variety of external tools, including Alloy, the updated SDK command-line interface, and additional products.

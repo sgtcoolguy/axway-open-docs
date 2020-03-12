@@ -1,7 +1,5 @@
 {"title":"User Interface","weight":"10"} 
 
-# User Interface
-
 Samples in the [ui/ folder](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui) demonstrate use of several Titanium UI objects in an Alloy project.
 
 *   [AlertDialog](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/User_Interface/AlertDialog/) — Demonstrates basic use of an AlertDialog.

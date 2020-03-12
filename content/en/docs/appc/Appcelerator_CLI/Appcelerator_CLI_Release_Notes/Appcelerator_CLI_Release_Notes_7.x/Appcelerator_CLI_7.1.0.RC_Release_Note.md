@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI 7.1.0.RC - 22 July 2019","weight":"30"} 
 
-# Appcelerator CLI 7.1.0.RC - 22 July 2019
-
 Appcelerator CLI 7.1.0.RC is a minor release that includes new features, improvements, and bug fixes. This release also brings **full support for Node 10** to the Appcelerator CLI.
 
 As of this release, CLI 7.0.x will not be supported six months (2020-01-22) from 7.1.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

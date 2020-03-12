@@ -1,7 +1,5 @@
 {"title":"Titanium Studio Product Update","weight":"120"} 
 
-# Titanium Studio Product Update
-
 *   [Requirements](#Requirements)
     
 *   [Description](#Description)

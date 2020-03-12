@@ -1,7 +1,5 @@
 {"title":"Platform folders","weight":"140"} 
 
-# Platform folders
-
 Demonstrates how to structure an Alloy project with folders that contains platform-specific views.
 
 App folder location

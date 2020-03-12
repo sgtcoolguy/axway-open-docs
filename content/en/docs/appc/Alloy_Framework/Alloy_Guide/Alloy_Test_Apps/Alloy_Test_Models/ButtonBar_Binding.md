@@ -1,7 +1,5 @@
 {"title":"ButtonBar Binding","weight":"10"} 
 
-# ButtonBar Binding
-
 Demonstrates how you can use data binding to populate the list of buttons in a ButtonBar or TabbedBar, or Toolbar component.
 
 App Folder Location

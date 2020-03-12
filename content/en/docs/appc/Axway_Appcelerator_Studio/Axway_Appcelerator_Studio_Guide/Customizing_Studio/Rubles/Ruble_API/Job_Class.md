@@ -1,7 +1,5 @@
 {"title":"Job Class","weight":"50"} 
 
-# Job Class
-
 The Job class contains methods and properties for interacting with the Jobs inside Studio
 
 ## Usage

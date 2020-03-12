@@ -1,7 +1,5 @@
 {"title":"Documenting Your Code Using ScriptDoc","weight":"10"} 
 
-# Documenting Your Code Using ScriptDoc
-
 Using Studio's ScriptDoc system to document your code enables Content Assist to work for your own code in addition to built-in support the core JavaScript language. This page gives some of the guidelines to think about when adding ScriptDoc blocks to your code.
 
 Peter Geil has posted a [nice one page cheat sheet](http://www.scribd.com/doc/10040039/ScriptDoc-Cheatsheet-v01) for ScriptDoc on Scribd.

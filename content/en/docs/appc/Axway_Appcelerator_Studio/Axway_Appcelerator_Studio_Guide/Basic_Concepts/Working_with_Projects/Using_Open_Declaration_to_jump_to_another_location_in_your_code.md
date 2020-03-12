@@ -1,7 +1,5 @@
 {"title":"Using Open Declaration to jump to another location in your code","weight":"90"} 
 
-# Using Open Declaration to jump to another location in your code
-
 This page describes how to use the Open Declaration feature to jump to another location in your code.
 
 ## Introduction

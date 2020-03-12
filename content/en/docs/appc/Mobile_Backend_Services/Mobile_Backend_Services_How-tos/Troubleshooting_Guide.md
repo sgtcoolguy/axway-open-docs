@@ -1,7 +1,5 @@
 {"title":"Troubleshooting Guide","weight":"40"} 
 
-# Troubleshooting Guide
-
 This document provides information on troubleshooting Titanium SDK and Studio and information about push notification error messages.
 
 *   [Titanium SDK and Studio](#TitaniumSDKandStudio)

@@ -1,7 +1,5 @@
 {"title":"Alloy 1.10.4 - 17 September 2017","weight":"80"} 
 
-# Alloy 1.10.4 - 17 September 2017
-
 Alloy 1.10.4 is a patch release that includes several bug fixes.
 
 As of this release, the previous Alloy patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

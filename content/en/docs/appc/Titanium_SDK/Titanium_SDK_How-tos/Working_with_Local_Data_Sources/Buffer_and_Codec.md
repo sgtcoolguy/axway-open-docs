@@ -1,7 +1,5 @@
 {"title":"Buffer and Codec","weight":"50"} 
 
-# Buffer and Codec
-
 *   [Objective](#Objective)
     
 *   [Definitions](#Definitions)

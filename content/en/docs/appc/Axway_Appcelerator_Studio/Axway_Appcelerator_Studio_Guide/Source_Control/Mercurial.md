@@ -1,7 +1,5 @@
 {"title":"Mercurial","weight":"30"} 
 
-# Mercurial
-
 *   [Mercurial Support](#MercurialSupport)
     
     *   [MercurialEclipse support](#MercurialEclipsesupport)

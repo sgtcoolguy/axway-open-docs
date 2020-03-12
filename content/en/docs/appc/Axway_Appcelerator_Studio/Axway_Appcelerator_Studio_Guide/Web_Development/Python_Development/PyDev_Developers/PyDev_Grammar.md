@@ -1,7 +1,5 @@
 {"title":"PyDev Grammar","weight":"10"} 
 
-# PyDev Grammar
-
 This page shows the steps needed for modifying and creating a new grammar.
 
 ## Where to start?

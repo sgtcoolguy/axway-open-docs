@@ -1,7 +1,5 @@
 {"title":"TableView","weight":"200"} 
 
-# TableView
-
 Demonstrates basic use of TableView control.
 
 Example App Source Location

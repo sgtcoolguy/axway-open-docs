@@ -1,7 +1,5 @@
 {"title":"Inheritance","weight":"90"} 
 
-# Inheritance
-
 Demonstrates how an Alloy controller can inherit functionality from another controller.
 
 App folder location

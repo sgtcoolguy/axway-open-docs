@@ -1,7 +1,5 @@
 {"title":"Install Diagnostics Script Output","weight":"10"} 
 
-# Install Diagnostics Script Output
-
 Below is an example of the output generated from the _Install Diagnostics_ script when run on a correctly-working Windows 7 system:
 
 `C:\>cd \`

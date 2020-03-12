@@ -1,7 +1,5 @@
 {"title":"ScriptDoc tag quick reference","weight":"30"} 
 
-# ScriptDoc tag quick reference
-
 This page provides an at-a-glance reference for the tags for the Studio ScriptDoc system. For comprehensive ScriptDoc tag information, including syntax and examples, see the [ScriptDoc (SDOC) 2.0 Specification](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/ScriptDoc_(SDOC)_2.0_Specification/) page.
 
 ## Reference

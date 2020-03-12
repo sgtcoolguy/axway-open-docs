@@ -1,7 +1,5 @@
 {"title":"Quick Start","weight":"20"} 
 
-# Quick Start
-
 *   [Overview](#Overview)
     
 *   [Appcelerator Platform](#AppceleratorPlatform)

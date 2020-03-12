@@ -1,7 +1,5 @@
 {"title":"Theming Widgets","weight":"170"} 
 
-# Theming Widgets
-
 Demonstrates how to apply themes to widgets. Theme settings override default styles and assets defined within the widget itself.
 
 App Folder Location

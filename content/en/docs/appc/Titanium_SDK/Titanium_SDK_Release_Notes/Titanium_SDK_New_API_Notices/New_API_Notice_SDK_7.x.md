@@ -1,7 +1,5 @@
 {"title":"New API Notice SDK 7.x","weight":"20"} 
 
-# New API Notice SDK 7.x
-
 List of all new API notices for SDK 7.x.
 
 *   [SDK 7.x](#SDK7.x)

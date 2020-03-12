@@ -1,7 +1,5 @@
 {"title":"Distributing iOS apps","weight":"40"} 
 
-# Distributing iOS apps
-
 *   [Introduction](#Introduction)
     
 *   [Contents](#Contents)

@@ -1,7 +1,5 @@
 {"title":"Using the TiApp Utility Class in Hyperloop iOS","weight":"40"} 
 
-# Using the TiApp Utility Class in Hyperloop iOS
-
 *   [Class Methods](#ClassMethods)
     
 *   [Instance Methods](#InstanceMethods)

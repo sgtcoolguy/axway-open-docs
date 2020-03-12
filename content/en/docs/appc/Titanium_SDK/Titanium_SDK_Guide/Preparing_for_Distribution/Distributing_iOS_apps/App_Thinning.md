@@ -1,7 +1,5 @@
 {"title":"App Thinning","weight":"10"} 
 
-# App Thinning
-
 *   [Introduction](#Introduction)
     
 *   [Slicing](#Slicing)

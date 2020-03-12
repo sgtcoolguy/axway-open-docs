@@ -1,7 +1,5 @@
 {"title":"Android Action Bar","weight":"10"} 
 
-# Android Action Bar
-
 The action bar is a major UI feature for Android applications in Android 3.0 and later. To understand all of the features of the action bar and its place in Android applications, we recommend reviewing the [Android Design: Action Bar](http://developer.android.com/design/patterns/actionbar.html) and the [Action Bar API guide](http://developer.android.com/guide/topics/ui/actionbar.html) on the Android developer site.
 
 *   [Supported and unsupported features](#Supportedandunsupportedfeatures)

@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI Release Notes 7.0.x","weight":"40"} 
 
-# Appcelerator CLI Release Notes 7.0.x
-
 *   [Appcelerator CLI 7.0.12.GA Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_7.x/Appcelerator_CLI_Release_Notes_7.0.x/Appcelerator_CLI_7.0.12.GA_Release_Note/)
     
 *   [Appcelerator CLI 7.0.12.RC Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_7.x/Appcelerator_CLI_Release_Notes_7.0.x/Appcelerator_CLI_7.0.12.RC_Release_Note/)

@@ -1,7 +1,5 @@
 {"title":"CSS Development","weight":"70"} 
 
-# CSS Development
-
 Use the Studio CSS Editor to code the styles for your web sites.
 
 ## Introduction

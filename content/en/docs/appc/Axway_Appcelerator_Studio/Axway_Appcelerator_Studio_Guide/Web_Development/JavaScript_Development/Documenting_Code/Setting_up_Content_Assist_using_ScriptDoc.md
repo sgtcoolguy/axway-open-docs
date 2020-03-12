@@ -1,7 +1,5 @@
 {"title":"Setting up Content Assist using ScriptDoc","weight":"20"} 
 
-# Setting up Content Assist using ScriptDoc
-
 ScriptDoc is the tool that Studio uses to generate the content for Content Assist from JavaScript code. (To learn more about Content Assist, see [About Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/About_Content_Assist/).) ScriptDoc automatically scans all of the projects in your project for ScriptDoc documentation blocks and displays the Content Assist bubbles when you use the classes and functions that you have documented.
 
 You do not need to run any separate tool or compile anything for Content Assist to work. It should work as soon as you document a function and call that function elsewhere in your code for code within a file.

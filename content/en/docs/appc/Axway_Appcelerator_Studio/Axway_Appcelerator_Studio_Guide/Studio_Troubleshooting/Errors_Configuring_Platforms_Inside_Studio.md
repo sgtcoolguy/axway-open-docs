@@ -1,7 +1,5 @@
 {"title":"Errors Configuring Platforms Inside Studio","weight":"120"} 
 
-# Errors Configuring Platforms Inside Studio
-
 *   [Overview](#Overview)
     
 *   [iOS SDK version XXX not found](#iOSSDKversionXXXnotfound)

@@ -1,7 +1,5 @@
 {"title":"Adding custom error message filters to the Problems View","weight":"10"} 
 
-# Adding custom error message filters to the Problems View
-
 This page explains how to create custom error message filters for your Problems View.
 
 ## Introduction

@@ -1,7 +1,5 @@
 {"title":"Hyperloop Requirements","weight":"10"} 
 
-# Hyperloop Requirements
-
 *   [Requirements](#Requirements)
     
     *   [Optional Dependencies](#OptionalDependencies)

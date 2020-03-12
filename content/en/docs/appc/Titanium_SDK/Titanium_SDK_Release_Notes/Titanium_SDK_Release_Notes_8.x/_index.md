@@ -1,7 +1,5 @@
 {"title":"Titanium SDK Release Notes 8.x","weight":"10"} 
 
-# Titanium SDK Release Notes 8.x
-
 *   [Titanium SDK 8.3.0.GA Release Note](/docs/appc/Titanium_SDK/Titanium_SDK_Release_Notes/Titanium_SDK_Release_Notes_8.x/Titanium_SDK_8.3.0.GA_Release_Note/)
     
 *   [Titanium SDK 8.3.0.RC Release Note](/docs/appc/Titanium_SDK/Titanium_SDK_Release_Notes/Titanium_SDK_Release_Notes_8.x/Titanium_SDK_8.3.0.RC_Release_Note/)

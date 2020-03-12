@@ -1,7 +1,5 @@
 {"title":"ACS 2013 11 April Release Note","weight":"100"} 
 
-# ACS 2013 11 April Release Note
-
 This update included the following bug fixes:
 
 *   Fixed a regression causing user confirmation email requests to fail with an error ("400 Bad Request - Invalid app key").

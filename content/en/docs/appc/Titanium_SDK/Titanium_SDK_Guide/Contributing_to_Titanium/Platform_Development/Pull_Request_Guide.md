@@ -1,7 +1,5 @@
 {"title":"Pull Request Guide","weight":"30"} 
 
-# Pull Request Guide
-
 *   [Prerequisites](#Prerequisites)
     
 *   [Pull Request Process](#PullRequestProcess)

@@ -1,7 +1,5 @@
 {"title":"New API Notice SDK 6.x","weight":"30"} 
 
-# New API Notice SDK 6.x
-
 List of all new API notices for SDK 6.x.
 
 *   [SDK 6.x](#SDK6.x)

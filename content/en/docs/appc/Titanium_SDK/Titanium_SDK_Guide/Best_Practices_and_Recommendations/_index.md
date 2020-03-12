@@ -1,7 +1,5 @@
 {"title":"Best Practices and Recommendations","weight":"20"} 
 
-# Best Practices and Recommendations
-
 ## Titanium best practices
 
 Though both Titanium and JavaScript are highly flexible, we have found that certain approaches lead to better outcomes. As a guide, we look for techniques that achieve these goals:

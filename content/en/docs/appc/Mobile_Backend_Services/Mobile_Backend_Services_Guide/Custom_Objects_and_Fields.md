@@ -1,7 +1,5 @@
 {"title":"Custom Objects and Fields","weight":"30"} 
 
-# Custom Objects and Fields
-
 This document provides information about custom objects and fields, how to create custom objects, adding and removing custom fields, and supported data types.
 
 *   [Custom objects and custom fields](#Customobjectsandcustomfields)

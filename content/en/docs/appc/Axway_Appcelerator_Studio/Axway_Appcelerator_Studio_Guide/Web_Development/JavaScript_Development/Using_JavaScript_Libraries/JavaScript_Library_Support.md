@@ -1,7 +1,5 @@
 {"title":"JavaScript Library Support","weight":"10"} 
 
-# JavaScript Library Support
-
 *   [Libraries](#Libraries)
     
     *   [Dojo (http://dojotoolkit.org)](#Dojo(http://dojotoolkit.org))

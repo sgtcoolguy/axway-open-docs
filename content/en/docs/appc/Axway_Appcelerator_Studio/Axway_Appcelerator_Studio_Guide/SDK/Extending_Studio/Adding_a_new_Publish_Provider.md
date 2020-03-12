@@ -1,7 +1,5 @@
 {"title":"Adding a new Publish Provider","weight":"10"} 
 
-# Adding a new Publish Provider
-
 *   [Overview](#Overview)
     
 *   [Prerequisites](#Prerequisites)

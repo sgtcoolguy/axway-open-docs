@@ -1,7 +1,5 @@
 {"title":"Images and ImageView APIs","weight":"30"} 
 
-# Images and ImageView APIs
-
 *   [Introduction](#Introduction)
     
 *   [Background Images](#BackgroundImages)

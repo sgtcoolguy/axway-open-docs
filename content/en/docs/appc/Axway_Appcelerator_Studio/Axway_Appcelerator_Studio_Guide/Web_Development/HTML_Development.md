@@ -1,7 +1,5 @@
 {"title":"HTML Development","weight":"60"} 
 
-# HTML Development
-
 *   [HTML Support](#HTMLSupport)
     
     *   [Creating a project using the New Project wizard](#CreatingaprojectusingtheNewProjectwizard)

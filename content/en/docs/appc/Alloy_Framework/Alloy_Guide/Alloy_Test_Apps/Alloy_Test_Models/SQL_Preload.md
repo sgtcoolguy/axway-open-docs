@@ -1,7 +1,5 @@
 {"title":"SQL Preload","weight":"140"} 
 
-# SQL Preload
-
 Demonstrates how to preload a SQLite database for your Alloy appliccation using an external SQLite database file.
 
 App Folder Location

@@ -1,7 +1,5 @@
 {"title":"Axway Appcelerator Studio Release Notes","weight":"40"} 
 
-# Axway Appcelerator Studio Release Notes
-
 ## Studio 5.1.4.GA - 12 September 2019
 
 Studio 5.1.4 is a patch release that includes one improvement and three bug fixes.

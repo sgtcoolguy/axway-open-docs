@@ -1,7 +1,5 @@
 {"title":"Subversion","weight":"50"} 
 
-# Subversion
-
 *   [Subversion Support](#SubversionSupport)
     
     *   [Installation](#Installation)

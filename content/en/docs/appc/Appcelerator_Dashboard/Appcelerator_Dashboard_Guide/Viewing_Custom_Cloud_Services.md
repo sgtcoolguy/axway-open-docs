@@ -1,7 +1,5 @@
 {"title":"Viewing Custom Cloud Services","weight":"70"} 
 
-# Viewing Custom Cloud Services
-
 *   [API Builder API calls metric details screen](#APIBuilderAPIcallsmetricdetailsscreen)
     
 *   [API Builder application details screen](#APIBuilderapplicationdetailsscreen)

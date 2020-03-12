@@ -1,7 +1,5 @@
 {"title":"ACS 2013 6 December Release Note","weight":"20"} 
 
-# ACS 2013 6 December Release Note
-
 This update includes the following bug fixes and enhancements:
 
 *   Add ability to increment or decrement the badge value when sending a push notification. See the "Badge" section in [PushNotifications](/arrowdb/latest/#!/api/PushNotifications).

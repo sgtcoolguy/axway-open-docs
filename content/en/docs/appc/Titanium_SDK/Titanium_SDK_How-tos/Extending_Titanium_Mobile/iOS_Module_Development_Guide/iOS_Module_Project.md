@@ -1,7 +1,5 @@
 {"title":"iOS Module Project","weight":"30"} 
 
-# iOS Module Project
-
 *   [Introduction](#Introduction)
     
 *   [Prerequisite](#Prerequisite)

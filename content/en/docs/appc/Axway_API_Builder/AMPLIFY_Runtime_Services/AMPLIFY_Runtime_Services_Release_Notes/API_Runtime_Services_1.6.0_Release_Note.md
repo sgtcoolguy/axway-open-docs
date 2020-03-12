@@ -1,7 +1,5 @@
 {"title":"API Runtime Services 1.6.0 - 13 April 2017","weight":"70"} 
 
-# API Runtime Services 1.6.0 - 13 April 2017
-
 This release of Arrow Cloud includes version 2.0.4 of the CLI and 1.6.0 of the server and includes behavior changes, new features and improvements, and several bug fixes.
 
 ## Behavior changes

@@ -1,7 +1,5 @@
 {"title":"Alloy Reference Guides","weight":"30"} 
 
-# Alloy Reference Guides
-
 These guides describe the syntax and usage of the various Alloy configuration files as well as lists the commands for the command-line interface.
 
 ## Sections

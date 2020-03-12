@@ -1,7 +1,5 @@
 {"title":"Migrating from Aptana Studio 2 to Aptana Studio 3","weight":"80"} 
 
-# Migrating from Aptana Studio 2 to Aptana Studio 3
-
 This document contains information on how to migrate Aptana Studio 2 to version 3.
 
 *   [Migrating Projects](#MigratingProjects)

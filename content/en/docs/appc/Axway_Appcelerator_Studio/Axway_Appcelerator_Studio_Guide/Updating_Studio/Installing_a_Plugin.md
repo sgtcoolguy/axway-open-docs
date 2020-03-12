@@ -1,7 +1,5 @@
 {"title":"Installing a Plugin","weight":"10"} 
 
-# Installing a Plugin
-
 *   [Overview](#Overview)
     
 *   [Installing 3rd Party Plugins into Studio](#Installing3rdPartyPluginsintoStudio)

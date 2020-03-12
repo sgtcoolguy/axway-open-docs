@@ -1,7 +1,5 @@
 {"title":"Transitioning to the New UI Layout System","weight":"50"} 
 
-# Transitioning to the New UI Layout System
-
 *   [Overview](#Overview)
     
 *   [Understanding the UI Layout System Changes](#UnderstandingtheUILayoutSystemChanges)

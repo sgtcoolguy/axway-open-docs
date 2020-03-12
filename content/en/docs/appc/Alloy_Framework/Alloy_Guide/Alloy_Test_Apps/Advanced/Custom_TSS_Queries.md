@@ -1,7 +1,5 @@
 {"title":"Custom TSS Queries","weight":"40"} 
 
-# Custom TSS Queries
-
 Demonstrates how to use custom TSS queries to style Alloy elements.
 
 App folder location

@@ -1,7 +1,5 @@
 {"title":"Appcelerator Dashboard Guide","weight":"20"} 
 
-# Appcelerator Dashboard Guide
-
 This document provides high-level links to the topics in the Dashboard guide.
 
 *   [Managing Accounts](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Accounts/)

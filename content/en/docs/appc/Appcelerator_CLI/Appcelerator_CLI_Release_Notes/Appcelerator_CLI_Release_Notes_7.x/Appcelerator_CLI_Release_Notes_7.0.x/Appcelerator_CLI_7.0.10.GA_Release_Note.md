@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI 7.0.10.GA - 14 March 2019","weight":"50"} 
 
-# Appcelerator CLI 7.0.10.GA - 14 March 2019
-
 Appcelerator CLI 7.0.10.RC is a patch release that includes several improvements and bug fixes. This release also drops support for SOASTA.
 
 As of this GA release, the previous CLI patch release is no longer supported. End of support for this version will be up to 2019-09-14 or until the next patch release. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

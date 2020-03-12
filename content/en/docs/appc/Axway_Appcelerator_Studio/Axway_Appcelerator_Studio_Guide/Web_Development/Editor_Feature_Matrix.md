@@ -1,7 +1,5 @@
 {"title":"Editor Feature Matrix","weight":"10"} 
 
-# Editor Feature Matrix
-
 Studio features a large set of language editors. In order to clarify what are the expected features available in a particular editor, please view the table below and compare it with the level of support for the editor in question. Not every editor currently supports all the features of its specified level, but it is our intention to bring all editors to full compliance with their expected feature set.
 
 *   [Well-supported Editors](#Well-supportedEditors)

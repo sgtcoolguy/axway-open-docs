@@ -1,7 +1,5 @@
 {"title":"Alloy Getting Started","weight":"10"} 
 
-# Alloy Getting Started
-
 *   [Overview](#Overview)
     
 *   [Command-line interface installation](#Command-lineinterfaceinstallation)

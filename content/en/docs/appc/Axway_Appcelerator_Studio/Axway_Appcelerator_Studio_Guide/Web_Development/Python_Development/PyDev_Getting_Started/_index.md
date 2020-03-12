@@ -1,7 +1,5 @@
 {"title":"PyDev Getting Started","weight":"20"} 
 
-# PyDev Getting Started
-
 This manual assumes that you have already have **Python and/or Jython and/or IronPython** installed in your machine, as well as **Eclipse**, **Aptana Studio 2** or **Aptana Studio 3**.
 
 **Manual topics:**

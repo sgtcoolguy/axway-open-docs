@@ -1,7 +1,5 @@
 {"title":"Lists and Tables and Proxy Properties","weight":"70"} 
 
-# Lists and Tables and Proxy Properties
-
 Demonstrates use of Alloy elements to proxy ListView and TableView controls and their properties.
 
 Example App Source Location

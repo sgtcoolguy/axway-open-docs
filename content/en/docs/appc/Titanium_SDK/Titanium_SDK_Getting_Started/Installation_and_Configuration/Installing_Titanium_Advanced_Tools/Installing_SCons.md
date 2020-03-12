@@ -1,7 +1,5 @@
 {"title":"Installing SCons","weight":"40"} 
 
-# Installing SCons
-
 ## Contents
 
 *   [Compatibility and Download](#CompatibilityandDownload)

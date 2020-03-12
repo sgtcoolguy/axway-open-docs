@@ -1,7 +1,5 @@
 {"title":"Alloy Backbone Migration","weight":"40"} 
 
-# Alloy Backbone Migration
-
 *   [Overview](#Overview)
     
     *   [Alloy 1.10.12 release](#Alloy1.10.12release)

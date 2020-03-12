@@ -1,7 +1,5 @@
 {"title":"Displaying Dot Files and Folders","weight":"60"} 
 
-# Displaying Dot Files and Folders
-
 ## Overview
 
 The dot files and folders are hidden by default in App Explorer and Project Explorer views. This page explains how to show them in those views.

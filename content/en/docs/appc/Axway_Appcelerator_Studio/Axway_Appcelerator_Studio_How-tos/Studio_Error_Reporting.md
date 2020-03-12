@@ -1,7 +1,5 @@
 {"title":"Studio Error Reporting","weight":"50"} 
 
-# Studio Error Reporting
-
 *   [Error reporting configuration](#Errorreportingconfiguration)
     
 *   [Disabling error reporting](#Disablingerrorreporting)

@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 7.5.0 Functionality Update","weight":"10"} 
 
-# Titanium SDK 7.5.0 Functionality Update
-
 ## Functionality Update
 
 Generally speaking, CommonJS modules expect to have their own scope, to export their objects, values, and functions.

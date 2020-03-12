@@ -1,7 +1,5 @@
 {"title":"Titanium Templates","weight":"30"} 
 
-# Titanium Templates
-
 Studio includes several templates to be used as jumping-off points for Titanium development
 
 *   [Importing a Sample](#ImportingaSample)

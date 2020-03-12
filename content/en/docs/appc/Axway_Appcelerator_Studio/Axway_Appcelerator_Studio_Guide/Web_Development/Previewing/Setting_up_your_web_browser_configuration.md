@@ -1,7 +1,5 @@
 {"title":"Setting up your web browser configuration","weight":"20"} 
 
-# Setting up your web browser configuration
-
 This page explains how to set up the different web browser configuration options to preview a project in a web browser.
 
 *   [Introduction](#Introduction)

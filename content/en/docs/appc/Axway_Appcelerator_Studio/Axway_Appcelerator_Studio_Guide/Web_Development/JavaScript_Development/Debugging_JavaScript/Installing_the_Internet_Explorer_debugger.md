@@ -1,7 +1,5 @@
 {"title":"Installing the Internet Explorer debugger","weight":"60"} 
 
-# Installing the Internet Explorer debugger
-
 *   [Overview](#Overview)
     
 *   [Instructions](#Instructions)

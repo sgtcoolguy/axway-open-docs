@@ -1,7 +1,5 @@
 {"title":"Creating a New Project File","weight":"30"} 
 
-# Creating a New Project File
-
 This page describes how to add a new file to a project.
 
 ## Instructions

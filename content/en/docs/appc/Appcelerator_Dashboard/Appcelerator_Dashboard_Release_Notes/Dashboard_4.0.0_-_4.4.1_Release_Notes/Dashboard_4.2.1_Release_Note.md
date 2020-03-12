@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.2.1","weight":"50"} 
 
-# Dashboard 4.2.1
-
 Dashboard 4.2.1 is a patch release, which includes some behavior changes and bug fixes addressing high-priority issues from previous releases.
 
 ## Behavior Changes

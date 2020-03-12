@@ -1,7 +1,5 @@
 {"title":"Converting a Textmate Bundle","weight":"30"} 
 
-# Converting a Textmate Bundle
-
 *   [Overview](#Overview)
     
 *   [Performing the conversion](#Performingtheconversion)

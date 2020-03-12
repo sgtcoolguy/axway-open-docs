@@ -1,7 +1,5 @@
 {"title":"iOS 3D Touch","weight":"10"} 
 
-# iOS 3D Touch
-
 *   [Introduction](#Introduction)
     
 *   [Quick Actions](#QuickActions)

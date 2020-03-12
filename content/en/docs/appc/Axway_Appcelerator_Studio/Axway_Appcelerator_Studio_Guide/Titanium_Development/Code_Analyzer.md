@@ -1,7 +1,5 @@
 {"title":"Code Analyzer","weight":"120"} 
 
-# Code Analyzer
-
 *   [Introduction](#Introduction)
     
 *   [Analyzing an Application](#AnalyzinganApplication)

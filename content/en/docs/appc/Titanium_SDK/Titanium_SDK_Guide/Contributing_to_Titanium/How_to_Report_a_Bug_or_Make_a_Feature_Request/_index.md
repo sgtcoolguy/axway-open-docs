@@ -1,7 +1,5 @@
 {"title":"How to Report a Bug or Make a Feature Request","weight":"10"} 
 
-# How to Report a Bug or Make a Feature Request
-
 *   [Overview](#Overview)
     
 *   [Introducing JIRA](#IntroducingJIRA)

@@ -1,7 +1,5 @@
 {"title":"Modifying Your Configuration","weight":"100"} 
 
-# Modifying Your Configuration
-
 ## Overview
 
 This guide explains the steps for modifying your configuration file.

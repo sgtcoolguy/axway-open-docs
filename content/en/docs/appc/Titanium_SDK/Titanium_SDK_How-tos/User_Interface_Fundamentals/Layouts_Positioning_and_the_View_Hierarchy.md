@@ -1,7 +1,5 @@
 {"title":"Layouts Positioning and the View Hierarchy","weight":"20"} 
 
-# Layouts Positioning and the View Hierarchy
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

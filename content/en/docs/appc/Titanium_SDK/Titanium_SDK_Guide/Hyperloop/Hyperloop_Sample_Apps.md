@@ -1,7 +1,5 @@
 {"title":"Hyperloop Sample Apps","weight":"40"} 
 
-# Hyperloop Sample Apps
-
 *   [Introduction](#Introduction)
     
     *   [Requirements](#Requirements)

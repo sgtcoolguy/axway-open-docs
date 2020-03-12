@@ -1,7 +1,5 @@
 {"title":"Titanium SDK Guide","weight":"20"} 
 
-# Titanium SDK Guide
-
 This document provides links to various guides on setting up and using Titanium SDK.
 
 *   [Welcome To Titanium!](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Welcome_To_Titanium!/)

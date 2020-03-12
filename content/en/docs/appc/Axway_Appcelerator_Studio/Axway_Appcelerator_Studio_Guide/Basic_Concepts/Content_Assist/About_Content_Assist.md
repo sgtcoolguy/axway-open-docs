@@ -1,7 +1,5 @@
 {"title":"About Content Assist","weight":"10"} 
 
-# About Content Assist
-
 *   [Overview](#Overview)
     
 *   [Using Content Assist](#UsingContentAssist)

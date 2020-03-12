@@ -1,7 +1,5 @@
 {"title":"TCP Socket API Spec","weight":"40"} 
 
-# TCP Socket API Spec
-
 ## Contents
 
 *   [Overview](#Overview)

@@ -1,7 +1,5 @@
 {"title":"ACS 1.1.x Release Notes","weight":"100"} 
 
-# ACS 1.1.x Release Notes
-
 *   [ACS 1.1.10 Release Note](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Release_Notes/ACS_1.1.x_Release_Notes/ACS_1.1.10_Release_Note/)
     
 *   [ACS 1.1.9 Release Note](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Release_Notes/ACS_1.1.x_Release_Notes/ACS_1.1.9_Release_Note/)

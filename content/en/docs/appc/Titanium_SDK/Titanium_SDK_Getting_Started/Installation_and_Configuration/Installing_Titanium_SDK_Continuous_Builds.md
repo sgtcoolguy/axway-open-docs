@@ -1,7 +1,5 @@
 {"title":"Installing Titanium SDK Continuous Builds","weight":"40"} 
 
-# Installing Titanium SDK Continuous Builds
-
 *   [Summary](#Summary)
     
 *   [Obtaining the build](#Obtainingthebuild)

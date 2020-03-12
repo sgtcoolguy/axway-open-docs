@@ -1,7 +1,5 @@
 {"title":"Titanium Boilerplates for TypeScript","weight":"10"} 
 
-# Titanium Boilerplates for TypeScript
-
 *   [Getting started with our templates](#Gettingstartedwithourtemplates)
     
 *   [TypeScript Support for Existing Projects](#TypeScriptSupportforExistingProjects)

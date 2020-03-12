@@ -1,7 +1,5 @@
 {"title":"ScriptDoc (SDOC) 2.0 Specification","weight":"50"} 
 
-# ScriptDoc (SDOC) 2.0 Specification
-
 *   [Overview](#Overview)
     
 *   [Reference](#Reference)

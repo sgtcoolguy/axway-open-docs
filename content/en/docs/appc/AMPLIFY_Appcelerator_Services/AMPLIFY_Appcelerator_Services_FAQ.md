@@ -1,7 +1,5 @@
 {"title":"AMPLIFY Appcelerator Services FAQ","weight":"30"} 
 
-# AMPLIFY Appcelerator Services FAQ
-
 ## Single Event Funnel in Appcelerator Analytics won't work
 
 You must use at least two events.

@@ -1,7 +1,5 @@
 {"title":"AMPLIFY Runtime Services FAQ","weight":"40"} 
 
-# AMPLIFY Runtime Services FAQ
-
 This document provides references to answer several AMPLIFY Runtime Services (API Runtime Services) frequently asked questions (FAQs).
 
 *   [Exceptions are thrown upon deployment](#Exceptionsarethrownupondeployment)

@@ -1,7 +1,5 @@
 {"title":"The WebView Component","weight":"10"} 
 
-# The WebView Component
-
 *   [Overview](#Overview)
     
 *   [Contents](#Contents)

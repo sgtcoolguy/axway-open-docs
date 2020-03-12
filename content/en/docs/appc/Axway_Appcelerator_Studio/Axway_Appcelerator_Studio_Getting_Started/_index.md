@@ -1,7 +1,5 @@
 {"title":"Axway Appcelerator Studio Getting Started","weight":"10"} 
 
-# Axway Appcelerator Studio Getting Started
-
 Axway Appcelerator Studio is an Integrated Development Environment (IDE) to build an enterprise level cross-platform mobile applications using the Titanium SDK. It's built based on the Eclipse, an open source and most widely used IDE.
 
 This guide contains a selection of tutorials which show you how to get started with the building cross-platform mobile application development using Axway Appcelerator Studio.

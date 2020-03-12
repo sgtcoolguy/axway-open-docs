@@ -1,7 +1,5 @@
 {"title":"A Command Which Outputs a Snippet","weight":"10"} 
 
-# A Command Which Outputs a Snippet
-
 *   [Overview](#Overview)
     
 *   [The Code](#TheCode)

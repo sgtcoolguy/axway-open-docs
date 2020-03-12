@@ -1,7 +1,5 @@
 {"title":"Studio 5.1.4.GA - 12 September 2019","weight":"10"} 
 
-# Studio 5.1.4.GA - 12 September 2019
-
 Studio 5.1.4 is a patch release that includes one improvement and three bug fixes.
 
 As of this GA release, the previous Studio patch release is no longer supported. End of support for this version will be 2020-03-11 or until the next patch release. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.15.1 - 14 November 2017","weight":"20"} 
 
-# Dashboard 4.15.1 - 14 November 2017
-
 Dashboard 4.15.1 is a patch release, which includes the following bug fixes.
 
 ## Fixed issues

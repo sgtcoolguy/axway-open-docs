@@ -1,7 +1,5 @@
 {"title":"Project Explorer View","weight":"40"} 
 
-# Project Explorer View
-
 The Project Explorer view allows you to navigate through projects and resources in the same workspace.
 
 ![ProjectExplorerView](/Images/appc/download/attachments/39685901/ProjectExplorerView.png)

@@ -1,7 +1,5 @@
 {"title":"iOS Launch Files","weight":"10"} 
 
-# iOS Launch Files
-
 *   [What this guide is about](#Whatthisguideisabout)
     
 *   [What are Launch Files?](#WhatareLaunchFiles?)

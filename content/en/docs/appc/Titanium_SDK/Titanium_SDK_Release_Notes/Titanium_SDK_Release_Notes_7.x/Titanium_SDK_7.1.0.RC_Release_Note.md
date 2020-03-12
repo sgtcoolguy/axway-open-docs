@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 7.1.0.RC - 1 March 2018","weight":"240"} 
 
-# Titanium SDK 7.1.0.RC - 1 March 2018
-
 *   [About this release](#Aboutthisrelease)
     
 *   [Notice of feature and behavior Changes](#NoticeoffeatureandbehaviorChanges)

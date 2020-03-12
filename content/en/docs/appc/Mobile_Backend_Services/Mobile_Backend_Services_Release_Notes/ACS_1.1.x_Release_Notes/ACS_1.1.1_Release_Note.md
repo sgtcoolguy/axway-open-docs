@@ -1,7 +1,5 @@
 {"title":"ACS 1.1.1 - 16 May 2014","weight":"80"} 
 
-# ACS 1.1.1 - 16 May 2014
-
 The 1.1.1 release of Appcelerator Cloud Services includes the following fixes and features:
 
 ## New features

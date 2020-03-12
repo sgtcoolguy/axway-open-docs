@@ -1,7 +1,5 @@
 {"title":"Alloy Concepts","weight":"10"} 
 
-# Alloy Concepts
-
 *   [Overview](#Overview)
     
 *   [Model-View-Controller](#Model-View-Controller)

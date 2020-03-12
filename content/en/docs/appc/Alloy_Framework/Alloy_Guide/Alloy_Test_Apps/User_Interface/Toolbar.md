@@ -1,7 +1,5 @@
 {"title":"Toolbar","weight":"210"} 
 
-# Toolbar
-
 Demonstrates adding a Toolbar control to an iOS or Android application.
 
 Example App Source Location

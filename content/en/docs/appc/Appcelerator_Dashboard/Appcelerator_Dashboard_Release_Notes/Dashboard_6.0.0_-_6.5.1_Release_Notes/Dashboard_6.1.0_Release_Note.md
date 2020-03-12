@@ -1,7 +1,5 @@
 {"title":"Dashboard 6.1.0 Release Note","weight":"80"} 
 
-# Dashboard 6.1.0 Release Note
-
 ## Dashboard 6.1.0 - 5 April 2019
 
 Dashboard 6.1.0 is a minor release, which includes new features, improvements, and bug fixes.

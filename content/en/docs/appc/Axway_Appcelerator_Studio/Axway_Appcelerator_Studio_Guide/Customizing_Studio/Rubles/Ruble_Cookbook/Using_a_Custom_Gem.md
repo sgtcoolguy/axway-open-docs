@@ -1,7 +1,5 @@
 {"title":"Using a Custom Gem","weight":"120"} 
 
-# Using a Custom Gem
-
 *   [Overview](#Overview)
     
 *   [Setup](#Setup)

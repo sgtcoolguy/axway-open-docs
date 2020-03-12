@@ -1,7 +1,5 @@
 {"title":"Studio 5.0.0.GA - 8 December 2017","weight":"100"} 
 
-# Studio 5.0.0.GA - 8 December 2017
-
 Studio 5.0.0.GA is a major release that includes new features, improvements, and bug fixes.
 
 As of this release, Studio 4.x will not be supported one calendar year from 5.0.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

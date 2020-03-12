@@ -1,7 +1,5 @@
 {"title":"Building the Titanium SDK From Source","weight":"10"} 
 
-# Building the Titanium SDK From Source
-
 This document provides information on how to build Titanium SDK from source files by listing software requirements, how to set up your environment, where to get the source files, building the SDK, how to install a build SDK, and speeding up the Titanium SDK build.
 
 *   [Software Requirements](#SoftwareRequirements)

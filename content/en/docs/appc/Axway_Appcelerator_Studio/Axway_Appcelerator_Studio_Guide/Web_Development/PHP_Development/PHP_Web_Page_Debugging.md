@@ -1,7 +1,5 @@
 {"title":"PHP Web Page Debugging","weight":"20"} 
 
-# PHP Web Page Debugging
-
 *   [Basic Setup](#BasicSetup)
     
 *   [Setting up XDebug in php.ini](#SettingupXDebuginphp.ini)

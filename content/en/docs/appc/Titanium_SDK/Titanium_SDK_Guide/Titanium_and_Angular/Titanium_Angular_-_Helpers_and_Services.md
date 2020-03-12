@@ -1,7 +1,5 @@
 {"title":"Titanium Angular - Helpers and Services","weight":"40"} 
 
-# Titanium Angular - Helpers and Services
-
 *   [User Interface](#UserInterface)
     
     *   [Dialogs](#Dialogs)

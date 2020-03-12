@@ -1,7 +1,5 @@
 {"title":"Changing the Workbench Perspective","weight":"50"} 
 
-# Changing the Workbench Perspective
-
 When you are using Studio, you need to ensure you are using the Studio Perspective to take full advantage of all of Studio's features. A Perspective is a collection of Eclipse views and editors, configured for specific tasks. This page describes how to change your perspective in your workbench.
 
 **To change your workbench perspective:**

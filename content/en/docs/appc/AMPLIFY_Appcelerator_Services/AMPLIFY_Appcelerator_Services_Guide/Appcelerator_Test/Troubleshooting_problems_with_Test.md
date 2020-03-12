@@ -1,7 +1,5 @@
 {"title":"Troubleshooting problems with Test","weight":"60"} 
 
-# Troubleshooting problems with Test
-
 Enterprise Subscription Required!
 
 This AMPLIFY Appcelerator Services feature requires an Enterprise Subscription.

@@ -1,7 +1,5 @@
 {"title":"Data Binding Functions","weight":"40"} 
 
-# Data Binding Functions
-
 Demonstrates how to manually trigger a UI update between the data model and a view.
 
 App Folder Location

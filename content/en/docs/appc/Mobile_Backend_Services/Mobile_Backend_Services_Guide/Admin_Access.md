@@ -1,7 +1,5 @@
 {"title":"Admin Access","weight":"10"} 
 
-# Admin Access
-
 *   [Create an admin user](#Createanadminuser)
     
     *   [Create a new admin user](#Createanewadminuser)

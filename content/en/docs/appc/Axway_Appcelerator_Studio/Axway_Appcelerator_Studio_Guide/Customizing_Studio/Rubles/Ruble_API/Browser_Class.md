@@ -1,7 +1,5 @@
 {"title":"Browser Class","weight":"10"} 
 
-# Browser Class
-
 The Browser class contains methods and properties for interacting with a browser inside Studio
 
 ## Usage

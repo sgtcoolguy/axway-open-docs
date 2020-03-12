@@ -1,7 +1,5 @@
 {"title":"Titanium CLI Tasks","weight":"30"} 
 
-# Titanium CLI Tasks
-
 *   [Development environment](#Developmentenvironment)
     
     *   [Check your development environment](#Checkyourdevelopmentenvironment)

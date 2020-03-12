@@ -1,7 +1,5 @@
 {"title":"PyDev Module Creation","weight":"50"} 
 
-# PyDev Module Creation
-
 **Creating our first module** (now that the interpreter and the project are already configured).
 
 To make things easier, make sure that you are in the 'PyDev perspective' – it is 'automatically' opened when you create a PyDev project, but  

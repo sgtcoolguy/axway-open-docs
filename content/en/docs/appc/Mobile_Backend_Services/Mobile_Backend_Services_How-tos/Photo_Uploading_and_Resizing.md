@@ -1,7 +1,5 @@
 {"title":"Photo Uploading and Resizing","weight":"30"} 
 
-# Photo Uploading and Resizing
-
 *   [Custom photo sizes](#Customphotosizes)
     
 *   [Synchronous photo uploading](#Synchronousphotouploading)

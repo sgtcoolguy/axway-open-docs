@@ -1,7 +1,5 @@
 {"title":"Google Maps v2 for Android","weight":"30"} 
 
-# Google Maps v2 for Android
-
 *   [Introduction](#Introduction)
     
     *   [Install the Google Play Services SDK](#InstalltheGooglePlayServicesSDK)

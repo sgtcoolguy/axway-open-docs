@@ -1,7 +1,5 @@
 {"title":"FTP SFTP and FTPS Deployment","weight":"30"} 
 
-# FTP SFTP and FTPS Deployment
-
 *   [Initial set-up](#Initialset-up)
     
 *   [Associate a FTP connection with a project using Project Explorer](#AssociateaFTPconnectionwithaprojectusingProjectExplorer)

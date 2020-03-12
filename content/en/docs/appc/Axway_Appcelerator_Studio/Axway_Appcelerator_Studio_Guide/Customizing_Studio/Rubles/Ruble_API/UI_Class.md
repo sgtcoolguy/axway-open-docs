@@ -1,7 +1,5 @@
 {"title":"UI Class","weight":"100"} 
 
-# UI Class
-
 The UI class contains methods for interacting with the user interface inside Studio
 
 ## Usage

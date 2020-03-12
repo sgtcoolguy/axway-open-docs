@@ -1,7 +1,5 @@
 {"title":"SQL Queries","weight":"150"} 
 
-# SQL Queries
-
 Demonstrates how to use a SQL query with a database fetch operation.
 
 App Folder Location

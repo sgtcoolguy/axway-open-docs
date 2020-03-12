@@ -1,7 +1,5 @@
 {"title":"Visual Studio Code - Titanium Extension Features","weight":"10"} 
 
-# Visual Studio Code - Titanium Extension Features
-
 *   [Commands](#Commands)
     
 *   [Titanium View](#TitaniumView)

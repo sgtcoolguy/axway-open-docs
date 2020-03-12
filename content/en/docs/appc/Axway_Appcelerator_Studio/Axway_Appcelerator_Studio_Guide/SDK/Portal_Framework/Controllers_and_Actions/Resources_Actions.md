@@ -1,7 +1,5 @@
 {"title":"Resources Actions","weight":"70"} 
 
-# Resources Actions
-
 *   [Requirements](#Requirements)
     
 *   [Description](#Description)

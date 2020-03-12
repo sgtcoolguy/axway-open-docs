@@ -1,7 +1,5 @@
 {"title":"Native Maps and Annotations","weight":"40"} 
 
-# Native Maps and Annotations
-
 *   [Displaying a MapView](#DisplayingaMapView)
     
 *   [Handling MapView Events](#HandlingMapViewEvents)

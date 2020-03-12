@@ -1,7 +1,5 @@
 {"title":"Alloy Command-Line Interface Reference","weight":"10"} 
 
-# Alloy Command-Line Interface Reference
-
 *   [Command-Line Interface Installation](#Command-LineInterfaceInstallation)
     
     *   [Manual Installation](#ManualInstallation)

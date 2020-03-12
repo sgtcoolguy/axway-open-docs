@@ -1,7 +1,5 @@
 {"title":"Reserved Words","weight":"70"} 
 
-# Reserved Words
-
 *   [Overview](#Overview)
     
 *   [ECMAScript Specification](#ECMAScriptSpecification)

@@ -1,7 +1,5 @@
 {"title":"Reviewing pull requests","weight":"50"} 
 
-# Reviewing pull requests
-
 An important way you can help move Titanium forward is to review the changes that others have submitted. Proper functional testing helps us merge changes more quickly and with more confidence.
 
 This document describes the process you can follow to test any of the "NPM-installable" projects, including Alloy and the CLI. While you could test PRs for the Titanium SDK itself, that would also involve [Building the Titanium SDK From Source](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Building_the_Titanium_SDK_From_Source/) which is covered elsewhere in the documentation.

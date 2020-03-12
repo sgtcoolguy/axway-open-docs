@@ -1,7 +1,5 @@
 {"title":"Titanium SDK Overview","weight":"30"} 
 
-# Titanium SDK Overview
-
 Welcome to the Appcelerator Platform! The Appcelerator Platform helps you develop cross-platform mobile applications using the Titanium SDK, Alloy, Appcelerator Studio and the Appcelerator CLI, then lets you manage the entire lifecycle of the application with debugging, testing, deploying, crash monitoring and analytic data collection.
 
 This guide introduces the Appcelerator Platform and walks through the steps of setting up Appcelerator Studio, downloading and installing the necessary Titanium and third-party SDKs and tools, and creating a simple project.

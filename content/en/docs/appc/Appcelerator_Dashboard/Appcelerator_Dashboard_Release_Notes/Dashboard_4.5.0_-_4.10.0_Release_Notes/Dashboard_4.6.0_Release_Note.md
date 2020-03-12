@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.6.0 - 15 April 2016","weight":"110"} 
 
-# Dashboard 4.6.0 - 15 April 2016
-
 Dashboard 4.6.0 is a minor release, which includes several improvements and bug fixes.
 
 ## Improvements

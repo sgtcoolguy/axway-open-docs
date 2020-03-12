@@ -1,7 +1,5 @@
 {"title":"Appendices","weight":"90"} 
 
-# Appendices
-
 These appendices collect various Titanium technical topics that don't fit into the preceding chapters.
 
 ## Appendices

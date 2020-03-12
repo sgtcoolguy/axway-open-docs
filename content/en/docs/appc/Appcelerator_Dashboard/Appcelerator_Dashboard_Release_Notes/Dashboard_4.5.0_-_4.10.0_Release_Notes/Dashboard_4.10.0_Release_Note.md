@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.10.0 - 6 February 2017","weight":"10"} 
 
-# Dashboard 4.10.0 - 6 February 2017
-
 Dashboard 4.10.0 is a minor release which includes several bug fixes.
 
 ## Fixed issues

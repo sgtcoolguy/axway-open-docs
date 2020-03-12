@@ -1,7 +1,5 @@
 {"title":"Localizing a Ruble","weight":"80"} 
 
-# Localizing a Ruble
-
 *   [Overview](#Overview)
     
 *   [Locales Directories](#LocalesDirectories)

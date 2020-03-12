@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI 6.2.0.GA - 13 April 2017","weight":"90"} 
 
-# Appcelerator CLI 6.2.0.GA - 13 April 2017
-
 Appcelerator CLI 6.2.0.GA is a minor release that includes seven bug fixes.
 
 As of this release, CLI 6.1.x will not be supported six months from 6.2.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.

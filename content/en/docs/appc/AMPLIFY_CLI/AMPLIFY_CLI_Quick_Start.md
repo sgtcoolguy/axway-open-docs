@@ -1,7 +1,5 @@
 {"title":"AMPLIFY CLI Quick Start","weight":"10"} 
 
-# AMPLIFY CLI Quick Start
-
 *   [Quick start](#Quickstart)
     
 *   [Installation](#Installation)

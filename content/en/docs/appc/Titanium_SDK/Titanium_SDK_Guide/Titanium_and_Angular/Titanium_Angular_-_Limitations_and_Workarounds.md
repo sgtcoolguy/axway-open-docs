@@ -1,7 +1,5 @@
 {"title":"Titanium Angular - Limitations and Workarounds","weight":"50"} 
 
-# Titanium Angular - Limitations and Workarounds
-
 *   [TypeScript API](#TypeScriptAPI)
     
 *   [Working with Titanium elements](#WorkingwithTitaniumelements)

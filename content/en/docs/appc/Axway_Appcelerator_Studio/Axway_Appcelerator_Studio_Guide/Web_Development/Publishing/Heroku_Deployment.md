@@ -1,7 +1,5 @@
 {"title":"Heroku Deployment","weight":"40"} 
 
-# Heroku Deployment
-
 ## Pre-requisites
 
 Before deploying to Heroku, you will need to have the heroku gem installed. If you don't have that already installed, Studio will prompt you to install it before deploying to heroku. You will also need a Ruby on Rails project opened in Studio before you can proceed with the deployment.

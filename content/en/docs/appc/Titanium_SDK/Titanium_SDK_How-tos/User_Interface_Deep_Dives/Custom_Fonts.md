@@ -1,7 +1,5 @@
 {"title":"Custom Fonts","weight":"70"} 
 
-# Custom Fonts
-
 *   [Finding fonts](#Findingfonts)
     
 *   [Using a custom font (Alloy application)](#Usingacustomfont(Alloyapplication))

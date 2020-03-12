@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.5.0","weight":"190"} 
 
-# Dashboard 4.5.0
-
 Dashboard 4.5.0 is a minor release, which includes new feature, improvements, and several bug fixes.
 
 ## New Features

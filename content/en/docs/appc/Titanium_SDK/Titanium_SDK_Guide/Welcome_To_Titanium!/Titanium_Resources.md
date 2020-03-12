@@ -1,7 +1,5 @@
 {"title":"Titanium Resources","weight":"20"} 
 
-# Titanium Resources
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

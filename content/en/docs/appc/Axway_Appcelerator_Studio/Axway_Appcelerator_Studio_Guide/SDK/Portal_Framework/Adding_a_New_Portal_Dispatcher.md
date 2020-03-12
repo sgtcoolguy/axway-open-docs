@@ -1,7 +1,5 @@
 {"title":"Adding a New Portal Dispatcher","weight":"20"} 
 
-# Adding a New Portal Dispatcher
-
 *   [Creating a New Dispatcher](#CreatingaNewDispatcher)
     
     *   [Adding the JavaScript Code](#AddingtheJavaScriptCode)

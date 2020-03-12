@@ -1,7 +1,5 @@
 {"title":"Preventing Man-in-the-middle Attacks for AMPLIFY Runtime Services API Calls","weight":"40"} 
 
-# Preventing Man-in-the-middle Attacks for AMPLIFY Runtime Services API Calls
-
 This info only applies to users who intend to do API calls to AMPLIFY Runtime Services (API Runtime Services) while using the HTTPS module.
 
 You only need to generate your certificate if you are using the HTTPS module and NOT the ti.cloud modules.

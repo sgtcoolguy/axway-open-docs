@@ -1,7 +1,5 @@
 {"title":"AMPLIFY Appcelerator Services Guide","weight":"10"} 
 
-# AMPLIFY Appcelerator Services Guide
-
 This document contains links for AMPLIFY Appcelerator Services guide.
 
 *   [Appcelerator Analytics](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/)

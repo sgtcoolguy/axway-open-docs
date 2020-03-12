@@ -1,7 +1,5 @@
 {"title":"Platform Services","weight":"130"} 
 
-# Platform Services
-
 *   [Introduction](#Introduction)
     
 *   [Enable Appcelerator Services](#EnableAppceleratorServices)

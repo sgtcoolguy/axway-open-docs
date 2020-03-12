@@ -1,7 +1,5 @@
 {"title":"ACS 1.1.3 - 17 July 2014","weight":"70"} 
 
-# ACS 1.1.3 - 17 July 2014
-
 The 1.1.3 release of Appcelerator Cloud Services includes the following fixes and features:
 
 ## New features

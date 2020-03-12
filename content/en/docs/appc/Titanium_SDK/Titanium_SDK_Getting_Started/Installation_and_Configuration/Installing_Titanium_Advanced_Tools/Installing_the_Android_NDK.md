@@ -1,7 +1,5 @@
 {"title":"Installing the Android NDK","weight":"50"} 
 
-# Installing the Android NDK
-
 ## Contents
 
 *   [Compatibility and Download](#CompatibilityandDownload)

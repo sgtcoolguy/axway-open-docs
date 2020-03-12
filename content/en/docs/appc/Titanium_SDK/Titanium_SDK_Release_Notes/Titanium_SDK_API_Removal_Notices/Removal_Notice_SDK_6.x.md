@@ -1,7 +1,5 @@
 {"title":"Removal Notice SDK 6.x","weight":"30"} 
 
-# Removal Notice SDK 6.x
-
 List of all removal notices for SDK 6.x.
 
 *   [SDK 6.x](#SDK6.x)

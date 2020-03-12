@@ -1,7 +1,5 @@
 {"title":"Problems View","weight":"30"} 
 
-# Problems View
-
 This page gives an overview of how to use the Problems View to identify syntax errors.
 
 ## Introduction

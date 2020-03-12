@@ -1,7 +1,5 @@
 {"title":"Determining the Installed Version","weight":"30"} 
 
-# Determining the Installed Version
-
 This documentation has information on how to determine which version of Aptana Studio is installed.
 
 *   [Studio Standalone](#StudioStandalone)

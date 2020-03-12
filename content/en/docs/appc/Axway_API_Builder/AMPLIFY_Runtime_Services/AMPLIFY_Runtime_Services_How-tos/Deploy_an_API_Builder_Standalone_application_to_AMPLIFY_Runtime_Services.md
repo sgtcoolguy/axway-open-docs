@@ -1,7 +1,5 @@
 {"title":"Deploy an API Builder Standalone application to AMPLIFY Runtime Services","weight":"20"} 
 
-# Deploy an API Builder Standalone application to AMPLIFY Runtime Services
-
 *   [Introduction](#Introduction)
     
 *   [Prerequisites](#Prerequisites)

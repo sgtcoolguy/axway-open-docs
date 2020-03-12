@@ -1,7 +1,5 @@
 {"title":"Handoff User Activities","weight":"30"} 
 
-# Handoff User Activities
-
 *   [Introduction](#Introduction)
     
 *   [Device Setup](#DeviceSetup)

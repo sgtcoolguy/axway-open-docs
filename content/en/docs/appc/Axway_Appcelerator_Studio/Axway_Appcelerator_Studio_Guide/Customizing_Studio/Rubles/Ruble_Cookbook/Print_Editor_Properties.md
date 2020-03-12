@@ -1,7 +1,5 @@
 {"title":"Print Editor Properties","weight":"90"} 
 
-# Print Editor Properties
-
 ## Overview
 
 In this recipe we show how to create a simple Ruble command that prints out the properties of the current editor

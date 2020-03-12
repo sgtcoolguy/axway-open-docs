@@ -1,7 +1,5 @@
 {"title":"Setting the Encoding of Your Text Files","weight":"40"} 
 
-# Setting the Encoding of Your Text Files
-
 Studio ships with UTF-8 encoding enabled by default, but you may wish to change this or set it to a new value.
 
 ## Setting your workspace encoding

@@ -1,7 +1,5 @@
 {"title":"ACS 2013 10 June Release Note","weight":"70"} 
 
-# ACS 2013 10 June Release Note
-
 ## Fixed issues and enhancements
 
 This update includes the following bug fixes and enhancements:

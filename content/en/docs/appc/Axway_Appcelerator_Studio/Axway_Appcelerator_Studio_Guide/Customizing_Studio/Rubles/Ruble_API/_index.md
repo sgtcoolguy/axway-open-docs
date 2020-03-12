@@ -1,7 +1,5 @@
 {"title":"Ruble API","weight":"100"} 
 
-# Ruble API
-
 These are the main classes available when interacting with Rubles.
 
 ## Chapters

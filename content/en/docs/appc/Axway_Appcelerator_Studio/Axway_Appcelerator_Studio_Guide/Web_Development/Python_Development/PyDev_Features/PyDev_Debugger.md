@@ -1,7 +1,5 @@
 {"title":"PyDev Debugger","weight":"80"} 
 
-# PyDev Debugger
-
 This section is targetted at explaining how to use the debugger. If you want more details on how to use the remote debugger, please check the [Remote Debugger page](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Features/PyDev_Remote_Debugger/).
 
 Ok, probably the first thing you'll want to do is: add a breakpoint to some file and then run the file (and wait for it to hit the breakpoint). To do that, let's start with the example below:

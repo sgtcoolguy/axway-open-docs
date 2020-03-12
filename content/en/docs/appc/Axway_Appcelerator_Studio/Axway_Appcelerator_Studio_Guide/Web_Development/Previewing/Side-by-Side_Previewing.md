@@ -1,7 +1,5 @@
 {"title":"Side-by-Side Previewing","weight":"30"} 
 
-# Side-by-Side Previewing
-
 By default, previewing opens in a new tab. You can modify this to see your source and your preview side-by-side.
 
 *   [Setting Previews](#SettingPreviews)

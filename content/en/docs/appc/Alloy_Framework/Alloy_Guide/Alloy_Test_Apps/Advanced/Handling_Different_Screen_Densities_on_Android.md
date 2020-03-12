@@ -1,7 +1,5 @@
 {"title":"Handling Different Screen Densities on Android","weight":"80"} 
 
-# Handling Different Screen Densities on Android
-
 Demonstrates how to package and use images for different screen densities on Android.
 
 App folder location

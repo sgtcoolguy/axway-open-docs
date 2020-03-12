@@ -1,7 +1,5 @@
 {"title":"Managing FTP Connections","weight":"20"} 
 
-# Managing FTP Connections
-
 *   [Opening the Connection Manager](#OpeningtheConnectionManager)
     
 *   [Creating a New Connection](#CreatingaNewConnection)

@@ -1,7 +1,5 @@
 {"title":"Project Template Actions","weight":"50"} 
 
-# Project Template Actions
-
 *   [Requirements](#Requirements)
     
 *   [Invocation](#Invocation)

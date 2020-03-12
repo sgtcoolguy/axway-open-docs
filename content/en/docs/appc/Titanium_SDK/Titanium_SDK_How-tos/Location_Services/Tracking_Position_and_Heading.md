@@ -1,7 +1,5 @@
 {"title":"Tracking Position and Heading","weight":"10"} 
 
-# Tracking Position and Heading
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

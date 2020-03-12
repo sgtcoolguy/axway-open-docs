@@ -1,7 +1,5 @@
 {"title":"Stream Spec","weight":"30"} 
 
-# Stream Spec
-
 ## Contents
 
 *   [Overview](#Overview)

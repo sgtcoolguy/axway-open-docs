@@ -1,7 +1,5 @@
 {"title":"Video APIs","weight":"20"} 
 
-# Video APIs
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

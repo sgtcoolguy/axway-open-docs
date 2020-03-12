@@ -1,7 +1,5 @@
 {"title":"Studio 5.1.2.GA - 14 March 2019","weight":"40"} 
 
-# Studio 5.1.2.GA - 14 March 2019
-
 Studio 5.1.2.GA is a patch release that includes several bug fixes.
 
 ## Fixed issues

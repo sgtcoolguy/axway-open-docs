@@ -1,7 +1,5 @@
 {"title":"Logger Class","weight":"60"} 
 
-# Logger Class
-
 The Logger class contains methods and properties for writing out items to the log file inside Studio
 
 ## Usage

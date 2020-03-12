@@ -1,7 +1,5 @@
 {"title":"JavaScript Coding Standards","weight":"30"} 
 
-# JavaScript Coding Standards
-
 Contents
 
 *   [General](#General)

@@ -1,7 +1,5 @@
 {"title":"Using Custom Conditional Statements in Titanium Alloy Views","weight":"20"} 
 
-# Using Custom Conditional Statements in Titanium Alloy Views
-
 One of the many great features of Alloy is how it separates the business logic of an app and the user interface. You use XML views and TSS files to define the elements and styling of your views, and controllers contain the JavaScript to make everything work.
 
 One challenge that comes up from time to time is how to hide and show content in a view based on a condition within the app. For example, showing or hiding content when a view opens based on wether the user has logged in or not.

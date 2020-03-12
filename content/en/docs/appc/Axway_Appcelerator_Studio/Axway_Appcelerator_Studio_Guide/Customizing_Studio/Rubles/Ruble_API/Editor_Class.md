@@ -1,7 +1,5 @@
 {"title":"Editor Class","weight":"40"} 
 
-# Editor Class
-
 The Editor class contains methods and properties for interacting with a editor inside Studio
 
 ## Usage

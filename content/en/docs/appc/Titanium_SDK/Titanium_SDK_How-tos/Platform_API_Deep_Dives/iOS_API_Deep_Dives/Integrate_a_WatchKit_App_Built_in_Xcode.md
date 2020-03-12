@@ -1,7 +1,5 @@
 {"title":"Integrate a WatchKit App Built in Xcode","weight":"50"} 
 
-# Integrate a WatchKit App Built in Xcode
-
 *   [Introduction](#Introduction)
     
     *   [Prerequisites](#Prerequisites)

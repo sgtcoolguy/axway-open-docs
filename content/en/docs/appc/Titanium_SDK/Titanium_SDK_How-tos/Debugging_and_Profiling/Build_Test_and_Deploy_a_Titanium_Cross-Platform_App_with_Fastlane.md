@@ -1,7 +1,5 @@
 {"title":"Build Test and Deploy a Titanium Cross-Platform App with Fastlane","weight":"60"} 
 
-# Build Test and Deploy a Titanium Cross-Platform App with Fastlane
-
 *   [Testing](#Testing)
     
     *   [Set up Appium Server](#SetupAppiumServer)

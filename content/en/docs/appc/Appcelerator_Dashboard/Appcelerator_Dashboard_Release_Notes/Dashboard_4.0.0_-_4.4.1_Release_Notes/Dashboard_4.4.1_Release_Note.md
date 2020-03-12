@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.4.1","weight":"10"} 
 
-# Dashboard 4.4.1
-
 Dashboard 4.4.1 is a patch release, which includes an improvement and a few bug fixes.
 
 ## New Features

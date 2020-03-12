@@ -1,7 +1,5 @@
 {"title":"Studio Analytics Events","weight":"70"} 
 
-# Studio Analytics Events
-
 *   [GDPR statement](#GDPRstatement)
     
 *   [Studio Analytics](#StudioAnalytics)

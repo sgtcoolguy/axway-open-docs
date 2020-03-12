@@ -1,7 +1,5 @@
 {"title":"Creating a new template","weight":"20"} 
 
-# Creating a new template
-
 *   [Overview](#Overview)
     
 *   [Creating a new file template](#Creatinganewfiletemplate)

@@ -1,7 +1,5 @@
 {"title":"Titanium SDK and Mobile Backend Services","weight":"10"} 
 
-# Titanium SDK and Mobile Backend Services
-
 *   [Adding Mobile Backend Services to your Titanium project](#AddingMobileBackendServicestoyourTitaniumproject)
     
     *   [Adding Mobile Backend Services to a new Titanium application](#AddingMobileBackendServicestoanewTitaniumapplication)

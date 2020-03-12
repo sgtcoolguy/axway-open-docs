@@ -1,7 +1,5 @@
 {"title":"Installing Node","weight":"20"} 
 
-# Installing Node
-
 *   [Compatibility and download](#Compatibilityanddownload)
     
 *   [Installation](#Installation)

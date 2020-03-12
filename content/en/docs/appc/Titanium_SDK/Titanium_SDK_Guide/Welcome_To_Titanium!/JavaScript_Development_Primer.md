@@ -1,7 +1,5 @@
 {"title":"JavaScript Development Primer","weight":"30"} 
 
-# JavaScript Development Primer
-
 *   [Objective](#Objective)
     
 *   [Overview](#Overview)

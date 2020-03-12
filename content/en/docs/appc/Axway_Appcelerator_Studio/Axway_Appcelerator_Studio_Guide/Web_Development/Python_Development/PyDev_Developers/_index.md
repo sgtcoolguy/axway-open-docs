@@ -1,7 +1,5 @@
 {"title":"PyDev Developers","weight":"60"} 
 
-# PyDev Developers
-
 This document contains information on how to obtain, configure, PyDev, and how to contribute.
 
 *   [Getting the code](#Gettingthecode)

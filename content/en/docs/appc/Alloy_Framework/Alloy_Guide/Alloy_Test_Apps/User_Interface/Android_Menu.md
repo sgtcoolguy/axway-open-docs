@@ -1,7 +1,5 @@
 {"title":"Android Menu","weight":"20"} 
 
-# Android Menu
-
 Demonstrates basic use of Menu and MenuItem objects to display items in the Android action bar.
 
 Example App Source Location

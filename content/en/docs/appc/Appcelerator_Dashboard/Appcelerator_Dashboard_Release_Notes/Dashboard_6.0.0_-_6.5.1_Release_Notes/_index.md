@@ -1,7 +1,5 @@
 {"title":"Dashboard 6.0.0 - 6.5.1 Release Notes","weight":"90"} 
 
-# Dashboard 6.0.0 - 6.5.1 Release Notes
-
 *   [Dashboard 6.5.1 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_6.0.0_-_6.5.1_Release_Notes/Dashboard_6.5.1_Release_Note/)
     
 *   [Dashboard 6.5.0 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_6.0.0_-_6.5.1_Release_Notes/Dashboard_6.5.0_Release_Note/)

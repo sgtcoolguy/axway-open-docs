@@ -1,7 +1,5 @@
 {"title":"AMPLIFY CLI","weight":"110"} 
 
-# AMPLIFY CLI
-
 *   [Extensions](#Extensions)
     
 *   [Requirements](#Requirements)

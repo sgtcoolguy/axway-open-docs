@@ -1,7 +1,5 @@
 {"title":"PyDev Launching","weight":"150"} 
 
-# PyDev Launching
-
 ## Launching/Debugging Python scripts
 
 ### Regular Launch

@@ -1,7 +1,5 @@
 {"title":"Dashboard 4.3.0 Release Notes","weight":"40"} 
 
-# Dashboard 4.3.0 Release Notes
-
 Dashboard 4.3.0 is a minor release, which includes several bug fixes.
 
 ## Fixed Issues

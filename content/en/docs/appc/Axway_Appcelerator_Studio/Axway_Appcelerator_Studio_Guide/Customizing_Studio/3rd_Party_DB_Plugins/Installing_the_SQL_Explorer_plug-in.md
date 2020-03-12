@@ -1,7 +1,5 @@
 {"title":"Installing the SQL Explorer plug-in","weight":"60"} 
 
-# Installing the SQL Explorer plug-in
-
 ## Introduction
 
 This Help topic will teach you how to install the SQL Explorer plug-in. This is the first step in configuring SQL Explorer to work with RadRails. You will need to already have mySQL installed before following the steps below.

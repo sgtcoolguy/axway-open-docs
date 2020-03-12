@@ -1,7 +1,5 @@
 {"title":"Native Modules","weight":"130"} 
 
-# Native Modules
-
 Demonstrates using a native module in an Alloy application, in this case the Paint module provided by Appcelerator.
 
 App folder location

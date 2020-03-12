@@ -1,7 +1,5 @@
 {"title":"Choosing a Persistence Strategy for Your Application","weight":"10"} 
 
-# Choosing a Persistence Strategy for Your Application
-
 *   [Properties](#Properties)
     
 *   [Database](#Database)

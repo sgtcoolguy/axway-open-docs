@@ -1,7 +1,5 @@
 {"title":"Exporting and importing preferences","weight":"40"} 
 
-# Exporting and importing preferences
-
 *   [Overview](#Overview)
     
 *   [Exporting General Preferences](#ExportingGeneralPreferences)

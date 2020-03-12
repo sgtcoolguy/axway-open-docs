@@ -1,7 +1,5 @@
 {"title":"Installing a New Ruble","weight":"70"} 
 
-# Installing a New Ruble
-
 ## Overview
 
 Studio provides additional rubles which are not installed by default. You can browse for new Rubles from within Studio.

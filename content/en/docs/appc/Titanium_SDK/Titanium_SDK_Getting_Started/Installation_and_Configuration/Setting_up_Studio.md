@@ -1,7 +1,5 @@
 {"title":"Setting up Studio","weight":"10"} 
 
-# Setting up Studio
-
 *   [Getting help overview](#Gettinghelpoverview)
     
 *   [Compatibility and download](#Compatibilityanddownload)

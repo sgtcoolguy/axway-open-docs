@@ -1,7 +1,5 @@
 {"title":"Setting Up Emulators and Simulators For Titanium","weight":"40"} 
 
-# Setting Up Emulators and Simulators For Titanium
-
 *   [Installing Android Studio, Android SDK, and Android Virtual Device](#InstallingAndroidStudio,AndroidSDK,andAndroidVirtualDevice)
     
     *   [Install Android SDK](#InstallAndroidSDK)

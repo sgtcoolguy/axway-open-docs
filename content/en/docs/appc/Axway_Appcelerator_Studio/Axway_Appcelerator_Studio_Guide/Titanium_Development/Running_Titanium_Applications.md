@@ -1,7 +1,5 @@
 {"title":"Running Titanium Applications","weight":"40"} 
 
-# Running Titanium Applications
-
 *   [Introduction](#Introduction)
     
 *   [Run Configurations](#RunConfigurations)

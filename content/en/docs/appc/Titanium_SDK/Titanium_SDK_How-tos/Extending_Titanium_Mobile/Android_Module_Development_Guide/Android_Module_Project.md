@@ -1,7 +1,5 @@
 {"title":"Android Module Project","weight":"30"} 
 
-# Android Module Project
-
 *   [Introduction](#Introduction)
     
 *   [Prerequisites](#Prerequisites)

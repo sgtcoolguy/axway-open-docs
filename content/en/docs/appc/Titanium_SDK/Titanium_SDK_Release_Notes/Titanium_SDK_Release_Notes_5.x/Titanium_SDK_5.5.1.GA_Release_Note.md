@@ -1,7 +1,5 @@
 {"title":"Titanium SDK 5.5.1.GA - 28 September 2016","weight":"10"} 
 
-# Titanium SDK 5.5.1.GA - 28 September 2016
-
 ## Contents
 
 *   [About This Release](#AboutThisRelease)

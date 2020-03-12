@@ -1,7 +1,5 @@
 {"title":"Animation","weight":"60"} 
 
-# Animation
-
 *   [Objective](#Objective)
     
 *   [Contents](#Contents)

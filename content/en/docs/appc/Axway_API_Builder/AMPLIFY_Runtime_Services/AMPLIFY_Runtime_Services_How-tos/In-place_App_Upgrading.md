@@ -1,7 +1,5 @@
 {"title":"In-place App Upgrading","weight":"30"} 
 
-# In-place App Upgrading
-
 As of AMPLIFY Runtime Services (API Runtime Services) 1.6.0, the in-place app will no longer be supported. We recommend a rolling upgrade (via appc acs publish) and utilizing more than one server to avoid app downtime.
 
 ## Overview

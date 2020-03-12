@@ -1,7 +1,5 @@
 {"title":"PyDev Interpreter Configuration","weight":"20"} 
 
-# PyDev Interpreter Configuration
-
 ## Configure Interpreter
 
 After installing it, the first thing you must do is configure the **Python and/or Jython and/or IronPython** interpreter.  

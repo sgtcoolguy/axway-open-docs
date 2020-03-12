@@ -1,7 +1,5 @@
 {"title":"Project Wizard Actions","weight":"60"} 
 
-# Project Wizard Actions
-
 *   [Requirements](#Requirements)
     
 *   [Invocation](#Invocation)

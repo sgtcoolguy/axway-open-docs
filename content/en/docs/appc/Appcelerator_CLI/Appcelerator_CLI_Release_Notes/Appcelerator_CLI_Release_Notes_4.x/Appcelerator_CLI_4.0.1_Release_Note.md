@@ -1,7 +1,5 @@
 {"title":"Appcelerator CLI 4.0.1 - 29 May 2015","weight":"60"} 
 
-# Appcelerator CLI 4.0.1 - 29 May 2015
-
 Appcelerator CLI 4.0.1 is a patch release, addressing high-priority issues from previous releases.
 
 ## Component Versions

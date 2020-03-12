@@ -1,7 +1,5 @@
 {"title":"PyDev Context-sensitive completions","weight":"60"} 
 
-# PyDev Context-sensitive completions
-
 ## Code Completion
 
 ### Requesting Code Completion

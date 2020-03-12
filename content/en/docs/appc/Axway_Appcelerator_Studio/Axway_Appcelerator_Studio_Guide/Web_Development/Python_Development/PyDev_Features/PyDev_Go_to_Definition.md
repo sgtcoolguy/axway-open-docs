@@ -1,7 +1,5 @@
 {"title":"Go to definition","weight":"110"} 
 
-# Go to definition
-
 **KEYBINDING:** F3
 
 The 'go to definition' actions enables you to get to a given definition.

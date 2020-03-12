@@ -1,7 +1,5 @@
 {"title":"Upgrading Node.js","weight":"20"} 
 
-# Upgrading Node.js
-
 If your version of Node.js is found to be out of date, you'll beed to update it to a newer version. In most cases, Studio will be able to update it automatically. If not, below are some steps you can take
 
 ## OS X Upgrade

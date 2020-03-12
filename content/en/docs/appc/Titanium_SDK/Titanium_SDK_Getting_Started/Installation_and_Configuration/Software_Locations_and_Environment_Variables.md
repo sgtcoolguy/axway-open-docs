@@ -1,19 +1,19 @@
-{"title":"Software Locations and Environment Variables","weight":"60"} 
+{"title":"Software Locations and Environment Variables","weight":"60"}
 
-*   [Overview](#Overview)
-    
-*   [Configuration](#Configuration)
-    
-    *   [macOS Software Locations](#macOSSoftwareLocations)
-        
-    *   [Windows](#Windows)
-        
-        *   [Windows Software Locations](#WindowsSoftwareLocations)
-            
-        *   [Configuring Environment Variables on Windows](#ConfiguringEnvironmentVariablesonWindows)
-            
-    *   [Ubuntu Software Locations](#UbuntuSoftwareLocations)
-        
+* [Overview](#Overview)
+
+* [Configuration](#Configuration)
+
+  * [macOS Software Locations](#macOSSoftwareLocations)
+
+  * [Windows](#Windows)
+
+    * [Windows Software Locations](#WindowsSoftwareLocations)
+
+    * [Configuring Environment Variables on Windows](#ConfiguringEnvironmentVariablesonWindows)
+
+  * [Ubuntu Software Locations](#UbuntuSoftwareLocations)
+
 
 ## Overview
 
@@ -37,23 +37,23 @@ Android SDK Home
 
 ANDROID\_SDK
 
-~/android-sdk
+~/Library/Android/sdk
 
-Location of android (Android SDK Manager) and ddms (debug tool) executables
+Root location of the Android SDK as installed by Android Studio
 
 Android Tools
 
 PATH
 
-~/android-sdk/tools
+~/Library/Android/sdk/tools
 
-Location of android (Android SDK Manager) and ddms (debug tool) executables
+Location of android (Android SDK Manager) and emulator executables
 
 Android Platform Tools
 
 PATH
 
-~/android-sdk/platform-tools
+~/Library/Android/sdk/platform-tools
 
 Location of adb (Android Debug Bridge) executable
 
@@ -139,23 +139,23 @@ Android SDK Home
 
 N/A
 
-C:\\android-sdk
+%LOCALAPPDATA%\\Android\\sdk
 
-Location of android (Android SDK Manager) and ddms (debug tool) executables
+Root location of the Android SDK as installed by Android Studio
 
 Android Tools
 
 PATH
 
-C:\\android-sdk\\tools
+%LOCALAPPDATA%\\Android\\sdk\\tools
 
-Location of android (Android SDK Manager) and ddms (debug tool) executables
+Location of android (Android SDK Manager) and emulator executables
 
 Android Platform Tools
 
 PATH
 
-C:\\android-sdk\\platform-tools
+%LOCALAPPDATA%\\Android\\sdk\\platform-tools
 
 Location of adb (Android Debug Bridge) executable
 
@@ -263,30 +263,30 @@ Path to the current user profile
 
 Bear in mind the following caveats:
 
-*   All Windows systems must have the following paths **at the beginning** of their PATH environment variable to function properly:
-    
-    `%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;`
-    
-*   Installing Appcelerator Studio to a common system location, such as %PROGRAMFILES%, is not currently recommended, due to [Eclipse Bug 249133](https://bugs.eclipse.org/bugs/show_bug.cgi?id=249133) and the complications it causes with updates.
-    
+* All Windows systems must have the following paths **at the beginning** of their PATH environment variable to function properly:
+
+  `%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;`
+
+* Installing Appcelerator Studio to a common system location, such as %PROGRAMFILES%, is not currently recommended, due to [Eclipse Bug 249133](https://bugs.eclipse.org/bugs/show_bug.cgi?id=249133) and the complications it causes with updates.
+
 
 #### Configuring Environment Variables on Windows
 
 Configure system variables using the Control Panel
 
-*   Open the Windows Control Panel and search for 'environment'.
-    
-*   Click **Edit the system environment variables**. The _System Properties_ dialog appears displaying the **Advanced** tab.
-    
-    ![WindowsControlPanel](/Images/appc/download/attachments/29004844/WindowsControlPanel.png)
+* Open the Windows Control Panel and search for 'environment'.
 
-*   Click the **Environment Variables** button.
-    
+* Click **Edit the system environment variables**. The _System Properties_ dialog appears displaying the **Advanced** tab.
+
+  ![WindowsControlPanel](/Images/appc/download/attachments/29004844/WindowsControlPanel.png)
+
+* Click the **Environment Variables** button.
+
 
 ![preinstallation-screenshot_03](/Images/appc/download/attachments/29004844/preinstallation-screenshot_03.png)
 
-*   Use the **New** or **Edit** buttons at the bottom of the dialog to add or change system variables.
-    
+* Use the **New** or **Edit** buttons at the bottom of the dialog to add or change system variables.
+
 
 ![preinstallation-screenshot_04](/Images/appc/download/attachments/29004844/preinstallation-screenshot_04.png)
 
@@ -308,23 +308,23 @@ Android SDK Home
 
 ANDROID\_SDK
 
-/opt/android-sdk-linux\_86
+~/Android/sdk
 
-Location of android (Android SDK Manager) and ddms (debug tool) executables
+Root location of the Android SDK as installed by Android Studio
 
 Android Tools
 
 PATH
 
-/opt/android-sdk-linux\_86/tools
+~/Android/sdk/tools
 
-Location of android (Android SDK Manager) and ddms (debug tool) executables
+Location of android (Android SDK Manager) and emulator executables
 
 Android Platform Tools
 
 PATH
 
-/opt/android-sdk-linux\_86/platform-tools
+~/Android/sdk/platform-tools
 
 Location of adb (Android Debug Bridge) executable
 

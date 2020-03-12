@@ -1,31 +1,31 @@
-{"title":"Deploying to Android Devices","weight":"10"} 
+{"title":"Deploying to Android Devices","weight":"10"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [Configure the Android device](#ConfiguretheAndroiddevice)
-        
-    *   [Install the USB driver (Windows only)](#InstalltheUSBdriver(Windowsonly))
-        
-    *   [Connect the device](#Connectthedevice)
-        
-    *   [Deploy the application using adb](#Deploytheapplicationusingadb)
-        
-    *   [Deploy to remote testers](#Deploytoremotetesters)
-        
-    *   [Install to the SD card](#InstalltotheSDcard)
-        
-    *   [Change the version number](#Changetheversionnumber)
-        
-    *   [Troubleshooting](#Troubleshooting)
-        
-        *   [Restart adb](#Restartadb)
-            
-        *   [USB cord](#USBcord)
-            
-*   [Summary](#Summary)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [Configure the Android device](#ConfiguretheAndroiddevice)
+
+  * [Install the USB driver (Windows only)](#InstalltheUSBdriver(Windowsonly))
+
+  * [Connect the device](#Connectthedevice)
+
+  * [Deploy the application using adb](#Deploytheapplicationusingadb)
+
+  * [Deploy to remote testers](#Deploytoremotetesters)
+
+  * [Install to the SD card](#InstalltotheSDcard)
+
+  * [Change the version number](#Changetheversionnumber)
+
+  * [Troubleshooting](#Troubleshooting)
+
+    * [Restart adb](#Restartadb)
+
+    * [USB cord](#USBcord)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -39,26 +39,26 @@ In order to install an application directly to your device, you need to configur
 
 For Android 4.2 and later devices, you need to enable **Developer options** by opening **Settings**, click **About** then click the **Build number** item seven items. If you do not do this, you will not see the **Developer options** item in **Settings**.
 
-1.  Open **Settings**.
-    
-2.  Click **Security**.
-    
-3.  Enable **Unknown sources**, that is, check this option. This permits the device to install apps that do not originate from Google Play.
-    
-4.  Back out to **Settings**.
-    
-5.  Click **Developer options**.
-    
-6.  If available: Set the switch in the title bar to on.
-    
-7.  Enable **USB debugging**, that is, check this option. This permits the device to install apps over a USB connection.
-    
-8.  Optional: Enable **Stay awake**, that is, check this option. This option keeps the screen on and disables the lock screen while the device is connected to USB.
-    
-9.  Optional: Enable **Allow mock locations**, that is, check this option. This option creates fake GPS locations to test location services.
-    
-10.  Back out of or close **Settings**.
-    
+1. Open **Settings**.
+
+2. Click **Security**.
+
+3. Enable **Unknown sources**, that is, check this option. This permits the device to install apps that do not originate from Google Play.
+
+4. Back out to **Settings**.
+
+5. Click **Developer options**.
+
+6. If available: Set the switch in the title bar to on.
+
+7. Enable **USB debugging**, that is, check this option. This permits the device to install apps over a USB connection.
+
+8. Optional: Enable **Stay awake**, that is, check this option. This option keeps the screen on and disables the lock screen while the device is connected to USB.
+
+9. Optional: Enable **Allow mock locations**, that is, check this option. This option creates fake GPS locations to test location services.
+
+10. Back out of or close **Settings**.
+
 
 These configuration settings are the default Android settings. Some options may not appear or you may need to configure other manufacturer-specific settings.
 
@@ -116,12 +116,12 @@ Over the air distribution frameworks were popularized in the iOS space by servic
 
 By default, your application is installed to the device's internal storage. To configure you application to install to the SD card, you need to add the android:installLocation attribute to the manifest element in the tiapp.xml file. Assign the installLocation element to one of the following values:
 
-*   **preferExternal** - specifies that you prefer your app to be installed to the SD card, but if one is not present the app can be installed to internal storage.
-    
-*   **auto** - specifies that the phone's configuration will determine the installation location. Generally, your app will be installed to internal storage if sufficient space is available. In that case, users could still move your app by opening **Settings** > **Applications** > **Manage** **applications** or **Settings** \> **Application manager**, tapping your app, and tapping **Move to SD card**. Note that some manufacturers do not allow applications to be run from the SD card.
-    
-*   **internalOnly** - which specifies that your app cannot be installed to the SD card. See the [Android docs](http://developer.android.com/guide/appendix/install-location.html#ShouldNot) for the various reasons why you might choose this option.
-    
+* **preferExternal** - specifies that you prefer your app to be installed to the SD card, but if one is not present the app can be installed to internal storage.
+
+* **auto** - specifies that the phone's configuration will determine the installation location. Generally, your app will be installed to internal storage if sufficient space is available. In that case, users could still move your app by opening **Settings** > **Applications** > **Manage** **applications** or **Settings** \> **Application manager**, tapping your app, and tapping **Move to SD card**. Note that some manufacturers do not allow applications to be run from the SD card.
+
+* **internalOnly** - which specifies that your app cannot be installed to the SD card. See the [Android docs](http://developer.android.com/guide/appendix/install-location.html#ShouldNot) for the various reasons why you might choose this option.
+
 
 tiapp.xml
 
@@ -135,10 +135,10 @@ tiapp.xml
 
 To change the version of the application, add the following attributes to the manifest element in your tiapp.xml:
 
-*   **android:versionCode** - A 32-bit integer (i.e.: a whole number like "2") that must be incremented up whenever a newer version is being submitted to the app store. It cannot be set to a floating point number.
-    
-*   **android:versionName** - The version name string can be anything you want.
-    
+* **android:versionCode** - A 32-bit integer (i.e.: a whole number like "2") that must be incremented up whenever a newer version is being submitted to the app store. It cannot be set to a floating point number.
+
+* **android:versionName** - The version name string can be anything you want.
+
 
 tiapp.xml
 

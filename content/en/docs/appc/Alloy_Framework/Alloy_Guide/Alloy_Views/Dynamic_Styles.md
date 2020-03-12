@@ -1,15 +1,15 @@
-{"title":"Dynamic Styles","weight":"30"} 
+{"title":"Dynamic Styles","weight":"30"}
 
-*   [Introduction](#Introduction)
-    
-*   [Define Class Styles](#DefineClassStyles)
-    
-*   [Generate a Dynamic Style](#GenerateaDynamicStyle)
-    
-*   [Modify TSS Classes](#ModifyTSSClasses)
-    
-*   [Autostyle](#Autostyle)
-    
+* [Introduction](#Introduction)
+
+* [Define Class Styles](#DefineClassStyles)
+
+* [Generate a Dynamic Style](#GenerateaDynamicStyle)
+
+* [Modify TSS Classes](#ModifyTSSClasses)
+
+* [Autostyle](#Autostyle)
+
 
 ## Introduction
 
@@ -341,16 +341,16 @@ To workaround the first issue, you could create a default class that defines all
 
 To enable autostyle, set the autoStyle attribute to true either in the XML markup or the config.json file. You can enable autostyle for a individual component, for all components in a controller, or for all controllers in a project.
 
-*   To enable autostyle for an individual component, set the **autoStyle** attribute to true on the XML tag (for example, <View autoStyle="true">).
-    
-*   To enable autostyle for components in a controller, set the **autoStyle** attribute to true on the root < Alloy/> tag (for example, <Alloy autoStyle="true"> ).
-    
-*   To enable autostyle for all controllers in an Alloy project, set the **autoStyle** field to true in the config.json file, for example:
-    
-    app/config.json
-    
-    `{`
-    
-    `"autoStyle"``:` `true`
-    
-    `}`
+* To enable autostyle for an individual component, set the **autoStyle** attribute to true on the XML tag (for example, <View autoStyle="true">).
+
+* To enable autostyle for components in a controller, set the **autoStyle** attribute to true on the root < Alloy/> tag (for example, <Alloy autoStyle="true"> ).
+
+* To enable autostyle for all controllers in an Alloy project, set the **autoStyle** field to true in the config.json file, for example:
+
+  app/config.json
+
+  `{`
+
+  `"autoStyle"``:` `true`
+
+  `}`

@@ -1,4 +1,4 @@
-{"title":"Titanium Angular - FAQ","weight":"60"} 
+{"title":"Titanium Angular - FAQ","weight":"60"}
 
 ## How do I use modules with Titanium Angular?
 
@@ -40,12 +40,12 @@ Hyperloop is not supported in this technical preview so far. We are working on t
 
 You can setup a custom task in VS Code that uses the Appc CLI for a more comfortable development flow.
 
-1.  Select **Configure Tasks** from the global **Tasks** menu or open the **Command Pallete** (⇧⌘P).
-    
-2.  Choose **Task: Configure Task**.
-    
-3.  Select **Create tasks.json file from template** entry.
-    
+1. Select **Configure Tasks** from the global **Tasks** menu or open the **Command Pallete** (⇧⌘P).
+
+2. Choose **Task: Configure Task**.
+
+3. Select **Create tasks.json file from template** entry.
+
 
 VS Code will then create and open the task.json file which you can modify to define your own task. For example, to create a task that will use the Appc CLI to build and run your app in the iOS simulator modify it to look like this.
 

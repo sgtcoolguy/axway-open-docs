@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 7.0.9.RC - 13 December 2018","weight":"80"} 
+{"title":"Appcelerator CLI 7.0.9.RC - 13 December 2018","weight":"80"}
 
 Appcelerator CLI 7.0.9.RC is a patch release that includes one bug fix.
 
@@ -30,4 +30,4 @@ Daemon
 
 ## Fixed issues
 
-*   [ALOY-1638](https://jira.appcelerator.org/browse/ALOY-1638) - Theme is "null" when a theme is defined in config.json
+* [ALOY-1638](https://jira.appcelerator.org/browse/ALOY-1638) - Theme is "null" when a theme is defined in config.json

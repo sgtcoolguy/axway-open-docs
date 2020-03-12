@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 5.5.0.RC - 31 August 2016","weight":"30"} 
+{"title":"Appcelerator CLI 5.5.0.RC - 31 August 2016","weight":"30"}
 
 Appcelerator CLI 5.5.0.RC is a minor release that includes new features, improvements, and bug fixes.
 
@@ -26,6 +26,6 @@ Titanium CLI
 
 ## Fixed Issues
 
-*   [CLI-1070](https://jira.appcelerator.org/browse/CLI-1070) - If you use node 0.12.X, then you'll be unable to download the Hyperloop module through 'appc new'
-    
-*   [CLI-1079](https://jira.appcelerator.org/browse/CLI-1079) - Modules and plugins are not overwritten if the files already exist
+* [CLI-1070](https://jira.appcelerator.org/browse/CLI-1070) - If you use node 0.12.X, then you'll be unable to download the Hyperloop module through 'appc new'
+
+* [CLI-1079](https://jira.appcelerator.org/browse/CLI-1079) - Modules and plugins are not overwritten if the files already exist

@@ -1,20 +1,20 @@
-{"title":"Configuring Cloud Services","weight":"50"} 
+{"title":"Configuring Cloud Services","weight":"50"}
 
-*   [Keys](#Keys)
-    
-*   [Settings](#Settings)
-    
-*   [Email](#Email)
-    
+* [Keys](#Keys)
+
+* [Settings](#Settings)
+
+* [Email](#Email)
+
 
 The **Configuration** tab lets you do the following:
 
-*   View Cloud application keys
-    
-*   Configure application settings for Cloud services
-    
-*   Provide SMTP, or [Message Gears](http://messagegears.com/) account information to send e-mails for notifications
-    
+* View Cloud application keys
+
+* Configure application settings for Cloud services
+
+* Provide SMTP, or [Message Gears](http://messagegears.com/) account information to send e-mails for notifications
+
 
 Before configuring Cloud settings, make sure you select the correct environment from the **Environment** menu. The changes you make in the **Configuration** tab only affects the selected environment.
 
@@ -28,21 +28,21 @@ Click the **Keys** tab to display the keys. Click **Show** to display a key. Use
 
 Click the **Settings** tab to configure application settings for Cloud services.
 
-*   **Description**: Enter a Cloud application description.
-    
-*   **Friend Request Type**: Configures the behavior for the [Friends](/arrowdb/latest/#!/api/Friends) objects. Select either:
-    
-    *   **Two Way** (default): Friend each other (Facebook).
-        
-    *   **One Way**: Follow a friend (Twitter).
-        
-*   **New User Email Verification**: With this option enabled, new users must provide a valid email address and prove they can access it before their account is activated. You must have your SMTP settings completed before this setting is enabled.
-    
-*   **Allow User Creation**: With this option disabled, app users can only be created through this administrative website.
-    
-    ![settings_latest](/Images/appc/download/attachments/60145226/settings_latest.png)
-*   Click **Save** to save any setting changes you made.
-    
+* **Description**: Enter a Cloud application description.
+
+* **Friend Request Type**: Configures the behavior for the [Friends](/arrowdb/latest/#!/api/Friends) objects. Select either:
+
+  * **Two Way** (default): Friend each other (Facebook).
+
+  * **One Way**: Follow a friend (Twitter).
+
+* **New User Email Verification**: With this option enabled, new users must provide a valid email address and prove they can access it before their account is activated. You must have your SMTP settings completed before this setting is enabled.
+
+* **Allow User Creation**: With this option disabled, app users can only be created through this administrative website.
+
+  ![settings_latest](/Images/appc/download/attachments/60145226/settings_latest.png)
+* Click **Save** to save any setting changes you made.
+
 
 ## Email
 
@@ -50,23 +50,23 @@ On the **Email** configuration tab, you can configure Dashboard to send email us
 
 **Notes:**
 
-*   If not specified, the **End Point** URL for Message Gears defaults to **https://api.messagegears.net/3.1/WebService**.
-    
+* If not specified, the **End Point** URL for Message Gears defaults to **https://api.messagegears.net/3.1/WebService**.
+
 
 **To configure your application to send an email:**
 
-1.  In the **Provider** field, select either **SMTP** or **Message Gears** and enter your SMTP or Message Gears server or account settings.
-    
-2.  For SMTP, complete the **Username**, **Password**, **SMTP Address**, and **Port** fields and then make the **Authentication**, **Use Default Sender**, **Test Mode**, **TLS** selections.
-    
-3.  For MessageGears, complete the **Account ID**, **API Key**, **Sender Email**, **Sender Name**, and (optionally) **Endpoint** fields and then make the **Test Mode** selection.
-    
-4.  To have all sent emails sent to a specified email for testing purposes:
-    
-    1.  In the **Test Mode** field, select **Enable**.
-        
-    2.  In the **Administrator's Email** field, enter the email address where emails should be sent.
-        
-5.  Click **Save**.
-    
-    ![email_latest](/Images/appc/download/attachments/60145226/email_latest.png)
+1. In the **Provider** field, select either **SMTP** or **Message Gears** and enter your SMTP or Message Gears server or account settings.
+
+2. For SMTP, complete the **Username**, **Password**, **SMTP Address**, and **Port** fields and then make the **Authentication**, **Use Default Sender**, **Test Mode**, **TLS** selections.
+
+3. For MessageGears, complete the **Account ID**, **API Key**, **Sender Email**, **Sender Name**, and (optionally) **Endpoint** fields and then make the **Test Mode** selection.
+
+4. To have all sent emails sent to a specified email for testing purposes:
+
+  1. In the **Test Mode** field, select **Enable**.
+
+  2. In the **Administrator's Email** field, enter the email address where emails should be sent.
+
+5. Click **Save**.
+
+  ![email_latest](/Images/appc/download/attachments/60145226/email_latest.png)

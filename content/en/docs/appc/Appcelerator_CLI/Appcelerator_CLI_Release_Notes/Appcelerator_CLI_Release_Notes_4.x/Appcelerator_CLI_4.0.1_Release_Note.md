@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 4.0.1 - 29 May 2015","weight":"60"} 
+{"title":"Appcelerator CLI 4.0.1 - 29 May 2015","weight":"60"}
 
 Appcelerator CLI 4.0.1 is a patch release, addressing high-priority issues from previous releases.
 
@@ -28,12 +28,12 @@ Titanium CLI
 
 ## Fixed Issues
 
-*   [CLI-649](https://jira.appcelerator.org/browse/CLI-649): Android build tool warning directs user to run "ti config"
-    
-*   [CLI-650](https://jira.appcelerator.org/browse/CLI-650): Allow JSON output for version
-    
-*   [CLI-653](https://jira.appcelerator.org/browse/CLI-653): Attempting to publish arrow app to new environment fails
-    
-*   [CLI-654](https://jira.appcelerator.org/browse/CLI-654): ETIMEDOUT is returned when you publish an Arrow app
-    
-*   [CLI-658](https://jira.appcelerator.org/browse/CLI-658): Encryption fails on Windows when using 64-bit Java
+* [CLI-649](https://jira.appcelerator.org/browse/CLI-649): Android build tool warning directs user to run "ti config"
+
+* [CLI-650](https://jira.appcelerator.org/browse/CLI-650): Allow JSON output for version
+
+* [CLI-653](https://jira.appcelerator.org/browse/CLI-653): Attempting to publish arrow app to new environment fails
+
+* [CLI-654](https://jira.appcelerator.org/browse/CLI-654): ETIMEDOUT is returned when you publish an Arrow app
+
+* [CLI-658](https://jira.appcelerator.org/browse/CLI-658): Encryption fails on Windows when using 64-bit Java

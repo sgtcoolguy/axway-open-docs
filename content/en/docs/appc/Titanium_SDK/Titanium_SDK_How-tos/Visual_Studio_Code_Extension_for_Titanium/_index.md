@@ -1,9 +1,9 @@
-{"title":"Visual Studio Code Extension for Titanium","weight":"180"} 
+{"title":"Visual Studio Code Extension for Titanium","weight":"180"}
 
-*   [Overview](#Overview)
-    
-*   [Prerequisites](#Prerequisites)
-    
+* [Overview](#Overview)
+
+* [Prerequisites](#Prerequisites)
+
 
 ## Overview
 

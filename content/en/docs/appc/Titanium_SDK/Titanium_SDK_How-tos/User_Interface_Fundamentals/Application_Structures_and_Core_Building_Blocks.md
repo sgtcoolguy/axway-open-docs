@@ -1,11 +1,11 @@
-{"title":"Application Structures and Core Building Blocks","weight":"10"} 
+{"title":"Application Structures and Core Building Blocks","weight":"10"}
 
-*   [Tab-based applications](#Tab-basedapplications)
-    
-    *   [Tab recommendations](#Tabrecommendations)
-        
-*   [Window-based apps](#Window-basedapps)
-    
+* [Tab-based applications](#Tab-basedapplications)
+
+  * [Tab recommendations](#Tabrecommendations)
+
+* [Window-based apps](#Window-basedapps)
+
 
 ## Objective
 
@@ -95,26 +95,26 @@ A window-based app uses views, controls, and graphics that are contained within 
 
 In addition to this cross platform method, let's take a look at some of the platform specific ways you can navigate through your app without the aid of tab groups.
 
-*   Android
-    
-    *   The Menu button can be used to display options for navigation. These can be sections similar to tabs, or more direct instructions like "Back" or "Forward" in a web browser.
-        
-    *   The Back button will close the current window and go back to the previous one
-        
-*   iOS
-    
-    *   You can use a [navigation window](#!/api/Titanium.UI.iOS.NavigationWindow), which is the core of most iOS app navigation.
-        
-    *   You could implement a [DashboardView](#!/api/Titanium.UI.DashboardView)
-        
-        ![dashboard_view](/Images/appc/download/attachments/29004894/dashboard_view.png)
+* Android
+
+  * The Menu button can be used to display options for navigation. These can be sections similar to tabs, or more direct instructions like "Back" or "Forward" in a web browser.
+
+  * The Back button will close the current window and go back to the previous one
+
+* iOS
+
+  * You can use a [navigation window](#!/api/Titanium.UI.iOS.NavigationWindow), which is the core of most iOS app navigation.
+
+  * You could implement a [DashboardView](#!/api/Titanium.UI.DashboardView)
+
+    ![dashboard_view](/Images/appc/download/attachments/29004894/dashboard_view.png)
 
 It's also notable that window based apps are the common choice for mobile games. As most games employ only a single screen and use mostly custom UI components, OS level navigation is rarely useful. The game is simply presented full-screen and the gameplay itself dictates how the user interacts with the app.
 
 ## References and Further Reading
 
-*   [Titanium.UI module](#!/api/Titanium.UI)
-    
+* [Titanium.UI module](#!/api/Titanium.UI)
+
 
 ## Summary
 

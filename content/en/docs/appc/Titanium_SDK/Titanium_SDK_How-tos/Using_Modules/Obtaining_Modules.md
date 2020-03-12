@@ -1,15 +1,15 @@
-{"title":"Obtaining Modules","weight":"10"} 
+{"title":"Obtaining Modules","weight":"10"}
 
-*   [Appcelerator Marketplace](#AppceleratorMarketplace)
-    
-*   [Appcelerator Enterprise Extensions](#AppceleratorEnterpriseExtensions)
-    
-*   [Open-source Appcelerator modules](#Open-sourceAppceleratormodules)
-    
-*   [Community-contributed modules](#Community-contributedmodules)
-    
-*   [Mobile Web modules](#MobileWebmodules)
-    
+* [Appcelerator Marketplace](#AppceleratorMarketplace)
+
+* [Appcelerator Enterprise Extensions](#AppceleratorEnterpriseExtensions)
+
+* [Open-source Appcelerator modules](#Open-sourceAppceleratormodules)
+
+* [Community-contributed modules](#Community-contributedmodules)
+
+* [Mobile Web modules](#MobileWebmodules)
+
 
 ## Objective
 
@@ -33,18 +33,18 @@ Various modules are made available to Appcelerator subscribers. Plans vary, of c
 
 At the time of this writing, these are some of the modules included in the TiPlus set:
 
-*   InAppBilling (for Android)
-    
-*   StoreKit (for iOS in-app billing)
-    
-*   Barcode (for iOS and Android)
-    
-*   Compression (iOS and Android)
-    
-*   OpenGL (iOS)
-    
-*   AirPrint (iOS)
-    
+* InAppBilling (for Android)
+
+* StoreKit (for iOS in-app billing)
+
+* Barcode (for iOS and Android)
+
+* Compression (iOS and Android)
+
+* OpenGL (iOS)
+
+* AirPrint (iOS)
+
 
 ### Open-source Appcelerator modules
 
@@ -54,14 +54,14 @@ In addition to publishing modules via the Marketplace and Support site, Appceler
 
 Various community members publish modules, generally via their blogs or GitHub accounts. Support and quality varies by developer. None of these are official Appcelerator modules, nor are they supported by Appcelerator. Contact the individual developers. A few "high-visibility" modules and developers include:
 
-*   gitTio! (maintained by Fokke Zandbergen[) lists all Titanium modules and Alloy widgets available on Github at](http://fokkezb.nl/) [http://gitt.io/](http://gitt.io/)
-    
-*   ClearlyInnovative (Aaron Saunders) has published various modules at [http://www.clearlyinnovative.com/](http://www.clearlyinnovative.com/)
-    
-*   Ben Bahrenburg publishes various iOS modules at [http://bencoding.com/](http://bencoding.com/) or [https://github.com/benbahrenburg](https://github.com/benbahrenburg)
-    
-*   QuickTiGame2d is a 2D game engine module for Titanium [http://code.google.com/p/quicktigame2d/](http://code.google.com/p/quicktigame2d/)
-    
+* gitTio! (maintained by Fokke Zandbergen[) lists all Titanium modules and Alloy widgets available on Github at](http://fokkezb.nl/) [http://gitt.io/](http://gitt.io/)
+
+* ClearlyInnovative (Aaron Saunders) has published various modules at [http://www.clearlyinnovative.com/](http://www.clearlyinnovative.com/)
+
+* Ben Bahrenburg publishes various iOS modules at [http://bencoding.com/](http://bencoding.com/) or [https://github.com/benbahrenburg](https://github.com/benbahrenburg)
+
+* QuickTiGame2d is a 2D game engine module for Titanium [http://code.google.com/p/quicktigame2d/](http://code.google.com/p/quicktigame2d/)
+
 
 (Apologies to the many high-caliber developers and projects left off this very short list!)
 

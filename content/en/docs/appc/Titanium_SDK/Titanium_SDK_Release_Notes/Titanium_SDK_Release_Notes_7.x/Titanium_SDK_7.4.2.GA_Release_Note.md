@@ -1,13 +1,13 @@
-{"title":"Titanium SDK 7.4.2.GA - 19 December 2018","weight":"70"} 
+{"title":"Titanium SDK 7.4.2.GA - 19 December 2018","weight":"70"}
 
-*   [About this release](#Aboutthisrelease)
-    
-*   [Community credits](#Communitycredits)
-    
-*   [Fixed issues](#Fixedissues)
-    
-*   [API changes](#APIchanges)
-    
+* [About this release](#Aboutthisrelease)
+
+* [Community credits](#Communitycredits)
+
+* [Fixed issues](#Fixedissues)
+
+* [API changes](#APIchanges)
+
 
 ## About this release
 
@@ -17,13 +17,13 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 ## Community credits
 
-*   [Carlos Henrique Zinato](https://github.com/chmiiller) - [TIMOB-26391](https://jira.appcelerator.org/browse/TIMOB-26391)
-    
+* [Carlos Henrique Zinato](https://github.com/chmiiller) - [TIMOB-26391](https://jira.appcelerator.org/browse/TIMOB-26391)
+
 
 ## Fixed issues
 
-*   [TIMOB-26391](https://jira.appcelerator.org/browse/TIMOB-26391) - iOS: App randomly freezes on iOS 12 beta when using built-in JSCore
-    
+* [TIMOB-26391](https://jira.appcelerator.org/browse/TIMOB-26391) - iOS: App randomly freezes on iOS 12 beta when using built-in JSCore
+
 
 ## API changes
 

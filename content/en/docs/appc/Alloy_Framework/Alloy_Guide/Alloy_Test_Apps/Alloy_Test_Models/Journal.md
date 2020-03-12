@@ -1,4 +1,4 @@
-{"title":"Journal","weight":"60"} 
+{"title":"Journal","weight":"60"}
 
 Demonstrates how to create a simple personal journal application using models and collections.
 
@@ -90,10 +90,10 @@ app/views/android/index.xml
 
 The ScrollView element also specifies a dataTransform function to transform each model in the collection for display. The specified function, doTransform(), does the following:
 
-*   Transforms the mood value ('mad', 'happy', 'neutral') into a corresponding moodColor. This color is applied to the borderColor attribute of each View item in the ScrollView.
-    
-*   Uses the built-in moment.js library's [fromNow()](http://momentjs.com/docs/#/displaying/fromnow/) method to transform the entry's dateCreated value into dateSince.
-    
+* Transforms the mood value ('mad', 'happy', 'neutral') into a corresponding moodColor. This color is applied to the borderColor attribute of each View item in the ScrollView.
+
+* Uses the built-in moment.js library's [fromNow()](http://momentjs.com/docs/#/displaying/fromnow/) method to transform the entry's dateCreated value into dateSince.
+
 
 app/controllers/index.js
 
@@ -205,6 +205,6 @@ The addEntry() function, defined by the add.js controller shown below, creates a
 
 ## See Also
 
-*   [Alloy Collection and Model Objects](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Collection_and_Model_Objects/)
-    
-*   [Alloy Data Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Data_Binding/)
+* [Alloy Collection and Model Objects](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Collection_and_Model_Objects/)
+
+* [Alloy Data Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Data_Binding/)

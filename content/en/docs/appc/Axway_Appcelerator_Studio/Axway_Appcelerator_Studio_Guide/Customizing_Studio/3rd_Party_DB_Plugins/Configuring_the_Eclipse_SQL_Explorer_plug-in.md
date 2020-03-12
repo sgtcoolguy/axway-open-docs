@@ -1,4 +1,4 @@
-{"title":"Configuring the Eclipse SQL Explorer plug-in","weight":"10"} 
+{"title":"Configuring the Eclipse SQL Explorer plug-in","weight":"10"}
 
 ## Introduction
 
@@ -6,31 +6,31 @@ This group of Help topics will teach you how to install the SQL Explorer plug-in
 
 ## Instructions
 
-Follow the instructions in the Help topics below in order to configure the Eclipse SQL Explorer plug-in for RadRails:
+Follow the instructions in the Help topics below to configure the Eclipse SQL Explorer plug-in for RadRails:
 
-1.  [Installing the SQL Explorer plug-in](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Installing_the_SQL_Explorer_plug-in/)
-    
-2.  [Deploying ConnectorJ](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Deploying_ConnectorJ/)
-    
-3.  [Creating a new driver in Eclipse](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Creating_a_new_driver_in_Eclipse/)
-    
-4.  [Creating a new connection in SQL Explorer](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Creating_a_new_connection_in_SQL_Explorer/)
-    
-5.  [Connecting to the database application](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Connecting_to_the_database_application/)
-    
-6.  [Using SQL Explorer](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Using_SQL_Explorer/)
-    
+1. [Installing the SQL Explorer plug-in](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Installing_the_SQL_Explorer_plug-in/)
+
+2. [Deploying ConnectorJ](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Deploying_ConnectorJ/)
+
+3. [Creating a new driver in Eclipse](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Creating_a_new_driver_in_Eclipse/)
+
+4. [Creating a new connection in SQL Explorer](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Creating_a_new_connection_in_SQL_Explorer/)
+
+5. [Connecting to the database application](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Connecting_to_the_database_application/)
+
+6. [Using SQL Explorer](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Using_SQL_Explorer/)
+
 
 ## Related Topics
 
-*   [Installing the SQL Explorer plug-in](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Installing_the_SQL_Explorer_plug-in/)
-    
-*   [Deploying ConnectorJ](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Deploying_ConnectorJ/)
-    
-*   [Creating a new driver in Eclipse](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Creating_a_new_driver_in_Eclipse/)
-    
-*   [Creating a new connection in SQL Explorer](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Creating_a_new_connection_in_SQL_Explorer/)
-    
-*   [Connecting to the database application](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Connecting_to_the_database_application/)
-    
-*   [Using SQL Explorer](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Using_SQL_Explorer/)
+* [Installing the SQL Explorer plug-in](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Installing_the_SQL_Explorer_plug-in/)
+
+* [Deploying ConnectorJ](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Deploying_ConnectorJ/)
+
+* [Creating a new driver in Eclipse](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Creating_a_new_driver_in_Eclipse/)
+
+* [Creating a new connection in SQL Explorer](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Creating_a_new_connection_in_SQL_Explorer/)
+
+* [Connecting to the database application](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Connecting_to_the_database_application/)
+
+* [Using SQL Explorer](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Using_SQL_Explorer/)

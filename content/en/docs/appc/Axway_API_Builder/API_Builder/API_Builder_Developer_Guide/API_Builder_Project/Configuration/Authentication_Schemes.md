@@ -1,4 +1,4 @@
-{"title":"Authentication Schemes","weight":"30"} 
+{"title":"Authentication Schemes","weight":"30"}
 
 API Builder 3.x is deprecated
 
@@ -6,16 +6,16 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-*   [Introduction](#Introduction)
-    
-*   [HTTP basic authentication](#HTTPbasicauthentication)
-    
-*   [HTTP header authentication](#HTTPheaderauthentication)
-    
-*   [LDAP](#LDAP)
-    
-*   [Custom authentication](#Customauthentication)
-    
+* [Introduction](#Introduction)
+
+* [HTTP basic authentication](#HTTPbasicauthentication)
+
+* [HTTP header authentication](#HTTPheaderauthentication)
+
+* [LDAP](#LDAP)
+
+* [Custom authentication](#Customauthentication)
+
 
 ## Introduction
 
@@ -25,16 +25,16 @@ By default, a new API Builder project uses HTTP basic authentication, where the 
 
 To change the authentication mechanism, open the conf/default.js file and change the APIKeyAuthType key to one of the following:
 
-*   **none** : No authentication. The client does not need any authentication to access these APIs. In this case, all client requests are accepted without any security. Use the value none for the key APIKeyAuthType.
-    
-*   **basic** : Use HTTP basic authentication (default). The client uses the HTTP Authorization header to send an encoded version of the API Key using the [HTTP Basic Authentication](http://en.wikipedia.org/wiki/Basic_access_authentication) standard. The username part is the value of the API Key and the password part should be blank (empty string). Use the value basic for the key APIKeyAuthType.
-    
-*   **apikey** : Use HTTP header authentication. The client sets the HTTP APIKey header to the value of the API Key. In this scenario, the server must only support HTTPS only endpoints so the key is not passed in plain text. Use the value apikey for the key APIKeyAuthType.
-    
-*   **ldap** (since API Builder (Arrow) 1.2.x): Use the LDAP plugin for authentication. You must also set the ldap key to an object containing settings for the LDAP configuration. The client uses the HTTP Authorization header to send an encoded version of the API Key using the [HTTP Basic Authentication](http://en.wikipedia.org/wiki/Basic_access_authentication) standard. The username and password will be sent to the configured LDAP server for authentication. Use the value ldap for the key APIKeyAuthType.
-    
-*   **plugin** : Use a custom or third-party authentication mechanism. Using the plugin strategy, you can extend the authentication to use any third-party or custom API authentication. To build your own plugin, set the value plugin for the key APIKeyAuthType to use this strategy, then set the key APIKeyAuthPlugin to the location of your plugin. The location can be a file path (relative to the current work directory of your server project directory) or the name of the module package available in the standard node\_modules location.
-    
+* **none** : No authentication. The client does not need any authentication to access these APIs. In this case, all client requests are accepted without any security. Use the value none for the key APIKeyAuthType.
+
+* **basic** : Use HTTP basic authentication (default). The client uses the HTTP Authorization header to send an encoded version of the API Key using the [HTTP Basic Authentication](http://en.wikipedia.org/wiki/Basic_access_authentication) standard. The username part is the value of the API Key and the password part should be blank (empty string). Use the value basic for the key APIKeyAuthType.
+
+* **apikey** : Use HTTP header authentication. The client sets the HTTP APIKey header to the value of the API Key. In this scenario, the server must only support HTTPS only endpoints so the key is not passed in plain text. Use the value apikey for the key APIKeyAuthType.
+
+* **ldap** (since API Builder (Arrow) 1.2.x): Use the LDAP plugin for authentication. You must also set the ldap key to an object containing settings for the LDAP configuration. The client uses the HTTP Authorization header to send an encoded version of the API Key using the [HTTP Basic Authentication](http://en.wikipedia.org/wiki/Basic_access_authentication) standard. The username and password will be sent to the configured LDAP server for authentication. Use the value ldap for the key APIKeyAuthType.
+
+* **plugin** : Use a custom or third-party authentication mechanism. Using the plugin strategy, you can extend the authentication to use any third-party or custom API authentication. To build your own plugin, set the value plugin for the key APIKeyAuthType to use this strategy, then set the key APIKeyAuthPlugin to the location of your plugin. The location can be a file path (relative to the current work directory of your server project directory) or the name of the module package available in the standard node\_modules location.
+
 
 Separate API keys are configured for each environment. For example, separate API keys are configured for the development environment and for the production environment. The API key for the current environment must be used for basic and apikey authentication. The development API key must be used for authentication in the development environment and the production API key must be used for authentication in the production environment.
 

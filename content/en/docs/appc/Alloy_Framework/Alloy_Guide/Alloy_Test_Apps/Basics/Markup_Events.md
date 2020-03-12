@@ -1,4 +1,4 @@
-{"title":"Markup Events","weight":"50"} 
+{"title":"Markup Events","weight":"50"}
 
 Demonstrates adding event attributes in the XML view and handling the event in the view-controller.
 

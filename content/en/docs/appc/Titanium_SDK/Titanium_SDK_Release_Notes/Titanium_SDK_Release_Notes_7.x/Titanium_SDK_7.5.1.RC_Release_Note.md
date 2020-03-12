@@ -1,15 +1,15 @@
-{"title":"Titanium SDK 7.5.1.RC - 13 December 2018","weight":"40"} 
+{"title":"Titanium SDK 7.5.1.RC - 13 December 2018","weight":"40"}
 
-*   [About this release](#Aboutthisrelease)
-    
-*   [Community credits](#Communitycredits)
-    
-*   [Fixed issues](#Fixedissues)
-    
-*   [Improvements](#Improvements)
-    
-*   [API changes](#APIchanges)
-    
+* [About this release](#Aboutthisrelease)
+
+* [Community credits](#Communitycredits)
+
+* [Fixed issues](#Fixedissues)
+
+* [Improvements](#Improvements)
+
+* [API changes](#APIchanges)
+
 
 ## About this release
 
@@ -19,28 +19,28 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 ## Community credits
 
-*   Jorge Macias Garcia - [TIMOB-26625](https://jira.appcelerator.org/browse/TIMOB-26625)
-    
-*   Joe Finnigan - [TIMOB-26628](https://jira.appcelerator.org/browse/TIMOB-26628)
-    
+* Jorge Macias Garcia - [TIMOB-26625](https://jira.appcelerator.org/browse/TIMOB-26625)
+
+* Joe Finnigan - [TIMOB-26628](https://jira.appcelerator.org/browse/TIMOB-26628)
+
 
 ## Fixed issues
 
-*   [TIMOB-26452](https://jira.appcelerator.org/browse/TIMOB-26452) - iOS: Object.hasProperty incorrectly reports false when a property's value is null
-    
-*   [TIMOB-26580](https://jira.appcelerator.org/browse/TIMOB-26580) - Android: ListView templates not compatible with native modules
-    
-*   [TIMOB-26625](https://jira.appcelerator.org/browse/TIMOB-26625) - Android: Can't open Titanium app through intent (7.5.0 regression)
-    
-*   [TIMOB-26628](https://jira.appcelerator.org/browse/TIMOB-26628) - iOS 11.0: App crashes on launch
-    
+* [TIMOB-26452](https://jira.appcelerator.org/browse/TIMOB-26452) - iOS: Object.hasProperty incorrectly reports false when a property's value is null
+
+* [TIMOB-26580](https://jira.appcelerator.org/browse/TIMOB-26580) - Android: ListView templates not compatible with native modules
+
+* [TIMOB-26625](https://jira.appcelerator.org/browse/TIMOB-26625) - Android: Can't open Titanium app through intent (7.5.0 regression)
+
+* [TIMOB-26628](https://jira.appcelerator.org/browse/TIMOB-26628) - iOS 11.0: App crashes on launch
+
 
 ## Improvements
 
-*   [TIMOB-26632](https://jira.appcelerator.org/browse/TIMOB-26632) - App is crushing in Ti-SDK 7.5.0.GA java.lang.NullPointerException
-    
-    *   Added feature that validates getKrollObject result before use
-        
+* [TIMOB-26632](https://jira.appcelerator.org/browse/TIMOB-26632) - App is crushing in Ti-SDK 7.5.0.GA java.lang.NullPointerException
+
+  * Added feature that validates getKrollObject result before use
+
 
 ## API changes
 

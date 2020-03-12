@@ -1,75 +1,75 @@
-{"title":"Axway Appcelerator Studio FAQ","weight":"60"} 
+{"title":"Axway Appcelerator Studio FAQ","weight":"60"}
 
 This document provides answers and links to commonly asked questions about Studio.
 
-*   [Studio hangs on launch](#Studiohangsonlaunch)
-    
-    *   [Java](#Java)
-        
-    *   [Node.js](#Node.js)
-        
-    *   [Appc login](#Appclogin)
-        
-*   [Which version of Java should I use with Windows?](#WhichversionofJavashouldIusewithWindows?)
-    
-*   [Check Android and set Android SDK version](#CheckAndroidandsetAndroidSDKversion)
-    
-*   [How do I resolve this error: \[ERROR\] : invalid request](#HowdoIresolvethiserror:[ERROR]:invalidrequest)
-    
-*   [Error during installation IDE recommended updates](#ErrorduringinstallationIDErecommendedupdates)
-    
-*   [Setup Android SDK for Studio on Windows](#SetupAndroidSDKforStudioonWindows)
-    
-*   [Install Appcelerator Studio on the Mac](#InstallAppceleratorStudioontheMac)
-    
-*   [Appcelerator Studio is unable to install latest appc CLI due to proxy/network configuration issues](#AppceleratorStudioisunabletoinstalllatestappcCLIduetoproxy/networkconfigurationissues)
-    
-*   [Accessing the log from Studio](#AccessingthelogfromStudio)
-    
-*   [Accessing the Daemon log from Studio](#AccessingtheDaemonlogfromStudio)
-    
-*   [Accessing the Log from the File System](#AccessingtheLogfromtheFileSystem)
-    
-*   [Fresh installation of Studio for Windows](#FreshinstallationofStudioforWindows)
-    
-*   [Installing x86 emulator packages](#Installingx86emulatorpackages)
-    
-*   [How to enable analytics in a new Appcelerator project?](#HowtoenableanalyticsinanewAppceleratorproject?)
-    
-*   [Error: com.appcelerator.install.use.download.error](#Error:com.appcelerator.install.use.download.error)
-    
-*   [How do I generate GUID on MAC](#HowdoIgenerateGUIDonMAC)
-    
-*   [No Android SDK found](#NoAndroidSDKfound)
-    
-*   [Install Appcelerator Studio on the Mac](#InstallAppceleratorStudioontheMac.1)
-    
-*   [Appcelerator Studio is unable to install latest appc CLI due to proxy/network configuration issues](#AppceleratorStudioisunabletoinstalllatestappcCLIduetoproxy/networkconfigurationissues.1)
-    
-*   [Accessing the log from Studio](#AccessingthelogfromStudio.1)
-    
-    *   [Accessing the log from the file system](#Accessingthelogfromthefilesystem)
-        
-*   [Fresh installation of Studio for Windows](#FreshinstallationofStudioforWindows.1)
-    
-*   [Installing Studio on Linux](#InstallingStudioonLinux)
-    
-*   [Where can I find Titanium examples?](#WherecanIfindTitaniumexamples?)
-    
-*   [Where can I download Studio?](#WherecanIdownloadStudio?)
-    
-*   [How do I configure Studio behind a proxy?](#HowdoIconfigureStudiobehindaproxy?)
-    
-*   [How do I install Android Development Tools with Studio?](#HowdoIinstallAndroidDevelopmentToolswithStudio?)
-    
-*   [How do I install Java Development Tools with Studio?](#HowdoIinstallJavaDevelopmentToolswithStudio?)
-    
-*   [How do I extend Studio?](#HowdoIextendStudio?)
-    
-*   [Can I add source control to Studio?](#CanIaddsourcecontroltoStudio?)
-    
-*   [How do I configure Studio's error reporting?](#HowdoIconfigureStudio'serrorreporting?)
-    
+* [Studio hangs on launch](#Studiohangsonlaunch)
+
+  * [Java](#Java)
+
+  * [Node.js](#Node.js)
+
+  * [Appc login](#Appclogin)
+
+* [Which version of Java should I use with Windows?](#WhichversionofJavashouldIusewithWindows?)
+
+* [Check Android and set Android SDK version](#CheckAndroidandsetAndroidSDKversion)
+
+* [How do I resolve this error: \[ERROR\] : invalid request](#HowdoIresolvethiserror:[ERROR]:invalidrequest)
+
+* [Error during installation IDE recommended updates](#ErrorduringinstallationIDErecommendedupdates)
+
+* [Setup Android SDK for Studio on Windows](#SetupAndroidSDKforStudioonWindows)
+
+* [Install Appcelerator Studio on the Mac](#InstallAppceleratorStudioontheMac)
+
+* [Appcelerator Studio is unable to install latest appc CLI due to proxy/network configuration issues](#AppceleratorStudioisunabletoinstalllatestappcCLIduetoproxy/networkconfigurationissues)
+
+* [Accessing the log from Studio](#AccessingthelogfromStudio)
+
+* [Accessing the Daemon log from Studio](#AccessingtheDaemonlogfromStudio)
+
+* [Accessing the Log from the File System](#AccessingtheLogfromtheFileSystem)
+
+* [Fresh installation of Studio for Windows](#FreshinstallationofStudioforWindows)
+
+* [Installing x86 emulator packages](#Installingx86emulatorpackages)
+
+* [How to enable analytics in a new Appcelerator project?](#HowtoenableanalyticsinanewAppceleratorproject?)
+
+* [Error: com.appcelerator.install.use.download.error](#Error:com.appcelerator.install.use.download.error)
+
+* [How do I generate GUID on MAC](#HowdoIgenerateGUIDonMAC)
+
+* [No Android SDK found](#NoAndroidSDKfound)
+
+* [Install Appcelerator Studio on the Mac](#InstallAppceleratorStudioontheMac.1)
+
+* [Appcelerator Studio is unable to install latest appc CLI due to proxy/network configuration issues](#AppceleratorStudioisunabletoinstalllatestappcCLIduetoproxy/networkconfigurationissues.1)
+
+* [Accessing the log from Studio](#AccessingthelogfromStudio.1)
+
+  * [Accessing the log from the file system](#Accessingthelogfromthefilesystem)
+
+* [Fresh installation of Studio for Windows](#FreshinstallationofStudioforWindows.1)
+
+* [Installing Studio on Linux](#InstallingStudioonLinux)
+
+* [Where can I find Titanium examples?](#WherecanIfindTitaniumexamples?)
+
+* [Where can I download Studio?](#WherecanIdownloadStudio?)
+
+* [How do I configure Studio behind a proxy?](#HowdoIconfigureStudiobehindaproxy?)
+
+* [How do I install Android Development Tools with Studio?](#HowdoIinstallAndroidDevelopmentToolswithStudio?)
+
+* [How do I install Java Development Tools with Studio?](#HowdoIinstallJavaDevelopmentToolswithStudio?)
+
+* [How do I extend Studio?](#HowdoIextendStudio?)
+
+* [Can I add source control to Studio?](#CanIaddsourcecontroltoStudio?)
+
+* [How do I configure Studio's error reporting?](#HowdoIconfigureStudio'serrorreporting?)
+
 
 ## Studio hangs on launch
 
@@ -79,34 +79,34 @@ Studio can hang for three common reasons: you may be using the wrong version of 
 
 Confirm that you are using a supported version of Java by visiting [Titanium Compatibility Matrix#Javasupport](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#Javasupport).
 
-1.  Check to see which version of Java is active: java -version
-    
-2.  Check to see if Appc recognizes the correct version of Java: appc ti info
-    
-3.  If there is any discrepancy, please install a supported version of Java.
-    
+1. Check to see which version of Java is active: java -version
+
+2. Check to see if Appc recognizes the correct version of Java: appc ti info
+
+3. If there is any discrepancy, please install a supported version of Java.
+
 
 ### Node.js
 
 To confirm which version of Node.js is supported, visit [Titanium Compatibility Matrix#Node.js](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#Node.js).
 
-1.  Check to see which version of Node.js is active: node -v
-    
-2.  Check to see if Appc recognizes the correct version of Node.js: appc ti info
-    
-3.  If there is any discrepancy, please install a supported version of Node.js.
-    
+1. Check to see which version of Node.js is active: node -v
+
+2. Check to see if Appc recognizes the correct version of Node.js: appc ti info
+
+3. If there is any discrepancy, please install a supported version of Node.js.
+
 
 ### Appc login
 
 To confirm you are logged into an Appc environment, follow these steps:
 
-1.  Execute appc logout to confirm you are not logged in.
-    
-2.  Execute appc login and provide your credentials.
-    
-3.  Launch Studio.
-    
+1. Execute appc logout to confirm you are not logged in.
+
+2. Execute appc login and provide your credentials.
+
+3. Launch Studio.
+
 
 It should be also noted that if you are logged into Appc environment on another machine, Studio will hang on the launch screen. Use the steps above to log in/out.
 
@@ -144,48 +144,48 @@ For Windows users, execute the same commands without the sudo command within the
 
 ## Setup Android SDK for Studio on Windows
 
-1.  **Download the [Android SDK](https://developer.android.com/studio/index.html)** manually.
-    
-2.  Move the downloaded file in C: directory. Go to the **Android SDK** > **tools** and click on Android and select all tools, Android-6, and Extra folder then install those packages.
-    
-3.  Setup Android SDK via the command prompt:
-    
-    1.  appc ti config android.sdk /<SDK location>/
-        
-    2.  appc ti setup android
-        
-4.  Restart Windows.
-    
+1. **Download the [Android SDK](https://developer.android.com/studio/index.html)** manually.
+
+2. Move the downloaded file in C: directory. Go to the **Android SDK** > **tools** and click on Android and select all tools, Android-6, and Extra folder then install those packages.
+
+3. Setup Android SDK via the command prompt:
+
+  1. appc ti config android.sdk /<SDK location>/
+
+  2. appc ti setup android
+
+4. Restart Windows.
+
 
 ## Install Appcelerator Studio on the Mac
 
-1.  **Download [node.js](https://nodejs.org/#download)** and install it.
-    
-    Refer to [Node.js Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#Node.js) for which version to install.
-    
-2.  Install **Appcelerator CLI** via the terminal:
-    
-    `sudo` `npm` `install` `-g appcelerator`
-    
-    `appc use latest`
-    
-    `appc setup`
-    
-    `appc login`
-    
-3.  **Download and install [Studio](https://platform.appcelerator.com/#/product/studio)**. Installing Studio automatically installs all other prerequisite software.
-    
+1. **Download [node.js](https://nodejs.org/#download)** and install it.
+
+  Refer to [Node.js Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#Node.js) for which version to install.
+
+2. Install **Appcelerator CLI** via the terminal:
+
+  `sudo` `npm` `install` `-g appcelerator`
+
+  `appc use latest`
+
+  `appc setup`
+
+  `appc login`
+
+3. **Download and install [Studio](https://platform.appcelerator.com/#/product/studio)**. Installing Studio automatically installs all other prerequisite software.
+
 
 ## Appcelerator Studio is unable to install latest appc CLI due to proxy/network configuration issues
 
-1.  Open a terminal and execute this command: appc use latest
-    
-2.  If you get the same error what you reported, verify your proxy configuration by executing this command: appc config get proxyServer
-    
-3.  If this proxy configuration command shows any configured proxy and it was set unintentionally, you can remove it by executing this command: appc config set proxyServer
-    
-4.  If there is no proxy configured but the issue still remains, it may be that your network firewall is not allowing accessing to Appcelerator Software Update site. Contact your network admin to unblock that site.
-    
+1. Open a terminal and execute this command: appc use latest
+
+2. If you get the same error what you reported, verify your proxy configuration by executing this command: appc config get proxyServer
+
+3. If this proxy configuration command shows any configured proxy and it was set unintentionally, you can remove it by executing this command: appc config set proxyServer
+
+4. If there is no proxy configured but the issue still remains, it may be that your network firewall is not allowing accessing to Appcelerator Software Update site. Contact your network admin to unblock that site.
+
 
 ## Accessing the log from Studio
 
@@ -199,37 +199,37 @@ In Studio, go to **Help** > **Studio** > **Generate Appc Daemon Dump**. It gener
 
 Current log file is located in the ../.metadata directory in your workspace directory. The following lists the path for various operating systems:
 
-*   **Windows XP**: C:\\Documents and Settings\\username\\My Documents\\<Studio Workspace>\\.metadata\\.log
-    
-*   **Windows Vista/Windows 7**: C:\\Users\\username\\Documents\\<Studio Workspace>\\.metadata\\.log
-    
-*   **Mac OS X**: ~/Documents/<Studio Workspace>/.metadata/.log
-    
+* **Windows XP**: C:\\Documents and Settings\\username\\My Documents\\<Studio Workspace>\\.metadata\\.log
+
+* **Windows Vista/Windows 7**: C:\\Users\\username\\Documents\\<Studio Workspace>\\.metadata\\.log
+
+* **Mac OS X**: ~/Documents/<Studio Workspace>/.metadata/.log
+
 
 ## Fresh installation of Studio for Windows
 
 If you download the Axway Appcelerator Studio and install it, the installation process will cover all the steps automatically. But, sometimes, the installation process may encounter an issue. If this is the case, it may be better to install all other prerequesities and then install Studio.
 
-1.  **Install 32bit Java**. Review the info in **[Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/)** for Windows setup.
-    
-2.  **Download [node.js](https://nodejs.org/#download)** and install it.
-    
-    Refer to [Node.js Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#Node.js) for which version to install.
-    
-3.  Execute the following commands via the admin command prompt:
-    
-    `npm install -g appcelerator`
-    
-    `appc use latest`
-    
-    `appc config set proxyServer` `null`
-    
-    `appc setup`
-    
-4.  **Download and install [Studio](https://platform.appcelerator.com/#/product/studio)** . Installing Studio automatically installs all other prerequisite software.
-    
-5.  Launch Studio.
-    
+1. **Install 32bit Java**. Review the info in **[Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/)** for Windows setup.
+
+2. **Download [node.js](https://nodejs.org/#download)** and install it.
+
+  Refer to [Node.js Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#Node.js) for which version to install.
+
+3. Execute the following commands via the admin command prompt:
+
+  `npm install -g appcelerator`
+
+  `appc use latest`
+
+  `appc config set proxyServer` `null`
+
+  `appc setup`
+
+4. **Download and install [Studio](https://platform.appcelerator.com/#/product/studio)** . Installing Studio automatically installs all other prerequisite software.
+
+5. Launch Studio.
+
 
 ## Installing x86 emulator packages
 
@@ -245,98 +245,98 @@ The Extra software is [Intel x86 emulator accelerator (HAXM)](https://software.i
 
 To enable analytics in a new Appcelerator project:
 
-1.  In Studio, **create a new Mobile Application** (File > New Mobile App Project...).
-    
-2.  Make sure the **Enable Appcelerator Services** option in **enabled** in the New Mobile App Project dialog and select the appropriate organization from the Organization pop-up menu. The application is tied to the account and organization used to create it.
-    
-3.  Enter the rest of the required project information and click **Finish**.
-    
-4.  **Build your application and deploy** to devices to begin collecting analytics data.
-    
+1. In Studio, **create a new Mobile Application** (File > New Mobile App Project...).
+
+2. Make sure the **Enable Appcelerator Services** option in **enabled** in the New Mobile App Project dialog and select the appropriate organization from the Organization pop-up menu. The application is tied to the account and organization used to create it.
+
+3. Enter the rest of the required project information and click **Finish**.
+
+4. **Build your application and deploy** to devices to begin collecting analytics data.
+
 
 ## Error: com.appcelerator.install.use.download.error
 
 Please try following steps:
 
-1.  Open **terminal** (Mac) or **administrative command prompt** (Windows) and type: appc config get proxyServer
-    
-2.  After the first command has finished, execute this one: appc config set proxyServer null
-    
-3.  Try logging in again and enter your credentials: appc login
-    
-4.  Launch Studio and try to log in again.
-    
+1. Open **terminal** (Mac) or **administrative command prompt** (Windows) and type: appc config get proxyServer
+
+2. After the first command has finished, execute this one: appc config set proxyServer null
+
+3. Try logging in again and enter your credentials: appc login
+
+4. Launch Studio and try to log in again.
+
 
 ## How do I generate GUID on MAC
 
-1.  **Select your project**.
-    
-2.  Open Studio **terminal** and execute: **uuidgen**
-    
-3.  **Copy the output** and open **tiapp.xml** file.
-    
-4.  **Find <guid> tag** and **replace the value** with the copied value from the terminal output.
-    
-5.  **Clean your project** several times and build.
-    
-6.  If you still get the error, close Studio, reopen, and build again.
-    
+1. **Select your project**.
+
+2. Open Studio **terminal** and execute: **uuidgen**
+
+3. **Copy the output** and open **tiapp.xml** file.
+
+4. **Find <guid> tag** and **replace the value** with the copied value from the terminal output.
+
+5. **Clean your project** several times and build.
+
+6. If you still get the error, close Studio, reopen, and build again.
+
 
 ## No Android SDK found
 
-1.  Go to your Android SDK folder/tools/android. This will open Android SDK manager.
-    
-2.  Download and install the recommended SDK tools and build tools.
-    
-3.  Restart your computer after the installation is done.
-    
+1. Go to your Android SDK folder/tools/android. This will open Android SDK manager.
+
+2. Download and install the recommended SDK tools and build tools.
+
+3. Restart your computer after the installation is done.
+
 
 If the issue happens after installing Titanium SDK from IDE recommendation, it possible your SDK installation ran into some error during installation. You need to manually download the SDK and install it.
 
 Setup Android SDK for Studio on Windows
 
-1.  **Download the [Android SDK](https://developer.android.com/studio/index.html)** manually.
-    
-2.  Move the downloaded file in C: directory. Go to the **Android SDK** > **tools** and click on Android and select all tools, Android-6, and Extra folder then install those packages.
-    
-3.  Setup Android SDK via the command prompt:
-    
-    1.  appc ti config android.sdk /<SDK location>/
-        
-    2.  appc ti setup android
-        
-4.  Restart Windows.
-    
+1. **Download the [Android SDK](https://developer.android.com/studio/index.html)** manually.
+
+2. Move the downloaded file in C: directory. Go to the **Android SDK** > **tools** and click on Android and select all tools, Android-6, and Extra folder then install those packages.
+
+3. Setup Android SDK via the command prompt:
+
+  1. appc ti config android.sdk /<SDK location>/
+
+  2. appc ti setup android
+
+4. Restart Windows.
+
 
 ## Install Appcelerator Studio on the Mac
 
-1.  **Download [node.js](https://nodejs.org/#download)** and install it.
-    
-    Refer to [Node.js Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#Node.js) for which version to install.
-    
-2.  Install **Appcelerator CLI** via the terminal:
-    
-    `sudo` `npm` `install` `-g appcelerator`
-    
-    `appc use latest`
-    
-    `appc setup`
-    
-    `appc login`
-    
-3.  **Download and install [Studio](https://platform.appcelerator.com/#/product/studio)** . Installing Studio automatically installs all other prerequisite software.
-    
+1. **Download [node.js](https://nodejs.org/#download)** and install it.
+
+  Refer to [Node.js Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#Node.js) for which version to install.
+
+2. Install **Appcelerator CLI** via the terminal:
+
+  `sudo` `npm` `install` `-g appcelerator`
+
+  `appc use latest`
+
+  `appc setup`
+
+  `appc login`
+
+3. **Download and install [Studio](https://platform.appcelerator.com/#/product/studio)** . Installing Studio automatically installs all other prerequisite software.
+
 
 ## Appcelerator Studio is unable to install latest appc CLI due to proxy/network configuration issues
 
-1.  Open a terminal and execute this command: appc use latest
-    
-2.  If you get the same error what you reported, verify your proxy configuration by executing this command: appc config get proxyServer
-    
-3.  If this proxy configuration command shows any configured proxy and it was set unintentionally, you can remove it by executing this command: appc config set proxyServer
-    
-4.  If there is no proxy configured but the issue still remains, it may be that your network firewall is not allowing accessing to Appcelerator Software Update site. Contact your network admin to unblock that site.
-    
+1. Open a terminal and execute this command: appc use latest
+
+2. If you get the same error what you reported, verify your proxy configuration by executing this command: appc config get proxyServer
+
+3. If this proxy configuration command shows any configured proxy and it was set unintentionally, you can remove it by executing this command: appc config set proxyServer
+
+4. If there is no proxy configured but the issue still remains, it may be that your network firewall is not allowing accessing to Appcelerator Software Update site. Contact your network admin to unblock that site.
+
 
 ## Accessing the log from Studio
 
@@ -346,54 +346,54 @@ In Studio, go to **Help** > **Studio** > **View Log File**. This will open the l
 
 Current log file is located in the ../.metadata directory in your workspace directory. The following lists the path for various operating systems:
 
-*   **Windows XP**: C:\\Documents and Settings\\username\\My Documents\\<Studio Workspace>\\.metadata\\.log
-    
-*   **Windows Vista/Windows 7**: C:\\Users\\username\\Documents\\<Studio Workspace>\\.metadata\\.log
-    
-*   **Mac OS X**: ~/Documents/<Studio Workspace>/.metadata/.log
-    
+* **Windows XP**: C:\\Documents and Settings\\username\\My Documents\\<Studio Workspace>\\.metadata\\.log
+
+* **Windows Vista/Windows 7**: C:\\Users\\username\\Documents\\<Studio Workspace>\\.metadata\\.log
+
+* **Mac OS X**: ~/Documents/<Studio Workspace>/.metadata/.log
+
 
 ## Fresh installation of Studio for Windows
 
 If you download the Appcelerator Studio and install it, the installation process will cover all the steps automatically. But, sometimes, the installation process may encounter an issue. If this is the case, it may be better to install all other prerequesities and then install Studio.
 
-1.  **Install 32bit Java**. Review the info in **[Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/)** for Windows setup.
-    
-2.  **Download [node.js](https://nodejs.org/#download)** and install it.
-    
-    Refer to [Node.js Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#Node.js) for which version to install.
-    
-3.  Execute the following commands via the admin command prompt:
-    
-    `npm install -g appcelerator`
-    
-    `appc use latest`
-    
-    `appc config set proxyServer` `null`
-    
-    `appc setup`
-    
-4.  **Download and install [Studio](https://platform.appcelerator.com/#/product/studio)** . Installing Studio automatically installs all other prerequisite software.
-    
-5.  Launch Studio.
-    
+1. **Install 32bit Java**. Review the info in **[Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/)** for Windows setup.
+
+2. **Download [node.js](https://nodejs.org/#download)** and install it.
+
+  Refer to [Node.js Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#Node.js) for which version to install.
+
+3. Execute the following commands via the admin command prompt:
+
+  `npm install -g appcelerator`
+
+  `appc use latest`
+
+  `appc config set proxyServer` `null`
+
+  `appc setup`
+
+4. **Download and install [Studio](https://platform.appcelerator.com/#/product/studio)** . Installing Studio automatically installs all other prerequisite software.
+
+5. Launch Studio.
+
 
 ## Installing Studio on Linux
 
 Linux systems require the GTK windowing system, Node.js, and the JDK to be installed before running Studio.
 
-1.  Review the info in [Get started with Axway Appcelerator CLI](https://platform.appcelerator.com/#/product/cli).
-    
-2.  Install CLI using the following commands:
-    
-    `sudo` `npm` `install` `-g appcelerator`
-    
-    `appc use latest`
-    
-    `appc setup`
-    
-3.  **Download and install [Studio](https://platform.appcelerator.com/#/product/studio)**.
-    
+1. Review the info in [Get started with Axway Appcelerator CLI](https://platform.appcelerator.com/#/product/cli).
+
+2. Install CLI using the following commands:
+
+  `sudo` `npm` `install` `-g appcelerator`
+
+  `appc use latest`
+
+  `appc setup`
+
+3. **Download and install [Studio](https://platform.appcelerator.com/#/product/studio)**.
+
 
 Appcelerator Axway doesn't officially support Linux installs.
 
@@ -403,12 +403,12 @@ Visite [Example Applications](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Example
 
 ## Where can I download Studio?
 
-1.  Log in to [https://platform.axway.com](https://platform.axway.com).
-    
-2.  Expand the AMPLIFY menu ![appc_menu0](/Images/appc/download/thumbnails/30083017/appc_menu0.png) and clicked on [App Builder Studio](https://platform.appcelerator.com/#/product/studio).
-    
-3.  Download the installer or ZIP file for your operating system.
-    
+1. Log in to [https://platform.axway.com](https://platform.axway.com).
+
+2. Expand the AMPLIFY menu ![appc_menu0](/Images/appc/download/thumbnails/30083017/appc_menu0.png) and clicked on [App Builder Studio](https://platform.appcelerator.com/#/product/studio).
+
+3. Download the installer or ZIP file for your operating system.
+
 
 ## How do I configure Studio behind a proxy?
 

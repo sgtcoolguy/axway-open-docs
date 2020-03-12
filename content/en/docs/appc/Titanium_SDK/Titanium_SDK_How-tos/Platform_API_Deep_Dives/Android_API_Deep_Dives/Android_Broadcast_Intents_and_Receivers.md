@@ -1,19 +1,19 @@
-{"title":"Android Broadcast Intents and Receivers","weight":"30"} 
+{"title":"Android Broadcast Intents and Receivers","weight":"30"}
 
-*   [Introduction](#Introduction)
-    
-*   [Send a broadcast](#Sendabroadcast)
-    
-    *   [Create a broadcast intent](#Createabroadcastintent)
-        
-    *   [Send a broadcast](#Sendabroadcast.1)
-        
-    *   [Send a broadcast with a permission](#Sendabroadcastwithapermission)
-        
-*   [Monitor a broadcast](#Monitorabroadcast)
-    
-*   [Further reading](#Furtherreading)
-    
+* [Introduction](#Introduction)
+
+* [Send a broadcast](#Sendabroadcast)
+
+  * [Create a broadcast intent](#Createabroadcastintent)
+
+  * [Send a broadcast](#Sendabroadcast.1)
+
+  * [Send a broadcast with a permission](#Sendabroadcastwithapermission)
+
+* [Monitor a broadcast](#Monitorabroadcast)
+
+* [Further reading](#Furtherreading)
+
 
 ## Introduction
 
@@ -57,12 +57,12 @@ Instead of sending a broadcast with a permission, you can create an explicit int
 
 To restrict which application can receive the broadcast, send a broadcast with a permission:
 
-1.  Create the broadcast intent.
-    
-2.  Declare the permission in the Android manifest section of the tiapp.xml file using the <permission> element with the android:name attribute set to the name of the action.
-    
-3.  Pass the Intent object and permission to the sendBroadcastWithPermission() method.
-    
+1. Create the broadcast intent.
+
+2. Declare the permission in the Android manifest section of the tiapp.xml file using the <permission> element with the android:name attribute set to the name of the action.
+
+3. Pass the Intent object and permission to the sendBroadcastWithPermission() method.
+
 
 In order to receive the broadcast, the receiving application needs to declare that it can use the permission in the Android manifest section of the tiapp.xml.
 
@@ -102,10 +102,10 @@ To monitor a broadcast, the application needs to create a broadcast receive and 
 
 **To create a broadcast receiver**, pass the Titanium.Android.createBroadcastReceiver() method a dictionary object with the one of the following properties defined, but not both:
 
-*   onReceived: Assign a callback function to handle the broadcast. The callback function is passed an object with its intent property set to the Intent that created the broadcast.
-    
-*   url: Assign to the URL of a JavaScript file to handle the broadcast. Note that the JavaScript file does have any context passed to it, so it will not know the intent that created the broadcast.
-    
+* onReceived: Assign a callback function to handle the broadcast. The callback function is passed an object with its intent property set to the Intent that created the broadcast.
+
+* url: Assign to the URL of a JavaScript file to handle the broadcast. Note that the JavaScript file does have any context passed to it, so it will not know the intent that created the broadcast.
+
 
 **To register a broadcast receiver**, pass the Titanium.Android.registerBroadcastReceiver() method a BroadcastReceiver object as the first parameter and an array of actions to monitor as the second parameter. Android system broadcasts are declared as Titanium.Android.ACTION\_\* constants. Note that not all actions are system broadcasts.
 
@@ -191,4 +191,4 @@ tiapp.xml
 
 ## Further reading
 
-*   [Titanium.Android API Reference](#!/api/Titanium.Android)
+* [Titanium.Android API Reference](#!/api/Titanium.Android)

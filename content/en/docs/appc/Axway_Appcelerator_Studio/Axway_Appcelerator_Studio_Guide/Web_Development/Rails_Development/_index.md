@@ -1,29 +1,29 @@
-{"title":"Rails Development","weight":"40"} 
+{"title":"Rails Development","weight":"40"}
 
-*   [Rails Support](#RailsSupport)
-    
-    *   [Getting Started](#GettingStarted)
-        
-        *   [Windows](#Windows)
-            
-    *   [Creating/Importing a Rails Project](#Creating/ImportingaRailsProject)
-        
-        *   [Creating a project using the new-project wizard](#Creatingaprojectusingthenew-projectwizard)
-            
-        *   [Importing a Rails Project](#ImportingaRailsProject)
-            
-    *   [Editing](#Editing)
-        
-    *   [Deprecated Views - Servers, Plugins, Gems, Generators](#DeprecatedViews-Servers,Plugins,Gems,Generators)
-        
-*   [Related Topics](#RelatedTopics)
-    
+* [Rails Support](#RailsSupport)
+
+  * [Getting Started](#GettingStarted)
+
+    * [Windows](#Windows)
+
+  * [Creating/Importing a Rails Project](#Creating/ImportingaRailsProject)
+
+    * [Creating a project using the new-project wizard](#Creatingaprojectusingthenew-projectwizard)
+
+    * [Importing a Rails Project](#ImportingaRailsProject)
+
+  * [Editing](#Editing)
+
+  * [Deprecated Views - Servers, Plugins, Gems, Generators](#DeprecatedViews-Servers,Plugins,Gems,Generators)
+
+* [Related Topics](#RelatedTopics)
+
 
 ## Rails Support
 
-Studio is shipped with a built-in support for Rails editing. This is additional support beyond that described in [Ruby Development](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Ruby_Development/), [HTML Development](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/HTML_Development/), [CSS Development](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/CSS_Development/), and [JavaScript Development](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/).
+Studio is shipped with built-in support for Rails editing. This is additional support beyond that described in [Ruby Development](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Ruby_Development/), [HTML Development](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/HTML_Development/), [CSS Development](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/CSS_Development/), and [JavaScript Development](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/).
 
-It should be noted that Studio relies on developers to be familiar with the standard Rails command line tools, generators and tasks. RadRails used to provide UI view front-ends to the generators, servers, etc. In Studio, we embed a Terminal view and expect users to be familiar with Rails enough to be able to generate models, controllers, etc and run servers from the command line.
+It should be noted that Studio relies on developers to be familiar with the standard Rails command-line tools, generators, and tasks. RadRails used to provide UI view front-ends to the generators, servers, and so forth. In Studio, we embed a Terminal view and expect users to be familiar with Rails enough to be able to generate models, controllers, and so forth and run servers from the command line.
 
 If you're unfamiliar with Rails development, a good starting place is [http://guides.rubyonrails.org/](http://guides.rubyonrails.org/).
 
@@ -33,20 +33,20 @@ We expect that users already have their ruby, rails and gems installed to use ou
 
 #### Windows
 
-We highly recommend that users install Rails via [Rails Installer](http://railsinstaller.org/en). It will properly install a compatible PortableGit that works with our git support, as well as Ruby, Rails and DevKit so that native gem installation works properly.
+We highly recommend that users install Rails via [Rails Installer](http://railsinstaller.org/en). It will properly install a compatible PortableGit that works with our git support, as well as Ruby, Rails, and DevKit, so that native gem installation works properly.
 
 ### Creating/Importing a Rails Project
 
 #### Creating a project using the new-project wizard
 
-The Rails project wizard can be accessed through multiple locations in the workspace.  
+The Rails project wizard can be accessed through multiple locations in the workspace.
 A project can be created through the File->New->Rails Project, or by right-clicking the 'Project Explorer' or the 'App Explorer' and select New->Rails Project.
 
 ![rails_project_wizard](/Images/appc/download/attachments/30083026/rails_project_wizard.png)
 
 #### Importing a Rails Project
 
-To import a rails project (whether created inside the IDE previously, or outside the IDE on the command line), you can use the Rails Project Wizard as outlined above - but simply point it at the existing rails project root. It will detect that files exist and will not run the rails generator over top the existing files. You can also explicitly state that the generator not be run in case that detection fails.
+To import a rails project (whether created inside the IDE previously or outside the IDE on the command line), you can use the Rails Project Wizard as outlined above - but point it at the existing rails project root. It will detect that files exist and will not run the rails generator over top of the existing files. You can also explicitly state that the generator not be run in case that detection fails.
 
 ### Editing
 
@@ -54,7 +54,7 @@ In addition to our HTML/CSS/JS/Ruby support, we also support editing HTML.ERB/RH
 
 ### Deprecated Views - Servers, Plugins, Gems, Generators
 
-RadRails 2.x used to provide UI front-ends to the generator, server, plugin and gems for your project. Often this UI was difficult to keep working across multiple rails versions and tended to offer little advantage to just using the command line to achieve your goal.
+RadRails 2.x used to provide UI front-ends to the generator, server, plugin, and gems for your project. Often this UI was difficult to keep working across multiple rails versions and tended to offer little advantage to just using the command line to achieve your goal.
 
 If you strongly miss one of these views, please voice your request to bring it back in our bug tracker.
 
@@ -62,4 +62,4 @@ For Servers, you can launch a server via the command line or the gear menu of th
 
 ## Related Topics
 
-*   [RHTML Editor](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Rails_Development/RHTML_Editor/)
+* [RHTML Editor](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Rails_Development/RHTML_Editor/)

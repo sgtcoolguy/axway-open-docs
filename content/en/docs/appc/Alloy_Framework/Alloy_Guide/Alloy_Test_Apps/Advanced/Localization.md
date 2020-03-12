@@ -1,4 +1,4 @@
-{"title":"Localization","weight":"100"} 
+{"title":"Localization","weight":"100"}
 
 Demonstrates how to use localized strings in your Alloy project.
 
@@ -8,7 +8,7 @@ _alloy_/test/apps/**advanced/localization**
 
 ![local](/Images/appc/download/attachments/41845663/local.png)
 
-The global L() function, which maps Titanium.Locale.getString(), can be invoked from a Alloy controller, XML view, or TSS file. Below is the sample application's main index.xml view.
+The global L() function, which maps Titanium.Locale.getString(), can be invoked from an Alloy controller, XML view, or TSS file. Below is the sample application's main index.xml view.
 
 app/views/index.xml
 
@@ -56,32 +56,32 @@ To test the application with localized strings, you need to create the localized
 
 **To create localized strings for testing**:
 
-1.  Create a folder named **i18n** in the root of the Titanium project folder, not the Alloy project's **app/** folder).
-    
-2.  In the **i18n** folder create two folders named **en** and **es**. These will contain localized strings for English and Spanish, respectively.
-    
-3.  In the i18n/en folder, create a file named **strings.xml** with the following content and save it:
-    
-    `<``resources``>`
-    
-    `<``string`  `name``=``"hello_world"``>Hello, world!</``string``>`
-    
-    `</``resources``>`
-    
-    Note that the value of the <string> element's **name** attribute, hello\_world, corresponds to the name passed as parameter to the L() function in the XML, TSS, and JavaScript files.
-    
-4.  In the i18n/es folder, create another strings.xml file with the following content and save it:
-    
-    `<``resources``>`
-    
-    `<``string`  `name``=``"hello_world"``>Hola, mundo!</``string``>`
-    
-    `</``resources``>`
-    
-5.  Build and run the application on a device or simulator/emulator whose language setting is set to either English or Spanish. You should see proper localized language strings. Quit the application, switch the language setting on the device and run the application again. You should see the localized strings for the alternate language, as shown below.
-    
-    ![local](/Images/appc/download/attachments/41845663/local.png)
+1. Create a folder named **i18n** in the Alloy project's **app/** folder, not in the root of the Titanium project.
+
+2. In the **i18n** folder create two folders named **en** and **es**. These will contain localized strings for English and Spanish, respectively.
+
+3. In the i18n/en folder, create a file named **strings.xml** with the following content and save it:
+
+  `<``resources``>`
+
+  `<``string`  `name``=``"hello_world"``>Hello, world!</``string``>`
+
+  `</``resources``>`
+
+  Note that the value of the <string> element's **name** attribute, hello\_world, corresponds to the name passed as a parameter to the L() function in the XML, TSS, and JavaScript files.
+
+4. In the i18n/es folder, create another strings.xml file with the following content and save it:
+
+  `<``resources``>`
+
+  `<``string`  `name``=``"hello_world"``>Hola, mundo!</``string``>`
+
+  `</``resources``>`
+
+5. Build and run the application on a device or simulator/emulator whose language setting is set to either English or Spanish. You should see properly localized language strings. Quit the application, switch the language setting on the device and run the application again. You should see the localized strings for the alternate language, as shown below.
+
+  ![local](/Images/appc/download/attachments/41845663/local.png)
 
 ## See also
 
-*   [Internationalization](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Cross-Platform_Mobile_Development_In_Titanium/Internationalization/)
+* [Internationalization](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Cross-Platform_Mobile_Development_In_Titanium/Internationalization/)

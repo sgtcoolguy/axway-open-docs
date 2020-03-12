@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 5.5.1.GA - 28 September 2016","weight":"10"} 
+{"title":"Appcelerator CLI 5.5.1.GA - 28 September 2016","weight":"10"}
 
 Appcelerator CLI 5.5.1.GA is a patch release that includes one internal bug fix.
 

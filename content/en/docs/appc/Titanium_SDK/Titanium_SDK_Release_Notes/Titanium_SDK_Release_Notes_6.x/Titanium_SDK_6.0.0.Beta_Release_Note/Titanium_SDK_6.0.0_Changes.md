@@ -1,25 +1,25 @@
-{"title":"Titanium SDK 6.0.0 Changes","weight":"10"} 
+{"title":"Titanium SDK 6.0.0 Changes","weight":"10"}
 
 With the release of Titanium SDK 6.0.0, we introduced many great features and improvements. However, some of these changes broke features in previous releases. This document lists all the breaking changes as well as how to handle them.
 
-*   [Rebuilding Android Modules](#RebuildingAndroidModules)
-    
-*   [Node.js](#Node.js)
-    
-*   [Xcode](#Xcode)
-    
-*   [Deprecated APIs](#DeprecatedAPIs)
-    
-*   [watchOS 1](#watchOS1)
-    
-*   [Listen to androidback](#Listentoandroidback)
-    
-*   [Module guides use CLI instead of build.py](#ModuleguidesuseCLIinsteadofbuild.py)
-    
-*   [Studio 4.8.0](#Studio4.8.0)
-    
-*   [Removal of Ti.include](#RemovalofTi.include)
-    
+* [Rebuilding Android Modules](#RebuildingAndroidModules)
+
+* [Node.js](#Node.js)
+
+* [Xcode](#Xcode)
+
+* [Deprecated APIs](#DeprecatedAPIs)
+
+* [watchOS 1](#watchOS1)
+
+* [Listen to androidback](#Listentoandroidback)
+
+* [Module guides use CLI instead of build.py](#ModuleguidesuseCLIinsteadofbuild.py)
+
+* [Studio 4.8.0](#Studio4.8.0)
+
+* [Removal of Ti.include](#RemovalofTi.include)
+
 
 ## Rebuilding Android Modules
 
@@ -29,16 +29,16 @@ If you have Android titanium modules, you have to rebuild them with this V8 in o
 
 You will need to update the android/manifest by:
 
-1.  Bump apiversion from 2 to 3.
-    
-2.  Remove "armeabi" ABI from listing (keep "armeabi-v7a").
-    
-3.  Bump their module version (typically bump the major number since this is a backwards-incompatible change).
-    
-4.  Update minsdk to 6.0.0.
-    
-5.  Then rebuild the module.
-    
+1. Bump apiversion from 2 to 3.
+
+2. Remove "armeabi" ABI from listing (keep "armeabi-v7a").
+
+3. Bump their module version (typically bump the major number since this is a backwards-incompatible change).
+
+4. Update minsdk to 6.0.0.
+
+5. Then rebuild the module.
+
 
 Note, you may also need to edit the Java code to remove references to deprecate classes that have been removed in 6.0.0 (such as TiContext).
 
@@ -70,10 +70,10 @@ As of SDK 6.0.0, we have removed all Python scripts that are normally used to in
 
 To build an iOS or Android module, use the ti build command from the CLI:
 
-*   iOS: ti build -p ios --build-only
-    
-*   Android: ti build -p android --build-only
-    
+* iOS: ti build -p ios --build-only
+
+* Android: ti build -p android --build-only
+
 
 If you omit the \--build-only flag, it will run ti create and ti build with the example code in the module.
 
@@ -83,14 +83,14 @@ For those who use the Unified CLI and are confused if you should use either appc
 
 To upgrade your module to stop using the build.py script, follow these steps:
 
-1.  Delete the build.py file.
-    
-2.  Execute either one of these commands:
-    
-    *   ti build -p <platform> --build-only
-        
-    *   appc run -p <platform> --build-only
-        
+1. Delete the build.py file.
+
+2. Execute either one of these commands:
+
+  * ti build -p <platform> --build-only
+
+  * appc run -p <platform> --build-only
+
 
 There isn't anything else you need to change.
 

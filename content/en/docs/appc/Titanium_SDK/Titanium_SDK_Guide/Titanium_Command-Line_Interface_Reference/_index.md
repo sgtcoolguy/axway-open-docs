@@ -1,79 +1,79 @@
-{"title":"Titanium Command-Line Interface Reference","weight":"110"} 
+{"title":"Titanium Command-Line Interface Reference","weight":"110"}
 
-*   [Titanium CLI quick start](#TitaniumCLIquickstart)
-    
-    *   [Install Node.js](#InstallNode.js)
-        
-    *   [Install and configure the CLI](#InstallandconfiguretheCLI)
-        
-*   [Titanium commands](#Titaniumcommands)
-    
-    *   [Build](#Build)
-        
-        *   [Generic build options and flags](#Genericbuildoptionsandflags)
-            
-        *   [Android build options](#Androidbuildoptions)
-            
-        *   [iOS build options and flags](#iOSbuildoptionsandflags)
-            
-        *   [Windows build options](#Windowsbuildoptions)
-            
-    *   [Clean](#Clean)
-        
-        *   [Clean options](#Cleanoptions)
-            
-    *   [Config](#Config)
-        
-        *   [Config Options](#ConfigOptions)
-            
-    *   [Create](#Create)
-        
-        *   [Create options](#Createoptions)
-            
-    *   [Help](#Help)
-        
-    *   [Info](#Info)
-        
-        *   [Info options](#Infooptions)
-            
-    *   [Module](#Module)
-        
-        *   [Module list](#Modulelist)
-            
-            *   [Module list options](#Modulelistoptions)
-                
-    *   [Plugin](#Plugin)
-        
-        *   [Plugin list](#Pluginlist)
-            
-            *   [Plugin list options](#Pluginlistoptions)
-                
-    *   [Project](#Project)
-        
-        *   [Project options](#Projectoptions)
-            
-    *   [SDK](#SDK)
-        
-        *   [SDK install](#SDKinstall)
-            
-            *   [SDK install options](#SDKinstalloptions)
-                
-        *   [SDK list](#SDKlist)
-            
-            *   [SDK list options](#SDKlistoptions)
-                
-        *   [SDK select](#SDKselect)
-            
-        *   [SDK uninstall](#SDKuninstall)
-            
-            *   [SDK uninstall options](#SDKuninstalloptions)
-                
-        *   [SDK update](#SDKupdate)
-            
-            *   [SDK update options](#SDKupdateoptions)
-                
-    *   [Setup](#Setup)
-        
+* [Titanium CLI quick start](#TitaniumCLIquickstart)
+
+  * [Install Node.js](#InstallNode.js)
+
+  * [Install and configure the CLI](#InstallandconfiguretheCLI)
+
+* [Titanium commands](#Titaniumcommands)
+
+  * [Build](#Build)
+
+    * [Generic build options and flags](#Genericbuildoptionsandflags)
+
+    * [Android build options](#Androidbuildoptions)
+
+    * [iOS build options and flags](#iOSbuildoptionsandflags)
+
+    * [Windows build options](#Windowsbuildoptions)
+
+  * [Clean](#Clean)
+
+    * [Clean options](#Cleanoptions)
+
+  * [Config](#Config)
+
+    * [Config Options](#ConfigOptions)
+
+  * [Create](#Create)
+
+    * [Create options](#Createoptions)
+
+  * [Help](#Help)
+
+  * [Info](#Info)
+
+    * [Info options](#Infooptions)
+
+  * [Module](#Module)
+
+    * [Module list](#Modulelist)
+
+      * [Module list options](#Modulelistoptions)
+
+  * [Plugin](#Plugin)
+
+    * [Plugin list](#Pluginlist)
+
+      * [Plugin list options](#Pluginlistoptions)
+
+  * [Project](#Project)
+
+    * [Project options](#Projectoptions)
+
+  * [SDK](#SDK)
+
+    * [SDK install](#SDKinstall)
+
+      * [SDK install options](#SDKinstalloptions)
+
+    * [SDK list](#SDKlist)
+
+      * [SDK list options](#SDKlistoptions)
+
+    * [SDK select](#SDKselect)
+
+    * [SDK uninstall](#SDKuninstall)
+
+      * [SDK uninstall options](#SDKuninstalloptions)
+
+    * [SDK update](#SDKupdate)
+
+      * [SDK update options](#SDKupdateoptions)
+
+  * [Setup](#Setup)
+
 
 The Titanium Command-Line Interface (CLI) is a Node.js-based command-line tool for managing, building, and deploying Titanium projects.
 
@@ -81,46 +81,46 @@ The Titanium Command-Line Interface (CLI) is a Node.js-based command-line tool f
 
 Getting started with the CLI only requires two steps:
 
-1.  Install Node.js.
-    
-2.  Install and configure the CLI.
-    
+1. Install Node.js.
+
+2. Install and configure the CLI.
+
 
 ### Install Node.js
 
 The CLI requires Node.js 4 or later. It is highly recommended you use a LTS (long term support) Node.js release. If you don't have Node installed, install it from:
 
-*   [nodejs.org](http://nodejs.org)
-    
+* [nodejs.org](http://nodejs.org)
+
 
 Before installing the CLI, you should decide where you want the Node Package Manager (npm) to install packages. By default npm installs into /usr/local on OS X, which requires that you run npm as root. This is not recommended. You can avoid having to run npm by doing one of the following:
 
-*   Make the /usr/local directory writable by all: sudo chmod 777 /usr/local
-    
+* Make the /usr/local directory writable by all: sudo chmod 777 /usr/local
 
-*   Set npm to install to your home directory, or another directory of your choosing by setting the npm prefix. For example, you can add the following to your .bash\_profile or other initialization file: export NPM\_CONFIG\_PREFIX=$HOME
-    
-    *   In this case, npm packages are installed to $HOME/lib/node\_modules and launch scripts are installed in $HOME/bin. $HOME/bin must be in your PATH.
-        
+
+* Set npm to install to your home directory, or another directory of your choosing by setting the npm prefix. For example, you can add the following to your .bash\_profile or other initialization file: export NPM\_CONFIG\_PREFIX=$HOME
+
+  * In this case, npm packages are installed to $HOME/lib/node\_modules and launch scripts are installed in $HOME/bin. $HOME/bin must be in your PATH.
+
 
 For more information, see [Installing Node](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Node/).
 
 ### Install and configure the CLI
 
-1.  Install the titanium CLI.
-    
-    `npm` `install` `titanium -g`
-    
-2.  Download the latest UNSTABLE Titanium SDK continuous integration build.
-    
-    `titanium sdk` `install` `--branch master --default`
-    
-3.  Configure CLI (optional).
-    
-    `titanium setup`
-    
-    The script prompts you to enter basic information, such as your name, default locale, default SDK version, and default workspace folder.
-    
+1. Install the titanium CLI.
+
+  `npm` `install` `titanium -g`
+
+2. Download the latest UNSTABLE Titanium SDK continuous integration build.
+
+  `titanium sdk` `install` `--branch master --default`
+
+3. Configure CLI (optional).
+
+  `titanium setup`
+
+  The script prompts you to enter basic information, such as your name, default locale, default SDK version, and default workspace folder.
+
 
 If you encounter an error installing titanium, see [Issues installing NPM packages](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Node/#IssuesinstallingNPMpackages).
 
@@ -128,28 +128,28 @@ If you encounter an error installing titanium, see [Issues installing NPM packag
 
 If you don't specify all of the required options, titanium prompts you for the missing options.
 
-*   [Build](#Build)
-    
-*   [Clean](#Clean)
-    
-*   [Config](#Config)
-    
-*   [Create](#Create)
-    
-*   [Help](#Help)
-    
-*   [Info](#Info)
-    
-*   [Module](#Module)
-    
-*   [Plugin](#Plugin)
-    
-*   [Project](#Project)
-    
-*   [SDK](#SDK)
-    
-*   [Setup](#Setup)
-    
+* [Build](#Build)
+
+* [Clean](#Clean)
+
+* [Config](#Config)
+
+* [Create](#Create)
+
+* [Help](#Help)
+
+* [Info](#Info)
+
+* [Module](#Module)
+
+* [Plugin](#Plugin)
+
+* [Project](#Project)
+
+* [SDK](#SDK)
+
+* [Setup](#Setup)
+
 
 ### Build
 
@@ -159,17 +159,17 @@ Builds and runs an application or module project.
 
 The CLI checks several settings to see which SDK version to use to build your application. The following is a list of locations in the order of precedence. If an SDK version is not defined in that location, the next location is checked.
 
-1.  tiapp.xml file version specified with the sdk-version tag.  
-    To change this version, manually edit the tiapp.xml file with a text editor or use Studio.
-    
-2.  \--sdk command-line option with the titanium build command.
-    
-3.  app.sdk setting specified with the titanium config command.  
-    To check the version, run titanium config and to change the version, run titanium config app.sdk <sdk\_version>.
-    
-4.  SDK select version.  
-    To check or change this version, run titanium sdk select.
-    
+1. tiapp.xml file version specified with the sdk-version tag.
+  To change this version, manually edit the tiapp.xml file with a text editor or use Studio.
+
+2. \--sdk command-line option with the titanium build command.
+
+3. app.sdk setting specified with the titanium config command.
+  To check the version, run titanium config and to change the version, run titanium config app.sdk <sdk\_version>.
+
+4. SDK select version.
+  To check or change this version, run titanium sdk select.
+
 
 `# Titanium CLI`
 
@@ -187,8 +187,8 @@ Description
 
 \-b, --build-only
 
-Only perform the build; when specified, does not install or run the app.  
-  
+Only perform the build; when specified, does not install or run the app.
+
 When building a Windows project using appc run -p windows -T wp-device --wp-sdk ## --build-only, you can now use SDK values (e.g. 10.0.10240.0, 10.0.10586.0, etc.).
 
 \-f, --force
@@ -373,6 +373,8 @@ iOS Simulator type: **iphone** or **ipad**; only used when target is **simulator
 
 #### Windows build options
 
+As of Titanium 9.0.0, building Windows apps is no longer supported.
+
 Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
 
 Options
@@ -429,31 +431,31 @@ Output directory. Only used when target is **dist-phonestore** or **dist-winstor
 
 Visual Studio target to build for.
 
-*   **12.0** to use Visual Studio 2013
-    
-*   **14.0** to use Visual Studio 2015
-    
-*   **Visual Studio Community 2017** to use Visual Studio Community 2017
-    
-*   **Visual Studio Professional 2017** to use Visual Studio Professional 2017
-    
-*   **Visual Studio Enterprise 2017** to use Visual Studio Enterprise 2017
-    
+* **12.0** to use Visual Studio 2013
+
+* **14.0** to use Visual Studio 2015
+
+* **Visual Studio Community 2017** to use Visual Studio Community 2017
+
+* **Visual Studio Professional 2017** to use Visual Studio Professional 2017
+
+* **Visual Studio Enterprise 2017** to use Visual Studio Enterprise 2017
+
 
 \-T, --target <value>
 
 Target to build for:
 
-*   **wp-emulator** to run a Windows Phone app on the emulator
-    
-*   **wp-device** to run a Window Phone app on a device connected to your host machine
-    
-*   **dist-**phonestore**** to pakcage a Windows Phone app
-    
-*   **ws-local** to run a Windows Store app on your local machine
-    
-*   **dist-winstore** to package a Windows Store app
-    
+* **wp-emulator** to run a Windows Phone app on the emulator
+
+* **wp-device** to run a Window Phone app on a device connected to your host machine
+
+* **dist-**phonestore**** to pakcage a Windows Phone app
+
+* **ws-local** to run a Windows Store app on your local machine
+
+* **dist-winstore** to package a Windows Store app
+
 
 \--skipInstallDependencies
 
@@ -581,12 +583,12 @@ Titanium SDK version to build with. If not specified, uses the configured defaul
 
 Type of project to create (defaul:
 
-*   **app** (default)
-    
-*   **applewatch**
-    
-*   **module** (or **timodule** if using the Appcelerator CLI)
-    
+* **app** (default)
+
+* **applewatch**
+
+* **module** (or **timodule** if using the Appcelerator CLI)
+
 
 \-u --url <value>
 

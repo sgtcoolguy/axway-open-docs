@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 7.1.2.RC - 18 November 2019","weight":"60"} 
+{"title":"Appcelerator CLI 7.1.2.RC - 18 November 2019","weight":"60"}
 
 Appcelerator CLI 7.1.2.RC is a patch release that includes new features, improvements, and bug fixes.
 
@@ -32,32 +32,32 @@ Daemon
 
 ## Improvements
 
-*   [ALOY-1693](https://jira.appcelerator.org/browse/ALOY-1693) - Alloy: Prevent re-opening DB on queries
-    
-    *   Added a feature that will cache and maintain database connection to prevent unnecessary open() and close() operations
-        
-*   [CLI-1369](https://jira.appcelerator.org/browse/CLI-1369) - Remove longjohn dependency
-    
-*   [CLI-1370](https://jira.appcelerator.org/browse/CLI-1370) - appc-verify: Amend asset loading for compatibility with asset refactor
-    
-    *   Sanitize asset path for compatibility with new asset changes in [TIMOB-26043](https://jira.appcelerator.org/browse/TIMOB-26043)
-        
+* [ALOY-1693](https://jira.appcelerator.org/browse/ALOY-1693) - Alloy: Prevent re-opening DB on queries
+
+  * Added a feature that will cache and maintain database connection to prevent unnecessary open() and close() operations
+
+* [CLI-1369](https://jira.appcelerator.org/browse/CLI-1369) - Remove longjohn dependency
+
+* [CLI-1370](https://jira.appcelerator.org/browse/CLI-1370) - appc-verify: Amend asset loading for compatibility with asset refactor
+
+  * Sanitize asset path for compatibility with new asset changes in [TIMOB-26043](https://jira.appcelerator.org/browse/TIMOB-26043)
+
 
 ## Fixed issues
 
-*   [ALOY-1598](https://jira.appcelerator.org/browse/ALOY-1598) - samples/apps/models/binding\_no\_persistence produces runtime error
-    
-*   [ALOY-1633](https://jira.appcelerator.org/browse/ALOY-1633) \- Alloy should assign globals directly rather than using the implicit global scope of app.js
-    
-*   [ALOY-1701](https://jira.appcelerator.org/browse/ALOY-1701) - XML: Unable to use platform namespace restriction on event handlers  
-    
-*   [ALOY-1705](https://jira.appcelerator.org/browse/ALOY-1705) - Fix compile issue when using return keyword outside of a function  
-    
-*   [ALOY-1706](https://jira.appcelerator.org/browse/ALOY-1706) - Compile error if Alloy view filename contains hyphen  
-    
-*   [ALOY-1710](https://jira.appcelerator.org/browse/ALOY-1710) - Fix unreferenced variable when compiling code using import syntax  
-    
+* [ALOY-1598](https://jira.appcelerator.org/browse/ALOY-1598) - samples/apps/models/binding\_no\_persistence produces runtime error
+
+* [ALOY-1633](https://jira.appcelerator.org/browse/ALOY-1633) \- Alloy should assign globals directly rather than using the implicit global scope of app.js
+
+* [ALOY-1701](https://jira.appcelerator.org/browse/ALOY-1701) - XML: Unable to use platform namespace restriction on event handlers
+
+* [ALOY-1705](https://jira.appcelerator.org/browse/ALOY-1705) - Fix compile issue when using return keyword outside of a function
+
+* [ALOY-1706](https://jira.appcelerator.org/browse/ALOY-1706) - Compile error if Alloy view filename contains hyphen
+
+* [ALOY-1710](https://jira.appcelerator.org/browse/ALOY-1710) - Fix unreferenced variable when compiling code using import syntax
+
 
 ## Known issues
 
-*   [DAEMON-306](https://jira.appcelerator.org/browse/DAEMON-306) - WatchOS simulators are not shown in Studio
+* [DAEMON-306](https://jira.appcelerator.org/browse/DAEMON-306) - WatchOS simulators are not shown in Studio

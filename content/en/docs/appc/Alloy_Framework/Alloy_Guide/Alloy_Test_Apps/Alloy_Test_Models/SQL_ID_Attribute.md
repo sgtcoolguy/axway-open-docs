@@ -1,4 +1,4 @@
-{"title":"SQL ID Attribute","weight":"120"} 
+{"title":"SQL ID Attribute","weight":"120"}
 
 This example demonstrates how you can use a custom model identifier with the idAttribute field in the model definition file.
 
@@ -68,4 +68,4 @@ Selecting an row in the table displays a JSON representation of the associated m
 
 ## See also
 
-*   [Alloy Sync Adapters and Migrations](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Sync_Adapters_and_Migrations/)
+* [Alloy Sync Adapters and Migrations](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Sync_Adapters_and_Migrations/)

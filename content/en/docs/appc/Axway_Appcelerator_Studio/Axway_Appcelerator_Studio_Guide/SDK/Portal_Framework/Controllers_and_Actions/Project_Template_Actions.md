@@ -1,15 +1,15 @@
-{"title":"Project Template Actions","weight":"50"} 
+{"title":"Project Template Actions","weight":"50"}
 
-*   [Requirements](#Requirements)
-    
-*   [Invocation](#Invocation)
-    
-*   [Get Project Template Types](#GetProjectTemplateTypes)
-    
-*   [Get Project Templates](#GetProjectTemplates)
-    
-*   [Listening to Template Changes](#ListeningtoTemplateChanges)
-    
+* [Requirements](#Requirements)
+
+* [Invocation](#Invocation)
+
+* [Get Project Template Types](#GetProjectTemplateTypes)
+
+* [Get Project Templates](#GetProjectTemplates)
+
+* [Listening to Template Changes](#ListeningtoTemplateChanges)
+
 
 ## Requirements
 
@@ -31,7 +31,7 @@ Gets the different types of project templates available, dispatch this call:
 
 `}).toJSON()).evalJSON();`
 
-Returns:  
+Returns:
 An array of strings
 
 ## Get Project Templates
@@ -48,15 +48,15 @@ Gets the project templates that matches the project template types, dispatch thi
 
 `}).toJSON()).evalJSON();`
 
-Arguments:  
+Arguments:
 List of project template types. If no arguments are specified, all project templates will be returned
 
-Returns:  
+Returns:
 An array of Project Templates. Each template has the following attributes: "name", "id", "description", "type"
 
 ## Listening to Template Changes
 
-Some of the templates may be loaded or removed after the portal is opened. In this case, the Studio fires events that indicate a Template addition or removal.  
+Some of the templates may be loaded or removed after the portal is opened. In this case, the Studio fires events that indicate a Template addition or removal.
 Here is a sample of a way you can listen to such events (based on the [studio3-sdk](https://github.com/aptana/studio3-sdk) sample):
 
 `eventsDispatcher.addObserver(``'templates'``, function(e) { portal.templates.update(e); });`

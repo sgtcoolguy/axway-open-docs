@@ -1,23 +1,23 @@
-{"title":"Appcelerator CLI Getting Started","weight":"10"} 
+{"title":"Appcelerator CLI Getting Started","weight":"10"}
 
-*   [Introduction](#Introduction)
-    
-*   [Installation](#Installation)
-    
-    *   [Install Node.js](#InstallNode.js)
-        
-    *   [Install the CLI](#InstalltheCLI)
-        
-*   [Update the CLI](#UpdatetheCLI)
-    
-*   [Configure the CLI](#ConfiguretheCLI)
-    
-    *   [Proxy Setup](#ProxySetup)
-        
-    *   [Set the Core Package Version](#SettheCorePackageVersion)
-        
-*   [Next steps](#Nextsteps)
-    
+* [Introduction](#Introduction)
+
+* [Installation](#Installation)
+
+  * [Install Node.js](#InstallNode.js)
+
+  * [Install the CLI](#InstalltheCLI)
+
+* [Update the CLI](#UpdatetheCLI)
+
+* [Configure the CLI](#ConfiguretheCLI)
+
+  * [Proxy Setup](#ProxySetup)
+
+  * [Set the Core Package Version](#SettheCorePackageVersion)
+
+* [Next steps](#Nextsteps)
+
 
 ## Introduction
 
@@ -35,11 +35,11 @@ The CLI requires Node.js 0.10.13 or later. The minimum Node version depends upon
 
 Before installing the CLI, you should decide where you want the Node Package Manager (npm) to install packages. By default npm installs into /usr/local on OS X, which requires that you run npm as root. This is not recommended. You can avoid having to run npm by doing one of the following:
 
-*   Make the /usr/local directory writable by all: sudo chmod 777 /usr/local
-    
+* Make the /usr/local directory writable by all: sudo chmod 777 /usr/local
 
-*   Set npm to install to your home directory, or another directory of your choosing by setting the npm prefix. For example, you can add the following to your .bash\_profile or other initialization file: export NPM\_CONFIG\_PREFIX=$HOME
-    
+
+* Set npm to install to your home directory, or another directory of your choosing by setting the npm prefix. For example, you can add the following to your .bash\_profile or other initialization file: export NPM\_CONFIG\_PREFIX=$HOME
+
 
 In this case, npm packages are installed to $HOME/lib/node\_modules and launch scripts are installed in $HOME/bin. $HOME/bin must be in your PATH.
 
@@ -47,24 +47,24 @@ For more information, see [Installing Node](/docs/appc/Titanium_SDK/Titanium_SDK
 
 ### Install the CLI
 
-1.  Install the appc CLI. You many need to prepend the command with sudo.
-    
-    `npm` `install` `appcelerator -g`
-    
-2.  Setup the AMPLIFY Appcelerator Services environment. This process will download the latest updates, setup the CLI and verify your development environment.
-    
-    `appc setup`
-    
-3.  After getting the latest updates, you are prompted for your AMPLIFY Appcelerator Services credentials.
-    
-4.  If you are a member or more than one organization, you will be prompted to select an organization.
-    
-5.  Next, you must authorize your computer. Select either to send the authorization code to a phone number (using SMS/text messaging) or e-mail associated with your AMPLIFY Appcelerator Services account.
-    
-6.  Enter the code you received.
-    
-7.  Finally, the CLI will ask you about the projects you want to develop, and based on your answers, will check your environment to verify it is OK.
-    
+1. Install the appc CLI. You many need to prepend the command with sudo.
+
+  `npm` `install` `appcelerator -g`
+
+2. Setup the AMPLIFY Appcelerator Services environment. This process will download the latest updates, setup the CLI and verify your development environment.
+
+  `appc setup`
+
+3. After getting the latest updates, you are prompted for your AMPLIFY Appcelerator Services credentials.
+
+4. If you are a member or more than one organization, you will be prompted to select an organization.
+
+5. Next, you must authorize your computer. Select either to send the authorization code to a phone number (using SMS/text messaging) or e-mail associated with your AMPLIFY Appcelerator Services account.
+
+6. Enter the code you received.
+
+7. Finally, the CLI will ask you about the projects you want to develop, and based on your answers, will check your environment to verify it is OK.
+
 
 If you encounter an error installing appc, see [Troubleshooting npm Problems](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Node/#IssuesinstallingNPMpackages).
 

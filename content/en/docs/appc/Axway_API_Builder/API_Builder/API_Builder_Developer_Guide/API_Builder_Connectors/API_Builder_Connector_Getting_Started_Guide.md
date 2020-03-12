@@ -1,4 +1,4 @@
-{"title":"API Builder Connector Getting Started Guide","weight":"10"} 
+{"title":"API Builder Connector Getting Started Guide","weight":"10"}
 
 API Builder 3.x is deprecated
 
@@ -6,32 +6,32 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-*   [Introduction](#Introduction)
-    
-*   [Create a connector](#Createaconnector)
-    
-*   [Add dependencies](#Adddependencies)
-    
-*   [Configuration file](#Configurationfile)
-    
-*   [Initializer file](#Initializerfile)
-    
-*   [Develop the connector](#Developtheconnector)
-    
-    *   [Add connect logic](#Addconnectlogic)
-        
-    *   [Add retrieve logic](#Addretrievelogic)
-        
-    *   [Add create logic](#Addcreatelogic)
-        
-    *   [Add delete logic](#Adddeletelogic)
-        
-    *   [Setup a model](#Setupamodel)
-        
-*   [Publish the connector](#Publishtheconnector)
-    
-*   [Next steps](#Nextsteps)
-    
+* [Introduction](#Introduction)
+
+* [Create a connector](#Createaconnector)
+
+* [Add dependencies](#Adddependencies)
+
+* [Configuration file](#Configurationfile)
+
+* [Initializer file](#Initializerfile)
+
+* [Develop the connector](#Developtheconnector)
+
+  * [Add connect logic](#Addconnectlogic)
+
+  * [Add retrieve logic](#Addretrievelogic)
+
+  * [Add create logic](#Addcreatelogic)
+
+  * [Add delete logic](#Adddeletelogic)
+
+  * [Setup a model](#Setupamodel)
+
+* [Publish the connector](#Publishtheconnector)
+
+* [Next steps](#Nextsteps)
+
 
 ## Introduction
 
@@ -151,82 +151,82 @@ Follow the log instructions and open the ./lib/index.js file. You will see an ex
 
 Let's start with connecting to a datasource.
 
-1.  Add the defaultConfig field to the parameter object passed to the extend() method. The defaultConfig field tells API Builder to copy the example configuration file to the project's conf directory when the user adds the connector to the project.
-    
-2.  Uncomment the line containing Capabilities.ConnectsToADataSource.
-    
-3.  Add the postCreate() function to attach a helper function to the connector instance that can be used by other connector methods.
-    
-    ./lib/index.js
-    
-    `...`
-    
-    `exports.create =` `function` `(Arrow) {`
-    
-    `...`
-    
-    `return` `Connector.extend({`
-    
-    `defaultConfig: require(``'fs'``).readFileSync(__dirname +` `'/../conf/example.config.js'``,` `'utf8'``),`
-    
-    `...`
-    
-    `capabilities: [`
-    
-    `Capabilities.ConnectsToADataSource,`
-    
-    `// TODO: Each of these capabilities is optional; add the ones you want, and delete the rest.`
-    
-    ``// (Hint: I've found it to be easiest to add these one at a time, running `appc run` for guidance.)``
-    
-    `//Capabilities.ValidatesConfiguration,`
-    
-    `//Capabilities.ContainsModels,`
-    
-    `//Capabilities.GeneratesModels,`
-    
-    `//Capabilities.CanCreate,`
-    
-    `//Capabilities.CanRetrieve,`
-    
-    `//Capabilities.CanUpdate,`
-    
-    `//Capabilities.CanDelete,`
-    
-    `//Capabilities.AuthenticatesThroughConnector`
-    
-    `],`
-    
-    `postCreate:` `function``() {`
-    
-    `this``.createInstance =` `function` `(Model, data) {`
-    
-    `var` `model = Model.instance(data,` `true``);`
-    
-    `model.setPrimaryKey(data.id_str);`
-    
-    `return` `model;`
-    
-    `};`
-    
-    `}`
-    
-    `});`
-    
-    `};`
-    
-4.  Save the file. You will see the following log output:
-    
-    `The` `"ConnectsToADataSource"` `capability has been enabled, so we need to make a couple of changes:`
-    
-    ``- Created `lib/lifecycle/connect.js` (contains 2 TODOs)``
-    
-    ``- Created `lib/lifecycle/disconnect.js` (contains 2 TODOs)``
-    
-    `Please go take a look at the TODOs` `in` `these` `new` `files, then` `do` ``an `appc run` or `npm test` to`` `try` `out the` `new` `capabilities.`
-    
-    API Builder generates some new files in the lib folder. You will need to implement some logic to connect to and disconnect from the datasource.
-    
+1. Add the defaultConfig field to the parameter object passed to the extend() method. The defaultConfig field tells API Builder to copy the example configuration file to the project's conf directory when the user adds the connector to the project.
+
+2. Uncomment the line containing Capabilities.ConnectsToADataSource.
+
+3. Add the postCreate() function to attach a helper function to the connector instance that can be used by other connector methods.
+
+  ./lib/index.js
+
+  `...`
+
+  `exports.create =` `function` `(Arrow) {`
+
+  `...`
+
+  `return` `Connector.extend({`
+
+  `defaultConfig: require(``'fs'``).readFileSync(__dirname +` `'/../conf/example.config.js'``,` `'utf8'``),`
+
+  `...`
+
+  `capabilities: [`
+
+  `Capabilities.ConnectsToADataSource,`
+
+  `// TODO: Each of these capabilities is optional; add the ones you want, and delete the rest.`
+
+  ``// (Hint: I've found it to be easiest to add these one at a time, running `appc run` for guidance.)``
+
+  `//Capabilities.ValidatesConfiguration,`
+
+  `//Capabilities.ContainsModels,`
+
+  `//Capabilities.GeneratesModels,`
+
+  `//Capabilities.CanCreate,`
+
+  `//Capabilities.CanRetrieve,`
+
+  `//Capabilities.CanUpdate,`
+
+  `//Capabilities.CanDelete,`
+
+  `//Capabilities.AuthenticatesThroughConnector`
+
+  `],`
+
+  `postCreate:` `function``() {`
+
+  `this``.createInstance =` `function` `(Model, data) {`
+
+  `var` `model = Model.instance(data,` `true``);`
+
+  `model.setPrimaryKey(data.id_str);`
+
+  `return` `model;`
+
+  `};`
+
+  `}`
+
+  `});`
+
+  `};`
+
+4. Save the file. You will see the following log output:
+
+  `The` `"ConnectsToADataSource"` `capability has been enabled, so we need to make a couple of changes:`
+
+  ``- Created `lib/lifecycle/connect.js` (contains 2 TODOs)``
+
+  ``- Created `lib/lifecycle/disconnect.js` (contains 2 TODOs)``
+
+  `Please go take a look at the TODOs` `in` `these` `new` `files, then` `do` ``an `appc run` or `npm test` to`` `try` `out the` `new` `capabilities.`
+
+  API Builder generates some new files in the lib folder. You will need to implement some logic to connect to and disconnect from the datasource.
+
 
 ### Add connect logic
 
@@ -238,131 +238,131 @@ Next, let's implement some logic to retrieve the tweets.
 
 To allow the connector to retrieve model data, implement the CanRetrieve capability.
 
-1.  Open the ./lib/index.js file, uncomment the line containing Capabilities.CanRetrieve, and save the file. The log output tells us to update four new files that API Builder just generated.
-    
-    `The` `"CanRetrieve"` `capability has been enabled, so we need to make a couple of changes:`
-    
-    ``- Created `lib/methods/distinct.js` (contains 3 TODOs)``
-    
-    ``- Created `lib/methods/findAll.js` (contains 3 TODOs)``
-    
-    ``- Created `lib/methods/findById.js` (contains 4 TODOs)``
-    
-    ``- Created `lib/methods/query.js` (contains 5 TODOs)``
-    
-    `(Hint: If you only want to support some of these methods, feel free to` `delete` `the others.)`
-    
-    `Please go take a look at the TODOs` `in` `these` `new` `files, then` `do` ``an `appc run` or `npm test` to`` `try` `out the` `new` `capabilities.`
-    
-2.  Remove the distinct.js and query.js files. We will not be implementing these for the example.
-    
-    ./lib/lifecycle/connect.js
-    
-    `var` `Twitter = require(``'twitter'``);`
-    
-    `exports.connect =` `function` `(next) {`
-    
-    `// Initialize the client`
-    
-    `// Use this.config to get values from the configuration file`
-    
-    `this``.client =` `new` `Twitter({`
-    
-    `consumer_key:` `this``.config.consumer_key,`
-    
-    `consumer_secret:` `this``.config.consumer_secret,`
-    
-    `access_token_key:` `this``.config.access_token_key,`
-    
-    `access_token_secret:` `this``.config.access_token_secret`
-    
-    `});`
-    
-    `next();`
-    
-    `};`
-    
-3.  Open ./lib/methods/findAll.js and replace the contents of the file with the following. The findAll.js file implements the connector's findAll() method, which retrieves all tweets from the user's Twitter account, or at least, as many tweets as Twitter will allow us to fetch.
-    
-    ./lib/methods/findAll.js
-    
-    `var` `Arrow = require(``'arrow'``),`
-    
-    `Collection = Arrow.Collection,`
-    
-    `ORMError = Arrow.ORMError;`
-    
-    `exports.findAll =` `function` `findAll(Model, callback) {`
-    
-    `var` `params = {screen_name:` `this``.config.account};`
-    
-    `// this Twitter API only returns the last twenty tweets`
-    
-    `this``.client.get(``'statuses/user_timeline'``, params,` `function``(error, tweets, response) {`
-    
-    `if` `(!error) {`
-    
-    `var` `results = [];`
-    
-    `for` `(``var` `i = 0; i < tweets.length; i++) {`
-    
-    `results.push(Model.connector.createInstance(Model, tweets[i]));`
-    
-    `}`
-    
-    `callback(``null``,` `new` `Collection(Model, results));`
-    
-    `}` `else` `{`
-    
-    `this``.logger.error(error);`
-    
-    `callback(``new` `ORMError(``'ERROR: Could not fetch tweets!'``));`
-    
-    `}`
-    
-    `});`
-    
-    `};`
-    
-4.  Open ./lib/methods/findById.js and replace the contents of the file with the following. The findById.js file implements the connector's findById() method, which retrieves one specific tweet, identified by its ID, from the datasource.
-    
-    ./lib/methods/findById.js
-    
-    `var` `Arrow = require(``'arrow'``),`
-    
-    `ORMError = Arrow.ORMError;`
-    
-    `exports.findById =` `function` `(Model, id, callback) {`
-    
-    `this``.client.get(``'statuses/show/'` `+ id, {},` `function``(error, tweet, response) {`
-    
-    `if` `(!error) {`
-    
-    `callback(``null``, Model.connector.createInstance(Model, tweet));`
-    
-    `}` `else` `{`
-    
-    `this``.logger.error(error);`
-    
-    `callback(``new` `ORMError(``'ERROR: Could not fetch tweet!'``));`
-    
-    `}`
-    
-    `});`
-    
-    `};`
-    
+1. Open the ./lib/index.js file, uncomment the line containing Capabilities.CanRetrieve, and save the file. The log output tells us to update four new files that API Builder just generated.
+
+  `The` `"CanRetrieve"` `capability has been enabled, so we need to make a couple of changes:`
+
+  ``- Created `lib/methods/distinct.js` (contains 3 TODOs)``
+
+  ``- Created `lib/methods/findAll.js` (contains 3 TODOs)``
+
+  ``- Created `lib/methods/findById.js` (contains 4 TODOs)``
+
+  ``- Created `lib/methods/query.js` (contains 5 TODOs)``
+
+  `(Hint: If you only want to support some of these methods, feel free to` `delete` `the others.)`
+
+  `Please go take a look at the TODOs` `in` `these` `new` `files, then` `do` ``an `appc run` or `npm test` to`` `try` `out the` `new` `capabilities.`
+
+2. Remove the distinct.js and query.js files. We will not be implementing these for the example.
+
+  ./lib/lifecycle/connect.js
+
+  `var` `Twitter = require(``'twitter'``);`
+
+  `exports.connect =` `function` `(next) {`
+
+  `// Initialize the client`
+
+  `// Use this.config to get values from the configuration file`
+
+  `this``.client =` `new` `Twitter({`
+
+  `consumer_key:` `this``.config.consumer_key,`
+
+  `consumer_secret:` `this``.config.consumer_secret,`
+
+  `access_token_key:` `this``.config.access_token_key,`
+
+  `access_token_secret:` `this``.config.access_token_secret`
+
+  `});`
+
+  `next();`
+
+  `};`
+
+3. Open ./lib/methods/findAll.js and replace the contents of the file with the following. The findAll.js file implements the connector's findAll() method, which retrieves all tweets from the user's Twitter account, or at least, as many tweets as Twitter will allow us to fetch.
+
+  ./lib/methods/findAll.js
+
+  `var` `Arrow = require(``'arrow'``),`
+
+  `Collection = Arrow.Collection,`
+
+  `ORMError = Arrow.ORMError;`
+
+  `exports.findAll =` `function` `findAll(Model, callback) {`
+
+  `var` `params = {screen_name:` `this``.config.account};`
+
+  `// this Twitter API only returns the last twenty tweets`
+
+  `this``.client.get(``'statuses/user_timeline'``, params,` `function``(error, tweets, response) {`
+
+  `if` `(!error) {`
+
+  `var` `results = [];`
+
+  `for` `(``var` `i = 0; i < tweets.length; i++) {`
+
+  `results.push(Model.connector.createInstance(Model, tweets[i]));`
+
+  `}`
+
+  `callback(``null``,` `new` `Collection(Model, results));`
+
+  `}` `else` `{`
+
+  `this``.logger.error(error);`
+
+  `callback(``new` `ORMError(``'ERROR: Could not fetch tweets!'``));`
+
+  `}`
+
+  `});`
+
+  `};`
+
+4. Open ./lib/methods/findById.js and replace the contents of the file with the following. The findById.js file implements the connector's findById() method, which retrieves one specific tweet, identified by its ID, from the datasource.
+
+  ./lib/methods/findById.js
+
+  `var` `Arrow = require(``'arrow'``),`
+
+  `ORMError = Arrow.ORMError;`
+
+  `exports.findById =` `function` `(Model, id, callback) {`
+
+  `this``.client.get(``'statuses/show/'` `+ id, {},` `function``(error, tweet, response) {`
+
+  `if` `(!error) {`
+
+  `callback(``null``, Model.connector.createInstance(Model, tweet));`
+
+  `}` `else` `{`
+
+  `this``.logger.error(error);`
+
+  `callback(``new` `ORMError(``'ERROR: Could not fetch tweet!'``));`
+
+  `}`
+
+  `});`
+
+  `};`
+
 
 Let's see if the connector's retrieve logic works.
 
 In a web browser:
 
-1.  Navigate to the Admin Console. You can access it using the following URL: http://localhost:8080/api-create-ui
-    
-2.  In the top navigation bar, click the **Data** tab.
-    
-3.  In the left navigation bar, click **tweet**.
-    
+1. Navigate to the Admin Console. You can access it using the following URL: http://localhost:8080/api-create-ui
+
+2. In the top navigation bar, click the **Data** tab.
+
+3. In the left navigation bar, click **tweet**.
+
 
 The Admin console will retrieve and display the user's tweets.
 
@@ -372,51 +372,51 @@ Next, let's add some logic to create a tweet.
 
 To allow the connector to create data, implement the CanCreate capability.
 
-1.  Open the ./lib/index.js file, uncomment the line containing Capabilities.CanCreate and save the file. You will see the following console output:
-    
-    `The` `"CanCreate"` `capability has been enabled, so we need to make a couple of changes:`
-    
-    ``- Created `lib/methods/create.js` (contains 3 TODOs)``
-    
-    `Please go take a look at the TODOs` `in` `these` `new` `files, then` `do` ``an `appc run` or `npm test` to`` `try` `out the` `new` `capabilities.`
-    
-2.  Open ./lib/methods/create.js and replace the contents of the file with the following. The create.js file implements the connector's create() method, which allows the connector to post a tweet on the user's Twitter feed.
-    
-    ./lib/methods/create.js
-    
-    `var` `Arrow = require(``'arrow'``),`
-    
-    `ORMError = Arrow.ORMError;`
-    
-    `exports.create =` `function` `(Model, values, callback) {`
-    
-    `var` `params = {``'status'``: values.text};`
-    
-    `this``.client.post(``'statuses/update'``, params,` `function``(error, tweet, response) {`
-    
-    `if` `(!error) {`
-    
-    `callback(``null``, Model.connector.createInstance(Model, tweet));`
-    
-    `}` `else` `{`
-    
-    `callback(``new` `ORMError(``'ERROR: Unable to create tweet!'``));`
-    
-    `}`
-    
-    `});`
-    
-    `};`
-    
+1. Open the ./lib/index.js file, uncomment the line containing Capabilities.CanCreate and save the file. You will see the following console output:
+
+  `The` `"CanCreate"` `capability has been enabled, so we need to make a couple of changes:`
+
+  ``- Created `lib/methods/create.js` (contains 3 TODOs)``
+
+  `Please go take a look at the TODOs` `in` `these` `new` `files, then` `do` ``an `appc run` or `npm test` to`` `try` `out the` `new` `capabilities.`
+
+2. Open ./lib/methods/create.js and replace the contents of the file with the following. The create.js file implements the connector's create() method, which allows the connector to post a tweet on the user's Twitter feed.
+
+  ./lib/methods/create.js
+
+  `var` `Arrow = require(``'arrow'``),`
+
+  `ORMError = Arrow.ORMError;`
+
+  `exports.create =` `function` `(Model, values, callback) {`
+
+  `var` `params = {``'status'``: values.text};`
+
+  `this``.client.post(``'statuses/update'``, params,` `function``(error, tweet, response) {`
+
+  `if` `(!error) {`
+
+  `callback(``null``, Model.connector.createInstance(Model, tweet));`
+
+  `}` `else` `{`
+
+  `callback(``new` `ORMError(``'ERROR: Unable to create tweet!'``));`
+
+  `}`
+
+  `});`
+
+  `};`
+
 
 Let's test the create logic.
 
 In the Admin console, you should still see the list of tweets. If not, click **Data** in the top navigation bar, then click **tweet** in the left navigation bar.
 
-1.  Click the **Add (+)** button in the top-right corner of the console. A dialog will appear.
-    
-2.  Enter a status message, then click **OK**.
-    
+1. Click the **Add (+)** button in the top-right corner of the console. A dialog will appear.
+
+2. Enter a status message, then click **OK**.
+
 
 The new status message will be displayed in the list of tweets.
 
@@ -426,55 +426,55 @@ Next, let's add some logic to remove the tweets.
 
 To allow the connector to remove data, implement the CanDelete capability.
 
-1.  Open the ./lib/index.js file, uncomment the line containing Capabilities.CanDelete and save the file. You will see the following console output:
-    
-    `The` `"CanDelete"` `capability has been enabled, so we need to make a couple of changes:`
-    
-    ``- Created `lib/methods/```delete```.js` (contains 4 TODOs)``
-    
-    ``- Created `lib/methods/deleteAll.js` (contains 3 TODOs)``
-    
-    `(Hint: If you only want to support some of these methods, feel free to` `delete` `the others.)`
-    
-    `Please go take a look at the TODOs` `in` `these` `new` `files, then` `do` ``an `appc run` or `npm test` to`` `try` `out the` `new` `capabilities.`
-    
-2.  Remove the lib/methods/deleteAll.js.
-    
-3.  Open ./lib/methods/delete.js and replace the contents of the file with the following. The delete.js file implements the connector's delete() method, which allows the connector to delete a specific tweet, specified by its ID, from the user's Twitter feed.
-    
-    ./lib/methods/delete.js
-    
-    `var` `Arrow = require(``'arrow'``),`
-    
-    `ORMError = Arrow.ORMError;`
-    
-    `exports[``'delete'``] =` `function` `(Model, instance, callback) {`
-    
-    `this``.client.post(``'statuses/destroy/'` `+ instance.id +` `'.json'``, {},` `function``(error, tweet, response) {`
-    
-    `if` `(!error) {`
-    
-    `callback(``null``, Model.connector.createInstance(Model, tweet));`
-    
-    `}` `else` `{`
-    
-    `callback(``new` `ORMError(``'ERROR: Could not delete tweet!'``));`
-    
-    `}`
-    
-    `});`
-    
-    `};`
-    
+1. Open the ./lib/index.js file, uncomment the line containing Capabilities.CanDelete and save the file. You will see the following console output:
+
+  `The` `"CanDelete"` `capability has been enabled, so we need to make a couple of changes:`
+
+  ``- Created `lib/methods/```delete```.js` (contains 4 TODOs)``
+
+  ``- Created `lib/methods/deleteAll.js` (contains 3 TODOs)``
+
+  `(Hint: If you only want to support some of these methods, feel free to` `delete` `the others.)`
+
+  `Please go take a look at the TODOs` `in` `these` `new` `files, then` `do` ``an `appc run` or `npm test` to`` `try` `out the` `new` `capabilities.`
+
+2. Remove the lib/methods/deleteAll.js.
+
+3. Open ./lib/methods/delete.js and replace the contents of the file with the following. The delete.js file implements the connector's delete() method, which allows the connector to delete a specific tweet, specified by its ID, from the user's Twitter feed.
+
+  ./lib/methods/delete.js
+
+  `var` `Arrow = require(``'arrow'``),`
+
+  `ORMError = Arrow.ORMError;`
+
+  `exports[``'delete'``] =` `function` `(Model, instance, callback) {`
+
+  `this``.client.post(``'statuses/destroy/'` `+ instance.id +` `'.json'``, {},` `function``(error, tweet, response) {`
+
+  `if` `(!error) {`
+
+  `callback(``null``, Model.connector.createInstance(Model, tweet));`
+
+  `}` `else` `{`
+
+  `callback(``new` `ORMError(``'ERROR: Could not delete tweet!'``));`
+
+  `}`
+
+  `});`
+
+  `};`
+
 
 Let's test the delete logic.
 
 In the Admin console, you should still see the list of tweets. If not, click **Data** in the top navigation bar, then click **tweet** in the left navigation bar.
 
-1.  Click the tweet you previously added to the list. A dialog appears.
-    
-2.  Click **Delete**.
-    
+1. Click the tweet you previously added to the list. A dialog appears.
+
+2. Click **Delete**.
+
 
 The new status message will be removed from the list of tweets.
 
@@ -482,38 +482,38 @@ The new status message will be removed from the list of tweets.
 
 To have a model included with your connector, implement the ContainModel capability.
 
-1.  Remove the server.addModel method from the app.js file.
-    
-2.  Open the ./lib/index.js file, uncomment the line containing Capabilities.ContainModel and save the file. You will see the following console output:
-    
-    `The` `"ContainsModels"` `capability has been enabled, so we need to make a couple of changes:`
-    
-    ``- Created `models/yourModel.js` (contains 2 TODOs)``
-    
-3.  Rename the yourModel.js file to tweet.js.
-    
-4.  Open ./models/tweet.js and replace the contents of the file with the following:
-    
-    ./models/tweet.js
-    
-    `var` `Arrow = require(``'arrow'``);`
-    
-    `var` `Tweet = Arrow.Model.extend(``'tweet'``, {`
-    
-    `fields: {`
-    
-    `status: { type: String, name:` `'text'` `}`
-    
-    `},`
-    
-    `connector:` `'com.connector.twitter'`
-    
-    `});`
-    
-    `module.exports = Tweet;`
-    
-5.  Reload the Admin console and retest adding and removing a model.
-    
+1. Remove the server.addModel method from the app.js file.
+
+2. Open the ./lib/index.js file, uncomment the line containing Capabilities.ContainModel and save the file. You will see the following console output:
+
+  `The` `"ContainsModels"` `capability has been enabled, so we need to make a couple of changes:`
+
+  ``- Created `models/yourModel.js` (contains 2 TODOs)``
+
+3. Rename the yourModel.js file to tweet.js.
+
+4. Open ./models/tweet.js and replace the contents of the file with the following:
+
+  ./models/tweet.js
+
+  `var` `Arrow = require(``'arrow'``);`
+
+  `var` `Tweet = Arrow.Model.extend(``'tweet'``, {`
+
+  `fields: {`
+
+  `status: { type: String, name:` `'text'` `}`
+
+  `},`
+
+  `connector:` `'com.connector.twitter'`
+
+  `});`
+
+  `module.exports = Tweet;`
+
+5. Reload the Admin console and retest adding and removing a model.
+
 
 ## Publish the connector
 

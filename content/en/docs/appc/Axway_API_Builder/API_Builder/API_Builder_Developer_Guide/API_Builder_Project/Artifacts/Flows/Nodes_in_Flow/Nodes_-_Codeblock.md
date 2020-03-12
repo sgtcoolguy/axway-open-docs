@@ -1,4 +1,4 @@
-{"title":"Nodes - Codeblock","weight":"20"} 
+{"title":"Nodes - Codeblock","weight":"20"}
 
 API Builder 3.x is deprecated
 
@@ -148,16 +148,16 @@ The functional part of a Codeblock should be a .js file which exports a function
 
 **invoke(arrow, params, cb);**
 
-*   arrow <Arrow> - The API Builder instance.
-    
-*   params <Object> - Key/value pairs of parameters passed to the flow-node instance.
-    
-*   cb <Function> - Callback.
-    
-    *   err - Error. Passing this will cause the flow to cease processing and a 500 error to be returned from the endpoint which called it.
-        
-    *   response - The data to be returned as the flow-node response.
-        
+* arrow <Arrow> - The API Builder instance.
+
+* params <Object> - Key/value pairs of parameters passed to the flow-node instance.
+
+* cb <Function> - Callback.
+
+  * err - Error. Passing this will cause the flow to cease processing and a 500 error to be returned from the endpoint which called it.
+
+  * response - The data to be returned as the flow-node response.
+
 
 Most of the time errors should be returned in the callback as a standard response. Using the first parameter to return errors is the same as throwing an error in the Codeblock and should rarely need to be used.
 

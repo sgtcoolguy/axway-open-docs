@@ -1,17 +1,17 @@
-{"title":"Managing Client Applications","weight":"20"} 
+{"title":"Managing Client Applications","weight":"20"}
 
 This document provides information on app overview and service keys, what the API Builder, test, and performance tabs entail, how to view real-time and aggregated analytics, and managing application team members.
 
-*   [App Overview and Service Keys](#AppOverviewandServiceKeys)
-    
-*   [APIs Tab](#APIsTab)
-    
-*   [Crashes Tab](#CrashesTab)
-    
-*   [Viewing Real-time and Aggregated Analytics](#AnalyticsViewingReal-timeandAggregatedAnalytics)
-    
-*   [Application Preview](#ApplicationPreview)
-    
+* [App Overview and Service Keys](#AppOverviewandServiceKeys)
+
+* [APIs Tab](#APIsTab)
+
+* [Crashes Tab](#CrashesTab)
+
+* [Viewing Real-time and Aggregated Analytics](#AnalyticsViewingReal-timeandAggregatedAnalytics)
+
+* [Application Preview](#ApplicationPreview)
+
 
 ## App Overview and Service Keys
 
@@ -27,11 +27,11 @@ Native iOS and Android applications include the same basic information on the **
 
 For Titanium applications, you can click the **Action Menu** icon in the upper-right of the screen and select **Edit** to edit the Name, App ID, Copyright, URL, and Description of your application. Once you have completed your edits, click the **Save** button to save your edits. To return the **Overview** tab without saving your edits, click the **Cancel** button.
 
-Changes you make here will not affect your local application. Make sure to mirror the changes in your tiapp.xml file or these will be overwritten the next time you build your app.
+Changes you make here will not affect your local application. Make sure to mirror the changes in your tiapp.xml file, or these will be overwritten the next time you build your app.
 
 ![edit_titanium_app](/Images/appc/download/attachments/60145239/edit_titanium_app.png)
 
-You can also permanently delete the selected application by clicking the **Action Menu** icon and selecting **Delete**. To confirm the deletion of the selected application, type the name of the application you would like to permanently delete, and then select, **I understand that this a permanent and irreversible action. Continue**.
+You can also permanently delete the selected application by clicking the **Action Menu** icon and selecting **Delete**. To confirm the deletion of the selected application, type the name of the application you would like to delete permanently, and then select, **I understand that this a permanent and irreversible action. Continue**.
 
 ## APIs Tab
 
@@ -47,23 +47,23 @@ The **Crashes** tab displays the total number of crashes of your application for
 
 To upload symbol files:
 
-1.  Click the **Action Menu** icon and select **Upload Symbols**.
-    
-2.  Select the **Platform**.
-    
-3.  Select the **Version**.
-    
-4.  Choose the symbol file to upload.
-    
-5.  Click **Upload**.
-    
+1. Click the **Action Menu** icon and select **Upload Symbols**.
+
+2. Select the **Platform**.
+
+3. Select the **Version**.
+
+4. Choose the symbol file to upload.
+
+5. Click **Upload**.
+
 
 To filter and search crashes by username:
 
-1.  Enter the username in the **Search by username** field.
-    
-2.  Click **Search.**
-    
+1. Enter the username in the **Search by username** field.
+
+2. Click **Search.**
+
 
 ## Viewing Real-time and Aggregated Analytics
 

@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 5.0.3 - 12 October 2015","weight":"180"} 
+{"title":"Appcelerator CLI 5.0.3 - 12 October 2015","weight":"180"}
 
 Appcelerator CLI 5.0.3 is a patch release, addressing high-priority issues from previous release.
 
@@ -20,7 +20,7 @@ Arrow Builder
 
 1.2.62
 
-Arrow Cloud CL**[I](/docs/appc/Axway_API_Builder/AMPLIFY_Runtime_Services/AMPLIFY_Runtime_Services_Release_Notes/)**
+Arrow Cloud CL**[I](/docs/appc/AMPLIFY_Runtime_Services/AMPLIFY_Runtime_Services_Release_Notes/)**
 
 1.0.27
 
@@ -30,6 +30,6 @@ Arrow Cloud CL**[I](/docs/appc/Axway_API_Builder/AMPLIFY_Runtime_Services/AMPLIF
 
 ## Fixed Issues
 
-*   [CLI-823](https://jira.appcelerator.org/browse/CLI-823): libtiverify.a in Ti SDK is replaced by libappcverify.a
-    
-*   [CLI-834](https://jira.appcelerator.org/browse/CLI-834): Serious problem of consumption of RAM when using Genymotion emulator or iOS simulator
+* [CLI-823](https://jira.appcelerator.org/browse/CLI-823): libtiverify.a in Ti SDK is replaced by libappcverify.a
+
+* [CLI-834](https://jira.appcelerator.org/browse/CLI-834): Serious problem of consumption of RAM when using Genymotion emulator or iOS simulator

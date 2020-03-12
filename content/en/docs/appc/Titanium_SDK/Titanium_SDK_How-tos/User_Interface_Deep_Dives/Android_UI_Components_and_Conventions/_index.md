@@ -1,33 +1,33 @@
-{"title":"Android UI Components and Conventions","weight":"100"} 
+{"title":"Android UI Components and Conventions","weight":"100"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [Android Action Bar](#AndroidActionBar)
-        
-    *   [Android menus](#Androidmenus)
-        
-    *   [Android back button](#Androidbackbutton)
-        
-    *   [Android Labels](#AndroidLabels)
-        
-    *   [Toast notifications](#Toastnotifications)
-        
-    *   [Status bar notifications](#Statusbarnotifications)
-        
-    *   [Nine-patch images](#Nine-patchimages)
-        
-*   [Hands-on practice](#Hands-onpractice)
-    
-    *   [Goal](#Goal)
-        
-    *   [Steps](#Steps)
-        
-*   [Summary](#Summary)
-    
-*   [References and further reading](#Referencesandfurtherreading)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [Android Action Bar](#AndroidActionBar)
+
+  * [Android menus](#Androidmenus)
+
+  * [Android back button](#Androidbackbutton)
+
+  * [Android Labels](#AndroidLabels)
+
+  * [Toast notifications](#Toastnotifications)
+
+  * [Status bar notifications](#Statusbarnotifications)
+
+  * [Nine-patch images](#Nine-patchimages)
+
+* [Hands-on practice](#Hands-onpractice)
+
+  * [Goal](#Goal)
+
+  * [Steps](#Steps)
+
+* [Summary](#Summary)
+
+* [References and further reading](#Referencesandfurtherreading)
+
 
 ## Objective
 
@@ -155,16 +155,16 @@ Android also will "linkify" text within your labels. Given the following, the us
 
 The linkification options include:
 
-*   Ti.UI.AUTOLINK\_ALL (Ti.UI.Android.LINKIFY\_ALL) – linkify all possible forms of links
-    
-*   Ti.UI.AUTOLINK\_EMAIL\_ADDRESSES (Ti.UI.Android.LINKIFY\_EMAIL\_ADDRESSES) – linkify just email addresses
-    
-*   Ti.UI.AUTOLINK\_MAP\_ADDRESSES (Ti.UI.Android.LINKIFY\_MAP\_ADDRESSES) – linkify just map addresses
-    
-*   Ti.UI.AUTOLINK\_PHONE\_NUMBERS (Ti.UI.Android.LINKIFY\_PHONE\_NUMBERS) – linkify just phone numbers
-    
-*   Ti.UI.AUTOLINK\_URLS (Ti.UI.Android.LINKIFY\_WEB\_URLS) – linkify just Web addresses
-    
+* Ti.UI.AUTOLINK\_ALL (Ti.UI.Android.LINKIFY\_ALL) – linkify all possible forms of links
+
+* Ti.UI.AUTOLINK\_EMAIL\_ADDRESSES (Ti.UI.Android.LINKIFY\_EMAIL\_ADDRESSES) – linkify just email addresses
+
+* Ti.UI.AUTOLINK\_MAP\_ADDRESSES (Ti.UI.Android.LINKIFY\_MAP\_ADDRESSES) – linkify just map addresses
+
+* Ti.UI.AUTOLINK\_PHONE\_NUMBERS (Ti.UI.Android.LINKIFY\_PHONE\_NUMBERS) – linkify just phone numbers
+
+* Ti.UI.AUTOLINK\_URLS (Ti.UI.Android.LINKIFY\_WEB\_URLS) – linkify just Web addresses
+
 
 The constants shown in parenthesis are the constants used prior to SDK 3.0. The constants listed first should be used in SDK 3.0 and later.
 
@@ -268,28 +268,28 @@ In this activity, you will manage the hardware Back button so that the first tim
 
 ### Steps
 
-1.  Create a new Titanium Mobile project.
-    
-2.  Delete the contents of app.js and create a new one to these specifications:
-    
-    *   It should contain a single, heavyweight window, which should have a red background. Set the exitOnClose:true property on that window.
-        
-    *   The window should contain a label with the text "Tap the Android Back button to close the app". Set that label's font color to black so that it's visible.
-        
-    *   The window should contain a view that fills 90% of the window. The view should have a white background.
-        
-    *   The view should contain a label with the text "Tap the Android Back button to close this white view and show the underlying red window". Set that label's font color to black so that it's visible.
-        
-3.  Write a function that when called will hide the view and remove the androidback event listener from the window.
-    
-4.  Add an event listener to the window so that when the androidback event fires, your custom function is called.
-    
-5.  Make sure to add the labels to the window and view, and add the view to the window. Make sure to open the window at the end of your code.
-    
-6.  Build the app for the Android emulator or for a device.
-    
-7.  With the white view showing, tap the Back button. The view should close. Tap Back again and the app should close.
-    
+1. Create a new Titanium Mobile project.
+
+2. Delete the contents of app.js and create a new one to these specifications:
+
+  * It should contain a single, heavyweight window, which should have a red background. Set the exitOnClose:true property on that window.
+
+  * The window should contain a label with the text "Tap the Android Back button to close the app". Set that label's font color to black so that it's visible.
+
+  * The window should contain a view that fills 90% of the window. The view should have a white background.
+
+  * The view should contain a label with the text "Tap the Android Back button to close this white view and show the underlying red window". Set that label's font color to black so that it's visible.
+
+3. Write a function that when called will hide the view and remove the androidback event listener from the window.
+
+4. Add an event listener to the window so that when the androidback event fires, your custom function is called.
+
+5. Make sure to add the labels to the window and view, and add the view to the window. Make sure to open the window at the end of your code.
+
+6. Build the app for the Android emulator or for a device.
+
+7. With the white view showing, tap the Back button. The view should close. Tap Back again and the app should close.
+
 
 ## Summary
 
@@ -297,8 +297,8 @@ In this section, you learned the basics of Android-specific user interface and e
 
 ## References and further reading
 
-*   [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/3.5_android_UI.zip)
-    
-*   [Android Platform Overview](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Cross-Platform_Mobile_Development_In_Titanium/Android_Platform_Overview/)
-    
-*   [Android developer docs: User interface](http://developer.android.com/guide/topics/ui/index.html)
+* [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/3.5_android_UI.zip)
+
+* [Android Platform Overview](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Cross-Platform_Mobile_Development_In_Titanium/Android_Platform_Overview/)
+
+* [Android developer docs: User interface](http://developer.android.com/guide/topics/ui/index.html)

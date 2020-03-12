@@ -1,10 +1,10 @@
-{"title":"PyDev Context-sensitive completions","weight":"60"} 
+{"title":"PyDev Context-sensitive completions","weight":"60"}
 
 ## Code Completion
 
 ### Requesting Code Completion
 
-Code completion provides context-sensitive completions and is enabled with **Ctrl+Space**. (Note that eclipse has simple emacs-style text-completion with **Alt+/**).
+Code completion provides context-sensitive completion and is enabled with **Ctrl+Space**. (Note that eclipse has simple emacs-style text-completion with **Alt+/**).
 
 It's important to note that your interpreter must be properly configured for the code-completion to work, and for getting the **builtins**, PyDev spawns a shell, so, having a **firewall can prevent the code-completion from working** if it's blocking the communication from eclipse to that shell.
 
@@ -24,7 +24,7 @@ Getting the builtins.
 
 ![codecompletionbuiltins](/Images/appc/pydev.org/images/codecompletion/codecompletionbuiltins.png)
 
-Completing on a class (note that we get the hierarchy even from builtins).
+Completing a class (note that we get the hierarchy even from builtins).
 
 ![codecompletionhierarchy1](/Images/appc/pydev.org/images/codecompletion/codecompletionhierarchy1.png)
 
@@ -32,7 +32,7 @@ Completing on a class (note that we get the hierarchy even from builtins).
 
 ![compl2](/Images/appc/pydev.org/images/codecompletion/compl2.png)
 
-## Completing on an import
+## Completing an import
 
 ![compl3](/Images/appc/pydev.org/images/codecompletion/compl3.png)
 

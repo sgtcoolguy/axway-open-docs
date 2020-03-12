@@ -1,4 +1,4 @@
-{"title":"Using Custom Conditional Statements in Titanium Alloy Views","weight":"20"} 
+{"title":"Using Custom Conditional Statements in Titanium Alloy Views","weight":"20"}
 
 One of the many great features of Alloy is how it separates the business logic of an app and the user interface. You use XML views and TSS files to define the elements and styling of your views, and controllers contain the JavaScript to make everything work.
 

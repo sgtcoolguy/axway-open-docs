@@ -1,0 +1,53 @@
+{"title":"Appcelerator CLI 8.0.0.RC  - 9 March 2020","weight":"10"}
+
+# Appcelerator CLI 8.0.0.RC - 9 March 2020
+
+Appcelerator CLI 8.0.0.RC is a release candidate for a major release that includes improvements, and bug fixes.
+
+With this release of the Appcelerator CLI, Node.js versions older than 10.13.0 are no longer supported. We also recommend updating to Studio 6.0.0
+
+## Component versions
+
+The following components are shipped with CLI 8.0.0:
+
+Alloy
+
+1.14.5
+
+Cloud CLI
+
+2.1.3
+
+Titanium CLI
+
+5.2.2
+
+Daemon
+
+3.1.0
+
+Appcelerator CLI 8 removes API Builder from distribution. For information on migrating to API Builder v4 please see [https://docs.axway.com/bundle/API\_Builder\_4x\_allOS\_en/page/api\_builder\_v3\_to\_v4\_upgrade\_guide.html](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html)
+
+## Improvements
+
+* [CLI-1376](https://jira.appcelerator.org/browse/CLI-1376) - Update to Appc Daemon 3
+
+* [CLI-1383](https://jira.appcelerator.org/browse/CLI-1383) - Update to cloud CLI 2.1.3
+
+  * The package.json scripts.start property will now be preferred over the main property when publishing to ARS
+
+* [CLI-1065](https://jira.appcelerator.org/browse/CLI-1065) - Improve socket prompt communication and error for appc login
+
+
+## Fixed issues
+
+* [CLI-1381](https://jira.appcelerator.org/browse/CLI-1381) - ACA module not being added to tiapp when creating a new application
+
+* [CLI-1295](https://jira.appcelerator.org/browse/CLI-1295) - Application not registered error when building a Titanium application not registered with the platform
+
+* [ALOY-1721](https://jira.appcelerator.org/browse/ALOY-1721) - Alloy global variable no longer accessible in styles
+
+
+## BREAKING CHANGES
+
+* [CLI-1385](https://jira.appcelerator.org/browse/CLI-1385) - Remove API Builder

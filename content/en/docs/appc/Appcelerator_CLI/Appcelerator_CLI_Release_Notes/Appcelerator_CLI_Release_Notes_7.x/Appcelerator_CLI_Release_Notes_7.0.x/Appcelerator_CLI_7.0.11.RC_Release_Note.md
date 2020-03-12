@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 7.0.11.RC - 16 April 2019","weight":"40"} 
+{"title":"Appcelerator CLI 7.0.11.RC - 16 April 2019","weight":"40"}
 
 Appcelerator CLI 7.0.11.RC is a patch release that includes internal updates.
 

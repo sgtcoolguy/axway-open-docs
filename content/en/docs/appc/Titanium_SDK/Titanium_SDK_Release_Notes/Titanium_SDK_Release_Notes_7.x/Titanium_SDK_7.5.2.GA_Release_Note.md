@@ -1,21 +1,21 @@
-{"title":"Titanium SDK 7.5.2.GA - 4 April 2019","weight":"10"} 
+{"title":"Titanium SDK 7.5.2.GA - 4 April 2019","weight":"10"}
 
-*   [About this release](#Aboutthisrelease)
-    
-*   [Community credits](#Communitycredits)
-    
-*   [Fixed issue](#Fixedissue)
-    
-*   [API changes](#APIchanges)
-    
-*   [SDK modules versions](#SDKmodulesversions)
-    
-    *   [Android and iOS](#AndroidandiOS)
-        
-    *   [CommonJS](#CommonJS)
-        
-    *   [Hyperloop](#Hyperloop)
-        
+* [About this release](#Aboutthisrelease)
+
+* [Community credits](#Communitycredits)
+
+* [Fixed issue](#Fixedissue)
+
+* [API changes](#APIchanges)
+
+* [SDK modules versions](#SDKmodulesversions)
+
+  * [Android and iOS](#AndroidandiOS)
+
+  * [CommonJS](#CommonJS)
+
+  * [Hyperloop](#Hyperloop)
+
 
 ## About this release
 
@@ -25,17 +25,17 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 ## Community credits
 
-*   Richard Lustemberg - [TIMOB-26800](https://jira.appcelerator.org/browse/TIMOB-26800)
-    
-*   Arbindb Hagat - [TIMOB-26898](https://jira.appcelerator.org/browse/TIMOB-26898)
-    
+* Richard Lustemberg - [TIMOB-26800](https://jira.appcelerator.org/browse/TIMOB-26800)
+
+* Arbindb Hagat - [TIMOB-26898](https://jira.appcelerator.org/browse/TIMOB-26898)
+
 
 ## Fixed issue
 
-*   [TIMOB-26800](https://jira.appcelerator.org/browse/TIMOB-26800) - iOS:TiBlob.imageAsCompressed leaks memory
-    
-*   [TIMOB-26898](https://jira.appcelerator.org/browse/TIMOB-26898) - Stuck at Running dexer
-    
+* [TIMOB-26800](https://jira.appcelerator.org/browse/TIMOB-26800) - iOS:TiBlob.imageAsCompressed leaks memory
+
+* [TIMOB-26898](https://jira.appcelerator.org/browse/TIMOB-26898) - Stuck at Running dexer
+
 
 ## API changes
 

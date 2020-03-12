@@ -1,19 +1,19 @@
-{"title":"Titanium Boilerplates for TypeScript","weight":"10"} 
+{"title":"Titanium Boilerplates for TypeScript","weight":"10"}
 
-*   [Getting started with our templates](#Gettingstartedwithourtemplates)
-    
-*   [TypeScript Support for Existing Projects](#TypeScriptSupportforExistingProjects)
-    
-*   [Install TypeScript compiler](#InstallTypeScriptcompiler)
-    
-*   [Create tsconfig.json](#Createtsconfig.json)
-    
-    *   [ALLOY ONLY: copy Alloy typings](#ALLOYONLY:copyAlloytypings)
-        
-*   [Migrating your JavaScript files](#MigratingyourJavaScriptfiles)
-    
-*   [Installing the pre-compile hook](#Installingthepre-compilehook)
-    
+* [Getting started with our templates](#Gettingstartedwithourtemplates)
+
+* [TypeScript Support for Existing Projects](#TypeScriptSupportforExistingProjects)
+
+* [Install TypeScript compiler](#InstallTypeScriptcompiler)
+
+* [Create tsconfig.json](#Createtsconfig.json)
+
+  * [ALLOY ONLY: copy Alloy typings](#ALLOYONLY:copyAlloytypings)
+
+* [Migrating your JavaScript files](#MigratingyourJavaScriptfiles)
+
+* [Installing the pre-compile hook](#Installingthepre-compilehook)
+
 
 This tutorial introduces the first in a series of Titanium boilerplate projects. In this document, we'll cover [TypeScript](https://www.typescriptlang.org/) in both Alloy and classic apps.
 
@@ -23,10 +23,10 @@ All that is required is the TypeScript compiler and a CLI plugin that will compi
 
 To get you started quickly with TypeScript, we have prepared two example apps:
 
-*   [typescript-alloy-app](https://github.com/appcelerator/titanium-boilerplates/tree/master/templates/typescript-alloy-app#readme)
-    
-*   [typescript-classic-app](https://github.com/appcelerator/titanium-boilerplates/tree/master/templates/typescript-classic-app#readme)
-    
+* [typescript-alloy-app](https://github.com/appcelerator/titanium-boilerplates/tree/master/templates/typescript-alloy-app#readme)
+
+* [typescript-classic-app](https://github.com/appcelerator/titanium-boilerplates/tree/master/templates/typescript-classic-app#readme)
+
 
 You can also find them in our new [titanium-boilerplates](https://github.com/appcelerator/titanium-boilerplates) repository on GitHub.
 
@@ -36,14 +36,14 @@ These are simple greeter app examples written in TypeScript that is already setu
 
 Enabling TypeScript support in your existing project can be done with the following steps:
 
-1.  [Install TypeScript compiler](#InstallTypeScriptcompiler)
-    
-2.  [Create tsconfig.json](#Createtsconfig.json)
-    
-3.  [Migrating your JavaScript files](#MigratingyourJavaScriptfiles)
-    
-4.  [Installing the pre-compile hook](#Installingthepre-compilehook)
-    
+1. [Install TypeScript compiler](#InstallTypeScriptcompiler)
+
+2. [Create tsconfig.json](#Createtsconfig.json)
+
+3. [Migrating your JavaScript files](#MigratingyourJavaScriptfiles)
+
+4. [Installing the pre-compile hook](#Installingthepre-compilehook)
+
 
 ## Install TypeScript compiler
 

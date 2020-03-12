@@ -1,4 +1,4 @@
-{"title":"Project Explorer View","weight":"40"} 
+{"title":"Project Explorer View","weight":"40"}
 
 The Project Explorer view allows you to navigate through projects and resources in the same workspace.
 
@@ -8,12 +8,12 @@ The Project Explorer view allows you to navigate through projects and resources 
 
 In the Project Explorer view:
 
-1.  **Double-click on files** to open them in their default Editor.
-    
-2.  **Right-click on a project, folder or file** to open a right-context menu, where you can perform an action, such as copying or moving.
-    
-3.  **Select a project** in the Project Explorer view, then select a Launch mode in the Workbench toolbar to build and run the project.
-    
+1. **Double-click on files** to open them in their default Editor.
+
+2. **Right-click on a project, folder, or file** to open a right-context menu, where you can perform an action, such as copying or moving.
+
+3. **Select a project** in the Project Explorer view, then select a Launch mode in the Workbench toolbar to build and run the project.
+
 
 ## Toolbar
 

@@ -1,25 +1,25 @@
-{"title":"Titanium SDK 7.0.1.RC - 18 December 2017","weight":"280"} 
+{"title":"Titanium SDK 7.0.1.RC - 18 December 2017","weight":"280"}
 
-*   [About this release](#Aboutthisrelease)
-    
-*   [Community credits](#Communitycredits)
-    
-*   [Fixed issues](#Fixedissues)
-    
-    *   [Android](#Android)
-        
-    *   [iOS](#iOS)
-        
-*   [Improvements](#Improvements)
-    
-*   [API changes](#APIchanges)
-    
-    *   [New APIs](#NewAPIs)
-        
-    *   [Deprecated APIs](#DeprecatedAPIs)
-        
-    *   [Removed APIs](#RemovedAPIs)
-        
+* [About this release](#Aboutthisrelease)
+
+* [Community credits](#Communitycredits)
+
+* [Fixed issues](#Fixedissues)
+
+  * [Android](#Android)
+
+  * [iOS](#iOS)
+
+* [Improvements](#Improvements)
+
+* [API changes](#APIchanges)
+
+  * [New APIs](#NewAPIs)
+
+  * [Deprecated APIs](#DeprecatedAPIs)
+
+  * [Removed APIs](#RemovedAPIs)
+
 
 ## About this release
 
@@ -29,61 +29,61 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 ## Community credits
 
-*   [Richard Lustemberg](https://github.com/rlustemberg)
-    
-    *   [TIMOB-25576](https://jira.appcelerator.org/browse/TIMOB-25576) - Ensuring usage of macros bundled core utilities and shells when adding to iOS buildPhases
-        
+* [Richard Lustemberg](https://github.com/rlustemberg)
+
+  * [TIMOB-25576](https://jira.appcelerator.org/browse/TIMOB-25576) - Ensuring usage of macros bundled core utilities and shells when adding to iOS buildPhases
+
 
 ## Fixed issues
 
 ### Android
 
-*   [TIMOB-20332](https://jira.appcelerator.org/browse/TIMOB-20332) - Closing a Ti.UI.TabGroup that contains a ti.map view crashes the app on Android
-    
-*   [TIMOB-25468](https://jira.appcelerator.org/browse/TIMOB-25468) - Android: HTML Key is missing under the source object for web view
-    
-*   [TIMOB-25469](https://jira.appcelerator.org/browse/TIMOB-25469) - Android : Custom theme not applying when background color is transparent
-    
-*   [TIMOB-25477](https://jira.appcelerator.org/browse/TIMOB-25477) - Android: Tapping right-aligned TextField not always receiving focus as of 6.2.2
-    
-*   [TIMOB-25508](https://jira.appcelerator.org/browse/TIMOB-25508) - Android: Forced rebuild loop due to tiapp.xml navbar-hidden changed
-    
-*   [TIMOB-25517](https://jira.appcelerator.org/browse/TIMOB-25517) - Android: TableViewProxy unable to create table view row proxy for object
-    
-*   [TIMOB-25526](https://jira.appcelerator.org/browse/TIMOB-25526) - Android: Listview when showing image with defaultImage causing inconsistency on image
-    
-*   [TIMOB-25592](https://jira.appcelerator.org/browse/TIMOB-25592) - Android CLI: Migration fails if module version does not follow semver (e.g. 1.0), description key overridden
-    
-*   [TIMOB-25601](https://jira.appcelerator.org/browse/TIMOB-25601) - Android: Remove "ti.cloudpush" module's "com.google.android.gms.version" metadata tag
-    
+* [TIMOB-20332](https://jira.appcelerator.org/browse/TIMOB-20332) - Closing a Ti.UI.TabGroup that contains a ti.map view crashes the app on Android
+
+* [TIMOB-25468](https://jira.appcelerator.org/browse/TIMOB-25468) - Android: HTML Key is missing under the source object for web view
+
+* [TIMOB-25469](https://jira.appcelerator.org/browse/TIMOB-25469) - Android : Custom theme not applying when background color is transparent
+
+* [TIMOB-25477](https://jira.appcelerator.org/browse/TIMOB-25477) - Android: Tapping right-aligned TextField not always receiving focus as of 6.2.2
+
+* [TIMOB-25508](https://jira.appcelerator.org/browse/TIMOB-25508) - Android: Forced rebuild loop due to tiapp.xml navbar-hidden changed
+
+* [TIMOB-25517](https://jira.appcelerator.org/browse/TIMOB-25517) - Android: TableViewProxy unable to create table view row proxy for object
+
+* [TIMOB-25526](https://jira.appcelerator.org/browse/TIMOB-25526) - Android: Listview when showing image with defaultImage causing inconsistency on image
+
+* [TIMOB-25592](https://jira.appcelerator.org/browse/TIMOB-25592) - Android CLI: Migration fails if module version does not follow semver (e.g. 1.0), description key overridden
+
+* [TIMOB-25601](https://jira.appcelerator.org/browse/TIMOB-25601) - Android: Remove "ti.cloudpush" module's "com.google.android.gms.version" metadata tag
+
 
 ### iOS
 
-*   [TIMOB-25414](https://jira.appcelerator.org/browse/TIMOB-25414) - iOS : Search bar in absolute-positioned ListView extends when focused
-    
-*   [TIMOB-25424](https://jira.appcelerator.org/browse/TIMOB-25424) - iOS: Unnecessary symbols compiled to the app
-    
-*   [TIMOB-25560](https://jira.appcelerator.org/browse/TIMOB-25560) - iOS: extendSafeArea property not behave properly if tabBarHidden = true or navBarHidden = true
-    
-*   [TIMOB-25573](https://jira.appcelerator.org/browse/TIMOB-25573) - CLI: iOS compiler breaks and compiles incorrectly when building to device - 6.3.0
-    
-*   [TIMOB-25574](https://jira.appcelerator.org/browse/TIMOB-25574) - iOS: SDK 7.0.0 - App crashes with exception when closing window that contains videoplayer
-    
-*   [TIMOB-25576](https://jira.appcelerator.org/browse/TIMOB-25576) - Ensuring usage of macros bundled core utilities and shells when adding to iOS buildPhases
-    
-*   [TIMOB-25586](https://jira.appcelerator.org/browse/TIMOB-25586) - iOS: Crash when selecting filtered row in Ti.UI.SearchBar
-    
+* [TIMOB-25414](https://jira.appcelerator.org/browse/TIMOB-25414) - iOS : Search bar in absolute-positioned ListView extends when focused
+
+* [TIMOB-25424](https://jira.appcelerator.org/browse/TIMOB-25424) - iOS: Unnecessary symbols compiled to the app
+
+* [TIMOB-25560](https://jira.appcelerator.org/browse/TIMOB-25560) - iOS: extendSafeArea property not behave properly if tabBarHidden = true or navBarHidden = true
+
+* [TIMOB-25573](https://jira.appcelerator.org/browse/TIMOB-25573) - CLI: iOS compiler breaks and compiles incorrectly when building to device - 6.3.0
+
+* [TIMOB-25574](https://jira.appcelerator.org/browse/TIMOB-25574) - iOS: SDK 7.0.0 - App crashes with exception when closing window that contains videoplayer
+
+* [TIMOB-25576](https://jira.appcelerator.org/browse/TIMOB-25576) - Ensuring usage of macros bundled core utilities and shells when adding to iOS buildPhases
+
+* [TIMOB-25586](https://jira.appcelerator.org/browse/TIMOB-25586) - iOS: Crash when selecting filtered row in Ti.UI.SearchBar
+
 
 ## Improvements
 
-*   [TIMOB-25572](https://jira.appcelerator.org/browse/TIMOB-25572) - Android: Provide Toolbar customization through DrawerLayout
-    
-    *   Added customToolbar creationOnly property to DrawerLayout which expects an instance of Ti.UI.Toolbar which replaces the embedded Toolbar and provide access to increased customization. This property must be used together with toolbarEnabled = false in the creation dictionary to have an effect.
-        
-*   [TIMOB-25593](https://jira.appcelerator.org/browse/TIMOB-25593) - Android: Update Ti.Identity to work with Android 64 Bit & SDK 7.0.0  
-    
-    *   Updated Ti.Indentity to work with Android 64-bit and SDK 7.0.x
-        
+* [TIMOB-25572](https://jira.appcelerator.org/browse/TIMOB-25572) - Android: Provide Toolbar customization through DrawerLayout
+
+  * Added customToolbar creationOnly property to DrawerLayout which expects an instance of Ti.UI.Toolbar which replaces the embedded Toolbar and provide access to increased customization. This property must be used together with toolbarEnabled = false in the creation dictionary to have an effect.
+
+* [TIMOB-25593](https://jira.appcelerator.org/browse/TIMOB-25593) - Android: Update Ti.Identity to work with Android 64 Bit & SDK 7.0.0
+
+  * Updated Ti.Indentity to work with Android 64-bit and SDK 7.0.x
+
 
 ## API changes
 
@@ -367,9 +367,6 @@ property
 
 Maintain a sustainable level of performance. (New API, supported on Android.)
 
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
-
 ### Deprecated APIs
 
 The following APIs are deprecated in Release 7.0.1 as of December 21st, 2017.
@@ -433,9 +430,6 @@ Titanium.Media.VideoPlayer.setBackgroundView
 method
 
 Use Titanium.Media.VideoPlayer.overlayView instead.
-
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
 
 ### Removed APIs
 
@@ -744,6 +738,3 @@ Titanium.UI.iPhone.TableViewStyle
 object
 
 Use Titanium.UI.iOS.TableViewStyle instead.
-
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**

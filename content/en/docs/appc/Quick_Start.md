@@ -1,31 +1,31 @@
-{"title":"Quick Start","weight":"20"} 
+{"title":"Quick Start","weight":"20"}
 
-*   [Overview](#Overview)
-    
-*   [Appcelerator Platform](#AppceleratorPlatform)
-    
-*   [Axway Appcelerator Dashboard](#AxwayAppceleratorDashboard)
-    
-*   [Axway Appcelerator Studio](#AxwayAppceleratorStudio)
-    
-    *   [System requirements](#Systemrequirements)
-        
-    *   [Download and install Studio](#DownloadandinstallStudio)
-        
-    *   [Launch and update Studio](#LaunchandupdateStudio)
-        
-    *   [Configure Studio](#ConfigureStudio)
-        
-*   [Creating your first mobile app](#Creatingyourfirstmobileapp)
-    
-    *   [Import the sample project](#Importthesampleproject)
-        
-    *   [Run and test the client application](#Runandtesttheclientapplication)
-        
-    *   [View application statistics in Dashboard](#ViewapplicationstatisticsinDashboard)
-        
-*   [Next steps](#Nextsteps)
-    
+* [Overview](#Overview)
+
+* [Appcelerator Platform](#AppceleratorPlatform)
+
+* [Axway Appcelerator Dashboard](#AxwayAppceleratorDashboard)
+
+* [Axway Appcelerator Studio](#AxwayAppceleratorStudio)
+
+  * [System requirements](#Systemrequirements)
+
+  * [Download and install Studio](#DownloadandinstallStudio)
+
+  * [Launch and update Studio](#LaunchandupdateStudio)
+
+  * [Configure Studio](#ConfigureStudio)
+
+* [Creating your first mobile app](#Creatingyourfirstmobileapp)
+
+  * [Import the sample project](#Importthesampleproject)
+
+  * [Run and test the client application](#Runandtesttheclientapplication)
+
+  * [View application statistics in Dashboard](#ViewapplicationstatisticsinDashboard)
+
+* [Next steps](#Nextsteps)
+
 
 ## Overview
 
@@ -41,25 +41,25 @@ Appcelerator Platform is available as a service referred as App Builder through 
 
 The Appcelerator Platform consists of several components:
 
-*   **[Axway Appcelerator Studio](/docs/appc/Axway_Appcelerator_Studio/) and [Appcelerator CLI](/docs/appc/Appcelerator_CLI/)**: tools to create and develop your mobile and cloud applications.
-    
-*   **[Alloy Framework](/docs/appc/Alloy_Framework/) and the [Titanium SDK](/docs/appc/Titanium_SDK/)**: an MVC framework and cross-platform SDK to help you rapidly develop mobile applications from a single code base.
-    
-*   **[Axway API Builder](/docs/appc/Axway_API_Builder/)**: an opinionated framework to build and deploy APIs to the cloud that can be consumed by multiple clients.
-    
-*   **[Axway Appcelerator Dashboard](/docs/appc/Appcelerator_Dashboard/)**: a web portal used to monitor your application's heath and usage. This dashboard is aimed for technical users.
-    
-*   **[AMPLIFY Appcelerator Services](/docs/appc/AMPLIFY_Appcelerator_Services/)**: set of features that includes free analytics services, and the performance management and automated testing services, which require an Enterprise subscription.
-    
+* **[Axway Appcelerator Studio](/docs/appc/Axway_Appcelerator_Studio/) and [Appcelerator CLI](/docs/appc/Appcelerator_CLI/)**: tools to create and develop your mobile and cloud applications.
+
+* **[Alloy Framework](/docs/appc/Alloy_Framework/) and the [Titanium SDK](/docs/appc/Titanium_SDK/)**: an MVC framework and cross-platform SDK to help you rapidly develop mobile applications from a single code base.
+
+* **[Axway API Builder](/docs/appc/Axway_API_Builder/)**: an opinionated framework to build and deploy APIs to the cloud that can be consumed by multiple clients.
+
+* **[Axway Appcelerator Dashboard](/docs/appc/Appcelerator_Dashboard/)**: a web portal used to monitor your application's heath and usage. This dashboard is aimed for technical users.
+
+* **[AMPLIFY Appcelerator Services](/docs/appc/AMPLIFY_Appcelerator_Services/)**: set of features that includes free analytics services, and the performance management and automated testing services, which require an Enterprise subscription.
+
 
 To start using the Appcelerator Platform, you need an account to log in to the Appcelerator Dashboard and Axway Appcelerator Studio.
 
-*   If you want to try the Appcelerator Platform for free, [sign up for an Appcelerator Platform account](http://www.appcelerator.com/signup/).
-    
-*   If you are part of an Appcelerator Organization, your organization's Appcelerator Platform administrator sends an invitation to you to log in to the Axway Appcelerator Dashboard and create an account.
-    
-*   If you are an administrator, see [Managing Organizations](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Organizations/) for more information about adding users to your organization's Appcelerator Platform and provisioning them either Dashboard access.
-    
+* If you want to try the Appcelerator Platform for free, [sign up for an Appcelerator Platform account](http://www.appcelerator.com/signup/).
+
+* If you are part of an Appcelerator Organization, your organization's Appcelerator Platform administrator sends an invitation to you to log in to the Axway Appcelerator Dashboard and create an account.
+
+* If you are an administrator, see [Managing Organizations](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Organizations/) for more information about adding users to your organization's Appcelerator Platform and provisioning them either Dashboard access.
+
 
 ## Axway Appcelerator Dashboard
 
@@ -79,27 +79,27 @@ This section guides you through the steps of setting up Axway Appcelerator Studi
 
 In order to run Axway Appcelerator Studio and the Titanium SDK, your system environment must meet the following requirements:
 
-*   **Operating System:** a recent version of Windows, Mac OS X or Ubuntu
-    
-*   **Memory:** 2 GB RAM (available memory, rather than total memory)
-    
-*   **Java Runtime:** Oracle JDK (no other brand of Java is suitable)
-    
-*   **Node.js:** required for the Titanium command-line tools like the CLI, Alloy and AMPLIFY Runtime Services
-    
+* **Operating System:** a recent version of Windows, Mac OS X or Ubuntu
+
+* **Memory:** 2 GB RAM (available memory, rather than total memory)
+
+* **Java Runtime:** Oracle JDK (no other brand of Java is suitable)
+
+* **Node.js:** required for the Titanium command-line tools like the CLI, Alloy and AMPLIFY Runtime Services
+
 
 For Mac OS X and Windows systems, Studio guides your through the process of installing the Oracle JDK and Node.js. For more details, see [Prerequisites](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/).
 
 ### Download and install Studio
 
-1.  Go to [https://platform.axway.com/#/product/studio](https://platform.axway.com/#/product/studio).
-    
-2.  Download the installation file for the version of your operating system.
-    
-3.  Once downloaded, install Axway Appcelerator Studio (App Builder):
-    
-    *   For Mac OS X and Windows systems, run the installer program.
-        
+1. Go to [https://platform.axway.com/#/product/studio](https://platform.axway.com/#/product/studio).
+
+2. Download the installation file for the version of your operating system.
+
+3. Once downloaded, install Axway Appcelerator Studio (App Builder):
+
+  * For Mac OS X and Windows systems, run the installer program.
+
 
 ### Launch and update Studio
 
@@ -117,19 +117,16 @@ The first time you launch Studio the **Platform Configuration** dialog opens. Th
 
 **To install the platform SDKs**:
 
-1.  Select the platforms you want to install.
-    
-2.  Optionally click **Settings** next to each platform to customize the installation configuration. For more details, see [Installing Platform SDKs](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/).
-    
-3.  Click **Configure** to start the installation process.
-    
+1. Select the platforms you want to install.
+
+2. Optionally click **Settings** next to each platform to customize the installation configuration. For more details, see [Installing Platform SDKs](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/).
+
+3. Click **Configure** to start the installation process.
+
 
 Studio begins downloading and installing each SDK you selected, according to the settings you specified. In the case of iOS, Studio launches the App Store application installed on your Mac to the XCode download page.
 
-![PlatformConfigDialog](/Images/appc/download/attachments/37540095/PlatformConfigDialog.png)  
-  
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
+![PlatformConfigDialog](/Images/appc/download/attachments/37540095/PlatformConfigDialog.png)
 
 ## Creating your first mobile app
 
@@ -139,29 +136,29 @@ The following directions guide you through the steps of importing the **Employee
 
 To import the **Employee Directory** sample project:
 
-1.  In the global tool bar, click the **Show Studio Dashboard** icon ![Screen_Shot_2018-03-15_at_16.52.19](/Images/appc/download/thumbnails/43299610/Screen_Shot_2018-03-15_at_16.52.19.png) to open the Axway Appcelerator Studio Dashboard if it is not already open.
-    
-2.  In the Axway Appcelerator Studio Dashboard, locate the **Employee Directory** project.
-    
-3.  Click the **Import Project** button.
-    
-4.  The **New Sample Project** wizard appears. Use the default settings and click the **Finish** button to start importing the sample project.
-    
+1. In the global tool bar, click the **Show Studio Dashboard** icon ![Screen_Shot_2018-03-15_at_16.52.19](/Images/appc/download/thumbnails/43299610/Screen_Shot_2018-03-15_at_16.52.19.png) to open the Axway Appcelerator Studio Dashboard if it is not already open.
+
+2. In the Axway Appcelerator Studio Dashboard, locate the **Employee Directory** project.
+
+3. Click the **Import Project** button.
+
+4. The **New Sample Project** wizard appears. Use the default settings and click the **Finish** button to start importing the sample project.
+
 
 ### Run and test the client application
 
 After the project is imported, run it.
 
-1.  In the **Project Explorer** view, verify your project is selected.
-    
-2.  In the global toolbar, select **Run** from the **Launch Mode** drop-down and select a target to deploy to from the **Target** drop-down.  
-    ![launchmode](/Images/appc/download/attachments/43299610/launchmode.png)
-    
-    The application will not run on a Genymotion emulator because it does not include the Google Play SDK required by the ti.map module.
-    
-3.  Once the application launches, click on profiles to view the detailed information about the contact. Click on the Add to Bookmarks links and the icons below it.  
-    ![app](/Images/appc/download/attachments/43299610/app.png)
-    
+1. In the **Project Explorer** view, verify your project is selected.
+
+2. In the global toolbar, select **Run** from the **Launch Mode** drop-down and select a target to deploy to from the **Target** drop-down.
+  ![launchmode](/Images/appc/download/attachments/43299610/launchmode.png)
+
+  The application will not run on a Genymotion emulator because it does not include the Google Play SDK required by the ti.map module.
+
+3. Once the application launches, click on profiles to view the detailed information about the contact. Click on the Add to Bookmarks links and the icons below it.
+  ![app](/Images/appc/download/attachments/43299610/app.png)
+
 
 If you open and look at the app/controllers/profile.js and app/controllers/directory.js files, you will notice there are several calls to Ti.Analytics methods. Your interaction with the application triggers calls to these methods, which sends data to the Appcelerator servers.
 
@@ -169,33 +166,33 @@ If you open and look at the app/controllers/profile.js and app/controllers/direc
 
 To view the data sent by the client application to the server:
 
-1.  Go to the Axway Appcelerator Dashboard. To get to the Appcelerator Dashboard, either:
-    
-    *   Go back to Axway Appcelerator Studio. click the **Show Studio Dashboard** icon ![Screen_Shot_2018-03-15_at_16.52.19](/Images/appc/download/thumbnails/43299610/Screen_Shot_2018-03-15_at_16.52.19.png) to open the Axway Appcelerator Studio Dashboard, Login with your Appcelerator Platform credentials. Select dashboard and find the imported **Directory app**.
-        
-    *   Go to [https://platform.axway.com/](https://platform.axway.com/). Login with your Appcelerator Platform credentials. Select **Directory** with the mobile phone next to it from **Apps** drop-down list in the top-left corner.
-        
-2.  In the **Overview** tab, view information and statistics about your application.
-    
-3.  Click the **Analytics** tab to see current real-time usage of the client application. Click on **Users** , **Sessions** and **Events** to view different data sets.
-    
+1. Go to the Axway Appcelerator Dashboard. To get to the Appcelerator Dashboard, either:
+
+  * Go back to Axway Appcelerator Studio. click the **Show Studio Dashboard** icon ![Screen_Shot_2018-03-15_at_16.52.19](/Images/appc/download/thumbnails/43299610/Screen_Shot_2018-03-15_at_16.52.19.png) to open the Axway Appcelerator Studio Dashboard, Login with your Appcelerator Platform credentials. Select dashboard and find the imported **Directory app**.
+
+  * Go to [https://platform.axway.com/](https://platform.axway.com/). Login with your Appcelerator Platform credentials. Select **Directory** with the mobile phone next to it from **Apps** drop-down list in the top-left corner.
+
+2. In the **Overview** tab, view information and statistics about your application.
+
+3. Click the **Analytics** tab to see current real-time usage of the client application. Click on **Users** , **Sessions** and **Events** to view different data sets.
+
 
 ![analytics](/Images/appc/download/attachments/43299610/analytics.png)
 
 Let's create an event funnel to track the user flow. To create an event funnel:
 
-1.  While the **Analytics** tab is selected, click **Event Funnels**.
-    
-2.  In the **Enter a Name for your funnel** text box, enter "Bookmarks".
-    
-3.  Drag the <platform>-profile-viewed event to the Funnel.
-    
-4.  Drag the <platform>-profile-addtofavorites-clicked event below the previous event.
-    
-5.  Click **Save**.
-    
-    ![eventfunnel](/Images/appc/download/attachments/43299610/eventfunnel.png)
-    
+1. While the **Analytics** tab is selected, click **Event Funnels**.
+
+2. In the **Enter a Name for your funnel** text box, enter "Bookmarks".
+
+3. Drag the <platform>-profile-viewed event to the Funnel.
+
+4. Drag the <platform>-profile-addtofavorites-clicked event below the previous event.
+
+5. Click **Save**.
+
+  ![eventfunnel](/Images/appc/download/attachments/43299610/eventfunnel.png)
+
 
 The dashboard will display your new event funnel displaying the percentage of users that click the bookmark link when they viewed a profile.
 
@@ -209,12 +206,12 @@ Congratulations! You've just created and ran your first mobile application.
 
 To try out the features of the Appcelerator Platform:
 
-*   See [AMPLIFY Appcelerator Services](/docs/appc/AMPLIFY_Appcelerator_Services/) for information about Appcelerator Analytics, Performance and Test services.
-    
-*   See [Appcelerator Dashboard](/docs/appc/Appcelerator_Dashboard/) for more information about using the Appcelerator Dashboard.
-    
-*   See [Titanium Development](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/) for more information about the developing Titanium applications with Appcelerator Studio, such as code profiling or analysis.
-    
+* See [AMPLIFY Appcelerator Services](/docs/appc/AMPLIFY_Appcelerator_Services/) for information about Appcelerator Analytics, Performance and Test services.
+
+* See [Appcelerator Dashboard](/docs/appc/Appcelerator_Dashboard/) for more information about using the Appcelerator Dashboard.
+
+* See [Titanium Development](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/) for more information about the developing Titanium applications with Appcelerator Studio, such as code profiling or analysis.
+
 
 To integrate Appcelerator Platform Services with native applications, see [AMPLIFY Appcelerator Services Native SDKs](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/).
 

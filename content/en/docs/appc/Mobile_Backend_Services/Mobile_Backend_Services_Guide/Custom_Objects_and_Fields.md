@@ -1,27 +1,27 @@
-{"title":"Custom Objects and Fields","weight":"30"} 
+{"title":"Custom Objects and Fields","weight":"30"}
 
 This document provides information about custom objects and fields, how to create custom objects, adding and removing custom fields, and supported data types.
 
-*   [Custom objects and custom fields](#Customobjectsandcustomfields)
-    
-*   [Creating custom objects](#Creatingcustomobjects)
-    
-*   [Adding custom fields to predefined objects](#Addingcustomfieldstopredefinedobjects)
-    
-*   [Supported data types](#Supporteddatatypes)
-    
-*   [Indexing size limit for custom objects and fields](#Indexingsizelimitforcustomobjectsandfields)
-    
-*   [Geographic coordinates in custom fields](#Geographiccoordinatesincustomfields)
-    
-    *   [Remove a field](#Removeafield)
-        
-    *   [Querying custom fields](#Queryingcustomfields)
-        
-*   [Availability](#Availability)
-    
-*   [iOS](#iOS)
-    
+* [Custom objects and custom fields](#Customobjectsandcustomfields)
+
+* [Creating custom objects](#Creatingcustomobjects)
+
+* [Adding custom fields to predefined objects](#Addingcustomfieldstopredefinedobjects)
+
+* [Supported data types](#Supporteddatatypes)
+
+* [Indexing size limit for custom objects and fields](#Indexingsizelimitforcustomobjectsandfields)
+
+* [Geographic coordinates in custom fields](#Geographiccoordinatesincustomfields)
+
+  * [Remove a field](#Removeafield)
+
+  * [Querying custom fields](#Queryingcustomfields)
+
+* [Availability](#Availability)
+
+* [iOS](#iOS)
+
 
 ## Custom objects and custom fields
 
@@ -227,30 +227,30 @@ Data stored in custom fields other than Array and Hash can be queried together w
 
 The following MBS objects allow you to add one or more extra data fields during create and update actions:
 
-*   [Chats.create](/arrowdb/latest/#!/api/Chats-method-create)
-    
-*   [Checkins.create](/arrowdb/latest/#!/api/Checkins-method-create)
-    
-*   [PhotoCollections.create](/arrowdb/latest/#!/api/PhotoCollections-method-create) and [update](/arrowdb/latest/#!/api/PhotoCollections-method-update)
-    
-*   [Events.create](/arrowdb/latest/#!/api/Events-method-create) and [update](/arrowdb/latest/#!/api/Events-method-update)
-    
-*   [Files.create](/arrowdb/latest/#!/api/Files-method-create) and [update](/arrowdb/latest/#!/api/Files-method-update)
-    
-*   [Messages.create](/arrowdb/latest/#!/api/Messages-method-create)
-    
-*   [Photos.create](/arrowdb/latest/#!/api/Photos-method-create) and [update](/arrowdb/latest/#!/api/Photos-method-update)
-    
-*   [Places.create](/arrowdb/latest/#!/api/Places-method-create) and [update](/arrowdb/latest/#!/api/Places-method-update)
-    
-*   [Posts.create](/arrowdb/latest/#!/api/Posts-method-create) and [update](/arrowdb/latest/#!/api/Posts-method-update)
-    
-*   [Reviews.create](/arrowdb/latest/#!/api/Reviews-method-create) and [update](/arrowdb/latest/#!/api/Reviews-method-update)
-    
-*   [Statuses.create](/arrowdb/latest/#!/api/Statuses-method-create)
-    
-*   [Users.create](/arrowdb/latest/#!/api/Users-method-create) and [update](/arrowdb/latest/#!/api/Users-method-update)
-    
+* [Chats.create](/arrowdb/latest/#!/api/Chats-method-create)
+
+* [Checkins.create](/arrowdb/latest/#!/api/Checkins-method-create)
+
+* [PhotoCollections.create](/arrowdb/latest/#!/api/PhotoCollections-method-create) and [update](/arrowdb/latest/#!/api/PhotoCollections-method-update)
+
+* [Events.create](/arrowdb/latest/#!/api/Events-method-create) and [update](/arrowdb/latest/#!/api/Events-method-update)
+
+* [Files.create](/arrowdb/latest/#!/api/Files-method-create) and [update](/arrowdb/latest/#!/api/Files-method-update)
+
+* [Messages.create](/arrowdb/latest/#!/api/Messages-method-create)
+
+* [Photos.create](/arrowdb/latest/#!/api/Photos-method-create) and [update](/arrowdb/latest/#!/api/Photos-method-update)
+
+* [Places.create](/arrowdb/latest/#!/api/Places-method-create) and [update](/arrowdb/latest/#!/api/Places-method-update)
+
+* [Posts.create](/arrowdb/latest/#!/api/Posts-method-create) and [update](/arrowdb/latest/#!/api/Posts-method-update)
+
+* [Reviews.create](/arrowdb/latest/#!/api/Reviews-method-create) and [update](/arrowdb/latest/#!/api/Reviews-method-update)
+
+* [Statuses.create](/arrowdb/latest/#!/api/Statuses-method-create)
+
+* [Users.create](/arrowdb/latest/#!/api/Users-method-create) and [update](/arrowdb/latest/#!/api/Users-method-update)
+
 
 ## iOS
 

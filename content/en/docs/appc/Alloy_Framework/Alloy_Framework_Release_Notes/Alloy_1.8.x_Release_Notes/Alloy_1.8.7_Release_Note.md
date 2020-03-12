@@ -1,4 +1,4 @@
-{"title":"Alloy 1.8.7 - 19 April 2016","weight":"10"} 
+{"title":"Alloy 1.8.7 - 19 April 2016","weight":"10"}
 
 Alloy 1.8.7 is a patch release that includes one bug fix.
 
@@ -6,4 +6,4 @@ As of this release, the previous Alloy patch release is no longer supported. Not
 
 ## Fixed Issues
 
-*   [ALOY-1492](https://jira.appcelerator.org/browse/ALOY-1492) - Fix no such file or directory when doing "alloy new"
+* [ALOY-1492](https://jira.appcelerator.org/browse/ALOY-1492) - Fix no such file or directory when doing "alloy new"

@@ -1,23 +1,23 @@
-{"title":"Accessing the Log File","weight":"10"} 
+{"title":"Accessing the Log File","weight":"10"}
 
-*   [Overview](#Overview)
-    
-*   [Accessing the Log](#AccessingtheLog)
-    
-    *   [Accessing the Log from Studio/Eclipse](#AccessingtheLogfromStudio/Eclipse)
-        
-    *   [Accessing the Log from the File System](#AccessingtheLogfromtheFileSystem)
-        
-*   [Diagnostic Test](#DiagnosticTest)
-    
-*   [Mobile Projects](#MobileProjects)
-    
-    *   [iOS](#iOS)
-        
-    *   [Android and other platforms](#Androidandotherplatforms)
-        
-*   [JavaScript Web Debugger Log File](#JavaScriptWebDebuggerLogFile)
-    
+* [Overview](#Overview)
+
+* [Accessing the Log](#AccessingtheLog)
+
+  * [Accessing the Log from Studio/Eclipse](#AccessingtheLogfromStudio/Eclipse)
+
+  * [Accessing the Log from the File System](#AccessingtheLogfromtheFileSystem)
+
+* [Diagnostic Test](#DiagnosticTest)
+
+* [Mobile Projects](#MobileProjects)
+
+  * [iOS](#iOS)
+
+  * [Android and other platforms](#Androidandotherplatforms)
+
+* [JavaScript Web Debugger Log File](#JavaScriptWebDebuggerLogFile)
+
 
 ## Overview
 
@@ -37,12 +37,12 @@ In the Studio-specific submenu, navigate to **Help** > **Studio** \> **View Log 
 
 Your current .log file is located in a .metadata folder in your current workspace directory. The following is the path if you are working on the default workspace.
 
-*   Windows XP: C:\\Documents and Settings\\username\\My Documents\\<Studio Workspace>\\.metadata\\.log
-    
-*   Windows Vista/Windows 7: C:\\Users\\username\\Documents\\<Studio Workspace>\\.metadata\\.log
-    
-*   Mac OS X: ~/Documents/<Studio Workspace>/.metadata/.log
-    
+* Windows XP: C:\\Documents and Settings\\username\\My Documents\\<Studio Workspace>\\.metadata\\.log
+
+* Windows Vista/Windows 7: C:\\Users\\username\\Documents\\<Studio Workspace>\\.metadata\\.log
+
+* Mac OS X: ~/Documents/<Studio Workspace>/.metadata/.log
+
 
 ## Diagnostic Test
 
@@ -62,21 +62,21 @@ If you get a console error when building a project, the correct log to submit de
 
 ### iOS
 
-1.  Inside Studio, open the **Project Explorer** view
-    
-2.  Click the small down arrow in the upper-right-corner of the view
-    
-3.  Select **Customize View**
-    
-4.  Scroll down to the bottom of the **Filters** tab and uncheck **Appcelerator Build Folders** or **Titanium Build Folders**
-    
+1. Inside Studio, open the **Project Explorer** view
+
+2. Click the small down arrow in the upper-right-corner of the view
+
+3. Select **Customize View**
+
+4. Scroll down to the bottom of the **Filters** tab and uncheck **Appcelerator Build Folders** or **Titanium Build Folders**
+
 
 You can now see the build folder inside your Titanium projects
 
-1.  Expand the **build/iphone/build** folder
-    
-2.  Attach the **build.log** file, and the output from the console.
-    
+1. Expand the **build/iphone/build** folder
+
+2. Attach the **build.log** file, and the output from the console.
+
 
 Once you have found the log file, you can reverse the above steps to hide the build folders once again.
 

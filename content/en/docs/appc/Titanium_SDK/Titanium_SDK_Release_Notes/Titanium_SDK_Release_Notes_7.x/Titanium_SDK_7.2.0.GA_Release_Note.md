@@ -1,23 +1,23 @@
-{"title":"Titanium SDK 7.2.0.GA - 14 June 2018","weight":"190"} 
+{"title":"Titanium SDK 7.2.0.GA - 14 June 2018","weight":"190"}
 
-*   [About this release](#Aboutthisrelease)
-    
-*   [GDPR](#GDPR)
-    
-    *   [GDPR opt out sample app](#GDPRoptoutsampleapp)
-        
-    *   [External Modules](#ExternalModules)
-        
-    *   [Questions?](#Questions?)
-        
-*   [New features](#Newfeatures)
-    
-*   [Fixed issues](#Fixedissues)
-    
-*   [Improvements](#Improvements)
-    
-*   [API changes](#APIchanges)
-    
+* [About this release](#Aboutthisrelease)
+
+* [GDPR](#GDPR)
+
+  * [GDPR opt out sample app](#GDPRoptoutsampleapp)
+
+  * [External Modules](#ExternalModules)
+
+  * [Questions?](#Questions?)
+
+* [New features](#Newfeatures)
+
+* [Fixed issues](#Fixedissues)
+
+* [Improvements](#Improvements)
+
+* [API changes](#APIchanges)
+
 
 ## About this release
 
@@ -35,12 +35,12 @@ For more information, please refer to Axway's **[Privacy compliance program](htt
 
 You can contact the Axway Data Protection Office by sending an email to **[privacy@axway.com](mailto:privacy@axway.com)**. If you'd like to contact us in writing, see the following list of addresses that best applies to your location:
 
-*   USA: Axway Inc, 6811 E. Mayo Blvd, 4th Floor, Phoenix, AZ 85054, USA
-    
-*   EMEA: Axway Software, Tour W, 102 Terrasse Boieldieu - 92807 Puteaux Cedex, FRANCE
-    
-*   APAC: Axway Australia, Suite 1301, 99 Mount Street, North Sydney, 2060 NSW, AUSTRALIA
-    
+* USA: Axway Inc, 6811 E. Mayo Blvd, 4th Floor, Phoenix, AZ 85054, USA
+
+* EMEA: Axway Software, Tour W, 102 Terrasse Boieldieu - 92807 Puteaux Cedex, FRANCE
+
+* APAC: Axway Australia, Suite 1301, 99 Mount Street, North Sydney, 2060 NSW, AUSTRALIA
+
 
 ### GDPR opt out sample app
 
@@ -78,10 +78,10 @@ Here is a practical example: Let's assume, you have a Ti.UI.Switch instance in y
 
 There are many other components of app-development that should become GDPR-complient as well. Some modules that are already GDPR complient:
 
-*   [Ti.Admob](https://github.com/appcelerator-modules/ti.admob)
-    
-*   [Ti.Firebase](https://github.com/hansemannn/titanium-firebase)
-    
+* [Ti.Admob](https://github.com/appcelerator-modules/ti.admob)
+
+* [Ti.Firebase](https://github.com/hansemannn/titanium-firebase)
+
 
 ### Questions?
 
@@ -89,42 +89,42 @@ If you have further questions about how GDPR works in Titanium, feel free to ope
 
 ## New features
 
-*   [TIMOB-26003](https://jira.appcelerator.org/browse/TIMOB-26003) - Android: Provide API to support opt-out of Analytics at runtime
-    
-    *   Implemented API to support opt-out of Analytics. The following methods have been added:
-        
-        *   Ti.Analytics.optedOut
-            
-        *   Ti.Analytics.setOptedOut(boolean)
-            
-        *   Ti.Analytics.getOptedOut()                      
-            
-*   [TIMOB-26004](https://jira.appcelerator.org/browse/TIMOB-26004) - iOS: Provide API to support opt-out of Analytics at runtime
-    
-    *   Implemented API interface for GDPR compliance
-        
-*   [TIMOB-26005](https://jira.appcelerator.org/browse/TIMOB-26005) - Windows: Provide API to support opt-out of Analytics at runtime
-    
-    *   Implemented API interface for GDPR compliance
-        
+* [TIMOB-26003](https://jira.appcelerator.org/browse/TIMOB-26003) - Android: Provide API to support opt-out of Analytics at runtime
+
+  * Implemented API to support opt-out of Analytics. The following methods have been added:
+
+    * Ti.Analytics.optedOut
+
+    * Ti.Analytics.setOptedOut(boolean)
+
+    * Ti.Analytics.getOptedOut()
+
+* [TIMOB-26004](https://jira.appcelerator.org/browse/TIMOB-26004) - iOS: Provide API to support opt-out of Analytics at runtime
+
+  * Implemented API interface for GDPR compliance
+
+* [TIMOB-26005](https://jira.appcelerator.org/browse/TIMOB-26005) - Windows: Provide API to support opt-out of Analytics at runtime
+
+  * Implemented API interface for GDPR compliance
+
 
 ## Fixed issues
 
-*   [TIMOB-26027](https://jira.appcelerator.org/browse/TIMOB-26027) - Android: Analytics can cause a crash on Android 8 if app is backgrounded
-    
+* [TIMOB-26027](https://jira.appcelerator.org/browse/TIMOB-26027) - Android: Analytics can cause a crash on Android 8 if app is backgrounded
+
 
 ## Improvements
 
-*   [TIMOB-26083](https://jira.appcelerator.org/browse/TIMOB-26083) - Titanium CLI: Add ability opt-out analytics and remove email from analytics payload
-    
-    *   Added option to opt out of analytics in Titanium CLI
-        
-    *   You can opt out using this command: appc ti config cli.analytics false
-        
-*   [TIMOB-26084](https://jira.appcelerator.org/browse/TIMOB-26084) - Remove project directory from analytics payloads
-    
-    *   Removed project directory analytic info when opting out of analytics
-        
+* [TIMOB-26083](https://jira.appcelerator.org/browse/TIMOB-26083) - Titanium CLI: Add ability opt-out analytics and remove email from analytics payload
+
+  * Added option to opt out of analytics in Titanium CLI
+
+  * You can opt out using this command: appc ti config cli.analytics false
+
+* [TIMOB-26084](https://jira.appcelerator.org/browse/TIMOB-26084) - Remove project directory from analytics payloads
+
+  * Removed project directory analytic info when opting out of analytics
+
 
 ## API changes
 

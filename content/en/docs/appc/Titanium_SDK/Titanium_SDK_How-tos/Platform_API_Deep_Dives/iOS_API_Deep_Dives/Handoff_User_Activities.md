@@ -1,21 +1,21 @@
-{"title":"Handoff User Activities","weight":"30"} 
+{"title":"Handoff User Activities","weight":"30"}
 
-*   [Introduction](#Introduction)
-    
-*   [Device Setup](#DeviceSetup)
-    
-*   [Share an Activity](#ShareanActivity)
-    
-    *   [Monitor the Activity](#MonitortheActivity)
-        
-    *   [Update the Activity](#UpdatetheActivity)
-        
-*   [Continue the Activity](#ContinuetheActivity)
-    
-*   [Test the Sample](#TesttheSample)
-    
-*   [Reference](#Reference)
-    
+* [Introduction](#Introduction)
+
+* [Device Setup](#DeviceSetup)
+
+* [Share an Activity](#ShareanActivity)
+
+  * [Monitor the Activity](#MonitortheActivity)
+
+  * [Update the Activity](#UpdatetheActivity)
+
+* [Continue the Activity](#ContinuetheActivity)
+
+* [Test the Sample](#TesttheSample)
+
+* [Reference](#Reference)
+
 
 ## Introduction
 
@@ -27,14 +27,14 @@ Note that you can only test handoff on device. You cannot test handoff on the iO
 
 To use handoff, both devices must:
 
-*   Be logged into the same iCloud account
-    
-*   Be on the same Wi-Fi network
-    
-*   Have Bluetooth enabled
-    
-*   Have Handoff enabled
-    
+* Be logged into the same iCloud account
+
+* Be on the same Wi-Fi network
+
+* Have Bluetooth enabled
+
+* Have Handoff enabled
+
 
 For detailed instructions, see [Apple Support: Use Continuity to connect your iPhone, iPad, iPod touch, and Mac](https://support.apple.com/en-us/HT204681).
 
@@ -46,26 +46,26 @@ To share an Activity, create an UserActivity object and set it as the current ac
 
 To create an Activity, use the Titanium.App.iOS.createUserActivity() method. Pass the method a dictionary with following properties defined. The activityType property is the only required property.
 
-*   activityType: developer-defined string used as the activity type for the user activity. The activity type must be registered in the plist section of the tiapp.xml file to use it.
-    
-*   eligibleForHandOff: set to true to allow the activity to be handed off to another device. Default is true. **Requires iOS 9.0 or later.**
-    
-*   eligibleForPublicIndexing: set to true to allow the activity to be indexed publicly allowing it to be search by all users. Must also set the requiredUserInfoKey or webpageURL properties. Default is false. **Requires iOS 9.0 or later.**
-    
-*   eligibleForSearch: set to true to allow the activity to be added to the on-device index. Default is false. **Requires iOS 9.0 or later.**
-    
-*   expirationDate: date that the activity expires in the format: yyyy-MM-ddTHH:mm:ss.SSS+0000. If not set, the OS will determine the expiration time.
-    
-*   keywords: array of strings that a user can use to find the activity in Spotlight. You can also use the UserActivity object's addContentAttributeSet() method to add indexable content. **Both APIs require iOS 9.0 or later.**
-    
-*   requiredUserInfoKey: array of keys that need to be sent in the userInfo object. **Requires iOS 9.0 or later.**
-    
-*   title: user-visible title for the activity, such as a document name or webpage URL.
-    
-*   userInfo: object of key-value pairs to send with the activity
-    
-*   webpageURL: if a suitable application is not found on the device, loads the specified web page and continues the activity in the browser. Only supports the http:// and https:// protocols. Any other protocol will throw an error.
-    
+* activityType: developer-defined string used as the activity type for the user activity. The activity type must be registered in the plist section of the tiapp.xml file to use it.
+
+* eligibleForHandOff: set to true to allow the activity to be handed off to another device. Default is true. **Requires iOS 9.0 or later.**
+
+* eligibleForPublicIndexing: set to true to allow the activity to be indexed publicly allowing it to be search by all users. Must also set the requiredUserInfoKey or webpageURL properties. Default is false. **Requires iOS 9.0 or later.**
+
+* eligibleForSearch: set to true to allow the activity to be added to the on-device index. Default is false. **Requires iOS 9.0 or later.**
+
+* expirationDate: date that the activity expires in the format: yyyy-MM-ddTHH:mm:ss.SSS+0000. If not set, the OS will determine the expiration time.
+
+* keywords: array of strings that a user can use to find the activity in Spotlight. You can also use the UserActivity object's addContentAttributeSet() method to add indexable content. **Both APIs require iOS 9.0 or later.**
+
+* requiredUserInfoKey: array of keys that need to be sent in the userInfo object. **Requires iOS 9.0 or later.**
+
+* title: user-visible title for the activity, such as a document name or webpage URL.
+
+* userInfo: object of key-value pairs to send with the activity
+
+* webpageURL: if a suitable application is not found on the device, loads the specified web page and continues the activity in the browser. Only supports the http:// and https:// protocols. Any other protocol will throw an error.
+
 
 Once you are ready to share the activity, use the supported property to check if the user activity is supported by the application, then invoke its becomeCurrent() method to indicate that the activity is in use by the current device.
 

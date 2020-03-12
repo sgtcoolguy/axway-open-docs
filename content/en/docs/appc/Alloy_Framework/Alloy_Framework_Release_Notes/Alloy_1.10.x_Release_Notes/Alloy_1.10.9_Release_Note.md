@@ -1,4 +1,4 @@
-{"title":"Alloy 1.10.9 - 17 November 2017","weight":"30"} 
+{"title":"Alloy 1.10.9 - 17 November 2017","weight":"30"}
 
 Alloy 1.10.9 is a patch release that includes one bug fix.
 
@@ -6,4 +6,4 @@ As of this release, the previous Alloy patch release is no longer supported. Not
 
 ## Fixed issue
 
-*   [ALOY-1590](https://jira.appcelerator.org/browse/ALOY-1590): OS\_IOS assigned to a variable causes a crash
+* [ALOY-1590](https://jira.appcelerator.org/browse/ALOY-1590): OS\_IOS assigned to a variable causes a crash

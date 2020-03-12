@@ -1,4 +1,4 @@
-{"title":"Proxy Properties","weight":"140"} 
+{"title":"Proxy Properties","weight":"140"}
 
 Demonstrates expressing properties of Titanium objects with Alloy proxy elements.
 
@@ -8,30 +8,30 @@ You can find this example app in the Alloy repository under [samples/apps/ui/pro
 
 Many Titanium UI objects and properties can be declared in Alloy as mark-up. These mark-up elements are considered proxies for the underlying Titanium APIs. For example, the [views/ios/index.xml](#ios) view, shown below, uses the following proxies.
 
-*   <NavigationWindow/>
-    
-*   <Window/>
-    
-*   <Button/>
-    
-    *   <LeftNavButton/>
-        
-    *   <RightNavButton/>
-        
-    *   <TitleControl/>
-        
-*   <TextField/>
-    
-    *   <LeftButton/>
-        
-    *   <RightButton/>
-        
-    *   <KeyboardToolbar/>
-        
-        *   <Toolbar/>
-            
-            *   <Items/>
-                
+* <NavigationWindow/>
+
+* <Window/>
+
+* <Button/>
+
+  * <LeftNavButton/>
+
+  * <RightNavButton/>
+
+  * <TitleControl/>
+
+* <TextField/>
+
+  * <LeftButton/>
+
+  * <RightButton/>
+
+  * <KeyboardToolbar/>
+
+    * <Toolbar/>
+
+      * <Items/>
+
 
 Proxies that represent properties of objects are nested inside the parent element. For example, a <Window/> element's [leftNavProperty](#!/api/Titanium.UI.Window-property-leftNavButton) is represented by a <LeftNavButton/> child element. Proxies can nest multiple levels, as shown with the Toolbar element in the XML view below.
 
@@ -189,4 +189,4 @@ views/table.xml
 
 ## See also
 
-*   [Proxy Properties](#undefined)
+* [Proxy Properties](#undefined)

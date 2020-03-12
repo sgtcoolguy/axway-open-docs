@@ -1,43 +1,43 @@
-{"title":"CommonJS Modules in Titanium","weight":"20"} 
+{"title":"CommonJS Modules in Titanium","weight":"20"}
 
-*   [Synopsis](#Synopsis)
-    
-    *   [Definitions](#Definitions)
-        
-*   [CommonJS Module Specification implementation](#CommonJSModuleSpecificationimplementation)
-    
-    *   [Simple usage](#Simpleusage)
-        
-    *   [Native/Compiled versus JavaScript modules](#Native/CompiledversusJavaScriptmodules)
-        
-        *   [Native/Compiled modules](#Native/Compiledmodules)
-            
-        *   [JavaScript modules](#JavaScriptmodules)
-            
-    *   [JavaScript module path resolution](#JavaScriptmodulepathresolution)
-        
-    *   [JavaScript module composition](#JavaScriptmodulecomposition)
-        
-        *   [Antipatterns and unsupported behavior](#Antipatternsandunsupportedbehavior)
-            
-    *   [Caching](#Caching)
-        
-    *   [Security and sandboxing](#Securityandsandboxing)
-        
-        *   [Stateful modules](#Statefulmodules)
-            
-        *   [Global variables](#Globalvariables)
-            
-*   [JavaScript module examples](#JavaScriptmoduleexamples)
-    
-    *   [Utility libraries](#Utilitylibraries)
-        
-    *   [Packages of related functionality](#Packagesofrelatedfunctionality)
-        
-    *   [Instantiable objects](#Instantiableobjects)
-        
-    *   [Node.js support](#Node.jssupport)
-        
+* [Synopsis](#Synopsis)
+
+  * [Definitions](#Definitions)
+
+* [CommonJS Module Specification implementation](#CommonJSModuleSpecificationimplementation)
+
+  * [Simple usage](#Simpleusage)
+
+  * [Native/Compiled versus JavaScript modules](#Native/CompiledversusJavaScriptmodules)
+
+    * [Native/Compiled modules](#Native/Compiledmodules)
+
+    * [JavaScript modules](#JavaScriptmodules)
+
+  * [JavaScript module path resolution](#JavaScriptmodulepathresolution)
+
+  * [JavaScript module composition](#JavaScriptmodulecomposition)
+
+    * [Antipatterns and unsupported behavior](#Antipatternsandunsupportedbehavior)
+
+  * [Caching](#Caching)
+
+  * [Security and sandboxing](#Securityandsandboxing)
+
+    * [Stateful modules](#Statefulmodules)
+
+    * [Global variables](#Globalvariables)
+
+* [JavaScript module examples](#JavaScriptmoduleexamples)
+
+  * [Utility libraries](#Utilitylibraries)
+
+  * [Packages of related functionality](#Packagesofrelatedfunctionality)
+
+  * [Instantiable objects](#Instantiableobjects)
+
+  * [Node.js support](#Node.jssupport)
+
 
 ## Synopsis
 
@@ -47,14 +47,14 @@ Since Titanium SDK 7.1.0, you can also use ES6+ classes to export your modules i
 
 ### Definitions
 
-*   **Module** - Any CommonJS-compliant module which will be consumed in a Titanium Mobile application. This can be a JavaScript file included with an application, or a native extension to Titanium which exposes a JavaScript API.
-    
-*   **Resources** - The Resources directory of a Titanium application, where the user's source code lives before any processing by our build system. **Note**: For Alloy, CommonJS modules are placed in app/lib
-    
-*   exports - a free variable within a module, to which multiple properties may be added to create a public interface
-    
-*   module.exports - an object within a module, which may be REPLACED by an object representing the public interface to the module
-    
+* **Module** - Any CommonJS-compliant module which will be consumed in a Titanium Mobile application. This can be a JavaScript file included with an application, or a native extension to Titanium which exposes a JavaScript API.
+
+* **Resources** - The Resources directory of a Titanium application, where the user's source code lives before any processing by our build system. **Note**: For Alloy, CommonJS modules are placed in app/lib
+
+* exports - a free variable within a module, to which multiple properties may be added to create a public interface
+
+* module.exports - an object within a module, which may be REPLACED by an object representing the public interface to the module
+
 
 ## CommonJS Module Specification implementation
 
@@ -106,12 +106,12 @@ Similarly, if the path is prefixed with a /, the module path is also resolved re
 
 Relative paths may be specified as well. Assume we have modules located in the following locations:
 
-*   Resources/app/ui/SomeCustomView.js
-    
-*   Resources/app/ui/widgets/SomeOtherCustomView.js
-    
-*   Resources/app/lib/myModule.js
-    
+* Resources/app/ui/SomeCustomView.js
+
+* Resources/app/ui/widgets/SomeOtherCustomView.js
+
+* Resources/app/lib/myModule.js
+
 
 Now assume we are writing code inside the SomeCustomView.js module file. The following are valid require statements:
 

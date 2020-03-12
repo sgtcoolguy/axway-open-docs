@@ -1,4 +1,4 @@
-{"title":"Proxy Property Requires","weight":"150"} 
+{"title":"Proxy Property Requires","weight":"150"}
 
 Demonstrates using Require and Widget elements to create Titanium proxy properties.
 
@@ -106,4 +106,4 @@ Note that a <Widget/> element is equivalent to a <Require/> element with its **t
 
 ## See also
 
-*   [Proxy Properties](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/User_Interface/Proxy_Properties/)
+* [Proxy Properties](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/User_Interface/Proxy_Properties/)

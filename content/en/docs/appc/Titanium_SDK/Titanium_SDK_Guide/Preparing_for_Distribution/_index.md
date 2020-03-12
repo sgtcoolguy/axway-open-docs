@@ -1,4 +1,4 @@
-{"title":"Preparing for Distribution","weight":"70"} 
+{"title":"Preparing for Distribution","weight":"70"}
 
 In this chapter, you'll look at how you can deploy and distribute your app. We have chosen to use the verb "deploy" to mean installing your app onto a device, either locally attached or remote, for the purposes of testing. We use "distribute" to mean publishing your app to the Market or App Store or some other means of general distribution.
 

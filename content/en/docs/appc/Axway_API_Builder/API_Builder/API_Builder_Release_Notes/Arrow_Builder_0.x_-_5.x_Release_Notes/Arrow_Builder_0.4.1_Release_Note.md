@@ -1,4 +1,4 @@
-{"title":"Arrow Builder 0.4.1 Release Note","weight":"100"} 
+{"title":"Arrow Builder 0.4.1 Release Note","weight":"100"}
 
 API Builder 3.x is deprecated
 
@@ -12,6 +12,6 @@ Arrow Builder 0.4.1 is a patch release, addressing high-priority issues from pre
 
 ### Fixed Issues
 
-*   API-812: When using SSL via api doc, a browser security exception is received
-    
-*   API-813: Using Count which matches 0 records should not return 404, but 200 with a result of 0
+* API-812: When using SSL via api doc, a browser security exception is received
+
+* API-813: Using Count which matches 0 records should not return 404, but 200 with a result of 0

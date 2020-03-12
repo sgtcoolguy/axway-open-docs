@@ -1,15 +1,15 @@
-{"title":"Titanium Angular - Limitations and Workarounds","weight":"50"} 
+{"title":"Titanium Angular - Limitations and Workarounds","weight":"50"}
 
-*   [TypeScript API](#TypeScriptAPI)
-    
-*   [Working with Titanium elements](#WorkingwithTitaniumelements)
-    
-    *   [Accessing the Titanium view/proxy of template elements](#AccessingtheTitaniumview/proxyoftemplateelements)
-        
-    *   [Configuring template elements programmatically](#Configuringtemplateelementsprogrammatically)
-        
-*   [Titanium Router](#TitaniumRouter)
-    
+* [TypeScript API](#TypeScriptAPI)
+
+* [Working with Titanium elements](#WorkingwithTitaniumelements)
+
+  * [Accessing the Titanium view/proxy of template elements](#AccessingtheTitaniumview/proxyoftemplateelements)
+
+  * [Configuring template elements programmatically](#Configuringtemplateelementsprogrammatically)
+
+* [Titanium Router](#TitaniumRouter)
+
 
 Titanium Angular is currently in an early preview stage. This means that some features are still under development or already available features may still be buggy.
 
@@ -35,24 +35,24 @@ Oh, and don't forget to file a bug report under the [FRAME](https://jira.appcele
 
 The basic features of all elements under the UI namespace are supported as of now. However, some platform specific views are still missing. Please refer to the following list to see which elements are **NOT** yet supported in templates (you can still create them programmatically in your components):
 
-*   Android
-    
-    *   DrawerLayout
-        
-    *   ProgressIndicator
-        
-    *   SearchView
-        
-*   iOS
-    
-    *   CoverFlowView
-        
-    *   SplitWindow
-        
-*   Multiple platforms
-    
-    *   NavigationWindow
-        
+* Android
+
+  * DrawerLayout
+
+  * ProgressIndicator
+
+  * SearchView
+
+* iOS
+
+  * CoverFlowView
+
+  * SplitWindow
+
+* Multiple platforms
+
+  * NavigationWindow
+
 
 ### Accessing the Titanium view/proxy of template elements
 

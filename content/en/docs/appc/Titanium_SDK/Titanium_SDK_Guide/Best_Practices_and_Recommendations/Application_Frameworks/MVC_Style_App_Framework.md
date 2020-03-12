@@ -1,39 +1,39 @@
-{"title":"MVC Style App Framework","weight":"10"} 
+{"title":"MVC Style App Framework","weight":"10"}
 
 This document contains information on where to download the project scaffold, overview of core concepts and conventions, events, managing orientation UI and cross-platform and form factor files, and app namespace.
 
-*   [Download](#Download)
-    
-*   [Core Concepts and Conventions](#CoreConceptsandConventions)
-    
-    *   [Standard Patterns](#StandardPatterns)
-        
-    *   [Global Namespace](#GlobalNamespace)
-        
-    *   [Models](#Models)
-        
-    *   [UI and Styles](#UIandStyles)
-        
-    *   [Controllers](#Controllers)
-        
-    *   [Modules](#Modules)
-        
-*   [Events](#Events)
-    
-*   [Managing Orientation UI](#ManagingOrientationUI)
-    
-*   [Managing cross-platform and form factor files](#Managingcross-platformandformfactorfiles)
-    
-    *   [Form Factors](#FormFactors)
-        
-    *   [Cross platform and type handling](#Crossplatformandtypehandling)
-        
-*   [The 'App' Namespace](#The'App'Namespace)
-    
-    *   [App.API](#App.API)
-        
-    *   [App.Platform](#App.Platform)
-        
+* [Download](#Download)
+
+* [Core Concepts and Conventions](#CoreConceptsandConventions)
+
+  * [Standard Patterns](#StandardPatterns)
+
+  * [Global Namespace](#GlobalNamespace)
+
+  * [Models](#Models)
+
+  * [UI and Styles](#UIandStyles)
+
+  * [Controllers](#Controllers)
+
+  * [Modules](#Modules)
+
+* [Events](#Events)
+
+* [Managing Orientation UI](#ManagingOrientationUI)
+
+* [Managing cross-platform and form factor files](#Managingcross-platformandformfactorfiles)
+
+  * [Form Factors](#FormFactors)
+
+  * [Cross platform and type handling](#Crossplatformandtypehandling)
+
+* [The 'App' Namespace](#The'App'Namespace)
+
+  * [App.API](#App.API)
+
+  * [App.Platform](#App.Platform)
+
 
 ## Download
 
@@ -121,10 +121,10 @@ Global events will not be placed inside instantiable objects. Global events will
 
 Titanium doesn't handle different layouts in orientation very well (because of absence of NIB files, etc.) so care must be taken in how this is setup. The design for this project isn't overly complex so it likely won't be a factor. Orientation management will be handled in two ways:
 
-1.  Via the controller – For complex orientation handling the controller will need an 'orientationUpdate()' method. This will handle all orientation needs the controller is managing.
-    
-2.  Via the UI – This is the most common scenario. The orientationObserverUpdate method will check if the current controller's UI and other listening objects have an orientationUpdate() method in the UI namespace. If so it will fire them and the UI will update accordingly. NOTE: See /ui/dashboard/dashboard.js for an example.
-    
+1. Via the controller – For complex orientation handling the controller will need an 'orientationUpdate()' method. This will handle all orientation needs the controller is managing.
+
+2. Via the UI – This is the most common scenario. The orientationObserverUpdate method will check if the current controller's UI and other listening objects have an orientationUpdate() method in the UI namespace. If so it will fire them and the UI will update accordingly. NOTE: See /ui/dashboard/dashboard.js for an example.
+
 
 Either method above will pass a landscape / portrait argument which can be used by the UI's corresponding style sheet. e.g.
 
@@ -262,59 +262,59 @@ To avoid excessive dirty nesting like the above example, branch by file will be 
 
 There are numerous properties to be appended to the 'App' namespace. The following is an initial list:
 
-*   App.formFactor - Used for the different form factored layouts e.g. tablet / handheld
-    
-*   App.API - Data endpoints and other API-ish things. A full set of App API areas for data (if needed). Good for storing PDO models and such.
-    
-*   App.Models - Where models are stored
-    
-*   App.Controllers - Where controllers are stored
-    
-*   App.UI - UI components stored here
-    
-*   App.Styles - Styles objects here
-    
-*   App.Sidebar - Quick access to the sidebar module
-    
-*   App.currentPanel - If using the GlobalPanels, this just tracks the current one open. Might not be needed.
-    
-*   App.Plugins - Place to put 3rd party plugins that don't fall in the category of a module or anything else.
-    
-*   App.Window - The global window this app uses
-    
-*   App.currentOrientation - The Current orientation landscape || portrait
-    
-*   App.Header - The top navigation area
-    
-*   App.boot - Handles booting up the app once things are loaded in
-    
-*   App.globalTopNavigationObserver - Handles global event for sidebar flyouts
-    
-*   App.sidebarMenuObserver - Handles global event for sidebar menus
-    
-*   App.onAfterAuthentication - Handles authentication routing after authentication is confirmed
-    
-*   App.orientationObserverUpdate - Handles orientation update
-    
+* App.formFactor - Used for the different form factored layouts e.g. tablet / handheld
+
+* App.API - Data endpoints and other API-ish things. A full set of App API areas for data (if needed). Good for storing PDO models and such.
+
+* App.Models - Where models are stored
+
+* App.Controllers - Where controllers are stored
+
+* App.UI - UI components stored here
+
+* App.Styles - Styles objects here
+
+* App.Sidebar - Quick access to the sidebar module
+
+* App.currentPanel - If using the GlobalPanels, this just tracks the current one open. Might not be needed.
+
+* App.Plugins - Place to put 3rd party plugins that don't fall in the category of a module or anything else.
+
+* App.Window - The global window this app uses
+
+* App.currentOrientation - The Current orientation landscape || portrait
+
+* App.Header - The top navigation area
+
+* App.boot - Handles booting up the app once things are loaded in
+
+* App.globalTopNavigationObserver - Handles global event for sidebar flyouts
+
+* App.sidebarMenuObserver - Handles global event for sidebar menus
+
+* App.onAfterAuthentication - Handles authentication routing after authentication is confirmed
+
+* App.orientationObserverUpdate - Handles orientation update
+
 
 ### App.API
 
 This area handles the data layers of the app.
 
-*   setupDatabase - Sets up a local sqlite database schema
-    
-*   DB - The data ORM endpoint (using the Joli plugin)
-    
-*   Salesforce - Endpoint for all salesforce calls. This includes the salesforce module and the evently module
-    
-*   tableSchemas - Stores the field names / schema for the database
-    
-*   sessionRefresh - This will try to log in the previously logged in user
-    
-*   syncModel - Syncs the supplied data to local storage
-    
-*   syncFullEvent - Sync full event (all models: sessions, registration, etc)
-    
+* setupDatabase - Sets up a local sqlite database schema
+
+* DB - The data ORM endpoint (using the Joli plugin)
+
+* Salesforce - Endpoint for all salesforce calls. This includes the salesforce module and the evently module
+
+* tableSchemas - Stores the field names / schema for the database
+
+* sessionRefresh - This will try to log in the previously logged in user
+
+* syncModel - Syncs the supplied data to local storage
+
+* syncFullEvent - Sync full event (all models: sessions, registration, etc)
+
 
 ### App.Platform
 

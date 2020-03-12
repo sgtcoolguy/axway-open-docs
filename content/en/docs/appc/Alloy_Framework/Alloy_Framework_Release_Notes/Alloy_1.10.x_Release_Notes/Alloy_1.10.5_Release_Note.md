@@ -1,4 +1,4 @@
-{"title":"Alloy 1.10.5 - 17 September 2017","weight":"70"} 
+{"title":"Alloy 1.10.5 - 17 September 2017","weight":"70"}
 
 Alloy 1.10.5 is a patch release that includes one bug fix.
 
@@ -6,4 +6,4 @@ As of this release, the previous Alloy patch release is no longer supported. Not
 
 ## Fixed issue
 
-*   [ALOY-1582](https://jira.appcelerator.org/browse/ALOY-1582): Fix Ti.Platform.osname on Windows
+* [ALOY-1582](https://jira.appcelerator.org/browse/ALOY-1582): Fix Ti.Platform.osname on Windows

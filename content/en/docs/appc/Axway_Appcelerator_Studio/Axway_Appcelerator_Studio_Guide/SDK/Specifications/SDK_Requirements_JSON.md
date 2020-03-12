@@ -1,17 +1,17 @@
-{"title":"SDK Requirements JSON","weight":"60"} 
+{"title":"SDK Requirements JSON","weight":"60"}
 
-*   [Overview](#Overview)
-    
-*   [Versioning](#Versioning)
-    
-*   [Overall Structure](#OverallStructure)
-    
-*   [Android SDKs](#AndroidSDKs)
-    
-*   [iOS](#iOS)
-    
-*   [Complete Example](#CompleteExample)
-    
+* [Overview](#Overview)
+
+* [Versioning](#Versioning)
+
+* [Overall Structure](#OverallStructure)
+
+* [Android SDKs](#AndroidSDKs)
+
+* [iOS](#iOS)
+
+* [Complete Example](#CompleteExample)
+
 
 ## Overview
 
@@ -67,22 +67,22 @@ Android requires a number of different items to be installed. Due to complexitie
 
 Structure:
 
-*   "android"
-    
-    *   platform ("osx"/"win32")
-        
-        *   requiredAddOns: array of strings, corresponding with Google add-on names
-            
-        *   requiredSDKTools: array of integers, corresponding with Google SDK Tooling levels
-            
-        *   requiredPlatformTools: array of integers, corresponding with Google Platform levels (2.1 == 7, 2.2 == 8, etc.)
-            
-        *   requiredPlatforms: array of regular expression strings, corresponding with Google Platform levels
-            
-        *   sdkURL: String to .zip file of latest SDK download location
-            
-        *   jdkURL (Windows only): String to .zip file of latest JDK download installation
-            
+* "android"
+
+  * platform ("osx"/"win32")
+
+    * requiredAddOns: array of strings, corresponding with Google add-on names
+
+    * requiredSDKTools: array of integers, corresponding with Google SDK Tooling levels
+
+    * requiredPlatformTools: array of integers, corresponding with Google Platform levels (2.1 == 7, 2.2 == 8, etc.)
+
+    * requiredPlatforms: array of regular expression strings, corresponding with Google Platform levels
+
+    * sdkURL: String to .zip file of latest SDK download location
+
+    * jdkURL (Windows only): String to .zip file of latest JDK download installation
+
 
 `{`
 

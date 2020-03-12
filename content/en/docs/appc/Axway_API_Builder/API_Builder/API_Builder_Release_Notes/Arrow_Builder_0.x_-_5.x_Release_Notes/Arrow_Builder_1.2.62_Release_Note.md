@@ -1,4 +1,4 @@
-{"title":"Arrow Builder 1.2.62 Release Note","weight":"50"} 
+{"title":"Arrow Builder 1.2.62 Release Note","weight":"50"}
 
 API Builder 3.x is deprecated
 
@@ -12,21 +12,21 @@ Arrow Builder 1.2.62 is a patch release, addressing high-priority issues from pr
 
 ### New Features
 
-*   Create a Swagger Interface as part of the API documentation. For details, see [API Builder APIs](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_APIs/).
-    
-*   Support clearing local logs in the Admin Console.
-    
+* Create a Swagger Interface as part of the API documentation. For details, see [API Builder APIs](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_APIs/).
+
+* Support clearing local logs in the Admin Console.
+
 
 ### Fixed Issues
 
-*   API-1013: Logs in the root directory caused the server to reload
-    
-*   API-1015: Server should not restart on certain file/directory changes, such as web/public, web/views/ and package.json
-    
-*   API-1026: Cannot set model fields during a POST in a pre-block on an ArrowDB model
-    
-*   API-1027: Transaction logs still have too much unnecessary data in them
-    
-*   API-1030: Server size was not being applied using appc 5.0.0-30
-    
-*   API-1033: Disable memwatch
+* API-1013: Logs in the root directory caused the server to reload
+
+* API-1015: Server should not restart on certain file/directory changes, such as web/public, web/views/ and package.json
+
+* API-1026: Cannot set model fields during a POST in a pre-block on an ArrowDB model
+
+* API-1027: Transaction logs still have too much unnecessary data in them
+
+* API-1030: Server size was not being applied using appc 5.0.0-30
+
+* API-1033: Disable memwatch

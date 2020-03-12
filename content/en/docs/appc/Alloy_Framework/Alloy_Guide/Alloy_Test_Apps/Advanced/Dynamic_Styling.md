@@ -1,17 +1,17 @@
-{"title":"Dynamic Styling","weight":"60"} 
+{"title":"Dynamic Styling","weight":"60"}
 
-*   [Raw style modules](#Rawstylemodules)
-    
-*   [Creating and using style objects](#Creatingandusingstyleobjects)
-    
-*   [Creating styled Titanium proxies](#CreatingstyledTitaniumproxies)
-    
-*   [Adding and removing TSS classes](#AddingandremovingTSSclasses)
-    
-*   [Autostyle property](#Autostyleproperty)
-    
-*   [See also](#Seealso)
-    
+* [Raw style modules](#Rawstylemodules)
+
+* [Creating and using style objects](#Creatingandusingstyleobjects)
+
+* [Creating styled Titanium proxies](#CreatingstyledTitaniumproxies)
+
+* [Adding and removing TSS classes](#AddingandremovingTSSclasses)
+
+* [Autostyle property](#Autostyleproperty)
+
+* [See also](#Seealso)
+
 
 Demonstrates different approaches to [changing styles at runtime](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Dynamic_Styles/) in Alloy. The sample application displays a menu of options that discuss or demonstrate the different approaches and techniques for dynamic styling. See each section below for a discussion of each approach.
 
@@ -413,4 +413,4 @@ There is a small performance overhead associated with enabling auto-styling on c
 
 ## See also
 
-*   [Dynamic Styles](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Dynamic_Styles/)
+* [Dynamic Styles](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Dynamic_Styles/)

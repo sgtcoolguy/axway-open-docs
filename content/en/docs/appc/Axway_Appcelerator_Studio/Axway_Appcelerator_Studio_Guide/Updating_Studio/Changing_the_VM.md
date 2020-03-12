@@ -1,4 +1,4 @@
-{"title":"Changing the VM Used with Studio","weight":"60"} 
+{"title":"Changing the VM Used with Studio","weight":"60"}
 
 Some Studio users may need to change the VM they use for running Studio. These instructions describe how to switch between GCJ and Sun's JVM.
 

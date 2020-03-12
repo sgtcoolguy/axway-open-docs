@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 6.2.1.GA - 11 May 2017","weight":"80"} 
+{"title":"Appcelerator CLI 6.2.1.GA - 11 May 2017","weight":"80"}
 
 Appcelerator CLI 6.2.1.GA is a patch release that includes three bug fixes.
 
@@ -26,8 +26,8 @@ Titanium CLI
 
 ## Fixed issues
 
-*   [CLI-1009](https://jira.appcelerator.org/browse/CLI-1009) - "appc ti -v" should not require login
-    
-*   [CLI-1188](https://jira.appcelerator.org/browse/CLI-1188) - cannot create app when ACA is installed
-    
-*   [CLI-1195](https://jira.appcelerator.org/browse/CLI-1195) - Pass app original org\_id with every build upload
+* [CLI-1009](https://jira.appcelerator.org/browse/CLI-1009) - "appc ti -v" should not require login
+
+* [CLI-1188](https://jira.appcelerator.org/browse/CLI-1188) - cannot create app when ACA is installed
+
+* [CLI-1195](https://jira.appcelerator.org/browse/CLI-1195) - Pass app original org\_id with every build upload

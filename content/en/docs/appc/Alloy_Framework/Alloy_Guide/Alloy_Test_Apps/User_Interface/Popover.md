@@ -1,4 +1,4 @@
-{"title":"Popover","weight":"130"} 
+{"title":"Popover","weight":"130"}
 
 Demonstrates how to use a PopOver control iPad devices to present temporary information.
 
@@ -130,6 +130,6 @@ app/controllers/index.js
 
 ## See also
 
-*   [Titanium.UI.iPad.Popover](#!/api/Titanium.UI.iPad.Popover) API reference
-    
-*   [PopoverParams (abstract type](#!/api/PopoverParams)) API reference
+* [Titanium.UI.iPad.Popover](#!/api/Titanium.UI.iPad.Popover) API reference
+
+* [PopoverParams (abstract type](#!/api/PopoverParams)) API reference

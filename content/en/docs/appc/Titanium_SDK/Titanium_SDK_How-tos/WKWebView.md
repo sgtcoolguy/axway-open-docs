@@ -1,41 +1,41 @@
-{"title":"WKWebView","weight":"190"} 
+{"title":"WKWebView","weight":"190"}
 
-*   [Overview](#Overview)
-    
-*   [Requirements](#Requirements)
-    
-*   [Titanium SDK 8.0.0 release](#TitaniumSDK8.0.0release)
-    
-*   [Features](#Features)
-    
-    *   [API's](#API's)
-        
-    *   [WebView](#WebView)
-        
-        *   [Properties](#Properties)
-            
-        *   [Methods](#Methods)
-            
-        *   [Events](#Events)
-            
-        *   [Constants](#Constants)
-            
-        *   [WebView <-> App Communication](#WebView<->AppCommunication)
-            
-        *   [Saving Images](#SavingImages)
-            
-        *   [Inter-App Communication](#Inter-AppCommunication)
-            
-        *   [Generic Property Observing](#GenericPropertyObserving)
-            
-    *   [Configuration](#Configuration)
-        
-        *   [Properties](#Properties.1)
-            
-    *   [Process pool](#Processpool)
-        
-    *   [Handle custom URL-schemes](#HandlecustomURL-schemes)
-        
+* [Overview](#Overview)
+
+* [Requirements](#Requirements)
+
+* [Titanium SDK 8.0.0 release](#TitaniumSDK8.0.0release)
+
+* [Features](#Features)
+
+  * [API's](#API's)
+
+  * [WebView](#WebView)
+
+    * [Properties](#Properties)
+
+    * [Methods](#Methods)
+
+    * [Events](#Events)
+
+    * [Constants](#Constants)
+
+    * [WebView <-> App Communication](#WebView<->AppCommunication)
+
+    * [Saving Images](#SavingImages)
+
+    * [Inter-App Communication](#Inter-AppCommunication)
+
+    * [Generic Property Observing](#GenericPropertyObserving)
+
+  * [Configuration](#Configuration)
+
+    * [Properties](#Properties.1)
+
+  * [Process pool](#Processpool)
+
+  * [Handle custom URL-schemes](#HandlecustomURL-schemes)
+
 
 ## Overview
 
@@ -43,12 +43,12 @@
 
 ## Requirements
 
-*   Titanium SDK
-    
-*   iOS 9+
-    
-*   Xcode 7+
-    
+* Titanium SDK
+
+* iOS 9+
+
+* Xcode 7+
+
 
 ## Titanium SDK 8.0.0 release
 
@@ -194,12 +194,12 @@ basicAuhentication
 
 Object
 
-*   username (String)
-    
-*   password (String)
-    
-*   persistence (CREDENTIAL\_PERSISTENCE\_\*)
-    
+* username (String)
+
+* password (String)
+
+* persistence (CREDENTIAL\_PERSISTENCE\_\*)
+
 
 cachePolicy
 
@@ -505,14 +505,14 @@ Please note that you should use the Ti message handler to ensure the message eve
 
 After sending the message from your HTML file, it will trigger the message event with the following event keys:
 
-*   url: The url of the triggered message
-    
-*   body: The message body. In this case: {message: 'Titanium rocks'}
-    
-*   name: The name of the message. In this case: Ti
-    
-*   isMainFrame: A boolean determine if the message was sent from the main-frame
-    
+* url: The url of the triggered message
+
+* body: The message body. In this case: {message: 'Titanium rocks'}
+
+* name: The name of the message. In this case: Ti
+
+* isMainFrame: A boolean determine if the message was sent from the main-frame
+
 
 For sending messages from the app to the Web View, use evalJS to call your JS methods like this:
 
@@ -526,12 +526,12 @@ Note 1: Since 2.3.0, this module also supports synchronous communication via eva
 
 Note 2: Since 2.4.0, this modules also supports Ti.App-like events that allows the developer to fire events and add event-listeners to ease the communication between the app and the web-view. These are:
 
-*   fireEvent
-    
-*   addEventListener
-    
-*   removeEventListener
-    
+* fireEvent
+
+* addEventListener
+
+* removeEventListener
+
 
 Different to the Ti.App events, these ones are fired on the top-level module instance.
 
@@ -641,12 +641,12 @@ preferences
 
 Object
 
-*   minimumFontSize (Double)
-    
-*   javaScriptEnabled (Boolean)
-    
-*   javaScriptCanOpenWindowsAutomatically (Boolean)
-    
+* minimumFontSize (Double)
+
+* javaScriptEnabled (Boolean)
+
+* javaScriptCanOpenWindowsAutomatically (Boolean)
+
 
 allowsInlineMediaPlayback
 
@@ -684,12 +684,12 @@ Process pools
 
 ### Handle custom URL-schemes
 
-*   The custom url-scheme has to be registered in the allowedURLSchemes array-property
-    
-*   Passes the url for a custom url-scheme
-    
-*   The event was introduced because iOS 10+ causes issues for some custom url-schemes and forwarding the url in an event is a simpler short term solution than implementing the WKURLSchemeHandler which is iOS 11+ only.
-    
+* The custom url-scheme has to be registered in the allowedURLSchemes array-property
+
+* Passes the url for a custom url-scheme
+
+* The event was introduced because iOS 10+ causes issues for some custom url-schemes and forwarding the url in an event is a simpler short term solution than implementing the WKURLSchemeHandler which is iOS 11+ only.
+
 
 `// Add an event listener to listen for a custom URL-scheme`
 

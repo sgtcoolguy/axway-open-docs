@@ -1,4 +1,4 @@
-{"title":"Available Command-Line Options","weight":"30"} 
+{"title":"Available Command-Line Options","weight":"30"}
 
 ## Overview
 
@@ -6,10 +6,10 @@ If you wish a user to have additional control over their environment, you can im
 
 ## Setting Properties
 
-*   Reference [Adding Command-Line Options](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Adding_Command-Line_Options/). These are all considered VM arguments.
-    
-*   A full list of default Eclipse properties may be found [here](http://help.eclipse.org/indigo/index.jsp?topic=/org.eclipse.platform.doc.isv/reference/misc/runtime-options.html).
-    
+* Reference [Adding Command-Line Options](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Adding_Command-Line_Options/). These are all considered VM arguments.
+
+* A full list of default Eclipse properties may be found [here](http://help.eclipse.org/indigo/index.jsp?topic=/org.eclipse.platform.doc.isv/reference/misc/runtime-options.html).
+
 
 ## Currently Available Properties
 
@@ -39,7 +39,7 @@ studio.reconcilerIterationPartitionLimit
 
 10000
 
-Upper limit on the number of partitions to colorize
+The upper limit on the number of partitions to colorize
 
 studio.reconcilerBackgroundDelay
 

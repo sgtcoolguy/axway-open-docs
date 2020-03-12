@@ -1,30 +1,30 @@
-{"title":"Adding a New Portal Page","weight":"10"} 
+{"title":"Adding a New Portal Page","weight":"10"}
 
-*   [Studio Changes](#StudioChanges)
-    
-*   [Setting up the Web Page](#SettinguptheWebPage)
-    
-    *   [Adding Required Resources](#AddingRequiredResources)
-        
-*   [Adding Handlers for Special Functionality](#AddingHandlersforSpecialFunctionality)
-    
-*   [Notes](#Notes)
-    
+* [Studio Changes](#StudioChanges)
 
-Studio has a newly-developed portal infrastructure which interacts with Studio through Eclipse browser-functions. This page will provide an overview on how to create add a new portal-like page, such as a 'Welcome Screen' using the same infrastructure that was built for the Developer Toolbox.
+* [Setting up the Web Page](#SettinguptheWebPage)
+
+  * [Adding Required Resources](#AddingRequiredResources)
+
+* [Adding Handlers for Special Functionality](#AddingHandlersforSpecialFunctionality)
+
+* [Notes](#Notes)
+
+
+Studio has a newly-developed portal infrastructure that interacts with Studio through Eclipse browser-functions. This page will provide an overview of how to create add a new portal-like page, such as a 'Welcome Screen' using the same infrastructure that was built for the Developer Toolbox.
 
 ## Studio Changes
 
-In the Studio side, we need to create a new BrowserEditor that will carry a unique ID. <br>Here are the basic steps:
+On the Studio side, we need to create a new BrowserEditor that will carry a unique ID. <br>Here are the basic steps:
 
-1.  Create a new class which extends from ''com.aptana.portal.ui.browser.PortalBrowserEditor''
-    
-2.  Override the ''getEditorId()''
-    
-3.  In the plugin.xml, add this editor to the ''org.eclipse.ui.editors'' extension point. Make sure that you use the same unique ID to identify this editor.
-    
+1. Create a new class which extends from ''com.aptana.portal.ui.browser.PortalBrowserEditor''.
 
-To open the portal, you can create an eclispe startup class, and/or create a command handler that will trigger it when the user asks for.
+2. Override the ''getEditorId()''.
+
+3. In the plugin.xml, add this editor to the ''org.eclipse.ui.editors'' extension point. Make sure that you use the same unique ID to identify this editor.
+
+
+To open the portal, you can create an eclipse startup class, and create a command handler that will trigger it when the user asks for.
 
 In any case, to open the new portal page you will need to call the ''Portal ''class this way:
 
@@ -34,7 +34,7 @@ Note that you can restrict the opening of the portal by looking at the preferenc
 
 ## Setting up the Web Page
 
-The portal system was designed interact with remote content that is opended inside the Studio. First we need to add some JavaScript resources. You can find them at the GitHub repo here:
+The portal system was designed to interact with remote content that is opened inside the Studio. First, we need to add some JavaScript resources. You can find them at the GitHub repo here:
 
 [https://github.com/aptana/studio3-sdk/tree/master/portal/sample](https://github.com/aptana/studio3-sdk/tree/master/portal/sample)
 
@@ -58,16 +58,16 @@ then, modify the body tag to start the portal functionality:
 
 Studio includes several special functions you can call via JavaScript. In, general items will be of the form:
 
-You can either call them directly via a link, or by using a checkbox to switch preferences on and off:
+You can either call them directly via a link or by using a checkbox to switch preferences on and off:
 
-1.  Open a specific view (specify view ID)
-    
-2.  Create a New Project (specify project type)
-    
-3.  Run a specific wizard (i.e. Run the "Import a Project From Git" wizard)
-    
-4.  Show list of recently-opened files
-    
+1. Open a specific view (specify view ID).
+
+2. Create a New Project (specify project type).
+
+3. Run a specific wizard (in other words, Run the "Import a Project From Git" wizard).
+
+4. Show list of recently-opened files.
+
 
 `<div id=``"toolboxPref"`  `class``=``"preference checkbox"` `text=``"Load the Welcome Screen on startup"` `key=``"open_welcome"``>`
 
@@ -75,10 +75,10 @@ You can either call them directly via a link, or by using a checkbox to switch p
 
 ## Notes
 
-1.  The portal code above uses Prototype JS library.
-    
-2.  In case you are using both prototype and jquery libraries, make sure they are not conflicting by placing the following JS block in your code. Also, scope your jquery code that uses the '$' sign (see code below).
-    
+1. The portal code above uses the Prototype JS library.
+
+2. In case you are using both prototype and jquery libraries, make sure they are not conflicting by placing the following JS block in your code. Also, scope your jquery code that uses the '$' sign (see code below).
+
 
 Making JQuery play nice with Prototype:
 

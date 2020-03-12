@@ -1,13 +1,13 @@
-{"title":"Titanium SDK 5.1.1 General Availability - 24 November 2015","weight":"190"} 
+{"title":"Titanium SDK 5.1.1 General Availability - 24 November 2015","weight":"190"}
 
 ## Contents
 
-*   [About This Release](#AboutThisRelease)
-    
-*   [Fixed Issues](#FixedIssues)
-    
-*   [API Changes](#APIChanges)
-    
+* [About This Release](#AboutThisRelease)
+
+* [Fixed Issues](#FixedIssues)
+
+* [API Changes](#APIChanges)
+
 
 ## About This Release
 
@@ -17,8 +17,8 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 ## Fixed Issues
 
-*   [TIMOB-20057](https://jira.appcelerator.org/browse/TIMOB-20057): Windows: Unable to build for any platform if there is no Visual Studio installed
-    
+* [TIMOB-20057](https://jira.appcelerator.org/browse/TIMOB-20057): Windows: Unable to build for any platform if there is no Visual Studio installed
+
 
 ## API Changes
 

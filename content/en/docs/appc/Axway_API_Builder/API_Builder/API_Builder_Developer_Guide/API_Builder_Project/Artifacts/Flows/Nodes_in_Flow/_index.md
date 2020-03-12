@@ -1,4 +1,4 @@
-{"title":"Nodes in Flow","weight":"20"} 
+{"title":"Nodes in Flow","weight":"20"}
 
 API Builder 3.x is deprecated
 
@@ -12,31 +12,31 @@ Flow-node configuration is handled on server initialization, whereas parameter h
 
 As of API Builder Tools 2.0, the following flow-nodes are available for use:
 
-*   [Codeblock](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Codeblock/)
-    
-*   [Model Count](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Count/)
-    
-*   [Model Create](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Create/)
-    
-*   [Model Delete](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Delete/)
-    
-*   [Model Delete All](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Delete_All/)
-    
-*   [Model Distinct](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Distinct/)
-    
-*   [Model Find All](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Find_All/)
-    
-*   [Model Find and Modify](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Find_and_Modify/)
-    
-*   [Model Find by ID](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Find_by_ID/)
-    
-*   [Model Query](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Query/)
-    
-*   [Model Update](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Update/)
-    
-*   [Model Upsert](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Upsert/)
-    
-*   [Parameter Map](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Parameter_Map/)
-    
+* [Codeblock](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Codeblock/)
+
+* [Model Count](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Count/)
+
+* [Model Create](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Create/)
+
+* [Model Delete](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Delete/)
+
+* [Model Delete All](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Delete_All/)
+
+* [Model Distinct](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Distinct/)
+
+* [Model Find All](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Find_All/)
+
+* [Model Find and Modify](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Find_and_Modify/)
+
+* [Model Find by ID](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Find_by_ID/)
+
+* [Model Query](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Query/)
+
+* [Model Update](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Update/)
+
+* [Model Upsert](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Model_Upsert/)
+
+* [Parameter Map](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Parameter_Map/)
+
 
 Beginning with API Builder Tools 3.0, flow-nodes can be configured by selecting a method and the defining the parameters and outputs in the API Orchestration flow editor. The default Model flow-node methods are: count, create, delete, deleteAll, distinct, findAll, findAndModify, findByID, query, update, and upsert. The default Core flow-node types are: Custom, Codeblock, Compose, Condition, Delay, HTTP, JSON, and Set Context. For additional information, see [API Builder Flows](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Flows/).

@@ -1,30 +1,30 @@
-{"title":"Editor Feature Matrix","weight":"10"} 
+{"title":"Editor Feature Matrix","weight":"10"}
 
-Studio features a large set of language editors. In order to clarify what are the expected features available in a particular editor, please view the table below and compare it with the level of support for the editor in question. Not every editor currently supports all the features of its specified level, but it is our intention to bring all editors to full compliance with their expected feature set.
+Studio features a large set of language editors. To clarify what are the expected features available in a particular editor, please view the table below and compare it with the level of support for the editor in question. Not every editor currently supports all the features of its specified level, but we intend to bring all editors to full compliance with their expected feature set.
 
-*   [Well-supported Editors](#Well-supportedEditors)
-    
-    *   [Editing Features](#EditingFeatures)
-        
-    *   [Navigation/Validation](#Navigation/Validation)
-        
-    *   [Content Assist/Hovers](#ContentAssist/Hovers)
-        
-*   [Level 1-Only Editors](#Level1-OnlyEditors)
-    
-*   [Future Editors](#FutureEditors)
-    
+* [Well-supported Editors](#Well-supportedEditors)
+
+  * [Editing Features](#EditingFeatures)
+
+  * [Navigation/Validation](#Navigation/Validation)
+
+  * [Content Assist/Hovers](#ContentAssist/Hovers)
+
+* [Level 1-Only Editors](#Level1-OnlyEditors)
+
+* [Future Editors](#FutureEditors)
+
 
 ## Well-supported Editors
 
-Level 3 editors are CSS, HTML, JS, Python, Ruby, PHP and ERB. The editors below fall into the level 2 and level 3 support group. In general, these editors will have the most advanced features.
+Level 3 editors are CSS, HTML, JS, Python, Ruby, PHP, and ERB. The editors below fall into level 2 and level 3 support groups. In general, these editors will have the most advanced features.
 
-![check](/Images/appc/download/attachments/30083127/check.png) Full support  
-![warning](/Images/appc/download/attachments/30083127/warning.png) Support not complete  
-![lightbulb](/Images/appc/download/attachments/30083127/lightbulb.png) Support planned, but not started  
+![check](/Images/appc/download/attachments/30083127/check.png) Full support
+![warning](/Images/appc/download/attachments/30083127/warning.png) Support not complete
+![lightbulb](/Images/appc/download/attachments/30083127/lightbulb.png) Support planned, but not started
 ![error](/Images/appc/download/attachments/30083127/error.png) Not supported, not planned
 
-.\* for components indicate that there is a per-editor/language component associated, i.e. editor.js, scripting.rubles.js
+.\* for components indicate that there is a per-editor/language component associated, for example, editor.js, scripting.rubles.js.
 
 ### Editing Features
 
@@ -1096,7 +1096,7 @@ Item Documentation
 
 ![error0](/Images/appc/download/attachments/30083127/error0.png)
 
-Value Visualizers (i.e. color preview of RGB CSS value)
+Value Visualizers (for example, the color preview of the RGB CSS value)
 
 3
 
@@ -1186,7 +1186,7 @@ Problem description from validation
 
 ![error0](/Images/appc/download/attachments/30083127/error0.png)
 
-Source of referenced item
+Source of the referenced item
 
 3
 
@@ -1216,7 +1216,7 @@ Source of referenced item
 
 ![error0](/Images/appc/download/attachments/30083127/error0.png)
 
-Language-specific version of JavaDocs
+The language-specific version of JavaDocs
 
 3
 
@@ -1278,7 +1278,7 @@ Language-specific version of JavaDocs
 
 ## Level 1-Only Editors
 
-These editors have basic support in Studio. We may consider upgrading these editors in the future
+These editors have basic support in Studio. We may consider upgrading these editors in the future.
 
 **Editors**
 
@@ -1524,8 +1524,8 @@ Default File Template
 
 We are considering support for the following languages. If you are interested, please add your support to the related tickets in our bug tracker:
 
-*   Plist
-    
-*   CoffeeScript
-    
-*   SQL
+* Plist
+
+* CoffeeScript
+
+* SQL

@@ -1,37 +1,37 @@
-{"title":"Localizing a Ruble","weight":"80"} 
+{"title":"Localizing a Ruble","weight":"80"}
 
-*   [Overview](#Overview)
-    
-*   [Locales Directories](#LocalesDirectories)
-    
-*   [Externalizing the Strings](#ExternalizingtheStrings)
-    
-    *   [Strings with variables inside them](#Stringswithvariablesinsidethem)
-        
-*   [Translation lookups](#Translationlookups)
-    
-*   [Contributing a translation pack](#Contributingatranslationpack)
-    
-    *   [Forking the ruble](#Forkingtheruble)
-        
-    *   [Adding a new translation](#Addinganewtranslation)
-        
+* [Overview](#Overview)
+
+* [Locales Directories](#LocalesDirectories)
+
+* [Externalizing the Strings](#ExternalizingtheStrings)
+
+  * [Strings with variables inside them](#Stringswithvariablesinsidethem)
+
+* [Translation lookups](#Translationlookups)
+
+* [Contributing a translation pack](#Contributingatranslationpack)
+
+  * [Forking the ruble](#Forkingtheruble)
+
+  * [Adding a new translation](#Addinganewtranslation)
+
 
 ## Overview
 
-In order to allow locale-specific translations of UI strings, rubles use a system that is very similar to that used by Rails applications.
+To allow locale-specific translations of UI strings, rubles use a system that is very similar to that used by Rails applications.
 
 ## Locales Directories
 
 Any string that may need a translation is extracted out to a file in **<ruble>/config/locales/<locale>.yml**
 
-Individual translations are stored in YML files in the **<ruble>/config/locales/** directory. The filename does not need to match any language or locale, but it is helpful to do so. So a **en.yml** file should hold the English translations of the UI strings, but it is not required.
+Individual translations are stored in YML files in the **<ruble>/config/locales/** directory. The filename does not need to match any language or locale, but it is helpful to do so. So an **en.yml** file should hold the English translations of the UI strings, but it is not required.
 
 ## Externalizing the Strings
 
-Inside the ruble code, to allow for translations we externalize the string. To do so we replace usage of the string with a call to the **t(key, variables = {})** method.
+Inside the ruble code, to allow for translations, we externalize the string. To do so, we replace usage of the string with a call to the **t(key, variables = {})** method.
 
-For example we have the following command defined:
+For example, we have the following command defined:
 
 commands/example.rb
 
@@ -61,7 +61,7 @@ A quick note here, the root "en:" key in the translation pack groups the indente
 
 ### Strings with variables inside them
 
-If the string is not simply a static value, but inserts values inside, the full signature form of the **t(key, variables = {})** method should be used.
+If the string is not simply a static value but inserts values inside, the full signature form of the **t(key, variables = {})** method should be used.
 
 commands/variables.rb
 
@@ -99,22 +99,22 @@ If our locale is **es\_ES**, we'll try **es-ES**, then **es**, then **en**.
 
 ## Contributing a translation pack
 
-If you would like to contribute a set of translations, there are a couple different ways to do so.
+If you would like to contribute a set of translations, there are a couple of different ways to do so.
 
 ### Forking the ruble
 
-Ideally, the first step to take is to fork the ruble you're contributing to.
+Ideally, the first step to take is to fork the ruble to which you're contributing.
 
 The majority of the rubles can be found at [https://github.com/aptana](https://github.com/aptana)
 
 We'll use the Zen Coding ruble as an example. It is found at [https://github.com/aptana/zen-coding.ruble](https://github.com/aptana/zen-coding.ruble)
 
-On that page, click the Fork button in the upper right and you'll be able to clone a fork of the ruble for your modifications. You can now grab the clone to work with and once you're satisfied with your changes, you can then issue a pull request to us to incorporate your changes.
+On that page, click the Fork button in the upper right, and you'll be able to clone a fork of the ruble for your modifications. You can now grab the clone to work with, and once you're satisfied with your changes, you can then issue a pull request to us to incorporate your changes.
 
 ### Adding a new translation
 
 Inside the ruble, you'll want to add a file to hold your translations (assuming that the language is not yet supported). We'll use Spanish as an example. We'd add a file at **zen-coding.ruble/config/locales/es.yml**
 
-If there's already an English file, the easiest way to start is to simply copy the **zen-coding.ruble/config/locales/en.yml** to **zen-coding.ruble/config/locales/es.yml**
+If there's already an English file, the easiest way to start is to copy the **zen-coding.ruble/config/locales/en.yml** to **zen-coding.ruble/config/locales/es.yml** file.
 
-Then we'll change the root **en** key in the file to **es**. After that it's simply a matter of changing the string values (the right hand value of the indented pairs) to their Spanish equivalents.
+Then we'll change the root **en** key in the file to **es**. After that, it's simply a matter of changing the string values (the right-hand value of the indented pairs) to their Spanish equivalents.

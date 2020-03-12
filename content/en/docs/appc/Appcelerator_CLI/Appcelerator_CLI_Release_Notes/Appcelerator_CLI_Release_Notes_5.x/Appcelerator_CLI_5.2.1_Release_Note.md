@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 5.2.1 - 24 March 2016","weight":"130"} 
+{"title":"Appcelerator CLI 5.2.1 - 24 March 2016","weight":"130"}
 
 Appcelerator CLI 5.2.1 is a patch release that includes a few improvements and several bug fixes.
 
@@ -30,20 +30,20 @@ Titanium CLI
 
 ## Fixed Issues
 
-*   [CLI-928](https://jira.appcelerator.org/browse/CLI-928) - 9.2.1 iPhone crashes when jailbreak-detect is enabled
-    
-*   [CLI-943](https://jira.appcelerator.org/browse/CLI-943) - Core 5.2.0 displays incorrect/confusing warning if NPM is still < 4.2.3
-    
-*   [CLI-949](https://jira.appcelerator.org/browse/CLI-949) - Windows: config files are written to different drive than process.env.HOME
-    
-*   [CLI-950](https://jira.appcelerator.org/browse/CLI-950) - Process doesn't cleanup children in certain scenarios
-    
-*   [CLI-957](https://jira.appcelerator.org/browse/CLI-957) - Unable to build modules from Appc CLI
-    
-*   [CLI-967](https://jira.appcelerator.org/browse/CLI-967) - iOS: Arguments to path.join must be strings
-    
-*   [CLI-973](https://jira.appcelerator.org/browse/CLI-973) - Update Alloy version to 1.8.0
-    
+* [CLI-928](https://jira.appcelerator.org/browse/CLI-928) - 9.2.1 iPhone crashes when jailbreak-detect is enabled
+
+* [CLI-943](https://jira.appcelerator.org/browse/CLI-943) - Core 5.2.0 displays incorrect/confusing warning if NPM is still < 4.2.3
+
+* [CLI-949](https://jira.appcelerator.org/browse/CLI-949) - Windows: config files are written to different drive than process.env.HOME
+
+* [CLI-950](https://jira.appcelerator.org/browse/CLI-950) - Process doesn't cleanup children in certain scenarios
+
+* [CLI-957](https://jira.appcelerator.org/browse/CLI-957) - Unable to build modules from Appc CLI
+
+* [CLI-967](https://jira.appcelerator.org/browse/CLI-967) - iOS: Arguments to path.join must be strings
+
+* [CLI-973](https://jira.appcelerator.org/browse/CLI-973) - Update Alloy version to 1.8.0
+
 
 ## Improvements
 

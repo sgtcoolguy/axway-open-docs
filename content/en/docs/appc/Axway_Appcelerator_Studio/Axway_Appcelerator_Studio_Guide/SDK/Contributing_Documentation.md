@@ -1,33 +1,33 @@
-{"title":"Contributing Documentation","weight":"70"} 
+{"title":"Contributing Documentation","weight":"70"}
 
 This document provides basic information on how to contribute to the Appcelerator documentation space within Confluence.
 
-*   [Keep it simple and consistent](#Keepitsimpleandconsistent)
-    
-*   [User macros and plugins](#Usermacrosandplugins)
-    
-*   [Table of contents](#Tableofcontents)
-    
-*   [Structure your document using headings h2 to h5](#Structureyourdocumentusingheadingsh2toh5)
-    
-*   [Emphasize important information using panels](#Emphasizeimportantinformationusingpanels)
-    
-*   [Use the code macro for syntax highlighting](#Usethecodemacroforsyntaxhighlighting)
-    
-*   [Inline code highlighting](#Inlinecodehighlighting)
-    
-*   [Writing navigation instructions](#Writingnavigationinstructions)
-    
-*   [Images](#Images)
-    
-*   [Labels](#Labels)
-    
-    *   [Labeling tips](#Labelingtips)
-        
-*   [Commenting](#Commenting)
-    
-*   [JIRA Linking](#JIRALinking)
-    
+* [Keep it simple and consistent](#Keepitsimpleandconsistent)
+
+* [User macros and plugins](#Usermacrosandplugins)
+
+* [Table of contents](#Tableofcontents)
+
+* [Structure your document using headings h2 to h5](#Structureyourdocumentusingheadingsh2toh5)
+
+* [Emphasize important information using panels](#Emphasizeimportantinformationusingpanels)
+
+* [Use the code macro for syntax highlighting](#Usethecodemacroforsyntaxhighlighting)
+
+* [Inline code highlighting](#Inlinecodehighlighting)
+
+* [Writing navigation instructions](#Writingnavigationinstructions)
+
+* [Images](#Images)
+
+* [Labels](#Labels)
+
+  * [Labeling tips](#Labelingtips)
+
+* [Commenting](#Commenting)
+
+* [JIRA Linking](#JIRALinking)
+
 
 ## Keep it simple and consistent
 
@@ -79,10 +79,10 @@ When a code sample needs to be mentioned inline to a sentence (as apposed to a b
 
 When writing about how to navigate the Studio user interface, bold terms that refer to menu options and buttons. For example:
 
-*   In Firefox, select **Extensions** (called **Add-ons** in some Firefox configurations) from the **Tools** menu.
-    
-*   To the right of the path for the **Error Log**, click **View** > **Display Log**.
-    
+* In Firefox, select **Extensions** (called **Add-ons** in some Firefox configurations) from the **Tools** menu.
+
+* To the right of the path for the **Error Log**, click **View** > **Display Log**.
+
 
 ## Images
 
@@ -92,13 +92,13 @@ When formatting images, you can add a line break to make them separate visually 
 
 Which results in:
 
-*   Item 1
-    
-*   Item 2
-    
-    ![Screen_shot_2011-03-29_at_8.53.25_AM](/Images/appc/download/attachments/30083166/Screen_shot_2011-03-29_at_8.53.25_AM.png)
-*   Item 3
-    
+* Item 1
+
+* Item 2
+
+  ![Screen_shot_2011-03-29_at_8.53.25_AM](/Images/appc/download/attachments/30083166/Screen_shot_2011-03-29_at_8.53.25_AM.png)
+* Item 3
+
 
 If the image has a large field of white around the item of interest, place a border around it via the Image Property feature.
 
@@ -108,18 +108,18 @@ Don't iterate the names of the images, reattach, and repoint the page to use dif
 
 ## Labels
 
-  
+
 
 Labels are key words or tags that you can add to pages. Adding labels to pages is important as it helps promote the page in the search index.
 
 #### Labeling tips
 
-*   Don't use plurals (e.g. contributes, documents, uploads)
-    
-*   Only use key terms (e.g. contribute documentation)
-    
-*   Don't use past or active tense of a term (e.g contributed, contributing); only use the present tense (e.g. contribute, upload)
-    
+* Don't use plurals (e.g. contributes, documents, uploads)
+
+* Only use key terms (e.g. contribute documentation)
+
+* Don't use past or active tense of a term (e.g contributed, contributing); only use the present tense (e.g. contribute, upload)
+
 
 ### Commenting
 

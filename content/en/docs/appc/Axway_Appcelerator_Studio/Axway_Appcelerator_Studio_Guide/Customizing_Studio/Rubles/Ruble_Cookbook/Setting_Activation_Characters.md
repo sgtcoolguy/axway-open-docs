@@ -1,8 +1,8 @@
-{"title":"Setting Activation Characters","weight":"100"} 
+{"title":"Setting Activation Characters","weight":"100"}
 
 ## Overview
 
-In this recipe we show how it is possible to use a Ruble command to modify the activation characters for the HTML, CSS, and JS editors.
+In this recipe, we show how it is possible to use a Ruble command to modify the activation characters for the HTML, CSS, and JS editors.
 
 ## The Code
 
@@ -48,7 +48,7 @@ Below is a sample to change the activation characters for the CSS editor. The ac
 
 ## Plugin Ids and Preference Keys
 
-In order to set the activate characters for a specific language, you need to know the editor's plugin id and the associated preference key. Below is a table providing that information. Replace the "pluginId" and "prefKey" assignments in the above example to the setting appropriate for the language you wish to update.
+To set the activate characters for a specific language, you need to know the editor's plugin id and the associated preference key. Below is a table providing that information. Replace the "pluginId" and "prefKey" assignments in the above example to the setting appropriate for the language you wish to update.
 
 Language
 

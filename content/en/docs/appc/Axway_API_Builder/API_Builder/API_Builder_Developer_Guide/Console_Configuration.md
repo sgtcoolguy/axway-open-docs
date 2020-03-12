@@ -1,4 +1,4 @@
-{"title":"Console Configuration","weight":"20"} 
+{"title":"Console Configuration","weight":"20"}
 
 API Builder 3.x is deprecated
 
@@ -6,44 +6,44 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-*   [Introduction](#Introduction)
-    
-    *   [Example](#Example)
-        
-*   [Settings](#Settings)
-    
-    *   [admin](#admin)
-        
-    *   [apikey\_development](#apikey_development)
-        
-    *   [apikey\_production](#apikey_production)
-        
-    *   [APIKeyAuthPlugin](#APIKeyAuthPlugin)
-        
-    *   [APIKeyAuthType](#APIKeyAuthType)
-        
-    *   [apiPrefix](#apiPrefix)
-        
-    *   [bodyParser](#bodyParser)
-        
-    *   [busboy](#busboy)
-        
-    *   [connectors](#connectors)
-        
-    *   [cors](#cors)
-        
-    *   [defaultConnector](#defaultConnector)
-        
-    *   [ignoreDuplicateModels](#ignoreDuplicateModels)
-        
-    *   [logging](#logging)
-        
-    *   [logLevel](#logLevel)
-        
-    *   [port](#port)
-        
-    *   [ssl](#ssl)
-        
+* [Introduction](#Introduction)
+
+  * [Example](#Example)
+
+* [Settings](#Settings)
+
+  * [admin](#admin)
+
+  * [apikey\_development](#apikey_development)
+
+  * [apikey\_production](#apikey_production)
+
+  * [APIKeyAuthPlugin](#APIKeyAuthPlugin)
+
+  * [APIKeyAuthType](#APIKeyAuthType)
+
+  * [apiPrefix](#apiPrefix)
+
+  * [bodyParser](#bodyParser)
+
+  * [busboy](#busboy)
+
+  * [connectors](#connectors)
+
+  * [cors](#cors)
+
+  * [defaultConnector](#defaultConnector)
+
+  * [ignoreDuplicateModels](#ignoreDuplicateModels)
+
+  * [logging](#logging)
+
+  * [logLevel](#logLevel)
+
+  * [port](#port)
+
+  * [ssl](#ssl)
+
 
 ## Introduction
 

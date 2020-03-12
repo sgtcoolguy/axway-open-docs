@@ -1,4 +1,4 @@
-{"title":"Todo List","weight":"170"} 
+{"title":"Todo List","weight":"170"}
 
 Demonstrates how to create a basic "Todos" application by binding a data collection to a TableView.
 
@@ -12,12 +12,12 @@ The sample lets you add and delete items, mark items as complete, and filter the
 
 The data model for each todo item consists of three fields:
 
-*   **item** – The text for the todo item.
-    
-*   **done** – A number that indicates if the todo item is complete.
-    
-*   **data\_completed** – The date that the item was marked as complete.
-    
+* **item** – The text for the todo item.
+
+* **done** – A number that indicates if the todo item is complete.
+
+* **data\_completed** – The date that the item was marked as complete.
+
 
 The todo.js model configuration file defines columns for these fields, and also extends the model with a custom validate() function that validates input, and a comparator function that's used to filter
 
@@ -235,4 +235,4 @@ controllers/add.js
 
 ## See also
 
-*   [Alloy Collection and Model Objects](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Collection_and_Model_Objects/)
+* [Alloy Collection and Model Objects](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Collection_and_Model_Objects/)

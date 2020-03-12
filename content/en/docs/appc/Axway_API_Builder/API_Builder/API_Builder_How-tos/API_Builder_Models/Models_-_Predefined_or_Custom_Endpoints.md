@@ -1,4 +1,4 @@
-{"title":"Models - Predefined or Custom Endpoints","weight":"40"} 
+{"title":"Models - Predefined or Custom Endpoints","weight":"40"}
 
 API Builder 3.x is deprecated
 
@@ -8,28 +8,28 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 By default, API Builder generates the following API endpoints for models:
 
-*   GET /api/<model\_name>: Return all objects (the first 1000 records).
-    
-*   GET /api/<model\_name>/query: Return all objects that satisfy a query.
-    
-*   GET /api/<model\_name>/:id: Return a specific object by id
-    
-*   GET /api/<model\_name>/distinct: Find distinct objects
-    
-*   GET /api/<model\_name>/count: Count objects
-    
-*   PUT /api/<model\_name>/:id: Update a specific user by id
-    
-*   PUT /api/<model\_name>/findAndModify: Find and modify an object
-    
-*   POST /api/<model\_name>: Create a new object
-    
-*   POST /api/<model\_name>/upsert: Create or update an object
-    
-*   DELETE /api/<model\_name>/:id: Delete a specific object by id
-    
-*   DELETE /api/<model\_name>: Delete all objects
-    
+* GET /api/<model\_name>: Return all objects (the first 1000 records).
+
+* GET /api/<model\_name>/query: Return all objects that satisfy a query.
+
+* GET /api/<model\_name>/:id: Return a specific object by id
+
+* GET /api/<model\_name>/distinct: Find distinct objects
+
+* GET /api/<model\_name>/count: Count objects
+
+* PUT /api/<model\_name>/:id: Update a specific user by id
+
+* PUT /api/<model\_name>/findAndModify: Find and modify an object
+
+* POST /api/<model\_name>: Create a new object
+
+* POST /api/<model\_name>/upsert: Create or update an object
+
+* DELETE /api/<model\_name>/:id: Delete a specific object by id
+
+* DELETE /api/<model\_name>: Delete all objects
+
 
 To disable API Builder from generating these endpoints, set the Model's autogen property to false when defining the model. You will need to create [API Builder APIs](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_APIs/) to access the model.
 

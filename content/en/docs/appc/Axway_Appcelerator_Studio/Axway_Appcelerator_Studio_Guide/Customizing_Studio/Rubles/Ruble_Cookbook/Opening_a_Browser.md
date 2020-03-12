@@ -1,23 +1,23 @@
-{"title":"Opening a Browser","weight":"80"} 
+{"title":"Opening a Browser","weight":"80"}
 
-*   [Overview](#Overview)
-    
-*   [Opening a browser using the current selection](#Openingabrowserusingthecurrentselection)
-    
-*   [Previewing the current document in the internal browser](#Previewingthecurrentdocumentintheinternalbrowser)
-    
-*   [Previewing an external URL in the internal browser](#PreviewinganexternalURLintheinternalbrowser)
-    
-*   [Previewing a document in the external browser](#Previewingadocumentintheexternalbrowser)
-    
+* [Overview](#Overview)
+
+* [Opening a browser using the current selection](#Openingabrowserusingthecurrentselection)
+
+* [Previewing the current document in the internal browser](#Previewingthecurrentdocumentintheinternalbrowser)
+
+* [Previewing an external URL in the internal browser](#PreviewinganexternalURLintheinternalbrowser)
+
+* [Previewing a document in the external browser](#Previewingadocumentintheexternalbrowser)
+
 
 ## Overview
 
-In this recipe we show how a Ruble command can open a web browser and perform queries
+In this recipe, we show how a Ruble command can open a web browser and perform queries.
 
 ## Opening a browser using the current selection
 
-Here we take the currently selected text and perform a search on Google
+Here we take the currently selected text and perform a search on Google.
 
 `require` `'ruble'`
 
@@ -39,7 +39,7 @@ Here we take the currently selected text and perform a search on Google
 
 ## Previewing the current document in the internal browser
 
-This example takes the text from STDIN, wraps it into a temporary HTML page, and previews that in the internal browser. This could also preview a selection, or some other snippet of text, if cmd.input were changed to another value.
+This example takes the text from STDIN, wraps it into a temporary HTML page, and previews that in the internal browser. This could also preview a selection, or some other snippet of text if cmd.input were changed to another value.
 
 `require` `'ruble'`
 
@@ -55,7 +55,7 @@ This example takes the text from STDIN, wraps it into a temporary HTML page, and
 
 ## Previewing an external URL in the internal browser
 
-We take the current selection and use a redirect to point the internal browser to a remote site
+We take the current selection and use a redirect to point the internal browser to a remote site.
 
 `require` `'ruble'`
 

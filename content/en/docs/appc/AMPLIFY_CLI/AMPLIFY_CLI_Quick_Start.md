@@ -1,31 +1,31 @@
-{"title":"AMPLIFY CLI Quick Start","weight":"10"} 
+{"title":"AMPLIFY CLI Quick Start","weight":"10"}
 
-*   [Quick start](#Quickstart)
-    
-*   [Installation](#Installation)
-    
-*   [Finding ACLI's commands](#FindingACLI'scommands)
-    
-*   [Authentication](#Authentication)
-    
-    *   [Logging in](#Loggingin)
-        
-*   [Managing packages](#Managingpackages)
-    
-    *   [Searching for packages](#Searchingforpackages)
-        
-    *   [Installing a package](#Installingapackage)
-        
-    *   [Using select versions](#Usingselectversions)
-        
-    *   [Updating packages](#Updatingpackages)
-        
-    *   [Starting a packageIn some cases, a package has a start option. The command would look something like this: amplify <product> start](#StartingapackageInsomecases,apackagehasastartoption.Thecommandwouldlooksomethinglikethis:amplify<product>start)
-        
-    *   [Purging unused versions](#Purgingunusedversions)
-        
-    *   [Uninstalling a package](#Uninstallingapackage)
-        
+* [Quick start](#Quickstart)
+
+* [Installation](#Installation)
+
+* [Finding ACLI's commands](#FindingACLI'scommands)
+
+* [Authentication](#Authentication)
+
+  * [Logging in](#Loggingin)
+
+* [Managing packages](#Managingpackages)
+
+  * [Searching for packages](#Searchingforpackages)
+
+  * [Installing a package](#Installingapackage)
+
+  * [Using select versions](#Usingselectversions)
+
+  * [Updating packages](#Updatingpackages)
+
+  * [Starting a packageIn some cases, a package has a start option. The command would look something like this: amplify <product> start](#StartingapackageInsomecases,apackagehasastartoption.Thecommandwouldlooksomethinglikethis:amplify<product>start)
+
+  * [Purging unused versions](#Purgingunusedversions)
+
+  * [Uninstalling a package](#Uninstallingapackage)
+
 
 ## Quick start
 
@@ -87,12 +87,12 @@ Now that you have some ideas on which packages that can be installed via the ACL
 
 Now let's suppose that you want to use a select version of the Appc Daemon.
 
-1.  Execute this command to get a list of the different versions available for a package: amplify pm view <package> versions. For the Appc Daemon, let's execute this command: amplify pm view appcd versions
-    
-2.  Before using a select version of a package, we need to install it using a command like this: amplify pm install <package>@#.#.#. In this case, we want to install the 1.1.3 version of the Appc Daemon: amplify pm install appcd@1.1.3. Installing a version should automatically set it to an active version. If it doesn't, follow step #3.
-    
-3.  To active a select version, use this command: amplify pm use <package>@#.#.#. To active the Appc Daemon to version 1.1.3, use this command: amplify pm use appcd@1.1.3
-    
+1. Execute this command to get a list of the different versions available for a package: amplify pm view <package> versions. For the Appc Daemon, let's execute this command: amplify pm view appcd versions
+
+2. Before using a select version of a package, we need to install it using a command like this: amplify pm install <package>@#.#.#. In this case, we want to install the 1.1.3 version of the Appc Daemon: amplify pm install appcd@1.1.3. Installing a version should automatically set it to an active version. If it doesn't, follow step #3.
+
+3. To active a select version, use this command: amplify pm use <package>@#.#.#. To active the Appc Daemon to version 1.1.3, use this command: amplify pm use appcd@1.1.3
+
 
 ### Updating packages
 

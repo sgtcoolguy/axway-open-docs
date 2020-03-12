@@ -1,17 +1,19 @@
-{"title":"Windows Platform Overview","weight":"30"} 
+{"title":"Windows Platform Overview","weight":"30"}
 
-*   [Introduction](#Introduction)
-    
-*   [Windows Phone](#WindowsPhone)
-    
-    *   [Hardware buttons](#Hardwarebuttons)
-        
-    *   [User interface](#Userinterface)
-        
-*   [Windows Store](#WindowsStore)
-    
-*   [Further reading](#Furtherreading)
-    
+* [Introduction](#Introduction)
+
+* [Windows Phone](#WindowsPhone)
+
+  * [Hardware buttons](#Hardwarebuttons)
+
+  * [User interface](#Userinterface)
+
+* [Windows Store](#WindowsStore)
+
+* [Further reading](#Furtherreading)
+
+
+As of Titanium 9.0.0, building Windows apps is no longer supported.
 
 Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA
 
@@ -59,23 +61,23 @@ The OS is based on Microsoft's Metro design language, which relies more heavily 
 
 Windows Phone devices may have three hardware buttons for navigation:
 
-*   **Start**: Returns the user to the Start screen.
-    
-*   **Back**: Allows the user to go to the previous screen.
-    
-*   **Search**: Allows the user to search for content.
-    
+* **Start**: Returns the user to the Start screen.
+
+* **Back**: Allows the user to go to the previous screen.
+
+* **Search**: Allows the user to search for content.
+
 
 ### User interface
 
 A Windows Phone application is divided into three parts:
 
-*   **Navigation elements**: Commonly located at the top of the application, the navigation elements help the user find the content they want to display. For example, the pivot control (similar to a tab bar) is located here and guides the user through the application's content.
-    
-*   **Content**: Information or controls to present to the user.
-    
-*   **Command elements**: Commonly located at the bottom of the application, the command elements provide the user alternative ways to interact with your application. For example, the command bar can be used to provide additional functionality.
-    
+* **Navigation elements**: Commonly located at the top of the application, the navigation elements help the user find the content they want to display. For example, the pivot control (similar to a tab bar) is located here and guides the user through the application's content.
+
+* **Content**: Information or controls to present to the user.
+
+* **Command elements**: Commonly located at the bottom of the application, the command elements provide the user alternative ways to interact with your application. For example, the command bar can be used to provide additional functionality.
+
 
 If the phone is in landscape mode, the navigation and command elements will appear on the sides.
 
@@ -83,15 +85,15 @@ If the phone is in landscape mode, the navigation and command elements will appe
 
 To support tablet form factors, build and deploy Windows Store apps. Windows Store apps are applications that run on the Windows OS as opposed to the Windows Phone OS. Windows Store and Windows Phone apps share similar APIs, design and user interface elements, such as the Start screen, navigation elements and command elements. The list below notes some of the differences between the two types of applications:
 
-*   The content of Windows Store apps use the entire screen. To display some command and navigation elements, such as the command bar, you need to click the More icon (**\[...\]**) located in one of the corners of the application.
-    
-*   The only hardware button a Windows tablet provides is the Start button. You will need to build the back navigation into your application if you need to use that feature.
-    
-*   To get to the **All apps** screen, from the bottom edge of the screen, swipe up.
-    
+* The content of Windows Store apps use the entire screen. To display some command and navigation elements, such as the command bar, you need to click the More icon (**\[...\]**) located in one of the corners of the application.
+
+* The only hardware button a Windows tablet provides is the Start button. You will need to build the back navigation into your application if you need to use that feature.
+
+* To get to the **All apps** screen, from the bottom edge of the screen, swipe up.
+
 
 ![ws_tablet](/Images/appc/download/attachments/43308580/ws_tablet.png)
 
 ## Further reading
 
-*   [Windows Dev Center: Design basics](https://dev.windows.com/en-us/design/design-basics)
+* [Windows Dev Center: Design basics](https://dev.windows.com/en-us/design/design-basics)

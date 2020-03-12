@@ -1,4 +1,4 @@
-{"title":"Enabling and disabling validation","weight":"20"} 
+{"title":"Enabling and disabling validation","weight":"20"}
 
 This page explains how to enable and disable validation in your Problems View.
 
@@ -8,13 +8,13 @@ The HTML, CSS, and JavaScript Editors in Studio validate the code that you write
 
 ## To modify current validation preferences
 
-1.  Select **Preferences > Studio > Validation**
-    
-2.  Choose the language you are interested in modifying
-    
-3.  Check/uncheck the validator you are interested in modifying
-    
-4.  Click **OK**
-    
+1. Select **Preferences > Studio > Validation**
+
+2. Choose the language you are interested in modifying
+
+3. Check/uncheck the validator you are interested in modifying
+
+4. Click **OK**
+
 
 ![Screen_shot_2011-04-21_at_1.05.55_PM](/Images/appc/download/attachments/30083302/Screen_shot_2011-04-21_at_1.05.55_PM.png)

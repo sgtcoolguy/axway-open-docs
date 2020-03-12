@@ -1,17 +1,17 @@
-{"title":"Mobile Backend Services Getting Started","weight":"10"} 
+{"title":"Mobile Backend Services Getting Started","weight":"10"}
 
-*   [Create a Mobile Backend Services datasource](#CreateaMobileBackendServicesdatasource)
-    
-    *   [Standalone Mobile Backend Services datasource](#StandaloneMobileBackendServicesdatasource)
-        
-    *   [Mobile Backend Services with Titanium](#MobileBackendServiceswithTitanium)
-        
-    *   [Mobile Backend Services with Android or iOS](#MobileBackendServiceswithAndroidoriOS)
-        
-*   [Make calls to Mobile Backend Services](#MakecallstoMobileBackendServices)
-    
-*   [Next steps](#Nextsteps)
-    
+* [Create a Mobile Backend Services datasource](#CreateaMobileBackendServicesdatasource)
+
+  * [Standalone Mobile Backend Services datasource](#StandaloneMobileBackendServicesdatasource)
+
+  * [Mobile Backend Services with Titanium](#MobileBackendServiceswithTitanium)
+
+  * [Mobile Backend Services with Android or iOS](#MobileBackendServiceswithAndroidoriOS)
+
+* [Make calls to Mobile Backend Services](#MakecallstoMobileBackendServices)
+
+* [Next steps](#Nextsteps)
+
 
 Mobile Backend Services (MBS) provides a set of REST APIs for creating, managing, and accessing different types of data in your cloud datasource, such as [Users](/arrowdb/latest/#!/api/Users), [Places](/arrowdb/latest/#!/api/Places), and [Photos](/arrowdb/latest/#!/api/Photos) over HTTP or HTTPS. You can integrate MBS into your application using the [Titanium](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/Titanium_SDK_and_Mobile_Backend_Services/), [iOS](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_iOS_Mobile_Backend_Services/), [Android](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_Android_Mobile_Backend_Services/) or [Node.js](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/Mobile_Backend_Services_SDK_for_Node.js/) SDKs, or by calling the [REST APIs](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Using_the_REST_API/) directly.
 
@@ -19,14 +19,14 @@ To manage your application and its data—for example, to create or edit [Users]
 
 This guide explains how to create a standalone MBS datasource and make API calls to the datasource using the REST APIs. For integrating MBS with a specific platform, see the following SDK guides:
 
-*   [Titanium SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/Titanium_SDK_and_Mobile_Backend_Services/)
-    
-*   [Android SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_Android_Mobile_Backend_Services/)
-    
-*   [iOS SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_iOS_Mobile_Backend_Services/)
-    
-*   [Node.js SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/Mobile_Backend_Services_SDK_for_Node.js/)
-    
+* [Titanium SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/Titanium_SDK_and_Mobile_Backend_Services/)
+
+* [Android SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_Android_Mobile_Backend_Services/)
+
+* [iOS SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_iOS_Mobile_Backend_Services/)
+
+* [Node.js SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/Mobile_Backend_Services_SDK_for_Node.js/)
+
 
 ## Create a Mobile Backend Services datasource
 
@@ -36,26 +36,26 @@ You can create either a standalone MBS datasource or create an MBS datasource as
 
 A standalone MBS datasource does not have a specific client application associated with it. Use a standalone MBS source if you want multiple applications to access the same datasource, or if your client application is not Titanium, Android, or iOS.
 
-1.  Log into the [AMPLIFY Platform](https://platform.axway.com/).
-    
-2.  Select **Dashboard** on the Dashboard tile.
-    
-3.  Click the Add menu (+) in the top navigation bar.
-    
-    ![plus_dropdown_latest](/Images/appc/download/attachments/49153748/plus_dropdown_latest.png)
-4.  Select **Create Mobile Backend Services Datasource**.
-    
-    ![create_mbs_datasource_latest](/Images/appc/download/attachments/49153748/create_mbs_datasource_latest.png)
-5.  Enter a name for the datasource. Entering a name for the datasource will create a Mobile Backend Services datasource for each available environment.
-    
-6.  Assign teams to the application by selecting the **+** icons from the Assign Teams list.
-    
-7.  If you have multiple environments, select the environments to enable for the datasource.
-    
-8.  Click **Create.**
-    
+1. Log into the [AMPLIFY Platform](https://platform.axway.com/).
 
-To make calls to MBS, you will need your MBS applications key. After Dashboard creates the datasource, click **Configuration** in the left navigation and select the **Keys** tab, then click the **Show** link next to **App Key**. Use the MBS application key to make requests to MBS. Note that you have a key for each deployment environment.  
+2. Select the **Dashboard** link on the Dashboard tile.
+
+3. Click the Add menu (+) in the top navigation bar.
+
+  ![plus_dropdown_latest](/Images/appc/download/attachments/49153748/plus_dropdown_latest.png)
+4. Select **Create Mobile Backend Services Datasource**.
+
+  ![create_mbs_datasource_latest](/Images/appc/download/attachments/49153748/create_mbs_datasource_latest.png)
+5. Enter a name for the datasource. Entering a name for the datasource will create a Mobile Backend Services datasource for each available environment.
+
+6. Assign teams to the application by selecting the **+** icons from the Assign Teams list.
+
+7. If you have multiple environments, select the environments to enable for the datasource.
+
+8. Click **Create.**
+
+
+To make calls to MBS, you will need your MBS applications key. After Dashboard creates the datasource, click **Configuration** in the left navigation and select the **Keys** tab, then click the **Show** link next to **App Key**. Use the MBS application key to make requests to MBS. Note that you have a key for each deployment environment.
 ![development_key_latest](/Images/appc/download/attachments/49153748/development_key_latest.png)
 
 ### Mobile Backend Services with Titanium
@@ -70,25 +70,25 @@ Use Dashboard to register an Android application built with Java or iOS applicat
 
 For directions, see:
 
-*   [Android SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_Android_Mobile_Backend_Services/)
-    
-*   [iOS SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_iOS_Mobile_Backend_Services/)
-    
+* [Android SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_Android_Mobile_Backend_Services/)
+
+* [iOS SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_iOS_Mobile_Backend_Services/)
+
 
 ## Make calls to Mobile Backend Services
 
 You can make calls to MBS using the following SDKs and modules, or by making HTTP requests directly to MBS.
 
-*   [Titanium Cloud Module](#!/api/Modules.Cloud)
-    
-*   [AMPLIFY Appcelerator Services API Reference for Android](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_Android_Mobile_Backend_Services/)
-    
-*   [AMPLIFY Appcelerator Services API Reference for iOS](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_iOS_Mobile_Backend_Services/)
-    
-*   [Node.js SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/Mobile_Backend_Services_SDK_for_Node.js/)
-    
-*   [Mobile Backend Services API docs](/arrowdb/latest/#!/api)
-    
+* [Titanium Cloud Module](#!/api/Modules.Cloud)
+
+* [AMPLIFY Appcelerator Services API Reference for Android](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_Android_Mobile_Backend_Services/)
+
+* [AMPLIFY Appcelerator Services API Reference for iOS](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_iOS_Mobile_Backend_Services/)
+
+* [Node.js SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/Mobile_Backend_Services_SDK_for_Node.js/)
+
+* [Mobile Backend Services API docs](/arrowdb/latest/#!/api)
+
 
 To make MBS calls from other applications, you need to use the platform's native HTTP client to make HTTP requests directly. You will need to pass the MBS application key in the URL as the key parameter with each request.
 
@@ -184,10 +184,10 @@ The SDKs and modules provided by Appcelerator abstract the HTTP request and will
 
 Review the [REST Guide](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Using_the_REST_API/) if you are making HTTP requests directly to MBS, and the [Mobile Backend Services API reference](/arrowdb/latest/#!/api), which contains Titanium, REST, Android, iOS, and Node.js examples. To set up a specific type of client application, see the following SDK guides:
 
-*   [Titanium SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/Titanium_SDK_and_Mobile_Backend_Services/)
-    
-*   [Android SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_Android_Mobile_Backend_Services/)
-    
-*   [iOS SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_iOS_Mobile_Backend_Services/)
-    
-*   [Node.js SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/Mobile_Backend_Services_SDK_for_Node.js/)
+* [Titanium SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/Titanium_SDK_and_Mobile_Backend_Services/)
+
+* [Android SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_Android_Mobile_Backend_Services/)
+
+* [iOS SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_iOS_Mobile_Backend_Services/)
+
+* [Node.js SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/Mobile_Backend_Services_SDK_for_Node.js/)

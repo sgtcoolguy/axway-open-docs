@@ -1,13 +1,13 @@
-{"title":"Titanium Angular Basics","weight":"20"} 
+{"title":"Titanium Angular Basics","weight":"20"}
 
-*   [Project structure](#Projectstructure)
-    
-*   [Titanium Angular startup](#TitaniumAngularstartup)
-    
-*   [Titanium UI elements in Angular](#TitaniumUIelementsinAngular)
-    
-*   [Layouts](#Layouts)
-    
+* [Project structure](#Projectstructure)
+
+* [Titanium Angular startup](#TitaniumAngularstartup)
+
+* [Titanium UI elements in Angular](#TitaniumUIelementsinAngular)
+
+* [Layouts](#Layouts)
+
 
 ## Project structure
 
@@ -31,16 +31,16 @@ Titanium Angular project structure
 
 These various files and folders all have a specific purpose:
 
-*   **app**: This folder contains all development resources. It is pretty similar to a standard Angular project but contains some additional folders that are specific to Titanium.
-    
-*   **hooks**: Project level hook that triggers the Webpack build which will compile the TypeScript source files and bundle everything up into separate chunks. Only edit this if you need to change specific Webpack settings.
-    
-*   **platform**: Contains platform specific files. Generated from the app/platform directory. **DO NOT EDIT ANY OF THESE FILES!**
-    
-*   **Resources**: Another generated directory which contains resources for the final app build including Webpack bundles and resources such as images. **DO NOT EDIT ANY **OF THESE** FILES**
-    
-*   **tiapp.xml**: This is the main configuration file for your project. You can make platform specific configurations and adjust general build or runtime settings. For more info see the [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/).
-    
+* **app**: This folder contains all development resources. It is pretty similar to a standard Angular project but contains some additional folders that are specific to Titanium.
+
+* **hooks**: Project level hook that triggers the Webpack build which will compile the TypeScript source files and bundle everything up into separate chunks. Only edit this if you need to change specific Webpack settings.
+
+* **platform**: Contains platform specific files. Generated from the app/platform directory. **DO NOT EDIT ANY OF THESE FILES!**
+
+* **Resources**: Another generated directory which contains resources for the final app build including Webpack bundles and resources such as images. **DO NOT EDIT ANY **OF THESE** FILES**
+
+* **tiapp.xml**: This is the main configuration file for your project. You can make platform specific configurations and adjust general build or runtime settings. For more info see the [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/).
+
 
 Inside the app folder you'll find all important files that will bootstrap the Angular core inside a Titanium app. This is also the folder you'll be working with most of the time as it contains your Angular source files as well as all other app resources.
 
@@ -76,22 +76,22 @@ Inside the app folder you'll find all important files that will bootstrap the An
 
 Here is what those various files and folder do:
 
-*   **assets:** Contains assets such as images. Similar to Alloy, all resources you would place under the Resources folder in classic apps go here instead.
-    
-*   **platform:** Place any platform specific files here. They will be copied to the project root platform folder during build.
-    
-*   ****src/**app.component.ts**: The root component that will be loaded when your applications starts.
-    
-*   ****src/**app.module.ts**: This contains the main module that configures a great part of your application.
-    
-*   ****src/**main.ts**: The entry point to your application that bootstraps Angular and loads the AppModule.
-    
-*   **vendor:** Contains the vendor.js file which defines what modules Webpack should bundle into the vendor chunk.
-    
-*   **tsconfig.json**: Configuration file for TypeScript
-    
-*   **webpack.config.json**: Configuration file for Webpack
-    
+* **assets:** Contains assets such as images. Similar to Alloy, all resources you would place under the Resources folder in classic apps go here instead.
+
+* **platform:** Place any platform specific files here. They will be copied to the project root platform folder during build.
+
+* ****src/**app.component.ts**: The root component that will be loaded when your applications starts.
+
+* ****src/**app.module.ts**: This contains the main module that configures a great part of your application.
+
+* ****src/**main.ts**: The entry point to your application that bootstraps Angular and loads the AppModule.
+
+* **vendor:** Contains the vendor.js file which defines what modules Webpack should bundle into the vendor chunk.
+
+* **tsconfig.json**: Configuration file for TypeScript
+
+* **webpack.config.json**: Configuration file for Webpack
+
 
 Ahead-of-time compilation issue
 
@@ -181,25 +181,25 @@ In this example, we create a button, setting a property and also setting up an e
 
 Here is what all of the above does in detail:
 
-*   #demoButton: This sets a template reference variable, which allows you to access this element elsewhere in the template or inside the component via the [ViewChild](https://angular.io/api/core/ViewChild) decorator.
-    
-*   title: Sets the title property of the button.
-    
-*   (click): This sets up an event listener to the button's click event. It binds to the increaseTapCount method in the component class. You can also pass $event into the function to gain access to the Titanium event: (click)="increaseTapCount($event)".
-    
+* #demoButton: This sets a template reference variable, which allows you to access this element elsewhere in the template or inside the component via the [ViewChild](https://angular.io/api/core/ViewChild) decorator.
+
+* title: Sets the title property of the button.
+
+* (click): This sets up an event listener to the button's click event. It binds to the increaseTapCount method in the component class. You can also pass $event into the function to gain access to the Titanium event: (click)="increaseTapCount($event)".
+
 
 `<``Label`  `color``=``"white"` `[font]="{ fontSize: 32 }"` `top``=``"100"`  `left``=``"10"``>Now on Titanium</``Label``>`
 
 This creates a new Label and sets some properties on it, just like you would on HTML elements. For elements that have a text or title property, you can write the text you want directly between the element tags. Titanium Angular will automatically populate those properties for you. The other attributes of the above code do the following:
 
-*   color: Sets the text color of the label. You can use common color names or hex values. For information about color values, see the "Colors" section of [Titanium.UI](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI) .
-    
-*   \[font\]: This sets the label's [font](https://docs.appcelerator.com/platform/latest/#!/api/Font) property. Note the square brakets around the property name. This instructs Angular to interpret the value as an JS expression which results in setting the \`fontSize\` property. It can also be used to bind the value from a component property by simply specifiying its name.
-    
-*   top: Allows you to specify the top position of the label. The behavior and effect of this property depends in the used Layout and other positioning properties.
-    
-*   left: Specify the left position of the label. The behavior and effect of this property depends on the used layout and other positioning properties.
-    
+* color: Sets the text color of the label. You can use common color names or hex values. For information about color values, see the "Colors" section of [Titanium.UI](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI) .
+
+* \[font\]: This sets the label's [font](https://docs.appcelerator.com/platform/latest/#!/api/Font) property. Note the square brakets around the property name. This instructs Angular to interpret the value as an JS expression which results in setting the \`fontSize\` property. It can also be used to bind the value from a component property by simply specifiying its name.
+
+* top: Allows you to specify the top position of the label. The behavior and effect of this property depends in the used Layout and other positioning properties.
+
+* left: Specify the left position of the label. The behavior and effect of this property depends on the used layout and other positioning properties.
+
 
 ## Layouts
 

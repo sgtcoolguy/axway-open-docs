@@ -1,109 +1,109 @@
-{"title":"TDoc Specification","weight":"50"} 
+{"title":"TDoc Specification","weight":"50"}
 
 To see an example of this spec in use, check out the documentation for Titanium.UI.View.
 
 **Contents**
 
-*   [Overview](#Overview)
-    
-*   [Goals](#Goals)
-    
-*   [Definitions](#Definitions)
-    
-*   [Proposed Documentation Specification](#ProposedDocumentationSpecification)
-    
-    *   [YAML](#YAML)
-        
-        *   [Justification for choosing YAML](#JustificationforchoosingYAML)
-            
-            *   [Alternatives](#Alternatives)
-                
-            *   [Tool Support](#ToolSupport)
-                
-            *   [Significant Whitespace](#SignificantWhitespace)
-                
-            *   [Precedent](#Precedent)
-                
-    *   [Data Types](#DataTypes)
-        
-        *   [Simple Data Types](#SimpleDataTypes)
-            
-        *   [Compound Data Types](#CompoundDataTypes)
-            
-        *   [Arrays](#Arrays)
-            
-        *   [Pseudo-Types](#Pseudo-Types)
-            
-    *   [Inheritance](#Inheritance)
-        
-    *   [Folders and Files](#FoldersandFiles)
-        
-        *   [File Extension](#FileExtension)
-            
-        *   [Three New Documentation Files: Proxy.yml, Module.yml and Event.yml](#ThreeNewDocumentationFiles:Proxy.yml,Module.ymlandEvent.yml)
-            
-        *   [Indentation Within Files](#IndentationWithinFiles)
-            
-            *   [A Note About Indentation in Sequences](#ANoteAboutIndentationinSequences)
-                
-    *   [Documentation of Types](#DocumentationofTypes)
-        
-        *   [YAML Specification for Type Documentation](#YAMLSpecificationforTypeDocumentation)
-            
-            *   [A Type Documentation is a YAML Document](#ATypeDocumentationisaYAMLDocument)
-                
-            *   [Valid Keys in the Documentation of a Type](#ValidKeysintheDocumentationofaType)
-                
-            *   [Method Specification](#MethodSpecification)
-                
-                *   [Method Parameter Specification](#MethodParameterSpecification)
-                    
-                *   [Method Documentation Definitions](#MethodDocumentationDefinitions)
-                    
-            *   [Property Specification](#PropertySpecification)
-                
-            *   [Event Specification](#EventSpecification)
-                
-                *   [Event Listener Object Property Specification](#EventListenerObjectPropertySpecification)
-                    
-        *   [Free-Form Text Values](#Free-FormTextValues)
-            
-            *   [Short One-Liners](#ShortOne-Liners)
-                
-            *   [Multiline with Folding](#MultilinewithFolding)
-                
-            *   [Preserving Line Breaks and Inserting Code Blocks](#PreservingLineBreaksandInsertingCodeBlocks)
-                
-                *   [Language of Code Blocks](#LanguageofCodeBlocks)
-                    
-            *   [Referring to External Files](#ReferringtoExternalFiles)
-                
-        *   [Code Examples](#CodeExamples)
-            
-        *   [Documenting Callbacks](#DocumentingCallbacks)
-            
-        *   [Documenting Object Literals and Interfaces](#DocumentingObjectLiteralsandInterfaces)
-            
-            *   [Object Literals](#ObjectLiterals)
-                
-            *   [Interfaces](#Interfaces)
-                
-            *   [Solution: Pseudo-Types](#Solution:Pseudo-Types)
-                
-                *   [Pseudo-Types Useful to Just One Titanium Type](#Pseudo-TypesUsefultoJustOneTitaniumType)
-                    
-                *   [Pseudo-Types Useful to a Single Module](#Pseudo-TypesUsefultoaSingleModule)
-                    
-                *   [Pseudo-Types Useful in Multiple Modules](#Pseudo-TypesUsefulinMultipleModules)
-                    
-    *   [Intra-Documentation Links](#Intra-DocumentationLinks)
-        
-        *   [Type Specifications Do Not Need Backticks](#TypeSpecificationsDoNotNeedBackticks)
-            
-        *   [Markdown Links in Free-Form Text Values](#MarkdownLinksinFree-FormTextValues)
-            
-*   [Real-World Example](#Real-WorldExample)
-    
+* [Overview](#Overview)
+
+* [Goals](#Goals)
+
+* [Definitions](#Definitions)
+
+* [Proposed Documentation Specification](#ProposedDocumentationSpecification)
+
+  * [YAML](#YAML)
+
+    * [Justification for choosing YAML](#JustificationforchoosingYAML)
+
+      * [Alternatives](#Alternatives)
+
+      * [Tool Support](#ToolSupport)
+
+      * [Significant Whitespace](#SignificantWhitespace)
+
+      * [Precedent](#Precedent)
+
+  * [Data Types](#DataTypes)
+
+    * [Simple Data Types](#SimpleDataTypes)
+
+    * [Compound Data Types](#CompoundDataTypes)
+
+    * [Arrays](#Arrays)
+
+    * [Pseudo-Types](#Pseudo-Types)
+
+  * [Inheritance](#Inheritance)
+
+  * [Folders and Files](#FoldersandFiles)
+
+    * [File Extension](#FileExtension)
+
+    * [Three New Documentation Files: Proxy.yml, Module.yml and Event.yml](#ThreeNewDocumentationFiles:Proxy.yml,Module.ymlandEvent.yml)
+
+    * [Indentation Within Files](#IndentationWithinFiles)
+
+      * [A Note About Indentation in Sequences](#ANoteAboutIndentationinSequences)
+
+  * [Documentation of Types](#DocumentationofTypes)
+
+    * [YAML Specification for Type Documentation](#YAMLSpecificationforTypeDocumentation)
+
+      * [A Type Documentation is a YAML Document](#ATypeDocumentationisaYAMLDocument)
+
+      * [Valid Keys in the Documentation of a Type](#ValidKeysintheDocumentationofaType)
+
+      * [Method Specification](#MethodSpecification)
+
+        * [Method Parameter Specification](#MethodParameterSpecification)
+
+        * [Method Documentation Definitions](#MethodDocumentationDefinitions)
+
+      * [Property Specification](#PropertySpecification)
+
+      * [Event Specification](#EventSpecification)
+
+        * [Event Listener Object Property Specification](#EventListenerObjectPropertySpecification)
+
+    * [Free-Form Text Values](#Free-FormTextValues)
+
+      * [Short One-Liners](#ShortOne-Liners)
+
+      * [Multiline with Folding](#MultilinewithFolding)
+
+      * [Preserving Line Breaks and Inserting Code Blocks](#PreservingLineBreaksandInsertingCodeBlocks)
+
+        * [Language of Code Blocks](#LanguageofCodeBlocks)
+
+      * [Referring to External Files](#ReferringtoExternalFiles)
+
+    * [Code Examples](#CodeExamples)
+
+    * [Documenting Callbacks](#DocumentingCallbacks)
+
+    * [Documenting Object Literals and Interfaces](#DocumentingObjectLiteralsandInterfaces)
+
+      * [Object Literals](#ObjectLiterals)
+
+      * [Interfaces](#Interfaces)
+
+      * [Solution: Pseudo-Types](#Solution:Pseudo-Types)
+
+        * [Pseudo-Types Useful to Just One Titanium Type](#Pseudo-TypesUsefultoJustOneTitaniumType)
+
+        * [Pseudo-Types Useful to a Single Module](#Pseudo-TypesUsefultoaSingleModule)
+
+        * [Pseudo-Types Useful in Multiple Modules](#Pseudo-TypesUsefulinMultipleModules)
+
+  * [Intra-Documentation Links](#Intra-DocumentationLinks)
+
+    * [Type Specifications Do Not Need Backticks](#TypeSpecificationsDoNotNeedBackticks)
+
+    * [Markdown Links in Free-Form Text Values](#MarkdownLinksinFree-FormTextValues)
+
+* [Real-World Example](#Real-WorldExample)
+
 
 ## Overview
 
@@ -117,29 +117,29 @@ Though the primary driver was a new Titanium **Mobile** SDK documentation format
 
 The goals of the new documentation format are:
 
-*   Support rich metadata for all API members, including platform support, versioning, and deprecation information.
-    
-*   Provide an inheritance mechanism for documentation.
-    
-*   Allow documentation of object literals used as properties, method parameters, and in events and callbacks.
-    
-*   Support documenting callback arguments.
-    
-*   As much as possible, take advantage of standard libraries for parsing and formatting.
-    
-*   Generate documentation as well as content assist files.
-    
+* Support rich metadata for all API members, including platform support, versioning, and deprecation information.
+
+* Provide an inheritance mechanism for documentation.
+
+* Allow documentation of object literals used as properties, method parameters, and in events and callbacks.
+
+* Support documenting callback arguments.
+
+* As much as possible, take advantage of standard libraries for parsing and formatting.
+
+* Generate documentation as well as content assist files.
+
 
 ## Definitions
 
-*   TDoc - The file extension used for the previous API documentation files was "tdoc"; several such files (one per module or proxy). Because of this file extension, the documents themselves are often called simply "TDocs" in our "Titanium vernacular."
-    
-*   Code Assist or Content Assist - The feature of Studio which provides pop-up help to help you complete your code statements.
-    
-*   JSCA - "JSON for Studio Content Assist". JSCA files contain the JSON which feeds the content assist available to developers using Studio. The requirement to generate JSCA from the documentation is one of the drivers behind this spec.
-    
-*   YAML - [YAML Ain't Markup Language](http://yaml.org). "YAML is a human-readable data serialization format" (Wikipedia).
-    
+* TDoc - The file extension used for the previous API documentation files was "tdoc"; several such files (one per module or proxy). Because of this file extension, the documents themselves are often called simply "TDocs" in our "Titanium vernacular."
+
+* Code Assist or Content Assist - The feature of Studio which provides pop-up help to help you complete your code statements.
+
+* JSCA - "JSON for Studio Content Assist". JSCA files contain the JSON which feeds the content assist available to developers using Studio. The requirement to generate JSCA from the documentation is one of the drivers behind this spec.
+
+* YAML - [YAML Ain't Markup Language](http://yaml.org). "YAML is a human-readable data serialization format" (Wikipedia).
+
 
 ## Proposed Documentation Specification
 
@@ -157,12 +157,12 @@ Many other projects don't need to make this choice of a separate "documentation 
 
 XML, JSON, Markdown and YAML are common choices when external (outside-the-code) documentation is necessary. Let's look at these alternatives head-to-head with YAML:
 
-*   XML versus YAML: Even for someone who doesn't like YAML, this could probably be characterized as "which do you hate more/less". XML is quite unpopular these days as the busy-ness and clutter of opening and closing tags seems less necessary given other structured-data standards such as JSON and YAML.
-    
-*   JSON versus YAML: JSON and YAML are fairly similar. In the arena of clutter, JSON was a huge improvement over XML, as-is YAML an improvement over JSON. YAML, for example, removes most of the curly braces and quotation marks that distract you while viewing JSON.
-    
-*   Markdown versus YAML: "[Markdown](http://daringfireball.net/projects/markdown/) is a text-to-HTML conversion tool for web _writers_." We've italicized _writers_ here to emphasize the fact that Markdown is really meant for writing top-down articles (blog posts, free-form documentation pages, etc.) as opposed to structured documentation. It is, in fact, relatively parseable, as our existing TDoc specification has shown. However, the more you want to annotate it with structured data outside of the free-form text that it caters to, the more unwieldy it becomes. You start inventing ways to delimit parseable data, such as by surrounding certain pieces of text with square brackets or some other braces. We've been through this with the existing TDoc specification and we are not alone. When adding more and more annotations – as we wish to do with this new specification – it becomes difficult to choose how to mark up the annotations.
-    
+* XML versus YAML: Even for someone who doesn't like YAML, this could probably be characterized as "which do you hate more/less". XML is quite unpopular these days as the busy-ness and clutter of opening and closing tags seems less necessary given other structured-data standards such as JSON and YAML.
+
+* JSON versus YAML: JSON and YAML are fairly similar. In the arena of clutter, JSON was a huge improvement over XML, as-is YAML an improvement over JSON. YAML, for example, removes most of the curly braces and quotation marks that distract you while viewing JSON.
+
+* Markdown versus YAML: "[Markdown](http://daringfireball.net/projects/markdown/) is a text-to-HTML conversion tool for web _writers_." We've italicized _writers_ here to emphasize the fact that Markdown is really meant for writing top-down articles (blog posts, free-form documentation pages, etc.) as opposed to structured documentation. It is, in fact, relatively parseable, as our existing TDoc specification has shown. However, the more you want to annotate it with structured data outside of the free-form text that it caters to, the more unwieldy it becomes. You start inventing ways to delimit parseable data, such as by surrounding certain pieces of text with square brackets or some other braces. We've been through this with the existing TDoc specification and we are not alone. When adding more and more annotations – as we wish to do with this new specification – it becomes difficult to choose how to mark up the annotations.
+
 
 Our solution is to use the strengths of YAML – structured data representation – as our primary means of documentation, and to use Markdown's strength – easy text formatting – where it's applicable, namely in the "free form text" YAML properties such as a method's description or a code example.
 
@@ -232,8 +232,8 @@ Array<\[type\]>
 
 Examples:
 
-Array<Object>  
-Array<String>  
+Array<Object>
+Array<String>
 Array<Titanium.UI.View>
 
 #### Pseudo-Types
@@ -1316,10 +1316,10 @@ Note that the actual code block is preceded by an empty line and then indented b
 
 All code blocks are assumed to be Javascript, unless the language is specified using this technique:
 
-*   The first line of the indented code block should be a comment (using whatever single-line comment syntax the language uses) containing {{language:\[language\]}}.
-    
-*   \[language\] should be one of the "Short names" values specified by [Pygments](http://pygments.org/docs/lexers/), since that is a very popular syntax highlighter, and syntax highlighting is very likely the most common why someone would be interested in this information.
-    
+* The first line of the indented code block should be a comment (using whatever single-line comment syntax the language uses) containing {{language:\[language\]}}.
+
+* \[language\] should be one of the "Short names" values specified by [Pygments](http://pygments.org/docs/lexers/), since that is a very popular syntax highlighter, and syntax highlighting is very likely the most common why someone would be interested in this information.
+
 
 Examples:
 
@@ -1375,10 +1375,10 @@ By convention, the filename should be in the form of \[type name\]\_\[method/pro
 
 The examples property for type, method and property definitions is actually an array (tuple); i.e., you can have multiple examples – each with their own title – per type/method/porperty. Each member of the array should contain:
 
-*   A title property, which is a brief description of the particular example;
-    
-*   An example property, which is free-form text (as described in the previous section) wherein you can put both explanatory text and any code blocks. This is parsed as Markdown, so simply indent each code block by another four characters for the Markdown processor to recognize it as code.
-    
+* A title property, which is a brief description of the particular example;
+
+* An example property, which is free-form text (as described in the previous section) wherein you can put both explanatory text and any code blocks. This is parsed as Markdown, so simply indent each code block by another four characters for the Markdown processor to recognize it as code.
+
 
 Note that you should put the vertical bar (|) at the start of the example value, followed by a line break and indentation. This is so that any further indentation that you do, such as for code blocks, is preserved.
 
@@ -1652,11 +1652,11 @@ As [explained earlier](#Free-FormTextValues), a few of the documentation YAML ke
 
 Instead, use one of these two Markdown standards:
 
-*   Angle brackets, if you don't need any custom text for the link. Example: <Titanium.UI.View> becomes a link with "Titanium.UI.View" as the link text and the reference being the appropriate address to the Titanium.UI.View documentation.
-    
+* Angle brackets, if you don't need any custom text for the link. Example: <Titanium.UI.View> becomes a link with "Titanium.UI.View" as the link text and the reference being the appropriate address to the Titanium.UI.View documentation.
 
-*   The standard, most common Markdown "inline link" syntax. Example: \[Your custom link text here\](Titanium.UI.View) becomes a link with "Your custom link text here" as the link text and the reference being the appropriate address to the Titanium.UI.View documentation.
-    
+
+* The standard, most common Markdown "inline link" syntax. Example: \[Your custom link text here\](Titanium.UI.View) becomes a link with "Your custom link text here" as the link text and the reference being the appropriate address to the Titanium.UI.View documentation.
+
 
 Our scripts will then evaluate the link and if the link value precisely matches the full, namespace-qualified name of a documented type, then the script will know to generate the link to the type's documentation.
 

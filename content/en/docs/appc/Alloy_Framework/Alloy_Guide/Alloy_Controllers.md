@@ -1,29 +1,29 @@
-{"title":"Alloy Controllers","weight":"20"} 
+{"title":"Alloy Controllers","weight":"20"}
 
-*   [Overview](#Overview)
-    
-*   [Controllers](#Controllers)
-    
-    *   [Events](#Events)
-        
-    *   [Inheritance](#Inheritance)
-        
-    *   [Conditional code](#Conditionalcode)
-        
-    *   [Passing arguments](#Passingarguments)
-        
-    *   [Global namespace](#Globalnamespace)
-        
-*   [Initializer file (alloy.js)](#Initializerfile(alloy.js))
-    
-*   [Library code and CommonJS modules](#LibrarycodeandCommonJSmodules)
-    
-    *   [Specs folder](#Specsfolder)
-        
-    *   [Platform-specific library folders](#Platform-specificlibraryfolders)
-        
-    *   [Extending Alloy, Underscore.js and Backbone.js](#ExtendingAlloy,Underscore.jsandBackbone.js)
-        
+* [Overview](#Overview)
+
+* [Controllers](#Controllers)
+
+  * [Events](#Events)
+
+  * [Inheritance](#Inheritance)
+
+  * [Conditional code](#Conditionalcode)
+
+  * [Passing arguments](#Passingarguments)
+
+  * [Global namespace](#Globalnamespace)
+
+* [Initializer file (alloy.js)](#Initializerfile(alloy.js))
+
+* [Library code and CommonJS modules](#LibrarycodeandCommonJSmodules)
+
+  * [Specs folder](#Specsfolder)
+
+  * [Platform-specific library folders](#Platform-specificlibraryfolders)
+
+  * [Extending Alloy, Underscore.js and Backbone.js](#ExtendingAlloy,Underscore.jsandBackbone.js)
+
 
 ## Overview
 
@@ -141,24 +141,24 @@ Alloy introduces a set of special variables that act like compiler directives. U
 
 The following are the constants defined by Alloy for use in the controller code:
 
-*   OS\_ANDROID : true if the current compiler target is Android
-    
-*   OS\_IOS : true if the current compiler target is iOS
-    
-*   OS\_MOBILEWEB : true if the current compiler target is Mobile Web
-    
-*   OS\_WINDOWS (**since Appcelerator CLI 4.0.0/Alloy 1.6.0**): true if the current compiler target is Windows Phone. Note: Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
-    
-*   ENV\_DEV : true if the current compiler target is built for development (running in the simulator or emulator)
-    
-*   ENV\_TEST : true if the current compiler target is built for testing on a device
-    
-*   ENV\_PRODUCTION : true if the current compiler target is built for production (running after a packaged installation)
-    
-*   DIST\_ADHOC (**since Alloy 1.4.0**) : true if the current compiler target is built for iOS Ad Hoc distribution, for example, if you set the \-T dist-adhoc option when building with the Titanium CLI. Note that the ENV\_PRODUCTION constant will be true too since this deployment is only for production builds.
-    
-*   DIST\_STORE (**since Alloy 1.4.0**) : true if the current compiler target is built for deployment to the Google Play Store or iTunes App Store, for example, if you set the \-T dist-store option when building with the Titanium CLI. Note that the ENV\_PRODUCTION constant will be true too since this deployment is only for production builds.
-    
+* OS\_ANDROID : true if the current compiler target is Android
+
+* OS\_IOS : true if the current compiler target is iOS
+
+* OS\_MOBILEWEB : true if the current compiler target is Mobile Web
+
+* OS\_WINDOWS (**since Appcelerator CLI 4.0.0/Alloy 1.6.0**): true if the current compiler target is Windows Phone. Note: Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+
+* ENV\_DEV : true if the current compiler target is built for development (running in the simulator or emulator)
+
+* ENV\_TEST : true if the current compiler target is built for testing on a device
+
+* ENV\_PRODUCTION : true if the current compiler target is built for production (running after a packaged installation)
+
+* DIST\_ADHOC (**since Alloy 1.4.0**) : true if the current compiler target is built for iOS Ad Hoc distribution, for example, if you set the \-T dist-adhoc option when building with the Titanium CLI. Note that the ENV\_PRODUCTION constant will be true too since this deployment is only for production builds.
+
+* DIST\_STORE (**since Alloy 1.4.0**) : true if the current compiler target is built for deployment to the Google Play Store or iTunes App Store, for example, if you set the \-T dist-store option when building with the Titanium CLI. Note that the ENV\_PRODUCTION constant will be true too since this deployment is only for production builds.
+
 
 For example, since iOS devices do not include a back button, the application can conditionally add one to a window controller:
 

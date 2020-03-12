@@ -1,4 +1,4 @@
-{"title":"ListView Binding","weight":"70"} 
+{"title":"ListView Binding","weight":"70"}
 
 Demonstrates using binding a data collection to a ListView and applying different list item templates to each list item using a data transformer.
 
@@ -162,6 +162,6 @@ app/models/info.js
 
 ## See Also
 
-*   [Alloy ListView Guide](#undefined)
-    
-*   [Titanium.UI.ListView API reference](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListView)
+* [Alloy ListView Guide](#undefined)
+
+* [Titanium.UI.ListView API reference](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListView)

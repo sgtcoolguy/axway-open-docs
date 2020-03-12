@@ -1,4 +1,4 @@
-{"title":"Nodes - Model Delete All","weight":"60"} 
+{"title":"Nodes - Model Delete All","weight":"60"}
 
 API Builder 3.x is deprecated
 

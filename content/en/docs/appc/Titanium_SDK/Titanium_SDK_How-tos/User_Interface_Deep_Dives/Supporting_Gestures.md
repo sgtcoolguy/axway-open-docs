@@ -1,17 +1,17 @@
-{"title":"Supporting Gestures","weight":"50"} 
+{"title":"Supporting Gestures","weight":"50"}
 
-*   [Shake](#Shake)
-    
-*   [Swipe](#Swipe)
-    
-*   [Touch](#Touch)
-    
-*   [Pinch](#Pinch)
-    
-*   [Long press](#Longpress)
-    
-*   [Accelerometer](#Accelerometer)
-    
+* [Shake](#Shake)
+
+* [Swipe](#Swipe)
+
+* [Touch](#Touch)
+
+* [Pinch](#Pinch)
+
+* [Long press](#Longpress)
+
+* [Accelerometer](#Accelerometer)
+
 
 ## Objective
 
@@ -21,18 +21,18 @@ In this section, you will learn how to support more than simple taps in your Tit
 
 Mobile devices offer opportunity for inputs that go beyond simple taps. "Best of breed" apps should use those inputs whenever appropriate. These include:
 
-*   Shakes
-    
-*   Swipes
-    
-*   Touches
-    
-*   Pinching
-    
-*   Long presses
-    
-*   and accelerometer inputs by which you gauge pitch, roll, and yaw.
-    
+* Shakes
+
+* Swipes
+
+* Touches
+
+* Pinching
+
+* Long presses
+
+* and accelerometer inputs by which you gauge pitch, roll, and yaw.
+
 
 We'll breeze through each of these in this section.
 
@@ -66,14 +66,14 @@ Swipes are left/right tap & drag the finger gestures (where scrolls are up/down 
 
 Touch events are associated with the Titanium UI components. There are four touch events:
 
-*   touchstart – fired when a user's finger first contacts the device's screen.
-    
-*   touchend – fired when the user lifts his or her finger.
-    
-*   touchmove – fires continuously as the user drags his or her finger on the screen.
-    
-*   touchcancel – fired if the operating system interrupts an ongoing touch event, such as when a phone call is received.
-    
+* touchstart – fired when a user's finger first contacts the device's screen.
+
+* touchend – fired when the user lifts his or her finger.
+
+* touchmove – fires continuously as the user drags his or her finger on the screen.
+
+* touchcancel – fired if the operating system interrupts an ongoing touch event, such as when a phone call is received.
+
 
 The event object associated with these events has only two useful properties: the X and Y coordinates of the event. You can use that information to track the user's finger across your app's UI.
 

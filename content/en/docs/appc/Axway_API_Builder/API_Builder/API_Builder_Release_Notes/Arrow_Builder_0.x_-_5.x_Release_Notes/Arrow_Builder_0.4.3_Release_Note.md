@@ -1,4 +1,4 @@
-{"title":"Arrow Builder 0.4.3 Release Note","weight":"90"} 
+{"title":"Arrow Builder 0.4.3 Release Note","weight":"90"}
 
 API Builder 3.x is deprecated
 
@@ -16,10 +16,10 @@ Add ability to return response results in a specific format by adding the format
 
 ### Fixed Issues
 
-*   API-455: Model: Query - Specified order of data is not correctly returned
-    
-*   API-785: Azure connector causes crash on start-up when wiring up Models
-    
-*   API-831: Arrow apps in VPCs always use the public ACS environment
-    
-*   API-832: Arrow apps in VPCs created with a default user named "undefined"
+* API-455: Model: Query - Specified order of data is not correctly returned
+
+* API-785: Azure connector causes crash on start-up when wiring up Models
+
+* API-831: Arrow apps in VPCs always use the public ACS environment
+
+* API-832: Arrow apps in VPCs created with a default user named "undefined"

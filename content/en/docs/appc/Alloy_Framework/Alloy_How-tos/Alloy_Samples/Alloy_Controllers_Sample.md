@@ -1,4 +1,4 @@
-{"title":"Alloy Controllers Sample","weight":"10"} 
+{"title":"Alloy Controllers Sample","weight":"10"}
 
 This document provides a sample of how to use an Alloy Controller.
 

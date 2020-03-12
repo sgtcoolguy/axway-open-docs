@@ -1,4 +1,4 @@
-{"title":"Alloy 1.9.5 - 29 November 2016","weight":"20"} 
+{"title":"Alloy 1.9.5 - 29 November 2016","weight":"20"}
 
 Alloy 1.9.5 is a patch release that includes two bug fixes.
 
@@ -6,6 +6,6 @@ As of this release, the previous Alloy patch release is no longer supported. Not
 
 ## Fixed issues
 
-*   [ALOY-1517](https://jira.appcelerator.org/browse/ALOY-1517) - UI elements are not created properly with formFactor property in style
-    
-*   [ALOY-1527](https://jira.appcelerator.org/browse/ALOY-1527) - Cannot use Ti.UI.iOS.TabbedBar in ListView template
+* [ALOY-1517](https://jira.appcelerator.org/browse/ALOY-1517) - UI elements are not created properly with formFactor property in style
+
+* [ALOY-1527](https://jira.appcelerator.org/browse/ALOY-1527) - Cannot use Ti.UI.iOS.TabbedBar in ListView template

@@ -1,45 +1,45 @@
-{"title":"Titanium CLI Tasks","weight":"30"} 
+{"title":"Titanium CLI Tasks","weight":"30"}
 
-*   [Development environment](#Developmentenvironment)
-    
-    *   [Check your development environment](#Checkyourdevelopmentenvironment)
-        
-    *   [Check the development environment against the Titanium SDK](#CheckthedevelopmentenvironmentagainsttheTitaniumSDK)
-        
-    *   [Configuring your development environment](#Configuringyourdevelopmentenvironment)
-        
-*   [Building applications](#Buildingapplications)
-    
-    *   [Create a Titanium project](#CreateaTitaniumproject)
-        
-    *   [Build an application](#Buildanapplication)
-        
-        *   [Android emulator](#Androidemulator)
-            
-        *   [Android device](#Androiddevice)
-            
-        *   [iOS simulator](#iOSsimulator)
-            
-        *   [iOS device](#iOSdevice)
-            
-        *   [Windows Mobile Emulator](#WindowsMobileEmulator)
-            
-        *   [Windows Mobile device](#WindowsMobiledevice)
-            
-        *   [Windows local machine](#Windowslocalmachine)
-            
-    *   [Package an application](#Packageanapplication)
-        
-        *   [Google Play APK](#GooglePlayAPK)
-            
-        *   [iOS ad hoc distribution](#iOSadhocdistribution)
-            
-        *   [iTunes Store](#iTunesStore)
-            
-        *   [Windows Store](#WindowsStore)
-            
-    *   [Clean your build folder](#Cleanyourbuildfolder)
-        
+* [Development environment](#Developmentenvironment)
+
+  * [Check your development environment](#Checkyourdevelopmentenvironment)
+
+  * [Check the development environment against the Titanium SDK](#CheckthedevelopmentenvironmentagainsttheTitaniumSDK)
+
+  * [Configuring your development environment](#Configuringyourdevelopmentenvironment)
+
+* [Building applications](#Buildingapplications)
+
+  * [Create a Titanium project](#CreateaTitaniumproject)
+
+  * [Build an application](#Buildanapplication)
+
+    * [Android emulator](#Androidemulator)
+
+    * [Android device](#Androiddevice)
+
+    * [iOS simulator](#iOSsimulator)
+
+    * [iOS device](#iOSdevice)
+
+    * [Windows Mobile Emulator](#WindowsMobileEmulator)
+
+    * [Windows Mobile device](#WindowsMobiledevice)
+
+    * [Windows local machine](#Windowslocalmachine)
+
+  * [Package an application](#Packageanapplication)
+
+    * [Google Play APK](#GooglePlayAPK)
+
+    * [iOS ad hoc distribution](#iOSadhocdistribution)
+
+    * [iTunes Store](#iTunesStore)
+
+    * [Windows Store](#WindowsStore)
+
+  * [Clean your build folder](#Cleanyourbuildfolder)
+
 
 Titainum provides a command-line interface to check and configure your environment setup, create and build applications, and much more. The Titanium CLI is distributed as apart of the Appcelerator CLI. Please refer to [Appcelerator CLI Getting Started](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Getting_Started/) for details on installing the Appcelerator CLI.
 
@@ -143,26 +143,26 @@ Once the application is installed and launched, use native tools to test, debug 
 
 The CLI checks several settings to see which SDK version to use to build your application. The following is a list of locations in the order of precedence. If an SDK version is not defined in that location, the next location is checked.
 
-1.  tiapp.xml file version specified with the sdk-version tag.  
-    To change this version, manually edit the tiapp.xml file with a text editor or use Studio.
-    
-2.  \--sdk command-line option with the titanium build command.
-    
-3.  app.sdk setting specified with the titanium config command.  
-    To check the version, run titanium config and to change the version, run appc ti config app.sdk <sdk\_version>.
-    
-4.  SDK select version.  
-    To check or change this version, run appc ti sdk select.
-    
+1. tiapp.xml file version specified with the sdk-version tag.
+  To change this version, manually edit the tiapp.xml file with a text editor or use Studio.
+
+2. \--sdk command-line option with the titanium build command.
+
+3. app.sdk setting specified with the titanium config command.
+  To check the version, run titanium config and to change the version, run appc ti config app.sdk <sdk\_version>.
+
+4. SDK select version.
+  To check or change this version, run appc ti sdk select.
+
 
 #### Android emulator
 
 You need to create an Android emulator or setup Genymotion before running these commands.
 
-*   To create an Android emulator, see [Native Android Debugging and Testing Tools: Creating an emulator](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Debugging_and_Profiling/Native_Android_Debugging_and_Testing_Tools/#Creatinganemulator).
-    
-*   To setup Genymotion, see [Installing Genymotion](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Genymotion/).
-    
+* To create an Android emulator, see [Native Android Debugging and Testing Tools: Creating an emulator](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Debugging_and_Profiling/Native_Android_Debugging_and_Testing_Tools/#Creatinganemulator).
+
+* To setup Genymotion, see [Installing Genymotion](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Genymotion/).
+
 
 To build for an emulator, run appc run -p android. Because no other options were specified, the CLI launches your default Android emulator and installs the application on it.
 

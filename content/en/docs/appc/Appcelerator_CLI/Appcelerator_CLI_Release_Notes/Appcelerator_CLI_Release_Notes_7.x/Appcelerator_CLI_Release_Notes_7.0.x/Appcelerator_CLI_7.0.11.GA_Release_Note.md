@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 7.0.11.GA - 15 May 2019","weight":"30"} 
+{"title":"Appcelerator CLI 7.0.11.GA - 15 May 2019","weight":"30"}
 
 Appcelerator CLI 7.0.11.GA is a patch release that includes internal updates and one bug fix.
 
@@ -30,4 +30,4 @@ Daemon
 
 ## Fixed issue
 
-*   [CLI-1352](https://jira.appcelerator.org/browse/CLI-1352) - Reduce time to check Titanium downloads
+* [CLI-1352](https://jira.appcelerator.org/browse/CLI-1352) - Reduce time to check Titanium downloads

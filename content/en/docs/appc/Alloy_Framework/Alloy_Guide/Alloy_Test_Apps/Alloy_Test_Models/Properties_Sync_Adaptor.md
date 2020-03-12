@@ -1,4 +1,4 @@
-{"title":"Properties Sync Adaptor","weight":"100"} 
+{"title":"Properties Sync Adaptor","weight":"100"}
 
 Demonstrates using Alloy's Titanium.App.Properties sync adaptor to save data.
 
@@ -270,6 +270,6 @@ app/controllers/collection/collectionTab.js
 
 ## See Also
 
-*   [Alloy Sync Adapters and Migrations](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Sync_Adapters_and_Migrations/)
-    
-*   [Alloy Collection and Model Objects](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Collection_and_Model_Objects/)
+* [Alloy Sync Adapters and Migrations](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Sync_Adapters_and_Migrations/)
+
+* [Alloy Collection and Model Objects](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Collection_and_Model_Objects/)

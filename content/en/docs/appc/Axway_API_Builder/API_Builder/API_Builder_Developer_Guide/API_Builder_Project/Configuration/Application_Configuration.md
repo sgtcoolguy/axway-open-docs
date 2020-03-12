@@ -1,4 +1,4 @@
-{"title":"Application Configuration","weight":"10"} 
+{"title":"Application Configuration","weight":"10"}
 
 API Builder 3.x is deprecated
 

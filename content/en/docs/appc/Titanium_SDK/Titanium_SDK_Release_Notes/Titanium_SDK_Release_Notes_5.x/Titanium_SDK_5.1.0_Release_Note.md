@@ -1,81 +1,81 @@
-{"title":"Titanium SDK 5.1.0 Release Note","weight":"200"} 
+{"title":"Titanium SDK 5.1.0 Release Note","weight":"200"}
 
 ## Titanium SDK 5.1.0 General Availability - 20 November 2015
 
 ### Contents
 
-*   [About This Release](#AboutThisRelease)
-    
-    *   [Android Support](#AndroidSupport)
-        
-    *   [CLI 5.1.0](#CLI5.1.0)
-        
-    *   [Node Support](#NodeSupport)
-        
-    *   [Studio 4.4.0](#Studio4.4.0)
-        
-*   [Notice of Feature and Behavior Changes](#NoticeofFeatureandBehaviorChanges)
-    
-    *   [Android Platform](#AndroidPlatform)
-        
-        *   [AppCompat Button](#AppCompatButton)
-            
-        *   [Target SDK](#TargetSDK)
-            
-    *   [iOS Platform](#iOSPlatform)
-        
-        *   [Activity Indicator Style Constants](#ActivityIndicatorStyleConstants)
-            
-        *   [TabGroup Events](#TabGroupEvents)
-            
-        *   [User Activity Support](#UserActivitySupport)
-            
-    *   [Device Permissions](#DevicePermissions)
-        
-    *   [Windows Platform](#WindowsPlatform)
-        
-        *   [Package Identity Name](#PackageIdentityName)
-            
-*   [New Features](#NewFeatures)
-    
-    *   [Android Platform](#AndroidPlatform.1)
-        
-        *   [CardView](#CardView)
-            
-        *   [Reveal Effect](#RevealEffect)
-            
-    *   [iOS Platform](#iOSPlatform.1)
-        
-        *   [3D Touch](#3DTouch)
-            
-        *   [Alert Dialog](#AlertDialog)
-            
-        *   [Asset Catalog](#AssetCatalog)
-            
-        *   [Auto Layout](#AutoLayout)
-            
-        *   [JavaScript Thread](#JavaScriptThread)
-            
-        *   [Picker Height](#PickerHeight)
-            
-        *   [Safari Dialog Module](#SafariDialogModule)
-            
-        *   [WatchOS Message Callback](#WatchOSMessageCallback)
-            
-    *   [Windows Platform](#WindowsPlatform.1)
-        
-        *   [API Parity](#APIParity)
-            
-        *   [Icons](#Icons)
-            
-*   [Community Credits](#CommunityCredits)
-    
-*   [API Changes](#APIChanges)
-    
-    *   [New APIs](#NewAPIs)
-        
-    *   [Deprecated APIs](#DeprecatedAPIs)
-        
+* [About This Release](#AboutThisRelease)
+
+  * [Android Support](#AndroidSupport)
+
+  * [CLI 5.1.0](#CLI5.1.0)
+
+  * [Node Support](#NodeSupport)
+
+  * [Studio 4.4.0](#Studio4.4.0)
+
+* [Notice of Feature and Behavior Changes](#NoticeofFeatureandBehaviorChanges)
+
+  * [Android Platform](#AndroidPlatform)
+
+    * [AppCompat Button](#AppCompatButton)
+
+    * [Target SDK](#TargetSDK)
+
+  * [iOS Platform](#iOSPlatform)
+
+    * [Activity Indicator Style Constants](#ActivityIndicatorStyleConstants)
+
+    * [TabGroup Events](#TabGroupEvents)
+
+    * [User Activity Support](#UserActivitySupport)
+
+  * [Device Permissions](#DevicePermissions)
+
+  * [Windows Platform](#WindowsPlatform)
+
+    * [Package Identity Name](#PackageIdentityName)
+
+* [New Features](#NewFeatures)
+
+  * [Android Platform](#AndroidPlatform.1)
+
+    * [CardView](#CardView)
+
+    * [Reveal Effect](#RevealEffect)
+
+  * [iOS Platform](#iOSPlatform.1)
+
+    * [3D Touch](#3DTouch)
+
+    * [Alert Dialog](#AlertDialog)
+
+    * [Asset Catalog](#AssetCatalog)
+
+    * [Auto Layout](#AutoLayout)
+
+    * [JavaScript Thread](#JavaScriptThread)
+
+    * [Picker Height](#PickerHeight)
+
+    * [Safari Dialog Module](#SafariDialogModule)
+
+    * [WatchOS Message Callback](#WatchOSMessageCallback)
+
+  * [Windows Platform](#WindowsPlatform.1)
+
+    * [API Parity](#APIParity)
+
+    * [Icons](#Icons)
+
+* [Community Credits](#CommunityCredits)
+
+* [API Changes](#APIChanges)
+
+  * [New APIs](#NewAPIs)
+
+  * [Deprecated APIs](#DeprecatedAPIs)
+
 
 ## About This Release
 
@@ -139,29 +139,29 @@ This Release re-architected the way an application requests device permissions i
 
 Use the following methods to check and request for permission to use the device's calendar, camera, contacts and location on devices running Android 6.0 and later, and iOS:
 
-*   [Titanium.Calendar.hasCalendarPermissions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Calendar-method-hasCalendarPermissions)
-    
-*   [Titanium.Calendar.requestCalendarPermissions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Calendar-method-requestCalendarPermissions)
-    
-*   [Titanium.Contacts.hasContactsPermissions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Contacts-method-hasContactsPermissions)
-    
-*   [Titanium.Contacts.requestContactsPermissions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Contacts-method-requestContactsPermissions)
-    
-*   [Titanium.Geolocation.hasLocationPermissions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Geolocation-method-hasLocationPermissions)
-    
-*   [Titanium.Geolocation.requestLocationPermissions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Geolocation-method-requestLocationPermissions)
-    
-*   [Titanium.Media.hasCameraPermissions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Media-method-hasCameraPermissions)
-    
-*   [Titanium.Media.requestCameraPermissions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Media-method-requestCameraPermissions)
-    
+* [Titanium.Calendar.hasCalendarPermissions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Calendar-method-hasCalendarPermissions)
+
+* [Titanium.Calendar.requestCalendarPermissions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Calendar-method-requestCalendarPermissions)
+
+* [Titanium.Contacts.hasContactsPermissions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Contacts-method-hasContactsPermissions)
+
+* [Titanium.Contacts.requestContactsPermissions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Contacts-method-requestContactsPermissions)
+
+* [Titanium.Geolocation.hasLocationPermissions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Geolocation-method-hasLocationPermissions)
+
+* [Titanium.Geolocation.requestLocationPermissions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Geolocation-method-requestLocationPermissions)
+
+* [Titanium.Media.hasCameraPermissions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Media-method-hasCameraPermissions)
+
+* [Titanium.Media.requestCameraPermissions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Media-method-requestCameraPermissions)
+
 
 The new methods deprecate the following methods on iOS:
 
-*   Titanium.Calendar.requestEventsAuthorization
-    
-*   Titanium.Media.requestCameraAccess
-    
+* Titanium.Calendar.requestEventsAuthorization
+
+* Titanium.Media.requestCameraAccess
+
 
 ### Windows Platform
 
@@ -169,10 +169,10 @@ The new methods deprecate the following methods on iOS:
 
 As of this Release, in the tiapp.xml file, add the id element as a child of the windows element and set it to the Package/Identity/Name of the application that was generated when you created the application in the Windows Dev Center Dashboard. The Package Identity Name is required to package the application. Microsoft will validate this field when you submit the package to the Windows Store.
 
-<ti:app>  
-  <windows>  
-    <id>12345FooInc.FooApp</id>  
-  </windows>  
+<ti:app>
+  <windows>
+    <id>12345FooInc.FooApp</id>
+  </windows>
 </ti:app>
 
 Previously, the Package Identity Name was specified in the id element under the ti:app element.
@@ -221,21 +221,21 @@ To support App Thinning, PNG and JPEG images, following the iOS naming conventio
 
 To mark images for use with the Asset Catalog, add the @2x and @3x to indicate the asset is for retina displays and the iPhone 6 Plus, respectively. For non-retina displays, do not add a suffix. Add the ~iphone and ~ipad suffix for iPhone- and iPad-specific images, respectively. For example:
 
-*   pic.png
-    
-*   pic@2x~ipad.png
-    
-*   pic@2x~iphone.png
-    
-*   pic@3x.png
-    
+* pic.png
+
+* pic@2x~ipad.png
+
+* pic@2x~iphone.png
+
+* pic@3x.png
+
 
 Only new applications created with Release 5.1.0 and above will have this feature enabled. For existing applications, you need to add the use-app-thinning element to the ios element in the tiapp.xml file and set it to true.
 
-<ti:app>  
-  <ios>  
-    <use-app-thinning>true</use-app-thinning>  
-  </ios>  
+<ti:app>
+  <ios>
+    <use-app-thinning>true</use-app-thinning>
+  </ios>
 </ti:app>
 
 Note that since the images are in an Asset Catalog, you cannot access the image files from the filesystem, such as using the Ti.Filesystem APIs or any equivalent functionality. If you need to access the image files, you can disable adding images to the Asset Catalog by setting the use-app-thinning element to false.
@@ -246,22 +246,22 @@ As of this Release, the application can use [iOS's Auto Layout engine](https://d
 
 To enable autolayout, add the use-autolayout element as a child of the ios element in the tiapp.xml file, and set it to true.
 
-<ti:app>  
-  <ios>  
-    <use-autolayout>true</use-autolayout>  
-  </ios>  
+<ti:app>
+  <ios>
+    <use-autolayout>true</use-autolayout>
+  </ios>
 </ti:app>
 
 Note that this is an experimental feature with known issues:
 
-*   [TIMOB-19808](https://jira.appcelerator.org/browse/TIMOB-19808)
-    
-*   [TIMOB-19807](https://jira.appcelerator.org/browse/TIMOB-19807)
-    
-*   [TIMOB-19806](https://jira.appcelerator.org/browse/TIMOB-19806)
-    
-*   [TIMOB-19805](https://jira.appcelerator.org/browse/TIMOB-19805)
-    
+* [TIMOB-19808](https://jira.appcelerator.org/browse/TIMOB-19808)
+
+* [TIMOB-19807](https://jira.appcelerator.org/browse/TIMOB-19807)
+
+* [TIMOB-19806](https://jira.appcelerator.org/browse/TIMOB-19806)
+
+* [TIMOB-19805](https://jira.appcelerator.org/browse/TIMOB-19805)
+
 
 If you encounter an issue using auto layout, file a bug in [JIRA](https://jira.appcelerator.org/).
 
@@ -271,18 +271,18 @@ As of this Release, you may enable JavaScript to execute on the main thread. By 
 
 To run JavaScript on the main thread, add the run-on-main-thread element to the ios element in the tiapp.xml file and set the value to true.
 
-<ti:app>  
-  <ios>  
-    <run-on-main-thread>false</run-on-main-thread>  
-  </ios>  
+<ti:app>
+  <ios>
+    <run-on-main-thread>false</run-on-main-thread>
+  </ios>
 </ti:app>
 
 Note that this is an experimental feature with known issues:
 
-*   [TIMOB-19762](https://jira.appcelerator.org/browse/TIMOB-19762)
-    
-*   [TIMOB-19760](https://jira.appcelerator.org/browse/TIMOB-19760)
-    
+* [TIMOB-19762](https://jira.appcelerator.org/browse/TIMOB-19762)
+
+* [TIMOB-19760](https://jira.appcelerator.org/browse/TIMOB-19760)
+
 
 If you encounter an issue running JavaScript on the main thread, file a bug in [JIRA](https://jira.appcelerator.org/).
 
@@ -312,14 +312,14 @@ This section lists new features and improvements only available on the Windows p
 
 The Windows Platform expands support for several APIs, including:
 
-*   [Titanium.Buffer](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Buffer)
-    
-*   [Titanium.Contacts](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Contacts)
-    
-*   [Titanium.IOStream](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.IOStream)
-    
-*   [Titanium.UI.Picker](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Picker)
-    
+* [Titanium.Buffer](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Buffer)
+
+* [Titanium.Contacts](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Contacts)
+
+* [Titanium.IOStream](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.IOStream)
+
+* [Titanium.UI.Picker](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Picker)
+
 
 For details, see the [New APIs section below](https://docs.appcelerator.com/platform/release-notes/?version=5.1.0.GA#new_apis).
 
@@ -333,12 +333,12 @@ For a Windows-specific icon, name the file DefaultIcon-windows.png.
 
 The following Appcelerator Community members contributed PRs that were included in this Release:
 
-*   [Ben Bahrenburg](https://github.com/benbahrenburg) for implementing support for iOS 3-D touch quick actions ([TIMOB-19489](https://jira.appcelerator.org/browse/TIMOB-19489))
-    
-*   [Manuel Lehner](https://github.com/manumaticx) for fixing a bug with the Android reveal effect ([TIMOB-19722](https://jira.appcelerator.org/browse/TIMOB-19722)) and implementing support for the Android AppCompat button ([TIMOB-19506](https://jira.appcelerator.org/browse/TIMOB-19506))
-    
-*   [Manoj Kumar](https://github.com/mano-mykingdom) for fixing a bug when the content type was not specified in an HTTP response ([TIMOB-19555](https://jira.appcelerator.org/browse/TIMOB-19555))
-    
+* [Ben Bahrenburg](https://github.com/benbahrenburg) for implementing support for iOS 3-D touch quick actions ([TIMOB-19489](https://jira.appcelerator.org/browse/TIMOB-19489))
+
+* [Manuel Lehner](https://github.com/manumaticx) for fixing a bug with the Android reveal effect ([TIMOB-19722](https://jira.appcelerator.org/browse/TIMOB-19722)) and implementing support for the Android AppCompat button ([TIMOB-19506](https://jira.appcelerator.org/browse/TIMOB-19506))
+
+* [Manoj Kumar](https://github.com/mano-mykingdom) for fixing a bug when the content type was not specified in an HTTP response ([TIMOB-19555](https://jira.appcelerator.org/browse/TIMOB-19555))
+
 
 ## API Changes
 
@@ -844,9 +844,6 @@ method
 
 Sets the value of the Titanium.UI.iOS.forceTouchSupported property. (New API, supported on iPhone and iPad.)
 
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
-
 ### Deprecated APIs
 
 The following APIs are deprecated in Release 5.1.0 as of November 20th, 2015.
@@ -904,6 +901,3 @@ Titanium.UI.iPhone.ActivityIndicatorStyle
 object
 
 Use Ti.UI.ActivityIndicatorStyle instead.
-
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**

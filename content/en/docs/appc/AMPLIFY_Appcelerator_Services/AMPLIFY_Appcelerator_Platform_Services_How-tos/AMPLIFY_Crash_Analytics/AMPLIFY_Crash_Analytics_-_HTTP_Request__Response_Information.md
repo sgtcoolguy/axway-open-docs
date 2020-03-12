@@ -1,6 +1,6 @@
-{"title":"AMPLIFY Crash Analytics - HTTP Request /Response Information","weight":"20"} 
+{"title":"AMPLIFY Crash Analytics - HTTP Request /Response Information","weight":"20"}
 
-The AMPLIFY Crash Analytics (ACA) [API](https://docs.appcelerator.com/platform/latest/#!/api/Modules.ACA) can be used to log requests. Using breadcrumbs the REST API call's request/response information can be attached to crash events.
+The AMPLIFY Crash Analytics (ACA) [API](https://docs.appcelerator.com/platform/latest/#!/api/Modules.ACA) can be used to log requests. Using breadcrumbs, the REST API call's request/response information can be attached to crash events.
 
 This sample code will automatically log the request time, response code, and response time in the breadcrumbs.
 
@@ -48,6 +48,6 @@ This sample code will automatically log the request time, response code, and res
 
 `});`
 
-In the Dashboard , if you navigate to the Application's Crashes - > Crash Details -> Occurrences tab you can view the breadcrumb by expanding a crash occurrence.
+In the Dashboard , if you navigate to the Application's Crashes - > Crash Details -> Occurrences tab, you can view the breadcrumb by expanding a crash occurrence.
 
 ![Screen_Shot_2019-09-20_at_11.17.25_AM](/Images/appc/download/attachments/60148834/Screen_Shot_2019-09-20_at_11.17.25_AM.png)

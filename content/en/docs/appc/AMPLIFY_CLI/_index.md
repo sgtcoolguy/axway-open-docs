@@ -1,28 +1,28 @@
-{"title":"AMPLIFY CLI","weight":"110"} 
+{"title":"AMPLIFY CLI","weight":"120"}
 
-*   [Extensions](#Extensions)
-    
-*   [Requirements](#Requirements)
-    
-*   [Installation](#Installation)
-    
-*   [Next steps](#Nextsteps)
-    
+* [Extensions](#Extensions)
+
+* [Requirements](#Requirements)
+
+* [Installation](#Installation)
+
+* [Next steps](#Nextsteps)
+
 
 The AMPLIFY Command Line Interface (ACLI) is a unified command line interface provides a single entry-point for multiple external CLI's and the Axway AMPLIFY platform. External CLI's are registered with the ACLI (via a config file) and are responsible for all application logic.
 
 With the ACLI, you can:
 
-*   Install and manage additional Axway command line programs
-    
-*   Authenticate against the Axway platform
-    
-*   Configure your local AMPLIFY development settings
-    
-*   Automate AMPLIFY CLI commands from other scripting languages
-    
-*   Apply authentication credentials per command
-    
+* Install and manage additional Axway command line programs
+
+* Authenticate against the Axway platform
+
+* Configure your local AMPLIFY development settings
+
+* Automate AMPLIFY CLI commands from other scripting languages
+
+* Apply authentication credentials per command
+
 
 ![AMPLIFY_CLI](/Images/appc/download/attachments/58726425/AMPLIFY_CLI.png)
 
@@ -60,11 +60,11 @@ If you get error message, see [AMPLIFY CLI Error Messages During Installation](/
 
 You can learn more about ACLI by reading the following documents:
 
-*   [AMPLIFY CLI Quick Start](/docs/appc/AMPLIFY_CLI/AMPLIFY_CLI_Quick_Start/)
-    
-*   [AMPLIFY CLI Commands](/docs/appc/AMPLIFY_CLI/AMPLIFY_CLI_Commands/)
-    
-*   [AMPLIFY CLI Error Messages During Installation](/docs/appc/AMPLIFY_CLI/AMPLIFY_CLI_Error_Messages_During_Installation/)
-    
+* [AMPLIFY CLI Quick Start](/docs/appc/AMPLIFY_CLI/AMPLIFY_CLI_Quick_Start/)
+
+* [AMPLIFY CLI Commands](/docs/appc/AMPLIFY_CLI/AMPLIFY_CLI_Commands/)
+
+* [AMPLIFY CLI Error Messages During Installation](/docs/appc/AMPLIFY_CLI/AMPLIFY_CLI_Error_Messages_During_Installation/)
+
 
 Last Modified: Jul 23, 2019 10:54

@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 7.0.4.RC - 7 June 2018","weight":"170"} 
+{"title":"Appcelerator CLI 7.0.4.RC - 7 June 2018","weight":"170"}
 
 Appcelerator CLI 7.0.4 is a patch release that includes one bug fix.
 
@@ -14,12 +14,12 @@ For more information, please refer to Axway's **[Privacy compliance program](htt
 
 You can contact the Axway Data Protection Office by sending an email to **[privacy@axway.com](mailto:privacy@axway.com)**. If you'd like to contact us in writing, see the following list of addresses that best applies to your location:
 
-*   USA: Axway Inc, 6811 E. Mayo Blvd, 4th Floor, Phoenix, AZ 85054, USA
-    
-*   EMEA: Axway Software, Tour W, 102 Terrasse Boieldieu - 92807 Puteaux Cedex, FRANCE
-    
-*   APAC: Axway Australia, Suite 1301, 99 Mount Street, North Sydney, 2060 NSW, AUSTRALIA
-    
+* USA: Axway Inc, 6811 E. Mayo Blvd, 4th Floor, Phoenix, AZ 85054, USA
+
+* EMEA: Axway Software, Tour W, 102 Terrasse Boieldieu - 92807 Puteaux Cedex, FRANCE
+
+* APAC: Axway Australia, Suite 1301, 99 Mount Street, North Sydney, 2060 NSW, AUSTRALIA
+
 
 ## Component versions
 
@@ -47,4 +47,4 @@ Titanium CLI
 
 ## Fixed issue
 
-*   [CLI-1314](https://jira.appcelerator.org/browse/CLI-1314) - ABC: Issue enabling cloud and performance services for new apps
+* [CLI-1314](https://jira.appcelerator.org/browse/CLI-1314) - ABC: Issue enabling cloud and performance services for new apps

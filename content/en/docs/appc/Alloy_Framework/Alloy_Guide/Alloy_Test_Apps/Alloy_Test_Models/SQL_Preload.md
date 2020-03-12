@@ -1,4 +1,4 @@
-{"title":"SQL Preload","weight":"140"} 
+{"title":"SQL Preload","weight":"140"}
 
 Demonstrates how to preload a SQLite database for your Alloy appliccation using an external SQLite database file.
 
@@ -14,12 +14,12 @@ The .sqlite database file must be placed in your Alloy project's **app/assets** 
 
 The **config.adaptor** object in the Alloy application's model configuration file must specify the following key-value pairs:
 
-*   **collection\_name** – The table name inside the SQLite file to use for models and collections.
-    
-*   **db\_file** – The SQLite file to use to preload the application database.
-    
-*   **db\_name** – The name to for the SQLite database name. If not specified, the database name is set to the base name of the .sqlite file.
-    
+* **collection\_name** – The table name inside the SQLite file to use for models and collections.
+
+* **db\_file** – The SQLite file to use to preload the application database.
+
+* **db\_name** – The name to for the SQLite database name. If not specified, the database name is set to the base name of the .sqlite file.
+
 
 app/models/fighters.js
 
@@ -85,4 +85,4 @@ app/models/fighters.js
 
 ## See Also
 
-*   [Alloy Sync Adapters and Migrations](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Sync_Adapters_and_Migrations/)
+* [Alloy Sync Adapters and Migrations](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Sync_Adapters_and_Migrations/)

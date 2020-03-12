@@ -1,23 +1,23 @@
-{"title":"Coding Strategies","weight":"40"} 
+{"title":"Coding Strategies","weight":"40"}
 
-*   [Coding principles](#Codingprinciples)
-    
-    *   [Global scope](#Globalscope)
-        
-    *   [Stay DRY](#StayDRY)
-        
-    *   [Execution contexts](#Executioncontexts)
-        
-*   [Creating High Quality JavaScript Based Apps](#CreatingHighQualityJavaScriptBasedApps)
-    
-    *   [Namespaced pattern with self-calling functions](#Namespacedpatternwithself-callingfunctions)
-        
-    *   [CommonJS modules](#CommonJSmodules)
-        
-*   [Model-View-Controller using the Alloy Framework](#Model-View-ControllerusingtheAlloyFramework)
-    
-*   [References and Further Reading](#ReferencesandFurtherReading)
-    
+* [Coding principles](#Codingprinciples)
+
+  * [Global scope](#Globalscope)
+
+  * [Stay DRY](#StayDRY)
+
+  * [Execution contexts](#Executioncontexts)
+
+* [Creating High Quality JavaScript Based Apps](#CreatingHighQualityJavaScriptBasedApps)
+
+  * [Namespaced pattern with self-calling functions](#Namespacedpatternwithself-callingfunctions)
+
+  * [CommonJS modules](#CommonJSmodules)
+
+* [Model-View-Controller using the Alloy Framework](#Model-View-ControllerusingtheAlloyFramework)
+
+* [References and Further Reading](#ReferencesandFurtherReading)
+
 
 ## Objective
 
@@ -33,12 +33,12 @@ Let's take a look at the coding principles and application structures to which y
 
 When writing JavaScript for your Titanium apps, you should strive to achieve these programming principles:
 
-*   Protect the global scope
-    
-*   Keep your code DRY (http://en.wikipedia.org/wiki/Don't\_repeat\_yourself)
-    
-*   Use a single execution context
-    
+* Protect the global scope
+
+* Keep your code DRY (http://en.wikipedia.org/wiki/Don't\_repeat\_yourself)
+
+* Use a single execution context
+
 
 #### Global scope
 
@@ -138,117 +138,117 @@ By default, a Titanium Mobile application has a single execution context in whic
 
 When the window is opened, the script window.js is immediately run in a new execution context. If the preceding code were run in app.js, any variables or function declarations made in app.js would be unavailable within window.js. Try it:
 
-1.  Create a new Titanium Mobile project.
-    
-2.  In app.js, cut the following text and paste it into a new file named win1.js:
-    
-    `var label1 = Titanium.UI.createLabel({`
-    
-    `color:``'#999'``,`
-    
-    `text:``'I am Window 1'``,`
-    
-    `font:{fontSize:``20``,fontFamily:``'Helvetica Neue'``},`
-    
-    `textAlign:``'center'`
-    
-    `});`
-    
-    `win1.add(label1);`
-    
-3.  Then, update the code that defines win1, like this:
-    
-    `var win1 = Titanium.UI.createWindow({`
-    
-    `title:``'Tab 1'``,`
-    
-    `backgroundColor:``'#fff'``,`
-    
-    `url:``'win1.js'`
-    
-    `});`
-    
-4.  Build your project for the simulator/emulator. You'll receive an error that win1 is undefined in the win1.js file. The win1 variable is defined in app.js, which is a separate context. Let's fix that.
-    
-5.  In win1.js, add this statement at the top:
-    
-    `var win1 = Ti.UI.currentWindow;`
-    
-6.  Build your project for the simulator/emulator and this time it will run without errors. To pass data into a separate context, you can add custom properties to your window object.
-    
-7.  In app.js, update the code to read:
-    
-    `var win1 = Titanium.UI.createWindow({`
-    
-    `title:``'Tab 1'``,`
-    
-    `backgroundColor:``'#fff'``,`
-    
-    `url:``'win1.js'``,`
-    
-    `mylabel:``'Hello from app.js'`
-    
-    `});`
-    
-8.  Then, in win1.js, update the code to read:
-    
-    `var label1 = Titanium.UI.createLabel({`
-    
-    `color:``'#999'``,`
-    
-    `text:win1.mylabel,`
-    
-    `font:{fontSize:``20``,fontFamily:``'Helvetica Neue'``},`
-    
-    `textAlign:``'center'`
-    
-    `});`
-    
-9.  Build your project for the simulator/emulator. The custom window property you set in app.js is available within the win1.js context and is used as the label's text.
-    
+1. Create a new Titanium Mobile project.
+
+2. In app.js, cut the following text and paste it into a new file named win1.js:
+
+  `var label1 = Titanium.UI.createLabel({`
+
+  `color:``'#999'``,`
+
+  `text:``'I am Window 1'``,`
+
+  `font:{fontSize:``20``,fontFamily:``'Helvetica Neue'``},`
+
+  `textAlign:``'center'`
+
+  `});`
+
+  `win1.add(label1);`
+
+3. Then, update the code that defines win1, like this:
+
+  `var win1 = Titanium.UI.createWindow({`
+
+  `title:``'Tab 1'``,`
+
+  `backgroundColor:``'#fff'``,`
+
+  `url:``'win1.js'`
+
+  `});`
+
+4. Build your project for the simulator/emulator. You'll receive an error that win1 is undefined in the win1.js file. The win1 variable is defined in app.js, which is a separate context. Let's fix that.
+
+5. In win1.js, add this statement at the top:
+
+  `var win1 = Ti.UI.currentWindow;`
+
+6. Build your project for the simulator/emulator and this time it will run without errors. To pass data into a separate context, you can add custom properties to your window object.
+
+7. In app.js, update the code to read:
+
+  `var win1 = Titanium.UI.createWindow({`
+
+  `title:``'Tab 1'``,`
+
+  `backgroundColor:``'#fff'``,`
+
+  `url:``'win1.js'``,`
+
+  `mylabel:``'Hello from app.js'`
+
+  `});`
+
+8. Then, in win1.js, update the code to read:
+
+  `var label1 = Titanium.UI.createLabel({`
+
+  `color:``'#999'``,`
+
+  `text:win1.mylabel,`
+
+  `font:{fontSize:``20``,fontFamily:``'Helvetica Neue'``},`
+
+  `textAlign:``'center'`
+
+  `});`
+
+9. Build your project for the simulator/emulator. The custom window property you set in app.js is available within the win1.js context and is used as the label's text.
+
 
 It is possible to communicate across execution contexts using application-level events. Using Titanium's custom event API, arbitrary JavaScript data structures can be sent and received in different execution contexts. Note that the 'payload' of your event must be JSON serializable, so business objects will not preserve any instance methods associated with them. The APIs used to fire and receive events are in the Ti.App namespace.
 
 Let's modify the project you just used to demonstrate multiple contexts.
 
-1.  In win1.js, add this code:
-    
-    `label1.addEventListener(``'click'``, function() {`
-    
-    `Ti.App.fireEvent(``'app:labelclicked'``, {newlabel:``'Sent from win1.js'``});`
-    
-    `});`
-    
-2.  Back in app.js, scroll down to find the label2 code. This code is in the app.js context, walled off from the win1.js context. We'll add an event listener here to update the text of label2 when label1 is clicked. Add this code after label2:
-    
-    `Ti.App.addEventListener(``'app:labelclicked'``, function(e) {`
-    
-    `label2.text = e.newlabel;`
-    
-    `});`
-    
-3.  Build your project for the simulator/emulator. Click the label on tab 1. Switch to tab 2 and the label should now read 'Sent from win1.js'.
-    
+1. In win1.js, add this code:
+
+  `label1.addEventListener(``'click'``, function() {`
+
+  `Ti.App.fireEvent(``'app:labelclicked'``, {newlabel:``'Sent from win1.js'``});`
+
+  `});`
+
+2. Back in app.js, scroll down to find the label2 code. This code is in the app.js context, walled off from the win1.js context. We'll add an event listener here to update the text of label2 when label1 is clicked. Add this code after label2:
+
+  `Ti.App.addEventListener(``'app:labelclicked'``, function(e) {`
+
+  `label2.text = e.newlabel;`
+
+  `});`
+
+3. Build your project for the simulator/emulator. Click the label on tab 1. Switch to tab 2 and the label should now read 'Sent from win1.js'.
+
 
 ##### Should I use a single context or multiple contexts?
 
 As is often the case in software development, the answer is "that depends". Most of the time, we recommend you use a single execution context for these reasons:
 
-*   You can pass complex objects easily within your app's single context — With events, you can pass JSON-serializable objects, but not objects with methods.
-    
-*   You include your libraries/dependencies only once, since there's only one context — With multiple contexts, each file would need to include your libraries/dependencies, increasing memory usage.
-    
-*   In most of the projects done by Appcelerator's own Professional Services team on Titanium Mobile, a single execution context with multiple included external files is used. However, there are instances where having multiple execution contexts is useful. For example, in our Kitchen Sink application, it is advantageous to have a 'clean slate' for every API usage example, so we don't have to worry about polluting the global scope and can keep the examples easy.
-    
+* You can pass complex objects easily within your app's single context — With events, you can pass JSON-serializable objects, but not objects with methods.
+
+* You include your libraries/dependencies only once, since there's only one context — With multiple contexts, each file would need to include your libraries/dependencies, increasing memory usage.
+
+* In most of the projects done by Appcelerator's own Professional Services team on Titanium Mobile, a single execution context with multiple included external files is used. However, there are instances where having multiple execution contexts is useful. For example, in our Kitchen Sink application, it is advantageous to have a 'clean slate' for every API usage example, so we don't have to worry about polluting the global scope and can keep the examples easy.
+
 
 ### Creating High Quality JavaScript Based Apps
 
 Let's recap: keep your code DRY, don't pollute the global scope, and strive for a single context app. We offer a couple of techniques you can use to meet these goals:
 
-*   Namespaced pattern with self-calling functions
-    
-*   CommonJS modules
-    
+* Namespaced pattern with self-calling functions
+
+* CommonJS modules
+
 
 (These aren't formal [design patterns](http://addyosmani.com/resources/essentialjsdesignpatterns/book/), but important development concepts for JavaScript and Titanium developers.)
 
@@ -318,14 +318,14 @@ Titanium Mobile is moving toward the adoption of the [CommonJS](http://www.commo
 
 ##### Definitions
 
-*   **Module** - Any CommonJS-compliant module which will be consumed in a Titanium Mobile application. This can be a JavaScript file included with an application, or a native extension to Titanium which exposes a JavaScript API.
-    
-*   **Resources** - The Resources directory of a Titanium application, where the user's source code lives before any processing by our build system.
-    
-*   exports - a free variable within a module, to which multiple properties may be added to create a public interface
-    
-*   module.exports - an object within a module, which may be REPLACED by an object representing the public interface to the module
-    
+* **Module** - Any CommonJS-compliant module which will be consumed in a Titanium Mobile application. This can be a JavaScript file included with an application, or a native extension to Titanium which exposes a JavaScript API.
+
+* **Resources** - The Resources directory of a Titanium application, where the user's source code lives before any processing by our build system.
+
+* exports - a free variable within a module, to which multiple properties may be added to create a public interface
+
+* module.exports - an object within a module, which may be REPLACED by an object representing the public interface to the module
+
 
 Our specific implementation of the [CommonJS Module Specification](http://wiki.commonjs.org/wiki/Modules/1.1) is based on (and the early implementation on Android taken directly from) that of [Node.js](http://nodejs.org/docs/v0.6.0/api/modules.html). While we should not consider our implementation a direct clone of node, we should favor node conventions where possible to foster reuse of modules across both environments.
 
@@ -407,19 +407,19 @@ CommonJS is being rapidly and widely adopted by professional JavaScript programm
 
 Some additional CommonJS resources we recommend you check out are:
 
-*   [CommonJS Modules in Titanium](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Best_Practices_and_Recommendations/CommonJS_Modules_in_Titanium/)
-    
-*   [Forging Titanium Episode 1: CommonJS Modules](http://vimeopro.com/appcelerator/forging-titanium/video/27447911)
-    
-*   [ToDoList Sample App](https://github.com/appcelerator-titans/TodoList)
-    
+* [CommonJS Modules in Titanium](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Best_Practices_and_Recommendations/CommonJS_Modules_in_Titanium/)
+
+* [Forging Titanium Episode 1: CommonJS Modules](http://vimeopro.com/appcelerator/forging-titanium/video/27447911)
+
+* [ToDoList Sample App](https://github.com/appcelerator-titans/TodoList)
+
 
 ### Model-View-Controller using the Alloy Framework
 
 The Alloy framework provides an alternate model for developing Titanium applications. Alloy is a Model-View-Controller (MVC) framework for Titanium that allows you to define UI elements in declarative markup, instead of code. For more information, see:
 
-*   [Alloy Framework](/docs/appc/Alloy_Framework/)
-    
+* [Alloy Framework](/docs/appc/Alloy_Framework/)
+
 
 ## Hands-on Practice
 
@@ -431,48 +431,48 @@ In this activity, you will create a project in which you first implement the sel
 
 **Part A**
 
-1.  In Studio, create a new project. Delete the default content of app.js.
-    
-2.  Using the module/self-calling technique outlined above, write an app that:
-    
-    *   Defines a single, hierarchical namespace such that only one variable is added to the global namespace
-        
-    *   Opens a window with a red background.
-        
-    *   Includes a single label with white text, centered at the top of the window. Use the label text of your choice.
-        
-    *   Includes a method to update the label's text. Use setTimeout() to update the label with new text after a few second delay.
-        
-    *   If you implement this app in multiple files, add the necessary Ti.include() statement to import them all.
-        
-3.  Build and test your app in the simulator/emulator.
-    
+1. In Studio, create a new project. Delete the default content of app.js.
+
+2. Using the module/self-calling technique outlined above, write an app that:
+
+  * Defines a single, hierarchical namespace such that only one variable is added to the global namespace
+
+  * Opens a window with a red background.
+
+  * Includes a single label with white text, centered at the top of the window. Use the label text of your choice.
+
+  * Includes a method to update the label's text. Use setTimeout() to update the label with new text after a few second delay.
+
+  * If you implement this app in multiple files, add the necessary Ti.include() statement to import them all.
+
+3. Build and test your app in the simulator/emulator.
+
 
 **Part B**
 
-1.  Refactor the code to use the CommonJS require() technique. Your app should still only define a single, hierarchical namespace such that only one variable is added to the global namespace.
-    
-2.  Build and test your app in the simulator/emulator.
-    
+1. Refactor the code to use the CommonJS require() technique. Your app should still only define a single, hierarchical namespace such that only one variable is added to the global namespace.
+
+2. Build and test your app in the simulator/emulator.
+
 
 ### References and Further Reading
 
-*   Finished code for [Part A](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/2.3_codingpatterns_A.zip) and [Part B](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/2.3_codingpatterns_B.zip)
-    
-*   [CommonJS Modules in Titanium](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Best_Practices_and_Recommendations/CommonJS_Modules_in_Titanium/) (Titanium Mobile best practices guide)
-    
-*   [Functional JavaScript](http://www.hunlock.com/blogs/Functional_Javascript)
-    
-*   Video: [Douglas Crockford on JavaScript functions](http://yuilibrary.com/theater/douglas-crockford/crockonjs-3/)
-    
-*   [Module Pattern](http://yuiblog.com/blog/2007/06/12/module-pattern/)
-    
-*   [Essential JavaScript Design Patterns ebook](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)
-    
-*   [Patterns For Large-Scale JavaScript Application Architecture](http://addyosmani.com/largescalejavascript)
-    
-*   [Immediately Invoked Function Expressions](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
-    
+* Finished code for [Part A](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/2.3_codingpatterns_A.zip) and [Part B](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/2.3_codingpatterns_B.zip)
+
+* [CommonJS Modules in Titanium](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Best_Practices_and_Recommendations/CommonJS_Modules_in_Titanium/) (Titanium Mobile best practices guide)
+
+* [Functional JavaScript](http://www.hunlock.com/blogs/Functional_Javascript)
+
+* Video: [Douglas Crockford on JavaScript functions](http://yuilibrary.com/theater/douglas-crockford/crockonjs-3/)
+
+* [Module Pattern](http://yuiblog.com/blog/2007/06/12/module-pattern/)
+
+* [Essential JavaScript Design Patterns ebook](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+
+* [Patterns For Large-Scale JavaScript Application Architecture](http://addyosmani.com/largescalejavascript)
+
+* [Immediately Invoked Function Expressions](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
+
 
 ## Summary
 

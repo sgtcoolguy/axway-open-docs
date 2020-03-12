@@ -1,4 +1,4 @@
-{"title":"Nodes - Model Find and Modify","weight":"90"} 
+{"title":"Nodes - Model Find and Modify","weight":"90"}
 
 API Builder 3.x is deprecated
 

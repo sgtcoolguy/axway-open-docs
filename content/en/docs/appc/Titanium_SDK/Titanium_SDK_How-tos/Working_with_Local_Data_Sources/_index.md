@@ -1,4 +1,4 @@
-{"title":"Working with Local Data Sources","weight":"70"} 
+{"title":"Working with Local Data Sources","weight":"70"}
 
 Even the most rudimentary applications usually have some data storage requirements. Perhaps you want to save a user's name or preferences. Your app could download product information so that it's available when the network is not available. Or, maybe users snap photos which you save as files for later use within your application. In any of these cases, storing data on the user's device is a critical feature. In this chapter, you'll explore Titanium's uniform, cross-platform methods for accessing local data stores.
 

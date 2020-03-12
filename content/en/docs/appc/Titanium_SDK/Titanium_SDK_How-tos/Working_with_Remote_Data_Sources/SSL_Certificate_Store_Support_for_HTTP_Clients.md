@@ -1,22 +1,22 @@
-{"title":"SSL Certificate Store Support for HTTP Clients","weight":"80"} 
+{"title":"SSL Certificate Store Support for HTTP Clients","weight":"80"}
 
 **Since Release 3.3.0** , the mechanisms described in this document to support SSL Certificate Stores for HTTP Clients are no longer supported. You should instead use the HTTPClient's [securityManager](#!/api/Titanium.Network.HTTPClient-property-securityManager) property to implement support for SSL Certificate Stores.
 
-*   The Android-specific Titanium.Network.HTTPClient addKeyManager and addTrustManager methods are deprecated and removed in Release 3.4.0.
-    
-*   The iOS-specific Titanium.Network.HTTPClient clientCertificateIdentity and clientCertificates properties are no longer supported.
-    
+* The Android-specific Titanium.Network.HTTPClient addKeyManager and addTrustManager methods are deprecated and removed in Release 3.4.0.
 
-*   [Introduction](#Introduction)
-    
-*   [iOS Platform Notes](#iOSPlatformNotes)
-    
-    *   [iOS Example](#iOSExample)
-        
-*   [Android Platform Notes](#AndroidPlatformNotes)
-    
-    *   [Android Example](#AndroidExample)
-        
+* The iOS-specific Titanium.Network.HTTPClient clientCertificateIdentity and clientCertificates properties are no longer supported.
+
+
+* [Introduction](#Introduction)
+
+* [iOS Platform Notes](#iOSPlatformNotes)
+
+  * [iOS Example](#iOSExample)
+
+* [Android Platform Notes](#AndroidPlatformNotes)
+
+  * [Android Example](#AndroidExample)
+
 
 ## Introduction
 
@@ -28,10 +28,10 @@ Please note that neither platform includes functionality to actually parse certi
 
 The HTTPClient on iOS exposes two properties:
 
-*   clientCertificateIdentity - sets a SecIdentityRef, which is a C structure containing a private key and certificate
-    
-*   clientCertificates - sets an array whose elements are of type SecCertificateRef
-    
+* clientCertificateIdentity - sets a SecIdentityRef, which is a C structure containing a private key and certificate
+
+* clientCertificates - sets an array whose elements are of type SecCertificateRef
+
 
 These are concrete C structures of the native iOS SDK and cannot be exposed on the JavaScript side. Modules must set these properties on the HTTPClient object in native code. These properties must be set before calling [open](#!/api/Titanium.Network.HTTPClient-method-open) on the HTTPClient.
 
@@ -49,14 +49,14 @@ The following example code shows how to load an external PKCS #12 file and use i
 
 In the Titanium application:
 
-1.  Require in the module.
-    
-2.  Create an HTTPClient with the validatesSecureCertificate property set to true.
-    
-3.  Call the module method to parse the PKCS #12 file and set the clientCertificateIdentity property.
-    
-4.  Call the open and send methods to initiate the HTTP request.
-    
+1. Require in the module.
+
+2. Create an HTTPClient with the validatesSecureCertificate property set to true.
+
+3. Call the module method to parse the PKCS #12 file and set the clientCertificateIdentity property.
+
+4. Call the open and send methods to initiate the HTTP request.
+
 
 `// Require the module`
 
@@ -106,12 +106,12 @@ In the Titanium application:
 
 In an iOS module, the loadP12Cert method receives the HTTPClient object, the PKCS #12 file and the password to the file, then it:
 
-1.  Loads the external PKCS #12 file.
-    
-2.  Parses it with the native SecPKCS12Import method.
-    
-3.  Sets the clientCertificateIdentity of the HTTPClient object.
-    
+1. Loads the external PKCS #12 file.
+
+2. Parses it with the native SecPKCS12Import method.
+
+3. Sets the clientCertificateIdentity of the HTTPClient object.
+
 
 `// Omitted boiler plate code created for a new module`
 
@@ -219,10 +219,10 @@ In an iOS module, the loadP12Cert method receives the HTTPClient object, the PKC
 
 The HTTPClient on Android has exposed two new methods:
 
-*   addKeyManager(X509KeyManager)
-    
-*   addTrustManager(X509TrustManager)
-    
+* addKeyManager(X509KeyManager)
+
+* addTrustManager(X509TrustManager)
+
 
 Users can add custom KeyManager and TrustManager implementations to use with the HTTPClient connection. These methods must be called before calling [open](#!/api/Titanium.Network.HTTPClient-method-open) on the HTTPClient.
 
@@ -236,16 +236,16 @@ For an example of writing an Android module that implements and returns an X509T
 
 To use the module, in the Titanium application:
 
-1.  Require in the module.
-    
-2.  Create an HTTPClient.
-    
-3.  Make a call to the module by providing it a PKCS#12 file, which is used to create the X509TrustManager.
-    
-4.  Retrieve the X509TrustManager interface from the module and add it to the HTTP client with the addTrustManager method.
-    
-5.  Call the open and send methods to initiate the HTTP request.
-    
+1. Require in the module.
+
+2. Create an HTTPClient.
+
+3. Make a call to the module by providing it a PKCS#12 file, which is used to create the X509TrustManager.
+
+4. Retrieve the X509TrustManager interface from the module and add it to the HTTP client with the addTrustManager method.
+
+5. Call the open and send methods to initiate the HTTP request.
+
 
 `var certificateStore = require(``'ti.certificatestore'``);`
 

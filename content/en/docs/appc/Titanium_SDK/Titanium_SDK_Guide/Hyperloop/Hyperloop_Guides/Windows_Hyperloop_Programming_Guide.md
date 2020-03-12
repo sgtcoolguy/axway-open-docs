@@ -1,25 +1,27 @@
-{"title":"Windows Hyperloop Programming Guide","weight":"50"} 
+{"title":"Windows Hyperloop Programming Guide","weight":"50"}
 
-*   [Requirements](#Requirements)
-    
-*   [Classes](#Classes)
-    
-*   [Instantiation](#Instantiation)
-    
-*   [Methods and fields](#Methodsandfields)
-    
-*   [Method resolution](#Methodresolution)
-    
-*   [Casting](#Casting)
-    
-*   [Async Return Types](#AsyncReturnTypes)
-    
-*   [Mix WinRT APIs with Titanium APIs](#MixWinRTAPIswithTitaniumAPIs)
-    
-*   [Generic Collections](#GenericCollections)
-    
-*   [Using Third-party libraries](#UsingThird-partylibraries)
-    
+As of Titanium 9.0.0, building Windows apps is no longer supported.The below only applies to users of older Titanium versions.
+
+* [Requirements](#Requirements)
+
+* [Classes](#Classes)
+
+* [Instantiation](#Instantiation)
+
+* [Methods and fields](#Methodsandfields)
+
+* [Method resolution](#Methodresolution)
+
+* [Casting](#Casting)
+
+* [Async Return Types](#AsyncReturnTypes)
+
+* [Mix WinRT APIs with Titanium APIs](#MixWinRTAPIswithTitaniumAPIs)
+
+* [Generic Collections](#GenericCollections)
+
+* [Using Third-party libraries](#UsingThird-partylibraries)
+
 
 This document provides information on Windows Hyperloop requirements, classes, instantiation, methods and fields, method resolution, casting, async return types, mix WinRT APIs with Titanium APIs, generic collections, and using 3rd party libraries.
 
@@ -27,8 +29,8 @@ This document provides information on Windows Hyperloop requirements, classes, i
 
 You’ll need to have the following minimum requirements to use Hyperloop for Windows:
 
-*   Titanium 6.1.0+
-    
+* Titanium 6.1.0+
+
 
 Configure the plugin in tiapp.xml:
 

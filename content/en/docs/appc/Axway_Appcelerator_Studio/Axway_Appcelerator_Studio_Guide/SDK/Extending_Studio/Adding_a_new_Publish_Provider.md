@@ -1,41 +1,41 @@
-{"title":"Adding a new Publish Provider","weight":"10"} 
+{"title":"Adding a new Publish Provider","weight":"10"}
 
-*   [Overview](#Overview)
-    
-*   [Prerequisites](#Prerequisites)
-    
-*   [Required APIs](#RequiredAPIs)
-    
-*   [Publish Workflow](#PublishWorkflow)
-    
-*   [Publish Provider Extension Point](#PublishProviderExtensionPoint)
-    
-    *   [Markup](#Markup)
-        
-    *   [Example](#Example)
-        
-*   [Implementation](#Implementation)
-    
-    *   [Implement IPublishType and IPublishTarget](#ImplementIPublishTypeandIPublishTarget)
-        
-    *   [Contribute to Publish Menus](#ContributetoPublishMenus)
-        
-    *   [PublishProvider extension](#PublishProviderextension)
-        
-*   [Customization](#Customization)
-    
-    *   [Provide Publish Target Dialog](#ProvidePublishTargetDialog)
-        
-    *   [Preference Page](#PreferencePage)
-        
-    *   [Publish Wizard](#PublishWizard)
-        
-        *   [Configuration Page](#ConfigurationPage)
-            
-        *   [Summary Page](#SummaryPage)
-            
-*   [Distribution](#Distribution)
-    
+* [Overview](#Overview)
+
+* [Prerequisites](#Prerequisites)
+
+* [Required APIs](#RequiredAPIs)
+
+* [Publish Workflow](#PublishWorkflow)
+
+* [Publish Provider Extension Point](#PublishProviderExtensionPoint)
+
+  * [Markup](#Markup)
+
+  * [Example](#Example)
+
+* [Implementation](#Implementation)
+
+  * [Implement IPublishType and IPublishTarget](#ImplementIPublishTypeandIPublishTarget)
+
+  * [Contribute to Publish Menus](#ContributetoPublishMenus)
+
+  * [PublishProvider extension](#PublishProviderextension)
+
+* [Customization](#Customization)
+
+  * [Provide Publish Target Dialog](#ProvidePublishTargetDialog)
+
+  * [Preference Page](#PreferencePage)
+
+  * [Publish Wizard](#PublishWizard)
+
+    * [Configuration Page](#ConfigurationPage)
+
+    * [Summary Page](#SummaryPage)
+
+* [Distribution](#Distribution)
+
 
 ## Overview
 
@@ -53,24 +53,24 @@ To implement the publish extension, the only requirement is that there is an ava
 
 ## Publish Workflow
 
-1.  Menus are contributed to Titanium Mobile projects to initiate the publish wizard, access shortcuts for management, and update any preferences associated with the publish provider. The menus are contributed using eclipse extension points. See the "**Contribute to Publish Menus**" for more information.
-    
-2.  The publish wizard walks the user through the publish operation, requesting data from the user. The first page of the publish wizard, the Target page, allows users to specify which platforms and target to publish to. The available platforms and publish target is defined in the extension point and the IPublishTarget subclass. See the **"IPublishType and IPublishTarget"** section for more information.
-    
-    ![Screen_Shot_2012-04-02_at_11.08.27_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.08.27_AM.png)
-3.  The next page of the publish wizard is the Configuration page. This page allows publish providers to request information specific to their publish operation. If no additional information is required, the Configuration page is not shown. See the **"Configuration Page"** section for more information.
-    
-    ![Screen_Shot_2012-04-02_at_11.08.55_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.08.55_AM.png)
-4.  The next page of the wizard is the Platform page. The page displayed is determined by the selected platform on the Target page. This page is specific to how projects are built using Titanium, so these pages are not customizable.
-    
-    ![Screen_Shot_2012-04-02_at_11.09.13_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.09.13_AM.png)
-5.  The final page of the wizard is the Summary page. This page displays the settings for the publish operation. There is a section in on the page that allows publish providers to display settings specific to the publish provider. See the **"Summary Page"** section for more information.
-    
-    ![Screen_Shot_2012-04-02_at_11.09.28_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.09.28_AM.png)
-6.  Clicking the "Publish" button will initiate the publish operation. The publish operation consists of two parts: the Titanium build and the distribution operation. The Titanium build is performed by Titanium Studio. The result of the build is stored at a specified location. Publish providers are expected to implement the distribution operation, which is specific to the purpose of the publish provider. The distribution is performed in the following method:
-    
-    `com.appcelerator.titanium.publish.IPublishType#publish(com.appcelerator.titanium.publish.IPublishTarget, java.util.Map)`
-    
+1. Menus are contributed to Titanium Mobile projects to initiate the publish wizard, access shortcuts for management, and update any preferences associated with the publish provider. The menus are contributed using eclipse extension points. See the "**Contribute to Publish Menus**" for more information.
+
+2. The publish wizard walks the user through the publish operation, requesting data from the user. The first page of the publish wizard, the Target page, allows users to specify which platforms and target to publish to. The available platforms and publish target is defined in the extension point and the IPublishTarget subclass. See the **"IPublishType and IPublishTarget"** section for more information.
+
+  ![Screen_Shot_2012-04-02_at_11.08.27_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.08.27_AM.png)
+3. The next page of the publish wizard is the Configuration page. This page allows publish providers to request information specific to their publish operation. If no additional information is required, the Configuration page is not shown. See the **"Configuration Page"** section for more information.
+
+  ![Screen_Shot_2012-04-02_at_11.08.55_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.08.55_AM.png)
+4. The next page of the wizard is the Platform page. The page displayed is determined by the selected platform on the Target page. This page is specific to how projects are built using Titanium, so these pages are not customizable.
+
+  ![Screen_Shot_2012-04-02_at_11.09.13_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.09.13_AM.png)
+5. The final page of the wizard is the Summary page. This page displays the settings for the publish operation. There is a section in on the page that allows publish providers to display settings specific to the publish provider. See the **"Summary Page"** section for more information.
+
+  ![Screen_Shot_2012-04-02_at_11.09.28_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.09.28_AM.png)
+6. Clicking the "Publish" button will initiate the publish operation. The publish operation consists of two parts: the Titanium build and the distribution operation. The Titanium build is performed by Titanium Studio. The result of the build is stored at a specified location. Publish providers are expected to implement the distribution operation, which is specific to the purpose of the publish provider. The distribution is performed in the following method:
+
+  `com.appcelerator.titanium.publish.IPublishType#publish(com.appcelerator.titanium.publish.IPublishTarget, java.util.Map)`
+
 
 The publish operation is performed as an org.eclipse.debug.core.ILaunch, utilizing an org.eclipse.debug.core.ILaunchConfiguration to store information.
 
@@ -82,8 +82,8 @@ The Publish Provider extension point defines how publishing is performed for a p
 
 The Publish Provider definition is defined as follows:
 
-**Identifier:** com.appcelerator.titanium.publish.publishProviders  
-**Since:** Extension point  
+**Identifier:** com.appcelerator.titanium.publish.publishProviders
+**Since:** Extension point
 **Description:** This extension point allows the contribution of publishing to a specific target type. The extension defines how users will create, register, and manage publish targets of the particular type. The extension is used to Publish a Titanium Mobile project to the publish target.
 
 ### Markup
@@ -126,26 +126,26 @@ The Publish Provider definition is defined as follows:
 
 `>`
 
-*   **id** - The identifier of the provider
-    
-*   **class** - The class that defines the publish type. At minimum it is expected to implement IPublishType, but most implementations should simply extend AbstractPublishType
-    
-*   **name** - The name of the provider that is presented to users.
-    
-*   **description** - A description of the provider
-    
-*   **url** - The url of a page containing information about the publish provider
-    
-*   **icon** - Icon used to represent the publish type in menus
-    
-*   **wizard\_icon** - Icon used in Wizard and Dialogs related to the publish type
-    
-*   **createPublishTargetUrl** - The url of a page to create a new publish target of this type
-    
-*   **registerPublishTargetDialog** - The dialog class that extends com.appcelerator.titanium.publish.ui.RegisterPublishTargetDialog
-    
-*   **preferencePageId** - Preference page id for this publish type
-    
+* **id** - The identifier of the provider
+
+* **class** - The class that defines the publish type. At minimum it is expected to implement IPublishType, but most implementations should simply extend AbstractPublishType
+
+* **name** - The name of the provider that is presented to users.
+
+* **description** - A description of the provider
+
+* **url** - The url of a page containing information about the publish provider
+
+* **icon** - Icon used to represent the publish type in menus
+
+* **wizard\_icon** - Icon used in Wizard and Dialogs related to the publish type
+
+* **createPublishTargetUrl** - The url of a page to create a new publish target of this type
+
+* **registerPublishTargetDialog** - The dialog class that extends com.appcelerator.titanium.publish.ui.RegisterPublishTargetDialog
+
+* **preferencePageId** - Preference page id for this publish type
+
 
 `<!ELEMENT supportedPlatform EMPTY>`
 
@@ -157,8 +157,8 @@ The Publish Provider definition is defined as follows:
 
 Used to specify a supported platform
 
-*   **name** - Platform name
-    
+* **name** - Platform name
+
 
 ### Example
 
@@ -484,14 +484,14 @@ Contributing to the publish menu is accomplished using the Eclipse [org.eclipse.
 
 The following Titanium-specific reference definitionIds can be used:
 
-*   com.appcelerator.titanium.isMobileProject
-    
-*   com.appcelerator.titanium.isIPadProject
-    
-*   com.appcelerator.titanium.isIPhoneProject
-    
-*   com.appcelerator.titanium.isAndroidProject
-    
+* com.appcelerator.titanium.isMobileProject
+
+* com.appcelerator.titanium.isIPadProject
+
+* com.appcelerator.titanium.isIPhoneProject
+
+* com.appcelerator.titanium.isAndroidProject
+
 
 ### PublishProvider extension
 
@@ -541,12 +541,12 @@ This is the Sample publish target dialog:
 
 Implementors wanting customized behavior should override the following methods:
 
-*   org.eclipse.jface.dialogs.Dialog#createDialogArea(org.eclipse.swt.widgets.Composite) to add custom UI
-    
-*   com.appcelerator.titanium.publish.ui.RegisterPublishTargetDialog#validatePublishTarget() to provide custom validation of target
-    
-*   com.appcelerator.titanium.publish.ui.RegisterPublishTargetDialog#savePublishTarget() to provide external saving of the target
-    
+* org.eclipse.jface.dialogs.Dialog#createDialogArea(org.eclipse.swt.widgets.Composite) to add custom UI
+
+* com.appcelerator.titanium.publish.ui.RegisterPublishTargetDialog#validatePublishTarget() to provide custom validation of target
+
+* com.appcelerator.titanium.publish.ui.RegisterPublishTargetDialog#savePublishTarget() to provide external saving of the target
+
 
 ### Preference Page
 
@@ -574,8 +574,8 @@ The id of the preference page should be defined in the Publish Provider extensio
 
 Implementors wanting a customized look should override the following methods:
 
-*   com.appcelerator.titanium.publish.preferences.AbstractPublishTargetPreferencePage#createPublishTargetTableColumns() - specifies what columns are displayed in the table
-    
+* com.appcelerator.titanium.publish.preferences.AbstractPublishTargetPreferencePage#createPublishTargetTableColumns() - specifies what columns are displayed in the table
+
 
 ### Publish Wizard
 
@@ -597,10 +597,10 @@ The custom summary wizard page allows providers to display information retrieved
 
 To distribute your provider into an existing Titanium Studio instance, it is recommended to do the following:
 
-1.  Create a feature and associate with the new plugin. [More info](http://wiki.eclipse.org/FAQ_How_do_I_create_a_feature?)
-    
-2.  Export the feature: Right-click on the feature project and select Export...Then Plug-In Development->Deployable features. Export the feature as an archive.
-    
-3.  In your existing Titanium Studio instance, Use Help > Install New Software.... In the dialog, select Add.. and specify the archive that was generated from the previous step.
-    
-4.  Uncheck the category option to view the new feature. Follow the prompts to install
+1. Create a feature and associate with the new plugin. [More info](http://wiki.eclipse.org/FAQ_How_do_I_create_a_feature?)
+
+2. Export the feature: Right-click on the feature project and select Export...Then Plug-In Development->Deployable features. Export the feature as an archive.
+
+3. In your existing Titanium Studio instance, Use Help > Install New Software.... In the dialog, select Add.. and specify the archive that was generated from the previous step.
+
+4. Uncheck the category option to view the new feature. Follow the prompts to install

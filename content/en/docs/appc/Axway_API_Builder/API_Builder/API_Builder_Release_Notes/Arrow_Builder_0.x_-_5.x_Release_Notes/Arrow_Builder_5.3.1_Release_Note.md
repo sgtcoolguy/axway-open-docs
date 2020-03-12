@@ -1,4 +1,4 @@
-{"title":"Arrow Builder 5.3.1 Release Note","weight":"10"} 
+{"title":"Arrow Builder 5.3.1 Release Note","weight":"10"}
 
 API Builder 3.x is deprecated
 
@@ -14,10 +14,10 @@ As of this release, the previous Arrow Builder Tools patch release is no longer 
 
 ## Fixed Issues
 
-*   API-1222 - If you edit an existing Arrow model, the model's fields will not appear in the Build UI
-    
-*   API-1272 - Trying to display/read Swagger.json throws an Internal Server Error
-    
-*   API-1280 - Swagger.json is exposing invalid schema.required array for path parameters
-    
-*   API-1300 - Invalid parameters in PUT method for the new model in swagger file
+* API-1222 - If you edit an existing Arrow model, the model's fields will not appear in the Build UI
+
+* API-1272 - Trying to display/read Swagger.json throws an Internal Server Error
+
+* API-1280 - Swagger.json is exposing invalid schema.required array for path parameters
+
+* API-1300 - Invalid parameters in PUT method for the new model in swagger file

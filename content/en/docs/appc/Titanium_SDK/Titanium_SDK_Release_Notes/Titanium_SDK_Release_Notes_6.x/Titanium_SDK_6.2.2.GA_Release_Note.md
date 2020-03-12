@@ -1,11 +1,11 @@
-{"title":"Titanium SDK 6.2.2.GA - 21 September 2017","weight":"30"} 
+{"title":"Titanium SDK 6.2.2.GA - 21 September 2017","weight":"30"}
 
-*   [About this release](#Aboutthisrelease)
-    
-*   [Fixed issues](#Fixedissues)
-    
-*   [API changes](#APIchanges)
-    
+* [About this release](#Aboutthisrelease)
+
+* [Fixed issues](#Fixedissues)
+
+* [API changes](#APIchanges)
+
 
 ## About this release
 
@@ -15,12 +15,12 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 ## Fixed issues
 
-*   [TIMOB-25086](https://jira.appcelerator.org/browse/TIMOB-25086) - Android: Textarea scroll in tableview
-    
-*   [TIMOB-25284](https://jira.appcelerator.org/browse/TIMOB-25284) - Android Images in density-specific resource folders are not picked
-    
-*   [TIMOB-25288](https://jira.appcelerator.org/browse/TIMOB-25288) - Android: addAnnotations in Ti.Map crashes app
-    
+* [TIMOB-25086](https://jira.appcelerator.org/browse/TIMOB-25086) - Android: Textarea scroll in tableview
+
+* [TIMOB-25284](https://jira.appcelerator.org/browse/TIMOB-25284) - Android Images in density-specific resource folders are not picked
+
+* [TIMOB-25288](https://jira.appcelerator.org/browse/TIMOB-25288) - Android: addAnnotations in Ti.Map crashes app
+
 
 ## API changes
 

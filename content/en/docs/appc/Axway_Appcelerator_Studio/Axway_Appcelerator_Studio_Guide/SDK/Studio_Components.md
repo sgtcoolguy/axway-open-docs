@@ -1,17 +1,17 @@
-{"title":"Studio Components","weight":"40"} 
+{"title":"Studio Components","weight":"40"}
 
-*   [General Guidelines](#GeneralGuidelines)
-    
-*   [Editors](#Editors)
-    
-*   [Previewing/Servers](#Previewing/Servers)
-    
-*   [Scripting](#Scripting)
-    
-*   [Miscellaneous](#Miscellaneous)
-    
-*   [Titanium](#Titanium)
-    
+* [General Guidelines](#GeneralGuidelines)
+
+* [Editors](#Editors)
+
+* [Previewing/Servers](#Previewing/Servers)
+
+* [Scripting](#Scripting)
+
+* [Miscellaneous](#Miscellaneous)
+
+* [Titanium](#Titanium)
+
 
 This document lists the various components (and the related scopes) inside Studio.
 
@@ -21,12 +21,12 @@ There are a few guidelines to observe when creating a new scope or using them in
 
 .\* for components indicate that there is a per-editor/language component associated, i.e. editor.js, scripting.rubles.js.
 
-*   If it has a view in studio, it is a root-level scope (i.e. validation, terminal)
-    
-*   Multi-word components have words separated by hyphens (i.e. content-assist)
-    
-*   Per-language components are created on a as-needed basis in JIRA. Thus, there may not yet be a editor.navigation.js in JIRA. Thus, you can assign items to editor.navigation. When we get enough sub-issues, we can then break it apart.
-    
+* If it has a view in studio, it is a root-level scope (i.e. validation, terminal)
+
+* Multi-word components have words separated by hyphens (i.e. content-assist)
+
+* Per-language components are created on a as-needed basis in JIRA. Thus, there may not yet be a editor.navigation.js in JIRA. Thus, you can assign items to editor.navigation. When we get enough sub-issues, we can then break it apart.
+
 
 ## Editors
 

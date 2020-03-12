@@ -1,13 +1,13 @@
-{"title":"Packaging Titanium Applications","weight":"60"} 
+{"title":"Packaging Titanium Applications","weight":"60"}
 
-*   [Introduction](#Introduction)
-    
-*   [Android](#Android)
-    
-*   [iOS](#iOS)
-    
-*   [Mobile Web](#MobileWeb)
-    
+* [Introduction](#Introduction)
+
+* [Android](#Android)
+
+* [iOS](#iOS)
+
+* [Mobile Web](#MobileWeb)
+
 
 ## Introduction
 
@@ -23,14 +23,14 @@ Alternatively, you can select **Configuration...** to create custom configuratio
 
 To package an Android application, first select the project in the **Project Explorer** view, then in the global tool bar, select **Publish** from the **Launch Mode** drop-down list and **Android App Store** from the **Device** drop-down list. A wizard appears asking you key pieces of information to package your application:
 
-*   **Distribution Location****:** Path where the Android application package (APK) file will be copied to.
-    
-*   **Keystore Location**: Path to your keystore file that is used to sign your application. Click the **New** button to create a new keystore.
-    
-*   **Keystore Password****:** Password to your keystore.
-    
-*   **Key Alias**: Alias associated with your application's certificate.
-    
+* **Distribution Location****:** Path where the Android application package (APK) file will be copied to.
+
+* **Keystore Location**: Path to your keystore file that is used to sign your application. Click the **New** button to create a new keystore.
+
+* **Keystore Password****:** Password to your keystore.
+
+* **Key Alias**: Alias associated with your application's certificate.
+
 
 Click the **Publish** button once you have entered all of the above information. Studio builds your application and generates an APK file in the specified location.
 
@@ -54,11 +54,11 @@ The process of packaging iOS applications is more involved. Refer to [Distributi
 
 To package a Mobile Web application, first select the project in the **Project Explorer** view, then in the global tool bar, select **Publish** from the **Launch Mode** drop-down list and **Mobile Web** from the **Device** drop-down list. A wizard appears asking you how you want to package your mobile project. You can either:
 
-*   **Copy Mobile Web app to a directory in the local file system**: this option copies the Mobile Web app to the specified location. These files can be copied to a local or remote web site for deployment.
-    
-*   **Copy Mobile Web app to an exisiting project**: this option copies the Mobile Web app to an existing project.
-    
-*   **Create a new project for the Mobile Web app**: this option creates a new Web project (not a Mobile project) based on your Mobile Web app.
-    
+* **Copy Mobile Web app to a directory in the local file system**: this option copies the Mobile Web app to the specified location. These files can be copied to a local or remote web site for deployment.
+
+* **Copy Mobile Web app to an exisiting project**: this option copies the Mobile Web app to an existing project.
+
+* **Create a new project for the Mobile Web app**: this option creates a new Web project (not a Mobile project) based on your Mobile Web app.
+
 
 Click the **Publish** button. Studio builds your Mobile Web app and copies it to the specified location.

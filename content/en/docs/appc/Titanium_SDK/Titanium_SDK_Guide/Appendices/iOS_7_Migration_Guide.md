@@ -1,57 +1,57 @@
-{"title":"iOS 7 Migration Guide","weight":"40"} 
+{"title":"iOS 7 Migration Guide","weight":"40"}
 
-*   [Overview](#Overview)
-    
-    *   [Summary of changes to the Titanium SDK](#SummaryofchangestotheTitaniumSDK)
-        
-    *   [Apple's To-Do list to support iOS 7](#Apple'sTo-DolisttosupportiOS7)
-        
-    *   [iOS 7 behavior changes](#iOS7behaviorchanges)
-        
-        *   [ButtonBar and TabbedBar](#ButtonBarandTabbedBar)
-            
-        *   [Navigation transitions](#Navigationtransitions)
-            
-    *   [iOS 7 known issues](#iOS7knownissues)
-        
-*   [iOS 7 icons](#iOS7icons)
-    
-*   [New windows architecture](#Newwindowsarchitecture)
-    
-    *   [Lightweight windows](#Lightweightwindows)
-        
-    *   [Status bar](#Statusbar)
-        
-    *   [Toolbar](#Toolbar)
-        
-    *   [Orientation modes](#Orientationmodes)
-        
-    *   [Modal windows](#Modalwindows)
-        
-    *   [Other window properties](#Otherwindowproperties)
-        
-*   [New APIs](#NewAPIs)
-    
-    *   [Titanium.UI.iOS.NavigationWindow](#Titanium.UI.iOS.NavigationWindow)
-        
-    *   [Extended view region](#Extendedviewregion)
-        
-    *   [Tint color](#Tintcolor)
-        
-    *   [Request permission to record audio](#Requestpermissiontorecordaudio)
-        
-    *   [Animated transitions](#Animatedtransitions)
-        
-    *   [Predefined text styles](#Predefinedtextstyles)
-        
-    *   [Attributed strings](#Attributedstrings)
-        
-    *   [Background services](#Backgroundservices)
-        
-    *   [Dynamic animations](#Dynamicanimations)
-        
-*   [Deprecated and removed APIs](#DeprecatedandremovedAPIs)
-    
+* [Overview](#Overview)
+
+  * [Summary of changes to the Titanium SDK](#SummaryofchangestotheTitaniumSDK)
+
+  * [Apple's To-Do list to support iOS 7](#Apple'sTo-DolisttosupportiOS7)
+
+  * [iOS 7 behavior changes](#iOS7behaviorchanges)
+
+    * [ButtonBar and TabbedBar](#ButtonBarandTabbedBar)
+
+    * [Navigation transitions](#Navigationtransitions)
+
+  * [iOS 7 known issues](#iOS7knownissues)
+
+* [iOS 7 icons](#iOS7icons)
+
+* [New windows architecture](#Newwindowsarchitecture)
+
+  * [Lightweight windows](#Lightweightwindows)
+
+  * [Status bar](#Statusbar)
+
+  * [Toolbar](#Toolbar)
+
+  * [Orientation modes](#Orientationmodes)
+
+  * [Modal windows](#Modalwindows)
+
+  * [Other window properties](#Otherwindowproperties)
+
+* [New APIs](#NewAPIs)
+
+  * [Titanium.UI.iOS.NavigationWindow](#Titanium.UI.iOS.NavigationWindow)
+
+  * [Extended view region](#Extendedviewregion)
+
+  * [Tint color](#Tintcolor)
+
+  * [Request permission to record audio](#Requestpermissiontorecordaudio)
+
+  * [Animated transitions](#Animatedtransitions)
+
+  * [Predefined text styles](#Predefinedtextstyles)
+
+  * [Attributed strings](#Attributedstrings)
+
+  * [Background services](#Backgroundservices)
+
+  * [Dynamic animations](#Dynamicanimations)
+
+* [Deprecated and removed APIs](#DeprecatedandremovedAPIs)
+
 
 ## Overview
 
@@ -65,52 +65,52 @@ Unless otherwise noted, all new features and changes were introduced in Release 
 
 This section briefly lists the changes made to the Titanium SDK to support iOS 7. For details, see the sections below.
 
-*   New App icons and Spotlight & Settings icons for iOS 7.
-    
-*   New Windows UI architecture:
-    
-    *   On iOS 7, all lightweight windows, including the root window, are full screen and extend underneath the default transparent status bar. Current applications may need to adjust the layout of windows if they rely on the top property.
-        
-    *   On iOS 7, the status bar and navigation bar are translucent by default. On iOS 6 and prior, they are not translucent.
-        
-    *   The status bar is controlled by the currently displayed window and can no longer be dynamically shown or hidden in iOS 7.
-        
-    *   On iOS 6 and prior, setting the statusBarStyle property to new Titanium.UI.iOS.StatusBar.LIGHT\_CONTENT constant behaves the same as setting it to Titanium.UI.iOS.StatusBar.TRANSLUCENT\_BLACK.
-        
-    *   On iOS 7 and later, setting the statusBarStyle property to either Titanium.UI.IOS.StatusBar.TRANSLUCENT\_BLACK or Titanium.UI.iOS.StatusBar.OPAQUE\_BLACK behaves the same as setting it to the new Titanium.UI.iOS.StatusBar.LIGHT\_CONTENT constant.
-        
-    *   The Window's translucent and barColor property no longer affects the appearance of the toolbar. Pass these parameters in with the Window's setToolbar method as an optional dictionary parameter.
-        
-    *   Orientation modes can only be set before opening a window and force orientation modes are no longer animated.
-        
-    *   Modal windows do not have a navigation bar by default and only support their own orientation modes.
-        
-    *   Non-modal windows cannot be opened on top of modal windows. Any non-modal opens behind an already opened modal and animations are ignored.
-        
-*   New API to support iOS 7:
-    
-    *   New [iOS NavigationWindow](#!/api/Titanium.UI.iOS.NavigationWindow) object to support a navigation controller. The iPhone NavigationGroup is deprecated and removed in Release 3.2.0.
-        
-    *   New API elements to support extending view edges.
-        
-    *   New API elements to support tint color.
-        
-    *   New API element to support audio recording.
-        
-    *   New API elements to support iOS 7 animated transitions (since Release 3.2.0).
-        
-    *   New API elements to support default text styles (since Release 3.2.0).
-        
-    *   New API elements to support iOS 7 attributed strings (since Release 3.2.0). See [Attributed Strings](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Attributed_Strings/).
-        
-    *   New API elements to support downloading content in the background (since Release 3.2.0). See [iOS Background Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/iOS_Background_Services/).
-        
-    *   New API elements to support dynamic animations (since Release 3.2.0). See the [Titanium.UI.iOS.Animator API reference](#!/api/Titanium.UI.iOS.Animator).
-        
-*   API elements not supported on iOS 7:
-    
-    *   Controlling the status bar on the fly. Since Release 3.2.0, you can use the Window's statusBarStyle property to dynamically change the style of the status bar. You cannot dynamically control whether to show or hide it.
-        
+* New App icons and Spotlight & Settings icons for iOS 7.
+
+* New Windows UI architecture:
+
+  * On iOS 7, all lightweight windows, including the root window, are full screen and extend underneath the default transparent status bar. Current applications may need to adjust the layout of windows if they rely on the top property.
+
+  * On iOS 7, the status bar and navigation bar are translucent by default. On iOS 6 and prior, they are not translucent.
+
+  * The status bar is controlled by the currently displayed window and can no longer be dynamically shown or hidden in iOS 7.
+
+  * On iOS 6 and prior, setting the statusBarStyle property to new Titanium.UI.iOS.StatusBar.LIGHT\_CONTENT constant behaves the same as setting it to Titanium.UI.iOS.StatusBar.TRANSLUCENT\_BLACK.
+
+  * On iOS 7 and later, setting the statusBarStyle property to either Titanium.UI.IOS.StatusBar.TRANSLUCENT\_BLACK or Titanium.UI.iOS.StatusBar.OPAQUE\_BLACK behaves the same as setting it to the new Titanium.UI.iOS.StatusBar.LIGHT\_CONTENT constant.
+
+  * The Window's translucent and barColor property no longer affects the appearance of the toolbar. Pass these parameters in with the Window's setToolbar method as an optional dictionary parameter.
+
+  * Orientation modes can only be set before opening a window and force orientation modes are no longer animated.
+
+  * Modal windows do not have a navigation bar by default and only support their own orientation modes.
+
+  * Non-modal windows cannot be opened on top of modal windows. Any non-modal opens behind an already opened modal and animations are ignored.
+
+* New API to support iOS 7:
+
+  * New [iOS NavigationWindow](#!/api/Titanium.UI.iOS.NavigationWindow) object to support a navigation controller. The iPhone NavigationGroup is deprecated and removed in Release 3.2.0.
+
+  * New API elements to support extending view edges.
+
+  * New API elements to support tint color.
+
+  * New API element to support audio recording.
+
+  * New API elements to support iOS 7 animated transitions (since Release 3.2.0).
+
+  * New API elements to support default text styles (since Release 3.2.0).
+
+  * New API elements to support iOS 7 attributed strings (since Release 3.2.0). See [Attributed Strings](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Attributed_Strings/).
+
+  * New API elements to support downloading content in the background (since Release 3.2.0). See [iOS Background Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/iOS_Background_Services/).
+
+  * New API elements to support dynamic animations (since Release 3.2.0). See the [Titanium.UI.iOS.Animator API reference](#!/api/Titanium.UI.iOS.Animator).
+
+* API elements not supported on iOS 7:
+
+  * Controlling the status bar on the fly. Since Release 3.2.0, you can use the Window's statusBarStyle property to dynamically change the style of the status bar. You cannot dynamically control whether to show or hide it.
+
 
 ### Apple's To-Do list to support iOS 7
 
@@ -118,27 +118,27 @@ The following information is taken from the [iOS 7 UI Migration Guide: Scoping t
 
 **Things Every App Must Do**
 
-*   Update the app icon. In iOS 7, app icons for high-resolution iPhone and iPod touch are 120 x 120 pixels; for high-resolution iPad, app icons are 152 x 152 pixels. (To learn more about all icon sizes, see [“Icon and Image Sizes”](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27) .) Note that iOS 7 doesn’t apply shine or a drop shadow to the app icon. And, although iOS 7 still applies a mask that rounds the corners of an app icon, it uses a different corner radius than earlier versions of iOS. See the iOS 7 Icons section below.
-    
-*   Update the launch image to include the status bar area if it doesn’t already do so. This is a difference of 20 pixels in height, that is, the image is stretched 20 more pixels if you do nothing.
-    
-*   Support Retina display and iPhone 5 in all your artwork and designs, if you’re not already doing so.
-    
+* Update the app icon. In iOS 7, app icons for high-resolution iPhone and iPod touch are 120 x 120 pixels; for high-resolution iPad, app icons are 152 x 152 pixels. (To learn more about all icon sizes, see [“Icon and Image Sizes”](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27) .) Note that iOS 7 doesn’t apply shine or a drop shadow to the app icon. And, although iOS 7 still applies a mask that rounds the corners of an app icon, it uses a different corner radius than earlier versions of iOS. See the iOS 7 Icons section below.
+
+* Update the launch image to include the status bar area if it doesn’t already do so. This is a difference of 20 pixels in height, that is, the image is stretched 20 more pixels if you do nothing.
+
+* Support Retina display and iPhone 5 in all your artwork and designs, if you’re not already doing so.
+
 
 **Things Every App Should Do**
 
-*   Make sure that app content is discernible through translucent UI elements—such as bars and keyboards—and the transparent status bar. In iOS 7, views use full-screen layout.
-    
-*   Redesign custom bar button icons. In iOS 7, bar button icons are lighter in weight and have a different style.
-    
-*   Prepare for borderless buttons by reassessing the utility of button background images and bezels in your layout.
-    
-*   Examine your app for places where the metrics and style changes of controls and views affect the layout and appearance. For example, switches are wider, grouped tables are no longer inset, and progress bars are thinner. For more information on specific UI elements, see [Bars and Bar Buttons](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/Bars.html#//apple_ref/doc/uid/TP40013174-CH8-SW1), [Content Views](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/ContentViews.html#//apple_ref/doc/uid/TP40013174-CH10-SW1), [Controls](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/Controls.html#//apple_ref/doc/uid/TP40013174-CH9-SW1) and [Temporary Views](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/TempViews.html#//apple_ref/doc/uid/TP40013174-CH11-SW1).
-    
-*   Expect users to swipe up from the bottom of the screen to reveal Control Center. If iOS determines that a touch that begins at the bottom of the screen should reveal Control Center, it doesn’t deliver the gesture to the currently running app. If iOS determines that the touch should not reveal Control Center, the touch may be slightly delayed before it reaches the app.
-    
-*   Revisit the use of drop shadows, gradients, and bezels. Because the iOS 7 aesthetic is smooth and layered—with much less emphasis on using visual effects to make UI elements look physical—you may want to rethink these effects.
-    
+* Make sure that app content is discernible through translucent UI elements—such as bars and keyboards—and the transparent status bar. In iOS 7, views use full-screen layout.
+
+* Redesign custom bar button icons. In iOS 7, bar button icons are lighter in weight and have a different style.
+
+* Prepare for borderless buttons by reassessing the utility of button background images and bezels in your layout.
+
+* Examine your app for places where the metrics and style changes of controls and views affect the layout and appearance. For example, switches are wider, grouped tables are no longer inset, and progress bars are thinner. For more information on specific UI elements, see [Bars and Bar Buttons](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/Bars.html#//apple_ref/doc/uid/TP40013174-CH8-SW1), [Content Views](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/ContentViews.html#//apple_ref/doc/uid/TP40013174-CH10-SW1), [Controls](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/Controls.html#//apple_ref/doc/uid/TP40013174-CH9-SW1) and [Temporary Views](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/TempViews.html#//apple_ref/doc/uid/TP40013174-CH11-SW1).
+
+* Expect users to swipe up from the bottom of the screen to reveal Control Center. If iOS determines that a touch that begins at the bottom of the screen should reveal Control Center, it doesn’t deliver the gesture to the currently running app. If iOS determines that the touch should not reveal Control Center, the touch may be slightly delayed before it reaches the app.
+
+* Revisit the use of drop shadows, gradients, and bezels. Because the iOS 7 aesthetic is smooth and layered—with much less emphasis on using visual effects to make UI elements look physical—you may want to rethink these effects.
+
 
 ### iOS 7 behavior changes
 
@@ -160,8 +160,8 @@ On iOS 6 and earlier, the bottom window would slide off screen as the top window
 
 Due to known bugs with iOS 7, the following issues cannot be resolved in the Titanium SDK:
 
-*   Setting any of the image properties for a Slider causes unpredictable behavior. Try to use a default slider if possible.
-    
+* Setting any of the image properties for a Slider causes unpredictable behavior. Try to use a default slider if possible.
+
 
 ## iOS 7 icons
 
@@ -419,18 +419,18 @@ If you open a non-modal window, after opening a modal window, the non-modal wind
 
 The following properties are defined on a per window basis:
 
-*   barColor – Background color of navigation bar. Defaults to nil.
-    
-*   navTintColor (new API for Release 3.1.3) – Tint color for the navigation bar. Only supported on iOS 7 and later. Defaults to nil.
-    
-*   barImage – Background image for navigation bar. Defaults to NULL.
-    
-*   translucent – Controls if the navigation bar is translucent or not. Defaults to true on iOS 7 and later, false on older versions.
-    
-*   tabBarHidden – Defaults to false.
-    
-*   navBarHidden – Defaults to false. No longer supported as a valid parameter to the open method since the modal window no longer has a default navigation bar.
-    
+* barColor – Background color of navigation bar. Defaults to nil.
+
+* navTintColor (new API for Release 3.1.3) – Tint color for the navigation bar. Only supported on iOS 7 and later. Defaults to nil.
+
+* barImage – Background image for navigation bar. Defaults to NULL.
+
+* translucent – Controls if the navigation bar is translucent or not. Defaults to true on iOS 7 and later, false on older versions.
+
+* tabBarHidden – Defaults to false.
+
+* navBarHidden – Defaults to false. No longer supported as a valid parameter to the open method since the modal window no longer has a default navigation bar.
+
 
 ## New APIs
 
@@ -560,10 +560,10 @@ property
 
 The iOS NavigationWindow object deprecates the iPhone NavigationGroup object. The main differences are:
 
-*   NavigationWindow is a top-level container and does not need to be added to a window.
-    
-*   Use the openWindow and closeWindow methods to add and remove windows instead of open and close.
-    
+* NavigationWindow is a top-level container and does not need to be added to a window.
+
+* Use the openWindow and closeWindow methods to add and remove windows instead of open and close.
+
 
 The NavigationWindow object is a top-level window manager as opposed to a view controller that needed to be placed inside a window as it was with the iPhone NavigationGroup.
 
@@ -637,12 +637,12 @@ Example: Old NavigationGroup
 
 In Release 3.1.3, the Titanium SDK exposes three new iOS 7 properties to extend the region of a NavigationWindow, TabGroup or Window. For example, you can extend a window to use the space behind the status and navigation bar.
 
-*   extendEdges - Extends the region of the window by specifying an array of edge constants: Ti.UI.EXTEND\_EDGE\_NONE, Ti.UI.EXTEND\_EDGE\_TOP, Ti.UI.EXTEND\_EDGE\_LEFT, Ti.UI.EXTEND\_EDGE\_BOTTOM, Ti.UI.EXTEND\_EDGE\_RIGHT or Ti.UI.EXTEND\_EDGE\_ALL. None by default.
-    
-*   includeOpaqueBars - Set to true to extend the region of window behind opaque bars, that is, when the Window's translucent property is set to false. Off by default.
-    
-*   autoAdjustScrollViewInsets **\-** Set to true to have the contents of a scrollable view's inset be automatically adjusted. Off by default.
-    
+* extendEdges - Extends the region of the window by specifying an array of edge constants: Ti.UI.EXTEND\_EDGE\_NONE, Ti.UI.EXTEND\_EDGE\_TOP, Ti.UI.EXTEND\_EDGE\_LEFT, Ti.UI.EXTEND\_EDGE\_BOTTOM, Ti.UI.EXTEND\_EDGE\_RIGHT or Ti.UI.EXTEND\_EDGE\_ALL. None by default.
+
+* includeOpaqueBars - Set to true to extend the region of window behind opaque bars, that is, when the Window's translucent property is set to false. Off by default.
+
+* autoAdjustScrollViewInsets **\-** Set to true to have the contents of a scrollable view's inset be automatically adjusted. Off by default.
+
 
 The example below creates a tab group with three different tabs. The first tab uses the default behavior, which shows the entire image in between the opaque navigation bar and opaque tab controller. The second tab extends the background image behind a translucent navigation bar and translucent tab controller. The third tab extends the background image behind an opaque navigation bar and translucent tab controller.
 
@@ -704,12 +704,12 @@ The example below creates a tab group with three different tabs. The first tab u
 
 In Release 3.1.3, the Titanium SDK exposes the iOS 7 tint color feature as three properties:
 
-*   Titanium.UI.View.tintColor - sets the key color for the UI element. This property can be set by any Titanium View object, including Windows. If undefined, inherits the tint color from its parent.
-    
-*   Titanium.UI.TabGroup.tabsTintColor - sets the key color for the active tab in the tab group.
-    
-*   Titanium.UI.Window.navTintColor - sets the key color for the window's navigation bar. If undefined and tintColor is defined for the Window or NavigationWindow, the tintColor is used.
-    
+* Titanium.UI.View.tintColor - sets the key color for the UI element. This property can be set by any Titanium View object, including Windows. If undefined, inherits the tint color from its parent.
+
+* Titanium.UI.TabGroup.tabsTintColor - sets the key color for the active tab in the tab group.
+
+* Titanium.UI.Window.navTintColor - sets the key color for the window's navigation bar. If undefined and tintColor is defined for the Window or NavigationWindow, the tintColor is used.
+
 
 The tint color feature sets the key color of UI elements, such as the button title, label text and template image. If you set the tint color for a parent object and none of its children, the children inherit the tint color from the parent.
 

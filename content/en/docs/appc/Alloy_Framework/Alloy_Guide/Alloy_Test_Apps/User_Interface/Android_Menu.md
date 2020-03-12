@@ -1,4 +1,4 @@
-{"title":"Android Menu","weight":"20"} 
+{"title":"Android Menu","weight":"20"}
 
 Demonstrates basic use of Menu and MenuItem objects to display items in the Android action bar.
 
@@ -72,10 +72,10 @@ app/views/menu.xml
 
 ## See Also
 
-*   [Titanium.Android.Menu](#!/api/Titanium.Android.Menu)
-    
-*   [Titanium.Android.MenuItem](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Android.MenuItem)
-    
-*   [Titanium.Android.ActionBar](#!/api/Titanium.Android.ActionBar)
-    
-*   [Say Goodbye to the Menu Button](http://android-developers.blogspot.com/2012/01/say-goodbye-to-menu-button.html) (Android Developer Blog)
+* [Titanium.Android.Menu](#!/api/Titanium.Android.Menu)
+
+* [Titanium.Android.MenuItem](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Android.MenuItem)
+
+* [Titanium.Android.ActionBar](#!/api/Titanium.Android.ActionBar)
+
+* [Say Goodbye to the Menu Button](http://android-developers.blogspot.com/2012/01/say-goodbye-to-menu-button.html) (Android Developer Blog)

@@ -1,4 +1,4 @@
-{"title":"Alloy 1.10.6 - 17 November 2017","weight":"60"} 
+{"title":"Alloy 1.10.6 - 17 November 2017","weight":"60"}
 
 Alloy 1.10.6 is a patch release that includes two bug fixes.
 
@@ -6,6 +6,6 @@ As of this release, the previous Alloy patch release is no longer supported. Not
 
 ## Fixed issues
 
-*   [CLI-1272](https://jira.appcelerator.org/browse/CLI-1272): Remove "mobileweb" from config template
-    
-*   [CLI-1273](https://jira.appcelerator.org/browse/CLI-1273): Fallback if empty ResultSet is returned
+* [CLI-1272](https://jira.appcelerator.org/browse/CLI-1272): Remove "mobileweb" from config template
+
+* [CLI-1273](https://jira.appcelerator.org/browse/CLI-1273): Fallback if empty ResultSet is returned

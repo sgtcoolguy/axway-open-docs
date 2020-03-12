@@ -1,6 +1,6 @@
-{"title":"Command Class","weight":"20"} 
+{"title":"Command Class","weight":"20"}
 
-The Command class contains methods and properties for interacting with commands inside Studio
+The Command class contains methods and properties for interacting with commands inside Studio.
 
 ## Usage
 
@@ -20,4 +20,4 @@ Description
 
 new(name)
 
-The name of the command
+The name of the command.

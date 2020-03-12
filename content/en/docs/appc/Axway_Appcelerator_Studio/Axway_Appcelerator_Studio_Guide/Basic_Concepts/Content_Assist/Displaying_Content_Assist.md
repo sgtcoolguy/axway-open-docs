@@ -1,32 +1,32 @@
-{"title":"Displaying Content Assist","weight":"20"} 
+{"title":"Displaying Content Assist","weight":"20"}
 
-As you code, Content Assist provides tips on available properties and methods and the parameters that a method takes. See [About Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/About_Content_Assist/) for a detailed explanation about Content Assist.
+As you code, Content Assist provides tips on available properties and methods and the parameters that a method takes. See [About Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/About_Content_Assist/) for a detailed explanation.
 
-*   [Instructions](#Instructions)
-    
-*   [Understanding what browser/user agents enable which features](#Understandingwhatbrowser/useragentsenablewhichfeatures)
-    
-*   [Setting content assist preferences](#Settingcontentassistpreferences)
-    
-    *   [Changing the user agents shown with content assist](#Changingtheuseragentsshownwithcontentassist)
-        
-    *   [Filter the proposal list by supported items](#Filtertheproposallistbysupporteditems)
-        
-    *   [Single proposal options](#Singleproposaloptions)
-        
-    *   [Content display options](#Contentdisplayoptions)
-        
-    *   [Hover options](#Hoveroptions)
-        
-*   [Related Topics](#RelatedTopics)
-    
+* [Instructions](#Instructions)
+
+* [Understanding what browser/user agents enable which features](#Understandingwhatbrowser/useragentsenablewhichfeatures)
+
+* [Setting content assist preferences](#Settingcontentassistpreferences)
+
+  * [Changing the user agents shown with content assist](#Changingtheuseragentsshownwithcontentassist)
+
+  * [Filter the proposal list by supported items](#Filtertheproposallistbysupporteditems)
+
+  * [Single proposal options](#Singleproposaloptions)
+
+  * [Content display options](#Contentdisplayoptions)
+
+  * [Hover options](#Hoveroptions)
+
+* [Related Topics](#RelatedTopics)
+
 
 ## Instructions
 
 To display the tips provided by content assist:
 
-*   Content Assist automatically pops up a context menu or yellow tip box as you type the name of an object or function that Content Assist applies to.
-    
+* Content Assist automatically pops up a context menu or yellow tip box as you type the name of an object or function to which Content Assist applies.
+
 
 To display a longer Tool Tip, press **F2** while your cursor is on the function or object. (You can also select **ShowToolTip** from the **Edit** menu while your cursor is on the function or object.)
 
@@ -34,10 +34,10 @@ To display a longer Tool Tip, press **F2** while your cursor is on the function 
 
 By default, content assist will show a list of "user agents" with each proposal. This is to help you determine which items can be safely used with which browser. The icon state will change depending on the information available to the user:
 
-*   Full-color: the property is available
-    
-*   Greyed-out: the property is not available
-    
+* Full-color: the property is available
+
+* Greyed-out: the property is not available
+
 
 If no information is available, the property is assumed to be **available**. In the image below, you can see some items apply only to Chrome, some to Firefox, and some to IE.
 
@@ -45,20 +45,20 @@ If no information is available, the property is assumed to be **available**. In 
 
 ## Setting content assist preferences
 
-Content assist has a number of options which may be adjusted.
+Content assist has several options which may be adjusted.
 
 ![Content_Assist_Preferences](/Images/appc/download/attachments/30083298/Content_Assist_Preferences.png)
 
 ### Changing the user agents shown with content assist
 
-1.  Open **Preferences > Studio > Content Assist**
-    
-2.  User agent preferences are set per project type.
-    
-3.  Select a project type, i.e. "PHP" and choose the agents to show by default.
-    
-4.  Press **OK**
-    
+1. Open **Preferences > Studio > Content Assist**
+
+2. User-agent preferences are set per project type.
+
+3. Select a project type, for example, "PHP" and choose the agents to show by default.
+
+4. Press **OK**
+
 
 ### Filter the proposal list by supported items
 
@@ -66,12 +66,12 @@ You can choose to show proposals in content assist only if they match certain co
 
 Show proposals that contain:
 
-*   Any user agent: a proposal will appear in the list regardless if it is supported or not by the selected user agents.
-    
-*   One or more selected user agents: a proposal will appear if one of more of the selected user agents support this feature.
-    
-*   All selected user agents: a proposal will only appear if _all_ user agents support this feature.
-    
+* Any user-agent: a proposal will appear in the list regardless if it is supported or not by the selected user agents.
+
+* One or more selected user agents: a proposal will appear if one of more of the selected user agents support this feature.
+
+* All selected user agents: a proposal will only appear if _all_ user agents support this feature.
+
 
 ### Single proposal options
 
@@ -83,12 +83,12 @@ Content assist will display after a default delay of 200ms, i.e., once you type 
 
 ### Hover options
 
-When hovering over a function, property or method, if documentation is available, a box will pop up with additional information. Tweak this setting if you wish to modify this behavior.
+When hovering over a function, property, or method, if documentation is available, a box will pop up with additional information. Tweak this setting if you wish to modify this behavior.
 
 ## Related Topics
 
-*   [About Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/About_Content_Assist/)
-    
-*   [Documenting Your Code Using ScriptDoc](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Documenting_Code/Documenting_Your_Code_Using_ScriptDoc/)
-    
-*   [ScriptDoc tag quick reference](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/ScriptDoc_tag_quick_reference/)
+* [About Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/About_Content_Assist/)
+
+* [Documenting Your Code Using ScriptDoc](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Documenting_Code/Documenting_Your_Code_Using_ScriptDoc/)
+
+* [ScriptDoc tag quick reference](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/ScriptDoc_tag_quick_reference/)

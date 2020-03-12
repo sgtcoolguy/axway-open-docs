@@ -1,31 +1,31 @@
-{"title":"Alloy Command-Line Interface Reference","weight":"10"} 
+{"title":"Alloy Command-Line Interface Reference","weight":"10"}
 
-*   [Command-Line Interface Installation](#Command-LineInterfaceInstallation)
-    
-    *   [Manual Installation](#ManualInstallation)
-        
-    *   [Bleeding Edge Installation](#BleedingEdgeInstallation)
-        
-*   [New](#New)
-    
-*   [Generate](#Generate)
-    
-*   [Install](#Install)
-    
-*   [Compile](#Compile)
-    
-*   [Run](#Run)
-    
-*   [i18n-extract](#i18n-extract)
-    
-*   [Copy](#Copy)
-    
-*   [Move](#Move)
-    
-*   [Remove](#Remove)
-    
-*   [Additional Options](#AdditionalOptions)
-    
+* [Command-Line Interface Installation](#Command-LineInterfaceInstallation)
+
+  * [Manual Installation](#ManualInstallation)
+
+  * [Bleeding Edge Installation](#BleedingEdgeInstallation)
+
+* [New](#New)
+
+* [Generate](#Generate)
+
+* [Install](#Install)
+
+* [Compile](#Compile)
+
+* [Run](#Run)
+
+* [i18n-extract](#i18n-extract)
+
+* [Copy](#Copy)
+
+* [Move](#Move)
+
+* [Remove](#Remove)
+
+* [Additional Options](#AdditionalOptions)
+
 
 The Alloy Command-Line Interface (CLI) is a command-line tool for managing and building Alloy projects.
 
@@ -39,12 +39,12 @@ If there were installation problems or if you wish to install the Alloy CLI inde
 
 The Appcelerator CLI needs to be installed and configured before installing the Alloy CLI. The following steps install the latest released version of Alloy:
 
-1.  Download and install Node.js from [http://nodejs.org/#download](http://nodejs.org/#download), which includes the npm package manager needed to install Alloy.
-    
-2.  From a console window, run the following command to install Alloy:
-    
-    `sudo npm install -g alloy`
-    
+1. Download and install Node.js from [http://nodejs.org/#download](http://nodejs.org/#download), which includes the npm package manager needed to install Alloy.
+
+2. From a console window, run the following command to install Alloy:
+
+  `sudo npm install -g alloy`
+
 
 By default, these installation directions will install the latest Alloy release. To install a specific released version, use the same directions, except after 'alloy', add the at symbol ('@') with the version number. For instance, executing sudo npm install -g alloy@1.10.0 will install version 1.10.0.
 
@@ -120,9 +120,9 @@ Creates a skeleton migration file for the specified model.
 
 style <<name> | --all>
 
-Creates a skeleton style file with the specified name.  
-If the name is associated with a view-controller, Alloy uses the id and class names from the markup file to populate the style file.  
-If \--all flag is specified, Alloy generates skeleton style files for all view-controllers.  
+Creates a skeleton style file with the specified name.
+If the name is associated with a view-controller, Alloy uses the id and class names from the markup file to populate the style file.
+If \--all flag is specified, Alloy generates skeleton style files for all view-controllers.
 If you add new id or class attributes to the markup file, running this command updates the style file with the new attributes.
 
 view <name>
@@ -157,10 +157,10 @@ Disables color output.
 
 To generate a model, first select the adapter type:
 
-*   sql for the SQLite database for the Android and iOS platform.
-    
-*   properties for storing models locally in Titanium SDK context.
-    
+* sql for the SQLite database for the Android and iOS platform.
+
+* properties for storing models locally in Titanium SDK context.
+
 
 For the sql and properties adapters, you will also need to specify a table schema. The sql adapter type will also generate a migration file with the model.
 
@@ -172,22 +172,22 @@ Datatype
 
 SQLite Datatype
 
-string  
-varchar  
+string
+varchar
 text
 
 TEXT
 
-int  
-tinyint  
-smallint  
-bigint  
+int
+tinyint
+smallint
+bigint
 integer
 
 INTEGER
 
-double  
-float  
+double
+float
 real
 
 REAL
@@ -196,10 +196,10 @@ blob
 
 BLOB
 
-decimal  
-number  
-date  
-datetime  
+decimal
+number
+date
+datetime
 boolean
 
 NUMERIC
@@ -286,10 +286,10 @@ Optional. If present, the command writes new localization entries to the target 
 
 The following localization functions are supported:
 
-*   [Ti.Locale.getString()](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Locale-method-getString)
-    
-*   [L()](https://docs.appcelerator.com/platform/latest/#!/api/Global-method-L)
-    
+* [Ti.Locale.getString()](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Locale-method-getString)
+
+* [L()](https://docs.appcelerator.com/platform/latest/#!/api/Global-method-L)
+
 
 The syntax options for calling alloy extract-i18n are shown below.
 

@@ -1,4 +1,4 @@
-{"title":"Alloy 1.8.1 - 21 March 2016","weight":"60"} 
+{"title":"Alloy 1.8.1 - 21 March 2016","weight":"60"}
 
 Alloy 1.8.1 is a patch release that includes one new feature, one improvement, and one bug fix.
 
@@ -6,14 +6,14 @@ As of this release, the previous Alloy patch release is no longer supported. Not
 
 ## New Feature
 
-*   [ALOY-1360](https://jira.appcelerator.org/browse/ALOY-1360) - Support for defining controller baseController in XML
-    
+* [ALOY-1360](https://jira.appcelerator.org/browse/ALOY-1360) - Support for defining controller baseController in XML
+
 
 ## Improvement
 
-*   [ALOY-1254](https://jira.appcelerator.org/browse/ALOY-1254) - Support model transform() in collection data-binding
-    
+* [ALOY-1254](https://jira.appcelerator.org/browse/ALOY-1254) - Support model transform() in collection data-binding
+
 
 ## Fixed Issue
 
-*   [ALOY-1369](https://jira.appcelerator.org/browse/ALOY-1369) - Complex data binding for collection doesn't work with transform
+* [ALOY-1369](https://jira.appcelerator.org/browse/ALOY-1369) - Complex data binding for collection doesn't work with transform

@@ -1,4 +1,4 @@
-{"title":"How to Chain Controller Methods in Titanium by Using Alloy","weight":"50"} 
+{"title":"How to Chain Controller Methods in Titanium by Using Alloy","weight":"50"}
 
 Titanium and Alloy has as great feature to create controllers and be reactive to triggers or call methods without creating a pointer.
 

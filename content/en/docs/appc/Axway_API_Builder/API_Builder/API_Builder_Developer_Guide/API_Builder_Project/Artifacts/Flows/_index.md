@@ -1,4 +1,4 @@
-{"title":"Flows","weight":"20"} 
+{"title":"Flows","weight":"20"}
 
 API Builder 3.x is deprecated
 

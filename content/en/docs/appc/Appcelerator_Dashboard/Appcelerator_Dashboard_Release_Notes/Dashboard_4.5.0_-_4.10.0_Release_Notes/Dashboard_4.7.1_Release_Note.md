@@ -1,4 +1,4 @@
-{"title":"Dashboard 4.7.1 - 6 May 2016","weight":"80"} 
+{"title":"Dashboard 4.7.1 - 6 May 2016","weight":"80"}
 
 Dashboard 4.7.1 is a patch release, which includes one bug fix.
 

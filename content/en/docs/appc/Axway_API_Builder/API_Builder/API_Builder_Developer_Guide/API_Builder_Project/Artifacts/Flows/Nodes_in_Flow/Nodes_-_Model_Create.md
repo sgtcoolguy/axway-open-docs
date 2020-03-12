@@ -1,4 +1,4 @@
-{"title":"Nodes - Model Create","weight":"40"} 
+{"title":"Nodes - Model Create","weight":"40"}
 
 API Builder 3.x is deprecated
 

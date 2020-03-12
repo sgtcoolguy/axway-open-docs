@@ -1,25 +1,25 @@
-{"title":"AMPLIFY Crash Analytics","weight":"20"} 
+{"title":"AMPLIFY Crash Analytics","weight":"20"}
 
-*   [Introduction](#Introduction)
-    
-*   [Requirements](#Requirements)
-    
-*   [Installation and setup](#Installationandsetup)
-    
-    *   [Setup Your Project](#SetupYourProject)
-        
-    *   [Initialize the Module](#InitializetheModule)
-        
-    *   [Create a Breadcrumb Trail](#CreateaBreadcrumbTrail)
-        
-    *   [Add User Metadata](#AddUserMetadata)
-        
-    *   [Log An Error](#LogAnError)
-        
-    *   [Allow the User to Opt-Out](#AllowtheUsertoOpt-Out)
-        
-*   [Known issue](#Knownissue)
-    
+* [Introduction](#Introduction)
+
+* [Requirements](#Requirements)
+
+* [Installation and setup](#Installationandsetup)
+
+  * [Setup Your Project](#SetupYourProject)
+
+  * [Initialize the Module](#InitializetheModule)
+
+  * [Create a Breadcrumb Trail](#CreateaBreadcrumbTrail)
+
+  * [Add User Metadata](#AddUserMetadata)
+
+  * [Log An Error](#LogAnError)
+
+  * [Allow the User to Opt-Out](#AllowtheUsertoOpt-Out)
+
+* [Known issue](#Knownissue)
+
 
 Subscription Required!
 
@@ -27,26 +27,26 @@ This AMPLIFY Service feature requires a Pro, Enterprise, or purchased subscripti
 
 ## Introduction
 
-![crashes](/Images/appc/download/attachments/58726528/crashes.png)
+The AMPLIFY Crash Analytics (ACA) module provides you with real-time crash reporting, and app monitoring for your Titanium powered mobile apps. This module enables the enterprise-level support for monitoring critical errors and provides valuable diagnostic information to rapidly debug issues that occur in production from the Appcelerator Dashboard (Dashboard).
 
-The AMPLIFY Crash Analytics (ACA) module provides you with real-time crash reporting and app monitoring for your Titanium powered mobile apps. This module enables the enterprise level support for monitoring critical errors and provides valuable diagnostic information to rapidly debug issues that occur in production from the Appcelerator Dashboard (Dashboard).
+![crashes](/Images/appc/download/attachments/58726528/crashes.png)
 
 ## Requirements
 
-*   [Titanium SDK 8.](https://www.appcelerator.com/titanium/download-/)1.1 or above is required to use this feature
-    
-*   Appcelerator Studio (Studio)
-    
+* [Titanium SDK 8.](https://www.appcelerator.com/titanium/download-/)1.1 or above is required to use this feature
 
-Note: ACA only supports the Android and iOS platforms.
+* Appcelerator Studio (Studio)
+
+
+ACA only supports the Android and iOS platforms.
 
 ## Installation and setup
 
-The ACA module is downloaded if you have either an Pro or Enterprise account or purchased it separately.
+The ACA module is downloaded if you have either a Pro or Enterprise account or purchased it separately.
 
 ### Setup Your Project
 
-To activate it when creating a new project using Studio, click the **Enable Axway Appcelerator Platform Services** checkbox. Once the app has been created, you can see that analytics is set in the tiapp.xml file. Use the ACA module API to add breadcrumbs, user metadata, and error handling code to log events leading up to a crash. Login to the Dashboard and use the ACA dashboard to analyze crash reports.
+To activate it when creating a new project using Studio, click the **Enable Axway Appcelerator Platform Services** checkbox. Once the app has been created, you can see that analytics is set in the tiapp.xml file. Use the ACA module API to add breadcrumbs, user metadata, and error handling code to log events leading up to a crash. Log in to the Dashboard and use the ACA dashboard to analyze crash reports.
 
 For a previously created project, if Appcelerator Services were not previously enabled, open your tiapp.xml file, then click the **Enable Services** button under the _Appcelerator Service_ section.
 
@@ -74,7 +74,7 @@ Older version of requiring and initializing ACA
 
 `apm.init();`
 
-Note: You may need to do a thorough code update to replace the older variable apm with aca.
+You may need to do a thorough code update to replace the older variable apm with aca.
 
 ### Create a Breadcrumb Trail
 
@@ -134,7 +134,9 @@ To make it easier to track the events leading up to a crash, use the leaveBreadc
 
 `}`
 
-These breadcrumbs are collected and passed to the ACA. Note: breadcrumbs will only be reported in the case of a handled exception or a crash (they won't be found in the Dashboard). From ACA 1.4 breadcrumb events will be sent to the platform only when a crash occurs or when the crash event is sent to the platform.
+These breadcrumbs are collected and passed to the ACA.
+
+Breadcrumbs will only be reported in the case of a handled exception or a crash (they won't be found in the Dashboard). From ACA 1.4, breadcrumb events will be sent to the platform only when a crash occurs or when the crash event is sent to the platform.
 
 ![breadcrumbs](/Images/appc/download/attachments/58726528/breadcrumbs.png)
 
@@ -172,7 +174,7 @@ Use the setUsername and setMetadata methods to differentiate users of your appli
 
 `aca.setMetadata(``'gameLevel'``, 2);`
 
-By default, a username is not included. The username appears with the crash or error reports. Both setUsername and setMetadata can be used in any part of application's code. They are not invoked when the crash occurs, the information gathered by aca when these calls are made will be sent to the platform with the crash event.
+By default, a username is not included. The username appears with the crash or error reports. Both setUsername and setMetadata can be used in any part of the application's code. They are not invoked when the crash occurs, the information gathered by ACA when these calls are made will be sent to the platform with the crash event.
 
 ### Log An Error
 
@@ -212,4 +214,4 @@ Use the setOptOutStatus method to allow the user NOT to send any information to 
 
 ## Known issue
 
-Only the 'Last 60 Minutes' time period is real-time. Results for other time periods will be updated from one hour to twenty four hours after the events are sent.
+Only the 'Last 60 Minutes' time period is real-time. Results for other time periods will be updated from one hour to twenty-four hours after the events are sent.

@@ -1,4 +1,4 @@
-{"title":"iOS Module Development Guide","weight":"40"} 
+{"title":"iOS Module Development Guide","weight":"40"}
 
 ## Overview
 
@@ -23,3 +23,7 @@ Provides in-depth information about the structure of a module project as well as
 **[iOS Module API Reference](http://docs.appcelerator.com/module-apidoc/latest/ios/index.html)**
 
 Useful APIs for module development. The module components extend the TiModule, TiProxy, TiUIView and TiViewProxy classes.
+
+**[iOS Module Debugging](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Extending_Titanium_Mobile/iOS_Module_Development_Guide/iOS_Module_Debugging/)**
+
+Step-by-step guide how to use Xcode to debug your iOS module.

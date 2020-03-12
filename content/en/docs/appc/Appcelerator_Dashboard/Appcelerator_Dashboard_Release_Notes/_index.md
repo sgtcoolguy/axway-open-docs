@@ -1,49 +1,57 @@
-{"title":"Appcelerator Dashboard Release Notes","weight":"30"} 
+{"title":"Appcelerator Dashboard Release Notes","weight":"30"}
 
-## Dashboard 7.2.0 - 26 November 2018
+## Dashboard 7.2.2 - 23 January 2020
 
-Dashboard 7.2.0 is a minor release, which includes an improvement and a bug fix.
+Dashboard 7.2.2 is a patch release, which includes an improvement and several bug fixes.
 
-As of the 7.2.0 release, the Appcelerator Performance Management (APM) module and integration with Apteligent Crittercism are now discontinued.
+## Improvements
 
-Applications previously using the APM module may transition to use the AMPLIFY Crash Analytics (ACA) module available from [https://platform.axway.com/#/download](https://platform.axway.com/#/download). For more details, please refer to the [AMPLIFY Crash Analytics](https://docs.axway.com/bundle/AMPLIFY_Appcelerator_Services_allOS_en/page/amplify_crash_analytics.html) documentation.
+* Updated layout of **Organization** overview to be more consistent with **App** and other overviews.
 
-Attempts to build applications with the com.appcelerator.apm module will receive an error message regarding its discontinuation.
 
-## Improvement
+## Fixed issues
 
-*   Updated role select list on organization _Members_ and _Teams_ views to indicate the services to which roles are associated.
-    
+* Fixed an issue where the **Usage** view may show an error for organizations with no active subscriptions.
 
-## Fixed issue
+* Fixed an issue on the **Crash** details view where breadcrumbs for a given crash on the _Occurrences_ tab may not be displayed.
 
-*   Resolved issue where counts on _Unique Devices_ analytics views may have been incorrectly calculated.
-    
+* Fixed an issue where the map on **Analytics** views by Location may not render in Safari.
+
+* Fixed an issue on the Mobile Backend Services **Logs** view where attempting to view parameters for a request may redirect the user away from the **Logs** view.
+
+* Fixed an issue where attempting to resend an activation link during signup may not work as expected.
+
+* Fixed an issue on the App **Custom Query** view where the chart and data table may not initially render.
+
 
 ## Recent Releases
 
-*   [Dashboard 7.2.0 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.2.0_Release_Note/)
-    
-*   [Dashboard 7.1.3 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.1.3_Release_Note/)
-    
-*   [Dashboard 7.1.2 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.1.2_Release_Note/)
-    
-*   [Dashboard 7.1.1 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.1.1_Release_Note/)
-    
-*   [Dashboard 7.1.0 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.1.0_Release_Note/)
-    
-*   [Dashboard 7.0.2 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.0.2_Release_Note/)
-    
-*   [Dashboard 7.0.1 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.0.1_Release_Note/)
-    
-*   [Dashboard 7.0.0 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.0.0_Release_Note/)
-    
-*   [Dashboard 6.0.0 - 6.5.1 Release Notes](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_6.0.0_-_6.5.1_Release_Notes/)
-    
-*   [Dashboard 5.0.0 - 5.3.1 Release Notes](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_5.0.0_-_5.3.1_Release_Notes/)
-    
-*   [Dashboard 4.10.1 - 4.15.3 Release Notes](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_4.10.1_-_4.15.3_Release_Notes/)
-    
-*   [Dashboard 4.5.0 - 4.10.0 Release Notes](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_4.5.0_-_4.10.0_Release_Notes/)
-    
-*   [Dashboard 4.0.0 - 4.4.1 Release Notes](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_4.0.0_-_4.4.1_Release_Notes/)
+* [Dashboard 7.2.2 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.2.2_Release_Note/)
+
+* [Dashboard 7.2.1 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.2.1_Release_Note/)
+
+* [Dashboard 7.2.0 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.2.0_Release_Note/)
+
+* [Dashboard 7.1.3 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.1.3_Release_Note/)
+
+* [Dashboard 7.1.2 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.1.2_Release_Note/)
+
+* [Dashboard 7.1.1 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.1.1_Release_Note/)
+
+* [Dashboard 7.1.0 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.1.0_Release_Note/)
+
+* [Dashboard 7.0.2 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.0.2_Release_Note/)
+
+* [Dashboard 7.0.1 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.0.1_Release_Note/)
+
+* [Dashboard 7.0.0 Release Note](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_7.0.0_Release_Note/)
+
+* [Dashboard 6.0.0 - 6.5.1 Release Notes](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_6.0.0_-_6.5.1_Release_Notes/)
+
+* [Dashboard 5.0.0 - 5.3.1 Release Notes](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_5.0.0_-_5.3.1_Release_Notes/)
+
+* [Dashboard 4.10.1 - 4.15.3 Release Notes](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_4.10.1_-_4.15.3_Release_Notes/)
+
+* [Dashboard 4.5.0 - 4.10.0 Release Notes](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_4.5.0_-_4.10.0_Release_Notes/)
+
+* [Dashboard 4.0.0 - 4.4.1 Release Notes](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/Dashboard_4.0.0_-_4.4.1_Release_Notes/)

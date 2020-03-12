@@ -1,19 +1,19 @@
-{"title":"Deprecation Notice SDK 7.x","weight":"20"} 
+{"title":"Deprecation Notice SDK 7.x","weight":"20"}
 
 List of all depreciation notices for SDK 7.x.
 
-*   [SDK 7.x](#SDK7.x)
-    
-    *   [7.5.0](#7.5.0)
-        
-    *   [7.3.1](#7.3.1)
-        
-    *   [7.3.0](#7.3.0)
-        
-    *   [7.0.1](#7.0.1)
-        
-    *   [7.0.0](#7.0.0)
-        
+* [SDK 7.x](#SDK7.x)
+
+  * [7.5.0](#7.5.0)
+
+  * [7.3.1](#7.3.1)
+
+  * [7.3.0](#7.3.0)
+
+  * [7.0.1](#7.0.1)
+
+  * [7.0.0](#7.0.0)
+
 
 ## SDK 7.x
 

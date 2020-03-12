@@ -1,150 +1,150 @@
-{"title":"Ruble Specification","weight":"130"} 
+{"title":"Ruble Specification","weight":"130"}
 
-*   [Overview](#Overview)
-    
-*   [Bundles](#Bundles)
-    
-    *   [Bundle loading](#Bundleloading)
-        
-    *   [Redefining, overriding, and extending bundles](#Redefining,overriding,andextendingbundles)
-        
-        *   [A minimal bundle](#Aminimalbundle)
-            
-        *   [Redefining a bundle](#Redefiningabundle)
-            
-        *   [Extending a bundle](#Extendingabundle)
-            
-        *   [Overriding a bundle element](#Overridingabundleelement)
-            
-*   [Bundle properties](#Bundleproperties)
-    
-    *   [Associating a bundle with a file-type](#Associatingabundlewithafile-type)
-        
-*   [Scopes](#Scopes)
-    
-    *   [Scope selectors](#Scopeselectors)
-        
-        *   [Example - simple name selector](#Example-simplenameselector)
-            
-        *   [Example - dotted name selector](#Example-dottednameselector)
-            
-        *   [Example - descendant selector](#Example-descendantselector)
-            
-        *   [Example - union selector](#Example-unionselector)
-            
-        *   [Example - union selector 2](#Example-unionselector2)
-            
-        *   [Example - intersection selector](#Example-intersectionselector)
-            
-        *   [Example - grouping](#Example-grouping)
-            
-        *   [Example - negative lookahead](#Example-negativelookahead)
-            
-        *   [Precedence levels](#Precedencelevels)
-            
-*   [Commands](#Commands)
-    
-*   [Snippets](#Snippets)
-    
-*   [Conventions and definitions](#Conventionsanddefinitions)
-    
-    *   [PATH\_SPECIFIER](#PATH_SPECIFIER)
-        
-    *   [INPUT\_SPECIFIER](#INPUT_SPECIFIER)
-        
-    *   [OUTPUT\_SPECIFIER](#OUTPUT_SPECIFIER)
-        
-    *   [WORKING\_DIRECTORY](#WORKING_DIRECTORY)
-        
-    *   [PLATFORM\_SPECIFIER](#PLATFORM_SPECIFIER)
-        
-*   [Bundle.rb](#Bundle.rb)
-    
-    *   [Metadata](#Metadata)
-        
-    *   [Menus](#Menus)
-        
-    *   [Sample bundle.rb file](#Samplebundle.rbfile)
-        
-*   [Commands and snippets](#Commandsandsnippets)
-    
-    *   [Key bindings](#Keybindings)
-        
-    *   [Input definition](#Inputdefinition)
-        
-    *   [Output definition](#Outputdefinition)
-        
-    *   [Invocation and context](#Invocationandcontext)
-        
-        *   [Context during command invocation](#Contextduringcommandinvocation)
-            
-            *   [INVOKE\_OPTIONS](#INVOKE_OPTIONS)
-                
-        *   [Input during Command invocation](#InputduringCommandinvocation)
-            
-        *   [Output during command invocation](#Outputduringcommandinvocation)
-            
+* [Overview](#Overview)
+
+* [Bundles](#Bundles)
+
+  * [Bundle loading](#Bundleloading)
+
+  * [Redefining, overriding, and extending bundles](#Redefining,overriding,andextendingbundles)
+
+    * [A minimal bundle](#Aminimalbundle)
+
+    * [Redefining a bundle](#Redefiningabundle)
+
+    * [Extending a bundle](#Extendingabundle)
+
+    * [Overriding a bundle element](#Overridingabundleelement)
+
+* [Bundle properties](#Bundleproperties)
+
+  * [Associating a bundle with a file-type](#Associatingabundlewithafile-type)
+
+* [Scopes](#Scopes)
+
+  * [Scope selectors](#Scopeselectors)
+
+    * [Example - simple name selector](#Example-simplenameselector)
+
+    * [Example - dotted name selector](#Example-dottednameselector)
+
+    * [Example - descendant selector](#Example-descendantselector)
+
+    * [Example - union selector](#Example-unionselector)
+
+    * [Example - union selector 2](#Example-unionselector2)
+
+    * [Example - intersection selector](#Example-intersectionselector)
+
+    * [Example - grouping](#Example-grouping)
+
+    * [Example - negative lookahead](#Example-negativelookahead)
+
+    * [Precedence levels](#Precedencelevels)
+
+* [Commands](#Commands)
+
+* [Snippets](#Snippets)
+
+* [Conventions and definitions](#Conventionsanddefinitions)
+
+  * [PATH\_SPECIFIER](#PATH_SPECIFIER)
+
+  * [INPUT\_SPECIFIER](#INPUT_SPECIFIER)
+
+  * [OUTPUT\_SPECIFIER](#OUTPUT_SPECIFIER)
+
+  * [WORKING\_DIRECTORY](#WORKING_DIRECTORY)
+
+  * [PLATFORM\_SPECIFIER](#PLATFORM_SPECIFIER)
+
+* [Bundle.rb](#Bundle.rb)
+
+  * [Metadata](#Metadata)
+
+  * [Menus](#Menus)
+
+  * [Sample bundle.rb file](#Samplebundle.rbfile)
+
+* [Commands and snippets](#Commandsandsnippets)
+
+  * [Key bindings](#Keybindings)
+
+  * [Input definition](#Inputdefinition)
+
+  * [Output definition](#Outputdefinition)
+
+  * [Invocation and context](#Invocationandcontext)
+
+    * [Context during command invocation](#Contextduringcommandinvocation)
+
+      * [INVOKE\_OPTIONS](#INVOKE_OPTIONS)
+
+    * [Input during Command invocation](#InputduringCommandinvocation)
+
+    * [Output during command invocation](#Outputduringcommandinvocation)
+
 
 ## Overview
 
-Ruble (short for RUby BundLE) is a runtime environment that allows for the extensibility of IDEs and text editors using Ruby. The first implementation of Rubles will be in Studio 3, but we're making the specification available now because we want to get feedback from the community and because we want to encourage the developers of other development tools to adopt the specification as well. To further that end, we are making the specification available in an open manner, with no limits on use or distribution of this specification.
+Ruble (short for RUby BundLE) is a runtime environment that allows for the extensibility of IDEs and text editors using Ruby. The first implementation of Rubles will be in Studio 3, but we're making the specification available now because we want to get feedback from the community and because we want to encourage the developers of other development tools to adopt the specification as well. To further that end, we are making the specification available in an open manner, with no limits on the use or distribution of this specification.
 
-In addition, we are also making the source available for several working Ruble bundles, some of which are conversions of existing open-sourced TextMate bundles, and others are home-grown versions:
+Also, we are making the source available for several working Ruble bundles, some of which are conversions of existing open-sourced TextMate bundles, and others are home-grown versions:
 
-*   [bundle-dev.ruble](https://github.com/aptana/bundle-dev.ruble)
-    
-*   [capistrano.ruble](https://github.com/aptana/capistrano.ruble)
-    
-*   [css.ruble](https://github.com/aptana/css.ruble)
-    
-*   [cucumber.ruble](https://github.com/aptana/cucumber.ruble)
-    
-*   [engineyard.ruble](https://github.com/aptana/engineyard.ruble)
-    
-*   [github.ruble](https://github.com/aptana/github.ruble)
-    
-*   [haml.ruble](https://github.com/aptana/haml.ruble)
-    
-*   [heroku.ruble](https://github.com/aptana/heroku.ruble)
-    
-*   [html.ruble](https://github.com/aptana/html.ruble)
-    
-*   [javascript-jquery.ruble](https://github.com/aptana/javascript-jquery.ruble)
-    
-*   [js.ruble](https://github.com/aptana/js.ruble)
-    
-*   [json.ruble](https://github.com/aptana/json.ruble)
-    
-*   [math.ruble](https://github.com/aptana/math.ruble)
-    
-*   [mercurial.ruble](https://github.com/aptana/mercurial.ruble)
-    
-*   [php.ruble](https://github.com/aptana/php.ruble)
-    
-*   [rails.ruble](https://github.com/aptana/rails.ruble)
-    
-*   [rspec.ruble](https://github.com/aptana/rspec.ruble)
-    
-*   [ruby.ruble](https://github.com/aptana/ruby.ruble)
-    
-*   [sass.ruble](https://github.com/aptana/sass.ruble)
-    
-*   [shell-script.ruble](https://github.com/aptana/shell-script.ruble)
-    
-*   [source.ruble](https://github.com/aptana/source.ruble)
-    
-*   [text.ruble](https://github.com/aptana/text.ruble)
-    
-*   [WebFont.ruble](https://github.com/aptana/WebFont.ruble)
-    
-*   [wordpress.ruble](https://github.com/aptana/wordpress.ruble)
-    
-*   [xml.ruble](https://github.com/aptana/xml.ruble)
-    
-*   [yaml.ruble](https://github.com/aptana/yaml.ruble)
-    
-*   [zen-coding.ruble](https://github.com/aptana/zen-coding.ruble)
-    
+* [bundle-dev.ruble](https://github.com/aptana/bundle-dev.ruble)
+
+* [capistrano.ruble](https://github.com/aptana/capistrano.ruble)
+
+* [css.ruble](https://github.com/aptana/css.ruble)
+
+* [cucumber.ruble](https://github.com/aptana/cucumber.ruble)
+
+* [engineyard.ruble](https://github.com/aptana/engineyard.ruble)
+
+* [github.ruble](https://github.com/aptana/github.ruble)
+
+* [haml.ruble](https://github.com/aptana/haml.ruble)
+
+* [heroku.ruble](https://github.com/aptana/heroku.ruble)
+
+* [html.ruble](https://github.com/aptana/html.ruble)
+
+* [javascript-jquery.ruble](https://github.com/aptana/javascript-jquery.ruble)
+
+* [js.ruble](https://github.com/aptana/js.ruble)
+
+* [json.ruble](https://github.com/aptana/json.ruble)
+
+* [math.ruble](https://github.com/aptana/math.ruble)
+
+* [mercurial.ruble](https://github.com/aptana/mercurial.ruble)
+
+* [php.ruble](https://github.com/aptana/php.ruble)
+
+* [rails.ruble](https://github.com/aptana/rails.ruble)
+
+* [rspec.ruble](https://github.com/aptana/rspec.ruble)
+
+* [ruby.ruble](https://github.com/aptana/ruby.ruble)
+
+* [sass.ruble](https://github.com/aptana/sass.ruble)
+
+* [shell-script.ruble](https://github.com/aptana/shell-script.ruble)
+
+* [source.ruble](https://github.com/aptana/source.ruble)
+
+* [text.ruble](https://github.com/aptana/text.ruble)
+
+* [WebFont.ruble](https://github.com/aptana/WebFont.ruble)
+
+* [wordpress.ruble](https://github.com/aptana/wordpress.ruble)
+
+* [xml.ruble](https://github.com/aptana/xml.ruble)
+
+* [yaml.ruble](https://github.com/aptana/yaml.ruble)
+
+* [zen-coding.ruble](https://github.com/aptana/zen-coding.ruble)
+
 
 Please keep in mind that the specification and the bundles themselves are in active development and are very likely to change.
 
@@ -154,7 +154,7 @@ The Ruble runtime includes a ruble.rb file that defines a DSL that can be used t
 
 ## Bundles
 
-Bundles are the top-level distribution format for Ruble extensions. A bundle directory must contain a bundle.rb at the top level. The bundle.rb file defines the metadata for the bundle and its menu(s). By convention, the name of a bundle directory ends with .ruble suffix but this is not required.
+Bundles are the top-level distribution format for Ruble extensions. A bundle directory must contain a bundle.rb at the top level. The bundle.rb file defines the metadata for the bundle and its menu(s). By convention, the name of a bundle directory ends with .ruble suffix, but this is not required.
 
 In addition to the bundle.rb file, there are four top-level directories within a bundle that are treated specially:
 
@@ -164,19 +164,19 @@ Description
 
 commands/
 
-contains the commands that make up the bundle.rb files within this directory will be loaded at startup, so you should keep it as minimal as possible to keep things fast.
+Contains the commands that make up the bundle.rb files within this directory will be loaded at startup, so you should keep it as minimal as possible to keep things fast.
 
 lib/
 
-contains Ruby code that is on the load path when executing commands within your bundle. Put code here you wish to invoke from within your commands, but which you do not necessarily want loaded at startup.
+It contains Ruby code that is on the load path when executing commands within your bundle. Put code here you wish to invoke from within your commands, but which you do not necessarily want to be loaded at startup.
 
 snippets/
 
-contains the snippets that make up the bundle.rb files within this directory will be loaded at startup, so you should keep it as minimal as possible to keep things fast.
+Contains the snippets that make up the bundle.rb files within this directory will be loaded at startup, so you should keep it as minimal as possible to keep things fast.
 
 templates/
 
-contains projects templates used by the "New Project Wizard" when creating a new project in Studio
+It contains project templates used by the "New Project Wizard" when creating a new project in Studio.
 
 By convention, there are several other files and directories found in most bundles:
 
@@ -186,30 +186,30 @@ Description
 
 README
 
-your usual README file (these also work: README.md, README.markdown, README.textile, and/or README.txt)
+Your usual README file (these also work: README.md, README.markdown, README.textile, and README.txt).
 
 Rakefile
 
-your Rakefile, typically used for testing, packaging, and so forth
+Your Rakefile, typically used for testing, packaging, and so forth.
 
 assets/
 
-images, icons, and other files used by your bundle
+Images, icons, and other files used by your bundle.
 
 test/
 
-test code
+Test code.
 
 ### Bundle loading
 
 In Studio 3, Ruble bundles are loaded from the file system in a hierarchical order. The order, from highest to lowest priority, is:
 
-*   Any top-level "bundles" directory in all active projects within the current workspace.
-    
-*   The $USER\_DOCUMENT\_DIRECTORY/Aptana Rubles/, where $USER\_DOCUMENT\_DIRECTORY is platform dependent.
-    
-*   The bundles directory within the Aptana Studio installation
-    
+* Any top-level "bundles" directory in all active projects within the current workspace.
+
+* The $USER\_DOCUMENT\_DIRECTORY/Aptana Rubles/, where $USER\_DOCUMENT\_DIRECTORY is platform dependent.
+
+* The bundle's directory within the Aptana Studio installation.
+
 
 When a bundle is defined in multiple places, only the bundle code defined in the highest priority location is used. In this way, you can easily do a git clone (or the equivalent) on a bundle from within your $USER\_DOCUMENT\_DIRECTORY/Aptana Rubles and it will override the ones built into Studio itself.
 
@@ -217,7 +217,7 @@ Other implementations are free to keep bundles in whatever locations on disk the
 
 ### Redefining, overriding, and extending bundles
 
-It is possible for a bundle directory and its members to redefine, to override or to extend another bundle directory's functionality. This is quite handy when you want to add a command or two to the menu of the existing bundle without having to maintain your own clone of a bundle repository.
+It is possible for a bundle directory and its members to redefine, to override or to extend another bundle directory's functionality. This is quite handy when you want to add a command or two to the menu of the existing bundle without having to maintain your clone of a bundle repository.
 
 Before we can discuss these mechanisms, we need to get some terminology out of the way. Below is a list of terms you may encounter when talking about bundles and how they are defined.
 
@@ -263,7 +263,7 @@ Of course, this bundle is not of much use, but it is important to understand wha
 
 #### Redefining a bundle
 
-In this next example, we flesh out our bundle with a little skeleton content as well as define a like-named bundle directory at a higher precedence.
+In this next example, we flesh out our bundle with a little skeleton content as well as define a like-named bundle directory at higher precedence.
 
 `# $APPLICATION_DIRECTORY/bundles/FunBundle.ruble/bundle.rb`
 
@@ -285,9 +285,9 @@ In this next example, we flesh out our bundle with a little skeleton content as 
 
 `end`
 
-We've added an "A" command to our application bundle. We've also defined a bundle with the same name, but this time within the user bundles directory. The user bundles directory has a higher precedence than the application bundles directory. This means that our active FunBundle bundle will contain the "B" command only.
+We've added an "A" command to our application bundle. We've also defined a bundle with the same name, but this time within the user bundles directory. The user bundles directory has higher precedence than the application bundles directory. This means that our active FunBundle bundle will contain the "B" command only.
 
-When two bundle directories have the same name, the bundle directory with higher precedence completely obscures the content of the lower precedence bundle directory. This can come in handy, for example, if you need to alter an application bundle. You can simply git clone the bundle into your user bundles directory and make your changes there. Since each bundle directory will have the same name, your user version will hide the default bundle implementation.
+When two bundle directories have the same name, the bundle directory with higher precedence completely obscures the content of the lower precedence bundle directory. This can come in handy, for example, if you need to alter an application bundle. You can git clone the bundle into your user bundles directory and make your changes there. Since each bundle directory will have the same name, your user version will hide the default bundle implementation.
 
 #### Extending a bundle
 
@@ -317,7 +317,7 @@ This looks almost identical to the previous example; however, it has two very im
 
 A bundle reference applies its content to a bundle definition of equal or lower precedence and the bundle it modifies is located by the bundle method's string argument, or said another way, the bundle it modifies is located by name. Applying these rules, our active "FunBundle" bundle now contains the two commands "A" and "B". Note that additional bundle references may also augment the "FunBundle" bundle. You are not limited to a single bundle reference.
 
-The second difference is that we've changed the bundle directory name to "FunBundleExtension". The importance of this is a bit tricky to explain. As mentioned earlier, when we use the bundle method without a string argument, the bundle instance's name is derived from the bundle directory name. Bundle's that have names that match their bundle directory's name have special functionality. As seen earlier, that functionality is to completely obscure like-named bundles of lower precedence. If we had not renamed our user bundle's directory, the bundle string argument would have matched the default name of "FunBundle". That would have made this example behave the same as our _Redefining a Bundle_ example. You should \***not**\* use bundle references explicitly when defining a bundle from scratch, only when referring to other bundles within your own bundle.
+The second difference is that we've changed the bundle directory name to "FunBundleExtension". The importance of this is a bit tricky to explain. As mentioned earlier, when we use the bundle method without a string argument, the bundle instance's name is derived from the bundle directory name. Bundles that have names that match their bundle directory's name have special functionality. As seen earlier, that functionality is to completely obscure like-named bundles of lower precedence. If we had not renamed our user bundle's directory, the bundle string argument would have matched the default name of "FunBundle". That would have made this example behave the same as our _Redefining a Bundle_ example. You should \***not**\* use bundle references explicitly when defining a bundle from scratch, only when referring to other bundles within your bundle.
 
 #### Overriding a bundle element
 
@@ -343,7 +343,7 @@ In our last scenario, perhaps you find that you are happy with the content of th
 
 `end`
 
-As you can see, we use the same mechanism we used to extend a bundle; however, this time since we are using the same name of a command that was defined in our target bundle, our active bundle only contains an "A" command and that is the command that is defined in the user bundles directory.
+As you can see, we use the same mechanism we used to extend a bundle; however, this time since we are using the same name of a command that was defined in our target bundle, our active bundle only contains an "A" command, and that is the command that is defined in the user bundles directory.
 
 ## Bundle properties
 
@@ -371,19 +371,19 @@ One or more author names
 
 copyright
 
-Self explanatory.
+Self-explanatory.
 
 license
 
-Self explanatory.
+Self-explanatory.
 
 repository
 
-A URL to the repository or a webpage explaining how to get access
+A URL to the repository or a webpage explaining how to get access.
 
 ### Associating a bundle with a file-type
 
-A bundle can be associated with one or more file types. This makes it possible for a bundle to be created that defines a set of commands and snippets for a file type that doesn't have a built-in editor and parser. A future version of this API will also allow the definition of syntax coloring elements, auto-indent rules, and perhaps even the ability to create full fledged language parsers.
+A bundle can be associated with one or more file types. This makes it possible for a bundle to be created that defines a set of commands and snippets for a file type that doesn't have a built-in editor and parser. A future version of this API will also allow the definition of syntax coloring elements, auto-indent rules, and perhaps even the ability to create full-fledged language parsers.
 
 Method
 
@@ -391,15 +391,15 @@ Description
 
 register\_file\_type(file\_type,scope)
 
-This is a convenience method that first calls associate\_file\_type and then registers that file\_type to a particular scope by calling associate\_scope
+This is a convenience method that first calls associate\_file\_type and then registers that file\_type to a particular scope by calling associate\_scope.
 
 associate\_file\_type(file\_type)
 
-Given a filename pattern, we register files that match to our generic text editor (uses our theme and scripting). file\_type must be either an exact filename to match, or a \*.ext extension to associate with.
+Given a filename pattern, we register files that match to our generic text editor (uses our theme and scripting). file\_type must be either an exact filename to match or a \*.ext extension to which to associate.
 
 associate\_scope(file\_type,scope)
 
-Registers a top-level scope to report back for any file whose name matches the passed in pattern. Understands \* wildcard. Typical values for first arg: .yml **,** \_spec.rb, Rakefile. scope is a string our a symbol. Underscores are converted to spaces (so 'source.yaml' and :source\_yaml are equivalent)
+Registers a top-level scope to report back for any file whose name matches the passed in the pattern. Understands \* wildcard. Typical values for the first arg: .yml**,** \_spec.rb, Rakefile. scope is a string or a symbol. Underscores are converted to spaces (so 'source.yaml' and :source\_yaml are equivalent).
 
 ## Scopes
 
@@ -421,15 +421,15 @@ A scope selector needs only to match the prefix of a name to be considered a mat
 
 `text.html`
 
-A scope selector name may be extended to create a hierarchy. Each name is delimited by a period without spaces between the names and the periods. The same prefix rule as described in "Simple Name Pattern" applies. For example, in the above snippet, the selector will match "text.html" and "text.html.ruby".
+A scope selector name may be extended to create a hierarchy. Each name is delimited by a period without spaces between the names and the periods. The same prefix rule, as described in "Simple Name Pattern", applies. For example, in the above snippet, the selector will match "text.html" and "text.html.ruby".
 
 #### Example - descendant selector
 
 `text.html source.ruby`
 
-A scope may be defined as a hierarchy of scopes. In this sense, scope selectors match against that hierarchy much like CSS matches against the HTML DOM. In the above example, the selector will match when the editor's cursor is within Ruby code which is within HTML. The same matching rules described in the simple name pattern apply to each dotted name. For instance, the last example will match "text.html.ruby source.ruby.embedded.html" since "text.html" is a prefix of "text.html.ruby" and likewise "source.ruby" is a prefix of "source.ruby.embedded.html".
+A scope may be defined as a hierarchy of scopes. In this sense, scope selectors match against that hierarchy, much like CSS matches against the HTML DOM. In the above example, the selector will match when the editor's cursor is within Ruby code which is within HTML. The same matching rules described in the simple name pattern apply to each dotted name. For instance, the last example will match "text.html.ruby source.ruby.embedded.html" since "text.html" is a prefix of "text.html.ruby" and likewise "source.ruby" is a prefix of "source.ruby.embedded.html".
 
-It is important to note that a descendant match can occur anywhere within a scope but the order of the selectors must be matched. For example, if we had a pattern like "a b c", this would match "a b c", "x a b c", "a b c y", "x a b c y", but not "a b x c".
+It is important to note that a descendant match can occur anywhere within scope, but the order of the selectors must be matched. For example, if we had a pattern like "a b c", this would match "a b c", "x a b c", "a b c y", "x a b c y", but not "a b x c".
 
 #### Example - union selector
 
@@ -441,25 +441,25 @@ In this example, our selector defines a list of selectors to be used for matchin
 
 `text.html.ruby | text.html source.ruby`
 
-The pipe operator operator behaves exactly the same as the comma operator. The only difference between the two is in their precedence levels, with the pipe operator having lower precedence than the comma operator. This allows alternations to be expressed more naturally for those of you that are comfortable with C-like expressions.
+The pipe operator behaves the same as the comma operator. The only difference between the two is in their precedence levels, with the pipe operator having lower precedence than the comma operator. This allows alternations to be expressed more naturally for those of you that are comfortable with C-like expressions.
 
 #### Example - intersection selector
 
 `text & source`
 
-The ampersand or intersection operator matches only when the expressions on both sides of the operator are true. For example, the above "text & source" selector will match "text.html source.ruby" since "text" and "ruby" both match according to the name selector rules.
+The ampersand or intersection operator matches only when the expressions on both sides of the operator are true. For example, the above "text & source" selector will match the "text.html source.ruby" since "text" and "ruby" both match according to the name selector rules.
 
 #### Example - grouping
 
 `source & (js | ruby)`
 
-Parentheses can be used to clarify argument of a selector or to group and override operator precedence levels. For example, in the above selector, the parentheses are used to group "js" and "ruby" as part of the intersection with "source". If the parentheses were removed, the effective precedence would be equivalent to (source & js) | (ruby).
+Parentheses can be used to clarify the argument of a selector or to group and override operator precedence levels. For example, in the above selector, the parentheses are used to group "js" and "ruby" as part of the intersection with "source". If the parentheses were removed, the effective precedence would be equivalent to (source & js) | (ruby).
 
 #### Example - negative lookahead
 
 `text.html - source.ruby`
 
-Sometimes you want to match a scope unless it is being used within a child scope. For instance, in the above selector, the negative lookahead operator, '-', is being used to select all "text.html" scopes that do not have a matching scope of "source.ruby" anywhere after it. If we had selector "a b - c", this would match "a b", "a b y", "x a b", "x a b y", but not "a b c", "x a b c", "x a b c y", nor "a b x y c". Notice in the last example that the lookahead extends to the end of the scope being matched and not just the next segment as with the descendant selector.
+Sometimes you want to match a scope unless it is being used within a child's scope. For instance, in the above selector, the negative lookahead operator, '-', is being used to select all "text.html" scopes that do not have a matching scope of "source.ruby" anywhere after it. If we had selector "a b - c", this would match "a b", "a b y", "x a b", "x a b y", but not "a b c", "x a b c", "x a b c y", nor "a b x y c". Notice in the last example that the lookahead extends to the end of the scope that is being matched and not just the next segment as with the descendant selector.
 
 #### Precedence levels
 
@@ -565,7 +565,7 @@ Example command:
 
 ## Snippets
 
-Snippets are a specialized form of commands, designed to make it easier to specify the behavior of tab triggers. Snippets have a name, a scope, a trigger, and an expansion. You can think of these two declarations as being equivalent:
+Snippets are a specialized form of commands designed to make it easier to specify the behavior of tab triggers. Snippets have a name, a scope, a trigger, and an expansion. You can think of these two declarations as being equivalent:
 
 `snippet` `"My Snippet"`  `do` `|snip|`
 
@@ -633,12 +633,12 @@ Several properties defined in this document can have a variety of different valu
 
 Paths can be specified in many places in the API. Whenever you see the term PATH\_SPECIFIER, the path can be specified as one of the following:
 
-*   a string specifying either a full path or a relative path. If only a relative path is provided, it will be be interpreted relative to the bundle directory if it is evaluated at _command definition_ time, and relative to the command's working directory if it is evaluated at _command invocation_ time (the latter is more common).
-    
-*   an object that will return a path string as defined directly above when its to\_s method is called (e.g. File)
-    
-*   a Ruby symbol with special meaning. For example, :current\_project might refer to the currently loaded project (NOT YET IMPLEMENTED)
-    
+* A string specifying either a full path or a relative path. If only a relative path is provided, it will be interpreted relative to the bundle directory if it is evaluated at _command definition_ time, and relative to the command's working directory if it is evaluated at _command invocation_ time (the latter is more common).
+
+* An object that will return a path string as defined directly above when its to\_s method is called (for example, File).
+
+* A Ruby symbol with special meaning. For example, :current\_project might refer to the currently loaded project (NOT YET IMPLEMENTED).
+
 
 ### INPUT\_SPECIFIER
 
@@ -650,47 +650,47 @@ Description
 
 :selection
 
-selected text in the editor
+Selected text in the editor.
 
 :left\_character
 
-the character to the immediate left of the caret
+The character to the immediate left of the caret.
 
 :right\_character
 
-the character to the immediate right of the caret
+The character to the immediate right of the caret.
 
 :word
 
-word surrounding the current caret
+Word surrounding the current caret.
 
 :line
 
-the line containing the caret
+The line containing the caret.
 
 :document
 
-the entire current document
+The entire current document.
 
 :clipboard
 
-the contents of the clipboard
+The contents of the clipboard.
 
 :scope
 
-(NOT YET IMPLEMENTED) As in TextMate: search backwards and forwards for the first character which is not matched by the scope selector of the command and use those as boundaries for the input.
+(NOT YET IMPLEMENTED) As in TextMate: search backward and forwards for the first character, which is not matched by the scope selector of the command and use those as boundaries for the input.
 
 :input\_from\_console
 
-take input from a shell window? How do we specify which console?
+Take input from a shell window? How do we specify which console?
 
 :none
 
-no input is needed by this command. When encountered in the **multiple symbol specifier** case, this symbol always terminates fallback evaluation
+No input is needed by this command. When encountered in the **multiple symbol specifier** case, this symbol always terminates fallback evaluation.
 
 :selected\_lines
 
-I'm not sure what this does or how it differs from :selection!!!
+I'm not sure what this does or how it differs from :selection.
 
 ### OUTPUT\_SPECIFIER
 
@@ -702,55 +702,55 @@ Description
 
 :insert\_as\_text
 
-insert text at the caret position. If there is a selection, the text is inserted immediately following the selection and the selection is lost.
+Insert text at the caret position. If there is a selection, the text is inserted immediately following the selection, and the selection is lost.
 
 :insert\_as\_snippet
 
-as with :insert\_as\_text, but the output is interpreted as snippet expansion text
+As with :insert\_as\_text, but the output is interpreted as snippet expansion text.
 
 :replace\_selection
 
-replace the currently selected text with the output. If no text is selected, this is equivalent to the :insert\_as\_text specifier
+Replace the currently selected text with the output. If no text is selected, this is equivalent to the :insert\_as\_text specifier.
 
 :replace\_document
 
-replace the entire document with the output
+Replace the entire document with the output.
 
 :copy\_to\_clipboard
 
-replace the contents of the clipboard with the output
+Replace the contents of the clipboard with the output.
 
 :show\_as\_html
 
-open an html browser window and intepret the output as html
+Open an HTML browser window and interpret the output as HTML.
 
 :show\_as\_tooltip
 
-show a tooltip containing the output
+Show a tooltip containing the output.
 
 :create\_new\_document
 
-create a new editor document containing the output
+Create a new editor document containing the output.
 
 :output\_to\_console
 
-display the output in a console. HOW DO WE SPECIFY WHICH CONSOLE
+Display the output in a console.
 
 :discard
 
-throw any output away
+Throw any output away.
 
 :replace\_selected\_lines
 
-what does this do? probably unnecessary
+What does this do?
 
 :replace\_line
 
-replace the line around the caret. probably unnecessary
+Replace the line around the caret.
 
 :replace\_word
 
-replace the word around the caret. probably unnecessary
+Replace the word around the caret.
 
 ### WORKING\_DIRECTORY
 
@@ -762,7 +762,7 @@ Description
 
 'any string'
 
-the string is interpreted as an absolute path
+The string is interpreted as an absolute path.
 
 :current\_file
 
@@ -794,47 +794,47 @@ Description
 
 name
 
-the user-visible name of the bundle. E.g, "Ruby on Rails". This name will be shown in menus, error messages, and so forth.
+The user-visible name of the bundle. For example, "Ruby on Rails". This name will be shown in menus, error messages, and so forth.
 
 description
 
-a longer, textual description of the bundle and its purpose
+A longer, textual description of the bundle and its purpose.
 
 author
 
-the author(s) of the bundle
+The author(s) of the bundle.
 
 copyright
 
-any copyright message associated with the bundle
+Any copyright message associated with the bundle.
 
 license
 
-the name or URL of the license associated with the bundle. E.g. "MIT License" or[http://www.gnu.org/licenses/gpl-3.0.txt](http://www.gnu.org/licenses/gpl-3.0.txt)
+The name or URL of the license associated with the bundle. For example, "MIT License" or[http://www.gnu.org/licenses/gpl-3.0.txt](http://www.gnu.org/licenses/gpl-3.0.txt)
 
 website
 
-the website where more information about the bundle can be found
+The website where more information about the bundle can be found.
 
 repository
 
-the public repository url where the canonical version of this bundle lives. E.g. git://github.com/aptana/rails.ruble.git
+The public repository url where the canonical version of this bundle lives. For example, git://github.com/aptana/rails.ruble.git
 
-Additional properties can be accessed, though, simply by referring to them as though they already exist, e.g.:
+Additional properties can be accessed, though, simply by referring to them as though they already exist, for example:
 
 `bundle.foo =` `"bar"`
 
 ### Menus
 
-A bundle may define one or more menus to expose its commands and snippets to the user. Most bundles will only define a single menu. RadRails shows these menus in a number of places. First and foremost, it shows up in the main menu underneath the 'Commands' menu. It also shows up in the right-click context menu of editor windows.
+A bundle may define one or more menus to expose its commands and snippets to the user. Most bundles will only define a single menu. RadRails shows these menus in several places. First and foremost, it shows up in the main menu underneath the 'Commands' menu. It also shows up in the right-click context menu of editor windows.
 
-A menu is a container for commands, sub-menus, and separators. Commands are specified by their names, with all other information coming from the command itself (e.g., its key\_binding or trigger). As discussed earlier, these names are scoped to the current bundle.
+A menu is a container for commands, sub-menus, and separators. Commands are specified by their names, with all other information coming from the command itself (for example, its key\_binding or trigger). As discussed earlier, these names are scoped to the current bundle.
 
 Menus also have a scope, which defines the contexts in which the entire menu is applicable. We interpret the scopes for menus more loosely than we do for commands, erring to show the menu more often than not. And the Commands menu will still show your menu in the "Other" submenu of the Commands menu even if your scope operator doesn't match. Note that while you can define a scope for a sub-menu, but it is currently ignored.
 
 ### Sample bundle.rb file
 
-The following is a real but extremely minimal bundle.rb file which defines a 'Rails' menu which in turn contains only a single 'Go To' submenu.
+The following is a real but extremely minimal bundle.rb file, which defines a 'Rails' menu, which in turn contains only a single 'Go To' submenu.
 
 `require` `'ruble'`
 
@@ -878,7 +878,7 @@ The following is a real but extremely minimal bundle.rb file which defines a 'Ra
 
 ## Commands and snippets
 
-As discussed in the _Runtime Architecture_ section above, commands and snippets are the backbone of the bundle runtime. This section lays out the definition and invocation of commands and snippets in more detail.
+As discussed in the _Runtime Architecture_ section above, commands and snippets are the backbone of the bundled runtime. This section lays out the definition and invocation of commands and snippets in more detail.
 
 ### Key bindings
 
@@ -902,7 +902,7 @@ Example:
 
 `command.key_binding = [` `"M1+W"``,` `"M1+F4"` `]` `# Multiple keybindings for same command`
 
-The KEY\_SEQUENCE syntax follows the Eclipse conventions, since those are more portable than the ones used in TextMate. A KEY\_SEQUENCE should consist of one or more key strokes. Key strokes are separated by spaces. A key stroke consists of one or more keys held down at the same time. This should be zero or more modifier keys, and one other key. The keys are separated by the + character. The recognized modifiers keys are ALT or OPTION, COMMAND, CTRL, and SHIFT. In addition M1, M2, M3, M4 modifier keys are also recognized. The "M" modifier keys are a platform-independent way of representing keys, and these are generally preferred. M1 is the COMMAND key on MacOS X, and the CTRL key on most other platforms. M2 is the SHIFT key. M3 is the Option key on MacOS X, and the ALT key on most other platforms. M4 is the CTRL key on MacOS X, and is undefined on other platforms. Since M2+M3+<Letter> (Alt+Shift+<Letter>) is reserved on MacOS X for writing special characters.
+The KEY\_SEQUENCE syntax follows the Eclipse conventions since those are more portable than the ones used in TextMate. A KEY\_SEQUENCE should consist of one or more keystrokes. Keystrokes are separated by spaces. A keystroke consists of one or more keys held down at the same time. This should be zero or more modifier keys and one other key. The keys are separated by the + character. The recognized modifiers keys are ALT or OPTION, COMMAND, CTRL, and SHIFT. Also, M1, M2, M3, M4 modifier keys are recognized. The "M" modifier keys are a platform-independent way of representing keys, and these are generally preferred. M1 is the COMMAND key on MacOS X and the CTRL key on most other platforms. M2 is the SHIFT key. M3 is the Option key on MacOS X, and the ALT key on most other platforms. M4 is the CTRL key on MacOS X and is undefined on other platforms. Since M2+M3+<Letter> (Alt+Shift+<Letter>) is reserved on MacOS X for writing special characters.
 
 Shortcut
 
@@ -946,7 +946,7 @@ OS X
 
 CONTROL (CTRL)
 
-The actual key is generally specified simply as the ASCII character, in uppercase. So, for example F or X, are examples of such keys. However, there are some special keys; keys that have no printable ASCII representation. The following is a list of the current special keys:
+The actual key is generally specified simply as the ASCII character in uppercase. So, for example, F or X, are examples of such keys. However, there are some special keys; keys that have no printable ASCII representation. The following is a list of the current special keys:
 
 Key
 
@@ -1044,7 +1044,7 @@ F15
 
 NUMPAD\_EQUAL
 
-NUL
+NULL
 
 PRINT\_SCREEN
 
@@ -1072,8 +1072,8 @@ Alternate names for some common special keys are also allowed. For example, ESC/
 
 We strongly recommend against the use of SHIFT or M2 without including another CONTROL\_KEY\_SPECIFIER, as the results can be unpredictable.
 
-It is possible for commands to define specific key bindings for specific platforms. To enable this, the key\_binding can be made platform specific. Platform-specific bindings always take  
-precedence over the generic binding regardless of declaration order. See the example below:
+It is possible for commands to define specific key bindings for specific platforms. To enable this, the key\_binding can be made platform-specific. Platform-specific bindings always take
+precedence over the generic binding regardless of the declaration order. See the example below:
 
 `command.key_binding =` `"CONTROL+V"`
 
@@ -1105,7 +1105,7 @@ Then the :selection specifier would be checked to see if it evaluated to a non-e
 
 ### Output definition
 
-As with input, commands may wish to generate output in a number of different ways. In Ruble, output can be specified using the **single output specifier** form:
+As with input, commands may wish to generate output in several different ways. In Ruble, the output can be specified using the **single output specifier** form:
 
 `command.output =` `OUTPUT_SPECIFIER`
 
@@ -1113,13 +1113,13 @@ or the **path specifier** form:
 
 `command.output =` `PATH_SPECIFIER`
 
-As with the input specifier, the **path specifier** form allows you to define a filename or other stream specifier to write the output to.
+As with the input specifier, the **path specifier** form allows you to define a filename or other stream specifier to which to write the output.
 
 ### Invocation and context
 
 As described above, ever command must define an invoke property that specifies the actions to perform when the command is run. The action can either be a string, which is run in the user's default shell, or a ruby block, which is executed inline.
 
-In addition, you can specify platform specific invoke properties by specifying the platform definitions:
+Also, you can specify platform-specific invoke properties by specifying the platform definitions:
 
 `# general form, used if no platform specific form is provided`
 
@@ -1171,7 +1171,7 @@ editor
 
 The currently active Aptana file editor. See _Editor API_ for more information.
 
-In addition, the context has a few handy-dandy functions for use by commands, as described below:
+Also, the context has a few handy-dandy functions for use by commands, as described below:
 
 Method
 
@@ -1183,7 +1183,7 @@ Short-circuit the execution of the command, using the specified OUTPUT\_SPECIFIE
 
 invoke(name, INVOKE\_OPTIONS)
 
-(NOT YET IMPLEMENTED) Invoke another command or snippet by name, and return its context object so that its output and other properties can be extracted.
+(NOT YET IMPLEMENTED) Invoke another command or snippet by name and return its context object so that its output and other properties can be extracted.
 
 ##### INVOKE\_OPTIONS
 
@@ -1195,7 +1195,7 @@ Description
 
 :input
 
-If specified, the context's input property will be set to this value. This is useful when you want your command to process user input and then have another command further process that input. If it is not defined the INPUT\_SPECIFIER in the command's definition will be used as normal.
+If specified, the context's input property will be set to this value. This is useful when you want your command to process user input and then have another command process that input. If it is not defined, the INPUT\_SPECIFIER in the command's definition will be used as normal.
 
 :output
 
@@ -1217,6 +1217,6 @@ If a command is defined to invoke an inline Ruby block, the input is passed to t
 
 #### Output during command invocation
 
-By default, any output to STDOUT during command invocation is treated as the output of the command. If the command is defined to invoke a ruby inline block, the return value may be used to define the command result. The return value will be converted to a string via to\_s. In the event output is written to STDOUT and a non-nil value is returned from the block, the return value will take precedence. Or said another way, if you want to make sure your output to STDOUT serves as your command's result, then be sure to return nil as your command's result.
+By default, any output to STDOUT during command invocation is treated as the output of the command. If the command is defined to invoke a ruby inline-block, the return value may be used to define the command result. The return value will be converted to a string via to\_s. In the event, the output is written to STDOUT, and a non-nil value is returned from the block, the return value will take precedence. Or said another way, if you want to make sure your output to STDOUT serves as your command's result, then be sure to return nil as your command's result.
 
 Output written to STDERR during command execution will be displayed in the Console.

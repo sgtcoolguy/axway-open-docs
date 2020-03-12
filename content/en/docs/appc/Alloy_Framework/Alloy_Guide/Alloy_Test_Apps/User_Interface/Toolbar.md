@@ -1,4 +1,4 @@
-{"title":"Toolbar","weight":"210"} 
+{"title":"Toolbar","weight":"210"}
 
 Demonstrates adding a Toolbar control to an iOS or Android application.
 
@@ -46,6 +46,6 @@ app/views/index.xml
 
 ## See also
 
-*   [Ti.UI.iOS.SystemButton.FLEXIBLE\_SPACE](#!/api/Titanium.UI.iOS.SystemButton-property-FLEXIBLE_SPACE) API reference
-    
-*   [Ti.UI.iOS.SystemButton.FIXED\_SPACE](#!/api/Titanium.UI.iOS.SystemButton-property-FIXED_SPACE) API reference
+* [Ti.UI.iOS.SystemButton.FLEXIBLE\_SPACE](#!/api/Titanium.UI.iOS.SystemButton-property-FLEXIBLE_SPACE) API reference
+
+* [Ti.UI.iOS.SystemButton.FIXED\_SPACE](#!/api/Titanium.UI.iOS.SystemButton-property-FIXED_SPACE) API reference

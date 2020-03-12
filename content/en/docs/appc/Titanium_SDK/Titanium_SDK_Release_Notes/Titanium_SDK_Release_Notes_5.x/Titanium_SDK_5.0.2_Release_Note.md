@@ -1,13 +1,13 @@
-{"title":"Titanium SDK 5.0.2 General Availability - 1 October 2015","weight":"210"} 
+{"title":"Titanium SDK 5.0.2 General Availability - 1 October 2015","weight":"210"}
 
 ## Contents
 
-*   [About This Release](#AboutThisRelease)
-    
-*   [Fixed Issues](#FixedIssues)
-    
-*   [API Changes](#APIChanges)
-    
+* [About This Release](#AboutThisRelease)
+
+* [Fixed Issues](#FixedIssues)
+
+* [API Changes](#APIChanges)
+
 
 ## About This Release
 
@@ -17,16 +17,16 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 ## Fixed Issues
 
-*   [TIMOB-19643](https://jira.appcelerator.org/browse/TIMOB-19643) CLI: Runtime error when no DefaultIcon.png exists
-    
-*   [TIMOB-19616](https://jira.appcelerator.org/browse/TIMOB-19616) Changes to app content are not updated on rebuild to device
-    
-*   [TIMOB-19612](https://jira.appcelerator.org/browse/TIMOB-19612) Changes to Classic / Alloy apps are not updated on rebuild
-    
-*   [TIMOB-19594](https://jira.appcelerator.org/browse/TIMOB-19594) iOS: Cannot build iOS Modules since 5.0.0.GA TiSDK
-    
-*   [TIMOB-19562](https://jira.appcelerator.org/browse/TIMOB-19562) iOS: Ti.Network connecting to pubnub service crashes on ios9 devices
-    
+* [TIMOB-19643](https://jira.appcelerator.org/browse/TIMOB-19643) CLI: Runtime error when no DefaultIcon.png exists
+
+* [TIMOB-19616](https://jira.appcelerator.org/browse/TIMOB-19616) Changes to app content are not updated on rebuild to device
+
+* [TIMOB-19612](https://jira.appcelerator.org/browse/TIMOB-19612) Changes to Classic / Alloy apps are not updated on rebuild
+
+* [TIMOB-19594](https://jira.appcelerator.org/browse/TIMOB-19594) iOS: Cannot build iOS Modules since 5.0.0.GA TiSDK
+
+* [TIMOB-19562](https://jira.appcelerator.org/browse/TIMOB-19562) iOS: Ti.Network connecting to pubnub service crashes on ios9 devices
+
 
 ## API Changes
 

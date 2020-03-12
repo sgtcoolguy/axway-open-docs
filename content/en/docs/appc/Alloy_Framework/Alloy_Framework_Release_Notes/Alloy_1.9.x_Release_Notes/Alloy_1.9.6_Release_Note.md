@@ -1,4 +1,4 @@
-{"title":"Alloy 1.9.6 - 24 January 2017","weight":"10"} 
+{"title":"Alloy 1.9.6 - 24 January 2017","weight":"10"}
 
 Alloy 1.9.6 is a patch release that includes one bug fix.
 
@@ -6,4 +6,4 @@ As of this release, the previous Alloy patch release is no longer supported. Not
 
 ## Fixed issue
 
-*   [ALOY-1536](https://jira.appcelerator.org/browse/ALOY-1536) - iPad Splash Screen Orientation - No Landscape
+* [ALOY-1536](https://jira.appcelerator.org/browse/ALOY-1536) - iPad Splash Screen Orientation - No Landscape

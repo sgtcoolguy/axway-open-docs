@@ -1,23 +1,23 @@
-{"title":"Installing Node","weight":"20"} 
+{"title":"Installing Node","weight":"20"}
 
-*   [Compatibility and download](#Compatibilityanddownload)
-    
-*   [Installation](#Installation)
-    
-*   [Using NPM packages in Titanium](#UsingNPMpackagesinTitanium)
-    
-    *   [Usage of packages](#Usageofpackages)
-        
-    *   [Dependencies](#Dependencies)
-        
-    *   [Finding packages](#Findingpackages)
-        
-*   [Troubleshooting](#Troubleshooting)
-    
-    *   [Error: EONT, stat C:\\Users\\<USER\_NAME>\\AppData\\Roaming\\npm](#Error:EONT,statC:\Users\<USER_NAME>\AppData\Roaming\npm)
-        
-    *   [Issues installing NPM packages](#IssuesinstallingNPMpackages)
-        
+* [Compatibility and download](#Compatibilityanddownload)
+
+* [Installation](#Installation)
+
+* [Using NPM packages in Titanium](#UsingNPMpackagesinTitanium)
+
+  * [Usage of packages](#Usageofpackages)
+
+  * [Dependencies](#Dependencies)
+
+  * [Finding packages](#Findingpackages)
+
+* [Troubleshooting](#Troubleshooting)
+
+  * [Error: EONT, stat C:\\Users\\<USER\_NAME>\\AppData\\Roaming\\npm](#Error:EONT,statC:\Users\<USER_NAME>\AppData\Roaming\npm)
+
+  * [Issues installing NPM packages](#IssuesinstallingNPMpackages)
+
 
 Node.js is required for several Appcelerator components, including the Axway Appcelerator CLI, Alloy, and the API Builder. Node.js is also required to build the Titanium SDK.
 
@@ -41,7 +41,7 @@ macOS / Windows / Linux
 
 8.0
 
-8.16.x
+10.X
 
 [Official Website](https://nodejs.org/en/download/releases/)
 
@@ -49,36 +49,36 @@ macOS / Windows / Linux
 
 Before installing the CLI, you should decide where you want the Node Package Manager (npm) to install packages. By default npm installs into /usr/local on OS X and Linux, which requires that you run npm as root. This is not recommended. You can avoid having to run npm by doing one of the following:
 
-*   Make the /usr/local directory writable by all:
-    
-    `sudo chmod` `777` `/usr/local`
-    
+* Make the /usr/local directory writable by all:
 
-*   Set npm to install to your home directory, or another directory of your choosing by setting the npm prefix. For example, you can add the following to your .bash\_profile or other initialization file:
-    
-    `export NPM_CONFIG_PREFIX=$HOME`
-    
-    Alternately, you can create a .npmrc file in your home directory with the following contents:
-    
-    `prefix=/path/to/home`
-    
-    Where _/path/to/home_ is the path to your home directory. Setting the npm prefix to your home directory causes the npm packages to be installed to $HOME/lib/node\_modules and launch scripts are installed in $HOME/bin. $HOME/bin must be in your PATH.
-    
+  `sudo chmod` `777` `/usr/local`
+
+
+* Set npm to install to your home directory, or another directory of your choosing by setting the npm prefix. For example, you can add the following to your .bash\_profile or other initialization file:
+
+  `export NPM_CONFIG_PREFIX=$HOME`
+
+  Alternately, you can create a .npmrc file in your home directory with the following contents:
+
+  `prefix=/path/to/home`
+
+  Where _/path/to/home_ is the path to your home directory. Setting the npm prefix to your home directory causes the npm packages to be installed to $HOME/lib/node\_modules and launch scripts are installed in $HOME/bin. $HOME/bin must be in your PATH.
+
 
 If you change your prefix after installing npm packages, you will have to reinstall packages. If you change the permissions on /usr/local after installing packages as root, you may need to change the ownership of the npm cache folder, as described in [Troubleshooting npm Problems](#TroubleshootingnpmProblems).
 
 ## Using NPM packages in Titanium
 
-1.  Run npm init in the app/lib folder in your **Alloy** project. If you are using a classic app, run the init step in your /Resources folder.
-    
-2.  Follow the steps npm gives you when doing the init step. Note: You don’t have to fill out anything if you don't need to.
-    
-3.  Execute npm i <packagename> in the /lib folder to install a package. For example, let’s set up [to.imagecache](https://www.npmjs.com/package/to.imagecache). You'd use this comment to install the package: npm i to.imagecache
-    
-4.  Add the lib/node\_modules folder and the package-lock.json file to your .gitignore folder.
-    
-5.  On any other machine you want to set this up, go to your /lib folder, run npm install and all packages will be installed to your app.
-    
+1. Run npm init in the app/lib folder in your **Alloy** project. If you are using a classic app, run the init step in your /Resources folder.
+
+2. Follow the steps npm gives you when doing the init step. Note: You don’t have to fill out anything if you don't need to.
+
+3. Execute npm i <packagename> in the /lib folder to install a package. For example, let’s set up [to.imagecache](https://www.npmjs.com/package/to.imagecache). You'd use this comment to install the package: npm i to.imagecache
+
+4. Add the lib/node\_modules folder and the package-lock.json file to your .gitignore folder.
+
+5. On any other machine you want to set this up, go to your /lib folder, run npm install and all packages will be installed to your app.
+
 
 ### Usage of packages
 
@@ -90,14 +90,14 @@ Usage of a package is like another module or library file. Using the to.imagecac
 
 To install a package dependency,
 
-1.  Ensure you are in the /lib folder, or if using a classic project, the /Resources folder.
-    
-2.  Execute npm i <dependency>
-    
-3.  To use the dependency, for example a module called ImageView from the to.cacheimageview (sample extension of the to.imagecache package):
-    
-    `<``ImageView`  `id``=``"myImage"`  `module``=``"to.cachedimageview"` `/>`
-    
+1. Ensure you are in the /lib folder, or if using a classic project, the /Resources folder.
+
+2. Execute npm i <dependency>
+
+3. To use the dependency, for example a module called ImageView from the to.cacheimageview (sample extension of the to.imagecache package):
+
+  `<``ImageView`  `id``=``"myImage"`  `module``=``"to.cachedimageview"` `/>`
+
 
 ### Finding packages
 
@@ -117,14 +117,14 @@ The error message indicates the folder is missing. To resolve this issue, manual
 
 If you experience an issue installing any of the npm packages, try the following:
 
-*   Check permissions. If you originally ran npm using sudo, you may need to change the ownership of the npm cache folder.
-    
-    `sudo`  `chown` `-R <username> ~/.npmrc`
-    
-    On Windows, the npm cache defaults to npm-cache in the user's home folder.
-    
-*   Clear the npm package cache:
-    
-    `npm cache clean`
-    
-*   Remove your .npmrc file.
+* Check permissions. If you originally ran npm using sudo, you may need to change the ownership of the npm cache folder.
+
+  `sudo`  `chown` `-R <username> ~/.npmrc`
+
+  On Windows, the npm cache defaults to npm-cache in the user's home folder.
+
+* Clear the npm package cache:
+
+  `npm cache clean`
+
+* Remove your .npmrc file.

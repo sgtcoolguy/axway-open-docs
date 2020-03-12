@@ -1,57 +1,57 @@
-{"title":"Viewing Analytics","weight":"60"} 
+{"title":"Viewing Analytics","weight":"60"}
 
-*   [Analytics tab for client services](#Analyticstabforclientservices)
-    
-    *   [Real-time tab](#Real-timetab)
-        
-    *   [Sessions tab](#Sessionstab)
-        
-    *   [Avg. Session Length tab](#Avg.SessionLengthtab)
-        
-    *   [Installs tab](#Installstab)
-        
-    *   [Updates tab](#Updatestab)
-        
-    *   [Version Adoption tab](#VersionAdoptiontab)
-        
-    *   [Unique Devices tab](#UniqueDevicestab)
-        
-    *   [Events tab](#Eventstab)
-        
-    *   [Event Funnels tab](#EventFunnelstab)
-        
-    *   [Custom Queries tab](#CustomQueriestab)
-        
-*   [Analytics tab for Mobile Backend Services](#AnalyticstabforMobileBackendServices)
-    
-    *   [All APIs tab](#AllAPIstab)
-        
-    *   [Authentication tab](#Authenticationtab)
-        
-    *   [Communication tab](#Communicationtab)
-        
-    *   [Custom tab](#Customtab)
-        
-    *   [Location tab](#Locationtab)
-        
-    *   [Media tab](#Mediatab)
-        
-    *   [Social tab](#Socialtab)
-        
-*   [Data filters](#DataFiltersDatafilters)
-    
-    *   [Custom date/time range filter](#Customdate/timerangefilter)
-        
-*   [Export data](#ExportExportdata)
-    
-*   [Unspecified metric names and values](#Unspecifiedmetricnamesandvalues)
-    
-    *   [Platform icons for Mobile Backend Services requests](#PlatformiconsforMobileBackendServicesrequests)
-        
-    *   [Version and environment values for Crash and Test metrics](#VersionandenvironmentvaluesforCrashandTestmetrics)
-        
-    *   [Geographic analysis](#Geographicanalysis)
-        
+* [Analytics tab for client services](#Analyticstabforclientservices)
+
+  * [Real-time tab](#Real-timetab)
+
+  * [Sessions tab](#Sessionstab)
+
+  * [Avg. Session Length tab](#Avg.SessionLengthtab)
+
+  * [Installs tab](#Installstab)
+
+  * [Updates tab](#Updatestab)
+
+  * [Version Adoption tab](#VersionAdoptiontab)
+
+  * [Unique Devices tab](#UniqueDevicestab)
+
+  * [Events tab](#Eventstab)
+
+  * [Event Funnels tab](#EventFunnelstab)
+
+  * [Custom Queries tab](#CustomQueriestab)
+
+* [Analytics tab for Mobile Backend Services](#AnalyticstabforMobileBackendServices)
+
+  * [All APIs tab](#AllAPIstab)
+
+  * [Authentication tab](#Authenticationtab)
+
+  * [Communication tab](#Communicationtab)
+
+  * [Custom tab](#Customtab)
+
+  * [Location tab](#Locationtab)
+
+  * [Media tab](#Mediatab)
+
+  * [Social tab](#Socialtab)
+
+* [Data filters](#DataFiltersDatafilters)
+
+  * [Custom date/time range filter](#Customdate/timerangefilter)
+
+* [Export data](#ExportExportdata)
+
+* [Unspecified metric names and values](#Unspecifiedmetricnamesandvalues)
+
+  * [Platform icons for Mobile Backend Services requests](#PlatformiconsforMobileBackendServicesrequests)
+
+  * [Version and environment values for Crash and Test metrics](#VersionandenvironmentvaluesforCrashandTestmetrics)
+
+  * [Geographic analysis](#Geographicanalysis)
+
 
 ## Analytics tab for client services
 
@@ -81,32 +81,32 @@ The **Sessions** tab displays the total number of user sessions for the applicat
 
 Session length is calculated based on the following user actions:
 
-*   Starting and closing an application
-    
-*   Starting an application and putting it in the background
-    
-*   Resuming an application that was in the background, and returning it to the background
-    
-*   Resuming an application that was in the background, and closing it
-    
+* Starting and closing an application
+
+* Starting an application and putting it in the background
+
+* Resuming an application that was in the background, and returning it to the background
+
+* Resuming an application that was in the background, and closing it
+
 
 If the application was placed in the background and resumed within the timeout value (default is 30 seconds), both events are canceled, and the previous session remains active.
 
 In the Platform view:
 
-*   At the top, a line chart displays the time series of the metric; hover your mouse over an inflection point in the chart to view data for that time.
-    
-*   Below the chart, a table displays additional details for the metric
-    
+* At the top, a line chart displays the time series of the metric; hover your mouse over an inflection point in the chart to view data for that time.
+
+* Below the chart, a table displays additional details for the metric
+
 
 In the Location view:
 
-*   Double-click the map to zoom in on a region to view more granular session counts by region.
-    
-*   Hover over a circle to view an outline of the region represented by the displayed count.
-    
-*   To zoom out, shift+click on the map. You can also use the on-screen zoom controls.
-    
+* Double-click the map to zoom in on a region to view more granular session counts by region.
+
+* Hover over a circle to view an outline of the region represented by the displayed count.
+
+* To zoom out, shift+click on the map. You can also use the on-screen zoom controls.
+
 
 ### Avg. Session Length tab
 
@@ -122,19 +122,19 @@ The **Installs** tab displays the total number of installs of the application by
 
 In the Platform and Version views:
 
-*   At the top, a line chart displays the time series of the metric; hover your mouse over an inflection point in the chart to view data for that time.
-    
-*   Below the chart, a table displays additional details for the metric.
-    
+* At the top, a line chart displays the time series of the metric; hover your mouse over an inflection point in the chart to view data for that time.
+
+* Below the chart, a table displays additional details for the metric.
+
 
 In the Location view:
 
-*   Double-click the map to zoom in on a region to view more granular session counts by region.
-    
-*   Hover over a circle to view an outline of the region represented by the displayed count.
-    
-*   To zoom out, shift+click on the map. You can also use the on-screen zoom controls.
-    
+* Double-click the map to zoom in on a region to view more granular session counts by region.
+
+* Hover over a circle to view an outline of the region represented by the displayed count.
+
+* To zoom out, shift+click on the map. You can also use the on-screen zoom controls.
+
 
 ### Updates tab
 
@@ -144,19 +144,19 @@ The **Updates** tab displays the total number of updates of the application by p
 
 In the Platform and Version views:
 
-*   At the top, a line chart displays the time series of the metric; hover your mouse over an inflection point in the chart to view data for that time.
-    
-*   Below the chart, a table displays additional details for the metric.
-    
+* At the top, a line chart displays the time series of the metric; hover your mouse over an inflection point in the chart to view data for that time.
+
+* Below the chart, a table displays additional details for the metric.
+
 
 In the Location view:
 
-*   Double-click the map to zoom in on a region to view more granular session counts by region.
-    
-*   Hover over a circle to view an outline of the region represented by the displayed count.
-    
-*   To zoom out, shift+click on the map. You can also use the on-screen zoom controls.
-    
+* Double-click the map to zoom in on a region to view more granular session counts by region.
+
+* Hover over a circle to view an outline of the region represented by the displayed count.
+
+* To zoom out, shift+click on the map. You can also use the on-screen zoom controls.
+
 
 ### Version Adoption tab
 
@@ -172,10 +172,10 @@ The **Unique Devices** tab displays the maximum daily number of unique devices u
 
 In the Platform and Version views:
 
-*   At the top, a line chart displays the time series of the metric; hover your mouse over an inflection point in the chart to view data for that time.
-    
-*   Below the chart, a table displays additional details for the metric.
-    
+* At the top, a line chart displays the time series of the metric; hover your mouse over an inflection point in the chart to view data for that time.
+
+* Below the chart, a table displays additional details for the metric.
+
 
 ### Events tab
 
@@ -200,6 +200,8 @@ An event funnel is a sequence of custom events you define that corresponds to a 
 The **Custom Queries** tab enables you to create and view queries. For additional information on creating custom queries, refer to [Creating Custom Queries](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Creating_Custom_Queries/).
 
 ![custom_queries_latest](/Images/appc/download/attachments/60145251/custom_queries_latest.png)
+
+Once custom queries are created for the application, the **Custom Queries** tab will display a preview for each created custom query.
 
 ## Analytics tab for Mobile Backend Services
 
@@ -257,26 +259,26 @@ To filter data for a specific time interval, either select one of the predefined
 
 ![time_period_ranges](/Images/appc/download/attachments/60145251/time_period_ranges.png)
 
-1.  Click on the date filter and select a granularity level from the granularity drop-down list.
-    
-    1.  **Last 3 Months**: aggregate results by the last three months.
-        
-    2.  **Last 30 Days**: aggregate results by the last 30 days.
-        
-    3.  **Last 7 Days**: aggregate results by the last seven days.
-        
-    4.  **Last 24 Hours**: aggregate results by day.
-        
-    5.  **Last 60 Minutes**: aggregate results by the last 60 minutes.
-        
-2.  To set a custom time range, click on one of the calendar date fields.
-    
-3.  Select a start and end date with the calendar widget. The date range is capped to one year.
-    
-4.  If the dates selected are less than four days apart, you also need to select a start time and end time with the time picker.
-    
-5.  Click **Set**.
-    
+1. Click on the date filter and select a granularity level from the granularity drop-down list.
+
+  1. **Last 3 Months**: aggregate results by the last three months.
+
+  2. **Last 30 Days**: aggregate results by the last 30 days.
+
+  3. **Last 7 Days**: aggregate results by the last seven days.
+
+  4. **Last 24 Hours**: aggregate results by day.
+
+  5. **Last 60 Minutes**: aggregate results by the last 60 minutes.
+
+2. To set a custom time range, click on one of the calendar date fields.
+
+3. Select a start and end date with the calendar widget. The date range is capped to one year.
+
+4. If the dates selected are less than four days apart, you also need to select a start time and end time with the time picker.
+
+5. Click **Set**.
+
 
 The data on the dashboard page will be updated based on the newly set date/time range filter. Note that the filters you select persist when navigating through the Dashboard.
 
@@ -286,19 +288,19 @@ The data on the dashboard page will be updated based on the newly set date/time 
 
 You can export chart and table data to CSV format to use in other programs, such as Microsoft Excel, to analyze offline.
 
-1.  To export data, first select the data you want to export, including the time frame, version, and environment. The data frequency is based on the granularity level selected in the custom date/time range filter.
-    
-2.  Click the **Action Menu** icon, then select either:
-    
-    1.  **Refresh** - To refresh the data export and the displayed analytics information**.** The elapsed time since the last data refresh is displayed.
-        
-    2.  **Chart** - To export the data in the chart.
-        
-    3.  **Table** - To export the data from the table.
-        
-    
-    ![export_data](/Images/appc/download/thumbnails/60145251/export_data.png)
-    
+1. To export data, first select the data you want to export, including the time frame, version, and environment. The data frequency is based on the granularity level selected in the custom date/time range filter.
+
+2. Click the **Action Menu** icon, then select either:
+
+  1. **Refresh** - To refresh the data export and the displayed analytics information**.** The elapsed time since the last data refresh is displayed.
+
+  2. **Chart** - To export the data in the chart.
+
+  3. **Table** - To export the data from the table.
+
+
+  ![export_data](/Images/appc/download/thumbnails/60145251/export_data.png)
+
 
 Once you select the export option, your data download begins.
 

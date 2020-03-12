@@ -1,4 +1,4 @@
-{"title":"Built-ins","weight":"10"} 
+{"title":"Built-ins","weight":"10"}
 
 Demonstrates use of several built-in libraries included with Alloy that simplify certain functions, such as animations, string manipulation and display unit conversion.
 

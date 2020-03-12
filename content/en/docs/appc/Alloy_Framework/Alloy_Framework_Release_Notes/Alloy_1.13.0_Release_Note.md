@@ -1,4 +1,4 @@
-{"title":"Alloy 1.13.0 - 30 April 2018","weight":"20"} 
+{"title":"Alloy 1.13.0 - 30 April 2018","weight":"20"}
 
 Alloy 1.13.0 is a minor release that includes one bug fix.
 
@@ -6,6 +6,6 @@ As of this release, Alloy 1.13.x will not be supported six months from 1.14.0's 
 
 ## New feature
 
-*   [ALOY-1518](https://jira.appcelerator.org/browse/ALOY-1518) - ListView: Custom widget support in templates
-    
-    *   Added support for Widgets in ListView templates
+* [ALOY-1518](https://jira.appcelerator.org/browse/ALOY-1518) - ListView: Custom widget support in templates
+
+  * Added support for Widgets in ListView templates

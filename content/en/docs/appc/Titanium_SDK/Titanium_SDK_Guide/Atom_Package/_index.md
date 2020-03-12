@@ -1,76 +1,76 @@
-{"title":"Atom Package","weight":"60"} 
+{"title":"Atom Package","weight":"60"}
 
-*   [Overview](#Overview)
-    
-*   [Installation](#Installation)
-    
-    *   [Via Atom Editor](#ViaAtomEditor)
-        
-    *   [Via CLI](#ViaCLI)
-        
-    *   [Dependencies](#Dependencies)
-        
-*   [Features](#Features)
-    
-    *   [Commands](#Commands)
-        
-    *   [Snippets](#Snippets)
-        
-    *   [Shortcuts](#Shortcuts)
-        
-    *   [Build tools](#Buildtools)
-        
-        *   [Toolbar](#Toolbar)
-            
-        *   [Build](#Build)
-            
-            *   [iOS code signing](#iOScodesigning)
-                
-            *   [Android keystore](#Androidkeystore)
-                
-        *   [Console](#Console)
-            
-    *   [Autocompletion](#Autocompletion)
-        
-        *   [Generation](#Generation)
-            
-        *   [Titanium and Alloy](#TitaniumandAlloy)
-            
-        *   [Project references](#Projectreferences)
-            
-        *   [Class and ID references](#ClassandIDreferences)
-            
-        *   [Images](#Images)
-            
-    *   [Alloy file and component generation](#Alloyfileandcomponentgeneration)
-        
-    *   [Open related files](#Openrelatedfiles)
-        
-    *   [Jump-to-definition](#Jump-to-definition)
-        
-        *   [Alloy](#Alloy)
-            
-        *   [Strings](#Strings)
-            
-        *   [Images](#Images.1)
-            
+* [Overview](#Overview)
+
+* [Installation](#Installation)
+
+  * [Via Atom Editor](#ViaAtomEditor)
+
+  * [Via CLI](#ViaCLI)
+
+  * [Dependencies](#Dependencies)
+
+* [Features](#Features)
+
+  * [Commands](#Commands)
+
+  * [Snippets](#Snippets)
+
+  * [Shortcuts](#Shortcuts)
+
+  * [Build tools](#Buildtools)
+
+    * [Toolbar](#Toolbar)
+
+    * [Build](#Build)
+
+      * [iOS code signing](#iOScodesigning)
+
+      * [Android keystore](#Androidkeystore)
+
+    * [Console](#Console)
+
+  * [Autocompletion](#Autocompletion)
+
+    * [Generation](#Generation)
+
+    * [Titanium and Alloy](#TitaniumandAlloy)
+
+    * [Project references](#Projectreferences)
+
+    * [Class and ID references](#ClassandIDreferences)
+
+    * [Images](#Images)
+
+  * [Alloy file and component generation](#Alloyfileandcomponentgeneration)
+
+  * [Open related files](#Openrelatedfiles)
+
+  * [Jump-to-definition](#Jump-to-definition)
+
+    * [Alloy](#Alloy)
+
+    * [Strings](#Strings)
+
+    * [Images](#Images.1)
+
 
 ## Overview
 
 With the release of [SDK 7.0.0](/docs/appc/Titanium_SDK/Titanium_SDK_Release_Notes/Titanium_SDK_Release_Notes_7.x/Titanium_SDK_7.0.0.GA_Release_Note/), Axway Appcelerator introduces the Titanium package for **[Atom](https://atom.io/)**. The initial release includes the following features:
 
-*   Toolbar with quick access to build commands and code signing assistance
-    
-*   Output console
-    
-*   Autocomplete for properties, methods, and events of Titanium objects and project references
-    
-*   Jump-to-definition support
-    
-*   Create new Alloy widgets, controllers, views, styles, models, or alloy.jmk files in existing projects
-    
-*   Utilize the Atom Command Palette to initiate commands
-    
+* Toolbar with quick access to build commands and code signing assistance
+
+* Output console
+
+* Autocomplete for properties, methods, and events of Titanium objects and project references
+
+* Jump-to-definition support
+
+* Create new Alloy widgets, controllers, views, styles, models, or alloy.jmk files in existing projects
+
+* Utilize the Atom Command Palette to initiate commands
+
 
 Atom 1.21 or later is required.
 
@@ -84,14 +84,14 @@ Installing the Atom Package for Axway Appcelerator can be accomplished via the e
 
 Installation via the editor is just like any other Atom package.
 
-1.  Open **Atom**.
-    
-2.  Navigate to the package/theme installer: **Packages** > **Settings view** > **Install Packages/Themes**.
-    
-3.  In the **Install Packages** section, type _appcelerator-titanium_ in the Packages search field. You should see the appcelerator-titanium \-atom-plugin listed in the results of this package search.
-    
-4.  Click the **Install button**.
-    
+1. Open **Atom**.
+
+2. Navigate to the package/theme installer: **Packages** > **Settings view** > **Install Packages/Themes**.
+
+3. In the **Install Packages** section, type _appcelerator-titanium_ in the Packages search field. You should see the appcelerator-titanium \-atom-plugin listed in the results of this package search.
+
+4. Click the **Install button**.
+
 
 ### Via CLI
 
@@ -285,20 +285,20 @@ The toolbar provides a UI for commonly used commands when developing a Titanium 
 
 ![33169533-f0e0a89e-d03c-11e7-99f8-7cb91858dbed](/Images/appc/download/attachments/52298060/33169533-f0e0a89e-d03c-11e7-99f8-7cb91858dbed.png)
 
-1.  Build select and run: Select to run on simulator or device, package for ad-hoc or App Store distribution, or a custom build option.
-    
-2.  Platform select: Select available platforms to build on.
-    
-3.  Target select: Select simulator/emulator or local device. When attaching a device, select Refresh Targets option to add it to the target list.
-    
-4.  Code signing and keystore configuration: When building for device (iOS) or distribution (iOS and Android) the option to configure code signing or keystore credentials are available.
-    
-5.  Info panel: Provides information about the active project.
-    
-6.  Generate component: Presents a dialog to generate a Titanium component: Controller, View, Style, Model, Widget or Alloy.jmk file.
-    
-7.  Console: Toggle display of the console which outputs debug information during build and run.
-    
+1. Build select and run: Select to run on simulator or device, package for ad-hoc or App Store distribution, or a custom build option.
+
+2. Platform select: Select available platforms to build on.
+
+3. Target select: Select simulator/emulator or local device. When attaching a device, select Refresh Targets option to add it to the target list.
+
+4. Code signing and keystore configuration: When building for device (iOS) or distribution (iOS and Android) the option to configure code signing or keystore credentials are available.
+
+5. Info panel: Provides information about the active project.
+
+6. Generate component: Presents a dialog to generate a Titanium component: Controller, View, Style, Model, Widget or Alloy.jmk file.
+
+7. Console: Toggle display of the console which outputs debug information during build and run.
+
 
 #### Build
 
@@ -306,14 +306,14 @@ The toolbar provides a UI for commonly used commands when developing a Titanium 
 
 The build select button executes and provides selections of the build command. Depending on the target platform selected, the drop-down will display options for the appc run command:
 
-*   Run: build and run the app on selected simulator/emulator or device
-    
-*   Ad-hoc: (iOS only) build and package the app for ad-hoc distribution using selected code signing
-    
-*   Publish: build and package the app for distribution through the App Store or Google Play using selected code signing or keystore credentials
-    
-*   Custom: execute appc run -d <project\_dir> with custom arguments
-    
+* Run: build and run the app on selected simulator/emulator or device
+
+* Ad-hoc: (iOS only) build and package the app for ad-hoc distribution using selected code signing
+
+* Publish: build and package the app for distribution through the App Store or Google Play using selected code signing or keystore credentials
+
+* Custom: execute appc run -d <project\_dir> with custom arguments
+
 
 ##### iOS code signing
 
@@ -391,12 +391,12 @@ A UI for the alloy generate command is provided. The **Generate File** dialog is
 
 Opening Alloy-related files is supported (see [Commands](#Commands)).
 
-*   From View, open related Style and/or Controller
-    
-*   From Style, open related View and/or Controller
-    
-*   From Controller, open related View and/or Style
-    
+* From View, open related Style and/or Controller
+
+* From Style, open related View and/or Controller
+
+* From Controller, open related View and/or Style
+
 
 ### Jump-to-definition
 

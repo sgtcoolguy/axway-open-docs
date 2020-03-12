@@ -1,29 +1,29 @@
-{"title":"Video APIs","weight":"20"} 
+{"title":"Video APIs","weight":"20"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [Fullscreen and embedded players](#Fullscreenandembeddedplayers)
-        
-    *   [Movie events](#Movieevents)
-        
-    *   [Hands-on practice](#Hands-onpractice)
-        
-        *   [Goal](#Goal)
-            
-        *   [Steps](#Steps)
-            
-    *   [Windows development considerations](#Windowsdevelopmentconsiderations)
-        
-        *   [Grant access to video stream and audio stream](#Grantaccesstovideostreamandaudiostream)
-            
-        *   [Grant access to music library](#Grantaccesstomusiclibrary)
-            
-    *   [References and further reading](#Referencesandfurtherreading)
-        
-*   [Summary](#Summary)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [Fullscreen and embedded players](#Fullscreenandembeddedplayers)
+
+  * [Movie events](#Movieevents)
+
+  * [Hands-on practice](#Hands-onpractice)
+
+    * [Goal](#Goal)
+
+    * [Steps](#Steps)
+
+  * [Windows development considerations](#Windowsdevelopmentconsiderations)
+
+    * [Grant access to video stream and audio stream](#Grantaccesstovideostreamandaudiostream)
+
+    * [Grant access to music library](#Grantaccesstomusiclibrary)
+
+  * [References and further reading](#Referencesandfurtherreading)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -77,12 +77,12 @@ You can control the way in which the video playback controls are shown for the p
 
 The VideoPlayer supports quite a few events that you can use to control the playback experience. See the [Ti.Media.VideoPlayer](#!/api/Titanium.Media.VideoPlayer) API docs page for full information. But here are a few of the events you might monitor:
 
-*   complete – fired when the playback ends or the user exits playback, use the e.reason property to determine the actual stop condition, such as Ti.Media.VIDEO\_FINISH\_REASON\_PLAYBACK\_ENDED
-    
-*   load – fired when the movie finishes loading
-    
-*   fullscreen – fired when the movie changes to or from fullscreen, use the e.entering property to determine if the player is entering or leaving fullscreen mode
-    
+* complete – fired when the playback ends or the user exits playback, use the e.reason property to determine the actual stop condition, such as Ti.Media.VIDEO\_FINISH\_REASON\_PLAYBACK\_ENDED
+
+* load – fired when the movie finishes loading
+
+* fullscreen – fired when the movie changes to or from fullscreen, use the e.entering property to determine if the player is entering or leaving fullscreen mode
+
 
 A technique you should consider is stopping the movie when the video it's embedded in closes. You can do that simply with code like this:
 
@@ -100,28 +100,28 @@ In this activity, you will write a simple app to stream a movie from a remote UR
 
 #### Steps
 
-1.  Create a new Titanium Mobile app. Delete all of the code from the app.js file.
-    
-2.  Define a window with a black background. Optionally, set the orientation of the window to landscape.
-    
-3.  Define a VideoPlayer with these characteristics:
-    
-    *   backgroundColor = black
-        
-    *   default video controls (not embedded)
-        
-    *   scalingMode = fill the screen
-        
-    *   fullscreen
-        
-    *   Play the [http://assets.appcelerator.com.s3.amazonaws.com/video/media.m4v](http://assets.appcelerator.com.s3.amazonaws.com/video/media.m4v) movie. Depending on your Android environment, that movie might not play well (due to encoding issues from the creation process). If you have playback troubles, you can play [http://assets.appcelerator.com.s3.amazonaws.com/video/media.3gp](http://assets.appcelerator.com.s3.amazonaws.com/video/media.3gp) on Android instead.
-        
-4.  Add the branching logic so that on iOS you add the VideoPlayer to the window object.
-    
-5.  Add the code to play the video stream and open the window.
-    
-6.  Build and test your app in the simulator/emulator or on device.
-    
+1. Create a new Titanium Mobile app. Delete all of the code from the app.js file.
+
+2. Define a window with a black background. Optionally, set the orientation of the window to landscape.
+
+3. Define a VideoPlayer with these characteristics:
+
+  * backgroundColor = black
+
+  * default video controls (not embedded)
+
+  * scalingMode = fill the screen
+
+  * fullscreen
+
+  * Play the [http://assets.appcelerator.com.s3.amazonaws.com/video/media.m4v](http://assets.appcelerator.com.s3.amazonaws.com/video/media.m4v) movie. Depending on your Android environment, that movie might not play well (due to encoding issues from the creation process). If you have playback troubles, you can play [http://assets.appcelerator.com.s3.amazonaws.com/video/media.3gp](http://assets.appcelerator.com.s3.amazonaws.com/video/media.3gp) on Android instead.
+
+4. Add the branching logic so that on iOS you add the VideoPlayer to the window object.
+
+5. Add the code to play the video stream and open the window.
+
+6. Build and test your app in the simulator/emulator or on device.
+
 
 Simulator / emulator rotation
 
@@ -187,16 +187,16 @@ For more information about audio configuration in tiapp.xml, see [Windows-specif
 
 ### References and further reading
 
-*   [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/7.2_video.zip)
-    
-*   [API docs: Ti.Media.VideoPlayer](#!/api/Titanium.Media.VideoPlayer)
-    
-*   [iOS Developer Docs: Supported video formats](http://developer.apple.com/library/ios/#documentation/Miscellaneous/Conceptual/iPhoneOSTechOverview/MediaLayer/MediaLayer.html)
-    
-*   [Android Developer Docs: Supported media formats](http://developer.android.com/guide/appendix/media-formats.html)
-    
-*   [Windows 10 Mobile: Audio, video, and camera](https://msdn.microsoft.com/windows/uwp/audio-video-camera/index)
-    
+* [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/7.2_video.zip)
+
+* [API docs: Ti.Media.VideoPlayer](#!/api/Titanium.Media.VideoPlayer)
+
+* [iOS Developer Docs: Supported video formats](http://developer.apple.com/library/ios/#documentation/Miscellaneous/Conceptual/iPhoneOSTechOverview/MediaLayer/MediaLayer.html)
+
+* [Android Developer Docs: Supported media formats](http://developer.android.com/guide/appendix/media-formats.html)
+
+* [Windows 10 Mobile: Audio, video, and camera](https://msdn.microsoft.com/windows/uwp/audio-video-camera/index)
+
 
 ## Summary
 

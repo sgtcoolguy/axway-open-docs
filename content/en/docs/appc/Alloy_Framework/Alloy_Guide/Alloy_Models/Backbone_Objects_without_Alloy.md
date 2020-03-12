@@ -1,4 +1,4 @@
-{"title":"Backbone Objects without Alloy","weight":"30"} 
+{"title":"Backbone Objects without Alloy","weight":"30"}
 
 You can use plain Backbone Collection and Model objects in place of the Alloy versions. This does not require any special Alloy or Titanium code. Use the [Backbone API](http://docs.appcelerator.com/backbone/0.9.2/) to create and control Backbone objects instead of using the createCollection and createModel methods. Backbone models also do not require a model configuration file. For example:
 

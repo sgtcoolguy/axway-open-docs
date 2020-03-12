@@ -1,4 +1,4 @@
-{"title":"Nodes - Model Distinct","weight":"70"} 
+{"title":"Nodes - Model Distinct","weight":"70"}
 
 API Builder 3.x is deprecated
 

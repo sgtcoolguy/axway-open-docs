@@ -1,15 +1,15 @@
-{"title":"WebView Use Cases","weight":"30"} 
+{"title":"WebView Use Cases","weight":"30"}
 
-*   [Overview](#Overview)
-    
-    *   [Ti.Facebook](#Ti.Facebook)
-        
-    *   [HTML5 Canvas Rendering](#HTML5CanvasRendering)
-        
-    *   [Forms](#Forms)
-        
-*   [Summary](#Summary)
-    
+* [Overview](#Overview)
+
+  * [Ti.Facebook](#Ti.Facebook)
+
+  * [HTML5 Canvas Rendering](#HTML5CanvasRendering)
+
+  * [Forms](#Forms)
+
+* [Summary](#Summary)
+
 
 With Titanium SDK 8.0.0, we now use [WKWebView](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/WKWebView/) to implement Ti.UI.WebView (as Apple has deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview)).
 
@@ -75,12 +75,12 @@ As though the examples seen here aren't impressive enough, Titanium offers us ev
 
 Titanium provides APIs to collect user input, such as the [Ti.UI.TextField](#!/api/Titanium.UI.TextField) and [Ti.UI.TextArea](#!/api/Titanium.UI.TextArea). Still, HTML forms offer a couple of features that might be advantageous in some cases.
 
-*   WebViews are automatically scrollable, so the soft keyboard won't cover the input fields in your HTML form.
-    
-*   On iOS and some versions of Android, navigation buttons (Next, Previous, and Done) are displayed above the soft keyboard to assist data entry. Users can tap these buttons to navigate the fields of your form.
-    
-*   You can use JavaScript libraries, such as jQuery, to add form validation, field highlighting, and so forth to an HTML form displayed within a WebView in your app. HTML 5 includes form validation support, though platform implementations vary.
-    
+* WebViews are automatically scrollable, so the soft keyboard won't cover the input fields in your HTML form.
+
+* On iOS and some versions of Android, navigation buttons (Next, Previous, and Done) are displayed above the soft keyboard to assist data entry. Users can tap these buttons to navigate the fields of your form.
+
+* You can use JavaScript libraries, such as jQuery, to add form validation, field highlighting, and so forth to an HTML form displayed within a WebView in your app. HTML 5 includes form validation support, though platform implementations vary.
+
 
 You can control which keyboard type is displayed with a WebView form by setting attributes on the <input> tag. See [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) for more information.
 

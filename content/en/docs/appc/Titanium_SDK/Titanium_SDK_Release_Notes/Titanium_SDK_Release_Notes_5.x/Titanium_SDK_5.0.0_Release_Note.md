@@ -1,83 +1,83 @@
-{"title":"Titanium SDK 5.0.0 Release Note","weight":"230"} 
+{"title":"Titanium SDK 5.0.0 Release Note","weight":"230"}
 
 ## Titanium SDK 5.0.0 General Availability - 16 September 2015
 
 ### Contents
 
-*   [About This Release](#AboutThisRelease)
-    
-    *   [Android Support](#AndroidSupport)
-        
-    *   [CLI 5.0.0](#CLI5.0.0)
-        
-    *   [iOS and watchOS Support](#iOSandwatchOSSupport)
-        
-    *   [Studio 4.3.0](#Studio4.3.0)
-        
-*   [Notice of Feature and Behavior Changes](#NoticeofFeatureandBehaviorChanges)
-    
-    *   [Android Platform](#AndroidPlatform)
-        
-        *   [Cookie Expiration](#CookieExpiration)
-            
-    *   [iOS Platform](#iOSPlatform)
-        
-        *   [Application Transport Security](#ApplicationTransportSecurity)
-            
-        *   [Contacts](#Contacts)
-            
-        *   [Icons and Launch Images](#IconsandLaunchImages)
-            
-        *   [IPv6 DNS64/NAT64 Compatibility](#IPv6DNS64/NAT64Compatibility)
-            
-        *   [ListView Edit Actions](#ListViewEditActions)
-            
-    *   [Windows Platform](#WindowsPlatform)
-        
-        *   [Windows Publisher ID](#WindowsPublisherID)
-            
-*   [New Features](#NewFeatures)
-    
-    *   [Android Platform](#AndroidPlatform.1)
-        
-        *   [Large Icon Support for Notifications](#LargeIconSupportforNotifications)
-            
-        *   [Network Support](#NetworkSupport)
-            
-        *   [Titanium Themes](#TitaniumThemes)
-            
-    *   [iOS Platform](#iOSPlatform.1)
-        
-        *   [Attributed String Line Break](#AttributedStringLineBreak)
-            
-        *   [Handoff](#Handoff)
-            
-        *   [Icons and Launch Images](#IconsandLaunchImages.1)
-            
-        *   [Spotlight Search](#SpotlightSearch)
-            
-        *   [Watch Connectivity](#WatchConnectivity)
-            
-    *   [Windows Platform](#WindowsPlatform.1)
-        
-        *   [API Parity](#APIParity)
-            
-        *   [Direct API Access](#DirectAPIAccess)
-            
-*   [Known Issues](#KnownIssues)
-    
-    *   [Camera Causes Application to Crash with Android SDK 6.0](#CameraCausesApplicationtoCrashwithAndroidSDK6.0)
-        
-    *   [Can Only Detect One iOS 9.0 Device](#CanOnlyDetectOneiOS9.0Device)
-        
-*   [API Changes](#APIChanges)
-    
-    *   [New APIs](#NewAPIs)
-        
-    *   [Deprecated APIs](#DeprecatedAPIs)
-        
-    *   [Removed APIs](#RemovedAPIs)
-        
+* [About This Release](#AboutThisRelease)
+
+  * [Android Support](#AndroidSupport)
+
+  * [CLI 5.0.0](#CLI5.0.0)
+
+  * [iOS and watchOS Support](#iOSandwatchOSSupport)
+
+  * [Studio 4.3.0](#Studio4.3.0)
+
+* [Notice of Feature and Behavior Changes](#NoticeofFeatureandBehaviorChanges)
+
+  * [Android Platform](#AndroidPlatform)
+
+    * [Cookie Expiration](#CookieExpiration)
+
+  * [iOS Platform](#iOSPlatform)
+
+    * [Application Transport Security](#ApplicationTransportSecurity)
+
+    * [Contacts](#Contacts)
+
+    * [Icons and Launch Images](#IconsandLaunchImages)
+
+    * [IPv6 DNS64/NAT64 Compatibility](#IPv6DNS64/NAT64Compatibility)
+
+    * [ListView Edit Actions](#ListViewEditActions)
+
+  * [Windows Platform](#WindowsPlatform)
+
+    * [Windows Publisher ID](#WindowsPublisherID)
+
+* [New Features](#NewFeatures)
+
+  * [Android Platform](#AndroidPlatform.1)
+
+    * [Large Icon Support for Notifications](#LargeIconSupportforNotifications)
+
+    * [Network Support](#NetworkSupport)
+
+    * [Titanium Themes](#TitaniumThemes)
+
+  * [iOS Platform](#iOSPlatform.1)
+
+    * [Attributed String Line Break](#AttributedStringLineBreak)
+
+    * [Handoff](#Handoff)
+
+    * [Icons and Launch Images](#IconsandLaunchImages.1)
+
+    * [Spotlight Search](#SpotlightSearch)
+
+    * [Watch Connectivity](#WatchConnectivity)
+
+  * [Windows Platform](#WindowsPlatform.1)
+
+    * [API Parity](#APIParity)
+
+    * [Direct API Access](#DirectAPIAccess)
+
+* [Known Issues](#KnownIssues)
+
+  * [Camera Causes Application to Crash with Android SDK 6.0](#CameraCausesApplicationtoCrashwithAndroidSDK6.0)
+
+  * [Can Only Detect One iOS 9.0 Device](#CanOnlyDetectOneiOS9.0Device)
+
+* [API Changes](#APIChanges)
+
+  * [New APIs](#NewAPIs)
+
+  * [Deprecated APIs](#DeprecatedAPIs)
+
+  * [Removed APIs](#RemovedAPIs)
+
 
 ## About This Release
 
@@ -113,16 +113,16 @@ Note that this Release only supports watchOS 2 applications built with Xcode; iO
 
 To get started with watchOS 2, see:
 
-*   [Integrate a WatchKit App Built in Xcode](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/Integrate_a_WatchKit_App_Built_in_Xcode/)
-    
-*   [appc-sample-watchos2](https://github.com/appcelerator-developer-relations/appc-sample-watchos2)
-    
+* [Integrate a WatchKit App Built in Xcode](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/Integrate_a_WatchKit_App_Built_in_Xcode/)
+
+* [appc-sample-watchos2](https://github.com/appcelerator-developer-relations/appc-sample-watchos2)
+
 
 ### Studio 4.3.0
 
 This Release coincides with the release of Studio 4.3.0, which includes support for building, running and packaging watchOS 2 applications built in Xcode.
 
-For more details, see the [Studio Release Notes](#!/guide/Studio_Release_Notes).
+For more details, see the [Studio Release Notes](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Release_Notes/Studio_Release_Notes_4.x/Studio_4.3.0_Release_Note/).
 
 ## Notice of Feature and Behavior Changes
 
@@ -206,10 +206,10 @@ This Release introduces new predefined Titanium themes for Android to hide the a
 
 Set the android:theme attribute of the Android manifest application element or set a Window object's theme property to one of the following new themes:
 
-*   Theme.AppCompat.NoTitleBar: hides the action and title bar
-    
-*   Theme.AppCompat.NoTitleBar.Fullscreen: Same as Theme.AppCompat.NoTitleBar with a fullscreen window (covers the status bar).
-    
+* Theme.AppCompat.NoTitleBar: hides the action and title bar
+
+* Theme.AppCompat.NoTitleBar.Fullscreen: Same as Theme.AppCompat.NoTitleBar with a fullscreen window (covers the status bar).
+
 
 ### iOS Platform
 
@@ -225,10 +225,10 @@ This Release supports Handoff, a feature introduced in iOS 8 that allows a user 
 
 For more information, see:
 
-*   [Titanium.App.iOS.UserActivity API reference](#!/api/Titanium.App.iOS.UserActivity)
-    
-*   [Handoff User Activites guide](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/Handoff_User_Activities/)
-    
+* [Titanium.App.iOS.UserActivity API reference](#!/api/Titanium.App.iOS.UserActivity)
+
+* [Handoff User Activites guide](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/Handoff_User_Activities/)
+
 
 #### Icons and Launch Images
 
@@ -238,7 +238,7 @@ You are recommended to add a 1024 x 1024 PNG image, named DefaultIcon.png placed
 
 Note that the localized launch images in the i18n folder are not supported by Asset Catalog.
 
-For more details, see the [Icons and Splash Screens guide](#!/guide/Icons_and_Splash_Screens-section-29004897_IconsandSplashScreens-iOSgraphicassetrequirementsandoptions).
+For more details, see the [Icons and Splash Screens guide](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Icons_and_Splash_Screens/).
 
 #### Spotlight Search
 
@@ -246,12 +246,12 @@ Starting with iOS 9, you can add your application's content, user activities and
 
 For more information, see:
 
-*   _Index Application Content_ section in [Titanium.App.iOS API reference](#!/api/Titanium.App.iOS)
-    
-*   [Spotlight Search guide](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/Spotlight_Search/)
-    
-*   [appc-sample-appsearch](https://github.com/appcelerator-developer-relations/appc-sample-appsearch)
-    
+* _Index Application Content_ section in [Titanium.App.iOS API reference](#!/api/Titanium.App.iOS)
+
+* [Spotlight Search guide](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/Spotlight_Search/)
+
+* [appc-sample-appsearch](https://github.com/appcelerator-developer-relations/appc-sample-appsearch)
+
 
 #### Watch Connectivity
 
@@ -261,10 +261,10 @@ Note that the application must run on an iOS 9 iPhone that supports watch apps a
 
 To get started with Watch Connectivity, see:
 
-*   [Integrate a WatchKit App Built in Xcode](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/Integrate_a_WatchKit_App_Built_in_Xcode/)
-    
-*   [appc-sample-watchos2](https://github.com/appcelerator-developer-relations/appc-sample-watchos2)
-    
+* [Integrate a WatchKit App Built in Xcode](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/Integrate_a_WatchKit_App_Built_in_Xcode/)
+
+* [appc-sample-watchos2](https://github.com/appcelerator-developer-relations/appc-sample-watchos2)
+
 
 ### Windows Platform
 
@@ -274,12 +274,12 @@ This section lists new features and improvements only available on the Windows p
 
 The Windows Platform expands support for several APIs, including:
 
-*   Support for [Titanium.UI.Clipboard](#!/api/Titanium.UI.Clipboard)
-    
-*   Events for [Titanium.Media.AudioPlayer](#!/api/Titanium.Media.AudioPlayer), [Titanium.Media.Sound](#!/api/Titanium.Media.Sound) and [Titanium.Media.VideoPlayer](#!/api/Titanium.Media.VideoPlayer)
-    
-*   Expanded support for [Titanium.UI.Button](#!/api/Titanium.UI.Button) [Titanium.UI.ScrollView](#!/api/Titanium.UI.ScrollView) and [Titanium.UI.View](#!/api/Titanium.UI.View)
-    
+* Support for [Titanium.UI.Clipboard](#!/api/Titanium.UI.Clipboard)
+
+* Events for [Titanium.Media.AudioPlayer](#!/api/Titanium.Media.AudioPlayer), [Titanium.Media.Sound](#!/api/Titanium.Media.Sound) and [Titanium.Media.VideoPlayer](#!/api/Titanium.Media.VideoPlayer)
+
+* Expanded support for [Titanium.UI.Button](#!/api/Titanium.UI.Button) [Titanium.UI.ScrollView](#!/api/Titanium.UI.ScrollView) and [Titanium.UI.View](#!/api/Titanium.UI.View)
+
 
 For details, see the [New APIs section below](https://docs.appcelerator.com/platform/release-notes/?version=5.0.0.GA#new_apis).
 
@@ -1155,9 +1155,6 @@ object
 
 Used to enable data and file transfers between a watchOS and iOS application. (New API, supported on iPhone.)
 
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
-
 ### Deprecated APIs
 
 The following APIs are deprecated in Release 5.0.0 as of September 16th, 2015.
@@ -1180,9 +1177,6 @@ event
 
 Use Titanium.App.iOS.WatchConnectivity instead, which is supported on iOS9 and later.
 
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
-
 ### Removed APIs
 
 The following APIs have been removed in Release 5.0.0 as of September 16th, 2015 .
@@ -1202,6 +1196,3 @@ Titanium.UI.ListView.rowAction
 event
 
 Event renamed to editaction
-
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**

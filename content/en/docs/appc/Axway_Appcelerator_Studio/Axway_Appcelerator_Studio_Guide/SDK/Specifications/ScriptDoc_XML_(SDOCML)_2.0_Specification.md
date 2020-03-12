@@ -1,85 +1,85 @@
-{"title":"ScriptDoc XML (SDOCML) 2.0 Specification","weight":"20"} 
+{"title":"ScriptDoc XML (SDOCML) 2.0 Specification","weight":"20"}
 
-*   [Overview](#Overview)
-    
-*   [Introduction](#Introduction)
-    
-*   [Short Example](#ShortExample)
-    
-*   [Types](#Types)
-    
-*   [Reference](#Reference)
-    
-    *   [alias](#alias)
-        
-    *   [aliases](#aliases)
-        
-    *   [availability](#availability)
-        
-    *   [browser](#browser)
-        
-    *   [browsers](#browsers)
-        
-    *   [class](#class)
-        
-    *   [constructor](#constructor)
-        
-    *   [constructors](#constructors)
-        
-    *   [deprecated](#deprecated)
-        
-    *   [description](#description)
-        
-    *   [example](#example)
-        
-    *   [exception](#exception)
-        
-    *   [exceptions](#exceptions)
-        
-    *   [interface](#interface)
-        
-    *   [interfaces](#interfaces)
-        
-    *   [javascript](#javascript)
-        
-    *   [method](#method)
-        
-    *   [methods](#methods)
-        
-    *   [mixin](#mixin)
-        
-    *   [mixins](#mixins)
-        
-    *   [parameter](#parameter)
-        
-    *   [parameters](#parameters)
-        
-    *   [properties](#properties)
-        
-    *   [property](#property)
-        
-    *   [reference](#reference)
-        
-    *   [references](#references)
-        
-    *   [remarks](#remarks)
-        
-    *   [return-description](#return-description)
-        
-    *   [return-type](#return-type)
-        
-    *   [return-types](#return-types)
-        
-    *   [specification](#specification)
-        
-    *   [type-map](#type-map)
-        
-    *   [type-maps](#type-maps)
-        
-    *   [value](#value)
-        
-    *   [values](#values)
-        
+* [Overview](#Overview)
+
+* [Introduction](#Introduction)
+
+* [Short Example](#ShortExample)
+
+* [Types](#Types)
+
+* [Reference](#Reference)
+
+  * [alias](#alias)
+
+  * [aliases](#aliases)
+
+  * [availability](#availability)
+
+  * [browser](#browser)
+
+  * [browsers](#browsers)
+
+  * [class](#class)
+
+  * [constructor](#constructor)
+
+  * [constructors](#constructors)
+
+  * [deprecated](#deprecated)
+
+  * [description](#description)
+
+  * [example](#example)
+
+  * [exception](#exception)
+
+  * [exceptions](#exceptions)
+
+  * [interface](#interface)
+
+  * [interfaces](#interfaces)
+
+  * [javascript](#javascript)
+
+  * [method](#method)
+
+  * [methods](#methods)
+
+  * [mixin](#mixin)
+
+  * [mixins](#mixins)
+
+  * [parameter](#parameter)
+
+  * [parameters](#parameters)
+
+  * [properties](#properties)
+
+  * [property](#property)
+
+  * [reference](#reference)
+
+  * [references](#references)
+
+  * [remarks](#remarks)
+
+  * [return-description](#return-description)
+
+  * [return-type](#return-type)
+
+  * [return-types](#return-types)
+
+  * [specification](#specification)
+
+  * [type-map](#type-map)
+
+  * [type-maps](#type-maps)
+
+  * [value](#value)
+
+  * [values](#values)
+
 
 ## Overview
 
@@ -91,18 +91,18 @@ The metadata in SDOCML files helps to provide the Code Assist information for th
 
 The section for each element includes the following information:
 
-*   Short description of the element
-    
-*   Syntax
-    
-*   Element parents and children
-    
-*   Element attributes and their valid values
-    
-*   Longer explanation of the element
-    
-*   Example(s)
-    
+* Short description of the element
+
+* Syntax
+
+* Element parents and children
+
+* Element attributes and their valid values
+
+* Longer explanation of the element
+
+* Example(s)
+
 
 Once you have created this file, see [Using JavaScript Libraries](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Using_JavaScript_Libraries/) for the specifics on how to use it. Check the Aptana Log file (Help Menu > Troubleshooting > Aptana Log File) to see if there are any errors generated when loading it. There is also an available XSD to validate your document.
 
@@ -214,25 +214,25 @@ We support an optional notation when describing types:
 
 **Arrays**
 
-*   String\[\] - Array of Strings (simple syntax)
-    
-*   Array<String> - Array of Strings (generics syntax for above)
-    
-*   Array<Array<String>> - Array of Array of Strings
-    
+* String\[\] - Array of Strings (simple syntax)
+
+* Array<String> - Array of Strings (generics syntax for above)
+
+* Array<Array<String>> - Array of Array of Strings
+
 
 **Functions**
 
-*   Function - function with no params, and no return value
-    
-*   Function:Object - function with no params, returns an Object
-    
-*   Function->Object - function with no params, returns an Object (alternate syntax for above)
-    
-*   Function:(String | Number) - function with no params, returns String or Number
-    
-*   Function(String, Number) - function with two params, first of type String, second of type Number, and no return value
-    
+* Function - function with no params, and no return value
+
+* Function:Object - function with no params, returns an Object
+
+* Function->Object - function with no params, returns an Object (alternate syntax for above)
+
+* Function:(String | Number) - function with no params, returns String or Number
+
+* Function(String, Number) - function with two params, first of type String, second of type Number, and no return value
+
 
 **A ScriptDoc sample**
 
@@ -308,10 +308,10 @@ No children.
 
 **Attributes and values**
 
-*   name - Name of the alias
-    
-*   type - Type that the alias represents
-    
+* name - Name of the alias
+
+* type - Type that the alias represents
+
 
 **Description**
 
@@ -421,14 +421,14 @@ Parent of: [#description](#description)
 
 **Attributes and values**
 
-*   platform - Name of the browser platform. Use "IE", "Mozilla", "Netscape", "Opera", or "Safari".
-    
-*   version - Platform version (optional but recommended)
-    
-*   os - Operating system (optional)
-    
-*   osVersion - OS version
-    
+* platform - Name of the browser platform. Use "IE", "Mozilla", "Netscape", "Opera", or "Safari".
+
+* version - Platform version (optional but recommended)
+
+* os - Operating system (optional)
+
+* osVersion - OS version
+
 
 **Description**
 
@@ -536,12 +536,12 @@ Parent of: [#aliases](#aliases), [#availability](#availability), [#browsers](#br
 
 **Attributes and values**
 
-*   type - JavaScript type or object type of the class (e.g. Boolean, Document, etc.)
-    
-*   superclass - Superclass that the class belongs to. Separate multiple superclasses with a space
-    
-*   visibility - If internal only, specify "internal", otherwise, leave blank.
-    
+* type - JavaScript type or object type of the class (e.g. Boolean, Document, etc.)
+
+* superclass - Superclass that the class belongs to. Separate multiple superclasses with a space
+
+* visibility - If internal only, specify "internal", otherwise, leave blank.
+
 
 **Description**
 
@@ -719,10 +719,10 @@ Parent of: [#availability](#availability), [#browsers](#browsers), [#description
 
 **Attributes and values**
 
-*   scope - Instance or static.
-    
-*   visibility - If internal only, specify "internal". Otherwise, leave blank. (Optional.)
-    
+* scope - Instance or static.
+
+* visibility - If internal only, specify "internal". Otherwise, leave blank. (Optional.)
+
 
 **Description**
 
@@ -936,8 +936,8 @@ Parent of: [#description](#description)
 
 **Attributes and values**
 
-*   type - Name of the error type (e.g. "DOMException")
-    
+* type - Name of the error type (e.g. "DOMException")
+
 
 **Description**
 
@@ -977,8 +977,8 @@ Parent of: [#exception](#exception)
 
 **Attributes and values**
 
-*   type - Name of the error type (e.g. "DOMException")
-    
+* type - Name of the error type (e.g. "DOMException")
+
 
 **Description**
 
@@ -1014,8 +1014,8 @@ No children
 
 **Attributes and values**
 
-*   type - Name of interface type
-    
+* type - Name of interface type
+
 
 **Description**
 
@@ -1171,10 +1171,10 @@ Parent of: [#availability](#availability), [#browsers](#browsers), [#deprecated]
 
 **Attributes and values**
 
-*   name - Name of the method
-    
-*   scope - instance or static
-    
+* name - Name of the method
+
+* scope - instance or static
+
 
 **Description**
 
@@ -1400,10 +1400,10 @@ Parent of: [#mixin](#mixin)
 
 **Attributes and values**
 
-*   type -Type of the class
-    
-*   scope - instance or static
-    
+* type -Type of the class
+
+* scope - instance or static
+
 
 **Description**
 
@@ -1519,12 +1519,12 @@ Parent of: [#description](#description), [#values](#values)
 
 **Attributes and values**
 
-*   name - Name of the parameter.
-    
-*   type - JavaScript type of the parameter (e.g. Object).
-    
-*   usage - Whether the parameter is "required", "optional", or can take "one-or-more" values.
-    
+* name - Name of the parameter.
+
+* type - JavaScript type of the parameter (e.g. Object).
+
+* usage - Whether the parameter is "required", "optional", or can take "one-or-more" values.
+
 
 **Description**
 
@@ -1994,18 +1994,18 @@ Parent of: [#availability](#availability), [#browsers](#browsers), [#deprecated]
 
 **Attributes and values**
 
-*   name - Property name.
-    
-*   type - JavaScript type (e.g. Object).
-    
-*   scope - static or instance.
-    
-*   access - read or read-write.
-    
-*   visibility - internal or blank.
-    
+* name - Property name.
 
-**Description**  
+* type - JavaScript type (e.g. Object).
+
+* scope - static or instance.
+
+* access - read or read-write.
+
+* visibility - internal or blank.
+
+
+**Description**
 Contains the information for an individual property for a class.
 
 **Example**
@@ -2056,8 +2056,8 @@ No children.
 
 **Attributes and values**
 
-*   name - Name of the reference.
-    
+* name - Name of the reference.
+
 
 **Description**
 
@@ -2121,7 +2121,7 @@ No children.
 
 **Attributes and values**
 
-No attributes or values.  
+No attributes or values.
 **Description**
 
 Contains text remarks about a class, constructor, method, or property. Remarks are generally longer and give additional information to the sibling description node. Remarks are rendered in HTML and can contain HTML entities and escape characters for formatting.
@@ -2234,8 +2234,8 @@ No children.
 
 **Attributes and values**
 
-*   type - JavaScript type returned by the method.
-    
+* type - JavaScript type returned by the method.
+
 
 **Description**
 
@@ -2363,10 +2363,10 @@ No children.
 
 **Attributes and values**
 
-*   name - Name of the specification
-    
-*   version - Version of the specification (optional)
-    
+* name - Name of the specification
+
+* version - Version of the specification (optional)
+
 
 **Description**
 
@@ -2404,10 +2404,10 @@ Parent of: none
 
 **Attributes and values**
 
-*   sourceType - The name of the type to map to the destination type
-    
-*   destinationType - The new type value to use when replacing the source type
-    
+* sourceType - The name of the type to map to the destination type
+
+* destinationType - The new type value to use when replacing the source type
+
 
 ### type-maps
 
@@ -2471,10 +2471,10 @@ No children.
 
 **Attributes and values**
 
-*   name - Name of the attribute.
-    
-*   description - Attribute description.
-    
+* name - Name of the attribute.
+
+* description - Attribute description.
+
 
 **Description**
 

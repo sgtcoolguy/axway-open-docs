@@ -1,19 +1,19 @@
-{"title":"Geolocation with Titanium Tutorial","weight":"20"} 
+{"title":"Geolocation with Titanium Tutorial","weight":"20"}
 
-*   [Setting up the tiapp.xml file](#Settingupthetiapp.xmlfile)
-    
-*   [Ti.PlayServices](#Ti.PlayServices)
-    
-*   [Geolocation](#Geolocation)
-    
-    *   [Get position](#Getposition)
-        
-    *   [Check for permissions then get location](#Checkforpermissionsthengetlocation)
-        
-    *   [Location data](#Locationdata)
-        
-*   [Fine tuning accuracy](#Finetuningaccuracy)
-    
+* [Setting up the tiapp.xml file](#Settingupthetiapp.xmlfile)
+
+* [Ti.PlayServices](#Ti.PlayServices)
+
+* [Geolocation](#Geolocation)
+
+  * [Get position](#Getposition)
+
+  * [Check for permissions then get location](#Checkforpermissionsthengetlocation)
+
+  * [Location data](#Locationdata)
+
+* [Fine tuning accuracy](#Finetuningaccuracy)
+
 
 This document will cover some of the basics to create a geolocation app.
 

@@ -1,4 +1,4 @@
-{"title":"Alloy 1.8.3 - 27 March 2016","weight":"40"} 
+{"title":"Alloy 1.8.3 - 27 March 2016","weight":"40"}
 
 Alloy 1.8.3 is a patch release that includes several bug fixes.
 
@@ -6,6 +6,6 @@ As of this release, the previous Alloy patch release is no longer supported. Not
 
 ## Fixed Issues
 
-*   [ALOY-1368](https://jira.appcelerator.org/browse/ALOY-1368) - Complex data binding for individual model doesn't work with transform() method
-    
-*   [ALOY-1474](https://jira.appcelerator.org/browse/ALOY-1474) - Regression: Model data binding no longer works
+* [ALOY-1368](https://jira.appcelerator.org/browse/ALOY-1368) - Complex data binding for individual model doesn't work with transform() method
+
+* [ALOY-1474](https://jira.appcelerator.org/browse/ALOY-1474) - Regression: Model data binding no longer works

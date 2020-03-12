@@ -1,21 +1,21 @@
-{"title":"Six Steps to Extensive Titanium App Build Automation","weight":"40"} 
+{"title":"Six Steps to Extensive Titanium App Build Automation","weight":"40"}
 
-*   [Testing and launching is NOT time-consuming or complicated](#TestingandlaunchingisNOTtime-consumingorcomplicated)
-    
-*   [Mobile build automation, a high-level overview](#Mobilebuildautomation,ahigh-leveloverview)
-    
-*   [Preparing the codebase](#Preparingthecodebase)
-    
-*   [Unit testing with TiUnit](#UnittestingwithTiUnit)
-    
-*   [Analyzing the codebase quality](#Analyzingthecodebasequality)
-    
-*   [UI testing on real devices](#UItestingonrealdevices)
-    
-*   [Archiving and sharing the artifacts](#Archivingandsharingtheartifacts)
-    
-*   [Sending notifications](#Sendingnotifications)
-    
+* [Testing and launching is NOT time-consuming or complicated](#TestingandlaunchingisNOTtime-consumingorcomplicated)
+
+* [Mobile build automation, a high-level overview](#Mobilebuildautomation,ahigh-leveloverview)
+
+* [Preparing the codebase](#Preparingthecodebase)
+
+* [Unit testing with TiUnit](#UnittestingwithTiUnit)
+
+* [Analyzing the codebase quality](#Analyzingthecodebasequality)
+
+* [UI testing on real devices](#UItestingonrealdevices)
+
+* [Archiving and sharing the artifacts](#Archivingandsharingtheartifacts)
+
+* [Sending notifications](#Sendingnotifications)
+
 
 Guest writer: [Yakup Kalin](https://www.appcelerator.com/blog/author/yakup-kalin/)
 
@@ -27,18 +27,18 @@ Test and launch steps are extremely important but they can also be time consumin
 
 Typically, a high-level view of a build automation process with Titanium apps can go like this (based on information provided by [ACA Mobile](https://mobile.aca-it.be/)):
 
-1.  Prepare codebase (Jenkins)
-    
-2.  Unit testing (TiUnit)
-    
-3.  Analyzing codebase (sonarqube)
-    
-4.  UI testing (AWS)
-    
-5.  Archiving and sharing artifacts (Sonatype Nexus)
-    
-6.  Notifying people
-    
+1. Prepare codebase (Jenkins)
+
+2. Unit testing (TiUnit)
+
+3. Analyzing codebase (sonarqube)
+
+4. UI testing (AWS)
+
+5. Archiving and sharing artifacts (Sonatype Nexus)
+
+6. Notifying people
+
 
 ## Preparing the codebase
 

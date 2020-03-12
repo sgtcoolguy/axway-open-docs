@@ -1,35 +1,35 @@
-{"title":"Android Hyperloop Programming Guide","weight":"20"} 
+{"title":"Android Hyperloop Programming Guide","weight":"20"}
 
-*   [Requirements](#Requirements)
-    
-    *   [Software](#Software)
-        
-    *   [Configure tiapp.xml](#Configuretiapp.xml)
-        
-*   [Classes](#Classes)
-    
-*   [Instantiation](#Instantiation)
-    
-*   [Methods and fields](#Methodsandfields)
-    
-*   [Method resolution](#Methodresolution)
-    
-*   [Casting](#Casting)
-    
-*   [Interfaces](#Interfaces)
-    
-*   [Creating your own classes](#Creatingyourownclasses)
-    
-*   [Accessing native XML Layouts](#AccessingnativeXMLLayouts)
-    
-*   [Using Third-party libraries](#UsingThird-partylibraries)
-    
-    *   [Manual dependencies](#Manualdependencies)
-        
-    *   [Gradle Dependencies](#GradleDependencies)
-        
-    *   [Third-party Examples](#Third-partyExamples)
-        
+* [Requirements](#Requirements)
+
+  * [Software](#Software)
+
+  * [Configure tiapp.xml](#Configuretiapp.xml)
+
+* [Classes](#Classes)
+
+* [Instantiation](#Instantiation)
+
+* [Methods and fields](#Methodsandfields)
+
+* [Method resolution](#Methodresolution)
+
+* [Casting](#Casting)
+
+* [Interfaces](#Interfaces)
+
+* [Creating your own classes](#Creatingyourownclasses)
+
+* [Accessing native XML Layouts](#AccessingnativeXMLLayouts)
+
+* [Using 3rd party libraries](#Using3rdpartylibraries)
+
+  * [Gradle Dependencies](#GradleDependencies)
+
+  * [Local Dependencies](#LocalDependencies)
+
+  * [Third-party Examples](#Third-partyExamples)
+
 
 This document provides information on Android Hyperloop requirements, classes, instantiation, methods and fields, casting, interfaces, creating your own classes, and using 3rd party libraries.
 
@@ -203,47 +203,29 @@ In native Android development, you have many situations where you are inflating 
 
 Learn more about a native XML layouts in our [Native Layout Example](https://github.com/appcelerator/hyperloop-examples/blob/master/app/controllers/android/nativelayout.js) as part of the [Hyperloop Examples](https://github.com/appcelerator/hyperloop-examples) app.
 
-## Using Third-party libraries
+## Using 3rd party libraries
 
-### Manual dependencies
-
-You can use Third-party libraries in Hyperloop such as JARs and AARs.
-
-Place the **JAR** and **AAR files** into the platform/android (Classic) or app/platform/android (Alloy) folder of your app. Hyperloop will pick up the JAR files and will generate necessary bindings. For JARs, they will be included in your app. For AAR files, they will extract resources, extract and use the class.jar, \*.so file, and so on.
+As of Titanium 9.0.0, you can no longer use Google's deprecated Support libraries. You must use the AndroidX libraries instead.
 
 ### Gradle Dependencies
 
-Instead of placing your Android archives into your project manually, you can also use Gradle to pull down any library and its dependencies. Here is a quick example of using the Mapbox Android SDK via Gradle:
+As of Titanium 9.0.0, Hyperloop can reference libraries via gradle by adding a build.gradle file to the platform/android (Classic) or app/platform/android (Alloy) folder of your app. This is the preferred way of adding library dependencies.
 
-build.gradle
+An example can be found here: [hyperloop-examples - /app/platform/android/build.gradle](https://github.com/appcelerator/hyperloop-examples/blob/master/app/platform/android/build.gradle)
 
-`apply plugin:` `'java'`
-
-`repositories {`
-
-`google()`
-
-`mavenCentral()`
-
-`}`
+The below is an example build.gradle file which provides access to the Google "Material Components" library.
 
 `dependencies {`
 
-`implementation` `'com.mapbox.mapboxsdk:mapbox-android-sdk:5.5.0'`
+`implementation` `'com.google.android.material:material:1.1.0'`
 
 `}`
 
-`task getDeps(type: Copy) {`
+### Local Dependencies
 
-`from sourceSets.main.runtimeClasspath`
+You can add 3rd party library files such as JARs and AARs directly to Hyperloop.
 
-`exclude` `'support-*'`  `// The support libraries are packaged with Titanium already`
-
-`into` `'platform/android/'`  `// Use "app/platform/android" for Alloy`
-
-`}`
-
-In the above Gradle file, the Mapbox Android SDK is downloaded to platform/android (Classic) and can be changed to app/platform/android if used in Alloy. You can see a full example of using Gradle, CocoaPods (iOS) and modern ES6+ in the [Ti.Mapbox module](https://github.com/hyperloop-modules/ti.mapbox).
+Place the **JAR** and **AAR** files into the platform/android (Classic) or app/platform/android (Alloy) folder of your app. Hyperloop will load the Java classes from these libraries and generate the necessary bindings. All Java classes within the JARs and AARs will be merged into your app. For AARs, the build system will also extract its resource files, assets, \*.so libraries, and merge its AndroidManfiest.xml into your app.
 
 ### Third-party Examples
 

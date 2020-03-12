@@ -1,4 +1,4 @@
-{"title":"Alloy 1.7.35 - 10 March 2016","weight":"10"} 
+{"title":"Alloy 1.7.35 - 10 March 2016","weight":"10"}
 
 Alloy 1.7.35 is a patch release that includes one known issue.
 
@@ -6,6 +6,6 @@ As of this release, the previous Alloy patch release is no longer supported. Not
 
 ## Known Issue
 
-*   [TIMOB-20537](https://jira.appcelerator.org/browse/TIMOB-20537) - Alloy-themed i18n and platform folders no longer work since Ti 5.2.0.GA
-    
-    *   Due to a change in Titanium i18n and platform folders in Alloy themes and widgets no longer get merged into the project i18n and platform folders
+* [TIMOB-20537](https://jira.appcelerator.org/browse/TIMOB-20537) - Alloy-themed i18n and platform folders no longer work since Ti 5.2.0.GA
+
+  * Due to a change in Titanium i18n and platform folders in Alloy themes and widgets no longer get merged into the project i18n and platform folders

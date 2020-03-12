@@ -1,21 +1,21 @@
-{"title":"Titanium SDK 7.1.1.GA - 2 May 2018","weight":"210"} 
+{"title":"Titanium SDK 7.1.1.GA - 2 May 2018","weight":"210"}
 
-*   [About this release](#Aboutthisrelease)
-    
-*   [Fixed issues](#Fixedissues)
-    
-    *   [Android platform](#Androidplatform)
-        
-    *   [iOS platform](#iOSplatform)
-        
-    *   [Windows platform](#Windowsplatform)
-        
-*   [Improvements](#Improvements)
-    
-*   [API changes](#APIchanges)
-    
-    *   [New APIs](#NewAPIs)
-        
+* [About this release](#Aboutthisrelease)
+
+* [Fixed issues](#Fixedissues)
+
+  * [Android platform](#Androidplatform)
+
+  * [iOS platform](#iOSplatform)
+
+  * [Windows platform](#Windowsplatform)
+
+* [Improvements](#Improvements)
+
+* [API changes](#APIchanges)
+
+  * [New APIs](#NewAPIs)
+
 
 ## About this release
 
@@ -27,55 +27,55 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 ### Android platform
 
-*   [TIMOB-25409](https://jira.appcelerator.org/browse/TIMOB-25409) - Android: getting image from Google Drive via openPhotoGallery causes a crash
-    
-*   [TIMOB-25671](https://jira.appcelerator.org/browse/TIMOB-25671) - Android: Not all TextField return key types fire a "return" event
-    
-*   [TIMOB-25753](https://jira.appcelerator.org/browse/TIMOB-25753) - Android: ScrollView "width" ignores Ti.UI.SIZE as of 6.3.0
-    
-*   [TIMOB-25797](https://jira.appcelerator.org/browse/TIMOB-25797) - Android: Remove unnecessary Google Play Services logs
-    
-*   [TIMOB-25799](https://jira.appcelerator.org/browse/TIMOB-25799) - Android: Cannot build titanium project with JDK 1.9
-    
-*   [TIMOB-25875](https://jira.appcelerator.org/browse/TIMOB-25875) - Android: Babel rewrites app.js in classic project to generated ES5 code
-    
-*   [TIMOB-25882](https://jira.appcelerator.org/browse/TIMOB-25882) - Android: return event is received twice from Symbol TC55/TC70 scanner
-    
-*   [TIMOB-25887](https://jira.appcelerator.org/browse/TIMOB-25887) - Android: Ti.Geolocation - Exception when calling Ti.Geolocation.hasLocationPermissions()
-    
-*   [TIMOB-25903](https://jira.appcelerator.org/browse/TIMOB-25903) - Android: TableView.updateRow() not working in 7.1.0 if "run-on-main-thread" is false
-    
-*   [TIMOB-25913](https://jira.appcelerator.org/browse/TIMOB-25913) - Android: Build fails for android with java.time.DateTimeException with java 9.0.4 & crittercism
-    
-*   [TIMOB-25948](https://jira.appcelerator.org/browse/TIMOB-25948) - \[Android\] Hyperloop 3.0.4 throws an error when building for Android  
-    
+* [TIMOB-25409](https://jira.appcelerator.org/browse/TIMOB-25409) - Android: getting image from Google Drive via openPhotoGallery causes a crash
+
+* [TIMOB-25671](https://jira.appcelerator.org/browse/TIMOB-25671) - Android: Not all TextField return key types fire a "return" event
+
+* [TIMOB-25753](https://jira.appcelerator.org/browse/TIMOB-25753) - Android: ScrollView "width" ignores Ti.UI.SIZE as of 6.3.0
+
+* [TIMOB-25797](https://jira.appcelerator.org/browse/TIMOB-25797) - Android: Remove unnecessary Google Play Services logs
+
+* [TIMOB-25799](https://jira.appcelerator.org/browse/TIMOB-25799) - Android: Cannot build titanium project with JDK 1.9
+
+* [TIMOB-25875](https://jira.appcelerator.org/browse/TIMOB-25875) - Android: Babel rewrites app.js in classic project to generated ES5 code
+
+* [TIMOB-25882](https://jira.appcelerator.org/browse/TIMOB-25882) - Android: return event is received twice from Symbol TC55/TC70 scanner
+
+* [TIMOB-25887](https://jira.appcelerator.org/browse/TIMOB-25887) - Android: Ti.Geolocation - Exception when calling Ti.Geolocation.hasLocationPermissions()
+
+* [TIMOB-25903](https://jira.appcelerator.org/browse/TIMOB-25903) - Android: TableView.updateRow() not working in 7.1.0 if "run-on-main-thread" is false
+
+* [TIMOB-25913](https://jira.appcelerator.org/browse/TIMOB-25913) - Android: Build fails for android with java.time.DateTimeException with java 9.0.4 & crittercism
+
+* [TIMOB-25948](https://jira.appcelerator.org/browse/TIMOB-25948) - \[Android\] Hyperloop 3.0.4 throws an error when building for Android
+
 
 ### iOS platform
 
-*   [TIMOB-24349](https://jira.appcelerator.org/browse/TIMOB-24349) - iOS: Ti.UI.AlertDialog Not Firing Events Consistently (run-on-main-thread)
-    
-*   [TIMOB-25912](https://jira.appcelerator.org/browse/TIMOB-25912) - iOS: Ti.UI.iOS.createDocumentViewer doesn't work when using SDK-fix
-    
-*   [TIMOB-25936](https://jira.appcelerator.org/browse/TIMOB-25936) - iOS: TableView: Appending row immediately after a section appends them before the section
-    
+* [TIMOB-24349](https://jira.appcelerator.org/browse/TIMOB-24349) - iOS: Ti.UI.AlertDialog Not Firing Events Consistently (run-on-main-thread)
+
+* [TIMOB-25912](https://jira.appcelerator.org/browse/TIMOB-25912) - iOS: Ti.UI.iOS.createDocumentViewer doesn't work when using SDK-fix
+
+* [TIMOB-25936](https://jira.appcelerator.org/browse/TIMOB-25936) - iOS: TableView: Appending row immediately after a section appends them before the section
+
 
 ### Windows platform
 
-*   [TIMOB-25876](https://jira.appcelerator.org/browse/TIMOB-25876) - Windows: Support '@' character in node\_modules
-    
-*   [TIMOB-25943](https://jira.appcelerator.org/browse/TIMOB-25943) - Windows: Unable to install to device with JDK 9
-    
+* [TIMOB-25876](https://jira.appcelerator.org/browse/TIMOB-25876) - Windows: Support '@' character in node\_modules
+
+* [TIMOB-25943](https://jira.appcelerator.org/browse/TIMOB-25943) - Windows: Unable to install to device with JDK 9
+
 
 ## Improvements
 
-*   [TIMOB-25429](https://jira.appcelerator.org/browse/TIMOB-25429) - CLI: Support detection of Java 9
-    
-    *   Added JDK 9 detection
-        
-*   [TIMOB-25895](https://jira.appcelerator.org/browse/TIMOB-25895) - Windows: Rename HAL
-    
-    *   Renamed HAL.dll for WACK (Windows Apps Certification Kit)
-        
+* [TIMOB-25429](https://jira.appcelerator.org/browse/TIMOB-25429) - CLI: Support detection of Java 9
+
+  * Added JDK 9 detection
+
+* [TIMOB-25895](https://jira.appcelerator.org/browse/TIMOB-25895) - Windows: Rename HAL
+
+  * Renamed HAL.dll for WACK (Windows Apps Certification Kit)
+
 
 ## API changes
 
@@ -244,6 +244,3 @@ Titanium.UI.TabGroup.close
 event
 
 Fired when the tab group is closed. (Added support for Android.)
-
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**

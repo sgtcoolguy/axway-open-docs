@@ -1,4 +1,4 @@
-{"title":"SQL Keywords","weight":"130"} 
+{"title":"SQL Keywords","weight":"130"}
 
 Demonstrates using SQLite keywords to assign data types to SQL columns in a model configuration file.
 

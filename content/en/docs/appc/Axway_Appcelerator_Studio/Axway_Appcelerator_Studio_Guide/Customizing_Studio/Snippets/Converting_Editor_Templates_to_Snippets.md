@@ -1,17 +1,17 @@
-{"title":"Converting Editor Templates to Snippets","weight":"20"} 
+{"title":"Converting Editor Templates to Snippets","weight":"20"}
 
-*   [Overview](#Overview)
-    
-*   [Exporting Existing Editor Templates from Aptana Studio 2](#ExportingExistingEditorTemplatesfromAptanaStudio2)
-    
-*   [Editor Template Format](#EditorTemplateFormat)
-    
-*   [Converting a template entry](#Convertingatemplateentry)
-    
+* [Overview](#Overview)
+
+* [Exporting Existing Editor Templates from Aptana Studio 2](#ExportingExistingEditorTemplatesfromAptanaStudio2)
+
+* [Editor Template Format](#EditorTemplateFormat)
+
+* [Converting a template entry](#Convertingatemplateentry)
+
 
 ## Overview
 
-In Aptana Studio 2, there was an option for users to have editor templates which could be used to include multiple template tags. This functionality can be accomplished in Aptana Studio 3 through the use of snippets. This page will show how to convert existing editor templates to Aptana Studio 3.
+In Aptana Studio 2, there was an option for users to have editor templates, which could be used to include multiple template tags. This functionality can be accomplished in Aptana Studio 3 through the use of snippets. This page will show how to convert existing editor templates to Aptana Studio 3.
 
 We assume you've read through our section on [creating snippets](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Snippets/Creating_a_New_Snippet/) before and have a basic understanding of how snippets work.
 
@@ -21,22 +21,22 @@ You can also use editor templates that other users have already exported. In tha
 
 The editor templates are located under Aptana Studio 2 preferences. For example, if you would like to export your javascript templates, try the following:
 
-1.  Navigate to Preferences and go to Aptana > Editors > JavaScript > Templates.
-    
-2.  Highlight all the templates that you would like to export
-    
-3.  Click on Export...
-    
-4.  Select the destination for your exported templates
-    
+1. Navigate to Preferences and go to Aptana > Editors > JavaScript > Templates.
+
+2. Highlight all the templates that you would like to export.
+
+3. Click on Export...
+
+4. Select the destination for your exported templates.
+
 
 ![Export_Editor_Templates](/Images/appc/download/attachments/30083260/Export_Editor_Templates.png)
 
 ## Editor Template Format
 
-The editor template should be in an XML format. The top level XML node should be a <templates> node, with <template> nodes as children.
+The editor template should be in an XML format. The top-level XML node should be a <templates> node, with <template> nodes as children.
 
-Here is an example of an editor template with a single entry
+Here is an example of an editor template with a single entry:
 
 `<?xml version=``"1.0"` `encoding=``"UTF-8"``?>`
 
@@ -56,14 +56,14 @@ Here is an example of an editor template with a single entry
 
 In this section, we will reference the editor template above and convert the template entry into a snippet. From the example above, each <template> node would correspond to a snippet that will want to add to your ruble.
 
-As you may know from the [Creating a New Snippet](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Snippets/Creating_a_New_Snippet/) section, there are three key items for a snippet (trigger, expansion and scope). The relationship between the template node and the key items are as follows:
+As you may know from the [Creating a New Snippet](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Snippets/Creating_a_New_Snippet/) section, there are three key items for a snippet (trigger, expansion, and scope). The relationship between the template node and the key items are as follows:
 
-*   trigger: the 'name' attribute
-    
-*   expansion: the content inside the <template> node
-    
-*   scope: the editor scope where this snippet will be active (in this case it would be javascript)
-    
+* trigger: The 'name' attribute.
+
+* expansion: The content inside the <template> node.
+
+* scope: The editor scope where this snippet will be active (in this case, it would be javascript).
+
 
 The description attribute of "Function" also corresponds to the description of the snippet.
 

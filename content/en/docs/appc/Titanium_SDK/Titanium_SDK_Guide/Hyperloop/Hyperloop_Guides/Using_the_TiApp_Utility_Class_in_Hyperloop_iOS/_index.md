@@ -1,21 +1,21 @@
-{"title":"Using the TiApp Utility Class in Hyperloop iOS","weight":"40"} 
+{"title":"Using the TiApp Utility Class in Hyperloop iOS","weight":"40"}
 
-*   [Class Methods](#ClassMethods)
-    
-*   [Instance Methods](#InstanceMethods)
-    
-*   [Instance Properties](#InstanceProperties)
-    
-*   [Examples](#Examples)
-    
-    *   [Present a view controller](#Presentaviewcontroller)
-        
-    *   [Pass the current view controller](#Passthecurrentviewcontroller)
-        
-    *   [Get the device's push notifications UUID](#Getthedevice'spushnotificationsUUID)
-        
-    *   [Subscribe to the UIApplicationDelegate](#SubscribetotheUIApplicationDelegate)
-        
+* [Class Methods](#ClassMethods)
+
+* [Instance Methods](#InstanceMethods)
+
+* [Instance Properties](#InstanceProperties)
+
+* [Examples](#Examples)
+
+  * [Present a view controller](#Presentaviewcontroller)
+
+  * [Pass the current view controller](#Passthecurrentviewcontroller)
+
+  * [Get the device's push notifications UUID](#Getthedevice'spushnotificationsUUID)
+
+  * [Subscribe to the UIApplicationDelegate](#SubscribetotheUIApplicationDelegate)
+
 
 This document describes technologies available in Hyperloop 3.1.0+ and Titanium 7.3.0+.
 

@@ -1,25 +1,25 @@
-{"title":"Animation","weight":"60"} 
+{"title":"Animation","weight":"60"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [Basic animations](#Basicanimations)
-        
-    *   [Matrix animations](#Matrixanimations)
-        
-    *   [2D matrix animations](#2Dmatrixanimations)
-        
-    *   [3D matrix animations](#3Dmatrixanimations)
-        
-    *   [Transitions](#Transitions)
-        
-    *   [Dynamic animations](#Dynamicanimations)
-        
-    *   [References](#References)
-        
-*   [Summary](#Summary)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [Basic animations](#Basicanimations)
+
+  * [Matrix animations](#Matrixanimations)
+
+  * [2D matrix animations](#2Dmatrixanimations)
+
+  * [3D matrix animations](#3Dmatrixanimations)
+
+  * [Transitions](#Transitions)
+
+  * [Dynamic animations](#Dynamicanimations)
+
+  * [References](#References)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -191,14 +191,14 @@ Dynamic animations are physics-related animations and with them, you set up an A
 
 ### References
 
-*   [2D Transformations](http://www.willamette.edu/~gorr/classes/GeneralGraphics/Transforms/transforms2d.htm) from Willamette college course
-    
-*   [Layer Geometry and Transforms](http://developer.apple.com/library/ios/#DOCUMENTATION/Cocoa/Conceptual/CoreAnimation_guide/Articles/Layers.html) from developer.apple.com
-    
-*   [Using Works of Visual Art to Teach MatrixTransformations](http://works.bepress.com/cgi/viewcontent.cgi?article=1008&context=bruce_kessler) from Western Kentucky University (lots of math!)
-    
-*   [Rotation Matrices](http://www.euclideanspace.com/maths/algebra/matrix/orthogonal/rotation/index.htm)
-    
+* [2D Transformations](http://www.willamette.edu/~gorr/classes/GeneralGraphics/Transforms/transforms2d.htm) from Willamette college course
+
+* [Layer Geometry and Transforms](http://developer.apple.com/library/ios/#DOCUMENTATION/Cocoa/Conceptual/CoreAnimation_guide/Articles/Layers.html) from developer.apple.com
+
+* [Using Works of Visual Art to Teach MatrixTransformations](http://works.bepress.com/cgi/viewcontent.cgi?article=1008&context=bruce_kessler) from Western Kentucky University (lots of math!)
+
+* [Rotation Matrices](http://www.euclideanspace.com/maths/algebra/matrix/orthogonal/rotation/index.htm)
+
 
 ## Summary
 

@@ -1,37 +1,37 @@
-{"title":"Installing the Android SDK","weight":"10"} 
+{"title":"Installing the Android SDK","weight":"10"}
 
-*   [Overview](#Overview)
-    
-*   [Compatibility and Download](#CompatibilityandDownload)
-    
-    *   [Required Android Packages](#RequiredAndroidPackages)
-        
-    *   [Android SDK / Target Android platform](#AndroidSDK/TargetAndroidplatform)
-        
-        *   [Supported versions](#Supportedversions)
-            
-        *   [Unsupported versions](#Unsupportedversions)
-            
-    *   [Android Native Add-on Module Development on macOS](#AndroidNativeAdd-onModuleDevelopmentonmacOS)
-        
-*   [Installation](#Installation)
-    
-    *   [macOS](#macOS)
-        
-        *   [Installing Android SDK Tools on macOS](#InstallingAndroidSDKToolsonmacOS)
-            
-    *   [Windows](#Windows)
-        
-        *   [Installing Android SDK Tools on Windows](#InstallingAndroidSDKToolsonWindows)
-            
-*   [Installing Android Packages with Android SDK Manager](#InstallingAndroidPackageswithAndroidSDKManager)
-    
-    *   [Installing x86 Emulator Packages](#Installingx86EmulatorPackages)
-        
-*   [Configuring Studio](#ConfiguringStudio)
-    
-*   [Configuring the CLI](#ConfiguringtheCLI)
-    
+* [Overview](#Overview)
+
+* [Compatibility and Download](#CompatibilityandDownload)
+
+  * [Required Android Packages](#RequiredAndroidPackages)
+
+  * [Android SDK / Target Android platform](#AndroidSDK/TargetAndroidplatform)
+
+    * [Supported versions](#Supportedversions)
+
+    * [Unsupported versions](#Unsupportedversions)
+
+  * [Android Native Add-on Module Development on macOS](#AndroidNativeAdd-onModuleDevelopmentonmacOS)
+
+* [Installation](#Installation)
+
+  * [macOS](#macOS)
+
+    * [Installing Android SDK Tools on macOS](#InstallingAndroidSDKToolsonmacOS)
+
+  * [Windows](#Windows)
+
+    * [Installing Android SDK Tools on Windows](#InstallingAndroidSDKToolsonWindows)
+
+* [Installing Android Packages with Android SDK Manager](#InstallingAndroidPackageswithAndroidSDKManager)
+
+  * [Installing x86 Emulator Packages](#Installingx86EmulatorPackages)
+
+* [Configuring Appcelerator Studio](#ConfiguringAppceleratorStudio)
+
+* [Configuring the CLI](#ConfiguringtheCLI)
+
 
 ## Overview
 
@@ -41,7 +41,7 @@ This guide describes where to obtain and how to install the Google Android SDK a
 
 Titanium requires the Android SDK Tools to be installed in order to allow you to develop Android applications.
 
-Remember that Oracle JDK is a prerequisite for Android development and should be installed first. Note that macOS systems need to have the Java 6 runtime installed. See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for instructions.
+Remember that Oracle JDK is a prerequisite for Android development and should be installed first. You need at least JDK 8 installed. See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for instructions.
 
 ![download_02](/Images/appc/download/attachments/52297851/download_02.png)
 
@@ -49,7 +49,9 @@ The _Android SDK Manager_ installer may be obtained from the [Android Studio and
 
 ### Required Android Packages
 
-The following packages, and the respective versions shown, must be installed to be able to develop for Android:
+As of Titanium 9.0.0, the build system will automatically download the Android SDK platforms and tools needed.
+
+For Titanium 8.x.x, you need to installed the following packages via the Android SDK Manager yourself:
 
 Package
 
@@ -57,19 +59,17 @@ Minimum Version
 
 Android SDK Tools
 
-Rev 25
+Rev 28
 
-Android SDK Platform-tools/Build-tools
+Android SDK Build-tools
 
 Rev 23
 
-Android SDK
+Android SDK Platform (API Level)
 
-You need to have at least one Android SDK installed within the supported minimum and maximum target versions.
+API Level 29 for Titanium 8.3.x
 
-For Android modules, you need to install Android SDK 6.0.x (API 23) and SDK 6.0.0+.
-
-Titanium SDK 8.0.0+ requires Android SDK Tools v28 or newer as a minimum requirement.
+API Level 28 for Titanium version older than 8.3.0
 
 Titanium SDK 7.0.0+ requires Android SDK Tools v25 or newer as a minimum requirement.
 
@@ -85,16 +85,24 @@ Each Titanium SDK supports building against a specific range of Android versions
 
 Titanium SDK Version
 
-Min Target Android/SDK Version  
+Min Target Android/SDK Version
 (android:targetSdkVersion)
 
-Max Target Android/SDK Version  
+Max Target Android/SDK Version
 (android:targetSdkVersion)
 
-Minimum Android/SDK Version  
+Minimum Android/SDK Version
 (android:minSdkVersion)
 
-8.0.0 - latest
+8.3.0 - latest
+
+6.0.x (API 23)
+
+10.0.x (API 29)
+
+4.4.x (API 19)
+
+8.0.0 - 8.2.2
 
 6.0.x (API 23)
 
@@ -130,13 +138,13 @@ Minimum Android/SDK Version
 
 Titanium SDK Version
 
-Min Target Android/SDK Version  
+Min Target Android/SDK Version
 (android:targetSdkVersion)
 
-Max Target Android/SDK Version  
+Max Target Android/SDK Version
 (android:targetSdkVersion)
 
-Minimum Android/SDK Version  
+Minimum Android/SDK Version
 (android:minSdkVersion)
 
 6.2.0 - 6.3.0
@@ -271,8 +279,6 @@ Android SDK packages can be installed using the **Android SDK Manager** tool. Se
 
 The default Android SDK can be configured using Studio's _Preferences_, and then selected per-project using the _Run Configurations_.
 
-For Android API levels 14 and above, the emulator system images are installed separately from the SDK platform packages. To run in the emulator for Android API 14+, you must install at least one of the emulator system images.
-
 ### Android Native Add-on Module Development on macOS
 
 The Xcode command line tools are required to develop native Android add-on modules on macOS.
@@ -287,12 +293,12 @@ Note that the typical filesystem location of this software can be found in the [
 
 #### Installing Android SDK Tools on macOS
 
-1.  Point a browser towards [Android Studio and SDK tools](https://developer.android.com/studio?pkg=studio).
-    
-2.  Click **Download Android Studio**.
-    
-3.  Once the .dmg file has downloaded, the **Android Studio installer** should pop up. **Drag the Android Studio icon** to the **Applications folder**.
-    
+1. Point a browser towards [Android Studio and SDK tools](https://developer.android.com/studio?pkg=studio).
+
+2. Click **Download Android Studio**.
+
+3. Once the .dmg file has downloaded, the **Android Studio installer** should pop up. **Drag the Android Studio icon** to the **Applications folder**.
+
 
 ### Windows
 
@@ -300,28 +306,28 @@ Note that the typical filesystem location of this software can be found in the [
 
 #### Installing Android SDK Tools on Windows
 
-1.  Point a browser towards [Android Studio and SDK tools](https://developer.android.com/studio?pkg=studio).
-    
-2.  Click **Download Android Studio**.
-    
-3.  Once the .exe file has downloaded, **double-click** **on the executable file** to start the install process.
-    
-4.  Click the **Next >** button in the Android Studio Setup window.
-    
-5.  **Select the components** you wish to install. By default, you should install both **Android Studio** and **Android Virtual Device**. Click the **Next >** button.
-    
-6.  Choose the install location and click **Next >** button.
-    
-7.  Click the **Install** button.
-    
-8.  Once installation is complete, click **Next >** button.
-    
-9.  Click the **Finish** button.
-    
-10.  Launch Android Studio so it can download any necessary components for your version of Windows.
-    
-11.  Click the **Finish** button once Android Studio has finished downloading components.
-    
+1. Point a browser towards [Android Studio and SDK tools](https://developer.android.com/studio?pkg=studio).
+
+2. Click **Download Android Studio**.
+
+3. Once the .exe file has downloaded, **double-click** **on the executable file** to start the install process.
+
+4. Click the **Next >** button in the Android Studio Setup window.
+
+5. **Select the components** you wish to install. By default, you should install both **Android Studio** and **Android Virtual Device**. Click the **Next >** button.
+
+6. Choose the install location and click **Next >** button.
+
+7. Click the **Install** button.
+
+8. Once installation is complete, click **Next >** button.
+
+9. Click the **Finish** button.
+
+10. Launch Android Studio so it can download any necessary components for your version of Windows.
+
+11. Click the **Finish** button once Android Studio has finished downloading components.
+
 
 Refer to the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/) section, and add the path of the **Android SDK Tools** directory to your system's PATH.
 
@@ -333,76 +339,76 @@ The _Android SDK Tools_ package that has been installed contains the _Android SD
 
 Launching the _Android SDK Manager_ differs depending on the platform.
 
-*   On macOS, go to Launchpad and click on Android Studio
-    
-*   On Windows, double-click on the Android Studio icon. Note: You may get prompted to run as an administrator. If so, from the Windows Start Menu and select _Run as administrator_. Enter the Administrator password.
-    
+* On macOS, go to Launchpad and click on Android Studio
+
+* On Windows, double-click on the Android Studio icon. Note: You may get prompted to run as an administrator. If so, from the Windows Start Menu and select _Run as administrator_. Enter the Administrator password.
+
 
 In the Android SDK Manager, you will see different versions of the following items listed:
 
-*   **Android SDK Tools** (mandatory) - includes the _Android SDK Manager_ and _Android Virtual Device Manager_ (android executable)
-    
-*   **Android SDK Platform Tools** (mandatory) - includes Android Debug Bridge, (adb executable)
-    
-*   **SDK Platform** - provides the libraries for building for a specific version of the Android OS that uses the standard Google APIs.
-    
-*   **Google APIs by Google Inc** - provides the libraries for building for a specific version of Android that uses the _enhanced_ Google APIs (includes maps support).
-    
-*   **System Image** - For Android API versions 14 and above, the emulator system images are packaged separately from the SDK Platform package. Three versions of the system images are provided – ARM, Intel x86, and MIPS. The ARM system image is supplied by default in earlier SDK Platform packages, and corresponds to the hardware in most phones.
-    
+* **Android SDK Tools** (mandatory) - includes the _Android SDK Manager_ and _Android Virtual Device Manager_ (android executable)
+
+* **Android SDK Platform Tools** (mandatory) - includes Android Debug Bridge, (adb executable)
+
+* **SDK Platform** - provides the libraries for building for a specific version of the Android OS that uses the standard Google APIs.
+
+* **Google APIs by Google Inc** - provides the libraries for building for a specific version of Android that uses the _enhanced_ Google APIs (includes maps support).
+
+* **System Image** - For Android API versions 14 and above, the emulator system images are packaged separately from the SDK Platform package. Three versions of the system images are provided – ARM, Intel x86, and MIPS. The ARM system image is supplied by default in earlier SDK Platform packages, and corresponds to the hardware in most phones.
+
 
 To install Android SDK on macOS:
 
-1.  Open **Android Studio**.
-    
-2.  Go to **Tools** > **SDK Manager**.
-    
-3.  Under **Appearance & Behavior** > **System Settings** > **Android SDK**, you will see a list of SDK Platforms to choose from. **Select the SDK(s)** you wish to use and click **OK** button.
-    
-4.  Android Studio will confirm your selection. Click **OK** button.
-    
-5.  Once the requested components have been installed, click **Finish** button.
-    
+1. Open **Android Studio**.
+
+2. Go to **Tools** > **SDK Manager**.
+
+3. Under **Appearance & Behavior** > **System Settings** > **Android SDK**, you will see a list of SDK Platforms to choose from. **Select the SDK(s)** you wish to use and click **OK** button.
+
+4. Android Studio will confirm your selection. Click **OK** button.
+
+5. Once the requested components have been installed, click **Finish** button.
+
 
 To install Android SDK on Windows:
 
-1.  Open **Android Studio**.
-    
-2.  In the Welcome to Android Studio window, click on **Configure** > **SDK Manager**.
-    
-3.  Under **Appearance & Behavior** > **System Settings** > **Android SDK**, you will see a list of SDK Platforms to choose from. **Select the SDK(s)** you wish to use and click **OK** button.
-    
-4.  Android Studio will confirm your selection. Click **OK** button.
-    
-5.  Click the **Accept** radio button and click the **Next** button.
-    
-6.  Once the requested components have been installed, click **Finish** button.
-    
+1. Open **Android Studio**.
+
+2. In the Welcome to Android Studio window, click on **Configure** > **SDK Manager**.
+
+3. Under **Appearance & Behavior** > **System Settings** > **Android SDK**, you will see a list of SDK Platforms to choose from. **Select the SDK(s)** you wish to use and click **OK** button.
+
+4. Android Studio will confirm your selection. Click **OK** button.
+
+5. Click the **Accept** radio button and click the **Next** button.
+
+6. Once the requested components have been installed, click **Finish** button.
+
 
 The following steps are the normal process to install an Android SDK with Axway Appcelerator Studio (Appc Studio) but due to the bug noted in [TISTUD-9035](https://jira.appcelerator.org/browse/TISTUD-9035), Studio cannot install Android SDKs at this time.
 
 In Appc Studio, confirm that your Android SDK(s) have been installed:
 
-1.  Launch **Axway Appcelerator Studio**.
-    
-2.  **Login** using your credentials (if you haven't already).
-    
-3.  Go to **Axway Appcelerator Studio** > **Preferences** in the menu bar.
-    
-4.  In the Preferences window, go to **Studio** > **Platforms** > **Android**.
-    
-5.  Click the **Install SDKs...** button in the **General** section.
-    
-6.  Select the **Android SDK(s)** you wish to use.
-    
-7.  Click the **Install** button.
-    
-8.  Click the **Accept** button for the **Review License** window.
-    
-9.  In the **Progress** tab, you should see the status of the Android SDK(s) being downloaded and installed.
-    
-10.  Review the installed SDKs in the General section of the Preferences window. You should now see the newly installed Android SDK(s).
-    
+1. Launch **Axway Appcelerator Studio**.
+
+2. **Login** using your credentials (if you haven't already).
+
+3. Go to **Axway Appcelerator Studio** > **Preferences** in the menu bar.
+
+4. In the Preferences window, go to **Studio** > **Platforms** > **Android**.
+
+5. Click the **Install SDKs...** button in the **General** section.
+
+6. Select the **Android SDK(s)** you wish to use.
+
+7. Click the **Install** button.
+
+8. Click the **Accept** button for the **Review License** window.
+
+9. In the **Progress** tab, you should see the status of the Android SDK(s) being downloaded and installed.
+
+10. Review the installed SDKs in the General section of the Preferences window. You should now see the newly installed Android SDK(s).
+
 
 Even though Appc Studio not display newly installed Android SDK(s), they are installed and available for use. You can confirm this by creating a new AVD (Android Virtual Device) and see the options to use the newly installed Android SDK(s).
 
@@ -410,64 +416,64 @@ There are two ways to create an AVD to use in Appc Studio: Create the AVD in App
 
 To create an AVD via Appc Studio:
 
-1.  Open **Appc Studio**.
-    
-2.  In the menu, go to **Axway Appcelerator Studio** > **Preferences**.
-    
-3.  In the Preferences window, go to **Studio** > **Platforms** > **Android**.
-    
-4.  In the Android Preferences section, click on the **Create AVDs...** button.
-    
-5.  Give the AVD a name in the **AVD Name** field using a-z A-Z 0-9 .\_- characters only (no spaces or other special characters).
-    
-6.  Select the desired device in the **Device** field.
-    
-7.  Select the **Android SDK** from the **System Image** field.
-    
-8.  After making your selections, click **OK** button to build the AVD.
-    
+1. Open **Appc Studio**.
+
+2. In the menu, go to **Axway Appcelerator Studio** > **Preferences**.
+
+3. In the Preferences window, go to **Studio** > **Platforms** > **Android**.
+
+4. In the Android Preferences section, click on the **Create AVDs...** button.
+
+5. Give the AVD a name in the **AVD Name** field using a-z A-Z 0-9 .\_- characters only (no spaces or other special characters).
+
+6. Select the desired device in the **Device** field.
+
+7. Select the **Android SDK** from the **System Image** field.
+
+8. After making your selections, click **OK** button to build the AVD.
+
 
 To create an AVD via Android Studio:
 
-1.  Open **Android Studio**.
-    
-2.  In the menu, go to **Tools** > **AVD Manager**.
-    
-3.  Click the **Create Virtual Device...** button.
-    
-4.  Select the **category** of virtual device you want to use.
-    
-5.  Select the **device** and click the **Next** button.
-    
-6.  Select the **System Image** you want to use in the virtual device and click the **Next** button.
-    
-7.  Android Studio will provide a name for you automatically based on the virtual device and system image you selected. Confirm you selections and click the **Finish** button.
-    
+1. Open **Android Studio**.
+
+2. In the menu, go to **Tools** > **AVD Manager**.
+
+3. Click the **Create Virtual Device...** button.
+
+4. Select the **category** of virtual device you want to use.
+
+5. Select the **device** and click the **Next** button.
+
+6. Select the **System Image** you want to use in the virtual device and click the **Next** button.
+
+7. Android Studio will provide a name for you automatically based on the virtual device and system image you selected. Confirm you selections and click the **Finish** button.
+
 
 Refer to the [Titanium Compatibility Matrix](https://wiki.appcelerator.org/display/DB/Titanium+Compatibility+Matrix#TitaniumCompatibilityMatrix-AndroidSDK/TargetAndroidPlatform) for the latest list of required packages.
 
 ### Installing x86 Emulator Packages
 
-Some versions of the Android API are available with Intel x86 emulators. Look for the "Intel x86 Atom System Image" in the _Android SDK Manager_.
+In the Android SDK Manager, under the SDK Platforms tab, you can find "Intel x86 Atom" and "Intel x86 Atom\_64" system images. These are 32-bit and 64-bit emulator images of that platform's API Level and will run faster in the emulator compared to the ARM emulator images.
 
-The x86 emulator may run faster than the standard ARM emulator, but may show minor differences with the ARM emulator. Extra software is required to take advantage of the x86 emulator – see [Configuring Virtual Machine Acceleration](http://developer.android.com/tools/devices/emulator.html#accel-vm) in the Android Tools documentation.
+Extra software may be required to take advantage of the x86 emulator – see [Configuring Virtual Machine Acceleration](http://developer.android.com/tools/devices/emulator.html#accel-vm) in the Android Tools documentation.
 
-## Configuring Studio
+## Configuring Appcelerator Studio
 
-To use the Android SDK with Studio, the path to the SDK must be set in the **Preferences** dialog.
+To use the Android SDK with Appcelerator Studio, the path to the SDK must be set in the **Preferences** dialog.
 
-1.  Open the Preferences dialog:
-    
-    1.  On macOS, from the menu bar, select **Appcelerator Studio** > **Preferences**.
-        
-    2.  On Windows, from the menu bar, select **Window > Preferences**.
-        
-2.  In the **Preferences** dialog, navigate to **Studio > Platforms > Android SDK**.
-    
-3.  Set your Android SDK path. Enter the path to your Android SDK in the **Android SDK Home** textbox or click the **Configure** button to navigate to the SDK directory.
-    
-4.  Select your default Android SDK. Select a **Google APIs** item from the **Default Android SDK** drop-down menu.
-    
+1. Open the Preferences dialog:
+
+  1. On macOS, from the menu bar, select **Appcelerator Studio** > **Preferences**.
+
+  2. On Windows, from the menu bar, select **Window > Preferences**.
+
+2. In the **Preferences** dialog, navigate to **Studio > Platforms > Android SDK**.
+
+3. Set your Android SDK path. Enter the path to your Android SDK in the **Android SDK Home** textbox or click the **Configure** button to navigate to the SDK directory.
+
+4. Select your default Android SDK. Select a **Google APIs** item from the **Default Android SDK** drop-down menu.
+
 
 ## Configuring the CLI
 

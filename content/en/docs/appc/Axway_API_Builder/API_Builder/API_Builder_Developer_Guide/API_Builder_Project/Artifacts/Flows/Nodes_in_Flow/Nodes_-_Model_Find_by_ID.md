@@ -1,4 +1,4 @@
-{"title":"Nodes - Model Find by ID","weight":"100"} 
+{"title":"Nodes - Model Find by ID","weight":"100"}
 
 API Builder 3.x is deprecated
 

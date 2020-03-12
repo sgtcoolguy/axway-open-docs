@@ -1,13 +1,13 @@
-{"title":"Titanium SDK 5.3.1.RC - 14 June 2016","weight":"90"} 
+{"title":"Titanium SDK 5.3.1.RC - 14 June 2016","weight":"90"}
 
 ## Contents
 
-*   [About This Release](#AboutThisRelease)
-    
-*   [Fixed Issues](#FixedIssues)
-    
-*   [API Changes](#APIChanges)
-    
+* [About This Release](#AboutThisRelease)
+
+* [Fixed Issues](#FixedIssues)
+
+* [API Changes](#APIChanges)
+
 
 ## About This Release
 
@@ -17,14 +17,14 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 ## Fixed Issues
 
-*   [API-1272](https://jira.appcelerator.org/browse/API-1272) - Trying to display/read Swagger.json throws an Internal Server Error
-    
-*   [API-1280](https://jira.appcelerator.org/browse/API-1280) - Swagger.json is exposing invalid schema.required array for path parameters
-    
-*   [CLI-989](https://jira.appcelerator.org/browse/CLI-989) - CLI not responding on self signed certificate
-    
-*   [TIMOB-23480](https://jira.appcelerator.org/browse/TIMOB-23480) - CLI: Can't launch any app (Android, Mobileweb) on Windows 10 OS
-    
+* [API-1272](https://jira.appcelerator.org/browse/API-1272) - Trying to display/read Swagger.json throws an Internal Server Error
+
+* [API-1280](https://jira.appcelerator.org/browse/API-1280) - Swagger.json is exposing invalid schema.required array for path parameters
+
+* [CLI-989](https://jira.appcelerator.org/browse/CLI-989) - CLI not responding on self signed certificate
+
+* [TIMOB-23480](https://jira.appcelerator.org/browse/TIMOB-23480) - CLI: Can't launch any app (Android, Mobileweb) on Windows 10 OS
+
 
 ## API Changes
 

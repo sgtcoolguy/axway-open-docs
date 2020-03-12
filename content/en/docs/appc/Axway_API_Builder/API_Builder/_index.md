@@ -1,4 +1,4 @@
-{"title":"API Builder","weight":"10"} 
+{"title":"API Builder","weight":"10"}
 
 API Builder 3.x is deprecated
 
@@ -6,22 +6,22 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-*   [Overview](#Overview)
-    
-    *   [Connectors](#Connectors)
-        
-    *   [Models](#Models)
-        
-    *   [APIs](#APIs)
-        
-    *   [Blocks](#Blocks)
-        
-    *   [Webs](#Webs)
-        
-    *   [Flows](#Flows)
-        
-*   [Topics](#Topics)
-    
+* [Overview](#Overview)
+
+  * [Connectors](#Connectors)
+
+  * [Models](#Models)
+
+  * [APIs](#APIs)
+
+  * [Blocks](#Blocks)
+
+  * [Webs](#Webs)
+
+  * [Flows](#Flows)
+
+* [Topics](#Topics)
+
 
 With the release of version 1.10.0, **Arrow Builder** will now be known as **API Builder**. The following pages reference many concepts and original features from Arrow Builder but there also several new features and workflows that are uniquely part of API Builder.
 
@@ -59,12 +59,12 @@ To get started, see the [API Builder Getting Started Guide](/docs/appc/Axway_API
 
 ## Topics
 
-*   [API Builder Getting Started Guide](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Getting_Started_Guide/)
-    
-*   [API Builder Developer Guide](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/)
-    
-*   [API Builder How-tos](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_How-tos/)
-    
-*   [API Builder Release Notes](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Release_Notes/)
-    
-*   [API Builder FAQ](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_FAQ/)
+* [API Builder Getting Started Guide](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Getting_Started_Guide/)
+
+* [API Builder Developer Guide](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/)
+
+* [API Builder How-tos](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_How-tos/)
+
+* [API Builder Release Notes](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Release_Notes/)
+
+* [API Builder FAQ](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_FAQ/)

@@ -1,4 +1,4 @@
-{"title":"Master-Detail","weight":"110"} 
+{"title":"Master-Detail","weight":"110"}
 
 Demonstrates how to create a master-detail application that presents a list of items from which the user can select to view details about that item.
 
@@ -162,6 +162,6 @@ The row.js view-controller reads the values of the arguments passed to it by the
 
 ## See also
 
-*   [NavigationWindow](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iOS.NavigationWindow)
-    
-*   [SplitWindow](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iPad.SplitWindo)
+* [NavigationWindow](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iOS.NavigationWindow)
+
+* [SplitWindow](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iPad.SplitWindo)

@@ -1,4 +1,4 @@
-{"title":"ScriptDoc tag quick reference","weight":"30"} 
+{"title":"ScriptDoc tag quick reference","weight":"30"}
 
 This page provides an at-a-glance reference for the tags for the Studio ScriptDoc system. For comprehensive ScriptDoc tag information, including syntax and examples, see the [ScriptDoc (SDOC) 2.0 Specification](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/ScriptDoc_(SDOC)_2.0_Specification/) page.
 
@@ -42,7 +42,7 @@ Description of the class (if applicable).
 
 ![error](/Images/appc/download/attachments/30083087/error.png)
 
-Signifies that a function is a constructor for a class.
+It signifies that a function is a constructor for a class.
 
 [@deprecated](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/ScriptDoc_(SDOC)_2.0_Specification/#deprecated)
 
@@ -50,7 +50,7 @@ Signifies that a function is a constructor for a class.
 
 ![error](/Images/appc/download/attachments/30083087/error.png)
 
-Signifies that a function or a property has been deprecated.
+It signifies that a function or a property has been deprecated.
 
 [@example](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/ScriptDoc_(SDOC)_2.0_Specification/#example)
 
@@ -58,7 +58,7 @@ Signifies that a function or a property has been deprecated.
 
 ![check](/Images/appc/download/attachments/30083087/check.png)
 
-Gives an example for the function being documented.
+Gives an example of the function being documented.
 
 [@exception](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/ScriptDoc_(SDOC)_2.0_Specification/#exception)
 
@@ -98,7 +98,7 @@ Specifies that a function or property should not be made visible by Content Assi
 
 ![error](/Images/appc/download/attachments/30083087/error.png)
 
-Signifies that a function is a member of the specified class.
+It signifies that a function is a member of the specified class.
 
 [@method](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/ScriptDoc_(SDOC)_2.0_Specification/#method)
 
@@ -106,7 +106,7 @@ Signifies that a function is a member of the specified class.
 
 ![error](/Images/appc/download/attachments/30083087/error.png)
 
-Signifies that a function is a method of a class, if applicable.
+It signifies that a function is a method of a class, if applicable.
 
 [@namespace](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/ScriptDoc_(SDOC)_2.0_Specification/#namespace)
 
@@ -138,7 +138,7 @@ Use @param to tag each parameter for a function.
 
 ![error](/Images/appc/download/attachments/30083087/error.png)
 
-Signifies that a class or a function is private.
+It signifies that a class or function is private.
 
 [@projectDescription](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/ScriptDoc_(SDOC)_2.0_Specification/#projectDescription)
 
@@ -206,10 +206,10 @@ Specifies the version number of the JavaScript file or class.
 
 ## Related Topics
 
-*   [About Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/About_Content_Assist/)
-    
-*   [Displaying Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/Displaying_Content_Assist/)
-    
-*   [Documenting Your Code Using ScriptDoc](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Documenting_Code/Documenting_Your_Code_Using_ScriptDoc/)
-    
-*   [ScriptDoc (SDOC) 2.0 Specification](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/ScriptDoc_(SDOC)_2.0_Specification/)
+* [About Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/About_Content_Assist/)
+
+* [Displaying Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/Displaying_Content_Assist/)
+
+* [Documenting Your Code Using ScriptDoc](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Documenting_Code/Documenting_Your_Code_Using_ScriptDoc/)
+
+* [ScriptDoc (SDOC) 2.0 Specification](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/ScriptDoc_(SDOC)_2.0_Specification/)

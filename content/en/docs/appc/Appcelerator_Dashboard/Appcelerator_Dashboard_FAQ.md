@@ -1,27 +1,27 @@
-{"title":"Appcelerator Dashboard FAQ","weight":"40"} 
+{"title":"Appcelerator Dashboard FAQ","weight":"40"}
 
 This document provides questions and answers to commonly asked questions about Appcelerator Dashboard.
 
-*   [Creating custom Mobile Backend Services (MBS) objects](#CreatingcustomMobileBackendServices(MBS)objects)
-    
-*   [Creating API keys](#CreatingAPIkeys)
-    
-*   [Authorizing a browser or device](#Authorizingabrowserordevice)
-    
-*   [Key metrics](#Keymetrics)
-    
-*   [Custom date range](#Customdaterange)
-    
-*   [Exporting data](#Exportingdata)
-    
-*   [Managing datasource](#Managingdatasource)
-    
-*   [Common sending and scheduling push errors](#Commonsendingandschedulingpusherrors)
-    
-*   [Configuring cloud services](#Configuringcloudservices)
-    
-*   [Viewing custom cloud services](#Viewingcustomcloudservices)
-    
+* [Creating custom Mobile Backend Services (MBS) objects](#CreatingcustomMobileBackendServices(MBS)objects)
+
+* [Creating API keys](#CreatingAPIkeys)
+
+* [Authorizing a browser or device](#Authorizingabrowserordevice)
+
+* [Key metrics](#Keymetrics)
+
+* [Custom date range](#Customdaterange)
+
+* [Exporting data](#Exportingdata)
+
+* [Managing datasource](#Managingdatasource)
+
+* [Common sending and scheduling push errors](#Commonsendingandschedulingpusherrors)
+
+* [Configuring cloud services](#Configuringcloudservices)
+
+* [Viewing custom cloud services](#Viewingcustomcloudservices)
+
 
 ## Creating custom Mobile Backend Services (MBS) objects
 

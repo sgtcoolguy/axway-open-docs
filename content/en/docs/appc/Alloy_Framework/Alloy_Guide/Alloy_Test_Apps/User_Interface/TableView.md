@@ -1,4 +1,4 @@
-{"title":"TableView","weight":"200"} 
+{"title":"TableView","weight":"200"}
 
 Demonstrates basic use of TableView control.
 
@@ -116,6 +116,6 @@ app/views/index.xml
 
 ## See also
 
-*   [Titanium.UI.TableView](#!/api/Titanium.UI.TableView) API reference
-    
-*   [TableView Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Alloy_Test_Models/TableView_Binding/) sample application
+* [Titanium.UI.TableView](#!/api/Titanium.UI.TableView) API reference
+
+* [TableView Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Alloy_Test_Models/TableView_Binding/) sample application

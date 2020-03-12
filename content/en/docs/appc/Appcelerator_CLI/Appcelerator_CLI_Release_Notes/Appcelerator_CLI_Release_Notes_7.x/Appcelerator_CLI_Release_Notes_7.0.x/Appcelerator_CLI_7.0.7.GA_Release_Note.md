@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 7.0.7.GA - 31 October 2018","weight":"110"} 
+{"title":"Appcelerator CLI 7.0.7.GA - 31 October 2018","weight":"110"}
 
 Appcelerator CLI 7.0.7.GA is a patch release that includes an internal bug fix.
 

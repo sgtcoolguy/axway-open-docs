@@ -1,4 +1,4 @@
-{"title":"Nodes - Model Update","weight":"120"} 
+{"title":"Nodes - Model Update","weight":"120"}
 
 API Builder 3.x is deprecated
 

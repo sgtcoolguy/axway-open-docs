@@ -1,23 +1,23 @@
-{"title":"Browser","weight":"10"} 
+{"title":"Browser","weight":"10"}
 
-*   [Requirements](#Requirements)
-    
-*   [Invocation](#Invocation)
-    
-*   [Open a page internally](#Openapageinternally)
-    
-*   [Open a page externally](#Openapageexternally)
-    
-*   [Configure Browsers](#ConfigureBrowsers)
-    
-*   [Get the currently configured browsers](#Getthecurrentlyconfiguredbrowsers)
-    
-*   [Example](#Example)
-    
+* [Requirements](#Requirements)
+
+* [Invocation](#Invocation)
+
+* [Open a page internally](#Openapageinternally)
+
+* [Open a page externally](#Openapageexternally)
+
+* [Configure Browsers](#ConfigureBrowsers)
+
+* [Get the currently configured browsers](#Getthecurrentlyconfiguredbrowsers)
+
+* [Example](#Example)
+
 
 ## Requirements
 
-The examples in this page use the _**Prototype**_ library, which is included by default inside a portal. However, the same concepts may be applied using other implementations.
+The examples on this page use the _**Prototype**_ library, which is included by default inside a portal. However, the same concepts may be applied using other implementations.
 
 ## Invocation
 
@@ -53,8 +53,10 @@ When a page needs to be opened externally in the OS default browser, use this Ja
 
 ## Configure Browsers
 
-Configure the Studio's browsers by detecting the installed browsers and adding them to the Eclipse Browsers preference page.  
-The call returns a Map for the newly added browsers. The map contains mapping from a browser location to a browser name.  
+Configure the Studio's browsers by detecting the installed browsers and adding them to the Eclipse Browsers preference page.
+
+The call returns a Map for the newly added browsers. The map contains the mapping from a browser location to a browser name.
+
 In case no browser was added, an empty map is returned.
 
 `var addedBrowsers = dispatch($H({`
@@ -67,9 +69,11 @@ In case no browser was added, an empty map is returned.
 
 ## Get the currently configured browsers
 
-Returns the currently configured browsers in the Eclipse Browsers preference page.  
-The call returns a Map for the detected browsers. The map contains mapping from a browser location to a browser name.  
-"null" location in the result indicate the Eclipse default browser.
+Returns the currently configured browsers in the Eclipse Browsers preference page.
+
+The call returns a Map for the detected browsers. The map contains the mapping from a browser location to a browser name.
+
+"null" location in the result indicates the Eclipse default browser.
 
 `var browsers = dispatch($H({`
 

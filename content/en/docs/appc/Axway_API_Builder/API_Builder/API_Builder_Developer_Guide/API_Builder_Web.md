@@ -1,4 +1,4 @@
-{"title":"API Builder Web","weight":"90"} 
+{"title":"API Builder Web","weight":"90"}
 
 API Builder 3.x is deprecated
 
@@ -6,37 +6,37 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-*   [Introduction](#Introduction)
-    
-*   [Route definition](#Routedefinition)
-    
-*   [Renderer engines](#Rendererengines)
-    
-    *   [Pre-built renderer engines](#Pre-builtrendererengines)
-        
-    *   [Custom renderer engines](#Customrendererengines)
-        
-    *   [Handlebars partials and helpers](#Handlebarspartialsandhelpers)
-        
-        *   [Helpers](#Helpers)
-            
-        *   [Partials](#Partials)
-            
-*   [API Builder APIs from API Builder Web](#APIBuilderAPIsfromAPIBuilderWeb)
-    
-*   [Interacting with models](#Interactingwithmodels)
-    
+* [Introduction](#Introduction)
+
+* [Route definition](#Routedefinition)
+
+* [Renderer engines](#Rendererengines)
+
+  * [Pre-built renderer engines](#Pre-builtrendererengines)
+
+  * [Custom renderer engines](#Customrendererengines)
+
+  * [Handlebars partials and helpers](#Handlebarspartialsandhelpers)
+
+    * [Helpers](#Helpers)
+
+    * [Partials](#Partials)
+
+* [API Builder APIs from API Builder Web](#APIBuilderAPIsfromAPIBuilderWeb)
+
+* [Interacting with models](#Interactingwithmodels)
+
 
 ## Introduction
 
 This guide covers the basics for creating API Builder Web interfaces. An API Builder Web interface is a custom endpoint that renders HTML content to a client application. An API Builder Web interface is made up of:
 
-*   assets (images, CSS, HTML and JavaScript files) located in the web/public folder
-    
-*   templates (EJS, Handelbars, Markdown or ReactJS) located in the web/views folder
-    
-*   API Builder Routes (endpoint definitions) located in the web/routes folder
-    
+* assets (images, CSS, HTML and JavaScript files) located in the web/public folder
+
+* templates (EJS, Handelbars, Markdown or ReactJS) located in the web/views folder
+
+* API Builder Routes (endpoint definitions) located in the web/routes folder
+
 
 You can create custom logic in your API Builder Routes, which can internally access your service's models and APIs.
 
@@ -44,12 +44,12 @@ You can create custom logic in your API Builder Routes, which can internally acc
 
 Place all API Builder route definition files in the service's web/routes folder. You can only declare one endpoint definition per file. An API Builder route definition file is a JavaScript file, which:
 
-1.  Loads the arrow module
-    
-2.  Calls the module's Router.extend() method, passing in an object defining the API endpoint and logic
-    
-3.  Exports the defined endpoint using the module.exports variable
-    
+1. Loads the arrow module
+
+2. Calls the module's Router.extend() method, passing in an object defining the API endpoint and logic
+
+3. Exports the defined endpoint using the module.exports variable
+
 
 Set the following keys in the object passed to the Router.extend() method to define the API endpoint.
 
@@ -135,10 +135,10 @@ To use a template in the API Builder Route's logic, reference its filename witho
 
 To create a custom renderer engine you need to create a renderer engine and register it with the API Builder instance's middleware instance.
 
-1.  Create an object that implements the createRenderer() method and specifies the extension property.
-    
-2.  Pass the object to the Middleware instance's registerRendererEngine() method. You can retrieve a Middleware instance by using the middleware property of the API Builder instance.
-    
+1. Create an object that implements the createRenderer() method and specifies the extension property.
+
+2. Pass the object to the Middleware instance's registerRendererEngine() method. You can retrieve a Middleware instance by using the middleware property of the API Builder instance.
+
 
 For example, to implement a renderer engine for Jade templates:
 
@@ -180,10 +180,10 @@ API Builder exposes some APIs to allow you to register Handlebar partials or hel
 
 Helpers are functions that you can evaluate in your Handlebar templates. To use a helper, register the helper with the Handlebar renderer engine, then in the template, call the helper using the name you gave the helper when registering it.
 
-1.  Get a reference to the Handlebar renderer engine using the Arrow.Middleware.getRendererEngine('hbs') method.
-    
-2.  Call either the Handlebar renderer engine's registerHelper() to register a helper function. Pass the method the name of the helper and the function to invoke.
-    
+1. Get a reference to the Handlebar renderer engine using the Arrow.Middleware.getRendererEngine('hbs') method.
+
+2. Call either the Handlebar renderer engine's registerHelper() to register a helper function. Pass the method the name of the helper and the function to invoke.
+
 
 `var` `Arrow = require(``'arrow'``),`
 
@@ -217,10 +217,10 @@ Helpers are functions that you can evaluate in your Handlebar templates. To use 
 
 Partials are subviews that you can embed in a template. To use a partial, you need to register it with the Handlebar renderer engine, then reference the partial in the template using the {{> partialName}} syntax, where partialName is the name you gave the partial when you registered it.
 
-1.  Get a reference to the Handlebar renderer engine using the Arrow.Middleware.getRendererEngine('hbs') method.
-    
-2.  Call either the Handlebar renderer engine's registerPartial() to register a partial file. Pass the method the name of the partial and the template file to use as a partial.
-    
+1. Get a reference to the Handlebar renderer engine using the Arrow.Middleware.getRendererEngine('hbs') method.
+
+2. Call either the Handlebar renderer engine's registerPartial() to register a partial file. Pass the method the name of the partial and the template file to use as a partial.
+
 
 `var` `Arrow = require(``'arrow'``),`
 

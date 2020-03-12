@@ -1,57 +1,57 @@
-{"title":"Transitioning to the New UI Layout System","weight":"50"} 
+{"title":"Transitioning to the New UI Layout System","weight":"50"}
 
-*   [Overview](#Overview)
-    
-*   [Understanding the UI Layout System Changes](#UnderstandingtheUILayoutSystemChanges)
-    
-    *   [Summary of Layout Properties](#SummaryofLayoutProperties)
-        
-    *   [View Types and Default Layout Behavior](#ViewTypesandDefaultLayoutBehavior)
-        
-        *   [Auto Size Views](#AutoSizeViews)
-            
-        *   [Auto Fill Views](#AutoFillViews)
-            
-        *   [Auto Fill Width Views](#AutoFillWidthViews)
-            
-    *   [Layout Precedence](#LayoutPrecedence)
-        
-    *   [Batch Layout Updates](#BatchLayoutUpdates)
-        
-    *   [Control Size and Position and Post-Layout Event](#ControlSizeandPositionandPost-LayoutEvent)
-        
-    *   [Universal Unit Support](#UniversalUnitSupport)
-        
-    *   [Horizontal and Vertical Layouts](#HorizontalandVerticalLayouts)
-        
-    *   [Special Cases for Parent and Child Sizing](#SpecialCasesforParentandChildSizing)
-        
-*   [Behavior Changes in Release 2.0](#BehaviorChangesinRelease2.0)
-    
-    *   [iOS Behavior Changes](#iOSBehaviorChanges)
-        
-        *   [Clipping](#Clipping)
-            
-        *   [Auto Sizes in iOS](#AutoSizesiniOS)
-            
-        *   [Undefined Sizes in OS](#UndefinedSizesinOS)
-            
-        *   [Positioning Pins in iOS](#PositioningPinsiniOS)
-            
-        *   [Horizontal Layout in iOS](#HorizontalLayoutiniOS)
-            
-    *   [Android Behavior Changes](#AndroidBehaviorChanges)
-        
-        *   [Layout Precedence in Android](#LayoutPrecedenceinAndroid)
-            
-        *   [Undefined Sizes in Android](#UndefinedSizesinAndroid)
-            
-        *   [Positioning Pins in Android](#PositioningPinsinAndroid)
-            
-    *   [Mobile Web Layout Behavior](#MobileWebLayoutBehavior)
-        
-*   [Migrating Applications to Release 2.0](#MigratingApplicationstoRelease2.0)
-    
+* [Overview](#Overview)
+
+* [Understanding the UI Layout System Changes](#UnderstandingtheUILayoutSystemChanges)
+
+  * [Summary of Layout Properties](#SummaryofLayoutProperties)
+
+  * [View Types and Default Layout Behavior](#ViewTypesandDefaultLayoutBehavior)
+
+    * [Auto Size Views](#AutoSizeViews)
+
+    * [Auto Fill Views](#AutoFillViews)
+
+    * [Auto Fill Width Views](#AutoFillWidthViews)
+
+  * [Layout Precedence](#LayoutPrecedence)
+
+  * [Batch Layout Updates](#BatchLayoutUpdates)
+
+  * [Control Size and Position and Post-Layout Event](#ControlSizeandPositionandPost-LayoutEvent)
+
+  * [Universal Unit Support](#UniversalUnitSupport)
+
+  * [Horizontal and Vertical Layouts](#HorizontalandVerticalLayouts)
+
+  * [Special Cases for Parent and Child Sizing](#SpecialCasesforParentandChildSizing)
+
+* [Behavior Changes in Release 2.0](#BehaviorChangesinRelease2.0)
+
+  * [iOS Behavior Changes](#iOSBehaviorChanges)
+
+    * [Clipping](#Clipping)
+
+    * [Auto Sizes in iOS](#AutoSizesiniOS)
+
+    * [Undefined Sizes in OS](#UndefinedSizesinOS)
+
+    * [Positioning Pins in iOS](#PositioningPinsiniOS)
+
+    * [Horizontal Layout in iOS](#HorizontalLayoutiniOS)
+
+  * [Android Behavior Changes](#AndroidBehaviorChanges)
+
+    * [Layout Precedence in Android](#LayoutPrecedenceinAndroid)
+
+    * [Undefined Sizes in Android](#UndefinedSizesinAndroid)
+
+    * [Positioning Pins in Android](#PositioningPinsinAndroid)
+
+  * [Mobile Web Layout Behavior](#MobileWebLayoutBehavior)
+
+* [Migrating Applications to Release 2.0](#MigratingApplicationstoRelease2.0)
+
 
 ## Overview
 
@@ -59,12 +59,12 @@ Release 2.0 includes a set of changes to the layout system designed to provide m
 
 These changes affect existing layout behavior on all platforms, so you may see UI changes in your application. This document details:
 
-*   How the new layout system works
-    
-*   Behavior changes from 1.8.2 to 2.0
-    
-*   How to update your application to work with the new layout system
-    
+* How the new layout system works
+
+* Behavior changes from 1.8.2 to 2.0
+
+* How to update your application to work with the new layout system
+
 
 ## Understanding the UI Layout System Changes
 
@@ -88,22 +88,22 @@ Defines the height of a UI component.
 
 left
 
-Pins the left side of a UI component relative to its parent. Measured from the parent's left bound.  
+Pins the left side of a UI component relative to its parent. Measured from the parent's left bound.
 Acts as padding between UI siblings in horizontal layouts.
 
 right
 
-Pins the right side of a UI component relative to its parent. Measured from the parent's right bound.  
+Pins the right side of a UI component relative to its parent. Measured from the parent's right bound.
 Acts as padding between UI siblings in horizontal layouts.
 
 top
 
-Pins the top of a UI component relative to its parent. Measured from the parent's top bound.  
+Pins the top of a UI component relative to its parent. Measured from the parent's top bound.
 Acts as padding between UI siblings in vertical layouts.
 
 bottom
 
-Pins the bottom of a UI component relative to its parent. Measured from the parent's bottom bound.  
+Pins the bottom of a UI component relative to its parent. Measured from the parent's bottom bound.
 Acts as padding between UI siblings in vertical layouts.
 
 center
@@ -112,12 +112,12 @@ Dictionary with properties x and y. Pins the center of the view to the defined p
 
 layout
 
-Defines how the component lays out its children. One of "vertical", "horizontal" or "composite".  
+Defines how the component lays out its children. One of "vertical", "horizontal" or "composite".
 Default is "composite". The value "absolute" is a synonym for "composite".
 
 zIndex
 
-Stack order of UI component in its parent. Higher values are rendered towards the top, in front of components with lower values.  
+Stack order of UI component in its parent. Higher values are rendered towards the top, in front of components with lower values.
 If no zIndex value is set, components stack in the order in which they are added to the parent, with the last child added displayed on top of earlier children. Any component with a defined zIndex value is displayed in front of any components with undefined zIndex. Does not affect the actual layout of this component.
 
 size
@@ -140,76 +140,76 @@ In this release, the behavior of the 'auto' keyword has been defined on a per-co
 
 Views are logically grouped into three categories:
 
-*   Views that should fill the parent view by default
-    
-*   Views that should size themselves to their content by default
-    
-*   Views that should fill in the horizontal direction only (for example, toolbars)
-    
+* Views that should fill the parent view by default
+
+* Views that should size themselves to their content by default
+
+* Views that should fill in the horizontal direction only (for example, toolbars)
+
 
 Windows fill the screen by default.
 
 #### Auto Size Views
 
-For the following views, specifying 'auto' for either height or width is  
+For the following views, specifying 'auto' for either height or width is
 the same as specifying Ti.UI.SIZE.
 
-*   Button
-    
-*   Label
-    
-*   ImageView
-    
-*   ProgressBar
-    
-*   Switch
-    
-*   TextArea
-    
-*   TextField
-    
-*   Picker
-    
-*   ButtonBar
-    
-*   TableViewSection
-    
+* Button
+
+* Label
+
+* ImageView
+
+* ProgressBar
+
+* Switch
+
+* TextArea
+
+* TextField
+
+* Picker
+
+* ButtonBar
+
+* TableViewSection
+
 
 #### Auto Fill Views
 
-For the following views, specifying 'auto' for either \`height\` or \`width\` is  
+For the following views, specifying 'auto' for either \`height\` or \`width\` is
 the same as specifying Ti.UI.FILL.
 
-*   View
-    
-*   TabGroup
-    
-*   VideoPlayer
-    
-*   TableView
-    
-*   WebView
-    
-*   ScrollView
-    
-*   ScrollableView
-    
+* View
+
+* TabGroup
+
+* VideoPlayer
+
+* TableView
+
+* WebView
+
+* ScrollView
+
+* ScrollableView
+
 
 #### Auto Fill Width Views
 
-The following views fill the available **width** by default, and scale vertically to fit  
+The following views fill the available **width** by default, and scale vertically to fit
 their contents.
 
-*   Slider
-    
-*   TableViewRow
-    
-*   Toolbar
-    
-*   SearchBar
-    
+* Slider
 
-For these views, 'auto' specifies FILL behavior when it is used as a  
+* TableViewRow
+
+* Toolbar
+
+* SearchBar
+
+
+For these views, 'auto' specifies FILL behavior when it is used as a
 width value, and SIZE behavior when it is used as a height value.
 
 ### Layout Precedence
@@ -224,7 +224,7 @@ Notes
 
 width
 
-If width is defined, it takes precedence and the positioning pins are not used to determine the view's width.  
+If width is defined, it takes precedence and the positioning pins are not used to determine the view's width.
 If width is not defined, and at least two horizontal positioning pins are defined, the width is calculated implicitly from the pins. For example, left and right or left and center.x. If all three horizontal pins are defined, the width is determined by the left and center.x pins. If width cannot be implicitly calculated it follows the view's default sizing behavior.
 
 2
@@ -237,21 +237,21 @@ If left is defined, it always takes precedence for positioning the view horizont
 
 center.x
 
-Used to position the view horizontally if left is not set.  
+Used to position the view horizontally if left is not set.
 If left is set, this property is not used to position the view, although it may be used to determine its width.
 
 4
 
 right
 
-Used to position the view horizontally when neither left or center.x is set.  
+Used to position the view horizontally when neither left or center.x is set.
 If either left or center.x is set, this property is not used to position the view, although it may be used to determine its width.
 
 5
 
 height
 
-If height is defined, it takes precedence and the positioning pins are not used to determine the view's height.  
+If height is defined, it takes precedence and the positioning pins are not used to determine the view's height.
 If height is not defined, and at least two vertical positioning pins are defined, the height is determined implicitly from the pins. If all three vertical pins are defined, the height is determined by the top and center.y pins. If height cannot be implicitly calculated it follows the view's default sizing behavior.
 
 6
@@ -264,14 +264,14 @@ If specified, always takes precedence for positioning the view horizontally.
 
 center.y
 
-Used to position the view vertically if top is not set.  
+Used to position the view vertically if top is not set.
 If top is defined, this property is not used to position the view, although it may be used to determine its height.
 
 8
 
 bottom
 
-Used to position the view vertically if neither top or center.y is set.  
+Used to position the view vertically if neither top or center.y is set.
 If either top or center.y is set, this property is ignored. this property is not used to position the view, although it may be used to determine its height.
 
 ### Batch Layout Updates
@@ -376,12 +376,12 @@ Absolute measures, such as inches, are dependent on the device correctly reporti
 
 If no units are specified, a system-default unit is assumed. The system default unit is:
 
-*   pixels on Android
-    
-*   DIP on iOS
-    
-*   DIP on Mobile Web
-    
+* pixels on Android
+
+* DIP on iOS
+
+* DIP on Mobile Web
+
 
 ### Horizontal and Vertical Layouts
 
@@ -401,25 +401,25 @@ With horizontalWrap set to false, all children are placed in a single row.
 
 Prior to Release 2.1, horizontal layout behavior was not consistent across platforms. In particular:
 
-*   Mobile Web did not wrap to a second row and aligned all children to the top of the parent view if no top or bottom pins were defined.
-    
-*   Android centered the first row if no top or bottom pins were defined.
-    
-*   iOS placed the first row against the top of the parent view if no top or bottom pins were defined.
-    
-*   On iOS **Prior to Release 2.0.1**, the sandbox height of a child was independent of its siblings.
-    
+* Mobile Web did not wrap to a second row and aligned all children to the top of the parent view if no top or bottom pins were defined.
+
+* Android centered the first row if no top or bottom pins were defined.
+
+* iOS placed the first row against the top of the parent view if no top or bottom pins were defined.
+
+* On iOS **Prior to Release 2.0.1**, the sandbox height of a child was independent of its siblings.
+
 
 ### Special Cases for Parent and Child Sizing
 
 In some cases, the size values for a parent and child may conflict:
 
-*   When a UI component follows SIZE behavior but the calculated dimensions are larger than the bound of the parent, the child bounds are restricted by parent bounds.
-    
-*   When a child follows FILL behavior and the parent follows SIZE behavior, the parent effectively follows FILL behavior (the child will try and push the parent bounds until a constraining bound can be determined).
-    
-*   When a child has its dimensions defined as a percentage (child dimension based on parent bounds) and the parent follows SIZE behavior (parent dimensions based on child bounds) the result is undefined.
-    
+* When a UI component follows SIZE behavior but the calculated dimensions are larger than the bound of the parent, the child bounds are restricted by parent bounds.
+
+* When a child follows FILL behavior and the parent follows SIZE behavior, the parent effectively follows FILL behavior (the child will try and push the parent bounds until a constraining bound can be determined).
+
+* When a child has its dimensions defined as a percentage (child dimension based on parent bounds) and the parent follows SIZE behavior (parent dimensions based on child bounds) the result is undefined.
+
 
 ## Behavior Changes in Release 2.0
 
@@ -703,7 +703,7 @@ In previous versions of the Titanium SDK, the precedence of positioning pins was
 
 On the Mobile Web platform, if you do not specify a height or width for a view (or define the size implicitly using left, center or other layout properties), they use the default behavior defined above - either fill, size, or fill width.
 
-If a value of 'auto' is specified for height or width, it is interpreted as Ti.UI.SIZE. This differs from the 'auto' behavior on Android and iOS. However, using either SIZE or FILL explicitly should result in the same layout on all three  
+If a value of 'auto' is specified for height or width, it is interpreted as Ti.UI.SIZE. This differs from the 'auto' behavior on Android and iOS. However, using either SIZE or FILL explicitly should result in the same layout on all three
 platforms.
 
 ## Migrating Applications to Release 2.0
@@ -714,10 +714,10 @@ In most cases, simply leaving the width and height undefined should give reasona
 
 On iOS, the following changes apply:
 
-*   Any UI component with the width property defined as "auto" can safely define its width parameter as Ti.UI.SIZE to return to 1.8 behavior.
-    
-*   Any UI component with the width property undefined and with less than 2 positioning pins defined can safely define its width parameter as Ti.UI.FILL to return to 1.8 behavior.
-    
+* Any UI component with the width property defined as "auto" can safely define its width parameter as Ti.UI.SIZE to return to 1.8 behavior.
+
+* Any UI component with the width property undefined and with less than 2 positioning pins defined can safely define its width parameter as Ti.UI.FILL to return to 1.8 behavior.
+
 
 The same principles apply to the height property.
 

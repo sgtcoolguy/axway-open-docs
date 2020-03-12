@@ -1,13 +1,13 @@
-{"title":"Installing Platform SDKs","weight":"20"} 
+{"title":"Installing Platform SDKs","weight":"20"}
 
-*   [Studio Platform Configuration Tool](#StudioPlatformConfigurationTool)
-    
-    *   [Android settings](#Androidsettings)
-        
-    *   [iOS settings](#iOSsettings)
-        
-*   [Manual Installation](#ManualInstallation)
-    
+* [Studio Platform Configuration Tool](#StudioPlatformConfigurationTool)
+
+  * [Android settings](#Androidsettings)
+
+  * [iOS settings](#iOSsettings)
+
+* [Manual Installation](#ManualInstallation)
+
 
 To develop native mobile applications with Titanium you need to have the SDKs installed for your target platform. For instance, to develop Android applications you need the Android SDK and toolchain installed, and XCode to develop iOS applications. You can either use Studio's Platform Configuration tool to automate the installation process or install these SDKs manually.
 
@@ -33,8 +33,8 @@ There aren't any special settings for iOS, as you only need to install the Xcode
 
 For advanced platform configurations or setting up the platform SDKs for use with the Titanium CLI, refer to the following installation guides:
 
-*   [Installing the Android SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_Android_SDK/)
-    
-*   [Installing the iOS SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_iOS_SDK/)
-    
-*   [Installing the Windows SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_Windows_SDK/)
+* [Installing the Android SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_Android_SDK/)
+
+* [Installing the iOS SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_iOS_SDK/)
+
+* [Installing the Windows SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_Windows_SDK/)

@@ -1,19 +1,19 @@
-{"title":"Communication Between WebViews and Titanium","weight":"20"} 
+{"title":"Communication Between WebViews and Titanium","weight":"20"}
 
-*   [Overview](#Overview)
-    
-*   [Contents](#Contents)
-    
-    *   [Local web content](#Localwebcontent)
-        
-        *   [Logging](#Logging)
-            
-        *   [Ti.App Events](#Ti.AppEvents)
-            
-    *   [Remote web content](#Remotewebcontent)
-        
-*   [Summary](#Summary)
-    
+* [Overview](#Overview)
+
+* [Contents](#Contents)
+
+  * [Local web content](#Localwebcontent)
+
+    * [Logging](#Logging)
+
+    * [Ti.App Events](#Ti.AppEvents)
+
+  * [Remote web content](#Remotewebcontent)
+
+* [Summary](#Summary)
+
 
 With Titanium SDK 8.0.0, we now use [WKWebView](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/WKWebView/) to implement Ti.UI.WebView (as Apple has deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview)).
 
@@ -31,16 +31,16 @@ Because capabilities vary, we'll look at local and remote web interactions separ
 
 You can use the Ti.API logging methods within HTML content loaded from the device. Just as a quick refresher, let's take a look at the logging functions available:
 
-*   debug(message) - Creates a Titanium log out of the message parameter and assigns it the log level of debug
-    
-*   error(message) - Creates a Titanium log out of the message parameter and assigns it the log level of error
-    
-*   info(message) - Creates a Titanium log out of the message parameter and assigns it the log level of info
-    
-*   log(type, message) - Creates a Titanium log out of the message parameter and assigns it the log level of the given parameter type
-    
-*   warn(message) - Creates a Titanium log out of the message parameter and assigns it the log level of warn
-    
+* debug(message) - Creates a Titanium log out of the message parameter and assigns it the log level of debug
+
+* error(message) - Creates a Titanium log out of the message parameter and assigns it the log level of error
+
+* info(message) - Creates a Titanium log out of the message parameter and assigns it the log level of info
+
+* log(type, message) - Creates a Titanium log out of the message parameter and assigns it the log level of the given parameter type
+
+* warn(message) - Creates a Titanium log out of the message parameter and assigns it the log level of warn
+
 
 These functions are great for adding logging to our native Titanium code, but they can also be used to add logging to web content in WebViews. Let's take a look at a simple example. Here will we add Titanium logging to a WebView to let us know when the <body> element of the web content has loaded.
 
@@ -164,12 +164,12 @@ As demonstrated above, we can both fire and listen for application level events 
 
 You cannot use any Titanium statements within HTML content loaded from a remote host. The techniques described above will not work with remote content. However, you're not without means to interact with remote content. The WebView component includes the evalJS() method that you can use to inject JavaScript into a WebView. A few things to keep in mind:
 
-*   You should call evalJS() from the webview's load event so you're sure the page is done loading before you attempt to inject your code.
-    
-*   You must pass in the code to run as a single _string_. (Hint: You'll have to JSON.stringify any complex data types you pass into the webview.)
-    
-*   This method returns a string, so make sure any data you retrieve is a string or it will be treated as a null.
-    
+* You should call evalJS() from the webview's load event so you're sure the page is done loading before you attempt to inject your code.
+
+* You must pass in the code to run as a single _string_. (Hint: You'll have to JSON.stringify any complex data types you pass into the webview.)
+
+* This method returns a string, so make sure any data you retrieve is a string or it will be treated as a null.
+
 
 Let's see an example. The following loads a remote web page, then uses evalJS() to retrieve the cookies set by that server:
 

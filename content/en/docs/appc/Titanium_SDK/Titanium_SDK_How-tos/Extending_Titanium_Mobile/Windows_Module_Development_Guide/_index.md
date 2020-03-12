@@ -1,4 +1,4 @@
-{"title":"Windows Module Development Guide","weight":"50"} 
+{"title":"Windows Module Development Guide","weight":"50"}
 
 ## Overview
 

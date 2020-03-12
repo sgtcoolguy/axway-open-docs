@@ -1,19 +1,19 @@
-{"title":"Adding Popup Windows in Rubles","weight":"20"} 
+{"title":"Adding Popup Windows in Rubles","weight":"20"}
 
-*   [Overview](#Overview)
-    
-*   [Opening a popup window to select from a list of elements](#Openingapopupwindowtoselectfromalistofelements)
-    
-*   [Opening a popup window for user input](#Openingapopupwindowforuserinput)
-    
+* [Overview](#Overview)
+
+* [Opening a popup window to select from a list of elements](#Openingapopupwindowtoselectfromalistofelements)
+
+* [Opening a popup window for user input](#Openingapopupwindowforuserinput)
+
 
 ## Overview
 
-In this recipe we show how a Ruble command can open a popup window for user input.
+In this recipe, we show how a Ruble command can open a popup window for user input.
 
 ## Opening a popup window to select from a list of elements
 
-Here, we select from a list of projects and use the output of the choice to insert different snippets to the editor.
+Here, we select from a list of projects and use the output of choice to insert different snippets to the editor.
 
 `require` `'ruble'`
 

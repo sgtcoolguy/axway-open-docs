@@ -1,49 +1,49 @@
-{"title":"Alloy XML Markup","weight":"20"} 
+{"title":"Alloy XML Markup","weight":"20"}
 
-*   [Introduction](#Introduction)
-    
-*   [Collection element](#Collectionelement)
-    
-*   [Model element](#Modelelement)
-    
-*   [Module attribute](#Moduleattribute)
-    
-*   [Module element](#Moduleelement)
-    
-*   [Require element](#Requireelement)
-    
-    *   [Including views](#Includingviews)
-        
-    *   [Importing widgets](#Importingwidgets)
-        
-    *   [Passing arguments](#Passingarguments)
-        
-    *   [Binding events](#Bindingevents)
-        
-    *   [Adding children views](#Addingchildrenviews)
-        
-*   [Namespace](#Namespace)
-    
-*   [Conditional code](#Conditionalcode)
-    
-*   [Property mapping](#Propertymapping)
-    
-    *   [Proxy properties](#Proxyproperties)
-        
-    *   [Android ActionBar](#AndroidActionBar)
-        
-    *   [iOS navigation button shorthand](#iOSnavigationbuttonshorthand)
-        
-    *   [iOS systemButton shorthand](#iOSsystemButtonshorthand)
-        
-    *   [TextField keyboard shorthands](#TextFieldkeyboardshorthands)
-        
-*   [Event handling](#Eventhandling)
-    
-*   [Data binding](#Databinding)
-    
-*   [Non-standard syntax](#Non-standardsyntax)
-    
+* [Introduction](#Introduction)
+
+* [Collection element](#Collectionelement)
+
+* [Model element](#Modelelement)
+
+* [Module attribute](#Moduleattribute)
+
+* [Module element](#Moduleelement)
+
+* [Require element](#Requireelement)
+
+  * [Including views](#Includingviews)
+
+  * [Importing widgets](#Importingwidgets)
+
+  * [Passing arguments](#Passingarguments)
+
+  * [Binding events](#Bindingevents)
+
+  * [Adding children views](#Addingchildrenviews)
+
+* [Namespace](#Namespace)
+
+* [Conditional code](#Conditionalcode)
+
+* [Property mapping](#Propertymapping)
+
+  * [Proxy properties](#Proxyproperties)
+
+  * [Android ActionBar](#AndroidActionBar)
+
+  * [iOS navigation button shorthand](#iOSnavigationbuttonshorthand)
+
+  * [iOS systemButton shorthand](#iOSsystemButtonshorthand)
+
+  * [TextField keyboard shorthands](#TextFieldkeyboardshorthands)
+
+* [Event handling](#Eventhandling)
+
+* [Data binding](#Databinding)
+
+* [Non-standard syntax](#Non-standardsyntax)
+
 
 ## Introduction
 
@@ -167,14 +167,14 @@ Imports a widget inside this view. Same as the [Require element](#Requireelement
 
 index.xml is a special case that only accepts the following view components as direct children of the Alloy tag:
 
-*   Ti.UI.Window or <Window>
-    
-*   Ti.UI.TabGroup or <TabGroup>
-    
-*   Ti.UI.NavigationWindow or <NavigationWindow>
-    
-*   Ti.UI.iOS.SplitWindow or <SplitWindow>
-    
+* Ti.UI.Window or <Window>
+
+* Ti.UI.TabGroup or <TabGroup>
+
+* Ti.UI.NavigationWindow or <NavigationWindow>
+
+* Ti.UI.iOS.SplitWindow or <SplitWindow>
+
 
 Other views do not have any format restrictions.
 
@@ -284,10 +284,10 @@ The code below demonstrates how to access this model from a controller:
 
 You can require a CommonJS module in an Alloy view using the module attribute of an XML element. To use the module attribute:
 
-1.  Place the CommonJS module in your project's app/lib folder. This CommonJS module must expose a public method called create<XXX>, where <XXX> is used as the XML element in the Alloy view. This method also must return a Titanium UI object that can be added to the view.
-    
-2.  Add the <XXX> element to the Alloy view and set the module attribute to the path (after the app/lib folder) and name of the CommonJS module minus the extension. Custom attributes of the element are passed to the public method.
-    
+1. Place the CommonJS module in your project's app/lib folder. This CommonJS module must expose a public method called create<XXX>, where <XXX> is used as the XML element in the Alloy view. This method also must return a Titanium UI object that can be added to the view.
+
+2. Add the <XXX> element to the Alloy view and set the module attribute to the path (after the app/lib folder) and name of the CommonJS module minus the extension. Custom attributes of the element are passed to the public method.
+
 
 For example, the following CommonJS module, called foo.js, exposes the createFoo method, which returns a Label object inside a View object. In the Alloy view, to include this object, add the Foo tag and set the module attribute to foo.
 
@@ -345,16 +345,16 @@ app/views/index.xml
 
 You can also include a view from a native module using the Module XML element. To use the Module tag:
 
-1.  Add the module to your project. For instructions on adding a module to your project, see [Using Titanium Modules](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Titanium_Modules/Using_Titanium_Modules/).
-    
-2.  Add the Module tag in to an Alloy view as a child of a window or another parent object depending on the view object returned by the module.
-    
-3.  Set the module attribute to the name of the module.
-    
-4.  Set the method attribute to the name of the method that creates a view object. If this attribute is not specified, Alloy uses createView.
-    
-5.  If the method invoked uses a simple JavaScript object as its only parameter, you can optionally pass in the parameters either inline or with the TSS file.
-    
+1. Add the module to your project. For instructions on adding a module to your project, see [Using Titanium Modules](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Titanium_Modules/Using_Titanium_Modules/).
+
+2. Add the Module tag in to an Alloy view as a child of a window or another parent object depending on the view object returned by the module.
+
+3. Set the module attribute to the name of the module.
+
+4. Set the method attribute to the name of the method that creates a view object. If this attribute is not specified, Alloy uses createView.
+
+5. If the method invoked uses a simple JavaScript object as its only parameter, you can optionally pass in the parameters either inline or with the TSS file.
+
 
 For example, to use the [Paint Module](https://marketplace.appcelerator.com/apps/4977?790167903), first download and add the module to your project. The Paint Module creates a Titanium View, which can be drawn on, using the createPaintView method. To use this view in the index view-controller, you need to add it as a child of a window (or similar parent view object). In the code below, the Module tag is used to add the Paint Module to the window and passes properties inline that are specific to the module. You may also pass any Titanium.UI.View properties to the module since it extends a Titanium View.
 
@@ -452,19 +452,19 @@ Within a view in the regular Alloy project space (app/views), use the <Widget> t
 
 **To import a widget:**
 
-1.  Copy the widget to the app/widgets folder. The widget must be contained within its own folder.
-    
-2.  Add the <Widget> tag in the XML and specify its src attribute as the folder name of the widget.
-    
-3.  Update the dependencies object in the config.json file by adding a key/value pair with the name of the widget as the key and the version number as the value.
-    
+1. Copy the widget to the app/widgets folder. The widget must be contained within its own folder.
+
+2. Add the <Widget> tag in the XML and specify its src attribute as the folder name of the widget.
+
+3. Update the dependencies object in the config.json file by adding a key/value pair with the name of the widget as the key and the version number as the value.
+
 
 You can optionally add the id and name attributes to the Require element:
 
-*   The id attribute allows you to reference the widget in the controller code. You can use this reference to call methods exported by the widget.
-    
-*   The name attribute allows you to import a specific view-controller in the widget rather than the default one (widget.xml/widget.js). Specify the name of the view-controller minus the extension.
-    
+* The id attribute allows you to reference the widget in the controller code. You can use this reference to call methods exported by the widget.
+
+* The name attribute allows you to import a specific view-controller in the widget rather than the default one (widget.xml/widget.js). Specify the name of the view-controller minus the extension.
+
 
 For example, to import the mywidget widget in to a project, copy mywidget to the app/widgets folder.
 
@@ -712,16 +712,16 @@ Additionally, use the alias Ti for Titanium.
 
 Add the platform, formFactor and if attributes to apply XML elements based on conditionals.
 
-*   To specify a platform-specific element, use the platform attribute and assign it a platform, such as, android, ios, mobileweb, or windows.  
-    Comma separate the values to logically OR the values together, for example, platform='ios,android' indicates both Android and iOS.  
-    Prepend the value with an exclamation point (!) to negate the value, for example, platform='!ios' indicates all platforms except iOS.
-    
-*   To specify a device-size-specific element, use the formFactor attribute and assign it a device size–either handheld or tablet.
-    
-*   To use a custom query, assign the if attribute to a conditional statement in the Alloy.Globals namespace. This conditional statement must return a boolean value. You may only assign **one** query to the if attribute.
-    
-*   The application can also pass custom Boolean properties with the Alloy.createController() method, which can be accessed by the XML. Assign the if attribute to the name of the property prefixed with the $.args namespace, for example, $.args.someProperty.
-    
+* To specify a platform-specific element, use the platform attribute and assign it a platform, such as, android, ios, mobileweb, or windows.
+  Comma separate the values to logically OR the values together, for example, platform='ios,android' indicates both Android and iOS.
+  Prepend the value with an exclamation point (!) to negate the value, for example, platform='!ios' indicates all platforms except iOS.
+
+* To specify a device-size-specific element, use the formFactor attribute and assign it a device size–either handheld or tablet.
+
+* To use a custom query, assign the if attribute to a conditional statement in the Alloy.Globals namespace. This conditional statement must return a boolean value. You may only assign **one** query to the if attribute.
+
+* The application can also pass custom Boolean properties with the Alloy.createController() method, which can be accessed by the XML. Assign the if attribute to the name of the property prefixed with the $.args namespace, for example, $.args.someProperty.
+
 
 You can use all the attributes in any combination.
 
@@ -1079,26 +1079,26 @@ If you have a collection of model data that needs to be automatically updated to
 
 Some Titanium view elements use special syntax. Refer to the **Alloy XML Markup** examples in the Titanium API Guides site for the following view objects:
 
-*   [AlertDialog](#!/api/Titanium.UI.AlertDialog) or Ti.UI.AlertDialog
-    
-*   [ButtonBar](#!/api/Titanium.UI.ButtonBar) or Ti.UI.ButtonBar
-    
-*   [CoverFlowView](#!/api/Titanium.UI.iOS.CoverFlowView) or Ti.UI.iOS.CoverFlowView
-    
-*   [DashboardView](#!/api/Titanium.UI.iOS.DashboardView) or Ti.UI.iOS.DashboardView
-    
-*   [ListView](#!/api/Titanium.UI.ListView) or Ti.UI.ListView
-    
-*   [Map](#!/api/Modules.Map) or Ti.Map
-    
-*   [Menu](#!/api/Titanium.Android.Menu) or Ti.Android.Menu
-    
-*   [OptionDialog](#!/api/Titanium.UI.OptionDialog) or Ti.UI.OptionDialog
-    
-*   [Picker](#!/api/Titanium.UI.Picker) or Ti.UI.Picker
-    
-*   [SplitWindow](#!/api/Titanium.UI.iOS.SplitWindow) or Ti.UI.iOS.SplitWindow
-    
-*   [TabbedBar](#!/api/Titanium.UI.iOS.TabbedBar) or Ti.UI.iOS.TabbedBar
-    
-*   [Toolbar](#!/api/Titanium.UI.Toolbar) or Ti.UI.Toolbar
+* [AlertDialog](#!/api/Titanium.UI.AlertDialog) or Ti.UI.AlertDialog
+
+* [ButtonBar](#!/api/Titanium.UI.ButtonBar) or Ti.UI.ButtonBar
+
+* [CoverFlowView](#!/api/Titanium.UI.iOS.CoverFlowView) or Ti.UI.iOS.CoverFlowView
+
+* [DashboardView](#!/api/Titanium.UI.iOS.DashboardView) or Ti.UI.iOS.DashboardView
+
+* [ListView](#!/api/Titanium.UI.ListView) or Ti.UI.ListView
+
+* [Map](#!/api/Modules.Map) or Ti.Map
+
+* [Menu](#!/api/Titanium.Android.Menu) or Ti.Android.Menu
+
+* [OptionDialog](#!/api/Titanium.UI.OptionDialog) or Ti.UI.OptionDialog
+
+* [Picker](#!/api/Titanium.UI.Picker) or Ti.UI.Picker
+
+* [SplitWindow](#!/api/Titanium.UI.iOS.SplitWindow) or Ti.UI.iOS.SplitWindow
+
+* [TabbedBar](#!/api/Titanium.UI.iOS.TabbedBar) or Ti.UI.iOS.TabbedBar
+
+* [Toolbar](#!/api/Titanium.UI.Toolbar) or Ti.UI.Toolbar

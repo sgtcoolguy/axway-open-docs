@@ -1,4 +1,4 @@
-{"title":"CommonJS XML","weight":"20"} 
+{"title":"CommonJS XML","weight":"20"}
 
 Demonstrates using CommonJS modules to create UI components in an Alloy XML view.
 
@@ -60,10 +60,10 @@ app/lib/specialView.js
 
 The application's main index.xml view shows the two ways to declaratively create instances of these views in an XML file.
 
-*   Add a <Module/> element whose module attribute specifies the base name of the CommonJS module file, relative to the project's libs/ folder.
-    
-*   Lastly, you can declare the desired view by adding a an XML element whose name matches the base name of the view constructor function, minus the "create" prefix. In this example, the <MassiveGreenView/> element automatically calls the createMassiveGreenView() function.
-    
+* Add a <Module/> element whose module attribute specifies the base name of the CommonJS module file, relative to the project's libs/ folder.
+
+* Lastly, you can declare the desired view by adding a an XML element whose name matches the base name of the view constructor function, minus the "create" prefix. In this example, the <MassiveGreenView/> element automatically calls the createMassiveGreenView() function.
+
 
 By default, the module's **createView()** method is invoked on the module to get the desired view. You can also specify a custom function to invoke with the the method attribute of the <Module/> element.
 
@@ -135,4 +135,4 @@ app/views/index.xml
 
 ## See also
 
-*   [Library Code and CommonJS Modules](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#LibrarycodeandCommonJSmodules)
+* [Library Code and CommonJS Modules](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#LibrarycodeandCommonJSmodules)

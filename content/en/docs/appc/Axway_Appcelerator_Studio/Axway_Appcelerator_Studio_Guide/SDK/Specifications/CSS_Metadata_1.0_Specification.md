@@ -1,11 +1,11 @@
-{"title":"CSS Metadata 1.0 Specification","weight":"80"} 
+{"title":"CSS Metadata 1.0 Specification","weight":"80"}
 
-*   [Overview](#Overview)
-    
-*   [Introduction](#Introduction)
-    
-*   [Short Example](#ShortExample)
-    
+* [Overview](#Overview)
+
+* [Introduction](#Introduction)
+
+* [Short Example](#ShortExample)
+
 
 ## Overview
 
@@ -17,18 +17,18 @@ The metadata in this file helps to provide the Code Assist information for the C
 
 The section for each element includes the following information:
 
-*   Short description of the element
-    
-*   Syntax
-    
-*   Element parents and children
-    
-*   Element attributes and their valid values
-    
-*   Longer explanation of the element
-    
-*   Example(s)
-    
+* Short description of the element
+
+* Syntax
+
+* Element parents and children
+
+* Element attributes and their valid values
+
+* Longer explanation of the element
+
+* Example(s)
+
 
 This file is currently for internal use only, but Studio may in the future, allow users to contribute additions to this file.
 

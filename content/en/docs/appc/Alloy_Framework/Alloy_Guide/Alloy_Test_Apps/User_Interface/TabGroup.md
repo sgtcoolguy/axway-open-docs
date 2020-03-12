@@ -1,4 +1,4 @@
-{"title":"TabGroup","weight":"190"} 
+{"title":"TabGroup","weight":"190"}
 
 Demonstrates basic use of a TabbedGroup control to display a tabbed interface.
 
@@ -62,4 +62,4 @@ app/views/tabView.xml
 
 ## See also
 
-*   [Titanium.UI.TabGroup](#!/api/Titanium.UI.TabGroup) API reference
+* [Titanium.UI.TabGroup](#!/api/Titanium.UI.TabGroup) API reference

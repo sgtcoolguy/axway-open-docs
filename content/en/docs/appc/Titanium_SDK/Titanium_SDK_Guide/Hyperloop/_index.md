@@ -1,19 +1,19 @@
-{"title":"Hyperloop","weight":"40"} 
+{"title":"Hyperloop","weight":"40"}
 
-*   [Introduction](#Introduction)
-    
-*   [Requirements](#Requirements)
-    
-*   [Installation](#Installation)
-    
-*   [Sample projects](#Sampleprojects)
-    
-*   [Getting Started](#GettingStarted)
-    
+* [Introduction](#Introduction)
+
+* [Requirements](#Requirements)
+
+* [Installation](#Installation)
+
+* [Sample projects](#Sampleprojects)
+
+* [Getting Started](#GettingStarted)
+
 
 ## Introduction
 
-Hyperloop gives you direct access to the native APIs. Titanium SDK already covers plenty of the native APIs and makes them cross-platform addressing the most popular APIs. This technology was built for those developers who require access to even the most obscure APIs out there.  
+Hyperloop gives you direct access to the native APIs. Titanium SDK already covers plenty of the native APIs and makes them cross-platform addressing the most popular APIs. This technology was built for those developers who require access to even the most obscure APIs out there.
 Hyperloop is available on all Platform tiers and apps that are registered with the AMPLIFY Appcelerator Services.
 
 ## Requirements

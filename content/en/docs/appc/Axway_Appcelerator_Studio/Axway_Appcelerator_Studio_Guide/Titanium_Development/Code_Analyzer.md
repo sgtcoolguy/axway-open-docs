@@ -1,27 +1,27 @@
-{"title":"Code Analyzer","weight":"120"} 
+{"title":"Code Analyzer","weight":"120"}
 
-*   [Introduction](#Introduction)
-    
-*   [Analyzing an Application](#AnalyzinganApplication)
-    
-    *   [Starting Code Analysis](#StartingCodeAnalysis)
-        
-    *   [Displaying the Results](#DisplayingtheResults)
-        
-    *   [Saving the Results](#SavingtheResults)
-        
-    *   [Interpreting the Results in the Project Files](#InterpretingtheResultsintheProjectFiles)
-        
-    *   [Interpreting the Results in the HTML Page](#InterpretingtheResultsintheHTMLPage)
-        
-        *   [Error and Warning Interpretation](#ErrorandWarningInterpretation)
-            
-*   [Configuring the Code Analyzer](#ConfiguringtheCodeAnalyzer)
-    
-*   [Troubleshooting](#Troubleshooting)
-    
-    *   [Fails with the message: Node.js maximum call stack size exceeded](#Failswiththemessage:Node.jsmaximumcallstacksizeexceeded)
-        
+* [Introduction](#Introduction)
+
+* [Analyzing an Application](#AnalyzinganApplication)
+
+  * [Starting Code Analysis](#StartingCodeAnalysis)
+
+  * [Displaying the Results](#DisplayingtheResults)
+
+  * [Saving the Results](#SavingtheResults)
+
+  * [Interpreting the Results in the Project Files](#InterpretingtheResultsintheProjectFiles)
+
+  * [Interpreting the Results in the HTML Page](#InterpretingtheResultsintheHTMLPage)
+
+    * [Error and Warning Interpretation](#ErrorandWarningInterpretation)
+
+* [Configuring the Code Analyzer](#ConfiguringtheCodeAnalyzer)
+
+* [Troubleshooting](#Troubleshooting)
+
+  * [Fails with the message: Node.js maximum call stack size exceeded](#Failswiththemessage:Node.jsmaximumcallstacksizeexceeded)
+
 
 This page describes how to use the Appcelerator Studio Code Analyzer to analyze JavaScript code in your mobile projects.
 
@@ -43,17 +43,17 @@ To use the code analyzer, run the code analyzer from the right-click context men
 
 In the **Project Explorer** view, either:
 
-*   Right-click your project, select **Code** **Analysis**, then select an option, or
-    
-*   Select your project, and from the menu bar, select **Run > Code Analysis**, then select an option.
-    
+* Right-click your project, select **Code** **Analysis**, then select an option, or
+
+* Select your project, and from the menu bar, select **Run > Code Analysis**, then select an option.
+
 
 You can choose to either run code analysis for a single platform or for multiple platforms:
 
-*   For a single platform, select one of the first set of options, which correspond to the deploy targets in the tiapp.xml file.
-    
-*   For multiple platforms, select **Multiple...**. A dialog appears. Select the platforms to analyze, then click **Analyze**.
-    
+* For a single platform, select one of the first set of options, which correspond to the deploy targets in the tiapp.xml file.
+
+* For multiple platforms, select **Multiple...**. A dialog appears. Select the platforms to analyze, then click **Analyze**.
+
 
 A dialog appears or progress indicator starts indicating the code analysis has started. The speed of the code analyzer depends on the complexity of your code.
 
@@ -75,27 +75,27 @@ To view the results of the last analysis, in the **Project Explorer** view, righ
 
 To save the currently displayed results:
 
-1.  Right-click on the results in the Editor, which open a right-context menu.
-    
-2.  Select **Export...**. A dialog appears.
-    
-3.  Navigate to and select and location to save the results.
-    
-4.  Click **Open**.
-    
+1. Right-click on the results in the Editor, which open a right-context menu.
+
+2. Select **Export...**. A dialog appears.
+
+3. Navigate to and select and location to save the results.
+
+4. Click **Open**.
+
 
 Studio saves the results in the location you chose in a folder called <Project\_Name> (<platform>).
 
 To export results for multiple platforms:
 
-1.  In the **Project Explorer** view, right-click your project and select **Code Analysis > Export Results...**. A dialog appears.
-    
-2.  Select the platforms to export results for.
-    
-3.  Enter a directory to export the results to in the **Export Location** textbox.
-    
-4.  Click **Export****.**
-    
+1. In the **Project Explorer** view, right-click your project and select **Code Analysis > Export Results...**. A dialog appears.
+
+2. Select the platforms to export results for.
+
+3. Enter a directory to export the results to in the **Export Location** textbox.
+
+4. Click **Export****.**
+
 
 Studio saves the results in the location you chose in a folder called <Project\_Name> (<platform>).
 
@@ -189,7 +189,7 @@ This may be caused by using Ti.include calls that could not be resolved.
 
 It is recommended to change your Ti.include calls to require calls.
 
-"A value that could not be evaluated was passed to require" or  
+"A value that could not be evaluated was passed to require" or
 "A value that could not be evaluated was passed to Ti.include"
 
 You are passing a variable and not a hard-coded value to your require or Ti.include method and the code analyzer could not process it. As a side effect, this may generate other errors or the code analyzer may skip parts of the application. For example:
@@ -232,22 +232,22 @@ Check your spelling and that the API exist.
 
 To configure the Code Analyzer:
 
-1.  Open **Appcelerator Studio Preferences**.
-    
-    *   On Mac OS X, in the menu, select **Appcelerator Studio > Preferences**.
-        
-    *   On Windows, in the menu, select **Window > Preferences**.
-        
-2.  Navigate to **Studio > Code Analyzer**.
-    
-3.  Enable or disable the following behavior by checking and unchecking the item checkboxes, respectively:
-    
-    *   **Invoke Methods** – Indicates whether or not to invoke methods.
-        
-    *   **Evaluate Loops** – Indicates whether or not to evaluate loops. Disabling this option only evaluates the loop once and increases the speed performance of the analyzer.
-        
-    *   **Process Unvisited Code** – Indicates whether or not to process unvisited code.
-        
+1. Open **Appcelerator Studio Preferences**.
+
+  * On Mac OS X, in the menu, select **Appcelerator Studio > Preferences**.
+
+  * On Windows, in the menu, select **Window > Preferences**.
+
+2. Navigate to **Studio > Code Analyzer**.
+
+3. Enable or disable the following behavior by checking and unchecking the item checkboxes, respectively:
+
+  * **Invoke Methods** – Indicates whether or not to invoke methods.
+
+  * **Evaluate Loops** – Indicates whether or not to evaluate loops. Disabling this option only evaluates the loop once and increases the speed performance of the analyzer.
+
+  * **Process Unvisited Code** – Indicates whether or not to process unvisited code.
+
 
 For accuracy, it is recommended to keep the default values, where **Invoke Methods** and **Evaluate Loops** are enabled, and **Process Univisited Code** is disabled.
 
@@ -265,11 +265,11 @@ For example, if enabling this option for an Alloy project, errors will be report
 
 To increase the stack size of the node command for the Code Analyzer:
 
-1.  Open the Code Analyzer preferences.
-    
-2.  In the **Max Stack Size** field, enter **10000** or a value greater than the default, which is usually 1000.
-    
-3.  Click **OK** and rerun the Code Analyzer.
-    
+1. Open the Code Analyzer preferences.
+
+2. In the **Max Stack Size** field, enter **10000** or a value greater than the default, which is usually 1000.
+
+3. Click **OK** and rerun the Code Analyzer.
+
 
 Finding the correct size is a bit of an art. Too low and you get this exception, but too high and Node.js itself will segfault. Note that a correct value may not exist for this app, meaning that it is possible that this app cannot be analyzed using the code analyzer.

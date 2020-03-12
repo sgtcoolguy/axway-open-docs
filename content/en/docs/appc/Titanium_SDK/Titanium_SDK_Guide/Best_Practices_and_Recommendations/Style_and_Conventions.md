@@ -1,34 +1,34 @@
-{"title":"Style and Conventions","weight":"60"} 
+{"title":"Style and Conventions","weight":"60"}
 
-*   [Language rules](#Languagerules)
-    
-*   [Coding style best practices](#Codingstylebestpractices)
-    
-    *   [Naming conventions](#Namingconventions)
-        
-        *   [Variable and function names](#Variableandfunctionnames)
-            
-        *   [Object and 'class' names](#Objectand'class'names)
-            
-        *   [Namespace](#Namespace)
-            
-        *   [Factories](#Factories)
-            
-        *   [Operators](#Operators)
-            
-    *   [Indentation](#Indentation)
-        
-    *   [Primitive types](#Primitivetypes)
-        
-    *   [Control statements](#Controlstatements)
-        
-    *   [Comments and documentation](#Commentsanddocumentation)
-        
-*   [References and further reading](#Referencesandfurtherreading)
-    
+* [Language rules](#Languagerules)
 
-*   [Summary](#Summary)
-    
+* [Coding style best practices](#Codingstylebestpractices)
+
+  * [Naming conventions](#Namingconventions)
+
+    * [Variable and function names](#Variableandfunctionnames)
+
+    * [Object and 'class' names](#Objectand'class'names)
+
+    * [Namespace](#Namespace)
+
+    * [Factories](#Factories)
+
+    * [Operators](#Operators)
+
+  * [Indentation](#Indentation)
+
+  * [Primitive types](#Primitivetypes)
+
+  * [Control statements](#Controlstatements)
+
+  * [Comments and documentation](#Commentsanddocumentation)
+
+* [References and further reading](#Referencesandfurtherreading)
+
+
+* [Summary](#Summary)
+
 
 In this section, we'll examine the Appcelerator recommended best-practices for coding style, including naming conventions, code formatting, and commenting.
 
@@ -38,12 +38,12 @@ We'll also cover our recommendations for organizing the assets that comprise you
 
 Many references exist that describe JavaScript language rules to follow. We'll lay out a few of the most important here, then direct you to the [References](#references) section below.
 
-*   var – All variables should be explicitly declared using the var keyword. Omitting var places the variable in the global scope. [Read more](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=var#var)
-    
-*   Semicolons – Always use semicolons to terminate statements. [Read more](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Semicolons#Semicolons)
-    
-*   Use this with extreme care, as it sometimes doesn't refer to the object you expect. [Read more](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=this#this)
-    
+* var – All variables should be explicitly declared using the var keyword. Omitting var places the variable in the global scope. [Read more](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=var#var)
+
+* Semicolons – Always use semicolons to terminate statements. [Read more](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Semicolons#Semicolons)
+
+* Use this with extreme care, as it sometimes doesn't refer to the object you expect. [Read more](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=this#this)
+
 
 We have codified our set of internal formatting and linting rules for ESLint at our repository: [https://github.com/appcelerator/eslint-config-axway](https://github.com/appcelerator/eslint-config-axway)
 
@@ -91,10 +91,10 @@ Here, convention is similar to 'class' naming.
 
 **Examples**
 
-*   App.UI.Widget
-    
-*   App.Network.Request
-    
+* App.UI.Widget
+
+* App.Network.Request
+
 
 'app.ui' should be 'App.UI'
 
@@ -178,12 +178,12 @@ As noted, you should never put return on its own line followed by an object lite
 
 ### Primitive types
 
-**Concatenation**  
+**Concatenation**
 Strings concatenated using the + operator must always use a space be added before and after the + operator to improve readability:
 
 `var` `someString =` `'My name is '` `+ firstName +` `'and I am a developer'``;`
 
-**Primitive type construction**  
+**Primitive type construction**
 Do not use the primitive type object constructors unless you have a very clear reason for doing so.
 
 `// Don't do this`
@@ -230,12 +230,12 @@ Single-line comments are required to reduce programmer error. However, specializ
 
 ## References and further reading
 
-*   [Douglas Crockford's JavaScript Code Conventions](http://javascript.crockford.com/code.html)
-    
-*   [Google's JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)
-    
-*   [Axway Appcelerator's ESLint Configuration](https://github.com/appcelerator/eslint-config-axway)
-    
+* [Douglas Crockford's JavaScript Code Conventions](http://javascript.crockford.com/code.html)
+
+* [Google's JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)
+
+* [Axway Appcelerator's ESLint Configuration](https://github.com/appcelerator/eslint-config-axway)
+
 
 ## Summary
 

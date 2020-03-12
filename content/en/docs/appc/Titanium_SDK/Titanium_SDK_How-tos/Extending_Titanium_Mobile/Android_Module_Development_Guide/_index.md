@@ -1,4 +1,4 @@
-{"title":"Android Module Development Guide","weight":"30"} 
+{"title":"Android Module Development Guide","weight":"30"}
 
 ## Overview
 

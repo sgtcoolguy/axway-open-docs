@@ -1,4 +1,4 @@
-{"title":"Configuration","weight":"10"} 
+{"title":"Configuration","weight":"10"}
 
 API Builder 3.x is deprecated
 
@@ -8,8 +8,8 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 This chapter describes the API Builder Project application and NodeJS configurations. It also provides information on the API Builder project authentication schemes.
 
-*   [Application Configuration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Configuration/Application_Configuration/)
-    
-*   [NodeJS Configuration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Configuration/NodeJS_Configuration/)
-    
-*   [Authentication Schemes](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Configuration/Authentication_Schemes/)
+* [Application Configuration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Configuration/Application_Configuration/)
+
+* [NodeJS Configuration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Configuration/NodeJS_Configuration/)
+
+* [Authentication Schemes](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Configuration/Authentication_Schemes/)

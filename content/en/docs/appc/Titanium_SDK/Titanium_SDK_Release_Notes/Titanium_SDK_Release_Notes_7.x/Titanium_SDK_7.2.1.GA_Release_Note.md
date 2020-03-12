@@ -1,15 +1,15 @@
-{"title":"Titanium SDK 7.2.1.GA 17 August 2018","weight":"170"} 
+{"title":"Titanium SDK 7.2.1.GA 17 August 2018","weight":"170"}
 
-*   [About this release](#Aboutthisrelease)
-    
-*   [Community credits](#Communitycredits)
-    
-*   [Fixed issues](#Fixedissues)
-    
-*   [API changes](#APIchanges)
-    
-    *   [New APIs](#NewAPIs)
-        
+* [About this release](#Aboutthisrelease)
+
+* [Community credits](#Communitycredits)
+
+* [Fixed issues](#Fixedissues)
+
+* [API changes](#APIchanges)
+
+  * [New APIs](#NewAPIs)
+
 
 ## About this release
 
@@ -19,21 +19,21 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 ## Community credits
 
-*   [Michael Gangolf](https://github.com/m1ga) - [TIMOB-26213](https://jira.appcelerator.org/browse/TIMOB-26213) - Android: Backing out of root window with exitOnClose false shows splash if child window closed programmatically
-    
+* [Michael Gangolf](https://github.com/m1ga) - [TIMOB-26213](https://jira.appcelerator.org/browse/TIMOB-26213) - Android: Backing out of root window with exitOnClose false shows splash if child window closed programmatically
+
 
 ## Fixed issues
 
-*   [TIMOB-25431](https://jira.appcelerator.org/browse/TIMOB-25431) - Android: java.lang.ClassCastException: ti.modules.titanium.ui.widget.TiUILabel$1 cannot be cast to android.view.ViewGroup;
-    
-*   [TIMOB-25990](https://jira.appcelerator.org/browse/TIMOB-25990) - Android apps crash when trying to add views to Titanium.Media.VideoPlayer objects if fullscreen property is set to true.
-    
-*   [TIMOB-26213](https://jira.appcelerator.org/browse/TIMOB-26213) - Android: Backing out of root window with exitOnClose false shows splash if child window closed programmatically
-    
-*   [TIMOB-26222](https://jira.appcelerator.org/browse/TIMOB-26222) - Android: App crashes when trying to re-open a closed window
-    
-*   [TIMOB-26225](https://jira.appcelerator.org/browse/TIMOB-26225) - Android: TableView leaks memory when overwriting "data" property
-    
+* [TIMOB-25431](https://jira.appcelerator.org/browse/TIMOB-25431) - Android: java.lang.ClassCastException: ti.modules.titanium.ui.widget.TiUILabel$1 cannot be cast to android.view.ViewGroup;
+
+* [TIMOB-25990](https://jira.appcelerator.org/browse/TIMOB-25990) - Android apps crash when trying to add views to Titanium.Media.VideoPlayer objects if fullscreen property is set to true.
+
+* [TIMOB-26213](https://jira.appcelerator.org/browse/TIMOB-26213) - Android: Backing out of root window with exitOnClose false shows splash if child window closed programmatically
+
+* [TIMOB-26222](https://jira.appcelerator.org/browse/TIMOB-26222) - Android: App crashes when trying to re-open a closed window
+
+* [TIMOB-26225](https://jira.appcelerator.org/browse/TIMOB-26225) - Android: TableView leaks memory when overwriting "data" property
+
 
 ## API changes
 
@@ -64,6 +64,3 @@ Titanium.Analytics.setOptedOut
 method
 
 Sets the value of the Titanium.Analytics.optedOut property. (New API, supported on Android, iPhone, iPad and Windows Phone.)
-
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**

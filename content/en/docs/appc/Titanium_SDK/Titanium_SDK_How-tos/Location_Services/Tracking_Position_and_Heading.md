@@ -1,43 +1,43 @@
-{"title":"Tracking Position and Heading","weight":"10"} 
+{"title":"Tracking Position and Heading","weight":"10"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [Development considerations](#Developmentconsiderations)
-        
-        *   [iOS development considerations](#iOSdevelopmentconsiderations)
-            
-        *   [Android development considerations](#Androiddevelopmentconsiderations)
-            
-        *   [Windows development considerations](#Windowsdevelopmentconsiderations)
-            
-    *   [Using location services in your app](#Usinglocationservicesinyourapp)
-        
-        *   [Requesting location permission](#Requestinglocationpermission)
-            
-        *   [Detect if location services are available](#Detectiflocationservicesareavailable)
-            
-        *   [Configure the accuracy and frequency](#Configuretheaccuracyandfrequency)
-            
-            *   [iOS geo configuration](#iOSgeoconfiguration)
-                
-            *   [Android geo configuration](#Androidgeoconfiguration)
-                
-            *   [Obtain the current GPS position](#ObtainthecurrentGPSposition)
-                
-    *   [Continually monitor the GPS position](#ContinuallymonitortheGPSposition)
-        
-        *   [Android lifecycle events](#Androidlifecycleevents)
-            
-    *   [Use the device's compass](#Usethedevice'scompass)
-        
-    *   [Forward and reverse geocoding](#Forwardandreversegeocoding)
-        
-    *   [References](#References)
-        
-*   [Summary](#Summary)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [Development considerations](#Developmentconsiderations)
+
+    * [iOS development considerations](#iOSdevelopmentconsiderations)
+
+    * [Android development considerations](#Androiddevelopmentconsiderations)
+
+    * [Windows development considerations](#Windowsdevelopmentconsiderations)
+
+  * [Using location services in your app](#Usinglocationservicesinyourapp)
+
+    * [Requesting location permission](#Requestinglocationpermission)
+
+    * [Detect if location services are available](#Detectiflocationservicesareavailable)
+
+    * [Configure the accuracy and frequency](#Configuretheaccuracyandfrequency)
+
+      * [iOS geo configuration](#iOSgeoconfiguration)
+
+      * [Android geo configuration](#Androidgeoconfiguration)
+
+      * [Obtain the current GPS position](#ObtainthecurrentGPSposition)
+
+  * [Continually monitor the GPS position](#ContinuallymonitortheGPSposition)
+
+    * [Android lifecycle events](#Androidlifecycleevents)
+
+  * [Use the device's compass](#Usethedevice'scompass)
+
+  * [Forward and reverse geocoding](#Forwardandreversegeocoding)
+
+  * [References](#References)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -47,18 +47,18 @@ In this chapter, you'll learn how to use Titanium's Geolocation API to retrieve 
 
 The position and heading APIs are part of the Ti.Geolocation module, which contains all the functions, properties, and events necessary to handle location information. That namespace is further divided into the Ti.Geolocation.Android namespaces, which provide Android-specific features. In the following sections, you'll learn how to use this API to perform the following activities:
 
-*   Detect if location services are available
-    
-*   Obtain the current GPS position
-    
-*   Continually monitor the GPS position
-    
-*   Use the device's compass
-    
-*   Configure location service properties
-    
-*   Forward and reverse geocoding
-    
+* Detect if location services are available
+
+* Obtain the current GPS position
+
+* Continually monitor the GPS position
+
+* Use the device's compass
+
+* Configure location service properties
+
+* Forward and reverse geocoding
+
 
 You'll also learn best practices and caveats to consider when using location services in your apps. But first, let's dive into some platform specific considerations when using these services.
 
@@ -138,22 +138,22 @@ In order to enable location service for Windows Phone, you need to provide appro
 
 `</ti:app>`
 
-For more information about geolocation configuration in tiapp.xml, see [Windows-specific section](#!/guide/tiapp.xml_and_timodule.xml_Reference-section-29004921_tiapp.xmlandtimodule.xmlReference-Windows-specificsection) in [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/).
+For more information about geolocation configuration in tiapp.xml, see [Windows-specific section](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#tiapp.xmlandtimodule.xmlReference-Windows-specific) in [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/).
 
 ### Using location services in your app
 
 Using location services generally follows these three stages:
 
-1.  Requesting Location Permission
-    
-2.  Determine if location services are enabled and available.
-    
-3.  Configure the accuracy and listener mechanisms to use.
-    
-4.  Grab a one-time location or enable a location-listener to continually monitor a user's location.
-    
-5.  With a location-listener, actively manage the listener in coordination with the app's lifecycle.
-    
+1. Requesting Location Permission
+
+2. Determine if location services are enabled and available.
+
+3. Configure the accuracy and listener mechanisms to use.
+
+4. Grab a one-time location or enable a location-listener to continually monitor a user's location.
+
+5. With a location-listener, actively manage the listener in coordination with the app's lifecycle.
+
 
 Using location services can have a significant impact on a device's battery life, so it's important to use them in the most efficient manner possible. Power consumption is strongly influenced by the accuracy and frequency of location updates required by your application. The higher the accuracy you request, and the more frequently you request location updates, the more battery power that will be consumed.
 
@@ -209,43 +209,43 @@ The location services systems of the underlying platforms are very different, so
 
 In iOS, the accuracy (and power consumption) of location services is primarily determined by the Ti.Geolocation.accuracy property setting. You can set this property to one of the following values:
 
-*   ACCURACY\_BEST (highest accuracy and power consumption)
-    
-*   ACCURACY\_NEAREST\_TEN\_METERS
-    
-*   ACCURACY\_HUNDRED\_METERS
-    
-*   ACCURACY\_KILOMETER
-    
-*   ACCURACY\_THREE\_KILOMETERS (lowest accuracy and power consumption).
-    
+* ACCURACY\_BEST (highest accuracy and power consumption)
+
+* ACCURACY\_NEAREST\_TEN\_METERS
+
+* ACCURACY\_HUNDRED\_METERS
+
+* ACCURACY\_KILOMETER
+
+* ACCURACY\_THREE\_KILOMETERS (lowest accuracy and power consumption).
+
 
 (Note that the constants ACCURACY\_HIGH and ACCURACY\_LOW are Android-specific and may not be used with iOS.)
 
 Based on the accuracy you choose, iOS uses its own logic to select location providers and filter location updates to provide location updates that meet your accuracy requirements. You can further limit power consumption on iOS by setting the Ti.Geolocation.distanceFilter property to eliminate position updates when the user is not moving. That property accepts a distance in meters; when the user has moved approximately that distance, your app will receive location update events.
 
-*   **accuracy** - The target accuracy of all location data received. The following Ti.Geolocationconstants represent the valid values for this property:
-    
-    *   ACCURACY\_BEST - Location data will be of the highest possible accuracy of which the device is capable
-        
-    *   ACCURACY\_HUNDRED\_METERS - Location data will be accurate within 100 meters
-        
-    *   ACCURACY\_KILOMETER - Location data will be accurate within 1 kilometer
-        
-    *   ACCURACY\_NEAREST\_TEN\_METERS - Location data will be accurate within 10 meters
-        
-    *   ACCURACY\_THREE\_KILOMETERS\_ - Location data will be accurate within 3 kilometers
-        
-*   **distanceFilter** - The minimum change of position (in meters) before a location event is fired. The default is 0, meaning that location events are continuously generated.
-    
-*   **headingFilter** - The minium change of heading (in degrees) before a heading event is fired. The default is 0, meaning that heading events are continuously generated.
-    
-*   **preferredProvider** - Allows you to specify the preferred method for receiving a location. The following Ti.Geolocationconstants represent your possible choices:
-    
-    *   PROVIDER\_NETWORK - Give the network based location provider preference
-        
-    *   PROVIDER\_GPS - Give the GPS location preference
-        
+* **accuracy** - The target accuracy of all location data received. The following Ti.Geolocationconstants represent the valid values for this property:
+
+  * ACCURACY\_BEST - Location data will be of the highest possible accuracy of which the device is capable
+
+  * ACCURACY\_HUNDRED\_METERS - Location data will be accurate within 100 meters
+
+  * ACCURACY\_KILOMETER - Location data will be accurate within 1 kilometer
+
+  * ACCURACY\_NEAREST\_TEN\_METERS - Location data will be accurate within 10 meters
+
+  * ACCURACY\_THREE\_KILOMETERS\_ - Location data will be accurate within 3 kilometers
+
+* **distanceFilter** - The minimum change of position (in meters) before a location event is fired. The default is 0, meaning that location events are continuously generated.
+
+* **headingFilter** - The minium change of heading (in degrees) before a heading event is fired. The default is 0, meaning that heading events are continuously generated.
+
+* **preferredProvider** - Allows you to specify the preferred method for receiving a location. The following Ti.Geolocationconstants represent your possible choices:
+
+  * PROVIDER\_NETWORK - Give the network based location provider preference
+
+  * PROVIDER\_GPS - Give the GPS location preference
+
 
 Using the event-driven location example at the beginning of this chapter, let's modify it to use some of the above properties.
 
@@ -285,10 +285,10 @@ Geolocation configuration on iOS
 
 Since Android offers a much richer geolocation model, with multiple location providers, distance filters, update frequencies, and so forth we offer a method of using manual and simple mode for geolocation.
 
-*   **Manual mode** gives developers low-level control of location updates, including enabling individual location providers and filtering updates, for the best combination of accuracy and battery life. Manual mode is used when the Titanium.Geolocation.Android.manualMode flag is set to true. In manual mode, the accuracy property is not used, and all configuration is done through the Titanium.Geolocation.Android module.
-    
-*   **Simple mode** provides a compromise mode that provides adequate support for undemanding location applications without requiring developers to write a lot of Android-specific code. Setting Ti.Geolocation.accuracy to either ACCURACY\_HIGH or ACCURACY\_LOW enables simple mode. In this mode the platform handles enabling and disabling location providers and filtering location updates.
-    
+* **Manual mode** gives developers low-level control of location updates, including enabling individual location providers and filtering updates, for the best combination of accuracy and battery life. Manual mode is used when the Titanium.Geolocation.Android.manualMode flag is set to true. In manual mode, the accuracy property is not used, and all configuration is done through the Titanium.Geolocation.Android module.
+
+* **Simple mode** provides a compromise mode that provides adequate support for undemanding location applications without requiring developers to write a lot of Android-specific code. Setting Ti.Geolocation.accuracy to either ACCURACY\_HIGH or ACCURACY\_LOW enables simple mode. In this mode the platform handles enabling and disabling location providers and filtering location updates.
+
 
 `// demonstrates manual mode:`
 
@@ -412,12 +412,12 @@ When monitoring location events continually in Android, apps will continue to re
 
 In order to manage our location events such that we only receive them while our app is active, we need to take advantage of Titanium's access to the Android lifecycle events. There are three events of significance, each of which can be handled via addEventListener() on the Ti.Android.currentActivity object:
 
-*   destroy - This event is fired when your activity is destroyed. Location events should _always_ be removed in this event.
-    
-*   pause - This event is fired when an activity moves to the background. If you intend to suspend your location data handling when your app is in the background, you need to remove location event listeners in this event.
-    
-*   resume - This event is fired when an activity comes to the foreground. If you previously removed location events in a pause event, this is where you would add them again to reenable them.
-    
+* destroy - This event is fired when your activity is destroyed. Location events should _always_ be removed in this event.
+
+* pause - This event is fired when an activity moves to the background. If you intend to suspend your location data handling when your app is in the background, you need to remove location event listeners in this event.
+
+* resume - This event is fired when an activity comes to the foreground. If you previously removed location events in a pause event, this is where you would add them again to reenable them.
+
 
 Below is a demonstration of how you would handle these events in order to only manage location events when your app is active. The key part to note is that pausing and resuming your location event handling is the responsibility of the Android Activity object accessible through the Titanium API as Ti.Android.currentActivity.
 
@@ -611,8 +611,8 @@ While the above output shows only one place, you'll notice that the places prope
 
 ### References
 
-*   [W3C Geolocation API specification](http://www.w3.org/TR/geolocation-API/)
-    
+* [W3C Geolocation API specification](http://www.w3.org/TR/geolocation-API/)
+
 
 ## Summary
 

@@ -1,59 +1,59 @@
-{"title":"Internationalization","weight":"60"} 
+{"title":"Internationalization","weight":"60"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [Language strings](#Languagestrings)
-        
-        *   [Resource file structure](#Resourcefilestructure)
-            
-        *   [Getting a localized string](#Gettingalocalizedstring)
-            
-        *   [Replacing values in a localized string](#Replacingvaluesinalocalizedstring)
-            
-        *   [iOS-specific localizations](#iOS-specificlocalizations)
-            
-            *   [Localize system buttons and submit to international App Stores](#LocalizesystembuttonsandsubmittointernationalAppStores)
-                
-            *   [Localize property list keys](#Localizepropertylistkeys)
-                
-            *   [Set default language](#Setdefaultlanguage)
-                
-        *   [Internationalizing the app's name](#Internationalizingtheapp'sname)
-            
-            *   [Changing locale for testing](#Changinglocalefortesting)
-                
-            *   [App name localization](#Appnamelocalization)
-                
-            *   [Android app name localization with Titanium SDK 3.1.x and older](#AndroidappnamelocalizationwithTitaniumSDK3.1.xandolder)
-                
-            *   [Reference](#Reference)
-                
-            *   [Links](#Links)
-                
-        *   [Internationalizing image and file resources](#Internationalizingimageandfileresources)
-            
-    *   [Date and time formatting](#Dateandtimeformatting)
-        
-    *   [Other formatting and locale functions](#Otherformattingandlocalefunctions)
-        
-    *   [Testing languages](#Testinglanguages)
-        
-*   [Hands-on practice](#Hands-onpractice)
-    
-    *   [Goal](#Goal)
-        
-    *   [Steps](#Steps)
-        
-*   [Summary](#Summary)
-    
-*   [References and further reading](#Referencesandfurtherreading)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [Language strings](#Languagestrings)
+
+    * [Resource file structure](#Resourcefilestructure)
+
+    * [Getting a localized string](#Gettingalocalizedstring)
+
+    * [Replacing values in a localized string](#Replacingvaluesinalocalizedstring)
+
+    * [iOS-specific localizations](#iOS-specificlocalizations)
+
+      * [Localize system buttons and submit to international App Stores](#LocalizesystembuttonsandsubmittointernationalAppStores)
+
+      * [Localize property list keys](#Localizepropertylistkeys)
+
+      * [Set default language](#Setdefaultlanguage)
+
+    * [Internationalizing the app's name](#Internationalizingtheapp'sname)
+
+      * [Changing locale for testing](#Changinglocalefortesting)
+
+      * [App name localization](#Appnamelocalization)
+
+      * [Android app name localization with Titanium SDK 3.1.x and older](#AndroidappnamelocalizationwithTitaniumSDK3.1.xandolder)
+
+      * [Reference](#Reference)
+
+      * [Links](#Links)
+
+    * [Internationalizing image and file resources](#Internationalizingimageandfileresources)
+
+  * [Date and time formatting](#Dateandtimeformatting)
+
+  * [Other formatting and locale functions](#Otherformattingandlocalefunctions)
+
+  * [Testing languages](#Testinglanguages)
+
+* [Hands-on practice](#Hands-onpractice)
+
+  * [Goal](#Goal)
+
+  * [Steps](#Steps)
+
+* [Summary](#Summary)
+
+* [References and further reading](#Referencesandfurtherreading)
+
 
 ## Objective
 
-In this section, you will learn how you can seamlessly internationalize your Titanium apps. We'll look specifically how you can use external language files to display text in the user's preferred language.
+In this section, you will learn how you can seamlessly internationalize your Titanium apps. We'll look specifically at how you can use external language files to display text in the user's preferred language.
 
 ## Contents
 
@@ -63,13 +63,13 @@ Titanium provides a number of JavaScript functions in the Titanium.Locale namesp
 
 Rather than hard-coding strings into your project, you can use localized strings. Localized strings are replaced at runtime with values appropriate to the user's language. Titanium relies on resources files and string placeholders to accomplish this task.
 
-At the top level of your Titanium project (the same level as tiapp.xml file, and the app and Resources directory), you will create a folder called i18n. Inside the i18n folder, create folders for each language your application will support. Name the folder according to the [ISO 639-1](http://en.wikipedia.org/wiki/ISO_639-1) standard. For example, use en for English, es for Spanish, fr for French, etc.
+In your Alloy project create a directory called i18n. Inside the i18n folder, create folders for each language your application will support. Name the folder according to the [ISO 639-1](http://en.wikipedia.org/wiki/ISO_639-1) standard. For example, use en for English, es for Spanish, fr for French, etc.
 
-Starting with Release 4.1.0, you may also add a region suffix to the folder name to specify a set of resources for a specific country. Suffix the folder name with a dash followed by the country's [ISO 3166-1](https://en.wikipedia.org/?title=ISO_3166-1) Alpha-2 code. For example, use en-US for American English, en-CA for Canadian English, en-GB for British English, etc. Note that the OS may not support all regional languages.
+You can also add a suffix to the language directories for variants of languages. However, if you don't plan on adding multiple suffix-ed directories omit the suffix completely. Suffix the folder name with a dash followed by the country's [ISO 3166-1](https://en.wikipedia.org/?title=ISO_3166-1) Alpha-2 code. For example, use en-US for American English, en-CA for Canadian English, en-GB for British English, etc. Note that the OS may not support all regional languages.
 
-`ProjectFolder`
+`app`
 
-`├── app`
+`├── controllers`
 
 `├── i18n`
 
@@ -93,9 +93,13 @@ Starting with Release 4.1.0, you may also add a region suffix to the folder name
 
 `│ └── strings.xml`
 
-`├── Resources`
+`├── styles`
 
-`└── tiapp.xml`
+`└── views`
+
+**Titanium Classic Project Note**
+
+For Titanium classic projects you should put the i18n directory inside the root of your project (which is the same level as tiapp.xml file), not in the app directory.
 
 #### Resource file structure
 
@@ -129,14 +133,14 @@ Resource files are processed and included with your application at build time by
 
 **Android Platform Notes**
 
-1.  If you have XML files in both the i18n and platform/android folders, the Titanium build scripts will try to merge the files together in the build folder. If there are any conflicts, the build fails. Currently, if modules contain any files in the platform/android folder, these files overwrite the build files.
-    
-2.  If you have strings using multiple substitutions, as demonstrated in the "ordered" string in the previous example, you may need to add the formatted="false" attribute to these string elements if the localized string is not created correctly when running the application.
-    
-3.  When editing the strings.xml file, be sure to clean your project before building again.
-    
+1. If you have XML files in both the i18n and platform/android folders, the Titanium build scripts will try to merge the files together in the build folder. If there are any conflicts, the build fails. Currently, if modules contain any files in the platform/android folder, these files overwrite the build files.
 
-String resource names (the "keys") must begin with a letter, and can contain digits, English characters, and the underscore. The contents (values) of each string resource must be [UTF-8](http://en.wikipedia.org/wiki/UTF-8) compatible strings. While a given platform may not crash or throw an exception if you don't follow these rules, there's a good chance you will encounter some unexpected behavior.
+2. If you have strings using multiple substitutions, as demonstrated in the "ordered" string in the previous example, you may need to add the formatted="false" attribute to these string elements if the localized string is not created correctly when running the application.
+
+3. When editing the strings.xml file, be sure to clean your project before building it again.
+
+
+String resource names (the "keys") must begin with a letter and can contain digits, English characters, and the underscore. The contents (values) of each string resource must be [UTF-8](http://en.wikipedia.org/wiki/UTF-8) compatible strings. While a given platform may not crash or throw an exception if you don't follow these rules, there's a good chance you will encounter some unexpected behavior.
 
 #### Getting a localized string
 
@@ -254,8 +258,6 @@ CFBundleDevelopmentRegion
 
 `<``string``>it_IT</``string``>`
 
-`<``string``/>`
-
 `</``dict``>`
 
 `</``plist``>`
@@ -368,31 +370,31 @@ And just in case my description was clear as mud, check out a Titanium project w
 
 ##### Links
 
-*   [AppNameLocalization project](https://github.com/appcelerator-developer-relations/AppNameLocalization) on Github
-    
-*   Appcelerator Wiki: [Maintaining a Custom AndroidManifest.xml](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/Maintaining_a_Custom_AndroidManifest.xml/)
-    
+* [AppNameLocalization project](https://github.com/appcelerator-developer-relations/AppNameLocalization) on Github
+
+* Appcelerator Wiki: [Maintaining a Custom AndroidManifest.xml](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/Maintaining_a_Custom_AndroidManifest.xml/)
+
 
 #### Internationalizing image and file resources
 
 Titanium does not provide built-in functions for internationalizing image and file resources. But you can easily accomplish this yourself. There are a couple of techniques you can employ:
 
-*   Put the path and file name of each resource in the strings.xml file, then use that string in the imageproperty, like this:
-    
-    `var` `img = Ti.UI.createImageView({`
-    
-    `image: L(``'my_image'``)`
-    
-    `});`
-    
-*   Put your images into a set of folders that match the 2-letter ISO codes, and include that directory in the path with Ti.Locale.currentCountry, like this:
-    
-    `var` `img = Ti.UI.createImageView({`
-    
-    `image:` `'images/'``+Ti.Locale.currentCountry+``'/my_image.png'`
-    
-    `});`
-    
+* Put the path and file name of each resource in the strings.xml file, then use that string in the imageproperty, like this:
+
+  `var` `img = Ti.UI.createImageView({`
+
+  `image: L(``'my_image'``)`
+
+  `});`
+
+* Put your images into a set of folders that match the 2-letter ISO codes, and include that directory in the path with Ti.Locale.currentCountry, like this:
+
+  `var` `img = Ti.UI.createImageView({`
+
+  `image:` `'images/'``+Ti.Locale.currentCountry+``'/my_image.png'`
+
+  `});`
+
 
 This technique won't work for the splash screen graphics. You should ideally avoid text that would need translation in your splash screen.
 
@@ -638,14 +640,14 @@ When building internationalized apps, you'll need to test each of the supported 
 
 To set the language on iOS:,
 
-1.  Open **Settings**.
-    
-2.  Tap **General**, then **Language & Region**.
-    
-3.  Under **iPhone Language**, select the language to use, then tap **Done**.
-    
-4.  iOS will ask you to confirm your changes. Tap **Change to...**.
-    
+1. Open **Settings**.
+
+2. Tap **General**, then **Language & Region**.
+
+3. Under **iPhone Language**, select the language to use, then tap **Done**.
+
+4. iOS will ask you to confirm your changes. Tap **Change to...**.
+
 
 Optionally, in Settings, tap General, Language & Region, Region Format to specify your locale format for dates and times.
 
@@ -653,12 +655,12 @@ Localization is broken on the iOS 8.1 simulator.
 
 To set the language on Android:
 
-1.  Open **Settings**.
-    
-2.  Tap **Language & input**.
-    
-3.  Tap **Language** and select the language to use.
-    
+1. Open **Settings**.
+
+2. Tap **Language & input**.
+
+3. Tap **Language** and select the language to use.
+
 
 ## Hands-on practice
 
@@ -668,38 +670,38 @@ In this activity, you will create an internationalized app that outputs language
 
 ### Steps
 
-1.  Create a new Titanium Mobile project named "Language Test" with an app ID of your choice.
-    
-2.  Using your computer's file management tools, create an i18n directory at the /app directory of your project. In that directory, create two directories: en and es.
-    
-3.  Using Studio, within the en directory, create a strings.xmlfile following the format shown above. Add three key/value pairs:
-    
-    *   language = Language
-        
-    *   test = Test
-        
-    *   tab = Tab
-        
-4.  In the es directory, create a matching copy of strings.xml except that the values should be as follows:
-    
-    *   language = Lengua
-        
-    *   test = Prueba
-        
-    *   tab = Lengüeta
-        
-5.  In the es directory, create an app.xml file following the format shown above. Add the necessary key and value to specify "Lengua Prueba" as the translated version of the app's name. (This won't have any effect if you're building for Android.)
-    
-6.  In app.js, on tab 1, add the necessary code to output the internationalized "Language Test" string as the text of label1.
-    
-7.  On tab 2, change the text of label2 to output today's date using the String.formatDate() method.
-    
-8.  For both tab 1 and tab 2, update the text to use the internationalized "tab" key plus the tab's number.
-    
-9.  Build the app for the simulator/emulator. The label and tab text should output in English (unless your emulator is already set to output text in Spanish). Close the app.
-    
-10.  Change the simulator/emulator's settings to display text in Spanish. Open the app. Label and tab text should now be in Spanish. On iOS, the app's icon should be labeled in Spanish as well.
-    
+1. Create a new Titanium Mobile project named "Language Test" with an app ID of your choice.
+
+2. Using your computer's file management tools, create an i18n directory at the /app directory of your project. In that directory, create two directories: en and es.
+
+3. Using Studio, within the en directory, create a strings.xmlfile following the format shown above. Add three key/value pairs:
+
+  * language = Language
+
+  * test = Test
+
+  * tab = Tab
+
+4. In the es directory, create a matching copy of strings.xml except that the values should be as follows:
+
+  * language = Lengua
+
+  * test = Prueba
+
+  * tab = Lengüeta
+
+5. In the es directory, create an app.xml file following the format shown above. Add the necessary key and value to specify "Lengua Prueba" as the translated version of the app's name. (This won't have any effect if you're building for Android.)
+
+6. In app.js, on tab 1, add the necessary code to output the internationalized "Language Test" string as the text of label1.
+
+7. On tab 2, change the text of label2 to output today's date using the String.formatDate() method.
+
+8. For both tab 1 and tab 2, update the text to use the internationalized "tab" key plus the tab's number.
+
+9. Build the app for the simulator/emulator. The label and tab text should output in English (unless your emulator is already set to output text in Spanish). Close the app.
+
+10. Change the simulator/emulator's settings to display text in Spanish. Open the app. Label and tab text should now be in Spanish. On iOS, the app's icon should be labeled in Spanish as well.
+
 
 ## Summary
 
@@ -707,4 +709,4 @@ In this chapter, you learned how to internationalize your app, including using l
 
 ## References and further reading
 
-*   [Ti.Locale module](#!/api/Titanium.Locale)
+* [Ti.Locale module](#!/api/Titanium.Locale)

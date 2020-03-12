@@ -1,17 +1,17 @@
-{"title":"Deprecation Notice SDK 5.x","weight":"40"} 
+{"title":"Deprecation Notice SDK 5.x","weight":"40"}
 
 List of all depreciation notices for SDK 5.x.
 
-*   [SDK 5.x](#SDK5.x)
-    
-    *   [5.4.0](#5.4.0)
-        
-    *   [5.2.0](#5.2.0)
-        
-    *   [5.1.0](#5.1.0)
-        
-    *   [5.0.0](#5.0.0)
-        
+* [SDK 5.x](#SDK5.x)
+
+  * [5.4.0](#5.4.0)
+
+  * [5.2.0](#5.2.0)
+
+  * [5.1.0](#5.1.0)
+
+  * [5.0.0](#5.0.0)
+
 
 ## SDK 5.x
 

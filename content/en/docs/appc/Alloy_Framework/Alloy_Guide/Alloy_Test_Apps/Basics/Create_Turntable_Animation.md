@@ -1,4 +1,4 @@
-{"title":"Create Turntable Animation","weight":"30"} 
+{"title":"Create Turntable Animation","weight":"30"}
 
 This document shows how to create turntable animation. ![turntable-1](/Images/appc/download/thumbnails/56296120/turntable-1.png)
 

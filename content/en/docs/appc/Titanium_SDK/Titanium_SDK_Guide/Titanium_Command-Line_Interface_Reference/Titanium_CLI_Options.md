@@ -1,232 +1,232 @@
-{"title":"Titanium CLI Options","weight":"10"} 
+{"title":"Titanium CLI Options","weight":"10"}
 
-*   [Introduction](#Introduction)
-    
-*   [Options](#Options)
-    
-    *   [Android](#Android)
-        
-        *   [android.adb.port](#android.adb.port)
-            
-        *   [android.allowAppNameAmpersands](#android.allowAppNameAmpersands)
-            
-        *   [android.appInstallTimeout](#android.appInstallTimeout)
-            
-        *   [android.appInstallRetryInterval](#android.appInstallRetryInterval)
-            
-        *   [android.appStartTimeout](#android.appStartTimeout)
-            
-        *   [android.appStartRetryInterval](#android.appStartRetryInterval)
-            
-        *   [android.autoSelectDevice](#android.autoSelectDevice)
-            
-        *   [android.buildTools.selectedVersion](#android.buildTools.selectedVersion)
-            
-        *   [android.dx.maxMemory](#android.dx.maxMemory)
-            
-        *   [android.emulatorStartTimeout](#android.emulatorStartTimeout)
-            
-        *   [android.excludeInvalidI18nStrings](#android.excludeInvalidI18nStrings)
-            
-        *   [android.executables.appt](#android.executables.appt)
-            
-        *   [android.executables.adb](#android.executables.adb)
-            
-        *   [android.executables.aidl](#android.executables.aidl)
-            
-        *   [android.executables.android](#android.executables.android)
-            
-        *   [android.executables.dx](#android.executables.dx)
-            
-        *   [android.executables.emulator](#android.executables.emulator)
-            
-        *   [android.executables.mksdcard](#android.executables.mksdcard)
-            
-        *   [android.executables.ndkbuild](#android.executables.ndkbuild)
-            
-        *   [android.executables.zipalign](#android.executables.zipalign)
-            
-        *   [android.javac.maxmemory](#android.javac.maxmemory)
-            
-        *   [android.javac.source](#android.javac.source)
-            
-        *   [android.javac.target](#android.javac.target)
-            
-        *   [android.mergeCustomAndroidManifest](#android.mergeCustomAndroidManifest)
-            
-        *   [android.ndkPath](#android.ndkPath)
-            
-        *   [andoird.sdkPath](#andoird.sdkPath)
-            
-        *   [android.symlinkResources](#android.symlinkResources)
-            
-    *   [Application](#Application)
-        
-        *   [app.idprefix](#app.idprefix)
-            
-        *   [app.publisher](#app.publisher)
-            
-        *   [app.skipAppIdValidation](#app.skipAppIdValidation)
-            
-        *   [app.skipVersionValidation](#app.skipVersionValidation)
-            
-        *   [app.url](#app.url)
-            
-        *   [app.workspace](#app.workspace)
-            
-    *   [CLI](#CLI)
-        
-        *   [cli.analytics.showErrors](#cli.analytics.showErrors)
-            
-        *   [cli.colors](#cli.colors)
-            
-        *   [cli.failOnWrongSDK](#cli.failOnWrongSDK)
-            
-        *   [cli.hideCharEncWarning](#cli.hideCharEncWarning)
-            
-        *   [cli.httpProxyServer](#cli.httpProxyServer)
-            
-        *   [cli.ignoreDirs](#cli.ignoreDirs)
-            
-        *   [cli.ignoreFiles](#cli.ignoreFiles)
-            
-        *   [cli.logLevel](#cli.logLevel)
-            
-        *   [cli.prompt](#cli.prompt)
-            
-        *   [cli.progressBars](#cli.progressBars)
-            
-        *   [cli.quiet](#cli.quiet)
-            
-        *   [cli.rejectUnauthorized](#cli.rejectUnauthorized)
-            
-        *   [cli.width](#cli.width)
-            
-    *   [Genymotion](#Genymotion)
-        
-        *   [genymotion.enabled](#genymotion.enabled)
-            
-        *   [genymotion.executables.genymotion](#genymotion.executables.genymotion)
-            
-        *   [genymotion.executables.player](#genymotion.executables.player)
-            
-        *   [genymotion.executables.vboxmanage](#genymotion.executables.vboxmanage)
-            
-        *   [genymotion.home](#genymotion.home)
-            
-        *   [genymotion.path](#genymotion.path)
-            
-    *   [HAXM](#HAXM)
-        
-        *   [haxm.plist](#haxm.plist)
-            
-    *   [iOS](#iOS)
-        
-        *   [ios.autoSelectDevice](#ios.autoSelectDevice)
-            
-        *   [ios.developerName](#ios.developerName)
-            
-        *   [ios.distributionName](#ios.distributionName)
-            
-        *   [ios.symlinkResources](#ios.symlinkResources)
-            
-    *   [Java](#Java)
-        
-        *   [java.executables.jarsigner](#java.executables.jarsigner)
-            
-        *   [java.executables.java](#java.executables.java)
-            
-        *   [java.executables.javac](#java.executables.javac)
-            
-        *   [java.executables.keytool](#java.executables.keytool)
-            
-        *   [java.home](#java.home)
-            
-    *   [OS X](#OSX)
-        
-        *   [osx.executables.gperf](#osx.executables.gperf)
-            
-        *   [osx.executables.make](#osx.executables.make)
-            
-        *   [osx.executables.security](#osx.executables.security)
-            
-        *   [osx.executables.which](#osx.executables.which)
-            
-        *   [osx.executables.xcodeSelect](#osx.executables.xcodeSelect)
-            
-    *   [Paths](#Paths)
-        
-        *   [paths.commands](#paths.commands)
-            
-        *   [paths.hooks](#paths.hooks)
-            
-        *   [paths.modules](#paths.modules)
-            
-        *   [paths.plugins](#paths.plugins)
-            
-        *   [paths.sdks](#paths.sdks)
-            
-        *   [paths.xcode](#paths.xcode)
-            
-    *   [SDK](#SDK)
-        
-        *   [sdk.defaultInstallLocation](#sdk.defaultInstallLocation)
-            
-        *   [sdk.selected](#sdk.selected)
-            
-    *   [User](#User)
-        
-        *   [user.email](#user.email)
-            
-        *   [user.locale](#user.locale)
-            
-        *   [user.name](#user.name)
-            
-    *   [Windows](#Windows)
-        
-        *   [windows.publisherId](#windows.publisherId)
-            
-        *   [windows.phone.publisherGuid](#windows.phone.publisherGuid)
-            
-        *   [windows.phone.productId](#windows.phone.productId)
-            
-        *   [windows.visualstudio.selectedVersion](#windows.visualstudio.selectedVersion)
-            
-        *   [windows.sdk.selectedVersion](#windows.sdk.selectedVersion)
-            
+* [Introduction](#Introduction)
+
+* [Options](#Options)
+
+  * [Android](#Android)
+
+    * [android.adb.port](#android.adb.port)
+
+    * [android.allowAppNameAmpersands](#android.allowAppNameAmpersands)
+
+    * [android.appInstallTimeout](#android.appInstallTimeout)
+
+    * [android.appInstallRetryInterval](#android.appInstallRetryInterval)
+
+    * [android.appStartTimeout](#android.appStartTimeout)
+
+    * [android.appStartRetryInterval](#android.appStartRetryInterval)
+
+    * [android.autoSelectDevice](#android.autoSelectDevice)
+
+    * [android.buildTools.selectedVersion](#android.buildTools.selectedVersion)
+
+    * [android.dx.maxMemory](#android.dx.maxMemory)
+
+    * [android.emulatorStartTimeout](#android.emulatorStartTimeout)
+
+    * [android.excludeInvalidI18nStrings](#android.excludeInvalidI18nStrings)
+
+    * [android.executables.appt](#android.executables.appt)
+
+    * [android.executables.adb](#android.executables.adb)
+
+    * [android.executables.aidl](#android.executables.aidl)
+
+    * [android.executables.android](#android.executables.android)
+
+    * [android.executables.dx](#android.executables.dx)
+
+    * [android.executables.emulator](#android.executables.emulator)
+
+    * [android.executables.mksdcard](#android.executables.mksdcard)
+
+    * [android.executables.ndkbuild](#android.executables.ndkbuild)
+
+    * [android.executables.zipalign](#android.executables.zipalign)
+
+    * [android.javac.maxmemory](#android.javac.maxmemory)
+
+    * [android.javac.source](#android.javac.source)
+
+    * [android.javac.target](#android.javac.target)
+
+    * [android.mergeCustomAndroidManifest](#android.mergeCustomAndroidManifest)
+
+    * [android.ndkPath](#android.ndkPath)
+
+    * [andoird.sdkPath](#andoird.sdkPath)
+
+    * [android.symlinkResources](#android.symlinkResources)
+
+  * [Application](#Application)
+
+    * [app.idprefix](#app.idprefix)
+
+    * [app.publisher](#app.publisher)
+
+    * [app.skipAppIdValidation](#app.skipAppIdValidation)
+
+    * [app.skipVersionValidation](#app.skipVersionValidation)
+
+    * [app.url](#app.url)
+
+    * [app.workspace](#app.workspace)
+
+  * [CLI](#CLI)
+
+    * [cli.analytics.showErrors](#cli.analytics.showErrors)
+
+    * [cli.colors](#cli.colors)
+
+    * [cli.failOnWrongSDK](#cli.failOnWrongSDK)
+
+    * [cli.hideCharEncWarning](#cli.hideCharEncWarning)
+
+    * [cli.httpProxyServer](#cli.httpProxyServer)
+
+    * [cli.ignoreDirs](#cli.ignoreDirs)
+
+    * [cli.ignoreFiles](#cli.ignoreFiles)
+
+    * [cli.logLevel](#cli.logLevel)
+
+    * [cli.prompt](#cli.prompt)
+
+    * [cli.progressBars](#cli.progressBars)
+
+    * [cli.quiet](#cli.quiet)
+
+    * [cli.rejectUnauthorized](#cli.rejectUnauthorized)
+
+    * [cli.width](#cli.width)
+
+  * [Genymotion](#Genymotion)
+
+    * [genymotion.enabled](#genymotion.enabled)
+
+    * [genymotion.executables.genymotion](#genymotion.executables.genymotion)
+
+    * [genymotion.executables.player](#genymotion.executables.player)
+
+    * [genymotion.executables.vboxmanage](#genymotion.executables.vboxmanage)
+
+    * [genymotion.home](#genymotion.home)
+
+    * [genymotion.path](#genymotion.path)
+
+  * [HAXM](#HAXM)
+
+    * [haxm.plist](#haxm.plist)
+
+  * [iOS](#iOS)
+
+    * [ios.autoSelectDevice](#ios.autoSelectDevice)
+
+    * [ios.developerName](#ios.developerName)
+
+    * [ios.distributionName](#ios.distributionName)
+
+    * [ios.symlinkResources](#ios.symlinkResources)
+
+  * [Java](#Java)
+
+    * [java.executables.jarsigner](#java.executables.jarsigner)
+
+    * [java.executables.java](#java.executables.java)
+
+    * [java.executables.javac](#java.executables.javac)
+
+    * [java.executables.keytool](#java.executables.keytool)
+
+    * [java.home](#java.home)
+
+  * [OS X](#OSX)
+
+    * [osx.executables.gperf](#osx.executables.gperf)
+
+    * [osx.executables.make](#osx.executables.make)
+
+    * [osx.executables.security](#osx.executables.security)
+
+    * [osx.executables.which](#osx.executables.which)
+
+    * [osx.executables.xcodeSelect](#osx.executables.xcodeSelect)
+
+  * [Paths](#Paths)
+
+    * [paths.commands](#paths.commands)
+
+    * [paths.hooks](#paths.hooks)
+
+    * [paths.modules](#paths.modules)
+
+    * [paths.plugins](#paths.plugins)
+
+    * [paths.sdks](#paths.sdks)
+
+    * [paths.xcode](#paths.xcode)
+
+  * [SDK](#SDK)
+
+    * [sdk.defaultInstallLocation](#sdk.defaultInstallLocation)
+
+    * [sdk.selected](#sdk.selected)
+
+  * [User](#User)
+
+    * [user.email](#user.email)
+
+    * [user.locale](#user.locale)
+
+    * [user.name](#user.name)
+
+  * [Windows](#Windows)
+
+    * [windows.publisherId](#windows.publisherId)
+
+    * [windows.phone.publisherGuid](#windows.phone.publisherGuid)
+
+    * [windows.phone.productId](#windows.phone.productId)
+
+    * [windows.visualstudio.selectedVersion](#windows.visualstudio.selectedVersion)
+
+    * [windows.sdk.selectedVersion](#windows.sdk.selectedVersion)
+
 
 ## Introduction
 
 The CLI configuration options allow you to override or specify default values. You can specify CLI options three different ways:
 
-1.  Set, remove, or append values using the titanium config command.
-    
-    `# Display current CLI options that are configured`
-    
-    `ti config`
-    
-    `# Set a new value for CLI log level`
-    
-    `ti config cli.logLevel info`
-    
-    `# Append a value to paths.hooks`
-    
-    `ti config -a paths.hooks` `"/path/to/some/hook"`
-    
-    `# Remove all Android options`
-    
-    `ti config -r android`
-    
-2.  Pass in JSON string using the \--config option. Do not use this parameter with either the ti config or ti setup command. This may cause errors when the JSON object is written back to the filesystem.
-    
-    `# Pass in CLI hooks for this build process`
-    
-    `ti build -p ios --config` `"{ paths: { hooks: '/path/to/some/hook' } }"`
-    
-3.  Pass in the location to a JSON file that specifies your CLI options using the \--config-file option.
-    
-    `ti build -p ios --config-file` `"/Users/meMyselfAndI/customConfig.json"`
-    
+1. Set, remove, or append values using the titanium config command.
+
+  `# Display current CLI options that are configured`
+
+  `ti config`
+
+  `# Set a new value for CLI log level`
+
+  `ti config cli.logLevel info`
+
+  `# Append a value to paths.hooks`
+
+  `ti config -a paths.hooks` `"/path/to/some/hook"`
+
+  `# Remove all Android options`
+
+  `ti config -r android`
+
+2. Pass in JSON string using the \--config option. Do not use this parameter with either the ti config or ti setup command. This may cause errors when the JSON object is written back to the filesystem.
+
+  `# Pass in CLI hooks for this build process`
+
+  `ti build -p ios --config` `"{ paths: { hooks: '/path/to/some/hook' } }"`
+
+3. Pass in the location to a JSON file that specifies your CLI options using the \--config-file option.
+
+  `ti build -p ios --config-file` `"/Users/meMyselfAndI/customConfig.json"`
+
 
 ## Options
 
@@ -674,20 +674,20 @@ Path to the location of where to install the Titanium SDKs. The defaults vary by
 
 **Defaults:**
 
-*   **Mac OS X**
-    
-    *   ~/Library/Application Support/Titanium (default)
-        
-    *   /Library/Application Support/Titanium
-        
-*   **Windows**
-    
-    *   %ProgramData%\\Titanium (CLI default)
-        
-    *   %APPDATA%\\Titanium (Studio defaults)
-        
-    *   %ALLUSERSPROFILE%\\Application Data\\Titanium
-        
+* **Mac OS X**
+
+  * ~/Library/Application Support/Titanium (default)
+
+  * /Library/Application Support/Titanium
+
+* **Windows**
+
+  * %ProgramData%\\Titanium (CLI default)
+
+  * %APPDATA%\\Titanium (Studio defaults)
+
+  * %ALLUSERSPROFILE%\\Application Data\\Titanium
+
 
 #### sdk.selected
 
@@ -714,6 +714,8 @@ User's locale, for example, "en\_US".
 User's name.
 
 ### Windows
+
+As of Titanium 9.0.0, building Windows apps is no longer supported.
 
 Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
 

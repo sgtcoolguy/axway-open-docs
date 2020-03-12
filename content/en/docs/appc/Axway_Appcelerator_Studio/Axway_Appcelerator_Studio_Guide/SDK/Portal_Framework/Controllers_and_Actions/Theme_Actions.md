@@ -1,19 +1,19 @@
-{"title":"Theme Actions","weight":"90"} 
+{"title":"Theme Actions","weight":"90"}
 
-*   [Requirements](#Requirements)
-    
-*   [Description](#Description)
-    
-*   [Invocation](#Invocation)
-    
-*   [Get all available themes](#Getallavailablethemes)
-    
-*   [Get the active theme name](#Gettheactivethemename)
-    
-*   [Set an active theme](#Setanactivetheme)
-    
-*   [Sample of use](#Sampleofuse)
-    
+* [Requirements](#Requirements)
+
+* [Description](#Description)
+
+* [Invocation](#Invocation)
+
+* [Get all available themes](#Getallavailablethemes)
+
+* [Get the active theme name](#Gettheactivethemename)
+
+* [Set an active theme](#Setanactivetheme)
+
+* [Sample of use](#Sampleofuse)
+
 
 ## Requirements
 

@@ -1,23 +1,23 @@
-{"title":"Accessibility","weight":"90"} 
+{"title":"Accessibility","weight":"90"}
 
-*   [Introduction](#Introduction)
-    
-*   [Designing universal accessible applications](#Designinguniversalaccessibleapplications)
-    
-*   [Spoken feedback accessibility features](#Spokenfeedbackaccessibilityfeatures)
-    
-    *   [Android TalkBack vs. iOS VoiceOver behavior](#AndroidTalkBackvs.iOSVoiceOverbehavior)
-        
-    *   [Testing spoken feedback accessibility features](#Testingspokenfeedbackaccessibilityfeatures)
-        
-        *   [Android emulator](#Androidemulator)
-            
-        *   [Android device](#Androiddevice)
-            
-        *   [iOS simulator](#iOSsimulator)
-            
-        *   [iOS device](#iOSdevice)
-            
+* [Introduction](#Introduction)
+
+* [Designing universal accessible applications](#Designinguniversalaccessibleapplications)
+
+* [Spoken feedback accessibility features](#Spokenfeedbackaccessibilityfeatures)
+
+  * [Android TalkBack vs. iOS VoiceOver behavior](#AndroidTalkBackvs.iOSVoiceOverbehavior)
+
+  * [Testing spoken feedback accessibility features](#Testingspokenfeedbackaccessibilityfeatures)
+
+    * [Android emulator](#Androidemulator)
+
+    * [Android device](#Androiddevice)
+
+    * [iOS simulator](#iOSsimulator)
+
+    * [iOS device](#iOSdevice)
+
 
 ## Introduction
 
@@ -29,16 +29,16 @@ An application is universally accessible if it can be used by all users, especia
 
 Review the following external guides for information about designing accessible applications:
 
-*   [Accessibility Programming Guide for iOS](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/iPhoneAccessibility/Introduction/Introduction.html)
-    
-*   [Android Developers: Accessibility API guide](http://developer.android.com/guide/topics/ui/accessibility/index.html)
-    
-*   [Android Developers: Accessibility Design guide](http://developer.android.com/design/patterns/accessibility.html)
-    
-*   [W3C Accessibility](http://www.w3.org/standards/webdesign/accessibility)
-    
-*   [Web Accessibility Initiative](http://www.w3.org/WAI/)
-    
+* [Accessibility Programming Guide for iOS](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/iPhoneAccessibility/Introduction/Introduction.html)
+
+* [Android Developers: Accessibility API guide](http://developer.android.com/guide/topics/ui/accessibility/index.html)
+
+* [Android Developers: Accessibility Design guide](http://developer.android.com/design/patterns/accessibility.html)
+
+* [W3C Accessibility](http://www.w3.org/standards/webdesign/accessibility)
+
+* [Web Accessibility Initiative](http://www.w3.org/WAI/)
+
 
 ## Spoken feedback accessibility features
 
@@ -310,37 +310,37 @@ TalkBack varies by the Android version.
 
 To enable TalkBack:
 
-1.  Open **Settings** on the device.
-    
-2.  Click **Accessibility**, then **TalkBack**.
-    
-3.  Click the **TalkBack** switch to on to enable TalkBack.
-    
-4.  A dialog box appears asking you to confirm your selection. Click the **OK** button.
-    
+1. Open **Settings** on the device.
+
+2. Click **Accessibility**, then **TalkBack**.
+
+3. Click the **TalkBack** switch to on to enable TalkBack.
+
+4. A dialog box appears asking you to confirm your selection. Click the **OK** button.
+
 
 To use TalkBack, tap on a view element to select it, then double-tap to activate the element. Swipe left or right to select the previous or next item, respectively. Swipe right then left or left then right in one motion to scroll vertically or horizontally through views.
 
 To disable TalkBack:
 
-1.  Tap the App icon to select it, then double-tap to open it.
-    
-2.  Swipe right then left in one motion until you see the **Settings** icon.
-    
-3.  Tap the **Settings** icon to select it, then double-tap to open it.
-    
-4.  Swipe right then left in one motion until you see **Accessibility**.
-    
-5.  Tap **Accessibility** to select it, then double-tap to open it.
-    
-6.  Tap **TalkBack** to select it, then double-tap to open it.
-    
-7.  Tap the **TalkBack** switch to select it, then double-tap top disable it.
-    
-8.  A dialog box appears asking you to confirm your selection.
-    
-9.  Tap the **OK** button to select it, then double-tap to confirm.
-    
+1. Tap the App icon to select it, then double-tap to open it.
+
+2. Swipe right then left in one motion until you see the **Settings** icon.
+
+3. Tap the **Settings** icon to select it, then double-tap to open it.
+
+4. Swipe right then left in one motion until you see **Accessibility**.
+
+5. Tap **Accessibility** to select it, then double-tap to open it.
+
+6. Tap **TalkBack** to select it, then double-tap to open it.
+
+7. Tap the **TalkBack** switch to select it, then double-tap top disable it.
+
+8. A dialog box appears asking you to confirm your selection.
+
+9. Tap the **OK** button to select it, then double-tap to confirm.
+
 
 For more information about using Talkback, see the [Nexus Accessibility Guide](http://support.google.com/nexus/bin/topic.py?hl=en&topic=2692466).
 
@@ -350,21 +350,21 @@ The iOS Simulator has a utility called Accessibility Inspector that displays acc
 
 To enable Accessibility Inspector:
 
-1.  Open **Settings** on the simulator.
-    
-2.  Click **General**, then **Accessibility**.
-    
-3.  Switch **Accessibility** **Inspector** to on.
-    
+1. Open **Settings** on the simulator.
+
+2. Click **General**, then **Accessibility**.
+
+3. Switch **Accessibility** **Inspector** to on.
+
 
 A rainbow colored bar appears in the simulator. To temporary enable or disable the utility during testing, click the 'x' icon in the top-left corner to uncollapse and collapse the accessibility information preview, respectively. While the utility is enabled, in your application, click on a view element to select it to preview the information in the Accessibility Inspector. To navigate in your application while the utility is enabled, for most view elements, tap the view element to select it, then double-tap or triple-tap to activate it.
 
 To disable Accessibility Inspector:
 
-1.  Click the 'x' icon in the top-left corner of Accessibility Inspector to collapse the utility to disable it.
-    
-2.  Repeat the steps to enable it except switch Accessibility Inspector to off.
-    
+1. Click the 'x' icon in the top-left corner of Accessibility Inspector to collapse the utility to disable it.
+
+2. Repeat the steps to enable it except switch Accessibility Inspector to off.
+
 
 For more information about using Accessibility Inspector, refer to [Accessibility Programming Guide for iOS: Testing the Accessibility of Your iPhone Application](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/iPhoneAccessibility/Testing_Accessibility/Testing_Accessibility.html).
 
@@ -372,26 +372,26 @@ For more information about using Accessibility Inspector, refer to [Accessibilit
 
 To enable VoiceOver:
 
-1.  Open **Settings** on the iOS device.
-    
-2.  Navigate to **General** > **Accessibility** > **VoiceOver**.
-    
-3.  Click the **VoiceOver** switch to on to enable VoiceOver.
-    
+1. Open **Settings** on the iOS device.
+
+2. Navigate to **General** > **Accessibility** > **VoiceOver**.
+
+3. Click the **VoiceOver** switch to on to enable VoiceOver.
+
 
 To use VoiceOver, tap on a view element to select it, then double- or triple-tap to activate the element. Swipe left or right to select the previous or next item, respectively. Swipe with three fingers to scroll vertically or horizontally. If your screen is locked, double-tap it to unlock it.
 
 To disable VoiceOver:
 
-1.  Tap **Settings** to select it, then double-tap to open it.
-    
-2.  Tap **General** to select it, then double-tap to open it.
-    
-3.  Swipe right until you select **Accessibility**, then double-tap to open it.
-    
-4.  Tap **VoiceOver** to select it, then double-tap to open it.
-    
-5.  Tap **VoiceOver** switch to select it, then double-tap to disable it.
-    
+1. Tap **Settings** to select it, then double-tap to open it.
+
+2. Tap **General** to select it, then double-tap to open it.
+
+3. Swipe right until you select **Accessibility**, then double-tap to open it.
+
+4. Tap **VoiceOver** to select it, then double-tap to open it.
+
+5. Tap **VoiceOver** switch to select it, then double-tap to disable it.
+
 
 For more information about using VoiceOver, refer to [Accessibility Programming Guide for iOS: Testing the Accessibility of Your iPhone Application](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/iPhoneAccessibility/Testing_Accessibility/Testing_Accessibility.html).

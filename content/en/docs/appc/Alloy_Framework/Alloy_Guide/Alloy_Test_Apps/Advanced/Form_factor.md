@@ -1,4 +1,4 @@
-{"title":"Form factor","weight":"70"} 
+{"title":"Form factor","weight":"70"}
 
 Demonstrates how to conditionally apply TSS styles or include XML markup based on the form factor of the target device. Each XML element, or TSS style, can be assigned a formFactor attribute that can take a value of either **"handheld"** or **"tablet"**.
 
@@ -70,4 +70,4 @@ app/styles/index.tss
 
 ## See also
 
-*   [Alloy XML:Conditional Code](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#Conditionalcode)
+* [Alloy XML:Conditional Code](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#Conditionalcode)

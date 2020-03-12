@@ -1,4 +1,4 @@
-{"title":"Integrating Web Content","weight":"30"} 
+{"title":"Integrating Web Content","weight":"30"}
 
 With Titanium SDK 8.0.0, we now use [WKWebView](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/WKWebView/) to implement Ti.UI.WebView (as Apple has deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview)).
 
@@ -6,12 +6,12 @@ While Titanium offers the power of using native UI components, sometimes it is n
 
 While it's highly encouraged to use native UI components whenever possible, there are some situations that are best suited for WebViews, like:
 
-*   Rendering existing HTML/CSS
-    
-*   Animation and interaction via the HTML5 <canvas> tag
-    
-*   Integrating web-based tools
-    
+* Rendering existing HTML/CSS
+
+* Animation and interaction via the HTML5 <canvas> tag
+
+* Integrating web-based tools
+
 
 But be cautious when using WebViews. They are the heaviest of native UI components. They take time to render and can affect the performance of your apps if used too often. This will be discussed in more detail in [WebView Use Cases](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Integrating_Web_Content/WebView_Use_Cases/).
 

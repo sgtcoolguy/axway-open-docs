@@ -1,13 +1,13 @@
-{"title":"New API Notice SDK 8.x","weight":"10"} 
+{"title":"New API Notice SDK 8.x","weight":"10"}
 
 List of all new API notices for SDK 8.x.
 
-*   [SDK 8.x](#SDK8.x)
-    
-    *   [8.1.0](#8.1.0)
-        
-    *   [8.0.0](#8.0.0)
-        
+* [SDK 8.x](#SDK8.x)
+
+  * [8.1.0](#8.1.0)
+
+  * [8.0.0](#8.0.0)
+
 
 ## SDK 8.x
 
@@ -317,7 +317,7 @@ Titanium.UI.WebView.backForwardList
 
 method
 
-An object which maintains a list of visited pages used to go back and forward to the most recent page.  
+An object which maintains a list of visited pages used to go back and forward to the most recent page.
 (New API, supported on iPhone and iPad.)
 
 Titanium.UI.WebView.cachePolicy

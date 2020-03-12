@@ -1,29 +1,29 @@
-{"title":"Stream Spec","weight":"30"} 
+{"title":"Stream Spec","weight":"30"}
 
 ## Contents
 
-*   [Overview](#Overview)
-    
-*   [Justification](#Justification)
-    
-*   [Definitions](#Definitions)
-    
-*   [Proposed Tasks](#ProposedTasks)
-    
-*   [Proposed API](#ProposedAPI)
-    
-    *   [Ti.Stream](#Ti.Stream)
-        
-        *   [Module](#Module)
-            
-        *   [Interface](#Interface)
-            
-    *   [FileStream](#FileStream)
-        
-    *   [Socket](#Socket)
-        
-*   [Source examples](#Sourceexamples)
-    
+* [Overview](#Overview)
+
+* [Justification](#Justification)
+
+* [Definitions](#Definitions)
+
+* [Proposed Tasks](#ProposedTasks)
+
+* [Proposed API](#ProposedAPI)
+
+  * [Ti.Stream](#Ti.Stream)
+
+    * [Module](#Module)
+
+    * [Interface](#Interface)
+
+  * [FileStream](#FileStream)
+
+  * [Socket](#Socket)
+
+* [Source examples](#Sourceexamples)
+
 
 ## Overview
 
@@ -41,28 +41,28 @@ Ultimately, adding Stream support will enable our developers to simplify their s
 
 ## Definitions
 
-*   Stream - Generic input / output object that can be used for read / write operations with a variable frequency and amount.
-    
+* Stream - Generic input / output object that can be used for read / write operations with a variable frequency and amount.
 
-*   Buffer - Generally represents temporary storage for data when moving from one location to another (such as reading data off a socket and then writing to a file). In our case, the buffer will be a container for binary data rather than being limited to only string data. [Buffer Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/Buffer_Spec/)
-    
+
+* Buffer - Generally represents temporary storage for data when moving from one location to another (such as reading data off a socket and then writing to a file). In our case, the buffer will be a container for binary data rather than being limited to only string data. [Buffer Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/Buffer_Spec/)
+
 
 ## Proposed Tasks
 
-*   Create Stream interface
-    
+* Create Stream interface
 
-*   Create BufferStream object that implements Stream interface
-    
 
-*   Create BlobStream object that implements the Stream interface
-    
+* Create BufferStream object that implements Stream interface
 
-*   Create FileStream object that implements Stream interface
-    
 
-*   Update Socket object to implement Stream interface
-    
+* Create BlobStream object that implements the Stream interface
+
+
+* Create FileStream object that implements Stream interface
+
+
+* Update Socket object to implement Stream interface
+
 
 ## Proposed API
 

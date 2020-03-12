@@ -1,15 +1,15 @@
-{"title":"Themes","weight":"110"} 
+{"title":"Themes","weight":"110"}
 
-*   [Scopes](#Scopes)
-    
-*   [Token names](#Tokennames)
-    
-*   [Themes in Rubles](#ThemesinRubles)
-    
-*   [Themes in Java](#ThemesinJava)
-    
-*   [Related topics](#Relatedtopics)
-    
+* [Scopes](#Scopes)
+
+* [Token names](#Tokennames)
+
+* [Themes in Rubles](#ThemesinRubles)
+
+* [Themes in Java](#ThemesinJava)
+
+* [Related topics](#Relatedtopics)
+
 
 Studio 3 uses a new "theming" system to define the coloring of the IDE across the various editors and views. We tried to follow the convention of token names used by TextMate in our coloring so that porting existing themes over would be relatively easy.
 
@@ -69,7 +69,7 @@ source
 
 You can double-check this yourself by placing the cursor at a particular location, and choosing "Commands > Bundle Development > Show Scope". You will see each of the pieces of text above has "source.css" and the specific scope in question applied.
 
-How does this relate to theming? If you open up Preferences > Aptana > Themes, you will see a list of scopes. When applying colors, it will choose the scope closest in match to the one above by following a prefix match, i.e. "punctuation.section.blah.blah" matches "punctuation.section" for which a color is defined.
+If you open up Preferences > Aptana > Themes, you will see a list of scopes. When applying colors, it will choose the scope closest in match to the one above by following a prefix match, for example, "punctuation.section.blah.blah" matches "punctuation.section" for which a color is defined.
 
 Many of the scopes defined in themes are relatively general across languages. You can add scopes if you like to specifically modify things to your taste. Some examples:
 
@@ -77,19 +77,19 @@ Desired Effect
 
 Action
 
-Colorize semicolons in CSS
+Colorize semicolons in CSS.
 
-Add scope 'punctuation.terminator.rule.css' and choose colors
+Add scope 'punctuation.terminator.rule.css' and choose colors.
 
-Colorize the background of CSS source
+Colorize the background of CSS source.
 
-Add scope 'source.css' and choose colors
+Add scope 'source.css' and choose colors.
 
-Colorize the background of CSS source, but only when embedded in any language
+Colorize the background of CSS source, but only when embedded in any language.
 
 Add scope 'source.css.embedded' and choose colors.
 
-Colorize the background of CSS source, but only when embedded inside an HTML document (i.e. a **style** tag)
+Colorize the background of CSS source, but only when embedded inside an HTML document (for example, a **style** tag).
 
 Add scope 'text.html source.css' and choose colors.
 
@@ -97,14 +97,14 @@ There is a longer discussion about creating scopes here: [http://manual.macromat
 
 ## Token names
 
-A good starting point for token naming conventions is the TextMate documentation on the subject: [http://manual.macromates.com/en/language\_grammars#naming\_conventions](http://manual.macromates.com/en/language_grammars#naming_conventions)  
-Generally speaking tokens follow a convention of _category.sub-category.language-extension_, i.e. "comment.line.js"
+A good starting point for token naming conventions is the TextMate documentation on the subject: [http://manual.macromates.com/en/language\_grammars#naming\_conventions](http://manual.macromates.com/en/language_grammars#naming_conventions)
+Generally speaking, tokens follow a convention of _category.sub-category.language-extension_, for example, "comment.line.js".
 
 See [Current Theme Scopes](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Themes/Current_Theme_Scopes/) for a complete list of currently available scopes.
 
 ## Themes in Rubles
 
-Rubles may contribute themes. Simply use a hash from token name to a string containing the fg, bg(optional) and font styles (optional). Place the theme addition in a file that will get loaded when the ruble does (i.e. bundle.rb). The overall theme color keys of foreground, background, selection, caret, and lineHighlight are expected to be present as keys; as is the "name" key for the theme name. The rest of the keys are interpreted as token names (if using symbols, "\_" will be changed to "." under the hood for you). Here's an example:
+Rubles may contribute to themes. Use a hash from the token name to a string containing the fg, bg (optional), and font styles (optional). Place the theme addition in a file that will get loaded when the ruble does (for example, bundle.rb). The overall theme color keys of foreground, background, selection, caret, and line highlight are expected to be present as keys, as is the "name" key for the theme name. The rest of the keys are interpreted as token names (if using symbols, "\_" will be changed to "." under the hood for you). Here's an example:
 
 `require` `'ruble/theme'`
 
@@ -128,7 +128,7 @@ Rubles may contribute themes. Simply use a hash from token name to a string cont
 
 ## Themes in Java
 
-In our Java code we contribute themes via properties files. The key used is the token name and the values are a list of colors and font styles with order being significant. The first color in hex is the fg, the second (optional) is background. We also then take optional font style names such as bold, italic or underline. A few examples:
+In our Java code, we contribute themes via properties files. The key used is the token name, and the values are a list of colors and font styles with the order being significant. The first color in hex is the fg; the second (optional) is the background. We also then take optional font style names such as bold, italic, or underline. A few examples:
 
 `comment.line=#ffff00,#``333333``,italic`
 
@@ -138,8 +138,8 @@ In our Java code we contribute themes via properties files. The key used is the 
 
 ## Related topics
 
-*   [Creating a New Theme](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Themes/Creating_a_New_Theme/)
-    
-*   [Current Theme Scopes](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Themes/Current_Theme_Scopes/)
-    
-*   [User Themes](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Themes/User_Themes/)
+* [Creating a New Theme](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Themes/Creating_a_New_Theme/)
+
+* [Current Theme Scopes](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Themes/Current_Theme_Scopes/)
+
+* [User Themes](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Themes/User_Themes/)

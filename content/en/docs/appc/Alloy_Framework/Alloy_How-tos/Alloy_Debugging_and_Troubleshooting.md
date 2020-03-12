@@ -1,37 +1,37 @@
-{"title":"Alloy Debugging and Troubleshooting","weight":"20"} 
+{"title":"Alloy Debugging and Troubleshooting","weight":"20"}
 
-*   [Overview](#Overview)
-    
-*   [Debugging](#Debugging)
-    
-    *   [Studio Debugger](#StudioDebugger)
-        
-    *   [Compiler error messages](#Compilererrormessages)
-        
-*   [Troubleshooting](#Troubleshooting)
-    
-    *   [\[ERROR\] No app.js found. Ensure the app.js file exists in your project's Resources directory.](#[ERROR]Noapp.jsfound.Ensuretheapp.jsfileexistsinyourproject'sResourcesdirectory.)
-        
-    *   [Android: Images, HTML pages and other assets do not display](#Android:Images,HTMLpagesandotherassetsdonotdisplay)
-        
-    *   [Android Runtime Error: Uncaught TypeError: Cannot call method xxx of undefined](#AndroidRuntimeError:UncaughtTypeError:Cannotcallmethodxxxofundefined)
-        
-    *   [Android Runtime Error: Uncaught ReferenceError: Alloy is not defined](#AndroidRuntimeError:UncaughtReferenceError:Alloyisnotdefined)
-        
-    *   [iOS Application Error: invalid method (xxx) passed to UIModule (unknown file).](#iOSApplicationError:invalidmethod(xxx)passedtoUIModule(unknownfile).)
-        
-    *   [iOS Application Error: undefined is not an object (evaluating $.xxx.open) (unknown file).](#iOSApplicationError:undefinedisnotanobject(evaluating$.xxx.open)(unknownfile).)
-        
-    *   [Mobile Web: Changes to code do not take effect](#MobileWeb:Changestocodedonottakeeffect)
-        
-    *   [Mobile Web: \[ERROR\] alloy run not supported by mobileweb](#MobileWeb:[ERROR]alloyrunnotsupportedbymobileweb)
-        
-    *   [Studio: Unable to find alloy binary](#Studio:Unabletofindalloybinary)
-        
-    *   [Getting help](#Gettinghelp)
-        
-*   [Submitting a Bug Report](#SubmittingaBugReport)
-    
+* [Overview](#Overview)
+
+* [Debugging](#Debugging)
+
+  * [Studio Debugger](#StudioDebugger)
+
+  * [Compiler error messages](#Compilererrormessages)
+
+* [Troubleshooting](#Troubleshooting)
+
+  * [\[ERROR\] No app.js found. Ensure the app.js file exists in your project's Resources directory.](#[ERROR]Noapp.jsfound.Ensuretheapp.jsfileexistsinyourproject'sResourcesdirectory.)
+
+  * [Android: Images, HTML pages and other assets do not display](#Android:Images,HTMLpagesandotherassetsdonotdisplay)
+
+  * [Android Runtime Error: Uncaught TypeError: Cannot call method xxx of undefined](#AndroidRuntimeError:UncaughtTypeError:Cannotcallmethodxxxofundefined)
+
+  * [Android Runtime Error: Uncaught ReferenceError: Alloy is not defined](#AndroidRuntimeError:UncaughtReferenceError:Alloyisnotdefined)
+
+  * [iOS Application Error: invalid method (xxx) passed to UIModule (unknown file).](#iOSApplicationError:invalidmethod(xxx)passedtoUIModule(unknownfile).)
+
+  * [iOS Application Error: undefined is not an object (evaluating $.xxx.open) (unknown file).](#iOSApplicationError:undefinedisnotanobject(evaluating$.xxx.open)(unknownfile).)
+
+  * [Mobile Web: Changes to code do not take effect](#MobileWeb:Changestocodedonottakeeffect)
+
+  * [Mobile Web: \[ERROR\] alloy run not supported by mobileweb](#MobileWeb:[ERROR]alloyrunnotsupportedbymobileweb)
+
+  * [Studio: Unable to find alloy binary](#Studio:Unabletofindalloybinary)
+
+  * [Getting help](#Gettinghelp)
+
+* [Submitting a Bug Report](#SubmittingaBugReport)
+
 
 ## Overview
 
@@ -49,29 +49,29 @@ Breakpoints set in the CommonJS modules and Alloy Model files in the app directo
 
 If your Resources folder is hidden:
 
-1.  In the  **Project Explorer** view, click the **View Menu** button (white triangle pointing down).
-    
-2.  Select **Customize Views...**, then the **Available Customizations** dialog appears.
-    
-3.  In the **Filters** tab, uncheck the **Appcelerator Resources Folder** checkbox.
-    
-4.  Click the **OK** button. The Resources folder should appear.
-    
+1. In the  **Project Explorer** view, click the **View Menu** button (white triangle pointing down).
+
+2. Select **Customize Views...**, then the **Available Customizations** dialog appears.
+
+3. In the **Filters** tab, uncheck the **Appcelerator Resources Folder** checkbox.
+
+4. Click the **OK** button. The Resources folder should appear.
+
 
 Breakpoints set in the files in the Resources directory may be cleared or not mapped to the correct line number if you modify any of the files in the app directory. After your code has been compiled, confirm that the breakpoints set in the files in the Resources directory are still set and in the correct location (line number). If not, clear and reset your breakpoints, then rerun the project in debug mode.
 
 When you are ready to debug your application:
 
-1.  In the **Project Explorer** view, make sure your project is selected.
-    
-2.  In the global tool bar, select **Debug** from the **Launch Mode** drop-down list.
-    
-3.  Select the device you want to launch your project on in the **Target** drop-down list.
-    
-4.  If the **Launch Automatically** option is not enabled, click the **Launch** button.
-    
-5.  Before the code starts to compile, a dialog appears asking to switch the perspective. Click the **Yes** button.
-    
+1. In the **Project Explorer** view, make sure your project is selected.
+
+2. In the global tool bar, select **Debug** from the **Launch Mode** drop-down list.
+
+3. Select the device you want to launch your project on in the **Target** drop-down list.
+
+4. If the **Launch Automatically** option is not enabled, click the **Launch** button.
+
+5. Before the code starts to compile, a dialog appears asking to switch the perspective. Click the **Yes** button.
+
 
 In the _Debug_ perspective, you can use the _Debug_ view to step into, pause or resume your code. While your code is paused, in the _Variables_ view, you can view your current variables and their values.
 
@@ -93,7 +93,7 @@ If assets are being displayed for iOS and Mobile Web applications and not Androi
 
 ### Android Runtime Error: Uncaught TypeError: Cannot call method xxx of undefined
 
-1\. You might be trying to create an iOS-only Titanium object. Use the platform attribute in the view to enforce platform-specific objects.  
+1\. You might be trying to create an iOS-only Titanium object. Use the platform attribute in the view to enforce platform-specific objects.
 2\. If the top-level UI component in your view has an assigned ID, that is, the id attribute in the XML markup is defined for that component, the controller cannot use $.<controller\_name> to reference it. It needs to use the assigned ID.
 
 ### Android Runtime Error: Uncaught ReferenceError: Alloy is not defined

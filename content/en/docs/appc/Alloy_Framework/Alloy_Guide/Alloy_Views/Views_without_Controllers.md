@@ -1,11 +1,11 @@
-{"title":"Views without Controllers","weight":"40"} 
+{"title":"Views without Controllers","weight":"40"}
 
-*   [Introduction](#Introduction)
-    
-*   [XML Markup](#XMLMarkup)
-    
-*   [Controller Code](#ControllerCode)
-    
+* [Introduction](#Introduction)
+
+* [XML Markup](#XMLMarkup)
+
+* [Controller Code](#ControllerCode)
+
 
 ## Introduction
 
@@ -51,14 +51,14 @@ Then, the controller can use $.button1, $.button2 and $.button3 to access each i
 
 **To create a view without a corresponding controller:**
 
-1.  Use the Alloy.createController() method to create a controller from the controller-less view. Pass a string with the name of the view minus the .xml extension as the only argument to the method
-    
-2.  Use the updateViews() method with the created controller. Pass a style dictionary as the only argument to the method. The style dictionary contains key-value pairs, where the key is the id of the view component and the value is another dictionary containing key-value pairs of attributes you want to set for the view component.
-    
-3.  Use the getView() method to retrieve the view of the controller object.
-    
-4.  Use the add() method to add the view to a view component in the controller. Pass the instance of the controller-less view to the method. The view component that wants to add the controller-less view should call the method.
-    
+1. Use the Alloy.createController() method to create a controller from the controller-less view. Pass a string with the name of the view minus the .xml extension as the only argument to the method
+
+2. Use the updateViews() method with the created controller. Pass a style dictionary as the only argument to the method. The style dictionary contains key-value pairs, where the key is the id of the view component and the value is another dictionary containing key-value pairs of attributes you want to set for the view component.
+
+3. Use the getView() method to retrieve the view of the controller object.
+
+4. Use the add() method to add the view to a view component in the controller. Pass the instance of the controller-less view to the method. The view component that wants to add the controller-less view should call the method.
+
 
 Unlike other style dictionaries in Alloy, when using the updateViews() method, you can only apply styles using IDs. Class and view component styles do not work with this method.
 
@@ -112,14 +112,14 @@ app/controllers/index.js
 
 **Prior to Alloy 1.4.0**, to dynamically generate a view with a controller:
 
-1.  Create a new instance of the controller using the Alloy.createController() method. Pass a string with the name of the view as the only argument to the method.
-    
-2.  Modify the properties.
-    
-3.  Use the getView() method to retrieve the view of the controller object.
-    
-4.  Use the add() method to add the view to a view component in the controller. Pass the instance of the controller-less view to the method. The view component that wants to add the controller-less view should call the method.
-    
+1. Create a new instance of the controller using the Alloy.createController() method. Pass a string with the name of the view as the only argument to the method.
+
+2. Modify the properties.
+
+3. Use the getView() method to retrieve the view of the controller object.
+
+4. Use the add() method to add the view to a view component in the controller. Pass the instance of the controller-less view to the method. The view component that wants to add the controller-less view should call the method.
+
 
 app/controllers/index.js
 

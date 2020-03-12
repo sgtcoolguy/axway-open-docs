@@ -1,4 +1,4 @@
-{"title":"Alloy FAQ","weight":"50"} 
+{"title":"Alloy FAQ","weight":"50"}
 
 ## Can I use a folder as a module?
 

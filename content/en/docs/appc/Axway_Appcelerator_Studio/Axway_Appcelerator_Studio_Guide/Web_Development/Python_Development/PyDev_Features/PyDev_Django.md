@@ -1,16 +1,16 @@
-{"title":"PyDev Django","weight":"90"} 
+{"title":"PyDev Django","weight":"90"}
 
 ## Django
 
 ### Pre-requisites
 
-To get started with Django in PyDev, the pre-requisite is that Django is installed in the Python/Jython/IronPython interpreter you want to use (so, "import django" must properly work).
+To get started with Django in PyDev, the pre-requisite is that Django is installed in the Python/Jython/IronPython interpreter you want to use (so, "import Django" must properly work).
 
 If you don't have Django installed, follow the steps from [http://www.djangoproject.com/](http://www.djangoproject.com/).
 
 Note that this tutorial won't teach you Django, only how the Django integration is available in PyDev, so, if you're not familiar with Django, it's useful to learn a bit about how it works and then use this help to know how the PyDev Django integration can help you.
 
-### A bit on internals
+### A bit on the internals
 
 The Django integration in PyDev works through 3 main configurations:
 
@@ -28,11 +28,11 @@ Use the new project wizard through **Ctrl+N > PyDev Django Project** to create a
 
 ![pydev_django_project](/Images/appc/pydev.org/images/django/pydev_django_project.png)
 
-That wizard will use **django-admin.py startproject** to create the project and will properly set the string substitution variables used inside of PyDev so that **DJANGO\_MANAGE\_LOCATION** points to the created manage.py location and the **DJANGO\_SETTINGS\_MODULE** points to the settings module.
+That wizard will use **django-admin.py start project** to create the project and will properly set the string substitution variables used inside of PyDev so that **DJANGO\_MANAGE\_LOCATION** points to the created manage.py location and the **DJANGO\_SETTINGS\_MODULE** points to the settings module.
 
 ## Using the Django integration in an existing project
 
-For an existing project, just right click it and choose 'PyDev > Set as Django project'.
+For an existing project, right-click it and choose 'PyDev > Set as Django project'.
 
 ![set_as_pydev_django_project](/Images/appc/pydev.org/images/django/set_as_pydev_django_project.png)
 
@@ -40,22 +40,22 @@ Note that the **DJANGO\_MANAGE\_LOCATION** and **DJANGO\_SETTINGS\_MODULE** will
 
 ## Django actions
 
-Django actions can be accessed right clicking a project with the Django configuration and choosing Django > action.
+Django actions can be accessed by right-clicking a project with the Django configuration and choosing Django > action.
 
 ![django_actions](/Images/appc/pydev.org/images/django/django_actions.png)
 
 Another option is using (with focus on a PyDev editor):
 
-*   **ctrl+2+dj <enter>** to open a dialog with the history of entered actions
-    
-*   **ctrl+2+dj action\_to\_execute <enter>** to already pass the action to be executed (e.g.: ctrl+2+dj help <enter>)
-    
+* **ctrl+2+dj <enter>** to open a dialog with the history of entered actions
+
+* **ctrl+2+dj action\_to\_execute <enter>** to already pass the action to be executed (e.g.: ctrl+2+dj help <enter>)
+
 
 ![django_ctrl_2](/Images/appc/pydev.org/images/django/django_ctrl_2.png)
 
 ## Interactive shell with Django
 
-Note that the **Shell with django environment** action will create a shell properly configured with your settings, providing the default features from the PyDev shell, such as code completion, history, context assistants (ctrl+1), making an execfile of the editor, etc (see: [Interactive Console](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Features/PyDev_Interactive_Console/) for more details).
+Note that the **Shell with django environment** action will create a shell properly configured with your settings, providing the default features from the PyDev shell, such as code completion, history, context assistants (ctrl+1), making an execfile of the editor, and so forth (see: [Interactive Console](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Features/PyDev_Interactive_Console/) for more details).
 
 It can be activated through **ctrl+2+dj shell** (if on a PyDev Editor) or right-clicking the project > **Django > Shell with django environment**.
 
@@ -67,12 +67,12 @@ Run as Django/Debug as Django are available (note that they set the --noreload b
 
 ![run_as_django](/Images/appc/pydev.org/images/django/run_as_django.png)
 
-This will create a default Run configuration, so, you may edit it later through run > run configurations (or debug > debug configurations) if you want to change a parameter.
+This will create a default Run configuration so that you may edit it later through run > run configurations (or debug > debug configurations) if you want to change a parameter.
 
-To know how to rerun the last launch see: Rerun Last Launch on Launching.
+To know how to rerun the last launch, see: Rerun Last Launch on Launching.
 
-If the --noreload is not passed, only the parent process will be killed from Eclipse and the others will only be killed when they'd be reloaded (i.e.: on a code-change).
+If the --noreload is not passed, only the parent process will be killed from Eclipse, and the others will only be killed when they'd be reloaded (in other words, on a code-change).
 
-## Run/Debug as Django with autoreload
+## Run/Debug as Django with auto-reload
 
-If you don't want to se the --noreload flag, please take a look at the [Remote Debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Features/PyDev_Remote_Debugger/) for instructions on how to make the debugging work properly with the auto reload feature.
+If you don't want to see the --noreload flag, please take a look at the [Remote Debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Features/PyDev_Remote_Debugger/) for instructions on how to make the debugging work properly with the auto-reload feature.

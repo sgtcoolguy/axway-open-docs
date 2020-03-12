@@ -1,52 +1,52 @@
-{"title":"Converting a Textmate Bundle","weight":"30"} 
+{"title":"Converting a Textmate Bundle","weight":"30"}
 
-*   [Overview](#Overview)
-    
-*   [Performing the conversion](#Performingtheconversion)
-    
-    *   [Not currently supported or converted](#Notcurrentlysupportedorconverted)
-        
-*   [Debugging](#Debugging)
-    
-*   [Converting commands](#Convertingcommands)
-    
-*   [Converting file associations](#Convertingfileassociations)
-    
-*   [Converting snippets](#Convertingsnippets)
-    
-*   [Converting templates](#Convertingtemplates)
-    
-*   [Associating new file extensions with an existing editor](#Associatingnewfileextensionswithanexistingeditor)
-    
+* [Overview](#Overview)
+
+* [Performing the conversion](#Performingtheconversion)
+
+  * [Not currently supported or converted](#Notcurrentlysupportedorconverted)
+
+* [Debugging](#Debugging)
+
+* [Converting commands](#Convertingcommands)
+
+* [Converting file associations](#Convertingfileassociations)
+
+* [Converting snippets](#Convertingsnippets)
+
+* [Converting templates](#Convertingtemplates)
+
+* [Associating new file extensions with an existing editor](#Associatingnewfileextensionswithanexistingeditor)
+
 
 ## Overview
 
-Studio allows the user to convert an existing Textmate bundle into a Ruble. The process converts a significant percentage of the original content, but may require substantial additional work to finish the conversion.
+Studio allows the user to convert an existing Textmate bundle into a Ruble. The process converts a significant percentage of the original content but may require substantial additional work to finish the conversion.
 
 ## Performing the conversion
 
-1.  Download a copy of the \*.tmbundle file to your computer
-    
-2.  Open Studio and select **Commands > Bundle Development > Convert Textmate Bundle**
-    
-3.  Navigate to the bundle you downloaded above. Click "Open".  
-    _The bundle is converted to a ruble project and opened in your workspace_
-    
+1. Download a copy of the \*.tmbundle file to your computer.
 
-This creates a default Ruble structure, moving some core elements into a bundle.rb file (including the menu definitions), and snippets and commands into their own folders.
+2. Open Studio and select **Commands > Bundle Development > Convert Textmate Bundle.**
+
+3. Navigate to the bundle you downloaded above. Click "Open".
+  _The bundle is converted to a ruble project and opened in your workspace._
+
+
+This creates a default Ruble structure, moving some core elements into a bundle.rb file (including the menu definitions), and snippets and commands into their folders.
 
 ### Not currently supported or converted
 
-*   Drag Commands
-    
-*   Langauge definitions
-    
-*   Macros
-    
-*   Preferences
-    
-*   Templates
-    
+* Drag Commands
+
+* Language definitions
+
+* Macros
+
+* Preferences
+
+* Templates
+
 
 ## Debugging
 
@@ -186,7 +186,7 @@ Snippets are converted from the individual .tmSnippet file into a block in snipp
 
 `end`
 
-Some Textmate snippet features are not supported, in particular nested tab stops, and search/replace regular expressions. Many of these expressions can be simplified, but exact functionality is not always available. For example:
+Some Textmate snippet features are not supported, in particular, nested tab stops, and search/replace regular expressions. Many of these expressions can be simplified, but exact functionality is not always available. For example:
 
 `${``1``:<txp:}${``2``:permlink}${``3``:/>}$``4``${``3``/\/|(.+)/(?``1``:<\/txp\:permlink> )/}`
 
@@ -254,40 +254,40 @@ A template will be converted into two pieces, a .txaml and a .plist piece
 
 See [here](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Templates/Creating_a_new_template/) on how to set up a proper project structure for templates. In short, the process is:
 
-1.  Create a new "templates" sub folder
-    
-2.  Create a new file to hold the template content (say id.title.txaml)
-    
-3.  paste in the following content to id.title.txaml:
-    
-    `<txp:anc_hide>${TM_NEW_FILE_BASENAME}.txaml</txp:anc_hide>`
-    
-    `<txp:anc_hide>Created by ${USER} on ${TM_DATE}.Copyright (c) ${TM_YEAR} ${TM_ORGANIZATION_NAME}. All rights reserved.</txp:anc_hide>`
-    
-4.  Add the following to the bottom of your bundle.rb file, before the last "end":
-    
-    `template` `"ID.Title Template"`  `do` `|t|`
-    
-    `t.filetype =` `"*.txaml"`
-    
-    `t.invoke` `do` `|context|`
-    
-    `ENV[``'TM_YEAR'``] = Time.now.strftime(``"%Y"``)`
-    
-    `ENV[``'TM_DATE'``] = Time.now.strftime(``"%Y-%m-%d"``)`
-    
-    `raw_contents = IO.read(``"#{File.dirname(ENV['TM_BUNDLE_SUPPORT'])}/templates/id.title.txaml"``)`
-    
-    `raw_contents.gsub(/\$\{([^}]*)\}/) {|match| ENV[match[``2``..-``2``]] }`
-    
-    `end`
-    
-    `end`
-    
-5.  Save bundle.rb
-    
+1. Create a new "templates" subfolder.
 
-If you now choose File > New From Template > Bundle Name > ID.Title Template it will allow you to create a new template of the type specified above.
+2. Create a new file to hold the template content (say id.title.txaml).
+
+3. paste in the following content to id.title.txaml:
+
+  `<txp:anc_hide>${TM_NEW_FILE_BASENAME}.txaml</txp:anc_hide>`
+
+  `<txp:anc_hide>Created by ${USER} on ${TM_DATE}.Copyright (c) ${TM_YEAR} ${TM_ORGANIZATION_NAME}. All rights reserved.</txp:anc_hide>`
+
+4. Add the following to the bottom of your bundle.rb file, before the last "end":
+
+  `template` `"ID.Title Template"`  `do` `|t|`
+
+  `t.filetype =` `"*.txaml"`
+
+  `t.invoke` `do` `|context|`
+
+  `ENV[``'TM_YEAR'``] = Time.now.strftime(``"%Y"``)`
+
+  `ENV[``'TM_DATE'``] = Time.now.strftime(``"%Y-%m-%d"``)`
+
+  `raw_contents = IO.read(``"#{File.dirname(ENV['TM_BUNDLE_SUPPORT'])}/templates/id.title.txaml"``)`
+
+  `raw_contents.gsub(/\$\{([^}]*)\}/) {|match| ENV[match[``2``..-``2``]] }`
+
+  `end`
+
+  `end`
+
+5. Save bundle.rb.
+
+
+If you now choose File > New From Template > Bundle Name > ID.Title Template, it will allow you to create a new template of the type specified above.
 
 We had to switch TM\_USER to USER as "TM\_USER" is not a supported variable
 

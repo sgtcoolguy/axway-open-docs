@@ -1,15 +1,15 @@
-{"title":"Installing gperf","weight":"80"} 
+{"title":"Installing gperf","weight":"80"}
 
 ## Contents
 
-*   [Compatibility and Download](#CompatibilityandDownload)
-    
-*   [Installation](#Installation)
-    
+* [Compatibility and Download](#CompatibilityandDownload)
+
+* [Installation](#Installation)
+
 
 ## Compatibility and Download
 
-The GNU gperf utility is used for generating hash functions. It is used when you build Titanium native Android modules and and to build the Titanium SDK for Android.
+The GNU gperf utility is used for generating hash functions. It is used when you build the Titanium SDK from source. It is not needed for Titanium app or module builds.
 
 The gperf tool is installed as part of the Xcode command-line tools, but you may need to install it on Windows.
 

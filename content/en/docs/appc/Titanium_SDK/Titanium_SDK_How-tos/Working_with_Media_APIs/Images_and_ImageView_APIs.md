@@ -1,27 +1,27 @@
-{"title":"Images and ImageView APIs","weight":"30"} 
+{"title":"Images and ImageView APIs","weight":"30"}
 
-*   [Introduction](#Introduction)
-    
-*   [Background Images](#BackgroundImages)
-    
-*   [ImageView](#ImageView)
-    
-    *   [Flipbook animations](#Flipbookanimations)
-        
-    *   [Density-specific images](#Density-specificimages)
-        
-        *   [Android Platform](#AndroidPlatform)
-            
-        *   [iOS Platform](#iOSPlatform)
-            
-        *   [Windows Platform](#WindowsPlatform)
-            
-            *   [Grant access to pictures library](#Grantaccesstopictureslibrary)
-                
-    *   [References](#References)
-        
-*   [Summary](#Summary)
-    
+* [Introduction](#Introduction)
+
+* [Background Images](#BackgroundImages)
+
+* [ImageView](#ImageView)
+
+  * [Flipbook animations](#Flipbookanimations)
+
+  * [Density-specific images](#Density-specificimages)
+
+    * [Android Platform](#AndroidPlatform)
+
+    * [iOS Platform](#iOSPlatform)
+
+    * [Windows Platform](#WindowsPlatform)
+
+      * [Grant access to pictures library](#Grantaccesstopictureslibrary)
+
+  * [References](#References)
+
+* [Summary](#Summary)
+
 
 ## Introduction
 
@@ -79,10 +79,10 @@ The ImageView is Titanium's component for representing an image file. You create
 
 If you specify a width and/or height property on the image, the image will be scaled to fit according to these considerations:
 
-*   If the ImageView's height and width are specified, the images will be scaled unproportionally to fit the dimensions. The graphic's aspect ratio will NOT be maintained.
-    
-*   If either the ImageView's height or width are specified (not both), the image will be scaled to fit the specified dimension. The graphic's aspect ratio will be maintained.
-    
+* If the ImageView's height and width are specified, the images will be scaled unproportionally to fit the dimensions. The graphic's aspect ratio will NOT be maintained.
+
+* If either the ImageView's height or width are specified (not both), the image will be scaled to fit the specified dimension. The graphic's aspect ratio will be maintained.
+
 
 ### Flipbook animations
 
@@ -238,9 +238,6 @@ N/A
 
 Windows Phone OS 8.1 only
 
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
-
 For more details, see [Windows Asset Qualifiers](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Windows_UI_Components_and_Conventions/Windows_Asset_Qualifiers/).
 
 Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
@@ -275,8 +272,8 @@ For more information about audio configuration in tiapp.xml, see [Windows-specif
 
 ### References
 
-*   API Docs - [ImageView object](#!/api/Titanium.UI.ImageView)
-    
+* API Docs - [ImageView object](#!/api/Titanium.UI.ImageView)
+
 
 ## Summary
 

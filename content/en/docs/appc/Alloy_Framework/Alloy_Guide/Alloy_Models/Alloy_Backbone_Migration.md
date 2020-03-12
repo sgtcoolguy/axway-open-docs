@@ -1,41 +1,41 @@
-{"title":"Alloy Backbone Migration","weight":"40"} 
+{"title":"Alloy Backbone Migration","weight":"40"}
 
-*   [Overview](#Overview)
-    
-    *   [Alloy 1.10.12 release](#Alloy1.10.12release)
-        
-*   [Setup](#Setup)
-    
-*   [Summary of Changes](#SummaryofChanges)
-    
-    *   [Collection APIs](#CollectionAPIs)
-        
-        *   [Fetch Method Behavior Change](#FetchMethodBehaviorChange)
-            
-        *   [New Set Method](#NewSetMethod)
-            
-        *   [Return Value for Methods](#ReturnValueforMethods)
-            
-        *   [Add Method](#AddMethod)
-            
-    *   [Event APIs](#EventAPIs)
-        
-    *   [Model APIs](#ModelAPIs)
-        
-        *   [Validation](#Validation)
-            
-        *   [Other Changes](#OtherChanges)
-            
-    *   [Parse Method](#ParseMethod)
-        
-    *   [Silent Option](#SilentOption)
-        
-*   [API Changes](#APIChanges)
-    
-    *   [New APIs](#NewAPIs)
-        
-    *   [Removed APIs](#RemovedAPIs)
-        
+* [Overview](#Overview)
+
+  * [Alloy 1.10.12 release](#Alloy1.10.12release)
+
+* [Setup](#Setup)
+
+* [Summary of Changes](#SummaryofChanges)
+
+  * [Collection APIs](#CollectionAPIs)
+
+    * [Fetch Method Behavior Change](#FetchMethodBehaviorChange)
+
+    * [New Set Method](#NewSetMethod)
+
+    * [Return Value for Methods](#ReturnValueforMethods)
+
+    * [Add Method](#AddMethod)
+
+  * [Event APIs](#EventAPIs)
+
+  * [Model APIs](#ModelAPIs)
+
+    * [Validation](#Validation)
+
+    * [Other Changes](#OtherChanges)
+
+  * [Parse Method](#ParseMethod)
+
+  * [Silent Option](#SilentOption)
+
+* [API Changes](#APIChanges)
+
+  * [New APIs](#NewAPIs)
+
+  * [Removed APIs](#RemovedAPIs)
+
 
 ## Overview
 
@@ -163,14 +163,14 @@ To improve the performance of add(), options.index will no longer be set in the 
 
 ### Event APIs
 
-*   All i nvalid events now pass consistent arguments. First the model in question, then the error object, then options.
-    
-*   Collection.sort() now triggers a sort event, instead of a reset event.
-    
-*   Both sync and error events within Backbone.sync() are now triggered regardless of the existence of success or error callbacks.
-    
-*   While listening to a reset event, the list of previous models is now available in options.previousModels.
-    
+* All i nvalid events now pass consistent arguments. First the model in question, then the error object, then options.
+
+* Collection.sort() now triggers a sort event, instead of a reset event.
+
+* Both sync and error events within Backbone.sync() are now triggered regardless of the existence of success or error callbacks.
+
+* While listening to a reset event, the list of previous models is now available in options.previousModels.
+
 
 The new Event methods listenTo and stopListening is meant for Backbone View objects to listen to Model and Collection events. These APIs will not work with an Alloy application.
 
@@ -188,14 +188,14 @@ To validate Model objects, implement the validate() method in the extendModel ke
 
 #### Other Changes
 
-*   Calling destroy() on a Model will now return false if the model's isNew is set to true (model has not been saved to persistent storage).
-    
-*   Model.set() no longer accepts another model as an argument. Only pass the method the attributes to set, Model.set(attributes).
-    
-*   url and urlRoot properties may now be passed as options when instantiating a new Model.
-    
-*   If you want to maintain current models in a collection when using fetch the property has changed from {add:true} to {remove:false}.
-    
+* Calling destroy() on a Model will now return false if the model's isNew is set to true (model has not been saved to persistent storage).
+
+* Model.set() no longer accepts another model as an argument. Only pass the method the attributes to set, Model.set(attributes).
+
+* url and urlRoot properties may now be passed as options when instantiating a new Model.
+
+* If you want to maintain current models in a collection when using fetch the property has changed from {add:true} to {remove:false}.
+
 
 ### Parse Method
 

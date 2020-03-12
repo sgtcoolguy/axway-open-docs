@@ -1,27 +1,27 @@
-{"title":"How to Report a Bug or Make a Feature Request","weight":"10"} 
+{"title":"How to Report a Bug or Make a Feature Request","weight":"10"}
 
-*   [Overview](#Overview)
-    
-*   [Introducing JIRA](#IntroducingJIRA)
-    
-    *   [Searching JIRA](#SearchingJIRA)
-        
-    *   [Projects overview](#Projectsoverview)
-        
-        *   [Appcelerator - INBOX project](#Appcelerator-INBOXproject)
-            
-*   [Submitting tickets](#Submittingtickets)
-    
-    *   [The bug-reporting lifecycle](#Thebug-reportinglifecycle)
-        
-    *   [Creating a test case](#Creatingatestcase)
-        
-    *   [Creating a JIRA ticket](#CreatingaJIRAticket)
-        
-    *   [JIRA ticket checklist](#JIRAticketchecklist)
-        
-*   [Related topics](#Relatedtopics)
-    
+* [Overview](#Overview)
+
+* [Introducing JIRA](#IntroducingJIRA)
+
+  * [Searching JIRA](#SearchingJIRA)
+
+  * [Projects overview](#Projectsoverview)
+
+    * [Appcelerator - INBOX project](#Appcelerator-INBOXproject)
+
+* [Submitting tickets](#Submittingtickets)
+
+  * [The bug-reporting lifecycle](#Thebug-reportinglifecycle)
+
+  * [Creating a test case](#Creatingatestcase)
+
+  * [Creating a JIRA ticket](#CreatingaJIRAticket)
+
+  * [JIRA ticket checklist](#JIRAticketchecklist)
+
+* [Related topics](#Relatedtopics)
+
 
 ## Overview
 
@@ -139,27 +139,27 @@ The most useful tickets are concise, complete and objective. If you are tempted 
 
 To summarize the process you should follow if you encounter unexplained Titanium behavior:
 
-1.  **review the documentation**
-    
-2.  **search** **[JIRA](http://jira.appcelerator.org/secure/IssueNavigator!switchView.jspa?navType=simple)** for similar known issues
-    
-3.  **search the** **[Q&A](http://developer.appcelerator.com/questions)** for discussions about the issue between our community members
-    
-4.  **create a test case** (it's a prerequisite for posting to the Q&A and JIRA). Follow the guidance in [Creating a Test Case](#CreatingaTestCase)
-    
-5.  **post a question in the Q&A** to garner the community's opinion about the issue and collaborate on a workaround. Include your test case with the rest of the information.
-    
-6.  **create a JIRA ticket**, only after there is no doubt about the bug's existence, Create one ticket per bug, bearing the following in mind:
-    
-    *   **keep to the point:** concise, complete and factual tickets are the most appreciated
-        
-    *   **include all the information:** without a test case and all the information described in the [JIRA Ticket Checklist](#JIRATicketChecklist), we cannot accept your ticket
-        
-    *   **watch your ticket:** This makes us aware of your vote for the ticket's quick resolution  
-        NOTE: Your JIRA login is different than your AMPLIFY Appcelerator Services login. If you do not have a JIRA login with us, please select the link under the login boxes to contact the JIRA administrators and request a login. Logins typically provided within one business day.
-        
-7.  **post the ticket's URL to your Q&A question.** Add this as a comment under the question that helped you most and mark it as "best" to make it easy for everyone to find
-    
+1. **review the documentation**
+
+2. **search** **[JIRA](http://jira.appcelerator.org/secure/IssueNavigator!switchView.jspa?navType=simple)** for similar known issues
+
+3. **search the** **[Q&A](http://developer.appcelerator.com/questions)** for discussions about the issue between our community members
+
+4. **create a test case** (it's a prerequisite for posting to the Q&A and JIRA). Follow the guidance in [Creating a Test Case](#CreatingaTestCase)
+
+5. **post a question in the Q&A** to garner the community's opinion about the issue and collaborate on a workaround. Include your test case with the rest of the information.
+
+6. **create a JIRA ticket**, only after there is no doubt about the bug's existence, Create one ticket per bug, bearing the following in mind:
+
+  * **keep to the point:** concise, complete and factual tickets are the most appreciated
+
+  * **include all the information:** without a test case and all the information described in the [JIRA Ticket Checklist](#JIRATicketChecklist), we cannot accept your ticket
+
+  * **watch your ticket:** This makes us aware of your vote for the ticket's quick resolution
+    NOTE: Your JIRA login is different than your AMPLIFY Appcelerator Services login. If you do not have a JIRA login with us, please select the link under the login boxes to contact the JIRA administrators and request a login. Logins typically provided within one business day.
+
+7. **post the ticket's URL to your Q&A question.** Add this as a comment under the question that helped you most and mark it as "best" to make it easy for everyone to find
+
 
 ### Creating a test case
 
@@ -173,16 +173,16 @@ Syntax errors can be the cause of unusual behavior too. Therefore, there is no p
 
 In summary, to create a test case:
 
-*   **use a sequential set of Titanium API calls:** Don't worry about polluting the global scope; there is no need to use namespaces or custom functions. A test case should be too small for this to be significant
-    
-*   **remove any superfluous objects:** this includes UI elements such as windows, views and controls
-    
-*   **use default values where possible:** remove any properties that are not absolutely necessary
-    
-*   **use a Javascript validator:** ensure that your code is free of syntax errors
-    
-*   **ensure your code runs without any modification:** test your code by copying it into a blank app.js file and launching
-    
+* **use a sequential set of Titanium API calls:** Don't worry about polluting the global scope; there is no need to use namespaces or custom functions. A test case should be too small for this to be significant
+
+* **remove any superfluous objects:** this includes UI elements such as windows, views and controls
+
+* **use default values where possible:** remove any properties that are not absolutely necessary
+
+* **use a Javascript validator:** ensure that your code is free of syntax errors
+
+* **ensure your code runs without any modification:** test your code by copying it into a blank app.js file and launching
+
 
 A good read on this is Eric Lippert's [How to debug small programs](http://ericlippert.com/2014/03/05/how-to-debug-small-programs/).
 
@@ -190,15 +190,15 @@ A good read on this is Eric Lippert's [How to debug small programs](http://ericl
 
 Assuming you have consulted the community via the Q&A, and you have your [test case](#CreatingaTestCase) to hand, you are ready to create a ticket:
 
-*   open the JIRA [Titanium Community](http://jira.appcelerator.org/browse/TC) project page. See the [#Projects Overview](#ProjectsOverview) section for more information about the projects.  
-    NOTE: Your JIRA login is different than your AMPLIFY Appcelerator Services login. If you do not have a JIRA login with us, please select the link under the login boxes to contact the JIRA administrators and request a login. Logins typically provided within one business day.
-    
-*   select from the list of ticket types in the top right-hand corner, although usually only **Bug**, **Improvement** or **New Feature** will be applicable
-    
-*   complete as many fields as you can. Use the [JIRA Ticket Template](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/JIRA_Ticket_Template/) as a starting point, and refer to the [#JIRA Ticket Checklist](#JIRATicketChecklist) below for the information that is required
-    
-*   as the reporter, you will automatically receive any updates to the ticket. However, it's always a good idea to also watch all tickets where the resolution is crucial to your projects. This helps our team gauge the issue's impact on the community, from the total number watchers in the list
-    
+* open the JIRA [Titanium Community](http://jira.appcelerator.org/browse/TC) project page. See the [#Projects Overview](#ProjectsOverview) section for more information about the projects.
+  NOTE: Your JIRA login is different than your AMPLIFY Appcelerator Services login. If you do not have a JIRA login with us, please select the link under the login boxes to contact the JIRA administrators and request a login. Logins typically provided within one business day.
+
+* select from the list of ticket types in the top right-hand corner, although usually only **Bug**, **Improvement** or **New Feature** will be applicable
+
+* complete as many fields as you can. Use the [JIRA Ticket Template](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/JIRA_Ticket_Template/) as a starting point, and refer to the [#JIRA Ticket Checklist](#JIRATicketChecklist) below for the information that is required
+
+* as the reporter, you will automatically receive any updates to the ticket. However, it's always a good idea to also watch all tickets where the resolution is crucial to your projects. This helps our team gauge the issue's impact on the community, from the total number watchers in the list
+
 
 ### JIRA ticket checklist
 
@@ -216,7 +216,7 @@ Summary
 
 ![check](/Images/appc/images/icons/emoticons/check.png)
 
-**A concise summary** that distinguishes it from other tickets, making it easy for the core team to determine at a glance the nature of the issue.  
+**A concise summary** that distinguishes it from other tickets, making it easy for the core team to determine at a glance the nature of the issue.
 Format: <COMPONENT>: <SUB-COMPONENT> - Description _(eg. "iOS: Facebook - Unable to login on iPod")_
 
 Assignee
@@ -237,16 +237,16 @@ Severity
 
 Optionally, one of the following descriptions may be chosen to reflect the issue's impact on your project:
 
-*   **Blocker:** issue is blocking project
-    
-*   **Major:** crashing or incorrect behavior issue that may have a workaround or is not stopping ship
-    
-*   **Minor:** crash or incorrect behavior that does have a reasonable workaround or low impact
-    
-*   **Trivial:** functions correctly, but appearance/functionality needs improvement
-    
-*   **None:** default
-    
+* **Blocker:** issue is blocking project
+
+* **Major:** crashing or incorrect behavior issue that may have a workaround or is not stopping ship
+
+* **Minor:** crash or incorrect behavior that does have a reasonable workaround or low impact
+
+* **Trivial:** functions correctly, but appearance/functionality needs improvement
+
+* **None:** default
+
 
 Components
 
@@ -260,18 +260,18 @@ Environment
 
 _The tested environment (only include the versions of each component that exhibit the problem and have been physically tested)_
 
-*   **Titanium SDK version:** number, build date and build hash, or output to the console output at application launch
-    
-*   **Javascript Engine:** Rhino / V8
-    
-*   **Platform & version:** iOS x.x, Android x.x, OS X x.x, Windows x, and/or Ubuntu x.x
-    
-*   **Device Details:** iOS simulator, Android emulator, or physical device model
-    
-*   **Host Operating System:** OS X x.x, Windows x, or Ubuntu x.x
-    
-*   **Titanium Studio version:** available in Help > About
-    
+* **Titanium SDK version:** number, build date and build hash, or output to the console output at application launch
+
+* **Javascript Engine:** V8
+
+* **Platform & version:** iOS x.x, Android x.x, OS X x.x, Windows x, and/or Ubuntu x.x
+
+* **Device Details:** iOS simulator, Android emulator, or physical device model
+
+* **Host Operating System:** OS X x.x, Windows x, or Ubuntu x.x
+
+* **Titanium Studio version:** available in Help > About
+
 
 Description
 
@@ -279,24 +279,24 @@ Description
 
 A concise, factual, description containing the following sections (use the [JIRA Ticket Template](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/JIRA_Ticket_Template/) as a starting point):
 
-**Problem**  
+**Problem**
 _Explanation of the problem, including the actual behavior and the expected behavior_
 
-**Test case**  
+**Test case**
 _Steps to reproduce plus simple working code that demonstrates the issue and follows the_ _[Creating a Test Case](#Creatingatestcase)_ _guidelines, placed within a {code} markup block in the body of the ticket_
 
-**Community Discussion**  
+**Community Discussion**
 _A link to the Q&A question in which you asked the community to verify the observed behavior_
 
-**Log**  
+**Log**
 _Logged messages from the following locations, depending on the problem, placed within a {code} markup block in the body of the ticket:_
 
-*   **Android and iOS Development:** Titanium Studio console output of exceptions
-    
-*   **Packaging:** contents of build.log (Android: <PROJECT>/build.log, iOS: build/iphone/build/build.log)
-    
-*   **Titanium Studio:** contents of menu item Help > Titanium Studio > View Log File (contents of <workspace-dir>/log file)
-    
+* **Android and iOS Development:** Titanium Studio console output of exceptions
+
+* **Packaging:** contents of build.log (Android: <PROJECT>/build.log, iOS: build/iphone/build/build.log)
+
+* **Titanium Studio:** contents of menu item Help > Titanium Studio > View Log File (contents of <workspace-dir>/log file)
+
 
 Attachment
 
@@ -316,6 +316,6 @@ If you find a ticket that describes a bug that is important to your project, **w
 
 ## Related topics
 
-*   [How to Submit a Bug Report](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/How_to_Submit_a_Bug_Report/)
-    
-*   [JIRA Ticket Template](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/JIRA_Ticket_Template/)
+* [How to Submit a Bug Report](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/How_to_Submit_a_Bug_Report/)
+
+* [JIRA Ticket Template](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/JIRA_Ticket_Template/)

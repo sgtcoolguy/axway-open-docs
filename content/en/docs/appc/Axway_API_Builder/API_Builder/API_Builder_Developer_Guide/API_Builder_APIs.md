@@ -1,4 +1,4 @@
-{"title":"API Builder APIs","weight":"50"} 
+{"title":"API Builder APIs","weight":"50"}
 
 API Builder 3.x is deprecated
 
@@ -6,14 +6,14 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-*   [Introduction](#Introduction)
-    
-*   [API endpoint definition](#APIendpointdefinition)
-    
-*   [API example](#APIexample)
-    
-*   [Invoke API endpoints in API Builder](#InvokeAPIendpointsinAPIBuilder)
-    
+* [Introduction](#Introduction)
+
+* [API endpoint definition](#APIendpointdefinition)
+
+* [API example](#APIexample)
+
+* [Invoke API endpoints in API Builder](#InvokeAPIendpointsinAPIBuilder)
+
 
 ## Introduction
 
@@ -27,12 +27,12 @@ To programmatically create an API, see the [API Builder.API](#!/api/Arrow.API) r
 
 Place all API definition files in the project's apis folder. You can only declare one endpoint definition per file. An API definition file is a JavaScript file, which:
 
-1.  Loads the arrow module.
-    
-2.  Calls the module'sAPI.extend() method, passing in an object defining the API endpoint and logic.
-    
-3.  Exports the defined endpoint using the module.exports variable.
-    
+1. Loads the arrow module.
+
+2. Calls the module'sAPI.extend() method, passing in an object defining the API endpoint and logic.
+
+3. Exports the defined endpoint using the module.exports variable.
+
 
 Set the following keys in the object passed to the API.extend() method to define the API endpoint:
 
@@ -120,12 +120,12 @@ false
 
 Input parameters required to execute the API endpoint. This is an object of key-value pairs, where the key is the name of the parameter and the value is an object with the following properties:
 
-*   optional (Boolean): Determines if the parameter is optional (true) or required (false).
-    
-*   type (String): the type of input parameter: path, query, or body.
-    
-*   description (String): used for generating API documentation.
-    
+* optional (Boolean): Determines if the parameter is optional (true) or required (false).
+
+* type (String): the type of input parameter: path, query, or body.
+
+* description (String): used for generating API documentation.
+
 
 ## API example
 
@@ -177,12 +177,12 @@ Any callback in the application that is passed the request object can access the
 
 To invoke an API endpoint:
 
-1.  Retrieve an instance to API Builder using the request.server property.
-    
-2.  Retrieve the API instance using API Builder's getAPI('endpoint', 'verb') method by passing it the endpoint without the server host or address as the first parameter and the HTTP verb as the second parameter.
-    
-3.  Invoke the execute(params, callback) method on the API instance by passing it a dictionary of parameters as the first parameter and a callback function as the second parameter. The callback function is passed an error and results object.
-    
+1. Retrieve an instance to API Builder using the request.server property.
+
+2. Retrieve the API instance using API Builder's getAPI('endpoint', 'verb') method by passing it the endpoint without the server host or address as the first parameter and the HTTP verb as the second parameter.
+
+3. Invoke the execute(params, callback) method on the API instance by passing it a dictionary of parameters as the first parameter and a callback function as the second parameter. The callback function is passed an error and results object.
+
 
 **Example:**
 

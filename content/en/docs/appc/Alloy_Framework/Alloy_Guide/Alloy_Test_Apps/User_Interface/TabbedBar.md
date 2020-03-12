@@ -1,4 +1,4 @@
-{"title":"TabbedBar","weight":"180"} 
+{"title":"TabbedBar","weight":"180"}
 
 Demonstrates basic use of TabbedBar control.
 
@@ -76,6 +76,6 @@ app/controllers/index.js
 
 ## See also
 
-*   [Titanium.UI.iOS.TabbedBar](#!/api/Titanium.UI.iOS.TabbedBar) API reference
-    
-*   [Titanium.UI.ButtonBar](#!/api/Titanium.UI.ButtonBar) API reference
+* [Titanium.UI.iOS.TabbedBar](#!/api/Titanium.UI.iOS.TabbedBar) API reference
+
+* [Titanium.UI.ButtonBar](#!/api/Titanium.UI.ButtonBar) API reference

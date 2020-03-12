@@ -1,33 +1,33 @@
-{"title":"Deploying to iOS devices","weight":"30"} 
+{"title":"Deploying to iOS devices","weight":"30"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [Apple's Developer program](#Apple'sDeveloperprogram)
-        
-    *   [Obtain a development certificate](#Obtainadevelopmentcertificate)
-        
-        *   [Back up your private key](#Backupyourprivatekey)
-            
-    *   [Register your test devices](#Registeryourtestdevices)
-        
-    *   [Create an App ID](#CreateanAppID)
-        
-    *   [Create and install a development provisioning profile](#Createandinstalladevelopmentprovisioningprofile)
-        
-    *   [Build your app, embedding the profile within the app's bundle](#Buildyourapp,embeddingtheprofilewithintheapp'sbundle)
-        
-    *   [Building your app with the CLI](#BuildingyourappwiththeCLI)
-        
-    *   [Installing apps to remote devices](#Installingappstoremotedevices)
-        
-    *   [Adding iTunes artwork](#AddingiTunesartwork)
-        
-    *   [References](#References)
-        
-*   [Summary](#Summary)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [Apple's Developer program](#Apple'sDeveloperprogram)
+
+  * [Obtain a development certificate](#Obtainadevelopmentcertificate)
+
+    * [Back up your private key](#Backupyourprivatekey)
+
+  * [Register your test devices](#Registeryourtestdevices)
+
+  * [Create an App ID](#CreateanAppID)
+
+  * [Create and install a development provisioning profile](#Createandinstalladevelopmentprovisioningprofile)
+
+  * [Build your app, embedding the profile within the app's bundle](#Buildyourapp,embeddingtheprofilewithintheapp'sbundle)
+
+  * [Building your app with the CLI](#BuildingyourappwiththeCLI)
+
+  * [Installing apps to remote devices](#Installingappstoremotedevices)
+
+  * [Adding iTunes artwork](#AddingiTunesartwork)
+
+  * [References](#References)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -37,18 +37,18 @@ In this chapter, you will learn the steps necessary to deploy an app to an iOS d
 
 In order to install your app to an iOS device for testing, you need to complete quite a few steps:
 
-1.  Register with Apple's Developer program
-    
-2.  Obtain a developer's certificate
-    
-3.  Register your test devices
-    
-4.  Create an App ID
-    
-5.  Create and install a development provisioning profile
-    
-6.  Build your app, embedding the profile within the app's bundle. This step takes care of installing to a locally-connected device as well. We will cover distributing your app to remote testers below as well.
-    
+1. Register with Apple's Developer program
+
+2. Obtain a developer's certificate
+
+3. Register your test devices
+
+4. Create an App ID
+
+5. Create and install a development provisioning profile
+
+6. Build your app, embedding the profile within the app's bundle. This step takes care of installing to a locally-connected device as well. We will cover distributing your app to remote testers below as well.
+
 
 ### Apple's Developer program
 
@@ -66,24 +66,24 @@ A development certificate attests to the identity of the developer building the 
 
 To create a developer's certificate:
 
-1.  Log in to the [Apple Developer Member Center](https://developer.apple.com/membercenter/).
-    
-2.  Click the link under **Certificates, Identifiers & Profiles**.
-    
-3.  Click **Certificates**, then click the plus sign (+) button near the top-right corner.
-    
-4.  Select **iOS App Development**, click the **Worldwide Developer Relations Certificate Authority** link to download the WWDR certificate, then click **Continue****.**
-    
-5.  Follow the directions to create a Certificate Signing Request (CSR). Click **Continue****.**
-    
-6.  Upload your CSR and click **Generate**.
-    
-7.  If you are the Team Agent, you will be returned to the Certificates page with the status listed as Pending. Wait a moment then refresh the page in your browser. You should get a Download link at that point. If you are a developer on the team, the Team Agent will receive notification to approve or reject your request. When he or she approves your request, continue with the steps that follow.
-    
-8.  Download the development certificate (.cer) file to your computer.
-    
-9.  Double-click the file to install it to your keychain.
-    
+1. Log in to the [Apple Developer Member Center](https://developer.apple.com/membercenter/).
+
+2. Click the link under **Certificates, Identifiers & Profiles**.
+
+3. Click **Certificates**, then click the plus sign (+) button near the top-right corner.
+
+4. Select **iOS App Development**, click the **Worldwide Developer Relations Certificate Authority** link to download the WWDR certificate, then click **Continue****.**
+
+5. Follow the directions to create a Certificate Signing Request (CSR). Click **Continue****.**
+
+6. Upload your CSR and click **Generate**.
+
+7. If you are the Team Agent, you will be returned to the Certificates page with the status listed as Pending. Wait a moment then refresh the page in your browser. You should get a Download link at that point. If you are a developer on the team, the Team Agent will receive notification to approve or reject your request. When he or she approves your request, continue with the steps that follow.
+
+8. Download the development certificate (.cer) file to your computer.
+
+9. Double-click the file to install it to your keychain.
+
 
 In addition to your developer certificate, you will need to download and install the WWDR Intermediate Certificate, provided by Apple. You can download this file from the iOS Certificates, Identifiers & Profiles page during the first step when you created a certificate. Double-click the resulting file to install it to your keychain.
 
@@ -91,16 +91,16 @@ In addition to your developer certificate, you will need to download and install
 
 It is critical that you save your private key somewhere safe in the event that you need to develop on multiple computers or decide to reinstall your system OS. Without your private key, you will be unable to sign binaries and test your application on any Apple device. The private key was generated by the Keychain application when you created the Certificate Signing Request (CSR). It has the same name as the **Common Name** field when you generated the CSR.
 
-1.  To export your private key, open up the Keychain Access Application and select **login** under Keychains and **Keys** under Category.
-    
-2.  Highlight the private key associated with your iOS Development Certificate.
-    
-3.  From the menu bar, select **File** \> **Export Items...**. Save your key in the Personal Information Exchange (.p12) file format.
-    
-4.  You will be prompted to create a password which will be used when you attempt to import this key on another computer.
-    
-5.  You can now transfer this .p12 file between systems. Double-click on the .p12 file to install it on a system. You will be prompted for the password you entered above.
-    
+1. To export your private key, open up the Keychain Access Application and select **login** under Keychains and **Keys** under Category.
+
+2. Highlight the private key associated with your iOS Development Certificate.
+
+3. From the menu bar, select **File** \> **Export Items...**. Save your key in the Personal Information Exchange (.p12) file format.
+
+4. You will be prompted to create a password which will be used when you attempt to import this key on another computer.
+
+5. You can now transfer this .p12 file between systems. Double-click on the .p12 file to install it on a system. You will be prompted for the password you entered above.
+
 
 ### Register your test devices
 
@@ -110,44 +110,44 @@ At the time of this writing, you must identify devices by their UDID (Unique Dev
 
 Using iTunes to determine the UDID:
 
-1.  Connect the device to your computer.
-    
-2.  Open iTunes, if it doesn't open automatically.
-    
-3.  Select the device in the left pane.
-    
-4.  In the middle pane, click on the Serial Number. This changes to show the Identifier (UDID). Press Command-C to copy the UDID. (You don't need to drag to select first.)
-    
-5.  You might want to paste that someplace, such as a text file or email message to save it for later.
-    
+1. Connect the device to your computer.
+
+2. Open iTunes, if it doesn't open automatically.
+
+3. Select the device in the left pane.
+
+4. In the middle pane, click on the Serial Number. This changes to show the Identifier (UDID). Press Command-C to copy the UDID. (You don't need to drag to select first.)
+
+5. You might want to paste that someplace, such as a text file or email message to save it for later.
+
 
 Using Xcode 6 and later to determine the UDID:
 
-1.  Connect the device to your computer.
-    
-2.  Launch Xcode.
-    
-3.  Open the **Devices** window. From the menu bar, select **Window** \> **Devices**.
-    
-4.  Select your device from the left bar.
-    
-5.  Select the value in the **Identifier** field, right-click and choose **Copy**.
-    
-6.  You might want to paste that someplace, such as a text file or email message to save it for later.
-    
+1. Connect the device to your computer.
+
+2. Launch Xcode.
+
+3. Open the **Devices** window. From the menu bar, select **Window** \> **Devices**.
+
+4. Select your device from the left bar.
+
+5. Select the value in the **Identifier** field, right-click and choose **Copy**.
+
+6. You might want to paste that someplace, such as a text file or email message to save it for later.
+
 
 To register your device:
 
-1.  Log in to the [Apple Developer Member Center](https://developer.apple.com/membercenter/) as the Team Admin or Agent.
-    
-2.  Click the link under **Certificates, Identifiers & Profiles**.
-    
-3.  Click **Devices**, then click the plus sign (+) button near the top-right corner.
-    
-4.  Give your device a name (this is for your convenience) and paste in the UDID you copied from iTunes or Xcode.
-    
-5.  Click **Continue**.
-    
+1. Log in to the [Apple Developer Member Center](https://developer.apple.com/membercenter/) as the Team Admin or Agent.
+
+2. Click the link under **Certificates, Identifiers & Profiles**.
+
+3. Click **Devices**, then click the plus sign (+) button near the top-right corner.
+
+4. Give your device a name (this is for your convenience) and paste in the UDID you copied from iTunes or Xcode.
+
+5. Click **Continue**.
+
 
 ### Create an App ID
 
@@ -157,51 +157,51 @@ The Bundle Identifier can be explicit, meaning you enter a name on the iOS Certi
 
 To create an App ID:
 
-1.  Log in to the [Apple Developer Member Center](https://developer.apple.com/membercenter/) as the Team Agent or Admin.
-    
-2.  Click the link under **Certificates, Identifiers & Profiles**.
-    
-3.  Click **Identifiers**, then click the plus sign (+) button near the top-right corner.
-    
-4.  Enter a description, which cannot include special characters (including most punctuation).
-    
-5.  Select the services you want to enable for this application. Note that you cannot use a wildcard ID if you enable certain services as previously mentioned.
-    
-6.  Select the App ID Prefix to use.
-    
-7.  Select the App ID Suffix. Be sure to use a reverse-domain style:
-    
-    1.  Choose **Explicit App ID** and enter the App ID in your tiapp.xml file as the Bundle ID (or set your App ID to this Bundle ID). Use this options if you enabled the previously mentioned services.
-        
-    2.  Choose **Wildcard App ID** to use a single ID to match multiple applications. Enter an asterisk (\*) as the last digit of the Bundle ID.
-        
-8.  Click **Continue**.
-    
+1. Log in to the [Apple Developer Member Center](https://developer.apple.com/membercenter/) as the Team Agent or Admin.
+
+2. Click the link under **Certificates, Identifiers & Profiles**.
+
+3. Click **Identifiers**, then click the plus sign (+) button near the top-right corner.
+
+4. Enter a description, which cannot include special characters (including most punctuation).
+
+5. Select the services you want to enable for this application. Note that you cannot use a wildcard ID if you enable certain services as previously mentioned.
+
+6. Select the App ID Prefix to use.
+
+7. Select the App ID Suffix. Be sure to use a reverse-domain style:
+
+  1. Choose **Explicit App ID** and enter the App ID in your tiapp.xml file as the Bundle ID (or set your App ID to this Bundle ID). Use this options if you enabled the previously mentioned services.
+
+  2. Choose **Wildcard App ID** to use a single ID to match multiple applications. Enter an asterisk (\*) as the last digit of the Bundle ID.
+
+8. Click **Continue**.
+
 
 ### Create and install a development provisioning profile
 
 You are now ready to create the provisioning profile file, which gathers together your certificates, the list of permitted devices, and the App ID.
 
-1.  Log in to the [Apple Developer Member Center](https://developer.apple.com/membercenter/) as the Team Agent or Admin.
-    
-2.  Click the link under **Certificates, Identifiers & Profiles**.
-    
-3.  Click **Provisioning Profiles**, then click the plus sign (+) button near the top-right corner.
-    
-4.  Select **iOS App Development**, then click **Continue**.
-    
-5.  Select the App ID from the drop-down list, then click **Continue**.
-    
-6.  Select the development certificates to include, then click **Continue**.
-    
-7.  Select the devices you want to be able to run the app on, then click **Continue** .
-    
-8.  Enter a name for your provisioning profile, then click **Generate**.
-    
-9.  Click **Download** to save your provisioning profile file (.mobileprovision) to your computer, then click **Done**.
-    
-10.  If you are the Team Agent creating this provisioning profile for a team member, email or distribute it to him or her.
-    
+1. Log in to the [Apple Developer Member Center](https://developer.apple.com/membercenter/) as the Team Agent or Admin.
+
+2. Click the link under **Certificates, Identifiers & Profiles**.
+
+3. Click **Provisioning Profiles**, then click the plus sign (+) button near the top-right corner.
+
+4. Select **iOS App Development**, then click **Continue**.
+
+5. Select the App ID from the drop-down list, then click **Continue**.
+
+6. Select the development certificates to include, then click **Continue**.
+
+7. Select the devices you want to be able to run the app on, then click **Continue** .
+
+8. Enter a name for your provisioning profile, then click **Generate**.
+
+9. Click **Download** to save your provisioning profile file (.mobileprovision) to your computer, then click **Done**.
+
+10. If you are the Team Agent creating this provisioning profile for a team member, email or distribute it to him or her.
+
 
 You have two options to install the provisioning profile file onto your development computer. You can drag the file and drop it on the Xcode icon, or you can install it from Studio by following the steps in the following section. Either way, installing the provisioning profile is a one-time operation (on each computer, until it expires).
 
@@ -219,7 +219,7 @@ On the **General** page, ensure the requirements have been satisfied and select 
 
 ![DtiD_Run_Dialog](/Images/appc/download/attachments/27595262/DtiD_Run_Dialog.png)
 
-On the **Certificates** page, choose your developer certificate and keychain, then click **Next**.  
+On the **Certificates** page, choose your developer certificate and keychain, then click **Next**.
 ![DtiD_Certificates](/Images/appc/download/attachments/27595262/DtiD_Certificates.png)
 
 On the last page, provisioning profiles are specified. To install the provisioning profile, click the **Browse...** button, locate your .mobileprovision file, and click **Open** to install that profile into Xcode. If you have installed more than one provisioning profile, make sure to choose the one that corresponds to your app and your developer certificate. Make sure your device is connected via USB and click **Finish**.
@@ -250,12 +250,12 @@ If you omit any of the optional parameters, the CLI will prompt you for the info
 
 You have various options for installing apps on remote devices. Of course, you will need to have gathered the UUIDs for each of those devices and used them when creating the provisioning profile. Your options include:
 
-*   Email the .mobileprovision and IPA files to the user. He or she can drag & drop those files into iTunes and then sync their device.
-    
-*   Post those files on a web or FTP site accessible to your testing users. Because the files can be installed only onto devices whose UUIDs you have registered, you don't need to worry about unauthorized people accessing your app.
-    
-*   Use an "over the air" distribution system, such as TestFlight App, DIAWI, AppSendr, or HockeyKit. The first three are services you can subscribe to. The last is an open-source system that you can install on your own web server.
-    
+* Email the .mobileprovision and IPA files to the user. He or she can drag & drop those files into iTunes and then sync their device.
+
+* Post those files on a web or FTP site accessible to your testing users. Because the files can be installed only onto devices whose UUIDs you have registered, you don't need to worry about unauthorized people accessing your app.
+
+* Use an "over the air" distribution system, such as TestFlight App, DIAWI, AppSendr, or HockeyKit. The first three are services you can subscribe to. The last is an open-source system that you can install on your own web server.
+
 
 You upload the .mobileprovision and IPA files to the OTA system. Your registered users receive a notification by email (in some cases, users install a small app published by the OTA provider and receive notifications via that app). They're provided a download link, which installs the app onto their device. When you publish updates, users receive new notifications to download the new version.
 
@@ -265,14 +265,14 @@ Some of these systems enable you to gather user feedback, crash logs, and simila
 
 Adding iTunes artwork to your project gives your app a polished look when you are testing or deploying to test users. In order to get your application's icon to appear in iTunes, follow these steps:
 
-1.  Create a 512x512px and 1024x1024px (Retina) version of your applications icon in PNG format.
-    
-2.  Save the PNG file to your application Resources/iphone (Alloy: app/assets/iphone) folder as iTunesArtwork.png and [iTunesArtwork@2x.png](mailto:iTunesArtwork@2x.png)
-    
-3.  Right-click the file in Studio and choose **rename**. Remove the **.png** extension from the filename, make it simply iTunesArtwork and iTunesArtwork.
-    
-4.  Do a clean build of your project for device.
-    
+1. Create a 512x512px and 1024x1024px (Retina) version of your applications icon in PNG format.
+
+2. Save the PNG file to your application Resources/iphone (Alloy: app/assets/iphone) folder as iTunesArtwork.png and [iTunesArtwork@2x.png](mailto:iTunesArtwork@2x.png)
+
+3. Right-click the file in Studio and choose **rename**. Remove the **.png** extension from the filename, make it simply iTunesArtwork and iTunesArtwork.
+
+4. Do a clean build of your project for device.
+
 
 Your application icon should now appear in iTunes.
 
@@ -280,8 +280,8 @@ If the _iTunesArtwork_ files are missing from your project, they will be automat
 
 ### References
 
-*   [Apple's Developer Center](http://developer.apple.com)
-    
+* [Apple's Developer Center](http://developer.apple.com)
+
 
 ## Summary
 

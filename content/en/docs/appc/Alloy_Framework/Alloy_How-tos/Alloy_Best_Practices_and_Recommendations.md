@@ -1,21 +1,21 @@
-{"title":"Alloy Best Practices and Recommendations","weight":"10"} 
+{"title":"Alloy Best Practices and Recommendations","weight":"10"}
 
-*   [Titanium-to-Alloy Guidance](#Titanium-to-AlloyGuidance)
-    
-    *   [In my Titanium application, I previously loaded libraries upon startup. In organizing my patterns with MVC, do I need to organize application functionality further under namespaces within controllers?](#InmyTitaniumapplication,Ipreviouslyloadedlibrariesuponstartup.InorganizingmypatternswithMVC,doIneedtoorganizeapplicationfunctionalityfurtherundernamespaceswithincontrollers?)
-        
-    *   [Are there best practices to employ within controllers for performance?](#Aretherebestpracticestoemploywithincontrollersforperformance?)
-        
-    *   [Is there a best practice that I should use to help out Alloy for my own organization here, as I did in the standard Titanium applications?](#IsthereabestpracticethatIshouldusetohelpoutAlloyformyownorganizationhere,asIdidinthestandardTitaniumapplications?)
-        
-*   [Coding Style Best Practices](#CodingStyleBestPractices)
-    
-    *   [Naming Conventions](#NamingConventions)
-        
-    *   [Global Variables](#GlobalVariables)
-        
-    *   [Global Events](#GlobalEvents)
-        
+* [Titanium-to-Alloy Guidance](#Titanium-to-AlloyGuidance)
+
+  * [In my Titanium application, I previously loaded libraries upon startup. In organizing my patterns with MVC, do I need to organize application functionality further under namespaces within controllers?](#InmyTitaniumapplication,Ipreviouslyloadedlibrariesuponstartup.InorganizingmypatternswithMVC,doIneedtoorganizeapplicationfunctionalityfurtherundernamespaceswithincontrollers?)
+
+  * [Are there best practices to employ within controllers for performance?](#Aretherebestpracticestoemploywithincontrollersforperformance?)
+
+  * [Is there a best practice that I should use to help out Alloy for my own organization here, as I did in the standard Titanium applications?](#IsthereabestpracticethatIshouldusetohelpoutAlloyformyownorganizationhere,asIdidinthestandardTitaniumapplications?)
+
+* [Coding Style Best Practices](#CodingStyleBestPractices)
+
+  * [Naming Conventions](#NamingConventions)
+
+  * [Global Variables](#GlobalVariables)
+
+  * [Global Events](#GlobalEvents)
+
 
 This guide provides recommendations for writing Alloy applications. This guide supplements the existing Titanium SDK [Best Practices and Recommendations](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Best_Practices_and_Recommendations/) guide with a primary focus on the [Coding Best Practices](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Best_Practices_and_Recommendations/Coding_Best_Practices/) and [Style and Conventions](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Best_Practices_and_Recommendations/Style_and_Conventions/) pages.
 
@@ -43,15 +43,15 @@ It depends on the size and depth of your existing organization. You need to dete
 
 ### Naming Conventions
 
-*   Do not use double underscore prefixes on variables, properties, or function names (e.g., \_\_foo). They are reserved for use in Alloy. If you use them, there is potential for conflicts and unexpected behavior.
-    
-*   Do not use JavaScript reserved words as IDs. For a complete list, see [Reserved Words](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Best_Practices_and_Recommendations/Reserved_Words/).
-    
+* Do not use double underscore prefixes on variables, properties, or function names (e.g., \_\_foo). They are reserved for use in Alloy. If you use them, there is potential for conflicts and unexpected behavior.
+
+* Do not use JavaScript reserved words as IDs. For a complete list, see [Reserved Words](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Best_Practices_and_Recommendations/Reserved_Words/).
+
 
 ### Global Variables
 
-*   Do not declare global variables in app.js and use them in other files. Such usage is currently allowed but not recommended, and it will be deprecated in the future. Users who wish to use globals in Alloy applications can declare the following in their JS files:
-    
+* Do not declare global variables in app.js and use them in other files. Such usage is currently allowed but not recommended, and it will be deprecated in the future. Users who wish to use globals in Alloy applications can declare the following in their JS files:
+
 
 `var Alloy = require(``'alloy'``), Backbone = require(``'alloy/backbone'``), _ = require(``'alloy/underscore'``)._;`
 
@@ -83,8 +83,8 @@ Although you can use Ti.App.fireEvent('name') to call an event declared as Ti.Ap
 
 Instead of that, you can use better approaches, depending on the problem you are addressing:
 
-*   If you have the classic problem communication between a master - child screens (you need that a child event triggers something in the parent), then use the callback approach: you can pass a function to be called as a callback when needed:
-    
+* If you have the classic problem communication between a master - child screens (you need that a child event triggers something in the parent), then use the callback approach: you can pass a function to be called as a callback when needed:
+
 
 `//master.js`
 
@@ -120,8 +120,8 @@ Instead of that, you can use better approaches, depending on the problem you are
 
 `...`
 
-*   If you need to communicate between different parts of the app, then use the Backbone dispatcher approach: create a global object with Backbone capabilities. You can do either, declare it in a file and require it when needed or, more practical, create it in alloy.js file to be available to all your project. Another advantage of use the Backbone approach is that you can cancel the events in any place because are global:
-    
+* If you need to communicate between different parts of the app, then use the Backbone dispatcher approach: create a global object with Backbone capabilities. You can do either, declare it in a file and require it when needed or, more practical, create it in alloy.js file to be available to all your project. Another advantage of use the Backbone approach is that you can cancel the events in any place because are global:
+
 
 `//alloy.js`
 

@@ -1,19 +1,19 @@
-{"title":"Prerequisites","weight":"20"} 
+{"title":"Prerequisites","weight":"20"}
 
-*   [Overview](#Overview)
-    
-    *   [Memory](#Memory)
-        
-    *   [Operating System](#OperatingSystem)
-        
-    *   [Required Software](#RequiredSoftware)
-        
-        *   [Java Development Kit](#JavaDevelopmentKit)
-            
-        *   [Node.js](#Node.js)
-            
-    *   [Titanium Compatibility Matrix](#TitaniumCompatibilityMatrix)
-        
+* [Overview](#Overview)
+
+  * [Memory](#Memory)
+
+  * [Operating System](#OperatingSystem)
+
+  * [Required Software](#RequiredSoftware)
+
+    * [Java Development Kit](#JavaDevelopmentKit)
+
+    * [Node.js](#Node.js)
+
+  * [Titanium Compatibility Matrix](#TitaniumCompatibilityMatrix)
+
 
 ## Overview
 
@@ -49,9 +49,6 @@ Windows
 
 Minimum system memory requirements is 8GB of RAM. 16GB is highly recommended.
 
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
-
 ### Operating System
 
 Titanium is supported on the following Operating Systems:
@@ -66,14 +63,13 @@ macOS
 
 Windows
 
-Windows 7 and later(Android)  
-Windows 8.1 and later (Windows Phone)  
+Windows 7 and later(Android)
+Windows 8.1 and later (Windows Phone)
 Windows 10 and later (Windows 10 Mobile)
 
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+As of Titanium 9.0.0, building Windows apps is no longer supported.
 
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
+Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
 
 ### Required Software
 
@@ -113,12 +109,12 @@ OS X
 
 [Official Website](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
-*   On Mac OS X 10.6 (Snow Leopard) and earlier, the JDK is preinstalled.
-    
-*   On Mac OS X 10.7 (Lion) and later, the OS should prompt you to install it when needed.
-    
-*   Android Development on OS X systems requires Java 6 runtime to be installed.
-    
+* On Mac OS X 10.6 (Snow Leopard) and earlier, the JDK is preinstalled.
+
+* On Mac OS X 10.7 (Lion) and later, the OS should prompt you to install it when needed.
+
+* Android Development on OS X systems requires JDK 8 or higher to be installed.
+
 
 Windows
 
@@ -130,10 +126,10 @@ Windows
 
 [Official Website](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
-*   The 32-bit version of the JDK is required regardless of whether Titanium is running on a 32-bit Windows system.
-    
-*   Studio offers to install JDK 8 if no JDK is found.
-    
+* The 32-bit version of the JDK is required regardless of whether Titanium is running on a 32-bit Windows system.
+
+* Studio offers to install JDK 8 if no JDK is found.
+
 
 **Note**: From Studio 5.1.0 and up, 64-bit JDK is supported
 
@@ -159,7 +155,7 @@ macOS / Windows / Linux
 
 8.0
 
-8.16.x
+10.X
 
 [Official Website](https://nodejs.org/en/download/releases/)
 

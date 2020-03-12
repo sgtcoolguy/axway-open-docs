@@ -1,4 +1,4 @@
-{"title":"Arrow Builder 1.1.2 Release Note","weight":"70"} 
+{"title":"Arrow Builder 1.1.2 Release Note","weight":"70"}
 
 API Builder 3.x is deprecated
 
@@ -12,8 +12,8 @@ Arrow Builder 1.1.2 is a patch release, addressing high-priority issues from pre
 
 ### Fixed Issues
 
-*   API-914: After block runs on generated models before API finishes
-    
-*   API-917: The styling of the code examples in the Admin console is skewed for both local builds and published Arrow applications.
-    
-*   API-920: If you make a DELETE or PUT request, then "TypeError: object is not a function" error is returned back
+* API-914: After block runs on generated models before API finishes
+
+* API-917: The styling of the code examples in the Admin console is skewed for both local builds and published Arrow applications.
+
+* API-920: If you make a DELETE or PUT request, then "TypeError: object is not a function" error is returned back

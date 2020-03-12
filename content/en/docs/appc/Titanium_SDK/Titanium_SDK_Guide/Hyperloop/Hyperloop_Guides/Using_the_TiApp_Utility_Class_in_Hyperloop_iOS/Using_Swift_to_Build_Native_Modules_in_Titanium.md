@@ -1,24 +1,24 @@
-{"title":"Using Swift to Build Native Modules in Titanium","weight":"10"} 
+{"title":"Using Swift to Build Native Modules in Titanium","weight":"10"}
 
-*   [History](#History)
-    
-*   [Getting Started](#GettingStarted)
-    
-*   [Writing Swift API's for Titanium](#WritingSwiftAPI'sforTitanium)
-    
-*   [Type Conversion](#TypeConversion)
-    
-*   [What's next?](#What'snext?)
-    
+* [History](#History)
+
+* [Getting Started](#GettingStarted)
+
+* [Writing Swift API's for Titanium](#WritingSwiftAPI'sforTitanium)
+
+* [Type Conversion](#TypeConversion)
+
+* [What's next?](#What'snext?)
+
 
 This document describes features available in Titanium SDK 8.0.0+.
 
 As a developer of native cross-platform apps, you may run into situations where you want to use a native API that is not exposed in Titanium. Luckily, there are two options available to integrate these functionalities into your app seamlessly:
 
-*   **Hyperloop**: Allows you to extend your existing JavaScript-based app with native code (iOS, Android & Windows) that is also available through JavaScript by generating native code from it. Learn more [here](https://github.com/appcelerator/hyperloop-examples)!
-    
-*   **Native Modules**: Allows you to write a native library (Obj-C for iOS, Java for Android & C++ for Windows) that can be packaged as a module dependency to your project.
-    
+* **Hyperloop**: Allows you to extend your existing JavaScript-based app with native code (iOS, Android & Windows) that is also available through JavaScript by generating native code from it. Learn more [here](https://github.com/appcelerator/hyperloop-examples)!
+
+* **Native Modules**: Allows you to write a native library (Obj-C for iOS, Java for Android & C++ for Windows) that can be packaged as a module dependency to your project.
+
 
 The choice of which of both solution should be used is always up to the developer and depends on the project-based needs. In general, both solutions are high performant and pluggable. If you are more into JavaScript, Hyperloop and the native docs (e.g. from Apple, Google and Microsoft) will help you getting started quickly. If you need a module for a project that uses low-level code (like C or C++), native modules will be the better choice because of the easier access to their API's.
 

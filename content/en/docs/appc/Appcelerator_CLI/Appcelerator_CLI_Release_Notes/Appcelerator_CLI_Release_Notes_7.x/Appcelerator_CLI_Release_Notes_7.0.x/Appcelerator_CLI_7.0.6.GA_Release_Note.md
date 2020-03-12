@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 7.0.6.GA - 30 August 2018","weight":"120"} 
+{"title":"Appcelerator CLI 7.0.6.GA - 30 August 2018","weight":"120"}
 
 Appcelerator CLI 7.0.6 is a patch release that includes one improvement and two bug fixes.
 
@@ -30,21 +30,21 @@ Daemon
 
 ## Improvements
 
-*   [ALOY-1625](https://jira.appcelerator.org/browse/ALOY-1625) - Reduce splash screen image sizes
-    
-    *   Reduced splash screen image sizes
-        
-        *   iOS: ~53%
-            
-        *   Android: ~72%
-            
-*   [CLI-1048](https://jira.appcelerator.org/browse/CLI-1048) - appc switch and appc login org selection should be consistent
-    
-    *   Made login and switching organization selection consistent
-        
+* [ALOY-1625](https://jira.appcelerator.org/browse/ALOY-1625) - Reduce splash screen image sizes
+
+  * Reduced splash screen image sizes
+
+    * iOS: ~53%
+
+    * Android: ~72%
+
+* [CLI-1048](https://jira.appcelerator.org/browse/CLI-1048) - appc switch and appc login org selection should be consistent
+
+  * Made login and switching organization selection consistent
+
 
 ## Fixed issues
 
-*   [CLI-1322](https://jira.appcelerator.org/browse/CLI-1322) - appc ti clean errors if globally set sdk differs from the one configured in tiapp.xml
-    
-*   [CLI-1324](https://jira.appcelerator.org/browse/CLI-1324) - Windows Unable to install latest version of the CLI (7.0.6-master.5)
+* [CLI-1322](https://jira.appcelerator.org/browse/CLI-1322) - appc ti clean errors if globally set sdk differs from the one configured in tiapp.xml
+
+* [CLI-1324](https://jira.appcelerator.org/browse/CLI-1324) - Windows Unable to install latest version of the CLI (7.0.6-master.5)

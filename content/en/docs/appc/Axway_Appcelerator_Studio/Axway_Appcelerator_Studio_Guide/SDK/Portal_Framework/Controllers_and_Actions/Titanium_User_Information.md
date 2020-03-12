@@ -1,15 +1,15 @@
-{"title":"Titanium User Information","weight":"130"} 
+{"title":"Titanium User Information","weight":"130"}
 
-*   [Requirements](#Requirements)
-    
-*   [Description](#Description)
-    
-*   [Invocation](#Invocation)
-    
-*   [Get the User Information](#GettheUserInformation)
-    
-*   [Sample of use](#Sampleofuse)
-    
+* [Requirements](#Requirements)
+
+* [Description](#Description)
+
+* [Invocation](#Invocation)
+
+* [Get the User Information](#GettheUserInformation)
+
+* [Sample of use](#Sampleofuse)
+
 
 ## Requirements
 

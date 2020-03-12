@@ -1,54 +1,54 @@
-{"title":"Android Module Architecture","weight":"20"} 
+{"title":"Android Module Architecture","weight":"20"}
 
-*   [Introduction](#Introduction)
-    
-*   [Module](#Module)
-    
-    *   [Module lifecycle events](#Modulelifecycleevents)
-        
-    *   [Get the current activity](#Getthecurrentactivity)
-        
-*   [Proxy](#Proxy)
-    
-    *   [Methods](#Methods)
-        
-    *   [Properties](#Properties)
-        
-        *   [Custom accessor methods](#Customaccessormethods)
-            
-        *   [propertyAccessors annotation element](#propertyAccessorsannotationelement)
-            
-        *   [Handle property changes using the model listener](#Handlepropertychangesusingthemodellistener)
-            
-    *   [Constants](#Constants)
-        
-    *   [Type conversions](#Typeconversions)
-        
-        *   [Files and blobs](#Filesandblobs)
-            
-    *   [Activity lifecycle events](#Activitylifecycleevents)
-        
-*   [View Proxy and View](#ViewProxyandView)
-    
-    *   [View Proxy](#ViewProxy)
-        
-    *   [View](#View)
-        
-    *   [View Property and methods](#ViewPropertyandmethods)
-        
+* [Introduction](#Introduction)
+
+* [Module](#Module)
+
+  * [Module lifecycle events](#Modulelifecycleevents)
+
+  * [Get the current activity](#Getthecurrentactivity)
+
+* [Proxy](#Proxy)
+
+  * [Methods](#Methods)
+
+  * [Properties](#Properties)
+
+    * [Custom accessor methods](#Customaccessormethods)
+
+    * [propertyAccessors annotation element](#propertyAccessorsannotationelement)
+
+    * [Handle property changes using the model listener](#Handlepropertychangesusingthemodellistener)
+
+  * [Constants](#Constants)
+
+  * [Type conversions](#Typeconversions)
+
+    * [Files and blobs](#Filesandblobs)
+
+  * [Activity lifecycle events](#Activitylifecycleevents)
+
+* [View Proxy and View](#ViewProxyandView)
+
+  * [View Proxy](#ViewProxy)
+
+  * [View](#View)
+
+  * [View Property and methods](#ViewPropertyandmethods)
+
 
 ## Introduction
 
 The Titanium SDK is based on a modular architecture, which can be utilized to extend the SDK by building modules. The module architecture contains the following key interface components:
 
-*   **Proxy**: A base class that represents the native binding between your JavaScript code and native code
-    
-*   **Module**: A special type of Proxy that describes a specific API set or namespace
-    
-*   **ViewProxy**: A specialized Proxy that knows how to render Views
-    
-*   **View**: The visual representation of a UI component which Titanium can render
-    
+* **Proxy**: A base class that represents the native binding between your JavaScript code and native code
+
+* **Module**: A special type of Proxy that describes a specific API set or namespace
+
+* **ViewProxy**: A specialized Proxy that knows how to render Views
+
+* **View**: The visual representation of a UI component which Titanium can render
+
 
 When building a Module, you can only have one Module class but you can have zero or more Proxies, Views and ViewProxies.
 
@@ -172,10 +172,10 @@ Methods of a proxy or module are exposed with the [@Kroll.method](http://docs.ap
 
 You can specify the method parameters in one of two ways:
 
-*   Specify parameters explicitly. In this case, the Titanium attempts to validate and convert types before calling the method.
-    
-*   Specify a single Object\[\] argument. Your method must validate parameters and convert types manually at runtime.
-    
+* Specify parameters explicitly. In this case, the Titanium attempts to validate and convert types before calling the method.
+
+* Specify a single Object\[\] argument. Your method must validate parameters and convert types manually at runtime.
+
 
 If you specify parameters explicitly _and_ one or more parameters are optional, they must be identified using the @Kroll.argument annotation:
 
@@ -219,21 +219,21 @@ If you want to the method name exposed to JavaScript to differ from method name 
 
 Each proxy object maintains an internal dictionary of properties. Properties can be exposed to JavaScript in one of two ways:
 
-*   Creating custom getter and setter methods. When you create a custom getter and setter methods, you can perform data validation, and take actions when the properties are set.
-    
-*   Specifying a list of properties in the @Kroll.proxy or @Kroll.module annotation with the propertyAccessors element. This automatically generates getter and setter methods for each of the named properties.
-    
+* Creating custom getter and setter methods. When you create a custom getter and setter methods, you can perform data validation, and take actions when the properties are set.
+
+* Specifying a list of properties in the @Kroll.proxy or @Kroll.module annotation with the propertyAccessors element. This automatically generates getter and setter methods for each of the named properties.
+
 
 When you use custom getter and setter methods, you are responsible for storing property values in whatever way you want.
 
 Auto-generated property accessors store property values in the internal dictionary. The proxy class provides a set of methods for accessing the proxy's property dictionary from Java:
 
-*   Retrieve the value of a single property using getProperty().
-    
-*   Set an individual property using setProperty().
-    
-*   Retrieve the entire dictionary using getProperties().
-    
+* Retrieve the value of a single property using getProperty().
+
+* Set an individual property using setProperty().
+
+* Retrieve the entire dictionary using getProperties().
+
 
 In addition, you can register a _model listener_ – another Java object that  receives updates whenever a value is set in the property dictionary. This pattern is commonly used for views and view proxies.
 
@@ -247,7 +247,7 @@ The following example exposes a writable message property to JavaScript.
 
 `private` `String myMessage;`
 
-`@Kroll``.getProperty` `@Kroll``.method`
+`@Kroll``.getProperty`
 
 `public` `String getMessage() {`
 
@@ -255,7 +255,7 @@ The following example exposes a writable message property to JavaScript.
 
 `}`
 
-`@Kroll``.setProperty` `@Kroll``.method`
+`@Kroll``.setProperty`
 
 `public`  `void` `setMessage(String message) {`
 
@@ -267,20 +267,18 @@ The following example exposes a writable message property to JavaScript.
 
 Note the following two points:
 
-*   If there were no paired @Kroll.setProperty method, the message property would be read-only.
-    
-*   The getter and setter methods also have the @Kroll.method annotation, which exposes the getMessage and setMessage methods to JavaScript.
-    
-*   You are responsible for storing and retrieving the value. It can be stored in an instance variable (as in the example) or in the internal property dictionary.
-    
+* If there were no paired @Kroll.setProperty method, the message property would be read-only.
 
-In JavaScript, we can now access message as a property, _or_ by calling setMessage() and getMessage():
+* You are responsible for storing and retrieving the value. It can be stored in an instance variable (as in the example) or in the internal property dictionary.
+
+
+In JavaScript, we can now access message as a property:
 
 `var` `calc = require(``"module.id"``);`
 
-`calc.message =` `"hi"``;` `// or`
+`calc.message =` `"hi"``;`
 
-`calc.setMessage(``"hi"``);`
+`console.log(``"calc.message = "` `+ calc.message);`
 
 The @Kroll.getProperty and @Kroll.setProperty annotations support an optional name element, which specifies the name of the property. If name is not set, the name of the property is constr
 
@@ -376,7 +374,7 @@ You can set properties programmatically on the proxy using either setProperty()o
 
 You can also use custom accessor methods when using the model listener. In this case, you'd define the property getter and setter methods using the @Kroll.setProperty and @Kroll.getProperty annotations instead of listing the property in the propertyAccessors element. You can do this if you want to validate or transform the value, or if you want to provide optional arguments in the setter. In the setter, you can then call setPropertyAndFire to store the value and notify the model listener.
 
-`@Kroll``.getProperty` `@Kroll``.method`
+`@Kroll``.getProperty`
 
 `public` `String getMessage() {`
 
@@ -384,7 +382,7 @@ You can also use custom accessor methods when using the model listener. In this 
 
 `}`
 
-`@Kroll``.setProperty` `@Kroll``.method`
+`@Kroll``.setProperty`
 
 `public`  `void` `setMessage(String message) {`
 

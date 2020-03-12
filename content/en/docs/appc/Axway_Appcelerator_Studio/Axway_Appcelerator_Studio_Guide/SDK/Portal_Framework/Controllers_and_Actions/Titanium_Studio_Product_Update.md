@@ -1,15 +1,15 @@
-{"title":"Titanium Studio Product Update","weight":"120"} 
+{"title":"Titanium Studio Product Update","weight":"120"}
 
-*   [Requirements](#Requirements)
-    
-*   [Description](#Description)
-    
-*   [Invocation](#Invocation)
-    
-*   [Checking for Titanium Studio updates](#CheckingforTitaniumStudioupdates)
-    
-*   [Installing a Titanium Studio update](#InstallingaTitaniumStudioupdate)
-    
+* [Requirements](#Requirements)
+
+* [Description](#Description)
+
+* [Invocation](#Invocation)
+
+* [Checking for Titanium Studio updates](#CheckingforTitaniumStudioupdates)
+
+* [Installing a Titanium Studio update](#InstallingaTitaniumStudioupdate)
+
 
 ## Requirements
 
@@ -37,7 +37,7 @@ This is the _dispatch_ call for the check for updates.
 
 When triggered, the Studio will perform the required checks and will later on send a notification to the portal by calling a JavaScript function **_eventsDispatcher.notify()_** and passing an **_event_** JSON into it.
 
-The portal should handle this by defining an **_eventsDispatcher_** object that has a **_notify_** function that accepts an argument.  
+The portal should handle this by defining an **_eventsDispatcher_** object that has a **_notify_** function that accepts an argument.
 For example (taken from the _studio3-sdk_ repository):
 
 `var Events = {TITANIUM_STUDIO_UPDATE :` `'studioUpdate'``};`

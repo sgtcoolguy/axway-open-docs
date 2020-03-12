@@ -1,4 +1,4 @@
-{"title":"Artifacts","weight":"30"} 
+{"title":"Artifacts","weight":"30"}
 
 API Builder 3.x is deprecated
 
@@ -8,6 +8,6 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 This chapter provides information for creating API Builder models and describes the API Builder flows.
 
-*   [Models](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Models/)
-    
-*   [Flows](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/)
+* [Models](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Models/)
+
+* [Flows](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/)

@@ -1,29 +1,29 @@
-{"title":"File Uploads and Downloads","weight":"60"} 
+{"title":"File Uploads and Downloads","weight":"60"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [File upload](#Fileupload)
-        
-        *   [Monitoring upload progress](#Monitoringuploadprogress)
-            
-    *   [File download](#Filedownload)
-        
-        *   [File storage locations](#Filestoragelocations)
-            
-        *   [Monitoring download progress](#Monitoringdownloadprogress)
-            
-    *   [Hands-on practice](#Hands-onpractice)
-        
-        *   [Goal](#Goal)
-            
-        *   [Steps](#Steps)
-            
-    *   [References and further reading](#Referencesandfurtherreading)
-        
-*   [Summary](#Summary)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [File upload](#Fileupload)
+
+    * [Monitoring upload progress](#Monitoringuploadprogress)
+
+  * [File download](#Filedownload)
+
+    * [File storage locations](#Filestoragelocations)
+
+    * [Monitoring download progress](#Monitoringdownloadprogress)
+
+  * [Hands-on practice](#Hands-onpractice)
+
+    * [Goal](#Goal)
+
+    * [Steps](#Steps)
+
+  * [References and further reading](#Referencesandfurtherreading)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -231,14 +231,14 @@ On iOS, a simple property of the HTTPClient object lets you save a file to the l
 
 When downloading files, keep in mind the locations on the device you can access files. The following locations are potentially accessible:
 
-*   **Ti.Filesystem.applicationDataDirectory**: A read/write directory accessible by your app. Place your application-specific files in this directory. The contents of this directory persist until you remove the files or until the user uninstalls the application.
-    
-*   **Ti.Filesystem.resourcesDirectory**: A read-only directory where your application resources are located; this directory corresponds to the _project_/Resources directory in Studio. The contents of this directory persist until the user uninstalls the application.
-    
-*   **Ti.Filesystem.tempDirectory**: A read-write directory where your application can place temporary files. The contents of this directory persist until your application fully closes, at which time the operating system could delete your files.
-    
-*   **Ti.Filesystem.externalStorageDirectory**: A read-write directory on the external storage device (SD card) accessible by your app, if such a location exists. Check first with Ti.Filesystem.isExternalStoragePresent() (which returns a Boolean).
-    
+* **Ti.Filesystem.applicationDataDirectory**: A read/write directory accessible by your app. Place your application-specific files in this directory. The contents of this directory persist until you remove the files or until the user uninstalls the application.
+
+* **Ti.Filesystem.resourcesDirectory**: A read-only directory where your application resources are located; this directory corresponds to the _project_/Resources directory in Studio. The contents of this directory persist until the user uninstalls the application.
+
+* **Ti.Filesystem.tempDirectory**: A read-write directory where your application can place temporary files. The contents of this directory persist until your application fully closes, at which time the operating system could delete your files.
+
+* **Ti.Filesystem.externalStorageDirectory**: A read-write directory on the external storage device (SD card) accessible by your app, if such a location exists. Check first with Ti.Filesystem.isExternalStoragePresent() (which returns a Boolean).
+
 
 The Ti.Filesystem.resourcesDirectory is read-only on a device, but is read/write in the simulator/emulator.
 
@@ -266,35 +266,35 @@ In this activity, you will download a large image file, uploading a progress bar
 
 #### Steps
 
-1.  Create a new Titanium Mobile project. You can keep the two-tab code or replace it.
-    
-2.  To the window, add a progress indicator centered in the window, 10 pixels from the top, with a width of 200 and height of 50. Set the minimum value to 0, max to 1, and current value to 0. Show the indicator.
-    
-3.  Add an ImageView to the window that will display the downloaded photo.
-    
-4.  Add an HTTPClient that will:
-    
-    *   Download [http://farm4.static.flickr.com/3244/3115485060\_076a345932\_o.jpg](http://farm4.static.flickr.com/3244/3115485060_076a345932_o.jpg) (from [Flickr](http://www.flickr.com/photos/72213316@N00/3115485060/sizes/o/in/photostream/)).
-        
-    *   Save the file to the applicationDataDirectory in a file named cool\_photo.jpg.
-        
-    *   Update the progress bar as the file is downloaded
-        
-    *   Fire an event once the photo is downloaded and saved. Pass the native path as a payload of that event.
-        
-5.  Add an app-level event listener to receive the native path of the downloaded photo. Hide the progress bar and set the ImageView's image property equal to that native path to show the image.
-    
-6.  Build and test the image in the simulator/emulator.
-    
+1. Create a new Titanium Mobile project. You can keep the two-tab code or replace it.
+
+2. To the window, add a progress indicator centered in the window, 10 pixels from the top, with a width of 200 and height of 50. Set the minimum value to 0, max to 1, and current value to 0. Show the indicator.
+
+3. Add an ImageView to the window that will display the downloaded photo.
+
+4. Add an HTTPClient that will:
+
+  * Download [http://farm4.static.flickr.com/3244/3115485060\_076a345932\_o.jpg](http://farm4.static.flickr.com/3244/3115485060_076a345932_o.jpg) (from [Flickr](http://www.flickr.com/photos/72213316@N00/3115485060/sizes/o/in/photostream/)).
+
+  * Save the file to the applicationDataDirectory in a file named cool\_photo.jpg.
+
+  * Update the progress bar as the file is downloaded
+
+  * Fire an event once the photo is downloaded and saved. Pass the native path as a payload of that event.
+
+5. Add an app-level event listener to receive the native path of the downloaded photo. Hide the progress bar and set the ImageView's image property equal to that native path to show the image.
+
+6. Build and test the image in the simulator/emulator.
+
 
 ### References and further reading
 
-*   [Finished code](./attachments_56557676_1_6.5_file-download.zip)
-    
-*   [Filesystem Access and Storage chapter](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Working_with_Local_Data_Sources/Filesystem_Access_and_Storage/)
-    
-*   This [blog post](http://developer.appcelerator.com/blog/2011/09/qr-codes-in-your-mobile-apps-cross-platform.html) contains another technique for caching downloaded images
-    
+* [Finished code](./attachments_56557676_1_6.5_file-download.zip)
+
+* [Filesystem Access and Storage chapter](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Working_with_Local_Data_Sources/Filesystem_Access_and_Storage/)
+
+* This [blog post](http://developer.appcelerator.com/blog/2011/09/qr-codes-in-your-mobile-apps-cross-platform.html) contains another technique for caching downloaded images
+
 
 ## Summary
 

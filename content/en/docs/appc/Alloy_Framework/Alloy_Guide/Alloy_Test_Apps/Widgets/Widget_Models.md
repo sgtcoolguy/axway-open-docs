@@ -1,4 +1,4 @@
-{"title":"Widget Models","weight":"30"} 
+{"title":"Widget Models","weight":"30"}
 
 Demonstrates using data models with a widget.
 

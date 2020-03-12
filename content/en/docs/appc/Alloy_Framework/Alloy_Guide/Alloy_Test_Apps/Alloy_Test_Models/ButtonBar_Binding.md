@@ -1,4 +1,4 @@
-{"title":"ButtonBar Binding","weight":"10"} 
+{"title":"ButtonBar Binding","weight":"10"}
 
 Demonstrates how you can use data binding to populate the list of buttons in a ButtonBar or TabbedBar, or Toolbar component.
 
@@ -86,4 +86,4 @@ app/controllers/index.js
 
 ## See Also
 
-*   [Collection-View Binding](#undefined)
+* [Collection-View Binding](#undefined)

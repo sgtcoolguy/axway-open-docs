@@ -1,4 +1,4 @@
-{"title":"Alloy 1.7.30 - 16 December 2015","weight":"60"} 
+{"title":"Alloy 1.7.30 - 16 December 2015","weight":"60"}
 
 Alloy 1.7.30 is a patch release that includes new improvements and one bug fix.
 
@@ -6,14 +6,14 @@ As of this release, the previous Alloy patch release is no longer supported. Not
 
 ## Improvements
 
-*   [ALOY-1341](https://jira.appcelerator.org/browse/ALOY-1341) - Add Arabic lang to builtin MomentJS
-    
-    *   Added Arabic Saudi Arabic language in addition to Arabic number ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩ instead of English.
-        
-*   [ALOY-1342](https://jira.appcelerator.org/browse/ALOY-1342) - Sample Todo App TextField text color to black
-    
-    *   Set the default color of #itemField to 'black' to make this field easier to read on Android as of SDK 4.0.
-        
+* [ALOY-1341](https://jira.appcelerator.org/browse/ALOY-1341) - Add Arabic lang to builtin MomentJS
+
+  * Added Arabic Saudi Arabic language in addition to Arabic number ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩ instead of English.
+
+* [ALOY-1342](https://jira.appcelerator.org/browse/ALOY-1342) - Sample Todo App TextField text color to black
+
+  * Set the default color of #itemField to 'black' to make this field easier to read on Android as of SDK 4.0.
+
 
 ## Fixed Issue
 

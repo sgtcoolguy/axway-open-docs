@@ -1,4 +1,4 @@
-{"title":"Alloy Themes","weight":"10"} 
+{"title":"Alloy Themes","weight":"10"}
 
 This document demonstrates how to use Alloy themes to easily style your entire application UI for different platforms.
 
@@ -90,6 +90,6 @@ app/config.json
 
 ## See also
 
-*   [Project Configuration File](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Basics/Project_Configuration_File/)
-    
-*   [Style Priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#Stylepriorities)
+* [Project Configuration File](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Basics/Project_Configuration_File/)
+
+* [Style Priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#Stylepriorities)

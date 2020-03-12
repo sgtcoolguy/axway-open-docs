@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 6.2.0.GA - 13 April 2017","weight":"90"} 
+{"title":"Appcelerator CLI 6.2.0.GA - 13 April 2017","weight":"90"}
 
 Appcelerator CLI 6.2.0.GA is a minor release that includes seven bug fixes.
 
@@ -26,16 +26,16 @@ Titanium CLI
 
 ## Fixed issues
 
-*   [CLI-1031](https://jira.appcelerator.org/browse/CLI-1031) - Windows: Node process is not killed when you use ctrl+c
-    
-*   [CLI-1107](https://jira.appcelerator.org/browse/CLI-1107) - deprecated minimatch. Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
-    
-*   [CLI-1166](https://jira.appcelerator.org/browse/CLI-1166) - Correct NSP errors in appc-cli-titanium
-    
-*   [CLI-1169](https://jira.appcelerator.org/browse/CLI-1169) - TypeError: Data must be a string or a buffer thrown when running commands if sid is undefined in config
-    
-*   [CLI-1171](https://jira.appcelerator.org/browse/CLI-1171) - cannot find module session
-    
-*   [CLI-1173](https://jira.appcelerator.org/browse/CLI-1173) - Error: Error attempting to login to Arrow Cloud
-    
-*   [CLI-1174](https://jira.appcelerator.org/browse/CLI-1174) - Bad reference to session lib in install plugin
+* [CLI-1031](https://jira.appcelerator.org/browse/CLI-1031) - Windows: Node process is not killed when you use ctrl+c
+
+* [CLI-1107](https://jira.appcelerator.org/browse/CLI-1107) - deprecated minimatch. Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+
+* [CLI-1166](https://jira.appcelerator.org/browse/CLI-1166) - Correct NSP errors in appc-cli-titanium
+
+* [CLI-1169](https://jira.appcelerator.org/browse/CLI-1169) - TypeError: Data must be a string or a buffer thrown when running commands if sid is undefined in config
+
+* [CLI-1171](https://jira.appcelerator.org/browse/CLI-1171) - cannot find module session
+
+* [CLI-1173](https://jira.appcelerator.org/browse/CLI-1173) - Error: Error attempting to login to Arrow Cloud
+
+* [CLI-1174](https://jira.appcelerator.org/browse/CLI-1174) - Bad reference to session lib in install plugin

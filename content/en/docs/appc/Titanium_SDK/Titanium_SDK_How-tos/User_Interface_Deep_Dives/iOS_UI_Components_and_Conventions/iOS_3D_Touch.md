@@ -1,30 +1,30 @@
-{"title":"iOS 3D Touch","weight":"10"} 
+{"title":"iOS 3D Touch","weight":"10"}
 
-*   [Introduction](#Introduction)
-    
-*   [Quick Actions](#QuickActions)
-    
-    *   [Add Static Shortcuts](#AddStaticShortcuts)
-        
-    *   [Add Dynamic Shortcuts](#AddDynamicShortcuts)
-        
-    *   [Respond to Quick Actions](#RespondtoQuickActions)
-        
-*   [Peek and Pop](#PeekandPop)
-    
-*   [Example](#Example)
-    
-*   [Further Reading](#FurtherReading)
-    
+* [Introduction](#Introduction)
+
+* [Quick Actions](#QuickActions)
+
+  * [Add Static Shortcuts](#AddStaticShortcuts)
+
+  * [Add Dynamic Shortcuts](#AddDynamicShortcuts)
+
+  * [Respond to Quick Actions](#RespondtoQuickActions)
+
+* [Peek and Pop](#PeekandPop)
+
+* [Example](#Example)
+
+* [Further Reading](#FurtherReading)
+
 
 ## Introduction
 
 Titanium SDK supports the [Peek and Pop, and Quick Action features](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/3DTouch.html#//apple_ref/doc/uid/TP40006556-CH71-SW1) of 3D touch, which provides additional functionality and responsiveness for iOS users. Both features require a 3D Touch enabled device running iOS 9 or later. Note that you can only test 3D touch features on device.
 
-*   **Peek and Pop** provides a way for the user to quickly preview item content in the application by pressing on it, then optionally switching to the peeked item.
-    
-*   **Quick Action** provides application shortcuts when the user presses the application icon on the Home Screen. The shortcuts allow the user to quickly perform an action with your application without navigating through the application.
-    
+* **Peek and Pop** provides a way for the user to quickly preview item content in the application by pressing on it, then optionally switching to the peeked item.
+
+* **Quick Action** provides application shortcuts when the user presses the application icon on the Home Screen. The shortcuts allow the user to quickly perform an action with your application without navigating through the application.
+
 
 3D Touch != Force Touch
 
@@ -36,24 +36,24 @@ Press firmly on the app icon in the Home screen to reveal the Quick Actions (or 
 
 To use quick actions, first create static or dynamic actions, then listen for the shortcutitemclick event to determine when the user taps a quick action.
 
- [![shortcuts](/Images/appc/github.com/appcelerator-developer-relations/appc-sample-3dtouch/raw/master/docs/shortcuts.png)](https://github.com/appcelerator-developer-relations/appc-sample-3dtouch/blob/master/docs/shortcuts.png) 
+ [![shortcuts](/Images/appc/github.com/appcelerator-developer-relations/appc-sample-3dtouch/raw/master/docs/shortcuts.png)](https://github.com/appcelerator-developer-relations/appc-sample-3dtouch/blob/master/docs/shortcuts.png)
 
 ### Add Static Shortcuts
 
 To define static shortcuts, add the [UIApplicationShortcutItems](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW36) key to the ios/plist/dict element in the tiapp.xml file. Set the UIApplicationShortcutItems key to an array of dict items containing additional keys that define the shortcut. You must specify the UIApplicationShortcutItemType and UIApplicationShortcutItemTitle keys :
 
-*   UIApplicationShortcutItemTitle (required): title of the quick action. May be assigned an i18n localized string in the app.xml file.
-    
-*   UIApplicationShortcutItemType (required): unique identifier of the quick action passed to the event. Use a reverse domain notation, for example, com.foocompany.fooapp.fooshortcut.
-    
-*   UIApplicationShortcutItemSubtitle: string to display underneath the title in the quick action. May be assigned an i18n localized string in the app.xml file.
-    
-*   UIApplicationShortcutItemIconType: Set to a [UIApplicationShortcutIcon enum](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutIcon_Class/index.html#//apple_ref/c/tdef/UIApplicationShortcutIconType) to display an icon with the quick action.
-    
-*   UIApplicationShortcutItemIconFile: Hash of a 35 x 35 dp icon to display with the quick action. To retrieve the hash of the icon, build the project once and retrieve the hash of the corresponding image from build/iphone/Assets.xcassets.
-    
-*   UIApplicationShortcutItemUserInfo: custom dictionary that is passed to the event.
-    
+* UIApplicationShortcutItemTitle (required): title of the quick action. May be assigned an i18n localized string in the app.xml file.
+
+* UIApplicationShortcutItemType (required): unique identifier of the quick action passed to the event. Use a reverse domain notation, for example, com.foocompany.fooapp.fooshortcut.
+
+* UIApplicationShortcutItemSubtitle: string to display underneath the title in the quick action. May be assigned an i18n localized string in the app.xml file.
+
+* UIApplicationShortcutItemIconType: Set to a [UIApplicationShortcutIcon enum](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutIcon_Class/index.html#//apple_ref/c/tdef/UIApplicationShortcutIconType) to display an icon with the quick action.
+
+* UIApplicationShortcutItemIconFile: Hash of a 35 x 35 dp icon to display with the quick action. To retrieve the hash of the icon, build the project once and retrieve the hash of the corresponding image from build/iphone/Assets.xcassets.
+
+* UIApplicationShortcutItemUserInfo: custom dictionary that is passed to the event.
+
 
 Localization
 
@@ -169,20 +169,20 @@ To create or remove dynamic shortcuts, use the [Ti.UI.iOS.ApplicationShortcuts A
 
 To create a dynamic shortcut:
 
-1.  Use the Ti.UI.iOS.forceTouchSupportedto test if the device supports 3D touch.
-    
-2.  Create an instance of an ApplicationShortcut using the Ti.UI.iOS.createApplicationShortcuts() method.
-    
-3.  Invoke the addDynamicShortcut()method on the ApplicationShortcut instance and pass method a dictionary with the following parameters:
-    
-    *   itemtype (required): unique identifier of the quick action passed to the event. Use a reverse domain notation, for example, com.foocompany.fooapp.fooshortcut.
-        
-    *   title (required): title of the quick action.
-        
-    *   subtitle: subtitle of the quick action displayed beneath the title.
-        
-    *   icon: icon to display with the quick action. May be assigned a Titanium.UI.iOS.SHORTCUT\_ICON\_TYPE\_\* constant, an image URL or a Titanium.Contacts.Person. If you use an image file, you need to enable slicing. See the note in the previous section for instructions.
-        
+1. Use the Ti.UI.iOS.forceTouchSupportedto test if the device supports 3D touch.
+
+2. Create an instance of an ApplicationShortcut using the Ti.UI.iOS.createApplicationShortcuts() method.
+
+3. Invoke the addDynamicShortcut()method on the ApplicationShortcut instance and pass method a dictionary with the following parameters:
+
+  * itemtype (required): unique identifier of the quick action passed to the event. Use a reverse domain notation, for example, com.foocompany.fooapp.fooshortcut.
+
+  * title (required): title of the quick action.
+
+  * subtitle: subtitle of the quick action displayed beneath the title.
+
+  * icon: icon to display with the quick action. May be assigned a Titanium.UI.iOS.SHORTCUT\_ICON\_TYPE\_\* constant, an image URL or a Titanium.Contacts.Person. If you use an image file, you need to enable slicing. See the note in the previous section for instructions.
+
 
 To remove a dynamic shortcut, invoke the ApplicationShortcut instance's removeDynamicShortcut() method and pass it the itemtype identifier of the dynamic shortcut to remove or invoke the removeAllDynamicShortcuts() method to remove all dynamic shortcuts.
 
@@ -242,24 +242,24 @@ When the user taps a Quick Action, the shortcutitemclickevent is fired for the T
 
 To use Peek and Pop, press firmly on a peek-supported view. As you start applying more force, the rest of the screen will blur and reveal the preview. Maintaining the press will eventually open (pop) the detailed window. Swipe up while you peek to reveal any available quick actions.
 
- [![preview](/Images/appc/github.com/appcelerator-developer-relations/appc-sample-3dtouch/raw/master/docs/preview.png)](https://github.com/appcelerator-developer-relations/appc-sample-3dtouch/blob/master/docs/preview.png) 
+ [![preview](/Images/appc/github.com/appcelerator-developer-relations/appc-sample-3dtouch/raw/master/docs/preview.png)](https://github.com/appcelerator-developer-relations/appc-sample-3dtouch/blob/master/docs/preview.png)
 
 To enable Peek and Pop:
 
-1.  Use the Ti.UI.iOS.forceTouchSupportedto test if the device supports 3D touch.
-    
-2.  Create a PreviewContext object using the Titanium.UI.iOS.createPreviewContext() method. Pass the method a dictionary with the following properties:
-    
-    *   preview: view object to use as the peeked view.
-        
-    *   actions: array of [PreviewActions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iOS.PreviewAction) or [PreviewActionGroup](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iOS.PreviewActionGroup) objects to use as the quick actions.
-        
-    *   contentHeight: height of the preview window. Defaults to fill most of the screen.
-        
-3.  Add the peek and pop events to the created preview context to receive updates about the current preview state.
-    
-4.  Attach the PreviewContext object to a view. Set the view's previewContext property to the PreviewContext object.
-    
+1. Use the Ti.UI.iOS.forceTouchSupportedto test if the device supports 3D touch.
+
+2. Create a PreviewContext object using the Titanium.UI.iOS.createPreviewContext() method. Pass the method a dictionary with the following properties:
+
+  * preview: view object to use as the peeked view.
+
+  * actions: array of [PreviewActions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iOS.PreviewAction) or [PreviewActionGroup](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iOS.PreviewActionGroup) objects to use as the quick actions.
+
+  * contentHeight: height of the preview window. Defaults to fill most of the screen.
+
+3. Add the peek and pop events to the created preview context to receive updates about the current preview state.
+
+4. Attach the PreviewContext object to a view. Set the view's previewContext property to the PreviewContext object.
+
 
 **Example:**
 
@@ -333,10 +333,10 @@ For a full example, see [https://github.com/appcelerator-developer-relations/app
 
 ## Further Reading
 
-*   [Ti.UI.iOS.ApplicationShortcuts](#!/api/Titanium.UI.iOS.ApplicationShortcuts) API reference
-    
-*   [Ti.UI.iOS.PreviewContext](#!/api/Titanium.UI.iOS.PreviewContext) API reference
-    
-*   Apple Human Interface Guidelines: [3D Touch](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/3DTouch.html)
-    
-*   Appel Documentation: [Getting Started with 3D Touch](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/Adopting3DTouchOniPhone/index.html)
+* [Ti.UI.iOS.ApplicationShortcuts](#!/api/Titanium.UI.iOS.ApplicationShortcuts) API reference
+
+* [Ti.UI.iOS.PreviewContext](#!/api/Titanium.UI.iOS.PreviewContext) API reference
+
+* Apple Human Interface Guidelines: [3D Touch](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/3DTouch.html)
+
+* Appel Documentation: [Getting Started with 3D Touch](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/Adopting3DTouchOniPhone/index.html)

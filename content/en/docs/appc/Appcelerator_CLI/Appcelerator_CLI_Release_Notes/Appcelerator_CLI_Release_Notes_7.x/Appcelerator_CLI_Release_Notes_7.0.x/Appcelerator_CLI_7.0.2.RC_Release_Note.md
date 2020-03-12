@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 7.0.2.RC - 25 January 2018","weight":"210"} 
+{"title":"Appcelerator CLI 7.0.2.RC - 25 January 2018","weight":"210"}
 
 Appcelerator CLI 7.0.2.RC is a patch release that includes several improvements and bug fixes.
 
@@ -26,29 +26,29 @@ Titanium CLI
 
 ## Improvements
 
-*   [ALOY-1534](https://jira.appcelerator.org/browse/ALOY-1534) - Add support for Backbone 1.3.3 and Underscore 1.8.3
-    
-    *   Added support for Backbone 1.3.3 and Underscore 1.8.3
-        
-*   [ALOY-1557](https://jira.appcelerator.org/browse/ALOY-1557) - Alloy: Keep Changelog up to date
-    
-    *   Continued updating the Changelog at [https://github.com/appcelerator/alloy/blob/master/CHANGELOG.md](https://github.com/appcelerator/alloy/blob/master/CHANGELOG.md)
-        
-*   [ALOY-1592](https://jira.appcelerator.org/browse/ALOY-1592) - Builtins: Reimplement measurement by convertUnits
-    
-    *   Re-implemented measurement by convertUnits
-        
-*   [ALOY-1597](https://jira.appcelerator.org/browse/ALOY-1597) - Use babel-code-frame to provide context when failing to parse code
-    
-    *   Used babel-code-frame to provide better parsing error messaging
-        
+* [ALOY-1534](https://jira.appcelerator.org/browse/ALOY-1534) - Add support for Backbone 1.3.3 and Underscore 1.8.3
+
+  * Added support for Backbone 1.3.3 and Underscore 1.8.3
+
+* [ALOY-1557](https://jira.appcelerator.org/browse/ALOY-1557) - Alloy: Keep Changelog up to date
+
+  * Continued updating the Changelog at [https://github.com/appcelerator/alloy/blob/master/CHANGELOG.md](https://github.com/appcelerator/alloy/blob/master/CHANGELOG.md)
+
+* [ALOY-1592](https://jira.appcelerator.org/browse/ALOY-1592) - Builtins: Reimplement measurement by convertUnits
+
+  * Re-implemented measurement by convertUnits
+
+* [ALOY-1597](https://jira.appcelerator.org/browse/ALOY-1597) - Use babel-code-frame to provide context when failing to parse code
+
+  * Used babel-code-frame to provide better parsing error messaging
+
 
 ## Fixed issues
 
-*   [ALOY-1528](https://jira.appcelerator.org/browse/ALOY-1528) - getWidgetDirectories does not respect theme config.json
-    
-*   [ALOY-1596](https://jira.appcelerator.org/browse/ALOY-1596) - Mobileweb assets copied on alloy new
-    
-*   [CLI-972](https://jira.appcelerator.org/browse/CLI-972) - proxyServer not working when building for the first time on CLI
-    
-*   [CLI-1294](https://jira.appcelerator.org/browse/CLI-1294) - registry.handleResponse does not handle the code returned from a platform call
+* [ALOY-1528](https://jira.appcelerator.org/browse/ALOY-1528) - getWidgetDirectories does not respect theme config.json
+
+* [ALOY-1596](https://jira.appcelerator.org/browse/ALOY-1596) - Mobileweb assets copied on alloy new
+
+* [CLI-972](https://jira.appcelerator.org/browse/CLI-972) - proxyServer not working when building for the first time on CLI
+
+* [CLI-1294](https://jira.appcelerator.org/browse/CLI-1294) - registry.handleResponse does not handle the code returned from a platform call

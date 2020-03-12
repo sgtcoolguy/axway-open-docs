@@ -1,51 +1,51 @@
-{"title":"Native Android Debugging and Testing Tools","weight":"20"} 
+{"title":"Native Android Debugging and Testing Tools","weight":"20"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [Accessing the emulator with DDMS](#AccessingtheemulatorwithDDMS)
-        
-        *   [Examining log output with DDMS](#ExamininglogoutputwithDDMS)
-            
-        *   [Simulating network conditions](#Simulatingnetworkconditions)
-            
-        *   [Simulating calls and SMS messages](#SimulatingcallsandSMSmessages)
-            
-        *   [Setting GPS coordinates](#SettingGPScoordinates)
-            
-        *   [Exploring the file system with DDMS](#ExploringthefilesystemwithDDMS)
-            
-        *   [Memory monitoring with DDMS](#MemorymonitoringwithDDMS)
-            
-    *   [Accessing the emulator with adb](#Accessingtheemulatorwithadb)
-        
-        *   [Examining log output with adb](#Examininglogoutputwithadb)
-            
-        *   [Exploring the file system with adb](#Exploringthefilesystemwithadb)
-            
-        *   [Accessing SQLite databases with adb](#AccessingSQLitedatabaseswithadb)
-            
-    *   [Creating an emulator](#Creatinganemulator)
-        
-        *   [Using the Command-Line](#UsingtheCommand-Line)
-            
-        *   [Using the AVD manager](#UsingtheAVDmanager)
-            
-    *   [Modifying the emulator](#Modifyingtheemulator)
-        
-        *   [Increase the emulator's disk space](#Increasetheemulator'sdiskspace)
-            
-        *   [Resize the emulator](#Resizetheemulator)
-            
-        *   [Resize the emulator on the fly](#Resizetheemulatoronthefly)
-            
-    *   [Note on Native Java debugging](#NoteonNativeJavadebugging)
-        
-    *   [References](#References)
-        
-*   [Summary](#Summary)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [Accessing the emulator with DDMS](#AccessingtheemulatorwithDDMS)
+
+    * [Examining log output with DDMS](#ExamininglogoutputwithDDMS)
+
+    * [Simulating network conditions](#Simulatingnetworkconditions)
+
+    * [Simulating calls and SMS messages](#SimulatingcallsandSMSmessages)
+
+    * [Setting GPS coordinates](#SettingGPScoordinates)
+
+    * [Exploring the file system with DDMS](#ExploringthefilesystemwithDDMS)
+
+    * [Memory monitoring with DDMS](#MemorymonitoringwithDDMS)
+
+  * [Accessing the emulator with adb](#Accessingtheemulatorwithadb)
+
+    * [Examining log output with adb](#Examininglogoutputwithadb)
+
+    * [Exploring the file system with adb](#Exploringthefilesystemwithadb)
+
+    * [Accessing SQLite databases with adb](#AccessingSQLitedatabaseswithadb)
+
+  * [Creating an emulator](#Creatinganemulator)
+
+    * [Using the Command-Line](#UsingtheCommand-Line)
+
+    * [Using the AVD manager](#UsingtheAVDmanager)
+
+  * [Modifying the emulator](#Modifyingtheemulator)
+
+    * [Increase the emulator's disk space](#Increasetheemulator'sdiskspace)
+
+    * [Resize the emulator](#Resizetheemulator)
+
+    * [Resize the emulator on the fly](#Resizetheemulatoronthefly)
+
+  * [Note on Native Java debugging](#NoteonNativeJavadebugging)
+
+  * [References](#References)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -59,12 +59,12 @@ There are many tools supplied with the Android SDK. We'll focus on those that ar
 
 In this part, you'll see how to use DDMS to:
 
-*   View log output
-    
-*   Access the file system on the emulator or device
-    
-*   Set emulator parameters and simulate operating conditions
-    
+* View log output
+
+* Access the file system on the emulator or device
+
+* Set emulator parameters and simulate operating conditions
+
 
 #### Examining log output with DDMS
 
@@ -106,14 +106,14 @@ Google's Android docs cover the basics of using DDMS for monitoring memory usage
 
 adb offers many of the features of DDMS, including the means to:
 
-*   View log output
-    
-*   Access the file system on the emulator or device
-    
-*   Access SQLite databases on the emulator or device
-    
-*   Issue shell commands on the emulator or device
-    
+* View log output
+
+* Access the file system on the emulator or device
+
+* Access SQLite databases on the emulator or device
+
+* Issue shell commands on the emulator or device
+
 
 #### Examining log output with adb
 
@@ -189,14 +189,14 @@ You'll need to know the path to your app's database. According to Google's docum
 
 Keep in mind these points:
 
-*   Only SQLite statements are supported, not the full SQL language. See [http://www.sqlite.org/lang.html](http://www.sqlite.org/lang.html) for more info.
-    
-*   You must terminate all SQLite statements with a semicolon.
-    
-*   The sqlite3 binary offers various commands, which are preceded by a period and _not_ terminated with a semicolon. Enter .help for a list of those commands.
-    
-*   You're interacting with your app's actual database. So if you make modifications, you could create error conditions within your app.
-    
+* Only SQLite statements are supported, not the full SQL language. See [http://www.sqlite.org/lang.html](http://www.sqlite.org/lang.html) for more info.
+
+* You must terminate all SQLite statements with a semicolon.
+
+* The sqlite3 binary offers various commands, which are preceded by a period and _not_ terminated with a semicolon. Enter .help for a list of those commands.
+
+* You're interacting with your app's actual database. So if you make modifications, you could create error conditions within your app.
+
 
 ### Creating an emulator
 
@@ -312,18 +312,18 @@ To retrieve a list of target IDs and emulator skins run then android list target
 
 The AVD manager provides a GUI to create and manage your emulators.
 
-1.  Launch the AVD manager from the console by running:
-    
-    `path_to_android_sdk``/tools/android` `avd`
-    
-2.  Once the AVD manager appears, click the **New** button on the right side. A dialog opens.
-    
-3.  At minimum, you need to enter a name for the emulator, select a device, select a target and in the **CPU/ABI** drop-down, select **x86** if you have the option to.
-    
-4.  Change the other options for your emulator.
-    
-5.  Click **OK.**
-    
+1. Launch the AVD manager from the console by running:
+
+  `path_to_android_sdk``/tools/android` `avd`
+
+2. Once the AVD manager appears, click the **New** button on the right side. A dialog opens.
+
+3. At minimum, you need to enter a name for the emulator, select a device, select a target and in the **CPU/ABI** drop-down, select **x86** if you have the option to.
+
+4. Change the other options for your emulator.
+
+5. Click **OK.**
+
 
 ### Modifying the emulator
 
@@ -331,31 +331,31 @@ The AVD manager provides a GUI to create and manage your emulators.
 
 By default, when a new emulator is created, it only has enough space to install one or two applications. To increase the disk size:
 
-1.  Open the AVD configuration file with your favorite text editor. The following are the default locations:
-    
-    1.  On Mac OS X systems, open ~/.android/avd/<AVD\_name>.avd/config.ini.
-        
-    2.  On Windows 7 and 8 systems, open C:\\Users\\<user>\\.android\\avd\\<AVD\_name>.avd\\config.ini.
-        
-2.  Add or edit the following variable:
-    
-    `disk.dataPartition.size=<size_in_MB>m`
-    
+1. Open the AVD configuration file with your favorite text editor. The following are the default locations:
+
+  1. On Mac OS X systems, open ~/.android/avd/<AVD\_name>.avd/config.ini.
+
+  2. On Windows 7 and 8 systems, open C:\\Users\\<user>\\.android\\avd\\<AVD\_name>.avd\\config.ini.
+
+2. Add or edit the following variable:
+
+  `disk.dataPartition.size=<size_in_MB>m`
+
 
 #### Resize the emulator
 
-1.  In Studio, run your application at least once in your chosen emulator, so that a virtual device will be created.
-    
-2.  Close the emulator.
-    
-3.  Launch the Android AVD Manager.
-    
-4.  Select the emulator that was created in step 1.
-    
-5.  Press the **Edit** button, change the resolution, and press the **Edit AVD** button to save.
-    
-6.  Close the AVD Manager and launch your app again from Studio. The new resolution will take effect.
-    
+1. In Studio, run your application at least once in your chosen emulator, so that a virtual device will be created.
+
+2. Close the emulator.
+
+3. Launch the Android AVD Manager.
+
+4. Select the emulator that was created in step 1.
+
+5. Press the **Edit** button, change the resolution, and press the **Edit AVD** button to save.
+
+6. Close the AVD Manager and launch your app again from Studio. The new resolution will take effect.
+
 
 #### Resize the emulator on the fly
 
@@ -389,16 +389,16 @@ Note that debugging Java requires setting the Android debuggable flag as describ
 
 ### References
 
-*   Android DDMS docs: [Using DDMS](http://developer.android.com/guide/developing/debugging/ddms.html)
-    
-*   Logcat options: [http://developer.android.com/guide/developing/tools/logcat.html](http://developer.android.com/guide/developing/tools/logcat.html)
-    
-*   Shell commands with ADB (including sqlite3): [http://developer.android.com/guide/developing/tools/adb.html#shellcommands](http://developer.android.com/guide/developing/tools/adb.html#shellcommands)
-    
-*   SQLite commands: [http://www.sqlite.org/lang.html](http://www.sqlite.org/lang.html) and [http://www.sqlite.org/pragma.html](http://www.sqlite.org/pragma.html)
-    
-*   Android Debugging docs: [Debugging](http://developer.android.com/guide/developing/debugging/index.html)
-    
+* Android DDMS docs: [Using DDMS](http://developer.android.com/guide/developing/debugging/ddms.html)
+
+* Logcat options: [http://developer.android.com/guide/developing/tools/logcat.html](http://developer.android.com/guide/developing/tools/logcat.html)
+
+* Shell commands with ADB (including sqlite3): [http://developer.android.com/guide/developing/tools/adb.html#shellcommands](http://developer.android.com/guide/developing/tools/adb.html#shellcommands)
+
+* SQLite commands: [http://www.sqlite.org/lang.html](http://www.sqlite.org/lang.html) and [http://www.sqlite.org/pragma.html](http://www.sqlite.org/pragma.html)
+
+* Android Debugging docs: [Debugging](http://developer.android.com/guide/developing/debugging/index.html)
+
 
 ## Summary
 

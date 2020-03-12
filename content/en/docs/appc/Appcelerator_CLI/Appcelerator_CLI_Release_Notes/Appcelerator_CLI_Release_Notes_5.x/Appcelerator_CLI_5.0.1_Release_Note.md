@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 5.0.1 - 18 September 2015","weight":"200"} 
+{"title":"Appcelerator CLI 5.0.1 - 18 September 2015","weight":"200"}
 
 Appcelerator CLI 5.0.1 is a patch release, addressing high-priority issues from previous releases.
 

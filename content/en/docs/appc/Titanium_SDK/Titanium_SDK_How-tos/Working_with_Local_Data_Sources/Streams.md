@@ -1,32 +1,32 @@
-{"title":"Streams","weight":"60"} 
+{"title":"Streams","weight":"60"}
 
-*   [Overview](#Overview)
-    
-*   [BufferStream](#BufferStream)
-    
-    *   [BufferStream examples](#BufferStreamexamples)
-        
-*   [FileStream](#FileStream)
-    
-    *   [FileStream examples](#FileStreamexamples)
-        
-*   [BlobStream](#BlobStream)
-    
-    *   [BlobStream examples](#BlobStreamexamples)
-        
+* [Overview](#Overview)
+
+* [BufferStream](#BufferStream)
+
+  * [BufferStream examples](#BufferStreamexamples)
+
+* [FileStream](#FileStream)
+
+  * [FileStream examples](#FileStreamexamples)
+
+* [BlobStream](#BlobStream)
+
+  * [BlobStream examples](#BlobStreamexamples)
+
 
 ## Overview
 
 A stream is a data type used to serially read and write bytes. The term "Stream", used generically, refers to a data type which implements a particular interface consisting of the methods that you would expect from a stream-like object, namely read(), write(), close(), isWritable(), and isReadable(). The Titanium Mobile SDK, starting with version 1.7.0, defines four types which implement this interface:
 
-*   Titanium.Stream.BufferStream, an in-memory stream implementation.
-    
-*   Titanium.Stream.BlobStream, a read-only stream specifically for reading from Titanium Blobs.
-    
-*   Titanium.Filesystem.FileStream, for reading and writing files on the mobile device.
-    
-*   Titanium.Network.Socket.TCP, a TCP socket implementation which, among other things, implements the Stream interface. Sockets, of course, have lots of other interesting features beyond their stream implementation, and therefore there will be another installment of this article series devoted to sockets. We won't cover sockets any further in this article.
-    
+* Titanium.Stream.BufferStream, an in-memory stream implementation.
+
+* Titanium.Stream.BlobStream, a read-only stream specifically for reading from Titanium Blobs.
+
+* Titanium.Filesystem.FileStream, for reading and writing files on the mobile device.
+
+* Titanium.Network.Socket.TCP, a TCP socket implementation which, among other things, implements the Stream interface. Sockets, of course, have lots of other interesting features beyond their stream implementation, and therefore there will be another installment of this article series devoted to sockets. We won't cover sockets any further in this article.
+
 
 ## BufferStream
 

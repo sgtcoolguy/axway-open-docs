@@ -1,15 +1,15 @@
-{"title":"Deprecation Notice SDK 6.x","weight":"30"} 
+{"title":"Deprecation Notice SDK 6.x","weight":"30"}
 
 List of all depreciation notices for SDK 6.x.
 
-*   [SDK 6.x](#SDK6.x)
-    
-    *   [6.2.0](#6.2.0)
-        
-    *   [6.1.0](#6.1.0)
-        
-    *   [6.0.0](#6.0.0)
-        
+* [SDK 6.x](#SDK6.x)
+
+  * [6.2.0](#6.2.0)
+
+  * [6.1.0](#6.1.0)
+
+  * [6.0.0](#6.0.0)
+
 
 ## SDK 6.x
 

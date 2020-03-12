@@ -1,4 +1,4 @@
-{"title":"Custom TSS Queries","weight":"40"} 
+{"title":"Custom TSS Queries","weight":"40"}
 
 Demonstrates how to use custom TSS queries to style Alloy elements.
 

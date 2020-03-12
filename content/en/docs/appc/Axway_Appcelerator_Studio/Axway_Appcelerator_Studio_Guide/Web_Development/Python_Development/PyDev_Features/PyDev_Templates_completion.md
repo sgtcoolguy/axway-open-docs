@@ -1,6 +1,6 @@
-{"title":"PyDev Templates completion","weight":"240"} 
+{"title":"PyDev Templates completion","weight":"240"}
 
-The image below shows the preferences for the templates. You can see the current templates and add, remove or edit them.
+The image below shows the preferences for the templates. You can see the current templates and add, remove, or edit them.
 
 ![compltemplprefs](/Images/appc/pydev.org/images/completion/compltemplprefs.png)
 

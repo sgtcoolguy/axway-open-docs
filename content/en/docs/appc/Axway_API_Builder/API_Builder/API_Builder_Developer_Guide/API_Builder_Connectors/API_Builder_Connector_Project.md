@@ -1,4 +1,4 @@
-{"title":"API Builder Connector Project","weight":"20"} 
+{"title":"API Builder Connector Project","weight":"20"}
 
 API Builder 3.x is deprecated
 
@@ -6,36 +6,36 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-*   [Introduction](#Introduction)
-    
-*   [Project structure](#Projectstructure)
-    
-*   [CLI tasks](#CLItasks)
-    
-    *   [Create a connector](#Createaconnector)
-        
-    *   [Test the connector](#Testtheconnector)
-        
-    *   [Publish the connector](#Publishtheconnector)
-        
-*   [Connector logic](#ConnectorLogicConnectorlogic)
-    
-    *   [Capabilities](#Capabilities)
-        
-    *   [Initialization](#Initialization)
-        
-    *   [Connection lifecycle](#Connectionlifecycle)
-        
-    *   [CRUD methods](#CRUDmethods)
-        
-    *   [Request lifecycle](#Requestlifecycle)
-        
-*   [Connector configuration file](#ConnectorConfigurationFileConnectorconfigurationfile)
-    
-*   [Models and API endpoints](#ModelsandAPIendpoints)
-    
-*   [Declare dependencies](#Declaredependencies)
-    
+* [Introduction](#Introduction)
+
+* [Project structure](#Projectstructure)
+
+* [CLI tasks](#CLItasks)
+
+  * [Create a connector](#Createaconnector)
+
+  * [Test the connector](#Testtheconnector)
+
+  * [Publish the connector](#Publishtheconnector)
+
+* [Connector logic](#ConnectorLogicConnectorlogic)
+
+  * [Capabilities](#Capabilities)
+
+  * [Initialization](#Initialization)
+
+  * [Connection lifecycle](#Connectionlifecycle)
+
+  * [CRUD methods](#CRUDmethods)
+
+  * [Request lifecycle](#Requestlifecycle)
+
+* [Connector configuration file](#ConnectorConfigurationFileConnectorconfigurationfile)
+
+* [Models and API endpoints](#ModelsandAPIendpoints)
+
+* [Declare dependencies](#Declaredependencies)
+
 
 ## Introduction
 
@@ -97,14 +97,14 @@ Use the Appcelerator CLI to create, test and deploy your Connector project.
 
 To create a new connector, from your workspace directory, execute the appc generate command. When prompted:
 
-*   Select **Component** for the type of component
-    
-*   Select **Connector** for the component
-    
-*   Select **Empty Connector Project** to use a boilerplate project.
-    
-*   Enter a name and directory name for your project.
-    
+* Select **Component** for the type of component
+
+* Select **Connector** for the component
+
+* Select **Empty Connector Project** to use a boilerplate project.
+
+* Enter a name and directory name for your project.
+
 
 `$ appc generate`
 
@@ -220,35 +220,35 @@ ConnectToADataSource
 
 ./lib/lifecycle
 
-*   connect
-    
-*   disconnect
-    
+* connect
+
+* disconnect
+
 
 ValidatesConfiguration
 
 ./lib/metadata
 
-*   fetchMetadata
-    
+* fetchMetadata
+
 
 AddsCustomTypes
 
 ./lib/metadata
 
-*   coerceCustomType
-    
-*   getCustomType
-    
+* coerceCustomType
+
+* getCustomType
+
 
 GenerateModels
 
 ./lib/schema
 
-*   createModelsFromSchema
-    
-*   fetchSchema
-    
+* createModelsFromSchema
+
+* fetchSchema
+
 
 ContainsModels
 
@@ -260,50 +260,50 @@ CanCreate
 
 ./lib/methods
 
-*   create
-    
+* create
+
 
 CanRetrieve
 
 ./lib/methods
 
-*   distinct
-    
-*   findAll
-    
-*   findById
-    
-*   query
-    
+* distinct
+
+* findAll
+
+* findById
+
+* query
+
 
 CanUpdate
 
 ./lib/methods
 
-*   findAndModify
-    
-*   save
-    
-*   upsert
-    
+* findAndModify
+
+* save
+
+* upsert
+
 
 CanDelete
 
 ./lib/methods
 
-*   delete
-    
-*   deleteAll
-    
+* delete
+
+* deleteAll
+
 
 AuthenticatesThroughConnector
 
 ./lib/lifecycle
 
-*   login
-    
-*   loginRequired
-    
+* login
+
+* loginRequired
+
 
 ### Initialization
 

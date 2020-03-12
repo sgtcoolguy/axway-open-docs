@@ -1,39 +1,39 @@
-{"title":"Event Handling","weight":"30"} 
+{"title":"Event Handling","weight":"30"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [UI event bubbling](#UIeventbubbling)
-        
-        *   [Bubbling and non-bubbling events](#Bubblingandnon-bubblingevents)
-            
-        *   [Managing event bubbling](#Managingeventbubbling)
-            
-        *   [Event bubbling notes](#Eventbubblingnotes)
-            
-    *   [Firing events](#Firingevents)
-        
-    *   [Custom events](#Customevents)
-        
-    *   [Application-level events](#Application-levelevents)
-        
-    *   [Removing event listeners](#Removingeventlisteners)
-        
-    *   [Special events](#Specialevents)
-        
-    *   [Considerations and best practices](#Considerationsandbestpractices)
-        
-*   [Hands-on practice](#Hands-onpractice)
-    
-    *   [Goal](#Goal)
-        
-    *   [Steps](#Steps)
-        
-    *   [References and further reading](#Referencesandfurtherreading)
-        
-*   [Summary](#Summary)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [UI event bubbling](#UIeventbubbling)
+
+    * [Bubbling and non-bubbling events](#Bubblingandnon-bubblingevents)
+
+    * [Managing event bubbling](#Managingeventbubbling)
+
+    * [Event bubbling notes](#Eventbubblingnotes)
+
+  * [Firing events](#Firingevents)
+
+  * [Custom events](#Customevents)
+
+  * [Application-level events](#Application-levelevents)
+
+  * [Removing event listeners](#Removingeventlisteners)
+
+  * [Special events](#Specialevents)
+
+  * [Considerations and best practices](#Considerationsandbestpractices)
+
+* [Hands-on practice](#Hands-onpractice)
+
+  * [Goal](#Goal)
+
+  * [Steps](#Steps)
+
+  * [References and further reading](#Referencesandfurtherreading)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -57,29 +57,29 @@ As seen above, the first parameter specifies the type of event for which we are 
 
 Each Titanium component is capable of listening for a particular subset of event types. As shown in the code sample above, within an event listener's function, an event object, e, is created. The properties of that object vary by component and event type. These are listed on the API docs page for any given module or component. Some common event types include:
 
-*   click and its synonym singletap
-    
-*   swipe which is a left or right touch and drag the finger action
-    
-*   scroll which is a touch and drag action
-    
-*   dblclick and its synonym doubletap
-    
-*   touchstart, touchmove, and touchend which define the three stages of an action where the user touches the screen, moves his or her finger in an arbitrary direction, then lifts the finger
-    
+* click and its synonym singletap
+
+* swipe which is a left or right touch and drag the finger action
+
+* scroll which is a touch and drag action
+
+* dblclick and its synonym doubletap
+
+* touchstart, touchmove, and touchend which define the three stages of an action where the user touches the screen, moves his or her finger in an arbitrary direction, then lifts the finger
+
 
 In addition to the common event types, some modules have their own special events. For example, the location services API includes events for heading and location changes. The gestures module enables you to listen for the shake event. See the API docs for more information.
 
 Common event object properties include:
 
-*   x and y which describe the x/y coordinates of the event (such as a tap) in the view's coordinates
-    
-*   globalPoint which is a dictionary with x and y properties describing the event's location in screen coordinates
-    
-*   type which is the name of the event type
-    
-*   source which is a reference to the object on which the event was fired
-    
+* x and y which describe the x/y coordinates of the event (such as a tap) in the view's coordinates
+
+* globalPoint which is a dictionary with x and y properties describing the event's location in screen coordinates
+
+* type which is the name of the event type
+
+* source which is a reference to the object on which the event was fired
+
 
 globalPoint is an iOS only event property.
 
@@ -111,16 +111,16 @@ For example, a TableViewSection object acts as a container for TableViewRow obje
 
 Some special containers, such as windows, have no parents in the view hierarchy, so event bubbling ends when it reaches a special container. These special containers include:
 
-*   NavigationWindow
-    
-*   SplitWindow
-    
-*   Tab
-    
-*   TabGroup
-    
-*   Window
-    
+* NavigationWindow
+
+* SplitWindow
+
+* Tab
+
+* TabGroup
+
+* Window
+
 
 Event bubbling ends when it reaches the special containers.
 
@@ -130,32 +130,32 @@ Events that represent user input (click, touchmove, swipe) are bubbling events. 
 
 The following events bubble:
 
-*   click
-    
-*   dblclick
-    
-*   doubletap
-    
-*   longclick
-    
-*   longpress
-    
-*   pinch
-    
-*   singletap
-    
-*   swipe
-    
-*   touchcancel
-    
-*   touchend
-    
-*   touchmove
-    
-*   touchstart
-    
-*   twofingertap
-    
+* click
+
+* dblclick
+
+* doubletap
+
+* longclick
+
+* longpress
+
+* pinch
+
+* singletap
+
+* swipe
+
+* touchcancel
+
+* touchend
+
+* touchmove
+
+* touchstart
+
+* twofingertap
+
 
 That is, all of the events defined by Titanium.UI.View _except_ postlayout.
 
@@ -173,8 +173,8 @@ bubbles
 
 boolean
 
-Indicates whether the event can bubble. This property is set at creation time and cannot be changed. For events fired by the Titanium SDK, this property is set to ensure that event-bubbling behavior matches the 2.X event bubbling behavior.  
-  
+Indicates whether the event can bubble. This property is set at creation time and cannot be changed. For events fired by the Titanium SDK, this property is set to ensure that event-bubbling behavior matches the 2.X event bubbling behavior.
+
 When firing custom events, bubbles can be specified as part of the event data to enable or disable bubbling.
 
 cancelBubble
@@ -187,10 +187,10 @@ In addition, all views and view-like objects have a new bubbleParent property, w
 
 #### Event bubbling notes
 
-*   Event bubbling happens after native event handling. That is, native event handling (such as highlighting a view) has already happened before any event fires.
-    
-*   Multiple events of different types are treated separately. That is, if the user lifting their finger triggers 'touchend', 'singletap', and 'click' events, any actions done on the 'touchend' event (such as setting cancelBubble) do not affect the bubbling or firing of either 'singletap' or 'click' events.
-    
+* Event bubbling happens after native event handling. That is, native event handling (such as highlighting a view) has already happened before any event fires.
+
+* Multiple events of different types are treated separately. That is, if the user lifting their finger triggers 'touchend', 'singletap', and 'click' events, any actions done on the 'touchend' event (such as setting cancelBubble) do not affect the bubbling or firing of either 'singletap' or 'click' events.
+
 
 ### Firing events
 
@@ -334,10 +334,7 @@ See the [Window](#!/api/Titanium.UI.Window) reference page for more information 
 
 With SDK 6.0.0+, we changed how the override of a default behavior for the back button on Android works. This change requires apps using this version to override the back button to update their code when using calls like this: win.addEventListener('androidback', onBack);
 
-See [TIMOB-19919](https://jira.appcelerator.org/browse/TIMOB-19919) for more details.  
-  
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
+See [TIMOB-19919](https://jira.appcelerator.org/browse/TIMOB-19919) for more details.
 
 ### Considerations and best practices
 
@@ -355,41 +352,41 @@ In this activity, you will fire and listen for events to test how events propaga
 
 Determine if events bubble up or trickle down and do the platforms match...put a button in a view in a window then put a click listener on all of them and see the order in which they're fired. Perhaps also compare the x/y and globalPoint coordinates to see how they differ.
 
-1.  Create a new Titanium project named Events
-    
-2.  Remove all of the code from app.js. Write new code to define the following elements:
-    
-    *   A window with a white background color. Add a custom property named whichObj with the value 'window' to your window object.
-        
-    *   A view that fills 80% of the width and height of the window. It should have a yellow background. Add a custom property named whichObj with the value 'view' to your view object. Make sure to add the view to the window.
-        
-    *   A button centered vertically and horizontally within the view. Add a custom property named whichObj with the value 'button' to your button object. Make sure to add the button to the view.
-        
-3.  Add a click event listener on the window object. It should log two messages to the console:
-    
-    *   Message 1: Simply output the word 'window' to the log so you know the window received the click event
-        
-    *   Message 2: Log the whichObj property value to the console so you know which object actually received the user's click. Keep in mind the event object properties that you'll need to reference to access this property.
-        
-4.  Add a click event listener to the view object. It should log the word 'view' to the console so you know the view received the click event.
-    
-5.  Add a click event listener to the button. It should take two actions:
-    
-    *   It should print the word 'button' to the log so you know the button received the click event.
-        
-    *   It should fire an app-level event named changeBG and pass an anonymous object defining a color.
-        
-6.  Add an app-level event listener which watches for the changeBG event. When received, it should update the view's background color with the value passed via the event object.
-    
-7.  Build and test the app by clicking the button. Do events bubble up (button receives the click first, then the view, then the window) or do events trickle down (window, then view, then button)? If you can build for both Android and iOS, compare the output on the two platforms. Do they react the same?
-    
+1. Create a new Titanium project named Events
+
+2. Remove all of the code from app.js. Write new code to define the following elements:
+
+  * A window with a white background color. Add a custom property named whichObj with the value 'window' to your window object.
+
+  * A view that fills 80% of the width and height of the window. It should have a yellow background. Add a custom property named whichObj with the value 'view' to your view object. Make sure to add the view to the window.
+
+  * A button centered vertically and horizontally within the view. Add a custom property named whichObj with the value 'button' to your button object. Make sure to add the button to the view.
+
+3. Add a click event listener on the window object. It should log two messages to the console:
+
+  * Message 1: Simply output the word 'window' to the log so you know the window received the click event
+
+  * Message 2: Log the whichObj property value to the console so you know which object actually received the user's click. Keep in mind the event object properties that you'll need to reference to access this property.
+
+4. Add a click event listener to the view object. It should log the word 'view' to the console so you know the view received the click event.
+
+5. Add a click event listener to the button. It should take two actions:
+
+  * It should print the word 'button' to the log so you know the button received the click event.
+
+  * It should fire an app-level event named changeBG and pass an anonymous object defining a color.
+
+6. Add an app-level event listener which watches for the changeBG event. When received, it should update the view's background color with the value passed via the event object.
+
+7. Build and test the app by clicking the button. Do events bubble up (button receives the click first, then the view, then the window) or do events trickle down (window, then view, then button)? If you can build for both Android and iOS, compare the output on the two platforms. Do they react the same?
+
 
 ### References and further reading
 
-*   [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/3.3_events.zip)
-    
-*   [Window module](#!/api/Titanium.UI.Window)
-    
+* [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/3.3_events.zip)
+
+* [Window module](#!/api/Titanium.UI.Window)
+
 
 ## Summary
 

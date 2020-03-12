@@ -1,11 +1,11 @@
-{"title":"Maps","weight":"90"} 
+{"title":"Maps","weight":"90"}
 
-*   [Android setup](#Androidsetup)
-    
-*   [App configuration](#Appconfiguration)
-    
-*   [See also](#Seealso)
-    
+* [Android setup](#Androidsetup)
+
+* [App configuration](#Appconfiguration)
+
+* [See also](#Seealso)
+
 
 Demonstrates how to use the Maps module and display annotations on iOS and Android.
 
@@ -37,14 +37,14 @@ Alternatively, you add the module to your project by clicking the green ![add](/
 
 To use the Maps module on Android, there are some setup tasks you first need to complete:
 
-*   [Install the Google Play Services SDK](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/#InstalltheGooglePlayServicesSDK)
-    
-*   [Obtain and Add a Google API Key](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/#ObtainandAddaGoogleAPIKey)
-    
-*   [Obtain the SHA-1 certificate fingerprint](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/#ObtaintheSHA-1certificatefingerprint)
-    
-*   [Add the Google API key and permissions to the tiapp.xml file](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/#AddtheGoogleAPIkeyandpermissionstothetiapp.xmlfile)
-    
+* [Install the Google Play Services SDK](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/#InstalltheGooglePlayServicesSDK)
+
+* [Obtain and Add a Google API Key](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/#ObtainandAddaGoogleAPIKey)
+
+* [Obtain the SHA-1 certificate fingerprint](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/#ObtaintheSHA-1certificatefingerprint)
+
+* [Add the Google API key and permissions to the tiapp.xml file](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/#AddtheGoogleAPIkeyandpermissionstothetiapp.xmlfile)
+
 
 Once these steps are complete, using the Map module is the same on Android or iOS.
 
@@ -156,8 +156,8 @@ app/styles/index.tss
 
 ## See also
 
-*   [Google Maps v2 for Android](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/)
-    
-*   [iOS Map Kit](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/iOS_Map_Kit/)
-    
-*   [Native Maps and Annotations](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Native_Maps_and_Annotations/)
+* [Google Maps v2 for Android](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/)
+
+* [iOS Map Kit](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/iOS_Map_Kit/)
+
+* [Native Maps and Annotations](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Native_Maps_and_Annotations/)

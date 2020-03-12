@@ -1,4 +1,4 @@
-{"title":"ACS 2013 31 January Release Note","weight":"140"} 
+{"title":"ACS 2013 31 January Release Note","weight":"140"}
 
 Fixed an unhandled exception when a file was passed as the payload of a push notification. For example, a curl command like this would cause an exception:
 

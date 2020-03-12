@@ -1,15 +1,15 @@
-{"title":"Titanium Templates","weight":"30"} 
+{"title":"Titanium Templates","weight":"30"}
 
 Studio includes several templates to be used as jumping-off points for Titanium development
 
-*   [Importing a Sample](#ImportingaSample)
-    
-*   [Single Window Application](#SingleWindowApplication)
-    
-*   [Master/Detail Application](#Master/DetailApplication)
-    
-*   [Tabbed Application](#TabbedApplication)
-    
+* [Importing a Sample](#ImportingaSample)
+
+* [Single Window Application](#SingleWindowApplication)
+
+* [Master/Detail Application](#Master/DetailApplication)
+
+* [Tabbed Application](#TabbedApplication)
+
 
 ## Importing a Sample
 

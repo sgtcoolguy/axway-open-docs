@@ -1,21 +1,21 @@
-{"title":"iOS Local Notifications","weight":"20"} 
+{"title":"iOS Local Notifications","weight":"20"}
 
-*   [Introduction](#Introduction)
-    
-*   [Notification Types](#NotificationTypes)
-    
-*   [Configure Notification Settings](#ConfigureNotificationSettings)
-    
-*   [Send a Local Notification](#SendaLocalNotification)
-    
-    *   [Register for Local Notifications](#RegisterforLocalNotifications)
-        
-    *   [Schedule a Local Notification](#ScheduleaLocalNotification)
-        
-    *   [Monitor Local Notifications](#MonitorLocalNotifications)
-        
-    *   [Cancel a Notification](#CancelaNotification)
-        
+* [Introduction](#Introduction)
+
+* [Notification Types](#NotificationTypes)
+
+* [Configure Notification Settings](#ConfigureNotificationSettings)
+
+* [Send a Local Notification](#SendaLocalNotification)
+
+  * [Register for Local Notifications](#RegisterforLocalNotifications)
+
+  * [Schedule a Local Notification](#ScheduleaLocalNotification)
+
+  * [Monitor Local Notifications](#MonitorLocalNotifications)
+
+  * [Cancel a Notification](#CancelaNotification)
+
 
 ## Introduction
 
@@ -65,10 +65,10 @@ The application can play a sound when a notification is received.
 
 The user can configure how to receive notifications from your application using **Settings**. To access the notification settings, open **Settings**, then:
 
-*   For iOS 8 and later, tap the application to configure, then tap **Notifications**.
-    
-*   For iOS 7, tap **Notification Center**, then tap the application to configure.
-    
+* For iOS 8 and later, tap the application to configure, then tap **Notifications**.
+
+* For iOS 7, tap **Notification Center**, then tap the application to configure.
+
 
 In the **Notifications** screen, the user can selectively decide which notification types to receive.
 
@@ -82,14 +82,14 @@ To send a local notification, use the Titanium.App.iOS.scheduleLocalNotification
 
 For devices running iOS 8 and later, you need to register the application to use the local notification services. Use the Titanium.App.iOS.registerUserNotificationSettings() method to enroll the application in local notification services. Pass the method a dictionary with the types property set to an array of notification types to use.
 
-*   Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_ALERT: allow the application to display an alert or banner message.
-    
-*   Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_BADGE: allow the application to modify the badge value in the application's icon.
-    
-*   Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_NONE: disable application UI notifications. The application will still be notified of the notification by the notification event.
-    
-*   Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_SOUND: allow the application to play a sound.
-    
+* Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_ALERT: allow the application to display an alert or banner message.
+
+* Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_BADGE: allow the application to modify the badge value in the application's icon.
+
+* Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_NONE: disable application UI notifications. The application will still be notified of the notification by the notification event.
+
+* Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_SOUND: allow the application to play a sound.
+
 
 `// Check if the device is running iOS 8 or later, before registering for local notifications`
 
@@ -123,26 +123,26 @@ The application can monitor the usernotificationsettings event to know when and 
 
 To send a local notification, use the Titanium.App.iOS.scheduleLocalNotification() method. Pass the method a dictionary with the following properties. All properties are optional:
 
-*   alertAction: modify the default slider text of the alert ("slide to view") (see diagram below) or the title of the **Open** button for the alert dialog. The value replaces "view" for the slide text, so the message will be "slide to <alertAction>".
-    
-*   alertBody: text to display in the alert or banner message (see diagram below). If omitted, an alert is not displayed.
-    
-*   alertLaunchImage: splash image to display instead of the application's default splash image.
-    
-*   badge: number to set in the application icon's badge. To remove the badge value, set the value to a negative number.
-    
-*   category: s tring identifier of the category of actions to be displayed in the interactive notification (for iOS 8 and later).
-    
-*   date: datetime to send the notification as a JavaScript Date object. If omitted, the notification is sent immediately.
-    
-*   repeat: interval to repeat the notification. Values can be: daily, weekly, monthly or yearly. Default is once.
-    
-*   sound: sound file to play relative to the Resources or app/assets directory.
-    
-*   timezone: t imezone of the date configured for the notification. If not set, the system timezone is used.
-    
-*   userInfo: extra data to pass to the application that can be processed in the notification event.
-    
+* alertAction: modify the default slider text of the alert ("slide to view") (see diagram below) or the title of the **Open** button for the alert dialog. The value replaces "view" for the slide text, so the message will be "slide to <alertAction>".
+
+* alertBody: text to display in the alert or banner message (see diagram below). If omitted, an alert is not displayed.
+
+* alertLaunchImage: splash image to display instead of the application's default splash image.
+
+* badge: number to set in the application icon's badge. To remove the badge value, set the value to a negative number.
+
+* category: s tring identifier of the category of actions to be displayed in the interactive notification (for iOS 8 and later).
+
+* date: datetime to send the notification as a JavaScript Date object. If omitted, the notification is sent immediately.
+
+* repeat: interval to repeat the notification. Values can be: daily, weekly, monthly or yearly. Default is once.
+
+* sound: sound file to play relative to the Resources or app/assets directory.
+
+* timezone: t imezone of the date configured for the notification. If not set, the system timezone is used.
+
+* userInfo: extra data to pass to the application that can be processed in the notification event.
+
 
 ![LockedAlertAnnotated](/Images/appc/download/attachments/40929226/LockedAlertAnnotated.png)
 
@@ -220,10 +220,10 @@ If the application needs to cancel a notification, it can either selectively cho
 
 **To cancel a specific notification**, the application can either:
 
-1.  Keep a reference to the notification object and call the cancel() method on the object.
-    
-2.  Add an ID to the notification and pass the ID to the Titanium.App.iOS.cancelLocalNotification() method. To add an ID to the notification, set the id property of the userInfo dictionary passed to the scheduleLocationNotification() method.
-    
+1. Keep a reference to the notification object and call the cancel() method on the object.
+
+2. Add an ID to the notification and pass the ID to the Titanium.App.iOS.cancelLocalNotification() method. To add an ID to the notification, set the id property of the userInfo dictionary passed to the scheduleLocationNotification() method.
+
 
 `var notification = Ti.App.iOS.scheduleLocalNotification({`
 

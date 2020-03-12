@@ -1,4 +1,4 @@
-{"title":"Alloy 1.7.28 - 24 November 2015","weight":"80"} 
+{"title":"Alloy 1.7.28 - 24 November 2015","weight":"80"}
 
 Alloy 1.7.28 is a patch release that includes one bug fix.
 

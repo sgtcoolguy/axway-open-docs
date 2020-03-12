@@ -1,4 +1,4 @@
-{"title":"Non-Persistent Model Bindings","weight":"90"} 
+{"title":"Non-Persistent Model Bindings","weight":"90"}
 
 Demonstrates using a static, non-persistent data collection.
 
@@ -92,4 +92,4 @@ app/controllers/index.js
 
 ## See also
 
-*   [Backbone Objects without Alloy](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Backbone_Objects_without_Alloy/)
+* [Backbone Objects without Alloy](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Backbone_Objects_without_Alloy/)

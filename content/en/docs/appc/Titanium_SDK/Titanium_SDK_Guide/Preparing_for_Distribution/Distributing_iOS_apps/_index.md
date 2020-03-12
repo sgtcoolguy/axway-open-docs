@@ -1,42 +1,42 @@
-{"title":"Distributing iOS apps","weight":"40"} 
+{"title":"Distributing iOS apps","weight":"40"}
 
-*   [Introduction](#Introduction)
-    
-*   [Contents](#Contents)
-    
-    *   [Registering and creating the App ID](#RegisteringandcreatingtheAppID)
-        
-    *   [Create and install the distribution certificate](#Createandinstallthedistributioncertificate)
-        
-        *   [Back Up Your Private Key](#BackUpYourPrivateKey)
-            
-    *   [Create and install the distribution provisioning profile](#Createandinstallthedistributionprovisioningprofile)
-        
-    *   [Build your app, embedding the profile within the app's bundle](#Buildyourapp,embeddingtheprofilewithintheapp'sbundle)
-        
-    *   [Distribute and install your ad hoc application](#Distributeandinstallyouradhocapplication)
-        
-    *   [Creating the App ID on iTunes Connect](#CreatingtheAppIDoniTunesConnect)
-        
-    *   [Uploading your app to iTunes Connect](#UploadingyourapptoiTunesConnect)
-        
-    *   [App Store requirements](#AppStorerequirements)
-        
-    *   [References](#References)
-        
-*   [Summary](#Summary)
-    
+* [Introduction](#Introduction)
+
+* [Contents](#Contents)
+
+  * [Registering and creating the App ID](#RegisteringandcreatingtheAppID)
+
+  * [Create and install the distribution certificate](#Createandinstallthedistributioncertificate)
+
+    * [Back Up Your Private Key](#BackUpYourPrivateKey)
+
+  * [Create and install the distribution provisioning profile](#Createandinstallthedistributionprovisioningprofile)
+
+  * [Build your app, embedding the profile within the app's bundle](#Buildyourapp,embeddingtheprofilewithintheapp'sbundle)
+
+  * [Distribute and install your ad hoc application](#Distributeandinstallyouradhocapplication)
+
+  * [Creating the App ID on iTunes Connect](#CreatingtheAppIDoniTunesConnect)
+
+  * [Uploading your app to iTunes Connect](#UploadingyourapptoiTunesConnect)
+
+  * [App Store requirements](#AppStorerequirements)
+
+  * [References](#References)
+
+* [Summary](#Summary)
+
 
 ## Introduction
 
 In this section, you will learn how to distribute your iOS application. Apple provides three ways to distribute your application based on which developer program you are a member of:
 
-*   **App Store or iTunes Store**: Publish your application to the iTunes Store.
-    
-*   **In House**: Publish your application in house for your company's employees. Members of the Apple Developer Enterprise program see this option instead of the App Store option.
-    
-*   **Ad Hoc**: Publish your application as a package that can be distributed on a limited number of devices for testing.
-    
+* **App Store or iTunes Store**: Publish your application to the iTunes Store.
+
+* **In House**: Publish your application in house for your company's employees. Members of the Apple Developer Enterprise program see this option instead of the App Store option.
+
+* **Ad Hoc**: Publish your application as a package that can be distributed on a limited number of devices for testing.
+
 
 Both work flows are similar except ad hoc distribution requires you to specify a list of devices when creating your provisioning profile and you need to specify two extra options (file format and location) when packaging your application with Studio.
 
@@ -44,18 +44,18 @@ Both work flows are similar except ad hoc distribution requires you to specify a
 
 Publishing your iOS application involves a few, somewhat involved steps. Fortunately, you have done two of these steps already if you have deployed your app to a device for testing. The steps are:
 
-1.  Register with the iOS Developer Center
-    
-2.  Create an App ID in the iOS Certificates, Identifiers & Profiles page
-    
-3.  Create and install the distribution certificate
-    
-4.  Create and install a distribution provisioning profile
-    
-5.  Build your app, embedding the distribution provisioning profile
-    
-6.  Upload the app to iTunes Connect and kick-off the Apple review process **OR** distribute your application package.
-    
+1. Register with the iOS Developer Center
+
+2. Create an App ID in the iOS Certificates, Identifiers & Profiles page
+
+3. Create and install the distribution certificate
+
+4. Create and install a distribution provisioning profile
+
+5. Build your app, embedding the distribution provisioning profile
+
+6. Upload the app to iTunes Connect and kick-off the Apple review process **OR** distribute your application package.
+
 
 ![ios_publishing_process](/Images/appc/download/attachments/27595277/ios_publishing_process.png)
 
@@ -77,64 +77,64 @@ The Team Agent will be the user account associated with creation and first-logon
 
 To create a distribution certificate:
 
-1.  Log in to the [Apple Developer Member Center](https://developer.apple.com/membercenter/) as the Team Agent or Admin.
-    
-2.  Click the link under **Certificates, Identifiers & Profiles**.
-    
-3.  Click **Certificates**, then click the plus sign (+) button near the top-right corner.
-    
-4.  Select **App Store and Ad Hoc**, then click **Continue****.**
-    
-5.  Follow the directions to create a Certificate Signing Request (CSR). Click **Continue****.**
-    
-6.  Upload your CSR and click **Generate**.
-    
-7.  You will be returned to the Certificates page with the status listed as Pending. Wait a moment then refresh the page in your browser.
-    
-8.  Even though you are logged in as the Team Agent or Admin, you will need to approve your certificate. Click **Approve**.
-    
-9.  Download the distribution certificate (.cer) file to your computer.
-    
-10.  Double-click the file to install it into your keychain.
-    
+1. Log in to the [Apple Developer Member Center](https://developer.apple.com/membercenter/) as the Team Agent or Admin.
+
+2. Click the link under **Certificates, Identifiers & Profiles**.
+
+3. Click **Certificates**, then click the plus sign (+) button near the top-right corner.
+
+4. Select **App Store and Ad Hoc**, then click **Continue****.**
+
+5. Follow the directions to create a Certificate Signing Request (CSR). Click **Continue****.**
+
+6. Upload your CSR and click **Generate**.
+
+7. You will be returned to the Certificates page with the status listed as Pending. Wait a moment then refresh the page in your browser.
+
+8. Even though you are logged in as the Team Agent or Admin, you will need to approve your certificate. Click **Approve**.
+
+9. Download the distribution certificate (.cer) file to your computer.
+
+10. Double-click the file to install it into your keychain.
+
 
 ###### Back Up Your Private Key
 
 It is critical that you save your private key somewhere safe in the event that you need to develop on multiple computers or decide to reinstall your system OS. Without your private key, you will be unable to sign binaries and test your application on any Apple device. The private key was generated by the Keychain application when you created the Certificate Signing Request (CSR). It has the same name as the **Common Name** field when you generated the CSR.
 
-1.  To export your private key, open up the Keychain Access Application and select **login** under Keychains and **Keys** under Category.
-    
-2.  Highlight the private key associated with your iOS Distribution Certificate.
-    
-3.  From the menu bar, select **File >** **Export Items...**. Save your key in the Personal Information Exchange (.p12) file format.
-    
-4.  You will be prompted to create a password which will be used when you attempt to import this key on another computer.
-    
-5.  You can now transfer this .p12 file between systems. Double-click on the .p12 file to install it on a system. You will be prompted for the password you entered above.
-    
+1. To export your private key, open up the Keychain Access Application and select **login** under Keychains and **Keys** under Category.
+
+2. Highlight the private key associated with your iOS Distribution Certificate.
+
+3. From the menu bar, select **File >** **Export Items...**. Save your key in the Personal Information Exchange (.p12) file format.
+
+4. You will be prompted to create a password which will be used when you attempt to import this key on another computer.
+
+5. You can now transfer this .p12 file between systems. Double-click on the .p12 file to install it on a system. You will be prompted for the password you entered above.
+
 
 ### Create and install the distribution provisioning profile
 
 As with deploying an app for testing, you need to create a provisioning profile file. The distribution provisioning profile gathers together your distribution certificate and App ID. If this is an Ad Hoc provision profile, you also need to specify your devices.
 
-1.  Log in to the [Apple Developer Member Center](https://developer.apple.com/membercenter/) as the Team Agent or Admin.
-    
-2.  Click the link under **Certificates, Identifiers & Profiles**.
-    
-3.  Click **Provisioning Profiles**, then click the plus sign (+) button near the top-right corner.
-    
-4.  Select either **App Store** to distribute to the App Store, **In House** to distribute in house to your company's employees or **Ad Hoc** to distribute to a limited number of devices, then click **Continue**.
-    
-5.  Select the App ID from the drop-down list, then click **Continue** .
-    
-6.  Select the distribution certificate(s) to include, then click **Continue**.
-    
-7.  **For ad hoc distributions** , select the devices you want to be able to run the app on, then click **Continue** .
-    
-8.  Enter a name for your provisioning profile. You should use a word like "distribution" or "ad hoc" in the name so that it is clear later that this profile is for final distribution or ad hoc distribution, respectively. Click **Generate**.
-    
-9.  Click **Download** to save your provisioning profile file (.mobileprovision) to your computer, then click **Done**.
-    
+1. Log in to the [Apple Developer Member Center](https://developer.apple.com/membercenter/) as the Team Agent or Admin.
+
+2. Click the link under **Certificates, Identifiers & Profiles**.
+
+3. Click **Provisioning Profiles**, then click the plus sign (+) button near the top-right corner.
+
+4. Select either **App Store** to distribute to the App Store, **In House** to distribute in house to your company's employees or **Ad Hoc** to distribute to a limited number of devices, then click **Continue**.
+
+5. Select the App ID from the drop-down list, then click **Continue** .
+
+6. Select the distribution certificate(s) to include, then click **Continue**.
+
+7. **For ad hoc distributions** , select the devices you want to be able to run the app on, then click **Continue** .
+
+8. Enter a name for your provisioning profile. You should use a word like "distribution" or "ad hoc" in the name so that it is clear later that this profile is for final distribution or ad hoc distribution, respectively. Click **Generate**.
+
+9. Click **Download** to save your provisioning profile file (.mobileprovision) to your computer, then click **Done**.
+
 
 You have two options to install the provisioning profile file onto your development computer. You can drag the file and drop it on the Xcode icon, or you can install it from Studio by following the steps in the following section. Either way, installing the provisioning profile is a one-time operation (on each computer, until it expires).
 
@@ -154,7 +154,7 @@ On the **General** page, ensure the requirements have been satisfied and select 
 
 On the **Certificates** page, select your distribution certificate and keychain. Click **Next** to proceed.
 
-![DiA_Certificates](/Images/appc/download/attachments/27595277/DiA_Certificates.png)  
+![DiA_Certificates](/Images/appc/download/attachments/27595277/DiA_Certificates.png)
 Provisioning profiles are specified on the last page. To install the provisioning profile, click the **Browse...** button, locate your .mobileprovision file, and click **Open** to install that profile into Xcode. If you have installed more than one provisioning profile, make sure to choose the one that corresponds to your app and your distribution certificate. Select a Provisioning Profile and click **Finish**.
 
 ![DiA_Provisioning](/Images/appc/download/attachments/27595277/DiA_Provisioning.png)
@@ -171,14 +171,14 @@ The next time you execute the Distribute action, you will see a more simplified 
 
 For Ad Hoc builds, you need to give the provision profile (.mobileprovision) and package to your testers to install it to their device. Their device needs to be included in the provisioning profile for them to use it.
 
-1.  Launch Xcode.
-    
-2.  Click on the device you will install the app on.
-    
-3.  Under the **Installed Apps** section, click the **+** button.
-    
-4.  Select your app's IPA file and click **Open**.
-    
+1. Launch Xcode.
+
+2. Click on the device you will install the app on.
+
+3. Under the **Installed Apps** section, click the **+** button.
+
+4. Select your app's IPA file and click **Open**.
+
 
 Your app will be installed on your device. See [Deploying to iOS devices: Installing apps to remote devices](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Deploying_to_iOS_devices/#Installingappstoremotedevices) for additional methods of distributing the provision profile and package.
 
@@ -188,49 +188,49 @@ The iTunes Connect site is your app distribution management portal for App Store
 
 From the iTunes Connect site, click **Manage Your Apps** then click **Add New App**. You need to supply:
 
-*   Your app's name (by which it will be listed in the App Store).
-    
-*   A SKU number, which is a unique ID for your app. You can use letters, numbers, hyphens, periods, and underscores. The SKU cannot start with a hyphen, period, or underscore.
-    
-*   Select the Bundle ID, which you created in the iOS Certificates, Identifiers & Profiles page.
-    
-*   If the Bundle ID is a Wildcard Bundle Identifier, you need to enter a Bundle ID Suffix, which you entered in the tiapp.xmlfile as the name portion of the app ID.
-    
+* Your app's name (by which it will be listed in the App Store).
+
+* A SKU number, which is a unique ID for your app. You can use letters, numbers, hyphens, periods, and underscores. The SKU cannot start with a hyphen, period, or underscore.
+
+* Select the Bundle ID, which you created in the iOS Certificates, Identifiers & Profiles page.
+
+* If the Bundle ID is a Wildcard Bundle Identifier, you need to enter a Bundle ID Suffix, which you entered in the tiapp.xmlfile as the name portion of the app ID.
+
 
 Through a series of pages, you then define the following information about your app:
 
-*   The date on which it should be available (defaults to the current date).
-    
-*   The price tier. You do not set a specific price, but instead set a tier. Each tier specifies a selling price in a selection of countries around the world. Optionally, you select specific locales in which your app will be sold.
-    
-*   App metadata:
-    
-    *   Version Number
-        
-    *   Description (4000 characters max.)
-        
-    *   Primary Category
-        
-    *   Keywords (100 characters max.)
-        
-    *   Copyright
-        
-    *   Contact Email Address
-        
-    *   Support URL
-        
-*   Rating info – you must specify the frequency of certain app characteristics by which Apple judges the age-appropriateness of your app
-    
-*   One (1) high resolution app icon: A large version of your app icon that will be used on the App Store. It must be at least 72 DPI, in the RGB color space, and 1024 x 1024 pixels (it cannot be scaled up). The file type must be .jpeg, .jpg, .tif, .tiff, or .png. It must be flat artwork without rounded corners.
-    
-*   One (1) screenshot of your app:
-    
-    *   Screenshots for 3.5-inch iPhone and iPod touch Retina display must be 960x640, 960x600, 640x960 or 640x920 pixels, at least 72 DPI, in the RGB color space, and in the JPG or PNG format.
-        
-    *   Screenshots for 4-inch iPhone 5 and iPod touch (5th generation) Retina display must be 1136x640, 1136x600, 640x1136 or 640x1096 pixels, at least 72 DPI, in the RGB color space, and in the JPG or PNG format.
-        
-    *   iPad Screenshots must be .jpeg, .jpg, .tif, .tiff, or .png file that is 1024x768, 1024x748, 768x1024, 768x1004, 2048x1536, 2048x1496, 1536x2048 or 1536x2008 pixels, at least 72 DPI, and in the RGB color space.
-        
+* The date on which it should be available (defaults to the current date).
+
+* The price tier. You do not set a specific price, but instead set a tier. Each tier specifies a selling price in a selection of countries around the world. Optionally, you select specific locales in which your app will be sold.
+
+* App metadata:
+
+  * Version Number
+
+  * Description (4000 characters max.)
+
+  * Primary Category
+
+  * Keywords (100 characters max.)
+
+  * Copyright
+
+  * Contact Email Address
+
+  * Support URL
+
+* Rating info – you must specify the frequency of certain app characteristics by which Apple judges the age-appropriateness of your app
+
+* One (1) high resolution app icon: A large version of your app icon that will be used on the App Store. It must be at least 72 DPI, in the RGB color space, and 1024 x 1024 pixels (it cannot be scaled up). The file type must be .jpeg, .jpg, .tif, .tiff, or .png. It must be flat artwork without rounded corners.
+
+* One (1) screenshot of your app:
+
+  * Screenshots for 3.5-inch iPhone and iPod touch Retina display must be 960x640, 960x600, 640x960 or 640x920 pixels, at least 72 DPI, in the RGB color space, and in the JPG or PNG format.
+
+  * Screenshots for 4-inch iPhone 5 and iPod touch (5th generation) Retina display must be 1136x640, 1136x600, 640x1136 or 640x1096 pixels, at least 72 DPI, in the RGB color space, and in the JPG or PNG format.
+
+  * iPad Screenshots must be .jpeg, .jpg, .tif, .tiff, or .png file that is 1024x768, 1024x748, 768x1024, 768x1004, 2048x1536, 2048x1496, 1536x2048 or 1536x2008 pixels, at least 72 DPI, and in the RGB color space.
+
 
 As a final step, make sure to click the **Ready to Upload Binary** button. You should see the status of your app change to Waiting for Upload.
 
@@ -244,23 +244,23 @@ Assuming you have passed the verification step, click the **Submit** button. Aga
 
 Apple publishes many guidelines that describe what they look for when deciding to approve an app. We encourage you to [read their guidelines](http://developer.apple.com/appstore/resources/approval/guidelines.html) carefully. A few of the requirements include:
 
-*   Apps must be useful, well-designed, and run without errors
-    
-*   Apps cannot download and execute code
-    
-*   You must own all copyrights and trademarks used within the app and its promotional resources
-    
-*   Apps cannot contain hidden features or use non-public APIs
-    
+* Apps must be useful, well-designed, and run without errors
+
+* Apps cannot download and execute code
+
+* You must own all copyrights and trademarks used within the app and its promotional resources
+
+* Apps cannot contain hidden features or use non-public APIs
+
 
 ### References
 
-*   [iTune Connect Developer Guide](http://developer.apple.com/library/mac/#documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/)
-    
-*   [iOS Simulator Cropper](http://www.curioustimes.de/iphonesimulatorcropper/), an optional, though helpful tool for capturing iOS simulator screenshots
-    
-*   [Unretiner](http://itunes.apple.com/us/app/unretiner/id411277085?mt=12), a tool for automatically creating non-retina images from retina-resolution (@2x) files.
-    
+* [iTune Connect Developer Guide](http://developer.apple.com/library/mac/#documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/)
+
+* [iOS Simulator Cropper](http://www.curioustimes.de/iphonesimulatorcropper/), an optional, though helpful tool for capturing iOS simulator screenshots
+
+* [Unretiner](http://itunes.apple.com/us/app/unretiner/id411277085?mt=12), a tool for automatically creating non-retina images from retina-resolution (@2x) files.
+
 
 ## Summary
 

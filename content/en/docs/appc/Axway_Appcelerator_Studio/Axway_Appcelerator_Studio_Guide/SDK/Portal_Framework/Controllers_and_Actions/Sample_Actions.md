@@ -1,17 +1,17 @@
-{"title":"Sample Actions","weight":"80"} 
+{"title":"Sample Actions","weight":"80"}
 
-*   [Requirements](#Requirements)
-    
-*   [Description](#Description)
-    
-*   [Invocation](#Invocation)
-    
-*   [List the available Samples](#ListtheavailableSamples)
-    
-*   [Import a Sample](#ImportaSample)
-    
-*   [Listening to Sample Changes](#ListeningtoSampleChanges)
-    
+* [Requirements](#Requirements)
+
+* [Description](#Description)
+
+* [Invocation](#Invocation)
+
+* [List the available Samples](#ListtheavailableSamples)
+
+* [Import a Sample](#ImportaSample)
+
+* [Listening to Sample Changes](#ListeningtoSampleChanges)
+
 
 ## Requirements
 
@@ -19,7 +19,7 @@ The examples in this page use the _**Prototype**_ library, which is included by 
 
 ## Description
 
-These set of actions can retrieve a list of available _Sample_ projects, and import a specific sample into the workspace.  
+These set of actions can retrieve a list of available _Sample_ projects, and import a specific sample into the workspace.
 Samples are contributed to the Studio via extensions, or via the scripting mechanism (_Rubles_).
 
 ## Invocation
@@ -66,7 +66,7 @@ image
 
 ## Import a Sample
 
-When importing a sample, the _dispatch_ call should use a _sample id_ that was retrieved via the _getSamples_ action.  
+When importing a sample, the _dispatch_ call should use a _sample id_ that was retrieved via the _getSamples_ action.
 Here is a _dispatch_ example:
 
 `dispatch($H({`
@@ -81,7 +81,7 @@ Here is a _dispatch_ example:
 
 ## Listening to Sample Changes
 
-It is possible that some of the samples are loaded or removed after the portal is opened. In this case, the Studio fires events that indicate a Sample addition or removal.  
+It is possible that some of the samples are loaded or removed after the portal is opened. In this case, the Studio fires events that indicate a Sample addition or removal.
 Here is a sample of a way you can listen to such events (based on the [studio3-sdk](https://github.com/aptana/studio3-sdk) sample):
 
 `eventsDispatcher.addObserver(``'samples'``, function(e) { portal.samples.update(e); });`

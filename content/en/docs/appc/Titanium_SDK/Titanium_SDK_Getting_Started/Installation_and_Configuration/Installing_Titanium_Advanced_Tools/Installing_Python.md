@@ -1,19 +1,19 @@
-{"title":"Installing Python","weight":"20"} 
+{"title":"Installing Python","weight":"20"}
 
-*   [Compatibility and download](#Compatibilityanddownload)
-    
-*   [Installation](#Installation)
-    
-    *   [OS X](#OSX)
-        
-    *   [Windows](#Windows)
-        
-    *   [Ubuntu](#Ubuntu)
-        
+* [Compatibility and download](#Compatibilityanddownload)
+
+* [Installation](#Installation)
+
+  * [OS X](#OSX)
+
+  * [Windows](#Windows)
+
+  * [Ubuntu](#Ubuntu)
+
 
 ## Compatibility and download
 
-Python is required to use Titanium from the command line or compile the SDK from source using SCons. Python is **not** required to use the Titanium SDK from inside Studio.
+Python is required to compile the Titanium SDK from source using SCons.
 
 Titanium supports the following versions of Python for each respective Operating System:
 
@@ -67,28 +67,28 @@ Note that the typical file system location of this software can be found in the 
 
 See the [Software Locations and Environment Variables](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/) guide if you need help with setting your system PATH or other system variables.
 
-*   Log in using your usual user account, right-click the Python Windows Installer and select _Run as administrator_. Enter the Administrator password, if you are prompted for it, and proceed until the first screenshot below.
-    
-*   Select **Install for all users** and proceed with the installation.
-    
-    ![python-install-01](/Images/appc/download/attachments/29004845/python-install-01.png)
+* Log in using your usual user account, right-click the Python Windows Installer and select _Run as administrator_. Enter the Administrator password, if you are prompted for it, and proceed until the first screenshot below.
 
-*   As shown below, the default destination directory is not ideal. Change it to the one for Python listed in [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) above.
-    
-    ![python-install-02](/Images/appc/download/attachments/29004845/python-install-02.png)
+* Select **Install for all users** and proceed with the installation.
 
-*   When the destination directory is correct, proceed with the following step.
-    
-    ![python-install-03](/Images/appc/download/attachments/29004845/python-install-03.png)
+  ![python-install-01](/Images/appc/download/attachments/29004845/python-install-01.png)
 
-*   Ensure that all packages are selected for install and that your system has enough free disk space to accommodate them.
-    
-    ![python-install-04](/Images/appc/download/attachments/29004845/python-install-04.png)
+* As shown below, the default destination directory is not ideal. Change it to the one for Python listed in [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) above.
 
-*   Proceed with the installation until complete
-    
-*   Add the Python location to the system's PATH. Refer to [Configuring Environment Variables on Windows](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#ConfiguringEnvironmentVariablesonWindows) for more information.
-    
+  ![python-install-02](/Images/appc/download/attachments/29004845/python-install-02.png)
+
+* When the destination directory is correct, proceed with the following step.
+
+  ![python-install-03](/Images/appc/download/attachments/29004845/python-install-03.png)
+
+* Ensure that all packages are selected for install and that your system has enough free disk space to accommodate them.
+
+  ![python-install-04](/Images/appc/download/attachments/29004845/python-install-04.png)
+
+* Proceed with the installation until complete
+
+* Add the Python location to the system's PATH. Refer to [Configuring Environment Variables on Windows](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#ConfiguringEnvironmentVariablesonWindows) for more information.
+
 
 ### Ubuntu
 

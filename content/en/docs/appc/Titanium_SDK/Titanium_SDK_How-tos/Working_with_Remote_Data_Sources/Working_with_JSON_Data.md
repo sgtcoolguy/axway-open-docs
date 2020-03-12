@@ -1,21 +1,21 @@
-{"title":"Working with JSON Data","weight":"30"} 
+{"title":"Working with JSON Data","weight":"30"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [Built-in JSON functions](#Built-inJSONfunctions)
-        
-    *   [Methods cannot be stringified](#Methodscannotbestringified)
-        
-    *   [Receiving and parsing JSON data](#ReceivingandparsingJSONdata)
-        
-    *   [Sending JSON data](#SendingJSONdata)
-        
-    *   [References and Further Reading](#ReferencesandFurtherReading)
-        
-*   [Summary](#Summary)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [Built-in JSON functions](#Built-inJSONfunctions)
+
+  * [Methods cannot be stringified](#Methodscannotbestringified)
+
+  * [Receiving and parsing JSON data](#ReceivingandparsingJSONdata)
+
+  * [Sending JSON data](#SendingJSONdata)
+
+  * [References and Further Reading](#ReferencesandFurtherReading)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -29,10 +29,10 @@ The best data transport format for use with JavaScript (and hence Titanium) is J
 
 Titanium has built-in support for JSON serialization in the JSON namespace. The two functions provided in this namespace are:
 
-*   JSON.stringify() which takes a JavaScript object and converts it to a string.
-    
-*   JSON.parse() which takes a JSON-formatted string and converts it to a JavaScript object
-    
+* JSON.stringify() which takes a JavaScript object and converts it to a string.
+
+* JSON.parse() which takes a JSON-formatted string and converts it to a JavaScript object
+
 
 (Remember that in JavaScript, arrays are objects. So these methods work with both arrays and objects.)
 
@@ -122,8 +122,8 @@ The HTTPClient's send() method automatically stringifies data for you. So, you d
 
 ### References and Further Reading
 
-*   [Ti.Network.HTTPClient object](#!/api/Titanium.Network.HTTPClient)
-    
+* [Ti.Network.HTTPClient object](#!/api/Titanium.Network.HTTPClient)
+
 
 ## Summary
 

@@ -1,28 +1,28 @@
-{"title":"FTP SFTP and FTPS Deployment","weight":"30"} 
+{"title":"FTP SFTP and FTPS Deployment","weight":"30"}
 
-*   [Initial set-up](#Initialset-up)
-    
-*   [Associate a FTP connection with a project using Project Explorer](#AssociateaFTPconnectionwithaprojectusingProjectExplorer)
-    
-*   [Select the default FTP site for deployment](#SelectthedefaultFTPsitefordeployment)
-    
-*   [Related topics](#Relatedtopics)
-    
+* [Initial set-up](#Initialset-up)
+
+* [Associate an FTP connection with a project using Project Explorer](#AssociateanFTPconnectionwithaprojectusingProjectExplorer)
+
+* [Select the default FTP site for deployment](#SelectthedefaultFTPsitefordeployment)
+
+* [Related topics](#Relatedtopics)
+
 
 You can set up a connection between a local project and a remote site to transfer files between them in both directions.
 
 ## Initial set-up
 
-1\. In **App Explorer**, click on the toolbar icon on the left and select **Run Web Deployment Wizard...**. You could also right-click in the project and select **Publish** \> **Run Web Deployment Wizard...** from the context menu.
+1\. In **App Explorer**, click on the toolbar icon on the left and select **Run Web Deployment Wizard...**. You could also right-click in the project, and select **Publish** \> **Run Web Deployment Wizard...** from the context menu.
 
 ![deployment_menu](/Images/appc/download/attachments/30083200/deployment_menu.png)
 
 2\. A Deploy My Application wizard will open. Select **Deploy using FTP** and click **Next**.
 
-3\. Define the information for the new FTP site. See the [Create a FTP Connection](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Publishing/FTP_SFTP_and_FTPS_Deployment/Create_a_FTP_Connection/) page for more detail.
+3\. Define the information for the new FTP site. See the [Create an FTP Connection](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Publishing/FTP_SFTP_and_FTPS_Deployment/Create_a_FTP_Connection/) page for more detail.
 
-*   if you want the change to be automatically uploaded or downloaded on save after you modify a file in editor, check the **Automatically sync my changes with the remote site** box and choose the appropriate option.
-    
+* If you want the change to be automatically uploaded or downloaded on save after you modify a file in the editor, check the **Automatically sync my changes with the remote site** box and choose the appropriate option.
+
 
 ![ftp_deployment](/Images/appc/download/attachments/30083200/ftp_deployment.png)
 
@@ -34,7 +34,7 @@ The connection is now established. If you click on the deploy toolbar icon again
 
 And the same Deploy menu will appear when right-clicking on the project or its resources.
 
-## Associate a FTP connection with a project using Project Explorer
+## Associate an FTP connection with a project using Project Explorer
 
 1\. In Project Explorer View, expand the project you would like to associate a remote connection with.
 
@@ -56,6 +56,6 @@ And the same Deploy menu will appear when right-clicking on the project or its r
 
 ## Related topics
 
-*   [Create a FTP Connection](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Publishing/FTP_SFTP_and_FTPS_Deployment/Create_a_FTP_Connection/)
-    
-*   [Managing FTP Connections](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Publishing/FTP_SFTP_and_FTPS_Deployment/Managing_FTP_Connections/)
+* [Create a FTP Connection](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Publishing/FTP_SFTP_and_FTPS_Deployment/Create_a_FTP_Connection/)
+
+* [Managing FTP Connections](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Publishing/FTP_SFTP_and_FTPS_Deployment/Managing_FTP_Connections/)

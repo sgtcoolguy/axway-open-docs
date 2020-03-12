@@ -1,15 +1,15 @@
-{"title":"Plugging Studio into an existing Eclipse configuration","weight":"10"} 
+{"title":"Plugging Studio into an existing Eclipse configuration","weight":"10"}
 
-*   [Overview](#Overview)
-    
-*   [Introduction](#Introduction)
-    
-*   [Aptana Studio 3.0 Automatic Install on Eclipse 3.5/3.6](#AptanaStudio3.0AutomaticInstallonEclipse3.5/3.6)
-    
-*   [Aptana Studio 3.0 Manual Install](#AptanaStudio3.0ManualInstall)
-    
-*   [Related Topics](#RelatedTopics)
-    
+* [Overview](#Overview)
+
+* [Introduction](#Introduction)
+
+* [Aptana Studio 3.0 Automatic Install on Eclipse 3.5/3.6](#AptanaStudio3.0AutomaticInstallonEclipse3.5/3.6)
+
+* [Aptana Studio 3.0 Manual Install](#AptanaStudio3.0ManualInstall)
+
+* [Related Topics](#RelatedTopics)
+
 
 ## Overview
 
@@ -23,20 +23,20 @@ If you are already an Eclipse user, you can install Studio as a plug-in directly
 
 ## Aptana Studio 3.0 Automatic Install on Eclipse 3.5/3.6
 
-*   Visit [http://www.aptana.com/products/studio3/download](http://www.aptana.com/products/studio3/download) and follow the instructions there.
-    
+* Visit [http://www.aptana.com/products/studio3/download](http://www.aptana.com/products/studio3/download) and follow the instructions there.
+
 
 ## Aptana Studio 3.0 Manual Install
 
-*   For Aptana Studio 3, download the latest release from [http://www.aptana.com/products/studio3/download](http://www.aptana.com/products/studio3/download) and follow the manual installation instructions on the page.
-    
+* For Aptana Studio 3, download the latest release from [http://www.aptana.com/products/studio3/download](http://www.aptana.com/products/studio3/download) and follow the manual installation instructions on the page.
+
 
 ## Related Topics
 
-*   [Axway Appcelerator Studio Getting Started](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/)
-    
-*   [Downloading and Installing Studio](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/Downloading_and_Installing_Studio/)
-    
-*   [Prerequisites](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/)
-    
-*   [Changing the Workbench Perspective](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Changing_the_Workbench_Perspective/)
+* [Axway Appcelerator Studio Getting Started](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/)
+
+* [Downloading and Installing Studio](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/Downloading_and_Installing_Studio/)
+
+* [Prerequisites](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/)
+
+* [Changing the Workbench Perspective](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Changing_the_Workbench_Perspective/)

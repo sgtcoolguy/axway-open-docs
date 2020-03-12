@@ -1,34 +1,34 @@
-{"title":"Titanium SDK API Removal Notices","weight":"60"} 
+{"title":"Titanium SDK API Removal Notices","weight":"60"}
 
 This document lists every SDK removal notice.
 
-*   [SDK 8.x](#SDK8.x)
-    
-    *   [8.0.0](#8.0.0)
-        
-*   [SDK 7.x](#SDK7.x)
-    
-    *   [7.0.0](#7.0.0)
-        
-    *   [7.0.1](#7.0.1)
-        
-*   [SDK 6.x](#SDK6.x)
-    
-    *   [6.0.0](#6.0.0)
-        
-*   [SDK 5.x](#SDK5.x)
-    
-    *   [5.4.0](#5.4.0)
-        
-    *   [5.0.0](#5.0.0)
-        
+* [SDK 8.x](#SDK8.x)
+
+  * [8.0.0](#8.0.0)
+
+* [SDK 7.x](#SDK7.x)
+
+  * [7.0.0](#7.0.0)
+
+  * [7.0.1](#7.0.1)
+
+* [SDK 6.x](#SDK6.x)
+
+  * [6.0.0](#6.0.0)
+
+* [SDK 5.x](#SDK5.x)
+
+  * [5.4.0](#5.4.0)
+
+  * [5.0.0](#5.0.0)
+
 
 List of all removal notices for SDK 8.x.
 
-*   [SDK 8.x](#RemovalNoticeSDK8.x-SDK8.x)
-    
-    *   [8.0.0](#RemovalNoticeSDK8.x-8.0.0)
-        
+* [SDK 8.x](#RemovalNoticeSDK8.x-SDK8.x)
+
+  * [8.0.0](#RemovalNoticeSDK8.x-8.0.0)
+
 
 ## SDK 8.x
 
@@ -114,12 +114,12 @@ Use the standalone Ti.Yahoo module instead.
 
 List of all removal notices for SDK 7.x.
 
-*   [SDK 7.x](#RemovalNoticeSDK7.x-SDK7.x)
-    
-    *   [7.0.0](#RemovalNoticeSDK7.x-7.0.0)
-        
-    *   [7.0.1](#RemovalNoticeSDK7.x-7.0.1)
-        
+* [SDK 7.x](#RemovalNoticeSDK7.x-SDK7.x)
+
+  * [7.0.0](#RemovalNoticeSDK7.x-7.0.0)
+
+  * [7.0.1](#RemovalNoticeSDK7.x-7.0.1)
+
 
 ## SDK 7.x
 
@@ -741,10 +741,10 @@ Use Titanium.UI.iOS.TableViewStyle instead.
 
 List of all removal notices for SDK 6.x.
 
-*   [SDK 6.x](#RemovalNoticeSDK6.x-SDK6.x)
-    
-    *   [6.0.0](#RemovalNoticeSDK6.x-6.0.0)
-        
+* [SDK 6.x](#RemovalNoticeSDK6.x-SDK6.x)
+
+  * [6.0.0](#RemovalNoticeSDK6.x-6.0.0)
+
 
 ## SDK 6.x
 
@@ -1084,12 +1084,12 @@ Use Titanium.UI.Window.statusBarStyle instead.
 
 List of all removal notices for SDK 5.x.
 
-*   [SDK 5.x](#RemovalNoticeSDK5.x-SDK5.x)
-    
-    *   [5.4.0](#RemovalNoticeSDK5.x-5.4.0)
-        
-    *   [5.0.0](#RemovalNoticeSDK5.x-5.0.0)
-        
+* [SDK 5.x](#RemovalNoticeSDK5.x-SDK5.x)
+
+  * [5.4.0](#RemovalNoticeSDK5.x-5.4.0)
+
+  * [5.0.0](#RemovalNoticeSDK5.x-5.0.0)
+
 
 ## SDK 5.x
 

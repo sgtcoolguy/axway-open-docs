@@ -1,4 +1,4 @@
-{"title":"Studio 4.6.0.GA - 2 June 2016","weight":"140"} 
+{"title":"Studio 4.6.0.GA - 2 June 2016","weight":"140"}
 
 Studio 4.6.0.GA is a minor release that includes new features, improvements, and bug fixes.
 
@@ -26,63 +26,63 @@ Please review [App Designer Overview](/docs/appc/Axway_Appcelerator_Studio/Axway
 
 ## Improvements
 
-*   [TISTUD-7717](https://jira.appcelerator.org/browse/TISTUD-7717) - Reconnect to the debug session after the app is restarted
-    
-    *   Reconnect to the debug session after the app is restarted. If the app is accidentally crashed or terminated on a device or simulator, then the user doesn't need to re-launch the studio debug session, rather it automatically connects upon the app launch.
-        
-*   [TISTUD-7946](https://jira.appcelerator.org/browse/TISTUD-7946) - User should be able to set Arrow port in the launch configuration for Studio
-    
-    *   Studio users can set Arrow port through Studio Arrow preference option. This option provides a provision to set user specific port, any free port, and default configuration port.
-        
-*   [TISTUD-8003](https://jira.appcelerator.org/browse/TISTUD-8003) - Non-modal dialog for submitting JIRA ticket from the studio
-    
-    *   Non-modal dialog for submitting JIRA tickets from Studio
-        
-*   [TISTUD-8012](https://jira.appcelerator.org/browse/TISTUD-8012) - Studio needs to call "appc run" / "ti build" to build iOS/Android modules
-    
-    *   Studio builds iOS and Android modules using appc run command that avoids the dependency of python and ant scripts for iOS and Android builds
-        
-*   [TISTUD-8447](https://jira.appcelerator.org/browse/TISTUD-8447) - Windows: Studio needs to specify the Windows SDK to be used when building to a Windows 10 emulator
-    
-    *   Studio sends a windows SDK flag \--wp-sdk while building for Windows platform emulators to enable SDK specific builds
-        
-*   [TISTUD-8466](https://jira.appcelerator.org/browse/TISTUD-8466) - App designer in full screen mode - Showing Properties and Elements on the leftside
-    
-    *   App Designer's perspective includes showing Properties and Elements on the right side
-        
+* [TISTUD-7717](https://jira.appcelerator.org/browse/TISTUD-7717) - Reconnect to the debug session after the app is restarted
+
+  * Reconnect to the debug session after the app is restarted. If the app is accidentally crashed or terminated on a device or simulator, then the user doesn't need to re-launch the studio debug session, rather it automatically connects upon the app launch.
+
+* [TISTUD-7946](https://jira.appcelerator.org/browse/TISTUD-7946) - User should be able to set Arrow port in the launch configuration for Studio
+
+  * Studio users can set Arrow port through Studio Arrow preference option. This option provides a provision to set user specific port, any free port, and default configuration port.
+
+* [TISTUD-8003](https://jira.appcelerator.org/browse/TISTUD-8003) - Non-modal dialog for submitting JIRA ticket from the studio
+
+  * Non-modal dialog for submitting JIRA tickets from Studio
+
+* [TISTUD-8012](https://jira.appcelerator.org/browse/TISTUD-8012) - Studio needs to call "appc run" / "ti build" to build iOS/Android modules
+
+  * Studio builds iOS and Android modules using appc run command that avoids the dependency of python and ant scripts for iOS and Android builds
+
+* [TISTUD-8447](https://jira.appcelerator.org/browse/TISTUD-8447) - Windows: Studio needs to specify the Windows SDK to be used when building to a Windows 10 emulator
+
+  * Studio sends a windows SDK flag \--wp-sdk while building for Windows platform emulators to enable SDK specific builds
+
+* [TISTUD-8466](https://jira.appcelerator.org/browse/TISTUD-8466) - App designer in full screen mode - Showing Properties and Elements on the leftside
+
+  * App Designer's perspective includes showing Properties and Elements on the right side
+
 
 ## Fixed Issues
 
-*   [TISTUD-7602](https://jira.appcelerator.org/browse/TISTUD-7602) - Remove Samples View from Appcelerator Studio
-    
-*   [TISTUD-7952](https://jira.appcelerator.org/browse/TISTUD-7952) - iOS: Breakpoints not hit when debugging projects
-    
-*   [TISTUD-7997](https://jira.appcelerator.org/browse/TISTUD-7997) - SDK update to 5.2.0.GA not found when 6.0 nightly is installed
-    
-*   [TISTUD-8018](https://jira.appcelerator.org/browse/TISTUD-8018) - iOS Debugger: failed to connect.
-    
-*   [TISTUD-8019](https://jira.appcelerator.org/browse/TISTUD-8019) - Studio: Selecting Two-Tabbed Alloy mobile app project generates a default Alloy project instead
-    
-*   [TISTUD-8023](https://jira.appcelerator.org/browse/TISTUD-8023) - Don't allow to edit organization name in the Splash screen user login prompt
-    
-*   [TISTUD-8026](https://jira.appcelerator.org/browse/TISTUD-8026) - Studio can't deal with Genymotion 2.6.0 or later
-    
-*   [TISTUD-8460](https://jira.appcelerator.org/browse/TISTUD-8460) - Default Android SDK downloaded by configuration is to old and not supported by Titanium 5.2.2
-    
-*   [TISTUD-8464](https://jira.appcelerator.org/browse/TISTUD-8464) - xml views files are in web format, cannot open with studio
-    
-*   [TISTUD-8465](https://jira.appcelerator.org/browse/TISTUD-8465) - Tiapp now opens with the XML editor by default
-    
-*   [TISTUD-8471](https://jira.appcelerator.org/browse/TISTUD-8471) - Android: Creating project with just android 6.0 platform installed studio shows a message "Android development requires \[2.3.3,6.0)"
-    
-*   [TISTUD-8473](https://jira.appcelerator.org/browse/TISTUD-8473) - Unable to create android module in studio.
-    
-*   [TISTUD-8474](https://jira.appcelerator.org/browse/TISTUD-8474) - Enable app preview options if appc core is bundled with an app preview hook
-    
-*   [TISTUD-8475](https://jira.appcelerator.org/browse/TISTUD-8475) - Unable to build to Windows device
-    
-*   [TISTUD-8476](https://jira.appcelerator.org/browse/TISTUD-8476) - Run targets should show the Windows phone device name rather than udid  
-    
-*   [TISTUD-8490](https://jira.appcelerator.org/browse/TISTUD-8490) - App designer: index.xml opened with App designer throws nullpointer exception on closing if studio is installed from installer
-    
-*   [TISTUD-8495](https://jira.appcelerator.org/browse/TISTUD-8495) - Spelling error on adhoc deployment wizard
+* [TISTUD-7602](https://jira.appcelerator.org/browse/TISTUD-7602) - Remove Samples View from Appcelerator Studio
+
+* [TISTUD-7952](https://jira.appcelerator.org/browse/TISTUD-7952) - iOS: Breakpoints not hit when debugging projects
+
+* [TISTUD-7997](https://jira.appcelerator.org/browse/TISTUD-7997) - SDK update to 5.2.0.GA not found when 6.0 nightly is installed
+
+* [TISTUD-8018](https://jira.appcelerator.org/browse/TISTUD-8018) - iOS Debugger: failed to connect.
+
+* [TISTUD-8019](https://jira.appcelerator.org/browse/TISTUD-8019) - Studio: Selecting Two-Tabbed Alloy mobile app project generates a default Alloy project instead
+
+* [TISTUD-8023](https://jira.appcelerator.org/browse/TISTUD-8023) - Don't allow to edit organization name in the Splash screen user login prompt
+
+* [TISTUD-8026](https://jira.appcelerator.org/browse/TISTUD-8026) - Studio can't deal with Genymotion 2.6.0 or later
+
+* [TISTUD-8460](https://jira.appcelerator.org/browse/TISTUD-8460) - Default Android SDK downloaded by configuration is to old and not supported by Titanium 5.2.2
+
+* [TISTUD-8464](https://jira.appcelerator.org/browse/TISTUD-8464) - xml views files are in web format, cannot open with studio
+
+* [TISTUD-8465](https://jira.appcelerator.org/browse/TISTUD-8465) - Tiapp now opens with the XML editor by default
+
+* [TISTUD-8471](https://jira.appcelerator.org/browse/TISTUD-8471) - Android: Creating project with just android 6.0 platform installed studio shows a message "Android development requires \[2.3.3,6.0)"
+
+* [TISTUD-8473](https://jira.appcelerator.org/browse/TISTUD-8473) - Unable to create android module in studio.
+
+* [TISTUD-8474](https://jira.appcelerator.org/browse/TISTUD-8474) - Enable app preview options if appc core is bundled with an app preview hook
+
+* [TISTUD-8475](https://jira.appcelerator.org/browse/TISTUD-8475) - Unable to build to Windows device
+
+* [TISTUD-8476](https://jira.appcelerator.org/browse/TISTUD-8476) - Run targets should show the Windows phone device name rather than udid
+
+* [TISTUD-8490](https://jira.appcelerator.org/browse/TISTUD-8490) - App designer: index.xml opened with App designer throws nullpointer exception on closing if studio is installed from installer
+
+* [TISTUD-8495](https://jira.appcelerator.org/browse/TISTUD-8495) - Spelling error on adhoc deployment wizard

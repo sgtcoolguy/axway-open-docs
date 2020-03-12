@@ -1,21 +1,21 @@
-{"title":"A Command Which Outputs a Snippet","weight":"10"} 
+{"title":"A Command Which Outputs a Snippet","weight":"10"}
 
-*   [Overview](#Overview)
-    
-*   [The Code](#TheCode)
-    
-*   [Adding it to a Menu](#AddingittoaMenu)
-    
-*   [Result](#Result)
-    
+* [Overview](#Overview)
+
+* [The Code](#TheCode)
+
+* [Adding it to a Menu](#AddingittoaMenu)
+
+* [Result](#Result)
+
 
 ## Overview
 
-In this recipe we show how a Ruble command can output a snippet into the editor for further manipulation. Note that this sample already exists in the HTML bundle--we illustrate it here as it is a useful pattern.
+In this recipe, we show how a Ruble command can output a snippet into the editor for further manipulation. Note that this sample already exists in the HTML bundle--we illustrate it here as it is a useful pattern.
 
 ## The Code
 
-In the snippet below, we manipulate the currently selected text to split it across lines, and then wrap each line in a template using mirrored variables (the $1s in the template)
+In the snippet below, we manipulate the currently selected text to split it across lines and then wrap each line in a template using mirrored variables (the $1s in the template).
 
 `require` `'ruble'`
 
@@ -41,7 +41,7 @@ In the snippet below, we manipulate the currently selected text to split it acro
 
 ## Adding it to a Menu
 
-If you do not choose a key binding, you should place the command in a menu, otherwise it will be difficult or impossible to access.
+If you do not choose a key binding, you should place the command in a menu. Otherwise, it will be difficult or impossible to access.
 
 `bundle` `do` `|bundle|`
 

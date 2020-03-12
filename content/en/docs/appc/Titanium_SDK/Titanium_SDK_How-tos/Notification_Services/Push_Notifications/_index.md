@@ -1,4 +1,4 @@
-{"title":"Push Notifications","weight":"40"} 
+{"title":"Push Notifications","weight":"40"}
 
 This document contains information on configuring, subscribing, sending, and scheduling push services.
 

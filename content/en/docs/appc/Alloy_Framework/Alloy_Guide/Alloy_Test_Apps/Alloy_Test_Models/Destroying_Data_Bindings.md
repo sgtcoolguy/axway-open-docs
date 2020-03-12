@@ -1,4 +1,4 @@
-{"title":"Destroying Data Bindings","weight":"50"} 
+{"title":"Destroying Data Bindings","weight":"50"}
 
 Demonstrates best practices for data binding memory management.
 
@@ -82,4 +82,4 @@ app/controllers/movies.js
 
 ## See Also
 
-*   [Alloy Data Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Data_Binding/)
+* [Alloy Data Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Data_Binding/)

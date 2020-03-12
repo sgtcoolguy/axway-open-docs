@@ -1,4 +1,4 @@
-{"title":"NodeJS Configuration","weight":"20"} 
+{"title":"NodeJS Configuration","weight":"20"}
 
 API Builder 3.x is deprecated
 
@@ -6,28 +6,28 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-*   [Dependencies](#Dependencies)
-    
-*   [Engines](#Engines)
-    
-*   [Health check](#Healthcheck)
-    
-*   [Main](#Main)
-    
-*   [Name](#Name)
-    
-*   [npmAuthentication](#npmAuthentication)
-    
-*   [npmRegistry](#npmRegistry)
-    
-*   [Scripts](#Scripts)
-    
-    *   [Preinstall and post-install](#Preinstallandpost-install)
-        
-    *   [Start](#Start)
-        
-*   [Version](#Version)
-    
+* [Dependencies](#Dependencies)
+
+* [Engines](#Engines)
+
+* [Health check](#Healthcheck)
+
+* [Main](#Main)
+
+* [Name](#Name)
+
+* [npmAuthentication](#npmAuthentication)
+
+* [npmRegistry](#npmRegistry)
+
+* [Scripts](#Scripts)
+
+  * [Preinstall and post-install](#Preinstallandpost-install)
+
+  * [Start](#Start)
+
+* [Version](#Version)
+
 
 An API Builder application contains a file called package.json located in the root directory of the project. AMPLIFY Runtime Services uses the package.json file to configure settings and install dependencies for the application.
 

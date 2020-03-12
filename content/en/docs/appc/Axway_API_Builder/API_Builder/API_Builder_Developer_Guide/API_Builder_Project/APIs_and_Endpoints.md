@@ -1,4 +1,4 @@
-{"title":"APIs and Endpoints","weight":"20"} 
+{"title":"APIs and Endpoints","weight":"20"}
 
 API Builder 3.x is deprecated
 

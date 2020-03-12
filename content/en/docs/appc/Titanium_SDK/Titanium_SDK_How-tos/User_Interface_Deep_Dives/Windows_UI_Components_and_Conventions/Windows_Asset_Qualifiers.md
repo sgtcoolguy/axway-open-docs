@@ -1,13 +1,15 @@
-{"title":"Windows Asset Qualifiers","weight":"10"} 
+{"title":"Windows Asset Qualifiers","weight":"10"}
 
-*   [Introduction](#Introduction)
-    
-*   [Scale](#Scale)
-    
-*   [Language](#Language)
-    
-*   [Example](#Example)
-    
+* [Introduction](#Introduction)
+
+* [Scale](#Scale)
+
+* [Language](#Language)
+
+* [Example](#Example)
+
+
+As of Titanium 9.0.0, building Windows apps is no longer supported.
 
 Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
 
@@ -101,30 +103,30 @@ Windows Phone
 
 Windows Tablet
 
-1.  Open **Settings**
-    
-2.  Tap **ease of access**
-    
-3.  Turn the **High contrast** switch on or off
-    
+1. Open **Settings**
 
-1.  Open **PC Settings**
-    
-2.  Click **Ease of Access**
-    
-3.  Click **High contrast**
-    
-4.  Select a theme from the drop-down
-    
+2. Tap **ease of access**
+
+3. Turn the **High contrast** switch on or off
+
+
+1. Open **PC Settings**
+
+2. Click **Ease of Access**
+
+3. Click **High contrast**
+
+4. Select a theme from the drop-down
+
 
 ## Language
 
 For the language qualifiers, the notation differs if you place them in a folder or add the qualifier to the filename.
 
-*   For folders, name the folder using the [ISO 639-1](http://en.wikipedia.org/wiki/ISO_639-1) standard and optionally with the country's [ISO 3166-1](https://en.wikipedia.org/?title=ISO_3166-1) Alpha-2 code, for example, place assets in either app/assets/windows/en-US or Resources/windows/en-US.
-    
-*   For the file name, add the lang- qualifier with the [ISO 639-1](http://en.wikipedia.org/wiki/ISO_639-1) standard and optionally with the country's [ISO 3166-1](https://en.wikipedia.org/?title=ISO_3166-1) Alpha-2 code, for example, name.lang-en-US.png.
-    
+* For folders, name the folder using the [ISO 639-1](http://en.wikipedia.org/wiki/ISO_639-1) standard and optionally with the country's [ISO 3166-1](https://en.wikipedia.org/?title=ISO_3166-1) Alpha-2 code, for example, place assets in either app/assets/windows/en-US or Resources/windows/en-US.
+
+* For the file name, add the lang- qualifier with the [ISO 639-1](http://en.wikipedia.org/wiki/ISO_639-1) standard and optionally with the country's [ISO 3166-1](https://en.wikipedia.org/?title=ISO_3166-1) Alpha-2 code, for example, name.lang-en-US.png.
+
 
 **To change the language:**
 
@@ -132,59 +134,59 @@ Windows Phone
 
 Windows Tablet
 
-1.  Open **Settings**
-    
-2.  Tap **language**
-    
-3.  If the language is present in the list:
-    
-    1.  Tap and hold the language you want to use and select **move up** until it is at the top
-        
-    2.  Tap **restart phone**
-        
-4.  If the language is not present in the list:
-    
-    1.  Tap **+ add language**
-        
-    2.  Select the langague you want to use
-        
-    3.  Tap the checkmark button
-        
-    4.  You may be prompted to download and install the language pack. Tap **OK**.
-        
-    5.  Tap **restart phone**.
-        
+1. Open **Settings**
 
-1.  Open **PC Settings**
-    
-2.  Click **Time and language**
-    
-3.  Click **Region and language**
-    
-4.  If the language is present:
-    
-    1.  Click the language
-        
-    2.  Click **Set as primary**
-        
-5.  If the language is not present:
-    
-    1.  Click **\+ Add a language**
-        
-    2.  Select the language you want to use
-        
-        1.  If there is a status message by the language, when the status of the language says, "Language pack available," click the language.
-            
-        2.  Click **Options**
-            
-        3.  Click **Download** to download and install the language pack
-            
-    3.  Click the language
-        
-    4.  Click **Set as primary**
-        
-6.  You will need to log out and sign in to display the new language
-    
+2. Tap **language**
+
+3. If the language is present in the list:
+
+  1. Tap and hold the language you want to use and select **move up** until it is at the top
+
+  2. Tap **restart phone**
+
+4. If the language is not present in the list:
+
+  1. Tap **+ add language**
+
+  2. Select the langague you want to use
+
+  3. Tap the checkmark button
+
+  4. You may be prompted to download and install the language pack. Tap **OK**.
+
+  5. Tap **restart phone**.
+
+
+1. Open **PC Settings**
+
+2. Click **Time and language**
+
+3. Click **Region and language**
+
+4. If the language is present:
+
+  1. Click the language
+
+  2. Click **Set as primary**
+
+5. If the language is not present:
+
+  1. Click **\+ Add a language**
+
+  2. Select the language you want to use
+
+    1. If there is a status message by the language, when the status of the language says, "Language pack available," click the language.
+
+    2. Click **Options**
+
+    3. Click **Download** to download and install the language pack
+
+  3. Click the language
+
+  4. Click **Set as primary**
+
+6. You will need to log out and sign in to display the new language
+
 
 ## Example
 

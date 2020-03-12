@@ -1,11 +1,11 @@
-{"title":"Workbench Actions","weight":"140"} 
+{"title":"Workbench Actions","weight":"140"}
 
-*   [Requirements](#Requirements)
-    
-*   [Invocation](#Invocation)
-    
-*   [Get the Active Perspective Information](#GettheActivePerspectiveInformation)
-    
+* [Requirements](#Requirements)
+
+* [Invocation](#Invocation)
+
+* [Get the Active Perspective Information](#GettheActivePerspectiveInformation)
+
 
 ## Requirements
 

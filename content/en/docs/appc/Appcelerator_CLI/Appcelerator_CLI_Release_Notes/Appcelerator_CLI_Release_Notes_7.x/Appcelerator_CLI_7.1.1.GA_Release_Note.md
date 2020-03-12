@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 7.1.1.GA - 6 September 2019","weight":"50"} 
+{"title":"Appcelerator CLI 7.1.1.GA - 6 September 2019","weight":"50"}
 
 Appcelerator CLI 7.1.1.GA is a patch release that includes one improvement and several bug fixes.
 
@@ -30,29 +30,29 @@ Daemon
 
 ## Improvements
 
-*   [ALOY-1697](https://jira.appcelerator.org/browse/ALOY-1697) - Add WebView "onlink" callback support
-    
-    *   added support for setting onlink in views
-        
-*   [CLI-1362](https://jira.appcelerator.org/browse/CLI-1362) - Update to latest acs cli
-    
-    *   Updated acs to version 2.1.2
-        
-*   [CLI-1368](https://jira.appcelerator.org/browse/CLI-1368) - Daemon: update to ioslib 2.5.1 to support apple certificate detection
-    
-    *   Updated ioslib to 2.5.1 to add support for Apple certificate detection
-        
+* [ALOY-1697](https://jira.appcelerator.org/browse/ALOY-1697) - Add WebView "onlink" callback support
+
+  * added support for setting onlink in views
+
+* [CLI-1362](https://jira.appcelerator.org/browse/CLI-1362) - Update to latest acs cli
+
+  * Updated acs to version 2.1.2
+
+* [CLI-1368](https://jira.appcelerator.org/browse/CLI-1368) - Daemon: update to ioslib 2.5.1 to support apple certificate detection
+
+  * Updated ioslib to 2.5.1 to add support for Apple certificate detection
+
 
 ## Fixed issues
 
-*   [ALOY-1698](https://jira.appcelerator.org/browse/ALOY-1698) - Compile: Errors thrown during sourcemap step are not visible to a user
-    
-*   [CLI-1355](https://jira.appcelerator.org/browse/CLI-1355) - Android "appc run" will always trigger rebuild if "tiapp.xml" is missing encryption policy property
-    
-*   [CLI-1359](https://jira.appcelerator.org/browse/CLI-1359) - When commenting out modules in the Tiapp.xml and running a build all modules move to one line
-    
-*   [CLI-1363](https://jira.appcelerator.org/browse/CLI-1363) - Daemon: Can't detect iOS 13 simulators
-    
-*   [CLI-1365](https://jira.appcelerator.org/browse/CLI-1365) - Daemon is not shut down when downloading a core via appc use
-    
-*   [CLI-1366](https://jira.appcelerator.org/browse/CLI-1366) - Studio restarts daemon during the appc use switching
+* [ALOY-1698](https://jira.appcelerator.org/browse/ALOY-1698) - Compile: Errors thrown during sourcemap step are not visible to a user
+
+* [CLI-1355](https://jira.appcelerator.org/browse/CLI-1355) - Android "appc run" will always trigger rebuild if "tiapp.xml" is missing encryption policy property
+
+* [CLI-1359](https://jira.appcelerator.org/browse/CLI-1359) - When commenting out modules in the Tiapp.xml and running a build all modules move to one line
+
+* [CLI-1363](https://jira.appcelerator.org/browse/CLI-1363) - Daemon: Can't detect iOS 13 simulators
+
+* [CLI-1365](https://jira.appcelerator.org/browse/CLI-1365) - Daemon is not shut down when downloading a core via appc use
+
+* [CLI-1366](https://jira.appcelerator.org/browse/CLI-1366) - Studio restarts daemon during the appc use switching

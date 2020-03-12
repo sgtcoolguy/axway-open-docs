@@ -1,31 +1,31 @@
-{"title":"Example Applications","weight":"30"} 
+{"title":"Example Applications","weight":"30"}
 
-*   [Overview](#Overview)
-    
-*   [Kitchen Sink](#KitchenSink)
-    
-*   [Kitchen Sink 2.0](#KitchenSink2.0)
-    
-*   [Hyperloop examples](#Hyperloopexamples)
-    
-*   [Drag 'n Drop](#Drag'nDrop)
-    
-*   [PlexusRx](#PlexusRx)
-    
-*   [RSS Reader](#RSSReader)
-    
-    *   [Related documentation](#Relateddocumentation)
-        
-*   [Todo List](#TodoList)
-    
-    *   [Related documentation](#Relateddocumentation.1)
-        
-*   [Geocoder](#Geocoder)
-    
-    *   [Guide](#Guide)
-        
-    *   [Related documentation](#Relateddocumentation.2)
-        
+* [Overview](#Overview)
+
+* [Kitchen Sink](#KitchenSink)
+
+* [Kitchen Sink 2.0](#KitchenSink2.0)
+
+* [Hyperloop examples](#Hyperloopexamples)
+
+* [Drag 'n Drop](#Drag'nDrop)
+
+* [PlexusRx](#PlexusRx)
+
+* [RSS Reader](#RSSReader)
+
+  * [Related documentation](#Relateddocumentation)
+
+* [Todo List](#TodoList)
+
+  * [Related documentation](#Relateddocumentation.1)
+
+* [Geocoder](#Geocoder)
+
+  * [Guide](#Guide)
+
+  * [Related documentation](#Relateddocumentation.2)
+
 
 ## Overview
 
@@ -45,7 +45,7 @@ Prior to Release 2.1.1, the KitchenSink did not represent _best practices_ and t
 
 Kitchen Sink 2.0 is a refactored Alloy-based version of the KitchenSink demo-app. This project gives an overview of native components available in Titanium. The components are grouped into multiple groups and can be logged in the "Logs" tab. It also includes full support for iOS, Android & Windows.
 
-![kitchensink-overview](/Images/appc/download/attachments/29004877/kitchensink-overview.png)  
+![kitchensink-overview](/Images/appc/download/attachments/29004877/kitchensink-overview.png)
 
 [Kitchen Sink 2.0 on GitHub](https://github.com/appcelerator/kitchensink-v2)
 
@@ -69,7 +69,7 @@ Android
 
 Appcelerator Titanium sample app demonstrating the drag-and-drop APIs exposed in iOS 11. Note: Inter-app drag-and-drop is currently restricted to iPad only.
 
-![DragnDrop](/Images/appc/download/attachments/29004877/DragnDrop.png)  
+![DragnDrop](/Images/appc/download/attachments/29004877/DragnDrop.png)
 
 [Drag 'n Drop on GitHub](https://github.com/appcelerator-developer-relations/appc-sample-drag-and-drop)
 
@@ -77,7 +77,7 @@ Appcelerator Titanium sample app demonstrating the drag-and-drop APIs exposed in
 
 PlexusRx is an Appcelerator Titanium app for iOS which demonstrates the use of iOS 11 machine learning frameworks and OCR to detect and ingest information from a prescription pill bottle.
 
- ![Screen_Shot_2018-03-15_at_10.49.55_PM](/Images/appc/download/attachments/29004877/Screen_Shot_2018-03-15_at_10.49.55_PM.png) 
+ ![Screen_Shot_2018-03-15_at_10.49.55_PM](/Images/appc/download/attachments/29004877/Screen_Shot_2018-03-15_at_10.49.55_PM.png)
 
 [PlexusRx on GitHub](https://github.com/appcelerator-developer-relations/plexus-rx)
 
@@ -87,28 +87,28 @@ RSS Reader is a Titanium Mobile sample app that lets you browse RSS feeds. With 
 
 The RSS Reader app demonstrates:
 
-*   Remote Data access using Ti.Network.HTTPClient.
-    
-*   Modular Javascript with CommonJS.
-    
-*   Multiple window app using a single execution context.
-    
-*   Loose coupling of UI and data code using application level events.
-    
-*   Native UI features
-    
-*   TableView with custom rows.
-    
-*   Android menus.
-    
-*   iOS navigation bar buttons.
-    
-*   iOS Navigation Controller using [Titanium.UI.NavigationWindow](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.NavigationWindow).
-    
-*   WebViews for displaying web content.
-    
-*   Cross-platform design.
-    
+* Remote Data access using Ti.Network.HTTPClient.
+
+* Modular Javascript with CommonJS.
+
+* Multiple window app using a single execution context.
+
+* Loose coupling of UI and data code using application level events.
+
+* Native UI features
+
+* TableView with custom rows.
+
+* Android menus.
+
+* iOS navigation bar buttons.
+
+* iOS Navigation Controller using [Titanium.UI.NavigationWindow](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.NavigationWindow).
+
+* WebViews for displaying web content.
+
+* Cross-platform design.
+
 
 ![screenshots](/Images/appc/download/attachments/29004877/screenshots.png)
 
@@ -116,26 +116,26 @@ The RSS Reader app demonstrates:
 
 ### Related documentation
 
-*   Networking
-    
-    *   Guides: [Working with Remote Data Sources](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Working_with_Remote_Data_Sources/)
-        
-    *   API Docs: Ti.Network.HTTPClient
-        
-*   Guides: [Application-level events](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Event_Handling/#Application-levelevents)
-    
-*   Web Views
-    
-    *   Guides: [Integrating Web Content](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Integrating_Web_Content/)
-        
-    *   API Docs: [Ti.UI.WebView](#!/api/Titanium.UI.WebView)
-        
-*   UI Elements
-    
-    *   Guides: [Android menus](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/#Androidmenus)
-        
-    *   API Docs: [Titanium.UI.NavigationWindow](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.NavigationWindow)
-        
+* Networking
+
+  * Guides: [Working with Remote Data Sources](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Working_with_Remote_Data_Sources/)
+
+  * API Docs: Ti.Network.HTTPClient
+
+* Guides: [Application-level events](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Event_Handling/#Application-levelevents)
+
+* Web Views
+
+  * Guides: [Integrating Web Content](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Integrating_Web_Content/)
+
+  * API Docs: [Ti.UI.WebView](#!/api/Titanium.UI.WebView)
+
+* UI Elements
+
+  * Guides: [Android menus](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/#Androidmenus)
+
+  * API Docs: [Titanium.UI.NavigationWindow](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.NavigationWindow)
+
 
 ## Todo List
 
@@ -143,20 +143,20 @@ Todo List is a simple tabbed application for keeping track of todo items. With t
 
 The Todo List app demonstrates:
 
-*   Local storage with SQLite using Ti.Database.
-    
-*   Modular Javascript with CommonJS.
-    
-*   Multiple window app using a single execution context.
-    
-*   Native UI features
-    
-*   Android menus
-    
-*   iOS navigation bar buttons
-    
-*   Cross-platform design
-    
+* Local storage with SQLite using Ti.Database.
+
+* Modular Javascript with CommonJS.
+
+* Multiple window app using a single execution context.
+
+* Native UI features
+
+* Android menus
+
+* iOS navigation bar buttons
+
+* Cross-platform design
+
 
 iOS
 
@@ -168,12 +168,12 @@ Android
 
 ### Related documentation
 
-*   Guides: [Working with an SQLite Database](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Working_with_Local_Data_Sources/Working_with_a_SQLite_Database/)
-    
-*   API Docs: [Ti.Database](#!/api/Titanium.Database)
-    
-*   API Docs: [Ti.App.Properties](#!/api/Titanium.App.Properties)
-    
+* Guides: [Working with an SQLite Database](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Working_with_Local_Data_Sources/Working_with_a_SQLite_Database/)
+
+* API Docs: [Ti.Database](#!/api/Titanium.Database)
+
+* API Docs: [Ti.App.Properties](#!/api/Titanium.App.Properties)
+
 
 [Todo Sample on GitHub](https://github.com/appcelerator-developer-relations/Sample.Todo)
 
@@ -183,26 +183,26 @@ This is a Titanium Mobile sample app that uses native maps to plot locations. Wi
 
 The Geocoder app demonstrates:
 
-*   Using native maps with [Map Module](#!/api/Modules.Map)
-    
-*   Adding annotations to native maps
-    
-*   Remote data access using [Ti.Network.HTTPClient](#!/api/Titanium.Network.HTTPClient)
-    
-*   Modular Javascript with CommonJS
-    
-*   Cross-platform design
-    
+* Using native maps with [Map Module](#!/api/Modules.Map)
+
+* Adding annotations to native maps
+
+* Remote data access using [Ti.Network.HTTPClient](#!/api/Titanium.Network.HTTPClient)
+
+* Modular Javascript with CommonJS
+
+* Cross-platform design
+
 
 ![screenshotsGeocoder](/Images/appc/download/attachments/29004877/screenshotsGeocoder.png)
 
 ### Guide
 
-*   [Location Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/)
-    
+* [Location Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/)
+
 
 ### Related documentation
 
-*   API Docs: [Modules.Map](#!/api/Modules.Map)
-    
-*   [Geocoder Sample on GitHub](https://github.com/appcelerator-developer-relations/appc-sample-geocoder)
+* API Docs: [Modules.Map](#!/api/Modules.Map)
+
+* [Geocoder Sample on GitHub](https://github.com/appcelerator-developer-relations/appc-sample-geocoder)

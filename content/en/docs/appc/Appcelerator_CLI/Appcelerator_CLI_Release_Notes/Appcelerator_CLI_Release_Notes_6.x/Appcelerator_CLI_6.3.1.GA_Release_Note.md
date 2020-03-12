@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 6.3.1.GA - 24 October 2018","weight":"140"} 
+{"title":"Appcelerator CLI 6.3.1.GA - 24 October 2018","weight":"140"}
 
 Appcelerator CLI 6.3.1.GA is a patch release that includes an internal bug fix.
 

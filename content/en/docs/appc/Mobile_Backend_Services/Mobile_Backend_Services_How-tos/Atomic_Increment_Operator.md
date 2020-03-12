@@ -1,4 +1,4 @@
-{"title":"Atomic Increment Operator","weight":"10"} 
+{"title":"Atomic Increment Operator","weight":"10"}
 
 Mobile Backend Services supports the Mongo $inc atomic increment operator.
 
@@ -6,10 +6,10 @@ Mobile Backend Services supports the Mongo $inc atomic increment operator.
 
 You can use $inc to increment (or decrement) a [custom field](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Custom_Objects_and_Fields/) by a specified value in a single update operation.
 
-*   The operator accepts positive and negative increment amounts
-    
-*   It can only be applied to a single field per method call.
-    
+* The operator accepts positive and negative increment amounts
+
+* It can only be applied to a single field per method call.
+
 
 $inc is specified with the following form, where fieldName is the name of the field to update and value is a positive (or negative) number to increment (or decrement) fieldName by:
 
@@ -17,28 +17,28 @@ $inc is specified with the following form, where fieldName is the name of the fi
 
 The operator must be enclosed in quotes, as shown above. The following methods support the $inc operator:
 
-*   [Checkins.update](/arrowdb/latest/#!/api/Checkins-method-update)
-    
-*   [CustomObjects.update](/arrowdb/latest/#!/api/CustomObjects-method-update)
-    
-*   [Events.update](/arrowdb/latest/#!/api/Events-method-update)
-    
-*   [Files.update](/arrowdb/latest/#!/api/Files-method-update)
-    
-*   [PhotoCollections.update](/arrowdb/latest/#!/api/PhotoCollections-method-update)
-    
-*   [Photos.update](/arrowdb/latest/#!/api/Photos-method-update)
-    
-*   [Places.update](/arrowdb/latest/#!/api/Places-method-update)
-    
-*   [Posts.update](/arrowdb/latest/#!/api/Posts-method-update)
-    
-*   [Reviews.update](/arrowdb/latest/#!/api/Reviews-method-update)
-    
-*   [Users.update](/arrowdb/latest/#!/api/Users-method-update)
-    
-*   [Statuses.update](/arrowdb/latest/#!/api/Statuses-method-update)
-    
+* [Checkins.update](/arrowdb/latest/#!/api/Checkins-method-update)
+
+* [CustomObjects.update](/arrowdb/latest/#!/api/CustomObjects-method-update)
+
+* [Events.update](/arrowdb/latest/#!/api/Events-method-update)
+
+* [Files.update](/arrowdb/latest/#!/api/Files-method-update)
+
+* [PhotoCollections.update](/arrowdb/latest/#!/api/PhotoCollections-method-update)
+
+* [Photos.update](/arrowdb/latest/#!/api/Photos-method-update)
+
+* [Places.update](/arrowdb/latest/#!/api/Places-method-update)
+
+* [Posts.update](/arrowdb/latest/#!/api/Posts-method-update)
+
+* [Reviews.update](/arrowdb/latest/#!/api/Reviews-method-update)
+
+* [Users.update](/arrowdb/latest/#!/api/Users-method-update)
+
+* [Statuses.update](/arrowdb/latest/#!/api/Statuses-method-update)
+
 
 ### Examples
 

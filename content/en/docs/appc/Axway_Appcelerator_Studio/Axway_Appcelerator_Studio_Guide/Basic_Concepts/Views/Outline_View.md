@@ -1,4 +1,4 @@
-{"title":"Outline View","weight":"20"} 
+{"title":"Outline View","weight":"20"}
 
 This page describes what the Outline View is and how to display it.
 
@@ -8,17 +8,17 @@ The Outline View displays a hierarchical grouping of the elements of your code, 
 
 ## Instructions
 
-Studio displays the Outline View in Web Perspective by default, and it is located in the lower left corner of the window. To open the view manually:
+Studio displays the Outline View in Web Perspective by default, and it is located in the lower-left corner of the window. To open the view manually:
 
-*   From the **Window** menu, select **Show View > Outline**.
-    
-*   To close the **Outline View**, click the Close button (**X**) in the upper right of the tab.
-    
+* From the **Window** menu, select **Show View > Outline**.
+
+* To close the **Outline View**, click the Close button (**X**) in the upper right of the tab.
+
 
 ![outline_view](/Images/appc/download/attachments/30083303/outline_view.png)
 
 ## Related Topics
 
-*   [Bookmarks View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Views/Bookmarks_View/)
-    
-*   [Tasks View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Views/Tasks_View/)
+* [Bookmarks View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Views/Bookmarks_View/)
+
+* [Tasks View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Views/Tasks_View/)

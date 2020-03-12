@@ -1,13 +1,13 @@
-{"title":"AMPLIFY CLI Error Messages During Installation","weight":"30"} 
+{"title":"AMPLIFY CLI Error Messages During Installation","weight":"30"}
 
 At some point, you may experience error message during installation of one or more modules. This document aims to assist in those problems.
 
-*   [Permission denied to mkdir](#Permissiondeniedtomkdir)
-    
-*   [Install failure with npm install](#Installfailurewithnpminstall)
-    
-*   [Keytar failed to install](#Keytarfailedtoinstall)
-    
+* [Permission denied to mkdir](#Permissiondeniedtomkdir)
+
+* [Install failure with npm install](#Installfailurewithnpminstall)
+
+* [Keytar failed to install](#Keytarfailedtoinstall)
+
 
 ## Permission denied to mkdir
 
@@ -53,14 +53,14 @@ If you encounter the following error message (this is not an error on npm's side
 
 Confirm that the package you're trying to install didn't fail to install.
 
-1.  Open a terminal in ~/.axway/packages.
-    
-2.  Look through this directory for any empty directories.
-    
-3.  Remove any empty directories.
-    
-4.  Try installing the package again.
-    
+1. Open a terminal in ~/.axway/packages.
+
+2. Look through this directory for any empty directories.
+
+3. Remove any empty directories.
+
+4. Try installing the package again.
+
 
 ## Keytar failed to install
 
@@ -76,11 +76,11 @@ If you encounter this error when trying, amplify auth login -u <user> -p <passwo
 
 It's likely that keytar failed to install during the installation of ACLI. To fix this issue,
 
-1.  Uninstall ACLI: npm uninstall amplify -g
-    
-2.  Re-install ACLI using the \--unsafe-perm flag: \[sudo\] npm i -g --unsafe-perm @axway/amplify-cli
-    
-3.  Try logging in again.
-    
+1. Uninstall ACLI: npm uninstall amplify -g
+
+2. Re-install ACLI using the \--unsafe-perm flag: \[sudo\] npm i -g --unsafe-perm @axway/amplify-cli
+
+3. Try logging in again.
+
 
 If you do not wish to install keytar, you can disable secure store and fallback to the file-based store by executing this command: amplify config set auth.tokenStoreType file.

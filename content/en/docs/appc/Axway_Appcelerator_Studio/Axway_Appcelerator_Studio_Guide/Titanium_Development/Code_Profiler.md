@@ -1,33 +1,33 @@
-{"title":"Code Profiler","weight":"110"} 
+{"title":"Code Profiler","weight":"110"}
 
-*   [Introduction](#Introduction)
-    
-*   [Profiling an Application](#ProfilinganApplication)
-    
-    *   [Initiate a Profiler Session](#InitiateaProfilerSession)
-        
-    *   [Capture a Performance Snapshot](#CaptureaPerformanceSnapshot)
-        
-    *   [Display a Performance Snapshot](#DisplayaPerformanceSnapshot)
-        
-    *   [Save a Performance Snapshot](#SaveaPerformanceSnapshot)
-        
-    *   [Load a Performance Snapshot](#LoadaPerformanceSnapshot)
-        
-    *   [Terminate a Profiler Session](#TerminateaProfilerSession)
-        
-*   [Appcelerator Profiling Perspective](#AppceleratorProfilingPerspective)
-    
-    *   [Profile View](#ProfileView)
-        
-    *   [Performance Profile View](#PerformanceProfileView)
-        
-*   [Improving Profiler Results](#ImprovingProfilerResults)
-    
-    *   [Name Anonymous Functions](#NameAnonymousFunctions)
-        
-    *   [Missing Method Calls on Android](#MissingMethodCallsonAndroid)
-        
+* [Introduction](#Introduction)
+
+* [Profiling an Application](#ProfilinganApplication)
+
+  * [Initiate a Profiler Session](#InitiateaProfilerSession)
+
+  * [Capture a Performance Snapshot](#CaptureaPerformanceSnapshot)
+
+  * [Display a Performance Snapshot](#DisplayaPerformanceSnapshot)
+
+  * [Save a Performance Snapshot](#SaveaPerformanceSnapshot)
+
+  * [Load a Performance Snapshot](#LoadaPerformanceSnapshot)
+
+  * [Terminate a Profiler Session](#TerminateaProfilerSession)
+
+* [Appcelerator Profiling Perspective](#AppceleratorProfilingPerspective)
+
+  * [Profile View](#ProfileView)
+
+  * [Performance Profile View](#PerformanceProfileView)
+
+* [Improving Profiler Results](#ImprovingProfilerResults)
+
+  * [Name Anonymous Functions](#NameAnonymousFunctions)
+
+  * [Missing Method Calls on Android](#MissingMethodCallsonAndroid)
+
 
 This page describes how to use the Appcelerator Studio Code Profiler to profile the performance of your applications on simulators and devices.
 
@@ -47,12 +47,12 @@ To use the Code Profiler, first initiate a profiler session, and once the sessio
 
 To start a profiler session on an existing project, first make sure your project is using Titanium SDK 3.1 or later. If not, update the SDK version in your tiapp.xml file.
 
-1.  In the **Project Explorer** view, select your project.
-    
-2.  In the global tool bar, select **Profile** from the **Launch Mode** drop-down list and select an Android or iOS target (emulator, simulator or device) from the **Target** drop-down list.
-    
-3.  If the **Launch Automatically** option is enabled under the **Target** drop-down list, the application will be automatically launched after the device is selected. If not, you need to click the **Launch** button to start the build process.
-    
+1. In the **Project Explorer** view, select your project.
+
+2. In the global tool bar, select **Profile** from the **Launch Mode** drop-down list and select an Android or iOS target (emulator, simulator or device) from the **Target** drop-down list.
+
+3. If the **Launch Automatically** option is enabled under the **Target** drop-down list, the application will be automatically launched after the device is selected. If not, you need to click the **Launch** button to start the build process.
+
 
 After the build process starts, a dialog appears asking you to change your perspective. Click the **Yes** button to change to the **Appcelerator Profiler** perspective. Select the **Remember my decision** checkbox if you do not want to be prompted to change the perspective in the future.
 
@@ -88,10 +88,10 @@ To stop the profiler, select it in the **Profile** view and click the **Terminat
 
 In Appcelerator Studio, switch to the **Appcelerator Profiling** perspective when you are using the Code Profiler. The **Appcelerator Profiling** perspective contains two profiler-specific views:
 
-*   **Profile View** – Used to control the Code Profiler, start and stop capturing performance data, and to load previously saved performance snapshots.
-    
-*   **Performance Profile Vie** – Used to display or save performance snapshots.In addition to these specific views, the **Editor** is displayed to show source code for a particular method call as well as the **Console View** to display the log output from the debugger. ![PerformancePerspective](/Images/appc/download/attachments/43298671/PerformancePerspective.png)
-    
+* **Profile View** – Used to control the Code Profiler, start and stop capturing performance data, and to load previously saved performance snapshots.
+
+* **Performance Profile Vie** – Used to display or save performance snapshots.In addition to these specific views, the **Editor** is displayed to show source code for a particular method call as well as the **Console View** to display the log output from the debugger. ![PerformancePerspective](/Images/appc/download/attachments/43298671/PerformancePerspective.png)
+
 
 For more details about using these views, see the sections below.
 
@@ -103,28 +103,28 @@ The main pane lists the currently active and terminated applications. In the exa
 
 The **Profile** view contains a row of icon buttons in the top-right corner. From left to right, starting with the disabled button of two x's:
 
-*   **Remove All Terminated Launches** – Removes any terminated profiler sessions from the main pane.
-    
-*   **Resume** – Resumes the profiler if it was previously suspended.
-    
-*   **Suspend** – Suspends the profiler.
-    
-*   **Terminate** – Terminates the profiler.
-    
-*   **Disconnect** – Disconnects the profiler from the application.
-    
-*   **Run Garbage Collector** – Runs the JavaScript garbage collector.
-    
-*   **Capture Performance Profiler** – Starts (if there is a green play icon) or stops (if there is a red stop icon) capturing performance data.
-    
-*   **Load Snapshot** – Loads a previously saved performance snapshot.
-    
-*   **View Menu** **–** Change the layout of this view.
-    
-*   **Minimize –** Minimize this view.
-    
-*   **Maximize –** Maximize this view.
-    
+* **Remove All Terminated Launches** – Removes any terminated profiler sessions from the main pane.
+
+* **Resume** – Resumes the profiler if it was previously suspended.
+
+* **Suspend** – Suspends the profiler.
+
+* **Terminate** – Terminates the profiler.
+
+* **Disconnect** – Disconnects the profiler from the application.
+
+* **Run Garbage Collector** – Runs the JavaScript garbage collector.
+
+* **Capture Performance Profiler** – Starts (if there is a green play icon) or stops (if there is a red stop icon) capturing performance data.
+
+* **Load Snapshot** – Loads a previously saved performance snapshot.
+
+* **View Menu** **–** Change the layout of this view.
+
+* **Minimize –** Minimize this view.
+
+* **Maximize –** Maximize this view.
+
 
 ![ProfileView](/Images/appc/download/attachments/43298671/ProfileView.png)
 
@@ -132,31 +132,31 @@ The **Profile** view contains a row of icon buttons in the top-right corner. Fro
 
 The **Performance Profile** view is used to display the data captured by a profiling session. The performance profile displays the information in two different forms:
 
-*   **Call Hierarchy** \- Displays the method calls in an hierarchical form, making it easy to follow method callers and callees. It displays the calls self-time and a cumulative time where possible. You can sort this view by one of the time columns to track the most expensive methods. This form displays the following fields:
-    
-    *   **Method** - Name of the method being called.
-        
-    *   **Self Time** - Total amount of time, in milliseconds, that all calls to this method took to execute during the interaction period. Does not include calls to other methods inside this method.
-        
-    *   **Cumulative Time** - Total amount of time, in milliseconds, that all calls to this method, and all calls to methods inside this method, took to execute during the interaction period.
-        
-    *   **File** - File location and line number of the method.
-        
-*   **Hotspots** - Displays a flat view of the methods that were involved in the profiling session. The self-time of the methods display in this view is aggregated to include all the occurrences of a method in the Call Hierarchy. You can also sort this view. This form displays the same fields as the Call Hierarchy form except cumulative time.
-    
+* **Call Hierarchy** \- Displays the method calls in an hierarchical form, making it easy to follow method callers and callees. It displays the calls self-time and a cumulative time where possible. You can sort this view by one of the time columns to track the most expensive methods. This form displays the following fields:
+
+  * **Method** - Name of the method being called.
+
+  * **Self Time** - Total amount of time, in milliseconds, that all calls to this method took to execute during the interaction period. Does not include calls to other methods inside this method.
+
+  * **Cumulative Time** - Total amount of time, in milliseconds, that all calls to this method, and all calls to methods inside this method, took to execute during the interaction period.
+
+  * **File** - File location and line number of the method.
+
+* **Hotspots** - Displays a flat view of the methods that were involved in the profiling session. The self-time of the methods display in this view is aggregated to include all the occurrences of a method in the Call Hierarchy. You can also sort this view. This form displays the same fields as the Call Hierarchy form except cumulative time.
+
 
 Whenever possible, double-clicking a row in this view opens up the file source in the **Editor** and scrolls to the line number that is specified for that call.
 
 The **Performance Profile** view contains a row of icon buttons in the top-right corner. From left to right, starting with the floppy disk icon:
 
-*   **Save Performance Snapshot** – Saves a performance snapshot.
-    
-*   **Show Percents** **–** Toggles showing percentage statistics.
-    
-*   **Minimize –** Minimize this view.
-    
-*   **Maximize –** Maximize this view.
-    
+* **Save Performance Snapshot** – Saves a performance snapshot.
+
+* **Show Percents** **–** Toggles showing percentage statistics.
+
+* **Minimize –** Minimize this view.
+
+* **Maximize –** Maximize this view.
+
 
 ![PerformanceProfileView](/Images/appc/download/attachments/43298671/PerformanceProfileView.png)
 

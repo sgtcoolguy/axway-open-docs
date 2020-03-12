@@ -1,17 +1,17 @@
-{"title":"Titanium Resources","weight":"20"} 
+{"title":"Titanium Resources","weight":"20"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [Developer resources](#Developerresources)
-        
-    *   [Example code](#Examplecode)
-        
-    *   [Help and support](#Helpandsupport)
-        
-*   [Summary](#Summary)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [Developer resources](#Developerresources)
+
+  * [Example code](#Examplecode)
+
+  * [Help and support](#Helpandsupport)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -21,32 +21,32 @@ Appcelerator strives to make the developer experience as effective and efficient
 
 ### Developer resources
 
-*   [Community Q & A](https://developer.appcelerator.com/help): Post a question and get help from the community.
-    
-*   [Developer Blog](http://www.appcelerator.com/blog): Find information about upcoming releases and other helpful articles.
-    
-*   [Appcelerator University](https://university.appcelerator.com/): Watch videos about using Appcelerator products.
-    
+* [Community Q & A](https://developer.appcelerator.com/help): Post a question and get help from the community.
+
+* [Developer Blog](http://www.appcelerator.com/blog): Find information about upcoming releases and other helpful articles.
+
+* [Appcelerator University](https://university.appcelerator.com/): Watch videos about using Appcelerator products.
+
 
 ### Example code
 
 You'll find sample code, example projects, app components, and more at the following github repositories.
 
-*   [Appcelerator github repository](https://github.com/appcelerator) – Titanium source code, free add-on modules, and the KitchenSinkCommunity Q
-    
+* [Appcelerator github repository](https://github.com/appcelerator) – Titanium source code, free add-on modules, and the KitchenSinkCommunity Q
+
 
 (Apologies for anyone we left off. This list is hardly exhaustive.)
 
 ### Help and support
 
-*   [Community Support](http://developer.appcelerator.com)
-    
-*   Twitter – Appcelerator and staff on twitter include:
-    
-    *   [@appcelerator](https://twitter.com/#!/appcelerator) is our corporate account
-        
-    *   [@appcdev](https://twitter.com/appcdev) is our developer account
-        
+* [Community Support](http://developer.appcelerator.com)
+
+* Twitter – Appcelerator and staff on twitter include:
+
+  * [@appcelerator](https://twitter.com/#!/appcelerator) is our corporate account
+
+  * [@appcdev](https://twitter.com/appcdev) is our developer account
+
 
 ## Summary
 

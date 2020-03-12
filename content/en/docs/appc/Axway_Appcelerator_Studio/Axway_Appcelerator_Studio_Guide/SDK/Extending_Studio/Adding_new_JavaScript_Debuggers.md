@@ -1,4 +1,4 @@
-{"title":"Adding new JavaScript Debuggers","weight":"40"} 
+{"title":"Adding new JavaScript Debuggers","weight":"40"}
 
 The Studio debugger infrastructure falls under the general Eclipse debugger API. For more information on how the overall architecture is structured, see the reference documentation [here](http://www.eclipse.org/articles/Article-Debugger/how-to.html). The information below covers how to extend the Studio infrastructure to implement a debugger extension in an external product capable of talking to our JavaScript debugger implementation via the [Debugger Protocol](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/Debugger_Protocol/).
 
@@ -8,25 +8,25 @@ In the case of iOS and Android, you can view the message flow between the debugg
 
 Debugger logs created under:
 
-*   _workspace_/.metadata/.plugins/com.appcelerator.titanium.mobile/logs/
-    
-    *   iosdebugger.log
-        
-    *   androiddebugger.log
-        
+* _workspace_/.metadata/.plugins/com.appcelerator.titanium.mobile/logs/
+
+  * iosdebugger.log
+
+  * androiddebugger.log
+
 
 ### General Control Flow
 
-1.  Open socket
-    
-2.  Pass socket info to iOS/Android debugger via parameter on python script (builder.py)
-    
-3.  Studio listens for connection from platform debugger and then they communicate via the debugger protocol [Debugger Protocol](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/Debugger_Protocol/)
-    
-4.  Step Over/Into command issued, then act after receipt of suspend notification with appropriate message
-    
-5.  etc.
-    
+1. Open socket
+
+2. Pass socket info to iOS/Android debugger via parameter on python script (builder.py)
+
+3. Studio listens for connection from platform debugger and then they communicate via the debugger protocol [Debugger Protocol](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/Debugger_Protocol/)
+
+4. Step Over/Into command issued, then act after receipt of suspend notification with appropriate message
+
+5. etc.
+
 
 View the transcript of a debug session at the bottom of this file for more information.
 
@@ -34,21 +34,21 @@ View the transcript of a debug session at the bottom of this file for more infor
 
 Create a new file in your home folder, e.g. "studio\_options" with the following content:
 
-*   com.aptana.debug.core/debugger\_debug = true
-    
-*   com.aptana.debug.core/skip\_debugger\_install = true
-    
+* com.aptana.debug.core/debugger\_debug = true
+
+* com.aptana.debug.core/skip\_debugger\_install = true
+
 
 ### OS X instructions
 
-1.  Install Studio from the DMG
-    
-2.  Do "Show Package Contents" on AptanaStudio3.app/TitaniumStudio.app/AppceleratorStudio.app.
-    
-3.  Edit Info.plist to add two parameters into Eclipse array: "-debug" and the absolute path to the studio\_options file mentioned above (e.g /Users/username/studio\_options).
-    
-4.  Save the file.
-    
+1. Install Studio from the DMG
+
+2. Do "Show Package Contents" on AptanaStudio3.app/TitaniumStudio.app/AppceleratorStudio.app.
+
+3. Edit Info.plist to add two parameters into Eclipse array: "-debug" and the absolute path to the studio\_options file mentioned above (e.g /Users/username/studio\_options).
+
+4. Save the file.
+
 
 ### Windows instructions
 
@@ -56,26 +56,26 @@ In the Aptana Studio/Titanium Studio/Appcelerator Studio folder, edit the .ini f
 
 ### Testing inside Studio
 
-The effect of these actions will be that there will be no checks for a FF debugger extension, the debugger port number will be fixed to 2525 and the socket timeout will be infinite.  
+The effect of these actions will be that there will be no checks for a FF debugger extension, the debugger port number will be fixed to 2525 and the socket timeout will be infinite.
 But you will still need to have Firefox (any version) installed.
 
-1.  Launch Studio
-    
-2.  Open menu Run /Debug Configurations.
-    
-3.  Under Web Browser category you should see "Firefox - Internal Server" launch configuration. If not, simple press plus button above the configurations tree view. Configuration parameters does not matter for now.
-    
-4.  Once you press the **Debug** button on the configuration dialog (or drop-down from IDE toolbar), the debug session will be initiated and Studio will start accepting connections on port 2525 (from all local IPs)
-    
-5.  From this point you could connect to it from your debug layer on the remote device
-    
+1. Launch Studio
+
+2. Open menu Run /Debug Configurations.
+
+3. Under Web Browser category you should see "Firefox - Internal Server" launch configuration. If not, simple press plus button above the configurations tree view. Configuration parameters does not matter for now.
+
+4. Once you press the **Debug** button on the configuration dialog (or drop-down from IDE toolbar), the debug session will be initiated and Studio will start accepting connections on port 2525 (from all local IPs)
+
+5. From this point you could connect to it from your debug layer on the remote device
+
 
 You don't need to support all commands listed in the protocol spec, but you need to reply to all of them. So simply reply back with "!error message". At the bottom of this message is a sample message flow.
 
-*   'enable' request should turn on debugging, otherwise debug host should be in 'run' mode where only logging to IDE works.
-    
-*   'resumed\*start' reply should always be sent beck when debugger is fully set up. basically it is a feedback on 'enable' message.
-    
+* 'enable' request should turn on debugging, otherwise debug host should be in 'run' mode where only logging to IDE works.
+
+* 'resumed\*start' reply should always be sent beck when debugger is fully set up. basically it is a feedback on 'enable' message.
+
 
 ## Sample Message Flow
 

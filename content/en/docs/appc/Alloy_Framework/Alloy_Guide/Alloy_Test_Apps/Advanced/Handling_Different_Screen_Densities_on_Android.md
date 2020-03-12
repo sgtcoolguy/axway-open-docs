@@ -1,4 +1,4 @@
-{"title":"Handling Different Screen Densities on Android","weight":"80"} 
+{"title":"Handling Different Screen Densities on Android","weight":"80"}
 
 Demonstrates how to package and use images for different screen densities on Android.
 
@@ -56,6 +56,6 @@ App folder structure
 
 ## See Also
 
-*   [Using density-specific resources on Android](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/Using_density-specific_resources_on_Android/)
-    
-*   [Supporting Multiple Screens](http://developer.android.com/guide/practices/screens_support.html) (Android Developer Center)
+* [Using density-specific resources on Android](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/Using_density-specific_resources_on_Android/)
+
+* [Supporting Multiple Screens](http://developer.android.com/guide/practices/screens_support.html) (Android Developer Center)

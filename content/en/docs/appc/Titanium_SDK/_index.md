@@ -1,4 +1,4 @@
-{"title":"Titanium SDK","weight":"80"} 
+{"title":"Titanium SDK","weight":"90"}
 
 The Titanium SDK helps you to build native cross-platform mobile application using JavaScript and the Titanium API, which abstracts the native APIs of the mobile platforms. Titanium empowers you to create immersive, full-featured applications, featuring over 80% code reuse across mobile apps. Axway licenses Titanium under the Apache 2 license and is free for both personal and commercial use.
 
@@ -42,9 +42,9 @@ Learn how to display images, and playback or stream audio and video files as wel
 
 **[Location Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/)**
 
-Access the device's GPS and add maps to your applications.  
-  
-  
+Access the device's GPS and add maps to your applications.
+
+
 **[Notification Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/)**
 
 Notify your application user base with local or remote notifications.

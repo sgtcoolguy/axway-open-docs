@@ -1,4 +1,4 @@
-{"title":"Modeling a User Account and Authentication","weight":"80"} 
+{"title":"Modeling a User Account and Authentication","weight":"80"}
 
 Demonstrates creating a user login and authentication flow using a data model.
 

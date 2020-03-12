@@ -1,23 +1,23 @@
-{"title":"Debugging Rubles","weight":"50"} 
+{"title":"Debugging Rubles","weight":"50"}
 
-*   [Overview](#Overview)
-    
-*   [Writing to the console](#Writingtotheconsole)
-    
-*   [Set the the logging level](#Setthethelogginglevel)
-    
-*   [Logging to the console](#Loggingtotheconsole)
-    
-*   [Writing out properties](#Writingoutproperties)
-    
-*   [Writing out available methods](#Writingoutavailablemethods)
-    
-*   [Disabling caching](#Disablingcaching)
-    
+* [Overview](#Overview)
+
+* [Writing to the console](#Writingtotheconsole)
+
+* [Set the logging level](#Setthelogginglevel)
+
+* [Logging to the console](#Loggingtotheconsole)
+
+* [Writing out properties](#Writingoutproperties)
+
+* [Writing out available methods](#Writingoutavailablemethods)
+
+* [Disabling caching](#Disablingcaching)
+
 
 ## Overview
 
-Debugging is a bit of a misnomer, as currently you can only really set trace output. Proper debugging is currently on the TODO list, but not yet available.
+Debugging is a bit of a misnomer, as currently, you can only really set trace output. Proper debugging is currently on the TODO list, but not yet available.
 
 ## Writing to the console
 
@@ -25,34 +25,34 @@ You can write directly to the Scripting Console by using CONSOLE.puts, i.e.:
 
 `CONSOLE.puts` `"Hello!"`
 
-## Set the the logging level
+## Set the logging level
 
-You can set the logging level in script:
+You can set the logging level in a script:
 
 `Ruble::Logger.log_level = :trace`
 
 Logging levels are:
 
-*   none
-    
-*   trace
-    
-*   info
-    
-*   warning
-    
-*   error
-    
+* none
 
-You might add this at the top of your file. With broader logging levels containing all the content from more restrictive ones (i.e. trace contains info, warning and error as well).
+* trace
 
-Output will be put to the Scripting Console, and is theme-able as per the regular theme guidelines for "console" scopes.
+* info
+
+* warning
+
+* error
+
+
+You might add this to the top of your file. With broader logging levels containing all the content from more restrictive ones (in other words, trace contains info, warning, and error as well).
+
+The output will be put to the Scripting Console and is theme-able as per the regular theme guidelines for "console" scopes.
 
 The logging level will persist at the newly set level until it is explicitly changed again.
 
 ## Logging to the console
 
-A example of turning on logging, and writing out trace, info, warning, and error messages.
+An example of turning on logging and writing out the trace, info, warning, and error messages.
 
 `require` `'ruble'`
 
@@ -132,4 +132,4 @@ It's also sometimes useful to write out the methods available on a particular ob
 
 ## Disabling caching
 
-In order to speed up bundle loading, we cache the overall structure of the bundle. This can cause problems on some versions of Windows, where a user might not see any changes until they restart Studio. To disable caching, please follow the instructions [here](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Disable_Ruble_Caching/).
+To speed up bundle loading, we cache the overall structure of the bundle. This can cause problems on some versions of Windows, where a user might not see any changes until they restart Studio. To disable caching, please follow the instructions [here](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Disable_Ruble_Caching/).

@@ -1,33 +1,33 @@
-{"title":"Titanium Platform Overview","weight":"10"} 
+{"title":"Titanium Platform Overview","weight":"10"}
 
-*   [Introduction](#Introduction)
-    
-    *   [Titanium SDK](#TitaniumSDK)
-        
-    *   [Appcelerator CLI](#AppceleratorCLI)
-        
-    *   [Hyperloop](#Hyperloop)
-        
-    *   [Alloy](#Alloy)
-        
-    *   [Titanium APIs](#TitaniumAPIs)
-        
-    *   [Axway Appcelerator Studio](#AxwayAppceleratorStudio)
-        
-    *   [Modules](#Modules)
-        
-    *   [Axway Appcelerator Dashboard](#AxwayAppceleratorDashboard)
-        
-    *   [Axway API Builder](#AxwayAPIBuilder)
-        
-*   [Titanium at 10,000 feet](#Titaniumat10,000feet)
-    
-    *   [Going Native](#GoingNative)
-        
-*   [References and Further Reading](#ReferencesandFurtherReading)
-    
-*   [Start using Titanium Platform](#StartusingTitaniumPlatform)
-    
+* [Introduction](#Introduction)
+
+  * [Titanium SDK](#TitaniumSDK)
+
+  * [Appcelerator CLI](#AppceleratorCLI)
+
+  * [Hyperloop](#Hyperloop)
+
+  * [Alloy](#Alloy)
+
+  * [Titanium APIs](#TitaniumAPIs)
+
+  * [Axway Appcelerator Studio](#AxwayAppceleratorStudio)
+
+  * [Modules](#Modules)
+
+  * [Axway Appcelerator Dashboard](#AxwayAppceleratorDashboard)
+
+  * [Axway API Builder](#AxwayAPIBuilder)
+
+* [Titanium at 10,000 feet](#Titaniumat10,000feet)
+
+  * [Going Native](#GoingNative)
+
+* [References and Further Reading](#ReferencesandFurtherReading)
+
+* [Start using Titanium Platform](#StartusingTitaniumPlatform)
+
 
 ## Objective
 
@@ -39,24 +39,24 @@ The Titanium Platform allows you to create, run, and package native mobile appli
 
 At a high-level, Titanium is the combination of:
 
-*   [Titanium SDK](#TitaniumSDK)
-    
-*   [Appcelerator CLI](#AppceleratorCLI)
-    
-*   [Hyperloop](#Hyperloop)
-    
-*   [Alloy](#undefined)
-    
-*   [Titanium APIs](#TitaniumAPIs)
-    
-*   [Axway Appcelerator Studio](#AxwayAppceleratorStudio)
-    
-*   [Modules](#undefined)
-    
-*   [Axway Appcelerator Dashboard](#AppceleratorDashboard)
-    
-*   [Axway API Builder](#AxwayAPIBuilder)
-    
+* [Titanium SDK](#TitaniumSDK)
+
+* [Appcelerator CLI](#AppceleratorCLI)
+
+* [Hyperloop](#Hyperloop)
+
+* [Alloy](#undefined)
+
+* [Titanium APIs](#TitaniumAPIs)
+
+* [Axway Appcelerator Studio](#AxwayAppceleratorStudio)
+
+* [Modules](#undefined)
+
+* [Axway Appcelerator Dashboard](#AppceleratorDashboard)
+
+* [Axway API Builder](#AxwayAPIBuilder)
+
 
 ### Titanium SDK
 
@@ -118,8 +118,8 @@ Throughout the remainder of this book, we'll work under the assumption that you'
 
 To start using the Titanium Platform, you need an account to log in to the Appcelerator Dashboard and Appcelerator Studio.
 
-*   If you want to try the Appcelerator Platform for free, [sign up for an Appcelerator Platform account](http://www.appcelerator.com/signup/).
-    
-*   If you are part of an Appcelerator Organization, your organization's Appcelerator Platform administrator sends an invitation to you to log in to the Appcelerator Dashboard and create an account.
-    
-*   If you are an administrator, see [Managing Organizations](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Organizations/) for more information about adding users to your organization's Appcelerator Platform and provisioning them either Dashboard access.
+* If you want to try the Appcelerator Platform for free, [sign up for an Appcelerator Platform account](http://www.appcelerator.com/signup/).
+
+* If you are part of an Appcelerator Organization, your organization's Appcelerator Platform administrator sends an invitation to you to log in to the Appcelerator Dashboard and create an account.
+
+* If you are an administrator, see [Managing Organizations](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Organizations/) for more information about adding users to your organization's Appcelerator Platform and provisioning them either Dashboard access.

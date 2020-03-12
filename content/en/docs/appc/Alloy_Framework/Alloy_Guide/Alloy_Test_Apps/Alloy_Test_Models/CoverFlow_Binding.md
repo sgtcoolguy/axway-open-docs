@@ -1,4 +1,4 @@
-{"title":"CoverFlow Binding","weight":"20"} 
+{"title":"CoverFlow Binding","weight":"20"}
 
 Demonstrates data binding with a CoverFlowView control, which presents images in carousel-like view.
 
@@ -56,4 +56,4 @@ app/alloy.js
 
 ## See Also
 
-*   [Titanium.UI.iOS.CoverFlowView](#!/api/Titanium.UI.iOS.CoverFlowView) API reference
+* [Titanium.UI.iOS.CoverFlowView](#!/api/Titanium.UI.iOS.CoverFlowView) API reference

@@ -1,13 +1,13 @@
-{"title":"ListView","weight":"80"} 
+{"title":"ListView","weight":"80"}
 
-*   [Basic](#Basic)
-    
-*   [Sections](#Sections)
-    
-*   [Templates](#Templates)
-    
-*   [See also](#Seealso)
-    
+* [Basic](#Basic)
+
+* [Sections](#Sections)
+
+* [Templates](#Templates)
+
+* [See also](#Seealso)
+
 
 Demonstrate basic use of the ListView element to create vertically scrolling lists of items.
 
@@ -327,14 +327,14 @@ app/controllers/templates.js
 
 ## See also
 
-*   [Alloy ListView Guide](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/ListViews/Alloy_ListView_Guide/)
-    
-    *   [Handling Events](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/ListViews/Alloy_ListView_Guide/#Handlingevents)
-        
-*   [Titanium.UI.ListView](#!/api/Titanium.UI.ListView)
-    
-*   [Titanium.UI.ListItem](#!/api/Titanium.UI.ListItem)
-    
-*   [ListDataItem](#!/api/ListDataItem) (abstract type)
-    
-*   [ItemTemplate](#!/api/ItemTemplate) (abstract type)
+* [Alloy ListView Guide](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/ListViews/Alloy_ListView_Guide/)
+
+  * [Handling Events](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/ListViews/Alloy_ListView_Guide/#Handlingevents)
+
+* [Titanium.UI.ListView](#!/api/Titanium.UI.ListView)
+
+* [Titanium.UI.ListItem](#!/api/Titanium.UI.ListItem)
+
+* [ListDataItem](#!/api/ListDataItem) (abstract type)
+
+* [ItemTemplate](#!/api/ItemTemplate) (abstract type)

@@ -1,13 +1,13 @@
-{"title":"RESTe","weight":"30"} 
+{"title":"RESTe","weight":"30"}
 
-*   [Introduction](#Introduction)
-    
-*   [Developing apps before RESTe](#DevelopingappsbeforeRESTe)
-    
-*   [RESTe](#RESTe)
-    
-*   [Further reading](#Furtherreading)
-    
+* [Introduction](#Introduction)
+
+* [Developing apps before RESTe](#DevelopingappsbeforeRESTe)
+
+* [RESTe](#RESTe)
+
+* [Further reading](#Furtherreading)
+
 
 ## Introduction
 

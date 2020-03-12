@@ -1,21 +1,21 @@
-{"title":"Integrate with Mobile Backend Services","weight":"70"} 
+{"title":"Integrate with Mobile Backend Services","weight":"70"}
 
-*   [Integrating Mobile Backend Services into your app](#IntegratingMobileBackendServicesintoyourapp)
-    
-    *   [Step 1. Register Your App with API Builder](#Step1.RegisterYourAppwithAPIBuilder)
-        
-    *   [Step 2. Configure your Titanium project](#Step2.ConfigureyourTitaniumproject)
-        
-    *   [Step 3. Authentication](#Step3.Authentication)
-        
-    *   [Step 4. Implement the Titanium Mobile Backend Services APIs](#Step4.ImplementtheTitaniumMobileBackendServicesAPIs)
-        
-    *   [Step 5. Managing your app's data](#Step5.Managingyourapp'sdata)
-        
-    *   [Step 6. Sharing MBS Objects](#Step6.SharingMBSObjects)
-        
-*   [References](#References)
-    
+* [Integrating Mobile Backend Services into your app](#IntegratingMobileBackendServicesintoyourapp)
+
+  * [Step 1. Register Your App with API Builder](#Step1.RegisterYourAppwithAPIBuilder)
+
+  * [Step 2. Configure your Titanium project](#Step2.ConfigureyourTitaniumproject)
+
+  * [Step 3. Authentication](#Step3.Authentication)
+
+  * [Step 4. Implement the Titanium Mobile Backend Services APIs](#Step4.ImplementtheTitaniumMobileBackendServicesAPIs)
+
+  * [Step 5. Managing your app's data](#Step5.Managingyourapp'sdata)
+
+  * [Step 6. Sharing MBS Objects](#Step6.SharingMBSObjects)
+
+* [References](#References)
+
 
 ## Objective
 
@@ -31,8 +31,8 @@ Over 25 APIs are available for immediate use in your app to provide the most pop
 
 ACS API support
 
-Note that when new APIs are added to MBS, they may not be immediately available in the Titanium Cloud module.  
-The since version listed after some APIs indicates the Titanium Mobile SDK release that included support for  
+Note that when new APIs are added to MBS, they may not be immediately available in the Titanium Cloud module.
+The since version listed after some APIs indicates the Titanium Mobile SDK release that included support for
 that API. (Note that the Titanium Cloud module version is not always the same as the SDK version that it ships with.)
 
 MBS is open to all app publishers, regardless of the development technology used to build the app – Titanium, Objective-C, Java, or HTML5 via frameworks like Sencha Touch or PhoneGap – we’ve got you covered. MBS provide a complete REST API along with iOS, Android and JavaScript SDKs. Any device that can make HTTP requests over the Internet can securely use MBS as its server backend.
@@ -41,14 +41,14 @@ MBS is open to all app publishers, regardless of the development technology used
 
 To integrate MBS into your app, you'll need to follow these four general steps:
 
-1.  Register your app with API Builder
-    
-2.  Configure your Titanium project to use Arrow
-    
-3.  Authenticate your API calls to the Arrow Cloud infrastructure
-    
-4.  Implement the Titanium MBS API calls within your app
-    
+1. Register your app with API Builder
+
+2. Configure your Titanium project to use Arrow
+
+3. Authenticate your API calls to the Arrow Cloud infrastructure
+
+4. Implement the Titanium MBS API calls within your app
+
 
 You might want to add a fifth step to this list: Manage the data your app collects by using the MBS control panel or RESTful API.
 
@@ -56,10 +56,10 @@ You might want to add a fifth step to this list: Manage the data your app collec
 
 Using MBS API to store and retrieve data for your app is easy.
 
-*   When creating a new application in Appcelerator Studio, make sure the **Enable Appcelerator Services** checkbox is enabled.
-    
-*   For a previously created project, open your tiapp.xml file, then click the **Enable Services** button under the _Appcelerator Service_ section.
-    
+* When creating a new application in Appcelerator Studio, make sure the **Enable Appcelerator Services** checkbox is enabled.
+
+* For a previously created project, open your tiapp.xml file, then click the **Enable Services** button under the _Appcelerator Service_ section.
+
 
 #### Step 2. Configure your Titanium project
 
@@ -227,22 +227,22 @@ Of course, there's no sense in collecting data if you don't use it. Data created
 
 The Cloud module supports Access Control Lists (ACLs) to control access to ACL resources. An ACL lets you grant read and write access to users other than the owner of an MBS object. An access control list controls read and write access to any MBS objects it's attached to. For MBS, read and write permission are defined as follows:
 
-*   **Read permission**. Includes the ability to show, query and search MBS objects.
-    
+* **Read permission**. Includes the ability to show, query and search MBS objects.
 
-*   **Write permission**. Includes the ability to update and delete MBS objects.
-    
+
+* **Write permission**. Includes the ability to update and delete MBS objects.
+
 
 An ACL can include:
 
-*   A list of user IDs granted read permission.
-    
-*   A list of user IDs granted write permission.
-    
-*   A public read flag granting read permission to **all** users.
-    
-*   A public write flag granting write permission to **all** users.
-    
+* A list of user IDs granted read permission.
+
+* A list of user IDs granted write permission.
+
+* A public read flag granting read permission to **all** users.
+
+* A public write flag granting write permission to **all** users.
+
 
 The object's owner always has read and write permission.
 
@@ -254,10 +254,10 @@ See [Ti.Cloud.ACLs](#!/api/Modules.Cloud.ACLs) for methods to create and update 
 
 ### References
 
-*   [Cloud Module Reference](#!/api/Modules.Cloud)
-    
-*   [Mobile Backend Services Getting Started](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Getting_Started/)
-    
+* [Cloud Module Reference](#!/api/Modules.Cloud)
+
+* [Mobile Backend Services Getting Started](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Getting_Started/)
+
 
 ## Summary
 

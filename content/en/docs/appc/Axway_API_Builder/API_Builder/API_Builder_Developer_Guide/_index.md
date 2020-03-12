@@ -1,4 +1,4 @@
-{"title":"API Builder Developer Guide","weight":"20"} 
+{"title":"API Builder Developer Guide","weight":"20"}
 
 API Builder 3.x is deprecated
 
@@ -8,20 +8,20 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 This guide describes the API Builder console, APIs, configuration, connectors, and the [API Runtime Configuration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Runtime_Configuration/).
 
-*   [API Builder Console](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Console/)
-    
-*   [Console Configuration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/Console_Configuration/)
-    
-*   [API Builder Project](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/)
-    
-*   [API Builder CLI](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_CLI/)
-    
-*   [API Builder APIs](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_APIs/)
-    
-*   [API Builder Connectors](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Connectors/)
-    
-*   [API Builder Flows](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Flows/)
-    
-*   [API Runtime Configuration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Runtime_Configuration/)
-    
-*   [API Builder Web](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Web/)
+* [API Builder Console](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Console/)
+
+* [Console Configuration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/Console_Configuration/)
+
+* [API Builder Project](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/)
+
+* [API Builder CLI](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_CLI/)
+
+* [API Builder APIs](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_APIs/)
+
+* [API Builder Connectors](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Connectors/)
+
+* [API Builder Flows](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Flows/)
+
+* [API Runtime Configuration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Runtime_Configuration/)
+
+* [API Builder Web](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Web/)

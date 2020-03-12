@@ -1,17 +1,17 @@
-{"title":"Managing Email Templates","weight":"20"} 
+{"title":"Managing Email Templates","weight":"20"}
 
 The Email Templates screen lets you create and edit plain text and HTML email templates. The email template's subject and body can contain [placeholder values](#placeholder) that are dynamically replaced with values you specify when sending the email using the Mobile Backend Services (MBS) [email\_from\_template](/arrowdb/latest/#!/api/Emails-method-email_from_template) REST API, Titanium.Cloud.Emails.send() method or equivalent native [iOS](http://docs.appcelerator.com/aps-sdk-apidoc/latest/ios/Classes/APSEmails.html#//api/name/send:withBlock:) or [Android](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSEmails.html) method. The email can be sent as plain text, HTML, or multi-part using these methods.
 
-*   [Creating an email template](#Creatinganemailtemplate)
-    
-*   [Editing an email template](#Editinganemailtemplate)
-    
-*   [Deleting an email template](#Deletinganemailtemplate)
-    
-*   [Sending email based on a template](#Sendingemailbasedonatemplate)
-    
-*   [Using placeholder fields](#Usingplaceholderfields)
-    
+* [Creating an email template](#Creatinganemailtemplate)
+
+* [Editing an email template](#Editinganemailtemplate)
+
+* [Deleting an email template](#Deletinganemailtemplate)
+
+* [Sending email based on a template](#Sendingemailbasedonatemplate)
+
+* [Using placeholder fields](#Usingplaceholderfields)
+
 
 ## Creating an email template
 
@@ -19,27 +19,27 @@ An email template specifies the email subject line and body, which may be HTML o
 
 To create an email template:
 
-1.  In Dashboard, select the Mobile Backend Services datasource for which to create the email template.
-    
-2.  Select **Manage Data**, then click **Email Templates**.
-    
-3.  Click **\+ Email Template**.
-    
-4.  Click the **Code** tab, and provide values for the following fields:
-    
-    1.  **Name** – Name of the email template. You will specify this name when [sending](#!/api/Modules.Cloud.Emails) the email.
-        
-    2.  **Subject** – The email's subject. The subject can contain [placeholder values](#placeholder) in double curly brackets.
-        
-    3.  **Body (HTML)** – The email's HTML-formatted body text. The body can contain [placeholder values](#placeholder) in double curly brackets.
-        
-    4.  **Body (Plain Text)** – The email's plain text-formatted body text. The body can contain [placeholder values](#placeholder) in double curly brackets.
-        
-5.  Click **Preview** to view a rendered version of the HTML body text.
-    
-    ![email_template_latest](/Images/appc/download/attachments/60145278/email_template_latest.png)
-6.  Click **Save**.
-    
+1. In Dashboard, select the Mobile Backend Services datasource for which to create the email template.
+
+2. Select **Manage Data**, then click **Email Templates**.
+
+3. Click **\+ Email Template**.
+
+4. Click the **Code** tab, and provide values for the following fields:
+
+  1. **Name** – Name of the email template. You will specify this name when [sending](#!/api/Modules.Cloud.Emails) the email.
+
+  2. **Subject** – The email's subject. The subject can contain [placeholder values](#placeholder) in double curly brackets.
+
+  3. **Body (HTML)** – The email's HTML-formatted body text. The body can contain [placeholder values](#placeholder) in double curly brackets.
+
+  4. **Body (Plain Text)** – The email's plain text-formatted body text. The body can contain [placeholder values](#placeholder) in double curly brackets.
+
+5. Click **Preview** to view a rendered version of the HTML body text.
+
+  ![email_template_latest](/Images/appc/download/attachments/60145278/email_template_latest.png)
+6. Click **Save**.
+
 
 Below is the sample HTML used in the above screenshot:
 
@@ -143,37 +143,37 @@ Below is the sample HTML used in the above screenshot:
 
 To edit an email template:
 
-1.  In Dashboard, select the Mobile Backend Services datasource for which to edit an email template.
-    
-2.  Select **Manage Data**, then click **Email Templates**.
-    
-3.  Select the **+** icon for the email template to edit. The email template details are displayed.
-    
-4.  Select the **Action** icon for the email template. You may have to scroll to the right.
-    
-5.  Select **Edit** from the _Action_ menu list.
-    
-6.  Make the desired changes to the email template.
-    
-7.  Click **Save**.
-    
+1. In Dashboard, select the Mobile Backend Services datasource for which to edit an email template.
+
+2. Select **Manage Data**, then click **Email Templates**.
+
+3. Select the **+** icon for the email template to edit. The email template details are displayed.
+
+4. Select the **Action** icon for the email template. You may have to scroll to the right.
+
+5. Select **Edit** from the _Action_ menu list.
+
+6. Make the desired changes to the email template.
+
+7. Click **Save**.
+
 
 ## Deleting an email template
 
 To delete an email template:
 
-1.  In Dashboard, select the Mobile Backend Services datasource from which to delete an email template.
-    
-2.  Select **Manage Data**, then click **Email Templates**.
-    
-3.  Select the **+** icon for the email template to delete. The email template details are displayed.
-    
-4.  Select the **Action** icon for the email template. You may have to scroll to the right.
-    
-5.  Select **Delete** from the _Action_ menu list.
-    
-6.  Click **Continue** to confirm the deletion of the email template.
-    
+1. In Dashboard, select the Mobile Backend Services datasource from which to delete an email template.
+
+2. Select **Manage Data**, then click **Email Templates**.
+
+3. Select the **+** icon for the email template to delete. The email template details are displayed.
+
+4. Select the **Action** icon for the email template. You may have to scroll to the right.
+
+5. Select **Delete** from the _Action_ menu list.
+
+6. Click **Continue** to confirm the deletion of the email template.
+
 
 ## Sending email based on a template
 

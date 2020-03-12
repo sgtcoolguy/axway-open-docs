@@ -1,15 +1,15 @@
-{"title":"Contents","weight":"20"} 
+{"title":"Contents","weight":"20"}
 
 You might wonder what features of JavaScript you can use within your Titanium Mobile applications. As the tests below show, advanced features vary by platform. However, overall Titanium is highly compliant to the ECMA-262 specification: version 3 is fully supported and most of version 5 is also supported. Keep these points in mind:
 
-*   On Android, Titanium includes either the Rhino or V8 interpreter, depending on the build option you select in tiapp.xml.
-    
-*   On iOS, Titanium includes the JavaScriptCore engine.
-    
-*   Titanium's MobileWeb compliance is not included here because in that case, the user's browser type and version would determine support not Titanium's runtime environment.
-    
-*   We're talking here about the JavaScript interpreter that is used to run your Titanium code; we're not talking about JavaScript support within the mobile browsers (e.g. Mobile Safari) on the devices/simulators.
-    
+* On Android, Titanium includes either the Rhino or V8 interpreter, depending on the build option you select in tiapp.xml.
+
+* On iOS, Titanium includes the JavaScriptCore engine.
+
+* Titanium's MobileWeb compliance is not included here because in that case, the user's browser type and version would determine support not Titanium's runtime environment.
+
+* We're talking here about the JavaScript interpreter that is used to run your Titanium code; we're not talking about JavaScript support within the mobile browsers (e.g. Mobile Safari) on the devices/simulators.
+
 
 ## Feature detection
 
@@ -285,8 +285,8 @@ Want to test the results on your own? Download, import, and build this project: 
 
 ## References
 
-*   [ECMAScript 5 compatibility table](http://kangax.github.com/es5-compat-table/)
-    
-*   [ECMAScript specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
-    
-*   [Wikipedia - ECMAScript](http://en.wikipedia.org/wiki/ECMAScript)
+* [ECMAScript 5 compatibility table](http://kangax.github.com/es5-compat-table/)
+
+* [ECMAScript specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
+
+* [Wikipedia - ECMAScript](http://en.wikipedia.org/wiki/ECMAScript)

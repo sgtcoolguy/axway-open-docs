@@ -1,32 +1,32 @@
-{"title":"Titanium Module Concepts","weight":"20"} 
+{"title":"Titanium Module Concepts","weight":"20"}
 
-*   [Packaged Titanium modules](#PackagedTitaniummodules)
-    
-    *   [Native modules](#Nativemodules)
-        
-        *   [Proxies](#Proxies)
-            
-        *   [Native module objects](#Nativemoduleobjects)
-            
-        *   [Views and view proxies](#Viewsandviewproxies)
-            
-        *   [Converting between JavaScript and native objects](#ConvertingbetweenJavaScriptandnativeobjects)
-            
-        *   [Events and callbacks](#Eventsandcallbacks)
-            
-        *   [Threading](#Threading)
-            
-    *   [Packaged JavaScript and hybrid modules](#PackagedJavaScriptandhybridmodules)
-        
+* [Packaged Titanium modules](#PackagedTitaniummodules)
+
+  * [Native modules](#Nativemodules)
+
+    * [Proxies](#Proxies)
+
+    * [Native module objects](#Nativemoduleobjects)
+
+    * [Views and view proxies](#Viewsandviewproxies)
+
+    * [Converting between JavaScript and native objects](#ConvertingbetweenJavaScriptandnativeobjects)
+
+    * [Events and callbacks](#Eventsandcallbacks)
+
+    * [Threading](#Threading)
+
+  * [Packaged JavaScript and hybrid modules](#PackagedJavaScriptandhybridmodules)
+
 
 The Titanium API is made up of _modules_\--collections of related methods, properties, and constants. There are several types of modules:
 
-*   The Titanium namespace is made up of built-in modules--modules such as Titanium.UI and Titanium.Geolocation. These modules are always available to Titanium applications.
-    
-*   Packaged modules are optional extensions to the Titanium API that can be imported into your application using the require method. Packaged modules are imported using an identifier (such as ti.cloud). Packaged modules can include native code, JavaScript, or both. Packaged modules are available from the Appcelerator Marketplace, as well as other sources.
-    
-*   CommonJS modules can be used in your application to structure and organize code. Unlike packaged modules, CommonJS modules are not managed by Studio or the titanium command-line interface. To import a CommonJS module, you import it using the absolute or relative path to the module inside your project's Resources folder.
-    
+* The Titanium namespace is made up of built-in modules--modules such as Titanium.UI and Titanium.Geolocation. These modules are always available to Titanium applications.
+
+* Packaged modules are optional extensions to the Titanium API that can be imported into your application using the require method. Packaged modules are imported using an identifier (such as ti.cloud). Packaged modules can include native code, JavaScript, or both. Packaged modules are available from the Appcelerator Marketplace, as well as other sources.
+
+* CommonJS modules can be used in your application to structure and organize code. Unlike packaged modules, CommonJS modules are not managed by Studio or the titanium command-line interface. To import a CommonJS module, you import it using the absolute or relative path to the module inside your project's Resources folder.
+
 
 This section deals with extending the Titanium API by building packaged modules, which can be sold through the Appcelerator Marketplace or distributed through other means.
 
@@ -42,18 +42,18 @@ Since packaged modules can contain native code, a module can generally do anythi
 
 To write a native module for Android or iOS, you need to be familiar with several concepts:
 
-*   Proxies
-    
-*   Native Module Objects
-    
-*   Views and View Proxies
-    
-*   Converting between JavaScript and native objects
-    
-*   Events and Callbacks
-    
-*   Threading
-    
+* Proxies
+
+* Native Module Objects
+
+* Views and View Proxies
+
+* Converting between JavaScript and native objects
+
+* Events and Callbacks
+
+* Threading
+
 
 #### Proxies
 
@@ -103,12 +103,12 @@ For UI components, there are some additional classes you'll need to use. A view 
 
 There are several special features about view and view proxies:
 
-*   When you set a property on the view proxy, the underlying native view may not exist. Therefore, the view proxy is responsible for maintaining the properties.
-    
-*   When a view is created, it is initialized with the current set of properties stored by the view proxy.
-    
-*   When a view proxy's properties are updated, the view is updated as well.
-    
+* When you set a property on the view proxy, the underlying native view may not exist. Therefore, the view proxy is responsible for maintaining the properties.
+
+* When a view is created, it is initialized with the current set of properties stored by the view proxy.
+
+* When a view proxy's properties are updated, the view is updated as well.
+
 
 #### Converting between JavaScript and native objects
 
@@ -116,21 +116,21 @@ When you pass an object to a native method, or return an object from a native me
 
 Each native platform has its own set of helpers for converting between JavaScript objects and native objects. However, there are some similarities on both platforms:
 
-*   Primitive values, such as numbers, strings and arrays can be converted to their equivalent values.
-    
-*   Plain JavaScript objects can be converted to native dictionary objects (Java HashMap or Objective-C NSDictionary, for example).
-    
-*   More complex types can be passed by creating a special proxy class to represent them.
-    
+* Primitive values, such as numbers, strings and arrays can be converted to their equivalent values.
+
+* Plain JavaScript objects can be converted to native dictionary objects (Java HashMap or Objective-C NSDictionary, for example).
+
+* More complex types can be passed by creating a special proxy class to represent them.
+
 
 #### Events and callbacks
 
 When performing an asynchronous operation, you can send data back to the JavaScript layer using events or callbacks.
 
-*   An _event_ results in an event listener function being called on all registered listeners.
-    
-*   A _callback_ invokes a specific JavaScript function.
-    
+* An _event_ results in an event listener function being called on all registered listeners.
+
+* A _callback_ invokes a specific JavaScript function.
+
 
 Because events can have multiple registered listeners, they are somewhat more flexible than callbacks.
 
@@ -138,10 +138,10 @@ Because events can have multiple registered listeners, they are somewhat more fl
 
 JavaScript is inherently single-threaded; it provides no mechanisms for synchronizing between multiple threads. However, the native platforms support multiple threads. In both iOS and Android, an application has a single main thread (or UI thread), which is the only thread allowed to interact with native UI elements. This thread is separate from the JavaScript runtime thread, so both iOS and Android provide methods for executing code on the main thread. Doing anything time-consuming on the UI thread can cause the UI to freeze up, so you should only use the UI thread when necessary:
 
-*   Use the UI thread when directly manipulating native UI elements.
-    
-*   Avoid blocking the UI thread for any reason.
-    
+* Use the UI thread when directly manipulating native UI elements.
+
+* Avoid blocking the UI thread for any reason.
+
 
 When performing a long-running task in native code, you can spawn a thread or use a native API that is asynchronous. You can deliver results back to the JavaScript runtime thread by calling a callback method or firing an event. Callback functions and event listeners are invoked on the JavaScript runtime thread.
 

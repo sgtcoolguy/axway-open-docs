@@ -1,45 +1,45 @@
-{"title":"Git","weight":"20"} 
+{"title":"Git","weight":"20"}
 
-*   [Getting Started with Git](#GettingStartedwithGit)
-    
-    *   [Installation](#Installation)
-        
-        *   [Windows](#Windows)
-            
-        *   [Re-Installing Portable Git](#Re-InstallingPortableGit)
-            
-*   [Importing an existing Git repository](#ImportinganexistingGitrepository)
-    
-*   [Importing and forking a Github repository](#ImportingandforkingaGithubrepository)
-    
-*   [Creating a new Git repo for an existing project](#CreatinganewGitrepoforanexistingproject)
-    
-    *   [Project Explorer](#ProjectExplorer)
-        
-    *   [App Explorer](#AppExplorer)
-        
-*   [Git Actions](#GitActions)
-    
-    *   [Staging/Unstaging files](#Staging/Unstagingfiles)
-        
-    *   [Reverting files](#Revertingfiles)
-        
-    *   [Committing](#Committing)
-        
-    *   [Push/Pull](#Push/Pull)
-        
-    *   [Branch-related actions](#Branch-relatedactions)
-        
-    *   [Tag actions](#Tagactions)
-        
-*   [Git UI modifications](#GitUImodifications)
-    
-*   [Preferences](#Preferences)
-    
-    *   [Keyboard shortcuts](#Keyboardshortcuts)
-        
-    *   [App Explorer-specific functionality](#AppExplorer-specificfunctionality)
-        
+* [Getting Started with Git](#GettingStartedwithGit)
+
+  * [Installation](#Installation)
+
+    * [Windows](#Windows)
+
+    * [Re-Installing Portable Git](#Re-InstallingPortableGit)
+
+* [Importing an existing Git repository](#ImportinganexistingGitrepository)
+
+* [Importing and forking a Github repository](#ImportingandforkingaGithubrepository)
+
+* [Creating a new Git repo for an existing project](#CreatinganewGitrepoforanexistingproject)
+
+  * [Project Explorer](#ProjectExplorer)
+
+  * [App Explorer](#AppExplorer)
+
+* [Git Actions](#GitActions)
+
+  * [Staging/Unstaging files](#Staging/Unstagingfiles)
+
+  * [Reverting files](#Revertingfiles)
+
+  * [Committing](#Committing)
+
+  * [Push/Pull](#Push/Pull)
+
+  * [Branch-related actions](#Branch-relatedactions)
+
+  * [Tag actions](#Tagactions)
+
+* [Git UI modifications](#GitUImodifications)
+
+* [Preferences](#Preferences)
+
+  * [Keyboard shortcuts](#Keyboardshortcuts)
+
+  * [App Explorer-specific functionality](#AppExplorer-specificfunctionality)
+
 
 Aptana Studio 3 is shipped with a built-in support for Git source control.
 
@@ -47,10 +47,10 @@ Aptana Studio 3 is shipped with a built-in support for Git source control.
 
 It may be helpful to review tutorials on getting started with Git outside the IDE as a general primer on how it works and how to get it installed.
 
-*   [http://help.github.com/](http://help.github.com/) - Github's help docs, which are a great starting place.
-    
-*   [http://cworth.org/hgbook-git/tour/](http://cworth.org/hgbook-git/tour/)
-    
+* [http://help.github.com/](http://help.github.com/) - Github's help docs, which are a great starting place.
+
+* [http://cworth.org/hgbook-git/tour/](http://cworth.org/hgbook-git/tour/)
+
 
 ### Installation
 
@@ -64,12 +64,12 @@ We pre-package Portable Git with Studio 3 for Windows. We recommend that you use
 
 If you happen to have skipped the git installation to begin with, and now need to install it after the fact:
 
-1.  Open up the file WORKSPACE\_DIR\\.metadata\\.plugins\\org.eclipse.core.runtime\\.settings\\com.aptana.git.ui (it may be something like: C:\\Users\\username\\Documents\\Aptana Studio 3 Workspace\\.metadata\\.plugins\\org.eclipse.core.runtime\\.settings)
-    
-2.  Delete the line "ignore\_no\_git=true"
-    
-3.  Restart Studio
-    
+1. Open up the file WORKSPACE\_DIR\\.metadata\\.plugins\\org.eclipse.core.runtime\\.settings\\com.aptana.git.ui (it may be something like: C:\\Users\\username\\Documents\\Aptana Studio 3 Workspace\\.metadata\\.plugins\\org.eclipse.core.runtime\\.settings)
+
+2. Delete the line "ignore\_no\_git=true"
+
+3. Restart Studio
+
 
 ## Importing an existing Git repository
 
@@ -85,10 +85,10 @@ To fork and clone a Github project, select File > Import... or right-click in th
 
 Inside the Project Explorer, Git actions live under the right-click "Team" menu.
 
-1.  Click **Team > Share Project...**
-    
-2.  Select location and click **Create**
-    
+1. Click **Team > Share Project...**
+
+2. Select location and click **Create**
+
 
 ### App Explorer
 
@@ -142,5 +142,5 @@ All git commands share a common keybinding prefix. On Mac that is Control+Comman
 
 We've made the App Explorer tie into our Git support to make it even easier to deal with a single project attached to git. Specifically, the view contains a branch drop-down menu after the project selector. This branch menu will list all of the local branches available, and will mark branches containing changes using the \* (asterisk) "dirty" indicator. We also show left/right arrows as indicators if there are changes to push or pull to remotes.
 
-Additionally, all the git operations are found under the gear toolbar menu - as well as in the right-click context menu under Team.  
+Additionally, all the git operations are found under the gear toolbar menu - as well as in the right-click context menu under Team.
 ![App_Explorer_git](/Images/appc/download/attachments/30083193/App_Explorer_git.png)

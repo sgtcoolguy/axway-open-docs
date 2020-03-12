@@ -1,15 +1,15 @@
-{"title":"Filtering Ruble Items Per-Platform","weight":"60"} 
+{"title":"Filtering Ruble Items Per-Platform","weight":"60"}
 
-*   [Overview](#Overview)
-    
-*   [Wrapping an item in a per-platform conditional](#Wrappinganiteminaper-platformconditional)
-    
-*   [Specifying per-platform options](#Specifyingper-platformoptions)
-    
+* [Overview](#Overview)
+
+* [Wrapping an item in a per-platform conditional](#Wrappinganiteminaper-platformconditional)
+
+* [Specifying per-platform options](#Specifyingper-platformoptions)
+
 
 ## Overview
 
-Sometimes you want a snippet, command, sample, or other item to only appear on certain platforms. To do so, you can use some platform specifiers.
+Sometimes you want a snippet, command, sample, or another item to only appear on certain platforms. To do so, you can use some platform specifiers.
 
 ## Wrapping an item in a per-platform conditional
 
@@ -67,7 +67,7 @@ is\_unix?
 
 ## Specifying per-platform options
 
-Sometimes, you just want an item to be bound to a different key per-platform. That can be done by using the [PLATFORM\_SPECIFIER](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Specification/#PLATFORM_SPECIFIER). However, you could accomplish the same thing by conditionally setting the property using the same syntax as above with Ruble.is\_mac, for example.
+Sometimes, you want an item to be bound to a different key per-platform. That can be done by using the [PLATFORM\_SPECIFIER](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Specification/#PLATFORM_SPECIFIER). However, you could accomplish the same thing by conditionally setting the property using the same syntax as above with Ruble.is\_mac, for example.
 
 `require` `'ruble'`
 
@@ -93,9 +93,9 @@ Sometimes, you just want an item to be bound to a different key per-platform. Th
 
 Currently, only the following properties support platform specifiers:
 
-*   key\_binding
-    
-*   invoke
-    
+* key\_binding
+
+* invoke
+
 
 Alternatively, you could also wrap the setting of various properties in conditionals that test the platform using the calls from the previous section.

@@ -1,37 +1,37 @@
-{"title":"Layouts Positioning and the View Hierarchy","weight":"20"} 
+{"title":"Layouts Positioning and the View Hierarchy","weight":"20"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [Units](#Units)
-        
-        *   [Setting default units in tiapp.xml](#Settingdefaultunitsintiapp.xml)
-            
-    *   [The coordinates grid](#Thecoordinatesgrid)
-        
-    *   [Positioning and dimensions of elements](#Positioninganddimensionsofelements)
-        
-    *   [Layout modes](#Layoutmodes)
-        
-    *   [Auto-size behaviors](#Auto-sizebehaviors)
-        
-        *   [ScrollView content sizes](#ScrollViewcontentsizes)
-            
-    *   [zIndex & default stacking](#zIndex&defaultstacking)
-        
-    *   [Hands-on practice](#Hands-onpractice)
-        
-        *   [Goal](#Goal)
-            
-        *   [Resources](#Resources)
-            
-        *   [Steps](#Steps)
-            
-*   [Summary](#Summary)
-    
-*   [References and further reading](#Referencesandfurtherreading)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [Units](#Units)
+
+    * [Setting default units in tiapp.xml](#Settingdefaultunitsintiapp.xml)
+
+  * [The coordinates grid](#Thecoordinatesgrid)
+
+  * [Positioning and dimensions of elements](#Positioninganddimensionsofelements)
+
+  * [Layout modes](#Layoutmodes)
+
+  * [Auto-size behaviors](#Auto-sizebehaviors)
+
+    * [ScrollView content sizes](#ScrollViewcontentsizes)
+
+  * [zIndex & default stacking](#zIndex&defaultstacking)
+
+  * [Hands-on practice](#Hands-onpractice)
+
+    * [Goal](#Goal)
+
+    * [Resources](#Resources)
+
+    * [Steps](#Steps)
+
+* [Summary](#Summary)
+
+* [References and further reading](#Referencesandfurtherreading)
+
 
 ## Objective
 
@@ -43,16 +43,16 @@ The [Composite UI Layout](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributin
 
 In this guide, we're going to explore the following factors that affect how you position elements within your app's UI:
 
-*   Units
-    
-*   The coordinates grid
-    
-*   Positioning and the view hierarchy
-    
-*   Layout modes
-    
-*   zIndex & default stacking order
-    
+* Units
+
+* The coordinates grid
+
+* Positioning and the view hierarchy
+
+* Layout modes
+
+* zIndex & default stacking order
+
 
 ### Units
 
@@ -60,39 +60,39 @@ Placement and dimensions of UI elements are specified using a numeric value plus
 
 First, a couple of definitions we'll use in the rest of this guide:
 
-*   **dip**: Density-independent pixels. A measurement which is translated natively to a corresponding pixel measure using a scale factor based on a platform-specific "default" density, and the device's physical density.
-    
-*   **System unit**: A platform-dependent unit which is the default for how the system presents its view information to the native layout system. On Android this is pixels; on iOS it is dip.
-    
+* **dip**: Density-independent pixels. A measurement which is translated natively to a corresponding pixel measure using a scale factor based on a platform-specific "default" density, and the device's physical density.
+
+* **System unit**: A platform-dependent unit which is the default for how the system presents its view information to the native layout system. On Android this is pixels; on iOS it is dip.
+
 
 Supported units are:
 
-*   Absolute measurements
-    
-    *   **px**: pixels
-        
-    *   **mm**: millimeters
-        
-    *   **cm**: centimeters
-        
-    *   **in**: inches
-        
-    *   **dp/dip**: Density-independent pixels (we sometimes call these "points")
-        
-        *   Android: actual pixels = dip \* (screen density) / 160
-            
-        *   iOS: actual pixels = dip \* (screen density) / 163 (effectively 1dip=1px on standard, 1dip=2px on retina)
-            
-        *   Windows: actual pixels = dip \* (screen density) / 96
-            
-*   Relative measurements
-    
-    *   **%**: Percentage of the size of the parent.
-        
-        *   For x-axis values (width, left, right, center.x) this is relative to the parent's width
-            
-        *   For y-axis values (height, top, bottom, center.y) this is relative to the parent's height.
-            
+* Absolute measurements
+
+  * **px**: pixels
+
+  * **mm**: millimeters
+
+  * **cm**: centimeters
+
+  * **in**: inches
+
+  * **dp/dip**: Density-independent pixels (we sometimes call these "points")
+
+    * Android: actual pixels = dip \* (screen density) / 160
+
+    * iOS: actual pixels = dip \* (screen density) / 163 (effectively 1dip=1px on standard, 1dip=2px on retina)
+
+    * Windows: actual pixels = dip \* (screen density) / 96
+
+* Relative measurements
+
+  * **%**: Percentage of the size of the parent.
+
+    * For x-axis values (width, left, right, center.x) this is relative to the parent's width
+
+    * For y-axis values (height, top, bottom, center.y) this is relative to the parent's height.
+
 
 You would use these units of measurement like this:
 
@@ -124,18 +124,18 @@ As of SDK 8.0.0, dp starts supported for default unit on Windows. Since Windows 
 
 Titanium uses a grid coordinate system for layout. Grid locations are based on the system unit (platform-dependent unit). This means that by default on iOS, elements are positioned on a density-independent grid and on Android on a density-dependent grid. The net result is that on iOS, elements are positioned in visually the same locations regardless of the actual density of the screen. On Android, elements are positioned at the same absolute pixel locations and might lay out differently depending on the device.
 
-*   iPhone with either original or retina display is based on a 320 x 480 dip grid.
-    
-*   iPad is based on a 1024 x 768 dip grid.
-    
-*   Android device screen sizes vary. Considering these emulator examples:
-    
-    *   HVGA emulator is 320 x 480 px
-        
-    *   WVGA800 emulator is 480 x 800 px
-        
-    *   WVGA854 emulator is 480 x 854 px
-        
+* iPhone with either original or retina display is based on a 320 x 480 dip grid.
+
+* iPad is based on a 1024 x 768 dip grid.
+
+* Android device screen sizes vary. Considering these emulator examples:
+
+  * HVGA emulator is 320 x 480 px
+
+  * WVGA800 emulator is 480 x 800 px
+
+  * WVGA854 emulator is 480 x 854 px
+
 
 Remember that you can specify dp or dip units on Android (and even set an app-level default in tiapp.xml) to achieve the same density-independent grid as offered by default on iOS.
 
@@ -143,16 +143,16 @@ Remember that you can specify dp or dip units on Android (and even set an app-le
 
 Elements in Titanium are positioned relative to their parent container, such as a window or view. The positional options are:
 
-*   top property which is relative to the parent's top edge.
-    
-*   left property which is relative to the parent's left edge.
-    
-*   bottom property which is relative to the parent's bottom edge. (Zero is located at the parent's bottom edge and higher numbers are above the bottom edge.)
-    
-*   right property which is relative to the parent's right edge. (Zero is located at the parent's right edge and higher numbers are to the left of the right edge.)
-    
-*   center property specifying the position of the view's center point relative to the parent's top/left corner.
-    
+* top property which is relative to the parent's top edge.
+
+* left property which is relative to the parent's left edge.
+
+* bottom property which is relative to the parent's bottom edge. (Zero is located at the parent's bottom edge and higher numbers are above the bottom edge.)
+
+* right property which is relative to the parent's right edge. (Zero is located at the parent's right edge and higher numbers are to the left of the right edge.)
+
+* center property specifying the position of the view's center point relative to the parent's top/left corner.
+
 
 (A read-only size property is available, which provides the width and height of a view after it has been laid out by the window. This property won't provide the actual size of the view until a postlayout event has been received.)
 
@@ -238,14 +238,14 @@ Positioning
 
 Titanium Windows and Views can employ one of three layout modes by setting its layout property to one of the following values:
 
-*   composite - This is the default mode. Views are stacked on top of each other, where the last view added will be on top (unless zIndex is specified). Positional properties are relative to the parent container.
-    
-*   vertical - This layout mode stacks child views vertically and are horizontally centered. The child's top property becomes an offset value. It describes the number of units below the previously added view's bottom edge and can be used as padding.
-    
-*   horizontal - This layout mode lines up child views horizontally from left to right, starting from the parent's top/left corner. If horizontalWrap is set true, will wrap views to the next row if they don't fit on the current row. The child's left property becomes an offset. It's the position from the previous sibling's right edge and can be used as padding.
-    
+* composite - This is the default mode. Views are stacked on top of each other, where the last view added will be on top (unless zIndex is specified). Positional properties are relative to the parent container.
 
-Here's an example of these layouts in action:  
+* vertical - This layout mode stacks child views vertically and are horizontally centered. The child's top property becomes an offset value. It describes the number of units below the previously added view's bottom edge and can be used as padding.
+
+* horizontal - This layout mode lines up child views horizontally from left to right, starting from the parent's top/left corner. If horizontalWrap is set true, will wrap views to the next row if they don't fit on the current row. The child's left property becomes an offset. It's the position from the previous sibling's right edge and can be used as padding.
+
+
+Here's an example of these layouts in action:
 ![vert_and_horiz](/Images/appc/download/attachments/29004895/vert_and_horiz.png)
 
 Layout modes
@@ -318,10 +318,10 @@ Layout modes
 
 You can auto-size a UI element by setting its width and height properties to one of the following constants:
 
-*   Ti.UI.SIZE will set the width or height to just-fit the view's contents
-    
-*   Ti.UI.FILL will set the width or height to fill the parent. For a composite layout , this will be equal to the parent's width or height and will disregard previously added child views. For horizontal and vertical layouts, this takes into account previously added child views and will fill the remaining width or height available within the parent
-    
+* Ti.UI.SIZE will set the width or height to just-fit the view's contents
+
+* Ti.UI.FILL will set the width or height to fill the parent. For a composite layout , this will be equal to the parent's width or height and will disregard previously added child views. For horizontal and vertical layouts, this takes into account previously added child views and will fill the remaining width or height available within the parent
+
 
 UI components exhibit default SIZE or FILL behaviors, as listed in this table:
 
@@ -377,10 +377,10 @@ TableViewSection
 
 In the case of ScrollView, contentWidth and contentHeight may also be set to "auto" or Ti.UI.SIZE, and in those cases, this is the expected behavior:
 
-*   When all children views have FILL behavior, the content area of the scroll view will be clipped to the physical size of the scroll view
-    
-*   Otherwise, the content area will grow according to the bottom offset of the bottom-most View and the right offset of right-most View. In some cases the bottom-most and right-most View may be the same View.
-    
+* When all children views have FILL behavior, the content area of the scroll view will be clipped to the physical size of the scroll view
+
+* Otherwise, the content area will grow according to the bottom offset of the bottom-most View and the right offset of right-most View. In some cases the bottom-most and right-most View may be the same View.
+
 
 ### zIndex & default stacking
 
@@ -400,20 +400,20 @@ To perform the steps in this activity, you will need the gridlines module from [
 
 #### Steps
 
-1.  Create a new Titanium Mobile project.
-    
-2.  Create a gridlines.js file containing the code shown at the Gist linked to above.
-    
-3.  In app.js, remove all of the existing code. Declare a window, require the grid line module, and draw grid lines every 20 points, following the example code as shown in the Gist.
-    
-4.  Implement the positioning code shown in the example labeled "Positioning" above. This will draw red, blue, yellow, and green boxes at various positions on the screen.
-    
-5.  Build and run the project. Count the gridlines to confirm that elements were placed as described in this chapter.
-    
-6.  Adjust the positioning properties of the various boxes to test positioning rules.
-    
-7.  Try setting the window's layout property to vertical or horizontal to see the effect on the lines and boxes. Adjust the code so that the boxes are visible.
-    
+1. Create a new Titanium Mobile project.
+
+2. Create a gridlines.js file containing the code shown at the Gist linked to above.
+
+3. In app.js, remove all of the existing code. Declare a window, require the grid line module, and draw grid lines every 20 points, following the example code as shown in the Gist.
+
+4. Implement the positioning code shown in the example labeled "Positioning" above. This will draw red, blue, yellow, and green boxes at various positions on the screen.
+
+5. Build and run the project. Count the gridlines to confirm that elements were placed as described in this chapter.
+
+6. Adjust the positioning properties of the various boxes to test positioning rules.
+
+7. Try setting the window's layout property to vertical or horizontal to see the effect on the lines and boxes. Adjust the code so that the boxes are visible.
+
 
 ## Summary
 
@@ -421,8 +421,8 @@ In this section, you learned how to lay out your user interface components using
 
 ## References and further reading
 
-*   [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/3.2_positioning.zip)
-    
-*   Titanium [UI Composite Layout Behavior Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/UI_Composite_Layout_Behavior_Spec/)
-    
-*   [Titanium app for explaining layout mechanisms](http://blog.krawaller.se/posts/titanium-app-for-explaining-layout-mechanisms/)
+* [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/3.2_positioning.zip)
+
+* Titanium [UI Composite Layout Behavior Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/UI_Composite_Layout_Behavior_Spec/)
+
+* [Titanium app for explaining layout mechanisms](http://blog.krawaller.se/posts/titanium-app-for-explaining-layout-mechanisms/)

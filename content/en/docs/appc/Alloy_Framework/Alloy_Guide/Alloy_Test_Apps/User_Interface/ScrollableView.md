@@ -1,4 +1,4 @@
-{"title":"ScrollableView","weight":"150"} 
+{"title":"ScrollableView","weight":"150"}
 
 Demonstrates basic use of ScrollableView control to present a horizontally-scrolling set of child views, called _pages._
 
@@ -60,4 +60,4 @@ app/controllers/index.js
 
 ## See also
 
-*   [Titanium.UI.ScrollableView](#!/api/Titanium.UI.ScrollableView) API reference
+* [Titanium.UI.ScrollableView](#!/api/Titanium.UI.ScrollableView) API reference

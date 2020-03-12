@@ -1,4 +1,4 @@
-{"title":"API Builder Models","weight":"20"} 
+{"title":"API Builder Models","weight":"20"}
 
 API Builder 3.x is deprecated
 
@@ -6,46 +6,46 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-*   [Introduction](#Introduction)
-    
-*   [Model definition](#Modeldefinition)
-    
-    *   [Field definition](#Fielddefinition)
-        
-    *   [Model schema example](#Modelschemaexample)
-        
-*   [Modify an existing model](#Modifyanexistingmodel)
-    
-    *   [Reduce a model](#Reduceamodel)
-        
-    *   [Extend a model](#Extendamodel)
-        
-*   [Create a composite model](#Createacompositemodel)
-    
-    *   [Left join example](#Leftjoinexample)
-        
-    *   [Inner join example](#Innerjoinexample)
-        
-*   [Field name mappings](#Fieldnamemappings)
-    
-*   [Field input validation](#Fieldinputvalidation)
-    
-*   [Model input validation](#Modelinputvalidation)
-    
-*   [Customizing generated model APIs](#CustomizinggeneratedmodelAPIs)
-    
-*   [Programmatic CRUD interface](#ProgrammaticCRUDinterface)
-    
-    *   [Delete all records](#Deleteallrecords)
-        
-    *   [Create, update, delete a record](#Create,update,deletearecord)
-        
-    *   [Run a query](#Runaquery)
-        
-*   [Restricting CRUD endpoints](#RestrictingCRUDendpoints)
-    
-*   [Predefined or custom endpoints](#Predefinedorcustomendpoints)
-    
+* [Introduction](#Introduction)
+
+* [Model definition](#Modeldefinition)
+
+  * [Field definition](#Fielddefinition)
+
+  * [Model schema example](#Modelschemaexample)
+
+* [Modify an existing model](#Modifyanexistingmodel)
+
+  * [Reduce a model](#Reduceamodel)
+
+  * [Extend a model](#Extendamodel)
+
+* [Create a composite model](#Createacompositemodel)
+
+  * [Left join example](#Leftjoinexample)
+
+  * [Inner join example](#Innerjoinexample)
+
+* [Field name mappings](#Fieldnamemappings)
+
+* [Field input validation](#Fieldinputvalidation)
+
+* [Model input validation](#Modelinputvalidation)
+
+* [Customizing generated model APIs](#CustomizinggeneratedmodelAPIs)
+
+* [Programmatic CRUD interface](#ProgrammaticCRUDinterface)
+
+  * [Delete all records](#Deleteallrecords)
+
+  * [Create, update, delete a record](#Create,update,deletearecord)
+
+  * [Run a query](#Runaquery)
+
+* [Restricting CRUD endpoints](#RestrictingCRUDendpoints)
+
+* [Predefined or custom endpoints](#Predefinedorcustomendpoints)
+
 
 ## Introduction
 
@@ -57,12 +57,12 @@ To programmatically create Models, see the [API Builder.Model API reference](#!/
 
 Place all Model files in the models folder. You can only declare one model per file. A Model file is a JavaScript file, which:
 
-1.  Loads the arrow module
-    
-2.  Calls the module's createModel('name', schema) method (or another Model method), passing in the name of the model as the first parameter and an object defining the model schema as the second parameter
-    
-3.  Exports the defined endpoint using the module.exports variable
-    
+1. Loads the arrow module
+
+2. Calls the module's createModel('name', schema) method (or another Model method), passing in the name of the model as the first parameter and an object defining the model schema as the second parameter
+
+3. Exports the defined endpoint using the module.exports variable
+
 
 Set the following keys in the object passed to the createModel() method to define the model:
 
@@ -318,35 +318,35 @@ To create a composite model, follow the same procedure when creating a regular m
 
 The following terms are used to refer to models:
 
-*   Model definition: The composite model which is being created
-    
-*   Main model: The main source of data for the composite model. This is the left table in SQL terminology. It is implicitly defined.
-    
-*   Secondary model: Any model other than the main model. This will be the right table in SQL terminology.
-    
+* Model definition: The composite model which is being created
+
+* Main model: The main source of data for the composite model. This is the left table in SQL terminology. It is implicitly defined.
+
+* Secondary model: Any model other than the main model. This will be the right table in SQL terminology.
+
 
 The composite connector can either perform a left join or inner join:
 
-*   left join: all records from the main model are returned regardless if it found a match in the secondary models
-    
-*   inner join: only records that match both models are returned
-    
+* left join: all records from the main model are returned regardless if it found a match in the secondary models
+
+* inner join: only records that match both models are returned
+
 
 The composite connector can also perform either a one-to-one join or one-to-many join:
 
-*   one-to-one: only one record from the secondary model matches a record in the primary model
-    
-*   one-to-many: multiple records from the secondary model can match a record in the main model
-    
+* one-to-one: only one record from the secondary model matches a record in the primary model
+
+* one-to-many: multiple records from the secondary model can match a record in the main model
+
 
 There are different ways that a one-to-one join and a one-to-many join can work when merging (mapping) data from the main model into the primary model:
 
-*   Merge as object: This is a one-to-one relationship where the whole secondary model record will be mapped to a field in the main model.
-    
-*   Merge as an array: This is a one-to-many relation where multiple records from the secondary model will be mapped to an array field in the model definition.
-    
-*   Merge as the field: This is a field which comes directly from a joined model. The field in the model definition _**must**_ have a name property which refers to the field being joined from the secondary model. By default, this is a one-to-one relationship where the field will contain a single match. In the Join-Object Definition, multiple may be set to true for all of the matches to be mapped to the field. Since this returns multiple values, the field type must be Array if multiple is set to true.
-    
+* Merge as object: This is a one-to-one relationship where the whole secondary model record will be mapped to a field in the main model.
+
+* Merge as an array: This is a one-to-many relation where multiple records from the secondary model will be mapped to an array field in the model definition.
+
+* Merge as the field: This is a field which comes directly from a joined model. The field in the model definition _**must**_ have a name property which refers to the field being joined from the secondary model. By default, this is a one-to-one relationship where the field will contain a single match. In the Join-Object Definition, multiple may be set to true for all of the matches to be mapped to the field. Since this returns multiple values, the field type must be Array if multiple is set to true.
+
 
 The composite connector can be used to perform reduce functionality on a single model. This only requires the main model and does not require any joins. The API Builder Console offers its functionality using this method. Without any joins, a one-to-one merge as a field is the only functionality available.
 
@@ -856,28 +856,28 @@ The valid values for the action property are: create, read, update, delete, and 
 
 By default, API Builder generates the following API endpoints for models:
 
-*   GET /api/<model\_name> : Return all objects (the first 1000 records).
-    
-*   GET /api/<model\_name>/query : Return all objects that satisfy a query.
-    
-*   GET /api/<model\_name>/:id : Return a specific object by id
-    
-*   GET /api/<model\_name>/distinct : Find distinct objects
-    
-*   GET /api/<model\_name>/count : Count objects
-    
-*   PUT /api/<model\_name>/:id : Update a specific user by id
-    
-*   PUT /api/<model\_name>/findAndModify : Find and modify an object
-    
-*   POST /api/<model\_name> : Create a new object
-    
-*   POST /api/<model\_name>/upsert : Create or update an object
-    
-*   DELETE /api/<model\_name>/:id : Delete a specific object by id
-    
-*   DELETE /api/<model\_name> : Delete all objects
-    
+* GET /api/<model\_name> : Return all objects (the first 1000 records).
+
+* GET /api/<model\_name>/query : Return all objects that satisfy a query.
+
+* GET /api/<model\_name>/:id : Return a specific object by id
+
+* GET /api/<model\_name>/distinct : Find distinct objects
+
+* GET /api/<model\_name>/count : Count objects
+
+* PUT /api/<model\_name>/:id : Update a specific user by id
+
+* PUT /api/<model\_name>/findAndModify : Find and modify an object
+
+* POST /api/<model\_name> : Create a new object
+
+* POST /api/<model\_name>/upsert : Create or update an object
+
+* DELETE /api/<model\_name>/:id : Delete a specific object by id
+
+* DELETE /api/<model\_name> : Delete all objects
+
 
 To disable API Builder from generating these endpoints, set the Model's autogen property to false when defining the model. You will need to create API Builder API objects to access the model.
 

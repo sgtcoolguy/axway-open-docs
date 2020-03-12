@@ -1,19 +1,19 @@
-{"title":"AMPLIFY Crash Analytics - Diagnostic Information","weight":"10"} 
+{"title":"AMPLIFY Crash Analytics - Diagnostic Information","weight":"10"}
 
 Developers can use the AMPLIFY Crash Analytics (ACA) [API](https://docs.appcelerator.com/platform/latest/#!/api/Modules.ACA) to capture additional information that might be useful to diagnose a crash. For example, device information can be obtained using Titanium APIs and set as additional data that will be sent with the crash event. The device information can be set either using the setMetadata method or as a breadcrumb.
 
 The following code sample demonstrates how to gather device information and attach it to the crash event:
 
-*   device orientation
-    
-*   device model
-    
-*   network info
-    
-*   device available and total memory
-    
-*   location
-    
+* device orientation
+
+* device model
+
+* network info
+
+* device available and total memory
+
+* location
+
 
 `aca.setMetadata(``'device'``, {`
 

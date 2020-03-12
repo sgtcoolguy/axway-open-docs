@@ -1,19 +1,19 @@
-{"title":"Alloy Collection and Model Objects","weight":"50"} 
+{"title":"Alloy Collection and Model Objects","weight":"50"}
 
-*   [Models](#Models)
-    
-    *   [Configuration object](#Configurationobject)
-        
-    *   [Extending the Backbone.Model class](#ExtendingtheBackbone.Modelclass)
-        
-*   [Collections](#Collections)
-    
-    *   [Extending the Backbone.Collection class](#ExtendingtheBackbone.Collectionclass)
-        
-    *   [Underscore.js functionality](#Underscore.jsfunctionality)
-        
-*   [Event handling](#Eventhandling)
-    
+* [Models](#Models)
+
+  * [Configuration object](#Configurationobject)
+
+  * [Extending the Backbone.Model class](#ExtendingtheBackbone.Modelclass)
+
+* [Collections](#Collections)
+
+  * [Extending the Backbone.Collection class](#ExtendingtheBackbone.Collectionclass)
+
+  * [Underscore.js functionality](#Underscore.jsfunctionality)
+
+* [Event handling](#Eventhandling)
+
 
 ## Models
 

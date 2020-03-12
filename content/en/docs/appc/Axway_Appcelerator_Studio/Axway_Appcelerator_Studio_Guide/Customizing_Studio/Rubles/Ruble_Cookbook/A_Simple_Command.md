@@ -1,19 +1,19 @@
-{"title":"A Simple Command","weight":"30"} 
+{"title":"A Simple Command","weight":"30"}
 
-*   [Overview](#Overview)
-    
-*   [The Code](#TheCode)
-    
-*   [Using Environment Variables](#UsingEnvironmentVariables)
-    
+* [Overview](#Overview)
+
+* [The Code](#TheCode)
+
+* [Using Environment Variables](#UsingEnvironmentVariables)
+
 
 ## Overview
 
-In this recipe we show how to create a simple Ruble command, place it in a menu, and optionally bind it to a key command.
+In this recipe, we show how to create a simple Ruble command, place it in a menu, and optionally bind it to a key command.
 
 ## The Code
 
-In the snippet below, we use the Ruby "swapcase" command to switch the case of the selected text. This is the entire Ruble file, though you could ad the menu items and commands to your own existing file.
+In the snippet below, we use the Ruby "swapcase" command to switch the case of the selected text. This is the entire Ruble file, though you could ad the menu items and commands to your existing file.
 
 `require` `'ruble'`
 

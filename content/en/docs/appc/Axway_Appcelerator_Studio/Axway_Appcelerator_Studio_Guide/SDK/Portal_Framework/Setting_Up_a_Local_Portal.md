@@ -1,11 +1,11 @@
-{"title":"Setting Up a Local Portal","weight":"50"} 
+{"title":"Setting Up a Local Portal","weight":"50"}
 
-*   [Description](#Description)
-    
-*   [Importing the Portal sample from Github](#ImportingthePortalsamplefromGithub)
-    
-*   [Pointing to the local Portal](#PointingtothelocalPortal)
-    
+* [Description](#Description)
+
+* [Importing the Portal sample from Github](#ImportingthePortalsamplefromGithub)
+
+* [Pointing to the local Portal](#PointingtothelocalPortal)
+
 
 ## Description
 
@@ -17,13 +17,13 @@ Import the portal samples project from the [studio3-sdk](https://github.com/apta
 
 ## Pointing to the local Portal
 
-*   open the TitaniumStudio.ini file (or AptanaStrudio.ini), which exists next to the Studio executable.
-    
-*   edit the **\-vmargs** part by adding:
-    
-        -Dtitanium.dashboardUrl=file:///C:/studio3-sdk/portal/sample/dashboard.html
-    
-*   re-launch Studio.
-    
+* open the TitaniumStudio.ini file (or AptanaStrudio.ini), which exists next to the Studio executable.
+
+* edit the **\-vmargs** part by adding:
+
+      -Dtitanium.dashboardUrl=file:///C:/studio3-sdk/portal/sample/dashboard.html
+
+* re-launch Studio.
+
 
 The loaded portal will now be the local one.

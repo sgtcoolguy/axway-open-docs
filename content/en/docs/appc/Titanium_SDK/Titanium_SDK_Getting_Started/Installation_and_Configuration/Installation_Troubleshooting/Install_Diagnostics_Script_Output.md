@@ -1,4 +1,4 @@
-{"title":"Install Diagnostics Script Output","weight":"10"} 
+{"title":"Install Diagnostics Script Output","weight":"10"}
 
 Below is an example of the output generated from the _Install Diagnostics_ script when run on a correctly-working Windows 7 system:
 

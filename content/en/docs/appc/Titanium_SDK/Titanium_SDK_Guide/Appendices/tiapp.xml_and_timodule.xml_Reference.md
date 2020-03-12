@@ -1,167 +1,169 @@
-{"title":"tiapp.xml and timodule.xml Reference","weight":"10"} 
+{"title":"tiapp.xml and timodule.xml Reference","weight":"10"}
 
-*   [Introductions](#Introductions)
-    
-*   [Top level elements](#Toplevelelements)
-    
-    *   [guid](#guid)
-        
-    *   [id](#id)
-        
-    *   [name](#name)
-        
-    *   [analytics](#analytics)
-        
-    *   [copyright](#copyright)
-        
-    *   [deployment-target](#deployment-target)
-        
-    *   [description](#description)
-        
-    *   [fullscreen](#fullscreen)
-        
-    *   [icon](#icon)
-        
-    *   [modules](#modules)
-        
-    *   [navbar-hidden](#navbar-hidden)
-        
-    *   [plugins](#plugins)
-        
-    *   [property](#property)
-        
-    *   [publisher](#publisher)
-        
-    *   [statusbar-hidden](#statusbar-hidden)
-        
-    *   [sdk-version](#sdk-version)
-        
-    *   [url](#url)
-        
-    *   [version](#version)
-        
-    *   [Deprecated elements](#Deprecatedelements)
-        
-*   [Application properties](#Applicationproperties)
-    
-    *   [ti.ui.defaultunit](#ti.ui.defaultunit)
-        
-    *   [intent-filter-new-task](#intent-filter-new-task)
-        
-    *   [appc-security-jailbreak-detect](#appc-security-jailbreak-detect)
-        
-    *   [appc-security-debugger-detect](#appc-security-debugger-detect)
-        
-    *   [appc-sourcecode-encryption-policy](#appc-sourcecode-encryption-policy)
-        
-*   [Android-specific section](#Android-specificsection)
-    
-    *   [abi](#abi)
-        
-    *   [activities](#activities)
-        
-    *   [manifest](#manifest)
-        
-        *   [application](#application)
-            
-        *   [uses-permission](#uses-permission)
-            
-        *   [uses-sdk](#uses-sdk)
-            
-    *   [services](#services)
-        
-    *   [Android-specific application properties](#Android-specificapplicationproperties)
-        
-    *   [Properties to work around Android bugs 2373 and 5277](#PropertiestoworkaroundAndroidbugs2373and5277)
-        
-    *   [Common requirements](#Commonrequirements)
-        
-        *   [Set a target or minimum SDK level](#SetatargetorminimumSDKlevel)
-            
-        *   [Configuring screen densities](#Configuringscreendensities)
-            
-        *   [Enabling the debugger by default](#Enablingthedebuggerbydefault)
-            
-        *   [Setting install location preferences](#Settinginstalllocationpreferences)
-            
-        *   [Requesting a large heap from Dalvik](#RequestingalargeheapfromDalvik)
-            
-*   [iOS-specific section](#iOS-specificsection)
-    
-    *   [team-id](#team-id)
-        
-    *   [entitlements](#entitlements)
-        
-    *   [extensions](#extensions)
-        
-    *   [min-ios-ver](#min-ios-ver)
-        
-    *   [min-sdk-ver](#min-sdk-ver)
-        
-    *   [plist](#plist)
-        
-        *   [UISupportedInterfaceOrientations](#UISupportedInterfaceOrientations)
-            
-        *   [UIBackgroundModes](#UIBackgroundModes)
-            
-        *   [UIRequiredDeviceCapabilities](#UIRequiredDeviceCapabilities)
-            
-        *   [UIRequiresPersistentWiFi](#UIRequiresPersistentWiFi)
-            
-        *   [UIPrerenderedIcon](#UIPrerenderedIcon)
-            
-        *   [UIStatusBarHidden](#UIStatusBarHidden)
-            
-        *   [UIStatusBarStyle](#UIStatusBarStyle)
-            
-        *   [Unsupported Info.plist keys](#UnsupportedInfo.plistkeys)
-            
-        *   [iOS9 Security and canOpenUrl](#iOS9SecurityandcanOpenUrl)
-            
-    *   [run-on-main-thread](#run-on-main-thread)
-        
-    *   [log-server-port](#log-server-port)
-        
-    *   [allow-custom-keyboards](#allow-custom-keyboards)
-        
-    *   [use-app-thinning](#use-app-thinning)
-        
-    *   [use-autolayout](#use-autolayout)
-        
-    *   [use-jscore-framework](#use-jscore-framework)
-        
-    *   [Legacy iPhone](#LegacyiPhone)
-        
-*   [Windows-specific](#Windows-specific)
-    
-    *   [id](#id.1)
-        
-    *   [manifest](#manifest.1)
-        
-        *   [Add capabilities](#Addcapabilities)
-            
-            *   [Internet capability](#Internetcapability)
-                
-            *   [Location capability](#Locationcapability)
-                
-            *   [Background audio capability](#Backgroundaudiocapability)
-                
-            *   [Audio recorder](#Audiorecorder)
-                
-            *   [Photo gallery](#Photogallery)
-                
-    *   [Target Windows version](#TargetWindowsversion)
-        
-    *   [Handling differing capabilities between Windows 8.1 and 10](#HandlingdifferingcapabilitiesbetweenWindows8.1and10)
-        
-    *   [Windows-specific application properties](#Windows-specificapplicationproperties)
-        
-*   [Cloud](#Cloud)
-    
-*   [Modules](#Modules)
-    
-    *   [timodule.xml](#timodule.xml)
-        
+* [Introductions](#Introductions)
+
+* [Top level elements](#Toplevelelements)
+
+  * [guid](#guid)
+
+  * [id](#id)
+
+  * [name](#name)
+
+  * [analytics](#analytics)
+
+  * [copyright](#copyright)
+
+  * [deployment-target](#deployment-target)
+
+  * [description](#description)
+
+  * [fullscreen](#fullscreen)
+
+  * [icon](#icon)
+
+  * [modules](#modules)
+
+  * [navbar-hidden](#navbar-hidden)
+
+  * [plugins](#plugins)
+
+  * [property](#property)
+
+  * [publisher](#publisher)
+
+  * [statusbar-hidden](#statusbar-hidden)
+
+  * [sdk-version](#sdk-version)
+
+  * [url](#url)
+
+  * [version](#version)
+
+  * [Deprecated elements](#Deprecatedelements)
+
+* [Application properties](#Applicationproperties)
+
+  * [ti.ui.defaultunit](#ti.ui.defaultunit)
+
+  * [intent-filter-new-task](#intent-filter-new-task)
+
+  * [appc-security-jailbreak-detect](#appc-security-jailbreak-detect)
+
+  * [appc-security-debugger-detect](#appc-security-debugger-detect)
+
+  * [appc-sourcecode-encryption-policy](#appc-sourcecode-encryption-policy)
+
+* [Android-specific section](#Android-specificsection)
+
+  * [abi](#abi)
+
+  * [activities](#activities)
+
+  * [manifest](#manifest)
+
+    * [application](#application)
+
+    * [uses-permission](#uses-permission)
+
+    * [uses-sdk](#uses-sdk)
+
+  * [services](#services)
+
+  * [Android-specific application properties](#Android-specificapplicationproperties)
+
+  * [Properties to work around Android bugs 2373 and 5277](#PropertiestoworkaroundAndroidbugs2373and5277)
+
+  * [Common requirements](#Commonrequirements)
+
+    * [Set a target or minimum SDK level](#SetatargetorminimumSDKlevel)
+
+    * [Configuring screen densities](#Configuringscreendensities)
+
+    * [Enabling the debugger by default](#Enablingthedebuggerbydefault)
+
+    * [Setting install location preferences](#Settinginstalllocationpreferences)
+
+    * [Requesting a large heap from Dalvik](#RequestingalargeheapfromDalvik)
+
+* [iOS-specific section](#iOS-specificsection)
+
+  * [team-id](#team-id)
+
+  * [entitlements](#entitlements)
+
+  * [extensions](#extensions)
+
+  * [min-ios-ver](#min-ios-ver)
+
+  * [min-sdk-ver](#min-sdk-ver)
+
+  * [plist](#plist)
+
+    * [UISupportedInterfaceOrientations](#UISupportedInterfaceOrientations)
+
+    * [UIBackgroundModes](#UIBackgroundModes)
+
+    * [UIRequiredDeviceCapabilities](#UIRequiredDeviceCapabilities)
+
+    * [UIRequiresPersistentWiFi](#UIRequiresPersistentWiFi)
+
+    * [UIPrerenderedIcon](#UIPrerenderedIcon)
+
+    * [UIStatusBarHidden](#UIStatusBarHidden)
+
+    * [UIStatusBarStyle](#UIStatusBarStyle)
+
+    * [Unsupported Info.plist keys](#UnsupportedInfo.plistkeys)
+
+    * [iOS9 Security and canOpenUrl](#iOS9SecurityandcanOpenUrl)
+
+  * [run-on-main-thread](#run-on-main-thread)
+
+  * [log-server-port](#log-server-port)
+
+  * [allow-custom-keyboards](#allow-custom-keyboards)
+
+  * [use-app-thinning](#use-app-thinning)
+
+  * [use-autolayout](#use-autolayout)
+
+  * [use-jscore-framework](#use-jscore-framework)
+
+  * [Legacy iPhone](#LegacyiPhone)
+
+* [Windows-specific](#Windows-specific)
+
+  * [id](#id.1)
+
+  * [manifest](#manifest.1)
+
+    * [Add capabilities](#Addcapabilities)
+
+      * [Internet capability](#Internetcapability)
+
+      * [Location capability](#Locationcapability)
+
+      * [Background audio capability](#Backgroundaudiocapability)
+
+      * [Audio recorder](#Audiorecorder)
+
+      * [Photo gallery](#Photogallery)
+
+  * [Target Windows version](#TargetWindowsversion)
+
+  * [Handling differing capabilities between Windows 8.1 and 10](#HandlingdifferingcapabilitiesbetweenWindows8.1and10)
+
+  * [Windows-specific application properties](#Windows-specificapplicationproperties)
+
+* [Cloud](#Cloud)
+
+* [Google Play Services](#GooglePlayServices)
+
+* [Modules](#Modules)
+
+  * [timodule.xml](#timodule.xml)
+
 
 ## Introductions
 
@@ -295,8 +297,8 @@ The copyright of this application.
 
 This element contains subelements of deployment targets used by Studio to determine which target options should be shown in the deployment menus.
 
-*   <target device="DEVICE">: Specifies if the target device is supported by the project. Must be placed inside the <deployment-targets> element.
-    
+* <target device="DEVICE">: Specifies if the target device is supported by the project. Must be placed inside the <deployment-targets> element.
+
 
 Example: Specify the project only supports Android targets
 
@@ -336,14 +338,14 @@ Example: Default icon in ./Resources or ./Resource/<platform>
 
 This element includes subelements of modules to include with the project.
 
-*   <module platform="PLATFORM" version="MODULE\_VERSION" deploy-type="DEPLOYMENT\_ENVIRONMENTS">: Defines a module to include with the project specified by the module's folder name or ZIP file minus the extension. The module should either be in the root level of the project (same level as the Resources folder) or in the <PATH\_TO\_TITANIUM\_SDK>/modules folder. Must be placed inside the <modules>element.  
-      
-    Define the platform attribute to specify which platforms to include the module with. Specify android for Android, commonjs for all platforms, or iphone for iPhone and iPad. Note that you can specify only one platform. For a module that may be included on several platforms, repeat the same module entry, specifying a different platform for each entry.  
-      
-    Define the version attribute if you want to use a specific version of the module.  
-      
-    Define the deploy-type attribute if you want to use the module in specific environments. To specify one or more environment, comma-separate the environment types. You may specify the following environments: development, test or production.
-    
+* <module platform="PLATFORM" version="MODULE\_VERSION" deploy-type="DEPLOYMENT\_ENVIRONMENTS">: Defines a module to include with the project specified by the module's folder name or ZIP file minus the extension. The module should either be in the root level of the project (same level as the Resources folder) or in the <PATH\_TO\_TITANIUM\_SDK>/modules folder. Must be placed inside the <modules>element.
+
+  Define the platform attribute to specify which platforms to include the module with. Specify android for Android, commonjs for all platforms, or iphone for iPhone and iPad. Note that you can specify only one platform. For a module that may be included on several platforms, repeat the same module entry, specifying a different platform for each entry.
+
+  Define the version attribute if you want to use a specific version of the module.
+
+  Define the deploy-type attribute if you want to use the module in specific environments. To specify one or more environment, comma-separate the environment types. You may specify the following environments: development, test or production.
+
 
 Example: Include the ti.cloud module
 
@@ -365,8 +367,8 @@ Supported since Release 5.0.0 for Android. On Android, the theme will be set to 
 
 This element includes subelements of plugins to include with the project.
 
-*   <plugin version="PLUGIN\_VERSION">: Defines a plugin to include with the project specified by the plugin's folder name. Place plugins in the plugins folder of the project (same level as the Resources folder). This element must be placed inside the <plugins>element. The version attribute is optional. Define it to include a specific version of the plugin.
-    
+* <plugin version="PLUGIN\_VERSION">: Defines a plugin to include with the project specified by the plugin's folder name. Place plugins in the plugins folder of the project (same level as the Resources folder). This element must be placed inside the <plugins>element. The version attribute is optional. Define it to include a specific version of the plugin.
+
 
 Example: Include the Alloy plugin
 
@@ -420,14 +422,14 @@ Example
 
 ### Deprecated elements
 
-*   <persistent-wifi>: See [UIRequiresPersistentWiFi](#UIRequiresPersistentWiFi)UIRequiresPersistentWiFi.
-    
-*   <prerendered-icon>: See [UIPrerenderedIcon](#UIPrerenderedIcon).
-    
-*   <statusbar-style>: See [UIStatusBarStyle](#UIStatusBarStyle).
-    
-*   <statusbar-hidden>: See [UIStatusBarHidden](#undefined).
-    
+* <persistent-wifi>: See [UIRequiresPersistentWiFi](#UIRequiresPersistentWiFi)UIRequiresPersistentWiFi.
+
+* <prerendered-icon>: See [UIPrerenderedIcon](#UIPrerenderedIcon).
+
+* <statusbar-style>: See [UIStatusBarStyle](#UIStatusBarStyle).
+
+* <statusbar-hidden>: See [UIStatusBarHidden](#undefined).
+
 
 ## Application properties
 
@@ -439,12 +441,12 @@ Properties generally follow the form:
 
 `<``property`  `name``=``"name"`  `type``=``"type"``>value</``property``>`
 
-*   name is the property name
-    
-*   type is the property value's type, valid values are: string, bool, int, double
-    
-*   value is the property's value
-    
+* name is the property name
+
+* type is the property value's type, valid values are: string, bool, int, double
+
+* value is the property's value
+
 
 Properties are also used in specific cases by each platform, which is further explained in each platform section.
 
@@ -456,18 +458,18 @@ The special property ti.ui.defaultunit can be used to set the default unit used 
 
 The default unit can be one of the following:
 
-*   system . Specifies system default unit.
-    
-*   cm . Centimeters.
-    
-*   dip or dp . Density-independent pixels (DIPs).
-    
-*   in . Inches.
-    
-*   mm . Millimeters.
-    
-*   px . Pixels.
-    
+* system . Specifies system default unit.
+
+* cm . Centimeters.
+
+* dip or dp . Density-independent pixels (DIPs).
+
+* in . Inches.
+
+* mm . Millimeters.
+
+* px . Pixels.
+
 
 Setting the default unit to pixels may cause issues on iOS unless you detect and handle Retina displays in your code.
 
@@ -509,10 +511,10 @@ Setting this property to **false** will allow debug applications to connect to y
 
 The special property appc-sourcecode-encryption-policy determines the encryption policy for application assets. Values can be:
 
-*   embed: Embeds the encryption key and initialization vector (IV) into the application binary. The key and IV are padded and obfuscated.
-    
-*   remote: Stores the encryption key remotely, which requires the device to have an internet connection to run the application (default behavior).
-    
+* embed: Embeds the encryption key and initialization vector (IV) into the application binary. The key and IV are padded and obfuscated.
+
+* remote: Stores the encryption key remotely, which requires the device to have an internet connection to run the application (default behavior).
+
 
 `<``property`  `name``=``"appc-sourcecode-encryption-policy"``>remote</``property``>`
 
@@ -562,14 +564,16 @@ The above example includes all of the common sections to show the structure of t
 
 Selects the target ABI architecture. Only used when building for the V8 runtime. Choose between the following values:
 
-*   all (All architectures, **default**)
-    
-*   arm64-v8a
-    
-*   armeabi-v7a
-    
-*   x86
-    
+* all (All architectures, **default**)
+
+* arm64-v8a
+
+* armeabi-v7a
+
+* x86
+
+* x86\_64
+
 
 Targeting an ABI architecture will help reduce the application and APK size, but will support fewer devices. Currently defaults to 'all'. You can upload multiple APK's for multiple ABI's, improving the file size of the bundled app.
 
@@ -577,10 +581,10 @@ Targeting an ABI architecture will help reduce the application and APK size, but
 
 Defines a list of custom JavaScript-based Android activities. This is a custom Titanium XML element and should not be confused with the Android Manifest activity element.
 
-*   <activity url="activity.js"/>: Creates an activity with a URL that points to the JavaScript file (under Resources) that defines it.
-    
-*   Ad-hoc elements: Inside the <activity> element, any ad-hoc element from an AndroidManifest.xml is supported. See the [documentation for the activity element in AndroidManifest.xml](http://developer.android.com/guide/topics/manifest/activity-element.html).
-    
+* <activity url="activity.js"/>: Creates an activity with a URL that points to the JavaScript file (under Resources) that defines it.
+
+* Ad-hoc elements: Inside the <activity> element, any ad-hoc element from an AndroidManifest.xml is supported. See the [documentation for the activity element in AndroidManifest.xml](http://developer.android.com/guide/topics/manifest/activity-element.html).
+
 
 ### manifest
 
@@ -602,14 +606,12 @@ Lets you express an application's compatibility with one or more versions of the
 
 Defines a list of custom JavaScript-based Android services (long running background processes). This is a custom Titanium XML element and should not be confused with the Android Manifest service element.
 
-*   <service url="service.js" type="standard"/>: Creates a service with a URL that points to the JavaScript file (under Resources) that defines it. type is optional.
-    
-*   Ad-hoc elements: Under the <service> tag, any ad-hoc element from an AndroidManifest.xml is supported. See the [documentation for the service element in AndroidManifest.xml](http://developer.android.com/guide/topics/manifest/service-element.html).
-    
+* <service url="service.js" type="standard"/>: Creates a service with a URL that points to the JavaScript file (under Resources) that defines it. type is optional.
+
+* Ad-hoc elements: Under the <service> tag, any ad-hoc element from an AndroidManifest.xml is supported. See the [documentation for the service element in AndroidManifest.xml](http://developer.android.com/guide/topics/manifest/service-element.html).
+
 
 ### Android-specific application properties
-
-As of Titanium 8.0.0, this property is no longer supported.
 
 Android also supports a number of application properties for various internal settings. (See [Application properties](#app_properties) above on how to define an application property.)
 
@@ -693,13 +695,15 @@ false
 
 Restarts the application if the root task was destroyed by Android after a period of inactivity.
 
+**(As of Titanium 8.0.0, this property is no longer supported.)**
+
 Example: Disable Fastdev
 
 `<``property`  `name``=``"ti.android.fastdev"``>false</``property``>`
 
 ### Properties to work around Android bugs 2373 and 5277
 
-As of Titanium 8.0.0, this has been deprecated. The new behavior is a background app that will be resumed and the "newintent" fired when a new data intent has been received. Also of note, the restart dialog box has been removed.
+As of Titanium 8.0.0, this has been deprecated. The new behavior is a data intent will resume a backgrounded app will be resumed and the fire a "newintent" event. Also, the restart dialog box has been removed.
 
 See [TIMOB-4941](http://jira.appcelerator.org/browse/TIMOB-4941), [TIMOB-1559](http://jira.appcelerator.org/browse/TIMOB-1559) and [TIMOB-9285](http://jira.appcelerator.org/browse/TIMOB-9285) for information about the Titanium workaround to Google issues [2373](http://code.google.com/p/android/issues/detail?id=2373) and [5277](http://code.google.com/p/android/issues/detail?id=5277). TIMOB-9285 in particular has a useful [explanation](https://jira.appcelerator.org/browse/TIMOB-9285?focusedCommentId=210304&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-210304) of the issue and of ti.android.bug2373.finishfalseroot, the newest of the properties listed below.
 
@@ -779,25 +783,19 @@ if true, the dialog box will not be shown, but the workaround will still be appl
 
 #### Set a target or minimum SDK level
 
-Due to the addition of material theme support, the android:targetSDKVersion attribute must be set to at least 21 or higher, and the android:minSdkVersion attribute must be set to at least 14 or higher.
-
-Due to the addition of the appcompat library, the android:targetSDKVersion attribute must be set to at least 14 or higher, and the android:minSdkVersion attribute must be set to at least 10 or higher.
-
-If not, the build will fail with a "Failed to package application" error.
-
-To indicate that your application supports a certain SDK level, add the <uses-sdk> element with the android:minSdkVersion and/or android:targetSdkVersion attributes. It may be necessary to set these attributes to enable certain Android features, such as the action bar or theme.
+To indicate that your application supports a certain API Level, add the <uses-sdk> element with the android:minSdkVersion and/or android:targetSdkVersion attributes. It may be necessary to set these attributes to enable certain Android features, such as the action bar or theme. Note that the API Level you enter below must be within the min and max supported levels the Titanium SDK supports as shown in the [Titanium Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/).
 
 `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
 
 `<``manifest``>`
 
-`<``uses``-sdk` `android:minSdkVersion``=``"14"`  `android:targetSdkVersion``=``"21"``/>`
+`<!-- Target Android 10.0 and set min OS version supported to Android 5.0. -->`
+
+`<``uses``-sdk` `android:minSdkVersion``=``"21"`  `android:targetSdkVersion``=``"29"``/>`
 
 `</``manifest``>`
 
 `</``android``>`
-
-In the previous example, the following settings indicate that the application can run on Android 4.x, but was targeted and tested for Android 5.x.
 
 #### Configuring screen densities
 
@@ -827,7 +825,7 @@ Do not set the android:anyDensity attribute to false. Google does not recommend 
 
 #### Enabling the debugger by default
 
-To make the app debuggable by default, set the <application> attribute to true (it's false in our default manifest template).  
+To make the app debuggable by default, set the <application> attribute to true (it's false in our default manifest template).
 This setting is required to attach the Java debugger to a running application. It is **not** required for debugging the application's JavaScript in Studio, so setting debuggable to true may be primarily interesting to developers working on native Android modules or debugging issues in the Titanium native libraries.
 
 `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
@@ -856,12 +854,12 @@ Your Android apps are installed by default to the device's internal storage, but
 
 For the android:installLocation property, choose one of these values:
 
-*   android:installLocation="preferExternal" -- specifies that you prefer your app to install to the SD card, but if one isn't present the app can be installed to internal storage.
-    
-*   android:installLocation="auto" – specifies that the phone's configuration will determine the installation location. Generally, your app will be installed to internal storage if sufficient space is available. In that case, users could still move your app by opening **Settings > Applications > Manage applications**, tapping your app, and tapping Move to SD card.
-    
-*   android:installLocation="internalOnly" – which specifies that your app cannot be installed to the SD card. See the [Android docs](http://developer.android.com/guide/appendix/install-location.html#ShouldNot) for the various reasons why you might choose this option.
-    
+* android:installLocation="preferExternal" -- specifies that you prefer your app to install to the SD card, but if one isn't present the app can be installed to internal storage.
+
+* android:installLocation="auto" – specifies that the phone's configuration will determine the installation location. Generally, your app will be installed to internal storage if sufficient space is available. In that case, users could still move your app by opening **Settings > Applications > Manage applications**, tapping your app, and tapping Move to SD card.
+
+* android:installLocation="internalOnly" – which specifies that your app cannot be installed to the SD card. See the [Android docs](http://developer.android.com/guide/appendix/install-location.html#ShouldNot) for the various reasons why you might choose this option.
+
 
 Finally, you need to add the <uses-sdk> tag within the <manifest> node. This tag specifies that your app requires Google's version 7 or newer APIs — in other words, the phone must be running Android 2.1 Update 1 or newer. That pretty much covers all the newer phones, but will exclude some older devices. On those phones, your app will install to the internal storage.
 
@@ -977,12 +975,12 @@ In the extension element, add a **<target>** element and set the name attribute 
 
 In the target element, add a **<provisioning-profiles>** element, which determines the devices the application can run on. Add the following elements as children of the provisioning-profiles element. For each listed element you add, set the node text to the provisioning profile UUID of the extension or watch application:
 
-*   **<devices/>**: Add to deploy for development builds
-    
-*   <dist-appstore/>: Add to deploy to the iTunes App Store
-    
-*   **<dist-adhoc/>**: Add to deploy for ad-hoc builds
-    
+* **<devices/>**: Add to deploy for development builds
+
+* <dist-appstore/>: Add to deploy to the iTunes App Store
+
+* **<dist-adhoc/>**: Add to deploy for ad-hoc builds
+
 
 Example: Include watchOS extensions
 
@@ -1082,12 +1080,12 @@ Replaces <orientations>.
 
 For device-specific configurations, use:
 
-*   UISupportedInterfaceOrientations~ipad
-    
-*   UISupportedInterfaceOrientations~iphone
-    
-*   UISupportedInterfaceOrientations~ipod  
-    
+* UISupportedInterfaceOrientations~ipad
+
+* UISupportedInterfaceOrientations~iphone
+
+* UISupportedInterfaceOrientations~ipod
+
 
 Example: Limits iPhone orientation to portait and no limits for iPad
 
@@ -1279,28 +1277,28 @@ Example: Use the tranluscent style
 
 The following Info.plist properties are ignored in the <plist> section. The values for these properties are automatically generated by Titanium and may not be overridden in the tiapp.xml file or custom Info.plist file.
 
-*   CFBundleDisplayName. The name in the generated file always reflects the value of the <name> element
-    
-*   CFBundleExecutable
-    
-*   CFBundleIconFile
-    
-*   CFBundleIconFiles. Automatically includes all application icon files from project directory.
-    
-*   CFBundleIdentifier
-    
-*   CFBundleInfoDictionaryVersion
-    
-*   CFBundleName
-    
-*   CFBundlePackageType
-    
-*   CFBundleSignature
-    
-*   CFBundleVersion (until Titanium 4.1.0)
-    
-*   CFBundleShortVersionString (until Titanium 4.1.0)
-    
+* CFBundleDisplayName. The name in the generated file always reflects the value of the <name> element
+
+* CFBundleExecutable
+
+* CFBundleIconFile
+
+* CFBundleIconFiles. Automatically includes all application icon files from project directory.
+
+* CFBundleIdentifier
+
+* CFBundleInfoDictionaryVersion
+
+* CFBundleName
+
+* CFBundlePackageType
+
+* CFBundleSignature
+
+* CFBundleVersion (until Titanium 4.1.0)
+
+* CFBundleShortVersionString (until Titanium 4.1.0)
+
 
 #### iOS9 Security and canOpenUrl
 
@@ -1390,8 +1388,8 @@ Experimental Feature
 
 This is an experimental feature with known issues:
 
-*   [TIMOB-19806](https://jira.appcelerator.org/browse/TIMOB-19806)
-    
+* [TIMOB-19806](https://jira.appcelerator.org/browse/TIMOB-19806)
+
 
 If you find any issue using this feature, file a bug in [JIRA](https://jira.appcelerator.org/).
 
@@ -1423,19 +1421,19 @@ If you find any issue using this feature, file a bug in [JIRA](https://jira.appc
 
 Prior to release 2.1, iOS-specific settings were contained in an <iphone> element. These settings are deprecated and should be replaced with the corresponding iOS settings listed in the [iOS specific section](#iOSspecificsection). It will be removed in Titanium SDK 7.0.0 and later.
 
-*   <orientations device="device">: Restricts the device to these orientations when the application is running. The value of "device" can be "iphone", or "ipad". **Deprecated** in Release 2.1, use [UISupportedInterfaceOrientations](#UISupportedInterfaceOrientations) instead.
-    
-    *   <orientation>: An orientation for this <orientations> list, valid values are: Ti.UI.PORTRAIT, Ti.UI.UPSIDE\_PORTRAIT, Ti.UI.LANDSCAPE\_LEFT, Ti.UI.LANDSCAPE\_RIGHT.
-        
-*   <backgroundModes>: A list of background modes this app supports. **Deprecated** in Release 2.1, use [UIBackgroundModes](#UIBackgroundModes) instead.  
-    For a [BackgroundService](#!/api/Titanium.App.iOS.BackgroundService) to run for more than a limited period of time, the application must include the <backgroundModes> element in tiapp.xml.
-    
-    *   <mode>: A background mode, valid values are: audio, location, and voip.
-        
-*   <requires>: A list of features this app requires. **Deprecated** in Release 2.1, use [UIRequiredDeviceCapabilities](#UIRequiredDeviceCapabilities)instead.
-    
-    *   <feature>: A feature that this app requires, valid values are: telephony, wifi, sms, still-camera, auto-focus-camera, front-facing-camera, camera-flash, video-camera, accelerometer, gyroscope, location-services, gps, magnetometer, gamekit, microphone, opengles-1, opengles-2, armv6, armv7, peer-peer
-        
+* <orientations device="device">: Restricts the device to these orientations when the application is running. The value of "device" can be "iphone", or "ipad". **Deprecated** in Release 2.1, use [UISupportedInterfaceOrientations](#UISupportedInterfaceOrientations) instead.
+
+  * <orientation>: An orientation for this <orientations> list, valid values are: Ti.UI.PORTRAIT, Ti.UI.UPSIDE\_PORTRAIT, Ti.UI.LANDSCAPE\_LEFT, Ti.UI.LANDSCAPE\_RIGHT.
+
+* <backgroundModes>: A list of background modes this app supports. **Deprecated** in Release 2.1, use [UIBackgroundModes](#UIBackgroundModes) instead.
+  For a [BackgroundService](#!/api/Titanium.App.iOS.BackgroundService) to run for more than a limited period of time, the application must include the <backgroundModes> element in tiapp.xml.
+
+  * <mode>: A background mode, valid values are: audio, location, and voip.
+
+* <requires>: A list of features this app requires. **Deprecated** in Release 2.1, use [UIRequiredDeviceCapabilities](#UIRequiredDeviceCapabilities)instead.
+
+  * <feature>: A feature that this app requires, valid values are: telephony, wifi, sms, still-camera, auto-focus-camera, front-facing-camera, camera-flash, video-camera, accelerometer, gyroscope, location-services, gps, magnetometer, gamekit, microphone, opengles-1, opengles-2, armv6, armv7, peer-peer
+
 
 ## Windows-specific
 
@@ -1453,16 +1451,16 @@ Add the **<manifest>** element as a child of the **<windows>** element to includ
 
 Only supports the following elements:
 
-*   <Capabilities>: for a list of capabilities, see [Window Dev Center: App capability declarations](https://msdn.microsoft.com/en-us/library/windows/apps/hh464936.aspx)
-    
-*   <Prerequisites>
-    
-*   <Properties>
-    
-*   <Resources>
-    
-*   <Extensions>
-    
+* <Capabilities>: for a list of capabilities, see [Window Dev Center: App capability declarations](https://msdn.microsoft.com/en-us/library/windows/apps/hh464936.aspx)
+
+* <Prerequisites>
+
+* <Properties>
+
+* <Resources>
+
+* <Extensions>
+
 
 #### Add capabilities
 
@@ -1852,12 +1850,12 @@ Must match the Windows publisher ID of your Microsoft Developer account. Used by
 
 **To retrieve your Windows publisher ID:**
 
-1.  Log into [https://dev.windows.com](https://dev.windows.com/).
-    
-2.  Click **Dashboard** in the top-right corner.
-    
-3.  Click **Account settings** in the left navigation.
-    
+1. Log into [https://dev.windows.com](https://dev.windows.com/).
+
+2. Click **Dashboard** in the top-right corner.
+
+3. Click **Account settings** in the left navigation.
+
 
 The publisher GUID will be under the **Account details** section as the **Windows publisher ID** field.
 
@@ -1915,8 +1913,8 @@ string
 
 https://secure-identity.cloud.appcelerator.com
 
-**OAuth authentication is no longer supported in the ti.cloud module.  
-  
+**OAuth authentication is no longer supported in the ti.cloud module.
+
 **Arrow Authentication URL.
 
 acs-oauth-key
@@ -1925,8 +1923,8 @@ string
 
 N/A
 
-**OAuth authentication is no longer supported **in the ti.cloud module**.  
-  
+**OAuth authentication is no longer supported **in the ti.cloud module**.
+
 **ACS OAuth key. Generated when enabling the project for Cloud services.
 
 acs-oauth-secret
@@ -1935,8 +1933,8 @@ string
 
 N/A
 
-**OAuth authentication is no longer supported **in the ti.cloud module**.  
-  
+**OAuth authentication is no longer supported **in the ti.cloud module**.
+
 **ACS OAuth secret. Generated when enabling the project for Cloud services.
 
 acs-push-type
@@ -1945,10 +1943,20 @@ string
 
 gcm
 
-**Deprecated since Release 3.2.0. The ti.cloudpush module now only supports GCM or FCM. [Firebase Cloud Messaging](http://firebase.google.com/docs/cloud-messaging/) (FCM) is the new version of GCM.  
+**Deprecated since Release 3.2.0. The ti.cloudpush module now only supports GCM or FCM. [Firebase Cloud Messaging](http://firebase.google.com/docs/cloud-messaging/) (FCM) is the new version of GCM.
 **
 
 Selects the push notification type for Android devices, either gcm or mqtt.
+
+## Google Play Services
+
+As of Titanium 9.0.0, if your Android app includes the ti.playservices module, it will automatically check on app startup if Google Play Services is installed on the device and is up-to-date. If not, it will request the end-user to install or update it before executing the app's main script. This is needed so that the Google Play Services libraries included in the app can function. If you want to disable this feature, then you can do so by setting the following tiapp.xml property to false.
+
+`<``ti``:app>`
+
+`<``property`  `name``=``"ti.playservices.validate.on.startup"`  `type``=``"bool"``>false</``property``>`
+
+`</``ti``:app>`
 
 ## Modules
 
@@ -1976,7 +1984,7 @@ timodule.xml
 
 `</``android``>`
 
-Note the token ${tiapp.properties\['id'\]}. In this token, tiapp.properties refers to the collection of top-level properties defined in the  
+Note the token ${tiapp.properties\['id'\]}. In this token, tiapp.properties refers to the collection of top-level properties defined in the
 tiapp.xml file. To access a property in this collection, such as <id>, <name>, <version>, or <publisher\>, use square brackets with the property name in quotes inside, as shown in the example.
 
 If you include this module in an application with the App ID com.example.app, the AndroidManifest.xml file is generated with the following permission element:

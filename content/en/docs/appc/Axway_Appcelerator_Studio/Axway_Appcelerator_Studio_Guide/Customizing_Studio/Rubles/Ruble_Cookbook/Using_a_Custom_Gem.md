@@ -1,25 +1,25 @@
-{"title":"Using a Custom Gem","weight":"120"} 
+{"title":"Using a Custom Gem","weight":"120"}
 
-*   [Overview](#Overview)
-    
-*   [Setup](#Setup)
-    
-    *   [Using 'gem unpack'](#Using'gemunpack')
-        
-    *   [Manually unzipping](#Manuallyunzipping)
-        
-    *   [Manipulate the path in each place the gem is referenced](#Manipulatethepathineachplacethegemisreferenced)
-        
-    *   [Manipulate the path globally for all commands](#Manipulatethepathgloballyforallcommands)
-        
-*   [The Code](#TheCode)
-    
-*   [Result](#Result)
-    
+* [Overview](#Overview)
+
+* [Setup](#Setup)
+
+  * [Using 'gem unpack'](#Using'gemunpack')
+
+  * [Manually unzipping](#Manuallyunzipping)
+
+  * [Manipulate the path in each place the gem is referenced](#Manipulatethepathineachplacethegemisreferenced)
+
+  * [Manipulate the path globally for all commands](#Manipulatethepathgloballyforallcommands)
+
+* [The Code](#TheCode)
+
+* [Result](#Result)
+
 
 ## Overview
 
-Rubles run using the internal jRuby interpreter. While it is theoretically possible to add gems to that installation, it's not recommended, as that would be wiped the next time the Studio jRuby version is updated. Instead, it is suggested that the gem be unpacked into the Ruble and referenced there. Below, we show how to use a JSON gem, and interpret a JSON url response from a Github API call.
+Rubles run using the internal JRuby interpreter. While it is theoretically possible to add gems to that installation, it's not recommended, as that would be wiped the next time the Studio JRuby version is updated. Instead, it is suggested that the gem be unpacked into the Ruble and referenced there. Below, we show how to use a JSON gem, and interpret a JSON url response from a Github API call.
 
 ## Setup
 
@@ -27,21 +27,21 @@ First, unpack the gem. Here we use the JSON gem from [http://flori.github.com/js
 
 ### Using 'gem unpack'
 
-1.  Install the desired gem to your ruby installation if not already installed (**\`gem install json\`**).
-    
-2.  Change directories to the ruble's **/lib** folder.
-    
-3.  Run \`gem unpack json\`, and then optionally rename the resulting subdirectory to be **'json'**.
-    
+1. Install the desired gem to your ruby installation if not already installed (**\`gem install json\`**).
+
+2. Change directories to the ruble's **/lib** folder.
+
+3. Run \`gem unpack json\`, and then optionally rename the resulting subdirectory to be **'json'**.
+
 
 ### Manually unzipping
 
-1.  Download the source version of the gem as a .zip file.
-    
-2.  Unzip the archive and rename it to **'json'**.
-    
-3.  Place it underneath the **/lib** folder in the ruble. You will see a structure like:
-    
+1. Download the source version of the gem as a .zip file.
+
+2. Unzip the archive and rename it to **'json'**.
+
+3. Place it underneath the **/lib** folder in the ruble. You will see a structure like:
+
 
 ![Screen_Shot_2011-12-27_at_1.21.00_PM](/Images/appc/download/attachments/30083229/Screen_Shot_2011-12-27_at_1.21.00_PM.png)
 
@@ -59,20 +59,20 @@ Assuming we are creating a command in commands/commands.rb, we reference the JSO
 
 Here, we take advantage of the fact that items in the **"lib"** directory are automatically loaded.
 
-1.  Create **/lib/json.rb**
-    
-2.  Add the following code://
-    
-    `$: << File.dirname(__FILE__) +` `'json/lib'`
-    
-    `require` `'json'`
-    
-3.  Now, we can require "json" as normal in other commands
-    
+1. Create **/lib/json.rb**
+
+2. Add the following code://
+
+  `$: << File.dirname(__FILE__) +` `'json/lib'`
+
+  `require` `'json'`
+
+3. Now, we can require "json" as normal in other commands
+
 
 ## The Code
 
-In the snippet below, we manipulate the currently selected text to split it across lines, and then wrap each line in a template using mirrored variables (the $1s in the template)
+In the snippet below, we manipulate the currently selected text to split it across lines and then wrap each line in a template using mirrored variables (the $1s in the template)
 
 `require` `'ruble'`
 

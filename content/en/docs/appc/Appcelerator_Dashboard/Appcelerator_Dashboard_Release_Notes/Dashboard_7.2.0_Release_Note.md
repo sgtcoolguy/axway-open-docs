@@ -1,6 +1,6 @@
-{"title":"Dashboard 7.2.0 Release Note","weight":"10"} 
+{"title":"Dashboard 7.2.0 Release Note","weight":"30"}
 
-## Dashboard 7.2.0 - 26 November 2018
+## Dashboard 7.2.0 - 26 November 2019
 
 Dashboard 7.2.0 is a minor release, which includes an improvement and a bug fix.
 
@@ -12,9 +12,9 @@ Attempts to build applications with the com.appcelerator.apm module will receive
 
 ## Improvement
 
-*   Updated role select list on organization _Members_ and _Teams_ views to indicate the services to which roles are associated.
-    
+* Updated role select list on organization _Members_ and _Teams_ views to indicate the services to which roles are associated.
+
 
 ## Fixed issue
 
-*   Resolved issue where counts on _Unique Devices_ analytics views may have been incorrectly calculated.
+* Resolved issue where counts on _Unique Devices_ analytics views may have been incorrectly calculated.

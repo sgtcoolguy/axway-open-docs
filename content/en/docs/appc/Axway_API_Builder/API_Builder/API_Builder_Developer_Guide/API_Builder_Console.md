@@ -1,4 +1,4 @@
-{"title":"API Builder Console","weight":"10"} 
+{"title":"API Builder Console","weight":"10"}
 
 API Builder 3.x is deprecated
 
@@ -6,38 +6,38 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-*   [Introduction](#Introduction)
-    
-*   [Configuration](#Configuration)
-    
-*   [API Builder tabs](#APIBuildertabs)
-    
-    *   [Summary](#Summary)
-        
-    *   [API Doc & Test](#APIDoc&Test)
-        
-    *   [Models](#Models)
-        
-    *   [Configurations](#Configurations)
-        
-    *   [Connectors](#Connectors)
-        
-    *   [Logs](#Logs)
-        
-        *   [Filtering logs](#Filteringlogs)
-            
-        *   [Clear log](#Clearlog)
-            
-        *   [Log pagination](#Logpagination)
-            
-*   [Information and search](#Informationandsearch)
-    
-*   [API Builder and Swagger](#APIBuilderandSwagger)
-    
-    *   [API Builder project Swagger](#APIBuilderprojectSwagger)
-        
-    *   [Individual APIs](#IndividualAPIs)
-        
+* [Introduction](#Introduction)
+
+* [Configuration](#Configuration)
+
+* [API Builder tabs](#APIBuildertabs)
+
+  * [Summary](#Summary)
+
+  * [API Doc & Test](#APIDoc&Test)
+
+  * [Models](#Models)
+
+  * [Configurations](#Configurations)
+
+  * [Connectors](#Connectors)
+
+  * [Logs](#Logs)
+
+    * [Filtering logs](#Filteringlogs)
+
+    * [Clear log](#Clearlog)
+
+    * [Log pagination](#Logpagination)
+
+* [Information and search](#Informationandsearch)
+
+* [API Builder and Swagger](#APIBuilderandSwagger)
+
+  * [API Builder project Swagger](#APIBuilderprojectSwagger)
+
+  * [Individual APIs](#IndividualAPIs)
+
 
 ## Introduction
 
@@ -169,12 +169,12 @@ A **Model** is the data model, backed by a connector, and exposed as an API endp
 
 The **Models** tab lets you create new models. The model build process involves the following steps:
 
-1.  Name your new model, select a connector, and add a description.
-    
-2.  Add fields to your new model.
-    
-3.  Select auto-generated API endpoint.
-    
+1. Name your new model, select a connector, and add a description.
+
+2. Add fields to your new model.
+
+3. Select auto-generated API endpoint.
+
 
 ![model_page](/Images/appc/download/attachments/49153257/model_page.png)
 

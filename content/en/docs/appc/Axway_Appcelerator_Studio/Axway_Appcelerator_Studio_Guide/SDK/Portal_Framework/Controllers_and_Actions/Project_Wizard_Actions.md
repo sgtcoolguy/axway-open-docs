@@ -1,13 +1,13 @@
-{"title":"Project Wizard Actions","weight":"60"} 
+{"title":"Project Wizard Actions","weight":"60"}
 
-*   [Requirements](#Requirements)
-    
-*   [Invocation](#Invocation)
-    
-*   [Open a Project Wizard](#OpenaProjectWizard)
-    
-*   [Open a Project Wizard with a Project Template](#OpenaProjectWizardwithaProjectTemplate)
-    
+* [Requirements](#Requirements)
+
+* [Invocation](#Invocation)
+
+* [Open a Project Wizard](#OpenaProjectWizard)
+
+* [Open a Project Wizard with a Project Template](#OpenaProjectWizardwithaProjectTemplate)
+
 
 ## Requirements
 
@@ -33,14 +33,14 @@ Launches a Project Wizard dialog for the given wizard id
 
 Sample wizard ids:
 
-*   New Web Project: "com.aptana.ui.wizards.NewWebProject"
-    
-*   New Desktop Project: "com.appcelerator.titanium.desktop.project\_wizard"
-    
-*   New Mobile App Project: "com.appcelerator.titanium.mobile.project\_wizard"
-    
-*   New Mobile Module Project: "com.appcelerator.titanium.mobile.module.wizard"
-    
+* New Web Project: "com.aptana.ui.wizards.NewWebProject"
+
+* New Desktop Project: "com.appcelerator.titanium.desktop.project\_wizard"
+
+* New Mobile App Project: "com.appcelerator.titanium.mobile.project\_wizard"
+
+* New Mobile Module Project: "com.appcelerator.titanium.mobile.module.wizard"
+
 
 ## Open a Project Wizard with a Project Template
 

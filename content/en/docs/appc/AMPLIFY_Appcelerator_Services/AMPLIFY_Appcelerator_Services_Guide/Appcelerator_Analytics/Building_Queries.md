@@ -1,4 +1,4 @@
-{"title":"Building Queries","weight":"20"} 
+{"title":"Building Queries","weight":"20"}
 
 As of the Dashboard 5.3.0 release, the Query Builder feature has been replaced with Custom Queries feature. For additional information, refer to [Creating Custom Queries](#undefined).
 
@@ -8,18 +8,18 @@ If you do not have [featureEvents](https://docs.appcelerator.com/platform/latest
 
 Some of the capabilities of the Custom Queries feature are:
 
-*   Default filters for OS platform, device model, OS version, country, and deployment modes.
-    
-*   Query for specific features or properties set against specific events in the application.
-    
-*   Share the query publicly to all users in the organization.
-    
-*   Build funnels based on the feature events configured in the application.
-    
-*   Setup alert notifications when a query count is below or above a preset threshold.
-    
-*   Compare and visualize multiple queries.
-    
+* Default filters for OS platform, device model, OS version, country, and deployment modes.
+
+* Query for specific features or properties set against specific events in the application.
+
+* Share the query publicly to all users in the organization.
+
+* Build funnels based on the feature events configured in the application.
+
+* Set up alert notifications when a query count is below or above a preset threshold.
+
+* Compare and visualize multiple queries.
+
 
 The Custom Queries feature is accessible through the **Analytics** menu on the Dashboard.
 
@@ -31,6 +31,6 @@ To create a custom query, refer to [Creating Custom Queries](https://docs.axway.
 
 ![query_builder_03_latest](/Images/appc/download/attachments/51250946/query_builder_03_latest.png)
 
-Notifications can be configured on saved queries. Notifications can be sent through email or the query results can be configured to be sent to a web URL for display on a web page.
+Notifications can be configured on saved queries. Notifications can be sent through email, or the query results can be configured to be sent to a web URL for display on a web page.
 
 ![query_builder_05](/Images/appc/download/attachments/51250946/query_builder_05.png)

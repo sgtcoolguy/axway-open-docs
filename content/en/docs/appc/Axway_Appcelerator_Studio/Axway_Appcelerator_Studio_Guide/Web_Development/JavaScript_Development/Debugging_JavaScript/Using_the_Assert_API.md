@@ -1,10 +1,10 @@
-{"title":"Using the Assert API","weight":"110"} 
+{"title":"Using the Assert API","weight":"110"}
 
 This page explains how to use the Assert API feature that is part of the Studio JavaScript debugger.
 
 ## Introduction
 
-Use the Assert API to determine whether a condition that you specify is true or false at a give moment. You can do this by adding the code "aptana.assert\_CallName\_" to your code where you want to test the condition.
+Use the Assert API to determine whether a condition that you specify is true or false at a given moment. You can do this by adding the code "aptana.assert\_CallName\_" to your code where you want to test the condition.
 
 ## Instructions
 
@@ -240,7 +240,7 @@ Returns true if the argument(s) are the type of the objects.
 
 ### aptana.assertNotTypeOf
 
-Returns true if the argument(s) are not a type of the objects.
+Returns true if the argument(s) are not a type of objects.
 
 **Syntax**
 
@@ -252,16 +252,16 @@ Returns true if the argument(s) are not a type of the objects.
 
 ### Related Topics
 
-*   [About the Debug perspective](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/)
-    
-*   [Installing the JavaScript debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Installing_the_JavaScript_debugger/)
-    
-*   [Uninstalling the debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Uninstalling_the_debugger/)
-    
-*   [Running the debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Running_the_debugger/)
-    
-*   [Accessing your debugger log](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Accessing_your_debugger_log/)
-    
-*   [Stepping into and over functions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Stepping_into_and_over_functions/)
-    
-*   [Adding a breakpoint](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Adding_a_breakpoint/)
+* [About the Debug perspective](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/)
+
+* [Installing the JavaScript debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Installing_the_JavaScript_debugger/)
+
+* [Uninstalling the debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Uninstalling_the_debugger/)
+
+* [Running the debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Running_the_debugger/)
+
+* [Accessing your debugger log](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Accessing_your_debugger_log/)
+
+* [Stepping into and over functions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Stepping_into_and_over_functions/)
+
+* [Adding a breakpoint](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Adding_a_breakpoint/)

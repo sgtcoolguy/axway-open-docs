@@ -1,17 +1,17 @@
-{"title":"Troubleshooting Guide","weight":"40"} 
+{"title":"Troubleshooting Guide","weight":"40"}
 
 This document provides information on troubleshooting Titanium SDK and Studio and information about push notification error messages.
 
-*   [Titanium SDK and Studio](#TitaniumSDKandStudio)
-    
-    *   [Error enabling Cloud service for the project](#ErrorenablingCloudservicefortheproject)
-        
-*   [Push notification error messages](#Pushnotificationerrormessages)
-    
-    *   [Apple Push Notification Server (APNS) errors](#ApplePushNotificationServer(APNS)errors)
-        
-    *   [Firebase Cloud Messaging (FCM) errors](#FirebaseCloudMessaging(FCM)errors)
-        
+* [Titanium SDK and Studio](#TitaniumSDKandStudio)
+
+  * [Error enabling Cloud service for the project](#ErrorenablingCloudservicefortheproject)
+
+* [Push notification error messages](#Pushnotificationerrormessages)
+
+  * [Apple Push Notification Server (APNS) errors](#ApplePushNotificationServer(APNS)errors)
+
+  * [Firebase Cloud Messaging (FCM) errors](#FirebaseCloudMessaging(FCM)errors)
+
 
 ## Titanium SDK and Studio
 
@@ -25,42 +25,42 @@ If you do _not_ have MBS keys, try to enable Cloud services again at a later tim
 
 If you do have MBS keys, manually enter the MBS key information in the tiapp.xml file. To manually enter this information:
 
-1.  Double-click your tiapp.xml file to open it in the **Editor**.
-    
-2.  Click the **tiapp.xml** tab in the lower-left corner of the **Editor**.
-    
-3.  Insert the following MBS property keys as children of the ti:app parent tag and replace with the application's MBS keys found earlier:
-    
-    `<``ti``:app` `xmlns:ti``=``"http://ti.appcelerator.org"``>`
-    
-    `<!-- Add these six tags and replace with your application's ArrowDB keys -->`
-    
-    `<``property`  `name``=``"acs-oauth-secret-development"`  `type``=``"string"``>OAUTH_CONSUMER_SECRET_DEV</``property``>`
-    
-    `<``property`  `name``=``"acs-oauth-key-development"`  `type``=``"string"``>OAUTH_CONSUMER_KEY_DEV</``property``>`
-    
-    `<``property`  `name``=``"acs-api-key-development"`  `type``=``"string"``>APP_KEY_DEV</``property``>`
-    
-    `<``property`  `name``=``"acs-oauth-secret-production"`  `type``=``"string"``>OAUTH_CONSUMER_SECRET_PROD</``property``>`
-    
-    `<``property`  `name``=``"acs-oauth-key-production"`  `type``=``"string"``>OAUTH_CONSUMER_KEY_PROD</``property``>`
-    
-    `<``property`  `name``=``"acs-api-key-production"`  `type``=``"string"``>APP_KEY_PROD</``property``>`
-    
-    `<!-- Add these two tags if you are using Appcelerator Studio -->`
-    
-    `<``property`  `name``=``"acs-authbase-url"`  `type``=``"string"``>``https://secure-identity.cloud.appcelerator.com``</``property``>`
-    
-    `<``property`  `name``=``"acs-base-url"`  `type``=``"string"``>``https://api.cloud.appcelerator.com``</``property``>`
-    
-    `...`
-    
-    `</``ti``:app>`
-    
-4.  Save and close your tiapp.xml file.
-    
-5.  Reopen your tiapp.xml file. In the **Overview** tab, it should show that Cloud services are enabled.
-    
+1. Double-click your tiapp.xml file to open it in the **Editor**.
+
+2. Click the **tiapp.xml** tab in the lower-left corner of the **Editor**.
+
+3. Insert the following MBS property keys as children of the ti:app parent tag and replace with the application's MBS keys found earlier:
+
+  `<``ti``:app` `xmlns:ti``=``"http://ti.appcelerator.org"``>`
+
+  `<!-- Add these six tags and replace with your application's ArrowDB keys -->`
+
+  `<``property`  `name``=``"acs-oauth-secret-development"`  `type``=``"string"``>OAUTH_CONSUMER_SECRET_DEV</``property``>`
+
+  `<``property`  `name``=``"acs-oauth-key-development"`  `type``=``"string"``>OAUTH_CONSUMER_KEY_DEV</``property``>`
+
+  `<``property`  `name``=``"acs-api-key-development"`  `type``=``"string"``>APP_KEY_DEV</``property``>`
+
+  `<``property`  `name``=``"acs-oauth-secret-production"`  `type``=``"string"``>OAUTH_CONSUMER_SECRET_PROD</``property``>`
+
+  `<``property`  `name``=``"acs-oauth-key-production"`  `type``=``"string"``>OAUTH_CONSUMER_KEY_PROD</``property``>`
+
+  `<``property`  `name``=``"acs-api-key-production"`  `type``=``"string"``>APP_KEY_PROD</``property``>`
+
+  `<!-- Add these two tags if you are using Appcelerator Studio -->`
+
+  `<``property`  `name``=``"acs-authbase-url"`  `type``=``"string"``>``https://secure-identity.cloud.appcelerator.com``</``property``>`
+
+  `<``property`  `name``=``"acs-base-url"`  `type``=``"string"``>``https://api.cloud.appcelerator.com``</``property``>`
+
+  `...`
+
+  `</``ti``:app>`
+
+4. Save and close your tiapp.xml file.
+
+5. Reopen your tiapp.xml file. In the **Overview** tab, it should show that Cloud services are enabled.
+
 
 ## Push notification error messages
 
@@ -90,49 +90,49 @@ Network communication between the MBS push notification dispatcher and APNS was 
 
 2003
 
-Certificate does not exist.
+A certificate does not exist.
 
 The specified [APNS push certificate](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/Push_Notifications/Configuring_Push_Services/) does not exist.
 
 2004
 
-Certificate is disabled.
+The certificate is disabled.
 
 The specified [APNS push certificate](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/Push_Notifications/Configuring_Push_Services/) is disabled.
 
 2005
 
-Payload is invalid.
+The payload is invalid.
 
 The [JSON payload](#undefined) is invalid.
 
 2006
 
-Payload is longer than 2048 bytes.
+The payload is longer than 2048 bytes.
 
 The JSON payload is longer than 2048 bytes. You need to make the payload smaller.
 
 2007
 
-Certificate is revoked.
+The certificate is revoked.
 
 The specified [APNS push certificate](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/Push_Notifications/Configuring_Push_Services/) has been revoked. You need to generate a new certificate.
 
 2008
 
-Certificate is expired.
+The certificate is expired.
 
 The specified [APNS push certificate](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/Push_Notifications/Configuring_Push_Services/) has expired. You need to generate a new certificate.
 
 2009
 
-Certificate is invalid.
+The certificate is invalid.
 
 The specified [APNS push certificate](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/Push_Notifications/Configuring_Push_Services/) is invalid. You need to generate a new certificate.
 
 2010
 
-Socket is closed.
+The socket is closed.
 
 The socket connection between the Mobile Backend Services push dispatcher and APNS was closed.
 
@@ -166,13 +166,13 @@ The FCM client sent a bad [registration ID](https://developer.android.com/google
 
 3004
 
-Time-to-live value provided is less than zero or more than the allowed maximum.
+The time-to-live value provided is less than zero or more than the allowed maximum.
 
 The message's [Time to Live](http://developer.android.com/google/gcm/adv.html#ttl) (expiration date) value is invalid. This error is uncommon if you are using the [Modules.CloudPush](#!/api/Modules.CloudPush) module.
 
 3005
 
-Payload is longer than the maximum allowed size of 4096 bytes.
+The payload is longer than the maximum allowed size of 4096 bytes.
 
 FCM limits push notification payload size to 4096 bytes; try reducing the JSON message size and sending it again.
 
@@ -184,7 +184,7 @@ The [FCM client](https://developer.android.com/google/gcm/client.html) did not u
 
 3007
 
-Collapse key is required. Include the collapse key in the request.
+A collapse key is required. Include the collapse key in the request.
 
 If you are using a custom FCM client, you need to include a [collapse key](http://developer.android.com/google/gcm/adv.html) in the request. This error is uncommon if you are using the [Modules.CloudPush](#!/api/Modules.CloudPush) module.
 
@@ -236,6 +236,6 @@ An internal error occurred with FCM. Check FCM status.
 
 3105
 
-Message could not be sent, or there was a JSON parsing error.
+The message could not be sent, or there was a JSON parsing error.
 
 Make sure that the notification [JSON payload](#undefined) is formatted correctly.

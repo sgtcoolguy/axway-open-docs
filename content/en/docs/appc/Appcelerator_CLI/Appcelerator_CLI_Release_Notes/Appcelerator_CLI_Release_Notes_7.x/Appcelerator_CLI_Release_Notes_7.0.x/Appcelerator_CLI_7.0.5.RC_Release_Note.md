@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 7.0.5.RC - 10 August 2018","weight":"150"} 
+{"title":"Appcelerator CLI 7.0.5.RC - 10 August 2018","weight":"150"}
 
 Appcelerator CLI 7.0.5 is a patch release that includes two bug fixes.
 
@@ -30,6 +30,6 @@ Daemon
 
 ## Fixed issues
 
-*   [ALOY-1622](https://jira.appcelerator.org/browse/ALOY-1622) - Migration on a model with sql adapter type: build error due to an undefined variable
-    
-*   [DAEMON-259](https://jira.appcelerator.org/browse/DAEMON-259) - iOS: Not able to select 11.4 simulator from studio
+* [ALOY-1622](https://jira.appcelerator.org/browse/ALOY-1622) - Migration on a model with sql adapter type: build error due to an undefined variable
+
+* [DAEMON-259](https://jira.appcelerator.org/browse/DAEMON-259) - iOS: Not able to select 11.4 simulator from studio

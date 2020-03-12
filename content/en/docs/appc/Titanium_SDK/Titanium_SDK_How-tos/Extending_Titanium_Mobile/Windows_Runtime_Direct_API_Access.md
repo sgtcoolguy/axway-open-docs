@@ -1,19 +1,19 @@
-{"title":"Windows Runtime Direct API Access","weight":"10"} 
+{"title":"Windows Runtime Direct API Access","weight":"10"}
 
-*   [Introduction](#Introduction)
-    
-*   [Usage](#Usage)
-    
-    *   [Require a class](#Requireaclass)
-        
-    *   [Enumerations](#Enumerations)
-        
-    *   [Event handling](#Eventhandling)
-        
-    *   [Async return types](#Asyncreturntypes)
-        
-    *   [Mix WinRT APIs with Titanium APIs](#MixWinRTAPIswithTitaniumAPIs)
-        
+* [Introduction](#Introduction)
+
+* [Usage](#Usage)
+
+  * [Require a class](#Requireaclass)
+
+  * [Enumerations](#Enumerations)
+
+  * [Event handling](#Eventhandling)
+
+  * [Async return types](#Asyncreturntypes)
+
+  * [Mix WinRT APIs with Titanium APIs](#MixWinRTAPIswithTitaniumAPIs)
+
 
 WIndows Runtime Direct API Access was removed in Titanium SDK 6.1.0. Use [Hyperloop](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyperloop/) to access native APIs.
 
@@ -29,12 +29,12 @@ To use a Windows API, you must first require in the class, then you can invoke i
 
 Before using an API make sure it can be supported first. Open the [API reference](https://msdn.microsoft.com/en-us/library/windows/apps/br211369.aspx) for the API you want to use.
 
-1.  Check if it is supported in C++. In the _Syntax_ section at the top of the API reference, the tabbed group should contain a C++ tab.
-    
-2.  Check that the minimum API version is at least Windows 8 or 8.1. At the bottom of the API reference, check for a _Requirements (Windows 8.x and Windows Phone)_ section.
-    
-3.  Check if the API supports only Windows Phone or only Windows. Some APIs may only support one platform. Check the platform in the application before invoking the API.
-    
+1. Check if it is supported in C++. In the _Syntax_ section at the top of the API reference, the tabbed group should contain a C++ tab.
+
+2. Check that the minimum API version is at least Windows 8 or 8.1. At the bottom of the API reference, check for a _Requirements (Windows 8.x and Windows Phone)_ section.
+
+3. Check if the API supports only Windows Phone or only Windows. Some APIs may only support one platform. Check the platform in the application before invoking the API.
+
 
 ### Require a class
 

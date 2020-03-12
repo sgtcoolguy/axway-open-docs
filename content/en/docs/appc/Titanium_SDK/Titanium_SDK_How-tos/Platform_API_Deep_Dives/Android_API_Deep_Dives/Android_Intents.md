@@ -1,27 +1,27 @@
-{"title":"Android Intents","weight":"10"} 
+{"title":"Android Intents","weight":"10"}
 
-*   [Introduction](#Introduction)
-    
-*   [Intent types](#Intenttypes)
-    
-*   [Create an intent](#Createanintent)
-    
-    *   [Create an explicit intent](#Createanexplicitintent)
-        
-    *   [Add extra data](#Addextradata)
-        
-    *   [Add a category](#Addacategory)
-        
-*   [Start an activity with an intent](#Startanactivitywithanintent)
-    
-*   [Force an intent chooser](#Forceanintentchooser)
-    
-*   [Example](#Example)
-    
-    *   [Complete code](#Completecode)
-        
-*   [Further reading](#Furtherreading)
-    
+* [Introduction](#Introduction)
+
+* [Intent types](#Intenttypes)
+
+* [Create an intent](#Createanintent)
+
+  * [Create an explicit intent](#Createanexplicitintent)
+
+  * [Add extra data](#Addextradata)
+
+  * [Add a category](#Addacategory)
+
+* [Start an activity with an intent](#Startanactivitywithanintent)
+
+* [Force an intent chooser](#Forceanintentchooser)
+
+* [Example](#Example)
+
+  * [Complete code](#Completecode)
+
+* [Further reading](#Furtherreading)
+
 
 ## Introduction
 
@@ -29,34 +29,34 @@ In Android, applications and application components cannot directly communicate 
 
 Intents can be used to start an activity, start a service or start a broadcast. This document discusses how to use an intent to start an activity.
 
-*   To use an intent to start a service, see [Android Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Services/).
-    
-*   To use an intent to start a broadcast or to create a broadcast receiver, see [Android Broadcast Intents and Receivers](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Broadcast_Intents_and_Receivers/).
-    
-*   To receive intents from other applications, see [Android Intent Filters](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Intent_Filters/).
-    
+* To use an intent to start a service, see [Android Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Services/).
+
+* To use an intent to start a broadcast or to create a broadcast receiver, see [Android Broadcast Intents and Receivers](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Broadcast_Intents_and_Receivers/).
+
+* To receive intents from other applications, see [Android Intent Filters](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Intent_Filters/).
+
 
 ## Intent types
 
 There are two kinds of intents:
 
-*   _Explicit intents_ specify the application to start. When creating the intent, specify the application's package name and class when creating the intent. Explicit intents are normally used to start components within your own application.
-    
-*   _Implicit intents_ do **NOT** specify the application to start. Instead, they declare a general action. The user can decide which application to start if multiple applications can handle the action or a default application has not been selected by the user. For example, if a user opens their browser and highlights some text, the user can share that text with other Android apps, such as an e-mail application, SMS application or a social networking application.
-    
+* _Explicit intents_ specify the application to start. When creating the intent, specify the application's package name and class when creating the intent. Explicit intents are normally used to start components within your own application.
 
-The user highlights the text and  
+* _Implicit intents_ do **NOT** specify the application to start. Instead, they declare a general action. The user can decide which application to start if multiple applications can handle the action or a default application has not been selected by the user. For example, if a user opens their browser and highlights some text, the user can share that text with other Android apps, such as an e-mail application, SMS application or a social networking application.
+
+
+The user highlights the text and
 clicks the **Share** button.
 
-The **Share** dialog appears and  
-the user can select the application  
+The **Share** dialog appears and
+the user can select the application
 to send the text to, such as...
 
 ...an e-mail application,
 
 ...an SMS application
 
-...or a social networking  
+...or a social networking
 application like Google+.
 
 ![HighlightText](/Images/appc/download/attachments/43287298/HighlightText.png)
@@ -73,18 +73,18 @@ application like Google+.
 
 To create an intent, use the Titanium.Android.createIntent() method to create an Intent object. Pass the method a dictionary with the following properties:
 
-*   action: Action to associate with the intent. Specify one of the Titanium.Android.ACTION\_\* constants. The most commonly used actions are:
-    
-    *   Titanium.Android.ACTION\_SEND: Send data to an application.
-        
-    *   Titanium.Android.ACTION\_VIEW: View data in an application.
-        
-*   flags: Optional flags to set to modify the behavior of the intent. Bitwise-OR the Titanium.Android.FLAG\_\* constants with the Intent object's flag property rather than specifying them during creation.
-    
-*   data: Optional data URI to pass to an application's activity.
-    
-*   type: Optional MIME type for the intent.
-    
+* action: Action to associate with the intent. Specify one of the Titanium.Android.ACTION\_\* constants. The most commonly used actions are:
+
+  * Titanium.Android.ACTION\_SEND: Send data to an application.
+
+  * Titanium.Android.ACTION\_VIEW: View data in an application.
+
+* flags: Optional flags to set to modify the behavior of the intent. Bitwise-OR the Titanium.Android.FLAG\_\* constants with the Intent object's flag property rather than specifying them during creation.
+
+* data: Optional data URI to pass to an application's activity.
+
+* type: Optional MIME type for the intent.
+
 
 For the action, you can also define your own custom action name. Use a reverse domain scheme to name the action to avoid potential conflicts, for example, com.appcelerator.action.LINT . Custom actions are only useful to communicate between your applications and application activities using intents.
 
@@ -102,12 +102,12 @@ The following example creates an intent to view the data URI:
 
 To create an explicit intent, in addition to the previously mentioned intent properties, you need to also set the packageName and className properties, or the url property, but not both.
 
-*   className: Name of the class. For the main activity of a Titanium project, this is the name of the activity prefixed with project's application ID (or packageName). The name of the main activity is the name of the application/project with only the first letter capitalized and Activity appended to the end of it. For example, if the name of the project is MyApp and the application ID is com.appcelerator.testapp, the class name will be com.appcelerator.testapp.MyappActivity. You can also find the name of the main activity in the build/android/AndroidManifest.xml file after you build your application.
-    
-*   packageName: Package name of the application. For Titanium project's, this is the project's application ID located in the tiapp.xml file.
-    
-*   url: URL of the JavaScript activity file to launch.
-    
+* className: Name of the class. For the main activity of a Titanium project, this is the name of the activity prefixed with project's application ID (or packageName). The name of the main activity is the name of the application/project with only the first letter capitalized and Activity appended to the end of it. For example, if the name of the project is MyApp and the application ID is com.appcelerator.testapp, the class name will be com.appcelerator.testapp.MyappActivity. You can also find the name of the main activity in the build/android/AndroidManifest.xml file after you build your application.
+
+* packageName: Package name of the application. For Titanium project's, this is the project's application ID located in the tiapp.xml file.
+
+* url: URL of the JavaScript activity file to launch.
+
 
 The following example creates an intent to launch the main activity of the MyApp application:
 
@@ -157,26 +157,26 @@ The following example adds a custom field called "timestamp" to the intent and t
 
 To add a category to an intent, use the Intent's addCategory() method. A category provides additional details about the purpose of the intent. Note that most categories are only useful for intent filters. Pass the method one of the following Titanium.Android.CATEGORY\_\* constants:
 
-*   Titanium.Android.CATEGORY\_DEFAULT: Do not use category filtering.
-    
-*   Titanium.Android.CATEGORY\_BROWSABLE: Activity can be opened by a browser when clicking a link.
-    
-*   Titanium.Android.CATEGORY\_TAB: Activity should be opened in a tab.
-    
-*   Titanium.Android.CATEGORY\_ALTERNATIVE: Activity should be considered as an alternative option, usually displayed in the options menu.
-    
-*   Titanium.Android.CATEGORY\_SELECTED\_ALTERNATIVE: Activity should be considered as an alternative option, usually displayed in a dialog.
-    
-*   Titanium.Android.CATEGORY\_LAUNCHER: Activity is the application's initial activity and is listed in the OS's application launcher.
-    
-*   Titanium.Android.CATEGORY\_INFO: Provides information about the application package.
-    
-*   Titanium.Android.CATEGORY\_HOME: Home activity.
-    
-*   Titanium.Android.CATEGORY\_PREFERENCE: Activity is a preference panel.
-    
-*   Titanium.Android.CATEGORY\_TEST: Activity is for testing purposes.
-    
+* Titanium.Android.CATEGORY\_DEFAULT: Do not use category filtering.
+
+* Titanium.Android.CATEGORY\_BROWSABLE: Activity can be opened by a browser when clicking a link.
+
+* Titanium.Android.CATEGORY\_TAB: Activity should be opened in a tab.
+
+* Titanium.Android.CATEGORY\_ALTERNATIVE: Activity should be considered as an alternative option, usually displayed in the options menu.
+
+* Titanium.Android.CATEGORY\_SELECTED\_ALTERNATIVE: Activity should be considered as an alternative option, usually displayed in a dialog.
+
+* Titanium.Android.CATEGORY\_LAUNCHER: Activity is the application's initial activity and is listed in the OS's application launcher.
+
+* Titanium.Android.CATEGORY\_INFO: Provides information about the application package.
+
+* Titanium.Android.CATEGORY\_HOME: Home activity.
+
+* Titanium.Android.CATEGORY\_PREFERENCE: Activity is a preference panel.
+
+* Titanium.Android.CATEGORY\_TEST: Activity is for testing purposes.
+
 
 For categories, you can also define your own custom category name. Use a reverse domain scheme to name the category to avoid potential conflicts, for example, org.foo.category.SUPER . Custom categories are only useful to communicate between your applications and application activities using intents.
 
@@ -184,10 +184,10 @@ For categories, you can also define your own custom category name. Use a reverse
 
 To start an activity (application or application component), call the application's current Activity's startActivity() or startActivityForResult() method. To get the current activity, use the activity property of either the currently opened Window or TabGroup, or if the activity does not have an open Window or TabGroup, use the Titanium.Android.currentActivity property.
 
-*   The startActivity() method starts an Activity by passing it only an intent object.
-    
-*   The startActivityForResult() method starts an Activity by passing it an intent object and a callback function to handle the response returned by the activity when it finishes. Use this method if the application wants to communicate between two activities.
-    
+* The startActivity() method starts an Activity by passing it only an intent object.
+
+* The startActivityForResult() method starts an Activity by passing it an intent object and a callback function to handle the response returned by the activity when it finishes. Use this method if the application wants to communicate between two activities.
+
 
 Wait for the TabGroup or Window to open before invoking any methods on its activity.
 
@@ -365,6 +365,6 @@ When the intent is sent, the OS should display a list of applications to launch 
 
 ## Further reading
 
-*   [Titanium.Android API Reference](#!/api/Titanium.Android)
-    
-*   [Android Developers: Intent and Intent Filters](http://developer.android.com/guide/components/intents-filters.html)
+* [Titanium.Android API Reference](#!/api/Titanium.Android)
+
+* [Android Developers: Intent and Intent Filters](http://developer.android.com/guide/components/intents-filters.html)

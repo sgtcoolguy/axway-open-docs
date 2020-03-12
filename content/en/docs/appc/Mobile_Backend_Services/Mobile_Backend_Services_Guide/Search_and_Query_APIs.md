@@ -1,59 +1,59 @@
-{"title":"Search and Query APIs","weight":"60"} 
+{"title":"Search and Query APIs","weight":"60"}
 
-*   [Query API overview](#QueryAPIoverview)
-    
-    *   [Query API availability](#QueryAPIavailability)
-        
-    *   [Query parameters](#Queryparameters)
-        
-        *   [count](#count)
-            
-        *   [page](#page)
-            
-        *   [per\_page](#per_page)
-            
-        *   [limit](#limit)
-            
-        *   [id and \_id](#idand_id)
-            
-        *   [new\_pagination](#new_pagination)
-            
-        *   [skip](#skip)
-            
-        *   [where](#where)
-            
-            *   [Geographic coordinates](#Geographiccoordinates)
-                
-        *   [order](#order)
-            
-        *   [sel](#sel)
-            
-        *   [unsel](#unsel)
-            
-*   [Query pagination](#Querypagination)
-    
-    *   [Range-based query pagination examples](#Range-basedquerypaginationexamples)
-        
-        *   [Query on a custom field, results in ascending order](#Queryonacustomfield,resultsinascendingorder)
-            
-        *   [Query on a custom field, results in descending order](#Queryonacustomfield,resultsindescendingorder)
-            
-        *   [Query for next page of results, results in ascending order](#Queryfornextpageofresults,resultsinascendingorder)
-            
-        *   [Query for the previous page of results](#Queryforthepreviouspageofresults)
-            
-*   [Search API overview](#SearchAPIoverview)
-    
-    *   [Search API parameters](#SearchAPIparameters)
-        
-        *   [page](#page.1)
-            
-        *   [per\_page](#per_page.1)
-            
-        *   [q](#q)
-            
-    *   [Search API availability](#SearchAPIavailability)
-        
+* [Query API overview](#QueryAPIoverview)
+
+  * [Query API availability](#QueryAPIavailability)
+
+  * [Query parameters](#Queryparameters)
+
+    * [count](#count)
+
+    * [page](#page)
+
+    * [per\_page](#per_page)
+
+    * [limit](#limit)
+
+    * [id and \_id](#idand_id)
+
+    * [new\_pagination](#new_pagination)
+
+    * [skip](#skip)
+
+    * [where](#where)
+
+      * [Geographic coordinates](#Geographiccoordinates)
+
+    * [order](#order)
+
+    * [sel](#sel)
+
+    * [unsel](#unsel)
+
+* [Query pagination](#Querypagination)
+
+  * [Range-based query pagination examples](#Range-basedquerypaginationexamples)
+
+    * [Query on a custom field with results in ascending order](#Queryonacustomfieldwithresultsinascendingorder)
+
+    * [Query on a custom field with results in descending order](#Queryonacustomfieldwithresultsindescendingorder)
+
+    * [Query for the next page of results with results in ascending order](#Queryforthenextpageofresultswithresultsinascendingorder)
+
+    * [Query for the previous page of results](#Queryforthepreviouspageofresults)
+
+* [Search API overview](#SearchAPIoverview)
+
+  * [Search API parameters](#SearchAPIparameters)
+
+    * [page](#page.1)
+
+    * [per\_page](#per_page.1)
+
+    * [q](#q)
+
+  * [Search API availability](#SearchAPIavailability)
+
 
 Mobile Backend Services (MBS) provides APIs for querying and searching for MBS objects. The query APIs allow you to perform custom database-style searches, while search APIs perform a full-text search using the MBS search engine.
 
@@ -69,7 +69,7 @@ You can also control the sort order of query results using the order parameter, 
 
 ### Query API availability
 
-The following MBS objects provide query methods: [ACLs](/arrowdb/latest/#!/api/ACLs-method-query), [Chats](/arrowdb/latest/#!/api/Chats-method-query), [Checkins](/arrowdb/latest/#!/api/Checkins-method-query), [CustomObjects](/arrowdb/latest/#!/api/CustomObjects-method-query), [Events](/arrowdb/latest/#!/api/Events-method-query), [Files](/arrowdb/latest/#!/api/Files-method-query), [GeoFences](/arrowdb/latest/#!/api/GeoFences-method-query), [KeyValues](/arrowdb/latest/#!/api/KeyValues-method-query), [Likes](/arrowdb/latest/#!/api/Likes-method-query), [Logs](/arrowdb/latest/#!/api/Logs), [Messages](/arrowdb/latest/#!/api/Messages-method-query), [Photos](/arrowdb/latest/#!/api/Photos-method-query), [Places](/arrowdb/latest/#!/api/Places-method-query), [Posts](/arrowdb/latest/#!/api/Posts-method-query),  
+The following MBS objects provide query methods: [ACLs](/arrowdb/latest/#!/api/ACLs-method-query), [Chats](/arrowdb/latest/#!/api/Chats-method-query), [Checkins](/arrowdb/latest/#!/api/Checkins-method-query), [CustomObjects](/arrowdb/latest/#!/api/CustomObjects-method-query), [Events](/arrowdb/latest/#!/api/Events-method-query), [Files](/arrowdb/latest/#!/api/Files-method-query), [GeoFences](/arrowdb/latest/#!/api/GeoFences-method-query), [KeyValues](/arrowdb/latest/#!/api/KeyValues-method-query), [Likes](/arrowdb/latest/#!/api/Likes-method-query), [Logs](/arrowdb/latest/#!/api/Logs), [Messages](/arrowdb/latest/#!/api/Messages-method-query), [Photos](/arrowdb/latest/#!/api/Photos-method-query), [Places](/arrowdb/latest/#!/api/Places-method-query), [Posts](/arrowdb/latest/#!/api/Posts-method-query),
 [PushNotifications](/arrowdb/latest/#!/api/PushNotifications-method-query), [PushSchedules](/arrowdb/latest/#!/api/PushSchedules-method-query), [Reviews](/arrowdb/latest/#!/api/Reviews-method-query), [Statuses](/arrowdb/latest/#!/api/Statuses-method-query), and [Users](/arrowdb/latest/#!/api/Users-method-query).
 
 For security reasons, when querying for [Users](/arrowdb/latest/#!/api/Users), the [email](/arrowdb/latest/#!/api/Emails) field is not returned in the User object unless you have [admin access](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Admin_Access/)[.](/arrowdb/latest/#!/guide/admin_access)
@@ -398,7 +398,7 @@ Give $and an array of expressions, all of which must match the query.
 
 $all
 
-The $all operator is similar to $in, but instead of matching any value in the specified array all values in the array must be matched.
+The $all operator is similar to $in, but instead of matching any value in the specified array, all values in the array must be matched.
 
 $elemMatch
 
@@ -406,7 +406,7 @@ Give $elemMatch an expression to match against elements in an array.
 
 $exists
 
-Check for existence of a field.
+Check for the existence of a field.
 
 $regex
 
@@ -414,9 +414,9 @@ Regex match on a string. Currently, only prefix matches are supported: the regul
 
 $text
 
-Perform a text search on the contents of the field. A **$text** expression has the following syntax:  
-{ "$text": { "$search": <string> }}  
-Most punctuation marks and spaces are treated as delimiters allowing you to search for multiple keywords, excluding escaped double quotes (\\") and hyphens (-). Escaped double quotes are used for phrase searches, and hyphens are used to negate searches. Sorting does not work with the $text operator, that is, using the order field will have no effect when using the $text operator.
+Perform a text search on the contents of the field. A **$text** expression has the following syntax:
+{ "$text": { "$search": <string> }}
+Most punctuation marks and spaces are treated as delimiters allowing you to search for multiple keywords, excluding escaped double quotes (\\") and hyphens (-). Escaped double quotes are used for phrase searches, and hyphens are used to negate searches. Sorting does not work with the $text operator, that is, using the order field will not have any effect when using the $text operator.
 
 ##### Geographic coordinates
 
@@ -526,10 +526,10 @@ For example, if you want to return all fields except first\_name:
 
 Starting with Mobile Backend Services (ArrowDB) 1.1.5, we have made the following changes:
 
-*   Skip is limited to 0-4999; as a result, you can not skip beyond 5000 records.
-    
-*   If the query includes count=true, the query response's meta object contains a count field whose value is the total number of objects that match the query criteria. If the query matches more than 5000 objects, the count field contains the value "5000+". If your query result set includes more than 5000 records, you should perform range-based queries for pagination. This is done by including a where parameter on an object field using the $gt or $lt operators, as discussed below.
-    
+* Skip is limited to 0-4999; as a result, you can not skip beyond 5000 records.
+
+* If the query includes count=true, the query response's meta object contains a count field whose value is the total number of objects that match the query criteria. If the query matches more than 5000 objects, the count field contains the value "5000+". If your query result set includes more than 5000 records, you should perform range-based queries for pagination. This is done by including a where parameter on an object field using the $gt or $lt operators, as discussed below.
+
 
 For example, the following cURL uses a range-based query for Statuses whose custom field named score is less than 100 and sorts the results in ascending order on the score field:
 
@@ -559,16 +559,16 @@ For additional examples, see [Range-based Query Pagination Examples](#Range-base
 
 ### Range-based query pagination examples
 
-*   Query on Custom Field, Results in Ascending Order
-    
-*   Query on Custom Field, Results in Descending Order
-    
-*   Query for Next Page of Results, Results in Ascending Order
-    
-*   Query for Previous Page of Results
-    
+* Query on Custom Field, Results in Ascending Order
 
-#### Query on a custom field, results in ascending order
+* Query on Custom Field, Results in Descending Order
+
+* Query for the Next Page of Results, Results in Ascending Order
+
+* Query for the Previous Page of Results
+
+
+#### Query on a custom field with results in ascending order
 
 In this example, the query returns Statuses objects whose custom score field is less than 100 and sorts results on the score in ascending order (&order=score). The query matches 100 total records.
 
@@ -722,7 +722,7 @@ In this example, the query returns Statuses objects whose custom score field is 
 
 `}`
 
-#### Query on a custom field, results in descending order
+#### Query on a custom field with results in descending order
 
 In this example, status objects are queried whose custom score field is less than 100 and sorts results on score in descending order (&order=-score).
 
@@ -874,7 +874,7 @@ In this example, status objects are queried whose custom score field is less tha
 
 `}`
 
-#### Query for next page of results, results in ascending order
+#### Query for the next page of results with results in ascending order
 
 In this example, the next page of status objects is queried whose \_id field is less than "53fe1c25759220e9f6754194" and sorted in descending order on the custom score field.
 
@@ -1030,7 +1030,7 @@ In this example, the next page of status objects is queried whose \_id field is 
 
 As explained previously, to get the second (or next) page of results in a query, you query for objects whose \_id field is less (older) than the \_id of the last object returned by the prior query. To get the previous (first) page of results again, you query for those objects whose \_id is greater (newer) than the first object returned in by the prior query.
 
-However, if you query for the third results page, and want to get the previous (second) results page, you need to restrict the query to those objects whose \_id is greater than the first object returned by the most recent query (third results page), and less than that of the last object returned in the query before that (second results page); or, equivalently, less than or equal to the first object returned in the initial query (first results page). The following demonstrates this.
+However, if you query for the third results page, and you want to get the previous (second) results page, you need to restrict the query to those objects whose \_id is greater than the first object returned by the most recent query (third results page), and less than that of the last object returned in the query before that (second results page); or, equivalently, less than or equal to the first object returned in the initial query (first results page). The following demonstrates this.
 
 **First page (page 1)**
 
@@ -1236,12 +1236,12 @@ The Search API is fixed in terms of the searchable fields; use the [query](#Quer
 
 The following parameters are available for search operations:
 
-*   page
-    
-*   per\_page
-    
-*   q
-    
+* page
+
+* per\_page
+
+* q
+
 
 #### page
 
@@ -1253,16 +1253,16 @@ The number of results per page. The default is 10.
 
 #### q
 
-The keyword or phrase to search for.
+The keyword or phrase for which to search.
 
 ### Search API availability
 
 Search methods are available for the following pre-built MBS objects, as well as for custom fields.
 
-*   [Events](/arrowdb/latest/#!/api/Events-method-search)
-    
-*   [Friends](/arrowdb/latest/#!/api/Friends-method-search)
-    
-*   [Places](/arrowdb/latest/#!/api/Places)
-    
-*   [Users](/arrowdb/latest/#!/api/Users)
+* [Events](/arrowdb/latest/#!/api/Events-method-search)
+
+* [Friends](/arrowdb/latest/#!/api/Friends-method-search)
+
+* [Places](/arrowdb/latest/#!/api/Places)
+
+* [Users](/arrowdb/latest/#!/api/Users)

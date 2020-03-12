@@ -1,8 +1,8 @@
-{"title":"Print Editor Properties","weight":"90"} 
+{"title":"Print Editor Properties","weight":"90"}
 
 ## Overview
 
-In this recipe we show how to create a simple Ruble command that prints out the properties of the current editor
+In this recipe, we show how to create a simple Ruble command that prints out the properties of the current editor
 
 ## The Code
 
@@ -32,7 +32,7 @@ As an example of the above properties, you can try the following. In a blank CSS
 
 `}`
 
-Select text "background", with the caret after the "d"
+Select text "background", with the caret after the "d":
 
 `require` `'ruble'`
 

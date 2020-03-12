@@ -1,11 +1,11 @@
-{"title":"Sockets","weight":"20"} 
+{"title":"Sockets","weight":"20"}
 
-*   [Overview](#Overview)
-    
-*   [Sockets explained](#Socketsexplained)
-    
-*   [Usage examples](#Usageexamples)
-    
+* [Overview](#Overview)
+
+* [Sockets explained](#Socketsexplained)
+
+* [Usage examples](#Usageexamples)
+
 
 ## Overview
 

@@ -1,47 +1,47 @@
-{"title":"Studio 5.1.0 Changes","weight":"10"} 
+{"title":"Studio 5.1.0 Changes","weight":"10"}
 
-*   [Cannot update from Studio 5.0.0 to Studio 5.1.0](#CannotupdatefromStudio5.0.0toStudio5.1.0)
-    
-*   [Noteworthy changes](#Noteworthychanges)
-    
-*   [Installers](#Installers)
-    
-    *   [For MacOS](#ForMacOS)
-        
-        *   [Studio configuration file](#Studioconfigurationfile)
-            
-    *   [Windows](#Windows)
-        
-*   [Java support matrix](#Javasupportmatrix)
-    
-    *   [Studio 5.0.0 and earlier installers](#Studio5.0.0andearlierinstallers)
-        
-    *   [Studio 5.1.0+ installers](#Studio5.1.0+installers)
-        
+* [Cannot update from Studio 5.0.0 to Studio 5.1.0](#CannotupdatefromStudio5.0.0toStudio5.1.0)
+
+* [Noteworthy changes](#Noteworthychanges)
+
+* [Installers](#Installers)
+
+  * [For MacOS](#ForMacOS)
+
+    * [Studio configuration file](#Studioconfigurationfile)
+
+  * [Windows](#Windows)
+
+* [Java support matrix](#Javasupportmatrix)
+
+  * [Studio 5.0.0 and earlier installers](#Studio5.0.0andearlierinstallers)
+
+  * [Studio 5.1.0+ installers](#Studio5.1.0+installers)
+
 
 ## Cannot update from Studio 5.0.0 to Studio 5.1.0
 
-*   With Appcelerator Studio 5.1.0 release, we have upgraded the Eclipse core from 4.4 to 4.7. This update brings a different directory structure to Studio for MacOS users.
-    
-*   Due to several internal changes, it is not possible to update from Studio 5.0.0 to 5.1.0. Users are advised to download and install a fresh copy of Studio 5.1.0 installer directly for both Windows and MacOS. Please review [Uninstalling Studio](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Updating_Studio/Uninstalling_Studio/) for removing Studio (as necessary for your setup).
-    
-*   You are advised to use the existing workspace directory when launching Studio 5.1.0 to get your old studio projects
-    
+* With Appcelerator Studio 5.1.0 release, we have upgraded the Eclipse core from 4.4 to 4.7. This update brings a different directory structure to Studio for MacOS users.
+
+* Due to several internal changes, it is not possible to update from Studio 5.0.0 to 5.1.0. Users are advised to download and install a fresh copy of Studio 5.1.0 installer directly for both Windows and MacOS. Please review [Uninstalling Studio](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Updating_Studio/Uninstalling_Studio/) for removing Studio (as necessary for your setup).
+
+* You are advised to use the existing workspace directory when launching Studio 5.1.0 to get your old studio projects
+
 
 ## Noteworthy changes
 
-*   Added support for Java 9 and 10
-    
-*   Upgraded Eclipse from 4.4 to 4.7
-    
-*   Upgraded GIT to 2.16.2
-    
-*   Added Windows 64-bit Studio builds (which requires 64-bit Java installers)
-    
-*   Studio installs Java 1.8.162 if there are not supported Java versions installed (by default)
-    
-*   Updated JRuby and Ruby to versions 9.1.16 and 2.5 respectively to be compatible with Java 9 (useful for loading templates like HTML, JSON, Ruby, and so)
-    
+* Added support for Java 9 and 10
+
+* Upgraded Eclipse from 4.4 to 4.7
+
+* Upgraded GIT to 2.16.2
+
+* Added Windows 64-bit Studio builds (which requires 64-bit Java installers)
+
+* Studio installs Java 1.8.162 if there are not supported Java versions installed (by default)
+
+* Updated JRuby and Ruby to versions 9.1.16 and 2.5 respectively to be compatible with Java 9 (useful for loading templates like HTML, JSON, Ruby, and so)
+
 
 ## Installers
 
@@ -55,10 +55,10 @@ To launch the studio 5.1.0, double click on the **AppceleratorStudio** package l
 
 To view the contents of “AppceleratorStudio” file,
 
-1.  Right-click on **AppceleratorStudio**.
-    
-2.  Select **Show Package Contents**.
-    
+1. Right-click on **AppceleratorStudio**.
+
+2. Select **Show Package Contents**.
+
 
 #### Studio configuration file
 

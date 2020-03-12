@@ -1,17 +1,17 @@
-{"title":"New API Notice SDK 6.x","weight":"30"} 
+{"title":"New API Notice SDK 6.x","weight":"30"}
 
 List of all new API notices for SDK 6.x.
 
-*   [SDK 6.x](#SDK6.x)
-    
-    *   [6.3.0](#6.3.0)
-        
-    *   [6.2.0](#6.2.0)
-        
-    *   [6.1.0](#6.1.0)
-        
-    *   [6.0.0](#6.0.0)
-        
+* [SDK 6.x](#SDK6.x)
+
+  * [6.3.0](#6.3.0)
+
+  * [6.2.0](#6.2.0)
+
+  * [6.1.0](#6.1.0)
+
+  * [6.0.0](#6.0.0)
+
 
 ## SDK 6.x
 

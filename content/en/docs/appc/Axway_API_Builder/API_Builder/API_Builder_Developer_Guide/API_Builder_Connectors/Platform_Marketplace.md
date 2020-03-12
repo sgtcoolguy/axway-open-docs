@@ -1,4 +1,4 @@
-{"title":"Platform Marketplace","weight":"40"} 
+{"title":"Platform Marketplace","weight":"40"}
 
 API Builder 3.x is deprecated
 
@@ -6,20 +6,20 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-*   [Overview](#Overview)
-    
-    *   [Marketplace access and search](#Marketplaceaccessandsearch)
-        
-*   [Install a service connector](#Installaserviceconnector)
-    
-*   [Install a model-first connector](#Installamodel-firstconnector)
-    
-*   [Searching for connectors](#Searchingforconnectors)
-    
-    *   [Search suggestions](#Searchsuggestions)
-        
-*   [Pre-built connectors](#Pre-builtconnectors)
-    
+* [Overview](#Overview)
+
+  * [Marketplace access and search](#Marketplaceaccessandsearch)
+
+* [Install a service connector](#Installaserviceconnector)
+
+* [Install a model-first connector](#Installamodel-firstconnector)
+
+* [Searching for connectors](#Searchingforconnectors)
+
+  * [Search suggestions](#Searchsuggestions)
+
+* [Pre-built connectors](#Pre-builtconnectors)
+
 
 This document provides an overview of the [Axway Marketplace](https://marketplace.axway.com/).
 
@@ -33,8 +33,8 @@ You can access the [Axway Marketplace](https://marketplace.axway.com/) via your 
 
 Currently, the Marketplace lists the following component types for API Builder:
 
-*   Connectors: Used for building APIs
-    
+* Connectors: Used for building APIs
+
 
 To search through the connectors available on the Marketplace, select Connector in the Categories list. To search through the API Builder connectors, select API Builder in the API Management list.
 
@@ -46,22 +46,22 @@ Beginning with API Builder V3.0.0 (Included in CLI 7.0.0), the following new API
 
 To install a service connector:
 
-1.  Download the service connector from the [Axway Marketplace](https://marketplace.axway.com/).
-    
-2.  Unzip the service connector into the /serviceconnectors/<connector name> folder in your project directory.
-    
-    The new service connectors are plain flow-node modules but they are not installed as such in API Builder V3.0.0. The zip file will contain the package folder that contains the actual connector. Rename the package folder after unzipping to match your connector name.
-    
-3.  From the project directory, execute the following command to install the HTTP communication module:
-    
-    `npm i requester-ce`
-    
-4.  From the project directory, execute the following command:
-    
-    `appc run`
-    
-5.  Open the API Orchestration flow editor in the API Builder Console and verify that the service connector is listed and is available for use in flow-node flows.
-    
+1. Download the service connector from the [Axway Marketplace](https://marketplace.axway.com/).
+
+2. Unzip the service connector into the /serviceconnectors/<connector name> folder in your project directory.
+
+  The new service connectors are plain flow-node modules but they are not installed as such in API Builder V3.0.0. The zip file will contain the package folder that contains the actual connector. Rename the package folder after unzipping to match your connector name.
+
+3. From the project directory, execute the following command to install the HTTP communication module:
+
+  `npm i requester-ce`
+
+4. From the project directory, execute the following command:
+
+  `appc run`
+
+5. Open the API Orchestration flow editor in the API Builder Console and verify that the service connector is listed and is available for use in flow-node flows.
+
 
 ## Install a model-first connector
 

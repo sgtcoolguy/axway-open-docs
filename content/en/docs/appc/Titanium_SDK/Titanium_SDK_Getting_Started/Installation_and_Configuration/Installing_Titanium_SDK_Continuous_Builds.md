@@ -1,19 +1,19 @@
-{"title":"Installing Titanium SDK Continuous Builds","weight":"40"} 
+{"title":"Installing Titanium SDK Continuous Builds","weight":"40"}
 
-*   [Summary](#Summary)
-    
-*   [Obtaining the build](#Obtainingthebuild)
-    
-*   [Installing the build](#Installingthebuild)
-    
-    *   [Appcelerator CLI install](#AppceleratorCLIinstall)
-        
-    *   [Studio install](#Studioinstall)
-        
-    *   [Manual install](#Manualinstall)
-        
-*   [SDK archive file structure](#SDKarchivefilestructure)
-    
+* [Summary](#Summary)
+
+* [Obtaining the build](#Obtainingthebuild)
+
+* [Installing the build](#Installingthebuild)
+
+  * [Appcelerator CLI install](#AppceleratorCLIinstall)
+
+  * [Studio install](#Studioinstall)
+
+  * [Manual install](#Manualinstall)
+
+* [SDK archive file structure](#SDKarchivefilestructure)
+
 
 ## Summary
 
@@ -37,27 +37,27 @@ If you discover a corrupt package, simply download each previous day's release u
 
 To install a Titanium SDK using the appc cli, follow these steps:
 
-*   Be sure to log in to the CLI if you are not already logged in (appc login)
-    
-*   Run appc ti sdk install -b master
-    
-*   The command above will install the latest CI build from master branch. You may substitute branch names seen at [http://builds.appcelerator.com](http://builds.appcelerator.com) to grab bugfix/maintenance CI builds. These are typically of the naming scheme \\d+\_\\d+\_X, i.e. 7\_0\_X
-    
-*   You can view additional command line options by executing: appc ti sdk install -h
-    
+* Be sure to log in to the CLI if you are not already logged in (appc login)
+
+* Run appc ti sdk install -b master
+
+* The command above will install the latest CI build from master branch. You may substitute branch names seen at [http://builds.appcelerator.com](http://builds.appcelerator.com) to grab bugfix/maintenance CI builds. These are typically of the naming scheme \\d+\_\\d+\_X, i.e. 7\_0\_X
+
+* You can view additional command line options by executing: appc ti sdk install -h
+
 
 ### Studio install
 
 To install a Titanium SDK using Studio, follow these steps:
 
-*   Using a browser, navigate the [http://builds.appcelerator.com](http://builds.appcelerator.com) website and choose the desired branch/release. Right click an SDK archive download link and copy its URL. Be sure to choose the correct zip for your host OS.
-    
-*   From Studio, select the menu item, **Help** \> **Install Appcelerator SDK...**
-    
-*   The **Install** dialog appears. Select **Install From URL**
-    
-*   Paste the link into textbox, then click **Finish**
-    
+* Using a browser, navigate the [http://builds.appcelerator.com](http://builds.appcelerator.com) website and choose the desired branch/release. Right click an SDK archive download link and copy its URL. Be sure to choose the correct zip for your host OS.
+
+* From Studio, select the menu item, **Help** \> **Install Appcelerator SDK...**
+
+* The **Install** dialog appears. Select **Install From URL**
+
+* Paste the link into textbox, then click **Finish**
+
 
 ### Manual install
 
@@ -65,10 +65,10 @@ We strongly recommend that you use Studio or the CLI to manage SDKs. Please see 
 
 To manually install a Titanium SDK, follow these steps:
 
-*   Extract the SDK archive file
-    
-*   Move the versioned directory, for example named in the format 6.0.0.v20160702162201, into your Titanium installation folder, which is contingent on your platform, as follows:
-    
+* Extract the SDK archive file
+
+* Move the versioned directory, for example named in the format 6.0.0.v20160702162201, into your Titanium installation folder, which is contingent on your platform, as follows:
+
 
 Operating System
 
@@ -100,8 +100,8 @@ Mobile
 
 C:\\Documents and Settings\\All Users\\Application Data\\Titanium
 
-*   Restart Studio, open the project's tiapp.xml file, and select the new SDK from the SDK Version drop-down menu
-    
+* Restart Studio, open the project's tiapp.xml file, and select the new SDK from the SDK Version drop-down menu
+
 
 ## SDK archive file structure
 

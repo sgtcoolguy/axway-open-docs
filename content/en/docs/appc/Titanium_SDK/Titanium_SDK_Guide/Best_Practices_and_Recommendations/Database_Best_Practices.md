@@ -1,17 +1,17 @@
-{"title":"Database Best Practices","weight":"40"} 
+{"title":"Database Best Practices","weight":"40"}
 
 We recommend the following as best practices when working with databases in Titanium:
 
-*   [Open and close the database and resultset with each operation](#Openandclosethedatabaseandresultsetwitheachoperation)
-    
-*   [Use transactions to speed batch inserts](#Usetransactionstospeedbatchinserts)
-    
-*   [Use a minimal pre-populated database](#Useaminimalpre-populateddatabase)
-    
-*   [Store a version number to ease database updates](#Storeaversionnumbertoeasedatabaseupdates)
-    
-*   [References and further information](#Referencesandfurtherinformation)
-    
+* [Open and close the database and resultset with each operation](#Openandclosethedatabaseandresultsetwitheachoperation)
+
+* [Use transactions to speed batch inserts](#Usetransactionstospeedbatchinserts)
+
+* [Use a minimal pre-populated database](#Useaminimalpre-populateddatabase)
+
+* [Store a version number to ease database updates](#Storeaversionnumbertoeasedatabaseupdates)
+
+* [References and further information](#Referencesandfurtherinformation)
+
 
 ## Open and close the database and resultset with each operation
 
@@ -139,4 +139,4 @@ If you've failed to do this, you might be able to use a PRAGMA command like the 
 
 ## References and further information
 
-*   [SQLite Optimization FAQ](http://www.whoishostingthis.com/compare/sqlite/optimize/)
+* [SQLite Optimization FAQ](http://www.whoishostingthis.com/compare/sqlite/optimize/)

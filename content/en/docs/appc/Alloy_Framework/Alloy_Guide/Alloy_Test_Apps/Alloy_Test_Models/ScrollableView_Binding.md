@@ -1,4 +1,4 @@
-{"title":"ScrollableView Binding","weight":"110"} 
+{"title":"ScrollableView Binding","weight":"110"}
 
 Demonstrates binding a data collection to a ScrollableView component.
 
@@ -68,6 +68,6 @@ app/models/article.js
 
 ## See Also
 
-*   [Titanium.UI.ScrollableView](#!/api/Titanium.UI.ScrollableView)
-    
-*   [SQL Preload sample app](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Alloy_Test_Models/SQL_Preload/)
+* [Titanium.UI.ScrollableView](#!/api/Titanium.UI.ScrollableView)
+
+* [SQL Preload sample app](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Alloy_Test_Models/SQL_Preload/)

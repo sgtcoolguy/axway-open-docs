@@ -1,6 +1,6 @@
-{"title":"Browser Class","weight":"10"} 
+{"title":"Browser Class","weight":"10"}
 
-The Browser class contains methods and properties for interacting with a browser inside Studio
+The Browser class contains methods and properties for interacting with a browser inside Studio.
 
 ## Usage
 
@@ -12,7 +12,7 @@ Examples of how you might interact with methods of the browser class.
 
 ## Browser Methods
 
-Currently the Browser object only supports a single method:
+Currently, the Browser object only supports a single method:
 
 Method
 
@@ -36,4 +36,4 @@ Boolean which specifies whether or not to open a new browser window (tab) or not
 
 :title
 
-The title of the browser window. Can be overridden by the HTML within the browser window.
+The title of the browser window. It can be overridden by the HTML within the browser window.

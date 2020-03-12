@@ -1,23 +1,23 @@
-{"title":"Managing Mobile Backend Services data objects","weight":"10"} 
+{"title":"Managing Mobile Backend Services data objects","weight":"10"}
 
 The **Manage Data** tab in Dashboard provides a visual interface to the various [Mobile Backend Services APIs](/arrowdb/latest/#!/api) for creating, updating, deleting, and querying your application's Mobile Backend Services (MBS) objects – Photos and Chats, for example – on behalf of its users. You can also create and edit administrative MBS objects, like access control lists and email templates.
 
-*   [Editing and Deleting objects](#EditingandDeletingobjects)
-    
-*   [Filtering Mobile Backend Services object data](#FilteringFilteringMobileBackendServicesobjectdata)
-    
-*   [Deleting application data](#Deletingapplicationdata)
-    
-*   [Exporting application data](#Exportingapplicationdata)
-    
-*   [Creating Mobile Backend Services objects](#CreatingMobileBackendServicesobjects)
-    
-    *   [Common object fields](#Commonobjectfields)
-        
-    *   [Creating custom fields](#Creatingcustomfields)
-        
-    *   [Creating Geo Coordinates](#CreatingGeoCoordinates)
-        
+* [Editing and Deleting objects](#EditingandDeletingobjects)
+
+* [Filtering Mobile Backend Services object data](#FilteringFilteringMobileBackendServicesobjectdata)
+
+* [Deleting application data](#Deletingapplicationdata)
+
+* [Exporting application data](#Exportingapplicationdata)
+
+* [Creating Mobile Backend Services objects](#CreatingMobileBackendServicesobjects)
+
+  * [Common object fields](#Commonobjectfields)
+
+  * [Creating custom fields](#Creatingcustomfields)
+
+  * [Creating Geo Coordinates](#CreatingGeoCoordinates)
+
 
 To manage MBS objects of a specific API, select the API from the Dashboard home page **Apps** tab whose data objects you want to manage. Then, select the **Manage Data** tab, as shown below. The main screen displays a table listing all MBS object types and the total number of each type.
 
@@ -67,21 +67,21 @@ To edit an object, click its name in the table row header to open the edit form.
 
 Some MBS object tables can be filtered according to one or more queries that you define. To filter a table, click the **Filter** icon. Clicking the **Filter** icon displays the filter controls, which let you define filter rules.
 
-*   To add a new filter rule, click the (**+**) button.
-    
-*   To apply new or modified filters, click **Apply Filters**.
-    
-*   To remove all filters, click **Clear Filter**.
-    
+* To add a new filter rule, click the (**+**) button.
+
+* To apply new or modified filters, click **Apply Filters**.
+
+* To remove all filters, click **Clear Filter**.
+
 
 Each rule consists of three parts:
 
-*   **Field name** – The name of the field on which to filter. The list of filterable fields varies by object type.
-    
-*   **Operation** – The operation to perform. The operation will be performed in the specified field (described in the table below).
-    
-*   **Value** – The value to apply to the operation. This can either be a simple string value, regular expression, or a complex value specified in multiple form fields.
-    
+* **Field name** – The name of the field on which to filter. The list of filterable fields varies by object type.
+
+* **Operation** – The operation to perform. The operation will be performed in the specified field (described in the table below).
+
+* **Value** – The value to apply to the operation. This can either be a simple string value, regular expression, or a complex value specified in multiple form fields.
+
 
 Operation
 
@@ -143,12 +143,12 @@ You can delete all the MBS objects created by your application.
 
 **To delete all application data**:
 
-1.  On the **Manage Data** tab, click the **Action Menu** icon in the upper-right of the screen and select **Delete Data**.
-    
-2.  Verify by the deletion of all the application data for the selected application by entering the name of the application data store.
-    
-3.  Click **I understand that this is a permanent and irreversible action. Continue** to permanently delete the application data store data or select **Cancel** to stop the operation.
-    
+1. On the **Manage Data** tab, click the **Action Menu** icon in the upper-right of the screen and select **Delete Data**.
+
+2. Verify by the deletion of all the application data for the selected application by entering the name of the application data store.
+
+3. Click **I understand that this is a permanent and irreversible action. Continue** to permanently delete the application data store data or select **Cancel** to stop the operation.
+
 
 ## Exporting application data
 
@@ -158,22 +158,22 @@ The following types of data objects are included in the application data export:
 
 The following limitations apply to exported data:
 
-*   A maximum of 700,000 objects per MBS data type can be exported.
-    
-*   A total of 9,800,000 (9.8 million) objects per application can be exported.
-    
+* A maximum of 700,000 objects per MBS data type can be exported.
+
+* A total of 9,800,000 (9.8 million) objects per application can be exported.
+
 
 For a given export, if the total number of objects of a specific MBS type data is over 700,000, or if the total number of objects being exported is over 9,800,000, the export will stop.
 
 **To export an application's data**:
 
-1.  On the **Manage Data** tab, click the **Action Menu** icon in the upper-right of the screen and select **Export Data**.
-    
-2.  In the **Export App Data** dialog box, select **All** to export all application data, or to export data created during a certain period, select **Between** and select a date range.
-    
-    ![export_latest](/Images/appc/download/attachments/60148480/export_latest.png)
-3.  Click **Export App Data.** When the export package is ready to download, an email will be sent to your Dashboard user's registered email address.
-    
+1. On the **Manage Data** tab, click the **Action Menu** icon in the upper-right of the screen and select **Export Data**.
+
+2. In the **Export App Data** dialog box, select **All** to export all application data, or to export data created during a certain period, select **Between** and select a date range.
+
+  ![export_latest](/Images/appc/download/attachments/60148480/export_latest.png)
+3. Click **Export App Data.** When the export package is ready to download, an email will be sent to your Dashboard user's registered email address.
+
 
 You cannot export data if it has been exported in the past seven (7) days.
 
@@ -183,22 +183,22 @@ You cannot export data if it has been exported in the past seven (7) days.
 
 Each MBS object has fields unique to its purpose and function. Several types of fields, listed below, are common to all object types.
 
-*   **Owner/User** – The MBS user on whose behalf the object was created.
-    
-*   **Created** – Date the object was created.
-    
-*   **Updated** – Date the object was last updated.
-    
-*   **ID** – Object GUID.
-    
-*   **Custom Fields** – One more name/value pairs you can define for an object. See [Creating custom fields](#Creatingcustomfields).
-    
-*   **Geo Coordinates** – One or more geographic coordinates. See [Creating Geo Coordinates](#CreatingGeoCoordinates).
-    
-*   **Tags** – A comma-delimited list of strings to which to tag the object.
-    
-*   **Access Control List** – An ACL to restrict read or write access to the object.
-    
+* **Owner/User** – The MBS user on whose behalf the object was created.
+
+* **Created** – Date the object was created.
+
+* **Updated** – Date the object was last updated.
+
+* **ID** – Object GUID.
+
+* **Custom Fields** – One more name/value pairs you can define for an object. See [Creating custom fields](#Creatingcustomfields).
+
+* **Geo Coordinates** – One or more geographic coordinates. See [Creating Geo Coordinates](#CreatingGeoCoordinates).
+
+* **Tags** – A comma-delimited list of strings to which to tag the object.
+
+* **Access Control List** – An ACL to restrict read or write access to the object.
+
 
 ### Creating custom fields
 
@@ -240,14 +240,14 @@ Dictionary
 
 **To add a custom field to an object:**
 
-1.  In the **Name** field, enter the custom field name.
-    
-2.  Select the field's [data type](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Custom_Objects_and_Fields/) from the **Field Type** menu.
-    
-3.  In the **Value** field, enter the custom field's value, or select it from the provided control (Boolean or Date fields, only).
-    
-4.  Click the **+** icon to create the custom field
-    
+1. In the **Name** field, enter the custom field name.
+
+2. Select the field's [data type](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Custom_Objects_and_Fields/) from the **Field Type** menu.
+
+3. In the **Value** field, enter the custom field's value, or select it from the provided control (Boolean or Date fields, only).
+
+4. Click the **+** icon to create the custom field
+
 
 **To delete a custom field from an object**, hover your mouse over an existing custom field and click the **X** to delete it.
 

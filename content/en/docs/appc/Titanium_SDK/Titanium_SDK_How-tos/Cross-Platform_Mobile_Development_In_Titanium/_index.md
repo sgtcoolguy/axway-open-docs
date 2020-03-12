@@ -1,13 +1,13 @@
-{"title":"Cross-Platform Mobile Development In Titanium","weight":"10"} 
+{"title":"Cross-Platform Mobile Development In Titanium","weight":"10"}
 
 Titanium does much more than just build apps that run on multiple platforms. Its true power comes from how it helps you build _best of breed_, _native_ apps that take full advantage of the platforms on which they run. By this, we mean apps that:
 
-*   Use hardware-specific features, such as the Android menu button
-    
-*   Use OS-specific controls, such as the Cocoa UI controls on iOS
-    
-*   Participate in the platform ecosystem, for example using platform-appropriate notification mechanisms
-    
+* Use hardware-specific features, such as the Android menu button
+
+* Use OS-specific controls, such as the Cocoa UI controls on iOS
+
+* Participate in the platform ecosystem, for example using platform-appropriate notification mechanisms
+
 
 Your Titanium apps should do more than just run on iOS and Android. When running on an iOS device, your app should _feel_ like an iOS app. Your Android app should _feel_ like an Android app.
 

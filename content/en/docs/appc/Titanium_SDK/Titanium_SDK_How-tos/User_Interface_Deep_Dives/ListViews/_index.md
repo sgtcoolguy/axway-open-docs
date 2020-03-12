@@ -1,73 +1,73 @@
-{"title":"ListViews","weight":"10"} 
+{"title":"ListViews","weight":"10"}
 
-*   [Introduction](#Introduction)
-    
-*   [Concepts](#Concepts)
-    
-*   [ListView](#ListView)
-    
-*   [ListSection](#ListSection)
-    
-*   [ListItem](#ListItem)
-    
-    *   [ItemTemplate](#ItemTemplate)
-        
-    *   [ListDataItem](#ListDataItem)
-        
-    *   [Accessories](#Accessories)
-        
-*   [Eventing](#Eventing)
-    
-    *   [ListView itemclick event](#ListViewitemclickevent)
-        
-    *   [ListView marker event](#ListViewmarkerevent)
-        
-    *   [ListView move and delete events](#ListViewmoveanddeleteevents)
-        
-    *   [ListView pull and pullend events](#ListViewpullandpullendevents)
-        
-    *   [ListView noresults event](#ListViewnoresultsevent)
-        
-    *   [ListView scrollstart and scrollend events](#ListViewscrollstartandscrollendevents)
-        
-    *   [ListItem eventing](#ListItemeventing)
-        
-*   [Simple ListView example](#SimpleListViewexample)
-    
-*   [Advanced customizations](#Advancedcustomizations)
-    
-    *   [Custom header and footer](#Customheaderandfooter)
-        
-    *   [Pull to refresh](#Pulltorefresh)
-        
-    *   [Row selections](#Rowselections)
-        
-    *   [Search text and view](#Searchtextandview)
-        
-*   [iOS-specific features](#iOS-specificfeatures)
-    
-    *   [Action items](#Actionitems)
-        
-    *   [Animations](#Animations)
-        
-    *   [Built-in templates](#Built-intemplates)
-        
-    *   [Editing](#Editing)
-        
-    *   [Grouped rows](#Groupedrows)
-        
-*   [Transitioning from Titanium.UI.TableView](#TransitioningfromTitanium.UI.TableView)
-    
-    *   [ListItem versus TableViewRow](#ListItemversusTableViewRow)
-        
-    *   [API differences](#APIdifferences)
-        
-*   [Troubleshooting](#Troubleshooting)
-    
-    *   [Scrolling is jerky](#Scrollingisjerky)
-        
-*   [Further Reading](#FurtherReading)
-    
+* [Introduction](#Introduction)
+
+* [Concepts](#Concepts)
+
+* [ListView](#ListView)
+
+* [ListSection](#ListSection)
+
+* [ListItem](#ListItem)
+
+  * [ItemTemplate](#ItemTemplate)
+
+  * [ListDataItem](#ListDataItem)
+
+  * [Accessories](#Accessories)
+
+* [Eventing](#Eventing)
+
+  * [ListView itemclick event](#ListViewitemclickevent)
+
+  * [ListView marker event](#ListViewmarkerevent)
+
+  * [ListView move and delete events](#ListViewmoveanddeleteevents)
+
+  * [ListView pull and pullend events](#ListViewpullandpullendevents)
+
+  * [ListView noresults event](#ListViewnoresultsevent)
+
+  * [ListView scrollstart and scrollend events](#ListViewscrollstartandscrollendevents)
+
+  * [ListItem eventing](#ListItemeventing)
+
+* [Simple ListView example](#SimpleListViewexample)
+
+* [Advanced customizations](#Advancedcustomizations)
+
+  * [Custom header and footer](#Customheaderandfooter)
+
+  * [Pull to refresh](#Pulltorefresh)
+
+  * [Row selections](#Rowselections)
+
+  * [Search text and view](#Searchtextandview)
+
+* [iOS-specific features](#iOS-specificfeatures)
+
+  * [Action items](#Actionitems)
+
+  * [Animations](#Animations)
+
+  * [Built-in templates](#Built-intemplates)
+
+  * [Editing](#Editing)
+
+  * [Grouped rows](#Groupedrows)
+
+* [Transitioning from Titanium.UI.TableView](#TransitioningfromTitanium.UI.TableView)
+
+  * [ListItem versus TableViewRow](#ListItemversusTableViewRow)
+
+  * [API differences](#APIdifferences)
+
+* [Troubleshooting](#Troubleshooting)
+
+  * [Scrolling is jerky](#Scrollingisjerky)
+
+* [Further Reading](#FurtherReading)
+
 
 ## Introduction
 
@@ -77,22 +77,22 @@ For information about using ListView in an Alloy application, see the [Alloy Lis
 
 ## Concepts
 
-ListView is designed as a replacement for TableView as a way to display data in a scrollable list. Both list view and table view present data to a user as a vertically scrolling list of rows. However, ListView is designed to perform better with a large number of rows. As such, list view uses a data-oriented approach, where the creation and manipulation of the actual on-screen views is managed by the platform, not the application.  
-  
+ListView is designed as a replacement for TableView as a way to display data in a scrollable list. Both list view and table view present data to a user as a vertically scrolling list of rows. However, ListView is designed to perform better with a large number of rows. As such, list view uses a data-oriented approach, where the creation and manipulation of the actual on-screen views is managed by the platform, not the application.
+
 ListView's data-driven tables separate the data to be displayed from the individual view structure of each row, which limits direct access to each individual row. You cannot manipulate the properties and children of a row directly; instead you define _templates_ that define how the data for a row is displayed. ListViews can use multiple templates, so each row or set of rows can have their own unique view structure.
 
 The following terms are important concepts used with ListView:
 
-*   **ListItem.** A list item is a "virtual" view object that represents an individual row in a list. A list item is created from an item template and data item.
-    
-    *   **ItemTemplate.** An item template is a JavaScript object used to define the view structure of your list items. Add child views and default properties to customize the appearance of the item.
-        
-    *   **ListDataItem.** A list data item is a JavaScript object that contains the data you want to display in the list. The data is applied to a template to create a list item.
-        
-*   **ListSection.** A list section is a view object that is used to manipulate and organize list items contained within it.
-    
-*   **ListView.** A list view is a view object that is used to manipulate and organize list sections contained within it.
-    
+* **ListItem.** A list item is a "virtual" view object that represents an individual row in a list. A list item is created from an item template and data item.
+
+  * **ItemTemplate.** An item template is a JavaScript object used to define the view structure of your list items. Add child views and default properties to customize the appearance of the item.
+
+  * **ListDataItem.** A list data item is a JavaScript object that contains the data you want to display in the list. The data is applied to a template to create a list item.
+
+* **ListSection.** A list section is a view object that is used to manipulate and organize list items contained within it.
+
+* **ListView.** A list view is a view object that is used to manipulate and organize list sections contained within it.
+
 
 ## ListView
 
@@ -110,28 +110,28 @@ A ListView object is used to manipulate ListSections, which contain ListItems--t
 
 Some properties specific to list view include:
 
-*   allowsSelection – enable or disable selecting items in the list. (Only on the iOS platform)
-    
-*   defaultItemTemplate – sets the default item template for all data items if they do not specify a template to use. You can either specify one of the built-in styles or a style name that was mapped to an item template using the templates property.
-    
-*   headerTitle – set a title for the table's header.
-    
-*   headerView – sets a custom header view (since 3.2.0).
-    
-*   footerTitle – sets a title for the table's footer.
-    
-*   footerView – sets a custom footer view (since 3.2.0).
-    
-*   pullView – sets a custom view when the list is pulled down (since 3.2.0 for iOS).
-    
-*   searchView – sets a search bar for the list to filter or find items in a list (since 3.2.0).
-    
-*   sections– sets the list sections to display.
-    
-*   separatorColor – sets the color of the separator between rows (since 3.2.0).
-    
-*   templates – maps a style name to an item template object. The style name is used to bind the item data to an item template with the data item's template property or the list view's defaultItemTemplate property.
-    
+* allowsSelection – enable or disable selecting items in the list. (Only on the iOS platform)
+
+* defaultItemTemplate – sets the default item template for all data items if they do not specify a template to use. You can either specify one of the built-in styles or a style name that was mapped to an item template using the templates property.
+
+* headerTitle – set a title for the table's header.
+
+* headerView – sets a custom header view (since 3.2.0).
+
+* footerTitle – sets a title for the table's footer.
+
+* footerView – sets a custom footer view (since 3.2.0).
+
+* pullView – sets a custom view when the list is pulled down (since 3.2.0 for iOS).
+
+* searchView – sets a search bar for the list to filter or find items in a list (since 3.2.0).
+
+* sections– sets the list sections to display.
+
+* separatorColor – sets the color of the separator between rows (since 3.2.0).
+
+* templates – maps a style name to an item template object. The style name is used to bind the item data to an item template with the data item's template property or the list view's defaultItemTemplate property.
+
 
 After the list view renders, use the appendSection, deleteSectionAt, insertSectionAt and replaceSectionAt methods to manipulate the sections of the list view.
 
@@ -151,16 +151,16 @@ A ListSection object is used to manipulate ListItems contained within it, allowi
 
 Some properties specific to list section include:
 
-*   headerTitle – sets a title for the section's header.
-    
-*   headerView – sets a custom header view (since 3.2.0).
-    
-*   footerTitle – sets a title for the section's footer.
-    
-*   footerView – sets a custom footer view (since 3.2.0).
-    
-*   items– sets the list data items to display.
-    
+* headerTitle – sets a title for the section's header.
+
+* headerView – sets a custom header view (since 3.2.0).
+
+* footerTitle – sets a title for the section's footer.
+
+* footerView – sets a custom footer view (since 3.2.0).
+
+* items– sets the list data items to display.
+
 
 After the list view renders, use the appendItems, deleteItemsAt, insertItemsAt, replaceItemsAt, and updateItemAt methods to manipulate the items of the list section.
 
@@ -174,37 +174,37 @@ ListItems are not created the same way as other Titanium views. You cannot creat
 
 An item template defines the structure and style of a data item as well as binds event callbacks. Use an item template to customize the view of a row. An item template is a JavaScript object with three properties:
 
-*   **properties**: Add key-value pairs of view properties and their values to the properties dictionary of the item template to set view properties of the list item. If the list data item's properties keys are also set, the list data item's settings supersedes the templates.
-    
-*   **events**: Add key-value pairs of event names and their callback functions (or array of callback functions for multiple callback bindings) to the events dictionary of the item template to bind callbacks to events, which are bubbled from the subcomponents of the item.
-    
-*   **childTemplates**: Add additional views, such as labels or image views, to the childTemplates array of the item template. The child templates are item templates with two extra properties:
-    
-    *   Set the type property to a Titanium view class, such as Ti.UI.Label or Ti.UI.ImageView, to use that view in your template.
-        
-    *   Set the bindId to bind the template to a custom property in the list data item. The custom properties in the list data item contain key-value pairs of view properties and their values.
-        
+* **properties**: Add key-value pairs of view properties and their values to the properties dictionary of the item template to set view properties of the list item. If the list data item's properties keys are also set, the list data item's settings supersedes the templates.
+
+* **events**: Add key-value pairs of event names and their callback functions (or array of callback functions for multiple callback bindings) to the events dictionary of the item template to bind callbacks to events, which are bubbled from the subcomponents of the item.
+
+* **childTemplates**: Add additional views, such as labels or image views, to the childTemplates array of the item template. The child templates are item templates with two extra properties:
+
+  * Set the type property to a Titanium view class, such as Ti.UI.Label or Ti.UI.ImageView, to use that view in your template.
+
+  * Set the bindId to bind the template to a custom property in the list data item. The custom properties in the list data item contain key-value pairs of view properties and their values.
+
 
 Item templates only support the following view classes:
 
-*   Titanium.UI.ActivityIndicator
-    
-*   Titanium.UI.Button
-    
-*   Titanium.UI.ImageView
-    
-*   Titanium.UI.Label
-    
-*   Titanium.UI.ProgressBar
-    
-*   Titanium.UI.Slider
-    
-*   Titanium.UI.Switch
-    
-*   Titanium.UI.TextArea
-    
-*   Titanium.UI.TextField
-    
+* Titanium.UI.ActivityIndicator
+
+* Titanium.UI.Button
+
+* Titanium.UI.ImageView
+
+* Titanium.UI.Label
+
+* Titanium.UI.ProgressBar
+
+* Titanium.UI.Slider
+
+* Titanium.UI.Switch
+
+* Titanium.UI.TextArea
+
+* Titanium.UI.TextField
+
 
 To bind the list data item to an item template, use the list view's templates property to map the template to a style name, then use the style name to either set the list view's defaultItemTemplate property to globally set the style for all items or set the template property of the list data item to override or individually set the style.
 
@@ -300,42 +300,42 @@ A list data item is a JavaScript object with data you want to display in a list.
 
 View elements you can set in the properties dictionary include:
 
-*   accessoryType – displays an accessory (checkmark, disclosure indicator or detail button) on the right side of row for a built-in or custom template.
-    
-*   backgroundColor – sets the row's background color for a built-in or custom template.
-    
-*   backgroundGradient – sets the row's background gradient.
-    
-*   backgroundImage – sets the row's background image.
-    
-*   canEdit – allows the item to be deleted in editing mode. (Only on the iOS platform)
-    
-*   canMove – allows the item to be moved in editing mode. (Only on the iOS platform)
-    
-*   color– sets the text color for a built-in template.
-    
-*   font – sets the font properties for a built-in template.
-    
-*   height – sets the height of the row for a built-in or custom template.
-    
-*   image – sets the image to use for a built-in template. On Android, the image is displayed on the right, and on iOS, the image is displayed on the left. Ignored by the contacts built-in template.
-    
-*   itemId – set to identify this item when events are fired by this item.
-    
-*   searchableText – sets the text used to match for searching.
-    
-*   selectedBackgroundColor – sets the row's background color when selected.
-    
-*   selectedBackgroundGradient – sets the row's background gradient when selected.
-    
-*   selectedBackgroundImage – sets the row's background image when selected.
-    
-*   selectionStyle – selects the highlight color when this item is selected. (Only on the iOS platform)
-    
-*   subtitle – sets the subtitle to be displayed for a built-in template.Ignored by the default built-in template.
-    
-*   title – sets the title to be displayed for a built-in template.
-    
+* accessoryType – displays an accessory (checkmark, disclosure indicator or detail button) on the right side of row for a built-in or custom template.
+
+* backgroundColor – sets the row's background color for a built-in or custom template.
+
+* backgroundGradient – sets the row's background gradient.
+
+* backgroundImage – sets the row's background image.
+
+* canEdit – allows the item to be deleted in editing mode. (Only on the iOS platform)
+
+* canMove – allows the item to be moved in editing mode. (Only on the iOS platform)
+
+* color– sets the text color for a built-in template.
+
+* font – sets the font properties for a built-in template.
+
+* height – sets the height of the row for a built-in or custom template.
+
+* image – sets the image to use for a built-in template. On Android, the image is displayed on the right, and on iOS, the image is displayed on the left. Ignored by the contacts built-in template.
+
+* itemId – set to identify this item when events are fired by this item.
+
+* searchableText – sets the text used to match for searching.
+
+* selectedBackgroundColor – sets the row's background color when selected.
+
+* selectedBackgroundGradient – sets the row's background gradient when selected.
+
+* selectedBackgroundImage – sets the row's background image when selected.
+
+* selectionStyle – selects the highlight color when this item is selected. (Only on the iOS platform)
+
+* subtitle – sets the subtitle to be displayed for a built-in template.Ignored by the default built-in template.
+
+* title – sets the title to be displayed for a built-in template.
+
 
 Most of these properties only work with the built-in templates.By default, only the image, title and accessory are displayed.See the "Built-in Templates" section for a description of the other built-in templates.
 
@@ -345,14 +345,14 @@ You can also set the template property of a list data item to set or override th
 
 You can optionally display an accessory on the right side of the row by setting the accessoryType property in the properties dictionary of either the list data item or item template. Set the accessoryType property to one of the following constants:
 
-*   Titanium.UI.LIST\_ACCESSORY\_TYPE\_CHECKMARK – displays a checkmark. Use to indicate that an item in a list is selected or not.
-    
-*   Titanium.UI.LIST\_ACCESSORY\_TYPE\_DETAIL – displays a detail disclosure button. Use to indicate that clicking on the detail button displays a detailed view of the item.
-    
-*   Titanium.UI.LIST\_ACCESSORY\_TYPE\_DISCLOSURE – display a disclosure indicator. Use to indicate that clicking on this item displays another list, reflecting the next level in the data model hierarchy.
-    
-*   Titanium.UI.LIST\_ACCESSORY\_TYPE\_NONE – do not display anything.
-    
+* Titanium.UI.LIST\_ACCESSORY\_TYPE\_CHECKMARK – displays a checkmark. Use to indicate that an item in a list is selected or not.
+
+* Titanium.UI.LIST\_ACCESSORY\_TYPE\_DETAIL – displays a detail disclosure button. Use to indicate that clicking on the detail button displays a detailed view of the item.
+
+* Titanium.UI.LIST\_ACCESSORY\_TYPE\_DISCLOSURE – display a disclosure indicator. Use to indicate that clicking on this item displays another list, reflecting the next level in the data model hierarchy.
+
+* Titanium.UI.LIST\_ACCESSORY\_TYPE\_NONE – do not display anything.
+
 
 The accessory always appears if using either the built-in templates or custom item templates.
 
@@ -396,18 +396,18 @@ ListView's itemclick event can be used to monitor click events on all ListItems.
 
 If this event is fired, the code toggles the checkmark accessory on or off and displays an alert message with event information. As shown above, you have access to an event object that holds important information about the location of the user interaction:
 
-*   accessoryClicked – if the accessory is a detail button, returns true if it was clicked.
-    
-*   bindId – the bindID of the view subcomponent that was clicked.
-    
-*   itemId – the itemID of the list item that was clicked.
-    
-*   itemIndex – index of the item relative to the section that was clicked.
-    
-*   section – reference to the ListSection object that was clicked.
-    
-*   sectionIndex – index of the list section that was clicked.
-    
+* accessoryClicked – if the accessory is a detail button, returns true if it was clicked.
+
+* bindId – the bindID of the view subcomponent that was clicked.
+
+* itemId – the itemID of the list item that was clicked.
+
+* itemIndex – index of the item relative to the section that was clicked.
+
+* section – reference to the ListSection object that was clicked.
+
+* sectionIndex – index of the list section that was clicked.
+
 
 Do not use the source property to determine which item the click originated from. Instead, use the previously mentioned properties.
 
@@ -495,10 +495,10 @@ Since 3.2.0, on the iOS platform, you can use the move and delete event to see w
 
 Since 3.2.0, on the iOS platform, you can use the pull and pullend events with ListView's pullView property to implement a pull to refresh feature for your list. First, create a custom View with other view objects contained within it and set this View to ListView's pullView property. Then, listen for the pull and pullend events to execute code to refresh the list.
 
-*   The pull event fires when the user pulls the pull view past the top of the list view, so the pull view is completely on screen.
-    
-*   The pullend event fire when the user releases the pull view after it has been completely shown on screen.
-    
+* The pull event fires when the user pulls the pull view past the top of the list view, so the pull view is completely on screen.
+
+* The pullend event fire when the user releases the pull view after it has been completely shown on screen.
+
 
 For a complete example, see the "ListView with a pullView" example in the [ListView API Reference guide](#!/api/Titanium.UI.ListView).
 
@@ -510,16 +510,16 @@ Since 3.3.0, when items are filtered in a list view using either searchView or s
 
 Since 4.1.0, on the Android and iOS platform, you can use the scrollstart and scrollend events to monitor when the list starts and stops scrolling, respectively. The event object returns the following information indicating the start location and number of visible items when the events occurred:
 
-*   firstVisibleSectionIndex – index of the first visible section
-    
-*   firstVisibleItemIndex – index of the first visible item
-    
-*   visibleItemCount – number of visible items
-    
-*   firstVisibleSection – first visible section
-    
-*   firstVisibleItem – first visible item
-    
+* firstVisibleSectionIndex – index of the first visible section
+
+* firstVisibleItemIndex – index of the first visible item
+
+* visibleItemCount – number of visible items
+
+* firstVisibleSection – first visible section
+
+* firstVisibleItem – first visible item
+
 
 ### ListItem eventing
 
@@ -761,12 +761,12 @@ On the iOS platform, in order to select a row, ListView's allowsSelection proper
 
 You can also set the selectionStyle property in the properties dictionary of either the ListDataItem or ItemTemplate to one of the supported constants:
 
-*   Titanium.UI.iOS.ListViewCellSelectionStyle.BLUE
-    
-*   Titanium.UI.iOS.ListViewCellSelectionStyle.GRAY (default)
-    
-*   Titanium.UI.iOS.ListViewCellSelectionStyle.NONE
-    
+* Titanium.UI.iOS.ListViewCellSelectionStyle.BLUE
+
+* Titanium.UI.iOS.ListViewCellSelectionStyle.GRAY (default)
+
+* Titanium.UI.iOS.ListViewCellSelectionStyle.NONE
+
 
 ### Search text and view
 
@@ -854,28 +854,28 @@ Starting with Release 4.1.0, you can add custom action items to the list items. 
 
 To use an action item:
 
-1.  Create an action item, which is only a dictionary with the following properties:
-    
-    *   title – Name of the action. Displayed the user and indicates which action was chosen.
-        
-    *   style – Style of the action. Specify one of the following constants: Titanium.UI.iOS.ROW\_ACTION\_STYLE\_DEFAULT, Titanium.UI.iOS.ROW\_ACTION\_STYLE\_DESTRUCTIVE, or Titanium.UI.iOS.ROW\_ACTION\_STYLE\_NORMAL.
-        
-    *   color – Background color the action. Optional. Default is to use the one defined by the style.
-        
-2.  Add the action item to the list data item's editActions property and set the canEdit property to true. You may also set these properties in the item template. If you do not set the canEdit property to true, the user cannot swipe left on the item to reveal the action items.
-    
-3.  Listen to the ListView's editaction event to respond when the user clicks on an action item. The event returns an object with the following properties to indicate the action and item the user clicked:
-    
-    *   action – The title property of the action the user clicked.
-        
-    *   itemId – the itemID of the list item that was clicked.
-        
-    *   itemIndex – index of the item relative to the section that was clicked.
-        
-    *   section – reference to the ListSection object that was clicked.
-        
-    *   sectionIndex – index of the list section that was clicked.
-        
+1. Create an action item, which is only a dictionary with the following properties:
+
+  * title – Name of the action. Displayed the user and indicates which action was chosen.
+
+  * style – Style of the action. Specify one of the following constants: Titanium.UI.iOS.ROW\_ACTION\_STYLE\_DEFAULT, Titanium.UI.iOS.ROW\_ACTION\_STYLE\_DESTRUCTIVE, or Titanium.UI.iOS.ROW\_ACTION\_STYLE\_NORMAL.
+
+  * color – Background color the action. Optional. Default is to use the one defined by the style.
+
+2. Add the action item to the list data item's editActions property and set the canEdit property to true. You may also set these properties in the item template. If you do not set the canEdit property to true, the user cannot swipe left on the item to reveal the action items.
+
+3. Listen to the ListView's editaction event to respond when the user clicks on an action item. The event returns an object with the following properties to indicate the action and item the user clicked:
+
+  * action – The title property of the action the user clicked.
+
+  * itemId – the itemID of the list item that was clicked.
+
+  * itemIndex – index of the item relative to the section that was clicked.
+
+  * section – reference to the ListSection object that was clicked.
+
+  * sectionIndex – index of the list section that was clicked.
+
 
 **Example**
 
@@ -969,14 +969,14 @@ You can specify a row animation constant with ListSection's appendItems, deleteI
 
 On iOS, ListView supports three additional built-in templates besides the default template:
 
-*   Titanium.UI.ITEM\_LIST\_TEMPLATE\_CONTACTS: right-justified title with a left-justified subtitle, both near the center of the row.
-    
-*   Titanium.UI.ITEM\_LIST\_TEMPLATE\_SETTINGS: left-justified title on the left side of the row with a right-justified subtitle on the right side of the row.
-    
-*   Titanium.UI.ITEM\_LIST\_TEMPLATE\_SUBTITLE: left-justified title with the subtitle below it in smaller gray text.
-    
-*   Titanium.UI.ITEM\_LIST\_TEMPLATE\_DEFAULT: only displays the left-justified title. No subtitle is displayed even if one is specified.
-    
+* Titanium.UI.ITEM\_LIST\_TEMPLATE\_CONTACTS: right-justified title with a left-justified subtitle, both near the center of the row.
+
+* Titanium.UI.ITEM\_LIST\_TEMPLATE\_SETTINGS: left-justified title on the left side of the row with a right-justified subtitle on the right side of the row.
+
+* Titanium.UI.ITEM\_LIST\_TEMPLATE\_SUBTITLE: left-justified title with the subtitle below it in smaller gray text.
+
+* Titanium.UI.ITEM\_LIST\_TEMPLATE\_DEFAULT: only displays the left-justified title. No subtitle is displayed even if one is specified.
+
 
 Each template displays the image view on the left side and accessory on the right side of the row except the contacts template, which does not display an image view even if the image property is specified.
 
@@ -1208,37 +1208,37 @@ See the "ListItem" section for details on how to create list items.
 
 **Note:** This is the first version of list view and some features have not been implemented. The differences listed are for the final planned list view and the current table view in Release 3.1.0.
 
-*   **TableViewRow properties**: The following properties and their accessors are not available for ListItem: accessibilityLabel, className, editable, hasCheck, hasChild, hasDetail, leftImage, moveable and rightImage.
-    
-    *   For hasCheck, hasChild, and hasDetail, use the accessoryType property.
-        
-    *   For leftImage and rightImage, use the image property or create a custom item template.
-        
-*   **TableViewRow methods**: ListItem does not support any methods. Adding views and binding event callbacks are supported through the item template.
-    
-*   **TableViewSection properties**: The following properties and their accessors are not supported by ListSection: rows and rowCount .
-    
-    *   For rows, use the items property.
-        
-    *   For rowCount, use the itemCount property. (Not yet implemented.)
-        
+* **TableViewRow properties**: The following properties and their accessors are not available for ListItem: accessibilityLabel, className, editable, hasCheck, hasChild, hasDetail, leftImage, moveable and rightImage.
 
-*   **TableViewSection methods**: The following methods are not supported by ListSection: add , remove and rowAtIndex .
-    
-    *   For rowAtIndex , use the getItemAt method.
-        
-    *   For add and remove , use the other ListSection methods to manipulate the ListItems in the ListSection.
-        
-*   **TableView properties**: The data property and its accessors are not available for ListView. Use the sections property to set the ListSections for a ListView. You cannot directly add ListItems to a ListView.
-    
-*   **TableView methods**: The following methods are not available to ListView: appendRow , deleteRow, deselectRow, insertRowAfter, insertRowBefore, selectRow, updateRow, scrollToIndex, and selectRow .
-    
-    *   For scrollToIndex, use the scrollToItem method.
-        
-    *   For selectRow, use the selectItem method. (Currently implemented only for iOS.)
-        
-    *   For all other row methods, you cannot manipulate ListItems with a ListView. You have to manipulate them with the ListSection they are contained in.
-        
+  * For hasCheck, hasChild, and hasDetail, use the accessoryType property.
+
+  * For leftImage and rightImage, use the image property or create a custom item template.
+
+* **TableViewRow methods**: ListItem does not support any methods. Adding views and binding event callbacks are supported through the item template.
+
+* **TableViewSection properties**: The following properties and their accessors are not supported by ListSection: rows and rowCount .
+
+  * For rows, use the items property.
+
+  * For rowCount, use the itemCount property. (Not yet implemented.)
+
+
+* **TableViewSection methods**: The following methods are not supported by ListSection: add , remove and rowAtIndex .
+
+  * For rowAtIndex , use the getItemAt method.
+
+  * For add and remove , use the other ListSection methods to manipulate the ListItems in the ListSection.
+
+* **TableView properties**: The data property and its accessors are not available for ListView. Use the sections property to set the ListSections for a ListView. You cannot directly add ListItems to a ListView.
+
+* **TableView methods**: The following methods are not available to ListView: appendRow , deleteRow, deselectRow, insertRowAfter, insertRowBefore, selectRow, updateRow, scrollToIndex, and selectRow .
+
+  * For scrollToIndex, use the scrollToItem method.
+
+  * For selectRow, use the selectItem method. (Currently implemented only for iOS.)
+
+  * For all other row methods, you cannot manipulate ListItems with a ListView. You have to manipulate them with the ListSection they are contained in.
+
 
 ## Troubleshooting
 
@@ -1248,4 +1248,4 @@ If possible, do not use the Ti.UI.SIZE constant to size your list items. Instead
 
 ## Further Reading
 
-*   [Titanium ListView API Reference Guide](#!/api/Titanium.UI.ListView)
+* [Titanium ListView API Reference Guide](#!/api/Titanium.UI.ListView)

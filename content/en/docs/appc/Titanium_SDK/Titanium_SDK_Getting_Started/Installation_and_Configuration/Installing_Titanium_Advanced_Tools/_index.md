@@ -1,40 +1,38 @@
-{"title":"Installing Titanium Advanced Tools","weight":"30"} 
+{"title":"Installing Titanium Advanced Tools","weight":"30"}
 
 ## Contents
 
-*   [Overview](#Overview)
-    
-    *   [Python (optional)](#Python(optional))
-        
-    *   [SCons (optional)](#SCons(optional))
-        
-    *   [Android Native Development Tools (NDK) (optional)](#AndroidNativeDevelopmentTools(NDK)(optional))
-        
-    *   [Eclipse and ADT (optional)](#EclipseandADT(optional))
-        
-    *   [Ant (optional)](#Ant(optional))
-        
+* [Overview](#Overview)
+
+  * [Python (optional)](#Python(optional))
+
+  * [SCons (optional)](#SCons(optional))
+
+  * [Android Native Development Tools (NDK) (optional)](#AndroidNativeDevelopmentTools(NDK)(optional))
+
+  * [Ant (optional)](#Ant(optional))
+
 
 ## Related Topics
 
-*   [Installing Git](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Git/)
-    
-*   [Installing Python](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Python/)
-    
-*   [Installing Required Python Packages](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Required_Python_Packages/)
-    
-*   [Installing SCons](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_SCons/)
-    
-*   [Installing the Android NDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_the_Android_NDK/)
-    
-*   [Installing Eclipse and ADT](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Eclipse_and_ADT/)
-    
-*   [Installing Ant](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Ant/)
-    
-*   [Installing gperf](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_gperf/)
-    
-*   [Installing Genymotion](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Genymotion/)
-    
+* [Installing Git](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Git/)
+
+* [Installing Python](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Python/)
+
+* [Installing Required Python Packages](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Required_Python_Packages/)
+
+* [Installing SCons](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_SCons/)
+
+* [Installing the Android NDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_the_Android_NDK/)
+
+* [Installing Eclipse and ADT](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Eclipse_and_ADT/)
+
+* [Installing Ant](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Ant/)
+
+* [Installing gperf](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_gperf/)
+
+* [Installing Genymotion](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Genymotion/)
+
 
 ## Overview
 
@@ -46,7 +44,7 @@ Python is useful for users who want to build and run Titanium applications from 
 
 ### Python (optional)
 
-Python is required to use Titanium from the command line or compile the SDK from source using SCons. Python is **not** required to use the Titanium SDK from inside Studio.
+Python is required to compile the Titanium SDK from source using SCons.
 
 Titanium supports the following versions of Python for each respective Operating System:
 
@@ -128,13 +126,15 @@ See [Installing SCons](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Inst
 
 ### Android Native Development Tools (NDK) (optional)
 
-The Android NDK is required to build native modules for Android, or to build the Titanium SDK from source.
+The Android NDK is required to build native Java/Kotlin modules for Android or to build the Titanium SDK from source.
 
 The NDK is **not** required to build, run, or distribute apps using the Titanium SDK.
 
-Titanium supports NDK Revision 12.
+Titanium supports NDK Revision 11c and higher.
 
-Download the appropriate NDK archive from the following site:
+It's recommended to download the NDK via Android Studio. This will install it under the directory the Android SDK is installed at. Installing it via Android Studio avoids macOS Catalina (and newer versions) from requesting your permission to use the NDK tools when doing a build.
+
+Alternatively, you can install the Android NDK to your own custom location by downloading from the following website:
 
 ![download_05](/Images/appc/download/attachments/29004836/download_05.png)
 
@@ -142,60 +142,11 @@ Download the appropriate NDK archive from the following site:
 
 See [Installing the Android NDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_the_Android_NDK/) for detailed instructions about how to install, including the program location and system environment variables that should be used.
 
-### Eclipse and ADT (optional)
-
-The Eclipse IDE can be used to build and debug Titanium Android modules, and to build and debug the Titanium SDK on Android. You will also need to install the Android Development Tools (ADT) Eclipse plugin.
-
-ADT has been discontinued and we don't recommend using it.
-
-Eclipse and ADT are not required for building, running, or distributing applications using the Titanium SDK.
-
-If you don't want to use Eclipse, you can build Android modules and the Titanium SDK on the command line using Ant. See [Installing Ant](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Ant/) for instructions.
-
-Java is a prerequisite for Eclipse, and should be installed first. See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for instructions.
-
-Obtain the Eclipse version listed below for your Operating System:
-
-![download_05](/Images/appc/download/attachments/29004836/download_05.png)
-
-Operating System
-
-Package Version
-
-Download Location
-
-OS X
-
-Latest Stable  
-Eclipse IDE for Java Developers
-
-[Official Website](http://www.eclipse.org/downloads)
-
-Windows
-
-Latest Stable  
-Eclipse IDE for Java Developers
-
-[Official Website](http://www.eclipse.org/downloads)
-
-Ubuntu
-
-Latest Stable  
-Eclipse IDE for Java Developers
-
-[Official Website](http://www.eclipse.org/downloads)
-
-See [Installing Eclipse and ADT](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Eclipse_and_ADT/) for detailed instructions about how to install, including the program location and system environment variables that should be used.
-
 ### Ant (optional)
 
-Apache Ant is the standard build tool for Java. It can be used to build Titanium native Android modules and to build the Titanium SDK for Android. It is not required to build Titanium applications for Android.
+Titanium 9.0.0 and newer versions no longer use Apache Ant. The below only applies to older SDK versions.
 
-You can also use Eclipse and ADT to build native Android code, as described in [Installing Eclipse and ADT](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Eclipse_and_ADT/). If you are using Eclipse and ADT, Ant is optional, but you may want to install both (for example, to use Ant for command-line builds and Eclipse and ADT for debugging).
-
-ADT has been discontinued and we don't recommend using it.
-
-Ant is not required for building, running, or distributing applications using the Titanium SDK.
+Apache Ant is the standard build tool for Java. It can be used to build Titanium native Android modules and to build the Titanium SDK for Android. Ant is not required for building, running, or distributing applications using the Titanium SDK.
 
 Java is a prerequisite for Ant, and should be installed first. See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for instructions.
 

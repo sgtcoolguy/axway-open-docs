@@ -1,4 +1,4 @@
-{"title":"OptionDialog","weight":"110"} 
+{"title":"OptionDialog","weight":"110"}
 
 Demonstrates how to use an OptionDialog control, a modal view that includes a message and one or more option items.
 
@@ -84,4 +84,4 @@ app/views/index.xml
 
 ## See also
 
-*   [Titanium.UI.OptionDialog](#!/api/Titanium.UI.OptionDialog)
+* [Titanium.UI.OptionDialog](#!/api/Titanium.UI.OptionDialog)

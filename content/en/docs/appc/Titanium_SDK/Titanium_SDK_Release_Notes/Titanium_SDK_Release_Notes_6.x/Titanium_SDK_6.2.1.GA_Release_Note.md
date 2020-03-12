@@ -1,11 +1,11 @@
-{"title":"Titanium SDK 6.2.1.GA - 19 September 2017","weight":"40"} 
+{"title":"Titanium SDK 6.2.1.GA - 19 September 2017","weight":"40"}
 
-*   [About this release](#Aboutthisrelease)
-    
-*   [Fixed issues](#Fixedissues)
-    
-*   [API changes](#APIchanges)
-    
+* [About this release](#Aboutthisrelease)
+
+* [Fixed issues](#Fixedissues)
+
+* [API changes](#APIchanges)
+
 
 ## About this release
 
@@ -15,12 +15,12 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 ## Fixed issues
 
-*   [TIMOB-25210](https://jira.appcelerator.org/browse/TIMOB-25210) - iOS: Cannot submit builds with iOS 11 / Xcode 9 due to missing "Marketing Image"
-    
-*   [TIMOB-25285](https://jira.appcelerator.org/browse/TIMOB-25285) - iOS: Error out on duplicate third-party frameworks
-    
-*   [TIMOB-25320](https://jira.appcelerator.org/browse/TIMOB-25320) - iOS: CLI errors incorrectly when xcode eula not accepted
-    
+* [TIMOB-25210](https://jira.appcelerator.org/browse/TIMOB-25210) - iOS: Cannot submit builds with iOS 11 / Xcode 9 due to missing "Marketing Image"
+
+* [TIMOB-25285](https://jira.appcelerator.org/browse/TIMOB-25285) - iOS: Error out on duplicate third-party frameworks
+
+* [TIMOB-25320](https://jira.appcelerator.org/browse/TIMOB-25320) - iOS: CLI errors incorrectly when xcode eula not accepted
+
 
 ## API changes
 

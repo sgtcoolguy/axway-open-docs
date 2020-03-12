@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 5.3.1.RC - 14 June 2016","weight":"90"} 
+{"title":"Appcelerator CLI 5.3.1.RC - 14 June 2016","weight":"90"}
 
 Appcelerator CLI 5.3.1.RC is a patch release that includes one bug fix.
 
@@ -26,4 +26,4 @@ Titanium CLI
 
 ## Fixed Issues
 
-*   [CLI-989](https://jira.appcelerator.org/browse/CLI-989) - CLI not responding on self signed certificate
+* [CLI-989](https://jira.appcelerator.org/browse/CLI-989) - CLI not responding on self signed certificate

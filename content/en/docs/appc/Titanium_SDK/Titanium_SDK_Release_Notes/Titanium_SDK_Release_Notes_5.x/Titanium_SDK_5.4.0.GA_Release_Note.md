@@ -1,39 +1,39 @@
-{"title":"Titanium SDK 5.4.0.GA - 10 August 2016","weight":"50"} 
+{"title":"Titanium SDK 5.4.0.GA - 10 August 2016","weight":"50"}
 
 ## Contents
 
-*   [About This Release](#AboutThisRelease)
-    
-*   [New Features](#NewFeatures)
-    
-    *   [Hyperloop](#Hyperloop)
-        
-    *   [Facebook](#Facebook)
-        
-    *   [Android Platform](#AndroidPlatform)
-        
-    *   [iOS Platform](#iOSPlatform)
-        
-    *   [Windows Platform](#WindowsPlatform)
-        
-    *   [Other](#Other)
-        
-*   [Community Credits](#CommunityCredits)
-    
-*   [Fixed Issues](#FixedIssuespatchreleases)
-    
-*   [Improvements](#Improvements)
-    
-*   [Known Issues](#KnownIssues)
-    
-*   [API Changes](#APIChanges)
-    
-    *   [New APIs](#NewAPIs)
-        
-    *   [Deprecated APIs](#DeprecatedAPIs)
-        
-    *   [Removed APIs](#RemovedAPIs)
-        
+* [About This Release](#AboutThisRelease)
+
+* [New Features](#NewFeatures)
+
+  * [Hyperloop](#Hyperloop)
+
+  * [Facebook](#Facebook)
+
+  * [Android Platform](#AndroidPlatform)
+
+  * [iOS Platform](#iOSPlatform)
+
+  * [Windows Platform](#WindowsPlatform)
+
+  * [Other](#Other)
+
+* [Community Credits](#CommunityCredits)
+
+* [Fixed Issues](#FixedIssuespatchreleases)
+
+* [Improvements](#Improvements)
+
+* [Known Issues](#KnownIssues)
+
+* [API Changes](#APIChanges)
+
+  * [New APIs](#NewAPIs)
+
+  * [Deprecated APIs](#DeprecatedAPIs)
+
+  * [Removed APIs](#RemovedAPIs)
+
 
 ## About This Release
 
@@ -59,289 +59,289 @@ Finally, we added support for "logPurchase" in Ti.Facebook module ([MOD-2244](ht
 
 ### Android Platform
 
-*   [TIMOB-2122](https://jira.appcelerator.org/browse/TIMOB-2122) - Android: Implement Video Recording
-    
-    *   Implemented video recording on Android
-        
-*   [TIMOB-4388](https://jira.appcelerator.org/browse/TIMOB-4388) - Implement getPressure in Android view
-    
-    *   Exposed getPressure value on Android
-        
-*   [TIMOB-18040](https://jira.appcelerator.org/browse/TIMOB-18040) - Android: Expose "gravity" constants in Ti.UI.Notification
-    
-    *   Exposed gravity constants
-        
-*   [TIMOB-19701](https://jira.appcelerator.org/browse/TIMOB-19701) - Android: Support extending native types in hyperloop
-    
-    *   Added support to some syntax that allows users to subclass existing native types in Hyperloop
-        
-*   [TIMOB-19869](https://jira.appcelerator.org/browse/TIMOB-19869) - Android: Support adding native UI elements to Ti.UI.View subclasses
-    
-    *   Added ability to pass in some subclasses of android.view.View into Titanium methods that take Ti>UI.View subclasses (e.g. Ti.UI.View.add())
-        
-*   [TIMOB-19912](https://jira.appcelerator.org/browse/TIMOB-19912) -tintColor for Android ImageView
-    
-    *   Added tintColor property to Android using ImageView.setColorFilter()
-        
-*   [TIMOB-23140](https://jira.appcelerator.org/browse/TIMOB-23140) - Android: Add lineSpacing property to Label
-    
-    *   Provided support for adding lineSpacing to [multiline Labels](https://developer.android.com/reference/android/widget/TextView.html#setLineSpacing(float, float))
-        
-*   [TIMOB-23167](https://jira.appcelerator.org/browse/TIMOB-23167) - Android: Add Ti.UI.Button tintColor
-    
-    *   tintColor property for Ti.UI.Button is now supported for the Android platform. After setting the tintColor to a custom value, it can be reset by changing the value to "null".
-        
-*   [TIMOB-23258](https://jira.appcelerator.org/browse/TIMOB-23258) - Android: Ti.Media.AudioPlayer: Support "audioSessionId"
-    
-    *   audioSessionId is now supported by Ti.Media.AudioPlayer
-        
-*   [TIMOB-23424](https://jira.appcelerator.org/browse/TIMOB-23424) - Android: Support Facebook App Invites
-    
-    *   Added support for Facebook App invites
-        
+* [TIMOB-2122](https://jira.appcelerator.org/browse/TIMOB-2122) - Android: Implement Video Recording
+
+  * Implemented video recording on Android
+
+* [TIMOB-4388](https://jira.appcelerator.org/browse/TIMOB-4388) - Implement getPressure in Android view
+
+  * Exposed getPressure value on Android
+
+* [TIMOB-18040](https://jira.appcelerator.org/browse/TIMOB-18040) - Android: Expose "gravity" constants in Ti.UI.Notification
+
+  * Exposed gravity constants
+
+* [TIMOB-19701](https://jira.appcelerator.org/browse/TIMOB-19701) - Android: Support extending native types in hyperloop
+
+  * Added support to some syntax that allows users to subclass existing native types in Hyperloop
+
+* [TIMOB-19869](https://jira.appcelerator.org/browse/TIMOB-19869) - Android: Support adding native UI elements to Ti.UI.View subclasses
+
+  * Added ability to pass in some subclasses of android.view.View into Titanium methods that take Ti>UI.View subclasses (e.g. Ti.UI.View.add())
+
+* [TIMOB-19912](https://jira.appcelerator.org/browse/TIMOB-19912) -tintColor for Android ImageView
+
+  * Added tintColor property to Android using ImageView.setColorFilter()
+
+* [TIMOB-23140](https://jira.appcelerator.org/browse/TIMOB-23140) - Android: Add lineSpacing property to Label
+
+  * Provided support for adding lineSpacing to [multiline Labels](https://developer.android.com/reference/android/widget/TextView.html#setLineSpacing(float, float))
+
+* [TIMOB-23167](https://jira.appcelerator.org/browse/TIMOB-23167) - Android: Add Ti.UI.Button tintColor
+
+  * tintColor property for Ti.UI.Button is now supported for the Android platform. After setting the tintColor to a custom value, it can be reset by changing the value to "null".
+
+* [TIMOB-23258](https://jira.appcelerator.org/browse/TIMOB-23258) - Android: Ti.Media.AudioPlayer: Support "audioSessionId"
+
+  * audioSessionId is now supported by Ti.Media.AudioPlayer
+
+* [TIMOB-23424](https://jira.appcelerator.org/browse/TIMOB-23424) - Android: Support Facebook App Invites
+
+  * Added support for Facebook App invites
+
 
 ### iOS Platform
 
-*   [TIMOB-15424](https://jira.appcelerator.org/browse/TIMOB-15424) - Allow ScrollableView to set pageIndicatorColor and currentPageIndicatorColor
-    
-    *   ScrollableView is now able to set pageIndicatorColor, currenPageIndicatorColor, and pagingControlColor
-        
-*   [TIMOB-6305](https://jira.appcelerator.org/browse/TIMOB-6305) - iOS: Add Stepper UI element
-    
-    *   Exposed the [iOS UIStepper](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/doc/uid/TP40010929)
-        
-*   [TIMOB-18054](https://jira.appcelerator.org/browse/TIMOB-18054) - iOS: expose the text color for the picker
-    
-    *   Text color property for the picker is now supported on both iOS and Android
-        
-*   [TIMOB-20176](https://jira.appcelerator.org/browse/TIMOB-20176) - iOS: Support UIVisualEffectView (aka Blur View)
-    
-    *   Added support for Extra Light, Light, and Dark Blur Views on iOS8 and iOS9
-        
-*   [TIMOB-20178](https://jira.appcelerator.org/browse/TIMOB-20178) - iOS: Support Peek and Pop in Ti.UI.WebView
-    
-    *   web.setAllowsLinkPreview now allows Peek and Pop features to be enabled or disabled for Ti.UI.WebView
-        
-*   [TIMOB-20226](https://jira.appcelerator.org/browse/TIMOB-20226) - iOS 9.3: Support new WatchConnectivity features
-    
-    *   Added support for WatchConnectivity features (Ti.WatchSession.ACTIVATION\_STATE\_NOT\_ACTIVATED, Ti.WatchSession.ACTIVATION\_STATE\_INACTIVE, and Ti.WatchSession.ACTIVATION\_STATE\_ACTIVATED)
-        
-*   [TIMOB-20295](https://jira.appcelerator.org/browse/TIMOB-20295) - iOS: Support SearchBar button title
-    
-    *   Added the ability to customize the SearchBar button title
-        
-*   [TIMOB-20302](https://jira.appcelerator.org/browse/TIMOB-20302) - iOS: Support showing and hiding the toolbar in Ti.UI.Window
-    
-    *   The toolbar can now have it's display hidden or shown
-        
-*   [TIMOB-20589](https://jira.appcelerator.org/browse/TIMOB-20589) - iOS: Allow editing contacts in iOS9 and above
-    
-    *   Added support to edit contacts on iOS9
-        
-*   [TIMOB-23417](https://jira.appcelerator.org/browse/TIMOB-23417) - iOS: Support Ti.UI.ListView "disableBounce" property
-    
-    *   Ti.UI.ListView now supports disableBounce property
-        
+* [TIMOB-15424](https://jira.appcelerator.org/browse/TIMOB-15424) - Allow ScrollableView to set pageIndicatorColor and currentPageIndicatorColor
+
+  * ScrollableView is now able to set pageIndicatorColor, currenPageIndicatorColor, and pagingControlColor
+
+* [TIMOB-6305](https://jira.appcelerator.org/browse/TIMOB-6305) - iOS: Add Stepper UI element
+
+  * Exposed the [iOS UIStepper](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/doc/uid/TP40010929)
+
+* [TIMOB-18054](https://jira.appcelerator.org/browse/TIMOB-18054) - iOS: expose the text color for the picker
+
+  * Text color property for the picker is now supported on both iOS and Android
+
+* [TIMOB-20176](https://jira.appcelerator.org/browse/TIMOB-20176) - iOS: Support UIVisualEffectView (aka Blur View)
+
+  * Added support for Extra Light, Light, and Dark Blur Views on iOS8 and iOS9
+
+* [TIMOB-20178](https://jira.appcelerator.org/browse/TIMOB-20178) - iOS: Support Peek and Pop in Ti.UI.WebView
+
+  * web.setAllowsLinkPreview now allows Peek and Pop features to be enabled or disabled for Ti.UI.WebView
+
+* [TIMOB-20226](https://jira.appcelerator.org/browse/TIMOB-20226) - iOS 9.3: Support new WatchConnectivity features
+
+  * Added support for WatchConnectivity features (Ti.WatchSession.ACTIVATION\_STATE\_NOT\_ACTIVATED, Ti.WatchSession.ACTIVATION\_STATE\_INACTIVE, and Ti.WatchSession.ACTIVATION\_STATE\_ACTIVATED)
+
+* [TIMOB-20295](https://jira.appcelerator.org/browse/TIMOB-20295) - iOS: Support SearchBar button title
+
+  * Added the ability to customize the SearchBar button title
+
+* [TIMOB-20302](https://jira.appcelerator.org/browse/TIMOB-20302) - iOS: Support showing and hiding the toolbar in Ti.UI.Window
+
+  * The toolbar can now have it's display hidden or shown
+
+* [TIMOB-20589](https://jira.appcelerator.org/browse/TIMOB-20589) - iOS: Allow editing contacts in iOS9 and above
+
+  * Added support to edit contacts on iOS9
+
+* [TIMOB-23417](https://jira.appcelerator.org/browse/TIMOB-23417) - iOS: Support Ti.UI.ListView "disableBounce" property
+
+  * Ti.UI.ListView now supports disableBounce property
+
 
 ### Windows Platform
 
-*   [TIMOB-20578](https://jira.appcelerator.org/browse/TIMOB-20578) - Windows: Support Notifications sent while in background
-    
-    *   Added support for push notifications to run in background on Windows
-        
-*   [TIMOB-23143](https://jira.appcelerator.org/browse/TIMOB-23143) - Windows: Lock orientation mode (Ti.UI.Window.orientationModes)
-    
-    *   Windows can now lock the orientation of the window
-        
-*   [TIMOB-23205](https://jira.appcelerator.org/browse/TIMOB-23205) - Windows: Background service extension by native module (C++/CX).
-    
-    *   Added support for background service extension by native module (C++/CX)
-        
-*   [TIMOB-23401](https://jira.appcelerator.org/browse/TIMOB-23401) - Windows: Support titleid/textid for Label, Button, Tab, AlertDialog & OptionDialog
-    
-    *   Added support for titleid/textid for Label, Button, Tab, AlertDialog and OptionDialog
-        
+* [TIMOB-20578](https://jira.appcelerator.org/browse/TIMOB-20578) - Windows: Support Notifications sent while in background
+
+  * Added support for push notifications to run in background on Windows
+
+* [TIMOB-23143](https://jira.appcelerator.org/browse/TIMOB-23143) - Windows: Lock orientation mode (Ti.UI.Window.orientationModes)
+
+  * Windows can now lock the orientation of the window
+
+* [TIMOB-23205](https://jira.appcelerator.org/browse/TIMOB-23205) - Windows: Background service extension by native module (C++/CX).
+
+  * Added support for background service extension by native module (C++/CX)
+
+* [TIMOB-23401](https://jira.appcelerator.org/browse/TIMOB-23401) - Windows: Support titleid/textid for Label, Button, Tab, AlertDialog & OptionDialog
+
+  * Added support for titleid/textid for Label, Button, Tab, AlertDialog and OptionDialog
+
 
 ### Other
 
-*   [CLI-875](https://jira.appcelerator.org/browse/CLI-875) - appc use command should allow --prerelease option
-    
-    *   The appc use command allows you to use prelease versions by using the \--prerelease flag
-        
-*   [TIMOB-16879](https://jira.appcelerator.org/browse/TIMOB-16879) - ScrollableView: Add "insertViewsAt()" method
-    
-    *   Added support for insertViewsAt() method
-        
-*   [TIMOB-23145](https://jira.appcelerator.org/browse/TIMOB-23145) - Enable run-on-main-thread by default for new projects
-    
-    *   Enabled run-on-main-thread to be enabled by default
-        
+* [CLI-875](https://jira.appcelerator.org/browse/CLI-875) - appc use command should allow --prerelease option
+
+  * The appc use command allows you to use prelease versions by using the \--prerelease flag
+
+* [TIMOB-16879](https://jira.appcelerator.org/browse/TIMOB-16879) - ScrollableView: Add "insertViewsAt()" method
+
+  * Added support for insertViewsAt() method
+
+* [TIMOB-23145](https://jira.appcelerator.org/browse/TIMOB-23145) - Enable run-on-main-thread by default for new projects
+
+  * Enabled run-on-main-thread to be enabled by default
+
 
 ## Community Credits
 
-*   [TiBaharroth](https://github.com/TiBaharroth) for updating Button.yml ( [TIDOC-2482](https://jira.appcelerator.org/browse/TIDOC-2482))
-    
-*   [Jong Eun Lee](https://github.com/yomybaby) for Android Elevation disappear when set border\* ([TIMOB-20076](https://jira.appcelerator.org/browse/TIMOB-20076))
-    
-*   [Michael Gangolf](https://github.com/m1ga) for his herculean effort on
-    
-    *   Android: Implement Video Recording ([TIMOB-2122](https://jira.appcelerator.org/browse/TIMOB-2122))
-        
-    *   Android: Add Ti.UI.Button tintColor ( [TIMOB-23167](https://jira.appcelerator.org/browse/TIMOB-23167))
-        
-    *   Android: rgba() fixes and addition for floats ([TIMOB-6412](https://jira.appcelerator.org/browse/TIMOB-6412))
-        
-    *   Android: Add lineSpacing property to Label ([TIMOB-23140](https://jira.appcelerator.org/browse/TIMOB-23140))
-        
-    *   Android: Implement getPressure in Android view ([TIMOB-4388](https://jira.appcelerator.org/browse/TIMOB-4388))
-        
-    *   Android: TextField setSelection(0,end) has to be called twice to select text ([TIMOB-19639](https://jira.appcelerator.org/browse/TIMOB-19639))
-        
-    *   Android: tintColor for Android ImageView ([TIMOB-19912](https://jira.appcelerator.org/browse/TIMOB-19912))
-        
-    *   Android: TiHTTPClient.getAllResponseHeaders() throws NullPointerException on timeout ([TIMOB-20583](https://jira.appcelerator.org/browse/TIMOB-20583))
-        
-*   [Richard Lustemberg](https://github.com/rlustemberg) for fixing Android http client setting content type on all http verbs ([TIMOB-23339](https://jira.appcelerator.org/browse/TIMOB-23339))
-    
-*   [Sergey Volkov](https://github.com/drauggres) for fixing Android 6.0 (Post 5.2.0 SDK): [java.io](http://java.io/).FileNotFoundException: open failed: ENOENT (No such file or directory) ([TIMOB-20470](https://jira.appcelerator.org/browse/TIMOB-20470))
-    
-*   [Andrey Tkachenko](https://github.com/falkolab) for
-    
-    *   Android: ScrollableView removeView(): java.lang.IndexOutOfBoundsException: Invalid index X, size is X ([TIMOB-20116](https://jira.appcelerator.org/browse/TIMOB-20116))
-        
-    *   Android: activity indicator causing crash if exiting app right after launch ([TIMOB-19325](https://jira.appcelerator.org/browse/TIMOB-19325))
-        
-*   [Jan van Kampen](https://github.com/janvankampen) for fixing iOS: Change documentation on TableViewCellSelectionStyle ([TIMOB-20438](https://jira.appcelerator.org/browse/TIMOB-20438))
-    
-*   [Ben Bahrenburg](https://github.com/benbahrenburg) for fixing Android missing Titanium.Database.DB.getFile() ([TIMOB-20293](https://jira.appcelerator.org/browse/TIMOB-20293))
-    
-*   [Duy Bao Nguyen](https://github.com/bduyng) for ListView: Missing bindId in itemclick event with active search ([TIMOB-16432](https://jira.appcelerator.org/browse/TIMOB-16432))
-    
+* [TiBaharroth](https://github.com/TiBaharroth) for updating Button.yml ( [TIDOC-2482](https://jira.appcelerator.org/browse/TIDOC-2482))
+
+* [Jong Eun Lee](https://github.com/yomybaby) for Android Elevation disappear when set border\* ([TIMOB-20076](https://jira.appcelerator.org/browse/TIMOB-20076))
+
+* [Michael Gangolf](https://github.com/m1ga) for his herculean effort on
+
+  * Android: Implement Video Recording ([TIMOB-2122](https://jira.appcelerator.org/browse/TIMOB-2122))
+
+  * Android: Add Ti.UI.Button tintColor ( [TIMOB-23167](https://jira.appcelerator.org/browse/TIMOB-23167))
+
+  * Android: rgba() fixes and addition for floats ([TIMOB-6412](https://jira.appcelerator.org/browse/TIMOB-6412))
+
+  * Android: Add lineSpacing property to Label ([TIMOB-23140](https://jira.appcelerator.org/browse/TIMOB-23140))
+
+  * Android: Implement getPressure in Android view ([TIMOB-4388](https://jira.appcelerator.org/browse/TIMOB-4388))
+
+  * Android: TextField setSelection(0,end) has to be called twice to select text ([TIMOB-19639](https://jira.appcelerator.org/browse/TIMOB-19639))
+
+  * Android: tintColor for Android ImageView ([TIMOB-19912](https://jira.appcelerator.org/browse/TIMOB-19912))
+
+  * Android: TiHTTPClient.getAllResponseHeaders() throws NullPointerException on timeout ([TIMOB-20583](https://jira.appcelerator.org/browse/TIMOB-20583))
+
+* [Richard Lustemberg](https://github.com/rlustemberg) for fixing Android http client setting content type on all http verbs ([TIMOB-23339](https://jira.appcelerator.org/browse/TIMOB-23339))
+
+* [Sergey Volkov](https://github.com/drauggres) for fixing Android 6.0 (Post 5.2.0 SDK): [java.io](http://java.io/).FileNotFoundException: open failed: ENOENT (No such file or directory) ([TIMOB-20470](https://jira.appcelerator.org/browse/TIMOB-20470))
+
+* [Andrey Tkachenko](https://github.com/falkolab) for
+
+  * Android: ScrollableView removeView(): java.lang.IndexOutOfBoundsException: Invalid index X, size is X ([TIMOB-20116](https://jira.appcelerator.org/browse/TIMOB-20116))
+
+  * Android: activity indicator causing crash if exiting app right after launch ([TIMOB-19325](https://jira.appcelerator.org/browse/TIMOB-19325))
+
+* [Jan van Kampen](https://github.com/janvankampen) for fixing iOS: Change documentation on TableViewCellSelectionStyle ([TIMOB-20438](https://jira.appcelerator.org/browse/TIMOB-20438))
+
+* [Ben Bahrenburg](https://github.com/benbahrenburg) for fixing Android missing Titanium.Database.DB.getFile() ([TIMOB-20293](https://jira.appcelerator.org/browse/TIMOB-20293))
+
+* [Duy Bao Nguyen](https://github.com/bduyng) for ListView: Missing bindId in itemclick event with active search ([TIMOB-16432](https://jira.appcelerator.org/browse/TIMOB-16432))
+
 
 ## Fixed Issues
 
-*   [API-1119](https://jira.appcelerator.org/browse/API-1119) - Swagger connector requires undocumented uri option
-    
-*   [API-1195](https://jira.appcelerator.org/browse/API-1195) - Generated Arrow Android SDK contains an invalid import path
-    
-*   [API-1196](https://jira.appcelerator.org/browse/API-1196) - Creating a new record with Arrow Android SDK throws a org.json.JSONException
-    
-*   [API-1197](https://jira.appcelerator.org/browse/API-1197) - Calling the findAll method in Arrow Android SDK throws a java.lang.ClassCastException
-    
-*   [API-1198](https://jira.appcelerator.org/browse/API-1198) - Updating a record with Arrow Android SDK throws java.lang.NullPointerException
-    
-*   [API-1199](https://jira.appcelerator.org/browse/API-1199) - Out-of-the-box findOne API does not exist any more
-    
-*   [API-1211](https://jira.appcelerator.org/browse/API-1211) - SOAP connector not able to create REST API
-    
-*   [API-1234](https://jira.appcelerator.org/browse/API-1234) - On preprod, if you try to access the Arrow Admin page, you will get unauthorized error
-    
-*   [API-1235](https://jira.appcelerator.org/browse/API-1235) - No API generated for reduced model of an existing model
-    
-*   [CLI-941](https://jira.appcelerator.org/browse/CLI-941) - Running appc access get on an unpublished app won't throw correct error
-    
-*   [CLI-955](https://jira.appcelerator.org/browse/CLI-955) - CLI should not tell a user to install a pre-release CLI as an update from a GA version
-    
-*   [CLI-988](https://jira.appcelerator.org/browse/CLI-988) - "-o" (org-id) is not honored with appc login
-    
-*   [CLI-998](https://jira.appcelerator.org/browse/CLI-998) - We are displaying an OEM vendor name in logging and should not
-    
-*   [CLI-999](https://jira.appcelerator.org/browse/CLI-999) - "(node:19181) fs: re-evaluating native module sources is not supported." message appears
-    
-*   [CLI-1044](https://jira.appcelerator.org/browse/CLI-1044) - CLI 5.4.0-31 can not create apps in EU region
-    
-*   [CLI-1066](https://jira.appcelerator.org/browse/CLI-1066) - Hyperloop: If you have an older version of Hyperloop in your module global space, you cannot get the newer Hyperloop version
-    
-*   [CLI-1067](https://jira.appcelerator.org/browse/CLI-1067) - We don't see "Would you like to enable hyperloop for the app" prompt while enabling services for new app
-    
-*   [CLI-1068](https://jira.appcelerator.org/browse/CLI-1068) - Windows: A iPhone module folder is downloaded for Windows OS
-    
-*   [MOD-2261](https://jira.appcelerator.org/browse/MOD-2261) - iOS ti.map pinchangedragstate event never fired.
-    
-*   [MOD-2262](https://jira.appcelerator.org/browse/MOD-2262) - Ti.Map: Android: App crashing when the the map is being released
-    
-*   [MOD-2272](https://jira.appcelerator.org/browse/MOD-2272) - TouchId Module: isSupported() return TRUE even for iPhone4S and iPhone 5 which doesn't have finger print sensor.
-    
-*   [TIMOB-2908](https://jira.appcelerator.org/browse/TIMOB-2908) - iOS: Switch - Disable animation on init and allow developer to disable for setValue
-    
-*   [TIMOB-19076](https://jira.appcelerator.org/browse/TIMOB-19076) - CLI: ti info -o json should show Windows Phone 8.0 SDK as unsupported
-    
-*   [TIMOB-19116](https://jira.appcelerator.org/browse/TIMOB-19116) - Windows: Alloy compile errors not visible when ran via \`appc run\`
-    
-*   [TIMOB-19544](https://jira.appcelerator.org/browse/TIMOB-19544) - iOS: iPad Pro icon and splash screen support
-    
-*   [TIMOB-19741](https://jira.appcelerator.org/browse/TIMOB-19741) - iOS: webViews within a scrollableView disappear
-    
-*   [TIMOB-19796](https://jira.appcelerator.org/browse/TIMOB-19796) - Android: CardView Layout property not working as expected
-    
-*   [TIMOB-19798](https://jira.appcelerator.org/browse/TIMOB-19798) - CardView: contentPadding(X) and cardCornerRadius should use default unit
-    
-*   [TIMOB-19821](https://jira.appcelerator.org/browse/TIMOB-19821) - Android 6.0: Device & emulator logs don't show up in studio console
-    
-*   [TIMOB-19843](https://jira.appcelerator.org/browse/TIMOB-19843) - Android: CardView's cardMaxElevation should (marked as) be creation-only
-    
-*   [TIMOB-19886](https://jira.appcelerator.org/browse/TIMOB-19886) - Windows: Some unit tests failed for Windows Store app
-    
-*   [TIMOB-19950](https://jira.appcelerator.org/browse/TIMOB-19950) - iOS: HTTP requests with basic auth returning with 401 Unauthorised trigger endless repeated requests
-    
-*   [TIMOB-19967](https://jira.appcelerator.org/browse/TIMOB-19967) - Ti.SafariDialog: Huge list of warnings after GenerateDSYMFile
-    
-*   [TIMOB-20002](https://jira.appcelerator.org/browse/TIMOB-20002) - iOS: Ti.Geolocation.requestLocationPermissions is not always called?
-    
-*   [TIMOB-20003](https://jira.appcelerator.org/browse/TIMOB-20003) - Permission request error response message prefixed with namespace
-    
-*   [TIMOB-20013](https://jira.appcelerator.org/browse/TIMOB-20013) - iOS8: Ti.Contacts - relatedNames property causes crash
-    
-*   [TIMOB-20048](https://jira.appcelerator.org/browse/TIMOB-20048) - iOS: Revert APSHTTPClient library to use back NSURLConnection
-    
-*   [TIMOB-20054](https://jira.appcelerator.org/browse/TIMOB-20054) - Windows: Use and generate correct Main\_class.h when compiling
-    
-*   [TIMOB-20061](https://jira.appcelerator.org/browse/TIMOB-20061) - TLS Version set in Android ignored on Publish
-    
-*   [TIMOB-20087](https://jira.appcelerator.org/browse/TIMOB-20087) - 5.1.X breaks ability to bind one collection to different views / reset collection
-    
-*   [TIMOB-20090](https://jira.appcelerator.org/browse/TIMOB-20090) - Android: Cardview doc requires changes
-    
-*   [TIMOB-20100](https://jira.appcelerator.org/browse/TIMOB-20100) - Android: CardView backgroundImage & borderColor properties don't work
-    
-*   [TIMOB-20110](https://jira.appcelerator.org/browse/TIMOB-20110) - Windows: Ti.UI.Textfield passwordMask=true doesn't work
-    
-*   [TIMOB-20118](https://jira.appcelerator.org/browse/TIMOB-20118) - iOS9: Contacts property fullName does not return appropriate values
-    
-*   [TIMOB-20133](https://jira.appcelerator.org/browse/TIMOB-20133) - Map annotations crash in 5.1.1
-    
+* [API-1119](https://jira.appcelerator.org/browse/API-1119) - Swagger connector requires undocumented uri option
+
+* [API-1195](https://jira.appcelerator.org/browse/API-1195) - Generated Arrow Android SDK contains an invalid import path
+
+* [API-1196](https://jira.appcelerator.org/browse/API-1196) - Creating a new record with Arrow Android SDK throws a org.json.JSONException
+
+* [API-1197](https://jira.appcelerator.org/browse/API-1197) - Calling the findAll method in Arrow Android SDK throws a java.lang.ClassCastException
+
+* [API-1198](https://jira.appcelerator.org/browse/API-1198) - Updating a record with Arrow Android SDK throws java.lang.NullPointerException
+
+* [API-1199](https://jira.appcelerator.org/browse/API-1199) - Out-of-the-box findOne API does not exist any more
+
+* [API-1211](https://jira.appcelerator.org/browse/API-1211) - SOAP connector not able to create REST API
+
+* [API-1234](https://jira.appcelerator.org/browse/API-1234) - On preprod, if you try to access the Arrow Admin page, you will get unauthorized error
+
+* [API-1235](https://jira.appcelerator.org/browse/API-1235) - No API generated for reduced model of an existing model
+
+* [CLI-941](https://jira.appcelerator.org/browse/CLI-941) - Running appc access get on an unpublished app won't throw correct error
+
+* [CLI-955](https://jira.appcelerator.org/browse/CLI-955) - CLI should not tell a user to install a pre-release CLI as an update from a GA version
+
+* [CLI-988](https://jira.appcelerator.org/browse/CLI-988) - "-o" (org-id) is not honored with appc login
+
+* [CLI-998](https://jira.appcelerator.org/browse/CLI-998) - We are displaying an OEM vendor name in logging and should not
+
+* [CLI-999](https://jira.appcelerator.org/browse/CLI-999) - "(node:19181) fs: re-evaluating native module sources is not supported." message appears
+
+* [CLI-1044](https://jira.appcelerator.org/browse/CLI-1044) - CLI 5.4.0-31 can not create apps in EU region
+
+* [CLI-1066](https://jira.appcelerator.org/browse/CLI-1066) - Hyperloop: If you have an older version of Hyperloop in your module global space, you cannot get the newer Hyperloop version
+
+* [CLI-1067](https://jira.appcelerator.org/browse/CLI-1067) - We don't see "Would you like to enable hyperloop for the app" prompt while enabling services for new app
+
+* [CLI-1068](https://jira.appcelerator.org/browse/CLI-1068) - Windows: A iPhone module folder is downloaded for Windows OS
+
+* [MOD-2261](https://jira.appcelerator.org/browse/MOD-2261) - iOS ti.map pinchangedragstate event never fired.
+
+* [MOD-2262](https://jira.appcelerator.org/browse/MOD-2262) - Ti.Map: Android: App crashing when the the map is being released
+
+* [MOD-2272](https://jira.appcelerator.org/browse/MOD-2272) - TouchId Module: isSupported() return TRUE even for iPhone4S and iPhone 5 which doesn't have finger print sensor.
+
+* [TIMOB-2908](https://jira.appcelerator.org/browse/TIMOB-2908) - iOS: Switch - Disable animation on init and allow developer to disable for setValue
+
+* [TIMOB-19076](https://jira.appcelerator.org/browse/TIMOB-19076) - CLI: ti info -o json should show Windows Phone 8.0 SDK as unsupported
+
+* [TIMOB-19116](https://jira.appcelerator.org/browse/TIMOB-19116) - Windows: Alloy compile errors not visible when ran via \`appc run\`
+
+* [TIMOB-19544](https://jira.appcelerator.org/browse/TIMOB-19544) - iOS: iPad Pro icon and splash screen support
+
+* [TIMOB-19741](https://jira.appcelerator.org/browse/TIMOB-19741) - iOS: webViews within a scrollableView disappear
+
+* [TIMOB-19796](https://jira.appcelerator.org/browse/TIMOB-19796) - Android: CardView Layout property not working as expected
+
+* [TIMOB-19798](https://jira.appcelerator.org/browse/TIMOB-19798) - CardView: contentPadding(X) and cardCornerRadius should use default unit
+
+* [TIMOB-19821](https://jira.appcelerator.org/browse/TIMOB-19821) - Android 6.0: Device & emulator logs don't show up in studio console
+
+* [TIMOB-19843](https://jira.appcelerator.org/browse/TIMOB-19843) - Android: CardView's cardMaxElevation should (marked as) be creation-only
+
+* [TIMOB-19886](https://jira.appcelerator.org/browse/TIMOB-19886) - Windows: Some unit tests failed for Windows Store app
+
+* [TIMOB-19950](https://jira.appcelerator.org/browse/TIMOB-19950) - iOS: HTTP requests with basic auth returning with 401 Unauthorised trigger endless repeated requests
+
+* [TIMOB-19967](https://jira.appcelerator.org/browse/TIMOB-19967) - Ti.SafariDialog: Huge list of warnings after GenerateDSYMFile
+
+* [TIMOB-20002](https://jira.appcelerator.org/browse/TIMOB-20002) - iOS: Ti.Geolocation.requestLocationPermissions is not always called?
+
+* [TIMOB-20003](https://jira.appcelerator.org/browse/TIMOB-20003) - Permission request error response message prefixed with namespace
+
+* [TIMOB-20013](https://jira.appcelerator.org/browse/TIMOB-20013) - iOS8: Ti.Contacts - relatedNames property causes crash
+
+* [TIMOB-20048](https://jira.appcelerator.org/browse/TIMOB-20048) - iOS: Revert APSHTTPClient library to use back NSURLConnection
+
+* [TIMOB-20054](https://jira.appcelerator.org/browse/TIMOB-20054) - Windows: Use and generate correct Main\_class.h when compiling
+
+* [TIMOB-20061](https://jira.appcelerator.org/browse/TIMOB-20061) - TLS Version set in Android ignored on Publish
+
+* [TIMOB-20087](https://jira.appcelerator.org/browse/TIMOB-20087) - 5.1.X breaks ability to bind one collection to different views / reset collection
+
+* [TIMOB-20090](https://jira.appcelerator.org/browse/TIMOB-20090) - Android: Cardview doc requires changes
+
+* [TIMOB-20100](https://jira.appcelerator.org/browse/TIMOB-20100) - Android: CardView backgroundImage & borderColor properties don't work
+
+* [TIMOB-20110](https://jira.appcelerator.org/browse/TIMOB-20110) - Windows: Ti.UI.Textfield passwordMask=true doesn't work
+
+* [TIMOB-20118](https://jira.appcelerator.org/browse/TIMOB-20118) - iOS9: Contacts property fullName does not return appropriate values
+
+* [TIMOB-20133](https://jira.appcelerator.org/browse/TIMOB-20133) - Map annotations crash in 5.1.1
+
 
 ## Improvements
 
-*   [API-1194](https://jira.appcelerator.org/browse/API-1194) - Generated Arrow Android SDK should use HttpURLConnection
-    
-    *   Arrow Android SDK does not use Apache HTTP Client to make requests anymore
-        
-*   [API-1221](https://jira.appcelerator.org/browse/API-1221) - Expose Swagger Document for a Model or API Group
-    
-    *   Provide access to Swagger doc for an individual API within Arrow apps
-        
-*   [CLI-741](https://jira.appcelerator.org/browse/CLI-741) - Allow for refreshing of session without logging in again explicitly
-    
-    *   APPC CLI allows for refreshing of a session without having to log in again
-        
-*   [MOD-2248](https://jira.appcelerator.org/browse/MOD-2248) - Ti.Facebook: Support "logCustomEvent" with optional arguments
-    
-    *   Extended logCustomEvent with additional arguments in Ti.Facebook
-        
-*   [TIMOB-23530](https://jira.appcelerator.org/browse/TIMOB-23530) - Hyperloop - IPHONEOS\_DEPLOYMENT\_TARGET of 7.0 despite value of min-ios-ver in tiapp.xml
-    
+* [API-1194](https://jira.appcelerator.org/browse/API-1194) - Generated Arrow Android SDK should use HttpURLConnection
+
+  * Arrow Android SDK does not use Apache HTTP Client to make requests anymore
+
+* [API-1221](https://jira.appcelerator.org/browse/API-1221) - Expose Swagger Document for a Model or API Group
+
+  * Provide access to Swagger doc for an individual API within Arrow apps
+
+* [CLI-741](https://jira.appcelerator.org/browse/CLI-741) - Allow for refreshing of session without logging in again explicitly
+
+  * APPC CLI allows for refreshing of a session without having to log in again
+
+* [MOD-2248](https://jira.appcelerator.org/browse/MOD-2248) - Ti.Facebook: Support "logCustomEvent" with optional arguments
+
+  * Extended logCustomEvent with additional arguments in Ti.Facebook
+
+* [TIMOB-23530](https://jira.appcelerator.org/browse/TIMOB-23530) - Hyperloop - IPHONEOS\_DEPLOYMENT\_TARGET of 7.0 despite value of min-ios-ver in tiapp.xml
+
 
 ## Known Issues
 
-*   Hyperloop (1.2.5) does not support debugger at this time ([TIMOB-23628](https://jira.appcelerator.org/browse/TIMOB-23628))
-    
-*   [TIMOB-23613](https://jira.appcelerator.org/browse/TIMOB-23613): When building [https://github.com/appcelerator/hyperloop-examples](https://github.com/appcelerator/hyperloop-examples) on Windows the build process fails
-    
-*   When building a project on Windows using appc run from the same directory as an appc.js file the build process will not begin and instead you will be prompted to select the application to open the appc.js in or the file will automatically open depending on your settings ([CLI-1038](https://jira.appcelerator.org/browse/CLI-1038))
-    
-*   The prepackaged ti.facebook Android module (5.2.0) can crash during build time ([MOD-2283](https://jira.appcelerator.org/browse/MOD-2283)). Workaround: Use the re-packaged version from the [Github page](https://github.com/appcelerator-modules/ti.facebook/releases/tag/android-5.2.0) instead.
-    
+* Hyperloop (1.2.5) does not support debugger at this time ([TIMOB-23628](https://jira.appcelerator.org/browse/TIMOB-23628))
+
+* [TIMOB-23613](https://jira.appcelerator.org/browse/TIMOB-23613): When building [https://github.com/appcelerator/hyperloop-examples](https://github.com/appcelerator/hyperloop-examples) on Windows the build process fails
+
+* When building a project on Windows using appc run from the same directory as an appc.js file the build process will not begin and instead you will be prompted to select the application to open the appc.js in or the file will automatically open depending on your settings ([CLI-1038](https://jira.appcelerator.org/browse/CLI-1038))
+
+* The prepackaged ti.facebook Android module (5.2.0) can crash during build time ([MOD-2283](https://jira.appcelerator.org/browse/MOD-2283)). Workaround: Use the re-packaged version from the [Github page](https://github.com/appcelerator-modules/ti.facebook/releases/tag/android-5.2.0) instead.
+
 
 ## API Changes
 
@@ -1191,9 +1191,6 @@ property
 
 Returns true if the watch is currently activated. (New API, supported on iPhone.)
 
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
-
 ### Deprecated APIs
 
 The following APIs are deprecated in Release 5.4.0 as of August 10th, 2016.
@@ -1399,9 +1396,6 @@ Titanium.UI.iPhone.setAppSupportsShakeToEdit
 method
 
 Use Titanium.UI.iOS.appSupportsShakeToEdit instead.
-
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
 
 ### Removed APIs
 
@@ -2024,6 +2018,3 @@ Titanium.UI.iPhone.statusBarStyle
 property
 
 Use Titanium.UI.Window.statusBarStyle instead.
-
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**

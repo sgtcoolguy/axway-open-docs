@@ -1,4 +1,4 @@
-{"title":"Uninstalling the debugger","weight":"100"} 
+{"title":"Uninstalling the debugger","weight":"100"}
 
 ## Introduction
 
@@ -10,27 +10,27 @@ To update the Firefox debugger extension, please choose the menu option Tools > 
 
 ### To uninstall the debugger from Firefox
 
-1.  From the **Tools** menu in Firefox, select **Extensions** to open an **Extensions** pop-up window.
-    
-2.  On the **Extensions** pop-up window, select the Debugger extension.
-    
-3.  Click the **Uninstall** button.
-    
-4.  Close and re-start Firefox.
-    
+1. From the **Tools** menu in Firefox, select **Extensions** to open an **Extensions** pop-up window.
+
+2. On the **Extensions** pop-up window, select the Debugger extension.
+
+3. Click the **Uninstall** button.
+
+4. Close and restart Firefox.
+
 
 The debugger will be uninstalled the next time that you start Firefox.
 
 ## Related Topics
 
-*   [About the Debug perspective](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/)
-    
-*   [Installing the JavaScript debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Installing_the_JavaScript_debugger/)
-    
-*   [Running the debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Running_the_debugger/)
-    
-*   [Stepping into and over functions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Stepping_into_and_over_functions/)
-    
-*   [Adding a breakpoint](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Adding_a_breakpoint/)
-    
-*   [Using the Console View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Using_the_Console_View/)
+* [About the Debug perspective](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/)
+
+* [Installing the JavaScript debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Installing_the_JavaScript_debugger/)
+
+* [Running the debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Running_the_debugger/)
+
+* [Stepping into and over functions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Stepping_into_and_over_functions/)
+
+* [Adding a breakpoint](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Adding_a_breakpoint/)
+
+* [Using the Console View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Using_the_Console_View/)

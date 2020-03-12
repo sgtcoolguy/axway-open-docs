@@ -1,4 +1,4 @@
-{"title":"Inheritance","weight":"90"} 
+{"title":"Inheritance","weight":"90"}
 
 Demonstrates how an Alloy controller can inherit functionality from another controller.
 

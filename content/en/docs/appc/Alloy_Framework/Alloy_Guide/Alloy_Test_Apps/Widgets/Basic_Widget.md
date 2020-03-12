@@ -1,4 +1,4 @@
-{"title":"Basic Widget","weight":"10"} 
+{"title":"Basic Widget","weight":"10"}
 
 Demonstrates how to create and use a basic widget.
 

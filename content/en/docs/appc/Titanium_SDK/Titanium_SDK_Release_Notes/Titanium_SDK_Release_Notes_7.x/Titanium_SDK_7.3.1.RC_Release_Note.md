@@ -1,25 +1,25 @@
-{"title":"Titanium SDK 7.3.1.RC - 27 August 2018","weight":"140"} 
+{"title":"Titanium SDK 7.3.1.RC - 27 August 2018","weight":"140"}
 
-*   [About this release](#Aboutthisrelease)
-    
-*   [Community credits](#Communitycredits)
-    
-*   [Fixed issues](#Fixedissues)
-    
-    *   [Android platform](#Androidplatform)
-        
-    *   [iOS platform](#iOSplatform)
-        
-    *   [All platforms](#Allplatforms)
-        
-*   [Improvements](#Improvements)
-    
-*   [API changes](#APIchanges)
-    
-    *   [New APIs](#NewAPIs)
-        
-    *   [Deprecated APIs](#DeprecatedAPIs)
-        
+* [About this release](#Aboutthisrelease)
+
+* [Community credits](#Communitycredits)
+
+* [Fixed issues](#Fixedissues)
+
+  * [Android platform](#Androidplatform)
+
+  * [iOS platform](#iOSplatform)
+
+  * [All platforms](#Allplatforms)
+
+* [Improvements](#Improvements)
+
+* [API changes](#APIchanges)
+
+  * [New APIs](#NewAPIs)
+
+  * [Deprecated APIs](#DeprecatedAPIs)
+
 
 ## About this release
 
@@ -29,64 +29,64 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 ## Community credits
 
-*   Matthew Delmarter - [TIMOB-26237](https://jira.appcelerator.org/browse/TIMOB-26237) - iOS: Local Notification Event not triggered when app is launched from the background
-    
-*   Andreas Pingas - [TIMOB-26300](https://jira.appcelerator.org/browse/TIMOB-26300) - iOS: Initializing Ti.UI.TextArea crashes app when running on kroll-thread
-    
-*   kedomuz - [TIMOB-26325](https://jira.appcelerator.org/browse/TIMOB-26325) - Android: Ti.UI.WebView not firing events in 7.x
-    
-*   Luc-Edmond Gaspard - [TIMOB-26329](https://jira.appcelerator.org/browse/TIMOB-26329) - Hyperloop: Android - Can't instantiate a CoordinatorLayout in SDK 7.3.0
-    
-*   Donovan Lewis - [TIMOB-25941](https://jira.appcelerator.org/browse/TIMOB-25941) - Android: HTTPClient downloads are slower compared to iOS
-    
+* Matthew Delmarter - [TIMOB-26237](https://jira.appcelerator.org/browse/TIMOB-26237) - iOS: Local Notification Event not triggered when app is launched from the background
+
+* Andreas Pingas - [TIMOB-26300](https://jira.appcelerator.org/browse/TIMOB-26300) - iOS: Initializing Ti.UI.TextArea crashes app when running on kroll-thread
+
+* kedomuz - [TIMOB-26325](https://jira.appcelerator.org/browse/TIMOB-26325) - Android: Ti.UI.WebView not firing events in 7.x
+
+* Luc-Edmond Gaspard - [TIMOB-26329](https://jira.appcelerator.org/browse/TIMOB-26329) - Hyperloop: Android - Can't instantiate a CoordinatorLayout in SDK 7.3.0
+
+* Donovan Lewis - [TIMOB-25941](https://jira.appcelerator.org/browse/TIMOB-25941) - Android: HTTPClient downloads are slower compared to iOS
+
 
 ## Fixed issues
 
 ### Android platform
 
-*   [TIMOB-26130](https://jira.appcelerator.org/browse/TIMOB-26130) - Android: Fix compatibility with NDK 12+
-    
-*   [TIMOB-26280](https://jira.appcelerator.org/browse/TIMOB-26280) - Android: Build for genymotion emulator fails with "Cannot set property 'child' of undefined" in node-titanium-sdk
-    
-*   [TIMOB-26325](https://jira.appcelerator.org/browse/TIMOB-26325) - Android: Ti.UI.WebView not firing events in 7.x
-    
+* [TIMOB-26130](https://jira.appcelerator.org/browse/TIMOB-26130) - Android: Fix compatibility with NDK 12+
+
+* [TIMOB-26280](https://jira.appcelerator.org/browse/TIMOB-26280) - Android: Build for genymotion emulator fails with "Cannot set property 'child' of undefined" in node-titanium-sdk
+
+* [TIMOB-26325](https://jira.appcelerator.org/browse/TIMOB-26325) - Android: Ti.UI.WebView not firing events in 7.x
+
 
 ### iOS platform
 
-*   [TIMOB-26237](https://jira.appcelerator.org/browse/TIMOB-26237) - iOS: Local Notification Event not triggered when app is launched from the background
-    
-*   [TIMOB-26300](https://jira.appcelerator.org/browse/TIMOB-26300) - iOS: Initializing Ti.UI.TextArea crashes app when running on kroll-thread
-    
-*   [TIMOB-26319](https://jira.appcelerator.org/browse/TIMOB-26319) - iOS: "usernotificationsettings" does not include "types" array on iOS 10 and SDK 7.3.0
-    
+* [TIMOB-26237](https://jira.appcelerator.org/browse/TIMOB-26237) - iOS: Local Notification Event not triggered when app is launched from the background
+
+* [TIMOB-26300](https://jira.appcelerator.org/browse/TIMOB-26300) - iOS: Initializing Ti.UI.TextArea crashes app when running on kroll-thread
+
+* [TIMOB-26319](https://jira.appcelerator.org/browse/TIMOB-26319) - iOS: "usernotificationsettings" does not include "types" array on iOS 10 and SDK 7.3.0
+
 
 ### All platforms
 
-*   [TIMOB-26328](https://jira.appcelerator.org/browse/TIMOB-26328) - Hyperloop: Android - Application freezes when trying to reopen window in 7.3.0
-    
-*   [TIMOB-26329](https://jira.appcelerator.org/browse/TIMOB-26329) - Hyperloop: Android - Can't instantiate a CoordinatorLayout in SDK 7.3.0
-    
+* [TIMOB-26328](https://jira.appcelerator.org/browse/TIMOB-26328) - Hyperloop: Android - Application freezes when trying to reopen window in 7.3.0
+
+* [TIMOB-26329](https://jira.appcelerator.org/browse/TIMOB-26329) - Hyperloop: Android - Can't instantiate a CoordinatorLayout in SDK 7.3.0
+
 
 ## Improvements
 
-*   [TIMOB-25941](https://jira.appcelerator.org/browse/TIMOB-25941) - Android: HTTPClient downloads are slower compared to iOS
-    
-    *   Optimized HTTPClient download performance
-        
-        *   Download performance improved by about 25%
-            
-        *   Increased response buffer size from 4kb to 8kb
-            
-        *   Removed undocumented event property blob from callback ondatastream()
-            
-            *   Improves performance by avoiding extra buffer copy
-                
-            *   This undocumented property does not exist on iOS
-                
-        *   Modified responseText property handling only create its string when accessed
-            
-        *   Synchronized file write to storage upon download completion
-            
+* [TIMOB-25941](https://jira.appcelerator.org/browse/TIMOB-25941) - Android: HTTPClient downloads are slower compared to iOS
+
+  * Optimized HTTPClient download performance
+
+    * Download performance improved by about 25%
+
+    * Increased response buffer size from 4kb to 8kb
+
+    * Removed undocumented event property blob from callback ondatastream()
+
+      * Improves performance by avoiding extra buffer copy
+
+      * This undocumented property does not exist on iOS
+
+    * Modified responseText property handling only create its string when accessed
+
+    * Synchronized file write to storage upon download completion
+
 
 ## API changes
 
@@ -694,9 +694,6 @@ method
 
 Sets the value of the Titanium.UI.iOS.MODAL\_PRESENTATION\_OVER\_CURRENT\_FULL\_SCREEN property. (New API, supported on iPhone and iPad.)
 
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
-
 ### Deprecated APIs
 
 The following APIs are deprecated in Release 7.3.1 as of August 30th, 2018.
@@ -916,6 +913,3 @@ Titanium.UI.iOS.BLEND\_MODE\_XOR
 property
 
 Use Titanium.UI.BLEND\_MODE\_XOR instead.
-
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**

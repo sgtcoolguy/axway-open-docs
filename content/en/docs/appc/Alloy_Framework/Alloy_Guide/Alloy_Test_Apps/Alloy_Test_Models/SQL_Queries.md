@@ -1,4 +1,4 @@
-{"title":"SQL Queries","weight":"150"} 
+{"title":"SQL Queries","weight":"150"}
 
 Demonstrates how to use a SQL query with a database fetch operation.
 

@@ -1,4 +1,4 @@
-{"title":"Alloy 1.7.26 - 15 November 2015","weight":"100"} 
+{"title":"Alloy 1.7.26 - 15 November 2015","weight":"100"}
 
 Alloy 1.7.26 is a patch release that includes one bug fix.
 

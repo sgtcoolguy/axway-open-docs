@@ -1,4 +1,4 @@
-{"title":"Java Coding Standards","weight":"20"} 
+{"title":"Java Coding Standards","weight":"20"}
 
 The purpose of this document is to lay out the expected coding style for Java source code used by Appcelerator. The rules laid out in this document apply to all Java source code written internally or accepted from community contributions. The coding standards laid out in this document are a modified version of the official Oracle coding standards for Java. This document only lists differences from the base standard, and certain aspects that should be highlighted. Furthermore, this document and the base standard cover not just syntax style, but some general "best practice" techniques that should also be adhered to.
 
@@ -94,31 +94,31 @@ Bad Variable Names
 
 14) Regarding parentheses - read section 10.5.1 of the base standard. Same as #13.
 
-15) Documentation. Monsters eat a puppy every time you fail to document properly. **BE NICE TO PUPPIES AND DOCUMENT THE CODE**.  
+15) Documentation. Monsters eat a puppy every time you fail to document properly. **BE NICE TO PUPPIES AND DOCUMENT THE CODE**.
 Keep in mind that when writing comments, the entire goal is to quickly provide the needed information for a Class, variable or method to someone who might be unfamiliar with:
 
-*   The overall purpose of the code in question.
-    
-*   Any relevant architecture that ties into understanding the purpose of the code.
-    
-*   The original mindset and justification that went into creating the code.
-    
-*   Any "gotchas" that need to be kept in mind.
-    
+* The overall purpose of the code in question.
 
-If a developer should need to talk to the original developer who wrote the code in order to quickly understand the overall code structure and purpose, then the clarity of the code and level of documentation should be re-evaluated.  
+* Any relevant architecture that ties into understanding the purpose of the code.
+
+* The original mindset and justification that went into creating the code.
+
+* Any "gotchas" that need to be kept in mind.
+
+
+If a developer should need to talk to the original developer who wrote the code in order to quickly understand the overall code structure and purpose, then the clarity of the code and level of documentation should be re-evaluated.
 In General, the baseline standard outlines the documentation structure for a class and when documentation is needed but it will be elaborated on here:
 
-*   Every java source file without exception should have a file level comment at the top (baseline standard 3.1.1).
-    
-*   Every class without exception should have a class documentation block (baseline standard 3.1.3).
-    
-*   If the class has enough complexity to warrant having a implementation block, then the failure to include one should NOT be seen as optional (baseline standard 3.1.3).
-    
-*   A method documentation block should only be omitted when the purpose of the method is overwhelmingly clear to anyone who looks at it.
-    
-*   A variable comment should be used if there is some larger scope to the variable that may not be clear. For example, if the variable is used locally but changing it can also drive changes in other classes or areas of the code base.
-    
+* Every java source file without exception should have a file level comment at the top (baseline standard 3.1.1).
+
+* Every class without exception should have a class documentation block (baseline standard 3.1.3).
+
+* If the class has enough complexity to warrant having a implementation block, then the failure to include one should NOT be seen as optional (baseline standard 3.1.3).
+
+* A method documentation block should only be omitted when the purpose of the method is overwhelmingly clear to anyone who looks at it.
+
+* A variable comment should be used if there is some larger scope to the variable that may not be clear. For example, if the variable is used locally but changing it can also drive changes in other classes or areas of the code base.
+
 
 While documenting, the choice between standard comments and Javadoc needs to be made on a case by case basis. In general, if the comment is for something that is not private then Javadoc should be used so that the comments are available as eclipse comment popups when looking at public or protected methods and variables.
 

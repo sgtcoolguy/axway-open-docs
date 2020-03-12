@@ -1,23 +1,23 @@
-{"title":"Distributing Android apps","weight":"20"} 
+{"title":"Distributing Android apps","weight":"20"}
 
-*   [Register with Google Play](#RegisterwithGooglePlay)
-    
-*   [Generate a keypair and certificate](#Generateakeypairandcertificate)
-    
-*   [Verify your keystore](#Verifyyourkeystore)
-    
-*   [Build and sign your app](#Buildandsignyourapp)
-    
-*   [Build and sign your app using the CLI](#BuildandsignyourappusingtheCLI)
-    
-*   [Verify your app is signed correctly and ready to be uploaded](#Verifyyourappissignedcorrectlyandreadytobeuploaded)
-    
-*   [Upload the app and publish it to Google Play](#UploadtheappandpublishittoGooglePlay)
-    
-    *   [Capturing screenshots with DDMS](#CapturingscreenshotswithDDMS)
-        
-*   [References](#References)
-    
+* [Register with Google Play](#RegisterwithGooglePlay)
+
+* [Generate a keypair and certificate](#Generateakeypairandcertificate)
+
+* [Verify your keystore](#Verifyyourkeystore)
+
+* [Build and sign your app](#Buildandsignyourapp)
+
+* [Build and sign your app using the CLI](#BuildandsignyourappusingtheCLI)
+
+* [Verify your app is signed correctly and ready to be uploaded](#Verifyyourappissignedcorrectlyandreadytobeuploaded)
+
+* [Upload the app and publish it to Google Play](#UploadtheappandpublishittoGooglePlay)
+
+  * [Capturing screenshots](#Capturingscreenshots)
+
+* [References](#References)
+
 
 ## Objective
 
@@ -27,18 +27,18 @@ In this section, you will learn about the Google Play program requirements and t
 
 The diagram below illustrates the steps involved in publishing to Google Play. Though, if you look carefully you'll see that two of the steps verify the work you do in other steps. The steps are:
 
-1.  Register with Google Play
-    
-2.  Generate a keypair and certificate
-    
-3.  Verify your keystore
-    
-4.  Build and sign your app
-    
-5.  Verify your app is signed correctly and ready to be uploaded
-    
-6.  Upload the app and publish it to Google Play
-    
+1. Register with Google Play
+
+2. Generate a keypair and certificate
+
+3. Verify your keystore
+
+4. Build and sign your app
+
+5. Verify your app is signed correctly and ready to be uploaded
+
+6. Upload the app and publish it to Google Play
+
 
 ### Register with Google Play
 
@@ -48,7 +48,7 @@ To sell apps (charge, not give them for free), you'll need to register for a Goo
 
 ### Generate a keypair and certificate
 
-You'll need to digitally sign your app before uploading it to Google Play. To do this, you'll need to generate a keypair and certificate. You'll do this once for each app you publish by using the keytool command, which is supplied with the Java SDK. In generic form, the syntax is:
+You'll need to digitally sign your app before uploading it to Google Play. To do this, you'll need to generate a keypair and certificate. You'll do this once for each app you publish by using the keytool command, which is supplied with the JDK. In generic form, the syntax is:
 
 `keytool -genkeypair -v -keystore path/file_name -alias alias_name -keyalg RSA -sigalg SHA1withRSA -validity` `10000`
 
@@ -78,16 +78,18 @@ Once you've generated your certificate, you can build and sign your app. To pack
 
 The **Distribute** wizard appears asking you to fill in key pieces of information:
 
-*   **Distribution Location****:** Path where the Android application package (APK) file will be copied to.
-    
-*   **Keystore Location**: Path to your keystore file that is used to sign your application. Click the **New** button to create a new keystore.
-    
-*   **Keystore Password****:** Password to your keystore.
-    
-*   **Key Alias**: Alias associated with your application's certificate.
-    
+* **Distribution Location****:** Path where the bulit Android application will be copied to.
 
-Click the **Publish** button once you have entered all of the above information. Studio builds your application and generates an APK file in the specified location.
+* **Keystore Location**: Path to your keystore file that is used to sign your application. Click the **New** button to create a new keystore.
+
+* **Keystore Password****:** Password to your keystore.
+
+* **Key Alias**: Alias associated with your application's certificate.
+
+
+Click the **Publish** button once you have entered all of the above information. Studio builds your application and generates both an APK file and AAB file in the specified location.
+
+Note that an Android App Bundle (AAB) file will only be built by Titanium 9.0.0 and higher. You cannot install and run an AAB file on an Android device. This is a "publishing" format that only the Google Play app store supports. Once uploaded, Google will then generate multiple APK files from that one AAB file split by CPU architecture and image density, allowing for smaller downloads from the app store to the respective Android device.
 
 After you publish an application for the first time, the next subsequent invocation of the **Distribute** wizard may not ask you for the same exact information and uses your previous settings.
 
@@ -101,7 +103,7 @@ If you omit any of the optional parameters, you will be prompted by the CLI to e
 
 ### Verify your app is signed correctly and ready to be uploaded
 
-Before uploading, you should verify that the APK file was created and signed correctly. You'll do so with another Android SDK command-line tool. At the command prompt, enter:
+You can verify that the APK file was created and digitally signed correctly. You'll do so with another Android SDK command-line tool. At the command prompt, enter:
 
 `jarsigner -verify -verbose path/yourapp.apk`
 
@@ -111,46 +113,46 @@ where path/yourapp.apk is the path and file name associated with your app's APK 
 
 Visit [https://play.google.com/apps/publish](https://play.google.com/apps/publish) and log onto your Google Play account. Click Upload Application to begin the publishing process. Be prepared with the following required assets:
 
-*   Minimum of two (2) screenshots of your app
-    
-    *   In one of these sizes: 320 x 480, 480 x 800, or 480 x 854
-        
-    *   24-bit PNG or JPEG (no alpha)
-        
-    *   Full bleed, no border in art
-        
-    *   You may upload screenshots in landscape orientation. The thumbnails will appear to be rotated, but the actual images and their orientations will be preserved.
-        
-*   One (1) high resolution app icon – 512 x 512, 32-bit PNG or JPEG
-    
-*   Title (your app's name)
-    
-*   Description, 4000 characters max. Make this "SEO friendly" as it will help drive downloads of your app.
-    
-*   Promo text, 80 characters max. This is the brief summary that appears in some listings pages. Be as SEO friendly as you can in the space permitted.
-    
-*   Application Type and Category, which you'll choose from Google Plays's predefined lists.
-    
-*   Content Rating – you'll choose from High, Medium, Low, and Everyone. This rating helps filter inappropriate apps from those who don't want to see such content.
-    
-*   Contact information – you'll need to provide some way for customers to reach you. This information will be shown to potential buyers.
-    
+* Minimum of two (2) screenshots of your app
+
+  * In one of these sizes: 320 x 480, 480 x 800, or 480 x 854
+
+  * 24-bit PNG or JPEG (no alpha)
+
+  * Full bleed, no border in art
+
+  * You may upload screenshots in landscape orientation. The thumbnails will appear to be rotated, but the actual images and their orientations will be preserved.
+
+* One (1) high resolution app icon – 512 x 512, 32-bit PNG or JPEG
+
+* Title (your app's name)
+
+* Description, 4000 characters max. Make this "SEO friendly" as it will help drive downloads of your app.
+
+* Promo text, 80 characters max. This is the brief summary that appears in some listings pages. Be as SEO friendly as you can in the space permitted.
+
+* Application Type and Category, which you'll choose from Google Plays's predefined lists.
+
+* Content Rating – you'll choose from High, Medium, Low, and Everyone. This rating helps filter inappropriate apps from those who don't want to see such content.
+
+* Contact information – you'll need to provide some way for customers to reach you. This information will be shown to potential buyers.
+
 
 You should read, and then you'll have to check the boxes indicating you agree to the Google Play's terms and conditions. There are many additional assets you could provide, such as videos and larger promotional graphics. You can set a price and currency options for your app if you've set up a Google Checkout account.
 
-#### Capturing screenshots with DDMS
+#### Capturing screenshots
 
-As noted above, you'll need at least two screenshots to publish your app. You can grab those with DDMS. With your Android device connected or emulator running, open ddms and select your device in the top-left pane. Choose Device, Screen Capture. Save two representative screenshots to your desktop or home directory. Close ddms. Disconnect your device following your operating system’s procedure for safely removing USB devices.
+As noted above, you'll need at least two screenshots to publish your app. You can do this by running your app in the Android emulator and clicking the "Take screenshot" button (which has a camera icon) from the emulator's toolbar.
 
 ### References
 
-*   [Google Play Developer Program Policies](http://play.google.com/about/developer-content-policy.html#showlanguages)
-    
-*   [Google Play for Developers: Graphic Assets for your Application](http://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&answer=1078870)
-    
-*   [Google Play](https://play.google.com/apps/publish)
-    
+* [Google Play Developer Program Policies](http://play.google.com/about/developer-content-policy.html#showlanguages)
+
+* [Google Play for Developers: Graphic Assets for your Application](http://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&answer=1078870)
+
+* [Google Play](https://play.google.com/apps/publish)
+
 
 ## Summary
 
-In this section, you learned how to publish your Android app. You learned how to generate the keypair and certificate required to sign your app. You saw how to build and sign your distribution-ready APK file. And finally, you examined Google Play requirements and learned how you'd upload and publish your app.
+In this section, you learned how to publish your Android app. You learned how to generate the keypair and certificate required to sign your app. You saw how to build and sign your distribution-ready APK and AAB files. And finally, you examined Google Play requirements and learned how you'd upload and publish your app.

@@ -1,29 +1,29 @@
-{"title":"The WebView Component","weight":"10"} 
+{"title":"The WebView Component","weight":"10"}
 
-*   [Overview](#Overview)
-    
-*   [Contents](#Contents)
-    
-    *   [Using Remote WebContent with WebView](#UsingRemoteWebContentwithWebView)
-        
-    *   [Using Local Web Content with WebView](#UsingLocalWebContentwithWebView)
-        
-    *   [WebView Properties and Functions](#WebViewPropertiesandFunctions)
-        
-        *   [Navigation](#Navigation)
-            
-        *   [Loading Control](#LoadingControl)
-            
-        *   [Data Handling & Scaling](#DataHandling&Scaling)
-            
-        *   [Events](#Events)
-            
-    *   [Performance and Interaction Concerns](#PerformanceandInteractionConcerns)
-        
-    *   [Best Practices for Web Content](#BestPracticesforWebContent)
-        
-*   [Summary](#Summary)
-    
+* [Overview](#Overview)
+
+* [Contents](#Contents)
+
+  * [Using Remote WebContent with WebView](#UsingRemoteWebContentwithWebView)
+
+  * [Using Local Web Content with WebView](#UsingLocalWebContentwithWebView)
+
+  * [WebView Properties and Functions](#WebViewPropertiesandFunctions)
+
+    * [Navigation](#Navigation)
+
+    * [Loading Control](#LoadingControl)
+
+    * [Data Handling & Scaling](#DataHandling&Scaling)
+
+    * [Events](#Events)
+
+  * [Performance and Interaction Concerns](#PerformanceandInteractionConcerns)
+
+  * [Best Practices for Web Content](#BestPracticesforWebContent)
+
+* [Summary](#Summary)
+
 
 With Titanium SDK 8.0.0, we now use [WKWebView](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/WKWebView/) to implement Ti.UI.WebView (as Apple has deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview)).
 
@@ -35,14 +35,14 @@ In the following sections we'll see exactly how we can create WebViews in our ap
 
 ## Contents
 
-*   Using Remote WebContent with WebView
-    
-*   Using Local Web Content with WebView
-    
-*   WebView Properties and Functions
-    
-*   Performance and Interaction Concerns
-    
+* Using Remote WebContent with WebView
+
+* Using Local Web Content with WebView
+
+* WebView Properties and Functions
+
+* Performance and Interaction Concerns
+
 
 ### Using Remote WebContent with WebView
 
@@ -188,51 +188,51 @@ Now that you've seen how to render WebViews using both local and remote web cont
 
 Let's first look at the functions available to us to manage navigation of the WebView. Just like a typical web browser, the WebView supports navigation via links. This means that if you want to support multi-page navigation, you need to now the following functions:
 
-*   canGoBack() - A function that returns a boolean value indicating whether or not the WebView can go back in its history
-    
-*   canGoForward() - A function that returns a boolean value indicating whether or not the WebView can go forward in its history
-    
-*   goBack() - A function that moves the WebView back in its history. This would commonly be bound with a UI "back" button.
-    
-*   goForward() - A function that moves the WebView forward in its history. This would commonly be bound with a UI "forward" button.
-    
+* canGoBack() - A function that returns a boolean value indicating whether or not the WebView can go back in its history
+
+* canGoForward() - A function that returns a boolean value indicating whether or not the WebView can go forward in its history
+
+* goBack() - A function that moves the WebView back in its history. This would commonly be bound with a UI "back" button.
+
+* goForward() - A function that moves the WebView forward in its history. This would commonly be bound with a UI "forward" button.
+
 
 #### Loading Control
 
 Another familiar set of functionality is the ability to refresh and stop the loading of a WebView. The functions and properties listed below give us visibility into the loading state of the WebView and the ability to control it.
 
-*   loading - A boolean property that indicates whether or not the WebView is currently loading content.
-    
-*   reload() - A function that reloads the WebView, much like a browser refresh.
-    
-*   repaint() - A function that causes the WebView to repaint its contents.
-    
-*   stopLoading() - A function that stops the loading of a WebView, much like the "stop" button in most browsers.
-    
+* loading - A boolean property that indicates whether or not the WebView is currently loading content.
+
+* reload() - A function that reloads the WebView, much like a browser refresh.
+
+* repaint() - A function that causes the WebView to repaint its contents.
+
+* stopLoading() - A function that stops the loading of a WebView, much like the "stop" button in most browsers.
+
 
 #### Data Handling & Scaling
 
 As covered in the previous sections, passing local and remote data to the WebView is its core functionality. Additionally, we can pass in basic authentication and handle the initial scaling of that data as well.
 
-*   setBasicAuthentication(username, password) - A function that passes basic HTTP authentication into the WebView. It takes 2 string parameters, username and password, that will be used to authenticate.
-    
-*   html - A string property containing the HTML you would like to render in the WebView.
-    
-*   scalesPageToFit - A boolean property that indicates whether or not you would like to scale the content of the WebView to fit its dimensions. (Also see notes about the viewport meta tag in [#Web Content For WebViews](#WebContentForWebViews).)
-    
-*   url - A URL property to local or remote web content. For remote content, this parameter is the web URL. For local content, this parameter is the path, relative to the project's Resources directory for Titanium projects, or app/assets and app/lib directories for Alloy project., to the local HTML file.
-    
+* setBasicAuthentication(username, password) - A function that passes basic HTTP authentication into the WebView. It takes 2 string parameters, username and password, that will be used to authenticate.
+
+* html - A string property containing the HTML you would like to render in the WebView.
+
+* scalesPageToFit - A boolean property that indicates whether or not you would like to scale the content of the WebView to fit its dimensions. (Also see notes about the viewport meta tag in [#Web Content For WebViews](#WebContentForWebViews).)
+
+* url - A URL property to local or remote web content. For remote content, this parameter is the web URL. For local content, this parameter is the path, relative to the project's Resources directory for Titanium projects, or app/assets and app/lib directories for Alloy project., to the local HTML file.
+
 
 #### Events
 
 WebView also has a few custom events to allow additional control over the lifecycle of a load, as well as any errors that may occur in the underlying native webview.
 
-*   beforeload - This event is fired before the WebView starts loading its content. The url property of the event object contains the source of the content.
-    
-*   error - This event is fired when a WebView fails to load. Like the beforeload event, it has the url property. It also has a message property, which is a string that contains the details of the error.
-    
-*   load - This event is fired when the WebView has loaded.
-    
+* beforeload - This event is fired before the WebView starts loading its content. The url property of the event object contains the source of the content.
+
+* error - This event is fired when a WebView fails to load. Like the beforeload event, it has the url property. It also has a message property, which is a string that contains the details of the error.
+
+* load - This event is fired when the WebView has loaded.
+
 
 ### Performance and Interaction Concerns
 
@@ -248,12 +248,12 @@ Content displayed in a web view must be tuned for mobile browsers for best resul
 
 For more information, see the following resources:
 
-*   [Configuring the Viewport](http://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html) in the Apple Safari Web Content Guide
-    
-*   [Targeting Screens from Web Apps](http://developer.android.com/guide/webapps/targeting.html) in the Android API Guides
-    
-*   [Using the viewport meta tag to control layout on mobile browsers](https://developer.mozilla.org/en/Mobile/Viewport_meta_tag) in Mozilla's Developer Documentation
-    
+* [Configuring the Viewport](http://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html) in the Apple Safari Web Content Guide
+
+* [Targeting Screens from Web Apps](http://developer.android.com/guide/webapps/targeting.html) in the Android API Guides
+
+* [Using the viewport meta tag to control layout on mobile browsers](https://developer.mozilla.org/en/Mobile/Viewport_meta_tag) in Mozilla's Developer Documentation
+
 
 ## Summary
 

@@ -1,13 +1,13 @@
-{"title":"AMPLIFY Appcelerator Services","weight":"60"} 
+{"title":"AMPLIFY Appcelerator Services","weight":"70"}
 
-Appcelerator Platform is available as a service referred to as App Builder through the AMPLIFY platform.
+The Appcelerator Platform is available as a service referred to as App Builder through the AMPLIFY platform.
 
 Appcelerator Services are a set of features that include:
 
-*   **Crash Analytics**: Monitor your application's health, crashes and overall performance to help developers diagnose why applications crash and focus on specific issues based on user feedback.
-    
-*   **Appcelerator Analytics**: Track your applications' user adoption and engagement to help understand how your application is used, which features are not used and decide what will go in the next version of your application.
-    
+* **Crash Analytics**: Monitor your application's health, crashes, and overall performance to help developers diagnose why applications crash and focus on specific issues based on user feedback.
+
+* **Appcelerator Analytics**: Track your applications' user adoption and engagement to help understand how your application is used, which features are not used, and decide what will go in the next version of your application.
+
 
 For Titanium applications, activate the services using Appcelerator Studio, which enables basic analytics and performance data collection. For advanced features, you need to add Titanium API calls to the application.
 

@@ -1,28 +1,22 @@
-{"title":"Appcelerator CLI Release Notes","weight":"40"} 
+{"title":"Appcelerator CLI Release Notes","weight":"40"}
 
-## Appcelerator CLI 7.1.2.GA - 25 November 2019
+## Appcelerator CLI 8.0.0.RC - 9 March 2020
 
-Appcelerator CLI 7.1.2 GA is a patch release that includes improvements, and bug fixes.
+Appcelerator CLI 8.0.0.RC is a release candidate for a major release that includes improvements, and bug fixes.
 
-As of this GA release, the previous CLI patch release is no longer supported. End of support for this version will be up to 2020-05-29 or until the next patch release . Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
-
-Additionally, with this release the formal deprecation of API Builder 3.x begins. Support for API Builder 3.x will cease on 30th April 2020. Use the [v3 to v4 upgrade guide to help migrate](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) your applications to API Builder 4.x.
+With this release of the Appcelerator CLI, Node.js versions older than 10.13.0 are no longer supported. We also recommend updating to Studio 6.0.0
 
 ### Component versions
 
-The following components are shipped with CLI 7.1.2:
+The following components are shipped with CLI 8.0.0:
 
 Alloy
 
-1.14.3
-
-API Builder
-
-3.2.15
+1.14.5
 
 Cloud CLI
 
-2.1.2
+2.1.3
 
 Titanium CLI
 
@@ -30,50 +24,47 @@ Titanium CLI
 
 Daemon
 
-1.1.3
+3.1.0
+
+Appcelerator CLI 8 removes API Builder from distribution. For information on migrating to API Builder v4 please see [https://docs.axway.com/bundle/API\_Builder\_4x\_allOS\_en/page/api\_builder\_v3\_to\_v4\_upgrade\_guide.html](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html)
 
 ### Improvements
 
-*   [ALOY-1693](https://jira.appcelerator.org/browse/ALOY-1693) \- Alloy: Prevent re-opening DB on queries
-    
-    *   Added a feature that will cache and maintain database connection to prevent unnecessary open() and close() operations
-        
-*   [CLI-1369](https://jira.appcelerator.org/browse/CLI-1369) - Remove longjohn dependency
-    
-*   [CLI-1370](https://jira.appcelerator.org/browse/CLI-1370) \- appc-verify: Amend asset loading for compatibility with asset refactor
-    
-    *   Sanitize asset path for compatibility with new asset changes in [TIMOB-26043](https://jira.appcelerator.org/browse/TIMOB-26043)
-        
+* [CLI-1376](https://jira.appcelerator.org/browse/CLI-1376) - Update to Appc Daemon 3
+
+* [CLI-1383](https://jira.appcelerator.org/browse/CLI-1383) - Update to cloud CLI 2.1.3
+
+  * The package.json scripts.start property will now be preferred over the main property when publishing to ARS
+
+* [CLI-1065](https://jira.appcelerator.org/browse/CLI-1065) - Improve socket prompt communication and error for appc login
+
 
 ### Fixed issues
 
-*   [ALOY-1598](https://jira.appcelerator.org/browse/ALOY-1598) \- samples/apps/models/binding\_no\_persistence produces runtime error
-    
-*   [ALOY-1633](https://jira.appcelerator.org/browse/ALOY-1633) \- Alloy should assign globals directly rather than using the implicit global scope of app.js
-    
-*   [ALOY-1701](https://jira.appcelerator.org/browse/ALOY-1701) \- XML: Unable to use platform namespace restriction on event handlers  
-    
-*   [ALOY-1705](https://jira.appcelerator.org/browse/ALOY-1705) \- Fix compile issue when using return keyword outside of a function  
-    
-*   [ALOY-1706](https://jira.appcelerator.org/browse/ALOY-1706) \- Compile error if Alloy view filename contains hyphen
-    
-*   [ALOY-1710](https://jira.appcelerator.org/browse/ALOY-1710) - Compile error when using import/export syntax  
-    
-*   [CLI-1380](https://jira.appcelerator.org/browse/CLI-1380) - WatchOS simulators not shown in Studio
-    
+* [CLI-1381](https://jira.appcelerator.org/browse/CLI-1381) - ACA module not being added to tiapp when creating a new application
+
+* [CLI-1295](https://jira.appcelerator.org/browse/CLI-1295) - Application not registered error when building a Titanium application not registered with the platform
+
+* [ALOY-1721](https://jira.appcelerator.org/browse/ALOY-1721) - Alloy global variable no longer accessible in styles
+
+
+### BREAKING CHANGES
+
+* [CLI-1385](https://jira.appcelerator.org/browse/CLI-1385) - Remove API Builder
+
 
 ## Recent Releases
 
-*   [Appcelerator CLI Release Notes 7.0.x](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_7.x/Appcelerator_CLI_Release_Notes_7.0.x/)
-    
-*   [Appcelerator CLI 7.1.2.RC Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_7.x/Appcelerator_CLI_7.1.2.RC_Release_Note/)
-    
-*   [Appcelerator CLI 7.1.2.GA Release Note](https://wiki.appcelerator.org/display/guides2/Appcelerator+CLI+7.1.2.GA+Release+Note)
-    
-*   [Appcelerator CLI 7.1.1.RC Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_7.x/Appcelerator_CLI_7.1.1.RC_Release_Note/)
-    
-*   [Appcelerator CLI 7.1.1.GA Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_7.x/Appcelerator_CLI_7.1.1.GA_Release_Note/)
-    
-*   [Appcelerator CLI 7.1.0.RC Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_7.x/Appcelerator_CLI_7.1.0.RC_Release_Note/)
-    
-*   [Appcelerator CLI 7.1.0.GA Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_7.x/Appcelerator_CLI_7.1.0.GA_Release_Note/)
+* [Appcelerator CLI Release Notes 7.0.x](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_7.x/Appcelerator_CLI_Release_Notes_7.0.x/)
+
+* [Appcelerator CLI 7.1.2.RC Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_7.x/Appcelerator_CLI_7.1.2.RC_Release_Note/)
+
+* [Appcelerator CLI 7.1.2.GA Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_7.x/Appcelerator_CLI_7.1.2.GA_Release_Note/)
+
+* [Appcelerator CLI 7.1.1.RC Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_7.x/Appcelerator_CLI_7.1.1.RC_Release_Note/)
+
+* [Appcelerator CLI 7.1.1.GA Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_7.x/Appcelerator_CLI_7.1.1.GA_Release_Note/)
+
+* [Appcelerator CLI 7.1.0.RC Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_7.x/Appcelerator_CLI_7.1.0.RC_Release_Note/)
+
+* [Appcelerator CLI 7.1.0.GA Release Note](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Release_Notes/Appcelerator_CLI_Release_Notes_7.x/Appcelerator_CLI_7.1.0.GA_Release_Note/)

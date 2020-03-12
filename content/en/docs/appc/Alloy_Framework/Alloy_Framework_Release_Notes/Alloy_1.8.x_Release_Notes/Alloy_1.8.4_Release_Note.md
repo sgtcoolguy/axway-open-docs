@@ -1,4 +1,4 @@
-{"title":"Alloy 1.8.4 - 29 March 2016","weight":"30"} 
+{"title":"Alloy 1.8.4 - 29 March 2016","weight":"30"}
 
 Alloy 1.8.4 is a patch release that includes a bug fix.
 
@@ -6,4 +6,4 @@ As of this release, the previous Alloy patch release is no longer supported. Not
 
 ## Fixed Issues
 
-*   [ALOY-1477](https://jira.appcelerator.org/browse/ALOY-1477) - Regression: Missing model attributes cause error on collection data binding
+* [ALOY-1477](https://jira.appcelerator.org/browse/ALOY-1477) - Regression: Missing model attributes cause error on collection data binding

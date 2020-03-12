@@ -1,19 +1,19 @@
-{"title":"Contributing to Open Source Titanium Modules","weight":"40"} 
+{"title":"Contributing to Open Source Titanium Modules","weight":"40"}
 
 **Contents**
 
-*   [Overview](#Overview)
-    
-*   [Signing the Contributors License Agreement (CLA)](#SigningtheContributorsLicenseAgreement(CLA))
-    
-*   [Create a Ticket](#CreateaTicket)
-    
-*   [Submitting Contributions](#SubmittingContributions)
-    
-    *   [Versioning](#Versioning)
-        
-    *   [Checklist](#Checklist)
-        
+* [Overview](#Overview)
+
+* [Signing the Contributors License Agreement (CLA)](#SigningtheContributorsLicenseAgreement(CLA))
+
+* [Create a Ticket](#CreateaTicket)
+
+* [Submitting Contributions](#SubmittingContributions)
+
+  * [Versioning](#Versioning)
+
+  * [Checklist](#Checklist)
+
 
 ## Overview
 
@@ -41,20 +41,20 @@ Versions will follow [standard OSGI naming](http://www.osgi.org/wiki/uploads/Lin
 
 When submitting a fix:
 
-*   Include the ticket number and module name in each commit message
-    
-    `[MOD-``1268``] UrbanAirship: open sourcing`
-    
-      
-    
-*   Increment the version of the module.
-    
-*   Add an entry to the changelog and include the ticket number.
-    
-*   Add the appropriate attributions to "ATTRIBUTIONS.md" for any third party code or libraries used.
-    
-*   Include the new built zip of the module in the pull request.
-    
-*   Add a comment to the associated ticket with the pull request URL.
-    
-    `PR: https:``//github.com/appcelerator/titanium_modules/pull/0`
+* Include the ticket number and module name in each commit message
+
+  `[MOD-``1268``] UrbanAirship: open sourcing`
+
+
+
+* Increment the version of the module.
+
+* Add an entry to the changelog and include the ticket number.
+
+* Add the appropriate attributions to "ATTRIBUTIONS.md" for any third party code or libraries used.
+
+* Include the new built zip of the module in the pull request.
+
+* Add a comment to the associated ticket with the pull request URL.
+
+  `PR: https:``//github.com/appcelerator/titanium_modules/pull/0`

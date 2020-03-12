@@ -1,213 +1,213 @@
-{"title":"Appcelerator Command-Line Interface Reference","weight":"20"} 
+{"title":"Appcelerator Command-Line Interface Reference","weight":"20"}
 
-*   [appc commands](#appccommands)
-    
-    *   [Global options](#Globaloptions)
-        
-    *   [Access](#Access)
-        
-    *   [Access commands](#Accesscommands)
-        
-        *   [access get](#accessget)
-            
-    *   [access set](#accessset)
-        
-    *   [Alloy](#Alloy)
-        
-        *   [Alloy options](#Alloyoptions)
-            
-        *   [alloy new](#alloynew)
-            
-        *   [alloy compile](#alloycompile)
-            
-        *   [alloy extract-i18n](#alloyextract-i18n)
-            
-        *   [alloy generate](#alloygenerate)
-            
-        *   [alloy copy](#alloycopy)
-            
-        *   [alloy move](#alloymove)
-            
-        *   [alloy remove](#alloyremove)
-            
-    *   [Appc Daemon](#AppcDaemon)
-        
-        *   [Daemon options](#Daemonoptions)
-            
-        *   [appcd config](#appcdconfig)
-            
-        *   [appcd dump](#appcddump)
-            
-        *   [appcd exec](#appcdexec)
-            
-        *   [appcd logcat](#appcdlogcat)
-            
-        *   [appcd restart](#appcdrestart)
-            
-        *   [appcd start](#appcdstart)
-            
-        *   [appcd status](#appcdstatus)
-            
-        *   [appcd stop](#appcdstop)
-            
-        *   [appcd help](#appcdhelp)
-            
-    *   [Cloud/ACS](#Cloud/ACS)
-        
-    *   [Cloud/ACS commands](#Cloud/ACScommands)
-        
-        *   [cloud/acs options](#cloud/acsoptions)
-            
-        *   [cloud/acs new](#cloud/acsnew)
-            
-        *   [cloud/acs domain](#cloud/acsdomain)
-            
-        *   [cloud/acs list](#cloud/acslist)
-            
-        *   [cloud/acs logcat](#cloud/acslogcat)
-            
-        *   [cloud/acs loglist](#cloud/acsloglist)
-            
-        *   [cloud/acs accesslog](#cloud/acsaccesslog)
-            
-        *   [cloud/acs usage](#cloud/acsusage)
-            
-        *   [cloud/acs crt](#cloud/acscrt)
-            
-        *   [cloud/acs login](#cloud/acslogin)
-            
-        *   [cloud/acs logout](#cloud/acslogout)
-            
-        *   [cloud/acs publish](#cloud/acspublish)
-            
-        *   [cloud/acs unpublish](#cloud/acsunpublish)
-            
-        *   [cloud/acs remove](#cloud/acsremove)
-            
-        *   [cloud/acs config](#cloud/acsconfig)
-            
-        *   [cloud/acs whoami](#cloud/acswhoami)
-            
-        *   [cloud/acs server](#cloud/acsserver)
-            
-        *   [cloud/acs download](#cloud/acsdownload)
-            
-        *   [cloud/acs transfer-domain](#cloud/acstransfer-domain)
-            
-        *   [cloud/acs restart](#cloud/acsrestart)
-            
-    *   [Config](#Config)
-        
-        *   [Config examples](#Configexamples)
-            
-        *   [config get](#configget)
-            
-        *   [config list](#configlist)
-            
-        *   [config set](#configset)
-            
-    *   [Generate](#Generate)
-        
-        *   [Generate options](#Generateoptions)
-            
-    *   [Help](#Help)
-        
-    *   [Info](#Info)
-        
-    *   [Install](#Install)
-        
-        *   [Install options](#Installoptions)
-            
-        *   [Install examples](#Installexamples)
-            
-    *   [Login](#Login)
-        
-        *   [Login options](#Loginoptions)
-            
-    *   [Logout](#Logout)
-        
-        *   [Logout options](#Logoutoptions)
-            
-    *   [New](#New)
-        
-        *   [New options](#Newoptions)
-            
-        *   [New examples](#Newexamples)
-            
-    *   [Org](#Org)
-        
-    *   [Org commands](#Orgcommands)
-        
-        *   [org add](#orgadd)
-            
-        *   [org list](#orglist)
-            
-        *   [org rm | remove](#orgrm|remove)
-            
-    *   [Org examples](#Orgexamples)
-        
-    *   [Owner](#Owner)
-        
-    *   [Owner commands](#Ownercommands)
-        
-        *   [owner add](#owneradd)
-            
-        *   [owner list](#ownerlist)
-            
-        *   [owner rm | remove](#ownerrm|remove)
-            
-    *   [Owner examples](#Ownerexamples)
-        
-    *   [Platform](#Platform)
-        
-    *   [Publish](#Publish)
-        
-        *   [Publish options](#Publishoptions)
-            
-    *   [Remove](#Remove)
-        
-        *   [Remove options](#Removeoptions)
-            
-        *   [Generic build options and flags](#Genericbuildoptionsandflags)
-            
-        *   [Android build options](#Androidbuildoptions)
-            
-        *   [iOS build options and flags](#iOSbuildoptionsandflags)
-            
-        *   [Windows build options](#Windowsbuildoptions)
-            
-    *   [Search](#Search)
-        
-        *   [Search options](#Searchoptions)
-            
-    *   [Setup](#Setup)
-        
-    *   [Switch](#Switch)
-        
-    *   [Titanium | ti](#Titanium|ti)
-        
-    *   [Unpublish](#Unpublish)
-        
-        *   [Unpublish options](#Unpublishoptions)
-            
-    *   [Use](#Use)
-        
-        *   [Use options](#Useoptions)
-            
-    *   [User](#User)
-        
-        *   [User examples](#Userexamples)
-            
-    *   [User commands](#Usercommands)
-        
-        *   [user add](#useradd)
-            
-        *   [user rm | remove](#userrm|remove)
-            
-    *   [Whoami](#Whoami)
-        
-        *   [Whoami options](#Whoamioptions)
-            
+* [appc commands](#appccommands)
+
+  * [Global options](#Globaloptions)
+
+  * [Access](#Access)
+
+  * [Access commands](#Accesscommands)
+
+    * [access get](#accessget)
+
+  * [access set](#accessset)
+
+  * [Alloy](#Alloy)
+
+    * [Alloy options](#Alloyoptions)
+
+    * [alloy new](#alloynew)
+
+    * [alloy compile](#alloycompile)
+
+    * [alloy extract-i18n](#alloyextract-i18n)
+
+    * [alloy generate](#alloygenerate)
+
+    * [alloy copy](#alloycopy)
+
+    * [alloy move](#alloymove)
+
+    * [alloy remove](#alloyremove)
+
+  * [Appc Daemon](#AppcDaemon)
+
+    * [Daemon options](#Daemonoptions)
+
+    * [appcd config](#appcdconfig)
+
+    * [appcd dump](#appcddump)
+
+    * [appcd exec](#appcdexec)
+
+    * [appcd logcat](#appcdlogcat)
+
+    * [appcd restart](#appcdrestart)
+
+    * [appcd start](#appcdstart)
+
+    * [appcd status](#appcdstatus)
+
+    * [appcd stop](#appcdstop)
+
+    * [appcd help](#appcdhelp)
+
+  * [Cloud/ACS](#Cloud/ACS)
+
+  * [Cloud/ACS commands](#Cloud/ACScommands)
+
+    * [cloud/acs options](#cloud/acsoptions)
+
+    * [cloud/acs new](#cloud/acsnew)
+
+    * [cloud/acs domain](#cloud/acsdomain)
+
+    * [cloud/acs list](#cloud/acslist)
+
+    * [cloud/acs logcat](#cloud/acslogcat)
+
+    * [cloud/acs loglist](#cloud/acsloglist)
+
+    * [cloud/acs accesslog](#cloud/acsaccesslog)
+
+    * [cloud/acs usage](#cloud/acsusage)
+
+    * [cloud/acs crt](#cloud/acscrt)
+
+    * [cloud/acs login](#cloud/acslogin)
+
+    * [cloud/acs logout](#cloud/acslogout)
+
+    * [cloud/acs publish](#cloud/acspublish)
+
+    * [cloud/acs unpublish](#cloud/acsunpublish)
+
+    * [cloud/acs remove](#cloud/acsremove)
+
+    * [cloud/acs config](#cloud/acsconfig)
+
+    * [cloud/acs whoami](#cloud/acswhoami)
+
+    * [cloud/acs server](#cloud/acsserver)
+
+    * [cloud/acs download](#cloud/acsdownload)
+
+    * [cloud/acs transfer-domain](#cloud/acstransfer-domain)
+
+    * [cloud/acs restart](#cloud/acsrestart)
+
+  * [Config](#Config)
+
+    * [Config examples](#Configexamples)
+
+    * [config get](#configget)
+
+    * [config list](#configlist)
+
+    * [config set](#configset)
+
+  * [Generate](#Generate)
+
+    * [Generate options](#Generateoptions)
+
+  * [Help](#Help)
+
+  * [Info](#Info)
+
+  * [Install](#Install)
+
+    * [Install options](#Installoptions)
+
+    * [Install examples](#Installexamples)
+
+  * [Login](#Login)
+
+    * [Login options](#Loginoptions)
+
+  * [Logout](#Logout)
+
+    * [Logout options](#Logoutoptions)
+
+  * [New](#New)
+
+    * [New options](#Newoptions)
+
+    * [New examples](#Newexamples)
+
+  * [Org](#Org)
+
+  * [Org commands](#Orgcommands)
+
+    * [org add](#orgadd)
+
+    * [org list](#orglist)
+
+    * [org rm | remove](#orgrm|remove)
+
+  * [Org examples](#Orgexamples)
+
+  * [Owner](#Owner)
+
+  * [Owner commands](#Ownercommands)
+
+    * [owner add](#owneradd)
+
+    * [owner list](#ownerlist)
+
+    * [owner rm | remove](#ownerrm|remove)
+
+  * [Owner examples](#Ownerexamples)
+
+  * [Platform](#Platform)
+
+  * [Publish](#Publish)
+
+    * [Publish options](#Publishoptions)
+
+  * [Remove](#Remove)
+
+    * [Remove options](#Removeoptions)
+
+    * [Generic build options and flags](#Genericbuildoptionsandflags)
+
+    * [Android build options](#Androidbuildoptions)
+
+    * [iOS build options and flags](#iOSbuildoptionsandflags)
+
+    * [Windows build options](#Windowsbuildoptions)
+
+  * [Search](#Search)
+
+    * [Search options](#Searchoptions)
+
+  * [Setup](#Setup)
+
+  * [Switch](#Switch)
+
+  * [Titanium | ti](#Titanium|ti)
+
+  * [Unpublish](#Unpublish)
+
+    * [Unpublish options](#Unpublishoptions)
+
+  * [Use](#Use)
+
+    * [Use options](#Useoptions)
+
+  * [User](#User)
+
+    * [User examples](#Userexamples)
+
+  * [User commands](#Usercommands)
+
+    * [user add](#useradd)
+
+    * [user rm | remove](#userrm|remove)
+
+  * [Whoami](#Whoami)
+
+    * [Whoami options](#Whoamioptions)
+
 
 The Appcelerator Command-Line Interface (CLI) is a Node.js-based command-line tool for managing, building, and deploying Appcelerator projects, including Alloy, Titanium and Arrow projects. The Appcelerator CLI provides a unified mechanism for using the other CLI components.
 
@@ -329,16 +329,16 @@ Sets the component's access rights.
 
 Access rights can be either:
 
-*   public: everyone can see the component.
-    
-*   private (default): only the publisher can see the component.
-    
-*   org: Only certain organizations can see the component. Use the appc org command to add or remove organizations.
-    
-*   user: Only certain users can see the component. Use the appc user command to add or remove users.
-    
-*   user\_or\_org: Only certain users or organizations can see the component. Use the appc user or appc org command to add or remove users or organizations, respectively.
-    
+* public: everyone can see the component.
+
+* private (default): only the publisher can see the component.
+
+* org: Only certain organizations can see the component. Use the appc org command to add or remove organizations.
+
+* user: Only certain users can see the component. Use the appc user command to add or remove users.
+
+* user\_or\_org: Only certain users or organizations can see the component. Use the appc user or appc org command to add or remove users or organizations, respectively.
+
 
 Example to set a module's access rights: $ appc access set connector/com.foo@1.0.0 private
 
@@ -572,7 +572,7 @@ Displays the help screen.
 
 ### Cloud/ACS
 
-Manages Arrow Cloud applications by running an Arrow Cloud CLI command. See the [Arrow Cloud Command-Line Interface Reference](/docs/appc/Axway_API_Builder/AMPLIFY_Runtime_Services/AMPLIFY_Runtime_Services_Guide/AMPLIFY_Runtime_Services_Command-Line_Interface_Reference/) for more information.
+Manages Arrow Cloud applications by running an Arrow Cloud CLI command. See the [Arrow Cloud Command-Line Interface Reference](/docs/appc/AMPLIFY_Runtime_Services/AMPLIFY_Runtime_Services_Guide/AMPLIFY_Runtime_Services_Command-Line_Interface_Reference/) for more information.
 
 `appc cloud|acs [COMMAND] [COMMON OPTIONS] [COMMAND OPTIONS]`
 
@@ -726,7 +726,7 @@ Login to the ACS cloud.
 
 Logout of the ACS cloud
 
-`appc cloud``/acs`  `logout` 
+`appc cloud``/acs`  `logout`
 
 #### cloud/acs publish
 
@@ -1168,8 +1168,8 @@ Description
 
 \-b, --build-only
 
-Only perform the build; when specified, does not install or run the app.  
-  
+Only perform the build; when specified, does not install or run the app.
+
 When building a Windows project using appc run -p windows -T wp-device --wp-sdk ## --build-only, you can now use SDK values (e.g. 10.0.10240.0, 10.0.10586.0, etc.).
 
 \-f, --force
@@ -1354,6 +1354,8 @@ iOS Simulator type: **iphone** or **ipad**; only used when target is **simulator
 
 #### Windows build options
 
+As of Titanium 9.0.0, building Windows apps is no longer supported.
+
 Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
 
 Options
@@ -1410,38 +1412,35 @@ Output directory. Only used when target is **dist-phonestore** or **dist-winstor
 
 Visual Studio target to build for.
 
-*   **12.0** to use Visual Studio 2013
-    
-*   **14.0** to use Visual Studio 2015
-    
-*   **Visual Studio Community 2017** to use Visual Studio Community 2017
-    
-*   **Visual Studio Professional 2017** to use Visual Studio Professional 2017
-    
-*   **Visual Studio Enterprise 2017** to use Visual Studio Enterprise 2017
-    
+* **12.0** to use Visual Studio 2013
+
+* **14.0** to use Visual Studio 2015
+
+* **Visual Studio Community 2017** to use Visual Studio Community 2017
+
+* **Visual Studio Professional 2017** to use Visual Studio Professional 2017
+
+* **Visual Studio Enterprise 2017** to use Visual Studio Enterprise 2017
+
 
 \-T, --target <value>
 
 Target to build for:
 
-*   **wp-emulator** to run a Windows Phone app on the emulator
-    
-*   **wp-device** to run a Window Phone app on a device connected to your host machine
-    
-*   **dist-**phonestore**** to pakcage a Windows Phone app
-    
-*   **ws-local** to run a Windows Store app on your local machine
-    
-*   **dist-winstore** to package a Windows Store app
-    
+* **wp-emulator** to run a Windows Phone app on the emulator
+
+* **wp-device** to run a Window Phone app on a device connected to your host machine
+
+* **dist-**phonestore**** to pakcage a Windows Phone app
+
+* **ws-local** to run a Windows Store app on your local machine
+
+* **dist-winstore** to package a Windows Store app
+
 
 \--skipInstallDependencies
 
 **Since Release 6.1.0.** Skip installing dependency packages. If you had trouble with app deployment on device, try this option.
-
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
 
 ### Search
 

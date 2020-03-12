@@ -1,17 +1,17 @@
-{"title":"Installing a New Ruble","weight":"70"} 
+{"title":"Installing a New Ruble","weight":"70"}
 
 ## Overview
 
-Studio provides additional rubles which are not installed by default. You can browse for new Rubles from within Studio.
+Studio provides additional rubles that are not installed by default. You can browse for new Rubles from within Studio.
 
 ## To install a new Ruble
 
-1.  Select **Commands > Bundle Development > Install Bundle**.
-    
-2.  Select one of the available options, and click **OK**.
-    
-3.  The bundle is installed
-    
+1. Select **Commands > Bundle Development > Install Bundle**.
+
+2. Select one of the available options, and click **OK**.
+
+3. The bundle is installed
+
 
 ## To add new Rubles to the list
 

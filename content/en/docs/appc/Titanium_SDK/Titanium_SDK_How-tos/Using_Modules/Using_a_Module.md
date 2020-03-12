@@ -1,29 +1,29 @@
-{"title":"Using a Module","weight":"20"} 
+{"title":"Using a Module","weight":"20"}
 
-*   [Objective](#Objective)
-    
-    *   [Installing modules](#Installingmodules)
-        
-        *   [Module install locations](#Moduleinstalllocations)
-            
-    *   [Configuring your app to use a module](#Configuringyourapptouseamodule)
-        
-        *   [Updating the tiapp.xml file](#Updatingthetiapp.xmlfile)
-            
-        *   [Selecting a module version](#Selectingamoduleversion)
-            
-        *   [Using require() to load the module in the app's code in ES5](#Usingrequire()toloadthemoduleintheapp'scodeinES5)
-            
-        *   [Using import() to load the module in the app's code in ES6+](#Usingimport()toloadthemoduleintheapp'scodeinES6+)
-            
-*   [Example Module Use](#ExampleModuleUse)
-    
-    *   [Troubleshooting](#Troubleshooting)
-        
-        *   [Requested module could not be found](#Requestedmodulecouldnotbefound)
-            
-*   [Summary](#Summary)
-    
+* [Objective](#Objective)
+
+  * [Installing modules](#Installingmodules)
+
+    * [Module install locations](#Moduleinstalllocations)
+
+  * [Configuring your app to use a module](#Configuringyourapptouseamodule)
+
+    * [Updating the tiapp.xml file](#Updatingthetiapp.xmlfile)
+
+    * [Selecting a module version](#Selectingamoduleversion)
+
+    * [Using require() to load the module in the app's code in ES5](#Usingrequire()toloadthemoduleintheapp'scodeinES5)
+
+    * [Using import() to load the module in the app's code in ES6+](#Usingimport()toloadthemoduleintheapp'scodeinES6+)
+
+* [Example Module Use](#ExampleModuleUse)
+
+  * [Troubleshooting](#Troubleshooting)
+
+    * [Requested module could not be found](#Requestedmodulecouldnotbefound)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -35,21 +35,21 @@ You can install a module for a single project, or that all Studio projects can u
 
 **To install a module**:
 
-1.  In Studio, select **Help** \> **Install Mobile Module**.
-    
-2.  In the Module dialog, enter the URL of the module's ZIP file, or click Browse and locate the ZIP file.
-    
-    ![install_dialog](/Images/appc/download/attachments/30082372/install_dialog.png)
-3.  For **Output Location** select one of the following:
-    
-    *   To install the module so it's available to all projects, select **Titanium SDK**. See [Module install locations](#undefined).
-        
-    *   To install the module so its available to a single project, select **Mobile App Project**, and then choose the desired project from the pop-up menu.
-        
-    *   To install the module to a folder location, select **Location** and then browse to the desired output folder.
-        
-4.  Click **OK**.
-    
+1. In Studio, select **Help** \> **Install Mobile Module**.
+
+2. In the Module dialog, enter the URL of the module's ZIP file, or click Browse and locate the ZIP file.
+
+  ![install_dialog](/Images/appc/download/attachments/30082372/install_dialog.png)
+3. For **Output Location** select one of the following:
+
+  * To install the module so it's available to all projects, select **Titanium SDK**. See [Module install locations](#undefined).
+
+  * To install the module so its available to a single project, select **Mobile App Project**, and then choose the desired project from the pop-up menu.
+
+  * To install the module to a folder location, select **Location** and then browse to the desired output folder.
+
+4. Click **OK**.
+
 
 #### Module install locations
 
@@ -79,10 +79,10 @@ open ~/Library
 
 Once you have installed the module, you must configure your application to use it. This involves two steps:
 
-*   Add the module as a dependency in your application's tiapp.xml file.
-    
-*   Call the require() method in your JavaScript code to load the module
-    
+* Add the module as a dependency in your application's tiapp.xml file.
+
+* Call the require() method in your JavaScript code to load the module
+
 
 #### Updating the tiapp.xml file
 
@@ -90,21 +90,21 @@ You can update your application's tiapp.xml file visually, or manually in a text
 
 **To add a module to your project**:
 
-1.  In Studio, open your project and double-click its tiapp.xml file.
-    
-2.  Click the **Overview** tab in the bottom-left of the Editor window.
-    
-3.  In the Modules section, click the green add ( **+** ) button.
-    
-    ![addbutton](/Images/appc/download/attachments/30082372/addbutton.png)
-4.  Select the module you want to add and click **OK**.
-    
-    ![tiapp](/Images/appc/download/attachments/30082372/tiapp.png)
-    
-    Note the version numbers listed at the bottom of the dialog. See [Selecting a module version](#Selectingamoduleversion).
-    
-5.  Save your changes to tiapp.xml.
-    
+1. In Studio, open your project and double-click its tiapp.xml file.
+
+2. Click the **Overview** tab in the bottom-left of the Editor window.
+
+3. In the Modules section, click the green add ( **+** ) button.
+
+  ![addbutton](/Images/appc/download/attachments/30082372/addbutton.png)
+4. Select the module you want to add and click **OK**.
+
+  ![tiapp](/Images/appc/download/attachments/30082372/tiapp.png)
+
+  Note the version numbers listed at the bottom of the dialog. See [Selecting a module version](#Selectingamoduleversion).
+
+5. Save your changes to tiapp.xml.
+
 
 To manually add a module to your project's tiapp.xml file, modify the <modules/> tag in the <ti:app> node as follows:
 
@@ -128,17 +128,17 @@ A installed module may include one or more versions that your application can us
 
 **To select a specific module version**:
 
-1.  In the Modules section of tiapp.xml, double-click on the module to opens the **Module Properties** dialog.
-    
-2.  For each platform, select the version of the module you want to use.
-    
-3.  Click the arrow next to the platform to expand it to select to use the module for specific build types.
-    
-    ![version](/Images/appc/download/attachments/30082372/version.png)
-4.  Click **OK**.
-    
-5.  Save tiapp.xml.
-    
+1. In the Modules section of tiapp.xml, double-click on the module to opens the **Module Properties** dialog.
+
+2. For each platform, select the version of the module you want to use.
+
+3. Click the arrow next to the platform to expand it to select to use the module for specific build types.
+
+  ![version](/Images/appc/download/attachments/30082372/version.png)
+4. Click **OK**.
+
+5. Save tiapp.xml.
+
 
 #### Using require() to load the module in the app's code in ES5
 
@@ -168,38 +168,38 @@ The following section illustrates how you would use one of the modules included 
 
 For this example we will be downloading the [AdMob](https://github.com/appcelerator-modules/ti.admob) module for iOS available on GitHub. While the example covers an iOS use case, the same general steps apply to an Android module. The ZIP file containing the module distribution can be downloaded [here](https://github.com/appcelerator/titanium_modules/blob/master/admob/mobile/ios/ti.admob-iphone-1.5.0.zip?raw=true).
 
-1.  Install the module as described [above](#Installingmodules).
-    
-2.  Require the module in your project with the following code:
-    
-    `// ES5`
-    
-    `var Admob = require(``'ti.admob'``);`
-    
-    `// ES6+`
-    
-    `// import Admob from 'ti.admob';`
-    
-3.  You can now call methods on the admob singleton object:
-    
-    `var adview = Admob.createView({`
-    
-    `top:` `0``,`
-    
-    `testing:` `true``,`
-    
-    `adBackgroundColor:` `'black'``,`
-    
-    `primaryTextColor:` `'blue'``,`
-    
-    `secondaryTextColor:` `'green'``,`
-    
-    `publisherId:` `'<< your ID>>'`  `// Replace this string with your own API key!`
-    
-    `});`
-    
-    `win.add(adview);`
-    
+1. Install the module as described [above](#Installingmodules).
+
+2. Require the module in your project with the following code:
+
+  `// ES5`
+
+  `var Admob = require(``'ti.admob'``);`
+
+  `// ES6+`
+
+  `// import Admob from 'ti.admob';`
+
+3. You can now call methods on the admob singleton object:
+
+  `var adview = Admob.createView({`
+
+  `top:` `0``,`
+
+  `testing:` `true``,`
+
+  `adBackgroundColor:` `'black'``,`
+
+  `primaryTextColor:` `'blue'``,`
+
+  `secondaryTextColor:` `'green'``,`
+
+  `publisherId:` `'<< your ID>>'`  `// Replace this string with your own API key!`
+
+  `});`
+
+  `win.add(adview);`
+
 
 ### Troubleshooting
 

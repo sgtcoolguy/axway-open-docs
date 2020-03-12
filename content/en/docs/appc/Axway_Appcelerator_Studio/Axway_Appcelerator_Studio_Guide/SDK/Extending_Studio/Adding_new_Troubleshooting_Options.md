@@ -1,4 +1,4 @@
-{"title":"Adding new Troubleshooting Options","weight":"50"} 
+{"title":"Adding new Troubleshooting Options","weight":"50"}
 
 Studio provides a sophisticated mechanism for allowing users to turn on and off various bits of logging in their code. Please see [Debugging Studio](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Studio_Troubleshooting/Debugging_Studio/) for details on the user interactions.
 
@@ -14,23 +14,23 @@ The log file is a poorly-discoverable option for the end user and directing the 
 
 ## Logging Best Practices
 
-*   **ERROR** means a show-stopper error that deserves a bug report. If it's not that important, it's a **WARNING**
-    
-*   **WARNING** means items of interest that may be the source of a problem, or issues that should be taken care of eventually
-    
-*   **INFO** means anything useful during debugging
-    
+* **ERROR** means a show-stopper error that deserves a bug report. If it's not that important, it's a **WARNING**
+
+* **WARNING** means items of interest that may be the source of a problem, or issues that should be taken care of eventually
+
+* **INFO** means anything useful during debugging
+
 
 If the error is caused by a configuration issue in Studio, the UI should present the problem and offer ways to help the user solve the problem, one of which may be pointing them to documentation. This is independent of what is logged to the log file.
 
 The error message in the log file should be descriptive enough that the user could reasonably file a bug and we could understand the context. **e.getLocalizedMessage() is rarely the right message to display.**
 
-*   If the user is **not** in "Specific components" mode, all components are logged, regardless of scope, but filtered by severity slider
-    
-*   If a user **is** in "Specific components" mode only components where the scope is null or matches the toggled options will log, filtered by severity slider
-    
-*   If a user is in **debug mode** (-debug, tracing tab in run configurations), those settings override the "Specific components" setting. If desired, the user can then later turn on those specific options manually while in the process of debugging by using the "Troubleshooting" page.
-    
+* If the user is **not** in "Specific components" mode, all components are logged, regardless of scope, but filtered by severity slider
+
+* If a user **is** in "Specific components" mode only components where the scope is null or matches the toggled options will log, filtered by severity slider
+
+* If a user is in **debug mode** (-debug, tracing tab in run configurations), those settings override the "Specific components" setting. If desired, the user can then later turn on those specific options manually while in the process of debugging by using the "Troubleshooting" page.
+
 
 ## Scopes
 
@@ -46,46 +46,46 @@ We use the term "scope" a bit loosely here, as the scopes don't quite match the 
 
 ### To create a scope:
 
-1.  Create a new .options file at the root of your plugin (if one does not exist already)
-    
-2.  Edit build.properties to ensure the .options file is included as part of the build
-    
-3.  Edit the file to add a line such as:
-    
-    `com.aptana.core/debug/logger=``true`
-    
-4.  The initial default value of true/false is not relevant here--when enabling a scope, we default to true
-    
-5.  Create a new Interface of the form I\*DebugScopes in the main package of your plugin, where \* is derived from the name of the plugin. See [here](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Source_Code_Conventions/) for naming convention:
-    
-    `package` `com.aptana.core;`
-    
-    `/**`
-    
-    `* A interface to capture the various scopes available during debugging. These need to match the items in the .options`
-    
-    `* file at the root of the plugin`
-    
-    `*`
-    
-    `* @author Ingo Muschenetz`
-    
-    `*/`
-    
-    `public`  `interface` `ICoreDebugScopes`
-    
-    `{`
-    
-    `/**`
-    
-    `* Items related to the logging process`
-    
-    `*/`
-    
-    `String LOGGER = CorePlugin.PLUGIN_ID +` `"/debug/logger"``;` `//$NON-NLS-1$`
-    
-    `}`
-    
+1. Create a new .options file at the root of your plugin (if one does not exist already)
+
+2. Edit build.properties to ensure the .options file is included as part of the build
+
+3. Edit the file to add a line such as:
+
+  `com.aptana.core/debug/logger=``true`
+
+4. The initial default value of true/false is not relevant here--when enabling a scope, we default to true
+
+5. Create a new Interface of the form I\*DebugScopes in the main package of your plugin, where \* is derived from the name of the plugin. See [here](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Source_Code_Conventions/) for naming convention:
+
+  `package` `com.aptana.core;`
+
+  `/**`
+
+  `* A interface to capture the various scopes available during debugging. These need to match the items in the .options`
+
+  `* file at the root of the plugin`
+
+  `*`
+
+  `* @author Ingo Muschenetz`
+
+  `*/`
+
+  `public`  `interface` `ICoreDebugScopes`
+
+  `{`
+
+  `/**`
+
+  `* Items related to the logging process`
+
+  `*/`
+
+  `String LOGGER = CorePlugin.PLUGIN_ID +` `"/debug/logger"``;` `//$NON-NLS-1$`
+
+  `}`
+
 
 ### Using a Scope
 
@@ -103,14 +103,14 @@ There are also severity-specific versions, such as isInfoEnabled(), isWarningEna
 
 ## Enabling Logging
 
-1.  Open the **Preferences > Studio > Troubleshooting** page
-    
-2.  Slide the severity slider to the desired level
-    
-3.  Click "specific component" checkbox
-    
-4.  Find the scope in the list and click to check it
-    
+1. Open the **Preferences > Studio > Troubleshooting** page
+
+2. Slide the severity slider to the desired level
+
+3. Click "specific component" checkbox
+
+4. Find the scope in the list and click to check it
+
 
 ## Debugging Logging
 

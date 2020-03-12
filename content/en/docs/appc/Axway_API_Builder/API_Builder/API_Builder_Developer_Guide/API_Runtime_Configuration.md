@@ -1,4 +1,4 @@
-{"title":"API Runtime Configuration","weight":"80"} 
+{"title":"API Runtime Configuration","weight":"80"}
 
 API Builder 3.x is deprecated
 

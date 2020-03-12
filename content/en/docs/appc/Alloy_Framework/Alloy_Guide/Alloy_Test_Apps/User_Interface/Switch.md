@@ -1,4 +1,4 @@
-{"title":"Switch","weight":"170"} 
+{"title":"Switch","weight":"170"}
 
 Demonstrates how to use a Switch element.
 
@@ -8,10 +8,10 @@ You can find this example app in the Alloy repository under [samples/apps/ui/swi
 
 The appearance of a [Switch](#!/api/Titanium.UI.Switch) control varies by platform:
 
-*   On Android, a Switch object can be styled either as a checkbox or toggle button using the [Ti.UI.Android.SWITCH\_STYLE\_CHECKBOX](#!/api/Titanium.UI.Switch-property-style) property, as shown below. The checkbox style can optionally display a label next to the control.
-    
-*   On iOS, a Switch appears as an iOS on/off switch and doesn't have any text associated with it.
-    
+* On Android, a Switch object can be styled either as a checkbox or toggle button using the [Ti.UI.Android.SWITCH\_STYLE\_CHECKBOX](#!/api/Titanium.UI.Switch-property-style) property, as shown below. The checkbox style can optionally display a label next to the control.
+
+* On iOS, a Switch appears as an iOS on/off switch and doesn't have any text associated with it.
+
 
 The following screenshots show the sample app running on Android and iOS.
 
@@ -87,4 +87,4 @@ app/styles/index.tss
 
 ## See also
 
-*   [Titanium.UI.Switch](#!/api/Titanium.UI.Switch) API reference
+* [Titanium.UI.Switch](#!/api/Titanium.UI.Switch) API reference

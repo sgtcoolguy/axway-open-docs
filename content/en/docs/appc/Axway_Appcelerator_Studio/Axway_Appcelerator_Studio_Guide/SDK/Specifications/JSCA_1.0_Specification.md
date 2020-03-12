@@ -1,177 +1,177 @@
-{"title":"JSCA 1.0 Specification","weight":"30"} 
+{"title":"JSCA 1.0 Specification","weight":"30"}
 
-*   [Overview](#Overview)
-    
-*   [Short Example](#ShortExample)
-    
-*   [Top-Level Properties](#Top-LevelProperties)
-    
-    *   [Version Property](#VersionProperty)
-        
-    *   [Build Property](#BuildProperty)
-        
-    *   [Aliases Property](#AliasesProperty)
-        
-    *   [Types Property](#TypesProperty)
-        
-*   [Types](#Types)
-    
-    *   [Alias Type](#AliasType)
-        
-        *   [Name Property](#NameProperty)
-            
-        *   [Description Property](#DescriptionProperty)
-            
-        *   [Type Property](#TypeProperty)
-            
-    *   [Type Type](#TypeType)
-        
-        *   [Name Property](#NameProperty.1)
-            
-        *   [Description Property](#DescriptionProperty.1)
-            
-        *   [Deprecated Property](#DeprecatedProperty)
-            
-        *   [UserAgents Property](#UserAgentsProperty)
-            
-        *   [Since Property](#SinceProperty)
-            
-        *   [Inherits Property](#InheritsProperty)
-            
-        *   [Properties Property](#PropertiesProperty)
-            
-        *   [Functions Property](#FunctionsProperty)
-            
-        *   [Events Property](#EventsProperty)
-            
-        *   [Remarks Property](#RemarksProperty)
-            
-        *   [Examples Property](#ExamplesProperty)
-            
-        *   [IsInternal Property](#IsInternalProperty)
-            
-    *   [UserAgent Type](#UserAgentType)
-        
-        *   [Platform Property](#PlatformProperty)
-            
-        *   [Version Property](#VersionProperty.1)
-            
-        *   [OS Property](#OSProperty)
-            
-        *   [OSVersion Property](#OSVersionProperty)
-            
-        *   [Description Property.](#DescriptionProperty.)
-            
-    *   [Since Type](#SinceType)
-        
-        *   [Name Property](#NameProperty.2)
-            
-        *   [Version Property](#VersionProperty.2)
-            
-    *   [Property Type](#PropertyType)
-        
-        *   [Name Property](#NameProperty.3)
-            
-        *   [Description Property](#DescriptionProperty.2)
-            
-        *   [UserAgents Property](#UserAgentsProperty.1)
-            
-        *   [Since Property](#SinceProperty.1)
-            
-        *   [IsInstanceProperty Property](#IsInstancePropertyProperty)
-            
-        *   [IsClassProperty Property](#IsClassPropertyProperty)
-            
-        *   [IsInternal Property](#IsInternalProperty.1)
-            
-        *   [Type Property](#TypeProperty.1)
-            
-        *   [Examples Property](#ExamplesProperty.1)
-            
-        *   [Permission Property](#PermissionProperty)
-            
-        *   [Availability Property](#AvailabilityProperty)
-            
-        *   [Constants Property](#ConstantsProperty)
-            
-    *   [Function Type](#FunctionType)
-        
-        *   [Name Property](#NameProperty.4)
-            
-        *   [Description Property](#DescriptionProperty.3)
-            
-        *   [UserAgents Property](#UserAgentsProperty.2)
-            
-        *   [Since Property](#SinceProperty.2)
-            
-        *   [IsInstanceProperty Property](#IsInstancePropertyProperty.1)
-            
-        *   [IsClassProperty Property](#IsClassPropertyProperty.1)
-            
-        *   [IsInternal Property](#IsInternalProperty.2)
-            
-        *   [Examples Property](#ExamplesProperty.2)
-            
-        *   [Parameters Property](#ParametersProperty)
-            
-        *   [References Property](#ReferencesProperty)
-            
-        *   [Exceptions Property](#ExceptionsProperty)
-            
-        *   [ReturnTypes Property](#ReturnTypesProperty)
-            
-        *   [IsConstructor Property](#IsConstructorProperty)
-            
-        *   [IsMethod Property](#IsMethodProperty)
-            
-    *   [Event Type](#EventType)
-        
-        *   [Name Property](#NameProperty.5)
-            
-        *   [Description Property](#DescriptionProperty.4)
-            
-        *   [Properties Property](#PropertiesProperty.1)
-            
-    *   [EventProperty Type](#EventPropertyType)
-        
-        *   [Name Property](#NameProperty.6)
-            
-        *   [Description Property](#DescriptionProperty.5)
-            
-        *   [Type Property](#TypeProperty.2)
-            
-        *   [Constants Property](#ConstantsProperty.1)
-            
-    *   [ReturnType Type](#ReturnTypeType)
-        
-        *   [Type Property](#TypeProperty.3)
-            
-        *   [Description Property](#DescriptionProperty.6)
-            
-    *   [Example Type](#ExampleType)
-        
-        *   [Name Property](#NameProperty.7)
-            
-        *   [Code Property](#CodeProperty)
-            
-    *   [Parameter Type](#ParameterType)
-        
-        *   [Name Property](#NameProperty.8)
-            
-        *   [Type Property](#TypeProperty.4)
-            
-        *   [Usage Property](#UsageProperty)
-            
-        *   [Description Property](#DescriptionProperty.7)
-            
-        *   [Constants Property](#ConstantsProperty.2)
-            
-    *   [Exception Type](#ExceptionType)
-        
-        *   [Type Property](#TypeProperty.5)
-            
-        *   [Description Property](#DescriptionProperty.8)
-            
+* [Overview](#Overview)
+
+* [Short Example](#ShortExample)
+
+* [Top-Level Properties](#Top-LevelProperties)
+
+  * [Version Property](#VersionProperty)
+
+  * [Build Property](#BuildProperty)
+
+  * [Aliases Property](#AliasesProperty)
+
+  * [Types Property](#TypesProperty)
+
+* [Types](#Types)
+
+  * [Alias Type](#AliasType)
+
+    * [Name Property](#NameProperty)
+
+    * [Description Property](#DescriptionProperty)
+
+    * [Type Property](#TypeProperty)
+
+  * [Type Type](#TypeType)
+
+    * [Name Property](#NameProperty.1)
+
+    * [Description Property](#DescriptionProperty.1)
+
+    * [Deprecated Property](#DeprecatedProperty)
+
+    * [UserAgents Property](#UserAgentsProperty)
+
+    * [Since Property](#SinceProperty)
+
+    * [Inherits Property](#InheritsProperty)
+
+    * [Properties Property](#PropertiesProperty)
+
+    * [Functions Property](#FunctionsProperty)
+
+    * [Events Property](#EventsProperty)
+
+    * [Remarks Property](#RemarksProperty)
+
+    * [Examples Property](#ExamplesProperty)
+
+    * [IsInternal Property](#IsInternalProperty)
+
+  * [UserAgent Type](#UserAgentType)
+
+    * [Platform Property](#PlatformProperty)
+
+    * [Version Property](#VersionProperty.1)
+
+    * [OS Property](#OSProperty)
+
+    * [OSVersion Property](#OSVersionProperty)
+
+    * [Description Property.](#DescriptionProperty.)
+
+  * [Since Type](#SinceType)
+
+    * [Name Property](#NameProperty.2)
+
+    * [Version Property](#VersionProperty.2)
+
+  * [Property Type](#PropertyType)
+
+    * [Name Property](#NameProperty.3)
+
+    * [Description Property](#DescriptionProperty.2)
+
+    * [UserAgents Property](#UserAgentsProperty.1)
+
+    * [Since Property](#SinceProperty.1)
+
+    * [IsInstanceProperty Property](#IsInstancePropertyProperty)
+
+    * [IsClassProperty Property](#IsClassPropertyProperty)
+
+    * [IsInternal Property](#IsInternalProperty.1)
+
+    * [Type Property](#TypeProperty.1)
+
+    * [Examples Property](#ExamplesProperty.1)
+
+    * [Permission Property](#PermissionProperty)
+
+    * [Availability Property](#AvailabilityProperty)
+
+    * [Constants Property](#ConstantsProperty)
+
+  * [Function Type](#FunctionType)
+
+    * [Name Property](#NameProperty.4)
+
+    * [Description Property](#DescriptionProperty.3)
+
+    * [UserAgents Property](#UserAgentsProperty.2)
+
+    * [Since Property](#SinceProperty.2)
+
+    * [IsInstanceProperty Property](#IsInstancePropertyProperty.1)
+
+    * [IsClassProperty Property](#IsClassPropertyProperty.1)
+
+    * [IsInternal Property](#IsInternalProperty.2)
+
+    * [Examples Property](#ExamplesProperty.2)
+
+    * [Parameters Property](#ParametersProperty)
+
+    * [References Property](#ReferencesProperty)
+
+    * [Exceptions Property](#ExceptionsProperty)
+
+    * [ReturnTypes Property](#ReturnTypesProperty)
+
+    * [IsConstructor Property](#IsConstructorProperty)
+
+    * [IsMethod Property](#IsMethodProperty)
+
+  * [Event Type](#EventType)
+
+    * [Name Property](#NameProperty.5)
+
+    * [Description Property](#DescriptionProperty.4)
+
+    * [Properties Property](#PropertiesProperty.1)
+
+  * [EventProperty Type](#EventPropertyType)
+
+    * [Name Property](#NameProperty.6)
+
+    * [Description Property](#DescriptionProperty.5)
+
+    * [Type Property](#TypeProperty.2)
+
+    * [Constants Property](#ConstantsProperty.1)
+
+  * [ReturnType Type](#ReturnTypeType)
+
+    * [Type Property](#TypeProperty.3)
+
+    * [Description Property](#DescriptionProperty.6)
+
+  * [Example Type](#ExampleType)
+
+    * [Name Property](#NameProperty.7)
+
+    * [Code Property](#CodeProperty)
+
+  * [Parameter Type](#ParameterType)
+
+    * [Name Property](#NameProperty.8)
+
+    * [Type Property](#TypeProperty.4)
+
+    * [Usage Property](#UsageProperty)
+
+    * [Description Property](#DescriptionProperty.7)
+
+    * [Constants Property](#ConstantsProperty.2)
+
+  * [Exception Type](#ExceptionType)
+
+    * [Type Property](#TypeProperty.5)
+
+    * [Description Property](#DescriptionProperty.8)
+
 
 ## Overview
 

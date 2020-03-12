@@ -1,21 +1,21 @@
-{"title":"Alloy Sync Adapters and Migrations","weight":"20"} 
+{"title":"Alloy Sync Adapters and Migrations","weight":"20"}
 
-*   [Sync Adapters](#SyncAdapters)
-    
-    *   [Backbone Sync](#BackboneSync)
-        
-    *   [Ready-Made Sync Adapters](#Ready-MadeSyncAdapters)
-        
-        *   [SQLite Sync Adapter](#SQLiteSyncAdapter)
-            
-        *   [Columns accept SQLite keywords](#ColumnsacceptSQLitekeywords)
-            
-    *   [Custom Sync Adapters](#CustomSyncAdapters)
-        
-        *   [Example](#Example)
-            
-*   [Migrations](#Migrations)
-    
+* [Sync Adapters](#SyncAdapters)
+
+  * [Backbone Sync](#BackboneSync)
+
+  * [Ready-Made Sync Adapters](#Ready-MadeSyncAdapters)
+
+    * [SQLite Sync Adapter](#SQLiteSyncAdapter)
+
+    * [Columns accept SQLite keywords](#ColumnsacceptSQLitekeywords)
+
+  * [Custom Sync Adapters](#CustomSyncAdapters)
+
+    * [Example](#Example)
+
+* [Migrations](#Migrations)
+
 
 ## Sync Adapters
 
@@ -45,20 +45,20 @@ GET
 
 SELECT
 
-Collection.create (id == null)  
-or  
+Collection.create (id == null)
+or
 Collection.create (id != null)
 
-create  
-or  
+create
+or
 update
 
-POST  
-or  
+POST
+or
 PUT
 
-INSERT  
-or  
+INSERT
+or
 UPDATE
 
 Model.fetch
@@ -69,20 +69,20 @@ GET
 
 SELECT
 
-Model.save (id == null)  
-or  
+Model.save (id == null)
+or
 Model.save (id != null)
 
-create  
-or  
+create
+or
 update
 
-POST  
-or  
+POST
+or
 PUT
 
-INSERT  
-or  
+INSERT
+or
 UPDATE
 
 Model.destroy
@@ -123,12 +123,12 @@ In Alloy, you need to use or implement a sync adapter to access persistent stora
 
 Alloy provides a few ready-made sync adapters. In the 'adapter' object, set the 'type' to use one of the following:
 
-*   sql for the SQLite database on the Android and iOS platform.
-    
-*   properties for storing data locally in the Titanium SDK context.
-    
-*   localStorage for HTML5 localStorage on the Mobile Web platform. Deprecated since Alloy 1.5.0. Use the properties adapter instead. You do not need to define the columns object in the config object. If defined, the object is ignored.
-    
+* sql for the SQLite database on the Android and iOS platform.
+
+* properties for storing data locally in the Titanium SDK context.
+
+* localStorage for HTML5 localStorage on the Mobile Web platform. Deprecated since Alloy 1.5.0. Use the properties adapter instead. You do not need to define the columns object in the config object. If defined, the object is ignored.
+
 
 These adapters are part of Alloy and are copied to the Resources/alloy/sync folder during compilation. These sync adapters assign the id attribute of the models, which means if you assign an ID when creating a model, it is overridden by any sync operations.
 
@@ -220,12 +220,12 @@ To create a custom sync adapter, create a JavaScript file in either app/assets/a
 
 The sync adapter exports three functions:
 
-*   module.exports.beforeModelCreate (optional) - executes code before creating the Backbone.Model class. First passed parameter is the config object from the model file. If you add custom properties, such as server settings, to the configuration object, you can process them here. Second passed parameter is the name of the Alloy Model file. Returns a config object.
-    
-*   module.exports.afterModelCreate (optional) - execute code after creating the Backbone.Model class. First passed parameter is the newly created Backbone.Model class. Second passed parameter is the name of the Alloy Model file.
-    
-*   module.exports.sync - implement the [Backbone.sync method](http://docs.appcelerator.com/backbone/0.9.2/#Sync).
-    
+* module.exports.beforeModelCreate (optional) - executes code before creating the Backbone.Model class. First passed parameter is the config object from the model file. If you add custom properties, such as server settings, to the configuration object, you can process them here. Second passed parameter is the name of the Alloy Model file. Returns a config object.
+
+* module.exports.afterModelCreate (optional) - execute code after creating the Backbone.Model class. First passed parameter is the newly created Backbone.Model class. Second passed parameter is the name of the Alloy Model file.
+
+* module.exports.sync - implement the [Backbone.sync method](http://docs.appcelerator.com/backbone/0.9.2/#Sync).
+
 
 #### Example
 

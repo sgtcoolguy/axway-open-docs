@@ -1,21 +1,21 @@
-{"title":"iCloud Services","weight":"40"} 
+{"title":"iCloud Services","weight":"40"}
 
-*   [Introduction](#Introduction)
-    
-    *   [Apple best practices](#Applebestpractices)
-        
-*   [Setup a Distribution Profile with iCloud Services](#SetupaDistributionProfilewithiCloudServices)
-    
-    *   [Register an App ID](#RegisteranAppID)
-        
-*   [Disable iCloud backup](#DisableiCloudbackup)
-    
-*   [Perform a manual backup](#Performamanualbackup)
-    
-*   [Test restoring an iCloud backup](#TestrestoringaniCloudbackup)
-    
-*   [Further reading and references](#Furtherreadingandreferences)
-    
+* [Introduction](#Introduction)
+
+  * [Apple best practices](#Applebestpractices)
+
+* [Setup a Distribution Profile with iCloud Services](#SetupaDistributionProfilewithiCloudServices)
+
+  * [Register an App ID](#RegisteranAppID)
+
+* [Disable iCloud backup](#DisableiCloudbackup)
+
+* [Perform a manual backup](#Performamanualbackup)
+
+* [Test restoring an iCloud backup](#TestrestoringaniCloudbackup)
+
+* [Further reading and references](#Furtherreadingandreferences)
+
 
 ## Introduction
 
@@ -37,22 +37,22 @@ To use the iCloud service, you need to create a Distribution Profile, which requ
 
 You need to register an App ID for your application.
 
-1.  Log in to the [Apple Developer Member Center](https://developer.apple.com/membercenter/) as the Team Agent or Admin.
-    
-2.  Click **Certificates, Identifiers & Profiles**.
-    
-3.  Click **Identifiers**, then click the add (**+**) button near the top-right corner.
-    
-4.  Under **App ID Description**, enter a value in the **Name** field.
-    
-5.  Select the **App ID Prefix** to use. (You cannot use a Wildcard App ID for an application with push notifications.)
-    
-6.  In the the **App ID Suffix** section, select **Explicit App ID** and enter your application's ID. This is the value of the <id> element in your project's tiapp.xml file.
-    
-7.  Under **App Services**, check the **iCloud** checkbox.
-    
-8.  Click **Continue**, **Submit**, and **Done** to complete the process.
-    
+1. Log in to the [Apple Developer Member Center](https://developer.apple.com/membercenter/) as the Team Agent or Admin.
+
+2. Click **Certificates, Identifiers & Profiles**.
+
+3. Click **Identifiers**, then click the add (**+**) button near the top-right corner.
+
+4. Under **App ID Description**, enter a value in the **Name** field.
+
+5. Select the **App ID Prefix** to use. (You cannot use a Wildcard App ID for an application with push notifications.)
+
+6. In the the **App ID Suffix** section, select **Explicit App ID** and enter your application's ID. This is the value of the <id> element in your project's tiapp.xml file.
+
+7. Under **App Services**, check the **iCloud** checkbox.
+
+8. Click **Continue**, **Submit**, and **Done** to complete the process.
+
 
 After creating your App ID, follow the directions from [Distributing iOS apps](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_iOS_apps/) to create your Distribution Certificate and Distribution Profile, then use the certificate and profile to package your application.
 
@@ -100,23 +100,23 @@ Database files created using the Titanium.Database API are not stored in the dat
 
 If you do not want to wait for iOS to backup your files, you can manually perform a backup. To perform a manual backup to iCloud, on the iOS device:
 
-1.  Open **Settings.**
-    
-2.  Navigate to **iCloud** > **Storage & Backup.**
-    
-3.  Make sure **iCloud Backup** is switched on.
-    
-4.  Tap **Backup Now**.
-    
+1. Open **Settings.**
+
+2. Navigate to **iCloud** > **Storage & Backup.**
+
+3. Make sure **iCloud Backup** is switched on.
+
+4. Tap **Backup Now**.
+
 
 To check how much space the backup uses:
 
-1.  Open **Settings.**
-    
-2.  Navigate to **iCloud** > **Storage & Backup** \> **Manage Storage**.
-    
-3.  Tap **This Device**.
-    
+1. Open **Settings.**
+
+2. Navigate to **iCloud** > **Storage & Backup** \> **Manage Storage**.
+
+3. Tap **This Device**.
+
 
 The device displays an itemized list of how much iCloud storage space each application uses.
 
@@ -126,27 +126,27 @@ To test restoring an iCloud backup, you need to reset your device and erase the 
 
 Before proceeding make sure have a current backup of your device. See the previous section to perform a manual backup.
 
-1.  Open **Settings**.
-    
-2.  Navigate to **General** > **Reset**.
-    
-3.  Tap **Erase all settings and content**. A dialog appears asking you to confirm your selection. After confirming, the device will reset.
-    
-4.  After the device resets, the iOS Setup Assistant appears. Follow the initial steps to select your language, region, etc.
-    
-5.  Once you have come to the "Set Up iPhone" step, tap **Restore from iCloud Backup**.
-    
-6.  In the "Choose backup" step, select the backup to use to restore your device.
-    
+1. Open **Settings**.
+
+2. Navigate to **General** > **Reset**.
+
+3. Tap **Erase all settings and content**. A dialog appears asking you to confirm your selection. After confirming, the device will reset.
+
+4. After the device resets, the iOS Setup Assistant appears. Follow the initial steps to select your language, region, etc.
+
+5. Once you have come to the "Set Up iPhone" step, tap **Restore from iCloud Backup**.
+
+6. In the "Choose backup" step, select the backup to use to restore your device.
+
 
 iOS will start restoring your device based on the backup chosen.
 
 ## Further reading and references
 
-*   [iOS Data Storage Guidelines](https://developer.apple.com/icloud/documentation/data-storage/index.html)
-    
-*   [iOS App Programming Guide: App Backup Best Practices](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/PerformanceTuning/PerformanceTuning.html#//apple_ref/doc/uid/TP40007072-CH8-SW9)
-    
-*   [Back up and restore your iOS device with iCloud or iTunes](http://support.apple.com/kb/HT1766)
-    
-*   [Transfer content from an iPhone, iPad, or iPod touch to a new device](http://support.apple.com/kb/ht2109)
+* [iOS Data Storage Guidelines](https://developer.apple.com/icloud/documentation/data-storage/index.html)
+
+* [iOS App Programming Guide: App Backup Best Practices](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/PerformanceTuning/PerformanceTuning.html#//apple_ref/doc/uid/TP40007072-CH8-SW9)
+
+* [Back up and restore your iOS device with iCloud or iTunes](http://support.apple.com/kb/HT1766)
+
+* [Transfer content from an iPhone, iPad, or iPod touch to a new device](http://support.apple.com/kb/ht2109)

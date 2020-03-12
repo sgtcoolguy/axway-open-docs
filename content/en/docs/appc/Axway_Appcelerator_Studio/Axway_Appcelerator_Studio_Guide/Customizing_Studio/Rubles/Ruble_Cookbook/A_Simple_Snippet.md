@@ -1,17 +1,17 @@
-{"title":"A Simple Snippet","weight":"40"} 
+{"title":"A Simple Snippet","weight":"40"}
 
-*   [Overview](#Overview)
-    
-*   [The Code](#TheCode)
-    
+* [Overview](#Overview)
+
+* [The Code](#TheCode)
+
 
 ## Overview
 
-In this recipe we show how to create a simple Ruble snippet, bind it to a activation trigger, and optionally place it in a menu.
+In this recipe, we show how to create a simple Ruble snippet, bind it to an activation trigger, and optionally place it in a menu.
 
 ## The Code
 
-In the snippet below, we create a very simple snippet, bind it to the activation character "foo" and place it in a menu. This is the entire Ruble file, though you could ad the menu items and commands to your own existing file.
+In the snippet below, we create a very simple snippet, bind it to the activation character "foo", and place it in a menu. This is the entire Ruble file, though you could ad the menu items and commands to your existing file.
 
 `require` `'ruble'`
 

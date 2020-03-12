@@ -1,6 +1,6 @@
-{"title":"Terminal Class","weight":"90"} 
+{"title":"Terminal Class","weight":"90"}
 
-The Terminal class contains methods and properties for interacting with the Terminal window inside Studio
+The Terminal class contains methods and properties for interacting with the Terminal window inside Studio.
 
 ## Usage
 
@@ -22,4 +22,4 @@ Description
 
 open(command, working directory)
 
-The command to execute, and the working directory in which the execute it. The working directory is optional
+The command to execute, and the working directory in which the execute it. The working directory is optional.

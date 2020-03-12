@@ -1,4 +1,4 @@
-{"title":"Nodes - Model Count","weight":"30"} 
+{"title":"Nodes - Model Count","weight":"30"}
 
 API Builder 3.x is deprecated
 

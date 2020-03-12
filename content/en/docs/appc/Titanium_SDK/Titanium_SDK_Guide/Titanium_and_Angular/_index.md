@@ -1,4 +1,4 @@
-{"title":"Titanium and Angular","weight":"50"} 
+{"title":"Titanium and Angular","weight":"50"}
 
 This document will guide you on how to use Titanium and Angular together.
 
@@ -28,14 +28,14 @@ Make sure to also check out the [titanium-angular](https://github.com/appcelerat
 
 ## Related documents
 
-*   [Titanium Angular Getting Started Guide](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_and_Angular/Titanium_Angular_Getting_Started_Guide/)
-    
-*   [Titanium Angular Basics](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_and_Angular/Titanium_Angular_Basics/)
-    
-*   [Titanium Angular Routing](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_and_Angular/Titanium_Angular_Routing/)
-    
-*   [Titanium Angular - Helpers and Services](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_and_Angular/Titanium_Angular_-_Helpers_and_Services/)
-    
-*   [Titanium Angular - Limitations and Workarounds](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_and_Angular/Titanium_Angular_-_Limitations_and_Workarounds/)
-    
-*   [Titanium Angular - FAQ](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_and_Angular/Titanium_Angular_-_FAQ/)
+* [Titanium Angular Getting Started Guide](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_and_Angular/Titanium_Angular_Getting_Started_Guide/)
+
+* [Titanium Angular Basics](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_and_Angular/Titanium_Angular_Basics/)
+
+* [Titanium Angular Routing](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_and_Angular/Titanium_Angular_Routing/)
+
+* [Titanium Angular - Helpers and Services](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_and_Angular/Titanium_Angular_-_Helpers_and_Services/)
+
+* [Titanium Angular - Limitations and Workarounds](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_and_Angular/Titanium_Angular_-_Limitations_and_Workarounds/)
+
+* [Titanium Angular - FAQ](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_and_Angular/Titanium_Angular_-_FAQ/)

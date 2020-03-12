@@ -1,31 +1,31 @@
-{"title":"Graphical Asset Specifications","weight":"90"} 
+{"title":"Graphical Asset Specifications","weight":"90"}
 
-*   [Overview](#Overview)
-    
-*   [Splash Screen](#SplashScreen)
-    
-*   [About Image - about.gif](#AboutImage-about.gif)
-    
-*   [Mac OSX DMG Background](#MacOSXDMGBackground)
-    
-*   [Windows Installer](#WindowsInstaller)
-    
-    *   [Left panel](#Leftpanel)
-        
-    *   [Top Panel](#TopPanel)
-        
-    *   [Bottom Panel](#BottomPanel)
-        
-    *   [Installer Splash](#InstallerSplash)
-        
-    *   [Background Color](#BackgroundColor)
-        
-*   [In-Product Imagery](#In-ProductImagery)
-    
-    *   [General Icons](#GeneralIcons)
-        
-    *   [Wizard Banners](#WizardBanners)
-        
+* [Overview](#Overview)
+
+* [Splash Screen](#SplashScreen)
+
+* [About Image - about.gif](#AboutImage-about.gif)
+
+* [Mac OSX DMG Background](#MacOSXDMGBackground)
+
+* [Windows Installer](#WindowsInstaller)
+
+  * [Left panel](#Leftpanel)
+
+  * [Top Panel](#TopPanel)
+
+  * [Bottom Panel](#BottomPanel)
+
+  * [Installer Splash](#InstallerSplash)
+
+  * [Background Color](#BackgroundColor)
+
+* [In-Product Imagery](#In-ProductImagery)
+
+  * [General Icons](#GeneralIcons)
+
+  * [Wizard Banners](#WizardBanners)
+
 
 ## Overview
 
@@ -85,10 +85,10 @@ Dimensions
 
 Notes
 
-*   Ensure the top-left label background accommodates the width/height of a wrapped product name
-    
-*   Copyright should be updated appropriately
-    
+* Ensure the top-left label background accommodates the width/height of a wrapped product name
+
+* Copyright should be updated appropriately
+
 
 Usage:
 
@@ -98,7 +98,7 @@ DMG installer
 
 ## Windows Installer
 
-The installer uses three images that are butted up against each other to compose window: Left panel, the top panel and the bottom panel  
+The installer uses three images that are butted up against each other to compose window: Left panel, the top panel and the bottom panel
 ![Screen_Shot_2012-10-30_at_Oct_30%2C3.01.25_PM](/Images/appc/download/attachments/33031056/Screen_Shot_2012-10-30_at_Oct_30%2C3.01.25_PM.png)
 
 ### Left panel

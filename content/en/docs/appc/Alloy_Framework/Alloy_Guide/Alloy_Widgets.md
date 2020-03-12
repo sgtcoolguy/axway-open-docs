@@ -1,27 +1,27 @@
-{"title":"Alloy Widgets","weight":"60"} 
+{"title":"Alloy Widgets","weight":"60"}
 
-*   [Introduction](#Introduction)
-    
-*   [Using widgets](#Usingwidgets)
-    
-*   [Creating widgets](#Creatingwidgets)
-    
-    *   [Assets and libs](#Assetsandlibs)
-        
-    *   [Configuration](#Configuration)
-        
-    *   [Controllers](#Controllers)
-        
-    *   [Models](#Models)
-        
-    *   [Styles](#Styles)
-        
-    *   [Themes](#Themes)
-        
-    *   [Views](#Views)
-        
-    *   [Widgets](#Widgets)
-        
+* [Introduction](#Introduction)
+
+* [Using widgets](#Usingwidgets)
+
+* [Creating widgets](#Creatingwidgets)
+
+  * [Assets and libs](#Assetsandlibs)
+
+  * [Configuration](#Configuration)
+
+  * [Controllers](#Controllers)
+
+  * [Models](#Models)
+
+  * [Styles](#Styles)
+
+  * [Themes](#Themes)
+
+  * [Views](#Views)
+
+  * [Widgets](#Widgets)
+
 
 ## Introduction
 

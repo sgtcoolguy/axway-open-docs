@@ -1,4 +1,4 @@
-{"title":"Studio Compatibility Matrix","weight":"10"} 
+{"title":"Studio Compatibility Matrix","weight":"10"}
 
 ## Disk space
 
@@ -48,7 +48,7 @@ Version
 
 5.1.3 - latest
 
-8.16.0
+8.16.0 - 10.x
 
 5.0.0 - 5.1.2
 

@@ -1,16 +1,16 @@
-{"title":"Studio Architecture","weight":"10"} 
+{"title":"Studio Architecture","weight":"10"}
 
-Studio is built on top of the Eclipse platform, a layer of plugins and wrapper code around the core Eclipse infrastructure. As such, it is compatible with many existing Eclipse plugins, and can itself be extended with additional plugins built on top.
+Studio is built on top of the Eclipse platform, a layer of plugins, and wrapper code around the core Eclipse infrastructure. As such, it is compatible with many existing Eclipse plugins, and can itself be extended with additional plugins built on top.
 
 ## Plugin architecture
 
 For a full discussion of the plugin architecture, see the [Eclipse article](http://www.eclipse.org/articles/Article-Plug-in-architecture/plugin_architecture.html). In short, Eclipse allows extensions through plugins via XML configuration files called extension points. Extension points allow new plugins to contribute to an existing feature.
 
-As an example, Eclipse provides a "Team" infrastructure for source control providers to attach to. Individual providers, such as Git, will implement a set of classes and extension points that then enable wizards, menus and other elements to connect to Git.
+As an example, Eclipse provides a "Team" infrastructure for source control providers to which to attach. Individual providers, such as Git, will implement a set of classes and extension points that then enable wizards, menus, and other elements to connect to Git.
 
 ## Block diagram
 
-Studio exists in layers, each piece building on the layer below. As shown in the diagram, Titanium Studio builds on top of Aptana Studio, which then builds of top of the generic Eclipse IDE platform.
+Studio exists in layers, each piece building on the layer below. As shown in the diagram, Titanium Studio builds on top of Aptana Studio, which then builds on top of the generic Eclipse IDE platform.
 
 Though the Eclipse layer appears to be the largest here, Titanium Studio encompasses roughly 350 plugins, with about 150 in Aptana, another 150 for Eclipse, and the remainder Titanium-specific.
 
@@ -188,4 +188,4 @@ In this snippet from the JS editor plugin.xml, you can see the variety of items 
 
 `</plugin>`
 
-Studio also provides over 40 of its own extension points that downstream products can extend, on top of extending our existing classes via subclassing.
+Studio also provides over 40 of its extension points that downstream products can extend, on top of extending our existing classes via subclassing.

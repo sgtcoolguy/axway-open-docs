@@ -1,13 +1,13 @@
-{"title":"Camera App Tutorial","weight":"10"} 
+{"title":"Camera App Tutorial","weight":"10"}
 
-*   [Overview](#Overview)
-    
-*   [Project setup](#Projectsetup)
-    
-*   [Permissions](#Permissions)
-    
-*   [Say cheese](#Saycheese)
-    
+* [Overview](#Overview)
+
+* [Project setup](#Projectsetup)
+
+* [Permissions](#Permissions)
+
+* [Say cheese](#Saycheese)
+
 
 ## Overview
 

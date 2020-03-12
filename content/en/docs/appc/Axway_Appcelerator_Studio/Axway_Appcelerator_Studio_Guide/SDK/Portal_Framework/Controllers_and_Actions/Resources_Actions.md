@@ -1,13 +1,13 @@
-{"title":"Resources Actions","weight":"70"} 
+{"title":"Resources Actions","weight":"70"}
 
-*   [Requirements](#Requirements)
-    
-*   [Description](#Description)
-    
-*   [Invocation](#Invocation)
-    
-*   [Get all accessible project names](#Getallaccessibleprojectnames)
-    
+* [Requirements](#Requirements)
+
+* [Description](#Description)
+
+* [Invocation](#Invocation)
+
+* [Get all accessible project names](#Getallaccessibleprojectnames)
+
 
 ## Requirements
 

@@ -1,4 +1,4 @@
-{"title":"DashboardView Binding","weight":"30"} 
+{"title":"DashboardView Binding","weight":"30"}
 
 Demonstrates how to use data binding with a DashboardView, which provides an iOS Springboard-like view.
 
@@ -12,16 +12,16 @@ Items in a [DashboardView](#!/api/Titanium.UI.DashboardView) are represented by 
 
 The model file, shown below, defines the columns (fields) for each DashboardItem, which include the following:
 
-*   image – URL of image to display for item
-    
-*   selectedImage – URL of image to display when item is selected
-    
-*   badge – Number to display in badge overlaid the item.
-    
-*   label – Text to display for the item.
-    
-*   weight – Number that determines the sort order of items.
-    
+* image – URL of image to display for item
+
+* selectedImage – URL of image to display when item is selected
+
+* badge – Number to display in badge overlaid the item.
+
+* label – Text to display for the item.
+
+* weight – Number that determines the sort order of items.
+
 
 The model file also defines a [Backbone comparator](http://backbonejs.org/#Collection-comparator) function to keep the items sorted according to the value of their **weight** field. When the user rearranges the items in the DashboardView, their respective weights are updated to reflect their new position (see below).
 
@@ -117,14 +117,14 @@ The main view sets up the DashboardView and defines bindings between DashboardIt
 
 The main view-controller defines methods that do the following:
 
-*   Reset the badge value for a DashboardItem when the user clicks it.
-    
-*   Stops and starts edit mode on the DashboardView.
-    
-*   Handles the [commit](#!/api/Titanium.UI.DashboardView-event-commit) event generated when the user leaves edit mode. The weight value of each DashboardItem is reset according to its new position, if the user rearranged the items.
-    
-*   Handles the [delete](#!/api/Titanium.UI.DashboardView-event-delete) event when the user deletes an item in edit mode.
-    
+* Reset the badge value for a DashboardItem when the user clicks it.
+
+* Stops and starts edit mode on the DashboardView.
+
+* Handles the [commit](#!/api/Titanium.UI.DashboardView-event-commit) event generated when the user leaves edit mode. The weight value of each DashboardItem is reset according to its new position, if the user rearranged the items.
+
+* Handles the [delete](#!/api/Titanium.UI.DashboardView-event-delete) event when the user deletes an item in edit mode.
+
 
 `var` `icons = Alloy.Collections.icons;`
 
@@ -228,6 +228,6 @@ The main view-controller defines methods that do the following:
 
 ## See Also
 
-*   [Titanium.UI.DashboardView](#!/api/Titanium.UI.DashboardView) API reference
-    
-*   [Titanium.UI.DashboardItem](#!/api/Titanium.UI.DashboardItem) API reference
+* [Titanium.UI.DashboardView](#!/api/Titanium.UI.DashboardView) API reference
+
+* [Titanium.UI.DashboardItem](#!/api/Titanium.UI.DashboardItem) API reference

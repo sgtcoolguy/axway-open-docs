@@ -1,37 +1,37 @@
-{"title":"Current Theme Scopes","weight":"20"} 
+{"title":"Current Theme Scopes","weight":"20"}
 
-*   [Overview](#Overview)
-    
-*   [General Tokens](#GeneralTokens)
-    
-*   [Console Scopes](#ConsoleScopes)
-    
-*   [CSS Scopes](#CSSScopes)
-    
-*   [HAML Scopes](#HAMLScopes)
-    
-*   [HTML Scopes](#HTMLScopes)
-    
-*   [IDL Scopes](#IDLScopes)
-    
-*   [JavaScript Scopes](#JavaScriptScopes)
-    
-*   [PHP Scopes](#PHPScopes)
-    
-*   [Ruby Scopes](#RubyScopes)
-    
-*   [SVG Scopes](#SVGScopes)
-    
-*   [XML Scopes](#XMLScopes)
-    
-*   [YAML Scopes](#YAMLScopes)
-    
+* [Overview](#Overview)
+
+* [General Tokens](#GeneralTokens)
+
+* [Console Scopes](#ConsoleScopes)
+
+* [CSS Scopes](#CSSScopes)
+
+* [HAML Scopes](#HAMLScopes)
+
+* [HTML Scopes](#HTMLScopes)
+
+* [IDL Scopes](#IDLScopes)
+
+* [JavaScript Scopes](#JavaScriptScopes)
+
+* [PHP Scopes](#PHPScopes)
+
+* [Ruby Scopes](#RubyScopes)
+
+* [SVG Scopes](#SVGScopes)
+
+* [XML Scopes](#XMLScopes)
+
+* [YAML Scopes](#YAMLScopes)
+
 
 ## Overview
 
 A list of all of the scopes currently available in Studio Themes.
 
-You can find out the current scope by place the cursor at a particular location, and choosing "Commands > Bundle Development > Show Scope".
+You can find out the current scope by place the cursor at a particular location and choosing "Commands > Bundle Development > Show Scope".
 
 ## General Tokens
 
@@ -51,39 +51,39 @@ fg/bg color used for git decorations for deleted lines and unstaged changed file
 
 ansi.black
 
-color used in Terminals when we encounter the ASNI color code for black
+color used in Terminals when we encounter the ASNI color code for black.
 
 ansi.white
 
-color used in Terminals when we encounter the ASNI color code for white
+color used in Terminals when we encounter the ASNI color code for white.
 
 ansi.gray
 
-color used in Terminals when we encounter the ASNI color code for gray
+color used in Terminals when we encounter the ASNI color code for gray.
 
 ansi.magenta
 
-color used in Terminals when we encounter the ASNI color code for magenta
+color used in Terminals when we encounter the ASNI color code for magenta.
 
 ansi.cyan
 
-color used in Terminals when we encounter the ASNI color code for cyan
+color used in Terminals when we encounter the ASNI color code for cyan.
 
 ansi.yellow
 
-color used in Terminals when we encounter the ASNI color code for yellow
+color used in Terminals when we encounter the ASNI color code for yellow.
 
 ansi.blue
 
-color used in Terminals when we encounter the ASNI color code for blue
+color used in Terminals when we encounter the ASNI color code for blue.
 
 ansi.green
 
-color used in Terminals when we encounter the ASNI color code for green
+color used in Terminals when we encounter the ASNI color code for green.
 
 ansi.red
 
-color used in Terminals when we encounter the ASNI color code for red
+color used in Terminals when we encounter the ASNI color code for red.
 
 ## Console Scopes
 

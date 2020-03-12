@@ -1,39 +1,39 @@
-{"title":"iOS Module Quick Start","weight":"10"} 
+{"title":"iOS Module Quick Start","weight":"10"}
 
-*   [Introduction](#Introduction)
-    
-*   [iOS module prerequisites](#iOSmoduleprerequisites)
-    
-*   [Create a new module](#Createanewmodule)
-    
-*   [Validate the SDK version](#ValidatetheSDKversion)
-    
-*   [Build and package the module](#Buildandpackagethemodule)
-    
-*   [Test the module](#Testthemodule)
-    
-    *   [Create a test application](#Createatestapplication)
-        
-    *   [Add the module as a dependency to the project](#Addthemoduleasadependencytotheproject)
-        
-    *   [Load the module and make module API calls](#LoadthemoduleandmakemoduleAPIcalls)
-        
-        *   [Use require() to import your module](#Userequire()toimportyourmodule)
-            
-    *   [Run the application](#Runtheapplication)
-        
-*   [Modify the module](#Modifythemodule)
-    
-    *   [Open the module in Xcode](#OpenthemoduleinXcode)
-        
-    *   [Add a view proxy and view](#Addaviewproxyandview)
-        
-    *   [Add a property](#Addaproperty)
-        
-    *   [Test the module](#Testthemodule.1)
-        
-*   [Next steps](#Nextsteps)
-    
+* [Introduction](#Introduction)
+
+* [iOS module prerequisites](#iOSmoduleprerequisites)
+
+* [Create a new module](#Createanewmodule)
+
+* [Validate the SDK version](#ValidatetheSDKversion)
+
+* [Build and package the module](#Buildandpackagethemodule)
+
+* [Test the module](#Testthemodule)
+
+  * [Create a test application](#Createatestapplication)
+
+  * [Add the module as a dependency to the project](#Addthemoduleasadependencytotheproject)
+
+  * [Load the module and make module API calls](#LoadthemoduleandmakemoduleAPIcalls)
+
+    * [Use require() to import your module](#Userequire()toimportyourmodule)
+
+  * [Run the application](#Runtheapplication)
+
+* [Modify the module](#Modifythemodule)
+
+  * [Open the module in Xcode](#OpenthemoduleinXcode)
+
+  * [Add a view proxy and view](#Addaviewproxyandview)
+
+  * [Add a property](#Addaproperty)
+
+  * [Test the module](#Testthemodule.1)
+
+* [Next steps](#Nextsteps)
+
 
 ## Introduction
 
@@ -43,12 +43,12 @@ This guide walks through the steps to create, build and test an iOS module using
 
 To develop an iOS-based Module, you'll need all of the software required to build a Titanium application for iOS:
 
-*   Titanium SDK
-    
-*   Supported versions of Xcode and the iOS SDK, as described in [Installing the iOS SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_iOS_SDK/)
-    
-*   Studio or the Appcelerator Command-Line Interface (CLI) for creating modules, and building and running test applications
-    
+* Titanium SDK
+
+* Supported versions of Xcode and the iOS SDK, as described in [Installing the iOS SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_iOS_SDK/)
+
+* Studio or the Appcelerator Command-Line Interface (CLI) for creating modules, and building and running test applications
+
 
 ComExampleTestModuleIn addition, Python, Python setuptools and the Python markdown (or markdown2) module are both required by the module build scripts. For Mac OS X, Python and the Python setuptools should already be installed. For the markdown module, see [Installing Required Python Packages](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Required_Python_Packages/).
 
@@ -70,16 +70,16 @@ From a terminal, change the current working directory to your workspace and run:
 
 In Studio:
 
-1.  From the menu, select **File** > **New** > **Mobile Module Project** to open the **New Mobile Module Project** dialog.
-    
-2.  In the **Project name** field, enter **test**.
-    
-3.  In the **Module Id** field, enter **com.example.test**.
-    
-4.  In **Deployment Targets**, select **iOS**.
-    
-5.  Click **Next**, then click **Finish**.
-    
+1. From the menu, select **File** > **New** > **Mobile Module Project** to open the **New Mobile Module Project** dialog.
+
+2. In the **Project name** field, enter **test**.
+
+3. In the **Module Id** field, enter **com.example.test**.
+
+4. In **Deployment Targets**, select **iOS**.
+
+5. Click **Next**, then click **Finish**.
+
 
 Studio sets up a new folder called test that contains your module project.
 
@@ -105,16 +105,16 @@ Optional: After the build completes, either unzip the built module in the Titani
 
 In Studio:
 
-1.  Select your module folder in the **Project Explorer** view.
-    
-2.  Verify **Package** and **iOS Module** are displayed in **Launch Mode** and **Launch Target**, respectively.
-    
-3.  Click the Package icon to open the **Package iOS Module** dialog.
-    
-4.  In **Output Location**, choose the **Titanium SDK** to install the module in the Titanium SDK home path to be accessed by any Titanium application.
-    
-5.  Click **Finish**.
-    
+1. Select your module folder in the **Project Explorer** view.
+
+2. Verify **Package** and **iOS Module** are displayed in **Launch Mode** and **Launch Target**, respectively.
+
+3. Click the Package icon to open the **Package iOS Module** dialog.
+
+4. In **Output Location**, choose the **Titanium SDK** to install the module in the Titanium SDK home path to be accessed by any Titanium application.
+
+5. Click **Finish**.
+
 
 Studio builds and installs the module to the Titanium SDK home path.
 
@@ -136,20 +136,20 @@ From a new terminal window, change the current working directory to your workspa
 
 In Studio:
 
-1.  From the menu, select **File** > **New** > **Mobile App Project** to open the **New Mobile App Project** dialog.
-    
-2.  On the **Project Template** page, select **Default Alloy Project** as the template type, then click **Next**.
-    
-3.  On the **Project Location** page, enter the following information:
-    
-    *   In the **Project Name** field, enter **Hello**.
-        
-    *   In the **App ID** field, enter **com.example.hello**.
-        
-    *   In **Deployment Targets**, select **iPhone** and **iPad**.
-        
-4.  Click **Finish** to create the project.
-    
+1. From the menu, select **File** > **New** > **Mobile App Project** to open the **New Mobile App Project** dialog.
+
+2. On the **Project Template** page, select **Default Alloy Project** as the template type, then click **Next**.
+
+3. On the **Project Location** page, enter the following information:
+
+  * In the **Project Name** field, enter **Hello**.
+
+  * In the **App ID** field, enter **com.example.hello**.
+
+  * In **Deployment Targets**, select **iPhone** and **iPad**.
+
+4. Click **Finish** to create the project.
+
 
 Studio sets up a new folder called Hello that contains the test application you will be using to test the module.
 
@@ -173,18 +173,18 @@ Open the tiapp.xml and update the <modules/> element to include the module as a 
 
 In Studio:
 
-1.  Open the tiapp.xml file located in the root directory of the project.
-    
-2.  Under the **Modules** section, click the **Add** button.
-    
-3.  Select **com.example.test**.
-    
-4.  Click **OK**.
-    
+1. Open the tiapp.xml file located in the root directory of the project.
+
+2. Under the **Modules** section, click the **Add** button.
+
+3. Select **com.example.test**.
+
+4. Click **OK**.
+
 
 ### Load the module and make module API calls
 
-The module can be loaded by passing the module ID to the require() method, which returns a reference to the module that API calls can be made on.  
+The module can be loaded by passing the module ID to the require() method, which returns a reference to the module that API calls can be made on.
 Since Titanium SDK 7.1.0 and later, you can also import it using the ES6+ import statements.
 
 Open the app/alloy.js file and replace the code with the following, which invokes API calls to the module:
@@ -257,19 +257,19 @@ From a terminal, run:
 
 In Studio:
 
-1.  Right-click the test.xcodeproj folder and select **Show In** > **Terminal**.
-    
-2.  In the Terminal, run the following command:
-    
-    `open` `.`
-    
+1. Right-click the test.xcodeproj folder and select **Show In** > **Terminal**.
+
+2. In the Terminal, run the following command:
+
+  `open` `.`
+
 
 Your module project is now open in Xcode. Expand the Classes folder and take a look at the default files created by the Titanium SDK:
 
-*   ComExampleTestModule.h and ComExampleTestModule.m: These are the header and source file for the module class. Every module requires a module class (and only one module class), which acts as the base API for the module, such as providing the module ID, GUID, etc.
-    
-*   ComExampleTestModuleAssets.h and ComExampleTestModuleAssets.m: These are the header and source files to manage module assets. These files are auto-generated. You can ignore these for now in this tutorial.
-    
+* ComExampleTestModule.h and ComExampleTestModule.m: These are the header and source file for the module class. Every module requires a module class (and only one module class), which acts as the base API for the module, such as providing the module ID, GUID, etc.
+
+* ComExampleTestModuleAssets.h and ComExampleTestModuleAssets.m: These are the header and source files to manage module assets. These files are auto-generated. You can ignore these for now in this tutorial.
+
 
 Notice that all the files start with the module ID in camel case notation. Every file and class you add to the module project must start with name and every file and class you add must end with Proxy, ViewProxy or View, which determines how Titanium uses the files. Titanium uses a strict naming convention and directory structure to manage the module classes and resources. If a file or class is added to the project and does not conform to these conventions, it will be treated as a normal non-Titanium class. It will be accessible from Objective-C code but not from JavaScript.
 
@@ -279,20 +279,20 @@ To display any UI with a module, create a view proxy and view in pairs. Create t
 
 In Xcode, for each file:
 
-1.  Right-click the project and select **New File...**
-    
-2.  For the header files, select **Header File**, and for the source files, select **Objective-C** **File**, then click **Next**.
-    
-3.  For the Objective-C files, enter the name of the file and click **Next** to proceed to the last dialog.
-    
-4.  For the header files, enter the name of the file in the **Save As** field.
-    
-5.  For both files, select the module's Classes folder.
-    
-6.  Ensure that the **Target** test is selected.
-    
-7.  Click **Create**.
-    
+1. Right-click the project and select **New File...**
+
+2. For the header files, select **Header File**, and for the source files, select **Objective-C** **File**, then click **Next**.
+
+3. For the Objective-C files, enter the name of the file and click **Next** to proceed to the last dialog.
+
+4. For the header files, enter the name of the file in the **Save As** field.
+
+5. For both files, select the module's Classes folder.
+
+6. Ensure that the **Target** test is selected.
+
+7. Click **Create**.
+
 
 ComExampleTestViewProxy.h
 
@@ -372,12 +372,12 @@ The ComExampleTestViewProxy class extends the TiViewProxy class. This class expo
 
 The ComExampleTestView class extends the TiUIView class. The TiUIView can be added to other Titanium views and windows, which makes it the perfect place for a UIView to be added so that it can be displayed in a Titanium app. This class creates the native view to display. The class implements three methods of the TiUIView class and a custom setter method:
 
-*   **initializeState** : This method is called when the view is initialized. In this example, we are using this method as a place to create a native UIView which is called square.
-    
-*   **frameSizeChanged** : This method is called when the view's dimensions change. The method calls a TiUtils helper function to update the dimensions of square. In JavaScript, this occurs when the width, height, top, bottom, left or right properties are invoked.
-    
-*   **setColor\_** : All setter methods in a View class must end with an underscore (\_), which exposes the property to the JavaScript application. When color property is invoked, the method updates the background color of the square.
-    
+* **initializeState** : This method is called when the view is initialized. In this example, we are using this method as a place to create a native UIView which is called square.
+
+* **frameSizeChanged** : This method is called when the view's dimensions change. The method calls a TiUtils helper function to update the dimensions of square. In JavaScript, this occurs when the width, height, top, bottom, left or right properties are invoked.
+
+* **setColor\_** : All setter methods in a View class must end with an underscore (\_), which exposes the property to the JavaScript application. When color property is invoked, the method updates the background color of the square.
+
 
 Notice that there is no code tying ComExampleTestView to ComExampleTestViewProxy. The naming convention is what causes the View to be connected to its ViewProxy.
 
@@ -499,8 +499,8 @@ Console
 
 ## Next steps
 
-*   For information about how to structure your module project, add assets or third-party frameworks to your module project or more details on how to use the CLI or Studio, see [iOS Module Project](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Extending_Titanium_Mobile/iOS_Module_Development_Guide/iOS_Module_Project/).
-    
-*   For information about how to construct the class components for your project, see [iOS Module Quick Start](#undefined).
-    
-*   For more examples of using the module API, see the [ti.moddevguide Github project](https://github.com/appcelerator-modules/ti.moddevguide).
+* For information about how to structure your module project, add assets or third-party frameworks to your module project or more details on how to use the CLI or Studio, see [iOS Module Project](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Extending_Titanium_Mobile/iOS_Module_Development_Guide/iOS_Module_Project/).
+
+* For information about how to construct the class components for your project, see [iOS Module Quick Start](#undefined).
+
+* For more examples of using the module API, see the [ti.moddevguide Github project](https://github.com/appcelerator-modules/ti.moddevguide).

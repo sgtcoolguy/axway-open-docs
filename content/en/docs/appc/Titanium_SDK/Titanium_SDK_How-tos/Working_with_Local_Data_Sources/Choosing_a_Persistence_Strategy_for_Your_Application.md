@@ -1,13 +1,13 @@
-{"title":"Choosing a Persistence Strategy for Your Application","weight":"10"} 
+{"title":"Choosing a Persistence Strategy for Your Application","weight":"10"}
 
-*   [Properties](#Properties)
-    
-*   [Database](#Database)
-    
-*   [Filesystem](#Filesystem)
-    
-*   [What kind of data storage should I use?](#WhatkindofdatastorageshouldIuse?)
-    
+* [Properties](#Properties)
+
+* [Database](#Database)
+
+* [Filesystem](#Filesystem)
+
+* [What kind of data storage should I use?](#WhatkindofdatastorageshouldIuse?)
+
 
 ## Objective
 
@@ -17,12 +17,12 @@ Titanium provides various means to save data to the user's mobile device. In thi
 
 Even the most rudimentary applications usually have some data storage requirements. As always, Titanium provides access to all the native functionality via its convenient, uniform interface. To use a device's local storage, the following objects are needed:
 
-*   Titanium.App.Properties is ideal for storing application-related settings
-    
-*   Titanium.Database gives access to local SQLite3 databases
-    
-*   Titanium.Filesystem facilitates file and directory manipulation
-    
+* Titanium.App.Properties is ideal for storing application-related settings
+
+* Titanium.Database gives access to local SQLite3 databases
+
+* Titanium.Filesystem facilitates file and directory manipulation
+
 
 Each of these enable data to persist on a device across application restarts, power cycles, re-installation and even migration to a new device.
 
@@ -44,49 +44,49 @@ Titanium.Filesystem let's you read from and write to files on the user's device.
 
 The decision about which of the three local storage options you choose is usually determined by the following:
 
-1.  **Application Properties** - used when one or all of the following is true:
-    
-    *   the data consists of simple key/value pairs
-        
-    *   the data is related to the application rather than the user
-        
-    *   the data does not require other data in order to be meaningful or useful
-        
-    *   there only needs to be one version of the data stored at any one time
-        
-2.  **Database** - used this when one or all of the following is true:
-    
-    *   there are many similar data items
-        
-    *   items of data relate to each other
-        
-    *   you require flexibility over how the data will be presented when you retrieve it
-        
-    *   the data accumulates over time, such as transaction, logging or archiving data
-        
-3.  **Filesystem** - used when one or all of the following is true:
-    
-    *   the data is already provided in file format
-        
-    *   the data is an image file
-        
+1. **Application Properties** - used when one or all of the following is true:
+
+  * the data consists of simple key/value pairs
+
+  * the data is related to the application rather than the user
+
+  * the data does not require other data in order to be meaningful or useful
+
+  * there only needs to be one version of the data stored at any one time
+
+2. **Database** - used this when one or all of the following is true:
+
+  * there are many similar data items
+
+  * items of data relate to each other
+
+  * you require flexibility over how the data will be presented when you retrieve it
+
+  * the data accumulates over time, such as transaction, logging or archiving data
+
+3. **Filesystem** - used when one or all of the following is true:
+
+  * the data is already provided in file format
+
+  * the data is an image file
+
 
 Although the local database has the capability to store images in blob (binary) format, this won't lead to optimal performance from your application. Instead, use Titanium.Database to store the image file path and name in the database, and Titanium.Filesystem to manage the physical files.
 
 ## References and Further Reading
 
-*   API docs:
-    
-    *   [Properties API](#!/api/Titanium.App.Properties)
-        
-    *   [Database API](#!/api/Titanium.Database)
-        
-    *   [Filesystem API](#!/api/Titanium.Filesystem)
-        
-*   [Persistence demo app](https://github.com/appcelerator-archive/sample-persistence)
-    
-*   [http://sqlite.org](http://sqlite.org)
-    
+* API docs:
+
+  * [Properties API](#!/api/Titanium.App.Properties)
+
+  * [Database API](#!/api/Titanium.Database)
+
+  * [Filesystem API](#!/api/Titanium.Filesystem)
+
+* [Persistence demo app](https://github.com/appcelerator-archive/sample-persistence)
+
+* [http://sqlite.org](http://sqlite.org)
+
 
 ## Summary
 

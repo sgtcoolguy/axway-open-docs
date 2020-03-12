@@ -1,4 +1,4 @@
-{"title":"Previewing Applications","weight":"20"} 
+{"title":"Previewing Applications","weight":"20"}
 
 The App Preview functionality is now available on the Dashboard. Previously, this functionality was only accessible from Appcelerator Studio. The App Preview feature allows you to distribute different versions of your application to testers and stakeholders reviewing the application. The App Preview feature is available for Professional and Enterprise organizations and is accessible from the **App Preview** tab.
 

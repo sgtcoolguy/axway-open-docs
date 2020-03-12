@@ -1,48 +1,48 @@
-{"title":"Titanium SDK Deprecation Notices","weight":"70"} 
+{"title":"Titanium SDK Deprecation Notices","weight":"70"}
 
 This document lists every SDK deprecation notice.
 
-*   [SDK 8.x](#SDK8.x)
-    
-    *   [8.0.0](#8.0.0)
-        
-*   [SDK 7.x](#SDK7.x)
-    
-    *   [7.5.0](#7.5.0)
-        
-    *   [7.3.1](#7.3.1)
-        
-    *   [7.3.0](#7.3.0)
-        
-    *   [7.0.1](#7.0.1)
-        
-    *   [7.0.0](#7.0.0)
-        
-*   [SDK 6.x](#SDK6.x)
-    
-    *   [6.2.0](#6.2.0)
-        
-    *   [6.1.0](#6.1.0)
-        
-    *   [6.0.0](#6.0.0)
-        
-*   [SDK 5.x](#SDK5.x)
-    
-    *   [5.4.0](#5.4.0)
-        
-    *   [5.2.0](#5.2.0)
-        
-    *   [5.1.0](#5.1.0)
-        
-    *   [5.0.0](#5.0.0)
-        
+* [SDK 8.x](#SDK8.x)
+
+  * [8.0.0](#8.0.0)
+
+* [SDK 7.x](#SDK7.x)
+
+  * [7.5.0](#7.5.0)
+
+  * [7.3.1](#7.3.1)
+
+  * [7.3.0](#7.3.0)
+
+  * [7.0.1](#7.0.1)
+
+  * [7.0.0](#7.0.0)
+
+* [SDK 6.x](#SDK6.x)
+
+  * [6.2.0](#6.2.0)
+
+  * [6.1.0](#6.1.0)
+
+  * [6.0.0](#6.0.0)
+
+* [SDK 5.x](#SDK5.x)
+
+  * [5.4.0](#5.4.0)
+
+  * [5.2.0](#5.2.0)
+
+  * [5.1.0](#5.1.0)
+
+  * [5.0.0](#5.0.0)
+
 
 List of all depreciation notices for SDK 8.x.
 
-*   [SDK 8.x](#DeprecationNoticeSDK8.x-SDK8.x)
-    
-    *   [8.0.0](#DeprecationNoticeSDK8.x-8.0.0)
-        
+* [SDK 8.x](#DeprecationNoticeSDK8.x-SDK8.x)
+
+  * [8.0.0](#DeprecationNoticeSDK8.x-8.0.0)
+
 
 ## SDK 8.x
 
@@ -21100,18 +21100,18 @@ Set the value using Titanium.userAgent instead.
 
 List of all depreciation notices for SDK 7.x.
 
-*   [SDK 7.x](#DeprecationNoticeSDK7.x-SDK7.x)
-    
-    *   [7.5.0](#DeprecationNoticeSDK7.x-7.5.0)
-        
-    *   [7.3.1](#DeprecationNoticeSDK7.x-7.3.1)
-        
-    *   [7.3.0](#DeprecationNoticeSDK7.x-7.3.0)
-        
-    *   [7.0.1](#DeprecationNoticeSDK7.x-7.0.1)
-        
-    *   [7.0.0](#DeprecationNoticeSDK7.x-7.0.0)
-        
+* [SDK 7.x](#DeprecationNoticeSDK7.x-SDK7.x)
+
+  * [7.5.0](#DeprecationNoticeSDK7.x-7.5.0)
+
+  * [7.3.1](#DeprecationNoticeSDK7.x-7.3.1)
+
+  * [7.3.0](#DeprecationNoticeSDK7.x-7.3.0)
+
+  * [7.0.1](#DeprecationNoticeSDK7.x-7.0.1)
+
+  * [7.0.0](#DeprecationNoticeSDK7.x-7.0.0)
+
 
 ## SDK 7.x
 
@@ -21765,14 +21765,14 @@ Use Titanium.Media.VideoPlayer.overlayView instead.
 
 List of all depreciation notices for SDK 6.x.
 
-*   [SDK 6.x](#DeprecationNoticeSDK6.x-SDK6.x)
-    
-    *   [6.2.0](#DeprecationNoticeSDK6.x-6.2.0)
-        
-    *   [6.1.0](#DeprecationNoticeSDK6.x-6.1.0)
-        
-    *   [6.0.0](#DeprecationNoticeSDK6.x-6.0.0)
-        
+* [SDK 6.x](#DeprecationNoticeSDK6.x-SDK6.x)
+
+  * [6.2.0](#DeprecationNoticeSDK6.x-6.2.0)
+
+  * [6.1.0](#DeprecationNoticeSDK6.x-6.1.0)
+
+  * [6.0.0](#DeprecationNoticeSDK6.x-6.0.0)
+
 
 ## SDK 6.x
 
@@ -21960,16 +21960,16 @@ Use Titanium.UI.TextField.padding instead.
 
 List of all depreciation notices for SDK 5.x.
 
-*   [SDK 5.x](#DeprecationNoticeSDK5.x-SDK5.x)
-    
-    *   [5.4.0](#DeprecationNoticeSDK5.x-5.4.0)
-        
-    *   [5.2.0](#DeprecationNoticeSDK5.x-5.2.0)
-        
-    *   [5.1.0](#DeprecationNoticeSDK5.x-5.1.0)
-        
-    *   [5.0.0](#DeprecationNoticeSDK5.x-5.0.0)
-        
+* [SDK 5.x](#DeprecationNoticeSDK5.x-SDK5.x)
+
+  * [5.4.0](#DeprecationNoticeSDK5.x-5.4.0)
+
+  * [5.2.0](#DeprecationNoticeSDK5.x-5.2.0)
+
+  * [5.1.0](#DeprecationNoticeSDK5.x-5.1.0)
+
+  * [5.0.0](#DeprecationNoticeSDK5.x-5.0.0)
+
 
 ## SDK 5.x
 

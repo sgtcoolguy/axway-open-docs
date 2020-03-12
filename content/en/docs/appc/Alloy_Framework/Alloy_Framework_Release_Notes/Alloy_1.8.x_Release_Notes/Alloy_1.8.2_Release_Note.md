@@ -1,4 +1,4 @@
-{"title":"Alloy 1.8.2 - 23 March 2016","weight":"50"} 
+{"title":"Alloy 1.8.2 - 23 March 2016","weight":"50"}
 
 Alloy 1.8.2 is a patch release that includes a bug fix.
 
@@ -6,4 +6,4 @@ As of this release, the previous Alloy patch release is no longer supported. Not
 
 ## Fixed Issues
 
-*   [ALOY-1375](https://jira.appcelerator.org/browse/ALOY-1375) - Alloy extract-18n --apply writes to wrong strings.xml in Alloy 1.8.1
+* [ALOY-1375](https://jira.appcelerator.org/browse/ALOY-1375) - Alloy extract-18n --apply writes to wrong strings.xml in Alloy 1.8.1

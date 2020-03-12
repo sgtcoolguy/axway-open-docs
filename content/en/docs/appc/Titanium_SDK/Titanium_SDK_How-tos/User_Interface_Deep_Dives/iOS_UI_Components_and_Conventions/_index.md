@@ -1,4 +1,4 @@
-{"title":"iOS UI Components and Conventions","weight":"110"} 
+{"title":"iOS UI Components and Conventions","weight":"110"}
 
 ## Objective
 
@@ -184,29 +184,29 @@ With 1.8, the location of the Settings.bundle was changed. Platform-specific res
 
 If you're running SDK 1.8+
 
-1.  Download a recent copy of the [KitchenSink app](https://github.com/appcelerator/KitchenSink)
-    
-2.  Copy **Settings.bundle** from **platform/iphone** folder to your project's **Resources/platform/iphone** directory (you might need to create those directories).
-    
-3.  In Studio, expand platform/iphone/Settings.bundle and double-click Root.plist to open the Xcode Property List editor.
-    
-4.  Edit the settings, as described below.
-    
-5.  Clean your project, then build for either the Simulator or device.
-    
+1. Download a recent copy of the [KitchenSink app](https://github.com/appcelerator/KitchenSink)
+
+2. Copy **Settings.bundle** from **platform/iphone** folder to your project's **Resources/platform/iphone** directory (you might need to create those directories).
+
+3. In Studio, expand platform/iphone/Settings.bundle and double-click Root.plist to open the Xcode Property List editor.
+
+4. Edit the settings, as described below.
+
+5. Clean your project, then build for either the Simulator or device.
+
 
 If you're running SDK <1.8
 
-1.  Download a copy of the [KitchenSink app](https://github.com/appcelerator/KitchenSink)
-    
-2.  Copy **Settings.bundle** from **modules/iphone** folder to your project's **Resources/modules/iphone** directory (you might need to create those directories).
-    
-3.  In Studio, expand modules/iphone/Settings.bundle and double-click Root.plist to open the Xcode Property List editor.
-    
-4.  Edit the settings, as described below.
-    
-5.  Clean your project, then build for either the Simulator or device.
-    
+1. Download a copy of the [KitchenSink app](https://github.com/appcelerator/KitchenSink)
+
+2. Copy **Settings.bundle** from **modules/iphone** folder to your project's **Resources/modules/iphone** directory (you might need to create those directories).
+
+3. In Studio, expand modules/iphone/Settings.bundle and double-click Root.plist to open the Xcode Property List editor.
+
+4. Edit the settings, as described below.
+
+5. Clean your project, then build for either the Simulator or device.
+
 
 In the Xcode Property List editor, you'll see the app's name defined in Item 0. The three preferences defined by KitchenSink appear under Items 1, 2, and 3. You can modify these to suit your needs or add new properties items following the pattern set out in these items.
 
@@ -226,43 +226,43 @@ To complete this activity, you will need an Intel-based Mac with the iOS develop
 
 #### Steps
 
-1.  Create a new Titanium Mobile project named AppSettings that targets the iPhone and iPad.
-    
-2.  If you have not done so already, download a copy of the KitchenSink project from [https://github.com/appcelerator/KitchenSink](https://github.com/appcelerator/KitchenSink). Copy the modules folder to your project's directory.
-    
-3.  In Studio, expand modules/iphone/Settings.bundle and double-click Root.plist
-    
-4.  Edit the name of the app in the plist file to match your app's name. You can leave the other settings options as-is. Save your changes and close Xcode.
-    
-5.  Change label1 to display the name the user enters in the Settings app for the Name preference. If no value is set, display the text "Set Name in Settings" in the label.
-    
-6.  If the "Enabled" switch is set to Yes (on) , display an ImageView that contains the KS\_nav\_ui.png graphic. If it's set to No (off) , don't display the image. You can use the Ti.App.Properties.getBool() method for this purpose.
-    
-7.  Build and test your app. After it's installed and run the first time, open the Settings app and configure your name and Enabled value.
-    
-8.  Because the app remains running (iOS doesn't fully close an app when you return to the Springboard), you'll need to close and relaunch the simulator or use the Fast App Switcher to kill the app. If using the simulator launched by Studio, using the Fast App Switcher might crash the simulator.
-    
-    1.  Close the AppSettings app, if necessary
-        
-    2.  Double-click the Home button to display the Fast App Switcher tray.
-        
-    3.  Press and hold on the AppSetting icon in the tray until it begins to shake. Tap its red minus-sign button to kill the app.
-        
-    4.  Press Home to leave "edit mode" then press Home again to return to the Springboard.
-        
-    5.  You can now re-open the app to see the new settings in place.
-        
+1. Create a new Titanium Mobile project named AppSettings that targets the iPhone and iPad.
+
+2. If you have not done so already, download a copy of the KitchenSink project from [https://github.com/appcelerator/KitchenSink](https://github.com/appcelerator/KitchenSink). Copy the modules folder to your project's directory.
+
+3. In Studio, expand modules/iphone/Settings.bundle and double-click Root.plist
+
+4. Edit the name of the app in the plist file to match your app's name. You can leave the other settings options as-is. Save your changes and close Xcode.
+
+5. Change label1 to display the name the user enters in the Settings app for the Name preference. If no value is set, display the text "Set Name in Settings" in the label.
+
+6. If the "Enabled" switch is set to Yes (on) , display an ImageView that contains the KS\_nav\_ui.png graphic. If it's set to No (off) , don't display the image. You can use the Ti.App.Properties.getBool() method for this purpose.
+
+7. Build and test your app. After it's installed and run the first time, open the Settings app and configure your name and Enabled value.
+
+8. Because the app remains running (iOS doesn't fully close an app when you return to the Springboard), you'll need to close and relaunch the simulator or use the Fast App Switcher to kill the app. If using the simulator launched by Studio, using the Fast App Switcher might crash the simulator.
+
+  1. Close the AppSettings app, if necessary
+
+  2. Double-click the Home button to display the Fast App Switcher tray.
+
+  3. Press and hold on the AppSetting icon in the tray until it begins to shake. Tap its red minus-sign button to kill the app.
+
+  4. Press Home to leave "edit mode" then press Home again to return to the Springboard.
+
+  5. You can now re-open the app to see the new settings in place.
+
 
 ### References and Further Reading
 
-*   [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/AppSettings.zip)
-    
-*   Apple's [iPad Human Interface Guidelines](http://developer.apple.com/iphone/library/documentation/General/Conceptual/iPadHIG/Introduction/Introduction.html)
-    
-*   [Apple's Introduction to Property Lists](http://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html)
-    
-*   [Sample code for create app preferences](http://developer.apple.com/library/ios/#samplecode/AppPrefs/Introduction/Intro.html) (Settings)
-    
+* [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/AppSettings.zip)
+
+* Apple's [iPad Human Interface Guidelines](http://developer.apple.com/iphone/library/documentation/General/Conceptual/iPadHIG/Introduction/Introduction.html)
+
+* [Apple's Introduction to Property Lists](http://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html)
+
+* [Sample code for create app preferences](http://developer.apple.com/library/ios/#samplecode/AppPrefs/Introduction/Intro.html) (Settings)
+
 
 ## Summary
 

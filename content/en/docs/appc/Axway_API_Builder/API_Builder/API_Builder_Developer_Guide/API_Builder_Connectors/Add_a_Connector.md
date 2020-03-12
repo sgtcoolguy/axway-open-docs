@@ -1,4 +1,4 @@
-{"title":"Add a Connector","weight":"30"} 
+{"title":"Add a Connector","weight":"30"}
 
 API Builder 3.x is deprecated
 
@@ -6,39 +6,39 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-*   [Introduction](#Introduction)
-    
-*   [Search for connectors](#Searchforconnectors)
-    
-*   [Service connectors](#Serviceconnectors)
-    
-    *   [Install a service connector](#Installaserviceconnector)
-        
-    *   [Configure a service connector](#Configureaserviceconnector)
-        
-*   [Model-first connectors](#Model-firstconnectors)
-    
-    *   [Install a model-first connector](#Installamodel-firstconnector)
-        
-    *   [Configure the model-first connector](#Configurethemodel-firstconnector)
-        
-        *   [Disable API endpoints](#DisableAPIendpoints)
-            
-    *   [Use the model-first connector](#Usethemodel-firstconnector)
-        
-    *   [Remove a model-first connector](#Removeamodel-firstconnector)
-        
+* [Introduction](#Introduction)
+
+* [Search for connectors](#Searchforconnectors)
+
+* [Service connectors](#Serviceconnectors)
+
+  * [Install a service connector](#Installaserviceconnector)
+
+  * [Configure a service connector](#Configureaserviceconnector)
+
+* [Model-first connectors](#Model-firstconnectors)
+
+  * [Install a model-first connector](#Installamodel-firstconnector)
+
+  * [Configure the model-first connector](#Configurethemodel-firstconnector)
+
+    * [Disable API endpoints](#DisableAPIendpoints)
+
+  * [Use the model-first connector](#Usethemodel-firstconnector)
+
+  * [Remove a model-first connector](#Removeamodel-firstconnector)
+
 
 ## Introduction
 
 Connectors give your applications the ability to access external data from different sources, such as from a database or in the cloud. To add a Connector:
 
-1.  Install the Connector.
-    
-2.  Configure the Connector.
-    
-3.  Use the Connector.
-    
+1. Install the Connector.
+
+2. Configure the Connector.
+
+3. Use the Connector.
+
 
 ## Search for connectors
 
@@ -56,22 +56,22 @@ The following sections describe how to install and configure the new service con
 
 To install a service connector:
 
-1.  Download the service connector from the [Axway Marketplace](https://marketplace.axway.com/).
-    
-2.  Unzip the service connector into the /serviceconnectors/<connector name> folder in your project directory.
-    
-    The new service connectors are plain flow-node modules but they are not installed as such in API Builder V3.0.0. The zip file will contain the package folder that contains the actual connector. Rename the package folder after unzipping to match your connector name.
-    
-3.  From the project directory, execute the following command to install the HTTP communication module:
-    
-    `npm i requester-ce`
-    
-4.  From the project directory, execute the following command:
-    
-    `appc run`
-    
-5.  Open the API Orchestration flow editor in the API Builder Console and verify that the service connector is listed and is available for use in flows.
-    
+1. Download the service connector from the [Axway Marketplace](https://marketplace.axway.com/).
+
+2. Unzip the service connector into the /serviceconnectors/<connector name> folder in your project directory.
+
+  The new service connectors are plain flow-node modules but they are not installed as such in API Builder V3.0.0. The zip file will contain the package folder that contains the actual connector. Rename the package folder after unzipping to match your connector name.
+
+3. From the project directory, execute the following command to install the HTTP communication module:
+
+  `npm i requester-ce`
+
+4. From the project directory, execute the following command:
+
+  `appc run`
+
+5. Open the API Orchestration flow editor in the API Builder Console and verify that the service connector is listed and is available for use in flows.
+
 
 ### Configure a service connector
 
@@ -195,24 +195,24 @@ models/employee.js
 
 To remove a connector from your project, you need to manually update the appc.json file and remove some files.
 
-1.  Open the appc.json file and delete the connector you want to remove from the dependencies object. For example, if you want to remove the MySQL connector, remove the "connector/appc.mysql": "^1.0.34". Note that you will need to remove the trailing comma at the end of the arrowdb line.
-    
-    `{`
-    
-    `"type"``:` `"api"``,`
-    
-    `"group"``:` `"arrow"``,`
-    
-    `"dependencies"``: {`
-    
-    `"connector/appc.arrowdb"``:` `"^1.0.52"``,`
-    
-    `"connector/appc.mysql"``:` `"^1.0.34"`
-    
-    `}`
-    
-    `}`
-    
-2.  Delete the connector's configuration file(s) from the project conf directory. The file(s) will contain the name of the connector.
-    
-3.  Delete the connector's directory in the node\_modules/connectors/ directory. The directory will contain the name of the connector.
+1. Open the appc.json file and delete the connector you want to remove from the dependencies object. For example, if you want to remove the MySQL connector, remove the "connector/appc.mysql": "^1.0.34". Note that you will need to remove the trailing comma at the end of the arrowdb line.
+
+  `{`
+
+  `"type"``:` `"api"``,`
+
+  `"group"``:` `"arrow"``,`
+
+  `"dependencies"``: {`
+
+  `"connector/appc.arrowdb"``:` `"^1.0.52"``,`
+
+  `"connector/appc.mysql"``:` `"^1.0.34"`
+
+  `}`
+
+  `}`
+
+2. Delete the connector's configuration file(s) from the project conf directory. The file(s) will contain the name of the connector.
+
+3. Delete the connector's directory in the node\_modules/connectors/ directory. The directory will contain the name of the connector.

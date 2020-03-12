@@ -1,4 +1,4 @@
-{"title":"Date Time Pickers","weight":"60"} 
+{"title":"Date Time Pickers","weight":"60"}
 
 Demonstrates how to create a date/time picker using the Picker control.
 
@@ -72,8 +72,8 @@ The initial time displayed by the Picker control is set in the main view's TSS f
 
 ## See Also
 
-*   [Titanium.UI.Picker API reference](#!/api/Titanium.UI.Picker)
-    
-*   [Titanium.UI.Picker.type property API reference](#!/api/Titanium.UI.Picker-property-type)
-    
-*   [Moment.js](http://momentjs.com/docs/)
+* [Titanium.UI.Picker API reference](#!/api/Titanium.UI.Picker)
+
+* [Titanium.UI.Picker.type property API reference](#!/api/Titanium.UI.Picker-property-type)
+
+* [Moment.js](http://momentjs.com/docs/)

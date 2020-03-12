@@ -1,41 +1,41 @@
-{"title":"iOS Module Project","weight":"30"} 
+{"title":"iOS Module Project","weight":"30"}
 
-*   [Introduction](#Introduction)
-    
-*   [Prerequisite](#Prerequisite)
-    
-*   [Project structure](#Projectstructure)
-    
-    *   [Titanium .xcconfig file](#Titanium.xcconfigfile)
-        
-    *   [Module .xcconfig file](#Module.xcconfigfile)
-        
-    *   [Manifest file](#Manifestfile)
-        
-*   [CLI tasks](#CLItasks)
-    
-    *   [Create a new module project](#Createanewmoduleproject)
-        
-    *   [Build and package the module](#Buildandpackagethemodule)
-        
-*   [Studio tasks](#Studiotasks)
-    
-    *   [Create a new module project](#Createanewmoduleproject.1)
-        
-    *   [Build and package the module](#Buildandpackagethemodule.1)
-        
-*   [Test the module](#Testthemodule)
-    
-    *   [Link the test application and the module projects](#Linkthetestapplicationandthemoduleprojects)
-        
-*   [Add a third-party framework](#Addathird-partyframework)
-    
-*   [Bundle module assets](#Bundlemoduleassets)
-    
-*   [Format / Lint source-code](#Format/Lintsource-code)
-    
-*   [Distribute your module through the Appcelerator Marketplace](#DistributeyourmodulethroughtheAppceleratorMarketplace)
-    
+* [Introduction](#Introduction)
+
+* [Prerequisite](#Prerequisite)
+
+* [Project structure](#Projectstructure)
+
+  * [Titanium .xcconfig file](#Titanium.xcconfigfile)
+
+  * [Module .xcconfig file](#Module.xcconfigfile)
+
+  * [Manifest file](#Manifestfile)
+
+* [CLI tasks](#CLItasks)
+
+  * [Create a new module project](#Createanewmoduleproject)
+
+  * [Build and package the module](#Buildandpackagethemodule)
+
+* [Studio tasks](#Studiotasks)
+
+  * [Create a new module project](#Createanewmoduleproject.1)
+
+  * [Build and package the module](#Buildandpackagethemodule.1)
+
+* [Test the module](#Testthemodule)
+
+  * [Link the test application and the module projects](#Linkthetestapplicationandthemoduleprojects)
+
+* [Add a third-party framework](#Addathird-partyframework)
+
+* [Bundle module assets](#Bundlemoduleassets)
+
+* [Format / Lint source-code](#Format/Lintsource-code)
+
+* [Distribute your module through the Appcelerator Marketplace](#DistributeyourmodulethroughtheAppceleratorMarketplace)
+
 
 ## Introduction
 
@@ -45,10 +45,10 @@ This guide covers how to manage your module project as well as how to add third-
 
 In order to develop iOS modules, you need to have your environment setup to build iOS applications with the Titanium SDK.
 
-*   To setup Titanium, see [Setting up Studio](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Setting_up_Studio/).
-    
-*   To setup your environment for iOS, see [Installing the iOS SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_iOS_SDK/).
-    
+* To setup Titanium, see [Setting up Studio](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Setting_up_Studio/).
+
+* To setup your environment for iOS, see [Installing the iOS SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_iOS_SDK/).
+
 
 ## Project structure
 
@@ -96,7 +96,7 @@ A special file that describes metadata about your module and used by the Titaniu
 
 ios/module.xcconfig
 
-A special file used by Xcode when your module is compiled in an end-user Titanium application which references your module.  
+A special file used by Xcode when your module is compiled in an end-user Titanium application which references your module.
 This file is a Xcode configuration file which can setup special compiler and linker directives that are specific to your module. This file is distributed with your module.
 
 ios/platform
@@ -125,18 +125,18 @@ The CLI generates a module project containing multiple platforms. The module con
 
 The titanium.xcconfig file is used when compiling your module for packaging. It defines the following environment variables:
 
-*   TITANIUM\_SDK\_VERSION: Version of the Titanium SDK to build the module library.
-    
-*   TITANIUM\_SDK: Path to the Titanium SDK.
-    
-*   TITANIUM\_BASE\_SDK: Path to the Titanium SDK iOS header files. Do not modify.
-    
-*   TITANIUM\_BASE\_SDK2: Path to the Titanium SDK iOS TiCore header files. Do not modify.
-    
-*   TITANIUM\_BASE\_SDK3: Path to the Titanium SDK iOS JavaScriptCore header files. Do not modify.
-    
-*   HEADER\_SEARCH\_PATHS: Path to the Titanium SDK header files. Do not modify.
-    
+* TITANIUM\_SDK\_VERSION: Version of the Titanium SDK to build the module library.
+
+* TITANIUM\_SDK: Path to the Titanium SDK.
+
+* TITANIUM\_BASE\_SDK: Path to the Titanium SDK iOS header files. Do not modify.
+
+* TITANIUM\_BASE\_SDK2: Path to the Titanium SDK iOS TiCore header files. Do not modify.
+
+* TITANIUM\_BASE\_SDK3: Path to the Titanium SDK iOS JavaScriptCore header files. Do not modify.
+
+* HEADER\_SEARCH\_PATHS: Path to the Titanium SDK header files. Do not modify.
+
 
 Normally, you do not need to edit this file once it is created. If you delete the Titanium SDK referenced by the file, you need to update the TITANIUM\_SDK\_VERSION and TITANIUM\_SDK variables to use another Titanium SDK to build the module.
 
@@ -254,96 +254,96 @@ After the build completes, you should have a ZIP file in the iphone directory an
 
 With the ZIP file, you can either:
 
-*   Uncompress it in the Titanium SDK home path to install the module globally for all your Titanium applications
-    
-*   Uncompress it in a Titanium project's parent directory to install the module locally for that one Titanium application
-    
-*   Distribute the ZIP file
-    
+* Uncompress it in the Titanium SDK home path to install the module globally for all your Titanium applications
+
+* Uncompress it in a Titanium project's parent directory to install the module locally for that one Titanium application
+
+* Distribute the ZIP file
+
 
 ## Studio tasks
 
 ### Create a new module project
 
-1.  From the menu, select **File** > **New** > **Mobile Module Project** to open the **New Mobile Module Project** dialog.
-    
-2.  In the **Project name** field, enter a name for the module.
-    
-3.  In the **Module Id** field, enter a module ID for the module.
-    
-4.  In **Deployment Targets**, select **iOS**.
-    
-5.  Click **Next.**
-    
-6.  In the **Module Manifest File** page, enter information about your module, such as the license information, version number, etc. You can also edit this information in the manifest file later.
-    
-7.  Click **Finish**.
-    
+1. From the menu, select **File** > **New** > **Mobile Module Project** to open the **New Mobile Module Project** dialog.
+
+2. In the **Project name** field, enter a name for the module.
+
+3. In the **Module Id** field, enter a module ID for the module.
+
+4. In **Deployment Targets**, select **iOS**.
+
+5. Click **Next.**
+
+6. In the **Module Manifest File** page, enter information about your module, such as the license information, version number, etc. You can also edit this information in the manifest file later.
+
+7. Click **Finish**.
+
 
 ### Build and package the module
 
-1.  Select your module folder in the **Project Explorer** view.
-    
-2.  Verify **Package** and **iOS Module** are displayed in **Launch Mode** and **Launch Target**, respectively.
-    
-3.  Click the Package icon to open the **Package iOS Module** dialog.
-    
-4.  In **Output Location**, select either
-    
-    1.  **Titanium SDK** to install the module in the Titanium SDK home path to be accessed by any Titanium application
-        
-    2.  **Mobile App Project** and choose an application to install the module locally that can be accessed by one that Titanium application
-        
-    3.  **Location** and enter a path to copy the ZIP file to for distribution
-        
-5.  Click **Finish**.
-    
+1. Select your module folder in the **Project Explorer** view.
+
+2. Verify **Package** and **iOS Module** are displayed in **Launch Mode** and **Launch Target**, respectively.
+
+3. Click the Package icon to open the **Package iOS Module** dialog.
+
+4. In **Output Location**, select either
+
+  1. **Titanium SDK** to install the module in the Titanium SDK home path to be accessed by any Titanium application
+
+  2. **Mobile App Project** and choose an application to install the module locally that can be accessed by one that Titanium application
+
+  3. **Location** and enter a path to copy the ZIP file to for distribution
+
+5. Click **Finish**.
+
 
 ## Test the module
 
 To test a module:
 
-1.  Create a new Titanium Classic or Alloy project.
-    
-2.  Install the module to either the Titanium SDK home directory or in the project.
-    
-3.  Add the module as a dependency to the project.
-    
-4.  Load the module and make module API calls.
-    
+1. Create a new Titanium Classic or Alloy project.
+
+2. Install the module to either the Titanium SDK home directory or in the project.
+
+3. Add the module as a dependency to the project.
+
+4. Load the module and make module API calls.
+
 
 ### Link the test application and the module projects
 
 To make it easier to debug your module, you can link the module to the test application. Then you can run the test application, which will rebuild the module project. You need to build the test application and module project at least once before proceeding.
 
-1.  Close the module project if it is open in Xcode.
-    
-2.  Open the test application's Xcode project (PROJECT\_NAME/build/iphone/PROJECT\_NAME.xcodeproj).
-    
-3.  Expand the **Frameworks** folder, right-click the module library (lib<MODULE\_ID>.a) and select **Delete.**
-    
-4.  Click **Remove Reference**.
-    
-5.  Right-click the project name and select **Add Files to <PROJECT\_NAME>...**
-    
-6.  In the dialog:
-    
-    1.  Locate your module's Xcode project and select it.
-        
-    2.  Uncheck **Copy item if needed** if it is checked.
-        
-    3.  Select all targets under **Add to targets**.
-        
-    4.  Click **Add**.
-        
-7.  In the project's **Build Phases**:
-    
-    1.  Under **Target Dependencies**, click the **Add** button, then select the module and click **Add.**
-        
-    2.  Under **Link Binaries with Libraries**, click the **Add** button, then select the module library (lib<MODULE\_ID>.a) and click **Add**.
-        
-8.  From the menu bar, select **Product** > **Clean**.
-    
+1. Close the module project if it is open in Xcode.
+
+2. Open the test application's Xcode project (PROJECT\_NAME/build/iphone/PROJECT\_NAME.xcodeproj).
+
+3. Expand the **Frameworks** folder, right-click the module library (lib<MODULE\_ID>.a) and select **Delete.**
+
+4. Click **Remove Reference**.
+
+5. Right-click the project name and select **Add Files to <PROJECT\_NAME>...**
+
+6. In the dialog:
+
+  1. Locate your module's Xcode project and select it.
+
+  2. Uncheck **Copy item if needed** if it is checked.
+
+  3. Select all targets under **Add to targets**.
+
+  4. Click **Add**.
+
+7. In the project's **Build Phases**:
+
+  1. Under **Target Dependencies**, click the **Add** button, then select the module and click **Add.**
+
+  2. Under **Link Binaries with Libraries**, click the **Add** button, then select the module library (lib<MODULE\_ID>.a) and click **Add**.
+
+8. From the menu bar, select **Product** > **Clean**.
+
 
 After you are done, the module Xcode project should be under the test application Xcode project. Expand the module Xcode project. You can edit and work on your module project, then build the test application project to test the module.
 
@@ -355,36 +355,36 @@ Since release 6.2.0, Titanium supports both static and dynamic framworks. Framew
 
 To use a third-party framework in your module, add the framework to the module's platform directory, so it can be copied over during the module's build process and linked when building the application. Add and setup the framework in Xcode then code and build your project to verify the project compiles correctly. If you are targeting Titanium 6.2.0 and above, these setup steps is all you have to complete as the frameworks will be integrated automatically. In older versions, you need to take additional steps to modify the module's module.xcconfig file to include the path to the framework when it is installed in a local project or globally in the Titanium SDK home directory, and modify the linker flags to include the framework when building the application.
 
-1.  **Copy the framework** to the module project's ios/platform directory.
-    
-2.  Open the module project in **Xcode** and open ios/<PROJECT\_NAME>.xcodeproj.
-    
-3.  **Add the framework** to the project: Right-click the project name and select **Add File to <PROJECT\_NAME>...**
-    
-4.  Follow any additional directions to incorporate the framework, such as adding additional linker flags.
-    
-5.  Verify that the framework is included in the project. In **Build Phases**, check that static frameworks are listed in the **Link Binary With Libraries** section. Dynamic frameworks need to be added to the **Embedded Binaries** section, which will also generate the entry in the **Link Binary With Libraries** section.
-    
-6.  In your **header and source files**, add the framework's header files and add the third-party APIs.
-    
-7.  Optional: this step is only required if your module needs to be compatible with in Titanium 6.2.0 and earlier: Open the module project's ios/module.xcconfig file and set the:
-    
-    1.  FRAMEWORK\_SEARCH\_PATHS variable to the path(s) to the module's platform directory once it is installed. The example below specifies the local install location and global install locations.
-        
-    2.  OTHER\_LDFLAGS variable to the \-framework <FRAMEWORK\_NAME> for each framework you are adding. Add the $(inherited) variable to the beginning to not overwrite the variable for the application build command.
-        
-        `FRAMEWORK_SEARCH_PATHS=$(SRCROOT)/../..``/modules/iphone/``<MODULE_ID>/<MODULE_VERSION>``/platform`
-        
-        `/Library/Application``\ Support``/Titanium/modules/iphone/``<MODULE_ID>/<MODULE_VERSION>``/platform`
-        
-        `~``/Library/Application``\ Support``/Titanium/modules/iphone/``<MODULE_ID>/<MODULE_VERSION>``/platform`
-        
-        `OTHER_LDFLAGS=$(inherited) -framework <FRAMEWORK_NAME>`
-        
-8.  **Set any other build settings** the framework might require via the module's ios/module.xconfig to make sure they get applied when building the application.
-    
-9.  **Build your project** in Xcode to verify it will compile and link correctly.
-    
+1. **Copy the framework** to the module project's ios/platform directory.
+
+2. Open the module project in **Xcode** and open ios/<PROJECT\_NAME>.xcodeproj.
+
+3. **Add the framework** to the project: Right-click the project name and select **Add File to <PROJECT\_NAME>...**
+
+4. Follow any additional directions to incorporate the framework, such as adding additional linker flags.
+
+5. Verify that the framework is included in the project. In **Build Phases**, check that static frameworks are listed in the **Link Binary With Libraries** section. Dynamic frameworks need to be added to the **Embedded Binaries** section, which will also generate the entry in the **Link Binary With Libraries** section.
+
+6. In your **header and source files**, add the framework's header files and add the third-party APIs.
+
+7. Optional: this step is only required if your module needs to be compatible with in Titanium 6.2.0 and earlier: Open the module project's ios/module.xcconfig file and set the:
+
+  1. FRAMEWORK\_SEARCH\_PATHS variable to the path(s) to the module's platform directory once it is installed. The example below specifies the local install location and global install locations.
+
+  2. OTHER\_LDFLAGS variable to the \-framework <FRAMEWORK\_NAME> for each framework you are adding. Add the $(inherited) variable to the beginning to not overwrite the variable for the application build command.
+
+    `FRAMEWORK_SEARCH_PATHS=$(SRCROOT)/../..``/modules/iphone/``<MODULE_ID>/<MODULE_VERSION>``/platform`
+
+    `/Library/Application``\ Support``/Titanium/modules/iphone/``<MODULE_ID>/<MODULE_VERSION>``/platform`
+
+    `~``/Library/Application``\ Support``/Titanium/modules/iphone/``<MODULE_ID>/<MODULE_VERSION>``/platform`
+
+    `OTHER_LDFLAGS=$(inherited) -framework <FRAMEWORK_NAME>`
+
+8. **Set any other build settings** the framework might require via the module's ios/module.xconfig to make sure they get applied when building the application.
+
+9. **Build your project** in Xcode to verify it will compile and link correctly.
+
 
 Stripping unused architectures from dynamic frameworks
 
@@ -404,16 +404,16 @@ To distribute module assets with your module distribution, you must place them i
 
 The Titanium SDK uses clang-format to have a unified code-style in its source-code (clang-format for iOS and Android, ESLint for the CLI). You can do the same by following the following few steps:
 
-1.  Copy the .clang-format file from [here](https://github.com/appcelerator/titanium_mobile/blob/master/iphone/.clang-format) to the "ios/" directory of your module project, e.g. <module-root>/ios/.clang-format
-    
-2.  Install the [clang-format CLI](https://clang.llvm.org/docs/ClangFormat.html): npm install -g clang-format
-    
-3.  Optional: Ensure that you have your module project in Git to be able to restore the old files in case you do not like the predefined format
-    
-4.  Format your source with: clang-format -style=file -i Classes/\*
-    
-5.  Thats it! All native files have been formatted.
-    
+1. Copy the .clang-format file from [here](https://github.com/appcelerator/titanium_mobile/blob/master/iphone/.clang-format) to the "ios/" directory of your module project, e.g. <module-root>/ios/.clang-format
+
+2. Install the [clang-format CLI](https://clang.llvm.org/docs/ClangFormat.html): npm install -g clang-format
+
+3. Optional: Ensure that you have your module project in Git to be able to restore the old files in case you do not like the predefined format
+
+4. Format your source with: clang-format -style=file -i Classes/\*
+
+5. Thats it! All native files have been formatted.
+
 
 Now that you have a format, you can also extend your .clang-format with more formatting rules or adjust existing ones to match your own code style.
 
@@ -421,19 +421,19 @@ Now that you have a format, you can also extend your .clang-format with more for
 
 To distribute your module through the Titanium+Plus Marketplace, you'll first need to package normally. Once you have tested your module locally and are ready to distribute it, you can then submit it to the marketplace for distribution. There are several prerequisites you'll need before you can distribute:
 
-*   You must have a valid Titanium developer account.
-    
-*   You must have fully completed filling your manifest values.
-    
-*   You must have a valid license text in the LICENSE file in your project.
-    
-*   You must have a valid documentation file in the index.md file in your documentation directory of your project.
-    
-*   You must specify some additional metadata upon upload such as the price (which can be free).
-    
-*   If you are charging for your module, you must establish a payment setup with Appcelerator so we can pay you.
-    
-*   You must accept the Titanium+Plus Marketplace terms of service agreement.
-    
+* You must have a valid Titanium developer account.
+
+* You must have fully completed filling your manifest values.
+
+* You must have a valid license text in the LICENSE file in your project.
+
+* You must have a valid documentation file in the index.md file in your documentation directory of your project.
+
+* You must specify some additional metadata upon upload such as the price (which can be free).
+
+* If you are charging for your module, you must establish a payment setup with Appcelerator so we can pay you.
+
+* You must accept the Titanium+Plus Marketplace terms of service agreement.
+
 
 Once you have upload your module and completed the necessary submission steps, your module will be queued for submission and availability in the marketplace directory.

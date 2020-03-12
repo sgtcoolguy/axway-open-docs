@@ -1,4 +1,4 @@
-{"title":"Requiring Child Elements","weight":"160"} 
+{"title":"Requiring Child Elements","weight":"160"}
 
 Demonstrates how to use the <Require/> and <Widget/> elements to include external views and widgets. Also shows how to programmatically add child views declared inside a <Require/> or <Widget/> element to the parent.
 
@@ -156,4 +156,4 @@ The child views are are added programmatically to the main (empty) View. In this
 
 ## See also
 
-*   [Alloy Widgets](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Widgets/)
+* [Alloy Widgets](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Widgets/)

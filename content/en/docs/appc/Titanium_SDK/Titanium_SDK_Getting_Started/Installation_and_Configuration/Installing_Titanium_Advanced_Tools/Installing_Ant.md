@@ -1,19 +1,15 @@
-{"title":"Installing Ant","weight":"70"} 
+{"title":"Installing Ant","weight":"70"}
 
-*   [Compatibility and download](#Compatibilityanddownload)
-    
-*   [Installation](#Installation)
-    
+* [Compatibility and download](#Compatibilityanddownload)
+
+* [Installation](#Installation)
+
 
 ## Compatibility and download
 
-Apache Ant is the standard build tool for Java. It can be used to build Titanium native Android modules and to build the Titanium SDK for Android. It is not required to build Titanium applications for Android.
+Titanium 9.0.0 and newer versions no longer use Apache Ant. The below only applies to older SDK versions.
 
-You can also use Eclipse and ADT to build native Android code, as described in [Installing Eclipse and ADT](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Eclipse_and_ADT/). If you are using Eclipse and ADT, Ant is optional, but you may want to install both (for example, to use Ant for command-line builds and Eclipse and ADT for debugging).
-
-ADT has been discontinued and we don't recommend using it.
-
-Ant is not required for building, running, or distributing applications using the Titanium SDK.
+Apache Ant is the standard build tool for Java. It can be used to build Titanium native Android modules and to build the Titanium SDK for Android. Ant is not required for building, running, or distributing applications using the Titanium SDK.
 
 Java is a prerequisite for Ant, and should be installed first. See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for instructions.
 

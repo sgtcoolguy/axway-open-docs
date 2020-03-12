@@ -1,31 +1,31 @@
-{"title":"Titanium SDK 8.2.0.RC - 6 September 2019","weight":"90"} 
+{"title":"Titanium SDK 8.2.0.RC - 6 September 2019","weight":"90"}
 
-*   [About this release](#Aboutthisrelease)
-    
-*   [Notice of feature and behavior Changes](#NoticeoffeatureandbehaviorChanges)
-    
-*   [New features](#Newfeatures)
-    
-*   [Community credits](#Communitycredits)
-    
-*   [Fixed issues](#Fixedissues)
-    
-*   [Improvements](#Improvements)
-    
-*   [Known issues](#Knownissues)
-    
-*   [API changes](#APIchanges)
-    
-    *   [New APIs](#NewAPIs)
-        
-*   [SDK modules versions](#SDKmodulesversions)
-    
-    *   [Android and iOS](#AndroidandiOS)
-        
-    *   [CommonJS](#CommonJS)
-        
-    *   [Hyperloop](#Hyperloop)
-        
+* [About this release](#Aboutthisrelease)
+
+* [Notice of feature and behavior Changes](#NoticeoffeatureandbehaviorChanges)
+
+* [New features](#Newfeatures)
+
+* [Community credits](#Communitycredits)
+
+* [Fixed issues](#Fixedissues)
+
+* [Improvements](#Improvements)
+
+* [Known issues](#Knownissues)
+
+* [API changes](#APIchanges)
+
+  * [New APIs](#NewAPIs)
+
+* [SDK modules versions](#SDKmodulesversions)
+
+  * [Android and iOS](#AndroidandiOS)
+
+  * [CommonJS](#CommonJS)
+
+  * [Hyperloop](#Hyperloop)
+
 
 ## About this release
 
@@ -37,432 +37,432 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 ## Notice of feature and behavior Changes
 
-*   [TIMOB-27126](https://jira.appcelerator.org/browse/TIMOB-27126) - iOS 13: Support dark mode
-    
-    *   Added TiColor support for all color-setters
-        
-    
-    *   In iOS 13, Apple introduced support for users to adopt a system-wide Dark Mode setting where the screens, view, menus, and controls use a darker color palette. You can read more about this in the [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/). There are two aspects to dark mode that can be specified for your app: colors and images. To specify colors for dark mode, also known as semantic colors, first create a file called semantic.colors.json in the Resources directory for classic applications, or in the assets directory for Alloy applications. Then you can specify color names in the following format:
-        
-        `{`
-        
-        `"textColor"``: {` `// the name for your color`
-        
-        `"dark"``: {`
-        
-        `"color"``:` `"#ff85e2"``,` `// hex color code to be set`
-        
-        `"alpha"``:` `"50.0"`  `// can be set from a range of 0-100`
-        
-        `},`
-        
-        `"light"``:` `"#ff1f1f"`
-        
-        `}`
-        
-        `}`
-        
-    *   To reference these colors in your application use the [Titanium.UI.fetchSemanticColor](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI-method-fetchSemanticColor) API method, this is a cross platform API that on iOS 13 and above will use the native method that checks the users system-wide setting, and in all other instances will check the [Titanium.UI.semanticColorType](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI-property-semanticColorType) property and return the correct color for the current setting.
-        
-    *   Note: Dark Mode images are iOS only.
-        
-    *   To specify dark mode images, use the \-dark suffix on the image name. When building your app the images are set as the dark mode variant, then refer to images as normal and iOS will select the correct image dependent on the users system-wide setting.
-        
-    
-    *   For example given an image logo.png with @2x and @3x variants, the following dark mode images should exist:
-        
-    
-    *   *   logo-dark.png
-            
-        *   [logo-dark@2x.png](mailto:logo-dark@2x.png)
-            
-    
-    *   *   [logo-dark@3x.png](mailto:logo-dark@3x.png)
-            
-    
-    *   And you would reference the image as before using logo-dark.png
-        
+* [TIMOB-27126](https://jira.appcelerator.org/browse/TIMOB-27126) - iOS 13: Support dark mode
+
+  * Added TiColor support for all color-setters
+
+
+  * In iOS 13, Apple introduced support for users to adopt a system-wide Dark Mode setting where the screens, view, menus, and controls use a darker color palette. You can read more about this in the [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/). There are two aspects to dark mode that can be specified for your app: colors and images. To specify colors for dark mode, also known as semantic colors, first create a file called semantic.colors.json in the Resources directory for classic applications, or in the assets directory for Alloy applications. Then you can specify color names in the following format:
+
+    `{`
+
+    `"textColor"``: {` `// the name for your color`
+
+    `"dark"``: {`
+
+    `"color"``:` `"#ff85e2"``,` `// hex color code to be set`
+
+    `"alpha"``:` `"50.0"`  `// can be set from a range of 0-100`
+
+    `},`
+
+    `"light"``:` `"#ff1f1f"`
+
+    `}`
+
+    `}`
+
+  * To reference these colors in your application use the [Titanium.UI.fetchSemanticColor](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI-method-fetchSemanticColor) API method, this is a cross platform API that on iOS 13 and above will use the native method that checks the users system-wide setting, and in all other instances will check the [Titanium.UI.semanticColorType](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI-property-semanticColorType) property and return the correct color for the current setting.
+
+  * Note: Dark Mode images are iOS only.
+
+  * To specify dark mode images, use the \-dark suffix on the image name. When building your app the images are set as the dark mode variant, then refer to images as normal and iOS will select the correct image dependent on the users system-wide setting.
+
+
+  * For example given an image logo.png with @2x and @3x variants, the following dark mode images should exist:
+
+
+  * * logo-dark.png
+
+    * [logo-dark@2x.png](mailto:logo-dark@2x.png)
+
+
+  * * [logo-dark@3x.png](mailto:logo-dark@3x.png)
+
+
+  * And you would reference the image as before using logo-dark.png
+
 
 ## New features
 
-*   [TIMOB-26566](https://jira.appcelerator.org/browse/TIMOB-26566) - iOS: Add ability to remove previously added motion effects
-    
-    *   Added clearMotionEffects() method
-        
-*   [TIMOB-27127](https://jira.appcelerator.org/browse/TIMOB-27127) - iOS 13 : Expose new APIs to support Apple login
-    
-    *   Added [ti.applesignin 1.1.0](https://docs.appcelerator.com/platform/latest/#!/api/Modules.Applesignin) module
-        
-*   [TIMOB-27133](https://jira.appcelerator.org/browse/TIMOB-27133) - iOS 13: Add support for SF Symbols
-    
-    *   Added support for [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/)
-        
-    *   `var` `win = Ti.UI.createWindow({`
-        
-        `backgroundColor:` `'#fff'`
-        
-        `});`
-        
-        `var` `triangle = Ti.UI.iOS.systemImage(``'drop.triangle.fill'``);`
-        
-        `var` `forward = Ti.UI.iOS.systemImage(``'forward'``);`
-        
-        `var` `backward = Ti.UI.iOS.systemImage(``'backward'``);`
-        
-        `var` `folder = Ti.UI.iOS.systemImage(``'folder.fill'``);`
-        
-        `var` `imageView = Ti.UI.createImageView({`
-        
-        `width:` `'150'``,`
-        
-        `height:` `'150'``,`
-        
-        `image: triangle,`
-        
-        `tintColor:` `'red'`
-        
-        `});`
-        
-        `var` `button = Ti.UI.createButton({`
-        
-        `top: 60,`
-        
-        `width: 100,`
-        
-        `height: 50,`
-        
-        `//backgroundImage: folder`
-        
-        `image: folder`
-        
-        `})`
-        
-        `var` `stepper = Ti.UI.iOS.createStepper({`
-        
-        `top: 150,`
-        
-        `incrementImage: forward,`
-        
-        `decrementImage: backward`
-        
-        `});`
-        
-        `win.add(button);`
-        
-        `win.add(stepper);`
-        
-        `win.add(imageView);`
-        
-        `win.open();`
-        
-*   [TIMOB-27142](https://jira.appcelerator.org/browse/TIMOB-27142) - iOS 13 : Multiple row selection in ListView
-    
-    *   Added multiple row selection support in ListView and TableView
-        
-    *   Ti.UI.ListView
-        
-        `var` `win = Ti.UI.createWindow({`
-        
-        `backgroundColor:` `'#fff'`
-        
-        `});`
-        
-        `var` `nav = Ti.UI.createNavigationWindow({`
-        
-        `window: win,`
-        
-        `});`
-        
-        `var` `items = [];`
-        
-        `for` `(``var` `i = 0; i < 20; i++) {`
-        
-        `items.push({`
-        
-        `properties: {`
-        
-        `title:` `'Item '` `+ i,`
-        
-        `canEdit:` `true``,`
-        
-        `}`
-        
-        `});`
-        
-        `}`
-        
-        `var` `list = Ti.UI.createListView({`
-        
-        `allowsMultipleSelectionDuringEditing:` `true``,`
-        
-        `allowsMultipleSelectionInteraction:` `true``,`
-        
-        `sections: [Ti.UI.createListSection({`
-        
-        `items: items`
-        
-        `})]`
-        
-        `})`
-        
-        `list.addEventListener(``'itemclick'``,` `function``(e) {`
-        
-        `Ti.API.info(``'click at index: '` `+ e.itemIndex);`
-        
-        `})`
-        
-        `list.addEventListener(``"delete"``,` `function``(e){`
-        
-        `Ti.API.info(``"Deleted Row Index is is: "` `+e.itemIndex);`
-        
-        `Ti.API.info(``"Deleted Section Index is is: "` `+e.sectionIndex);`
-        
-        `});`
-        
-        `list.addEventListener(``"itemsselected"``,` `function``(e){`
-        
-        `Ti.API.info(``"Selected Item count is: "` `+e.selectedItems.length);`
-        
-        `var` `dialog = Ti.UI.createAlertDialog({`
-        
-        `buttonNames: [``'Change Color'``,` `'Cancel'``],`
-        
-        `message:` `'Would you like to change title color of selected rows?'``,`
-        
-        `});`
-        
-        `dialog.addEventListener(``'click'``,` `function``(f) {`
-        
-        `if` `(f.index === 1) {`
-        
-        `list.editing =` `false``;`
-        
-        `}` `else` `{`
-        
-        `for` `(``var` `i = 0; i < e.selectedItems.length; i++) {`
-        
-        `var` `rowObject = e.selectedItems[i];`
-        
-        `var` `item = rowObject.section.getItemAt(rowObject.itemIndex)`
-        
-        `item.properties.color =` `'green'``;`
-        
-        `rowObject.section.updateItemAt(rowObject.itemIndex, item);`
-        
-        `}`
-        
-        `list.editing =` `false``;`
-        
-        `}`
-        
-        `});`
-        
-        `dialog.show();`
-        
-        `});`
-        
-        `win.add(list);`
-        
-        `nav.open();`
-        
+* [TIMOB-26566](https://jira.appcelerator.org/browse/TIMOB-26566) - iOS: Add ability to remove previously added motion effects
+
+  * Added clearMotionEffects() method
+
+* [TIMOB-27127](https://jira.appcelerator.org/browse/TIMOB-27127) - iOS 13 : Expose new APIs to support Apple login
+
+  * Added [ti.applesignin 1.1.0](https://docs.appcelerator.com/platform/latest/#!/api/Modules.Applesignin) module
+
+* [TIMOB-27133](https://jira.appcelerator.org/browse/TIMOB-27133) - iOS 13: Add support for SF Symbols
+
+  * Added support for [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/)
+
+  * `var` `win = Ti.UI.createWindow({`
+
+    `backgroundColor:` `'#fff'`
+
+    `});`
+
+    `var` `triangle = Ti.UI.iOS.systemImage(``'drop.triangle.fill'``);`
+
+    `var` `forward = Ti.UI.iOS.systemImage(``'forward'``);`
+
+    `var` `backward = Ti.UI.iOS.systemImage(``'backward'``);`
+
+    `var` `folder = Ti.UI.iOS.systemImage(``'folder.fill'``);`
+
+    `var` `imageView = Ti.UI.createImageView({`
+
+    `width:` `'150'``,`
+
+    `height:` `'150'``,`
+
+    `image: triangle,`
+
+    `tintColor:` `'red'`
+
+    `});`
+
+    `var` `button = Ti.UI.createButton({`
+
+    `top: 60,`
+
+    `width: 100,`
+
+    `height: 50,`
+
+    `//backgroundImage: folder`
+
+    `image: folder`
+
+    `})`
+
+    `var` `stepper = Ti.UI.iOS.createStepper({`
+
+    `top: 150,`
+
+    `incrementImage: forward,`
+
+    `decrementImage: backward`
+
+    `});`
+
+    `win.add(button);`
+
+    `win.add(stepper);`
+
+    `win.add(imageView);`
+
+    `win.open();`
+
+* [TIMOB-27142](https://jira.appcelerator.org/browse/TIMOB-27142) - iOS 13 : Multiple row selection in ListView
+
+  * Added multiple row selection support in ListView and TableView
+
+  * Ti.UI.ListView
+
+    `var` `win = Ti.UI.createWindow({`
+
+    `backgroundColor:` `'#fff'`
+
+    `});`
+
+    `var` `nav = Ti.UI.createNavigationWindow({`
+
+    `window: win,`
+
+    `});`
+
+    `var` `items = [];`
+
+    `for` `(``var` `i = 0; i < 20; i++) {`
+
+    `items.push({`
+
+    `properties: {`
+
+    `title:` `'Item '` `+ i,`
+
+    `canEdit:` `true``,`
+
+    `}`
+
+    `});`
+
+    `}`
+
+    `var` `list = Ti.UI.createListView({`
+
+    `allowsMultipleSelectionDuringEditing:` `true``,`
+
+    `allowsMultipleSelectionInteraction:` `true``,`
+
+    `sections: [Ti.UI.createListSection({`
+
+    `items: items`
+
+    `})]`
+
+    `})`
+
+    `list.addEventListener(``'itemclick'``,` `function``(e) {`
+
+    `Ti.API.info(``'click at index: '` `+ e.itemIndex);`
+
+    `})`
+
+    `list.addEventListener(``"delete"``,` `function``(e){`
+
+    `Ti.API.info(``"Deleted Row Index is is: "` `+e.itemIndex);`
+
+    `Ti.API.info(``"Deleted Section Index is is: "` `+e.sectionIndex);`
+
+    `});`
+
+    `list.addEventListener(``"itemsselected"``,` `function``(e){`
+
+    `Ti.API.info(``"Selected Item count is: "` `+e.selectedItems.length);`
+
+    `var` `dialog = Ti.UI.createAlertDialog({`
+
+    `buttonNames: [``'Change Color'``,` `'Cancel'``],`
+
+    `message:` `'Would you like to change title color of selected rows?'``,`
+
+    `});`
+
+    `dialog.addEventListener(``'click'``,` `function``(f) {`
+
+    `if` `(f.index === 1) {`
+
+    `list.editing =` `false``;`
+
+    `}` `else` `{`
+
+    `for` `(``var` `i = 0; i < e.selectedItems.length; i++) {`
+
+    `var` `rowObject = e.selectedItems[i];`
+
+    `var` `item = rowObject.section.getItemAt(rowObject.itemIndex)`
+
+    `item.properties.color =` `'green'``;`
+
+    `rowObject.section.updateItemAt(rowObject.itemIndex, item);`
+
+    `}`
+
+    `list.editing =` `false``;`
+
+    `}`
+
+    `});`
+
+    `dialog.show();`
+
+    `});`
+
+    `win.add(list);`
+
+    `nav.open();`
+
 
 ## Community credits
 
-*   VDLP - [TIMOB-27207](https://jira.appcelerator.org/browse/TIMOB-27207)
-    
-*   Christy Thomas - [TIMOB-24171](https://jira.appcelerator.org/browse/TIMOB-24171)
-    
-*   Fabian Martinez - [TIMOB-27205](https://jira.appcelerator.org/browse/TIMOB-27205)
-    
-*   Sergey Volkov - [TIMOB-27234](https://jira.appcelerator.org/browse/TIMOB-27234)
-    
-*   Hans Knöchel - [TIMOB-27263](https://jira.appcelerator.org/browse/TIMOB-27263), [TIMOB-27367](https://jira.appcelerator.org/browse/TIMOB-27367), [TIMOB-27169](https://jira.appcelerator.org/browse/TIMOB-27169), [TIMOB-27171](https://jira.appcelerator.org/browse/TIMOB-27171), [TIMOB-27209](https://jira.appcelerator.org/browse/TIMOB-27209)
-    
+* VDLP - [TIMOB-27207](https://jira.appcelerator.org/browse/TIMOB-27207)
+
+* Christy Thomas - [TIMOB-24171](https://jira.appcelerator.org/browse/TIMOB-24171)
+
+* Fabian Martinez - [TIMOB-27205](https://jira.appcelerator.org/browse/TIMOB-27205)
+
+* Sergey Volkov - [TIMOB-27234](https://jira.appcelerator.org/browse/TIMOB-27234)
+
+* Hans Knöchel - [TIMOB-27263](https://jira.appcelerator.org/browse/TIMOB-27263), [TIMOB-27367](https://jira.appcelerator.org/browse/TIMOB-27367), [TIMOB-27169](https://jira.appcelerator.org/browse/TIMOB-27169), [TIMOB-27171](https://jira.appcelerator.org/browse/TIMOB-27171), [TIMOB-27209](https://jira.appcelerator.org/browse/TIMOB-27209)
+
 
 ## Fixed issues
 
-*   [TIMOB-24171](https://jira.appcelerator.org/browse/TIMOB-24171) - iOS: AccessibilityLabel or AccessibilityValue does not work.
-    
-*   [TIMOB-27195](https://jira.appcelerator.org/browse/TIMOB-27195) - iOS: Using a commonjs module in an itemtemplate fails in a classic app
-    
-*   [TIMOB-27205](https://jira.appcelerator.org/browse/TIMOB-27205) - Webview http redirects not working as on 7.5.1
-    
-*   [TIMOB-27234](https://jira.appcelerator.org/browse/TIMOB-27234) - iOS: VideoPlayer natural size
-    
-*   [TIMOB-27263](https://jira.appcelerator.org/browse/TIMOB-27263) - iOS 13: Modal windows with large titles do not honor barColor
-    
-*   [TIMOB-27292](https://jira.appcelerator.org/browse/TIMOB-27292) - iOS: App crashes on startup on iOS 9
-    
-*   [TIMOB-27351](https://jira.appcelerator.org/browse/TIMOB-27351) - iOS: Unit tests failing on Xcode 11 / iOS 13
-    
-*   [TIMOB-27360](https://jira.appcelerator.org/browse/TIMOB-27360) - Watch app does not get installed on the watch with watch OS 6.0 & IOS 13  
-    
-*   [TIMOB-27367](https://jira.appcelerator.org/browse/TIMOB-27367) - iOS: Apps can be rejected when including UIWebView refs
-    
+* [TIMOB-24171](https://jira.appcelerator.org/browse/TIMOB-24171) - iOS: AccessibilityLabel or AccessibilityValue does not work.
+
+* [TIMOB-27195](https://jira.appcelerator.org/browse/TIMOB-27195) - iOS: Using a commonjs module in an itemtemplate fails in a classic app
+
+* [TIMOB-27205](https://jira.appcelerator.org/browse/TIMOB-27205) - Webview http redirects not working as on 7.5.1
+
+* [TIMOB-27234](https://jira.appcelerator.org/browse/TIMOB-27234) - iOS: VideoPlayer natural size
+
+* [TIMOB-27263](https://jira.appcelerator.org/browse/TIMOB-27263) - iOS 13: Modal windows with large titles do not honor barColor
+
+* [TIMOB-27292](https://jira.appcelerator.org/browse/TIMOB-27292) - iOS: App crashes on startup on iOS 9
+
+* [TIMOB-27351](https://jira.appcelerator.org/browse/TIMOB-27351) - iOS: Unit tests failing on Xcode 11 / iOS 13
+
+* [TIMOB-27360](https://jira.appcelerator.org/browse/TIMOB-27360) - Watch app does not get installed on the watch with watch OS 6.0 & IOS 13
+
+* [TIMOB-27367](https://jira.appcelerator.org/browse/TIMOB-27367) - iOS: Apps can be rejected when including UIWebView refs
+
 
 ## Improvements
 
-*   [TIMOB-26573](https://jira.appcelerator.org/browse/TIMOB-26573) - TiAPI: Make Ti.Buffer Node-compatible with Node's Buffer type
-    
-    *   Added Node.js compatible Buffer module
-        
-*   [TIMOB-27125](https://jira.appcelerator.org/browse/TIMOB-27125) - iOS 13: Make iOS development-project compatible with Xcode 11
-    
-    *   Added support for Xcode 11 and iOS 13 development environment
-        
-*   [TIMOB-27163](https://jira.appcelerator.org/browse/TIMOB-27163) - iOS: Update Xcode project template settings and resolve warnings
-    
-    *   Resolved project warnings for missing method selectors, nullability flags, and strict prototypes
-        
-*   [TIMOB-27169](https://jira.appcelerator.org/browse/TIMOB-27169) - iOS 13: Prevent modal windows from being swiped down
-    
-    *   Added support to prevent modal windows from being swiped down
-        
-    *   `var` `window1 = Ti.UI.createWindow({`
-        
-        `title:` `"Modal Window"``,`
-        
-        `backgroundColor:` `'white'`
-        
-        `});`
-        
-        `var` `win = Ti.UI.createNavigationWindow({ window: window1 });`
-        
-        `var` `button1 = Ti.UI.createButton({ title:` `'Open Window'` `});`
-        
-        `window1.add(button1);`
-        
-        `win.open();`
-        
-        `var` `window2 = Ti.UI.createWindow({ backgroundColor:` `'blue'` `});`
-        
-        `var` `button2 = Ti.UI.createButton({ title:` `'Close Window'` `});`
-        
-        `window2.add(button2);`
-        
-        `button1.addEventListener(``'click'``,` `function``(e){`
-        
-        `window2.open({`
-        
-        `modal:``true``,`
-        
-        `forceModal:` `true`
-        
-        `});`
-        
-        `});`
-        
-        `button2.addEventListener(``'click'``,` `function``(e){`
-        
-        `window2.close();`
-        
-        `});`
-        
-*   [TIMOB-27171](https://jira.appcelerator.org/browse/TIMOB-27171) - iOS 13: Support new UITableViewStyleInsetGrouped style in list-view
-    
-    *   Added support for UITableViewStyleInsetGrouped style in ListView
-        
-*   [TIMOB-27209](https://jira.appcelerator.org/browse/TIMOB-27209) - iOS: Be able to determine dark / light mode, as well as changes on it
-    
-    *   Added feature that allows for detection of dark and light mode
-        
-    *   `var` `currentStyle = Ti.App.iOS.userInterfaceStyle;`
-        
-        `console.log(``'Initial style:'` `+ formattedUserInterfaceStyle(currentStyle));`
-        
-        `var` `win = Ti.UI.createWindow({`
-        
-        `backgroundColor:` `'#fff'`
-        
-        `});`
-        
-        `var` `btn = Ti.UI.createButton({`
-        
-        `title:` `'Check User Interface Style'`
-        
-        `});`
-        
-        `btn.addEventListener(``'click'``,` `function``() {`
-        
-        `Ti.API.info(``'User Interface Style: '` `+ formattedUserInterfaceStyle(currentStyle));`
-        
-        `});`
-        
-        `Ti.App.iOS.addEventListener(``'traitcollectionchange'``,` `function` `(event) {`
-        
-        `if` `(currentStyle !== Ti.App.iOS.userInterfaceStyle) {`
-        
-        `currentStyle = Ti.App.iOS.userInterfaceStyle;`
-        
-        `Ti.API.info(``'User Interface Style changed: '` `+ formattedUserInterfaceStyle(currentStyle));`
-        
-        `}`
-        
-        `});`
-        
-        `win.add(btn);`
-        
-        `win.open();`
-        
-        `function` `formattedUserInterfaceStyle(style) {`
-        
-        `switch` `(style) {`
-        
-        `case` `Ti.App.iOS.USER_INTERFACE_STYLE_LIGHT:` `return`  `'Light'``;`
-        
-        `case` `Ti.App.iOS.USER_INTERFACE_STYLE_DARK:` `return`  `'Dark'``;`
-        
-        `}`
-        
-        `return`  `'Unspecified'``;`
-        
-        `}`
-        
-*   [TIMOB-27273](https://jira.appcelerator.org/browse/TIMOB-27273) - iOS 13: Support new type of status bar style UIStatusBarStyleDarkContent
-    
-    *   Added support for UIStatusBarStyleDarkContent
-        
-    *   `var` `win = Ti.UI.createWindow({`
-        
-        `backgroundColor:` `'white'``,`
-        
-        `statusBarStyle: Ti.UI.iOS.StatusBar.DARK_CONTENT`
-        
-        `});`
-        
-        `var` `btn = Ti.UI.createButton({ title:` `'Trigger'` `});`
-        
-        `btn.addEventListener(``'click'``,` `function``() {`
-        
-        `Ti.API.info(``'Hello world!'``);`
-        
-        `Ti.API.info(Ti.UI.iOS.StatusBar.DARK_CONTENT);`
-        
-        `});`
-        
-        `win.add(btn);`
-        
-        `win.open(); `
-        
-*   [TIMOB-27310](https://jira.appcelerator.org/browse/TIMOB-27310) - iOS 13: Support new type of UIBlurEffectStyle constants
-    
-    *   Added support for UIBlurEffectStyle
-        
-*   [TIMOB-27318](https://jira.appcelerator.org/browse/TIMOB-27318) - iOS: Use swift 5 for apple watch template
-    
-    *   Updated Swift to version 5 for Apple watch template
-        
-*   [TIMOB-27358](https://jira.appcelerator.org/browse/TIMOB-27358) - iOS: Support Apple Developer certificates
-    
-    *   Added support for generic Apple certificates
-        
+* [TIMOB-26573](https://jira.appcelerator.org/browse/TIMOB-26573) - TiAPI: Make Ti.Buffer Node-compatible with Node's Buffer type
+
+  * Added Node.js compatible Buffer module
+
+* [TIMOB-27125](https://jira.appcelerator.org/browse/TIMOB-27125) - iOS 13: Make iOS development-project compatible with Xcode 11
+
+  * Added support for Xcode 11 and iOS 13 development environment
+
+* [TIMOB-27163](https://jira.appcelerator.org/browse/TIMOB-27163) - iOS: Update Xcode project template settings and resolve warnings
+
+  * Resolved project warnings for missing method selectors, nullability flags, and strict prototypes
+
+* [TIMOB-27169](https://jira.appcelerator.org/browse/TIMOB-27169) - iOS 13: Prevent modal windows from being swiped down
+
+  * Added support to prevent modal windows from being swiped down
+
+  * `var` `window1 = Ti.UI.createWindow({`
+
+    `title:` `"Modal Window"``,`
+
+    `backgroundColor:` `'white'`
+
+    `});`
+
+    `var` `win = Ti.UI.createNavigationWindow({ window: window1 });`
+
+    `var` `button1 = Ti.UI.createButton({ title:` `'Open Window'` `});`
+
+    `window1.add(button1);`
+
+    `win.open();`
+
+    `var` `window2 = Ti.UI.createWindow({ backgroundColor:` `'blue'` `});`
+
+    `var` `button2 = Ti.UI.createButton({ title:` `'Close Window'` `});`
+
+    `window2.add(button2);`
+
+    `button1.addEventListener(``'click'``,` `function``(e){`
+
+    `window2.open({`
+
+    `modal:``true``,`
+
+    `forceModal:` `true`
+
+    `});`
+
+    `});`
+
+    `button2.addEventListener(``'click'``,` `function``(e){`
+
+    `window2.close();`
+
+    `});`
+
+* [TIMOB-27171](https://jira.appcelerator.org/browse/TIMOB-27171) - iOS 13: Support new UITableViewStyleInsetGrouped style in list-view
+
+  * Added support for UITableViewStyleInsetGrouped style in ListView
+
+* [TIMOB-27209](https://jira.appcelerator.org/browse/TIMOB-27209) - iOS: Be able to determine dark / light mode, as well as changes on it
+
+  * Added feature that allows for detection of dark and light mode
+
+  * `var` `currentStyle = Ti.App.iOS.userInterfaceStyle;`
+
+    `console.log(``'Initial style:'` `+ formattedUserInterfaceStyle(currentStyle));`
+
+    `var` `win = Ti.UI.createWindow({`
+
+    `backgroundColor:` `'#fff'`
+
+    `});`
+
+    `var` `btn = Ti.UI.createButton({`
+
+    `title:` `'Check User Interface Style'`
+
+    `});`
+
+    `btn.addEventListener(``'click'``,` `function``() {`
+
+    `Ti.API.info(``'User Interface Style: '` `+ formattedUserInterfaceStyle(currentStyle));`
+
+    `});`
+
+    `Ti.App.iOS.addEventListener(``'traitcollectionchange'``,` `function` `(event) {`
+
+    `if` `(currentStyle !== Ti.App.iOS.userInterfaceStyle) {`
+
+    `currentStyle = Ti.App.iOS.userInterfaceStyle;`
+
+    `Ti.API.info(``'User Interface Style changed: '` `+ formattedUserInterfaceStyle(currentStyle));`
+
+    `}`
+
+    `});`
+
+    `win.add(btn);`
+
+    `win.open();`
+
+    `function` `formattedUserInterfaceStyle(style) {`
+
+    `switch` `(style) {`
+
+    `case` `Ti.App.iOS.USER_INTERFACE_STYLE_LIGHT:` `return`  `'Light'``;`
+
+    `case` `Ti.App.iOS.USER_INTERFACE_STYLE_DARK:` `return`  `'Dark'``;`
+
+    `}`
+
+    `return`  `'Unspecified'``;`
+
+    `}`
+
+* [TIMOB-27273](https://jira.appcelerator.org/browse/TIMOB-27273) - iOS 13: Support new type of status bar style UIStatusBarStyleDarkContent
+
+  * Added support for UIStatusBarStyleDarkContent
+
+  * `var` `win = Ti.UI.createWindow({`
+
+    `backgroundColor:` `'white'``,`
+
+    `statusBarStyle: Ti.UI.iOS.StatusBar.DARK_CONTENT`
+
+    `});`
+
+    `var` `btn = Ti.UI.createButton({ title:` `'Trigger'` `});`
+
+    `btn.addEventListener(``'click'``,` `function``() {`
+
+    `Ti.API.info(``'Hello world!'``);`
+
+    `Ti.API.info(Ti.UI.iOS.StatusBar.DARK_CONTENT);`
+
+    `});`
+
+    `win.add(btn);`
+
+    `win.open(); `
+
+* [TIMOB-27310](https://jira.appcelerator.org/browse/TIMOB-27310) - iOS 13: Support new type of UIBlurEffectStyle constants
+
+  * Added support for UIBlurEffectStyle
+
+* [TIMOB-27318](https://jira.appcelerator.org/browse/TIMOB-27318) - iOS: Use swift 5 for apple watch template
+
+  * Updated Swift to version 5 for Apple watch template
+
+* [TIMOB-27358](https://jira.appcelerator.org/browse/TIMOB-27358) - iOS: Support Apple Developer certificates
+
+  * Added support for generic Apple certificates
+
 
 ## Known issues
 
-*   [TIMOB-27362](https://jira.appcelerator.org/browse/TIMOB-27362) - Hyperloop example with Xcode 11 throws error on pod
-    
-    *   Building the Pods project with xcodebuild from Xcode 11 fails if project.xcworkspace/contents.xcworkspacedata is not present
-        
+* [TIMOB-27362](https://jira.appcelerator.org/browse/TIMOB-27362) - Hyperloop example with Xcode 11 throws error on pod
+
+  * Building the Pods project with xcodebuild from Xcode 11 fails if project.xcworkspace/contents.xcworkspacedata is not present
+
 
 ## API changes
 

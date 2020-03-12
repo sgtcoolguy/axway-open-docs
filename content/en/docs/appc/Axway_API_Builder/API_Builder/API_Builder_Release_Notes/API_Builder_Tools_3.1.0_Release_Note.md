@@ -1,4 +1,4 @@
-{"title":"API Builder Tools 3.1.0 Release Note","weight":"30"} 
+{"title":"API Builder Tools 3.1.0 Release Note","weight":"30"}
 
 API Builder 3.x is deprecated
 
@@ -14,28 +14,28 @@ As of this release, API Builder Tools 3.0.x will not be supported six months fro
 
 ## New features
 
-*   Added the ability to validate generated flows using the Axway Flow SDK
-    
-*   Implemented selector auto-complete when creating and editing flows in the API Builder UI
-    
+* Added the ability to validate generated flows using the Axway Flow SDK
+
+* Implemented selector auto-complete when creating and editing flows in the API Builder UI
+
 
 ## Improvements
 
-*   Previously, the initial project created by the appc new command contained unnecessary dependencies. Now, the initial project created by the appc new command has been updated to remove unnecessary dependencies and to provide extra examples on how to test endpoints and models. Additionally, the grunt command is no longer used for the build. The npm test command is used instead. Also, the example.md web route has been removed.
-    
-*   Previously, when editing flows, it was not possible to see previously used and available selectors. Now, when editing a selector any previously used selector, or any available selector is displayed in a context-assisted drop-down menu that shows the selector or selectors that match the input text.
-    
-*   Previously, the axway-flow-sdk would generate projects that required transpiling with babel before they could be used. Now, the generated projects do not require transpiling; so the babel dependency has been removed, but the generated projects require a Node.js version equal to or greater than 8.9.x instead.
-    
-*   Previously, the API SDK generator was used to generate software development kits based on integrated SDK templates. Now, the API Builder SDK generator has been deprecated and the API Builder application exposes its APIs definitions using a standard Swagger format. These API definitions can be consumed by third-party SDK generators to create clients.
-    
-*   Previously, the API SDK generator was used to generate software development kits based on integrated SDK templates. Now, the API Builder SDK generator has been deprecated and the API Builder application exposes its APIs definitions using a standard Swagger format. These API definitions can be consumed by third-party SDK generators to create clients.
-    
+* Previously, the initial project created by the appc new command contained unnecessary dependencies. Now, the initial project created by the appc new command has been updated to remove unnecessary dependencies and to provide extra examples on how to test endpoints and models. Additionally, the grunt command is no longer used for the build. The npm test command is used instead. Also, the example.md web route has been removed.
+
+* Previously, when editing flows, it was not possible to see previously used and available selectors. Now, when editing a selector any previously used selector, or any available selector is displayed in a context-assisted drop-down menu that shows the selector or selectors that match the input text.
+
+* Previously, the axway-flow-sdk would generate projects that required transpiling with babel before they could be used. Now, the generated projects do not require transpiling; so the babel dependency has been removed, but the generated projects require a Node.js version equal to or greater than 8.9.x instead.
+
+* Previously, the API SDK generator was used to generate software development kits based on integrated SDK templates. Now, the API Builder SDK generator has been deprecated and the API Builder application exposes its APIs definitions using a standard Swagger format. These API definitions can be consumed by third-party SDK generators to create clients.
+
+* Previously, the API SDK generator was used to generate software development kits based on integrated SDK templates. Now, the API Builder SDK generator has been deprecated and the API Builder application exposes its APIs definitions using a standard Swagger format. These API definitions can be consumed by third-party SDK generators to create clients.
+
 
 ## Fixed issues
 
-*   Previously, attempting to develop flow-nodes locally in the ./nodes directory would cause API Builder to also attempt to read the node\_modules folder and cause the application to crash. Now, locally developed flow-node dependencies in the ./nodes/node\_modules folder will be ignored and any flow-node dependency that is required must be added and resolved via the API Builder application's package.json instead.
-    
-*   Previously, API Builder would not handle JSON schema references on startup and could generate invalid Swagger definitions that were missing the global schema references. Now, API Builder will load and handle the JSON schema references as expected.
-    
-*   Previously, the appc generate command would generate excessive logging. Now, the command has been reduced to avoid excessive logging. If required, the logging level can be increased with the appc generate -l debug option.
+* Previously, attempting to develop flow-nodes locally in the ./nodes directory would cause API Builder to also attempt to read the node\_modules folder and cause the application to crash. Now, locally developed flow-node dependencies in the ./nodes/node\_modules folder will be ignored and any flow-node dependency that is required must be added and resolved via the API Builder application's package.json instead.
+
+* Previously, API Builder would not handle JSON schema references on startup and could generate invalid Swagger definitions that were missing the global schema references. Now, API Builder will load and handle the JSON schema references as expected.
+
+* Previously, the appc generate command would generate excessive logging. Now, the command has been reduced to avoid excessive logging. If required, the logging level can be increased with the appc generate -l debug option.

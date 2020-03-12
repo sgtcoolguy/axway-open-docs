@@ -1,4 +1,4 @@
-{"title":"API Builder Blocks","weight":"10"} 
+{"title":"API Builder Blocks","weight":"10"}
 
 API Builder 3.x is deprecated
 
@@ -6,12 +6,12 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-*   [Introduction](#Introduction)
-    
-*   [Block definition](#Blockdefinition)
-    
-*   [Example](#Example)
-    
+* [Introduction](#Introduction)
+
+* [Block definition](#Blockdefinition)
+
+* [Example](#Example)
+
 
 ## Introduction
 
@@ -23,12 +23,12 @@ To programmatically create a Block, see the [API Builder.Block API reference.](#
 
 Place all Block files in the project's blocks folder. You can only declare one Block per file. A Block file is a JavaScript file, which:
 
-1.  Loads the arrow module
-    
-2.  Calls the module's Block.extend() method, passing in an object defining the block identifier and logic to execute
-    
-3.  Exports the defined block using the module.exports variable
-    
+1. Loads the arrow module
+
+2. Calls the module's Block.extend() method, passing in an object defining the block identifier and logic to execute
+
+3. Exports the defined block using the module.exports variable
+
 
 Set the following keys in the object passed to the Block.extend() method to define the Block:
 

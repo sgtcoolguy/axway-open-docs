@@ -1,4 +1,4 @@
-{"title":"Data Binding Functions","weight":"40"} 
+{"title":"Data Binding Functions","weight":"40"}
 
 Demonstrates how to manually trigger a UI update between the data model and a view.
 
@@ -104,4 +104,4 @@ app/alloy.js
 
 ## See also
 
-*   [Alloy Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Data_Binding/#Alloybinding)
+* [Alloy Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Data_Binding/#Alloybinding)

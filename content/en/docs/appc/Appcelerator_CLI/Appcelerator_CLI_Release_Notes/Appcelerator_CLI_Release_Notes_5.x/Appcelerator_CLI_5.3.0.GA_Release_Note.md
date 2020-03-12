@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 5.3.0.GA - 2 June 2016","weight":"100"} 
+{"title":"Appcelerator CLI 5.3.0.GA - 2 June 2016","weight":"100"}
 
 Appcelerator CLI 5.3.0.GA is a minor release that includes several bug fixes.
 
@@ -26,26 +26,26 @@ Titanium CLI
 
 ## New Features
 
-*   [CLI-664](https://jira.appcelerator.org/browse/CLI-664) - Installr App plugin hook
-    
-    *   App Preview has been integrated with the CLI  
-        
+* [CLI-664](https://jira.appcelerator.org/browse/CLI-664) - Installr App plugin hook
+
+  * App Preview has been integrated with the CLI
+
 
 ## Fixed Issues
 
-*   [CLI-948](https://jira.appcelerator.org/browse/CLI-948) - In preprod, appc whoami --full command returns only half output to Studio
-    
-*   [CLI-955](https://jira.appcelerator.org/browse/CLI-955) - CLI should not tell a user to install a pre-release CLI as an update from a GA version
-    
-*   [CLI-978](https://jira.appcelerator.org/browse/CLI-978) - Appc config get <key> always returns null
-    
-*   [CLI-987](https://jira.appcelerator.org/browse/CLI-987) - Appcelerator Login not triggered when login is required on production build
-    
-*   [CLI-1000](https://jira.appcelerator.org/browse/CLI-1000) - Uploading app to app preview progress bar is seen multiple times in the studio console
-    
+* [CLI-948](https://jira.appcelerator.org/browse/CLI-948) - In preprod, appc whoami --full command returns only half output to Studio
+
+* [CLI-955](https://jira.appcelerator.org/browse/CLI-955) - CLI should not tell a user to install a pre-release CLI as an update from a GA version
+
+* [CLI-978](https://jira.appcelerator.org/browse/CLI-978) - Appc config get <key> always returns null
+
+* [CLI-987](https://jira.appcelerator.org/browse/CLI-987) - Appcelerator Login not triggered when login is required on production build
+
+* [CLI-1000](https://jira.appcelerator.org/browse/CLI-1000) - Uploading app to app preview progress bar is seen multiple times in the studio console
+
 
 ## Improvements
 
-*   [CLI-963](https://jira.appcelerator.org/browse/CLI-963) - CLI: enable template options when creating Alloy project  
-    
-    *   Added feature that allows for creating two\_tabbed Alloy project from CLI
+* [CLI-963](https://jira.appcelerator.org/browse/CLI-963) - CLI: enable template options when creating Alloy project
+
+  * Added feature that allows for creating two\_tabbed Alloy project from CLI

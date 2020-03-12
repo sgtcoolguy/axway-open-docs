@@ -1,37 +1,37 @@
-{"title":"AMPLIFY Appcelerator Platform Services SDK for Android Mobile Backend Services","weight":"20"} 
+{"title":"AMPLIFY Appcelerator Platform Services SDK for Android Mobile Backend Services","weight":"20"}
 
-*   [Getting the SDK](#GettingtheSDK)
-    
-*   [Running the APSCloud example application](#RunningtheAPSCloudexampleapplication)
-    
-*   [Enabling Cloud services in a new project](#EnablingCloudservicesinanewproject)
-    
-*   [Making API Calls and Handling Responses](#MakingAPICallsandHandlingResponses)
-    
-    *   [Building Request Parameters](#BuildingRequestParameters)
-        
-    *   [Handling Responses](#HandlingResponses)
-        
-        *   [Example: APSUsers Login Call with Response Handler](#Example:APSUsersLoginCallwithResponseHandler)
-            
-    *   [Monitoring Request Progress](#MonitoringRequestProgress)
-        
-        *   [Example: APSFiles Create Call with Progress Handler](#Example:APSFilesCreateCallwithProgressHandler)
-            
-*   [Making Generic REST APIs Method Calls](#MakingGenericRESTAPIsMethodCalls)
-    
-*   [Working with Push Notifications](#WorkingwithPushNotifications)
-    
-    *   [Android Project Requirements for using APSCloud Push](#AndroidProjectRequirementsforusingAPSCloudPush)
-        
-        *   [Add Google Play services](#AddGooglePlayservices)
-            
-        *   [AndroidManifest changes](#AndroidManifestchanges)
-            
-    *   [Subscribe to push notifications](#SubscribetopushnotificationsSubscribetopushnotifications)
-        
-    *   [CloudPush sample application](#CloudPushsampleapplication)
-        
+* [Getting the SDK](#GettingtheSDK)
+
+* [Running the APSCloud example application](#RunningtheAPSCloudexampleapplication)
+
+* [Enabling Cloud services in a new project](#EnablingCloudservicesinanewproject)
+
+* [Making API Calls and Handling Responses](#MakingAPICallsandHandlingResponses)
+
+  * [Building Request Parameters](#BuildingRequestParameters)
+
+  * [Handling Responses](#HandlingResponses)
+
+    * [Example: APSUsers Login Call with Response Handler](#Example:APSUsersLoginCallwithResponseHandler)
+
+  * [Monitoring Request Progress](#MonitoringRequestProgress)
+
+    * [Example: APSFiles Create Call with Progress Handler](#Example:APSFilesCreateCallwithProgressHandler)
+
+* [Making Generic REST APIs Method Calls](#MakingGenericRESTAPIsMethodCalls)
+
+* [Working with Push Notifications](#WorkingwithPushNotifications)
+
+  * [Android Project Requirements for using APSCloud Push](#AndroidProjectRequirementsforusingAPSCloudPush)
+
+    * [Add Google Play services](#AddGooglePlayservices)
+
+    * [AndroidManifest changes](#AndroidManifestchanges)
+
+  * [Subscribe to push notifications](#SubscribetopushnotificationsSubscribetopushnotifications)
+
+  * [CloudPush sample application](#CloudPushsampleapplication)
+
 
 The AMPLIFY Appcelerator Platform Services SDK for Android provides APIs for your Android application built with Java to access Mobile Backend Services (MBS).
 
@@ -47,66 +47,66 @@ The SDK ZIP file includes an Android sample project that demonstrates the basic 
 
 **To create the APSCloudExample application in Dashboard:**
 
-1.  Log into the [AMPLIFY Platform](https://platform.axway.com/).
-    
-2.  Select **Dashboard** on the Dashboard tile.
-    
-3.  From the **Orgs** menu, select the organization to associate with the application. Note that the Orgs menu will not appear if you are not a member of multiple organizations.
-    
-4.  Click the Add menu (+) and select **Register App for Services**.
-    
-5.  In the dialog:
-    
-    *   Type **APSCloudExampleApp** (or another name) in the **Name** field.
-        
-    *   Select **Android** from the **Platform** menu.
-        
-    *   Select any category from the **Category** menu.
-        
-6.  Click **Next** and then click the **Overview** tab.
-    
-7.  Click the **Services** tab, then click **Show Key** under **Cloud** \> **Performance** \> **Analytics**.
-    
-8.  Select **Development** from the Environment menu, then click the **clipboard icon** to copy the key to your clipboard.
-    
+1. Log into the [AMPLIFY Platform](https://platform.axway.com/).
+
+2. Select the **Dashboard** link on the Dashboard tile.
+
+3. From the **Orgs** menu, select the organization to associate with the application. Note that the Orgs menu will not appear if you are not a member of multiple organizations.
+
+4. Click the Add menu (+) and select **Register App for Services**.
+
+5. In the dialog:
+
+  * Type **APSCloudExampleApp** (or another name) in the **Name** field.
+
+  * Select **Android** from the **Platform** menu.
+
+  * Select any category from the **Category** menu.
+
+6. Click **Next** and then click the **Overview** tab.
+
+7. Click the **Services** tab, then click **Show Key** under **Cloud** \> **Performance** \> **Analytics**.
+
+8. Select **Development** from the Environment menu, then click the **clipboard icon** to copy the key to your clipboard.
+
 
 Next, import the APSCloudExample project into Eclipse, copy the key from your clipboard into the application's main activity, and run the application.
 
 **To import the completed APSCloudExample project:**
 
-1.  In Eclipse, select **File** \> **Import** \> **General** \> **Existing Code into Workspace**, then click **Next**.
-    
-2.  Click **Browse** and navigate to the **appcelerator-sdk-android-<VERSION>/examples/APSCloudExample** folder, and click **Open**.
-    
-3.  Click **Finish**.
-    
-4.  Open **src/main/java/com/appcelerator/apscloudexample/MainActivity.java**.
-    
-5.  Locate the following line of code and replace **<< YOUR APP KEY >>** with the application key you copied to your clipboard previously.
-    
-    `APSServiceManager.getInstance().enable(getApplicationContext(),` `"<< YOUR APP KEY >>"``);;`
-    
-6.  Run the application on an Android device or emulator.
-    
+1. In Eclipse, select **File** \> **Import** \> **General** \> **Existing Code into Workspace**, then click **Next**.
+
+2. Click **Browse** and navigate to the **appcelerator-sdk-android-<VERSION>/examples/APSCloudExample** folder, and click **Open**.
+
+3. Click **Finish**.
+
+4. Open the **src/main/java/com/appcelerator/apscloudexample/MainActivity.java** file.
+
+5. Locate the following line of code and replace **<< YOUR APP KEY >>** with the application key you copied to your clipboard previously.
+
+  `APSServiceManager.getInstance().enable(getApplicationContext(),` `"<< YOUR APP KEY >>"``);;`
+
+6. Run the application on an Android device or emulator.
+
 
 Once the application is running, try the following:
 
-*   Create a new user by selecting **Users** \> **Create User**. Enter a username, password, and password confirmation, then click **Create**. If the user is created successfully, the following dialog is shown:
-    
-    ![new_user_success](/Images/appc/download/attachments/49153767/new_user_success.png)
-    
+* Create a new user by selecting **Users** \> **Create User**. Enter a username, password, and password confirmation, then click **Create**. If the user is created successfully, the following dialog is shown:
 
-*   View the newly created user in Dashboard:
-    
-    1.  Log into the [AMPLIFY Platform](https://platform.axway.com/).
-        
-    2.  Select **Dashboard** on the Dashboard tile.
-        
-    3.  Select your MBS application from the **Apps** tab.
-        
-    4.  Select **Manage Data**, then click **Users** in the Manage Data Objects table. You should see the user you created listed in the Users table.
-        
-        ![verify_new_user_latest](/Images/appc/download/attachments/49153767/verify_new_user_latest.png)
+  ![new_user_success](/Images/appc/download/attachments/49153767/new_user_success.png)
+
+
+* View the newly created user in Dashboard:
+
+  1. Log into the [AMPLIFY Platform](https://platform.axway.com/).
+
+  2. Select the **Dashboard** link on the Dashboard tile.
+
+  3. Select your MBS application from the **Apps** tab.
+
+  4. Select **Manage Data**, then click **Users** in the Manage Data Objects table. You should see the user you created listed in the Users table.
+
+    ![verify_new_user_latest](/Images/appc/download/attachments/49153767/verify_new_user_latest.png)
 
 ## Enabling Cloud services in a new project
 
@@ -114,22 +114,22 @@ Once you've [registered an application in Dashboard](/docs/appc/Appcelerator_Das
 
 **To enable the Cloud services in your project**:
 
-1.  Copy **appcelerator-sdk-android-<VERSION>.jar** to your project's libs folder.
-    
-2.  Add the following permission to your project's AndroidManifest.xml file:
-    
-    `<``uses``-permission` `android:name``=``"android.permission.INTERNET"```/>` ``
-    
-3.  Import the APSServiceManager class into the project's main Activity:
-    
-    `import com.appcelerator.aps.APSServiceManager;`
-    
-4.  Call APSServiceManager.getInstance().enable(), passing it the application context and the application key provided by Dashboard:
-    
-    `APSServiceManager.getInstance().enable(getApplicationContext(),` `"<<YOUR APP KEY>>"``);`
-    
-    At this point, your application can begin making API calls. Note that the application will need to import additional classes, depending on which APS APIs it uses.
-    
+1. Copy the **appcelerator-sdk-android-<VERSION>.jar** file to your project's libs folder.
+
+2. Add the following permission to your project's AndroidManifest.xml file:
+
+  `<``uses``-permission` `android:name``=``"android.permission.INTERNET"```/>` ``
+
+3. Import the APSServiceManager class into the project's main Activity:
+
+  `import com.appcelerator.aps.APSServiceManager;`
+
+4. Call APSServiceManager.getInstance().enable(), passing it the application context and the application key provided by Dashboard:
+
+  `APSServiceManager.getInstance().enable(getApplicationContext(),` `"<<YOUR APP KEY>>"``);`
+
+  At this point, your application can begin making API calls. Note that the application will need to import additional classes, depending on which APS APIs it uses.
+
 
 ## Making API Calls and Handling Responses
 
@@ -273,7 +273,7 @@ For Cloud API methods that involve uploading large files, such as APSPhotos.crea
 
 #### Example: APSFiles Create Call with Progress Handler
 
-The following example uploads a file from the device (/res/raw/reference.pdf) to the MBS storage server. Since the method call requires that uploaded data be an instance of java.io.File, the application needs to copy the resource to a read-write directory before uploading it. Storing the file locally requires that the [WRITE\_EXTERNAL\_STORAGE](http://developer.android.com/reference/android/Manifest.permission.html#WRITE_EXTERNAL_STORAGE) permission is included in your AndroidManifest.xml file.
+The following example uploads a file from the device (/res/raw/reference.pdf) to the MBS storage server. Since the method call requires that uploaded data be an instance of java.io.File, the application needs to copy the resource to a read-write directory before uploading it. Locally storing the file requires that the [WRITE\_EXTERNAL\_STORAGE](http://developer.android.com/reference/android/Manifest.permission.html#WRITE_EXTERNAL_STORAGE) permission is included in your AndroidManifest.xml file.
 
 The progress callback calls the setProgress() method on a ProgressBar object, displaying the status of the upload. After the request completes, the application displays a toast notification.
 
@@ -381,21 +381,21 @@ The [APSCloud.sendRequest()](http://docs.appcelerator.com/aps-sdk-apidoc/latest/
 
 To make a generic request, you call APSCloud.getInstance() to get a reference to the shared APSCloud object and call its sendRequest() method. For each call, you must specify the following:
 
-*   REST API method endpoint relative to api.cloud.appcelerator.com/v1. Method endpoints are listed in the corresponding entries in the [REST API](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Using_the_REST_API/) documentation.
-    
-*   The HTTP method to use.
-    
-*   Data to send with the request.
-    
+* REST API method endpoint relative to api.cloud.appcelerator.com/v1. Method endpoints are listed in the corresponding entries in the [REST API](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Using_the_REST_API/) documentation.
+
+* The HTTP method to use.
+
+* Data to send with the request.
+
 
 For example, to [create a post](/arrowdb/latest/#!/api/Posts-method-create), pass the sendRequest() method the following information:
 
-*   REST API method endpoint: posts/create.json
-    
-*   The HTTP method to use: POST
-    
-*   Data to send with the request: at a minimum, you must specify the content property.
-    
+* REST API method endpoint: posts/create.json
+
+* The HTTP method to use: POST
+
+* Data to send with the request: at a minimum, you must specify the content property.
+
 
 The following uses the sendRequest() API to create a new Post object.
 
@@ -453,12 +453,12 @@ The [APSPushNotifications](http://docs.appcelerator.com/aps-sdk-apidoc/latest/an
 
 To use these classes:
 
-*   [Configure push services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/Push_Notifications/Configuring_Push_Services/) for your application.
-    
-*   Add Google Play services as a dependency to your project and update the project's AndroidManifest.xml file. See the [Android Project Requirements section below](#AndroidProjectRequirementsforusingAPSCloudPush).
-    
-*   Retrieve the device token and subscribe to push notifications with MBS. See the [Subscribe to push notifications](#Subscribetopushnotifications) section below.
-    
+* [Configure push services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/Push_Notifications/Configuring_Push_Services/) for your application.
+
+* Add Google Play services as a dependency to your project and update the project's AndroidManifest.xml file. See the [Android Project Requirements section below](#AndroidProjectRequirementsforusingAPSCloudPush).
+
+* Retrieve the device token and subscribe to push notifications with MBS. See the [Subscribe to push notifications](#Subscribetopushnotifications) section below.
+
 
 ### Android Project Requirements for using APSCloud Push
 
@@ -468,14 +468,14 @@ Once you have configured your Google Cloud Messaging (GCM) or Firebase Cloud Mes
 
 APSCloudPush requires that Google Play services be included in your application.
 
-1.  Download the Google Play services SDK using the Android SDK Manager.
-    
-2.  Copy the <android-sdk>/extras/google/google\_play\_services/libproject/google-play-services\_lib folder to the same workspace folder as your Android projects (not into your Android project).
-    
-3.  Add the following inside the **<application/>** element of your AndroidManifest.xml file:
-    
-    `<``meta``-data` `android:name``=``"com.google.android.gms.version"`  `android:value``=``"@integer/google_play_services_version"` `/>`
-    
+1. Download the Google Play services SDK using the Android SDK Manager.
+
+2. Copy the <android-sdk>/extras/google/google\_play\_services/libproject/google-play-services\_lib folder to the same workspace folder as your Android projects (not into your Android project).
+
+3. Add the following inside the **<application/>** element of your AndroidManifest.xml file:
+
+  `<``meta``-data` `android:name``=``"com.google.android.gms.version"`  `android:value``=``"@integer/google_play_services_version"` `/>`
+
 
 For **Android Studio** projects, update the dependencies field of the build.gradle file, then save and sync the gradle file.
 
@@ -491,10 +491,10 @@ For **Android Studio** projects, update the dependencies field of the build.grad
 
 For **Eclipse** projects:
 
-1.  Import the library project into Eclipse. (From the menu, click **File** > **Import**, then select **Android** > **Existing Android Code into Workspace**, and browse to the copy of the library project to import it.)
-    
-2.  In the application project, reference the Google Play services library project. Right-click the project folder and select **Properties**, then select **Android**, click **Add..** and select the library project.
-    
+1. Import the library project into Eclipse. (From the menu, click **File** > **Import**, then select **Android** > **Existing Android Code into Workspace**, and browse to the copy of the library project to import it.)
+
+2. In the application project, reference the Google Play services library project. Right-click the project folder and select **Properties**, then select **Android**, click **Add..** and select the library project.
+
 
 For other projects, update the project.properties file to reference the library project:
 
@@ -506,86 +506,86 @@ For detailed directions, see [Android Developer: Setting Up Google Play Services
 
 The following changes must be added to your project's AndroidManifest.xml file to use APSCloudPush. Replace each occurrence of _"YOURAPPSPACKAGENAME"_ with the actual package name of your application.
 
-*   Inside the <manifest/> element:
-    
-    `<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.GET_ACCOUNTS"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.WAKE_LOCK"``/>`
-    
-    `<``uses``-permission` `android:name``=``"com.google.android.c2dm.permission.RECEIVE"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_NETWORK_STATE"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.RECEIVE_BOOT_COMPLETED"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.READ_PHONE_STATE"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.VIBRATE"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.WRITE_EXTERNAL_STORAGE"`
-    
-    `android:maxSdkVersion``=``"18"` `/>`
-    
-    `<``permission`  `android:name``=``"YOURAPPSPACKAGENAME.permission.C2D_MESSAGE"`
-    
-    `android:protectionLevel``=``"signature"``/>`
-    
-    `<``uses``-permission` `android:name``=``"YOURAPPSPACKAGENAME.permission.C2D_MESSAGE"``/>`
-    
-*   Inside the <application/> element:
-    
-    `<``receiver`  `android:name``=``"com.appcelerator.aps.IntentReceiver"``/>`
-    
-    `<``receiver`
-    
-    `android:name``=``"com.appcelerator.aps.GCMReceiver"`
-    
-    `android:permission``=``"com.google.android.c2dm.permission.SEND"``>`
-    
-    `<``intent``-filter>`
-    
-    `<``action`  `android:name``=``"com.google.android.c2dm.intent.RECEIVE"``/>`
-    
-    `<``category`  `android:name``=``"YOURAPPSPACKAGENAME"``/>`
-    
-    `</``intent``-filter>`
-    
-    `</``receiver``>`
-    
-    `<``receiver`  `android:name``=``"com.appcelerator.aps.PushBroadcastReceiver"`
-    
-    `android:permission``=``"com.google.android.c2dm.permission.SEND"``>`
-    
-    `<``intent``-filter>`
-    
-    `<``action`  `android:name``=``"android.intent.action.BOOT_COMPLETED"``/>`
-    
-    `<``action`  `android:name``=``"com.google.android.c2dm.intent.REGISTRATION"` `/>`
-    
-    `<``action`  `android:name``=``"com.appcelerator.aps.intent.DEL_GROUPED_MSG"` `/>`
-    
-    `<``category`  `android:name``=``"YOURAPPSPACKAGENAME"` `/>`
-    
-    `</``intent``-filter>`
-    
-    `</``receiver``>`
-    
-    `<``receiver`  `android:name``=``"com.appcelerator.aps.PushBroadcastReceiver"``>`
-    
-    `<``intent``-filter>`
-    
-    `<``action`  `android:name``=``"android.intent.action.PACKAGE_ADDED"``/>`
-    
-    `<``action`  `android:name``=``"android.intent.action.PACKAGE_REPLACED"``/>`
-    
-    `<``data`  `android:scheme``=``"package"`  `android:path``=``"YOURAPPSPACKAGENAME"` `/>`
-    
-    `</``intent``-filter>`
-    
-    `</``receiver``>`
-    
+* Inside the <manifest/> element:
+
+  `<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.GET_ACCOUNTS"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.WAKE_LOCK"``/>`
+
+  `<``uses``-permission` `android:name``=``"com.google.android.c2dm.permission.RECEIVE"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.ACCESS_NETWORK_STATE"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.RECEIVE_BOOT_COMPLETED"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.READ_PHONE_STATE"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.VIBRATE"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.WRITE_EXTERNAL_STORAGE"`
+
+  `android:maxSdkVersion``=``"18"` `/>`
+
+  `<``permission`  `android:name``=``"YOURAPPSPACKAGENAME.permission.C2D_MESSAGE"`
+
+  `android:protectionLevel``=``"signature"``/>`
+
+  `<``uses``-permission` `android:name``=``"YOURAPPSPACKAGENAME.permission.C2D_MESSAGE"``/>`
+
+* Inside the <application/> element:
+
+  `<``receiver`  `android:name``=``"com.appcelerator.aps.IntentReceiver"``/>`
+
+  `<``receiver`
+
+  `android:name``=``"com.appcelerator.aps.GCMReceiver"`
+
+  `android:permission``=``"com.google.android.c2dm.permission.SEND"``>`
+
+  `<``intent``-filter>`
+
+  `<``action`  `android:name``=``"com.google.android.c2dm.intent.RECEIVE"``/>`
+
+  `<``category`  `android:name``=``"YOURAPPSPACKAGENAME"``/>`
+
+  `</``intent``-filter>`
+
+  `</``receiver``>`
+
+  `<``receiver`  `android:name``=``"com.appcelerator.aps.PushBroadcastReceiver"`
+
+  `android:permission``=``"com.google.android.c2dm.permission.SEND"``>`
+
+  `<``intent``-filter>`
+
+  `<``action`  `android:name``=``"android.intent.action.BOOT_COMPLETED"``/>`
+
+  `<``action`  `android:name``=``"com.google.android.c2dm.intent.REGISTRATION"` `/>`
+
+  `<``action`  `android:name``=``"com.appcelerator.aps.intent.DEL_GROUPED_MSG"` `/>`
+
+  `<``category`  `android:name``=``"YOURAPPSPACKAGENAME"` `/>`
+
+  `</``intent``-filter>`
+
+  `</``receiver``>`
+
+  `<``receiver`  `android:name``=``"com.appcelerator.aps.PushBroadcastReceiver"``>`
+
+  `<``intent``-filter>`
+
+  `<``action`  `android:name``=``"android.intent.action.PACKAGE_ADDED"``/>`
+
+  `<``action`  `android:name``=``"android.intent.action.PACKAGE_REPLACED"``/>`
+
+  `<``data`  `android:scheme``=``"package"`  `android:path``=``"YOURAPPSPACKAGENAME"` `/>`
+
+  `</``intent``-filter>`
+
+  `</``receiver``>`
+
 
 ### Subscribe to push notifications
 
@@ -593,7 +593,7 @@ Once the project is set up, the application needs to register with MBS to receiv
 
 To register push notifications, the application needs to retrieve the device token using the [APSCloudPush.getInstance.retrieveDeviceToken()](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSCloudPush.html#retrieveDeviceToken(com.appcelerator.aps.APSRetrieveDeviceTokenHandler)) method, then pass the token to either the [APSPushNotifications.subscribe()](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSPushNotifications.html#subscribe(java.util.Map,com.appcelerator.aps.APSResponseHandler)) or [APSPushNotifications.subscribeToken()](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSPushNotifications.html#subscribeToken(java.util.Map,com.appcelerator.aps.APSResponseHandler)) method to subscribe to a push channel.
 
-Call [APSServiceManager.getInstance()](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSServiceManager.html#getInstance()) before calling any methods on APSCloudPush, otherwise, an exception will be thrown.
+Call [APSServiceManager.getInstance()](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSServiceManager.html#getInstance()) before calling any methods on APSCloudPush; otherwise, an exception will be thrown.
 
 For example, the code below can be added to the main activity's onCreate() method to subscribe the device to the friend\_channel:
 
@@ -667,16 +667,16 @@ The SDK includes the APSCloudPushExample application that demonstrates the use o
 
 **To import and run the APSCloudPushExample application**:
 
-1.  In Eclipse, select **File** \> **Import** \> **General** \> **Existing Projects into Workspace** and click **Browse**.
-    
-2.  Navigate to the **appcelerator-sdk-android-<VERSION>/examples/APSCloudPushExample** folder and click **Open**.
-    
-3.  Click **Finish** to import the project.
-    
-4.  Add the Google Play services to your project (see [Android Project Requirements](#AndroidProjectRequirementsforusingAPSCloudPush) for instructions).
-    
-5.  In MainActivity.java, locate the following line and replace **<< YOUR APP KEY >>** with the application key generated by Dashboard:
-    
-    `String appKey =` `"<< YOUR APP KEY >>"``;`
-    
-6.  Run the application on an Android device or emulator.
+1. In Eclipse, select **File** \> **Import** \> **General** \> **Existing Projects into Workspace** and click **Browse**.
+
+2. Navigate to the **appcelerator-sdk-android-<VERSION>/examples/APSCloudPushExample** folder and click **Open**.
+
+3. Click **Finish** to import the project.
+
+4. Add the Google Play services to your project (see [Android Project Requirements](#AndroidProjectRequirementsforusingAPSCloudPush) for instructions).
+
+5. In MainActivity.java, locate the following line and replace **<< YOUR APP KEY >>** with the application key generated by Dashboard:
+
+  `String appKey =` `"<< YOUR APP KEY >>"``;`
+
+6. Run the application on an Android device or emulator.

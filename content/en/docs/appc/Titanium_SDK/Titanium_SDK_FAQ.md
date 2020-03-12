@@ -1,33 +1,33 @@
-{"title":"Titanium SDK FAQ","weight":"50"} 
+{"title":"Titanium SDK FAQ","weight":"50"}
 
 This document provides answers and links to commonly asked questions about Titanium SDK.
 
-*   [Can I use Swift code to develop apps for Android in Hyperloop?](#CanIuseSwiftcodetodevelopappsforAndroidinHyperloop?)
-    
-*   [Does geofence module uses coreLocation (for iOS) or does it use something else?](#DoesgeofencemoduleusescoreLocation(foriOS)ordoesitusesomethingelse?)
-    
-*   [How do I use Titanium.Android.Intent in Android for calendar](#HowdoIuseTitanium.Android.IntentinAndroidforcalendar)
-    
-*   [Create an Appcelerator Android module with armeabi-v7a,x86 architectures](#CreateanAppceleratorAndroidmodulewitharmeabi-v7a,x86architectures)
-    
-*   [iOS 10+ and plist](#iOS10+andplist)
-    
-*   [How to change the Android buildtools version](#HowtochangetheAndroidbuildtoolsversion)
-    
-*   [How do you check if a module supports 64bit or not?](#Howdoyoucheckifamodulesupports64bitornot?)
-    
-*   [Localization supports for the plist file](#Localizationsupportsfortheplistfile)
-    
-*   [Where can I find the best practices for Titanium SDK?](#WherecanIfindthebestpracticesforTitaniumSDK?)
-    
-*   [What are the system requirements?](#Whatarethesystemrequirements?)
-    
-*   [What are the reserved words?](#Whatarethereservedwords?)
-    
-*   [What is Hyperloop?](#WhatisHyperloop?)
-    
-*   [How do I enable Hyperloop?](#HowdoIenableHyperloop?)
-    
+* [Can I use Swift code to develop apps for Android in Hyperloop?](#CanIuseSwiftcodetodevelopappsforAndroidinHyperloop?)
+
+* [Does geofence module uses coreLocation (for iOS) or does it use something else?](#DoesgeofencemoduleusescoreLocation(foriOS)ordoesitusesomethingelse?)
+
+* [How do I use Titanium.Android.Intent in Android for calendar](#HowdoIuseTitanium.Android.IntentinAndroidforcalendar)
+
+* [Create an Appcelerator Android module with armeabi-v7a,x86 architectures](#CreateanAppceleratorAndroidmodulewitharmeabi-v7a,x86architectures)
+
+* [iOS 10+ and plist](#iOS10+andplist)
+
+* [How to change the Android buildtools version](#HowtochangetheAndroidbuildtoolsversion)
+
+* [How do you check if a module supports 64bit or not?](#Howdoyoucheckifamodulesupports64bitornot?)
+
+* [Localization supports for the plist file](#Localizationsupportsfortheplistfile)
+
+* [Where can I find the best practices for Titanium SDK?](#WherecanIfindthebestpracticesforTitaniumSDK?)
+
+* [What are the system requirements?](#Whatarethesystemrequirements?)
+
+* [What are the reserved words?](#Whatarethereservedwords?)
+
+* [What is Hyperloop?](#WhatisHyperloop?)
+
+* [How do I enable Hyperloop?](#HowdoIenableHyperloop?)
+
 
 ## Can I use Swift code to develop apps for Android in Hyperloop?
 
@@ -57,29 +57,29 @@ The following code sample could be used to do this:
 
 Create a Titanium module:
 
-1.  Edit the manifest and change the architectures line to architectures: armeabi-v7a,x86
-    
-2.  Change directories to android.
-    
-3.  Execute this command: appc run -p android --build-only
-    
-4.  Verify the libs and dist/<whatever>.zip file only contains the desired architectures.
-    
+1. Edit the manifest and change the architectures line to architectures: armeabi-v7a,x86
+
+2. Change directories to android.
+
+3. Execute this command: appc run -p android --build-only
+
+4. Verify the libs and dist/<whatever>.zip file only contains the desired architectures.
+
 
 ## iOS 10+ and plist
 
 For the iOS 10 or later version, you have to add the following keys in the plist of the tiapp.xml file, if you use any of the following:
 
-*   **NSContactsUsageDescription**: If you use the Ti.Contacts API to access contacts from the address book
-    
-*   **NSCameraUsageDescription**: If you use the Ti.Media.showCamera API to capture photos and videos
-    
-*   **NSCalendarsUsageDescription**: If you use the Ti.Calendar API to access device calendars
-    
-*   **NSPhotoLibraryUsageDescription**: If you use the Ti.Media.openPhotoGallery API to access the photo gallery or Ti.Media.showCamera API to save photos
-    
-*   **NSMicrophoneUsageDescription**: If you use the Ti.Media.AudioRecorder API to record audio or Ti.Media.showCamera to record videos
-    
+* **NSContactsUsageDescription**: If you use the Ti.Contacts API to access contacts from the address book
+
+* **NSCameraUsageDescription**: If you use the Ti.Media.showCamera API to capture photos and videos
+
+* **NSCalendarsUsageDescription**: If you use the Ti.Calendar API to access device calendars
+
+* **NSPhotoLibraryUsageDescription**: If you use the Ti.Media.openPhotoGallery API to access the photo gallery or Ti.Media.showCamera API to save photos
+
+* **NSMicrophoneUsageDescription**: If you use the Ti.Media.AudioRecorder API to record audio or Ti.Media.showCamera to record videos
+
 
 An example of updated tiapp.xml file might look something like this:
 
@@ -123,12 +123,12 @@ You can change the build tools version using this command: appc ti config androi
 
 ## How do you check if a module supports 64bit or not?
 
-1.  Build your module.
-    
-2.  Open a terminal and change directories to the module's last directory (where the libti.modulename.a is located).
-    
-3.  Execute either xcrun lipo -info or xcrun lipo -info libti.modulename.a. For example, executing xcrun lipo -info libti.barcode.a should return this info: Architectures in the fat file: libti.barcode.a are: armv7 i386 x86\_64 arm64
-    
+1. Build your module.
+
+2. Open a terminal and change directories to the module's last directory (where the libti.modulename.a is located).
+
+3. Execute either xcrun lipo -info or xcrun lipo -info libti.modulename.a. For example, executing xcrun lipo -info libti.barcode.a should return this info: Architectures in the fat file: libti.barcode.a are: armv7 i386 x86\_64 arm64
+
 
 ## Localization supports for the plist file
 
@@ -176,14 +176,14 @@ After applying this, if you change your device language to Japanese, you will th
 
 Your system environment must meet the following requirements to run Studio:
 
-*   **Operating System:** A recent version of Windows or Mac OS X
-    
-*   **Memory:** 8 GB RAM minimum system memory (2 GB RAM available memory). 16 GB RAM recommended.
-    
-*   **Java Runtime:** Oracle JDK (no other brand of Java is suitable)
-    
-*   **Node.js:** Required for the Titanium command-line tools like the CLI, Alloy and AMPLIFY Runtime Services
-    
+* **Operating System:** A recent version of Windows or Mac OS X
+
+* **Memory:** 8 GB RAM minimum system memory (2 GB RAM available memory). 16 GB RAM recommended.
+
+* **Java Runtime:** Oracle JDK (no other brand of Java is suitable)
+
+* **Node.js:** Required for the Titanium command-line tools like the CLI, Alloy and AMPLIFY Runtime Services
+
 
 For Windows, you can use either 32-bit or 64-bit versions of Java JDK. Please refer to [Studio Java Support](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/Studio_Java_Support/) for more information.
 

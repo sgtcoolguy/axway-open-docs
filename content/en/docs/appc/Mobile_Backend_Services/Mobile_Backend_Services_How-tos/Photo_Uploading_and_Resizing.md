@@ -1,11 +1,11 @@
-{"title":"Photo Uploading and Resizing","weight":"30"} 
+{"title":"Photo Uploading and Resizing","weight":"30"}
 
-*   [Custom photo sizes](#Customphotosizes)
-    
-*   [Synchronous photo uploading](#Synchronousphotouploading)
-    
-*   [Deprecated behavior](#Deprecatedbehavior)
-    
+* [Custom photo sizes](#Customphotosizes)
+
+* [Synchronous photo uploading](#Synchronousphotouploading)
+
+* [Deprecated behavior](#Deprecatedbehavior)
+
 
 Mobile Backend Services provides a great amount of flexibility when creating photo objects or adding photos to other objects.
 

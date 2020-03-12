@@ -1,44 +1,44 @@
-{"title":"Camera and Photo Gallery APIs","weight":"40"} 
+{"title":"Camera and Photo Gallery APIs","weight":"40"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [Permissions](#Permissions)
-        
-        *   [Android permissions](#Androidpermissions)
-            
-        *   [Requesting Permissions](#RequestingPermissions)
-            
-    *   [Camera](#Camera)
-        
-        *   [Front/rear camera support](#Front/rearcamerasupport)
-            
-    *   [Alternative Android capture video example](#AlternativeAndroidcapturevideoexample)
-        
-*   [Gallery](#Gallery)
-    
-    *   [Getting images into the simulator/emulator's gallery](#Gettingimagesintothesimulator/emulator'sgallery)
-        
-*   [Windows development considerations](#Windowsdevelopmentconsiderations)
-    
-    *   [Grant access to video stream and audio stream](#Grantaccesstovideostreamandaudiostream)
-        
-    *   [Grant access to pictures library](#Grantaccesstopictureslibrary)
-        
-    *   [Displaying builtin camera for Windows](#DisplayingbuiltincameraforWindows)
-        
-        *   [For Windows 10 Mobile](#ForWindows10Mobile)
-            
+* [Objective](#Objective)
 
-*   [Hands-on practice](#Hands-onpractice)
-    
-    *   [Goal](#Goal)
-        
-    *   [Steps](#Steps)
-        
-*   [Summary](#Summary)
-    
+* [Contents](#Contents)
+
+  * [Permissions](#Permissions)
+
+    * [Android permissions](#Androidpermissions)
+
+    * [Requesting Permissions](#RequestingPermissions)
+
+  * [Camera](#Camera)
+
+    * [Front/rear camera support](#Front/rearcamerasupport)
+
+  * [Alternative Android capture video example](#AlternativeAndroidcapturevideoexample)
+
+* [Gallery](#Gallery)
+
+  * [Getting images into the simulator/emulator's gallery](#Gettingimagesintothesimulator/emulator'sgallery)
+
+* [Windows development considerations](#Windowsdevelopmentconsiderations)
+
+  * [Grant access to video stream and audio stream](#Grantaccesstovideostreamandaudiostream)
+
+  * [Grant access to pictures library](#Grantaccesstopictureslibrary)
+
+  * [Displaying builtin camera for Windows](#DisplayingbuiltincameraforWindows)
+
+    * [For Windows 10 Mobile](#ForWindows10Mobile)
+
+
+* [Hands-on practice](#Hands-onpractice)
+
+  * [Goal](#Goal)
+
+  * [Steps](#Steps)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -296,24 +296,24 @@ The saveToPhotoGallery property controls whether the photo or video is automatic
 
 Some other useful properties include:
 
-*   autohide (boolean) if the camera should auto hide after the media capture is completed (defaults to true) (iOS only)
-    
-*   animated (boolean) if the dialog should be animated (defaults to true) upon showing and hiding (Android and iOS only)
-    
-*   allowEditing (boolean) if the media should be editable after capture in the UI interface (iOS only)
-    
-*   mediaTypes an array of media type constants supported by the capture device UI (iOS only)
-    
-*   videoMaximumDuration (float) duration on how long in milliseconds to allow capture before completing (iOS only)
-    
-*   videoQuality (Ti.Media constant) to indicate the video quality during capture (iOS only)
-    
-*   showControls (boolean) to indicate if the built-in UI controls should be displayed (iOS only)
-    
-*   overlay (Ti.UI.View) which is added as an overlay to the camera UI (on top)
-    
-*   transform a transformation matrix that applies to the camera UI (not to the media returned) (iOS only)
-    
+* autohide (boolean) if the camera should auto hide after the media capture is completed (defaults to true) (iOS only)
+
+* animated (boolean) if the dialog should be animated (defaults to true) upon showing and hiding (Android and iOS only)
+
+* allowEditing (boolean) if the media should be editable after capture in the UI interface (iOS only)
+
+* mediaTypes an array of media type constants supported by the capture device UI (iOS only)
+
+* videoMaximumDuration (float) duration on how long in milliseconds to allow capture before completing (iOS only)
+
+* videoQuality (Ti.Media constant) to indicate the video quality during capture (iOS only)
+
+* showControls (boolean) to indicate if the built-in UI controls should be displayed (iOS only)
+
+* overlay (Ti.UI.View) which is added as an overlay to the camera UI (on top)
+
+* transform a transformation matrix that applies to the camera UI (not to the media returned) (iOS only)
+
 
 You can check for the availability of the camera with the Titanium.Media.isCameraSupported property: it's false if the device has no camera. The simulator/emulator does not have camera support. Other devices without cameras include 3rd generation and older iPods, the Nook Color, and Kindle Fire.
 
@@ -493,37 +493,37 @@ Gallery
 
 Some other useful properties include:
 
-*   animated (boolean) if the dialog should be animated (defaults to true) upon showing and hiding
-    
-*   allowEditing (boolean) if the media should be editable after capture in the UI interface
-    
-*   saveToPhotoGallery (boolean) whether modified media should be saved back to the gallery, generally only useful with allowEditing=true
-    
-*   mediaTypes an array of media type constants supported by the capture device UI
-    
-*   showControls (boolean) to indicate if the built-in UI controls should be displayed
-    
-*   overlay (Ti.UI.View) which is added as an overlay to the camera UI (on top)
-    
-*   transform a transformation matrix that applies to the camera UI (not to the media returned)
-    
-*   (iPad only) popoverView (Ti.UI.View) to position the photo gallery popover a specific view
-    
-*   (iPad only) arrowDirection control the type of arrow and position of the gallery
-    
+* animated (boolean) if the dialog should be animated (defaults to true) upon showing and hiding
+
+* allowEditing (boolean) if the media should be editable after capture in the UI interface
+
+* saveToPhotoGallery (boolean) whether modified media should be saved back to the gallery, generally only useful with allowEditing=true
+
+* mediaTypes an array of media type constants supported by the capture device UI
+
+* showControls (boolean) to indicate if the built-in UI controls should be displayed
+
+* overlay (Ti.UI.View) which is added as an overlay to the camera UI (on top)
+
+* transform a transformation matrix that applies to the camera UI (not to the media returned)
+
+* (iPad only) popoverView (Ti.UI.View) to position the photo gallery popover a specific view
+
+* (iPad only) arrowDirection control the type of arrow and position of the gallery
+
 
 #### Getting images into the simulator/emulator's gallery
 
 The photo gallery on the simulator/emulator is of course empty to start. If you'll be testing photo gallery code, you'll need to put some images there. You can do so by following this procedure:
 
-1.  Open the gallery in the simulator/emulator, then close it. You have to do this at least once to initialize its data storage structures.
-    
-2.  Find an image to save. For example, open the web browser, search for, and display an image.
-    
-3.  Long-press on the image, when you release, you should get a menu of options.
-    
-4.  Tap Save Image (or your device's equivalent button) to save the image to the gallery.
-    
+1. Open the gallery in the simulator/emulator, then close it. You have to do this at least once to initialize its data storage structures.
+
+2. Find an image to save. For example, open the web browser, search for, and display an image.
+
+3. Long-press on the image, when you release, you should get a menu of options.
+
+4. Tap Save Image (or your device's equivalent button) to save the image to the gallery.
+
 
 ### Windows development considerations
 
@@ -617,26 +617,26 @@ In this activity, you will write an app that will capture an image from the came
 
 ### Steps
 
-1.  Create a new project named PhotoTest.
-    
-2.  On tab1 of the default project, replace the label with an ImageView that is 300x300 points positioned 5 points from the top.
-    
-3.  Add a button that is 100x50 positioned 5 points from the bottom.
-    
-4.  When the button is clicked, show the camera if it's available, otherwise open the photo gallery. You'll need three callbacks--write your code to reuse the same three functions to minimize duplicated code. You'll need these callbacks:
-    
-    *   Success: set the ImageView's image property to the media returned from the camera or gallery. Output the mediaType to the info console.
-        
-    *   Cancel: don't do anything in this function
-        
-    *   Error: Display an alert dialog box showing the error.code describing why the operation failed.
-        
-5.  Open the simulator/emulator and save at least one photo to it, following the steps above.
-    
-6.  Build the app and run it on the simulator/emulator. The gallery should open.
-    
-7.  (Optional) Install the app onto a device and run it from there. The camera should open.
-    
+1. Create a new project named PhotoTest.
+
+2. On tab1 of the default project, replace the label with an ImageView that is 300x300 points positioned 5 points from the top.
+
+3. Add a button that is 100x50 positioned 5 points from the bottom.
+
+4. When the button is clicked, show the camera if it's available, otherwise open the photo gallery. You'll need three callbacks--write your code to reuse the same three functions to minimize duplicated code. You'll need these callbacks:
+
+  * Success: set the ImageView's image property to the media returned from the camera or gallery. Output the mediaType to the info console.
+
+  * Cancel: don't do anything in this function
+
+  * Error: Display an alert dialog box showing the error.code describing why the operation failed.
+
+5. Open the simulator/emulator and save at least one photo to it, following the steps above.
+
+6. Build the app and run it on the simulator/emulator. The gallery should open.
+
+7. (Optional) Install the app onto a device and run it from there. The camera should open.
+
 
 ## Summary
 

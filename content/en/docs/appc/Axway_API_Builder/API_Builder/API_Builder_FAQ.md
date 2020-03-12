@@ -1,4 +1,4 @@
-{"title":"API Builder FAQ","weight":"50"} 
+{"title":"API Builder FAQ","weight":"50"}
 
 API Builder 3.x is deprecated
 
@@ -8,36 +8,36 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 This document provides references to answer several API Builder frequently asked questions (FAQs).
 
-*   [Submit a bug](#Submitabug)
-    
-*   [Setup Appcelerator CLI](#SetupAppceleratorCLI)
-    
-*   [Create an API Builder project](#CreateanAPIBuilderproject)
-    
-*   [Run an API Builder project](#RunanAPIBuilderproject)
-    
-*   [Deploy an API Builder project](#DeployanAPIBuilderproject)
-    
-*   [Publish source code](#Publishsourcecode)
-    
-*   [Publish source code by providing a Dockerfile](#PublishsourcecodebyprovidingaDockerfile)
-    
-*   [Publish source code using an existing Dockerfile](#PublishsourcecodeusinganexistingDockerfile)
-    
-*   [Configure access to the API Builder Admin console](#ConfigureaccesstotheAPIBuilderAdminconsole)
-    
-*   [Create a model using the API Builder Admin console](#CreateamodelusingtheAPIBuilderAdminconsole)
-    
-*   [Access API Builder Swagger definitions](#AccessAPIBuilderSwaggerdefinitions)
-    
-*   [Create API endpoints](#CreateAPIendpoints)
-    
-*   [Configure API Builder](#ConfigureAPIBuilder)
-    
-*   [Create API Builder connectors](#CreateAPIBuilderconnectors)
-    
-*   [Secure API Builder configuration](#SecureAPIBuilderconfiguration)
-    
+* [Submit a bug](#Submitabug)
+
+* [Setup Appcelerator CLI](#SetupAppceleratorCLI)
+
+* [Create an API Builder project](#CreateanAPIBuilderproject)
+
+* [Run an API Builder project](#RunanAPIBuilderproject)
+
+* [Deploy an API Builder project](#DeployanAPIBuilderproject)
+
+* [Publish source code](#Publishsourcecode)
+
+* [Publish source code by providing a Dockerfile](#PublishsourcecodebyprovidingaDockerfile)
+
+* [Publish source code using an existing Dockerfile](#PublishsourcecodeusinganexistingDockerfile)
+
+* [Configure access to the API Builder Admin console](#ConfigureaccesstotheAPIBuilderAdminconsole)
+
+* [Create a model using the API Builder Admin console](#CreateamodelusingtheAPIBuilderAdminconsole)
+
+* [Access API Builder Swagger definitions](#AccessAPIBuilderSwaggerdefinitions)
+
+* [Create API endpoints](#CreateAPIendpoints)
+
+* [Configure API Builder](#ConfigureAPIBuilder)
+
+* [Create API Builder connectors](#CreateAPIBuilderconnectors)
+
+* [Secure API Builder configuration](#SecureAPIBuilderconfiguration)
+
 
 ## Submit a bug
 

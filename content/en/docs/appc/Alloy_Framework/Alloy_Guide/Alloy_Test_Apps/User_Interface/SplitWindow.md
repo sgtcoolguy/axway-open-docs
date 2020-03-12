@@ -1,4 +1,4 @@
-{"title":"SplitWindow","weight":"160"} 
+{"title":"SplitWindow","weight":"160"}
 
 Demonstrates how to use a SplitWindow control, an iPad-only control for managing the presentation of two views in a master-detail UI.
 
@@ -66,8 +66,8 @@ views/master.xml
 
 ## See also
 
-*   [Titanium.UI.iPad.SplitWindow](#!/api/Titanium.UI.iPad.SplitWindow) API reference
-    
-*   [Titanium.UI.TabGroup](#!/api/Titanium.UI.TabGroup) API reference
-    
-*   [Titanium.UI.Tab](#!/api/Titanium.UI.Tab) API reference
+* [Titanium.UI.iPad.SplitWindow](#!/api/Titanium.UI.iPad.SplitWindow) API reference
+
+* [Titanium.UI.TabGroup](#!/api/Titanium.UI.TabGroup) API reference
+
+* [Titanium.UI.Tab](#!/api/Titanium.UI.Tab) API reference

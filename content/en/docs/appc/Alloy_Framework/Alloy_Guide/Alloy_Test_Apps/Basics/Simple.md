@@ -1,4 +1,4 @@
-{"title":"Simple","weight":"80"} 
+{"title":"Simple","weight":"80"}
 
 Demonstrates a basic Alloy application consisting of a single XML view file, JavaScript controller file, and Titanium Style Sheet (TSS) file.
 
@@ -62,6 +62,6 @@ app/styles/index.tss
 
 ## See Also
 
-*   [Alloy Getting Started](/docs/appc/Alloy_Framework/Alloy_Getting_Started/)
-    
-*   [Alloy Concepts](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Concepts/)
+* [Alloy Getting Started](/docs/appc/Alloy_Framework/Alloy_Getting_Started/)
+
+* [Alloy Concepts](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Concepts/)

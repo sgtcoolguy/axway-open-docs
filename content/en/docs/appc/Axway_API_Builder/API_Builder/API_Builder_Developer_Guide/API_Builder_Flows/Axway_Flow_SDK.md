@@ -1,4 +1,4 @@
-{"title":"Axway Flow SDK","weight":"50"} 
+{"title":"Axway Flow SDK","weight":"50"}
 
 API Builder 3.x is deprecated
 
@@ -6,20 +6,20 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-*   [Features](#Features)
-    
-*   [Install](#Install)
-    
-*   [Use the Axway Flow SDK](#UsetheAxwayFlowSDK)
-    
-*   [Unit test your flow-node](#Unittestyourflow-node)
-    
-*   [Local API Builder test](#LocalAPIBuildertest)
-    
-*   [Type references](#Typereferences)
-    
-*   [API Reference](#axwayAPIReference)
-    
+* [Features](#Features)
+
+* [Install](#Install)
+
+* [Use the Axway Flow SDK](#UsetheAxwayFlowSDK)
+
+* [Unit test your flow-node](#Unittestyourflow-node)
+
+* [Local API Builder test](#LocalAPIBuildertest)
+
+* [Type references](#Typereferences)
+
+* [API Reference](#axwayAPIReference)
+
 
 The Axway Flow SDK (axway-flow-sdk) is a standalone utility that enables the creation of custom flow-nodes for API Builder flows. By offering the Axway Flow SDK as a standalone utility, new flow-nodes can be developed and consumed in API Builder without upgrading the version.
 
@@ -27,10 +27,10 @@ The Axway Flow SDK (axway-flow-sdk) is a standalone utility that enables the cre
 
 The Axway Flow SDK has the following content:
 
-*   CLI tool for starting a new flow-node project
-    
-*   SDK for building custom modules for API Builder flows
-    
+* CLI tool for starting a new flow-node project
+
+* SDK for building custom modules for API Builder flows
+
 
 ## Install
 
@@ -128,72 +128,72 @@ As an example of how to write a flow-node, we will examine creating a flow-node 
 
 To explain what occurs in the index.js file, we will break the file down piece by piece.
 
-1.  Describe the flow-node, name, description, category, and icon:
-    
-    `.add(``'encodeuri'``, {`
-    
-    `name:` `'Encode URI'``,`
-    
-    `icon:` `'icon.svg'``,`
-    
-    `description:` `'URI encoder.'``,`
-    
-    `category:` `'utils'`
-    
-    `})`
-    
-    The name is the text that is displayed in the Flow Editor. The default icon is a placeholder (a star) that should be replaced with a graphic that represents the action of the flow-node. The icon is displayed at 28 pixels x 28 pixels. The category is the section in the Flow Editor tool panel where the flow-node is contained.
-    
-    ![one](/Images/appc/download/thumbnails/52298051/one.png)
-    
-2.  Add a method to the flow-node and describe its parameters:
-    
-    `.method(``'encode'``, {`
-    
-    `name:` `'Encode URI'``,`
-    
-    `description:` `'Encodes a URI by replacing each instance of certain characters with UTF-8 encodings.'`
-    
-    `})`
-    
-    `.parameter(``'uri'``, {`
-    
-    `description:` `'The URI to encode.'``,`
-    
-    `type:` `'string'`
-    
-    `})`
-    
-    A method called encode, that is displayed in the Flow Editor as **Encode URI**, was added. The encode method has a single parameter. If there was more than one parameter, we would repeat the .parameter(name, schema) block. The second value in the parameter method is a JSON Schema that describes the parameter type.
-    
-    ![two](/Images/appc/download/attachments/52298051/two.png)
-    
-3.  Describe the possible outputs from the method:
-    
-    `.output(``'next'``, {`
-    
-    `name:` `'Next'``,`
-    
-    `description:` `'The URI was encoded successfully.'``,`
-    
-    `context:` `'$.encodedURI'``,`
-    
-    `schema: {`
-    
-    `type:` `'string'`
-    
-    `}`
-    
-    `})`
-    
-    The outputs section defines the possible outcomes of the flow-node. In this simple case there is just one output; however, flow-nodes can have multiple outputs with different return types. For example, this flow-node could have added an **error** output to indicate that encoding failed.
-    
-4.  Define the implementation:
-    
-    `.action(action);`
-    
-    The action() expects a function that will be passed the request details parameter and a callback object parameter.
-    
+1. Describe the flow-node, name, description, category, and icon:
+
+  `.add(``'encodeuri'``, {`
+
+  `name:` `'Encode URI'``,`
+
+  `icon:` `'icon.svg'``,`
+
+  `description:` `'URI encoder.'``,`
+
+  `category:` `'utils'`
+
+  `})`
+
+  The name is the text that is displayed in the Flow Editor. The default icon is a placeholder (a star) that should be replaced with a graphic that represents the action of the flow-node. The icon is displayed at 28 pixels x 28 pixels. The category is the section in the Flow Editor tool panel where the flow-node is contained.
+
+  ![one](/Images/appc/download/thumbnails/52298051/one.png)
+
+2. Add a method to the flow-node and describe its parameters:
+
+  `.method(``'encode'``, {`
+
+  `name:` `'Encode URI'``,`
+
+  `description:` `'Encodes a URI by replacing each instance of certain characters with UTF-8 encodings.'`
+
+  `})`
+
+  `.parameter(``'uri'``, {`
+
+  `description:` `'The URI to encode.'``,`
+
+  `type:` `'string'`
+
+  `})`
+
+  A method called encode, that is displayed in the Flow Editor as **Encode URI**, was added. The encode method has a single parameter. If there was more than one parameter, we would repeat the .parameter(name, schema) block. The second value in the parameter method is a JSON Schema that describes the parameter type.
+
+  ![two](/Images/appc/download/attachments/52298051/two.png)
+
+3. Describe the possible outputs from the method:
+
+  `.output(``'next'``, {`
+
+  `name:` `'Next'``,`
+
+  `description:` `'The URI was encoded successfully.'``,`
+
+  `context:` `'$.encodedURI'``,`
+
+  `schema: {`
+
+  `type:` `'string'`
+
+  `}`
+
+  `})`
+
+  The outputs section defines the possible outcomes of the flow-node. In this simple case there is just one output; however, flow-nodes can have multiple outputs with different return types. For example, this flow-node could have added an **error** output to indicate that encoding failed.
+
+4. Define the implementation:
+
+  `.action(action);`
+
+  The action() expects a function that will be passed the request details parameter and a callback object parameter.
+
 
 #### Customize the flow-node method implementation
 
@@ -337,27 +337,27 @@ In [Axway API Builder](/docs/appc/Axway_API_Builder/API_Builder/), it is possibl
 
 **Kind**: Inner class of axway-flow-sdk
 
-*   NodeBuilder
-    
-    *   .add(key, \[options\])
-        
-    *   .method(key, \[options\])
-        
-    *   .parameter(name, schema, \[required\])
-        
-    *   .output(key)
-        
-    *   .action(handler)
-        
+* NodeBuilder
+
+  * .add(key, \[options\])
+
+  * .method(key, \[options\])
+
+  * .parameter(name, schema, \[required\])
+
+  * .output(key)
+
+  * .action(handler)
+
 
 ### nodeBuilder.add(key, \[options\])
 
 Adds a new flow-node specification and prepares the NodeBuilder to accept the following specification operations:
 
-*   .method(key, \[options\])
-    
-*   .output(key, \[options\])
-    
+* .method(key, \[options\])
+
+* .output(key, \[options\])
+
 
 The key parameter is used to uniquely identify the specification and represents a distinct instance of a flow-node for the flow editor. The key will be used as the name unless the name option is provided. The new flow-node will appear in the general category by default, or under the provided category option.
 
@@ -423,10 +423,10 @@ Example:
 
 Adds a new method to the current flow-node specification and prepares the [NodeBuilder](#NodeBuilder) to accept the following method operations:
 
-*   .parameter(name, schema, \[required\])
-    
-*   .action(handler)
-    
+* .parameter(name, schema, \[required\])
+
+* .action(handler)
+
 
 The .add(key, \[options\]) must be called prior to adding a method.
 

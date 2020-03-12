@@ -1,4 +1,4 @@
-{"title":"Titanium SDK Open Source Attribution Notice","weight":"100"} 
+{"title":"Titanium SDK Open Source Attribution Notice","weight":"100"}
 
 Up-to-date information is available at [http://www.appcelerator.com/opensource/](http://www.appcelerator.com/opensource/).
 

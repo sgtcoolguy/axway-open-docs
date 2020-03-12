@@ -1,43 +1,43 @@
-{"title":"Titanium SDK 7.1.0.RC - 1 March 2018","weight":"240"} 
+{"title":"Titanium SDK 7.1.0.RC - 1 March 2018","weight":"240"}
 
-*   [About this release](#Aboutthisrelease)
-    
-*   [Notice of feature and behavior Changes](#NoticeoffeatureandbehaviorChanges)
-    
-    *   [Android platform](#Androidplatform)
-        
-*   [New features](#Newfeatures)
-    
-    *   [Android platform](#Androidplatform.1)
-        
-    *   [iOS platform](#iOSplatform)
-        
-    *   [Windows platform](#Windowsplatform)
-        
-    *   [Multiple platforms](#Multipleplatforms)
-        
-*   [Community credits](#Communitycredits)
-    
-*   [Fixed issues](#Fixedissues)
-    
-    *   [Android platforms](#Androidplatforms)
-        
-    *   [iOS platforms](#iOSplatforms)
-        
-    *   [Windows platforms](#Windowsplatforms)
-        
-*   [Improvements](#Improvements)
-    
-    *   [Android platform](#Androidplatform.2)
-        
-    *   [iOS platform](#iOSplatform.1)
-        
-    *   [Windows platform](#Windowsplatform.1)
-        
-*   [API changes](#APIchanges)
-    
-    *   [New APIs](#NewAPIs)
-        
+* [About this release](#Aboutthisrelease)
+
+* [Notice of feature and behavior Changes](#NoticeoffeatureandbehaviorChanges)
+
+  * [Android platform](#Androidplatform)
+
+* [New features](#Newfeatures)
+
+  * [Android platform](#Androidplatform.1)
+
+  * [iOS platform](#iOSplatform)
+
+  * [Windows platform](#Windowsplatform)
+
+  * [Multiple platforms](#Multipleplatforms)
+
+* [Community credits](#Communitycredits)
+
+* [Fixed issues](#Fixedissues)
+
+  * [Android platforms](#Androidplatforms)
+
+  * [iOS platforms](#iOSplatforms)
+
+  * [Windows platforms](#Windowsplatforms)
+
+* [Improvements](#Improvements)
+
+  * [Android platform](#Androidplatform.2)
+
+  * [iOS platform](#iOSplatform.1)
+
+  * [Windows platform](#Windowsplatform.1)
+
+* [API changes](#APIchanges)
+
+  * [New APIs](#NewAPIs)
+
 
 ## About this release
 
@@ -49,197 +49,197 @@ As of this release, Titanium SDK 7.0.x will not be supported six months from 7.1
 
 ### Android platform
 
-*   [TIMOB-25607](https://jira.appcelerator.org/browse/TIMOB-25607) - Remove deprecated Ti.map API
-    
-    *   Deprecated Ti.map
-        
+* [TIMOB-25607](https://jira.appcelerator.org/browse/TIMOB-25607) - Remove deprecated Ti.map API
+
+  * Deprecated Ti.map
+
 
 ## New features
 
 ### Android platform
 
-*   [TIMOB-9366](https://jira.appcelerator.org/browse/TIMOB-9366) - Android: Add "radial" support to view "backgroundGradient" property
-    
-    *   Added radial gradient support
-        
-*   [TIMOB-20126](https://jira.appcelerator.org/browse/TIMOB-20126) - Android: Not able to see the multiline notification on the android device
-    
-    *   Added support for multiline notifications
-        
-*   [TIMOB-20522](https://jira.appcelerator.org/browse/TIMOB-20522) - FusedLocationProvider on Android
-    
-    *   Added support for FusedLocationProviderClient for Ti.Geolocation
-        
-*   [TIMOB-24248](https://jira.appcelerator.org/browse/TIMOB-24248) - Android: Ti.Calendar Recurring Events are not clearly exposed
-    
-    *   Implemented Ti.Calendar.RecurrenceRule
-        
-*   [TIMOB-25591](https://jira.appcelerator.org/browse/TIMOB-25591) - Android: Programmatically check whether app has notification permission on Android
-    
-    *   Exposed NotificationManagerCompat.areNotificationsEnabled method
-        
+* [TIMOB-9366](https://jira.appcelerator.org/browse/TIMOB-9366) - Android: Add "radial" support to view "backgroundGradient" property
+
+  * Added radial gradient support
+
+* [TIMOB-20126](https://jira.appcelerator.org/browse/TIMOB-20126) - Android: Not able to see the multiline notification on the android device
+
+  * Added support for multiline notifications
+
+* [TIMOB-20522](https://jira.appcelerator.org/browse/TIMOB-20522) - FusedLocationProvider on Android
+
+  * Added support for FusedLocationProviderClient for Ti.Geolocation
+
+* [TIMOB-24248](https://jira.appcelerator.org/browse/TIMOB-24248) - Android: Ti.Calendar Recurring Events are not clearly exposed
+
+  * Implemented Ti.Calendar.RecurrenceRule
+
+* [TIMOB-25591](https://jira.appcelerator.org/browse/TIMOB-25591) - Android: Programmatically check whether app has notification permission on Android
+
+  * Exposed NotificationManagerCompat.areNotificationsEnabled method
+
 
 ### iOS platform
 
-*   [TIMOB-10368](https://jira.appcelerator.org/browse/TIMOB-10368) - iOS: Implement support for custom color/hintTextColor in SearchBar
-    
-    *   Added support for custom color and hintTextColor in SearchBar
-        
+* [TIMOB-10368](https://jira.appcelerator.org/browse/TIMOB-10368) - iOS: Implement support for custom color/hintTextColor in SearchBar
+
+  * Added support for custom color and hintTextColor in SearchBar
+
 
 ### Windows platform
 
-*   [TIMOB-25648](https://jira.appcelerator.org/browse/TIMOB-25648) - Windows: Implement Ti.UI.Label.minimumFontSize
-    
-    *   Added parity for Windows platform of Ti.UI.Label.minimumFontSize
-        
-*   [TIMOB-25743](https://jira.appcelerator.org/browse/TIMOB-25743) - Windows: Auto-increment version numbering
-    
-    *   Implemented automatic version increment. If you omit the build number, it will be generated behind scenes (available only on development and test build).
-        
-    *   For instance when you have 1.0 version in tiapp.xml, we generate the 4th segment 1.0.0.x version number and increment this build number on each build. (numbering spec: Major.Minor.Build.Revision>). For example: <version>1.0<version>
-        
-    *   If you set build number explicitly in tiapp.xml, it won't generate the build number. In this case you need to bump up the build number manually in order to prevent deployment issue like this: <version>1.0.1.1<version>
-        
-    *   This feature can be disabled by setting false on use-auto-versioning in windows section:
-        
-        `<``windows``>`
-        
-        `<``use``-auto-versioning>false</``use``-auto-versioning>`
-        
-        `</``windows``>`
-        
+* [TIMOB-25648](https://jira.appcelerator.org/browse/TIMOB-25648) - Windows: Implement Ti.UI.Label.minimumFontSize
+
+  * Added parity for Windows platform of Ti.UI.Label.minimumFontSize
+
+* [TIMOB-25743](https://jira.appcelerator.org/browse/TIMOB-25743) - Windows: Auto-increment version numbering
+
+  * Implemented automatic version increment. If you omit the build number, it will be generated behind scenes (available only on development and test build).
+
+  * For instance when you have 1.0 version in tiapp.xml, we generate the 4th segment 1.0.0.x version number and increment this build number on each build. (numbering spec: Major.Minor.Build.Revision>). For example: <version>1.0<version>
+
+  * If you set build number explicitly in tiapp.xml, it won't generate the build number. In this case you need to bump up the build number manually in order to prevent deployment issue like this: <version>1.0.1.1<version>
+
+  * This feature can be disabled by setting false on use-auto-versioning in windows section:
+
+    `<``windows``>`
+
+    `<``use``-auto-versioning>false</``use``-auto-versioning>`
+
+    `</``windows``>`
+
 
 ### Multiple platforms
 
-*   [TIMOB-24610](https://jira.appcelerator.org/browse/TIMOB-24610) - Support transpiling user JS code to ES5, or minimum target OS/JS engine support
-    
-    *   Added transpiling user JavaScript code to ES5 or minimum target OS/JS engine support
-        
-        <tiapp>  <transpile>true</transpile></tiapp>
-        
-    *   Adding this property and having it set to true will enable transpilation during the build process using babel-preset-env to target the underlying JS engine version. For Android we target the version of v8 we build with. For iOS we target the version of iOS's included JavaScriptCore engine for the minimum iOS version the SDK targets.
-        
-        When using the flag be aware of the following this causes code to run in [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode), which has the potential to cause errors to be thrown. Review [Transitioning to strict mode on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode) to become familiar with some common issues.
-        
+* [TIMOB-24610](https://jira.appcelerator.org/browse/TIMOB-24610) - Support transpiling user JS code to ES5, or minimum target OS/JS engine support
+
+  * Added transpiling user JavaScript code to ES5 or minimum target OS/JS engine support
+
+    <tiapp>  <transpile>true</transpile></tiapp>
+
+  * Adding this property and having it set to true will enable transpilation during the build process using babel-preset-env to target the underlying JS engine version. For Android we target the version of v8 we build with. For iOS we target the version of iOS's included JavaScriptCore engine for the minimum iOS version the SDK targets.
+
+    When using the flag be aware of the following this causes code to run in [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode), which has the potential to cause errors to be thrown. Review [Transitioning to strict mode on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode) to become familiar with some common issues.
+
 
 ## Community credits
 
-*   [Michael Gangolf](https://github.com/m1ga) - Android: View rect x and y are inconsistent ([TIMOB-25557](https://jira.appcelerator.org/browse/TIMOB-25557))
-    
-*   [Sergey Volkov](https://github.com/drauggres) - Android. TiResponseCache. Permission ([TIMOB-25507](https://jira.appcelerator.org/browse/TIMOB-25507))
-    
+* [Michael Gangolf](https://github.com/m1ga) - Android: View rect x and y are inconsistent ([TIMOB-25557](https://jira.appcelerator.org/browse/TIMOB-25557))
+
+* [Sergey Volkov](https://github.com/drauggres) - Android. TiResponseCache. Permission ([TIMOB-25507](https://jira.appcelerator.org/browse/TIMOB-25507))
+
 
 ## Fixed issues
 
 ### Android platforms
 
-*   [TIMOB-17210](https://jira.appcelerator.org/browse/TIMOB-17210) - Android: TextField/TextArea "change" event should not trigger when setting "value" or "attributedString" properties
-    
-*   [TIMOB-23135](https://jira.appcelerator.org/browse/TIMOB-23135) - Android: "locationServicesEnabled" returns false when available on device
-    
-*   [TIMOB-24404](https://jira.appcelerator.org/browse/TIMOB-24404) - Titanium projects specify "global.global != global" different
-    
-*   [TIMOB-25507](https://jira.appcelerator.org/browse/TIMOB-25507) - Android. TiResponseCache. Permission
-    
-*   [TIMOB-25552](https://jira.appcelerator.org/browse/TIMOB-25552) - Android: Nested scrolling within disabled ScrollView are not propagated to parent
-    
-*   [TIMOB-25557](https://jira.appcelerator.org/browse/TIMOB-25557) - Android: View rect x and y are inconsistent
-    
-*   [TIMOB-25585](https://jira.appcelerator.org/browse/TIMOB-25585) - Android: MediaModule creates temporary files that don't delete on app exit
-    
-*   [TIMOB-25599](https://jira.appcelerator.org/browse/TIMOB-25599) - Android: V8 crash can occur when attempting to move weak Java ref to strong
-    
-*   [TIMOB-25600](https://jira.appcelerator.org/browse/TIMOB-25600) - Android : SDK 7.0.0.GA not applying custom theme attributes properly on TableViewRow, but SDK 5.5.1 or below works properly
-    
-*   [TIMOB-25619](https://jira.appcelerator.org/browse/TIMOB-25619) - Android: previewImage() crashes when given a non-file based blob
-    
-*   [TIMOB-25679](https://jira.appcelerator.org/browse/TIMOB-25679) - Android: Crash when setting wrong accuracy in Ti.Geolocation
-    
-*   [TIMOB-25687](https://jira.appcelerator.org/browse/TIMOB-25687) - Android: Picker change listener doesn't work the first time
-    
-*   [TIMOB-25693](https://jira.appcelerator.org/browse/TIMOB-25693) - Android: Possible memory leak when setting ListSections on a ListView
-    
-*   [TIMOB-25728](https://jira.appcelerator.org/browse/TIMOB-25728) - Android: TableView can crash using setData()
-    
-*   [TIMOB-25742](https://jira.appcelerator.org/browse/TIMOB-25742) - CLI: Fails to install APK to Android 4.1 devices
-    
-*   [TIMOB-25749](https://jira.appcelerator.org/browse/TIMOB-25749) - Android: Incompatible types: Class<KrollExternalModule>
-    
-*   [TIMOB-25757](https://jira.appcelerator.org/browse/TIMOB-25757) - Android: Improve proxy getter/setter validation
-    
-*   [TIMOB-25767](https://jira.appcelerator.org/browse/TIMOB-25767) - Android: Animated views should retain their initial properties
-    
-*   [TIMOB-25769](https://jira.appcelerator.org/browse/TIMOB-25769) - Android: Allow video-upload in Ti.UI.WebView
-    
-*   [TIMOB-25771](https://jira.appcelerator.org/browse/TIMOB-25771) - Android: Apps fail to build as of 7.0.2 if system requires proxy to access Internet
-    
-*   [TIMOB-25773](https://jira.appcelerator.org/browse/TIMOB-25773) - Android: App won't compile if the folder contains space and dash
-    
+* [TIMOB-17210](https://jira.appcelerator.org/browse/TIMOB-17210) - Android: TextField/TextArea "change" event should not trigger when setting "value" or "attributedString" properties
+
+* [TIMOB-23135](https://jira.appcelerator.org/browse/TIMOB-23135) - Android: "locationServicesEnabled" returns false when available on device
+
+* [TIMOB-24404](https://jira.appcelerator.org/browse/TIMOB-24404) - Titanium projects specify "global.global != global" different
+
+* [TIMOB-25507](https://jira.appcelerator.org/browse/TIMOB-25507) - Android. TiResponseCache. Permission
+
+* [TIMOB-25552](https://jira.appcelerator.org/browse/TIMOB-25552) - Android: Nested scrolling within disabled ScrollView are not propagated to parent
+
+* [TIMOB-25557](https://jira.appcelerator.org/browse/TIMOB-25557) - Android: View rect x and y are inconsistent
+
+* [TIMOB-25585](https://jira.appcelerator.org/browse/TIMOB-25585) - Android: MediaModule creates temporary files that don't delete on app exit
+
+* [TIMOB-25599](https://jira.appcelerator.org/browse/TIMOB-25599) - Android: V8 crash can occur when attempting to move weak Java ref to strong
+
+* [TIMOB-25600](https://jira.appcelerator.org/browse/TIMOB-25600) - Android : SDK 7.0.0.GA not applying custom theme attributes properly on TableViewRow, but SDK 5.5.1 or below works properly
+
+* [TIMOB-25619](https://jira.appcelerator.org/browse/TIMOB-25619) - Android: previewImage() crashes when given a non-file based blob
+
+* [TIMOB-25679](https://jira.appcelerator.org/browse/TIMOB-25679) - Android: Crash when setting wrong accuracy in Ti.Geolocation
+
+* [TIMOB-25687](https://jira.appcelerator.org/browse/TIMOB-25687) - Android: Picker change listener doesn't work the first time
+
+* [TIMOB-25693](https://jira.appcelerator.org/browse/TIMOB-25693) - Android: Possible memory leak when setting ListSections on a ListView
+
+* [TIMOB-25728](https://jira.appcelerator.org/browse/TIMOB-25728) - Android: TableView can crash using setData()
+
+* [TIMOB-25742](https://jira.appcelerator.org/browse/TIMOB-25742) - CLI: Fails to install APK to Android 4.1 devices
+
+* [TIMOB-25749](https://jira.appcelerator.org/browse/TIMOB-25749) - Android: Incompatible types: Class<KrollExternalModule>
+
+* [TIMOB-25757](https://jira.appcelerator.org/browse/TIMOB-25757) - Android: Improve proxy getter/setter validation
+
+* [TIMOB-25767](https://jira.appcelerator.org/browse/TIMOB-25767) - Android: Animated views should retain their initial properties
+
+* [TIMOB-25769](https://jira.appcelerator.org/browse/TIMOB-25769) - Android: Allow video-upload in Ti.UI.WebView
+
+* [TIMOB-25771](https://jira.appcelerator.org/browse/TIMOB-25771) - Android: Apps fail to build as of 7.0.2 if system requires proxy to access Internet
+
+* [TIMOB-25773](https://jira.appcelerator.org/browse/TIMOB-25773) - Android: App won't compile if the folder contains space and dash
+
 
 ### iOS platforms
 
-*   [TIMOB-20604](https://jira.appcelerator.org/browse/TIMOB-20604) - iOS: ti.geofence not tracking location on
-    
-*   [TIMOB-23183](https://jira.appcelerator.org/browse/TIMOB-23183) - iOS Non-public API usage: The app references non-public symbols in <APPLICATION NAME> : \_ptrace
-    
-*   [TIMOB-25201](https://jira.appcelerator.org/browse/TIMOB-25201) - iOS: tintColor doesn't work on imageView if dimensions (height, width) are provided
-    
-*   [TIMOB-25739](https://jira.appcelerator.org/browse/TIMOB-25739) - iOS 11: Location permissions do not indicate missing "WhenInUse" privacy-key
-    
-*   [TIMOB-25762](https://jira.appcelerator.org/browse/TIMOB-25762) - iOS 11.3 beta: Loading HTML in Webview errors when accessing EventListener
-    
-*   [TIMOB-25765](https://jira.appcelerator.org/browse/TIMOB-25765) - iOS 11: Scrollview layout error when set window with includeOpaqueBars and extendEdges
-    
+* [TIMOB-20604](https://jira.appcelerator.org/browse/TIMOB-20604) - iOS: ti.geofence not tracking location on
+
+* [TIMOB-23183](https://jira.appcelerator.org/browse/TIMOB-23183) - iOS Non-public API usage: The app references non-public symbols in <APPLICATION NAME> : \_ptrace
+
+* [TIMOB-25201](https://jira.appcelerator.org/browse/TIMOB-25201) - iOS: tintColor doesn't work on imageView if dimensions (height, width) are provided
+
+* [TIMOB-25739](https://jira.appcelerator.org/browse/TIMOB-25739) - iOS 11: Location permissions do not indicate missing "WhenInUse" privacy-key
+
+* [TIMOB-25762](https://jira.appcelerator.org/browse/TIMOB-25762) - iOS 11.3 beta: Loading HTML in Webview errors when accessing EventListener
+
+* [TIMOB-25765](https://jira.appcelerator.org/browse/TIMOB-25765) - iOS 11: Scrollview layout error when set window with includeOpaqueBars and extendEdges
+
 
 ### Windows platforms
 
-*   [TIMOB-24818](https://jira.appcelerator.org/browse/TIMOB-24818) - Windows: Calling insertRow with a deleted row errors out application
-    
-*   [TIMOB-25274](https://jira.appcelerator.org/browse/TIMOB-25274) - Windows: setData does not add UI elements that already existed
-    
-*   [TIMOB-25581](https://jira.appcelerator.org/browse/TIMOB-25581) - Windows: borderWidth should be changed 0 to 1 when borderColor is set
-    
-*   [TIMOB-25595](https://jira.appcelerator.org/browse/TIMOB-25595) - Windows: selecting search result with searchbar and in tableview shows empty row
-    
-*   [TIMOB-25598](https://jira.appcelerator.org/browse/TIMOB-25598) - Windows: Not being able to debug issues due to exceptions shown
-    
-*   [TIMOB-25696](https://jira.appcelerator.org/browse/TIMOB-25696) - Windows: Network.TCP causes app crash
-    
-*   [TIMOB-25794](https://jira.appcelerator.org/browse/TIMOB-25794) - Windows: Adding a hyperloop created UI element to a View crashes the app
-    
+* [TIMOB-24818](https://jira.appcelerator.org/browse/TIMOB-24818) - Windows: Calling insertRow with a deleted row errors out application
+
+* [TIMOB-25274](https://jira.appcelerator.org/browse/TIMOB-25274) - Windows: setData does not add UI elements that already existed
+
+* [TIMOB-25581](https://jira.appcelerator.org/browse/TIMOB-25581) - Windows: borderWidth should be changed 0 to 1 when borderColor is set
+
+* [TIMOB-25595](https://jira.appcelerator.org/browse/TIMOB-25595) - Windows: selecting search result with searchbar and in tableview shows empty row
+
+* [TIMOB-25598](https://jira.appcelerator.org/browse/TIMOB-25598) - Windows: Not being able to debug issues due to exceptions shown
+
+* [TIMOB-25696](https://jira.appcelerator.org/browse/TIMOB-25696) - Windows: Network.TCP causes app crash
+
+* [TIMOB-25794](https://jira.appcelerator.org/browse/TIMOB-25794) - Windows: Adding a hyperloop created UI element to a View crashes the app
+
 
 ## Improvements
 
 ### Android platform
 
-*   [TIMOB-17821](https://jira.appcelerator.org/browse/TIMOB-17821) - Android: Add Support for Custom View to ActionBar
-    
-    *   Added support for Custom View to ActionBar
-        
-*   [TIMOB-25703](https://jira.appcelerator.org/browse/TIMOB-25703) - Android: Add VideoPlayer "showsControls" property
-    
-    *   Added support for VideoPlayer showsControls property
-        
-*   [TIMOB-25730](https://jira.appcelerator.org/browse/TIMOB-25730) - Android: Allow SearchBar "color" and "hintTextColor" properties to be set dynamically
-    
-    *   Added support for SearchBar's color and hintTextColor properties to be set dynamically
-        
+* [TIMOB-17821](https://jira.appcelerator.org/browse/TIMOB-17821) - Android: Add Support for Custom View to ActionBar
+
+  * Added support for Custom View to ActionBar
+
+* [TIMOB-25703](https://jira.appcelerator.org/browse/TIMOB-25703) - Android: Add VideoPlayer "showsControls" property
+
+  * Added support for VideoPlayer showsControls property
+
+* [TIMOB-25730](https://jira.appcelerator.org/browse/TIMOB-25730) - Android: Allow SearchBar "color" and "hintTextColor" properties to be set dynamically
+
+  * Added support for SearchBar's color and hintTextColor properties to be set dynamically
+
 
 ### iOS platform
 
-*   [TIMOB-19154](https://jira.appcelerator.org/browse/TIMOB-19154) - iOS9: Replace NSURLConnection in Ti.Network.HTTPClient with NSURLSession
-    
-    *   Replaced Deprecate NSURLConnection with NSURLSession API
-        
+* [TIMOB-19154](https://jira.appcelerator.org/browse/TIMOB-19154) - iOS9: Replace NSURLConnection in Ti.Network.HTTPClient with NSURLSession
+
+  * Replaced Deprecate NSURLConnection with NSURLSession API
+
 
 ### Windows platform
 
-*   [TIMOB-25616](https://jira.appcelerator.org/browse/TIMOB-25616) - Windows: Add option to suppress/force uninstallation on deploy
-    
-    *   Added feature to prevent uninstalling existing apps in order to complete installation when the same app version is already installed unless user explicitly specifics the \--forceUnInstall option
-        
-    *   Example: appc ti build -p windows --wp-sdk 10.0 --target wp-device --skipInstallDependencies -l trace --forceUnInstall
-        
+* [TIMOB-25616](https://jira.appcelerator.org/browse/TIMOB-25616) - Windows: Add option to suppress/force uninstallation on deploy
+
+  * Added feature to prevent uninstalling existing apps in order to complete installation when the same app version is already installed unless user explicitly specifics the \--forceUnInstall option
+
+  * Example: appc ti build -p windows --wp-sdk 10.0 --target wp-device --skipInstallDependencies -l trace --forceUnInstall
+
 
 ## API changes
 
@@ -408,6 +408,3 @@ Titanium.UI.TabGroup.close
 event
 
 Fired when the tab group is closed. (Added support for Android.)
-
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**

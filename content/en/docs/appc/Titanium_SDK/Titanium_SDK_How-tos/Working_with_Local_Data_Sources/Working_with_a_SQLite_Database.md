@@ -1,66 +1,66 @@
-{"title":"Working with a SQLite Database","weight":"30"} 
+{"title":"Working with a SQLite Database","weight":"30"}
 
-*   [Introduction](#Introduction)
-    
-*   [Creating and installing databases](#Creatingandinstallingdatabases)
-    
-    *   [Opening a database](#Openingadatabase)
-        
-    *   [Controlling backups to iCloud (iOS only)](#ControllingbackupstoiCloud(iOSonly))
-        
-    *   [Creating database tables](#Creatingdatabasetables)
-        
-    *   [Installing an existing database](#Installinganexistingdatabase)
-        
-*   [Working with database contents](#Workingwithdatabasecontents)
-    
-    *   [Storing data](#Storingdata)
-        
-    *   [Retrieving data](#Retrievingdata)
-        
-    *   [Updating data](#Updatingdata)
-        
-    *   [Deleting data](#Deletingdata)
-        
-    *   [Truncating (emptying) a table](#Truncating(emptying)atable)
-        
-*   [Manipulating the database's structure](#Manipulatingthedatabase'sstructure)
-    
-    *   [Dropping a table](#Droppingatable)
-        
-    *   [Altering a table](#Alteringatable)
-        
-    *   [PRAGMA commands](#PRAGMAcommands)
-        
-*   [Best practices](#Bestpractices)
-    
-    *   [Close the database and resultset with each operation](#Closethedatabaseandresultsetwitheachoperation)
-        
-    *   [Use transactions to speed batch inserts](#Usetransactionstospeedbatchinserts)
-        
-    *   [Use a minimal pre-populated database](#Useaminimalpre-populateddatabase)
-        
-    *   [Store a version number to ease database updates](#Storeaversionnumbertoeasedatabaseupdates)
-        
+* [Introduction](#Introduction)
+
+* [Creating and installing databases](#Creatingandinstallingdatabases)
+
+  * [Opening a database](#Openingadatabase)
+
+  * [Controlling backups to iCloud (iOS only)](#ControllingbackupstoiCloud(iOSonly))
+
+  * [Creating database tables](#Creatingdatabasetables)
+
+  * [Installing an existing database](#Installinganexistingdatabase)
+
+* [Working with database contents](#Workingwithdatabasecontents)
+
+  * [Storing data](#Storingdata)
+
+  * [Retrieving data](#Retrievingdata)
+
+  * [Updating data](#Updatingdata)
+
+  * [Deleting data](#Deletingdata)
+
+  * [Truncating (emptying) a table](#Truncating(emptying)atable)
+
+* [Manipulating the database's structure](#Manipulatingthedatabase'sstructure)
+
+  * [Dropping a table](#Droppingatable)
+
+  * [Altering a table](#Alteringatable)
+
+  * [PRAGMA commands](#PRAGMAcommands)
+
+* [Best practices](#Bestpractices)
+
+  * [Close the database and resultset with each operation](#Closethedatabaseandresultsetwitheachoperation)
+
+  * [Use transactions to speed batch inserts](#Usetransactionstospeedbatchinserts)
+
+  * [Use a minimal pre-populated database](#Useaminimalpre-populateddatabase)
+
+  * [Store a version number to ease database updates](#Storeaversionnumbertoeasedatabaseupdates)
+
 
 ## Introduction
 
 Android, iOS and Windows support [SQLite3](https://sqlite.org), the SQL-based relational database management system (RDMS), for local data storage. There are a few things to note when you first work with SQLite, that may influence the way you develop with it:
 
-*   SQLite stores data in a simple text file. There is no granular security or user privileges for data therefore anyone with filesystem access to it may read its contents.
-    
-*   There are only five underlying data types; NULL, INTEGER, REAL, TEXT and BLOB. For more detail see [Datatypes In SQLite Version 3](http://www.sqlite.org/datatype3.html).
-    
-*   Binary objects (BLOBs) are stored as text representations, thus access to BLOBs is not optimal. It is recommend to store BLOBs on the filesystem and store the filesystem path in the database.
-    
-*   SQLite supports concurrent read access, but enforces sequential write access. This is because a filesystem lock is placed on the file during write operations. This is an important point to bear in mind with multi-threaded applications.
-    
-*   Referential integrity is not enabled by default. See [SQLite Foreign Key Support](http://www.sqlite.org/foreignkeys.html) for more information.
-    
-*   RIGHT and FULL OUTER JOINs are not supported.
-    
-*   There is limited ALTER TABLE support; columns may not be modified or deleted.
-    
+* SQLite stores data in a simple text file. There is no granular security or user privileges for data therefore anyone with filesystem access to it may read its contents.
+
+* There are only five underlying data types; NULL, INTEGER, REAL, TEXT and BLOB. For more detail see [Datatypes In SQLite Version 3](http://www.sqlite.org/datatype3.html).
+
+* Binary objects (BLOBs) are stored as text representations, thus access to BLOBs is not optimal. It is recommend to store BLOBs on the filesystem and store the filesystem path in the database.
+
+* SQLite supports concurrent read access, but enforces sequential write access. This is because a filesystem lock is placed on the file during write operations. This is an important point to bear in mind with multi-threaded applications.
+
+* Referential integrity is not enabled by default. See [SQLite Foreign Key Support](http://www.sqlite.org/foreignkeys.html) for more information.
+
+* RIGHT and FULL OUTER JOINs are not supported.
+
+* There is limited ALTER TABLE support; columns may not be modified or deleted.
+
 
 Titanium provides access to SQLite via the following classes:
 
@@ -72,7 +72,7 @@ Description
 
 Root module for working with databases
 
-[Titanium.Database.DB](#!/api/Titanium.Database.DB)        
+[Titanium.Database.DB](#!/api/Titanium.Database.DB)
 
 Database handle
 
@@ -84,10 +84,10 @@ Contains data returned by SQL queries
 
 Initializing a database can be done through the following methods:
 
-*   Create an empty database and define its structure and contents via SQL statements embedded within your app logic.
-    
-*   Install a predefined database (with or without data) that is shipped with your app.
-    
+* Create an empty database and define its structure and contents via SQL statements embedded within your app logic.
+
+* Install a predefined database (with or without data) that is shipped with your app.
+
 
 The choice of which method to use depends on the complexity of the database structure and whether the initialized database contains static or dynamic data. See _Best Practices_ below for further discussion.
 
@@ -99,12 +99,12 @@ To open (or create and open) a database, use the Titanium.Database.open() method
 
 There are a few platform specifics:
 
-*   On iOS, the database file that's created is automatically assigned the .sql extension, while on Android no extension is added.
-    
-*   By default on iOS, database files will be included in iCloud backups (iOS 5.0.1+). See below for more info.
-    
-*   On Android, the database is created on the internal storage (you could move it, or use the install procedure to put it on external storage). The standard location on internal storage is _/data/data/com.example.yourappid/databases/dbname_
-    
+* On iOS, the database file that's created is automatically assigned the .sql extension, while on Android no extension is added.
+
+* By default on iOS, database files will be included in iCloud backups (iOS 5.0.1+). See below for more info.
+
+* On Android, the database is created on the internal storage (you could move it, or use the install procedure to put it on external storage). The standard location on internal storage is _/data/data/com.example.yourappid/databases/dbname_
+
 
 ### Controlling backups to iCloud (iOS only)
 
@@ -118,10 +118,10 @@ This value should only need to be set once by your app, but setting it multiple 
 
 For more information, see:
 
-*   [Titanium.Database.DB.file property](#!/api/Titanium.Database.DB-property-file)
-    
-*   [Titanium.FileSystem.File.remoteBackup property](#!/api/Titanium.Filesystem.File-property-remoteBackup)  
-    
+* [Titanium.Database.DB.file property](#!/api/Titanium.Database.DB-property-file)
+
+* [Titanium.FileSystem.File.remoteBackup property](#!/api/Titanium.Filesystem.File-property-remoteBackup)
+
 
 ### Creating database tables
 
@@ -249,10 +249,10 @@ Dropping a table removes it from the database. You can't recover it or undo your
 
 SQLite supports a limited subset of the ALTER TABLE command. You can add columns or rename a table. But, you cannot remove or rename a column from a table. These are both supported commands:
 
-*   ALTER _tablename_ ADD COLUMN _column\_definition_
-    
-*   ALTER _tablename_ RENAME TO _newname_ – to rename a table
-    
+* ALTER _tablename_ ADD COLUMN _column\_definition_
+
+* ALTER _tablename_ RENAME TO _newname_ – to rename a table
+
 
 (To be clear, not being able to remove or rename columns is a SQLite limitation, not a Titanium limit.)
 
@@ -264,14 +264,14 @@ The [PRAGMA commands](http://www.sqlite.org/pragma.html) provide SQLite-specific
 
 We recommend the following as best practices:
 
-*   Close database connections and resultsets as soon as you're done with them.
-    
-*   Batch inserts/updates by wrapping them in a transaction.
-    
-*   Don't ship a large pre-populated database with your app, download it instead
-    
-*   Store a version number in your database for easier app updating.
-    
+* Close database connections and resultsets as soon as you're done with them.
+
+* Batch inserts/updates by wrapping them in a transaction.
+
+* Don't ship a large pre-populated database with your app, download it instead
+
+* Store a version number in your database for easier app updating.
+
 
 ### Close the database and resultset with each operation
 

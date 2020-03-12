@@ -1,4 +1,4 @@
-{"title":"Device Queries","weight":"50"} 
+{"title":"Device Queries","weight":"50"}
 
 Demonstrates how to combine platform and formFactor attribute selectors to apply different styles and properties on different platforms and device types.
 
@@ -118,4 +118,4 @@ The Label element's [text](#!/api/Titanium.UI.Label-property-text) property is a
 
 ## See Also
 
-*   [Alloy Styles and Themes](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/)
+* [Alloy Styles and Themes](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/)

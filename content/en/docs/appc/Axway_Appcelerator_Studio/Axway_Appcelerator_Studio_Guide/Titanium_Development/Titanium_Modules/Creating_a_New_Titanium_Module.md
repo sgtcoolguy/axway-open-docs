@@ -1,25 +1,25 @@
-{"title":"Creating a New Titanium Module","weight":"10"} 
+{"title":"Creating a New Titanium Module","weight":"10"}
 
-*   [Preparing Appcelerator Studio for Module Creation](#PreparingAppceleratorStudioforModuleCreation)
-    
-    *   [For Android Module Development](#ForAndroidModuleDevelopment)
-        
-*   [Creating a New Module](#CreatingaNewModule)
-    
-    *   [Module Creation Steps](#ModuleCreationSteps)
-        
-*   [Building/Packaging a Module](#Building/PackagingaModule)
-    
-    *   [Troubleshooting Build Errors](#TroubleshootingBuildErrors)
-        
-        *   [Your Android application project path contains spaces](#YourAndroidapplicationprojectpathcontainsspaces)
-            
-        *   [Android.ndk property is not set](#Android.ndkpropertyisnotset)
-            
-*   [Using Your Module](#UsingYourModule)
-    
-*   [Uploading your Module to the Marketplace](#UploadingyourModuletotheMarketplace)
-    
+* [Preparing Appcelerator Studio for Module Creation](#PreparingAppceleratorStudioforModuleCreation)
+
+  * [For Android Module Development](#ForAndroidModuleDevelopment)
+
+* [Creating a New Module](#CreatingaNewModule)
+
+  * [Module Creation Steps](#ModuleCreationSteps)
+
+* [Building/Packaging a Module](#Building/PackagingaModule)
+
+  * [Troubleshooting Build Errors](#TroubleshootingBuildErrors)
+
+    * [Your Android application project path contains spaces](#YourAndroidapplicationprojectpathcontainsspaces)
+
+    * [Android.ndk property is not set](#Android.ndkpropertyisnotset)
+
+* [Using Your Module](#UsingYourModule)
+
+* [Uploading your Module to the Marketplace](#UploadingyourModuletotheMarketplace)
+
 
 This guide details the module creation process inside Appcelerator Studio. For more information on what methods and properties are available as part of the module API and specific platform notes, see the [Android Module Development Guide](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Extending_Titanium_Mobile/Android_Module_Development_Guide/) and [iOS Module Development Guide](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Extending_Titanium_Mobile/iOS_Module_Development_Guide/).
 
@@ -69,17 +69,17 @@ This is a human-readable copyright string for your module. For example, "Copyrig
 
 ### Module Creation Steps
 
-1.  Open **File > New > Mobile Module Project**.
-    
-2.  Choose a project name, a module ID, and a deployment target (native platform).
-    
-3.  Click **Next**.
-    
-4.  Fill out the remainder of the items on the next page.
-    
-5.  Click **Finish**.
-    
-    ![New_Titanium_Mobile_Module_Project_2](/Images/appc/download/attachments/30083142/New_Titanium_Mobile_Module_Project_2.png)
+1. Open **File > New > Mobile Module Project**.
+
+2. Choose a project name, a module ID, and a deployment target (native platform).
+
+3. Click **Next**.
+
+4. Fill out the remainder of the items on the next page.
+
+5. Click **Finish**.
+
+  ![New_Titanium_Mobile_Module_Project_2](/Images/appc/download/attachments/30083142/New_Titanium_Mobile_Module_Project_2.png)
 
 Your module is created. Note the two different folder structures, depending on the platform.
 
@@ -93,10 +93,10 @@ Choose **Deploy** > **Package - iOS** **Module** or **Package - Android Module**
 
 You may then choose to deploy the module for all projects, or for a specific project. This follows the installation rules as noted in [Using Titanium Modules](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Titanium_Modules/Using_Titanium_Modules/), though to summarize:
 
-*   For all projects: the module .zip file is dropped at the root of the the Titanium SDK installation location.
-    
-*   For a particular project: The module .zip file is dropped at the root of your project.
-    
+* For all projects: the module .zip file is dropped at the root of the the Titanium SDK installation location.
+
+* For a particular project: The module .zip file is dropped at the root of your project.
+
 
 ### Troubleshooting Build Errors
 
@@ -128,21 +128,21 @@ Follow the instructions in [Using Titanium Modules](/docs/appc/Axway_Appcelerato
 
 To distribute your module through the Titanium+Plus Marketplace, you'll first need to package normally. Once you have tested your module locally and are ready to distribute it, you can then submit it to the marketplace for distribution. There are several prerequisites you'll need before you can distribute:
 
-*   You must have a valid Appcelerator developer account.
-    
-*   You must have fully completed filling our your manifest values.
-    
-*   You must have a valid license text in the LICENSE file in your project.
-    
-*   You must have a valid documentation file in the index.md file in your documentation directory of your project.
-    
-*   You must specify some additional metadata upon upload such as the price (which can be free).
-    
-*   If you are charging for your module, you must establish a payment setup with Appcelerator so we can pay you.
-    
-*   You must accept the Titanium+Plus Marketplace terms of service agreement.
-    
-*   Once you have upload your module and completed the necessary submission steps, your module will be queued for submission and availability in the marketplace directory.
-    
+* You must have a valid Appcelerator developer account.
+
+* You must have fully completed filling our your manifest values.
+
+* You must have a valid license text in the LICENSE file in your project.
+
+* You must have a valid documentation file in the index.md file in your documentation directory of your project.
+
+* You must specify some additional metadata upon upload such as the price (which can be free).
+
+* If you are charging for your module, you must establish a payment setup with Appcelerator so we can pay you.
+
+* You must accept the Titanium+Plus Marketplace terms of service agreement.
+
+* Once you have upload your module and completed the necessary submission steps, your module will be queued for submission and availability in the marketplace directory.
+
 
 Start by visiting the [Open Module Marketplace](https://marketplace.appcelerator.com).

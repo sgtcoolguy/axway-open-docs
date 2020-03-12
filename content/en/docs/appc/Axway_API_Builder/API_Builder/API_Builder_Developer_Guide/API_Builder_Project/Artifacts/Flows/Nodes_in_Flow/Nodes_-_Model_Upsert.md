@@ -1,4 +1,4 @@
-{"title":"Nodes - Model Upsert","weight":"130"} 
+{"title":"Nodes - Model Upsert","weight":"130"}
 
 API Builder 3.x is deprecated
 

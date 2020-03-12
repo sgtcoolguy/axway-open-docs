@@ -1,47 +1,47 @@
-{"title":"Android Services","weight":"40"} 
+{"title":"Android Services","weight":"40"}
 
-*   [Introduction](#Introduction)
-    
-*   [Types of services](#Typesofservices)
-    
-*   [Create a JavaScript service](#CreateaJavaScriptservice)
-    
-    *   [Service code](#Servicecode)
-        
-    *   [Declare a service](#Declareaservice)
-        
-    *   [Started services](#Startedservices)
-        
-        *   [Create a service intent](#Createaserviceintent)
-            
-        *   [Start a started service](#Startastartedservice)
-            
-        *   [Stop a started service](#Stopastartedservice)
-            
-        *   [Monitor started services](#Monitorstartedservices)
-            
-    *   [Bound services](#Boundservices)
-        
-        *   [Create a bound service](#Createaboundservice)
-            
-        *   [Manage the bound service](#Managetheboundservice)
-            
-*   [Simple service example](#Simpleserviceexample)
-    
-    *   [Write your service Javascript code](#WriteyourserviceJavascriptcode)
-        
-    *   [Update the tiapp.xml](#Updatethetiapp.xml)
-        
-    *   [Write some code to start the service](#Writesomecodetostarttheservice)
-        
-    *   [Write some code to stop the service](#Writesomecodetostoptheservice)
-        
-    *   [Testing notes](#Testingnotes)
-        
-*   [Other examples](#Otherexamples)
-    
-*   [Further reading](#Furtherreading)
-    
+* [Introduction](#Introduction)
+
+* [Types of services](#Typesofservices)
+
+* [Create a JavaScript service](#CreateaJavaScriptservice)
+
+  * [Service code](#Servicecode)
+
+  * [Declare a service](#Declareaservice)
+
+  * [Started services](#Startedservices)
+
+    * [Create a service intent](#Createaserviceintent)
+
+    * [Start a started service](#Startastartedservice)
+
+    * [Stop a started service](#Stopastartedservice)
+
+    * [Monitor started services](#Monitorstartedservices)
+
+  * [Bound services](#Boundservices)
+
+    * [Create a bound service](#Createaboundservice)
+
+    * [Manage the bound service](#Managetheboundservice)
+
+* [Simple service example](#Simpleserviceexample)
+
+  * [Write your service Javascript code](#WriteyourserviceJavascriptcode)
+
+  * [Update the tiapp.xml](#Updatethetiapp.xml)
+
+  * [Write some code to start the service](#Writesomecodetostarttheservice)
+
+  * [Write some code to stop the service](#Writesomecodetostoptheservice)
+
+  * [Testing notes](#Testingnotes)
+
+* [Other examples](#Otherexamples)
+
+* [Further reading](#Furtherreading)
+
 
 ## Introduction
 
@@ -49,28 +49,28 @@ An Android service is a component started by an application that runs in the bac
 
 The Titanium SDK gives you the ability to write your own Android Services using JavaScript but with some limitations:
 
-*   Can only run at intervals that you specify (or only once).
-    
-*   Can only be started programmatically by the Titanium application that defined it. They cannot be declared in the Android manifest and started by a separate application.
-    
-*   May stop running if the application is killed, even though the service is restarted.
-    
+* Can only run at intervals that you specify (or only once).
+
+* Can only be started programmatically by the Titanium application that defined it. They cannot be declared in the Android manifest and started by a separate application.
+
+* May stop running if the application is killed, even though the service is restarted.
+
 
 ## Types of services
 
 In Android, services can either be started or bound:
 
-*   A _started service_ is a service started by the application, but the application has no direct reference to the service. It runs freely in the background. If the application is destroyed, the service continues to run.
-    
-*   A _bound service_ is a service started by the application, where the application binds itself to the service. If the application is destroyed, the service is destroyed.
-    
+* A _started service_ is a service started by the application, but the application has no direct reference to the service. It runs freely in the background. If the application is destroyed, the service continues to run.
+
+* A _bound service_ is a service started by the application, where the application binds itself to the service. If the application is destroyed, the service is destroyed.
+
 
 In Titanium, there really is not a distinction between the two services. The only difference is:
 
-*   A started service is a service created and started by a Titanium application and may stop running if the application is destroyed.
-    
-*   A bound services is a service created by a Titanium application, which returns a reference to a Service object that the application can invoke methods on to start and stop the service, and bind callbacks to.
-    
+* A started service is a service created and started by a Titanium application and may stop running if the application is destroyed.
+
+* A bound services is a service created by a Titanium application, which returns a reference to a Service object that the application can invoke methods on to start and stop the service, and bind callbacks to.
+
 
 These services are discussed in more detail below.
 
@@ -78,16 +78,16 @@ These services are discussed in more detail below.
 
 To create a JavaScript service:
 
-1.  Create a JavaScript file with the code to execute.
-    
-2.  Declare the JavaScript file as a service in the tiapp.xml file.
-    
-3.  Create a service intent referencing the JavaScript file using the Titanium.Android.createServiceIntent() method and set the interval to run the code using the intent's putExtra() method, then:
-    
-    *   Start a started service using the intent using the Titanium.Android.startService() method.
-        
-    *   Create a bound service using the intent with the Titanium.Android.createService() method and start the bound service using the service's start() method.
-        
+1. Create a JavaScript file with the code to execute.
+
+2. Declare the JavaScript file as a service in the tiapp.xml file.
+
+3. Create a service intent referencing the JavaScript file using the Titanium.Android.createServiceIntent() method and set the interval to run the code using the intent's putExtra() method, then:
+
+  * Start a started service using the intent using the Titanium.Android.startService() method.
+
+  * Create a bound service using the intent with the Titanium.Android.createService() method and start the bound service using the service's start() method.
+
 
 ### Service code
 
@@ -97,24 +97,24 @@ Place the file in either the app/lib folder for Alloy projects or the Resources 
 
 Use the Titanium.Android.Service API to manage to the service. To get a reference to the service, use the Titanium.Android.currentService property inside the JavaScript service code to retrieve a reference to the service, then invoke the Titanium.Android.Service APIs on the Service object. With the Service object, you can:
 
-*   Use the intent property to retrieve the intent that started the service to get extra data that was added to the intent.
-    
-*   Use the serviceInstanceId property to retrieve the instance ID of the service. A service can be started multiple times and have multiple instances running.
-    
-*   Invoke the start() method to start the service. Only used with bound services.
-    
-*   Invoke the stop() method to stop the service.
-    
-*   Monitor the pause event to know when the service enters the pause state. Fired when the code finishes executing.
-    
-*   Monitor the resume event to know when the service enters the resume state. Fired when the code is executed.
-    
-*   Monitor the start event to know when the service starts. Only used with bound services.
-    
-*   Monitor the stop event to know when the service stops. Only used with bound services.
-    
-*   Monitor the taskremoved event to know if the application that started the service is destroyed. Only used with started services.
-    
+* Use the intent property to retrieve the intent that started the service to get extra data that was added to the intent.
+
+* Use the serviceInstanceId property to retrieve the instance ID of the service. A service can be started multiple times and have multiple instances running.
+
+* Invoke the start() method to start the service. Only used with bound services.
+
+* Invoke the stop() method to stop the service.
+
+* Monitor the pause event to know when the service enters the pause state. Fired when the code finishes executing.
+
+* Monitor the resume event to know when the service enters the resume state. Fired when the code is executed.
+
+* Monitor the start event to know when the service starts. Only used with bound services.
+
+* Monitor the stop event to know when the service stops. Only used with bound services.
+
+* Monitor the taskremoved event to know if the application that started the service is destroyed. Only used with started services.
+
 
 To retrieve extras sent with the intent, call the intent's hasExtra() method and pass it the property to retrieve to verify the data exists, then call one of the intent's get\*Extra() methods and pass it the same property name to retrieve the data.
 
@@ -127,9 +127,6 @@ The example below checks for EXTRA\_TEXT data sent with the intent.
 `// Do something with the extra`
 
 `}`
-
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
 
 The example below demonstrates the usage of some of the service APIs. The service monitors some of its events and stops itself after ten iterations.
 
@@ -191,10 +188,10 @@ For both started and bound services, you need to declare the JavaScript file as 
 
 **To declare a service:**
 
-1.  Add the <services> element as a child of the <android> element.
-    
-2.  For each service, add a <service> element as a child of the <services> element. Set the url attribute to the URL of the JavaScript file and the type attribute to interval. Currently, interval is the only supported type, which indicates the code will be run at intervals. The interval is set when creating the service intent.
-    
+1. Add the <services> element as a child of the <android> element.
+
+2. For each service, add a <service> element as a child of the <services> element. Set the url attribute to the URL of the JavaScript file and the type attribute to interval. Currently, interval is the only supported type, which indicates the code will be run at intervals. The interval is set when creating the service intent.
+
 
 tiapp.xml
 
@@ -220,10 +217,10 @@ A started service is a service created **and** started using the Titanium.Androi
 
 To create a started service, create a service intent with the Titanium.Android.createServiceIntent() method. Pass the method a dictionary with the url property set to the URL of the JavaScript file that contains the code the application wants to run as a service. You can optionally set the startMode property to either:
 
-*   Titanium.Android.START\_REDELIVER\_INTENT: Indicates to restart the service with the original intent if the application is destroyed. (Default)
-    
-*   Titanium.Android.START\_NOT\_STICKY: Indicates not to restart the service if the application is destroyed.
-    
+* Titanium.Android.START\_REDELIVER\_INTENT: Indicates to restart the service with the original intent if the application is destroyed. (Default)
+
+* Titanium.Android.START\_NOT\_STICKY: Indicates not to restart the service if the application is destroyed.
+
 
 To pass data to the service, use the Intent object's putExtra() method to add extras to the intent. For details, see [Android Intents: Add extra data](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Intents/#Addextradata).
 
@@ -283,10 +280,10 @@ To create a bound service, create a service intent with the Titanium.Android.cre
 
 **To create a service intent**, pass the method a dictionary with the url property set to the URL of the JavaScript file that contains the code the application wants to run as a service. You can optionally set the startMode property to either:
 
-*   Titanium.Android.START\_REDELIVER\_INTENT: Indicates to restart the service with the original intent if the application is destroyed. (Default)
-    
-*   Titanium.Android.START\_NOT\_STICKY: Indicates not to restart the service if the application is destroyed.
-    
+* Titanium.Android.START\_REDELIVER\_INTENT: Indicates to restart the service with the original intent if the application is destroyed. (Default)
+
+* Titanium.Android.START\_NOT\_STICKY: Indicates not to restart the service if the application is destroyed.
+
 
 To pass data to the service, use the Intent object's putExtra() method to add extras to the intent. For details, see [Android Intents: Add Extra Data](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Intents/#AddExtraData).
 
@@ -340,10 +337,10 @@ You can do all sorts of things in that JavaScript file, and everything you put i
 
 You need to let the Titanium builder know that this Javascript file you just created is meant to be the code that executes when a Service runs.
 
-1.  Open the project's tiapp.xml and add a <services> element under the <android> element.
-    
-2.  Next, add a <service> element under the <services> element. Assign the url attribute the name of the JavaScript file, which is logservice.js and assign the type attribute to interval
-    
+1. Open the project's tiapp.xml and add a <services> element under the <android> element.
+
+2. Next, add a <service> element under the <services> element. Assign the url attribute the name of the JavaScript file, which is logservice.js and assign the type attribute to interval
+
 
 `<``ti``:app>`
 
@@ -407,11 +404,11 @@ While you are testing your service you can back out completely from the applicat
 
 See the following for other examples of services:
 
-*   KitchenSink's [android\_services.js](https://github.com/appcelerator/KitchenSink/blob/stable/Resources/ui/handheld/android/platform/android_services.js) script
-    
+* KitchenSink's [android\_services.js](https://github.com/appcelerator/KitchenSink/blob/stable/Resources/ui/handheld/android/platform/android_services.js) script
+
 
 ## Further reading
 
-*   [Titanium.Android API Reference](#!/api/Titanium.Android)
-    
-*   [Android Developer: Services](http://developer.android.com/guide/components/services.html)
+* [Titanium.Android API Reference](#!/api/Titanium.Android)
+
+* [Android Developer: Services](http://developer.android.com/guide/components/services.html)

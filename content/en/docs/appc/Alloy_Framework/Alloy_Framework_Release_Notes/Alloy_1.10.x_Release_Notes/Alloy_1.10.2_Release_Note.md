@@ -1,4 +1,4 @@
-{"title":"Alloy 1.10.2 - 26 June 2017","weight":"100"} 
+{"title":"Alloy 1.10.2 - 26 June 2017","weight":"100"}
 
 Alloy 1.10.2 is a patch release that includes one bug fix.
 
@@ -6,4 +6,4 @@ As of this release, the previous Alloy patch release is no longer supported. Not
 
 ## Fixed issue
 
-*   [ALOY-1567](https://jira.appcelerator.org/browse/ALOY-1567) : Minification produces invalid code
+* [ALOY-1567](https://jira.appcelerator.org/browse/ALOY-1567) : Minification produces invalid code

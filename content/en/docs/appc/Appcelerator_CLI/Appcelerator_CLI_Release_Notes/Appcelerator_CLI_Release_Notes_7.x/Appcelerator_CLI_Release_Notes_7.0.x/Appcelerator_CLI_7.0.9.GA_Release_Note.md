@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 7.0.9.GA - 19 December 2018","weight":"70"} 
+{"title":"Appcelerator CLI 7.0.9.GA - 19 December 2018","weight":"70"}
 
 Appcelerator CLI 7.0.9.GA is a patch release that includes one bug fix.
 
@@ -26,8 +26,8 @@ Titanium CLI
 
 Daemon
 
-1.1.3  
+1.1.3
 
 ## Fixed issues
 
-*   [ALOY-1638](https://jira.appcelerator.org/browse/ALOY-1638) - Theme is "null" when a theme is defined in config.json
+* [ALOY-1638](https://jira.appcelerator.org/browse/ALOY-1638) - Theme is "null" when a theme is defined in config.json

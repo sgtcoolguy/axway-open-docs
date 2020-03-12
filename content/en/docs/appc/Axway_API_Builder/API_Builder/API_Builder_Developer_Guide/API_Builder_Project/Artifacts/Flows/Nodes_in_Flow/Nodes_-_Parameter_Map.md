@@ -1,4 +1,4 @@
-{"title":"Nodes - Parameter Map","weight":"10"} 
+{"title":"Nodes - Parameter Map","weight":"10"}
 
 API Builder 3.x is deprecated
 

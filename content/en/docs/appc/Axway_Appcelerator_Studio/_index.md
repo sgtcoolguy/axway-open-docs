@@ -1,8 +1,8 @@
-{"title":"Axway Appcelerator Studio","weight":"120"} 
+{"title":"Axway Appcelerator Studio","weight":"130"}
 
 ## Studio Documentation and Guides
 
-Appcelerator and Titanium Studio are extended versions of [Aptana Studio](http://www.aptana.com/), the professional, open source, Integrated Development Environment (IDE) tool for web development. In addition to Aptana Studio's web features, Titanium Studio adds the opportunity to develop Appcelerator Titanium Mobile projects.
+Appcelerator and Titanium Studio are extended versions of [Aptana Studio](http://www.aptana.com/), the professional, open-source, Integrated Development Environment (IDE) tool for web development. In addition to Aptana Studio's web features, Titanium Studio adds the opportunity to develop Appcelerator Titanium Mobile projects.
 
 Project Type
 
@@ -84,9 +84,6 @@ Aptana Studio
 
 ![error](/Images/appc/download/attachments/30083020/error.png)
 
-\*Refer to [Adding PHP Ruby or Python Support](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/Adding_PHP_Ruby_or_Python_Support/) for installing these add-on modules. As they are so closely-related, we often use the term, "Studio", to refer to Appcelerator, Titanium, and Aptana Studio together.  
-  
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
+\*Refer to [Adding PHP Ruby or Python Support](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/Adding_PHP_Ruby_or_Python_Support/) for installing these add-on modules. As they are so closely related, we often use the term "Studio" to refer to Appcelerator, Titanium, and Aptana Studio together.
 
-To understand all the differences between Appcelerator, Titanium and Aptana Studio, refer to the [Studio Feature Comparison](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/Studio_Feature_Comparison/).
+To understand all the differences between Appcelerator, Titanium, and Aptana Studio, refer to the [Studio Feature Comparison](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/Studio_Feature_Comparison/).

@@ -1,29 +1,29 @@
-{"title":"Alloy ListView Guide","weight":"10"} 
+{"title":"Alloy ListView Guide","weight":"10"}
 
-*   [Introduction](#Introduction)
-    
-*   [ListView basics](#ListViewbasics)
-    
-    *   [Assigning data programmatically to a ListView](#AssigningdataprogrammaticallytoaListView)
-        
-*   [ListItem templates](#ListItemtemplates)
-    
-    *   [Default list item template](#Defaultlistitemtemplate)
-        
-    *   [Custom ListItem templates](#CustomListItemtemplates)
-        
-    *   [Assigning data programmatically with custom templates](#Assigningdataprogrammaticallywithcustomtemplates)
-        
-    *   [Assigning ListItem templates](#AssigningListItemtemplates)
-        
-*   [Handling events](#Handlingevents)
-    
-    *   [Marker events](#Markerevents)
-        
-    *   [Handling events on ListItems](#HandlingeventsonListItems)
-        
-    *   [Handling events on template views](#Handlingeventsontemplateviews)
-        
+* [Introduction](#Introduction)
+
+* [ListView basics](#ListViewbasics)
+
+  * [Assigning data programmatically to a ListView](#AssigningdataprogrammaticallytoaListView)
+
+* [ListItem templates](#ListItemtemplates)
+
+  * [Default list item template](#Defaultlistitemtemplate)
+
+  * [Custom ListItem templates](#CustomListItemtemplates)
+
+  * [Assigning data programmatically with custom templates](#Assigningdataprogrammaticallywithcustomtemplates)
+
+  * [Assigning ListItem templates](#AssigningListItemtemplates)
+
+* [Handling events](#Handlingevents)
+
+  * [Marker events](#Markerevents)
+
+  * [Handling events on ListItems](#HandlingeventsonListItems)
+
+  * [Handling events on template views](#Handlingeventsontemplateviews)
+
 
 ## Introduction
 

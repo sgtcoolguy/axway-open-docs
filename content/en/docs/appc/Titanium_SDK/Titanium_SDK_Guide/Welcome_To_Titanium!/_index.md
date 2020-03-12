@@ -1,21 +1,21 @@
-{"title":"Welcome To Titanium!","weight":"10"} 
+{"title":"Welcome To Titanium!","weight":"10"}
 
 Titanium's unique trait among the various available cross-platform mobile solutions is that it creates truly native apps. This is in contrast to web-based solutions that deliver functionality via an enhanced web view. Titanium, not wanting to be limited by the native web view, has engaged in a much deeper integration with the underlying platforms. This gives Titanium developers the ability to leverage native UI components & services, as well as near-native performance, features you won't find in other cross-platform mobile development solution. In addition, you'll have access to other features like:
 
-*   Platform specific APIs
-    
-*   Location-based services
-    
-*   Social sharing
-    
-*   Rich multimedia
-    
-*   Online and on-device data
-    
-*   Extensibility
-    
-*   and much more!
-    
+* Platform specific APIs
+
+* Location-based services
+
+* Social sharing
+
+* Rich multimedia
+
+* Online and on-device data
+
+* Extensibility
+
+* and much more!
+
 
 Titanium empowers you to create immersive, full-featured applications that go beyond the boundaries of the browser. We do the heavy-lifting on cross platform compatibility so you don’t have to. Featuring over 80%code reuse across mobile apps, Titanium provides a deep, yet highly-reusable development platform. Appcelerator licenses Titanium under the Apache 2 license and is free for both personal and commercial use.
 

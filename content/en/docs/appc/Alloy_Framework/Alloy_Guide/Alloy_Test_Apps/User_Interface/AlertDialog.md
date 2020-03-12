@@ -1,4 +1,4 @@
-{"title":"AlertDialog","weight":"10"} 
+{"title":"AlertDialog","weight":"10"}
 
 Demonstrates basic use of an AlertDialog.
 
@@ -78,6 +78,6 @@ app/controllers/index.js
 
 ## See Also
 
-*   [Titanium.UI.AlertDialog](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.AlertDialog)
-    
-*   [Titanium.UI.iPhone.AlertDialogStyle](#!/api/Titanium.UI.iPhone.AlertDialogStyle)
+* [Titanium.UI.AlertDialog](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.AlertDialog)
+
+* [Titanium.UI.iPhone.AlertDialogStyle](#!/api/Titanium.UI.iPhone.AlertDialogStyle)

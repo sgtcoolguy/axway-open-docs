@@ -1,13 +1,13 @@
-{"title":"Lightweight Persistence with the Properties API","weight":"20"} 
+{"title":"Lightweight Persistence with the Properties API","weight":"20"}
 
-*   [Reading and Writing Properties](#ReadingandWritingProperties)
-    
-*   [Storing JS objects as JSON in properties](#StoringJSobjectsasJSONinproperties)
-    
-*   [Hands-on Practice](#Hands-onPractice)
-    
-*   [References and Further Reading](#ReferencesandFurtherReading)
-    
+* [Reading and Writing Properties](#ReadingandWritingProperties)
+
+* [Storing JS objects as JSON in properties](#StoringJSobjectsasJSONinproperties)
+
+* [Hands-on Practice](#Hands-onPractice)
+
+* [References and Further Reading](#ReferencesandFurtherReading)
+
 
 ## Objective
 
@@ -23,16 +23,16 @@ There isn't a specific limit on the amount of data you can store in properties. 
 
 Titanium.App.Properties has six sets of get/set methods for handling six different data types:
 
-*   **getBool() / setBool()**: for booleans (true, false)
-    
-*   **getDouble() / setDouble()**: for double-precision floating point numbers
-    
-*   **getInt() / setInt()**: for integers
-    
-*   **getList() / setList()**: for arrays
-    
-*   **getString() / setString()**: for strings
-    
+* **getBool() / setBool()**: for booleans (true, false)
+
+* **getDouble() / setDouble()**: for double-precision floating point numbers
+
+* **getInt() / setInt()**: for integers
+
+* **getList() / setList()**: for arrays
+
+* **getString() / setString()**: for strings
+
 
 The _get_ methods accept a property name and its default value. Thus, if a property has never been set before, the default value will be returned. Each _set_ method requires a property name and property value pair. All of these methods are demonstrated below:
 
@@ -140,55 +140,55 @@ In this activity, you will write an app that prompts the user to select temperat
 
 #### Steps
 
-1.  Create a new Titanium Mobile project named localdata with an app ID of com.appcelerator.localdata
-    
-2.  In app.js, follow our recommended coding best-practices to create a two-tabbed application with tabs titled Current Conditions and Units. You can omit the tab icons.
-    
-3.  Define and assign a window to the Current Conditions tab, but you can leave that window empty. We'll use it in the 5.3 lab that follows.
-    
-4.  Define and assign a window to the Units tab with the following characteristics:
-    
-    *   Define and add a label with these properties:
-        
-        `color:` `'black'``,`
-        
-        `text:` `'Fahrenheit'``,`
-        
-        `font: { fontSize:` `22``, fontWeight:` `'bold'` `},`
-        
-        `left:` `10``,`
-        
-        `top:` `5``,`
-        
-        `height:` `25`
-        
-    *   Define and add a "sub" label with these properties:
-        
-        `color:` `'black'``,`
-        
-        `text:` `'Output will be shown in Celsius'``,`
-        
-        `font: { fontSize:` `18` `},`
-        
-        `left:` `10``,`
-        
-        `top:` `40``,`
-        
-        `height:` `20`
-        
-    *   Define and add a switch positioned at right: 10, top: 5 with an auto width. Its value should be a zero or one depending on the value of the units app property. If that property equals c, set the switch value to 0, otherwise set it to 1.
-        
-5.  Add an event handler to the switch: if the switch value is 1, update the sub-label text to read 'Output will be shown in Fahrenheit' and set the units app property equal to f. If the value of the switch is 0, update the sub-label text to read 'Output will be shown in Celsius' and set the units app property equal to c.
-    
-6.  Build your app for the simulator/emulator. The output should match the preceding picture. When you change the switch, the label should update. Close the app. When you reopen it, your preference should be saved and reloaded.
-    
+1. Create a new Titanium Mobile project named localdata with an app ID of com.appcelerator.localdata
+
+2. In app.js, follow our recommended coding best-practices to create a two-tabbed application with tabs titled Current Conditions and Units. You can omit the tab icons.
+
+3. Define and assign a window to the Current Conditions tab, but you can leave that window empty. We'll use it in the 5.3 lab that follows.
+
+4. Define and assign a window to the Units tab with the following characteristics:
+
+  * Define and add a label with these properties:
+
+    `color:` `'black'``,`
+
+    `text:` `'Fahrenheit'``,`
+
+    `font: { fontSize:` `22``, fontWeight:` `'bold'` `},`
+
+    `left:` `10``,`
+
+    `top:` `5``,`
+
+    `height:` `25`
+
+  * Define and add a "sub" label with these properties:
+
+    `color:` `'black'``,`
+
+    `text:` `'Output will be shown in Celsius'``,`
+
+    `font: { fontSize:` `18` `},`
+
+    `left:` `10``,`
+
+    `top:` `40``,`
+
+    `height:` `20`
+
+  * Define and add a switch positioned at right: 10, top: 5 with an auto width. Its value should be a zero or one depending on the value of the units app property. If that property equals c, set the switch value to 0, otherwise set it to 1.
+
+5. Add an event handler to the switch: if the switch value is 1, update the sub-label text to read 'Output will be shown in Fahrenheit' and set the units app property equal to f. If the value of the switch is 0, update the sub-label text to read 'Output will be shown in Celsius' and set the units app property equal to c.
+
+6. Build your app for the simulator/emulator. The output should match the preceding picture. When you change the switch, the label should update. Close the app. When you reopen it, your preference should be saved and reloaded.
+
 
 ### References and Further Reading
 
-*   [API Docs: Properties](#!/api/Titanium.App.Properties)
-    
-*   [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/5.2_localdata.zip)
-    
+* [API Docs: Properties](#!/api/Titanium.App.Properties)
+
+* [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/5.2_localdata.zip)
+
 
 ## Summary
 

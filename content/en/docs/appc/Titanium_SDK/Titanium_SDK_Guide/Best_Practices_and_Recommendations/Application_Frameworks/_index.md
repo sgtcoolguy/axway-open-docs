@@ -1,4 +1,4 @@
-{"title":"Application Frameworks","weight":"30"} 
+{"title":"Application Frameworks","weight":"30"}
 
 ## Alloy Framework
 

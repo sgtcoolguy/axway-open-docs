@@ -1,4 +1,4 @@
-{"title":"DashboardView","weight":"50"} 
+{"title":"DashboardView","weight":"50"}
 
 Demonstrates basic use of a DashboardView control in an Alloy application.
 
@@ -104,8 +104,8 @@ app/controllers/index.js
 
 ## See Also
 
-*   [Titanium.UI.DashboardView](#!/api/Titanium.UI.DashboardView)
-    
-*   [Titanium.UI.DashboardItem](#!/api/Titanium.UI.DashboardItem)
-    
-*   [DashboardView Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Alloy_Test_Models/DashboardView_Binding/) sample application, which demonstrates using data binding with a DashboardView.
+* [Titanium.UI.DashboardView](#!/api/Titanium.UI.DashboardView)
+
+* [Titanium.UI.DashboardItem](#!/api/Titanium.UI.DashboardItem)
+
+* [DashboardView Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Alloy_Test_Models/DashboardView_Binding/) sample application, which demonstrates using data binding with a DashboardView.

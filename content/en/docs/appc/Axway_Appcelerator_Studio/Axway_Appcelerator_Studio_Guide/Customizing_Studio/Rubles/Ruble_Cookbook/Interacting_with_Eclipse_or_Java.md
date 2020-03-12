@@ -1,19 +1,19 @@
-{"title":"Interacting with Eclipse or Java","weight":"70"} 
+{"title":"Interacting with Eclipse or Java","weight":"70"}
 
-*   [Overview](#Overview)
-    
-*   [Interacting with an Editor: Folding code in the editor](#InteractingwithanEditor:Foldingcodeintheeditor)
-    
-*   [Interacting with an Editor: increasing the editor's font size](#InteractingwithanEditor:increasingtheeditor'sfontsize)
-    
-*   [GUI: A simple input dialog](#GUI:Asimpleinputdialog)
-    
-*   [Code Equivalents](#CodeEquivalents)
-    
+* [Overview](#Overview)
+
+* [Interacting with an Editor: Folding code in the editor](#InteractingwithanEditor:Foldingcodeintheeditor)
+
+* [Interacting with an Editor: increasing the editor's font size](#InteractingwithanEditor:increasingtheeditor'sfontsize)
+
+* [GUI: A simple input dialog](#GUI:Asimpleinputdialog)
+
+* [Code Equivalents](#CodeEquivalents)
+
 
 ## Overview
 
-In this recipe we show how a Ruble command can interact with Eclipse or Java code. For specific questions, see the [Calling Java from JRuby](https://github.com/jruby/jruby/wiki/CallingJavaFromJRuby) document
+In this recipe, we show how a Ruble command can interact with Eclipse or Java code. For specific questions, see the [Calling Java from JRuby](https://github.com/jruby/jruby/wiki/CallingJavaFromJRuby) document.
 
 ## Interacting with an Editor: Folding code in the editor
 
@@ -131,7 +131,7 @@ We create a simple dialog to prompt the user for input. Note we have one file fo
 
 ## Code Equivalents
 
-Some examples of calling code in Ruby and in Java
+Some examples of calling code in Ruby and Java.
 
 Description
 
@@ -139,7 +139,7 @@ Ruby
 
 Java
 
-Grabbing a IFile from the current editor
+Grabbing an IFile from the current editor.
 
 `context.editor.editor_input.file`
 

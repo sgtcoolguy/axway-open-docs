@@ -1,29 +1,29 @@
-{"title":"Bundles View","weight":"10"} 
+{"title":"Bundles View","weight":"10"}
 
-*   [Overview](#Overview)
-    
-*   [Top-level items](#Top-levelitems)
-    
-*   [Bundle entry items](#Bundleentryitems)
-    
-    *   [Bundle directories](#Bundledirectories)
-        
-    *   [Commands](#Commands)
-        
-    *   [File templates](#Filetemplates)
-        
-    *   [Menus](#Menus)
-        
-    *   [Snippets](#Snippets)
-        
-*   [Bundle directory items](#Bundledirectoryitems)
-    
-*   [Properties view](#Propertiesview)
-    
+* [Overview](#Overview)
+
+* [Top-level items](#Top-levelitems)
+
+* [Bundle entry items](#Bundleentryitems)
+
+  * [Bundle directories](#Bundledirectories)
+
+  * [Commands](#Commands)
+
+  * [File templates](#Filetemplates)
+
+  * [Menus](#Menus)
+
+  * [Snippets](#Snippets)
+
+* [Bundle directory items](#Bundledirectoryitems)
+
+* [Properties view](#Propertiesview)
+
 
 ## Overview
 
-The Bundles View contains detailed information on all bundle folders and scripts that contribute to a given bundle. Bundles utilize an inheritance and override mechanisms that may be challenging to troubleshoot. The Bundles View gives you insight into these mechanisms, serving as a tool for troubleshooting Rubles.
+The Bundles View contains detailed information on all bundle folders and scripts that contribute to a given bundle. Bundles utilize inheritance and override mechanisms that may be challenging to troubleshoot. The Bundles View gives you insight into these mechanisms, serving as a tool for troubleshooting Rubles.
 
 ## Top-level items
 
@@ -67,12 +67,12 @@ The Commands folder contains a list of all active commands for the bundle entry.
 
 ## Bundle directory items
 
-A mentioned earlier, a bundle entry is composed of one or more bundle directories. If you expand a bundle directory, represented with blue folders, you will see the same Commands, File Templates, Menus, and Snippets folders; however, the items in those folders represent items that the bundle directory defines. Due to bundle precedence and override functionality, it is possible that even though an item is defined in a bundle directory, it may not contribute to the active items in the bundle entry. For more details, see [Redefining, Overriding, and Extending Bundles](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Specification/#Redefining,Overriding,andExtendingBundles) in the Ruble Specification guide.
+A mentioned earlier; a bundle entry is composed of one or more bundle directories. If you expand a bundle directory, represented with blue folders, you will see the same Commands, File Templates, Menus, and Snippets folders; however, the items in those folders represent items that the bundle directory defines. Due to bundle precedence and override functionality, it is possible that even though an item is defined in a bundle directory, it may not contribute to the active items in the bundle entry. For more details, see [Redefining, Overriding, and Extending Bundles](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Specification/#Redefining,Overriding,andExtendingBundles) in the Ruble Specification guide.
 
 ![Bundle_Directory_Items](/Images/appc/download/attachments/30083240/Bundle_Directory_Items.png)
 
 ## Properties view
 
-Many of the items in the Bundles View show more information in the Properties View. Be sure to have that view open, then elect an item in the Bundles View to see more detail about that item. This is particularly helpful when you need to determine which file has contributed a particular item.
+Many of the items in the Bundles View show more information in the Properties View. Be sure to have that view open, then select an item in the Bundles View to see more detail about that item. This is particularly helpful when you need to determine which file has contributed a particular item.
 
 ![Properties_View](/Images/appc/download/attachments/30083240/Properties_View.png)

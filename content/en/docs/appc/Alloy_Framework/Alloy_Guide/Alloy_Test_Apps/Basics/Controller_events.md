@@ -1,4 +1,4 @@
-{"title":"Controller events","weight":"20"} 
+{"title":"Controller events","weight":"20"}
 
 Demonstrates using [Backbone events](http://backbonejs.org/#Events) to communicate between view-controllers.
 
@@ -42,4 +42,4 @@ app/controllers/index.js
 
 ## See Also
 
-*   [Backbone Events guide](http://docs.appcelerator.com/backbone/0.9.2/#Events)
+* [Backbone Events guide](http://docs.appcelerator.com/backbone/0.9.2/#Events)

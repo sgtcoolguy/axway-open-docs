@@ -1,4 +1,4 @@
-{"title":"Theming Widgets","weight":"170"} 
+{"title":"Theming Widgets","weight":"170"}
 
 Demonstrates how to apply themes to widgets. Theme settings override default styles and assets defined within the widget itself.
 
@@ -104,6 +104,6 @@ Platform-specific assets and style selectors in the widget override non-platform
 
 ## See also
 
-*   [Alloy Styles and Themes](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/)
-    
-*   [Style priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#Stylepriorities)
+* [Alloy Styles and Themes](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/)
+
+* [Style priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#Stylepriorities)

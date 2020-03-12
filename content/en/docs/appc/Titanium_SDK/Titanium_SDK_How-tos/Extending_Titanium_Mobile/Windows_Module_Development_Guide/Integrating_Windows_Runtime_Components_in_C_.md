@@ -1,25 +1,25 @@
-{"title":"Integrating Windows Runtime Components in C#","weight":"10"} 
+{"title":"Integrating Windows Runtime Components in C#","weight":"10"}
 
-## /\*<!\[CDATA\[\*/ div.rbtoc1574700944829 {padding: 0px;} div.rbtoc1574700944829 ul {list-style: disc;margin-left: 0px;} div.rbtoc1574700944829 li {margin-left: 0px;padding-left: 0px;} /\*\]\]>\*/
+## /\*<!\[CDATA\[\*/ div.rbtoc1584037348253 {padding: 0px;} div.rbtoc1584037348253 ul {list-style: disc;margin-left: 0px;} div.rbtoc1584037348253 li {margin-left: 0px;padding-left: 0px;} /\*\]\]>\*/
 
-*   [Introduction](#-Introduction)
-    
-*   [Create simple Windows Runtime component in C#](#-CreatesimpleWindowsRuntimecomponentinC#)
-    
-*   [Call Windows Runtime component from Titanium module](#-CallWindowsRuntimecomponentfromTitaniummodule)
-    
-    *   [Create new Titanium module](#-CreatenewTitaniummodule)
-        
-    *   [Copy MyComponent.winmd into windows/lib folder of your module project](#-CopyMyComponent.winmdintowindows/libfolderofyourmoduleproject)
-        
-    *   [Modify Titanium module to use MyComponent](#-ModifyTitaniummoduletouseMyComponent)
-        
-    *   [C++ built-in types and Windows Runtime types](#-C++built-intypesandWindowsRuntimetypes)
-        
-    *   [Build module with --run-cmake option](#-Buildmodulewith--run-cmakeoption)
-        
-*   [Next steps](#-Nextsteps)
-    
+* [Introduction](#-Introduction)
+
+* [Create simple Windows Runtime component in C#](#-CreatesimpleWindowsRuntimecomponentinC#)
+
+* [Call Windows Runtime component from Titanium module](#-CallWindowsRuntimecomponentfromTitaniummodule)
+
+  * [Create new Titanium module](#-CreatenewTitaniummodule)
+
+  * [Copy MyComponent.winmd into windows/lib folder of your module project](#-CopyMyComponent.winmdintowindows/libfolderofyourmoduleproject)
+
+  * [Modify Titanium module to use MyComponent](#-ModifyTitaniummoduletouseMyComponent)
+
+  * [C++ built-in types and Windows Runtime types](#-C++built-intypesandWindowsRuntimetypes)
+
+  * [Build module with --run-cmake option](#-Buildmodulewith--run-cmakeoption)
+
+* [Next steps](#-Nextsteps)
+
 
 ## Introduction
 
@@ -29,12 +29,12 @@ This article shows how to integrate Windows Runtime components that's built in C
 
 This section we are going to create a basic Windows Runtime Component in C# that exposes few methods. For basic information about Windows Runtime Components in C#, refer to official document from Microsoft here: [Creating Windows Runtime Components in C# and Visual Basic](https://docs.microsoft.com/en-us/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic).
 
-1.  In Visual Studio, choose **File**, **New**, **Project**. In the **Installed Templates** section of the **New Project** dialog box, choose **Visual C#**, **Windows** **Universal**. Then choose the **Windows Runtime Component (Universal Windows)** and enter MyComponent for the project name.
-    
-2.  In Solution Explorer, rename the Class1.cs to MyComponent.cs that is the class basically what we want to export.
-    
-3.  Then, changes the name of the namespace to MyComponent, and change the name of the class to Speaker.
-    
+1. In Visual Studio, choose **File**, **New**, **Project**. In the **Installed Templates** section of the **New Project** dialog box, choose **Visual C#**, **Windows** **Universal**. Then choose the **Windows Runtime Component (Universal Windows)** and enter MyComponent for the project name.
+
+2. In Solution Explorer, rename the Class1.cs to MyComponent.cs that is the class basically what we want to export.
+
+3. Then, changes the name of the namespace to MyComponent, and change the name of the class to Speaker.
+
 
 MyComponent.cs
 
@@ -460,8 +460,8 @@ Then Titanium CLI will generate module zip that contains your Windows Runtime Co
 
 ## Next steps
 
-*   For information about HAL API, see [github/appcelerator/HAL](https://github.com/appcelerator/HAL)
-    
-*   For information about TitaniumKit, see [github/appcelerator/titanium\_mobile\_windows](https://github.com/appcelerator/titanium_mobile_windows)
-    
-*   For more examples of using the module API, see working Titanium modules under [github/appcelerator/titanium\_mobile\_windows/Source](https://github.com/appcelerator/titanium_mobile_windows/tree/master/Source)
+* For information about HAL API, see [github/appcelerator/HAL](https://github.com/appcelerator/HAL)
+
+* For information about TitaniumKit, see [github/appcelerator/titanium\_mobile\_windows](https://github.com/appcelerator/titanium_mobile_windows)
+
+* For more examples of using the module API, see working Titanium modules under [github/appcelerator/titanium\_mobile\_windows/Source](https://github.com/appcelerator/titanium_mobile_windows/tree/master/Source)

@@ -1,35 +1,35 @@
-{"title":"Alloy Tasks with the CLI","weight":"20"} 
+{"title":"Alloy Tasks with the CLI","weight":"20"}
 
-*   [Creating a new application](#Creatinganewapplication)
-    
-*   [Creating a new application using a test application](#Creatinganewapplicationusingatestapplication)
-    
-*   [Generating components](#Generatingcomponents)
-    
-    *   [Generating a controller](#Generatingacontroller)
-        
-    *   [Generating a view](#Generatingaview)
-        
-    *   [Generating a style](#Generatingastyle)
-        
-    *   [Generating a model](#Generatingamodel)
-        
-    *   [Generating a migration](#Generatingamigration)
-        
-    *   [Generating a widget](#Generatingawidget)
-        
-    *   [Generating alloy.jmk](#Generatingalloy.jmk)
-        
-*   [Extracting localization strings](#Extractinglocalizationstrings)
-    
-*   [Compiling a specific view-controller](#Compilingaspecificview-controller)
-    
-*   [Building an application](#Buildinganapplication)
-    
-*   [Installing special project components](#Installingspecialprojectcomponents)
-    
-    *   [Installing the compiler plugin](#Installingthecompilerplugin)
-        
+* [Creating a new application](#Creatinganewapplication)
+
+* [Creating a new application using a test application](#Creatinganewapplicationusingatestapplication)
+
+* [Generating components](#Generatingcomponents)
+
+  * [Generating a controller](#Generatingacontroller)
+
+  * [Generating a view](#Generatingaview)
+
+  * [Generating a style](#Generatingastyle)
+
+  * [Generating a model](#Generatingamodel)
+
+  * [Generating a migration](#Generatingamigration)
+
+  * [Generating a widget](#Generatingawidget)
+
+  * [Generating alloy.jmk](#Generatingalloy.jmk)
+
+* [Extracting localization strings](#Extractinglocalizationstrings)
+
+* [Compiling a specific view-controller](#Compilingaspecificview-controller)
+
+* [Building an application](#Buildinganapplication)
+
+* [Installing special project components](#Installingspecialprojectcomponents)
+
+  * [Installing the compiler plugin](#Installingthecompilerplugin)
+
 
 Alloy provides a command-line interface to create a new projects, generate skeleton components, and compile Alloy code to Titanium code. See [Command-Line Interface Installation](/docs/appc/Alloy_Framework/Alloy_Getting_Started/#Command-lineinterfaceinstallation) for directions on installing the latest released Alloy CLI.
 
@@ -137,17 +137,17 @@ The alloy extract-i18n command inspects your JS and TSS (since Alloy 1.2.0), and
 
 **Parameters**:
 
-*   language – Optional. The two-letter language code (en or es, for example) of the target language. If not specified, the default is en (English).
-    
-*   \--apply – Optional. If present, the command writes new localization entries to the target language strings.xml file. Existing i18n entries are left untouched. If the XML file doesn't exist, it is created for you. If this parameter is absent, a preview of the changes are displayed in the terminal window.
-    
+* language – Optional. The two-letter language code (en or es, for example) of the target language. If not specified, the default is en (English).
+
+* \--apply – Optional. If present, the command writes new localization entries to the target language strings.xml file. Existing i18n entries are left untouched. If the XML file doesn't exist, it is created for you. If this parameter is absent, a preview of the changes are displayed in the terminal window.
+
 
 The following localization functions are supported:
 
-*   Titanium.Locale.getString()
-    
-*   L()
-    
+* Titanium.Locale.getString()
+
+* L()
+
 
 The command extracts the first parameter (the i18n key) from each localization function and, if it's a string, adds it to the target language strings.xml file. For example, suppose a JavaScript file in your application contained the following code:
 

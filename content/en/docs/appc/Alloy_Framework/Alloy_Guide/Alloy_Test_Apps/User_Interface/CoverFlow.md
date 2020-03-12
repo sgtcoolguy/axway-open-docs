@@ -1,4 +1,4 @@
-{"title":"CoverFlow","weight":"40"} 
+{"title":"CoverFlow","weight":"40"}
 
 Demonstrates basic use of the CoverFlowView control, an iOS-only control that presents a list of scrollable images in a style consistent with that used for iPod, iTunes, and file browsing.
 
@@ -48,4 +48,4 @@ app/views/index.xml
 
 ## See Also
 
-*   [Titanium.UI.iOS.CoverFlowView](#!/api/Titanium.UI.iOS.CoverFlowView)
+* [Titanium.UI.iOS.CoverFlowView](#!/api/Titanium.UI.iOS.CoverFlowView)

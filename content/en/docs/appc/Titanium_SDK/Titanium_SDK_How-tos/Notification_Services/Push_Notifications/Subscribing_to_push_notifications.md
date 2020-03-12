@@ -1,44 +1,44 @@
-{"title":"Subscribing to push notifications","weight":"20"} 
+{"title":"Subscribing to push notifications","weight":"20"}
 
 For a push notification to reach a user, the user (or device) must be subscribed to receive push notifications on one or more notification _channels_. The application must also obtain a _device token_, which permits Mobile Backend Services (MBS) to communicate with the push service provider (Google Cloud Messaging (GCM), Firebase Cloud Messaging (FCM), or Apple Push Notification). [Firebase Cloud Messaging](http://firebase.google.com/docs/cloud-messaging/) (FCM) is the new version of GCM. This guide explains how to how obtain a device token, and how to use the [PushNotifications API](#!/api/Modules.Cloud.PushNotifications) to manage your user's notification subscriptions.
 
-*   [Obtaining a device token](#Obtainingadevicetoken)
-    
-    *   [Obtaining a device token on Android](#ObtainingadevicetokenonAndroid)
-        
-    *   [Obtaining a device token on iOS](#ObtainingadevicetokenoniOS)
-        
-*   [Using the Titanium PushNotifications API](#UsingtheTitaniumPushNotificationsAPI)
-    
-    *   [Session- and token-based subscriptions](#Session-andtoken-basedsubscriptions)
-        
-    *   [Adding the Cloud module to your project](#AddingtheCloudmoduletoyourproject)
-        
-    *   [Subscribing to Push Notifications with Device Tokens](#SubscribingtoPushNotificationswithDeviceTokens)
-        
-    *   [Subscribing to Push Notifications with User Sessions](#SubscribingtoPushNotificationswithUserSessions)
-        
-    *   [Updating Subscriptions with Device Location](#UpdatingSubscriptionswithDeviceLocation)
-        
-*   [Parsing a notification payload](#Parsinganotificationpayload)
-    
-*   [More examples](#Moreexamples)
-    
-*   [Troubleshooting](#Troubleshooting)
-    
-    *   [Unable to retrieve a device token (iOS)](#Unabletoretrieveadevicetoken(iOS))
-        
-    *   [Error: APSCloudPush has not been enabled. Call APSCloud.enable(context, key) to enable. (Android)](#Error:APSCloudPushhasnotbeenenabled.CallAPSCloud.enable(context,key)toenable.(Android))
-        
+* [Obtaining a device token](#Obtainingadevicetoken)
+
+  * [Obtaining a device token on Android](#ObtainingadevicetokenonAndroid)
+
+  * [Obtaining a device token on iOS](#ObtainingadevicetokenoniOS)
+
+* [Using the Titanium PushNotifications API](#UsingtheTitaniumPushNotificationsAPI)
+
+  * [Session- and token-based subscriptions](#Session-andtoken-basedsubscriptions)
+
+  * [Adding the Cloud module to your project](#AddingtheCloudmoduletoyourproject)
+
+  * [Subscribing to Push Notifications with Device Tokens](#SubscribingtoPushNotificationswithDeviceTokens)
+
+  * [Subscribing to Push Notifications with User Sessions](#SubscribingtoPushNotificationswithUserSessions)
+
+  * [Updating Subscriptions with Device Location](#UpdatingSubscriptionswithDeviceLocation)
+
+* [Parsing a notification payload](#Parsinganotificationpayload)
+
+* [More examples](#Moreexamples)
+
+* [Troubleshooting](#Troubleshooting)
+
+  * [Unable to retrieve a device token (iOS)](#Unabletoretrieveadevicetoken(iOS))
+
+  * [Error: APSCloudPush has not been enabled. Call APSCloud.enable(context, key) to enable. (Android)](#Error:APSCloudPushhasnotbeenenabled.CallAPSCloud.enable(context,key)toenable.(Android))
+
 
 ## Obtaining a device token
 
 To receive push notifications, your application first needs to obtain a _device token_. To obtain a device token:
 
-*   On Android, call the [CloudPush](#!/api/Modules.CloudPush) module's retrieveDeviceToken()method
-    
-*   On iOS, call the Titanium.Network.registerForPushNotifications()
-    
+* On Android, call the [CloudPush](#!/api/Modules.CloudPush) module's retrieveDeviceToken()method
+
+* On iOS, call the Titanium.Network.registerForPushNotifications()
+
 
 Once your application has obtained a device token it should save it for later use.
 
@@ -48,12 +48,12 @@ To obtain a device token from GCM or FCM, you first need to add the CloudPush mo
 
 **To add the CloudPush module to your project**:
 
-1.  In Studio, open your project's tiapp.xml file.
-    
-2.  In the **Modules** section, click the add (**+**) button.
-    
-3.  Select **ti.cloudpush** and click **OK**.
-    
+1. In Studio, open your project's tiapp.xml file.
+
+2. In the **Modules** section, click the add (**+**) button.
+
+3. Select **ti.cloudpush** and click **OK**.
+
 
 In your application code, require the ti.cloudpush module and call its retrieveDeviceToken() method, and register event handlers to respond to success and error events. Once a device token has been retrieved, your application can listen for the callback event to process incoming push notifications. Your application should save the device token for later use. The following code demonstrates the minimal code required to obtain a device token and setup event handlers:
 
@@ -181,12 +181,12 @@ The Cloud module is included with the Titanium SDK, but is not enabled by defaul
 
 **To add the Cloud module to your project**:
 
-1.  Open your project's tiapp.xml file.
-    
-2.  In the **Modules** section, click the Add button (green plus sign).
-    
-3.  Select **ti.cloud** and click **OK** **.**
-    
+1. Open your project's tiapp.xml file.
+
+2. In the **Modules** section, click the Add button (green plus sign).
+
+3. Select **ti.cloud** and click **OK** **.**
+
 
 ### Subscribing to Push Notifications with Device Tokens
 

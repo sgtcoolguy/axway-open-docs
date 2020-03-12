@@ -1,17 +1,17 @@
-{"title":"Installing Oracle JDK","weight":"10"} 
+{"title":"Installing Oracle JDK","weight":"10"}
 
-*   [Compatibility and download](#Compatibilityanddownload)
-    
-*   [Installation](#Installation)
-    
-    *   [OS X](#OSX)
-        
-    *   [Windows](#Windows)
-        
-    *   [Ubuntu](#Ubuntu)
-        
-*   [Testing the installation](#Testingtheinstallation)
-    
+* [Compatibility and download](#Compatibilityanddownload)
+
+* [Installation](#Installation)
+
+  * [OS X](#OSX)
+
+  * [Windows](#Windows)
+
+  * [Ubuntu](#Ubuntu)
+
+* [Testing the installation](#Testingtheinstallation)
+
 
 ## Compatibility and download
 
@@ -45,12 +45,12 @@ OS X
 
 [Official Website](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
-*   On Mac OS X 10.6 (Snow Leopard) and earlier, the JDK is preinstalled.
-    
-*   On Mac OS X 10.7 (Lion) and later, the OS should prompt you to install it when needed.
-    
-*   Android Development on OS X systems requires Java 6 runtime to be installed.
-    
+* On Mac OS X 10.6 (Snow Leopard) and earlier, the JDK is preinstalled.
+
+* On Mac OS X 10.7 (Lion) and later, the OS should prompt you to install it when needed.
+
+* Android Development on OS X systems requires JDK 8 or higher to be installed.
+
 
 Windows
 
@@ -62,10 +62,10 @@ Windows
 
 [Official Website](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
-*   The 32-bit version of the JDK is required regardless of whether Titanium is running on a 32-bit Windows system.
-    
-*   Studio offers to install JDK 8 if no JDK is found.
-    
+* The 32-bit version of the JDK is required regardless of whether Titanium is running on a 32-bit Windows system.
+
+* Studio offers to install JDK 8 if no JDK is found.
+
 
 **Note**: From Studio 5.1.0 and up, 64-bit JDK is supported
 
@@ -85,24 +85,24 @@ If you are developing Android applications on your OS X system, you need to inst
 
 Note that the typical file system location of this software can be found in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) section of these guides.
 
-*   Log in under your usual user account, and right-click the Windows Installer and select _Run as administrator_. Enter the Administrator password, if you are prompted for it, and proceed until the first screenshot below.
-    
-*   At the **Java SE Development Kit - Custom Setup** > **Install to** step, select the **Development Tools** component and verify that it is in the location suggested in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) section. If not, correct it accordingly. Proceed to the following screenshot below.
-    
-*   Select the **Public JRE** component and verify that it is in the location suggested in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) section. If not, correct it accordingly.
-    
-    ![jdk8-install-01](/Images/appc/download/attachments/29004850/jdk8-install-01.png)
-    
-    ![jdk8-install-02](/Images/appc/download/attachments/29004850/jdk8-install-02.png)
+* Log in under your usual user account, and right-click the Windows Installer and select _Run as administrator_. Enter the Administrator password, if you are prompted for it, and proceed until the first screenshot below.
 
-*   Wait for the JDK installation to complete. The JRE installation will start automatically.
-    
-*   At the **Java Setup** > **Destination Folder** step, verify that the **Install to** path is the same location suggested in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) section. If not, correct it accordingly.
-    
-    ![jdk8-install-03](/Images/appc/download/attachments/29004850/jdk8-install-03.png)
+* At the **Java SE Development Kit - Custom Setup** > **Install to** step, select the **Development Tools** component and verify that it is in the location suggested in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) section. If not, correct it accordingly. Proceed to the following screenshot below.
 
-*   Complete the installation.
-    
+* Select the **Public JRE** component and verify that it is in the location suggested in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) section. If not, correct it accordingly.
+
+  ![jdk8-install-01](/Images/appc/download/attachments/29004850/jdk8-install-01.png)
+
+  ![jdk8-install-02](/Images/appc/download/attachments/29004850/jdk8-install-02.png)
+
+* Wait for the JDK installation to complete. The JRE installation will start automatically.
+
+* At the **Java Setup** > **Destination Folder** step, verify that the **Install to** path is the same location suggested in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) section. If not, correct it accordingly.
+
+  ![jdk8-install-03](/Images/appc/download/attachments/29004850/jdk8-install-03.png)
+
+* Complete the installation.
+
 
 Refer to the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) section to add the path to the Oracle JDK bin directory to your system's PATH and set the JAVA\_HOME variable.
 

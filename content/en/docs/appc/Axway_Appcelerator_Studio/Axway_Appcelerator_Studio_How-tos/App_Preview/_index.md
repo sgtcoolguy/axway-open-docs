@@ -1,17 +1,17 @@
-{"title":"App Preview","weight":"40"} 
+{"title":"App Preview","weight":"40"}
 
-*   [Overview](#Overview)
-    
-    *   [Plan availability](#Planavailability)
-        
-*   [iOS App Preview](#iOSAppPreview)
-    
-*   [Android App Preview](#AndroidAppPreview)
-    
-*   [App Preview configuration for previously published apps](#AppPreviewconfigurationforpreviouslypublishedapps)
-    
-*   [Release notes and inviting users](#Releasenotesandinvitingusers)
-    
+* [Overview](#Overview)
+
+  * [Plan availability](#Planavailability)
+
+* [iOS App Preview](#iOSAppPreview)
+
+* [Android App Preview](#AndroidAppPreview)
+
+* [App Preview configuration for previously published apps](#AppPreviewconfigurationforpreviouslypublishedapps)
+
+* [Release notes and inviting users](#Releasenotesandinvitingusers)
+
 
 ## Overview
 
@@ -27,40 +27,40 @@ App Preview is available for Enterprise and Pro plans only. App Preview is inclu
 
 App Preview configuration is available while packaging an app to **iOS Adhoc/Enterprise** build.
 
-1.  Change the execute button from Run to Package.
-    
-2.  Next to the Package option, select iOS Adhoc/Enterprise for the package build.
-    
-    *   ![image2016-5-12_10_53_44](/Images/appc/download/attachments/46250020/image2016-5-12_10_53_44.png)
-3.  In the distribute wizard window, select the **Upload app to App Preview** option.
-    
-4.  Select the **Upload app to App Preview** check-box. This will enable **Configure App Preview** link next to it.
-    
-5.  Clicking on the **Configure App Preview** will open the App Preview configuration details window.
-    
-6.  Write up some **release notes** and **invite testers**. See [Release notes and inviting users](#Releasenotesandinvitingusers) for more details on release notes and inviting users.
-    
-7.  Follow through the rest of the iOS build process.
-    
-8.  Verify that the app appears on [http://appbeta.appcelerator.com](http://appbeta.appcelerator.com/).
-    
+1. Change the execute button from Run to Package.
+
+2. Next to the Package option, select iOS Adhoc/Enterprise for the package build.
+
+  * ![image2016-5-12_10_53_44](/Images/appc/download/attachments/46250020/image2016-5-12_10_53_44.png)
+3. In the distribute wizard window, select the **Upload app to App Preview** option.
+
+4. Select the **Upload app to App Preview** check-box. This will enable **Configure App Preview** link next to it.
+
+5. Clicking on the **Configure App Preview** will open the App Preview configuration details window.
+
+6. Write up some **release notes** and **invite testers**. See [Release notes and inviting users](#Releasenotesandinvitingusers) for more details on release notes and inviting users.
+
+7. Follow through the rest of the iOS build process.
+
+8. Verify that the app appears on [http://appbeta.appcelerator.com](http://appbeta.appcelerator.com/).
+
 
 ![image2016-6-2_15_10_33](/Images/appc/download/attachments/46250020/image2016-6-2_15_10_33.png)
 
 ## Android App Preview
 
-1.  Change the execute button from Run to Package.
-    
-2.  Next to the Package option, select **Android App Preview** from package build.
-    
-3.  Write up some **release notes** and **invite testers** from within the App Preview configuration details window. See [Release notes and inviting users](#Releasenotesandinvitingusers) for more details on release notes and inviting users.
-    
-4.  Click **OK**.
-    
-5.  At this point, the app build should build, complete, and publish the APK file to App Preview dashboard.
-    
-6.  Verify that the app appears on [http://appbeta.appcelerator.com](http://appbeta.appcelerator.com/).
-    
+1. Change the execute button from Run to Package.
+
+2. Next to the Package option, select **Android App Preview** from package build.
+
+3. Write up some **release notes** and **invite testers** from within the App Preview configuration details window. See [Release notes and inviting users](#Releasenotesandinvitingusers) for more details on release notes and inviting users.
+
+4. Click **OK**.
+
+5. At this point, the app build should build, complete, and publish the APK file to App Preview dashboard.
+
+6. Verify that the app appears on [http://appbeta.appcelerator.com](http://appbeta.appcelerator.com/).
+
 
 ![image2016-6-2_15_11_19](/Images/appc/download/attachments/46250020/image2016-6-2_15_11_19.png)
 
@@ -72,14 +72,14 @@ App Preview configuration will be different if you have previously published the
 
 Following the steps above for [iOS](#iOSAppPreview) and [Android](#AndroidAppPreview) App Preview should be the same. What is slightly different is the App Preview Configuration window will include options for notification. Those notification options include:
 
-*   **None**: This option will not add any previous testers to a new build.
-    
-*   **Notify All**: Adds all previous testers to a new build and send them an email.
-    
-*   **Add All**: Adds all previous testers to a new build but it won't send an email.
-    
-*   **Add/Notify selective teams**: This option will allow the user add or notify only selective teams. It will accept the team names separated by commas.
-    
+* **None**: This option will not add any previous testers to a new build.
+
+* **Notify All**: Adds all previous testers to a new build and send them an email.
+
+* **Add All**: Adds all previous testers to a new build but it won't send an email.
+
+* **Add/Notify selective teams**: This option will allow the user add or notify only selective teams. It will accept the team names separated by commas.
+
 
 ![image2016-6-2_15_11_57](/Images/appc/download/attachments/46250020/image2016-6-2_15_11_57.png)
 

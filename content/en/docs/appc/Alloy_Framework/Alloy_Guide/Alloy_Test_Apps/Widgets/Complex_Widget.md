@@ -1,4 +1,4 @@
-{"title":"Complex Widget","weight":"20"} 
+{"title":"Complex Widget","weight":"20"}
 
 Demonstrates a widget using another widget.
 

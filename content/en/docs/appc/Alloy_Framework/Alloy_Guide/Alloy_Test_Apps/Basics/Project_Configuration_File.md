@@ -1,4 +1,4 @@
-{"title":"Project Configuration File","weight":"70"} 
+{"title":"Project Configuration File","weight":"70"}
 
 Demonstrates use of the Alloy configuration file.
 
@@ -42,4 +42,4 @@ app/controllers/index.js
 
 ## See Also
 
-*   [Project Configuration File (config.json)](/docs/appc/Alloy_Framework/Alloy_How-tos/Alloy_Reference_Guides/Project_Configuration_File_(config.json)/)
+* [Project Configuration File (config.json)](/docs/appc/Alloy_Framework/Alloy_How-tos/Alloy_Reference_Guides/Project_Configuration_File_(config.json)/)

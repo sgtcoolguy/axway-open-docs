@@ -1,19 +1,19 @@
-{"title":"Using the REST API","weight":"70"} 
+{"title":"Using the REST API","weight":"70"}
 
-*   [REST API basics](#RESTAPIbasics)
-    
-*   [Authentication](#Authentication)
-    
-*   [User sessions and cookies](#Usersessionsandcookies)
-    
-*   [Testing with cURL and wget](#TestingwithcURLandwget)
-    
-*   [Uploading photos](#Uploadingphotos)
-    
-*   [Object IDs](#ObjectIDs)
-    
-*   [Response paging](#Responsepaging)
-    
+* [REST API basics](#RESTAPIbasics)
+
+* [Authentication](#Authentication)
+
+* [User sessions and cookies](#Usersessionsandcookies)
+
+* [Testing with cURL and wget](#TestingwithcURLandwget)
+
+* [Uploading photos](#Uploadingphotos)
+
+* [Object IDs](#ObjectIDs)
+
+* [Response paging](#Responsepaging)
+
 
 Mobile Backend Services (MBS) provides a REST API accessible from any networked client device for creating, querying, updating, and deleting MBS objects.
 
@@ -35,10 +35,10 @@ For POST and PUT requests, you send an HTTP request with the multipart/form-data
 
 API responses are returned as JSON objects. In most cases, the response JSON includes two objects:
 
-*   meta - An object containing response metadata, including the response status code and error message, if any.
-    
-*   response - An object containing the actual data for the request. The response object is omitted for some requests, such as delete requests, that return no data.
-    
+* meta - An object containing response metadata, including the response status code and error message, if any.
+
+* response - An object containing the actual data for the request. The response object is omitted for some requests, such as delete requests, that return no data.
+
 
 ## Authentication
 
@@ -104,7 +104,7 @@ Pass the session\_id value to the \_session\_id parameter in the URL, for exampl
 
 With the cURL command, use the \-b and \-c options to read and write cookies to store your session ID. Many of the REST examples in the documentation use these options.
 
-User login sessions expire after they have been unused for three months. If the application saves and uses a persistent reference to the user login session, and the user session expires, any MBS call that requires a user login will return a 404 error. Your application needs to handle an invalid user session error, such as prompting the user to log in.
+User login sessions expire after they have been unused for three months. If the application saves and uses a persistent reference to the user login session, and if the user session expires, any MBS call that requires a user login will return a 404 error. Your application needs to handle an invalid user session error, such as prompting the user to log in.
 
 ## Testing with cURL and wget
 
@@ -222,7 +222,7 @@ Use the \-b cookies.txt and \-c cookies.txt options to save and reuse the \_sess
 
 The create (POST) and update (PUT) methods for many objects such as Users, Checkins, and Photos take an optional photo or file parameter to send a photo. The binary data must be sent in a form with Content-Type multipart/form-data, and the content type of the photo or file must beimage/jpeg, image/png, or image/gif.
 
-When using cURL, uploading a photo can be done easily by using @ in front of the filename, such as @photo.jpg, to specify that the file should be attached.
+When using cURL, uploading a photo can be done quickly by using @ in front of the filename, such as @photo.jpg, to specify that the file should be attached.
 
 `$ curl --verbose -b cookies.txt -c cookies.txt -F` `"photo=@photo.jpg"` `-F` `"message=At the beach"`
 

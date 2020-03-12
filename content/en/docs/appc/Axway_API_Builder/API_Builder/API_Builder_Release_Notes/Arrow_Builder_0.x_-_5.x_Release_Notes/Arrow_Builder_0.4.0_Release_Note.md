@@ -1,4 +1,4 @@
-{"title":"Arrow Builder 0.4.0 Release Note","weight":"110"} 
+{"title":"Arrow Builder 0.4.0 Release Note","weight":"110"}
 
 API Builder 3.x is deprecated
 

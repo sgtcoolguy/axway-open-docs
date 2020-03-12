@@ -1,6 +1,6 @@
-{"title":"PyDev Features","weight":"30"} 
+{"title":"PyDev Features","weight":"30"}
 
-The feature matrix can be seen below. You can check details for each feature by following the correspondent link
+The feature matrix can be seen below. You can check details for each feature by following the corresponding link.
 
 Feature List
 
@@ -232,7 +232,7 @@ TODO Tasks
 
 [Link](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Features/PyDev_Tasks/)
 
-Code-analysis (real time or on save)
+Code-analysis (real-time or on save)
 
 [Link](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Features/PyDev_Code_Analysis/)
 
@@ -262,7 +262,7 @@ Hierarchy View
 
 F4
 
-[Link](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Features/PyDev_Hierachy_View/)
+[Link](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Features/PyDev_Hierarchy_View/)
 
 Go to definition
 
@@ -322,12 +322,12 @@ Debug console
 
 **Notes:**
 
-*   **PyLint**:PyLint is provided by logilab, and does code-analysis in python programs. It is called when a file is saved. It is written in python itself and called as an external program.
-    
+* **PyLint**: PyLint is provided by logilab, and does code-analysis in python programs. It is called when a file is saved. It is written in python itself and called as an external program.
 
-Many other features provided by Eclipse itself are not added to the list, but are available either in the Eclipse platform or in other third-party plugins. Below is a 'quick-list' of 'reccommendations' that may be worth mentioning...
 
-Plug-in features / reccomendations
+Many other features provided by Eclipse itself are not added to the list but are available either in the Eclipse platform or in other third-party plugins. Below is a 'quick-list' of 'recommendations' that may be worth mentioning...
+
+Plug-in features / recommendations
 
 Plug-in
 
@@ -339,10 +339,10 @@ Rectangular editing
 
 Ctrl+Shift+A in Eclipse 3.5
 
-Open selected folder with explorer from within Eclipse
+Open selected folder with an explorer from within Eclipse
 
 [Easy Explore](http://easystruts.sourceforge.net/)
 
-cvs, subversion and many other 'repository systems' are available
+CVS, subversion and many other 'repository systems' are available
 
 Search the net for what you want

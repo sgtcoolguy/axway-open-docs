@@ -1,29 +1,29 @@
-{"title":"Using density-specific resources on Android","weight":"30"} 
+{"title":"Using density-specific resources on Android","weight":"30"}
 
 ## Contents
 
-*   [Overview](#Overview)
-    
-*   [Platform-specific images Folder](#Platform-specificimagesFolder)
-    
-*   [More control](#Morecontrol)
-    
-*   [Folder name breakdown](#Foldernamebreakdown)
-    
-*   [Working with the folder names](#Workingwiththefoldernames)
-    
-*   [Documentation](#Documentation)
-    
-*   [Subfolders](#Subfolders)
-    
-    *   [Notes](#Notes)
-        
-*   [The appicon](#Theappicon)
-    
-*   [Using Density Independent Pixels](#UsingDensityIndependentPixels)
-    
-    *   [Code Examples](#CodeExamples)
-        
+* [Overview](#Overview)
+
+* [Platform-specific images Folder](#Platform-specificimagesFolder)
+
+* [More control](#Morecontrol)
+
+* [Folder name breakdown](#Foldernamebreakdown)
+
+* [Working with the folder names](#Workingwiththefoldernames)
+
+* [Documentation](#Documentation)
+
+* [Subfolders](#Subfolders)
+
+  * [Notes](#Notes)
+
+* [The appicon](#Theappicon)
+
+* [Using Density Independent Pixels](#UsingDensityIndependentPixels)
+
+  * [Code Examples](#CodeExamples)
+
 
 ## Overview
 
@@ -53,32 +53,32 @@ We can be even more specific about when these resources should be used. This is 
 
 Images that are in a folder named "res-long-land-hdpi" will be used for:
 
-*   **Long** screens, such as WQVGA, WVGA, FWVGA
-    
-*   Device is in **landscape** orientation (horizontal)
-    
-*   **High-density screens**; approximately 240dpi.
-    
+* **Long** screens, such as WQVGA, WVGA, FWVGA
+
+* Device is in **landscape** orientation (horizontal)
+
+* **High-density screens**; approximately 240dpi.
+
 
 ## Working with the folder names
 
-With this naming convention you can be as specific or as broad as you need to be.  
+With this naming convention you can be as specific or as broad as you need to be.
 For instance, if you have these two folders in "Resources/android/images":
 
-*   "res-long-land-hdpi"
-    
-*   "res-notlong-land-hdpi"
-    
+* "res-long-land-hdpi"
+
+* "res-notlong-land-hdpi"
+
 
 But you don't need to have different images based on it being long or notlong. So all you need to do is remove that property from the folder name. So you end up with one folder named:
 
-*   "res-land-hdpi"
-    
+* "res-land-hdpi"
+
 
 that will cover both instances. And if you where also going to use the same images for hdpi devices, no matter if it is portrait or landscape you could just name that folder
 
-*   "res-hdpi"
-    
+* "res-hdpi"
+
 
 ## Documentation
 
@@ -90,10 +90,10 @@ If you want to put your image in a subfolder, you would put it in "Resources/and
 
 ### Notes
 
-*   These folders are searched for images from most specific to most broad. It is a good idea to have a folder named "res-mdpi", if an image doesn't exist in one of the other folders it will look there for it last before it fails to find the image. It is the default folder.
-    
-*   Using "high", "medium", and "low" is the same as using "res-hdpi", "res-mdpi", and "res-ldpi".
-    
+* These folders are searched for images from most specific to most broad. It is a good idea to have a folder named "res-mdpi", if an image doesn't exist in one of the other folders it will look there for it last before it fails to find the image. It is the default folder.
+
+* Using "high", "medium", and "low" is the same as using "res-hdpi", "res-mdpi", and "res-ldpi".
+
 
 ## The appicon
 
@@ -101,10 +101,10 @@ The method above will not work for the appicon.png because the it is referenced 
 
 To use density specific versions of the appicon you will need to create a folder structure in the root of the app that looks something like this:
 
-*   "<app>/platform/android/res/drawable"
-    
-*   "<app>/platform/android/res/drawable-hdpi"
-    
+* "<app>/platform/android/res/drawable"
+
+* "<app>/platform/android/res/drawable-hdpi"
+
 
 ![20110915-93bn2rtifjcjk838xmrjsx4y5](/Images/appc/download/attachments/29004808/20110915-93bn2rtifjcjk838xmrjsx4y5.jpg)
 

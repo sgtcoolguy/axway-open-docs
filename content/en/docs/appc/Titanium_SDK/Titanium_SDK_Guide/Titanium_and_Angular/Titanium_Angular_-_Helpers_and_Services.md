@@ -1,27 +1,27 @@
-{"title":"Titanium Angular - Helpers and Services","weight":"40"} 
+{"title":"Titanium Angular - Helpers and Services","weight":"40"}
 
-*   [User Interface](#UserInterface)
-    
-    *   [Dialogs](#Dialogs)
-        
-        *   [AlertDialog](#AlertDialog)
-            
-        *   [ConfirmDialog](#ConfirmDialog)
-            
-        *   [Prompt Dialog](#PromptDialog)
-            
-        *   [Custom Dialogs](#CustomDialogs)
-            
-    *   [Picker (Android only)](#Picker(Androidonly))
-        
-        *   [Time Picker](#TimePicker)
-            
-        *   [Date Picker](#DatePicker)
-            
-*   [Device](#Device)
-    
-    *   [Device environment](#Deviceenvironment)
-        
+* [User Interface](#UserInterface)
+
+  * [Dialogs](#Dialogs)
+
+    * [AlertDialog](#AlertDialog)
+
+    * [ConfirmDialog](#ConfirmDialog)
+
+    * [Prompt Dialog](#PromptDialog)
+
+    * [Custom Dialogs](#CustomDialogs)
+
+  * [Picker (Android only)](#Picker(Androidonly))
+
+    * [Time Picker](#TimePicker)
+
+    * [Date Picker](#DatePicker)
+
+* [Device](#Device)
+
+  * [Device environment](#Deviceenvironment)
+
 
 Titanium Angular comes with a set of helpers that provide a modernized access to commonly used features of our Titanium SDK. All of these employ a Promise-based API and try to abstract away repetitive steps from the original Titanium APIs. However, they are purely a convenience feature and won't replace any existing Titanium APIs.
 

@@ -1,4 +1,4 @@
-{"title":"Working with Media APIs","weight":"80"} 
+{"title":"Working with Media APIs","weight":"80"}
 
 Multimedia can bring your app to life. In this module, you'll explore the ways you can add images, sounds, and videos to your apps. You'll also learn how to capture images from the camera or retrieve them from the user's gallery.
 

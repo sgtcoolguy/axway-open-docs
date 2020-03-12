@@ -1,17 +1,17 @@
-{"title":"Installing Git","weight":"10"} 
+{"title":"Installing Git","weight":"10"}
 
-*   [Compatibility and download](#Compatibilityanddownload)
-    
-*   [Installation](#Installation)
-    
-    *   [OS X](#OSX)
-        
-    *   [Windows](#Windows)
-        
-    *   [Ubuntu](#Ubuntu)
-        
-*   [Testing the installation](#Testingtheinstallation)
-    
+* [Compatibility and download](#Compatibilityanddownload)
+
+* [Installation](#Installation)
+
+  * [OS X](#OSX)
+
+  * [Windows](#Windows)
+
+  * [Ubuntu](#Ubuntu)
+
+* [Testing the installation](#Testingtheinstallation)
+
 
 ## Compatibility and download
 
@@ -63,48 +63,48 @@ Default Repositories
 
 Note that the typical file system location of this software can be found in the [mac OS Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#macOSSoftwareLocations) section of these guides.
 
-*   open the git disk image (file with a .dmg extension). Open the resulting disk mount that will appear on your desktop
-    
-*   open the installer package (file with a .pkg extension) and continue until the following screen
-    
-*   verify that you system meets the storage requirements and click install
-    
+* open the git disk image (file with a .dmg extension). Open the resulting disk mount that will appear on your desktop
+
+* open the installer package (file with a .pkg extension) and continue until the following screen
+
+* verify that you system meets the storage requirements and click install
+
 
 ![git-install-osx-01](/Images/appc/download/attachments/29004849/git-install-osx-01.png)
 
-*   if prompted, enter the credentials of a user with administrative privileges
-    
+* if prompted, enter the credentials of a user with administrative privileges
+
 
 ### Windows
 
 Note that the typical file system location of this software can be found in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) section of these guides.
 
-*   log in under your usual user account, right-click the git Installer and select _Run as administrator_. Enter the Administrator password, if you are prompted for it, and proceed until the first screenshot below
-    
-*   verify that the destination location matches the one described for git in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) section, and then proceed
-    
+* log in under your usual user account, right-click the git Installer and select _Run as administrator_. Enter the Administrator password, if you are prompted for it, and proceed until the first screenshot below
+
+* verify that the destination location matches the one described for git in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) section, and then proceed
+
 
 ![git-install-01](/Images/appc/download/attachments/29004849/git-install-01.png)
 
-*   ensure that the components are configured as follows
-    
+* ensure that the components are configured as follows
+
 
 ![git-install-02](/Images/appc/download/attachments/29004849/git-install-02.png)
 
-*   at _Adjusting your PATH environment_, enable **Run Git from the Windows Command Prompt**
-    
+* at _Adjusting your PATH environment_, enable **Run Git from the Windows Command Prompt**
+
 
 ![git-install-03](/Images/appc/download/attachments/29004849/git-install-03.png)
 
-*   at _Configuring the line ending conversations_, select **Checkout as-is, commit as-is**
-    
+* at _Configuring the line ending conversations_, select **Checkout as-is, commit as-is**
+
 
 ![git-install-04](/Images/appc/download/attachments/29004849/git-install-04.png)
 
-*   proceed to complete the installation
-    
-*   as the location to git was automatically added by the installer to your system's PATH, as shown in the third screenshot above, there is no need to perform this step manually
-    
+* proceed to complete the installation
+
+* as the location to git was automatically added by the installer to your system's PATH, as shown in the third screenshot above, there is no need to perform this step manually
+
 
 ### Ubuntu
 

@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 5.0.2 - 24 September 2015","weight":"190"} 
+{"title":"Appcelerator CLI 5.0.2 - 24 September 2015","weight":"190"}
 
 Appcelerator CLI 5.0.2 is a patch release, addressing high-priority issues from previous releases.
 
@@ -20,7 +20,7 @@ Arrow Builder
 
 1.2.62
 
-**[Arrow Cloud CLI](/docs/appc/Axway_API_Builder/AMPLIFY_Runtime_Services/AMPLIFY_Runtime_Services_Release_Notes/)**
+**[Arrow Cloud CLI](/docs/appc/AMPLIFY_Runtime_Services/AMPLIFY_Runtime_Services_Release_Notes/)**
 
 **1.0.27 (update)**
 
@@ -30,6 +30,6 @@ Arrow Builder
 
 ## Fixed Issues
 
-*   [CLI-810](https://jira.appcelerator.org/browse/CLI-810): appc run -p ios is forcing rebuild for subsequent runs when there's no changes
-    
-*   [CLI-814](https://jira.appcelerator.org/browse/CLI-814): Failed to parse titanium config file: TypeError: Cannot read property 'selected' of undefined
+* [CLI-810](https://jira.appcelerator.org/browse/CLI-810): appc run -p ios is forcing rebuild for subsequent runs when there's no changes
+
+* [CLI-814](https://jira.appcelerator.org/browse/CLI-814): Failed to parse titanium config file: TypeError: Cannot read property 'selected' of undefined

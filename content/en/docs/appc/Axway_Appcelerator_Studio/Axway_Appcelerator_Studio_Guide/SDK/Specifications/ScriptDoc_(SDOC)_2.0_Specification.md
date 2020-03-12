@@ -1,53 +1,53 @@
-{"title":"ScriptDoc (SDOC) 2.0 Specification","weight":"50"} 
+{"title":"ScriptDoc (SDOC) 2.0 Specification","weight":"50"}
 
-*   [Overview](#Overview)
-    
-*   [Reference](#Reference)
-    
-    *   [alias](#alias)
-        
-    *   [author](#author)
-        
-    *   [classDescription](#classDescription)
-        
-    *   [constructor](#constructor)
-        
-    *   [deprecated](#deprecated)
-        
-    *   [example](#example)
-        
-    *   [exception](#exception)
-        
-    *   [id](#id)
-        
-    *   [inherits](#inherits)
-        
-    *   [internal](#internal)
-        
-    *   [memberOf](#memberOf)
-        
-    *   [method](#method)
-        
-    *   [namespace](#namespace)
-        
-    *   [param](#param)
-        
-    *   [private](#private)
-        
-    *   [projectDescription](#projectDescription)
-        
-    *   [property](#property)
-        
-    *   [return](#return)
-        
-    *   [see](#see)
-        
-    *   [since](#since)
-        
-    *   [type](#type)
-        
-    *   [version](#version)
-        
+* [Overview](#Overview)
+
+* [Reference](#Reference)
+
+  * [alias](#alias)
+
+  * [author](#author)
+
+  * [classDescription](#classDescription)
+
+  * [constructor](#constructor)
+
+  * [deprecated](#deprecated)
+
+  * [example](#example)
+
+  * [exception](#exception)
+
+  * [id](#id)
+
+  * [inherits](#inherits)
+
+  * [internal](#internal)
+
+  * [memberOf](#memberOf)
+
+  * [method](#method)
+
+  * [namespace](#namespace)
+
+  * [param](#param)
+
+  * [private](#private)
+
+  * [projectDescription](#projectDescription)
+
+  * [property](#property)
+
+  * [return](#return)
+
+  * [see](#see)
+
+  * [since](#since)
+
+  * [type](#type)
+
+  * [version](#version)
+
 
 ## Overview
 
@@ -57,16 +57,16 @@ Several tags have "synonyms" where you can use two differently named tags to doc
 
 The section for each tag includes the following information:
 
-*   Short description of the tag
-    
-*   Syntax
-    
-*   What the tag applies to
-    
-*   Longer explanation of the tag
-    
-*   Example (Some tags have multiple examples)
-    
+* Short description of the tag
+
+* Syntax
+
+* What the tag applies to
+
+* Longer explanation of the tag
+
+* Example (Some tags have multiple examples)
+
 
 ## Reference
 

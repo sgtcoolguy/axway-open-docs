@@ -1,23 +1,23 @@
-{"title":"Installation Troubleshooting","weight":"50"} 
+{"title":"Installation Troubleshooting","weight":"50"}
 
 This document provides basic installation troubleshooting information.
 
-*   [All platforms](#Allplatforms)
-    
-    *   [Could not locate the Android SDK at the given path](#CouldnotlocatetheAndroidSDKatthegivenpath)
-        
-*   [Windows](#Windows)
-    
-    *   [xcopy is not recognized as an internal or external command](#xcopyisnotrecognizedasaninternalorexternalcommand)
-        
-    *   [Installation updates fail](#Installationupdatesfail)
-        
-    *   [OEM USB drivers](#OEMUSBdrivers)
-        
-    *   [Unable to open database file](#Unabletoopendatabasefile)
-        
-    *   [Install Diagnostics for Windows](#InstallDiagnosticsforWindows)
-        
+* [All platforms](#Allplatforms)
+
+  * [Could not locate the Android SDK at the given path](#CouldnotlocatetheAndroidSDKatthegivenpath)
+
+* [Windows](#Windows)
+
+  * [xcopy is not recognized as an internal or external command](#xcopyisnotrecognizedasaninternalorexternalcommand)
+
+  * [Installation updates fail](#Installationupdatesfail)
+
+  * [OEM USB drivers](#OEMUSBdrivers)
+
+  * [Unable to open database file](#Unabletoopendatabasefile)
+
+  * [Install Diagnostics for Windows](#InstallDiagnosticsforWindows)
+
 
 ## All platforms
 
@@ -61,27 +61,27 @@ You will need to run it **with the user account you use when working with Titani
 
 To run the commands:
 
-*   open a Windows 7 Command Prompt
-    
-*   copy all of the code below
-    
-*   right-click on the Command Prompt window
-    
-*   choose Paste from the context menu
-    
-*   press **Enter** to ensure the last command in the list executes
-    
-*   compare your output with the [Install Diagnostics Output](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installation_Troubleshooting/Install_Diagnostics_Script_Output/) from our system
-    
+* open a Windows 7 Command Prompt
+
+* copy all of the code below
+
+* right-click on the Command Prompt window
+
+* choose Paste from the context menu
+
+* press **Enter** to ensure the last command in the list executes
+
+* compare your output with the [Install Diagnostics Output](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installation_Troubleshooting/Install_Diagnostics_Script_Output/) from our system
+
 
 To copy your output, ready to paste into a text document or to share:
 
-*   right-click on the window
-    
-*   choose Select All from the context menu
-    
-*   press **Enter** to copy
-    
+* right-click on the window
+
+* choose Select All from the context menu
+
+* press **Enter** to copy
+
 
 Do not post your output directly into the [Q&A](http://developer.appcelerator.com/questions/created), as the formatting is likely to be messy making it difficult for others to interpret. Instead, create a new [GitHub Gist](https://gist.github.com/). To do this, paste the **unedited** output into the main Gist text area, click the **Create Public Gist** button at the bottom of the page and copy and share the resulting URL from your browser address bar.
 

@@ -1,17 +1,17 @@
-{"title":"Admin Access","weight":"10"} 
+{"title":"Admin Access","weight":"10"}
 
-*   [Create an admin user](#Createanadminuser)
-    
-    *   [Create a new admin user](#Createanewadminuser)
-        
-    *   [Add admin access to an existing user](#Addadminaccesstoanexistinguser)
-        
-*   [Perform Mobile Backend Services API calls on behalf of another user](#PerformMobileBackendServicesAPIcallsonbehalfofanotheruser)
-    
-*   [Batch delete](#Batchdelete)
-    
-*   [Admin drop custom collection](#Admindropcustomcollection)
-    
+* [Create an admin user](#Createanadminuser)
+
+  * [Create a new admin user](#Createanewadminuser)
+
+  * [Add admin access to an existing user](#Addadminaccesstoanexistinguser)
+
+* [Perform Mobile Backend Services API calls on behalf of another user](#PerformMobileBackendServicesAPIcallsonbehalfofanotheruser)
+
+* [Batch delete](#Batchdelete)
+
+* [Admin drop custom collection](#Admindropcustomcollection)
+
 
 Mobile Backend Services (MBS) admin access allows application admin users to execute some batch operations and make MBS API calls on behalf of another user.
 
@@ -19,46 +19,46 @@ Mobile Backend Services (MBS) admin access allows application admin users to exe
 
 Before creating an admin user, log in to the Dashboard, and select your application.
 
-1.  Log into the [AMPLIFY Platform](https://platform.axway.com/).
-    
-2.  Select **Dashboard** on the Dashboard tile.
-    
-3.  Select an application from the **Apps** tab.
-    
+1. Log into the [AMPLIFY Platform](https://platform.axway.com/).
+
+2. Select the **Dashboard** link on the Dashboard tile.
+
+3. Select an application from the **Apps** tab.
+
 
 Then, either create a new admin user or add admin access to an existing user.
 
 ### Create a new admin user
 
-1.  In the left navigation bar, click **Manage Data**.
-    
-2.  In the main pane, click **Users**.
-    
-3.  Click **\+ User**. A dialog appears.
-    
-4.  Under the **Admin** section, click the **Yes** radio button.
-    
-5.  At a minimum, enter a username, email, and password.
-    
-6.  Click **Save**.
-    
-    ![admin_appc1_latest](/Images/appc/download/attachments/49153856/admin_appc1_latest.png)
-    
+1. In the left navigation bar, click **Manage Data**.
+
+2. In the main pane, click **Users**.
+
+3. Click **\+ User**. A dialog appears.
+
+4. Under the **Admin** section, click the **Yes** radio button.
+
+5. At a minimum, enter a username, email, and password.
+
+6. Click **Save**.
+
+  ![admin_appc1_latest](/Images/appc/download/attachments/49153856/admin_appc1_latest.png)
+
 
 Mobile Backend Services creates a new user with admin access.
 
 ### Add admin access to an existing user
 
-1.  In the left navigation bar, click **Manage Data**.
-    
-2.  In the main pane, click **Users**.
-    
-3.  Locate the user you want to give admin access to and click the username to edit the user.
-    
-4.  Locate the **Admin** section and click the **Yes** radio button.
-    
-5.  Scroll down and click **Save**.
-    
+1. In the left navigation bar, click **Manage Data**.
+
+2. In the main pane, click **Users**.
+
+3. Locate the user you want to give admin access to and click the username to edit the user.
+
+4. Locate the **Admin** section and click the **Yes** radio button.
+
+5. Scroll down and click **Save**.
+
 
 This user now has admin access. To disable access, follow the same steps except click the **No** radio button.
 
@@ -68,14 +68,14 @@ An admin user can perform MBS API calls on behalf of another user. For example, 
 
 This admin operation is supported by any create, update and delete method, as well as the following methods:
 
-*   [KeyValues.append](/arrowdb/latest/#!/api/KeyValues-method-append)
-    
-*   [KeyValues.incrby](/arrowdb/latest/#!/api/KeyValues-method-incrby)
-    
-*   [KeyValues.set](/arrowdb/latest/#!/api/KeyValues-method-set)
-    
-*   [PushNotifications.subscribe](/arrowdb/latest/#!/api/PushNotifications-method-subscribe)
-    
+* [KeyValues.append](/arrowdb/latest/#!/api/KeyValues-method-append)
+
+* [KeyValues.incrby](/arrowdb/latest/#!/api/KeyValues-method-incrby)
+
+* [KeyValues.set](/arrowdb/latest/#!/api/KeyValues-method-set)
+
+* [PushNotifications.subscribe](/arrowdb/latest/#!/api/PushNotifications-method-subscribe)
+
 
 For example, the following curl command creates a new status for the specified user:
 
@@ -245,28 +245,28 @@ Note that the method returns an HTTP 200 code (success) even if the query matche
 
 The following MBS objects support batch delete operations:
 
-*   [Checkins](/arrowdb/latest/#!/api/Checkins)
-    
-*   [PhotoCollections](/arrowdb/latest/#!/api/PhotoCollections)
-    
-*   [Events](/arrowdb/latest/#!/api/Events)
-    
-*   [Files](/arrowdb/latest/#!/api/Files)
-    
-*   [CustomObjects](/arrowdb/latest/#!/api/CustomObjects)
-    
-*   [Photos](/arrowdb/latest/#!/api/Photos)
-    
-*   [Places](/arrowdb/latest/#!/api/Places)
-    
-*   [Posts](/arrowdb/latest/#!/api/Posts)
-    
-*   [Reviews](/arrowdb/latest/#!/api/Reviews)
-    
-*   [Statuses](/arrowdb/latest/#!/api/Statuses)
-    
-*   [Users](/arrowdb/latest/#!/api/Users)
-    
+* [Checkins](/arrowdb/latest/#!/api/Checkins)
+
+* [PhotoCollections](/arrowdb/latest/#!/api/PhotoCollections)
+
+* [Events](/arrowdb/latest/#!/api/Events)
+
+* [Files](/arrowdb/latest/#!/api/Files)
+
+* [CustomObjects](/arrowdb/latest/#!/api/CustomObjects)
+
+* [Photos](/arrowdb/latest/#!/api/Photos)
+
+* [Places](/arrowdb/latest/#!/api/Places)
+
+* [Posts](/arrowdb/latest/#!/api/Posts)
+
+* [Reviews](/arrowdb/latest/#!/api/Reviews)
+
+* [Statuses](/arrowdb/latest/#!/api/Statuses)
+
+* [Users](/arrowdb/latest/#!/api/Users)
+
 
 ## Admin drop custom collection
 

@@ -1,64 +1,64 @@
-{"title":"Titanium SDK New API Notices","weight":"50"} 
+{"title":"Titanium SDK New API Notices","weight":"50"}
 
 This document lists every SDK new API notice.
 
-*   [SDK 8.x](#SDK8.x)
-    
-    *   [8.1.0](#8.1.0)
-        
-    *   [8.0.0](#8.0.0)
-        
-*   [SDK 7.x](#SDK7.x)
-    
-    *   [7.5.0](#7.5.0)
-        
-    *   [7.4.0](#7.4.0)
-        
-    *   [7.3.1](#7.3.1)
-        
-    *   [7.3.0](#7.3.0)
-        
-    *   [7.2.1](#7.2.1)
-        
-    *   [7.1.1](#7.1.1)
-        
-    *   [7.1.0](#7.1.0)
-        
-    *   [7.0.1](#7.0.1)
-        
-    *   [7.0.0](#7.0.0)
-        
-*   [SDK 6.x](#SDK6.x)
-    
-    *   [6.3.0](#6.3.0)
-        
-    *   [6.2.0](#6.2.0)
-        
-    *   [6.1.0](#6.1.0)
-        
-    *   [6.0.0](#6.0.0)
-        
-*   [SDK 5.x](#SDK5.x)
-    
-    *   [5.5.0](#5.5.0)
-        
-    *   [5.4.0](#5.4.0)
-        
-    *   [5.2.0](#5.2.0)
-        
-    *   [5.1.0](#5.1.0)
-        
-    *   [5.0.0](#5.0.0)
-        
+* [SDK 8.x](#SDK8.x)
+
+  * [8.1.0](#8.1.0)
+
+  * [8.0.0](#8.0.0)
+
+* [SDK 7.x](#SDK7.x)
+
+  * [7.5.0](#7.5.0)
+
+  * [7.4.0](#7.4.0)
+
+  * [7.3.1](#7.3.1)
+
+  * [7.3.0](#7.3.0)
+
+  * [7.2.1](#7.2.1)
+
+  * [7.1.1](#7.1.1)
+
+  * [7.1.0](#7.1.0)
+
+  * [7.0.1](#7.0.1)
+
+  * [7.0.0](#7.0.0)
+
+* [SDK 6.x](#SDK6.x)
+
+  * [6.3.0](#6.3.0)
+
+  * [6.2.0](#6.2.0)
+
+  * [6.1.0](#6.1.0)
+
+  * [6.0.0](#6.0.0)
+
+* [SDK 5.x](#SDK5.x)
+
+  * [5.5.0](#5.5.0)
+
+  * [5.4.0](#5.4.0)
+
+  * [5.2.0](#5.2.0)
+
+  * [5.1.0](#5.1.0)
+
+  * [5.0.0](#5.0.0)
+
 
 List of all new API notices for SDK 8.x.
 
-*   [SDK 8.x](#NewAPINoticeSDK8.x-SDK8.x)
-    
-    *   [8.1.0](#NewAPINoticeSDK8.x-8.1.0)
-        
-    *   [8.0.0](#NewAPINoticeSDK8.x-8.0.0)
-        
+* [SDK 8.x](#NewAPINoticeSDK8.x-SDK8.x)
+
+  * [8.1.0](#NewAPINoticeSDK8.x-8.1.0)
+
+  * [8.0.0](#NewAPINoticeSDK8.x-8.0.0)
+
 
 ## SDK 8.x
 
@@ -368,7 +368,7 @@ Titanium.UI.WebView.backForwardList
 
 method
 
-An object which maintains a list of visited pages used to go back and forward to the most recent page.  
+An object which maintains a list of visited pages used to go back and forward to the most recent page.
 (New API, supported on iPhone and iPad.)
 
 Titanium.UI.WebView.cachePolicy
@@ -637,26 +637,26 @@ Creates and returns an instance of Titanium.UI.iOS.WebViewProcessPool. (New API,
 
 List of all new API notices for SDK 7.x.
 
-*   [SDK 7.x](#NewAPINoticeSDK7.x-SDK7.x)
-    
-    *   [7.5.0](#NewAPINoticeSDK7.x-7.5.0)
-        
-    *   [7.4.0](#NewAPINoticeSDK7.x-7.4.0)
-        
-    *   [7.3.1](#NewAPINoticeSDK7.x-7.3.1)
-        
-    *   [7.3.0](#NewAPINoticeSDK7.x-7.3.0)
-        
-    *   [7.2.1](#NewAPINoticeSDK7.x-7.2.1)
-        
-    *   [7.1.1](#NewAPINoticeSDK7.x-7.1.1)
-        
-    *   [7.1.0](#NewAPINoticeSDK7.x-7.1.0)
-        
-    *   [7.0.1](#NewAPINoticeSDK7.x-7.0.1)
-        
-    *   [7.0.0](#NewAPINoticeSDK7.x-7.0.0)
-        
+* [SDK 7.x](#NewAPINoticeSDK7.x-SDK7.x)
+
+  * [7.5.0](#NewAPINoticeSDK7.x-7.5.0)
+
+  * [7.4.0](#NewAPINoticeSDK7.x-7.4.0)
+
+  * [7.3.1](#NewAPINoticeSDK7.x-7.3.1)
+
+  * [7.3.0](#NewAPINoticeSDK7.x-7.3.0)
+
+  * [7.2.1](#NewAPINoticeSDK7.x-7.2.1)
+
+  * [7.1.1](#NewAPINoticeSDK7.x-7.1.1)
+
+  * [7.1.0](#NewAPINoticeSDK7.x-7.1.0)
+
+  * [7.0.1](#NewAPINoticeSDK7.x-7.0.1)
+
+  * [7.0.0](#NewAPINoticeSDK7.x-7.0.0)
+
 
 ## SDK 7.x
 
@@ -3894,16 +3894,16 @@ Never use a larger title when this item is top most. (New API, supported on iPho
 
 List of all new API notices for SDK 6.x.
 
-*   [SDK 6.x](#NewAPINoticeSDK6.x-SDK6.x)
-    
-    *   [6.3.0](#NewAPINoticeSDK6.x-6.3.0)
-        
-    *   [6.2.0](#NewAPINoticeSDK6.x-6.2.0)
-        
-    *   [6.1.0](#NewAPINoticeSDK6.x-6.1.0)
-        
-    *   [6.0.0](#NewAPINoticeSDK6.x-6.0.0)
-        
+* [SDK 6.x](#NewAPINoticeSDK6.x-SDK6.x)
+
+  * [6.3.0](#NewAPINoticeSDK6.x-6.3.0)
+
+  * [6.2.0](#NewAPINoticeSDK6.x-6.2.0)
+
+  * [6.1.0](#NewAPINoticeSDK6.x-6.1.0)
+
+  * [6.0.0](#NewAPINoticeSDK6.x-6.0.0)
+
 
 ## SDK 6.x
 
@@ -5641,18 +5641,18 @@ The number of calls remaining to transferCurrentComplication before the system s
 
 List of all new API notices for SDK 5.x.
 
-*   [SDK 5.x](#NewAPINoticeSDK5.x-SDK5.x)
-    
-    *   [5.5.0](#NewAPINoticeSDK5.x-5.5.0)
-        
-    *   [5.4.0](#NewAPINoticeSDK5.x-5.4.0)
-        
-    *   [5.2.0](#NewAPINoticeSDK5.x-5.2.0)
-        
-    *   [5.1.0](#NewAPINoticeSDK5.x-5.1.0)
-        
-    *   [5.0.0](#NewAPINoticeSDK5.x-5.0.0)
-        
+* [SDK 5.x](#NewAPINoticeSDK5.x-SDK5.x)
+
+  * [5.5.0](#NewAPINoticeSDK5.x-5.5.0)
+
+  * [5.4.0](#NewAPINoticeSDK5.x-5.4.0)
+
+  * [5.2.0](#NewAPINoticeSDK5.x-5.2.0)
+
+  * [5.1.0](#NewAPINoticeSDK5.x-5.1.0)
+
+  * [5.0.0](#NewAPINoticeSDK5.x-5.0.0)
+
 
 ## SDK 5.x
 

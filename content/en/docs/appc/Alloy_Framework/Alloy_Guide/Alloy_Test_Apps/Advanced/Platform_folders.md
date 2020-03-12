@@ -1,4 +1,4 @@
-{"title":"Platform folders","weight":"140"} 
+{"title":"Platform folders","weight":"140"}
 
 Demonstrates how to structure an Alloy project with folders that contains platform-specific views.
 
@@ -62,4 +62,4 @@ app/views/ios/index.xml
 
 ## See also
 
-*   [Alloy Concepts: Platform-Specific Resources](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Concepts/#Platform-specificresources)
+* [Alloy Concepts: Platform-Specific Resources](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Concepts/#Platform-specificresources)

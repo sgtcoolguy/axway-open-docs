@@ -1,4 +1,4 @@
-{"title":"Picker","weight":"120"} 
+{"title":"Picker","weight":"120"}
 
 Demonstrates basic use of the Picker control to let a user select one or more fixed values.
 
@@ -162,4 +162,4 @@ app/styles/index.tss
 
 ## See also
 
-*   [Titanium.UI.Picker](#!/api/Titanium.UI.Picker) API reference
+* [Titanium.UI.Picker](#!/api/Titanium.UI.Picker) API reference

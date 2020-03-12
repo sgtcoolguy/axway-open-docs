@@ -1,17 +1,17 @@
-{"title":"Best Practices and Recommendations","weight":"20"} 
+{"title":"Best Practices and Recommendations","weight":"20"}
 
 ## Titanium best practices
 
 Though both Titanium and JavaScript are highly flexible, we have found that certain approaches lead to better outcomes. As a guide, we look for techniques that achieve these goals:
 
-1.  Stable – applications must be stable when published and available to the market.
-    
-2.  Rapid – applications must be rapid to develop, maintain, and update.
-    
-3.  Performant – applications must perform optimally, approaching 1:1 native speed on targeted devices.
-    
-4.  Readable – applications must have a readable codebase for quick understanding, modification, and improvement.
-    
+1. Stable – applications must be stable when published and available to the market.
+
+2. Rapid – applications must be rapid to develop, maintain, and update.
+
+3. Performant – applications must perform optimally, approaching 1:1 native speed on targeted devices.
+
+4. Readable – applications must have a readable codebase for quick understanding, modification, and improvement.
+
 
 ### Does best-practice really mean only-practice?
 

@@ -1,15 +1,15 @@
-{"title":"Problems with WST and PDT","weight":"110"} 
+{"title":"Problems with WST and PDT","weight":"110"}
 
-*   [Problem Description](#ProblemDescription)
-    
-*   [Problem Source](#ProblemSource)
-    
-*   [Suggested Workaround](#SuggestedWorkaround)
-    
+* [Problem Description](#ProblemDescription)
+
+* [Problem Source](#ProblemSource)
+
+* [Suggested Workaround](#SuggestedWorkaround)
+
 
 ## Problem Description
 
-In some cases, when installing WST/PDT side-by-side with the Studio, scripts cannot be opened correctly with the WST/PDT editors that were assigned to work on the same file extensions that the Studio is assigned to.  
+In some cases, when installing WST/PDT side-by-side with the Studio, scripts cannot be opened correctly with the WST/PDT editors that were assigned to work on the same file extensions that the Studio is assigned to.
 A reported error of _"Unsupported content type in editor"_ is opened, and the edited content is displayed as simple text.
 
 ## Problem Source
@@ -20,11 +20,11 @@ This problem is originated in a known WST issue that can be viewed at [https://b
 
 To be able to open those files with the WST/PDT editors, you will need to remove the _Aptana Natures_ from your project.
 
-1.  Right click the project and select _Properties_
-    
-2.  Select the _Project Natures_ item
-    
-3.  Uncheck the _Aptana Natures_ (PHP & Web)
-    
+1. Right click the project and select _Properties_
+
+2. Select the _Project Natures_ item
+
+3. Uncheck the _Aptana Natures_ (PHP & Web)
+
 
 This workaround will allow you opening the files. However, the _Nature_ change will have an effect on the features that Studio can provide while working with that specific project (Code Assist, Debugging, etc.).

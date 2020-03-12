@@ -1,4 +1,4 @@
-{"title":"Nodes - Model Query","weight":"110"} 
+{"title":"Nodes - Model Query","weight":"110"}
 
 API Builder 3.x is deprecated
 

@@ -1,35 +1,35 @@
-{"title":"Google Maps v2 for Android","weight":"30"} 
+{"title":"Google Maps v2 for Android","weight":"30"}
 
-*   [Introduction](#Introduction)
-    
-    *   [Install the Google Play Services SDK](#InstalltheGooglePlayServicesSDK)
-        
-    *   [Obtain and Add a Google API Key](#ObtainandAddaGoogleAPIKey)
-        
-        *   [Obtain the SHA-1 certificate fingerprint](#ObtaintheSHA-1certificatefingerprint)
-            
-        *   [Add the Google API key and permissions to the tiapp.xml file](#AddtheGoogleAPIkeyandpermissionstothetiapp.xmlfile)
-            
-    *   [Add the module to your project](#Addthemoduletoyourproject)
-        
-*   [Transitioning from Titanium.Map](#TransitioningfromTitanium.Map)
-    
-*   [Check for Google Play Services](#CheckforGooglePlayServices)
-    
-*   [Views](#Views)
-    
-*   [Annotations](#Annotations)
-    
-*   [Routes](#Routes)
-    
-*   [Event handling](#Eventhandling)
-    
-*   [Troubleshooting](#Troubleshooting)
-    
-    *   [Map is blank](#Mapisblank)
-        
-*   [Further reading](#Furtherreading)
-    
+* [Introduction](#Introduction)
+
+  * [Install the Google Play Services SDK](#InstalltheGooglePlayServicesSDK)
+
+  * [Obtain and Add a Google API Key](#ObtainandAddaGoogleAPIKey)
+
+    * [Obtain the SHA-1 certificate fingerprint](#ObtaintheSHA-1certificatefingerprint)
+
+    * [Add the Google API key and permissions to the tiapp.xml file](#AddtheGoogleAPIkeyandpermissionstothetiapp.xmlfile)
+
+  * [Add the module to your project](#Addthemoduletoyourproject)
+
+* [Transitioning from Titanium.Map](#TransitioningfromTitanium.Map)
+
+* [Check for Google Play Services](#CheckforGooglePlayServices)
+
+* [Views](#Views)
+
+* [Annotations](#Annotations)
+
+* [Routes](#Routes)
+
+* [Event handling](#Eventhandling)
+
+* [Troubleshooting](#Troubleshooting)
+
+  * [Map is blank](#Mapisblank)
+
+* [Further reading](#Furtherreading)
+
 
 ## Introduction
 
@@ -39,33 +39,33 @@ The Google Maps Ti.Map module requires a Google API key to be set in your Androi
 
 The Google Maps Ti.Map module uses Google Maps Android API v2, which requires the Google Play Services SDK. To install the Google Play Services SDK, launch the Android SDK Manager and select to install Google Play services.
 
-1.  To launch the Android SDK manager:
-    
-    `#If the Android SDK tools folder is in your PATH:`
-    
-    `android`
-    
-    `#If not`
-    
-    `<path_to_android_sdk>/tools/android`
-    
-2.  After the Android SDK Manager application launches, in the **Extras** folder, select **Google Play services**, then click **Install X Packages....**
-    
-3.  A dialog appears confirming your selection. Accept the license and click **Install** to continue.
-    
+1. To launch the Android SDK manager:
+
+  `#If the Android SDK tools folder is in your PATH:`
+
+  `android`
+
+  `#If not`
+
+  `<path_to_android_sdk>/tools/android`
+
+2. After the Android SDK Manager application launches, in the **Extras** folder, select **Google Play services**, then click **Install X Packages....**
+
+3. A dialog appears confirming your selection. Accept the license and click **Install** to continue.
+
 
 ### Obtain and Add a Google API Key
 
 To use the Google Maps v2 module, you need to create a Google API project, enable Google Maps Android API v2, then obtain and add a Google Maps API key to the project.
 
-1.  Create a Google API project and enable Google Map Android API v2 for the project (see [Create an API project in the Google APIs Console](https://developers.google.com/maps/documentation/android/signup#create_an_api_project_in_the_console_name)).
-    
-2.  Obtain and add a Google Maps API key to your project (see [Get an Android API key](https://developers.google.com/maps/documentation/android/signup#get_an_android_api_key)). To generate a Google Maps API key, you need a package name and a SHA-1 certificate fingerprint.
-    
-    1.  The package name is the Application ID from the tiapp.xml file.
-        
-    2.  For the SHA-1 certificate fingerprint, use JDK keytool command to extract the SHA-1 string from either the debug certificate, shipped with the Titanium SDK, or from a release certificate that you generate yourself to distribute an application. If you are using the Run command from Studio to build and test your application for an Android Device, use the debug certificate. If you are using the Publish command from Studio to package and distribute your application to the Android App Store, use the release certificate.
-        
+1. Create a Google API project and enable Google Map Android API v2 for the project (see [Create an API project in the Google APIs Console](https://developers.google.com/maps/documentation/android/signup#create_an_api_project_in_the_console_name)).
+
+2. Obtain and add a Google Maps API key to your project (see [Get an Android API key](https://developers.google.com/maps/documentation/android/signup#get_an_android_api_key)). To generate a Google Maps API key, you need a package name and a SHA-1 certificate fingerprint.
+
+  1. The package name is the Application ID from the tiapp.xml file.
+
+  2. For the SHA-1 certificate fingerprint, use JDK keytool command to extract the SHA-1 string from either the debug certificate, shipped with the Titanium SDK, or from a release certificate that you generate yourself to distribute an application. If you are using the Run command from Studio to build and test your application for an Android Device, use the debug certificate. If you are using the Publish command from Studio to package and distribute your application to the Android App Store, use the release certificate.
+
 
 #### Obtain the SHA-1 certificate fingerprint
 
@@ -105,10 +105,10 @@ After you have obtained a Google API key, add it your tiapp.xml file. Add the me
 
 The ti.map module is included as part of the Titanium SDK and you do not need to download it. Edit your tiapp.xml file to use the module.
 
-*   In Studio, double-click the tiapp.xml file to open it in TiApp Editor, select the GUI Overview tab, and in the **Modules** section, click the add button (green plus sign), select the ti.map module, then click the OK button to add it.
-    
-*   or in a text editor, add the following to your modules section:
-    
+* In Studio, double-click the tiapp.xml file to open it in TiApp Editor, select the GUI Overview tab, and in the **Modules** section, click the add button (green plus sign), select the ti.map module, then click the OK button to add it.
+
+* or in a text editor, add the following to your modules section:
+
 
 `...`
 
@@ -142,46 +142,46 @@ The new add-on module behaves the same as the built-in Titanium.Map proxy with t
 
 **Requirements:**
 
-*   Only works on Android devices. Not supported on the Android emulator.
-    
-*   Requires Google Play services SDK to be installed.
-    
-*   Requires Google Maps API key for both development and production.
-    
+* Only works on Android devices. Not supported on the Android emulator.
+
+* Requires Google Play services SDK to be installed.
+
+* Requires Google Maps API key for both development and production.
+
 
 **New features:**
 
-*   **Support for multiple map views.** Unlike the built-in Titanium.Map proxy, the new Google Maps v2 module can display multiple map views.
-    
-*   **Support native UI controls and gestures.** The new Google Maps v2 module supports the native UI controls (zooming, compass and user position) and gestures (rotating and tilting).
-    
-*   **Custom view annotations.** You can display annotations with a custom view instead of the default pin image. Set the Annotation's customView property to use a custom view.
-    
-*   **Draggable annotations.** Annotations are draggable with the new Google Maps v2 module. Set the Annotation's draggable property to true to enable this behavior and use the pinchangedragstate to monitor the pin's drag state.
-    
-*   **Display traffic conditions.** The new Google Maps v2 module can display current traffic conditions, depending on data availability. Set the View's traffic property to true to enable this behavior.
-    
-*   **Additional Annotation colors.** The new Google Map v2 module has more color constants besides ANNOTATION\_GREEN and ANNOTATION\_RED.
-    
+* **Support for multiple map views.** Unlike the built-in Titanium.Map proxy, the new Google Maps v2 module can display multiple map views.
+
+* **Support native UI controls and gestures.** The new Google Maps v2 module supports the native UI controls (zooming, compass and user position) and gestures (rotating and tilting).
+
+* **Custom view annotations.** You can display annotations with a custom view instead of the default pin image. Set the Annotation's customView property to use a custom view.
+
+* **Draggable annotations.** Annotations are draggable with the new Google Maps v2 module. Set the Annotation's draggable property to true to enable this behavior and use the pinchangedragstate to monitor the pin's drag state.
+
+* **Display traffic conditions.** The new Google Maps v2 module can display current traffic conditions, depending on data availability. Set the View's traffic property to true to enable this behavior.
+
+* **Additional Annotation colors.** The new Google Map v2 module has more color constants besides ANNOTATION\_GREEN and ANNOTATION\_RED.
+
 
 **Behavior changes:**
 
-*   **Route class.** In the Google Maps v2 module, you need to create a Route object before adding it. Previously in the Titanium.Map proxy, routes were created using an abstract data type with the addRoute method.
-    
-*   **Missing Annotation properties.** The animate property and its accessors are not supported on the Annotation class in the Google Maps v2 module. This is a native iOS-specific feature.
-    
-*   **Missing View properties.** The following properties and their accessors are not supported on the View class in the Google Maps v2 module: hideAnnotationWhenTouchMap , latitudeDelta , longitudeDelta and regionFit .
-    
-    *   For the hideAnnotationWhenTouchMap property, annotations can be deselected by either touching the annotation again or touching the View outside the annotation. Previously in the Titanium.Map proxy, you had to choose one of these behaviors to deselect the annotation. In the Google Maps v2 module, both methods of deselecting an annotation work by default.
-        
-    *   The latitudeDelta and longitudeDelta properties were read-only properties in the Titanium.Map proxy that can be accessed using View's region property with the Google Maps v2 module.
-        
-*   **Missing Map constants.**
-    
-    *   The STANDARD\_TYPE constant is missing from the Google Maps v2 module. Use the NORMAL\_TYPE constant instead.
-        
-    *   The ANNOTATION\_PURPLE constant is missing from the Google Maps v2 module. Use the ANNOTATION\_VIOLET constant instead.
-        
+* **Route class.** In the Google Maps v2 module, you need to create a Route object before adding it. Previously in the Titanium.Map proxy, routes were created using an abstract data type with the addRoute method.
+
+* **Missing Annotation properties.** The animate property and its accessors are not supported on the Annotation class in the Google Maps v2 module. This is a native iOS-specific feature.
+
+* **Missing View properties.** The following properties and their accessors are not supported on the View class in the Google Maps v2 module: hideAnnotationWhenTouchMap , latitudeDelta , longitudeDelta and regionFit .
+
+  * For the hideAnnotationWhenTouchMap property, annotations can be deselected by either touching the annotation again or touching the View outside the annotation. Previously in the Titanium.Map proxy, you had to choose one of these behaviors to deselect the annotation. In the Google Maps v2 module, both methods of deselecting an annotation work by default.
+
+  * The latitudeDelta and longitudeDelta properties were read-only properties in the Titanium.Map proxy that can be accessed using View's region property with the Google Maps v2 module.
+
+* **Missing Map constants.**
+
+  * The STANDARD\_TYPE constant is missing from the Google Maps v2 module. Use the NORMAL\_TYPE constant instead.
+
+  * The ANNOTATION\_PURPLE constant is missing from the Google Maps v2 module. Use the ANNOTATION\_VIOLET constant instead.
+
 
 ## Check for Google Play Services
 
@@ -339,32 +339,32 @@ The previous example displays four map views of the same region in the same wind
 
 As seen above, changing a few lines of code alters the appearance of each map. The following properties are unique to Map View to manipulate the appearance and behavior of the View class:
 
-*   mapType - Indicates what type of map should be displayed. Choses are:
-    
-    *   <MapObject>.STANDARD\_TYPE - Basic map with labels.
-        
-    *   <MapObject>.SATELLITE\_TYPE - Satellite imagery without map labels.
-        
-    *   <MapObject>.TERRAIN\_TYPE - Terrain map with labels.
-        
-    *   <MapObject>.HYBRID\_TYPE - SATELLITE\_TYPE with map labels.
-        
-*   region - This is an object that contains the four properties defining the visible area of the View. The same latitude and longitude of a region can be represented with a different level of zoom via the latitudeDelta and longitudeDelta properties.
-    
-    *   latitude\- The latitude of your map's target region.
-        
-    *   longitude - The longitude of your map's target region.
-        
-    *   latitudeDelta - The measure of latitude north and south from your target regions's latitude that will be visible in the View. The smaller the delta value, the closer the zoom on your map.
-        
-    *   longitudeDelta - The measure of longitude east and west from your target regions's longitude that will be visible in the View.
-        
-*   animate - A boolean that indicates whether or not map actions, like opening and adding annotations, should be animated.
-    
-*   traffic - A boolean that indicates if the map should display traffic conditions. This varies by region.
-    
-*   userLocation - A boolean that indicates if the map should show the user's current device location as a pin on the map.
-    
+* mapType - Indicates what type of map should be displayed. Choses are:
+
+  * <MapObject>.STANDARD\_TYPE - Basic map with labels.
+
+  * <MapObject>.SATELLITE\_TYPE - Satellite imagery without map labels.
+
+  * <MapObject>.TERRAIN\_TYPE - Terrain map with labels.
+
+  * <MapObject>.HYBRID\_TYPE - SATELLITE\_TYPE with map labels.
+
+* region - This is an object that contains the four properties defining the visible area of the View. The same latitude and longitude of a region can be represented with a different level of zoom via the latitudeDelta and longitudeDelta properties.
+
+  * latitude\- The latitude of your map's target region.
+
+  * longitude - The longitude of your map's target region.
+
+  * latitudeDelta - The measure of latitude north and south from your target regions's latitude that will be visible in the View. The smaller the delta value, the closer the zoom on your map.
+
+  * longitudeDelta - The measure of longitude east and west from your target regions's longitude that will be visible in the View.
+
+* animate - A boolean that indicates whether or not map actions, like opening and adding annotations, should be animated.
+
+* traffic - A boolean that indicates if the map should display traffic conditions. This varies by region.
+
+* userLocation - A boolean that indicates if the map should show the user's current device location as a pin on the map.
+
 
 There are two more components that add a significant amount of functionality to your map View\--Annotation and Route. They allow us to add places of interest to our maps as well as plot paths between them.
 
@@ -432,51 +432,51 @@ Adding an annotation to a View is simple. Let's modify the previous example to s
 
 The previous example creates three annotations and adds them to the view–two on creation and one post creation. Note that the View's annotations property accepts an array. Even if there is only one annotation, we still need to pass it to the View as an entry in an array. The map view displays three custom annotations:
 
-*   The Sydney Harbour Bridge annotation uses the default pin image, but the info window contains a Button in the left pane, set with the leftView property, and an image of the bridge in the right pane, set with the rightButton property.
-    
-*   The Sydney Opera House annotation uses an image of the opera house instead of the default pin image, set with the image property.
-    
-*   The random annotation uses a Label instead of the default pin image, set with the customView property, and is also draggable, set with the draggable property.
-    
+* The Sydney Harbour Bridge annotation uses the default pin image, but the info window contains a Button in the left pane, set with the leftView property, and an image of the bridge in the right pane, set with the rightButton property.
+
+* The Sydney Opera House annotation uses an image of the opera house instead of the default pin image, set with the image property.
+
+* The random annotation uses a Label instead of the default pin image, set with the customView property, and is also draggable, set with the draggable property.
+
 
 L et's take a look at each of the properties used in this example.
 
-*   customView – A custom view to be used in place of the default pin image. This property takes precedence over the image property. The annotation only responds to the map view's events and not the events of the view component.
-    
-*   draggable - A boolean variable that indicates whether or not the annotation can be dragged and replaced in the View.
-    
-*   image - The URL to an image to be used in place of the default pin image.
-    
-*   leftButton/rightButton – Places an image in the left or right side of the annotation's info window. Listen to the map view's click event and check the clicksource property for either leftPane or rightPane to see if the user interacted with this component. This property takes precedence over the leftView/rightView property.
-    
-*   leftView/rightView – Places a custom view in the left or right side of the annotation's info window. The events of the view component do not fire. Listen to the map view's click event and check the clicksource property for either leftPane or rightPane to see if the user interacted with this component.
-    
-*   pincolor \- The color of the default pin representing an annotation. It can have the following values:
-    
-    *   <MapObject>.ANNOTATION\_AZURE
-        
-    *   <MapObject>.ANNOTATION\_BLUE
-        
-    *   <MapObject>.ANNOTATION\_CYAN
-        
-    *   <MapObject>.ANNOTATION\_GREEN
-        
-    *   <MapObject>.ANNOTATION\_MAGENTA
-        
-    *   <MapObject>.ANNOTATION\_ORANGE
-        
-    *   <MapObject>.ANNOTATION\_RED
-        
-    *   <MapObject>.ANNOTATION\_ROSE
-        
-    *   <MapObject>.ANNOTATION\_VIOLET
-        
-    *   <MapObject>.ANNOTATION\_YELLOW
-        
-*   subtitle - The subtitle text that appears on your annotation when clicked.
-    
-*   title - The main title text that appears on your annotation when clicked.
-    
+* customView – A custom view to be used in place of the default pin image. This property takes precedence over the image property. The annotation only responds to the map view's events and not the events of the view component.
+
+* draggable - A boolean variable that indicates whether or not the annotation can be dragged and replaced in the View.
+
+* image - The URL to an image to be used in place of the default pin image.
+
+* leftButton/rightButton – Places an image in the left or right side of the annotation's info window. Listen to the map view's click event and check the clicksource property for either leftPane or rightPane to see if the user interacted with this component. This property takes precedence over the leftView/rightView property.
+
+* leftView/rightView – Places a custom view in the left or right side of the annotation's info window. The events of the view component do not fire. Listen to the map view's click event and check the clicksource property for either leftPane or rightPane to see if the user interacted with this component.
+
+* pincolor \- The color of the default pin representing an annotation. It can have the following values:
+
+  * <MapObject>.ANNOTATION\_AZURE
+
+  * <MapObject>.ANNOTATION\_BLUE
+
+  * <MapObject>.ANNOTATION\_CYAN
+
+  * <MapObject>.ANNOTATION\_GREEN
+
+  * <MapObject>.ANNOTATION\_MAGENTA
+
+  * <MapObject>.ANNOTATION\_ORANGE
+
+  * <MapObject>.ANNOTATION\_RED
+
+  * <MapObject>.ANNOTATION\_ROSE
+
+  * <MapObject>.ANNOTATION\_VIOLET
+
+  * <MapObject>.ANNOTATION\_YELLOW
+
+* subtitle - The subtitle text that appears on your annotation when clicked.
+
+* title - The main title text that appears on your annotation when clicked.
+
 
 The next section discusses the Route class, a feature to create paths between locations on a View.
 
@@ -566,12 +566,12 @@ Routes, created with the createRoute method, allow us to draw paths between loca
 
 After creating the three annotation points, the application creates a route object, using the createRoute method. Let's take a look at each of the route properties.
 
-*   points - Array of latitude and longitude coordinates that represent each point in the route. As geometry dictates, you must have a least two points to draw a line, or route in this case.
-    
-*   color - Specifies the color of the line.
-    
-*   width \- Specifies the width of the line in pixels.
-    
+* points - Array of latitude and longitude coordinates that represent each point in the route. As geometry dictates, you must have a least two points to draw a line, or route in this case.
+
+* color - Specifies the color of the line.
+
+* width \- Specifies the width of the line in pixels.
+
 
 Once the route object is created, the application can add it to the view using the addRoute method.
 
@@ -579,18 +579,18 @@ Once the route object is created, the application can add it to the view using t
 
 The Map View object provides a few extra events that provide additional control for using the Map module:
 
-*   click - This event only fires when the user selects or deselects an Annotation object and does not respond to any other user interaction. Check the event object's annotation property to see which annotation was clicked and the clicksource property to see what part of the annotation the user clicked.
-    
-*   complete - This event fires when the Map View finishes rendering.
-    
-*   pinchangedragstate \- This event fires when the pin's drag state changes if the pin's draggable property is set to true. Check the event object's annotation property to see which annotation was clicked and the newState property for one of the following:
-    
-    *   < MapModule>.ANNOTATION\_DRAG\_STATE\_START – indicates the user started dragging the pin.
-        
-    *   <MapModule>.ANNOTATION\_DRAG\_STATE\_END – indicates the user stopped dragging the pin.
-        
-*   regionchanged - This event fires when the user either changes the zoom level or pans the Map View. The event returns the new latitude and longitude coordinates as well as delta values.
-    
+* click - This event only fires when the user selects or deselects an Annotation object and does not respond to any other user interaction. Check the event object's annotation property to see which annotation was clicked and the clicksource property to see what part of the annotation the user clicked.
+
+* complete - This event fires when the Map View finishes rendering.
+
+* pinchangedragstate \- This event fires when the pin's drag state changes if the pin's draggable property is set to true. Check the event object's annotation property to see which annotation was clicked and the newState property for one of the following:
+
+  * < MapModule>.ANNOTATION\_DRAG\_STATE\_START – indicates the user started dragging the pin.
+
+  * <MapModule>.ANNOTATION\_DRAG\_STATE\_END – indicates the user stopped dragging the pin.
+
+* regionchanged - This event fires when the user either changes the zoom level or pans the Map View. The event returns the new latitude and longitude coordinates as well as delta values.
+
 
 For example, the following code listens to each of the previous events and outputs information to the console when each event fires:
 
@@ -660,16 +660,16 @@ For example, the following code listens to each of the previous events and outpu
 
 If we run the example code, then:
 
-*   Start dragging the annotation
-    
-*   Stop dragging the annotation
-    
-*   Click the annotation
-    
-*   Click the subtitle on the info window, and
-    
-*   Pan to the left
-    
+* Start dragging the annotation
+
+* Stop dragging the annotation
+
+* Click the annotation
+
+* Click the subtitle on the info window, and
+
+* Pan to the left
+
 
 The following output is printed to the console using the adb logcat command:
 
@@ -707,4 +707,4 @@ In the tiapp.xml file (or AndroidManifest.xml file), do not set the android:anyD
 
 ## Further reading
 
-*   [Titanium Map Module API Reference Documentation](#!/api/Modules.Map)
+* [Titanium Map Module API Reference Documentation](#!/api/Modules.Map)

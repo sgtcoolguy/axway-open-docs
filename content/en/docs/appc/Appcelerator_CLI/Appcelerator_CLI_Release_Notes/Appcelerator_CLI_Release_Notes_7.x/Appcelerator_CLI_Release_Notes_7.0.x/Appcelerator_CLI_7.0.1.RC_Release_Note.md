@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 7.0.1.RC - 18 December 2017","weight":"230"} 
+{"title":"Appcelerator CLI 7.0.1.RC - 18 December 2017","weight":"230"}
 
 Appcelerator CLI 7.0.1.RC is a patch release that includes improvements and bug fixes.
 
@@ -26,11 +26,11 @@ Titanium CLI
 
 ## Improvements
 
-*   [CLI-1289](https://jira.appcelerator.org/browse/CLI-1289) - Update AppPreview hook
-    
-    *   Updated AppPreview hook to add recent updates from the 7.0.0 release
-        
+* [CLI-1289](https://jira.appcelerator.org/browse/CLI-1289) - Update AppPreview hook
+
+  * Updated AppPreview hook to add recent updates from the 7.0.0 release
+
 
 ## Fixed issues
 
-*   [CLI-1290](https://jira.appcelerator.org/browse/CLI-1290) - npmconf causing errors when resolving plugins
+* [CLI-1290](https://jira.appcelerator.org/browse/CLI-1290) - npmconf causing errors when resolving plugins

@@ -1,33 +1,33 @@
-{"title":"Eclipse Commands","weight":"20"} 
+{"title":"Eclipse Commands","weight":"20"}
 
-*   [Requirements](#Requirements)
-    
-*   [Description](#Description)
-    
-*   [Invocation](#Invocation)
-    
-*   [A generic Eclipse command-handler invocation](#AgenericEclipsecommand-handlerinvocation)
-    
-*   [An Eclipse command that accepts arguments](#AnEclipsecommandthatacceptsarguments)
-    
-*   [Examples](#Examples)
-    
-    *   [Open Studio's "New Web Project Wizard"](#OpenStudio's"NewWebProjectWizard")
-        
-    *   [Open Titanium Studio "New Mobile App Project Wizard"](#OpenTitaniumStudio"NewMobileAppProjectWizard")
-        
-    *   [Open Titanium Studio "New Desktop Project Wizard"](#OpenTitaniumStudio"NewDesktopProjectWizard")
-        
+* [Requirements](#Requirements)
+
+* [Description](#Description)
+
+* [Invocation](#Invocation)
+
+* [A generic Eclipse command-handler invocation](#AgenericEclipsecommand-handlerinvocation)
+
+* [An Eclipse command that accepts arguments](#AnEclipsecommandthatacceptsarguments)
+
+* [Examples](#Examples)
+
+  * [Open Studio's "New Web Project Wizard"](#OpenStudio's"NewWebProjectWizard")
+
+  * [Open Titanium Studio "New Mobile App Project Wizard"](#OpenTitaniumStudio"NewMobileAppProjectWizard")
+
+  * [Open Titanium Studio "New Desktop Project Wizard"](#OpenTitaniumStudio"NewDesktopProjectWizard")
+
 
 ## Requirements
 
-The examples in this page use the _**Prototype**_ library, which is included by default inside a portal. However, the same concepts may be applied using other implementations.
+The examples on this page use the _**Prototype**_ library, which is included by default inside a portal. However, the same concepts may be applied using other implementations.
 
 ## Description
 
 Eclipse has a _Command Handling_ system that is invoked through an internal _Command Service_. Those commands are contributed via Eclipse extensions and can be called using the portal.
 
-In order to invoke a specific command, a command ID, and and optional command arguments, need to be provided to the Portal's _dispatch_ call. These IDs are, in some cases, hidden deep inside Eclipse, so an Eclipse knowledge is needed in order to find out what they are. We list at the bottom of this page a few common ID's and their usage with the _dispatch_.
+To invoke a specific command, a command ID, and optional command arguments, need to be provided to the Portal's _dispatch_ call. These IDs are, in some cases, hidden deep inside Eclipse, so an Eclipse knowledge is needed to find out what they are. We list at the bottom of this page a few common ID's and their usage with the _dispatch_.
 
 ## Invocation
 

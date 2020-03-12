@@ -1,4 +1,4 @@
-{"title":"iOS Modules - Use Native UI Application Delegates in Hyperloop and Native Modules","weight":"10"} 
+{"title":"iOS Modules - Use Native UI Application Delegates in Hyperloop and Native Modules","weight":"10"}
 
 The API's described in this document require Titanium SDK 7.3.0+ and Hyperloop 3.1.2+ (if used).
 
@@ -6,18 +6,18 @@ The API's described in this document require Titanium SDK 7.3.0+ and Hyperloop 3
 
 When working with Hyperloop and native modules, there are situations where you want to be notified about application-level events, like:
 
-*   Finish launching
-    
-*   Push notifications (background and foreground)
-    
-*   Background tasks
-    
-*   URL-handlers / Deep linking
-    
-*   Shortcut item interaction
-    
-*   User activity handling
-    
+* Finish launching
+
+* Push notifications (background and foreground)
+
+* Background tasks
+
+* URL-handlers / Deep linking
+
+* Shortcut item interaction
+
+* User activity handling
+
 
 Titanium exposes events to the SDK for all of these, but for module developers (both for Objective-C modules and Hyperloop modules), there have been confusion on how to access them. For example, a module developer would like to use an own provider for handling background push notifications. As part of [TIMOB-24266](https://jira.appcelerator.org/browse/TIMOB-24266), we generically expose those events ("delegates" in the native world) to developers. In detail, we expose all delegates of the [UIApplicationDelegate](https://developer.apple.com/documentation/uikit/uiapplicationdelegate?language=objc).
 

@@ -1,4 +1,4 @@
-{"title":"Alloy Models","weight":"30"} 
+{"title":"Alloy Models","weight":"30"}
 
 IMPORTANT NOTE – PLEASE READ
 
@@ -10,12 +10,12 @@ For models, collections and sync adapters, these guides only provides informatio
 
 ## Chapters
 
-*   [Alloy Data Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Data_Binding/)
-    
-*   [Alloy Sync Adapters and Migrations](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Sync_Adapters_and_Migrations/)
-    
-*   [Backbone Objects without Alloy](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Backbone_Objects_without_Alloy/)
-    
-*   [Alloy Backbone Migration](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Backbone_Migration/)
-    
-*   [Alloy Collection and Model Objects](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Collection_and_Model_Objects/)
+* [Alloy Data Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Data_Binding/)
+
+* [Alloy Sync Adapters and Migrations](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Sync_Adapters_and_Migrations/)
+
+* [Backbone Objects without Alloy](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Backbone_Objects_without_Alloy/)
+
+* [Alloy Backbone Migration](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Backbone_Migration/)
+
+* [Alloy Collection and Model Objects](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Collection_and_Model_Objects/)

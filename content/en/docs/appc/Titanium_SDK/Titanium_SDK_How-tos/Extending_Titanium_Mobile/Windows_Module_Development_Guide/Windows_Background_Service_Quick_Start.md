@@ -1,27 +1,27 @@
-{"title":"Windows Background Service Quick Start","weight":"20"} 
+{"title":"Windows Background Service Quick Start","weight":"20"}
 
-*   [Introduction](#Introduction)
-    
-*   [Windows Module prerequisites](#WindowsModuleprerequisites)
-    
-*   [Build and package the module](#Buildandpackagethemodule)
-    
-*   [Test the module](#Testthemodule)
-    
-    *   [Create a test application](#Createatestapplication)
-        
-    *   [Add the module as a dependency to the project](#Addthemoduleasadependencytotheproject)
-        
-    *   [Load the module and make module API calls](#LoadthemoduleandmakemoduleAPIcalls)
-        
-    *   [Run the application](#Runtheapplication)
-        
-*   [Modify the module](#Modifythemodule)
-    
-    *   [Implement background task](#Implementbackgroundtask)
-        
-*   [Next steps](#Nextsteps)
-    
+* [Introduction](#Introduction)
+
+* [Windows Module prerequisites](#WindowsModuleprerequisites)
+
+* [Build and package the module](#Buildandpackagethemodule)
+
+* [Test the module](#Testthemodule)
+
+  * [Create a test application](#Createatestapplication)
+
+  * [Add the module as a dependency to the project](#Addthemoduleasadependencytotheproject)
+
+  * [Load the module and make module API calls](#LoadthemoduleandmakemoduleAPIcalls)
+
+  * [Run the application](#Runtheapplication)
+
+* [Modify the module](#Modifythemodule)
+
+  * [Implement background task](#Implementbackgroundtask)
+
+* [Next steps](#Nextsteps)
+
 
 ## Introduction
 
@@ -29,16 +29,18 @@ This guide walks through the steps to create, build and test an Windows backgrou
 
 ## Windows Module prerequisites
 
+As of Titanium 9.0.0, building Windows apps is no longer supported.
+
 Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
 
 To develop an Windows-based Module, you'll need all of the software required to build a Titanium application for Windows:
 
-*   Titanium SDK
-    
-*   Supported versions of Visual Studio and the Windows Phone SDK, as described in [Installing the Windows Phone SDK](#undefined)
-    
-*   Studio or the Appcelerator Command-Line Interface (CLI) for creating modules, and building and running test applications
-    
+* Titanium SDK
+
+* Supported versions of Visual Studio and the Windows Phone SDK, as described in [Installing the Windows Phone SDK](#undefined)
+
+* Studio or the Appcelerator Command-Line Interface (CLI) for creating modules, and building and running test applications
+
 
 Like Windows application development, Windows module development is only supported on Windows. Create a new module
 
@@ -56,16 +58,16 @@ From a terminal, change the current working directory to your workspace and run:
 
 In Studio:
 
-1.  From the menu, select **File** > **New** > **Mobile Module Project** to open the **New Mobile Module Project** dialog.
-    
-2.  In the **Project name** field, enter **test**.
-    
-3.  In the **Module Id** field, enter **com.example.test**.
-    
-4.  In **Deployment Targets**, select **Windows**.
-    
-5.  Click **Next**, then click **Finish**.
-    
+1. From the menu, select **File** > **New** > **Mobile Module Project** to open the **New Mobile Module Project** dialog.
+
+2. In the **Project name** field, enter **test**.
+
+3. In the **Module Id** field, enter **com.example.test**.
+
+4. In **Deployment Targets**, select **Windows**.
+
+5. Click **Next**, then click **Finish**.
+
 
 Studio sets up a new folder called test that contains your module project.
 
@@ -85,16 +87,16 @@ After the build completes, unzip the built module in the Titanium SDK home path:
 
 In Studio:
 
-1.  Select your module folder in the **Project Explorer** view.
-    
-2.  Verify **Package** and **Windows Module** are displayed in **Launch Mode** and **Launch Target**, respectively.
-    
-3.  Click the Package icon to open the **Package Windows Module** dialog.
-    
-4.  In **Output Location**, choose the **Titanium SDK** to install the module in the Titanium SDK home path to be accessed by any Titanium application.
-    
-5.  Click **Finish**.
-    
+1. Select your module folder in the **Project Explorer** view.
+
+2. Verify **Package** and **Windows Module** are displayed in **Launch Mode** and **Launch Target**, respectively.
+
+3. Click the Package icon to open the **Package Windows Module** dialog.
+
+4. In **Output Location**, choose the **Titanium SDK** to install the module in the Titanium SDK home path to be accessed by any Titanium application.
+
+5. Click **Finish**.
+
 
 Studio builds and installs the module to the Titanium SDK home path.
 
@@ -116,20 +118,20 @@ From a new terminal window, change the current working directory to your workspa
 
 In Studio:
 
-1.  From the menu, select **File** > **New** > **Mobile App Project** to open the **New Mobile App Project** dialog.
-    
-2.  On the **Project Template** page, select **Default Alloy Project** as the template type, then click **Next**.
-    
-3.  On the **Project Location** page, enter the following information:
-    
-    *   In the **Project Name** field, enter **Hello**.
-        
-    *   In the **App ID** field, enter **com.example.hello**.
-        
-    *   In **Deployment Targets**, select **Windows**.
-        
-4.  Click **Finish** to create the project.
-    
+1. From the menu, select **File** > **New** > **Mobile App Project** to open the **New Mobile App Project** dialog.
+
+2. On the **Project Template** page, select **Default Alloy Project** as the template type, then click **Next**.
+
+3. On the **Project Location** page, enter the following information:
+
+  * In the **Project Name** field, enter **Hello**.
+
+  * In the **App ID** field, enter **com.example.hello**.
+
+  * In **Deployment Targets**, select **Windows**.
+
+4. Click **Finish** to create the project.
+
 
 Studio sets up a new folder called Hello that contains the test application you will be using to test the module.
 
@@ -227,10 +229,10 @@ Let's modify the module code to create a view object and access a string propert
 
 First, look at some of the default files created by the Titanium SDK. Expand the windows folder. Inside this folder are two files:
 
-*   src/ComExampleTest.cpp: This is a boilerplate Module class. Every module requires a module class, which acts as the base API for the module.
-    
-*   include/ComExampleTest.hpp: This is a header file for the boiler plate class.
-    
+* src/ComExampleTest.cpp: This is a boilerplate Module class. Every module requires a module class, which acts as the base API for the module.
+
+* include/ComExampleTest.hpp: This is a header file for the boiler plate class.
+
 
 ### Implement background task
 
@@ -422,8 +424,8 @@ app.js
 
 ## Next steps
 
-*   For information about Windows Runtime Background Service API, see [Windows.ApplicationModel.Background namespace](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.aspx)
-    
-*   For a general overview of background tasks in Windows Store apps, see the [Introduction to Background Tasks](https://www.microsoft.com/download/en/details.aspx?id=27411) whitepaper
-    
-*   For example code that shows how to implement background tasks, see the [Background Task Sample](http://code.msdn.microsoft.com/windowsapps/background-task-sample-9209ade9).
+* For information about Windows Runtime Background Service API, see [Windows.ApplicationModel.Background namespace](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.aspx)
+
+* For a general overview of background tasks in Windows Store apps, see the [Introduction to Background Tasks](https://www.microsoft.com/download/en/details.aspx?id=27411) whitepaper
+
+* For example code that shows how to implement background tasks, see the [Background Task Sample](http://code.msdn.microsoft.com/windowsapps/background-task-sample-9209ade9).

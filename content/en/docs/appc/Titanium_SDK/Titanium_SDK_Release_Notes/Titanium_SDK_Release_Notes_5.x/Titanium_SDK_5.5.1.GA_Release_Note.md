@@ -1,15 +1,15 @@
-{"title":"Titanium SDK 5.5.1.GA - 28 September 2016","weight":"10"} 
+{"title":"Titanium SDK 5.5.1.GA - 28 September 2016","weight":"10"}
 
 ## Contents
 
-*   [About This Release](#AboutThisRelease)
-    
-*   [Community Credits](#CommunityCredits)
-    
-*   [Fixed Issues patch releases](#FixedIssuespatchreleases)
-    
-*   [API Changes](#APIChanges)
-    
+* [About This Release](#AboutThisRelease)
+
+* [Community Credits](#CommunityCredits)
+
+* [Fixed Issues patch releases](#FixedIssuespatchreleases)
+
+* [API Changes](#APIChanges)
+
 
 ## About This Release
 
@@ -19,23 +19,23 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 ## Community Credits
 
-*   Vittorio Sorbera for correcting some code samples in [Titanium SDK 5.5.0.GA Release Note](/docs/appc/Titanium_SDK/Titanium_SDK_Release_Notes/Titanium_SDK_Release_Notes_5.x/Titanium_SDK_5.5.0.GA_Release_Note/)
-    
+* Vittorio Sorbera for correcting some code samples in [Titanium SDK 5.5.0.GA Release Note](/docs/appc/Titanium_SDK/Titanium_SDK_Release_Notes/Titanium_SDK_Release_Notes_5.x/Titanium_SDK_5.5.0.GA_Release_Note/)
+
 
 ## Fixed Issues patch releases
 
-*   [MOD-2298](https://jira.appcelerator.org/browse/MOD-2298) - Ti.Facebook: Unformatted iOS 10 / 5.5.0 example causes publish-process to break
-    
-*   [TIMOB-23904](https://jira.appcelerator.org/browse/TIMOB-23904) - iOS10: Button listener takes two taps before responding for Facebook login
-    
-*   [TIMOB-23908](https://jira.appcelerator.org/browse/TIMOB-23908) - Xcode 8: Builds with SDK 5.5.0 are missing APS-entitlements for push-notifications
-    
-*   [TIMOB-23924](https://jira.appcelerator.org/browse/TIMOB-23924) - iOS app rejection due to usage of non-public API
-    
-*   [TIMOB-23929](https://jira.appcelerator.org/browse/TIMOB-23929) - Rename contextId to stop confusing Apple's private API scan
-    
-*   [TIMOB-23941](https://jira.appcelerator.org/browse/TIMOB-23941) - CLI: ti setup sdk doesn't work when setting "latest"
-    
+* [MOD-2298](https://jira.appcelerator.org/browse/MOD-2298) - Ti.Facebook: Unformatted iOS 10 / 5.5.0 example causes publish-process to break
+
+* [TIMOB-23904](https://jira.appcelerator.org/browse/TIMOB-23904) - iOS10: Button listener takes two taps before responding for Facebook login
+
+* [TIMOB-23908](https://jira.appcelerator.org/browse/TIMOB-23908) - Xcode 8: Builds with SDK 5.5.0 are missing APS-entitlements for push-notifications
+
+* [TIMOB-23924](https://jira.appcelerator.org/browse/TIMOB-23924) - iOS app rejection due to usage of non-public API
+
+* [TIMOB-23929](https://jira.appcelerator.org/browse/TIMOB-23929) - Rename contextId to stop confusing Apple's private API scan
+
+* [TIMOB-23941](https://jira.appcelerator.org/browse/TIMOB-23941) - CLI: ti setup sdk doesn't work when setting "latest"
+
 
 ## API Changes
 

@@ -1,13 +1,13 @@
-{"title":"Using native Android XML layouts in Hyperloop","weight":"20"} 
+{"title":"Using native Android XML layouts in Hyperloop","weight":"20"}
 
-*   [Overview](#Overview)
-    
-*   [Usage](#Usage)
-    
-*   [Output](#Output)
-    
-*   [Full Example](#FullExample)
-    
+* [Overview](#Overview)
+
+* [Usage](#Usage)
+
+* [Output](#Output)
+
+* [Full Example](#FullExample)
+
 
 ## Overview
 

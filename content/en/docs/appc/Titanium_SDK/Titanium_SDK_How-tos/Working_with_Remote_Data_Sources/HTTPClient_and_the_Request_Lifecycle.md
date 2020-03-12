@@ -1,29 +1,29 @@
-{"title":"HTTPClient and the Request Lifecycle","weight":"10"} 
+{"title":"HTTPClient and the Request Lifecycle","weight":"10"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [GET requests](#GETrequests)
-        
-    *   [POST requests](#POSTrequests)
-        
-    *   [HTTP headers](#HTTPheaders)
-        
-    *   [XHR lifecycle](#XHRlifecycle)
-        
-    *   [Hands-on practice](#Hands-onpractice)
-        
-        *   [Goal](#Goal)
-            
-        *   [Resources](#Resources)
-            
-        *   [Steps](#Steps)
-            
-    *   [References and further reading](#Referencesandfurtherreading)
-        
-*   [Summary](#Summary)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [GET requests](#GETrequests)
+
+  * [POST requests](#POSTrequests)
+
+  * [HTTP headers](#HTTPheaders)
+
+  * [XHR lifecycle](#XHRlifecycle)
+
+  * [Hands-on practice](#Hands-onpractice)
+
+    * [Goal](#Goal)
+
+    * [Resources](#Resources)
+
+    * [Steps](#Steps)
+
+  * [References and further reading](#Referencesandfurtherreading)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -85,23 +85,23 @@ The handling of network communication is handled asynchronously. Mobile data net
 
 Making a GET (or any other type of) request to a resource on the web consists of three steps:
 
-*   Creating an HTTP Client (starts on line 2 in the code above)
-    
-*   Opening an HTTP connection to a specified resource (line 18)
-    
-*   Sending an HTTP request (line 19)
-    
+* Creating an HTTP Client (starts on line 2 in the code above)
+
+* Opening an HTTP connection to a specified resource (line 18)
+
+* Sending an HTTP request (line 19)
+
 
 Most of the time, simply sending the request is not useful to your application. You are likely interested in the data the server will respond with, which is available in the response body. In order to access this data, you can specify callback functions to be executed at specific points in the lifecycle of the request. As shown in the code above, onload is called after a response from the resource has been successfully received, and oneerror is called if there is an error.
 
 Within those callback functions:
 
-*   this.responseText holds the returned payload as raw text
-    
-*   this.responseXML holds the payload as an [XML document](#!/api/Titanium.XML.DOMDocument) instance
-    
-*   this.responseData holds the payload as a BLOB (binary data)
-    
+* this.responseText holds the returned payload as raw text
+
+* this.responseXML holds the payload as an [XML document](#!/api/Titanium.XML.DOMDocument) instance
+
+* this.responseData holds the payload as a BLOB (binary data)
+
 
 ### POST requests
 
@@ -145,16 +145,16 @@ It is often necessary to manually add HTTP headers to your requests. This can be
 
 HTTPClient implements the [five XHR ready states](http://www.w3.org/TR/XMLHttpRequest/#states) defined by the W3 specification. Should you need to, your app can react to these state changes with the onreadystatechange callback. The five states are:
 
-*   UNSENT – The object has been constructed. Titanium doesn't report on this state with the onreadystatechange handler.
-    
-*   OPENED – The open() method has been successfully invoked. During this state request headers can be set using setRequestHeader() and the request can be made using the send() method.
-    
-*   HEADERS\_RECEIVED – All redirects (if any) have been followed and all HTTP headers of the final response have been received. Several response members of the object are now available.
-    
-*   LOADING – The response entity body is being received.
-    
-*   DONE – The data transfer has been completed or something went wrong during the transfer (e.g. infinite redirects).
-    
+* UNSENT – The object has been constructed. Titanium doesn't report on this state with the onreadystatechange handler.
+
+* OPENED – The open() method has been successfully invoked. During this state request headers can be set using setRequestHeader() and the request can be made using the send() method.
+
+* HEADERS\_RECEIVED – All redirects (if any) have been followed and all HTTP headers of the final response have been received. Several response members of the object are now available.
+
+* LOADING – The response entity body is being received.
+
+* DONE – The data transfer has been completed or something went wrong during the transfer (e.g. infinite redirects).
+
 
 In code, it would look like this:
 
@@ -248,35 +248,35 @@ To perform the steps in this activity, you will need to reference the HTTPClient
 
 #### Steps
 
-1.  Create a new Titanium Mobile project.
-    
-2.  In app.js, declare an HTTPClient object with a name of your choosing. It will GET the image at [http://developer.appcelerator.com/assets/img/DEV\_appteam\_photo.png](http://developer.appcelerator.com/assets/img/DEV_appteam_photo.png)
-    
-3.  Write an onload callback for your HTTPClient that will perform these operations:
-    
-    *   Log the HTTP status code to the console. See the API docs for the correct property to use to access the status code.
-        
-    *   Define an ImageView object whose image property is set equal to the binary data returned from the network.
-        
-    *   Add that ImageView object to the win1 window so that it will be displayed.
-        
-4.  Write an onerror callback for your HTTPClient that will perform these operations:
-    
-    *   Log the HTTP status code to the console.
-        
-    *   Display the contents of the error message in an alert() dialog.
-        
-5.  Make sure to open and then send the request.
-    
-6.  Build and test your app. The photo should be displayed on the first tab after it is downloaded.
-    
+1. Create a new Titanium Mobile project.
+
+2. In app.js, declare an HTTPClient object with a name of your choosing. It will GET the image at [http://developer.appcelerator.com/assets/img/DEV\_appteam\_photo.png](http://developer.appcelerator.com/assets/img/DEV_appteam_photo.png)
+
+3. Write an onload callback for your HTTPClient that will perform these operations:
+
+  * Log the HTTP status code to the console. See the API docs for the correct property to use to access the status code.
+
+  * Define an ImageView object whose image property is set equal to the binary data returned from the network.
+
+  * Add that ImageView object to the win1 window so that it will be displayed.
+
+4. Write an onerror callback for your HTTPClient that will perform these operations:
+
+  * Log the HTTP status code to the console.
+
+  * Display the contents of the error message in an alert() dialog.
+
+5. Make sure to open and then send the request.
+
+6. Build and test your app. The photo should be displayed on the first tab after it is downloaded.
+
 
 ### References and further reading
 
-*   [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/6.1_httpclient.zip)
-    
-*   [HTTPClient API docs](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Network.HTTPClient)
-    
+* [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/6.1_httpclient.zip)
+
+* [HTTPClient API docs](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Network.HTTPClient)
+
 
 ## Summary
 

@@ -1,4 +1,4 @@
-{"title":"Flow Orchestration","weight":"20"} 
+{"title":"Flow Orchestration","weight":"20"}
 
 API Builder 3.x is deprecated
 
@@ -10,71 +10,71 @@ The examples and configuration information in this topic use a model named simpl
 
 The API Orchestration user interface is accessed from the APIs List page on the API Builder Console by selecting a **Flow** icon or a **Create Flow** icon for a generated or imported endpoint depending upon the current endpoint status. The API Orchestration user interface is divided into the following panels:
 
-*   Flow-node list (left side of the API Orchestration user interface) - Provides a graphical listing of the Model and Core flow-nodes. The default Core flow-node types are: Custom, Codeblock, Compose, Condition, Delay, HTTP, JSON, and Set Context. A model flow-node is displayed for each configured model and an endpoint flow-node is displayed for each imported endpoint.
-    
-*   Flow editor (center of the API Orchestration user interface) - Provides a graphical space to view, edit, and create flows.
-    
-*   Flow-node configuration (right side of the API Orchestration user interface) - Provides the functionality to configure the Name, Method, Parameters, and Outputs of flow-nodes.
-    
+* Flow-node list (left side of the API Orchestration user interface) - Provides a graphical listing of the Model and Core flow-nodes. The default Core flow-node types are: Custom, Codeblock, Compose, Condition, Delay, HTTP, JSON, and Set Context. A model flow-node is displayed for each configured model and an endpoint flow-node is displayed for each imported endpoint.
+
+* Flow editor (center of the API Orchestration user interface) - Provides a graphical space to view, edit, and create flows.
+
+* Flow-node configuration (right side of the API Orchestration user interface) - Provides the functionality to configure the Name, Method, Parameters, and Outputs of flow-nodes.
+
 
 This topic is divided into the following sections:
 
-*   [Model flow-node](#Modelflow-node)
-    
-    *   [Methods](#Methods)
-        
-    *   [Parameters](#Parameters)
-        
-    *   [Outputs](#Outputs)
-        
-*   [Codeblock flow-node](#Codeblockflow-node)
-    
-    *   [Methods](#Methods.1)
-        
-    *   [Parameter](#Parameter)
-        
-    *   [Outputs](#Outputs.1)
-        
-*   [Condition flow-node](#Conditionflow-node)
-    
-    *   [Methods](#Methods.2)
-        
-    *   [Parameters](#Parameters.1)
-        
-    *   [Outputs](#Outputs.2)
-        
-*   [Delay flow-node](#Delayflow-node)
-    
-    *   [Method](#Method)
-        
-    *   [Parameter](#Parameter.1)
-        
-    *   [Output](#Output)
-        
-*   [HTTP flow-node](#HTTPflow-node)
-    
-    *   [Method](#Method.1)
-        
-    *   [Parameter](#Parameter.2)
-        
-    *   [Output](#Output.1)
-        
-*   [Set Context flow-node](#SetContextflow-node)
-    
-    *   [Method](#Method.2)
-        
-    *   [Parameter](#Parameter.3)
-        
-    *   [Output](#Output.2)
-        
-*   [Custom flow-nodes](#Customflow-nodes)
-    
-    *   [Base64 flow-node](#Base64Base64flow-node)
-        
-    *   [Compose flow-node](#ComposeComposeflow-node)
-        
-    *   [JSON flow-node](#JSONJSONflow-node)
-        
+* [Model flow-node](#Modelflow-node)
+
+  * [Methods](#Methods)
+
+  * [Parameters](#Parameters)
+
+  * [Outputs](#Outputs)
+
+* [Codeblock flow-node](#Codeblockflow-node)
+
+  * [Methods](#Methods.1)
+
+  * [Parameter](#Parameter)
+
+  * [Outputs](#Outputs.1)
+
+* [Condition flow-node](#Conditionflow-node)
+
+  * [Methods](#Methods.2)
+
+  * [Parameters](#Parameters.1)
+
+  * [Outputs](#Outputs.2)
+
+* [Delay flow-node](#Delayflow-node)
+
+  * [Method](#Method)
+
+  * [Parameter](#Parameter.1)
+
+  * [Output](#Output)
+
+* [HTTP flow-node](#HTTPflow-node)
+
+  * [Method](#Method.1)
+
+  * [Parameter](#Parameter.2)
+
+  * [Output](#Output.1)
+
+* [Set Context flow-node](#SetContextflow-node)
+
+  * [Method](#Method.2)
+
+  * [Parameter](#Parameter.3)
+
+  * [Output](#Output.2)
+
+* [Custom flow-nodes](#Customflow-nodes)
+
+  * [Base64 flow-node](#Base64Base64flow-node)
+
+  * [Compose flow-node](#ComposeComposeflow-node)
+
+  * [JSON flow-node](#JSONJSONflow-node)
+
 
 ## Model flow-node
 
@@ -84,28 +84,28 @@ The Model flow-node methods, parameters, and outputs are described in the follow
 
 The method selections for a Model flow-node are:
 
-*   count - Gets a count of records.
-    
-*   create - Creates a new model object.
-    
-*   delete - Deletes the model object.
-    
-*   deleteAll - Deletes all the model objects.
-    
-*   distinct - Finds unique values using the provided field.
-    
-*   findAll - Finds all model instances.
-    
-*   findAndModify - Finds one model instance and modifies it.
-    
-*   findByID - Finds model instance by ID.
-    
-*   query - Queries for particular model records.
-    
-*   update - Updates a model instance.
-    
-*   upsert - Creates a model record if not found, or updates the model record if found.
-    
+* count - Gets a count of records.
+
+* create - Creates a new model object.
+
+* delete - Deletes the model object.
+
+* deleteAll - Deletes all the model objects.
+
+* distinct - Finds unique values using the provided field.
+
+* findAll - Finds all model instances.
+
+* findAndModify - Finds one model instance and modifies it.
+
+* findByID - Finds model instance by ID.
+
+* query - Queries for particular model records.
+
+* update - Updates a model instance.
+
+* upsert - Creates a model record if not found, or updates the model record if found.
+
 
 ### Parameters
 
@@ -909,8 +909,8 @@ The Codeblock flow-node methods, parameters, and outputs for the Greet Codeblock
 
 The default method for the Greet Codeblock flow-node is:
 
-*   Greet - Some codeblock to run with the greet flow.
-    
+* Greet - Some codeblock to run with the greet flow.
+
 
 ### Parameter
 
@@ -964,18 +964,18 @@ The Condition flow-node methods, parameters, and outputs are described in the fo
 
 The default methods for a Condition flow-node are:
 
-*   equals - Tests is a value is equal.
-    
-*   exists - Tests does a value exists, true or false.
-    
-*   greater-than - Tests is a value is greater than another value.
-    
-*   greater-than-equal - Tests is a value is greater than or equal to another value.
-    
-*   less-than - Tests is a value is less than another value.
-    
-*   less-than-equal - Tests is a value is less than or equal to another value.
-    
+* equals - Tests is a value is equal.
+
+* exists - Tests does a value exists, true or false.
+
+* greater-than - Tests is a value is greater than another value.
+
+* greater-than-equal - Tests is a value is greater than or equal to another value.
+
+* less-than - Tests is a value is less than another value.
+
+* less-than-equal - Tests is a value is less than or equal to another value.
+
 
 ### Parameters
 
@@ -1355,8 +1355,8 @@ The Delay flow-node method, parameter, and output are described in the following
 
 The method for a Delay flow-node is:
 
-*   delay - Wait for a certain amount of time before continuing to the next flow-node.
-    
+* delay - Wait for a certain amount of time before continuing to the next flow-node.
+
 
 ### Parameter
 
@@ -1416,8 +1416,8 @@ $.delayed
 
 The method for a HTTP flow-node is:
 
-*   setHTTPResponse
-    
+* setHTTPResponse
+
 
 ### Parameter
 
@@ -1493,8 +1493,8 @@ The Set Context flow-node method, parameter, and output are described in the fol
 
 The method for a Set Context flow-node is:
 
-*   setContext
-    
+* setContext
+
 
 ### Parameter
 
@@ -1554,12 +1554,12 @@ Custom flow-nodes which are not built into the API Builder Console can be create
 
 The custom flow-nodes currently provided with a new project are:
 
-*   [Base64](#Base64)
-    
-*   [Compose](#Compose)
-    
-*   [JSON](#JSON)
-    
+* [Base64](#Base64)
+
+* [Compose](#Compose)
+
+* [JSON](#JSON)
+
 
 ### Base64 flow-node
 
@@ -1569,10 +1569,10 @@ The flow-node methods, parameters, output for the Base64 flow-node are described
 
 The Base64 flow-node default methods are:
 
-*   Decode - Decodes base64 encoded data.
-    
-*   Encode - Encodes base64 data.
-    
+* Decode - Decodes base64 encoded data.
+
+* Encode - Encodes base64 data.
+
 
 #### Parameters
 
@@ -1688,10 +1688,10 @@ The Compose flow-node methods, parameters, and outputs are described in the foll
 
 The default methods for a Compose flow-node are:
 
-*   Format object - Compose an object by evaluating a template. The evaluated template is JSON parsed and so must be a valid JSON encoded string.
-    
-*   Format string - Compose a string by evaluating a template.
-    
+* Format object - Compose an object by evaluating a template. The evaluated template is JSON parsed and so must be a valid JSON encoded string.
+
+* Format string - Compose a string by evaluating a template.
+
 
 #### Parameters
 
@@ -1821,10 +1821,10 @@ The JSON flow-node methods, parameters, and output are described in the followin
 
 The default methods for a JSON flow-node are:
 
-*   Parse - The parse method parses a JSON string, constructing the JavaScript value or object described by the string.
-    
-*   Stringify - The stringify method converts a JavaScript value to a JSON string.
-    
+* Parse - The parse method parses a JSON string, constructing the JavaScript value or object described by the string.
+
+* Stringify - The stringify method converts a JavaScript value to a JSON string.
+
 
 #### Parameters
 

@@ -1,53 +1,53 @@
-{"title":"JFF 1.0 Specification","weight":"40"} 
+{"title":"JFF 1.0 Specification","weight":"40"}
 
-*   [Overview](#Overview)
-    
-*   [Top-Level Properties](#Top-LevelProperties)
-    
-    *   [Name Property](#NameProperty)
-        
-    *   [Version Property](#VersionProperty)
-        
-    *   [Description Property](#DescriptionProperty)
-        
-    *   [Result Property](#ResultProperty)
-        
-    *   [Types Property](#TypesProperty)
-        
-*   [Types](#Types)
-    
-    *   [Schema Type](#SchemaType)
-        
-        *   [Name Property](#NameProperty.1)
-            
-        *   [Version Property](#VersionProperty.1)
-            
-        *   [Description Property](#DescriptionProperty.1)
-            
-        *   [Result Property](#ResultProperty.1)
-            
-        *   [Types Property](#TypesProperty.1)
-            
-    *   [Type Type](#TypeType)
-        
-        *   [Name Property](#NameProperty.2)
-            
-        *   [Description Property](#DescriptionProperty.2)
-            
-        *   [Properties Property](#PropertiesProperty)
-            
-    *   [Property Type](#PropertyType)
-        
-        *   [Name Property](#NameProperty.3)
-            
-        *   [Type Property](#TypeProperty)
-            
-        *   [Description Property](#DescriptionProperty.3)
-            
-        *   [Example Property](#ExampleProperty)
-            
-        *   [Optional Property](#OptionalProperty)
-            
+* [Overview](#Overview)
+
+* [Top-Level Properties](#Top-LevelProperties)
+
+  * [Name Property](#NameProperty)
+
+  * [Version Property](#VersionProperty)
+
+  * [Description Property](#DescriptionProperty)
+
+  * [Result Property](#ResultProperty)
+
+  * [Types Property](#TypesProperty)
+
+* [Types](#Types)
+
+  * [Schema Type](#SchemaType)
+
+    * [Name Property](#NameProperty.1)
+
+    * [Version Property](#VersionProperty.1)
+
+    * [Description Property](#DescriptionProperty.1)
+
+    * [Result Property](#ResultProperty.1)
+
+    * [Types Property](#TypesProperty.1)
+
+  * [Type Type](#TypeType)
+
+    * [Name Property](#NameProperty.2)
+
+    * [Description Property](#DescriptionProperty.2)
+
+    * [Properties Property](#PropertiesProperty)
+
+  * [Property Type](#PropertyType)
+
+    * [Name Property](#NameProperty.3)
+
+    * [Type Property](#TypeProperty)
+
+    * [Description Property](#DescriptionProperty.3)
+
+    * [Example Property](#ExampleProperty)
+
+    * [Optional Property](#OptionalProperty)
+
 
 ## Overview
 

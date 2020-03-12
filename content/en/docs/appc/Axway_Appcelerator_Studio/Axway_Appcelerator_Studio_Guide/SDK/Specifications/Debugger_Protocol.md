@@ -1,75 +1,75 @@
-{"title":"Debugger Protocol","weight":"10"} 
+{"title":"Debugger Protocol","weight":"10"}
 
-*   [Overview](#Overview)
-    
-*   [Arguments encoding](#Argumentsencoding)
-    
-*   [Commands](#Commands)
-    
-    *   [Get debugger extension version](#Getdebuggerextensionversion)
-        
-    *   [Force debugger extension update](#Forcedebuggerextensionupdate)
-        
-    *   [Set debugger options](#Setdebuggeroptions)
-        
-    *   [Turn on debug mode](#Turnondebugmode)
-        
-    *   [Turn off debug mode](#Turnoffdebugmode)
-        
-    *   [Terminate session](#Terminatesession)
-        
-    *   [Create/modify/remove breakpoint](#Create/modify/removebreakpoint)
-        
-    *   [Create/modify/remove exception breakpoints](#Create/modify/removeexceptionbreakpoints)
-        
-    *   [Set detail formatters](#Setdetailformatters)
-        
-    *   [Open page URL](#OpenpageURL)
-        
-    *   [Get file sources](#Getfilesources)
-        
-    *   [Suspend script execution](#Suspendscriptexecution)
-        
-    *   [Resume script execution](#Resumescriptexecution)
-        
-    *   [Step into](#Stepinto)
-        
-    *   [Step over](#Stepover)
-        
-    *   [Step return](#Stepreturn)
-        
-    *   [Step to frame](#Steptoframe)
-        
-    *   [Get stack frames](#Getstackframes)
-        
-    *   [Get variables](#Getvariables)
-        
-    *   [Get variable details](#Getvariabledetails)
-        
-    *   [Evaluate expression](#Evaluateexpression)
-        
-    *   [Change variable value](#Changevariablevalue)
-        
-*   [Unsolicited messages](#Unsolicitedmessages)
-    
-    *   [Suspend notification](#Suspendnotification)
-        
-    *   [Resume notification](#Resumenotification)
-        
-    *   [Client action notifications](#Clientactionnotifications)
-        
-    *   [Log console message](#Logconsolemessage)
-        
-    *   [Scripts notification](#Scriptsnotification)
-        
-    *   [Threads notification (Version 2)](#Threadsnotification(Version2))
-        
-*   [Appendix](#Appendix)
-    
-    *   [Variable property flags](#Variablepropertyflags)
-        
-    *   [Special variables](#Specialvariables)
-        
+* [Overview](#Overview)
+
+* [Arguments encoding](#Argumentsencoding)
+
+* [Commands](#Commands)
+
+  * [Get debugger extension version](#Getdebuggerextensionversion)
+
+  * [Force debugger extension update](#Forcedebuggerextensionupdate)
+
+  * [Set debugger options](#Setdebuggeroptions)
+
+  * [Turn on debug mode](#Turnondebugmode)
+
+  * [Turn off debug mode](#Turnoffdebugmode)
+
+  * [Terminate session](#Terminatesession)
+
+  * [Create/modify/remove breakpoint](#Create/modify/removebreakpoint)
+
+  * [Create/modify/remove exception breakpoints](#Create/modify/removeexceptionbreakpoints)
+
+  * [Set detail formatters](#Setdetailformatters)
+
+  * [Open page URL](#OpenpageURL)
+
+  * [Get file sources](#Getfilesources)
+
+  * [Suspend script execution](#Suspendscriptexecution)
+
+  * [Resume script execution](#Resumescriptexecution)
+
+  * [Step into](#Stepinto)
+
+  * [Step over](#Stepover)
+
+  * [Step return](#Stepreturn)
+
+  * [Step to frame](#Steptoframe)
+
+  * [Get stack frames](#Getstackframes)
+
+  * [Get variables](#Getvariables)
+
+  * [Get variable details](#Getvariabledetails)
+
+  * [Evaluate expression](#Evaluateexpression)
+
+  * [Change variable value](#Changevariablevalue)
+
+* [Unsolicited messages](#Unsolicitedmessages)
+
+  * [Suspend notification](#Suspendnotification)
+
+  * [Resume notification](#Resumenotification)
+
+  * [Client action notifications](#Clientactionnotifications)
+
+  * [Log console message](#Logconsolemessage)
+
+  * [Scripts notification](#Scriptsnotification)
+
+  * [Threads notification (Version 2)](#Threadsnotification(Version2))
+
+* [Appendix](#Appendix)
+
+  * [Variable property flags](#Variablepropertyflags)
+
+  * [Special variables](#Specialvariables)
+
 
 ## Overview
 
@@ -89,16 +89,16 @@ Unsolicited message format:
 
 where:
 
-*   _length_ : integer value of the remaining part of a packet
-    
-*   _request\_id_ : any string identifying request/response
-    
-*   _command_ : request command name
-    
-*   _message_ : unsolicited message name
-    
-*   _arg0..N_ : command/response specific arguments
-    
+* _length_ : integer value of the remaining part of a packet
+
+* _request\_id_ : any string identifying request/response
+
+* _command_ : request command name
+
+* _message_ : unsolicited message name
+
+* _arg0..N_ : command/response specific arguments
+
 
 An argument could be split into sub-arguments:
 
@@ -110,25 +110,25 @@ Requests with empty _request\_id_ should not be replied.
 
 All the arguments (args and subargs) should have the following set of characters encoded:
 
-*   \# => #0
-    
-*   | => #1
-    
-*   \* => #2
-    
+* \# => #0
+
+* | => #1
+
+* \* => #2
+
 
 ## Commands
 
 ### Get debugger extension version
 
-Command: **version**  
-Request arguments: _none_  
+Command: **version**
+Request arguments: _none_
 Reply arguments:
 
-*   _arg0_ : debugger protocol version (currently are **1** or **2**)
-    
-*   _arg1_ : debugger extension/addon version
-    
+* _arg0_ : debugger protocol version (currently are **1** or **2**)
+
+* _arg1_ : debugger extension/addon version
+
 
 Example:
 
@@ -138,12 +138,12 @@ Example:
 
 ### Force debugger extension update
 
-Command: **update**  
-Request arguments: _none_  
+Command: **update**
+Request arguments: _none_
 Reply arguments:
 
-*   _arg0_ : _(optional)_ version of updated debugger extension/addon (if available)
-    
+* _arg0_ : _(optional)_ version of updated debugger extension/addon (if available)
+
 
 Example:
 
@@ -153,15 +153,15 @@ Example:
 
 ### Set debugger options
 
-Command: **option**  
+Command: **option**
 Request arguments:
 
-*   _arg0_ : name of an option
-    
-*   _arg1_ : new value of an option
-    
+* _arg0_ : name of an option
 
-Reply arguments: _none_  
+* _arg1_ : new value of an option
+
+
+Reply arguments: _none_
 Example:
 
 `=>` `1176979825721``*option*suspendOnFirstLine*``false`
@@ -170,9 +170,9 @@ Example:
 
 ### Turn on debug mode
 
-Command: **enable**  
-Request arguments: _none_  
-Reply arguments: _none_  
+Command: **enable**
+Request arguments: _none_
+Reply arguments: _none_
 Example:
 
 `=>` `1176979825726``*enable`
@@ -181,9 +181,9 @@ Example:
 
 ### Turn off debug mode
 
-Command: **disable**  
-Request arguments: _none_  
-Reply arguments: _none_  
+Command: **disable**
+Request arguments: _none_
+Reply arguments: _none_
 Example:
 
 `=>` `1176979825727``*disable`
@@ -192,9 +192,9 @@ Example:
 
 ### Terminate session
 
-Command: **terminate**  
-Request arguments: _none_  
-Reply arguments: _none_  
+Command: **terminate**
+Request arguments: _none_
+Reply arguments: _none_
 Example:
 
 `=>` `1176979825820``*terminate`
@@ -203,28 +203,28 @@ Example:
 
 ### Create/modify/remove breakpoint
 
-Command: **breakpoint**  
+Command: **breakpoint**
 Request arguments:
 
-*   _arg0_ : name of an action (allowed actions: _create_, _change_, _remove_)
-    
-*   _arg1_ : URI of a file
-    
-*   _arg2_ : line number
-    
-*   _arg3_ : breakpoint state (_1_ - enabled, _0_ - disabled)
-    
-*   _arg4_ : hit count (no hit count if value is less or equal to 0)
-    
-*   _arg5_ : condition expression string (no condition if empty)
-    
-*   _arg6_ : condition meaning (_1_ - on true, _0_ - on expression value change)
-    
+* _arg0_ : name of an action (allowed actions: _create_, _change_, _remove_)
+
+* _arg1_ : URI of a file
+
+* _arg2_ : line number
+
+* _arg3_ : breakpoint state (_1_ - enabled, _0_ - disabled)
+
+* _arg4_ : hit count (no hit count if value is less or equal to 0)
+
+* _arg5_ : condition expression string (no condition if empty)
+
+* _arg6_ : condition meaning (_1_ - on true, _0_ - on expression value change)
+
 
 Reply arguments:
 
-*   _arg0_ : action result status (_created_, _changed_, _removed_)
-    
+* _arg0_ : action result status (_created_, _changed_, _removed_)
+
 
 Example:
 
@@ -238,18 +238,18 @@ Example:
 
 ### Create/modify/remove exception breakpoints
 
-Command: **exception**  
+Command: **exception**
 Request arguments:
 
-*   _arg0_ : name of an action (allowed actions: _create_, _change_, _remove_)
-    
-*   _arg1_ : exception type name
-    
+* _arg0_ : name of an action (allowed actions: _create_, _change_, _remove_)
+
+* _arg1_ : exception type name
+
 
 Reply arguments:
 
-*   _arg0_ : action result status (_created_, _changed_, _removed_)
-    
+* _arg0_ : action result status (_created_, _changed_, _removed_)
+
 
 Example:
 
@@ -259,17 +259,17 @@ Example:
 
 ### Set detail formatters
 
-Command: **detailFormatters**  
+Command: **detailFormatters**
 Request arguments:
 
-*   _arg0..argN_ : detail formatters 0-N
-    
-*   _subarg0_ : type name
-    
-*   _subarg1_ : formatter expression text
-    
+* _arg0..argN_ : detail formatters 0-N
 
-Reply arguments: _none_  
+* _subarg0_ : type name
+
+* _subarg1_ : formatter expression text
+
+
+Reply arguments: _none_
 Example:
 
 `=>` `1176979825730``*detailFormatters*Date|``this``.toGMTString();`
@@ -278,13 +278,13 @@ Example:
 
 ### Open page URL
 
-Command: **openURL**  
+Command: **openURL**
 Request arguments:
 
-*   _arg0_ : page URI to open
-    
+* _arg0_ : page URI to open
 
-Reply arguments: _none_  
+
+Reply arguments: _none_
 Example:
 
 `=>` `1176979825729``*openUrl*http:``//127.0.0.1:8000/debug_tests.html`
@@ -293,18 +293,18 @@ Example:
 
 ### Get file sources
 
-Command: **getSource**  
+Command: **getSource**
 Request arguments:
 
-*   _arg0_ : file URI to retrieve sources
-    
+* _arg0_ : file URI to retrieve sources
+
 
 Reply arguments:
 
-*   _arg0_ : command status (_success_, _failure_)
-    
-*   _arg1_ : file contents
-    
+* _arg0_ : command status (_success_, _failure_)
+
+* _arg1_ : file contents
+
 
 Example:
 
@@ -314,14 +314,14 @@ Example:
 
 ### Suspend script execution
 
-Command: **suspend**  
-Request arguments (**version 1**): _none_  
+Command: **suspend**
+Request arguments (**version 1**): _none_
 Request arguments (**version 2**):
 
-*   _arg0_ : thread id
-    
+* _arg0_ : thread id
 
-Reply arguments: _none_  
+
+Reply arguments: _none_
 Example:
 
 `=>` `1176979825731``*suspend`
@@ -334,14 +334,14 @@ Example:
 
 ### Resume script execution
 
-Command: **resume**  
-Request arguments (**version 1**): _none_  
+Command: **resume**
+Request arguments (**version 1**): _none_
 Request arguments (**version 2**):
 
-*   _arg0_ : thread id
-    
+* _arg0_ : thread id
 
-Reply arguments: _none_  
+
+Reply arguments: _none_
 Example:
 
 `=>` `1176979825732``*resume`
@@ -354,14 +354,14 @@ Example:
 
 ### Step into
 
-Command: **stepInto**  
-Request arguments (**version 1**): _none_  
+Command: **stepInto**
+Request arguments (**version 1**): _none_
 Request arguments (**version 2**):
 
-*   _arg0_ : thread id
-    
+* _arg0_ : thread id
 
-Reply arguments: _none_  
+
+Reply arguments: _none_
 Example:
 
 `=>` `1176979825733``*stepInto`
@@ -374,14 +374,14 @@ Example:
 
 ### Step over
 
-Command: **stepOver**  
-Request arguments (**version 1**): _none_  
+Command: **stepOver**
+Request arguments (**version 1**): _none_
 Request arguments (**version 2**):
 
-*   _arg0_ : thread id
-    
+* _arg0_ : thread id
 
-Reply arguments: _none_  
+
+Reply arguments: _none_
 Example:
 
 `=>` `1176979825734``*stepOver`
@@ -394,14 +394,14 @@ Example:
 
 ### Step return
 
-Command: **stepReturn**  
-Request arguments (**version 1**): _none_  
+Command: **stepReturn**
+Request arguments (**version 1**): _none_
 Request arguments (**version 2**):
 
-*   _arg0_ : thread id
-    
+* _arg0_ : thread id
 
-Reply arguments: _none_  
+
+Reply arguments: _none_
 Example:
 
 `=>` `1176979825735``*stepReturn`
@@ -414,20 +414,20 @@ Example:
 
 ### Step to frame
 
-Command: **stepToFrame**  
+Command: **stepToFrame**
 Request arguments (**version 1**):
 
-*   _arg0_ : frame id to step to
-    
+* _arg0_ : frame id to step to
+
 
 Request arguments (**version 2**):
 
-*   _arg0_ : thread id
-    
-*   _arg1_ : frame id to step to
-    
+* _arg0_ : thread id
 
-Reply arguments: _none_  
+* _arg1_ : frame id to step to
+
+
+Reply arguments: _none_
 Example:
 
 `=>` `1176979825736``*stepToFrame*``2`
@@ -440,33 +440,33 @@ Example:
 
 ### Get stack frames
 
-Command: **frames**  
-Request arguments (**version 1**): _none_  
+Command: **frames**
+Request arguments (**version 1**): _none_
 Request arguments (**version 2**):
 
-*   _arg0_ : thread id
-    
+* _arg0_ : thread id
+
 
 Reply arguments:
 
-*   _arg0..argN_ : frames 0-N
-    
-*   _subarg0_ : frame id
-    
-*   _subarg1_ : frame/function name
-    
-*   _subarg2_ : function arguments separated by ", "
-    
-*   _subarg3_ : file URI
-    
-*   _subarg4_ : line number
-    
-*   _subarg5_ : function native flag (_temporary unused_)
-    
-*   _subarg6_ : engine's internal frame PC (if available)
-    
-*   _subarg7_ : function's script id
-    
+* _arg0..argN_ : frames 0-N
+
+* _subarg0_ : frame id
+
+* _subarg1_ : frame/function name
+
+* _subarg2_ : function arguments separated by ", "
+
+* _subarg3_ : file URI
+
+* _subarg4_ : line number
+
+* _subarg5_ : function native flag (_temporary unused_)
+
+* _subarg6_ : engine's internal frame PC (if available)
+
+* _subarg7_ : function's script id
+
 
 Example:
 
@@ -480,31 +480,31 @@ Example:
 
 ### Get variables
 
-Command: **variables**  
+Command: **variables**
 Request arguments (**version 1**):
 
-*   _arg0_ : variable name
-    
+* _arg0_ : variable name
+
 
 Request arguments (**version 2**):
 
-*   _arg0_ : thread id
-    
-*   _arg1_ : variable name
-    
+* _arg0_ : thread id
+
+* _arg1_ : variable name
+
 
 Reply arguments:
 
-*   _arg0..argN_ : variable properties 0-N
-    
-*   _subarg0_ : property name
-    
-*   _subarg1_ : property type
-    
-*   _subarg2_ : property flags (see [#Variable property flags](#Variablepropertyflags))
-    
-*   _subarg3_ : property value
-    
+* _arg0..argN_ : variable properties 0-N
+
+* _subarg0_ : property name
+
+* _subarg1_ : property type
+
+* _subarg2_ : property flags (see [#Variable property flags](#Variablepropertyflags))
+
+* _subarg3_ : property value
+
 
 See [#Special variables](#Specialvariables).
 
@@ -524,25 +524,25 @@ Example:
 
 ### Get variable details
 
-Command: **details**  
+Command: **details**
 Request arguments (**version 1**):
 
-*   _arg0_ : variable name
-    
+* _arg0_ : variable name
+
 
 Request arguments (**version 2**):
 
-*   _arg0_ : thread id
-    
-*   _arg1_ : variable name
-    
+* _arg0_ : thread id
+
+* _arg1_ : variable name
+
 
 Reply arguments:
 
-*   _arg0_ : command status (_result_)
-    
-*   _arg1_ : detailed value (toString representation)
-    
+* _arg0_ : command status (_result_)
+
+* _arg1_ : detailed value (toString representation)
+
 
 Example:
 
@@ -556,37 +556,37 @@ Example:
 
 ### Evaluate expression
 
-Command: **eval**  
+Command: **eval**
 Request arguments (**version 1**):
 
-*   _arg0_ : evaluation context (variable name)
-    
-*   _arg1_ : expression
-    
+* _arg0_ : evaluation context (variable name)
+
+* _arg1_ : expression
+
 
 Request arguments (**version 2**):
 
-*   _arg0_ : thread id
-    
-*   _arg1_ : evaluation context (variable name)
-    
-*   _arg2_ : expression
-    
+* _arg0_ : thread id
+
+* _arg1_ : evaluation context (variable name)
+
+* _arg2_ : expression
+
 
 Reply arguments:
 
-*   _arg0_ : command status (_result_, _exception_)
-    
-*   _arg1_ : evaluation id or exception text
-    
-*   _arg2_ : evaluation result
-    
-*   _subarg0_ : property type
-    
-*   _subarg1_ : property flags (see [#Variable property flags](#Variablepropertyflags))
-    
-*   _subarg2_ : property value
-    
+* _arg0_ : command status (_result_, _exception_)
+
+* _arg1_ : evaluation id or exception text
+
+* _arg2_ : evaluation result
+
+* _subarg0_ : property type
+
+* _subarg1_ : property flags (see [#Variable property flags](#Variablepropertyflags))
+
+* _subarg2_ : property value
+
 
 Example:
 
@@ -604,35 +604,35 @@ Example:
 
 ### Change variable value
 
-Command: **setValue**  
+Command: **setValue**
 Request arguments (**version 1**):
 
-*   _arg0_ : variable name
-    
-*   _arg1_ : value reference name
-    
+* _arg0_ : variable name
+
+* _arg1_ : value reference name
+
 
 Request arguments (**version 2**):
 
-*   _arg0_ : thread id
-    
-*   _arg1_ : variable name
-    
-*   _arg2_ : value reference name
-    
+* _arg0_ : thread id
+
+* _arg1_ : variable name
+
+* _arg2_ : value reference name
+
 
 Reply arguments:
 
-*   _arg0_ : command status (_result_, _exception_)
-    
-*   _arg1_ : value property or exception text
-    
-*   _subarg0_ : property type
-    
-*   _subarg1_ : property flags (see \[aptanastudiodev:[#Variable property flags](#Variablepropertyflags)\])
-    
-*   _subarg2_ : property value
-    
+* _arg0_ : command status (_result_, _exception_)
+
+* _arg1_ : value property or exception text
+
+* _subarg0_ : property type
+
+* _subarg1_ : property flags (see \[aptanastudiodev:[#Variable property flags](#Variablepropertyflags)\])
+
+* _subarg2_ : property value
+
 
 Example:
 
@@ -648,26 +648,26 @@ Example:
 
 ### Suspend notification
 
-Message: **suspended**  
+Message: **suspended**
 Message arguments (**version 1**):
 
-*   _arg0_ : suspend reason (_breakpoint_, _keyword_, _requested_, _exception_, _firstLine_ or any of stepping command names)
-    
-*   _arg1_ : top frame's file URI
-    
-*   _arg2_ : top frame's line number
-    
+* _arg0_ : suspend reason (_breakpoint_, _keyword_, _requested_, _exception_, _firstLine_ or any of stepping command names)
+
+* _arg1_ : top frame's file URI
+
+* _arg2_ : top frame's line number
+
 
 Message arguments (**version 2**):
 
-*   _arg0_ : thread id
-    
-*   _arg1_ : suspend reason (_breakpoint_, _keyword_, _requested_, _exception_, _firstLine_ or any of stepping command names)
-    
-*   _arg2_ : top frame's file URI
-    
-*   _arg3_ : top frame's line number
-    
+* _arg0_ : thread id
+
+* _arg1_ : suspend reason (_breakpoint_, _keyword_, _requested_, _exception_, _firstLine_ or any of stepping command names)
+
+* _arg2_ : top frame's file URI
+
+* _arg3_ : top frame's line number
+
 
 Example:
 
@@ -681,18 +681,18 @@ Example:
 
 ### Resume notification
 
-Message: **resumed**  
+Message: **resumed**
 Message arguments (**version 1**):
 
-*   _arg0_ : resume reason (_started_, _abort_ or any of stepping command names)
-    
+* _arg0_ : resume reason (_started_, _abort_ or any of stepping command names)
+
 
 Message arguments (**version 2**):
 
-*   _arg0_ : thread id
-    
-*   _arg1_ : resume reason (_started_, _abort_ or any of stepping command names)
-    
+* _arg0_ : thread id
+
+* _arg1_ : resume reason (_started_, _abort_ or any of stepping command names)
+
 
 Example:
 
@@ -710,20 +710,20 @@ Example:
 
 ### Client action notifications
 
-Message: **client**  
+Message: **client**
 Message arguments:
 
-*   _arg0_ : action (_suspend_, _terminate_, _open_)
-    
-*   _arg1..argN_ : optional action arguments
-    
+* _arg0_ : action (_suspend_, _terminate_, _open_)
 
-**suspend** : request to suspend debugger (all threads)  
-**terminate** : request to terminate debugger session  
+* _arg1..argN_ : optional action arguments
+
+
+**suspend** : request to suspend debugger (all threads)
+**terminate** : request to terminate debugger session
 **open** : request to open file/URI in IDE editor
 
-*   _arg1_ : file URI
-    
+* _arg1_ : file URI
+
 
 Example:
 
@@ -735,35 +735,35 @@ Example:
 
 ### Log console message
 
-Message: **log**  
+Message: **log**
 Message arguments:
 
-*   _arg0_ : log type (_out_, _warn_, _err_)
-    
-*   _arg1_ : message text
-    
-*   _arg2_ : (optional) source context (_src_, _trace_)
-    
+* _arg0_ : log type (_out_, _warn_, _err_)
+
+* _arg1_ : message text
+
+* _arg2_ : (optional) source context (_src_, _trace_)
+
 
 **src**:
 
-*   _arg3_ : file URI
-    
-*   _arg4_ : line number
-    
+* _arg3_ : file URI
+
+* _arg4_ : line number
+
 
 **trace**:
 
-*   _arg3..argN_ : trace frame descriptions 3-N
-    
-*   _subarg0_ : frame/function name
-    
-*   _subarg1_ : function arguments separated by ", "
-    
-*   _subarg2_ : file URI
-    
-*   _subarg3_ : line number
-    
+* _arg3..argN_ : trace frame descriptions 3-N
+
+* _subarg0_ : frame/function name
+
+* _subarg1_ : function arguments separated by ", "
+
+* _subarg2_ : file URI
+
+* _subarg3_ : line number
+
 
 Example:
 
@@ -775,38 +775,38 @@ Example:
 
 ### Scripts notification
 
-Message: **scripts**  
+Message: **scripts**
 Message arguments:
 
-*   _arg0_ : action (_created_, _resolved_, _destroyed_)
-    
-*   _arg1..argN_ : scripts definitions 1-N
-    
+* _arg0_ : action (_created_, _resolved_, _destroyed_)
+
+* _arg1..argN_ : scripts definitions 1-N
+
 
 **created**:
 
-*   _subarg0_ : script id
-    
-*   _subarg1_ : file URI
-    
-*   _subarg2_ : function name
-    
-*   _subarg3_ : base script line number
-    
-*   _subarg4_ : script line count
-    
+* _subarg0_ : script id
+
+* _subarg1_ : file URI
+
+* _subarg2_ : function name
+
+* _subarg3_ : base script line number
+
+* _subarg4_ : script line count
+
 
 **resolved**:
 
-*   _subarg0_ : script id
-    
-*   _subarg1_ : function name
-    
+* _subarg0_ : script id
+
+* _subarg1_ : function name
+
 
 **destroyed**:
 
-*   _subarg0_ : script id
-    
+* _subarg0_ : script id
+
 
 Example:
 
@@ -820,15 +820,15 @@ Example:
 
 ### Threads notification (Version 2)
 
-Message: **threads**  
+Message: **threads**
 Message arguments:
 
-*   _arg0_ : action (_created_, _destroyed_)
-    
-*   _arg1_ : thread id
-    
-*   _arg2_ : thread name (optional)
-    
+* _arg0_ : action (_created_, _destroyed_)
+
+* _arg1_ : thread id
+
+* _arg2_ : thread name (optional)
+
 
 Example:
 
@@ -842,26 +842,26 @@ Example:
 
 ### Variable property flags
 
-*   w : writable (assignment will lead to an error)
-    
-*   c : constant (the property is a real constant, may not be supported on all platforms)
-    
-*   n : enumeratable (visible to for/in loop)
-    
-*   p : permanent (property cannot be deleted)
-    
-*   a : argument to function
-    
-*   v : local variable in function
-    
-*   l : local/scope variable (top-level in scope)
-    
-*   e : exception (exception occurred, value is exception)
-    
-*   r : error (error occurred, value is error)
-    
-*   o : object/composite value (expandable, has properties)
-    
+* w : writable (assignment will lead to an error)
+
+* c : constant (the property is a real constant, may not be supported on all platforms)
+
+* n : enumeratable (visible to for/in loop)
+
+* p : permanent (property cannot be deleted)
+
+* a : argument to function
+
+* v : local variable in function
+
+* l : local/scope variable (top-level in scope)
+
+* e : exception (exception occurred, value is exception)
+
+* r : error (error occurred, value is error)
+
+* o : object/composite value (expandable, has properties)
+
 
 ### Special variables
 

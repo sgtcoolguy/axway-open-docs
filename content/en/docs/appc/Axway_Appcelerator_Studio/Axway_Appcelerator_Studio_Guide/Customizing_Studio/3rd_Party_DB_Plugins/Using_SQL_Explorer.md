@@ -1,4 +1,4 @@
-{"title":"Using SQL Explorer","weight":"70"} 
+{"title":"Using SQL Explorer","weight":"70"}
 
 ## Introduction
 
@@ -52,10 +52,10 @@ To query a database table, paste the following SQL code into your SQL Editor and
 
 Additionally, you can use a generated SELECT statement to query a table. To generate a SELECT statement:
 
-1.  In the Database Structure View, navigate to the table that you want to query.
-    
-2.  Right-click the table that you want to query, and select **Generate Select Statement** from the context menu.
-    
+1. In the Database Structure View, navigate to the table that you want to query.
+
+2. Right-click the table that you want to query, and select **Generate Select Statement** from the context menu.
+
 
 SQL Explorer generates the SELECT statement for you.
 
@@ -63,20 +63,20 @@ SQL Explorer generates the SELECT statement for you.
 
 The following list includes additional links for SQL Explorer documentation:
 
-\***SQL Explorer web site and documentation** - [http://eclipsesql.sourceforge.net/](http://eclipsesql.sourceforge.net/)  
-\***MySQL 5.1 Reference** - [http://dev.mysql.com/doc/refman/5.1/en/index.html](http://dev.mysql.com/doc/refman/5.1/en/index.html)  
+\***SQL Explorer web site and documentation** - [http://eclipsesql.sourceforge.net/](http://eclipsesql.sourceforge.net/)
+\***MySQL 5.1 Reference** - [http://dev.mysql.com/doc/refman/5.1/en/index.html](http://dev.mysql.com/doc/refman/5.1/en/index.html)
 \***Configuring SQLExplorer Access** - [http://www.onjava.com/pub/a/onjava/2005/05/11/sqlexplorer.html?page=2](http://www.onjava.com/pub/a/onjava/2005/05/11/sqlexplorer.html?page=2)
 
 ## Related Topics
 
-*   [Configuring the Eclipse SQL Explorer plug-in](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Configuring_the_Eclipse_SQL_Explorer_plug-in/)
-    
-*   [Installing the SQL Explorer plug-in](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Installing_the_SQL_Explorer_plug-in/)
-    
-*   [Deploying ConnectorJ](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Deploying_ConnectorJ/)
-    
-*   [Creating a new driver in Eclipse](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Creating_a_new_driver_in_Eclipse/)
-    
-*   [Creating a new connection in SQL Explorer](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Creating_a_new_connection_in_SQL_Explorer/)
-    
-*   [Connecting to the database application](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Connecting_to_the_database_application/)
+* [Configuring the Eclipse SQL Explorer plug-in](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Configuring_the_Eclipse_SQL_Explorer_plug-in/)
+
+* [Installing the SQL Explorer plug-in](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Installing_the_SQL_Explorer_plug-in/)
+
+* [Deploying ConnectorJ](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Deploying_ConnectorJ/)
+
+* [Creating a new driver in Eclipse](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Creating_a_new_driver_in_Eclipse/)
+
+* [Creating a new connection in SQL Explorer](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Creating_a_new_connection_in_SQL_Explorer/)
+
+* [Connecting to the database application](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Connecting_to_the_database_application/)

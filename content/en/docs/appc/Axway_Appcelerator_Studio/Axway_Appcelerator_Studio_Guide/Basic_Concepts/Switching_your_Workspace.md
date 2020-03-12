@@ -1,15 +1,15 @@
-{"title":"Switching your Workspace","weight":"60"} 
+{"title":"Switching your Workspace","weight":"60"}
 
-*   [Overview](#Overview)
-    
-*   [Finding your workspace from Studio](#FindingyourworkspacefromStudio)
-    
-*   [Switching your workspace from Studio](#SwitchingyourworkspacefromStudio)
-    
-*   [Changing your workspace preferences](#Changingyourworkspacepreferences)
-    
-*   [Restoring preferences when switching workspaces](#Restoringpreferenceswhenswitchingworkspaces)
-    
+* [Overview](#Overview)
+
+* [Finding your workspace from Studio](#FindingyourworkspacefromStudio)
+
+* [Switching your workspace from Studio](#SwitchingyourworkspacefromStudio)
+
+* [Changing your workspace preferences](#Changingyourworkspacepreferences)
+
+* [Restoring preferences when switching workspaces](#Restoringpreferenceswhenswitchingworkspaces)
+
 
 ## Overview
 
@@ -21,23 +21,23 @@ You can also modify your preferences so that Studio asks you to choose a workspa
 
 To find your workspace while you are working in Studio:
 
-1.  From the **File** menu, select **Switch Workspace > Other...** to open the **Workspace Launcher**.
-    
-2.  In the **Workspace Launcher**, the path under "Workspace:" is the path to your workspace on disk.
-    
-3.  Click **Cancel**.
-    
+1. From the **File** menu, select **Switch Workspace > Other...** to open the **Workspace Launcher**.
+
+2. In the **Workspace Launcher**, the path under "Workspace:" is the path to your workspace on disk.
+
+3. Click **Cancel**.
+
 
 ## Switching your workspace from Studio
 
 To switch your workspace while you are working in Studio:
 
-1.  From the **File** menu, select **Switch Workspace > Other...** to open the **Workspace Launcher**.
-    
-2.  In the **Workspace Launcher**, browse to the workspace that you want to switch to.
-    
-3.  Click **OK**.
-    
+1. From the **File** menu, select **Switch Workspace > Other...** to open the **Workspace Launcher**.
+
+2. In the **Workspace Launcher**, browse to the workspace that you want to switch to.
+
+3. Click **OK**.
+
 
 Studio will shut down, restart, and open to the workspace that you specified.
 
@@ -45,16 +45,16 @@ Studio will shut down, restart, and open to the workspace that you specified.
 
 To change your preferences so that Studio asks you to choose your workspace on startup:
 
-1.  From the **Window** menu, select **Preferences** to open the **Preferences** window.
-    
-2.  On the **Preferences** tree on the left, expand **General**, then expand **Startup and Shutdown**, and select **Workspaces** to display your workspace preferences.
-    
-3.  Check the box next to **Prompt for workspace on startup** if you want Studio to ask you to choose a workspace each time that you start the application.
-    
-4.  Click **Apply** to save your changes.
-    
-5.  Click **OK** to close the **Preferences** window.
-    
+1. From the **Window** menu, select **Preferences** to open the **Preferences** window.
+
+2. On the **Preferences** tree on the left, expand **General**, then expand **Startup and Shutdown**, and select **Workspaces** to display your workspace preferences.
+
+3. Check the box next to **Prompt for workspace on startup** if you want Studio to ask you to choose a workspace each time that you start the application.
+
+4. Click **Apply** to save your changes.
+
+5. Click **OK** to close the **Preferences** window.
+
 
 On Mac OS, **Preferences** is found under the **Aptana Studio**/**Titanium Studio** or **Eclipse** menu.
 

@@ -1,4 +1,4 @@
-{"title":"Hyperloop Guides","weight":"20"} 
+{"title":"Hyperloop Guides","weight":"20"}
 
 This document provides links to the Android, iOS, and Windows programming guides.
 

@@ -1,4 +1,4 @@
-{"title":"NavigationWindow","weight":"100"} 
+{"title":"NavigationWindow","weight":"100"}
 
 Demonstrates how to navigate a hierarchy of content using the NavigationWindow object.
 

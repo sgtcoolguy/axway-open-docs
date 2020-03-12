@@ -1,72 +1,72 @@
-{"title":"iOS Module Architecture","weight":"20"} 
+{"title":"iOS Module Architecture","weight":"20"}
 
-*   [Introduction](#Introduction)
-    
-*   [Example module](#Examplemodule)
-    
-*   [Module](#Module)
-    
-    *   [Module Class](#ModuleClass)
-        
-    *   [Module Lifecycle](#ModuleLifecycle)
-        
-*   [Proxy](#Proxy)
-    
-    *   [Proxy Class](#ProxyClass)
-        
-    *   [Proxy Methods](#ProxyMethods)
-        
-    *   [Proxy Properties](#ProxyProperties)
-        
-    *   [Type Conversions](#TypeConversions)
-        
-        *   [Returning Object Values](#ReturningObjectValues)
-            
-        *   [Returning Primitive Values](#ReturningPrimitiveValues)
-            
-        *   [Returning Complex Values](#ReturningComplexValues)
-            
-        *   [Returning Files](#ReturningFiles)
-            
-        *   [Returning Blobs](#ReturningBlobs)
-            
-        *   [Returning CGRect](#ReturningCGRect)
-            
-        *   [Returning CGPoint](#ReturningCGPoint)
-            
-        *   [Returning NSRange](#ReturningNSRange)
-            
-        *   [Returning UIColor](#ReturningUIColor)
-            
-    *   [Setting Proxy Values](#SettingProxyValues)
-        
-    *   [Handling Events](#HandlingEvents)
-        
-    *   [Memory Management](#MemoryManagement)
-        
-*   [View Proxy and View](#ViewProxyandView)
-    
-    *   [View Proxy Class](#ViewProxyClass)
-        
-    *   [View Class](#ViewClass)
-        
-    *   [View Properties](#ViewProperties)
-        
-    *   [View Methods](#ViewMethods)
-        
+* [Introduction](#Introduction)
+
+* [Example module](#Examplemodule)
+
+* [Module](#Module)
+
+  * [Module Class](#ModuleClass)
+
+  * [Module Lifecycle](#ModuleLifecycle)
+
+* [Proxy](#Proxy)
+
+  * [Proxy Class](#ProxyClass)
+
+  * [Proxy Methods](#ProxyMethods)
+
+  * [Proxy Properties](#ProxyProperties)
+
+  * [Type Conversions](#TypeConversions)
+
+    * [Returning Object Values](#ReturningObjectValues)
+
+    * [Returning Primitive Values](#ReturningPrimitiveValues)
+
+    * [Returning Complex Values](#ReturningComplexValues)
+
+    * [Returning Files](#ReturningFiles)
+
+    * [Returning Blobs](#ReturningBlobs)
+
+    * [Returning CGRect](#ReturningCGRect)
+
+    * [Returning CGPoint](#ReturningCGPoint)
+
+    * [Returning NSRange](#ReturningNSRange)
+
+    * [Returning UIColor](#ReturningUIColor)
+
+  * [Setting Proxy Values](#SettingProxyValues)
+
+  * [Handling Events](#HandlingEvents)
+
+  * [Memory Management](#MemoryManagement)
+
+* [View Proxy and View](#ViewProxyandView)
+
+  * [View Proxy Class](#ViewProxyClass)
+
+  * [View Class](#ViewClass)
+
+  * [View Properties](#ViewProperties)
+
+  * [View Methods](#ViewMethods)
+
 
 ## Introduction
 
 The Titanium SDK is based on a modular architecture, which can be utilized to extend the SDK by building modules. The module architecture contains the following key interface components:
 
-*   **_Proxy_**: A base class that represents the native binding between your JavaScript code and native code
-    
-*   **_Module_**: A special type of Proxy that describes a specific API set or namespace
-    
-*   **_ViewProxy_**: A specialized Proxy that knows how to render Views
-    
-*   **_View_**: The visual representation of a UI component which Titanium can render
-    
+* **_Proxy_**: A base class that represents the native binding between your JavaScript code and native code
+
+* **_Module_**: A special type of Proxy that describes a specific API set or namespace
+
+* **_ViewProxy_**: A specialized Proxy that knows how to render Views
+
+* **_View_**: The visual representation of a UI component which Titanium can render
+
 
 When building a Module, you can only have one Module class but you can have zero or more Proxies, Views and ViewProxies.
 
@@ -198,17 +198,17 @@ Titanium provides several convenience macros for typecasting incoming values to 
 
 `ENSURE_SINGLE_ITEM(args,type)`
 
-*   The first parameter is the name of the argument.
-    
-*   The second parameter is the type name that the value should be.
-    
+* The first parameter is the name of the argument.
+
+* The second parameter is the type name that the value should be.
+
 
 This macro will do two actions:
 
-1.  Pull out the first argument, that is, \[args objectAtIndex:0\].
-    
-2.  Cast the return value to the type passed in the second argument.
-    
+1. Pull out the first argument, that is, \[args objectAtIndex:0\].
+
+2. Cast the return value to the type passed in the second argument.
+
 
 This macro can only be used for single-argument methods. If you have multiple arguments, you should simply used the normal array accessor methods.
 
@@ -358,10 +358,10 @@ Equivalent to \[NSNumber numberWithFloat:value\]
 
 There are two approaches to returning complex values:
 
-*   The first approach is to set values in a NSDictionary and it. When returning a NSDictionary, Titanium converts this to a JavaScript object with each key/value being mapped into JavaScript object property/values.
-    
-*   The second approach is to create a specialized Proxy. The Proxy should then be returned which will be exposed as a JavaScript object with functions and properties. Invocation against the returned Proxy will be invoked against your returned proxy instance. When you return a Proxy instance, you must autorelease it if you created it in your method.
-    
+* The first approach is to set values in a NSDictionary and it. When returning a NSDictionary, Titanium converts this to a JavaScript object with each key/value being mapped into JavaScript object property/values.
+
+* The second approach is to create a specialized Proxy. The Proxy should then be returned which will be exposed as a JavaScript object with functions and properties. Invocation against the returned Proxy will be invoked against your returned proxy instance. When you return a Proxy instance, you must autorelease it if you created it in your method.
+
 
 #### Returning Files
 
@@ -399,8 +399,8 @@ To return a CGPoint, Titanium provides a proxy named TiRect. You can use the fol
 
 #### Returning NSRange
 
-To return an NSRange, create an NSDictionary using the NSRange values and return the NSDictionary.  
-TiRange was used to return an NSRange in the past. TiRange has been removed from the SDK as of version 2.1.0 in favor of NSDictionary.  
+To return an NSRange, create an NSDictionary using the NSRange values and return the NSDictionary.
+TiRange was used to return an NSRange in the past. TiRange has been removed from the SDK as of version 2.1.0 in favor of NSDictionary.
 You can use the following example:
 
 `return` `[NSDictionary dictionaryWithObjectsAndKeys:NUMINT(range.location),@``"location"``,NUMINT(range.length),@``"length"``, nil];`
@@ -477,10 +477,10 @@ Properties don't have to be passed in the constructor for them to be internally 
 
 When you invoke the property of a proxy, the following will happen:
 
-*   If you have defined a setter, it will be invoked.
-    
-*   If you have not defined a setter, the property and value will be stored internally in the dynprops.
-    
+* If you have defined a setter, it will be invoked.
+
+* If you have not defined a setter, the property and value will be stored internally in the dynprops.
+
 
 If you implement a setter, you should also manually store the property yourself in dynprops. You can do this by calling the following method:
 
@@ -544,10 +544,10 @@ In this example, we'd adding one additional event property named 'name' with the
 
 In addition to any additional event arguments passed, Titanium automatically provides the following built-in properties on all events fired:
 
-*   source — The source object (proxy) that fired the event
-    
-*   type — The type of event
-    
+* source — The source object (proxy) that fired the event
+
+* type — The type of event
+
 
 You can also check for the existing of a listener (recommended) before firing an event. This is done with the \_hasListeners method.
 

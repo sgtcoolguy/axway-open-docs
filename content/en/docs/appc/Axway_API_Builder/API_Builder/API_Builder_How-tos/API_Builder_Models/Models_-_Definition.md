@@ -1,4 +1,4 @@
-{"title":"Models - Definition","weight":"30"} 
+{"title":"Models - Definition","weight":"30"}
 
 API Builder 3.x is deprecated
 
@@ -8,12 +8,12 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 Place all Model files in the models folder. You can only declare one model per file. A Model file is a JavaScript file, which:
 
-1.  Loads the arrow module.
-    
-2.  Calls the module's createModel('name', schema) method (or another Model method), passing in the name of the model as the first parameter and an object defining the model schema as the second parameter.
-    
-3.  Exports the defined endpoint using the module.exports variable.
-    
+1. Loads the arrow module.
+
+2. Calls the module's createModel('name', schema) method (or another Model method), passing in the name of the model as the first parameter and an object defining the model schema as the second parameter.
+
+3. Exports the defined endpoint using the module.exports variable.
+
 
 Set the following keys in the object passed to the createModel() method to define the model:
 

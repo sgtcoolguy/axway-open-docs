@@ -1,33 +1,33 @@
-{"title":"Android Themes","weight":"20"} 
+{"title":"Android Themes","weight":"20"}
 
-*   [Introduction](#Introduction)
-    
-*   [Android themes](#Androidthemes)
-    
-*   [Titanium themes](#Titaniumthemes)
-    
-*   [Custom themes](#Customthemes)
-    
-*   [Material theme](#Materialtheme)
-    
-    *   [Example](#Example)
-        
-    *   [Theme comparison](#Themecomparison)
-        
-    *   [Material theme further reading](#Materialthemefurtherreading)
-        
-*   [Override a theme](#Overrideatheme)
-    
-    *   [Override a window theme](#Overrideawindowtheme)
-        
-    *   [Override an activity theme](#Overrideanactivitytheme)
-        
-*   [Custom theme generator](#Customthemegenerator)
-    
-    *   [Android Action Bar Style Generator](#AndroidActionBarStyleGenerator)
-        
-*   [Further reading](#Furtherreading)
-    
+* [Introduction](#Introduction)
+
+* [Android themes](#Androidthemes)
+
+* [Titanium themes](#Titaniumthemes)
+
+* [Custom themes](#Customthemes)
+
+* [Material theme](#Materialtheme)
+
+  * [Example](#Example)
+
+  * [Theme comparison](#Themecomparison)
+
+  * [Material theme further reading](#Materialthemefurtherreading)
+
+* [Override a theme](#Overrideatheme)
+
+  * [Override a window theme](#Overrideawindowtheme)
+
+  * [Override an activity theme](#Overrideanactivitytheme)
+
+* [Custom theme generator](#Customthemegenerator)
+
+  * [Android Action Bar Style Generator](#AndroidActionBarStyleGenerator)
+
+* [Further reading](#Furtherreading)
+
 
 ## Introduction
 
@@ -35,16 +35,16 @@ Android allows you to set the appearance of your application using themes. A the
 
 To update the look of your application, you can either:
 
-*   Use a different built-in Android theme
-    
-*   Use a Titanium-defined theme
-    
-*   Create a custom theme and define the elements you want to change
-    
-*   Use the Android Material Theme to quickly customize the theme's color palette
-    
-*   Use third-party tools to help you generate a custom theme
-    
+* Use a different built-in Android theme
+
+* Use a Titanium-defined theme
+
+* Create a custom theme and define the elements you want to change
+
+* Use the Android Material Theme to quickly customize the theme's color palette
+
+* Use third-party tools to help you generate a custom theme
+
 
 You can specify a unique theme per window or per activity.
 
@@ -168,7 +168,7 @@ To apply a theme globally, in the tiapp.xml file, set the android:theme attribut
 
 `</``android``>`
 
-To change the theme on a per-window basis, set the theme name to the Window's theme property (available since Release 3.4.0).  
+To change the theme on a per-window basis, set the theme name to the Window's theme property (available since Release 3.4.0).
 **NOTE:** This method sets the theme for a window dynamically. In native Android doing so with a theme that has not been set for a particular Activity in the Manifest and a translucent background results in unstable behavior on different devices or OS versions. For instance the window may be solid black color and not showing any content. It is discouraged to use such themes dynamically.
 
 `var` `win = Ti.UI.createWindow({theme:` `"Theme.AppCompat.Fullscreen"``});`
@@ -263,14 +263,14 @@ platform/android/res/values/dimens.xml
 
 The theme file above contains two custom style items:
 
-1.  The first item defines the "Theme.MyTheme" based on the Android Light theme. The style sets the window background using the image located at platform/android/res/drawable/example.png.
-    
-2.  The second item overrides the default text color used in the theme. For convenience all colors can be defined in a separate file located at platform/android/res/values/colors.xml.
-    
-3.  The third item overrides the Light theme's default cursor color for text fields and uses the TextField's color property as the cursor color.
-    
-4.  The last item overrides the whole style used for buttons. The custom style is defined in the theme's file as a child of Widget.AppCompat.Button. In the custom style every property of it can be overriden. In this example the minimum width and height for every button are set to custom values. For convenience dimensions can be defined in a separate file located at platform/android/res/values/dimens.xml
-    
+1. The first item defines the "Theme.MyTheme" based on the Android Light theme. The style sets the window background using the image located at platform/android/res/drawable/example.png.
+
+2. The second item overrides the default text color used in the theme. For convenience all colors can be defined in a separate file located at platform/android/res/values/colors.xml.
+
+3. The third item overrides the Light theme's default cursor color for text fields and uses the TextField's color property as the cursor color.
+
+4. The last item overrides the whole style used for buttons. The custom style is defined in the theme's file as a child of Widget.AppCompat.Button. In the custom style every property of it can be overriden. In this example the minimum width and height for every button are set to custom values. For convenience dimensions can be defined in a separate file located at platform/android/res/values/dimens.xml
+
 
 To use the "Theme.MyTheme" theme in your application, modify the Android section of your tiapp.xml file:
 
@@ -402,12 +402,12 @@ Default AppCompat / Android 4.4
 
 ### Material theme further reading
 
-*   [Android Developer: Using Material Theme](https://developer.android.com/training/material/theme.html)
-    
-*   [Android Developers Blog: AppCompat v21 — Material Design for Pre-Lollipop Devices!](http://android-developers.blogspot.com/2014/10/appcompat-v21-material-design-for-pre.html)
-    
-*   [Google Design Guidelines: Style - Color](http://www.google.com/design/spec/style/color.html)
-    
+* [Android Developer: Using Material Theme](https://developer.android.com/training/material/theme.html)
+
+* [Android Developers Blog: AppCompat v21 — Material Design for Pre-Lollipop Devices!](http://android-developers.blogspot.com/2014/10/appcompat-v21-material-design-for-pre.html)
+
+* [Google Design Guidelines: Style - Color](http://www.google.com/design/spec/style/color.html)
+
 
 ## Override a theme
 
@@ -415,7 +415,7 @@ If you have a global theme set, the application can override the theme for a win
 
 ### Override a window theme
 
-Starting with Release 3.4.0, the Titanium SDK exposes the [theme property](#!/api/Titanium.UI.Window-property-theme) for Windows. Use the theme property to override the global theme for an individual window. Set the property to the name of the theme you want to apply to the window. The property can only be set when creating the Window object and cannot be changed after it is set.  
+Starting with Release 3.4.0, the Titanium SDK exposes the [theme property](#!/api/Titanium.UI.Window-property-theme) for Windows. Use the theme property to override the global theme for an individual window. Set the property to the name of the theme you want to apply to the window. The property can only be set when creating the Window object and cannot be changed after it is set.
 **NOTE:** This method sets the theme for a window dynamically. In native Android doing so with a theme that has not been set for a particular Activity in the Manifest and a translucent background results in unstable behavior on different devices or OS versions. For instance the window may be solid black color and not showing any content. It is discouraged to use such themes dynamically.
 
 `var` `win = Ti.UI.createWindow({theme:` `"Theme.AppCompat.Fullscreen"``});`
@@ -498,16 +498,16 @@ The [Android Action Bar Style Generator](http://jgilfelt.github.io/android-actio
 
 To create a custom Action Bar style:
 
-1.  Go to [Android Action Bar Style Generator](http://jgilfelt.github.io/android-actionbarstylegenerator).
-    
-2.  Enter a name for your style. This name will be used to reference your style in the Android manifest. If you want to use a theme generated by the Android Holo Colors Generator, do not use the same name.  
-    
-3.  For **Style Compatibility**, use **AppCompat.**
-    
-4.  Choose the style customizations you want to use.
-    
-5.  Click **Download .ZIP** button near the button of the web page to download your custom theme.
-    
+1. Go to [Android Action Bar Style Generator](http://jgilfelt.github.io/android-actionbarstylegenerator).
+
+2. Enter a name for your style. This name will be used to reference your style in the Android manifest. If you want to use a theme generated by the Android Holo Colors Generator, do not use the same name.
+
+3. For **Style Compatibility**, use **AppCompat.**
+
+4. Choose the style customizations you want to use.
+
+5. Click **Download .ZIP** button near the button of the web page to download your custom theme.
+
 
 Once you have your custom Action Bar style, unpack the ZIP file and copy the res folder to your project's platform/android folder. Then, modify your tiapp.xml file to use the custom style, for example:
 
@@ -529,4 +529,4 @@ Once you have your custom Action Bar style, unpack the ZIP file and copy the res
 
 ## Further reading
 
-*   [Android Developers: Styles and Themes](http://developer.android.com/guide/topics/ui/themes.html)
+* [Android Developers: Styles and Themes](http://developer.android.com/guide/topics/ui/themes.html)

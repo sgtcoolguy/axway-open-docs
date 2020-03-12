@@ -1,127 +1,127 @@
-{"title":"Titanium Compatibility Matrix","weight":"70"} 
+{"title":"Titanium Compatibility Matrix","weight":"70"}
 
-*   [Overview](#Overview)
-    
-    *   [Supported SDK releases](#SupportedSDKreleases)
-        
-    *   [Pre-release versions](#Pre-releaseversions)
-        
-*   [Minimum system requirements](#Minimumsystemrequirements)
-    
-    *   [Memory](#Memory)
-        
-    *   [Operating system](#Operatingsystem)
-        
-*   [Java Development Kit](#JavaDevelopmentKit)
-    
-*   [Studio](#Studio)
-    
-    *   [Studio Node, CLI, and Titanium SDK supported versions](#StudioNode,CLI,andTitaniumSDKsupportedversions)
-        
-        *   [Disk space](#Diskspace)
-            
-        *   [Node](#Node)
-            
-            *   [Versions of Node.js supported](#VersionsofNode.jssupported)
-                
-            *   [Not supported](#Notsupported)
-                
-        *   [CLI](#CLI)
-            
-            *   [Supported versions of CLI](#SupportedversionsofCLI)
-                
-            *   [Unsupported versions of CLI](#UnsupportedversionsofCLI)
-                
-        *   [Titanium SDK](#TitaniumSDK)
-            
-            *   [Supported versions of SDK](#SupportedversionsofSDK)
-                
-            *   [Unsupported versions of SDK](#UnsupportedversionsofSDK)
-                
-    *   [Java support](#Javasupport)
-        
-    *   [Studio 5.0.0 and earlier installers](#Studio5.0.0andearlierinstallers)
-        
-    *   [Studio 5.1.0+ installers](#Studio5.1.0+installers)
-        
-*   [Node.js](#Node.js)
-    
-*   [Appcelerator Studio](#AppceleratorStudio)
-    
-*   [Mobile development](#Mobiledevelopment)
-    
-    *   [Android](#Android)
-        
-        *   [Required Android Packages](#RequiredAndroidPackages)
-            
-        *   [Android SDK / Target Android platform](#AndroidSDK/TargetAndroidplatform)
-            
-        *   [Android Native Add-on Module Development on macOS](#AndroidNativeAdd-onModuleDevelopmentonmacOS)
-            
-    *   [iOS](#iOS)
-        
-        *   [Xcode](#Xcode)
-            
-            *   [Supported versions of Xcode](#SupportedversionsofXcode)
-                
-            *   [Unsupported versions of Xcode](#UnsupportedversionsofXcode)
-                
-        *   [iOS SDK / Target iOS platform](#iOSSDK/TargetiOSplatform)
-            
-            *   [Supported versions of iOS SDK / Target iOS platform](#SupportedversionsofiOSSDK/TargetiOSplatform)
-                
-            *   [Unsupported versions of iOS SDK / Target iOS platform](#UnsupportedversionsofiOSSDK/TargetiOSplatform)
-                
-    *   [Windows](#Windows)
-        
-    *   [Visual Studio](#VisualStudio)
-        
-        *   [Supported versions of VS](#SupportedversionsofVS)
-            
-        *   [Unsupported versions of VS](#UnsupportedversionsofVS)
-            
-    *   [Supported Platforms](#SupportedPlatforms)
-        
-        *   [Supported platform versions](#Supportedplatformversions)
-            
-        *   [Unsupported platform versions](#Unsupportedplatformversions)
-            
-    *   [Unified CLI compatibility matrix](#UnifiedCLIcompatibilitymatrix)
-        
-        *   [Unified CLI Includes](#UnifiedCLIIncludes)
-            
-            *   [Supported versions of CLI includes](#SupportedversionsofCLIincludes)
-                
-            *   [Unsupported versions of CLI includes](#UnsupportedversionsofCLIincludes)
-                
-        *   [Appc NPM](#AppcNPM)
-            
-            *   [Supported version of Appc NPM](#SupportedversionofAppcNPM)
-                
-            *   [Unsupported version of Appc NPM](#UnsupportedversionofAppcNPM)
-                
-        *   [Node.js](#Node.js.1)
-            
-            *   [Supported version of node.js](#Supportedversionofnode.js)
-                
-            *   [Unsupported version of node.js](#Unsupportedversionofnode.js)
-                
-    *   [Desktop browser](#Desktopbrowser)
-        
-        *   [Android emulator](#Androidemulator)
-            
-*   [Other useful software](#Otherusefulsoftware)
-    
-    *   [Git](#Git)
-        
-    *   [Python](#Python)
-        
-    *   [Required Python packages](#RequiredPythonpackages)
-        
-    *   [gperf](#gperf)
-        
-    *   [Ant](#Ant)
-        
+* [Overview](#Overview)
+
+  * [Supported SDK releases](#SupportedSDKreleases)
+
+  * [Pre-release versions](#Pre-releaseversions)
+
+* [Minimum system requirements](#Minimumsystemrequirements)
+
+  * [Memory](#Memory)
+
+  * [Operating system](#Operatingsystem)
+
+* [Java Development Kit](#JavaDevelopmentKit)
+
+* [Studio](#Studio)
+
+  * [Studio Node, CLI, and Titanium SDK supported versions](#StudioNode,CLI,andTitaniumSDKsupportedversions)
+
+    * [Disk space](#Diskspace)
+
+    * [Node](#Node)
+
+      * [Versions of Node.js supported](#VersionsofNode.jssupported)
+
+      * [Not supported](#Notsupported)
+
+    * [CLI](#CLI)
+
+      * [Supported versions of CLI](#SupportedversionsofCLI)
+
+      * [Unsupported versions of CLI](#UnsupportedversionsofCLI)
+
+    * [Titanium SDK](#TitaniumSDK)
+
+      * [Supported versions of SDK](#SupportedversionsofSDK)
+
+      * [Unsupported versions of SDK](#UnsupportedversionsofSDK)
+
+  * [Java support](#Javasupport)
+
+  * [Studio 5.0.0 and earlier installers](#Studio5.0.0andearlierinstallers)
+
+  * [Studio 5.1.0+ installers](#Studio5.1.0+installers)
+
+* [Node.js](#Node.js)
+
+* [Appcelerator Studio](#AppceleratorStudio)
+
+* [Mobile development](#Mobiledevelopment)
+
+  * [Android](#Android)
+
+    * [Required Android Packages](#RequiredAndroidPackages)
+
+    * [Android SDK / Target Android platform](#AndroidSDK/TargetAndroidplatform)
+
+    * [Android Native Add-on Module Development on macOS](#AndroidNativeAdd-onModuleDevelopmentonmacOS)
+
+  * [iOS](#iOS)
+
+    * [Xcode](#Xcode)
+
+      * [Supported versions of Xcode](#SupportedversionsofXcode)
+
+      * [Unsupported versions of Xcode](#UnsupportedversionsofXcode)
+
+    * [iOS SDK / Target iOS platform](#iOSSDK/TargetiOSplatform)
+
+      * [Supported versions of iOS SDK / Target iOS platform](#SupportedversionsofiOSSDK/TargetiOSplatform)
+
+      * [Unsupported versions of iOS SDK / Target iOS platform](#UnsupportedversionsofiOSSDK/TargetiOSplatform)
+
+  * [Windows](#Windows)
+
+    * [Visual Studio](#VisualStudio)
+
+      * [Supported versions of VS](#SupportedversionsofVS)
+
+      * [Unsupported versions of VS](#UnsupportedversionsofVS)
+
+    * [Supported Platforms](#SupportedPlatforms)
+
+      * [Supported platform versions](#Supportedplatformversions)
+
+      * [Unsupported platform versions](#Unsupportedplatformversions)
+
+  * [Unified CLI compatibility matrix](#UnifiedCLIcompatibilitymatrix)
+
+    * [Unified CLI Includes](#UnifiedCLIIncludes)
+
+      * [Supported versions of CLI includes](#SupportedversionsofCLIincludes)
+
+      * [Unsupported versions of CLI includes](#UnsupportedversionsofCLIincludes)
+
+    * [Appc NPM](#AppcNPM)
+
+      * [Supported version of Appc NPM](#SupportedversionofAppcNPM)
+
+      * [Unsupported version of Appc NPM](#UnsupportedversionofAppcNPM)
+
+    * [Node.js](#Node.js.1)
+
+      * [Supported version of node.js](#Supportedversionofnode.js)
+
+      * [Unsupported version of node.js](#Unsupportedversionofnode.js)
+
+  * [Desktop browser](#Desktopbrowser)
+
+    * [Android emulator](#Androidemulator)
+
+* [Other useful software](#Otherusefulsoftware)
+
+  * [Git](#Git)
+
+  * [Python](#Python)
+
+  * [Required Python packages](#RequiredPythonpackages)
+
+  * [gperf](#gperf)
+
+  * [Ant](#Ant)
+
 
 ## Overview
 
@@ -131,12 +131,14 @@ This document describes the system environments that are compatible with Titaniu
 
 Some information about legacy Titanium SDK versions is included here solely for reference. Thus, only the following releases are officially supported:
 
-*   8.0.0 - latest
-    
-*   7.0.x - 7.4.x
-    
-*   6.0.x - 6.3.x
-    
+* 9.0.0 - latest
+
+* 8.0.0 - 8.3.x
+
+* 7.0.x - 7.4.x
+
+* 6.0.x - 6.3.x
+
 
 ### Pre-release versions
 
@@ -186,9 +188,11 @@ macOS
 
 Windows
 
-Windows 7 and later(Android)  
-Windows 8.1 and later (Windows Phone)  
+Windows 7 and later(Android)
+Windows 8.1 and later (Windows Phone)
 Windows 10 and later (Windows 10 Mobile)
+
+As of Titanium 9.0.0, building Windows apps is no longer supported.
 
 Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
 
@@ -224,12 +228,12 @@ OS X
 
 [Official Website](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
-*   On Mac OS X 10.6 (Snow Leopard) and earlier, the JDK is preinstalled.
-    
-*   On Mac OS X 10.7 (Lion) and later, the OS should prompt you to install it when needed.
-    
-*   Android Development on OS X systems requires Java 6 runtime to be installed.
-    
+* On Mac OS X 10.6 (Snow Leopard) and earlier, the JDK is preinstalled.
+
+* On Mac OS X 10.7 (Lion) and later, the OS should prompt you to install it when needed.
+
+* Android Development on OS X systems requires JDK 8 or higher to be installed.
+
 
 Windows
 
@@ -241,10 +245,10 @@ Windows
 
 [Official Website](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
-*   The 32-bit version of the JDK is required regardless of whether Titanium is running on a 32-bit Windows system.
-    
-*   Studio offers to install JDK 8 if no JDK is found.
-    
+* The 32-bit version of the JDK is required regardless of whether Titanium is running on a 32-bit Windows system.
+
+* Studio offers to install JDK 8 if no JDK is found.
+
 
 **Note**: From Studio 5.1.0 and up, 64-bit JDK is supported
 
@@ -302,7 +306,7 @@ Version
 
 5.1.3 - latest
 
-8.16.0
+8.16.0 - 10.x
 
 5.0.0 - 5.1.2
 
@@ -504,7 +508,7 @@ macOS / Windows / Linux
 
 8.0
 
-8.16.x
+10.X
 
 [Official Website](https://nodejs.org/en/download/releases/)
 
@@ -532,28 +536,28 @@ Notes
 
 Android Development
 
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)  
+![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
 (tick)
 
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)  
+![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
 (tick)
 
 iOS Development
 
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)  
+![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
 (tick)
 
-![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png)  
+![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png)
 (error)
 
 Due to Apple's license agreement, iOS applications may only be developed on Apple hardware.
 
 Windows Development
 
-![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png)  
+![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png)
 (error)
 
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)  
+![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
 (tick)
 
 Windows applications may only be developed on hardware running Microsoft Windows.
@@ -566,7 +570,7 @@ See [Installing the Android SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_St
 
 Titanium requires the Android SDK Tools to be installed in order to allow you to develop Android applications.
 
-Remember that Oracle JDK is a prerequisite for Android development and should be installed first. Note that macOS systems need to have the Java 6 runtime installed. See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for instructions.
+Remember that Oracle JDK is a prerequisite for Android development and should be installed first. You need at least JDK 8 installed. See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for instructions.
 
 ![download_02](/Images/appc/download/attachments/52297851/download_02.png)
 
@@ -574,7 +578,9 @@ The _Android SDK Manager_ installer may be obtained from the [Android Studio and
 
 #### Required Android Packages
 
-The following packages, and the respective versions shown, must be installed to be able to develop for Android:
+As of Titanium 9.0.0, the build system will automatically download the Android SDK platforms and tools needed.
+
+For Titanium 8.x.x, you need to installed the following packages via the Android SDK Manager yourself:
 
 Package
 
@@ -582,19 +588,17 @@ Minimum Version
 
 Android SDK Tools
 
-Rev 25
+Rev 28
 
-Android SDK Platform-tools/Build-tools
+Android SDK Build-tools
 
 Rev 23
 
-Android SDK
+Android SDK Platform (API Level)
 
-You need to have at least one Android SDK installed within the supported minimum and maximum target versions.
+API Level 29 for Titanium 8.3.x
 
-For Android modules, you need to install Android SDK 6.0.x (API 23) and SDK 6.0.0+.
-
-Titanium SDK 8.0.0+ requires Android SDK Tools v28 or newer as a minimum requirement.
+API Level 28 for Titanium version older than 8.3.0
 
 Titanium SDK 7.0.0+ requires Android SDK Tools v25 or newer as a minimum requirement.
 
@@ -610,16 +614,24 @@ Each Titanium SDK supports building against a specific range of Android versions
 
 Titanium SDK Version
 
-Min Target Android/SDK Version  
+Min Target Android/SDK Version
 (android:targetSdkVersion)
 
-Max Target Android/SDK Version  
+Max Target Android/SDK Version
 (android:targetSdkVersion)
 
-Minimum Android/SDK Version  
+Minimum Android/SDK Version
 (android:minSdkVersion)
 
-8.0.0 - latest
+8.3.0 - latest
+
+6.0.x (API 23)
+
+10.0.x (API 29)
+
+4.4.x (API 19)
+
+8.0.0 - 8.2.2
 
 6.0.x (API 23)
 
@@ -655,13 +667,13 @@ Minimum Android/SDK Version
 
 Titanium SDK Version
 
-Min Target Android/SDK Version  
+Min Target Android/SDK Version
 (android:targetSdkVersion)
 
-Max Target Android/SDK Version  
+Max Target Android/SDK Version
 (android:targetSdkVersion)
 
-Minimum Android/SDK Version  
+Minimum Android/SDK Version
 (android:minSdkVersion)
 
 6.2.0 - 6.3.0
@@ -796,8 +808,6 @@ Android SDK packages can be installed using the **Android SDK Manager** tool. Se
 
 The default Android SDK can be configured using Studio's _Preferences_, and then selected per-project using the _Run Configurations_.
 
-For Android API levels 14 and above, the emulator system images are installed separately from the SDK platform packages. To run in the emulator for Android API 14+, you must install at least one of the emulator system images.
-
 #### Android Native Add-on Module Development on macOS
 
 The Xcode command line tools are required to develop native Android add-on modules on macOS.
@@ -814,10 +824,10 @@ Titanium requires Xcode to be installed in order for you to develop iOS applicat
 
 There are two ways to obtain Xcode, the application that installs and manages iOS SDKs:
 
-1.  Launch the _App Store_ application, found in the Applications folder, and search for and install "Xcode" (includes the stable iOS and watchOS SDKs).
-    
-2.  Enroll with the Apple Developer website and browse the [iOS Developer Center](https://developer.apple.com/download/) page to manually download the installer application (includes all previously-released iOS SDKs and new Beta versions).
-    
+1. Launch the _App Store_ application, found in the Applications folder, and search for and install "Xcode" (includes the stable iOS and watchOS SDKs).
+
+2. Enroll with the Apple Developer website and browse the [iOS Developer Center](https://developer.apple.com/download/) page to manually download the installer application (includes all previously-released iOS SDKs and new Beta versions).
+
 
 Both of the above options are free of charge, although may require credit card details to be entered. Since 2016, you can also test your apps on your device using the free Apple developer program. If you wish to deploy your applications to the App Store for production, however, you will need to become a member of the _iOS Developer Program_, by way of an annual subscription charge of $99 at the time of writing.
 
@@ -1133,9 +1143,11 @@ Maximum target iOS version
 
 ### Windows
 
-### Visual Studio
+As of Titanium 9.0.0, building Windows apps is no longer supported.
 
-#### Supported versions of VS
+#### Visual Studio
+
+##### Supported versions of VS
 
 Titanium SDK Version
 
@@ -1143,13 +1155,13 @@ Min Visual Studio Version
 
 Max Visual Studio Version
 
-7.0.0 - latest
+7.0.0 - 8.3.x
 
 Visual Studio 2015
 
 Visual Studio 2017
 
-#### Unsupported versions of VS
+##### Unsupported versions of VS
 
 Titanium SDK Version
 
@@ -1169,9 +1181,9 @@ Visual Studio 2013
 
 Visual Studio 2015
 
-### Supported Platforms
+#### Supported Platforms
 
-#### Supported platform versions
+##### Supported platform versions
 
 Titanium SDK Version
 
@@ -1179,13 +1191,13 @@ Supported Mobile Platforms
 
 Supported Desktop Platforms
 
-7.0.0 - latest
+7.0.0 - 8.3.x
 
 Windows 10 Mobile
 
 Windows 10
 
-#### Unsupported platform versions
+##### Unsupported platform versions
 
 Titanium SDK Version
 
@@ -1679,10 +1691,10 @@ Max Node Version
 
 The following desktop browsers are recommended for previewing and debugging applications:
 
-*   Google Chrome
-    
-*   Firefox (with Firebug extension)
-    
+* Google Chrome
+
+* Firefox (with Firebug extension)
+
 
 #### Android emulator
 
@@ -1740,7 +1752,7 @@ See [Installing Git](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Instal
 
 ### Python
 
-Python is required to use Titanium from the command line or compile the SDK from source using SCons. Python is **not** required to use the Titanium SDK from inside Studio.
+Python is required to compile the Titanium SDK from source using SCons.
 
 Titanium supports the following versions of Python for each respective Operating System:
 
@@ -1824,7 +1836,7 @@ See [Installing Required Python Packages](/docs/appc/Titanium_SDK/Titanium_SDK_G
 
 ### gperf
 
-The GNU gperf utility is used for generating hash functions. It is used when you build Titanium native Android modules and and to build the Titanium SDK for Android.
+The GNU gperf utility is used for generating hash functions. It is used when you build the Titanium SDK from source. It is not needed for Titanium app or module builds.
 
 The gperf tool is installed as part of the Xcode command-line tools, but you may need to install it on Windows.
 
@@ -1856,13 +1868,9 @@ See [Installing gperf](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Inst
 
 ### Ant
 
-Apache Ant is the standard build tool for Java. It can be used to build Titanium native Android modules and to build the Titanium SDK for Android. It is not required to build Titanium applications for Android.
+Titanium 9.0.0 and newer versions no longer use Apache Ant. The below only applies to older SDK versions.
 
-You can also use Eclipse and ADT to build native Android code, as described in [Installing Eclipse and ADT](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Eclipse_and_ADT/). If you are using Eclipse and ADT, Ant is optional, but you may want to install both (for example, to use Ant for command-line builds and Eclipse and ADT for debugging).
-
-ADT has been discontinued and we don't recommend using it.
-
-Ant is not required for building, running, or distributing applications using the Titanium SDK.
+Apache Ant is the standard build tool for Java. It can be used to build Titanium native Android modules and to build the Titanium SDK for Android. Ant is not required for building, running, or distributing applications using the Titanium SDK.
 
 Java is a prerequisite for Ant, and should be installed first. See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for instructions.
 

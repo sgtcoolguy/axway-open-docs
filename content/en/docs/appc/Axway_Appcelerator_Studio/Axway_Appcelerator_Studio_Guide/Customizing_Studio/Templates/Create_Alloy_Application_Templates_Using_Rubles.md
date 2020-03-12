@@ -1,4 +1,4 @@
-{"title":"Create Alloy Application Templates Using Rubles","weight":"10"} 
+{"title":"Create Alloy Application Templates Using Rubles","weight":"10"}
 
 To create Alloy templates via Rubles, add the following block to bundle.rb:
 
@@ -14,6 +14,6 @@ To create Alloy templates via Rubles, add the following block to bundle.rb:
 
 `end`
 
-We recommend that you use the the type (t.type) and tags (t.tags) shown in this code block. The location (t.location) points to the zip file that contains all the files to be added or overwritten after the default Alloy project is created.
+We recommend that you use the type (t.type) and tags (t.tags) shown in this code block. The location (t.location) points to the zip file that contains all the files to be added or overwritten after the default Alloy project is created.
 
 When creating the zip file, make sure you are zipping only Alloy project content.

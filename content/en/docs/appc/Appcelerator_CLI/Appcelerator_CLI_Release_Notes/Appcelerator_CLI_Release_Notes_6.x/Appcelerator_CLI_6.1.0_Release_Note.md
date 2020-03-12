@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 6.1.0 - 13 December 2016","weight":"100"} 
+{"title":"Appcelerator CLI 6.1.0 - 13 December 2016","weight":"100"}
 
 Appcelerator CLI 6.1.0 is a minor release that includes one new feature and one bug fix.
 
@@ -26,15 +26,15 @@ Titanium CLI
 
 ## New features
 
-*   [CLI-1075](https://jira.appcelerator.org/browse/CLI-1075) - Unable to configure which IP should the LiveView use
-    
-    *   Added feature that allows users to configure which IP LiveView uses
-        
-    *   This features introduces --liveview-ip, --liveview-fport and --liveview-eport flags
-        
+* [CLI-1075](https://jira.appcelerator.org/browse/CLI-1075) - Unable to configure which IP should the LiveView use
+
+  * Added feature that allows users to configure which IP LiveView uses
+
+  * This features introduces --liveview-ip, --liveview-fport and --liveview-eport flags
+
 
 ## Improvements
 
 ## Fixed issues
 
-*   [CLI-1140](https://jira.appcelerator.org/browse/CLI-1140) - Arrow app crashes with Uncaught Exception Cannot find module './ReactHostOperationHistoryHook'
+* [CLI-1140](https://jira.appcelerator.org/browse/CLI-1140) - Arrow app crashes with Uncaught Exception Cannot find module './ReactHostOperationHistoryHook'

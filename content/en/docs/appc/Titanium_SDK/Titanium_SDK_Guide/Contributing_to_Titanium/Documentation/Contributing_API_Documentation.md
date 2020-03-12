@@ -1,19 +1,19 @@
-{"title":"Contributing API Documentation","weight":"10"} 
+{"title":"Contributing API Documentation","weight":"10"}
 
 **Contents**
 
-*   [Overview](#Overview)
-    
-*   [Editing API Documentation](#EditingAPIDocumentation)
-    
-*   [Generating the HTML API Docs](#GeneratingtheHTMLAPIDocs)
-    
-*   [Validating API Doc Modifications](#ValidatingAPIDocModifications)
-    
-    *   [Validating on Windows](#ValidatingonWindows)
-        
-*   [Submitting Contributions](#SubmittingContributions)
-    
+* [Overview](#Overview)
+
+* [Editing API Documentation](#EditingAPIDocumentation)
+
+* [Generating the HTML API Docs](#GeneratingtheHTMLAPIDocs)
+
+* [Validating API Doc Modifications](#ValidatingAPIDocModifications)
+
+  * [Validating on Windows](#ValidatingonWindows)
+
+* [Submitting Contributions](#SubmittingContributions)
+
 
 ## Overview
 

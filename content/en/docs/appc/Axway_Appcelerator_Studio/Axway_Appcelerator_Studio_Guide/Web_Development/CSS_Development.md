@@ -1,4 +1,4 @@
-{"title":"CSS Development","weight":"70"} 
+{"title":"CSS Development","weight":"70"}
 
 Use the Studio CSS Editor to code the styles for your web sites.
 

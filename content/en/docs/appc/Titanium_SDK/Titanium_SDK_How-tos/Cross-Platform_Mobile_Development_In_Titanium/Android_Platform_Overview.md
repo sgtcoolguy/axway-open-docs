@@ -1,33 +1,31 @@
-{"title":"Android Platform Overview","weight":"10"} 
+{"title":"Android Platform Overview","weight":"10"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [User interface conventions](#Userinterfaceconventions)
-        
-        *   [Hardware buttons](#Hardwarebuttons)
-            
-        *   [Screen sizes and densities](#Screensizesanddensities)
-            
-        *   [Comparison with iOS](#ComparisonwithiOS)
-            
-    *   [Application components](#Applicationcomponents)
-        
-        *   [Activities](#Activities)
-            
-            *   [Heavyweight and lightweight windows](#Heavyweightandlightweightwindows)
-                
-        *   [Services](#Services)
-            
-        *   [Intents](#Intents)
-            
-            *   [Intent Filters](#IntentFilters)
-                
-    *   [References and further reading](#Referencesandfurtherreading)
-        
-*   [Summary](#Summary)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [User interface conventions](#Userinterfaceconventions)
+
+    * [Hardware buttons](#Hardwarebuttons)
+
+    * [Screen sizes and densities](#Screensizesanddensities)
+
+    * [Comparison with iOS](#ComparisonwithiOS)
+
+  * [Application components](#Applicationcomponents)
+
+    * [Activities](#Activities)
+
+      * [Services](#Services)
+
+    * [Intents](#Intents)
+
+      * [Intent Filters](#IntentFilters)
+
+  * [References and further reading](#Referencesandfurtherreading)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -49,14 +47,14 @@ The following screens illustrate some of the common user interface components of
 
 Android devices feature four dedicated-function "hardware" buttons: Back, Menu, Home, and Search. Depending on the device, these buttons can be physical buttons or touch-based user interface buttons. The location and order of those buttons varies between device vendors.
 
-*   Back – tap to return to the previous activity in the stack; if none remain in the stack you're returned to the home screen.
-    
-*   Home – return immediately to the home screen, pausing any currently opened apps
-    
-*   Menu – display a menu of activity-specific options
-    
-*   Search – display search functionality, either in-app or system-wide
-    
+* Back – tap to return to the previous activity in the stack; if none remain in the stack you're returned to the home screen.
+
+* Home – return immediately to the home screen, pausing any currently opened apps
+
+* Menu – display a menu of activity-specific options
+
+* Search – display search functionality, either in-app or system-wide
+
 
 The Home button behavior cannot be overridden, but you can interact with the Back, Search and Menu buttons.
 
@@ -70,31 +68,31 @@ You cannot directly override the Menu button, but you can customize the menu dis
 
 Android devices vary greatly in screen size and density. **Screen size** represents the physical size of the display. Measured diagonally, it can range from quite small (2.8 inches/71 mm) to large (4.3 inches/110mm) to tablet sizes (10.1 inches/256 mm). Android divides these into generally four categories: small, normal, large, and xlarge which are then denoted by their density-independent pixel measurements which Google labels "dp." Each density-independent pixel is equivalent to one physical pixel on a 160 dpi screen.
 
-*   small screens are at least 426dp x 320dp
-    
-*   normal screens are at least 470dp x 320dp
-    
-*   large screens are at least 640dp x 480dp
-    
-*   xlarge screens are at least 960dp x 720dp
-    
+* small screens are at least 426dp x 320dp
+
+* normal screens are at least 470dp x 320dp
+
+* large screens are at least 640dp x 480dp
+
+* xlarge screens are at least 960dp x 720dp
+
 
 Aspect ratios vary as well, though Android generally lumps them into two buckets: long and "notlong" with the latter corresponding to devices with an aspect ratio not significantly different than the 320 x 470 "normal" screen.
 
 Finally, density describes the actual pixels (aka dots) per square inch resolution of the screen. These range between:
 
-*   ldpi screens are roughly 120 dpi
-    
-*   mdpi screens are roughly 160 dpi (this is the baseline "normal" density)
-    
-*   tvdpi screens are roughly 213 dpi
-    
-*   hdpi screens are roughly 240 dpi
-    
-*   xhdpi screens are roughly 320 dpi
-    
-*   xxhdpi screens are roughly 480 dpi
-    
+* ldpi screens are roughly 120 dpi
+
+* mdpi screens are roughly 160 dpi (this is the baseline "normal" density)
+
+* tvdpi screens are roughly 213 dpi
+
+* hdpi screens are roughly 240 dpi
+
+* xhdpi screens are roughly 320 dpi
+
+* xxhdpi screens are roughly 480 dpi
+
 
 Titanium enables you to simply scale your user interface to fit the device's screen. But it also offers convenient features for specifically handling assets and layout for various screen sizes. You should plan to test on multiple devices if you want your user interface to be "pixel perfect" on all devices.
 
@@ -104,23 +102,23 @@ There is also a nodpi option where your images will not be scaled by the system 
 
 The Android user interface features some key differences that iOS users should note.
 
-*   Tabs are at the top rather than bottom.
-    
-*   Window title bars don't include navigation buttons. Navigation functionality is provided by the hardware Back and Menu buttons instead.
-    
-*   The Navigation bar does more than just give battery and signal-strength info. It is the common location for system and app notification messages. Likewise, Android doesn't use the "badge" indicator like iOS.
-    
+* Tabs are at the top rather than bottom.
+
+* Window title bars don't include navigation buttons. Navigation functionality is provided by the hardware Back and Menu buttons instead.
+
+* The Navigation bar does more than just give battery and signal-strength info. It is the common location for system and app notification messages. Likewise, Android doesn't use the "badge" indicator like iOS.
+
 
 ### Application components
 
 Android applications are built from the following components. Titanium shields you from some of the particulars, though it also gives you the tools to interact with these components when you want to.
 
-*   Activities
-    
-*   Services
-    
-*   Intents
-    
+* Activities
+
+* Services
+
+* Intents
+
 
 (We're simplifying things a bit here by ignoring content providers and broadcast receivers. Read Google's [Android Fundamentals](http://developer.android.com/guide/topics/fundamentals.html) guide for more detailed information.)
 
@@ -138,20 +136,7 @@ An Android Activity is not created until the "heavy weight" window is opened. Be
 
 You'll find more info on the Android developer's [Activity](http://developer.android.com/reference/android/app/Activity.html) guide.
 
-##### Heavyweight and lightweight windows
-
-Heavyweight windows are Titanium windows that correspond directly to Android activities. It's possible to create Titanium windows that are "lightweight" and don't correspond to activities. You should think of them more like fullscreen views. When you create a Titanium window, the API makes a few checks to decide if it should be heavyweight; a window is heavyweight if:
-
-*   Any of these properties are set to either true or false: fullscreen, navBarHidden, or modal;
-    
-*   Or if the window's windowSoftInputMode property is set to any of the Ti.UI.Android constants;
-    
-*   Or if the tabOpen property is true.
-    
-
-Heavyweight windows create a new Activity on the stack, and always create a new Javascript context for their window.
-
-#### Services
+##### Services
 
 Services are "long running" app components that run without user interaction. You might use a service to periodically check a network resource or you play music while your app is in the background. Services are not separate threads or processes. They're not a way to offload work from your main application. You can create services by calling on Titanium's [Ti.Android.Service](#!/api/Titanium.Android.Service) module.
 
@@ -173,12 +158,12 @@ More information about intents and intent filters are available from the [Androi
 
 ### References and further reading
 
-*   Google's [Android Fundamentals](http://developer.android.com/guide/topics/fundamentals.html) document is recommended reading
-    
-*   [Supporting Multiple Screens](http://developer.android.com/guide/practices/screens_support.html)
-    
-*   [Screen Sizes and Densities in use now](http://developer.android.com/resources/dashboard/screens.html)
-    
+* Google's [Android Fundamentals](http://developer.android.com/guide/topics/fundamentals.html) document is recommended reading
+
+* [Supporting Multiple Screens](http://developer.android.com/guide/practices/screens_support.html)
+
+* [Screen Sizes and Densities in use now](http://developer.android.com/resources/dashboard/screens.html)
+
 
 ## Summary
 

@@ -1,23 +1,23 @@
-{"title":"Titanium SDK Getting Started","weight":"10"} 
+{"title":"Titanium SDK Getting Started","weight":"10"}
 
-*   [Overview](#Overview)
-    
-*   [Prerequisites](#Prerequisites)
-    
-*   [Download and install Studio](#DownloadandinstallStudio)
-    
-    *   [First Launch](#FirstLaunch)
-        
-    *   [Installing the platform SDKs](#InstallingtheplatformSDKs)
-        
-    *   [Checking for Studio and SDK updates](#CheckingforStudioandSDKupdates)
-        
-*   [First Titanium app](#FirstTitaniumapp)
-    
-*   [Troubleshooting](#Troubleshooting)
-    
-*   [Next steps](#Nextsteps)
-    
+* [Overview](#Overview)
+
+* [Prerequisites](#Prerequisites)
+
+* [Download and install Studio](#DownloadandinstallStudio)
+
+  * [First Launch](#FirstLaunch)
+
+  * [Installing the platform SDKs](#InstallingtheplatformSDKs)
+
+  * [Checking for Studio and SDK updates](#CheckingforStudioandSDKupdates)
+
+* [First Titanium app](#FirstTitaniumapp)
+
+* [Troubleshooting](#Troubleshooting)
+
+* [Next steps](#Nextsteps)
+
 
 ## Overview
 
@@ -27,14 +27,14 @@ This guide walks through the steps of installing and configuring Studio and thir
 
 Your system environment must meet the following requirements to run Studio:
 
-*   **Operating System:** A recent version of Windows or Mac OS X
-    
-*   **Memory:** 8 GB RAM minimum system memory (2 GB RAM available memory). 16 GB RAM recommended.
-    
-*   **Java Runtime:** Oracle JDK (no other brand of Java is suitable)
-    
-*   **Node.js:** Required for the Titanium command-line tools like the CLI, Alloy and AMPLIFY Runtime Services
-    
+* **Operating System:** A recent version of Windows or Mac OS X
+
+* **Memory:** 8 GB RAM minimum system memory (2 GB RAM available memory). 16 GB RAM recommended.
+
+* **Java Runtime:** Oracle JDK (no other brand of Java is suitable)
+
+* **Node.js:** Required for the Titanium command-line tools like the CLI, Alloy and AMPLIFY Runtime Services
+
 
 For Windows, you can use either 32-bit or 64-bit versions of Java JDK. Please refer to [Studio Java Support](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/Studio_Java_Support/) for more information.
 
@@ -46,14 +46,14 @@ For a complete list of compatibility of system environments, dependencies, and o
 
 To download Studio you must have an AMPLIFY Appcelerator Services account. Visit our [Sign Up](http://www.appcelerator.com/signup/) page to create an account.
 
-1.  Log in to [https://platform.axway.com/](https://platform.axway.com/).
-    
-2.  Expand the Axway menu ![Screen_Shot_2017-12-19_at_11.06.56_AM](/Images/appc/download/thumbnails/37538717/Screen_Shot_2017-12-19_at_11.06.56_AM.png) available at top-left of screen and click on [App Builder Studio](https://platform.axway.com/#/product/studio).
-    
-3.  Download the installer or ZIP file for your operating system.
-    
-4.  Launch the downloaded installer.
-    
+1. Log in to [https://platform.axway.com/](https://platform.axway.com/).
+
+2. Expand the Axway menu ![Screen_Shot_2017-12-19_at_11.06.56_AM](/Images/appc/download/thumbnails/37538717/Screen_Shot_2017-12-19_at_11.06.56_AM.png) available at top-left of screen and click on [App Builder Studio](https://platform.axway.com/#/product/studio).
+
+3. Download the installer or ZIP file for your operating system.
+
+4. Launch the downloaded installer.
+
 
 For detailed install instructions, see [Axway Appcelerator Studio Getting Started](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/).
 
@@ -77,19 +77,16 @@ The first time you launch Studio the **Platform Configuration** dialog opens. Th
 
 **To install the platform SDKs**:
 
-1.  Select the platforms you want to install.
-    
-2.  Optionally click **Settings** next to each platform to customize the installation configuration. For more details, see [Installing Platform SDKs](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/).
-    
-3.  Click **Configure** to start the installation process.
-    
+1. Select the platforms you want to install.
+
+2. Optionally click **Settings** next to each platform to customize the installation configuration. For more details, see [Installing Platform SDKs](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/).
+
+3. Click **Configure** to start the installation process.
+
 
 Studio begins downloading and installing each SDK you selected, according to the settings you specified. In the case of iOS, Studio launches the App Store application installed on your Mac to the XCode download page.
 
-![PlatformConfigDialog](/Images/appc/download/attachments/37540095/PlatformConfigDialog.png)  
-  
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
+![PlatformConfigDialog](/Images/appc/download/attachments/37540095/PlatformConfigDialog.png)
 
 ### Checking for Studio and SDK updates
 
@@ -109,6 +106,6 @@ If you are experiencing problems after following these setup instructions, pleas
 
 You can learn more about Titanium by opening the Studio Dashboard, then
 
-*   Watching the Appcelerator University videos
-    
-*   Follow [Creating Your First Titanium App](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Creating_Your_First_Titanium_App/) to build your first Alloy application
+* Watching the Appcelerator University videos
+
+* Follow [Creating Your First Titanium App](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Creating_Your_First_Titanium_App/) to build your first Alloy application

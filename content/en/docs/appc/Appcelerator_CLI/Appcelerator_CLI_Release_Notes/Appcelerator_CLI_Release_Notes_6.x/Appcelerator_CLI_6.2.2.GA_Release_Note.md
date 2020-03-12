@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 6.2.2.GA - 24 May 2017","weight":"70"} 
+{"title":"Appcelerator CLI 6.2.2.GA - 24 May 2017","weight":"70"}
 
 Appcelerator CLI 6.2.2.GA is a patch release that includes two bug fixes.
 
@@ -26,6 +26,6 @@ Titanium CLI
 
 ## Fixed issues
 
-*   [CLI-969](https://jira.appcelerator.org/browse/CLI-969) - If you install Appc CLI Core >= 5.2.1-3, then a corrupted appcelerator tgz will appear in the package folder
-    
-*   [CLI-1208](https://jira.appcelerator.org/browse/CLI-1208) - appc run removes last arg
+* [CLI-969](https://jira.appcelerator.org/browse/CLI-969) - If you install Appc CLI Core >= 5.2.1-3, then a corrupted appcelerator tgz will appear in the package folder
+
+* [CLI-1208](https://jira.appcelerator.org/browse/CLI-1208) - appc run removes last arg

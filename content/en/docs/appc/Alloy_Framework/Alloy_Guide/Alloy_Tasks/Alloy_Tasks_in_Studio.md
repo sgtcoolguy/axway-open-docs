@@ -1,23 +1,23 @@
-{"title":"Alloy Tasks in Studio","weight":"10"} 
+{"title":"Alloy Tasks in Studio","weight":"10"}
 
-*   [Creating an Alloy Project](#CreatinganAlloyProject)
-    
-*   [Creating a Controller](#CreatingaController)
-    
-*   [Creating a Model](#CreatingaModel)
-    
-*   [Creating a Migration](#CreatingaMigration)
-    
-*   [Creating a Widget](#CreatingaWidget)
-    
-*   [Navigating easily among Alloy element files](#NavigatingeasilyamongAlloyelementfiles)
-    
-*   [Building and Running an Application](#BuildingandRunninganApplication)
-    
-*   [Using Content Assistance](#UsingContentAssistance)
-    
-*   [Debugging Alloy Code](#DebuggingAlloyCode)
-    
+* [Creating an Alloy Project](#CreatinganAlloyProject)
+
+* [Creating a Controller](#CreatingaController)
+
+* [Creating a Model](#CreatingaModel)
+
+* [Creating a Migration](#CreatingaMigration)
+
+* [Creating a Widget](#CreatingaWidget)
+
+* [Navigating easily among Alloy element files](#NavigatingeasilyamongAlloyelementfiles)
+
+* [Building and Running an Application](#BuildingandRunninganApplication)
+
+* [Using Content Assistance](#UsingContentAssistance)
+
+* [Debugging Alloy Code](#DebuggingAlloyCode)
+
 
 ## Introduction
 
@@ -27,12 +27,12 @@ You can use Studio 3.0.0 or later to create and manage Alloy projects.
 
 To create a new Alloy project, start Studio, then
 
-1.  From the menu, select **File > New > Mobile Project**. The **New Mobile Project** wizard appears.
-    
-2.  Select **Alloy** in the **Available Templates** box, then click the **Next** button.
-    
-3.  Complete all of the fields, then click the **Finish** button.
-    
+1. From the menu, select **File > New > Mobile Project**. The **New Mobile Project** wizard appears.
+
+2. Select **Alloy** in the **Available Templates** box, then click the **Next** button.
+
+3. Complete all of the fields, then click the **Finish** button.
+
 
 A new skeleton Alloy project will be generated. Note that the Resources folder is hidden from the App and Project Explorer.
 
@@ -40,14 +40,14 @@ A new skeleton Alloy project will be generated. Note that the Resources folder i
 
 To create a new controller with a view and style,
 
-1.  Right-click on your project in the App or Project Explorer.
-    
-2.  Select **New > Alloy Controller**. The **New Controller** dialog box appears.
-    
-3.  In the **Controller name** textbox, enter the name of the controller. A warning appears if a duplicate exists.
-    
-4.  Click the **OK** button.
-    
+1. Right-click on your project in the App or Project Explorer.
+
+2. Select **New > Alloy Controller**. The **New Controller** dialog box appears.
+
+3. In the **Controller name** textbox, enter the name of the controller. A warning appears if a duplicate exists.
+
+4. Click the **OK** button.
+
 
 This creates app/controllers/<name>.js, app/styles/<name>.tss, and app/views/<name>.xml.
 
@@ -55,18 +55,18 @@ This creates app/controllers/<name>.js, app/styles/<name>.tss, and app/views/<na
 
 To create a new model,
 
-1.  Right-click on your project in the App or Project Explorer.
-    
-2.  Select **New > Alloy Model**. The **New Model** dialog box appears.
-    
-3.  In the **Model name** textbox, enter the name of the model. A warning appears if a duplicate exists.
-    
-4.  In the **Adapter**drop-down box, select the type of storage.
-    
-    1.  For sql, in the **Schema** table, enter the names and data types of the database schema.
-        
-5.  Click the **OK** button.
-    
+1. Right-click on your project in the App or Project Explorer.
+
+2. Select **New > Alloy Model**. The **New Model** dialog box appears.
+
+3. In the **Model name** textbox, enter the name of the model. A warning appears if a duplicate exists.
+
+4. In the **Adapter**drop-down box, select the type of storage.
+
+  1. For sql, in the **Schema** table, enter the names and data types of the database schema.
+
+5. Click the **OK** button.
+
 
 This creates app/models/<name>.js.
 
@@ -74,14 +74,14 @@ This creates app/models/<name>.js.
 
 To generate a standalone migration for a specific model,
 
-1.  Right-click on your project in the App or Project Explorer.
-    
-2.  Select **New > Alloy Migration**. The **New Migration** dialog box appears.
-    
-3.  In the **Migration name** textbox, enter the name of the model that needs a database migration file.
-    
-4.  Click the **OK** button.
-    
+1. Right-click on your project in the App or Project Explorer.
+
+2. Select **New > Alloy Migration**. The **New Migration** dialog box appears.
+
+3. In the **Migration name** textbox, enter the name of the model that needs a database migration file.
+
+4. Click the **OK** button.
+
 
 This creates a timestamp-ordered migration file for the model specified, that is, app/migrations/DATETIME\_<name>.js
 
@@ -89,14 +89,14 @@ This creates a timestamp-ordered migration file for the model specified, that is
 
 To create a basic widget,
 
-1.  Right-click on your project in the App or Project Explorer.
-    
-2.  Select **New > Alloy Widget**. The **New Widget** dialog box appears.
-    
-3.  In the **Widget name** textbox, enter the name of the migration. A warning appears if a duplicate exists.
-    
-4.  Click the **OK** button.
-    
+1. Right-click on your project in the App or Project Explorer.
+
+2. Select **New > Alloy Widget**. The **New Widget** dialog box appears.
+
+3. In the **Widget name** textbox, enter the name of the migration. A warning appears if a duplicate exists.
+
+4. Click the **OK** button.
+
 
 This creates a default widget in the projects's app/widgets path, generating a configuration file, controller, style and view: app/widgets/<name>/widget.json, app/widgets/<name>/controllers/widget.js, app/widgets/<name>/styles/widget.tss, and app/widgets/<name>/views/widget.xml. Additionally, the widget is automatically added as a dependency in the Alloy project's configuration file config.json.
 
@@ -108,12 +108,12 @@ When developing an Alloy project you will frequently need to switch between the 
 
 **To navigate Alloy elements using menu commands**:
 
-1.  Open an Alloy element file (foo.js, for example).
-    
-2.  Right-click in the editor window and select **Open Alloy Elements.**
-    
-3.  From the context menu, select the related Alloy element file that you want to open: **Controller File**, **View File**, or **Style File**.
-    
+1. Open an Alloy element file (foo.js, for example).
+
+2. Right-click in the editor window and select **Open Alloy Elements.**
+
+3. From the context menu, select the related Alloy element file that you want to open: **Controller File**, **View File**, or **Style File**.
+
 
 Which menu options appear depends on the type of file you're currently editing. For example, if you're editing an Alloy view (.xml) file the context menu will contain **Controller File** and **Style File** options; if you're viewing an Alloy style (.tss) file the menu will contain **Controller File** and **View File** options.
 

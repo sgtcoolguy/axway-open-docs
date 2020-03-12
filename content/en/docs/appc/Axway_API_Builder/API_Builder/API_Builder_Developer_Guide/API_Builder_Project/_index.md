@@ -1,4 +1,4 @@
-{"title":"API Builder Project","weight":"30"} 
+{"title":"API Builder Project","weight":"30"}
 
 API Builder 3.x is deprecated
 
@@ -6,54 +6,54 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-*   [Overview](#Overview)
-    
-*   [Project structure](#Projectstructure)
-    
-*   [Initializer file](#Initializerfile)
-    
-*   [Deploy the application](#Deploytheapplication)
-    
-*   [Log output](#Logoutput)
-    
-*   [View log files](#Viewlogfiles)
-    
-    *   [Logging utilities](#Loggingutilities)
-        
-    *   [About logged execution times](#Aboutloggedexecutiontimes)
-        
-*   [Node.js version](#Node.jsversion)
-    
-*   [Port binding](#Portbinding)
-    
-*   [Install custom binaries](#Installcustombinaries)
-    
-*   [Declare dependencies](#Declaredependencies)
-    
-*   [Define environment variables](#Defineenvironmentvariables)
-    
-*   [Scale the application](#Scaletheapplication)
-    
-*   [Access a specific container](#Accessaspecificcontainer)
-    
-*   [Custom domains](#Customdomains)
-    
-    *   [Set a custom domain and path](#Setacustomdomainandpath)
-        
-    *   [Wildcard subdomains](#Wildcardsubdomains)
-        
-*   [Add a custom SSL certificate](#AddacustomSSLcertificate)
-    
-*   [Create child processes](#Createchildprocesses)
-    
-*   [Application limitations](#Applicationlimitations)
-    
-    *   [Disk space](#Diskspace)
-        
-    *   [Server containers](#ServercontainersServercontainers)
-        
-    *   [Server Ports](#ServerPorts)
-        
+* [Overview](#Overview)
+
+* [Project structure](#Projectstructure)
+
+* [Initializer file](#Initializerfile)
+
+* [Deploy the application](#Deploytheapplication)
+
+* [Log output](#Logoutput)
+
+* [View log files](#Viewlogfiles)
+
+  * [Logging utilities](#Loggingutilities)
+
+  * [About logged execution times](#Aboutloggedexecutiontimes)
+
+* [Node.js version](#Node.jsversion)
+
+* [Port binding](#Portbinding)
+
+* [Install custom binaries](#Installcustombinaries)
+
+* [Declare dependencies](#Declaredependencies)
+
+* [Define environment variables](#Defineenvironmentvariables)
+
+* [Scale the application](#Scaletheapplication)
+
+* [Access a specific container](#Accessaspecificcontainer)
+
+* [Custom domains](#Customdomains)
+
+  * [Set a custom domain and path](#Setacustomdomainandpath)
+
+  * [Wildcard subdomains](#Wildcardsubdomains)
+
+* [Add a custom SSL certificate](#AddacustomSSLcertificate)
+
+* [Create child processes](#Createchildprocesses)
+
+* [Application limitations](#Applicationlimitations)
+
+  * [Disk space](#Diskspace)
+
+  * [Server containers](#ServercontainersServercontainers)
+
+  * [Server Ports](#ServerPorts)
+
 
 ## Overview
 
@@ -203,10 +203,10 @@ If the application is already deployed, you need to either increment the version
 
 AMPLIFY Runtime Services can capture two kinds of log output from applications:
 
-*   access logs – HTTP requests to the application
-    
-*   application logs – explicit log calls made in the application
-    
+* access logs – HTTP requests to the application
+
+* application logs – explicit log calls made in the application
+
 
 To capture access logs, use the appc-logger module, and to capture application logs, you can either use the standard JavaScript console.log() and console.error() methods, or you can use the appc-logger module.
 
@@ -248,21 +248,21 @@ An application typically runs in the cloud, so being able to see what is happeni
 
 **Notes:**
 
-*   Only output written by the application's root process is included in the log file; output written by child processes forked by the application's root process will not be caught.
-    
-*   Errors such as syntax errors, application crashes, and system level failures are logged automatically.
-    
+* Only output written by the application's root process is included in the log file; output written by child processes forked by the application's root process will not be caught.
+
+* Errors such as syntax errors, application crashes, and system level failures are logged automatically.
+
 
 ### Logging utilities
 
 The Appcelerator CLI provides three commands for viewing logs for a published application: **accesslog**, **logcat**, and **loglist**.
 
-*   The appc cloud accesslog command lists all requests processed by the Appcelerator Cloud in a specified time period. By default, a maximum of 100 log messages is returned at a time.
-    
-*   The appc cloud loglist command lists your published application's log for a specific period. By default, a maximum of 100 log messages is returned at a time.
-    
-*   The appc cloud logcat command lists your published application's log continuously from Appcelerator Cloud.
-    
+* The appc cloud accesslog command lists all requests processed by the Appcelerator Cloud in a specified time period. By default, a maximum of 100 log messages is returned at a time.
+
+* The appc cloud loglist command lists your published application's log for a specific period. By default, a maximum of 100 log messages is returned at a time.
+
+* The appc cloud logcat command lists your published application's log continuously from Appcelerator Cloud.
+
 
 ### About logged execution times
 
@@ -546,12 +546,12 @@ To use a custom SSL certificate to access your application using HTTPS, you need
 
 To create a PEM file, you will need the following three files provided by your SSL certificate provider:
 
-*   Certificate file (customapp.com.crt, for example)
-    
-*   An intermediate certificate authority (gd\_bundle.crt, for example)
-    
-*   Key used to generate the certificate (customapp.com.key, for example)
-    
+* Certificate file (customapp.com.crt, for example)
+
+* An intermediate certificate authority (gd\_bundle.crt, for example)
+
+* Key used to generate the certificate (customapp.com.key, for example)
+
 
 You need to combine the contents of the three files into a single text file, called a PEM file, which you will add to your application. The PEM file must have the following structure:
 
@@ -645,10 +645,10 @@ Each application can use 1.8 GB of disk space. The application can only write fi
 
 Each application runs in a specific container size with different resources (memory and number of CPUs). By default, when the application is published, it will run in one Medium container.
 
-*   To specify a bigger container for the application, set the cloud.container field in the appc.json file or use the appc cloud server command.
-    
-*   To use more than one container for your application, see [Scale the Application](#Scaletheapplication).
-    
+* To specify a bigger container for the application, set the cloud.container field in the appc.json file or use the appc cloud server command.
+
+* To use more than one container for your application, see [Scale the Application](#Scaletheapplication).
+
 
 You can specify one of the following container sizes depending on your AMPLIFY Appcelerator Services subscription:
 

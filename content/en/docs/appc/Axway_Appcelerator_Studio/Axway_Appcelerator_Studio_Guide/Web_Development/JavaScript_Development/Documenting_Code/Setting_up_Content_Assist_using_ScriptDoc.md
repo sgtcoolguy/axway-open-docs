@@ -1,4 +1,4 @@
-{"title":"Setting up Content Assist using ScriptDoc","weight":"20"} 
+{"title":"Setting up Content Assist using ScriptDoc","weight":"20"}
 
 ScriptDoc is the tool that Studio uses to generate the content for Content Assist from JavaScript code. (To learn more about Content Assist, see [About Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/About_Content_Assist/).) ScriptDoc automatically scans all of the projects in your project for ScriptDoc documentation blocks and displays the Content Assist bubbles when you use the classes and functions that you have documented.
 
@@ -8,10 +8,10 @@ To learn how to document your code so that Content Assist works, see [Documentin
 
 ## Related Topics
 
-*   [About Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/About_Content_Assist/)
-    
-*   [Displaying Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/Displaying_Content_Assist/)
-    
-*   [Documenting Your Code Using ScriptDoc](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Documenting_Code/Documenting_Your_Code_Using_ScriptDoc/)
-    
-*   [ScriptDoc tag quick reference](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/ScriptDoc_tag_quick_reference/)
+* [About Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/About_Content_Assist/)
+
+* [Displaying Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/Displaying_Content_Assist/)
+
+* [Documenting Your Code Using ScriptDoc](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Documenting_Code/Documenting_Your_Code_Using_ScriptDoc/)
+
+* [ScriptDoc tag quick reference](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/ScriptDoc_tag_quick_reference/)

@@ -1,40 +1,40 @@
-{"title":"Android Intent Filters","weight":"20"} 
+{"title":"Android Intent Filters","weight":"20"}
 
-*   [Introduction](#Introduction)
-    
-*   [Receive an implicit intent](#Receiveanimplicitintent)
-    
-    *   [Modify the Android manifest section](#ModifytheAndroidmanifestsection)
-        
-    *   [Declare intent filters](#Declareintentfilters)
-        
-    *   [Retrieve data passed to the activity](#Retrievedatapassedtotheactivity)
-        
-    *   [Respond to the calling activity](#Respondtothecallingactivity)
-        
-*   [MIME Type intent filter example](#MIMETypeintentfilterexample)
-    
-*   [URI intent filter example](#URIintentfilterexample)
-    
-*   [Further reading](#Furtherreading)
-    
+* [Introduction](#Introduction)
+
+* [Receive an implicit intent](#Receiveanimplicitintent)
+
+  * [Modify the Android manifest section](#ModifytheAndroidmanifestsection)
+
+  * [Declare intent filters](#Declareintentfilters)
+
+  * [Retrieve data passed to the activity](#Retrievedatapassedtotheactivity)
+
+  * [Respond to the calling activity](#Respondtothecallingactivity)
+
+* [MIME Type intent filter example](#MIMETypeintentfilterexample)
+
+* [URI intent filter example](#URIintentfilterexample)
+
+* [Further reading](#Furtherreading)
+
 
 ## Introduction
 
 Android Intent Filters give applications the ability to receive implicit intents from other Android applications. An intent is a message object, usually containing data, sent by another application to start a new application to handle the data. Intents are sent to the Android OS, which directs the intent to the appropriate application to handle the data. If more than one application can handle the data, Android presents a dialog to the user to select an application to launch. An intent filter indicates to the Android OS that your application can handle certain data types or URIs. For example, if a user opens their browser and highlights some text, the user can share that text with other Android apps, such as an e-mail application, SMS application or a social networking application.
 
-The user highlights the text and  
+The user highlights the text and
 clicks the **Share** button.
 
-The **Share** dialog appears and  
-the user can select the application  
+The **Share** dialog appears and
+the user can select the application
 to send the text to, such as...
 
 ...an e-mail application,
 
 ...an SMS application
 
-...or a social networking  
+...or a social networking
 application like Google+.
 
 ![HighlightText](/Images/appc/download/attachments/43287298/HighlightText.png)
@@ -47,9 +47,6 @@ application like Google+.
 
 ![GooglePlusShare](/Images/appc/download/attachments/43287298/GooglePlusShare.png)
 
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
-
 ## Receive an implicit intent
 
 To advertise to the Android OS that the application can receive an implicit intent, declare <intent-filter> elements in the tiapp.xml file for each data type you want the application to receive.
@@ -58,88 +55,88 @@ To advertise to the Android OS that the application can receive an implicit inte
 
 Before declaring an intent filter, you need to copy the <activity> node containing your application's default root activity from the build/android/AndroidManifest.xml file to the Android manifest section in the tiapp.xml file.
 
-1.  Build your project once to generate the AndroidManifest.xml file.
-    
-2.  Open the build/android/AndroidManifest.xml file and and copy the <activity> node that contains your default root activity. The android:name attribute will contain the name of your application.
-    
-    android/build/AndroidManifest.xml
-    
-    `<``manifest`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"`  `package``=``"com.example.sample"`  `android:versionCode``=``"1"`  `android:versionName``=``"1.0"``>`
-    
-    `<``uses``-sdk` `android:minSdkVersion``=``"14"`  `android:targetSdkVersion``=``"19"``/>`
-    
-    `<``application`  `android:icon``=``"@drawable/appicon"`  `android:label``=``"My App"`  `android:name``=``"MyappApplication"`  `android:debuggable``=``"false"`  `android:theme``=``"@style/Theme.AppCompat"``>`
-    
-    `<!-- Copy this activity node -->`
-    
-    `<``activity`  `android:name``=``".YourapplicationnameActivity"`  `android:label``=``"@string/app_name"`  `android:theme``=``"@style/Theme.Titanium"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``>`
-    
-    `<``intent``-filter>`
-    
-    `<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
-    
-    `<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
-    
-    `</``intent``-filter>`
-    
-    `</``activity``> `
-    
-    `<``activity`  `android:name``=``"org.appcelerator.titanium.TiActivity"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``/>`
-    
-    `<``activity`  `android:name``=``"org.appcelerator.titanium.TiTranslucentActivity"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"`  `android:theme``=``"@style/Theme.AppCompat.Translucent"``/>`
-    
-    `<``activity`  `android:name``=``"ti.modules.titanium.ui.android.TiPreferencesActivity"`  `android:configChanges``=``"screenSize"``/>`
-    
-    `</``application``>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_WIFI_STATE"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_NETWORK_STATE"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.WRITE_EXTERNAL_STORAGE"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_COARSE_LOCATION"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_FINE_LOCATION"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_MOCK_LOCATION"``/>`
-    
-    `</``manifest``>`
-    
-3.  Paste the default root activity into the Android section of your tiapp.xml file inside the <application> element. You may need to add the <manifest> and <application> elements to the <android> element of your tiapp.xml file:
-    
-    tiapp.xml
-    
-    `<``ti``:app` `xmlns:ti``=``"http://ti.appcelerator.org"``>`
-    
-    `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-    
-    `<``manifest``>`
-    
-    `<``application``>`
-    
-    `<``activity`  `android:name``=``".YourapplicationnameActivity"`  `android:label``=``"@string/app_name"`  `android:theme``=``"@style/Theme.Titanium"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``>`
-    
-    `<``intent``-filter>`
-    
-    `<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
-    
-    `<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
-    
-    `</``intent``-filter>`
-    
-    `</``activity``>`
-    
-    `</``application``>`
-    
-    `</``manifest``>`
-    
-    `</``android``>`
-    
-    `</``ti``:app>`
-    
+1. Build your project once to generate the AndroidManifest.xml file.
+
+2. Open the build/android/AndroidManifest.xml file and and copy the <activity> node that contains your default root activity. The android:name attribute will contain the name of your application.
+
+  android/build/AndroidManifest.xml
+
+  `<``manifest`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"`  `package``=``"com.example.sample"`  `android:versionCode``=``"1"`  `android:versionName``=``"1.0"``>`
+
+  `<``uses``-sdk` `android:minSdkVersion``=``"14"`  `android:targetSdkVersion``=``"19"``/>`
+
+  `<``application`  `android:icon``=``"@drawable/appicon"`  `android:label``=``"My App"`  `android:name``=``"MyappApplication"`  `android:debuggable``=``"false"`  `android:theme``=``"@style/Theme.AppCompat"``>`
+
+  `<!-- Copy this activity node -->`
+
+  `<``activity`  `android:name``=``".YourapplicationnameActivity"`  `android:label``=``"@string/app_name"`  `android:theme``=``"@style/Theme.Titanium"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``>`
+
+  `<``intent``-filter>`
+
+  `<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
+
+  `<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
+
+  `</``intent``-filter>`
+
+  `</``activity``> `
+
+  `<``activity`  `android:name``=``"org.appcelerator.titanium.TiActivity"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``/>`
+
+  `<``activity`  `android:name``=``"org.appcelerator.titanium.TiTranslucentActivity"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"`  `android:theme``=``"@style/Theme.AppCompat.Translucent"``/>`
+
+  `<``activity`  `android:name``=``"ti.modules.titanium.ui.android.TiPreferencesActivity"`  `android:configChanges``=``"screenSize"``/>`
+
+  `</``application``>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.ACCESS_WIFI_STATE"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.ACCESS_NETWORK_STATE"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.WRITE_EXTERNAL_STORAGE"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.ACCESS_COARSE_LOCATION"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.ACCESS_FINE_LOCATION"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.ACCESS_MOCK_LOCATION"``/>`
+
+  `</``manifest``>`
+
+3. Paste the default root activity into the Android section of your tiapp.xml file inside the <application> element. You may need to add the <manifest> and <application> elements to the <android> element of your tiapp.xml file:
+
+  tiapp.xml
+
+  `<``ti``:app` `xmlns:ti``=``"http://ti.appcelerator.org"``>`
+
+  `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
+
+  `<``manifest``>`
+
+  `<``application``>`
+
+  `<``activity`  `android:name``=``".YourapplicationnameActivity"`  `android:label``=``"@string/app_name"`  `android:theme``=``"@style/Theme.Titanium"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``>`
+
+  `<``intent``-filter>`
+
+  `<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
+
+  `<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
+
+  `</``intent``-filter>`
+
+  `</``activity``>`
+
+  `</``application``>`
+
+  `</``manifest``>`
+
+  `</``android``>`
+
+  `</``ti``:app>`
+
 
 Note that the <activity> node you just copied over already contains an <intent-filter> element. The elements inside the filter describe to the Android OS that this activity is the initial activity to launch for the application. Do not remove this intent filter or the application will not be available in the application launcher menu.
 
@@ -149,44 +146,44 @@ If you change the name of the application, you will need to copy the newly gener
 
 To declare an intent filter, add **<intent-filter>** elements as children of the <activity> describing the default root activity of the application. For each <intent-filter>, you must add:
 
-*   one or more <action> elements to it to describe which actions the activity can perform
-    
-*   the <category android:name="android.intent.category.DEFAULT"/> element to allow it to receive implicit intents as well as any additional categories you want to add to describe the purpose of the activity
-    
-*   and a <data> element describing which data types the activity can receive
-    
+* one or more <action> elements to it to describe which actions the activity can perform
+
+* the <category android:name="android.intent.category.DEFAULT"/> element to allow it to receive implicit intents as well as any additional categories you want to add to describe the purpose of the activity
+
+* and a <data> element describing which data types the activity can receive
+
 
 The elements are described in more detail below.
 
 After adding an <intent-filter> tag, add the following children elements to it:
 
-*   **<action/>** element: Describes which actions the activity can do. Assign the android:name attribute an action. An action is one of the ACTION\_\* constants from the [Android Intent class](http://developer.android.com/reference/android/content/Intent.html). Remove the ACTION\_ prefix from the constant, then prefix it with the android.intent.action namespace. Examples:
-    
-    *   <action android:name="android.intent.action.SEND"/>: Data can be sent to the activity.
-        
-    *   <action android:name="android.intent.action.VIEW"/>: Data can be viewed by the activity.
-        
-*   **<category/>** element: Provides additional details about the activity. Assign the android:name attribute a category. A category is one of the CATEGORY\_\* constants from the [Android Intent class](http://developer.android.com/reference/android/content/Intent.html). Remove the CATEGORY\_ prefix from the constant, then prefix it with the android.intent.category namespace. Examples:
-    
-    *   <category android:name="android.intent.category.BROWSABLE"/>: Indicates that the activity can be invoked from a browser by clicking a link
-        
-*   **<data/>** element: Describes the data type the activity can handle. You can either describe the data type as a MIME type with the android:mimeType attribute or as an URI using the android:scheme, android:host, android:port, android:path, android:pathPrefix and android:pathPattern attributes that take on the form: <scheme>://<host>:<port>/\[<path>|<pathPrefix>|<pathPattern>\]. Note that all URI attributes are optional except if the scheme attribute is not defined, all other URI attributes are ignored, and if the host attribute is not defined, all other URI attributes except scheme are ignored. Examples:
-    
-    *   <data android:mimeType="image/\*"/>: Activity can accept intents with the image/\* MIME type depending on the action.
-        
-    *   <data android:scheme="http" host="www.fakedomain.com"/>: Activity can accept URIs that start with http://www.fakedomain.com depending on the action.
-        
+* **<action/>** element: Describes which actions the activity can do. Assign the android:name attribute an action. An action is one of the ACTION\_\* constants from the [Android Intent class](http://developer.android.com/reference/android/content/Intent.html). Remove the ACTION\_ prefix from the constant, then prefix it with the android.intent.action namespace. Examples:
+
+  * <action android:name="android.intent.action.SEND"/>: Data can be sent to the activity.
+
+  * <action android:name="android.intent.action.VIEW"/>: Data can be viewed by the activity.
+
+* **<category/>** element: Provides additional details about the activity. Assign the android:name attribute a category. A category is one of the CATEGORY\_\* constants from the [Android Intent class](http://developer.android.com/reference/android/content/Intent.html). Remove the CATEGORY\_ prefix from the constant, then prefix it with the android.intent.category namespace. Examples:
+
+  * <category android:name="android.intent.category.BROWSABLE"/>: Indicates that the activity can be invoked from a browser by clicking a link
+
+* **<data/>** element: Describes the data type the activity can handle. You can either describe the data type as a MIME type with the android:mimeType attribute or as an URI using the android:scheme, android:host, android:port, android:path, android:pathPrefix and android:pathPattern attributes that take on the form: <scheme>://<host>:<port>/\[<path>|<pathPrefix>|<pathPattern>\]. Note that all URI attributes are optional except if the scheme attribute is not defined, all other URI attributes are ignored, and if the host attribute is not defined, all other URI attributes except scheme are ignored. Examples:
+
+  * <data android:mimeType="image/\*"/>: Activity can accept intents with the image/\* MIME type depending on the action.
+
+  * <data android:scheme="http" host="www.fakedomain.com"/>: Activity can accept URIs that start with http://www.fakedomain.com depending on the action.
+
 
 For the actions and categories, you can also define your own custom action and category names. Use a reverse domain scheme to name the actions and categories to avoid potential conflicts, for example, com.appcelerator.action.LINT or org.foo.category.SUPER. The custom actions and categories are only useful to communicate between your applications and application activities using intents.
 
 Additionally, you can overwrite the appearance of the option in the **Share** dialog by using the following <intent-filter> attributes:
 
-*   android:icon: Icon to display in the **Share** dialog. Place the icon file in the /platform/android/res/drawable/ folder and reference the image file by removing its extension and prefixing it with @drawable/, for example, @drawable/filename. By default, uses the application's icon.
-    
-*   android:label: Title displayed in the **Share** dialog. By default, uses the application name.
-    
-*   android:priority: Integer used to determine the priority to give to the application. By default, set to 0. Can be assigned a value between \-1000 and 1000, inclusive.
-    
+* android:icon: Icon to display in the **Share** dialog. Place the icon file in the /platform/android/res/drawable/ folder and reference the image file by removing its extension and prefixing it with @drawable/, for example, @drawable/filename. By default, uses the application's icon.
+
+* android:label: Title displayed in the **Share** dialog. By default, uses the application name.
+
+* android:priority: Integer used to determine the priority to give to the application. By default, set to 0. Can be assigned a value between \-1000 and 1000, inclusive.
+
 
 tiapp.xml
 
@@ -242,12 +239,12 @@ tiapp.xml
 
 To retrieve data sent to an activity using an intent, the application needs to retrieve the intent that launched the activity, then use the Intent reference to get the data URI or extras sent with the intent.
 
-*   To get the intent of the root activity, use the Titanium.App.Android.launchIntent property.
-    
-*   To get the intent of an activity that has an **open** Window or TabGroup, get a reference to the activity using the activity property of the Window or TabGroup object, then access the intent using the activity's intent property or getIntent() method.
-    
-*   To get the intent of other activities, use the Titanium.Android.currentActivity property to get a reference to the activity, then access the intent using the activity's intent property or getIntent() method.
-    
+* To get the intent of the root activity, use the Titanium.App.Android.launchIntent property.
+
+* To get the intent of an activity that has an **open** Window or TabGroup, get a reference to the activity using the activity property of the Window or TabGroup object, then access the intent using the activity's intent property or getIntent() method.
+
+* To get the intent of other activities, use the Titanium.Android.currentActivity property to get a reference to the activity, then access the intent using the activity's intent property or getIntent() method.
+
 
 `// Retrieve intent that launched the application (root activity)`
 
@@ -265,7 +262,7 @@ To retrieve data sent to an activity using an intent, the application needs to r
 
 `var` `intent = activity.getIntent();`
 
-  
+
 
 To retrieve the data URI sent with the intent, simply access the data property of the intent or call the intent's getData() method.
 
@@ -393,16 +390,16 @@ Now build the application once to generate the AndroidManifest.xml file.
 
 Next, declare the intent filter in the tiapp.xml file.
 
-1.  Copy the default root activity from the AndroidManifest.xml file to the Android manifest section of the tiapp.xml.
-    
-2.  Add an <intent-filter> element as a child of the <activity> element.
-    
-3.  Add a <data> element as a child of the <intent-filter> element, then assign text/plain to the android:mimeType attribute to tell Android the activity can handle plain text data.
-    
-4.  Add a <category> element as a child of the <intent-filter> element. Assign android.intent.category.DEFAULT to the android:name attribute to tell Android that the activity wants to receive implicit Intents.
-    
-5.  Add an <action> element as a child of the <intent-filter> element, then assign android.intent.action.SEND to the android:name attribute to tell Android that the application can receive plain text data.
-    
+1. Copy the default root activity from the AndroidManifest.xml file to the Android manifest section of the tiapp.xml.
+
+2. Add an <intent-filter> element as a child of the <activity> element.
+
+3. Add a <data> element as a child of the <intent-filter> element, then assign text/plain to the android:mimeType attribute to tell Android the activity can handle plain text data.
+
+4. Add a <category> element as a child of the <intent-filter> element. Assign android.intent.category.DEFAULT to the android:name attribute to tell Android that the activity wants to receive implicit Intents.
+
+5. Add an <action> element as a child of the <intent-filter> element, then assign android.intent.action.SEND to the android:name attribute to tell Android that the application can receive plain text data.
+
 
 Note that the activity already had an intent filter declared indicating that the application should be available in the application launcher.
 
@@ -448,13 +445,13 @@ tiapp.xml
 
 You now have an app that is ready to receive Intents. Install it on either an Android device or emulator and make sure it runs. Close the application. Now you can test the Intent Filter by doing the following:
 
-Open your Android browser and go to a website.  
+Open your Android browser and go to a website.
 Select some text, then click the **Share** button.
 
-You should be greeted with an Intent list that  
+You should be greeted with an Intent list that
 looks something like this.
 
-Select your app in the list and you will then be directed  
+Select your app in the list and you will then be directed
 to your application containing the string you highlighted.
 
 ![SelectText](/Images/appc/download/attachments/43287610/SelectText.png)
@@ -501,18 +498,18 @@ If you build and run it, your output should look roughly like this:
 
 Next, declare the intent filter in the tiapp.xml.
 
-1.  Copy the default root activity from the AndroidManifest.xml file to the Android manifest section of the tiapp.xml.
-    
-2.  Add an <intent-filter> element as a child of the <activity> element.
-    
-3.  Add a <data> element as a child of the <intent-filter> element, then assign http to the android:scheme attribute and www.appcelerator.com to the android:host attribute. This tells Android the activity can handle HTTP requests targeted at the host [www.appcelerator.com](http://www.appcelerator.com).
-    
-4.  Add a <category> element as a child of the <intent-filter> element. Assign android.intent.category.DEFAULT to the android:name attribute to tell Android that the activity wants to receive implicit Intents.
-    
-5.  Add another <category> element. Assign android.intent.category.BROWSABLE to the android:name attribute to tell Android that the request can come from the browser.
-    
-6.  Add an <action> element as a child of the <intent-filter> element, then assign android.intent.action.VIEW to the android:name attribute to states that the activity will be handling VIEW intents.
-    
+1. Copy the default root activity from the AndroidManifest.xml file to the Android manifest section of the tiapp.xml.
+
+2. Add an <intent-filter> element as a child of the <activity> element.
+
+3. Add a <data> element as a child of the <intent-filter> element, then assign http to the android:scheme attribute and www.appcelerator.com to the android:host attribute. This tells Android the activity can handle HTTP requests targeted at the host [www.appcelerator.com](http://www.appcelerator.com).
+
+4. Add a <category> element as a child of the <intent-filter> element. Assign android.intent.category.DEFAULT to the android:name attribute to tell Android that the activity wants to receive implicit Intents.
+
+5. Add another <category> element. Assign android.intent.category.BROWSABLE to the android:name attribute to tell Android that the request can come from the browser.
+
+6. Add an <action> element as a child of the <intent-filter> element, then assign android.intent.action.VIEW to the android:name attribute to states that the activity will be handling VIEW intents.
+
 
 Note that the activity already had an intent filter declared indicating that the application should be available in the application launcher.
 
@@ -560,12 +557,12 @@ tiapp.xml
 
 You now have an app that is ready to receive Intents. Install it on either an Android device or emulator and make sure it runs. Close the application. Now you can test the Intent Filter by doing the following:
 
-1.  Open your Android browser.
-    
-2.  Search for "appcelerator" on google.com.
-    
-3.  Click the link for [http://www.appcelerator.com](http://www.appcelerator.com).
-    
+1. Open your Android browser.
+
+2. Search for "appcelerator" on google.com.
+
+3. Click the link for [http://www.appcelerator.com](http://www.appcelerator.com).
+
 
 You should be greeted with an Intent list that looks something like this:
 
@@ -575,8 +572,8 @@ Select your app in the list and you will then be directed to your application co
 
 ## Further reading
 
-*   [Android Developers: Intents and Intent Filters](http://developer.android.com/guide/topics/intents/intents-filters.html)
-    
-*   [Android Developers: <intent-filter>](http://developer.android.com/guide/topics/manifest/intent-filter-element.html)
-    
-*   [Appcelerator Enterprise Mobility Blog: Android Intents](http://www.appcelerator.com/blog/2011/08/android-intents/)
+* [Android Developers: Intents and Intent Filters](http://developer.android.com/guide/topics/intents/intents-filters.html)
+
+* [Android Developers: <intent-filter>](http://developer.android.com/guide/topics/manifest/intent-filter-element.html)
+
+* [Appcelerator Enterprise Mobility Blog: Android Intents](http://www.appcelerator.com/blog/2011/08/android-intents/)

@@ -1,4 +1,4 @@
-{"title":"Studio 4.7.1.GA - 13 September 2016","weight":"100"} 
+{"title":"Studio 4.7.1.GA - 13 September 2016","weight":"100"}
 
 Studio 4.7.1.GA is a patch release that includes one bug fix.
 
@@ -6,4 +6,4 @@ As of this GA release, the previous Studio patch release is no longer supported.
 
 ## Fixed Issue
 
-*   [TISTUD-8580](https://jira.appcelerator.org/browse/TISTUD-8580) - iOS: Studio doesn't detect WatchOS 3 sims
+* [TISTUD-8580](https://jira.appcelerator.org/browse/TISTUD-8580) - iOS: Studio doesn't detect WatchOS 3 sims

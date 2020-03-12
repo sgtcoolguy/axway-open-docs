@@ -1,4 +1,4 @@
-{"title":"Notification Services","weight":"130"} 
+{"title":"Notification Services","weight":"130"}
 
 Local notifications and push notifications allow the application to send information to the user while the application is in the background. The information could be a message, an impending calendar event, or new data on a remote server.
 

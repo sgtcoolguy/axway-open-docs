@@ -1,4 +1,4 @@
-{"title":"ButtonBar","weight":"30"} 
+{"title":"ButtonBar","weight":"30"}
 
 Demonstrates basic use of the ButtonBar control, an iOS-only control that presents a set of buttons joined into a single control.
 
@@ -74,6 +74,6 @@ app/controllers/index.js
 
 ## See Also
 
-*   [Titanium.UI.ButtonBar](#!/api/Titanium.UI.ButtonBar)
-    
-*   [BarItemType](#!/api/BarItemType)
+* [Titanium.UI.ButtonBar](#!/api/Titanium.UI.ButtonBar)
+
+* [BarItemType](#!/api/BarItemType)

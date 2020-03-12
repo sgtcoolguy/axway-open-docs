@@ -1,43 +1,43 @@
-{"title":"Attributed Strings","weight":"80"} 
+{"title":"Attributed Strings","weight":"80"}
 
-*   [Introduction](#Introduction)
-    
-*   [Creating an attributed string](#Creatinganattributedstring)
-    
-*   [Types of attributes](#Typesofattributes)
-    
-    *   [Font](#Font)
-        
-    *   [Foreground color](#Foregroundcolor)
-        
-    *   [Background color](#Backgroundcolor)
-        
-    *   [Underline](#Underline)
-        
-    *   [Strikethrough](#Strikethrough)
-        
-    *   [Links](#Links)
-        
-*   [iOS attributes](#iOSattributes)
-    
-    *   [Ligature](#Ligature)
-        
-    *   [Kerning](#Kerning)
-        
-    *   [Stroke text](#Stroketext)
-        
-    *   [Shadow](#Shadow)
-        
-    *   [Letterpress effect](#Letterpresseffect)
-        
-    *   [Text direction](#Textdirection)
-        
-    *   [Baseline](#Baseline)
-        
-    *   [Oblique](#Oblique)
-        
-    *   [Stretch](#Stretch)
-        
+* [Introduction](#Introduction)
+
+* [Creating an attributed string](#Creatinganattributedstring)
+
+* [Types of attributes](#Typesofattributes)
+
+  * [Font](#Font)
+
+  * [Foreground color](#Foregroundcolor)
+
+  * [Background color](#Backgroundcolor)
+
+  * [Underline](#Underline)
+
+  * [Strikethrough](#Strikethrough)
+
+  * [Links](#Links)
+
+* [iOS attributes](#iOSattributes)
+
+  * [Ligature](#Ligature)
+
+  * [Kerning](#Kerning)
+
+  * [Stroke text](#Stroketext)
+
+  * [Shadow](#Shadow)
+
+  * [Letterpress effect](#Letterpresseffect)
+
+  * [Text direction](#Textdirection)
+
+  * [Baseline](#Baseline)
+
+  * [Oblique](#Oblique)
+
+  * [Stretch](#Stretch)
+
 
 ## Introduction
 
@@ -47,25 +47,25 @@ This topic discusses how to use attributed strings on the Android and iOS platfo
 
 To create an attributed string, use the Titanium.UI.createAttributedString method to create an AttributedString object by passing in a dictionary object that specifies the text and attributes properties:
 
-*   The text property specifies the text to use.
-    
-*   The attributes property specifies an array of attribute dictionaries to apply to the text. An attribute dictionary includes the following properties:
-    
-    *   type: the text attribute to apply as a Titanium.UI.ATTRIBUTE\_\* constant.
-        
-    *   value: specifies a setting based on the type property, such as a color for a color attribute or dash style for a strikethrough or underline attribute.
-        
-    *   range: which characters to modify as an array range: \[start\_position, length\].
-        
+* The text property specifies the text to use.
+
+* The attributes property specifies an array of attribute dictionaries to apply to the text. An attribute dictionary includes the following properties:
+
+  * type: the text attribute to apply as a Titanium.UI.ATTRIBUTE\_\* constant.
+
+  * value: specifies a setting based on the type property, such as a color for a color attribute or dash style for a strikethrough or underline attribute.
+
+  * range: which characters to modify as an array range: \[start\_position, length\].
+
 
 After you have created your AttributedString object, to use it, set the attributedString property for either a Label, TextArea or TextField object.
 
-*   Setting this property on a Label is equivalent to setting the text property.
-    
-*   Setting this property on a TextArea is equivalent to setting the value property.
-    
-*   Setting this property on a TextField is equivalent to setting the value property.
-    
+* Setting this property on a Label is equivalent to setting the text property.
+
+* Setting this property on a TextArea is equivalent to setting the value property.
+
+* Setting this property on a TextField is equivalent to setting the value property.
+
 
 You can also assign the AttributedString object to TextField's attributedHintText property, which is equivalent to setting the hintText property.
 
@@ -207,29 +207,29 @@ For Android, you do not need to specify the value property. If set, the property
 
 For iOS, set the value property to a Titanium.UI.ATTRIBUTE\_UNDERLINE\_\* constant describing the style of the horizontal line:
 
-*   Titanium.UI.ATTRIBUTE\_UNDERLINE\_STYLE\_NONE: does not draw a line
-    
-*   Titanium.UI.ATTRIBUTE\_UNDERLINE\_STYLE\_SINGLE: draws a single line
-    
+* Titanium.UI.ATTRIBUTE\_UNDERLINE\_STYLE\_NONE: does not draw a line
+
+* Titanium.UI.ATTRIBUTE\_UNDERLINE\_STYLE\_SINGLE: draws a single line
+
 
 Supported on iOS 7 and later:
 
-*   Titanium.UI.ATTRIBUTE\_UNDERLINE\_STYLE\_THICK: draws a think line
-    
-*   Titanium.UI.ATTRIBUTE\_UNDERLINE\_STYLE\_DOUBLE: draws two lines
-    
-*   Titanium.UI.ATTRIBUTE\_UNDERLINE\_PATTERN\_SOLID: draws a solid line
-    
-*   Titanium.UI.ATTRIBUTE\_UNDERLINE\_PATTERN\_DOT: draws a dotted line
-    
-*   Titanium.UI.ATTRIBUTE\_UNDERLINE\_PATTERN\_DASH: draws a dashed line
-    
-*   Titanium.UI.ATTRIBUTE\_UNDERLINE\_PATTERN\_DASH\_DOT: draws an alternating dash and dot line
-    
-*   Titanium.UI.ATTRIBUTE\_UNDERLINE\_PATTERN\_DASH\_DOT\_DOT: draws an alternating dash and two dot line
-    
-*   Titanium.UI.ATTRIBUTE\_UNDERLINE\_BY\_WORD: draw lines only under or through characters
-    
+* Titanium.UI.ATTRIBUTE\_UNDERLINE\_STYLE\_THICK: draws a think line
+
+* Titanium.UI.ATTRIBUTE\_UNDERLINE\_STYLE\_DOUBLE: draws two lines
+
+* Titanium.UI.ATTRIBUTE\_UNDERLINE\_PATTERN\_SOLID: draws a solid line
+
+* Titanium.UI.ATTRIBUTE\_UNDERLINE\_PATTERN\_DOT: draws a dotted line
+
+* Titanium.UI.ATTRIBUTE\_UNDERLINE\_PATTERN\_DASH: draws a dashed line
+
+* Titanium.UI.ATTRIBUTE\_UNDERLINE\_PATTERN\_DASH\_DOT: draws an alternating dash and dot line
+
+* Titanium.UI.ATTRIBUTE\_UNDERLINE\_PATTERN\_DASH\_DOT\_DOT: draws an alternating dash and two dot line
+
+* Titanium.UI.ATTRIBUTE\_UNDERLINE\_BY\_WORD: draw lines only under or through characters
+
 
 You can logically-OR more than one constant together to use more than one style or pattern.
 
@@ -461,12 +461,12 @@ To change the color of the text, set the type property to Titanium.UI.ATTRIBUTE\
 
 To add a shadow effect to part of your string, in the attribute dictionary, set the type property to Titanium.UI.ATTRIBUTE\_SHADOW and the value property to a dictionary describing the shadow with the following properties:
 
-*   blurRadius (iOS 7 and later): specifies the blur radius of the shadow. 0 means no blur.
-    
-*   color: color name or hex triplet specifying the color of the shadow.
-    
-*   offset: dictionary with the properties width and height used as the horizontal and vertical offset of the shadow, respectively.
-    
+* blurRadius (iOS 7 and later): specifies the blur radius of the shadow. 0 means no blur.
+
+* color: color name or hex triplet specifying the color of the shadow.
+
+* offset: dictionary with the properties width and height used as the horizontal and vertical offset of the shadow, respectively.
+
 
 ![Shadow](/Images/appc/download/attachments/37538231/Shadow.png)
 
@@ -526,19 +526,19 @@ Supported on iOS 7 and later.
 
 To change the direction of part of your string, in the attribute dictionary, set the type property to Titanium.UI.ATTRIBUTE\_WRITING\_DIRECTION and the value property to a Titanium.UI.ATTRIBUTE\_WRITING\_\* constant:
 
-*   Titanium.UI.ATTRIBUTE\_WRITING\_DIRECTION\_NATURAL: use the [Unicode Bidirection Algorithm rules P2 and P3](http://www.unicode.org/reports/tr9/#The_Paragraph_Level) to determine which direction to use
-    
-*   Titanium.UI.ATTRIBUTE\_WRITING\_DIRECTION\_LEFT\_TO\_RIGHT: write the text from left to right
-    
-*   Titanium.UI.ATTRIBUTE\_WRITING\_DIRECTION\_RIGHT\_TO\_LEFT: write the text from right to left
-    
+* Titanium.UI.ATTRIBUTE\_WRITING\_DIRECTION\_NATURAL: use the [Unicode Bidirection Algorithm rules P2 and P3](http://www.unicode.org/reports/tr9/#The_Paragraph_Level) to determine which direction to use
+
+* Titanium.UI.ATTRIBUTE\_WRITING\_DIRECTION\_LEFT\_TO\_RIGHT: write the text from left to right
+
+* Titanium.UI.ATTRIBUTE\_WRITING\_DIRECTION\_RIGHT\_TO\_LEFT: write the text from right to left
+
 
 You can logically-OR the previous writing direction constants with one of the below constants to specify the writing direction behavior:
 
-*   Titanium.UI.ATTRIBUTE\_WRITING\_DIRECTION\_EMBEDDING: use the embedded direction of the text
-    
-*   Titanium.UI.ATTRIBUTE\_WRITING\_DIRECTION\_OVERRIDE: override the embedded direction of the text and force the direction
-    
+* Titanium.UI.ATTRIBUTE\_WRITING\_DIRECTION\_EMBEDDING: use the embedded direction of the text
+
+* Titanium.UI.ATTRIBUTE\_WRITING\_DIRECTION\_OVERRIDE: override the embedded direction of the text and force the direction
+
 
 ![Direction](/Images/appc/download/attachments/37538231/Direction.png)
 

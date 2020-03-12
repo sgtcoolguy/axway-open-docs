@@ -1,37 +1,37 @@
-{"title":"iOS Hyperloop Programming Guide","weight":"30"} 
+{"title":"iOS Hyperloop Programming Guide","weight":"30"}
 
-*   [Requirements](#Requirements)
-    
-*   [Classes](#Classes)
-    
-*   [Instantiation](#Instantiation)
-    
-*   [Methods and properties](#Methodsandproperties)
-    
-*   [Named methods](#Namedmethods)
-    
-*   [Constants, enumerations, and functions](#Constants,enumerations,andfunctions)
-    
-*   [Casting](#Casting)
-    
-*   [Blocks](#Blocks)
-    
-*   [Function pointers](#Functionpointers)
-    
-*   [Creating your own classes](#Creatingyourownclasses)
-    
-*   [Using third-party libraries](#Usingthird-partylibraries)
-    
-    *   [CocoaPods](#CocoaPods)
-        
-    *   [Custom frameworks and libraries](#Customframeworksandlibraries)
-        
-    *   [Using Swift](#UsingSwift)
-        
-    *   [Customizing your Xcode build](#CustomizingyourXcodebuild)
-        
-*   [Resources](#Resources)
-    
+* [Requirements](#Requirements)
+
+* [Classes](#Classes)
+
+* [Instantiation](#Instantiation)
+
+* [Methods and properties](#Methodsandproperties)
+
+* [Named methods](#Namedmethods)
+
+* [Constants, enumerations, and functions](#Constants,enumerations,andfunctions)
+
+* [Casting](#Casting)
+
+* [Blocks](#Blocks)
+
+* [Function pointers](#Functionpointers)
+
+* [Creating your own classes](#Creatingyourownclasses)
+
+* [Using third-party libraries](#Usingthird-partylibraries)
+
+  * [CocoaPods](#CocoaPods)
+
+  * [Custom frameworks and libraries](#Customframeworksandlibraries)
+
+  * [Using Swift](#UsingSwift)
+
+  * [Customizing your Xcode build](#CustomizingyourXcodebuild)
+
+* [Resources](#Resources)
+
 
 This document provides information on iOS Hyperloop programming requirements, classes, instantiation, methods and properties, named methods, constants, enumerations, and functions, casting, blocks, function pointers, creating your own classes, using 3rd party libraries, and additional resources.
 
@@ -225,10 +225,10 @@ You can now add methods:
 
 Hyperloop supports the following set of properties for adding methods:
 
-*   arguments can be either an Array or String of argument types (which can be either Objective-C encoding types or general type names such as float or int).
-    
-*   returnType can be a String return type (which can be either Objective-C encoding types or general type names such as float or int). If no return is required (a void return type), you can omit the returnType property altogether and void will be implied.
-    
+* arguments can be either an Array or String of argument types (which can be either Objective-C encoding types or general type names such as float or int).
+
+* returnType can be a String return type (which can be either Objective-C encoding types or general type names such as float or int). If no return is required (a void return type), you can omit the returnType property altogether and void will be implied.
+
 
 Another example with multiple arguments using simplified types:
 
@@ -352,12 +352,12 @@ appc.js
 
 `};`
 
-*   The source property can be either an Array or String of source directories to include in the compile. This is optional.
-    
-*   The header property can be either an Array or String of header directories to include in the compile. This is required.
-    
-*   The resource property can be either an Array or String of resource directories to search for resources or files to compile (images, story boards, xibs, etc). These files will be flattened and copied directly into the root of the application and can be loaded with NSBundle.
-    
+* The source property can be either an Array or String of source directories to include in the compile. This is optional.
+
+* The header property can be either an Array or String of header directories to include in the compile. This is required.
+
+* The resource property can be either an Array or String of resource directories to search for resources or files to compile (images, story boards, xibs, etc). These files will be flattened and copied directly into the root of the application and can be loaded with NSBundle.
+
 
 To provide additional compiler flags, you can add them in the xcodebuild property of ios such as:
 
@@ -433,12 +433,12 @@ Any Xcode resources that are found in your Resources folder (for Classic project
 
 The following resources will be compiled automatically:
 
-*   Storyboard (\*.storyboard)
-    
-*   XC Data Model (\*.xcdatamodel, \*.xcdatamodeld, \*.xcmappingmodel)
-    
-*   Interface Builder (\*.xib)
-    
+* Storyboard (\*.storyboard)
+
+* XC Data Model (\*.xcdatamodel, \*.xcdatamodeld, \*.xcmappingmodel)
+
+* Interface Builder (\*.xib)
+
 
 The other resources will be copied such as PNG files.
 

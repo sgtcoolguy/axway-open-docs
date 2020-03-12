@@ -1,23 +1,23 @@
-{"title":"Supporting Multiple Platforms in a Single Codebase","weight":"50"} 
+{"title":"Supporting Multiple Platforms in a Single Codebase","weight":"50"}
 
-*   [Embrace the platform](#Embracetheplatform)
-    
-*   [Cross-platform mechanics](#Cross-platformmechanics)
-    
-    *   [Platform identification](#Platformidentification)
-        
-    *   [Platform-specific APIs and properties](#Platform-specificAPIsandproperties)
-        
-    *   [Platform-specific resources](#Platform-specificresources)
-        
-*   [Strategies and recommendations](#Strategiesandrecommendations)
-    
-    *   [Branching](#Branching)
-        
-    *   [Platform-specific JS files](#Platform-specificJSfiles)
-        
-    *   [References and Further Reading](#ReferencesandFurtherReading)
-        
+* [Embrace the platform](#Embracetheplatform)
+
+* [Cross-platform mechanics](#Cross-platformmechanics)
+
+  * [Platform identification](#Platformidentification)
+
+  * [Platform-specific APIs and properties](#Platform-specificAPIsandproperties)
+
+  * [Platform-specific resources](#Platform-specificresources)
+
+* [Strategies and recommendations](#Strategiesandrecommendations)
+
+  * [Branching](#Branching)
+
+  * [Platform-specific JS files](#Platform-specificJSfiles)
+
+  * [References and Further Reading](#ReferencesandFurtherReading)
+
 
 ## Objective
 
@@ -31,14 +31,14 @@ Titanium is not a write once, run anywhere framework. It's more aptly referred t
 
 Best of breed, native apps take full advantage of the platforms on which they run. Your Titanium apps should do more than just run on iOS and Android. When running on an iOS device, your app should feel like an iOS app. Your Android app should feel like an Android app. By this, we mean apps that:
 
-*   Follow platform UI conventions, such as tabs at the top (Android) or bottom (iOS).
-    
-*   Use hardware-specific features, such as the Android Menu button.
-    
-*   Use OS-specific controls, such left and right navigation buttons in title bars on iOS.
-    
-*   Participate in the platform ecosystem, such as using platform-appropriate notification mechanisms.
-    
+* Follow platform UI conventions, such as tabs at the top (Android) or bottom (iOS).
+
+* Use hardware-specific features, such as the Android Menu button.
+
+* Use OS-specific controls, such left and right navigation buttons in title bars on iOS.
+
+* Participate in the platform ecosystem, such as using platform-appropriate notification mechanisms.
+
 
 The best approach when creating cross-platform apps is to develop and test for both iOS and Android right from the start. Designing and developing your app with multiple platforms in mind right away will be significantly more efficient than developing for one, then porting to the next.
 
@@ -46,12 +46,12 @@ The best approach when creating cross-platform apps is to develop and test for b
 
 Before we get into the strategies you should adopt, let's look at the mechanics of handling cross-platform coding within Titanium. This includes:
 
-*   Platform identification
-    
-*   Recognizing platform-specific APIs and properties
-    
-*   Handling platform-specific resources
-    
+* Platform identification
+
+* Recognizing platform-specific APIs and properties
+
+* Handling platform-specific resources
+
 
 #### Platform identification
 
@@ -125,7 +125,7 @@ It's best practice to query the platform value once, then store it in a globally
 
 `// Booleans identifying the platforms are handy too`
 
-`var` `isAndroid = (osname==``'android'``) ?` `true` `:` `false``;`
+`var` `isAndroid = (osname ===` `'android'``) ?` `true` `:` `false``;`
 
 `if` `(isAndroid) {`
 
@@ -139,7 +139,7 @@ It's best practice to query the platform value once, then store it in a globally
 
 You can use JavaScript's [ternary operator](http://en.wikipedia.org/wiki/Ternary_operation#C.2C_Java.2C_JavaScript) when you need to branch on a specific property, like this:
 
-`var` `isAndroid = (Ti.Platform.osname=='android) ?` `true` `:` `false``;`
+`var` `isAndroid = (Ti.Platform.osname ===` `'android'``) ?` `true` `:` `false``;`
 
 `var` `win = Ti.UI.createWindow({`
 
@@ -153,7 +153,7 @@ Anti-pattern!
 
 `var` `osname = Ti.Platform.osname;`
 
-`if` `(osname !=` `'android'``) {`
+`if` `(osname !==` `'android'``) {`
 
 `// don't assume this means iOS! It could be mobile web or some future-supported platform.`
 
@@ -173,10 +173,10 @@ Using platform-specific JS files is likely to be most useful when your code is _
 
 #### References and Further Reading
 
-*   [Ti.Platform reference](#!/api/Titanium.Platform)
-    
-*   [Android UI scaling](http://developer.appcelerator.com/blog/2011/06/new-defaults-for-android-layouts-in-1-7.html)
-    
+* [Ti.Platform reference](#!/api/Titanium.Platform)
+
+* [Android UI scaling](http://developer.appcelerator.com/blog/2011/06/new-defaults-for-android-layouts-in-1-7.html)
+
 
 ## Summary
 

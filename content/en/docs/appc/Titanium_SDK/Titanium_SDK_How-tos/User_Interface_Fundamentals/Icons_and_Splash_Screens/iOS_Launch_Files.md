@@ -1,36 +1,36 @@
-{"title":"iOS Launch Files","weight":"10"} 
+{"title":"iOS Launch Files","weight":"10"}
 
-*   [What this guide is about](#Whatthisguideisabout)
-    
-*   [What are Launch Files?](#WhatareLaunchFiles?)
-    
-*   [Why use Launch Files?](#WhyuseLaunchFiles?)
-    
-*   [How to enable Launch Files?](#HowtoenableLaunchFiles?)
-    
-    *   [Option A: Use the builtin Storyboard](#OptionA:UsethebuiltinStoryboard)
-        
-        *   [Customising the image](#Customisingtheimage)
-            
-        *   [Customising the background color](#Customisingthebackgroundcolor)
-            
-    *   [Option B: Use a custom Storyboard](#OptionB:UseacustomStoryboard)
-        
-        *   [Using images](#Usingimages)
-            
-*   [Advanced use-cases](#Advanceduse-cases)
-    
-*   [Dealing with Launch File cache](#DealingwithLaunchFilecache)
-    
+* [What this guide is about](#Whatthisguideisabout)
+
+* [What are Launch Files?](#WhatareLaunchFiles?)
+
+* [Why use Launch Files?](#WhyuseLaunchFiles?)
+
+* [How to enable Launch Files?](#HowtoenableLaunchFiles?)
+
+  * [Option A: Use the builtin Storyboard](#OptionA:UsethebuiltinStoryboard)
+
+    * [Customising the image](#Customisingtheimage)
+
+    * [Customising the background color](#Customisingthebackgroundcolor)
+
+  * [Option B: Use a custom Storyboard](#OptionB:UseacustomStoryboard)
+
+    * [Using images](#Usingimages)
+
+* [Advanced use-cases](#Advanceduse-cases)
+
+* [Dealing with Launch File cache](#DealingwithLaunchFilecache)
+
 
 ## What this guide is about
 
 This guide walks you through using Launch Files instead of traditional Launch Images for iOS. It was originally published as [blog post](http://www.appcelerator.com/blog/2016/02/titanium-5-2-0-launch-files-ipad-pro-slide-over-and-split-view/) and is illustrated by the [Titanium 5.2.0 Sample App](https://github.com/appcelerator-developer-relations/appc-sample-ti520) .
 
-*   **Minimum Titanium SDK version:** 5.2.0
-    
-*   **Minimum iOS SDK version:** 8.0
-    
+* **Minimum Titanium SDK version:** 5.2.0
+
+* **Minimum iOS SDK version:** 8.0
+
 
 ## What are Launch Files?
 
@@ -152,10 +152,10 @@ As you modify the (custom) storyboard, you might not always see your changes imm
 
 To deal with this follow these steps before you build:
 
-1.  Use _Simulator > Reset Content and Settings…_
-    
-2.  Use _Project > Clean…_ or appc ti clean from CLI.
-    
+1. Use _Simulator > Reset Content and Settings…_
+
+2. Use _Project > Clean…_ or appc ti clean from CLI.
+
 
 Alternatively you can reset an individual app using a tool like [SimPholders](https://simpholders.com/). With this app, just hold alt/⌥ and click the app from the dropdown:
 

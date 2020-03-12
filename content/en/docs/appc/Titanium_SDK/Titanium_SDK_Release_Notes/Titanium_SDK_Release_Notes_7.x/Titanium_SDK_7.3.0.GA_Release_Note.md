@@ -1,53 +1,53 @@
-{"title":"Titanium SDK 7.3.0.GA - 17 August 2018","weight":"150"} 
+{"title":"Titanium SDK 7.3.0.GA - 17 August 2018","weight":"150"}
 
-*   [About this release](#Aboutthisrelease)
-    
-*   [Notice of feature and behavior Changes](#NoticeoffeatureandbehaviorChanges)
-    
-    *   [Windows platform](#Windowsplatform)
-        
-    *   [Multiple platforms](#Multipleplatforms)
-        
-*   [New features](#Newfeatures)
-    
-    *   [Android platform](#Androidplatform)
-        
-    *   [iOS platform](#iOSplatform)
-        
-    *   [Windows platform](#Windowsplatform.1)
-        
-    *   [Multiple platforms](#Multipleplatforms.1)
-        
-*   [Community credits](#Communitycredits)
-    
-*   [Fixed issues](#Fixedissues)
-    
-    *   [Android platform](#Androidplatform.1)
-        
-    *   [iOS platform](#iOSplatform.1)
-        
-    *   [Windows platform](#Windowsplatform.2)
-        
-    *   [Multiple platforms](#Multipleplatforms.2)
-        
-*   [Improvements](#Improvements)
-    
-    *   [Android platform](#Androidplatform.2)
-        
-    *   [iOS platform](#iOSplatform.2)
-        
-    *   [Windows platform](#Windowsplatform.3)
-        
-    *   [Multiple platforms](#Multipleplatforms.3)
-        
-*   [API changes](#APIchanges)
-    
-    *   [New APIs](#NewAPIs)
-        
-    *   [Deprecated APIs](#DeprecatedAPIs)
-        
-*   [Sample app for Titanium 7.3.0](#SampleappforTitanium7.3.0)
-    
+* [About this release](#Aboutthisrelease)
+
+* [Notice of feature and behavior Changes](#NoticeoffeatureandbehaviorChanges)
+
+  * [Windows platform](#Windowsplatform)
+
+  * [Multiple platforms](#Multipleplatforms)
+
+* [New features](#Newfeatures)
+
+  * [Android platform](#Androidplatform)
+
+  * [iOS platform](#iOSplatform)
+
+  * [Windows platform](#Windowsplatform.1)
+
+  * [Multiple platforms](#Multipleplatforms.1)
+
+* [Community credits](#Communitycredits)
+
+* [Fixed issues](#Fixedissues)
+
+  * [Android platform](#Androidplatform.1)
+
+  * [iOS platform](#iOSplatform.1)
+
+  * [Windows platform](#Windowsplatform.2)
+
+  * [Multiple platforms](#Multipleplatforms.2)
+
+* [Improvements](#Improvements)
+
+  * [Android platform](#Androidplatform.2)
+
+  * [iOS platform](#iOSplatform.2)
+
+  * [Windows platform](#Windowsplatform.3)
+
+  * [Multiple platforms](#Multipleplatforms.3)
+
+* [API changes](#APIchanges)
+
+  * [New APIs](#NewAPIs)
+
+  * [Deprecated APIs](#DeprecatedAPIs)
+
+* [Sample app for Titanium 7.3.0](#SampleappforTitanium7.3.0)
+
 
 ## About this release
 
@@ -59,479 +59,479 @@ As of this release, Titanium SDK 7.2.x will not be supported six months from 7.3
 
 ### Windows platform
 
-*   [TIMOB-26072](https://jira.appcelerator.org/browse/TIMOB-26072) - Windows: Using a ScaleTransform Messes with Events
-    
-    *   Revised 2DMatrix rotation, scale, and event source
-        
-*   [TIMOB-26106](https://jira.appcelerator.org/browse/TIMOB-26106) - Windows: Update module apiversion to 6
-    
-    *   Updated apiversion to use "6" for SDK 7.3.0
-        
+* [TIMOB-26072](https://jira.appcelerator.org/browse/TIMOB-26072) - Windows: Using a ScaleTransform Messes with Events
+
+  * Revised 2DMatrix rotation, scale, and event source
+
+* [TIMOB-26106](https://jira.appcelerator.org/browse/TIMOB-26106) - Windows: Update module apiversion to 6
+
+  * Updated apiversion to use "6" for SDK 7.3.0
+
 
 ### Multiple platforms
 
-*   [TIMOB-25992](https://jira.appcelerator.org/browse/TIMOB-25992) - Add default clang-format to the Android/iOS module template
-    
-    *   Add clang-format to the default modules template
-        
-*   [TIMOB-26009](https://jira.appcelerator.org/browse/TIMOB-26009) - Update Ti.Map modules (iOS 3.1.0, Android 4.2.0)
-    
-    *   Updated Ti.Map modules to include the following:
-        
-        *   Added image overlay and padding support for iOS and Android
-            
-        *   [Android: Fixed map animation crash  
-            ](https://jira.appcelerator.org/browse/MOD-2416)
-            
+* [TIMOB-25992](https://jira.appcelerator.org/browse/TIMOB-25992) - Add default clang-format to the Android/iOS module template
+
+  * Add clang-format to the default modules template
+
+* [TIMOB-26009](https://jira.appcelerator.org/browse/TIMOB-26009) - Update Ti.Map modules (iOS 3.1.0, Android 4.2.0)
+
+  * Updated Ti.Map modules to include the following:
+
+    * Added image overlay and padding support for iOS and Android
+
+    * [Android: Fixed map animation crash
+      ](https://jira.appcelerator.org/browse/MOD-2416)
+
 
 ## New features
 
 ### Android platform
 
-*   [TIMOB-16066](https://jira.appcelerator.org/browse/TIMOB-16066) - Android: Add "foreground" service support
-    
-    *   Added foreground service support
-        
-*   [TIMOB-17363](https://jira.appcelerator.org/browse/TIMOB-17363) - Android: Add "Ti.UI.MaskedImage" support
-    
-    *   Implemented Ti.UI.MaskedImage
-        
-*   [TIMOB-25795](https://jira.appcelerator.org/browse/TIMOB-25795) - Hyperloop: Android - Expose all missing Android R resource types to Ti.Android.R
-    
-    *   Added support for the following Ti.Android.R.menu properties:
-        
-        *   animator
-            
-        *   bool
-            
-        *   fraction
-            
-        *   interpolator
-            
-        *   menu
-            
-        *   mipmap
-            
-        *   plurals
-            
-        *   raw
-            
-        *   transition
-            
-        *   xml
-            
+* [TIMOB-16066](https://jira.appcelerator.org/browse/TIMOB-16066) - Android: Add "foreground" service support
+
+  * Added foreground service support
+
+* [TIMOB-17363](https://jira.appcelerator.org/browse/TIMOB-17363) - Android: Add "Ti.UI.MaskedImage" support
+
+  * Implemented Ti.UI.MaskedImage
+
+* [TIMOB-25795](https://jira.appcelerator.org/browse/TIMOB-25795) - Hyperloop: Android - Expose all missing Android R resource types to Ti.Android.R
+
+  * Added support for the following Ti.Android.R.menu properties:
+
+    * animator
+
+    * bool
+
+    * fraction
+
+    * interpolator
+
+    * menu
+
+    * mipmap
+
+    * plurals
+
+    * raw
+
+    * transition
+
+    * xml
+
 
 ### iOS platform
 
-*   [TIMOB-23527](https://jira.appcelerator.org/browse/TIMOB-23527) - iOS10: Support the UserNotifications framework
-    
-    *   Added support for UserNotifications framework
-        
-*   [TIMOB-25302](https://jira.appcelerator.org/browse/TIMOB-25302) - iPhone X: Add new home-indicator related API's
-    
-    *   Added new home-indicator related APIs
-        
-*   [TIMOB-25684](https://jira.appcelerator.org/browse/TIMOB-25684) - iOS: Expose UIInterpolatingMotionEffect Horizontal and Vertical
-    
-    *   Added home screen-like parallax effect to views based on [Marcel Pociot's module](https://github.com/mpociot/TiMotionEffects)
-        
-*   [TIMOB-26016](https://jira.appcelerator.org/browse/TIMOB-26016) - iOS 11: Expose "showsBackgroundLocationIndicator" property on Ti.Geolocation
-    
-    *   Added support for showBackgroundLocationIndicator property for background location monitoring
-        
+* [TIMOB-23527](https://jira.appcelerator.org/browse/TIMOB-23527) - iOS10: Support the UserNotifications framework
+
+  * Added support for UserNotifications framework
+
+* [TIMOB-25302](https://jira.appcelerator.org/browse/TIMOB-25302) - iPhone X: Add new home-indicator related API's
+
+  * Added new home-indicator related APIs
+
+* [TIMOB-25684](https://jira.appcelerator.org/browse/TIMOB-25684) - iOS: Expose UIInterpolatingMotionEffect Horizontal and Vertical
+
+  * Added home screen-like parallax effect to views based on [Marcel Pociot's module](https://github.com/mpociot/TiMotionEffects)
+
+* [TIMOB-26016](https://jira.appcelerator.org/browse/TIMOB-26016) - iOS 11: Expose "showsBackgroundLocationIndicator" property on Ti.Geolocation
+
+  * Added support for showBackgroundLocationIndicator property for background location monitoring
+
 
 ### Windows platform
 
-*   [TIMOB-25908](https://jira.appcelerator.org/browse/TIMOB-25908) - Windows: require/import with namespace for Hyperloop
-    
-    *   Added ability to require with namespace
-        
-*   [TIMOB-25923](https://jira.appcelerator.org/browse/TIMOB-25923) - Windows: More options for Logo / Splash Screen
-    
-    *   Added more options for logo and splash screens
-        
-*   [TIMOB-25933](https://jira.appcelerator.org/browse/TIMOB-25933) - Windows: Implement Ti.UI.TextField.padding
-    
-    *   Implemented Ti.UI.TextField.padding
-        
-*   [TIMOB-25946](https://jira.appcelerator.org/browse/TIMOB-25946) - Windows: Implement Ti.UI.TextArea.padding
-    
-    *   Implemented Ti.UI.TextArea.padding
-        
+* [TIMOB-25908](https://jira.appcelerator.org/browse/TIMOB-25908) - Windows: require/import with namespace for Hyperloop
+
+  * Added ability to require with namespace
+
+* [TIMOB-25923](https://jira.appcelerator.org/browse/TIMOB-25923) - Windows: More options for Logo / Splash Screen
+
+  * Added more options for logo and splash screens
+
+* [TIMOB-25933](https://jira.appcelerator.org/browse/TIMOB-25933) - Windows: Implement Ti.UI.TextField.padding
+
+  * Implemented Ti.UI.TextField.padding
+
+* [TIMOB-25946](https://jira.appcelerator.org/browse/TIMOB-25946) - Windows: Implement Ti.UI.TextArea.padding
+
+  * Implemented Ti.UI.TextArea.padding
+
 
 ### Multiple platforms
 
-*   [TIMOB-23247](https://jira.appcelerator.org/browse/TIMOB-23247) - CLI: ti clean does not work for native module projects
-    
-    *   Updated ti clean to work with native module projects
-        
-    *   One should note that with this command update, you need to keep historical version of your module in your dist folder in a safe place (e.g. source control). Running this updated command will wipe out anything in the dist folder.
-        
-    *   Best practice: don't use releases as a means of archiving. Releases should be published in a stable location such as Github, S3, etc. But, if you wish to keep old releases in the module, you should consider using a different folder to archive your content in the dist folder and commit that zip to your source control before cleaning.
-        
-*   [TIMOB-24982](https://jira.appcelerator.org/browse/TIMOB-24982) - iOS/Android: Add zoomLevel to Ti.UI.WebView
-    
-    *   Added zoomLevel to Ti.UI.WebView
-        
+* [TIMOB-23247](https://jira.appcelerator.org/browse/TIMOB-23247) - CLI: ti clean does not work for native module projects
+
+  * Updated ti clean to work with native module projects
+
+  * One should note that with this command update, you need to keep historical version of your module in your dist folder in a safe place (e.g. source control). Running this updated command will wipe out anything in the dist folder.
+
+  * Best practice: don't use releases as a means of archiving. Releases should be published in a stable location such as Github, S3, etc. But, if you wish to keep old releases in the module, you should consider using a different folder to archive your content in the dist folder and commit that zip to your source control before cleaning.
+
+* [TIMOB-24982](https://jira.appcelerator.org/browse/TIMOB-24982) - iOS/Android: Add zoomLevel to Ti.UI.WebView
+
+  * Added zoomLevel to Ti.UI.WebView
+
 
 ## Community credits
 
-*   [Michael Gangolf](https://github.com/m1ga) - [TIMOB-24982](https://jira.appcelerator.org/browse/TIMOB-24982), [TIMOB-25992](https://jira.appcelerator.org/browse/TIMOB-25992), [TIMOB-25418](https://jira.appcelerator.org/browse/TIMOB-25418), [TIMOB-25668](https://jira.appcelerator.org/browse/TIMOB-25668)
-    
-*   [David Bankier](https://github.com/dbankier) - [TIMOB-25950](https://jira.appcelerator.org/browse/TIMOB-25950)
-    
-*   [Carlos Henrique Zinato](https://github.com/chmiiller) - [TIMOB-25684](https://jira.appcelerator.org/browse/TIMOB-25684)
-    
-*   Emmanuel Francis - [TIMOB-26016](https://jira.appcelerator.org/browse/TIMOB-26016)
-    
-*   [Dawson Toth](https://github.com/dawsontoth) - [TIMOB-5996](https://jira.appcelerator.org/browse/TIMOB-5996)
-    
-*   Campbell Anderson - [TIMOB-17889](https://jira.appcelerator.org/browse/TIMOB-17889)
-    
-*   Joren Vos - [TIMOB-25917](https://jira.appcelerator.org/browse/TIMOB-25917)
-    
-*   Yahya Muhammad Uddin - [TIMOB-25819](https://jira.appcelerator.org/browse/TIMOB-25819)
-    
-*   [Luc-Edmond Gaspard](https://github.com/gaspardle) - [TIMOB-26187](https://jira.appcelerator.org/browse/TIMOB-26187)
-    
+* [Michael Gangolf](https://github.com/m1ga) - [TIMOB-24982](https://jira.appcelerator.org/browse/TIMOB-24982), [TIMOB-25992](https://jira.appcelerator.org/browse/TIMOB-25992), [TIMOB-25418](https://jira.appcelerator.org/browse/TIMOB-25418), [TIMOB-25668](https://jira.appcelerator.org/browse/TIMOB-25668)
+
+* [David Bankier](https://github.com/dbankier) - [TIMOB-25950](https://jira.appcelerator.org/browse/TIMOB-25950)
+
+* [Carlos Henrique Zinato](https://github.com/chmiiller) - [TIMOB-25684](https://jira.appcelerator.org/browse/TIMOB-25684)
+
+* Emmanuel Francis - [TIMOB-26016](https://jira.appcelerator.org/browse/TIMOB-26016)
+
+* [Dawson Toth](https://github.com/dawsontoth) - [TIMOB-5996](https://jira.appcelerator.org/browse/TIMOB-5996)
+
+* Campbell Anderson - [TIMOB-17889](https://jira.appcelerator.org/browse/TIMOB-17889)
+
+* Joren Vos - [TIMOB-25917](https://jira.appcelerator.org/browse/TIMOB-25917)
+
+* Yahya Muhammad Uddin - [TIMOB-25819](https://jira.appcelerator.org/browse/TIMOB-25819)
+
+* [Luc-Edmond Gaspard](https://github.com/gaspardle) - [TIMOB-26187](https://jira.appcelerator.org/browse/TIMOB-26187)
+
 
 ## Fixed issues
 
 ### Android platform
 
-*   [TIMOB-15249](https://jira.appcelerator.org/browse/TIMOB-15249) - Android: TableView header and footer cannot be removed or resized dynamically
-    
-*   [TIMOB-15780](https://jira.appcelerator.org/browse/TIMOB-15780) - Android: ScrollableView.setCurrentPage() fires "scrollend" event when it shouldn't
-    
-*   [TIMOB-16596](https://jira.appcelerator.org/browse/TIMOB-16596) - Android: Animation anchorPoints not working
-    
-*   [TIMOB-16878](https://jira.appcelerator.org/browse/TIMOB-16878) - Android: ScrollableView ignores root child view's layout properties
-    
-*   [TIMOB-19822](https://jira.appcelerator.org/browse/TIMOB-19822) - Android: Picker spinner columns and its items are not sized/positioned correctly on Android 5.0 and higher
-    
-*   [TIMOB-20367](https://jira.appcelerator.org/browse/TIMOB-20367) - Android: TiHTTPClient leaking files when response > 512K
-    
-*   [TIMOB-24138](https://jira.appcelerator.org/browse/TIMOB-24138) - Android: TextField/TextArea should not receive focus by default when a window is opened
-    
-*   [TIMOB-25219](https://jira.appcelerator.org/browse/TIMOB-25219) - Android: FileNotFoundExceptions should not be inside the Titanium log
-    
-*   [TIMOB-25231](https://jira.appcelerator.org/browse/TIMOB-25231) - Android: Ti.Filesystem.resourcesDirectory returns different list on device
-    
-*   [TIMOB-25431](https://jira.appcelerator.org/browse/TIMOB-25431) - Android: java.lang.ClassCastException: ti.modules.titanium.ui.widget.TiUILabel$1 cannot be cast to android.view.ViewGroup;
-    
-*   [TIMOB-25503](https://jira.appcelerator.org/browse/TIMOB-25503) - Android: can not use a CardView inside an ItemTemplate
-    
-*   [TIMOB-25539](https://jira.appcelerator.org/browse/TIMOB-25539) - Android: ScrollableView with border crashes as of 6.1.0
-    
-*   [TIMOB-25625](https://jira.appcelerator.org/browse/TIMOB-25625) - Android: ScrollableView left/right page arrows are not density scaled
-    
-*   [TIMOB-25626](https://jira.appcelerator.org/browse/TIMOB-25626) - Android: ScrollableView Ti.UI.SIZE is ignored for width
-    
-*   [TIMOB-25634](https://jira.appcelerator.org/browse/TIMOB-25634) - Android: ScrollableView "cacheSize" cannot by dynamically changed
-    
-*   [TIMOB-25636](https://jira.appcelerator.org/browse/TIMOB-25636) - Android: Calling ScrollableView's setters causes a crash if parent window is closed as of 7.0.0
-    
-*   [TIMOB-25685](https://jira.appcelerator.org/browse/TIMOB-25685) - Android: TabGroup 'close' event is never fired
-    
-*   [TIMOB-25755](https://jira.appcelerator.org/browse/TIMOB-25755) - Android: WebView should prompt user for client certificate if requested by server  
-    
-*   [TIMOB-25770](https://jira.appcelerator.org/browse/TIMOB-25770) - Android: requestThumbnailImagesAtTimes() does not work with remote content
-    
-*   [TIMOB-25792](https://jira.appcelerator.org/browse/TIMOB-25792) - Android: Scrolling horizontal ScrollView within a vertical ScrollView should disable vertical scrolling
-    
-*   [TIMOB-25805](https://jira.appcelerator.org/browse/TIMOB-25805) - Android: appc info show a leading 0 before NDK Path
-    
-*   [TIMOB-25819](https://jira.appcelerator.org/browse/TIMOB-25819) - Android: ScrollView starts at the wrong location if it contains a ListView
-    
-*   [TIMOB-25826](https://jira.appcelerator.org/browse/TIMOB-25826) - Android: Error requiring a file by relative path where module.exports is a falsey value
-    
-*   [TIMOB-25835](https://jira.appcelerator.org/browse/TIMOB-25835) - Android: Animation with border radius doesn't works properly
-    
-*   [TIMOB-25867](https://jira.appcelerator.org/browse/TIMOB-25867) - Android: Running an application through CLI flickers it's main activity at launch.
-    
-*   [TIMOB-25869](https://jira.appcelerator.org/browse/TIMOB-25869) - Android: Sending Push results in a crash
-    
-*   [TIMOB-25888](https://jira.appcelerator.org/browse/TIMOB-25888) - Android: getEventsBetweenDates() crashes
-    
-*   [TIMOB-25910](https://jira.appcelerator.org/browse/TIMOB-25910) - Android: Memory leak when using TextFields in TableView rows
-    
-*   [TIMOB-25919](https://jira.appcelerator.org/browse/TIMOB-25919) - Android: OptionDialog not firing "click" event for cancel button like iOS
-    
-*   [TIMOB-25964](https://jira.appcelerator.org/browse/TIMOB-25964) - Android: Merge manifest of Android Libraries
-    
-*   [TIMOB-25970](https://jira.appcelerator.org/browse/TIMOB-25970) - Android: 'postlayout' event not working for Picker with type Titanium.UI.PICKER\_TYPE\_DATE
-    
-*   [TIMOB-25974](https://jira.appcelerator.org/browse/TIMOB-25974) - Android: Ti.Geolocation updates rarely on Android 8.0 while app is backgrounded
-    
-*   [TIMOB-25977](https://jira.appcelerator.org/browse/TIMOB-25977) - Android: AlertDialog not firing "click" event when canceled
-    
-*   [TIMOB-25990](https://jira.appcelerator.org/browse/TIMOB-25990) - Android apps crash when trying to add views to Titanium.Media.VideoPlayer objects if fullscreen property is set to true.
-    
-*   [TIMOB-26010](https://jira.appcelerator.org/browse/TIMOB-26010) - Android: TiHTTPClient getResponseHeader throws a NullPointerException
-    
-*   [TIMOB-26055](https://jira.appcelerator.org/browse/TIMOB-26055) - Android: Build fails due to invalid character '$' in android manifest with facebook & liveview with 7.3.0 SDK
-    
-*   [TIMOB-26126](https://jira.appcelerator.org/browse/TIMOB-26126) - Android: Update emulator tooling path
-    
-*   [TIMOB-26131](https://jira.appcelerator.org/browse/TIMOB-26131) - Android: SDK is wrongly adding core "Google Play Services" libraries as of 7.1.0
-    
-*   [TIMOB-26134](https://jira.appcelerator.org/browse/TIMOB-26134) - Android: Crashes when importing Ti.CloudPush in 7.2.0 SDK
-    
-*   [TIMOB-26151](https://jira.appcelerator.org/browse/TIMOB-26151) - [Ti.Platform.id](http://Ti.Platform.id) not working on Android in 7.2.0.GA (works on 7.1.1.GA)
-    
-*   [TIMOB-26157](https://jira.appcelerator.org/browse/TIMOB-26157) - Android: A semi-transparent or modal Window with a fixed orientation crashes on Android 8
-    
-*   [TIMOB-26163](https://jira.appcelerator.org/browse/TIMOB-26163) - Android: Ti.Geolocation - Exception when using FusedLocationProvider
-    
-*   [TIMOB-26167](https://jira.appcelerator.org/browse/TIMOB-26167) - Android: Cannot edit TextField/TextArea while in a ScrollView as of 7.3.0
-    
-*   [TIMOB-26172](https://jira.appcelerator.org/browse/TIMOB-26172) - Android: "focus" and "blur" events bubbles to parent views when it shouldn't
-    
-*   [TIMOB-26187](https://jira.appcelerator.org/browse/TIMOB-26187) - Android: CardView not visible when borderRadius is set
-    
-*   [TIMOB-26242](https://jira.appcelerator.org/browse/TIMOB-26242) - Android: Change in memory behavior
-    
+* [TIMOB-15249](https://jira.appcelerator.org/browse/TIMOB-15249) - Android: TableView header and footer cannot be removed or resized dynamically
+
+* [TIMOB-15780](https://jira.appcelerator.org/browse/TIMOB-15780) - Android: ScrollableView.setCurrentPage() fires "scrollend" event when it shouldn't
+
+* [TIMOB-16596](https://jira.appcelerator.org/browse/TIMOB-16596) - Android: Animation anchorPoints not working
+
+* [TIMOB-16878](https://jira.appcelerator.org/browse/TIMOB-16878) - Android: ScrollableView ignores root child view's layout properties
+
+* [TIMOB-19822](https://jira.appcelerator.org/browse/TIMOB-19822) - Android: Picker spinner columns and its items are not sized/positioned correctly on Android 5.0 and higher
+
+* [TIMOB-20367](https://jira.appcelerator.org/browse/TIMOB-20367) - Android: TiHTTPClient leaking files when response > 512K
+
+* [TIMOB-24138](https://jira.appcelerator.org/browse/TIMOB-24138) - Android: TextField/TextArea should not receive focus by default when a window is opened
+
+* [TIMOB-25219](https://jira.appcelerator.org/browse/TIMOB-25219) - Android: FileNotFoundExceptions should not be inside the Titanium log
+
+* [TIMOB-25231](https://jira.appcelerator.org/browse/TIMOB-25231) - Android: Ti.Filesystem.resourcesDirectory returns different list on device
+
+* [TIMOB-25431](https://jira.appcelerator.org/browse/TIMOB-25431) - Android: java.lang.ClassCastException: ti.modules.titanium.ui.widget.TiUILabel$1 cannot be cast to android.view.ViewGroup;
+
+* [TIMOB-25503](https://jira.appcelerator.org/browse/TIMOB-25503) - Android: can not use a CardView inside an ItemTemplate
+
+* [TIMOB-25539](https://jira.appcelerator.org/browse/TIMOB-25539) - Android: ScrollableView with border crashes as of 6.1.0
+
+* [TIMOB-25625](https://jira.appcelerator.org/browse/TIMOB-25625) - Android: ScrollableView left/right page arrows are not density scaled
+
+* [TIMOB-25626](https://jira.appcelerator.org/browse/TIMOB-25626) - Android: ScrollableView Ti.UI.SIZE is ignored for width
+
+* [TIMOB-25634](https://jira.appcelerator.org/browse/TIMOB-25634) - Android: ScrollableView "cacheSize" cannot by dynamically changed
+
+* [TIMOB-25636](https://jira.appcelerator.org/browse/TIMOB-25636) - Android: Calling ScrollableView's setters causes a crash if parent window is closed as of 7.0.0
+
+* [TIMOB-25685](https://jira.appcelerator.org/browse/TIMOB-25685) - Android: TabGroup 'close' event is never fired
+
+* [TIMOB-25755](https://jira.appcelerator.org/browse/TIMOB-25755) - Android: WebView should prompt user for client certificate if requested by server
+
+* [TIMOB-25770](https://jira.appcelerator.org/browse/TIMOB-25770) - Android: requestThumbnailImagesAtTimes() does not work with remote content
+
+* [TIMOB-25792](https://jira.appcelerator.org/browse/TIMOB-25792) - Android: Scrolling horizontal ScrollView within a vertical ScrollView should disable vertical scrolling
+
+* [TIMOB-25805](https://jira.appcelerator.org/browse/TIMOB-25805) - Android: appc info show a leading 0 before NDK Path
+
+* [TIMOB-25819](https://jira.appcelerator.org/browse/TIMOB-25819) - Android: ScrollView starts at the wrong location if it contains a ListView
+
+* [TIMOB-25826](https://jira.appcelerator.org/browse/TIMOB-25826) - Android: Error requiring a file by relative path where module.exports is a falsey value
+
+* [TIMOB-25835](https://jira.appcelerator.org/browse/TIMOB-25835) - Android: Animation with border radius doesn't works properly
+
+* [TIMOB-25867](https://jira.appcelerator.org/browse/TIMOB-25867) - Android: Running an application through CLI flickers it's main activity at launch.
+
+* [TIMOB-25869](https://jira.appcelerator.org/browse/TIMOB-25869) - Android: Sending Push results in a crash
+
+* [TIMOB-25888](https://jira.appcelerator.org/browse/TIMOB-25888) - Android: getEventsBetweenDates() crashes
+
+* [TIMOB-25910](https://jira.appcelerator.org/browse/TIMOB-25910) - Android: Memory leak when using TextFields in TableView rows
+
+* [TIMOB-25919](https://jira.appcelerator.org/browse/TIMOB-25919) - Android: OptionDialog not firing "click" event for cancel button like iOS
+
+* [TIMOB-25964](https://jira.appcelerator.org/browse/TIMOB-25964) - Android: Merge manifest of Android Libraries
+
+* [TIMOB-25970](https://jira.appcelerator.org/browse/TIMOB-25970) - Android: 'postlayout' event not working for Picker with type Titanium.UI.PICKER\_TYPE\_DATE
+
+* [TIMOB-25974](https://jira.appcelerator.org/browse/TIMOB-25974) - Android: Ti.Geolocation updates rarely on Android 8.0 while app is backgrounded
+
+* [TIMOB-25977](https://jira.appcelerator.org/browse/TIMOB-25977) - Android: AlertDialog not firing "click" event when canceled
+
+* [TIMOB-25990](https://jira.appcelerator.org/browse/TIMOB-25990) - Android apps crash when trying to add views to Titanium.Media.VideoPlayer objects if fullscreen property is set to true.
+
+* [TIMOB-26010](https://jira.appcelerator.org/browse/TIMOB-26010) - Android: TiHTTPClient getResponseHeader throws a NullPointerException
+
+* [TIMOB-26055](https://jira.appcelerator.org/browse/TIMOB-26055) - Android: Build fails due to invalid character '$' in android manifest with facebook & liveview with 7.3.0 SDK
+
+* [TIMOB-26126](https://jira.appcelerator.org/browse/TIMOB-26126) - Android: Update emulator tooling path
+
+* [TIMOB-26131](https://jira.appcelerator.org/browse/TIMOB-26131) - Android: SDK is wrongly adding core "Google Play Services" libraries as of 7.1.0
+
+* [TIMOB-26134](https://jira.appcelerator.org/browse/TIMOB-26134) - Android: Crashes when importing Ti.CloudPush in 7.2.0 SDK
+
+* [TIMOB-26151](https://jira.appcelerator.org/browse/TIMOB-26151) - [Ti.Platform.id](http://Ti.Platform.id) not working on Android in 7.2.0.GA (works on 7.1.1.GA)
+
+* [TIMOB-26157](https://jira.appcelerator.org/browse/TIMOB-26157) - Android: A semi-transparent or modal Window with a fixed orientation crashes on Android 8
+
+* [TIMOB-26163](https://jira.appcelerator.org/browse/TIMOB-26163) - Android: Ti.Geolocation - Exception when using FusedLocationProvider
+
+* [TIMOB-26167](https://jira.appcelerator.org/browse/TIMOB-26167) - Android: Cannot edit TextField/TextArea while in a ScrollView as of 7.3.0
+
+* [TIMOB-26172](https://jira.appcelerator.org/browse/TIMOB-26172) - Android: "focus" and "blur" events bubbles to parent views when it shouldn't
+
+* [TIMOB-26187](https://jira.appcelerator.org/browse/TIMOB-26187) - Android: CardView not visible when borderRadius is set
+
+* [TIMOB-26242](https://jira.appcelerator.org/browse/TIMOB-26242) - Android: Change in memory behavior
+
 
 ### iOS platform
 
-*   [TIMOB-16597](https://jira.appcelerator.org/browse/TIMOB-16597) - iOS: Can't create modal transparent Window
-    
-*   [TIMOB-17235](https://jira.appcelerator.org/browse/TIMOB-17235) - iOS: Window in tabGroup flicker on first open
-    
-*   [TIMOB-23183](https://jira.appcelerator.org/browse/TIMOB-23183) - iOS Non-public API usage: The app references non-public symbols in <APPLICATION NAME> : \_ptrace
-    
-*   [TIMOB-24206](https://jira.appcelerator.org/browse/TIMOB-24206) - iOS: Memory leaks after select camera or photo gallery with jscore framework
-    
-*   [TIMOB-25314](https://jira.appcelerator.org/browse/TIMOB-25314) - iOS: camera with overlay view is zoomed
-    
-*   [TIMOB-25566](https://jira.appcelerator.org/browse/TIMOB-25566) - iOS: VideoPlayer showsControls false does if url is set after creation
-    
-*   [TIMOB-25744](https://jira.appcelerator.org/browse/TIMOB-25744) - iOS: Uploaded file persists in memory when using JSCore
-    
-*   [TIMOB-25775](https://jira.appcelerator.org/browse/TIMOB-25775) - iOS: Cannot get gradient properties after creation
-    
-*   [TIMOB-25785](https://jira.appcelerator.org/browse/TIMOB-25785) - iOS: Sending events that cannot be serialized fail on SDK 7.0.0+
-    
-*   [TIMOB-25801](https://jira.appcelerator.org/browse/TIMOB-25801) - iOS: SDK 7.0.2.GA - VideoPlayer playback issues
-    
-*   [TIMOB-25836](https://jira.appcelerator.org/browse/TIMOB-25836) - iOS: Using "run-on-main-thread", multiple global event listeners do not work
-    
-*   [TIMOB-25842](https://jira.appcelerator.org/browse/TIMOB-25842) - iOS: Cannot remove Ti.App.iOS.handleurl event-listener
-    
-*   [TIMOB-25874](https://jira.appcelerator.org/browse/TIMOB-25874) - iOS 11.2: Ti.UI.RefreshControl with Ti.UI.Window.largeTitleEnabled hides spinner
-    
-*   [TIMOB-25883](https://jira.appcelerator.org/browse/TIMOB-25883) - "Callback was already called." error thrown when source contains syntax error and transpiling
-    
-*   [TIMOB-25897](https://jira.appcelerator.org/browse/TIMOB-25897) - iOS: Ti.UI.iOS.Stepper handles "value" boundaries incorrect
-    
-*   [TIMOB-25906](https://jira.appcelerator.org/browse/TIMOB-25906) - iOS: Native exceptions not thrown when using run-on-main-thread
-    
-*   [TIMOB-25916](https://jira.appcelerator.org/browse/TIMOB-25916) - iOS: Ti.UI.VideoPlayer ignores changes to the "scalingMode" property
-    
-*   [TIMOB-26033](https://jira.appcelerator.org/browse/TIMOB-26033) - iOS: Ti.Media.VideoPlayer shows an error on Window Close on SDK 7.1.1.GA
-    
-*   [TIMOB-26062](https://jira.appcelerator.org/browse/TIMOB-26062) - iOS: Analyzer warnings after recent changes
-    
+* [TIMOB-16597](https://jira.appcelerator.org/browse/TIMOB-16597) - iOS: Can't create modal transparent Window
+
+* [TIMOB-17235](https://jira.appcelerator.org/browse/TIMOB-17235) - iOS: Window in tabGroup flicker on first open
+
+* [TIMOB-23183](https://jira.appcelerator.org/browse/TIMOB-23183) - iOS Non-public API usage: The app references non-public symbols in <APPLICATION NAME> : \_ptrace
+
+* [TIMOB-24206](https://jira.appcelerator.org/browse/TIMOB-24206) - iOS: Memory leaks after select camera or photo gallery with jscore framework
+
+* [TIMOB-25314](https://jira.appcelerator.org/browse/TIMOB-25314) - iOS: camera with overlay view is zoomed
+
+* [TIMOB-25566](https://jira.appcelerator.org/browse/TIMOB-25566) - iOS: VideoPlayer showsControls false does if url is set after creation
+
+* [TIMOB-25744](https://jira.appcelerator.org/browse/TIMOB-25744) - iOS: Uploaded file persists in memory when using JSCore
+
+* [TIMOB-25775](https://jira.appcelerator.org/browse/TIMOB-25775) - iOS: Cannot get gradient properties after creation
+
+* [TIMOB-25785](https://jira.appcelerator.org/browse/TIMOB-25785) - iOS: Sending events that cannot be serialized fail on SDK 7.0.0+
+
+* [TIMOB-25801](https://jira.appcelerator.org/browse/TIMOB-25801) - iOS: SDK 7.0.2.GA - VideoPlayer playback issues
+
+* [TIMOB-25836](https://jira.appcelerator.org/browse/TIMOB-25836) - iOS: Using "run-on-main-thread", multiple global event listeners do not work
+
+* [TIMOB-25842](https://jira.appcelerator.org/browse/TIMOB-25842) - iOS: Cannot remove Ti.App.iOS.handleurl event-listener
+
+* [TIMOB-25874](https://jira.appcelerator.org/browse/TIMOB-25874) - iOS 11.2: Ti.UI.RefreshControl with Ti.UI.Window.largeTitleEnabled hides spinner
+
+* [TIMOB-25883](https://jira.appcelerator.org/browse/TIMOB-25883) - "Callback was already called." error thrown when source contains syntax error and transpiling
+
+* [TIMOB-25897](https://jira.appcelerator.org/browse/TIMOB-25897) - iOS: Ti.UI.iOS.Stepper handles "value" boundaries incorrect
+
+* [TIMOB-25906](https://jira.appcelerator.org/browse/TIMOB-25906) - iOS: Native exceptions not thrown when using run-on-main-thread
+
+* [TIMOB-25916](https://jira.appcelerator.org/browse/TIMOB-25916) - iOS: Ti.UI.VideoPlayer ignores changes to the "scalingMode" property
+
+* [TIMOB-26033](https://jira.appcelerator.org/browse/TIMOB-26033) - iOS: Ti.Media.VideoPlayer shows an error on Window Close on SDK 7.1.1.GA
+
+* [TIMOB-26062](https://jira.appcelerator.org/browse/TIMOB-26062) - iOS: Analyzer warnings after recent changes
+
 
 ### Windows platform
 
-*   [TIMOB-25306](https://jira.appcelerator.org/browse/TIMOB-25306) - Windows: touchEnabled property of Ti.UI.Picker does not work
-    
-*   [TIMOB-25542](https://jira.appcelerator.org/browse/TIMOB-25542) - Windows: Incorrect event's [source.id](http://source.id/) on Windows 10 Mobile
-    
-*   [TIMOB-25563](https://jira.appcelerator.org/browse/TIMOB-25563) - Windows: TableViewRow click event should contain rowData
-    
-*   [TIMOB-25918](https://jira.appcelerator.org/browse/TIMOB-25918) - Windows: Splash Screen and App Icon assets not working correctly
-    
-*   [TIMOB-25989](https://jira.appcelerator.org/browse/TIMOB-25989) - Windows: Unit specifier is ignored for font size
-    
-*   [TIMOB-26036](https://jira.appcelerator.org/browse/TIMOB-26036) - Windows: Disabling Ti.View does not disable its childrenå
-    
-*   [TIMOB-26045](https://jira.appcelerator.org/browse/TIMOB-26045) - Windows: 2DMatrix rotation scales view
-    
-*   [TIMOB-26085](https://jira.appcelerator.org/browse/TIMOB-26085) - Windows: 2DMatrix should scale from center
-    
-*   [TIMOB-26086](https://jira.appcelerator.org/browse/TIMOB-26086) - Windows: Wrong event source after scaling with 2DMatrix
-    
-*   [TIMOB-26139](https://jira.appcelerator.org/browse/TIMOB-26139) - Windows: Unable to build to device when using Windows SDK 15063 and newer tooling is installed
-    
-*   [TIMOB-26150](https://jira.appcelerator.org/browse/TIMOB-26150) - Windows: Scale Transform Events ([source.id](http://source.id)) is still \`overlay\`
-    
-*   [TIMOB-26152](https://jira.appcelerator.org/browse/TIMOB-26152) - Windows: ScrollView doesn't return correct event source
-    
+* [TIMOB-25306](https://jira.appcelerator.org/browse/TIMOB-25306) - Windows: touchEnabled property of Ti.UI.Picker does not work
+
+* [TIMOB-25542](https://jira.appcelerator.org/browse/TIMOB-25542) - Windows: Incorrect event's [source.id](http://source.id/) on Windows 10 Mobile
+
+* [TIMOB-25563](https://jira.appcelerator.org/browse/TIMOB-25563) - Windows: TableViewRow click event should contain rowData
+
+* [TIMOB-25918](https://jira.appcelerator.org/browse/TIMOB-25918) - Windows: Splash Screen and App Icon assets not working correctly
+
+* [TIMOB-25989](https://jira.appcelerator.org/browse/TIMOB-25989) - Windows: Unit specifier is ignored for font size
+
+* [TIMOB-26036](https://jira.appcelerator.org/browse/TIMOB-26036) - Windows: Disabling Ti.View does not disable its childrenå
+
+* [TIMOB-26045](https://jira.appcelerator.org/browse/TIMOB-26045) - Windows: 2DMatrix rotation scales view
+
+* [TIMOB-26085](https://jira.appcelerator.org/browse/TIMOB-26085) - Windows: 2DMatrix should scale from center
+
+* [TIMOB-26086](https://jira.appcelerator.org/browse/TIMOB-26086) - Windows: Wrong event source after scaling with 2DMatrix
+
+* [TIMOB-26139](https://jira.appcelerator.org/browse/TIMOB-26139) - Windows: Unable to build to device when using Windows SDK 15063 and newer tooling is installed
+
+* [TIMOB-26150](https://jira.appcelerator.org/browse/TIMOB-26150) - Windows: Scale Transform Events ([source.id](http://source.id)) is still \`overlay\`
+
+* [TIMOB-26152](https://jira.appcelerator.org/browse/TIMOB-26152) - Windows: ScrollView doesn't return correct event source
+
 
 ### Multiple platforms
 
-*   [TIMOB-26108](https://jira.appcelerator.org/browse/TIMOB-26108) - CLI: "clean" command builds the project instead
-    
-*   [TIMOB-26209](https://jira.appcelerator.org/browse/TIMOB-26209) - CLI: If any Xcode installs don't have EULA accepted (even one not being used), build won't work
-    
-*   [TIMOB-26233](https://jira.appcelerator.org/browse/TIMOB-26233) - Hyperloop: Incompatibility with 7\_3\_X RC
-    
+* [TIMOB-26108](https://jira.appcelerator.org/browse/TIMOB-26108) - CLI: "clean" command builds the project instead
+
+* [TIMOB-26209](https://jira.appcelerator.org/browse/TIMOB-26209) - CLI: If any Xcode installs don't have EULA accepted (even one not being used), build won't work
+
+* [TIMOB-26233](https://jira.appcelerator.org/browse/TIMOB-26233) - Hyperloop: Incompatibility with 7\_3\_X RC
+
 
 ## Improvements
 
 ### Android platform
 
-*   [TIMOB-5996](https://jira.appcelerator.org/browse/TIMOB-5996) - Android: Modify ScrollableView.removeView() to support integer indexes
-    
-    *   Implemented ScrollableView.removeView() to support integer indexes
-        
-*   [TIMOB-17889](https://jira.appcelerator.org/browse/TIMOB-17889) - TiConvert toBoolean doesnt handle type Interger
-    
-    *   Added support for integer to boolean conversion
-        
-*   [TIMOB-24707](https://jira.appcelerator.org/browse/TIMOB-24707) - Android: Add video support to Ti.Media.openPhotoGallery()
-    
-    *   Added video support to Ti.Media.openPhotoGallery()
-        
-*   [TIMOB-25418](https://jira.appcelerator.org/browse/TIMOB-25418) - Android: Module build will fail if documentation folder contains non-markdown files
-    
-    *   Fixed documentation generation for non-markdown files
-        
-*   [TIMOB-25667](https://jira.appcelerator.org/browse/TIMOB-25667) - Android: Add TableView "scrollable" property support
-    
-    *   Added support for scrollable property in TableView
-        
-*   [TIMOB-25668](https://jira.appcelerator.org/browse/TIMOB-25668) - Android: HintTextColor for SearchView
-    
-    *   Added hintTextColor to Ti.UI.Android.SearchView
-        
-*   [TIMOB-25844](https://jira.appcelerator.org/browse/TIMOB-25844) - Android: Update splash screen and icon
-    
-    *   Updated Android's splash screen and icon to newer assets on iOS
-        
-*   [TIMOB-25852](https://jira.appcelerator.org/browse/TIMOB-25852) - Android: Target API Level 26/27 by default
-    
-    *   Increased max API Level supported to 27 (Android 8.1)
-        
-*   [TIMOB-25860](https://jira.appcelerator.org/browse/TIMOB-25860) - Update Android Support libraries to 27.1.1
-    
-    *   Updated Android Support libraries to version 27.1.1
-        
-*   [TIMOB-25864](https://jira.appcelerator.org/browse/TIMOB-25864) - Android: Notifications should use default channel on Android 8 if not assigned
-    
-    *   Set default notification channel to NotificationChannel.DEFAULT\_CHANNEL\_ID to miscellaneous
-        
-*   [TIMOB-25865](https://jira.appcelerator.org/browse/TIMOB-25865) - Android: Build warning appears when Android build-tools v27 or higher is installed
-    
-    *   Updated the CLI to use the defined Android version
-        
-*   [TIMOB-25917](https://jira.appcelerator.org/browse/TIMOB-25917) - Android: Allow picker minDate/maxDate properties to be set dynamically
-    
-    *   Fixed minDate and maxDate properties
-        
-*   [TIMOB-25931](https://jira.appcelerator.org/browse/TIMOB-25931) - Android: Update Multi-Dex support library
-    
-    *   Updated multidex support library
-        
-*   [TIMOB-25937](https://jira.appcelerator.org/browse/TIMOB-25937) - Android: Horizontal TextField scrolling should not be canceled by scrollable parent view
-    
-    *   Improved nested horizontal scrolling support
-        
-*   [TIMOB-25939](https://jira.appcelerator.org/browse/TIMOB-25939) - Android: Improve horizontal ScrollView scrolling that is set up with a RefreshControl
-    
-    *   Improved nested horizontal scrolling support
-        
-*   [TIMOB-25963](https://jira.appcelerator.org/browse/TIMOB-25963) - Android: Implement method to obtain current stack trace from V8
-    
-    *   Improved KrollRuntime error output
-        
-*   [TIMOB-25965](https://jira.appcelerator.org/browse/TIMOB-25965) - Android: Update old exception dialog
-    
-    *   Improved KrollRuntime error output
-        
-*   [TIMOB-26006](https://jira.appcelerator.org/browse/TIMOB-26006) - Android: Reduce V8 library size
-    
-    *   Optimized libkroll-v8 size
-        
-*   [TIMOB-26051](https://jira.appcelerator.org/browse/TIMOB-26051) - Android: Ti.UI.createRefreshControl.beginRefreshing() does not fire 'refreshstart'
-    
-    *   Fixed issue with beginRefreshing() does not fire the refreshstart event
-        
-*   [TIMOB-26068](https://jira.appcelerator.org/browse/TIMOB-26068) - Android: set Toolbar's default width to match iOS behavior
-    
-    *   Set the default width of toolbar to Ti.UI.FILL to match the iOS behavior of the component
-        
-*   [TIMOB-26102](https://jira.appcelerator.org/browse/TIMOB-26102) - Android: Push notifications should create default channel if not assigned when targeting Android 8
-    
-    *   Updated push notifications on Android 8+
-        
-*   [TIMOB-26240](https://jira.appcelerator.org/browse/TIMOB-26240) - Android: Remove harmless activity errors/warnings logged on startup
-    
-    *   Removed null activity error/warning log messages
-        
-        *   The caller should decide if they should be logged
-            
-        *   It's okay for these methods to return null if there are no activities, such as when the app was launched in the background via a BroadcastReceiver
-            
-    *   Changed TiApplication.getInstance() handling:
-        
-        *   Changed "tiApp" from weak reference to strong. Guaranteed to exist for lifetime of app, so, it was unnecessary.
-            
-        *   Removed TiApplication.getInstance() null checks
-            
-*   [TIMOB-26250](https://jira.appcelerator.org/browse/TIMOB-26250) - Android: Allow activity "android:launchMode" attribute to be set in "tiapp.xml"
-    
-    *   Reverses change made in [Titanium 6.1.0](/docs/appc/Titanium_SDK/Titanium_SDK_Release_Notes/Titanium_SDK_Release_Notes_6.x/Titanium_SDK_6.1.0.GA_Release_Note/) where "launchMode" setting was ignored
-        
+* [TIMOB-5996](https://jira.appcelerator.org/browse/TIMOB-5996) - Android: Modify ScrollableView.removeView() to support integer indexes
+
+  * Implemented ScrollableView.removeView() to support integer indexes
+
+* [TIMOB-17889](https://jira.appcelerator.org/browse/TIMOB-17889) - TiConvert toBoolean doesnt handle type Interger
+
+  * Added support for integer to boolean conversion
+
+* [TIMOB-24707](https://jira.appcelerator.org/browse/TIMOB-24707) - Android: Add video support to Ti.Media.openPhotoGallery()
+
+  * Added video support to Ti.Media.openPhotoGallery()
+
+* [TIMOB-25418](https://jira.appcelerator.org/browse/TIMOB-25418) - Android: Module build will fail if documentation folder contains non-markdown files
+
+  * Fixed documentation generation for non-markdown files
+
+* [TIMOB-25667](https://jira.appcelerator.org/browse/TIMOB-25667) - Android: Add TableView "scrollable" property support
+
+  * Added support for scrollable property in TableView
+
+* [TIMOB-25668](https://jira.appcelerator.org/browse/TIMOB-25668) - Android: HintTextColor for SearchView
+
+  * Added hintTextColor to Ti.UI.Android.SearchView
+
+* [TIMOB-25844](https://jira.appcelerator.org/browse/TIMOB-25844) - Android: Update splash screen and icon
+
+  * Updated Android's splash screen and icon to newer assets on iOS
+
+* [TIMOB-25852](https://jira.appcelerator.org/browse/TIMOB-25852) - Android: Target API Level 26/27 by default
+
+  * Increased max API Level supported to 27 (Android 8.1)
+
+* [TIMOB-25860](https://jira.appcelerator.org/browse/TIMOB-25860) - Update Android Support libraries to 27.1.1
+
+  * Updated Android Support libraries to version 27.1.1
+
+* [TIMOB-25864](https://jira.appcelerator.org/browse/TIMOB-25864) - Android: Notifications should use default channel on Android 8 if not assigned
+
+  * Set default notification channel to NotificationChannel.DEFAULT\_CHANNEL\_ID to miscellaneous
+
+* [TIMOB-25865](https://jira.appcelerator.org/browse/TIMOB-25865) - Android: Build warning appears when Android build-tools v27 or higher is installed
+
+  * Updated the CLI to use the defined Android version
+
+* [TIMOB-25917](https://jira.appcelerator.org/browse/TIMOB-25917) - Android: Allow picker minDate/maxDate properties to be set dynamically
+
+  * Fixed minDate and maxDate properties
+
+* [TIMOB-25931](https://jira.appcelerator.org/browse/TIMOB-25931) - Android: Update Multi-Dex support library
+
+  * Updated multidex support library
+
+* [TIMOB-25937](https://jira.appcelerator.org/browse/TIMOB-25937) - Android: Horizontal TextField scrolling should not be canceled by scrollable parent view
+
+  * Improved nested horizontal scrolling support
+
+* [TIMOB-25939](https://jira.appcelerator.org/browse/TIMOB-25939) - Android: Improve horizontal ScrollView scrolling that is set up with a RefreshControl
+
+  * Improved nested horizontal scrolling support
+
+* [TIMOB-25963](https://jira.appcelerator.org/browse/TIMOB-25963) - Android: Implement method to obtain current stack trace from V8
+
+  * Improved KrollRuntime error output
+
+* [TIMOB-25965](https://jira.appcelerator.org/browse/TIMOB-25965) - Android: Update old exception dialog
+
+  * Improved KrollRuntime error output
+
+* [TIMOB-26006](https://jira.appcelerator.org/browse/TIMOB-26006) - Android: Reduce V8 library size
+
+  * Optimized libkroll-v8 size
+
+* [TIMOB-26051](https://jira.appcelerator.org/browse/TIMOB-26051) - Android: Ti.UI.createRefreshControl.beginRefreshing() does not fire 'refreshstart'
+
+  * Fixed issue with beginRefreshing() does not fire the refreshstart event
+
+* [TIMOB-26068](https://jira.appcelerator.org/browse/TIMOB-26068) - Android: set Toolbar's default width to match iOS behavior
+
+  * Set the default width of toolbar to Ti.UI.FILL to match the iOS behavior of the component
+
+* [TIMOB-26102](https://jira.appcelerator.org/browse/TIMOB-26102) - Android: Push notifications should create default channel if not assigned when targeting Android 8
+
+  * Updated push notifications on Android 8+
+
+* [TIMOB-26240](https://jira.appcelerator.org/browse/TIMOB-26240) - Android: Remove harmless activity errors/warnings logged on startup
+
+  * Removed null activity error/warning log messages
+
+    * The caller should decide if they should be logged
+
+    * It's okay for these methods to return null if there are no activities, such as when the app was launched in the background via a BroadcastReceiver
+
+  * Changed TiApplication.getInstance() handling:
+
+    * Changed "tiApp" from weak reference to strong. Guaranteed to exist for lifetime of app, so, it was unnecessary.
+
+    * Removed TiApplication.getInstance() null checks
+
+* [TIMOB-26250](https://jira.appcelerator.org/browse/TIMOB-26250) - Android: Allow activity "android:launchMode" attribute to be set in "tiapp.xml"
+
+  * Reverses change made in [Titanium 6.1.0](/docs/appc/Titanium_SDK/Titanium_SDK_Release_Notes/Titanium_SDK_Release_Notes_6.x/Titanium_SDK_6.1.0.GA_Release_Note/) where "launchMode" setting was ignored
+
 
 ### iOS platform
 
-*   [TIMOB-23888](https://jira.appcelerator.org/browse/TIMOB-23888) - iOS 10: UIApplication openURL has been deprecated
-    
-    *   Implemented asynchronous openURL API on iOS 10+
-        
-*   [TIMOB-24266](https://jira.appcelerator.org/browse/TIMOB-24266) - iOS: Be able to receive native delegates from app to native modules / Hyperloop
-    
-    *   Added support to receive native delegates from your app to native modules and/or Hyperloop
-        
-*   [TIMOB-25522](https://jira.appcelerator.org/browse/TIMOB-25522) - iOS: Expose navigation-window instance property to Ti.UI.Window
-    
-    *   Implemented navigationWindow property to Ti.UI.Window
-        
-*   [TIMOB-25950](https://jira.appcelerator.org/browse/TIMOB-25950) - iOS: setUnselectedItemTintColor is unrecognized in iOS9
-    
-    *   Added feature that ignores unselectedItemTintColor on iOS9 and earlier
-        
-*   [TIMOB-26007](https://jira.appcelerator.org/browse/TIMOB-26007) - iOS: Refactor RSOD
-    
-    *   Refactored crash dialog
-        
-*   [TIMOB-26021](https://jira.appcelerator.org/browse/TIMOB-26021) - iOS: Search results table-view background color change
-    
-    *   Fixed issue with search results table-view background color change
-        
-*   [TIMOB-26066](https://jira.appcelerator.org/browse/TIMOB-26066) - node-ios-device: Support Xcode 9 and Node.js 10
-    
-    *   Added support for Xcode 9 and node.js 10
-        
+* [TIMOB-23888](https://jira.appcelerator.org/browse/TIMOB-23888) - iOS 10: UIApplication openURL has been deprecated
+
+  * Implemented asynchronous openURL API on iOS 10+
+
+* [TIMOB-24266](https://jira.appcelerator.org/browse/TIMOB-24266) - iOS: Be able to receive native delegates from app to native modules / Hyperloop
+
+  * Added support to receive native delegates from your app to native modules and/or Hyperloop
+
+* [TIMOB-25522](https://jira.appcelerator.org/browse/TIMOB-25522) - iOS: Expose navigation-window instance property to Ti.UI.Window
+
+  * Implemented navigationWindow property to Ti.UI.Window
+
+* [TIMOB-25950](https://jira.appcelerator.org/browse/TIMOB-25950) - iOS: setUnselectedItemTintColor is unrecognized in iOS9
+
+  * Added feature that ignores unselectedItemTintColor on iOS9 and earlier
+
+* [TIMOB-26007](https://jira.appcelerator.org/browse/TIMOB-26007) - iOS: Refactor RSOD
+
+  * Refactored crash dialog
+
+* [TIMOB-26021](https://jira.appcelerator.org/browse/TIMOB-26021) - iOS: Search results table-view background color change
+
+  * Fixed issue with search results table-view background color change
+
+* [TIMOB-26066](https://jira.appcelerator.org/browse/TIMOB-26066) - node-ios-device: Support Xcode 9 and Node.js 10
+
+  * Added support for Xcode 9 and node.js 10
+
 
 ### Windows platform
 
-*   [TIMOB-24856](https://jira.appcelerator.org/browse/TIMOB-24856) - Windows: Implement bubbleParent property
-    
-    *   Implemented bubbleParent property
-        
-*   [TIMOB-26028](https://jira.appcelerator.org/browse/TIMOB-26028) - Windows: Add Ti.Filesystem.File parity across platforms
-    
-    *   Added Ti.Filesystem.File across iOS and Android
-        
-*   [TIMOB-26048](https://jira.appcelerator.org/browse/TIMOB-26048) - Windows: Refactor RSOD
-    
-    *   Refactored the crash dialog screen to match the iOS/Android appearance
-        
+* [TIMOB-24856](https://jira.appcelerator.org/browse/TIMOB-24856) - Windows: Implement bubbleParent property
+
+  * Implemented bubbleParent property
+
+* [TIMOB-26028](https://jira.appcelerator.org/browse/TIMOB-26028) - Windows: Add Ti.Filesystem.File parity across platforms
+
+  * Added Ti.Filesystem.File across iOS and Android
+
+* [TIMOB-26048](https://jira.appcelerator.org/browse/TIMOB-26048) - Windows: Refactor RSOD
+
+  * Refactored the crash dialog screen to match the iOS/Android appearance
+
 
 ### Multiple platforms
 
-*   [TIMOB-26022](https://jira.appcelerator.org/browse/TIMOB-26022) - TiAPI: Add Ti.Buffer parity across platforms
-    
-    *   Added Ti.Buffer parity across iOS and Android
-        
-*   [TIMOB-26025](https://jira.appcelerator.org/browse/TIMOB-26025) - TiAPI: Add Ti.Filesystem.File parity across platforms
-    
-    *   Added Ti.Filesystem.File parity across iOS and Android
-        
+* [TIMOB-26022](https://jira.appcelerator.org/browse/TIMOB-26022) - TiAPI: Add Ti.Buffer parity across platforms
+
+  * Added Ti.Buffer parity across iOS and Android
+
+* [TIMOB-26025](https://jira.appcelerator.org/browse/TIMOB-26025) - TiAPI: Add Ti.Filesystem.File parity across platforms
+
+  * Added Ti.Filesystem.File parity across iOS and Android
+
 
 ## API changes
 
@@ -1139,9 +1139,6 @@ method
 
 Sets the value of the Titanium.UI.iOS.MODAL\_PRESENTATION\_OVER\_CURRENT\_FULL\_SCREEN property. (New API, supported on iPhone and iPad.)
 
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
-
 ### Deprecated APIs
 
 The following APIs are deprecated in Release 7.3.0 as of August 17th, 2018.
@@ -1361,9 +1358,6 @@ Titanium.UI.iOS.BLEND\_MODE\_XOR
 property
 
 Use Titanium.UI.BLEND\_MODE\_XOR instead.
-
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
 
 ## Sample app for Titanium 7.3.0
 

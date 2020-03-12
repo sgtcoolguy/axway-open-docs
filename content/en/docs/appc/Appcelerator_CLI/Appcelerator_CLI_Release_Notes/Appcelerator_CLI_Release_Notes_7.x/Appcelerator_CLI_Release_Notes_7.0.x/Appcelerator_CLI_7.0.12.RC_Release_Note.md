@@ -1,4 +1,4 @@
-{"title":"Appcelerator CLI 7.0.12.RC - 17 June 2019","weight":"20"} 
+{"title":"Appcelerator CLI 7.0.12.RC - 17 June 2019","weight":"20"}
 
 Appcelerator CLI 7.0.12.RC is a patch release that includes four bug fixes.
 
@@ -30,10 +30,10 @@ Daemon
 
 ## Fixed issues
 
-*   [ALOY-1686](https://jira.appcelerator.org/browse/ALOY-1686) - Alloy: App crashes due to context used when accessing Ti.Database API
-    
-*   [CLI-1343](https://jira.appcelerator.org/browse/CLI-1343) - Android: Setting "appc-sourcecode-encryption-policy" to "remote" crashes on startup as of 7.3.0
-    
-*   [CLI-1356](https://jira.appcelerator.org/browse/CLI-1356?src=confmacro) - Compiling platform native modules contains more packages than necessary
-    
-*   [CLI-1357](https://jira.appcelerator.org/browse/CLI-1357?src=confmacro) - updating CLI to 7.0.12-70X.5, Studio throwing "Update iOS info" error on launching
+* [ALOY-1686](https://jira.appcelerator.org/browse/ALOY-1686) - Alloy: App crashes due to context used when accessing Ti.Database API
+
+* [CLI-1343](https://jira.appcelerator.org/browse/CLI-1343) - Android: Setting "appc-sourcecode-encryption-policy" to "remote" crashes on startup as of 7.3.0
+
+* [CLI-1356](https://jira.appcelerator.org/browse/CLI-1356?src=confmacro) - Compiling platform native modules contains more packages than necessary
+
+* [CLI-1357](https://jira.appcelerator.org/browse/CLI-1357?src=confmacro) - updating CLI to 7.0.12-70X.5, Studio throwing "Update iOS info" error on launching

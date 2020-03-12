@@ -1,4 +1,4 @@
-{"title":"Alloy 1.7.31 - 4 January 2016","weight":"50"} 
+{"title":"Alloy 1.7.31 - 4 January 2016","weight":"50"}
 
 Alloy 1.7.31 is a patch release that includes new features, improvements and bug fixes.
 
@@ -6,11 +6,11 @@ As of this release, the previous Alloy patch release is no longer supported. Not
 
 ## Improvements
 
-*   [ALOY-1346](https://jira.appcelerator.org/browse/ALOY-1346) - Controller template should no longer declare args variable
-    
-    *   Arguments passed into the controller can be accessed from $.args
-        
+* [ALOY-1346](https://jira.appcelerator.org/browse/ALOY-1346) - Controller template should no longer declare args variable
+
+  * Arguments passed into the controller can be accessed from $.args
+
 
 ## Fixed Issues
 
-*   [ALOY-1345](https://jira.appcelerator.org/browse/ALOY-1345) - iOS Attributed Strings are not showing
+* [ALOY-1345](https://jira.appcelerator.org/browse/ALOY-1345) - iOS Attributed Strings are not showing

@@ -1,17 +1,17 @@
-{"title":"Migrate a Titanium Application to the Platform","weight":"140"} 
+{"title":"Migrate a Titanium Application to the Platform","weight":"140"}
 
-*   [Titanium Community Analytics, ACS and Push, and Node.ACS Deactivation](#TitaniumCommunityAnalytics,ACSandPush,andNode.ACSDeactivation)
-    
-*   [Migrate a Titanium Application to the Platform](#MigrateaTitaniumApplicationtothePlatform)
-    
-    *   [First, make a backup!](#First,makeabackup!)
-        
-    *   [Replace or keep existing ACS keys](#ReplaceorkeepexistingACSkeys)
-        
-    *   [Using Appcelerator Studio](#UsingAppceleratorStudio)
-        
-    *   [Using Appcelerator CLI](#UsingAppceleratorCLI)
-        
+* [Titanium Community Analytics, ACS and Push, and Node.ACS Deactivation](#TitaniumCommunityAnalytics,ACSandPush,andNode.ACSDeactivation)
+
+* [Migrate a Titanium Application to the Platform](#MigrateaTitaniumApplicationtothePlatform)
+
+  * [First, make a backup!](#First,makeabackup!)
+
+  * [Replace or keep existing ACS keys](#ReplaceorkeepexistingACSkeys)
+
+  * [Using Appcelerator Studio](#UsingAppceleratorStudio)
+
+  * [Using Appcelerator CLI](#UsingAppceleratorCLI)
+
 
 ## Titanium Community Analytics, ACS and Push, and Node.ACS Deactivation
 
@@ -37,17 +37,17 @@ By default, the import process will generate new keys for Arrow DB services in t
 
 Follow these steps and your app will be imported into the Platform.
 
-1.  First, verify that you have **Appcelerator Studio 4.x or later** installed. If you are using Titanium Studio, this procedure will not work.
-    
-2.  On the main dashboard, click the **Import an existing project** button.
-    
-3.  You will be presented with an Import dialog. Select **Appcelerator** > **Existing Mobile Project**, then click the **Next** **\>** button.
-    
+1. First, verify that you have **Appcelerator Studio 4.x or later** installed. If you are using Titanium Studio, this procedure will not work.
+
+2. On the main dashboard, click the **Import an existing project** button.
+
+3. You will be presented with an Import dialog. Select **Appcelerator** > **Existing Mobile Project**, then click the **Next** **\>** button.
+
 
 ### Using Appcelerator CLI
 
 Follow these steps and your app will be imported into the Platform.
 
-1.  First, verify that you have the [Appcelerator CLI](/docs/appc/Appcelerator_CLI/) installed. If you are using the Titanium CLI, this procedure will not work.
-    
-2.  Once installed, you can import your existing Titanium app by running the following in your console from the Titanium project directory: appc new --import
+1. First, verify that you have the [Appcelerator CLI](/docs/appc/Appcelerator_CLI/) installed. If you are using the Titanium CLI, this procedure will not work.
+
+2. Once installed, you can import your existing Titanium app by running the following in your console from the Titanium project directory: appc new --import

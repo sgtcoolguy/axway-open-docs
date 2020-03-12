@@ -1,67 +1,67 @@
-{"title":"Icons and Splash Screens","weight":"40"} 
+{"title":"Icons and Splash Screens","weight":"40"}
 
-*   [Objective](#Objective)
-    
-*   [Icons, splash screens, and store requirements](#Icons,splashscreens,andstorerequirements)
-    
-    *   [Location for your graphics](#Locationforyourgraphics)
-        
-    *   [Build scripts for iOS icons](#BuildscriptsforiOSicons)
-        
-    *   [Splash screens](#Splashscreens)
-        
-        *   [Android splash screen considerations](#Androidsplashscreenconsiderations)
-            
-        *   [Splash screen with a custom theme](#Splashscreenwithacustomtheme)
-            
-        *   [iOS splash screen considerations](#iOSsplashscreenconsiderations)
-            
-*   [iOS graphic asset requirements and options](#iOSgraphicassetrequirementsandoptions)
-    
-    *   [iTunes Connect assets](#iTunesConnectassets)
-        
-    *   [Older devices](#Olderdevices)
-        
-*   [Android graphic asset requirements and options](#Androidgraphicassetrequirementsandoptions)
-    
-    *   [Splash Screen](#SplashScreen)
-        
-    *   [Launcher icon](#Launchericon)
-        
-    *   [Action bar icons](#Actionbaricons)
-        
-    *   [Notification icons](#Notificationicons)
-        
-    *   [Small and contextual icons](#Smallandcontextualicons)
-        
-    *   [Google Play assets](#GooglePlayassets)
-        
-    *   [Previous Recommendations](#PreviousRecommendations)
-        
-*   [Windows graphic asset requirements and options](#Windowsgraphicassetrequirementsandoptions)
-    
-    *   [Windows Phone](#WindowsPhone)
-        
-    *   [Windows Store](#WindowsStore)
-        
-    *   [Windows app submissions](#Windowsappsubmissions)
-        
-*   [Localized splash screens](#Localizedsplashscreens)
-    
-    *   [Android](#Android)
-        
-    *   [iOS](#iOS)
-        
-    *   [Windows](#Windows)
-        
-*   [Density-specific Android icons](#Density-specificAndroidicons)
-    
-*   [Adding your iTunes artwork to your project](#AddingyouriTunesartworktoyourproject)
-    
-*   [References and further reading](#Referencesandfurtherreading)
-    
-*   [Summary](#Summary)
-    
+* [Objective](#Objective)
+
+* [Icons, splash screens, and store requirements](#Icons,splashscreens,andstorerequirements)
+
+  * [Location for your graphics](#Locationforyourgraphics)
+
+  * [Build scripts for iOS icons](#BuildscriptsforiOSicons)
+
+  * [Splash screens](#Splashscreens)
+
+    * [Android splash screen considerations](#Androidsplashscreenconsiderations)
+
+    * [Splash screen with a custom theme](#Splashscreenwithacustomtheme)
+
+    * [iOS splash screen considerations](#iOSsplashscreenconsiderations)
+
+* [iOS graphic asset requirements and options](#iOSgraphicassetrequirementsandoptions)
+
+  * [iTunes Connect assets](#iTunesConnectassets)
+
+  * [Older devices](#Olderdevices)
+
+* [Android graphic asset requirements and options](#Androidgraphicassetrequirementsandoptions)
+
+  * [Splash Screen](#SplashScreen)
+
+  * [Launcher icon](#Launchericon)
+
+  * [Action bar icons](#Actionbaricons)
+
+  * [Notification icons](#Notificationicons)
+
+  * [Small and contextual icons](#Smallandcontextualicons)
+
+  * [Google Play assets](#GooglePlayassets)
+
+  * [Previous Recommendations](#PreviousRecommendations)
+
+* [Windows graphic asset requirements and options](#Windowsgraphicassetrequirementsandoptions)
+
+  * [Windows Phone](#WindowsPhone)
+
+  * [Windows Store](#WindowsStore)
+
+  * [Windows app submissions](#Windowsappsubmissions)
+
+* [Localized splash screens](#Localizedsplashscreens)
+
+  * [Android](#Android)
+
+  * [iOS](#iOS)
+
+  * [Windows](#Windows)
+
+* [Density-specific Android icons](#Density-specificAndroidicons)
+
+* [Adding your iTunes artwork to your project](#AddingyouriTunesartworktoyourproject)
+
+* [References and further reading](#Referencesandfurtherreading)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -143,108 +143,108 @@ Do not place the splash screen image in the drawable folder (without a suffix). 
 
 If you are using a custom theme to display the splash screen, override the default root activity to use the custom theme:
 
-1.  Create a theme XML file in the ./platform/android/res/values/ (Alloy: app /platform/android/res/values/) folder. Do NOT name the file theme.xml. Titanium uses this name as its default theme file, which is required to build the application. If you create a file called theme.xml, it will overwrite the default Titanium one and break the build process. Add the windowBackground items to the custom theme referencing the background nine-patch image.
-    
-    Only add the windowBackground items only to the theme of the default root activity. If you add windowBackground items to other themes for other activities, the image may not be displayed properly.
-    
-    platform/android/res/values/mytheme.xml
-    
-    `<?``xml`  `version``=``"1.0"`  `encoding``=``"utf-8"``?>`
-    
-    `<``resources``>`
-    
-    `<``style`  `name``=``"Theme.MyTheme"`  `parent``=``"Theme.AppCompat"``>`
-    
-    `<``item`  `name``=``"windowBackground"``>@drawable/background</``item``>`
-    
-    `<``item`  `name``=``"android:windowBackground"``>@drawable/background</``item``>`
-    
-    `</``style``>`
-    
-    `</``resources``>`
-    
-2.  Build your application once to generate the build/android/AndroidManifest.xml. Open the file and copy the activity node that contains your default root activity. The android:name attribute will contain the name of your application.
-    
-    build/android/AndroidManifest.xml
-    
-    `<``manifest`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"`  `package``=``"com.example.sample"`  `android:versionCode``=``"1"`  `android:versionName``=``"1.0"``>`
-    
-    `<``uses``-sdk` `android:minSdkVersion``=``"17"`  `android:targetSdkVersion``=``"25"``/>`
-    
-    `<``application`  `android:icon``=``"@drawable/appicon"`  `android:label``=``"AlloyNinePatch"`  `android:name``=``"AlloyninepatchApplication"`  `android:debuggable``=``"false"`  `android:theme``=``"@style/Theme.AppCompat"``>`
-    
-    `<``activity`  `android:name``=``".YourapplicationnameActivity"`  `android:label``=``"@string/app_name"`  `android:theme``=``"@style/Theme.Titanium"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``>`
-    
-    `<``intent``-filter>`
-    
-    `<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
-    
-    `<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
-    
-    `</``intent``-filter>`
-    
-    `</``activity``>`
-    
-    `<``activity`  `android:name``=``"org.appcelerator.titanium.TiActivity"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``/>`
-    
-    `<``activity`  `android:name``=``"org.appcelerator.titanium.TiTranslucentActivity"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"`  `android:theme``=``"@style/Theme.AppCompat.Translucent"``/>`
-    
-    `<``activity`  `android:name``=``"ti.modules.titanium.ui.android.TiPreferencesActivity"`  `android:configChanges``=``"screenSize"``/>`
-    
-    `</``application``>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_WIFI_STATE"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_NETWORK_STATE"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.WRITE_EXTERNAL_STORAGE"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_COARSE_LOCATION"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_FINE_LOCATION"``/>`
-    
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_MOCK_LOCATION"``/>`
-    
-    `</``manifest``>`
-    
-3.  Paste the default root activity into the Android section of your tiapp.xml file inside the <application> element. You may need to add the <manifest> and <application> elements to the <android> element of your tiapp.xml file. In the activity's android:theme attribute, replace Theme.Titanium with the name of your custom theme:
-    
-    tiapp.xml
-    
-    `<``ti``:app` `xmlns:ti``=``"http://ti.appcelerator.org"``>`
-    
-    `...`
-    
-    `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-    
-    `<``manifest``>`
-    
-    `<``application``>`
-    
-    `<``activity`  `android:name``=``".YourapplicationnameActivity"`  `android:label``=``"@string/app_name"`  `android:theme``=``"@style/Theme.MyTheme"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``>`
-    
-    `<``intent``-filter>`
-    
-    `<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
-    
-    `<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
-    
-    `</``intent``-filter>`
-    
-    `</``activity``>`
-    
-    `</``application``>`
-    
-    `</``manifest``>`
-    
-    `</``android``>`
-    
-    `...`
-    
-    `</``ti``:app>`
-    
+1. Create a theme XML file in the ./platform/android/res/values/ (Alloy: app /platform/android/res/values/) folder. Do NOT name the file theme.xml. Titanium uses this name as its default theme file, which is required to build the application. If you create a file called theme.xml, it will overwrite the default Titanium one and break the build process. Add the windowBackground items to the custom theme referencing the background nine-patch image.
+
+  Only add the windowBackground items only to the theme of the default root activity. If you add windowBackground items to other themes for other activities, the image may not be displayed properly.
+
+  platform/android/res/values/mytheme.xml
+
+  `<?``xml`  `version``=``"1.0"`  `encoding``=``"utf-8"``?>`
+
+  `<``resources``>`
+
+  `<``style`  `name``=``"Theme.MyTheme"`  `parent``=``"Theme.AppCompat"``>`
+
+  `<``item`  `name``=``"windowBackground"``>@drawable/background</``item``>`
+
+  `<``item`  `name``=``"android:windowBackground"``>@drawable/background</``item``>`
+
+  `</``style``>`
+
+  `</``resources``>`
+
+2. Build your application once to generate the build/android/AndroidManifest.xml. Open the file and copy the activity node that contains your default root activity. The android:name attribute will contain the name of your application.
+
+  build/android/AndroidManifest.xml
+
+  `<``manifest`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"`  `package``=``"com.example.sample"`  `android:versionCode``=``"1"`  `android:versionName``=``"1.0"``>`
+
+  `<``uses``-sdk` `android:minSdkVersion``=``"17"`  `android:targetSdkVersion``=``"25"``/>`
+
+  `<``application`  `android:icon``=``"@drawable/appicon"`  `android:label``=``"AlloyNinePatch"`  `android:name``=``"AlloyninepatchApplication"`  `android:debuggable``=``"false"`  `android:theme``=``"@style/Theme.AppCompat"``>`
+
+  `<``activity`  `android:name``=``".YourapplicationnameActivity"`  `android:label``=``"@string/app_name"`  `android:theme``=``"@style/Theme.Titanium"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``>`
+
+  `<``intent``-filter>`
+
+  `<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
+
+  `<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
+
+  `</``intent``-filter>`
+
+  `</``activity``>`
+
+  `<``activity`  `android:name``=``"org.appcelerator.titanium.TiActivity"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``/>`
+
+  `<``activity`  `android:name``=``"org.appcelerator.titanium.TiTranslucentActivity"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"`  `android:theme``=``"@style/Theme.AppCompat.Translucent"``/>`
+
+  `<``activity`  `android:name``=``"ti.modules.titanium.ui.android.TiPreferencesActivity"`  `android:configChanges``=``"screenSize"``/>`
+
+  `</``application``>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.ACCESS_WIFI_STATE"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.ACCESS_NETWORK_STATE"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.WRITE_EXTERNAL_STORAGE"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.ACCESS_COARSE_LOCATION"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.ACCESS_FINE_LOCATION"``/>`
+
+  `<``uses``-permission` `android:name``=``"android.permission.ACCESS_MOCK_LOCATION"``/>`
+
+  `</``manifest``>`
+
+3. Paste the default root activity into the Android section of your tiapp.xml file inside the <application> element. You may need to add the <manifest> and <application> elements to the <android> element of your tiapp.xml file. In the activity's android:theme attribute, replace Theme.Titanium with the name of your custom theme:
+
+  tiapp.xml
+
+  `<``ti``:app` `xmlns:ti``=``"http://ti.appcelerator.org"``>`
+
+  `...`
+
+  `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
+
+  `<``manifest``>`
+
+  `<``application``>`
+
+  `<``activity`  `android:name``=``".YourapplicationnameActivity"`  `android:label``=``"@string/app_name"`  `android:theme``=``"@style/Theme.MyTheme"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``>`
+
+  `<``intent``-filter>`
+
+  `<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
+
+  `<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
+
+  `</``intent``-filter>`
+
+  `</``activity``>`
+
+  `</``application``>`
+
+  `</``manifest``>`
+
+  `</``android``>`
+
+  `...`
+
+  `</``ti``:app>`
+
 
 For additional information on themes, see [Android Themes](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/Android_Themes/).
 
@@ -282,7 +282,7 @@ Dimensions
 
 File name
 
-iPhone 4/4S/5/5C/5S/6  
+iPhone 4/4S/5/5C/5S/6
 iPod touch 5th generation
 
 App icon
@@ -379,7 +379,7 @@ Splash screen
 
 Default@2x.png
 
-iPhone 5/5C/5S  
+iPhone 5/5C/5S
 iPod touch 5th generation
 
 Splash screen
@@ -656,14 +656,14 @@ One (1) required
 
 iPad screenshot
 
-*   non-retina, fullscreen: 1024x768 or 768x1024
-    
-*   non-retina, no status bar: 1024x728 or 768x1004
-    
-*   retina, fullscreen: 2048x1536 or 1536x2048
-    
-*   retina, no status bar: 2048x1496 or 1536x2008
-    
+* non-retina, fullscreen: 1024x768 or 768x1024
+
+* non-retina, no status bar: 1024x728 or 768x1004
+
+* retina, fullscreen: 2048x1536 or 1536x2048
+
+* retina, no status bar: 2048x1496 or 1536x2008
+
 
 any
 
@@ -1291,6 +1291,10 @@ default.png
 
 ## Windows graphic asset requirements and options
 
+As of Titanium 9.0.0, building Windows apps is no longer supported.
+
+Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+
 All Windows graphic assets must be in PNG format and may contain an alpha channel. Place all assets in the app/assets/windows folder for Alloy projects or Resources/windows folder for classic Titanium projects.
 
 If you omit any logo files and have a file called DefaultIcon.png in the root folder of the project that is at least 180 x 180 (1024 x 1024 is recommended), the Titanium SDK will generate any missing logo files from the file.
@@ -1300,8 +1304,6 @@ Windows provides different qualifiers to select which assets to use. The qualifi
 For information about using qualifiers, see [Windows Asset Qualifiers](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Windows_UI_Components_and_Conventions/Windows_Asset_Qualifiers/).
 
 ### Windows Phone
-
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
 
 Type
 
@@ -1393,10 +1395,10 @@ Notes
 
 Desktop screenshot
 
-*   1366 x 768 or larger
-    
-*   768 x 1366 or larger
-    
+* 1366 x 768 or larger
+
+* 768 x 1366 or larger
+
 
 PNG
 
@@ -1406,18 +1408,18 @@ May submit up to 9
 
 Mobile screenshot
 
-*   768 x 1280
-    
-*   720 x 1280
-    
-*   480 x 800
-    
-*   1280 x 768
-    
-*   1280 x 720
-    
-*   800 x 480
-    
+* 768 x 1280
+
+* 720 x 1280
+
+* 480 x 800
+
+* 1280 x 768
+
+* 1280 x 720
+
+* 800 x 480
+
 
 PNG
 
@@ -1435,33 +1437,30 @@ For Windows Phone and earlier
 
 Promotional artwork
 
-*   358 x 173 (wide icon)
-    
-*   358 x 358 (square icon)
-    
-*   1000 x 800 (background image)
-    
-*   414 x 180
-    
-*   414 x 468
-    
-*   558 x 558
-    
-*   558 x 756
-    
-*   846 x 468
-    
-*   2400 x 1200 (recommended)
-    
+* 358 x 173 (wide icon)
+
+* 358 x 358 (square icon)
+
+* 1000 x 800 (background image)
+
+* 414 x 180
+
+* 414 x 468
+
+* 558 x 558
+
+* 558 x 756
+
+* 846 x 468
+
+* 2400 x 1200 (recommended)
+
 
 Used to showcase your application in the store.
 
 May submit only one image per file size.
 
 It is highly recommended to submit a 2400 x 1200 image, which the Microsoft team will resize and crop for promotional layouts.
-
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
 
 For more information about app submission, see [Distributing Windows Applications](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_Windows_Applications/).
 
@@ -1475,28 +1474,28 @@ For the Android platform, place the images in res subfolders suffixed with the [
 
 For example, suppose you have the following filesystem (classic app, for Alloy relatively to the app/assets/android directory):
 
-*   Resources
-    
-    *   android
-        
-        *   images
-            
-            *   res-en
-                
-                *   default.png
-                    
-            *   res-es
-                
-                *   default.png
-                    
-            *   res-fr-long-land-hdpi
-                
-                *   default.png
-                    
-            *   res-long-land-hdpi
-                
-                *   default.png
-                    
+* Resources
+
+  * android
+
+    * images
+
+      * res-en
+
+        * default.png
+
+      * res-es
+
+        * default.png
+
+      * res-fr-long-land-hdpi
+
+        * default.png
+
+      * res-long-land-hdpi
+
+        * default.png
+
 
 In this example, both English and Spanish use one splash screen image to support all screen types. For French, the localized splash screen image is only used for high-density, long screens in landscape mode. The image in the res-long-land-hdpi folder is ignored for English, French, and Spanish.
 
@@ -1506,32 +1505,32 @@ For the iOS platform, place your splash screen images in the individual language
 
 For example, suppose you have the following filesystem:
 
-*   i18n
-    
-    *   en
-        
-        *   Default@2x.png
-            
-        *   Default-568h@2x.png
-            
-        *   Default-667h@2x.png
-            
-        *   Default-Portrait-736h@3x.png
-            
-        *   Default-Portrait-2436h@3x.png
-            
-    *   es
-        
-        *   Default@2x.png
-            
-        *   Default-568h@2x.png
-            
-        *   Default-667h@2x.png
-            
-        *   Default-Portrait-736h@3x.png
-            
-        *   Default-Portrait-2436h@3x.png
-            
+* i18n
+
+  * en
+
+    * Default@2x.png
+
+    * Default-568h@2x.png
+
+    * Default-667h@2x.png
+
+    * Default-Portrait-736h@3x.png
+
+    * Default-Portrait-2436h@3x.png
+
+  * es
+
+    * Default@2x.png
+
+    * Default-568h@2x.png
+
+    * Default-667h@2x.png
+
+    * Default-Portrait-736h@3x.png
+
+    * Default-Portrait-2436h@3x.png
+
 
 In this example, each iOS device has a unique splash screen image for English and Spanish. Add more languages like "es" for Spain for "de" for Germany.
 
@@ -1547,10 +1546,10 @@ For details, see [Windows Asset Qualifiers: Language](/docs/appc/Titanium_SDK/Ti
 
 On Android, the appicon.png is referenced directly from the Android project and does not pass through Titanium. To use density specific versions of the appicon you will need to create a folder structure in the root of the app that looks something like this:
 
-*   <app>/platform/android/res/drawable
-    
-*   <app>/platform/android/res/drawable-hdpi
-    
+* <app>/platform/android/res/drawable
+
+* <app>/platform/android/res/drawable-hdpi
+
 
 As you can see, you'd place density-specific versions of the appicon.png in the respective folders. Additional information about directory naming and device characteristic qualifiers can be found in the Android documentation at [http://developer.android.com/guide/practices/screens\_support.html#qualifiers](http://developer.android.com/guide/practices/screens_support.html#qualifiers).
 
@@ -1558,27 +1557,27 @@ As you can see, you'd place density-specific versions of the appicon.png in the 
 
 Adding iTunes artwork to your project gives your app a polished look when you are testing or deploying to end users. iTunes artwork is only used for Ad-Hoc builds. Do not include this file when distributing your application to the App Store. In order to get your application's icon to appear in iTunes there are a few simple steps to follow.
 
-1.  Create a 512 x 512px and 1024 x 1024px (Retina) version of your applications icon in PNG format.
-    
-2.  Save the PNG file to your application Resources/iphone (Alloy: app/assets/iphone) folder as iTunesArtwork.png and iTunesArtwork@2x.png
-    
-3.  Right-click the file in Studio and choose **rename**. Remove the **.png** extension from the filename, make it simply iTunesArtwork and iTunesArtwork.
-    
-4.  Do a clean build of your project for device.
-    
+1. Create a 512 x 512px and 1024 x 1024px (Retina) version of your applications icon in PNG format.
+
+2. Save the PNG file to your application Resources/iphone (Alloy: app/assets/iphone) folder as iTunesArtwork.png and iTunesArtwork@2x.png
+
+3. Right-click the file in Studio and choose **rename**. Remove the **.png** extension from the filename, make it simply iTunesArtwork and iTunesArtwork.
+
+4. Do a clean build of your project for device.
+
 
 With those steps you should see your application icon show up in iTunes.
 
 ## References and further reading
 
-*   Additional information about resolution-specific and platform-specific images is covered in [Images and ImageView APIs](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Working_with_Media_APIs/Images_and_ImageView_APIs/)
-    
-*   [Supporting multiple screen sizes in Android](http://developer.android.com/guide/practices/screens_support.html)
-    
-*   [App Icons on iPhone, iPad and Apple Watch](https://developer.apple.com/library/content/qa/qa1686/_index.html)
-    
-*   [iOS Design Themes & Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/)
-    
+* Additional information about resolution-specific and platform-specific images is covered in [Images and ImageView APIs](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Working_with_Media_APIs/Images_and_ImageView_APIs/)
+
+* [Supporting multiple screen sizes in Android](http://developer.android.com/guide/practices/screens_support.html)
+
+* [App Icons on iPhone, iPad and Apple Watch](https://developer.apple.com/library/content/qa/qa1686/_index.html)
+
+* [iOS Design Themes & Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/)
+
 
 ## Summary
 

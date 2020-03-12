@@ -1,4 +1,4 @@
-{"title":"Titanium SDK 7.5.0 Functionality Update","weight":"10"} 
+{"title":"Titanium SDK 7.5.0 Functionality Update","weight":"10"}
 
 ## Functionality Update
 

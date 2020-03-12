@@ -1,25 +1,25 @@
-{"title":"Scrolling Views","weight":"30"} 
+{"title":"Scrolling Views","weight":"30"}
 
-*   [ScrollView vs. ScrollableView](#ScrollViewvs.ScrollableView)
-    
-*   [ScrollView](#ScrollView)
-    
-    *   [ScrollView properties](#ScrollViewproperties)
-        
-    *   [ScrollView events](#ScrollViewevents)
-        
-*   [ScrollableView](#ScrollableView)
-    
-    *   [ScrollableView properties](#ScrollableViewproperties)
-        
-    *   [ScrollableView methods](#ScrollableViewmethods)
-        
-    *   [ScrollableView events](#ScrollableViewevents)
-        
-*   [Hands-on Practice](#Hands-onPractice)
-    
-*   [References](#References)
-    
+* [ScrollView vs. ScrollableView](#ScrollViewvs.ScrollableView)
+
+* [ScrollView](#ScrollView)
+
+  * [ScrollView properties](#ScrollViewproperties)
+
+  * [ScrollView events](#ScrollViewevents)
+
+* [ScrollableView](#ScrollableView)
+
+  * [ScrollableView properties](#ScrollableViewproperties)
+
+  * [ScrollableView methods](#ScrollableViewmethods)
+
+  * [ScrollableView events](#ScrollableViewevents)
+
+* [Hands-on Practice](#Hands-onPractice)
+
+* [References](#References)
+
 
 ## Objective
 
@@ -33,10 +33,10 @@ Titanium offers two types of scrolling view containers: the ScrollView and the S
 
 As shown in the preceding image:
 
-*   A [ScrollView](#!/api/Titanium.UI.ScrollView) is a scrollable area of content that doesn’t have to fill the viewport. Users can drag to scroll in either direction.
-    
-*   A [ScrollableView](#!/api/Titanium.UI.ScrollableView) is a screen-size component containing multiple sub-views. ScrollableViews are sort of like a coverflow view, or scrolling image gallery in that they contain "pages" that "snap" into place as you swipe across the container. In common usage, ScrollableViews typically display a page indicator. ScrollableViews scroll horizontally (side-to-side) only.
-    
+* A [ScrollView](#!/api/Titanium.UI.ScrollView) is a scrollable area of content that doesn’t have to fill the viewport. Users can drag to scroll in either direction.
+
+* A [ScrollableView](#!/api/Titanium.UI.ScrollableView) is a screen-size component containing multiple sub-views. ScrollableViews are sort of like a coverflow view, or scrolling image gallery in that they contain "pages" that "snap" into place as you swipe across the container. In common usage, ScrollableViews typically display a page indicator. ScrollableViews scroll horizontally (side-to-side) only.
+
 
 View the video, [scrollingviews.mov](./attachments_29229692_1_scrollingviews.mov), which may make the differences clearer.
 
@@ -92,10 +92,10 @@ On iOS, you can set this value to true (default) so that events are handled by t
 
 As noted in the preceding table, on Android, a ScrollView can be either vertical or horizontal but not both. If you do not specify a type, the following logic is used to determine which scrolling direction to enable:
 
-*   If you provide a width and contentWidth and they are equal scrollType defaults to "vertical"
-    
-*   If you provide a height and contentHeight and they are equal scrollType defaults to "horizontal"
-    
+* If you provide a width and contentWidth and they are equal scrollType defaults to "vertical"
+
+* If you provide a height and contentHeight and they are equal scrollType defaults to "horizontal"
+
 
 If Titanium cannot determine a default scroll direction and you have not explicitly set one, (as of API 1.8) you will see a warning in the console: TiUIScrollView ... Scroll direction could not be determined..
 
@@ -195,33 +195,33 @@ In this lab, you will create a scroll view containing a list of baseball players
 
 #### Steps
 
-1.  Download the starting point code, which includes the necessary graphics, from [http://assets.appcelerator.com.s3.amazonaws.com/app\_u/code/335.zip](http://assets.appcelerator.com.s3.amazonaws.com/app_u/code/335.zip).
-    
-2.  Download and extract the starting point code. Import the project into Studio.
-    
-3.  In app.js, define three image view objects which initially display the images/harmon1.jpg, images/harmon2.jpg, and images/harmon3.jpg files. There's a placeholder comment in the file to help you locate the appropriate location.
-    
-4.  Declare a scrollable view that is 30 points down from the top of the window. It should show a 30 point high paging controller. Set its views to be the three image views you created.
-    
-5.  Write the updateSVImages() function to update the three image views when called. This function accepts a simple array of image strings. Update the event listener to call your function, passing the required array of images. Make sure the first image view is displayed when the event listener is triggered.
-    
-6.  In createCustomScrollView() create a scroll view object that fills the width of the screen but is 30 points tall. Make sure to provide for sufficient content width. Set the background color to be green.
-    
-7.  To the container component, add the five labels using the createCustomLabel() function provided.
-    
-8.  Write the event listener to watch for the click event. When fired, it should test for the existence of the player custom property. If it exists, fire the app level event to match the one you defined in the scrollable view. Pass an array of images constructed from the image path and the player's name as stored in the player property.
-    
-9.  Build and run your app in the simulator/emulator. Correct any errors and build again. Compare your finished work to the screenshot above. You should be able to click a player's name and have his pictures show in the scrollable view.
-    
+1. Download the starting point code, which includes the necessary graphics, from [http://assets.appcelerator.com.s3.amazonaws.com/app\_u/code/335.zip](http://assets.appcelerator.com.s3.amazonaws.com/app_u/code/335.zip).
+
+2. Download and extract the starting point code. Import the project into Studio.
+
+3. In app.js, define three image view objects which initially display the images/harmon1.jpg, images/harmon2.jpg, and images/harmon3.jpg files. There's a placeholder comment in the file to help you locate the appropriate location.
+
+4. Declare a scrollable view that is 30 points down from the top of the window. It should show a 30 point high paging controller. Set its views to be the three image views you created.
+
+5. Write the updateSVImages() function to update the three image views when called. This function accepts a simple array of image strings. Update the event listener to call your function, passing the required array of images. Make sure the first image view is displayed when the event listener is triggered.
+
+6. In createCustomScrollView() create a scroll view object that fills the width of the screen but is 30 points tall. Make sure to provide for sufficient content width. Set the background color to be green.
+
+7. To the container component, add the five labels using the createCustomLabel() function provided.
+
+8. Write the event listener to watch for the click event. When fired, it should test for the existence of the player custom property. If it exists, fire the app level event to match the one you defined in the scrollable view. Pass an array of images constructed from the image path and the player's name as stored in the player property.
+
+9. Build and run your app in the simulator/emulator. Correct any errors and build again. Compare your finished work to the screenshot above. You should be able to click a player's name and have his pictures show in the scrollable view.
+
 
 ### References
 
-*   API docs - [ScrollView](#!/api/Titanium.UI.ScrollView)
-    
-*   API docs - [ScrollableViews](#!/api/Titanium.UI.ScrollableView)
-    
-*   [WebViews](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Integrating_Web_Content/The_WebView_Component/) as scrollable containers
-    
+* API docs - [ScrollView](#!/api/Titanium.UI.ScrollView)
+
+* API docs - [ScrollableViews](#!/api/Titanium.UI.ScrollableView)
+
+* [WebViews](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Integrating_Web_Content/The_WebView_Component/) as scrollable containers
+
 
 ## Summary
 

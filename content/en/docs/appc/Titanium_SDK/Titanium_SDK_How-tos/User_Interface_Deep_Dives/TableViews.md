@@ -1,25 +1,25 @@
-{"title":"TableViews","weight":"20"} 
+{"title":"TableViews","weight":"20"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [Assigning data to your table](#Assigningdatatoyourtable)
-        
-        *   [Emptying a table](#Emptyingatable)
-            
-        *   [Setting data vs. setData() vs. appendRow()](#Settingdatavs.setData()vs.appendRow())
-            
-    *   [Row properties](#Rowproperties)
-        
-        *   [Row indicators](#Rowindicators)
-            
-    *   [Custom rows](#Customrows)
-        
-    *   [Grouped rows](#Groupedrows)
-        
-    *   [Headers and footers](#Headersandfooters)
-        
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [Assigning data to your table](#Assigningdatatoyourtable)
+
+    * [Emptying a table](#Emptyingatable)
+
+    * [Setting data vs. setData() vs. appendRow()](#Settingdatavs.setData()vs.appendRow())
+
+  * [Row properties](#Rowproperties)
+
+    * [Row indicators](#Rowindicators)
+
+  * [Custom rows](#Customrows)
+
+  * [Grouped rows](#Groupedrows)
+
+  * [Headers and footers](#Headersandfooters)
+
 
 ## Objective
 
@@ -37,20 +37,20 @@ Let's start by creating a table. You do so with the Ti.UI.createTableView() meth
 
 Some key table properties include:
 
-*   height and width – controls the dimensions of the table; it doesn't have to fill its parent container
-    
-*   top and left – controls placement of the table, useful if you want to add buttons or labels above or below it
-    
-*   backgroundColor and backgroundImage – controls the background of the table; transparent is a valid backgroundColor
-    
-*   rowHeight / minRowHeight / maxRowHeight – controls table-wide dimensions of rows
-    
-*   headerTitle / headerView – controls the table's header
-    
-*   footerTitle / footerView – controls the table's footer
-    
-*   scrollable (boolean) – controls whether the table is scrollable (vertically)
-    
+* height and width – controls the dimensions of the table; it doesn't have to fill its parent container
+
+* top and left – controls placement of the table, useful if you want to add buttons or labels above or below it
+
+* backgroundColor and backgroundImage – controls the background of the table; transparent is a valid backgroundColor
+
+* rowHeight / minRowHeight / maxRowHeight – controls table-wide dimensions of rows
+
+* headerTitle / headerView – controls the table's header
+
+* footerTitle / footerView – controls the table's footer
+
+* scrollable (boolean) – controls whether the table is scrollable (vertically)
+
 
 ### Assigning data to your table
 
@@ -132,16 +132,16 @@ If your app does however currently require a table with thousands of rows, you s
 
 Now that we've seen how to create tables and rows, let's learn a bit more about the built-in row properties. TableViewRow objects have various useful properties that you can use to add style and functionality to your tables.
 
-*   className – set this property equal to an arbitrary string to optimize rendering performance. On both iOS and Android, setting this property enables the operating system to reuse table rows that are scrolled out of view to speed up the rendering of newly-visible rows. On iOS, the string you supply is used to specify the reuse-identifier string ([setdequeueReusableCellWithIdentifier](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UITableView_Class/Reference/Reference.html#//apple_ref/occ/instm/UITableView/dequeueReusableCellWithIdentifier:)); on Android, it is used within a custom object reuse method within Titanium.
-    
-*   leftImage – set this property equal to an image URL (local or remote) to display that image to the left of the row's title
-    
-*   rightImage – set this property equal to an image URL (local or remote) to display that image to the right of the row's title
-    
-*   backgroundImage – set this property equal to an image URL (local or remote) to display that image in the background of the row
-    
-*   backgroundColor – set this property to a color string to set the row's background color
-    
+* className – set this property equal to an arbitrary string to optimize rendering performance. On both iOS and Android, setting this property enables the operating system to reuse table rows that are scrolled out of view to speed up the rendering of newly-visible rows. On iOS, the string you supply is used to specify the reuse-identifier string ([setdequeueReusableCellWithIdentifier](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UITableView_Class/Reference/Reference.html#//apple_ref/occ/instm/UITableView/dequeueReusableCellWithIdentifier:)); on Android, it is used within a custom object reuse method within Titanium.
+
+* leftImage – set this property equal to an image URL (local or remote) to display that image to the left of the row's title
+
+* rightImage – set this property equal to an image URL (local or remote) to display that image to the right of the row's title
+
+* backgroundImage – set this property equal to an image URL (local or remote) to display that image in the background of the row
+
+* backgroundColor – set this property to a color string to set the row's background color
+
 
 So let's augment the properties of the prior TableView example rows. In the following code we'll utilize the above properties on a per row basis, making for a highly styled set of table rows.
 
@@ -181,12 +181,12 @@ Row indicators are icons that provide visual cues to your users related to your 
 
 ![row_indicators](/Images/appc/download/attachments/29004930/row_indicators.png)
 
-*   hasChild – indicates sub-table or additional rows (most commonly used on iOS with the navigation controller)
-    
-*   hasDetail – indicates a detail view or alert will appear when row is tapped (not supported on Android)
-    
-*   hasCheck – an on/off or yes/no indicator
-    
+* hasChild – indicates sub-table or additional rows (most commonly used on iOS with the navigation controller)
+
+* hasDetail – indicates a detail view or alert will appear when row is tapped (not supported on Android)
+
+* hasCheck – an on/off or yes/no indicator
+
 
 ### Custom rows
 

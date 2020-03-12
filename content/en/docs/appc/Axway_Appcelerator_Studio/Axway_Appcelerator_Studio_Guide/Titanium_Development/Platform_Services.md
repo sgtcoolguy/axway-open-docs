@@ -1,30 +1,30 @@
-{"title":"Platform Services","weight":"130"} 
+{"title":"Platform Services","weight":"130"}
 
-*   [Introduction](#Introduction)
-    
-*   [Enable Appcelerator Services](#EnableAppceleratorServices)
-    
-    *   [tiapp.xml](#tiapp.xml)
-        
-        *   [Android Permissions](#AndroidPermissions)
-            
-*   [Troubleshooting](#Troubleshooting)
-    
-    *   [Unable to enable Appcelerator Services](#UnabletoenableAppceleratorServices)
-        
+* [Introduction](#Introduction)
+
+* [Enable Appcelerator Services](#EnableAppceleratorServices)
+
+  * [tiapp.xml](#tiapp.xml)
+
+    * [Android Permissions](#AndroidPermissions)
+
+* [Troubleshooting](#Troubleshooting)
+
+  * [Unable to enable Appcelerator Services](#UnabletoenableAppceleratorServices)
+
 
 ## Introduction
 
 Appcelerator Services are a set of features that are enabled through Appcelerator Studio and tracked on the Appcelerator Dashboard. These features include:
 
-*   **API Builder**: Mobile backend-as-a-service solution providing commonly used features, such as user management, push notification, integration with social networks and cloud storage provided by Mobile Backend Services. Using API Builder Cloud and Arrow Builder, developers can quickly and easily create mobile-optimized APIs that manage data from multiple data sources, such as SAP, Salesforce.com, Oracle, Sharepoint and others. For more information, see the [Axway API Builder](/docs/appc/Axway_API_Builder/).
-    
-*   **Appcelerator Test**: Integrated automated functional testing for your application, powered by SOASTA services. Using Appcelerator Test, developers and testers collaborate to record tests directly on the mobile device, execute tests and analyze the results. For more information, see [Appcelerator Test](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Test/)
-    
-*   **Appcelerator Performance**: Monitors your application's health, crashes and overall performance, powered by our own [crash server service](#CrashServer). Using Appcelerator Performance, developers are able to diagnose why applications crash and focus on specific issues based on user feedback. For more information, see [Appcelerator Performance Management](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/Appcelerator_Performance_Management/).
-    
-*   **Appcelerator Analytics**: Track your applications' user adoption and engagement. Understand how your application is used, which features are not used and decide what will go in the next version of your application. For more information, see [Appcelerator Analytics](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/).
-    
+* **API Builder**: Mobile backend-as-a-service solution providing commonly used features, such as user management, push notification, integration with social networks and cloud storage provided by Mobile Backend Services. Using API Builder Cloud and Arrow Builder, developers can quickly and easily create mobile-optimized APIs that manage data from multiple data sources, such as SAP, Salesforce.com, Oracle, Sharepoint and others. For more information, see the [Axway API Builder](/docs/appc/Axway_API_Builder/).
+
+* **Appcelerator Test**: Integrated automated functional testing for your application, powered by SOASTA services. Using Appcelerator Test, developers and testers collaborate to record tests directly on the mobile device, execute tests and analyze the results. For more information, see [Appcelerator Test](#undefined)
+
+* **Appcelerator Performance**: Monitors your application's health, crashes and overall performance, powered by our own [crash server service](#CrashServer). Using Appcelerator Performance, developers are able to diagnose why applications crash and focus on specific issues based on user feedback. For more information, see [Appcelerator Performance Management](#undefined).
+
+* **Appcelerator Analytics**: Track your applications' user adoption and engagement. Understand how your application is used, which features are not used and decide what will go in the next version of your application. For more information, see [Appcelerator Analytics](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/).
+
 
 You can monitor and manage these services using the Appcelerator Dashboard at [https://platform.appcelerator.com](https://platform.appcelerator.com).
 
@@ -34,10 +34,10 @@ For information on using the dashboard, see [Appcelerator Dashboard](/docs/appc/
 
 To enable Appcelerator Services for a Titanium or Alloy project:
 
-*   When creating a new application in Appcelerator Studio, make sure the **Enable Appcelerator Services** checkbox is enabled.
-    
-*   For a previously created project, open your tiapp.xml file, then click the **Enable Services** button under the _Appcelerator Service_ section.
-    
+* When creating a new application in Appcelerator Studio, make sure the **Enable Appcelerator Services** checkbox is enabled.
+
+* For a previously created project, open your tiapp.xml file, then click the **Enable Services** button under the _Appcelerator Service_ section.
+
 
 Appcelerator Studio injects code in to the tiapp.xml file to enable these services for your project. See code examples below. Do not modify these changes or else you will disable these services.
 
@@ -221,10 +221,10 @@ The Test service to uniquely identify the device.
 
 GET\_TASKS
 
-*   The Performance service to accurately log which activity caused a crash or error
-    
-*   The Test service to detect UI changes, UI interactions and playback changes.
-    
+* The Performance service to accurately log which activity caused a crash or error
+
+* The Test service to detect UI changes, UI interactions and playback changes.
+
 
 INTERNET
 

@@ -1,31 +1,31 @@
-{"title":"Android Action Bar","weight":"10"} 
+{"title":"Android Action Bar","weight":"10"}
 
 The action bar is a major UI feature for Android applications in Android 3.0 and later. To understand all of the features of the action bar and its place in Android applications, we recommend reviewing the [Android Design: Action Bar](http://developer.android.com/design/patterns/actionbar.html) and the [Action Bar API guide](http://developer.android.com/guide/topics/ui/actionbar.html) on the Android developer site.
 
-*   [Supported and unsupported features](#Supportedandunsupportedfeatures)
-    
-*   [Enabling the action bar](#Enablingtheactionbar)
-    
-*   [Hiding the action bar](#Hidingtheactionbar)
-    
-*   [Action bar tabs](#Actionbartabs)
-    
-*   [Action items](#Actionitems)
-    
-    *   [Dynamically updating action items](#Dynamicallyupdatingactionitems)
-        
-*   [Other action bar features](#Otheractionbarfeatures)
-    
-*   [Styling the action bar](#Stylingtheactionbar)
-    
-    *   [Further reading](#Furtherreading)
-        
-*   [Testing in the emulator](#Testingintheemulator)
-    
-    *   [Android emulator](#Androidemulator)
-        
-    *   [Genymotion emulator](#Genymotionemulator)
-        
+* [Supported and unsupported features](#Supportedandunsupportedfeatures)
+
+* [Enabling the action bar](#Enablingtheactionbar)
+
+* [Hiding the action bar](#Hidingtheactionbar)
+
+* [Action bar tabs](#Actionbartabs)
+
+* [Action items](#Actionitems)
+
+  * [Dynamically updating action items](#Dynamicallyupdatingactionitems)
+
+* [Other action bar features](#Otheractionbarfeatures)
+
+* [Styling the action bar](#Stylingtheactionbar)
+
+  * [Further reading](#Furtherreading)
+
+* [Testing in the emulator](#Testingintheemulator)
+
+  * [Android emulator](#Androidemulator)
+
+  * [Genymotion emulator](#Genymotionemulator)
+
 
 ## Supported and unsupported features
 
@@ -33,14 +33,14 @@ Titanium SDK 3.0 includes support for the Android action bar element, including 
 
 The following features are _not_ supported:
 
-*   Drawer-style navigation is not supported. Only tabs are supported at this time. Depending on screen space and the number of tabs, Android may display the tabs as standard tabs, scrolling tabs, or a drop-down list.
-    
-*   Contextual action bars are not supported.
-    
-*   Action providers are not supported.
-    
-*   Most styling on the action bar must be done using Android themes and styles.
-    
+* Drawer-style navigation is not supported. Only tabs are supported at this time. Depending on screen space and the number of tabs, Android may display the tabs as standard tabs, scrolling tabs, or a drop-down list.
+
+* Contextual action bars are not supported.
+
+* Action providers are not supported.
+
+* Most styling on the action bar must be done using Android themes and styles.
+
 
 ## Enabling the action bar
 
@@ -126,19 +126,19 @@ With the new-style tab group, all of the windows in a tab group share a single a
 
 For action items, you can add items to the action bar by creating menu items and specifying the new [showAsAction](#!/api/Titanium.Android.MenuItem-property-showAsAction) property. Valid values are:
 
-*   SHOW\_AS\_ACTION\_ALWAYS. Show item in action bar.
-    
-*   SHOW\_AS\_ACTION\_IF\_ROOM. Show item in action bar if space permits, or in the overflow menu otherwise.
-    
-*   SHOW\_AS\_ACTION\_NEVER. Only show item in the overflow menu. This is the default.
-    
+* SHOW\_AS\_ACTION\_ALWAYS. Show item in action bar.
+
+* SHOW\_AS\_ACTION\_IF\_ROOM. Show item in action bar if space permits, or in the overflow menu otherwise.
+
+* SHOW\_AS\_ACTION\_NEVER. Only show item in the overflow menu. This is the default.
+
 
 You can OR the above values with one of the following modifiers:
 
-*   SHOW\_AS\_ACTION\_WITH\_TEXT. Show the action item text instead of its icon, _if space permits_.
-    
-*   SHOW\_AS\_ACTION\_COLLAPSE\_ACTION\_VIEW. Create a standard action item button that can be "expanded" to show an action view.
-    
+* SHOW\_AS\_ACTION\_WITH\_TEXT. Show the action item text instead of its icon, _if space permits_.
+
+* SHOW\_AS\_ACTION\_COLLAPSE\_ACTION\_VIEW. Create a standard action item button that can be "expanded" to show an action view.
+
 
 The following code sample creates a basic action item:
 
@@ -172,16 +172,16 @@ If showAsAction is set to SHOW\_AS\_ACTION\_COLLAPSE\_ACTION\_VIEW is specified,
 
 When creating action items, keep in mind:
 
-*   The behavior of SHOW\_AS\_ACTION\_WITH\_TEXT is rather unpredictable; if you specify an icon and SHOW\_AS\_ACTION\_WITH\_TEXT, the Android OS still may choose to display either the text or the icon, depending on how much space is available in the action bar. This determination may vary based on which orientation an application was launched in, so the setting should be used with care if your application supports multiple orientations. To force Android to display text for an action item, specify a title but no icon.  
-    Note that Android displays _**either**_ text or an icon in the action bar. If you need to include both text and an icon, you can create a Titanium button with both text and icon, and add it as the actionView.
-    
-*   When an action item is displayed in the overflow menu (for example, when specified with SHOW\_AS\_ACTION\_IF\_ROOM or SHOW\_AS\_ACTION\_NEVER), it is displayed as text, without an icon. This is the way the overflow menu is meant to behave. It may cause some confusion because it differs from the way items are displayed in the action bar (where they use the icon if available) and in the legacy Android menu (where both icon and text are displayed).
-    
-*   You should always specify a title for an action item. Titles are used to display in the overflow menu, and are also displayed as hints when the user long-presses on an action item.
-    
+* The behavior of SHOW\_AS\_ACTION\_WITH\_TEXT is rather unpredictable; if you specify an icon and SHOW\_AS\_ACTION\_WITH\_TEXT, the Android OS still may choose to display either the text or the icon, depending on how much space is available in the action bar. This determination may vary based on which orientation an application was launched in, so the setting should be used with care if your application supports multiple orientations. To force Android to display text for an action item, specify a title but no icon.
+  Note that Android displays _**either**_ text or an icon in the action bar. If you need to include both text and an icon, you can create a Titanium button with both text and icon, and add it as the actionView.
 
-*   Only a few items can be displayed in the action bar. See the [Android Design: Action Bar](http://developer.android.com/design/patterns/actionbar.html) for guidelines on selecting action items.
-    
+* When an action item is displayed in the overflow menu (for example, when specified with SHOW\_AS\_ACTION\_IF\_ROOM or SHOW\_AS\_ACTION\_NEVER), it is displayed as text, without an icon. This is the way the overflow menu is meant to behave. It may cause some confusion because it differs from the way items are displayed in the action bar (where they use the icon if available) and in the legacy Android menu (where both icon and text are displayed).
+
+* You should always specify a title for an action item. Titles are used to display in the overflow menu, and are also displayed as hints when the user long-presses on an action item.
+
+
+* Only a few items can be displayed in the action bar. See the [Android Design: Action Bar](http://developer.android.com/design/patterns/actionbar.html) for guidelines on selecting action items.
+
 
 ### Dynamically updating action items
 
@@ -275,54 +275,54 @@ You can use the ActionBar title, backgroundImage, icon, and logo properties to s
 
 To change the style of the action bar, create a custom theme to override the [Action Bar style properties](https://developer.android.com/guide/topics/ui/actionbar.html#Style). To create a custom theme:
 
-1.  Create an XML file in platform/android/res/values.
-    
-2.  In the XML file, create an action bar style resource and set the parent style of the action bar style to Widget.AppCompat.ActionBar or another supported Action Bar parent.
-    
-    `<``style`  `name``=``"MyTheme"`  `parent``=``"@style/Widget.AppCompat.ActionBar"` `/>`
-    
-3.  Define action bar properties in the style resource to override the default values from the parent style. To support devices running Android 2.3.x, the property name does not use the android: prefix, so you need to duplicate the properties then remove the android: prefix from the name.
-    
-    `<``style`  `name``=``"MyTheme"`  `parent``=``"@style/Widget.AppCompat.ActionBar"``>`
-    
-    `<!-- For Android 3.x. and above -->`
-    
-    `<``item`  `name``=``"android:background"``>@drawable/actionbar_background</``item``>`
-    
-    `<!-- For Android 2.3.x -->`
-    
-    `<``item`  `name``=``"background"``>@drawable/actionbar_background</``item``>`
-    
-    `</``style``>`
-    
-4.  In the theme, set the android:actionBarStyle to name of action bar style you created.
-    
-    `<``style`  `name``=``"Theme.CustomActionBar"`  `parent``=``"@style/Theme.AppCompat"``>`
-    
-    `<``item`  `name``=``"android:actionBarStyle"``>@style/MyActionBar</``item``>`
-    
-    `<``item`  `name``=``"actionBarStyle"``>@style/MyActionBar</``item``>`
-    
-    `</``style``>`
-    
-5.  Modify your tiapp.xml file to use the custom theme:
-    
-    tiapp.xml
-    
-    `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-    
-    `<``manifest``>`
-    
-    `<``application`  `android:theme``=``"@style/Theme.CustomActionBar"``/>`
-    
-    `<!-- Need to specify at least API level 11 for Titanium SDK 3.2.x and prior -->`
-    
-    `<``uses``-sdk` `android:minSdkVersion``=``"14"`  `android:targetSdkVersion``=``"19"``/>`
-    
-    `</``manifest``>`
-    
-    `</``android``>`
-    
+1. Create an XML file in platform/android/res/values.
+
+2. In the XML file, create an action bar style resource and set the parent style of the action bar style to Widget.AppCompat.ActionBar or another supported Action Bar parent.
+
+  `<``style`  `name``=``"MyTheme"`  `parent``=``"@style/Widget.AppCompat.ActionBar"` `/>`
+
+3. Define action bar properties in the style resource to override the default values from the parent style. To support devices running Android 2.3.x, the property name does not use the android: prefix, so you need to duplicate the properties then remove the android: prefix from the name.
+
+  `<``style`  `name``=``"MyTheme"`  `parent``=``"@style/Widget.AppCompat.ActionBar"``>`
+
+  `<!-- For Android 3.x. and above -->`
+
+  `<``item`  `name``=``"android:background"``>@drawable/actionbar_background</``item``>`
+
+  `<!-- For Android 2.3.x -->`
+
+  `<``item`  `name``=``"background"``>@drawable/actionbar_background</``item``>`
+
+  `</``style``>`
+
+4. In the theme, set the android:actionBarStyle to name of action bar style you created.
+
+  `<``style`  `name``=``"Theme.CustomActionBar"`  `parent``=``"@style/Theme.AppCompat"``>`
+
+  `<``item`  `name``=``"android:actionBarStyle"``>@style/MyActionBar</``item``>`
+
+  `<``item`  `name``=``"actionBarStyle"``>@style/MyActionBar</``item``>`
+
+  `</``style``>`
+
+5. Modify your tiapp.xml file to use the custom theme:
+
+  tiapp.xml
+
+  `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
+
+  `<``manifest``>`
+
+  `<``application`  `android:theme``=``"@style/Theme.CustomActionBar"``/>`
+
+  `<!-- Need to specify at least API level 11 for Titanium SDK 3.2.x and prior -->`
+
+  `<``uses``-sdk` `android:minSdkVersion``=``"14"`  `android:targetSdkVersion``=``"19"``/>`
+
+  `</``manifest``>`
+
+  `</``android``>`
+
 
 The example below modifies the Action Bar's background color and title text color.
 
@@ -384,10 +384,10 @@ platform/android/res/values/mytheme.xml
 
 ### Further reading
 
-*   [Android Themes](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/Android_Themes/)
-    
-*   [Android Developer: Styling the Action Bar](https://developer.android.com/training/basics/actionbar/styling.html)
-    
+* [Android Themes](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/Android_Themes/)
+
+* [Android Developer: Styling the Action Bar](https://developer.android.com/training/basics/actionbar/styling.html)
+
 
 ## Testing in the emulator
 
@@ -399,31 +399,31 @@ When testing the action bar in the Android emulator, note that the action overfl
 
 To configure the Android emulator to show the overflow menu:
 
-1.  Make a note of the name of the emulator you're testing with (for example, titanium\_25\_WVGA800).
-    
-2.  Close the emulator.
-    
-3.  Run the Android AVD manager:  
-      
-    android avd  
-      
-    The android command is in the tools folder of the Android SDK folder.
-    
-4.  Select the emulator you're testing with and click **Edit**.
-    
-5.  Click **New** next to the Hardware list.
-    
-6.  Choose **Hardware Back/Home Keys** and click **OK**.
-    
-7.  Change the **Hardware Back/Home Keys** value to **No.  
-    ![edit_avd_properties](/Images/appc/download/attachments/36735509/edit_avd_properties.png)** 
-    
-8.  Click _outside_ the Hardware list to confirm the value change; make sure the value for **Hardware Back/Home Keys** is still displayed as **No**.
-    
-9.  Click **Edit AVD**.
-    
-10.  Run your test application again.
-    
+1. Make a note of the name of the emulator you're testing with (for example, titanium\_25\_WVGA800).
+
+2. Close the emulator.
+
+3. Run the Android AVD manager:
+
+  android avd
+
+  The android command is in the tools folder of the Android SDK folder.
+
+4. Select the emulator you're testing with and click **Edit**.
+
+5. Click **New** next to the Hardware list.
+
+6. Choose **Hardware Back/Home Keys** and click **OK**.
+
+7. Change the **Hardware Back/Home Keys** value to **No.
+  ![edit_avd_properties](/Images/appc/download/attachments/36735509/edit_avd_properties.png)**
+
+8. Click _outside_ the Hardware list to confirm the value change; make sure the value for **Hardware Back/Home Keys** is still displayed as **No**.
+
+9. Click **Edit AVD**.
+
+10. Run your test application again.
+
 
 ### Genymotion emulator
 
@@ -431,25 +431,25 @@ If you do not see the overflow menu when testing on a Genymotion emulator, you m
 
 To enable the navigation bar, the emulator must not be currently opened, then:
 
-1.  Start the Genymotion app.
-    
-2.  Select the emulator you want to configure, then click **Configure** button ![configure](/Images/appc/download/attachments/36735509/configure.png) .
-    
-3.  Enable **Show Android navigation** **bar**, then click **OK**.
-    
-4.  Run your test application again.
-    
+1. Start the Genymotion app.
+
+2. Select the emulator you want to configure, then click **Configure** button ![configure](/Images/appc/download/attachments/36735509/configure.png) .
+
+3. Enable **Show Android navigation** **bar**, then click **OK**.
+
+4. Run your test application again.
+
 
 ![GenymotinConfiguration](/Images/appc/download/attachments/36735509/GenymotinConfiguration.png)
 
 See also:
 
-*   [Android Design: Action Bar](http://developer.android.com/design/patterns/actionbar.html) in Android Design
-    
-*   [Action Bar](http://developer.android.com/guide/topics/ui/actionbar.html) in the Android API Guides
-    
-*   [Android Themes](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/Android_Themes/) in the Titanium Guides
-    
-*   [ActionBar](#!/api/Titanium.Android.ActionBar) Titanium API Reference
-    
-*   [MenuItem](#!/api/Titanium.Android.MenuItem) Titanium API Reference
+* [Android Design: Action Bar](http://developer.android.com/design/patterns/actionbar.html) in Android Design
+
+* [Action Bar](http://developer.android.com/guide/topics/ui/actionbar.html) in the Android API Guides
+
+* [Android Themes](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/Android_Themes/) in the Titanium Guides
+
+* [ActionBar](#!/api/Titanium.Android.ActionBar) Titanium API Reference
+
+* [MenuItem](#!/api/Titanium.Android.MenuItem) Titanium API Reference

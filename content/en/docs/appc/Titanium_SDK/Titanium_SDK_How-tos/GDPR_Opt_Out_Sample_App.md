@@ -1,4 +1,4 @@
-{"title":"GDPR Opt Out Sample App","weight":"150"} 
+{"title":"GDPR Opt Out Sample App","weight":"150"}
 
 We have created a sample app that shows users how to opt out from Analytics (per the GDPR).
 
@@ -34,10 +34,10 @@ Here is a practical example: Let's assume, you have a Ti.UI.Switch instance in y
 
 There are many other components of app-development that should become GDPR-complient as well. Some modules that are already GDPR complient:
 
-*   [Ti.Admob](https://github.com/appcelerator-modules/ti.admob)
-    
-*   [Ti.Firebase](https://github.com/hansemannn/titanium-firebase)
-    
+* [Ti.Admob](https://github.com/appcelerator-modules/ti.admob)
+
+* [Ti.Firebase](https://github.com/hansemannn/titanium-firebase)
+
 
 ## Questions?
 

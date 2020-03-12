@@ -1,4 +1,4 @@
-{"title":"Adding new Deployment Providers","weight":"30"} 
+{"title":"Adding new Deployment Providers","weight":"30"}
 
 There are two relevant extension points that related to deployment, both living on the com.aptana.deploy namespace (though one resides in that plugin and the other in the com.aptana.deploy.epl fragment due to licensing issues).
 

@@ -1,6 +1,6 @@
-{"title":"Logger Class","weight":"60"} 
+{"title":"Logger Class","weight":"60"}
 
-The Logger class contains methods and properties for writing out items to the log file inside Studio
+The Logger class contains methods and properties for writing out items to the log file inside Studio.
 
 ## Usage
 
@@ -44,20 +44,20 @@ Description
 
 log\_level
 
-Sets the current log level to one of none, trace, info, warning, error
+Sets the current log level to one of none, trace, info, warning, or error.
 
 log\_error(message)
 
-Write out a error message to the log file
+Write out an error message to the log file.
 
 log\_warning(message)
 
-Write out a warning message to the log file
+Write out a warning message to the log file.
 
 log\_info(message)
 
-Write out a info message to the log file
+Write out an info message to the log file.
 
 trace(message)
 
-Write out a trace message to the log file
+Write out a trace message to the log file.

@@ -1,33 +1,33 @@
-{"title":"Coding Best Practices","weight":"10"} 
+{"title":"Coding Best Practices","weight":"10"}
 
-*   [JavaScript and general recommendations](#JavaScriptandgeneralrecommendations)
-    
-    *   [Avoid the global scope](#Avoidtheglobalscope)
-        
-    *   [Avoid local objects in global event listeners](#Avoidlocalobjectsinglobaleventlisteners)
-        
-    *   [Do not name custom events with spaces](#Donotnamecustomeventswithspaces)
-        
-    *   [Defer script loading](#Deferscriptloading)
-        
-*   [Titanium-specific recommendations](#Titanium-specificrecommendations)
-    
-    *   [Don't extend Titanium prototypes](#Don'textendTitaniumprototypes)
-        
-    *   [Coding strategies for multiplatform apps](#Codingstrategiesformultiplatformapps)
-        
-    *   [Don't store sensitive data in non-JavaScript files](#Don'tstoresensitivedatainnon-JavaScriptfiles)
-        
-    *   [Set local variables to avoid calling native methods](#Setlocalvariablestoavoidcallingnativemethods)
-        
-*   [App architecture recommendations](#Apparchitecturerecommendations)
-    
-    *   [Modular components with CommonJS](#ModularcomponentswithCommonJS)
-        
-        *   [Custom objects as components](#Customobjectsascomponents)
-            
-        *   [Classical-based patterns](#Classical-basedpatterns)
-            
+* [JavaScript and general recommendations](#JavaScriptandgeneralrecommendations)
+
+  * [Avoid the global scope](#Avoidtheglobalscope)
+
+  * [Avoid local objects in global event listeners](#Avoidlocalobjectsinglobaleventlisteners)
+
+  * [Do not name custom events with spaces](#Donotnamecustomeventswithspaces)
+
+  * [Defer script loading](#Deferscriptloading)
+
+* [Titanium-specific recommendations](#Titanium-specificrecommendations)
+
+  * [Don't extend Titanium prototypes](#Don'textendTitaniumprototypes)
+
+  * [Coding strategies for multiplatform apps](#Codingstrategiesformultiplatformapps)
+
+  * [Don't store sensitive data in non-JavaScript files](#Don'tstoresensitivedatainnon-JavaScriptfiles)
+
+  * [Set local variables to avoid calling native methods](#Setlocalvariablestoavoidcallingnativemethods)
+
+* [App architecture recommendations](#Apparchitecturerecommendations)
+
+  * [Modular components with CommonJS](#ModularcomponentswithCommonJS)
+
+    * [Custom objects as components](#Customobjectsascomponents)
+
+    * [Classical-based patterns](#Classical-basedpatterns)
+
 
 The Appcelerator-approved standard for apps developed on the Titanium platform specifies a **single-context**, **modular pattern**, with **well-structured code**, and **well-organized resources**. By following these standards, developers will create apps that meet the preceding checklist of Stable, Rapid, Performant, and Readable.
 
@@ -37,19 +37,19 @@ The Appcelerator-approved standard for apps developed on the Titanium platform s
 
 Putting objects into the global scope can cause various problems:
 
-*   Objects placed in the global scope will not be automatically garbage collected. You'll have to manually null global objects to mark them ready for collection.
-    
-*   It's easy to inadvertently overwrite an object in the global scope, because that variable is accessible so widely within your program.
-    
-*   The global scope of app.js is not accessible from other contexts or within CommonJS modules. So, you can't just dump variables there so you can access them throughout your app.
-    
+* Objects placed in the global scope will not be automatically garbage collected. You'll have to manually null global objects to mark them ready for collection.
+
+* It's easy to inadvertently overwrite an object in the global scope, because that variable is accessible so widely within your program.
+
+* The global scope of app.js is not accessible from other contexts or within CommonJS modules. So, you can't just dump variables there so you can access them throughout your app.
+
 
 For these reasons, avoid defining variables in the global scope. Objects are placed in the global scope when:
 
-*   You declare a variable outside of a function or CommonJS module. _Using a modular pattern will alleviate this problem._
-    
-*   You omit the var keyword when declaring a variable (within or outside of a function). _So always use_ var _when declaring variables._
-    
+* You declare a variable outside of a function or CommonJS module. _Using a modular pattern will alleviate this problem._
+
+* You omit the var keyword when declaring a variable (within or outside of a function). _So always use_ var _when declaring variables._
+
 
 ### Avoid local objects in global event listeners
 
@@ -89,7 +89,7 @@ Using spaces to name custom events may cause issues with other JavaScript librar
 
 ### Defer script loading
 
-One of the bottlenecks of a Titanium application is JavaScript evaluation. This is particularly the case for Android, although the V8 runtime provides substantial improvements for this issue compared with Rhino. For that reason, to speed the startup and responsiveness of your application, you should avoid loading scripts until they are absolutely needed. As in the following application, which has three windows to be opened in succession on a click (touch) event, note that the dependent JavaScript for each window is not loaded until absolutely necessary.
+One of the bottlenecks of a Titanium application is JavaScript evaluation. For that reason, to speed the startup and responsiveness of your application, you should avoid loading scripts until they are absolutely needed. As in the following application, which has three windows to be opened in succession on a click (touch) event, note that the dependent JavaScript for each window is not loaded until absolutely necessary.
 
 Lazy script loading in app.js
 
@@ -163,12 +163,12 @@ Deferred loading to build a namespace
 
 Many users attempt to add to the Ti namespace as a means to persist data across contexts, extend / override native methods, etc. This can sometimes work but is very unreliable for the following reasons:
 
-1.  The Titanium end objects are really not true JavaScript objects. They are proxy representations of native operating system components. As such, they are constructed to pass through properties and method invocations. Your extensions could conflict with native functionality or interfere with proper operation of the proxy objects.
-    
-2.  Sometimes you might be able to store things on the namespace but it's not changeable (i.e. an array stored on the namespace might not be able to be modified - mutable, etc.). Other-times your stored objects will be completely null.
-    
-3.  Since this isn't an approved way of storing anything, there's no guarantee it will work in future releases of Titanium.
-    
+1. The Titanium end objects are really not true JavaScript objects. They are proxy representations of native operating system components. As such, they are constructed to pass through properties and method invocations. Your extensions could conflict with native functionality or interfere with proper operation of the proxy objects.
+
+2. Sometimes you might be able to store things on the namespace but it's not changeable (i.e. an array stored on the namespace might not be able to be modified - mutable, etc.). Other-times your stored objects will be completely null.
+
+3. Since this isn't an approved way of storing anything, there's no guarantee it will work in future releases of Titanium.
+
 
 As a rule do not add to, or extend via the prototype, any object or module in the Titanium namespace. If you want to extend a core part of the Titanium API you should build a native module to accomplish this. If you're just looking for an extendible JS namespace, create your own (i.e. {{var MyApp={} }}).
 
@@ -248,7 +248,7 @@ Other architectures are valid and meet the needs of many developers. Which you c
 
 Another popular pattern is one we teach in our training classes, that of custom objects typically stored within an app-specific namespace hierarchy. This model is flexible and well-suited to rapid deployment projects. It takes advantage of JavaScript's language features. Components are all members of the same global scope, thus sharing data within the app is simple. And when implemented well, this pattern can lead to very readable (and thus maintainable) code.
 
-On the downside, this pattern is less performant than CommonJS modules, especially on Rhino/Android. The rapid nature of this pattern can lead the developer to general, high-level bad practices and developer 'laziness'. Inheritance is vague or even non-existent. And critically, memory management can be difficult as object references can remain after they're no longer needed.
+On the downside, this pattern is less performant than CommonJS modules. The rapid nature of this pattern can lead the developer to general, high-level bad practices and developer 'laziness'. Inheritance is vague or even non-existent. And critically, memory management can be difficult as object references can remain after they're no longer needed.
 
 `// create an object literal to be your app's namespace`
 
@@ -256,7 +256,7 @@ On the downside, this pattern is less performant than CommonJS modules, especial
 
 `// the following could be in a separate "ui.js" file and include()'d into your app.js`
 
-`(``function``(){`
+`(``function``() {`
 
 `myapp.ui = {};` `// this sub-namespace extends the app's namespace object`
 

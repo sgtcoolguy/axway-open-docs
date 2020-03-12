@@ -1,4 +1,4 @@
-{"title":"Lists and Tables and Proxy Properties","weight":"70"} 
+{"title":"Lists and Tables and Proxy Properties","weight":"70"}
 
 Demonstrates use of Alloy elements to proxy ListView and TableView controls and their properties.
 
@@ -10,38 +10,38 @@ You can find this example app in the Alloy repository under [alloy/test/apps/ui/
 
 For properties that are assigned Titanium proxies, such as Views or Buttons, you can declare these properties as XML markup. For example, the <HeaderView/> element is used to proxy the headerView property for a [ListSection](#!/api/Titanium.UI.ListSection) or [TableViewSection](#!/api/Titanium.UI.TableViewSection) object. This sample demonstrates use of the following proxies:
 
-*   <ListView>: [Titanium.UI.ListView](#!/api/Titanium.UI.ListView)
-    
-    *   <FooterView>: [Titanium.UI.ListView.footerView](#!/api/Titanium.UI.ListView-property-footerView)
-        
-    *   <HeaderView>: [Titanium.UI.ListView.headerView](#!/api/Titanium.UI.ListView-property-headerView)
-        
-    *   <PullView>: [Titanium.UI.ListView.pullView](#!/api/Titanium.UI.ListView-property-pullView)
-        
-    *   <SearchBar> or <SearchView platform="android"> – [Titanium.UI.ListView.searchView](#!/api/Titanium.UI.ListView-property-searchView)
-        
-*   <ListSection>: [Titanium.UI.ListSection](#!/api/Titanium.UI.ListSection)
-    
-    *   <FooterView>: [Titanium.UI.ListSection.footerView](#!/api/Titanium.UI.ListSection-property-footerView)
-        
-    *   <HeaderView>: [Titanium.UI.ListSection.headerView](#!/api/Titanium.UI.ListSection-property-headerView)
-        
-*   <TableView>: [Titanium.UI.TableView](#!/api/Titanium.UI.TableView)
-    
-    *   <FooterView>: [Titanium.UI.TableView.footerView](#!/api/Titanium.UI.TableView-property-footerView)
-        
-    *   <HeaderPullView>: [Titanium.UI.TableView.headerPullView](#!/api/Titanium.UI.TableView-property-headerPullView)
-        
-    *   <HeaderView>: [Titanium.UI.TableView.headerView](#!/api/Titanium.UI.TableView-property-headerView)
-        
-    *   <Search>: [Titanium.UI.TableView.search](#!/api/Titanium.UI.TableView-property-search)
-        
-*   <TableViewSection>: [Titanium.UI.TableViewSection](#!/api/Titanium.UI.TableViewSection)
-    
-    *   <FooterView>: [Titanium.UI.TableViewSection.footerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableViewSection-property-footerView)
-        
-    *   <HeaderView>: [Titanium.UI.TableViewSection.headerView](#!/api/Titanium.UI.TableViewSection-property-headerView)
-        
+* <ListView>: [Titanium.UI.ListView](#!/api/Titanium.UI.ListView)
+
+  * <FooterView>: [Titanium.UI.ListView.footerView](#!/api/Titanium.UI.ListView-property-footerView)
+
+  * <HeaderView>: [Titanium.UI.ListView.headerView](#!/api/Titanium.UI.ListView-property-headerView)
+
+  * <PullView>: [Titanium.UI.ListView.pullView](#!/api/Titanium.UI.ListView-property-pullView)
+
+  * <SearchBar> or <SearchView platform="android"> – [Titanium.UI.ListView.searchView](#!/api/Titanium.UI.ListView-property-searchView)
+
+* <ListSection>: [Titanium.UI.ListSection](#!/api/Titanium.UI.ListSection)
+
+  * <FooterView>: [Titanium.UI.ListSection.footerView](#!/api/Titanium.UI.ListSection-property-footerView)
+
+  * <HeaderView>: [Titanium.UI.ListSection.headerView](#!/api/Titanium.UI.ListSection-property-headerView)
+
+* <TableView>: [Titanium.UI.TableView](#!/api/Titanium.UI.TableView)
+
+  * <FooterView>: [Titanium.UI.TableView.footerView](#!/api/Titanium.UI.TableView-property-footerView)
+
+  * <HeaderPullView>: [Titanium.UI.TableView.headerPullView](#!/api/Titanium.UI.TableView-property-headerPullView)
+
+  * <HeaderView>: [Titanium.UI.TableView.headerView](#!/api/Titanium.UI.TableView-property-headerView)
+
+  * <Search>: [Titanium.UI.TableView.search](#!/api/Titanium.UI.TableView-property-search)
+
+* <TableViewSection>: [Titanium.UI.TableViewSection](#!/api/Titanium.UI.TableViewSection)
+
+  * <FooterView>: [Titanium.UI.TableViewSection.footerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableViewSection-property-footerView)
+
+  * <HeaderView>: [Titanium.UI.TableViewSection.headerView](#!/api/Titanium.UI.TableViewSection-property-headerView)
+
 
 The main application view, lists.xml, is loaded programmatically by the index.js view-controller.
 
@@ -215,6 +215,6 @@ app/views/lists.xml
 
 ## See also
 
-*   [Proxy Properties](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/User_Interface/Proxy_Properties/) in the Alloy developer guide
-    
-*   [Alloy ListView Guide](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/ListViews/Alloy_ListView_Guide/)
+* [Proxy Properties](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/User_Interface/Proxy_Properties/) in the Alloy developer guide
+
+* [Alloy ListView Guide](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/ListViews/Alloy_ListView_Guide/)

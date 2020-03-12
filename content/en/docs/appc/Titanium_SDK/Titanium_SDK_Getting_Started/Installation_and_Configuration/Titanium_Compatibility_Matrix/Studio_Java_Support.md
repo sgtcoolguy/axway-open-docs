@@ -1,4 +1,4 @@
-{"title":"Studio Java Support","weight":"20"} 
+{"title":"Studio Java Support","weight":"20"}
 
 ## Studio 5.0.0 and earlier installers
 

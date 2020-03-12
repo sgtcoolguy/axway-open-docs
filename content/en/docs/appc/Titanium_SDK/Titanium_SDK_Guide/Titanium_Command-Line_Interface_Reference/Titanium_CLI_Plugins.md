@@ -1,103 +1,103 @@
-{"title":"Titanium CLI Plugins","weight":"20"} 
+{"title":"Titanium CLI Plugins","weight":"20"}
 
-*   [Introduction](#Introduction)
-    
-*   [Plugins](#Plugins)
-    
-    *   [Structure](#Structure)
-        
-    *   [Using a Plugin](#UsingaPlugin)
-        
-*   [Commands](#Commands)
-    
-    *   [CLI Command API](#CLICommandAPI)
-        
-        *   [Properties](#Properties)
-            
-        *   [Functions](#Functions)
-            
-*   [Function and Event Hooks](#FunctionandEventHooks)
-    
-    *   [Listening to Hooks](#ListeningtoHooks)
-        
-    *   [Order of Hooks](#OrderofHooks)
-        
-    *   [Examples](#Examples)
-        
-        *   [Execute a Script Before Building a Project](#ExecuteaScriptBeforeBuildingaProject)
-            
-        *   [Modify Android Dexer Command](#ModifyAndroidDexerCommand)
-            
-    *   [CLI Hook API](#CLIHookAPI)
-        
-        *   [Properties](#Properties.1)
-            
-        *   [Functions](#Functions.1)
-            
-*   [CLI Common API](#CLICommonAPI)
-    
-    *   [cli](#cli)
-        
-        *   [Properties](#Properties.2)
-            
-        *   [Functions](#Functions.2)
-            
-        *   [Events](#Events)
-            
-        *   [Event Properties](#EventProperties)
-            
-    *   [logger](#logger)
-        
-        *   [Properties](#Properties.3)
-            
-        *   [Functions](#Functions.3)
-            
-    *   [nodeappc](#nodeappc)
-        
-        *   [async](#async)
-            
-        *   [busyindicator](#busyindicator)
-            
-        *   [clitools](#clitools)
-            
-        *   [encoding](#encoding)
-            
-        *   [environ](#environ)
-            
-        *   [exception](#exception.1)
-            
-        *   [haxm](#haxm)
-            
-        *   [image](#image)
-            
-        *   [jdk](#jdk)
-            
-        *   [net](#net)
-            
-        *   [plist](#plist)
-            
-        *   [progress](#progress)
-            
-        *   [string](#string)
-            
-        *   [subprocess](#subprocess)
-            
-        *   [time](#time)
-            
-        *   [timodule](#timodule)
-            
-        *   [tiplugin](#tiplugin)
-            
-        *   [util](#util)
-            
-        *   [xcconfig](#xcconfig)
-            
-        *   [xml](#xml)
-            
-        *   [version](#version)
-            
-        *   [zip](#zip)
-            
+* [Introduction](#Introduction)
+
+* [Plugins](#Plugins)
+
+  * [Structure](#Structure)
+
+  * [Using a Plugin](#UsingaPlugin)
+
+* [Commands](#Commands)
+
+  * [CLI Command API](#CLICommandAPI)
+
+    * [Properties](#Properties)
+
+    * [Functions](#Functions)
+
+* [Function and Event Hooks](#FunctionandEventHooks)
+
+  * [Listening to Hooks](#ListeningtoHooks)
+
+  * [Order of Hooks](#OrderofHooks)
+
+  * [Examples](#Examples)
+
+    * [Execute a Script Before Building a Project](#ExecuteaScriptBeforeBuildingaProject)
+
+    * [Modify Android Dexer Command](#ModifyAndroidDexerCommand)
+
+  * [CLI Hook API](#CLIHookAPI)
+
+    * [Properties](#Properties.1)
+
+    * [Functions](#Functions.1)
+
+* [CLI Common API](#CLICommonAPI)
+
+  * [cli](#cli)
+
+    * [Properties](#Properties.2)
+
+    * [Functions](#Functions.2)
+
+    * [Events](#Events)
+
+    * [Event Properties](#EventProperties)
+
+  * [logger](#logger)
+
+    * [Properties](#Properties.3)
+
+    * [Functions](#Functions.3)
+
+  * [nodeappc](#nodeappc)
+
+    * [async](#async)
+
+    * [busyindicator](#busyindicator)
+
+    * [clitools](#clitools)
+
+    * [encoding](#encoding)
+
+    * [environ](#environ)
+
+    * [exception](#exception.1)
+
+    * [haxm](#haxm)
+
+    * [image](#image)
+
+    * [jdk](#jdk)
+
+    * [net](#net)
+
+    * [plist](#plist)
+
+    * [progress](#progress)
+
+    * [string](#string)
+
+    * [subprocess](#subprocess)
+
+    * [time](#time)
+
+    * [timodule](#timodule)
+
+    * [tiplugin](#tiplugin)
+
+    * [util](#util)
+
+    * [xcconfig](#xcconfig)
+
+    * [xml](#xml)
+
+    * [version](#version)
+
+    * [zip](#zip)
+
 
 ## Introduction
 
@@ -143,24 +143,24 @@ These command and hooks will be executed each time you run the Titanium CLI.
 
 **To include a plugin for a specific project:**
 
-1.  Create a folder called plugins in your Titanium project. This will be at the same-level as the Resources folder.
-    
-2.  Copy your plugin to the plugins folder.
-    
-3.  Open your tiapp.xml file.
-    
-4.  Add your plugin information to the plugins section. Specify the plugin's folder name as node text of the plugin element. You can optionally specify the version attribute to use a specific version of the plugin. For example:
-    
-    `<ti:app xmlns:ti=``"http://ti.appcelerator.org"``>`
-    
-    `<plugins>`
-    
-    `<plugin version=``"1.0"``>myplugin</plugin>`
-    
-    `</plugins>`
-    
-    `</ti:app>`
-    
+1. Create a folder called plugins in your Titanium project. This will be at the same-level as the Resources folder.
+
+2. Copy your plugin to the plugins folder.
+
+3. Open your tiapp.xml file.
+
+4. Add your plugin information to the plugins section. Specify the plugin's folder name as node text of the plugin element. You can optionally specify the version attribute to use a specific version of the plugin. For example:
+
+  `<ti:app xmlns:ti=``"http://ti.appcelerator.org"``>`
+
+  `<plugins>`
+
+  `<plugin version=``"1.0"``>myplugin</plugin>`
+
+  `</plugins>`
+
+  `</ti:app>`
+
 
 This plugin will be executed each time the project is built. Note that only hooks are supported when required in locally.
 
@@ -288,16 +288,16 @@ All of the following APIs are optional. Prepend the APIs with the exports variab
 
 #### Properties
 
-**cliVersion**: String  
+**cliVersion**: String
 Specify which version(s) of the CLI the command supports. For example, "3.2.0" specifies the command only supports version 3.2.0, while ">=3.2.0" specifies the command supports version 3.2.0 and greater.
 
-**desc**: String  
+**desc**: String
 Defines the shorthand help description of the command when executing titanium --help.
 
-**extenededDesc**: String  
+**extenededDesc**: String
 Defines the extended help description of the command when using the \--help option with the command.
 
-**title**: String  
+**title**: String
 Title to display in the help menu. If not specified, the filename is used (without the extension).
 
 #### Functions
@@ -592,99 +592,99 @@ When invoking a CLI command, the hooks are fired in the order below if a global 
 
 Certain commands, such as the build, clean or create command, fire additional hook events. For builds, the events vary by platform, and whether you are building a production application or not.
 
-1.  **Invoke a CLI command**
-    
-2.  cli:go (First hook that can be monitored by global plugins)
-    
-3.  \[command.config\] if invoking the build, clean or create command
-    
-4.  cli:command-loaded
-    
-5.  cli:pre-validate
-    
-6.  **CLI displays its banner message.**
-    
-7.  cli:post-validate (First hook that can be monitored by local plugins)
-    
-8.  cli:pre-execute
-    
-9.  \[help:header\] if the help menu is invoked
-    
-10.  cli:post-execute or other command hooks if invoking the build, clean or create command (see description below)
-    
+1. **Invoke a CLI command**
+
+2. cli:go (First hook that can be monitored by global plugins)
+
+3. \[command.config\] if invoking the build, clean or create command
+
+4. cli:command-loaded
+
+5. cli:pre-validate
+
+6. **CLI displays its banner message.**
+
+7. cli:post-validate (First hook that can be monitored by local plugins)
+
+8. cli:pre-execute
+
+9. \[help:header\] if the help menu is invoked
+
+10. cli:post-execute or other command hooks if invoking the build, clean or create command (see description below)
+
 
 **Android build hooks**
 
 The following hooks are fired after the cli:pre-execute hook when building a project for the Android platform:
 
-1.  build.pre.construct
-    
-2.  build.pre.compile
-    
-3.  build.android.startEmulator
-    
-4.  build.android.copyResource (all builds) / build.android.compileJsFile (device and distribution builds only)
-    
-5.  build.android.titaniumprep (device and distribution builds only)
-    
-6.  build.android.writeAndroidManifest
-    
-7.  build.android.aapt
-    
-8.  build.android.javac
-    
-9.  build.android.proguard (requires special settings)
-    
-10.  build.android.dexer
-    
-11.  build.android.jarsigner
-    
-12.  build.android.zipalign
-    
-13.  build.post.compile
-    
-14.  build.finalize
-    
+1. build.pre.construct
+
+2. build.pre.compile
+
+3. build.android.startEmulator
+
+4. build.android.copyResource (all builds) / build.android.compileJsFile (device and distribution builds only)
+
+5. build.android.titaniumprep (device and distribution builds only)
+
+6. build.android.writeAndroidManifest
+
+7. build.android.aapt
+
+8. build.android.javac
+
+9. build.android.proguard (requires special settings)
+
+10. build.android.dexer
+
+11. build.android.jarsigner
+
+12. build.android.zipalign
+
+13. build.post.compile
+
+14. build.finalize
+
 
 **iOS build hooks**
 
 The following hooks are fired after the cli:pre-execute hook when building a project for the iOS platform:
 
-1.  build.pre.construct
-    
-2.  build.pre.compile
-    
-3.  build.ios.copyResource (all builds) / build.ios.compileJsFile (device and distribution builds only)
-    
-4.  build.ios.prerouting (device and distribution builds only)
-    
-5.  build.ios.titaniumprep (device and distribution builds only)
-    
-6.  build.ios.xcodebuild
-    
-7.  build.ios.writeEntitlements
-    
-8.  build.ios.writeExtensionEntitlements
-    
-9.  build.ios.writeBuildManifest
-    
-10.  build.post.compile
-    
-11.  build.finalize
-    
+1. build.pre.construct
+
+2. build.pre.compile
+
+3. build.ios.copyResource (all builds) / build.ios.compileJsFile (device and distribution builds only)
+
+4. build.ios.prerouting (device and distribution builds only)
+
+5. build.ios.titaniumprep (device and distribution builds only)
+
+6. build.ios.xcodebuild
+
+7. build.ios.writeEntitlements
+
+8. build.ios.writeExtensionEntitlements
+
+9. build.ios.writeBuildManifest
+
+10. build.post.compile
+
+11. build.finalize
+
 
 **Other platform build hooks**
 
 The following hooks are fired after the cli:pre-execute hook when building a project for non-Android or non-iOS platforms:
 
-1.  build.pre.construct
-    
-2.  build.pre.compile
-    
-3.  build.post.compile
-    
-4.  build.finalize
-    
+1. build.pre.construct
+
+2. build.pre.compile
+
+3. build.post.compile
+
+4. build.finalize
+
 
 ### Examples
 
@@ -780,7 +780,7 @@ Prepend the APIs with the exports variables to expose them as public.
 
 #### Properties
 
-**cliVersion**: String  
+**cliVersion**: String
 Specify which version(s) of the CLI the command supports. For example, "3.2.0" specifies the command to only support version 3.2.0, while ">=3.2.0" specifies the command to support version 3.2.0 and greater.
 
 #### Functions
@@ -833,43 +833,43 @@ The CLI class.
 
 #### Properties
 
-**argv**: Object  
+**argv**: Object
 Command-line arguments passed to the CLI.
 
-**command**: Object  
+**command**: Object
 Information about the command invoked, such as the complete command-line options.
 
-**completion**: Boolean  
+**completion**: Boolean
 Indicates if tab completion is enabled or not.
 
-**config**: Object  
+**config**: Object
 Information reported by the titanium config command as a JSON object.
 
-**env**: Object  
+**env**: Object
 Information about the Titanium build environment similar to titanium info -t titanium.
 
-**globalContext**: Object  
+**globalContext**: Object
 CLI command, flag and option context.
 
-**hooks**: Object  
+**hooks**: Object
 Information about the currently loaded CLI hooks.
 
-**logger**: Object  
+**logger**: Object
 Handle to the logger object.
 
-**scannedCommandPaths**: Object  
+**scannedCommandPaths**: Object
 List of directories scanned for CLI commands.
 
-**sdk**: Object  
+**sdk**: Object
 Information about the Titanium SDK the application is being built against.
 
-**startTime**: Number  
+**startTime**: Number
 Start time of the command as a Unix Timestamp.
 
-**tiapp**: Object  
+**tiapp**: Object
 The tiapp.xml file of the project in JSON format.
 
-**version**: Number  
+**version**: Number
 CLI version.
 
 #### Functions
@@ -1224,7 +1224,7 @@ The logger class based on the winston library. Use this class to output messages
 
 #### Properties
 
-**levels**: Array<Strings> – READ-ONLY  
+**levels**: Array<Strings> – READ-ONLY
 Log levels.
 
 #### Functions
@@ -1295,7 +1295,7 @@ Error
 
 This is a standard JavaScript Error object. Refer to the [ECMAScript Language Specification Section 15.11](http://www.ecma-international.org/ecma-262/5.1/#sec-15.11) for more information.
 
-  
+
 
 ##### getLevels
 
@@ -1539,7 +1539,7 @@ Stops the busy indicator.
 
 `stop(``void``):` `void`
 
-  
+
 
 Example
 
@@ -1697,12 +1697,12 @@ Information about the SDK or null if it cannot found.
 
 CLI AppcException class. Create an instance of this class by passing in an error message, then invoke:
 
-*   dump(logger) to output the error message to the console
-    
-*   log(String error) to log additional errors
-    
-*   toString(void) to convert the error to a string
-    
+* dump(logger) to output the error message to the console
+
+* log(String error) to log additional errors
+
+* toString(void) to convert the error to a string
+
 
 ##### constructor
 
@@ -2150,20 +2150,20 @@ String
 
 Use the following strings to format the progress bar:
 
-*   ':bar' - progress bar
-    
-*   ':current' - current progress value
-    
-*   ':total' - total progress value
-    
-*   ':elapsed' - current elapsed time of the task
-    
-*   ':eta' - estimated time when the task completes
-    
-*   ':percent' - percent value of the current progress
-    
-*   ':paddedPercent' - padded percent value of the current progress
-    
+* ':bar' - progress bar
+
+* ':current' - current progress value
+
+* ':total' - total progress value
+
+* ':elapsed' - current elapsed time of the task
+
+* ':eta' - estimated time when the task completes
+
+* ':percent' - percent value of the current progress
+
+* ':paddedPercent' - padded percent value of the current progress
+
 
 options
 

@@ -1,23 +1,23 @@
-{"title":"Mobile SDK","weight":"40"} 
+{"title":"Mobile SDK","weight":"40"}
 
-*   [Requirements](#Requirements)
-    
-*   [Invocation](#Invocation)
-    
-*   [Description](#Description)
-    
-*   [SDK Info Command](#SDKInfoCommand)
-    
-    *   [Reading the SDK-Info](#ReadingtheSDK-Info)
-        
-*   [Trigger an Install/Update](#TriggeranInstall/Update)
-    
-*   [Trigger a SDK refresh](#TriggeraSDKrefresh)
-    
-*   [MobileWeb Browser Check](#MobileWebBrowserCheck)
-    
-    *   [Note](#Note)
-        
+* [Requirements](#Requirements)
+
+* [Invocation](#Invocation)
+
+* [Description](#Description)
+
+* [SDK Info Command](#SDKInfoCommand)
+
+  * [Reading the SDK-Info](#ReadingtheSDK-Info)
+
+* [Trigger an Install/Update](#TriggeranInstall/Update)
+
+* [Trigger a SDK refresh](#TriggeraSDKrefresh)
+
+* [MobileWeb Browser Check](#MobileWebBrowserCheck)
+
+  * [Note](#Note)
+
 
 ## Requirements
 
@@ -29,8 +29,8 @@ This command executes _**asynchronously**_.
 
 ## Description
 
-This _Mobile SDK_ commands retrieves information regarding the installed Android and iOS.  
-The Studio compares the detected SDKs to a set of pre-required versions we have online, and returns a JSON response that contains detailed information about the installed items, the missing ones, and the items that needs to be updated.  
+This _Mobile SDK_ commands retrieves information regarding the installed Android and iOS.
+The Studio compares the detected SDKs to a set of pre-required versions we have online, and returns a JSON response that contains detailed information about the installed items, the missing ones, and the items that needs to be updated.
 The _Mobile SDK_ command handler can also trigger a download and install process for _Android_, as well as an _Android_ SDK update.
 
 ## SDK Info Command
@@ -49,7 +49,7 @@ The following sample triggers a **request** for an SDK info. The _'sdk'_ variabl
 
 When triggered, the Studio will perform the required checks and will later on send a notification to the portal by calling a JavaScript function _**eventsDispatcher.notify()**_ and passing an _**event**_ JSON into it.
 
-The portal should handle this by defining an _**eventsDispatcher**_ object that has a _**notify**_ function that accepts an argument.  
+The portal should handle this by defining an _**eventsDispatcher**_ object that has a _**notify**_ function that accepts an argument.
 For example (taken from the _studio3-sdk_ repository):
 
 `var Events = {MOBILE_SDK :` `'mobileSDK'``};`
@@ -466,7 +466,7 @@ Android Only
 
 ## Trigger an Install/Update
 
-To trigger an SDK installation or Update, all that needs to be done is to call the _**installOrUpdateSDK**_ action, and passing the SDK type as an argument.  
+To trigger an SDK installation or Update, all that needs to be done is to call the _**installOrUpdateSDK**_ action, and passing the SDK type as an argument.
 For Example:
 
 `dispatch($H({`
@@ -495,7 +495,7 @@ For the Android installer, you may choose to force the installer UI even when th
 
 ## Trigger a SDK refresh
 
-To trigger a 'manual' refresh for a specific SDK, all that needs to be done is to call the _**refreshSDK**_ action, and passing the SDK type as an argument.  
+To trigger a 'manual' refresh for a specific SDK, all that needs to be done is to call the _**refreshSDK**_ action, and passing the SDK type as an argument.
 For Example:
 
 `dispatch($H({`
@@ -510,7 +510,7 @@ For Example:
 
 ## MobileWeb Browser Check
 
-The _getSDKInfo_ call, when called with a _'MobileWeb'_ argument, will perform a Browser check and will return a data set that contains information about the required and the detected browsers.  
+The _getSDKInfo_ call, when called with a _'MobileWeb'_ argument, will perform a Browser check and will return a data set that contains information about the required and the detected browsers.
 The call will compare the browsers that are set in the Studio's preferences to the browsers and versions required by the MobileWeb. When a mismatch is detected, the Studio will run a detection process that will update the preferences. After that detection, another check is made before returning a JSON response to the caller.
 
 key

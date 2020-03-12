@@ -1,4 +1,4 @@
-{"title":"User Interface Deep Dives","weight":"110"} 
+{"title":"User Interface Deep Dives","weight":"110"}
 
 In the last chapter, you looked at the general ways to create the user interface of your app. In this chapter, we'll take a deeper look into the APIs you'll use to create various UI components. We'll look at tables and scrolling views, then move on to handling orientation, gestures, and animation. We'll finish out with some deeper looks at Android and iOS particulars.
 

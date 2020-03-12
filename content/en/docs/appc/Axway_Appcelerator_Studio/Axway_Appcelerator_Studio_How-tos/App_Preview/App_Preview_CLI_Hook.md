@@ -1,4 +1,4 @@
-{"title":"App Preview CLI Hook","weight":"10"} 
+{"title":"App Preview CLI Hook","weight":"10"}
 
 ## Titanium has an CLI hook that you can use to deploy builds to App Preview.
 

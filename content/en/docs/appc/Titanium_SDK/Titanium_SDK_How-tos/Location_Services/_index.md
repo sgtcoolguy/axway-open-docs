@@ -1,4 +1,4 @@
-{"title":"Location Services","weight":"40"} 
+{"title":"Location Services","weight":"40"}
 
 Mobile devices give us the unique ability to add the context of a physical location to our app's interactions. By leveraging Titanium's ability to deliver GPS positioning and heading information, you can add this context to your own mobile apps. You can use this information for everything from device positioning to augmented reality applications. In addition, you can also use the native mapping capabilities of a mobile device to create a truly immersive experience.
 

@@ -1,4 +1,4 @@
-{"title":"Alloy 1.10.10 - 17 November 2017","weight":"20"} 
+{"title":"Alloy 1.10.10 - 17 November 2017","weight":"20"}
 
 Alloy 1.10.10 is a patch release that includes one bug fix.
 
@@ -6,4 +6,4 @@ As of this release, the previous Alloy patch release is no longer supported. Not
 
 ## Fixed issue
 
-*   [ALOY-1593](https://jira.appcelerator.org/browse/ALOY-1593): Android Debugger: Some breakpoints not hit if "Resume" is done anytime during debug
+* [ALOY-1593](https://jira.appcelerator.org/browse/ALOY-1593): Android Debugger: Some breakpoints not hit if "Resume" is done anytime during debug

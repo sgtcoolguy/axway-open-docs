@@ -1,27 +1,27 @@
-{"title":"Installing Required Python Packages","weight":"30"} 
+{"title":"Installing Required Python Packages","weight":"30"}
 
-*   [Overview](#Overview)
-    
-*   [Compatibility and download](#Compatibilityanddownload)
-    
-*   [Installation](#Installation)
-    
-    *   [OS X](#OSX)
-        
-    *   [Windows](#Windows)
-        
-*   [Using EasyInstall to install packages](#UsingEasyInstalltoinstallpackages)
-    
-    *   [PyCrypto](#PyCrypto)
-        
-    *   [pyOpenSSL](#pyOpenSSL)
-        
-    *   [PyYAML](#PyYAML)
-        
-    *   [Pygments](#Pygments)
-        
-    *   [Markdown](#Markdown)
-        
+* [Overview](#Overview)
+
+* [Compatibility and download](#Compatibilityanddownload)
+
+* [Installation](#Installation)
+
+  * [OS X](#OSX)
+
+  * [Windows](#Windows)
+
+* [Using EasyInstall to install packages](#UsingEasyInstalltoinstallpackages)
+
+  * [PyCrypto](#PyCrypto)
+
+  * [pyOpenSSL](#pyOpenSSL)
+
+  * [PyYAML](#PyYAML)
+
+  * [Pygments](#Pygments)
+
+  * [Markdown](#Markdown)
+
 
 ## Overview
 
@@ -81,12 +81,12 @@ Note that the typical file system location of this software can be found in the 
 
 To install _setuptools_:
 
-*   Follow the official [Installation Instructions](http://pypi.python.org/pypi/setuptools).
-    
-*   Verify that path/to/easy\_install is in the system PATH, by following the [Software Locations and Environment Variables](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/) guide.
-    
-*   Follow the steps in the [Using EasyInstall to Install Packages](#UsingEasyInstalltoInstallPackages) section.
-    
+* Follow the official [Installation Instructions](http://pypi.python.org/pypi/setuptools).
+
+* Verify that path/to/easy\_install is in the system PATH, by following the [Software Locations and Environment Variables](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/) guide.
+
+* Follow the steps in the [Using EasyInstall to Install Packages](#UsingEasyInstalltoInstallPackages) section.
+
 
 ## Using EasyInstall to install packages
 

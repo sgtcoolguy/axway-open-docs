@@ -1,4 +1,4 @@
-{"title":"Titanium Studio Open Source Attribution Notice","weight":"60"} 
+{"title":"Titanium Studio Open Source Attribution Notice","weight":"60"}
 
 Up-to-date information is available at [http://www.appcelerator.com/legal/open-source-attribution/](http://www.appcelerator.com/legal/open-source-attribution/).
 

@@ -1,46 +1,46 @@
-{"title":"AMPLIFY CLI Commands","weight":"20"} 
+{"title":"AMPLIFY CLI Commands","weight":"20"}
 
-*   [Command options](#Commandoptions)
-    
-*   [auth](#auth)
-    
-    *   [auth list options](#authlistoptions)
-        
-    *   [auth login options](#authloginoptions)
-        
-    *   [auth logout options](#authlogoutoptions)
-        
-    *   [auth switch options](#authswitchoptions)
-        
-*   [config](#config)
-    
-*   [pm](#pm)
-    
-    *   [amplify pm install](#amplifypminstall)
-        
-    *   [amplify pm list](#amplifypmlist)
-        
-    *   [amplify pm purge](#amplifypmpurge)
-        
-    *   [amplify pm search](#amplifypmsearch)
-        
-    *   [amplify pm uninstall](#amplifypmuninstall)
-        
-    *   [amplify pm update](#amplifypmupdate)
-        
-    *   [amplify pm use](#amplifypmuse)
-        
-    *   [amplify pm view](#amplifypmview)
-        
+* [Command options](#Commandoptions)
+
+* [auth](#auth)
+
+  * [auth list options](#authlistoptions)
+
+  * [auth login options](#authloginoptions)
+
+  * [auth logout options](#authlogoutoptions)
+
+  * [auth switch options](#authswitchoptions)
+
+* [config](#config)
+
+* [pm](#pm)
+
+  * [amplify pm install](#amplifypminstall)
+
+  * [amplify pm list](#amplifypmlist)
+
+  * [amplify pm purge](#amplifypmpurge)
+
+  * [amplify pm search](#amplifypmsearch)
+
+  * [amplify pm uninstall](#amplifypmuninstall)
+
+  * [amplify pm update](#amplifypmupdate)
+
+  * [amplify pm use](#amplifypmuse)
+
+  * [amplify pm view](#amplifypmview)
+
 
 There are three basic commands for using AMPLIFY CLI (ACLI):
 
-*   auth: Authenticate machines with the Axway AMPLIFY platform
-    
-*   config: get and set config options
-    
-*   pm: Package manager for Axway products
-    
+* auth: Authenticate machines with the Axway AMPLIFY platform
+
+* config: get and set config options
+
+* pm: Package manager for Axway products
+
 
 ## Command options
 
@@ -52,14 +52,14 @@ Outputting accounts as JSON is a common option between all ACLI commands. To use
 
 amplify auth <command> \[options\] command will authenticate you machine with the Axway AMPLIFY platform
 
-*   list: lists all authenticated accounts
-    
-*   login: log in to the Axway AMPLIFY platform
-    
-*   logout: log out all or specific accounts from the AMPLIFY platform
-    
-*   switch: select default account and organization
-    
+* list: lists all authenticated accounts
+
+* login: log in to the Axway AMPLIFY platform
+
+* logout: log out all or specific accounts from the AMPLIFY platform
+
+* switch: select default account and organization
+
 
 ### auth list options
 
@@ -67,8 +67,8 @@ amplify auth <command> \[options\] command will authenticate you machine with th
 
 **Auth options**
 
-*   **\--env=<name>**: the environment to use
-    
+* **\--env=<name>**: the environment to use
+
 
 There are no other extra options other than the ones mentioned above in [Command options](#Commandoptions).
 
@@ -76,40 +76,40 @@ There are no other extra options other than the ones mentioned above in [Command
 
 amplify auth login \[options\] command logs one into the Axway AMPLIFY platform.
 
-*   **\-c,--client-secret=<key>**: a secret key used to authenticate
-    
-*   \--force: re-authenticate even if the account is already authenticated
-    
-*   \--no-launch-browser: display the authentication URL instead of opening it in the default web browser
-    
-*   **\--org=<id|name>**: the organization to use
-    
-*   **\-p,--password=<pass>**: password to authenticate with
-    
-*   **\-s,--secret-file=<path>**: path to the PEM key used to authenticate
-    
-*   **\-u,--username=<user>**: username to authenticate with
-    
+* **\-c,--client-secret=<key>**: a secret key used to authenticate
+
+* \--force: re-authenticate even if the account is already authenticated
+
+* \--no-launch-browser: display the authentication URL instead of opening it in the default web browser
+
+* **\--org=<id|name>**: the organization to use
+
+* **\-p,--password=<pass>**: password to authenticate with
+
+* **\-s,--secret-file=<path>**: path to the PEM key used to authenticate
+
+* **\-u,--username=<user>**: username to authenticate with
+
 
 Also, the extra options mentioned in [Command options](#Commandoptions) can be used here.
 
 There are several ways one can use the ACLI auth command to login:
 
-1.  Interactive browser: amplify auth login
-    
-2.  Client secret: amplify auth login --secret <key>
-    
-3.  Signed JWT: amplify auth login --secret-file <path\_to\_pem\_file>
-    
-4.  Username and password: amplify auth login --username <user> --password <pass>
-    
+1. Interactive browser: amplify auth login
+
+2. Client secret: amplify auth login --secret <key>
+
+3. Signed JWT: amplify auth login --secret-file <path\_to\_pem\_file>
+
+4. Username and password: amplify auth login --username <user> --password <pass>
+
 
 ### auth logout options
 
 **amplify auth logout \[options\] \[<accounts...>\]** command logs the user out all or specific accounts from the AMPLIFY platform.
 
-*   **\-a,--all**: revoke all credentials; supersedes list of accounts
-    
+* **\-a,--all**: revoke all credentials; supersedes list of accounts
+
 
 Also, the extra options mentioned in [Command options](#Commandoptions) can be used here.
 
@@ -117,10 +117,10 @@ Also, the extra options mentioned in [Command options](#Commandoptions) can be u
 
 amplify auth switch \[options\] command selects a default account and organization.
 
-*   **\--account=<name>**: account to switch to
-    
-*   **\--org=<id|name>**: organization to switch to
-    
+* **\--account=<name>**: account to switch to
+
+* **\--org=<id|name>**: organization to switch to
+
 
 Also, the extra options mentioned in [Command options](#Commandoptions) can be used here.
 
@@ -130,12 +130,12 @@ Also, the extra options mentioned in [Command options](#Commandoptions) can be u
 
 Config arguments:
 
-*   action
-    
-*   key
-    
-*   value
-    
+* action
+
+* key
+
+* value
+
 
 Config options only includes the \--json flag as mentioned in [Command options](#Commandoptions).
 
@@ -143,22 +143,22 @@ Config options only includes the \--json flag as mentioned in [Command options](
 
 **amplify pm <command> \[options\]** command is the package manager for Axway products.
 
-*   install: installs the specified package
-    
-*   list: lists all installed packages
-    
-*   purge: purges all unused packages
-    
-*   search: searches registry for packages
-    
-*   uninstall: uninstalls the specified package
-    
-*   update: download updates for installed packages
-    
-*   use: activates a specific package version
-    
-*   **view**: displays info for a specific package
-    
+* install: installs the specified package
+
+* list: lists all installed packages
+
+* purge: purges all unused packages
+
+* search: searches registry for packages
+
+* uninstall: uninstalls the specified package
+
+* update: download updates for installed packages
+
+* use: activates a specific package version
+
+* **view**: displays info for a specific package
+
 
 Also, the extra options mentioned in [Command options](#Commandoptions) can be used here.
 
@@ -168,13 +168,13 @@ For examples on how to use amplify pm command, see [Using the package manager](h
 
 amplify pm install \[options\] <package> command installs a specified package.
 
-*   **<package>**: the package name and version to install
-    
+* **<package>**: the package name and version to install
+
 
 **Install options**
 
-*   \--auth=<account>: the authorization account to use
-    
+* \--auth=<account>: the authorization account to use
+
 
 Also, the extra options mentioned in [Command options](#Commandoptions) can be used here.
 
@@ -188,8 +188,8 @@ Also, the extra options mentioned in [Command options](#Commandoptions) can be u
 
 amplify pm purge \[options\] \[<package>\] command will purge all unused packages.
 
-*   **<package>**: name of the package for purging old versions
-    
+* **<package>**: name of the package for purging old versions
+
 
 Also, the extra options mentioned in [Command options](#Commandoptions) can be used here.
 
@@ -197,17 +197,17 @@ Also, the extra options mentioned in [Command options](#Commandoptions) can be u
 
 **amplify pm search \[options\] \[<search>\]** command will search registry for packages
 
-*   <search>: the package name or keywords
-    
+* <search>: the package name or keywords
+
 
 **Search options**
 
-*   \--auth=<account>: the authorization account to use
-    
-*   **\--repository=<repository>**: repository to search
-    
-*   **\--type=<type>**: type of component to search
-    
+* \--auth=<account>: the authorization account to use
+
+* **\--repository=<repository>**: repository to search
+
+* **\--type=<type>**: type of component to search
+
 
 Also, the extra options mentioned in [Command options](#Commandoptions) can be used here.
 
@@ -219,8 +219,8 @@ If you get the following error, execute this command to set an environment: ampl
 
 **amplify pm uninstall \[options\] <package>** command will uninstall a specified package.
 
-*   **<package>**: the package name and version to uninstall
-    
+* **<package>**: the package name and version to uninstall
+
 
 Also, the extra options mentioned in [Command options](#Commandoptions) can be used here.
 
@@ -228,13 +228,13 @@ Also, the extra options mentioned in [Command options](#Commandoptions) can be u
 
 amplify pm update \[options\] \[<package>\] command will download updates for installed packages.
 
-*   **<package>**: the package name to update
-    
+* **<package>**: the package name to update
+
 
 **Update options**
 
-*   \--auth=<account>: the authorization account to use
-    
+* \--auth=<account>: the authorization account to use
+
 
 Also, the extra options mentioned in [Command options](#Commandoptions) can be used here.
 
@@ -242,8 +242,8 @@ Also, the extra options mentioned in [Command options](#Commandoptions) can be u
 
 amplify pm use \[options\] <package> command will activate a specific package version.
 
-*   <package>: the package version or latest to activate
-    
+* <package>: the package version or latest to activate
+
 
 Also, the extra options mentioned in [Command options](#Commandoptions) can be used here.
 
@@ -251,14 +251,14 @@ Also, the extra options mentioned in [Command options](#Commandoptions) can be u
 
 **amplify pm view \[options\] <package> \[<filter>\]** command will display info for a specific package.
 
-*   <package>: the package name and version to install
-    
-*   <filter>: display specific package fields
-    
+* <package>: the package name and version to install
+
+* <filter>: display specific package fields
+
 
 **View options**
 
-*   \--type=<name>: the package type
-    
+* \--type=<name>: the package type
+
 
 Also, the extra options mentioned in [Command options](#Commandoptions) can be used here.

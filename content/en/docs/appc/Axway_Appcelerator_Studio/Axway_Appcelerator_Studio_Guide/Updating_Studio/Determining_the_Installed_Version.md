@@ -1,24 +1,24 @@
-{"title":"Determining the Installed Version","weight":"30"} 
+{"title":"Determining the Installed Version","weight":"30"}
 
 This documentation has information on how to determine which version of Aptana Studio is installed.
 
-*   [Studio Standalone](#StudioStandalone)
-    
-*   [Studio Plugin in Eclipse](#StudioPlugininEclipse)
-    
-*   [Studio Firebug Extension](#StudioFirebugExtension)
-    
-*   [Studio IE Debugger Extenstion](#StudioIEDebuggerExtenstion)
-    
+* [Studio Standalone](#StudioStandalone)
+
+* [Studio Plugin in Eclipse](#StudioPlugininEclipse)
+
+* [Studio Firebug Extension](#StudioFirebugExtension)
+
+* [Studio IE Debugger Extension](#StudioIEDebuggerExtension)
+
 
 ## Studio Standalone
 
 1\. In Studio, go to **About Aptana Studio 3** (or **About Titanium Studio**).
 
-*   on Windows, from the **Help** menu, select **About Aptana Studio 3**
-    
-*   on Mac, from the **Aptana Studio 3** menu, select **About Aptana Studio 3**
-    
+* on Windows, from the **Help** menu, select **About Aptana Studio 3**
+
+* on Mac, from the **Aptana Studio 3** menu, select **About Aptana Studio 3**
+
 
 2\. Check the first line of text for the version number (as shown below).
 
@@ -28,10 +28,10 @@ This documentation has information on how to determine which version of Aptana S
 
 1\. In Eclipse
 
-*   On Windows, from the **Help** menu, selection **About Eclipse SDK**.
-    
-*   On Mac, from the **Eclipse** menu, select **About Eclipse SDK**.
-    
+* On Windows, from the **Help** menu, select **About Eclipse SDK**.
+
+* On Mac, from the **Eclipse** menu, select **About Eclipse SDK**.
+
 
 2\. Click on the Studio logo. A comprehensive list of all features associated with Studio will be listed with corresponding version numbers.
 
@@ -39,13 +39,13 @@ This documentation has information on how to determine which version of Aptana S
 
 ## Studio Firebug Extension
 
-1\. Start Firefox.  
-2\. From the **Tools** menu, select **Add-ons**.  
-3\. Click the **Extensions** tab.  
+1\. Start Firefox.
+2\. From the **Tools** menu, select **Add-ons**.
+3\. Click the **Extensions** tab.
 4\. Scroll down until you see Aptana Debugger. The version is displayed to the right.
 
-## Studio IE Debugger Extenstion
+## Studio IE Debugger Extension
 
-1\. Start Internet Explorer.  
-2\. On the toolbar, click the Aptana button dropdown and select **About Aptana Studio**.  
-3\. The about screen displays your IE Debugger's version number.
+1\. Start Internet Explorer.
+2\. On the toolbar, click the Aptana button dropdown and select **About Aptana Studio**.
+3\. The screen displays your IE Debugger's version number.

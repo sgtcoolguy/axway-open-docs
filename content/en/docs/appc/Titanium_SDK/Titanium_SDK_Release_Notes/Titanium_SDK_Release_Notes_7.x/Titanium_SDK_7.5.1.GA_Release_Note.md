@@ -1,31 +1,31 @@
-{"title":"Titanium SDK 7.5.1.GA - 26 February 2019","weight":"30"} 
+{"title":"Titanium SDK 7.5.1.GA - 26 February 2019","weight":"30"}
 
-*   [About this release](#Aboutthisrelease)
-    
-*   [New features](#Newfeatures)
-    
-*   [Community credits](#Communitycredits)
-    
-*   [Fixed issues](#Fixedissues)
-    
-    *   [Android](#Android)
-        
-    *   [iOS](#iOS)
-        
-*   [API changes](#APIchanges)
-    
-    *   [New APIs](#NewAPIs)
-        
-    *   [Deprecated APIs](#DeprecatedAPIs)
-        
-*   [SDK modules versions](#SDKmodulesversions)
-    
-    *   [Android and iOS](#AndroidandiOS)
-        
-    *   [CommonJS](#CommonJS)
-        
-    *   [Hyperloop](#Hyperloop)
-        
+* [About this release](#Aboutthisrelease)
+
+* [New features](#Newfeatures)
+
+* [Community credits](#Communitycredits)
+
+* [Fixed issues](#Fixedissues)
+
+  * [Android](#Android)
+
+  * [iOS](#iOS)
+
+* [API changes](#APIchanges)
+
+  * [New APIs](#NewAPIs)
+
+  * [Deprecated APIs](#DeprecatedAPIs)
+
+* [SDK modules versions](#SDKmodulesversions)
+
+  * [Android and iOS](#AndroidandiOS)
+
+  * [CommonJS](#CommonJS)
+
+  * [Hyperloop](#Hyperloop)
+
 
 ## About this release
 
@@ -35,59 +35,59 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 ## New features
 
-*   [TIMOB-13966](https://jira.appcelerator.org/browse/TIMOB-13966) - TiAPI: Select Locale for L() at runtime
-    
-    *   Change language on runtime across app-launches
-        
+* [TIMOB-13966](https://jira.appcelerator.org/browse/TIMOB-13966) - TiAPI: Select Locale for L() at runtime
+
+  * Change language on runtime across app-launches
+
 
 ## Community credits
 
-*   Jorge Macias Garcia - [TIMOB-26625](https://jira.appcelerator.org/browse/TIMOB-26625)
-    
-*   Joe Finnigan - [TIMOB-26628](https://jira.appcelerator.org/browse/TIMOB-26628)
-    
-*   Thomas Weber - [TIMOB-26612](https://jira.appcelerator.org/browse/TIMOB-26612)
-    
-*   [Mads Moller](https://github.com/viezel) - [TIMOB-13966](https://jira.appcelerator.org/browse/TIMOB-13966)
-    
-*   Ricardo Ramirez - [TIMOB-20266](https://jira.appcelerator.org/browse/TIMOB-20266)
-    
-*   [John Staunton](https://github.com/johnstan) - [TIMOB-26688](https://jira.appcelerator.org/browse/TIMOB-26688)
-    
-*   Teun Klijn - [TIMOB-26594](https://jira.appcelerator.org/browse/TIMOB-26594)
-    
+* Jorge Macias Garcia - [TIMOB-26625](https://jira.appcelerator.org/browse/TIMOB-26625)
+
+* Joe Finnigan - [TIMOB-26628](https://jira.appcelerator.org/browse/TIMOB-26628)
+
+* Thomas Weber - [TIMOB-26612](https://jira.appcelerator.org/browse/TIMOB-26612)
+
+* [Mads Moller](https://github.com/viezel) - [TIMOB-13966](https://jira.appcelerator.org/browse/TIMOB-13966)
+
+* Ricardo Ramirez - [TIMOB-20266](https://jira.appcelerator.org/browse/TIMOB-20266)
+
+* [John Staunton](https://github.com/johnstan) - [TIMOB-26688](https://jira.appcelerator.org/browse/TIMOB-26688)
+
+* Teun Klijn - [TIMOB-26594](https://jira.appcelerator.org/browse/TIMOB-26594)
+
 
 ## Fixed issues
 
 ### Android
 
-*   [TIMOB-20266](https://jira.appcelerator.org/browse/TIMOB-20266) - Android: ListView with attributed strings are not rendering sometimes
-    
-*   [TIMOB-26545](https://jira.appcelerator.org/browse/TIMOB-26545) - Android: Using global L() method for localization does not work if second argument is not supplied
-    
-*   [TIMOB-26580](https://jira.appcelerator.org/browse/TIMOB-26580) - Android: ListView templates not compatible with native modules
-    
-*   [TIMOB-26625](https://jira.appcelerator.org/browse/TIMOB-26625) - Android: Can't open Titanium app through intent (7.5.0 regression)
-    
-*   [TIMOB-26626](https://jira.appcelerator.org/browse/TIMOB-26626) - Android apps are taking much longer to load than they did on previous sdks
-    
-*   [TIMOB-26632](https://jira.appcelerator.org/browse/TIMOB-26632) - Android: App sometimes crashes when backgrounded as of 7.5.0
-    
-*   [TIMOB-26774](https://jira.appcelerator.org/browse/TIMOB-26774) - Android: When backgrounded, data intent no longer re-executes "app.js" as of 7.5.0
-    
+* [TIMOB-20266](https://jira.appcelerator.org/browse/TIMOB-20266) - Android: ListView with attributed strings are not rendering sometimes
+
+* [TIMOB-26545](https://jira.appcelerator.org/browse/TIMOB-26545) - Android: Using global L() method for localization does not work if second argument is not supplied
+
+* [TIMOB-26580](https://jira.appcelerator.org/browse/TIMOB-26580) - Android: ListView templates not compatible with native modules
+
+* [TIMOB-26625](https://jira.appcelerator.org/browse/TIMOB-26625) - Android: Can't open Titanium app through intent (7.5.0 regression)
+
+* [TIMOB-26626](https://jira.appcelerator.org/browse/TIMOB-26626) - Android apps are taking much longer to load than they did on previous sdks
+
+* [TIMOB-26632](https://jira.appcelerator.org/browse/TIMOB-26632) - Android: App sometimes crashes when backgrounded as of 7.5.0
+
+* [TIMOB-26774](https://jira.appcelerator.org/browse/TIMOB-26774) - Android: When backgrounded, data intent no longer re-executes "app.js" as of 7.5.0
+
 
 ### iOS
 
-*   [TIMOB-26452](https://jira.appcelerator.org/browse/TIMOB-26452) - iOS: Object.hasProperty incorrectly reports false when a property's value is null
-    
-*   [TIMOB-26594](https://jira.appcelerator.org/browse/TIMOB-26594) - iOS: Exception when canceling local notifications with removePendingNotifications
-    
-*   [TIMOB-26612](https://jira.appcelerator.org/browse/TIMOB-26612) - Problem with Internationalization
-    
-*   [TIMOB-26628](https://jira.appcelerator.org/browse/TIMOB-26628) - iOS 11.0: App crashes on launch
-    
-*   [TIMOB-26688](https://jira.appcelerator.org/browse/TIMOB-26688) - iOS: Proxy objects created in timers aren't released properly
-    
+* [TIMOB-26452](https://jira.appcelerator.org/browse/TIMOB-26452) - iOS: Object.hasProperty incorrectly reports false when a property's value is null
+
+* [TIMOB-26594](https://jira.appcelerator.org/browse/TIMOB-26594) - iOS: Exception when canceling local notifications with removePendingNotifications
+
+* [TIMOB-26612](https://jira.appcelerator.org/browse/TIMOB-26612) - Problem with Internationalization
+
+* [TIMOB-26628](https://jira.appcelerator.org/browse/TIMOB-26628) - iOS 11.0: App crashes on launch
+
+* [TIMOB-26688](https://jira.appcelerator.org/browse/TIMOB-26688) - iOS: Proxy objects created in timers aren't released properly
+
 
 ## API changes
 

@@ -1,4 +1,4 @@
-{"title":"TableView Binding","weight":"160"} 
+{"title":"TableView Binding","weight":"160"}
 
 Demonstrates binding a data collection to a TableView using global and local collection references.
 

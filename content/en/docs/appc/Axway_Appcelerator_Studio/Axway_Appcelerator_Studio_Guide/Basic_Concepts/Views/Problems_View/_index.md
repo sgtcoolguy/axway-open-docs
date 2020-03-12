@@ -1,4 +1,4 @@
-{"title":"Problems View","weight":"30"} 
+{"title":"Problems View","weight":"30"}
 
 This page gives an overview of how to use the Problems View to identify syntax errors.
 
@@ -10,6 +10,6 @@ While editing a file in one of our editors or after saving files, our index and 
 
 ## Related Topics
 
-*   [Adding custom error message filters to the Problems View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Views/Problems_View/Adding_custom_error_message_filters_to_the_Problems_View/)
-    
-*   [Enabling and disabling validation](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Views/Problems_View/Enabling_and_disabling_validation/)
+* [Adding custom error message filters to the Problems View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Views/Problems_View/Adding_custom_error_message_filters_to_the_Problems_View/)
+
+* [Enabling and disabling validation](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Views/Problems_View/Enabling_and_disabling_validation/)

@@ -1,4 +1,4 @@
-{"title":"Android API Deep Dives","weight":"10"} 
+{"title":"Android API Deep Dives","weight":"10"}
 
 These topics cover Titanium APIs specific to the Android platform. For Android-specific, user interface APIs, see [Android UI Components and Conventions](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/).
 
@@ -20,10 +20,10 @@ Services are background components that run even if the application is backgroun
 
 ## Topics
 
-*   [Android Intents](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Intents/)
-    
-*   [Android Intent Filters](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Intent_Filters/)
-    
-*   [Android Broadcast Intents and Receivers](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Broadcast_Intents_and_Receivers/)
-    
-*   [Android Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Services/)
+* [Android Intents](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Intents/)
+
+* [Android Intent Filters](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Intent_Filters/)
+
+* [Android Broadcast Intents and Receivers](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Broadcast_Intents_and_Receivers/)
+
+* [Android Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Services/)

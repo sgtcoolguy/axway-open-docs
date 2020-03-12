@@ -1,4 +1,4 @@
-{"title":"Debugging iOS Apps with 3rd-party Tools","weight":"10"} 
+{"title":"Debugging iOS Apps with 3rd-party Tools","weight":"10"}
 
 You can debug your Titanium App using the Safari DevTools. No matter the route you take, you must ensure that your project is using the built-in JavaScriptCore framework. For projects running Titanium SDK 7.0.0 and later, this option is enabled by default. For older projects, it can be enabled as seen below.
 
@@ -36,33 +36,33 @@ Since iOS 7, the pre-packaged JScore framework has contained a debugging agent a
 
 Be sure to turn on use-jscore-framework as listed in [Enable use-jscore-framework](#Enableuse-jscore-framework).
 
-1.  Launch the app on the device or a simulator.
-    
-    If using a device, make its connected by an USB cable before debugging.
-    
-    1.  Launch you application via Studio or command-line: appc run -p ios
-        
-2.  Launch Safari and enable the **Develop** mode (**Safari** > **Preferences** > **Advanced** and enable **Show Develop menu in menu bar**).
-    
-    It is important to have the Web Inspector enabled to allow connections for debugging. Otherwise, neither Studio nor Safari's debugger will be able to connect to the device using the web-inspector based protocol.
-    
-    ![enabled_develop_safari](/Images/appc/download/attachments/49160781/enabled_develop_safari.png)
-    
-3.  Once the app is up and running, connecting to the debugger depends on whether you are using a simulator or device.
-    
-    1.  Simulator: **Safari** > **Developer** > **Simulator** > **JSContext**
-        
-    2.  Device: **Safari** > **Developer** > **<device name>** > **JSContext**
-        
+1. Launch the app on the device or a simulator.
+
+  If using a device, make its connected by an USB cable before debugging.
+
+  1. Launch you application via Studio or command-line: appc run -p ios
+
+2. Launch Safari and enable the **Develop** mode (**Safari** > **Preferences** > **Advanced** and enable **Show Develop menu in menu bar**).
+
+  It is important to have the Web Inspector enabled to allow connections for debugging. Otherwise, neither Studio nor Safari's debugger will be able to connect to the device using the web-inspector based protocol.
+
+  ![enabled_develop_safari](/Images/appc/download/attachments/49160781/enabled_develop_safari.png)
+
+3. Once the app is up and running, connecting to the debugger depends on whether you are using a simulator or device.
+
+  1. Simulator: **Safari** > **Developer** > **Simulator** > **JSContext**
+
+  2. Device: **Safari** > **Developer** > **<device name>** > **JSContext**
+
 
 ### Safari Breakpoints
 
 Sometimes you cannot connect the debugger to the app until it's already executed the code its likely to break at. Try this workaround:
 
-1.  Launch the simulator.
-    
-2.  Open **Safari** > **Develop** > **Simulator**.
-    
-3.  Ensure **Automatically Show Web Inspector for JSContexts** and **Automatically Pause Connecting to JSContexts** are both enabled.
-    
-4.  Launch the app/build via **Studio** or the **CLI**. You should be able to connect and control the debugger before the app fully launches.
+1. Launch the simulator.
+
+2. Open **Safari** > **Develop** > **Simulator**.
+
+3. Ensure **Automatically Show Web Inspector for JSContexts** and **Automatically Pause Connecting to JSContexts** are both enabled.
+
+4. Launch the app/build via **Studio** or the **CLI**. You should be able to connect and control the debugger before the app fully launches.

@@ -1,21 +1,21 @@
-{"title":"Working with XML Data","weight":"40"} 
+{"title":"Working with XML Data","weight":"40"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [Parsing XML](#ParsingXML)
-        
-    *   [Hands-on Practice](#Hands-onPractice)
-        
-        *   [Goal](#Goal)
-            
-        *   [Steps](#Steps)
-            
-    *   [References and Further Reading](#ReferencesandFurtherReading)
-        
-*   [Summary](#Summary)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [Parsing XML](#ParsingXML)
+
+  * [Hands-on Practice](#Hands-onPractice)
+
+    * [Goal](#Goal)
+
+    * [Steps](#Steps)
+
+  * [References and Further Reading](#ReferencesandFurtherReading)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -45,29 +45,29 @@ A full treatment of the XML DOM and related methods is beyond the scope of this 
 
 The XML DOM presents a document as a hierarchy of nodes. Some types of nodes may have child nodes, while others are leaf nodes that don't have children. For XML and HTML documents, these are some of the supported node types:
 
-*   Document – represents the entire XML document and contains a maximum of one Element node
-    
-*   Element – contains the remainder of the nodes in your document, this is generally the node you work with as the top-level of the hierarchy
-    
-*   Attr – represents a node's attributes and contains Text nodes
-    
-*   Text – a leaf node type with no children
-    
-*   CDATASection – no children
-    
-*   Entity – contains nodes of various types
-    
+* Document – represents the entire XML document and contains a maximum of one Element node
+
+* Element – contains the remainder of the nodes in your document, this is generally the node you work with as the top-level of the hierarchy
+
+* Attr – represents a node's attributes and contains Text nodes
+
+* Text – a leaf node type with no children
+
+* CDATASection – no children
+
+* Entity – contains nodes of various types
+
 
 You'll often use these methods when parsing an XML document:
 
-*   The getElementsByTagName() method, which returns an array of nodes with the given name
-    
-*   The item() method which you use to select a specific node in an array
-    
-*   The getAttribute() method which you use to retrieve the value of an attribute with the given name
-    
-*   The text and nodeValue properties, which retrieve the leaf node values associated with the node
-    
+* The getElementsByTagName() method, which returns an array of nodes with the given name
+
+* The item() method which you use to select a specific node in an array
+
+* The getAttribute() method which you use to retrieve the value of an attribute with the given name
+
+* The text and nodeValue properties, which retrieve the leaf node values associated with the node
+
 
 Consider this code snippet, which parses RSS (XML) data retrieved from a blog:
 
@@ -123,31 +123,31 @@ In this activity, you will write the beginnings of an RSS reader. It will downlo
 
 #### Steps
 
-1.  Create a new Titanium Mobile project.
-    
-2.  Replace the contents of app.js with code that defines a single window with a white background. To that window, add a TableView.
-    
-3.  Declare an array to hold the data for your table.
-    
-4.  Create an HTTPClient object that retrieves the RSS feed from [http://apod.nasa.gov/apod.rss](http://apod.nasa.gov/apod.rss) (the Astronomy Picture of the Day RSS feed).
-    
-5.  With your browser, visit [http://apod.nasa.gov/apod.rss](http://apod.nasa.gov/apod.rss) to gain an understanding of the XML node hierarchy of the feed.
-    
-6.  Declare an array named items that stores all the nodes with a tag name of item.
-    
-7.  In the onload callback, loop through the items array. In each iteration of the loop, create an anonymous object with a single property named title whose value equals the text leaf of the title node. Push that anonymous object into your data array.
-    
-8.  Assign your data array to the table's data property to populate your table's rows.
-    
-9.  Build and test your app in the simulator/emulator. It should display the titles for each of the last seven pictures of the day.
-    
+1. Create a new Titanium Mobile project.
+
+2. Replace the contents of app.js with code that defines a single window with a white background. To that window, add a TableView.
+
+3. Declare an array to hold the data for your table.
+
+4. Create an HTTPClient object that retrieves the RSS feed from [http://apod.nasa.gov/apod.rss](http://apod.nasa.gov/apod.rss) (the Astronomy Picture of the Day RSS feed).
+
+5. With your browser, visit [http://apod.nasa.gov/apod.rss](http://apod.nasa.gov/apod.rss) to gain an understanding of the XML node hierarchy of the feed.
+
+6. Declare an array named items that stores all the nodes with a tag name of item.
+
+7. In the onload callback, loop through the items array. In each iteration of the loop, create an anonymous object with a single property named title whose value equals the text leaf of the title node. Push that anonymous object into your data array.
+
+8. Assign your data array to the table's data property to populate your table's rows.
+
+9. Build and test your app in the simulator/emulator. It should display the titles for each of the last seven pictures of the day.
+
 
 As a challenge, improve the app by letting the user tap a row to view that day's picture.
 
 ### References and Further Reading
 
-*   [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/6.3_xml.zip)
-    
+* [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/6.3_xml.zip)
+
 
 ## Summary
 

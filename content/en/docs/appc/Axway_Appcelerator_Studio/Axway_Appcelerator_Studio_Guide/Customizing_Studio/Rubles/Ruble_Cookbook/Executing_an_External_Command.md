@@ -1,35 +1,35 @@
-{"title":"Executing an External Command","weight":"50"} 
+{"title":"Executing an External Command","weight":"50"}
 
-*   [Overview](#Overview)
-    
-*   [Calling an external application and displaying the results](#Callinganexternalapplicationanddisplayingtheresults)
-    
-    *   [Single-line approach](#Single-lineapproach)
-        
-    *   [Blocks](#Blocks)
-        
-*   [Passing the current contents of the editor to an external application](#Passingthecurrentcontentsoftheeditortoanexternalapplication)
-    
-    *   [Using the selection in the executed command](#Usingtheselectionintheexecutedcommand)
-        
-    *   [Referencing STDIN](#ReferencingSTDIN)
-        
-*   [Running different commands per OS](#RunningdifferentcommandsperOS)
-    
-*   [Running a bash script](#Runningabashscript)
-    
+* [Overview](#Overview)
+
+* [Calling an external application and displaying the results](#Callinganexternalapplicationanddisplayingtheresults)
+
+  * [Single-line approach](#Single-lineapproach)
+
+  * [Blocks](#Blocks)
+
+* [Passing the current contents of the editor to an external application](#Passingthecurrentcontentsoftheeditortoanexternalapplication)
+
+  * [Using the selection in the executed command](#Usingtheselectionintheexecutedcommand)
+
+  * [Referencing STDIN](#ReferencingSTDIN)
+
+* [Running different commands per OS](#RunningdifferentcommandsperOS)
+
+* [Running a bash script](#Runningabashscript)
+
 
 ## Overview
 
-In this recipe we show how a Ruble command can call an external tool.
+In this recipe, we show how a Ruble command can call an external tool.
 
 ## Calling an external application and displaying the results
 
-In this simplest example, we execute the "ls" application in the "\\Users\\username" directory and print the results to the console. We may execute this two different ways, which we discuss here:
+In this simplest example, we execute the "ls" application in the "\\Users\\username" directory and print the results to the console. We may execute these two different ways, which we discuss here:
 
 ### Single-line approach
 
-The approach below is useful if just executing a simple command and not adding additional information or performing manipulation on the results
+The approach below is useful if executing a simple command and not adding additional information or performing manipulation on the results
 
 `require` `'ruble'`
 
@@ -45,7 +45,7 @@ The approach below is useful if just executing a simple command and not adding a
 
 ### Blocks
 
-Executing the command invocation in a block allows us to do more complicated manipulation of the input and output. Also note that we use Ruby backticks (\`) to run the ls application in this context (as if we are passing the command direct to the shell), but that the working directory option used above does not work in this situation...it needs to be part of the command itself.
+Executing the command invocation in a block allows us to do more complicated manipulation of the input and output. Also note that we use Ruby backticks (\`) to run the ls application in this context (as if we are passing the command directly to the shell), but that the working directory option used above does not work in this situation...it needs to be part of the command itself.
 
 `require` `'ruble'`
 
@@ -65,20 +65,20 @@ Executing the command invocation in a block allows us to do more complicated man
 
 Often it is useful to select something in the editor and call an external tool based on that value. **cmd.output** can take a variety of options. Some of the most common are:
 
-*   **:selection:** selected text in the editor
-    
-*   **:line:** the line containing the caret
-    
-*   **:document:** the entire current document
-    
-*   **:clipboard:** the contents of the clipboard
-    
+* **:selection:** selected text in the editor
+
+* **:line:** the line containing the caret
+
+* **:document:** the entire current document
+
+* **:clipboard:** the contents of the clipboard
+
 
 ### Using the selection in the executed command
 
 Here we take the current selection in the editor and echo it to the console.
 
-When using backticks, you need to assign the value of a environment variable to a temporary variable, and use that in the command
+When using backticks, you need to assign the value of an environment variable to a temporary variable, and use that in the command.
 
 `require` `'ruble'`
 

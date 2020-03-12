@@ -1,26 +1,26 @@
-{"title":"Visual Studio Code - Titanium Extension Installation and Configuration Settings","weight":"20"} 
+{"title":"Visual Studio Code - Titanium Extension Installation and Configuration Settings","weight":"20"}
 
 ## Titanium extension installation
 
 Via the browser:
 
-1.  In [https://marketplace.visualstudio.com/vscode](https://marketplace.visualstudio.com/vscode), type in **Titanium** and click the search icon or go directly to the extension **[here](https://marketplace.visualstudio.com/items?itemName=axway.vscode-titanium)**.
-    
-2.  Click **Install** once the extension opens up in VS Code.
-    
+1. In [https://marketplace.visualstudio.com/vscode](https://marketplace.visualstudio.com/vscode), type in **Titanium** and click the search icon or go directly to the extension **[here](https://marketplace.visualstudio.com/items?itemName=axway.vscode-titanium)**.
+
+2. Click **Install** once the extension opens up in VS Code.
+
 
 In VS Code:
 
-1.  Open the **Extension view** (View > Extension) or click the Extension icon ![Screen_Shot_2019-05-01_at_11.21.46_AM](/Images/appc/download/thumbnails/60131174/Screen_Shot_2019-05-01_at_11.21.46_AM.png) .
-    
-2.  Type **Titanium** in the input field.
-    
-3.  Select the **Titanium** extension by **Axway**.
-    
-4.  Click the green **Install** button in the extension: Titanium panel.
-    
-5.  **Reload** VS Code.
-    
+1. Open the **Extension view** (View > Extension) or click the Extension icon ![Screen_Shot_2019-05-01_at_11.21.46_AM](/Images/appc/download/thumbnails/60131174/Screen_Shot_2019-05-01_at_11.21.46_AM.png) .
+
+2. Type **Titanium** in the input field.
+
+3. Select the **Titanium** extension by **Axway**.
+
+4. Click the green **Install** button in the extension: Titanium panel.
+
+5. **Reload** VS Code.
+
 
 ## Configuration settings
 

@@ -1,6 +1,6 @@
-{"title":"Selection Class","weight":"80"} 
+{"title":"Selection Class","weight":"80"}
 
-The Selection class contains methods and properties for interacting with a selection inside a document inside Studio
+The Selection class contains methods and properties for interacting with a selection inside a document inside Studio.
 
 ## Usage
 
@@ -20,16 +20,16 @@ Description
 
 offset
 
-The offset of the selection in the document
+The offset of the selection in the document.
 
 text
 
-The text of the current selection
+The text of the current selection.
 
 start\_line
 
-The line on which the selection starts
+The line on which the selection starts.
 
 end\_line
 
-The line on which the selection ends
+The line on which the selection ends.

@@ -1,4 +1,4 @@
-{"title":"Hyperloop FAQ","weight":"50"} 
+{"title":"Hyperloop FAQ","weight":"50"}
 
 ## Can you inject the <property name="run-on-main-thread" type="bool">true</property> tag in the tiapp.xml?
 
@@ -11,10 +11,6 @@ Yes, existing Titanium modules (built with Java for Android and Objective-C for 
 ## What is Hyperloop’s relationship with Swift?
 
 Prior to Hyperloop, the only way to develop native iOS modules for Titanium was to use Objective-C. But with the release of Hyperloop, we not only support full, native access to the platform SDK from JavaScript, you can also mix Swift (as well as Objective-C) classes in your apps, allowing you to directly access them from JavaScript.
-
-## Titanium works for Windows. Does Hyperloop?
-
-We are planning Windows support in the future, but currently Hyperloop supports iOS and Android only.
 
 ## Is Hyperloop available as part of the Platform trial?
 

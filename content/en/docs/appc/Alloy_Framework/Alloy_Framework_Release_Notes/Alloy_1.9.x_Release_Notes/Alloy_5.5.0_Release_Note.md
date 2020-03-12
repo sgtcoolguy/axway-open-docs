@@ -1,4 +1,4 @@
-{"title":"Alloy 5.5.0 - 12 September 2016","weight":"60"} 
+{"title":"Alloy 5.5.0 - 12 September 2016","weight":"60"}
 
 Alloy 5.5.0 is a minor release that includes one bug fix.
 
@@ -6,4 +6,4 @@ As of this release, Alloy 5.4.x will not be supported six months from 5.5.0's re
 
 ## Fixed issue
 
-*   [ALOY-1516](https://jira.appcelerator.org/browse/ALOY-1516) - Alloy: Text property inside LABEL element not displaying output of any method in combination with any text correctly
+* [ALOY-1516](https://jira.appcelerator.org/browse/ALOY-1516) - Alloy: Text property inside LABEL element not displaying output of any method in combination with any text correctly

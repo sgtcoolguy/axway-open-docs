@@ -1,49 +1,49 @@
-{"title":"Titanium SDK 5.2.0.RC 17 February 2016","weight":"170"} 
+{"title":"Titanium SDK 5.2.0.RC 17 February 2016","weight":"170"}
 
 ## Contents
 
-*   [About This Release](#AboutThisRelease)
-    
-    *   [Installing 5.2.0.RC for Appcelerator Studio](#Installing5.2.0.RCforAppceleratorStudio)
-        
-*   [New Features](#NewFeatures)
-    
-    *   [Android Platform](#AndroidPlatform)
-        
-        *   [Additional Type Support for IntentProxy](#AdditionalTypeSupportforIntentProxy)
-            
-        *   [Google Maps](#GoogleMaps)
-            
-    *   [iOS Platform](#iOSPlatform)
-        
-        *   [New iOS9 Features](#NewiOS9Features)
-            
-        *   [New iOS9.1 Features](#NewiOS9.1Features)
-            
-        *   [Storyboard-based Launch Screen](#Storyboard-basedLaunchScreen)
-            
-        *   [Enabling Split/Slide View](#EnablingSplit/SlideView)
-            
-        *   [Miscellaneous iOS Features](#MiscellaneousiOSFeatures)
-            
-*   [Community Credits](#CommunityCredits)
-    
-*   [Fixed Issues](#FixedIssues)
-    
-*   [Improvements](#Improvements)
-    
-*   [API Changes](#APIChanges)
-    
-    *   [New APIs](#NewAPIs)
-        
-    *   [Deprecated APIs](#DeprecatedAPIs)
-        
-*   [Known Issues](#KnownIssues)
-    
-    *   [iOS Launch Logo Caching Issue](#iOSLaunchLogoCachingIssue)
-        
-    *   [iOS9.1 PHLivePhoto and PHLivePhotoView](#iOS9.1PHLivePhotoandPHLivePhotoView)
-        
+* [About This Release](#AboutThisRelease)
+
+  * [Installing 5.2.0.RC for Appcelerator Studio](#Installing5.2.0.RCforAppceleratorStudio)
+
+* [New Features](#NewFeatures)
+
+  * [Android Platform](#AndroidPlatform)
+
+    * [Additional Type Support for IntentProxy](#AdditionalTypeSupportforIntentProxy)
+
+    * [Google Maps](#GoogleMaps)
+
+  * [iOS Platform](#iOSPlatform)
+
+    * [New iOS9 Features](#NewiOS9Features)
+
+    * [New iOS9.1 Features](#NewiOS9.1Features)
+
+    * [Storyboard-based Launch Screen](#Storyboard-basedLaunchScreen)
+
+    * [Enabling Split/Slide View](#EnablingSplit/SlideView)
+
+    * [Miscellaneous iOS Features](#MiscellaneousiOSFeatures)
+
+* [Community Credits](#CommunityCredits)
+
+* [Fixed Issues](#FixedIssues)
+
+* [Improvements](#Improvements)
+
+* [API Changes](#APIChanges)
+
+  * [New APIs](#NewAPIs)
+
+  * [Deprecated APIs](#DeprecatedAPIs)
+
+* [Known Issues](#KnownIssues)
+
+  * [iOS Launch Logo Caching Issue](#iOSLaunchLogoCachingIssue)
+
+  * [iOS9.1 PHLivePhoto and PHLivePhotoView](#iOS9.1PHLivePhotoandPHLivePhotoView)
+
 
 ## About This Release
 
@@ -103,10 +103,10 @@ This section lists new features and improvements only available on the Android p
 
 During the launching of an app, you can hide the navigation bar however, there are two caveats that you should be aware of:
 
-1.  When you tap the screen, the navigation bar returns
-    
-2.  This setting affects all activities and windows in Android when you set the property Fullscreen to true.
-    
+1. When you tap the screen, the navigation bar returns
+
+2. This setting affects all activities and windows in Android when you set the property Fullscreen to true.
+
 
 To try this feature out, set this property in the TiApp.xml to true:
 
@@ -118,21 +118,21 @@ This section lists new features and improvements only available on the iOS platf
 
 #### New iOS9 Features
 
-*   Support included for iOS9's 3D-Touch property and events. Properties supported include
-    
-    *   force: the force of the touch where the value of 1.0 represents the force of an average touch (predetermined by the system and is not user-specific). This property is read-only.
-        
-    *   maximumPossibleForce: The value of this property is sufficently high to provide a wide dynamic range for values of the force property.
-        
-*   Support for iOS9's "Continue" button and fallback for older devices as well as support for Twitter and WebSearch keyboards.
-    
+* Support included for iOS9's 3D-Touch property and events. Properties supported include
+
+  * force: the force of the touch where the value of 1.0 represents the force of an average touch (predetermined by the system and is not user-specific). This property is read-only.
+
+  * maximumPossibleForce: The value of this property is sufficently high to provide a wide dynamic range for values of the force property.
+
+* Support for iOS9's "Continue" button and fallback for older devices as well as support for Twitter and WebSearch keyboards.
+
 
 #### New iOS9.1 Features
 
-*   Support for PHLivePhoto and PHLivePhotoView via the Ti.Media.openPhotoGallery() method and display live photos via Ti.UI.iOS.LivePhoto.
-    
-*   Full coverage for Apple Pencil APIs including force, maximumPossibleForce, timestamp and altitudeAngle.
-    
+* Support for PHLivePhoto and PHLivePhotoView via the Ti.Media.openPhotoGallery() method and display live photos via Ti.UI.iOS.LivePhoto.
+
+* Full coverage for Apple Pencil APIs including force, maximumPossibleForce, timestamp and altitudeAngle.
+
 
 #### Storyboard-based Launch Screen
 
@@ -222,406 +222,406 @@ Custom LaunchScreen.storyboard files will need to be authored in Xcode and then 
 
 With the addition of the launchScreen.storyboard features, you can now enable the split and slide views. To enable this features, follow these steps:
 
-1.  In **tiapp.xml** , set the following properties:
-    
-    *   `...`
-        
-        `<ios>`
-        
-        `<enable-launch-screen-storyboard>``true``</enable-launch-screen-storyboard>`
-        
-        `<use-auto-layout>``true``</use-auto-layout>`
-        
-        `<plist>`
-        
-        `<dict>`
-        
-        `<key>UIRequiresFullScreen</key>`
-        
-        `<``false``/>`
-        
-        `...`
-        
-2.  Run **appc run -p ios -F ipad** .
-    
-3.  While the app is running, press **Home**.
-    
-4.  Open **Contacts** or **Map**.
-    
-5.  **Slide** from right edge. You should see the Titanium app.
-    
-6.  Open the Titanium app. It will show up as a slide view.
-    
-7.  If you turn your device to landscape and repeat from step #5, you can drag the divider to see it in split view.
-    
+1. In **tiapp.xml** , set the following properties:
+
+  * `...`
+
+    `<ios>`
+
+    `<enable-launch-screen-storyboard>``true``</enable-launch-screen-storyboard>`
+
+    `<use-auto-layout>``true``</use-auto-layout>`
+
+    `<plist>`
+
+    `<dict>`
+
+    `<key>UIRequiresFullScreen</key>`
+
+    `<``false``/>`
+
+    `...`
+
+2. Run **appc run -p ios -F ipad** .
+
+3. While the app is running, press **Home**.
+
+4. Open **Contacts** or **Map**.
+
+5. **Slide** from right edge. You should see the Titanium app.
+
+6. Open the Titanium app. It will show up as a slide view.
+
+7. If you turn your device to landscape and repeat from step #5, you can drag the divider to see it in split view.
+
 
 #### Miscellaneous iOS Features
 
-*   Scroll event for [Titanium.UI.ScrollView](#!/api/Titanium.UI.ScrollView) now sends the contentSize property to scroll event.
-    
-*   Added support for UIMenuController. A menu popup provides the ability to create custom tooltip options using the items property covering the native UIMenuController class.
-    
-*   Introduced dragstart and dragend (just like scrollview) for listview in this release. Dragstart fires when the user starts dragging a list view. Dragend fires when the user stops dragging the list view.
-    
-*   UIEdgeInsets allows for the repositioning of an image inside a tab when it has no title text. This method allows you to pass absolute values for image insets and properly realign images inside the tab.
-    
-    *   Demo:
-        
-    *   `Titanium.UI.setBackgroundColor(``'#fff'``);`
-        
-        `var tabGroup = Titanium.UI.createTabGroup();`
-        
-        `var win1 = Titanium.UI.createWindow();`
-        
-        `var tab1 = Titanium.UI.createTab({`
-        
-        `window: win1,`
-        
-        `icon:``'images/tabs/KS_nav_ui.png'``,`
-        
-        `iconInsets: {`
-        
-        `top:``6``,`
-        
-        `bottom:-``6``,`
-        
-        `right:``0``,`
-        
-        `left:``0`
-        
-        `}`
-        
-        `});`
-        
-        `var win2 = Titanium.UI.createWindow();`
-        
-        `var tab2 = Titanium.UI.createTab({`
-        
-        `window: win2,`
-        
-        `icon:``'images/tabs/KS_nav_ui.png'``,`
-        
-        `title:` `"Test"`
-        
-        `});`
-        
-        `tabGroup.addTab(tab1);`
-        
-        `tabGroup.addTab(tab2);`
-        
-        `tabGroup.open();`
-        
-*   Added Swift versions of the applewatch templates so you have a choice of watchos2-swift (Swift and new default) and watchos2-objc (Obj-C).
-    
-*   Support for contact icons.
-    
-*   Ti.iPad.Popover now supports popover's backgroundColor property.
-    
+* Scroll event for [Titanium.UI.ScrollView](#!/api/Titanium.UI.ScrollView) now sends the contentSize property to scroll event.
+
+* Added support for UIMenuController. A menu popup provides the ability to create custom tooltip options using the items property covering the native UIMenuController class.
+
+* Introduced dragstart and dragend (just like scrollview) for listview in this release. Dragstart fires when the user starts dragging a list view. Dragend fires when the user stops dragging the list view.
+
+* UIEdgeInsets allows for the repositioning of an image inside a tab when it has no title text. This method allows you to pass absolute values for image insets and properly realign images inside the tab.
+
+  * Demo:
+
+  * `Titanium.UI.setBackgroundColor(``'#fff'``);`
+
+    `var tabGroup = Titanium.UI.createTabGroup();`
+
+    `var win1 = Titanium.UI.createWindow();`
+
+    `var tab1 = Titanium.UI.createTab({`
+
+    `window: win1,`
+
+    `icon:``'images/tabs/KS_nav_ui.png'``,`
+
+    `iconInsets: {`
+
+    `top:``6``,`
+
+    `bottom:-``6``,`
+
+    `right:``0``,`
+
+    `left:``0`
+
+    `}`
+
+    `});`
+
+    `var win2 = Titanium.UI.createWindow();`
+
+    `var tab2 = Titanium.UI.createTab({`
+
+    `window: win2,`
+
+    `icon:``'images/tabs/KS_nav_ui.png'``,`
+
+    `title:` `"Test"`
+
+    `});`
+
+    `tabGroup.addTab(tab1);`
+
+    `tabGroup.addTab(tab2);`
+
+    `tabGroup.open();`
+
+* Added Swift versions of the applewatch templates so you have a choice of watchos2-swift (Swift and new default) and watchos2-objc (Obj-C).
+
+* Support for contact icons.
+
+* Ti.iPad.Popover now supports popover's backgroundColor property.
+
 
 ## Community Credits
 
 The following Appcelerator Community members contributed PRs that were included in this release:
 
-*   Shawn Lipscomb for finding a bug with ti.inappbilling failing to work on Android 5.0 ([MOD-2154](https://jira.appcelerator.org/browse/MOD-2154))
-    
-*   [Michael](https://github.com/m1ga) for updating TiCameraActivity.java ([TIMOB-19769](https://jira.appcelerator.org/browse/TIMOB-19769)), and various documents
-    
-*   [Michael Kimsal](https://github.com/mgkimsal) for updating Media.yml ([TIMOB-17987](https://jira.appcelerator.org/browse/TIMOB-17987))
-    
-*   [Flavio De Stefano](https://github.com/kopiro) for iOS: Added trackTintColor ([TIMOB-19829](https://jira.appcelerator.org/browse/TIMOB-19829))
-    
-*   [Xavier Lacot](https://github.com/xavierlacot) for fixing check that the view's layout is not null before comparing it to horizontal or vertical layout arrangements ([TIMOB-20089](https://jira.appcelerator.org/browse/TIMOB-20089))
-    
-*   [Collin Price](https://github.com/collinprice) for adding null check to activity object in callOrientationChangedListener method ([TIMOB-20108](https://jira.appcelerator.org/browse/TIMOB-20108)) and additional type support for IntentProxy ([TIMOB-19679](https://jira.appcelerator.org/browse/TIMOB-19679))
-    
-*   [Wilson](https://github.com/wsliaw) for adding dragstart and dragend event ([TIMOB-18210](https://jira.appcelerator.org/browse/TIMOB-18210))
-    
-*   [Rene Pot](https://github.com/Topener) for adding deleteButtonTitle to the docs ([TIDOC-2366](https://jira.appcelerator.org/browse/TIDOC-2366))
-    
-*   [Manuel Lehner](https://github.com/manumaticx) for fixing NullPointerException in TiConvert ([TIMOB-19579](https://jira.appcelerator.org/browse/TIMOB-19579))
-    
-*   [Chris R](https://github.com/cdrx) for updating [README.md](http://README.md) and adding titanium slack to readme
-    
-*   [Jason Kneen](https://github.com/jasonkneen) for updating ApplicationShortcuts.yml ([TIDOC-2348](https://jira.appcelerator.org/browse/TIDOC-2348))
-    
-*   [Steven van Loef](https://github.com/ludolphus) for adding contentSize property to scroll event ([TIMOB-17247](https://jira.appcelerator.org/browse/TIMOB-17247))
-    
-*   [Seth Benjamin](https://github.com/animecyc) for iOS: TiUIListView does not resume the ImageLoader ([TIMOB-19647](https://jira.appcelerator.org/browse/TIMOB-19647))
-    
+* Shawn Lipscomb for finding a bug with ti.inappbilling failing to work on Android 5.0 ([MOD-2154](https://jira.appcelerator.org/browse/MOD-2154))
+
+* [Michael](https://github.com/m1ga) for updating TiCameraActivity.java ([TIMOB-19769](https://jira.appcelerator.org/browse/TIMOB-19769)), and various documents
+
+* [Michael Kimsal](https://github.com/mgkimsal) for updating Media.yml ([TIMOB-17987](https://jira.appcelerator.org/browse/TIMOB-17987))
+
+* [Flavio De Stefano](https://github.com/kopiro) for iOS: Added trackTintColor ([TIMOB-19829](https://jira.appcelerator.org/browse/TIMOB-19829))
+
+* [Xavier Lacot](https://github.com/xavierlacot) for fixing check that the view's layout is not null before comparing it to horizontal or vertical layout arrangements ([TIMOB-20089](https://jira.appcelerator.org/browse/TIMOB-20089))
+
+* [Collin Price](https://github.com/collinprice) for adding null check to activity object in callOrientationChangedListener method ([TIMOB-20108](https://jira.appcelerator.org/browse/TIMOB-20108)) and additional type support for IntentProxy ([TIMOB-19679](https://jira.appcelerator.org/browse/TIMOB-19679))
+
+* [Wilson](https://github.com/wsliaw) for adding dragstart and dragend event ([TIMOB-18210](https://jira.appcelerator.org/browse/TIMOB-18210))
+
+* [Rene Pot](https://github.com/Topener) for adding deleteButtonTitle to the docs ([TIDOC-2366](https://jira.appcelerator.org/browse/TIDOC-2366))
+
+* [Manuel Lehner](https://github.com/manumaticx) for fixing NullPointerException in TiConvert ([TIMOB-19579](https://jira.appcelerator.org/browse/TIMOB-19579))
+
+* [Chris R](https://github.com/cdrx) for updating [README.md](http://README.md) and adding titanium slack to readme
+
+* [Jason Kneen](https://github.com/jasonkneen) for updating ApplicationShortcuts.yml ([TIDOC-2348](https://jira.appcelerator.org/browse/TIDOC-2348))
+
+* [Steven van Loef](https://github.com/ludolphus) for adding contentSize property to scroll event ([TIMOB-17247](https://jira.appcelerator.org/browse/TIMOB-17247))
+
+* [Seth Benjamin](https://github.com/animecyc) for iOS: TiUIListView does not resume the ImageLoader ([TIMOB-19647](https://jira.appcelerator.org/browse/TIMOB-19647))
+
 
 ## Fixed Issues
 
 This release includes 90 bug fixes.
 
-*   [CLI-921](https://jira.appcelerator.org/browse/CLI-921): Appc alloy -v returns error
-    
-*   [MOD-1827](https://jira.appcelerator.org/browse/MOD-1827) - TiCloud: Logout - Logout method does not recognize device\_token parameter
-    
-*   [MOD-2149](https://jira.appcelerator.org/browse/MOD-2149) - EncryptedDatabase: java.lang.UnsatisfiedLinkError: dlopen failed: cannot locate symbol "EVP\_CipherFinal"
-    
-*   [MOD-2154](https://jira.appcelerator.org/browse/MOD-2154) - ti.inappbilling: Does not work with Android 5.0
-    
-*   [MOD-2156](https://jira.appcelerator.org/browse/MOD-2156) - SafariDialog: opened and supported should be read-only
-    
-*   [MOD-2163](https://jira.appcelerator.org/browse/MOD-2163) - Android: Ti.Compression, app crashes right after launching with this module
-    
-*   [MOD-2166](https://jira.appcelerator.org/browse/MOD-2166) - Android: Ti.ImageFactory crash on Android 6.0 with latest SDK
-    
-*   [MOD-2167](https://jira.appcelerator.org/browse/MOD-2167) - Android: ti.paint crash on Android 6.0 with latest SDK
-    
-*   [MOD-2171](https://jira.appcelerator.org/browse/MOD-2171) - Annotations crash on iOS 9
-    
-*   [MOD-2191](https://jira.appcelerator.org/browse/MOD-2191) - Ti.SafariDialog: URL's containing # do not work
-    
-*   [TIMOB-5817](https://jira.appcelerator.org/browse/TIMOB-5817) - Android: keyboard type set as number pad permits input of non-numeric values
-    
-*   [TIMOB-16355](https://jira.appcelerator.org/browse/TIMOB-16355) - iOS: separatorInsets should not be used for header/section titles
-    
-*   [TIMOB-18132](https://jira.appcelerator.org/browse/TIMOB-18132) - Android: App Crashes with CalledFromWrongThreadException opening DatePicker after typing in a tf
-    
-*   [TIMOB-18168](https://jira.appcelerator.org/browse/TIMOB-18168) - iOS: Module - Cannot build 32-bit module urlSession and coremotion with SDK 3.5.0
-    
-*   [TIMOB-18926](https://jira.appcelerator.org/browse/TIMOB-18926) - iOS: Calendar events status shows wrong status number or null
-    
-*   [TIMOB-19103](https://jira.appcelerator.org/browse/TIMOB-19103) - Windows Phone: Lots of scary warnings in successful build of default app
-    
-*   [TIMOB-19138](https://jira.appcelerator.org/browse/TIMOB-19138) - Windows: DefaultLanguage property should be set (to "en") in manifest
-    
-*   [TIMOB-19206](https://jira.appcelerator.org/browse/TIMOB-19206) - Android: Encrypted Database: Not being able to read installed database
-    
-*   [TIMOB-19234](https://jira.appcelerator.org/browse/TIMOB-19234) - iOS debugger connection refused with SDKs 3.5.0 and 3.5.1
-    
-*   [TIMOB-19383](https://jira.appcelerator.org/browse/TIMOB-19383) - iOS9: Upgrade Facebook module to facebook 4.7.0
-    
-*   [TIMOB-19386](https://jira.appcelerator.org/browse/TIMOB-19386) - iOS9: Upgrade coremotion module to support bitcode, rewrite code base
-    
-*   [TIMOB-19529](https://jira.appcelerator.org/browse/TIMOB-19529) - Validation of workspace-dir option always uses default workspace
-    
-*   [TIMOB-19566](https://jira.appcelerator.org/browse/TIMOB-19566) - Ti.Locale.currentLanguage returns locale on iOS 9
-    
-*   [TIMOB-19567](https://jira.appcelerator.org/browse/TIMOB-19567) - Last change made after useractivitywillsave does not make it to other device
-    
-*   [TIMOB-19597](https://jira.appcelerator.org/browse/TIMOB-19597) - Android: Add previewRect (height, width) to camera callback
-    
-*   [TIMOB-19633](https://jira.appcelerator.org/browse/TIMOB-19633) - iOS: AUDIO\_SESSION\_CATEGORY\_AMBIENT stops background music
-    
-*   [TIMOB-19650](https://jira.appcelerator.org/browse/TIMOB-19650) - Windows: Builder.createAppIconSet ignores existing assets
-    
-*   [TIMOB-19663](https://jira.appcelerator.org/browse/TIMOB-19663) - Windows: Missing .apiName properties
-    
-*   [TIMOB-19725](https://jira.appcelerator.org/browse/TIMOB-19725) - iOS: Toggled action buttons display over keyboard
-    
-*   [TIMOB-19737](https://jira.appcelerator.org/browse/TIMOB-19737) - Error when selecting an iOS certificate without provisioning profiles
-    
-*   [TIMOB-19755](https://jira.appcelerator.org/browse/TIMOB-19755) - Ti.Media calls break app
-    
-*   [TIMOB-19767](https://jira.appcelerator.org/browse/TIMOB-19767) - iOS: toImage does not honor the scale factor for retina devices
-    
-*   [TIMOB-19779](https://jira.appcelerator.org/browse/TIMOB-19779) - Android orientations on orientationchange not providing accurate results in some Android Tablets
-    
-*   [TIMOB-19799](https://jira.appcelerator.org/browse/TIMOB-19799) - iOS: ioslib: TypeError: Cannot read property 'sort' of undefined
-    
-*   [TIMOB-19807](https://jira.appcelerator.org/browse/TIMOB-19807) - KitchenSink: Control->Buttons.Image is positioned on top of the label and can't be resized.
-    
-*   [TIMOB-19808](https://jira.appcelerator.org/browse/TIMOB-19808) - KitchenSink: BasicUi->Views->ScrollViews->Many on screen causes app to freeze
-    
-*   [TIMOB-19823](https://jira.appcelerator.org/browse/TIMOB-19823) - Android: ConcurrentModificationException at TiListView
-    
-*   [TIMOB-19836](https://jira.appcelerator.org/browse/TIMOB-19836) - Windows: Missing properties for TitaniumKit Proxy
-    
-*   [TIMOB-19837](https://jira.appcelerator.org/browse/TIMOB-19837) - Windows: Missing TitaniumKit View properties
-    
-*   [TIMOB-19838](https://jira.appcelerator.org/browse/TIMOB-19838) - Windows: Fix Jenkins Windows SDK PR Build
-    
-*   [TIMOB-19846](https://jira.appcelerator.org/browse/TIMOB-19846) - Android fix documentation errors in activity transition.
-    
-*   [TIMOB-19884](https://jira.appcelerator.org/browse/TIMOB-19884) - iOS: Debug crash when setting breakpoint in alloy model response
-    
-*   [TIMOB-19916](https://jira.appcelerator.org/browse/TIMOB-19916) - Android: HTTPClient ondatastream method responseText is empty for Android
-    
-*   [TIMOB-19921](https://jira.appcelerator.org/browse/TIMOB-19921) - Windows: Implement missing View properties
-    
-*   [TIMOB-19925](https://jira.appcelerator.org/browse/TIMOB-19925) - Windows: Implement Ti.App.Properties "change" event
-    
-*   [TIMOB-19927](https://jira.appcelerator.org/browse/TIMOB-19927) - Windows: Implement Blob.width and height
-    
-*   [TIMOB-19929](https://jira.appcelerator.org/browse/TIMOB-19929) - Windows: Implement Ti.Filesystem.File.append
-    
-*   [TIMOB-19930](https://jira.appcelerator.org/browse/TIMOB-19930) - Windows: Implement Ti.Filesystem.File.deleteDirectory
-    
-*   [TIMOB-19939](https://jira.appcelerator.org/browse/TIMOB-19939) - keyboardType should not list KEYBOARD\_APPEARANCE\_\* constants
-    
-*   [TIMOB-19947](https://jira.appcelerator.org/browse/TIMOB-19947) - Windows: Implement Titanium.UI.AttributedString
-    
-*   [TIMOB-19952](https://jira.appcelerator.org/browse/TIMOB-19952) - Windows: Image support for Ti.UI.Button
-    
-*   [TIMOB-19953](https://jira.appcelerator.org/browse/TIMOB-19953) - Windows: Button only supports "click" event
-    
-*   [TIMOB-19955](https://jira.appcelerator.org/browse/TIMOB-19955) - Windows: Label only supports "click" event
-    
-*   [TIMOB-19963](https://jira.appcelerator.org/browse/TIMOB-19963) - Windows: "return" and "change" event for Titanium.UI.TextArea
-    
-*   [TIMOB-19968](https://jira.appcelerator.org/browse/TIMOB-19968) - Changing use-app-thinning does not force rebuild
-    
-*   [TIMOB-20004](https://jira.appcelerator.org/browse/TIMOB-20004) - iOS: Differences between new permission request responses
-    
-*   [TIMOB-20018](https://jira.appcelerator.org/browse/TIMOB-20018) - iOS: Ti.App.fireEvent from webView is not working
-    
-*   [TIMOB-20028](https://jira.appcelerator.org/browse/TIMOB-20028) - iOS: Layout fails on iOS8 with iOS9-only Picker height set
-    
-*   [TIMOB-20036](https://jira.appcelerator.org/browse/TIMOB-20036) - Android: HttpClient.abort() on andorid throw errors if the request is just created
-    
-*   [TIMOB-20038](https://jira.appcelerator.org/browse/TIMOB-20038) - Android: TableView crashes when scrolling more than 29 rows
-    
-*   [TIMOB-20072](https://jira.appcelerator.org/browse/TIMOB-20072) - iOS: Ti.Media.saveToPhotoGallery does not call back for unsupported mime types
-    
-*   [TIMOB-20078](https://jira.appcelerator.org/browse/TIMOB-20078) - Windows: Ti.UI.TextArea selected event doesn't work
-    
-*   [TIMOB-20089](https://jira.appcelerator.org/browse/TIMOB-20089) - Android: setting a view layout to null crashes the app
-    
-*   [TIMOB-20108](https://jira.appcelerator.org/browse/TIMOB-20108) - App sometimes crashes on resume
-    
-*   [TIMOB-20113](https://jira.appcelerator.org/browse/TIMOB-20113) - Android: Rounded view is not being shown if its size more than screen size
-    
-*   [TIMOB-20130](https://jira.appcelerator.org/browse/TIMOB-20130) - SDK no longer finds Genymotion after upgrade to 2.6.0
-    
-*   [TIMOB-20138](https://jira.appcelerator.org/browse/TIMOB-20138) - Consecutive calls to ScrollableView.setViews causes the app to become unresponsive
-    
-*   [TIMOB-20172](https://jira.appcelerator.org/browse/TIMOB-20172) - Windows 10: Cannot package for the phonestore or winstore
-    
-*   [TIMOB-20192](https://jira.appcelerator.org/browse/TIMOB-20192) - \[Windows Phone 8.1\] Certification reject - This API is not supported for this application type - Api=OutputDebugStringA. Module=api-ms-win-core-debug-l1-1-1.dll
-    
-*   [TIMOB-20196](https://jira.appcelerator.org/browse/TIMOB-20196) - iOS: on ScrollableView is not possible to change views
-    
-*   [TIMOB-20197](https://jira.appcelerator.org/browse/TIMOB-20197) - Windows: Phone App crashes after Splash Screen
-    
-*   [TIMOB-20199](https://jira.appcelerator.org/browse/TIMOB-20199) - iOS: Views disappear from ScrollableView on change
-    
-*   [TIMOB-20213](https://jira.appcelerator.org/browse/TIMOB-20213) - iOS: app crash when closing the active window while searchbar in listview is focused
-    
-*   [TIMOB-20217](https://jira.appcelerator.org/browse/TIMOB-20217) - iOS: Ti.Geolocation.hasGeolocationPermission() and Ti.Geolocation.getCurrentPosition() are not working on IOS 7
-    
-*   [TIMOB-20233](https://jira.appcelerator.org/browse/TIMOB-20233) - ti.SafariDialog module folder exists outside the modules/iphone folder in the titanium folder along with rogue \_MACOSX folder after installing SDK 5.2.0.v20160111111831
-    
-*   [TIMOB-20234](https://jira.appcelerator.org/browse/TIMOB-20234) - Streaming Audio not working on Android Marshmallow with Alloy
-    
-*   [TIMOB-20238](https://jira.appcelerator.org/browse/TIMOB-20238) - Build Server Zip files to not unzip on download or Finder
-    
-*   [TIMOB-20251](https://jira.appcelerator.org/browse/TIMOB-20251) - Android 6.0: [java.io](http://java.io/).FileNotFoundException: open failed: ENOENT (No such file or directory)
-    
-*   [TIMOB-20252](https://jira.appcelerator.org/browse/TIMOB-20252) - Windows: Windows 10 SDK is not detected
-    
-*   [TIMOB-20260](https://jira.appcelerator.org/browse/TIMOB-20260) - Android 6: CameraView with overlay crash with message "AppName is not responding"
-    
-*   [TIMOB-20265](https://jira.appcelerator.org/browse/TIMOB-20265) - Android: Ti.UI.View "borderRadius" property not working on android 4.4.2 & 4.2.2
-    
-*   [TIMOB-20274](https://jira.appcelerator.org/browse/TIMOB-20274) - Hyperloop: Plugin fails if the source does not contain HL references
-    
-*   [TIMOB-20283](https://jira.appcelerator.org/browse/TIMOB-20283) - Facebook iOS Module 5.0.0 crashes on resume on iOS 8.4
-    
-*   [TIMOB-20298](https://jira.appcelerator.org/browse/TIMOB-20298) - Classic Titanium app with tabs crashes when closed on iOS
-    
-*   [TIMOB-20299](https://jira.appcelerator.org/browse/TIMOB-20299) - Windows: Build errors out with 'mix is not a function'
-    
-*   [TIMOB-20368](https://jira.appcelerator.org/browse/TIMOB-20368) - Docs: Ti.UI.KEYBOARD\_TYPE\_\* "since" incorrect
-    
-*   [TIMOB-20389](https://jira.appcelerator.org/browse/TIMOB-20389) - iOS: Listview delete event sends wrong itemId
-    
-*   [TIMOB-20393](https://jira.appcelerator.org/browse/TIMOB-20393) - iOS: Launch Image Set leaves out required sizes if no (>=8.0) minimum iOS version is set
-    
-*   [TIMOB-20400](https://jira.appcelerator.org/browse/TIMOB-20400) - WWDR certificate can not be found in keychain other than system
-    
-*   [TIMOB-20410](https://jira.appcelerator.org/browse/TIMOB-20410) - Android: Adding view as a customView to an annotation in maps crashes the app
-    
+* [CLI-921](https://jira.appcelerator.org/browse/CLI-921): Appc alloy -v returns error
+
+* [MOD-1827](https://jira.appcelerator.org/browse/MOD-1827) - TiCloud: Logout - Logout method does not recognize device\_token parameter
+
+* [MOD-2149](https://jira.appcelerator.org/browse/MOD-2149) - EncryptedDatabase: java.lang.UnsatisfiedLinkError: dlopen failed: cannot locate symbol "EVP\_CipherFinal"
+
+* [MOD-2154](https://jira.appcelerator.org/browse/MOD-2154) - ti.inappbilling: Does not work with Android 5.0
+
+* [MOD-2156](https://jira.appcelerator.org/browse/MOD-2156) - SafariDialog: opened and supported should be read-only
+
+* [MOD-2163](https://jira.appcelerator.org/browse/MOD-2163) - Android: Ti.Compression, app crashes right after launching with this module
+
+* [MOD-2166](https://jira.appcelerator.org/browse/MOD-2166) - Android: Ti.ImageFactory crash on Android 6.0 with latest SDK
+
+* [MOD-2167](https://jira.appcelerator.org/browse/MOD-2167) - Android: ti.paint crash on Android 6.0 with latest SDK
+
+* [MOD-2171](https://jira.appcelerator.org/browse/MOD-2171) - Annotations crash on iOS 9
+
+* [MOD-2191](https://jira.appcelerator.org/browse/MOD-2191) - Ti.SafariDialog: URL's containing # do not work
+
+* [TIMOB-5817](https://jira.appcelerator.org/browse/TIMOB-5817) - Android: keyboard type set as number pad permits input of non-numeric values
+
+* [TIMOB-16355](https://jira.appcelerator.org/browse/TIMOB-16355) - iOS: separatorInsets should not be used for header/section titles
+
+* [TIMOB-18132](https://jira.appcelerator.org/browse/TIMOB-18132) - Android: App Crashes with CalledFromWrongThreadException opening DatePicker after typing in a tf
+
+* [TIMOB-18168](https://jira.appcelerator.org/browse/TIMOB-18168) - iOS: Module - Cannot build 32-bit module urlSession and coremotion with SDK 3.5.0
+
+* [TIMOB-18926](https://jira.appcelerator.org/browse/TIMOB-18926) - iOS: Calendar events status shows wrong status number or null
+
+* [TIMOB-19103](https://jira.appcelerator.org/browse/TIMOB-19103) - Windows Phone: Lots of scary warnings in successful build of default app
+
+* [TIMOB-19138](https://jira.appcelerator.org/browse/TIMOB-19138) - Windows: DefaultLanguage property should be set (to "en") in manifest
+
+* [TIMOB-19206](https://jira.appcelerator.org/browse/TIMOB-19206) - Android: Encrypted Database: Not being able to read installed database
+
+* [TIMOB-19234](https://jira.appcelerator.org/browse/TIMOB-19234) - iOS debugger connection refused with SDKs 3.5.0 and 3.5.1
+
+* [TIMOB-19383](https://jira.appcelerator.org/browse/TIMOB-19383) - iOS9: Upgrade Facebook module to facebook 4.7.0
+
+* [TIMOB-19386](https://jira.appcelerator.org/browse/TIMOB-19386) - iOS9: Upgrade coremotion module to support bitcode, rewrite code base
+
+* [TIMOB-19529](https://jira.appcelerator.org/browse/TIMOB-19529) - Validation of workspace-dir option always uses default workspace
+
+* [TIMOB-19566](https://jira.appcelerator.org/browse/TIMOB-19566) - Ti.Locale.currentLanguage returns locale on iOS 9
+
+* [TIMOB-19567](https://jira.appcelerator.org/browse/TIMOB-19567) - Last change made after useractivitywillsave does not make it to other device
+
+* [TIMOB-19597](https://jira.appcelerator.org/browse/TIMOB-19597) - Android: Add previewRect (height, width) to camera callback
+
+* [TIMOB-19633](https://jira.appcelerator.org/browse/TIMOB-19633) - iOS: AUDIO\_SESSION\_CATEGORY\_AMBIENT stops background music
+
+* [TIMOB-19650](https://jira.appcelerator.org/browse/TIMOB-19650) - Windows: Builder.createAppIconSet ignores existing assets
+
+* [TIMOB-19663](https://jira.appcelerator.org/browse/TIMOB-19663) - Windows: Missing .apiName properties
+
+* [TIMOB-19725](https://jira.appcelerator.org/browse/TIMOB-19725) - iOS: Toggled action buttons display over keyboard
+
+* [TIMOB-19737](https://jira.appcelerator.org/browse/TIMOB-19737) - Error when selecting an iOS certificate without provisioning profiles
+
+* [TIMOB-19755](https://jira.appcelerator.org/browse/TIMOB-19755) - Ti.Media calls break app
+
+* [TIMOB-19767](https://jira.appcelerator.org/browse/TIMOB-19767) - iOS: toImage does not honor the scale factor for retina devices
+
+* [TIMOB-19779](https://jira.appcelerator.org/browse/TIMOB-19779) - Android orientations on orientationchange not providing accurate results in some Android Tablets
+
+* [TIMOB-19799](https://jira.appcelerator.org/browse/TIMOB-19799) - iOS: ioslib: TypeError: Cannot read property 'sort' of undefined
+
+* [TIMOB-19807](https://jira.appcelerator.org/browse/TIMOB-19807) - KitchenSink: Control->Buttons.Image is positioned on top of the label and can't be resized.
+
+* [TIMOB-19808](https://jira.appcelerator.org/browse/TIMOB-19808) - KitchenSink: BasicUi->Views->ScrollViews->Many on screen causes app to freeze
+
+* [TIMOB-19823](https://jira.appcelerator.org/browse/TIMOB-19823) - Android: ConcurrentModificationException at TiListView
+
+* [TIMOB-19836](https://jira.appcelerator.org/browse/TIMOB-19836) - Windows: Missing properties for TitaniumKit Proxy
+
+* [TIMOB-19837](https://jira.appcelerator.org/browse/TIMOB-19837) - Windows: Missing TitaniumKit View properties
+
+* [TIMOB-19838](https://jira.appcelerator.org/browse/TIMOB-19838) - Windows: Fix Jenkins Windows SDK PR Build
+
+* [TIMOB-19846](https://jira.appcelerator.org/browse/TIMOB-19846) - Android fix documentation errors in activity transition.
+
+* [TIMOB-19884](https://jira.appcelerator.org/browse/TIMOB-19884) - iOS: Debug crash when setting breakpoint in alloy model response
+
+* [TIMOB-19916](https://jira.appcelerator.org/browse/TIMOB-19916) - Android: HTTPClient ondatastream method responseText is empty for Android
+
+* [TIMOB-19921](https://jira.appcelerator.org/browse/TIMOB-19921) - Windows: Implement missing View properties
+
+* [TIMOB-19925](https://jira.appcelerator.org/browse/TIMOB-19925) - Windows: Implement Ti.App.Properties "change" event
+
+* [TIMOB-19927](https://jira.appcelerator.org/browse/TIMOB-19927) - Windows: Implement Blob.width and height
+
+* [TIMOB-19929](https://jira.appcelerator.org/browse/TIMOB-19929) - Windows: Implement Ti.Filesystem.File.append
+
+* [TIMOB-19930](https://jira.appcelerator.org/browse/TIMOB-19930) - Windows: Implement Ti.Filesystem.File.deleteDirectory
+
+* [TIMOB-19939](https://jira.appcelerator.org/browse/TIMOB-19939) - keyboardType should not list KEYBOARD\_APPEARANCE\_\* constants
+
+* [TIMOB-19947](https://jira.appcelerator.org/browse/TIMOB-19947) - Windows: Implement Titanium.UI.AttributedString
+
+* [TIMOB-19952](https://jira.appcelerator.org/browse/TIMOB-19952) - Windows: Image support for Ti.UI.Button
+
+* [TIMOB-19953](https://jira.appcelerator.org/browse/TIMOB-19953) - Windows: Button only supports "click" event
+
+* [TIMOB-19955](https://jira.appcelerator.org/browse/TIMOB-19955) - Windows: Label only supports "click" event
+
+* [TIMOB-19963](https://jira.appcelerator.org/browse/TIMOB-19963) - Windows: "return" and "change" event for Titanium.UI.TextArea
+
+* [TIMOB-19968](https://jira.appcelerator.org/browse/TIMOB-19968) - Changing use-app-thinning does not force rebuild
+
+* [TIMOB-20004](https://jira.appcelerator.org/browse/TIMOB-20004) - iOS: Differences between new permission request responses
+
+* [TIMOB-20018](https://jira.appcelerator.org/browse/TIMOB-20018) - iOS: Ti.App.fireEvent from webView is not working
+
+* [TIMOB-20028](https://jira.appcelerator.org/browse/TIMOB-20028) - iOS: Layout fails on iOS8 with iOS9-only Picker height set
+
+* [TIMOB-20036](https://jira.appcelerator.org/browse/TIMOB-20036) - Android: HttpClient.abort() on andorid throw errors if the request is just created
+
+* [TIMOB-20038](https://jira.appcelerator.org/browse/TIMOB-20038) - Android: TableView crashes when scrolling more than 29 rows
+
+* [TIMOB-20072](https://jira.appcelerator.org/browse/TIMOB-20072) - iOS: Ti.Media.saveToPhotoGallery does not call back for unsupported mime types
+
+* [TIMOB-20078](https://jira.appcelerator.org/browse/TIMOB-20078) - Windows: Ti.UI.TextArea selected event doesn't work
+
+* [TIMOB-20089](https://jira.appcelerator.org/browse/TIMOB-20089) - Android: setting a view layout to null crashes the app
+
+* [TIMOB-20108](https://jira.appcelerator.org/browse/TIMOB-20108) - App sometimes crashes on resume
+
+* [TIMOB-20113](https://jira.appcelerator.org/browse/TIMOB-20113) - Android: Rounded view is not being shown if its size more than screen size
+
+* [TIMOB-20130](https://jira.appcelerator.org/browse/TIMOB-20130) - SDK no longer finds Genymotion after upgrade to 2.6.0
+
+* [TIMOB-20138](https://jira.appcelerator.org/browse/TIMOB-20138) - Consecutive calls to ScrollableView.setViews causes the app to become unresponsive
+
+* [TIMOB-20172](https://jira.appcelerator.org/browse/TIMOB-20172) - Windows 10: Cannot package for the phonestore or winstore
+
+* [TIMOB-20192](https://jira.appcelerator.org/browse/TIMOB-20192) - \[Windows Phone 8.1\] Certification reject - This API is not supported for this application type - Api=OutputDebugStringA. Module=api-ms-win-core-debug-l1-1-1.dll
+
+* [TIMOB-20196](https://jira.appcelerator.org/browse/TIMOB-20196) - iOS: on ScrollableView is not possible to change views
+
+* [TIMOB-20197](https://jira.appcelerator.org/browse/TIMOB-20197) - Windows: Phone App crashes after Splash Screen
+
+* [TIMOB-20199](https://jira.appcelerator.org/browse/TIMOB-20199) - iOS: Views disappear from ScrollableView on change
+
+* [TIMOB-20213](https://jira.appcelerator.org/browse/TIMOB-20213) - iOS: app crash when closing the active window while searchbar in listview is focused
+
+* [TIMOB-20217](https://jira.appcelerator.org/browse/TIMOB-20217) - iOS: Ti.Geolocation.hasGeolocationPermission() and Ti.Geolocation.getCurrentPosition() are not working on IOS 7
+
+* [TIMOB-20233](https://jira.appcelerator.org/browse/TIMOB-20233) - ti.SafariDialog module folder exists outside the modules/iphone folder in the titanium folder along with rogue \_MACOSX folder after installing SDK 5.2.0.v20160111111831
+
+* [TIMOB-20234](https://jira.appcelerator.org/browse/TIMOB-20234) - Streaming Audio not working on Android Marshmallow with Alloy
+
+* [TIMOB-20238](https://jira.appcelerator.org/browse/TIMOB-20238) - Build Server Zip files to not unzip on download or Finder
+
+* [TIMOB-20251](https://jira.appcelerator.org/browse/TIMOB-20251) - Android 6.0: [java.io](http://java.io/).FileNotFoundException: open failed: ENOENT (No such file or directory)
+
+* [TIMOB-20252](https://jira.appcelerator.org/browse/TIMOB-20252) - Windows: Windows 10 SDK is not detected
+
+* [TIMOB-20260](https://jira.appcelerator.org/browse/TIMOB-20260) - Android 6: CameraView with overlay crash with message "AppName is not responding"
+
+* [TIMOB-20265](https://jira.appcelerator.org/browse/TIMOB-20265) - Android: Ti.UI.View "borderRadius" property not working on android 4.4.2 & 4.2.2
+
+* [TIMOB-20274](https://jira.appcelerator.org/browse/TIMOB-20274) - Hyperloop: Plugin fails if the source does not contain HL references
+
+* [TIMOB-20283](https://jira.appcelerator.org/browse/TIMOB-20283) - Facebook iOS Module 5.0.0 crashes on resume on iOS 8.4
+
+* [TIMOB-20298](https://jira.appcelerator.org/browse/TIMOB-20298) - Classic Titanium app with tabs crashes when closed on iOS
+
+* [TIMOB-20299](https://jira.appcelerator.org/browse/TIMOB-20299) - Windows: Build errors out with 'mix is not a function'
+
+* [TIMOB-20368](https://jira.appcelerator.org/browse/TIMOB-20368) - Docs: Ti.UI.KEYBOARD\_TYPE\_\* "since" incorrect
+
+* [TIMOB-20389](https://jira.appcelerator.org/browse/TIMOB-20389) - iOS: Listview delete event sends wrong itemId
+
+* [TIMOB-20393](https://jira.appcelerator.org/browse/TIMOB-20393) - iOS: Launch Image Set leaves out required sizes if no (>=8.0) minimum iOS version is set
+
+* [TIMOB-20400](https://jira.appcelerator.org/browse/TIMOB-20400) - WWDR certificate can not be found in keychain other than system
+
+* [TIMOB-20410](https://jira.appcelerator.org/browse/TIMOB-20410) - Android: Adding view as a customView to an annotation in maps crashes the app
+
 
 ## Improvements
 
 This release includes 21 improvements.
 
-*   [TIMOB-16547](https://jira.appcelerator.org/browse/TIMOB-16547) - iOS: Add ability to set color and backgroundColor for Picker control
-    
-    *   The hardcoded background color (white) of the Picker control can now be set through the Ti Picker control.
-        
-*   [TIMOB-16865](https://jira.appcelerator.org/browse/TIMOB-16865) - Android / MobileWeb: Unable to remove the TableView row separators even if the color is set to transparent
-    
-    *   Android and MobileWeb now allows for the removal of TableView row separators when color is set to transparent.
-        
-*   [TIMOB-19185](https://jira.appcelerator.org/browse/TIMOB-19185) - Liveview: Update liveview to work with Windows Platform
-    
-    *   Liveview now works when building Windows Platform by passing the --liveview flag
-        
-*   [TIMOB-19194](https://jira.appcelerator.org/browse/TIMOB-19194) - Ti.Android.Intent: Ability to send multiple URI to an intent
-    
-    *   Ti.Android.Intent allows you to send multiple URI to an intent.
-        
-*   [TIMOB-19452](https://jira.appcelerator.org/browse/TIMOB-19452) - Extensions should default to the app's provisioning profile if not set
-    
-    *   If extension provisioning profile is not set up, the CLI will use the application provision profile.
-        
-*   [TIMOB-19512](https://jira.appcelerator.org/browse/TIMOB-19512) - iOS build: ensure app icons are 24-bit (no transparency)
-    
-    *   Since iOS apps cannot use app icons with an alpha channel, any builds attempting to use icons with alpha channels will have the alpha channel stripped from the image.
-        
-*   [TIMOB-19577](https://jira.appcelerator.org/browse/TIMOB-19577) - Android: Update Facebook Module to support Facebook SDK 4.7.0
-    
-    *   Facebook Module for Android now supports Facebook SDK 4.7.0
-        
-*   [TIMOB-19580](https://jira.appcelerator.org/browse/TIMOB-19580): Custom activity transition
-    
-    *   You can specify custom animations in material design app’s enter and exit (content) transitions and for transitions shared elements between activities.
-        
-*   [TIMOB-19726](https://jira.appcelerator.org/browse/TIMOB-19726) - Android: Refactor map module to remove deprecated method getMap()
-    
-    *   Android developers should use getMapAsync() method instead of the deprecated getMap() method
-        
-*   [TIMOB-19759](https://jira.appcelerator.org/browse/TIMOB-19759) - iOS: Parity: tab listeners
-    
-    *   Event listeners for iOS's TabGroup selected and unselected have been deprecated in favor of focus
-        
-*   [TIMOB-19825](https://jira.appcelerator.org/browse/TIMOB-19825) - Android module build should support AIDL files
-    
-    *   Android module builds now support AIDL files
-        
-*   [TIMOB-19828](https://jira.appcelerator.org/browse/TIMOB-19828) - Ti.SDK 5.2.0 supports Node.js 5.0
-    
-    *   Ti.SDK 5.2.0 supports Node.js 5.0
-        
-*   [TIMOB-19829](https://jira.appcelerator.org/browse/TIMOB-19829) - iOS: Add trackTintColor to Ti.UI.ProgressBar
-    
-    *   Ti.UI.ProgressBar on iOS supports coloring options for active progress
-        
-*   [TIMOB-19940](https://jira.appcelerator.org/browse/TIMOB-19940) - Add \*appearance-properties to AlertDialog
-    
-    *   Deprecated \*appearance property in favor for keyboardApperance
-        
-*   [TIMOB-19948](https://jira.appcelerator.org/browse/TIMOB-19948) - Windows: Use font cache for TextArea and Button
-    
-    *   Font cache has been extended to TextArea and Button
-        
-*   [TIMOB-20000](https://jira.appcelerator.org/browse/TIMOB-20000) - Rename appearance properties to keyboardAppearance
-    
-    *   Added keyboardAppearance for searchBar, textArea, textField, and textWidget
-        
-    *   Also deprecated all the constants (Keyboard\_Default and Keyboard\_Type\_Default)
-        
-*   [TIMOB-20001](https://jira.appcelerator.org/browse/TIMOB-20001) - iOS: Rename Ti.Media.CAMERA\_AUTHORIZATION\_NOT\_DETERMINED to UNKNOWN
-    
-    *   Renamed the API CAMERA\_AUTHORIZATION\_\* to CAMERA\_AUTHORIZATION\_UNKNOWN
-        
-*   [TIMOB-20005](https://jira.appcelerator.org/browse/TIMOB-20005) - Line up \*Authorization properties
-    
-    *   Renamed Ti.Calendar.eventsAuthorization to calendarAuthorization
-        
-    *   Renamed Ti.Media.cameraAuthorizationStatus to cameraAuthorization
-        
-*   [TIMOB-20059](https://jira.appcelerator.org/browse/TIMOB-20059) - iOS: 'person' property in Ti.Contacts.showContacts is empty
-    
-    *   The callback event for both selectedProperty and selectedPerson of Ti.Contacts.showContacts no longer returns an empty value for the person property
-        
-*   [TIMOB-20098](https://jira.appcelerator.org/browse/TIMOB-20098) - Windows: Update bundled cmake to 3.4.1
-    
-    *   Updated cmake to 3.4.1 for some Windows 10 related fixes and improvements
-        
+* [TIMOB-16547](https://jira.appcelerator.org/browse/TIMOB-16547) - iOS: Add ability to set color and backgroundColor for Picker control
+
+  * The hardcoded background color (white) of the Picker control can now be set through the Ti Picker control.
+
+* [TIMOB-16865](https://jira.appcelerator.org/browse/TIMOB-16865) - Android / MobileWeb: Unable to remove the TableView row separators even if the color is set to transparent
+
+  * Android and MobileWeb now allows for the removal of TableView row separators when color is set to transparent.
+
+* [TIMOB-19185](https://jira.appcelerator.org/browse/TIMOB-19185) - Liveview: Update liveview to work with Windows Platform
+
+  * Liveview now works when building Windows Platform by passing the --liveview flag
+
+* [TIMOB-19194](https://jira.appcelerator.org/browse/TIMOB-19194) - Ti.Android.Intent: Ability to send multiple URI to an intent
+
+  * Ti.Android.Intent allows you to send multiple URI to an intent.
+
+* [TIMOB-19452](https://jira.appcelerator.org/browse/TIMOB-19452) - Extensions should default to the app's provisioning profile if not set
+
+  * If extension provisioning profile is not set up, the CLI will use the application provision profile.
+
+* [TIMOB-19512](https://jira.appcelerator.org/browse/TIMOB-19512) - iOS build: ensure app icons are 24-bit (no transparency)
+
+  * Since iOS apps cannot use app icons with an alpha channel, any builds attempting to use icons with alpha channels will have the alpha channel stripped from the image.
+
+* [TIMOB-19577](https://jira.appcelerator.org/browse/TIMOB-19577) - Android: Update Facebook Module to support Facebook SDK 4.7.0
+
+  * Facebook Module for Android now supports Facebook SDK 4.7.0
+
+* [TIMOB-19580](https://jira.appcelerator.org/browse/TIMOB-19580): Custom activity transition
+
+  * You can specify custom animations in material design app’s enter and exit (content) transitions and for transitions shared elements between activities.
+
+* [TIMOB-19726](https://jira.appcelerator.org/browse/TIMOB-19726) - Android: Refactor map module to remove deprecated method getMap()
+
+  * Android developers should use getMapAsync() method instead of the deprecated getMap() method
+
+* [TIMOB-19759](https://jira.appcelerator.org/browse/TIMOB-19759) - iOS: Parity: tab listeners
+
+  * Event listeners for iOS's TabGroup selected and unselected have been deprecated in favor of focus
+
+* [TIMOB-19825](https://jira.appcelerator.org/browse/TIMOB-19825) - Android module build should support AIDL files
+
+  * Android module builds now support AIDL files
+
+* [TIMOB-19828](https://jira.appcelerator.org/browse/TIMOB-19828) - Ti.SDK 5.2.0 supports Node.js 5.0
+
+  * Ti.SDK 5.2.0 supports Node.js 5.0
+
+* [TIMOB-19829](https://jira.appcelerator.org/browse/TIMOB-19829) - iOS: Add trackTintColor to Ti.UI.ProgressBar
+
+  * Ti.UI.ProgressBar on iOS supports coloring options for active progress
+
+* [TIMOB-19940](https://jira.appcelerator.org/browse/TIMOB-19940) - Add \*appearance-properties to AlertDialog
+
+  * Deprecated \*appearance property in favor for keyboardApperance
+
+* [TIMOB-19948](https://jira.appcelerator.org/browse/TIMOB-19948) - Windows: Use font cache for TextArea and Button
+
+  * Font cache has been extended to TextArea and Button
+
+* [TIMOB-20000](https://jira.appcelerator.org/browse/TIMOB-20000) - Rename appearance properties to keyboardAppearance
+
+  * Added keyboardAppearance for searchBar, textArea, textField, and textWidget
+
+  * Also deprecated all the constants (Keyboard\_Default and Keyboard\_Type\_Default)
+
+* [TIMOB-20001](https://jira.appcelerator.org/browse/TIMOB-20001) - iOS: Rename Ti.Media.CAMERA\_AUTHORIZATION\_NOT\_DETERMINED to UNKNOWN
+
+  * Renamed the API CAMERA\_AUTHORIZATION\_\* to CAMERA\_AUTHORIZATION\_UNKNOWN
+
+* [TIMOB-20005](https://jira.appcelerator.org/browse/TIMOB-20005) - Line up \*Authorization properties
+
+  * Renamed Ti.Calendar.eventsAuthorization to calendarAuthorization
+
+  * Renamed Ti.Media.cameraAuthorizationStatus to cameraAuthorization
+
+* [TIMOB-20059](https://jira.appcelerator.org/browse/TIMOB-20059) - iOS: 'person' property in Ti.Contacts.showContacts is empty
+
+  * The callback event for both selectedProperty and selectedPerson of Ti.Contacts.showContacts no longer returns an empty value for the person property
+
+* [TIMOB-20098](https://jira.appcelerator.org/browse/TIMOB-20098) - Windows: Update bundled cmake to 3.4.1
+
+  * Updated cmake to 3.4.1 for some Windows 10 related fixes and improvements
+
 
 ## API Changes
 
@@ -1103,9 +1103,6 @@ method
 
 Sets the value of the Titanium.UI.iPad.Popover.backgroundColor property. (New API, supported on iPad.)
 
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
-
 ### Deprecated APIs
 
 The following APIs are deprecated in Release 5.2.0.RC.
@@ -1273,9 +1270,6 @@ Titanium.UI.TextField.setAppearance
 method
 
 Use keyboardAppearance instead.
-
-**Please ask your Confluence administrator to update the license for the [MultiExcerpt Plugin for Confluence 4+](https://plugins.atlassian.com/plugins/biz.artemissoftware.confluence.multiexcerpt.MultiExcerptMacro) .**  
-**Admin Info: The error is: license VERSION\_MISMATCH**
 
 ## Known Issues
 

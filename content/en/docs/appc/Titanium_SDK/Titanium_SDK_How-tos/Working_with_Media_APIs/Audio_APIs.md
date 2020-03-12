@@ -1,35 +1,35 @@
-{"title":"Audio APIs","weight":"10"} 
+{"title":"Audio APIs","weight":"10"}
 
-*   [Objective](#Objective)
-    
-*   [Contents](#Contents)
-    
-    *   [Playing basic sounds](#Playingbasicsounds)
-        
-    *   [Streaming audio](#Streamingaudio)
-        
-    *   [Recording audio](#Recordingaudio)
-        
-    *   [Hands-on Practice](#Hands-onPractice)
-        
-        *   [Goal](#Goal)
-            
-        *   [Resources](#Resources)
-            
-        *   [Steps](#Steps)
-            
-    *   [Windows development considerations](#Windowsdevelopmentconsiderations)
-        
-        *   [Grant access to background audio](#Grantaccesstobackgroundaudio)
-            
-        *   [Grant access to video stream and audio stream](#Grantaccesstovideostreamandaudiostream)
-            
-        *   [Grant access to music library](#Grantaccesstomusiclibrary)
-            
-*   [References and further reading](#Referencesandfurtherreading)
-    
-*   [Summary](#Summary)
-    
+* [Objective](#Objective)
+
+* [Contents](#Contents)
+
+  * [Playing basic sounds](#Playingbasicsounds)
+
+  * [Streaming audio](#Streamingaudio)
+
+  * [Recording audio](#Recordingaudio)
+
+  * [Hands-on Practice](#Hands-onPractice)
+
+    * [Goal](#Goal)
+
+    * [Resources](#Resources)
+
+    * [Steps](#Steps)
+
+  * [Windows development considerations](#Windowsdevelopmentconsiderations)
+
+    * [Grant access to background audio](#Grantaccesstobackgroundaudio)
+
+    * [Grant access to video stream and audio stream](#Grantaccesstovideostreamandaudiostream)
+
+    * [Grant access to music library](#Grantaccesstomusiclibrary)
+
+* [References and further reading](#Referencesandfurtherreading)
+
+* [Summary](#Summary)
+
 
 ## Objective
 
@@ -39,12 +39,12 @@ In this chapter, you'll learn how to play and record sounds. As with images, you
 
 The audio APIs are part of the larger Ti.Media module, which contains all the APIs for media-related functionality. Sound related APIs in that module are available in the following namespaces:
 
-*   Ti.Media.Sound - used for playing basic sounds
-    
-*   Ti.Media.AudioPlayer - used for streaming audio to the device and low-level control of the audio playback
-    
-*   Ti.Media.AudioRecorder - used for recording audio from the device microphone
-    
+* Ti.Media.Sound - used for playing basic sounds
+
+* Ti.Media.AudioPlayer - used for streaming audio to the device and low-level control of the audio playback
+
+* Ti.Media.AudioRecorder - used for recording audio from the device microphone
+
 
 ### Playing basic sounds
 
@@ -120,10 +120,10 @@ When using streaming, you should make sure to account for interruptions, such as
 
 You can record audio from the device's microphone using the Ti.Media.AudioRecorder object. This object includes a few useful methods, including start(), pause()/resume(), and stop(). It also has two key properties that you use to control the quality and size of the recorded audio data. These are:
 
-*   compression - which specifies the compression type, such as Ti.Media.AUDIO\_FORMAT\_ULAW (low-fidelity) or Ti.Media.AUDIO\_FORMAT\_LINEAR\_PCM (hi-fi, but creates larger files)
-    
-*   format - which specifies the file format type, such as Ti.Media.AUDIO\_FILEFORMAT\_WAVE
-    
+* compression - which specifies the compression type, such as Ti.Media.AUDIO\_FORMAT\_ULAW (low-fidelity) or Ti.Media.AUDIO\_FORMAT\_LINEAR\_PCM (hi-fi, but creates larger files)
+
+* format - which specifies the file format type, such as Ti.Media.AUDIO\_FILEFORMAT\_WAVE
+
 
 See the [Media object API docs](#!/api/Titanium.Media) for a complete list of compression and format types available in Titanium.
 
@@ -139,43 +139,43 @@ To perform the steps in this activity, you will need two sound files. You can us
 
 #### Steps
 
-1.  Create a new Titanium Mobile app. You can keep the starting code for this app; you'll modify what's there.
-    
-2.  Remove label1 (it's definition, and the win1.add() statement). In its place, add a button with these characteristics:
-    
-    *   Title: Click to play sound
-        
-    *   Width/height: 200 x40
-        
-    *   Top: 20
-        
-3.  Define a sound object that preloads the sounds/2156\_\_nicstage\_\_lightswitchimpact.mp3 file.
-    
-4.  Add an event listener to the button that plays the sound when the button is clicked.
-    
-5.  Add another button to win1 with these characteristics:
-    
-    *   Title: Click to stream sound
-        
-    *   Width/height: 200 x40
-        
-    *   Top: 75
-        
-6.  Define an AudioPlayer that will stream the sound at [http://www.freesound.org/data/previews/2/2686\_5150-lq.mp3](http://www.freesound.org/data/previews/2/2686_5150-lq.mp3)  
-    Add an event listener to your streaming button so that when the button is clicked:
-    
-    *   If the streaming player is not playing currently, start the stream and change the button's title to 'Click to pause stream'
-        
-    *   If the streaming player is playing, pause the stream and change the button's title back to 'Click to stream sound'
-        
-7.  Add the app event listeners to pause the stream and restart in the case a call is received during streaming.
-    
-8.  On win2, create a looping, preloaded sound that will play the sounds/25921\_\_suonho\_\_funkysynth-retweek-talkboxer-wha-116bpm.mp3 file.
-    
-9.  Add an event listener to the tab group that monitors the focus event. If the tab index is 0 (the first tab), pause the sound. Otherwise, play the sound. This will play the sound when tab 2 is displayed and pause it when tab 1 is active.
-    
-10.  Build and test the app in the simulator/emulator.
-    
+1. Create a new Titanium Mobile app. You can keep the starting code for this app; you'll modify what's there.
+
+2. Remove label1 (it's definition, and the win1.add() statement). In its place, add a button with these characteristics:
+
+  * Title: Click to play sound
+
+  * Width/height: 200 x40
+
+  * Top: 20
+
+3. Define a sound object that preloads the sounds/2156\_\_nicstage\_\_lightswitchimpact.mp3 file.
+
+4. Add an event listener to the button that plays the sound when the button is clicked.
+
+5. Add another button to win1 with these characteristics:
+
+  * Title: Click to stream sound
+
+  * Width/height: 200 x40
+
+  * Top: 75
+
+6. Define an AudioPlayer that will stream the sound at [http://www.freesound.org/data/previews/2/2686\_5150-lq.mp3](http://www.freesound.org/data/previews/2/2686_5150-lq.mp3)
+  Add an event listener to your streaming button so that when the button is clicked:
+
+  * If the streaming player is not playing currently, start the stream and change the button's title to 'Click to pause stream'
+
+  * If the streaming player is playing, pause the stream and change the button's title back to 'Click to stream sound'
+
+7. Add the app event listeners to pause the stream and restart in the case a call is received during streaming.
+
+8. On win2, create a looping, preloaded sound that will play the sounds/25921\_\_suonho\_\_funkysynth-retweek-talkboxer-wha-116bpm.mp3 file.
+
+9. Add an event listener to the tab group that monitors the focus event. If the tab index is 0 (the first tab), pause the sound. Otherwise, play the sound. This will play the sound when tab 2 is displayed and pause it when tab 1 is active.
+
+10. Build and test the app in the simulator/emulator.
+
 
 ### Windows development considerations
 
@@ -273,14 +273,14 @@ In order to enable background audio for Windows Phone, you need to provide appro
 
 `</``ti``:app>`
 
-For more information about audio configuration in tiapp.xml, see [Windows-specific section](#!/guide/tiapp.xml_and_timodule.xml_Reference-section-29004921_tiapp.xmlandtimodule.xmlReference-Windows-specificsection) in [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/).
+For more information about audio configuration in tiapp.xml, see [Windows-specific section](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#tiapp.xmlandtimodule.xmlReference-Windows-specific) in [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/).
 
 ## References and further reading
 
-*   [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/7.1_audio.zip)
-    
-*   The [Media object API docs](#!/api/Titanium.Media)
-    
+* [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/7.1_audio.zip)
+
+* The [Media object API docs](#!/api/Titanium.Media)
+
 
 ## Summary
 

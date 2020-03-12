@@ -1,4 +1,4 @@
-{"title":"JSONPath","weight":"10"} 
+{"title":"JSONPath","weight":"10"}
 
 API Builder 3.x is deprecated
 

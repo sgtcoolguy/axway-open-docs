@@ -1,39 +1,39 @@
-{"title":"Visual Studio Code - Titanium Extension Features","weight":"10"} 
+{"title":"Visual Studio Code - Titanium Extension Features","weight":"10"}
 
-*   [Commands](#Commands)
-    
-*   [Titanium View](#TitaniumView)
-    
-*   [Build tools](#Buildtools)
-    
-*   [Autocompletion](#Autocompletion)
-    
-    *   [Generation](#Generation)
-        
-    *   [Titanium and Alloy](#TitaniumandAlloy)
-        
-    *   [Project references](#Projectreferences)
-        
-    *   [Class and ID references](#ClassandIDreferences)
-        
-    *   [Images](#Images)
-        
-*   [Open related files](#Openrelatedfiles)
-    
-*   [Jump-to-definition](#Jump-to-definition)
-    
-    *   [Alloy](#Alloy)
-        
-    *   [Strings](#Strings)
-        
-    *   [Images](#Images.1)
-        
-*   [Snippets](#Snippets)
-    
-    *   [Snippets for Titanium development](#SnippetsforTitaniumdevelopment)
-        
-    *   [Snippets for Alloy development](#SnippetsforAlloydevelopment)
-        
+* [Commands](#Commands)
+
+* [Titanium View](#TitaniumView)
+
+* [Build tools](#Buildtools)
+
+* [Autocompletion](#Autocompletion)
+
+  * [Generation](#Generation)
+
+  * [Titanium and Alloy](#TitaniumandAlloy)
+
+  * [Project references](#Projectreferences)
+
+  * [Class and ID references](#ClassandIDreferences)
+
+  * [Images](#Images)
+
+* [Open related files](#Openrelatedfiles)
+
+* [Jump-to-definition](#Jump-to-definition)
+
+  * [Alloy](#Alloy)
+
+  * [Strings](#Strings)
+
+  * [Images](#Images.1)
+
+* [Snippets](#Snippets)
+
+  * [Snippets for Titanium development](#SnippetsforTitaniumdevelopment)
+
+  * [Snippets for Alloy development](#SnippetsforAlloydevelopment)
+
 
 ## Commands
 
@@ -187,12 +187,12 @@ Image suggestions are presented where appropriate.
 
 Opening related Alloy files is supported (see above commands list). This can also be by right clicking in an active editor.
 
-*   From View, open related Style and/or Controller
-    
-*   From Style, open related View and/or Controller
-    
-*   From Controller, open related View and/or Style
-    
+* From View, open related Style and/or Controller
+
+* From Style, open related View and/or Controller
+
+* From Controller, open related View and/or Style
+
 
 ## Jump-to-definition
 

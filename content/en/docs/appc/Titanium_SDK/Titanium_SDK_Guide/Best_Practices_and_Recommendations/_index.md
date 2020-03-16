@@ -12,7 +12,6 @@ Though both Titanium and JavaScript are highly flexible, we have found that cert
 
 4. Readable – applications must have a readable codebase for quick understanding, modification, and improvement.
 
-
 ### Does best-practice really mean only-practice?
 
 In the general sense, no. However, the contents of this guide are distilled from the experience and practices of Appcelerator's Professional Services engineers with input from the Engineering department, Developer Relations team, Training department, and of course our many supportive customers.
@@ -35,7 +34,7 @@ In this topic, we'll share techniques for implementing large-scale Titanium apps
 
 In this section, we'll share some wisdom about how to handle images, including caching remote images, loading and unloading to minimize memory usage, and optimizing images with tools like pngcrush.
 
-**[Database Best Practices](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Working_with_Local_Data_Sources/Working_with_a_SQLite_Database/#Bestpractices)**
+**[Database Best Practices](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Working_with_Local_Data_Sources/Working_with_a_SQLite_Database/#best-practices)**
 
 In this section, we'll cover techniques for maximizing performance and handling app updates.
 

@@ -1,33 +1,32 @@
 {"title":"Creating Custom Queries","weight":"80"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Queries Overview](#QueriesOverview)
+* [Queries Overview](#queries-overview)
 
-* [Creating Queries without filtering](#CreatingQuerieswithoutfiltering)
+* [Creating Queries without filtering](#creating-queries-without-filtering)
 
-* [Creating Queries with filtering](#CreatingQuerieswithfiltering)
+* [Creating Queries with filtering](#creating-queries-with-filtering)
 
-* [Previewing Queries](#PreviewingQueries)
+* [Previewing Queries](#previewing-queries)
 
-* [Saving Queries](#SavingQueries)
+* [Saving Queries](#saving-queries)
 
-* [Clearing Queries](#ClearingQueries)
+* [Clearing Queries](#clearing-queries)
 
-* [Editing Queries](#EditingQueries)
+* [Editing Queries](#editing-queries)
 
-* [Deleting Queries](#DeletingQueries)
+* [Deleting Queries](#deleting-queries)
 
-* [Filtering Queries](#FilteringQueries)
+* [Filtering Queries](#filtering-queries)
 
-  * [Basic Filtering](#BasicFiltering)
+    * [Basic Filtering](#basic-filtering)
 
-  * [Advanced Filtering](#AdvancedFiltering)
+    * [Advanced Filtering](#advanced-filtering)
 
-  * [Delete Filters](#DeleteFilters)
+    * [Delete Filters](#delete-filters)
 
-* [Custom Data Query Example](#CustomDataQueryExample)
-
+* [Custom Data Query Example](#custom-data-query-example)
 
 ## Introduction
 
@@ -51,90 +50,89 @@ To create a custom query without filtering:
 
 2. Select a **Method**. The Method drop-down menu selections are:
 
-  * Count
+    * Count
 
-  * Cardinality
+    * Cardinality
 
-  * Average
+    * Average
 
-  * Sum
+    * Sum
 
-  * Min
+    * Min
 
-  * Max
+    * Max
 
 3. Select a **Field**. The Field drop-down menu selections are:
 
-  * Custom - If selected, enter the custom field information.
+    * Custom - If selected, enter the custom field information.
 
-  * Event
+    * Event
 
-  * Application
+    * Application
 
-  * Platform
+    * Platform
 
-  * Platform Version
+    * Platform Version
 
-  * Environment
+    * Environment
 
-  * Country
+    * Country
 
-  * Session
+    * Session
 
-  * Session Length
+    * Session Length
 
 4. Select a **Grouping**. The Grouping drop-down menu selections are:
 
-  * Custom - If selected, enter the custom grouping information.
+    * Custom - If selected, enter the custom grouping information.
 
-  * Event
+    * Event
 
-  * Application
+    * Application
 
-  * Platform
+    * Platform
 
-  * Platform Version
+    * Platform Version
 
-  * Environment
+    * Environment
 
-  * Country
+    * Country
 
-  * Session
+    * Session
 
-  * Session Length - If selected, enter an **Interval**. The entered interval is the range to use when grouping numeric values.
+    * Session Length - If selected, enter an **Interval**. The entered interval is the range to use when grouping numeric values.
 
 5. (Optional) Select the **Map** checkbox to display the results on a map instead of a chart. Please note this is not possible for averages.
 
 6. Select a **Date Range**. The Date Range drop-down menu selections are:
 
-  * From/To - If selected, enter the From and To dates and times. **Queries with From/To date ranges cannot be saved.**
+    * From/To - If selected, enter the From and To dates and times. **Queries with From/To date ranges cannot be saved.**
 
-  * Custom - If selected, select a custom date range.
+    * Custom - If selected, select a custom date range.
 
-    * Number of Months
+        * Number of Months
 
-    * Number of Days
+        * Number of Days
 
-    * Number of Hours
+        * Number of Hours
 
-    * Number of Minutes
+        * Number of Minutes
 
-  * 3 Months
+    * 3 Months
 
-  * 30 Days
+    * 30 Days
 
-  * 7 Days
+    * 7 Days
 
-  * 24 Hours
+    * 24 Hours
 
-  * 60 Minutes
+    * 60 Minutes
 
 7. (Optional) Select the **Include current period** checkbox to Include up to the end of the current period for which there will be only partial data.
 
 8. (Optional) Click **Preview** to preview your custom query. The Custom Query section will be updated to display your custom query analytics preview.
 
 9. Click **Save** to save your custom query. Your custom query will be saved, the Saved Queries drop-down menu will be updated to include your saved custom query, the Custom Query section will be updated to display your custom query analytics, and your custom query will be available on the _Queries Overview_ screen.
-
 
 ## Creating Queries with filtering
 
@@ -144,83 +142,83 @@ To create a custom query with filtering:
 
 2. Select a **Method**. The Method drop-down menu selections are:
 
-  * Count
+    * Count
 
-  * Cardinality
+    * Cardinality
 
-  * Average
+    * Average
 
-  * Sum
+    * Sum
 
-  * Min
+    * Min
 
-  * Max
+    * Max
 
 3. Select a **Field**. The Field drop-down menu selections are:
 
-  * Custom - If selected, enter the custom field information.
+    * Custom - If selected, enter the custom field information.
 
-  * Event
+    * Event
 
-  * Application
+    * Application
 
-  * Platform
+    * Platform
 
-  * Platform Version
+    * Platform Version
 
-  * Environment
+    * Environment
 
-  * Country
+    * Country
 
-  * Session
+    * Session
 
-  * Session Length
+    * Session Length
 
 4. Select a **Grouping**. The Grouping drop-down menu selections are:
 
-  * Custom - If selected, enter the custom grouping information.
+    * Custom - If selected, enter the custom grouping information.
 
-  * Event
+    * Event
 
-  * Application
+    * Application
 
-  * Platform
+    * Platform
 
-  * Platform Version
+    * Platform Version
 
-  * Environment
+    * Environment
 
-  * Country
+    * Country
 
-  * Session
+    * Session
 
-  * Session Length - If selected, enter an **Interval**. The entered interval specifies the range to use when grouping numeric values.
+    * Session Length - If selected, enter an **Interval**. The entered interval specifies the range to use when grouping numeric values.
 
 5. (Optional) Select the **Map** checkbox to display the results on a map instead of a chart. Please note this is not possible for averages.
 
 6. Select a **Date Range**. The Date Range drop-down menu selections are:
 
-  * From/To - If selected, enter the From and To dates and times. **Queries with From/To date ranges cannot be saved.**
+    * From/To - If selected, enter the From and To dates and times. **Queries with From/To date ranges cannot be saved.**
 
-  * Custom - If selected, select a custom date range.
+    * Custom - If selected, select a custom date range.
 
-    * Number of Months
+        * Number of Months
 
-    * Number of Days
+        * Number of Days
 
-    * Number of Hours
+        * Number of Hours
 
-    * Number of Minutes
+        * Number of Minutes
 
-  * 3 Months
+    * 3 Months
 
-  * 30 Days
+    * 30 Days
 
-  * 7 Days
+    * 7 Days
 
-  * 24 Hours
+    * 24 Hours
 
-  * 60 Minutes
+    * 60 Minutes
 
 7. (Optional) Select the **Include current period** checkbox to Include up to the end of the current period for which there will be only partial data.
 
@@ -234,46 +232,45 @@ To create a custom query with filtering:
 
 12. Select the type of filter. The type of filter drop-down menu selections are:
 
-  * Custom - If selected, enter the custom field information.
+    * Custom - If selected, enter the custom field information.
 
-  * Event
+    * Event
 
-  * Application
+    * Application
 
-  * Platform
+    * Platform
 
-  * Platform Version
+    * Platform Version
 
-  * Environment
+    * Environment
 
-  * Country
+    * Country
 
-  * Session
+    * Session
 
-  * Session Length
+    * Session Length
 
 13. Select a filter operand. The filter operand selections are:
 
-  * Equals
+    * Equals
 
-  * Not
+    * Not
 
-  * Starts with
+    * Starts with
 
-  * Ends with
+    * Ends with
 
-  * Greater than
+    * Greater than
 
-  * Greater than or equal to
+    * Greater than or equal to
 
-  * Less than
+    * Less than
 
-  * Less than or equal to
+    * Less than or equal to
 
 14. Complete the operand field or make a selection from the drop-down menu. The field selections are based on the selected filter type. To fetch the available field selections over the selected time range, click the **Magnify** icon. Optionally, you can select **Advanced** and enter the JSON coded filter.
 
 15. Click **Save** to save to save your custom query. Your custom query will be saved, the Saved Queries drop-down menu will be updated to include your saved custom query, the Custom Query section will be updated to display your custom query analytics, and your custom query will be available on the _Queries Overview_ screen.
-
 
 ## Previewing Queries
 
@@ -293,7 +290,7 @@ To edit a custom query:
 
 1. Select the custom query to edit from the Saved Queries drop-down menu or from the _Queries Overview_ screen.
 
-  ![custom_queries_edit](/Images/appc/download/attachments/60145257/custom_queries_edit.png)
+    ![custom_queries_edit](/Images/appc/download/attachments/60145257/custom_queries_edit.png)
 2. Edit the **Method**, **Field**, **Grouping**, and **Date Range** selections as needed.
 
 3. (Optional) Click **Preview** to preview your custom query changes. The Custom Query section will be updated to display your custom query analytics changes.
@@ -301,7 +298,6 @@ To edit a custom query:
 4. Edit the filtering as needed.
 
 5. Click **Save** to save your custom query changes. The Custom Query section will be updated to display your custom query analytics changes.
-
 
 ## Deleting Queries
 
@@ -314,7 +310,6 @@ To delete a custom query:
 3. Enter the name of the query to delete in the _Delete Confirmation_ screen.
 
 4. To confirm the query deletion, click **I understand that this is a permanent and irreversible action. Continue**.
-
 
 ## Filtering Queries
 
@@ -332,48 +327,47 @@ To configure basic filtering:
 
 4. Select the type of filter. The type of filter drop-down menu selections are:
 
-  * Custom - If selected, enter the custom field information.
+    * Custom - If selected, enter the custom field information.
 
-  * Event
+    * Event
 
-  * Application
+    * Application
 
-  * Platform
+    * Platform
 
-  * Platform Version
+    * Platform Version
 
-  * Environment
+    * Environment
 
-  * Country
+    * Country
 
-  * Session
+    * Session
 
-  * Session Length
+    * Session Length
 
 5. Select a filter operand. The filter operand selections are:
 
-  * Equals
+    * Equals
 
-  * Not
+    * Not
 
-  * Starts with
+    * Starts with
 
-  * Ends with
+    * Ends with
 
-  * Greater than
+    * Greater than
 
-  * Greater than or equal to
+    * Greater than or equal to
 
-  * Less than
+    * Less than
 
-  * Less than or equal to
+    * Less than or equal to
 
 6. Complete the operand field or make a selection from the drop-down menu. The selections are based on the selected filter type. To fetch the available field selections over the selected time range, click the **Magnify** icon.
 
 7. (Optional) To add additional filters, click the **Plus** icon.
 
 8. To save the configured filtering as part of a custom query, click **Save**.
-
 
 ### Advanced Filtering
 
@@ -383,20 +377,19 @@ To configure advanced filtering:
 
 2. Enter a JSON coded filter in the code field. Note that the code field will be highlighted unless a valid filter code is entered. For example, to create a filter to match application installation in the production environment, enter the following code in the field:
 
-  `{`
+    `{`
 
-  `"$match"``: {`
+    `"$match"``: {`
 
-  `"event"``:` `"app.install"``,`
+    `"event"``:` `"app.install"``,`
 
-  `"distribution.environment"``:` `"production"`
+    `"distribution.environment"``:` `"production"`
 
-  `}`
+    `}`
 
-  `}`
+    `}`
 
 3. To save the configured filtering as part of a custom query, click **Save**.
-
 
 ### Delete Filters
 

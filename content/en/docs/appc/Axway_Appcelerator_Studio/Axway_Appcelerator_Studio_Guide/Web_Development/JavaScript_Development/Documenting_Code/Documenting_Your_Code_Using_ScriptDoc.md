@@ -4,16 +4,15 @@ Using Studio's ScriptDoc system to document your code enables Content Assist to 
 
 A [nice one-page cheat sheet](http://www.scribd.com/doc/10040039/ScriptDoc-Cheatsheet-v01) for ScriptDoc on Scribd is posted.
 
-* [Basic Instructions](#BasicInstructions)
+* [Basic Instructions](#basic-instructions)
 
-* [Example: A basic documentation block for a getFoo() function](#Example:AbasicdocumentationblockforagetFoo()function)
+* [Example: A basic documentation block for a getFoo() function](#example:-a-basic-documentation-block-for-a-getfoo-function)
 
-* [Ordering your tags](#Orderingyourtags)
+* [Ordering your tags](#ordering-your-tags)
 
-* [Guidelines for ordering multiple versions of the same tag](#Guidelinesfororderingmultipleversionsofthesametag)
+* [Guidelines for ordering multiple versions of the same tag](#guidelines-for-ordering-multiple-versions-of-the-same-tag)
 
-* [Related Topics](#RelatedTopics)
-
+* [Related Topics](#related-topics)
 
 ## Basic Instructions
 
@@ -21,18 +20,21 @@ A [nice one-page cheat sheet](http://www.scribd.com/doc/10040039/ScriptDoc-Cheat
 
 * Enclose each documentation block within a slash-asterisk-asterisk
 
-      (/**)
+    ```
+    (/**)
+    ```
 
-  and asterisk-slash
+    and asterisk-slash
 
-      (*/)
+    ```
+    (*/)
+    ```
 
-  comment set.
+    comment set.
 
 * The first line in the block, except for file overviews, should be a short description of the function or class.
 
 * After the description, add [tags](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/ScriptDoc_(SDOC)_2.0_Specification/) that explain the function, including a description, what parameters it takes, and its return type. You can also use the [ScriptDoc tag quick reference](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/ScriptDoc_tag_quick_reference/) to quickly lookup a tag once you are familiar with the syntax for each tag.
-
 
 ## Example: A basic documentation block for a getFoo() function
 
@@ -72,7 +74,6 @@ Add your tags in the following order, as appropriate:
 
 * @deprecated
 
-
 ## Guidelines for ordering multiple versions of the same tag
 
 * @author - List @author tags chronologically, starting with the author who created the file or function.
@@ -80,7 +81,6 @@ Add your tags in the following order, as appropriate:
 * @param - List @param tags in argument declaration order.
 
 * @see - List @see tags from nearest to furthest access, shown below:
-
 
 `@see` `#Constructor(Type, Type...)`
 

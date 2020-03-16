@@ -2,20 +2,19 @@
 
 This document contains information on how to obtain, configure, PyDev, and how to contribute.
 
-* [Getting the code](#Gettingthecode)
+* [Getting the code](#getting-the-code)
 
-  * [Repository](#Repository)
+    * [Repository](#repository)
 
-* [Configuring the environment after getting the code](#Configuringtheenvironmentaftergettingthecode)
+* [Configuring the environment after getting the code](#configuring-the-environment-after-getting-the-code)
 
-* [Where to start?](#Wheretostart?)
+* [Where to start?](#where-to-start?)
 
-* [Creating a distribution locally](#Creatingadistributionlocally)
+* [Creating a distribution locally](#creating-a-distribution-locally)
 
-* [Contributing](#Contributing)
+* [Contributing](#contributing)
 
-* [Related docs](#Relateddocs)
-
+* [Related docs](#related-docs)
 
 ## Getting the code
 
@@ -47,9 +46,7 @@ Ok, this may be the most difficult thing... especially because answers may chang
 
 * Extending PyDev **with Jython**: recommended if you want to add some editor-related action or something that does not need implementing some Eclipse extension-point.
 
-
 * Extending PyDev **in Java**: if you want something that won't map to an action, this might be the better way to go.
-
 
 To start in any of those approaches, it might be worth taking a look at some Eclipse documentation, to try to grasp some of its concepts. One of the finest documentations for that is the [Eclipse FAQ](http://wiki.eclipse.org/index.php/Eclipse_FAQs).
 

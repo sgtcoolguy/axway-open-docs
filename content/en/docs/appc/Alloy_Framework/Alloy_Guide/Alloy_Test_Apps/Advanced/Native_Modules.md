@@ -28,27 +28,26 @@ Once you've imported sample app, you next to need to download and install the ti
 
 1. Download the [ti.paint module](https://github.com/appcelerator-archive/ti.paint) ZIP from GitHub.
 
-2. To manually install the module, copy the ZIP file to the root of the Titanium SDK folder (for example, **~/** **Library/Application Support/Titanium** on OS X). See [Module install locations](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Using_Modules/Using_a_Module/#Moduleinstalllocations)
-  for other platforms. In Appcelerator Studio, you can also install the module by selecting **Help > Install Mobile Module** and locating the ZIP file.
+2. To manually install the module, copy the ZIP file to the root of the Titanium SDK folder (for example, **~/** **Library/Application Support/Titanium** on OS X). See [Module install locations](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Using_Modules/Using_a_Module/#module-install-locations)
+    for other platforms. In Appcelerator Studio, you can also install the module by selecting **Help > Install Mobile Module** and locating the ZIP file.
 
 3. Open the project's tiapp.xml file and insert **<module>ti.paint</module>** into the existing <modules></modules> element, as shown below.
 
-  `<``ti``:app` `xmlns:ti``=``"http://ti.appcelerator.org"``>`
+    `<``ti``:app` `xmlns:ti``=``"http://ti.appcelerator.org"``>`
 
-  `...`
+    `...`
 
-  `<``modules``>`
+    `<``modules``>`
 
-  `<``module``>ti.paint</``module``>`
+    `<``module``>ti.paint</``module``>`
 
-  `</``modules``>`
+    `</``modules``>`
 
-  `...`
+    `...`
 
-  `</``xml``>`
+    `</``xml``>`
 
 4. Save tiapp.xml and build the application for iOS simulator or device. (The Paint module does not currently work on Android.)
-
 
 ## See also
 

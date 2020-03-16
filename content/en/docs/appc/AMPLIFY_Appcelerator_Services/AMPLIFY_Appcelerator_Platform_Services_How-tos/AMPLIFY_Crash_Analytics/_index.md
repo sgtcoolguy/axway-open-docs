@@ -1,25 +1,24 @@
 {"title":"AMPLIFY Crash Analytics","weight":"20"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Installation and setup](#Installationandsetup)
+* [Installation and setup](#installation-and-setup)
 
-  * [Setup Your Project](#SetupYourProject)
+    * [Setup Your Project](#setup-your-project)
 
-  * [Initialize the Module](#InitializetheModule)
+    * [Initialize the Module](#initialize-the-module)
 
-  * [Create a Breadcrumb Trail](#CreateaBreadcrumbTrail)
+    * [Create a Breadcrumb Trail](#create-a-breadcrumb-trail)
 
-  * [Add User Metadata](#AddUserMetadata)
+    * [Add User Metadata](#add-user-metadata)
 
-  * [Log An Error](#LogAnError)
+    * [Log An Error](#log-an-error)
 
-  * [Allow the User to Opt-Out](#AllowtheUsertoOpt-Out)
+    * [Allow the User to Opt-Out](#allow-the-user-to-opt-out)
 
-* [Known issue](#Knownissue)
-
+* [Known issue](#known-issue)
 
 Subscription Required!
 
@@ -36,7 +35,6 @@ The AMPLIFY Crash Analytics (ACA) module provides you with real-time crash repor
 * [Titanium SDK 8.](https://www.appcelerator.com/titanium/download-/)1.1 or above is required to use this feature
 
 * Appcelerator Studio (Studio)
-
 
 ACA only supports the Android and iOS platforms.
 

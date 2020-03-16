@@ -1,11 +1,10 @@
 {"title":"Application Structures and Core Building Blocks","weight":"10"}
 
-* [Tab-based applications](#Tab-basedapplications)
+* [Tab-based applications](#tab-based-applications)
 
-  * [Tab recommendations](#Tabrecommendations)
+    * [Tab recommendations](#tab-recommendations)
 
-* [Window-based apps](#Window-basedapps)
-
+* [Window-based apps](#window-based-apps)
 
 ## Objective
 
@@ -13,7 +12,7 @@ In this section, you'll take a look at the core building blocks of a Titanium ap
 
 ## Contents
 
-In web development parlance, a Titanium **window** is roughly analogous to a **web page**. In turn, Titanium **view** is analogous to a **div**. We already touched on the fact that Titanium windows can, but aren't required to, run within their own [execution context](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Cross-Platform_Mobile_Development_In_Titanium/Coding_Strategies/#Executioncontexts) like a web page. Conceptually, windows are a top-level container just like a web page.
+In web development parlance, a Titanium **window** is roughly analogous to a **web page**. In turn, Titanium **view** is analogous to a **div**. We already touched on the fact that Titanium windows can, but aren't required to, run within their own [execution context](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Cross-Platform_Mobile_Development_In_Titanium/Coding_Strategies/#execution-contexts) like a web page. Conceptually, windows are a top-level container just like a web page.
 
 Titanium views are like divs in that both are style-able, generic content containers. Both can enclose other content (buttons, views, etc.) and must be contained within a window, or web page.
 
@@ -97,24 +96,23 @@ In addition to this cross platform method, let's take a look at some of the plat
 
 * Android
 
-  * The Menu button can be used to display options for navigation. These can be sections similar to tabs, or more direct instructions like "Back" or "Forward" in a web browser.
+    * The Menu button can be used to display options for navigation. These can be sections similar to tabs, or more direct instructions like "Back" or "Forward" in a web browser.
 
-  * The Back button will close the current window and go back to the previous one
+    * The Back button will close the current window and go back to the previous one
 
 * iOS
 
-  * You can use a [navigation window](#!/api/Titanium.UI.iOS.NavigationWindow), which is the core of most iOS app navigation.
+    * You can use a [navigation window](#!/api/Titanium.UI.iOS.NavigationWindow), which is the core of most iOS app navigation.
 
-  * You could implement a [DashboardView](#!/api/Titanium.UI.DashboardView)
+    * You could implement a [DashboardView](#!/api/Titanium.UI.DashboardView)
 
-    ![dashboard_view](/Images/appc/download/attachments/29004894/dashboard_view.png)
+        ![dashboard_view](/Images/appc/download/attachments/29004894/dashboard_view.png)
 
 It's also notable that window based apps are the common choice for mobile games. As most games employ only a single screen and use mostly custom UI components, OS level navigation is rarely useful. The game is simply presented full-screen and the gameplay itself dictates how the user interacts with the app.
 
 ## References and Further Reading
 
 * [Titanium.UI module](#!/api/Titanium.UI)
-
 
 ## Summary
 

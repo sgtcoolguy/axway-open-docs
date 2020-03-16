@@ -1,49 +1,48 @@
 {"title":"Alloy XML Markup","weight":"20"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Collection element](#Collectionelement)
+* [Collection element](#collection-element)
 
-* [Model element](#Modelelement)
+* [Model element](#model-element)
 
-* [Module attribute](#Moduleattribute)
+* [Module attribute](#module-attribute)
 
-* [Module element](#Moduleelement)
+* [Module element](#module-element)
 
-* [Require element](#Requireelement)
+* [Require element](#require-element)
 
-  * [Including views](#Includingviews)
+    * [Including views](#including-views)
 
-  * [Importing widgets](#Importingwidgets)
+    * [Importing widgets](#importing-widgets)
 
-  * [Passing arguments](#Passingarguments)
+    * [Passing arguments](#passing-arguments)
 
-  * [Binding events](#Bindingevents)
+    * [Binding events](#binding-events)
 
-  * [Adding children views](#Addingchildrenviews)
+    * [Adding children views](#adding-children-views)
 
-* [Namespace](#Namespace)
+* [Namespace](#namespace)
 
-* [Conditional code](#Conditionalcode)
+* [Conditional code](#conditional-code)
 
-* [Property mapping](#Propertymapping)
+* [Property mapping](#property-mapping)
 
-  * [Proxy properties](#Proxyproperties)
+    * [Proxy properties](#proxy-properties)
 
-  * [Android ActionBar](#AndroidActionBar)
+    * [Android ActionBar](#android-actionbar)
 
-  * [iOS navigation button shorthand](#iOSnavigationbuttonshorthand)
+    * [iOS navigation button shorthand](#ios-navigation-button-shorthand)
 
-  * [iOS systemButton shorthand](#iOSsystemButtonshorthand)
+    * [iOS systemButton shorthand](#ios-systembutton-shorthand)
 
-  * [TextField keyboard shorthands](#TextFieldkeyboardshorthands)
+    * [TextField keyboard shorthands](#textfield-keyboard-shorthands)
 
-* [Event handling](#Eventhandling)
+* [Event handling](#event-handling)
 
-* [Data binding](#Databinding)
+* [Data binding](#data-binding)
 
-* [Non-standard syntax](#Non-standardsyntax)
-
+* [Non-standard syntax](#non-standard-syntax)
 
 ## Introduction
 
@@ -91,79 +90,29 @@ In the previous example, the win.open call and implementation of the doClick cal
 
 The following table lists the attributes for the UI components:
 
-Attribute
-
-Description
-
-id
-
-Identifies UI elements in the controller (prefixed with $.) and style sheet (prefixed with #). IDs should be unique per view but are not global, so multiple views can have components with the same ID.
-
-class
-
-Applies additional styles (prefixed with . in the TSS file). Overwrites the element style but not the id style.
-
-autoStyle
-
-Enables the autostyle feature for dynamic styling when adding or removing classes. See [Dynamic Styles: Autostyle](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Dynamic_Styles/#Autostyle) for more details.
-
-formFactor
-
-Acts as a compiler directive for size-specific view components. Value can either be handheld or tablet. See [Conditional code](#Conditionalcode) for more details.
-
-if
-
-Use a custom query to apply additional styles to the element. See [Conditional code](#Conditionalcode) and [Alloy Styles and Themes: Custom Query Styles](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#Customquerystyles) for more details.
-
-module
-
-Requires in a CommonJS module. Note that the XML element must be named after a create<XMLElement> method in the module. See [Module Attribute](#Moduleattribute) for more details.
-
-ns
-
-Overrides the default Titanium.UI namespace. See [Namespace](#Namespace) for more details.
-
-platform
-
-Switches the namespace based on the platform and acts as a compiler directive for platform-specific view components. Values can be any combination of platforms. See [Conditional code](#Conditionalcode) and [Namespace](#Namespace) for more details.
-
-<properties>
-
-Assigns values to UI object properties. See [Property mapping](#Propertymapping) for more details.
-
-<events>
-
-Assigns callbacks to UI object events. See [Event handling](#Eventhandling) for more details.
+| Attribute | Description |
+| --- | --- |
+| id | Identifies UI elements in the controller (prefixed with $.) and style sheet (prefixed with #). IDs should be unique per view but are not global, so multiple views can have components with the same ID. |
+| class | Applies additional styles (prefixed with . in the TSS file). Overwrites the element style but not the id style. |
+| autoStyle | Enables the autostyle feature for dynamic styling when adding or removing classes. See [Dynamic Styles: Autostyle](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Dynamic_Styles/#autostyle) for more details. |
+| formFactor | Acts as a compiler directive for size-specific view components. Value can either be handheld or tablet. See [Conditional code](#conditional-code) for more details. |
+| if | Use a custom query to apply additional styles to the element. See [Conditional code](#conditional-code) and [Alloy Styles and Themes: Custom Query Styles](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#custom-query-styles) for more details. |
+| module | Requires in a CommonJS module. Note that the XML element must be named after a create<XMLElement> method in the module. See [Module Attribute](#module-attribute) for more details. |
+| ns | Overrides the default Titanium.UI namespace. See [Namespace](#namespace) for more details. |
+| platform | Switches the namespace based on the platform and acts as a compiler directive for platform-specific view components. Values can be any combination of platforms. See [Conditional code](#conditional-code) and [Namespace](#namespace) for more details. |
+| <properties> | Assigns values to UI object properties. See [Property mapping](#property-mapping) for more details. |
+| <events> | Assigns callbacks to UI object events. See [Event handling](#event-handling) for more details. |
 
 The following table lists the special XML elements besides the Titanium UI components:
 
-Element
-
-Description
-
-Alloy
-
-Root element for all view XML files. Required in all views.
-
-Collection
-
-Creates a singleton or instance of the specified collection. See the [Collection element](#Collectionelement) for more details.
-
-Model
-
-Creates a singleton or instance of the specified model. See the [Model element](#Modelelement) for more details.
-
-Module
-
-Imports a module view inside this view. See the [Module element](#Moduleelement) for more details.
-
-Require
-
-Imports a widget or includes another view inside this view. See the [Require element](#Requireelement) for more details.
-
-Widget
-
-Imports a widget inside this view. Same as the [Require element](#Requireelement) with the type specified to 'widget'. See [Importing widgets](#Importingwidgets) for more details.
+| Element | Description |
+| --- | --- |
+| Alloy | Root element for all view XML files. Required in all views. |
+| Collection | Creates a singleton or instance of the specified collection. See the [Collection element](#collection-element) for more details. |
+| Model | Creates a singleton or instance of the specified model. See the [Model element](#model-element) for more details. |
+| Module | Imports a module view inside this view. See the [Module element](#module-element) for more details. |
+| Require | Imports a widget or includes another view inside this view. See the [Require element](#require-element) for more details. |
+| Widget | Imports a widget inside this view. Same as the [Require element](#require-element) with the type specified to 'widget'. See [Importing widgets](#importing-widgets) for more details. |
 
 index.xml is a special case that only accepts the following view components as direct children of the Alloy tag:
 
@@ -174,7 +123,6 @@ index.xml is a special case that only accepts the following view components as d
 * Ti.UI.NavigationWindow or <NavigationWindow>
 
 * Ti.UI.iOS.SplitWindow or <SplitWindow>
-
 
 Other views do not have any format restrictions.
 
@@ -288,7 +236,6 @@ You can require a CommonJS module in an Alloy view using the module attribute of
 
 2. Add the <XXX> element to the Alloy view and set the module attribute to the path (after the app/lib folder) and name of the CommonJS module minus the extension. Custom attributes of the element are passed to the public method.
 
-
 For example, the following CommonJS module, called foo.js, exposes the createFoo method, which returns a Label object inside a View object. In the Alloy view, to include this object, add the Foo tag and set the module attribute to foo.
 
 app/lib/foo.js
@@ -354,7 +301,6 @@ You can also include a view from a native module using the Module XML element. T
 4. Set the method attribute to the name of the method that creates a view object. If this attribute is not specified, Alloy uses createView.
 
 5. If the method invoked uses a simple JavaScript object as its only parameter, you can optionally pass in the parameters either inline or with the TSS file.
-
 
 For example, to use the [Paint Module](https://marketplace.appcelerator.com/apps/4977?790167903), first download and add the module to your project. The Paint Module creates a Titanium View, which can be drawn on, using the createPaintView method. To use this view in the index view-controller, you need to add it as a child of a window (or similar parent view object). In the code below, the Module tag is used to add the Paint Module to the window and passes properties inline that are specific to the module. You may also pass any Titanium.UI.View properties to the module since it extends a Titanium View.
 
@@ -458,13 +404,11 @@ Within a view in the regular Alloy project space (app/views), use the <Widget> t
 
 3. Update the dependencies object in the config.json file by adding a key/value pair with the name of the widget as the key and the version number as the value.
 
-
 You can optionally add the id and name attributes to the Require element:
 
 * The id attribute allows you to reference the widget in the controller code. You can use this reference to call methods exported by the widget.
 
 * The name attribute allows you to import a specific view-controller in the widget rather than the default one (widget.xml/widget.js). Specify the name of the view-controller minus the extension.
-
 
 For example, to import the mywidget widget in to a project, copy mywidget to the app/widgets folder.
 
@@ -560,7 +504,7 @@ apps/controllers/foo.js
 
 `var` `image = $.args.customImage ||` `'default.png'``;`
 
-See [Alloy Controllers: Passing Arguments](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#Passingarguments) for more details.
+See [Alloy Controllers: Passing Arguments](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#passing-arguments) for more details.
 
 ### Binding events
 
@@ -646,65 +590,22 @@ If you used <NavigationWindow platform="ios"/> prior to Titanium 8.0.0, you will
 
 Many of the Titanium view proxies not part of the Titanium.UI namespace do not require that the ns attribute be explicitly set. The following elements are implicitly mapped to a namespace if one is not defined:
 
-Element
-
-Namespace
-
-Menu
-
-Ti.Android
-
-MenuItem
-
-Ti.Android
-
-Annotation
-
-Ti.Map
-
-VideoPlayer
-
-Ti.Media
-
-MusicPlayer
-
-Ti.Media
-
-SearchView
-
-Ti.UI.Android
-
-AdView
-
-Ti.UI.iOS
-
-CoverFlowView
-
-Ti.UI.iOS
-
-NavigationWindow
-
-Ti.UI
-
-TabbedBar
-
-Ti.UI.iOS
-
-DocumentViewer
-
-Ti.UI.iOS
-
-Popover
-
-Ti.UI.iPad
-
-SplitWindow
-
-Ti.UI.iOS
-
-StatusBar
-
-Ti.UI.iOS
+| Element | Namespace |
+| --- | --- |
+| Menu | Ti.Android |
+| MenuItem | Ti.Android |
+| Annotation | Ti.Map |
+| VideoPlayer | Ti.Media |
+| MusicPlayer | Ti.Media |
+| SearchView | Ti.UI.Android |
+| AdView | Ti.UI.iOS |
+| CoverFlowView | Ti.UI.iOS |
+| NavigationWindow | Ti.UI |
+| TabbedBar | Ti.UI.iOS |
+| DocumentViewer | Ti.UI.iOS |
+| Popover | Ti.UI.iPad |
+| SplitWindow | Ti.UI.iOS |
+| StatusBar | Ti.UI.iOS |
 
 Additionally, use the alias Ti for Titanium.
 
@@ -713,15 +614,14 @@ Additionally, use the alias Ti for Titanium.
 Add the platform, formFactor and if attributes to apply XML elements based on conditionals.
 
 * To specify a platform-specific element, use the platform attribute and assign it a platform, such as, android, ios, mobileweb, or windows.
-  Comma separate the values to logically OR the values together, for example, platform='ios,android' indicates both Android and iOS.
-  Prepend the value with an exclamation point (!) to negate the value, for example, platform='!ios' indicates all platforms except iOS.
+    Comma separate the values to logically OR the values together, for example, platform='ios,android' indicates both Android and iOS.
+    Prepend the value with an exclamation point (!) to negate the value, for example, platform='!ios' indicates all platforms except iOS.
 
 * To specify a device-size-specific element, use the formFactor attribute and assign it a device size–either handheld or tablet.
 
 * To use a custom query, assign the if attribute to a conditional statement in the Alloy.Globals namespace. This conditional statement must return a boolean value. You may only assign **one** query to the if attribute.
 
 * The application can also pass custom Boolean properties with the Alloy.createController() method, which can be accessed by the XML. Assign the if attribute to the name of the property prefixed with the $.args namespace, for example, $.args.someProperty.
-
 
 You can use all the attributes in any combination.
 
@@ -749,7 +649,7 @@ In the example below, different Annotation objects are displayed in the view bas
 
 `</``Alloy``>`
 
-You can also create subfolders, named as the platform, in the views directory as another way to create platform-specific views. Refer to [Alloy Concepts: Platform-Specific Resources](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Concepts/#Platform-specificresources).
+You can also create subfolders, named as the platform, in the views directory as another way to create platform-specific views. Refer to [Alloy Concepts: Platform-Specific Resources](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Concepts/#platform-specific-resources).
 
 ## Property mapping
 
@@ -781,169 +681,19 @@ For properties that are assigned Titanium proxies, such as Views or Buttons, the
 
 Currently, the following Titanium proxies and properties implemented using this syntax are:
 
-Titanium Proxy Object / Alloy tag
-
-Proxy Property
-
-Child Alloy Tag
-
-Since
-
-[Titanium.Android.MenuItem](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Android.MenuItem) / <MenuItem>
-
-[actionView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Android.MenuItem-property-actionView)
-
-<ActionView>
-
-Alloy 1.6.0
-
-[Titanium.UI.iPad.Popover](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iPad.Popover) / <PopOver>
-
-[contentView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iPad.Popover-property-contentView)
-
-<ContentView>
-
-Alloy 1.4.0
-
-[Titanium.UI.Label](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Label) / <Label>
-
-[attributedString](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Label-property-attributedString)
-
-<AttributedString>
-
-Alloy 1.7.6
-
-[Titanium.UI.ListSection](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListSection) / <ListSection>
-
-[footerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListSection-property-footerView)
-
-[headerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListSection-property-headerView)
-
-<FooterView>
-
-<HeaderView>
-
-Alloy 1.3.0
-
-[Titanium.UI.ListView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListView) / <ListView>
-
-[footerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListView-property-footerView)
-
-[headerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListView-property-headerView)
-
-[pullView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListView-property-pullView)
-
-[searchView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListView-property-searchView)
-
-<FooterView>
-
-<HeaderView>
-
-<PullView>
-
-<SearchBar> or <SearchView platform="android">
-
-Alloy 1.3.0
-
-[Titanium.UI.OptionDialog](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.OptionDialog) / <OptionDialog>
-
-[androidView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.OptionDialog-property-androidView)
-
-<AndroidView> or <View>
-
-Alloy 1.5.0
-
-[Titanium.UI.TableView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableView) / <TableView>
-
-[footerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableView-property-footerView)
-
-[headerPullView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableView-property-headerPullView)
-
-[headerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableView-property-headerView)
-
-[search](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableView-property-search)
-
-<FooterView>
-
-<HeaderPullView>
-
-<HeaderView>
-
-<Search>
-
-Alloy 1.1.0
-
-[Titanium.UI.TableViewSection](#!/api/Titanium.UI.TableViewSection) / <TableViewSection>
-
-[headerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableViewSection-property-headerView)
-
-<HeaderView>
-
-[Titanium.UI.TextArea](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextArea) / <TextArea>
-
-[attributedString](#!/api/Titanium.UI.TextArea-property-attributedString)
-
-[keyboardToolbar](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextArea-property-keyboardToolbar)
-
-<AttributedString>
-
-<KeyboardToolbar>
-
-Alloy 1.7.6
-
-Alloy 1.5.0
-
-[Titanium.UI.TextField](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextField) / <TextField>
-
-[attributedHintText](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextField-property-attributedHintText)
-
-[attributedString](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextField-property-attributedString)
-
-[keyboardToolbar](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextField-property-keyboardToolbar)
-
-[leftButton](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextField-property-leftButton)
-
-[rightButton](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextField-property-rightButton)
-
-<AttributeHintText>
-
-<AttributedString>
-
-<KeyboardToolbar>
-
-<LeftButton>
-
-<RightButton>
-
-Alloy 1.7.6
-
-Alloy 1.7.6
-
-Alloy 1.3.0
-
-Alloy 1.3.0
-
-Alloy 1.3.0
-
-[Titanium.UI.Window](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window) / <Window>
-
-[leftNavButton](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-property-leftNavButton)
-
-[rightNavButton](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-property-rightNavButton)
-
-[titleControl](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-property-titleControl)
-
-[toolbar](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-property-toolbar)[](#!/api/Titanium.UI.Window-property-)
-
-<LeftNavButton>
-
-<RightNavButton>
-
-<TitleControl>
-
-<WindowToolbar>
-
-Alloy 1.6.0
+| Titanium Proxy Object / Alloy tag | Proxy Property | Child Alloy Tag | Since |
+| --- | --- | --- | --- |
+| [Titanium.Android.MenuItem](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Android.MenuItem) / <MenuItem> | [actionView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Android.MenuItem-property-actionView) | <ActionView> | Alloy 1.6.0 |
+| [Titanium.UI.iPad.Popover](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iPad.Popover) / <PopOver> | [contentView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iPad.Popover-property-contentView) | <ContentView> | Alloy 1.4.0 |
+| [Titanium.UI.Label](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Label) / <Label> | [attributedString](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Label-property-attributedString) | <AttributedString> | Alloy 1.7.6 |
+| [Titanium.UI.ListSection](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListSection) / <ListSection> | [footerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListSection-property-footerView)<br /><br />[headerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListSection-property-headerView) | <FooterView><br /><br /><HeaderView> | Alloy 1.3.0 |
+| [Titanium.UI.ListView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListView) / <ListView> | [footerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListView-property-footerView)<br /><br />[headerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListView-property-headerView)<br /><br />[pullView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListView-property-pullView)<br /><br />[searchView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.ListView-property-searchView) | <FooterView><br /><br /><HeaderView><br /><br /><PullView><br /><br /><SearchBar> or <SearchView platform="android"> | Alloy 1.3.0 |
+| [Titanium.UI.OptionDialog](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.OptionDialog) / <OptionDialog> | [androidView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.OptionDialog-property-androidView) | <AndroidView> or <View> | Alloy 1.5.0 |
+| [Titanium.UI.TableView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableView) / <TableView> | [footerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableView-property-footerView)<br /><br />[headerPullView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableView-property-headerPullView)<br /><br />[headerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableView-property-headerView)<br /><br />[search](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableView-property-search) | <FooterView><br /><br /><HeaderPullView><br /><br /><HeaderView><br /><br /><Search> | Alloy 1.1.0 |
+| [Titanium.UI.TableViewSection](#!/api/Titanium.UI.TableViewSection) / <TableViewSection> | [headerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableViewSection-property-headerView) | <HeaderView> |  |
+| [Titanium.UI.TextArea](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextArea) / <TextArea> | [attributedString](#!/api/Titanium.UI.TextArea-property-attributedString)<br /><br />[keyboardToolbar](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextArea-property-keyboardToolbar) | <AttributedString><br /><br /><KeyboardToolbar> | Alloy 1.7.6<br /><br />Alloy 1.5.0 |
+| [Titanium.UI.TextField](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextField) / <TextField> | [attributedHintText](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextField-property-attributedHintText)<br /><br />[attributedString](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextField-property-attributedString)<br /><br />[keyboardToolbar](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextField-property-keyboardToolbar)<br /><br />[leftButton](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextField-property-leftButton)<br /><br />[rightButton](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextField-property-rightButton) | <AttributeHintText><br /><br /><AttributedString><br /><br /><KeyboardToolbar><br /><br /><LeftButton><br /><br /><RightButton> | Alloy 1.7.6<br /><br />Alloy 1.7.6<br /><br />Alloy 1.3.0<br /><br />Alloy 1.3.0<br /><br />Alloy 1.3.0 |
+| [Titanium.UI.Window](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window) / <Window> | [leftNavButton](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-property-leftNavButton)<br /><br />[rightNavButton](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-property-rightNavButton)<br /><br />[titleControl](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-property-titleControl)<br /><br />[toolbar](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-property-toolbar)[](#!/api/Titanium.UI.Window-property-) | <LeftNavButton><br /><br /><RightNavButton><br /><br /><TitleControl><br /><br /><WindowToolbar> | Alloy 1.6.0 |
 
 ### Android ActionBar
 

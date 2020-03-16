@@ -1,9 +1,8 @@
 {"title":"Updating the Current Version","weight":"20"}
 
-* [Updating the current version](#Updatingthecurrentversion)
+* [Updating the current version](#updating-the-current-version)
 
-* [Turn on automatic updates](#Turnonautomaticupdates)
-
+* [Turn on automatic updates](#turn-on-automatic-updates)
 
 ## Updating the current version
 
@@ -25,7 +24,6 @@ If there are none available, Studio will display a "No updates were found" messa
 
 6. Once the update is complete, you will be prompted to restart Studio for the changes to be applied.
 
-
 Note about upgrading to Studio 5.1.0: You cannot update to Studio 5.1.0.
 
 * With Appcelerator Studio 5.1.0 release, we have upgraded the Eclipse core from 4.4 to 4.7. This update brings a different directory structure to Studio for MacOS users.
@@ -34,16 +32,15 @@ Note about upgrading to Studio 5.1.0: You cannot update to Studio 5.1.0.
 
 * You are advised to use the existing workspace directory when launching Studio 5.1.0 to get your old studio projects
 
-
 ## Turn on automatic updates
 
 If you installed Studio as plugins into Eclipse, the automatic update option would be turned off by default. To turn it on:
 
 1. Open the **Preferences** window.
 
-  * Windows Users: Go to **Window** > **Preferences**
+    * Windows Users: Go to **Window** > **Preferences**
 
-  * Mac Users: Go to **Eclipse** > **Preferences**
+    * Mac Users: Go to **Eclipse** > **Preferences**
 
 2. Expand **Install/Update** and select **Automatic Updates**.
 

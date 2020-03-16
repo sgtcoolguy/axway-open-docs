@@ -1,33 +1,32 @@
 {"title":"Android UI Components and Conventions","weight":"100"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [Android Action Bar](#AndroidActionBar)
+    * [Android Action Bar](#android-action-bar)
 
-  * [Android menus](#Androidmenus)
+    * [Android menus](#android-menus)
 
-  * [Android back button](#Androidbackbutton)
+    * [Android back button](#android-back-button)
 
-  * [Android Labels](#AndroidLabels)
+    * [Android Labels](#android-labels)
 
-  * [Toast notifications](#Toastnotifications)
+    * [Toast notifications](#toast-notifications)
 
-  * [Status bar notifications](#Statusbarnotifications)
+    * [Status bar notifications](#status-bar-notifications)
 
-  * [Nine-patch images](#Nine-patchimages)
+    * [Nine-patch images](#nine-patch-images)
 
-* [Hands-on practice](#Hands-onpractice)
+* [Hands-on practice](#hands-on-practice)
 
-  * [Goal](#Goal)
+    * [Goal](#goal)
 
-  * [Steps](#Steps)
+    * [Steps](#steps)
 
-* [Summary](#Summary)
+* [Summary](#summary)
 
-* [References and further reading](#Referencesandfurtherreading)
-
+* [References and further reading](#references-and-further-reading)
 
 ## Objective
 
@@ -165,7 +164,6 @@ The linkification options include:
 
 * Ti.UI.AUTOLINK\_URLS (Ti.UI.Android.LINKIFY\_WEB\_URLS) – linkify just Web addresses
 
-
 The constants shown in parenthesis are the constants used prior to SDK 3.0. The constants listed first should be used in SDK 3.0 and later.
 
 ### Toast notifications
@@ -272,13 +270,13 @@ In this activity, you will manage the hardware Back button so that the first tim
 
 2. Delete the contents of app.js and create a new one to these specifications:
 
-  * It should contain a single, heavyweight window, which should have a red background. Set the exitOnClose:true property on that window.
+    * It should contain a single, heavyweight window, which should have a red background. Set the exitOnClose:true property on that window.
 
-  * The window should contain a label with the text "Tap the Android Back button to close the app". Set that label's font color to black so that it's visible.
+    * The window should contain a label with the text "Tap the Android Back button to close the app". Set that label's font color to black so that it's visible.
 
-  * The window should contain a view that fills 90% of the window. The view should have a white background.
+    * The window should contain a view that fills 90% of the window. The view should have a white background.
 
-  * The view should contain a label with the text "Tap the Android Back button to close this white view and show the underlying red window". Set that label's font color to black so that it's visible.
+    * The view should contain a label with the text "Tap the Android Back button to close this white view and show the underlying red window". Set that label's font color to black so that it's visible.
 
 3. Write a function that when called will hide the view and remove the androidback event listener from the window.
 
@@ -289,7 +287,6 @@ In this activity, you will manage the hardware Back button so that the first tim
 6. Build the app for the Android emulator or for a device.
 
 7. With the white view showing, tap the Back button. The view should close. Tap Back again and the app should close.
-
 
 ## Summary
 

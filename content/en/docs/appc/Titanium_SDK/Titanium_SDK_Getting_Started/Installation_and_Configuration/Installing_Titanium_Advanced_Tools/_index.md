@@ -2,16 +2,15 @@
 
 ## Contents
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-  * [Python (optional)](#Python(optional))
+    * [Python (optional)](#python-optional)
 
-  * [SCons (optional)](#SCons(optional))
+    * [SCons (optional)](#scons-optional)
 
-  * [Android Native Development Tools (NDK) (optional)](#AndroidNativeDevelopmentTools(NDK)(optional))
+    * [Android Native Development Tools (NDK) (optional)](#android-native-development-tools-ndk-optional)
 
-  * [Ant (optional)](#Ant(optional))
-
+    * [Ant (optional)](#ant-optional)
 
 ## Related Topics
 
@@ -33,7 +32,6 @@
 
 * [Installing Genymotion](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Genymotion/)
 
-
 ## Overview
 
 The following packages may be useful for advanced Titanium users, but are not necessary to develop with Titanium.
@@ -50,37 +48,11 @@ Titanium supports the following versions of Python for each respective Operating
 
 ![download_05](/Images/appc/download/attachments/29004836/download_05.png)
 
-Operating System
-
-Package Version
-
-Package Architecture Version
-
-Download Location
-
-OS X
-
-2.x.x (currently, 2.7.x)
-
-32bit and 64bit
-
-Installed on OS by default
-
-Windows
-
-2.x.x (currently, 2.7.x)
-
-32bit **only**
-
-[Official Python Website](http://www.python.org/download/)
-
-Ubuntu
-
-2.x.x (currently, 2.7.x)
-
-32bit and 64bit
-
-Default Repositories
+| Operating System | Package Version | Package Architecture Version | Download Location |
+| --- | --- | --- | --- |
+| OS X | 2.x.x (currently, 2.7.x) | 32bit and 64bit | Installed on OS by default |
+| Windows | 2.x.x (currently, 2.7.x) | 32bit **only** | [Official Python Website](http://www.python.org/download/) |
+| Ubuntu | 2.x.x (currently, 2.7.x) | 32bit and 64bit | Default Repositories |
 
 Download the installer from the applicable download location above.
 
@@ -98,29 +70,11 @@ Obtain the SCons version listed below for your Operating System:
 
 ![download_05](/Images/appc/download/attachments/29004836/download_05.png)
 
-Operating System
-
-Package Version
-
-Download Location
-
-OS X
-
-Latest Stable
-
-[Official Website](http://scons.org/pages/download.html)
-
-Windows
-
-Latest Stable
-
-[Official Website](http://scons.org/pages/download.html)
-
-Ubuntu
-
-Latest Stable
-
-Default Repositories
+| Operating System | Package Version | Download Location |
+| --- | --- | --- |
+| OS X | Latest Stable | [Official Website](http://scons.org/pages/download.html) |
+| Windows | Latest Stable | [Official Website](http://scons.org/pages/download.html) |
+| Ubuntu | Latest Stable | Default Repositories |
 
 See [Installing SCons](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_SCons/) for detailed instructions about how to install, including the program location and system environment variables that should be used.
 
@@ -154,28 +108,10 @@ Obtain the latest stable version of Apache Ant. Ant is supplied as a multi-platf
 
 ![download_05](/Images/appc/download/attachments/29004836/download_05.png)
 
-Operating System
-
-Package Version
-
-Download Location
-
-OS X
-
-Latest Stable
-
-[Official Website](http://ant.apache.org/bindownload.cgi)
-
-Windows
-
-Latest Stable
-
-[Official Website](http://ant.apache.org/bindownload.cgi)
-
-Ubuntu
-
-Latest Stable
-
-Default Repositories or [Official Website](http://ant.apache.org/bindownload.cgi)
+| Operating System | Package Version | Download Location |
+| --- | --- | --- |
+| OS X | Latest Stable | [Official Website](http://ant.apache.org/bindownload.cgi) |
+| Windows | Latest Stable | [Official Website](http://ant.apache.org/bindownload.cgi) |
+| Ubuntu | Latest Stable | Default Repositories or [Official Website](http://ant.apache.org/bindownload.cgi) |
 
 See [Installing Ant](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Ant/) for detailed instructions about how to install, including the program location and system environment variables that should be used.

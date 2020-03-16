@@ -1,37 +1,36 @@
 {"title":"iOS Background Services","weight":"60"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [URL session module](#URLsessionmodule)
+* [URL session module](#url-session-module)
 
-  * [Creating a URL session and background download task](#CreatingaURLsessionandbackgrounddownloadtask)
+    * [Creating a URL session and background download task](#creating-a-url-session-and-background-download-task)
 
-  * [Monitoring the download task and URL session](#MonitoringthedownloadtaskandURLsession)
+    * [Monitoring the download task and URL session](#monitoring-the-download-task-and-url-session)
 
-  * [Invalidating the URL session](#InvalidatingtheURLsession)
+    * [Invalidating the URL session](#invalidating-the-url-session)
 
-  * [Example](#Example)
+    * [Example](#example)
 
-* [Background fetch](#Backgroundfetch)
+* [Background fetch](#background-fetch)
 
-  * [Setting application permissions](#Settingapplicationpermissions)
+    * [Setting application permissions](#setting-application-permissions)
 
-  * [Monitoring the background fetch notification](#Monitoringthebackgroundfetchnotification)
+    * [Monitoring the background fetch notification](#monitoring-the-background-fetch-notification)
 
-  * [Example](#Example.1)
+    * [Example](#example)
 
-* [Silent push](#Silentpush)
+* [Silent push](#silent-push)
 
-  * [Setting application permissions](#Settingapplicationpermissions.1)
+    * [Setting application permissions](#setting-application-permissions)
 
-  * [Monitoring silent push notifications](#Monitoringsilentpushnotifications)
+    * [Monitoring silent push notifications](#monitoring-silent-push-notifications)
 
-  * [Subscribing to push notifications](#Subscribingtopushnotifications)
+    * [Subscribing to push notifications](#subscribing-to-push-notifications)
 
-  * [Sending a silent push notification](#Sendingasilentpushnotification)
+    * [Sending a silent push notification](#sending-a-silent-push-notification)
 
-  * [Example](#Example.2)
-
+    * [Example](#example)
 
 ## Introduction
 
@@ -42,7 +41,6 @@ In iOS 7, Apple introduced new background execution modes which allow the applic
 * **Background fetch event**: use to monitor signals from iOS to update the application while in the background.
 
 * **Silent push event**: use to monitor a push notification to tell the application there is content to download.
-
 
 With the Titanium platform, the background fetch and silent push events **cannot** be tested on the iOS simulator. These events can only be triggered on device.
 
@@ -56,7 +54,6 @@ The [URL session module (com.appcelerator.urlSession)](#!/api/Modules.URLSession
 
 3. Cancel downloads and invalidate sessions.
 
-
 Before using this module, you need to add it to your project. This module is part of the Titanium SDK since Release 3.2.0 and does not need to be downloaded to obtain it. To add this module to your project:
 
 **Using Studio**
@@ -68,7 +65,6 @@ Before using this module, you need to add it to your project. This module is par
 3. Locate and select **com.appcelerator.urlSession**.
 
 4. Click **OK**.
-
 
 **Using a text editor**
 
@@ -150,7 +146,6 @@ Once your download starts, you can monitor its progress with the following event
 
 * sessioneventscompleted: fired when all session messages are delivered.
 
-
 These events are monitored as application-level events by using the addEventListener method with the Ti.App.iOS namespace.
 
 `// Monitor this event to receive updates on the progress of the download`
@@ -194,7 +189,6 @@ Once you are done with the URL session or want to abort it, invalidate the sessi
 * finishTasksAndInvalidate: invalidates the session but allows the tasks to finish.
 
 * invalidateAndCancel: invalidates the session but cancels any running tasks.
-
 
 If you do not invalidate your URL session after it has completed, your application may leak memory.
 
@@ -362,7 +356,6 @@ You need to modify your application to:
 
 2. Set the fetch interval and monitor the backgroundfetch event to initiate the download
 
-
 ### Setting application permissions
 
 To use the background fetch functionality, modify your tiapp.xml file to add the UIBackgroundMode s fetch key in the plist section:
@@ -402,7 +395,6 @@ Use the [Ti.App.iOS.setMinimumBackgroundFetchInterval](#!/api/Titanium.App.iOS-m
 * Ti.App.iOS.BACKGROUNDFETCHINTERVAL\_MIN: smallest interval supported by the system.
 
 * Ti.App.iOS.BACKGROUNDFETCHINTERVAL\_NEVER: largest interval to prevent fetch operations.
-
 
 Use the iOS application-level backgroundfetch event to monitor when the application receives a notification from iOS that it can initiate a background download. This notification can be received while the application is in the background. Once this event is triggered, you can initiate a download, then call the Ti.App.iOS.endBackgroundHandler method to put the application back to sleep. Pass the backgroundfetch event's handlerId property to the endBackgroundHandler method.
 
@@ -590,7 +582,6 @@ After you have push notifications setup, you need to modify your application to:
 
 3. Subscribe the device to push notifications
 
-
 Once your application is prepared, you can test it by sending a push notification to it.
 
 ### Setting application permissions
@@ -716,7 +707,6 @@ The payload only requires the following two field but you may use others:
 * The content-available field indicates that there is new content to download.
 
 * The alert field still needs to be included but does not require a value. If this field is left blank as shown, a banner message is not displayed to the user.
-
 
 If the push notification contains custom fields, these are stored as properties to the object passed to the silentpush callback.
 

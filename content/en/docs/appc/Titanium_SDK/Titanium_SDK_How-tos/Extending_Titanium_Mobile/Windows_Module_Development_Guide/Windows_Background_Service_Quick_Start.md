@@ -1,27 +1,26 @@
 {"title":"Windows Background Service Quick Start","weight":"20"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Windows Module prerequisites](#WindowsModuleprerequisites)
+* [Windows Module prerequisites](#windows-module-prerequisites)
 
-* [Build and package the module](#Buildandpackagethemodule)
+* [Build and package the module](#build-and-package-the-module)
 
-* [Test the module](#Testthemodule)
+* [Test the module](#test-the-module)
 
-  * [Create a test application](#Createatestapplication)
+    * [Create a test application](#create-a-test-application)
 
-  * [Add the module as a dependency to the project](#Addthemoduleasadependencytotheproject)
+    * [Add the module as a dependency to the project](#add-the-module-as-a-dependency-to-the-project)
 
-  * [Load the module and make module API calls](#LoadthemoduleandmakemoduleAPIcalls)
+    * [Load the module and make module API calls](#load-the-module-and-make-module-api-calls)
 
-  * [Run the application](#Runtheapplication)
+    * [Run the application](#run-the-application)
 
-* [Modify the module](#Modifythemodule)
+* [Modify the module](#modify-the-module)
 
-  * [Implement background task](#Implementbackgroundtask)
+    * [Implement background task](#implement-background-task)
 
-* [Next steps](#Nextsteps)
-
+* [Next steps](#next-steps)
 
 ## Introduction
 
@@ -40,7 +39,6 @@ To develop an Windows-based Module, you'll need all of the software required to 
 * Supported versions of Visual Studio and the Windows Phone SDK, as described in [Installing the Windows Phone SDK](#undefined)
 
 * Studio or the Appcelerator Command-Line Interface (CLI) for creating modules, and building and running test applications
-
 
 Like Windows application development, Windows module development is only supported on Windows. Create a new module
 
@@ -67,7 +65,6 @@ In Studio:
 4. In **Deployment Targets**, select **Windows**.
 
 5. Click **Next**, then click **Finish**.
-
 
 Studio sets up a new folder called test that contains your module project.
 
@@ -97,7 +94,6 @@ In Studio:
 
 5. Click **Finish**.
 
-
 Studio builds and installs the module to the Titanium SDK home path.
 
 ## Test the module
@@ -124,14 +120,13 @@ In Studio:
 
 3. On the **Project Location** page, enter the following information:
 
-  * In the **Project Name** field, enter **Hello**.
+    * In the **Project Name** field, enter **Hello**.
 
-  * In the **App ID** field, enter **com.example.hello**.
+    * In the **App ID** field, enter **com.example.hello**.
 
-  * In **Deployment Targets**, select **Windows**.
+    * In **Deployment Targets**, select **Windows**.
 
 4. Click **Finish** to create the project.
-
 
 Studio sets up a new folder called Hello that contains the test application you will be using to test the module.
 
@@ -232,7 +227,6 @@ First, look at some of the default files created by the Titanium SDK. Expand the
 * src/ComExampleTest.cpp: This is a boilerplate Module class. Every module requires a module class, which acts as the base API for the module.
 
 * include/ComExampleTest.hpp: This is a header file for the boiler plate class.
-
 
 ### Implement background task
 

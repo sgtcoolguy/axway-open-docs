@@ -1,15 +1,14 @@
 {"title":"Viewing Custom Cloud Services","weight":"70"}
 
-* [API Builder API calls metric details screen](#APIBuilderAPIcallsmetricdetailsscreen)
+* [API Builder API calls metric details screen](#api-builder-api-calls-metric-details-screen)
 
-* [API Builder application details screen](#APIBuilderapplicationdetailsscreen)
+* [API Builder application details screen](#api-builder-application-details-screen)
 
-  * [Overview](#Overview)
+    * [Overview](#overview)
 
-  * [Logs](#Logs)
+    * [Logs](#logs)
 
-* [Viewing API Builder applications used by a client application](#ViewingAPIBuilderapplicationsusedbyaclientapplication)
-
+* [Viewing API Builder applications used by a client application](#viewing-api-builder-applications-used-by-a-client-application)
 
 If you created an API Builder application and associated it with your organization, or the client application makes requests to an API Builder application using the Titanium HTTP client, you can view information about the API Builder application in Dashboard. To associate an API Builder application with a client application built with Java or Objective-C, you need to add a x-native-id header to the HTTP request.
 
@@ -41,7 +40,6 @@ Click on the **Overview** button to view basic information about the application
 
 * Overall CPU and memory usage and also broken down by cloud containers
 
-
 If you are an organization administrator, you can also see a list of the connected client applications using the API Builder application. Click on the application name to open the application's Cloud Custom Services tab.
 
 ![NodeACSOverviewTab](/Images/appc/download/attachments/43298788/NodeACSOverviewTab.png)
@@ -61,6 +59,5 @@ From the Application Details screen, you can view the API Builder applications t
 2. Click the **Cloud** tab.
 
 3. Click the **Custom Services** sub-tab.
-
 
 Click on a Service Name to view more details about the API Builder application.

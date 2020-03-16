@@ -8,11 +8,11 @@ Dashboard 5.3.0 is a minor release, which includes new features, improvements, a
 
 * Added registration of non-mobile applications. In addition to the existing support for registering APS SDK applications, the following application types are now supported:
 
-  * Website/web applications
+    * Website/web applications
 
-  * API/Microservice (for applications not hosted on AMPLIFY Runtime Services)
+    * API/Microservice (for applications not hosted on AMPLIFY Runtime Services)
 
-  * Other (user may indicate application type and platform)
+    * Other (user may indicate application type and platform)
 
 * Added an option to allow users to add or remove services when registering applications.
 
@@ -21,7 +21,6 @@ Dashboard 5.3.0 is a minor release, which includes new features, improvements, a
 * Added Custom Queries functionality to allow creating and saving complex queries with filtering and grouping on analytics events' properties.
 
 * Added the ability for administrator users to delete multiple applications.
-
 
 ## Improvements
 
@@ -36,7 +35,6 @@ Dashboard 5.3.0 is a minor release, which includes new features, improvements, a
 * Added an indicator on the admin's Members view to show which organization members have two-factor authentication (2fa) enabled.
 
 * Added a banner to AMPLIFY Platform landing page and all projects view to display future scheduled maintenance messages.
-
 
 ## Fixed issues
 

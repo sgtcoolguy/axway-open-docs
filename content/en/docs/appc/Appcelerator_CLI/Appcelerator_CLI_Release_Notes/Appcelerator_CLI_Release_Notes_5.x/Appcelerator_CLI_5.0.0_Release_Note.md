@@ -2,31 +2,18 @@
 
 Appcelerator CLI 5.0.0 is a major release, introducing new features, improvements and bug fixes. This release of the Appcelerator CLI includes version 4.2.0 of the NPM package and version 5.0.0 of the Core package.
 
-As of this release, CLI 4.x will not be supported one calendar year from 5.0.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, CLI 4.x will not be supported one calendar year from 5.0.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Component Versions
 
 The following components are shipped with CLI 5.0.0:
 
-Name
-
-Version
-
-**[Alloy](https://github.com/appcelerator/alloy/releases)**
-
-**1.7.8 (update)**
-
-Arrow Builder
-
-1.2.48
-
-Arrow Cloud CLI
-
-1.0.26
-
-**[Titanium CLI](https://github.com/appcelerator/titanium/releases)**
-
-**5.0.3 (update)**
+| Name | Version |
+| --- | --- |
+| **[Alloy](https://github.com/appcelerator/alloy/releases)** | **1.7.8 (update)** |
+| Arrow Builder | 1.2.48 |
+| Arrow Cloud CLI | 1.0.26 |
+| **[Titanium CLI](https://github.com/appcelerator/titanium/releases)** | **5.0.3 (update)** |
 
 ## New Features
 
@@ -35,7 +22,6 @@ Arrow Cloud CLI
 * New appc info command to display development environment information
 
 * New appc switch org command to switch between organizations without logging in and out of the CLI
-
 
 ## Fixed Issues
 

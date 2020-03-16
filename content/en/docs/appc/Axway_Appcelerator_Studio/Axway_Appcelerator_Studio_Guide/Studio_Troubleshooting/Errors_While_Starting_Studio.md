@@ -1,17 +1,16 @@
 {"title":"Errors While Starting Studio","weight":"70"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Workspace in use or cannot be created, choose a different one](#Workspaceinuseorcannotbecreated,chooseadifferentone)
+* [Workspace in use or cannot be created, choose a different one](#workspace-in-use-or-cannot-be-created,-choose-a-different-one)
 
-* [An Error Has Occurred](#AnErrorHasOccurred)
+* [An Error Has Occurred](#an-error-has-occurred)
 
-  * [See the log file /Users/....](#Seethelogfile/Users/....)
+    * [See the log file /Users/....](#see-the-log-file-/users/....)
 
-* [Launching the Studio with -clean](#LaunchingtheStudiowith-clean)
+* [Launching the Studio with -clean](#launching-the-studio-with--clean)
 
-* [How to stop Studio from loading a problem file](#HowtostopStudiofromloadingaproblemfile)
-
+* [How to stop Studio from loading a problem file](#how-to-stop-studio-from-loading-a-problem-file)
 
 ## Overview
 
@@ -24,7 +23,6 @@ See [Switching your Workspace](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcel
 This can happen as a result of an improper shutdown of Studio. To resolve the issue, you need to delete a .lock file.
 
 1. Delete the file %WORKSPACE\_PATH%/.metadata/.lock, and restart Studio
-
 
 ## An Error Has Occurred
 
@@ -48,13 +46,11 @@ Steps to fix:
 
 2. Delete the file %WORKSPACE\_PATH%/.metadata/.plugins/org.eclipse.core.resources/.snap, and restart Studio
 
-
 This will start Studio, but your workspace will most likely be missing your projects. This is okay--you can quickly reimport them
 
 1. File > Import > Existing Projects....
 
 2. Select the workspace directory from above, and finish the wizard
-
 
 ## Launching the Studio with -clean
 
@@ -63,7 +59,6 @@ If Studio does not appear to work properly, you can try and launch it with a -cl
 1. Follow the instructions [here](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Adding_Command-Line_Options/) for adding a launcher argument.
 
 2. Add **\-clean** to the launch arguments for Studio or Eclipse.
-
 
 ## How to stop Studio from loading a problem file
 

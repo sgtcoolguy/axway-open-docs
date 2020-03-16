@@ -1,13 +1,12 @@
 {"title":"Debugging Overview","weight":"10"}
 
-* [Essential elements of debugging](#Essentialelementsofdebugging)
+* [Essential elements of debugging](#essential-elements-of-debugging)
 
-* [Debugging techniques](#Debuggingtechniques)
+* [Debugging techniques](#debugging-techniques)
 
-* [Debugging vs. software testing](#Debuggingvs.softwaretesting)
+* [Debugging vs. software testing](#debugging-vs.-software-testing)
 
-* [References](#References)
-
+* [References](#references)
 
 ## Objective
 
@@ -22,7 +21,6 @@ Debugging is a broad topic, and full coverage is beyond the scope of these guide
 * Techniques
 
 * Debugging vs. testing
-
 
 We'll cover the tools and specific procedures you'll follow in the subsequent sections.
 
@@ -42,7 +40,6 @@ You investigate problems in very similar ways whether you're debugging a compute
 
 * Track your work – Keep track of the bugs you've found and fixed (as well as those you haven't fixed). Whether you publish this information to your users or not, a database of issues will help you find and fix future bugs. Document the solution as well as key non-fixes (so perhaps you won't get lost on similar dead-ends in future similar situations).
 
-
 ### Debugging techniques
 
 Debugging and testing books would fill a large shelf at a bookstore. We'll focus on just a few techniques, which include:
@@ -52,7 +49,6 @@ Debugging and testing books would fill a large shelf at a bookstore. We'll focus
 * crash log evaluation
 
 * interactive debugging
-
 
 Print tracing involves adding Ti.API.info() type statements to your app so that you can watch the app as it executes. You can catch many common bugs using this technique. Such logging doesn't add significant overhead to an app's execution. Still, you should remove such statements from your production app. Incidentally, log output on the device is available to knowledgable users. Take special care to remove logging statements if you use them to output sensitive information, such as user credentials, during testing.
 
@@ -69,7 +65,6 @@ Debugging is a fundamentally different activity than testing. Testing comes befo
 * [Learn the essentials of debugging](http://www.ibm.com/developerworks/web/library/wa-debug/index.html) (IBM)
 
 * [Debugging principles](http://en.wikibooks.org/wiki/Computer_Programming_Principles/Maintaining/Debugging) (WikiBooks)
-
 
 ## Summary
 

@@ -18,7 +18,6 @@ The data model for each todo item consists of three fields:
 
 * **data\_completed** – The date that the item was marked as complete.
 
-
 The todo.js model configuration file defines columns for these fields, and also extends the model with a custom validate() function that validates input, and a comparator function that's used to filter
 
 app/models/todo.js

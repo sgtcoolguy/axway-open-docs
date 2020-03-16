@@ -10,7 +10,6 @@ You can install the latest node installer over the top of a previous version:
 
 2. Run the installer, following all prompts.
 
-
 ## Windows Install
 
 You can install the latest node installer over the top of a previous version:

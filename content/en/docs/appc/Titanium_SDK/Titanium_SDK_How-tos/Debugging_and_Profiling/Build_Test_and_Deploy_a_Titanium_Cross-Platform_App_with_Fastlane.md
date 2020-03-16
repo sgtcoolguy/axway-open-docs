@@ -1,23 +1,22 @@
 {"title":"Build Test and Deploy a Titanium Cross-Platform App with Fastlane","weight":"60"}
 
-* [Testing](#Testing)
+* [Testing](#testing)
 
-  * [Set up Appium Server](#SetupAppiumServer)
+    * [Set up Appium Server](#set-up-appium-server)
 
-  * [Install Mocha](#InstallMocha)
+    * [Install Mocha](#install-mocha)
 
-  * [Create Mocha Test File for Your App](#CreateMochaTestFileforYourApp)
+    * [Create Mocha Test File for Your App](#create-mocha-test-file-for-your-app)
 
-* [Automation](#Automation)
+* [Automation](#automation)
 
-  * [Install Fastlane](#InstallFastlane)
+    * [Install Fastlane](#install-fastlane)
 
-  * [Configure Fastlane](#ConfigureFastlane)
+    * [Configure Fastlane](#configure-fastlane)
 
-  * [Customize Your Fastfile](#CustomizeYourFastfile)
+    * [Customize Your Fastfile](#customize-your-fastfile)
 
-  * [Execute Fastlane](#ExecuteFastlane)
-
+    * [Execute Fastlane](#execute-fastlane)
 
 Developing a mobile app is just the beginning. What follows – signing, packaging, managing app meta data, testing, and deploying to the App Stores, can arguably be just as tedious and challenging.This document will demonstrate one way to configure your environment to manage several build, test, and deployment tasks when developing apps with Titanium using Appium and Fastlane.We'll use [Appium (Local Server)](http://appium.io/) and [mocha](https://www.npmjs.com/package/mocha) (npm package) for testing and [fastlane](https://fastlane.tools/) for automation.
 
@@ -32,12 +31,11 @@ Developing a mobile app is just the beginning. What follows – signing, packagi
 2. Validate all required Appium dependencies.
 
 3. Install and run Appium Doctor. This wizard will validate and advise of any additional steps or dependencies that may be needed for your environment. More info can be found [here](https://appium.io/docs/en/about-appium/getting-started/?lang=en).
-  npm install -g appium-doctorappium-doctor
+    npm install -g appium-doctorappium-doctor
 
-  1. Follow any steps to install any packages that your environment may be missing.
+    1. Follow any steps to install any packages that your environment may be missing.
 
 4. Launch the Appium (Server) app and start the “Simple” Server using the defaults.
-
 
 ### Install Mocha
 
@@ -52,7 +50,6 @@ Since most developers manage multiple mobile applications, you should chose to m
 * anotherapp\_test.js
 
 * ...
-
 
 Depending on your preference, install mocha either globally or locally in your tests directory (‘Appium\_Tests’ in this example):
 
@@ -71,7 +68,6 @@ Next, copy the following block of code into your file:
 * Simulator can be customized to match your needs, but the same choice will need to be used when we build from fastlane (set up later in this document).
 
 * Update the path to your built app. **Note**: In this document, we are pointing to the app built for the simulator. You can also test against physical devices, but we aren’t covering that here.
-
 
 `"use strict"``;`
 
@@ -247,7 +243,6 @@ The second lane, test has 2 actions:
 1. Build the app to simulator,
 
 2. test the app.
-
 
 In this example, it uses different Appcelerator CLI commands so that the app is built to a specific simulator and \--build-only prevents it from launching (mocha will launch the simulator and attach to the correct session on its own). Then, the next step executes the mocha test file.
 

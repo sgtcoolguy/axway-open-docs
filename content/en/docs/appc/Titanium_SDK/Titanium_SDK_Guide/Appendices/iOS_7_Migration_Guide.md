@@ -1,57 +1,56 @@
 {"title":"iOS 7 Migration Guide","weight":"40"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-  * [Summary of changes to the Titanium SDK](#SummaryofchangestotheTitaniumSDK)
+    * [Summary of changes to the Titanium SDK](#summary-of-changes-to-the-titanium-sdk)
 
-  * [Apple's To-Do list to support iOS 7](#Apple'sTo-DolisttosupportiOS7)
+    * [Apple's To-Do list to support iOS 7](#apple's-to-do-list-to-support-ios-7)
 
-  * [iOS 7 behavior changes](#iOS7behaviorchanges)
+    * [iOS 7 behavior changes](#ios-7-behavior-changes)
 
-    * [ButtonBar and TabbedBar](#ButtonBarandTabbedBar)
+        * [ButtonBar and TabbedBar](#buttonbar-and-tabbedbar)
 
-    * [Navigation transitions](#Navigationtransitions)
+        * [Navigation transitions](#navigation-transitions)
 
-  * [iOS 7 known issues](#iOS7knownissues)
+    * [iOS 7 known issues](#ios-7-known-issues)
 
-* [iOS 7 icons](#iOS7icons)
+* [iOS 7 icons](#ios-7-icons)
 
-* [New windows architecture](#Newwindowsarchitecture)
+* [New windows architecture](#new-windows-architecture)
 
-  * [Lightweight windows](#Lightweightwindows)
+    * [Lightweight windows](#lightweight-windows)
 
-  * [Status bar](#Statusbar)
+    * [Status bar](#status-bar)
 
-  * [Toolbar](#Toolbar)
+    * [Toolbar](#toolbar)
 
-  * [Orientation modes](#Orientationmodes)
+    * [Orientation modes](#orientation-modes)
 
-  * [Modal windows](#Modalwindows)
+    * [Modal windows](#modal-windows)
 
-  * [Other window properties](#Otherwindowproperties)
+    * [Other window properties](#other-window-properties)
 
-* [New APIs](#NewAPIs)
+* [New APIs](#new-apis)
 
-  * [Titanium.UI.iOS.NavigationWindow](#Titanium.UI.iOS.NavigationWindow)
+    * [Titanium.UI.iOS.NavigationWindow](#titanium.ui.ios.navigationwindow)
 
-  * [Extended view region](#Extendedviewregion)
+    * [Extended view region](#extended-view-region)
 
-  * [Tint color](#Tintcolor)
+    * [Tint color](#tint-color)
 
-  * [Request permission to record audio](#Requestpermissiontorecordaudio)
+    * [Request permission to record audio](#request-permission-to-record-audio)
 
-  * [Animated transitions](#Animatedtransitions)
+    * [Animated transitions](#animated-transitions)
 
-  * [Predefined text styles](#Predefinedtextstyles)
+    * [Predefined text styles](#predefined-text-styles)
 
-  * [Attributed strings](#Attributedstrings)
+    * [Attributed strings](#attributed-strings)
 
-  * [Background services](#Backgroundservices)
+    * [Background services](#background-services)
 
-  * [Dynamic animations](#Dynamicanimations)
+    * [Dynamic animations](#dynamic-animations)
 
-* [Deprecated and removed APIs](#DeprecatedandremovedAPIs)
-
+* [Deprecated and removed APIs](#deprecated-and-removed-apis)
 
 ## Overview
 
@@ -69,48 +68,47 @@ This section briefly lists the changes made to the Titanium SDK to support iOS 7
 
 * New Windows UI architecture:
 
-  * On iOS 7, all lightweight windows, including the root window, are full screen and extend underneath the default transparent status bar. Current applications may need to adjust the layout of windows if they rely on the top property.
+    * On iOS 7, all lightweight windows, including the root window, are full screen and extend underneath the default transparent status bar. Current applications may need to adjust the layout of windows if they rely on the top property.
 
-  * On iOS 7, the status bar and navigation bar are translucent by default. On iOS 6 and prior, they are not translucent.
+    * On iOS 7, the status bar and navigation bar are translucent by default. On iOS 6 and prior, they are not translucent.
 
-  * The status bar is controlled by the currently displayed window and can no longer be dynamically shown or hidden in iOS 7.
+    * The status bar is controlled by the currently displayed window and can no longer be dynamically shown or hidden in iOS 7.
 
-  * On iOS 6 and prior, setting the statusBarStyle property to new Titanium.UI.iOS.StatusBar.LIGHT\_CONTENT constant behaves the same as setting it to Titanium.UI.iOS.StatusBar.TRANSLUCENT\_BLACK.
+    * On iOS 6 and prior, setting the statusBarStyle property to new Titanium.UI.iOS.StatusBar.LIGHT\_CONTENT constant behaves the same as setting it to Titanium.UI.iOS.StatusBar.TRANSLUCENT\_BLACK.
 
-  * On iOS 7 and later, setting the statusBarStyle property to either Titanium.UI.IOS.StatusBar.TRANSLUCENT\_BLACK or Titanium.UI.iOS.StatusBar.OPAQUE\_BLACK behaves the same as setting it to the new Titanium.UI.iOS.StatusBar.LIGHT\_CONTENT constant.
+    * On iOS 7 and later, setting the statusBarStyle property to either Titanium.UI.IOS.StatusBar.TRANSLUCENT\_BLACK or Titanium.UI.iOS.StatusBar.OPAQUE\_BLACK behaves the same as setting it to the new Titanium.UI.iOS.StatusBar.LIGHT\_CONTENT constant.
 
-  * The Window's translucent and barColor property no longer affects the appearance of the toolbar. Pass these parameters in with the Window's setToolbar method as an optional dictionary parameter.
+    * The Window's translucent and barColor property no longer affects the appearance of the toolbar. Pass these parameters in with the Window's setToolbar method as an optional dictionary parameter.
 
-  * Orientation modes can only be set before opening a window and force orientation modes are no longer animated.
+    * Orientation modes can only be set before opening a window and force orientation modes are no longer animated.
 
-  * Modal windows do not have a navigation bar by default and only support their own orientation modes.
+    * Modal windows do not have a navigation bar by default and only support their own orientation modes.
 
-  * Non-modal windows cannot be opened on top of modal windows. Any non-modal opens behind an already opened modal and animations are ignored.
+    * Non-modal windows cannot be opened on top of modal windows. Any non-modal opens behind an already opened modal and animations are ignored.
 
 * New API to support iOS 7:
 
-  * New [iOS NavigationWindow](#!/api/Titanium.UI.iOS.NavigationWindow) object to support a navigation controller. The iPhone NavigationGroup is deprecated and removed in Release 3.2.0.
+    * New [iOS NavigationWindow](#!/api/Titanium.UI.iOS.NavigationWindow) object to support a navigation controller. The iPhone NavigationGroup is deprecated and removed in Release 3.2.0.
 
-  * New API elements to support extending view edges.
+    * New API elements to support extending view edges.
 
-  * New API elements to support tint color.
+    * New API elements to support tint color.
 
-  * New API element to support audio recording.
+    * New API element to support audio recording.
 
-  * New API elements to support iOS 7 animated transitions (since Release 3.2.0).
+    * New API elements to support iOS 7 animated transitions (since Release 3.2.0).
 
-  * New API elements to support default text styles (since Release 3.2.0).
+    * New API elements to support default text styles (since Release 3.2.0).
 
-  * New API elements to support iOS 7 attributed strings (since Release 3.2.0). See [Attributed Strings](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Attributed_Strings/).
+    * New API elements to support iOS 7 attributed strings (since Release 3.2.0). See [Attributed Strings](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Attributed_Strings/).
 
-  * New API elements to support downloading content in the background (since Release 3.2.0). See [iOS Background Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/iOS_Background_Services/).
+    * New API elements to support downloading content in the background (since Release 3.2.0). See [iOS Background Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/iOS_Background_Services/).
 
-  * New API elements to support dynamic animations (since Release 3.2.0). See the [Titanium.UI.iOS.Animator API reference](#!/api/Titanium.UI.iOS.Animator).
+    * New API elements to support dynamic animations (since Release 3.2.0). See the [Titanium.UI.iOS.Animator API reference](#!/api/Titanium.UI.iOS.Animator).
 
 * API elements not supported on iOS 7:
 
-  * Controlling the status bar on the fly. Since Release 3.2.0, you can use the Window's statusBarStyle property to dynamically change the style of the status bar. You cannot dynamically control whether to show or hide it.
-
+    * Controlling the status bar on the fly. Since Release 3.2.0, you can use the Window's statusBarStyle property to dynamically change the style of the status bar. You cannot dynamically control whether to show or hide it.
 
 ### Apple's To-Do list to support iOS 7
 
@@ -123,7 +121,6 @@ The following information is taken from the [iOS 7 UI Migration Guide: Scoping t
 * Update the launch image to include the status bar area if it doesn’t already do so. This is a difference of 20 pixels in height, that is, the image is stretched 20 more pixels if you do nothing.
 
 * Support Retina display and iPhone 5 in all your artwork and designs, if you’re not already doing so.
-
 
 **Things Every App Should Do**
 
@@ -138,7 +135,6 @@ The following information is taken from the [iOS 7 UI Migration Guide: Scoping t
 * Expect users to swipe up from the bottom of the screen to reveal Control Center. If iOS determines that a touch that begins at the bottom of the screen should reveal Control Center, it doesn’t deliver the gesture to the currently running app. If iOS determines that the touch should not reveal Control Center, the touch may be slightly delayed before it reaches the app.
 
 * Revisit the use of drop shadows, gradients, and bezels. Because the iOS 7 aesthetic is smooth and layered—with much less emphasis on using visual effects to make UI elements look physical—you may want to rethink these effects.
-
 
 ### iOS 7 behavior changes
 
@@ -162,82 +158,17 @@ Due to known bugs with iOS 7, the following issues cannot be resolved in the Tit
 
 * Setting any of the image properties for a Slider causes unpredictable behavior. Try to use a default slider if possible.
 
-
 ## iOS 7 icons
 
 For iOS 7, you need to supply the following icon files (if you are using the default appicon.png name) for a universal iOS application.
 
-iOS Device
-
-Purpose
-
-Dimensions
-
-DPI
-
-File name
-
-Titanium folder location
-
-iPhone/iPod retina
-
-App icon
-
-120 x 120
-
-72
-
-appicon-60@2x.png
-
-Resources or Resources/iphone
-
-iPad non-retina
-
-App icon
-
-76 x 76
-
-72
-
-appicon-76.png
-
-Resources or Resources/iphone
-
-iPad retina
-
-App icon
-
-152 x 152
-
-72
-
-appicon-76@2x.png
-
-Resources or Resources/iphone
-
-Universal non-retina
-
-Spotlight & settings
-
-40 x 40
-
-72
-
-appicon-Small-40.png
-
-Resources or Resources/iphone
-
-Universal retina
-
-Spotlight & settings
-
-80 x 80
-
-72
-
-appicon-Small-40@2x.png
-
-Resources or Resources/iphone
+| iOS Device | Purpose | Dimensions | DPI | File name | Titanium folder location |
+| --- | --- | --- | --- | --- | --- |
+| iPhone/iPod retina | App icon | 120 x 120 | 72 | appicon-60@2x.png | Resources or Resources/iphone |
+| iPad non-retina | App icon | 76 x 76 | 72 | appicon-76.png | Resources or Resources/iphone |
+| iPad retina | App icon | 152 x 152 | 72 | appicon-76@2x.png | Resources or Resources/iphone |
+| Universal non-retina | Spotlight & settings | 40 x 40 | 72 | appicon-Small-40.png | Resources or Resources/iphone |
+| Universal retina | Spotlight & settings | 80 x 80 | 72 | appicon-Small-40@2x.png | Resources or Resources/iphone |
 
 iOS 7 does not support non-retina iPhones and iPods.
 
@@ -431,130 +362,31 @@ The following properties are defined on a per window basis:
 
 * navBarHidden – Defaults to false. No longer supported as a valid parameter to the open method since the modal window no longer has a default navigation bar.
 
-
 ## New APIs
 
 The following new API elements are introduced with Release 3.1.3 to support iOS 7 (unless otherwise noted). For more details, see the sections below.
 
-API element
-
-type
-
-notes
-
-[Font.textStyle](#!/api/Font-property-textStyle)
-
-property
-
-**Introduced in Release 3.2.0.** Use a predefined font text style.
-
-[Module.URLSession](#!/api/Modules.URLSession)
-
-module
-
-**Introduced in Release 3.2.0.** Wrapper for the NSURLSession class that allows the application to download large content in the background.
-
-[Titanium.App.iOS.backgroundfetch](#!/api/Titanium.App.iOS-event-backgroundfetch)
-
-event
-
-**Introduced in Release 3.2.0.** Fired when iOS signaled the application that it can download updates in the background.
-
-[Titanium.App.iOS.silentpush](#!/api/Titanium.App.iOS-event-silentpush)
-
-event
-
-**Introduced in Release 3.2.0.** Fired when a push notification was received indicating there is content to download.
-
-[Titanium.Media.requestAuthorization](#!/api/Titanium.Media-method-requestAuthorization)
-
-method
-
-Request permission to record audio.
-
-[Titanium.UI.iOS.Animator](#!/api/Titanium.UI.iOS.Animator)
-
-object
-
-**Introduced in Release 3.2.0.** Creates an animator object to support dynamic animations.
-
-[Titanium.UI.iOS.AttributedString](#!/api/Titanium.UI.iOS.AttributedString)
-
-object
-
-**Introduced in Release 3.2.0.** Creates an attributed string object. **Supported on iOS 6 and later.**
-
-[Titanium.UI.iOS.createTransitionAnimation](#!/api/Titanium.UI.iOS-method-createTransitionAnimation)
-
-method
-
-**Introduced in Release 3.2.0.** Creates an animated transition when opening or closing a window.
-
-[Titanium.UI.iOS.NavigationWindow](#!/api/Titanium.UI.iOS.NavigationWindow)
-
-object
-
-Creates a navigation window. Deprecates Titanium.UI.iOS.NavigationGroup.
-
-[Titanium.UI.Tab.activeIconIsMask](#!/api/Titanium.UI.Tab-property-activeIconIsMask)
-
-property
-
-Defines if the active icon property of the tab must be used as a mask.
-
-[Titanium.UI.Tab.iconIsmask](#!/api/Titanium.UI.Tab-property-iconIsmask)
-
-property
-
-Defines if the icon property of the tab must be used as a mask.
-
-[Titanium.UI.TabGroup.tabsTintColor](#!/api/Titanium.UI.TabGroup-property-tabsTintColor)
-
-property
-
-Sets the tint color of the tabs.
-
-[Titanium.UI.View.tintColor](#!/api/Titanium.UI.View-property-tintColor)
-
-property
-
-Sets the key color for all child objects if that property is not defined, for example, text color or default icons.
-
-[Titanium.UI.Window.autoAdjustScrollViewInsets](#!/api/Titanium.UI.Window-property-autoAdjustScrollViewInsets)
-
-property
-
-Specifies whether or not the view controller should automatically adjust its scroll view insets.
-
-[Titanium.UI.Window.extendEdges](#!/api/Titanium.UI.Window-property-extendEdges)
-
-property
-
-Specifies how far the view should be extended specified as an array of constants.
-
-[Titanium.UI.Window.includeOpaqueBars](#!/api/Titanium.UI.Window-property-includeOpaqueBars)
-
-property
-
-Specifies if the edges should extend beyond opaque bars (e.g., navigation bar, tab bar, and toolbar).
-
-[Titanium.UI.Window.navTintColor](#!/api/Titanium.UI.Window-property-navTintColor)
-
-property
-
-Sets the tint color of the navigation bar.
-
-[Titanium.UI.Window.statusBarStyle](#!/api/Titanium.UI.Window-property-statusBarStyle)
-
-property
-
-Sets the style of the status bar. Use one of the constants from Titanium.UI.iOS.StatusBar. **Supported on iOS 6 and later.**
-
-[Titanium.UI.Window.transitionAnimation](#!/api/Titanium.UI.Window-property-transitionAnimation)
-
-property
-
-**Introduced in Release 3.2.0.** Use a transition animation when opening or closing windows.
+| API element | type | notes |
+| --- | --- | --- |
+| [Font.textStyle](#!/api/Font-property-textStyle) | property | **Introduced in Release 3.2.0.** Use a predefined font text style. |
+| [Module.URLSession](#!/api/Modules.URLSession) | module | **Introduced in Release 3.2.0.** Wrapper for the NSURLSession class that allows the application to download large content in the background. |
+| [Titanium.App.iOS.backgroundfetch](#!/api/Titanium.App.iOS-event-backgroundfetch) | event | **Introduced in Release 3.2.0.** Fired when iOS signaled the application that it can download updates in the background. |
+| [Titanium.App.iOS.silentpush](#!/api/Titanium.App.iOS-event-silentpush) | event | **Introduced in Release 3.2.0.** Fired when a push notification was received indicating there is content to download. |
+| [Titanium.Media.requestAuthorization](#!/api/Titanium.Media-method-requestAuthorization) | method | Request permission to record audio. |
+| [Titanium.UI.iOS.Animator](#!/api/Titanium.UI.iOS.Animator) | object | **Introduced in Release 3.2.0.** Creates an animator object to support dynamic animations. |
+| [Titanium.UI.iOS.AttributedString](#!/api/Titanium.UI.iOS.AttributedString) | object | **Introduced in Release 3.2.0.** Creates an attributed string object. **Supported on iOS 6 and later.** |
+| [Titanium.UI.iOS.createTransitionAnimation](#!/api/Titanium.UI.iOS-method-createTransitionAnimation) | method | **Introduced in Release 3.2.0.** Creates an animated transition when opening or closing a window. |
+| [Titanium.UI.iOS.NavigationWindow](#!/api/Titanium.UI.iOS.NavigationWindow) | object | Creates a navigation window. Deprecates Titanium.UI.iOS.NavigationGroup. |
+| [Titanium.UI.Tab.activeIconIsMask](#!/api/Titanium.UI.Tab-property-activeIconIsMask) | property | Defines if the active icon property of the tab must be used as a mask. |
+| [Titanium.UI.Tab.iconIsmask](#!/api/Titanium.UI.Tab-property-iconIsmask) | property | Defines if the icon property of the tab must be used as a mask. |
+| [Titanium.UI.TabGroup.tabsTintColor](#!/api/Titanium.UI.TabGroup-property-tabsTintColor) | property | Sets the tint color of the tabs. |
+| [Titanium.UI.View.tintColor](#!/api/Titanium.UI.View-property-tintColor) | property | Sets the key color for all child objects if that property is not defined, for example, text color or default icons. |
+| [Titanium.UI.Window.autoAdjustScrollViewInsets](#!/api/Titanium.UI.Window-property-autoAdjustScrollViewInsets) | property | Specifies whether or not the view controller should automatically adjust its scroll view insets. |
+| [Titanium.UI.Window.extendEdges](#!/api/Titanium.UI.Window-property-extendEdges) | property | Specifies how far the view should be extended specified as an array of constants. |
+| [Titanium.UI.Window.includeOpaqueBars](#!/api/Titanium.UI.Window-property-includeOpaqueBars) | property | Specifies if the edges should extend beyond opaque bars (e.g., navigation bar, tab bar, and toolbar). |
+| [Titanium.UI.Window.navTintColor](#!/api/Titanium.UI.Window-property-navTintColor) | property | Sets the tint color of the navigation bar. |
+| [Titanium.UI.Window.statusBarStyle](#!/api/Titanium.UI.Window-property-statusBarStyle) | property | Sets the style of the status bar. Use one of the constants from Titanium.UI.iOS.StatusBar. **Supported on iOS 6 and later.** |
+| [Titanium.UI.Window.transitionAnimation](#!/api/Titanium.UI.Window-property-transitionAnimation) | property | **Introduced in Release 3.2.0.** Use a transition animation when opening or closing windows. |
 
 ### Titanium.UI.iOS.NavigationWindow
 
@@ -563,7 +395,6 @@ The iOS NavigationWindow object deprecates the iPhone NavigationGroup object. Th
 * NavigationWindow is a top-level container and does not need to be added to a window.
 
 * Use the openWindow and closeWindow methods to add and remove windows instead of open and close.
-
 
 The NavigationWindow object is a top-level window manager as opposed to a view controller that needed to be placed inside a window as it was with the iPhone NavigationGroup.
 
@@ -643,7 +474,6 @@ In Release 3.1.3, the Titanium SDK exposes three new iOS 7 properties to extend 
 
 * autoAdjustScrollViewInsets **\-** Set to true to have the contents of a scrollable view's inset be automatically adjusted. Off by default.
 
-
 The example below creates a tab group with three different tabs. The first tab uses the default behavior, which shows the entire image in between the opaque navigation bar and opaque tab controller. The second tab extends the background image behind a translucent navigation bar and translucent tab controller. The third tab extends the background image behind an opaque navigation bar and translucent tab controller.
 
 ![TabEdges](/Images/appc/download/attachments/37533766/TabEdges.png)
@@ -709,7 +539,6 @@ In Release 3.1.3, the Titanium SDK exposes the iOS 7 tint color feature as three
 * Titanium.UI.TabGroup.tabsTintColor - sets the key color for the active tab in the tab group.
 
 * Titanium.UI.Window.navTintColor - sets the key color for the window's navigation bar. If undefined and tintColor is defined for the Window or NavigationWindow, the tintColor is used.
-
 
 The tint color feature sets the key color of UI elements, such as the button title, label text and template image. If you set the tint color for a parent object and none of its children, the children inherit the tint color from the parent.
 
@@ -977,50 +806,12 @@ See the [Titanium.UI.iOS.Animator API reference](#!/api/Titanium.UI.iOS.Animator
 
 The following API elements are obsolete or do not work on iOS 7. These elements are deprecated in Release 3.1.3 and removed in Release 3.2.0 except the setter methods.
 
-API element
-
-type
-
-notes
-
-Titanium.UI.iPhone.createNavigationGroup
-
-method
-
-Use Titanium.UI.iOS.createNavigationWindow to create the new NavigationWindow object.
-
-Titanium.UI.iPhone.NavigationGroup
-
-object
-
-Use the new Titanium.UI.iOS.NavigationWindow view object.
-
-Titanium.UI.iPhone.setStatusBarStyle
-
-setter method
-
-Does not work on iOS 7. Use the Window's statusBarStyle property.
-
-Titanium.UI.iPhone.setStatusBarHidden
-
-setter method
-
-Does not work on iOS 7. Set the Window's fullscreen property to true before opening it.
-
-Titanium.UI.iPhone.showStatusBar
-
-method
-
-Does not work on iOS 7. Shown by default or set the Window's fullscreen property to false before opening it.
-
-Titanium.UI.iPhone.hideStatusBar
-
-method
-
-Does not work on iOS 7. Set the Window's fullscreen property to true before opening it.
-
-Titanium.UI.setOrientationModes
-
-setter method
-
-Does not work on iOS. Set the Window's orientationModes property before opening it.
+| API element | type | notes |
+| --- | --- | --- |
+| Titanium.UI.iPhone.createNavigationGroup | method | Use Titanium.UI.iOS.createNavigationWindow to create the new NavigationWindow object. |
+| Titanium.UI.iPhone.NavigationGroup | object | Use the new Titanium.UI.iOS.NavigationWindow view object. |
+| Titanium.UI.iPhone.setStatusBarStyle | setter method | Does not work on iOS 7. Use the Window's statusBarStyle property. |
+| Titanium.UI.iPhone.setStatusBarHidden | setter method | Does not work on iOS 7. Set the Window's fullscreen property to true before opening it. |
+| Titanium.UI.iPhone.showStatusBar | method | Does not work on iOS 7. Shown by default or set the Window's fullscreen property to false before opening it. |
+| Titanium.UI.iPhone.hideStatusBar | method | Does not work on iOS 7. Set the Window's fullscreen property to true before opening it. |
+| Titanium.UI.setOrientationModes | setter method | Does not work on iOS. Set the Window's orientationModes property before opening it. |

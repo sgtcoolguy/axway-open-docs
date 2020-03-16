@@ -2,16 +2,15 @@
 
 We recommend the following as best practices when working with databases in Titanium:
 
-* [Open and close the database and resultset with each operation](#Openandclosethedatabaseandresultsetwitheachoperation)
+* [Open and close the database and resultset with each operation](#open-and-close-the-database-and-resultset-with-each-operation)
 
-* [Use transactions to speed batch inserts](#Usetransactionstospeedbatchinserts)
+* [Use transactions to speed batch inserts](#use-transactions-to-speed-batch-inserts)
 
-* [Use a minimal pre-populated database](#Useaminimalpre-populateddatabase)
+* [Use a minimal pre-populated database](#use-a-minimal-pre-populated-database)
 
-* [Store a version number to ease database updates](#Storeaversionnumbertoeasedatabaseupdates)
+* [Store a version number to ease database updates](#store-a-version-number-to-ease-database-updates)
 
-* [References and further information](#Referencesandfurtherinformation)
-
+* [References and further information](#references-and-further-information)
 
 ## Open and close the database and resultset with each operation
 

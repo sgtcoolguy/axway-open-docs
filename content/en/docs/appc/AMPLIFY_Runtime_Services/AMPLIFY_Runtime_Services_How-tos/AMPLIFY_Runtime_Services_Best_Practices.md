@@ -14,7 +14,6 @@ The distance between a server and client can increase the network latency of you
 
 * **Use a CDN to store static content**. In general, your application should not be used to serve lots of static assets. Developers are encouraged to move all of their application's static content to a CDN and have the client load those assets from there.
 
-
 ## Improving application performance and memory usage
 
 **Minimize output logs.** To improve application performance and reduce memory consumption, minimize the number of console logs your application produces.

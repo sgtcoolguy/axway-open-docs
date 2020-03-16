@@ -6,10 +6,9 @@ When you are using Studio, you need to ensure you are using the Studio Perspecti
 
 * From the menu bar, select **Window** > **Open** **Perspective**.
 
-  * If the perspective you want is visible, select it.
+    * If the perspective you want is visible, select it.
 
-  * If not, select **Other...** to display a dialog that shows all available perspectives. Select the one you want, then click **OK**.
-
+    * If not, select **Other...** to display a dialog that shows all available perspectives. Select the one you want, then click **OK**.
 
 You can also open the perspective dialog by clicking the **Open Perspective** button ![IconPerspective](/Images/appc/download/attachments/30083016/IconPerspective.png) in the top-right corner of Studio. To the right of the **Open Perspective** button are the perspectives you use frequently. Click these buttons to change the perspective.
 

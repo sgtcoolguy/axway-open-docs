@@ -1,27 +1,26 @@
 {"title":"Titanium SDK 7.4.0.GA - 17 September 2018","weight":"110"}
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [New features](#Newfeatures)
+* [New features](#new-features)
 
-  * [iOS platform](#iOSplatform)
+    * [iOS platform](#ios-platform)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-* [Improvements](#Improvements)
+* [Improvements](#improvements)
 
-* [Known issues](#Knownissues)
+* [Known issues](#known-issues)
 
-* [API changes](#APIchanges)
+* [API changes](#api-changes)
 
-  * [New APIs](#NewAPIs)
-
+    * [New APIs](#new-apis)
 
 ## About this release
 
 Titanium SDK 7.4.0.GA is a minor release of the SDK that focuses on supporting iOS 12 and Xcode 10 updates.
 
-As of this release, Titanium SDK 7.3.x will not be supported six months (2019-03-17) from 7.4.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Titanium SDK 7.3.x will not be supported six months (2019-03-17) from 7.4.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## New features
 
@@ -29,134 +28,133 @@ As of this release, Titanium SDK 7.3.x will not be supported six months (2019-03
 
 * [TIMOB-25708](https://jira.appcelerator.org/browse/TIMOB-25708) - iOS: Support iOS 12 and Xcode 10
 
-  * Implemented support Xcode 10 and iOS 12
+    * Implemented support Xcode 10 and iOS 12
 
 * [TIMOB-26312](https://jira.appcelerator.org/browse/TIMOB-26312) - iOS 12 : Expose new NSUserActivity APIs for Siri Intents
 
-  * Added support NSUserActivity API
+    * Added support NSUserActivity API
 
-  * Sample app
+    * Sample app
 
-    `var` `win = Ti.UI.createWindow({`
+        `var` `win = Ti.UI.createWindow({`
 
-    `backgroundColor:` `'#fff'`
+        `backgroundColor:` `'#fff'`
 
-    `});`
+        `});`
 
-    `var` `identifierBtn = Ti.UI.createButton({`
+        `var` `identifierBtn = Ti.UI.createButton({`
 
-    `top: 100,`
+        `top: 100,`
 
-    `title:` `'Persistent Identifier'`
+        `title:` `'Persistent Identifier'`
 
-    `});`
+        `});`
 
-    `var` `btn = Ti.UI.createButton({`
+        `var` `btn = Ti.UI.createButton({`
 
-    `top: 200,`
+        `top: 200,`
 
-    `title:` `'Delete UserActivity for identifier'`
+        `title:` `'Delete UserActivity for identifier'`
 
-    `});`
+        `});`
 
-    `var` `deleteBtn = Ti.UI.createButton({`
+        `var` `deleteBtn = Ti.UI.createButton({`
 
-    `top: 300,`
+        `top: 300,`
 
-    `title:` `'Delete All UserActivity'`
+        `title:` `'Delete All UserActivity'`
 
-    `});`
+        `});`
 
-    `var` `itemAttr = Ti.App.iOS.createSearchableItemAttributeSet({`
+        `var` `itemAttr = Ti.App.iOS.createSearchableItemAttributeSet({`
 
-    `itemContentType: Ti.App.iOS.UTTYPE_IMAGE,`
+        `itemContentType: Ti.App.iOS.UTTYPE_IMAGE,`
 
-    `title:` `'Titanium Siri Shortcut Tutorial'``,`
+        `title:` `'Titanium Siri Shortcut Tutorial'``,`
 
-    `contentDescription:` `'Tech Example \nOn: '` `+ (``new` `Date().toLocaleString()),`
+        `contentDescription:` `'Tech Example \nOn: '` `+ (``new` `Date().toLocaleString()),`
 
-    `});`
+        `});`
 
-    `var` `activity = Ti.App.iOS.createUserActivity({`
+        `var` `activity = Ti.App.iOS.createUserActivity({`
 
-    `activityType:` `'com.appcelerator.titanium'``,`
+        `activityType:` `'com.appcelerator.titanium'``,`
 
-    `title:` `'Siri shortcut activity'``,`
+        `title:` `'Siri shortcut activity'``,`
 
-    `userInfo: {`
+        `userInfo: {`
 
-    `msg:` `'hello world'`
+        `msg:` `'hello world'`
 
-    `},`
+        `},`
 
-    `eligibleForSearch:` `true``,`
+        `eligibleForSearch:` `true``,`
 
-    `eligibleForPrediction:` `true``,`
+        `eligibleForPrediction:` `true``,`
 
-    `persistentIdentifier:` `'titanium_siri_identifier'`
+        `persistentIdentifier:` `'titanium_siri_identifier'`
 
-    `});`
+        `});`
 
-    `activity.addContentAttributeSet(itemAttr);`
+        `activity.addContentAttributeSet(itemAttr);`
 
-    `if` `(!activity.isSupported()) {`
+        `if` `(!activity.isSupported()) {`
 
-    `alert(``'User Activities are not supported on this device!'``);`
+        `alert(``'User Activities are not supported on this device!'``);`
 
-    `}` `else` `{`
+        `}` `else` `{`
 
-    `activity.becomeCurrent();`
+        `activity.becomeCurrent();`
 
-    `Ti.App.iOS.addEventListener(``'continueactivity'``,` `function``(e) {`
+        `Ti.App.iOS.addEventListener(``'continueactivity'``,` `function``(e) {`
 
-    `Ti.API.info(``'continueactivity called'``);`
+        `Ti.API.info(``'continueactivity called'``);`
 
-    `if` `(e.activityType ===` `'com.appcelerator.titanium'` `&& e.userInfo.msg) {`
+        `if` `(e.activityType ===` `'com.appcelerator.titanium'` `&& e.userInfo.msg) {`
 
-    `alert(e.userInfo.msg);`
+        `alert(e.userInfo.msg);`
 
-    `}`
+        `}`
 
-    `});`
+        `});`
 
-    `}`
+        `}`
 
-    `activity.addEventListener(``'useractivitydeleted'``,` `function``(e) {`
+        `activity.addEventListener(``'useractivitydeleted'``,` `function``(e) {`
 
-    `Ti.API.info(``'useractivitydeleted called'``);`
+        `Ti.API.info(``'useractivitydeleted called'``);`
 
-    `alert(``'user activity deleted'``);`
+        `alert(``'user activity deleted'``);`
 
-    `});`
+        `});`
 
-    `btn.addEventListener(``'click'``,` `function``() {`
+        `btn.addEventListener(``'click'``,` `function``() {`
 
-    `activity.deleteSavedUserActivitiesForPersistentIdentifiers(``'titanium_siri_identifier'``);`
+        `activity.deleteSavedUserActivitiesForPersistentIdentifiers(``'titanium_siri_identifier'``);`
 
-    `});`
+        `});`
 
-    `identifierBtn.addEventListener(``'click'``,` `function``() {`
+        `identifierBtn.addEventListener(``'click'``,` `function``() {`
 
-    `Ti.API.info(``'persistent identfier is: '` `+activity.persistentIdentifier);`
+        `Ti.API.info(``'persistent identfier is: '` `+activity.persistentIdentifier);`
 
-    `Ti.API.info(``'\neligibleForPrediction is: '` `+activity.eligibleForPrediction);`
+        `Ti.API.info(``'\neligibleForPrediction is: '` `+activity.eligibleForPrediction);`
 
-    `});`
+        `});`
 
-    `deleteBtn.addEventListener(``'click'``,` `function``() {`
+        `deleteBtn.addEventListener(``'click'``,` `function``() {`
 
-    `activity.deleteAllSavedUserActivities();`
+        `activity.deleteAllSavedUserActivities();`
 
-    `});`
+        `});`
 
-    `win.add(identifierBtn);`
+        `win.add(identifierBtn);`
 
-    `win.add(btn);`
+        `win.add(btn);`
 
-    `win.add(deleteBtn);`
+        `win.add(deleteBtn);`
 
-    `win.open();`
-
+        `win.open();`
 
 ## Fixed issues
 
@@ -176,66 +174,63 @@ As of this release, Titanium SDK 7.3.x will not be supported six months (2019-03
 
 * [TIMOB-26388](https://jira.appcelerator.org/browse/TIMOB-26388) - iOS 12: Support iPhone Xs Max & iPhone XR launch-screen images
 
-
 ## Improvements
 
 * [TIMOB-26089](https://jira.appcelerator.org/browse/TIMOB-26089) - iOS 12: Update simulator mappings for Xcode 10
 
-  * Dropped support for versions of Xcode below 9 and added support for Xcode 10
+    * Dropped support for versions of Xcode below 9 and added support for Xcode 10
 
 * [TIMOB-26090](https://jira.appcelerator.org/browse/TIMOB-26090) - iOS 12: Make iOS development-project compatible with Xcode 10
 
-  * Made minor updates to Xcode template
+    * Made minor updates to Xcode template
 
 * [TIMOB-26094](https://jira.appcelerator.org/browse/TIMOB-26094) - iOS 12: Add Password Autofill improvements
 
-  * Added new Ti.UI.TextField API
+    * Added new Ti.UI.TextField API
 
-  * Related docs:
+    * Related docs:
 
-    * [UITextInputPasswordRules](https://developer.apple.com/documentation/uikit/uitextinputpasswordrules)
+        * [UITextInputPasswordRules](https://developer.apple.com/documentation/uikit/uitextinputpasswordrules)
 
-    * [passwordRules](https://developer.apple.com/documentation/uikit/uitextinputtraits/2980934-passwordrules)
+        * [passwordRules](https://developer.apple.com/documentation/uikit/uitextinputtraits/2980934-passwordrules)
 
-    * [UITextContentTypeNewPassword](https://developer.apple.com/documentation/uikit/uitextcontenttypenewpassword)
+        * [UITextContentTypeNewPassword](https://developer.apple.com/documentation/uikit/uitextcontenttypenewpassword)
 
-    * [UITextContentTypeOneTimeCode](https://developer.apple.com/documentation/uikit/uitextcontenttypeonetimecode)
+        * [UITextContentTypeOneTimeCode](https://developer.apple.com/documentation/uikit/uitextcontenttypeonetimecode)
 
-  * Sample code
+    * Sample code
 
-    `var` `win = Ti.UI.createWindow({`
+        `var` `win = Ti.UI.createWindow({`
 
-    `backgroundColor:` `'#ddd'`
+        `backgroundColor:` `'#ddd'`
 
-    `});`
+        `});`
 
-    `var` `field = Ti.UI.createTextField({`
+        `var` `field = Ti.UI.createTextField({`
 
-    `autofillType: Ti.UI.AUTOFILL_TYPE_PASSWORD,`
+        `autofillType: Ti.UI.AUTOFILL_TYPE_PASSWORD,`
 
-    `passwordRules:` `'required: upper; required: lower; required: digit; max-consecutive: 2; minlength: 8;'``,`
+        `passwordRules:` `'required: upper; required: lower; required: digit; max-consecutive: 2; minlength: 8;'``,`
 
-    `passwordMask:` `true``,`
+        `passwordMask:` `true``,`
 
-    `width: 300,`
+        `width: 300,`
 
-    `height: 40,`
+        `height: 40,`
 
-    `backgroundColor:` `'#fff'` `});`
+        `backgroundColor:` `'#fff'` `});`
 
-    `win.add(field);`
+        `win.add(field);`
 
-    `win.open()`
-
+        `win.open()`
 
 ## Known issues
 
 * [TIMOB-26320](https://jira.appcelerator.org/browse/TIMOB-26320) - Xcode 10: Cannot build native modules in Xcode IDE when using new build-system (default)
 
-  * Xcode cannot find the header-source-paths used before (e.g. #import "TiApp.h") from ~/Library/Application Support/Titanium/mobilesdk/osx/7.3.0.GA/iphone/include/ anymore. While building the module works fine, but building the library from Xcode to debug the development process, does not work anymore. The radar is [rdar://40906817](http://www.openradar.me/40906817).
+    * Xcode cannot find the header-source-paths used before (e.g. #import "TiApp.h") from ~/Library/Application Support/Titanium/mobilesdk/osx/7.3.0.GA/iphone/include/ anymore. While building the module works fine, but building the library from Xcode to debug the development process, does not work anymore. The radar is [rdar://40906817](http://www.openradar.me/40906817).
 
-  * Workaround: go to **File** > **Project Settings** and select the **Legacy Build System**.
-
+    * Workaround: go to **File** > **Project Settings** and select the **Legacy Build System**.
 
 ## API changes
 
@@ -243,104 +238,21 @@ As of this release, Titanium SDK 7.3.x will not be supported six months (2019-03
 
 The following APIs are new or have expanded platform support in Release 7.4.0 as of September 17th, 2018.
 
-API
-
-Type
-
-Notes
-
-Titanium.App.iOS.USER\_NOTIFICATION\_AUTHORIZATION\_STATUS\_PROVISIONAL
-
-property
-
-The application is provisionally authorized to post non-interruptive user notifications. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_CRITICAL\_ALERT
-
-property
-
-The ability to play sounds for critical alerts.Use with the types property. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_PROVIDES\_APP\_NOTIFICATION\_SETTINGS
-
-property
-
-An option indicating the system should display a button for in-app notification settings.Use with the types property. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_PROVISIONAL
-
-property
-
-The ability to post non-interrupting notifications provisionally to the Notification Center.Use with the types property. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UserActivity.deleteAllSavedUserActivities
-
-method
-
-Deletes all user activities created by your app. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UserActivity.deleteSavedUserActivitiesForPersistentIdentifiers
-
-method
-
-Deletes user activities created by your app that have the specified persistent identifiers. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UserActivity.eligibleForPrediction
-
-property
-
-A Boolean value that determines whether Siri can suggest the user activity as a shortcut to the user. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UserActivity.getEligibleForPrediction
-
-method
-
-Gets the value of the Titanium.App.iOS.UserActivity.eligibleForPrediction property. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UserActivity.getPersistentIdentifier
-
-method
-
-Gets the value of the Titanium.App.iOS.UserActivity.persistentIdentifier property. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UserActivity.persistentIdentifier
-
-property
-
-A value used to identify the user activity. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UserActivity.setEligibleForPrediction
-
-method
-
-Sets the value of the Titanium.App.iOS.UserActivity.eligibleForPrediction property. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UserActivity.setPersistentIdentifier
-
-method
-
-Sets the value of the Titanium.App.iOS.UserActivity.persistentIdentifier property. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UserActivity.useractivitydeleted
-
-event
-
-Fired when the user activity get deleted using the Titanium.App.iOS.UserActivity.deleteAllSavedUserActivities or Titanium.App.iOS.UserActivity.deleteSavedUserActivitiesForPersistentIdentifiers methods. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UserNotificationCategory.categorySummaryFormat
-
-property
-
-A format string for the summary description used when the system groups the category's notifications. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.AUTOFILL\_TYPE\_NEW\_PASSWORD
-
-property
-
-Specifies the expectation of a new password. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.AUTOFILL\_TYPE\_ONE\_TIME\_CODE
-
-property
-
-Specifies the expectation of a single-factor SMS login code. (New API, supported on iPhone and iPad.)
+| API | Type | Notes |
+| --- | --- | --- |
+| Titanium.App.iOS.USER\_NOTIFICATION\_AUTHORIZATION\_STATUS\_PROVISIONAL | property | The application is provisionally authorized to post non-interruptive user notifications. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_CRITICAL\_ALERT | property | The ability to play sounds for critical alerts.Use with the types property. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_PROVIDES\_APP\_NOTIFICATION\_SETTINGS | property | An option indicating the system should display a button for in-app notification settings.Use with the types property. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_PROVISIONAL | property | The ability to post non-interrupting notifications provisionally to the Notification Center.Use with the types property. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UserActivity.deleteAllSavedUserActivities | method | Deletes all user activities created by your app. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UserActivity.deleteSavedUserActivitiesForPersistentIdentifiers | method | Deletes user activities created by your app that have the specified persistent identifiers. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UserActivity.eligibleForPrediction | property | A Boolean value that determines whether Siri can suggest the user activity as a shortcut to the user. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UserActivity.getEligibleForPrediction | method | Gets the value of the Titanium.App.iOS.UserActivity.eligibleForPrediction property. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UserActivity.getPersistentIdentifier | method | Gets the value of the Titanium.App.iOS.UserActivity.persistentIdentifier property. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UserActivity.persistentIdentifier | property | A value used to identify the user activity. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UserActivity.setEligibleForPrediction | method | Sets the value of the Titanium.App.iOS.UserActivity.eligibleForPrediction property. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UserActivity.setPersistentIdentifier | method | Sets the value of the Titanium.App.iOS.UserActivity.persistentIdentifier property. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UserActivity.useractivitydeleted | event | Fired when the user activity get deleted using the Titanium.App.iOS.UserActivity.deleteAllSavedUserActivities or Titanium.App.iOS.UserActivity.deleteSavedUserActivitiesForPersistentIdentifiers methods. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UserNotificationCategory.categorySummaryFormat | property | A format string for the summary description used when the system groups the category's notifications. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.AUTOFILL\_TYPE\_NEW\_PASSWORD | property | Specifies the expectation of a new password. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.AUTOFILL\_TYPE\_ONE\_TIME\_CODE | property | Specifies the expectation of a single-factor SMS login code. (New API, supported on iPhone and iPad.) |

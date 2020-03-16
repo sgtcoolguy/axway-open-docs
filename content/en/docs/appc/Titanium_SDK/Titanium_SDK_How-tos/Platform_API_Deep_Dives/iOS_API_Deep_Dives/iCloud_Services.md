@@ -1,21 +1,20 @@
 {"title":"iCloud Services","weight":"40"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-  * [Apple best practices](#Applebestpractices)
+    * [Apple best practices](#apple-best-practices)
 
-* [Setup a Distribution Profile with iCloud Services](#SetupaDistributionProfilewithiCloudServices)
+* [Setup a Distribution Profile with iCloud Services](#setup-a-distribution-profile-with-icloud-services)
 
-  * [Register an App ID](#RegisteranAppID)
+    * [Register an App ID](#register-an-app-id)
 
-* [Disable iCloud backup](#DisableiCloudbackup)
+* [Disable iCloud backup](#disable-icloud-backup)
 
-* [Perform a manual backup](#Performamanualbackup)
+* [Perform a manual backup](#perform-a-manual-backup)
 
-* [Test restoring an iCloud backup](#TestrestoringaniCloudbackup)
+* [Test restoring an iCloud backup](#test-restoring-an-icloud-backup)
 
-* [Further reading and references](#Furtherreadingandreferences)
-
+* [Further reading and references](#further-reading-and-references)
 
 ## Introduction
 
@@ -52,7 +51,6 @@ You need to register an App ID for your application.
 7. Under **App Services**, check the **iCloud** checkbox.
 
 8. Click **Continue**, **Submit**, and **Done** to complete the process.
-
 
 After creating your App ID, follow the directions from [Distributing iOS apps](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_iOS_apps/) to create your Distribution Certificate and Distribution Profile, then use the certificate and profile to package your application.
 
@@ -108,7 +106,6 @@ If you do not want to wait for iOS to backup your files, you can manually perfor
 
 4. Tap **Backup Now**.
 
-
 To check how much space the backup uses:
 
 1. Open **Settings.**
@@ -116,7 +113,6 @@ To check how much space the backup uses:
 2. Navigate to **iCloud** > **Storage & Backup** \> **Manage Storage**.
 
 3. Tap **This Device**.
-
 
 The device displays an itemized list of how much iCloud storage space each application uses.
 
@@ -137,7 +133,6 @@ Before proceeding make sure have a current backup of your device. See the previo
 5. Once you have come to the "Set Up iPhone" step, tap **Restore from iCloud Backup**.
 
 6. In the "Choose backup" step, select the backup to use to restore your device.
-
 
 iOS will start restoring your device based on the backup chosen.
 

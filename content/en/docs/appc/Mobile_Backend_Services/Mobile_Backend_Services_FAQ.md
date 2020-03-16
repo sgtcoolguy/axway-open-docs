@@ -22,7 +22,6 @@ You can import a cloud-enabled project into Firebase. Similarly, the result will
 
 5. Configure push service on the Dashboard by reviewing the information in [Configuring Push Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/Push_Notifications/Configuring_Push_Services/).
 
-
 Make sure your Appcelerator ID and package name are the same.
 
 Further reading: [Generate a Google Server API Key](https://documentation.onesignal.com/docs/generate-a-google-server-api-key)
@@ -41,8 +40,8 @@ Visit [https://gist.github.com/MotiurRahman/2cd4520727271bb60316d57032bf0028](ht
 
 If you receive a message similar to "Error enabling Cloud service for the project" in Studio when trying to enable Cloud services for your project, the Mobile Backend Services (MBS) server may be down, or Studio is unable to connect to the MBS server. Try to enable Cloud services later.
 
-See [Troubleshooting Guide](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_How-tos/Troubleshooting_Guide/#ErrorenablingCloudservicefortheproject) for more details.
+See [Troubleshooting Guide](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_How-tos/Troubleshooting_Guide/#error-enabling-cloud-service-for-the-project) for more details.
 
 ## Push notification error messages
 
-Apple Push and Google Cloud Messaging provide error codes for common push notification errors. See [Apple Push Notification Server errors](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_How-tos/Troubleshooting_Guide/#ApplePushNotificationServer(APNS)errors) and [Google Cloud Messaging errors](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_How-tos/Troubleshooting_Guide/#GoogleCloudMessaging(GCM)errors) for more details.
+Apple Push and Google Cloud Messaging provide error codes for common push notification errors. See [Apple Push Notification Server errors](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_How-tos/Troubleshooting_Guide/#apple-push-notification-server-apns-errors) and [Google Cloud Messaging errors](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_How-tos/Troubleshooting_Guide/#GoogleCloudMessaging(GCM)errors) for more details.

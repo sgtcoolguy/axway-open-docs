@@ -1,11 +1,10 @@
 {"title":"Setting Up a Local Portal","weight":"50"}
 
-* [Description](#Description)
+* [Description](#description)
 
-* [Importing the Portal sample from Github](#ImportingthePortalsamplefromGithub)
+* [Importing the Portal sample from Github](#importing-the-portal-sample-from-github)
 
-* [Pointing to the local Portal](#PointingtothelocalPortal)
-
+* [Pointing to the local Portal](#pointing-to-the-local-portal)
 
 ## Description
 
@@ -21,9 +20,10 @@ Import the portal samples project from the [studio3-sdk](https://github.com/apta
 
 * edit the **\-vmargs** part by adding:
 
-      -Dtitanium.dashboardUrl=file:///C:/studio3-sdk/portal/sample/dashboard.html
+    ```
+    -Dtitanium.dashboardUrl=file:///C:/studio3-sdk/portal/sample/dashboard.html
+    ```
 
 * re-launch Studio.
-
 
 The loaded portal will now be the local one.

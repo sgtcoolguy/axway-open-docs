@@ -9,7 +9,7 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 To configure a delete a user flow:
 
 1. Click the **Create Flow** icon associated with deleting a simple user.
-  The API Orchestration user interface is displayed.
+    The API Orchestration user interface is displayed.
 
 2. Select and pull the simpleusers flow-node onto the flow editor from the Models list. Note that the Start flow-node is automatically connected to the input of the simpleusers flow-node.
 
@@ -51,7 +51,7 @@ To configure a delete a user flow:
 
 21. Connect the notfound output of the Delete a user flow-node to the input of the User not found flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage Nodes](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Flows/Manage_Nodes/). The completed flow is displayed.
 
-  ![Delete_01](/Images/appc/download/attachments/52298555/Delete_01.png)
+    ![Delete_01](/Images/appc/download/attachments/52298555/Delete_01.png)
 22. Click **Save**.
 
 23. On the next screen, click **Proceed**. The server will be restarted and the Delete a user flow will be saved and enabled.

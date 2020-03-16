@@ -1,34 +1,32 @@
 {"title":"Style and Conventions","weight":"60"}
 
-* [Language rules](#Languagerules)
+* [Language rules](#language-rules)
 
-* [Coding style best practices](#Codingstylebestpractices)
+* [Coding style best practices](#coding-style-best-practices)
 
-  * [Naming conventions](#Namingconventions)
+    * [Naming conventions](#naming-conventions)
 
-    * [Variable and function names](#Variableandfunctionnames)
+        * [Variable and function names](#variable-and-function-names)
 
-    * [Object and 'class' names](#Objectand'class'names)
+        * [Object and 'class' names](#object-and-'class'-names)
 
-    * [Namespace](#Namespace)
+        * [Namespace](#namespace)
 
-    * [Factories](#Factories)
+        * [Factories](#factories)
 
-    * [Operators](#Operators)
+        * [Operators](#operators)
 
-  * [Indentation](#Indentation)
+    * [Indentation](#indentation)
 
-  * [Primitive types](#Primitivetypes)
+    * [Primitive types](#primitive-types)
 
-  * [Control statements](#Controlstatements)
+    * [Control statements](#control-statements)
 
-  * [Comments and documentation](#Commentsanddocumentation)
+    * [Comments and documentation](#comments-and-documentation)
 
-* [References and further reading](#Referencesandfurtherreading)
+* [References and further reading](#references-and-further-reading)
 
-
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 In this section, we'll examine the Appcelerator recommended best-practices for coding style, including naming conventions, code formatting, and commenting.
 
@@ -43,7 +41,6 @@ Many references exist that describe JavaScript language rules to follow. We'll l
 * Semicolons – Always use semicolons to terminate statements. [Read more](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Semicolons#Semicolons)
 
 * Use this with extreme care, as it sometimes doesn't refer to the object you expect. [Read more](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=this#this)
-
 
 We have codified our set of internal formatting and linting rules for ESLint at our repository: [https://github.com/appcelerator/eslint-config-axway](https://github.com/appcelerator/eslint-config-axway)
 
@@ -94,7 +91,6 @@ Here, convention is similar to 'class' naming.
 * App.UI.Widget
 
 * App.Network.Request
-
 
 'app.ui' should be 'App.UI'
 
@@ -235,7 +231,6 @@ Single-line comments are required to reduce programmer error. However, specializ
 * [Google's JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)
 
 * [Axway Appcelerator's ESLint Configuration](https://github.com/appcelerator/eslint-config-axway)
-
 
 ## Summary
 

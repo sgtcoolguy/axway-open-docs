@@ -1,35 +1,34 @@
 {"title":"Studio Analytics Events","weight":"70"}
 
-* [GDPR statement](#GDPRstatement)
+* [GDPR statement](#gdpr-statement)
 
-* [Studio Analytics](#StudioAnalytics)
+* [Studio Analytics](#studio-analytics)
 
-* [Privacy notice and settings](#Privacynoticeandsettings)
+* [Privacy notice and settings](#privacy-notice-and-settings)
 
-  * [Data Sent](#DataSent)
+    * [Data Sent](#data-sent)
 
-    * [System information](#Systeminformation)
+        * [System information](#system-information)
 
-    * [Data payload ("data" parameter)](#Datapayload("data"parameter))
+        * [Data payload ("data" parameter)](#data-payload-"data"-parameter)
 
-  * [Events](#Events)
+    * [Events](#events)
 
-    * [Launch/Quit Studio](#Launch/QuitStudio)
+        * [Launch/Quit Studio](#launch/quit-studio)
 
-    * [Editors](#Editors)
+        * [Editors](#editors)
 
-    * [Project events](#Projectevents)
+        * [Project events](#project-events)
 
-    * [Platform events](#Platformevents)
+        * [Platform events](#platform-events)
 
-      * [Android events](#Androidevents)
+            * [Android events](#android-events)
 
-      * [iOS events](#iOSevents)
+            * [iOS events](#ios-events)
 
-    * [Modules](#Modules)
+        * [Modules](#modules)
 
-    * [Misc events](#Miscevents)
-
+        * [Misc events](#misc-events)
 
 ## GDPR statement
 
@@ -44,7 +43,6 @@ You can contact the Axway Data Protection Office by sending an email to **[priva
 * EMEA: Axway Software, Tour W, 102 Terrasse Boieldieu - 92807 Puteaux Cedex, FRANCE
 
 * APAC: Axway Australia, Suite 1301, 99 Mount Street, North Sydney, 2060 NSW, AUSTRALIA
-
 
 ## Studio Analytics
 
@@ -100,7 +98,6 @@ The following is a list of the data sent as part of an analytic event:
 
 * **tz**: timezone
 
-
 #### Data payload ("data" parameter)
 
 * **dir**: project.getProject().getLocation().toOSString()
@@ -131,7 +128,6 @@ The following is a list of the data sent as part of an analytic event:
 
 * **id**: TitaniumCorePlugin.getProjectCount()
 
-
 ### Events
 
 #### Launch/Quit Studio
@@ -142,7 +138,6 @@ Event that happens when a user launches or quits Studio:
 
 * ti.end
 
-
 #### Editors
 
 Events every time an editor is opened or closed. The last segment indicates the type of editor opened (e.g. editor.opened.js):
@@ -150,7 +145,6 @@ Events every time an editor is opened or closed. The last segment indicates the 
 * editor.closed.<editor-type>
 
 * editor.opened.<editor-type>
-
 
 #### Project events
 
@@ -162,7 +156,6 @@ Events created when interacting with a project. The project type can be of type 
 
 * project.import
 
-
 #### Platform events
 
 ##### Android events
@@ -172,7 +165,6 @@ Events created when interacting with a project. The project type can be of type 
 * **android.install**: When an Android app is installed to device during running or debugging
 
 * **android.distribute**: Called during the packaging of an Android application
-
 
 ##### iOS events
 
@@ -200,7 +192,6 @@ Events created when interacting with a project. The project type can be of type 
 
 * **ipad.distribute**: Called during the packaging of an iOS application (ad hoc or for app store)
 
-
 #### Modules
 
 Events during the distribution of modules
@@ -208,7 +199,6 @@ Events during the distribution of modules
 * **module.distribute.android**: Called during the packaging of an Android application
 
 * **module.distribute.ios**: Called during the packaging of an iOS application (ad hoc or for app store)
-
 
 #### Misc events
 

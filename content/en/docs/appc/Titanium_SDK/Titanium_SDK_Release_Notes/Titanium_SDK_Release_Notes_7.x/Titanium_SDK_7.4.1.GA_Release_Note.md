@@ -1,21 +1,20 @@
 {"title":"Titanium SDK 7.4.1.GA - 18 October 2018","weight":"90"}
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [Community credits](#Communitycredits)
+* [Community credits](#community-credits)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-* [Improvements](#Improvements)
+* [Improvements](#improvements)
 
-* [API changes](#APIchanges)
-
+* [API changes](#api-changes)
 
 ## About this release
 
 Titanium SDK 7.4.1.GA is a patch release of the SDK, addressing high-priority issues from previous releases.
 
-As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Community credits
 
@@ -33,7 +32,6 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 * Christy Thomas - [TIMOB-26425](https://jira.appcelerator.org/browse/TIMOB-26425)
 
-
 ## Fixed issues
 
 * [TIMOB-26391](https://jira.appcelerator.org/browse/TIMOB-26391) - iOS: App randomly freezes on iOS 12 beta when using built-in JSCore
@@ -48,13 +46,11 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 * [TIMOB-26444](https://jira.appcelerator.org/browse/TIMOB-26444) - Calling Titanium.App.iOS.UserNotificationCenter.getDeliveredNotifications causes 'NSInvalidArgumentException'
 
-
 ## Improvements
 
 * [TIMOB-26399](https://jira.appcelerator.org/browse/TIMOB-26399) - iOS: Several issues with push-notifications since 7.3.x
 
-  * Fixed notification categories on iOS 11+
-
+    * Fixed notification categories on iOS 11+
 
 ## API changes
 

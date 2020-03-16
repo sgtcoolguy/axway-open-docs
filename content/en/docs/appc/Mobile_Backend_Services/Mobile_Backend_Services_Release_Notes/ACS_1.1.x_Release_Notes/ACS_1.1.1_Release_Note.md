@@ -10,7 +10,6 @@ The 1.1.1 release of Appcelerator Cloud Services includes the following fixes an
 
 * ACS now supports SSL uploads for File and Photo objects.
 
-
 ## Bug fixes
 
 * Fixed an Android issue with UTF-8 encoded characters not being displayed properly in push notifications.

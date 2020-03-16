@@ -1,15 +1,14 @@
 {"title":"Titanium User Information","weight":"130"}
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Description](#Description)
+* [Description](#description)
 
-* [Invocation](#Invocation)
+* [Invocation](#invocation)
 
-* [Get the User Information](#GettheUserInformation)
+* [Get the User Information](#get-the-user-information)
 
-* [Sample of use](#Sampleofuse)
-
+* [Sample of use](#sample-of-use)
 
 ## Requirements
 
@@ -37,25 +36,12 @@ The following _dispatch_ call will get the Titanium user basic information:
 
 The returned _user information_ JSON holds this information:
 
-key
-
-description
-
-id
-
-A user ID
-
-name
-
-The user-name
-
-email
-
-The user-email
-
-hash
-
-An email MD5 hash that can be used to retrieve the user's Gravatar
+| key | description |
+| --- | --- |
+| id | A user ID |
+| name | The user-name |
+| email | The user-email |
+| hash | An email MD5 hash that can be used to retrieve the user's Gravatar |
 
 ## Sample of use
 

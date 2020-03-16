@@ -2,22 +2,21 @@
 
 If you change the type or nature of your project (in other words, you decided to start using PHP in your Web project), you will want to change how Studio processes the files in your project.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Changing Project Natures](#ChangingProjectNatures)
+* [Changing Project Natures](#changing-project-natures)
 
-* [Associated Natures](#AssociatedNatures)
+* [Associated Natures](#associated-natures)
 
-  * [Web](#Web)
+    * [Web](#web)
 
-  * [PHP](#PHP)
+    * [PHP](#php)
 
-  * [Rails](#Rails)
+    * [Rails](#rails)
 
-  * [Titanium Mobile](#TitaniumMobile)
+    * [Titanium Mobile](#titanium-mobile)
 
-  * [Titanium Desktop](#TitaniumDesktop)
-
+    * [Titanium Desktop](#titanium-desktop)
 
 ## Introduction
 
@@ -25,93 +24,7 @@ Project natures help identify the type of files that live inside. It affects a v
 
 A ![check](/Images/appc/download/attachments/30083315/check.png) means the file type is indexed. You may put files of any type in any project, but they only have certain meanings in certain projects.
 
-**File Types**
-
-CSS
-
-HTML
-
-JavaScript
-
-Python
-
-Django
-
-Ruby
-
-ERB
-
-PHP
-
-**Web Project**
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-**Python Project**
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-**Ruby Project**
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-**Rails Project**
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-**PHP Project**
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-**Titanium Desktop**
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-**Titanium Mobile**
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
-
-![check0](/Images/appc/download/attachments/30083315/check0.png)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTh" rowspan="1" colspan="1"><p><strong>File Types</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>CSS</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>HTML</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>JavaScript</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Python</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Django</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Ruby</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>ERB</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>PHP</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p><strong>Web Project</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p><strong>Python Project</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p><strong>Ruby Project</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p><strong>Rails Project</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p><strong>PHP Project</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p><strong>Titanium Desktop</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p><strong>Titanium Mobile</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083315/check0.png" alt="images/download/attachments/30083315/check0.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td></tr></tbody></table>
 
 ## Changing Project Natures
 
@@ -125,7 +38,6 @@ To change the natures associated with a project:
 
 4. Click **OK**. It will ask to close and reopen your project.
 
-
 ## Associated Natures
 
 Below are the natures to associate with a project of a particular type:
@@ -134,13 +46,11 @@ Below are the natures to associate with a project of a particular type:
 
 * Web
 
-
 ### PHP
 
 * Web
 
 * PHP
-
 
 ### Rails
 
@@ -148,13 +58,11 @@ Below are the natures to associate with a project of a particular type:
 
 * Rails
 
-
 ### Titanium Mobile
 
 * Web
 
 * Titanium Mobile
-
 
 ### Titanium Desktop
 

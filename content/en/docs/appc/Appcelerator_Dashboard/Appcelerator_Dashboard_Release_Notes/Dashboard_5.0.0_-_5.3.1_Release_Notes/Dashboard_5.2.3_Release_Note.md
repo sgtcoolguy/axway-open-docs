@@ -8,7 +8,6 @@ Dashboard 5.2.3 is a patch release, which includes an improvement and two bug fi
 
 * Updated the iOS APS SDK components to version 2.0.1 which is compatible with iOS 12.
 
-
 ## Fixed Issues
 
 * Fixed an issue where objects created using Mobile Backend Services batch APIs may not be able to be edited in the UI.

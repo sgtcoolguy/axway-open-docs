@@ -16,7 +16,6 @@ Dashboard 5.2.0 is a minor release, which includes several new features, improve
 
 * Added top application to the _API Runtime Requests_ widget on the **Overview** tab.
 
-
 ## Improvements
 
 * Improved performance of analytics chart views.
@@ -24,7 +23,6 @@ Dashboard 5.2.0 is a minor release, which includes several new features, improve
 * Improved Mobile Backend Services data forms and other form views.
 
 * When multiple browser tabs are open and signing out in one tab, both tabs will now be logged out and redirect to the sign-in form.
-
 
 ## Fixed issues
 

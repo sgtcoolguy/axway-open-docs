@@ -6,16 +6,15 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [HTTP basic authentication](#HTTPbasicauthentication)
+* [HTTP basic authentication](#http-basic-authentication)
 
-* [HTTP header authentication](#HTTPheaderauthentication)
+* [HTTP header authentication](#http-header-authentication)
 
-* [LDAP](#LDAP)
+* [LDAP](#ldap)
 
-* [Custom authentication](#Customauthentication)
-
+* [Custom authentication](#custom-authentication)
 
 ## Introduction
 
@@ -34,7 +33,6 @@ To change the authentication mechanism, open the conf/default.js file and change
 * **ldap** (since API Builder (Arrow) 1.2.x): Use the LDAP plugin for authentication. You must also set the ldap key to an object containing settings for the LDAP configuration. The client uses the HTTP Authorization header to send an encoded version of the API Key using the [HTTP Basic Authentication](http://en.wikipedia.org/wiki/Basic_access_authentication) standard. The username and password will be sent to the configured LDAP server for authentication. Use the value ldap for the key APIKeyAuthType.
 
 * **plugin** : Use a custom or third-party authentication mechanism. Using the plugin strategy, you can extend the authentication to use any third-party or custom API authentication. To build your own plugin, set the value plugin for the key APIKeyAuthType to use this strategy, then set the key APIKeyAuthPlugin to the location of your plugin. The location can be a file path (relative to the current work directory of your server project directory) or the name of the module package available in the standard node\_modules location.
-
 
 Separate API keys are configured for each environment. For example, separate API keys are configured for the development environment and for the production environment. The API key for the current environment must be used for basic and apikey authentication. The development API key must be used for authentication in the development environment and the production API key must be used for authentication in the production environment.
 
@@ -106,65 +104,17 @@ Starting with API Builder 1.2.x, you may use the LDAP plugin to authenticate req
 
 To use the plugin, you need to pass your LDAP settings to the ldap object in the conf/default.js file. Define the following key-value pairs:
 
-Key
-
-Optional
-
-Description
-
-url
-
-No
-
-LDAP URL to connect to.
-
-adminDn
-
-No
-
-Distinguished name (DN) of the user that is allowed to connect to the LDAP database and read user and group data.
-
-adminPassword
-
-Yes
-
-Password for the directory administrator.
-
-searchBase
-
-No
-
-The base DN to search for users.
-
-searchFilter
-
-No
-
-LDAP search filter to find a user.
-
-groupSearchBase
-
-Yes
-
-The base DN to search for groups.
-
-groupSearchFilter
-
-Yes
-
-LDAP search filter to find a group.
-
-cache
-
-Yes
-
-Set to true to cache up to 100 sessions for five minutes. The default is false.
-
-tlsOptions
-
-Yes
-
-Additional options to pass to the [Node.js tls.connect() callback](https://nodejs.org/api/tls.html#tls_tls_connect_options_callback).
+| Key | Optional | Description |
+| --- | --- | --- |
+| url | No | LDAP URL to connect to. |
+| adminDn | No | Distinguished name (DN) of the user that is allowed to connect to the LDAP database and read user and group data. |
+| adminPassword | Yes | Password for the directory administrator. |
+| searchBase | No | The base DN to search for users. |
+| searchFilter | No | LDAP search filter to find a user. |
+| groupSearchBase | Yes | The base DN to search for groups. |
+| groupSearchFilter | Yes | LDAP search filter to find a group. |
+| cache | Yes | Set to true to cache up to 100 sessions for five minutes. The default is false. |
+| tlsOptions | Yes | Additional options to pass to the [Node.js tls.connect() callback](https://nodejs.org/api/tls.html#tls_tls_connect_options_callback). |
 
 **Example:**
 
@@ -198,37 +148,15 @@ conf/default.js
 
 To use a custom authentication mechanism, you need to create a CommonJS module that exposes a plugin class and implements the following methods. All methods are optional, but to validate requests, you need to implement the validateRequest method, either the synchronous version or asynchronous version.
 
-Method Signature
-
-Description
-
-Plugin(server)
-
-Constructor. Passed the server instance. The passed server instance has not registered any models or connectors and has not been started.
-
-Plugin.prototype.matchURL(request): Boolean
-
-Determines if the URL should be authenticated by the plugin. Return true if the plugin should handle the validation else return false.
-
-Plugin.prototype.validateRequest(request, response): Boolean
-
-Validates the request synchronously. Return a Boolean value indicating if the request passed validation (true) or not (false). Do not implement if you implemented the asynchronous version of this method.
-
-Plugin.prototype.validateRequest(request, response, callback): void
-
-Validates the request asynchronously. Pass the callback an Error as its first argument (or null if successful) and a Boolean indicating if validation was a successful or not as its second argument. Do not implement if you implemented the synchronous version of this method.
-
-Plugin.prototype.applyCredentialsForTest(options): void
-
-Used by the API Doc tab in the API Builder Console to allow the plugin to apply any authentication headers to the request before it is made. The options object is the same options object passed to the [request library](https://www.npmjs.com/package/request).
-
-Plugin.prototype.applyRequestsForTest(response, body): Object
-
-Used by the API Doc tab in the API Builder Console to allow the plugin to modify the authentication response headers, body, etc.
-
-Plugin.prototype.getSwaggerSecurity
-
-Used by Swagger generation to describe the Swagger Definitions Object and the Swagger Requirement Object authentication mechanism.
+| Method Signature | Description |
+| --- | --- |
+| Plugin(server) | Constructor. Passed the server instance. The passed server instance has not registered any models or connectors and has not been started. |
+| Plugin.prototype.matchURL(request): Boolean | Determines if the URL should be authenticated by the plugin. Return true if the plugin should handle the validation else return false. |
+| Plugin.prototype.validateRequest(request, response): Boolean | Validates the request synchronously. Return a Boolean value indicating if the request passed validation (true) or not (false). Do not implement if you implemented the asynchronous version of this method. |
+| Plugin.prototype.validateRequest(request, response, callback): void | Validates the request asynchronously. Pass the callback an Error as its first argument (or null if successful) and a Boolean indicating if validation was a successful or not as its second argument. Do not implement if you implemented the synchronous version of this method. |
+| Plugin.prototype.applyCredentialsForTest(options): void | Used by the API Doc tab in the API Builder Console to allow the plugin to apply any authentication headers to the request before it is made. The options object is the same options object passed to the [request library](https://www.npmjs.com/package/request). |
+| Plugin.prototype.applyRequestsForTest(response, body): Object | Used by the API Doc tab in the API Builder Console to allow the plugin to modify the authentication response headers, body, etc. |
+| Plugin.prototype.getSwaggerSecurity | Used by Swagger generation to describe the Swagger Definitions Object and the Swagger Requirement Object authentication mechanism. |
 
 In the conf/default.js file, set the APIKeyAuthPlugin key to the location of the plugin file or to the name of the flow-node module if you specify it as a dependency in the package.json file.
 

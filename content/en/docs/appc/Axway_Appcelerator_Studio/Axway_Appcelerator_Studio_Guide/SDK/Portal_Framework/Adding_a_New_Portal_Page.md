@@ -1,15 +1,14 @@
 {"title":"Adding a New Portal Page","weight":"10"}
 
-* [Studio Changes](#StudioChanges)
+* [Studio Changes](#studio-changes)
 
-* [Setting up the Web Page](#SettinguptheWebPage)
+* [Setting up the Web Page](#setting-up-the-web-page)
 
-  * [Adding Required Resources](#AddingRequiredResources)
+    * [Adding Required Resources](#adding-required-resources)
 
-* [Adding Handlers for Special Functionality](#AddingHandlersforSpecialFunctionality)
+* [Adding Handlers for Special Functionality](#adding-handlers-for-special-functionality)
 
-* [Notes](#Notes)
-
+* [Notes](#notes)
 
 Studio has a newly-developed portal infrastructure that interacts with Studio through Eclipse browser-functions. This page will provide an overview of how to create add a new portal-like page, such as a 'Welcome Screen' using the same infrastructure that was built for the Developer Toolbox.
 
@@ -22,7 +21,6 @@ On the Studio side, we need to create a new BrowserEditor that will carry a uniq
 2. Override the ''getEditorId()''.
 
 3. In the plugin.xml, add this editor to the ''org.eclipse.ui.editors'' extension point. Make sure that you use the same unique ID to identify this editor.
-
 
 To open the portal, you can create an eclipse startup class, and create a command handler that will trigger it when the user asks for.
 
@@ -68,7 +66,6 @@ You can either call them directly via a link or by using a checkbox to switch pr
 
 4. Show list of recently-opened files.
 
-
 `<div id=``"toolboxPref"`  `class``=``"preference checkbox"` `text=``"Load the Welcome Screen on startup"` `key=``"open_welcome"``>`
 
 `</div>`
@@ -78,7 +75,6 @@ You can either call them directly via a link or by using a checkbox to switch pr
 1. The portal code above uses the Prototype JS library.
 
 2. In case you are using both prototype and jquery libraries, make sure they are not conflicting by placing the following JS block in your code. Also, scope your jquery code that uses the '$' sign (see code below).
-
 
 Making JQuery play nice with Prototype:
 

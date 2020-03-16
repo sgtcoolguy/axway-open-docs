@@ -6,7 +6,6 @@ You can download the _Building Mobile Applications with Titanium_ ebook as an ep
 
 * mobi file - [Download here](http://assets.appcelerator.com.s3.amazonaws.com/app_u/bnapp.mobi)
 
-
 ## Instructions for iBooks:
 
 1. Download the **[epub](http://assets.appcelerator.com.s3.amazonaws.com/app_u/bnapp.epub)** file
@@ -19,7 +18,6 @@ You can download the _Building Mobile Applications with Titanium_ ebook as an ep
 
 5. Sync. The book should now show up in iBooks
 
-
 ## Instructions for Kindle
 
 1. Download **[mobi](http://assets.appcelerator.com.s3.amazonaws.com/app_u/bnapp.mobi)** file
@@ -27,4 +25,4 @@ You can download the _Building Mobile Applications with Titanium_ ebook as an ep
 2. Connect your Kindle
 
 3. Drag the **mobi** file into the **Books** folder on the Kindle.
-  The book should now show up in the **Books** section on your Kindle
+    The book should now show up in the **Books** section on your Kindle

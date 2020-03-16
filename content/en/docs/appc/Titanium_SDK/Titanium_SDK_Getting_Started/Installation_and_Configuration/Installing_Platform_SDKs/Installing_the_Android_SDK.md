@@ -1,37 +1,36 @@
 {"title":"Installing the Android SDK","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Compatibility and Download](#CompatibilityandDownload)
+* [Compatibility and Download](#compatibility-and-download)
 
-  * [Required Android Packages](#RequiredAndroidPackages)
+    * [Required Android Packages](#required-android-packages)
 
-  * [Android SDK / Target Android platform](#AndroidSDK/TargetAndroidplatform)
+    * [Android SDK / Target Android platform](#android-sdk-/-target-android-platform)
 
-    * [Supported versions](#Supportedversions)
+        * [Supported versions](#supported-versions)
 
-    * [Unsupported versions](#Unsupportedversions)
+        * [Unsupported versions](#unsupported-versions)
 
-  * [Android Native Add-on Module Development on macOS](#AndroidNativeAdd-onModuleDevelopmentonmacOS)
+    * [Android Native Add-on Module Development on macOS](#android-native-add-on-module-development-on-macos)
 
-* [Installation](#Installation)
+* [Installation](#installation)
 
-  * [macOS](#macOS)
+    * [macOS](#macos)
 
-    * [Installing Android SDK Tools on macOS](#InstallingAndroidSDKToolsonmacOS)
+        * [Installing Android SDK Tools on macOS](#installing-android-sdk-tools-on-macos)
 
-  * [Windows](#Windows)
+    * [Windows](#windows)
 
-    * [Installing Android SDK Tools on Windows](#InstallingAndroidSDKToolsonWindows)
+        * [Installing Android SDK Tools on Windows](#installing-android-sdk-tools-on-windows)
 
-* [Installing Android Packages with Android SDK Manager](#InstallingAndroidPackageswithAndroidSDKManager)
+* [Installing Android Packages with Android SDK Manager](#installing-android-packages-with-android-sdk-manager)
 
-  * [Installing x86 Emulator Packages](#Installingx86EmulatorPackages)
+    * [Installing x86 Emulator Packages](#installing-x86-emulator-packages)
 
-* [Configuring Appcelerator Studio](#ConfiguringAppceleratorStudio)
+* [Configuring Appcelerator Studio](#configuring-appcelerator-studio)
 
-* [Configuring the CLI](#ConfiguringtheCLI)
-
+* [Configuring the CLI](#configuring-the-cli)
 
 ## Overview
 
@@ -53,23 +52,11 @@ As of Titanium 9.0.0, the build system will automatically download the Android S
 
 For Titanium 8.x.x, you need to installed the following packages via the Android SDK Manager yourself:
 
-Package
-
-Minimum Version
-
-Android SDK Tools
-
-Rev 28
-
-Android SDK Build-tools
-
-Rev 23
-
-Android SDK Platform (API Level)
-
-API Level 29 for Titanium 8.3.x
-
-API Level 28 for Titanium version older than 8.3.0
+| Package | Minimum Version |
+| --- | --- |
+| Android SDK Tools | Rev 28 |
+| Android SDK Build-tools | Rev 23 |
+| Android SDK Platform (API Level) | API Level 29 for Titanium 8.3.x<br /><br />API Level 28 for Titanium version older than 8.3.0 |
 
 Titanium SDK 7.0.0+ requires Android SDK Tools v25 or newer as a minimum requirement.
 
@@ -83,189 +70,33 @@ Each Titanium SDK supports building against a specific range of Android versions
 
 #### Supported versions
 
-Titanium SDK Version
-
-Min Target Android/SDK Version
-(android:targetSdkVersion)
-
-Max Target Android/SDK Version
-(android:targetSdkVersion)
-
-Minimum Android/SDK Version
-(android:minSdkVersion)
-
-8.3.0 - latest
-
-6.0.x (API 23)
-
-10.0.x (API 29)
-
-4.4.x (API 19)
-
-8.0.0 - 8.2.2
-
-6.0.x (API 23)
-
-9.0.x (API 28)
-
-4.4.x (API 19)
-
-7.5.0 - 7.5.1
-
-6.0.x (API 23)
-
-9.0.x (API 28)
-
-4.1.x (API 16)
-
-7.3.0 - 7.4.1
-
-6.0.x (API 23)
-
-8.1.x (API 27)
-
-4.1.x (API 16)
-
-7.0.0 - 7.2.0
-
-6.0.x (API 23)
-
-7.0.x (API 25)
-
-4.1.x (API 16)
+| Titanium SDK Version | Min Target Android/SDK Version  <br />(android:targetSdkVersion) | Max Target Android/SDK Version  <br />(android:targetSdkVersion) | Minimum Android/SDK Version  <br />(android:minSdkVersion) |
+| --- | --- | --- | --- |
+| 8.3.0 - latest | 6.0.x (API 23) | 10.0.x (API 29) | 4.4.x (API 19) |
+| 8.0.0 - 8.2.2 | 6.0.x (API 23) | 9.0.x (API 28) | 4.4.x (API 19) |
+| 7.5.0 - 7.5.1 | 6.0.x (API 23) | 9.0.x (API 28) | 4.1.x (API 16) |
+| 7.3.0 - 7.4.1 | 6.0.x (API 23) | 8.1.x (API 27) | 4.1.x (API 16) |
+| 7.0.0 - 7.2.0 | 6.0.x (API 23) | 7.0.x (API 25) | 4.1.x (API 16) |
 
 #### Unsupported versions
 
-Titanium SDK Version
-
-Min Target Android/SDK Version
-(android:targetSdkVersion)
-
-Max Target Android/SDK Version
-(android:targetSdkVersion)
-
-Minimum Android/SDK Version
-(android:minSdkVersion)
-
-6.2.0 - 6.3.0
-
-7.1.x (API 25)
-
-6.0.x (API 23)
-
-4.1.x (API 16)
-
-6.0.0 - 6.1.x
-
-6.0.x (API 23)
-
-6.0.x (API 23)
-
-4.1.x (API 16)
-
-5.1.0 - 5.5.x
-
-6.0.x (API 23)
-
-6.0.x (API 23)
-
-4.0.x (API 14)
-
-5.0.0 - 5.0.x
-
-5.0.x (API 21)
-
-6.0.x (API 23)
-
-4.0.x (API 14)
-
-4.0.0 - 4.1.x
-
-5.0.x (API 21)
-
-5.1.x (API 22)
-
-4.0.x (API 14)
-
-3.4.1 - 3.5.1
-
-4.0.x (API 14)\*
-
-5.0.x (API 21)\*\*
-
-2.3.x (API 10)
-
-3.3.0 - 3.4.0
-
-4.0.x (API 14)\*
-
-4.4.x (API 19)
-
-2.3.x (API 10)
-
-3.2.0 - 3.2.3
-
-2.3.x (API 10)\*
-
-4.4.x (API 19)
-
-2.3.x (API 10)
-
-3.1.2 - 3.1.3
-
-2.3.x (API 10)
-
-4.3.x (API 18)
-
-2.3.x (API 10)
-
-3.1.1
-
-2.3.x (API 10)
-
-4.2.x (API 17)
-
-2.3.x (API 10)
-
-3.1.0
-
-2.2 (API 8)
-
-4.2.x (API 17)
-
-2.2 (API 8)
-
-2.1.2 - 3.0.2
-
-2.2 (API 8)
-
-4.1.x (API 16)
-
-2.2 (API 8)
-
-2.0 - 2.1.1
-
-2.2 (API 8)
-
-4.0.x (API 15)
-
-2.2 (API 8)
-
-1.8.x
-
-2.2 (API 8)
-
-3.x.x (API 11)
-
-2.2 (API 8)
-
-1.7.x
-
-2.1 (API 7)
-
-3.x.x (API 11)
-
-2.1 (API 7)
+| Titanium SDK Version | Min Target Android/SDK Version  <br />(android:targetSdkVersion) | Max Target Android/SDK Version  <br />(android:targetSdkVersion) | Minimum Android/SDK Version  <br />(android:minSdkVersion) |
+| --- | --- | --- | --- |
+| 6.2.0 - 6.3.0 | 7.1.x (API 25) | 6.0.x (API 23) | 4.1.x (API 16) |
+| 6.0.0 - 6.1.x | 6.0.x (API 23) | 6.0.x (API 23) | 4.1.x (API 16) |
+| 5.1.0 - 5.5.x | 6.0.x (API 23) | 6.0.x (API 23) | 4.0.x (API 14) |
+| 5.0.0 - 5.0.x | 5.0.x (API 21) | 6.0.x (API 23) | 4.0.x (API 14) |
+| 4.0.0 - 4.1.x | 5.0.x (API 21) | 5.1.x (API 22) | 4.0.x (API 14) |
+| 3.4.1 - 3.5.1 | 4.0.x (API 14)\* | 5.0.x (API 21)\*\* | 2.3.x (API 10) |
+| 3.3.0 - 3.4.0 | 4.0.x (API 14)\* | 4.4.x (API 19) | 2.3.x (API 10) |
+| 3.2.0 - 3.2.3 | 2.3.x (API 10)\* | 4.4.x (API 19) | 2.3.x (API 10) |
+| 3.1.2 - 3.1.3 | 2.3.x (API 10) | 4.3.x (API 18) | 2.3.x (API 10) |
+| 3.1.1 | 2.3.x (API 10) | 4.2.x (API 17) | 2.3.x (API 10) |
+| 3.1.0 | 2.2 (API 8) | 4.2.x (API 17) | 2.2 (API 8) |
+| 2.1.2 - 3.0.2 | 2.2 (API 8) | 4.1.x (API 16) | 2.2 (API 8) |
+| 2.0 - 2.1.1 | 2.2 (API 8) | 4.0.x (API 15) | 2.2 (API 8) |
+| 1.8.x | 2.2 (API 8) | 3.x.x (API 11) | 2.2 (API 8) |
+| 1.7.x | 2.1 (API 7) | 3.x.x (API 11) | 2.1 (API 7) |
 
 Notes
 
@@ -299,7 +130,6 @@ Note that the typical filesystem location of this software can be found in the [
 
 3. Once the .dmg file has downloaded, the **Android Studio installer** should pop up. **Drag the Android Studio icon** to the **Applications folder**.
 
-
 ### Windows
 
 Note that the typical filesystem location of this software can be found in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/) section of these guides.
@@ -328,10 +158,9 @@ Note that the typical filesystem location of this software can be found in the [
 
 11. Click the **Finish** button once Android Studio has finished downloading components.
 
-
 Refer to the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/) section, and add the path of the **Android SDK Tools** directory to your system's PATH.
 
-Then proceed to the [Installing Android Packages with Android SDK Manager](#InstallingAndroidPackageswithAndroidSDKManager) section.
+Then proceed to the [Installing Android Packages with Android SDK Manager](#installing-android-packages-with-android-sdk-manager) section.
 
 ## Installing Android Packages with Android SDK Manager
 
@@ -342,7 +171,6 @@ Launching the _Android SDK Manager_ differs depending on the platform.
 * On macOS, go to Launchpad and click on Android Studio
 
 * On Windows, double-click on the Android Studio icon. Note: You may get prompted to run as an administrator. If so, from the Windows Start Menu and select _Run as administrator_. Enter the Administrator password.
-
 
 In the Android SDK Manager, you will see different versions of the following items listed:
 
@@ -356,7 +184,6 @@ In the Android SDK Manager, you will see different versions of the following ite
 
 * **System Image** - For Android API versions 14 and above, the emulator system images are packaged separately from the SDK Platform package. Three versions of the system images are provided – ARM, Intel x86, and MIPS. The ARM system image is supplied by default in earlier SDK Platform packages, and corresponds to the hardware in most phones.
 
-
 To install Android SDK on macOS:
 
 1. Open **Android Studio**.
@@ -368,7 +195,6 @@ To install Android SDK on macOS:
 4. Android Studio will confirm your selection. Click **OK** button.
 
 5. Once the requested components have been installed, click **Finish** button.
-
 
 To install Android SDK on Windows:
 
@@ -383,7 +209,6 @@ To install Android SDK on Windows:
 5. Click the **Accept** radio button and click the **Next** button.
 
 6. Once the requested components have been installed, click **Finish** button.
-
 
 The following steps are the normal process to install an Android SDK with Axway Appcelerator Studio (Appc Studio) but due to the bug noted in [TISTUD-9035](https://jira.appcelerator.org/browse/TISTUD-9035), Studio cannot install Android SDKs at this time.
 
@@ -409,7 +234,6 @@ In Appc Studio, confirm that your Android SDK(s) have been installed:
 
 10. Review the installed SDKs in the General section of the Preferences window. You should now see the newly installed Android SDK(s).
 
-
 Even though Appc Studio not display newly installed Android SDK(s), they are installed and available for use. You can confirm this by creating a new AVD (Android Virtual Device) and see the options to use the newly installed Android SDK(s).
 
 There are two ways to create an AVD to use in Appc Studio: Create the AVD in Appc Studio or create it in Android Studio. Appc Studio should pick up the new AVD automatically if you created a new one via Android Studio.
@@ -432,7 +256,6 @@ To create an AVD via Appc Studio:
 
 8. After making your selections, click **OK** button to build the AVD.
 
-
 To create an AVD via Android Studio:
 
 1. Open **Android Studio**.
@@ -449,7 +272,6 @@ To create an AVD via Android Studio:
 
 7. Android Studio will provide a name for you automatically based on the virtual device and system image you selected. Confirm you selections and click the **Finish** button.
 
-
 Refer to the [Titanium Compatibility Matrix](https://wiki.appcelerator.org/display/DB/Titanium+Compatibility+Matrix#TitaniumCompatibilityMatrix-AndroidSDK/TargetAndroidPlatform) for the latest list of required packages.
 
 ### Installing x86 Emulator Packages
@@ -464,16 +286,15 @@ To use the Android SDK with Appcelerator Studio, the path to the SDK must be set
 
 1. Open the Preferences dialog:
 
-  1. On macOS, from the menu bar, select **Appcelerator Studio** > **Preferences**.
+    1. On macOS, from the menu bar, select **Appcelerator Studio** > **Preferences**.
 
-  2. On Windows, from the menu bar, select **Window > Preferences**.
+    2. On Windows, from the menu bar, select **Window > Preferences**.
 
 2. In the **Preferences** dialog, navigate to **Studio > Platforms > Android SDK**.
 
 3. Set your Android SDK path. Enter the path to your Android SDK in the **Android SDK Home** textbox or click the **Configure** button to navigate to the SDK directory.
 
 4. Select your default Android SDK. Select a **Google APIs** item from the **Default Android SDK** drop-down menu.
-
 
 ## Configuring the CLI
 

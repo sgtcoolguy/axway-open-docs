@@ -1,35 +1,34 @@
 {"title":"Audio APIs","weight":"10"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [Playing basic sounds](#Playingbasicsounds)
+    * [Playing basic sounds](#playing-basic-sounds)
 
-  * [Streaming audio](#Streamingaudio)
+    * [Streaming audio](#streaming-audio)
 
-  * [Recording audio](#Recordingaudio)
+    * [Recording audio](#recording-audio)
 
-  * [Hands-on Practice](#Hands-onPractice)
+    * [Hands-on Practice](#hands-on-practice)
 
-    * [Goal](#Goal)
+        * [Goal](#goal)
 
-    * [Resources](#Resources)
+        * [Resources](#resources)
 
-    * [Steps](#Steps)
+        * [Steps](#steps)
 
-  * [Windows development considerations](#Windowsdevelopmentconsiderations)
+    * [Windows development considerations](#windows-development-considerations)
 
-    * [Grant access to background audio](#Grantaccesstobackgroundaudio)
+        * [Grant access to background audio](#grant-access-to-background-audio)
 
-    * [Grant access to video stream and audio stream](#Grantaccesstovideostreamandaudiostream)
+        * [Grant access to video stream and audio stream](#grant-access-to-video-stream-and-audio-stream)
 
-    * [Grant access to music library](#Grantaccesstomusiclibrary)
+        * [Grant access to music library](#grant-access-to-music-library)
 
-* [References and further reading](#Referencesandfurtherreading)
+* [References and further reading](#references-and-further-reading)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Objective
 
@@ -44,7 +43,6 @@ The audio APIs are part of the larger Ti.Media module, which contains all the AP
 * Ti.Media.AudioPlayer - used for streaming audio to the device and low-level control of the audio playback
 
 * Ti.Media.AudioRecorder - used for recording audio from the device microphone
-
 
 ### Playing basic sounds
 
@@ -124,7 +122,6 @@ You can record audio from the device's microphone using the Ti.Media.AudioRecord
 
 * format - which specifies the file format type, such as Ti.Media.AUDIO\_FILEFORMAT\_WAVE
 
-
 See the [Media object API docs](#!/api/Titanium.Media) for a complete list of compression and format types available in Titanium.
 
 ### Hands-on Practice
@@ -143,11 +140,11 @@ To perform the steps in this activity, you will need two sound files. You can us
 
 2. Remove label1 (it's definition, and the win1.add() statement). In its place, add a button with these characteristics:
 
-  * Title: Click to play sound
+    * Title: Click to play sound
 
-  * Width/height: 200 x40
+    * Width/height: 200 x40
 
-  * Top: 20
+    * Top: 20
 
 3. Define a sound object that preloads the sounds/2156\_\_nicstage\_\_lightswitchimpact.mp3 file.
 
@@ -155,18 +152,18 @@ To perform the steps in this activity, you will need two sound files. You can us
 
 5. Add another button to win1 with these characteristics:
 
-  * Title: Click to stream sound
+    * Title: Click to stream sound
 
-  * Width/height: 200 x40
+    * Width/height: 200 x40
 
-  * Top: 75
+    * Top: 75
 
 6. Define an AudioPlayer that will stream the sound at [http://www.freesound.org/data/previews/2/2686\_5150-lq.mp3](http://www.freesound.org/data/previews/2/2686_5150-lq.mp3)
-  Add an event listener to your streaming button so that when the button is clicked:
+    Add an event listener to your streaming button so that when the button is clicked:
 
-  * If the streaming player is not playing currently, start the stream and change the button's title to 'Click to pause stream'
+    * If the streaming player is not playing currently, start the stream and change the button's title to 'Click to pause stream'
 
-  * If the streaming player is playing, pause the stream and change the button's title back to 'Click to stream sound'
+    * If the streaming player is playing, pause the stream and change the button's title back to 'Click to stream sound'
 
 7. Add the app event listeners to pause the stream and restart in the case a call is received during streaming.
 
@@ -175,7 +172,6 @@ To perform the steps in this activity, you will need two sound files. You can us
 9. Add an event listener to the tab group that monitors the focus event. If the tab index is 0 (the first tab), pause the sound. Otherwise, play the sound. This will play the sound when tab 2 is displayed and pause it when tab 1 is active.
 
 10. Build and test the app in the simulator/emulator.
-
 
 ### Windows development considerations
 
@@ -280,7 +276,6 @@ For more information about audio configuration in tiapp.xml, see [Windows-specif
 * [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/7.1_audio.zip)
 
 * The [Media object API docs](#!/api/Titanium.Media)
-
 
 ## Summary
 

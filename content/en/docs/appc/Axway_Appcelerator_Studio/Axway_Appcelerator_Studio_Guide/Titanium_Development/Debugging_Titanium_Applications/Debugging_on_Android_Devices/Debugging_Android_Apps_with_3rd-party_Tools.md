@@ -6,29 +6,28 @@ Android developers can debug using Chrome DevTools with Titanium SDK 7.0.x and l
 
 1. **Launch the app/build** on the device or a simulator.
 
-  If using a device, make sure that it is connected by an USB cable before debugging. If you encounter any issues with device discoverability, please ensure that the USB cable is directly connected, not through a USB hub.
+    If using a device, make sure that it is connected by an USB cable before debugging. If you encounter any issues with device discoverability, please ensure that the USB cable is directly connected, not through a USB hub.
 
-  Sample via command-line:
+    Sample via command-line:
 
-  appc run -p android --debug-host /127.0.0.1:51388
+    appc run -p android --debug-host /127.0.0.1:51388
 
 2. **Launch Chrome**. Note you should be signed into Chrome. Also noteworthy, debugging may not work in Incognito or Guest modes
 
 3. Open **DevTools** by going to **More Tools** > **Developer Tools** from Chrome's Main Menu.
 
-  ![remote_device](/Images/appc/download/attachments/52299232/remote_device.png)
+    ![remote_device](/Images/appc/download/attachments/52299232/remote_device.png)
 4. For devices:
 
-  1. From the **Main Menu** (the three vertical dots in the far right corner), select **More Tools** > **Remote devices**.
+    1. From the **Main Menu** (the three vertical dots in the far right corner), select **More Tools** > **Remote devices**.
 
-  2. In DevTools, click the **Settings** tab if another tab is showing.
+    2. In DevTools, click the **Settings** tab if another tab is showing.
 
-  3. Ensure that **Discover USB devices** is enabled.
+    3. Ensure that **Discover USB devices** is enabled.
 
 5. For simulators:
 
-  1. After building, the console will log the required debugger information, e.g.
-
+    1. After building, the console will log the required debugger information, e.g.
 
 Console
 

@@ -1,17 +1,16 @@
 {"title":"Admin Access","weight":"10"}
 
-* [Create an admin user](#Createanadminuser)
+* [Create an admin user](#create-an-admin-user)
 
-  * [Create a new admin user](#Createanewadminuser)
+    * [Create a new admin user](#create-a-new-admin-user)
 
-  * [Add admin access to an existing user](#Addadminaccesstoanexistinguser)
+    * [Add admin access to an existing user](#add-admin-access-to-an-existing-user)
 
-* [Perform Mobile Backend Services API calls on behalf of another user](#PerformMobileBackendServicesAPIcallsonbehalfofanotheruser)
+* [Perform Mobile Backend Services API calls on behalf of another user](#perform-mobile-backend-services-api-calls-on-behalf-of-another-user)
 
-* [Batch delete](#Batchdelete)
+* [Batch delete](#batch-delete)
 
-* [Admin drop custom collection](#Admindropcustomcollection)
-
+* [Admin drop custom collection](#admin-drop-custom-collection)
 
 Mobile Backend Services (MBS) admin access allows application admin users to execute some batch operations and make MBS API calls on behalf of another user.
 
@@ -24,7 +23,6 @@ Before creating an admin user, log in to the Dashboard, and select your applicat
 2. Select the **Dashboard** link on the Dashboard tile.
 
 3. Select an application from the **Apps** tab.
-
 
 Then, either create a new admin user or add admin access to an existing user.
 
@@ -42,8 +40,7 @@ Then, either create a new admin user or add admin access to an existing user.
 
 6. Click **Save**.
 
-  ![admin_appc1_latest](/Images/appc/download/attachments/49153856/admin_appc1_latest.png)
-
+    ![admin_appc1_latest](/Images/appc/download/attachments/49153856/admin_appc1_latest.png)
 
 Mobile Backend Services creates a new user with admin access.
 
@@ -58,7 +55,6 @@ Mobile Backend Services creates a new user with admin access.
 4. Locate the **Admin** section and click the **Yes** radio button.
 
 5. Scroll down and click **Save**.
-
 
 This user now has admin access. To disable access, follow the same steps except click the **No** radio button.
 
@@ -75,7 +71,6 @@ This admin operation is supported by any create, update and delete method, as we
 * [KeyValues.set](/arrowdb/latest/#!/api/KeyValues-method-set)
 
 * [PushNotifications.subscribe](/arrowdb/latest/#!/api/PushNotifications-method-subscribe)
-
 
 For example, the following curl command creates a new status for the specified user:
 
@@ -266,7 +261,6 @@ The following MBS objects support batch delete operations:
 * [Statuses](/arrowdb/latest/#!/api/Statuses)
 
 * [Users](/arrowdb/latest/#!/api/Users)
-
 
 ## Admin drop custom collection
 

@@ -42,24 +42,14 @@ Connectors no longer automatically generate APIs for their models. To automatica
 
 * API-906: Latest arrow is returning 404 for PUT request (update) using arrowdb
 
-
 ### Known Issues
 
 * API-905: Arrow application throws an error when trying to use two different MySQL databases.
 
 * API-917: The styling of the code examples in the Admin console is skewed for both local builds and published Arrow applications.
 
-
 ### API Changes
 
-Name
-
-Type
-
-Description
-
-Arrow.express
-
-instance property
-
-Express module instance.
+| Name | Type | Description |
+| --- | --- | --- |
+| Arrow.express | instance property | Express module instance. |

@@ -1,41 +1,40 @@
 {"title":"Android Module Architecture","weight":"20"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Module](#Module)
+* [Module](#module)
 
-  * [Module lifecycle events](#Modulelifecycleevents)
+    * [Module lifecycle events](#module-lifecycle-events)
 
-  * [Get the current activity](#Getthecurrentactivity)
+    * [Get the current activity](#get-the-current-activity)
 
-* [Proxy](#Proxy)
+* [Proxy](#proxy)
 
-  * [Methods](#Methods)
+    * [Methods](#methods)
 
-  * [Properties](#Properties)
+    * [Properties](#properties)
 
-    * [Custom accessor methods](#Customaccessormethods)
+        * [Custom accessor methods](#custom-accessor-methods)
 
-    * [propertyAccessors annotation element](#propertyAccessorsannotationelement)
+        * [propertyAccessors annotation element](#propertyaccessors-annotation-element)
 
-    * [Handle property changes using the model listener](#Handlepropertychangesusingthemodellistener)
+        * [Handle property changes using the model listener](#handle-property-changes-using-the-model-listener)
 
-  * [Constants](#Constants)
+    * [Constants](#constants)
 
-  * [Type conversions](#Typeconversions)
+    * [Type conversions](#type-conversions)
 
-    * [Files and blobs](#Filesandblobs)
+        * [Files and blobs](#files-and-blobs)
 
-  * [Activity lifecycle events](#Activitylifecycleevents)
+    * [Activity lifecycle events](#activity-lifecycle-events)
 
-* [View Proxy and View](#ViewProxyandView)
+* [View Proxy and View](#view-proxy-and-view)
 
-  * [View Proxy](#ViewProxy)
+    * [View Proxy](#view-proxy)
 
-  * [View](#View)
+    * [View](#view)
 
-  * [View Property and methods](#ViewPropertyandmethods)
-
+    * [View Property and methods](#view-property-and-methods)
 
 ## Introduction
 
@@ -48,7 +47,6 @@ The Titanium SDK is based on a modular architecture, which can be utilized to ex
 * **ViewProxy**: A specialized Proxy that knows how to render Views
 
 * **View**: The visual representation of a UI component which Titanium can render
-
 
 When building a Module, you can only have one Module class but you can have zero or more Proxies, Views and ViewProxies.
 
@@ -86,7 +84,7 @@ The module must have a default constructor (that is, one that takes no arguments
 
 A module can also have a parent module: Titanium.UI and Titanium.App are children of the Titanium module.
 
-The @Kroll.module annotation can also contain a propertyAccessors element, which defines a set of properties exposed by the module. See [Properties](#Properties) for more information.
+The @Kroll.module annotation can also contain a propertyAccessors element, which defines a set of properties exposed by the module. See [Properties](#properties) for more information.
 
 ### Module lifecycle events
 
@@ -176,7 +174,6 @@ You can specify the method parameters in one of two ways:
 
 * Specify a single Object\[\] argument. Your method must validate parameters and convert types manually at runtime.
 
-
 If you specify parameters explicitly _and_ one or more parameters are optional, they must be identified using the @Kroll.argument annotation:
 
 `@Kroll``.method`
@@ -223,7 +220,6 @@ Each proxy object maintains an internal dictionary of properties. Properties can
 
 * Specifying a list of properties in the @Kroll.proxy or @Kroll.module annotation with the propertyAccessors element. This automatically generates getter and setter methods for each of the named properties.
 
-
 When you use custom getter and setter methods, you are responsible for storing property values in whatever way you want.
 
 Auto-generated property accessors store property values in the internal dictionary. The proxy class provides a set of methods for accessing the proxy's property dictionary from Java:
@@ -233,7 +229,6 @@ Auto-generated property accessors store property values in the internal dictiona
 * Set an individual property using setProperty().
 
 * Retrieve the entire dictionary using getProperties().
-
 
 In addition, you can register a _model listener_ – another Java object that  receives updates whenever a value is set in the property dictionary. This pattern is commonly used for views and view proxies.
 
@@ -270,7 +265,6 @@ Note the following two points:
 * If there were no paired @Kroll.setProperty method, the message property would be read-only.
 
 * You are responsible for storing and retrieving the value. It can be stored in an instance variable (as in the example) or in the internal property dictionary.
-
 
 In JavaScript, we can now access message as a property:
 
@@ -310,25 +304,12 @@ In the case of view proxies, the view object is automatically added as a model l
 
 The KrollProxyListener interface defines four methods that you need to implement:
 
-Method
-
-Description
-
-listenerAdded
-
-Called when an event listener is added to the proxy.
-
-listenerRemoved
-
-Called when an event listener is removed from the proxy.
-
-processProperties
-
-Called when the model listener is added, with a complete set of the proxy's properties.
-
-propertyChanged
-
-Called when one of the proxy's properties changes.
+| Method | Description |
+| --- | --- |
+| listenerAdded | Called when an event listener is added to the proxy. |
+| listenerRemoved | Called when an event listener is removed from the proxy. |
+| processProperties | Called when the model listener is added, with a complete set of the proxy's properties. |
+| propertyChanged | Called when one of the proxy's properties changes. |
 
 To handle properties, you must add logic to processProperties and propertyChanged for each property you support. The processProperties method receives a dictionary of properties:
 
@@ -422,71 +403,18 @@ The TiConvert class provides a set of helper methods for casting Objects to spec
 
 The JavaScript, Number, String, Array, Date can be converted into the corresponding Java types, either implicitly or explicitly, as shown in the following table:
 
-JavaScript Type
-
-Java Type
-
-Explicit Conversion
-
-Number
-
-int
-
-[TiConvert.toInt](http://builds.appcelerator.com.s3.amazonaws.com/module-apidoc/2.0.0/android/org/appcelerator/platform/util/TiConvert.html#toInt(java.lang.Object))
-
-Number
-
-float
-
-[TiConvert.toFloat](http://builds.appcelerator.com.s3.amazonaws.com/module-apidoc/2.0.0/android/org/appcelerator/platform/util/TiConvert.html#toFloat(java.lang.Object))
-
-Number
-
-double
-
-[TiConvert.toDouble](http://builds.appcelerator.com.s3.amazonaws.com/module-apidoc/2.0.0/android/org/appcelerator/platform/util/TiConvert.html#toDouble(java.lang.Object))
-
-boolean
-
-boolean
-
-[TiConvert.toBoolean](http://builds.appcelerator.com.s3.amazonaws.com/module-apidoc/2.0.0/android/org/appcelerator/platform/util/TiConvert.html#toBoolean(java.lang.Object))
-
-String
-
-String
-
-[TiConvert.toString](http://builds.appcelerator.com.s3.amazonaws.com/module-apidoc/2.0.0/android/org/appcelerator/platform/util/TiConvert.html#toString(java.lang.Object)) or Cast
-
-Object
-
-HashMap<String, Object>
-
-Cast
-
-Array
-
-Object\[\]
-
-Cast
-
-Date
-
-Date
-
-[TiConvert.toDate](http://builds.appcelerator.com.s3.amazonaws.com/module-apidoc/2.0.0/android/org/appcelerator/platform/util/TiConvert.html#toDate(java.lang.Object)) or Cast
-
-Ti.Blob
-
-TiBlob
-
-[TiConvert.toBlob](http://builds.appcelerator.com.s3.amazonaws.com/module-apidoc/2.0.0/android/org/appcelerator/platform/util/TiConvert.html#toBlob(java.lang.Object)) or Cast
-
-Ti.Filesystem.File
-
-FileProxy
-
-Cast
+| JavaScript Type | Java Type | Explicit Conversion |
+| --- | --- | --- |
+| Number | int | [TiConvert.toInt](http://builds.appcelerator.com.s3.amazonaws.com/module-apidoc/2.0.0/android/org/appcelerator/platform/util/TiConvert.html#toInt(java.lang.Object)) |
+| Number | float | [TiConvert.toFloat](http://builds.appcelerator.com.s3.amazonaws.com/module-apidoc/2.0.0/android/org/appcelerator/platform/util/TiConvert.html#toFloat(java.lang.Object)) |
+| Number | double | [TiConvert.toDouble](http://builds.appcelerator.com.s3.amazonaws.com/module-apidoc/2.0.0/android/org/appcelerator/platform/util/TiConvert.html#toDouble(java.lang.Object)) |
+| boolean | boolean | [TiConvert.toBoolean](http://builds.appcelerator.com.s3.amazonaws.com/module-apidoc/2.0.0/android/org/appcelerator/platform/util/TiConvert.html#toBoolean(java.lang.Object)) |
+| String | String | [TiConvert.toString](http://builds.appcelerator.com.s3.amazonaws.com/module-apidoc/2.0.0/android/org/appcelerator/platform/util/TiConvert.html#toString(java.lang.Object)) or Cast |
+| Object | HashMap<String, Object> | Cast |
+| Array | Object\[\] | Cast |
+| Date | Date | [TiConvert.toDate](http://builds.appcelerator.com.s3.amazonaws.com/module-apidoc/2.0.0/android/org/appcelerator/platform/util/TiConvert.html#toDate(java.lang.Object)) or Cast |
+| Ti.Blob | TiBlob | [TiConvert.toBlob](http://builds.appcelerator.com.s3.amazonaws.com/module-apidoc/2.0.0/android/org/appcelerator/platform/util/TiConvert.html#toBlob(java.lang.Object)) or Cast |
+| Ti.Filesystem.File | FileProxy | Cast |
 
 For example, if you declare a method with int values in the signature, the JavaScript Number values passed in will be converted to Java integers implicitly:
 

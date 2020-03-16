@@ -38,7 +38,6 @@ There are many other components of app-development that should become GDPR-compl
 
 * [Ti.Firebase](https://github.com/hansemannn/titanium-firebase)
 
-
 ## Questions?
 
 If you have further questions about how GDPR works in Titanium, feel free to open a [JIRA ticket](https://jira.appcelerator.org/) or reach out to us via [TiSlack](http://tislack.org/).

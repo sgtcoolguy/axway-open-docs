@@ -1,19 +1,18 @@
 {"title":"Titanium SDK 7.0.2.RC 25 January 2018","weight":"260"}
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [Community credits](#Communitycredits)
+* [Community credits](#community-credits)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-* [API changes](#APIchanges)
-
+* [API changes](#api-changes)
 
 ## About this release
 
 Titanium SDK 7.0.2.RC is a patch release of the SDK, addressing high-priority issues from previous releases.
 
-As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Community credits
 
@@ -21,10 +20,9 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 * [Aleksey Gureiev](https://github.com/alg)
 
-  * Android: EmailDialog file attachments not working on Android 7 and higher ([TIMOB-25541](https://jira.appcelerator.org/browse/TIMOB-25541))
+    * Android: EmailDialog file attachments not working on Android 7 and higher ([TIMOB-25541](https://jira.appcelerator.org/browse/TIMOB-25541))
 
-  * Android: EmailDialog fails to attach files when using Outlook ([TIMOB-23482](https://jira.appcelerator.org/browse/TIMOB-23482))
-
+    * Android: EmailDialog fails to attach files when using Outlook ([TIMOB-23482](https://jira.appcelerator.org/browse/TIMOB-23482))
 
 ## Fixed issues
 
@@ -77,7 +75,6 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 * [TIMOB-25677](https://jira.appcelerator.org/browse/TIMOB-25677) - iOS: Ti.Map - App crashes when re-assigning annotations with clustering enabled
 
 * [TIMOB-25680](https://jira.appcelerator.org/browse/TIMOB-25680) - iOS 11.2: DocumentViewer not displaying PDF files (Apple regression)
-
 
 ## API changes
 

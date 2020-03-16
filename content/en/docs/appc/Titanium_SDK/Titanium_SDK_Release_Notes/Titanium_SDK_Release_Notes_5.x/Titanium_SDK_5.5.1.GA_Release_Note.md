@@ -2,25 +2,23 @@
 
 ## Contents
 
-* [About This Release](#AboutThisRelease)
+* [About This Release](#about-this-release)
 
-* [Community Credits](#CommunityCredits)
+* [Community Credits](#community-credits)
 
-* [Fixed Issues patch releases](#FixedIssuespatchreleases)
+* [Fixed Issues patch releases](#fixed-issues-patch-releases)
 
-* [API Changes](#APIChanges)
-
+* [API Changes](#api-changes)
 
 ## About This Release
 
 Titanium SDK 5.5.1.GA is a patch release of the SDK, addressing high-priority issues from previous releases.
 
-As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Community Credits
 
 * Vittorio Sorbera for correcting some code samples in [Titanium SDK 5.5.0.GA Release Note](/docs/appc/Titanium_SDK/Titanium_SDK_Release_Notes/Titanium_SDK_Release_Notes_5.x/Titanium_SDK_5.5.0.GA_Release_Note/)
-
 
 ## Fixed Issues patch releases
 
@@ -35,7 +33,6 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 * [TIMOB-23929](https://jira.appcelerator.org/browse/TIMOB-23929) - Rename contextId to stop confusing Apple's private API scan
 
 * [TIMOB-23941](https://jira.appcelerator.org/browse/TIMOB-23941) - CLI: ti setup sdk doesn't work when setting "latest"
-
 
 ## API Changes
 

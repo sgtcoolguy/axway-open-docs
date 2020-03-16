@@ -1,39 +1,38 @@
 {"title":"Installing Genymotion","weight":"90"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Compatibility and download](#Compatibilityanddownload)
+* [Compatibility and download](#compatibility-and-download)
 
-  * [Oracle VirtualBox](#OracleVirtualBox)
+    * [Oracle VirtualBox](#oracle-virtualbox)
 
-  * [Genymotion Cloud account](#GenymotionCloudaccount)
+    * [Genymotion Cloud account](#genymotion-cloud-account)
 
-* [Installation](#Installation)
+* [Installation](#installation)
 
-  * [Mac OS X](#MacOSX)
+    * [Mac OS X](#mac-os-x)
 
-  * [Windows](#Windows)
+    * [Windows](#windows)
 
-* [Configuring Genymotion](#ConfiguringGenymotion)
+* [Configuring Genymotion](#configuring-genymotion)
 
-  * [Titanium CLI](#TitaniumCLI)
+    * [Titanium CLI](#titanium-cli)
 
-  * [Studio](#Studio)
+    * [Studio](#studio)
 
-* [Using Genymotion](#UsingGenymotion)
+* [Using Genymotion](#using-genymotion)
 
-  * [Launch a Genymotion virtual device from the CLI](#LaunchaGenymotionvirtualdevicefromtheCLI)
+    * [Launch a Genymotion virtual device from the CLI](#launch-a-genymotion-virtual-device-from-the-cli)
 
-  * [Launch a Genymotion virtual device from Studio](#LaunchaGenymotionvirtualdevicefromStudio)
+    * [Launch a Genymotion virtual device from Studio](#launch-a-genymotion-virtual-device-from-studio)
 
-* [Troubleshooting](#Troubleshooting)
+* [Troubleshooting](#troubleshooting)
 
-  * [I cannot see a list of virtual devices under the Target drop-down list](#IcannotseealistofvirtualdevicesundertheTargetdrop-downlist)
+    * [I cannot see a list of virtual devices under the Target drop-down list](#i-cannot-see-a-list-of-virtual-devices-under-the-target-drop-down-list)
 
-  * [Failed to start daemon](#Failedtostartdaemon)
+    * [Failed to start daemon](#failed-to-start-daemon)
 
-* [Further reading](#Furtherreading)
-
+* [Further reading](#further-reading)
 
 ## Overview
 
@@ -60,7 +59,6 @@ To manually install VirtualBox, see the following:
 * For Mac OS X, go to **[Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)** and get the **Mac OS X .dmg** file. Open the .dmg file and follow the installation steps. When finished, reboot.
 
 * For Windows, Genymotion provides two installers: a ready-to-run installer that provides VirtualBox and a standard installer that does not. Genymotion recommends using the ready-to-run installer. If you want to manually install VirtualBox, g o to **[Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)** and get the **Windows .exe** file. Open the .exe file and follow the installation steps. When finished, reboot.
-
 
 If you have Intel Hardware Accelerated Execution Manager (HAXM) for Android installed, you may not be able to run VirtualBox. Previously, there have been conflicts with HAXM and VirtualBox.
 
@@ -96,7 +94,6 @@ Download the appropriate Genymotion installer from [https://www.genymotion.com/d
 
 10. Click **Finish** after the download completes or click **Add** to download more virtual devices.
 
-
 ### Windows
 
 1. Download the Windows installer (EXE file) from Genymotion.
@@ -127,7 +124,6 @@ Download the appropriate Genymotion installer from [https://www.genymotion.com/d
 
 14. Click **Finish** after the download completes or click **Add** to download more virtual devices.
 
-
 ## Configuring Genymotion
 
 ### Titanium CLI
@@ -138,58 +134,13 @@ To enable support for Genymotion with the Titanium toolchain, you need to config
 
 The table below describes the default locations. If you have a custom installation of either VirtualBox or Genymotion, you need to set the below CLI options in order to use it with the Titanium toolchain.
 
-CLI Option
-
-Description
-
-Defaults by OS
-
-genymotion.home
-
-Path to Genymotion virtual devices
-
-* Mac OS X: /Users/<user>/.Genymobile/Genymotion/deployed/
-
-* Windows: C:\\Users\\<user>\\AppData\\Local\\Genymobile\\Genymotion\\deployed\\
-
-
-genymotion.path
-
-Path to Genymotion
-
-* Mac OS X: /Applications/Genymotion.app
-
-* Windows: C:\\Program Files\\Genymobile\\Genymotion
-
-
-genymotion.executables.genymotion
-
-Path to Genymotion genymotion executable
-
-* Mac OS X: /Applications/Genymotion.app/Contents/MacOS/genymotion
-
-* Windows: C:\\Program Files\\Genymobile\\Genymotion\\genymotion.exe
-
-
-genymotion.executables.player
-
-Path to Genymotion player executable
-
-* Mac OS X: /Applications/Genymotion.app/Contents/MacOS/player.app/Contents/MacOS/player
-
-  * Before 2.6.0: /Applications/Genymotion.app/Contents/MacOS/player
-
-* Windows: C:\\Program Files\\Genymobile\\Genymotion\\player.exe
-
-
-genymotion.executables.vboxmanage
-
-Path to VirtualBox vboxmange executable
-
-* Mac OS X: /usr/bin/vboxmanage
-
-* Windows: C:\\Program Files\\Oracle\\VirtualBox\\VboxManage.exe
-
+| CLI Option | Description | Defaults by OS |
+| --- | --- | --- |
+| genymotion.home | Path to Genymotion virtual devices | * Mac OS X: /Users/<user>/.Genymobile/Genymotion/deployed/<br />    <br />* Windows: C:\\Users\\<user>\\AppData\\Local\\Genymobile\\Genymotion\\deployed\\ |
+| genymotion.path | Path to Genymotion | * Mac OS X: /Applications/Genymotion.app<br />    <br />* Windows: C:\\Program Files\\Genymobile\\Genymotion |
+| genymotion.executables.genymotion | Path to Genymotion genymotion executable | * Mac OS X: /Applications/Genymotion.app/Contents/MacOS/genymotion<br />    <br />* Windows: C:\\Program Files\\Genymobile\\Genymotion\\genymotion.exe |
+| genymotion.executables.player | Path to Genymotion player executable | * Mac OS X: /Applications/Genymotion.app/Contents/MacOS/player.app/Contents/MacOS/player<br />    <br />    * Before 2.6.0: /Applications/Genymotion.app/Contents/MacOS/player<br />        <br />* Windows: C:\\Program Files\\Genymobile\\Genymotion\\player.exe |
+| genymotion.executables.vboxmanage | Path to VirtualBox vboxmange executable | * Mac OS X: /usr/bin/vboxmanage<br />    <br />* Windows: C:\\Program Files\\Oracle\\VirtualBox\\VboxManage.exe |
 
 ### Studio
 
@@ -197,14 +148,13 @@ Studio uses the configuration settings from the Titanium CLI to support Genymoti
 
 1. Open Preferences:
 
-  1. For Mac OS X systems, from the menu, select **Appcelerator Studio** > **Preferences**.
+    1. For Mac OS X systems, from the menu, select **Appcelerator Studio** > **Preferences**.
 
-  2. For Windows systems, from the menu, select **Windows** \> **Preferences**.
+    2. For Windows systems, from the menu, select **Windows** \> **Preferences**.
 
 2. In Preferences, navigate to **Studio** \>  **Platforms** \> **Android**.
 
 3. In the Genymotion section, update the paths to the executables as needed.
-
 
 ![GenyMotion_preferences](/Images/appc/download/attachments/37550296/GenyMotion_preferences.png)
 
@@ -236,7 +186,6 @@ For example, to launch a project in run mode:
 
 4. Click the **Launch** button to start the build process if the **Launch Automatically** option is not enabled under the **Target** drop-down list.
 
-
 In the screen shot below, there are three virtual devices to choose: a user-created Android virtual device, a Genymotion virtual device and an Android virtual device created by the Titanium SDK.
 
 ![image2014-4-7_16_17_42](/Images/appc/download/attachments/37550296/image2014-4-7_16_17_42.png)
@@ -249,18 +198,17 @@ In the screen shot below, there are three virtual devices to choose: a user-crea
 
 2. Double-check your Studio configuration settings in Preferences.
 
-  1. For Mac OS X systems, from the menu, select **Appcelerator Studio** > **Preferences**.
+    1. For Mac OS X systems, from the menu, select **Appcelerator Studio** > **Preferences**.
 
-  2. For Windows systems, from the menu, select **Windows >** **Preferences**.
+    2. For Windows systems, from the menu, select **Windows >** **Preferences**.
 
-  3. Navigate to **Studio >** **Platforms > Android.**
+    3. Navigate to **Studio >** **Platforms > Android.**
 
 3. Restart adb, then restart Studio. To restart adb, from a terminal, run:
 
-  `adb kill-server`
+    `adb kill-server`
 
-  `adb start-server`
-
+    `adb start-server`
 
 ### Failed to start daemon
 
@@ -295,7 +243,6 @@ This indicates the ADB version shipped with Genymotion is out of date with the A
 5. In the **Android SDK** textbox, enter the path to your Android SDK or click the **Browse** button to navigate to it.
 
 6. Click **OK.**
-
 
 Rebuild the application.
 

@@ -1,15 +1,14 @@
 {"title":"Adding Command-Line Options","weight":"20"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Finding Your INI Configuration File](#FindingYourINIConfigurationFile)
+* [Finding Your INI Configuration File](#finding-your-ini-configuration-file)
 
-* [VM args vs. Launcher Arguments](#VMargsvs.LauncherArguments)
+* [VM args vs. Launcher Arguments](#vm-args-vs.-launcher-arguments)
 
-* [Specifying Launcher Arguments](#SpecifyingLauncherArguments)
+* [Specifying Launcher Arguments](#specifying-launcher-arguments)
 
-* [Specifying VM Arguments](#SpecifyingVMArguments)
-
+* [Specifying VM Arguments](#specifying-vm-arguments)
 
 ## Overview
 
@@ -19,22 +18,21 @@ Several tools and techniques require you to either pass options on the command l
 
 1. Locate the INI configuration file:
 
-  1. **Mac OS X**:
+    1. **Mac OS X**:
 
-    1. Navigate to the /Applications/Appcelerator Studio folder in Finder.
+        1. Navigate to the /Applications/Appcelerator Studio folder in Finder.
 
-    2. Right-click (or control-click) on AppceleratorStudio.app and choose Show package contents.
+        2. Right-click (or control-click) on AppceleratorStudio.app and choose Show package contents.
 
-    3. In the new Finder window, navigate to Contents/MacOS.
+        3. In the new Finder window, navigate to Contents/MacOS.
 
-  2. **Windows**: Navigate to the location of your Studio application (likely under C:\\Users\\username\\AppData\\Local\\Appcelerator Studio).
+    2. **Windows**: Navigate to the location of your Studio application (likely under C:\\Users\\username\\AppData\\Local\\Appcelerator Studio).
 
 2. Open AppceleratorStudio.ini.
 
 3. Edit the options as desired.
 
 4. Save and close the file.
-
 
 You can follow the same procedures on Eclipse. The folder structure will be identical, but the file to edit is **eclipse.ini**.
 

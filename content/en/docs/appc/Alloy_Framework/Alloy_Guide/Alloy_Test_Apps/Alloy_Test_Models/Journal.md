@@ -94,7 +94,6 @@ The ScrollView element also specifies a dataTransform function to transform each
 
 * Uses the built-in moment.js library's [fromNow()](http://momentjs.com/docs/#/displaying/fromnow/) method to transform the entry's dateCreated value into dateSince.
 
-
 app/controllers/index.js
 
 `// Require built-in moment.js library for working with dates/times.`

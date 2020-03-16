@@ -1,17 +1,16 @@
 {"title":"Studio Troubleshooting","weight":"90"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Submitting a Bug](#SubmittingaBug)
+* [Submitting a Bug](#submitting-a-bug)
 
-* [Common Issues](#CommonIssues)
+* [Common Issues](#common-issues)
 
-* [Web Tools Feature Requests/Bugs](#WebToolsFeatureRequests/Bugs)
+* [Web Tools Feature Requests/Bugs](#web-tools-feature-requests/bugs)
 
-* [Titanium Tools Feature Requests/Bugs](#TitaniumToolsFeatureRequests/Bugs)
+* [Titanium Tools Feature Requests/Bugs](#titanium-tools-feature-requests/bugs)
 
-* [Related Topics](#RelatedTopics)
-
+* [Related Topics](#related-topics)
 
 ## Overview
 
@@ -32,7 +31,6 @@ Some common troubleshooting requests and diagnostic solutions.
 * [Trouble Logging In](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Studio_Troubleshooting/Errors_Logging_In_to_Studio/)
 
 * [Trouble Using WST/PDT With The Studio](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Studio_Troubleshooting/Problems_with_WST_and_PDT/)
-
 
 ## Web Tools Feature Requests/Bugs
 

@@ -1,29 +1,28 @@
 {"title":"AMPLIFY Runtime Services Troubleshooting","weight":"20"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Exceptions are thrown upon deployment](#Exceptionsarethrownupondeployment)
+* [Exceptions are thrown upon deployment](#exceptions-are-thrown-upon-deployment)
 
-  * [Exception in app.js outside start() method](#Exceptioninapp.jsoutsidestart()method)
+    * [Exception in app.js outside start() method](#exception-in-app.js-outside-start-method)
 
-  * [Exception inside app.js start() method](#Exceptioninsideapp.jsstart()method)
+    * [Exception inside app.js start() method](#exception-inside-app.js-start-method)
 
-  * [Exception in a controller, outside of a function](#Exceptioninacontroller,outsideofafunction)
+    * [Exception in a controller, outside of a function](#exception-in-a-controller,-outside-of-a-function)
 
-* [Exceptions are thrown at runtime](#Exceptionsarethrownatruntime)
+* [Exceptions are thrown at runtime](#exceptions-are-thrown-at-runtime)
 
-  * [Exception in synchronous calls handling requests](#Exceptioninsynchronouscallshandlingrequests)
+    * [Exception in synchronous calls handling requests](#exception-in-synchronous-calls-handling-requests)
 
-  * [Exception in asynchronous callbacks handling requests (or background jobs)](#Exceptioninasynchronouscallbackshandlingrequests(orbackgroundjobs))
+    * [Exception in asynchronous callbacks handling requests (or background jobs)](#exception-in-asynchronous-callbacks-handling-requests-or-background-jobs)
 
-  * [Application crashes while handling requests](#Applicationcrasheswhilehandlingrequests)
+    * [Application crashes while handling requests](#application-crashes-while-handling-requests)
 
-  * [Application crashes while running background jobs](#Applicationcrasheswhilerunningbackgroundjobs)
+    * [Application crashes while running background jobs](#application-crashes-while-running-background-jobs)
 
-* [Installation errors](#Installationerrors)
+* [Installation errors](#installation-errors)
 
-  * [Error: ENOENT, no such file or directory](#Error:ENOENT,nosuchfileordirectory)
-
+    * [Error: ENOENT, no such file or directory](#error:-enoent,-no-such-file-or-directory)
 
 ## Introduction
 

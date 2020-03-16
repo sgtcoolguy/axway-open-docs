@@ -2,26 +2,25 @@
 
 This document provides questions and answers to commonly asked questions about Appcelerator Dashboard.
 
-* [Creating custom Mobile Backend Services (MBS) objects](#CreatingcustomMobileBackendServices(MBS)objects)
+* [Creating custom Mobile Backend Services (MBS) objects](#creating-custom-mobile-backend-services-mbs-objects)
 
-* [Creating API keys](#CreatingAPIkeys)
+* [Creating API keys](#creating-api-keys)
 
-* [Authorizing a browser or device](#Authorizingabrowserordevice)
+* [Authorizing a browser or device](#authorizing-a-browser-or-device)
 
-* [Key metrics](#Keymetrics)
+* [Key metrics](#key-metrics)
 
-* [Custom date range](#Customdaterange)
+* [Custom date range](#custom-date-range)
 
-* [Exporting data](#Exportingdata)
+* [Exporting data](#exporting-data)
 
-* [Managing datasource](#Managingdatasource)
+* [Managing datasource](#managing-datasource)
 
-* [Common sending and scheduling push errors](#Commonsendingandschedulingpusherrors)
+* [Common sending and scheduling push errors](#common-sending-and-scheduling-push-errors)
 
-* [Configuring cloud services](#Configuringcloudservices)
+* [Configuring cloud services](#configuring-cloud-services)
 
-* [Viewing custom cloud services](#Viewingcustomcloudservices)
-
+* [Viewing custom cloud services](#viewing-custom-cloud-services)
 
 ## Creating custom Mobile Backend Services (MBS) objects
 

@@ -1,39 +1,38 @@
 {"title":"Visual Studio Code - Titanium Extension Features","weight":"10"}
 
-* [Commands](#Commands)
+* [Commands](#commands)
 
-* [Titanium View](#TitaniumView)
+* [Titanium View](#titanium-view)
 
-* [Build tools](#Buildtools)
+* [Build tools](#build-tools)
 
-* [Autocompletion](#Autocompletion)
+* [Autocompletion](#autocompletion)
 
-  * [Generation](#Generation)
+    * [Generation](#generation)
 
-  * [Titanium and Alloy](#TitaniumandAlloy)
+    * [Titanium and Alloy](#titanium-and-alloy)
 
-  * [Project references](#Projectreferences)
+    * [Project references](#project-references)
 
-  * [Class and ID references](#ClassandIDreferences)
+    * [Class and ID references](#class-and-id-references)
 
-  * [Images](#Images)
+    * [Images](#images)
 
-* [Open related files](#Openrelatedfiles)
+* [Open related files](#open-related-files)
 
-* [Jump-to-definition](#Jump-to-definition)
+* [Jump-to-definition](#jump-to-definition)
 
-  * [Alloy](#Alloy)
+    * [Alloy](#alloy)
 
-  * [Strings](#Strings)
+    * [Strings](#strings)
 
-  * [Images](#Images.1)
+    * [Images](#images)
 
-* [Snippets](#Snippets)
+* [Snippets](#snippets)
 
-  * [Snippets for Titanium development](#SnippetsforTitaniumdevelopment)
+    * [Snippets for Titanium development](#snippets-for-titanium-development)
 
-  * [Snippets for Alloy development](#SnippetsforAlloydevelopment)
-
+    * [Snippets for Alloy development](#snippets-for-alloy-development)
 
 ## Commands
 
@@ -41,99 +40,27 @@ VS Code include several base and extension keymap bindings.
 
 The following table contains a list of keymap bindings that ships with the Titanium extension. If you wish to modify the keymap, you can go to **Code** > **Preferences** > **Keymaps** (command K, command M). Please review [Key Bindings for Visual Studio Code](https://code.visualstudio.com/docs/getstarted/keybindings) for more details.
 
-Command
-
-Keymap binding
-
-Description
-
-Titanium: Create application
-
-Create a new Titanium application project
-
-Titanium: Create module
-
-Create a new Titanium module project
-
-Titanium: Enable LiveView
-
-Enable LiveView
-
-Titanium: Disable LiveView
-
-Disable LiveView
-
-Titanium: Build
-
-cmd/ctrl + alt + enter
-
-Build a Titanium project
-
-Titanium: Package
-
-Package a Titanium project
-
-Titanium: Stop
-
-cmd/ctrl + alt + .
-
-Stop a running build or package process
-
-Titanium: Set log level
-
-Set log level
-
-Titanium: Generate Alloy controller
-
-Generate Alloy controller
-
-Titanium: Generate Alloy migration
-
-Generate Alloy migration
-
-Titanium: Generate Alloy model
-
-Generate Alloy model
-
-Titanium: Generate Alloy style
-
-Generate Alloy style
-
-Titanium: Generate Alloy view
-
-Generate Alloy view
-
-Titanium: Generate Alloy widget
-
-Generate Alloy widget
-
-Titanium: Open related view
-
-cmd/ctrl + alt + v
-
-Open related view
-
-Titanium: Open related style
-
-cmd/ctrl + alt + s
-
-Open related style
-
-Titanium: Open related controller
-
-cmd/ctrl + alt + x
-
-Open related controller
-
-Titanium: Open related files
-
-cmd/ctrl + alt + a
-
-Open related files
-
-Titanium: Generate autocomplete list
-
-Generate autocomplete list
+| Command | Keymap binding | Description |
+| --- | --- | --- |
+| Titanium: Create application |  | Create a new Titanium application project |
+| Titanium: Create module |  | Create a new Titanium module project |
+| Titanium: Enable LiveView |  | Enable LiveView |
+| Titanium: Disable LiveView |  | Disable LiveView |
+| Titanium: Build | cmd/ctrl + alt + enter | Build a Titanium project |
+| Titanium: Package |  | Package a Titanium project |
+| Titanium: Stop | cmd/ctrl + alt + . | Stop a running build or package process |
+| Titanium: Set log level |  | Set log level |
+| Titanium: Generate Alloy controller |  | Generate Alloy controller |
+| Titanium: Generate Alloy migration |  | Generate Alloy migration |
+| Titanium: Generate Alloy model |  | Generate Alloy model |
+| Titanium: Generate Alloy style |  | Generate Alloy style |
+| Titanium: Generate Alloy view |  | Generate Alloy view |
+| Titanium: Generate Alloy widget |  | Generate Alloy widget |
+| Titanium: Open related view | cmd/ctrl + alt + v | Open related view |
+| Titanium: Open related style | cmd/ctrl + alt + s | Open related style |
+| Titanium: Open related controller | cmd/ctrl + alt + x | Open related controller |
+| Titanium: Open related files | cmd/ctrl + alt + a | Open related files |
+| Titanium: Generate autocomplete list |  | Generate autocomplete list |
 
 ## Titanium View
 
@@ -193,7 +120,6 @@ Opening related Alloy files is supported (see above commands list). This can als
 
 * From Controller, open related View and/or Style
 
-
 ## Jump-to-definition
 
 Jump-to-definition support is provided for quickly accessing the definition or usage of Alloy markup and to easily generate new definitions. Images can be previewed inline.
@@ -224,116 +150,36 @@ Code snippets for common Alloy and Titanium APIs are provided for use in Alloy c
 
 ### Snippets for Titanium development
 
-Prefix
-
-Description
-
-tidebug
-
-Debug log function
-
-tiinfo
-
-Info log function
-
-titrace
-
-Trace log function
-
-tiwarn
-
-Warn log function
-
-tierror
-
-Error log function
-
-tiaddevent
-
-Add event listener function
-
-tiremevent
-
-Remove event listener function
-
-tifireevent
-
-Fire event function
-
-tialert
-
-Create alert dialog
-
-tiopt
-
-Create option dialog
-
-tianim
-
-Create animation
-
-tifile
-
-Get file
-
-tisound
-
-Create sound
-
-tiaudio
-
-Create audio player
-
-tivideo
-
-Create video player
-
-ticamera
-
-Show camera
+| Prefix | Description |
+| --- | --- |
+| tidebug | Debug log function |
+| tiinfo | Info log function |
+| titrace | Trace log function |
+| tiwarn | Warn log function |
+| tierror | Error log function |
+| tiaddevent | Add event listener function |
+| tiremevent | Remove event listener function |
+| tifireevent | Fire event function |
+| tialert | Create alert dialog |
+| tiopt | Create option dialog |
+| tianim | Create animation |
+| tifile | Get file |
+| tisound | Create sound |
+| tiaudio | Create audio player |
+| tivideo | Create video player |
+| ticamera | Show camera |
 
 ### Snippets for Alloy development
 
-Prefix
-
-Description
-
-alglo
-
-Alloy Globals object
-
-alcfg
-
-Alloy CFG object
-
-alargs
-
-Arguments available in an Alloy controller
-
-alcon
-
-Alloy create controller function
-
-alcol
-
-Alloy create collection function
-
-almod
-
-Alloy create model function
-
-alwid
-
-Alloy create widget function
-
-ifios
-
-Alloy iOS conditional statement
-
-ifand
-
-Alloy Android conditional statement
-
-ifwin
-
-Alloy Windows conditional statement
+| Prefix | Description |
+| --- | --- |
+| alglo | Alloy Globals object |
+| alcfg | Alloy CFG object |
+| alargs | Arguments available in an Alloy controller |
+| alcon | Alloy create controller function |
+| alcol | Alloy create collection function |
+| almod | Alloy create model function |
+| alwid | Alloy create widget function |
+| ifios | Alloy iOS conditional statement |
+| ifand | Alloy Android conditional statement |
+| ifwin | Alloy Windows conditional statement |

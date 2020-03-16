@@ -10,7 +10,6 @@ Dashboard 4.13.0 is a minor release, which includes new features, improvements, 
 
 * Added support for on-demand training purchases
 
-
 ## Improvements
 
 * Improved sign-up and activation processes to reduce steps to completion and indicate progress through the onboarding flow
@@ -26,7 +25,6 @@ Dashboard 4.13.0 is a minor release, which includes new features, improvements, 
 * Updated the [API Builder Getting Started Guide](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Getting_Started_Guide/) page
 
 * Updated the Studio product page to show hardware requirements, supported macOS and Windows versions, and recommended Linux kernel versions
-
 
 ## Fixed issues
 

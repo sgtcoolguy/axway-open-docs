@@ -1,23 +1,22 @@
 {"title":"Alloy Tasks in Studio","weight":"10"}
 
-* [Creating an Alloy Project](#CreatinganAlloyProject)
+* [Creating an Alloy Project](#creating-an-alloy-project)
 
-* [Creating a Controller](#CreatingaController)
+* [Creating a Controller](#creating-a-controller)
 
-* [Creating a Model](#CreatingaModel)
+* [Creating a Model](#creating-a-model)
 
-* [Creating a Migration](#CreatingaMigration)
+* [Creating a Migration](#creating-a-migration)
 
-* [Creating a Widget](#CreatingaWidget)
+* [Creating a Widget](#creating-a-widget)
 
-* [Navigating easily among Alloy element files](#NavigatingeasilyamongAlloyelementfiles)
+* [Navigating easily among Alloy element files](#navigating-easily-among-alloy-element-files)
 
-* [Building and Running an Application](#BuildingandRunninganApplication)
+* [Building and Running an Application](#building-and-running-an-application)
 
-* [Using Content Assistance](#UsingContentAssistance)
+* [Using Content Assistance](#using-content-assistance)
 
-* [Debugging Alloy Code](#DebuggingAlloyCode)
-
+* [Debugging Alloy Code](#debugging-alloy-code)
 
 ## Introduction
 
@@ -33,7 +32,6 @@ To create a new Alloy project, start Studio, then
 
 3. Complete all of the fields, then click the **Finish** button.
 
-
 A new skeleton Alloy project will be generated. Note that the Resources folder is hidden from the App and Project Explorer.
 
 ### Creating a Controller
@@ -47,7 +45,6 @@ To create a new controller with a view and style,
 3. In the **Controller name** textbox, enter the name of the controller. A warning appears if a duplicate exists.
 
 4. Click the **OK** button.
-
 
 This creates app/controllers/<name>.js, app/styles/<name>.tss, and app/views/<name>.xml.
 
@@ -63,10 +60,9 @@ To create a new model,
 
 4. In the **Adapter**drop-down box, select the type of storage.
 
-  1. For sql, in the **Schema** table, enter the names and data types of the database schema.
+    1. For sql, in the **Schema** table, enter the names and data types of the database schema.
 
 5. Click the **OK** button.
-
 
 This creates app/models/<name>.js.
 
@@ -82,7 +78,6 @@ To generate a standalone migration for a specific model,
 
 4. Click the **OK** button.
 
-
 This creates a timestamp-ordered migration file for the model specified, that is, app/migrations/DATETIME\_<name>.js
 
 ### Creating a Widget
@@ -96,7 +91,6 @@ To create a basic widget,
 3. In the **Widget name** textbox, enter the name of the migration. A warning appears if a duplicate exists.
 
 4. Click the **OK** button.
-
 
 This creates a default widget in the projects's app/widgets path, generating a configuration file, controller, style and view: app/widgets/<name>/widget.json, app/widgets/<name>/controllers/widget.js, app/widgets/<name>/styles/widget.tss, and app/widgets/<name>/views/widget.xml. Additionally, the widget is automatically added as a dependency in the Alloy project's configuration file config.json.
 
@@ -114,28 +108,17 @@ When developing an Alloy project you will frequently need to switch between the 
 
 3. From the context menu, select the related Alloy element file that you want to open: **Controller File**, **View File**, or **Style File**.
 
-
 Which menu options appear depends on the type of file you're currently editing. For example, if you're editing an Alloy view (.xml) file the context menu will contain **Controller File** and **Style File** options; if you're viewing an Alloy style (.tss) file the menu will contain **Controller File** and **View File** options.
 
 ![image2013-10-17_13_32_19](/Images/appc/download/attachments/37536787/image2013-10-17_13_32_19.png)
 
 You can also use the following equivalent keyboard shortcuts:
 
-Keyboard shortcut
-
-Opens
-
-**Cmd+Shift+C** (Mac), **Ctrl+Shift+C** (Window)
-
-Controller file
-
-**Cmd+Shift+S** (Mac), **Ctrl+Shift+S** (Window)
-
-Style file
-
-**Cmd+Shift+V** (Mac), **Ctrl+Shift+V** (Window)
-
-View file
+| Keyboard shortcut | Opens |
+| --- | --- |
+| **Cmd+Shift+C** (Mac), **Ctrl+Shift+C** (Window) | Controller file |
+| **Cmd+Shift+S** (Mac), **Ctrl+Shift+S** (Window) | Style file |
+| **Cmd+Shift+V** (Mac), **Ctrl+Shift+V** (Window) | View file |
 
 ### Building and Running an Application
 

@@ -6,25 +6,12 @@ Appcelerator CLI 4.0.2 is a patch release, addressing high-priority issues from 
 
 The following components are shipped with CLI 4.0.2:
 
-Name
-
-Version
-
-**[Alloy](https://github.com/appcelerator/alloy/blob/1_6_X/CHANGELOG.md)**
-
-**1.6.2 (update)**
-
-**[Arrow Builder](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Release_Notes/)**
-
-**0.4.3 (update)**
-
-Arrow Cloud CLI
-
-1.0.24
-
-**[Titanium CLI](https://github.com/appcelerator/titanium/blob/4_0_X/CHANGELOG.md)**
-
-**4.0.1 (update)**
+| Name | Version |
+| --- | --- |
+| **[Alloy](https://github.com/appcelerator/alloy/blob/1_6_X/CHANGELOG.md)** | **1.6.2 (update)** |
+| **[Arrow Builder](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Release_Notes/)** | **0.4.3 (update)** |
+| Arrow Cloud CLI | 1.0.24 |
+| **[Titanium CLI](https://github.com/appcelerator/titanium/blob/4_0_X/CHANGELOG.md)** | **4.0.1 (update)** |
 
 ## Fixed Issues
 

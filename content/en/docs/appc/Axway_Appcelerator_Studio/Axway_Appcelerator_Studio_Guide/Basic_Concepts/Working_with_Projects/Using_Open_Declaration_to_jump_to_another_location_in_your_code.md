@@ -16,5 +16,4 @@ To jump to a source location in your code:
 
 2. Press **F3** to jump to the place where you declared the item. (You can also select **Open Declaration** from the **Navigate** menu.)
 
-
 Your cursor automatically jumps to the place where the item was originally declared.

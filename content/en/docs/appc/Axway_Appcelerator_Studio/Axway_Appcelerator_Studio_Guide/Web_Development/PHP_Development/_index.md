@@ -1,39 +1,38 @@
 {"title":"PHP Development","weight":"50"}
 
-* [PHP Support](#PHPSupport)
+* [PHP Support](#php-support)
 
-  * [Creating a PHP Project](#CreatingaPHPProject)
+    * [Creating a PHP Project](#creating-a-php-project)
 
-    * [Creating a project using the new project wizard](#Creatingaprojectusingthenewprojectwizard)
+        * [Creating a project using the new project wizard](#creating-a-project-using-the-new-project-wizard)
 
-    * [Creating a project using the import wizard](#Creatingaprojectusingtheimportwizard)
+        * [Creating a project using the import wizard](#creating-a-project-using-the-import-wizard)
 
-  * [Editing](#Editing)
+    * [Editing](#editing)
 
-    * [Syntax Coloring](#SyntaxColoring)
+        * [Syntax Coloring](#syntax-coloring)
 
-    * [Code Assist](#CodeAssist)
+        * [Code Assist](#code-assist)
 
-    * [Auto Indentation & Code Formatting](#AutoIndentation&CodeFormatting)
+        * [Auto Indentation & Code Formatting](#auto-indentation-&-code-formatting)
 
-    * [PHPDoc information pop-ups](#PHPDocinformationpop-ups)
+        * [PHPDoc information pop-ups](#phpdoc-information-pop-ups)
 
-    * [Occurrences Marking](#OccurrencesMarking)
+        * [Occurrences Marking](#occurrences-marking)
 
-  * [Attaching PHP Resources](#AttachingPHPResources)
+    * [Attaching PHP Resources](#attaching-php-resources)
 
-    * [External Libraries / Frameworks](#ExternalLibraries/Frameworks)
+        * [External Libraries / Frameworks](#external-libraries-/-frameworks)
 
-    * [Internal Project Resources](#InternalProjectResources)
+        * [Internal Project Resources](#internal-project-resources)
 
-  * [PHP API Level](#PHPAPILevel)
+    * [PHP API Level](#php-api-level)
 
-* [Previewing](#Previewing)
+* [Previewing](#previewing)
 
-  * [Troubleshooting](#Troubleshooting)
+    * [Troubleshooting](#troubleshooting)
 
-* [Related Topics](#RelatedTopics)
-
+* [Related Topics](#related-topics)
 
 ## PHP Support
 
@@ -50,7 +49,7 @@ There are two ways to create a project:
 The PHP project wizard can be accessed through multiple locations in the workspace.
 A project can be created through the File->New->PHP Project, or by right-clicking the 'Project Explorer' or the 'App Explorer' and select New->PHP Project.
 
-![php_project_wizard](/Images/appc/download/attachments/30083030/php_project_wizard.jpg)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/php_project_wizard.jpg" alt="images/download/attachments/30083030/php_project_wizard.jpg" class="confluence-embedded-image image-center"></p></td></tr></tbody></table>
 
 #### Creating a project using the import wizard
 
@@ -81,7 +80,6 @@ The PHP editor provides these features:
 
 * Read and write Occurrences Markers when clicking on specific PHP elements
 
-
 #### Syntax Coloring
 
 Like with any other Studio-contributed editor, the syntax highlighting settings are controlled by the 'Theme' preference page under the Studio's preferences.
@@ -103,12 +101,11 @@ The editor provides a smart code assist mechanism that displays suggestions by t
 
 * When inserting a function call item, any expected parameters are pre-populated into the code (excluding any optional parameters). It's possible to traverse the inserted parameters by clicking the 'Tab' key. Clicking 'Return' will jump to the 'green-marker' at the end of the inserted code.
 
-  ![php_ca_insertion](/Images/appc/download/attachments/30083030/php_ca_insertion.jpg)
+    <table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/php_ca_insertion.jpg" alt="images/download/attachments/30083030/php_ca_insertion.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 * When the caret is located inside the parameters area, clicking Ctrl+Shift+Space will pop-up a small tool-tip helper that will indicate the available parameters and will **bold**the current position.
 
-  ![php_ca_parameters](/Images/appc/download/attachments/30083030/php_ca_parameters.jpg)
-
+    <table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/php_ca_parameters.jpg" alt="images/download/attachments/30083030/php_ca_parameters.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 The content assist relies on an **indexing** process that is performed on the workspace and on the edited files. Inconsistent index state, like the one that may occur when turning off the 'Auto Building' option, may result in wrong or no accurate assistance.
 
@@ -152,7 +149,7 @@ Note that the 'off' and 'on' tags are also customizable through the formatter pr
 When hovering over a PHP element, such as a function call, a class name, and so forth, a pop-up will appear and display any PHPDoc information for that element. The content for that pop-up is parsed from the PHPDoc block that is on top of the element's definition.
 The header of the proposal will indicate the source file that was detected as the element's origin.
 
-![php_doc_hover](/Images/appc/download/attachments/30083030/php_doc_hover.jpg)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/php_doc_hover.jpg" alt="images/download/attachments/30083030/php_doc_hover.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 #### Occurrences Marking
 
@@ -160,7 +157,7 @@ When the 'Mark Occurrences' toggle button that appears at the toolbar is 'on', t
 Clicking on a variable element, for example, will highlight all the places in the edited code where the item is accessed (read-from or write-to as an assignment).
 Controlling the elements and structures that will display the occurrences markings is done through the Studio's preferences, under the PHP item node.
 
-![mark_occurrences](/Images/appc/download/attachments/30083030/mark_occurrences.jpg)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/mark_occurrences.jpg" alt="images/download/attachments/30083030/mark_occurrences.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 ### Attaching PHP Resources
 
@@ -174,7 +171,7 @@ To attach one, go to the PHP preferences at Aptana -> Editors -> PHP -> Librarie
 By default, every PHP project will show content-assist proposals from that library, unless indicated differently in the project's properties.
 To specify a unique set of libraries for a specific project, right click the project, select 'Properties' and then select the '**Project Buildpath**' item. Click the '**Libraries**' tab and select the libraries you wish to see in your code-assist.
 
-![build_path_1](/Images/appc/download/attachments/30083030/build_path_1.jpg)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/build_path_1.jpg" alt="images/download/attachments/30083030/build_path_1.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 Through that same property page, it's also possible to attach more external directories to be parsed for the content-assist proposals. To do so, click the '**External Directories**' tab and select a directory on your disk.
 
@@ -202,7 +199,6 @@ See [Setting up an external webserver to preview PHP and other non-HTML pages](/
 * In case something is not functioning as expected, please submit an issue through our ticketing system. The [Studio Troubleshooting](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Studio_Troubleshooting/) section describes how to.
 
 * In some unique cases, the indexing process may take a long time to complete. This will happen when you have a very large number of files in your PHP projects. In case you feel it takes too long to complete, you may want to clean the workspace before submitting an issue. To do so, access the 'Project' menu, select 'Clean', and then 'Clean All...'. This operation will delete and recreate any cached index files, mending any corrupted indexes that can trigger such an issue.
-
 
 ## Related Topics
 

@@ -1,17 +1,16 @@
 {"title":"Adding a New Portal Dispatcher","weight":"20"}
 
-* [Creating a New Dispatcher](#CreatingaNewDispatcher)
+* [Creating a New Dispatcher](#creating-a-new-dispatcher)
 
-  * [Adding the JavaScript Code](#AddingtheJavaScriptCode)
+    * [Adding the JavaScript Code](#adding-the-javascript-code)
 
-    * [Updating the HTML](#UpdatingtheHTML)
+        * [Updating the HTML](#updating-the-html)
 
-    * [Write the JavaScript Handler](#WritetheJavaScriptHandler)
+        * [Write the JavaScript Handler](#write-the-javascript-handler)
 
-    * [Call the Handler](#CalltheHandler)
+        * [Call the Handler](#call-the-handler)
 
-* [Example: Integrate Dispatchers Into an HTML Page](#Example:IntegrateDispatchersIntoanHTMLPage)
-
+* [Example: Integrate Dispatchers Into an HTML Page](#example:-integrate-dispatchers-into-an-html-page)
 
 ## Creating a New Dispatcher
 

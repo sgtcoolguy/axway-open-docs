@@ -10,50 +10,47 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 API Builder Tools 2.0.3 is a patch release that includes a security fix, a bug fix, and several known issues.
 
-As of this release, the previous API Builder Tools 2.x patch release is no longer supported. End of support for this version will be 2019-12-05 or until the next patch release. Note: Major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, the previous API Builder Tools 2.x patch release is no longer supported. End of support for this version will be 2019-12-05 or until the next patch release. Note: Major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Fixed security issue
 
 * Previously, an application built with API Builder could allow a remote attacker to bypass authentication to an API endpoint. The issue was discovered by Axway and we have no indications that the vulnerability has been exploited or publicly disclosed. Now, the authentication bypass vulnerability has been resolved in API Builder 2.x.
 
-  * **Summary**: An application built with API Builder could allow a remote attacker to bypass authentication to an API endpoint. The issue was discovered by Axway and we have no indications that the vulnerability has been exploited or publicly disclosed.
+    * **Summary**: An application built with API Builder could allow a remote attacker to bypass authentication to an API endpoint. The issue was discovered by Axway and we have no indications that the vulnerability has been exploited or publicly disclosed.
 
-  * **Vulnerability details**: An application built with API Builder could allow a remote attacker to bypass authentication to an API endpoint and obtain sensitive information, affect the integrity and availability when using the following authentication mechanisms:
+    * **Vulnerability details**: An application built with API Builder could allow a remote attacker to bypass authentication to an API endpoint and obtain sensitive information, affect the integrity and availability when using the following authentication mechanisms:
 
-    * HTTP Basic Authentication
+        * HTTP Basic Authentication
 
-    * API Key based Authentication
+        * API Key based Authentication
 
-    * LDAP Authentication
+        * LDAP Authentication
 
-  * **CVSS base score**: 10
+    * **CVSS base score**: 10
 
-  * **CVSS vector**: (CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N)
+    * **CVSS vector**: (CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N)
 
-  * **Applying remediation/fixes**: If your published applications are using any of the following authentication mechanisms, it is recommended that you download the patch versions and republish your applications:
+    * **Applying remediation/fixes**: If your published applications are using any of the following authentication mechanisms, it is recommended that you download the patch versions and republish your applications:
 
-    * HTTP Basic Authentication
+        * HTTP Basic Authentication
 
-    * API Key based Authentication
+        * API Key based Authentication
 
-    * LDAP Authentication
+        * LDAP Authentication
 
+        For API Builder Applications developed and published with **API Builder 2.x**, download CLI Version 6.3.1 and republish the application using the following steps:
 
-    For API Builder Applications developed and published with **API Builder 2.x**, download CLI Version 6.3.1 and republish the application using the following steps:
+        1. **appc use 6.3.1**
 
-    1. **appc use 6.3.1**
+        2. **cd <your project folder>**
 
-    2. **cd <your project folder>**
+        3. **appc** **publish -f**
 
-    3. **appc** **publish -f**
-
-  * **Further information**: For additional questions, contact [support@axway.com](mailto:support@axway.com) .
-
+    * **Further information**: For additional questions, contact [support@axway.com](mailto:support@axway.com) .
 
 ## Fixed issue
 
 * Previously, a regression update introduced an issue that prevented the inner join queries from working properly. Now, the regression has been fixed and the inner join queries return the expected number of records.
-
 
 ## Known issues
 

@@ -1,55 +1,54 @@
 {"title":"Internationalization","weight":"60"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [Language strings](#Languagestrings)
+    * [Language strings](#language-strings)
 
-    * [Resource file structure](#Resourcefilestructure)
+        * [Resource file structure](#resource-file-structure)
 
-    * [Getting a localized string](#Gettingalocalizedstring)
+        * [Getting a localized string](#getting-a-localized-string)
 
-    * [Replacing values in a localized string](#Replacingvaluesinalocalizedstring)
+        * [Replacing values in a localized string](#replacing-values-in-a-localized-string)
 
-    * [iOS-specific localizations](#iOS-specificlocalizations)
+        * [iOS-specific localizations](#ios-specific-localizations)
 
-      * [Localize system buttons and submit to international App Stores](#LocalizesystembuttonsandsubmittointernationalAppStores)
+            * [Localize system buttons and submit to international App Stores](#localize-system-buttons-and-submit-to-international-app-stores)
 
-      * [Localize property list keys](#Localizepropertylistkeys)
+            * [Localize property list keys](#localize-property-list-keys)
 
-      * [Set default language](#Setdefaultlanguage)
+            * [Set default language](#set-default-language)
 
-    * [Internationalizing the app's name](#Internationalizingtheapp'sname)
+        * [Internationalizing the app's name](#internationalizing-the-app's-name)
 
-      * [Changing locale for testing](#Changinglocalefortesting)
+            * [Changing locale for testing](#changing-locale-for-testing)
 
-      * [App name localization](#Appnamelocalization)
+            * [App name localization](#app-name-localization)
 
-      * [Android app name localization with Titanium SDK 3.1.x and older](#AndroidappnamelocalizationwithTitaniumSDK3.1.xandolder)
+            * [Android app name localization with Titanium SDK 3.1.x and older](#android-app-name-localization-with-titanium-sdk-3.1.x-and-older)
 
-      * [Reference](#Reference)
+            * [Reference](#reference)
 
-      * [Links](#Links)
+            * [Links](#links)
 
-    * [Internationalizing image and file resources](#Internationalizingimageandfileresources)
+        * [Internationalizing image and file resources](#internationalizing-image-and-file-resources)
 
-  * [Date and time formatting](#Dateandtimeformatting)
+    * [Date and time formatting](#date-and-time-formatting)
 
-  * [Other formatting and locale functions](#Otherformattingandlocalefunctions)
+    * [Other formatting and locale functions](#other-formatting-and-locale-functions)
 
-  * [Testing languages](#Testinglanguages)
+    * [Testing languages](#testing-languages)
 
-* [Hands-on practice](#Hands-onpractice)
+* [Hands-on practice](#hands-on-practice)
 
-  * [Goal](#Goal)
+    * [Goal](#goal)
 
-  * [Steps](#Steps)
+    * [Steps](#steps)
 
-* [Summary](#Summary)
+* [Summary](#summary)
 
-* [References and further reading](#Referencesandfurtherreading)
-
+* [References and further reading](#references-and-further-reading)
 
 ## Objective
 
@@ -138,7 +137,6 @@ Resource files are processed and included with your application at build time by
 2. If you have strings using multiple substitutions, as demonstrated in the "ordered" string in the previous example, you may need to add the formatted="false" attribute to these string elements if the localized string is not created correctly when running the application.
 
 3. When editing the strings.xml file, be sure to clean your project before building it again.
-
 
 String resource names (the "keys") must begin with a letter and can contain digits, English characters, and the underscore. The contents (values) of each string resource must be [UTF-8](http://en.wikipedia.org/wiki/UTF-8) compatible strings. While a given platform may not crash or throw an exception if you don't follow these rules, there's a good chance you will encounter some unexpected behavior.
 
@@ -362,9 +360,7 @@ With these changes in place, you can now rebuild your app (probably best to give
 
 This is how your home screens might look on Android and iOS when Japanese is the selected language.
 
-![Screen_Shot_2012_02_17_at_8_52_33_PM](/Images/appc/download/attachments/29004892/Screen_Shot_2012_02_17_at_8_52_33_PM.png)
-
-![image](/Images/appc/download/attachments/29004892/image.png)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/29004892/Screen_Shot_2012_02_17_at_8_52_33_PM.png" alt="images/download/attachments/29004892/Screen_Shot_2012_02_17_at_8_52_33_PM.png" class="confluence-embedded-image confluence-content-image-border"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/29004892/image.png" alt="images/download/attachments/29004892/image.png" class="confluence-embedded-image confluence-content-image-border"></p></td></tr></tbody></table>
 
 And just in case my description was clear as mud, check out a Titanium project with these localizations set up first hand. Just go to the [AppNameLocalization project repository](https://github.com/appcelerator-developer-relations/AppNameLocalization) on Github. It contains the _very_ basic project discussed here. With all this, you should be well-equipped to distribute your apps in as many languages as you wish to support.
 
@@ -374,31 +370,29 @@ And just in case my description was clear as mud, check out a Titanium project w
 
 * Appcelerator Wiki: [Maintaining a Custom AndroidManifest.xml](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/Maintaining_a_Custom_AndroidManifest.xml/)
 
-
 #### Internationalizing image and file resources
 
 Titanium does not provide built-in functions for internationalizing image and file resources. But you can easily accomplish this yourself. There are a couple of techniques you can employ:
 
 * Put the path and file name of each resource in the strings.xml file, then use that string in the imageproperty, like this:
 
-  `var` `img = Ti.UI.createImageView({`
+    `var` `img = Ti.UI.createImageView({`
 
-  `image: L(``'my_image'``)`
+    `image: L(``'my_image'``)`
 
-  `});`
+    `});`
 
 * Put your images into a set of folders that match the 2-letter ISO codes, and include that directory in the path with Ti.Locale.currentCountry, like this:
 
-  `var` `img = Ti.UI.createImageView({`
+    `var` `img = Ti.UI.createImageView({`
 
-  `image:` `'images/'``+Ti.Locale.currentCountry+``'/my_image.png'`
+    `image:` `'images/'``+Ti.Locale.currentCountry+``'/my_image.png'`
 
-  `});`
-
+    `});`
 
 This technique won't work for the splash screen graphics. You should ideally avoid text that would need translation in your splash screen.
 
-See [Localized splash screens](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Icons_and_Splash_Screens/#Localizedsplashscreens) [](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Icons_and_Splash_Screens/#LocalizedSplashScreens) for more information.
+See [Localized splash screens](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Icons_and_Splash_Screens/#localized-splash-screens) [](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Icons_and_Splash_Screens/#LocalizedSplashScreens) for more information.
 
 ### Date and time formatting
 
@@ -648,7 +642,6 @@ To set the language on iOS:,
 
 4. iOS will ask you to confirm your changes. Tap **Change to...**.
 
-
 Optionally, in Settings, tap General, Language & Region, Region Format to specify your locale format for dates and times.
 
 Localization is broken on the iOS 8.1 simulator.
@@ -660,7 +653,6 @@ To set the language on Android:
 2. Tap **Language & input**.
 
 3. Tap **Language** and select the language to use.
-
 
 ## Hands-on practice
 
@@ -676,19 +668,19 @@ In this activity, you will create an internationalized app that outputs language
 
 3. Using Studio, within the en directory, create a strings.xmlfile following the format shown above. Add three key/value pairs:
 
-  * language = Language
+    * language = Language
 
-  * test = Test
+    * test = Test
 
-  * tab = Tab
+    * tab = Tab
 
 4. In the es directory, create a matching copy of strings.xml except that the values should be as follows:
 
-  * language = Lengua
+    * language = Lengua
 
-  * test = Prueba
+    * test = Prueba
 
-  * tab = Lengüeta
+    * tab = Lengüeta
 
 5. In the es directory, create an app.xml file following the format shown above. Add the necessary key and value to specify "Lengua Prueba" as the translated version of the app's name. (This won't have any effect if you're building for Android.)
 
@@ -701,7 +693,6 @@ In this activity, you will create an internationalized app that outputs language
 9. Build the app for the simulator/emulator. The label and tab text should output in English (unless your emulator is already set to output text in Spanish). Close the app.
 
 10. Change the simulator/emulator's settings to display text in Spanish. Open the app. Label and tab text should now be in Spanish. On iOS, the app's icon should be labeled in Spanish as well.
-
 
 ## Summary
 

@@ -18,7 +18,6 @@ Some key items:
 
 * tags: Keywords that describe the snippet. Used as a means to easily filter snippets. Optional
 
-
 Typing part of the trigger will show the snippet in content assist. If the trigger phrase is unique, typing the whole trigger + the Tab key will automatically insert the snippet into the document, otherwise, you will be prompted to pick one of the available options.
 
 If you instead want to modify an existing piece of content (say to modify the current selection in the editor), you'll want to look at creating a command instead.

@@ -2,82 +2,81 @@
 
 This document provides information on how to authorize a browser or device for the AMPLIFY Platform, an overview of the AMPLIFY Platform home page, and how to access and navigate the Dashboard.
 
-* [AMPLIFY Platform Sign-up](#SignupAMPLIFYPlatformSign-up)
+* [AMPLIFY Platform Sign-up](#amplify-platform-sign-up)
 
-* [AMPLIFY Platform Sign-in](#AMPLIFYPlatformSign-in)
+* [AMPLIFY Platform Sign-in](#amplify-platform-sign-in)
 
-* [AMPLIFY Platform Overview](##PlatformAMPLIFYPlatformOverview)
+* [AMPLIFY Platform Overview](#amplify-platform-overview)
 
-  * [AMPLIFY Platform Buttons](#AMPLIFYPlatformButtons)
+    * [AMPLIFY Platform Buttons](#amplify-platform-buttons)
 
-  * [Service Offerings & Products Tiles](#ServiceOfferings&ProductsTiles)
+    * [Service Offerings & Products Tiles](#service-offerings-&-products-tiles)
 
-    * [Application Integration](#ApplicationIntegration)
+        * [Application Integration](#application-integration)
 
-    * [API Management](#APIManagement)
+        * [API Management](#api-management)
 
-    * [Application Development](#ApplicationDevelopment)
+        * [Application Development](#application-development)
 
-    * [Mobile Integration](#MobileIntegration)
+        * [Mobile Integration](#mobile-integration)
 
-    * [Runtime Services](#RuntimeServices)
+        * [Runtime Services](#runtime-services)
 
-    * [Streams](#Streams)
+        * [Streams](#streams)
 
-    * [Content Collaboration](#ContentCollaboration)
+        * [Content Collaboration](#content-collaboration)
 
-  * [My Capabilities Tiles](#captilesMyCapabilitiesTiles)
+    * [My Capabilities Tiles](#my-capabilities-tiles)
 
-    * [Dashboard](#Dashboard)
+        * [Dashboard](#dashboard)
 
-    * [Integration Builder](#IntegrationBuilder)
+        * [Integration Builder](#integration-builder)
 
-    * [Central](#Central)
+        * [Central](#central)
 
-    * [Unified Catalog](#UnifiedCatalog)
+        * [Unified Catalog](#unified-catalog)
 
-    * [App Builder](#AppBuilder)
+        * [App Builder](#app-builder)
 
-    * [API Builder](#APIBuilder)
+        * [API Builder](#api-builder)
 
-    * [Mobile Backend Services](#MobileBackendServices)
+        * [Mobile Backend Services](#mobile-backend-services)
 
-    * [Runtime Services](#RuntimeServices.1)
+        * [Runtime Services](#runtime-services)
 
-    * [Mesh Governance](#MeshGovernance)
+        * [Mesh Governance](#mesh-governance)
 
-    * [Choreography](#Choreography)
+        * [Choreography](#choreography)
 
-    * [Syncplicity](#Syncplicity)
+        * [Syncplicity](#syncplicity)
 
-* [Access Dashboard](#AccessDashboard)
+* [Access Dashboard](#access-dashboard)
 
-* [Dashboard](#DashboardHomeDashboard)
+* [Dashboard](#dashboard)
 
-  * [Apps Tab](#AppsTab)
+    * [Apps Tab](#apps-tab)
 
-    * [App List Filtering](#AppListFiltering)
+        * [App List Filtering](#app-list-filtering)
 
-    * [Apps List Sorting](#AppsListSorting)
+        * [Apps List Sorting](#apps-list-sorting)
 
-    * [Apps List Paging](#AppsListPaging)
+        * [Apps List Paging](#apps-list-paging)
 
-  * [Select Favorite Apps](#SelectFavoriteApps)
+    * [Select Favorite Apps](#select-favorite-apps)
 
-  * [Delete Apps](#DeleteApps)
+    * [Delete Apps](#delete-apps)
 
-  * [Overview Tab](#OverviewTab)
+    * [Overview Tab](#overview-tab)
 
-  * [Custom Queries Tab](#CustomQueriesTab)
+    * [Custom Queries Tab](#custom-queries-tab)
 
-* [Dashboard Navigation](#DashboardNavigation)
+* [Dashboard Navigation](#dashboard-navigation)
 
-  * [User menu - Single organization](#Usermenu-Singleorganization)
+    * [User menu - Single organization](#user-menu---single-organization)
 
-  * [User menu - Multiple organizations](#Usermenu-Multipleorganizations)
+    * [User menu - Multiple organizations](#user-menu---multiple-organizations)
 
-  * [Bottom Navigation Bar](#BottomNavigationBar)
-
+    * [Bottom Navigation Bar](#bottom-navigation-bar)
 
 ## AMPLIFY Platform Sign-up
 
@@ -85,37 +84,36 @@ To sign up for access to AMPLIFY Platform and to create an AMPLIFY Platform acco
 
 1. Navigate to [https://platform.axway.com](https://platform.axway.com/). If this is your initial visit to [https://platform.axway.com](https://platform.axway.com/), the AMPLIFY Platform Overview page is displayed.
 
-  ![AMPLIFY_Platform_Overview](/Images/appc/download/attachments/60145150/AMPLIFY_Platform_Overview.png)
+    ![AMPLIFY_Platform_Overview](/Images/appc/download/attachments/60145150/AMPLIFY_Platform_Overview.png)
 2. To proceed with creating a new AMPLIFY Platform account, click **TRY NOW**. Clicking **TRY NOW** will forward you to the AMPLIFY Platform _Sign In_ page.
 
 3. On the AMPLIFY Platform sign-in page, click **Register**. Clicking **Register** will forward you to the AMPLIFY Platform _Sign Up_ page.
 
-  ![platform_signup_01](/Images/appc/download/attachments/60145150/platform_signup_01.png)
+    ![platform_signup_01](/Images/appc/download/attachments/60145150/platform_signup_01.png)
 4. Enter your email address in the **Create your account** field. You may alternatively create an account using your GitHub account information.
 
 5. Once you have entered your email address, click **Sign up with Email**. Clicking **Sign up with Email** will forward you to the _Check your email_ page.
 
-  ![platform_signup_02](/Images/appc/download/attachments/60145150/platform_signup_02.png)
+    ![platform_signup_02](/Images/appc/download/attachments/60145150/platform_signup_02.png)
 6. Check your email. You should have an email similar to the following in your inbox.
 
-  ![activation_email](/Images/appc/download/attachments/60145150/activation_email.png)
+    ![activation_email](/Images/appc/download/attachments/60145150/activation_email.png)
 7. Click **Active your Account**. Clicking **Active your Account** will forward you to the _Activate Account_ page.
 
-  ![platform_signup_03](/Images/appc/download/attachments/60145150/platform_signup_03.png)
+    ![platform_signup_03](/Images/appc/download/attachments/60145150/platform_signup_03.png)
 8. Enter your first name, last name, password, and confirm your password to continue your account activation.
 
-  ![platform_signup_04](/Images/appc/download/attachments/60145150/platform_signup_04.png)
+    ![platform_signup_04](/Images/appc/download/attachments/60145150/platform_signup_04.png)
 9. Optionally, enter your SMS-enabled phone number and click **Verify**. When you click **Verify**, a text with a verification code is sent to your phone.
 
-  ![platform_signup_05](/Images/appc/download/attachments/60145150/platform_signup_05.png)
+    ![platform_signup_05](/Images/appc/download/attachments/60145150/platform_signup_05.png)
 10. Enter the verification code in the **Verification Code** field. Once you enter the verification code, your SMS-enabled phone number will be verified.
 
-  ![platform_signup_06](/Images/appc/download/attachments/60145150/platform_signup_06.png)
+    ![platform_signup_06](/Images/appc/download/attachments/60145150/platform_signup_06.png)
 11. Click **Accept Terms and Continue** to acknowledge that you have reviewed and accepted the Terms of Use. Clicking **Accept Terms and Continue** will forward you to the _User Authentication_ page.
 
-  ![platform_signup_07](/Images/appc/download/attachments/60145150/platform_signup_07.png)
+    ![platform_signup_07](/Images/appc/download/attachments/60145150/platform_signup_07.png)
 12. To authenticate you as a user, click **Continue**. Clicking **Continue** will forward you to the AMPLIFY Platform home page. For an overview of the AMPLIFY Platform, refer to the [AMPLIFY Platform Overview](#Platform).
-
 
 ## AMPLIFY Platform Sign-in
 
@@ -125,13 +123,12 @@ Use the following sign-in instructions if your organization has the single sign-
 
 1. Navigate to [https://platform.axway.com](https://platform.axway.com/). The _Sign In_ page is displayed.
 
-  ![Sign-In_%28SSO%29](/Images/appc/download/attachments/60145150/Sign-In_%28SSO%29.png)
+    ![Sign-In_%28SSO%29](/Images/appc/download/attachments/60145150/Sign-In_%28SSO%29.png)
 2. Enter the email address associated with your account. If you do not have an AMPLIFY Platform account, click **Register** and follow the [AMPLIFY Platform Sign-up](#Signup) instructions.
 
 3. Click **Next**. Clicking Next will forward you to your organization's _Single Sign-on_ page.
 
 4. Enter your organization account password and click **Sign In**. Clicking **Sign In** will forward you to the AMPLIFY Platform home page. For an overview of the AMPLIFY Platform, refer to the [AMPLIFY Platform Overview](#Platform).
-
 
 Use the following sign-in if your organization does not have the single sign-on (SSO) feature enabled.
 
@@ -139,24 +136,23 @@ Use the following sign-in if your organization does not have the single sign-on 
 
 1. Navigate to [https://platform.axway.com](https://platform.axway.com/). The _Sign In_ page is displayed.
 
-  ![Sign-In_%28SSO%29](/Images/appc/download/attachments/60145150/Sign-In_%28SSO%29.png)
+    ![Sign-In_%28SSO%29](/Images/appc/download/attachments/60145150/Sign-In_%28SSO%29.png)
 2. Enter the email address associated with your account. If you do not have an AMPLIFY Platform account, click **Register** and follow the [AMPLIFY Platform Sign-up](#Signup) instructions.
 
 3. Click **Next**. Clicking Next will forward you to the AMPLIFY Platform _Sign-on_ page.
 
-  ![Sign-In_%28Non-SSO%29](/Images/appc/download/attachments/60145150/Sign-In_%28Non-SSO%29.png)
+    ![Sign-In_%28Non-SSO%29](/Images/appc/download/attachments/60145150/Sign-In_%28Non-SSO%29.png)
 4. Enter the password associated with your AMPLIFY Platform account and click **Sign In**.
 
 5. If requested, enter the device authorization code forwarded to the email address associated with your account and click **Authorize**.
 
-  ![device_authorization](/Images/appc/download/attachments/60145150/device_authorization.png)
+    ![device_authorization](/Images/appc/download/attachments/60145150/device_authorization.png)
 6. If you are a member of multiple organizations, you may be forwarded to the _Select Organization_ page.
 
-  ![multiple_orgs](/Images/appc/download/attachments/60145150/multiple_orgs.png)
+    ![multiple_orgs](/Images/appc/download/attachments/60145150/multiple_orgs.png)
 7. Select the organization to sign into from the Select Organization drop-down menu.
 
 8. Click **Continue**. Clicking **Continue** will forward you to the AMPLIFY Platform home page. For an overview of the AMPLIFY Platform, refer to the [AMPLIFY Platform Overview](#Platform).
-
 
 ## AMPLIFY Platform Overview
 
@@ -180,7 +176,6 @@ The AMPLIFY Platform home page includes the following buttons:
 
 * **Developer Portal** - Click to navigate to the Axway Developer Portal.
 
-
 ### Service Offerings & Products Tiles
 
 The AMPLIFY Platform Service Offerings and Products page includes the following tiles:
@@ -199,7 +194,6 @@ The AMPLIFY Platform Service Offerings and Products page includes the following 
 
 * Content Collaboration
 
-
 #### Application Integration
 
 Application Integration enables you to integrate cloud and on-premises systems. The Application Integration tile includes the following links:
@@ -214,7 +208,6 @@ Application Integration enables you to integrate cloud and on-premises systems. 
 
 * **Getting Started Guide** - Click to navigate to Documentation Portal and explore the Getting started with AMPLIFY Integration guide.
 
-
 Additionally, click **Application Integration** to navigate to the _Application Integration_ page and view the capabilities of Application Integration.
 
 #### API Management
@@ -224,7 +217,6 @@ API Management enables you to implement full lifecycle API management. The API M
 * **How It Works** - Click to navigate to the Developer Portal and learn how to get started building and managing APIs.
 
 * **Capabilities** - Click to navigate to the _API Management_ page and view the capabilities of API Management. The _API Management_ page includes the Central, Unified Catalog, API Builder, Runtime Services, Mesh Governance, and Choreography tiles. For additional information, refer to [My Capabilities Tiles](#captiles).
-
 
 Additionally, click **API Management** to navigate to the _API Management_ page and view the capabilities of API Management.
 
@@ -240,7 +232,6 @@ Application Development enables you to develop cross-platform native apps with T
 
 * **Documentation** - Click to navigate to the Documentation Portal and explore the App Development documentation.
 
-
 Additionally, click **Application Development** to navigate to the _Application Development_ page and view the capabilities of Application Development.
 
 #### Mobile Integration
@@ -248,7 +239,6 @@ Additionally, click **Application Development** to navigate to the _Application 
 Mobile Integration enables you to power all your mobile data needs with a purpose-built MBaaS framework. The Mobile Integration tile includes the following link:
 
 * **Capabilities** - Click to navigate to the _Mobile Integration_ page and view the capabilities of Mobile Integration. The _Mobile Integration_ page includes the API Builder, Mobile Backend Services, Runtime Services tiles. For additional information, refer to [My Capabilities Tiles](#captiles).
-
 
 Additionally, click **Mobile Integration** to navigate to the _Mobile Integration_ page and view the capabilities of Mobile Integration.
 
@@ -264,7 +254,6 @@ Runtime Services enables you to add instant elastic infrastructure for all your 
 
 * **Documentation** - Click to navigate to the Documentation Portal and explore the Runtime Services documentation.
 
-
 Additionally, click **Runtime Services** to navigate to the _Runtime Services_ page and view the capabilities of Runtime Services.
 
 #### Streams
@@ -277,7 +266,6 @@ Streams enables you to add event-driven capabilities to any JSON API. The Stream
 
 * **Start Free Trial** - Click to start your free trial of Streams.
 
-
 #### Content Collaboration
 
 Content Collaboration enables you to sync and share files and enable content flows. The Content Collaboration tile includes the following links:
@@ -285,7 +273,6 @@ Content Collaboration enables you to sync and share files and enable content flo
 * **Capabilities** - Click to navigate to the _Content Collaboration_ page and view the capabilities of Content Collaboration. The _Content Collaboration_ page includes the Syncplicity tile. For additional information, refer to [My Capabilities Tiles](#captiles).
 
 * **Start Free Trial** - Click to navigate to the Syncplicity website to sign up for a free trial of Syncplicity or to purchase a Syncplicity plan.
-
 
 Additionally, click **Content Collaboration** to navigate to the _Content Collaboration_ page and view the capabilities of Content Collaboration.
 
@@ -317,7 +304,6 @@ The AMPLIFY Platform My Capabilities page can include the following tiles based 
 
 * Syncplicity
 
-
 The available links on the My Capabilities tiles may vary based on your role and your organization's subscriptions.
 
 #### Dashboard
@@ -329,7 +315,6 @@ AMPLIFY Dashboard (Appcelerator Dashboard) provides you full lifecycle visibilit
 * **Apps** - Click to navigate to the **Apps** tab on the Dashboard home page. For additional Dashboard home page information, refer to the [Dashboard](#DashboardHome) section.
 
 * **Overview** - Click to navigate to the **Overview** tab on the Dashboard home page. For additional Dashboard home page information, refer to the [Dashboard](#DashboardHome) section.
-
 
 Additionally, click **Dashboard** to navigate to the Dashboard home page.
 
@@ -343,7 +328,6 @@ Integration Builder enables you to develop applications, including mobile applic
 
 * **Sandbox** - Click to navigate to the Integration Builder **Quick Start** tab to explore the connectors catalog and to start building connector integrations, mappings, and flows.
 
-
 Additionally, click **Integration Builder** to navigate to the Integration Builder **Quick Start** tab.
 
 #### Central
@@ -354,7 +338,6 @@ Central provides API management functions for your Hybrid Integration use cases.
 
 * **Documentation** - Click to navigate to the Documentation Portal and explore the Central documentation.
 
-
 Additionally, click **Central** to navigate to the AMPLIFY Central user interface.
 
 #### Unified Catalog
@@ -362,7 +345,6 @@ Additionally, click **Central** to navigate to the AMPLIFY Central user interfac
 Unified Catalog enables you to subscribe to various types of packaged endpoints to quickly solve your integration needs. The Unified Catalog tile includes the following link:
 
 * **How It Works** - Click to navigate to the Developer Portal and learn how the Unified Catalog works.
-
 
 Additionally, click **Unified Catalog** to navigate to the AMPLIFY Central user interface.
 
@@ -376,7 +358,6 @@ App Builder enables you to build cross-platform native apps with Titanium SDK, S
 
 * **Manage** - Click to navigate to the Dashboard **Apps** tab and manage your applications.
 
-
 Additionally, click **App Builder** to navigate to the _Get started with App Builder_ page and to learn how to get started building native applications.
 
 #### API Builder
@@ -388,7 +369,6 @@ API Builder enables you to build APIs and microservices. The API Builder tile in
 * **Documentation** - Click to navigate to the Documentation Portal and explore the API Builder Standalone documentation.
 
 * **Getting Started Guide** - Click to navigate to the Documentation Portal and review the API Builder Getting Started Guide.
-
 
 Additionally, click **API Builder** to navigate to the Documentation Portal and explore the API Builder Standalone documentation.
 
@@ -402,7 +382,6 @@ Mobile Backend Services enables you to use pre-built services like push notifica
 
 * **Add Capacity** - Click to navigate to the _Billing_ page and explore the Mobile Backend Services purchase options to add additional capacity. For additional information, refer to [Managing Billing](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Billing/).
 
-
 Additionally, click **Mobile Backend Services** to navigate to the **Apps** tab on the Dashboard home page and manage your Mobile Backend Services applications.
 
 #### Runtime Services
@@ -414,7 +393,6 @@ Runtime Services enables you to add instant elastic infrastructure for all your 
 * **Manage** - Click to navigate to the **Apps** tab on the Dashboard home page and manage your runtime services applications. For additional Dashboard home page information, refer to the [Dashboard](#DashboardHome) section.
 
 * **Add Capacity** - Click to navigate to the _Billing_ page and explore the Application Development plans to add additional capacity. For additional information, refer to [Managing Billing](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Billing/).
-
 
 Additionally, click **Runtime Services** to navigate to the **Apps** tab on the Dashboard home page and manage your runtime services applications.
 
@@ -432,7 +410,6 @@ Mesh Governance provides visibility and control of service meshes across multipl
 
 * **Manage Policies** - Click to review the AMPLIFY Central policies.
 
-
 Additionally, click **Mesh Governance** to navigate to the AMPLIFY Central user interface.
 
 #### Choreography
@@ -445,7 +422,6 @@ Choreography enables you to build resilient and adaptive integration architectur
 
 * **Getting Started Guide** - Click to navigate to the Documentation Portal and review the AMPLIFY Choreography Getting Started documentation.
 
-
 #### Syncplicity
 
 Syncplicity enables you to sync and share files and enable content flows. The Syncplicity tile includes the following links:
@@ -453,7 +429,6 @@ Syncplicity enables you to sync and share files and enable content flows. The Sy
 * **How It Works (Integrations)** - Click to navigate to Developer Portal to learn about how Syncplicity works.
 
 * **Documentation** - Click to navigate to Documentation Portal and explore the Syncplicity documentation.
-
 
 Additionally, click **Syncplicity** to navigate to the Syncplicity website.
 
@@ -501,13 +476,11 @@ The apps list can be filtered by:
 
 * Other
 
-
 To filter the apps list by a selected app type:
 
 1. Select **All Apps**.
 
 2. Select an app type from the _All Apps_ down-down menu.
-
 
 The displayed apps list will be updated and will only display the apps matching the selected application type.
 
@@ -531,7 +504,6 @@ The number of applications displayed per page can be set to:
 
 * 100 per page
 
-
 ### Select Favorite Apps
 
 To select an app or to pin an app:
@@ -540,7 +512,6 @@ To select an app or to pin an app:
 
 2. Click the **Pin** icon next to the app name.
 
-
 The app will be pinned, and the **Pin** icon will be updated to indicate that the app is pinned. Additionally, apps pinned as favorites will be displayed at the beginning of the apps list.
 
 To unpin an app or to remove an app as a favorite:
@@ -548,7 +519,6 @@ To unpin an app or to remove an app as a favorite:
 1. Select a pinned app from the apps list.
 
 2. Click the **Pin** icon next to the app name.
-
 
 The app will be unpinned, and the **Pin** icon will be updated to indicate that the app is not pinned.
 
@@ -564,7 +534,6 @@ To delete a single app:
 
 4. To confirm the deletion, click **I understand that this a permanent and irreversible action. Continue**.
 
-
 To delete multiple apps:
 
 1. Select the apps to delete.
@@ -574,7 +543,6 @@ To delete multiple apps:
 3. Enter your AMPLIFY Platform password.
 
 4. To confirm the deletion, click **I understand that this a permanent and irreversible action. Continue**.
-
 
 ### Overview Tab
 
@@ -608,7 +576,6 @@ Use the following items to navigate through Dashboard:
 
 * **Notifications menu** – Displays notifications and latest organization activity.
 
-
 ### User menu - Single organization
 
 If you are a member of a single organization, the _User Menu_ will appear similar to the following.
@@ -628,7 +595,6 @@ If you are a member of a single organization, the _User Menu_ will appear simila
 * **Downloads** - Navigate to the Download Center.
 
 * **Sign out** - Select to sign out of your account.
-
 
 ### User menu - Multiple organizations
 
@@ -651,7 +617,6 @@ If you are a member of multiple organizations, the _User Menu_ will appear simil
 * **Switch Org** - Select to switch organizations.
 
 * **Sign out** - Select to sign out of your account.
-
 
 ### Bottom Navigation Bar
 

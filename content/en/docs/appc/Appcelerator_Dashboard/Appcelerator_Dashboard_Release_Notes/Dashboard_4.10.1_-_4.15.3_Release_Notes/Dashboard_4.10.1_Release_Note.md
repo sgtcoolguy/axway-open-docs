@@ -6,7 +6,6 @@ Dashboard 4.10.1 is a patch release, which includes one improvement and two bug 
 
 * The Dashboard provides a better validation response if a user attempts to change an email address to an existing one
 
-
 ## Fixed issues
 
 * Fixed issue where child organizations were not inheriting the parent organization's seat limits, purchase periods dates, and entitlements

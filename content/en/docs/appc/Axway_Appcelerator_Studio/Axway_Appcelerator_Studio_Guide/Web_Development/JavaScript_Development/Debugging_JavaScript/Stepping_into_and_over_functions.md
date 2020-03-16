@@ -12,18 +12,17 @@ To step into or step over a JavaScript function:
 
 2. Suspend the current JavaScript thread.
 
-  1. In the Debug View, select the thread that you want to suspend.
+    1. In the Debug View, select the thread that you want to suspend.
 
-  2. Click the **Suspend** button ![IconSuspend](/Images/appc/download/attachments/30083101/IconSuspend.png) to suspend the JavaScript code on the first executed line. While the thread is suspended, your web browser user interface will be completely disabled.
+    2. Click the **Suspend** button ![IconSuspend](/Images/appc/download/attachments/30083101/IconSuspend.png) to suspend the JavaScript code on the first executed line. While the thread is suspended, your web browser user interface will be completely disabled.
 
 3. Step into, step over, or return from your function:
 
-  * Click the **Step Into** button ![IconStepInto](/Images/appc/download/attachments/30083101/IconStepInto.png) to step into a function.
+    * Click the **Step Into** button ![IconStepInto](/Images/appc/download/attachments/30083101/IconStepInto.png) to step into a function.
 
-  * Click the **Step Over** button ![IconStepOver](/Images/appc/download/attachments/30083101/IconStepOver.png) to step over a function.
+    * Click the **Step Over** button ![IconStepOver](/Images/appc/download/attachments/30083101/IconStepOver.png) to step over a function.
 
-  * Click the **Step Return** button ![IconStepReturn](/Images/appc/download/attachments/30083101/IconStepReturn.png) to return from a function.
-
+    * Click the **Step Return** button ![IconStepReturn](/Images/appc/download/attachments/30083101/IconStepReturn.png) to return from a function.
 
 ## Related Topics
 

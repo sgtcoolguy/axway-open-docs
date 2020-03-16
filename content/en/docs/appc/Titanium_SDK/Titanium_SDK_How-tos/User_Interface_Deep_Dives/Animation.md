@@ -1,25 +1,24 @@
 {"title":"Animation","weight":"60"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [Basic animations](#Basicanimations)
+    * [Basic animations](#basic-animations)
 
-  * [Matrix animations](#Matrixanimations)
+    * [Matrix animations](#matrix-animations)
 
-  * [2D matrix animations](#2Dmatrixanimations)
+    * [2D matrix animations](#2d-matrix-animations)
 
-  * [3D matrix animations](#3Dmatrixanimations)
+    * [3D matrix animations](#3d-matrix-animations)
 
-  * [Transitions](#Transitions)
+    * [Transitions](#transitions)
 
-  * [Dynamic animations](#Dynamicanimations)
+    * [Dynamic animations](#dynamic-animations)
 
-  * [References](#References)
+    * [References](#references)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Objective
 
@@ -198,7 +197,6 @@ Dynamic animations are physics-related animations and with them, you set up an A
 * [Using Works of Visual Art to Teach MatrixTransformations](http://works.bepress.com/cgi/viewcontent.cgi?article=1008&context=bruce_kessler) from Western Kentucky University (lots of math!)
 
 * [Rotation Matrices](http://www.euclideanspace.com/maths/algebra/matrix/orthogonal/rotation/index.htm)
-
 
 ## Summary
 

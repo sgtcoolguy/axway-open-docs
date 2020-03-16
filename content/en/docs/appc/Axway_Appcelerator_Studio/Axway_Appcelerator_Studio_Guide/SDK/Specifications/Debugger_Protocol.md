@@ -1,75 +1,74 @@
 {"title":"Debugger Protocol","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Arguments encoding](#Argumentsencoding)
+* [Arguments encoding](#arguments-encoding)
 
-* [Commands](#Commands)
+* [Commands](#commands)
 
-  * [Get debugger extension version](#Getdebuggerextensionversion)
+    * [Get debugger extension version](#get-debugger-extension-version)
 
-  * [Force debugger extension update](#Forcedebuggerextensionupdate)
+    * [Force debugger extension update](#force-debugger-extension-update)
 
-  * [Set debugger options](#Setdebuggeroptions)
+    * [Set debugger options](#set-debugger-options)
 
-  * [Turn on debug mode](#Turnondebugmode)
+    * [Turn on debug mode](#turn-on-debug-mode)
 
-  * [Turn off debug mode](#Turnoffdebugmode)
+    * [Turn off debug mode](#turn-off-debug-mode)
 
-  * [Terminate session](#Terminatesession)
+    * [Terminate session](#terminate-session)
 
-  * [Create/modify/remove breakpoint](#Create/modify/removebreakpoint)
+    * [Create/modify/remove breakpoint](#create/modify/remove-breakpoint)
 
-  * [Create/modify/remove exception breakpoints](#Create/modify/removeexceptionbreakpoints)
+    * [Create/modify/remove exception breakpoints](#create/modify/remove-exception-breakpoints)
 
-  * [Set detail formatters](#Setdetailformatters)
+    * [Set detail formatters](#set-detail-formatters)
 
-  * [Open page URL](#OpenpageURL)
+    * [Open page URL](#open-page-url)
 
-  * [Get file sources](#Getfilesources)
+    * [Get file sources](#get-file-sources)
 
-  * [Suspend script execution](#Suspendscriptexecution)
+    * [Suspend script execution](#suspend-script-execution)
 
-  * [Resume script execution](#Resumescriptexecution)
+    * [Resume script execution](#resume-script-execution)
 
-  * [Step into](#Stepinto)
+    * [Step into](#step-into)
 
-  * [Step over](#Stepover)
+    * [Step over](#step-over)
 
-  * [Step return](#Stepreturn)
+    * [Step return](#step-return)
 
-  * [Step to frame](#Steptoframe)
+    * [Step to frame](#step-to-frame)
 
-  * [Get stack frames](#Getstackframes)
+    * [Get stack frames](#get-stack-frames)
 
-  * [Get variables](#Getvariables)
+    * [Get variables](#get-variables)
 
-  * [Get variable details](#Getvariabledetails)
+    * [Get variable details](#get-variable-details)
 
-  * [Evaluate expression](#Evaluateexpression)
+    * [Evaluate expression](#evaluate-expression)
 
-  * [Change variable value](#Changevariablevalue)
+    * [Change variable value](#change-variable-value)
 
-* [Unsolicited messages](#Unsolicitedmessages)
+* [Unsolicited messages](#unsolicited-messages)
 
-  * [Suspend notification](#Suspendnotification)
+    * [Suspend notification](#suspend-notification)
 
-  * [Resume notification](#Resumenotification)
+    * [Resume notification](#resume-notification)
 
-  * [Client action notifications](#Clientactionnotifications)
+    * [Client action notifications](#client-action-notifications)
 
-  * [Log console message](#Logconsolemessage)
+    * [Log console message](#log-console-message)
 
-  * [Scripts notification](#Scriptsnotification)
+    * [Scripts notification](#scripts-notification)
 
-  * [Threads notification (Version 2)](#Threadsnotification(Version2))
+    * [Threads notification (Version 2)](#threads-notification-version-2)
 
-* [Appendix](#Appendix)
+* [Appendix](#appendix)
 
-  * [Variable property flags](#Variablepropertyflags)
+    * [Variable property flags](#variable-property-flags)
 
-  * [Special variables](#Specialvariables)
-
+    * [Special variables](#special-variables)
 
 ## Overview
 
@@ -99,7 +98,6 @@ where:
 
 * _arg0..N_ : command/response specific arguments
 
-
 An argument could be split into sub-arguments:
 
 `arg=subarg0|subarg1|subarg2|...subargN`
@@ -116,7 +114,6 @@ All the arguments (args and subargs) should have the following set of characters
 
 * \* => #2
 
-
 ## Commands
 
 ### Get debugger extension version
@@ -128,7 +125,6 @@ Reply arguments:
 * _arg0_ : debugger protocol version (currently are **1** or **2**)
 
 * _arg1_ : debugger extension/addon version
-
 
 Example:
 
@@ -144,7 +140,6 @@ Reply arguments:
 
 * _arg0_ : _(optional)_ version of updated debugger extension/addon (if available)
 
-
 Example:
 
 `=>` `1176979825720``*update`
@@ -159,7 +154,6 @@ Request arguments:
 * _arg0_ : name of an option
 
 * _arg1_ : new value of an option
-
 
 Reply arguments: _none_
 Example:
@@ -220,11 +214,9 @@ Request arguments:
 
 * _arg6_ : condition meaning (_1_ - on true, _0_ - on expression value change)
 
-
 Reply arguments:
 
 * _arg0_ : action result status (_created_, _changed_, _removed_)
-
 
 Example:
 
@@ -245,11 +237,9 @@ Request arguments:
 
 * _arg1_ : exception type name
 
-
 Reply arguments:
 
 * _arg0_ : action result status (_created_, _changed_, _removed_)
-
 
 Example:
 
@@ -268,7 +258,6 @@ Request arguments:
 
 * _subarg1_ : formatter expression text
 
-
 Reply arguments: _none_
 Example:
 
@@ -282,7 +271,6 @@ Command: **openURL**
 Request arguments:
 
 * _arg0_ : page URI to open
-
 
 Reply arguments: _none_
 Example:
@@ -298,13 +286,11 @@ Request arguments:
 
 * _arg0_ : file URI to retrieve sources
 
-
 Reply arguments:
 
 * _arg0_ : command status (_success_, _failure_)
 
 * _arg1_ : file contents
-
 
 Example:
 
@@ -319,7 +305,6 @@ Request arguments (**version 1**): _none_
 Request arguments (**version 2**):
 
 * _arg0_ : thread id
-
 
 Reply arguments: _none_
 Example:
@@ -340,7 +325,6 @@ Request arguments (**version 2**):
 
 * _arg0_ : thread id
 
-
 Reply arguments: _none_
 Example:
 
@@ -359,7 +343,6 @@ Request arguments (**version 1**): _none_
 Request arguments (**version 2**):
 
 * _arg0_ : thread id
-
 
 Reply arguments: _none_
 Example:
@@ -380,7 +363,6 @@ Request arguments (**version 2**):
 
 * _arg0_ : thread id
 
-
 Reply arguments: _none_
 Example:
 
@@ -400,7 +382,6 @@ Request arguments (**version 2**):
 
 * _arg0_ : thread id
 
-
 Reply arguments: _none_
 Example:
 
@@ -419,13 +400,11 @@ Request arguments (**version 1**):
 
 * _arg0_ : frame id to step to
 
-
 Request arguments (**version 2**):
 
 * _arg0_ : thread id
 
 * _arg1_ : frame id to step to
-
 
 Reply arguments: _none_
 Example:
@@ -445,7 +424,6 @@ Request arguments (**version 1**): _none_
 Request arguments (**version 2**):
 
 * _arg0_ : thread id
-
 
 Reply arguments:
 
@@ -467,7 +445,6 @@ Reply arguments:
 
 * _subarg7_ : function's script id
 
-
 Example:
 
 `=>` `1176979825740``*frames`
@@ -485,13 +462,11 @@ Request arguments (**version 1**):
 
 * _arg0_ : variable name
 
-
 Request arguments (**version 2**):
 
 * _arg0_ : thread id
 
 * _arg1_ : variable name
-
 
 Reply arguments:
 
@@ -501,12 +476,11 @@ Reply arguments:
 
 * _subarg1_ : property type
 
-* _subarg2_ : property flags (see [#Variable property flags](#Variablepropertyflags))
+* _subarg2_ : property flags (see [#Variable property flags](#variable-property-flags))
 
 * _subarg3_ : property value
 
-
-See [#Special variables](#Specialvariables).
+See [#Special variables](#special-variables).
 
 Example:
 
@@ -529,20 +503,17 @@ Request arguments (**version 1**):
 
 * _arg0_ : variable name
 
-
 Request arguments (**version 2**):
 
 * _arg0_ : thread id
 
 * _arg1_ : variable name
 
-
 Reply arguments:
 
 * _arg0_ : command status (_result_)
 
 * _arg1_ : detailed value (toString representation)
-
 
 Example:
 
@@ -563,7 +534,6 @@ Request arguments (**version 1**):
 
 * _arg1_ : expression
 
-
 Request arguments (**version 2**):
 
 * _arg0_ : thread id
@@ -571,7 +541,6 @@ Request arguments (**version 2**):
 * _arg1_ : evaluation context (variable name)
 
 * _arg2_ : expression
-
 
 Reply arguments:
 
@@ -583,10 +552,9 @@ Reply arguments:
 
 * _subarg0_ : property type
 
-* _subarg1_ : property flags (see [#Variable property flags](#Variablepropertyflags))
+* _subarg1_ : property flags (see [#Variable property flags](#variable-property-flags))
 
 * _subarg2_ : property value
-
 
 Example:
 
@@ -611,7 +579,6 @@ Request arguments (**version 1**):
 
 * _arg1_ : value reference name
 
-
 Request arguments (**version 2**):
 
 * _arg0_ : thread id
@@ -619,7 +586,6 @@ Request arguments (**version 2**):
 * _arg1_ : variable name
 
 * _arg2_ : value reference name
-
 
 Reply arguments:
 
@@ -629,10 +595,9 @@ Reply arguments:
 
 * _subarg0_ : property type
 
-* _subarg1_ : property flags (see \[aptanastudiodev:[#Variable property flags](#Variablepropertyflags)\])
+* _subarg1_ : property flags (see \[aptanastudiodev:[#Variable property flags](#variable-property-flags)\])
 
 * _subarg2_ : property value
-
 
 Example:
 
@@ -657,7 +622,6 @@ Message arguments (**version 1**):
 
 * _arg2_ : top frame's line number
 
-
 Message arguments (**version 2**):
 
 * _arg0_ : thread id
@@ -667,7 +631,6 @@ Message arguments (**version 2**):
 * _arg2_ : top frame's file URI
 
 * _arg3_ : top frame's line number
-
 
 Example:
 
@@ -686,13 +649,11 @@ Message arguments (**version 1**):
 
 * _arg0_ : resume reason (_started_, _abort_ or any of stepping command names)
 
-
 Message arguments (**version 2**):
 
 * _arg0_ : thread id
 
 * _arg1_ : resume reason (_started_, _abort_ or any of stepping command names)
-
 
 Example:
 
@@ -717,13 +678,11 @@ Message arguments:
 
 * _arg1..argN_ : optional action arguments
 
-
 **suspend** : request to suspend debugger (all threads)
 **terminate** : request to terminate debugger session
 **open** : request to open file/URI in IDE editor
 
 * _arg1_ : file URI
-
 
 Example:
 
@@ -744,13 +703,11 @@ Message arguments:
 
 * _arg2_ : (optional) source context (_src_, _trace_)
 
-
 **src**:
 
 * _arg3_ : file URI
 
 * _arg4_ : line number
-
 
 **trace**:
 
@@ -763,7 +720,6 @@ Message arguments:
 * _subarg2_ : file URI
 
 * _subarg3_ : line number
-
 
 Example:
 
@@ -782,7 +738,6 @@ Message arguments:
 
 * _arg1..argN_ : scripts definitions 1-N
 
-
 **created**:
 
 * _subarg0_ : script id
@@ -795,18 +750,15 @@ Message arguments:
 
 * _subarg4_ : script line count
 
-
 **resolved**:
 
 * _subarg0_ : script id
 
 * _subarg1_ : function name
 
-
 **destroyed**:
 
 * _subarg0_ : script id
-
 
 Example:
 
@@ -828,7 +780,6 @@ Message arguments:
 * _arg1_ : thread id
 
 * _arg2_ : thread name (optional)
-
 
 Example:
 
@@ -861,7 +812,6 @@ Example:
 * r : error (error occurred, value is error)
 
 * o : object/composite value (expandable, has properties)
-
 
 ### Special variables
 

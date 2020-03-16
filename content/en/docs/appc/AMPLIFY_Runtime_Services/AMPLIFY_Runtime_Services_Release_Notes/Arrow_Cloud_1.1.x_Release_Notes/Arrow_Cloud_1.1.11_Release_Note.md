@@ -8,7 +8,6 @@
 
 * Before republishing the application, Arrow Cloud sends the SIGTERM signal to the currently deployed application to let it shutdown gracefully. If the app does not shut down in time, Arrow Cloud will kill the application. Previously, Arrow Cloud would immediately kill the application before republishing.
 
-
 **Bug Fixes**
 
 * Fixed an issue where setting environment variables did not take effect when the previous publish command failed.

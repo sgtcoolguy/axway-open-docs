@@ -1,21 +1,20 @@
 {"title":"Using the TiApp Utility Class in Hyperloop iOS","weight":"40"}
 
-* [Class Methods](#ClassMethods)
+* [Class Methods](#class-methods)
 
-* [Instance Methods](#InstanceMethods)
+* [Instance Methods](#instance-methods)
 
-* [Instance Properties](#InstanceProperties)
+* [Instance Properties](#instance-properties)
 
-* [Examples](#Examples)
+* [Examples](#examples)
 
-  * [Present a view controller](#Presentaviewcontroller)
+    * [Present a view controller](#present-a-view-controller)
 
-  * [Pass the current view controller](#Passthecurrentviewcontroller)
+    * [Pass the current view controller](#pass-the-current-view-controller)
 
-  * [Get the device's push notifications UUID](#Getthedevice'spushnotificationsUUID)
+    * [Get the device's push notifications UUID](#get-the-device's-push-notifications-uuid)
 
-  * [Subscribe to the UIApplicationDelegate](#SubscribetotheUIApplicationDelegate)
-
+    * [Subscribe to the UIApplicationDelegate](#subscribe-to-the-uiapplicationdelegate)
 
 This document describes technologies available in Hyperloop 3.1.0+ and Titanium 7.3.0+.
 
@@ -39,177 +38,41 @@ And that's basically it. As the TiApp class is a singleton in Titanium, the inst
 
 Call these methods on the TiApp property directly.
 
-Name
-
-Parameters
-
-Return
-
-Description
-
-app()
-
-void
-
-TiApp
-
-The singleton object to call all other API's on.
-
-getController()
-
-void
-
-UIViewController
-
-Returns the application's root view controller.
-
-getTiAppProperties()
-
-void
-
-NSDictionary
-
-Return a read-only dictionary from tiapp.xml properties.
+| Name | Parameters | Return | Description |
+| --- | --- | --- | --- |
+| app() | void | TiApp | The singleton object to call all other API's on. |
+| getController() | void | UIViewController | Returns the application's root view controller. |
+| getTiAppProperties() | void | NSDictionary | Return a read-only dictionary from tiapp.xml properties. |
 
 ## Instance Methods
 
 Call these methods on the TiApp.app() singleton.
 
-Name
-
-Parameters
-
-Return
-
-Description
-
-showModalController(controller, animated)
-
-UIViewController, BOOL
-
-void
-
-Presents a view controller on the top presented view controller (e.g. "presentViewController:animated:").
-
-hideModalController(controller, animated)
-
-UIViewController, BOOL
-
-void
-
-Hides a currently presented view controller (e.g. "dismissViewControllerAnimated:completion:").
-
-showModalError(error)
-
-NSString
-
-void
-
-Shows the "red screen of death" indicating an unhandled error.
-
-startNetwork()
-
-void
-
-void
-
-Tells application to show network activity indicator.
-
-stopNetwork()
-
-void
-
-void
-
-Tells application to hide network activity indicator.
-
-registerApplicationDelegate(delegate)
-
-id<UIApplicationDelegate>
-
-void
-
-Registers a new UIApplicationDelegate to the host application.
-
-unregisterApplicationDelegate(delegate)
-
-id<UIApplicationDelegate>
-
-void
-
-Unregisters an existing UIApplicationDelegate from the host application.
-
-windowIsKeyWindow()
-
-void
-
-BOOL
-
-Indicates weather the current window is the key-window of the host application.
-
-getRemoteDeviceUUID()
-
-void
-
-NSString
-
-Returns the remote UUID for the current running device.
-
-getSessionId()
-
-void
-
-NSString
-
-Returns the unique identifier for the current application launch.
-
-getLaunchOptions()
-
-void
-
-NSDictionary
-
-Returns the application's launch options.
+| Name | Parameters | Return | Description |
+| --- | --- | --- | --- |
+| showModalController(controller, animated) | UIViewController, BOOL | void | Presents a view controller on the top presented view controller (e.g. "presentViewController:animated:"). |
+| hideModalController(controller, animated) | UIViewController, BOOL | void | Hides a currently presented view controller (e.g. "dismissViewControllerAnimated:completion:"). |
+| showModalError(error) | NSString | void | Shows the "red screen of death" indicating an unhandled error. |
+| startNetwork() | void | void | Tells application to show network activity indicator. |
+| stopNetwork() | void | void | Tells application to hide network activity indicator. |
+| registerApplicationDelegate(delegate) | id<UIApplicationDelegate> | void | Registers a new UIApplicationDelegate to the host application. |
+| unregisterApplicationDelegate(delegate) | id<UIApplicationDelegate> | void | Unregisters an existing UIApplicationDelegate from the host application. |
+| windowIsKeyWindow() | void | BOOL | Indicates weather the current window is the key-window of the host application. |
+| getRemoteDeviceUUID() | void | NSString | Returns the remote UUID for the current running device. |
+| getSessionId() | void | NSString | Returns the unique identifier for the current application launch. |
+| getLaunchOptions() | void | NSDictionary | Returns the application's launch options. |
 
 ## Instance Properties
 
 Call these properties on the TiApp.app() singleton.
 
-Name
-
-Type
-
-Description
-
-userAgent
-
-NSString
-
-The user agent string to use for system network requests.
-
-window
-
-UIWindow
-
-The application's primary window.
-
-remoteNotification
-
-NSDictionary
-
-The details for the last remote notification.
-
-localNotification
-
-NSDictionary
-
-The details for the last local notification.
-
-userAgent
-
-NSString
-
-The user agent string to use for network requests.
+| Name | Type | Description |
+| --- | --- | --- |
+| userAgent | NSString | The user agent string to use for system network requests. |
+| window | UIWindow | The application's primary window. |
+| remoteNotification | NSDictionary | The details for the last remote notification. |
+| localNotification | NSDictionary | The details for the last local notification. |
+| userAgent | NSString | The user agent string to use for network requests. |
 
 ## Examples
 

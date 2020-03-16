@@ -1,23 +1,22 @@
 {"title":"Supporting Multiple Platforms in a Single Codebase","weight":"50"}
 
-* [Embrace the platform](#Embracetheplatform)
+* [Embrace the platform](#embrace-the-platform)
 
-* [Cross-platform mechanics](#Cross-platformmechanics)
+* [Cross-platform mechanics](#cross-platform-mechanics)
 
-  * [Platform identification](#Platformidentification)
+    * [Platform identification](#platform-identification)
 
-  * [Platform-specific APIs and properties](#Platform-specificAPIsandproperties)
+    * [Platform-specific APIs and properties](#platform-specific-apis-and-properties)
 
-  * [Platform-specific resources](#Platform-specificresources)
+    * [Platform-specific resources](#platform-specific-resources)
 
-* [Strategies and recommendations](#Strategiesandrecommendations)
+* [Strategies and recommendations](#strategies-and-recommendations)
 
-  * [Branching](#Branching)
+    * [Branching](#branching)
 
-  * [Platform-specific JS files](#Platform-specificJSfiles)
+    * [Platform-specific JS files](#platform-specific-js-files)
 
-  * [References and Further Reading](#ReferencesandFurtherReading)
-
+    * [References and Further Reading](#references-and-further-reading)
 
 ## Objective
 
@@ -39,7 +38,6 @@ Best of breed, native apps take full advantage of the platforms on which they ru
 
 * Participate in the platform ecosystem, such as using platform-appropriate notification mechanisms.
 
-
 The best approach when creating cross-platform apps is to develop and test for both iOS and Android right from the start. Designing and developing your app with multiple platforms in mind right away will be significantly more efficient than developing for one, then porting to the next.
 
 ### Cross-platform mechanics
@@ -52,34 +50,15 @@ Before we get into the strategies you should adopt, let's look at the mechanics 
 
 * Handling platform-specific resources
 
-
 #### Platform identification
 
 Titanium provides platform-identification properties in the Ti.Platform namespace that you can use for conditional branching within your code. These are:
 
-**Property**
-
-**Description**
-
-**Sample values**
-
-Ti.Platform.name
-
-Returns the name of the platform returned by the device
-
-iPhone OS for iPhone or iPod, android for Android, returns the navigator.userAgent string on Mobile Web
-
-Ti.Platform.osname
-
-Returns an abbreviated identifier of the platform
-
-iphone for iPhone or iPod, ipad for iPad, android for Android, and mobileweb on Mobile Web
-
-Ti.Platform.model
-
-Returns device model identifier
-
-iPhone 3GS or iPod Touch 2G or Droid (unsupported on Mobile Web)
+| **Property** | **Description** | **Sample values** |
+| --- | --- | --- |
+| Ti.Platform.name | Returns the name of the platform returned by the device | iPhone OS for iPhone or iPod, android for Android, returns the navigator.userAgent string on Mobile Web |
+| Ti.Platform.osname | Returns an abbreviated identifier of the platform | iphone for iPhone or iPod, ipad for iPad, android for Android, and mobileweb on Mobile Web |
+| Ti.Platform.model | Returns device model identifier | iPhone 3GS or iPod Touch 2G or Droid (unsupported on Mobile Web) |
 
 #### Platform-specific APIs and properties
 
@@ -176,7 +155,6 @@ Using platform-specific JS files is likely to be most useful when your code is _
 * [Ti.Platform reference](#!/api/Titanium.Platform)
 
 * [Android UI scaling](http://developer.appcelerator.com/blog/2011/06/new-defaults-for-android-layouts-in-1-7.html)
-
 
 ## Summary
 

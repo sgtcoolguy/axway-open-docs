@@ -8,31 +8,15 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 This document describes model create and provides instance configuration and parameters information.
 
-Name
-
-Description
-
-ModelCreate
-
-A Model specific flow-node. Invokes the Create API on a specified model and returns the response.
+| Name | Description |
+| --- | --- |
+| ModelCreate | A Model specific flow-node. Invokes the Create API on a specified model and returns the response. |
 
 ## Instance configuration
 
-Property
-
-Description
-
-Required
-
-Type
-
-model
-
-The name of the model of which to invoke the Create API.
-
-yes
-
-string
+| Property | Description | Required | Type |
+| --- | --- | --- | --- |
+| model | The name of the model of which to invoke the Create API. | yes | string |
 
 ## Instance parameters
 

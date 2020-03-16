@@ -12,32 +12,32 @@ Below are a collection of pages on setting up a new portal page, and adding func
 
 * [Controllers and Actions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/)
 
-  * [Browser](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Browser/)
+    * [Browser](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Browser/)
 
-  * [Eclipse Commands](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Eclipse_Commands/)
+    * [Eclipse Commands](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Eclipse_Commands/)
 
-  * [Launch Actions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Launch_Actions/)
+    * [Launch Actions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Launch_Actions/)
 
-  * [Mobile SDK](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Mobile_SDK/)
+    * [Mobile SDK](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Mobile_SDK/)
 
-  * [Project Template Actions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Project_Template_Actions/)
+    * [Project Template Actions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Project_Template_Actions/)
 
-  * [Project Wizard Actions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Project_Wizard_Actions/)
+    * [Project Wizard Actions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Project_Wizard_Actions/)
 
-  * [Resources Actions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Resources_Actions/)
+    * [Resources Actions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Resources_Actions/)
 
-  * [Sample Actions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Sample_Actions/)
+    * [Sample Actions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Sample_Actions/)
 
-  * [Theme Actions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Theme_Actions/)
+    * [Theme Actions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Theme_Actions/)
 
-  * [Titanium Modules Information](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Titanium_Modules_Information/)
+    * [Titanium Modules Information](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Titanium_Modules_Information/)
 
-  * [Titanium SDK Updates](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Titanium_SDK_Updates/)
+    * [Titanium SDK Updates](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Titanium_SDK_Updates/)
 
-  * [Titanium Studio Product Update](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Titanium_Studio_Product_Update/)
+    * [Titanium Studio Product Update](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Titanium_Studio_Product_Update/)
 
-  * [Titanium User Information](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Titanium_User_Information/)
+    * [Titanium User Information](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Titanium_User_Information/)
 
-  * [Workbench Actions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Workbench_Actions/)
+    * [Workbench Actions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Workbench_Actions/)
 
 * [Setting Up a Local Portal](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Setting_Up_a_Local_Portal/)

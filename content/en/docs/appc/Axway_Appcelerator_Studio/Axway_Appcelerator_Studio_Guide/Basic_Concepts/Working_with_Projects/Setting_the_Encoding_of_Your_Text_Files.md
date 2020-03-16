@@ -12,7 +12,6 @@ Studio ships with UTF-8 encoding enabled by default, but you may wish to change 
 
 4. Click **OK** to save your changes.
 
-
 ## Setting the encoding of a specific file
 
 Some files, like XML, have an encoding setting at the top of the file. This value will take precedence over any other value set in preferences.
@@ -27,7 +26,6 @@ Some files, like XML, have an encoding setting at the top of the file. This valu
 
 5. Click **OK** to save your changes.
 
-
 ## If you do not see your encoding in the list...
 
 A complete list of Java encodings is available here: [http://www.oracle.com/technetwork/java/archive-139210.html](http://www.oracle.com/technetwork/java/archive-139210.html). Select the Java encoding you want from the list.
@@ -38,8 +36,8 @@ You can manually specify one of the supported encodings from the above web page
 
 2. Type in a supported encoding; for example, Shift\_JIS, by using the "Canonical Name" from the above list. Some common encodings:
 
-  * Shift\_JIS: Japanese
+    * Shift\_JIS: Japanese
 
-  * GB18030: Simplified Chinese
+    * GB18030: Simplified Chinese
 
 3. Click OK

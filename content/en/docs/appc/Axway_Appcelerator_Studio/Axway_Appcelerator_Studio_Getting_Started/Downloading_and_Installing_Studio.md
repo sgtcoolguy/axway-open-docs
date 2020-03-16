@@ -1,13 +1,12 @@
 {"title":"Downloading and Installing Studio","weight":"20"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Installing Appcelerator Studio](#InstallingAppceleratorStudio)
+* [Installing Appcelerator Studio](#installing-appcelerator-studio)
 
-* [Installing Aptana Studio](#InstallingAptanaStudio)
+* [Installing Aptana Studio](#installing-aptana-studio)
 
-* [Installation Locations](#InstallationLocations)
-
+* [Installation Locations](#installation-locations)
 
 ## Overview
 
@@ -17,8 +16,7 @@ This page describes how to download and install the IDE if you do not already ha
 
 * Standalone Studio users: Complete the instructions on this page
 
-
-**Prerequisite:** Ensure your machine meets the [Studio System Requirements](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Setting_up_Studio/#Systemrequirements).
+**Prerequisite:** Ensure your machine meets the [Studio System Requirements](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Setting_up_Studio/#system-requirements).
 
 On Windows Vista or Windows 7, you may need to set the **Run this program as an administrator** property to true.
 
@@ -32,8 +30,7 @@ To download and install Appcelerator Studio:
 
 3. Click on the installer for your OS. Wait a moment while the installer downloads.
 
-4. Launch the downloaded installer and follow the steps to install. If the installer asks to install a specific version of Java, allow it. See [Titanium Compatibility Matrix#JavaDevelopmentKit](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#JavaDevelopmentKit) for details on which versions we support.
-
+4. Launch the downloaded installer and follow the steps to install. If the installer asks to install a specific version of Java, allow it. See [Titanium Compatibility Matrix#JavaDevelopmentKit](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#java-development-kit) for details on which versions we support.
 
 ## Installing Aptana Studio
 
@@ -42,7 +39,6 @@ To download and install Aptana Studio:
 1. Go to the [downloads](http://www.aptana.com/products/studio3/download) page for Aptana Studio and download the installer or ZIP file for your operating system.
 
 2. Launch the downloaded installer.
-
 
 ## Installation Locations
 

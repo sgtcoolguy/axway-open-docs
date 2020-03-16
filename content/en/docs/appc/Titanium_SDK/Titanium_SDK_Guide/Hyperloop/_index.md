@@ -1,15 +1,14 @@
 {"title":"Hyperloop","weight":"40"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Installation](#Installation)
+* [Installation](#installation)
 
-* [Sample projects](#Sampleprojects)
+* [Sample projects](#sample-projects)
 
-* [Getting Started](#GettingStarted)
-
+* [Getting Started](#getting-started)
 
 ## Introduction
 

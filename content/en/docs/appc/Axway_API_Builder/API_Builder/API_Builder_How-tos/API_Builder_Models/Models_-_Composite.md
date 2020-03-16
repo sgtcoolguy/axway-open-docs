@@ -6,14 +6,13 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-* [Create a composite model](#Createacompositemodel)
+* [Create a composite model](#create-a-composite-model)
 
-  * [Join object definition](#Joinobjectdefinition)
+    * [Join object definition](#join-object-definition)
 
-  * [Left join example](#Leftjoinexample)
+    * [Left join example](#left-join-example)
 
-  * [Inner join example](#Innerjoinexample)
-
+    * [Inner join example](#inner-join-example)
 
 Composite models require the **appc.composite connector** to be installed. This comes by default with all API Builder Projects. If you are missing this connector you can learn how to install it [here](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Connectors/Add_a_Connector/).
 
@@ -29,41 +28,21 @@ The composite connector can either perform a left join or inner join:
 
 * inner join: only records that match both models are returned
 
-
 The composite connector can also perform either a one-to-one join or one-to-many join:
 
 * one-to-one: only one record from the secondary model matches a record in the main model
 
 * one-to-many: multiple records from the secondary model can match a record in the main model
 
-
 To define the join operation, set the metadata property to either the left\_join key or inner\_join key, either of which takes an array of objects defining the join. Each object in the left\_join or inner\_join property defines the model to join (model property), a key to join (join\_properties property), and optionally if the join is one-to-one or one-to-many (multiple property).
 
 ### Join object definition
 
-Key
-
-Type
-
-Value
-
-model
-
-String
-
-Name of the model. For left joins, this is the secondary model you want to join with the main model.
-
-join\_properties
-
-Object
-
-Collection of key-value pairs that determine the keys in each model to perform the join operation. The key is the property of the model defined in this object and the value is the property to join in another model (or the main model for left joins).
-
-multiple
-
-Boolean
-
-Determines if the match is one-to-one (false) or one-to-many (true). The default value is false.
+| Key | Type | Value |
+| --- | --- | --- |
+| model | String | Name of the model. For left joins, this is the secondary model you want to join with the main model. |
+| join\_properties | Object | Collection of key-value pairs that determine the keys in each model to perform the join operation. The key is the property of the model defined in this object and the value is the property to join in another model (or the main model for left joins). |
+| multiple | Boolean | Determines if the match is one-to-one (false) or one-to-many (true). The default value is false. |
 
 ### Left join example
 

@@ -16,7 +16,6 @@ Dashboard 4.12.0 is a minor release, which includes several improvements and bug
 
 * Increased the entropy of device authorization tokens
 
-
 ## Fixed issues
 
 * Prevented display of un-styled content prior to a page completely loading

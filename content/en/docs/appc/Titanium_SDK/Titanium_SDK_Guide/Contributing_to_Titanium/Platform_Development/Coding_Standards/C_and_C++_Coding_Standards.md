@@ -6,102 +6,101 @@ Contents
 
 * [Standards](#Standards)
 
-  * [Column width](#Columnwidth)
+    * [Column width](#Columnwidth)
 
-  * [Indentation](#Indentation)
+    * [Indentation](#Indentation)
 
-    * [Whitespace](#Whitespace)
+        * [Whitespace](#Whitespace)
 
-    * [Alignment](#Alignment)
+        * [Alignment](#Alignment)
 
-  * [Comments](#Comments)
+    * [Comments](#Comments)
 
-    * [Documentation generation](#Documentationgeneration)
+        * [Documentation generation](#Documentationgeneration)
 
-    * [Internal documentation](#Internaldocumentation)
+        * [Internal documentation](#Internaldocumentation)
 
-    * [Forbidden words](#Forbiddenwords)
+        * [Forbidden words](#Forbiddenwords)
 
-    * [When to write comments](#Whentowritecomments)
+        * [When to write comments](#Whentowritecomments)
 
-    * [When not to write a comment](#Whennottowriteacomment)
+        * [When not to write a comment](#Whennottowriteacomment)
 
-  * [Braces](#Braces)
+    * [Braces](#Braces)
 
-  * [namespace](#namespace)
+    * [namespace](#namespace)
 
-    * [namespace ordering](#namespaceordering)
+        * [namespace ordering](#namespaceordering)
 
-    * [namespace implementation](#namespaceimplementation)
+        * [namespace implementation](#namespaceimplementation)
 
-  * [Headers](#Headers)
+    * [Headers](#Headers)
 
-    * [Order of declarations](#Orderofdeclarations)
+        * [Order of declarations](#Orderofdeclarations)
 
-  * [Preprocessor](#Preprocessor)
+    * [Preprocessor](#Preprocessor)
 
-    * [Naming](#Naming)
+        * [Naming](#Naming)
 
-    * [Indentation](#Indentation.1)
+        * [Indentation](#Indentation.1)
 
-    * [The include Directive](#TheincludeDirective)
+        * [The include Directive](#TheincludeDirective)
 
-    * [Constants](#Constants)
+        * [Constants](#Constants)
 
-    * [The define Directive](#ThedefineDirective)
+        * [The define Directive](#ThedefineDirective)
 
-    * [Conditionals](#Conditionals)
+        * [Conditionals](#Conditionals)
 
-  * [Flow control](#Flowcontrol)
+    * [Flow control](#Flowcontrol)
 
-    * [switch/case](#switch/case)
+        * [switch/case](#switch/case)
 
-    * [goto](#goto)
+        * [goto](#goto)
 
-  * [Looping constructs](#Loopingconstructs)
+    * [Looping constructs](#Loopingconstructs)
 
-  * [Functions](#Functions)
+    * [Functions](#Functions)
 
-    * [return](#return)
+        * [return](#return)
 
-  * [Variables](#Variables)
+    * [Variables](#Variables)
 
-  * [enum](#enum)
+    * [enum](#enum)
 
-  * [typdef](#typdef)
+    * [typdef](#typdef)
 
-  * [struct and union](#structandunion)
+    * [struct and union](#structandunion)
 
-  * [Operators](#Operators)
+    * [Operators](#Operators)
 
-    * [Prefix/postfix increment/decrement](#Prefix/postfixincrement/decrement)
+        * [Prefix/postfix increment/decrement](#Prefix/postfixincrement/decrement)
 
-    * [Ternary](#Ternary)
+        * [Ternary](#Ternary)
 
-    * [Operator overloading](#Operatoroverloading)
+        * [Operator overloading](#Operatoroverloading)
 
-  * [C++ rules](#C++rules)
+    * [C++ rules](#C++rules)
 
-    * [Filenames](#Filenames)
+        * [Filenames](#Filenames)
 
-    * [Classes:](#Classes:)
+        * [Classes:](#Classes:)
 
-    * [General C++](#GeneralC++)
+        * [General C++](#GeneralC++)
 
-  * [Other rules](#Otherrules)
+    * [Other rules](#Otherrules)
 
-    * [C99](#C99)
+        * [C99](#C99)
 
-    * [C++11](#C++11)
+        * [C++11](#C++11)
 
-    * [BOOST](#BOOST)
+        * [BOOST](#BOOST)
 
-    * [Nonstandard extensions](#Nonstandardextensions)
+        * [Nonstandard extensions](#Nonstandardextensions)
 
-    * [C++ FQA familiarity](#C++FQAfamiliarity)
+        * [C++ FQA familiarity](#C++FQAfamiliarity)
 
-    * [Code clarity](#Codeclarity)
-
+        * [Code clarity](#Codeclarity)
 
 ## Synopsis
 
@@ -121,7 +120,6 @@ We do not enforce column width. However, you should make a best effort to keep y
 
 * Indentation is done in tabstops (\\t) to allow for configurable spacing in modern IDEs. For the purposes of all indentation, one tabstop is considered to be 4 spaces.
 
-
 #### Whitespace
 
 * Consecutive lines of whitespace should be avoided within blocks of code, but may be used to separate logical sections of definitions.
@@ -132,23 +130,23 @@ We do not enforce column width. However, you should make a best effort to keep y
 
 * Whitespace should be placed between function definitions.
 
-  Example
+    Example
 
-  `void` `f(x)`
+    `void` `f(x)`
 
-  `{`
+    `{`
 
-  `//....`
+    `//....`
 
-  `}`
+    `}`
 
-  `void` `g(x)`
+    `void` `g(x)`
 
-  `{`
+    `{`
 
-  `//....`
+    `//....`
 
-  `}`
+    `}`
 
 * Comments should be preceded by a line of whitespace, unless they are inline.
 
@@ -156,11 +154,9 @@ We do not enforce column width. However, you should make a best effort to keep y
 
 * return statements should not be followed by whitespace.
 
-
 #### Alignment
 
 * All alignment must be on tabstops.
-
 
 ### Comments
 
@@ -170,17 +166,15 @@ There are two types of comment styles: Comments formatted for internal documenta
 
 * Comments must follow the general formatting rules below, **except** for where they conflict with the documentation generation rules (appledoc requires that the comment open with /\*\* on a single line to be processed, for example, and some may not allow for leading splats or require other keywords.)
 
-
 #### Internal documentation
 
 * Commenting style:
 
-  * Methods or functions are documented with /\* ... \*/, where each line has aligned splats
+    * Methods or functions are documented with /\* ... \*/, where each line has aligned splats
 
-  * Code is documented with aligned //... statements
+    * Code is documented with aligned //... statements
 
-  * Commented-out code is documented with /\* ... \*/
-
+    * Commented-out code is documented with /\* ... \*/
 
 Example
 
@@ -240,7 +234,6 @@ The following words are not allowed in comments:
 
 * Words or phrases which could be considered as detrimental to the platform
 
-
 In addition it is expected that all of your comments will contain correct spelling (and reasonable grammar for the intent of the comment)
 
 #### When to write comments
@@ -259,7 +252,6 @@ In addition it is expected that all of your comments will contain correct spelli
 
 * When in doubt? **Write a comment.**
 
-
 #### When not to write a comment
 
 * If your comment has absolutely nothing useful to say about the source, **don't write a comment.**
@@ -268,17 +260,15 @@ In addition it is expected that all of your comments will contain correct spelli
 
 * If your comment explains something obvious in the source, **don't write a comment.**
 
-
 ### Braces
 
 * Closing braces must be on their own line, and followed by whitespace.
 
-  * **Exception**: Closing braces immediately followed by another closing brace are not followed by whitespace.
+    * **Exception**: Closing braces immediately followed by another closing brace are not followed by whitespace.
 
 * Opening braces must be on their own line, aligned with the previous statement.
 
-  * Opening braces should not be followed by whitespace.
-
+    * Opening braces should not be followed by whitespace.
 
 Example
 
@@ -340,12 +330,11 @@ namespace-contents:
 
 * class information
 
-  * definitions
+    * definitions
 
-  * implementation (inline & template)
+    * implementation (inline & template)
 
 * namespace-contents
-
 
 #### namespace implementation
 
@@ -381,30 +370,29 @@ When using a namespace in a implementation file, use the following style:
 
 * You are expected to include standard #ifndef / #define / #endif guards in your header files, where the macro is named: \[pe:file\_basename\]h\_
 
-  Example
+    Example
 
-  `// hello.h`
+    `// hello.h`
 
-  `#ifndef __hello_h__`
+    `#ifndef __hello_h__`
 
-  `#define __hello_h__`
+    `#define __hello_h__`
 
-  `//your_header_here`
+    `//your_header_here`
 
-  `#endif`
+    `#endif`
 
 * Headers must be extern "C" if intended to be interoperable with C code.
 
 * Headers should contain logically grouped macros, typedefs, classes, and function definitions only, which are intended to be used by code from outside of the implementation file.
 
-  * **Exception:** Headers must also contain implementations for templated code, as required by C++.
+    * **Exception:** Headers must also contain implementations for templated code, as required by C++.
 
-  * **Exception:** Headers must contain implementations for inline functions, but these should be used sparingly. Remember that inline is only a compiler hint.
+    * **Exception:** Headers must contain implementations for inline functions, but these should be used sparingly. Remember that inline is only a compiler hint.
 
 * Headers **must**contain an up-to-date copyright notice. If you modify a header with an incorrect copyright date, you are expected to update it.
 
-  * If you modify the source for a 3rd party library, you are expected to include a copyright header which mentions that "some modifications" were performed by Appcelerator, and those changes are available under the same license as the original source (or a compatible license).
-
+    * If you modify the source for a 3rd party library, you are expected to include a copyright header which mentions that "some modifications" were performed by Appcelerator, and those changes are available under the same license as the original source (or a compatible license).
 
 #### Order of declarations
 
@@ -424,7 +412,6 @@ Headers should have their definitions/declarations ordered in the following way 
 
 * namespace-contents (same ordering of contents, namespace optional)
 
-
 ### Preprocessor
 
 The preprocessor deserves its own detailed section. However, you are **discouraged** from using the preprocessor except where absolutely necessary.
@@ -439,7 +426,6 @@ Macro names must:
 
 * Be descriptive
 
-
 #### Indentation
 
 All preprocessor directives must not be indented (start at column 0) although their contents may be aligned with surrounding code.
@@ -449,7 +435,6 @@ All preprocessor directives must not be indented (start at column 0) although th
 * For system headers: #include <...>
 
 * For project/3rd party headers: #include "..."
-
 
 #### Constants
 
@@ -461,44 +446,43 @@ Do not define global constants with #define. Use const variables only, and ideal
 
 * Use #define **only** for situations in which you cannot use const or inlinefunctions. Such examples may include:
 
-  * DEBUG or other conditional-compilation checks
+    * DEBUG or other conditional-compilation checks
 
-  * Function-like calls which cannot be easily abstracted into functions (such as our Objective-C macro RELEASE\_TO\_NIL)
+    * Function-like calls which cannot be easily abstracted into functions (such as our Objective-C macro RELEASE\_TO\_NIL)
 
-  * Function generators (such as getX / setX pairs, or defining a function which returns a constant value)
+    * Function generators (such as getX / setX pairs, or defining a function which returns a constant value)
 
 * #definestatements which perform any sort of inline operation must be enclosed in parenthesis
 
-  Example
+    Example
 
-  `#define ADD(x,y) (x+y)`
+    `#define ADD(x,y) (x+y)`
 
 * Multi-line #define statements are expected to be formatted according to the usual rules, with the first statement of the #definenot being indented.
 
-  Example
+    Example
 
-  `#define NAMED_PROPERTY(name) \`
+    `#define NAMED_PROPERTY(name) \`
 
-  `void``* name = NULL; \`
+    `void``* name = NULL; \`
 
-  `void` `set_##name(``void``* value) \`
+    `void` `set_##name(``void``* value) \`
 
-  `{ \`
+    `{ \`
 
-  `name = value;`
+    `name = value;`
 
-  `} \`
+    `} \`
 
-  `\`
+    `\`
 
-  `void``* get_##name(``void``) \`
+    `void``* get_##name(``void``) \`
 
-  `{ \`
+    `{ \`
 
-  `return` `name;`
+    `return` `name;`
 
-  `}`
-
+    `}`
 
 #### Conditionals
 
@@ -506,33 +490,31 @@ Do not define global constants with #define. Use const variables only, and ideal
 
 * Conditionals should have their contents aligned with surrounding code, or if the conditional does not have surrounding code, their first line should not be indented.
 
-
 ### Flow control
 
 * All flow control statements must have a logical block associated with them (no single-statement if)
 
 * Checking for validity of a pointer or value directly is allowed: if (ptr) and if (ptr != NULL)are both acceptable. Where clarity is a primary concern (such as compound conditionals) the latter is preferred.
 
-  Example
+    Example
 
-  `if` `(x)`
+    `if` `(x)`
 
-  `{`
+    `{`
 
-  `// ...`
+    `// ...`
 
-  `}`
+    `}`
 
-  `else`  `if` `(y ||`
+    `else`  `if` `(y ||`
 
-  `z)`
+    `z)`
 
-  `{`
+    `{`
 
-  `// ...`
+    `// ...`
 
-  `}`
-
+    `}`
 
 #### switch/case
 
@@ -540,62 +522,61 @@ Do not define global constants with #define. Use const variables only, and ideal
 
 * default: should be the final case of your switchstatement.
 
-  * **Corollary** : default should never be a fallthrough statement. Even if it does nothing, it should consist of a break or return.
+    * **Corollary** : default should never be a fallthrough statement. Even if it does nothing, it should consist of a break or return.
 
 * Fallthrough case must have their final line be the comment // FALLTHROUGH, or have the comment inline if they are fallthrough-only.
 
 * case statements which early-return do not have to end with a breakstatement.
 
-  Example
+    Example
 
-  `char` `token;`
+    `char` `token;`
 
-  `int` `x;`
+    `int` `x;`
 
-  `int` `y;`
+    `int` `y;`
 
-  `// code`
+    `// code`
 
-  `switch` `(token)`
+    `switch` `(token)`
 
-  `{`
+    `{`
 
-  `case`  `'-'``:`
+    `case`  `'-'``:`
 
-  `{`
+    `{`
 
-  `y = -y;`
+    `y = -y;`
 
-  `// FALLTHROUGH`
+    `// FALLTHROUGH`
 
-  `}`
+    `}`
 
-  `case`  `'+'``:`
+    `case`  `'+'``:`
 
-  `{`
+    `{`
 
-  `return` `x + y;`
+    `return` `x + y;`
 
-  `}`
+    `}`
 
-  `// TODO: Implement these ops`
+    `// TODO: Implement these ops`
 
-  `case`  `'*'``:` `// FALLTHROUGH`
+    `case`  `'*'``:` `// FALLTHROUGH`
 
-  `case`  `'/'``:` `// FALLTHROUGH`
+    `case`  `'/'``:` `// FALLTHROUGH`
 
-  `default``:`
+    `default``:`
 
-  `{`
+    `{`
 
-  `printf(``"Unknown operator"``);`
+    `printf(``"Unknown operator"``);`
 
-  `break``;`
+    `break``;`
 
-  `}`
+    `}`
 
-  `}`
-
+    `}`
 
 #### goto
 
@@ -604,7 +585,6 @@ Usage of goto is necessary sometimes but each usage must:
 * Be preceded by a comment indicating the necessity of goto
 
 * Use a well-named label
-
 
 Only use goto when it is absolutely required and you have no other option.
 
@@ -629,7 +609,6 @@ Whether or not to use inline variable declarations for any looping construct (bu
 * Functions which take no arguments do not need to be declared as f(void); can be f() instead.
 
 * Functions should be named as "actions" rather than things (get\_x() vs. x())
-
 
 Example
 
@@ -675,14 +654,13 @@ Functions which return a compound statement should have that expression wrapped 
 
 * Variable types should follow these rules:
 
-  * Pointer types should have the \* after the type, followed by a space
+    * Pointer types should have the \* after the type, followed by a space
 
-  * Reference types should have the & after the type, followed by a space
+    * Reference types should have the & after the type, followed by a space
 
-  * Array types should have the \[\] after the variable name
+    * Array types should have the \[\] after the variable name
 
-  * Array types should be preferred over pointer types where the intended use of the object is as an array.
-
+    * Array types should be preferred over pointer types where the intended use of the object is as an array.
 
 Example
 
@@ -698,54 +676,51 @@ Example
 
 * Names of enumconstructs should be capitalized camel-case, and placed on the same line as the closing brace.
 
-  Example
+    Example
 
-  `enum` `{`
+    `enum` `{`
 
-  `ONE =` `1``,`
+    `ONE =` `1``,`
 
-  `TWO,`
+    `TWO,`
 
-  `THREE`
+    `THREE`
 
-  `} FooValues;` `// name should be camelcase with leading cap`
-
+    `} FooValues;` `// name should be camelcase with leading cap`
 
 ### typdef
 
 * Names of type constructs should be capitalized camel-case
 
-
 ### struct and union
 
 * **Do not use** struct **as a C++ construct.** structshould be used only in the way that it is defined by the C specification.
 
-  * In particular, **do not include functions as part of your** struct**!** structs are POD (plain old data). Do not use the public access specifier in your structs, either.
+    * In particular, **do not include functions as part of your** struct**!** structs are POD (plain old data). Do not use the public access specifier in your structs, either.
 
 * struct and union should only be used as part of a typedef.
 
 * The name of the type associated with the construct should be on the same line as the closing brace, not on its own line.
 
-  Example
+    Example
 
-  `typedef struct`
+    `typedef struct`
 
-  `{`
+    `{`
 
-  `int` `x;`
+    `int` `x;`
 
-  `} X;`
+    `} X;`
 
-  `typedef union`
+    `typedef union`
 
-  `{`
+    `{`
 
-  `int` `x;`
+    `int` `x;`
 
-  `float` `y;`
+    `float` `y;`
 
-  `} Y;`
-
+    `} Y;`
 
 ### Operators
 
@@ -753,7 +728,7 @@ Example
 
 * Always put a space before any unary prefix operators, unless immediately preceded by a parenthesis.
 
-  * All casts (C-style and C++ x\_cast<>()) are considered unary prefix operators for this purpose.
+    * All casts (C-style and C++ x\_cast<>()) are considered unary prefix operators for this purpose.
 
 * Always put a space after any unary suffix operators, unless they are immediately followed by a ;.
 
@@ -761,27 +736,25 @@ Example
 
 * Expressions spanning multiple lines should have their continuing lines indented to one tabstop beyond the initial \=or parenthesis.
 
-  Example
+    Example
 
-  `int` `x =` `1` `+` `2``;`
+    `int` `x =` `1` `+` `2``;`
 
-  `int``* x_ptr = &x;`
+    `int``* x_ptr = &x;`
 
-  `double` `d = (``float``)(*x_ptr) /` `2.0``;`
+    `double` `d = (``float``)(*x_ptr) /` `2.0``;`
 
-  `++x;`
+    `++x;`
 
-  `long` `example = d /`
+    `long` `example = d /`
 
-  `(d+``1``);`
-
+    `(d+``1``);`
 
 #### Prefix/postfix increment/decrement
 
 * Prefix increment/decrement is preferred over postfix increment/decrement.
 
 * Make a best effort to avoid usage of these operators in compound statements.
-
 
 #### Ternary
 
@@ -794,7 +767,6 @@ Usage of ternary is discouraged, but it is often useful for certain cases (such 
 * Treat both the ? and : characters as binary operators
 
 * Avoid obvious side-effects within ternary, unless they are intended.
-
 
 Example
 
@@ -890,7 +862,6 @@ These rules are to be applied on top of any C rules described above. If there is
 
 * use .h, .c and .cpp only
 
-
 #### Classes:
 
 * Members and methods should be order by public, protected and then private
@@ -901,20 +872,19 @@ These rules are to be applied on top of any C rules described above. If there is
 
 * Access identifiers within a class should be aligned with the "class" in the declaration. IE:
 
-  `class` `MyClass`
+    `class` `MyClass`
 
-  `{`
+    `{`
 
-  `public``:`
+    `public``:`
 
-  `int` `x;`
+    `int` `x;`
 
-  `private``:`
+    `private``:`
 
-  `int` `y;`
+    `int` `y;`
 
-  `}`
-
+    `}`
 
 * Permissions should be strict by default and opened up as needed
 
@@ -927,8 +897,7 @@ These rules are to be applied on top of any C rules described above. If there is
 * Respect the rule of three ("always override operator=, destructor, and copy constructor if you override any").
 
 * Comment if a method is static in method comment within the implementation file
-  \*Remember that virtual methods have time and cost (IE: just think when using them)
-
+    \*Remember that virtual methods have time and cost (IE: just think when using them)
 
 #### General C++
 
@@ -940,12 +909,11 @@ These rules are to be applied on top of any C rules described above. If there is
 
 * Be const correct within reason. It can be a huge pain in the ass but it's less painful in the long run.
 
-  * Try to avoid const\_cast<>()
+    * Try to avoid const\_cast<>()
 
 * Use function overloading rather than name variants if possible (IE: add() with overloaded versions rather than addInt, addFloat, etc)
 
 * Remember that STL can be expensive. Dont use a sledgehammer to drive a nail into the wall
-
 
 ### Other rules
 
@@ -978,6 +946,5 @@ Writing professional, enterprise-level code is not an obfuscation contest. Do no
 * Considering all other possible options
 
 * Documenting it
-
 
 Use your best judgement as to what constitutes "clear code" and expect a general consensus over what constitutes that particular style as the source base evolves.

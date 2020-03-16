@@ -1,28 +1,26 @@
 {"title":"Titanium SDK 7.5.1.RC - 13 December 2018","weight":"40"}
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [Community credits](#Communitycredits)
+* [Community credits](#community-credits)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-* [Improvements](#Improvements)
+* [Improvements](#improvements)
 
-* [API changes](#APIchanges)
-
+* [API changes](#api-changes)
 
 ## About this release
 
 Titanium SDK 7.5.1 is a patch release of the SDK, addressing high-priority issues from previous releases.
 
-As of this GA release, the previous Titanium SDK patch release is no longer supported. End of support for this version will be 2019-06-13 or until the next patch release. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous Titanium SDK patch release is no longer supported. End of support for this version will be 2019-06-13 or until the next patch release. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Community credits
 
 * Jorge Macias Garcia - [TIMOB-26625](https://jira.appcelerator.org/browse/TIMOB-26625)
 
 * Joe Finnigan - [TIMOB-26628](https://jira.appcelerator.org/browse/TIMOB-26628)
-
 
 ## Fixed issues
 
@@ -34,13 +32,11 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 * [TIMOB-26628](https://jira.appcelerator.org/browse/TIMOB-26628) - iOS 11.0: App crashes on launch
 
-
 ## Improvements
 
 * [TIMOB-26632](https://jira.appcelerator.org/browse/TIMOB-26632) - App is crushing in Ti-SDK 7.5.0.GA java.lang.NullPointerException
 
-  * Added feature that validates getKrollObject result before use
-
+    * Added feature that validates getKrollObject result before use
 
 ## API changes
 

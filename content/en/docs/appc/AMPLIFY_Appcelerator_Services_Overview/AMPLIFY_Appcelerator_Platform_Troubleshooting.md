@@ -1,17 +1,16 @@
 {"title":"AMPLIFY Appcelerator Platform Troubleshooting","weight":"40"}
 
-* [Review the troubleshooting guides](#Reviewthetroubleshootingguides)
+* [Review the troubleshooting guides](#review-the-troubleshooting-guides)
 
-* [Common issues](#Commonissues)
+* [Common issues](#common-issues)
 
-  * [Dashboard sent an authorization token, but I did not receive one](#Dashboardsentanauthorizationtoken,butIdidnotreceiveone)
+    * [Dashboard sent an authorization token, but I did not receive one](#dashboard-sent-an-authorization-token,-but-i-did-not-receive-one)
 
-  * [Appcelerator updates in Studio hang or freeze, or cannot build for Android or iOS after updating from Studio](#AppceleratorupdatesinStudiohangorfreeze,orcannotbuildforAndroidoriOSafterupdatingfromStudio)
+    * [Appcelerator updates in Studio hang or freeze, or cannot build for Android or iOS after updating from Studio](#appcelerator-updates-in-studio-hang-or-freeze,-or-cannot-build-for-android-or-ios-after-updating-from-studio)
 
-* [Tips](#Tips)
+* [Tips](#tips)
 
-  * [Turn off LiveView](#TurnoffLiveView)
-
+    * [Turn off LiveView](#turn-off-liveview)
 
 ## Review the troubleshooting guides
 
@@ -30,7 +29,6 @@ For in-depth troubleshooting information about specific Appcelerator components,
 * **AMPLIFY Runtime Services**: [AMPLIFY Runtime Services Troubleshooting](/docs/appc/AMPLIFY_Runtime_Services/AMPLIFY_Runtime_Services_Guide/AMPLIFY_Runtime_Services_Troubleshooting/)
 
 * **Mobile Backend Services**: [Mobile Backend Services Troubleshooting Guide](/arrowdb/latest/#!/guide/troubleshooting)
-
 
 ## Common issues
 

@@ -1,13 +1,12 @@
 {"title":"Choosing a Persistence Strategy for Your Application","weight":"10"}
 
-* [Properties](#Properties)
+* [Properties](#properties)
 
-* [Database](#Database)
+* [Database](#database)
 
-* [Filesystem](#Filesystem)
+* [Filesystem](#filesystem)
 
-* [What kind of data storage should I use?](#WhatkindofdatastorageshouldIuse?)
-
+* [What kind of data storage should I use?](#what-kind-of-data-storage-should-i-use?)
 
 ## Objective
 
@@ -22,7 +21,6 @@ Even the most rudimentary applications usually have some data storage requiremen
 * Titanium.Database gives access to local SQLite3 databases
 
 * Titanium.Filesystem facilitates file and directory manipulation
-
 
 Each of these enable data to persist on a device across application restarts, power cycles, re-installation and even migration to a new device.
 
@@ -46,30 +44,29 @@ The decision about which of the three local storage options you choose is usuall
 
 1. **Application Properties** - used when one or all of the following is true:
 
-  * the data consists of simple key/value pairs
+    * the data consists of simple key/value pairs
 
-  * the data is related to the application rather than the user
+    * the data is related to the application rather than the user
 
-  * the data does not require other data in order to be meaningful or useful
+    * the data does not require other data in order to be meaningful or useful
 
-  * there only needs to be one version of the data stored at any one time
+    * there only needs to be one version of the data stored at any one time
 
 2. **Database** - used this when one or all of the following is true:
 
-  * there are many similar data items
+    * there are many similar data items
 
-  * items of data relate to each other
+    * items of data relate to each other
 
-  * you require flexibility over how the data will be presented when you retrieve it
+    * you require flexibility over how the data will be presented when you retrieve it
 
-  * the data accumulates over time, such as transaction, logging or archiving data
+    * the data accumulates over time, such as transaction, logging or archiving data
 
 3. **Filesystem** - used when one or all of the following is true:
 
-  * the data is already provided in file format
+    * the data is already provided in file format
 
-  * the data is an image file
-
+    * the data is an image file
 
 Although the local database has the capability to store images in blob (binary) format, this won't lead to optimal performance from your application. Instead, use Titanium.Database to store the image file path and name in the database, and Titanium.Filesystem to manage the physical files.
 
@@ -77,16 +74,15 @@ Although the local database has the capability to store images in blob (binary) 
 
 * API docs:
 
-  * [Properties API](#!/api/Titanium.App.Properties)
+    * [Properties API](#!/api/Titanium.App.Properties)
 
-  * [Database API](#!/api/Titanium.Database)
+    * [Database API](#!/api/Titanium.Database)
 
-  * [Filesystem API](#!/api/Titanium.Filesystem)
+    * [Filesystem API](#!/api/Titanium.Filesystem)
 
 * [Persistence demo app](https://github.com/appcelerator-archive/sample-persistence)
 
 * [http://sqlite.org](http://sqlite.org)
-
 
 ## Summary
 

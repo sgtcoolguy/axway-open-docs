@@ -1,9 +1,8 @@
 {"title":"Installing a Plugin","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Installing 3rd Party Plugins into Studio](#Installing3rdPartyPluginsintoStudio)
-
+* [Installing 3rd Party Plugins into Studio](#installing-3rd-party-plugins-into-studio)
 
 ## Overview
 

@@ -8,31 +8,15 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 A number of flow-nodes for performing operations on models are also available for use. These are primarily used when generating endpoints from existing models in the UI.
 
-Name
-
-Description
-
-ModelCount
-
-A Model specific flow-node. Invokes the Count API on a specified model and returns the response.
+| Name | Description |
+| --- | --- |
+| ModelCount | A Model specific flow-node. Invokes the Count API on a specified model and returns the response. |
 
 ## Instance configuration
 
-Property
-
-Description
-
-Required
-
-Type
-
-method
-
-The name of the model of which to invoke the Count API.
-
-yes
-
-string
+| Property | Description | Required | Type |
+| --- | --- | --- | --- |
+| method | The name of the model of which to invoke the Count API. | yes | string |
 
 ## Instance parameters
 

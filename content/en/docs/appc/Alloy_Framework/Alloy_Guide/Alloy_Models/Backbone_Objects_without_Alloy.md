@@ -54,7 +54,7 @@ app/controllers/index.js
 
 These Backbone objects cannot persist to external storage without implementing the Backbone.sync method, so if you make calls to Collection.fetch, Collection.create, Model.fetch, Model.save and Model.destroy, the application throws an error.
 
-You can use Alloy's Model-View binding mechanism to keep the local Backbone Models and Collections in sync with an Alloy view-controller. Follow the same directions in the [Alloy Model-View Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Data_Binding/#Model-viewbinding) section except instead of using the Model or Collections XML tag, you need to first initialize your model or collection in the alloy.js initializer file and add it to the Alloy.Models or Alloy.Collections namespace. For example:
+You can use Alloy's Model-View binding mechanism to keep the local Backbone Models and Collections in sync with an Alloy view-controller. Follow the same directions in the [Alloy Model-View Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Data_Binding/#model-view-binding) section except instead of using the Model or Collections XML tag, you need to first initialize your model or collection in the alloy.js initializer file and add it to the Alloy.Models or Alloy.Collections namespace. For example:
 
 app/alloy.js
 

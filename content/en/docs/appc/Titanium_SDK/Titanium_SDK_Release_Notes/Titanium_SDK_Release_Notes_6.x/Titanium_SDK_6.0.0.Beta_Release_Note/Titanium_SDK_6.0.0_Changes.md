@@ -2,24 +2,23 @@
 
 With the release of Titanium SDK 6.0.0, we introduced many great features and improvements. However, some of these changes broke features in previous releases. This document lists all the breaking changes as well as how to handle them.
 
-* [Rebuilding Android Modules](#RebuildingAndroidModules)
+* [Rebuilding Android Modules](#rebuilding-android-modules)
 
-* [Node.js](#Node.js)
+* [Node.js](#node.js)
 
-* [Xcode](#Xcode)
+* [Xcode](#xcode)
 
-* [Deprecated APIs](#DeprecatedAPIs)
+* [Deprecated APIs](#deprecated-apis)
 
-* [watchOS 1](#watchOS1)
+* [watchOS 1](#watchos-1)
 
-* [Listen to androidback](#Listentoandroidback)
+* [Listen to androidback](#listen-to-androidback)
 
-* [Module guides use CLI instead of build.py](#ModuleguidesuseCLIinsteadofbuild.py)
+* [Module guides use CLI instead of build.py](#module-guides-use-cli-instead-of-build.py)
 
-* [Studio 4.8.0](#Studio4.8.0)
+* [Studio 4.8.0](#studio-4.8.0)
 
-* [Removal of Ti.include](#RemovalofTi.include)
-
+* [Removal of Ti.include](#removal-of-ti.include)
 
 ## Rebuilding Android Modules
 
@@ -39,7 +38,6 @@ You will need to update the android/manifest by:
 
 5. Then rebuild the module.
 
-
 Note, you may also need to edit the Java code to remove references to deprecate classes that have been removed in 6.0.0 (such as TiContext).
 
 ## Node.js
@@ -52,7 +50,7 @@ Xcode 8 in the minimum supported version. Please install or update Xcode accordi
 
 ## Deprecated APIs
 
-For this release, we removed 176+ APIs across iOS and Android. Please review [API changes](/docs/appc/Titanium_SDK/Titanium_SDK_Release_Notes/Titanium_SDK_Release_Notes_6.x/Titanium_SDK_6.0.0.Beta_Release_Note/#APIchanges) in [Titanium SDK 6.0.0.Beta Release Note](/docs/appc/Titanium_SDK/Titanium_SDK_Release_Notes/Titanium_SDK_Release_Notes_6.x/Titanium_SDK_6.0.0.Beta_Release_Note/).
+For this release, we removed 176+ APIs across iOS and Android. Please review [API changes](/docs/appc/Titanium_SDK/Titanium_SDK_Release_Notes/Titanium_SDK_Release_Notes_6.x/Titanium_SDK_6.0.0.Beta_Release_Note/#api-changes) in [Titanium SDK 6.0.0.Beta Release Note](/docs/appc/Titanium_SDK/Titanium_SDK_Release_Notes/Titanium_SDK_Release_Notes_6.x/Titanium_SDK_6.0.0.Beta_Release_Note/).
 
 ## watchOS 1
 
@@ -74,7 +72,6 @@ To build an iOS or Android module, use the ti build command from the CLI:
 
 * Android: ti build -p android --build-only
 
-
 If you omit the \--build-only flag, it will run ti create and ti build with the example code in the module.
 
 **Note**: The \--project-dir flag must point to the platform-specific subdirectory in the module directory.
@@ -87,10 +84,9 @@ To upgrade your module to stop using the build.py script, follow these steps:
 
 2. Execute either one of these commands:
 
-  * ti build -p <platform> --build-only
+    * ti build -p <platform> --build-only
 
-  * appc run -p <platform> --build-only
-
+    * appc run -p <platform> --build-only
 
 There isn't anything else you need to change.
 
@@ -110,4 +106,4 @@ As a last resort, consider using this workaround:
 
 **Ti.include workaround**
 
-function include(file) {  return eval(Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, file).read().text);}
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class="js keyword">function</tt> <tt class="js plain">include(file) {</tt><tt class="js spaces"> </tt><tt class="js keyword">return</tt> <tt class="js plain">eval(Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, file).read().text);</tt><tt class="js plain">}</tt></p></td></tr></tbody></table>

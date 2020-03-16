@@ -1,19 +1,18 @@
 {"title":"Hyperloop and Android - Using Third Party Android Libraries","weight":"10"}
 
-* [The AAR file](#TheAARfile)
+* [The AAR file](#the-aar-file)
 
-* [Setting up the app](#Settinguptheapp)
+* [Setting up the app](#setting-up-the-app)
 
-  * [Importing classes](#Importingclasses)
+    * [Importing classes](#importing-classes)
 
-  * [Use the component](#Usethecomponent)
+    * [Use the component](#use-the-component)
 
-  * [Listen to events](#Listentoevents)
+    * [Listen to events](#listen-to-events)
 
-  * [Layout](#Layout)
+    * [Layout](#layout)
 
-  * [Done](#Done)
-
+    * [Done](#done)
 
 With Hyperloop, you can use native Android libraries directly in Titanium using Javascript. In this short tutorial, we will use an existing third party AAR library in our app.
 

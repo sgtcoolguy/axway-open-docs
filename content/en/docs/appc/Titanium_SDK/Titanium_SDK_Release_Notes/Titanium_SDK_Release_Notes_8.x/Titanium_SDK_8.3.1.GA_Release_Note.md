@@ -1,21 +1,20 @@
 {"title":"Titanium SDK 8.3.1.GA - 17 January 2020","weight":"140"}
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [Bug Fixes](#BugFixes)
+* [Bug Fixes](#bug-fixes)
 
-  * [Android platform](#Androidplatform)
+    * [Android platform](#android-platform)
 
-  * [iOS platform](#iOSplatform)
+    * [iOS platform](#ios-platform)
 
-* [SDK modules versions](#SDKmodulesversions)
+* [SDK modules versions](#sdk-modules-versions)
 
-  * [Android and iOS](#AndroidandiOS)
+    * [Android and iOS](#android-and-ios)
 
-  * [CommonJS](#CommonJS)
+    * [CommonJS](#commonjs)
 
-  * [Hyperloop](#Hyperloop)
-
+    * [Hyperloop](#hyperloop)
 
 ## About this release
 
@@ -35,7 +34,6 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 * [TIMOB-27572](https://jira.appcelerator.org/browse/TIMOB-27572) - getCurrentPosition() compatibility with some Samsung devices ([1e832a6](https://github.com/appcelerator/titanium_mobile/commit/1e832a6720aeddbfeec4442efaf02267bf8e1ca7))
 
-
 ### iOS platform
 
 * [TIMOB-27158](https://jira.appcelerator.org/browse/TIMOB-27158) - ui glitch in lazyloading fixed ([a32f713](https://github.com/appcelerator/titanium_mobile/commit/a32f71313139e6a75fcc7ad99c284a3b6839c65e))
@@ -48,99 +46,32 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 * [TIMOB-27350](https://jira.appcelerator.org/browse/TIMOB-27350) - updated Ti.Blob.toString() behaviour to original ([cbb82a6](https://github.com/appcelerator/titanium_mobile/commit/cbb82a6a97062b47c7a482f50d221027576215e7))
 
-
 ## SDK modules versions
 
 ### Android and iOS
 
-Module
-
-Android version
-
-iOS version
-
-urlSession
-
-n/a
-
-2.2.0
-
-facebook
-
-8.0.0
-
-7.0.0
-
-ti.coremotion
-
-n/a
-
-2.0.1
-
-ti.map
-
-4.5.0
-
-3.3.0
-
-ti.safaridialog
-
-n/a
-
-1.1.1
-
-ti.webdialog
-
-1.1.0
-
-1.1.0
-
-ti.touchid
-
-3.0.1
-
-2.1.4
-
-ti.identity
-
-2.1.0
-
-1.0.6
-
-ti.applesignin
-
-n/a
-
-1.1.1
-
-ti.cloudpush
-
-6.0.1
-
-n/a
-
-ti.playservices
-
-16.1.3
-
-n/a
+| Module | Android version | iOS version |
+| --- | --- | --- |
+| urlSession | n/a | 2.2.0 |
+| facebook | 8.0.0 | 7.0.0 |
+| ti.coremotion | n/a | 2.0.1 |
+| ti.map | 4.5.0 | 3.3.0 |
+| ti.safaridialog | n/a | 1.1.1 |
+| ti.webdialog | 1.1.0 | 1.1.0 |
+| ti.touchid | 3.0.1 | 2.1.4 |
+| ti.identity | 2.1.0 | 1.0.6 |
+| ti.applesignin | n/a | 1.1.1 |
+| ti.cloudpush | 6.0.1 | n/a |
+| ti.playservices | 16.1.3 | n/a |
 
 ### CommonJS
 
-Module
-
-Version
-
-ti.cloud
-
-3.2.11
+| Module | Version |
+| --- | --- |
+| ti.cloud | 3.2.11 |
 
 ### Hyperloop
 
-Module
-
-Version
-
-hyperloop
-
-4.0.4
+| Module | Version |
+| --- | --- |
+| hyperloop | 4.0.4 |

@@ -6,7 +6,6 @@ Dashboard 4.12.1 is a patch release, which includes an improvement and multiple 
 
 * Added OSM Foundation attribution and link on all maps
 
-
 ## Fixed issues
 
 * Fixed issue where saving Android Cloud Messaging settings and navigating away from and returning to the form may not show the updated values

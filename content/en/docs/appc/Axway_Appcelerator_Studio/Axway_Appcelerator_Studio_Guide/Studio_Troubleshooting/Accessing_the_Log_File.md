@@ -1,23 +1,22 @@
 {"title":"Accessing the Log File","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Accessing the Log](#AccessingtheLog)
+* [Accessing the Log](#accessing-the-log)
 
-  * [Accessing the Log from Studio/Eclipse](#AccessingtheLogfromStudio/Eclipse)
+    * [Accessing the Log from Studio/Eclipse](#accessing-the-log-from-studio/eclipse)
 
-  * [Accessing the Log from the File System](#AccessingtheLogfromtheFileSystem)
+    * [Accessing the Log from the File System](#accessing-the-log-from-the-file-system)
 
-* [Diagnostic Test](#DiagnosticTest)
+* [Diagnostic Test](#diagnostic-test)
 
-* [Mobile Projects](#MobileProjects)
+* [Mobile Projects](#mobile-projects)
 
-  * [iOS](#iOS)
+    * [iOS](#ios)
 
-  * [Android and other platforms](#Androidandotherplatforms)
+    * [Android and other platforms](#android-and-other-platforms)
 
-* [JavaScript Web Debugger Log File](#JavaScriptWebDebuggerLogFile)
-
+* [JavaScript Web Debugger Log File](#javascript-web-debugger-log-file)
 
 ## Overview
 
@@ -42,7 +41,6 @@ Your current .log file is located in a .metadata folder in your current workspac
 * Windows Vista/Windows 7: C:\\Users\\username\\Documents\\<Studio Workspace>\\.metadata\\.log
 
 * Mac OS X: ~/Documents/<Studio Workspace>/.metadata/.log
-
 
 ## Diagnostic Test
 
@@ -70,13 +68,11 @@ If you get a console error when building a project, the correct log to submit de
 
 4. Scroll down to the bottom of the **Filters** tab and uncheck **Appcelerator Build Folders** or **Titanium Build Folders**
 
-
 You can now see the build folder inside your Titanium projects
 
 1. Expand the **build/iphone/build** folder
 
 2. Attach the **build.log** file, and the output from the console.
-
 
 Once you have found the log file, you can reverse the above steps to hide the build folders once again.
 

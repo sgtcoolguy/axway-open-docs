@@ -1,29 +1,28 @@
 {"title":"File Uploads and Downloads","weight":"60"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [File upload](#Fileupload)
+    * [File upload](#file-upload)
 
-    * [Monitoring upload progress](#Monitoringuploadprogress)
+        * [Monitoring upload progress](#monitoring-upload-progress)
 
-  * [File download](#Filedownload)
+    * [File download](#file-download)
 
-    * [File storage locations](#Filestoragelocations)
+        * [File storage locations](#file-storage-locations)
 
-    * [Monitoring download progress](#Monitoringdownloadprogress)
+        * [Monitoring download progress](#monitoring-download-progress)
 
-  * [Hands-on practice](#Hands-onpractice)
+    * [Hands-on practice](#hands-on-practice)
 
-    * [Goal](#Goal)
+        * [Goal](#goal)
 
-    * [Steps](#Steps)
+        * [Steps](#steps)
 
-  * [References and further reading](#Referencesandfurtherreading)
+    * [References and further reading](#references-and-further-reading)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Objective
 
@@ -239,7 +238,6 @@ When downloading files, keep in mind the locations on the device you can access 
 
 * **Ti.Filesystem.externalStorageDirectory**: A read-write directory on the external storage device (SD card) accessible by your app, if such a location exists. Check first with Ti.Filesystem.isExternalStoragePresent() (which returns a Boolean).
 
-
 The Ti.Filesystem.resourcesDirectory is read-only on a device, but is read/write in the simulator/emulator.
 
 #### Monitoring download progress
@@ -274,18 +272,17 @@ In this activity, you will download a large image file, uploading a progress bar
 
 4. Add an HTTPClient that will:
 
-  * Download [http://farm4.static.flickr.com/3244/3115485060\_076a345932\_o.jpg](http://farm4.static.flickr.com/3244/3115485060_076a345932_o.jpg) (from [Flickr](http://www.flickr.com/photos/72213316@N00/3115485060/sizes/o/in/photostream/)).
+    * Download [http://farm4.static.flickr.com/3244/3115485060\_076a345932\_o.jpg](http://farm4.static.flickr.com/3244/3115485060_076a345932_o.jpg) (from [Flickr](http://www.flickr.com/photos/72213316@N00/3115485060/sizes/o/in/photostream/)).
 
-  * Save the file to the applicationDataDirectory in a file named cool\_photo.jpg.
+    * Save the file to the applicationDataDirectory in a file named cool\_photo.jpg.
 
-  * Update the progress bar as the file is downloaded
+    * Update the progress bar as the file is downloaded
 
-  * Fire an event once the photo is downloaded and saved. Pass the native path as a payload of that event.
+    * Fire an event once the photo is downloaded and saved. Pass the native path as a payload of that event.
 
 5. Add an app-level event listener to receive the native path of the downloaded photo. Hide the progress bar and set the ImageView's image property equal to that native path to show the image.
 
 6. Build and test the image in the simulator/emulator.
-
 
 ### References and further reading
 
@@ -294,7 +291,6 @@ In this activity, you will download a large image file, uploading a progress bar
 * [Filesystem Access and Storage chapter](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Working_with_Local_Data_Sources/Filesystem_Access_and_Storage/)
 
 * This [blog post](http://developer.appcelerator.com/blog/2011/09/qr-codes-in-your-mobile-apps-cross-platform.html) contains another technique for caching downloaded images
-
 
 ## Summary
 

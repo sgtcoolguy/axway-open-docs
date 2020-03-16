@@ -12,7 +12,6 @@ The appearance of a [Switch](#!/api/Titanium.UI.Switch) control varies by platfo
 
 * On iOS, a Switch appears as an iOS on/off switch and doesn't have any text associated with it.
 
-
 The following screenshots show the sample app running on Android and iOS.
 
 ![screenshot](/Images/appc/download/attachments/41845773/screenshot.png) ![switch_mobile_web](/Images/appc/download/attachments/41845773/switch_mobile_web.png)

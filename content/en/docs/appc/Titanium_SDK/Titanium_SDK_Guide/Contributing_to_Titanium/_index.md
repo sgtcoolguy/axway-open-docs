@@ -1,13 +1,12 @@
 {"title":"Contributing to Titanium","weight":"80"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [What is Contributing?](#WhatisContributing?)
+* [What is Contributing?](#what-is-contributing?)
 
-* [How to Contribute to Titanium](#HowtoContributetoTitanium)
+* [How to Contribute to Titanium](#how-to-contribute-to-titanium)
 
-* [Related Topics](#RelatedTopics)
-
+* [Related Topics](#related-topics)
 
 ## Overview
 
@@ -23,7 +22,6 @@ The numerous ways you can participate to help Titanium improve, including:
 
 * [Contributing documentation](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Documentation/)
 
-
 ## What is Contributing?
 
 There is typically a very narrow definition that springs to mind when people talk about "contributing" in relation to software projects. While obviously Titanium wouldn't exist without code, you don't need to be a black-belt in Java or Objective-C to make a worthwhile contribution to it.
@@ -38,15 +36,15 @@ This document describes the ways that you can get involved, some of which you ma
 
 * Participate in the Q&A
 
-  * Ask questions
+    * Ask questions
 
-  * Vote - even voting bad information down is a contribution!
+    * Vote - even voting bad information down is a contribution!
 
-  * Help others
+    * Help others
 
 * Find and report bugs, using the guidelines explained in this guide
 
-  * Indicate the tickets that are most important to your projects by watching them
+    * Indicate the tickets that are most important to your projects by watching them
 
 * Fix bugs and submit patches
 
@@ -56,60 +54,59 @@ This document describes the ways that you can get involved, some of which you ma
 
 * Test pull requests to confirm that they implement the fix or new feature as described
 
-
 These are explained in more detail in the following sections.
 
 ## Related Topics
 
 * [How to Report a Bug or Make a Feature Request](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/)
 
-  * [How to Submit a Bug Report](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/How_to_Submit_a_Bug_Report/)
+    * [How to Submit a Bug Report](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/How_to_Submit_a_Bug_Report/)
 
-  * [JIRA Ticket Template](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/JIRA_Ticket_Template/)
+    * [JIRA Ticket Template](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/JIRA_Ticket_Template/)
 
 * [Documentation](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Documentation/)
 
-  * [Contributing API Documentation](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Documentation/Contributing_API_Documentation/)
+    * [Contributing API Documentation](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Documentation/Contributing_API_Documentation/)
 
-  * [Titanium API Doc Style Guide](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Documentation/Titanium_API_Doc_Style_Guide/)
+    * [Titanium API Doc Style Guide](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Documentation/Titanium_API_Doc_Style_Guide/)
 
 * [Platform Development](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/)
 
-  * [Building the Titanium SDK From Source](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Building_the_Titanium_SDK_From_Source/)
+    * [Building the Titanium SDK From Source](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Building_the_Titanium_SDK_From_Source/)
 
-  * [Android Titanium SDK Development Setup](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Android_Titanium_SDK_Development_Setup/)
+    * [Android Titanium SDK Development Setup](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Android_Titanium_SDK_Development_Setup/)
 
-  * [Pull Request Guide](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Pull_Request_Guide/)
+    * [Pull Request Guide](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Pull_Request_Guide/)
 
-  * [Git and Github](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Git_and_Github/)
+    * [Git and Github](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Git_and_Github/)
 
-  * [Coding Standards](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Coding_Standards/)
+    * [Coding Standards](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Coding_Standards/)
 
-    * [C and C++ Coding Standards](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Coding_Standards/C_and_C++_Coding_Standards/)
+        * [C and C++ Coding Standards](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Coding_Standards/C_and_C++_Coding_Standards/)
 
-    * [Java Coding Standards](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Coding_Standards/Java_Coding_Standards/)
+        * [Java Coding Standards](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Coding_Standards/Java_Coding_Standards/)
 
-    * [JavaScript Coding Standards](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Coding_Standards/JavaScript_Coding_Standards/)
+        * [JavaScript Coding Standards](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Coding_Standards/JavaScript_Coding_Standards/)
 
-    * [Objective-C and Objective-C++ Coding Standards](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Coding_Standards/Objective-C_and_Objective-C++_Coding_Standards/)
+        * [Objective-C and Objective-C++ Coding Standards](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Coding_Standards/Objective-C_and_Objective-C++_Coding_Standards/)
 
-  * [Specs](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/)
+    * [Specs](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/)
 
-    * [Buffer Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/Buffer_Spec/)
+        * [Buffer Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/Buffer_Spec/)
 
-    * [Encoding Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/Encoding_Spec/)
+        * [Encoding Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/Encoding_Spec/)
 
-    * [Stream Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/Stream_Spec/)
+        * [Stream Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/Stream_Spec/)
 
-    * [TCP Socket API Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/TCP_Socket_API_Spec/)
+        * [TCP Socket API Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/TCP_Socket_API_Spec/)
 
-    * [TDoc Specification](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/TDoc_Specification/)
+        * [TDoc Specification](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/TDoc_Specification/)
 
-    * [Layout Limitations Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/Layout_Limitations_Spec/)
+        * [Layout Limitations Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/Layout_Limitations_Spec/)
 
-    * [UI Composite Layout Behavior Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/UI_Composite_Layout_Behavior_Spec/)
+        * [UI Composite Layout Behavior Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/UI_Composite_Layout_Behavior_Spec/)
 
-  * [Writing Unit Tests with Drillbit](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Writing_Unit_Tests_with_Drillbit/)
+    * [Writing Unit Tests with Drillbit](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Writing_Unit_Tests_with_Drillbit/)
 
 * [Contributing to Open Source Titanium Modules](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Contributing_to_Open_Source_Titanium_Modules/)
 

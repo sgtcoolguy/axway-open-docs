@@ -2,16 +2,15 @@
 
 This page describes how to import a project into Studio.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Using the import wizard](#Usingtheimportwizard)
+* [Using the import wizard](#using-the-import-wizard)
 
-* [Using drag and drop](#Usingdraganddrop)
+* [Using drag and drop](#using-drag-and-drop)
 
-* [Using promote to project](#Usingpromotetoproject)
+* [Using promote to project](#using-promote-to-project)
 
-* [Changing project type](#Changingprojecttype)
-
+* [Changing project type](#changing-project-type)
 
 ## Introduction
 
@@ -31,16 +30,15 @@ To import an existing project into Studio, from the menu bar, select **File** > 
 
 4. Click **Finish**.
 
-
 If you are importing an older Alloy or Titanium application that was not created on the AMPLIFY Appcelerator Services, the import process will generate a new app GUID for the application and attempt to activate AMPLIFY Appcelerator Services.
 
 **For a Github project:**
 
 1. Select **Git** and either select:
 
-  1. **Fork Github Repository** to fork and clone a Github repo.
+    1. **Fork Github Repository** to fork and clone a Github repo.
 
-  2. **Git Repository as New Project** to clone a Github repo.
+    2. **Git Repository as New Project** to clone a Github repo.
 
 2. Enter your Github credentials, then click **Validate**.
 
@@ -51,7 +49,6 @@ If you are importing an older Alloy or Titanium application that was not created
 5. In the **Destination** text field, enter a path to an empty directory to clone the repo.
 
 6. Click **Finish**.
-
 
 **For a Native Module, API Builder, AMPLIFY Runtime Services or other Web projects:**
 
@@ -64,7 +61,6 @@ If you are importing an older Alloy or Titanium application that was not created
 4. Choose the natures/Project Type for your project.
 
 5. Click **Finish**.
-
 
 ## Using drag and drop
 
@@ -95,7 +91,6 @@ Promoting a directory to a project allows you to take any directory on disk and 
 4. Name your project appropriately and click **OK**.
 
 5. Depending on the type of project, you may need to change the "natures" associated with the project. See below.
-
 
 ## Changing project type
 

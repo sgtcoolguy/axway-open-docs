@@ -12,7 +12,6 @@ Dashboard 4.9.0 is a minor release, which includes new features, behavior change
 
 * ArrowDB custom objects may be filtered on custom fields by string, numeric, or Boolean values.
 
-
 ## Behavior Changes
 
 * Updated the password policy. Passwords must be a minimum of eight characters in length, cannot use repeating character sequences (e.g. 11111), and must not be a common weak password (e.g. "password" or "12345678").
@@ -20,7 +19,6 @@ Dashboard 4.9.0 is a minor release, which includes new features, behavior change
 * Added stronger protection against invalid account access attempts. User accounts are temporarily locked and login attempts will be rejected if five or more failed login attempts occur. The user will receive an email indicating there was suspicious activity on the account and provide a link to unlock the account. Additionally, failing multiple login attempts across more than one account may result in further login attempts being rejected temporarily.
 
 * Session expiry is now based on the elapsed period of user inactivity. The default session expiry for a web session is 30 minutes. If the user checks the "Keep me signed-in for one-week" option during login, the expiry is increased to 7 days.
-
 
 ## Improvements
 
@@ -39,7 +37,6 @@ Dashboard 4.9.0 is a minor release, which includes new features, behavior change
 * Corrected issues with Arrow application analytics and now show access counts by path.
 
 * All ArrowDB datasources are now listed on the All Projects view and in the Apps drop-down.
-
 
 ## Fixed Issues
 

@@ -30,7 +30,6 @@ You can create a FTP/SFTP/FTPS connection in the [deployment](/docs/appc/Axway_A
 
 * Click **OK**.
 
-
 The new connection will be created and added to Remote View. You could then browse its content by expanding the entry in Remote View and edit a file by double-clicking on it to open the file in an editor.
 
 You can modify the existing connection by right-clicking on the connection and selecting Properties from the context menu.

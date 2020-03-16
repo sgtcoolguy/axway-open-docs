@@ -1,21 +1,20 @@
 {"title":"Ruby Development","weight":"30"}
 
-* [Preparing for Ruby development](#PreparingforRubydevelopment)
+* [Preparing for Ruby development](#preparing-for-ruby-development)
 
-* [Creating/Importing a Ruby project](#Creating/ImportingaRubyproject)
+* [Creating/Importing a Ruby project](#creating/importing-a-ruby-project)
 
-  * [Creating a project using the new project wizard](#Creatingaprojectusingthenewprojectwizard)
+    * [Creating a project using the new project wizard](#creating-a-project-using-the-new-project-wizard)
 
-* [Editing](#Editing)
+* [Editing](#editing)
 
-  * [Syntax coloring](#Syntaxcoloring)
+    * [Syntax coloring](#syntax-coloring)
 
-  * [Code completion / content assist](#Codecompletion/contentassist)
+    * [Code completion / content assist](#code-completion-/-content-assist)
 
-  * [Auto indentation and code formatting](#Autoindentationandcodeformatting)
+    * [Auto indentation and code formatting](#auto-indentation-and-code-formatting)
 
-* [Related topics](#Relatedtopics)
-
+* [Related topics](#related-topics)
 
 Aptana Studio is shipped with built-in support for Ruby editing. To add Ruby editing support in Titanium and Appcelerator Studio, see [Adding PHP Ruby or Python Support](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/Adding_PHP_Ruby_or_Python_Support/).
 
@@ -25,7 +24,7 @@ Studio will not attempt to install Ruby for you. Please be sure that Ruby is ins
 
 Studio attempts to maintain the same environment used and seen inside your terminal. As a result, we use the PATH to find the applicable Ruby executable, libraries, gems, and bin scripts. We also respect RVM's settings and use of .rvmrc files. Please be sure to test out the environment inside our embedded Terminal view or editor to see if it matches your expectations.
 
-**If you plan to make use of the debugger**, you may also want to consult [Ruby Debugger Pre-requisites](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Ruby_Development/Ruby_Debugger/#Pre-requisites).
+**If you plan to make use of the debugger**, you may also want to consult [Ruby Debugger Pre-requisites](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Ruby_Development/Ruby_Debugger/#pre-requisites).
 
 ## Creating/Importing a Ruby project
 
@@ -58,7 +57,6 @@ The editor includes the following features:
 
 * Integrated debugging features
 
-
 The most common way to invoke the Ruby editor is to open a Ruby file from the App Explorer or Project Explorer using pop-up menus or by double-clicking the file.
 
 Paste in your files, import them, or create new ones using the new file wizard.
@@ -69,7 +67,7 @@ When in the 'App Explorer', the new file wizard will offer you to create a file 
 
 Like with any other Studio-contributed editor, the syntax highlighting settings are controlled by the 'Theme' preference page in the Studio's preferences.
 
-The following list displays the keys supported by the Ruby Editor: [Themes#ThemesinRubles](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Themes/#ThemesinRubles).
+The following list displays the keys supported by the Ruby Editor: [Themes#ThemesinRubles](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Themes/#themes-in-rubles).
 
 ### Code completion / content assist
 

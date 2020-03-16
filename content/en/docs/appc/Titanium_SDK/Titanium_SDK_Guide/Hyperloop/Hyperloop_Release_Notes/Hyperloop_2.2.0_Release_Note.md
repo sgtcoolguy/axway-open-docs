@@ -6,59 +6,57 @@ Hyperloop 2.2.0 is a feature release that includes new features, improvements, a
 
 * [TIMOB-23853](https://jira.appcelerator.org/browse/TIMOB-23853) - iOS - Support embedded binaries
 
-  * Added full support for embedded / dynamic binaries including Swift frameworks
+    * Added full support for embedded / dynamic binaries including Swift frameworks
 
 * [TIMOB-23854](https://jira.appcelerator.org/browse/TIMOB-23854) - iOS - Support creating of Run Script phases
 
-  * Added support to hooks scripts into the application build phase. This can be configured via the appc.js file with the following example:
+    * Added support to hooks scripts into the application build phase. This can be configured via the appc.js file with the following example:
 
-    Run Script phase
+        Run Script phase
 
-    ` hyperloop: {`
+        ` hyperloop: {`
 
-    `ios: {`
+        `ios: {`
 
-    `xcodebuild: {`
+        `xcodebuild: {`
 
-    `scripts: [{`
+        `scripts: [{`
 
-    `name:` `'My script phase'``,`
+        `name:` `'My script phase'``,`
 
-    `shellScript:` `'${APPC_PROJECT_DIR}/src/script.sh'`
+        `shellScript:` `'${APPC_PROJECT_DIR}/src/script.sh'`
 
-    `}]`
+        `}]`
 
-    `}`
+        `}`
 
-    `}`
+        `}`
 
-    `}`
-
+        `}`
 
 ## Improvements
 
 * [TIMOB-23956](https://jira.appcelerator.org/browse/TIMOB-23956) - iOS: Improve error handling for non-default Xcode installations
 
-  * Improved error handling for non-default Xcode installation
+    * Improved error handling for non-default Xcode installation
 
 * [TIMOB-24623](https://jira.appcelerator.org/browse/TIMOB-24623) - iOS: Drop support for CocoaPods 0.39 and below
 
-  * Dropped support for CocoaPods 0.39 and below. Use CocoaPods 1.x instead as we support and recommend the latest version 1.3.1
+    * Dropped support for CocoaPods 0.39 and below. Use CocoaPods 1.x instead as we support and recommend the latest version 1.3.1
 
 * [TIMOB-24532](https://jira.appcelerator.org/browse/TIMOB-24532) - Android: Use .aar handling from AndroidBuilder
 
-  * Removed the AAR handling from Hyperloop hook; Instead, AAR handling relies on features introduced in Titanium SDK 6.1.0
+    * Removed the AAR handling from Hyperloop hook; Instead, AAR handling relies on features introduced in Titanium SDK 6.1.0
 
 * [TIMOB-24829](https://jira.appcelerator.org/browse/TIMOB-24829) - Android: Slow Compile-time, too many JS-wrappers generated
 
-  * Improved Android build performance by
+    * Improved Android build performance by
 
-    * Moving the Hyperloop wrapper sources from being processed by the normal Android build process (it will also no longer regenerate all wrappers on every build)
+        * Moving the Hyperloop wrapper sources from being processed by the normal Android build process (it will also no longer regenerate all wrappers on every build)
 
-    * Hyperloop wrappers will no longer be copied to the Resources directory which caused some confusion in classic apps. The hook will now generate all files under the build directory.
+        * Hyperloop wrappers will no longer be copied to the Resources directory which caused some confusion in classic apps. The hook will now generate all files under the build directory.
 
-    * All important build steps are now being able to work incrementally. This will allow the Hyperloop processing to only trigger for changed or deleted files instead all of them.
-
+        * All important build steps are now being able to work incrementally. This will allow the Hyperloop processing to only trigger for changed or deleted files instead all of them.
 
 ## Deprecations
 

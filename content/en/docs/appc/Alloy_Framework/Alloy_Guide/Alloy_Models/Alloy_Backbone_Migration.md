@@ -1,41 +1,40 @@
 {"title":"Alloy Backbone Migration","weight":"40"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-  * [Alloy 1.10.12 release](#Alloy1.10.12release)
+    * [Alloy 1.10.12 release](#alloy-1.10.12-release)
 
-* [Setup](#Setup)
+* [Setup](#setup)
 
-* [Summary of Changes](#SummaryofChanges)
+* [Summary of Changes](#summary-of-changes)
 
-  * [Collection APIs](#CollectionAPIs)
+    * [Collection APIs](#collection-apis)
 
-    * [Fetch Method Behavior Change](#FetchMethodBehaviorChange)
+        * [Fetch Method Behavior Change](#fetch-method-behavior-change)
 
-    * [New Set Method](#NewSetMethod)
+        * [New Set Method](#new-set-method)
 
-    * [Return Value for Methods](#ReturnValueforMethods)
+        * [Return Value for Methods](#return-value-for-methods)
 
-    * [Add Method](#AddMethod)
+        * [Add Method](#add-method)
 
-  * [Event APIs](#EventAPIs)
+    * [Event APIs](#event-apis)
 
-  * [Model APIs](#ModelAPIs)
+    * [Model APIs](#model-apis)
 
-    * [Validation](#Validation)
+        * [Validation](#validation)
 
-    * [Other Changes](#OtherChanges)
+        * [Other Changes](#other-changes)
 
-  * [Parse Method](#ParseMethod)
+    * [Parse Method](#parse-method)
 
-  * [Silent Option](#SilentOption)
+    * [Silent Option](#silent-option)
 
-* [API Changes](#APIChanges)
+* [API Changes](#api-changes)
 
-  * [New APIs](#NewAPIs)
+    * [New APIs](#new-apis)
 
-  * [Removed APIs](#RemovedAPIs)
-
+    * [Removed APIs](#removed-apis)
 
 ## Overview
 
@@ -171,7 +170,6 @@ To improve the performance of add(), options.index will no longer be set in the 
 
 * While listening to a reset event, the list of previous models is now available in options.previousModels.
 
-
 The new Event methods listenTo and stopListening is meant for Backbone View objects to listen to Model and Collection events. These APIs will not work with an Alloy application.
 
 ### Model APIs
@@ -195,7 +193,6 @@ To validate Model objects, implement the validate() method in the extendModel ke
 * url and urlRoot properties may now be passed as options when instantiating a new Model.
 
 * If you want to maintain current models in a collection when using fetch the property has changed from {add:true} to {remove:false}.
-
 
 ### Parse Method
 
@@ -261,88 +258,24 @@ If you want the new behavior, where the change events are suppressed, you will n
 
 The following APIs have been added between Backbone 1.1.2 and 0.9.2.
 
-API
-
-Type
-
-Notes
-
-Backbone.request
-
-event
-
-Fired whenever a request begins to be made to the server during a Backbone.sync operation.
-
-Backbone.Collection.findWhere
-
-method
-
-Same as the Backbone.Collection.where() method but only returns the first result.
-
-Backbone.Collection.set
-
-method
-
-Performs a "smart" update of the collection with the passed list of models.
-
-Backbone.Event.once
-
-method
-
-Same as the Backbone.Event.on() method except after the event is fired, the callback is removed.
-
-Backbone.Model.invert
-
-method
-
-Returns a copy of the object where the object's keys and values are switched.
-
-Backbone.Model.keys
-
-method
-
-Returns an array of the object's keys.
-
-Backbone.Model.omit
-
-method
-
-Returns a copy of an object without the specified keys.
-
-Backbone.Model.pairs
-
-method
-
-Returns an array of \[key, value\] pairs.
-
-Backbone.Model.pick
-
-method
-
-Returns a copy of an object with the specified keys.
-
-Backbone.Model.values
-
-method
-
-Returns an array of the object's property values.
+| API | Type | Notes |
+| --- | --- | --- |
+| Backbone.request | event | Fired whenever a request begins to be made to the server during a Backbone.sync operation. |
+| Backbone.Collection.findWhere | method | Same as the Backbone.Collection.where() method but only returns the first result. |
+| Backbone.Collection.set | method | Performs a "smart" update of the collection with the passed list of models. |
+| Backbone.Event.once | method | Same as the Backbone.Event.on() method except after the event is fired, the callback is removed. |
+| Backbone.Model.invert | method | Returns a copy of the object where the object's keys and values are switched. |
+| Backbone.Model.keys | method | Returns an array of the object's keys. |
+| Backbone.Model.omit | method | Returns a copy of an object without the specified keys. |
+| Backbone.Model.pairs | method | Returns an array of \[key, value\] pairs. |
+| Backbone.Model.pick | method | Returns a copy of an object with the specified keys. |
+| Backbone.Model.values | method | Returns an array of the object's property values. |
 
 ### Removed APIs
 
 The following APIs have been removed between Backbone 1.1.2 and 0.9.2.
 
-API
-
-Type
-
-Notes
-
-Backbone.Collection.getByCid
-
-method
-
-Pass the CID to the Backbone.Collection.get() method to retrieve the Collection by its Backbone client ID.
-
-Backbone.Model.change
-
-method
+| API | Type | Notes |
+| --- | --- | --- |
+| Backbone.Collection.getByCid | method | Pass the CID to the Backbone.Collection.get() method to retrieve the Collection by its Backbone client ID. |
+| Backbone.Model.change | method |  |

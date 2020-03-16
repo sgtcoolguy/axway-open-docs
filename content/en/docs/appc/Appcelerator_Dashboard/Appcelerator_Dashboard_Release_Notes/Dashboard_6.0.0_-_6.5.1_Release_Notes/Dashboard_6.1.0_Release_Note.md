@@ -12,13 +12,11 @@ Dashboard 6.1.0 is a minor release, which includes new features, improvements, a
 
 * Added prompt for newly signed up users to change their organization name during activation.
 
-
 ## Improvements
 
 * Improved the validation and the accepted format of international telephone numbers used for SMS multi-factor authentication.
 
 * Renamed the API Runtime Services tile on the AMPLIFY Platform home page to AMPLIFY Runtime Services. Updated the documentation link on the tile.
-
 
 ## Fixed issues
 

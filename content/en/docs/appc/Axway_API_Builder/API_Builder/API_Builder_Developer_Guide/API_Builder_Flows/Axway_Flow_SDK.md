@@ -6,20 +6,19 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-* [Features](#Features)
+* [Features](#features)
 
-* [Install](#Install)
+* [Install](#install)
 
-* [Use the Axway Flow SDK](#UsetheAxwayFlowSDK)
+* [Use the Axway Flow SDK](#use-the-axway-flow-sdk)
 
-* [Unit test your flow-node](#Unittestyourflow-node)
+* [Unit test your flow-node](#unit-test-your-flow-node)
 
-* [Local API Builder test](#LocalAPIBuildertest)
+* [Local API Builder test](#local-api-builder-test)
 
-* [Type references](#Typereferences)
+* [Type references](#type-references)
 
-* [API Reference](#axwayAPIReference)
-
+* [API Reference](#api-reference)
 
 The Axway Flow SDK (axway-flow-sdk) is a standalone utility that enables the creation of custom flow-nodes for API Builder flows. By offering the Axway Flow SDK as a standalone utility, new flow-nodes can be developed and consumed in API Builder without upgrading the version.
 
@@ -30,7 +29,6 @@ The Axway Flow SDK has the following content:
 * CLI tool for starting a new flow-node project
 
 * SDK for building custom modules for API Builder flows
-
 
 ## Install
 
@@ -130,70 +128,69 @@ To explain what occurs in the index.js file, we will break the file down piece b
 
 1. Describe the flow-node, name, description, category, and icon:
 
-  `.add(``'encodeuri'``, {`
+    `.add(``'encodeuri'``, {`
 
-  `name:` `'Encode URI'``,`
+    `name:` `'Encode URI'``,`
 
-  `icon:` `'icon.svg'``,`
+    `icon:` `'icon.svg'``,`
 
-  `description:` `'URI encoder.'``,`
+    `description:` `'URI encoder.'``,`
 
-  `category:` `'utils'`
+    `category:` `'utils'`
 
-  `})`
+    `})`
 
-  The name is the text that is displayed in the Flow Editor. The default icon is a placeholder (a star) that should be replaced with a graphic that represents the action of the flow-node. The icon is displayed at 28 pixels x 28 pixels. The category is the section in the Flow Editor tool panel where the flow-node is contained.
+    The name is the text that is displayed in the Flow Editor. The default icon is a placeholder (a star) that should be replaced with a graphic that represents the action of the flow-node. The icon is displayed at 28 pixels x 28 pixels. The category is the section in the Flow Editor tool panel where the flow-node is contained.
 
-  ![one](/Images/appc/download/thumbnails/52298051/one.png)
+    ![one](/Images/appc/download/thumbnails/52298051/one.png)
 
 2. Add a method to the flow-node and describe its parameters:
 
-  `.method(``'encode'``, {`
+    `.method(``'encode'``, {`
 
-  `name:` `'Encode URI'``,`
+    `name:` `'Encode URI'``,`
 
-  `description:` `'Encodes a URI by replacing each instance of certain characters with UTF-8 encodings.'`
+    `description:` `'Encodes a URI by replacing each instance of certain characters with UTF-8 encodings.'`
 
-  `})`
+    `})`
 
-  `.parameter(``'uri'``, {`
+    `.parameter(``'uri'``, {`
 
-  `description:` `'The URI to encode.'``,`
+    `description:` `'The URI to encode.'``,`
 
-  `type:` `'string'`
+    `type:` `'string'`
 
-  `})`
+    `})`
 
-  A method called encode, that is displayed in the Flow Editor as **Encode URI**, was added. The encode method has a single parameter. If there was more than one parameter, we would repeat the .parameter(name, schema) block. The second value in the parameter method is a JSON Schema that describes the parameter type.
+    A method called encode, that is displayed in the Flow Editor as **Encode URI**, was added. The encode method has a single parameter. If there was more than one parameter, we would repeat the .parameter(name, schema) block. The second value in the parameter method is a JSON Schema that describes the parameter type.
 
-  ![two](/Images/appc/download/attachments/52298051/two.png)
+    ![two](/Images/appc/download/attachments/52298051/two.png)
 
 3. Describe the possible outputs from the method:
 
-  `.output(``'next'``, {`
+    `.output(``'next'``, {`
 
-  `name:` `'Next'``,`
+    `name:` `'Next'``,`
 
-  `description:` `'The URI was encoded successfully.'``,`
+    `description:` `'The URI was encoded successfully.'``,`
 
-  `context:` `'$.encodedURI'``,`
+    `context:` `'$.encodedURI'``,`
 
-  `schema: {`
+    `schema: {`
 
-  `type:` `'string'`
+    `type:` `'string'`
 
-  `}`
+    `}`
 
-  `})`
+    `})`
 
-  The outputs section defines the possible outcomes of the flow-node. In this simple case there is just one output; however, flow-nodes can have multiple outputs with different return types. For example, this flow-node could have added an **error** output to indicate that encoding failed.
+    The outputs section defines the possible outcomes of the flow-node. In this simple case there is just one output; however, flow-nodes can have multiple outputs with different return types. For example, this flow-node could have added an **error** output to indicate that encoding failed.
 
 4. Define the implementation:
 
-  `.action(action);`
+    `.action(action);`
 
-  The action() expects a function that will be passed the request details parameter and a callback object parameter.
-
+    The action() expects a function that will be passed the request details parameter and a callback object parameter.
 
 #### Customize the flow-node method implementation
 
@@ -339,16 +336,15 @@ In [Axway API Builder](/docs/appc/Axway_API_Builder/API_Builder/), it is possibl
 
 * NodeBuilder
 
-  * .add(key, \[options\])
+    * .add(key, \[options\])
 
-  * .method(key, \[options\])
+    * .method(key, \[options\])
 
-  * .parameter(name, schema, \[required\])
+    * .parameter(name, schema, \[required\])
 
-  * .output(key)
+    * .output(key)
 
-  * .action(handler)
-
+    * .action(handler)
 
 ### nodeBuilder.add(key, \[options\])
 
@@ -357,7 +353,6 @@ Adds a new flow-node specification and prepares the NodeBuilder to accept the fo
 * .method(key, \[options\])
 
 * .output(key, \[options\])
-
 
 The key parameter is used to uniquely identify the specification and represents a distinct instance of a flow-node for the flow editor. The key will be used as the name unless the name option is provided. The new flow-node will appear in the general category by default, or under the provided category option.
 
@@ -369,51 +364,14 @@ The icon option can be a bmp, jpeg, png, gif, tiff, or svg file. The .method opt
 
 **Access**: Public
 
-Parameter
-
-Type
-
-Default
-
-Description
-
-key
-
-string
-
-A unique key identifier for the flow-node.
-
-\[options\]
-
-object
-
-Options for the flow-node.
-
-\[options.name\]
-
-string
-
-A friendly name for the flow-node as it will appear in the UI.
-
-\[options.icon\]
-
-string
-
-An icon file.
-
-\[options.description\]
-
-string
-
-A description for the flow-node.
-
-\[options.category\]
-
-string
-
-general
-
-A category under which the flow-node will appear in the UI.
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| key | string |  | A unique key identifier for the flow-node. |
+| \[options\] | object |  | Options for the flow-node. |
+| \[options.name\] | string |  | A friendly name for the flow-node as it will appear in the UI. |
+| \[options.icon\] | string |  | An icon file. |
+| \[options.description\] | string |  | A description for the flow-node. |
+| \[options.category\] | string | general | A category under which the flow-node will appear in the UI. |
 
 Example:
 
@@ -427,7 +385,6 @@ Adds a new method to the current flow-node specification and prepares the [NodeB
 
 * .action(handler)
 
-
 The .add(key, \[options\]) must be called prior to adding a method.
 
 The key uniquely identifies the method for the flow-node and will be used as the name unless the name option is provided.
@@ -438,29 +395,11 @@ The key uniquely identifies the method for the flow-node and will be used as the
 
 **Access**: Public
 
-Parameter
-
-Type
-
-Description
-
-key
-
-string
-
-A unique key identifier for the method.
-
-\[options\]
-
-object
-
-Options for the method.
-
-\[options.name\]
-
-string
-
-A friendly name for the method as it will appear in the UI.
+| Parameter | Type | Description |
+| --- | --- | --- |
+| key | string | A unique key identifier for the method. |
+| \[options\] | object | Options for the method. |
+| \[options.name\] | string | A friendly name for the method as it will appear in the UI. |
 
 **Example**:
 
@@ -482,33 +421,11 @@ The name uniquely identifies the parameter, and the schema is a valid JSON Schem
 
 **Access**: Public
 
-Parameter
-
-Type
-
-Default
-
-Description
-
-name
-
-string
-
-A unique name for the parameter as it will appear in the UI.
-
-schema
-
-object
-
-A schema used to validate the parameter.
-
-\[required\]
-
-boolean
-
-true
-
-A flag to indicate the parameter is required or optional.
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| name | string |  | A unique name for the parameter as it will appear in the UI. |
+| schema | object |  | A schema used to validate the parameter. |
+| \[required\] | boolean | true | A flag to indicate the parameter is required or optional. |
 
 **Example**:
 
@@ -534,41 +451,13 @@ The context is a valid JSON Path and is used as the default by the flow editor. 
 
 **Access**: Public
 
-Parameter
-
-Type
-
-Description
-
-key
-
-string
-
-A unique key for the output.
-
-\[options.name\]
-
-string
-
-A friendly name for the output as it will appear in the UI.
-
-\[options.description\]
-
-string
-
-The output description.
-
-\[options.context\]
-
-string
-
-The default context string.
-
-\[options.schema\]
-
-object
-
-The expected JSON schema for the output value.
+| Parameter | Type | Description |
+| --- | --- | --- |
+| key | string | A unique key for the output. |
+| \[options.name\] | string | A friendly name for the output as it will appear in the UI. |
+| \[options.description\] | string | The output description. |
+| \[options.context\] | string | The default context string. |
+| \[options.schema\] | object | The expected JSON schema for the output value. |
 
 **Example**:
 
@@ -590,17 +479,9 @@ Assigns an action handler to the current method. The method can only have one ac
 
 **Access**: Public
 
-Parameter
-
-Type
-
-Description
-
-handler
-
-handler
-
-The action handler function.
+| Parameter | Type | Description |
+| --- | --- | --- |
+| handler | handler | The action handler function. |
 
 **Example**:
 
@@ -622,17 +503,9 @@ Axway API Builder SDK for creating custom flow-nodes to work with flows.
 
 **Returns**: [NodeBuilder](#NodeBuilder) \- A newly constructed NodeBuilder object
 
-Parameter
-
-Type
-
-Description
-
-module
-
-object
-
-The flow-node module.
+| Parameter | Type | Description |
+| --- | --- | --- |
+| module | object | The flow-node module. |
 
 **Example**:
 
@@ -648,23 +521,10 @@ A handler function to perform the flow-node method's action. The function will r
 
 **Access**: Public
 
-Parameter
-
-Type
-
-Description
-
-req
-
-request
-
-The Request object.
-
-cb
-
-callback
-
-The output callback.
+| Parameter | Type | Description |
+| --- | --- | --- |
+| req | request | The Request object. |
+| cb | callback | The output callback. |
 
 **Example**:
 
@@ -682,23 +542,10 @@ A callback function that your method handler must invoke.
 
 **Access**: Public
 
-Parameter
-
-Type
-
-Description
-
-\[err\]
-
-\*
-
-A non null value indicates a terminal error (flow processing will stop).
-
-\[value\]
-
-\*
-
-The output value to be written back to the flow processing context.
+| Parameter | Type | Description |
+| --- | --- | --- |
+| \[err\] | \* | A non null value indicates a terminal error (flow processing will stop). |
+| \[value\] | \* | The output value to be written back to the flow processing context. |
 
 ### axway-flow-sdk~Request: object
 
@@ -708,20 +555,7 @@ The request object.
 
 **Properties**:
 
-Name
-
-Type
-
-Description
-
-env
-
-object
-
-The application configuration.
-
-params
-
-object
-
-The params method, as supplied during runtime (see .parameter).
+| Name | Type | Description |
+| --- | --- | --- |
+| env | object | The application configuration. |
+| params | object | The params method, as supplied during runtime (see .parameter). |

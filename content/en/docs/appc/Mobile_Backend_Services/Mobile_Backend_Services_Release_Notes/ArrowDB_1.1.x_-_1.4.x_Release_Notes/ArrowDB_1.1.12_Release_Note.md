@@ -6,7 +6,6 @@
 
 * Add ability to update the owner of a Place object using the user\_id field. When using the update method, set the user\_id field to the ID of the new owner.
 
-
 ## Bug fix
 
 * Fixed an issue where email templates were failing to insert passed parameters.

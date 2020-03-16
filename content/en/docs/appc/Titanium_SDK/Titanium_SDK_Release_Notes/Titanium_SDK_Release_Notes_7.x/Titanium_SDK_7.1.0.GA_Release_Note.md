@@ -1,49 +1,48 @@
 {"title":"Titanium SDK 7.1.0.GA - 14 March 2018","weight":"230"}
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [Notice of feature and behavior Changes](#NoticeoffeatureandbehaviorChanges)
+* [Notice of feature and behavior Changes](#notice-of-feature-and-behavior-changes)
 
-  * [Android platform](#Androidplatform)
+    * [Android platform](#android-platform)
 
-* [New features](#Newfeatures)
+* [New features](#new-features)
 
-  * [Android platform](#Androidplatform.1)
+    * [Android platform](#android-platform)
 
-  * [iOS platform](#iOSplatform)
+    * [iOS platform](#ios-platform)
 
-  * [Windows platform](#Windowsplatform)
+    * [Windows platform](#windows-platform)
 
-  * [Multiple platforms](#Multipleplatforms)
+    * [Multiple platforms](#multiple-platforms)
 
-* [Community credits](#Communitycredits)
+* [Community credits](#community-credits)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-  * [Android platforms](#Androidplatforms)
+    * [Android platforms](#android-platforms)
 
-  * [iOS platforms](#iOSplatforms)
+    * [iOS platforms](#ios-platforms)
 
-  * [Windows platforms](#Windowsplatforms)
+    * [Windows platforms](#windows-platforms)
 
-* [Improvements](#Improvements)
+* [Improvements](#improvements)
 
-  * [Android platform](#Androidplatform.2)
+    * [Android platform](#android-platform)
 
-  * [iOS platform](#iOSplatform.1)
+    * [iOS platform](#ios-platform)
 
-  * [Windows platform](#Windowsplatform.1)
+    * [Windows platform](#windows-platform)
 
-* [API changes](#APIchanges)
+* [API changes](#api-changes)
 
-  * [New APIs](#NewAPIs)
-
+    * [New APIs](#new-apis)
 
 ## About this release
 
 Titanium SDK 7.1.0.GA is a minor release of the SDK, addressing high-priority issues from previous releases.
 
-As of this release, Titanium SDK 7.0.x will not be supported six months from 7.1.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Titanium SDK 7.0.x will not be supported six months from 7.1.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Notice of feature and behavior Changes
 
@@ -51,8 +50,7 @@ As of this release, Titanium SDK 7.0.x will not be supported six months from 7.1
 
 * [TIMOB-25607](https://jira.appcelerator.org/browse/TIMOB-25607) - Remove deprecated Ti.map API
 
-  * Deprecated Ti.map
-
+    * Deprecated Ti.map
 
 ## New features
 
@@ -60,78 +58,73 @@ As of this release, Titanium SDK 7.0.x will not be supported six months from 7.1
 
 * [TIMOB-9366](https://jira.appcelerator.org/browse/TIMOB-9366) - Android: Add "radial" support to view "backgroundGradient" property
 
-  * Added radial gradient support
+    * Added radial gradient support
 
 * [TIMOB-20126](https://jira.appcelerator.org/browse/TIMOB-20126) - Android: Not able to see the multiline notification on the android device
 
-  * Added support for multiline notifications
+    * Added support for multiline notifications
 
 * [TIMOB-20522](https://jira.appcelerator.org/browse/TIMOB-20522) - FusedLocationProvider on Android
 
-  * Added support for FusedLocationProviderClient for Ti.Geolocation
+    * Added support for FusedLocationProviderClient for Ti.Geolocation
 
 * [TIMOB-24248](https://jira.appcelerator.org/browse/TIMOB-24248) - Android: Ti.Calendar Recurring Events are not clearly exposed
 
-  * Implemented Ti.Calendar.RecurrenceRule
+    * Implemented Ti.Calendar.RecurrenceRule
 
 * [TIMOB-25591](https://jira.appcelerator.org/browse/TIMOB-25591) - Android: Programmatically check whether app has notification permission on Android
 
-  * Exposed NotificationManagerCompat.areNotificationsEnabled method
-
+    * Exposed NotificationManagerCompat.areNotificationsEnabled method
 
 ### iOS platform
 
 * [TIMOB-10368](https://jira.appcelerator.org/browse/TIMOB-10368) - iOS: Implement support for custom color/hintTextColor in SearchBar
 
-  * Added support for custom color and hintTextColor in SearchBar
-
+    * Added support for custom color and hintTextColor in SearchBar
 
 ### Windows platform
 
 * [TIMOB-25648](https://jira.appcelerator.org/browse/TIMOB-25648) - Windows: Implement Ti.UI.Label.minimumFontSize
 
-  * Added parity for Windows platform of Ti.UI.Label.minimumFontSize and maxLines
+    * Added parity for Windows platform of Ti.UI.Label.minimumFontSize and maxLines
 
 * [TIMOB-25743](https://jira.appcelerator.org/browse/TIMOB-25743) - Windows: Auto-increment version numbering
 
-  * Implemented automatic version increment. If you omit the build number, it will be generated behind scenes (available only on development and test build).
+    * Implemented automatic version increment. If you omit the build number, it will be generated behind scenes (available only on development and test build).
 
-  * For instance when you have 1.0 version in tiapp.xml, we generate the 4th segment 1.0.0.x version number and increment this build number on each build. (numbering spec: Major.Minor.Build.Revision>). For example: <version>1.0<version>
+    * For instance when you have 1.0 version in tiapp.xml, we generate the 4th segment 1.0.0.x version number and increment this build number on each build. (numbering spec: Major.Minor.Build.Revision>). For example: <version>1.0<version>
 
-  * If you set build number explicitly in tiapp.xml, it won't generate the build number. In this case you need to bump up the build number manually in order to prevent deployment issue like this: <version>1.0.1.1<version>
+    * If you set build number explicitly in tiapp.xml, it won't generate the build number. In this case you need to bump up the build number manually in order to prevent deployment issue like this: <version>1.0.1.1<version>
 
-  * This feature can be disabled by setting false on use-auto-versioning in windows section:
+    * This feature can be disabled by setting false on use-auto-versioning in windows section:
 
-    `<``windows``>`
+        `<``windows``>`
 
-    `<``use``-auto-versioning>false</``use``-auto-versioning>`
+        `<``use``-auto-versioning>false</``use``-auto-versioning>`
 
-    `</``windows``>`
-
+        `</``windows``>`
 
 ### Multiple platforms
 
 * [TIMOB-24610](https://jira.appcelerator.org/browse/TIMOB-24610) - Support ES6 by transpiling to ES5 via new tiapp.xml "transpile" property
 
-  * Added transpiling user JavaScript code to ES5 or minimum target OS/JS engine support
+    * Added transpiling user JavaScript code to ES5 or minimum target OS/JS engine support
 
-    `<tiapp>`
+        `<tiapp>`
 
-    `<transpile>``true``</transpile>`
+        `<transpile>``true``</transpile>`
 
-    `</tiapp>`
+        `</tiapp>`
 
-  * Adding this property and having it set to true will enable transpilation during the build process using babel-preset-env to target the underlying JS engine version. For Android we target the version of v8 we build with. For iOS we target the version of iOS's included JavaScriptCore engine for the minimum iOS version the SDK targets.
+    * Adding this property and having it set to true will enable transpilation during the build process using babel-preset-env to target the underlying JS engine version. For Android we target the version of v8 we build with. For iOS we target the version of iOS's included JavaScriptCore engine for the minimum iOS version the SDK targets.
 
-    When using the flag be aware of the following this causes code to run in [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode), which has the potential to cause errors to be thrown. Review [Transitioning to strict mode on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode) to become familiar with some common issues.
-
+        When using the flag be aware of the following this causes code to run in [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode), which has the potential to cause errors to be thrown. Review [Transitioning to strict mode on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode) to become familiar with some common issues.
 
 ## Community credits
 
 * [Michael Gangolf](https://github.com/m1ga) - Android: View rect x and y are inconsistent ([TIMOB-25557](https://jira.appcelerator.org/browse/TIMOB-25557))
 
 * [Sergey Volkov](https://github.com/drauggres) - Android. TiResponseCache. Permission ([TIMOB-25507](https://jira.appcelerator.org/browse/TIMOB-25507))
-
 
 ## Fixed issues
 
@@ -185,7 +178,6 @@ As of this release, Titanium SDK 7.0.x will not be supported six months from 7.1
 
 * [TIMOB-25849](https://jira.appcelerator.org/browse/TIMOB-25849) - Android: openPhotoGallery - width and height = 0 in 7.1.0 RC
 
-
 ### iOS platforms
 
 * [TIMOB-20604](https://jira.appcelerator.org/browse/TIMOB-20604) - iOS: ti.geofence not tracking location on
@@ -199,7 +191,6 @@ As of this release, Titanium SDK 7.0.x will not be supported six months from 7.1
 * [TIMOB-25765](https://jira.appcelerator.org/browse/TIMOB-25765) - iOS 11: Scrollview layout error when set window with includeOpaqueBars and extendEdges
 
 * [TIMOB-25829](https://jira.appcelerator.org/browse/TIMOB-25829) - Hyperloop: iOS - CocoaPods 1.4.0 breaks metabase generation
-
 
 ### Windows platforms
 
@@ -219,39 +210,35 @@ As of this release, Titanium SDK 7.0.x will not be supported six months from 7.1
 
 * [TIMOB-25794](https://jira.appcelerator.org/browse/TIMOB-25794) - Windows: Adding a hyperloop created UI element to a View crashes the app
 
-
 ## Improvements
 
 ### Android platform
 
 * [TIMOB-17821](https://jira.appcelerator.org/browse/TIMOB-17821) - Android: Add Support for Custom View to ActionBar
 
-  * Added support for Custom View to ActionBar
+    * Added support for Custom View to ActionBar
 
 * [TIMOB-25703](https://jira.appcelerator.org/browse/TIMOB-25703) - Android: Add VideoPlayer "showsControls" property
 
-  * Added support for VideoPlayer showsControls property
+    * Added support for VideoPlayer showsControls property
 
 * [TIMOB-25730](https://jira.appcelerator.org/browse/TIMOB-25730) - Android: Allow SearchBar "color" and "hintTextColor" properties to be set dynamically
 
-  * Added support for SearchBar's color and hintTextColor properties to be set dynamically
-
+    * Added support for SearchBar's color and hintTextColor properties to be set dynamically
 
 ### iOS platform
 
 * [TIMOB-19154](https://jira.appcelerator.org/browse/TIMOB-19154) - iOS9: Replace NSURLConnection in Ti.Network.HTTPClient with NSURLSession
 
-  * Replaced Deprecate NSURLConnection with NSURLSession API
-
+    * Replaced Deprecate NSURLConnection with NSURLSession API
 
 ### Windows platform
 
 * [TIMOB-25616](https://jira.appcelerator.org/browse/TIMOB-25616) - Windows: Add option to suppress/force uninstallation on deploy
 
-  * Added feature to prevent uninstalling existing apps in order to complete installation when the same app version is already installed unless user explicitly specifics the \--forceUnInstall option
+    * Added feature to prevent uninstalling existing apps in order to complete installation when the same app version is already installed unless user explicitly specifics the \--forceUnInstall option
 
-  * Example: appc ti build -p windows --wp-sdk 10.0 --target wp-device --skipInstallDependencies -l trace --forceUnInstall
-
+    * Example: appc ti build -p windows --wp-sdk 10.0 --target wp-device --skipInstallDependencies -l trace --forceUnInstall
 
 ## API changes
 
@@ -259,164 +246,31 @@ As of this release, Titanium SDK 7.0.x will not be supported six months from 7.1
 
 The following APIs are new or have expanded platform support in Release 7.1.0 as of March 14th, 2018.
 
-API
-
-Type
-
-Notes
-
-Titanium.Android.ActionBar.customView
-
-property
-
-Sets a view to be used for a custom navigation mode. (New API, supported on Android.)
-
-Titanium.Android.ActionBar.getCustomView
-
-method
-
-Gets the value of the Titanium.Android.ActionBar.customView property. (New API, supported on Android.)
-
-Titanium.Android.ActionBar.setCustomView
-
-method
-
-Sets the value of the Titanium.Android.ActionBar.customView property. (New API, supported on Android.)
-
-Titanium.Android.NotificationManager.areNotificationsEnabled
-
-method
-
-Returns whether showing notifications is enabled for the application. (New API, supported on Android.)
-
-Titanium.Calendar.Event.createRecurrenceRule
-
-method
-
-Creates an recurrence pattern for a recurring event.All of the properties for the recurrence rule must be set during creation. The recurrence rule properties cannot be modified. (Added support for Android.)
-
-Titanium.Calendar.Event.getRecurrenceRules
-
-method
-
-Gets the value of the Titanium.Calendar.Event.recurrenceRules property. (Added support for Android.)
-
-Titanium.Calendar.Event.recurrenceRules
-
-property
-
-The recurrence rules for the calendar item. (Added support for Android.)
-
-Titanium.Calendar.Event.save
-
-method
-
-Saves changes to an event permanently. (Added support for Android.)
-
-Titanium.Calendar.Event.setRecurrenceRules
-
-method
-
-Sets the value of the Titanium.Calendar.Event.recurrenceRules property. (Added support for Android.)
-
-Titanium.Calendar.RecurrenceRule
-
-object
-
-An object that is used to describe the recurrence pattern for a recurring event. (Added support for Android.)
-
-Titanium.Media.VideoPlayer.getShowsControls
-
-method
-
-Gets the value of the Titanium.Media.VideoPlayer.showsControls property. (Added support for Android.)
-
-Titanium.Media.VideoPlayer.setShowsControls
-
-method
-
-Sets the value of the Titanium.Media.VideoPlayer.showsControls property. (Added support for Android.)
-
-Titanium.Media.VideoPlayer.showsControls
-
-property
-
-Whether or not the receiver shows playback controls. Default is true. (Added support for Android.)
-
-Titanium.UI.Android.DrawerLayout.getToolbar
-
-method
-
-Gets the value of the Titanium.UI.Android.DrawerLayout.toolbar property. (New API, supported on Android.)
-
-Titanium.UI.Android.DrawerLayout.setToolbar
-
-method
-
-Sets the value of the Titanium.UI.Android.DrawerLayout.toolbar property. (New API, supported on Android.)
-
-Titanium.UI.Android.DrawerLayout.toolbar
-
-property
-
-A Toolbar instance to use as a toolbar. (New API, supported on Android.)
-
-Titanium.UI.Android.SearchView.getHintTextColor
-
-method
-
-Gets the value of the Titanium.UI.Android.SearchView.hintTextColor property. (New API, supported on Android.)
-
-Titanium.UI.Android.SearchView.hintTextColor
-
-property
-
-Color of hint text that displays when field is empty. (New API, supported on Android.)
-
-Titanium.UI.Android.SearchView.setHintTextColor
-
-method
-
-Sets the value of the Titanium.UI.Android.SearchView.hintTextColor property. (New API, supported on Android.)
-
-Titanium.UI.SearchBar.color
-
-property
-
-Color of the text in this text field, as a color name or hex triplet. (New API, supported on Android, iPhone and iPad.)
-
-Titanium.UI.SearchBar.getColor
-
-method
-
-Gets the value of the Titanium.UI.SearchBar.color property. (New API, supported on Android, iPhone and iPad.)
-
-Titanium.UI.SearchBar.getHintTextColor
-
-method
-
-Gets the value of the Titanium.UI.SearchBar.hintTextColor property. (New API, supported on Android, iPhone and iPad.)
-
-Titanium.UI.SearchBar.hintTextColor
-
-property
-
-Hint text color to display when the field is empty. (New API, supported on Android, iPhone and iPad.)
-
-Titanium.UI.SearchBar.setColor
-
-method
-
-Sets the value of the Titanium.UI.SearchBar.color property. (New API, supported on Android, iPhone and iPad.)
-
-Titanium.UI.SearchBar.setHintTextColor
-
-method
-
-Sets the value of the Titanium.UI.SearchBar.hintTextColor property. (New API, supported on Android, iPhone and iPad.)
-
-Titanium.UI.TabGroup.close
-
-event
-
-Fired when the tab group is closed. (Added support for Android.)
+| API | Type | Notes |
+| --- | --- | --- |
+| Titanium.Android.ActionBar.customView | property | Sets a view to be used for a custom navigation mode. (New API, supported on Android.) |
+| Titanium.Android.ActionBar.getCustomView | method | Gets the value of the Titanium.Android.ActionBar.customView property. (New API, supported on Android.) |
+| Titanium.Android.ActionBar.setCustomView | method | Sets the value of the Titanium.Android.ActionBar.customView property. (New API, supported on Android.) |
+| Titanium.Android.NotificationManager.areNotificationsEnabled | method | Returns whether showing notifications is enabled for the application. (New API, supported on Android.) |
+| Titanium.Calendar.Event.createRecurrenceRule | method | Creates an recurrence pattern for a recurring event.All of the properties for the recurrence rule must be set during creation. The recurrence rule properties cannot be modified. (Added support for Android.) |
+| Titanium.Calendar.Event.getRecurrenceRules | method | Gets the value of the Titanium.Calendar.Event.recurrenceRules property. (Added support for Android.) |
+| Titanium.Calendar.Event.recurrenceRules | property | The recurrence rules for the calendar item. (Added support for Android.) |
+| Titanium.Calendar.Event.save | method | Saves changes to an event permanently. (Added support for Android.) |
+| Titanium.Calendar.Event.setRecurrenceRules | method | Sets the value of the Titanium.Calendar.Event.recurrenceRules property. (Added support for Android.) |
+| Titanium.Calendar.RecurrenceRule | object | An object that is used to describe the recurrence pattern for a recurring event. (Added support for Android.) |
+| Titanium.Media.VideoPlayer.getShowsControls | method | Gets the value of the Titanium.Media.VideoPlayer.showsControls property. (Added support for Android.) |
+| Titanium.Media.VideoPlayer.setShowsControls | method | Sets the value of the Titanium.Media.VideoPlayer.showsControls property. (Added support for Android.) |
+| Titanium.Media.VideoPlayer.showsControls | property | Whether or not the receiver shows playback controls. Default is true. (Added support for Android.) |
+| Titanium.UI.Android.DrawerLayout.getToolbar | method | Gets the value of the Titanium.UI.Android.DrawerLayout.toolbar property. (New API, supported on Android.) |
+| Titanium.UI.Android.DrawerLayout.setToolbar | method | Sets the value of the Titanium.UI.Android.DrawerLayout.toolbar property. (New API, supported on Android.) |
+| Titanium.UI.Android.DrawerLayout.toolbar | property | A Toolbar instance to use as a toolbar. (New API, supported on Android.) |
+| Titanium.UI.Android.SearchView.getHintTextColor | method | Gets the value of the Titanium.UI.Android.SearchView.hintTextColor property. (New API, supported on Android.) |
+| Titanium.UI.Android.SearchView.hintTextColor | property | Color of hint text that displays when field is empty. (New API, supported on Android.) |
+| Titanium.UI.Android.SearchView.setHintTextColor | method | Sets the value of the Titanium.UI.Android.SearchView.hintTextColor property. (New API, supported on Android.) |
+| Titanium.UI.SearchBar.color | property | Color of the text in this text field, as a color name or hex triplet. (New API, supported on Android, iPhone and iPad.) |
+| Titanium.UI.SearchBar.getColor | method | Gets the value of the Titanium.UI.SearchBar.color property. (New API, supported on Android, iPhone and iPad.) |
+| Titanium.UI.SearchBar.getHintTextColor | method | Gets the value of the Titanium.UI.SearchBar.hintTextColor property. (New API, supported on Android, iPhone and iPad.) |
+| Titanium.UI.SearchBar.hintTextColor | property | Hint text color to display when the field is empty. (New API, supported on Android, iPhone and iPad.) |
+| Titanium.UI.SearchBar.setColor | method | Sets the value of the Titanium.UI.SearchBar.color property. (New API, supported on Android, iPhone and iPad.) |
+| Titanium.UI.SearchBar.setHintTextColor | method | Sets the value of the Titanium.UI.SearchBar.hintTextColor property. (New API, supported on Android, iPhone and iPad.) |
+| Titanium.UI.TabGroup.close | event | Fired when the tab group is closed. (Added support for Android.) |

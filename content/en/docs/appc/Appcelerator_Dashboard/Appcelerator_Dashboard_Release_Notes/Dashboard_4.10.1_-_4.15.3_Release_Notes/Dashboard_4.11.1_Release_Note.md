@@ -12,7 +12,6 @@ Dashboard 4.11.1 is a patch release, which includes several improvements and bug
 
 * Revised links in unified navigation header
 
-
 ## Fixed issues
 
 * Fixed an issue where apps with non-numeric versions may not show all analytics views properly

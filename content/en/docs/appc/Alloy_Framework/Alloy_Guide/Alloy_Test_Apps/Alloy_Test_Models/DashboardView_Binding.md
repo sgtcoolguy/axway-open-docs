@@ -22,7 +22,6 @@ The model file, shown below, defines the columns (fields) for each DashboardItem
 
 * weight – Number that determines the sort order of items.
 
-
 The model file also defines a [Backbone comparator](http://backbonejs.org/#Collection-comparator) function to keep the items sorted according to the value of their **weight** field. When the user rearranges the items in the DashboardView, their respective weights are updated to reflect their new position (see below).
 
 app/model/icon.js
@@ -124,7 +123,6 @@ The main view-controller defines methods that do the following:
 * Handles the [commit](#!/api/Titanium.UI.DashboardView-event-commit) event generated when the user leaves edit mode. The weight value of each DashboardItem is reset according to its new position, if the user rearranged the items.
 
 * Handles the [delete](#!/api/Titanium.UI.DashboardView-event-delete) event when the user deletes an item in edit mode.
-
 
 `var` `icons = Alloy.Collections.icons;`
 

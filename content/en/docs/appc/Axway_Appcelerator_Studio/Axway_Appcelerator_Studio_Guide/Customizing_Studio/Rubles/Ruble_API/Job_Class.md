@@ -16,13 +16,9 @@ Examples of how you might interact with methods of the Job class.
 
 Job objects have the following static method:
 
-Property
-
-Description
-
-new(name)
-
-The name of the job, followed by the items to run.
+| Property | Description |
+| --- | --- |
+| new(name) | The name of the job, followed by the items to run. |
 
 ## Example
 

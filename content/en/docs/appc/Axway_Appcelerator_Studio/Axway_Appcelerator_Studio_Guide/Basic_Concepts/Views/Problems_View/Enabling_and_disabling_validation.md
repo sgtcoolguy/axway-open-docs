@@ -16,5 +16,4 @@ The HTML, CSS, and JavaScript Editors in Studio validate the code that you write
 
 4. Click **OK**
 
-
 ![Screen_shot_2011-04-21_at_1.05.55_PM](/Images/appc/download/attachments/30083302/Screen_shot_2011-04-21_at_1.05.55_PM.png)

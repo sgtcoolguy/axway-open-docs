@@ -50,7 +50,6 @@ Another option is using (with focus on a PyDev editor):
 
 * **ctrl+2+dj action\_to\_execute <enter>** to already pass the action to be executed (e.g.: ctrl+2+dj help <enter>)
 
-
 ![django_ctrl_2](/Images/appc/pydev.org/images/django/django_ctrl_2.png)
 
 ## Interactive shell with Django

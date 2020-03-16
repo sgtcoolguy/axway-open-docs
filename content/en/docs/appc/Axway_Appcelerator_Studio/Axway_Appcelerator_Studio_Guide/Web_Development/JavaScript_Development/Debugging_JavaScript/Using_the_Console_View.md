@@ -1,15 +1,14 @@
 {"title":"Using the Console View","weight":"120"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Instructions](#Instructions)
+* [Instructions](#instructions)
 
-  * [Adding a new log message to the Console View](#AddinganewlogmessagetotheConsoleView)
+    * [Adding a new log message to the Console View](#adding-a-new-log-message-to-the-console-view)
 
-  * [Adding other log messages](#Addingotherlogmessages)
+    * [Adding other log messages](#adding-other-log-messages)
 
-* [Related Topics](#RelatedTopics)
-
+* [Related Topics](#related-topics)
 
 ## Introduction
 
@@ -33,14 +32,13 @@ To add a new log message to the Console View:
 
 3. Add the following line of code to your code:
 
-  `aptana.log(``''``logMessage``''``);`
+    `aptana.log(``''``logMessage``''``);`
 
-  _logMessage_ should be the message that you want to be printed out to the Console View. (e.g.
+    _logMessage_ should be the message that you want to be printed out to the Console View. (e.g.
 
-  `aptana.log(``"Now is "` `+ tDate);`
+    `aptana.log(``"Now is "` `+ tDate);`
 
 4. Click the **Debug** button ![IconDebug1](/Images/appc/download/attachments/30083112/IconDebug1.png) to run/debug your code in your browser.
-
 
 The log entry that you added will print out to the Console View as it is executed.
 Click the **Terminate** button ![IconTerminate](/Images/appc/download/attachments/30083112/IconTerminate.png) to stop the execution of your code.

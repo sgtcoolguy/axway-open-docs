@@ -2,7 +2,7 @@
 
 Studio 4.8.0.GA is a minor release that includes new features, improvements, and bug fixes.
 
-As of this release, Studio 4.7.x will not be supported six months from 4.8.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Studio 4.7.x will not be supported six months from 4.8.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## New features
 
@@ -18,126 +18,68 @@ This version of Studio adds support to create, build, and test Windows modules (
 
 * [GB-201](https://jira.appcelerator.org/browse/GB-201) - Default Screen Resolution
 
-  * When opening App Designer, the default resolution will be selected based on the platform
+    * When opening App Designer, the default resolution will be selected based on the platform
 
 * [GB-515](https://jira.appcelerator.org/browse/GB-515) - Close Properties View and Elements View when App Designer editor is closed
 
-  * Properties and Element Views close when App Designer is closed
+    * Properties and Element Views close when App Designer is closed
 
 * [GB-518](https://jira.appcelerator.org/browse/GB-518) - Set default zoom level based the device resolution for android and iOS
 
-  * App Designer sets the default zoom level based on the device resolution. See the table below for the default zoom levels:
+    * App Designer sets the default zoom level based on the device resolution. See the table below for the default zoom levels:
 
-    Device
-
-    Zoom Level
-
-    iOS
-
-    640x960 - iPhone 4, 4s
-
-    60%
-
-    640x1136 - iPhone 5
-
-    60%
-
-    750x1334 - iPhone 6
-
-    60%
-
-    1080x1920 - iPhone 6+
-
-    40%
-
-    1536x2048 - iPad Air, iPad 3, iPad Min Retina
-
-    50%
-
-    2732x2048 - iPad Pro
-
-    50%
-
-    Android
-
-    768x1280 - Nexus 4
-
-    50%
-
-    1080x1920 - Nexus 5
-
-    40%
-
-    1440x2560 - Nexus 6
-
-    30%
-
-    1200x1920 - Nexus 7
-
-    40%
-
-    1536x2048 - Nexus 9
-
-    40%
-
-    1600x2560 - Nexus 10
-
-    40%
-
-    Sony Xperia SP
-
-    50%
-
-    Samsung Galaxy S6
-
-    30%
-
-    Samsung Galaxy S5, S4
-
-    40%
-
-    1080x1920 HTC One
-
-    40%
-
-    2560x1600 Amazon Kindle Fire HDX
-
-    30%
-
-    1920x1280 Barnes & Noble Nook
-
-    40%
+        | Device | Zoom Level |
+        | --- | --- |
+        | iOS |  |
+        | 640x960 - iPhone 4, 4s | 60% |
+        | 640x1136 - iPhone 5 | 60% |
+        | 750x1334 - iPhone 6 | 60% |
+        | 1080x1920 - iPhone 6+ | 40% |
+        | 1536x2048 - iPad Air, iPad 3, iPad Min Retina | 50% |
+        | 2732x2048 - iPad Pro | 50% |
+        | Android |  |
+        | 768x1280 - Nexus 4 | 50% |
+        | 1080x1920 - Nexus 5 | 40% |
+        | 1440x2560 - Nexus 6 | 30% |
+        | 1200x1920 - Nexus 7 | 40% |
+        | 1536x2048 - Nexus 9 | 40% |
+        | 1600x2560 - Nexus 10 | 40% |
+        | Sony Xperia SP | 50% |
+        | Samsung Galaxy S6 | 30% |
+        | Samsung Galaxy S5, S4 | 40% |
+        | 1080x1920 HTC One | 40% |
+        | 2560x1600 Amazon Kindle Fire HDX | 30% |
+        | 1920x1280 Barnes & Noble Nook | 40% |
 
 * [TISTUD-7506](https://jira.appcelerator.org/browse/TISTUD-7506) - Add logout menu option in the studio
 
-  * You can now log out of Studio from the File menu. Click on File > Log Out Appcelerator Studio and confirm the logout request by clicking on Yes.
+    * You can now log out of Studio from the File menu. Click on File > Log Out Appcelerator Studio and confirm the logout request by clicking on Yes.
 
 * [TISTUD-8509](https://jira.appcelerator.org/browse/TISTUD-8509) - Set Node 4.X as minimum supported version
 
-  * Set Node 4.2.0 as minimum supported version. Studio will automatically install Node 4.6.0 by default. Users can install higher versions of Node but anything beyond 4.6.0 is not supported.
+    * Set Node 4.2.0 as minimum supported version. Studio will automatically install Node 4.6.0 by default. Users can install higher versions of Node but anything beyond 4.6.0 is not supported.
 
-  * See [Installing Node](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Node/) for supported versions of Node.
+    * See [Installing Node](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Node/) for supported versions of Node.
 
 * [TISTUD-8524](https://jira.appcelerator.org/browse/TISTUD-8524) - Show Appcelerator Studio version number on startup splash screen
 
-  * Added the version number on the startup splash screen
+    * Added the version number on the startup splash screen
 
 * [TISTUD-8530](https://jira.appcelerator.org/browse/TISTUD-8530) - Windows tag support in timodule.xml
 
-  * Added support for the windows tag in the timodule.xml file
+    * Added support for the windows tag in the timodule.xml file
 
 * [TISTUD-8536](https://jira.appcelerator.org/browse/TISTUD-8536) - Support per-platform moduleAPIVersions
 
-  * Added support on a per-platform list of valid modules for a given SDK
+    * Added support on a per-platform list of valid modules for a given SDK
 
 * [TISTUD-8544](https://jira.appcelerator.org/browse/TISTUD-8544) - Update node installer links to 4.2.0
 
-  * Updated Node install to use Node 4.2.0 as the minimum but will default to 4.6.0
+    * Updated Node install to use Node 4.2.0 as the minimum but will default to 4.6.0
 
 * [TISTUD-8547](https://jira.appcelerator.org/browse/TISTUD-8547) - Update Hyperloop from the studio
 
-  * Added capability to update Hyperloop from within Studio
-
+    * Added capability to update Hyperloop from within Studio
 
 ## Fixed issues
 
@@ -199,53 +141,52 @@ This version of Studio adds support to create, build, and test Windows modules (
 
 * [TISTUD-8643](https://jira.appcelerator.org/browse/TISTUD-8643) - Android Debugger: Not all variables shown during debug of android app with SDK 6.0.0
 
-
 ## Known issues
 
 * [TIDOC-2553](https://jira.appcelerator.org/browse/TIDOC-2553) - Studio Troubleshooting: Launch issue in Windows 64-bit machines
 
-  * Studio requires a 32-bit Java run-time environment in order to launch on either 32 or 64-bit operating systems. During installation, Studio will detect and install a 32-bit JDK if it is not found on your system. However, Studio won't default that Java environment. If you are unable to launch Studio on a Windows 64-bit OS, Studio wasn't able to find the 32-bit JDK. You will see an error similar to this:
+    * Studio requires a 32-bit Java run-time environment in order to launch on either 32 or 64-bit operating systems. During installation, Studio will detect and install a 32-bit JDK if it is not found on your system. However, Studio won't default that Java environment. If you are unable to launch Studio on a Windows 64-bit OS, Studio wasn't able to find the 32-bit JDK. You will see an error similar to this:
 
-    ![_thumb_60015](/Images/appc/download/attachments/48432905/_thumb_60015.png)
-  * If your default Java environment is set to 64-bit, then you need to add the following argument in the Appcelerator.ini file (found in the installation directory):
+        ![_thumb_60015](/Images/appc/download/attachments/48432905/_thumb_60015.png)
+    * If your default Java environment is set to 64-bit, then you need to add the following argument in the Appcelerator.ini file (found in the installation directory):
 
-    `C:\Program Files(x86)\Java\jdk1.``7``.0_71\bin\javaw.exe`
+        `C:\Program Files(x86)\Java\jdk1.``7``.0_71\bin\javaw.exe`
 
 * [TISTUD-8613](https://jira.appcelerator.org/browse/TISTUD-8613) - iOS Debugger: Breakpoint is not hit for the first time for a clean alloy project
 
-  * When a clean Alloy project is debugged on iOS, the breakpoint is not hit. However when the same project is debugged again without cleaning the previous project build, the breakpoint does hit successfully.
+    * When a clean Alloy project is debugged on iOS, the breakpoint is not hit. However when the same project is debugged again without cleaning the previous project build, the breakpoint does hit successfully.
 
 * [TISTUD-8639](https://jira.appcelerator.org/browse/TISTUD-8639) - Android Debugger: Extra call frames shown in debug view whose source file is not shown on click
 
-  * The Debug View shows extra call frame that point to [ti:/module.js](http://ti/module.js) file. Clicking on any of these call frames will show "Source not found."
+    * The Debug View shows extra call frame that point to [ti:/module.js](http://ti/module.js) file. Clicking on any of these call frames will show "Source not found."
 
-    ![Screen_Shot_2016-10-28_at_4.14.24_PM_%281%29](/Images/appc/download/attachments/48432905/Screen_Shot_2016-10-28_at_4.14.24_PM_%281%29.png)
+        ![Screen_Shot_2016-10-28_at_4.14.24_PM_%281%29](/Images/appc/download/attachments/48432905/Screen_Shot_2016-10-28_at_4.14.24_PM_%281%29.png)
 * [TISTUD-8655](https://jira.appcelerator.org/browse/TISTUD-8655) - Studio: Logs show 403 error when checking for updates
 
-  * When you check for Appcelerator Studio updates, you'll see an error in the Studio Log detailing a 403 error message like this:
+    * When you check for Appcelerator Studio updates, you'll see an error in the Studio Log detailing a 403 error message like this:
 
-    `!ENTRY com.appcelerator.titanium.update.core` `4`  `0`  `2016``-``11``-``09`  `14``:``33``:``50.565`
+        `!ENTRY com.appcelerator.titanium.update.core` `4`  `0`  `2016``-``11``-``09`  `14``:``33``:``50.565`
 
-    `!MESSAGE (Build` `4.8``.``0.201611092408``) [ERROR] Server returned HTTP response code:` `403`  `for` `URL: http:``//builds.appcelerator.com.s3.amazonaws.com/mobile/5.2.0/index.json`
+        `!MESSAGE (Build` `4.8``.``0.201611092408``) [ERROR] Server returned HTTP response code:` `403`  `for` `URL: http:``//builds.appcelerator.com.s3.amazonaws.com/mobile/5.2.0/index.json`
 
-    `!STACK` `0`
+        `!STACK` `0`
 
-    `java.io.IOException: Server returned HTTP response code:` `403`  `for` `URL: http:``//builds.appcelerator.com.s3.amazonaws.com/mobile/5.2.0/index.json`
+        `java.io.IOException: Server returned HTTP response code:` `403`  `for` `URL: http:``//builds.appcelerator.com.s3.amazonaws.com/mobile/5.2.0/index.json`
 
-    `at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:``1626``)`
+        `at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:``1626``)`
 
-    `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.getURIContents(TitaniumReleasesUpdater.java:``699``)`
+        `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.getURIContents(TitaniumReleasesUpdater.java:``699``)`
 
-    `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.getReleases(TitaniumReleasesUpdater.java:``603``)`
+        `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.getReleases(TitaniumReleasesUpdater.java:``603``)`
 
-    `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.getSDKReleases(TitaniumReleasesUpdater.java:``549``)`
+        `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.getSDKReleases(TitaniumReleasesUpdater.java:``549``)`
 
-    `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.getLatestSDKRelease(TitaniumReleasesUpdater.java:``805``)`
+        `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.getLatestSDKRelease(TitaniumReleasesUpdater.java:``805``)`
 
-    `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.hasSDKUpdates(TitaniumReleasesUpdater.java:``246``)`
+        `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.hasSDKUpdates(TitaniumReleasesUpdater.java:``246``)`
 
-    `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.hasUpdates(TitaniumReleasesUpdater.java:``202``)`
+        `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.hasUpdates(TitaniumReleasesUpdater.java:``202``)`
 
-    `at com.appcelerator.titanium.update.ui.handler.TitaniumUpdateHandler$``1``.run(TitaniumUpdateHandler.java:``63``)`
+        `at com.appcelerator.titanium.update.ui.handler.TitaniumUpdateHandler$``1``.run(TitaniumUpdateHandler.java:``63``)`
 
-    `at org.eclipse.core.internal.jobs.Worker.run(Worker.java:``54``)`
+        `at org.eclipse.core.internal.jobs.Worker.run(Worker.java:``54``)`

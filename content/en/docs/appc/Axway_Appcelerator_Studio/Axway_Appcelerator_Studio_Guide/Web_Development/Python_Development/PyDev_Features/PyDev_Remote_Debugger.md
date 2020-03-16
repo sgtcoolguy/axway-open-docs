@@ -14,7 +14,6 @@ The steps to debug an external program are:
 
 * Call pydevd.settrace()
 
-
 Let's see a simple 'step-by-step' example of how this works:
 
 **1\. Start the remote debugger server**: To start the remote debugger server, you have to click the green button pointed by '1' in the image below. After doing that, it will show a message in the console (indicated by '2') to confirm that the server is listening for incoming connections.

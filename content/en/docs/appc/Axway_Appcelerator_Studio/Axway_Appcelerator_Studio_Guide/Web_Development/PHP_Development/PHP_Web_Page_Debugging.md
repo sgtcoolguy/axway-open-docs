@@ -1,29 +1,28 @@
 {"title":"PHP Web Page Debugging","weight":"20"}
 
-* [Basic Setup](#BasicSetup)
+* [Basic Setup](#basic-setup)
 
-* [Setting up XDebug in php.ini](#SettingupXDebuginphp.ini)
+* [Setting up XDebug in php.ini](#setting-up-xdebug-in-php.ini)
 
-* [Verify the installation](#Verifytheinstallation)
+* [Verify the installation](#verify-the-installation)
 
-* [Setting up your project](#Settingupyourproject)
+* [Setting up your project](#setting-up-your-project)
 
-  * [Creating a PHP project directly on your Document Root folder](#CreatingaPHPprojectdirectlyonyourDocumentRootfolder)
+    * [Creating a PHP project directly on your Document Root folder](#creating-a-php-project-directly-on-your-document-root-folder)
 
-  * [Aliasing to your PHP project](#AliasingtoyourPHPproject)
+    * [Aliasing to your PHP project](#aliasing-to-your-php-project)
 
-* [Creating a launch configuration](#Creatingalaunchconfiguration)
+* [Creating a launch configuration](#creating-a-launch-configuration)
 
-  * [Notes](#Notes)
+    * [Notes](#notes)
 
-* [Using XDebug Helper browser extension to initiate a debug](#UsingXDebugHelperbrowserextensiontoinitiateadebug)
+* [Using XDebug Helper browser extension to initiate a debug](#using-xdebug-helper-browser-extension-to-initiate-a-debug)
 
-  * [Installation](#Installation)
+    * [Installation](#installation)
 
-  * [Debugging](#Debugging)
+    * [Debugging](#debugging)
 
-* [Debug Ports](#DebugPorts)
-
+* [Debug Ports](#debug-ports)
 
 ## Basic Setup
 
@@ -37,20 +36,19 @@ The instruction here assumes that you already have a running server with PHP con
 
 * Open the file and add the following lines (these paths _must_ be modified according to your system type):
 
-  `;Hook the XDebug`
+    `;Hook the XDebug`
 
-  `zend_extension_ts=C:\php\ext\php_xdebug-``2.0``.``3``-``5.2``.``5``.dll`
+    `zend_extension_ts=C:\php\ext\php_xdebug-``2.0``.``3``-``5.2``.``5``.dll`
 
-  `xdebug.remote_enable=``1`
+    `xdebug.remote_enable=``1`
 
-  `xdebug.remote_host=``127.0``.``0.1`
+    `xdebug.remote_host=``127.0``.``0.1`
 
-  `xdebug.remote_port=``9000`
+    `xdebug.remote_port=``9000`
 
-  `xdebug.remote_handler=``"dbgp"`
+    `xdebug.remote_handler=``"dbgp"`
 
 * Note that the XDebug extension should be added as a zend\_extension or as a zend\_extension\_ts for Thread-Safe PHP environments. And, of course, change the version according to what you have.
-
 
 In case you have XAMPP or MAMP installation, locate the XDebug extension that was delivered with the package and set it up.
 
@@ -62,7 +60,6 @@ Notes:
 
 * The zend\_extension\_ts is only valid in cases where the PHP interpreter was compiled as 'Thread-Safe'. In cases where it was not compiled as such (and you have a compatible xdebug extension), the line should be zend\_extension=<debugger path>/php\_xdebug.so (or similar).
 
-
 ## Verify the installation
 
 Some of the packages mentioned above have a pre-configured link that can display your server's configurations. However, you can still verify that in a few simple steps (here we'll just assume you have an Apache server):
@@ -73,10 +70,9 @@ Some of the packages mentioned above have a pre-configured link that can display
 
 3. Open the file URL in your web browser: http://localhost/phpinfo.php
 
-  * You should see the standard phpinfo output.
+    * You should see the standard phpinfo output.
 
 4. Verify that the XDebug was loaded by locating the note at the bottom of the first section. It should say something like: "with Xdebug v2.0.3, Copyright (c) 2002-2008, by Derick Rethans".
-
 
 ![PhpInfoXDebug](/Images/appc/download/attachments/30083033/PhpInfoXDebug.png)
 
@@ -102,7 +98,6 @@ Follow these steps to create a PHP project that is pointed to your document root
 
 * OK the dialog (also click 'Yes' to close and re-open the project when a prompt dialog appears).
 
-
 That is all. You now have a PHP project that is pointing directly into your document root or one of its sub-folders.
 
 **A few notes and warnings:**
@@ -110,7 +105,6 @@ That is all. You now have a PHP project that is pointing directly into your docu
 * Since your edits are on the actual files that the server serve, it's only recommended for staging/development servers (which is probably the case if the server is on your local machine)
 
 * You should take extra care when you delete a project that is pointing to an external folder, such as this. When deleting, you will be prompted to delete the actual project files. If you do you, you will lose the files in your server doc-root! So make sure you keep that check-box turned off when you delete a project from the workspace.
-
 
 ### Aliasing to your PHP project
 
@@ -152,21 +146,19 @@ The first thing we'll need to check is the communication link between the server
 
 * Create a new PHP file. Name if debugTest.php and paste this code into it:
 
-  `<?php`
+    `<?php`
 
-  `$w =` `'world'``;`
+    `$w =` `'world'``;`
 
-  `echo` `'Hello '``;`
+    `echo` `'Hello '``;`
 
-  `echo $w;`
+    `echo $w;`
 
-  `?>`
-
+    `?>`
 
 * Open the launch configuration dialog by accessing the debug shortcut (or by using the action from the menu Run > Open Debug Dialog): **Create a new\*PHP Web Page** debug configuration.
 
 * Verify that the XDebug debugger is selected.
-
 
 The launch configuration generates the URL that we use to contact the debugger. For that reason, and for _Path Mapping_ reasons, the configuration needs to have a valid server configuration attached to it.
 
@@ -176,8 +168,7 @@ To create a server configuration:
 
 * Create an Apache, or a Generic, server configuration.
 
-  **Make sure that the host name is without the _protocol_ part (for example, use localhost and not** http://localhost).
-
+    **Make sure that the host name is without the _protocol_ part (for example, use localhost and not** http://localhost).
 
 Continue with these steps:
 
@@ -189,7 +180,6 @@ Continue with these steps:
 
 * In case the URL needs some tweaking to match your server, un-check the _Auto Generate_ and edit the URL path manually.
 
-
 Finally, hit the _Debug_ button.
 At this point, a debug session should be initiated. A browser is opened, and the Studio should break on the first line of the debugTest.php file.
 
@@ -198,7 +188,6 @@ In case it does not break on the first line, do the following to resolve the pro
 1. Re-check that you have the XDebug up and running on your server. Test it using a script with a phpinfo() line in it.
 
 2. Check that the port is not blocked by a firewall. The default port for XDebug is 9000, and for Zend Debugger is 10000.
-
 
 ![PhpRemoteDebugConfig](/Images/appc/download/attachments/30083033/PhpRemoteDebugConfig.png)
 
@@ -211,7 +200,6 @@ In case it does not break on the first line, do the following to resolve the pro
 * Once you resume execution, even if there are no more breakpoints, the launch in your debug view is still alive. It's just waiting for more requests triggered by browser actions.
 
 * For example, you have a form to debug. You can do so by starting a debug session and placing a breakpoint on the right spot to catch the form input after the user hits the submit button. The debug session will only be terminated when you hit the stop button on that.
-
 
 ## Using XDebug Helper browser extension to initiate a debug
 
@@ -237,7 +225,6 @@ _**Notes:**_
 
 3. We have mentioned above the way a debug session is initiated. The difference with the XDebug Helper session is that the URL that triggers the debug session is constructed and called from the helper. Thus, the Studio might need to get more information regarding the source location and will ask you to provide it when needed.
 
-
 ## Debug Ports
 
 There are two debug port that the studio opens when loading.
@@ -248,9 +235,8 @@ These ports can be controlled through a Preference:
 
 * Preferences > Aptana Studio > Editors > PHP > Debug
 
-
 When launching a PHP session, the Studio will inform you in case the port it's listening to does not match the XDebug port that was defined in the php.ini.
 
 For example, if the php.ini indicates that the XDebug debugger should contact port 9001, while the Studio listens on port 9000, a message box will indicate the problem and will direct you to change the listen port or the ini setting.
 
-![XDebugPortNotification](/Images/appc/download/attachments/30083033/XDebugPortNotification.jpg)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083033/XDebugPortNotification.jpg" alt="images/download/attachments/30083033/XDebugPortNotification.jpg" class="confluence-embedded-image"></p></td></tr></tbody></table>

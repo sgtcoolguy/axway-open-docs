@@ -1,15 +1,14 @@
 {"title":"Appcelerator CLI Troubleshooting","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Submitting a bug](#Submittingabug)
+* [Submitting a bug](#submitting-a-bug)
 
-* [Errors](#Errors)
+* [Errors](#errors)
 
-  * [Please re-try this install again](#Pleasere-trythisinstallagain)
+    * [Please re-try this install again](#please-re-try-this-install-again)
 
-  * [Application deployment failed](#Applicationdeploymentfailed)
-
+    * [Application deployment failed](#application-deployment-failed)
 
 ## Overview
 
@@ -62,7 +61,6 @@ This error manifests items in several different ways, such as:
 * Invalid file download checksum. This could be a result of the file being modified in transit or it could be because the download was interrupted or had an error....Please re-try this install again.
 
 * Server responded with unexpected error: SSL authorization failed. URL: [appc-registry-server-distribution.s3.amazonaws.com](http://appc-registry-server-distribution.s3.amazonaws.com/) does not have a valid fingerprint which can be used to verify the SSL certificate...Please re-try your install again. If you continue to have this problem, please contact Appcelerator Support at support@appcelerator.com.
-
 
 This is often best solved by two options: reinstalling the appcelerator command line via NPM or logging out with -D:
 

@@ -1,49 +1,48 @@
 {"title":"Axway Appcelerator Product Lifecycle","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Release distribution phases (nominal timelines)](#Releasedistributionphases(nominaltimelines))
+* [Release distribution phases (nominal timelines)](#release-distribution-phases-nominal-timelines)
 
-  * [Technology Preview](#TechnologyPreview)
+    * [Technology Preview](#technology-preview)
 
-  * [Restricted Availability](#RestrictedAvailability)
+    * [Restricted Availability](#restricted-availability)
 
-  * [Release Candidate](#ReleaseCandidate)
+    * [Release Candidate](#release-candidate)
 
-  * [General Availability (full support)](#GeneralAvailability(fullsupport))
+    * [General Availability (full support)](#general-availability-full-support)
 
-  * [Supported (maintenance support)](#Supported(maintenancesupport))
+    * [Supported (maintenance support)](#supported-maintenance-support)
 
-  * [End of Support](#EndofSupport)
+    * [End of Support](#end-of-support)
 
-* [Versioning scheme](#Versioningscheme)
+* [Versioning scheme](#versioning-scheme)
 
-  * [Major (X)](#Major(X))
+    * [Major (X)](#major-x)
 
-  * [Minor (Y)](#Minor(Y))
+    * [Minor (Y)](#minor-y)
 
-  * [Patch (Z)](#Patch(Z))
+    * [Patch (Z)](#patch-z)
 
-  * [Versioning summary](#Versioningsummary)
+    * [Versioning summary](#versioning-summary)
 
-* [Nominal Lifetimes](#NominalLifetimes)
+* [Nominal Lifetimes](#nominal-lifetimes)
 
-  * [Major release](#Majorrelease)
+    * [Major release](#major-release)
 
-  * [Minor release](#Minorrelease)
+    * [Minor release](#minor-release)
 
-  * [Patch release](#Patchrelease)
+    * [Patch release](#patch-release)
 
-* [End of Support (EoS) examples](#EndofSupport(EoS)examples)
+* [End of Support (EoS) examples](#end-of-support-eos-examples)
 
-  * [Major EoS](#MajorEoS)
+    * [Major EoS](#major-eos)
 
-  * [Minor EoS](#MinorEoS)
+    * [Minor EoS](#minor-eos)
 
-  * [Patch EoS](#PatchEoS)
+    * [Patch EoS](#patch-eos)
 
-* [Cloud Services](#CloudServices)
-
+* [Cloud Services](#cloud-services)
 
 ## Overview
 
@@ -55,23 +54,23 @@ A release is a concrete product deliverable encompassing a coherent set of featu
 
 ### Technology Preview
 
-Technology Preview is an option for some new products or components where this status can be used to receive feedback from customers willing to test functionality and provide feedback during the development process. The functionality may not be functionally complete, and there is no commitment for a seamless upgrade to subsequent releases or that the functionality will move to [General Availability](#GeneralAvailability(fullsupport)). Technology Preview is not production-ready and does not receive full support.
+Technology Preview is an option for some new products or components where this status can be used to receive feedback from customers willing to test functionality and provide feedback during the development process. The functionality may not be functionally complete, and there is no commitment for a seamless upgrade to subsequent releases or that the functionality will move to [General Availability](#general-availability-full-support). Technology Preview is not production-ready and does not receive full support.
 
 ### Restricted Availability
 
-Restricted Availability marks the phase during which a release is distributed to a small and limited number of customers, selected by Axway Appcelerator prior to [General Availability](#GeneralAvailability(fullsupport)). The release is fully tested and can be deployed in production. Security, critical bug fixes, and small enhancements may be made available.
+Restricted Availability marks the phase during which a release is distributed to a small and limited number of customers, selected by Axway Appcelerator prior to [General Availability](#general-availability-full-support). The release is fully tested and can be deployed in production. Security, critical bug fixes, and small enhancements may be made available.
 
 ### Release Candidate
 
-A release candidate (RC) is a beta version that includes features that will potentially be in the [General Availability](#GeneralAvailability(fullsupport)) release. Release Candidates are usually stable and available before [General Availability](#GeneralAvailability(fullsupport)). They may include bugs and is not intended for production use and does not receive full support. Release candidates users are highly encouraged to provide feedback when testing RCs.
+A release candidate (RC) is a beta version that includes features that will potentially be in the [General Availability](#general-availability-full-support) release. Release Candidates are usually stable and available before [General Availability](#general-availability-full-support). They may include bugs and is not intended for production use and does not receive full support. Release candidates users are highly encouraged to provide feedback when testing RCs.
 
 ### General Availability (full support)
 
-General Availability marks the start of the phase during which the release is available without restrictions. Marks the start of the [full support](#Supported(maintenancesupport)) phase.
+General Availability marks the start of the phase during which the release is available without restrictions. Marks the start of the [full support](#supported-maintenance-support) phase.
 
 ### Supported (maintenance support)
 
-Supported is the phase during which a release is only eligible for general maintenance and support and no longer available for sale or enhancements. At the end of the Supported period, the release is changed to [End of Support](#EndofSupport) or End of Life (EOL) status. The supported period is only applicable to Major releases.
+Supported is the phase during which a release is only eligible for general maintenance and support and no longer available for sale or enhancements. At the end of the Supported period, the release is changed to [End of Support](#end-of-support) or End of Life (EOL) status. The supported period is only applicable to Major releases.
 
 ### End of Support
 
@@ -79,7 +78,7 @@ End of Support is for a release that is withdrawn from general support and repre
 
 ## Versioning scheme
 
-The version number of a release is split into three levels: [major](#Major(X)), [minor](#Minor(Y)), and [patch](#Patch(Z)).
+The version number of a release is split into three levels: [major](#major-x), [minor](#minor-y), and [patch](#patch-z).
 
 ### Major (X)
 
@@ -103,14 +102,13 @@ Here are a few examples of what versioning would like look with the Axway Appcel
 
 * Axway Appcelerator Studio 4.9.0
 
-
 ## Nominal Lifetimes
 
 Axway Appcelerator provides full support for the current minor release and the latest patch of the current major release.
 
 ### Major release
 
-The nominal lifetime for a major release is 1 year of the Supported phase. A major release is moved from [General Availability](#GeneralAvailability(fullsupport)) (GA) full support to the Supported phase when the next major release is GA.
+The nominal lifetime for a major release is 1 year of the Supported phase. A major release is moved from [General Availability](#general-availability-full-support) (GA) full support to the Supported phase when the next major release is GA.
 
 ### Minor release
 
@@ -122,7 +120,7 @@ The nominal lifetime for a patch release is only applicable to the latest GA rel
 
 ## End of Support (EoS) examples
 
-At the end of the Supported phase, the release is changed to [End of Support](#EndofSupport) or End of Life status.
+At the end of the Supported phase, the release is changed to [End of Support](#end-of-support) or End of Life status.
 
 ### Major EoS
 
@@ -138,4 +136,4 @@ Patch release 6.0.1 is no longer supported after 6.0.2 is GA. Note that the majo
 
 ## Cloud Services
 
-For Axway Appcelerator product available on-line such as [Axway Appcelerator Dashboard](/docs/appc/Appcelerator_Dashboard/), [Axway Mobile Analytics](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/), and [Axway API Builder](/docs/appc/Axway_API_Builder/), since it is a Software-as-a-Service (SaaS) model, Axway deploys the latest version of every product online. All users get access only to the latest version of the product, and there are no exceptions for customers staying on previous releases. The previous [nominal timelines](#Releasedistributionphases(nominaltimelines)) section does not apply to Cloud Services.
+For Axway Appcelerator product available on-line such as [Axway Appcelerator Dashboard](/docs/appc/Appcelerator_Dashboard/), [Axway Mobile Analytics](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/), and [Axway API Builder](/docs/appc/Axway_API_Builder/), since it is a Software-as-a-Service (SaaS) model, Axway deploys the latest version of every product online. All users get access only to the latest version of the product, and there are no exceptions for customers staying on previous releases. The previous [nominal timelines](#release-distribution-phases-nominal-timelines) section does not apply to Cloud Services.

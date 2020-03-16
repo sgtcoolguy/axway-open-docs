@@ -6,7 +6,6 @@ This release of Arrow Cloud includes version 1.0.27 of the CLI and 1.3.0 of the 
 
 * The scripts specified by the scripts.preinstall and scripts.postinstall fields in the package.json file no longer support installing custom binaries outside the project directory. Instead, create a script called install.sh located at the root level of the project folder to install the custom binaries. You can still use the scripts.preinstall and scripts.postinstall scripts to install binaries inside the project folder.
 
-
 **New Features and Improvements**
 
 * **Build logs**: To view the application build logs, pass the \--build\_log flag to the [loglist command](/docs/appc/AMPLIFY_Runtime_Services/AMPLIFY_Runtime_Services_Guide/AMPLIFY_Runtime_Services_Command-Line_Interface_Reference/).

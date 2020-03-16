@@ -64,7 +64,7 @@ app/views/master.xml
 
 The index.js controller is responsible for opening the right top-level window depending on which platform the application is running. It also defines a Backbone-based event handler for the "detail" event that is triggered when the user selects an item from the TableView. This event is triggered in the master.js view-controller, shown next.
 
-The controller uses the [Alloy.isHandheld](#!/api/Alloy-property-isHandheld), [Alloy.isTablet](#!/api/Alloy-property-isHandheld) and [OS\_IOS](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#Conditionalcode) conditionals in the "detail" event handler to determine whether it needs to create a controller to display the details for the selected item (on iPhone) or simply use the existing view in the SplitWindow.
+The controller uses the [Alloy.isHandheld](#!/api/Alloy-property-isHandheld), [Alloy.isTablet](#!/api/Alloy-property-isHandheld) and [OS\_IOS](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#conditional-code) conditionals in the "detail" event handler to determine whether it needs to create a controller to display the details for the selected item (on iPhone) or simply use the existing view in the SplitWindow.
 
 app/controllers/index.js
 

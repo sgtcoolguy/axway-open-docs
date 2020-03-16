@@ -12,25 +12,24 @@ By default, you can use Studio to create and edit JS, CSS, HTML, PHP, Ruby, XML,
 
 2. Add the appropriate file type.
 
-  1. Next to the **File Types** list, click the **Add...** button.
+    1. Next to the **File Types** list, click the **Add...** button.
 
-  2. In the **New File Type** pop-up window, type the appropriate file extension (e.g. "\*.asp").
+    2. In the **New File Type** pop-up window, type the appropriate file extension (e.g. "\*.asp").
 
-  3. Click **OK** to add the New File Type to the List.
+    3. Click **OK** to add the New File Type to the List.
 
 3. Associate the new file type with Studio.
 
-  1. On the **File Types** list, select the file type that you just added.
+    1. On the **File Types** list, select the file type that you just added.
 
-  2. Next to the **Associated editors** list, click the **Add...** button.
+    2. Next to the **Associated editors** list, click the **Add...** button.
 
-  3. On the **Editor Selection** pop-up window, select the editor that you want to associate with your file type.
+    3. On the **Editor Selection** pop-up window, select the editor that you want to associate with your file type.
 
-  4. Click **OK** to add the editor.
-    The new is now associated with the specified file type.
+    4. Click **OK** to add the editor.
+        The new is now associated with the specified file type.
 
 4. Click **OK** to apply your changes and close the **Preferences** window.
-
 
 ## To set a new default editor
 
@@ -38,9 +37,9 @@ By default, you can use Studio to create and edit JS, CSS, HTML, PHP, Ruby, XML,
 
 2. Select the appropriate file type.
 
-  1. Next to the **Associated editors** list, select the editor you wish to be the default editor.
+    1. Next to the **Associated editors** list, select the editor you wish to be the default editor.
 
-  2. Click **Default** to set the editor.
-    The new is now associated with the specified file type.
+    2. Click **Default** to set the editor.
+        The new is now associated with the specified file type.
 
 3. Click **OK** to apply your changes and close the **Preferences** window.

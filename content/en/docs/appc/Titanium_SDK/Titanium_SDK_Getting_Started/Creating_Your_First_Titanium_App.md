@@ -1,29 +1,28 @@
 {"title":"Creating Your First Titanium App","weight":"50"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Create a new project](#Createanewproject)
+* [Create a new project](#create-a-new-project)
 
-* [Create the data model](#Createthedatamodel)
+* [Create the data model](#create-the-data-model)
 
-* [Initialize the book collection](#Initializethebookcollection)
+* [Initialize the book collection](#initialize-the-book-collection)
 
-* [Add a TableView](#AddaTableView)
+* [Add a TableView](#add-a-tableview)
 
-* [Create a book detail view](#Createabookdetailview)
+* [Create a book detail view](#create-a-book-detail-view)
 
-  * [Display book details view on selection](#Displaybookdetailsviewonselection)
+    * [Display book details view on selection](#display-book-details-view-on-selection)
 
-  * [Modify the book detail layout](#Modifythebookdetaillayout)
+    * [Modify the book detail layout](#modify-the-book-detail-layout)
 
-* [Add platform-specific styles to the TableView](#Addplatform-specificstylestotheTableView)
+* [Add platform-specific styles to the TableView](#add-platform-specific-styles-to-the-tableview)
 
-* [Add a NavigationWindow](#AddaNavigationWindow)
+* [Add a NavigationWindow](#add-a-navigationwindow)
 
-* [Allow user to add books](#Allowusertoaddbooks)
+* [Allow user to add books](#allow-user-to-add-books)
 
-* [Next steps](#Nextsteps)
-
+* [Next steps](#next-steps)
 
 ## Introduction
 
@@ -38,7 +37,6 @@ This tutorial walks you through the process of building a simple Titanium applic
 * Using platform-specific resources and styles
 
 * Handling events
-
 
 You can **[download](https://github.com/appcelerator-developer-relations/FaveBooks)** a completed version of the project.
 
@@ -58,7 +56,6 @@ To start, you'll create a new Alloy project in Studio.
 
 4. Click **OK**.
 
-
 The new project opens in Studio.
 
 ## Create the data model
@@ -71,15 +68,14 @@ The heart of the FaveBooks app is the data containing the user’s books, so we�
 
 2. In the New Model dialog, make the following entries:
 
-  * For **Model name**, enter **books**.
+    * For **Model name**, enter **books**.
 
-  * Select **sql** from the **Adapter** menu.
+    * Select **sql** from the **Adapter** menu.
 
-  * In the **Schema** table, add two fields named **title** and **author** and set their types to **text**.
+    * In the **Schema** table, add two fields named **title** and **author** and set their types to **text**.
 
-    ![new_model](/Images/appc/download/attachments/37541502/new_model.png)
+        ![new_model](/Images/appc/download/attachments/37541502/new_model.png)
 3. Click OK.
-
 
 This creates a new file in the **app/models** directory called **books.js**. This file describes the data model you just created. The config section, in particular, defines the data columns, adapter type, and collection name.
 
@@ -117,26 +113,25 @@ Next you'll write code that creates a Collection from the model definition, crea
 
 2. Get a reference to our collection:
 
-  `var` `myBooks = Alloy.Collections.books;`
+    `var` `myBooks = Alloy.Collections.books;`
 
 3. Create a new model object (book) and assign it a title and author:
 
-  `var` `book = Alloy.createModel(``'books'``, {`
+    `var` `book = Alloy.createModel(``'books'``, {`
 
-  `title :` `'Great Expectations'``,`
+    `title :` `'Great Expectations'``,`
 
-  `author:` `'Charles Dickens'`
+    `author:` `'Charles Dickens'`
 
-  `});`
+    `});`
 
 4. Add the book to the collection and persist it to the database.
 
-  `myBooks.add(book);`
+    `myBooks.add(book);`
 
-  `book.save();`
+    `book.save();`
 
 5. Save your changes to index.js.
-
 
 Now that our application has some data, let’s display it in a table.
 
@@ -150,86 +145,85 @@ In Alloy, collection data can be [synchronized](/docs/appc/Alloy_Framework/Alloy
 
 3. Insert a **<TableViewRow>** element inside the <TableView> element, as shown below:
 
-  `<Alloy>`
+    `<Alloy>`
 
-  `<Window` `class``=``"container"``>`
+    `<Window` `class``=``"container"``>`
 
-  `<!-- Add TableView and TableViewRow -->`
+    `<!-- Add TableView and TableViewRow -->`
 
-  `<TableView>`
+    `<TableView>`
 
-  `<TableViewRow></TableViewRow>`
+    `<TableViewRow></TableViewRow>`
 
-  `</TableView>`
+    `</TableView>`
 
-  `</Window>`
+    `</Window>`
 
-  `</Alloy>`
+    `</Alloy>`
 
-  The <TableViewRow> element will be repeated for each element in our data set.
+    The <TableViewRow> element will be repeated for each element in our data set.
 
 4. Add a **<Collection>** element to the top-level <Alloy> element and set its **src** property to **books**. This corresponds to the name of the collection we created before.
 
-  `<Alloy>`
+    `<Alloy>`
 
-  `<Collection src=``"books"``/>`
+    `<Collection src=``"books"``/>`
 
-  `<Window` `class``=``"container"``>`
+    `<Window` `class``=``"container"``>`
 
-  `...`
+    `...`
 
-  `</Window>`
+    `</Window>`
 
-  `</Alloy>`
+    `</Alloy>`
 
 5. To synchronize the collection with the view, assign **books** to the TableView element's **dataCollection** attribute.
 
-  `<Alloy>`
+    `<Alloy>`
 
-  `<Collection src=``"books"``/>`
+    `<Collection src=``"books"``/>`
 
-  `<Window` `class``=``"container"``>`
+    `<Window` `class``=``"container"``>`
 
-  `<!-- Asssign the collection to the TableView -->`
+    `<!-- Asssign the collection to the TableView -->`
 
-  `<TableView dataCollection=``"books"``>`
+    `<TableView dataCollection=``"books"``>`
 
-  `<TableViewRow></TableViewRow>`
+    `<TableViewRow></TableViewRow>`
 
-  `</TableView>`
+    `</TableView>`
 
-  `</Window>`
+    `</Window>`
 
-  `</Alloy>`
+    `</Alloy>`
 
 6. Using curly-bracket syntax, assign the title from each book (that is, each model in the collection) to the title attribute of the <TableViewRow>. The final contents of index.xml should look like the following:
 
-  `<Alloy>`
+    `<Alloy>`
 
-  `<Collection src=``"books"``/>`
+    `<Collection src=``"books"``/>`
 
-  `<Window` `class``=``"container"``>`
+    `<Window` `class``=``"container"``>`
 
-  `<TableView dataCollection=``"books"``>`
+    `<TableView dataCollection=``"books"``>`
 
-  `<TableViewRow title=``"{title}"` `author=``"{author}"``></TableViewRow>`
+    `<TableViewRow title=``"{title}"` `author=``"{author}"``></TableViewRow>`
 
-  `</TableView>`
+    `</TableView>`
 
-  `</Window>`
+    `</Window>`
 
-  `</Alloy>`
+    `</Alloy>`
 
 7. Open **styles/index.tss**.
 
 8. By default, Android applications built with Titanium use the AppCompat theme, which uses a dark background with light text, while iOS defaults to black text and a black background. In order to see text, change the background to white for iOS only by adding the platform attribute to the container rule.
 
-  `".container[platform=ios]"``: {`
+    `".container[platform=ios]"``: {`
 
-  `backgroundColor:` `'white'`
+    `backgroundColor:` `'white'`
 
-  `}`
-
+    `}`
 
 At this point we’re now ready to test our app. For comparison, we’ll run the app in both an iPhone simulator and an Android emulator.
 
@@ -237,12 +231,11 @@ At this point we’re now ready to test our app. For comparison, we’ll run the
 
 * From the Target menu in the top-right corner of Studio, select **iOS Simulator** > **iPhone**. By default, Studio is configured to automatically launch when you select a target platform. Wait for the app to complete launching in the simulator.
 
-  ![simulators](/Images/appc/download/attachments/37541502/simulators.png)
+    ![simulators](/Images/appc/download/attachments/37541502/simulators.png)
 
 **To launch the app in an Android emulator**
 
 * When the application has finished launching in the iPhone simulator, select **Android Emulator** \> **titanium\_1\_WVGA800** to launch the app.
-
 
 The **titanium\_1\_WVGA800** string corresponds to the name of the Android virtual device that Studio creates by default. If you have installed other AVDs, you can select one of those.
 
@@ -258,7 +251,6 @@ Note the following:
 
 * The table length increases by a row each time you launch the app, since we are saving the (same) book to each time.
 
-
 **Android troubleshooting**
 
 The initial launch of the Android emulator can be quite slow and Studio may timeout before it can install and launch the application. If this happens just click **Run** in Studio again. Subsequent launches should not time out on the same virtual device.
@@ -273,53 +265,51 @@ Next you’ll add functionality to let the user select a book and view its detai
 
 * A style file (a Titanium Style Sheet file)
 
-
 **To create the book detail view** :
 
 1. Right-click or Control-click on the project folder and select **New** \> **Alloy Controller**, or press Cmd + Shift + C (Mac) or Ctrl + Shift + C (Windows).
 
 2. In the New Controller dialog, enter **bookdetails** in the Controller name text field, and click OK. This creates the following new files:
 
-  * controllers/bookdetails.js – The controller’s JavaScript controller.
+    * controllers/bookdetails.js – The controller’s JavaScript controller.
 
-  * views/bookdetails.xml – The controller’s view
+    * views/bookdetails.xml – The controller’s view
 
-  * styles/bookdetails.tss – Styles for the controller
+    * styles/bookdetails.tss – Styles for the controller
 
 3. Open **views/bookdetails.xml** in the editor.
 
 4. Replace the <View> element with a <Window> element:
 
-  `<Alloy>`
+    `<Alloy>`
 
-  `<Window` `class``=``"container"``>`
+    `<Window` `class``=``"container"``>`
 
-  `</Window>`
+    `</Window>`
 
-  `</Alloy>`
+    `</Alloy>`
 
 5. Add two <Label> elements to the <Window> element. Give the first one an ID of **titleLabel** and the other an ID of **authorLabel**, as shown below.
 
-  `<``Alloy``>`
+    `<``Alloy``>`
 
-  `<``Window`  `class``=``"container"``>`
+    `<``Window`  `class``=``"container"``>`
 
-  `<``Label`  `id``=``"titleLabel"``></``Label``>`
+    `<``Label`  `id``=``"titleLabel"``></``Label``>`
 
-  `<``Label`  `id``=``"authorLabel"``></``Label``>`
+    `<``Label`  `id``=``"authorLabel"``></``Label``>`
 
-  `</``Window``>`
+    `</``Window``>`
 
-  `</``Alloy``>`
+    `</``Alloy``>`
 
 6. Open **styles/bookdetails.tss** and a background color for iOS to the .container rule:
 
-  `".container[platform=ios]"` `: {`
+    `".container[platform=ios]"` `: {`
 
-  `backgroundColor:` `'white'`
+    `backgroundColor:` `'white'`
 
-  `}`
-
+    `}`
 
 Next we’ll add an event handler to the <TableView> that opens this new window and displays the book's information.
 
@@ -333,60 +323,59 @@ To respond to user selection, you add an onClick attribute to the <TableView> el
 
 2. Add an **onClick** attribute to the <TableView> element and set its value to **showBook** .
 
-  `<TableViewRow title=``"{title}"` `author=``"{author}"` `onClick=``"showBook"``></TableViewRow>`
+    `<TableViewRow title=``"{title}"` `author=``"{author}"` `onClick=``"showBook"``></TableViewRow>`
 
 3. Open **controllers/index.js** and add a function named **showBook()** that takes a single argument called **event** . This is the event object passed to the function that contains information about the selected item.
 
-  `function` `showBook (event) {`
+    `function` `showBook (event) {`
 
-  `}`
+    `}`
 
 4. First, let’s add code to extract the title and author of the selected book from the event.source object.
 
-  `function` `showBook(event) {`
+    `function` `showBook(event) {`
 
-  `var` `selectedBook = event.source;`
+    `var` `selectedBook = event.source;`
 
-  `var` `args = {`
+    `var` `args = {`
 
-  `title: selectedBook.title,`
+    `title: selectedBook.title,`
 
-  `author: selectedBook.author`
+    `author: selectedBook.author`
 
-  `};`
+    `};`
 
-  `}`
+    `}`
 
 5. Lastly, we create a new instance of the Alloy bookdetails controller, passing it the args object containing the title and author data, and open the view.
 
-  `function` `showBook(event) {`
+    `function` `showBook(event) {`
 
-  `var` `selectedBook = event.source;`
+    `var` `selectedBook = event.source;`
 
-  `var` `args = {`
+    `var` `args = {`
 
-  `title: selectedBook.title,`
+    `title: selectedBook.title,`
 
-  `author: selectedBook.author`
+    `author: selectedBook.author`
 
-  `};`
+    `};`
 
-  `var` `bookview = Alloy.createController(``"bookdetails"``, args).getView();`
+    `var` `bookview = Alloy.createController(``"bookdetails"``, args).getView();`
 
-  `bookview.open();`
+    `bookview.open();`
 
-  `}`
+    `}`
 
 6. Lastly, we need to update **bookdetails.js** to display the title and author values passed to the createController() method, or display a default title and author if none were provided:
 
-  `var` `args = arguments[0] || {};`
+    `var` `args = arguments[0] || {};`
 
-  `$.titleLabel.text = args.title ||` `'Default Title'``;`
+    `$.titleLabel.text = args.title ||` `'Default Title'``;`
 
-  `$.authorLabel.text = args.author ||` `'Default author'``;`
+    `$.authorLabel.text = args.author ||` `'Default author'``;`
 
 7. Save your changes.
-
 
 Launch the app in the iPhone simulator or Android emulator. Select a book from the list to open the detail screen. You should see something like the following:
 
@@ -396,66 +385,65 @@ Clearly, this isn’t what we want – the two labels are occupying at the same 
 
 ### Modify the book detail layout
 
-Titanium supports three [layout modes](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Layouts_Positioning_and_the_View_Hierarchy/#Layoutmodes): composite (or absolute), vertical, and horizontal. In composite mode, you specify a child view's coordinates on a grid relative to its parent container's top/left or bottom/right corner. If not specified, a child view is centered on the display. In this section you'll apply a vertical layout to the book details view, and then tweak the style.
+Titanium supports three [layout modes](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Layouts_Positioning_and_the_View_Hierarchy/#layout-modes): composite (or absolute), vertical, and horizontal. In composite mode, you specify a child view's coordinates on a grid relative to its parent container's top/left or bottom/right corner. If not specified, a child view is centered on the display. In this section you'll apply a vertical layout to the book details view, and then tweak the style.
 
 1. Open **views/bookdetails.xml**.
 
 2. Wrap the two <Label> elements within a <View> element, as shown below.
 
-  `<View>`
+    `<View>`
 
-  `<Label id=``"titleLabel"``></Label>`
+    `<Label id=``"titleLabel"``></Label>`
 
-  `<Label id=``"authorLabel"``></Label>`
+    `<Label id=``"authorLabel"``></Label>`
 
-  `</View>`
+    `</View>`
 
 3. Add a **layout** attribute to the <View> element and set its value to **vertical** .
 
-  `<View layout=``'vertical'``>`
+    `<View layout=``'vertical'``>`
 
-  `<Label id=``"titleLabel"``></Label>`
+    `<Label id=``"titleLabel"``></Label>`
 
-  `<Label id=``"authorLabel"``></Label>`
+    `<Label id=``"authorLabel"``></Label>`
 
-  `</View>`
+    `</View>`
 
 4. Open **styles/bookdetails.tss** and add the following style rules to align the labels along the left side of the screen, and to set their font sizes. We also add some padding between the two labels by 10.
 
-  `"#titleLabel"``: {`
+    `"#titleLabel"``: {`
 
-  `font``: {`
+    `font``: {`
 
-  `fontSize:` `'30'`
+    `fontSize:` `'30'`
 
-  `},`
+    `},`
 
-  `left``:` `'10'`
+    `left``:` `'10'`
 
-  `},`
+    `},`
 
-  `"#authorLabel"``: {`
+    `"#authorLabel"``: {`
 
-  `font``: {`
+    `font``: {`
 
-  `fontSize:` `'20'`
+    `fontSize:` `'20'`
 
-  `},`
+    `},`
 
-  `left``:` `'10'`
+    `left``:` `'10'`
 
-  `}`
+    `}`
 
 5. Also, we want to ensure that the labels aren't overlapped by the app's name and that the background of the main view doesn't use a white background with white text by adding the following to **styles/index.tss**:
 
-  `".container[platform=android]"` `: {`
+    `".container[platform=android]"` `: {`
 
-  `backgroundColor:``"black"``,`
+    `backgroundColor:``"black"``,`
 
-  `top``:` `'100'`
+    `top``:` `'100'`
 
-  `}`
-
+    `}`
 
 Save your changes and build again for iPhone or Android. The title and author should now be positioned vertically within the view, and aligned to the left side of the screen. To get back to the original table, you can click the **Back** button on Android.
 
@@ -483,69 +471,66 @@ In this case we’ll increase the font size used by each <TableViewRow> element,
 
 1. Open **views/index.tss** and add the following style rule to the end of the document:
 
-  `"TableViewRow[platform=android]"``: {`
+    `"TableViewRow[platform=android]"``: {`
 
-  `font``: {`
+    `font``: {`
 
-  `fontSize:` `'24'`
+    `fontSize:` `'24'`
 
-  `},`
+    `},`
 
-  `height``:` `'40'`
+    `height``:` `'40'`
 
-  `}`
+    `}`
 
 2. Save your changes and build the application for Android. The TableView should look like the following screenshot:
 
-  ![tableview-android](/Images/appc/download/attachments/37541502/tableview-android.png)
-
+    ![tableview-android](/Images/appc/download/attachments/37541502/tableview-android.png)
 
 ## Add a NavigationWindow
 
 Unlike Android, iOS devices do not provide a physical back button for navigation. The [NavigationWindow](#!/api/Titanium.UI.iOS.NavigationWindow) is an UI control that provides an easy way to display and navigate hierarchical content. (In native iOS terms, the control is an implementation of the iOS [navigation controller interface](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/NavigationControllers.html).) On Android, you get this type of navigation for "free". The NavigationWindow will wrap the original <Window> element and provide a title bar above the <TableView> control, solving this layout issue.
 
-To do this we'll take advantage of an Alloy feature called [platform-specific resources](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Concepts/#Platform-specificresources) that lets you define platform-specific view, controller, and style files. At build time, only those resources specific to the target platform are included. There are two parts to this:
+To do this we'll take advantage of an Alloy feature called [platform-specific resources](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Concepts/#platform-specific-resources) that lets you define platform-specific view, controller, and style files. At build time, only those resources specific to the target platform are included. There are two parts to this:
 
 * Creating a new iOS-specific entry point (a new version of index.xml) that includes the NavigationWindow element
 
-* Updating the controller code to handle the difference between the iOS and Android implementations. In this case we'll use [platform-conditional code](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#Conditionalcode) to handle the cross-platform code differences.
-
+* Updating the controller code to handle the difference between the iOS and Android implementations. In this case we'll use [platform-conditional code](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#conditional-code) to handle the cross-platform code differences.
 
 **To create the iOS-specific view with a NavigationController:**
 
 1. In Project Explorer, create a new folder named **ios** in the app/views folder. Right-click on the FaveBooks project in the Project Explorer and select **New** > **Folder**. The New Folder wizard will allow you to navigate the project directories, select the parent folder, and name the new folder. Once you've done this, click **Finish**.
 
 2. Create a new file named **index.xml** in the new folder.
-  ![ios-view](/Images/appc/download/attachments/37541502/ios-view.png)
+    ![ios-view](/Images/appc/download/attachments/37541502/ios-view.png)
 
 3. Copy the contents of **views/index.xml** to **views/ios/index.xml** .
 
 4. Wrap the existing <Window> element with a **<NavigationWindow>** element:
 
-  `<``Alloy``>`
+    `<``Alloy``>`
 
-  `<``Collection`  `src``=``"books"``/>`
+    `<``Collection`  `src``=``"books"``/>`
 
-  `<``NavigationWindow``>`
+    `<``NavigationWindow``>`
 
-  `<``Window`  `class``=``"container"`  `title``=``"My Books"``>`
+    `<``Window`  `class``=``"container"`  `title``=``"My Books"``>`
 
-  `<``TableView`  `dataCollection``=``"books"`  `id``=``"bookTable"``>`
+    `<``TableView`  `dataCollection``=``"books"`  `id``=``"bookTable"``>`
 
-  `<``TableViewRow`  `title``=``"{title}"`  `author``=``"{author}"`  `onClick``=``"showBook"``></``TableViewRow``>`
+    `<``TableViewRow`  `title``=``"{title}"`  `author``=``"{author}"`  `onClick``=``"showBook"``></``TableViewRow``>`
 
-  `</``TableView``>`
+    `</``TableView``>`
 
-  `</``Window``>`
+    `</``Window``>`
 
-  `</``NavigationWindow``>`
+    `</``NavigationWindow``>`
 
-  `</``Alloy``>`
+    `</``Alloy``>`
 
 5. Save your changes.
 
-
-The NavigationWindow control has a different API than Window, so our code now needs to account for those differences. We could create a platform specific controller folder for iOS (controllers/ios/index.js), but the code differences are small enough that we’ll use [platform-conditional code](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#Conditionalcode) to include the proper code for each platform.
+The NavigationWindow control has a different API than Window, so our code now needs to account for those differences. We could create a platform specific controller folder for iOS (controllers/ios/index.js), but the code differences are small enough that we’ll use [platform-conditional code](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#conditional-code) to include the proper code for each platform.
 
 **To update the controller code for platform differences:**
 
@@ -553,38 +538,37 @@ The NavigationWindow control has a different API than Window, so our code now ne
 
 2. Modify the showBook() method to account for the platform differences when opening the details view. On iOS, you now need to open the book details view using the NavigationWindow object's openWindow() method:
 
-  `function` `showBook(event) {`
+    `function` `showBook(event) {`
 
-  `var` `selectedBook = event.source;`
+    `var` `selectedBook = event.source;`
 
-  `var` `args = {`
+    `var` `args = {`
 
-  `title: selectedBook.title,`
+    `title: selectedBook.title,`
 
-  `author: selectedBook.author`
+    `author: selectedBook.author`
 
-  `};`
+    `};`
 
-  `var` `bookview = Alloy.createController(``"bookdetails"``, args).getView();`
+    `var` `bookview = Alloy.createController(``"bookdetails"``, args).getView();`
 
-  `if` `(OS_IOS) {`
+    `if` `(OS_IOS) {`
 
-  `$.index.openWindow(bookview);`
+    `$.index.openWindow(bookview);`
 
-  `}`
+    `}`
 
-  `if` `(OS_ANDROID) {`
+    `if` `(OS_ANDROID) {`
 
-  `bookview.open();`
+    `bookview.open();`
 
-  `}`
+    `}`
 
-  `}`
+    `}`
 
-  As you can see, in the iOS case the handler now opens the window inside the NavigationGroup; the Android code branch uses the same code to open the window (addview.open()).
+    As you can see, in the iOS case the handler now opens the window inside the NavigationGroup; the Android code branch uses the same code to open the window (addview.open()).
 
 3. Save your changes and test again on an iPhone device or simulator.
-
 
 The first screen should now display the TableView within the NavigationWindow.
 
@@ -604,114 +588,113 @@ The UI will contain two input text fields where the user enters the book title a
 
 3. Open **views/addbook.xml** and add the following markup:
 
-  `<``Alloy``>`
+    `<``Alloy``>`
 
-  `<``Window`  `class``=``"container"``>`
+    `<``Window`  `class``=``"container"``>`
 
-  `<``View`  `layout``=``"vertical"``>`
+    `<``View`  `layout``=``"vertical"``>`
 
-  `<``TextField`  `id``=``"titleInput"`  `hintText``=``"Title..."``></``TextField``>`
+    `<``TextField`  `id``=``"titleInput"`  `hintText``=``"Title..."``></``TextField``>`
 
-  `<``TextField`  `id``=``"authorInput"`  `hintText``=``"Author..."``></``TextField``>`
+    `<``TextField`  `id``=``"authorInput"`  `hintText``=``"Author..."``></``TextField``>`
 
-  `<``Button`  `id``=``"insertBookButton"`  `onClick``=``"addBook"``>Add</``Button``>`
+    `<``Button`  `id``=``"insertBookButton"`  `onClick``=``"addBook"``>Add</``Button``>`
 
-  `</``View``>`
+    `</``View``>`
 
-  `</``Window``>`
+    `</``Window``>`
 
-  `</``Alloy``>`
+    `</``Alloy``>`
 
-  This creates input text fields where the user will enter the book title and author, and a button to add the new book to the collection. The button’s onClick handler will call the insertBook() function, which you’ll create next.
+    This creates input text fields where the user will enter the book title and author, and a button to add the new book to the collection. The button’s onClick handler will call the insertBook() function, which you’ll create next.
 
 4. Open **styles/addbook.tss** and add the following styling:
 
-  `".container[platform=ios]"` `: {`
+    `".container[platform=ios]"` `: {`
 
-  `backgroundColor:` `'white'`
+    `backgroundColor:` `'white'`
 
-  `}`
+    `}`
 
-  `"TextField"` `: {`
+    `"TextField"` `: {`
 
-  `borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,`
+    `borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,`
 
-  `top``:` `10``,`
+    `top``:` `10``,`
 
-  `left``:` `20``,`
+    `left``:` `20``,`
 
-  `right``:` `20``,`
+    `right``:` `20``,`
 
-  `height``:` `40`
+    `height``:` `40`
 
-  `}`
+    `}`
 
 5. Open **controllers/addbook.js**, remove the existing code in that file and add the following:
 
-  `var` `myBooks = Alloy.Collections.books;`
+    `var` `myBooks = Alloy.Collections.books;`
 
 6. Define a new function named addBook() with the following code:
 
-  `function` `addBook() {`
+    `function` `addBook() {`
 
-  `var` `book = Alloy.createModel(``'books'``, {`
+    `var` `book = Alloy.createModel(``'books'``, {`
 
-  `title : $.titleInput.value,`
+    `title : $.titleInput.value,`
 
-  `author : $.authorInput.value`
+    `author : $.authorInput.value`
 
-  `});`
+    `});`
 
-  `myBooks.add(book);`
+    `myBooks.add(book);`
 
-  `book.save();`
+    `book.save();`
 
-  `$.addbook.close();` `// Close the window`
+    `$.addbook.close();` `// Close the window`
 
-  `}`
+    `}`
 
 7. For iOS, open **views/ios/index.xml** and insert a **<Toolbar>** inside the <Window> element below the <TableView> element:
 
-  `<``Toolbar`  `bottom``=``"0"``>`
+    `<``Toolbar`  `bottom``=``"0"``>`
 
-  `<``Items``>`
+    `<``Items``>`
 
-  `<``Button`  `id``=``"add"`  `title``=``"Add book"`  `onClick``=``"addBook"``/>`
+    `<``Button`  `id``=``"add"`  `title``=``"Add book"`  `onClick``=``"addBook"``/>`
 
-  `</``Items``>`
+    `</``Items``>`
 
-  `</``Toolbar``>`
+    `</``Toolbar``>`
 
 8. For Android, open **views/index.xml** and add the following **<Menu>** and **<MenuItem>** elements below the <TableView> element. Note: we cannot add specific node text to the menu item. Instead, we'll use attributes of **<MenuItem>** element to accomplish this:
 
-  `<``Menu`  `id``=``"menu"`  `platform``=``"android"``>`
+    `<``Menu`  `id``=``"menu"`  `platform``=``"android"``>`
 
-  `<``MenuItem`  `id``=``"addBook"`  `title``=``"Add book"`  `onClick``=``"addBook"`  `showAsAction``=``"Ti.Android.SHOW_AS_ACTION_IF_ROOM"` `/>`
+    `<``MenuItem`  `id``=``"addBook"`  `title``=``"Add book"`  `onClick``=``"addBook"`  `showAsAction``=``"Ti.Android.SHOW_AS_ACTION_IF_ROOM"` `/>`
 
-  `</``Menu``>`
+    `</``Menu``>`
 
 9. Open **controllers/index.js** and add the following code to open the addbook controller when the appropriate native control is used. For Android, depending on the device, the **Add** button can either be accessed from the Action Bar at the top of the display or by using the Menu button. For iOS, use the toolbar at the bottom of the screen.
 
-  `function` `addBook(){`
+    `function` `addBook(){`
 
-  `var` `myAddBook = Alloy.createController(``"addbook"``,{}).getView();`
+    `var` `myAddBook = Alloy.createController(``"addbook"``,{}).getView();`
 
-  `if` `(OS_IOS) {`
+    `if` `(OS_IOS) {`
 
-  `$.index.openWindow(myAddBook);`
+    `$.index.openWindow(myAddBook);`
 
-  `}`
+    `}`
 
-  `if` `(OS_ANDROID) {`
+    `if` `(OS_ANDROID) {`
 
-  `myAddBook.open();`
+    `myAddBook.open();`
 
-  `}`
+    `}`
 
-  `}`
+    `}`
 
 10. Save your changes and test on a device or emulator.
-
 
 You should now be able to click 'Add' and add new books to the collection which persist between sessions.
 

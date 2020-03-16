@@ -1,29 +1,28 @@
 {"title":"Titanium SDK 8.1.1.GA - 29 August 2019","weight":"10"}
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [Community credits](#Communitycredits)
+* [Community credits](#community-credits)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-  * [Android](#Android)
+    * [Android](#android)
 
-  * [iOS](#iOS)
+    * [iOS](#ios)
 
-  * [Windows](#Windows)
+    * [Windows](#windows)
 
-  * [Multiple platforms](#Multipleplatforms)
+    * [Multiple platforms](#multiple-platforms)
 
-* [Improvements](#Improvements)
+* [Improvements](#improvements)
 
-* [API changes](#APIchanges)
-
+* [API changes](#api-changes)
 
 ## About this release
 
 Titanium SDK 8.1.1 is a patch release of the SDK, addressing high-priority issues from previous releases.
 
-As of this GA release, the previous Titanium SDK patch release is no longer supported. End of support for this version will be 2019-02-29 or until the next patch release. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous Titanium SDK patch release is no longer supported. End of support for this version will be 2019-02-29 or until the next patch release. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. Node 10.13.0 will be the new minimum supported version with SDK 9.0.0.
 
@@ -36,7 +35,6 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 * Francisco Antonio Duran Ramirez - [TIMOB-27261](https://jira.appcelerator.org/browse/TIMOB-27261)
 
 * Yahya Uddin - [TIMOB-27266](https://jira.appcelerator.org/browse/TIMOB-27266)
-
 
 ## Fixed issues
 
@@ -58,7 +56,6 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 * [TIMOB-27328](https://jira.appcelerator.org/browse/TIMOB-27328) \- Android: Splash screen open animation sometimes stutters on cold start
 
-
 ### iOS
 
 * [TIMOB-27097](https://jira.appcelerator.org/browse/TIMOB-27097) - iOS: Incremental builds fail to install app when using dynamic frameworks
@@ -71,23 +68,19 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 * [TIMOB-27342](https://jira.appcelerator.org/browse/TIMOB-27342) - iOS regression: Console.warn/error don't log all parameters
 
-
 ### Windows
 
 * [TIMOB-27266](https://jira.appcelerator.org/browse/TIMOB-27266) - Titanium "Failed to encrypt JavaScript files" error on >=8.0.1.GA on Windows when using 32 bit java
-
 
 ### Multiple platforms
 
 * [TIMOB-27352](https://jira.appcelerator.org/browse/TIMOB-27352) - Analytics: Improve event batching
 
-
 ## Improvements
 
 * [TIMOB-27249](https://jira.appcelerator.org/browse/TIMOB-27249) - Android: OptionDialog without radio buttons should not auto-set "selectedIndex" property after clicking option
 
-  * Added feature that prevents a dialog to be displayed with the wrong type of buttons if reused
-
+    * Added feature that prevents a dialog to be displayed with the wrong type of buttons if reused
 
 ## API changes
 

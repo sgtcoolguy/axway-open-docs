@@ -10,7 +10,6 @@ Dashboard 4.2.1 is a patch release, which includes some behavior changes and bug
 
 * When you click on the service URL in the Arrow application Overview page, the service will open in a new browser window. Previously, the service would open in the same window as Dashboard.
 
-
 ## Fixed Issues
 
 * Fixed an issue where it took longer than expected to switch between organizations

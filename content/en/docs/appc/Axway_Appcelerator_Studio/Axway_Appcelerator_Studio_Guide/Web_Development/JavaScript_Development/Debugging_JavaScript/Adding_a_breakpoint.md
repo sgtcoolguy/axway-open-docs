@@ -1,15 +1,14 @@
 {"title":"Adding a breakpoint","weight":"30"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Instructions](#Instructions)
+* [Instructions](#instructions)
 
-  * [Manually adding a breakpoint to your code](#Manuallyaddingabreakpointtoyourcode)
+    * [Manually adding a breakpoint to your code](#manually-adding-a-breakpoint-to-your-code)
 
-  * [Adding an exception breakpoint to your code](#Addinganexceptionbreakpointtoyourcode)
+    * [Adding an exception breakpoint to your code](#adding-an-exception-breakpoint-to-your-code)
 
-* [Related Topics](#RelatedTopics)
-
+* [Related Topics](#related-topics)
 
 ## Introduction
 
@@ -27,19 +26,18 @@ To manually add a breakpoint to your JavaScript code:
 
 2. Suspend the current JavaScript thread.
 
-  1. In the Debug View, select the thread that you want to suspend.
+    1. In the Debug View, select the thread that you want to suspend.
 
-  2. Click the **Suspend** button ![IconSuspend](/Images/appc/download/attachments/30083107/IconSuspend.png) to suspend the JavaScript code on the first executed line. While the thread is suspended, your web browser user interface will be completely disabled.
+    2. Click the **Suspend** button ![IconSuspend](/Images/appc/download/attachments/30083107/IconSuspend.png) to suspend the JavaScript code on the first executed line. While the thread is suspended, your web browser user interface will be completely disabled.
 
 3. Add a breakpoint to your code.
 
-  1. In the Editor or Outline View, navigate to the point in your code where you want to add a breakpoint.
+    1. In the Editor or Outline View, navigate to the point in your code where you want to add a breakpoint.
 
-  2. In the gray left margin of the Editor, double-click or right-click and select **Toggle Breakpoint** from the context menu (shown below).
+    2. In the gray left margin of the Editor, double-click or right-click and select **Toggle Breakpoint** from the context menu (shown below).
 
-    ![ToggleBreakpoint](/Images/appc/download/attachments/30083107/ToggleBreakpoint.png)
+        ![ToggleBreakpoint](/Images/appc/download/attachments/30083107/ToggleBreakpoint.png)
 4. Click the Resume button ![IconResume](/Images/appc/download/attachments/30083107/IconResume.png) to resume the execution of your code. Your code will be suspended again when execution hits the breakpoint that you set up.
-
 
 ### Adding an exception breakpoint to your code
 
@@ -52,7 +50,6 @@ To add a breakpoint to your code so that execution automatically breaks on a cer
 3. On the **Add JavaScript Exception Breakpoint** pop-up window, select the type of exception that you would like to break on.
 
 4. Run the debugger (see [Running the debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Running_the_debugger/)) to debug your code.
-
 
 ## Related Topics
 

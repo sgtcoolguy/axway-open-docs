@@ -1,19 +1,18 @@
 {"title":"Modifying your shortcut keys","weight":"60"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Instructions (Eclipse-based Commands)](#Instructions(Eclipse-basedCommands))
+* [Instructions (Eclipse-based Commands)](#instructions-eclipse-based-commands)
 
-  * [Modifying your key settings](#Modifyingyourkeysettings)
+    * [Modifying your key settings](#modifying-your-key-settings)
 
-  * [Exporting and importing your keybindings](#Exportingandimportingyourkeybindings)
+    * [Exporting and importing your keybindings](#exporting-and-importing-your-keybindings)
 
-* [Instructions (Ruble-based Commands)](#Instructions(Ruble-basedCommands))
+* [Instructions (Ruble-based Commands)](#instructions-ruble-based-commands)
 
-  * [Modifying the Built-In Bundles](#ModifyingtheBuilt-InBundles)
+    * [Modifying the Built-In Bundles](#modifying-the-built-in-bundles)
 
-  * [Example](#Example)
-
+    * [Example](#example)
 
 ## Overview
 
@@ -33,19 +32,18 @@ To modify your key settings:
 
 2. On the Preferences tree on the left, expand **General > Keys** to change your key settings (shown below):
 
-  ![Key_window_3](/Images/appc/download/attachments/30083211/Key_window_3.jpg)
+    ![Key_window_3](/Images/appc/download/attachments/30083211/Key_window_3.jpg)
 3. In the **Keys** window, select the Command or Binding that you want to modify, which auto-populates the existing key setting for you in the **Name** and **Binding** fields (shown below).
 
-  ![Keys_2](/Images/appc/download/attachments/30083211/Keys_2.jpg)
+    ![Keys_2](/Images/appc/download/attachments/30083211/Keys_2.jpg)
 4. In the **Binding** field, you can re-map the key sequence. For example, you can change the current **Ctrl+F6** shortcut, which tabs to the next open Editor tab, to **Ctrl+tab**.
 
-  1. In the **Binding** field, place your cursor on the current key setting (for example, **Ctrl+F6**), and press the backspace key to delete the old shortcut.
+    1. In the **Binding** field, place your cursor on the current key setting (for example, **Ctrl+F6**), and press the backspace key to delete the old shortcut.
 
-  2. Type the key sequence for the new shortcut (for example, **Ctrl+tab**) to create the new shortcut.
+    2. Type the key sequence for the new shortcut (for example, **Ctrl+tab**) to create the new shortcut.
 
 5. Click the **OK** button to apply and save your changes.
-  Aptana retains the new key mappings that you set.
-
+    Aptana retains the new key mappings that you set.
 
 ### Exporting and importing your keybindings
 
@@ -64,8 +62,7 @@ To export your keybindings:
 5. To the right of the **To preference file** field, click the **Browse** button to browse to the location where you want to save the preferences file for your keybindings.
 
 6. Click the **Finish** button.
-  Aptana saves your keybindings as an .epf file.
-
+    Aptana saves your keybindings as an .epf file.
 
 If you want to import keybindings, you will need to import an .epf file. This can be a file that you created using the "export" instructions, or a file that someone else created for key preferences.
 
@@ -80,8 +77,7 @@ To import keybindings:
 4. On the **Preferences** list, check the box next to **Key Preferences**. (This will automatically choose the **Choose specific preferences to import** option for you.)
 
 5. Click the **Finish** button.
-  Aptana imports the keybindings from the preference file that you specified.
-
+    Aptana imports the keybindings from the preference file that you specified.
 
 ## Instructions (Ruble-based Commands)
 
@@ -99,7 +95,6 @@ Rubles do not currently allow associated key commands to be changed using the re
 
 5. Restart Studio. Your new key bindings should be in effect.
 
-
 ### Example
 
 As an example, we modify the keys for commenting code:
@@ -108,15 +103,15 @@ As an example, we modify the keys for commenting code:
 
 2. Open the file Source / commands / toggle\_comment.rb.
 
-  `command` `'Comment Line / Selection'`  `do` `| cmd |`
+    `command` `'Comment Line / Selection'`  `do` `| cmd |`
 
-  `cmd.key_binding =` `'M1+K'`
+    `cmd.key_binding =` `'M1+K'`
 
-  `cmd.output = :insert_as_snippet`
+    `cmd.output = :insert_as_snippet`
 
-  `cmd.input = :selection, :line`
+    `cmd.input = :selection, :line`
 
-  `...`
+    `...`
 
 3. Edit the key\_bindings property to use the new key command.
 

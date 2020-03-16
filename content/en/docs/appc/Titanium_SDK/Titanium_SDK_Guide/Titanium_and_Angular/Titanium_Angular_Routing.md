@@ -1,13 +1,12 @@
 {"title":"Titanium Angular Routing","weight":"30"}
 
-* [Setting up routing](#Settinguprouting)
+* [Setting up routing](#setting-up-routing)
 
-* [Adding another component](#Addinganothercomponent)
+* [Adding another component](#adding-another-component)
 
-* [Appendix](#Appendix)
+* [Appendix](#appendix)
 
-  * [Additional information on routing](#Additionalinformationonrouting)
-
+    * [Additional information on routing](#additional-information-on-routing)
 
 Up to this point most of the Angular concepts are the same as in a normal Angular web application. This makes it possible to share a great part of you application logic within Angular regardless of whether your develop for the web or Titanium apps.
 

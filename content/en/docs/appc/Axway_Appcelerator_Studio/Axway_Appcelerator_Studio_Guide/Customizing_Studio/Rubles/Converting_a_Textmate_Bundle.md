@@ -1,23 +1,22 @@
 {"title":"Converting a Textmate Bundle","weight":"30"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Performing the conversion](#Performingtheconversion)
+* [Performing the conversion](#performing-the-conversion)
 
-  * [Not currently supported or converted](#Notcurrentlysupportedorconverted)
+    * [Not currently supported or converted](#not-currently-supported-or-converted)
 
-* [Debugging](#Debugging)
+* [Debugging](#debugging)
 
-* [Converting commands](#Convertingcommands)
+* [Converting commands](#converting-commands)
 
-* [Converting file associations](#Convertingfileassociations)
+* [Converting file associations](#converting-file-associations)
 
-* [Converting snippets](#Convertingsnippets)
+* [Converting snippets](#converting-snippets)
 
-* [Converting templates](#Convertingtemplates)
+* [Converting templates](#converting-templates)
 
-* [Associating new file extensions with an existing editor](#Associatingnewfileextensionswithanexistingeditor)
-
+* [Associating new file extensions with an existing editor](#associating-new-file-extensions-with-an-existing-editor)
 
 ## Overview
 
@@ -30,8 +29,7 @@ Studio allows the user to convert an existing Textmate bundle into a Ruble. The 
 2. Open Studio and select **Commands > Bundle Development > Convert Textmate Bundle.**
 
 3. Navigate to the bundle you downloaded above. Click "Open".
-  _The bundle is converted to a ruble project and opened in your workspace._
-
+    _The bundle is converted to a ruble project and opened in your workspace._
 
 This creates a default Ruble structure, moving some core elements into a bundle.rb file (including the menu definitions), and snippets and commands into their folders.
 
@@ -46,7 +44,6 @@ This creates a default Ruble structure, moving some core elements into a bundle.
 * Preferences
 
 * Templates
-
 
 ## Debugging
 
@@ -260,32 +257,31 @@ See [here](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/
 
 3. paste in the following content to id.title.txaml:
 
-  `<txp:anc_hide>${TM_NEW_FILE_BASENAME}.txaml</txp:anc_hide>`
+    `<txp:anc_hide>${TM_NEW_FILE_BASENAME}.txaml</txp:anc_hide>`
 
-  `<txp:anc_hide>Created by ${USER} on ${TM_DATE}.Copyright (c) ${TM_YEAR} ${TM_ORGANIZATION_NAME}. All rights reserved.</txp:anc_hide>`
+    `<txp:anc_hide>Created by ${USER} on ${TM_DATE}.Copyright (c) ${TM_YEAR} ${TM_ORGANIZATION_NAME}. All rights reserved.</txp:anc_hide>`
 
 4. Add the following to the bottom of your bundle.rb file, before the last "end":
 
-  `template` `"ID.Title Template"`  `do` `|t|`
+    `template` `"ID.Title Template"`  `do` `|t|`
 
-  `t.filetype =` `"*.txaml"`
+    `t.filetype =` `"*.txaml"`
 
-  `t.invoke` `do` `|context|`
+    `t.invoke` `do` `|context|`
 
-  `ENV[``'TM_YEAR'``] = Time.now.strftime(``"%Y"``)`
+    `ENV[``'TM_YEAR'``] = Time.now.strftime(``"%Y"``)`
 
-  `ENV[``'TM_DATE'``] = Time.now.strftime(``"%Y-%m-%d"``)`
+    `ENV[``'TM_DATE'``] = Time.now.strftime(``"%Y-%m-%d"``)`
 
-  `raw_contents = IO.read(``"#{File.dirname(ENV['TM_BUNDLE_SUPPORT'])}/templates/id.title.txaml"``)`
+    `raw_contents = IO.read(``"#{File.dirname(ENV['TM_BUNDLE_SUPPORT'])}/templates/id.title.txaml"``)`
 
-  `raw_contents.gsub(/\$\{([^}]*)\}/) {|match| ENV[match[``2``..-``2``]] }`
+    `raw_contents.gsub(/\$\{([^}]*)\}/) {|match| ENV[match[``2``..-``2``]] }`
 
-  `end`
+    `end`
 
-  `end`
+    `end`
 
 5. Save bundle.rb.
-
 
 If you now choose File > New From Template > Bundle Name > ID.Title Template, it will allow you to create a new template of the type specified above.
 

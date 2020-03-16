@@ -2,30 +2,29 @@
 
 This document provides information on how to build Titanium SDK from source files by listing software requirements, how to set up your environment, where to get the source files, building the SDK, how to install a build SDK, and speeding up the Titanium SDK build.
 
-* [Software Requirements](#SoftwareRequirements)
+* [Software Requirements](#software-requirements)
 
-  * [Windows Notes](#WindowsNotes)
+    * [Windows Notes](#windows-notes)
 
-* [Setting Up Your Environment](#SettingUpYourEnvironment)
+* [Setting Up Your Environment](#setting-up-your-environment)
 
-* [Getting the Source](#GettingtheSource)
+* [Getting the Source](#getting-the-source)
 
-  * [Checking Out a Pull Request Locally](#CheckingOutaPullRequestLocally)
+    * [Checking Out a Pull Request Locally](#checking-out-a-pull-request-locally)
 
-* [Build the SDK](#BuildtheSDK)
+* [Build the SDK](#build-the-sdk)
 
-* [Installing a Built SDK](#InstallingaBuiltSDK)
+* [Installing a Built SDK](#installing-a-built-sdk)
 
-  * [To Install the SDK Using Studio](#ToInstalltheSDKUsingStudio)
+    * [To Install the SDK Using Studio](#to-install-the-sdk-using-studio)
 
-  * [To Install the SDK Manually](#ToInstalltheSDKManually)
+    * [To Install the SDK Manually](#to-install-the-sdk-manually)
 
-* [Speeding Up the Titanium SDK Build](#SpeedingUptheTitaniumSDKBuild)
+* [Speeding Up the Titanium SDK Build](#speeding-up-the-titanium-sdk-build)
 
-  * [Use ccache](#Useccache)
+    * [Use ccache](#use-ccache)
 
-  * [Parallelize Compiling](#ParallelizeCompiling)
-
+    * [Parallelize Compiling](#parallelize-compiling)
 
 ## Software Requirements
 
@@ -41,7 +40,6 @@ The following software is required for building Titanium applications, and you p
 
 * [Node.js](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Node/) (8.x LTS+)
 
-
 The following additional software is required for building the Titanium SDK:
 
 * [Git](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Git/)
@@ -49,7 +47,6 @@ The following additional software is required for building the Titanium SDK:
 * [Android NDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_the_Android_NDK/)
 
 * [Visual C++ 2010 Express](http://www.microsoft.com/visualstudio/eng/downloads#d-2010-express) (for Windows)
-
 
 Many of these items you may already have installed for developing Titanium applications.
 
@@ -65,21 +62,11 @@ For Windows, if you use Studio, you may need to reinstall some of the tools, suc
 
 The following environment variables must be set in order to build the SDK from source.
 
-Varible
-
-Value
-
-ANDROID\_SDK
-
-Android SDK directory, for example, /opt/android-sdk
-
-ANDROID\_NDK
-
-Android NDK directory, for example, /opt/android-ndk
-
-JAVA\_HOME
-
-Oracle JDK directory, for example, C:\\Java\\ jdk 1.8.0\_121
+| Varible | Value |
+| --- | --- |
+| ANDROID\_SDK | Android SDK directory, for example, /opt/android-sdk |
+| ANDROID\_NDK | Android NDK directory, for example, /opt/android-ndk |
+| JAVA\_HOME | Oracle JDK directory, for example, C:\\Java\\ jdk 1.8.0\_121 |
 
 ## Getting the Source
 
@@ -99,34 +86,33 @@ If you want to test a changes that is a pull request on Github, you can add and 
 
 2. Locate the appcelerator/titanum\_mobile repo contents in the file. Note that the remote repo name will be different depending on how you retrieved the appcelerator/titanum\_mobile remote repo. In the example below, it was name "upstream".
 
-  `[remote` `"upstream"``]`
+    `[remote` `"upstream"``]`
 
-  `fetch = +refs/heads/*:refs/remotes/upstream/*`
+    `fetch = +refs/heads/*:refs/remotes/upstream/*`
 
-  `url = https:``//github.com/appcelerator/titanium_mobile.git`
+    `url = https:``//github.com/appcelerator/titanium_mobile.git`
 
 3. Add the following line to the section and replace <remote\_name> with the name of the remote repo:
 
-  `fetch = +refs/pull/*/head:refs/remotes/<remote_name>/pr/*`
+    `fetch = +refs/pull/*/head:refs/remotes/<remote_name>/pr/*`
 
-  In the previous example, the section now looks like:
+    In the previous example, the section now looks like:
 
-  `[remote` `"upstream"``]`
+    `[remote` `"upstream"``]`
 
-  `fetch = +refs/heads``/*:refs/remotes/upstream/*`
+    `fetch = +refs/heads``/*:refs/remotes/upstream/*`
 
-  `url = https://github.com/appcelerator/titanium_mobile.git`
+    `url = https://github.com/appcelerator/titanium_mobile.git`
 
-  `fetch = +refs/pull/*/``head:refs/remotes/upstream/pr/*`
+    `fetch = +refs/pull/*/``head:refs/remotes/upstream/pr/*`
 
 4. Fetch the remote PR branches:
 
-  `git fetch upstream`
+    `git fetch upstream`
 
 5. Checkout the PR you want to test:
 
-  `git checkout pr/####`
-
+    `git checkout pr/####`
 
 **To remove the PR remote branches, run the following command:**
 
@@ -155,7 +141,7 @@ select one of the following options:
 
 ### To Install the SDK Using Studio
 
-Note that if you install an SDK using Studio, it will appear in Studio with the default version number. If you want to rename your custom SDK, see [To Install the SDK Manually](#ToInstalltheSDKManually).
+Note that if you install an SDK using Studio, it will appear in Studio with the default version number. If you want to rename your custom SDK, see [To Install the SDK Manually](#to-install-the-sdk-manually).
 
 1. Click **Help** > **Install Titanium SDK...**.
 
@@ -165,7 +151,6 @@ Note that if you install an SDK using Studio, it will appear in Studio with the 
 
 4. Click **Finish**.
 
-
 ### To Install the SDK Manually
 
 1. Unzip the zip file.
@@ -174,18 +159,15 @@ Note that if you install an SDK using Studio, it will appear in Studio with the 
 
 3. Copy the SDK folder to the folder where your other Titanium SDKs are installed.
 
-
 The default installation folder for SDKs varies by operating system:
 
 * macOS:
 
-  ~/Library/Application Support/Titanium
-
+    ~/Library/Application Support/Titanium
 
 * Windows:
 
-  %ProgramData%\\Titanium
-
+    %ProgramData%\\Titanium
 
 ## Speeding Up the Titanium SDK Build
 
@@ -202,7 +184,6 @@ The Android NDK can use [ccache](http://ccache.samba.org/), a tool for reusing c
 2. Install ccache with the following command: **brew install ccache**
 
 3. Set an environment variable NDK\_CCACHE to point to it. Installed with HomeBrew, the command would be: **export NDK\_CCACHE=/usr/local/bin/ccache**
-
 
 ### Parallelize Compiling
 

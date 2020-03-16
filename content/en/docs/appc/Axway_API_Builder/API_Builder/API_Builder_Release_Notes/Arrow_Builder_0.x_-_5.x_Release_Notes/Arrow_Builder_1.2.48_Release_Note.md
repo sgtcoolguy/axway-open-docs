@@ -18,7 +18,7 @@ Arrow Builder 1.2.48 is a minor release that includes new features, improvements
 
 * Map missing methods, such as a cookie, vary, etc. to the common Express method in the response object.
 
-* Implement a new LDAP plugin for Arrow client authentication. For details, see [Arrow Authentication Schemes: LDAP](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Configuration/Authentication_Schemes/#LDAP).
+* Implement a new LDAP plugin for Arrow client authentication. For details, see [Arrow Authentication Schemes: LDAP](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Configuration/Authentication_Schemes/#ldap).
 
 * Improve support of loading and overriding configuration from the environment. Prefix environment variables with ARROW to override the value from the configuration file. For example, if you have apikey defined in the configuration file, you can override the value with the environment variable ARROW\_APIKEY.
 
@@ -37,7 +37,6 @@ Arrow Builder 1.2.48 is a minor release that includes new features, improvements
 * New guided development flow for creating an Arrow Connector.
 
 * Improved server start time by skipping appc install when possible.
-
 
 ### Fixed Issues
 

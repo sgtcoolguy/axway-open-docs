@@ -1,27 +1,26 @@
 {"title":"Installing Required Python Packages","weight":"30"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Compatibility and download](#Compatibilityanddownload)
+* [Compatibility and download](#compatibility-and-download)
 
-* [Installation](#Installation)
+* [Installation](#installation)
 
-  * [OS X](#OSX)
+    * [OS X](#os-x)
 
-  * [Windows](#Windows)
+    * [Windows](#windows)
 
-* [Using EasyInstall to install packages](#UsingEasyInstalltoinstallpackages)
+* [Using EasyInstall to install packages](#using-easyinstall-to-install-packages)
 
-  * [PyCrypto](#PyCrypto)
+    * [PyCrypto](#pycrypto)
 
-  * [pyOpenSSL](#pyOpenSSL)
+    * [pyOpenSSL](#pyopenssl)
 
-  * [PyYAML](#PyYAML)
+    * [PyYAML](#pyyaml)
 
-  * [Pygments](#Pygments)
+    * [Pygments](#pygments)
 
-  * [Markdown](#Markdown)
-
+    * [Markdown](#markdown)
 
 ## Overview
 
@@ -33,37 +32,11 @@ Python's setuptools can be installed from the following locations:
 
 ![download_05](/Images/appc/download/attachments/29004836/download_05.png)
 
-Operating System
-
-Package Version
-
-Package Architecture Version
-
-Download Location
-
-OS X
-
-Latest version compatible with installed Python version
-
-32-bit and 64-bit
-
-Installed on OS by default
-
-Windows
-
-Latest version compatible with installed Python version
-
-32-bit **only**
-
-[Official setuptools Website](http://pypi.python.org/pypi/setuptools#downloads)
-
-Ubuntu
-
-Latest version compatible with installed Python version
-
-32-bit and 64-bit
-
-Default Repositories
+| Operating System | Package Version | Package Architecture Version | Download Location |
+| --- | --- | --- | --- |
+| OS X | Latest version compatible with installed Python version | 32-bit and 64-bit | Installed on OS by default |
+| Windows | Latest version compatible with installed Python version | 32-bit **only** | [Official setuptools Website](http://pypi.python.org/pypi/setuptools#downloads) |
+| Ubuntu | Latest version compatible with installed Python version | 32-bit and 64-bit | Default Repositories |
 
 ## Installation
 
@@ -71,13 +44,13 @@ Before attempting to install _setuptools_, ensure that you have followed the [In
 
 ### OS X
 
-Note that the typical file system location of this software can be found in the [mac OS Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#macOSSoftwareLocations) section of these guides.
+Note that the typical file system location of this software can be found in the [mac OS Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#macos-software-locations) section of these guides.
 
-OS X ships with _setuptools_ installed by default. Hence, simply follow the steps in the [Using EasyInstall to install packages](#UsingEasyInstalltoinstallpackages) section
+OS X ships with _setuptools_ installed by default. Hence, simply follow the steps in the [Using EasyInstall to install packages](#using-easyinstall-to-install-packages) section
 
 ### Windows
 
-Note that the typical file system location of this software can be found in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) section of these guides.
+Note that the typical file system location of this software can be found in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#windows-software-locations) section of these guides.
 
 To install _setuptools_:
 
@@ -86,7 +59,6 @@ To install _setuptools_:
 * Verify that path/to/easy\_install is in the system PATH, by following the [Software Locations and Environment Variables](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/) guide.
 
 * Follow the steps in the [Using EasyInstall to Install Packages](#UsingEasyInstalltoInstallPackages) section.
-
 
 ## Using EasyInstall to install packages
 

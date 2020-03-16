@@ -1,31 +1,30 @@
 {"title":"Using Titanium Modules","weight":"20"}
 
-* [Finding Modules](#FindingModules)
+* [Finding Modules](#finding-modules)
 
-* [Downloading Modules](#DownloadingModules)
+* [Downloading Modules](#downloading-modules)
 
-  * [Marketplace](#Marketplace)
+    * [Marketplace](#marketplace)
 
-  * [gitTio](#gitTio)
+    * [gitTio](#gittio)
 
-* [Installing Modules](#InstallingModules)
+* [Installing Modules](#installing-modules)
 
-  * [Per-Project Installation](#Per-ProjectInstallation)
+    * [Per-Project Installation](#per-project-installation)
 
-    * [From Studio](#FromStudio)
+        * [From Studio](#from-studio)
 
-    * [Automatic Unzip](#AutomaticUnzip)
+        * [Automatic Unzip](#automatic-unzip)
 
-    * [Manually Unzip](#ManuallyUnzip)
+        * [Manually Unzip](#manually-unzip)
 
-  * [Global Installation](#GlobalInstallation)
+    * [Global Installation](#global-installation)
 
-* [Using Your Module](#UsingYourModule)
+* [Using Your Module](#using-your-module)
 
-  * [Using the tiapp.xml Editor](#Usingthetiapp.xmlEditor)
+    * [Using the tiapp.xml Editor](#using-the-tiapp.xml-editor)
 
-  * [Manually](#Manually)
-
+    * [Manually](#manually)
 
 Titanium Modules provide JavaScript bindings for your application to use and access native features and libraries. Titanium Modules are linked (or bundled) at build time. They must be built to support the target architectures that your application is also targeting.
 
@@ -36,7 +35,6 @@ When looking for a specific Titanium Module, there are two places you should sea
 * The Official Marketplace: [https://marketplace.axway.com](https://marketplace.axway.com/home#!attribute/4824)
 
 * gitTio: [http://gitt.io/](http://gitt.io/)
-
 
 The Marketplace contains enterprise and professional developed modules as well as links to open source modules. gitTio is exclusively free and open source modules.
 
@@ -51,7 +49,6 @@ Once you have selected and purchased the modules you are interested in using, yo
 2. Click on the module you wish to download. It should download a .zip file to your computer. You may need to click on the little gear icon to find the download link the first time you download a module.
 
 3. Locate the .zip file on disk.
-
 
 ### gitTio
 
@@ -71,7 +68,6 @@ Once a module is downloaded, it must be installed in a specific project or in a 
 
 3. Drag the .zip file from the download location into the current project, placing it at the root of the project. Choose to "Copy Files".
 
-
 #### Automatic Unzip
 
 Place the module zip file in the root of the project directory. The Titanium build will automatically extract all registered Titanium modules in the root of the project.
@@ -86,21 +82,20 @@ Modules can be globally installed in the following locations:
 
 * macOS
 
-  * ~/Library/Application Support/Titanium (preferred)
+    * ~/Library/Application Support/Titanium (preferred)
 
-  * /Library/Application Support/Titanium
+    * /Library/Application Support/Titanium
 
 * Linux
 
-  * ~/.titanium/modules
+    * ~/.titanium/modules
 
 * Windows
 
-  * %ProgramData%\\Titanium (preferred)
+    * %ProgramData%\\Titanium (preferred)
 
-  * %APPDATA%\\Titanium
-    %ALLUSERSPROFILE%\\Application Data\\Titanium\\
-
+    * %APPDATA%\\Titanium
+        %ALLUSERSPROFILE%\\Application Data\\Titanium\\
 
 On macOS, the ~/Library directory may be hidden. Press Shift+Command+G in the Finder to open a dialog allowing you to navigate to the folder directly to ~/Library/Application Support/Titanium.
 
@@ -122,17 +117,15 @@ Studio has a module section inside the tiapp.xml editor to greatly simplify the 
 
 4. If you wish to delete a module, click the x (delete) button to delete the module.
 
-
 Switching a SDK will re-validate the modules based on their compatibility with the selected SDK. If they are not compatible, they will show warnings as appropriate, allowing you to update as appropriate.
 
 ### Manually
 
 1. Open the module's .zip file, and look at the folder structure. The path will look like the following:
 
-  * **Folder Structure:** modules/<platform>/<module-id>/<version>
+    * **Folder Structure:** modules/<platform>/<module-id>/<version>
 
-  * **Example:** modules/ios/ti.greystripe/1.1
-
+    * **Example:** modules/ios/ti.greystripe/1.1
 
 2. Open Studio, and the tiapp.xml file for the project in question.
 
@@ -140,26 +133,26 @@ Switching a SDK will re-validate the modules based on their compatibility with t
 
 4. In the application's tiapp.xml, find the <modules/> node, and replace it with the new <modules> content. If you already have modules, just add a new node for the new module. Note that the "version" and "platform" attributes are optional. When "version" is not specified, the latest version of the module will be used (as of Titanium SDK 2.0.0), and the "platform" tag is only necessary when using a module that is not available on both platforms.
 
-  `<``ti``:app>`
+    `<``ti``:app>`
 
-  `<!-- $MODULE_VERSION should be the same as "version" from above -->`
+    `<!-- $MODULE_VERSION should be the same as "version" from above -->`
 
-  `<``modules``>`
+    `<``modules``>`
 
-  `<!-- For example, if we were adding the greystripe module: -->`
+    `<!-- For example, if we were adding the greystripe module: -->`
 
-  `<``module`  `version``=``"1.1"`  `platform``=``"ios"``>ti.greystripe</``module``>`
+    `<``module`  `version``=``"1.1"`  `platform``=``"ios"``>ti.greystripe</``module``>`
 
-  `</``modules``>`
+    `</``modules``>`
 
-  `</``ti``:app>`
+    `</``ti``:app>`
 
 5. Use the require function to load the module in the app's code, for example:
 
-  `var` `Module = require(``'$MODULE_ID'``);`
+    `var` `Module = require(``'$MODULE_ID'``);`
 
-  `// For example, to load the greystripe module:`
+    `// For example, to load the greystripe module:`
 
-  `var` `greystripe = require(``'ti.greystripe'``);`
+    `var` `greystripe = require(``'ti.greystripe'``);`
 
 6. The next time the app is launched or built, the module should be included with the application.

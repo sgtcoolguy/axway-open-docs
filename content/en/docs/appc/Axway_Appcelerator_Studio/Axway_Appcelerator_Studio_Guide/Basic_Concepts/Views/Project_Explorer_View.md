@@ -14,7 +14,6 @@ In the Project Explorer view:
 
 3. **Select a project** in the Project Explorer view, then select a Launch mode in the Workbench toolbar to build and run the project.
 
-
 ## Toolbar
 
 The toolbar of the Project Explorer view contains the following buttons:

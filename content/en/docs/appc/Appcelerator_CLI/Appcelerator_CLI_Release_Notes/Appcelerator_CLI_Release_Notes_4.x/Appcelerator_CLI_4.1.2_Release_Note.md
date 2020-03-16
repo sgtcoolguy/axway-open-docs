@@ -4,25 +4,12 @@ Appcelerator CLI 4.1.2 is a patch release, addressing high-priority issues from 
 
 ## Component Versions
 
-Name
-
-Version
-
-Alloy
-
-1.6.2
-
-Arrow Builder
-
-1.1.2
-
-Arrow Cloud CLI
-
-1.0.25
-
-Titanium CLI
-
-4.0.1
+| Name | Version |
+| --- | --- |
+| Alloy | 1.6.2 |
+| Arrow Builder | 1.1.2 |
+| Arrow Cloud CLI | 1.0.25 |
+| Titanium CLI | 4.0.1 |
 
 ## Fixed Issues
 

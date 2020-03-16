@@ -10,7 +10,6 @@ The 1.1.3 release of Appcelerator Cloud Services includes the following fixes an
 
 * Add a pretty\_json field to all method requests to enable or disable prettifying JSON response data. JSON pretty print is disabled by default.
 
-
 ## Bug fixes
 
 * Fixed an issue with sending ACS request from Titanium Mobile Web applications.

@@ -1,13 +1,12 @@
 {"title":"App Thinning","weight":"10"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Slicing](#Slicing)
+* [Slicing](#slicing)
 
-* [Bitcode](#Bitcode)
+* [Bitcode](#bitcode)
 
-* [On-Demand Resources](#On-DemandResources)
-
+* [On-Demand Resources](#on-demand-resources)
 
 ## Introduction
 
@@ -18,7 +17,6 @@ In iOS, App Thinning helps optimize your application by using:
 * **Bitcode**: Submit partially compiled code that will be optimized by the App Store
 
 * **On-demand resource****s**: Specific assets are stored in the App Store and downloaded by the application when they are needed, and purged by iOS when disk space is low
-
 
 The optimizations help reduce the size of the application when the user installs it and reduces the application's memory footprint.
 

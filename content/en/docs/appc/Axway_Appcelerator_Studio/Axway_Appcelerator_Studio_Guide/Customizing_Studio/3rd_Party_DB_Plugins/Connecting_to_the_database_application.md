@@ -14,7 +14,6 @@ To connect to your database application:
 
 3. In the confirmation window, click the **OK** button to connect to the database.
 
-
 SQL Explorer will connect to your database.
 
 Read [Using SQL Explorer](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Using_SQL_Explorer/) to learn more about using SQL Explorer.

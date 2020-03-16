@@ -1,25 +1,24 @@
 {"title":"Errors Logging In to Studio","weight":"60"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Trouble logging in](#Troubleloggingin)
+* [Trouble logging in](#trouble-logging-in)
 
-  * [Launch Studio from the command line](#LaunchStudiofromthecommandline)
+    * [Launch Studio from the command line](#launch-studio-from-the-command-line)
 
-  * [Check the log file for thrown exceptions](#Checkthelogfileforthrownexceptions)
+    * [Check the log file for thrown exceptions](#check-the-log-file-for-thrown-exceptions)
 
-    * [OS X](#OSX)
+        * [OS X](#os-x)
 
-    * [Windows](#Windows)
+        * [Windows](#windows)
 
-  * [Login failure due to environment variables](#Loginfailureduetoenvironmentvariables)
+    * [Login failure due to environment variables](#login-failure-due-to-environment-variables)
 
-* [Repeated prompting (or Failing to prompt) for credentials](#Repeatedprompting(orFailingtoprompt)forcredentials)
+* [Repeated prompting (or Failing to prompt) for credentials](#repeated-prompting-or-failing-to-prompt-for-credentials)
 
-  * [Delete KeyChain entry](#DeleteKeyChainentry)
+    * [Delete KeyChain entry](#delete-keychain-entry)
 
-  * [Providing access to Keychain service](#ProvidingaccesstoKeychainservice)
-
+    * [Providing access to Keychain service](#providing-access-to-keychain-service)
 
 ## Overview
 
@@ -31,16 +30,15 @@ If you are unable to log in to Studio, please try the following diagnostic steps
 
 1. Try the to login using the appc login command or using the command below on the command line:
 
-  `curl -F` `"username=XXXX"` `-F` `"password=YYYY"` `https:``//dashboard``.appcelerator.com``/api/v1/auth/login`
+    `curl -F` `"username=XXXX"` `-F` `"password=YYYY"` `https:``//dashboard``.appcelerator.com``/api/v1/auth/login`
 
-  (replacing XXXX and YYYY with your username and password. The username needs to be url-escaped, like user@company.com => user%40company.com)
+    (replacing XXXX and YYYY with your username and password. The username needs to be url-escaped, like user@company.com => user%40company.com)
 
 2. If the above command returns success, try to run Studio from the command line and then log in. Check the generated exception log on the command line.
 
-  * From Mac: open a terminal and run <install\_dir>/AppceleratorStudio.app/Contents/MacOS/AppceleratorStudio (by default, the installation directory is /Applications/Titanium Studio)
+    * From Mac: open a terminal and run <install\_dir>/AppceleratorStudio.app/Contents/MacOS/AppceleratorStudio (by default, the installation directory is /Applications/Titanium Studio)
 
-  * From Windows: open a command prompt and run <install\_dir>\\AppceleratorStudio.exe -consoleLog (by default, the installation directory is C:\\Users\\<username>\\AppData\\Local\\Titanium Studio)
-
+    * From Windows: open a command prompt and run <install\_dir>\\AppceleratorStudio.exe -consoleLog (by default, the installation directory is C:\\Users\\<username>\\AppData\\Local\\Titanium Studio)
 
 ### Check the log file for thrown exceptions
 
@@ -70,7 +68,6 @@ Use the following steps:
 
 4. It should output the same exception stacktrace as above and detect what certificate needs to be added; enter 1.
 
-
 Let it run until it finishes, and afterward, Java should be able to complete a handshake with the host, and you could verify by running the program again.
 
 ### Login failure due to environment variables
@@ -83,13 +80,11 @@ If you cannot log into Studio even though you entered valid username and passwor
 
 * Pre-prod only environments has certain accounts whitelisted for login and returns 4xx invalid login for everyone else.
 
-
 If one of these issues matches your problem, try these suggestions to fix it:
 
 * **Use another (namespaced) environment variable**. This is only useful for your engineers internally. Use a namespace like APPC\_NODE\_ENV. The NODE\_ENV environment variable can be used by other developers and other projects for many uses (for better or worse).
 
 * If you're in development mode, print out the top of appc commands that hit the API. If you're going to silently change how your entire module behaves for the end user, based on this common environment variable, you should at least read that you're in a development/pre-production mode and print this out to the user.
-
 
 ## Repeated prompting (or Failing to prompt) for credentials
 
@@ -139,7 +134,6 @@ Deleting the secure storage from Studio
 
 * Since the secure storage contents are deleted, Studio will prompt for user and password during startup. Restart again and if it still prompts for user/password, please try the following other workarounds.
 
-
 ### Delete KeyChain entry
 
 * Open Keychain Access utility in Mac (Applications > Utilities > Keychain Access).
@@ -151,7 +145,6 @@ Deleting the secure storage from Studio
 * Restart Studio.
 
 * Since the secure storage contents are deleted, Studio will prompt for user and password during startup. Restart again and if it still prompts for user/password, please try the following other workarounds.
-
 
 ### Providing access to Keychain service
 

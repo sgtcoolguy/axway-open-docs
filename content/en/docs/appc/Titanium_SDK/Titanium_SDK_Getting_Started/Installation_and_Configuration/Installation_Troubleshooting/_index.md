@@ -2,22 +2,21 @@
 
 This document provides basic installation troubleshooting information.
 
-* [All platforms](#Allplatforms)
+* [All platforms](#all-platforms)
 
-  * [Could not locate the Android SDK at the given path](#CouldnotlocatetheAndroidSDKatthegivenpath)
+    * [Could not locate the Android SDK at the given path](#could-not-locate-the-android-sdk-at-the-given-path)
 
-* [Windows](#Windows)
+* [Windows](#windows)
 
-  * [xcopy is not recognized as an internal or external command](#xcopyisnotrecognizedasaninternalorexternalcommand)
+    * [xcopy is not recognized as an internal or external command](#xcopy-is-not-recognized-as-an-internal-or-external-command)
 
-  * [Installation updates fail](#Installationupdatesfail)
+    * [Installation updates fail](#installation-updates-fail)
 
-  * [OEM USB drivers](#OEMUSBdrivers)
+    * [OEM USB drivers](#oem-usb-drivers)
 
-  * [Unable to open database file](#Unabletoopendatabasefile)
+    * [Unable to open database file](#unable-to-open-database-file)
 
-  * [Install Diagnostics for Windows](#InstallDiagnosticsforWindows)
-
+    * [Install Diagnostics for Windows](#install-diagnostics-for-windows)
 
 ## All platforms
 
@@ -33,7 +32,7 @@ If you see the error, "xcopy is not recognized as an internal or external comman
 
 `%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;`
 
-See [Configuring Environment Variables on Windows](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#ConfiguringEnvironmentVariablesonWindows) for instructions about how to do this.
+See [Configuring Environment Variables on Windows](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#configuring-environment-variables-on-windows) for instructions about how to do this.
 
 ### Installation updates fail
 
@@ -55,7 +54,7 @@ Try disabling on-access antivirus scanning to determine whether it is the cause.
 
 As a quick check to verify that your environment has been configured correctly, you can use the code below.
 
-In order for this script to work as intended, the PATH variable of your system must be configured as described in [Installing and Updating Android SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_Android_SDK/#Windows)
+In order for this script to work as intended, the PATH variable of your system must be configured as described in [Installing and Updating Android SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_Android_SDK/#windows)
 
 You will need to run it **with the user account you use when working with Titanium**. These commands should execute without error, except SCons which is an optional component.
 
@@ -73,7 +72,6 @@ To run the commands:
 
 * compare your output with the [Install Diagnostics Output](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installation_Troubleshooting/Install_Diagnostics_Script_Output/) from our system
 
-
 To copy your output, ready to paste into a text document or to share:
 
 * right-click on the window
@@ -81,7 +79,6 @@ To copy your output, ready to paste into a text document or to share:
 * choose Select All from the context menu
 
 * press **Enter** to copy
-
 
 Do not post your output directly into the [Q&A](http://developer.appcelerator.com/questions/created), as the formatting is likely to be messy making it difficult for others to interpret. Instead, create a new [GitHub Gist](https://gist.github.com/). To do this, paste the **unedited** output into the main Gist text area, click the **Create Public Gist** button at the bottom of the page and copy and share the resulting URL from your browser address bar.
 

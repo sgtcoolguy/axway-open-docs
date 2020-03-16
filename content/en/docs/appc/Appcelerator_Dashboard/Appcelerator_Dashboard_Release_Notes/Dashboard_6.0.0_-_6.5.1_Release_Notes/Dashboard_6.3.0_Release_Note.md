@@ -10,7 +10,6 @@ Dashboard 6.3.0 is a minor release, which includes new features, improvements, a
 
 * Added support for custom queries by location and improved display and consistency of analytics views by location.
 
-
 ## Improvements
 
 * Added AMPLIFY Crash Analytics module to the Downloads view and added a link to Downloads view from APM deprecation warning.
@@ -26,7 +25,6 @@ Dashboard 6.3.0 is a minor release, which includes new features, improvements, a
 * Updated file upload fields to improve consistency with other form fields.
 
 * Improved render time by decreasing the size of assets fetched on initial load.
-
 
 ## Fixed issues
 

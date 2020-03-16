@@ -62,4 +62,4 @@ app/views/ios/index.xml
 
 ## See also
 
-* [Alloy Concepts: Platform-Specific Resources](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Concepts/#Platform-specificresources)
+* [Alloy Concepts: Platform-Specific Resources](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Concepts/#platform-specific-resources)

@@ -6,11 +6,9 @@ Dashboard 4.3.1 is a patch release, which includes behavior changes, improvement
 
 * The button to change a client application between the active and inactive states has been removed from the App Summary page.
 
-
 ## Improvements
 
 * Dashboard sends a test e-mail to verify SMTP configuration settings for an ArrowDB datasource. If invalid settings are entered, Dashboard will display an error message.
-
 
 ## Fixed Issues
 

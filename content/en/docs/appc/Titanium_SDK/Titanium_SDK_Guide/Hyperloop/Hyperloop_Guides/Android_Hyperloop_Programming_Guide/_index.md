@@ -1,35 +1,34 @@
 {"title":"Android Hyperloop Programming Guide","weight":"20"}
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-  * [Software](#Software)
+    * [Software](#software)
 
-  * [Configure tiapp.xml](#Configuretiapp.xml)
+    * [Configure tiapp.xml](#configure-tiapp.xml)
 
-* [Classes](#Classes)
+* [Classes](#classes)
 
-* [Instantiation](#Instantiation)
+* [Instantiation](#instantiation)
 
-* [Methods and fields](#Methodsandfields)
+* [Methods and fields](#methods-and-fields)
 
-* [Method resolution](#Methodresolution)
+* [Method resolution](#method-resolution)
 
-* [Casting](#Casting)
+* [Casting](#casting)
 
-* [Interfaces](#Interfaces)
+* [Interfaces](#interfaces)
 
-* [Creating your own classes](#Creatingyourownclasses)
+* [Creating your own classes](#creating-your-own-classes)
 
-* [Accessing native XML Layouts](#AccessingnativeXMLLayouts)
+* [Accessing native XML Layouts](#accessing-native-xml-layouts)
 
-* [Using 3rd party libraries](#Using3rdpartylibraries)
+* [Using 3rd party libraries](#using-3rd-party-libraries)
 
-  * [Gradle Dependencies](#GradleDependencies)
+    * [Gradle Dependencies](#gradle-dependencies)
 
-  * [Local Dependencies](#LocalDependencies)
+    * [Local Dependencies](#local-dependencies)
 
-  * [Third-party Examples](#Third-partyExamples)
-
+    * [Third-party Examples](#third-party-examples)
 
 This document provides information on Android Hyperloop requirements, classes, instantiation, methods and fields, casting, interfaces, creating your own classes, and using 3rd party libraries.
 
@@ -37,7 +36,7 @@ This document provides information on Android Hyperloop requirements, classes, i
 
 ### Software
 
-See [Hyperloop Requirements](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyperloop/Hyperloop_Guides/Hyperloop_Requirements/#Requirements) for software requirements for using Hyperloop with Android.
+See [Hyperloop Requirements](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyperloop/Hyperloop_Guides/Hyperloop_Requirements/#requirements) for software requirements for using Hyperloop with Android.
 
 ### Configure tiapp.xml
 

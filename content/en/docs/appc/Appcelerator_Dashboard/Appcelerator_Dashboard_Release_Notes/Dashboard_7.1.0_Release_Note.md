@@ -10,7 +10,6 @@ Dashboard 7.1.0 is a minor release, which includes two new features and several 
 
 * Added a _Settings_ view to set user preferences for layout, theme, default org rule, and analytics demo mode.
 
-
 ## Fixed issues
 
 * Resolved an issue displaying Mobile Backend Services request logs for datasources in Virtual Private Cloud environments.

@@ -20,7 +20,6 @@ Some of the capabilities of the Custom Queries feature are:
 
 * Compare and visualize multiple queries.
 
-
 The Custom Queries feature is accessible through the **Analytics** menu on the Dashboard.
 
 ![query_builder_02_latest](/Images/appc/download/attachments/51250946/query_builder_02_latest.png)

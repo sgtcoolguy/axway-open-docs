@@ -1,37 +1,36 @@
 {"title":"Alloy Debugging and Troubleshooting","weight":"20"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Debugging](#Debugging)
+* [Debugging](#debugging)
 
-  * [Studio Debugger](#StudioDebugger)
+    * [Studio Debugger](#studio-debugger)
 
-  * [Compiler error messages](#Compilererrormessages)
+    * [Compiler error messages](#compiler-error-messages)
 
-* [Troubleshooting](#Troubleshooting)
+* [Troubleshooting](#troubleshooting)
 
-  * [\[ERROR\] No app.js found. Ensure the app.js file exists in your project's Resources directory.](#[ERROR]Noapp.jsfound.Ensuretheapp.jsfileexistsinyourproject'sResourcesdirectory.)
+    * [\[ERROR\] No app.js found. Ensure the app.js file exists in your project's Resources directory.](#[error]-no-app.js-found.-ensure-the-app.js-file-exists-in-your-project's-resources-directory.)
 
-  * [Android: Images, HTML pages and other assets do not display](#Android:Images,HTMLpagesandotherassetsdonotdisplay)
+    * [Android: Images, HTML pages and other assets do not display](#android:-images,-html-pages-and-other-assets-do-not-display)
 
-  * [Android Runtime Error: Uncaught TypeError: Cannot call method xxx of undefined](#AndroidRuntimeError:UncaughtTypeError:Cannotcallmethodxxxofundefined)
+    * [Android Runtime Error: Uncaught TypeError: Cannot call method xxx of undefined](#android-runtime-error:-uncaught-typeerror:-cannot-call-method-xxx-of-undefined)
 
-  * [Android Runtime Error: Uncaught ReferenceError: Alloy is not defined](#AndroidRuntimeError:UncaughtReferenceError:Alloyisnotdefined)
+    * [Android Runtime Error: Uncaught ReferenceError: Alloy is not defined](#android-runtime-error:-uncaught-referenceerror:-alloy-is-not-defined)
 
-  * [iOS Application Error: invalid method (xxx) passed to UIModule (unknown file).](#iOSApplicationError:invalidmethod(xxx)passedtoUIModule(unknownfile).)
+    * [iOS Application Error: invalid method (xxx) passed to UIModule (unknown file).](#ios-application-error:-invalid-method-xxx-passed-to-uimodule-unknown-file.)
 
-  * [iOS Application Error: undefined is not an object (evaluating $.xxx.open) (unknown file).](#iOSApplicationError:undefinedisnotanobject(evaluating$.xxx.open)(unknownfile).)
+    * [iOS Application Error: undefined is not an object (evaluating $.xxx.open) (unknown file).](#ios-application-error:-undefined-is-not-an-object-evaluating-$.xxx.open-unknown-file.)
 
-  * [Mobile Web: Changes to code do not take effect](#MobileWeb:Changestocodedonottakeeffect)
+    * [Mobile Web: Changes to code do not take effect](#mobile-web:-changes-to-code-do-not-take-effect)
 
-  * [Mobile Web: \[ERROR\] alloy run not supported by mobileweb](#MobileWeb:[ERROR]alloyrunnotsupportedbymobileweb)
+    * [Mobile Web: \[ERROR\] alloy run not supported by mobileweb](#mobile-web:-[error]-alloy-run-not-supported-by-mobileweb)
 
-  * [Studio: Unable to find alloy binary](#Studio:Unabletofindalloybinary)
+    * [Studio: Unable to find alloy binary](#studio:-unable-to-find-alloy-binary)
 
-  * [Getting help](#Gettinghelp)
+    * [Getting help](#getting-help)
 
-* [Submitting a Bug Report](#SubmittingaBugReport)
-
+* [Submitting a Bug Report](#submitting-a-bug-report)
 
 ## Overview
 
@@ -57,7 +56,6 @@ If your Resources folder is hidden:
 
 4. Click the **OK** button. The Resources folder should appear.
 
-
 Breakpoints set in the files in the Resources directory may be cleared or not mapped to the correct line number if you modify any of the files in the app directory. After your code has been compiled, confirm that the breakpoints set in the files in the Resources directory are still set and in the correct location (line number). If not, clear and reset your breakpoints, then rerun the project in debug mode.
 
 When you are ready to debug your application:
@@ -71,7 +69,6 @@ When you are ready to debug your application:
 4. If the **Launch Automatically** option is not enabled, click the **Launch** button.
 
 5. Before the code starts to compile, a dialog appears asking to switch the perspective. Click the **Yes** button.
-
 
 In the _Debug_ perspective, you can use the _Debug_ view to step into, pause or resume your code. While your code is paused, in the _Variables_ view, you can view your current variables and their values.
 
@@ -120,7 +117,7 @@ Mobile Web applications cannot run from the command-line interface. Run the prog
 
 ### Studio: Unable to find alloy binary
 
-There was probably an issue installing Alloy with Studio or the alloy binary is not in your PATH. Check to see if alloy is installed and is in your PATH (usually in '/usr/local/bin') or follow the [Manual Installation instructions](/docs/appc/Alloy_Framework/Alloy_Getting_Started/#Command-lineinterfaceinstallation) to install it.
+There was probably an issue installing Alloy with Studio or the alloy binary is not in your PATH. Check to see if alloy is installed and is in your PATH (usually in '/usr/local/bin') or follow the [Manual Installation instructions](/docs/appc/Alloy_Framework/Alloy_Getting_Started/#command-line-interface-installation) to install it.
 
 ### Getting help
 

@@ -1,17 +1,16 @@
 {"title":"Git and Github","weight":"40"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Learning Git and Github](#LearningGitandGithub)
+* [Learning Git and Github](#learning-git-and-github)
 
-  * [Getting Started with Git](#GettingStartedwithGit)
+    * [Getting Started with Git](#getting-started-with-git)
 
-  * [Git Prerequisites](#GitPrerequisites)
+    * [Git Prerequisites](#git-prerequisites)
 
-  * [Some Quick Git Tips](#SomeQuickGitTips)
+    * [Some Quick Git Tips](#some-quick-git-tips)
 
-  * [Committing Code with Git in 7 Easy Stages](#CommittingCodewithGitin7EasyStages)
-
+    * [Committing Code with Git in 7 Easy Stages](#committing-code-with-git-in-7-easy-stages)
 
 ## Overview
 
@@ -41,13 +40,11 @@ Git can be a little daunting if you've never used it before, but most people soo
 
 * and [many others](http://www.google.com/search?hl=en&q=git+version+control)
 
-
 ### Git Prerequisites
 
 Before you start, you will need to work through these points:
 
 * configure SSH, required for pushing branches to Github. See "Generating SSH Keys" for [Mac OS X](http://help.github.com/mac-key-setup/) and [Windows](http://help.github.com/msysgit-key-setup/).
-
 
 ### Some Quick Git Tips
 
@@ -56,7 +53,6 @@ The following can make Git a little easier to use:
 * use [gitk](http://gitk.sourceforge.net/development.html) to give a visual representation of your repository
 
 * by default, if a file's permissions change, Git will perceive it just the same as if its contents were changed, Thus, to ignore permissions changes, run:
-
 
 `git config core.filemode` `false`
 

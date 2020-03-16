@@ -6,17 +6,15 @@
 
 * The iOS-specific Titanium.Network.HTTPClient clientCertificateIdentity and clientCertificates properties are no longer supported.
 
+* [Introduction](#introduction)
 
-* [Introduction](#Introduction)
+* [iOS Platform Notes](#ios-platform-notes)
 
-* [iOS Platform Notes](#iOSPlatformNotes)
+    * [iOS Example](#ios-example)
 
-  * [iOS Example](#iOSExample)
+* [Android Platform Notes](#android-platform-notes)
 
-* [Android Platform Notes](#AndroidPlatformNotes)
-
-  * [Android Example](#AndroidExample)
-
+    * [Android Example](#android-example)
 
 ## Introduction
 
@@ -31,7 +29,6 @@ The HTTPClient on iOS exposes two properties:
 * clientCertificateIdentity - sets a SecIdentityRef, which is a C structure containing a private key and certificate
 
 * clientCertificates - sets an array whose elements are of type SecCertificateRef
-
 
 These are concrete C structures of the native iOS SDK and cannot be exposed on the JavaScript side. Modules must set these properties on the HTTPClient object in native code. These properties must be set before calling [open](#!/api/Titanium.Network.HTTPClient-method-open) on the HTTPClient.
 
@@ -56,7 +53,6 @@ In the Titanium application:
 3. Call the module method to parse the PKCS #12 file and set the clientCertificateIdentity property.
 
 4. Call the open and send methods to initiate the HTTP request.
-
 
 `// Require the module`
 
@@ -111,7 +107,6 @@ In an iOS module, the loadP12Cert method receives the HTTPClient object, the PKC
 2. Parses it with the native SecPKCS12Import method.
 
 3. Sets the clientCertificateIdentity of the HTTPClient object.
-
 
 `// Omitted boiler plate code created for a new module`
 
@@ -223,7 +218,6 @@ The HTTPClient on Android has exposed two new methods:
 
 * addTrustManager(X509TrustManager)
 
-
 Users can add custom KeyManager and TrustManager implementations to use with the HTTPClient connection. These methods must be called before calling [open](#!/api/Titanium.Network.HTTPClient-method-open) on the HTTPClient.
 
 You need to use an Android module to implement the [X509KeyManager](http://developer.android.com/reference/javax/net/ssl/X509KeyManager.html) or [X509TrustManager](http://developer.android.com/reference/javax/net/ssl/X509TrustManager.html) interface and return these objects to the Titanium application. The application uses the addKeyManager and addTrustManager methods to add support for these objects.
@@ -245,7 +239,6 @@ To use the module, in the Titanium application:
 4. Retrieve the X509TrustManager interface from the module and add it to the HTTP client with the addTrustManager method.
 
 5. Call the open and send methods to initiate the HTTP request.
-
 
 `var certificateStore = require(``'ti.certificatestore'``);`
 

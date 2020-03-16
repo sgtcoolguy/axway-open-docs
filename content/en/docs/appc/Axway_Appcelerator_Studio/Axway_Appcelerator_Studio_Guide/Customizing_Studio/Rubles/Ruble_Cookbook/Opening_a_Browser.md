@@ -1,15 +1,14 @@
 {"title":"Opening a Browser","weight":"80"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Opening a browser using the current selection](#Openingabrowserusingthecurrentselection)
+* [Opening a browser using the current selection](#opening-a-browser-using-the-current-selection)
 
-* [Previewing the current document in the internal browser](#Previewingthecurrentdocumentintheinternalbrowser)
+* [Previewing the current document in the internal browser](#previewing-the-current-document-in-the-internal-browser)
 
-* [Previewing an external URL in the internal browser](#PreviewinganexternalURLintheinternalbrowser)
+* [Previewing an external URL in the internal browser](#previewing-an-external-url-in-the-internal-browser)
 
-* [Previewing a document in the external browser](#Previewingadocumentintheexternalbrowser)
-
+* [Previewing a document in the external browser](#previewing-a-document-in-the-external-browser)
 
 ## Overview
 

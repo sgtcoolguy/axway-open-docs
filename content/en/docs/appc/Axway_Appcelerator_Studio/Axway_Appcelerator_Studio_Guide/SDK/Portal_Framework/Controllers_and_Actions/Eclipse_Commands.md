@@ -1,23 +1,22 @@
 {"title":"Eclipse Commands","weight":"20"}
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Description](#Description)
+* [Description](#description)
 
-* [Invocation](#Invocation)
+* [Invocation](#invocation)
 
-* [A generic Eclipse command-handler invocation](#AgenericEclipsecommand-handlerinvocation)
+* [A generic Eclipse command-handler invocation](#a-generic-eclipse-command-handler-invocation)
 
-* [An Eclipse command that accepts arguments](#AnEclipsecommandthatacceptsarguments)
+* [An Eclipse command that accepts arguments](#an-eclipse-command-that-accepts-arguments)
 
-* [Examples](#Examples)
+* [Examples](#examples)
 
-  * [Open Studio's "New Web Project Wizard"](#OpenStudio's"NewWebProjectWizard")
+    * [Open Studio's "New Web Project Wizard"](#open-studio's-"new-web-project-wizard")
 
-  * [Open Titanium Studio "New Mobile App Project Wizard"](#OpenTitaniumStudio"NewMobileAppProjectWizard")
+    * [Open Titanium Studio "New Mobile App Project Wizard"](#open-titanium-studio-"new-mobile-app-project-wizard")
 
-  * [Open Titanium Studio "New Desktop Project Wizard"](#OpenTitaniumStudio"NewDesktopProjectWizard")
-
+    * [Open Titanium Studio "New Desktop Project Wizard"](#open-titanium-studio-"new-desktop-project-wizard")
 
 ## Requirements
 

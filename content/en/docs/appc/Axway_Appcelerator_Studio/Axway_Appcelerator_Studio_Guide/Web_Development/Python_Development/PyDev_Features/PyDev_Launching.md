@@ -22,7 +22,6 @@ In that dialog, there are some options:
 
 * Explicitly selecting the class/tests to run will run those tests
 
-
 ### Debug Launch
 
 To run in debug mode, you can use the **context menu**, where you can choose how you want to make the debug (note that in that way, you could debug a python project with a Jython interpreter)
@@ -64,7 +63,6 @@ Currently the debugger supports:
 * Temporary display for selection: **Ctrl+Shift+D**
 
 * Hover showing the selected expression evaluation
-
 
 To add breakpoints, you can double click the left bar or use Ctrl+F10 > Add breakpoint. In a line with an existing breakpoint, Ctrl+F10 will be able to remove the breakpoint, disable it and edit its properties (which can be used to provide conditions for the breakpoint to be hit). Double-clicking an existing breakpoint will remove it.
 

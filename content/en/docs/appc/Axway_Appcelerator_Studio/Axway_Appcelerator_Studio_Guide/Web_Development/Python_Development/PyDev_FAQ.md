@@ -1,57 +1,56 @@
 {"title":"PyDev FAQ","weight":"50"}
 
-* [How do I Report a BUG?](#HowdoIReportaBUG?)
+* [How do I Report a BUG?](#how-do-i-report-a-bug?)
 
-* [How do I Report a Feature Request?](#HowdoIReportaFeatureRequest?)
+* [How do I Report a Feature Request?](#how-do-i-report-a-feature-request?)
 
-* [I have some doubts I couldn't find in the FAQ, what do I do?](#IhavesomedoubtsIcouldn'tfindintheFAQ,whatdoIdo?)
+* [I have some doubts I couldn't find in the FAQ, what do I do?](#i-have-some-doubts-i-couldn't-find-in-the-faq,-what-do-i-do?)
 
-* [How do I get started with PyDev?](#HowdoIgetstartedwithPyDev?)
+* [How do I get started with PyDev?](#how-do-i-get-started-with-pydev?)
 
-* [Can I have Eclipse installed anywhere to use PyDev?](#CanIhaveEclipseinstalledanywheretousePyDev?)
+* [Can I have Eclipse installed anywhere to use PyDev?](#can-i-have-eclipse-installed-anywhere-to-use-pydev?)
 
-* [How do I import existing projects/sources into PyDev?](#HowdoIimportexistingprojects/sourcesintoPyDev?)
+* [How do I import existing projects/sources into PyDev?](#how-do-i-import-existing-projects/sources-into-pydev?)
 
-* [How do I configure my PYTHONPATH?](#HowdoIconfiguremyPYTHONPATH?)
+* [How do I configure my PYTHONPATH?](#how-do-i-configure-my-pythonpath?)
 
-* [When I do a code-completion, PyDev hangs, what can I do?](#WhenIdoacode-completion,PyDevhangs,whatcanIdo?)
+* [When I do a code-completion, PyDev hangs, what can I do?](#when-i-do-a-code-completion,-pydev-hangs,-what-can-i-do?)
 
-* [Why raw\_input() / input() does not work correctly in PyDev?](#Whyraw_input()/input()doesnotworkcorrectlyinPyDev?)
+* [Why raw\_input() / input() does not work correctly in PyDev?](#why-raw_input-/-input-does-not-work-correctly-in-pydev?)
 
-* [My todo-tasks are not showing, is there something wrong?](#Mytodo-tasksarenotshowing,istheresomethingwrong?)
+* [My todo-tasks are not showing, is there something wrong?](#my-todo-tasks-are-not-showing,-is-there-something-wrong?)
 
 * [Some keybindings Ctrl+\[0-9\] don't work under Ubuntu. What can I do about it?](#SomekeybindingsCtrl+[0-9]don'tworkunderUbuntu.WhatcanIdoaboutit?)
 
-* [I have a library installed, and PyDev does not find it](#Ihavealibraryinstalled,andPyDevdoesnotfindit)
+* [I have a library installed, and PyDev does not find it](#i-have-a-library-installed,-and-pydev-does-not-find-it)
 
-* [What is that 'Forced builtin libs' in the Python Interpreters' preferences?](#Whatisthat'Forcedbuiltinlibs'inthePythonInterpreters'preferences?)
+* [What is that 'Forced builtin libs' in the Python Interpreters' preferences?](#what-is-that-'forced-builtin-libs'-in-the-python-interpreters'-preferences?)
 
-* [How do I configure a python shell for experimenting with Python?](#HowdoIconfigureapythonshellforexperimentingwithPython?)
+* [How do I configure a python shell for experimenting with Python?](#how-do-i-configure-a-python-shell-for-experimenting-with-python?)
 
-* [The PyDev builder is taking too much of my time, what can I do about it?](#ThePyDevbuilderistakingtoomuchofmytime,whatcanIdoaboutit?)
+* [The PyDev builder is taking too much of my time, what can I do about it?](#the-pydev-builder-is-taking-too-much-of-my-time,-what-can-i-do-about-it?)
 
-* [Why the PyDev properties do not show?](#WhythePyDevpropertiesdonotshow?)
+* [Why the PyDev properties do not show?](#why-the-pydev-properties-do-not-show?)
 
-* [Why did nothing show in the PyDev Package Explorer?](#WhydidnothingshowinthePyDevPackageExplorer?)
+* [Why did nothing show in the PyDev Package Explorer?](#why-did-nothing-show-in-the-pydev-package-explorer?)
 
-* [I can see no new Python project; how am I supposed to use PyDev?](#IcanseenonewPythonproject;howamIsupposedtousePyDev?)
+* [I can see no new Python project; how am I supposed to use PyDev?](#i-can-see-no-new-python-project;-how-am-i-supposed-to-use-pydev?)
 
-* [How do I run a module from within eclipse using PyDev (either Python or Jython)?](#HowdoIrunamodulefromwithineclipseusingPyDev(eitherPythonorJython)?)
+* [How do I run a module from within eclipse using PyDev (either Python or Jython)?](#how-do-i-run-a-module-from-within-eclipse-using-pydev-either-python-or-jython?)
 
-* [How do I know which is the command-line and PYTHONPATH used to make a python or Jython run?](#HowdoIknowwhichisthecommand-lineandPYTHONPATHusedtomakeapythonorJythonrun?)
+* [How do I know which is the command-line and PYTHONPATH used to make a python or Jython run?](#how-do-i-know-which-is-the-command-line-and-pythonpath-used-to-make-a-python-or-jython-run?)
 
-* [Code completion is not working correctly for some library](#Codecompletionisnotworkingcorrectlyforsomelibrary)
+* [Code completion is not working correctly for some library](#code-completion-is-not-working-correctly-for-some-library)
 
-* [I can't make \_builtins\_.xxx = something while debugging](#Ican'tmake_builtins_.xxx=somethingwhiledebugging)
+* [I can't make \_builtins\_.xxx = something while debugging](#i-can't-make-_-builtins-_.xxx-=-something-while-debugging)
 
-* [PyLint is not working; what should I do?](#PyLintisnotworking;whatshouldIdo?)
+* [PyLint is not working; what should I do?](#pylint-is-not-working;-what-should-i-do?)
 
-* [I have a CORBA program, and I cannot debug its methods, what can I do?](#IhaveaCORBAprogram,andIcannotdebugitsmethods,whatcanIdo?)
+* [I have a CORBA program, and I cannot debug its methods, what can I do?](#i-have-a-corba-program,-and-i-cannot-debug-its-methods,-what-can-i-do?)
 
-* [OK, I know that many features are available, but I don't know how I can access them through my keyboard!!](#OK,Iknowthatmanyfeaturesareavailable,butIdon'tknowhowIcanaccessthemthroughmykeyboard!!)
+* [OK, I know that many features are available, but I don't know how I can access them through my keyboard!!](#ok,-i-know-that-many-features-are-available,-but-i-don't-know-how-i-can-access-them-through-my-keyboard!!)
 
-* [How do I uninstall PyDev](#HowdoIuninstallPyDev)
-
+* [How do I uninstall PyDev](#how-do-i-uninstall-pydev)
 
 ## How do I Report a BUG?
 
@@ -72,7 +71,6 @@ When reporting a bug, the following information must be given:
 * Project location where the bug appears (e.g. D:\\eclipse\\workspace\\my project)
 
 * What were you doing when the bug appeared
-
 
 If you have a bug where there's a **halting condition**, it's important to give the information on the available threads when that happens and whether there's a deadlock.
 
@@ -209,12 +207,11 @@ The main problems when that happens are:
 
 * There's a firewall blocking the communication to the shell
 
-  * To enable it, execute: echo 0 > /proc/sys/net/ipv6/bindv6only
+    * To enable it, execute: echo 0 > /proc/sys/net/ipv6/bindv6only
 
 * The timeout to connect is too small.
 
-  * This depends upon the "Timeout to connect to shell" in the code-completion preferences (window > preferences > PyDev > Code completion)
-
+    * This depends upon the "Timeout to connect to shell" in the code-completion preferences (window > preferences > PyDev > Code completion)
 
 If nothing works, please report a bug (also, check if there is anything on the error log (window > show view > PDE Runtime > Error log) and on the eclipse .log, which is located at the .metadata folder of the workspace location.
 
@@ -274,7 +271,6 @@ The usual checks are:
 
 3. In the PyDev Package Explorer menu, customize the view, is it possible that the filters selected are hiding all your elements?
 
-
 If all of these are correct, please ask in the users forum, as it could be a bug (please check your error log and if there's something there, add it to your post -- see: How do I Report a Bug? (in the top of this FAQ) for details on getting the error log).
 
 ## I can see no new Python project; how am I supposed to use PyDev?
@@ -326,7 +322,6 @@ It's the same thing but works when debugging.
 
 4. If everything fails, you can ask in the forum or submit a bug report for it (don't forget to add the following information: pylint installation path, pylint version, and the other information requested on the 'How do I Report a BUG?' faq.
 
-
 ## I have a CORBA program, and I cannot debug its methods, what can I do?
 
 Thanks for Petru Lauric for the following explanation:
@@ -339,87 +334,85 @@ The solution is to set the trace function for the ORB threads explicitly.
 
 2. Remove the file called pydevd.pyc, make a backup copy of the file pydevd.py, and make this change to the PyDB::run() method from file pydevd.py:
 
-  `...`
+    `...`
 
-  `if`  `globals`  `is`  `None``:`
+    `if`  `globals`  `is`  `None``:`
 
-  `...`
+    `...`
 
-  `globals`  `=` `m._dict_`
+    `globals`  `=` `m._dict_`
 
-  `#`
+    `#`
 
-  `# Hack: keep a reference to the PyDev debugger's`
+    `# Hack: keep a reference to the PyDev debugger's`
 
-  `# trace function in a global variable. This can`
+    `# trace function in a global variable. This can`
 
-  `# be used by the debugged script to set up the`
+    `# be used by the debugged script to set up the`
 
-  `# trace function for the ORB worker threads.`
+    `# trace function for the ORB worker threads.`
 
-  `#`
+    `#`
 
-  `globals``[``'pydev_hook'``]` `=`  `self``.trace_dispatch`
+    `globals``[``'pydev_hook'``]` `=`  `self``.trace_dispatch`
 
-  `#`
+    `#`
 
-  `...`
+    `...`
 
 3. Make changes similar to those below to your python app.
 
-  * Note 1: the pydev\_hook global variable will \*only\* exist in the global namespace of the "main" module of your app (the script launched by PyDev when you debug your app). Feel free to pass it as an argument to functions from other modules, if that's where you need to use it.
+    * Note 1: the pydev\_hook global variable will \*only\* exist in the global namespace of the "main" module of your app (the script launched by PyDev when you debug your app). Feel free to pass it as an argument to functions from other modules, if that's where you need to use it.
 
-  * Note 2: the trace function for the ORB worker threads MUST be set before the ORB creates the first worker thread.
+    * Note 2: the trace function for the ORB worker threads MUST be set before the ORB creates the first worker thread.
 
+    1. Import this undocumented ORB function
 
-  1. Import this undocumented ORB function
+        `from` `omniORB` `import` `addWThreadHook`
 
-    `from` `omniORB` `import` `addWThreadHook`
+    2. Add this function:
 
-  2. Add this function:
+        `def` `dbg_trace(flag``=``0``, wt``=``None``):`
 
-    `def` `dbg_trace(flag``=``0``, wt``=``None``):`
+        `""``"This function is called whenever the ORB creates a worker thread (e.g. when a client calls a CORBA interface of the engine). The ORB worker threads are not created with the functions from the 'threading' module so, if we want to debug them with PyDev, we need to "``manually``" set the trace function for them."``""`
 
-    `""``"This function is called whenever the ORB creates a worker thread (e.g. when a client calls a CORBA interface of the engine). The ORB worker threads are not created with the functions from the 'threading' module so, if we want to debug them with PyDev, we need to "``manually``" set the trace function for them."``""`
+        `if` `flag` `=``=`  `0``:` `# WTHREAD_CREATED`
 
-    `if` `flag` `=``=`  `0``:` `# WTHREAD_CREATED`
+        `sys.settrace(pydev_trace_func)`
 
-    `sys.settrace(pydev_trace_func)`
+    3. Finally, make these changes:
 
-  3. Finally, make these changes:
+        `try``:`
 
-    `try``:`
+        `# check if pydev_hook is defined`
 
-    `# check if pydev_hook is defined`
+        `hook` `=` `pydev_hook`
 
-    `hook` `=` `pydev_hook`
+        `except``:`
 
-    `except``:`
+        `hook` `=`  `None`
 
-    `hook` `=`  `None`
+        `if` `hook` `is`  `not`  `None``:`
 
-    `if` `hook` `is`  `not`  `None``:`
+        `# keep a copy of the pydev_hook in a global`
 
-    `# keep a copy of the pydev_hook in a global`
+        `# variable, so that dbg_trace() can find it later`
 
-    `# variable, so that dbg_trace() can find it later`
+        `# on`
 
-    `# on`
+        `global` `pydev_trace_func`
 
-    `global` `pydev_trace_func`
+        `pydev_trace_func` `=` `pydev_hook`
 
-    `pydev_trace_func` `=` `pydev_hook`
+        `# NOTE: the ORB will call dbg_trace each time it`
 
-    `# NOTE: the ORB will call dbg_trace each time it`
+        `# creates a worker thread. The function below`
 
-    `# creates a worker thread. The function below`
+        `# MUST be used *before* the ORB creates the first`
 
-    `# MUST be used *before* the ORB creates the first`
+        `# worker thread.`
 
-    `# worker thread.`
-
-    `addWThreadHook(dbg_trace)`
-
+        `addWThreadHook(dbg_trace)`
 
 ## OK, I know that many features are available, but I don't know how I can access them through my keyboard!!
 

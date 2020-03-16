@@ -8,13 +8,9 @@ You can find this example app in the Alloy repository under [samples/apps/ui/too
 
 A [Toolbar](#!/api/Titanium.UI.iOS.Toolbar) can contain Button controls and certain other controls, such as TextFields and Labels. iOS notes: To provide spacing between items in the toolbar, you can insert a <FlexSpace/> element to fill the space between items (as seen in the example) or a <FixedSpace/> element whose width attribute specifies the spacer width to add.
 
-iOS
-
-Android
-
-![Simulator_Screen_Shot_-_iPhone_6s_-_2018-02-01_at_21.22.48](/Images/appc/download/attachments/41845781/Simulator_Screen_Shot_-_iPhone_6s_-_2018-02-01_at_21.22.48.png)
-
-![Screenshot_1517517350](/Images/appc/download/attachments/41845781/Screenshot_1517517350.png)
+| iOS | Android |
+| --- | --- |
+| ![Simulator_Screen_Shot_-_iPhone_6s_-_2018-02-01_at_21.22.48](/Images/appc/download/attachments/41845781/Simulator_Screen_Shot_-_iPhone_6s_-_2018-02-01_at_21.22.48.png) | ![Screenshot_1517517350](/Images/appc/download/attachments/41845781/Screenshot_1517517350.png) |
 
 ## Example
 

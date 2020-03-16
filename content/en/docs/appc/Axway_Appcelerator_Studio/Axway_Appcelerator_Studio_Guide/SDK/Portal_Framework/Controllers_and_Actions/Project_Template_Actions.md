@@ -1,15 +1,14 @@
 {"title":"Project Template Actions","weight":"50"}
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Invocation](#Invocation)
+* [Invocation](#invocation)
 
-* [Get Project Template Types](#GetProjectTemplateTypes)
+* [Get Project Template Types](#get-project-template-types)
 
-* [Get Project Templates](#GetProjectTemplates)
+* [Get Project Templates](#get-project-templates)
 
-* [Listening to Template Changes](#ListeningtoTemplateChanges)
-
+* [Listening to Template Changes](#listening-to-template-changes)
 
 ## Requirements
 
@@ -63,18 +62,8 @@ Here is a sample of a way you can listen to such events (based on the [studio3-s
 
 The _update_ call receives an event object that holds the following information, and can be used to update the UI:
 
-key
-
-value
-
-event
-
-The event identifier (in this case, always 'templates')
-
-eventType
-
-'added' or 'deleted'
-
-data
-
-A JSON representation of the Template-Info (as described above)
+| key | value |
+| --- | --- |
+| event | The event identifier (in this case, always 'templates') |
+| eventType | 'added' or 'deleted' |
+| data | A JSON representation of the Template-Info (as described above) |

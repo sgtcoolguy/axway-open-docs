@@ -1,11 +1,10 @@
 {"title":"Installing App Designer","weight":"20"}
 
-* [Installing App Designer](#InstallingAppDesigner)
+* [Installing App Designer](#installing-app-designer)
 
-  * [Studio prior to 4.6.0](#Studiopriorto4.6.0)
+    * [Studio prior to 4.6.0](#studio-prior-to-4.6.0)
 
-  * [Studio 4.6.0 and beyond](#Studio4.6.0andbeyond)
-
+    * [Studio 4.6.0 and beyond](#studio-4.6.0-and-beyond)
 
 ## Installing App Designer
 
@@ -14,7 +13,7 @@
 1. Open Appcelerator Studio
 
 2. From the MenuBar, click **Help** > **Install New Software...** option from the dropdown. This will open up the **Available Softwar_e_** window.
-  ![image2016-5-2_13_13_28](/Images/appc/download/attachments/46249371/image2016-5-2_13_13_28.png)
+    ![image2016-5-2_13_13_28](/Images/appc/download/attachments/46249371/image2016-5-2_13_13_28.png)
 
 3. Click the **Add...** button in the upper right corner. This will bring up a new window for adding a software resource.
 
@@ -28,13 +27,12 @@
 
 8. With this plugin selected, you should see the **Appcelerator Designer** plugin in the installed software field. Click the **checkbox** next to the Appcelerator Designer plugin and click **Next**.
 
-  ![image2016-5-2_13_29_17](/Images/appc/download/attachments/46249371/image2016-5-2_13_29_17.png)
+    ![image2016-5-2_13_29_17](/Images/appc/download/attachments/46249371/image2016-5-2_13_29_17.png)
 9. Review the **license agreements** and hit **Next**.
 
 10. To finish up the install, click the **Finish** button.
 
 11. In order for the plugin to take effect, you will need to **restart Studio**.
-
 
 ### Studio 4.6.0 and beyond
 

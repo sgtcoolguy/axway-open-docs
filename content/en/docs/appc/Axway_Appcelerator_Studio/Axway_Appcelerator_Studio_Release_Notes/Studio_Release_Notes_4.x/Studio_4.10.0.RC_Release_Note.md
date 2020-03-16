@@ -2,28 +2,27 @@
 
 Studio 4.10.0.RC is a minor release that includes new improvements and bug fixes. This release include two main highlights: Rebranding of Studio to align with Axway/Appcelerator branding and App Designer improvements.
 
-As of this release, Studio 4.9.x will not be supported six months from 4.10.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Studio 4.9.x will not be supported six months from 4.10.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
-* [Improvements](#Improvements)
+* [Improvements](#improvements)
 
-  * [Axway/Appcelerator rebranding](#Axway/Appceleratorrebranding)
+    * [Axway/Appcelerator rebranding](#axway/appcelerator-rebranding)
 
-  * [App Designer](#AppDesigner)
+    * [App Designer](#app-designer)
 
-  * [LiveView improvements](#LiveViewimprovements)
+    * [LiveView improvements](#liveview-improvements)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-  * [Android](#Android)
+    * [Android](#android)
 
-  * [iOS](#iOS)
+    * [iOS](#ios)
 
-  * [Windows](#Windows)
+    * [Windows](#windows)
 
-  * [Misc](#Misc)
+    * [Misc](#misc)
 
-* [Known issue](#Knownissue)
-
+* [Known issue](#known-issue)
 
 ## Improvements
 
@@ -33,82 +32,79 @@ Studio 4.10.0 features various updates centering around the Axway Appcelerator r
 
 * [TISTUD-8797](https://jira.appcelerator.org/browse/TISTUD-8797) - Update branding for Studio Windows installer
 
-  * updated Installer with new Axway branding and a new name: "Axway Appcelerator Studio"
+    * updated Installer with new Axway branding and a new name: "Axway Appcelerator Studio"
 
 * [TISTUD-8798](https://jira.appcelerator.org/browse/TISTUD-8798) - Update Terms of Use for Studio
 
-  * Updated the Terms of Use document under Software License Agreement
+    * Updated the Terms of Use document under Software License Agreement
 
 * [TISTUD-8799](https://jira.appcelerator.org/browse/TISTUD-8799) - Update "About Studio" text
 
-  * Updated the About Studio text
+    * Updated the About Studio text
 
 * [TISTUD-8800](https://jira.appcelerator.org/browse/TISTUD-8800) - Update references to Arrow in the Studio
 
-  * Renamed references of "Arrow" to "API Builder"
+    * Renamed references of "Arrow" to "API Builder"
 
 * [TISTUD-8835](https://jira.appcelerator.org/browse/TISTUD-8835) - Update Studio splash screen as per Axway Appcelerator Studio branding
 
-  * Splash Screen updated for new Axway Appcelerator branding
+    * Splash Screen updated for new Axway Appcelerator branding
 
 * [TISTUD-8836](https://jira.appcelerator.org/browse/TISTUD-8836) - Replace all "Appcelerator Studio" text references with the "Axway Appceleator Studio"
 
-  * Replaced all references of "Appcelerator Studio" with "Axway Appcelerator Studio" within the application
+    * Replaced all references of "Appcelerator Studio" with "Axway Appcelerator Studio" within the application
 
 * [TISTUD-8848](https://jira.appcelerator.org/browse/TISTUD-8848) - Update studio app icons as per Axway Appcelerator Studio rebranding
 
-  * Updated the application icons to reflect the Axway rebranding effort
+    * Updated the application icons to reflect the Axway rebranding effort
 
 * [TISTUD-8852](https://jira.appcelerator.org/browse/TISTUD-8852) - Update Axway branding for Studio Mac installer
 
-  * Updated installer to include the new branding iconography and text
+    * Updated installer to include the new branding iconography and text
 
 * [TISTUD-8864](https://jira.appcelerator.org/browse/TISTUD-8864) - Update Axway Appcelerator Studio release notes url in the studio
 
-  * Updated Studio to point to the renamed release notes
+    * Updated Studio to point to the renamed release notes
 
 * [TISTUD-8865](https://jira.appcelerator.org/browse/TISTUD-8865) - Update Windows shortcut, start menu and Control panel program icon
 
-  * Updated the Studio application icon
+    * Updated the Studio application icon
 
 * [TISTUD-8866](https://jira.appcelerator.org/browse/TISTUD-8866) - Update new Axway Appcelerator Studio folder icon in MacOS during studio update
 
-  * Updated the Studio folder icon for MacOS
-
+    * Updated the Studio folder icon for MacOS
 
 ### App Designer
 
 * [GB-541](https://jira.appcelerator.org/browse/GB-541) - Allow Tabbing on Properties view pertaining to App Designer
 
-  * Added capability to "tab through" cells in the Properties View
+    * Added capability to "tab through" cells in the Properties View
 
 * [GB-542](https://jira.appcelerator.org/browse/GB-542) - Highlight the selected element when switch from XML view to Design view
 
-  * Selected XML components in the XML View are also highlighted in the Design View
+    * Selected XML components in the XML View are also highlighted in the Design View
 
 * [GB-550](https://jira.appcelerator.org/browse/GB-550) - App Designer in full screen mode
 
-  * Added capability to allow App Designer to go full screen
+    * Added capability to allow App Designer to go full screen
 
 * [GB-551](https://jira.appcelerator.org/browse/GB-551) - Handle Multi-Select efficiently
 
-  * Added feature when multiple elements are selected, you cannot tab through the cells as some of those cell types may not be have the same navigation behavior
+    * Added feature when multiple elements are selected, you cannot tab through the cells as some of those cell types may not be have the same navigation behavior
 
 * [GB-552](https://jira.appcelerator.org/browse/GB-552) - Fix issues with defaulting of properties
 
-  * Added feature when using the tab key to navigate, no values are activated when moving through the cells
-
+    * Added feature when using the tab key to navigate, no values are activated when moving through the cells
 
 ### LiveView improvements
 
 * [TISTUD-8781](https://jira.appcelerator.org/browse/TISTUD-8781) - LiveView: include version 1.2.0
 
-  * Implemented ES6 support for LiveView
+    * Implemented ES6 support for LiveView
 
 * [TISTUD-8840](https://jira.appcelerator.org/browse/TISTUD-8840) - LiveView: Include version 1.2.1
 
-  * Update for Windows application in LiveView; Studio shows the splash screen and then crashes with no error log. Please refer [TIMOB-25072](https://jira.appcelerator.org/browse/TIMOB-25072) for more info.
-
+    * Update for Windows application in LiveView; Studio shows the splash screen and then crashes with no error log. Please refer [TIMOB-25072](https://jira.appcelerator.org/browse/TIMOB-25072) for more info.
 
 ## Fixed issues
 
@@ -118,13 +114,11 @@ Studio 4.10.0 features various updates centering around the Axway Appcelerator r
 
 * [TISTUD-8819](https://jira.appcelerator.org/browse/TISTUD-8819) - Error in Create Android AVD window when JDK 1.8 not installed
 
-
 ### iOS
 
 * [TISTUD-8838](https://jira.appcelerator.org/browse/TISTUD-8838) - iOS simulators are not shown and NPE upon launching the studio
 
 * [TISTUD-8850](https://jira.appcelerator.org/browse/TISTUD-8850) - iOS Ad Hoc/Enterprise distribution error: Attribute notifyUsers is not of type java.lang.String.
-
 
 ### Windows
 
@@ -137,7 +131,6 @@ Studio 4.10.0 features various updates centering around the Axway Appcelerator r
 * [TISTUD-8778](https://jira.appcelerator.org/browse/TISTUD-8778) - Port 8080 remains blocked even after terminating an Arrow app running on Local Server
 
 * [TISTUD-8788](https://jira.appcelerator.org/browse/TISTUD-8788) - Windows OS: Error prompt when selecting a default project in the new workspace
-
 
 ### Misc
 
@@ -154,7 +147,6 @@ Studio 4.10.0 features various updates centering around the Axway Appcelerator r
 * [TISTUD-8827](https://jira.appcelerator.org/browse/TISTUD-8827) - Handle Fortify SCA reported NPE's
 
 * [TISTUD-8829](https://jira.appcelerator.org/browse/TISTUD-8829) - Command Injection can cause the program to execute malicious commands
-
 
 ## Known issue
 

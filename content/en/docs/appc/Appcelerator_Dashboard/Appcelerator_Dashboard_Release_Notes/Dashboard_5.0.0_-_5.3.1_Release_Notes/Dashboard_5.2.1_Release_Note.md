@@ -8,7 +8,6 @@ Dashboard 5.2.1 is a patch release, which includes an improvement and several bu
 
 * Improved presentation of the **Switch Org** controls in the User drop-down menu in the header.
 
-
 ## Fixed issues
 
 * Fixed an issue where performing multiple table data exports may not have functioned properly or the columns in the exported file may not have matched the table data.

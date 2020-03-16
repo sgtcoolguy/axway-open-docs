@@ -1,25 +1,24 @@
 {"title":"Titanium Modules Information","weight":"100"}
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Description](#Description)
+* [Description](#description)
 
-* [Invocation](#Invocation)
+* [Invocation](#invocation)
 
-* [Mobile Modules](#MobileModules)
+* [Mobile Modules](#mobile-modules)
 
-  * [Global Modules](#GlobalModules)
+    * [Global Modules](#global-modules)
 
-  * [Project's Modules](#Project'sModules)
+    * [Project's Modules](#project's-modules)
 
-  * [JSON Structure Illustration](#JSONStructureIllustration)
+    * [JSON Structure Illustration](#json-structure-illustration)
 
-  * [Installing a Module](#InstallingaModule)
+    * [Installing a Module](#installing-a-module)
 
-* [Desktop Modules](#DesktopModules)
+* [Desktop Modules](#desktop-modules)
 
-* [Sample of use](#Sampleofuse)
-
+* [Sample of use](#sample-of-use)
 
 ## Requirements
 
@@ -51,31 +50,17 @@ The returned _mobules information_ JSON is a Map object that has two roots:
 
 2. **project\_modules** - Holds the modules that were installed into the opened _Titanium Mobile Projects_ in the workspace.
 
-
 ### Global Modules
 
 As described above, the _Global Modules_ are the modules that were installed into the Titanium SDK modules directory.
 The hash value for the **global\_modules** key holds an _array_ of module-descriptions. Each item in this array is a hash that holds the following information:
 
-key
-
-description
-
-name
-
-The name of the module
-
-platforms
-
-The platforms that this module has support for (an array)
-
-versions
-
-The versions that this module has support for (an array)
-
-type
-
-The module-type ('_global_' or '_project_', and in this case - only '_global_')
+| key | description |
+| --- | --- |
+| name | The name of the module |
+| platforms | The platforms that this module has support for (an array) |
+| versions | The versions that this module has support for (an array) |
+| type | The module-type ('_global_' or '_project_', and in this case - only '_global_') |
 
 ### Project's Modules
 
@@ -86,7 +71,7 @@ The hash value for the **project\_modules** key holds a _hash_ that maps from a 
 
 Here is an illustration that describes the form of the returned JSON object.
 
-![modules_json](/Images/appc/download/attachments/30083163/modules_json.png)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083163/modules_json.png" alt="images/download/attachments/30083163/modules_json.png" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 ### Installing a Module
 

@@ -1,47 +1,46 @@
 {"title":"Working with a SQLite Database","weight":"30"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Creating and installing databases](#Creatingandinstallingdatabases)
+* [Creating and installing databases](#creating-and-installing-databases)
 
-  * [Opening a database](#Openingadatabase)
+    * [Opening a database](#opening-a-database)
 
-  * [Controlling backups to iCloud (iOS only)](#ControllingbackupstoiCloud(iOSonly))
+    * [Controlling backups to iCloud (iOS only)](#controlling-backups-to-icloud-ios-only)
 
-  * [Creating database tables](#Creatingdatabasetables)
+    * [Creating database tables](#creating-database-tables)
 
-  * [Installing an existing database](#Installinganexistingdatabase)
+    * [Installing an existing database](#installing-an-existing-database)
 
-* [Working with database contents](#Workingwithdatabasecontents)
+* [Working with database contents](#working-with-database-contents)
 
-  * [Storing data](#Storingdata)
+    * [Storing data](#storing-data)
 
-  * [Retrieving data](#Retrievingdata)
+    * [Retrieving data](#retrieving-data)
 
-  * [Updating data](#Updatingdata)
+    * [Updating data](#updating-data)
 
-  * [Deleting data](#Deletingdata)
+    * [Deleting data](#deleting-data)
 
-  * [Truncating (emptying) a table](#Truncating(emptying)atable)
+    * [Truncating (emptying) a table](#truncating-emptying-a-table)
 
-* [Manipulating the database's structure](#Manipulatingthedatabase'sstructure)
+* [Manipulating the database's structure](#manipulating-the-database's-structure)
 
-  * [Dropping a table](#Droppingatable)
+    * [Dropping a table](#dropping-a-table)
 
-  * [Altering a table](#Alteringatable)
+    * [Altering a table](#altering-a-table)
 
-  * [PRAGMA commands](#PRAGMAcommands)
+    * [PRAGMA commands](#pragma-commands)
 
-* [Best practices](#Bestpractices)
+* [Best practices](#best-practices)
 
-  * [Close the database and resultset with each operation](#Closethedatabaseandresultsetwitheachoperation)
+    * [Close the database and resultset with each operation](#close-the-database-and-resultset-with-each-operation)
 
-  * [Use transactions to speed batch inserts](#Usetransactionstospeedbatchinserts)
+    * [Use transactions to speed batch inserts](#use-transactions-to-speed-batch-inserts)
 
-  * [Use a minimal pre-populated database](#Useaminimalpre-populateddatabase)
+    * [Use a minimal pre-populated database](#use-a-minimal-pre-populated-database)
 
-  * [Store a version number to ease database updates](#Storeaversionnumbertoeasedatabaseupdates)
-
+    * [Store a version number to ease database updates](#store-a-version-number-to-ease-database-updates)
 
 ## Introduction
 
@@ -61,24 +60,13 @@ Android, iOS and Windows support [SQLite3](https://sqlite.org), the SQL-based re
 
 * There is limited ALTER TABLE support; columns may not be modified or deleted.
 
-
 Titanium provides access to SQLite via the following classes:
 
-Class
-
-Description
-
-[Titanium.Database](#!/api/Titanium.Database)
-
-Root module for working with databases
-
-[Titanium.Database.DB](#!/api/Titanium.Database.DB)
-
-Database handle
-
-[Titanium.Database.ResultSet](#!/api/Titanium.Database.ResultSet)
-
-Contains data returned by SQL queries
+| Class | Description |
+| --- | --- |
+| [Titanium.Database](#!/api/Titanium.Database) | Root module for working with databases |
+| [Titanium.Database.DB](#!/api/Titanium.Database.DB) | Database handle |
+| [Titanium.Database.ResultSet](#!/api/Titanium.Database.ResultSet) | Contains data returned by SQL queries |
 
 ## Creating and installing databases
 
@@ -87,7 +75,6 @@ Initializing a database can be done through the following methods:
 * Create an empty database and define its structure and contents via SQL statements embedded within your app logic.
 
 * Install a predefined database (with or without data) that is shipped with your app.
-
 
 The choice of which method to use depends on the complexity of the database structure and whether the initialized database contains static or dynamic data. See _Best Practices_ below for further discussion.
 
@@ -105,7 +92,6 @@ There are a few platform specifics:
 
 * On Android, the database is created on the internal storage (you could move it, or use the install procedure to put it on external storage). The standard location on internal storage is _/data/data/com.example.yourappid/databases/dbname_
 
-
 ### Controlling backups to iCloud (iOS only)
 
 By default, database files will be included in iCloud backups (iOS 5.0.1+). Unless you are unable to recover or regenerate the data, it is recommended to remove database files from backups. Apps may be rejected by Apple for backing up unnecessary or inappropriate files. You can mark files and databases so that they're not backed up:
@@ -121,7 +107,6 @@ For more information, see:
 * [Titanium.Database.DB.file property](#!/api/Titanium.Database.DB-property-file)
 
 * [Titanium.FileSystem.File.remoteBackup property](#!/api/Titanium.Filesystem.File-property-remoteBackup)
-
 
 ### Creating database tables
 
@@ -253,7 +238,6 @@ SQLite supports a limited subset of the ALTER TABLE command. You can add columns
 
 * ALTER _tablename_ RENAME TO _newname_ – to rename a table
 
-
 (To be clear, not being able to remove or rename columns is a SQLite limitation, not a Titanium limit.)
 
 ### PRAGMA commands
@@ -271,7 +255,6 @@ We recommend the following as best practices:
 * Don't ship a large pre-populated database with your app, download it instead
 
 * Store a version number in your database for easier app updating.
-
 
 ### Close the database and resultset with each operation
 

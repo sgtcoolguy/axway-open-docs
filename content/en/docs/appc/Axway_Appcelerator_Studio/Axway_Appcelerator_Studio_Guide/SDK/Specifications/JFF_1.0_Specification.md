@@ -1,53 +1,52 @@
 {"title":"JFF 1.0 Specification","weight":"40"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Top-Level Properties](#Top-LevelProperties)
+* [Top-Level Properties](#top-level-properties)
 
-  * [Name Property](#NameProperty)
+    * [Name Property](#name-property)
 
-  * [Version Property](#VersionProperty)
+    * [Version Property](#version-property)
 
-  * [Description Property](#DescriptionProperty)
+    * [Description Property](#description-property)
 
-  * [Result Property](#ResultProperty)
+    * [Result Property](#result-property)
 
-  * [Types Property](#TypesProperty)
+    * [Types Property](#types-property)
 
-* [Types](#Types)
+* [Types](#types)
 
-  * [Schema Type](#SchemaType)
+    * [Schema Type](#schema-type)
 
-    * [Name Property](#NameProperty.1)
+        * [Name Property](#name-property)
 
-    * [Version Property](#VersionProperty.1)
+        * [Version Property](#version-property)
 
-    * [Description Property](#DescriptionProperty.1)
+        * [Description Property](#description-property)
 
-    * [Result Property](#ResultProperty.1)
+        * [Result Property](#result-property)
 
-    * [Types Property](#TypesProperty.1)
+        * [Types Property](#types-property)
 
-  * [Type Type](#TypeType)
+    * [Type Type](#type-type)
 
-    * [Name Property](#NameProperty.2)
+        * [Name Property](#name-property)
 
-    * [Description Property](#DescriptionProperty.2)
+        * [Description Property](#description-property)
 
-    * [Properties Property](#PropertiesProperty)
+        * [Properties Property](#properties-property)
 
-  * [Property Type](#PropertyType)
+    * [Property Type](#property-type)
 
-    * [Name Property](#NameProperty.3)
+        * [Name Property](#name-property)
 
-    * [Type Property](#TypeProperty)
+        * [Type Property](#type-property)
 
-    * [Description Property](#DescriptionProperty.3)
+        * [Description Property](#description-property)
 
-    * [Example Property](#ExampleProperty)
+        * [Example Property](#example-property)
 
-    * [Optional Property](#OptionalProperty)
-
+        * [Optional Property](#optional-property)
 
 ## Overview
 

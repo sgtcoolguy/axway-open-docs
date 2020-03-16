@@ -1,89 +1,88 @@
 {"title":"Ruble Specification","weight":"130"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Bundles](#Bundles)
+* [Bundles](#bundles)
 
-  * [Bundle loading](#Bundleloading)
+    * [Bundle loading](#bundle-loading)
 
-  * [Redefining, overriding, and extending bundles](#Redefining,overriding,andextendingbundles)
+    * [Redefining, overriding, and extending bundles](#redefining,-overriding,-and-extending-bundles)
 
-    * [A minimal bundle](#Aminimalbundle)
+        * [A minimal bundle](#a-minimal-bundle)
 
-    * [Redefining a bundle](#Redefiningabundle)
+        * [Redefining a bundle](#redefining-a-bundle)
 
-    * [Extending a bundle](#Extendingabundle)
+        * [Extending a bundle](#extending-a-bundle)
 
-    * [Overriding a bundle element](#Overridingabundleelement)
+        * [Overriding a bundle element](#overriding-a-bundle-element)
 
-* [Bundle properties](#Bundleproperties)
+* [Bundle properties](#bundle-properties)
 
-  * [Associating a bundle with a file-type](#Associatingabundlewithafile-type)
+    * [Associating a bundle with a file-type](#associating-a-bundle-with-a-file-type)
 
-* [Scopes](#Scopes)
+* [Scopes](#scopes)
 
-  * [Scope selectors](#Scopeselectors)
+    * [Scope selectors](#scope-selectors)
 
-    * [Example - simple name selector](#Example-simplenameselector)
+        * [Example - simple name selector](#example---simple-name-selector)
 
-    * [Example - dotted name selector](#Example-dottednameselector)
+        * [Example - dotted name selector](#example---dotted-name-selector)
 
-    * [Example - descendant selector](#Example-descendantselector)
+        * [Example - descendant selector](#example---descendant-selector)
 
-    * [Example - union selector](#Example-unionselector)
+        * [Example - union selector](#example---union-selector)
 
-    * [Example - union selector 2](#Example-unionselector2)
+        * [Example - union selector 2](#example---union-selector-2)
 
-    * [Example - intersection selector](#Example-intersectionselector)
+        * [Example - intersection selector](#example---intersection-selector)
 
-    * [Example - grouping](#Example-grouping)
+        * [Example - grouping](#example---grouping)
 
-    * [Example - negative lookahead](#Example-negativelookahead)
+        * [Example - negative lookahead](#example---negative-lookahead)
 
-    * [Precedence levels](#Precedencelevels)
+        * [Precedence levels](#precedence-levels)
 
-* [Commands](#Commands)
+* [Commands](#commands)
 
-* [Snippets](#Snippets)
+* [Snippets](#snippets)
 
-* [Conventions and definitions](#Conventionsanddefinitions)
+* [Conventions and definitions](#conventions-and-definitions)
 
-  * [PATH\_SPECIFIER](#PATH_SPECIFIER)
+    * [PATH\_SPECIFIER](#path_specifier)
 
-  * [INPUT\_SPECIFIER](#INPUT_SPECIFIER)
+    * [INPUT\_SPECIFIER](#input_specifier)
 
-  * [OUTPUT\_SPECIFIER](#OUTPUT_SPECIFIER)
+    * [OUTPUT\_SPECIFIER](#output_specifier)
 
-  * [WORKING\_DIRECTORY](#WORKING_DIRECTORY)
+    * [WORKING\_DIRECTORY](#working_directory)
 
-  * [PLATFORM\_SPECIFIER](#PLATFORM_SPECIFIER)
+    * [PLATFORM\_SPECIFIER](#platform_specifier)
 
-* [Bundle.rb](#Bundle.rb)
+* [Bundle.rb](#bundle.rb)
 
-  * [Metadata](#Metadata)
+    * [Metadata](#metadata)
 
-  * [Menus](#Menus)
+    * [Menus](#menus)
 
-  * [Sample bundle.rb file](#Samplebundle.rbfile)
+    * [Sample bundle.rb file](#sample-bundle.rb-file)
 
-* [Commands and snippets](#Commandsandsnippets)
+* [Commands and snippets](#commands-and-snippets)
 
-  * [Key bindings](#Keybindings)
+    * [Key bindings](#key-bindings)
 
-  * [Input definition](#Inputdefinition)
+    * [Input definition](#input-definition)
 
-  * [Output definition](#Outputdefinition)
+    * [Output definition](#output-definition)
 
-  * [Invocation and context](#Invocationandcontext)
+    * [Invocation and context](#invocation-and-context)
 
-    * [Context during command invocation](#Contextduringcommandinvocation)
+        * [Context during command invocation](#context-during-command-invocation)
 
-      * [INVOKE\_OPTIONS](#INVOKE_OPTIONS)
+            * [INVOKE\_OPTIONS](#invoke_options)
 
-    * [Input during Command invocation](#InputduringCommandinvocation)
+        * [Input during Command invocation](#input-during-command-invocation)
 
-    * [Output during command invocation](#Outputduringcommandinvocation)
-
+        * [Output during command invocation](#output-during-command-invocation)
 
 ## Overview
 
@@ -145,7 +144,6 @@ Also, we are making the source available for several working Ruble bundles, some
 
 * [zen-coding.ruble](https://github.com/aptana/zen-coding.ruble)
 
-
 Please keep in mind that the specification and the bundles themselves are in active development and are very likely to change.
 
 Design-level compatibility with TextMate bundles was a priority in the design - we wanted to make it reasonably straightforward to convert an existing TextMate bundle into a Ruble bundle, while still allowing commands and snippets to be more concise and more powerful. At the same time, we wanted Ruble bundles to run on Linux and Windows as well as the Mac, so we had to make some changes to deal with issues like key bindings and OS-specific assumptions.
@@ -158,47 +156,21 @@ Bundles are the top-level distribution format for Ruble extensions. A bundle dir
 
 In addition to the bundle.rb file, there are four top-level directories within a bundle that are treated specially:
 
-File/Dir
-
-Description
-
-commands/
-
-Contains the commands that make up the bundle.rb files within this directory will be loaded at startup, so you should keep it as minimal as possible to keep things fast.
-
-lib/
-
-It contains Ruby code that is on the load path when executing commands within your bundle. Put code here you wish to invoke from within your commands, but which you do not necessarily want to be loaded at startup.
-
-snippets/
-
-Contains the snippets that make up the bundle.rb files within this directory will be loaded at startup, so you should keep it as minimal as possible to keep things fast.
-
-templates/
-
-It contains project templates used by the "New Project Wizard" when creating a new project in Studio.
+| File/Dir | Description |
+| --- | --- |
+| commands/ | Contains the commands that make up the bundle.rb files within this directory will be loaded at startup, so you should keep it as minimal as possible to keep things fast. |
+| lib/ | It contains Ruby code that is on the load path when executing commands within your bundle. Put code here you wish to invoke from within your commands, but which you do not necessarily want to be loaded at startup. |
+| snippets/ | Contains the snippets that make up the bundle.rb files within this directory will be loaded at startup, so you should keep it as minimal as possible to keep things fast. |
+| templates/ | It contains project templates used by the "New Project Wizard" when creating a new project in Studio. |
 
 By convention, there are several other files and directories found in most bundles:
 
-File/Dir
-
-Description
-
-README
-
-Your usual README file (these also work: README.md, README.markdown, README.textile, and README.txt).
-
-Rakefile
-
-Your Rakefile, typically used for testing, packaging, and so forth.
-
-assets/
-
-Images, icons, and other files used by your bundle.
-
-test/
-
-Test code.
+| File/Dir | Description |
+| --- | --- |
+| README | Your usual README file (these also work: README.md, README.markdown, README.textile, and README.txt). |
+| Rakefile | Your Rakefile, typically used for testing, packaging, and so forth. |
+| assets/ | Images, icons, and other files used by your bundle. |
+| test/ | Test code. |
 
 ### Bundle loading
 
@@ -210,7 +182,6 @@ In Studio 3, Ruble bundles are loaded from the file system in a hierarchical ord
 
 * The bundle's directory within the Aptana Studio installation.
 
-
 When a bundle is defined in multiple places, only the bundle code defined in the highest priority location is used. In this way, you can easily do a git clone (or the equivalent) on a bundle from within your $USER\_DOCUMENT\_DIRECTORY/Aptana Rubles and it will override the ones built into Studio itself.
 
 Other implementations are free to keep bundles in whatever locations on disk they desire, but if an implementation does support multiple locations for bundles, it should also use the priority system for determining which bundles are active.
@@ -221,33 +192,14 @@ It is possible for a bundle directory and its members to redefine, to override o
 
 Before we can discuss these mechanisms, we need to get some terminology out of the way. Below is a list of terms you may encounter when talking about bundles and how they are defined.
 
-Term
-
-Description
-
-Bundle Directory
-
-A directory containing a top-level bundle.rb file and optionally other .rb files defining commands, menus, and snippets as discussed in the _Bundles_ section.
-
-Bundle Name
-
-The name of a bundle derived from its bundle directory name. If the directory name ends with .ruble, the bundle name is the directory name with that suffix removed; otherwise, the bundle name is simply the directory name itself.
-
-Bundle Reference
-
-When defining a bundle in a bundle.rb file, it is possible to include a name. This name refers to an existing bundle and is used as a mechanism to extend and override a bundle of equal or lower precedence.
-
-Bundle Elements
-
-A generic term for any item contained by a bundle: for example, commands, snippets, and menus.
-
-Bundle Definition
-
-A bundle instance created by the bundle method. This is a general term used when discussing bundle instances.
-
-Active Bundle
-
-This is the resulting bundle after all precedence and reference rules have been applied.
+| Term | Description |
+| --- | --- |
+| Bundle Directory | A directory containing a top-level bundle.rb file and optionally other .rb files defining commands, menus, and snippets as discussed in the _Bundles_ section. |
+| Bundle Name | The name of a bundle derived from its bundle directory name. If the directory name ends with .ruble, the bundle name is the directory name with that suffix removed; otherwise, the bundle name is simply the directory name itself. |
+| Bundle Reference | When defining a bundle in a bundle.rb file, it is possible to include a name. This name refers to an existing bundle and is used as a mechanism to extend and override a bundle of equal or lower precedence. |
+| Bundle Elements | A generic term for any item contained by a bundle: for example, commands, snippets, and menus. |
+| Bundle Definition | A bundle instance created by the bundle method. This is a general term used when discussing bundle instances. |
+| Active Bundle | This is the resulting bundle after all precedence and reference rules have been applied. |
 
 #### A minimal bundle
 
@@ -349,57 +301,25 @@ As you can see, we use the same mechanism we used to extend a bundle; however, t
 
 Bundles have the following properties, all of which are optional:
 
-Element
-
-Description
-
-display\_name
-
-A human-readable name for the command.
-
-description
-
-A longer textual description of the bundle, in Markdown syntax
-
-scope
-
-The default scope for commands and snippets defined within the bundle. See 'Scopes' below.
-
-author
-
-One or more author names
-
-copyright
-
-Self-explanatory.
-
-license
-
-Self-explanatory.
-
-repository
-
-A URL to the repository or a webpage explaining how to get access.
+| Element | Description |
+| --- | --- |
+| display\_name | A human-readable name for the command. |
+| description | A longer textual description of the bundle, in Markdown syntax |
+| scope | The default scope for commands and snippets defined within the bundle. See 'Scopes' below. |
+| author | One or more author names |
+| copyright | Self-explanatory. |
+| license | Self-explanatory. |
+| repository | A URL to the repository or a webpage explaining how to get access. |
 
 ### Associating a bundle with a file-type
 
 A bundle can be associated with one or more file types. This makes it possible for a bundle to be created that defines a set of commands and snippets for a file type that doesn't have a built-in editor and parser. A future version of this API will also allow the definition of syntax coloring elements, auto-indent rules, and perhaps even the ability to create full-fledged language parsers.
 
-Method
-
-Description
-
-register\_file\_type(file\_type,scope)
-
-This is a convenience method that first calls associate\_file\_type and then registers that file\_type to a particular scope by calling associate\_scope.
-
-associate\_file\_type(file\_type)
-
-Given a filename pattern, we register files that match to our generic text editor (uses our theme and scripting). file\_type must be either an exact filename to match or a \*.ext extension to which to associate.
-
-associate\_scope(file\_type,scope)
-
-Registers a top-level scope to report back for any file whose name matches the passed in the pattern. Understands \* wildcard. Typical values for the first arg: .yml**,** \_spec.rb, Rakefile. scope is a string or a symbol. Underscores are converted to spaces (so 'source.yaml' and :source\_yaml are equivalent).
+| Method | Description |
+| --- | --- |
+| register\_file\_type(file\_type,scope) | This is a convenience method that first calls associate\_file\_type and then registers that file\_type to a particular scope by calling associate\_scope. |
+| associate\_file\_type(file\_type) | Given a filename pattern, we register files that match to our generic text editor (uses our theme and scripting). file\_type must be either an exact filename to match or a \*.ext extension to which to associate. |
+| associate\_scope(file\_type,scope) | Registers a top-level scope to report back for any file whose name matches the passed in the pattern. Understands \* wildcard. Typical values for the first arg: .yml**,** \_spec.rb, Rakefile. scope is a string or a symbol. Underscores are converted to spaces (so 'source.yaml' and :source\_yaml are equivalent). |
 
 ## Scopes
 
@@ -465,79 +385,29 @@ Sometimes you want to match a scope unless it is being used within a child's sco
 
 The following table lists all of the selector operators, by precedence level, highest precedence first. The higher the precedence, the more tightly the operator binds its operands.
 
-Operator
-
-Name(s)
-
-()
-
-Parentheses, Group
-
-&
-
-Ampersand, Intersection
-
-<space>
-
-Descendant
-
-\-
-
-Negative Lookahead, Asymmetric Difference
-
-,
-
-Comma, Or, Union
-
-|
-
-Pipe, Or, Union
+| Operator | Name(s) |
+| --- | --- |
+| () | Parentheses, Group |
+| & | Ampersand, Intersection |
+| <space> | Descendant |
+| \- | Negative Lookahead, Asymmetric Difference |
+| , | Comma, Or, Union |
+| | | Pipe, Or, Union |
 
 ## Commands
 
 Commands are the fundamental building blocks of Bundles. A command has the following properties:
 
-Element
-
-Required?
-
-Description
-
-name
-
-Yes
-
-A human-readable name for the command. Must be unique within the bundle.
-
-invoke
-
-Yes
-
-The code to be executed. If specified as a string, it is executed as a shell script. If passed a block, it is invoked as a block when the command is executed.
-
-scope
-
-The scope in which the command can be executed. If no scope is specified, the command is assumed to be active in all scopes.
-
-input
-
-The input to the command. See the _Input Definition_ section below.
-
-output
-
-The output of the command. See the _Output Definition_ section below.
-
-working\_directory
-
-The working directory to use when invoking the command as a shell script. See the _Working Directory Definition_ section below.
-
-key\_binding
-
-The keyboard binding for the command. It is also possible to define platform-specific key bindings, as described in the _Key Bindings_ section below.
-
-trigger
-
-A tab trigger that will invoke the command if typed into an editor window and then the <TAB> key is pressed. It is possible to define both a trigger and a key\_binding for a single command.
+| Element | Required? | Description |
+| --- | --- | --- |
+| name | Yes | A human-readable name for the command. Must be unique within the bundle. |
+| invoke | Yes | The code to be executed. If specified as a string, it is executed as a shell script. If passed a block, it is invoked as a block when the command is executed. |
+| scope |  | The scope in which the command can be executed. If no scope is specified, the command is assumed to be active in all scopes. |
+| input |  | The input to the command. See the _Input Definition_ section below. |
+| output |  | The output of the command. See the _Output Definition_ section below. |
+| working\_directory |  | The working directory to use when invoking the command as a shell script. See the _Working Directory Definition_ section below. |
+| key\_binding |  | The keyboard binding for the command. It is also possible to define platform-specific key bindings, as described in the _Key Bindings_ section below. |
+| trigger |  | A tab trigger that will invoke the command if typed into an editor window and then the <TAB> key is pressed. It is possible to define both a trigger and a key\_binding for a single command. |
 
 Example command:
 
@@ -595,33 +465,12 @@ Snippets are a specialized form of commands designed to make it easier to specif
 
 Here are the properties specific to snippets. Note that the trigger is required, unlike the case for commands.
 
-Element
-
-Required?
-
-Description
-
-name
-
-Yes
-
-A human-readable name for the command. Must be unique within the bundle.
-
-scope
-
-The scope in which the command can be executed. If no scope is specified, the command is assumed to be active in all scopes.
-
-trigger
-
-Yes
-
-A tab trigger that will invoke the command if typed into an editor window and then the <TAB> key is pressed. It is possible to define both a trigger and a key\_binding for a single command.
-
-expansion
-
-Yes
-
-The snippet text that will be substituted for the command trigger.
+| Element | Required? | Description |
+| --- | --- | --- |
+| name | Yes | A human-readable name for the command. Must be unique within the bundle. |
+| scope |  | The scope in which the command can be executed. If no scope is specified, the command is assumed to be active in all scopes. |
+| trigger | Yes | A tab trigger that will invoke the command if typed into an editor window and then the <TAB> key is pressed. It is possible to define both a trigger and a key\_binding for a single command. |
+| expansion | Yes | The snippet text that will be substituted for the command trigger. |
 
 FORTHCOMING: the syntax for the expansion string (which roughly follows TextMate, but doesn't support nesting at present)
 
@@ -639,142 +488,54 @@ Paths can be specified in many places in the API. Whenever you see the term PATH
 
 * A Ruby symbol with special meaning. For example, :current\_project might refer to the currently loaded project (NOT YET IMPLEMENTED).
 
-
 ### INPUT\_SPECIFIER
 
 The possible input specifiers are:
 
-Specifier
-
-Description
-
-:selection
-
-Selected text in the editor.
-
-:left\_character
-
-The character to the immediate left of the caret.
-
-:right\_character
-
-The character to the immediate right of the caret.
-
-:word
-
-Word surrounding the current caret.
-
-:line
-
-The line containing the caret.
-
-:document
-
-The entire current document.
-
-:clipboard
-
-The contents of the clipboard.
-
-:scope
-
-(NOT YET IMPLEMENTED) As in TextMate: search backward and forwards for the first character, which is not matched by the scope selector of the command and use those as boundaries for the input.
-
-:input\_from\_console
-
-Take input from a shell window? How do we specify which console?
-
-:none
-
-No input is needed by this command. When encountered in the **multiple symbol specifier** case, this symbol always terminates fallback evaluation.
-
-:selected\_lines
-
-I'm not sure what this does or how it differs from :selection.
+| Specifier | Description |
+| --- | --- |
+| :selection | Selected text in the editor. |
+| :left\_character | The character to the immediate left of the caret. |
+| :right\_character | The character to the immediate right of the caret. |
+| :word | Word surrounding the current caret. |
+| :line | The line containing the caret. |
+| :document | The entire current document. |
+| :clipboard | The contents of the clipboard. |
+| :scope | (NOT YET IMPLEMENTED) As in TextMate: search backward and forwards for the first character, which is not matched by the scope selector of the command and use those as boundaries for the input. |
+| :input\_from\_console | Take input from a shell window? How do we specify which console? |
+| :none | No input is needed by this command. When encountered in the **multiple symbol specifier** case, this symbol always terminates fallback evaluation. |
+| :selected\_lines | I'm not sure what this does or how it differs from :selection. |
 
 ### OUTPUT\_SPECIFIER
 
 The possible output specifiers are:
 
-Specifier
-
-Description
-
-:insert\_as\_text
-
-Insert text at the caret position. If there is a selection, the text is inserted immediately following the selection, and the selection is lost.
-
-:insert\_as\_snippet
-
-As with :insert\_as\_text, but the output is interpreted as snippet expansion text.
-
-:replace\_selection
-
-Replace the currently selected text with the output. If no text is selected, this is equivalent to the :insert\_as\_text specifier.
-
-:replace\_document
-
-Replace the entire document with the output.
-
-:copy\_to\_clipboard
-
-Replace the contents of the clipboard with the output.
-
-:show\_as\_html
-
-Open an HTML browser window and interpret the output as HTML.
-
-:show\_as\_tooltip
-
-Show a tooltip containing the output.
-
-:create\_new\_document
-
-Create a new editor document containing the output.
-
-:output\_to\_console
-
-Display the output in a console.
-
-:discard
-
-Throw any output away.
-
-:replace\_selected\_lines
-
-What does this do?
-
-:replace\_line
-
-Replace the line around the caret.
-
-:replace\_word
-
-Replace the word around the caret.
+| Specifier | Description |
+| --- | --- |
+| :insert\_as\_text | Insert text at the caret position. If there is a selection, the text is inserted immediately following the selection, and the selection is lost. |
+| :insert\_as\_snippet | As with :insert\_as\_text, but the output is interpreted as snippet expansion text. |
+| :replace\_selection | Replace the currently selected text with the output. If no text is selected, this is equivalent to the :insert\_as\_text specifier. |
+| :replace\_document | Replace the entire document with the output. |
+| :copy\_to\_clipboard | Replace the contents of the clipboard with the output. |
+| :show\_as\_html | Open an HTML browser window and interpret the output as HTML. |
+| :show\_as\_tooltip | Show a tooltip containing the output. |
+| :create\_new\_document | Create a new editor document containing the output. |
+| :output\_to\_console | Display the output in a console. |
+| :discard | Throw any output away. |
+| :replace\_selected\_lines | What does this do? |
+| :replace\_line | Replace the line around the caret. |
+| :replace\_word | Replace the word around the caret. |
 
 ### WORKING\_DIRECTORY
 
 The possible working directory specifiers are:
 
-Specifier
-
-Description
-
-'any string'
-
-The string is interpreted as an absolute path.
-
-:current\_file
-
-Use the command's parent dir as the working dir. This is the default behavior.
-
-:current\_project
-
-Use the active project in the App Explorer as the working directory.
-
-:current\_bundle
-
-Use the command's owning bundle's directory as the working directory. Typically this is the parent dir of what you'd get with :current\_file
+| Specifier | Description |
+| --- | --- |
+| 'any string' | The string is interpreted as an absolute path. |
+| :current\_file | Use the command's parent dir as the working dir. This is the default behavior. |
+| :current\_project | Use the active project in the App Explorer as the working directory. |
+| :current\_bundle | Use the command's owning bundle's directory as the working directory. Typically this is the parent dir of what you'd get with :current\_file |
 
 ### PLATFORM\_SPECIFIER
 
@@ -788,37 +549,15 @@ As discussed in the _Runtime Architecture_ section above, the bundle.rb file def
 
 Bundles have metadata associated with them. The following properties are pre-defined:
 
-Property
-
-Description
-
-name
-
-The user-visible name of the bundle. For example, "Ruby on Rails". This name will be shown in menus, error messages, and so forth.
-
-description
-
-A longer, textual description of the bundle and its purpose.
-
-author
-
-The author(s) of the bundle.
-
-copyright
-
-Any copyright message associated with the bundle.
-
-license
-
-The name or URL of the license associated with the bundle. For example, "MIT License" or[http://www.gnu.org/licenses/gpl-3.0.txt](http://www.gnu.org/licenses/gpl-3.0.txt)
-
-website
-
-The website where more information about the bundle can be found.
-
-repository
-
-The public repository url where the canonical version of this bundle lives. For example, git://github.com/aptana/rails.ruble.git
+| Property | Description |
+| --- | --- |
+| name | The user-visible name of the bundle. For example, "Ruby on Rails". This name will be shown in menus, error messages, and so forth. |
+| description | A longer, textual description of the bundle and its purpose. |
+| author | The author(s) of the bundle. |
+| copyright | Any copyright message associated with the bundle. |
+| license | The name or URL of the license associated with the bundle. For example, "MIT License" or[http://www.gnu.org/licenses/gpl-3.0.txt](http://www.gnu.org/licenses/gpl-3.0.txt) |
+| website | The website where more information about the bundle can be found. |
+| repository | The public repository url where the canonical version of this bundle lives. For example, git://github.com/aptana/rails.ruble.git |
 
 Additional properties can be accessed, though, simply by referring to them as though they already exist, for example:
 
@@ -904,169 +643,38 @@ Example:
 
 The KEY\_SEQUENCE syntax follows the Eclipse conventions since those are more portable than the ones used in TextMate. A KEY\_SEQUENCE should consist of one or more keystrokes. Keystrokes are separated by spaces. A keystroke consists of one or more keys held down at the same time. This should be zero or more modifier keys and one other key. The keys are separated by the + character. The recognized modifiers keys are ALT or OPTION, COMMAND, CTRL, and SHIFT. Also, M1, M2, M3, M4 modifier keys are recognized. The "M" modifier keys are a platform-independent way of representing keys, and these are generally preferred. M1 is the COMMAND key on MacOS X and the CTRL key on most other platforms. M2 is the SHIFT key. M3 is the Option key on MacOS X, and the ALT key on most other platforms. M4 is the CTRL key on MacOS X and is undefined on other platforms. Since M2+M3+<Letter> (Alt+Shift+<Letter>) is reserved on MacOS X for writing special characters.
 
-Shortcut
-
-Platform
-
-Key
-
-M1
-
-OS X
-
-COMMAND
-
-M1
-
-Other Platforms
-
-CONTROL (CTRL)
-
-M2
-
-All Platforms
-
-SHIFT
-
-M3
-
-OS X
-
-OPTION
-
-M3
-
-Other Platforms
-
-ALT
-
-M4
-
-OS X
-
-CONTROL (CTRL)
+| Shortcut | Platform | Key |
+| --- | --- | --- |
+| M1 | OS X | COMMAND |
+| M1 | Other Platforms | CONTROL (CTRL) |
+| M2 | All Platforms | SHIFT |
+| M3 | OS X | OPTION |
+| M3 | Other Platforms | ALT |
+| M4 | OS X | CONTROL (CTRL) |
 
 The actual key is generally specified simply as the ASCII character in uppercase. So, for example, F or X, are examples of such keys. However, there are some special keys; keys that have no printable ASCII representation. The following is a list of the current special keys:
 
-Key
-
-...
-
-...
-
-ARROW\_DOWN
-
-F1
-
-NUMPAD\_0
-
-ARROW\_LEFT
-
-F2
-
-NUMPAD\_1
-
-ARROW\_RIGHT
-
-F3
-
-NUMPAD\_2
-
-ARROW\_UP
-
-F4
-
-NUMPAD\_3
-
-BREAK
-
-F5
-
-NUMPAD\_4
-
-BS
-
-F6
-
-NUMPAD\_5
-
-CAPS\_LOCK
-
-F7
-
-NUMPAD\_6
-
-CR
-
-F8
-
-NUMPAD\_7
-
-DEL
-
-F9
-
-NUMPAD\_8
-
-END
-
-F10
-
-NUMPAD\_9
-
-ESC
-
-F11
-
-NUMPAD\_ADD
-
-HOME
-
-F12
-
-NUMPAD\_DECIMAL
-
-INSERT
-
-F13
-
-NUMPAD\_DIVIDE
-
-LF
-
-F14
-
-NUMPAD\_ENTER
-
-FF
-
-F15
-
-NUMPAD\_EQUAL
-
-NULL
-
-PRINT\_SCREEN
-
-NUMPAD\_MULTIPLY
-
-PAGE\_UP
-
-PAUSE
-
-NUMPAD\_SUBTRACT
-
-PAGE\_DOWN
-
-SCROLL\_LOCK
-
-NUM\_LOCK
-
-SPACE
-
-TAB
-
-VT
+| Key | ... | ... |
+| --- | --- | --- |
+| ARROW\_DOWN | F1 | NUMPAD\_0 |
+| ARROW\_LEFT | F2 | NUMPAD\_1 |
+| ARROW\_RIGHT | F3 | NUMPAD\_2 |
+| ARROW\_UP | F4 | NUMPAD\_3 |
+| BREAK | F5 | NUMPAD\_4 |
+| BS | F6 | NUMPAD\_5 |
+| CAPS\_LOCK | F7 | NUMPAD\_6 |
+| CR | F8 | NUMPAD\_7 |
+| DEL | F9 | NUMPAD\_8 |
+| END | F10 | NUMPAD\_9 |
+| ESC | F11 | NUMPAD\_ADD |
+| HOME | F12 | NUMPAD\_DECIMAL |
+| INSERT | F13 | NUMPAD\_DIVIDE |
+| LF | F14 | NUMPAD\_ENTER |
+| FF | F15 | NUMPAD\_EQUAL |
+| NULL | PRINT\_SCREEN | NUMPAD\_MULTIPLY |
+| PAGE\_UP | PAUSE | NUMPAD\_SUBTRACT |
+| PAGE\_DOWN | SCROLL\_LOCK | NUM\_LOCK |
+| SPACE | TAB | VT |
 
 Alternate names for some common special keys are also allowed. For example, ESC/ESCAPE, and CR/ENTER/RETURN are synonyms.
 
@@ -1139,75 +747,33 @@ The allowed platforms are defined in the PLATFORM\_SPECIFIER section of this doc
 
 When a command's invoke property is set a ruby block, that block is passed a context object as an argument. The context object has the following properties:
 
-Property
-
-Description
-
-input
-
-The input to the command as a string. See the _Input During Command Invocation_ section below.
-
-invoked\_via
-
-How the command was invoked. Can be :key\_binding, :menu, :unknown, :command, or :trigger.
-
-command
-
-The Command object being executed.
-
-bundle
-
-The Bundle in which the command is defined.
-
-scope
-
-The Scope in which the command was executed.
-
-project
-
-The Project that owns the file currently being edited, or nil. See _Project API_ for more information.
-
-editor
-
-The currently active Aptana file editor. See _Editor API_ for more information.
+| Property | Description |
+| --- | --- |
+| input | The input to the command as a string. See the _Input During Command Invocation_ section below. |
+| invoked\_via | How the command was invoked. Can be :key\_binding, :menu, :unknown, :command, or :trigger. |
+| command | The Command object being executed. |
+| bundle | The Bundle in which the command is defined. |
+| scope | The Scope in which the command was executed. |
+| project | The Project that owns the file currently being edited, or nil. See _Project API_ for more information. |
+| editor | The currently active Aptana file editor. See _Editor API_ for more information. |
 
 Also, the context has a few handy-dandy functions for use by commands, as described below:
 
-Method
-
-Description
-
-exit\_with\_message(message, OUTPUT\_SPECIFIER)
-
-Short-circuit the execution of the command, using the specified OUTPUT\_SPECIFIER
-
-invoke(name, INVOKE\_OPTIONS)
-
-(NOT YET IMPLEMENTED) Invoke another command or snippet by name and return its context object so that its output and other properties can be extracted.
+| Method | Description |
+| --- | --- |
+| exit\_with\_message(message, OUTPUT\_SPECIFIER) | Short-circuit the execution of the command, using the specified OUTPUT\_SPECIFIER |
+| invoke(name, INVOKE\_OPTIONS) | (NOT YET IMPLEMENTED) Invoke another command or snippet by name and return its context object so that its output and other properties can be extracted. |
 
 ##### INVOKE\_OPTIONS
 
 You can supply additional options to the invoke method via its INVOKE\_OPTIONS hash. These options effect the state of the context object passed to the command when it is invoked:
 
-Key
-
-Description
-
-:input
-
-If specified, the context's input property will be set to this value. This is useful when you want your command to process user input and then have another command process that input. If it is not defined, the INPUT\_SPECIFIER in the command's definition will be used as normal.
-
-:output
-
-If specified, this OUTPUT\_SPECIFIER overrides the one defined by the command.
-
-:scope
-
-The scope specifier to be passed to the command
-
-:bundle
-
-If specified, look for the command to invoke in the named bundle instead of the current bundle.
+| Key | Description |
+| --- | --- |
+| :input | If specified, the context's input property will be set to this value. This is useful when you want your command to process user input and then have another command process that input. If it is not defined, the INPUT\_SPECIFIER in the command's definition will be used as normal. |
+| :output | If specified, this OUTPUT\_SPECIFIER overrides the one defined by the command. |
+| :scope | The scope specifier to be passed to the command |
+| :bundle | If specified, look for the command to invoke in the named bundle instead of the current bundle. |
 
 #### Input during Command invocation
 

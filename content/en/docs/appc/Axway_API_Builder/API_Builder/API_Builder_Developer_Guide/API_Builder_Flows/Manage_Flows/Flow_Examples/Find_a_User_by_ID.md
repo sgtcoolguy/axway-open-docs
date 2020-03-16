@@ -9,7 +9,7 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 To configure a find a user by ID flow:
 
 1. Click the **Create Flow** icon associated with finding a simple user using their ID.
-  The API Orchestration user interface is displayed.
+    The API Orchestration user interface is displayed.
 
 2. Select and pull the simpleusers flow-node onto the flow editor from the Models list. Note that the Start flow-node is automatically connected to the input of the simpleusers flow-node.
 
@@ -53,7 +53,7 @@ To configure a find a user by ID flow:
 
 22. Connect the notfound output of the Find a user by ID flow-node to the input of the User not found flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage Nodes](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Flows/Manage_Nodes/). The completed flow is displayed.
 
-  ![Find_by_ID](/Images/appc/download/attachments/52298576/Find_by_ID.png)
+    ![Find_by_ID](/Images/appc/download/attachments/52298576/Find_by_ID.png)
 23. Click **Save**.
 
 24. On the next screen, click **Proceed**. The server will be restarted and the Find a user by ID flow will be saved and enabled.

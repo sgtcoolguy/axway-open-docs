@@ -1,23 +1,22 @@
 {"title":"Installing Node","weight":"20"}
 
-* [Compatibility and download](#Compatibilityanddownload)
+* [Compatibility and download](#compatibility-and-download)
 
-* [Installation](#Installation)
+* [Installation](#installation)
 
-* [Using NPM packages in Titanium](#UsingNPMpackagesinTitanium)
+* [Using NPM packages in Titanium](#using-npm-packages-in-titanium)
 
-  * [Usage of packages](#Usageofpackages)
+    * [Usage of packages](#usage-of-packages)
 
-  * [Dependencies](#Dependencies)
+    * [Dependencies](#dependencies)
 
-  * [Finding packages](#Findingpackages)
+    * [Finding packages](#finding-packages)
 
-* [Troubleshooting](#Troubleshooting)
+* [Troubleshooting](#troubleshooting)
 
-  * [Error: EONT, stat C:\\Users\\<USER\_NAME>\\AppData\\Roaming\\npm](#Error:EONT,statC:\Users\<USER_NAME>\AppData\Roaming\npm)
+    * [Error: EONT, stat C:\\Users\\<USER\_NAME>\\AppData\\Roaming\\npm](#error:-eont,-stat-c:\users\<user_name>\appdata\roaming\npm)
 
-  * [Issues installing NPM packages](#IssuesinstallingNPMpackages)
-
+    * [Issues installing NPM packages](#issues-installing-npm-packages)
 
 Node.js is required for several Appcelerator components, including the Axway Appcelerator CLI, Alloy, and the API Builder. Node.js is also required to build the Titanium SDK.
 
@@ -29,21 +28,9 @@ On Mac OS X and Windows, if you have selected to install Titanium updates, Studi
 
 ![download_05](/Images/appc/download/attachments/29004836/download_05.png)
 
-Operating System
-
-Min Node Version
-
-Max Node Version
-
-Download Location
-
-macOS / Windows / Linux
-
-8.0
-
-10.X
-
-[Official Website](https://nodejs.org/en/download/releases/)
+| Operating System | Min Node Version | Max Node Version | Download Location |
+| --- | --- | --- | --- |
+| macOS / Windows / Linux | 8.0 | 10.X | [Official Website](https://nodejs.org/en/download/releases/) |
 
 ## Installation
 
@@ -51,19 +38,17 @@ Before installing the CLI, you should decide where you want the Node Package Man
 
 * Make the /usr/local directory writable by all:
 
-  `sudo chmod` `777` `/usr/local`
-
+    `sudo chmod` `777` `/usr/local`
 
 * Set npm to install to your home directory, or another directory of your choosing by setting the npm prefix. For example, you can add the following to your .bash\_profile or other initialization file:
 
-  `export NPM_CONFIG_PREFIX=$HOME`
+    `export NPM_CONFIG_PREFIX=$HOME`
 
-  Alternately, you can create a .npmrc file in your home directory with the following contents:
+    Alternately, you can create a .npmrc file in your home directory with the following contents:
 
-  `prefix=/path/to/home`
+    `prefix=/path/to/home`
 
-  Where _/path/to/home_ is the path to your home directory. Setting the npm prefix to your home directory causes the npm packages to be installed to $HOME/lib/node\_modules and launch scripts are installed in $HOME/bin. $HOME/bin must be in your PATH.
-
+    Where _/path/to/home_ is the path to your home directory. Setting the npm prefix to your home directory causes the npm packages to be installed to $HOME/lib/node\_modules and launch scripts are installed in $HOME/bin. $HOME/bin must be in your PATH.
 
 If you change your prefix after installing npm packages, you will have to reinstall packages. If you change the permissions on /usr/local after installing packages as root, you may need to change the ownership of the npm cache folder, as described in [Troubleshooting npm Problems](#TroubleshootingnpmProblems).
 
@@ -78,7 +63,6 @@ If you change your prefix after installing npm packages, you will have to reinst
 4. Add the lib/node\_modules folder and the package-lock.json file to your .gitignore folder.
 
 5. On any other machine you want to set this up, go to your /lib folder, run npm install and all packages will be installed to your app.
-
 
 ### Usage of packages
 
@@ -96,8 +80,7 @@ To install a package dependency,
 
 3. To use the dependency, for example a module called ImageView from the to.cacheimageview (sample extension of the to.imagecache package):
 
-  `<``ImageView`  `id``=``"myImage"`  `module``=``"to.cachedimageview"` `/>`
-
+    `<``ImageView`  `id``=``"myImage"`  `module``=``"to.cachedimageview"` `/>`
 
 ### Finding packages
 
@@ -119,12 +102,12 @@ If you experience an issue installing any of the npm packages, try the following
 
 * Check permissions. If you originally ran npm using sudo, you may need to change the ownership of the npm cache folder.
 
-  `sudo`  `chown` `-R <username> ~/.npmrc`
+    `sudo`  `chown` `-R <username> ~/.npmrc`
 
-  On Windows, the npm cache defaults to npm-cache in the user's home folder.
+    On Windows, the npm cache defaults to npm-cache in the user's home folder.
 
 * Clear the npm package cache:
 
-  `npm cache clean`
+    `npm cache clean`
 
 * Remove your .npmrc file.

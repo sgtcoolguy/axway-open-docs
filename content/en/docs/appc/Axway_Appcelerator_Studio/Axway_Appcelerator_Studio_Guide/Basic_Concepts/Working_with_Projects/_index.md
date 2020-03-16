@@ -10,7 +10,6 @@ To create a new project:
 
 3. Follow the Wizard instructions to complete creating a project.
 
-
 ## Chapters
 
 * [Importing an Existing Project](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Working_with_Projects/Importing_an_Existing_Project/)

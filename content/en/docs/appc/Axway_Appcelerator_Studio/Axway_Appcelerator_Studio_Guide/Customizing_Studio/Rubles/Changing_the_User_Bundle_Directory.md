@@ -1,11 +1,10 @@
 {"title":"Changing the User Bundle Directory","weight":"20"}
 
-* [Changing Your User Bundle Path](#ChangingYourUserBundlePath)
+* [Changing Your User Bundle Path](#changing-your-user-bundle-path)
 
-* [User Bundle Path Requirements](#UserBundlePathRequirements)
+* [User Bundle Path Requirements](#user-bundle-path-requirements)
 
-* [Moving Existing Bundles](#MovingExistingBundles)
-
+* [Moving Existing Bundles](#moving-existing-bundles)
 
 ## Changing Your User Bundle Path
 

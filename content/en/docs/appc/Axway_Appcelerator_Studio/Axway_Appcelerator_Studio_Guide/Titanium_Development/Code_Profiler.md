@@ -1,33 +1,32 @@
 {"title":"Code Profiler","weight":"110"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Profiling an Application](#ProfilinganApplication)
+* [Profiling an Application](#profiling-an-application)
 
-  * [Initiate a Profiler Session](#InitiateaProfilerSession)
+    * [Initiate a Profiler Session](#initiate-a-profiler-session)
 
-  * [Capture a Performance Snapshot](#CaptureaPerformanceSnapshot)
+    * [Capture a Performance Snapshot](#capture-a-performance-snapshot)
 
-  * [Display a Performance Snapshot](#DisplayaPerformanceSnapshot)
+    * [Display a Performance Snapshot](#display-a-performance-snapshot)
 
-  * [Save a Performance Snapshot](#SaveaPerformanceSnapshot)
+    * [Save a Performance Snapshot](#save-a-performance-snapshot)
 
-  * [Load a Performance Snapshot](#LoadaPerformanceSnapshot)
+    * [Load a Performance Snapshot](#load-a-performance-snapshot)
 
-  * [Terminate a Profiler Session](#TerminateaProfilerSession)
+    * [Terminate a Profiler Session](#terminate-a-profiler-session)
 
-* [Appcelerator Profiling Perspective](#AppceleratorProfilingPerspective)
+* [Appcelerator Profiling Perspective](#appcelerator-profiling-perspective)
 
-  * [Profile View](#ProfileView)
+    * [Profile View](#profile-view)
 
-  * [Performance Profile View](#PerformanceProfileView)
+    * [Performance Profile View](#performance-profile-view)
 
-* [Improving Profiler Results](#ImprovingProfilerResults)
+* [Improving Profiler Results](#improving-profiler-results)
 
-  * [Name Anonymous Functions](#NameAnonymousFunctions)
+    * [Name Anonymous Functions](#name-anonymous-functions)
 
-  * [Missing Method Calls on Android](#MissingMethodCallsonAndroid)
-
+    * [Missing Method Calls on Android](#missing-method-calls-on-android)
 
 This page describes how to use the Appcelerator Studio Code Profiler to profile the performance of your applications on simulators and devices.
 
@@ -53,7 +52,6 @@ To start a profiler session on an existing project, first make sure your project
 
 3. If the **Launch Automatically** option is enabled under the **Target** drop-down list, the application will be automatically launched after the device is selected. If not, you need to click the **Launch** button to start the build process.
 
-
 After the build process starts, a dialog appears asking you to change your perspective. Click the **Yes** button to change to the **Appcelerator Profiler** perspective. Select the **Remember my decision** checkbox if you do not want to be prompted to change the perspective in the future.
 
 When profiling on device, a dialog appears showing the progress of the build. After the application is installed on device, a dialog appears prompting you to launch the application. The application must be launched in order to start profiling and your device must also be plugged into your host machine to profile.
@@ -70,7 +68,7 @@ To capture a performance snapshot, select your application in the **Profile** vi
 
 ### Display a Performance Snapshot
 
-Studio provides a **Performance Profile** view that allows you to inspect the data captured by a profiling session. To open the view, double-click any of the performance snapshots in the **Profile** view. Refer to the [Performance Profile View](#PerformanceProfileView) section below for an explanation of the displayed data.
+Studio provides a **Performance Profile** view that allows you to inspect the data captured by a profiling session. To open the view, double-click any of the performance snapshots in the **Profile** view. Refer to the [Performance Profile View](#performance-profile-view) section below for an explanation of the displayed data.
 
 ### Save a Performance Snapshot
 
@@ -91,7 +89,6 @@ In Appcelerator Studio, switch to the **Appcelerator Profiling** perspective whe
 * **Profile View** – Used to control the Code Profiler, start and stop capturing performance data, and to load previously saved performance snapshots.
 
 * **Performance Profile Vie** – Used to display or save performance snapshots.In addition to these specific views, the **Editor** is displayed to show source code for a particular method call as well as the **Console View** to display the log output from the debugger. ![PerformancePerspective](/Images/appc/download/attachments/43298671/PerformancePerspective.png)
-
 
 For more details about using these views, see the sections below.
 
@@ -125,7 +122,6 @@ The **Profile** view contains a row of icon buttons in the top-right corner. Fro
 
 * **Maximize –** Maximize this view.
 
-
 ![ProfileView](/Images/appc/download/attachments/43298671/ProfileView.png)
 
 ### Performance Profile View
@@ -134,16 +130,15 @@ The **Performance Profile** view is used to display the data captured by a profi
 
 * **Call Hierarchy** \- Displays the method calls in an hierarchical form, making it easy to follow method callers and callees. It displays the calls self-time and a cumulative time where possible. You can sort this view by one of the time columns to track the most expensive methods. This form displays the following fields:
 
-  * **Method** - Name of the method being called.
+    * **Method** - Name of the method being called.
 
-  * **Self Time** - Total amount of time, in milliseconds, that all calls to this method took to execute during the interaction period. Does not include calls to other methods inside this method.
+    * **Self Time** - Total amount of time, in milliseconds, that all calls to this method took to execute during the interaction period. Does not include calls to other methods inside this method.
 
-  * **Cumulative Time** - Total amount of time, in milliseconds, that all calls to this method, and all calls to methods inside this method, took to execute during the interaction period.
+    * **Cumulative Time** - Total amount of time, in milliseconds, that all calls to this method, and all calls to methods inside this method, took to execute during the interaction period.
 
-  * **File** - File location and line number of the method.
+    * **File** - File location and line number of the method.
 
 * **Hotspots** - Displays a flat view of the methods that were involved in the profiling session. The self-time of the methods display in this view is aggregated to include all the occurrences of a method in the Call Hierarchy. You can also sort this view. This form displays the same fields as the Call Hierarchy form except cumulative time.
-
 
 Whenever possible, double-clicking a row in this view opens up the file source in the **Editor** and scrolls to the line number that is specified for that call.
 
@@ -156,7 +151,6 @@ The **Performance Profile** view contains a row of icon buttons in the top-right
 * **Minimize –** Minimize this view.
 
 * **Maximize –** Maximize this view.
-
 
 ![PerformanceProfileView](/Images/appc/download/attachments/43298671/PerformanceProfileView.png)
 

@@ -1,29 +1,28 @@
 {"title":"Alloy Controllers","weight":"20"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Controllers](#Controllers)
+* [Controllers](#controllers)
 
-  * [Events](#Events)
+    * [Events](#events)
 
-  * [Inheritance](#Inheritance)
+    * [Inheritance](#inheritance)
 
-  * [Conditional code](#Conditionalcode)
+    * [Conditional code](#conditional-code)
 
-  * [Passing arguments](#Passingarguments)
+    * [Passing arguments](#passing-arguments)
 
-  * [Global namespace](#Globalnamespace)
+    * [Global namespace](#global-namespace)
 
-* [Initializer file (alloy.js)](#Initializerfile(alloy.js))
+* [Initializer file (alloy.js)](#initializer-file-alloy.js)
 
-* [Library code and CommonJS modules](#LibrarycodeandCommonJSmodules)
+* [Library code and CommonJS modules](#library-code-and-commonjs-modules)
 
-  * [Specs folder](#Specsfolder)
+    * [Specs folder](#specs-folder)
 
-  * [Platform-specific library folders](#Platform-specificlibraryfolders)
+    * [Platform-specific library folders](#platform-specific-library-folders)
 
-  * [Extending Alloy, Underscore.js and Backbone.js](#ExtendingAlloy,Underscore.jsandBackbone.js)
-
+    * [Extending Alloy, Underscore.js and Backbone.js](#extending-alloy,-underscore.js-and-backbone.js)
 
 ## Overview
 
@@ -159,7 +158,6 @@ The following are the constants defined by Alloy for use in the controller code:
 
 * DIST\_STORE (**since Alloy 1.4.0**) : true if the current compiler target is built for deployment to the Google Play Store or iTunes App Store, for example, if you set the \-T dist-store option when building with the Titanium CLI. Note that the ENV\_PRODUCTION constant will be true too since this deployment is only for production builds.
 
-
 For example, since iOS devices do not include a back button, the application can conditionally add one to a window controller:
 
 `if` `(OS_IOS) {`
@@ -246,7 +244,7 @@ Access the parent window in another controller:
 
 `parent.close();`
 
-Other non-controller JavaScript code can access the Globals variable but need to require the Alloy module. See [Extending Alloy](#ExtendingAlloy,Underscore.jsandBackbone.js) below.
+Other non-controller JavaScript code can access the Globals variable but need to require the Alloy module. See [Extending Alloy](#extending-alloy,-underscore.js-and-backbone.js) below.
 
 ## Initializer file (alloy.js)
 

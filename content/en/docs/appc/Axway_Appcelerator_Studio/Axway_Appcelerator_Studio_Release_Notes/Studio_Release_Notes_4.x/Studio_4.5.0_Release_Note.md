@@ -2,7 +2,7 @@
 
 Studio 4.5.0 is a minor release that includes new features, improvements, and bug fixes. See the [full list of issues address in Release 4.5.0](https://jira.appcelerator.org/browse/TISTUD-7991?filter=17280).
 
-As of this release, Studio 4.4.x will not be supported six months from 4.5.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Studio 4.4.x will not be supported six months from 4.5.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## New Features
 
@@ -11,7 +11,6 @@ As of this release, Studio 4.4.x will not be supported six months from 4.5.0.GA'
 * Studio now has a defined range of compatible CLI versions. If the CLI or Studio doesn't fall within the defined range of one another, the user will be prompted to update either Studio or the CLI accordingly.
 
 * When a user logs in or out of Studio, the user will be reminded that they are in trial period. This is shown only for Developer Trial/free Plans.
-
 
 ## Improvements
 
@@ -32,7 +31,6 @@ As of this release, Studio 4.4.x will not be supported six months from 4.5.0.GA'
 * Instead of failing a Windows build, the user is now prompted for a GUID
 
 * Previously bad installs of Appcelerator CLI no longer prevents future updates from failing
-
 
 ## Fixed Issues
 

@@ -1,13 +1,12 @@
 {"title":"About Content Assist","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Using Content Assist](#UsingContentAssist)
+* [Using Content Assist](#using-content-assist)
 
-* [Adding your code to Content Assist](#AddingyourcodetoContentAssist)
+* [Adding your code to Content Assist](#adding-your-code-to-content-assist)
 
-* [Related Topics](#RelatedTopics)
-
+* [Related Topics](#related-topics)
 
 ## Overview
 

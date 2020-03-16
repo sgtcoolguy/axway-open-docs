@@ -6,10 +6,9 @@ To open a view:
 
 * From the menu bar, select **Window** > **Show View**.
 
-  * If the view you want to display is visible, select it.
+    * If the view you want to display is visible, select it.
 
-  * If not, select **Other...**, to open the **Show View** dialog. Select the view you want to display, then click **OK**.
-
+    * If not, select **Other...**, to open the **Show View** dialog. Select the view you want to display, then click **OK**.
 
 ## Chapters
 

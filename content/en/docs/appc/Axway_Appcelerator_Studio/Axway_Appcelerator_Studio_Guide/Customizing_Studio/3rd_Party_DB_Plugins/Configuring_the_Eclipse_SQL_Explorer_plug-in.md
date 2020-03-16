@@ -20,7 +20,6 @@ Follow the instructions in the Help topics below to configure the Eclipse SQL Ex
 
 6. [Using SQL Explorer](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Using_SQL_Explorer/)
 
-
 ## Related Topics
 
 * [Installing the SQL Explorer plug-in](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Installing_the_SQL_Explorer_plug-in/)

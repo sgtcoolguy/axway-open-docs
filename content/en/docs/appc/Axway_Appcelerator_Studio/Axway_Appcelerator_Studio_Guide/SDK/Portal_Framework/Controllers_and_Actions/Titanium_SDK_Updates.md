@@ -1,17 +1,16 @@
 {"title":"Titanium SDK Updates","weight":"110"}
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Description](#Description)
+* [Description](#description)
 
-* [Invocation](#Invocation)
+* [Invocation](#invocation)
 
-* [Checking for Titanium SDK updates](#CheckingforTitaniumSDKupdates)
+* [Checking for Titanium SDK updates](#checking-for-titanium-sdk-updates)
 
-* [Installing a Titanium SDK update](#InstallingaTitaniumSDKupdate)
+* [Installing a Titanium SDK update](#installing-a-titanium-sdk-update)
 
-* [Installing a Titanium SDK update using a URL](#InstallingaTitaniumSDKupdateusingaURL)
-
+* [Installing a Titanium SDK update using a URL](#installing-a-titanium-sdk-update-using-a-url)
 
 ## Requirements
 
@@ -80,25 +79,12 @@ The example above calls _portal.updates.update(e);_ whenever the Studio fires a 
 
 The event that the Studio sends contains these fields:
 
-key
-
-content
-
-event.data.status
-
-Indicate the status of the check. Can hold the following values: 'ok', 'processing', 'error', 'incomplete' or 'unknown'
-
-event.data.installedMobileSDK
-
-The currently installed Titanium Mobile SDK version
-
-event.data.installedDesktopSDK
-
-The currently installed Titanium Desktop SDK version
-
-event.data.updateAvailable
-
-A boolean indication that an update is available
+| key | content |
+| --- | --- |
+| event.data.status | Indicate the status of the check. Can hold the following values: 'ok', 'processing', 'error', 'incomplete' or 'unknown' |
+| event.data.installedMobileSDK | The currently installed Titanium Mobile SDK version |
+| event.data.installedDesktopSDK | The currently installed Titanium Desktop SDK version |
+| event.data.updateAvailable | A boolean indication that an update is available |
 
 When the _event.data.installedMobileSDK_, for example, is _undefined_, the _event.data.status_ will indicate the stage of the command. The studio will fire multiple events after the dispatch call, and it's up to the JavaScript call to handle those and render the UI accordingly (for example, show a spinning wheel when the _processing_ status is received).
 

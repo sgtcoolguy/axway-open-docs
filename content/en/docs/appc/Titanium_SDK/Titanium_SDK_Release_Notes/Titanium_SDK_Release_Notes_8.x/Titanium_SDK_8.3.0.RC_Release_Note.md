@@ -1,39 +1,38 @@
 {"title":"Titanium SDK 8.3.0.RC - 18 November 2019","weight":"120"}
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [Community Credits](#CommunityCredits)
+* [Community Credits](#community-credits)
 
-* [Bug Fixes](#BugFixes)
+* [Bug Fixes](#bug-fixes)
 
-  * [Android platform](#Androidplatform)
+    * [Android platform](#android-platform)
 
-  * [Multiple platforms](#Multipleplatforms)
+    * [Multiple platforms](#multiple-platforms)
 
-  * [iOS platform](#iOSplatform)
+    * [iOS platform](#ios-platform)
 
-* [Features](#Features)
+* [Features](#features)
 
-  * [Android platform](#Androidplatform.1)
+    * [Android platform](#android-platform)
 
-  * [Multiple platforms](#Multipleplatforms.1)
+    * [Multiple platforms](#multiple-platforms)
 
-  * [iOS platform](#iOSplatform.1)
+    * [iOS platform](#ios-platform)
 
-* [Performance Improvements](#PerformanceImprovements)
+* [Performance Improvements](#performance-improvements)
 
-  * [Android platform](#Androidplatform.2)
+    * [Android platform](#android-platform)
 
-* [Known issues](#Knownissues)
+* [Known issues](#known-issues)
 
-* [SDK modules versions](#SDKmodulesversions)
+* [SDK modules versions](#sdk-modules-versions)
 
-  * [Android and iOS](#AndroidandiOS)
+    * [Android and iOS](#android-and-ios)
 
-  * [CommonJS](#CommonJS)
+    * [CommonJS](#commonjs)
 
-  * [Hyperloop](#Hyperloop)
-
+    * [Hyperloop](#hyperloop)
 
 ## About this release
 
@@ -47,38 +46,37 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 * Sergey Volkov
 
-  * add missing comma ([f08041e](https://github.com/appcelerator/titanium_mobile/commit/f08041e6c9914a1b1f3a1ec559b7b53079a4933a))
+    * add missing comma ([f08041e](https://github.com/appcelerator/titanium_mobile/commit/f08041e6c9914a1b1f3a1ec559b7b53079a4933a))
 
-  * [TIMOB-26463](https://jira.appcelerator.org/browse/TIMOB-26463) - accessibility properties SDK version ([72a57ef](https://github.com/appcelerator/titanium_mobile/commit/72a57ef247abb0bedb0288260ac300385cb3d518))
+    * [TIMOB-26463](https://jira.appcelerator.org/browse/TIMOB-26463) - accessibility properties SDK version ([72a57ef](https://github.com/appcelerator/titanium_mobile/commit/72a57ef247abb0bedb0288260ac300385cb3d518))
 
-  * [TIMOB-26463](https://jira.appcelerator.org/browse/TIMOB-26463) - add accessibility properties to MenuItem ([9f3c6b7](https://github.com/appcelerator/titanium_mobile/commit/9f3c6b75c3d71dd65ca7cd33383bc90d3e565d6f))
+    * [TIMOB-26463](https://jira.appcelerator.org/browse/TIMOB-26463) - add accessibility properties to MenuItem ([9f3c6b7](https://github.com/appcelerator/titanium_mobile/commit/9f3c6b75c3d71dd65ca7cd33383bc90d3e565d6f))
 
 * Hans Knöchel
 
-  * [TIMOB-27450](https://jira.appcelerator.org/browse/TIMOB-27450) - fix webview basic authentication ([1553fcd](https://github.com/appcelerator/titanium_mobile/commit/1553fcdf0f688f106c32fc72a3765e9fba962ac5))
+    * [TIMOB-27450](https://jira.appcelerator.org/browse/TIMOB-27450) - fix webview basic authentication ([1553fcd](https://github.com/appcelerator/titanium_mobile/commit/1553fcdf0f688f106c32fc72a3765e9fba962ac5))
 
-  * [TIMOB-27272](https://jira.appcelerator.org/browse/TIMOB-27272) - expose Ti.UI.Slider „tintColor“ and „trackTintColor“ ([7238427](https://github.com/appcelerator/titanium_mobile/commit/723842717199b1244162a7b14a9874ed46103d42))
+    * [TIMOB-27272](https://jira.appcelerator.org/browse/TIMOB-27272) - expose Ti.UI.Slider „tintColor“ and „trackTintColor“ ([7238427](https://github.com/appcelerator/titanium_mobile/commit/723842717199b1244162a7b14a9874ed46103d42))
 
-  * properly set tint-color on image-view ([7d96b81](https://github.com/appcelerator/titanium_mobile/commit/7d96b8132a8569818c78d656fd13463deceab354))
+    * properly set tint-color on image-view ([7d96b81](https://github.com/appcelerator/titanium_mobile/commit/7d96b8132a8569818c78d656fd13463deceab354))
 
 * Giorgio Mandolini
 
-  * [TIMOB-27396](https://jira.appcelerator.org/browse/TIMOB-27396) - inverted condition on baseURL construction ([a59cf84](https://github.com/appcelerator/titanium_mobile/commit/a59cf84fb19d96a48589be4f59cc215ac490dc2d))
+    * [TIMOB-27396](https://jira.appcelerator.org/browse/TIMOB-27396) - inverted condition on baseURL construction ([a59cf84](https://github.com/appcelerator/titanium_mobile/commit/a59cf84fb19d96a48589be4f59cc215ac490dc2d))
 
 * Michael Gangolf
 
-  * fix permission example for Android 8 ([be984a1](https://github.com/appcelerator/titanium_mobile/commit/be984a177c3c279eaf79f6206dff2aa04ed6b56b))
+    * fix permission example for Android 8 ([be984a1](https://github.com/appcelerator/titanium_mobile/commit/be984a177c3c279eaf79f6206dff2aa04ed6b56b))
 
-  * [TIMOB-7786](https://jira.appcelerator.org/browse/TIMOB-7786)update log strings ([1fc77a1](https://github.com/appcelerator/titanium_mobile/commit/1fc77a1a1b2355b3b8bf93dfb332edeceb40e054))
+    * [TIMOB-7786](https://jira.appcelerator.org/browse/TIMOB-7786)update log strings ([1fc77a1](https://github.com/appcelerator/titanium_mobile/commit/1fc77a1a1b2355b3b8bf93dfb332edeceb40e054))
 
-  * reset before doing a release (#10800) ([50c645e](https://github.com/appcelerator/titanium_mobile/commit/50c645e57f563e8499ff318e23e5dd18f920ecd8))
+    * reset before doing a release (#10800) ([50c645e](https://github.com/appcelerator/titanium_mobile/commit/50c645e57f563e8499ff318e23e5dd18f920ecd8))
 
-  * [TIMOB-27283](https://jira.appcelerator.org/browse/TIMOB-27283) - add contentSize to Ti.UI.ScrollView scroll event ([6ffd9d4](https://github.com/appcelerator/titanium_mobile/commit/6ffd9d4ce217839017ef66ccf7bc10e9f494e399))
+    * [TIMOB-27283](https://jira.appcelerator.org/browse/TIMOB-27283) - add contentSize to Ti.UI.ScrollView scroll event ([6ffd9d4](https://github.com/appcelerator/titanium_mobile/commit/6ffd9d4ce217839017ef66ccf7bc10e9f494e399))
 
 * teunklijn
 
-  * [TIMOB-27165](https://jira.appcelerator.org/browse/TIMOB-27165) - localnotificationaction event contains notification id instead of the action id ([11956d2](https://github.com/appcelerator/titanium_mobile/commit/11956d2a7364f5900f43f68736b333bc1e40dc04))
-
+    * [TIMOB-27165](https://jira.appcelerator.org/browse/TIMOB-27165) - localnotificationaction event contains notification id instead of the action id ([11956d2](https://github.com/appcelerator/titanium_mobile/commit/11956d2a7364f5900f43f68736b333bc1e40dc04))
 
 ## Bug Fixes
 
@@ -144,7 +142,6 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 * [TIMOB-27444](https://jira.appcelerator.org/browse/TIMOB-27444) - video player with border fails to render as of 8.3.0 ([364724b](https://github.com/appcelerator/titanium_mobile/commit/364724b0c994b15a4362b97ad2fb946f7fc77286))
 
-
 ### Multiple platforms
 
 * fix typo and add tests for weak map/set ([bc9faba](https://github.com/appcelerator/titanium_mobile/commit/bc9faba2f5a8ee7ba1a5470399f66a17a7846346))
@@ -160,7 +157,6 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 * update Hyperloop to v4.0.4 for iOS 13 compatibility ([d1cc406](https://github.com/appcelerator/titanium_mobile/commit/d1cc406abd29662e4e6e1b674caa95a73e8dc95f))
 
 * use correct should assertion syntax ([00b9845](https://github.com/appcelerator/titanium_mobile/commit/00b98453cf948338fba3986def6cfc057e105508))
-
 
 ### iOS platform
 
@@ -216,7 +212,6 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 * [TIMOB-27385](https://jira.appcelerator.org/browse/TIMOB-27385) - wkwebview is stripping out = characters in cookies ([1bd852b](https://github.com/appcelerator/titanium_mobile/commit/1bd852b5f29963c3455da35106fd18a74fc64c80))
 
-
 ## Features
 
 ### Android platform
@@ -230,7 +225,6 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 * [TIMOB-26953](https://jira.appcelerator.org/browse/TIMOB-26953) - implement foregroundServiceType parameter ([9ca5864](https://github.com/appcelerator/titanium_mobile/commit/9ca5864439e2b1c2e4e3ff71db983938adb313b7))
 
 * target api level 29 by default ([4d73a63](https://github.com/appcelerator/titanium_mobile/commit/4d73a63e9562b25a26c1015278d4bd13b798a80e))
-
 
 ### Multiple platforms
 
@@ -248,11 +242,9 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 * [MOD-2545](https://jira.appcelerator.org/browse/MOD-2545) - update to 3.3.0-ios, 4.5.0-android module releases ([d0f0cb9](https://github.com/appcelerator/titanium_mobile/commit/d0f0cb98eb768aee5b90753971246f6070ab5b71))
 
-
 ### iOS platform
 
 * [MOD-2534](https://jira.appcelerator.org/browse/MOD-2534) - update facebook module to 7.0.0 ([16f4d19](https://github.com/appcelerator/titanium_mobile/commit/16f4d190c1c5bbf02d07f8e528ab6c019addb15e))
-
 
 ## Performance Improvements
 
@@ -260,108 +252,40 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 * implement ability to pre-cache common js assets ([c3806d0](https://github.com/appcelerator/titanium_mobile/commit/c3806d041c945044e4b6a1ca3ab05584ee3b2a15))
 
-
 ## Known issues
 
 * [TIMOB-27603](https://jira.appcelerator.org/browse/TIMOB-27603) - Android: Debugger does not hit breakpoint for an alloy app on a device from Studio
 
-  * Studio is attempting to load the source mapping from the encrypted js contents and fails to source map from the original to generate locations, resulting breakpoint line numbers not matching expectations
+    * Studio is attempting to load the source mapping from the encrypted js contents and fails to source map from the original to generate locations, resulting breakpoint line numbers not matching expectations
 
-  * We anticipate a Studio bug fix in Release 6.0.0 around the release of SDK 9.0.0
-
+    * We anticipate a Studio bug fix in Release 6.0.0 around the release of SDK 9.0.0
 
 ## SDK modules versions
 
 ### Android and iOS
 
-Module
-
-Android version
-
-iOS version
-
-urlSession
-
-n/a
-
-2.2.0
-
-facebook
-
-8.0.0
-
-7.0.0
-
-ti.coremotion
-
-n/a
-
-2.0.1
-
-ti.map
-
-4.5.0
-
-3.3.0
-
-ti.safaridialog
-
-n/a
-
-1.1.1
-
-ti.webdialog
-
-1.1.0
-
-1.1.0
-
-ti.touchid
-
-3.0.1
-
-2.1.4
-
-ti.identity
-
-2.1.0
-
-1.0.6
-
-ti.applesignin
-
-n/a
-
-1.1.1
-
-ti.cloudpush
-
-6.0.1
-
-n/a
-
-ti.playservices
-
-16.1.3
-
-n/a
+| Module | Android version | iOS version |
+| --- | --- | --- |
+| urlSession | n/a | 2.2.0 |
+| facebook | 8.0.0 | 7.0.0 |
+| ti.coremotion | n/a | 2.0.1 |
+| ti.map | 4.5.0 | 3.3.0 |
+| ti.safaridialog | n/a | 1.1.1 |
+| ti.webdialog | 1.1.0 | 1.1.0 |
+| ti.touchid | 3.0.1 | 2.1.4 |
+| ti.identity | 2.1.0 | 1.0.6 |
+| ti.applesignin | n/a | 1.1.1 |
+| ti.cloudpush | 6.0.1 | n/a |
+| ti.playservices | 16.1.3 | n/a |
 
 ### CommonJS
 
-Module
-
-Version
-
-ti.cloud
-
-3.2.11
+| Module | Version |
+| --- | --- |
+| ti.cloud | 3.2.11 |
 
 ### Hyperloop
 
-Module
-
-Version
-
-hyperloop
-
-4.0.4
+| Module | Version |
+| --- | --- |
+| hyperloop | 4.0.4 |

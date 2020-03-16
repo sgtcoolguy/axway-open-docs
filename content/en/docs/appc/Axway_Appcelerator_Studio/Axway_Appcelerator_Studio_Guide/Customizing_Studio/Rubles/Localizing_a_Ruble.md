@@ -1,21 +1,20 @@
 {"title":"Localizing a Ruble","weight":"80"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Locales Directories](#LocalesDirectories)
+* [Locales Directories](#locales-directories)
 
-* [Externalizing the Strings](#ExternalizingtheStrings)
+* [Externalizing the Strings](#externalizing-the-strings)
 
-  * [Strings with variables inside them](#Stringswithvariablesinsidethem)
+    * [Strings with variables inside them](#strings-with-variables-inside-them)
 
-* [Translation lookups](#Translationlookups)
+* [Translation lookups](#translation-lookups)
 
-* [Contributing a translation pack](#Contributingatranslationpack)
+* [Contributing a translation pack](#contributing-a-translation-pack)
 
-  * [Forking the ruble](#Forkingtheruble)
+    * [Forking the ruble](#forking-the-ruble)
 
-  * [Adding a new translation](#Addinganewtranslation)
-
+    * [Adding a new translation](#adding-a-new-translation)
 
 ## Overview
 

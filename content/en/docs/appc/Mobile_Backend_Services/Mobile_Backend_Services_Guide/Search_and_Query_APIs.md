@@ -1,59 +1,58 @@
 {"title":"Search and Query APIs","weight":"60"}
 
-* [Query API overview](#QueryAPIoverview)
+* [Query API overview](#query-api-overview)
 
-  * [Query API availability](#QueryAPIavailability)
+    * [Query API availability](#query-api-availability)
 
-  * [Query parameters](#Queryparameters)
+    * [Query parameters](#query-parameters)
 
-    * [count](#count)
+        * [count](#count)
 
-    * [page](#page)
+        * [page](#page)
 
-    * [per\_page](#per_page)
+        * [per\_page](#per_page)
 
-    * [limit](#limit)
+        * [limit](#limit)
 
-    * [id and \_id](#idand_id)
+        * [id and \_id](#id-and-_id)
 
-    * [new\_pagination](#new_pagination)
+        * [new\_pagination](#new_pagination)
 
-    * [skip](#skip)
+        * [skip](#skip)
 
-    * [where](#where)
+        * [where](#where)
 
-      * [Geographic coordinates](#Geographiccoordinates)
+            * [Geographic coordinates](#geographic-coordinates)
 
-    * [order](#order)
+        * [order](#order)
 
-    * [sel](#sel)
+        * [sel](#sel)
 
-    * [unsel](#unsel)
+        * [unsel](#unsel)
 
-* [Query pagination](#Querypagination)
+* [Query pagination](#query-pagination)
 
-  * [Range-based query pagination examples](#Range-basedquerypaginationexamples)
+    * [Range-based query pagination examples](#range-based-query-pagination-examples)
 
-    * [Query on a custom field with results in ascending order](#Queryonacustomfieldwithresultsinascendingorder)
+        * [Query on a custom field with results in ascending order](#query-on-a-custom-field-with-results-in-ascending-order)
 
-    * [Query on a custom field with results in descending order](#Queryonacustomfieldwithresultsindescendingorder)
+        * [Query on a custom field with results in descending order](#query-on-a-custom-field-with-results-in-descending-order)
 
-    * [Query for the next page of results with results in ascending order](#Queryforthenextpageofresultswithresultsinascendingorder)
+        * [Query for the next page of results with results in ascending order](#query-for-the-next-page-of-results-with-results-in-ascending-order)
 
-    * [Query for the previous page of results](#Queryforthepreviouspageofresults)
+        * [Query for the previous page of results](#query-for-the-previous-page-of-results)
 
-* [Search API overview](#SearchAPIoverview)
+* [Search API overview](#search-api-overview)
 
-  * [Search API parameters](#SearchAPIparameters)
+    * [Search API parameters](#search-api-parameters)
 
-    * [page](#page.1)
+        * [page](#page)
 
-    * [per\_page](#per_page.1)
+        * [per\_page](#per_page)
 
-    * [q](#q)
+        * [q](#q)
 
-  * [Search API availability](#SearchAPIavailability)
-
+    * [Search API availability](#search-api-availability)
 
 Mobile Backend Services (MBS) provides APIs for querying and searching for MBS objects. The query APIs allow you to perform custom database-style searches, while search APIs perform a full-text search using the MBS search engine.
 
@@ -63,7 +62,7 @@ The search API is deprecated since Release 1.3.0. Applications created before Ar
 
 The query API provides an interface for applying database-style query constraints on predefined objects and [custom fields](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Custom_Objects_and_Fields/).
 
-When no query parameters are provided, all objects of the specified type are returned with default pagination. You can control the pagination of queries with the skip and limit parameters, or by using a custom where clause. See [Query Pagination](#Querypagination) for more information.
+When no query parameters are provided, all objects of the specified type are returned with default pagination. You can control the pagination of queries with the skip and limit parameters, or by using a custom where clause. See [Query Pagination](#query-pagination) for more information.
 
 You can also control the sort order of query results using the order parameter, and specify the fields you want to include (or exclude) from results using the sel and unsel query parameters.
 
@@ -80,7 +79,7 @@ The following parameters are available for query operations:
 
 #### count
 
-If the query includes count=true, the response's meta-object contains a count field whose value is the total number of objects that matched the query criteria. If the query matches more than 5000 objects, the count field contains the value "5000+". For more information, see [Query Pagination](#Querypagination).
+If the query includes count=true, the response's meta-object contains a count field whose value is the total number of objects that matched the query criteria. If the query matches more than 5000 objects, the count field contains the value "5000+". For more information, see [Query Pagination](#query-pagination).
 
 #### page
 
@@ -328,7 +327,7 @@ For applications that have relatively small numbers of total records (< 5000), t
 
 #### skip
 
-The number of records to skip. The value must be greater than or equal to 0, and no greater than 4999, or an HTTP 400 error will be returned. To skip 5000 records or more, you need to perform a range-based query. See [Query Pagination](#Querypagination) for more information.
+The number of records to skip. The value must be greater than or equal to 0, and no greater than 4999, or an HTTP 400 error will be returned. To skip 5000 records or more, you need to perform a range-based query. See [Query Pagination](#query-pagination) for more information.
 
 #### where
 
@@ -352,91 +351,36 @@ You can add more search criteria by adding them together. For example, to search
 
 For non-exact matches, where supports these options:
 
-Operator
-
-Summary
-
-$lt
-
-Less than
-
-$lte
-
-Less than or equal to
-
-$gt
-
-Greater than
-
-$gte
-
-Greater than or equal to
-
-$ne
-
-Not equal to
-
-$in
-
-Contained in, allows you to specify an array of possible matches.
-
-$nin
-
-Not contained in, it selects objects for which the specified field does not have any value in the specified array.
-
-$or
-
-Use boolean or in a query, an array of expressions, any of which can match.
-
-$nor
-
-A boolean or expression to do queries, you give $nor a list of expressions, none of which can match the query.
-
-$and
-
-Give $and an array of expressions, all of which must match the query.
-
-$all
-
-The $all operator is similar to $in, but instead of matching any value in the specified array, all values in the array must be matched.
-
-$elemMatch
-
-Give $elemMatch an expression to match against elements in an array.
-
-$exists
-
-Check for the existence of a field.
-
-$regex
-
-Regex match on a string. Currently, only prefix matches are supported: the regular expression must begin with an anchor (^) followed by a letter or digit. For example, '^a', '^a.\*', and '^a.\*$' are allowed, but not '^.\*a\*'.
-
-$text
-
-Perform a text search on the contents of the field. A **$text** expression has the following syntax:
-{ "$text": { "$search": <string> }}
-Most punctuation marks and spaces are treated as delimiters allowing you to search for multiple keywords, excluding escaped double quotes (\\") and hyphens (-). Escaped double quotes are used for phrase searches, and hyphens are used to negate searches. Sorting does not work with the $text operator, that is, using the order field will not have any effect when using the $text operator.
+| Operator | Summary |
+| --- | --- |
+| $lt | Less than |
+| $lte | Less than or equal to |
+| $gt | Greater than |
+| $gte | Greater than or equal to |
+| $ne | Not equal to |
+| $in | Contained in, allows you to specify an array of possible matches. |
+| $nin | Not contained in, it selects objects for which the specified field does not have any value in the specified array. |
+| $or | Use boolean or in a query, an array of expressions, any of which can match. |
+| $nor | A boolean or expression to do queries, you give $nor a list of expressions, none of which can match the query. |
+| $and | Give $and an array of expressions, all of which must match the query. |
+| $all | The $all operator is similar to $in, but instead of matching any value in the specified array, all values in the array must be matched. |
+| $elemMatch | Give $elemMatch an expression to match against elements in an array. |
+| $exists | Check for the existence of a field. |
+| $regex | Regex match on a string. Currently, only prefix matches are supported: the regular expression must begin with an anchor (^) followed by a letter or digit. For example, '^a', '^a.\*', and '^a.\*$' are allowed, but not '^.\*a\*'. |
+| $text | Perform a text search on the contents of the field. A **$text** expression has the following syntax:  <br />{ "$text": { "$search": <string> }}  <br />Most punctuation marks and spaces are treated as delimiters allowing you to search for multiple keywords, excluding escaped double quotes (\\") and hyphens (-). Escaped double quotes are used for phrase searches, and hyphens are used to negate searches. Sorting does not work with the $text operator, that is, using the order field will not have any effect when using the $text operator. |
 
 ##### Geographic coordinates
 
 For querying geographic coordinates, the following operators are supported:
 
-Operator
-
-Summary
-
-$nearSphere
-
-Search near geographic coordinates, the format is \[longitude, latitude\]
-
-$maxDistance
-
-and used with $nearSphere to limit maximum search distance. All distances use radians. This allows you to easily multiply by the radius of the earth (about 6371 km or 3959 miles) to get the distance in your choice of units. Conversely, divide by the radius of the earth when doing queries
+| Operator | Summary |
+| --- | --- |
+| $nearSphere | Search near geographic coordinates, the format is \[longitude, latitude\] |
+| $maxDistance | and used with $nearSphere to limit maximum search distance. All distances use radians. This allows you to easily multiply by the radius of the earth (about 6371 km or 3959 miles) to get the distance in your choice of units. Conversely, divide by the radius of the earth when doing queries |
 
 You can combine any of the above to build a more complex query.
 
-For more information on constructing geographic coordinate queries, see [Geographic Coordinates in Custom Fields](#Geographiccoordinates) and [Custom Objects and Fields](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Custom_Objects_and_Fields/) for a general creation of custom objects and field queries.
+For more information on constructing geographic coordinate queries, see [Geographic Coordinates in Custom Fields](#geographic-coordinates) and [Custom Objects and Fields](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Custom_Objects_and_Fields/) for a general creation of custom objects and field queries.
 
 If you want to find users with age older than 28:
 
@@ -530,7 +474,6 @@ Starting with Mobile Backend Services (ArrowDB) 1.1.5, we have made the followin
 
 * If the query includes count=true, the query response's meta object contains a count field whose value is the total number of objects that match the query criteria. If the query matches more than 5000 objects, the count field contains the value "5000+". If your query result set includes more than 5000 records, you should perform range-based queries for pagination. This is done by including a where parameter on an object field using the $gt or $lt operators, as discussed below.
 
-
 For example, the following cURL uses a range-based query for Statuses whose custom field named score is less than 100 and sorts the results in ascending order on the score field:
 
 `$ curl -d` `'where={"score":{"$lt":100}}&order=score'` `-X GET`
@@ -566,7 +509,6 @@ For additional examples, see [Range-based Query Pagination Examples](#Range-base
 * Query for the Next Page of Results, Results in Ascending Order
 
 * Query for the Previous Page of Results
-
 
 #### Query on a custom field with results in ascending order
 
@@ -1241,7 +1183,6 @@ The following parameters are available for search operations:
 * per\_page
 
 * q
-
 
 #### page
 

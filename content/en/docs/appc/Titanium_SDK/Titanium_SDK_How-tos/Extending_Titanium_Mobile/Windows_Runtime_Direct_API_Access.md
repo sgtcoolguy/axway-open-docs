@@ -1,19 +1,18 @@
 {"title":"Windows Runtime Direct API Access","weight":"10"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Usage](#Usage)
+* [Usage](#usage)
 
-  * [Require a class](#Requireaclass)
+    * [Require a class](#require-a-class)
 
-  * [Enumerations](#Enumerations)
+    * [Enumerations](#enumerations)
 
-  * [Event handling](#Eventhandling)
+    * [Event handling](#event-handling)
 
-  * [Async return types](#Asyncreturntypes)
+    * [Async return types](#async-return-types)
 
-  * [Mix WinRT APIs with Titanium APIs](#MixWinRTAPIswithTitaniumAPIs)
-
+    * [Mix WinRT APIs with Titanium APIs](#mix-winrt-apis-with-titanium-apis)
 
 WIndows Runtime Direct API Access was removed in Titanium SDK 6.1.0. Use [Hyperloop](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyperloop/) to access native APIs.
 
@@ -34,7 +33,6 @@ Before using an API make sure it can be supported first. Open the [API reference
 2. Check that the minimum API version is at least Windows 8 or 8.1. At the bottom of the API reference, check for a _Requirements (Windows 8.x and Windows Phone)_ section.
 
 3. Check if the API supports only Windows Phone or only Windows. Some APIs may only support one platform. Check the platform in the application before invoking the API.
-
 
 ### Require a class
 

@@ -2,54 +2,53 @@
 
 ## Contents
 
-* [About This Release](#AboutThisRelease)
+* [About This Release](#about-this-release)
 
-  * [Installing 5.2.0.RC for Appcelerator Studio](#Installing5.2.0.RCforAppceleratorStudio)
+    * [Installing 5.2.0.RC for Appcelerator Studio](#installing-5.2.0.rc-for-appcelerator-studio)
 
-* [New Features](#NewFeatures)
+* [New Features](#new-features)
 
-  * [Android Platform](#AndroidPlatform)
+    * [Android Platform](#android-platform)
 
-    * [Additional Type Support for IntentProxy](#AdditionalTypeSupportforIntentProxy)
+        * [Additional Type Support for IntentProxy](#additional-type-support-for-intentproxy)
 
-    * [Google Maps](#GoogleMaps)
+        * [Google Maps](#google-maps)
 
-  * [iOS Platform](#iOSPlatform)
+    * [iOS Platform](#ios-platform)
 
-    * [New iOS9 Features](#NewiOS9Features)
+        * [New iOS9 Features](#new-ios9-features)
 
-    * [New iOS9.1 Features](#NewiOS9.1Features)
+        * [New iOS9.1 Features](#new-ios9.1-features)
 
-    * [Storyboard-based Launch Screen](#Storyboard-basedLaunchScreen)
+        * [Storyboard-based Launch Screen](#storyboard-based-launch-screen)
 
-    * [Enabling Split/Slide View](#EnablingSplit/SlideView)
+        * [Enabling Split/Slide View](#enabling-split/slide-view)
 
-    * [Miscellaneous iOS Features](#MiscellaneousiOSFeatures)
+        * [Miscellaneous iOS Features](#miscellaneous-ios-features)
 
-* [Community Credits](#CommunityCredits)
+* [Community Credits](#community-credits)
 
-* [Fixed Issues](#FixedIssues)
+* [Fixed Issues](#fixed-issues)
 
-* [Improvements](#Improvements)
+* [Improvements](#improvements)
 
-* [API Changes](#APIChanges)
+* [API Changes](#api-changes)
 
-  * [New APIs](#NewAPIs)
+    * [New APIs](#new-apis)
 
-  * [Deprecated APIs](#DeprecatedAPIs)
+    * [Deprecated APIs](#deprecated-apis)
 
-* [Known Issues](#KnownIssues)
+* [Known Issues](#known-issues)
 
-  * [iOS Launch Logo Caching Issue](#iOSLaunchLogoCachingIssue)
+    * [iOS Launch Logo Caching Issue](#ios-launch-logo-caching-issue)
 
-  * [iOS9.1 PHLivePhoto and PHLivePhotoView](#iOS9.1PHLivePhotoandPHLivePhotoView)
-
+    * [iOS9.1 PHLivePhoto and PHLivePhotoView](#ios9.1-phlivephoto-and-phlivephotoview)
 
 ## About This Release
 
 Titanium SDK 5.2.0.RC is a minor release of the SDK, addressing high-priority issues from previous releases.
 
-As of this release, Titanium SDK 5.1..x will not be supported six months from 5.2.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Titanium SDK 5.1..x will not be supported six months from 5.2.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ### Installing 5.2.0.RC for Appcelerator Studio
 
@@ -107,7 +106,6 @@ During the launching of an app, you can hide the navigation bar however, there a
 
 2. This setting affects all activities and windows in Android when you set the property Fullscreen to true.
 
-
 To try this feature out, set this property in the TiApp.xml to true:
 
 `<fullscreen>``true``</fullscreen>`
@@ -120,19 +118,17 @@ This section lists new features and improvements only available on the iOS platf
 
 * Support included for iOS9's 3D-Touch property and events. Properties supported include
 
-  * force: the force of the touch where the value of 1.0 represents the force of an average touch (predetermined by the system and is not user-specific). This property is read-only.
+    * force: the force of the touch where the value of 1.0 represents the force of an average touch (predetermined by the system and is not user-specific). This property is read-only.
 
-  * maximumPossibleForce: The value of this property is sufficently high to provide a wide dynamic range for values of the force property.
+    * maximumPossibleForce: The value of this property is sufficently high to provide a wide dynamic range for values of the force property.
 
 * Support for iOS9's "Continue" button and fallback for older devices as well as support for Twitter and WebSearch keyboards.
-
 
 #### New iOS9.1 Features
 
 * Support for PHLivePhoto and PHLivePhotoView via the Ti.Media.openPhotoGallery() method and display live photos via Ti.UI.iOS.LivePhoto.
 
 * Full coverage for Apple Pencil APIs including force, maximumPossibleForce, timestamp and altitudeAngle.
-
 
 #### Storyboard-based Launch Screen
 
@@ -146,53 +142,13 @@ By default, this property is set to true so that all new projects have the story
 
 By default, it will generate LaunchLogos based on the LaunchLogo.png. If LaunchLogo.png doesn't exists, it will fall back to either DefaultIcon-ios.png or DefaultIcon.png. You can manually create them in the Resources/iphone (app/assets/iphone for Alloy) directory if you like. The following tables lists the different filenames and sizes:
 
-Filename
-
-Devices
-
-Scale
-
-Recommended Size
-
-LaunchLogo~iphone.png
-
-iPhone 3G and older
-
-1x
-
-320x320
-
-LaunchLogo@2x~iphone.png
-
-iPhone 4, 4s 5, 5s, 6, 6s
-
-2x
-
-374x374
-
-LaunchLogo@3x~iphone.png
-
-iPhone 6 Plus, 6s Plus
-
-3x
-
-621x621
-
-LaunchLogo~ipad.png
-
-iPad 1, 2, Mini 1
-
-1x
-
-384x384
-
-LaunchLogo@2x~ipad.png
-
-iPad 3, 4, Air, Air 2, Mini 2, 3, 4
-
-2x
-
-1024x1024
+| Filename | Devices | Scale | Recommended Size |
+| --- | --- | --- | --- |
+| LaunchLogo~iphone.png | iPhone 3G and older | 1x | 320x320 |
+| LaunchLogo@2x~iphone.png | iPhone 4, 4s 5, 5s, 6, 6s | 2x | 374x374 |
+| LaunchLogo@3x~iphone.png | iPhone 6 Plus, 6s Plus | 3x | 621x621 |
+| LaunchLogo~ipad.png | iPad 1, 2, Mini 1 | 1x | 384x384 |
+| LaunchLogo@2x~ipad.png | iPad 3, 4, Air, Air 2, Mini 2, 3, 4 | 2x | 1024x1024 |
 
 Since the ImageView is constrained to 50% of the device width, these dimensions are based on the width of each device per scale divided by 2.
 
@@ -224,23 +180,23 @@ With the addition of the launchScreen.storyboard features, you can now enable th
 
 1. In **tiapp.xml** , set the following properties:
 
-  * `...`
+    * `...`
 
-    `<ios>`
+        `<ios>`
 
-    `<enable-launch-screen-storyboard>``true``</enable-launch-screen-storyboard>`
+        `<enable-launch-screen-storyboard>``true``</enable-launch-screen-storyboard>`
 
-    `<use-auto-layout>``true``</use-auto-layout>`
+        `<use-auto-layout>``true``</use-auto-layout>`
 
-    `<plist>`
+        `<plist>`
 
-    `<dict>`
+        `<dict>`
 
-    `<key>UIRequiresFullScreen</key>`
+        `<key>UIRequiresFullScreen</key>`
 
-    `<``false``/>`
+        `<``false``/>`
 
-    `...`
+        `...`
 
 2. Run **appc run -p ios -F ipad** .
 
@@ -254,7 +210,6 @@ With the addition of the launchScreen.storyboard features, you can now enable th
 
 7. If you turn your device to landscape and repeat from step #5, you can drag the divider to see it in split view.
 
-
 #### Miscellaneous iOS Features
 
 * Scroll event for [Titanium.UI.ScrollView](#!/api/Titanium.UI.ScrollView) now sends the contentSize property to scroll event.
@@ -265,58 +220,57 @@ With the addition of the launchScreen.storyboard features, you can now enable th
 
 * UIEdgeInsets allows for the repositioning of an image inside a tab when it has no title text. This method allows you to pass absolute values for image insets and properly realign images inside the tab.
 
-  * Demo:
+    * Demo:
 
-  * `Titanium.UI.setBackgroundColor(``'#fff'``);`
+    * `Titanium.UI.setBackgroundColor(``'#fff'``);`
 
-    `var tabGroup = Titanium.UI.createTabGroup();`
+        `var tabGroup = Titanium.UI.createTabGroup();`
 
-    `var win1 = Titanium.UI.createWindow();`
+        `var win1 = Titanium.UI.createWindow();`
 
-    `var tab1 = Titanium.UI.createTab({`
+        `var tab1 = Titanium.UI.createTab({`
 
-    `window: win1,`
+        `window: win1,`
 
-    `icon:``'images/tabs/KS_nav_ui.png'``,`
+        `icon:``'images/tabs/KS_nav_ui.png'``,`
 
-    `iconInsets: {`
+        `iconInsets: {`
 
-    `top:``6``,`
+        `top:``6``,`
 
-    `bottom:-``6``,`
+        `bottom:-``6``,`
 
-    `right:``0``,`
+        `right:``0``,`
 
-    `left:``0`
+        `left:``0`
 
-    `}`
+        `}`
 
-    `});`
+        `});`
 
-    `var win2 = Titanium.UI.createWindow();`
+        `var win2 = Titanium.UI.createWindow();`
 
-    `var tab2 = Titanium.UI.createTab({`
+        `var tab2 = Titanium.UI.createTab({`
 
-    `window: win2,`
+        `window: win2,`
 
-    `icon:``'images/tabs/KS_nav_ui.png'``,`
+        `icon:``'images/tabs/KS_nav_ui.png'``,`
 
-    `title:` `"Test"`
+        `title:` `"Test"`
 
-    `});`
+        `});`
 
-    `tabGroup.addTab(tab1);`
+        `tabGroup.addTab(tab1);`
 
-    `tabGroup.addTab(tab2);`
+        `tabGroup.addTab(tab2);`
 
-    `tabGroup.open();`
+        `tabGroup.open();`
 
 * Added Swift versions of the applewatch templates so you have a choice of watchos2-swift (Swift and new default) and watchos2-objc (Obj-C).
 
 * Support for contact icons.
 
 * Ti.iPad.Popover now supports popover's backgroundColor property.
-
 
 ## Community Credits
 
@@ -347,7 +301,6 @@ The following Appcelerator Community members contributed PRs that were included 
 * [Steven van Loef](https://github.com/ludolphus) for adding contentSize property to scroll event ([TIMOB-17247](https://jira.appcelerator.org/browse/TIMOB-17247))
 
 * [Seth Benjamin](https://github.com/animecyc) for iOS: TiUIListView does not resume the ImageLoader ([TIMOB-19647](https://jira.appcelerator.org/browse/TIMOB-19647))
-
 
 ## Fixed Issues
 
@@ -533,95 +486,93 @@ This release includes 90 bug fixes.
 
 * [TIMOB-20410](https://jira.appcelerator.org/browse/TIMOB-20410) - Android: Adding view as a customView to an annotation in maps crashes the app
 
-
 ## Improvements
 
 This release includes 21 improvements.
 
 * [TIMOB-16547](https://jira.appcelerator.org/browse/TIMOB-16547) - iOS: Add ability to set color and backgroundColor for Picker control
 
-  * The hardcoded background color (white) of the Picker control can now be set through the Ti Picker control.
+    * The hardcoded background color (white) of the Picker control can now be set through the Ti Picker control.
 
 * [TIMOB-16865](https://jira.appcelerator.org/browse/TIMOB-16865) - Android / MobileWeb: Unable to remove the TableView row separators even if the color is set to transparent
 
-  * Android and MobileWeb now allows for the removal of TableView row separators when color is set to transparent.
+    * Android and MobileWeb now allows for the removal of TableView row separators when color is set to transparent.
 
 * [TIMOB-19185](https://jira.appcelerator.org/browse/TIMOB-19185) - Liveview: Update liveview to work with Windows Platform
 
-  * Liveview now works when building Windows Platform by passing the --liveview flag
+    * Liveview now works when building Windows Platform by passing the --liveview flag
 
 * [TIMOB-19194](https://jira.appcelerator.org/browse/TIMOB-19194) - Ti.Android.Intent: Ability to send multiple URI to an intent
 
-  * Ti.Android.Intent allows you to send multiple URI to an intent.
+    * Ti.Android.Intent allows you to send multiple URI to an intent.
 
 * [TIMOB-19452](https://jira.appcelerator.org/browse/TIMOB-19452) - Extensions should default to the app's provisioning profile if not set
 
-  * If extension provisioning profile is not set up, the CLI will use the application provision profile.
+    * If extension provisioning profile is not set up, the CLI will use the application provision profile.
 
 * [TIMOB-19512](https://jira.appcelerator.org/browse/TIMOB-19512) - iOS build: ensure app icons are 24-bit (no transparency)
 
-  * Since iOS apps cannot use app icons with an alpha channel, any builds attempting to use icons with alpha channels will have the alpha channel stripped from the image.
+    * Since iOS apps cannot use app icons with an alpha channel, any builds attempting to use icons with alpha channels will have the alpha channel stripped from the image.
 
 * [TIMOB-19577](https://jira.appcelerator.org/browse/TIMOB-19577) - Android: Update Facebook Module to support Facebook SDK 4.7.0
 
-  * Facebook Module for Android now supports Facebook SDK 4.7.0
+    * Facebook Module for Android now supports Facebook SDK 4.7.0
 
 * [TIMOB-19580](https://jira.appcelerator.org/browse/TIMOB-19580): Custom activity transition
 
-  * You can specify custom animations in material design app’s enter and exit (content) transitions and for transitions shared elements between activities.
+    * You can specify custom animations in material design app’s enter and exit (content) transitions and for transitions shared elements between activities.
 
 * [TIMOB-19726](https://jira.appcelerator.org/browse/TIMOB-19726) - Android: Refactor map module to remove deprecated method getMap()
 
-  * Android developers should use getMapAsync() method instead of the deprecated getMap() method
+    * Android developers should use getMapAsync() method instead of the deprecated getMap() method
 
 * [TIMOB-19759](https://jira.appcelerator.org/browse/TIMOB-19759) - iOS: Parity: tab listeners
 
-  * Event listeners for iOS's TabGroup selected and unselected have been deprecated in favor of focus
+    * Event listeners for iOS's TabGroup selected and unselected have been deprecated in favor of focus
 
 * [TIMOB-19825](https://jira.appcelerator.org/browse/TIMOB-19825) - Android module build should support AIDL files
 
-  * Android module builds now support AIDL files
+    * Android module builds now support AIDL files
 
 * [TIMOB-19828](https://jira.appcelerator.org/browse/TIMOB-19828) - Ti.SDK 5.2.0 supports Node.js 5.0
 
-  * Ti.SDK 5.2.0 supports Node.js 5.0
+    * Ti.SDK 5.2.0 supports Node.js 5.0
 
 * [TIMOB-19829](https://jira.appcelerator.org/browse/TIMOB-19829) - iOS: Add trackTintColor to Ti.UI.ProgressBar
 
-  * Ti.UI.ProgressBar on iOS supports coloring options for active progress
+    * Ti.UI.ProgressBar on iOS supports coloring options for active progress
 
 * [TIMOB-19940](https://jira.appcelerator.org/browse/TIMOB-19940) - Add \*appearance-properties to AlertDialog
 
-  * Deprecated \*appearance property in favor for keyboardApperance
+    * Deprecated \*appearance property in favor for keyboardApperance
 
 * [TIMOB-19948](https://jira.appcelerator.org/browse/TIMOB-19948) - Windows: Use font cache for TextArea and Button
 
-  * Font cache has been extended to TextArea and Button
+    * Font cache has been extended to TextArea and Button
 
 * [TIMOB-20000](https://jira.appcelerator.org/browse/TIMOB-20000) - Rename appearance properties to keyboardAppearance
 
-  * Added keyboardAppearance for searchBar, textArea, textField, and textWidget
+    * Added keyboardAppearance for searchBar, textArea, textField, and textWidget
 
-  * Also deprecated all the constants (Keyboard\_Default and Keyboard\_Type\_Default)
+    * Also deprecated all the constants (Keyboard\_Default and Keyboard\_Type\_Default)
 
 * [TIMOB-20001](https://jira.appcelerator.org/browse/TIMOB-20001) - iOS: Rename Ti.Media.CAMERA\_AUTHORIZATION\_NOT\_DETERMINED to UNKNOWN
 
-  * Renamed the API CAMERA\_AUTHORIZATION\_\* to CAMERA\_AUTHORIZATION\_UNKNOWN
+    * Renamed the API CAMERA\_AUTHORIZATION\_\* to CAMERA\_AUTHORIZATION\_UNKNOWN
 
 * [TIMOB-20005](https://jira.appcelerator.org/browse/TIMOB-20005) - Line up \*Authorization properties
 
-  * Renamed Ti.Calendar.eventsAuthorization to calendarAuthorization
+    * Renamed Ti.Calendar.eventsAuthorization to calendarAuthorization
 
-  * Renamed Ti.Media.cameraAuthorizationStatus to cameraAuthorization
+    * Renamed Ti.Media.cameraAuthorizationStatus to cameraAuthorization
 
 * [TIMOB-20059](https://jira.appcelerator.org/browse/TIMOB-20059) - iOS: 'person' property in Ti.Contacts.showContacts is empty
 
-  * The callback event for both selectedProperty and selectedPerson of Ti.Contacts.showContacts no longer returns an empty value for the person property
+    * The callback event for both selectedProperty and selectedPerson of Ti.Contacts.showContacts no longer returns an empty value for the person property
 
 * [TIMOB-20098](https://jira.appcelerator.org/browse/TIMOB-20098) - Windows: Update bundled cmake to 3.4.1
 
-  * Updated cmake to 3.4.1 for some Windows 10 related fixes and improvements
-
+    * Updated cmake to 3.4.1 for some Windows 10 related fixes and improvements
 
 ## API Changes
 
@@ -629,479 +580,86 @@ This release includes 21 improvements.
 
 The following APIs are new or have expanded platform support in Release 5.2.0 as of February 22nd, 2016.
 
-API
-
-Type
-
-Notes
-
-Titanium.Calendar.calendarAuthorization
-
-property
-
-Returns an authorization constant indicating if the application has access to the events in the EventKit. (New API, supported on iPhone and iPad.)
-
-Titanium.Calendar.getCalendarAuthorization
-
-method
-
-Gets the value of the Titanium.Calendar.calendarAuthorization property. (New API, supported on iPhone and iPad.)
-
-Titanium.Media.CAMERA\_AUTHORIZATION\_UNKNOWN
-
-property
-
-Constant specifying that app is not yet authorized to use camera. This is available on iOS7 and later. (New API, supported on iPhone and iPad.)
-
-Titanium.Media.MEDIA\_TYPE\_LIVEPHOTO
-
-property
-
-Media type constant for live photo media. (New API, supported on iPhone and iPad.)
-
-Titanium.Media.cameraAuthorization
-
-property
-
-Returns the authorization status for the camera. (New API, supported on iPhone and iPad.)
-
-Titanium.Media.getCameraAuthorization
-
-method
-
-Gets the value of the Titanium.Media.cameraAuthorization property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.AlertDialog.getKeyboardAppearance
-
-method
-
-Gets the value of the Titanium.UI.AlertDialog.keyboardAppearance property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.AlertDialog.keyboardAppearance
-
-property
-
-Keyboard appearance to be displayed when the text field inside the dialog is focused. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.AlertDialog.setKeyboardAppearance
-
-method
-
-Sets the value of the Titanium.UI.AlertDialog.keyboardAppearance property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Android.TRANSITION\_CHANGE\_BOUNDS
-
-property
-
-Captures layout bounds of target views before and after the scene change and animates those changes during the transition. (New API, supported on Android.)
-
-Titanium.UI.Android.TRANSITION\_CHANGE\_CLIP\_BOUNDS
-
-property
-
-Captures the clip bounds before and after the scene change and animates those changes during the transition. (New API, supported on Android.)
-
-Titanium.UI.Android.TRANSITION\_CHANGE\_IMAGE\_TRANSFORM
-
-property
-
-Captures an ImageView's matrix before and after the scene change and animates it during the transition. (New API, supported on Android.)
-
-Titanium.UI.Android.TRANSITION\_CHANGE\_TRANSFORM
-
-property
-
-Captures scale and rotation for Views before and after the scene change and animates those changes during the transition. (New API, supported on Android.)
-
-Titanium.UI.Android.TRANSITION\_EXPLODE
-
-property
-
-Moves views in or out from the edges of the scene. (New API, supported on Android.)
-
-Titanium.UI.Android.TRANSITION\_FADE\_IN
-
-property
-
-Fades in the views. (New API, supported on Android.)
-
-Titanium.UI.Android.TRANSITION\_FADE\_OUT
-
-property
-
-Fades out the views. (New API, supported on Android.)
-
-Titanium.UI.Android.TRANSITION\_NONE
-
-property
-
-Resets transition to platform default. (New API, supported on Android.)
-
-Titanium.UI.Android.TRANSITION\_SLIDE\_BOTTOM
-
-property
-
-Moves views to bottom. (New API, supported on Android.)
-
-Titanium.UI.Android.TRANSITION\_SLIDE\_LEFT
-
-property
-
-Moves views to left. (New API, supported on Android.)
-
-Titanium.UI.Android.TRANSITION\_SLIDE\_RIGHT
-
-property
-
-Moves views to right. (New API, supported on Android.)
-
-Titanium.UI.Android.TRANSITION\_SLIDE\_TOP
-
-property
-
-Moves views to top. (New API, supported on Android.)
-
-Titanium.UI.KEYBOARD\_APPEARANCE\_DARK
-
-property
-
-Use the platform-specific dark keyboard appearance. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.KEYBOARD\_APPEARANCE\_LIGHT
-
-property
-
-Use the platform-specific light keyboard appearance. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.KEYBOARD\_TYPE\_ASCII
-
-property
-
-Use an ASCII keyboard, with the standard keyboard layout. (New API, supported on Android, iPhone and iPad.)
-
-Titanium.UI.KEYBOARD\_TYPE\_DECIMAL\_PAD
-
-property
-
-Use a keyboard with decimal numbers only, with the pad keyboard layout. (New API, supported on Android, iPhone and iPad.)
-
-Titanium.UI.KEYBOARD\_TYPE\_DEFAULT
-
-property
-
-Use the default keyboard, depending on the platform. (New API, supported on Android, iPhone, iPad and Mobile Web.)
-
-Titanium.UI.KEYBOARD\_TYPE\_EMAIL
-
-property
-
-Use a keyboard suitable for composing email, with the standard keyboard layout. (New API, supported on Android, iPhone, iPad and Mobile Web.)
-
-Titanium.UI.KEYBOARD\_TYPE\_NAMEPHONE\_PAD
-
-property
-
-Use a keyboard suitable for entering names and phone numbers, with the pad keyboard layout. (New API, supported on Android, iPhone and iPad.)
-
-Titanium.UI.KEYBOARD\_TYPE\_NUMBERS\_PUNCTUATION
-
-property
-
-Use a keyboard with numbers and punctuation only, with the standard keyboard layout. (New API, supported on Android, iPhone and iPad.)
-
-Titanium.UI.KEYBOARD\_TYPE\_NUMBER\_PAD
-
-property
-
-Use a keyboard with a number pad only, with the pad keyboard layout. (New API, supported on Android, iPhone, iPad and Mobile Web.)
-
-Titanium.UI.KEYBOARD\_TYPE\_PHONE\_PAD
-
-property
-
-Use a keyboard with a phone-style number pad, with the pad keyboard layout. (New API, supported on Android, iPhone, iPad and Mobile Web.)
-
-Titanium.UI.KEYBOARD\_TYPE\_TWITTER
-
-property
-
-Use a keyboard optimized for twitter text entry, with easy access to the @ and (New API, supported on iPhone and iPad.)
-
-Titanium.UI.KEYBOARD\_TYPE\_URL
-
-property
-
-Use a keyboard optimized for entering URLs, with the standard keyboard layout. (New API, supported on Android, iPhone, iPad and Mobile Web.)
-
-Titanium.UI.KEYBOARD\_TYPE\_WEBSEARCH
-
-property
-
-Use a keyboard optimized for web search terms and URL entry. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.ListItem.canInsert
-
-property
-
-Specifies if the item can be inserted by a user initiated action. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.ListView.dragend
-
-event
-
-Fired when the user stops dragging the list view. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.ListView.dragstart
-
-event
-
-Fired when the user starts dragging the list view. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Picker.backgroundColor
-
-property
-
-Background color of the picker, as a color name or hex triplet. (Added support for iPhone and iPad.)
-
-Titanium.UI.Picker.dateTimeColor
-
-property
-
-Sets the text color of date- and time-pickers. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Picker.getBackgroundColor
-
-method
-
-Gets the value of the Titanium.UI.Picker.backgroundColor property. (Added support for iPhone and iPad.)
-
-Titanium.UI.Picker.getDateTimeColor
-
-method
-
-Gets the value of the Titanium.UI.Picker.dateTimeColor property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Picker.setBackgroundColor
-
-method
-
-Sets the value of the Titanium.UI.Picker.backgroundColor property. (Added support for iPhone and iPad.)
-
-Titanium.UI.Picker.setDateTimeColor
-
-method
-
-Sets the value of the Titanium.UI.Picker.dateTimeColor property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.ProgressBar.getTrackTintColor
-
-method
-
-Gets the value of the Titanium.UI.ProgressBar.trackTintColor property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.ProgressBar.setTrackTintColor
-
-method
-
-Sets the value of the Titanium.UI.ProgressBar.trackTintColor property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.ProgressBar.trackTintColor
-
-property
-
-The color shown for the portion of the progress bar that is not filled. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.RETURNKEY\_CONTINUE
-
-property
-
-Set the return key text to "Continue". (New API, supported on iPhone and iPad.)
-
-Titanium.UI.SearchBar.getKeyboardAppearance
-
-method
-
-Gets the value of the Titanium.UI.SearchBar.keyboardAppearance property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.SearchBar.keyboardAppearance
-
-property
-
-Determines the appearance of the keyboard to be displayed the field is focused. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.SearchBar.setKeyboardAppearance
-
-method
-
-Sets the value of the Titanium.UI.SearchBar.keyboardAppearance property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.TABLE\_VIEW\_SEPARATOR\_STYLE\_NONE
-
-property
-
-The row divider is hidden. (New API, supported on Android, iPhone and iPad.)
-
-Titanium.UI.TABLE\_VIEW\_SEPARATOR\_STYLE\_SINGLE\_LINE
-
-property
-
-The row divider is shown as a single line. (New API, supported on Android, iPhone and iPad.)
-
-Titanium.UI.Tab.getIconInsets
-
-method
-
-Gets the value of the Titanium.UI.Tab.iconInsets property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Tab.iconInsets
-
-property
-
-The icon inset or outset for each edge. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Tab.selected
-
-event
-
-Fired when the tab is selected. (New API, supported on Android, iPhone, iPad and Mobile Web.)
-
-Titanium.UI.Tab.setIconInsets
-
-method
-
-Sets the value of the Titanium.UI.Tab.iconInsets property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Tab.unselected
-
-event
-
-Fired when the tab is no longer selected. (New API, supported on Android, iPhone, iPad and Mobile Web.)
-
-Titanium.UI.TableView.getMaxClassname
-
-method
-
-Gets the value of the Titanium.UI.TableView.maxClassname property. (New API, supported on Android.)
-
-Titanium.UI.TableView.getSeparatorStyle
-
-method
-
-Gets the value of the Titanium.UI.TableView.separatorStyle property. (Added support for Android.)
-
-Titanium.UI.TableView.maxClassname
-
-property
-
-Max number of row class names. (New API, supported on Android.)
-
-Titanium.UI.TableView.separatorStyle
-
-property
-
-Separator style constant. (Added support for Android.)
-
-Titanium.UI.TableView.setMaxClassname
-
-method
-
-Sets the value of the Titanium.UI.TableView.maxClassname property. (New API, supported on Android.)
-
-Titanium.UI.TableView.setSeparatorStyle
-
-method
-
-Sets the value of the Titanium.UI.TableView.separatorStyle property. (Added support for Android.)
-
-Titanium.UI.TextField.getInputType
-
-method
-
-Gets the value of the Titanium.UI.TextField.inputType property. (New API, supported on Android.)
-
-Titanium.UI.TextField.inputType
-
-property
-
-Input type to accept in thetext field. Also influences the Keyboard type to display. (New API, supported on Android.)
-
-Titanium.UI.TextField.setInputType
-
-method
-
-Sets the value of the Titanium.UI.TextField.inputType property. (New API, supported on Android.)
-
-Titanium.UI.Window.addSharedElement
-
-method
-
-Adds a common UI element to participate in window transition animation. (New API, supported on Android.)
-
-Titanium.UI.Window.getSwipeToClose
-
-method
-
-Gets the value of the Titanium.UI.Window.swipeToClose property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Window.removeAllSharedElements
-
-method
-
-Clears all added shared elements. (New API, supported on Android.)
-
-Titanium.UI.Window.setSwipeToClose
-
-method
-
-Sets the value of the Titanium.UI.Window.swipeToClose property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Window.swipeToClose
-
-property
-
-Boolean value indicating if the user should be able to close a window using a swipe gesture. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.iOS.LIVEPHOTO\_PLAYBACK\_STYLE\_FULL
-
-property
-
-Plays back the entire motion and sound content of the Live Photo, including transition effects at the start and end. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.iOS.LIVEPHOTO\_PLAYBACK\_STYLE\_HINT
-
-property
-
-Plays back only a brief section of the motion content of the Live Photo, without sound. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.iOS.LivePhotoView
-
-object
-
-A view to display a Live Photo object introduced in iOS 9.1. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.iOS.createLivePhotoView
-
-method
-
-Creates and returns an instance of Titanium.UI.iOS.LivePhotoView. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.iPad.Popover.backgroundColor
-
-property
-
-Sets the background color of the popover. (New API, supported on iPad.)
-
-Titanium.UI.iPad.Popover.getBackgroundColor
-
-method
-
-Gets the value of the Titanium.UI.iPad.Popover.backgroundColor property. (New API, supported on iPad.)
-
-Titanium.UI.iPad.Popover.setBackgroundColor
-
-method
-
-Sets the value of the Titanium.UI.iPad.Popover.backgroundColor property. (New API, supported on iPad.)
+| API | Type | Notes |
+| --- | --- | --- |
+| Titanium.Calendar.calendarAuthorization | property | Returns an authorization constant indicating if the application has access to the events in the EventKit. (New API, supported on iPhone and iPad.) |
+| Titanium.Calendar.getCalendarAuthorization | method | Gets the value of the Titanium.Calendar.calendarAuthorization property. (New API, supported on iPhone and iPad.) |
+| Titanium.Media.CAMERA\_AUTHORIZATION\_UNKNOWN | property | Constant specifying that app is not yet authorized to use camera. This is available on iOS7 and later. (New API, supported on iPhone and iPad.) |
+| Titanium.Media.MEDIA\_TYPE\_LIVEPHOTO | property | Media type constant for live photo media. (New API, supported on iPhone and iPad.) |
+| Titanium.Media.cameraAuthorization | property | Returns the authorization status for the camera. (New API, supported on iPhone and iPad.) |
+| Titanium.Media.getCameraAuthorization | method | Gets the value of the Titanium.Media.cameraAuthorization property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.AlertDialog.getKeyboardAppearance | method | Gets the value of the Titanium.UI.AlertDialog.keyboardAppearance property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.AlertDialog.keyboardAppearance | property | Keyboard appearance to be displayed when the text field inside the dialog is focused. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.AlertDialog.setKeyboardAppearance | method | Sets the value of the Titanium.UI.AlertDialog.keyboardAppearance property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Android.TRANSITION\_CHANGE\_BOUNDS | property | Captures layout bounds of target views before and after the scene change and animates those changes during the transition. (New API, supported on Android.) |
+| Titanium.UI.Android.TRANSITION\_CHANGE\_CLIP\_BOUNDS | property | Captures the clip bounds before and after the scene change and animates those changes during the transition. (New API, supported on Android.) |
+| Titanium.UI.Android.TRANSITION\_CHANGE\_IMAGE\_TRANSFORM | property | Captures an ImageView's matrix before and after the scene change and animates it during the transition. (New API, supported on Android.) |
+| Titanium.UI.Android.TRANSITION\_CHANGE\_TRANSFORM | property | Captures scale and rotation for Views before and after the scene change and animates those changes during the transition. (New API, supported on Android.) |
+| Titanium.UI.Android.TRANSITION\_EXPLODE | property | Moves views in or out from the edges of the scene. (New API, supported on Android.) |
+| Titanium.UI.Android.TRANSITION\_FADE\_IN | property | Fades in the views. (New API, supported on Android.) |
+| Titanium.UI.Android.TRANSITION\_FADE\_OUT | property | Fades out the views. (New API, supported on Android.) |
+| Titanium.UI.Android.TRANSITION\_NONE | property | Resets transition to platform default. (New API, supported on Android.) |
+| Titanium.UI.Android.TRANSITION\_SLIDE\_BOTTOM | property | Moves views to bottom. (New API, supported on Android.) |
+| Titanium.UI.Android.TRANSITION\_SLIDE\_LEFT | property | Moves views to left. (New API, supported on Android.) |
+| Titanium.UI.Android.TRANSITION\_SLIDE\_RIGHT | property | Moves views to right. (New API, supported on Android.) |
+| Titanium.UI.Android.TRANSITION\_SLIDE\_TOP | property | Moves views to top. (New API, supported on Android.) |
+| Titanium.UI.KEYBOARD\_APPEARANCE\_DARK | property | Use the platform-specific dark keyboard appearance. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.KEYBOARD\_APPEARANCE\_LIGHT | property | Use the platform-specific light keyboard appearance. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.KEYBOARD\_TYPE\_ASCII | property | Use an ASCII keyboard, with the standard keyboard layout. (New API, supported on Android, iPhone and iPad.) |
+| Titanium.UI.KEYBOARD\_TYPE\_DECIMAL\_PAD | property | Use a keyboard with decimal numbers only, with the pad keyboard layout. (New API, supported on Android, iPhone and iPad.) |
+| Titanium.UI.KEYBOARD\_TYPE\_DEFAULT | property | Use the default keyboard, depending on the platform. (New API, supported on Android, iPhone, iPad and Mobile Web.) |
+| Titanium.UI.KEYBOARD\_TYPE\_EMAIL | property | Use a keyboard suitable for composing email, with the standard keyboard layout. (New API, supported on Android, iPhone, iPad and Mobile Web.) |
+| Titanium.UI.KEYBOARD\_TYPE\_NAMEPHONE\_PAD | property | Use a keyboard suitable for entering names and phone numbers, with the pad keyboard layout. (New API, supported on Android, iPhone and iPad.) |
+| Titanium.UI.KEYBOARD\_TYPE\_NUMBERS\_PUNCTUATION | property | Use a keyboard with numbers and punctuation only, with the standard keyboard layout. (New API, supported on Android, iPhone and iPad.) |
+| Titanium.UI.KEYBOARD\_TYPE\_NUMBER\_PAD | property | Use a keyboard with a number pad only, with the pad keyboard layout. (New API, supported on Android, iPhone, iPad and Mobile Web.) |
+| Titanium.UI.KEYBOARD\_TYPE\_PHONE\_PAD | property | Use a keyboard with a phone-style number pad, with the pad keyboard layout. (New API, supported on Android, iPhone, iPad and Mobile Web.) |
+| Titanium.UI.KEYBOARD\_TYPE\_TWITTER | property | Use a keyboard optimized for twitter text entry, with easy access to the @ and (New API, supported on iPhone and iPad.) |
+| Titanium.UI.KEYBOARD\_TYPE\_URL | property | Use a keyboard optimized for entering URLs, with the standard keyboard layout. (New API, supported on Android, iPhone, iPad and Mobile Web.) |
+| Titanium.UI.KEYBOARD\_TYPE\_WEBSEARCH | property | Use a keyboard optimized for web search terms and URL entry. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.ListItem.canInsert | property | Specifies if the item can be inserted by a user initiated action. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.ListView.dragend | event | Fired when the user stops dragging the list view. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.ListView.dragstart | event | Fired when the user starts dragging the list view. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Picker.backgroundColor | property | Background color of the picker, as a color name or hex triplet. (Added support for iPhone and iPad.) |
+| Titanium.UI.Picker.dateTimeColor | property | Sets the text color of date- and time-pickers. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Picker.getBackgroundColor | method | Gets the value of the Titanium.UI.Picker.backgroundColor property. (Added support for iPhone and iPad.) |
+| Titanium.UI.Picker.getDateTimeColor | method | Gets the value of the Titanium.UI.Picker.dateTimeColor property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Picker.setBackgroundColor | method | Sets the value of the Titanium.UI.Picker.backgroundColor property. (Added support for iPhone and iPad.) |
+| Titanium.UI.Picker.setDateTimeColor | method | Sets the value of the Titanium.UI.Picker.dateTimeColor property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.ProgressBar.getTrackTintColor | method | Gets the value of the Titanium.UI.ProgressBar.trackTintColor property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.ProgressBar.setTrackTintColor | method | Sets the value of the Titanium.UI.ProgressBar.trackTintColor property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.ProgressBar.trackTintColor | property | The color shown for the portion of the progress bar that is not filled. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.RETURNKEY\_CONTINUE | property | Set the return key text to "Continue". (New API, supported on iPhone and iPad.) |
+| Titanium.UI.SearchBar.getKeyboardAppearance | method | Gets the value of the Titanium.UI.SearchBar.keyboardAppearance property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.SearchBar.keyboardAppearance | property | Determines the appearance of the keyboard to be displayed the field is focused. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.SearchBar.setKeyboardAppearance | method | Sets the value of the Titanium.UI.SearchBar.keyboardAppearance property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.TABLE\_VIEW\_SEPARATOR\_STYLE\_NONE | property | The row divider is hidden. (New API, supported on Android, iPhone and iPad.) |
+| Titanium.UI.TABLE\_VIEW\_SEPARATOR\_STYLE\_SINGLE\_LINE | property | The row divider is shown as a single line. (New API, supported on Android, iPhone and iPad.) |
+| Titanium.UI.Tab.getIconInsets | method | Gets the value of the Titanium.UI.Tab.iconInsets property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Tab.iconInsets | property | The icon inset or outset for each edge. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Tab.selected | event | Fired when the tab is selected. (New API, supported on Android, iPhone, iPad and Mobile Web.) |
+| Titanium.UI.Tab.setIconInsets | method | Sets the value of the Titanium.UI.Tab.iconInsets property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Tab.unselected | event | Fired when the tab is no longer selected. (New API, supported on Android, iPhone, iPad and Mobile Web.) |
+| Titanium.UI.TableView.getMaxClassname | method | Gets the value of the Titanium.UI.TableView.maxClassname property. (New API, supported on Android.) |
+| Titanium.UI.TableView.getSeparatorStyle | method | Gets the value of the Titanium.UI.TableView.separatorStyle property. (Added support for Android.) |
+| Titanium.UI.TableView.maxClassname | property | Max number of row class names. (New API, supported on Android.) |
+| Titanium.UI.TableView.separatorStyle | property | Separator style constant. (Added support for Android.) |
+| Titanium.UI.TableView.setMaxClassname | method | Sets the value of the Titanium.UI.TableView.maxClassname property. (New API, supported on Android.) |
+| Titanium.UI.TableView.setSeparatorStyle | method | Sets the value of the Titanium.UI.TableView.separatorStyle property. (Added support for Android.) |
+| Titanium.UI.TextField.getInputType | method | Gets the value of the Titanium.UI.TextField.inputType property. (New API, supported on Android.) |
+| Titanium.UI.TextField.inputType | property | Input type to accept in thetext field. Also influences the Keyboard type to display. (New API, supported on Android.) |
+| Titanium.UI.TextField.setInputType | method | Sets the value of the Titanium.UI.TextField.inputType property. (New API, supported on Android.) |
+| Titanium.UI.Window.addSharedElement | method | Adds a common UI element to participate in window transition animation. (New API, supported on Android.) |
+| Titanium.UI.Window.getSwipeToClose | method | Gets the value of the Titanium.UI.Window.swipeToClose property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Window.removeAllSharedElements | method | Clears all added shared elements. (New API, supported on Android.) |
+| Titanium.UI.Window.setSwipeToClose | method | Sets the value of the Titanium.UI.Window.swipeToClose property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Window.swipeToClose | property | Boolean value indicating if the user should be able to close a window using a swipe gesture. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.iOS.LIVEPHOTO\_PLAYBACK\_STYLE\_FULL | property | Plays back the entire motion and sound content of the Live Photo, including transition effects at the start and end. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.iOS.LIVEPHOTO\_PLAYBACK\_STYLE\_HINT | property | Plays back only a brief section of the motion content of the Live Photo, without sound. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.iOS.LivePhotoView | object | A view to display a Live Photo object introduced in iOS 9.1. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.iOS.createLivePhotoView | method | Creates and returns an instance of Titanium.UI.iOS.LivePhotoView. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.iPad.Popover.backgroundColor | property | Sets the background color of the popover. (New API, supported on iPad.) |
+| Titanium.UI.iPad.Popover.getBackgroundColor | method | Gets the value of the Titanium.UI.iPad.Popover.backgroundColor property. (New API, supported on iPad.) |
+| Titanium.UI.iPad.Popover.setBackgroundColor | method | Sets the value of the Titanium.UI.iPad.Popover.backgroundColor property. (New API, supported on iPad.) |
 
 ### Deprecated APIs
 
@@ -1109,167 +667,34 @@ The following APIs are deprecated in Release 5.2.0.RC.
 
 The following APIs are deprecated in Release 5.2.0 as of February 22nd, 2016.
 
-API
-
-Type
-
-Notes
-
-Titanium.App.iOS.UserActivity.useractivitywillsave
-
-event
-
-set property needsSave to true everytime you update current activity state instead.
-
-Titanium.Calendar.STATUS\_CANCELLED
-
-property
-
-Use STATUS\_CANCELED instead.
-
-Titanium.Calendar.eventsAuthorization
-
-property
-
-Use calendarAuthorization instead.
-
-Titanium.Calendar.getEventsAuthorization
-
-method
-
-Use calendarAuthorization instead.
-
-Titanium.Media.CAMERA\_AUTHORIZATION\_NOT\_DETERMINED
-
-property
-
-Use CAMERA\_AUTHORIZATION\_UNKNOWN instead.
-
-Titanium.Media.cameraAuthorizationStatus
-
-property
-
-Use cameraAuthorization instead.
-
-Titanium.Media.getCameraAuthorizationStatus
-
-method
-
-Use cameraAuthorization instead.
-
-Titanium.UI.KEYBOARD\_ASCII
-
-property
-
-Use KEYBOARD\_TYPE\_ASCII instead.
-
-Titanium.UI.KEYBOARD\_DECIMAL\_PAD
-
-property
-
-Use KEYBOARD\_TYPE\_DECIMAL\_PAD instead.
-
-Titanium.UI.KEYBOARD\_DEFAULT
-
-property
-
-Use KEYBOARD\_TYPE\_DEFAULT instead.
-
-Titanium.UI.KEYBOARD\_EMAIL
-
-property
-
-Use KEYBOARD\_TYPE\_EMAIL instead.
-
-Titanium.UI.KEYBOARD\_NAMEPHONE\_PAD
-
-property
-
-Use KEYBOARD\_TYPE\_NAMEPHONE\_PAD instead.
-
-Titanium.UI.KEYBOARD\_NUMBERS\_PUNCTUATION
-
-property
-
-Use KEYBOARD\_TYPE\_NUMBERS\_PUNCTUATION instead.
-
-Titanium.UI.KEYBOARD\_NUMBER\_PAD
-
-property
-
-Use KEYBOARD\_TYPE\_NUMBER\_PAD instead.
-
-Titanium.UI.KEYBOARD\_PHONE\_PAD
-
-property
-
-Use KEYBOARD\_TYPE\_PHONE\_PAD instead.
-
-Titanium.UI.KEYBOARD\_URL
-
-property
-
-Use KEYBOARD\_TYPE\_URL instead.
-
-Titanium.UI.Tab.blur
-
-event
-
-Use unselected instead.
-
-Titanium.UI.Tab.focus
-
-event
-
-Use selected instead.
-
-Titanium.UI.TabGroup.selected
-
-event
-
-Use focus instead.
-
-Titanium.UI.TabGroup.unselected
-
-event
-
-Use blur instead.
-
-Titanium.UI.TextArea.appearance
-
-property
-
-Use keyboardAppearance instead
-
-Titanium.UI.TextArea.getAppearance
-
-method
-
-Use keyboardAppearance instead
-
-Titanium.UI.TextArea.setAppearance
-
-method
-
-Use keyboardAppearance instead
-
-Titanium.UI.TextField.appearance
-
-property
-
-Use keyboardAppearance instead.
-
-Titanium.UI.TextField.getAppearance
-
-method
-
-Use keyboardAppearance instead.
-
-Titanium.UI.TextField.setAppearance
-
-method
-
-Use keyboardAppearance instead.
+| API | Type | Notes |
+| --- | --- | --- |
+| Titanium.App.iOS.UserActivity.useractivitywillsave | event | set property needsSave to true everytime you update current activity state instead. |
+| Titanium.Calendar.STATUS\_CANCELLED | property | Use STATUS\_CANCELED instead. |
+| Titanium.Calendar.eventsAuthorization | property | Use calendarAuthorization instead. |
+| Titanium.Calendar.getEventsAuthorization | method | Use calendarAuthorization instead. |
+| Titanium.Media.CAMERA\_AUTHORIZATION\_NOT\_DETERMINED | property | Use CAMERA\_AUTHORIZATION\_UNKNOWN instead. |
+| Titanium.Media.cameraAuthorizationStatus | property | Use cameraAuthorization instead. |
+| Titanium.Media.getCameraAuthorizationStatus | method | Use cameraAuthorization instead. |
+| Titanium.UI.KEYBOARD\_ASCII | property | Use KEYBOARD\_TYPE\_ASCII instead. |
+| Titanium.UI.KEYBOARD\_DECIMAL\_PAD | property | Use KEYBOARD\_TYPE\_DECIMAL\_PAD instead. |
+| Titanium.UI.KEYBOARD\_DEFAULT | property | Use KEYBOARD\_TYPE\_DEFAULT instead. |
+| Titanium.UI.KEYBOARD\_EMAIL | property | Use KEYBOARD\_TYPE\_EMAIL instead. |
+| Titanium.UI.KEYBOARD\_NAMEPHONE\_PAD | property | Use KEYBOARD\_TYPE\_NAMEPHONE\_PAD instead. |
+| Titanium.UI.KEYBOARD\_NUMBERS\_PUNCTUATION | property | Use KEYBOARD\_TYPE\_NUMBERS\_PUNCTUATION instead. |
+| Titanium.UI.KEYBOARD\_NUMBER\_PAD | property | Use KEYBOARD\_TYPE\_NUMBER\_PAD instead. |
+| Titanium.UI.KEYBOARD\_PHONE\_PAD | property | Use KEYBOARD\_TYPE\_PHONE\_PAD instead. |
+| Titanium.UI.KEYBOARD\_URL | property | Use KEYBOARD\_TYPE\_URL instead. |
+| Titanium.UI.Tab.blur | event | Use unselected instead. |
+| Titanium.UI.Tab.focus | event | Use selected instead. |
+| Titanium.UI.TabGroup.selected | event | Use focus instead. |
+| Titanium.UI.TabGroup.unselected | event | Use blur instead. |
+| Titanium.UI.TextArea.appearance | property | Use keyboardAppearance instead |
+| Titanium.UI.TextArea.getAppearance | method | Use keyboardAppearance instead |
+| Titanium.UI.TextArea.setAppearance | method | Use keyboardAppearance instead |
+| Titanium.UI.TextField.appearance | property | Use keyboardAppearance instead. |
+| Titanium.UI.TextField.getAppearance | method | Use keyboardAppearance instead. |
+| Titanium.UI.TextField.setAppearance | method | Use keyboardAppearance instead. |
 
 ## Known Issues
 

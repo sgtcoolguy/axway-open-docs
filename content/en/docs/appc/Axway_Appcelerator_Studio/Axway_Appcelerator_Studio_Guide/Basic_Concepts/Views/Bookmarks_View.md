@@ -1,13 +1,12 @@
 {"title":"Bookmarks View","weight":"10"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Opening the View](#OpeningtheView)
+* [Opening the View](#opening-the-view)
 
-* [Adding a Bookmark](#AddingaBookmark)
+* [Adding a Bookmark](#adding-a-bookmark)
 
-* [Related Topics](#RelatedTopics)
-
+* [Related Topics](#related-topics)
 
 This page explains what the Bookmarks View is and how to display it.
 
@@ -25,7 +24,6 @@ To display the Bookmarks View:
 
 * To close the **Bookmarks View**, click the Close button (**X**) in the upper right of the tab.
 
-
 Studio displays the **Bookmark View** as a tab at the bottom of your screen, shown in the image below.
 
 ![BookmarksView](/Images/appc/download/attachments/30083305/BookmarksView.png)
@@ -41,7 +39,6 @@ To add a bookmark to your code:
 3. On the **Add Bookmark** pop-up window, type the name that you want to give to the bookmark.
 
 4. Click **OK**.
-
 
 Aptana creates the bookmark for you, which now appears in the Bookmarks View.
 

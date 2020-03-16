@@ -8,31 +8,15 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 This document describes model delete and provides instance configuration and parameters information.
 
-Name
-
-Description
-
-ModelDelete
-
-A Model specific flow-node. Invokes the Delete API on a specified model and returns the response.
+| Name | Description |
+| --- | --- |
+| ModelDelete | A Model specific flow-node. Invokes the Delete API on a specified model and returns the response. |
 
 ## Instance configuration
 
-Property
-
-Description
-
-Required
-
-Type
-
-model
-
-The name of the model of which to invoke the Delete API.
-
-yes
-
-string
+| Property | Description | Required | Type |
+| --- | --- | --- | --- |
+| model | The name of the model of which to invoke the Delete API. | yes | string |
 
 ## Instance parameters
 

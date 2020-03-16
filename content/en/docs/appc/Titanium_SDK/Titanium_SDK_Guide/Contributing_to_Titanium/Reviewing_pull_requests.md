@@ -12,7 +12,6 @@ This document describes the process you can follow to test any of the "NPM-insta
 
 3. Follow the instructions at [https://help.github.com/articles/checking-out-pull-requests-locally](https://help.github.com/articles/checking-out-pull-requests-locally) to modify your git configuration to support fetching pull requests
 
-
 Checkout a PR
 
 GitHub for Mac (or Windows) users, you'll see a button to check out the PR directly from the GitHub repo page. This will work only if you have write access to the repo. (You can check out [https://github.com/blog/1582-checking-out-pull-requests](https://github.com/blog/1582-checking-out-pull-requests) for more details.) Sorry, you're going to have to use the command-line for this:
@@ -22,7 +21,6 @@ GitHub for Mac (or Windows) users, you'll see a button to check out the PR direc
 2. Check out the specific PR using git checkout pull/origin/999 -b 999 where 999 is the PR number (the -b 999 creates a new local branch named after the PR)
 
 3. Install from your local branch: \[sudo\] npm install -g . (with the dot at the end). You’re ready now to do your testing, etc.
-
 
 Functional Review testing
 
@@ -39,7 +37,6 @@ Post FR cleanup
 2. Switch to your master branch: git checkout master
 
 3. Finally, force-delete your local PR branch: git branch -D 999 (this will destroy any changes you made to the files)
-
 
 Alloy's jake app runner
 

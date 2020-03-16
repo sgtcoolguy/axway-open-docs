@@ -2,32 +2,31 @@
 
 If you are having issues with the speed of Studio, this document provides information you can use to diagnose the problem.
 
-* [Building Workspace taking longer than expected](#BuildingWorkspacetakinglongerthanexpected)
+* [Building Workspace taking longer than expected](#building-workspace-taking-longer-than-expected)
 
-  * [Studio is indexing extra files](#Studioisindexingextrafiles)
+    * [Studio is indexing extra files](#studio-is-indexing-extra-files)
 
-  * [Studio is encountering an exception during indexing](#Studioisencounteringanexceptionduringindexing)
+    * [Studio is encountering an exception during indexing](#studio-is-encountering-an-exception-during-indexing)
 
-  * [A validator or builder is enabled that is taking a long time to process each file](#Avalidatororbuilderisenabledthatistakingalongtimetoprocesseachfile)
+    * [A validator or builder is enabled that is taking a long time to process each file](#a-validator-or-builder-is-enabled-that-is-taking-a-long-time-to-process-each-file)
 
-  * [The index is corrupt](#Theindexiscorrupt)
+    * [The index is corrupt](#the-index-is-corrupt)
 
-    * [Local project index](#Localprojectindex)
+        * [Local project index](#local-project-index)
 
-    * [Global index](#Globalindex)
+        * [Global index](#global-index)
 
-  * [If that still does not help...](#Ifthatstilldoesnothelp...)
+    * [If that still does not help...](#if-that-still-does-not-help...)
 
-* [High CPU usage](#HighCPUusage)
+* [High CPU usage](#high-cpu-usage)
 
-  * [VisualVM installation](#VisualVMinstallation)
+    * [VisualVM installation](#visualvm-installation)
 
-  * [Find the Studio process](#FindtheStudioprocess)
+    * [Find the Studio process](#find-the-studio-process)
 
-  * [Start recording CPU usage](#StartrecordingCPUusage)
+    * [Start recording CPU usage](#start-recording-cpu-usage)
 
-  * [Alternate approaches](#Alternateapproaches)
-
+    * [Alternate approaches](#alternate-approaches)
 
 ## Building Workspace taking longer than expected
 
@@ -41,17 +40,15 @@ It's possible that you have a large directory of generated or resource files tha
 
 2. Select Build > Exclude from build.
 
-
 ### Studio is encountering an exception during indexing
 
 Check the Studio log file. It may be a bug, or the index is corrupt.
 
 1. Help > Studio > View Log File
 
-
 If you notice things like , it's likely your index is corrupt. See below.
 
-If you notice issues mentioned in [APSTUD-2260](https://jira.appcelerator.org/browse/APSTUD-2260) ( UTFDataFormatException in DiskIndex.readString() ), it is likely your index is corrupt. See [The index is corrupt](#Theindexiscorrupt) section below.
+If you notice issues mentioned in [APSTUD-2260](https://jira.appcelerator.org/browse/APSTUD-2260) ( UTFDataFormatException in DiskIndex.readString() ), it is likely your index is corrupt. See [The index is corrupt](#the-index-is-corrupt) section below.
 
 ### A validator or builder is enabled that is taking a long time to process each file
 
@@ -62,7 +59,6 @@ Validators for JavaScript (like JSLint) can take a _long_ time to process many f
 2. Disable items on "build" that seem like likely culprits
 
 3. Select OK
-
 
 Studio will rebuild using the new settings.
 
@@ -80,7 +76,6 @@ To clear your local project index
 
 2. Either choose your project, or "All Projects"
 
-
 #### Global index
 
 This contains information about the core JavaScript libraries, etc.
@@ -97,7 +92,6 @@ To clear your global index
 
 5. Restart Studio
 
-
 ### If that still does not help...
 
 There are diagnoses you can perform that will help us understand the issue:
@@ -106,20 +100,19 @@ There are diagnoses you can perform that will help us understand the issue:
 
 2. In the same preference page, turn on the following:
 
-  1. Debug Level: All
+    1. Debug Level: All
 
-  2. Debug specific components
+    2. Debug specific components
 
-    1. com.aptana.core/debug/builder
+        1. com.aptana.core/debug/builder
 
-    2. com.aptana.core/debug/builder/indexer
+        2. com.aptana.core/debug/builder/indexer
 
-    3. com.aptana.core/debug/builder/participants
+        3. com.aptana.core/debug/builder/participants
 
 3. Then, clear the log file: **Help** > **Studio** > **Clear Log File**.
 
 4. Restart Studio
-
 
 Attach your findings to [APSTUD-2050](https://jira.appcelerator.org/browse/APSTUD-2050) ( "Building Workspace" job takes a while to complete ). You should see entries like:
 
@@ -149,10 +142,9 @@ In order to do so, we will use a tool called VisualVM. It is included with many 
 
 2. If not, follow the steps [here](http://visualvm.java.net/download.html)which involve downloading a .zip file and running the program inside.
 
-  1. Ubuntu users can use apt-get virtualvm
+    1. Ubuntu users can use apt-get virtualvm
 
 3. It will go through a brief step calibrating your machine.
-
 
 ### Find the Studio process
 
@@ -161,7 +153,6 @@ In order to do so, we will use a tool called VisualVM. It is included with many 
 2. Once Visual VM has started, you will see at least two processes in the left-hand column. Studio is likely to be the "Unknown Application".
 
 3. Double-click on that item.
-
 
 A pane opens showing details about the process
 
@@ -179,7 +170,6 @@ A pane opens showing details about the process
 
 6. Attach that file to a JIRA ticket.
 
-
 ### Alternate approaches
 
 Two other things to try that might highlight the issue
@@ -188,11 +178,11 @@ Two other things to try that might highlight the issue
 
 2. In the same preference page, turn on
 
-  1. Debug Level: All
+    1. Debug Level: All
 
-  2. Debug specific components
+    2. Debug specific components
 
-    1. com.aptana.core/debug/shell
+        1. com.aptana.core/debug/shell
 
 3. Help > Studio > Clear Log File
 

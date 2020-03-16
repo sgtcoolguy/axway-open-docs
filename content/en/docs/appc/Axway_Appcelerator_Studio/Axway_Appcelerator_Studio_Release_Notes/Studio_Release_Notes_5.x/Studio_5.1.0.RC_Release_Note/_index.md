@@ -4,40 +4,39 @@
 
 Studio 5.1.0.RC is a minor release that includes a few improvements and several bug fixes.
 
-As of this release, Studio 5.0.x will not be supported six months from 5.1.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Studio 5.0.x will not be supported six months from 5.1.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ### Improvements
 
 * [TISTUD-7565](https://jira.appcelerator.org/browse/TISTUD-7565) - Upgrade Eclipse base to Oxygen (4.7)
 
-  * Updated Eclipse base to Oxygen (4.7)
+    * Updated Eclipse base to Oxygen (4.7)
 
 * [TISTUD-8878](https://jira.appcelerator.org/browse/TISTUD-8878) - Axway Appcelerator Studio support for JDK 1.8.152/153 and JDK 9
 
-  * Added support for JDK 1.8.152/153 and JDK 9
+    * Added support for JDK 1.8.152/153 and JDK 9
 
 * [TISTUD-9006](https://jira.appcelerator.org/browse/TISTUD-9006) - The "full\_uninstall.txt" file in the Appcelerator folder is outdated
 
-  * Removed the outdated full\_uninstall.txt file from Studio. Users are advised to visit [Uninstalling Studio](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Updating_Studio/Uninstalling_Studio/) for details on uninstalling Studio.
+    * Removed the outdated full\_uninstall.txt file from Studio. Users are advised to visit [Uninstalling Studio](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Updating_Studio/Uninstalling_Studio/) for details on uninstalling Studio.
 
 * [TISTUD-9018](https://jira.appcelerator.org/browse/TISTUD-9018) - Supporting 64-bit Studio Windows installers as there is no 32-bit Java 9
 
-  * Added support for 64-bit Windows Installers
+    * Added support for 64-bit Windows Installers
 
 * [TISTUD-9019](https://jira.appcelerator.org/browse/TISTUD-9019) - Updating JRuby plugins to support Java 9
 
-  * Updated jRuby to 9.1.16, Ruby to 2.5.0
+    * Updated jRuby to 9.1.16, Ruby to 2.5.0
 
-  * Updated ruby gems (rake to 12.3.0)
+    * Updated ruby gems (rake to 12.3.0)
 
 * [TISTUD-9085](https://jira.appcelerator.org/browse/TISTUD-9085) - Update to liveview 1.2.2
 
-  * Updated to liveview to version 1.2.2 to address [TIMOB-25790](https://jira.appcelerator.org/browse/TIMOB-25790)
+    * Updated to liveview to version 1.2.2 to address [TIMOB-25790](https://jira.appcelerator.org/browse/TIMOB-25790)
 
 * [TISTUD-9086](https://jira.appcelerator.org/browse/TISTUD-9086) - Add transpile identifer to the tiapp.xml schema
 
-  * Added transpile to the tiapp.xml schema
-
+    * Added transpile to the tiapp.xml schema
 
 ### Fixed issues
 
@@ -104,7 +103,6 @@ As of this release, Studio 5.0.x will not be supported six months from 5.1.0.GA'
 * [TISTUD-9093](https://jira.appcelerator.org/browse/TISTUD-9093) - Windows: Studio says it requires Windows 8.1 SDK
 
 * [TISTUD-9097](https://jira.appcelerator.org/browse/TISTUD-9097) - Studio shows the wrong node update
-
 
 ### Breaking changes
 

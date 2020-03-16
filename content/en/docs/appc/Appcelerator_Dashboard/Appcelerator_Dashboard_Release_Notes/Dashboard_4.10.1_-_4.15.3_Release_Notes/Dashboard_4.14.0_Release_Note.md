@@ -14,7 +14,6 @@ Dashboard 4.14.0 is a minor release, which includes new features, improvements, 
 
 * Added more application type filters to the All Projects page (Titanium, Native, API Builder, Node.js, and Mobile Backend Services)
 
-
 ## Improvements
 
 * An Organization drop-down menu is now available in the header by selecting the Building icon to the right of user's name
@@ -30,7 +29,6 @@ Dashboard 4.14.0 is a minor release, which includes new features, improvements, 
 * Show version and documentation links in the footer when not logged in
 
 * Added an analytics event rate to the organization usage report
-
 
 ## Fixed issues
 

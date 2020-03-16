@@ -32,100 +32,21 @@ These are the event names (or compiler tasks):
 
 * compile:app.js: called just after the compilation of the main app.js file but before the code is written to disk.
 
-
 The function callback provides two arguments: event and logger.
 
 The event object provides a set of objects and values which may be useful for building tasks:
 
-Object/Value
-
-Description
-
-adapters
-(Array)
-
-List of adapters.
-
-alloyConfig
-(Object)
-
-Contains Alloy compiler configuration information.
-
-* **platform** : either android, ios or windows.
-
-* **file**: file to target for selective compilation.
-
-* **deploytype** : compilation environment type: either development, test or production.
-
-* **beautify** : if set to true, the output from UglifyJS will be beautified.
-
-
-autoStyle
-(Boolean)
-
-If set to true, autostyle is enabled for the entire project.
-
-dependencies
-(Object)
-
-Value of the dependencies key in the config.json file.
-
-dir
-(Object)
-
-Contains directory paths to various resources.
-
-* **home** : absolute path to the Alloy project's app directory.
-
-* **project** : absolute path to the Alloy project's root directory.
-
-* **resources** : absolute path to the Alloy project's Resource directory.
-
-* **resourcesAlloy** : absolute path to the Alloy project's Resource/alloy directory.
-
-* **assets** : absolute path to the Alloy project's assets.
-
-* **config** : absolute path to the Alloy project's config.
-
-* **controllers** : absolute path to the Alloy project's controllers.
-
-* **migrations** : absolute path to the Alloy project's migrations.
-
-* **models** : absolute path to the Alloy project's models.
-
-* **styles** : absolute path to the Alloy project's styles.
-
-* **themes** : absolute path to the Alloy project's themes.
-
-* **views** : absolute path to the Alloy project's views.
-
-* **widgets** : absolute path to the Alloy project's widgets.
-
-* **builtins** : absolute path to the Alloy tool builtins.
-
-* **template** : absolute path to the Alloy tool templates.
-
-
-sourcemap
-(Boolean)
-
-If true, generates the source mapping files for use with the Studio debugger and other functions.
-These files maps the generated Titanium files in the Resources directory to the ones in the app directory.
-
-theme
-(String)
-
-Name of the theme being used.
-
-code
-(String)
-
-**Only present for the compile:app.js task.** Contains the contents of the app.js file.
-
-appJSFile
-(String)
-
-**Only present for the compile:app.js task.** Contains the the absolute path to the app.js file.
+| Object/Value | Description |
+| --- | --- |
+| adapters  <br />(Array) | List of adapters. |
+| alloyConfig  <br />(Object) | Contains Alloy compiler configuration information.<br /><br />* **platform** : either android, ios or windows.<br />    <br />* **file**: file to target for selective compilation.<br />    <br />* **deploytype** : compilation environment type: either development, test or production.<br />    <br />* **beautify** : if set to true, the output from UglifyJS will be beautified. |
+| autoStyle  <br />(Boolean) | If set to true, autostyle is enabled for the entire project. |
+| dependencies  <br />(Object) | Value of the dependencies key in the config.json file. |
+| dir  <br />(Object) | Contains directory paths to various resources.<br /><br />* **home** : absolute path to the Alloy project's app directory.<br />    <br />* **project** : absolute path to the Alloy project's root directory.<br />    <br />* **resources** : absolute path to the Alloy project's Resource directory.<br />    <br />* **resourcesAlloy** : absolute path to the Alloy project's Resource/alloy directory.<br />    <br />* **assets** : absolute path to the Alloy project's assets.<br />    <br />* **config** : absolute path to the Alloy project's config.<br />    <br />* **controllers** : absolute path to the Alloy project's controllers.<br />    <br />* **migrations** : absolute path to the Alloy project's migrations.<br />    <br />* **models** : absolute path to the Alloy project's models.<br />    <br />* **styles** : absolute path to the Alloy project's styles.<br />    <br />* **themes** : absolute path to the Alloy project's themes.<br />    <br />* **views** : absolute path to the Alloy project's views.<br />    <br />* **widgets** : absolute path to the Alloy project's widgets.<br />    <br />* **builtins** : absolute path to the Alloy tool builtins.<br />    <br />* **template** : absolute path to the Alloy tool templates. |
+| sourcemap  <br />(Boolean) | If true, generates the source mapping files for use with the Studio debugger and other functions.  <br />These files maps the generated Titanium files in the Resources directory to the ones in the app directory. |
+| theme  <br />(String) | Name of the theme being used. |
+| code  <br />(String) | **Only present for the compile:app.js task.** Contains the contents of the app.js file. |
+| appJSFile  <br />(String) | **Only present for the compile:app.js task.** Contains the the absolute path to the app.js file. |
 
 The logger object provides a reference to the logger, which defines the following methods and properties:
 
@@ -163,13 +84,11 @@ Outputs a debug log message.
 Parameters:
 
 * msg : String
-  Message to output.
-
+    Message to output.
 
 Returns:
 
 * void
-
 
 **info (String msg)**
 Outputs an info log message.
@@ -177,13 +96,11 @@ Outputs an info log message.
 Parameters:
 
 * msg : String
-  Message to output.
-
+    Message to output.
 
 Returns:
 
 * void
-
 
 **warn (String msg)**
 Outputs a warning log message.
@@ -191,13 +108,11 @@ Outputs a warning log message.
 Parameters:
 
 * msg : String
-  Message to output.
-
+    Message to output.
 
 Returns:
 
 * void
-
 
 **error (String msg)**
 Outputs an error log message.
@@ -205,8 +120,7 @@ Outputs an error log message.
 Parameters:
 
 * msg : String
-  Message to output.
-
+    Message to output.
 
 Returns:
 

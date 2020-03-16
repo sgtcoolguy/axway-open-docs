@@ -6,7 +6,6 @@ Access control lists let you control read and write access to Mobile Backend Ser
 
 * A public write flag granting write permission to all users, **or** a list of users granted write permission
 
-
 An object's owner always has read and write permission.
 
 ## Creating an ACL
@@ -21,23 +20,22 @@ To create an ACL:
 
 4. In the **Creator** field, click the **+** icon and select the object's owner from the list of application Users.
 
-  The object's owner always has read and write permission.
+    The object's owner always has read and write permission.
 
 5. In the **Public Read** field, do one of the following:
 
-  1. Select **Yes** to allow read access for all users.
+    1. Select **Yes** to allow read access for all users.
 
-  2. Select **No** and click **+** to select users who should have read access (as shown below).
+    2. Select **No** and click **+** to select users who should have read access (as shown below).
 
-    ![access_list_latest](/Images/appc/download/attachments/60145275/access_list_latest.png)
+        ![access_list_latest](/Images/appc/download/attachments/60145275/access_list_latest.png)
 6. Similarly, in the **Public Write** field, do one of the following:
 
-  1. Select **Yes** to allow write access for all users.
+    1. Select **Yes** to allow write access for all users.
 
-  2. Select **No** and click **+** to select users who should have write access.
+    2. Select **No** and click **+** to select users who should have write access.
 
 7. Click **Save**.
-
 
 ## Editing an ACL
 
@@ -54,7 +52,6 @@ To edit an ACL:
 5. Make the desired changes to the ACL.
 
 6. Click **Save**.
-
 
 ## Deleting an ACL
 

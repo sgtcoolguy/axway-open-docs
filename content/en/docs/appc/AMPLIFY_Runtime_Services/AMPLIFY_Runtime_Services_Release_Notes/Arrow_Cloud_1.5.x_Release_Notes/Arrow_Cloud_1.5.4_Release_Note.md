@@ -8,7 +8,6 @@ This release of Arrow Cloud includes version 1.2.2 of the CLI and 1.5.4 of the s
 
 * acs list includes more information about the deployment process
 
-
 ## Bug fixes
 
 * Fixed issue with acs server --restart when acs restart was added

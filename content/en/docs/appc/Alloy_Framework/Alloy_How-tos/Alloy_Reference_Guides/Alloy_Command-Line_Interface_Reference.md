@@ -1,31 +1,30 @@
 {"title":"Alloy Command-Line Interface Reference","weight":"10"}
 
-* [Command-Line Interface Installation](#Command-LineInterfaceInstallation)
+* [Command-Line Interface Installation](#command-line-interface-installation)
 
-  * [Manual Installation](#ManualInstallation)
+    * [Manual Installation](#manual-installation)
 
-  * [Bleeding Edge Installation](#BleedingEdgeInstallation)
+    * [Bleeding Edge Installation](#bleeding-edge-installation)
 
-* [New](#New)
+* [New](#new)
 
-* [Generate](#Generate)
+* [Generate](#generate)
 
-* [Install](#Install)
+* [Install](#install)
 
-* [Compile](#Compile)
+* [Compile](#compile)
 
-* [Run](#Run)
+* [Run](#run)
 
 * [i18n-extract](#i18n-extract)
 
-* [Copy](#Copy)
+* [Copy](#copy)
 
-* [Move](#Move)
+* [Move](#move)
 
-* [Remove](#Remove)
+* [Remove](#remove)
 
-* [Additional Options](#AdditionalOptions)
-
+* [Additional Options](#additional-options)
 
 The Alloy Command-Line Interface (CLI) is a command-line tool for managing and building Alloy projects.
 
@@ -43,8 +42,7 @@ The Appcelerator CLI needs to be installed and configured before installing the 
 
 2. From a console window, run the following command to install Alloy:
 
-  `sudo npm install -g alloy`
-
+    `sudo npm install -g alloy`
 
 By default, these installation directions will install the latest Alloy release. To install a specific released version, use the same directions, except after 'alloy', add the at symbol ('@') with the version number. For instance, executing sudo npm install -g alloy@1.10.0 will install version 1.10.0.
 
@@ -64,29 +62,13 @@ Creates a new Alloy project on top of an existing new Titanium project, that is,
 
 `alloy` `new` `[<project_path>] [<project_template>] [--force] [--no-colors]`
 
-Options
-
-Description
-
-<project\_path>
-
-Path to a skeleton Titanium project, otherwise the current working directory is used.
-
-<project\_template>
-
-Selects the template. Choose between **default** for a single pane application or **two\_tabbed** or a tabbed application. Defaults to **default**.
-
-\--testapp <test\_app\_path>
-
-Relative path after the alloy/test/apps/ path to a test application in the Alloy Github repo to use as the new application.
-
-\-f, --force
-
-Forces the command to execute.
-
-\-n, --no-colors
-
-Disables color output.
+| Options | Description |
+| --- | --- |
+| <project\_path> | Path to a skeleton Titanium project, otherwise the current working directory is used. |
+| <project\_template> | Selects the template. Choose between **default** for a single pane application or **two\_tabbed** or a tabbed application. Defaults to **default**. |
+| \--testapp <test\_app\_path> | Relative path after the alloy/test/apps/ path to a test application in the Alloy Github repo to use as the new application. |
+| \-f, --force | Forces the command to execute. |
+| \-n, --no-colors | Disables color output. |
 
 ## Generate
 
@@ -94,64 +76,21 @@ Creates skeleton Alloy components.
 
 `alloy generate <component> [--widgetname <widget_name>] [--outputPath <output_path>] [--platform <platform>] [--force] [--no-colors]`
 
-Options
-
-Description
-
-<component>
-
-Format is component specific.
-
-controller <name>
-
-Create a skeleton controller, view and style.
-
-jmk
-
-Creates alloy.jmk.
-
-model <name> <adapter> \[schema\]
-
-Creates a model with the specified name. See [Model Format](#ModelFormat) below.
-
-migration <model\_name>
-
-Creates a skeleton migration file for the specified model.
-
-style <<name> | --all>
-
-Creates a skeleton style file with the specified name.
-If the name is associated with a view-controller, Alloy uses the id and class names from the markup file to populate the style file.
-If \--all flag is specified, Alloy generates skeleton style files for all view-controllers.
-If you add new id or class attributes to the markup file, running this command updates the style file with the new attributes.
-
-view <name>
-
-Creates a skeleton view and style with the specified name.
-
-widget <name>
-
-Creates a basic widget with the specified name.
-
-\--widgetname <name>
-
-Creates a component for the specified widget. Can only be used to create controllers, views or styles.
-
-\-o, --outputPath <outputPath>
-
-Output path for generated code. Point to the 'app' directory.
-
-\--platform <platform>
-
-Create a platform-specific view or controller component, where <platform> is either android, ios or windows.
-
-\-f, --force
-
-Forces the command to execute.
-
-\-n, --no-colors
-
-Disables color output.
+| Options | Description |
+| --- | --- |
+| <component> | Format is component specific. |
+| controller <name> | Create a skeleton controller, view and style. |
+| jmk | Creates alloy.jmk. |
+| model <name> <adapter> \[schema\] | Creates a model with the specified name. See [Model Format](#model-format) below. |
+| migration <model\_name> | Creates a skeleton migration file for the specified model. |
+| style <<name> | --all> | Creates a skeleton style file with the specified name.  <br />If the name is associated with a view-controller, Alloy uses the id and class names from the markup file to populate the style file.  <br />If \--all flag is specified, Alloy generates skeleton style files for all view-controllers.  <br />If you add new id or class attributes to the markup file, running this command updates the style file with the new attributes. |
+| view <name> | Creates a skeleton view and style with the specified name. |
+| widget <name> | Creates a basic widget with the specified name. |
+| \--widgetname <name> | Creates a component for the specified widget. Can only be used to create controllers, views or styles. |
+| \-o, --outputPath <outputPath> | Output path for generated code. Point to the 'app' directory. |
+| \--platform <platform> | Create a platform-specific view or controller component, where <platform> is either android, ios or windows. |
+| \-f, --force | Forces the command to execute. |
+| \-n, --no-colors | Disables color output. |
 
 ### Model Format
 
@@ -161,56 +100,21 @@ To generate a model, first select the adapter type:
 
 * properties for storing models locally in Titanium SDK context.
 
-
 For the sql and properties adapters, you will also need to specify a table schema. The sql adapter type will also generate a migration file with the model.
 
 The table schema format for generating models is a space-delimited list of the field name, followed by a colon (':'), followed by the data type. For example, specifying 'name:string age:number sex:varchar dob:date' will create a table with four columns: 'name' which stores a string, 'age' which stores a number, 'sex' which stores a character, and 'dob' which stores a date.
 
 Actually, in the above example, since both the Android and iOS platforms use SQLite, none of these datatypes are available. Instead, they will be mapped based on the following:
 
-Datatype
-
-SQLite Datatype
-
-string
-varchar
-text
-
-TEXT
-
-int
-tinyint
-smallint
-bigint
-integer
-
-INTEGER
-
-double
-float
-real
-
-REAL
-
-blob
-
-BLOB
-
-decimal
-number
-date
-datetime
-boolean
-
-NUMERIC
-
-null
-
-NULL
-
-unknown datatype
-
-TEXT
+| Datatype | SQLite Datatype |
+| --- | --- |
+| string  <br />varchar  <br />text | TEXT |
+| int  <br />tinyint  <br />smallint  <br />bigint  <br />integer | INTEGER |
+| double  <br />float  <br />real | REAL |
+| blob | BLOB |
+| decimal  <br />number  <br />date  <br />datetime  <br />boolean | NUMERIC |
+| null | NULL |
+| unknown datatype | TEXT |
 
 ## Install
 
@@ -218,21 +122,11 @@ Installs special Alloy project components.
 
 `alloy install <module> [<project_path>]`
 
-Options
-
-Description
-
-<module>
-
-Format is module specific.
-
-plugin
-
-Installs the compiler plugin to hook the Alloy project to Studio.
-
-<project\_path>
-
-Path to the Alloy project, otherwise the current working directory is used.
+| Options | Description |
+| --- | --- |
+| <module> | Format is module specific. |
+| plugin | Installs the compiler plugin to hook the Alloy project to Studio. |
+| <project\_path> | Path to the Alloy project, otherwise the current working directory is used. |
 
 ## Compile
 
@@ -240,21 +134,11 @@ Compiles Alloy code to Titanium SDK code.
 
 `alloy compile [<project_path>] [--config <compiler_options>] [--no-colors]`
 
-Options
-
-Description
-
-<project\_path>
-
-Path to the Alloy project, otherwise the current working directory is used.
-
-\-c, --config <compiler\_options>
-
-Compiler configuration options to use. See [Compiler Options](#CompilerOptions) below.
-
-\-n, --no-colors
-
-Disables color output.
+| Options | Description |
+| --- | --- |
+| <project\_path> | Path to the Alloy project, otherwise the current working directory is used. |
+| \-c, --config <compiler\_options> | Compiler configuration options to use. See [Compiler Options](#compiler-options) below. |
+| \-n, --no-colors | Disables color output. |
 
 ### Compiler Options
 
@@ -272,24 +156,16 @@ Inspects your TSS and JS files for instances of Titanium's localization function
 
 `alloy extract-i18n [<language>] [--apply]`
 
-Options
-
-Description
-
-<language>
-
-Optional. A two-letter language code that specifies the target language. Default is **en** (English).
-
-\--apply
-
-Optional. If present, the command writes new localization entries to the target language's strings.xml file. If absent, a preview of the changes are displayed in the terminal window.
+| Options | Description |
+| --- | --- |
+| <language> | Optional. A two-letter language code that specifies the target language. Default is **en** (English). |
+| \--apply | Optional. If present, the command writes new localization entries to the target language's strings.xml file. If absent, a preview of the changes are displayed in the terminal window. |
 
 The following localization functions are supported:
 
 * [Ti.Locale.getString()](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Locale-method-getString)
 
 * [L()](https://docs.appcelerator.com/platform/latest/#!/api/Global-method-L)
-
 
 The syntax options for calling alloy extract-i18n are shown below.
 
@@ -331,14 +207,7 @@ Removes / Deletes a view-controller, which includes the controller, XML and TSS 
 
 ## Additional Options
 
-Options
-
-Description
-
-\-h, --help
-
-Outputs command usage.
-
-\-v, --version
-
-Outputs the version number.
+| Options | Description |
+| --- | --- |
+| \-h, --help | Outputs command usage. |
+| \-v, --version | Outputs the version number. |

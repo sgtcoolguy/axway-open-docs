@@ -8,7 +8,6 @@ Dashboard 7.2.2 is a patch release, which includes an improvement and several bu
 
 * Updated layout of **Organization** overview to be more consistent with **App** and other overviews.
 
-
 ## Fixed issues
 
 * Fixed an issue where the **Usage** view may show an error for organizations with no active subscriptions.

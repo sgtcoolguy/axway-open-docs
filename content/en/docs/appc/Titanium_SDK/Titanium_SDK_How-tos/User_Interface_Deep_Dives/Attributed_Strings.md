@@ -1,43 +1,42 @@
 {"title":"Attributed Strings","weight":"80"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Creating an attributed string](#Creatinganattributedstring)
+* [Creating an attributed string](#creating-an-attributed-string)
 
-* [Types of attributes](#Typesofattributes)
+* [Types of attributes](#types-of-attributes)
 
-  * [Font](#Font)
+    * [Font](#font)
 
-  * [Foreground color](#Foregroundcolor)
+    * [Foreground color](#foreground-color)
 
-  * [Background color](#Backgroundcolor)
+    * [Background color](#background-color)
 
-  * [Underline](#Underline)
+    * [Underline](#underline)
 
-  * [Strikethrough](#Strikethrough)
+    * [Strikethrough](#strikethrough)
 
-  * [Links](#Links)
+    * [Links](#links)
 
-* [iOS attributes](#iOSattributes)
+* [iOS attributes](#ios-attributes)
 
-  * [Ligature](#Ligature)
+    * [Ligature](#ligature)
 
-  * [Kerning](#Kerning)
+    * [Kerning](#kerning)
 
-  * [Stroke text](#Stroketext)
+    * [Stroke text](#stroke-text)
 
-  * [Shadow](#Shadow)
+    * [Shadow](#shadow)
 
-  * [Letterpress effect](#Letterpresseffect)
+    * [Letterpress effect](#letterpress-effect)
 
-  * [Text direction](#Textdirection)
+    * [Text direction](#text-direction)
 
-  * [Baseline](#Baseline)
+    * [Baseline](#baseline)
 
-  * [Oblique](#Oblique)
+    * [Oblique](#oblique)
 
-  * [Stretch](#Stretch)
-
+    * [Stretch](#stretch)
 
 ## Introduction
 
@@ -51,12 +50,11 @@ To create an attributed string, use the Titanium.UI.createAttributedString metho
 
 * The attributes property specifies an array of attribute dictionaries to apply to the text. An attribute dictionary includes the following properties:
 
-  * type: the text attribute to apply as a Titanium.UI.ATTRIBUTE\_\* constant.
+    * type: the text attribute to apply as a Titanium.UI.ATTRIBUTE\_\* constant.
 
-  * value: specifies a setting based on the type property, such as a color for a color attribute or dash style for a strikethrough or underline attribute.
+    * value: specifies a setting based on the type property, such as a color for a color attribute or dash style for a strikethrough or underline attribute.
 
-  * range: which characters to modify as an array range: \[start\_position, length\].
-
+    * range: which characters to modify as an array range: \[start\_position, length\].
 
 After you have created your AttributedString object, to use it, set the attributedString property for either a Label, TextArea or TextField object.
 
@@ -65,7 +63,6 @@ After you have created your AttributedString object, to use it, set the attribut
 * Setting this property on a TextArea is equivalent to setting the value property.
 
 * Setting this property on a TextField is equivalent to setting the value property.
-
 
 You can also assign the AttributedString object to TextField's attributedHintText property, which is equivalent to setting the hintText property.
 
@@ -211,7 +208,6 @@ For iOS, set the value property to a Titanium.UI.ATTRIBUTE\_UNDERLINE\_\* consta
 
 * Titanium.UI.ATTRIBUTE\_UNDERLINE\_STYLE\_SINGLE: draws a single line
 
-
 Supported on iOS 7 and later:
 
 * Titanium.UI.ATTRIBUTE\_UNDERLINE\_STYLE\_THICK: draws a think line
@@ -229,7 +225,6 @@ Supported on iOS 7 and later:
 * Titanium.UI.ATTRIBUTE\_UNDERLINE\_PATTERN\_DASH\_DOT\_DOT: draws an alternating dash and two dot line
 
 * Titanium.UI.ATTRIBUTE\_UNDERLINE\_BY\_WORD: draw lines only under or through characters
-
 
 You can logically-OR more than one constant together to use more than one style or pattern.
 
@@ -467,7 +462,6 @@ To add a shadow effect to part of your string, in the attribute dictionary, set 
 
 * offset: dictionary with the properties width and height used as the horizontal and vertical offset of the shadow, respectively.
 
-
 ![Shadow](/Images/appc/download/attachments/37538231/Shadow.png)
 
 `var` `text =` `"Have you tried hyperloop yet?"``;`
@@ -532,13 +526,11 @@ To change the direction of part of your string, in the attribute dictionary, set
 
 * Titanium.UI.ATTRIBUTE\_WRITING\_DIRECTION\_RIGHT\_TO\_LEFT: write the text from right to left
 
-
 You can logically-OR the previous writing direction constants with one of the below constants to specify the writing direction behavior:
 
 * Titanium.UI.ATTRIBUTE\_WRITING\_DIRECTION\_EMBEDDING: use the embedded direction of the text
 
 * Titanium.UI.ATTRIBUTE\_WRITING\_DIRECTION\_OVERRIDE: override the embedded direction of the text and force the direction
-
 
 ![Direction](/Images/appc/download/attachments/37538231/Direction.png)
 

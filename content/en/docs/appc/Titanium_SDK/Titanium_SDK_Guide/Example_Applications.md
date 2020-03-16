@@ -1,31 +1,30 @@
 {"title":"Example Applications","weight":"30"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Kitchen Sink](#KitchenSink)
+* [Kitchen Sink](#kitchen-sink)
 
-* [Kitchen Sink 2.0](#KitchenSink2.0)
+* [Kitchen Sink 2.0](#kitchen-sink-2.0)
 
-* [Hyperloop examples](#Hyperloopexamples)
+* [Hyperloop examples](#hyperloop-examples)
 
-* [Drag 'n Drop](#Drag'nDrop)
+* [Drag 'n Drop](#drag-'n-drop)
 
-* [PlexusRx](#PlexusRx)
+* [PlexusRx](#plexusrx)
 
-* [RSS Reader](#RSSReader)
+* [RSS Reader](#rss-reader)
 
-  * [Related documentation](#Relateddocumentation)
+    * [Related documentation](#related-documentation)
 
-* [Todo List](#TodoList)
+* [Todo List](#todo-list)
 
-  * [Related documentation](#Relateddocumentation.1)
+    * [Related documentation](#related-documentation)
 
-* [Geocoder](#Geocoder)
+* [Geocoder](#geocoder)
 
-  * [Guide](#Guide)
+    * [Guide](#guide)
 
-  * [Related documentation](#Relateddocumentation.2)
-
+    * [Related documentation](#related-documentation)
 
 ## Overview
 
@@ -55,13 +54,9 @@ The following application demonstrates direct native API access using Appcelerat
 
 Learn more about Hyperloop [here](http://www.appcelerator.com/mobile-app-development-products/hyperloop/)!
 
-iOS
-
-Android
-
-![hyperloop-ios](/Images/appc/download/attachments/29004877/hyperloop-ios.png)
-
-![hyperloop-android](/Images/appc/download/attachments/29004877/hyperloop-android.png)
+| iOS | Android |
+| --- | --- |
+| ![hyperloop-ios](/Images/appc/download/attachments/29004877/hyperloop-ios.png) | ![hyperloop-android](/Images/appc/download/attachments/29004877/hyperloop-android.png) |
 
 [Hyperloop Examples on GitHub](https://github.com/appcelerator/hyperloop-examples)
 
@@ -109,7 +104,6 @@ The RSS Reader app demonstrates:
 
 * Cross-platform design.
 
-
 ![screenshots](/Images/appc/download/attachments/29004877/screenshots.png)
 
 [RSS Reader on GitHub](https://github.com/appcelerator-developer-relations/appc-sample-rss)
@@ -118,24 +112,23 @@ The RSS Reader app demonstrates:
 
 * Networking
 
-  * Guides: [Working with Remote Data Sources](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Working_with_Remote_Data_Sources/)
+    * Guides: [Working with Remote Data Sources](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Working_with_Remote_Data_Sources/)
 
-  * API Docs: Ti.Network.HTTPClient
+    * API Docs: Ti.Network.HTTPClient
 
-* Guides: [Application-level events](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Event_Handling/#Application-levelevents)
+* Guides: [Application-level events](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Event_Handling/#application-level-events)
 
 * Web Views
 
-  * Guides: [Integrating Web Content](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Integrating_Web_Content/)
+    * Guides: [Integrating Web Content](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Integrating_Web_Content/)
 
-  * API Docs: [Ti.UI.WebView](#!/api/Titanium.UI.WebView)
+    * API Docs: [Ti.UI.WebView](#!/api/Titanium.UI.WebView)
 
 * UI Elements
 
-  * Guides: [Android menus](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/#Androidmenus)
+    * Guides: [Android menus](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/#android-menus)
 
-  * API Docs: [Titanium.UI.NavigationWindow](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.NavigationWindow)
-
+    * API Docs: [Titanium.UI.NavigationWindow](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.NavigationWindow)
 
 ## Todo List
 
@@ -157,14 +150,9 @@ The Todo List app demonstrates:
 
 * Cross-platform design
 
-
-iOS
-
-Android
-
-![todo_ios](/Images/appc/download/attachments/29004877/todo_ios.png)
-
-![todo-android](/Images/appc/download/attachments/29004877/todo-android.png)
+| iOS | Android |
+| --- | --- |
+| ![todo_ios](/Images/appc/download/attachments/29004877/todo_ios.png) | ![todo-android](/Images/appc/download/attachments/29004877/todo-android.png) |
 
 ### Related documentation
 
@@ -173,7 +161,6 @@ Android
 * API Docs: [Ti.Database](#!/api/Titanium.Database)
 
 * API Docs: [Ti.App.Properties](#!/api/Titanium.App.Properties)
-
 
 [Todo Sample on GitHub](https://github.com/appcelerator-developer-relations/Sample.Todo)
 
@@ -193,13 +180,11 @@ The Geocoder app demonstrates:
 
 * Cross-platform design
 
-
 ![screenshotsGeocoder](/Images/appc/download/attachments/29004877/screenshotsGeocoder.png)
 
 ### Guide
 
 * [Location Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/)
-
 
 ### Related documentation
 

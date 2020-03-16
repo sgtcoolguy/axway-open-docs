@@ -1,43 +1,42 @@
 {"title":"Alloy Data Binding","weight":"10"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Alloy binding](#Alloybinding)
+* [Alloy binding](#alloy-binding)
 
-  * [Collection-view binding](#Collection-viewbinding)
+    * [Collection-view binding](#collection-view-binding)
 
-    * [Example](#Example)
+        * [Example](#example)
 
-  * [Model-view binding](#Model-viewbinding)
+    * [Model-view binding](#model-view-binding)
 
-    * [Example](#Example.1)
+        * [Example](#example)
 
-  * [Collection example](#Collectionexample)
+    * [Collection example](#collection-example)
 
-  * [Collection vs Model data binding](#CollectionvsModeldatabinding)
+    * [Collection vs Model data binding](#collection-vs-model-data-binding)
 
-  * [Global singleton vs Local instance](#GlobalsingletonvsLocalinstance)
+    * [Global singleton vs Local instance](#global-singleton-vs-local-instance)
 
-  * [Simple vs Complex data binding](#SimplevsComplexdatabinding)
+    * [Simple vs Complex data binding](#simple-vs-complex-data-binding)
 
-* [Backbone binding](#Backbonebinding)
+* [Backbone binding](#backbone-binding)
 
-* [Bind deep object properties](#Binddeepobjectproperties)
+* [Bind deep object properties](#bind-deep-object-properties)
 
-* [Use models and properties names with special characters](#Usemodelsandpropertiesnameswithspecialcharacters)
+* [Use models and properties names with special characters](#use-models-and-properties-names-with-special-characters)
 
-* [Bind multiple models to the same view](#Bindmultiplemodelstothesameview)
+* [Bind multiple models to the same view](#bind-multiple-models-to-the-same-view)
 
-* [Define transformations in the model](#Definetransformationsinthemodel)
+* [Define transformations in the model](#define-transformations-in-the-model)
 
-* [Tips and tricks](#Tipsandtricks)
+* [Tips and tricks](#tips-and-tricks)
 
-  * [Lazy transformation](#Lazytransformation)
+    * [Lazy transformation](#lazy-transformation)
 
-  * [Populating a model after data binding](#Populatingamodelafterdatabinding)
+    * [Populating a model after data binding](#populating-a-model-after-data-binding)
 
-    * [Tracker as Example](#TrackerasExample)
-
+        * [Tracker as Example](#tracker-as-example)
 
 ## Introduction
 
@@ -51,98 +50,18 @@ In Alloy, collection data can be synchronized to a view object, or a single mode
 
 To enable collection-view binding, create a global singleton or controller-specific collection using the [Collection tag](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#CollectionElement) in the XML markup of the main view, then add the view object you want to bind data to. The following Titanium view objects support binding to a Collection:
 
-View Object
-
-Since Alloy version
-
-Add data binding attributes to...
-
-Repeater Object to map
-model attributes to view properties
-
-ButtonBar
-
-1.1
-
-<Labels>
-
-<Label/>
-
-CoverFlowView
-
-1.1
-
-<Images>
-
-<Image/>
-
-ListView
-
-1.2
-
-<ListSection>
-
-<ListItem/>
-
-Map Module
-
-1.4
-
-<Module module="ti.map" method="createView">
-
-None, model attributes will be used as params
-for createAnnotation() directly.
-
-Picker
-
-1.5
-
-<PickerColumn> or <Column>
-
-<PickerRow/> or <Row/>
-
-ScrollableView
-
-1.1
-
-<ScrollableView>
-
-<View/>
-May contain children view objects.
-
-TableView
-
-1.0
-
-<TableView>
-
-<TableViewRow/>
-May contain children view objects.
-
-TabbedBar
-
-1.1
-
-<Labels>
-
-<Label/>
-
-Toolbar
-
-1.1
-
-<Items>
-
-<Item/>
-
-View
-
-1.0
-
-<View>
-
-Any view object except a top-level container
-like a Window or TabGroup
+| View Object | Since Alloy version | Add data binding attributes to... | Repeater Object to map  <br />model attributes to view properties |
+| --- | --- | --- | --- |
+| ButtonBar | 1.1 | <Labels> | <Label/> |
+| CoverFlowView | 1.1 | <Images> | <Image/> |
+| ListView | 1.2 | <ListSection> | <ListItem/> |
+| Map Module | 1.4 | <Module module="ti.map" method="createView"> | None, model attributes will be used as params  <br />for createAnnotation() directly. |
+| Picker | 1.5 | <PickerColumn> or <Column> | <PickerRow/> or <Row/> |
+| ScrollableView | 1.1 | <ScrollableView> | <View/>  <br />May contain children view objects. |
+| TableView | 1.0 | <TableView> | <TableViewRow/>  <br />May contain children view objects. |
+| TabbedBar | 1.1 | <Labels> | <Label/> |
+| Toolbar | 1.1 | <Items> | <Item/> |
+| View | 1.0 | <View> | Any view object except a top-level container  <br />like a Window or TabGroup |
 
 You need to specify additional attributes in the markup, which are only specific to collection data binding. The only mandatory attribute is dataCollection, which specifies the collection singleton or instance to render. Note that you can only add these attributes to specific XML elements (refer to the table above).
 
@@ -153,7 +72,6 @@ You need to specify additional attributes in the markup, which are only specific
 * dataFilter: specifies an optional callback to use to filter data in the collection. The passed argument is a collection and the return value is an array of models.
 
 * dataFunction: set to an arbitrary identifier (name) for a function call. Use this identifier to call a function in the controller to manually update the view. This is not a declared function in the controller. This attribute creates an alias to access the underlying binding function, which is part of the Alloy data-view binding framework.
-
 
 Next, create a repeater object (refer to the table above) and place it inline with the view object with the dataCollection attribute, or place it in a separate view and use the Require tag to import it.
 
@@ -175,92 +93,91 @@ The following example demonstrates how to add basic collection-view binding to a
 
 1. Add the <Collection> tag as a child of the <Alloy> tag.
 
-  app/views/index.xml
+    app/views/index.xml
 
-  `<``Alloy``>`
+    `<``Alloy``>`
 
-  `<``Collection`  `src``=``"album"` `/>`
+    `<``Collection`  `src``=``"album"` `/>`
 
-  `</``Alloy``>`
+    `</``Alloy``>`
 
 2. Next, add the view object(s) you want to bind the data to. In this example, data will be bound to a ScrollableView object.
 
-  app/views/index.xml
+    app/views/index.xml
 
-  `<``Alloy``>`
+    `<``Alloy``>`
 
-  `<``Collection`  `src``=``"album"` `/>`
+    `<``Collection`  `src``=``"album"` `/>`
 
-  `<``Window`  `backgroundColor``=``"white"`  `onClose``=``"cleanup"``>`
+    `<``Window`  `backgroundColor``=``"white"`  `onClose``=``"cleanup"``>`
 
-  `<``ScrollableView``></``ScrollableView``>`
+    `<``ScrollableView``></``ScrollableView``>`
 
-  `</``Window``>`
+    `</``Window``>`
 
-  `</``Alloy``>`
+    `</``Alloy``>`
 
 3. Add the dataCollection attribute to the appropriate view object. Assign this attribute to the collection you want to use. For a ScrollableView object, add the attribute to the <ScrollableView> tag. The element to add the attribute to depends on which view object you want to bind data to.
 
-  app/views/index.xml
+    app/views/index.xml
 
-  `<``Alloy``>`
+    `<``Alloy``>`
 
-  `<``Collection`  `src``=``"album"` `/>`
+    `<``Collection`  `src``=``"album"` `/>`
 
-  `<``Window`  `backgroundColor``=``"white"`  `onClose``=``"cleanup"``>`
+    `<``Window`  `backgroundColor``=``"white"`  `onClose``=``"cleanup"``>`
 
-  `<``ScrollableView`  `dataCollection``=``"album"``></``ScrollableView``>`
+    `<``ScrollableView`  `dataCollection``=``"album"``></``ScrollableView``>`
 
-  `</``Window``>`
+    `</``Window``>`
 
-  `</``Alloy``>`
+    `</``Alloy``>`
 
 4. Next, create your repeater object and add model attributes. Enclose the model attributes with curly brackets or braces ('{' and '}'). For a ScrollableView, the repeater object can be a View object with additional children objects. The repeater object depends on which view object you are using.
 
-  app/views/index.xml
+    app/views/index.xml
 
-  `<``Alloy``>`
+    `<``Alloy``>`
 
-  `<``Collection`  `src``=``"album"``/>`
+    `<``Collection`  `src``=``"album"``/>`
 
-  `<``Window`  `backgroundColor``=``"white"`  `onClose``=``"cleanup"``>`
+    `<``Window`  `backgroundColor``=``"white"`  `onClose``=``"cleanup"``>`
 
-  `<``ScrollableView`  `dataCollection``=``"album"``>`
+    `<``ScrollableView`  `dataCollection``=``"album"``>`
 
-  `<``View`  `layout``=``"vertical"``>`
+    `<``View`  `layout``=``"vertical"``>`
 
-  `<``ImageView`  `image``=``"{cover}"` `/>`
+    `<``ImageView`  `image``=``"{cover}"` `/>`
 
-  `<``Label`  `text``=``"{title} by {artist}"` `/>`
+    `<``Label`  `text``=``"{title} by {artist}"` `/>`
 
-  `</``View``>`
+    `</``View``>`
 
-  `</``ScrollableView``>`
+    `</``ScrollableView``>`
 
-  `</``Window``>`
+    `</``Window``>`
 
-  `</``Alloy``>`
+    `</``Alloy``>`
 
 5. In the controller, call the Collection's fetch() method to initialize the collection and sync any stored models to the view. Remember to call the $.destroy() method when you close the controller to prevent memory leaks.
 
-  app/controllers/index.js
+    app/controllers/index.js
 
-  `$.index.open();`
+    `$.index.open();`
 
-  `Alloy.Collections.album.fetch();`
+    `Alloy.Collections.album.fetch();`
 
-  `function` `cleanup() {`
+    `function` `cleanup() {`
 
-  `$.destroy();`
+    `$.destroy();`
 
-  `}`
-
+    `}`
 
 The application is now setup for basic collection-view binding. When any new data is added to the collection, the ScrollableView will be updated with the new data.
 
 ### Model-view binding
 
-To bind a single model to a component, create a global singleton or controller-specific model using the [Model tag](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#Modelelement) in the XML markup of the main view and map the model attribute to the view component. To map the attribute to the view component, prefix the model name or id to the attribute, then enclose it with curly brackets or braces ('{' and '}').
+To bind a single model to a component, create a global singleton or controller-specific model using the [Model tag](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#model-element) in the XML markup of the main view and map the model attribute to the view component. To map the attribute to the view component, prefix the model name or id to the attribute, then enclose it with curly brackets or braces ('{' and '}').
 
 To do complex transformations on the model attributes, extend the model prototype with a transform() function. It should return the modified model as a JSON object.
 
@@ -299,7 +216,6 @@ A global singleton instance is a single instance of a particular model that is a
 * Any other event handlers added to the global instance should be removed with the [off()](http://backbonejs.org/#Events-off) function
 
 * Set the reference of the model to null. Alloy.Models.nameOfModel = null;
-
 
 Note that you need to call the $.destroy() function when closing the controller to prevent potential memory leaks. The destroy function unbinds the callbacks created by Alloy when the model-view syntax is used.
 

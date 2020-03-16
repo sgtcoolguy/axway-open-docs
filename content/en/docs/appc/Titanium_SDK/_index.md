@@ -44,7 +44,6 @@ Learn how to display images, and playback or stream audio and video files as wel
 
 Access the device's GPS and add maps to your applications.
 
-
 **[Notification Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/)**
 
 Notify your application user base with local or remote notifications.

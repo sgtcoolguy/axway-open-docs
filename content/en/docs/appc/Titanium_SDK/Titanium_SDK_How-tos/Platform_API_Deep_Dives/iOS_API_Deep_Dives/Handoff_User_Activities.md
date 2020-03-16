@@ -1,21 +1,20 @@
 {"title":"Handoff User Activities","weight":"30"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Device Setup](#DeviceSetup)
+* [Device Setup](#device-setup)
 
-* [Share an Activity](#ShareanActivity)
+* [Share an Activity](#share-an-activity)
 
-  * [Monitor the Activity](#MonitortheActivity)
+    * [Monitor the Activity](#monitor-the-activity)
 
-  * [Update the Activity](#UpdatetheActivity)
+    * [Update the Activity](#update-the-activity)
 
-* [Continue the Activity](#ContinuetheActivity)
+* [Continue the Activity](#continue-the-activity)
 
-* [Test the Sample](#TesttheSample)
+* [Test the Sample](#test-the-sample)
 
-* [Reference](#Reference)
-
+* [Reference](#reference)
 
 ## Introduction
 
@@ -34,7 +33,6 @@ To use handoff, both devices must:
 * Have Bluetooth enabled
 
 * Have Handoff enabled
-
 
 For detailed instructions, see [Apple Support: Use Continuity to connect your iPhone, iPad, iPod touch, and Mac](https://support.apple.com/en-us/HT204681).
 
@@ -65,7 +63,6 @@ To create an Activity, use the Titanium.App.iOS.createUserActivity() method. Pas
 * userInfo: object of key-value pairs to send with the activity
 
 * webpageURL: if a suitable application is not found on the device, loads the specified web page and continues the activity in the browser. Only supports the http:// and https:// protocols. Any other protocol will throw an error.
-
 
 Once you are ready to share the activity, use the supported property to check if the user activity is supported by the application, then invoke its becomeCurrent() method to indicate that the activity is in use by the current device.
 

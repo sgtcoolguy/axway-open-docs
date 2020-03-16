@@ -6,14 +6,13 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [API endpoint definition](#APIendpointdefinition)
+* [API endpoint definition](#api-endpoint-definition)
 
-* [API example](#APIexample)
+* [API example](#api-example)
 
-* [Invoke API endpoints in API Builder](#InvokeAPIendpointsinAPIBuilder)
-
+* [Invoke API endpoints in API Builder](#invoke-api-endpoints-in-api-builder)
 
 ## Introduction
 
@@ -33,99 +32,23 @@ Place all API definition files in the project's apis folder. You can only declar
 
 3. Exports the defined endpoint using the module.exports variable.
 
-
 Set the following keys in the object passed to the API.extend() method to define the API endpoint:
 
-Name
-
-Required
-
-Description
-
-group
-
-true
-
-The logical name for grouping API endpoints.
-
-path
-
-true
-
-Request path (for example, /api/user/:id). Prefix parameters with a colon (:).
-
-method
-
-true
-
-HTTP verb (GET, POST, PUT, or DELETE).
-
-description
-
-true
-
-Description of the endpoint, which is used in the generation of the API endpoint documentation.
-
-model
-
-true
-
-The model to use for the response. An API endpoint can only specify **one** model, but models can be composed of other models and fields.
-
-action
-
-true
-
-The function that is called to execute the API endpoint’s logic. The function is passed a request object, response object, and next() method. Use this function to make programmatic calls to your model’s methods for reading or writing data and to do other things related to the custom business logic of your API endpoint including making calls to other flow-node modules that your API endpoint requires. You should always make sure that your action function calls the next function regardless if the result is a success or an error.
-
-documented
-
-false
-
-**Since Release 5.0.0.** Determines whether to generate API documentation (true) or not (false). The default setting is true.
-
-response
-
-false
-
-The response model for the API. This should only be used if your request and response models are different.
-
-plural
-
-false
-
-A string used as the property name when your API endpoint returns an array. By default, the plural value is the plural of the model name. For example, if your model is named **car**, the default plural would be **cars**.
-
-singular
-
-false
-
-A string used as the property name when your API endpoint returns a single record. By default, the singular value is the name of the model.
-
-before
-
-false
-
-One or more API Builder Blocks to be executed before the request. Blocks are referenced by their name property. If you want to execute multiple blocks, you should specify them as an array of block names. If multiple blocks are specified, they are executed in the order specified.
-
-after
-
-false
-
-One or more API Builder Blocks to be executed after the request. Blocks are referenced by their name property. If you want to execute multiple blocks, you should specify them as an array of block names. If multiple blocks are specified, they are executed in the order specified.
-
-parameters
-
-false
-
-Input parameters required to execute the API endpoint. This is an object of key-value pairs, where the key is the name of the parameter and the value is an object with the following properties:
-
-* optional (Boolean): Determines if the parameter is optional (true) or required (false).
-
-* type (String): the type of input parameter: path, query, or body.
-
-* description (String): used for generating API documentation.
-
+| Name | Required | Description |
+| --- | --- | --- |
+| group | true | The logical name for grouping API endpoints. |
+| path | true | Request path (for example, /api/user/:id). Prefix parameters with a colon (:). |
+| method | true | HTTP verb (GET, POST, PUT, or DELETE). |
+| description | true | Description of the endpoint, which is used in the generation of the API endpoint documentation. |
+| model | true | The model to use for the response. An API endpoint can only specify **one** model, but models can be composed of other models and fields. |
+| action | true | The function that is called to execute the API endpoint’s logic. The function is passed a request object, response object, and next() method. Use this function to make programmatic calls to your model’s methods for reading or writing data and to do other things related to the custom business logic of your API endpoint including making calls to other flow-node modules that your API endpoint requires. You should always make sure that your action function calls the next function regardless if the result is a success or an error. |
+| documented | false | **Since Release 5.0.0.** Determines whether to generate API documentation (true) or not (false). The default setting is true. |
+| response | false | The response model for the API. This should only be used if your request and response models are different. |
+| plural | false | A string used as the property name when your API endpoint returns an array. By default, the plural value is the plural of the model name. For example, if your model is named **car**, the default plural would be **cars**. |
+| singular | false | A string used as the property name when your API endpoint returns a single record. By default, the singular value is the name of the model. |
+| before | false | One or more API Builder Blocks to be executed before the request. Blocks are referenced by their name property. If you want to execute multiple blocks, you should specify them as an array of block names. If multiple blocks are specified, they are executed in the order specified. |
+| after | false | One or more API Builder Blocks to be executed after the request. Blocks are referenced by their name property. If you want to execute multiple blocks, you should specify them as an array of block names. If multiple blocks are specified, they are executed in the order specified. |
+| parameters | false | Input parameters required to execute the API endpoint. This is an object of key-value pairs, where the key is the name of the parameter and the value is an object with the following properties:<br /><br />* optional (Boolean): Determines if the parameter is optional (true) or required (false).<br />    <br />* type (String): the type of input parameter: path, query, or body.<br />    <br />* description (String): used for generating API documentation. |
 
 ## API example
 
@@ -182,7 +105,6 @@ To invoke an API endpoint:
 2. Retrieve the API instance using API Builder's getAPI('endpoint', 'verb') method by passing it the endpoint without the server host or address as the first parameter and the HTTP verb as the second parameter.
 
 3. Invoke the execute(params, callback) method on the API instance by passing it a dictionary of parameters as the first parameter and a callback function as the second parameter. The callback function is passed an error and results object.
-
 
 **Example:**
 

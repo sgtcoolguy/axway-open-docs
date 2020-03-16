@@ -1,15 +1,14 @@
 {"title":"Themes","weight":"110"}
 
-* [Scopes](#Scopes)
+* [Scopes](#scopes)
 
-* [Token names](#Tokennames)
+* [Token names](#token-names)
 
-* [Themes in Rubles](#ThemesinRubles)
+* [Themes in Rubles](#themes-in-rubles)
 
-* [Themes in Java](#ThemesinJava)
+* [Themes in Java](#themes-in-java)
 
-* [Related topics](#Relatedtopics)
-
+* [Related topics](#related-topics)
 
 Studio 3 uses a new "theming" system to define the coloring of the IDE across the various editors and views. We tried to follow the convention of token names used by TextMate in our coloring so that porting existing themes over would be relatively easy.
 
@@ -25,47 +24,14 @@ Scopes are similar to CSS selectors in that they describe a pattern which is mat
 
 The entire snippet in a CSS file will have the scope 'source.css'. Individual tokens will have the following scopes applied:
 
-Token
-
-Full Scope
-
-Theme Scope Selector Rule that matches ("Aptana Studio" Theme)
-
-body
-
-source.css entity.name.tag.css
-
-entity.name.tag.css
-
-{}
-
-source.css punctuation.section.property-list.css
-
-punctuation.section
-
-background
-
-source.css support.type.property-name.css
-
-support.type.property-name.css
-
-:
-
-source.css punctuation.separator.key-value.css
-
-source
-
-#000000
-
-source.css constant.other.color.rgb-value.css
-
-constant.other.color.rgb-value.css
-
-;
-
-source.css punctuation.terminator.rule.css
-
-source
+| Token | Full Scope | Theme Scope Selector Rule that matches ("Aptana Studio" Theme) |
+| --- | --- | --- |
+| body | source.css entity.name.tag.css | entity.name.tag.css |
+| {} | source.css punctuation.section.property-list.css | punctuation.section |
+| background | source.css support.type.property-name.css | support.type.property-name.css |
+| : | source.css punctuation.separator.key-value.css | source |
+| #000000 | source.css constant.other.color.rgb-value.css | constant.other.color.rgb-value.css |
+| ; | source.css punctuation.terminator.rule.css | source |
 
 You can double-check this yourself by placing the cursor at a particular location, and choosing "Commands > Bundle Development > Show Scope". You will see each of the pieces of text above has "source.css" and the specific scope in question applied.
 
@@ -73,25 +39,12 @@ If you open up Preferences > Aptana > Themes, you will see a list of scopes. Whe
 
 Many of the scopes defined in themes are relatively general across languages. You can add scopes if you like to specifically modify things to your taste. Some examples:
 
-Desired Effect
-
-Action
-
-Colorize semicolons in CSS.
-
-Add scope 'punctuation.terminator.rule.css' and choose colors.
-
-Colorize the background of CSS source.
-
-Add scope 'source.css' and choose colors.
-
-Colorize the background of CSS source, but only when embedded in any language.
-
-Add scope 'source.css.embedded' and choose colors.
-
-Colorize the background of CSS source, but only when embedded inside an HTML document (for example, a **style** tag).
-
-Add scope 'text.html source.css' and choose colors.
+| Desired Effect | Action |
+| --- | --- |
+| Colorize semicolons in CSS. | Add scope 'punctuation.terminator.rule.css' and choose colors. |
+| Colorize the background of CSS source. | Add scope 'source.css' and choose colors. |
+| Colorize the background of CSS source, but only when embedded in any language. | Add scope 'source.css.embedded' and choose colors. |
+| Colorize the background of CSS source, but only when embedded inside an HTML document (for example, a **style** tag). | Add scope 'text.html source.css' and choose colors. |
 
 There is a longer discussion about creating scopes here: [http://manual.macromates.com/en/scope\_selectors.html](http://manual.macromates.com/en/scope_selectors.html)
 

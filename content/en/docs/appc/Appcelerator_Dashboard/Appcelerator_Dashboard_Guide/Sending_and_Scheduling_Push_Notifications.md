@@ -2,32 +2,31 @@
 
 This guide explains how to send and schedule push notifications in the Appcelerator Dashboard.
 
-* [Sending push notifications](#Sendingpushnotifications)
+* [Sending push notifications](#sending-push-notifications)
 
-* [About Notification Payloads](#AboutNotificationPayloads)
+* [About Notification Payloads](#about-notification-payloads)
 
-  * [Custom JSON payloads](#CustomJSONpayloads)
+    * [Custom JSON payloads](#custom-json-payloads)
 
-  * [About JSON Payloads Delivered to Devices](#AboutJSONPayloadsDeliveredtoDevices)
+    * [About JSON Payloads Delivered to Devices](#about-json-payloads-delivered-to-devices)
 
-  * [Notification Features](#NotificationFeatures)
+    * [Notification Features](#notification-features)
 
-    * [Rich Notifications (iOS 10 and later)](#RichNotifications(iOS10andlater))
+        * [Rich Notifications (iOS 10 and later)](#rich-notifications-ios-10-and-later)
 
-    * [Interactive Notifications (iOS 8 and later)](#InteractiveNotifications(iOS8andlater))
+        * [Interactive Notifications (iOS 8 and later)](#interactive-notifications-ios-8-and-later)
 
-    * [Silent Push Notifications](#SilentPushNotifications)
+        * [Silent Push Notifications](#silent-push-notifications)
 
-    * [Notification Badges](#badgesNotificationBadges)
+        * [Notification Badges](#notification-badges)
 
-    * [Notification Sounds](#soundsNotificationSounds)
+        * [Notification Sounds](#notification-sounds)
 
-    * [Android-specific payload fields](#androidAndroid-specificpayloadfields)
+        * [Android-specific payload fields](#android-specific-payload-fields)
 
-* [Troubleshooting common errors](#Troubleshootingcommonerrors)
+* [Troubleshooting common errors](#troubleshooting-common-errors)
 
-  * ['Subscription not found' error](#'Subscriptionnotfound'error)
-
+    * ['Subscription not found' error](#'subscription-not-found'-error)
 
 ## Sending push notifications
 
@@ -37,8 +36,7 @@ To send a push notification, you must provide Dashboard the following informatio
 
 * **Notification schedule –** You can send a notification immediately, or schedule it to be sent at a future date and time. Scheduled notifications can be one-time or recurring.
 
-* **Notification payload –** The content of the notification, which consists minimally of an alert string to display, and optionally a sound to play or badge display. See [About Notification Payloads](#AboutNotificationPayloads).
-
+* **Notification payload –** The content of the notification, which consists minimally of an alert string to display, and optionally a sound to play or badge display. See [About Notification Payloads](#about-notification-payloads).
 
 To send a notification to users located in a geographic area, the application must have first provided their current location to API Builder. For details, see [Updating Subscriptions with Device Location](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/Push_Notifications/Subscribing_to_push_notifications/).
 
@@ -60,71 +58,70 @@ A warning will be displayed if you attempt to perform a push with an expired or 
 
 5. Select **Recipients** and (optionally) the notification **Channel Name**:
 
-  1. To send a notification to all users regardless of their channel subscriptions, select **All Users**  and leave the **Channel Name** field blank.
+    1. To send a notification to all users regardless of their channel subscriptions, select **All Users**  and leave the **Channel Name** field blank.
 
-  2. To send a notification to all users subscribed to a particular channel, select **All Users** and enter the channel name in the **Channel Name** field.
+    2. To send a notification to all users subscribed to a particular channel, select **All Users** and enter the channel name in the **Channel Name** field.
 
-  3. To send a notification to specific users who are subscribed to a particular channel_,_ select **Specific Users**, then:
+    3. To send a notification to specific users who are subscribed to a particular channel_,_ select **Specific Users**, then:
 
-    1. Click the add **(+)** button in the **To Users** field.
+        1. Click the add **(+)** button in the **To Users** field.
 
-    2. Select the desired recipients from the list of users. To locate a particular user, enter their username in the search field.
+        2. Select the desired recipients from the list of users. To locate a particular user, enter their username in the search field.
 
-    3. In the **Channel Name** field, enter the name of the target channel subscription.
+        3. In the **Channel Name** field, enter the name of the target channel subscription.
 
-      You must specify a channel when sending a notification to specific users.
+            You must specify a channel when sending a notification to specific users.
 
-  4. To send a notification to all users located within a geographic selection, select **Geographic Selection,** then:
+    4. To send a notification to all users located within a geographic selection, select **Geographic Selection,** then:
 
-    1. Click the add (**+**) button in the **Place** field and select an existing place. This defines the center points of the geographic selection. The selected Place must have a defined latitude and longitude.
+        1. Click the add (**+**) button in the **Place** field and select an existing place. This defines the center points of the geographic selection. The selected Place must have a defined latitude and longitude.
 
-    2. In the **Radius** field, enter the distance (in Miles or Meters) from the selected Place to define the size of the geographic selection.
+        2. In the **Radius** field, enter the distance (in Miles or Meters) from the selected Place to define the size of the geographic selection.
 
 6. To specify when to deliver the notification, in the **Send When** field, select one of the following options:
 
-  1. To send the notification immediately, select **Send Now.**
+    1. To send the notification immediately, select **Send Now.**
 
-  2. To schedule a one-time notification, select **One-Time** and then select the delivery date and time (All times are in UTC.)
+    2. To schedule a one-time notification, select **One-Time** and then select the delivery date and time (All times are in UTC.)
 
-  3. To schedule a recurring notification, select **Recurring,** select the start date and time, the end date, and the recurrence interval: **Daily, Weekly,** or **Monthly.** (All times are in UTC.)
+    3. To schedule a recurring notification, select **Recurring,** select the start date and time, the end date, and the recurrence interval: **Daily, Weekly,** or **Monthly.** (All times are in UTC.)
 
 7. To define the notification payload using the **Standard** view:
 
-  1. In the **Alert** field, enter the notification message to display on the device.
+    1. In the **Alert** field, enter the notification message to display on the device.
 
-  2. In the **Channel Name** field, enter the channel name to use for notifications. A Channel is required when not sending a push to all users.
+    2. In the **Channel Name** field, enter the channel name to use for notifications. A Channel is required when not sending a push to all users.
 
-  3. In the **Badge** field, enter a badge value. See [Notification Badges](#badges) for details.
+    3. In the **Badge** field, enter a badge value. See [Notification Badges](#badges) for details.
 
-  4. In the **Sound** field, select **None, Default,** or **Custom.** See [Notification Sounds](#sounds) for details.
+    4. In the **Sound** field, select **None, Default,** or **Custom.** See [Notification Sounds](#sounds) for details.
 
-  5. For iOS devices:
+    5. For iOS devices:
 
-    1. In the **Content-Available** field, check the box to indicate that new content is available. This is used to support Newsstand apps and background content downloads.
+        1. In the **Content-Available** field, check the box to indicate that new content is available. This is used to support Newsstand apps and background content downloads.
 
-    2. In the **Category** field, enter the name of the category to use for interactive notifications. See [iOS Interactive Notifications](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/iOS_Interactive_Notifications/).
+        2. In the **Category** field, enter the name of the category to use for interactive notifications. See [iOS Interactive Notifications](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/iOS_Interactive_Notifications/).
 
-  6. For Android devices:
+    6. For Android devices:
 
-    1. In the **Vibrate** field, select No or Yes to have the device vibrate or not upon receipt of the notification.
+        1. In the **Vibrate** field, select No or Yes to have the device vibrate or not upon receipt of the notification.
 
-    2. In the **Title** field (Android, only), select the title to display in the Alert message. See [Notification Titles](#title) for details.
+        2. In the **Title** field (Android, only), select the title to display in the Alert message. See [Notification Titles](#title) for details.
 
-    3. In the **Icon** field (Android, only), specify the name of the image file to display as the notification icon. See [Notification Icons](#icon) for details.
+        3. In the **Icon** field (Android, only), specify the name of the image file to display as the notification icon. See [Notification Icons](#icon) for details.
 
-    4. In the **Collapse Key** field (Android, only), identify a group of messages (for example, with {{collapse\_key: “Updates Available”}}) that can be collapsed so that only the last message gets sent when delivery can be resumed.
+        4. In the **Collapse Key** field (Android, only), identify a group of messages (for example, with {{collapse\_key: “Updates Available”}}) that can be collapsed so that only the last message gets sent when delivery can be resumed.
 
-    5. In the **Time to Live** field (Android, only), specify how long (in seconds) the message should be kept in Firebase Cloud Messaging storage if the device is offline.
+        5. In the **Time to Live** field (Android, only), specify how long (in seconds) the message should be kept in Firebase Cloud Messaging storage if the device is offline.
 
-    6. In the **Priority** field (Android, only), select either **Normal** or **High**. Set to high priority if the message is time-critical and requires the user's immediate interaction.
+        6. In the **Priority** field (Android, only), select either **Normal** or **High**. Set to high priority if the message is time-critical and requires the user's immediate interaction.
 
 8. To define the notification payload using the **Advanced** view:
 
-  1. In the **Custom JSON** field, enter a valid JSON string (see [Custom JSON Payloads](#CustomJSONpayloads) for details).
+    1. In the **Custom JSON** field, enter a valid JSON string (see [Custom JSON Payloads](#custom-json-payloads) for details).
 
-    ![advanced_form2_latest](/Images/appc/download/attachments/60145229/advanced_form2_latest.png)
+        ![advanced_form2_latest](/Images/appc/download/attachments/60145229/advanced_form2_latest.png)
 9. Click **Send Now**.
-
 
 ## About Notification Payloads
 
@@ -138,7 +135,6 @@ Standard fields include the following:
 
 * sound – The name of an audio file to play when the notification arrives, minus its extension. See [Notification sounds](#sounds).
 
-
 Android devices support the following additional fields:
 
 * icon – The name of the image file to display as the icon, minus its extension.
@@ -146,7 +142,6 @@ Android devices support the following additional fields:
 * title – Title displayed above the alert text. Defaults to the application name.
 
 * vibrate – A Boolean that the device to vibrate momentarily upon receipt.
-
 
 See Android-specific notification fields for more information about specifying these fields.
 
@@ -156,12 +151,11 @@ iOS 8 devices and later support the following additional fields:
 
 * content-available – If set to **1**, indicates that new content is available. This is used to support Newsstand apps and background content downloads.
 
-
-The payload can also include custom fields that your application can read and use as desired. See [Custom JSON Payloads](#CustomJSONpayloads) for an example of using custom fields.
+The payload can also include custom fields that your application can read and use as desired. See [Custom JSON Payloads](#custom-json-payloads) for an example of using custom fields.
 
 ### Custom JSON payloads
 
-Appcelerator Dashboard provides two forms, Standard and Advanced, for you to compose the payload. In the Standard form, you use common form controls to compose the payload, without having to write JSON code. In the Advanced form, you manually enter the JSON-encoded string that's sent in the notification. The JSON object can contain any of the standard fields discussed in [About Notification Payloads](#AboutNotificationPayloads), or custom fields specific to your application. For example, the following payload contains alert and sound fields, as well as a custom field named high\_score.
+Appcelerator Dashboard provides two forms, Standard and Advanced, for you to compose the payload. In the Standard form, you use common form controls to compose the payload, without having to write JSON code. In the Advanced form, you manually enter the JSON-encoded string that's sent in the notification. The JSON object can contain any of the standard fields discussed in [About Notification Payloads](#about-notification-payloads), or custom fields specific to your application. For example, the following payload contains alert and sound fields, as well as a custom field named high\_score.
 
 ![custom_json](/Images/appc/download/attachments/60145229/custom_json.png)
 
@@ -199,22 +193,21 @@ When the device receives this payload, it will do the following:
 
 * On Android devices:
 
-  * The notification title will be set to "Example"
+    * The notification title will be set to "Example"
 
-  * The device will vibrate
+    * The device will vibrate
 
-  * The "little\_star" icon will be displayed in the notification area.
+    * The "little\_star" icon will be displayed in the notification area.
 
 * On iOS devices:
 
-  * The user notification actions associated with the "sampleCategory" user notification category.
-
+    * The user notification actions associated with the "sampleCategory" user notification category.
 
 ### About JSON Payloads Delivered to Devices
 
 The notification payload that Mobile Backend Services delivers to either FCM or GCM or APNS is slightly modified from the original JSON payload you provide to Dashboard. Also, the payloads are slightly different for Android and iOS devices.
 
-For Android, all Android-specific fields are contained in an **android** dictionary, while all other iOS-only and custom fields are top-level keys of the payload. For example, the payload shown in [Custom JSON payloads](#CustomJSONpayloads) will be delivered to an Android application as follows:
+For Android, all Android-specific fields are contained in an **android** dictionary, while all other iOS-only and custom fields are top-level keys of the payload. For example, the payload shown in [Custom JSON payloads](#custom-json-payloads) will be delivered to an Android application as follows:
 
 `{`
 
@@ -242,7 +235,7 @@ For Android, all Android-specific fields are contained in an **android** diction
 
 `}`
 
-For iOS devices, all iOS-specific fields are contained in an aps dictionary, while all Android-specific and custom fields are top-level keys of the payload. For example, the payload shown in [Custom JSON payloads](#CustomJSONpayloads) will be delivered to an iOS application as follows:
+For iOS devices, all iOS-specific fields are contained in an aps dictionary, while all Android-specific and custom fields are top-level keys of the payload. For example, the payload shown in [Custom JSON payloads](#custom-json-payloads) will be delivered to an iOS application as follows:
 
 `{`
 
@@ -279,7 +272,6 @@ Since Titanium SDK 7.3.0, you can create rich notifications for users running iO
 * **Local** images: Can be specified when scheduling a **local** notification from your application, for example using the attachments property inside the creation dictionary of the notification.
 
 * **Remote** image: Can be specified when scheduling a **remote** notification using an UNNotificationServiceExtension. App extensions in Titanium can be written in both Objective-C and Swift. Learn more about them [here](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/Creating_iOS_Extensions_-_Siri_Intents/).
-
 
 Remote attachments example:
 
@@ -319,30 +311,29 @@ Some useful links to get started:
 
 * Titanium: [App Extensions Guide](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/Creating_iOS_Extensions_-_Siri_Intents/)
 
-
 #### Interactive Notifications (iOS 8 and later)
 
 You can create interactive notifications for users running iOS 8 or later can respond to without launching the application to the foreground.
 
 ![InteractiveBannerMessage](/Images/appc/download/attachments/60145229/InteractiveBannerMessage.png)
 
-Your Titanium application defines one or more _notification categories_, each of which consists of one or more _notification actions_. When you [create a push notification](#Sendingpushnotifications) in the Dashboard, the **Category** form field lets you specify the category of interactive notification to display when the push notification arrives.
+Your Titanium application defines one or more _notification categories_, each of which consists of one or more _notification actions_. When you [create a push notification](#sending-push-notifications) in the Dashboard, the **Category** form field lets you specify the category of interactive notification to display when the push notification arrives.
 
 **To create an interactive notification:**
 
 1. In your Titanium application:
 
-  1. [Create and configure notification actions](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/iOS_Interactive_Notifications/).
+    1. [Create and configure notification actions](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/iOS_Interactive_Notifications/).
 
-  2. [Create notification categories](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/iOS_Interactive_Notifications/) and assign notification actions to them.
+    2. [Create notification categories](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/iOS_Interactive_Notifications/) and assign notification actions to them.
 
-  3. [Register the application](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/iOS_Interactive_Notifications/) for the desired notification categories, and to receive push notifications.
+    3. [Register the application](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/iOS_Interactive_Notifications/) for the desired notification categories, and to receive push notifications.
 
-  4. Register an event listener for the remotenotificationaction event, to respond to user actions when they interact with the notification.
+    4. Register an event listener for the remotenotificationaction event, to respond to user actions when they interact with the notification.
 
 2. In the Dashboard, send a new push notification and set the **Category** field to the desired notification category.
 
-  ![push_notification](/Images/appc/download/attachments/60145229/push_notification.png)
+    ![push_notification](/Images/appc/download/attachments/60145229/push_notification.png)
 
 When the notification arrives, the device displays the set of actions defined by the category. The [remotenotificationaction](#!/api/Titanium.App.iOS-event-remotenotificationaction) event fires when the user interacts with the notification.
 
@@ -376,7 +367,6 @@ The sound field in a notification payload specifies the name (minus the extensio
 
 * For native iOS applications, place the file in the main bundle.
 
-
 #### Android-specific payload fields
 
 In addition to the standard notification fields (alert, badge, and sound) Android devices support the following fields:
@@ -386,7 +376,6 @@ In addition to the standard notification fields (alert, badge, and sound) Androi
 * icon
 
 * vibrate
-
 
 The Titanium application may also specify any of the properties in Titanium.Android.Notification, except for contentIntent or deleteIntent. For instance, you can add a tickerText field to the notification payload that scrolls the specified text across the notification area.
 

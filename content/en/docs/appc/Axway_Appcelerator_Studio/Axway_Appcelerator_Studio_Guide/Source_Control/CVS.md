@@ -1,17 +1,16 @@
 {"title":"CVS","weight":"10"}
 
-* [CVS Support](#CVSSupport)
+* [CVS Support](#cvs-support)
 
-* [Installation](#Installation)
+* [Installation](#installation)
 
-  * [Eclipse CVS Functionality](#EclipseCVSFunctionality)
+    * [Eclipse CVS Functionality](#eclipse-cvs-functionality)
 
-* [Import or Checkout an CVS Respository](#ImportorCheckoutanCVSRespository)
+* [Import or Checkout an CVS Respository](#import-or-checkout-an-cvs-respository)
 
-  * [Utilize the CVS Perspective](#UtilizetheCVSPerspective)
+    * [Utilize the CVS Perspective](#utilize-the-cvs-perspective)
 
-  * [Additional CVS Questions](#AdditionalCVSQuestions)
-
+    * [Additional CVS Questions](#additional-cvs-questions)
 
 ## CVS Support
 
@@ -19,35 +18,12 @@ The Studio uses the [Eclipse CVS](http://www.eclipse.org/eclipse/platform-cvs/) 
 
 When updating or adding Eclipse plugins or software, the software repository varies with the version of Studio:
 
-Appcelerator/Titanium Studio Version
-
-Eclipse Repository Name
-
-Eclipse Version
-
-2.1.x
-
-Helios
-
-3.6
-
-3.0.x - 3.1.3
-
-Indigo
-
-3.7
-
-3.1.4 - 3.4.x
-
-Kepler
-
-4.3
-
-4.0.0 - latest
-
-Luna
-
-4.4
+| Appcelerator/Titanium Studio Version | Eclipse Repository Name | Eclipse Version |
+| --- | --- | --- |
+| 2.1.x | Helios | 3.6 |
+| 3.0.x - 3.1.3 | Indigo | 3.7 |
+| 3.1.4 - 3.4.x | Kepler | 4.3 |
+| 4.0.0 - latest | Luna | 4.4 |
 
 ## Installation
 
@@ -57,14 +33,13 @@ In case you installed the Studio as a plugin to eclipse distribution, CVS is alr
 
 * Make sure that the main Eclipse update site is checked 'on'. In this example, the update site is the Eclipse 'Helios' site. Click 'OK' to commit any changes made to this page and exit.
 
-  ![update_sites](/Images/appc/download/attachments/30083196/update_sites.jpg)
+    <table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083196/update_sites.jpg" alt="images/download/attachments/30083196/update_sites.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 * Click **Help** -> **Install New Software**and select the Eclipse update site. It may take a couple of minutes to populate the plugin options.
 
-  ![cvs_install](/Images/appc/download/attachments/30083196/cvs_install.jpg)
+    <table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083196/cvs_install.jpg" alt="images/download/attachments/30083196/cvs_install.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 * Select the CVS plugin and follow the wizard's 'Next' or 'Finish' to complete the installation.
-
 
 ### Eclipse CVS Functionality
 
@@ -80,7 +55,6 @@ In case you installed the Studio as a plugin to eclipse distribution, CVS is alr
 
 * Merge changes
 
-
 ## Import or Checkout an CVS Respository
 
 1. Go to **File**\->**Import**
@@ -91,13 +65,11 @@ In case you installed the Studio as a plugin to eclipse distribution, CVS is alr
 
 4. Complete Wizard with your CVS repository details.
 
-
 ### Utilize the CVS Perspective
 
 1. Go to **Window** -> **Open Perspective...** -> **Other**.
 
 2. Select **CVS Respository Exploring**
-
 
 ### Additional CVS Questions
 

@@ -8,13 +8,9 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 This document describes a parametermap flow-node and provides a parametermap flow-node example.
 
-Name
-
-Description
-
-parametermap
-
-Non-functional flow-node which returns all parameters passed in as a response. Allows setting arbitrary values directly into the flow context.
+| Name | Description |
+| --- | --- |
+| parametermap | Non-functional flow-node which returns all parameters passed in as a response. Allows setting arbitrary values directly into the flow context. |
 
 ## Example
 

@@ -8,7 +8,6 @@ Dashboard 5.1.2 is a patch release, which includes a new feature and bug fixes.
 
 * Added a download link for the App Builder Studio 64-bit Windows installer.
 
-
 ## Fixed issue
 
 * Fixed an issue with the Mobile Backend Services _Environment_ drop-down menu not updating to display the selected environment.

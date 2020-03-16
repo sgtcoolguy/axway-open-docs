@@ -2,26 +2,25 @@
 
 As of Titanium 9.0.0, building Windows apps is no longer supported.The below only applies to users of older Titanium versions.
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Classes](#Classes)
+* [Classes](#classes)
 
-* [Instantiation](#Instantiation)
+* [Instantiation](#instantiation)
 
-* [Methods and fields](#Methodsandfields)
+* [Methods and fields](#methods-and-fields)
 
-* [Method resolution](#Methodresolution)
+* [Method resolution](#method-resolution)
 
-* [Casting](#Casting)
+* [Casting](#casting)
 
-* [Async Return Types](#AsyncReturnTypes)
+* [Async Return Types](#async-return-types)
 
-* [Mix WinRT APIs with Titanium APIs](#MixWinRTAPIswithTitaniumAPIs)
+* [Mix WinRT APIs with Titanium APIs](#mix-winrt-apis-with-titanium-apis)
 
-* [Generic Collections](#GenericCollections)
+* [Generic Collections](#generic-collections)
 
-* [Using Third-party libraries](#UsingThird-partylibraries)
-
+* [Using Third-party libraries](#using-third-party-libraries)
 
 This document provides information on Windows Hyperloop requirements, classes, instantiation, methods and fields, method resolution, casting, async return types, mix WinRT APIs with Titanium APIs, generic collections, and using 3rd party libraries.
 
@@ -30,7 +29,6 @@ This document provides information on Windows Hyperloop requirements, classes, i
 You’ll need to have the following minimum requirements to use Hyperloop for Windows:
 
 * Titanium 6.1.0+
-
 
 Configure the plugin in tiapp.xml:
 

@@ -1,15 +1,14 @@
 {"title":"Plugging Studio into an existing Eclipse configuration","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Aptana Studio 3.0 Automatic Install on Eclipse 3.5/3.6](#AptanaStudio3.0AutomaticInstallonEclipse3.5/3.6)
+* [Aptana Studio 3.0 Automatic Install on Eclipse 3.5/3.6](#aptana-studio-3.0-automatic-install-on-eclipse-3.5/3.6)
 
-* [Aptana Studio 3.0 Manual Install](#AptanaStudio3.0ManualInstall)
+* [Aptana Studio 3.0 Manual Install](#aptana-studio-3.0-manual-install)
 
-* [Related Topics](#RelatedTopics)
-
+* [Related Topics](#related-topics)
 
 ## Overview
 
@@ -25,11 +24,9 @@ If you are already an Eclipse user, you can install Studio as a plug-in directly
 
 * Visit [http://www.aptana.com/products/studio3/download](http://www.aptana.com/products/studio3/download) and follow the instructions there.
 
-
 ## Aptana Studio 3.0 Manual Install
 
 * For Aptana Studio 3, download the latest release from [http://www.aptana.com/products/studio3/download](http://www.aptana.com/products/studio3/download) and follow the manual installation instructions on the page.
-
 
 ## Related Topics
 

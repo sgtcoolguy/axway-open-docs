@@ -10,21 +10,7 @@ With this release of the Appcelerator CLI, Node.js versions older than 10.13.0 a
 
 The following components are shipped with CLI 8.0.0:
 
-Alloy
-
-1.14.5
-
-Cloud CLI
-
-2.1.3
-
-Titanium CLI
-
-5.2.2
-
-Daemon
-
-3.1.0
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Alloy</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>1.14.5</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Cloud CLI</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>2.1.3</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium CLI</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>5.2.2</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Daemon</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>3.1.0</p></td></tr></tbody></table>
 
 Appcelerator CLI 8 removes API Builder from distribution. For information on migrating to API Builder v4 please see [https://docs.axway.com/bundle/API\_Builder\_4x\_allOS\_en/page/api\_builder\_v3\_to\_v4\_upgrade\_guide.html](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html)
 
@@ -34,10 +20,9 @@ Appcelerator CLI 8 removes API Builder from distribution. For information on mig
 
 * [CLI-1383](https://jira.appcelerator.org/browse/CLI-1383) - Update to cloud CLI 2.1.3
 
-  * The package.json scripts.start property will now be preferred over the main property when publishing to ARS
+    * The package.json scripts.start property will now be preferred over the main property when publishing to ARS
 
 * [CLI-1065](https://jira.appcelerator.org/browse/CLI-1065) - Improve socket prompt communication and error for appc login
-
 
 ### Fixed issues
 
@@ -47,11 +32,9 @@ Appcelerator CLI 8 removes API Builder from distribution. For information on mig
 
 * [ALOY-1721](https://jira.appcelerator.org/browse/ALOY-1721) - Alloy global variable no longer accessible in styles
 
-
 ### BREAKING CHANGES
 
 * [CLI-1385](https://jira.appcelerator.org/browse/CLI-1385) - Remove API Builder
-
 
 ## Recent Releases
 

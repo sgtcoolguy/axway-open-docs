@@ -1,169 +1,168 @@
 {"title":"tiapp.xml and timodule.xml Reference","weight":"10"}
 
-* [Introductions](#Introductions)
+* [Introductions](#introductions)
 
-* [Top level elements](#Toplevelelements)
+* [Top level elements](#top-level-elements)
 
-  * [guid](#guid)
+    * [guid](#guid)
 
-  * [id](#id)
+    * [id](#id)
 
-  * [name](#name)
+    * [name](#name)
 
-  * [analytics](#analytics)
+    * [analytics](#analytics)
 
-  * [copyright](#copyright)
+    * [copyright](#copyright)
 
-  * [deployment-target](#deployment-target)
+    * [deployment-target](#deployment-target)
 
-  * [description](#description)
+    * [description](#description)
 
-  * [fullscreen](#fullscreen)
+    * [fullscreen](#fullscreen)
 
-  * [icon](#icon)
+    * [icon](#icon)
 
-  * [modules](#modules)
+    * [modules](#modules)
 
-  * [navbar-hidden](#navbar-hidden)
+    * [navbar-hidden](#navbar-hidden)
 
-  * [plugins](#plugins)
+    * [plugins](#plugins)
 
-  * [property](#property)
+    * [property](#property)
 
-  * [publisher](#publisher)
+    * [publisher](#publisher)
 
-  * [statusbar-hidden](#statusbar-hidden)
+    * [statusbar-hidden](#statusbar-hidden)
 
-  * [sdk-version](#sdk-version)
+    * [sdk-version](#sdk-version)
 
-  * [url](#url)
+    * [url](#url)
 
-  * [version](#version)
+    * [version](#version)
 
-  * [Deprecated elements](#Deprecatedelements)
+    * [Deprecated elements](#deprecated-elements)
 
-* [Application properties](#Applicationproperties)
+* [Application properties](#application-properties)
 
-  * [ti.ui.defaultunit](#ti.ui.defaultunit)
+    * [ti.ui.defaultunit](#ti.ui.defaultunit)
 
-  * [intent-filter-new-task](#intent-filter-new-task)
+    * [intent-filter-new-task](#intent-filter-new-task)
 
-  * [appc-security-jailbreak-detect](#appc-security-jailbreak-detect)
+    * [appc-security-jailbreak-detect](#appc-security-jailbreak-detect)
 
-  * [appc-security-debugger-detect](#appc-security-debugger-detect)
+    * [appc-security-debugger-detect](#appc-security-debugger-detect)
 
-  * [appc-sourcecode-encryption-policy](#appc-sourcecode-encryption-policy)
+    * [appc-sourcecode-encryption-policy](#appc-sourcecode-encryption-policy)
 
-* [Android-specific section](#Android-specificsection)
+* [Android-specific section](#android-specific-section)
 
-  * [abi](#abi)
+    * [abi](#abi)
 
-  * [activities](#activities)
+    * [activities](#activities)
 
-  * [manifest](#manifest)
+    * [manifest](#manifest)
 
-    * [application](#application)
+        * [application](#application)
 
-    * [uses-permission](#uses-permission)
+        * [uses-permission](#uses-permission)
 
-    * [uses-sdk](#uses-sdk)
+        * [uses-sdk](#uses-sdk)
 
-  * [services](#services)
+    * [services](#services)
 
-  * [Android-specific application properties](#Android-specificapplicationproperties)
+    * [Android-specific application properties](#android-specific-application-properties)
 
-  * [Properties to work around Android bugs 2373 and 5277](#PropertiestoworkaroundAndroidbugs2373and5277)
+    * [Properties to work around Android bugs 2373 and 5277](#properties-to-work-around-android-bugs-2373-and-5277)
 
-  * [Common requirements](#Commonrequirements)
+    * [Common requirements](#common-requirements)
 
-    * [Set a target or minimum SDK level](#SetatargetorminimumSDKlevel)
+        * [Set a target or minimum SDK level](#set-a-target-or-minimum-sdk-level)
 
-    * [Configuring screen densities](#Configuringscreendensities)
+        * [Configuring screen densities](#configuring-screen-densities)
 
-    * [Enabling the debugger by default](#Enablingthedebuggerbydefault)
+        * [Enabling the debugger by default](#enabling-the-debugger-by-default)
 
-    * [Setting install location preferences](#Settinginstalllocationpreferences)
+        * [Setting install location preferences](#setting-install-location-preferences)
 
-    * [Requesting a large heap from Dalvik](#RequestingalargeheapfromDalvik)
+        * [Requesting a large heap from Dalvik](#requesting-a-large-heap-from-dalvik)
 
-* [iOS-specific section](#iOS-specificsection)
+* [iOS-specific section](#ios-specific-section)
 
-  * [team-id](#team-id)
+    * [team-id](#team-id)
 
-  * [entitlements](#entitlements)
+    * [entitlements](#entitlements)
 
-  * [extensions](#extensions)
+    * [extensions](#extensions)
 
-  * [min-ios-ver](#min-ios-ver)
+    * [min-ios-ver](#min-ios-ver)
 
-  * [min-sdk-ver](#min-sdk-ver)
+    * [min-sdk-ver](#min-sdk-ver)
 
-  * [plist](#plist)
+    * [plist](#plist)
 
-    * [UISupportedInterfaceOrientations](#UISupportedInterfaceOrientations)
+        * [UISupportedInterfaceOrientations](#uisupportedinterfaceorientations)
 
-    * [UIBackgroundModes](#UIBackgroundModes)
+        * [UIBackgroundModes](#uibackgroundmodes)
 
-    * [UIRequiredDeviceCapabilities](#UIRequiredDeviceCapabilities)
+        * [UIRequiredDeviceCapabilities](#uirequireddevicecapabilities)
 
-    * [UIRequiresPersistentWiFi](#UIRequiresPersistentWiFi)
+        * [UIRequiresPersistentWiFi](#uirequirespersistentwifi)
 
-    * [UIPrerenderedIcon](#UIPrerenderedIcon)
+        * [UIPrerenderedIcon](#uiprerenderedicon)
 
-    * [UIStatusBarHidden](#UIStatusBarHidden)
+        * [UIStatusBarHidden](#uistatusbarhidden)
 
-    * [UIStatusBarStyle](#UIStatusBarStyle)
+        * [UIStatusBarStyle](#uistatusbarstyle)
 
-    * [Unsupported Info.plist keys](#UnsupportedInfo.plistkeys)
+        * [Unsupported Info.plist keys](#unsupported-info.plist-keys)
 
-    * [iOS9 Security and canOpenUrl](#iOS9SecurityandcanOpenUrl)
+        * [iOS9 Security and canOpenUrl](#ios9-security-and-canopenurl)
 
-  * [run-on-main-thread](#run-on-main-thread)
+    * [run-on-main-thread](#run-on-main-thread)
 
-  * [log-server-port](#log-server-port)
+    * [log-server-port](#log-server-port)
 
-  * [allow-custom-keyboards](#allow-custom-keyboards)
+    * [allow-custom-keyboards](#allow-custom-keyboards)
 
-  * [use-app-thinning](#use-app-thinning)
+    * [use-app-thinning](#use-app-thinning)
 
-  * [use-autolayout](#use-autolayout)
+    * [use-autolayout](#use-autolayout)
 
-  * [use-jscore-framework](#use-jscore-framework)
+    * [use-jscore-framework](#use-jscore-framework)
 
-  * [Legacy iPhone](#LegacyiPhone)
+    * [Legacy iPhone](#legacy-iphone)
 
-* [Windows-specific](#Windows-specific)
+* [Windows-specific](#windows-specific)
 
-  * [id](#id.1)
+    * [id](#id)
 
-  * [manifest](#manifest.1)
+    * [manifest](#manifest)
 
-    * [Add capabilities](#Addcapabilities)
+        * [Add capabilities](#add-capabilities)
 
-      * [Internet capability](#Internetcapability)
+            * [Internet capability](#internet-capability)
 
-      * [Location capability](#Locationcapability)
+            * [Location capability](#location-capability)
 
-      * [Background audio capability](#Backgroundaudiocapability)
+            * [Background audio capability](#background-audio-capability)
 
-      * [Audio recorder](#Audiorecorder)
+            * [Audio recorder](#audio-recorder)
 
-      * [Photo gallery](#Photogallery)
+            * [Photo gallery](#photo-gallery)
 
-  * [Target Windows version](#TargetWindowsversion)
+    * [Target Windows version](#target-windows-version)
 
-  * [Handling differing capabilities between Windows 8.1 and 10](#HandlingdifferingcapabilitiesbetweenWindows8.1and10)
+    * [Handling differing capabilities between Windows 8.1 and 10](#handling-differing-capabilities-between-windows-8.1-and-10)
 
-  * [Windows-specific application properties](#Windows-specificapplicationproperties)
+    * [Windows-specific application properties](#windows-specific-application-properties)
 
-* [Cloud](#Cloud)
+* [Cloud](#cloud)
 
-* [Google Play Services](#GooglePlayServices)
+* [Google Play Services](#google-play-services)
 
-* [Modules](#Modules)
+* [Modules](#modules)
 
-  * [timodule.xml](#timodule.xml)
-
+    * [timodule.xml](#timodule.xml)
 
 ## Introductions
 
@@ -299,7 +298,6 @@ This element contains subelements of deployment targets used by Studio to determ
 
 * <target device="DEVICE">: Specifies if the target device is supported by the project. Must be placed inside the <deployment-targets> element.
 
-
 Example: Specify the project only supports Android targets
 
 `<``deployment``-targets>`
@@ -340,12 +338,11 @@ This element includes subelements of modules to include with the project.
 
 * <module platform="PLATFORM" version="MODULE\_VERSION" deploy-type="DEPLOYMENT\_ENVIRONMENTS">: Defines a module to include with the project specified by the module's folder name or ZIP file minus the extension. The module should either be in the root level of the project (same level as the Resources folder) or in the <PATH\_TO\_TITANIUM\_SDK>/modules folder. Must be placed inside the <modules>element.
 
-  Define the platform attribute to specify which platforms to include the module with. Specify android for Android, commonjs for all platforms, or iphone for iPhone and iPad. Note that you can specify only one platform. For a module that may be included on several platforms, repeat the same module entry, specifying a different platform for each entry.
+    Define the platform attribute to specify which platforms to include the module with. Specify android for Android, commonjs for all platforms, or iphone for iPhone and iPad. Note that you can specify only one platform. For a module that may be included on several platforms, repeat the same module entry, specifying a different platform for each entry.
 
-  Define the version attribute if you want to use a specific version of the module.
+    Define the version attribute if you want to use a specific version of the module.
 
-  Define the deploy-type attribute if you want to use the module in specific environments. To specify one or more environment, comma-separate the environment types. You may specify the following environments: development, test or production.
-
+    Define the deploy-type attribute if you want to use the module in specific environments. To specify one or more environment, comma-separate the environment types. You may specify the following environments: development, test or production.
 
 Example: Include the ti.cloud module
 
@@ -368,7 +365,6 @@ Supported since Release 5.0.0 for Android. On Android, the theme will be set to 
 This element includes subelements of plugins to include with the project.
 
 * <plugin version="PLUGIN\_VERSION">: Defines a plugin to include with the project specified by the plugin's folder name. Place plugins in the plugins folder of the project (same level as the Resources folder). This element must be placed inside the <plugins>element. The version attribute is optional. Define it to include a specific version of the plugin.
-
 
 Example: Include the Alloy plugin
 
@@ -422,14 +418,13 @@ Example
 
 ### Deprecated elements
 
-* <persistent-wifi>: See [UIRequiresPersistentWiFi](#UIRequiresPersistentWiFi)UIRequiresPersistentWiFi.
+* <persistent-wifi>: See [UIRequiresPersistentWiFi](#uirequirespersistentwifi)UIRequiresPersistentWiFi.
 
-* <prerendered-icon>: See [UIPrerenderedIcon](#UIPrerenderedIcon).
+* <prerendered-icon>: See [UIPrerenderedIcon](#uiprerenderedicon).
 
-* <statusbar-style>: See [UIStatusBarStyle](#UIStatusBarStyle).
+* <statusbar-style>: See [UIStatusBarStyle](#uistatusbarstyle).
 
 * <statusbar-hidden>: See [UIStatusBarHidden](#undefined).
-
 
 ## Application properties
 
@@ -446,7 +441,6 @@ Properties generally follow the form:
 * type is the property value's type, valid values are: string, bool, int, double
 
 * value is the property's value
-
 
 Properties are also used in specific cases by each platform, which is further explained in each platform section.
 
@@ -469,7 +463,6 @@ The default unit can be one of the following:
 * mm . Millimeters.
 
 * px . Pixels.
-
 
 Setting the default unit to pixels may cause issues on iOS unless you detect and handle Retina displays in your code.
 
@@ -514,7 +507,6 @@ The special property appc-sourcecode-encryption-policy determines the encryption
 * embed: Embeds the encryption key and initialization vector (IV) into the application binary. The key and IV are padded and obfuscated.
 
 * remote: Stores the encryption key remotely, which requires the device to have an internet connection to run the application (default behavior).
-
 
 `<``property`  `name``=``"appc-sourcecode-encryption-policy"``>remote</``property``>`
 
@@ -574,7 +566,6 @@ Selects the target ABI architecture. Only used when building for the V8 runtime.
 
 * x86\_64
 
-
 Targeting an ABI architecture will help reduce the application and APK size, but will support fewer devices. Currently defaults to 'all'. You can upload multiple APK's for multiple ABI's, improving the file size of the bundled app.
 
 ### activities
@@ -584,7 +575,6 @@ Defines a list of custom JavaScript-based Android activities. This is a custom T
 * <activity url="activity.js"/>: Creates an activity with a URL that points to the JavaScript file (under Resources) that defines it.
 
 * Ad-hoc elements: Inside the <activity> element, any ad-hoc element from an AndroidManifest.xml is supported. See the [documentation for the activity element in AndroidManifest.xml](http://developer.android.com/guide/topics/manifest/activity-element.html).
-
 
 ### manifest
 
@@ -610,92 +600,21 @@ Defines a list of custom JavaScript-based Android services (long running backgro
 
 * Ad-hoc elements: Under the <service> tag, any ad-hoc element from an AndroidManifest.xml is supported. See the [documentation for the service element in AndroidManifest.xml](http://developer.android.com/guide/topics/manifest/service-element.html).
 
-
 ### Android-specific application properties
 
 Android also supports a number of application properties for various internal settings. (See [Application properties](#app_properties) above on how to define an application property.)
 
-Property Name
-
-Type
-
-Default Value
-
-Description
-
-ti.android.shake.factor
-
-double
-
-1.3
-
-Shake factor used for the "shake" event in the [Titanium.Gesture module](#!/api/Titanium.Gesture)
-
-ti.android.shake.quiet.milliseconds
-
-int
-
-500
-
-Number of "quiet" milliseconds before the "shake" event is fired
-
-ti.android.shake.active.milliseconds
-
-int
-
-1000
-
-Number of "active" milliseconds before the "shake" event is fired
-
-ti.android.google.map.api.key.development
-
-string
-
-N/A
-
-**Deprecated.** Google Maps v1 API Key for use in development.
-
-ti.android.google.map.api.key.production
-
-string
-
-N/A
-
-**Deprecated.** Google Maps v1 API Key for use in production.
-
-ti.android.httpclient.maxbuffersize
-
-int
-
-524288
-
-The maximum buffer size (in bytes) before an HTTP response is written to a temporary file instead of memory (default is 512KB)
-
-ti.android.compilejs
-
-bool
-
-N/A
-
-Turns on or off JS compilation. By default, JS compilation is only on when distributing an application, but manually setting this to "true" will enable it for development as well.
-
-ti.android.debug
-
-bool
-
-false
-
-Turn on detailed logging in the SDK
-
-ti.android.root.reappears.restart
-
-bool
-
-false
-
-Restarts the application if the root task was destroyed by Android after a period of inactivity.
-
-**(As of Titanium 8.0.0, this property is no longer supported.)**
+| Property Name | Type | Default Value | Description |
+| --- | --- | --- | --- |
+| ti.android.shake.factor | double | 1.3 | Shake factor used for the "shake" event in the [Titanium.Gesture module](#!/api/Titanium.Gesture) |
+| ti.android.shake.quiet.milliseconds | int | 500 | Number of "quiet" milliseconds before the "shake" event is fired |
+| ti.android.shake.active.milliseconds | int | 1000 | Number of "active" milliseconds before the "shake" event is fired |
+| ti.android.google.map.api.key.development | string | N/A | **Deprecated.** Google Maps v1 API Key for use in development. |
+| ti.android.google.map.api.key.production | string | N/A | **Deprecated.** Google Maps v1 API Key for use in production. |
+| ti.android.httpclient.maxbuffersize | int | 524288 | The maximum buffer size (in bytes) before an HTTP response is written to a temporary file instead of memory (default is 512KB) |
+| ti.android.compilejs | bool | N/A | Turns on or off JS compilation. By default, JS compilation is only on when distributing an application, but manually setting this to "true" will enable it for development as well. |
+| ti.android.debug | bool | false | Turn on detailed logging in the SDK |
+| ti.android.root.reappears.restart | bool | false | Restarts the application if the root task was destroyed by Android after a period of inactivity.<br /><br />**(As of Titanium 8.0.0, this property is no longer supported.)** |
 
 Example: Disable Fastdev
 
@@ -707,77 +626,16 @@ As of Titanium 8.0.0, this has been deprecated. The new behavior is a data inten
 
 See [TIMOB-4941](http://jira.appcelerator.org/browse/TIMOB-4941), [TIMOB-1559](http://jira.appcelerator.org/browse/TIMOB-1559) and [TIMOB-9285](http://jira.appcelerator.org/browse/TIMOB-9285) for information about the Titanium workaround to Google issues [2373](http://code.google.com/p/android/issues/detail?id=2373) and [5277](http://code.google.com/p/android/issues/detail?id=5277). TIMOB-9285 in particular has a useful [explanation](https://jira.appcelerator.org/browse/TIMOB-9285?focusedCommentId=210304&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-210304) of the issue and of ti.android.bug2373.finishfalseroot, the newest of the properties listed below.
 
-Property Name
-
-Type
-
-Default Value
-
-Description
-
-ti.android.bug2373.finishfalseroot
-
-bool
-
-true
-
-Setting to true will avoid showing any messages to the user and will force any subsequent, anomalous instantiations of the application's launch Activity to finish and disappear without disturbing the user. This is [explained in greater detail](https://jira.appcelerator.org/browse/TIMOB-9285?focusedCommentId=210304&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-210304) in JIRA issue TIMOB-9285. This property should be used by itself, without any of the other "bug2373" properties. It is the least intrusive of these properties and should give the best user experience.
-
-ti.android.bug2373.disableDetection
-
-bool
-
-false
-
-setting to true will completely disable the workaround
-
-ti.android.bug2373.title
-
-String
-
-Restart Required
-
-title of dialog
-
-ti.android.bug2373.message
-
-String
-
-An application restart is required
-
-message used in dialog. if _skipAlert_ is true the message is shown in a Toast if message length is > 0
-
-ti.android.bug2373.buttonText
-
-String
-
-Continue
-
-button text on alert dialog
-
-ti.android.bug2373.restartDelay
-
-int
-
-500
-
-number of milliseconds to wait before starting the new copy of the app with the correct Intent settings.
-
-ti.android.bug2373.finishDelay
-
-int
-
-0
-
-number of milliseconds to wait before finishing (exiting) the current application.
-
-ti.android.bug2373.skipAlert
-
-bool
-
-false
-
-if true, the dialog box will not be shown, but the workaround will still be applied if _disableDetection_ is false.
+| Property Name | Type | Default Value | Description |
+| --- | --- | --- | --- |
+| ti.android.bug2373.finishfalseroot | bool | true | Setting to true will avoid showing any messages to the user and will force any subsequent, anomalous instantiations of the application's launch Activity to finish and disappear without disturbing the user. This is [explained in greater detail](https://jira.appcelerator.org/browse/TIMOB-9285?focusedCommentId=210304&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-210304) in JIRA issue TIMOB-9285. This property should be used by itself, without any of the other "bug2373" properties. It is the least intrusive of these properties and should give the best user experience. |
+| ti.android.bug2373.disableDetection | bool | false | setting to true will completely disable the workaround |
+| ti.android.bug2373.title | String | Restart Required | title of dialog |
+| ti.android.bug2373.message | String | An application restart is required | message used in dialog. if _skipAlert_ is true the message is shown in a Toast if message length is > 0 |
+| ti.android.bug2373.buttonText | String | Continue | button text on alert dialog |
+| ti.android.bug2373.restartDelay | int | 500 | number of milliseconds to wait before starting the new copy of the app with the correct Intent settings. |
+| ti.android.bug2373.finishDelay | int | 0 | number of milliseconds to wait before finishing (exiting) the current application. |
+| ti.android.bug2373.skipAlert | bool | false | if true, the dialog box will not be shown, but the workaround will still be applied if _disableDetection_ is false. |
 
 ### Common requirements
 
@@ -859,7 +717,6 @@ For the android:installLocation property, choose one of these values:
 * android:installLocation="auto" – specifies that the phone's configuration will determine the installation location. Generally, your app will be installed to internal storage if sufficient space is available. In that case, users could still move your app by opening **Settings > Applications > Manage applications**, tapping your app, and tapping Move to SD card.
 
 * android:installLocation="internalOnly" – which specifies that your app cannot be installed to the SD card. See the [Android docs](http://developer.android.com/guide/appendix/install-location.html#ShouldNot) for the various reasons why you might choose this option.
-
 
 Finally, you need to add the <uses-sdk> tag within the <manifest> node. This tag specifies that your app requires Google's version 7 or newer APIs — in other words, the phone must be running Android 2.1 Update 1 or newer. That pretty much covers all the newer phones, but will exclude some older devices. On those phones, your app will install to the internal storage.
 
@@ -981,7 +838,6 @@ In the target element, add a **<provisioning-profiles>** element, which determin
 
 * **<dist-adhoc/>**: Add to deploy for ad-hoc builds
 
-
 Example: Include watchOS extensions
 
 `<``ti``:app>`
@@ -1085,7 +941,6 @@ For device-specific configurations, use:
 * UISupportedInterfaceOrientations~iphone
 
 * UISupportedInterfaceOrientations~ipod
-
 
 Example: Limits iPhone orientation to portait and no limits for iPad
 
@@ -1299,7 +1154,6 @@ The following Info.plist properties are ignored in the <plist> section. The valu
 
 * CFBundleShortVersionString (until Titanium 4.1.0)
 
-
 #### iOS9 Security and canOpenUrl
 
 With some of the new security features of iOS9, SDK 5.1.2's **canOpenUrl** might fail without adding in the proper properties in the info.plist file. For example,
@@ -1364,7 +1218,7 @@ With some of the new security features of iOS9, SDK 5.1.2's **canOpenUrl** might
 
 ### use-app-thinning
 
-**Since Release 5.1.0**. Determines whether to enable App Thinning for iOS applications by using an Asset Catalog. An Asset Catalog contains image assets for specific devices. When a user installs your application, only the resources that your device supports will be downloaded. The element is automatically added to new projects since Release 5.1.0. For details, see [App Thinning: Slicing](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_iOS_apps/App_Thinning/#Slicing).
+**Since Release 5.1.0**. Determines whether to enable App Thinning for iOS applications by using an Asset Catalog. An Asset Catalog contains image assets for specific devices. When a user installs your application, only the resources that your device supports will be downloaded. The element is automatically added to new projects since Release 5.1.0. For details, see [App Thinning: Slicing](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_iOS_apps/App_Thinning/#slicing).
 
 Filesystem Access
 
@@ -1389,7 +1243,6 @@ Experimental Feature
 This is an experimental feature with known issues:
 
 * [TIMOB-19806](https://jira.appcelerator.org/browse/TIMOB-19806)
-
 
 If you find any issue using this feature, file a bug in [JIRA](https://jira.appcelerator.org/).
 
@@ -1421,19 +1274,18 @@ If you find any issue using this feature, file a bug in [JIRA](https://jira.appc
 
 Prior to release 2.1, iOS-specific settings were contained in an <iphone> element. These settings are deprecated and should be replaced with the corresponding iOS settings listed in the [iOS specific section](#iOSspecificsection). It will be removed in Titanium SDK 7.0.0 and later.
 
-* <orientations device="device">: Restricts the device to these orientations when the application is running. The value of "device" can be "iphone", or "ipad". **Deprecated** in Release 2.1, use [UISupportedInterfaceOrientations](#UISupportedInterfaceOrientations) instead.
+* <orientations device="device">: Restricts the device to these orientations when the application is running. The value of "device" can be "iphone", or "ipad". **Deprecated** in Release 2.1, use [UISupportedInterfaceOrientations](#uisupportedinterfaceorientations) instead.
 
-  * <orientation>: An orientation for this <orientations> list, valid values are: Ti.UI.PORTRAIT, Ti.UI.UPSIDE\_PORTRAIT, Ti.UI.LANDSCAPE\_LEFT, Ti.UI.LANDSCAPE\_RIGHT.
+    * <orientation>: An orientation for this <orientations> list, valid values are: Ti.UI.PORTRAIT, Ti.UI.UPSIDE\_PORTRAIT, Ti.UI.LANDSCAPE\_LEFT, Ti.UI.LANDSCAPE\_RIGHT.
 
-* <backgroundModes>: A list of background modes this app supports. **Deprecated** in Release 2.1, use [UIBackgroundModes](#UIBackgroundModes) instead.
-  For a [BackgroundService](#!/api/Titanium.App.iOS.BackgroundService) to run for more than a limited period of time, the application must include the <backgroundModes> element in tiapp.xml.
+* <backgroundModes>: A list of background modes this app supports. **Deprecated** in Release 2.1, use [UIBackgroundModes](#uibackgroundmodes) instead.
+    For a [BackgroundService](#!/api/Titanium.App.iOS.BackgroundService) to run for more than a limited period of time, the application must include the <backgroundModes> element in tiapp.xml.
 
-  * <mode>: A background mode, valid values are: audio, location, and voip.
+    * <mode>: A background mode, valid values are: audio, location, and voip.
 
-* <requires>: A list of features this app requires. **Deprecated** in Release 2.1, use [UIRequiredDeviceCapabilities](#UIRequiredDeviceCapabilities)instead.
+* <requires>: A list of features this app requires. **Deprecated** in Release 2.1, use [UIRequiredDeviceCapabilities](#uirequireddevicecapabilities)instead.
 
-  * <feature>: A feature that this app requires, valid values are: telephony, wifi, sms, still-camera, auto-focus-camera, front-facing-camera, camera-flash, video-camera, accelerometer, gyroscope, location-services, gps, magnetometer, gamekit, microphone, opengles-1, opengles-2, armv6, armv7, peer-peer
-
+    * <feature>: A feature that this app requires, valid values are: telephony, wifi, sms, still-camera, auto-focus-camera, front-facing-camera, camera-flash, video-camera, accelerometer, gyroscope, location-services, gps, magnetometer, gamekit, microphone, opengles-1, opengles-2, armv6, armv7, peer-peer
 
 ## Windows-specific
 
@@ -1460,7 +1312,6 @@ Only supports the following elements:
 * <Resources>
 
 * <Extensions>
-
 
 #### Add capabilities
 
@@ -1840,113 +1691,24 @@ Common capabilities across targets and SDK versions (Windows 10, Windows 8.1 Sto
 
 ### Windows-specific application properties
 
-Property Name
-
-Description
-
-ti.windows.publishername
-
-Must match the Windows publisher ID of your Microsoft Developer account. Used by the Titanium for the Windows SDKs to generate signing certificates and sign your package.
-
-**To retrieve your Windows publisher ID:**
-
-1. Log into [https://dev.windows.com](https://dev.windows.com/).
-
-2. Click **Dashboard** in the top-right corner.
-
-3. Click **Account settings** in the left navigation.
-
-
-The publisher GUID will be under the **Account details** section as the **Windows publisher ID** field.
-
-Example:
-
-`<``property`  `name``=``"ti.windows.publishername"` `type="string”>CN=11111111-2222-3333-4444-555555555555</``property``>`
+| Property Name | Description |
+| --- | --- |
+| ti.windows.publishername | Must match the Windows publisher ID of your Microsoft Developer account. Used by the Titanium for the Windows SDKs to generate signing certificates and sign your package.<br /><br />**To retrieve your Windows publisher ID:**<br /><br />1. Log into [https://dev.windows.com](https://dev.windows.com/).<br />    <br />2. Click **Dashboard** in the top-right corner.<br />    <br />3. Click **Account settings** in the left navigation.<br />    <br /><br />The publisher GUID will be under the **Account details** section as the **Windows publisher ID** field.<br /><br />Example:<br /><br />`<``property`  `name``=``"ti.windows.publishername"` `type="string”>CN=11111111-2222-3333-4444-555555555555</``property``>` |
 
 ## Cloud
 
 Mobile Backend Services uses the following [Application properties](#app_properties) to configure a Titanium project to use Mobile Backend Services. If a deployment-specific setting is provided (production or development) then that value will be used for the current deployment environment. To specify a deployment-specific settings add the suffix \-development or \-production to the property name, for example, acs-api-key-development and acs-api-key-productions are the deployment-specific settings for acs-api-key.
 
-Property Name
-
-Type
-
-Default Value
-
-Description
-
-acs-api-key
-
-string
-
-N/A
-
-Arrow API key. Generated when enabling the project for Cloud services.
-
-acs-base-url
-
-string
-
-https://api.cloud.appcelerator.com
-
-Arrow API URL. DO NOT SET OR MODIFY UNLESS INSTRUCTED TO.
-
-acs-grouped-notification-message
-
-string
-
-N/A
-
-Specifies the message to display for grouped notifications, for example, "You have $number$ unread messages." The $number$ variable represents the number of unread messages. This property is also supported in the strings.xml file under the i18n folder for internationalized versions.
-
-acs-push-api-url
-
-string
-
-https://api.cloud.appcelerator.com/
-
-Mobile Backend Services dispatcher URL for Android GCM or FCM push notifications. [Firebase Cloud Messaging](http://firebase.google.com/docs/cloud-messaging/) (FCM) is the new version of GCM. DO NOT SET OR MODIFY UNLESS INSTRUCTED TO.
-
-acs-authbase-url
-
-string
-
-https://secure-identity.cloud.appcelerator.com
-
-**OAuth authentication is no longer supported in the ti.cloud module.
-
-**Arrow Authentication URL.
-
-acs-oauth-key
-
-string
-
-N/A
-
-**OAuth authentication is no longer supported **in the ti.cloud module**.
-
-**ACS OAuth key. Generated when enabling the project for Cloud services.
-
-acs-oauth-secret
-
-string
-
-N/A
-
-**OAuth authentication is no longer supported **in the ti.cloud module**.
-
-**ACS OAuth secret. Generated when enabling the project for Cloud services.
-
-acs-push-type
-
-string
-
-gcm
-
-**Deprecated since Release 3.2.0. The ti.cloudpush module now only supports GCM or FCM. [Firebase Cloud Messaging](http://firebase.google.com/docs/cloud-messaging/) (FCM) is the new version of GCM.
-**
-
-Selects the push notification type for Android devices, either gcm or mqtt.
+| Property Name | Type | Default Value | Description |
+| --- | --- | --- | --- |
+| acs-api-key | string | N/A | Arrow API key. Generated when enabling the project for Cloud services. |
+| acs-base-url | string | https://api.cloud.appcelerator.com | Arrow API URL. DO NOT SET OR MODIFY UNLESS INSTRUCTED TO. |
+| acs-grouped-notification-message | string | N/A | Specifies the message to display for grouped notifications, for example, "You have $number$ unread messages." The $number$ variable represents the number of unread messages. This property is also supported in the strings.xml file under the i18n folder for internationalized versions. |
+| acs-push-api-url | string | https://api.cloud.appcelerator.com/ | Mobile Backend Services dispatcher URL for Android GCM or FCM push notifications. [Firebase Cloud Messaging](http://firebase.google.com/docs/cloud-messaging/) (FCM) is the new version of GCM. DO NOT SET OR MODIFY UNLESS INSTRUCTED TO. |
+| acs-authbase-url | string | https://secure-identity.cloud.appcelerator.com | **OAuth authentication is no longer supported in the ti.cloud module.  <br />  <br />**Arrow Authentication URL. |
+| acs-oauth-key | string | N/A | **OAuth authentication is no longer supported **in the ti.cloud module**.  <br />  <br />**ACS OAuth key. Generated when enabling the project for Cloud services. |
+| acs-oauth-secret | string | N/A | **OAuth authentication is no longer supported **in the ti.cloud module**.  <br />  <br />**ACS OAuth secret. Generated when enabling the project for Cloud services. |
+| acs-push-type | string | gcm | **Deprecated since Release 3.2.0. The ti.cloudpush module now only supports GCM or FCM. [Firebase Cloud Messaging](http://firebase.google.com/docs/cloud-messaging/) (FCM) is the new version of GCM.  <br />**<br /><br />Selects the push notification type for Android devices, either gcm or mqtt. |
 
 ## Google Play Services
 

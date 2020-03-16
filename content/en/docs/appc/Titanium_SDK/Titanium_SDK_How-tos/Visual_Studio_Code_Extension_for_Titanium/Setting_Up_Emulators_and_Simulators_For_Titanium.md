@@ -1,13 +1,12 @@
 {"title":"Setting Up Emulators and Simulators For Titanium","weight":"40"}
 
-* [Installing Android Studio, Android SDK, and Android Virtual Device](#InstallingAndroidStudio,AndroidSDK,andAndroidVirtualDevice)
+* [Installing Android Studio, Android SDK, and Android Virtual Device](#installing-android-studio,-android-sdk,-and-android-virtual-device)
 
-  * [Install Android SDK](#InstallAndroidSDK)
+    * [Install Android SDK](#install-android-sdk)
 
-  * [Install Android Virtual Device](#InstallAndroidVirtualDevice)
+    * [Install Android Virtual Device](#install-android-virtual-device)
 
-* [Install iOS simulator](#InstalliOSsimulator)
-
+* [Install iOS simulator](#install-ios-simulator)
 
 ## Installing Android Studio, Android SDK, and Android Virtual Device
 
@@ -24,7 +23,6 @@ With Android Studio installed, follow these steps to set up a recent SDK:
 2. Click on **Tools** > **SDK Manager**.
 
 3. Place a **checkmark** next to the **SDK** you wish to install and click **OK** to begin the download and installation.
-
 
 ![Android_SDK](/Images/appc/download/attachments/60132172/Android_SDK.png)
 
@@ -48,7 +46,6 @@ To test your app, you need either a device connected to your machine or a virtua
 
 8. Load your IDE and confirm that the Android emulator shows up.
 
-
 ![Screen_Shot_2019-05-14_at_10.55.00_AM](/Images/appc/download/attachments/60132172/Screen_Shot_2019-05-14_at_10.55.00_AM.png)
 
 ## Install iOS simulator
@@ -62,6 +59,5 @@ If you need to build apps for iOS devices, you will need Xcode to install the ne
 3. Click on the **simulator version** you wish to download and use. Note: these are pretty large files (2+ GB).
 
 4. Wait for the download to complete before checking in with your IDE of choice to confirm that the simulator now shows up.
-
 
 ![Xcode](/Images/appc/download/attachments/60132172/Xcode.png)

@@ -2,31 +2,18 @@
 
 Appcelerator CLI 5.2.1 is a patch release that includes a few improvements and several bug fixes.
 
-As of this GA release, the previous CLI patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous CLI patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Component Versions
 
 The following components are shipped with CLI 5.2.1:
 
-Name
-
-Version
-
-Alloy
-
-1.8.2
-
-Arrow Builder
-
-1.7.29
-
-Arrow Cloud CLI
-
-1.2.0
-
-Titanium CLI
-
-5.0.6
+| Name | Version |
+| --- | --- |
+| Alloy | 1.8.2 |
+| Arrow Builder | 1.7.29 |
+| Arrow Cloud CLI | 1.2.0 |
+| Titanium CLI | 5.0.6 |
 
 ## Fixed Issues
 
@@ -43,7 +30,6 @@ Titanium CLI
 * [CLI-967](https://jira.appcelerator.org/browse/CLI-967) - iOS: Arguments to path.join must be strings
 
 * [CLI-973](https://jira.appcelerator.org/browse/CLI-973) - Update Alloy version to 1.8.0
-
 
 ## Improvements
 

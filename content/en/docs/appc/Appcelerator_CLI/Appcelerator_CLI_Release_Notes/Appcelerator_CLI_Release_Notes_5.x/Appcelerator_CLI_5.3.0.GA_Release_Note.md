@@ -2,34 +2,19 @@
 
 Appcelerator CLI 5.3.0.GA is a minor release that includes several bug fixes.
 
-As of this release, CLI 5.2.x will not be supported six months from 5.3.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, CLI 5.2.x will not be supported six months from 5.3.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Component Versions
 
 The following components are shipped with CLI 5.3.0:
 
-Alloy
-
-1.8.7
-
-Arrow Builder
-
-1.7.31
-
-Arrow Cloud CLI
-
-1.2.0
-
-Titanium CLI
-
-5.0.8
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Alloy</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>1.8.7</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Arrow Builder</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>1.7.31</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Arrow Cloud CLI</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>1.2.0</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium CLI</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>5.0.8</p></td></tr></tbody></table>
 
 ## New Features
 
 * [CLI-664](https://jira.appcelerator.org/browse/CLI-664) - Installr App plugin hook
 
-  * App Preview has been integrated with the CLI
-
+    * App Preview has been integrated with the CLI
 
 ## Fixed Issues
 
@@ -43,9 +28,8 @@ Titanium CLI
 
 * [CLI-1000](https://jira.appcelerator.org/browse/CLI-1000) - Uploading app to app preview progress bar is seen multiple times in the studio console
 
-
 ## Improvements
 
 * [CLI-963](https://jira.appcelerator.org/browse/CLI-963) - CLI: enable template options when creating Alloy project
 
-  * Added feature that allows for creating two\_tabbed Alloy project from CLI
+    * Added feature that allows for creating two\_tabbed Alloy project from CLI

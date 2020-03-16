@@ -1,13 +1,12 @@
 {"title":"Titanium Angular Basics","weight":"20"}
 
-* [Project structure](#Projectstructure)
+* [Project structure](#project-structure)
 
-* [Titanium Angular startup](#TitaniumAngularstartup)
+* [Titanium Angular startup](#titanium-angular-startup)
 
-* [Titanium UI elements in Angular](#TitaniumUIelementsinAngular)
+* [Titanium UI elements in Angular](#titanium-ui-elements-in-angular)
 
-* [Layouts](#Layouts)
-
+* [Layouts](#layouts)
 
 ## Project structure
 
@@ -40,7 +39,6 @@ These various files and folders all have a specific purpose:
 * **Resources**: Another generated directory which contains resources for the final app build including Webpack bundles and resources such as images. **DO NOT EDIT ANY **OF THESE** FILES**
 
 * **tiapp.xml**: This is the main configuration file for your project. You can make platform specific configurations and adjust general build or runtime settings. For more info see the [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/).
-
 
 Inside the app folder you'll find all important files that will bootstrap the Angular core inside a Titanium app. This is also the folder you'll be working with most of the time as it contains your Angular source files as well as all other app resources.
 
@@ -91,7 +89,6 @@ Here is what those various files and folder do:
 * **tsconfig.json**: Configuration file for TypeScript
 
 * **webpack.config.json**: Configuration file for Webpack
-
 
 Ahead-of-time compilation issue
 
@@ -187,7 +184,6 @@ Here is what all of the above does in detail:
 
 * (click): This sets up an event listener to the button's click event. It binds to the increaseTapCount method in the component class. You can also pass $event into the function to gain access to the Titanium event: (click)="increaseTapCount($event)".
 
-
 `<``Label`  `color``=``"white"` `[font]="{ fontSize: 32 }"` `top``=``"100"`  `left``=``"10"``>Now on Titanium</``Label``>`
 
 This creates a new Label and sets some properties on it, just like you would on HTML elements. For elements that have a text or title property, you can write the text you want directly between the element tags. Titanium Angular will automatically populate those properties for you. The other attributes of the above code do the following:
@@ -199,7 +195,6 @@ This creates a new Label and sets some properties on it, just like you would on 
 * top: Allows you to specify the top position of the label. The behavior and effect of this property depends in the used Layout and other positioning properties.
 
 * left: Specify the left position of the label. The behavior and effect of this property depends on the used layout and other positioning properties.
-
 
 ## Layouts
 

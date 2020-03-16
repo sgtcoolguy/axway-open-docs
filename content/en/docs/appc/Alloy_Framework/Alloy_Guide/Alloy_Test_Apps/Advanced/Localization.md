@@ -62,25 +62,25 @@ To test the application with localized strings, you need to create the localized
 
 3. In the i18n/en folder, create a file named **strings.xml** with the following content and save it:
 
-  `<``resources``>`
+    `<``resources``>`
 
-  `<``string`  `name``=``"hello_world"``>Hello, world!</``string``>`
+    `<``string`  `name``=``"hello_world"``>Hello, world!</``string``>`
 
-  `</``resources``>`
+    `</``resources``>`
 
-  Note that the value of the <string> element's **name** attribute, hello\_world, corresponds to the name passed as a parameter to the L() function in the XML, TSS, and JavaScript files.
+    Note that the value of the <string> element's **name** attribute, hello\_world, corresponds to the name passed as a parameter to the L() function in the XML, TSS, and JavaScript files.
 
 4. In the i18n/es folder, create another strings.xml file with the following content and save it:
 
-  `<``resources``>`
+    `<``resources``>`
 
-  `<``string`  `name``=``"hello_world"``>Hola, mundo!</``string``>`
+    `<``string`  `name``=``"hello_world"``>Hola, mundo!</``string``>`
 
-  `</``resources``>`
+    `</``resources``>`
 
 5. Build and run the application on a device or simulator/emulator whose language setting is set to either English or Spanish. You should see properly localized language strings. Quit the application, switch the language setting on the device and run the application again. You should see the localized strings for the alternate language, as shown below.
 
-  ![local](/Images/appc/download/attachments/41845663/local.png)
+    ![local](/Images/appc/download/attachments/41845663/local.png)
 
 ## See also
 

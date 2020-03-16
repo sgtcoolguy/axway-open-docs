@@ -1,13 +1,12 @@
 {"title":"A Command Which Outputs a Snippet","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [The Code](#TheCode)
+* [The Code](#the-code)
 
-* [Adding it to a Menu](#AddingittoaMenu)
+* [Adding it to a Menu](#adding-it-to-a-menu)
 
-* [Result](#Result)
-
+* [Result](#result)
 
 ## Overview
 

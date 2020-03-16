@@ -10,14 +10,13 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 API Builder Tools 3.1.0 is a minor release that includes new features, improvements, and bug fixes.
 
-As of this release, API Builder Tools 3.0.x will not be supported six months from 3.1.0's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, API Builder Tools 3.0.x will not be supported six months from 3.1.0's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## New features
 
 * Added the ability to validate generated flows using the Axway Flow SDK
 
 * Implemented selector auto-complete when creating and editing flows in the API Builder UI
-
 
 ## Improvements
 
@@ -30,7 +29,6 @@ As of this release, API Builder Tools 3.0.x will not be supported six months fro
 * Previously, the API SDK generator was used to generate software development kits based on integrated SDK templates. Now, the API Builder SDK generator has been deprecated and the API Builder application exposes its APIs definitions using a standard Swagger format. These API definitions can be consumed by third-party SDK generators to create clients.
 
 * Previously, the API SDK generator was used to generate software development kits based on integrated SDK templates. Now, the API Builder SDK generator has been deprecated and the API Builder application exposes its APIs definitions using a standard Swagger format. These API definitions can be consumed by third-party SDK generators to create clients.
-
 
 ## Fixed issues
 

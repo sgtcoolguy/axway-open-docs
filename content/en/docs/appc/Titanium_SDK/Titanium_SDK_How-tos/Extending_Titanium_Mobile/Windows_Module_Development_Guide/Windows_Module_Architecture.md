@@ -1,19 +1,18 @@
 {"title":"Windows Module Architecture","weight":"30"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Module](#Module)
+* [Module](#module)
 
-  * [Module Lifecycle Events](#ModuleLifecycleEvents)
+    * [Module Lifecycle Events](#module-lifecycle-events)
 
-  * [Methods](#Methods)
+    * [Methods](#methods)
 
-  * [Properties](#Properties)
+    * [Properties](#properties)
 
-  * [Handling Events](#HandlingEvents)
+    * [Handling Events](#handling-events)
 
-  * [More Examples](#MoreExamples)
-
+    * [More Examples](#more-examples)
 
 ## Introduction
 
@@ -22,7 +21,6 @@ The Titanium SDK is based on a modular architecture, which can be utilized to ex
 * **_Module_** : A base class that represents the native binding between your JavaScript code and native code
 
 * **_View_** : The visual representation of a UI component which Titanium can render
-
 
 To return visual data between JavaScript and native code, create a View. The View represents is responsible for exposing the APIs and events that the View supports.
 
@@ -262,7 +260,6 @@ There are variables expanded from TITANIUM\_FUNCTION macro here: arguments as st
 
 * ENSURE\_STRING\_AT\_INDEX(OUT, INDEX)
 
-
 Note that in this macro example OUT is a variable name, and INDEX is a index in the arguments. For example:
 
 ComExampleTest.cpp
@@ -484,7 +481,6 @@ In addition to any additional event arguments passed, Titanium automatically pro
 * source — The source object (proxy) that fired the event
 
 * type — The type of event
-
 
 ### More Examples
 

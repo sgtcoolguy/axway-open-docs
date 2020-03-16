@@ -14,5 +14,4 @@ If you do not want to open the file in its default editor, in the Project Explor
 
 * [Changing your file association preferences](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Editors/Changing_your_file_association_preferences/)
 
-
 ![Editors](/Images/appc/download/attachments/39685860/Editors.png)

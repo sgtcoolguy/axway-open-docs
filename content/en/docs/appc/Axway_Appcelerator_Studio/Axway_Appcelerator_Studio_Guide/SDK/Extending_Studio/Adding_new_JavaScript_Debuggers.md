@@ -10,10 +10,9 @@ Debugger logs created under:
 
 * _workspace_/.metadata/.plugins/com.appcelerator.titanium.mobile/logs/
 
-  * iosdebugger.log
+    * iosdebugger.log
 
-  * androiddebugger.log
-
+    * androiddebugger.log
 
 ### General Control Flow
 
@@ -27,7 +26,6 @@ Debugger logs created under:
 
 5. etc.
 
-
 View the transcript of a debug session at the bottom of this file for more information.
 
 ## Testing
@@ -38,7 +36,6 @@ Create a new file in your home folder, e.g. "studio\_options" with the following
 
 * com.aptana.debug.core/skip\_debugger\_install = true
 
-
 ### OS X instructions
 
 1. Install Studio from the DMG
@@ -48,7 +45,6 @@ Create a new file in your home folder, e.g. "studio\_options" with the following
 3. Edit Info.plist to add two parameters into Eclipse array: "-debug" and the absolute path to the studio\_options file mentioned above (e.g /Users/username/studio\_options).
 
 4. Save the file.
-
 
 ### Windows instructions
 
@@ -69,13 +65,11 @@ But you will still need to have Firefox (any version) installed.
 
 5. From this point you could connect to it from your debug layer on the remote device
 
-
 You don't need to support all commands listed in the protocol spec, but you need to reply to all of them. So simply reply back with "!error message". At the bottom of this message is a sample message flow.
 
 * 'enable' request should turn on debugging, otherwise debug host should be in 'run' mode where only logging to IDE works.
 
 * 'resumed\*start' reply should always be sent beck when debugger is fully set up. basically it is a feedback on 'enable' message.
-
 
 ## Sample Message Flow
 

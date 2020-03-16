@@ -8,49 +8,21 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 This document describes the model update and provides instance configuration and parameters information.
 
-Name
-
-Description
-
-ModelUpdate
-
-A Model specific flow-node. Invokes the Update API on a specified model and returns the response.
+| Name | Description |
+| --- | --- |
+| ModelUpdate | A Model specific flow-node. Invokes the Update API on a specified model and returns the response. |
 
 ## Instance configuration
 
-Property
-
-Description
-
-Required
-
-Type
-
-model
-
-The name of the model of which to invoke the Update API.
-
-yes
-
-string
+| Property | Description | Required | Type |
+| --- | --- | --- | --- |
+| model | The name of the model of which to invoke the Update API. | yes | string |
 
 ## Instance parameters
 
-Property
-
-Description
-
-Type
-
-Required
-
-id
-
-The ID of the record to update.
-
-string
-
-true
+| Property | Description | Type | Required |
+| --- | --- | --- | --- |
+| id | The ID of the record to update. | string | true |
 
 ### Example
 

@@ -4,24 +4,23 @@ Pro or Enterprise Subscription Required
 
 This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Terminology](#Terminology)
+* [Terminology](#terminology)
 
-* [Getting started](#Gettingstarted)
+* [Getting started](#getting-started)
 
-  * [Advanced initialization options](#Advancedinitializationoptions)
+    * [Advanced initialization options](#advanced-initialization-options)
 
-    * [Session timeout](#Sessiontimeout)
+        * [Session timeout](#session-timeout)
 
-  * [Setup user session events](#Setupusersessionevents)
+    * [Setup user session events](#setup-user-session-events)
 
-* [Creating custom events](#Creatingcustomevents)
+* [Creating custom events](#creating-custom-events)
 
-  * [Feature events](#Featureevents)
+    * [Feature events](#feature-events)
 
-  * [Geo events](#Geoevents)
-
+    * [Geo events](#geo-events)
 
 This page describes how to use the AMPLIFY Appcelerator Services Analytics for native Android applications, built with Java and the Android APIs.
 
@@ -37,13 +36,13 @@ For Titanium Applications, see [Appcelerator Analytics](/docs/appc/AMPLIFY_Appce
 
 ## Introduction
 
-Appcelerator Analytics collects real-time data about your application's usage, which can then be viewed in the **[Analytics dashboard](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Client_Applications/#AnalyticsViewingReal-timeandAggregatedAnalytics)**. By default, the Analytics dashboard provides information about app installs, the number of sessions, and average app session length (organized by app name, platform, and geography). Your app can also utilize custom analytic events and event funnels.
+Appcelerator Analytics collects real-time data about your application's usage, which can then be viewed in the **[Analytics dashboard](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Client_Applications/#viewing-real-time-and-aggregated-analytics)**. By default, the Analytics dashboard provides information about app installs, the number of sessions, and average app session length (organized by app name, platform, and geography). Your app can also utilize custom analytic events and event funnels.
 
 This document provides an overview of the features provided by Analytics and how to use them using the Titanium SDK. **If you are developing an iOS application with Objective-C or Swift or an Android application with Java**, see [APS Analytics for iOS](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_iOS/APS_Analytics_for_iOS/) or [APS Analytics for Android](#undefined) for details on using Analytics.
 
 For platform-specific details about how analytics captured, see [Analytics Architecture](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/Analytics_Architecture/).
 
-For information about viewing analytics data, see [Managing Client Applications](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Client_Applications/#AnalyticsViewingReal-timeandAggregatedAnalytics).
+For information about viewing analytics data, see [Managing Client Applications](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Client_Applications/#viewing-real-time-and-aggregated-analytics).
 
 ## Terminology
 
@@ -71,77 +70,75 @@ To integrate the Analytics service with a new or existing Android application:
 
 5. Modify the project's AndroidManifest.xml file to include the following permissions and to add the APSAnalytics package as a service:
 
-  AndroidManifest.xml
+    AndroidManifest.xml
 
-  `<?``xml`  `version``=``"1.0"`  `encoding``=``"utf-8"``?>`
+    `<?``xml`  `version``=``"1.0"`  `encoding``=``"utf-8"``?>`
 
-  `<``manifest`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"`
+    `<``manifest`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"`
 
-  `package``=``"com.appcelerator.sample"`
+    `package``=``"com.appcelerator.sample"`
 
-  `android:versionCode``=``"1"`
+    `android:versionCode``=``"1"`
 
-  `android:versionName``=``"1.0"` `>`
+    `android:versionName``=``"1.0"` `>`
 
-  `<!-- Add these permissions to enable Analytics -->`
+    `<!-- Add these permissions to enable Analytics -->`
 
-  `<``uses``-permission` `android:name``=``"android.permission.ACCESS_NETWORK_STATE"``/>`
+    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_NETWORK_STATE"``/>`
 
-  `<``uses``-permission` `android:name``=``"android.permission.ACCESS_WIFI_STATE"``/>`
+    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_WIFI_STATE"``/>`
 
-  `<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
+    `<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
 
-  `<``uses``-permission` `android:name``=``"android.permission.WRITE_EXTERNAL_STORAGE"`
+    `<``uses``-permission` `android:name``=``"android.permission.WRITE_EXTERNAL_STORAGE"`
 
-  `android:maxSdkVersion``=``"18"` `/>`
+    `android:maxSdkVersion``=``"18"` `/>`
 
-  `<``application``>`
+    `<``application``>`
 
-  `<``activity``>`
+    `<``activity``>`
 
-  `...`
+    `...`
 
-  `</``activity``>`
+    `</``activity``>`
 
-  `<!-- Add this service to enable Analytics -->`
+    `<!-- Add this service to enable Analytics -->`
 
-  `<``service`  `android:name``=``"com.appcelerator.aps.APSAnalyticsService"`
+    `<``service`  `android:name``=``"com.appcelerator.aps.APSAnalyticsService"`
 
-  `android:exported``=``"false"` `/>`
+    `android:exported``=``"false"` `/>`
 
-  `</``application``>`
+    `</``application``>`
 
-  `</``manifest``>`
+    `</``manifest``>`
 
 6. Add the following import statements to the main Activity of the project:
 
-  MainActivity.java
+    MainActivity.java
 
-  `import` `com.appcelerator.aps.APSServiceManager;`
+    `import` `com.appcelerator.aps.APSServiceManager;`
 
-  `import` `com.appcelerator.aps.APSAnalytics;`
+    `import` `com.appcelerator.aps.APSAnalytics;`
 
 7. In the main Activity's onCreate() method, enable the service by calling the APSServiceManager's enable method. Pass the method of the application context as the first argument and the APS application key as the second argument.
 
-  `public`  `void` `onCreate() {`
+    `public`  `void` `onCreate() {`
 
-  `APSServiceManager.getInstance().enable(getApplicationContext(),` `"APP_KEY"``);`
+    `APSServiceManager.getInstance().enable(getApplicationContext(),` `"APP_KEY"``);`
 
-  `}`
+    `}`
 
-  To get your APS App key:
+    To get your APS App key:
 
-  1. Go to the [Dashboard](https://platform.axway.com/).
+    1. Go to the [Dashboard](https://platform.axway.com/).
 
-  2. Select your application from the **Apps** drop-down menu.
+    2. Select your application from the **Apps** drop-down menu.
 
-  3. Click the **Overview** tab.
+    3. Click the **Overview** tab.
 
-  4. Click the **Services** button.
+    4. Click the **Services** button.
 
-  5. Click **Show Key** under the Analytics and Cloud section.
-
-
+    5. Click **Show Key** under the Analytics and Cloud section.
 
 The Android application can now make additional method calls using the [APSAnalytics class](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSAnalytics.html). Before making API calls to the APSAnalytics class, you need to retrieve a shared instance using the getInstance() method. Make APSAnalytics API calls using the shared instance.
 
@@ -166,7 +163,6 @@ On the Android platform, user session events are not automatically sent, unlike 
 2. Call the sendAppForegroundEvent() method inside the main Activity's onResume() method. The foreground event indicates when the application is being used.
 
 3. Call the sendAppBackgroundEvent() method inside the main Activity's onPause() method. The background event indicates when the application has been dismissed.
-
 
 MainActivity.java
 
@@ -206,7 +202,7 @@ MainActivity.java
 
 ## Creating custom events
 
-You use the [A](#!/api/Titanium.Analytics) PSAnalytics API to log and report custom events. [Feature Events](#Featureevents) are for capturing a user action, such as selecting a specific menu option or launching a video.
+You use the [A](#!/api/Titanium.Analytics) PSAnalytics API to log and report custom events. [Feature Events](#feature-events) are for capturing a user action, such as selecting a specific menu option or launching a video.
 
 ### Feature events
 

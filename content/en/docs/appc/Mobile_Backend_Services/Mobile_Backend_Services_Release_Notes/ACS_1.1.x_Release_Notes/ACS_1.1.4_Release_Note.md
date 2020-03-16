@@ -6,30 +6,29 @@ The 1.1.4 release of Appcelerator Cloud Services includes the following updates 
 
 * Added a new count API to that returns the total number of objects of the specified type. This API is available to the following ACS types: [ACLs](/arrowdb/latest/#!/api/ACLs), [Chats](/arrowdb/latest/#!/api/Chats), [Checkins](/arrowdb/latest/#!/api/Checkins), [PhotoCollections](/arrowdb/latest/#!/api/PhotoCollections), [Emails](/arrowdb/latest/#!/api/Emails), [Events](/arrowdb/latest/#!/api/Events), [Files](/arrowdb/latest/#!/api/Files), [GeoFences](/arrowdb/latest/#!/api/GeoFences), [KeyValues](/arrowdb/latest/#!/api/KeyValues), [Messages](/arrowdb/latest/#!/api/Messages), [CustomObjects](/arrowdb/latest/#!/api/CustomObjects), [Photos](/arrowdb/latest/#!/api/Photos), [Places](/arrowdb/latest/#!/api/Places), [Posts](/arrowdb/latest/#!/api/Posts), [PushNotifications](/arrowdb/latest/#!/api/PushNotifications), [Reviews](/arrowdb/latest/#!/api/Reviews), [Statuses](/arrowdb/latest/#!/api/Statuses), and [Users](/arrowdb/latest/#!/api/Users).
 
-  * For example, the following shows an example cURL request and response for the number of Photos:
+    * For example, the following shows an example cURL request and response for the number of Photos:
 
-    `$ curl -b cookies.txt -c cookies.txt` `"https://api.cloud.appcelerator.com/v1/photos/count.json?key=<YOUR_APP_KEY>&pretty_json=true"`
+        `$ curl -b cookies.txt -c cookies.txt` `"https://api.cloud.appcelerator.com/v1/photos/count.json?key=<YOUR_APP_KEY>&pretty_json=true"`
 
-  * Example response:
+    * Example response:
 
-    `{`
+        `{`
 
-    `"meta"``: {`
+        `"meta"``: {`
 
-    `"code"``: 200,`
+        `"code"``: 200,`
 
-    `"status"``:` `"ok"``,`
+        `"status"``:` `"ok"``,`
 
-    `},`
+        `},`
 
-    `"response"``: {`
+        `"response"``: {`
 
-    `"photos"``: 10.0`
+        `"photos"``: 10.0`
 
-    `}`
+        `}`
 
-    `}`
-
+        `}`
 
 ## Bug fixes
 

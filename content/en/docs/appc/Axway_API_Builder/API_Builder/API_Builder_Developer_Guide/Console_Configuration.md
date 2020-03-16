@@ -6,44 +6,43 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-  * [Example](#Example)
+    * [Example](#example)
 
-* [Settings](#Settings)
+* [Settings](#settings)
 
-  * [admin](#admin)
+    * [admin](#admin)
 
-  * [apikey\_development](#apikey_development)
+    * [apikey\_development](#apikey_development)
 
-  * [apikey\_production](#apikey_production)
+    * [apikey\_production](#apikey_production)
 
-  * [APIKeyAuthPlugin](#APIKeyAuthPlugin)
+    * [APIKeyAuthPlugin](#apikeyauthplugin)
 
-  * [APIKeyAuthType](#APIKeyAuthType)
+    * [APIKeyAuthType](#apikeyauthtype)
 
-  * [apiPrefix](#apiPrefix)
+    * [apiPrefix](#apiprefix)
 
-  * [bodyParser](#bodyParser)
+    * [bodyParser](#bodyparser)
 
-  * [busboy](#busboy)
+    * [busboy](#busboy)
 
-  * [connectors](#connectors)
+    * [connectors](#connectors)
 
-  * [cors](#cors)
+    * [cors](#cors)
 
-  * [defaultConnector](#defaultConnector)
+    * [defaultConnector](#defaultconnector)
 
-  * [ignoreDuplicateModels](#ignoreDuplicateModels)
+    * [ignoreDuplicateModels](#ignoreduplicatemodels)
 
-  * [logging](#logging)
+    * [logging](#logging)
 
-  * [logLevel](#logLevel)
+    * [logLevel](#loglevel)
 
-  * [port](#port)
+    * [port](#port)
 
-  * [ssl](#ssl)
-
+    * [ssl](#ssl)
 
 ## Introduction
 
@@ -127,53 +126,13 @@ You can override the configuration file settings with an environment variable. F
 
 Configures the Admin Console. The admin object may contain the following key-value pairs:
 
-Key
-
-Type
-
-Default
-
-Description
-
-allowedHosts
-
-Array<String>
-
-\-
-
-When the application is in production, restrict access to the Admin Console to the specified hosts
-
-disableAPIDoc
-
-Boolean
-
-false
-
-Set to true to not display the generated API Docs. Changing the setting only works in production. Swagger is always available in dev mode.
-
-enabled
-
-Boolean
-
-true
-
-Set to true to enable the Admin Console.
-
-validEmails
-
-Array<String>
-
-developer's e-mail address
-
-When the application is in production, restrict access to the Admin Console to the specified accounts.
-
-validOrgs
-
-Array<Number>
-
-developer's organization
-
-When the application is in production, restrict access to the Admin Console to the specified organizations.
+| Key | Type | Default | Description |
+| --- | --- | --- | --- |
+| allowedHosts | Array<String> | \- | When the application is in production, restrict access to the Admin Console to the specified hosts |
+| disableAPIDoc | Boolean | false | Set to true to not display the generated API Docs. Changing the setting only works in production. Swagger is always available in dev mode. |
+| enabled | Boolean | true | Set to true to enable the Admin Console. |
+| validEmails | Array<String> | developer's e-mail address | When the application is in production, restrict access to the Admin Console to the specified accounts. |
+| validOrgs | Array<Number> | developer's organization | When the application is in production, restrict access to the Admin Console to the specified organizations. |
 
 ### apikey\_development
 
@@ -203,21 +162,9 @@ Prefix path to use for the API requests for Models and APIs. Each endpoint you d
 
 Configures body-parser middleware settings. The bodyParser object may contain the following key-value pairs:
 
-Key
-
-Type
-
-Default
-
-Description
-
-limit
-
-Number/String
-
-1mb
-
-Sets the maximum request body size in bytes for the body parser middleware.
+| Key | Type | Default | Description |
+| --- | --- | --- | --- |
+| limit | Number/String | 1mb | Sets the maximum request body size in bytes for the body parser middleware. |
 
 ### busboy
 
@@ -233,23 +180,10 @@ Most connectors will have their own default configuration file in the conf direc
 
 Configures the CORS settings. The cors object may contain the following key-value pairs:
 
-Key
-
-Type
-
-Description
-
-Access-Control-Allow-Origin
-
-String
-
-Specifies the URI that can access the server. Defaults to none.
-
-safeHeaders
-
-Array<String>
-
-HTTP headers to expose and allow, that is, the specified value is set for Access-Control-Expose-Headers and Access-Control-Allow-Headers.
+| Key | Type | Description |
+| --- | --- | --- |
+| Access-Control-Allow-Origin | String | Specifies the URI that can access the server. Defaults to none. |
+| safeHeaders | Array<String> | HTTP headers to expose and allow, that is, the specified value is set for Access-Control-Expose-Headers and Access-Control-Allow-Headers. |
 
 ### defaultConnector
 
@@ -263,29 +197,10 @@ Set to true to ignore duplicate Model definitions. Defaults to false, which will
 
 Configures the logger utility. The logging object may contain the following key-value pairs:
 
-Key
-
-Type
-
-Default
-
-Description
-
-logdir
-
-String
-
-./logs
-
-Location of the transaction logs if enabled
-
-transactionLogEnabled
-
-Boolean
-
-true
-
-Set to true to enable transaction logs
+| Key | Type | Default | Description |
+| --- | --- | --- | --- |
+| logdir | String | ./logs | Location of the transaction logs if enabled |
+| transactionLogEnabled | Boolean | true | Set to true to enable transaction logs |
 
 ### logLevel
 
@@ -299,18 +214,6 @@ Sets the port number for the server if the PORT environment variable is not set.
 
 Configures SSL settings for the server. The ssl object may contain the following key-value pairs:
 
-Key
-
-Type
-
-Default
-
-Description
-
-port
-
-Number
-
-8443
-
-SSL port number
+| Key | Type | Default | Description |
+| --- | --- | --- | --- |
+| port | Number | 8443 | SSL port number |

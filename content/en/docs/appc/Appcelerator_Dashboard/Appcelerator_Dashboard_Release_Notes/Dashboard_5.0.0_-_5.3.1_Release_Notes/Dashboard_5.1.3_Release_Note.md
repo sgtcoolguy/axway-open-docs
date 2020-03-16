@@ -16,7 +16,6 @@ Dashboard 5.1.3 is a patch release, which includes new features, several improve
 
 * Analytics chart series can be toggled on or off by clicking the corresponding colored disc in the table.
 
-
 ## Improvements
 
 * Removed "Last Occurrence" column from analytics table views.
@@ -26,7 +25,6 @@ Dashboard 5.1.3 is a patch release, which includes new features, several improve
 * Improved visibility of selected rows in _Mobile Backend Service_ table views.
 
 * Event names selected for event funnels are no longer lowercase. (**NOTE**: If you have previously created event funnels with mixed case event names, you may need to recreate these funnels as the event names are now case-sensitive.)
-
 
 ## Fixed issues
 

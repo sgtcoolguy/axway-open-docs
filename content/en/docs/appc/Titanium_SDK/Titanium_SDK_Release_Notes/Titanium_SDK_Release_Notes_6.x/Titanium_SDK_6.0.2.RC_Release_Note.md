@@ -2,22 +2,21 @@
 
 ## Contents
 
-* [About This Release](#AboutThisRelease)
+* [About This Release](#about-this-release)
 
-* [New features](#Newfeatures)
+* [New features](#new-features)
 
-  * [iOS platform](#iOSplatform)
+    * [iOS platform](#ios-platform)
 
-* [Fixed issues patch releases](#Fixedissuespatchreleases)
+* [Fixed issues patch releases](#fixed-issues-patch-releases)
 
-* [API changes](#APIchanges)
-
+* [API changes](#api-changes)
 
 ## About This Release
 
 Titanium SDK 6.0.2.RC is a patch release of the SDK, addressing high-priority issues from previous releases.
 
-As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## New features
 
@@ -25,8 +24,7 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 * [TIMOB-11278](https://jira.appcelerator.org/browse/TIMOB-11278) - iOS: Add method to ignore invalid SSL certificate
 
-  * Added support for ignoreSslError property for Titanium.UI.WebView API
-
+    * Added support for ignoreSslError property for Titanium.UI.WebView API
 
 ## Fixed issues patch releases
 
@@ -71,7 +69,6 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 * [TIMOB-24394](https://jira.appcelerator.org/browse/TIMOB-24394) - iOS: "Unable to locate iOS Package Application tool" using Xcode 8.3 for device builds
 
 * [TIMOB-24395](https://jira.appcelerator.org/browse/TIMOB-24395) - iOS: subsequent dist builds fail
-
 
 ## API changes
 

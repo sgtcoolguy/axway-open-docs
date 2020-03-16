@@ -1,23 +1,22 @@
 {"title":"Titanium SDK Getting Started","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Prerequisites](#Prerequisites)
+* [Prerequisites](#prerequisites)
 
-* [Download and install Studio](#DownloadandinstallStudio)
+* [Download and install Studio](#download-and-install-studio)
 
-  * [First Launch](#FirstLaunch)
+    * [First Launch](#first-launch)
 
-  * [Installing the platform SDKs](#InstallingtheplatformSDKs)
+    * [Installing the platform SDKs](#installing-the-platform-sdks)
 
-  * [Checking for Studio and SDK updates](#CheckingforStudioandSDKupdates)
+    * [Checking for Studio and SDK updates](#checking-for-studio-and-sdk-updates)
 
-* [First Titanium app](#FirstTitaniumapp)
+* [First Titanium app](#first-titanium-app)
 
-* [Troubleshooting](#Troubleshooting)
+* [Troubleshooting](#troubleshooting)
 
-* [Next steps](#Nextsteps)
-
+* [Next steps](#next-steps)
 
 ## Overview
 
@@ -34,7 +33,6 @@ Your system environment must meet the following requirements to run Studio:
 * **Java Runtime:** Oracle JDK (no other brand of Java is suitable)
 
 * **Node.js:** Required for the Titanium command-line tools like the CLI, Alloy and AMPLIFY Runtime Services
-
 
 For Windows, you can use either 32-bit or 64-bit versions of Java JDK. Please refer to [Studio Java Support](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/Studio_Java_Support/) for more information.
 
@@ -53,7 +51,6 @@ To download Studio you must have an AMPLIFY Appcelerator Services account. Visit
 3. Download the installer or ZIP file for your operating system.
 
 4. Launch the downloaded installer.
-
 
 For detailed install instructions, see [Axway Appcelerator Studio Getting Started](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/).
 
@@ -82,7 +79,6 @@ The first time you launch Studio the **Platform Configuration** dialog opens. Th
 2. Optionally click **Settings** next to each platform to customize the installation configuration. For more details, see [Installing Platform SDKs](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/).
 
 3. Click **Configure** to start the installation process.
-
 
 Studio begins downloading and installing each SDK you selected, according to the settings you specified. In the case of iOS, Studio launches the App Store application installed on your Mac to the XCode download page.
 

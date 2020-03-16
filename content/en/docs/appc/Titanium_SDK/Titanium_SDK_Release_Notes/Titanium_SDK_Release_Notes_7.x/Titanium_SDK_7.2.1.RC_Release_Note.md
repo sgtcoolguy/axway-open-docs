@@ -1,26 +1,24 @@
 {"title":"Titanium SDK 7.2.1.RC 27 July 2018","weight":"180"}
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [Community credits](#Communitycredits)
+* [Community credits](#community-credits)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-* [API changes](#APIchanges)
+* [API changes](#api-changes)
 
-  * [New APIs](#NewAPIs)
-
+    * [New APIs](#new-apis)
 
 ## About this release
 
 Titanium SDK 7.2.1.RC is a patch release of the SDK, addressing internal and a few bug issues from previous releases.
 
-As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Community credits
 
 * [Sergey Volkov](https://github.com/drauggres) - [TIMOB-26239](https://jira.appcelerator.org/browse/TIMOB-26239) - Android: Window leak in Ti.UI.currentWindow
-
 
 ## Fixed issues
 
@@ -30,33 +28,14 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 * [TIMOB-26239](https://jira.appcelerator.org/browse/TIMOB-26239) - Android: Window leak in Ti.UI.currentWindow
 
-
 ## API changes
 
 ### New APIs
 
 The following APIs are new or have expanded platform support in Release 7.2.1 as of August 17th, 2018.
 
-API
-
-Type
-
-Notes
-
-Titanium.Analytics.getOptedOut
-
-method
-
-Gets the value of the Titanium.Analytics.optedOut property. (New API, supported on Android, iPhone, iPad and Windows Phone.)
-
-Titanium.Analytics.optedOut
-
-property
-
-Allows the user to opt out from Analytics during runtime to comply to GPDR. (New API, supported on Android, iPhone, iPad and Windows Phone.)
-
-Titanium.Analytics.setOptedOut
-
-method
-
-Sets the value of the Titanium.Analytics.optedOut property. (New API, supported on Android, iPhone, iPad and Windows Phone.)
+| API | Type | Notes |
+| --- | --- | --- |
+| Titanium.Analytics.getOptedOut | method | Gets the value of the Titanium.Analytics.optedOut property. (New API, supported on Android, iPhone, iPad and Windows Phone.) |
+| Titanium.Analytics.optedOut | property | Allows the user to opt out from Analytics during runtime to comply to GPDR. (New API, supported on Android, iPhone, iPad and Windows Phone.) |
+| Titanium.Analytics.setOptedOut | method | Sets the value of the Titanium.Analytics.optedOut property. (New API, supported on Android, iPhone, iPad and Windows Phone.) |

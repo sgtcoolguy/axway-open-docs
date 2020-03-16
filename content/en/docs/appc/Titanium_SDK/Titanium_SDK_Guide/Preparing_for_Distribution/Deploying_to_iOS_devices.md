@@ -1,33 +1,32 @@
 {"title":"Deploying to iOS devices","weight":"30"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [Apple's Developer program](#Apple'sDeveloperprogram)
+    * [Apple's Developer program](#apple's-developer-program)
 
-  * [Obtain a development certificate](#Obtainadevelopmentcertificate)
+    * [Obtain a development certificate](#obtain-a-development-certificate)
 
-    * [Back up your private key](#Backupyourprivatekey)
+        * [Back up your private key](#Backupyourprivatekey)
 
-  * [Register your test devices](#Registeryourtestdevices)
+    * [Register your test devices](#register-your-test-devices)
 
-  * [Create an App ID](#CreateanAppID)
+    * [Create an App ID](#create-an-app-id)
 
-  * [Create and install a development provisioning profile](#Createandinstalladevelopmentprovisioningprofile)
+    * [Create and install a development provisioning profile](#create-and-install-a-development-provisioning-profile)
 
-  * [Build your app, embedding the profile within the app's bundle](#Buildyourapp,embeddingtheprofilewithintheapp'sbundle)
+    * [Build your app, embedding the profile within the app's bundle](#build-your-app,-embedding-the-profile-within-the-app's-bundle)
 
-  * [Building your app with the CLI](#BuildingyourappwiththeCLI)
+    * [Building your app with the CLI](#building-your-app-with-the-cli)
 
-  * [Installing apps to remote devices](#Installingappstoremotedevices)
+    * [Installing apps to remote devices](#installing-apps-to-remote-devices)
 
-  * [Adding iTunes artwork](#AddingiTunesartwork)
+    * [Adding iTunes artwork](#adding-itunes-artwork)
 
-  * [References](#References)
+    * [References](#references)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Objective
 
@@ -48,7 +47,6 @@ In order to install your app to an iOS device for testing, you need to complete 
 5. Create and install a development provisioning profile
 
 6. Build your app, embedding the profile within the app's bundle. This step takes care of installing to a locally-connected device as well. We will cover distributing your app to remote testers below as well.
-
 
 ### Apple's Developer program
 
@@ -84,7 +82,6 @@ To create a developer's certificate:
 
 9. Double-click the file to install it to your keychain.
 
-
 In addition to your developer certificate, you will need to download and install the WWDR Intermediate Certificate, provided by Apple. You can download this file from the iOS Certificates, Identifiers & Profiles page during the first step when you created a certificate. Double-click the resulting file to install it to your keychain.
 
 ###### Back up your private key
@@ -100,7 +97,6 @@ It is critical that you save your private key somewhere safe in the event that y
 4. You will be prompted to create a password which will be used when you attempt to import this key on another computer.
 
 5. You can now transfer this .p12 file between systems. Double-click on the .p12 file to install it on a system. You will be prompted for the password you entered above.
-
 
 ### Register your test devices
 
@@ -120,7 +116,6 @@ Using iTunes to determine the UDID:
 
 5. You might want to paste that someplace, such as a text file or email message to save it for later.
 
-
 Using Xcode 6 and later to determine the UDID:
 
 1. Connect the device to your computer.
@@ -135,7 +130,6 @@ Using Xcode 6 and later to determine the UDID:
 
 6. You might want to paste that someplace, such as a text file or email message to save it for later.
 
-
 To register your device:
 
 1. Log in to the [Apple Developer Member Center](https://developer.apple.com/membercenter/) as the Team Admin or Agent.
@@ -147,7 +141,6 @@ To register your device:
 4. Give your device a name (this is for your convenience) and paste in the UDID you copied from iTunes or Xcode.
 
 5. Click **Continue**.
-
 
 ### Create an App ID
 
@@ -171,12 +164,11 @@ To create an App ID:
 
 7. Select the App ID Suffix. Be sure to use a reverse-domain style:
 
-  1. Choose **Explicit App ID** and enter the App ID in your tiapp.xml file as the Bundle ID (or set your App ID to this Bundle ID). Use this options if you enabled the previously mentioned services.
+    1. Choose **Explicit App ID** and enter the App ID in your tiapp.xml file as the Bundle ID (or set your App ID to this Bundle ID). Use this options if you enabled the previously mentioned services.
 
-  2. Choose **Wildcard App ID** to use a single ID to match multiple applications. Enter an asterisk (\*) as the last digit of the Bundle ID.
+    2. Choose **Wildcard App ID** to use a single ID to match multiple applications. Enter an asterisk (\*) as the last digit of the Bundle ID.
 
 8. Click **Continue**.
-
 
 ### Create and install a development provisioning profile
 
@@ -201,7 +193,6 @@ You are now ready to create the provisioning profile file, which gathers togethe
 9. Click **Download** to save your provisioning profile file (.mobileprovision) to your computer, then click **Done**.
 
 10. If you are the Team Agent creating this provisioning profile for a team member, email or distribute it to him or her.
-
 
 You have two options to install the provisioning profile file onto your development computer. You can drag the file and drop it on the Xcode icon, or you can install it from Studio by following the steps in the following section. Either way, installing the provisioning profile is a one-time operation (on each computer, until it expires).
 
@@ -256,7 +247,6 @@ You have various options for installing apps on remote devices. Of course, you w
 
 * Use an "over the air" distribution system, such as TestFlight App, DIAWI, AppSendr, or HockeyKit. The first three are services you can subscribe to. The last is an open-source system that you can install on your own web server.
 
-
 You upload the .mobileprovision and IPA files to the OTA system. Your registered users receive a notification by email (in some cases, users install a small app published by the OTA provider and receive notifications via that app). They're provided a download link, which installs the app onto their device. When you publish updates, users receive new notifications to download the new version.
 
 Some of these systems enable you to gather user feedback, crash logs, and similar data from testers. There are free modules that help you integrate TestFlight App's data collection routines into your app.
@@ -273,7 +263,6 @@ Adding iTunes artwork to your project gives your app a polished look when you ar
 
 4. Do a clean build of your project for device.
 
-
 Your application icon should now appear in iTunes.
 
 If the _iTunesArtwork_ files are missing from your project, they will be automatically generated from the _DefaultIcon-ios.png_ file in your project's root folder.
@@ -281,7 +270,6 @@ If the _iTunesArtwork_ files are missing from your project, they will be automat
 ### References
 
 * [Apple's Developer Center](http://developer.apple.com)
-
 
 ## Summary
 

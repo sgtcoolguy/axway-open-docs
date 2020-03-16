@@ -6,12 +6,11 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Block definition](#Blockdefinition)
+* [Block definition](#block-definition)
 
-* [Example](#Example)
-
+* [Example](#example)
 
 ## Introduction
 
@@ -29,38 +28,14 @@ Place all Block files in the project's blocks folder. You can only declare one B
 
 3. Exports the defined block using the module.exports variable
 
-
 Set the following keys in the object passed to the Block.extend() method to define the Block:
 
-Name
-
-Required
-
-Description
-
-name
-
-true
-
-Block name. This name should be used when specifying blocks in your API endpoint definition. Assign the name value to either the before or after property in the API definition object to use it.
-
-description
-
-true
-
-Human useful description to display in the documentation.
-
-execute
-
-true
-
-The function containing the logic for your block. All of your runnable code goes in the execute function. This function is passed a request, response, and next object to be used within your block. Once you are done with your block code, always call next() to continue on to the next step in the request flow.
-
-documented
-
-false
-
-Determines whether to generate API documentation (true) or not (false). The default value is true.
+| Name | Required | Description |
+| --- | --- | --- |
+| name | true | Block name. This name should be used when specifying blocks in your API endpoint definition. Assign the name value to either the before or after property in the API definition object to use it. |
+| description | true | Human useful description to display in the documentation. |
+| execute | true | The function containing the logic for your block. All of your runnable code goes in the execute function. This function is passed a request, response, and next object to be used within your block. Once you are done with your block code, always call next() to continue on to the next step in the request flow. |
+| documented | false | Determines whether to generate API documentation (true) or not (false). The default value is true. |
 
 ## Example
 

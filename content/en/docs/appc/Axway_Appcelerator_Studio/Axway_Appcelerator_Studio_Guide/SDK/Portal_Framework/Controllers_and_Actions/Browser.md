@@ -1,19 +1,18 @@
 {"title":"Browser","weight":"10"}
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Invocation](#Invocation)
+* [Invocation](#invocation)
 
-* [Open a page internally](#Openapageinternally)
+* [Open a page internally](#open-a-page-internally)
 
-* [Open a page externally](#Openapageexternally)
+* [Open a page externally](#open-a-page-externally)
 
-* [Configure Browsers](#ConfigureBrowsers)
+* [Configure Browsers](#configure-browsers)
 
-* [Get the currently configured browsers](#Getthecurrentlyconfiguredbrowsers)
+* [Get the currently configured browsers](#get-the-currently-configured-browsers)
 
-* [Example](#Example)
-
+* [Example](#example)
 
 ## Requirements
 

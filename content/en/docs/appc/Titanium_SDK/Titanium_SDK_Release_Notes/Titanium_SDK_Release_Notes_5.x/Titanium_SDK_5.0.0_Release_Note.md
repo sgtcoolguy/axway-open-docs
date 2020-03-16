@@ -4,80 +4,79 @@
 
 ### Contents
 
-* [About This Release](#AboutThisRelease)
+* [About This Release](#about-this-release)
 
-  * [Android Support](#AndroidSupport)
+    * [Android Support](#android-support)
 
-  * [CLI 5.0.0](#CLI5.0.0)
+    * [CLI 5.0.0](#cli-5.0.0)
 
-  * [iOS and watchOS Support](#iOSandwatchOSSupport)
+    * [iOS and watchOS Support](#ios-and-watchos-support)
 
-  * [Studio 4.3.0](#Studio4.3.0)
+    * [Studio 4.3.0](#studio-4.3.0)
 
-* [Notice of Feature and Behavior Changes](#NoticeofFeatureandBehaviorChanges)
+* [Notice of Feature and Behavior Changes](#notice-of-feature-and-behavior-changes)
 
-  * [Android Platform](#AndroidPlatform)
+    * [Android Platform](#android-platform)
 
-    * [Cookie Expiration](#CookieExpiration)
+        * [Cookie Expiration](#cookie-expiration)
 
-  * [iOS Platform](#iOSPlatform)
+    * [iOS Platform](#ios-platform)
 
-    * [Application Transport Security](#ApplicationTransportSecurity)
+        * [Application Transport Security](#application-transport-security)
 
-    * [Contacts](#Contacts)
+        * [Contacts](#contacts)
 
-    * [Icons and Launch Images](#IconsandLaunchImages)
+        * [Icons and Launch Images](#icons-and-launch-images)
 
-    * [IPv6 DNS64/NAT64 Compatibility](#IPv6DNS64/NAT64Compatibility)
+        * [IPv6 DNS64/NAT64 Compatibility](#ipv6-dns64/nat64-compatibility)
 
-    * [ListView Edit Actions](#ListViewEditActions)
+        * [ListView Edit Actions](#listview-edit-actions)
 
-  * [Windows Platform](#WindowsPlatform)
+    * [Windows Platform](#windows-platform)
 
-    * [Windows Publisher ID](#WindowsPublisherID)
+        * [Windows Publisher ID](#windows-publisher-id)
 
-* [New Features](#NewFeatures)
+* [New Features](#new-features)
 
-  * [Android Platform](#AndroidPlatform.1)
+    * [Android Platform](#android-platform)
 
-    * [Large Icon Support for Notifications](#LargeIconSupportforNotifications)
+        * [Large Icon Support for Notifications](#large-icon-support-for-notifications)
 
-    * [Network Support](#NetworkSupport)
+        * [Network Support](#network-support)
 
-    * [Titanium Themes](#TitaniumThemes)
+        * [Titanium Themes](#titanium-themes)
 
-  * [iOS Platform](#iOSPlatform.1)
+    * [iOS Platform](#ios-platform)
 
-    * [Attributed String Line Break](#AttributedStringLineBreak)
+        * [Attributed String Line Break](#attributed-string-line-break)
 
-    * [Handoff](#Handoff)
+        * [Handoff](#handoff)
 
-    * [Icons and Launch Images](#IconsandLaunchImages.1)
+        * [Icons and Launch Images](#icons-and-launch-images)
 
-    * [Spotlight Search](#SpotlightSearch)
+        * [Spotlight Search](#spotlight-search)
 
-    * [Watch Connectivity](#WatchConnectivity)
+        * [Watch Connectivity](#watch-connectivity)
 
-  * [Windows Platform](#WindowsPlatform.1)
+    * [Windows Platform](#windows-platform)
 
-    * [API Parity](#APIParity)
+        * [API Parity](#api-parity)
 
-    * [Direct API Access](#DirectAPIAccess)
+        * [Direct API Access](#direct-api-access)
 
-* [Known Issues](#KnownIssues)
+* [Known Issues](#known-issues)
 
-  * [Camera Causes Application to Crash with Android SDK 6.0](#CameraCausesApplicationtoCrashwithAndroidSDK6.0)
+    * [Camera Causes Application to Crash with Android SDK 6.0](#camera-causes-application-to-crash-with-android-sdk-6.0)
 
-  * [Can Only Detect One iOS 9.0 Device](#CanOnlyDetectOneiOS9.0Device)
+    * [Can Only Detect One iOS 9.0 Device](#can-only-detect-one-ios-9.0-device)
 
-* [API Changes](#APIChanges)
+* [API Changes](#api-changes)
 
-  * [New APIs](#NewAPIs)
+    * [New APIs](#new-apis)
 
-  * [Deprecated APIs](#DeprecatedAPIs)
+    * [Deprecated APIs](#deprecated-apis)
 
-  * [Removed APIs](#RemovedAPIs)
-
+    * [Removed APIs](#removed-apis)
 
 ## About This Release
 
@@ -89,7 +88,7 @@ This Release introduces a number of new features. See [New Features](https://doc
 
 This Release includes over 150 bug fixes and improvements, see the [full list of issues that were addressed in Release 5.0.0](https://jira.appcelerator.org/issues/?filter=16923).
 
-As of this release, Titanium SDK 4.x will not be supported one calendar year from 5.0.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Titanium SDK 4.x will not be supported one calendar year from 5.0.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ### Android Support
 
@@ -116,7 +115,6 @@ To get started with watchOS 2, see:
 * [Integrate a WatchKit App Built in Xcode](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/Integrate_a_WatchKit_App_Built_in_Xcode/)
 
 * [appc-sample-watchos2](https://github.com/appcelerator-developer-relations/appc-sample-watchos2)
-
 
 ### Studio 4.3.0
 
@@ -210,7 +208,6 @@ Set the android:theme attribute of the Android manifest application element or s
 
 * Theme.AppCompat.NoTitleBar.Fullscreen: Same as Theme.AppCompat.NoTitleBar with a fullscreen window (covers the status bar).
 
-
 ### iOS Platform
 
 This section lists new features and improvements only available on the iOS platform.
@@ -228,7 +225,6 @@ For more information, see:
 * [Titanium.App.iOS.UserActivity API reference](#!/api/Titanium.App.iOS.UserActivity)
 
 * [Handoff User Activites guide](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/Handoff_User_Activities/)
-
 
 #### Icons and Launch Images
 
@@ -252,7 +248,6 @@ For more information, see:
 
 * [appc-sample-appsearch](https://github.com/appcelerator-developer-relations/appc-sample-appsearch)
 
-
 #### Watch Connectivity
 
 To communicate with watchOS 2 applications, use the [Titanum.WatchSession API](#!/api/Titanium.WatchSession) to exchange data and files.
@@ -264,7 +259,6 @@ To get started with Watch Connectivity, see:
 * [Integrate a WatchKit App Built in Xcode](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/Integrate_a_WatchKit_App_Built_in_Xcode/)
 
 * [appc-sample-watchos2](https://github.com/appcelerator-developer-relations/appc-sample-watchos2)
-
 
 ### Windows Platform
 
@@ -279,7 +273,6 @@ The Windows Platform expands support for several APIs, including:
 * Events for [Titanium.Media.AudioPlayer](#!/api/Titanium.Media.AudioPlayer), [Titanium.Media.Sound](#!/api/Titanium.Media.Sound) and [Titanium.Media.VideoPlayer](#!/api/Titanium.Media.VideoPlayer)
 
 * Expanded support for [Titanium.UI.Button](#!/api/Titanium.UI.Button) [Titanium.UI.ScrollView](#!/api/Titanium.UI.ScrollView) and [Titanium.UI.View](#!/api/Titanium.UI.View)
-
 
 For details, see the [New APIs section below](https://docs.appcelerator.com/platform/release-notes/?version=5.0.0.GA#new_apis).
 
@@ -309,890 +302,163 @@ When using Xcode 7, the Titanium SDK can only detect one iOS 9.0 if multiple dev
 
 The following APIs are new or have expanded platform support in Release 5.0.0 as of September 16th, 2015.
 
-API
-
-Type
-
-Notes
-
-Titanium.Android.Notification.getLargeIcon
-
-method
-
-Gets the value of the Titanium.Android.Notification.largeIcon property. (New API, supported on Android.)
-
-Titanium.Android.Notification.largeIcon
-
-property
-
-Add a large icon to the notification (and the ticker on some devices) specified as an Android resource ID, or a local URL to a density-specific image. (New API, supported on Android.)
-
-Titanium.Android.Notification.setLargeIcon
-
-method
-
-Sets the value of the Titanium.Android.Notification.largeIcon property. (New API, supported on Android.)
-
-Titanium.App.iOS.SearchableIndex
-
-object
-
-The SearchableIndex module is used to add or remove Ti.App.iOS.SearchableItem objects from the device search index. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.SearchableItem
-
-object
-
-Used to create a unique object containing all of the search information that will appear in the device search index. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.SearchableItemAttributeSet
-
-object
-
-The SearchableItemAttributeSet module defines metadata properties for SearchItem and UserActivity objects. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_APPLE\_ICNS
-
-property
-
-Uniform type identifier for Mac OS icon images. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_APPLE\_PROTECTED\_MPEG4\_AUDIO
-
-property
-
-Uniform type identifier for protected MPEG-4 audio (iTunes music store format). (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_AUDIO
-
-property
-
-Uniform type identifier for all audio content. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_BMP
-
-property
-
-Uniform type identifier for Windows bitmap images. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_FLAT\_RTFD
-
-property
-
-Uniform type identifier for Rich Text with content embedding, pasteboard format. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_GIF
-
-property
-
-Uniform type identifier for GIF images. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_HTML
-
-property
-
-Uniform type identifier for HTML. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_ICO
-
-property
-
-Uniform type identifier for Windows icon images. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_IMAGE
-
-property
-
-Uniform type identifier for all image types. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_JPEG
-
-property
-
-Uniform type identifier for JPEG images. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_JPEG2000
-
-property
-
-Uniform type identifier for JPEG 2000 images. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_MOVIE
-
-property
-
-Uniform type identifier for all audiovisual content. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_MP3
-
-property
-
-Uniform type identifier for MP3 audio. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_MPEG
-
-property
-
-Uniform type identifier for MPEG-1 and MPEG-2 content. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_MPEG4
-
-property
-
-Uniform type identifier for MPEG-4 content. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_MPEG4\_AUDIO
-
-property
-
-Uniform type identifier for MPEG-4 audio. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_PDF
-
-property
-
-Uniform type identifier for PDF data. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_PICT
-
-property
-
-Uniform type identifier for PICT images. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_PLAIN\_TEXT
-
-property
-
-Uniform type identifier for a plain text type, equivalent to MIME type text/plain. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_PNG
-
-property
-
-Uniform type identifier for PNG images. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_QUICKTIME\_IMAGE
-
-property
-
-Uniform type identifier for QuickTime images. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_QUICKTIME\_MOVIE
-
-property
-
-Uniform type identifier for QuickTime movies. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_RTF
-
-property
-
-Uniform type identifier for Rich Text. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_RTFD
-
-property
-
-Uniform type identifier for Rich Text Format Directory, that is, Rich Text with content embedding, on-disk format. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_TEXT
-
-property
-
-Uniform type identifier for all text types. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_TIFF
-
-property
-
-Uniform type identifier for TIFF images. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_TXN\_TEXT\_AND\_MULTIMEDIA\_DATA
-
-property
-
-Uniform type identifier for MLTE (Textension) format for mixed text and multimedia data. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_UTF16\_EXTERNAL\_PLAIN\_TEXT
-
-property
-
-Uniform type identifier for Unicode-16 with byte-order mark (BOM), or if BOM is not present, an external representation byte order (big-endian). (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_UTF16\_PLAIN\_TEXT
-
-property
-
-Uniform type identifier for Unicode-16, native byte order, with an optional byte-order mark (BOM). (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_UTF8\_PLAIN\_TEXT
-
-property
-
-Uniform type identifier for Unicode-8 plain text type. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_VIDEO
-
-property
-
-Uniform type identifier for all video content without audio. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_WEB\_ARCHIVE
-
-property
-
-Uniform type identifier for WebKit webarchive format. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UTTYPE\_XML
-
-property
-
-Uniform type identifier for XML. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.UserActivity
-
-object
-
-The UserActivity module is used to enable device Handoff and to create User Activities. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.continueactivity
-
-event
-
-Fired when iOS continueactivity calls continueUserActivity. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.createSearchableIndex
-
-method
-
-Creates and returns an instance of Titanium.App.iOS.SearchableIndex. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.createSearchableItem
-
-method
-
-Creates and returns an instance of Titanium.App.iOS.SearchableItem. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.createSearchableItemAttributeSet
-
-method
-
-Creates and returns an instance of Titanium.App.iOS.SearchableItemAttributeSet. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.createUserActivity
-
-method
-
-Creates and returns an instance of Titanium.App.iOS.UserActivity. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.getSupportedUserActivityTypes
-
-method
-
-Gets the value of the Titanium.App.iOS.supportedUserActivityTypes property. (New API, supported on iPhone and iPad.)
-
-Titanium.App.iOS.supportedUserActivityTypes
-
-property
-
-Provides an Array of the NSUserActivityTypes keys defined within your Titanium project. (available on iOS 8 and later). (New API, supported on iPhone and iPad.)
-
-Titanium.Contacts.getGroupByIdentifier
-
-method
-
-Gets the group with the specified identifier. (New API, supported on iPhone and iPad.)
-
-Titanium.Contacts.getPersonByIdentifier
-
-method
-
-Gets the person with the specified identifier. (New API, supported on Android, iPhone and iPad.)
-
-Titanium.Contacts.Person.identifier
-
-property
-
-Identifier of the person. (New API, supported on iPhone and iPad.)
-
-Titanium.Geolocation.allowsBackgroundLocationUpdates
-
-property
-
-Determines if the app can do background location updates. (New API, supported on iPhone and iPad.)
-
-Titanium.Geolocation.getAllowsBackgroundLocationUpdates
-
-method
-
-Gets the value of the Titanium.Geolocation.allowsBackgroundLocationUpdates property. (New API, supported on iPhone and iPad.)
-
-Titanium.Geolocation.setAllowsBackgroundLocationUpdates
-
-method
-
-Sets the value of the Titanium.Geolocation.allowsBackgroundLocationUpdates property. (New API, supported on iPhone and iPad.)
-
-Titanium.Media.AudioPlayer.change
-
-event
-
-Fired when the state of the playback changes. (Added support for Windows Phone.)
-
-Titanium.Media.AudioPlayer.complete
-
-event
-
-Fired when the audio has finished playing. (Added support for Windows Phone.)
-
-Titanium.Media.AudioPlayer.error
-
-event
-
-Fired when there's an error. (Added support for Windows Phone.)
-
-Titanium.Media.Sound.change
-
-event
-
-Fired when the state of the playback changes. (Added support for Windows Phone.)
-
-Titanium.Media.Sound.complete
-
-event
-
-Fired when the audio has finished playing. (Added support for Windows Phone.)
-
-Titanium.Media.Sound.error
-
-event
-
-Fired when an error occurs while playing the audio. (Added support for Windows Phone.)
-
-Titanium.Media.VideoPlayer.complete
-
-event
-
-Fired when movie playback ends or a user exits playback. (Added support for Windows Phone.)
-
-Titanium.Media.VideoPlayer.error
-
-event
-
-Fired when movie playback encounters an error. (Added support for Windows Phone.)
-
-Titanium.Network.Cookie.getMaxAge
-
-method
-
-Gets the value of the Titanium.Network.Cookie.maxAge property. (New API, supported on Android.)
-
-Titanium.Network.Cookie.maxAge
-
-property
-
-Sets the Max-Age attribute of a Cookie, in delta-seconds. (New API, supported on Android.)
-
-Titanium.Network.Cookie.setMaxAge
-
-method
-
-Sets the value of the Titanium.Network.Cookie.maxAge property. (New API, supported on Android.)
-
-Titanium.UI.ATTRIBUTE\_LINE\_BREAK
-
-property
-
-Use with Attribute.type to wrap and truncate the text. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.ATTRIBUTE\_LINE\_BREAK\_BY\_CHAR\_WRAPPING
-
-property
-
-Use with Attribute.value to wrap words at word boundaries. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.ATTRIBUTE\_LINE\_BREAK\_BY\_CLIPPING
-
-property
-
-Use with Attribute.value to set lines to not draw past the edge of the text container. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.ATTRIBUTE\_LINE\_BREAK\_BY\_TRUNCATING\_HEAD
-
-property
-
-Use with Attribute.value to use ellipsis glyph at the beginning of the line for missing text. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.ATTRIBUTE\_LINE\_BREAK\_BY\_TRUNCATING\_MIDDLE
-
-property
-
-Use with Attribute.value to use ellipsis glyph at the middle of the line for missing text. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.ATTRIBUTE\_LINE\_BREAK\_BY\_TRUNCATING\_TAIL
-
-property
-
-Use with Attribute.value to use ellipsis glyph at the end of the line for missing text. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.ATTRIBUTE\_LINE\_BREAK\_BY\_WORD\_WRAPPING
-
-property
-
-Use with Attribute.value to wrap words at word boundaries. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Clipboard
-
-object
-
-A module used for accessing clipboard data. (Added support for Windows Phone.)
-
-Titanium.UI.ListView.noresults
-
-event
-
-Fired when the search using either searchView or searchText has no results. (Added support for Android.)
-
-Titanium.UI.ListView.editaction
-
-event
-
-Fired when the user interacts with one of the custom edit actions.
-
-Titanium.UI.Picker.getSelectionOpens
-
-method
-
-Gets the value of the Titanium.UI.Picker.selectionOpens property. (New API, supported on Android.)
-
-Titanium.UI.Picker.selectionOpens
-
-property
-
-Determines whether calling the method setSelectedRow opens when called (New API, supported on Android.)
-
-Titanium.UI.ScrollView.canCancelEvents
-
-property
-
-Determines whether this scroll view can cancel subview touches in order to scroll instead. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.contentOffset
-
-property
-
-X and Y coordinates to which to reposition the top-left point of the scrollable region. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.decelerationRate
-
-property
-
-The deceleration rate of the ScrollView. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.disableBounce
-
-property
-
-Determines whether scroll bounce of the scrollable region is enabled. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.getCanCancelEvents
-
-method
-
-Gets the value of the Titanium.UI.ScrollView.canCancelEvents property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.getContentOffset
-
-method
-
-Gets the value of the Titanium.UI.ScrollView.contentOffset property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.getDecelerationRate
-
-method
-
-Gets the value of the Titanium.UI.ScrollView.decelerationRate property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.getDisableBounce
-
-method
-
-Gets the value of the Titanium.UI.ScrollView.disableBounce property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.getHorizontalBounce
-
-method
-
-Gets the value of the Titanium.UI.ScrollView.horizontalBounce property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.getMaxZoomScale
-
-method
-
-Gets the value of the Titanium.UI.ScrollView.maxZoomScale property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.getMinZoomScale
-
-method
-
-Gets the value of the Titanium.UI.ScrollView.minZoomScale property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.getOverScrollMode
-
-method
-
-Gets the value of the Titanium.UI.ScrollView.overScrollMode property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.getScrollIndicatorStyle
-
-method
-
-Gets the value of the Titanium.UI.ScrollView.scrollIndicatorStyle property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.getScrollType
-
-method
-
-Gets the value of the Titanium.UI.ScrollView.scrollType property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.getScrollsToTop
-
-method
-
-Gets the value of the Titanium.UI.ScrollView.scrollsToTop property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.getVerticalBounce
-
-method
-
-Gets the value of the Titanium.UI.ScrollView.verticalBounce property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.getZoomScale
-
-method
-
-Gets the value of the Titanium.UI.ScrollView.zoomScale property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.horizontalBounce
-
-property
-
-Determines whether horizontal scroll bounce of the scrollable region is enabled. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.maxZoomScale
-
-property
-
-Maximum scaling factor of the scrollable region and its content. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.minZoomScale
-
-property
-
-Minimum scaling factor of the scrollable region and its content. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.overScrollMode
-
-property
-
-Determines the behavior when the user overscolls the view. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.scrollIndicatorStyle
-
-property
-
-Style of the scrollbar. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.scrollType
-
-property
-
-Limits the direction of the scrollable region, overriding the deduced setting. Set tohorizontal or vertical. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.scrollsToTop
-
-property
-
-Controls whether the scroll-to-top gesture is effective. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.setCanCancelEvents
-
-method
-
-Sets the value of the Titanium.UI.ScrollView.canCancelEvents property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.setContentOffset
-
-method
-
-Sets the value of the Titanium.UI.ScrollView.contentOffset property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.setDecelerationRate
-
-method
-
-Sets the value of the Titanium.UI.ScrollView.decelerationRate property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.setDisableBounce
-
-method
-
-Sets the value of the Titanium.UI.ScrollView.disableBounce property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.setHorizontalBounce
-
-method
-
-Sets the value of the Titanium.UI.ScrollView.horizontalBounce property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.setMaxZoomScale
-
-method
-
-Sets the value of the Titanium.UI.ScrollView.maxZoomScale property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.setMinZoomScale
-
-method
-
-Sets the value of the Titanium.UI.ScrollView.minZoomScale property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.setOverScrollMode
-
-method
-
-Sets the value of the Titanium.UI.ScrollView.overScrollMode property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.setScrollIndicatorStyle
-
-method
-
-Sets the value of the Titanium.UI.ScrollView.scrollIndicatorStyle property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.setScrollType
-
-method
-
-Sets the value of the Titanium.UI.ScrollView.scrollType property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.setScrollsToTop
-
-method
-
-Sets the value of the Titanium.UI.ScrollView.scrollsToTop property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.setVerticalBounce
-
-method
-
-Sets the value of the Titanium.UI.ScrollView.verticalBounce property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.setZoomScale
-
-method
-
-Sets the value of the Titanium.UI.ScrollView.zoomScale property. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.verticalBounce
-
-property
-
-Determines whether vertical scroll bounce of the scrollable region is enabled. (Added support for Windows Phone.)
-
-Titanium.UI.ScrollView.zoomScale
-
-property
-
-Scaling factor of the scroll view's content. (Added support for Windows Phone.)
-
-Titanium.UI.Switch.color
-
-property
-
-Color to use for switch text, as a color name or hex triplet. (Added support for Windows Phone.)
-
-Titanium.UI.Switch.enabled
-
-property
-
-Determines whether the switch is enabled. (Added support for Windows Phone.)
-
-Titanium.UI.Switch.getColor
-
-method
-
-Gets the value of the Titanium.UI.Switch.color property. (Added support for Windows Phone.)
-
-Titanium.UI.Switch.getEnabled
-
-method
-
-Gets the value of the Titanium.UI.Switch.enabled property. (Added support for Windows Phone.)
-
-Titanium.UI.Switch.getTitleOff
-
-method
-
-Gets the value of the Titanium.UI.Switch.titleOff property. (Added support for Windows Phone.)
-
-Titanium.UI.Switch.getTitleOn
-
-method
-
-Gets the value of the Titanium.UI.Switch.titleOn property. (Added support for Windows Phone.)
-
-Titanium.UI.Switch.setColor
-
-method
-
-Sets the value of the Titanium.UI.Switch.color property. (Added support for Windows Phone.)
-
-Titanium.UI.Switch.setEnabled
-
-method
-
-Sets the value of the Titanium.UI.Switch.enabled property. (Added support for Windows Phone.)
-
-Titanium.UI.Switch.setTitleOff
-
-method
-
-Sets the value of the Titanium.UI.Switch.titleOff property. (Added support for Windows Phone.)
-
-Titanium.UI.Switch.setTitleOn
-
-method
-
-Sets the value of the Titanium.UI.Switch.titleOn property. (Added support for Windows Phone.)
-
-Titanium.UI.Switch.titleOff
-
-property
-
-Text to display on the switch in its "off" state, when the toggle button style is in use. (Added support for Windows Phone.)
-
-Titanium.UI.Switch.titleOn
-
-property
-
-Text to display on the switch in its "on" state, when the toggle button style is in use. (Added support for Windows Phone.)
-
-Titanium.UI.TextArea.getShowUndoRedoActions
-
-method
-
-Gets the value of the Titanium.UI.TextArea.showUndoRedoActions property. (New API, supported on iPad.)
-
-Titanium.UI.TextArea.setShowUndoRedoActions
-
-method
-
-Sets the value of the Titanium.UI.TextArea.showUndoRedoActions property. (New API, supported on iPad.)
-
-Titanium.UI.TextArea.showUndoRedoActions
-
-property
-
-Determinates if the undo and redo buttons on the left side of the keyboard should be displayed or not. Only valid on iOS9 and above. (New API, supported on iPad.)
-
-Titanium.UI.TextField.getShowUndoRedoActions
-
-method
-
-Gets the value of the Titanium.UI.TextField.showUndoRedoActions property. (New API, supported on iPad.)
-
-Titanium.UI.TextField.setShowUndoRedoActions
-
-method
-
-Sets the value of the Titanium.UI.TextField.showUndoRedoActions property. (New API, supported on iPad.)
-
-Titanium.UI.TextField.showUndoRedoActions
-
-property
-
-Determinates if the undo and redo buttons on the left side of the keyboard should be displayed or not. Only valid on iOS9 and above. (New API, supported on iPad.)
-
-Titanium.UI.View.backgroundImage
-
-property
-
-Background image for the view, specified as a local file path or URL. (Added support for Windows Phone.)
-
-Titanium.UI.View.getBackgroundImage
-
-method
-
-Gets the value of the Titanium.UI.View.backgroundImage property. (Added support for Windows Phone.)
-
-Titanium.UI.View.getZIndex
-
-method
-
-Gets the value of the Titanium.UI.View.zIndex property. (Added support for Windows Phone.)
-
-Titanium.UI.View.setBackgroundImage
-
-method
-
-Sets the value of the Titanium.UI.View.backgroundImage property. (Added support for Windows Phone.)
-
-Titanium.UI.View.setZIndex
-
-method
-
-Sets the value of the Titanium.UI.View.zIndex property. (Added support for Windows Phone.)
-
-Titanium.UI.View.zIndex
-
-property
-
-Z-index stack order position, relative to other sibling views. (Added support for Windows Phone.)
-
-Titanium.WatchSession
-
-object
-
-Used to enable data and file transfers between a watchOS and iOS application. (New API, supported on iPhone.)
+| API | Type | Notes |
+| --- | --- | --- |
+| Titanium.Android.Notification.getLargeIcon | method | Gets the value of the Titanium.Android.Notification.largeIcon property. (New API, supported on Android.) |
+| Titanium.Android.Notification.largeIcon | property | Add a large icon to the notification (and the ticker on some devices) specified as an Android resource ID, or a local URL to a density-specific image. (New API, supported on Android.) |
+| Titanium.Android.Notification.setLargeIcon | method | Sets the value of the Titanium.Android.Notification.largeIcon property. (New API, supported on Android.) |
+| Titanium.App.iOS.SearchableIndex | object | The SearchableIndex module is used to add or remove Ti.App.iOS.SearchableItem objects from the device search index. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.SearchableItem | object | Used to create a unique object containing all of the search information that will appear in the device search index. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.SearchableItemAttributeSet | object | The SearchableItemAttributeSet module defines metadata properties for SearchItem and UserActivity objects. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_APPLE\_ICNS | property | Uniform type identifier for Mac OS icon images. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_APPLE\_PROTECTED\_MPEG4\_AUDIO | property | Uniform type identifier for protected MPEG-4 audio (iTunes music store format). (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_AUDIO | property | Uniform type identifier for all audio content. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_BMP | property | Uniform type identifier for Windows bitmap images. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_FLAT\_RTFD | property | Uniform type identifier for Rich Text with content embedding, pasteboard format. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_GIF | property | Uniform type identifier for GIF images. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_HTML | property | Uniform type identifier for HTML. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_ICO | property | Uniform type identifier for Windows icon images. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_IMAGE | property | Uniform type identifier for all image types. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_JPEG | property | Uniform type identifier for JPEG images. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_JPEG2000 | property | Uniform type identifier for JPEG 2000 images. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_MOVIE | property | Uniform type identifier for all audiovisual content. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_MP3 | property | Uniform type identifier for MP3 audio. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_MPEG | property | Uniform type identifier for MPEG-1 and MPEG-2 content. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_MPEG4 | property | Uniform type identifier for MPEG-4 content. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_MPEG4\_AUDIO | property | Uniform type identifier for MPEG-4 audio. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_PDF | property | Uniform type identifier for PDF data. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_PICT | property | Uniform type identifier for PICT images. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_PLAIN\_TEXT | property | Uniform type identifier for a plain text type, equivalent to MIME type text/plain. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_PNG | property | Uniform type identifier for PNG images. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_QUICKTIME\_IMAGE | property | Uniform type identifier for QuickTime images. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_QUICKTIME\_MOVIE | property | Uniform type identifier for QuickTime movies. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_RTF | property | Uniform type identifier for Rich Text. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_RTFD | property | Uniform type identifier for Rich Text Format Directory, that is, Rich Text with content embedding, on-disk format. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_TEXT | property | Uniform type identifier for all text types. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_TIFF | property | Uniform type identifier for TIFF images. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_TXN\_TEXT\_AND\_MULTIMEDIA\_DATA | property | Uniform type identifier for MLTE (Textension) format for mixed text and multimedia data. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_UTF16\_EXTERNAL\_PLAIN\_TEXT | property | Uniform type identifier for Unicode-16 with byte-order mark (BOM), or if BOM is not present, an external representation byte order (big-endian). (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_UTF16\_PLAIN\_TEXT | property | Uniform type identifier for Unicode-16, native byte order, with an optional byte-order mark (BOM). (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_UTF8\_PLAIN\_TEXT | property | Uniform type identifier for Unicode-8 plain text type. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_VIDEO | property | Uniform type identifier for all video content without audio. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_WEB\_ARCHIVE | property | Uniform type identifier for WebKit webarchive format. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UTTYPE\_XML | property | Uniform type identifier for XML. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.UserActivity | object | The UserActivity module is used to enable device Handoff and to create User Activities. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.continueactivity | event | Fired when iOS continueactivity calls continueUserActivity. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.createSearchableIndex | method | Creates and returns an instance of Titanium.App.iOS.SearchableIndex. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.createSearchableItem | method | Creates and returns an instance of Titanium.App.iOS.SearchableItem. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.createSearchableItemAttributeSet | method | Creates and returns an instance of Titanium.App.iOS.SearchableItemAttributeSet. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.createUserActivity | method | Creates and returns an instance of Titanium.App.iOS.UserActivity. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.getSupportedUserActivityTypes | method | Gets the value of the Titanium.App.iOS.supportedUserActivityTypes property. (New API, supported on iPhone and iPad.) |
+| Titanium.App.iOS.supportedUserActivityTypes | property | Provides an Array of the NSUserActivityTypes keys defined within your Titanium project. (available on iOS 8 and later). (New API, supported on iPhone and iPad.) |
+| Titanium.Contacts.getGroupByIdentifier | method | Gets the group with the specified identifier. (New API, supported on iPhone and iPad.) |
+| Titanium.Contacts.getPersonByIdentifier | method | Gets the person with the specified identifier. (New API, supported on Android, iPhone and iPad.) |
+| Titanium.Contacts.Person.identifier | property | Identifier of the person. (New API, supported on iPhone and iPad.) |
+| Titanium.Geolocation.allowsBackgroundLocationUpdates | property | Determines if the app can do background location updates. (New API, supported on iPhone and iPad.) |
+| Titanium.Geolocation.getAllowsBackgroundLocationUpdates | method | Gets the value of the Titanium.Geolocation.allowsBackgroundLocationUpdates property. (New API, supported on iPhone and iPad.) |
+| Titanium.Geolocation.setAllowsBackgroundLocationUpdates | method | Sets the value of the Titanium.Geolocation.allowsBackgroundLocationUpdates property. (New API, supported on iPhone and iPad.) |
+| Titanium.Media.AudioPlayer.change | event | Fired when the state of the playback changes. (Added support for Windows Phone.) |
+| Titanium.Media.AudioPlayer.complete | event | Fired when the audio has finished playing. (Added support for Windows Phone.) |
+| Titanium.Media.AudioPlayer.error | event | Fired when there's an error. (Added support for Windows Phone.) |
+| Titanium.Media.Sound.change | event | Fired when the state of the playback changes. (Added support for Windows Phone.) |
+| Titanium.Media.Sound.complete | event | Fired when the audio has finished playing. (Added support for Windows Phone.) |
+| Titanium.Media.Sound.error | event | Fired when an error occurs while playing the audio. (Added support for Windows Phone.) |
+| Titanium.Media.VideoPlayer.complete | event | Fired when movie playback ends or a user exits playback. (Added support for Windows Phone.) |
+| Titanium.Media.VideoPlayer.error | event | Fired when movie playback encounters an error. (Added support for Windows Phone.) |
+| Titanium.Network.Cookie.getMaxAge | method | Gets the value of the Titanium.Network.Cookie.maxAge property. (New API, supported on Android.) |
+| Titanium.Network.Cookie.maxAge | property | Sets the Max-Age attribute of a Cookie, in delta-seconds. (New API, supported on Android.) |
+| Titanium.Network.Cookie.setMaxAge | method | Sets the value of the Titanium.Network.Cookie.maxAge property. (New API, supported on Android.) |
+| Titanium.UI.ATTRIBUTE\_LINE\_BREAK | property | Use with Attribute.type to wrap and truncate the text. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.ATTRIBUTE\_LINE\_BREAK\_BY\_CHAR\_WRAPPING | property | Use with Attribute.value to wrap words at word boundaries. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.ATTRIBUTE\_LINE\_BREAK\_BY\_CLIPPING | property | Use with Attribute.value to set lines to not draw past the edge of the text container. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.ATTRIBUTE\_LINE\_BREAK\_BY\_TRUNCATING\_HEAD | property | Use with Attribute.value to use ellipsis glyph at the beginning of the line for missing text. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.ATTRIBUTE\_LINE\_BREAK\_BY\_TRUNCATING\_MIDDLE | property | Use with Attribute.value to use ellipsis glyph at the middle of the line for missing text. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.ATTRIBUTE\_LINE\_BREAK\_BY\_TRUNCATING\_TAIL | property | Use with Attribute.value to use ellipsis glyph at the end of the line for missing text. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.ATTRIBUTE\_LINE\_BREAK\_BY\_WORD\_WRAPPING | property | Use with Attribute.value to wrap words at word boundaries. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Clipboard | object | A module used for accessing clipboard data. (Added support for Windows Phone.) |
+| Titanium.UI.ListView.noresults | event | Fired when the search using either searchView or searchText has no results. (Added support for Android.) |
+| Titanium.UI.ListView.editaction | event | Fired when the user interacts with one of the custom edit actions. |
+| Titanium.UI.Picker.getSelectionOpens | method | Gets the value of the Titanium.UI.Picker.selectionOpens property. (New API, supported on Android.) |
+| Titanium.UI.Picker.selectionOpens | property | Determines whether calling the method setSelectedRow opens when called (New API, supported on Android.) |
+| Titanium.UI.ScrollView.canCancelEvents | property | Determines whether this scroll view can cancel subview touches in order to scroll instead. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.contentOffset | property | X and Y coordinates to which to reposition the top-left point of the scrollable region. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.decelerationRate | property | The deceleration rate of the ScrollView. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.disableBounce | property | Determines whether scroll bounce of the scrollable region is enabled. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.getCanCancelEvents | method | Gets the value of the Titanium.UI.ScrollView.canCancelEvents property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.getContentOffset | method | Gets the value of the Titanium.UI.ScrollView.contentOffset property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.getDecelerationRate | method | Gets the value of the Titanium.UI.ScrollView.decelerationRate property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.getDisableBounce | method | Gets the value of the Titanium.UI.ScrollView.disableBounce property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.getHorizontalBounce | method | Gets the value of the Titanium.UI.ScrollView.horizontalBounce property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.getMaxZoomScale | method | Gets the value of the Titanium.UI.ScrollView.maxZoomScale property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.getMinZoomScale | method | Gets the value of the Titanium.UI.ScrollView.minZoomScale property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.getOverScrollMode | method | Gets the value of the Titanium.UI.ScrollView.overScrollMode property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.getScrollIndicatorStyle | method | Gets the value of the Titanium.UI.ScrollView.scrollIndicatorStyle property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.getScrollType | method | Gets the value of the Titanium.UI.ScrollView.scrollType property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.getScrollsToTop | method | Gets the value of the Titanium.UI.ScrollView.scrollsToTop property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.getVerticalBounce | method | Gets the value of the Titanium.UI.ScrollView.verticalBounce property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.getZoomScale | method | Gets the value of the Titanium.UI.ScrollView.zoomScale property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.horizontalBounce | property | Determines whether horizontal scroll bounce of the scrollable region is enabled. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.maxZoomScale | property | Maximum scaling factor of the scrollable region and its content. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.minZoomScale | property | Minimum scaling factor of the scrollable region and its content. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.overScrollMode | property | Determines the behavior when the user overscolls the view. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.scrollIndicatorStyle | property | Style of the scrollbar. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.scrollType | property | Limits the direction of the scrollable region, overriding the deduced setting. Set tohorizontal or vertical. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.scrollsToTop | property | Controls whether the scroll-to-top gesture is effective. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.setCanCancelEvents | method | Sets the value of the Titanium.UI.ScrollView.canCancelEvents property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.setContentOffset | method | Sets the value of the Titanium.UI.ScrollView.contentOffset property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.setDecelerationRate | method | Sets the value of the Titanium.UI.ScrollView.decelerationRate property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.setDisableBounce | method | Sets the value of the Titanium.UI.ScrollView.disableBounce property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.setHorizontalBounce | method | Sets the value of the Titanium.UI.ScrollView.horizontalBounce property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.setMaxZoomScale | method | Sets the value of the Titanium.UI.ScrollView.maxZoomScale property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.setMinZoomScale | method | Sets the value of the Titanium.UI.ScrollView.minZoomScale property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.setOverScrollMode | method | Sets the value of the Titanium.UI.ScrollView.overScrollMode property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.setScrollIndicatorStyle | method | Sets the value of the Titanium.UI.ScrollView.scrollIndicatorStyle property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.setScrollType | method | Sets the value of the Titanium.UI.ScrollView.scrollType property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.setScrollsToTop | method | Sets the value of the Titanium.UI.ScrollView.scrollsToTop property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.setVerticalBounce | method | Sets the value of the Titanium.UI.ScrollView.verticalBounce property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.setZoomScale | method | Sets the value of the Titanium.UI.ScrollView.zoomScale property. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.verticalBounce | property | Determines whether vertical scroll bounce of the scrollable region is enabled. (Added support for Windows Phone.) |
+| Titanium.UI.ScrollView.zoomScale | property | Scaling factor of the scroll view's content. (Added support for Windows Phone.) |
+| Titanium.UI.Switch.color | property | Color to use for switch text, as a color name or hex triplet. (Added support for Windows Phone.) |
+| Titanium.UI.Switch.enabled | property | Determines whether the switch is enabled. (Added support for Windows Phone.) |
+| Titanium.UI.Switch.getColor | method | Gets the value of the Titanium.UI.Switch.color property. (Added support for Windows Phone.) |
+| Titanium.UI.Switch.getEnabled | method | Gets the value of the Titanium.UI.Switch.enabled property. (Added support for Windows Phone.) |
+| Titanium.UI.Switch.getTitleOff | method | Gets the value of the Titanium.UI.Switch.titleOff property. (Added support for Windows Phone.) |
+| Titanium.UI.Switch.getTitleOn | method | Gets the value of the Titanium.UI.Switch.titleOn property. (Added support for Windows Phone.) |
+| Titanium.UI.Switch.setColor | method | Sets the value of the Titanium.UI.Switch.color property. (Added support for Windows Phone.) |
+| Titanium.UI.Switch.setEnabled | method | Sets the value of the Titanium.UI.Switch.enabled property. (Added support for Windows Phone.) |
+| Titanium.UI.Switch.setTitleOff | method | Sets the value of the Titanium.UI.Switch.titleOff property. (Added support for Windows Phone.) |
+| Titanium.UI.Switch.setTitleOn | method | Sets the value of the Titanium.UI.Switch.titleOn property. (Added support for Windows Phone.) |
+| Titanium.UI.Switch.titleOff | property | Text to display on the switch in its "off" state, when the toggle button style is in use. (Added support for Windows Phone.) |
+| Titanium.UI.Switch.titleOn | property | Text to display on the switch in its "on" state, when the toggle button style is in use. (Added support for Windows Phone.) |
+| Titanium.UI.TextArea.getShowUndoRedoActions | method | Gets the value of the Titanium.UI.TextArea.showUndoRedoActions property. (New API, supported on iPad.) |
+| Titanium.UI.TextArea.setShowUndoRedoActions | method | Sets the value of the Titanium.UI.TextArea.showUndoRedoActions property. (New API, supported on iPad.) |
+| Titanium.UI.TextArea.showUndoRedoActions | property | Determinates if the undo and redo buttons on the left side of the keyboard should be displayed or not. Only valid on iOS9 and above. (New API, supported on iPad.) |
+| Titanium.UI.TextField.getShowUndoRedoActions | method | Gets the value of the Titanium.UI.TextField.showUndoRedoActions property. (New API, supported on iPad.) |
+| Titanium.UI.TextField.setShowUndoRedoActions | method | Sets the value of the Titanium.UI.TextField.showUndoRedoActions property. (New API, supported on iPad.) |
+| Titanium.UI.TextField.showUndoRedoActions | property | Determinates if the undo and redo buttons on the left side of the keyboard should be displayed or not. Only valid on iOS9 and above. (New API, supported on iPad.) |
+| Titanium.UI.View.backgroundImage | property | Background image for the view, specified as a local file path or URL. (Added support for Windows Phone.) |
+| Titanium.UI.View.getBackgroundImage | method | Gets the value of the Titanium.UI.View.backgroundImage property. (Added support for Windows Phone.) |
+| Titanium.UI.View.getZIndex | method | Gets the value of the Titanium.UI.View.zIndex property. (Added support for Windows Phone.) |
+| Titanium.UI.View.setBackgroundImage | method | Sets the value of the Titanium.UI.View.backgroundImage property. (Added support for Windows Phone.) |
+| Titanium.UI.View.setZIndex | method | Sets the value of the Titanium.UI.View.zIndex property. (Added support for Windows Phone.) |
+| Titanium.UI.View.zIndex | property | Z-index stack order position, relative to other sibling views. (Added support for Windows Phone.) |
+| Titanium.WatchSession | object | Used to enable data and file transfers between a watchOS and iOS application. (New API, supported on iPhone.) |
 
 ### Deprecated APIs
 
 The following APIs are deprecated in Release 5.0.0 as of September 16th, 2015.
 
-API
-
-Type
-
-Notes
-
-Titanium.App.iOS.sendWatchExtensionReply
-
-method
-
-Use Titanium.App.iOS.WatchConnectivity instead, which is supported on iOS 9 and later.
-
-Titanium.App.iOS.watchkitextensionrequest
-
-event
-
-Use Titanium.App.iOS.WatchConnectivity instead, which is supported on iOS9 and later.
+| API | Type | Notes |
+| --- | --- | --- |
+| Titanium.App.iOS.sendWatchExtensionReply | method | Use Titanium.App.iOS.WatchConnectivity instead, which is supported on iOS 9 and later. |
+| Titanium.App.iOS.watchkitextensionrequest | event | Use Titanium.App.iOS.WatchConnectivity instead, which is supported on iOS9 and later. |
 
 ### Removed APIs
 
 The following APIs have been removed in Release 5.0.0 as of September 16th, 2015 .
 
-API
-
-Type
-
-Notes
-
-Titanium.Network.HTTPClient.addAuthFactory
-
-method
-
-Titanium.UI.ListView.rowAction
-
-event
-
-Event renamed to editaction
+| API | Type | Notes |
+| --- | --- | --- |
+| Titanium.Network.HTTPClient.addAuthFactory | method |  |
+| Titanium.UI.ListView.rowAction | event | Event renamed to editaction |

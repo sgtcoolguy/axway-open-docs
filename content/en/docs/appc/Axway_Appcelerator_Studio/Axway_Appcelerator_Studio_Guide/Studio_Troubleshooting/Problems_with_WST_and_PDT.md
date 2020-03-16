@@ -1,11 +1,10 @@
 {"title":"Problems with WST and PDT","weight":"110"}
 
-* [Problem Description](#ProblemDescription)
+* [Problem Description](#problem-description)
 
-* [Problem Source](#ProblemSource)
+* [Problem Source](#problem-source)
 
-* [Suggested Workaround](#SuggestedWorkaround)
-
+* [Suggested Workaround](#suggested-workaround)
 
 ## Problem Description
 
@@ -25,6 +24,5 @@ To be able to open those files with the WST/PDT editors, you will need to remove
 2. Select the _Project Natures_ item
 
 3. Uncheck the _Aptana Natures_ (PHP & Web)
-
 
 This workaround will allow you opening the files. However, the _Nature_ change will have an effect on the features that Studio can provide while working with that specific project (Code Assist, Debugging, etc.).

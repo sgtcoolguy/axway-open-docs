@@ -1,19 +1,18 @@
 {"title":"Alloy Collection and Model Objects","weight":"50"}
 
-* [Models](#Models)
+* [Models](#models)
 
-  * [Configuration object](#Configurationobject)
+    * [Configuration object](#configuration-object)
 
-  * [Extending the Backbone.Model class](#ExtendingtheBackbone.Modelclass)
+    * [Extending the Backbone.Model class](#extending-the-backbone.model-class)
 
-* [Collections](#Collections)
+* [Collections](#collections)
 
-  * [Extending the Backbone.Collection class](#ExtendingtheBackbone.Collectionclass)
+    * [Extending the Backbone.Collection class](#extending-the-backbone.collection-class)
 
-  * [Underscore.js functionality](#Underscore.jsfunctionality)
+    * [Underscore.js functionality](#underscore.js-functionality)
 
-* [Event handling](#Eventhandling)
-
+* [Event handling](#event-handling)
 
 ## Models
 
@@ -77,7 +76,7 @@ Working with globally registered models
 
 `var` `book = Alloy.Models.instance(``'book'``);`
 
-For examples using markup, see [Alloy XML Markup: Model Element](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#Collectionelement).
+For examples using markup, see [Alloy XML Markup: Model Element](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#collection-element).
 
 ### Configuration object
 
@@ -127,7 +126,7 @@ book.js
 
 The code above describes a book object, which has two string (or TEXT) fields: title and author. If either field is left undefined, it will be assigned with the default value, a dash ("-"). The sql type configures Backbone to use the SQL adapter to sync with the SQLite engine on Android and iOS devices to access a table in the database called "books".
 
-You may add custom properties to the config object, which are available to the application as the model or collection's config property or can be processed by a custom sync adapter during application initialization. See [Alloy Sync Adapters and Migrations: Custom Sync Adapters](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Sync_Adapters_and_Migrations/#CustomSyncAdapters) for more information.
+You may add custom properties to the config object, which are available to the application as the model or collection's config property or can be processed by a custom sync adapter during application initialization. See [Alloy Sync Adapters and Migrations: Custom Sync Adapters](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Sync_Adapters_and_Migrations/#custom-sync-adapters) for more information.
 
 ### Extending the Backbone.Model class
 
@@ -241,7 +240,7 @@ Working with globally registered collections
 
 `var` `library = Alloy.Collections.instance(``'book'``);`
 
-For examples using markup, see [Alloy XML Markup: Collection Element](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#Collectionelement).
+For examples using markup, see [Alloy XML Markup: Collection Element](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#collection-element).
 
 ### Extending the Backbone.Collection class
 

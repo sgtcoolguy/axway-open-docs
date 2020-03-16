@@ -1,9 +1,8 @@
 {"title":"Dealing with SOAP Web Services","weight":"50"}
 
-* [Avoid SOAP if you can](#AvoidSOAPifyoucan)
+* [Avoid SOAP if you can](#avoid-soap-if-you-can)
 
-* [The low-tech approach](#Thelow-techapproach)
-
+* [The low-tech approach](#the-low-tech-approach)
 
 ## Objective
 
@@ -20,7 +19,6 @@ Although you can use SOAP web services (this may be your only option, especially
 * The overhead of XML over the wire
 
 * The need to translate from an XML format to a JavaScript object format
-
 
 And compounds them because SOAP is even more verbose (much more XML being transported over the wire), and the results are even more difficult to parse. Some programming languages provide high-level tools, WSDL parsers, and other mechanisms to work around the complexities of a SOAP format, but JavaScript has historically never had any of those types of tools. This remains the case today, and as such, there are very few high-level libraries and tools to support SOAP in JavaScript.
 

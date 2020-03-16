@@ -1,21 +1,20 @@
 {"title":"Alloy Sync Adapters and Migrations","weight":"20"}
 
-* [Sync Adapters](#SyncAdapters)
+* [Sync Adapters](#sync-adapters)
 
-  * [Backbone Sync](#BackboneSync)
+    * [Backbone Sync](#backbone-sync)
 
-  * [Ready-Made Sync Adapters](#Ready-MadeSyncAdapters)
+    * [Ready-Made Sync Adapters](#ready-made-sync-adapters)
 
-    * [SQLite Sync Adapter](#SQLiteSyncAdapter)
+        * [SQLite Sync Adapter](#sqlite-sync-adapter)
 
-    * [Columns accept SQLite keywords](#ColumnsacceptSQLitekeywords)
+        * [Columns accept SQLite keywords](#columns-accept-sqlite-keywords)
 
-  * [Custom Sync Adapters](#CustomSyncAdapters)
+    * [Custom Sync Adapters](#custom-sync-adapters)
 
-    * [Example](#Example)
+        * [Example](#example)
 
-* [Migrations](#Migrations)
-
+* [Migrations](#migrations)
 
 ## Sync Adapters
 
@@ -29,69 +28,7 @@ Models are accessed from persistent storage (or the collection) based on its id 
 
 The sync method depends on calls to other Backbone methods as described in the table below.
 
-**Backbone Method**
-
-**Sync CRUD Method**
-
-**Equivalent HTTP Method**
-
-**Equivalent SQL Method**
-
-Collection.fetch
-
-read
-
-GET
-
-SELECT
-
-Collection.create (id == null)
-or
-Collection.create (id != null)
-
-create
-or
-update
-
-POST
-or
-PUT
-
-INSERT
-or
-UPDATE
-
-Model.fetch
-
-read
-
-GET
-
-SELECT
-
-Model.save (id == null)
-or
-Model.save (id != null)
-
-create
-or
-update
-
-POST
-or
-PUT
-
-INSERT
-or
-UPDATE
-
-Model.destroy
-
-delete
-
-DELETE
-
-DELETE
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Backbone Method</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Sync CRUD Method</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Equivalent HTTP Method</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Equivalent SQL Method</strong></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Collection.fetch</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>read</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>GET</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>SELECT</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Collection.create (id == null)<br>or<br>Collection.create (id != null)</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>create<br>or<br>update</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>POST<br>or<br>PUT</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>INSERT<br>or<br>UPDATE</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Model.fetch</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>read</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>GET</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>SELECT</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Model.save (id == null)<br>or<br>Model.save (id != null)</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>create<br>or<br>update</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>POST<br>or<br>PUT</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>INSERT<br>or<br>UPDATE</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Model.destroy</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>delete</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>DELETE</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>DELETE</p></td></tr></tbody></table>
 
 For example, the code below describes the default sync method behavior with the following Backbone calls:
 
@@ -128,7 +65,6 @@ Alloy provides a few ready-made sync adapters. In the 'adapter' object, set the 
 * properties for storing data locally in the Titanium SDK context.
 
 * localStorage for HTML5 localStorage on the Mobile Web platform. Deprecated since Alloy 1.5.0. Use the properties adapter instead. You do not need to define the columns object in the config object. If defined, the object is ignored.
-
 
 These adapters are part of Alloy and are copied to the Resources/alloy/sync folder during compilation. These sync adapters assign the id attribute of the models, which means if you assign an ID when creating a model, it is overridden by any sync operations.
 
@@ -226,7 +162,6 @@ The sync adapter exports three functions:
 
 * module.exports.sync - implement the [Backbone.sync method](http://docs.appcelerator.com/backbone/0.9.2/#Sync).
 
-
 #### Example
 
 For a sample of an adapter, refer to the [BookClient](https://github.com/appcelerator-developer-relations/BookClient) project. The client project syncs with the [BookService](https://github.com/appcelerator-developer-relations/BookService) project, which is a sample API Builder project that manages a book database with MongoHQ as a backend. The client project contains a sync adapter, located at app/lib/alloy/sync/book\_rest.js, which uses HTTP requests to interact with the API Builder application.
@@ -241,43 +176,16 @@ The migration file contains two functions that need to be implemented: migration
 
 Currently, migrations are only used with the sql sync adapter.
 
-Key
-
-Description
-
-db
-
-Handle to a Ti.Database instance to interact with the SQLite database. Use this handle to execute SQL calls using db.execute.
-
-DO NOT CLOSE THIS HANDLE OR OPEN A SECOND INSTANCE OF THE DATABASE. This will cause fatal application errors.
-
-dbname
-
-Name of the database.
-
-table
-
-Name of the table. Same as value of the config.adapter.collection\_name key of the Alloy Model file.
-
-idAttribute
-
-Name of the columns attribute to use as the primary key of the database.
-
-createTable
-
-Function to create a table in the database with the specified schema. Required parameter is the columns object from the configuration object of the Alloy Model file.
-
-dropTable
-
-Function to drop the current table from the database.
-
-insertRow
-
-Function to insert data into the table. Required parameter is a data object to insert in the table. Useful for preloading data.
-
-deleteRow
-
-Function to delete data from the table. Required parameter is a data object to remove from the table. Alloy uses an SQLite query based on the specified object to find the data to delete.
+| Key | Description |
+| --- | --- |
+| db | Handle to a Ti.Database instance to interact with the SQLite database. Use this handle to execute SQL calls using db.execute.<br /><br />DO NOT CLOSE THIS HANDLE OR OPEN A SECOND INSTANCE OF THE DATABASE. This will cause fatal application errors. |
+| dbname | Name of the database. |
+| table | Name of the table. Same as value of the config.adapter.collection\_name key of the Alloy Model file. |
+| idAttribute | Name of the columns attribute to use as the primary key of the database. |
+| createTable | Function to create a table in the database with the specified schema. Required parameter is the columns object from the configuration object of the Alloy Model file. |
+| dropTable | Function to drop the current table from the database. |
+| insertRow | Function to insert data into the table. Required parameter is a data object to insert in the table. Useful for preloading data. |
+| deleteRow | Function to delete data from the table. Required parameter is a data object to remove from the table. Alloy uses an SQLite query based on the specified object to find the data to delete. |
 
 For example, the migration file below is the initial version of the database that preloads some data in the table.
 

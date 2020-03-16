@@ -14,7 +14,6 @@ Use Appcelerator Studio to build cross-platform, native applications using **All
 
 * Optimize your JavaScript code with **Code Analyzer** and **Code Profiler**
 
-
 Once your application is ready to be released, use Studio to publish the application to Google Play, iTunes Store, or even to Enterprise Storefronts, such as Mobile Iron's Enterprise App Storefront.
 
 **Relevant Chapters**: [Titanium Development](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/), [Titanium SDK Getting Started](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/), [Alloy Getting Started](/docs/appc/Alloy_Framework/Alloy_Getting_Started/)
@@ -36,7 +35,6 @@ Appcelerator Services are a set of features that include:
 * **Appcelerator Performance**: Monitor your application's health, crashes, and overall performance to help developers diagnose why applications crash and focus on specific issues based on user feedback.
 
 * **Appcelerator Analytics**: Track your applications' user adoption and engagement to help understand how your application is used, which features are not used, and decide what will go in the next version of your application.
-
 
 For Titanium applications, activate the services using Appcelerator Studio, which enables basic analytics and performance data collection. For advanced features, you need to add Titanium API calls to the application.
 

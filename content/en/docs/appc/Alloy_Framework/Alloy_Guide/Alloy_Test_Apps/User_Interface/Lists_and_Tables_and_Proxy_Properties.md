@@ -12,36 +12,35 @@ For properties that are assigned Titanium proxies, such as Views or Buttons, you
 
 * <ListView>: [Titanium.UI.ListView](#!/api/Titanium.UI.ListView)
 
-  * <FooterView>: [Titanium.UI.ListView.footerView](#!/api/Titanium.UI.ListView-property-footerView)
+    * <FooterView>: [Titanium.UI.ListView.footerView](#!/api/Titanium.UI.ListView-property-footerView)
 
-  * <HeaderView>: [Titanium.UI.ListView.headerView](#!/api/Titanium.UI.ListView-property-headerView)
+    * <HeaderView>: [Titanium.UI.ListView.headerView](#!/api/Titanium.UI.ListView-property-headerView)
 
-  * <PullView>: [Titanium.UI.ListView.pullView](#!/api/Titanium.UI.ListView-property-pullView)
+    * <PullView>: [Titanium.UI.ListView.pullView](#!/api/Titanium.UI.ListView-property-pullView)
 
-  * <SearchBar> or <SearchView platform="android"> – [Titanium.UI.ListView.searchView](#!/api/Titanium.UI.ListView-property-searchView)
+    * <SearchBar> or <SearchView platform="android"> – [Titanium.UI.ListView.searchView](#!/api/Titanium.UI.ListView-property-searchView)
 
 * <ListSection>: [Titanium.UI.ListSection](#!/api/Titanium.UI.ListSection)
 
-  * <FooterView>: [Titanium.UI.ListSection.footerView](#!/api/Titanium.UI.ListSection-property-footerView)
+    * <FooterView>: [Titanium.UI.ListSection.footerView](#!/api/Titanium.UI.ListSection-property-footerView)
 
-  * <HeaderView>: [Titanium.UI.ListSection.headerView](#!/api/Titanium.UI.ListSection-property-headerView)
+    * <HeaderView>: [Titanium.UI.ListSection.headerView](#!/api/Titanium.UI.ListSection-property-headerView)
 
 * <TableView>: [Titanium.UI.TableView](#!/api/Titanium.UI.TableView)
 
-  * <FooterView>: [Titanium.UI.TableView.footerView](#!/api/Titanium.UI.TableView-property-footerView)
+    * <FooterView>: [Titanium.UI.TableView.footerView](#!/api/Titanium.UI.TableView-property-footerView)
 
-  * <HeaderPullView>: [Titanium.UI.TableView.headerPullView](#!/api/Titanium.UI.TableView-property-headerPullView)
+    * <HeaderPullView>: [Titanium.UI.TableView.headerPullView](#!/api/Titanium.UI.TableView-property-headerPullView)
 
-  * <HeaderView>: [Titanium.UI.TableView.headerView](#!/api/Titanium.UI.TableView-property-headerView)
+    * <HeaderView>: [Titanium.UI.TableView.headerView](#!/api/Titanium.UI.TableView-property-headerView)
 
-  * <Search>: [Titanium.UI.TableView.search](#!/api/Titanium.UI.TableView-property-search)
+    * <Search>: [Titanium.UI.TableView.search](#!/api/Titanium.UI.TableView-property-search)
 
 * <TableViewSection>: [Titanium.UI.TableViewSection](#!/api/Titanium.UI.TableViewSection)
 
-  * <FooterView>: [Titanium.UI.TableViewSection.footerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableViewSection-property-footerView)
+    * <FooterView>: [Titanium.UI.TableViewSection.footerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableViewSection-property-footerView)
 
-  * <HeaderView>: [Titanium.UI.TableViewSection.headerView](#!/api/Titanium.UI.TableViewSection-property-headerView)
-
+    * <HeaderView>: [Titanium.UI.TableViewSection.headerView](#!/api/Titanium.UI.TableViewSection-property-headerView)
 
 The main application view, lists.xml, is loaded programmatically by the index.js view-controller.
 

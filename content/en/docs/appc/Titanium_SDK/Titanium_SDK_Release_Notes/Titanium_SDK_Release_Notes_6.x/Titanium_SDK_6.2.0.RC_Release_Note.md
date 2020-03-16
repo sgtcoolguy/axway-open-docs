@@ -4,56 +4,55 @@
 
 ## Contents
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [Notice of feature and behavior Changes](#NoticeoffeatureandbehaviorChanges)
+* [Notice of feature and behavior Changes](#notice-of-feature-and-behavior-changes)
 
-  * [iOS platform](#iOSplatform)
+    * [iOS platform](#ios-platform)
 
-* [New features](#Newfeatures)
+* [New features](#new-features)
 
-  * [Android platform](#Androidplatform)
+    * [Android platform](#android-platform)
 
-  * [iOS platform](#iOSplatform.1)
+    * [iOS platform](#ios-platform)
 
-  * [Windows platform](#Windowsplatform)
+    * [Windows platform](#windows-platform)
 
-* [Community credits](#Communitycredits)
+* [Community credits](#community-credits)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-  * [Android](#Android)
+    * [Android](#android)
 
-  * [iOS](#iOS)
+    * [iOS](#ios)
 
-  * [Windows](#Windows)
+    * [Windows](#windows)
 
-  * [Mulitple OSs](#MulitpleOSs)
+    * [Mulitple OSs](#mulitple-oss)
 
-* [Improvements](#Improvements)
+* [Improvements](#improvements)
 
-  * [Android](#Android.1)
+    * [Android](#android)
 
-  * [iOS](#iOS.1)
+    * [iOS](#ios)
 
-  * [Windows](#Windows.1)
+    * [Windows](#windows)
 
-  * [Multiple OSs](#MultipleOSs)
+    * [Multiple OSs](#multiple-oss)
 
-* [Breaking changes](#Breakingchanges)
+* [Breaking changes](#breaking-changes)
 
-* [API changes](#APIchanges)
+* [API changes](#api-changes)
 
-  * [New APIs](#NewAPIs)
+    * [New APIs](#new-apis)
 
-  * [Deprecated APIs](#DeprecatedAPIs)
-
+    * [Deprecated APIs](#deprecated-apis)
 
 ## About this release
 
 Titanium SDK 6.2.0.RC is a minor release of the SDK, addressing high-priority issues from previous releases.
 
-As of this release, Titanium SDK 6.1.x will not be supported six months from 6.2.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Titanium SDK 6.1.x will not be supported six months from 6.2.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Notice of feature and behavior Changes
 
@@ -61,20 +60,19 @@ As of this release, Titanium SDK 6.1.x will not be supported six months from 6.2
 
 * [TIMOB-24335](https://jira.appcelerator.org/browse/TIMOB-24335) - iOS: Resolve iOS 8 deprecations
 
-  * Replaced deprecated APIs in iOS8 with new APIs as designated by Apple. Those replaced APIs are as follows:
+    * Replaced deprecated APIs in iOS8 with new APIs as designated by Apple. Those replaced APIs are as follows:
 
-    * Replaced UISearchDisplayController with UISearchController (API migration required)
+        * Replaced UISearchDisplayController with UISearchController (API migration required)
 
-    * Replaced NSDayCalendarUnit with NSCalendarUnitDay (search and replace, easy ones)
+        * Replaced NSDayCalendarUnit with NSCalendarUnitDay (search and replace, easy ones)
 
-    * Replaced willAnimateRotationToInterfaceOrientation (used in many places, migration required)
+        * Replaced willAnimateRotationToInterfaceOrientation (used in many places, migration required)
 
-    * Replaced ABPeoplePickerNavigationController (in Ti.Contacts, replacement straight forward)
+        * Replaced ABPeoplePickerNavigationController (in Ti.Contacts, replacement straight forward)
 
-    * Removed old statements (e.g. !TiUtils isIOS8OrGreater)
+        * Removed old statements (e.g. !TiUtils isIOS8OrGreater)
 
-    * Removed old UIAlertView and UIActionSheetAPI's
-
+        * Removed old UIAlertView and UIActionSheetAPI's
 
 ## New features
 
@@ -82,94 +80,91 @@ As of this release, Titanium SDK 6.1.x will not be supported six months from 6.2
 
 * [TIMOB-1028](https://jira.appcelerator.org/browse/TIMOB-1028) - Android: Implement AudioRecorder
 
-  * Implemented Android's MediaRecorder. Note: this does not match Android's MediaRecorder or AudioRecord classes in capabilities.
+    * Implemented Android's MediaRecorder. Note: this does not match Android's MediaRecorder or AudioRecord classes in capabilities.
 
 * [TIMOB-1072](https://jira.appcelerator.org/browse/TIMOB-1072) \- Android: Add Ti.UI.RefreshControl (Parity)
 
-  * Added Ti.UI.RefreshControl to Android for ListView and TableView
+    * Added Ti.UI.RefreshControl to Android for ListView and TableView
 
 * [TIMOB-4979](https://jira.appcelerator.org/browse/TIMOB-4979) - Android: Expose "dragstart" and "dragend" event on ScrollView (Parity)
 
-  * Added dragstart and dragend parity
+    * Added dragstart and dragend parity
 
 * [TIMOB-15910](https://jira.appcelerator.org/browse/TIMOB-15910) - Android: Add Navigation Drawer Support
 
-  * Added support for Navigation Drawer
+    * Added support for Navigation Drawer
 
 * [TIMOB-17964](https://jira.appcelerator.org/browse/TIMOB-17964) - Android 5.0: Add support for Toolbar
 
-  * Added support for Android 5.0 Toolbar
+    * Added support for Android 5.0 Toolbar
 
 * [TIMOB-23802](https://jira.appcelerator.org/browse/TIMOB-23802) - Android N: Expose Sustained Performance API for Nexus devices
 
-  * Exposed sustained performance API for Nexus devices
+    * Exposed sustained performance API for Nexus devices
 
 * [TIMOB-24218](https://jira.appcelerator.org/browse/TIMOB-24218) - Android: Expose Keychain access in Ti.TouchID (Parity with iOS)
 
-  * Added Keychain access in Ti.TouchID parity
+    * Added Keychain access in Ti.TouchID parity
 
 * [TIMOB-24501](https://jira.appcelerator.org/browse/TIMOB-24501) - Android N: Implement support for Split screen mode
 
-  * Implemented split screen mode. Apps can be put in split screen mode and it's screen size can be increased or decreased as needed.
+    * Implemented split screen mode. Apps can be put in split screen mode and it's screen size can be increased or decreased as needed.
 
 * [TIMOB-24503](https://jira.appcelerator.org/browse/TIMOB-24503) - Android N: Implement support for Notification quick action
 
-  * Implemented support for notification quick action
+    * Implemented support for notification quick action
 
 * [TIMOB-24504](https://jira.appcelerator.org/browse/TIMOB-24504) - Android N: Implement support for Bundled notifications
 
-  * Implemented support for bundled notification
+    * Implemented support for bundled notification
 
 * [TIMOB-24514](https://jira.appcelerator.org/browse/TIMOB-24514) - Android N: Implement support for HTTPS for Geolocation
 
-  * Implemented support for HTTPS for geolocation
+    * Implemented support for HTTPS for geolocation
 
 * [TIMOB-24629](https://jira.appcelerator.org/browse/TIMOB-24629) - Android: Add wakeLock to NotificationManager
 
-  * Implemented wakeLock to Titanium.Android.Notification
-
+    * Implemented wakeLock to Titanium.Android.Notification
 
 ### iOS platform
 
 * [TIMOB-20557](https://jira.appcelerator.org/browse/TIMOB-20557) - iOS: Allow modules to use third party dynamic libraries
 
-  * Added support to use 3rd party dynamic frameworks
+    * Added support to use 3rd party dynamic frameworks
 
 * [TIMOB-24375](https://jira.appcelerator.org/browse/TIMOB-24375) - iOS: Implement "Peek & Pop" for Map view Annotation
 
-  * Implemented Peek and Pop for Map view Annotation
+    * Implemented Peek and Pop for Map view Annotation
 
 * [TIMOB-24738](https://jira.appcelerator.org/browse/TIMOB-24738) - iOS: Close all Ti.UI.Tab windows at once
 
-  * Added feature that allows iOS users to close all current open windows in a tab window at once
-
+    * Added feature that allows iOS users to close all current open windows in a tab window at once
 
 ### Windows platform
 
 * [TIMOB-19936](https://jira.appcelerator.org/browse/TIMOB-19936) - Windows: Implement Ti.Network.Socket.UDP
 
-  * Implemented Ti.Network.Socket.UDP for Windows
+    * Implemented Ti.Network.Socket.UDP for Windows
 
 * [TIMOB-24611](https://jira.appcelerator.org/browse/TIMOB-24611) - Windows: Reference 3rd party library with <SDKReference> & <PackageDependency>
 
-  * Added support for <SDKReference> and <PackageDependency>
+    * Added support for <SDKReference> and <PackageDependency>
 
 * [TIMOB-24749](https://jira.appcelerator.org/browse/TIMOB-24749) - Windows: Implement Ti.UI.ListView.marker event on windows
 
-  * Implemented ListView.marker event
+    * Implemented ListView.marker event
 
 * [TIMOB-24802](https://jira.appcelerator.org/browse/TIMOB-24802) - Windows: ListView's scrollToItem scroll position
 
-  * Implement ListViewAnimationProperties.TOP
+    * Implement ListViewAnimationProperties.TOP
 
 * [TIMOB-24984](https://jira.appcelerator.org/browse/TIMOB-24984) - Windows: Support XAML style templates
 
-  * Added support for XAML style templates
+    * Added support for XAML style templates
 
 * [TIMOB-24189](https://jira.appcelerator.org/browse/TIMOB-24189) - Windows: Add support for Visual Studio 2017
 
-  * Added support for Visual Studio 2017
-
+    * Added support for Visual Studio 2017
 
 ## Community credits
 
@@ -177,34 +172,33 @@ The following community members contributed to this release by helping out with 
 
 * [Michael](https://github.com/m1ga)
 
-  * [TIMOB-16800](https://jira.appcelerator.org/browse/TIMOB-16800) - TiAPI: TableView - e.rowData returns different results on each platform
+    * [TIMOB-16800](https://jira.appcelerator.org/browse/TIMOB-16800) - TiAPI: TableView - e.rowData returns different results on each platform
 
-  * [TIMOB-25007](https://jira.appcelerator.org/browse/TIMOB-25007) - Android: repeatMode for VideoPlayer (parity)
+    * [TIMOB-25007](https://jira.appcelerator.org/browse/TIMOB-25007) - Android: repeatMode for VideoPlayer (parity)
 
-  * [TIMOB-24988](https://jira.appcelerator.org/browse/TIMOB-24988) - Android: Ti.Network.Cookie isValid() is missing
+    * [TIMOB-24988](https://jira.appcelerator.org/browse/TIMOB-24988) - Android: Ti.Network.Cookie isValid() is missing
 
-  * [TIMOB-24629](https://jira.appcelerator.org/browse/TIMOB-24629) - Android: Add wakeLock to NotificationManager
+    * [TIMOB-24629](https://jira.appcelerator.org/browse/TIMOB-24629) - Android: Add wakeLock to NotificationManager
 
-  * [TIMOB-4979](https://jira.appcelerator.org/browse/TIMOB-4979) - Android: Expose "dragstart" and "dragend" event on ScrollView (Parity)
+    * [TIMOB-4979](https://jira.appcelerator.org/browse/TIMOB-4979) - Android: Expose "dragstart" and "dragend" event on ScrollView (Parity)
 
 * [David Bankier](https://github.com/dbankier)
 
-  * [TIMOB-24929](https://jira.appcelerator.org/browse/TIMOB-24929) - iOS: Allow the Ti.UI.TabGroup to be made translucent or not
+    * [TIMOB-24929](https://jira.appcelerator.org/browse/TIMOB-24929) - iOS: Allow the Ti.UI.TabGroup to be made translucent or not
 
-  * [TIMOB-24920](https://jira.appcelerator.org/browse/TIMOB-24920) - Android: Allow selecting stream type in Ti.Media.Sound (instead of always using STREAM\_MUSIC)
+    * [TIMOB-24920](https://jira.appcelerator.org/browse/TIMOB-24920) - Android: Allow selecting stream type in Ti.Media.Sound (instead of always using STREAM\_MUSIC)
 
 * [Luc-Edmond Gaspard](https://github.com/gaspardle)
 
-  * [TIMOB-24659](https://jira.appcelerator.org/browse/TIMOB-24659) - Android: Add support for the roundIcon attribute
+    * [TIMOB-24659](https://jira.appcelerator.org/browse/TIMOB-24659) - Android: Add support for the roundIcon attribute
 
 * [Mike Butler](https://github.com/realmikebutler)
 
-  * [TIMOB-20156](https://jira.appcelerator.org/browse/TIMOB-20156) - iOS: typedText not returned for Remote Notifications with Text Actions
+    * [TIMOB-20156](https://jira.appcelerator.org/browse/TIMOB-20156) - iOS: typedText not returned for Remote Notifications with Text Actions
 
 * [Duy Bao Nguyen](https://github.com/bduyng)
 
-  * [TIMOB-24581](https://jira.appcelerator.org/browse/TIMOB-24581) - Android: WebView: Support setMediaPlaybackRequiresUserGesture setting
-
+    * [TIMOB-24581](https://jira.appcelerator.org/browse/TIMOB-24581) - Android: WebView: Support setMediaPlaybackRequiresUserGesture setting
 
 ## Fixed issues
 
@@ -300,7 +294,6 @@ The following community members contributed to this release by helping out with 
 
 * [TIMOB-25206](https://jira.appcelerator.org/browse/TIMOB-25206) - Android: Unable to use some native modules with 6.2.0
 
-
 ### iOS
 
 * [TIMOB-14565](https://jira.appcelerator.org/browse/TIMOB-14565) - iOS: "font" property does not return to default when set to null or {}
@@ -336,7 +329,6 @@ The following community members contributed to this release by helping out with 
 * [TIMOB-25180](https://jira.appcelerator.org/browse/TIMOB-25180) - iOS: App fails to compile on any version of macOS using case sensitive journalling
 
 * [TIMOB-25210](https://jira.appcelerator.org/browse/TIMOB-25210) - iOS: Cannot submit builds with iOS 11 / Xcode 9 due to missing "Marketing Image"
-
 
 ### Windows
 
@@ -434,7 +426,6 @@ The following community members contributed to this release by helping out with 
 
 * [TIMOB-25166](https://jira.appcelerator.org/browse/TIMOB-25166) - Windows: Building with VS2017 does not select 10.0.15063 SDK
 
-
 ### Mulitple OSs
 
 * [TIMOB-14410](https://jira.appcelerator.org/browse/TIMOB-14410) - TiAPI: Add hintTextid to all views
@@ -451,119 +442,113 @@ The following community members contributed to this release by helping out with 
 
 * [TIMOB-25028](https://jira.appcelerator.org/browse/TIMOB-25028) - Build: scons package errors out when node-ios-device is not hoisted to top node\_modules
 
-
 ## Improvements
 
 ### Android
 
 * [TIMOB-17450](https://jira.appcelerator.org/browse/TIMOB-17450) - Android: Ti.Calendar.Event should expose the attendees of the meeting invite as a property (Parity with iOS)
 
-  * Added AttendeesProxy and add it as a result for getAttendees() method
+    * Added AttendeesProxy and add it as a result for getAttendees() method
 
 * [TIMOB-24579](https://jira.appcelerator.org/browse/TIMOB-24579) - Android AndroidManifest valid tokens
 
-  * Added support when adding newer tokens to the tiapp.xml which in turn successfully adds to the Android manifest
+    * Added support when adding newer tokens to the tiapp.xml which in turn successfully adds to the Android manifest
 
 * [TIMOB-24659](https://jira.appcelerator.org/browse/TIMOB-24659) - Android: Add support for the roundIcon attribute
 
-  * Added support for the roundIcon attribute
+    * Added support for the roundIcon attribute
 
 * [TIMOB-24664](https://jira.appcelerator.org/browse/TIMOB-24664) - Android: Update bundled Android libraries to 25.3.1
 
-  * Added support for Android library 25.3.1
+    * Added support for Android library 25.3.1
 
 * [TIMOB-24920](https://jira.appcelerator.org/browse/TIMOB-24920) - Android: Allow selecting stream type in Ti.Media.Sound (instead of always using STREAM\_MUSIC)
 
-  * Added support that allows for selecting different stream types in Ti.Media.Sound
+    * Added support that allows for selecting different stream types in Ti.Media.Sound
 
 * [TIMOB-24988](https://jira.appcelerator.org/browse/TIMOB-24988) - Android: Ti.Network.Cookie isValid() is missing
 
-  * Added isValid() method to Ti.Network.Cookie
+    * Added isValid() method to Ti.Network.Cookie
 
 * [TIMOB-25007](https://jira.appcelerator.org/browse/TIMOB-25007) - Android: repeatMode for VideoPlayer (parity)
 
-  * Added parity for repeatMode in VideoPlayer
-
+    * Added parity for repeatMode in VideoPlayer
 
 ### iOS
 
 * [TIMOB-18182](https://jira.appcelerator.org/browse/TIMOB-18182) - iOS: Distinguish foreground vs. background in Local Notification
 
-  * Added "inBackground" to local push notification
+    * Added "inBackground" to local push notification
 
 * [TIMOB-24351](https://jira.appcelerator.org/browse/TIMOB-24351) - iOS: Support "editActions" in listview search-results
 
-  * Added support for editActions in Listview search-results
+    * Added support for editActions in Listview search-results
 
 * [TIMOB-24538](https://jira.appcelerator.org/browse/TIMOB-24538) - iOS: Setting Ti.UI.ListItem "bindId" property to reserved identifier should fail gracefully
 
-  * Add a graceful fail when using reserved bindId identifiers
+    * Add a graceful fail when using reserved bindId identifiers
 
 * [TIMOB-24567](https://jira.appcelerator.org/browse/TIMOB-24567) - iOS: Require Swift 3.1 for watchOS templates, remove Swift 2.3 support
 
-  * Swift 3.1 is now required for watchOS templates
+    * Swift 3.1 is now required for watchOS templates
 
-  * Swift 2.3 has been removed from support
+    * Swift 2.3 has been removed from support
 
 * [TIMOB-24841](https://jira.appcelerator.org/browse/TIMOB-24841) - iOS: Expose Alert Dialog TintColor
 
-  * Added support for tintColor property for AlertDialog
+    * Added support for tintColor property for AlertDialog
 
 * [TIMOB-24929](https://jira.appcelerator.org/browse/TIMOB-24929) - iOS: Allow the Ti.UI.TabGroup to be made translucent or not
 
-  * Added support that allows the Ti.UI.TabGroup to be made translucent
+    * Added support that allows the Ti.UI.TabGroup to be made translucent
 
 * [TIMOB-25161](https://jira.appcelerator.org/browse/TIMOB-25161) - iOS: Expose "thin", "light", "ultra-light" and "semi-bold" font-weights in Titanium font-system
 
-  * Added support for thin, ultralight, and semibold font weights
+    * Added support for thin, ultralight, and semibold font weights
 
 * [TIMOB-25188](https://jira.appcelerator.org/browse/TIMOB-25188) - iOS: Preserve permissions when packaging module platform folder
 
-  * Preserve file permissions for platform directory content
-
+    * Preserve file permissions for platform directory content
 
 ### Windows
 
 * [TIMOB-24760](https://jira.appcelerator.org/browse/TIMOB-24760) - Windows: Implement \`scrolling\`, \`scrollstart\` y \`scrollend\` events on Listview
 
-  * Implemented scrolling, scrollstart, and scrollend events on Listview
+    * Implemented scrolling, scrollstart, and scrollend events on Listview
 
 * [TIMOB-24795](https://jira.appcelerator.org/browse/TIMOB-24795) - Windows: Implement hintText for searchbar
 
-  * Implemented hintText for searchBar
+    * Implemented hintText for searchBar
 
 * [TIMOB-24946](https://jira.appcelerator.org/browse/TIMOB-24946) - Ability to have 3rd party types as members in UWP module
 
-  * Added support that allows 3rd party types as members in the UWP module
+    * Added support that allows 3rd party types as members in the UWP module
 
 * [TIMOB-24970](https://jira.appcelerator.org/browse/TIMOB-24970) - Windows: Implement Ti.UI.SearchBar return event
 
-  * Implemented Ti.UI.SearchBar for return event on Windows
+    * Implemented Ti.UI.SearchBar for return event on Windows
 
 * [TIMOB-24972](https://jira.appcelerator.org/browse/TIMOB-24972) - Windows: Implement Ti.UI.SearchBar change event
 
-  * Implemented Ti.UI.SearchBar for change event on Windows
-
+    * Implemented Ti.UI.SearchBar for change event on Windows
 
 ### Multiple OSs
 
 * [TIMOB-24425](https://jira.appcelerator.org/browse/TIMOB-24425) - Ti.Map: Add touchEnabled to PolylineProxy to improve click-performance
 
-  * Added touchEnabled to overlays in Ti.Map
+    * Added touchEnabled to overlays in Ti.Map
 
 * [TIMOB-24794](https://jira.appcelerator.org/browse/TIMOB-24794) - Updated node-ios-device to support Node.js 8
 
-  * Added support for Node.js 8
-
+    * Added support for Node.js 8
 
 ## Breaking changes
 
 * [TIMOB-24570](https://jira.appcelerator.org/browse/TIMOB-24570) - Android N: Screen Size/Density breaking change
 
-  * Android 7 enables users to set display size which magnifies or shrinks all elements on the screen, thereby improving device accessibility for users with low vision
+    * Android 7 enables users to set display size which magnifies or shrinks all elements on the screen, thereby improving device accessibility for users with low vision
 
-  * Avoid specifying dimensions with px units, since they do not scale with screen density. Instead, specify dimensions with density-independent pixel (dp) units.
-
+    * Avoid specifying dimensions with px units, since they do not scale with screen density. Instead, specify dimensions with density-independent pixel (dp) units.
 
 ## API changes
 
@@ -571,444 +556,83 @@ The following community members contributed to this release by helping out with 
 
 The following APIs are new or have expanded platform support in Release 6.2.0 as of September 13th, 2017.
 
-API
-
-Type
-
-Notes
-
-Titanium.Android.Activity.getSupportToolbar
-
-method
-
-Gets the value of the Titanium.Android.Activity.supportToolbar property. (New API, supported on Android.)
-
-Titanium.Android.Activity.setSupportActionBar
-
-method
-
-Sets a toolbar instance to be used as an ActionBar. (New API, supported on Android.)
-
-Titanium.Android.Activity.setSupportToolbar
-
-method
-
-Sets the value of the Titanium.Android.Activity.supportToolbar property. (New API, supported on Android.)
-
-Titanium.Android.Activity.supportToolbar
-
-property
-
-Toolbar instance that serves as ActionBar (New API, supported on Android.)
-
-Titanium.Android.Notification.addAction
-
-method
-
-Add an action button to the notification (New API, supported on Android.)
-
-Titanium.Android.Notification.getGroupKey
-
-method
-
-Gets the value of the Titanium.Android.Notification.groupKey property. (New API, supported on Android.)
-
-Titanium.Android.Notification.getGroupSummary
-
-method
-
-Gets the value of the Titanium.Android.Notification.groupSummary property. (New API, supported on Android.)
-
-Titanium.Android.Notification.groupKey
-
-property
-
-The group key that the notification will belong to. (New API, supported on Android.)
-
-Titanium.Android.Notification.groupSummary
-
-property
-
-Specifies if this is a group summary notification. (New API, supported on Android.)
-
-Titanium.Android.Notification.setGroupKey
-
-method
-
-Sets the value of the Titanium.Android.Notification.groupKey property. (New API, supported on Android.)
-
-Titanium.Android.Notification.setGroupSummary
-
-method
-
-Sets the value of the Titanium.Android.Notification.groupSummary property. (New API, supported on Android.)
-
-Titanium.Media.AudioPlayer.AUDIO\_TYPE\_ALARM
-
-property
-
-Used to identify the volume of audio streams for alarms. (New API, supported on Android.)
-
-Titanium.Media.AudioPlayer.AUDIO\_TYPE\_MEDIA
-
-property
-
-Used to identify the volume of audio streams for media playback. (New API, supported on Android.)
-
-Titanium.Media.AudioPlayer.AUDIO\_TYPE\_NOTIFICATION
-
-property
-
-Used to identify the volume of audio streams for notifications. (New API, supported on Android.)
-
-Titanium.Media.AudioPlayer.AUDIO\_TYPE\_RING
-
-property
-
-Used to identify the volume of audio streams for the phone ring. (New API, supported on Android.)
-
-Titanium.Media.AudioPlayer.AUDIO\_TYPE\_SIGNALLING
-
-property
-
-Used to identify the volume of audio streams for DTMF tones or beeps. (New API, supported on Android.)
-
-Titanium.Media.AudioPlayer.AUDIO\_TYPE\_VOICE
-
-property
-
-Used to identify the volume of audio streams for voice calls. (New API, supported on Android.)
-
-Titanium.Media.AudioPlayer.audioType
-
-property
-
-Changes the audio-stream-type. (New API, supported on Android.)
-
-Titanium.Media.AudioPlayer.getAudioType
-
-method
-
-Gets the value of the Titanium.Media.AudioPlayer.audioType property. (New API, supported on Android.)
-
-Titanium.Media.AudioPlayer.setAudioType
-
-method
-
-Sets the value of the Titanium.Media.AudioPlayer.audioType property. (New API, supported on Android.)
-
-Titanium.Media.AudioRecorder
-
-object
-
-An audio recorder object used for recording audio from the device microphone. (Added support for Android.)
-
-Titanium.Media.Sound.AUDIO\_TYPE\_ALARM
-
-property
-
-Used to identify the volume of audio streams for alarms. (New API, supported on Android.)
-
-Titanium.Media.Sound.AUDIO\_TYPE\_MEDIA
-
-property
-
-Used to identify the volume of audio streams for media playback. (New API, supported on Android.)
-
-Titanium.Media.Sound.AUDIO\_TYPE\_NOTIFICATION
-
-property
-
-Used to identify the volume of audio streams for notifications. (New API, supported on Android.)
-
-Titanium.Media.Sound.AUDIO\_TYPE\_RING
-
-property
-
-Used to identify the volume of audio streams for the phone ring. (New API, supported on Android.)
-
-Titanium.Media.Sound.AUDIO\_TYPE\_SIGNALLING
-
-property
-
-Used to identify the volume of audio streams for DTMF tones or beeps. (New API, supported on Android.)
-
-Titanium.Media.Sound.AUDIO\_TYPE\_VOICE
-
-property
-
-Used to identify the volume of audio streams for voice calls. (New API, supported on Android.)
-
-Titanium.Media.Sound.audioType
-
-property
-
-Changes the audio-stream-type. (New API, supported on Android.)
-
-Titanium.Media.Sound.getAudioType
-
-method
-
-Gets the value of the Titanium.Media.Sound.audioType property. (New API, supported on Android.)
-
-Titanium.Media.Sound.setAudioType
-
-method
-
-Sets the value of the Titanium.Media.Sound.audioType property. (New API, supported on Android.)
-
-Titanium.Media.VIDEO\_REPEAT\_MODE\_NONE
-
-property
-
-Constant for disabling repeat on video playback. (Added support for Android.)
-
-Titanium.Media.VIDEO\_REPEAT\_MODE\_ONE
-
-property
-
-Constant for repeating one video (i.e., the one video will repeat constantly) during playback. (Added support for Android.)
-
-Titanium.Media.VideoPlayer.getRepeatMode
-
-method
-
-Gets the value of the Titanium.Media.VideoPlayer.repeatMode property. (Added support for Android.)
-
-Titanium.Media.VideoPlayer.repeatMode
-
-property
-
-Determines how the movie player repeats when reaching the end of playback. (Added support for Android.)
-
-Titanium.Media.VideoPlayer.setRepeatMode
-
-method
-
-Sets the value of the Titanium.Media.VideoPlayer.repeatMode property. (Added support for Android.)
-
-Titanium.Media.canRecord
-
-property
-
-true if the device has a recording input device available. (Added support for Android.)
-
-Titanium.Media.createAudioRecorder
-
-method
-
-Creates and returns an instance of Titanium.Media.AudioRecorder. (Added support for Android.)
-
-Titanium.Media.getCanRecord
-
-method
-
-Gets the value of the Titanium.Media.canRecord property. (Added support for Android.)
-
-Titanium.Media.hasAudioRecorderPermissions
-
-method
-
-Returns true if the app has audio permissions. (Added support for Android.)
-
-Titanium.Media.requestAudioRecorderPermissions
-
-method
-
-Request the user's permission for audio recording. (Added support for Android.)
-
-Titanium.Network.Cookie.isValid
-
-method
-
-Returns true if the cookie is valid. (Added support for Android.)
-
-Titanium.UI.AlertDialog.getHinttextid
-
-method
-
-Gets the value of the Titanium.UI.AlertDialog.hinttextid property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.AlertDialog.getLoginhinttextid
-
-method
-
-Gets the value of the Titanium.UI.AlertDialog.loginhinttextid property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.AlertDialog.getPasswordhinttextid
-
-method
-
-Gets the value of the Titanium.UI.AlertDialog.passwordhinttextid property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.AlertDialog.hinttextid
-
-property
-
-Key identifying a string from the locale file to use for the hintText property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.AlertDialog.loginhinttextid
-
-property
-
-Key identifying a string from the locale file to use for the loginHintText property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.AlertDialog.passwordhinttextid
-
-property
-
-Key identifying a string from the locale file to use for the passwordHintText property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.AlertDialog.setHinttextid
-
-method
-
-Sets the value of the Titanium.UI.AlertDialog.hinttextid property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.AlertDialog.setLoginhinttextid
-
-method
-
-Sets the value of the Titanium.UI.AlertDialog.loginhinttextid property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.AlertDialog.setPasswordhinttextid
-
-method
-
-Sets the value of the Titanium.UI.AlertDialog.passwordhinttextid property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Android.DrawerLayout
-
-object
-
-An elevated view with rounded corners. (New API, supported on Android.)
-
-Titanium.UI.ListView.dimBackgroundForSearch
-
-property
-
-A Boolean indicating whether the underlying content is dimmed during a search. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.ListView.getDimBackgroundForSearch
-
-method
-
-Gets the value of the Titanium.UI.ListView.dimBackgroundForSearch property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.ListView.setDimBackgroundForSearch
-
-method
-
-Sets the value of the Titanium.UI.ListView.dimBackgroundForSearch property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.ScrollView.dragend
-
-event
-
-Fired when the scrollable region stops being dragged. (Added support for Android.)
-
-Titanium.UI.ScrollView.dragstart
-
-event
-
-Fired when the scrollable region starts being dragged. (Added support for Android.)
-
-Titanium.UI.Slider.getSplitTrack
-
-method
-
-Gets the value of the Titanium.UI.Slider.splitTrack property. (New API, supported on Android.)
-
-Titanium.UI.Slider.setSplitTrack
-
-method
-
-Sets the value of the Titanium.UI.Slider.splitTrack property. (New API, supported on Android.)
-
-Titanium.UI.Slider.splitTrack
-
-property
-
-Separates the thumbImage from the slider track. (New API, supported on Android.)
-
-Titanium.UI.Tab.popToRootWindow
-
-method
-
-Closes all windows that are currently opened inside the tab. (New API, supported on Android, iPhone, iPad and Mobile Web.)
-
-Titanium.UI.TabGroup.getTabsTranslucent
-
-method
-
-Gets the value of the Titanium.UI.TabGroup.tabsTranslucent property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.TabGroup.setTabsTranslucent
-
-method
-
-Sets the value of the Titanium.UI.TabGroup.tabsTranslucent property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.TabGroup.tabsTranslucent
-
-property
-
-A Boolean value that indicates whether the tab bar is translucent. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.TableView.dimBackgroundForSearch
-
-property
-
-A Boolean indicating whether the underlying content is dimmed during a search. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.TableView.getDimBackgroundForSearch
-
-method
-
-Gets the value of the Titanium.UI.TableView.dimBackgroundForSearch property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.TableView.setDimBackgroundForSearch
-
-method
-
-Sets the value of the Titanium.UI.TableView.dimBackgroundForSearch property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.TextField.getHinttextid
-
-method
-
-Gets the value of the Titanium.UI.TextField.hinttextid property. (New API, supported on Android, iPhone, iPad, Mobile Web and Windows Phone.)
-
-Titanium.UI.TextField.hinttextid
-
-property
-
-Key identifying a string from the locale file to use for the hintText property. (New API, supported on Android, iPhone, iPad, Mobile Web and Windows Phone.)
-
-Titanium.UI.TextField.setHinttextid
-
-method
-
-Sets the value of the Titanium.UI.TextField.hinttextid property. (New API, supported on Android, iPhone, iPad, Mobile Web and Windows Phone.)
+| API | Type | Notes |
+| --- | --- | --- |
+| Titanium.Android.Activity.getSupportToolbar | method | Gets the value of the Titanium.Android.Activity.supportToolbar property. (New API, supported on Android.) |
+| Titanium.Android.Activity.setSupportActionBar | method | Sets a toolbar instance to be used as an ActionBar. (New API, supported on Android.) |
+| Titanium.Android.Activity.setSupportToolbar | method | Sets the value of the Titanium.Android.Activity.supportToolbar property. (New API, supported on Android.) |
+| Titanium.Android.Activity.supportToolbar | property | Toolbar instance that serves as ActionBar (New API, supported on Android.) |
+| Titanium.Android.Notification.addAction | method | Add an action button to the notification (New API, supported on Android.) |
+| Titanium.Android.Notification.getGroupKey | method | Gets the value of the Titanium.Android.Notification.groupKey property. (New API, supported on Android.) |
+| Titanium.Android.Notification.getGroupSummary | method | Gets the value of the Titanium.Android.Notification.groupSummary property. (New API, supported on Android.) |
+| Titanium.Android.Notification.groupKey | property | The group key that the notification will belong to. (New API, supported on Android.) |
+| Titanium.Android.Notification.groupSummary | property | Specifies if this is a group summary notification. (New API, supported on Android.) |
+| Titanium.Android.Notification.setGroupKey | method | Sets the value of the Titanium.Android.Notification.groupKey property. (New API, supported on Android.) |
+| Titanium.Android.Notification.setGroupSummary | method | Sets the value of the Titanium.Android.Notification.groupSummary property. (New API, supported on Android.) |
+| Titanium.Media.AudioPlayer.AUDIO\_TYPE\_ALARM | property | Used to identify the volume of audio streams for alarms. (New API, supported on Android.) |
+| Titanium.Media.AudioPlayer.AUDIO\_TYPE\_MEDIA | property | Used to identify the volume of audio streams for media playback. (New API, supported on Android.) |
+| Titanium.Media.AudioPlayer.AUDIO\_TYPE\_NOTIFICATION | property | Used to identify the volume of audio streams for notifications. (New API, supported on Android.) |
+| Titanium.Media.AudioPlayer.AUDIO\_TYPE\_RING | property | Used to identify the volume of audio streams for the phone ring. (New API, supported on Android.) |
+| Titanium.Media.AudioPlayer.AUDIO\_TYPE\_SIGNALLING | property | Used to identify the volume of audio streams for DTMF tones or beeps. (New API, supported on Android.) |
+| Titanium.Media.AudioPlayer.AUDIO\_TYPE\_VOICE | property | Used to identify the volume of audio streams for voice calls. (New API, supported on Android.) |
+| Titanium.Media.AudioPlayer.audioType | property | Changes the audio-stream-type. (New API, supported on Android.) |
+| Titanium.Media.AudioPlayer.getAudioType | method | Gets the value of the Titanium.Media.AudioPlayer.audioType property. (New API, supported on Android.) |
+| Titanium.Media.AudioPlayer.setAudioType | method | Sets the value of the Titanium.Media.AudioPlayer.audioType property. (New API, supported on Android.) |
+| Titanium.Media.AudioRecorder | object | An audio recorder object used for recording audio from the device microphone. (Added support for Android.) |
+| Titanium.Media.Sound.AUDIO\_TYPE\_ALARM | property | Used to identify the volume of audio streams for alarms. (New API, supported on Android.) |
+| Titanium.Media.Sound.AUDIO\_TYPE\_MEDIA | property | Used to identify the volume of audio streams for media playback. (New API, supported on Android.) |
+| Titanium.Media.Sound.AUDIO\_TYPE\_NOTIFICATION | property | Used to identify the volume of audio streams for notifications. (New API, supported on Android.) |
+| Titanium.Media.Sound.AUDIO\_TYPE\_RING | property | Used to identify the volume of audio streams for the phone ring. (New API, supported on Android.) |
+| Titanium.Media.Sound.AUDIO\_TYPE\_SIGNALLING | property | Used to identify the volume of audio streams for DTMF tones or beeps. (New API, supported on Android.) |
+| Titanium.Media.Sound.AUDIO\_TYPE\_VOICE | property | Used to identify the volume of audio streams for voice calls. (New API, supported on Android.) |
+| Titanium.Media.Sound.audioType | property | Changes the audio-stream-type. (New API, supported on Android.) |
+| Titanium.Media.Sound.getAudioType | method | Gets the value of the Titanium.Media.Sound.audioType property. (New API, supported on Android.) |
+| Titanium.Media.Sound.setAudioType | method | Sets the value of the Titanium.Media.Sound.audioType property. (New API, supported on Android.) |
+| Titanium.Media.VIDEO\_REPEAT\_MODE\_NONE | property | Constant for disabling repeat on video playback. (Added support for Android.) |
+| Titanium.Media.VIDEO\_REPEAT\_MODE\_ONE | property | Constant for repeating one video (i.e., the one video will repeat constantly) during playback. (Added support for Android.) |
+| Titanium.Media.VideoPlayer.getRepeatMode | method | Gets the value of the Titanium.Media.VideoPlayer.repeatMode property. (Added support for Android.) |
+| Titanium.Media.VideoPlayer.repeatMode | property | Determines how the movie player repeats when reaching the end of playback. (Added support for Android.) |
+| Titanium.Media.VideoPlayer.setRepeatMode | method | Sets the value of the Titanium.Media.VideoPlayer.repeatMode property. (Added support for Android.) |
+| Titanium.Media.canRecord | property | true if the device has a recording input device available. (Added support for Android.) |
+| Titanium.Media.createAudioRecorder | method | Creates and returns an instance of Titanium.Media.AudioRecorder. (Added support for Android.) |
+| Titanium.Media.getCanRecord | method | Gets the value of the Titanium.Media.canRecord property. (Added support for Android.) |
+| Titanium.Media.hasAudioRecorderPermissions | method | Returns true if the app has audio permissions. (Added support for Android.) |
+| Titanium.Media.requestAudioRecorderPermissions | method | Request the user's permission for audio recording. (Added support for Android.) |
+| Titanium.Network.Cookie.isValid | method | Returns true if the cookie is valid. (Added support for Android.) |
+| Titanium.UI.AlertDialog.getHinttextid | method | Gets the value of the Titanium.UI.AlertDialog.hinttextid property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.AlertDialog.getLoginhinttextid | method | Gets the value of the Titanium.UI.AlertDialog.loginhinttextid property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.AlertDialog.getPasswordhinttextid | method | Gets the value of the Titanium.UI.AlertDialog.passwordhinttextid property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.AlertDialog.hinttextid | property | Key identifying a string from the locale file to use for the hintText property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.AlertDialog.loginhinttextid | property | Key identifying a string from the locale file to use for the loginHintText property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.AlertDialog.passwordhinttextid | property | Key identifying a string from the locale file to use for the passwordHintText property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.AlertDialog.setHinttextid | method | Sets the value of the Titanium.UI.AlertDialog.hinttextid property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.AlertDialog.setLoginhinttextid | method | Sets the value of the Titanium.UI.AlertDialog.loginhinttextid property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.AlertDialog.setPasswordhinttextid | method | Sets the value of the Titanium.UI.AlertDialog.passwordhinttextid property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Android.DrawerLayout | object | An elevated view with rounded corners. (New API, supported on Android.) |
+| Titanium.UI.ListView.dimBackgroundForSearch | property | A Boolean indicating whether the underlying content is dimmed during a search. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.ListView.getDimBackgroundForSearch | method | Gets the value of the Titanium.UI.ListView.dimBackgroundForSearch property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.ListView.setDimBackgroundForSearch | method | Sets the value of the Titanium.UI.ListView.dimBackgroundForSearch property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.ScrollView.dragend | event | Fired when the scrollable region stops being dragged. (Added support for Android.) |
+| Titanium.UI.ScrollView.dragstart | event | Fired when the scrollable region starts being dragged. (Added support for Android.) |
+| Titanium.UI.Slider.getSplitTrack | method | Gets the value of the Titanium.UI.Slider.splitTrack property. (New API, supported on Android.) |
+| Titanium.UI.Slider.setSplitTrack | method | Sets the value of the Titanium.UI.Slider.splitTrack property. (New API, supported on Android.) |
+| Titanium.UI.Slider.splitTrack | property | Separates the thumbImage from the slider track. (New API, supported on Android.) |
+| Titanium.UI.Tab.popToRootWindow | method | Closes all windows that are currently opened inside the tab. (New API, supported on Android, iPhone, iPad and Mobile Web.) |
+| Titanium.UI.TabGroup.getTabsTranslucent | method | Gets the value of the Titanium.UI.TabGroup.tabsTranslucent property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.TabGroup.setTabsTranslucent | method | Sets the value of the Titanium.UI.TabGroup.tabsTranslucent property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.TabGroup.tabsTranslucent | property | A Boolean value that indicates whether the tab bar is translucent. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.TableView.dimBackgroundForSearch | property | A Boolean indicating whether the underlying content is dimmed during a search. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.TableView.getDimBackgroundForSearch | method | Gets the value of the Titanium.UI.TableView.dimBackgroundForSearch property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.TableView.setDimBackgroundForSearch | method | Sets the value of the Titanium.UI.TableView.dimBackgroundForSearch property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.TextField.getHinttextid | method | Gets the value of the Titanium.UI.TextField.hinttextid property. (New API, supported on Android, iPhone, iPad, Mobile Web and Windows Phone.) |
+| Titanium.UI.TextField.hinttextid | property | Key identifying a string from the locale file to use for the hintText property. (New API, supported on Android, iPhone, iPad, Mobile Web and Windows Phone.) |
+| Titanium.UI.TextField.setHinttextid | method | Sets the value of the Titanium.UI.TextField.hinttextid property. (New API, supported on Android, iPhone, iPad, Mobile Web and Windows Phone.) |
 
 ### Deprecated APIs
 
 The following APIs are deprecated in Release 6.2.0 as of September 13th, 2017.
 
-API
-
-Type
-
-Notes
-
-Titanium.UI.iOS.Toolbar
-
-object
-
-Use the cross-platform Titanium.UI.Toolbar instead.
-
-Titanium.UI.iOS.createToolbar
-
-method
-
-Use the cross-platform Titanium.UI.createToolbar instead.
+| API | Type | Notes |
+| --- | --- | --- |
+| Titanium.UI.iOS.Toolbar | object | Use the cross-platform Titanium.UI.Toolbar instead. |
+| Titanium.UI.iOS.createToolbar | method | Use the cross-platform Titanium.UI.createToolbar instead. |

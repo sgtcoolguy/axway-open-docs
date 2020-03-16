@@ -10,7 +10,6 @@ Dashboard 4.6.0 is a minor release, which includes several improvements and bug 
 
 * The Insights tablet application is no longer available on the Downloads page and will be open sourced in the future
 
-
 ## Fixed Issues
 
 * When a user's role in their org has changed, the existing session is now updated and no longer requires the user to log back in

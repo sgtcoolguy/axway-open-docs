@@ -20,9 +20,9 @@ To add an expression to the Expressions View:
 
 2. Suspend the current JavaScript thread.
 
-  1. In the Debug View, select the thread that you want to suspend.
+    1. In the Debug View, select the thread that you want to suspend.
 
-  2. Click the **Suspend** button ![IconSuspend](/Images/appc/download/attachments/30083111/IconSuspend.png) to suspend the JavaScript code on the first executed line. While the thread is suspended, your web browser user interface will be completely disabled.
+    2. Click the **Suspend** button ![IconSuspend](/Images/appc/download/attachments/30083111/IconSuspend.png) to suspend the JavaScript code on the first executed line. While the thread is suspended, your web browser user interface will be completely disabled.
 
 3. In the Debug View, select the thread to which you want to add an expression.
 
@@ -35,7 +35,6 @@ To add an expression to the Expressions View:
 7. Make sure that the **Enable** box is checked.
 
 8. Click **OK** to close the pop-up window and add the new expression to the View.
-
 
 ## Related Topics
 

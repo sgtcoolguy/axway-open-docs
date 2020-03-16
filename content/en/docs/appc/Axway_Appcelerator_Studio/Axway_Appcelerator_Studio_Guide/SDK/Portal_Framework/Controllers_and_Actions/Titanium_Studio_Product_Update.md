@@ -1,15 +1,14 @@
 {"title":"Titanium Studio Product Update","weight":"120"}
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Description](#Description)
+* [Description](#description)
 
-* [Invocation](#Invocation)
+* [Invocation](#invocation)
 
-* [Checking for Titanium Studio updates](#CheckingforTitaniumStudioupdates)
+* [Checking for Titanium Studio updates](#checking-for-titanium-studio-updates)
 
-* [Installing a Titanium Studio update](#InstallingaTitaniumStudioupdate)
-
+* [Installing a Titanium Studio update](#installing-a-titanium-studio-update)
 
 ## Requirements
 
@@ -78,25 +77,12 @@ The example above calls _portal.tiStudioUpdates.update(e);_ whenever the Studio 
 
 The event that the Studio sends contains these fields:
 
-key
-
-content
-
-event.data.status
-
-Indicate the status of the check. Can hold the following values: 'ok', 'processing', 'error', 'incomplete' or 'unknown'
-
-event.data.installedVersion
-
-The currently installed Titanium Studio version
-
-event.data.needsUpdate
-
-A boolean indication that an update is available
-
-event.data.availableUpdateVersion
-
-The available update version for Titanium Studio (non-empty when _'needsUpdate'_ is _'true'_)
+| key | content |
+| --- | --- |
+| event.data.status | Indicate the status of the check. Can hold the following values: 'ok', 'processing', 'error', 'incomplete' or 'unknown' |
+| event.data.installedVersion | The currently installed Titanium Studio version |
+| event.data.needsUpdate | A boolean indication that an update is available |
+| event.data.availableUpdateVersion | The available update version for Titanium Studio (non-empty when _'needsUpdate'_ is _'true'_) |
 
 When the _event.data.installedVersion_, for example, is _undefined_, the _event.data.status_ will indicate the stage of the command. The studio will fire multiple events after the dispatch call, and it's up to the JavaScript call to handle those and render the UI accordingly (for example, show a spinning wheel when the _processing_ status is received).
 

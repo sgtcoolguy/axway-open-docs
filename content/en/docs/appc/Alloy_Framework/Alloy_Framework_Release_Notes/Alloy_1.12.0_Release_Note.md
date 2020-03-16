@@ -2,16 +2,15 @@
 
 Alloy 1.12.0 is a minor release that includes several improvements and bug fixes.
 
-As of this release, Alloy 1.10.x will not be supported six months from 1.12.0's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Alloy 1.10.x will not be supported six months from 1.12.0's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Improvements
 
 * [ALOY-1603](https://jira.appcelerator.org/browse/ALOY-1603) : Update momentjs to 2.21.0
 
-  * Updated Moment.js to 2.21.0
+    * Updated Moment.js to 2.21.0
 
-  * View the Moment.js release notes [here](https://github.com/moment/moment/blob/d0a45f0390c108cc18d71a3d3f38d040392483c5/CHANGELOG.md), previous version was 2.16.0
-
+    * View the Moment.js release notes [here](https://github.com/moment/moment/blob/d0a45f0390c108cc18d71a3d3f38d040392483c5/CHANGELOG.md), previous version was 2.16.0
 
 ## Fixed issues
 

@@ -1,29 +1,28 @@
 {"title":"The WebView Component","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [Using Remote WebContent with WebView](#UsingRemoteWebContentwithWebView)
+    * [Using Remote WebContent with WebView](#using-remote-webcontent-with-webview)
 
-  * [Using Local Web Content with WebView](#UsingLocalWebContentwithWebView)
+    * [Using Local Web Content with WebView](#using-local-web-content-with-webview)
 
-  * [WebView Properties and Functions](#WebViewPropertiesandFunctions)
+    * [WebView Properties and Functions](#webview-properties-and-functions)
 
-    * [Navigation](#Navigation)
+        * [Navigation](#navigation)
 
-    * [Loading Control](#LoadingControl)
+        * [Loading Control](#loading-control)
 
-    * [Data Handling & Scaling](#DataHandling&Scaling)
+        * [Data Handling & Scaling](#data-handling-&-scaling)
 
-    * [Events](#Events)
+        * [Events](#events)
 
-  * [Performance and Interaction Concerns](#PerformanceandInteractionConcerns)
+    * [Performance and Interaction Concerns](#performance-and-interaction-concerns)
 
-  * [Best Practices for Web Content](#BestPracticesforWebContent)
+    * [Best Practices for Web Content](#best-practices-for-web-content)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 With Titanium SDK 8.0.0, we now use [WKWebView](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/WKWebView/) to implement Ti.UI.WebView (as Apple has deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview)).
 
@@ -42,7 +41,6 @@ In the following sections we'll see exactly how we can create WebViews in our ap
 * WebView Properties and Functions
 
 * Performance and Interaction Concerns
-
 
 ### Using Remote WebContent with WebView
 
@@ -196,7 +194,6 @@ Let's first look at the functions available to us to manage navigation of the We
 
 * goForward() - A function that moves the WebView forward in its history. This would commonly be bound with a UI "forward" button.
 
-
 #### Loading Control
 
 Another familiar set of functionality is the ability to refresh and stop the loading of a WebView. The functions and properties listed below give us visibility into the loading state of the WebView and the ability to control it.
@@ -208,7 +205,6 @@ Another familiar set of functionality is the ability to refresh and stop the loa
 * repaint() - A function that causes the WebView to repaint its contents.
 
 * stopLoading() - A function that stops the loading of a WebView, much like the "stop" button in most browsers.
-
 
 #### Data Handling & Scaling
 
@@ -222,7 +218,6 @@ As covered in the previous sections, passing local and remote data to the WebVie
 
 * url - A URL property to local or remote web content. For remote content, this parameter is the web URL. For local content, this parameter is the path, relative to the project's Resources directory for Titanium projects, or app/assets and app/lib directories for Alloy project., to the local HTML file.
 
-
 #### Events
 
 WebView also has a few custom events to allow additional control over the lifecycle of a load, as well as any errors that may occur in the underlying native webview.
@@ -232,7 +227,6 @@ WebView also has a few custom events to allow additional control over the lifecy
 * error - This event is fired when a WebView fails to load. Like the beforeload event, it has the url property. It also has a message property, which is a string that contains the details of the error.
 
 * load - This event is fired when the WebView has loaded.
-
 
 ### Performance and Interaction Concerns
 
@@ -253,7 +247,6 @@ For more information, see the following resources:
 * [Targeting Screens from Web Apps](http://developer.android.com/guide/webapps/targeting.html) in the Android API Guides
 
 * [Using the viewport meta tag to control layout on mobile browsers](https://developer.mozilla.org/en/Mobile/Viewport_meta_tag) in Mozilla's Developer Documentation
-
 
 ## Summary
 

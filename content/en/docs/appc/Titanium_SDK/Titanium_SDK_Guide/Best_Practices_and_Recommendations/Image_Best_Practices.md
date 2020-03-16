@@ -1,19 +1,18 @@
 {"title":"Image Best Practices","weight":"50"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [File formats](#Fileformats)
+    * [File formats](#file-formats)
 
-  * [Loading and unloading images to manage memory use](#Loadingandunloadingimagestomanagememoryuse)
+    * [Loading and unloading images to manage memory use](#loading-and-unloading-images-to-manage-memory-use)
 
-  * [Optimizing images](#Optimizingimages)
+    * [Optimizing images](#optimizing-images)
 
-  * [Caching remote images](#Cachingremoteimages)
+    * [Caching remote images](#caching-remote-images)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Objective
 
@@ -31,7 +30,6 @@ You can use PNG, JPG, and GIF images in your Titanium apps. But which should you
 
 * **JPG** – JPG (or JPEG) is lossy-compressed file format best suited for photographs. It is not well-suited for text, line drawings, or icons because of visual artifacts created during the compression process that will reduce quality and readability.
 
-
 Keep in mind that JPG images are decompressed in memory when the photo is displayed. A JPG file itself might take a few dozen KB in storage. But, when rendered (whether visible on screen or not) it will be uncompressed in memory to hundreds of KB or higher. It is crucial that you don't display create too many JPG ImageViews at one time in your mobile apps or you could exhaust the device's memory. Removing an image from a view might not clear the memory used by that ImageView; null it out as soon as you no longer need the image in memory.
 
 In summary:
@@ -42,7 +40,6 @@ In summary:
 
 * Flip-book style animations (for which animated GIFs would be the traditional choice)? Use the ImageView's images property and pass to it an array of PNG or optimized JPG files.
 
-
 ### Loading and unloading images to manage memory use
 
 Consider a 640 x 480 pixel JPG image, which would fill the screen of a typical handset. On disk, such an image might consume a few dozen KB of storage. But in memory, its footprint will be significantly larger at upwards of 900 KB. When loaded into memory (so that it can be displayed or manipulated), the compressed JPG data is converted to a bitmap. Each pixel is represented by 24 bits (8 bits for each of red, green, and blue channels) or 3 bytes. (640 x 480 x 3) / 1024 = 900 KB
@@ -51,16 +48,15 @@ Keep in mind that the RAM available to your mobile app is limited by the platfor
 
 * remove() images from the view hierarchy when they're not "on the screen" to permit the operating system to free memory
 
-  * Example: myView.remove(myImageView);
+    * Example: myView.remove(myImageView);
 
 * Set image views to null once you no longer need those objects to free memory and release proxies
 
-  * Example: myImageView = null;
+    * Example: myImageView = null;
 
 * Resize and crop images to the final dimensions at which they'll be shown on screen so that you don't require the system to manipulate any more bytes than necessary
 
-  * Example: Using imageAsResized and [imageAsCropped](#!/api/Titanium.Blob-method-imageAsCropped) on a [Ti.Blob](#!/api/Titanium.Blob) object.
-
+    * Example: Using imageAsResized and [imageAsCropped](#!/api/Titanium.Blob-method-imageAsCropped) on a [Ti.Blob](#!/api/Titanium.Blob) object.
 
 ### Optimizing images
 
@@ -70,35 +66,12 @@ Resize images prior to including them in your app. Keep in mind the screen dimen
 
 Both PNG and JPG files are compressed formats. However, the tools typically used to create those images might not provide optimally-compressed images. For example, a digital camera will create a much larger (though admittedly higher-quality) JPG image than the "optimize for web" routines offered by a program like Photoshop.
 
-Platform
-
-File type
-
-Tool
-
-Mac
-
-PNG, JPG, & GIF
-
-ImageOptim - [https://imageoptim.com/mac](https://imageoptim.com/mac)
-
-Mac, Windows, Linux
-
-PNG, JPG & GIF
-
-ImageMagick - [http://www.imagemagick.org](http://www.imagemagick.org/)
-
-Windows/DOS
-
-PNG
-
-PNGCrush - [https://pmt.sourceforge.io/pngcrush](https://pmt.sourceforge.io/pngcrush)
-
-Windows
-
-JPG
-
-Nikkho - [https://sourceforge.net/projects/nikkhokkho](https://sourceforge.net/projects/nikkhokkho/)
+| Platform | File type | Tool |
+| --- | --- | --- |
+| Mac | PNG, JPG, & GIF | ImageOptim - [https://imageoptim.com/mac](https://imageoptim.com/mac) |
+| Mac, Windows, Linux | PNG, JPG & GIF | ImageMagick - [http://www.imagemagick.org](http://www.imagemagick.org/) |
+| Windows/DOS | PNG | PNGCrush - [https://pmt.sourceforge.io/pngcrush](https://pmt.sourceforge.io/pngcrush) |
+| Windows | JPG | Nikkho - [https://sourceforge.net/projects/nikkhokkho](https://sourceforge.net/projects/nikkhokkho/) |
 
 ### Caching remote images
 

@@ -2,12 +2,11 @@
 
 ## Contents
 
-* [Compatibility and Download](#CompatibilityandDownload)
+* [Compatibility and Download](#compatibility-and-download)
 
-* [Installation](#Installation)
+* [Installation](#installation)
 
-  * [Windows](#Windows)
-
+    * [Windows](#windows)
 
 ## Compatibility and Download
 
@@ -21,45 +20,26 @@ Obtain the SCons version listed below for your Operating System:
 
 ![download_05](/Images/appc/download/attachments/29004836/download_05.png)
 
-Operating System
-
-Package Version
-
-Download Location
-
-OS X
-
-Latest Stable
-
-[Official Website](http://scons.org/pages/download.html)
-
-Windows
-
-Latest Stable
-
-[Official Website](http://scons.org/pages/download.html)
-
-Ubuntu
-
-Latest Stable
-
-Default Repositories
+| Operating System | Package Version | Download Location |
+| --- | --- | --- |
+| OS X | Latest Stable | [Official Website](http://scons.org/pages/download.html) |
+| Windows | Latest Stable | [Official Website](http://scons.org/pages/download.html) |
+| Ubuntu | Latest Stable | Default Repositories |
 
 ## Installation
 
 ### Windows
 
-Note that the typical filesystem location of this software can be found in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) section of these guides.
+Note that the typical filesystem location of this software can be found in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#windows-software-locations) section of these guides.
 
 * log in under your usual user account, and right-click the SCons Windows Installer and select _Run as administrator_. Enter your Administrator password, if you are prompted for it, and proceed until the first screenshot below
 
 * verify that Python has been automatically detected on your system, as below. If none is found, you may have installed the 64bit rather than 32bit version
 
-* verify that the scons script has been placed in the directory shown in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) above, within the Python directory, and then proceed
+* verify that the scons script has been placed in the directory shown in the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#windows-software-locations) above, within the Python directory, and then proceed
 
 * click **Next** and continue until complete
 
-
 ![scons-install-01](/Images/appc/download/attachments/29004846/scons-install-01.png)
 
-Refer to the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#WindowsSoftwareLocations) section and add the SCons location to the system's PATH.
+Refer to the [Windows Software Locations](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#windows-software-locations) section and add the SCons location to the system's PATH.

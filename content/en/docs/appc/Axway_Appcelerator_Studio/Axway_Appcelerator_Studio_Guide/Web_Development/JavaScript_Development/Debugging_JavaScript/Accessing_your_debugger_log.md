@@ -1,13 +1,12 @@
 {"title":"Accessing your debugger log","weight":"20"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Instructions](#Instructions)
+* [Instructions](#instructions)
 
-  * [Accessing the Firefox debugger log](#AccessingtheFirefoxdebuggerlog)
+    * [Accessing the Firefox debugger log](#accessing-the-firefox-debugger-log)
 
-  * [Accessing the Internet Explorer debugger log](#AccessingtheInternetExplorerdebuggerlog)
-
+    * [Accessing the Internet Explorer debugger log](#accessing-the-internet-explorer-debugger-log)
 
 ## Introduction
 
@@ -29,16 +28,13 @@ To access your Firefox debugger log:
 
 4. To the right of the path for the **Error Log**, click the **View** button to display the Error Log.
 
-
 * or -
-
 
 1. In Firefox, click on the Aptana logo on Firefox status bar, choose "About Aptana Studio..." menu item.
 
 2. Click the **Preferences** button to open an **Aptana Debugger Preferences** pop-up window.
 
 3. To the right of the path for the **Error Log**, click the **View** button to display the Error Log.
-
 
 ### Accessing the Internet Explorer debugger log
 
@@ -48,6 +44,6 @@ To access your IE debugger log:
 
 2. Click the **Aptana** button ![IconAptana](/Images/appc/download/attachments/30083108/IconAptana.png) , and select **Support > Open log files** (shown below) to open your log files.
 
-  ![IeDebuggerSupport](/Images/appc/download/attachments/30083108/IeDebuggerSupport.png)
+    ![IeDebuggerSupport](/Images/appc/download/attachments/30083108/IeDebuggerSupport.png)
 
 The IE debugger opens your log file(s) in a text editor.

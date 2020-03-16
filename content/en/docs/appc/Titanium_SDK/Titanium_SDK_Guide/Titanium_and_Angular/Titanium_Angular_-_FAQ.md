@@ -46,7 +46,6 @@ You can setup a custom task in VS Code that uses the Appc CLI for a more comfort
 
 3. Select **Create tasks.json file from template** entry.
 
-
 VS Code will then create and open the task.json file which you can modify to define your own task. For example, to create a task that will use the Appc CLI to build and run your app in the iOS simulator modify it to look like this.
 
 task.json

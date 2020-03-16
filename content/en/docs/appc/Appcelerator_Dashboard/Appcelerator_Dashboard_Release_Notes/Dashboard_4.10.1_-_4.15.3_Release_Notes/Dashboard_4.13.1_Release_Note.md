@@ -8,7 +8,6 @@ Dashboard 4.13.1 is a patch release, which includes several improvements and bug
 
 * Added "Technology Preview" verbiage on Query Builder information page
 
-
 ## Fixed issues
 
 * Fixed issue where analytics data may not be displayed as expected

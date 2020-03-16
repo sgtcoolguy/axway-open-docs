@@ -14,39 +14,10 @@ When API Builder reads these API swagger definitions, it will create the specifi
 
 APIs have the following extensions to the swagger specification:
 
-Property
-
-Description
-
-Required
-
-Type
-
-Default
-
-Example
-
-x-enabled
-
-If the API should be bound to the app on load.
-
-No
-
-object
-
-{ "enabled": true }
-
-{ "enabled": false }
-
-x-flow
-
-The name of the Flow to be executed when the endpoint is hit.
-
-Yes
-
-string
-
-"greetflow"
+| Property | Description | Required | Type | Default | Example |
+| --- | --- | --- | --- | --- | --- |
+| x-enabled | If the API should be bound to the app on load. | No | object | { "enabled": true } | { "enabled": false } |
+| x-flow | The name of the Flow to be executed when the endpoint is hit. | Yes | string |  | "greetflow" |
 
 ## Example
 

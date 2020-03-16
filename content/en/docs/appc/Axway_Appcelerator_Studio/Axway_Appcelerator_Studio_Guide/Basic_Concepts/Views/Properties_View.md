@@ -1,11 +1,10 @@
 {"title":"Properties View","weight":"50"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Opening the View](#OpeningtheView)
+* [Opening the View](#opening-the-view)
 
-* [Using the View](#UsingtheView)
-
+* [Using the View](#using-the-view)
 
 This page describes what the Properties View is and how to display it.
 
@@ -20,7 +19,6 @@ Studio does not display the Properties View in the Web Perspective by default. T
 * From the **Window** menu, select **Show View > Other...**. Then search for **properties** in the search box that appears.
 
 * To close the **Properties View**, click the Close button (**X**) in the upper right of the tab.
-
 
 ## Using the View
 

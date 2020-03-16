@@ -26,13 +26,11 @@ The new API Builder UI offers the following improvements over the legacy Builder
 
 * Internationalization ready UI
 
-
 ## Improvements
 
 * API-1385 - Warn if a user is running locally with a different version of node than will be run in production
 
-  * Added warnings if the developer is running a different version of node locally that the one in production
-
+    * Added warnings if the developer is running a different version of node locally that the one in production
 
 ## Fixed issues
 

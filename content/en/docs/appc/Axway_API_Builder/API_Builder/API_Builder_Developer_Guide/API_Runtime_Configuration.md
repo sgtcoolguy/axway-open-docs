@@ -48,41 +48,16 @@ appc.json
 
 The cloud object contains key-value pairs to configure AMPLIFY Runtime Services deployment settings. Instead of running a sequence of appc cloud commands, define the following keys:
 
-Key
-
-Description
-
-certificate
-
-Specify the path to the custom SSL certificate to use for HTTPS requests.
-
-container
-
-Sets the container size to use. Value can either be Dev, Small, Medium, Large or Xlarge. The default value is Medium. The use of small containers should be avoided. For optimum memory performance, use medium or higher size containers.
-
-domain
-
-Set domain binding for the application to the specified domain name. A domain record must exist for the specified domain name, pointing to the application's cloud.appcelerator.com URL. Do not specify the protocol, that is, do not add http:// or https://, when setting this parameter.
-
-domainPath
-
-Specifies a URL path for routing. Use this parameter when setting more than one application to the same domain name. You must also set the domain key.
-
-environment
-
-An object containing key-value pairs of environment variables to set for the application, where the key is the variable name and the value is the value to set.
-
-maximum
-
-Sets the maximum number of server containers that can be used when scaling the application. The default value is 1.
-
-maxqueuesize
-
-Sets the maximum number of queued requests for autoscaling to occur. AMPLIFY Runtime Services will increase the number of containers if the queue is too high for at least one minute. The default value is 50.
-
-minimum
-
-Sets the minimum number of server containers to use. The default value is 1.
+| Key | Description |
+| --- | --- |
+| certificate | Specify the path to the custom SSL certificate to use for HTTPS requests. |
+| container | Sets the container size to use. Value can either be Dev, Small, Medium, Large or Xlarge. The default value is Medium. The use of small containers should be avoided. For optimum memory performance, use medium or higher size containers. |
+| domain | Set domain binding for the application to the specified domain name. A domain record must exist for the specified domain name, pointing to the application's cloud.appcelerator.com URL. Do not specify the protocol, that is, do not add http:// or https://, when setting this parameter. |
+| domainPath | Specifies a URL path for routing. Use this parameter when setting more than one application to the same domain name. You must also set the domain key. |
+| environment | An object containing key-value pairs of environment variables to set for the application, where the key is the variable name and the value is the value to set. |
+| maximum | Sets the maximum number of server containers that can be used when scaling the application. The default value is 1. |
+| maxqueuesize | Sets the maximum number of queued requests for autoscaling to occur. AMPLIFY Runtime Services will increase the number of containers if the queue is too high for at least one minute. The default value is 50. |
+| minimum | Sets the minimum number of server containers to use. The default value is 1. |
 
 ## Dependencies
 

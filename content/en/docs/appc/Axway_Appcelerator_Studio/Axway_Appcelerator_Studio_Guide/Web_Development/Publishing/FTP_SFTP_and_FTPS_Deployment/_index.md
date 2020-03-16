@@ -1,13 +1,12 @@
 {"title":"FTP SFTP and FTPS Deployment","weight":"30"}
 
-* [Initial set-up](#Initialset-up)
+* [Initial set-up](#initial-set-up)
 
-* [Associate an FTP connection with a project using Project Explorer](#AssociateanFTPconnectionwithaprojectusingProjectExplorer)
+* [Associate an FTP connection with a project using Project Explorer](#associate-an-ftp-connection-with-a-project-using-project-explorer)
 
-* [Select the default FTP site for deployment](#SelectthedefaultFTPsitefordeployment)
+* [Select the default FTP site for deployment](#select-the-default-ftp-site-for-deployment)
 
-* [Related topics](#Relatedtopics)
-
+* [Related topics](#related-topics)
 
 You can set up a connection between a local project and a remote site to transfer files between them in both directions.
 
@@ -22,7 +21,6 @@ You can set up a connection between a local project and a remote site to transfe
 3\. Define the information for the new FTP site. See the [Create an FTP Connection](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Publishing/FTP_SFTP_and_FTPS_Deployment/Create_a_FTP_Connection/) page for more detail.
 
 * If you want the change to be automatically uploaded or downloaded on save after you modify a file in the editor, check the **Automatically sync my changes with the remote site** box and choose the appropriate option.
-
 
 ![ftp_deployment](/Images/appc/download/attachments/30083200/ftp_deployment.png)
 

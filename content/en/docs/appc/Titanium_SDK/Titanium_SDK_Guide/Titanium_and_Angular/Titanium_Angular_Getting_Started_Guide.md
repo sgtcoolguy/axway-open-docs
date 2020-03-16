@@ -1,13 +1,12 @@
 {"title":"Titanium Angular Getting Started Guide","weight":"10"}
 
-* [Creating Angular projects](#CreatingAngularprojects)
+* [Creating Angular projects](#creating-angular-projects)
 
-* [Running Angular projects](#RunningAngularprojects)
+* [Running Angular projects](#running-angular-projects)
 
-* [Appendix and tips](#Appendixandtips)
+* [Appendix and tips](#appendix-and-tips)
 
-  * [Selecting a code editor](#Selectingacodeeditor)
-
+    * [Selecting a code editor](#selecting-a-code-editor)
 
 ## Creating Angular projects
 

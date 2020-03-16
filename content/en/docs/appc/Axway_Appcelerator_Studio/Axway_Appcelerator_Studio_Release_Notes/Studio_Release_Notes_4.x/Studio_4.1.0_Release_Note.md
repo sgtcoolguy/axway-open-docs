@@ -2,7 +2,7 @@
 
 Studio 4.1.0 is a feature release of Studio, introducing a number of new features, improvements and bug fixes. See the [full list of issues addressed in Release 4.1.0](https://jira.appcelerator.org/issues/?filter=16877).
 
-As of this release, Studio 4.0.x will not be supported six months from 4.1.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Studio 4.0.x will not be supported six months from 4.1.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## New Features
 
@@ -13,7 +13,6 @@ As of this release, Studio 4.0.x will not be supported six months from 4.1.0.GA'
 * Update content assist for Alloy projects to suggest <WindowsToolbar/> as a child of a <Window/> element.
 
 * Add ability to create Controllers, Styles and Views for Alloy Widgets. Right-click on the widget folder (not the ./app/widgets/ folder but its subfolders) and select **New**, and choose either **Widget Controller**, **Widget Style** or **Widget View**.
-
 
 ## Known Issues
 

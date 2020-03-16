@@ -1,29 +1,28 @@
 {"title":"Windows Module Project","weight":"40"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Prerequisite](#Prerequisite)
+* [Prerequisite](#prerequisite)
 
-* [Project Structure](#ProjectStructure)
+* [Project Structure](#project-structure)
 
-  * [Manifest File](#ManifestFile)
+    * [Manifest File](#manifest-file)
 
-* [CLI Tasks](#CLITasks)
+* [CLI Tasks](#cli-tasks)
 
-  * [Create a New Module Project](#CreateaNewModuleProject)
+    * [Create a New Module Project](#create-a-new-module-project)
 
-  * [Build and Package the Module](#BuildandPackagetheModule)
+    * [Build and Package the Module](#build-and-package-the-module)
 
-* [Studio Tasks](#StudioTasks)
+* [Studio Tasks](#studio-tasks)
 
-  * [Create a New Module Project](#CreateaNewModuleProject.1)
+    * [Create a New Module Project](#create-a-new-module-project)
 
-  * [Build and Package the Module](#BuildandPackagetheModule.1)
+    * [Build and Package the Module](#build-and-package-the-module)
 
-* [Test the Module](#TesttheModule)
+* [Test the Module](#test-the-module)
 
-* [Next Steps](#NextSteps)
-
+* [Next Steps](#next-steps)
 
 ## Introduction
 
@@ -43,72 +42,13 @@ To develop an Windows-based Module, you'll need all of the software required to 
 
 * Studio or the Appcelerator Command-Line Interface (CLI) for creating modules, and building and running test applications
 
-
 Like Windows application development, Windows module development is only supported on Windows.
 
 ## Project Structure
 
 When you create a new project, it generates the following directories and files. Titanium expects to find files in certain directories with a specific naming convention.
 
-**Filename / Directory**
-
-**Description / Purpose**
-
-LICENSE
-
-The module's full license text; this will be distributed with the module to let other developers know how they can use and redistribute it.
-
-README
-
-The file that gives a short explanation of the module project. This file is not distributed with your module.
-
-assets
-
-The directory where you should place module assets, such as images.
-
-documentation
-
-The directory where you should place your module documentation for end-users. The file [index.md](http://index.md) is a Markdown-formatted template file that you should use when writing your module documentation. You may also write your documentation using the [TDoc Specification](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/TDoc_Specification/). This is only required for module distributed in the Appcelerator Marketplace. You can safely ignore this directory if you do not intend to distribute your module.
-
-example
-
-The directory where your module example(s) should go. The file app.js will be generated to include a sample loading of your module in a test window. This file can be used for quickly testing your module as well as give an example to end-users on how to use your module. This directory is distributed with your module.
-
-windows/include
-
-The directory where your C++/CX header classes should go, used by the Visual Studio compiler. By default, when you create a new project, you are given a boiler plate module class (ModuleId.hpp). These files are not distributed with your module. For information about these files, see [Windows Module Architecture](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Extending_Titanium_Mobile/Windows_Module_Development_Guide/Windows_Module_Architecture/).
-
-windows/src
-
-The directory where your C++/CX implementation classes should go, used by the Visual Studio compiler. By default, when you create a new project, you are given a boiler plate module class (ModuleId.cpp). These files are not distributed with your module. For information about these files, see [Windows Module Architecture](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Extending_Titanium_Mobile/Windows_Module_Development_Guide/Windows_Module_Architecture/).
-
-windows/cmake
-
-The directory which contains configuration files used by cmake. These files are not distributed with your module.
-
-windows/CMakeLists.txt
-
-A special file that describes configuration used about your module used by cmake. These files are not distributed with your module.
-
-windows/manifest
-
-A special file that describes metadata about your module and used by the Titanium compiler. This file is required and is distributed with your module.
-
-windows/Windows10.ARM
-
-The directory which contains your Windows 10 project for ARM. Open this directory to launch your module project in Visual Studio. This directory is not distributed with your module.
-
-windows/Windows10.Win32
-
-The directory which contains your Windows 10 project for Win32. Open this directory to launch your module project in Visual Studio. This directory is not distributed with your module.
-
-windows/platform
-
-Files in this folder are copied directory into the Windows build directory (<project-dir>/build/windows) when the Windows app is compiled. For example you can place res strings under windows/platform/Strings folder, and place drawable files under windows/platform/Assets folder. Files in this directory are copied directly on top of whatever files are already in the build directory, so please be careful that your files don't clobber essential project files or files from other modules.
-
-windows/timodule.xml
-
-Titanium module configuration file. The format is described in [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/). This file is not currently supported by Windows modules.
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Filename / Directory</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Description / Purpose</strong></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>LICENSE</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The module's full license text; this will be distributed with the module to let other developers know how they can use and redistribute it.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>README</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The file that gives a short explanation of the module project. This file is not distributed with your module.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>assets</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The directory where you should place module assets, such as images.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>documentation</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The directory where you should place your module documentation for end-users. The file <a class="external-link external-link" href="http://index.md" target="_blank">index.md</a> is a Markdown-formatted template file that you should use when writing your module documentation. You may also write your documentation using the <a class="document-link" href="#!/guide/TDoc_Specification">TDoc Specification</a>. This is only required for module distributed in the Appcelerator Marketplace. You can safely ignore this directory if you do not intend to distribute your module.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>example</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The directory where your module example(s) should go. The file app.js will be generated to include a sample loading of your module in a test window. This file can be used for quickly testing your module as well as give an example to end-users on how to use your module. This directory is distributed with your module.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>windows/include</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The directory where your C++/CX header classes should go, used by the Visual Studio compiler. By default, when you create a new project, you are given a boiler plate module class (<tt class="">ModuleId.hpp</tt>). These files are not distributed with your module. For information about these files, see <a class="document-link" href="#!/guide/Windows_Module_Architecture">Windows Module Architecture</a>.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>windows/src</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The directory where your C++/CX implementation classes should go, used by the Visual Studio compiler. By default, when you create a new project, you are given a boiler plate module class (<tt class="">ModuleId.cpp</tt>). These files are not distributed with your module. For information about these files, see <a class="document-link" href="#!/guide/Windows_Module_Architecture">Windows Module Architecture</a>.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>windows/cmake</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The directory which contains configuration files used by cmake. These files are not distributed with your module.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>windows/CMakeLists.txt</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>A special file that describes configuration used about your module used by cmake. These files are not distributed with your module.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>windows/manifest</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>A special file that describes metadata about your module and used by the Titanium compiler. This file is required and is distributed with your module.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>windows/Windows10.ARM</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The directory which contains your Windows 10 project for ARM. Open this directory to launch your module project in Visual Studio. This directory is not distributed with your module.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>windows/Windows10.Win32</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The directory which contains your Windows 10 project for Win32. Open this directory to launch your module project in Visual Studio. This directory is not distributed with your module.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>windows/platform</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Files in this folder are copied directory into the Windows build directory (<tt class="">&lt;project-dir&gt;/build/windows</tt>) when the Windows app is compiled. For example you can place res strings under <tt class="">windows/platform/Strings</tt> folder, and place drawable files under <tt>windows/platform/Assets</tt> folder. Files in this directory are copied directly on top of whatever files are already in the build directory, so please be careful that your files don't clobber essential project files or files from other modules.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>windows/timodule.xml</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium module configuration file. The format is described in <a class="document-link" href="#!/guide/tiapp.xml_and_timodule.xml_Reference">tiapp.xml and timodule.xml Reference</a>. This file is not currently supported by Windows modules.</p></td></tr></tbody></table>
 
 ### Manifest File
 
@@ -116,57 +56,7 @@ Titanium module metadata is described in a special text file named manifest. Thi
 
 Before you distribute your module, you must edit this manifest and change a few values. Some of the values are pre-generated and should not be edited. These are noted with the comment before them. In the manifest file, any line starting with a hash character (#) is ignored. The following are the descriptions of each entry in the manifest:
 
-**Key**
-
-**Description/Purpose**
-
-version
-
-This is the version of your module. You should change this value each time you make major changes and distribute them. Version should be in the dotted notation (X.Y.Z) and must not con-tain any spaces or non-number characters.
-
-architectures
-
-The binary architectures the module supports as a delimited list. Example: ARM x86
-
-description
-
-This is a human-readable description of your module. It should be short and suitable for display next to your module name.
-
-author
-
-This is a human-readable author name you want to display next to your module. It can simply be your personal name, such as "Jeff Haynie" or an organizational name such as "Appcelerator".
-
-apversion
-
-The is a generated value for the required module API version that was used when creating your module. The current API version for new Windows modules is 7.
-
-license
-
-This is a human-readable name of your license. You should use a short description such as "Apache Public License" or "Commercial".
-
-copyright
-
-This is a human-readable copyright string for your module. For example, "Copyright (c) 2010 by Appcelerator, Inc."
-
-name
-
-This is a read-only name of your module that is generated when you created your project. You must not edit this value.
-
-moduleid
-
-This is a read-only module id of your module that is generated when you created your project. You should not edit this value. NOTE: you must generate a unique id. We recommend using your reverse-DNS company name + module\_name as a pattern to guarantee uniqueness. The Titanium Marketplace will only allow unique module ids when distributing modules. If you must edit this value, you must also edit the value in your module implementation file.
-
-guid
-
-This is a read-only unique module id for your module that is generated when you created your project. You must not edit this value.
-
-platform
-
-This is a read-only platform target of your module that is generated when you created your project. You must not edit this value.
-
-minsdk
-
-The is a generated value for the minimum Titanium SDK version that was used when creating your module. The current minimum version for new Windows modules is 8.0.0.
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Key</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Description/Purpose</strong></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>version</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is the version of your module. You should change this value each time you make major changes and distribute them. Version should be in the dotted notation (X.Y.Z) and must not con-tain any spaces or non-number characters.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>architectures</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The binary architectures the module supports as a delimited list. Example: ARM x86</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>description</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable description of your module. It should be short and suitable for display next to your module name.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>author</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable author name you want to display next to your module. It can simply be your personal name, such as "Jeff Haynie" or an organizational name such as "Appcelerator".</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>apversion</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The is a generated value for the required module API version that was used when creating your module. The current API version for new Windows modules is 7.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>license</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable name of your license. You should use a short description such as "Apache Public License" or "Commercial".</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>copyright</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable copyright string for your module. For example, "Copyright (c) 2010 by Appcelerator, Inc."</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>name</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a read-only name of your module that is generated when you created your project. You must not edit this value.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>moduleid</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a read-only module id of your module that is generated when you created your project. You should not edit this value. NOTE: you must generate a unique id. We recommend using your reverse-DNS company name + module_name as a pattern to guarantee uniqueness. The Titanium Marketplace will only allow unique module ids when distributing modules. If you must edit this value, you must also edit the value in your module implementation file.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>guid</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a read-only unique module id for your module that is generated when you created your project. You must not edit this value.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>platform</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a read-only platform target of your module that is generated when you created your project. You must not edit this value.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>minsdk</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The is a generated value for the minimum Titanium SDK version that was used when creating your module. The current minimum version for new Windows modules is 8.0.0.</p></td></tr></tbody></table>
 
 ## CLI Tasks
 
@@ -224,7 +114,6 @@ With the ZIP file, you can either:
 
 * Distribute the ZIP file
 
-
 ## Studio Tasks
 
 ### Create a New Module Project
@@ -243,7 +132,6 @@ With the ZIP file, you can either:
 
 7. Click **Finish**.
 
-
 ### Build and Package the Module
 
 1. Select your module folder in the **Project Explorer** view.
@@ -254,14 +142,13 @@ With the ZIP file, you can either:
 
 4. In **Output Location**, select either
 
-  1. **Titanium SDK** to install the module in the Titanium SDK home path to be accessed by any Titanium application
+    1. **Titanium SDK** to install the module in the Titanium SDK home path to be accessed by any Titanium application
 
-  2. **Mobile App Project** and choose an application to install the module locally that can be accessed by one that Titanium application
+    2. **Mobile App Project** and choose an application to install the module locally that can be accessed by one that Titanium application
 
-  3. **Location** and enter a path to copy the ZIP file to for distribution
+    3. **Location** and enter a path to copy the ZIP file to for distribution
 
 5. Click **Finish**.
-
 
 ## Test the Module
 
@@ -274,7 +161,6 @@ To test a module:
 3. Add the module as a dependency to the project.
 
 4. Load the module and make module API calls.
-
 
 ## Next Steps
 

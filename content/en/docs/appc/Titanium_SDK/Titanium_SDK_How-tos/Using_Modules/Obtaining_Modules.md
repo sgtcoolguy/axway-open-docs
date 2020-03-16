@@ -1,15 +1,14 @@
 {"title":"Obtaining Modules","weight":"10"}
 
-* [Appcelerator Marketplace](#AppceleratorMarketplace)
+* [Appcelerator Marketplace](#appcelerator-marketplace)
 
-* [Appcelerator Enterprise Extensions](#AppceleratorEnterpriseExtensions)
+* [Appcelerator Enterprise Extensions](#appcelerator-enterprise-extensions)
 
-* [Open-source Appcelerator modules](#Open-sourceAppceleratormodules)
+* [Open-source Appcelerator modules](#open-source-appcelerator-modules)
 
-* [Community-contributed modules](#Community-contributedmodules)
+* [Community-contributed modules](#community-contributed-modules)
 
-* [Mobile Web modules](#MobileWebmodules)
-
+* [Mobile Web modules](#mobile-web-modules)
 
 ## Objective
 
@@ -45,7 +44,6 @@ At the time of this writing, these are some of the modules included in the TiPlu
 
 * AirPrint (iOS)
 
-
 ### Open-source Appcelerator modules
 
 In addition to publishing modules via the Marketplace and Support site, Appcelerator publishes a few modules on its GitHub account. Those modules are open source (check the individual licenses for full details) and are provided as-is without official support. You'll find these modules at [https://github.com/appcelerator/titanium\_modules](https://github.com/appcelerator/titanium_modules)
@@ -61,7 +59,6 @@ Various community members publish modules, generally via their blogs or GitHub a
 * Ben Bahrenburg publishes various iOS modules at [http://bencoding.com/](http://bencoding.com/) or [https://github.com/benbahrenburg](https://github.com/benbahrenburg)
 
 * QuickTiGame2d is a 2D game engine module for Titanium [http://code.google.com/p/quicktigame2d/](http://code.google.com/p/quicktigame2d/)
-
 
 (Apologies to the many high-caliber developers and projects left off this very short list!)
 

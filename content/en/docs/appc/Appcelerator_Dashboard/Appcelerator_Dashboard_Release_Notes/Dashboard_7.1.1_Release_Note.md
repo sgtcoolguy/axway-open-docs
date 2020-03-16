@@ -8,7 +8,6 @@ Dashboard 7.1.1 is a patch release, which includes an improvement and several bu
 
 * Added a link on the _Sign In_ view allowing the user to restart authentication with a different account.
 
-
 ## Fixed issues
 
 * Resolved an issue where the browser may use high CPU, or the tab may hang when viewing the _Usage_ view for orgs other than the one the user is currently logged into.

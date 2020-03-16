@@ -1,27 +1,26 @@
 {"title":"iOS Launch Files","weight":"10"}
 
-* [What this guide is about](#Whatthisguideisabout)
+* [What this guide is about](#what-this-guide-is-about)
 
-* [What are Launch Files?](#WhatareLaunchFiles?)
+* [What are Launch Files?](#what-are-launch-files?)
 
-* [Why use Launch Files?](#WhyuseLaunchFiles?)
+* [Why use Launch Files?](#why-use-launch-files?)
 
-* [How to enable Launch Files?](#HowtoenableLaunchFiles?)
+* [How to enable Launch Files?](#how-to-enable-launch-files?)
 
-  * [Option A: Use the builtin Storyboard](#OptionA:UsethebuiltinStoryboard)
+    * [Option A: Use the builtin Storyboard](#option-a:-use-the-builtin-storyboard)
 
-    * [Customising the image](#Customisingtheimage)
+        * [Customising the image](#customising-the-image)
 
-    * [Customising the background color](#Customisingthebackgroundcolor)
+        * [Customising the background color](#customising-the-background-color)
 
-  * [Option B: Use a custom Storyboard](#OptionB:UseacustomStoryboard)
+    * [Option B: Use a custom Storyboard](#option-b:-use-a-custom-storyboard)
 
-    * [Using images](#Usingimages)
+        * [Using images](#using-images)
 
-* [Advanced use-cases](#Advanceduse-cases)
+* [Advanced use-cases](#advanced-use-cases)
 
-* [Dealing with Launch File cache](#DealingwithLaunchFilecache)
-
+* [Dealing with Launch File cache](#dealing-with-launch-file-cache)
 
 ## What this guide is about
 
@@ -30,7 +29,6 @@ This guide walks you through using Launch Files instead of traditional Launch Im
 * **Minimum Titanium SDK version:** 5.2.0
 
 * **Minimum iOS SDK version:** 8.0
-
 
 ## What are Launch Files?
 
@@ -68,41 +66,13 @@ The builtin Storyboard features a centered image on a solid background color. Th
 
 By default we’ll generate the image from DefaultIcon\[-ios\].png. To use a different image, add the following LaunchLogo\*.png files to the [app/assets/iphone](https://github.com/appcelerator-developer-relations/appc-sample-ti520/tree/master/app/assets/iphone) folder:
 
-Filename
-
-Scale
-
-Size
-
-LaunchLogo~iphone.png
-
-1x
-
-320×320
-
-LaunchLogo@2x~iphone.png
-
-2x
-
-374×374
-
-LaunchLogo@3x~iphone.png
-
-3x
-
-621×621
-
-LaunchLogo~ipad.png
-
-1x
-
-384×384
-
-LaunchLogo@2x~ipad.png
-
-2x
-
-1024×1024
+| Filename | Scale | Size |
+| --- | --- | --- |
+| LaunchLogo~iphone.png | 1x | 320×320 |
+| LaunchLogo@2x~iphone.png | 2x | 374×374 |
+| LaunchLogo@3x~iphone.png | 3x | 621×621 |
+| LaunchLogo~ipad.png | 1x | 384×384 |
+| LaunchLogo@2x~ipad.png | 2x | 1024×1024 |
 
 You can generate these images with TiCons [Web](http://ticons.fokkezb.nl/) or [CLI](https://www.npmjs.com/package/ticons) \--storyboard option.
 
@@ -155,7 +125,6 @@ To deal with this follow these steps before you build:
 1. Use _Simulator > Reset Content and Settings…_
 
 2. Use _Project > Clean…_ or appc ti clean from CLI.
-
 
 Alternatively you can reset an individual app using a tool like [SimPholders](https://simpholders.com/). With this app, just hold alt/⌥ and click the app from the dropdown:
 

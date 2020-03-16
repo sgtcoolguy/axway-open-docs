@@ -1,29 +1,28 @@
 {"title":"Video APIs","weight":"20"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [Fullscreen and embedded players](#Fullscreenandembeddedplayers)
+    * [Fullscreen and embedded players](#fullscreen-and-embedded-players)
 
-  * [Movie events](#Movieevents)
+    * [Movie events](#movie-events)
 
-  * [Hands-on practice](#Hands-onpractice)
+    * [Hands-on practice](#hands-on-practice)
 
-    * [Goal](#Goal)
+        * [Goal](#goal)
 
-    * [Steps](#Steps)
+        * [Steps](#steps)
 
-  * [Windows development considerations](#Windowsdevelopmentconsiderations)
+    * [Windows development considerations](#windows-development-considerations)
 
-    * [Grant access to video stream and audio stream](#Grantaccesstovideostreamandaudiostream)
+        * [Grant access to video stream and audio stream](#grant-access-to-video-stream-and-audio-stream)
 
-    * [Grant access to music library](#Grantaccesstomusiclibrary)
+        * [Grant access to music library](#grant-access-to-music-library)
 
-  * [References and further reading](#Referencesandfurtherreading)
+    * [References and further reading](#references-and-further-reading)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Objective
 
@@ -83,7 +82,6 @@ The VideoPlayer supports quite a few events that you can use to control the play
 
 * fullscreen – fired when the movie changes to or from fullscreen, use the e.entering property to determine if the player is entering or leaving fullscreen mode
 
-
 A technique you should consider is stopping the movie when the video it's embedded in closes. You can do that simply with code like this:
 
 `win.addEventListener(``'close'``,` `function``() {`
@@ -106,22 +104,21 @@ In this activity, you will write a simple app to stream a movie from a remote UR
 
 3. Define a VideoPlayer with these characteristics:
 
-  * backgroundColor = black
+    * backgroundColor = black
 
-  * default video controls (not embedded)
+    * default video controls (not embedded)
 
-  * scalingMode = fill the screen
+    * scalingMode = fill the screen
 
-  * fullscreen
+    * fullscreen
 
-  * Play the [http://assets.appcelerator.com.s3.amazonaws.com/video/media.m4v](http://assets.appcelerator.com.s3.amazonaws.com/video/media.m4v) movie. Depending on your Android environment, that movie might not play well (due to encoding issues from the creation process). If you have playback troubles, you can play [http://assets.appcelerator.com.s3.amazonaws.com/video/media.3gp](http://assets.appcelerator.com.s3.amazonaws.com/video/media.3gp) on Android instead.
+    * Play the [http://assets.appcelerator.com.s3.amazonaws.com/video/media.m4v](http://assets.appcelerator.com.s3.amazonaws.com/video/media.m4v) movie. Depending on your Android environment, that movie might not play well (due to encoding issues from the creation process). If you have playback troubles, you can play [http://assets.appcelerator.com.s3.amazonaws.com/video/media.3gp](http://assets.appcelerator.com.s3.amazonaws.com/video/media.3gp) on Android instead.
 
 4. Add the branching logic so that on iOS you add the VideoPlayer to the window object.
 
 5. Add the code to play the video stream and open the window.
 
 6. Build and test your app in the simulator/emulator or on device.
-
 
 Simulator / emulator rotation
 
@@ -196,7 +193,6 @@ For more information about audio configuration in tiapp.xml, see [Windows-specif
 * [Android Developer Docs: Supported media formats](http://developer.android.com/guide/appendix/media-formats.html)
 
 * [Windows 10 Mobile: Audio, video, and camera](https://msdn.microsoft.com/windows/uwp/audio-video-camera/index)
-
 
 ## Summary
 

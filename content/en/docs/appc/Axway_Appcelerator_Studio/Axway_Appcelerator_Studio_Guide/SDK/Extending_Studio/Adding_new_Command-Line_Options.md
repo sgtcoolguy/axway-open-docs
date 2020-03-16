@@ -8,41 +8,40 @@ If you wish a user to have additional control over their environment, you can im
 
 * A full list of default Eclipse properties may be found [here](http://help.eclipse.org/indigo/index.jsp?topic=/org.eclipse.platform.doc.isv/reference/misc/runtime-options.html).
 
-
 ## Creating a New Property
 
 * Create a new Interface of the form I\*SystemProperties, where \* is derived from the name of the plugin. See [here](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Source_Code_Conventions/) for naming conventions
 
-  `package` `com.appcelerator.titanium.ui;`
+    `package` `com.appcelerator.titanium.ui;`
 
-  `/**`
+    `/**`
 
-  `* Various options that can be passed on the command line to control Studio behavior`
+    `* Various options that can be passed on the command line to control Studio behavior`
 
-  `*`
+    `*`
 
-  `* @author ingo`
+    `* @author ingo`
 
-  `*/`
+    `*/`
 
-  `public`  `interface` `ITitaniumUISystemProperties`
+    `public`  `interface` `ITitaniumUISystemProperties`
 
-  `{`
+    `{`
 
-  `/**`
+    `/**`
 
-  `* The url of the Titanium dashboard`
+    `* The url of the Titanium dashboard`
 
-  `*/`
+    `*/`
 
-  `public`  `static` `String DASHBOARD_URL =` `"titanium.dashboardUrl"``;` `//$NON-NLS-1$`
+    `public`  `static` `String DASHBOARD_URL =` `"titanium.dashboardUrl"``;` `//$NON-NLS-1$`
 
-  `}`
+    `}`
 
 * Create a new string for the system property. Note the following naming convention:
 
-  * titanium.camelCasedString for items in the Titanium set of plugins
+    * titanium.camelCasedString for items in the Titanium set of plugins
 
-  * studio.camelCasedName for items that affect the Aptana set of plugins
+    * studio.camelCasedName for items that affect the Aptana set of plugins
 
 * Use EclipseUtils.isSystemPropertyEnabled() and EclipseUtils.getSystemProperty() to check if the specified option is defined, or the value in question

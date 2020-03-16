@@ -1,25 +1,24 @@
 {"title":"Creating a New Titanium Module","weight":"10"}
 
-* [Preparing Appcelerator Studio for Module Creation](#PreparingAppceleratorStudioforModuleCreation)
+* [Preparing Appcelerator Studio for Module Creation](#preparing-appcelerator-studio-for-module-creation)
 
-  * [For Android Module Development](#ForAndroidModuleDevelopment)
+    * [For Android Module Development](#for-android-module-development)
 
-* [Creating a New Module](#CreatingaNewModule)
+* [Creating a New Module](#creating-a-new-module)
 
-  * [Module Creation Steps](#ModuleCreationSteps)
+    * [Module Creation Steps](#module-creation-steps)
 
-* [Building/Packaging a Module](#Building/PackagingaModule)
+* [Building/Packaging a Module](#building/packaging-a-module)
 
-  * [Troubleshooting Build Errors](#TroubleshootingBuildErrors)
+    * [Troubleshooting Build Errors](#troubleshooting-build-errors)
 
-    * [Your Android application project path contains spaces](#YourAndroidapplicationprojectpathcontainsspaces)
+        * [Your Android application project path contains spaces](#your-android-application-project-path-contains-spaces)
 
-    * [Android.ndk property is not set](#Android.ndkpropertyisnotset)
+        * [Android.ndk property is not set](#android.ndk-property-is-not-set)
 
-* [Using Your Module](#UsingYourModule)
+* [Using Your Module](#using-your-module)
 
-* [Uploading your Module to the Marketplace](#UploadingyourModuletotheMarketplace)
-
+* [Uploading your Module to the Marketplace](#uploading-your-module-to-the-marketplace)
 
 This guide details the module creation process inside Appcelerator Studio. For more information on what methods and properties are available as part of the module API and specific platform notes, see the [Android Module Development Guide](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Extending_Titanium_Mobile/Android_Module_Development_Guide/) and [iOS Module Development Guide](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Extending_Titanium_Mobile/iOS_Module_Development_Guide/).
 
@@ -37,35 +36,7 @@ As an additional note, you need to make sure the path to your Studio workspace d
 
 Creating a new module is accomplished by running through a wizard. Below summarizes the properties required, and a description of the values.
 
-Property
-
-Description/Purpose
-
-moduleid
-
-This is a read-only module id of your module that is generated when you created your project. You should not edit this value.
-
-You must generate a unique id. We recommend using your reverse-DNS company name + module\_name as a pattern to guarantee uniqueness. The Titanium Marketplace will only allow unique module ids when distributing modules. If you must edit this value, you must also edit the value in your module implementation file.
-
-version
-
-This is the version of your module. You should change this value each time you make major changes and distribute them. Version should be in the dotted notation (X.Y.Z) and must not con-tain any spaces or non-number characters.
-
-description
-
-This is a human-readable description of your module. It should be short and suitable for display next to your module name.
-
-author
-
-This is a human-readable author name you want to display next to your module. It can simply be your personal name or an organizational name such as "Appcelerator".
-
-license
-
-This is a human-readable name of your license. You should use a short description such as "Apache Public License" or "Commercial".
-
-copyright
-
-This is a human-readable copyright string for your module. For example, "Copyright (c) 2010 by Appcelerator, Inc."
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>Property</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Description/Purpose</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>moduleid</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a read-only module id of your module that is generated when you created your project. You should not edit this value.</p><div class="confbox admonition admonition-note aui-message warning shadowed information-macro"><p>You must generate a unique id. We recommend using your reverse-DNS company name + module_name as a pattern to guarantee uniqueness. The Titanium Marketplace will only allow unique module ids when distributing modules. If you must edit this value, you must also edit the value in your module implementation file.</p></div></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>version</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is the version of your module. You should change this value each time you make major changes and distribute them. Version should be in the dotted notation (X.Y.Z) and must not con-tain any spaces or non-number characters.</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>description</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable description of your module. It should be short and suitable for display next to your module name.</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>author</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable author name you want to display next to your module. It can simply be your personal name or an organizational name such as "Appcelerator".</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>license</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable name of your license. You should use a short description such as "Apache Public License" or "Commercial".</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>copyright</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable copyright string for your module. For example, "Copyright (c) 2010 by Appcelerator, Inc."</p></td></tr></tbody></table>
 
 ### Module Creation Steps
 
@@ -79,7 +50,7 @@ This is a human-readable copyright string for your module. For example, "Copyrig
 
 5. Click **Finish**.
 
-  ![New_Titanium_Mobile_Module_Project_2](/Images/appc/download/attachments/30083142/New_Titanium_Mobile_Module_Project_2.png)
+    ![New_Titanium_Mobile_Module_Project_2](/Images/appc/download/attachments/30083142/New_Titanium_Mobile_Module_Project_2.png)
 
 Your module is created. Note the two different folder structures, depending on the platform.
 
@@ -96,7 +67,6 @@ You may then choose to deploy the module for all projects, or for a specific pro
 * For all projects: the module .zip file is dropped at the root of the the Titanium SDK installation location.
 
 * For a particular project: The module .zip file is dropped at the root of your project.
-
 
 ### Troubleshooting Build Errors
 
@@ -143,6 +113,5 @@ To distribute your module through the Titanium+Plus Marketplace, you'll first ne
 * You must accept the Titanium+Plus Marketplace terms of service agreement.
 
 * Once you have upload your module and completed the necessary submission steps, your module will be queued for submission and availability in the marketplace directory.
-
 
 Start by visiting the [Open Module Marketplace](https://marketplace.appcelerator.com).

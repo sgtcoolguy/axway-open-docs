@@ -12,7 +12,6 @@ Studio's Code Assist system provides instant feedback about available properties
 
 * [Using Open Declaration to jump to another location in your code](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Working_with_Projects/Using_Open_Declaration_to_jump_to_another_location_in_your_code/)
 
-
 ## Chapters
 
 * [About Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/About_Content_Assist/)

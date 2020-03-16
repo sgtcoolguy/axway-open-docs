@@ -20,7 +20,6 @@ The log file is a poorly-discoverable option for the end user and directing the 
 
 * **INFO** means anything useful during debugging
 
-
 If the error is caused by a configuration issue in Studio, the UI should present the problem and offer ways to help the user solve the problem, one of which may be pointing them to documentation. This is independent of what is logged to the log file.
 
 The error message in the log file should be descriptive enough that the user could reasonably file a bug and we could understand the context. **e.getLocalizedMessage() is rarely the right message to display.**
@@ -30,7 +29,6 @@ The error message in the log file should be descriptive enough that the user cou
 * If a user **is** in "Specific components" mode only components where the scope is null or matches the toggled options will log, filtered by severity slider
 
 * If a user is in **debug mode** (-debug, tracing tab in run configurations), those settings override the "Specific components" setting. If desired, the user can then later turn on those specific options manually while in the process of debugging by using the "Troubleshooting" page.
-
 
 ## Scopes
 
@@ -52,40 +50,39 @@ We use the term "scope" a bit loosely here, as the scopes don't quite match the 
 
 3. Edit the file to add a line such as:
 
-  `com.aptana.core/debug/logger=``true`
+    `com.aptana.core/debug/logger=``true`
 
 4. The initial default value of true/false is not relevant here--when enabling a scope, we default to true
 
 5. Create a new Interface of the form I\*DebugScopes in the main package of your plugin, where \* is derived from the name of the plugin. See [here](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Source_Code_Conventions/) for naming convention:
 
-  `package` `com.aptana.core;`
+    `package` `com.aptana.core;`
 
-  `/**`
+    `/**`
 
-  `* A interface to capture the various scopes available during debugging. These need to match the items in the .options`
+    `* A interface to capture the various scopes available during debugging. These need to match the items in the .options`
 
-  `* file at the root of the plugin`
+    `* file at the root of the plugin`
 
-  `*`
+    `*`
 
-  `* @author Ingo Muschenetz`
+    `* @author Ingo Muschenetz`
 
-  `*/`
+    `*/`
 
-  `public`  `interface` `ICoreDebugScopes`
+    `public`  `interface` `ICoreDebugScopes`
 
-  `{`
+    `{`
 
-  `/**`
+    `/**`
 
-  `* Items related to the logging process`
+    `* Items related to the logging process`
 
-  `*/`
+    `*/`
 
-  `String LOGGER = CorePlugin.PLUGIN_ID +` `"/debug/logger"``;` `//$NON-NLS-1$`
+    `String LOGGER = CorePlugin.PLUGIN_ID +` `"/debug/logger"``;` `//$NON-NLS-1$`
 
-  `}`
-
+    `}`
 
 ### Using a Scope
 
@@ -110,7 +107,6 @@ There are also severity-specific versions, such as isInfoEnabled(), isWarningEna
 3. Click "specific component" checkbox
 
 4. Find the scope in the list and click to check it
-
 
 ## Debugging Logging
 

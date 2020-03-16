@@ -10,5 +10,4 @@ The 'go-to definition' actions enable you to get to a given definition.
 
 * It can work on methods/attributes from **parameters** (as the image below shows).
 
-
 ![gotodefinition](/Images/appc/pydev.org/images/gotodefinition/gotodefinition.png)

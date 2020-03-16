@@ -1,25 +1,24 @@
 {"title":"Native iOS Debugging and Testing Tools","weight":"30"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [View log output in Console](#ViewlogoutputinConsole)
+    * [View log output in Console](#view-log-output-in-console)
 
-  * [View log output in Xcode](#ViewlogoutputinXcode)
+    * [View log output in Xcode](#view-log-output-in-xcode)
 
-  * [View log output on a connected device](#Viewlogoutputonaconnecteddevice)
+    * [View log output on a connected device](#view-log-output-on-a-connected-device)
 
-  * [View crash logs on a device](#Viewcrashlogsonadevice)
+    * [View crash logs on a device](#view-crash-logs-on-a-device)
 
-  * [Instruments](#Instruments)
+    * [Instruments](#instruments)
 
-  * [Simulate cellular network conditions with the Network Link Conditioner](#SimulatecellularnetworkconditionswiththeNetworkLinkConditioner)
+    * [Simulate cellular network conditions with the Network Link Conditioner](#simulate-cellular-network-conditions-with-the-network-link-conditioner)
 
-  * [References](#References)
+    * [References](#references)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Objective
 
@@ -45,7 +44,6 @@ To open **Console** from the Applications folder:
 
 4. Click **system.log** item to view the simulator's log output.
 
-
 ### View log output in Xcode
 
 You can view log output within Xcode. This includes the same information output to the Studio console. Viewing the Xcode (gdb) console is useful if you build your Titanium app from within Xcode to set project-specific parameters, build options, and so forth. (Keep in mind that you lose Titanium's i18n string handling if you build via Xcode.) It would also be useful when debugging a native iOS module for Titanium.
@@ -57,7 +55,6 @@ To view log output in Xcode:
 2. Open yourproject/build/iphone/yourproject.xcodeproj (e.g. KitchenSink.xcodeproj) in Xcode.
 
 3. Build and run the project within Xcode. Log output is shown in the Console output panel.
-
 
 ![Xcode9Console](/Images/appc/download/attachments/29004939/Xcode9Console.png)
 
@@ -81,7 +78,6 @@ To view the console output of a connected device:
 
 7. Click the **Open Device** button to show the console.
 
-
 ![Xcode9Devices](/Images/appc/download/attachments/29004939/Xcode9Devices.png)
 
 ### View crash logs on a device
@@ -101,7 +97,6 @@ To view the crash log of a connected device:
 5. Click the **View** **Device Logs** button.
 
 6. In the list of available log files, select your app. There might be more than one file for your app, one for each time it has crashed.
-
 
 ### Instruments
 
@@ -125,7 +120,6 @@ Network Link Conditioner might not be installed by default. To install it:
 
 5. Turn the link conditioner on.
 
-
 Once installed, you can access the Network Link Conditioner via the System Preferences application.
 
 Once you turn on link conditioning, your network speed will throttled to the level defined by the profile you selected. At this point, you can test your app in the Simulator under conditions that more realistically reflect the real world.
@@ -139,7 +133,6 @@ If the default network condition profiles don't meet your needs, you can create 
 * Apple Developer docs: [Viewing Console Output and Device Logs](http://developer.apple.com/library/IOs/#documentation/Xcode/Conceptual/ios_development_workflow/130-Debugging_Applications/debugging_applications.html)
 
 * [Simulating slow network connections](http://titaniumninja.com/simulating-slow-network-links-on-os-x/) with ifpw for macOS.
-
 
 ## Summary
 

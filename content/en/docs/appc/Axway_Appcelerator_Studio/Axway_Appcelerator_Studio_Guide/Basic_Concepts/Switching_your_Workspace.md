@@ -1,15 +1,14 @@
 {"title":"Switching your Workspace","weight":"60"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Finding your workspace from Studio](#FindingyourworkspacefromStudio)
+* [Finding your workspace from Studio](#finding-your-workspace-from-studio)
 
-* [Switching your workspace from Studio](#SwitchingyourworkspacefromStudio)
+* [Switching your workspace from Studio](#switching-your-workspace-from-studio)
 
-* [Changing your workspace preferences](#Changingyourworkspacepreferences)
+* [Changing your workspace preferences](#changing-your-workspace-preferences)
 
-* [Restoring preferences when switching workspaces](#Restoringpreferenceswhenswitchingworkspaces)
-
+* [Restoring preferences when switching workspaces](#restoring-preferences-when-switching-workspaces)
 
 ## Overview
 
@@ -27,7 +26,6 @@ To find your workspace while you are working in Studio:
 
 3. Click **Cancel**.
 
-
 ## Switching your workspace from Studio
 
 To switch your workspace while you are working in Studio:
@@ -37,7 +35,6 @@ To switch your workspace while you are working in Studio:
 2. In the **Workspace Launcher**, browse to the workspace that you want to switch to.
 
 3. Click **OK**.
-
 
 Studio will shut down, restart, and open to the workspace that you specified.
 
@@ -54,7 +51,6 @@ To change your preferences so that Studio asks you to choose your workspace on s
 4. Click **Apply** to save your changes.
 
 5. Click **OK** to close the **Preferences** window.
-
 
 On Mac OS, **Preferences** is found under the **Aptana Studio**/**Titanium Studio** or **Eclipse** menu.
 

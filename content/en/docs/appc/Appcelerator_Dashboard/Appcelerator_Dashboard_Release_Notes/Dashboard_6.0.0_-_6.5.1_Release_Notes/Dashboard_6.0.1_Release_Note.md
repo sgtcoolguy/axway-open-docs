@@ -8,7 +8,6 @@ Dashboard 6.0.1 is a patch release, which includes an improvement and a bug fix.
 
 * Improved performance of organization usage reports.
 
-
 ## Fixed issue
 
 * Resolved an issue where AMPLIFY Platform Home may not load correctly after authenticating.

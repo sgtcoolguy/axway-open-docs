@@ -1,19 +1,18 @@
 {"title":"Android Broadcast Intents and Receivers","weight":"30"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Send a broadcast](#Sendabroadcast)
+* [Send a broadcast](#send-a-broadcast)
 
-  * [Create a broadcast intent](#Createabroadcastintent)
+    * [Create a broadcast intent](#create-a-broadcast-intent)
 
-  * [Send a broadcast](#Sendabroadcast.1)
+    * [Send a broadcast](#send-a-broadcast)
 
-  * [Send a broadcast with a permission](#Sendabroadcastwithapermission)
+    * [Send a broadcast with a permission](#send-a-broadcast-with-a-permission)
 
-* [Monitor a broadcast](#Monitorabroadcast)
+* [Monitor a broadcast](#monitor-a-broadcast)
 
-* [Further reading](#Furtherreading)
-
+* [Further reading](#further-reading)
 
 ## Introduction
 
@@ -29,9 +28,9 @@ To send a broadcast, create an intent using the Titanium.Android.createBroadcast
 
 To create a broadcast intent, pass the Titanium.Android.createBroadcastIntent() method an object with its action property set to a string describing the action that took place. Use a reverse domain name scheme in order to avoid potential conflicts with other applications.
 
-To send extra data with the intent, use the intent's putExtra() method to add data. For details, see [Android Intents: Add Extra Data](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Intents/#Addextradata).
+To send extra data with the intent, use the intent's putExtra() method to add data. For details, see [Android Intents: Add Extra Data](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Intents/#add-extra-data).
 
-The application can also create an explicit intent to send the broadcast to a specific application or application activity. Specify the intent object's className and packageName properties, or the url property, but not both. For details, see [Android Intents: Create an Explicit Intent](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Intents/#Createanexplicitintent).
+The application can also create an explicit intent to send the broadcast to a specific application or application activity. Specify the intent object's className and packageName properties, or the url property, but not both. For details, see [Android Intents: Create an Explicit Intent](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Intents/#create-an-explicit-intent).
 
 The following example creates a broadcast intent and adds extra data to be passed on to the application or activity.
 
@@ -62,7 +61,6 @@ To restrict which application can receive the broadcast, send a broadcast with a
 2. Declare the permission in the Android manifest section of the tiapp.xml file using the <permission> element with the android:name attribute set to the name of the action.
 
 3. Pass the Intent object and permission to the sendBroadcastWithPermission() method.
-
 
 In order to receive the broadcast, the receiving application needs to declare that it can use the permission in the Android manifest section of the tiapp.xml.
 
@@ -105,7 +103,6 @@ To monitor a broadcast, the application needs to create a broadcast receive and 
 * onReceived: Assign a callback function to handle the broadcast. The callback function is passed an object with its intent property set to the Intent that created the broadcast.
 
 * url: Assign to the URL of a JavaScript file to handle the broadcast. Note that the JavaScript file does have any context passed to it, so it will not know the intent that created the broadcast.
-
 
 **To register a broadcast receiver**, pass the Titanium.Android.registerBroadcastReceiver() method a BroadcastReceiver object as the first parameter and an array of actions to monitor as the second parameter. Android system broadcasts are declared as Titanium.Android.ACTION\_\* constants. Note that not all actions are system broadcasts.
 

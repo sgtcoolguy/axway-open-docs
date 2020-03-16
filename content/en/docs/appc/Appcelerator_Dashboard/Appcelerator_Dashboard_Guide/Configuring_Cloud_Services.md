@@ -1,11 +1,10 @@
 {"title":"Configuring Cloud Services","weight":"50"}
 
-* [Keys](#Keys)
+* [Keys](#keys)
 
-* [Settings](#Settings)
+* [Settings](#settings)
 
-* [Email](#Email)
-
+* [Email](#email)
 
 The **Configuration** tab lets you do the following:
 
@@ -14,7 +13,6 @@ The **Configuration** tab lets you do the following:
 * Configure application settings for Cloud services
 
 * Provide SMTP, or [Message Gears](http://messagegears.com/) account information to send e-mails for notifications
-
 
 Before configuring Cloud settings, make sure you select the correct environment from the **Environment** menu. The changes you make in the **Configuration** tab only affects the selected environment.
 
@@ -32,17 +30,16 @@ Click the **Settings** tab to configure application settings for Cloud services.
 
 * **Friend Request Type**: Configures the behavior for the [Friends](/arrowdb/latest/#!/api/Friends) objects. Select either:
 
-  * **Two Way** (default): Friend each other (Facebook).
+    * **Two Way** (default): Friend each other (Facebook).
 
-  * **One Way**: Follow a friend (Twitter).
+    * **One Way**: Follow a friend (Twitter).
 
 * **New User Email Verification**: With this option enabled, new users must provide a valid email address and prove they can access it before their account is activated. You must have your SMTP settings completed before this setting is enabled.
 
 * **Allow User Creation**: With this option disabled, app users can only be created through this administrative website.
 
-  ![settings_latest](/Images/appc/download/attachments/60145226/settings_latest.png)
+    ![settings_latest](/Images/appc/download/attachments/60145226/settings_latest.png)
 * Click **Save** to save any setting changes you made.
-
 
 ## Email
 
@@ -51,7 +48,6 @@ On the **Email** configuration tab, you can configure Dashboard to send email us
 **Notes:**
 
 * If not specified, the **End Point** URL for Message Gears defaults to **https://api.messagegears.net/3.1/WebService**.
-
 
 **To configure your application to send an email:**
 
@@ -63,10 +59,10 @@ On the **Email** configuration tab, you can configure Dashboard to send email us
 
 4. To have all sent emails sent to a specified email for testing purposes:
 
-  1. In the **Test Mode** field, select **Enable**.
+    1. In the **Test Mode** field, select **Enable**.
 
-  2. In the **Administrator's Email** field, enter the email address where emails should be sent.
+    2. In the **Administrator's Email** field, enter the email address where emails should be sent.
 
 5. Click **Save**.
 
-  ![email_latest](/Images/appc/download/attachments/60145226/email_latest.png)
+    ![email_latest](/Images/appc/download/attachments/60145226/email_latest.png)

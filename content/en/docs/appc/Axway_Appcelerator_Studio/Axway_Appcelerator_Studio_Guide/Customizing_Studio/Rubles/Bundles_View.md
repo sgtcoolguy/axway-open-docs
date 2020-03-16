@@ -1,25 +1,24 @@
 {"title":"Bundles View","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Top-level items](#Top-levelitems)
+* [Top-level items](#top-level-items)
 
-* [Bundle entry items](#Bundleentryitems)
+* [Bundle entry items](#bundle-entry-items)
 
-  * [Bundle directories](#Bundledirectories)
+    * [Bundle directories](#bundle-directories)
 
-  * [Commands](#Commands)
+    * [Commands](#commands)
 
-  * [File templates](#Filetemplates)
+    * [File templates](#file-templates)
 
-  * [Menus](#Menus)
+    * [Menus](#menus)
 
-  * [Snippets](#Snippets)
+    * [Snippets](#snippets)
 
-* [Bundle directory items](#Bundledirectoryitems)
+* [Bundle directory items](#bundle-directory-items)
 
-* [Properties view](#Propertiesview)
-
+* [Properties view](#properties-view)
 
 ## Overview
 

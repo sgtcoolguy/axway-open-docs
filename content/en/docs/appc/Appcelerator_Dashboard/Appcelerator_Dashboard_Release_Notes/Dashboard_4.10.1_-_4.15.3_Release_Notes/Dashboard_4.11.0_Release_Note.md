@@ -8,7 +8,6 @@ Dashboard 4.11.0 is a minor release, which includes new features and several bug
 
 * Added feature that allows users to change the timezone in Dashboard
 
-
 ## Fixed issues
 
 * Fixed issue where table views may incorrectly show zero counts prior to data loading

@@ -16,7 +16,6 @@ As part of the getting-started process, you go through the following steps:
 
 5. Develop your first Titanium App. Get started with the sample [Hello Titanium App](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Hello_Titanium_App_Tutorial/).
 
-
 If you're coming from the background of Aptana Studio or Titanium Studio, please check the comparison [here](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/Studio_Feature_Comparison/). However, Titanium Studio is replaced with the Appcelerator Studio to support enterprise and professional mobile app development features.
 
 If your work is primarily web application development, we recommend installing the standalone [Aptana Studio](http://www.aptana.com/products/studio3/download); if your work also involves Java development, we recommend installing [Aptana Studio as an Eclipse plugin](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/Plugging_Studio_into_an_existing_Eclipse_configuration/).

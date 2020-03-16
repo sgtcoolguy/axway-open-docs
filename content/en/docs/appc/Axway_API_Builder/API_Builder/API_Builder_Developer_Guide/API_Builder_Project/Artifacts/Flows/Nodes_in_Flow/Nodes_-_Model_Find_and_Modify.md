@@ -8,95 +8,28 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 This document describes the model find and modify flow-node and provides instance configuration and parameters information.
 
-Name
-
-Description
-
-ModelFindAndModify
-
-A Model specific flow-node. Invokes the Find and Modify API on a specified model and returns the response.
+| Name | Description |
+| --- | --- |
+| ModelFindAndModify | A Model specific flow-node. Invokes the Find and Modify API on a specified model and returns the response. |
 
 ## Instance configuration
 
-Property
-
-Description
-
-Required
-
-Type
-
-model
-
-The name of the model of which to invoke the Find and Modify API.
-
-yes
-
-string
+| Property | Description | Required | Type |
+| --- | --- | --- | --- |
+| model | The name of the model of which to invoke the Find and Modify API. | yes | string |
 
 ## Instance parameters
 
-Property
-
-Description
-
-Type
-
-Default
-
-limit
-
-The number of records to fetch. The value must be greater than 0, and no greater than 1000.
-
-number
-
-10
-
-skip
-
-The number of records to skip. The value must not be less than 0.
-
-number
-
-where
-
-Constrains values for fields. The value should be encoded JSON.
-
-string
-
-order
-
-A dictionary of one or more fields specifying sorting of results. In general, you can sort based on any predefined field that you can query using the where operator, as well as on custom fields. The value should be encoded JSON.
-
-string
-
-sel
-
-Selects which fields to return from the query. Others are excluded. The value should be encoded JSON.
-
-string
-
-unsel
-
-Selects which fields not return from the query. Others are included. The value should be encoded JSON.
-
-string
-
-page
-
-Request page number starting from 1.
-
-number
-
-1
-
-per\_page
-
-The number of results per page.
-
-number
-
-10
+| Property | Description | Type | Default |
+| --- | --- | --- | --- |
+| limit | The number of records to fetch. The value must be greater than 0, and no greater than 1000. | number | 10 |
+| skip | The number of records to skip. The value must not be less than 0. | number |  |
+| where | Constrains values for fields. The value should be encoded JSON. | string |  |
+| order | A dictionary of one or more fields specifying sorting of results. In general, you can sort based on any predefined field that you can query using the where operator, as well as on custom fields. The value should be encoded JSON. | string |  |
+| sel | Selects which fields to return from the query. Others are excluded. The value should be encoded JSON. | string |  |
+| unsel | Selects which fields not return from the query. Others are included. The value should be encoded JSON. | string |  |
+| page | Request page number starting from 1. | number | 1 |
+| per\_page | The number of results per page. | number | 10 |
 
 ### Example
 

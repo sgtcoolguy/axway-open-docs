@@ -8,31 +8,15 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 This document describes the model find all and provides instance configuration and parameters information.
 
-Name
-
-Description
-
-ModelFindAll
-
-A Model specific flow-node. Invokes the Find All API on a specified model and returns the response.
+| Name | Description |
+| --- | --- |
+| ModelFindAll | A Model specific flow-node. Invokes the Find All API on a specified model and returns the response. |
 
 ## Instance configuration
 
-Property
-
-Description
-
-Required
-
-Type
-
-model
-
-The name of the model of which to invoke the Find All API.
-
-yes
-
-number
+| Property | Description | Required | Type |
+| --- | --- | --- | --- |
+| model | The name of the model of which to invoke the Find All API. | yes | number |
 
 ## Instance parameters
 

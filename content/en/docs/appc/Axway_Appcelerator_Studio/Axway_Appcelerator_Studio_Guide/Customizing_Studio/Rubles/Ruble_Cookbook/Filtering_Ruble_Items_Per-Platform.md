@@ -1,11 +1,10 @@
 {"title":"Filtering Ruble Items Per-Platform","weight":"60"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Wrapping an item in a per-platform conditional](#Wrappinganiteminaper-platformconditional)
+* [Wrapping an item in a per-platform conditional](#wrapping-an-item-in-a-per-platform-conditional)
 
-* [Specifying per-platform options](#Specifyingper-platformoptions)
-
+* [Specifying per-platform options](#specifying-per-platform-options)
 
 ## Overview
 
@@ -37,37 +36,18 @@ In the example below, we only want the sample to appear on OSX.
 
 `end`
 
-Platform
-
-Test
-
-Windows
-
-is\_windows?
-
-Windows XP
-
-is\_windows\_xp?
-
-Windows Vista
-
-is\_windows\_7?
-
-Windows 7
-
-is\_windows\_vista?
-
-OS X
-
-is\_mac?
-
-Unix (includes Linux)
-
-is\_unix?
+| Platform | Test |
+| --- | --- |
+| Windows | is\_windows? |
+| Windows XP | is\_windows\_xp? |
+| Windows Vista | is\_windows\_7? |
+| Windows 7 | is\_windows\_vista? |
+| OS X | is\_mac? |
+| Unix (includes Linux) | is\_unix? |
 
 ## Specifying per-platform options
 
-Sometimes, you want an item to be bound to a different key per-platform. That can be done by using the [PLATFORM\_SPECIFIER](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Specification/#PLATFORM_SPECIFIER). However, you could accomplish the same thing by conditionally setting the property using the same syntax as above with Ruble.is\_mac, for example.
+Sometimes, you want an item to be bound to a different key per-platform. That can be done by using the [PLATFORM\_SPECIFIER](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Specification/#platform_specifier). However, you could accomplish the same thing by conditionally setting the property using the same syntax as above with Ruble.is\_mac, for example.
 
 `require` `'ruble'`
 
@@ -96,6 +76,5 @@ Currently, only the following properties support platform specifiers:
 * key\_binding
 
 * invoke
-
 
 Alternatively, you could also wrap the setting of various properties in conditionals that test the platform using the calls from the previous section.

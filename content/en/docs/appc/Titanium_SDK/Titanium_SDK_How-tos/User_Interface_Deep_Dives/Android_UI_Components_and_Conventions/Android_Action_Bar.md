@@ -2,30 +2,29 @@
 
 The action bar is a major UI feature for Android applications in Android 3.0 and later. To understand all of the features of the action bar and its place in Android applications, we recommend reviewing the [Android Design: Action Bar](http://developer.android.com/design/patterns/actionbar.html) and the [Action Bar API guide](http://developer.android.com/guide/topics/ui/actionbar.html) on the Android developer site.
 
-* [Supported and unsupported features](#Supportedandunsupportedfeatures)
+* [Supported and unsupported features](#supported-and-unsupported-features)
 
-* [Enabling the action bar](#Enablingtheactionbar)
+* [Enabling the action bar](#enabling-the-action-bar)
 
-* [Hiding the action bar](#Hidingtheactionbar)
+* [Hiding the action bar](#hiding-the-action-bar)
 
-* [Action bar tabs](#Actionbartabs)
+* [Action bar tabs](#action-bar-tabs)
 
-* [Action items](#Actionitems)
+* [Action items](#action-items)
 
-  * [Dynamically updating action items](#Dynamicallyupdatingactionitems)
+    * [Dynamically updating action items](#dynamically-updating-action-items)
 
-* [Other action bar features](#Otheractionbarfeatures)
+* [Other action bar features](#other-action-bar-features)
 
-* [Styling the action bar](#Stylingtheactionbar)
+* [Styling the action bar](#styling-the-action-bar)
 
-  * [Further reading](#Furtherreading)
+    * [Further reading](#further-reading)
 
-* [Testing in the emulator](#Testingintheemulator)
+* [Testing in the emulator](#testing-in-the-emulator)
 
-  * [Android emulator](#Androidemulator)
+    * [Android emulator](#android-emulator)
 
-  * [Genymotion emulator](#Genymotionemulator)
-
+    * [Genymotion emulator](#genymotion-emulator)
 
 ## Supported and unsupported features
 
@@ -40,7 +39,6 @@ The following features are _not_ supported:
 * Action providers are not supported.
 
 * Most styling on the action bar must be done using Android themes and styles.
-
 
 ## Enabling the action bar
 
@@ -132,13 +130,11 @@ For action items, you can add items to the action bar by creating menu items and
 
 * SHOW\_AS\_ACTION\_NEVER. Only show item in the overflow menu. This is the default.
 
-
 You can OR the above values with one of the following modifiers:
 
 * SHOW\_AS\_ACTION\_WITH\_TEXT. Show the action item text instead of its icon, _if space permits_.
 
 * SHOW\_AS\_ACTION\_COLLAPSE\_ACTION\_VIEW. Create a standard action item button that can be "expanded" to show an action view.
-
 
 The following code sample creates a basic action item:
 
@@ -173,15 +169,13 @@ If showAsAction is set to SHOW\_AS\_ACTION\_COLLAPSE\_ACTION\_VIEW is specified,
 When creating action items, keep in mind:
 
 * The behavior of SHOW\_AS\_ACTION\_WITH\_TEXT is rather unpredictable; if you specify an icon and SHOW\_AS\_ACTION\_WITH\_TEXT, the Android OS still may choose to display either the text or the icon, depending on how much space is available in the action bar. This determination may vary based on which orientation an application was launched in, so the setting should be used with care if your application supports multiple orientations. To force Android to display text for an action item, specify a title but no icon.
-  Note that Android displays _**either**_ text or an icon in the action bar. If you need to include both text and an icon, you can create a Titanium button with both text and icon, and add it as the actionView.
+    Note that Android displays _**either**_ text or an icon in the action bar. If you need to include both text and an icon, you can create a Titanium button with both text and icon, and add it as the actionView.
 
 * When an action item is displayed in the overflow menu (for example, when specified with SHOW\_AS\_ACTION\_IF\_ROOM or SHOW\_AS\_ACTION\_NEVER), it is displayed as text, without an icon. This is the way the overflow menu is meant to behave. It may cause some confusion because it differs from the way items are displayed in the action bar (where they use the icon if available) and in the legacy Android menu (where both icon and text are displayed).
 
 * You should always specify a title for an action item. Titles are used to display in the overflow menu, and are also displayed as hints when the user long-presses on an action item.
 
-
 * Only a few items can be displayed in the action bar. See the [Android Design: Action Bar](http://developer.android.com/design/patterns/actionbar.html) for guidelines on selecting action items.
-
 
 ### Dynamically updating action items
 
@@ -279,50 +273,49 @@ To change the style of the action bar, create a custom theme to override the [Ac
 
 2. In the XML file, create an action bar style resource and set the parent style of the action bar style to Widget.AppCompat.ActionBar or another supported Action Bar parent.
 
-  `<``style`  `name``=``"MyTheme"`  `parent``=``"@style/Widget.AppCompat.ActionBar"` `/>`
+    `<``style`  `name``=``"MyTheme"`  `parent``=``"@style/Widget.AppCompat.ActionBar"` `/>`
 
 3. Define action bar properties in the style resource to override the default values from the parent style. To support devices running Android 2.3.x, the property name does not use the android: prefix, so you need to duplicate the properties then remove the android: prefix from the name.
 
-  `<``style`  `name``=``"MyTheme"`  `parent``=``"@style/Widget.AppCompat.ActionBar"``>`
+    `<``style`  `name``=``"MyTheme"`  `parent``=``"@style/Widget.AppCompat.ActionBar"``>`
 
-  `<!-- For Android 3.x. and above -->`
+    `<!-- For Android 3.x. and above -->`
 
-  `<``item`  `name``=``"android:background"``>@drawable/actionbar_background</``item``>`
+    `<``item`  `name``=``"android:background"``>@drawable/actionbar_background</``item``>`
 
-  `<!-- For Android 2.3.x -->`
+    `<!-- For Android 2.3.x -->`
 
-  `<``item`  `name``=``"background"``>@drawable/actionbar_background</``item``>`
+    `<``item`  `name``=``"background"``>@drawable/actionbar_background</``item``>`
 
-  `</``style``>`
+    `</``style``>`
 
 4. In the theme, set the android:actionBarStyle to name of action bar style you created.
 
-  `<``style`  `name``=``"Theme.CustomActionBar"`  `parent``=``"@style/Theme.AppCompat"``>`
+    `<``style`  `name``=``"Theme.CustomActionBar"`  `parent``=``"@style/Theme.AppCompat"``>`
 
-  `<``item`  `name``=``"android:actionBarStyle"``>@style/MyActionBar</``item``>`
+    `<``item`  `name``=``"android:actionBarStyle"``>@style/MyActionBar</``item``>`
 
-  `<``item`  `name``=``"actionBarStyle"``>@style/MyActionBar</``item``>`
+    `<``item`  `name``=``"actionBarStyle"``>@style/MyActionBar</``item``>`
 
-  `</``style``>`
+    `</``style``>`
 
 5. Modify your tiapp.xml file to use the custom theme:
 
-  tiapp.xml
+    tiapp.xml
 
-  `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
+    `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
 
-  `<``manifest``>`
+    `<``manifest``>`
 
-  `<``application`  `android:theme``=``"@style/Theme.CustomActionBar"``/>`
+    `<``application`  `android:theme``=``"@style/Theme.CustomActionBar"``/>`
 
-  `<!-- Need to specify at least API level 11 for Titanium SDK 3.2.x and prior -->`
+    `<!-- Need to specify at least API level 11 for Titanium SDK 3.2.x and prior -->`
 
-  `<``uses``-sdk` `android:minSdkVersion``=``"14"`  `android:targetSdkVersion``=``"19"``/>`
+    `<``uses``-sdk` `android:minSdkVersion``=``"14"`  `android:targetSdkVersion``=``"19"``/>`
 
-  `</``manifest``>`
+    `</``manifest``>`
 
-  `</``android``>`
-
+    `</``android``>`
 
 The example below modifies the Action Bar's background color and title text color.
 
@@ -388,7 +381,6 @@ platform/android/res/values/mytheme.xml
 
 * [Android Developer: Styling the Action Bar](https://developer.android.com/training/basics/actionbar/styling.html)
 
-
 ## Testing in the emulator
 
 To test on an emulator, you may need to configure some options to display the action bar and overflow menu. Note that the overflow option does not appear on emulators and devices running Android 2.3.x and earlier.
@@ -405,9 +397,9 @@ To configure the Android emulator to show the overflow menu:
 
 3. Run the Android AVD manager:
 
-  android avd
+    android avd
 
-  The android command is in the tools folder of the Android SDK folder.
+    The android command is in the tools folder of the Android SDK folder.
 
 4. Select the emulator you're testing with and click **Edit**.
 
@@ -416,14 +408,13 @@ To configure the Android emulator to show the overflow menu:
 6. Choose **Hardware Back/Home Keys** and click **OK**.
 
 7. Change the **Hardware Back/Home Keys** value to **No.
-  ![edit_avd_properties](/Images/appc/download/attachments/36735509/edit_avd_properties.png)**
+    ![edit_avd_properties](/Images/appc/download/attachments/36735509/edit_avd_properties.png)**
 
 8. Click _outside_ the Hardware list to confirm the value change; make sure the value for **Hardware Back/Home Keys** is still displayed as **No**.
 
 9. Click **Edit AVD**.
 
 10. Run your test application again.
-
 
 ### Genymotion emulator
 
@@ -438,7 +429,6 @@ To enable the navigation bar, the emulator must not be currently opened, then:
 3. Enable **Show Android navigation** **bar**, then click **OK**.
 
 4. Run your test application again.
-
 
 ![GenymotinConfiguration](/Images/appc/download/attachments/36735509/GenymotinConfiguration.png)
 

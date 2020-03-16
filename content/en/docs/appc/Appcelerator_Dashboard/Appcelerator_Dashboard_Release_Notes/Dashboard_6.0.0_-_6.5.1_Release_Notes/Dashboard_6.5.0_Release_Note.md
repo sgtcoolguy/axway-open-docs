@@ -12,7 +12,6 @@ Dashboard 6.5.0 is a minor release, which includes new features, improvements, a
 
 * Added a warning modal shown prior to being signed out due to inactivity.
 
-
 ## Improvements
 
 * Improved visualization of chart series data to better differentiate series data by color.
@@ -22,7 +21,6 @@ Dashboard 6.5.0 is a minor release, which includes new features, improvements, a
 * Added missing link to the **Crashes** metric view from the **Overview** navigational dropdown. Items in the dropdown are now listed alphabetically.
 
 * Improved performance of initial page load.
-
 
 ## Fixed issues
 

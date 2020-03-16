@@ -26,7 +26,6 @@ Features:
 
 * Rename local variable
 
-
 Let's say we want to rename our 'newVar', and call it 'renamedVar'. To do that, mark it and press **Alt+Shift+R** and set the name to 'renamedVar'.
 
 ![refactor_rename1](/Images/appc/pydev.org/images/refactor/refactor_rename1.png)

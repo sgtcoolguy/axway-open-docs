@@ -2,18 +2,17 @@
 
 **Contents**
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Editing API Documentation](#EditingAPIDocumentation)
+* [Editing API Documentation](#editing-api-documentation)
 
-* [Generating the HTML API Docs](#GeneratingtheHTMLAPIDocs)
+* [Generating the HTML API Docs](#generating-the-html-api-docs)
 
-* [Validating API Doc Modifications](#ValidatingAPIDocModifications)
+* [Validating API Doc Modifications](#validating-api-doc-modifications)
 
-  * [Validating on Windows](#ValidatingonWindows)
+    * [Validating on Windows](#validating-on-windows)
 
-* [Submitting Contributions](#SubmittingContributions)
-
+* [Submitting Contributions](#submitting-contributions)
 
 ## Overview
 

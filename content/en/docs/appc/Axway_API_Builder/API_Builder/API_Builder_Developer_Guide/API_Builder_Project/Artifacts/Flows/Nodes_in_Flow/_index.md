@@ -38,5 +38,4 @@ As of API Builder Tools 2.0, the following flow-nodes are available for use:
 
 * [Parameter Map](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Flows/Nodes_in_Flow/Nodes_-_Parameter_Map/)
 
-
 Beginning with API Builder Tools 3.0, flow-nodes can be configured by selecting a method and the defining the parameters and outputs in the API Orchestration flow editor. The default Model flow-node methods are: count, create, delete, deleteAll, distinct, findAll, findAndModify, findByID, query, update, and upsert. The default Core flow-node types are: Custom, Codeblock, Compose, Condition, Delay, HTTP, JSON, and Set Context. For additional information, see [API Builder Flows](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Flows/).

@@ -18,22 +18,21 @@ To properly run the sample, in addition to importing the provided sample code, y
 
 2. Create a file named strings.xml and save it to the i18n/es, as shown below. This folder must be in the root of the Titanium project folder, not the Alloy project's app/ folder. For the purposes of this demonstration, the strings.xml file can be left empty, but it must exist.
 
-  `momentjs`
+    `momentjs`
 
-  `├── Resources`
+    `├── Resources`
 
-  `├── app`
+    `├── app`
 
-  `├── i18n`
+    `├── i18n`
 
-  `│ └── es`
+    `│ └── es`
 
-  `│ └── strings.xml`
+    `│ └── strings.xml`
 
-  `└── tiapp.xml`
+    `└── tiapp.xml`
 
 3. Build and run the application for device or emulator/simulator. Click anywhere in the application window to change the format of the displayed time and date.
-
 
 The only view in the application just contains three Label elements. Clicking anywhere on the Window invokes the changeLanguage() function, defined by the view-controller.
 

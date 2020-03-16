@@ -1,21 +1,20 @@
 {"title":"Working with XML Data","weight":"40"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [Parsing XML](#ParsingXML)
+    * [Parsing XML](#parsing-xml)
 
-  * [Hands-on Practice](#Hands-onPractice)
+    * [Hands-on Practice](#hands-on-practice)
 
-    * [Goal](#Goal)
+        * [Goal](#goal)
 
-    * [Steps](#Steps)
+        * [Steps](#steps)
 
-  * [References and Further Reading](#ReferencesandFurtherReading)
+    * [References and Further Reading](#references-and-further-reading)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Objective
 
@@ -57,7 +56,6 @@ The XML DOM presents a document as a hierarchy of nodes. Some types of nodes may
 
 * Entity – contains nodes of various types
 
-
 You'll often use these methods when parsing an XML document:
 
 * The getElementsByTagName() method, which returns an array of nodes with the given name
@@ -67,7 +65,6 @@ You'll often use these methods when parsing an XML document:
 * The getAttribute() method which you use to retrieve the value of an attribute with the given name
 
 * The text and nodeValue properties, which retrieve the leaf node values associated with the node
-
 
 Consider this code snippet, which parses RSS (XML) data retrieved from a blog:
 
@@ -141,13 +138,11 @@ In this activity, you will write the beginnings of an RSS reader. It will downlo
 
 9. Build and test your app in the simulator/emulator. It should display the titles for each of the last seven pictures of the day.
 
-
 As a challenge, improve the app by letting the user tap a row to view that day's picture.
 
 ### References and Further Reading
 
 * [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/6.3_xml.zip)
-
 
 ## Summary
 

@@ -1,21 +1,20 @@
 {"title":"Analytics Architecture","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Android Analytics](#AndroidAnalytics)
+* [Android Analytics](#android-analytics)
 
-* [iOS Analytics](#iOSAnalytics)
+* [iOS Analytics](#ios-analytics)
 
-* [FAQ](#FAQ)
+* [FAQ](#faq)
 
-  * [What counts as a new session?](#Whatcountsasanewsession?)
+    * [What counts as a new session?](#what-counts-as-a-new-session?)
 
-  * [The device details of the Analytics page displays information, such as "iPad2, 7" or "iPad3, 3". What is the meaning of the number after the comma?](#ThedevicedetailsoftheAnalyticspagedisplaysinformation,suchas"iPad2,7"or"iPad3,3".Whatisthemeaningofthenumberafterthecomma?)
+    * [The device details of the Analytics page displays information, such as "iPad2, 7" or "iPad3, 3". What is the meaning of the number after the comma?](#the-device-details-of-the-analytics-page-displays-information,-such-as-"ipad2,-7"-or-"ipad3,-3".-what-is-the-meaning-of-the-number-after-the-comma?)
 
-  * [The number of total installs reported in Appcelerator Analytics does not match the number of downloads that are reported by the iTunes or Android app store. What is going on?](#ThenumberoftotalinstallsreportedinAppceleratorAnalyticsdoesnotmatchthenumberofdownloadsthatarereportedbytheiTunesorAndroidappstore.Whatisgoingon?)
+    * [The number of total installs reported in Appcelerator Analytics does not match the number of downloads that are reported by the iTunes or Android app store. What is going on?](#the-number-of-total-installs-reported-in-appcelerator-analytics-does-not-match-the-number-of-downloads-that-are-reported-by-the-itunes-or-android-app-store.-what-is-going-on?)
 
-  * [How do I disable Titanium Analytics?](#HowdoIdisableTitaniumAnalytics?)
-
+    * [How do I disable Titanium Analytics?](#how-do-i-disable-titanium-analytics?)
 
 This page describes the Analytics Architecture for AMPLIFY Appcelerator Services SDK and Titanium SDK 3.3.0 and later.
 
@@ -31,8 +30,7 @@ By default, only the following events are sent by the Analytics module:
 
 * ti.background: indicates the application is in the background and the current session has ended
 
-
-For a tutorial about sending additional data, see [Appcelerator Analytics](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/#Creatingcustomevents).
+For a tutorial about sending additional data, see [Appcelerator Analytics](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/#creating-custom-events).
 
 ## Android Analytics
 
@@ -48,7 +46,6 @@ The ti.background event is generated when the activity calls the onPause() metho
 
 * The application is placed in the background by hitting the Home button or Power button. In this scenario, the current activity receives an onPause() call, which generates a ti.background event to be placed in the event queue, which is sent after a small threshold of time to ensure a ti.foreground event is not generated.
 
-
 Having onPause() generate the ti.background event ensures that it is generated in cases where the app was forced killed by the user or by the system due to low memory. The same case would be applicable in the scenario where the current activity is the only activity in the stack and it is closed by backing out of the application using the Back button until the application closes.
 
 ## iOS Analytics
@@ -60,7 +57,6 @@ For the iOS platform, the Analytics module sends the same events as the Android 
 * The ti.foreground event is generated when the application boots up and enters the foreground while the app transitions from the background to the active state, that is, from within the applicationWillEnterForeground method.
 
 * The ti.background event is generated when the application is in the background, that is, from within the applicationDidEnterBackground method, and when the application thread terminates.
-
 
 Events stored in the analytics queue are polled and sent in batches. In case of a send failure, unsent events are queued, and resends of the events are attempted five times before giving up. All pending events, which failed during the send, are queued and sent when the next event is generated.
 
@@ -78,7 +74,6 @@ A session is a period of activity that a user has used the application. This may
 
 * "iPad3, 3" is [iPad 3rd Gen (Wi-Fi/Cellular AT&T/GPS)](http://www.everymac.com/systems/apple/ipad/specs/apple-ipad-3rd-gen-early-2012-gsm-4g-lte-att-specs.html)
 
-
 Modify the device model in the following URL to retrieve information about the device: [http://www.everymac.com/ultimate-mac-lookup/?search\_keywords=iPad3,3](http://www.everymac.com/ultimate-mac-lookup/?search_keywords=iPad3,3).
 
 ### The number of total installs reported in Appcelerator Analytics does not match the number of downloads that are reported by the iTunes or Android app store. What is going on?
@@ -92,7 +87,6 @@ The number of downloads from the app store is not expected to match the number o
 * When a new version of the app is released, many users will upgrade by downloading the new version. However, the downloads are upgrades and will not count as new installs in Appcelerator Analytics.
 
 * A user may download an application and never run it or run it when the device has no network connectivity to send analytic events.
-
 
 ### How do I disable Titanium Analytics?
 

@@ -1,35 +1,34 @@
 {"title":"Alloy Concepts","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Model-View-Controller](#Model-View-Controller)
+* [Model-View-Controller](#model-view-controller)
 
-  * [Alloy: MVC with Backbone](#Alloy:MVCwithBackbone)
+    * [Alloy: MVC with Backbone](#alloy:-mvc-with-backbone)
 
-* [Alloy and the Titanium SDK](#AlloyandtheTitaniumSDK)
+* [Alloy and the Titanium SDK](#alloy-and-the-titanium-sdk)
 
-* [Convention over configuration](#Conventionoverconfiguration)
+* [Convention over configuration](#convention-over-configuration)
 
-  * [Platform-specific resources](#Platform-specificresources)
+    * [Platform-specific resources](#platform-specific-resources)
 
-* [Widgets](#Widgets)
+* [Widgets](#widgets)
 
-* [Builtins](#Builtins)
+* [Builtins](#builtins)
 
-* [Compilation process](#Compilationprocess)
+* [Compilation process](#compilation-process)
 
-  * [Cleanup](#Cleanup)
+    * [Cleanup](#cleanup)
 
-  * [Build configuration](#Buildconfiguration)
+    * [Build configuration](#build-configuration)
 
-  * [Alloy Framework, assets, and lib](#AlloyFramework,assets,andlib)
+    * [Alloy Framework, assets, and lib](#alloy-framework,-assets,-and-lib)
 
-  * [Model-View-Controller and widget generation](#Model-View-Controllerandwidgetgeneration)
+    * [Model-View-Controller and widget generation](#model-view-controller-and-widget-generation)
 
-  * [Main application](#Mainapplication)
+    * [Main application](#main-application)
 
-  * [Code optimization](#Codeoptimization)
-
+    * [Code optimization](#code-optimization)
 
 ## Overview
 
@@ -44,7 +43,6 @@ Alloy utilizes the model-view-controller (MVC) pattern, which separates the appl
 * **Views** provide the GUI components to the user, either presenting data or allowing the user to interact with the model data
 
 * **Controllers** provide the glue between the model and view components in the form of application logic
-
 
 For example, in a calendar application, the models include events, reminders, invitations, and contacts. The views present the calendar data and reminders to the user or allow the user to add events. For reminders, the controller checks the model data and launches a 'reminder' view to the user. For adding events, the controller opens an 'add event' view, then adds the event into the model data once the user entered the data.
 
@@ -66,87 +64,12 @@ Alloy uses Titanium SDK to abstracts the creation of UI components through the u
 
 For assets, such as images, any references to the Resources folder in the Titanium SDK documentation should be replaced with the app/assets folder to use it for Alloy. For example, the [Icons and Splash Screens](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Icons_and_Splash_Screens/) guide tells you to place files in either the Resources/android or Resources/iphone folder. For Alloy, the files should be placed in either the app/assets/android or app/assets/iphone folder.
 
-Titanium SDK Component
-
-Alloy Component
-
-Titanium.UI.\* Objects
-Titanium.Android.Menu
-Titanium.Facebook.LoginButton
-Titanium.Map
-Titanium.Media.VideoPlayer
-
-`Titanium.UI.createButton();`
-
-* XML element. Remove the namespace. For some elements, you may need to assign the ns attribute. For more information, refer to [Alloy XML Markup: Namespace](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#Namespace).
-
-  `<!-- Creates a button -->`
-
-  `<Button />`
-
-* TSS element. Remove the namespace. If the object belongs to another namespace besides Titanium.UI and is not implicitly assigned a namespace by Alloy, you cannot create a style based on the element name. Instead, create a style based on a selector (XML class attribute) or id (XML id attribute). For a list of objects that Alloy implicitly assigns a namespace, refer to [Alloy XML Markup: Namespace](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#Namespace).
-
-  `// Does not create a button. Used to style all Button objects in the associated view.`
-
-  `"Button"``:{`
-
-  `// Button attributes`
-
-  `}`
-
-
-Titanium Object properties
-
-`Titanium.UI.createButton({`
-
-`text:` `"Foobar"``,`
-
-`top:` `0``,`
-
-`width: Ti.UI.SIZE`
-
-`});`
-
-* XML attribute if the property can be expressed as a string, number or Titanium SDK constant. Some properties that take Titanium objects can be expressed inline using XML tags. For more information, refer to [Alloy XML Markup: Property Mapping](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#Propertymapping).
-
-  `<Button title=``"Foobar"` `top=``"0"` `width=``"Ti.UI.SIZE"``/>`
-
-* TSS attribute if the property can be directly expressed as a string, number, Titanium SDK constant, dictionary or array. Indirectly, you can assign a method or value to the Alloy Globals or CFG namespace and reference it in the TSS file. For more information, refer to [Alloy Styles and Themes](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/).
-
-  `"Button"``:{`
-
-  `title:` `"Foobar"``,`
-
-  `top:` `0``,`
-
-  `width: Ti.UI.SIZE`
-
-  `}`
-
-
-Titanium Object methods
-
-`var button = Titanium.UI.createButton();`
-
-`button.setTitle(``'Push Me!'``);`
-
-Use in the controller code. You need to define the id attribute of the object in the XML markup, so the object can be referenced in the controller.
-
-`// Need to give the object an ID, for example, <Button id="button" />`
-
-`$.button.setTitle(``'Push Me!'``);`
-
-Titanium Object events
-
-`var button = Titanium.UI.createButton();`
-
-`button.addEventListener(``'click'``, doClick);`
-
-XML attribute to bind a callback in the associated controller. Capitalize the first character of the event name and append 'on' to the beginning of the name.
-
-`<!-- doClick needs to be declared in the associated controller -->`
-
-`<Button onClick=``"doClick"``/>`
+| Titanium SDK Component | Alloy Component |
+| --- | --- |
+| Titanium.UI.\* Objects  <br />Titanium.Android.Menu  <br />Titanium.Facebook.LoginButton  <br />Titanium.Map  <br />Titanium.Media.VideoPlayer<br /><br />`Titanium.UI.createButton();` | * XML element. Remove the namespace. For some elements, you may need to assign the ns attribute. For more information, refer to [Alloy XML Markup: Namespace](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#namespace).<br />    <br />    `<!-- Creates a button -->`<br />    <br />    `<Button />`<br />    <br />* TSS element. Remove the namespace. If the object belongs to another namespace besides Titanium.UI and is not implicitly assigned a namespace by Alloy, you cannot create a style based on the element name. Instead, create a style based on a selector (XML class attribute) or id (XML id attribute). For a list of objects that Alloy implicitly assigns a namespace, refer to [Alloy XML Markup: Namespace](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#namespace).<br />    <br />    `// Does not create a button. Used to style all Button objects in the associated view.`<br />    <br />    `"Button"``:{`<br />    <br />    `// Button attributes`<br />    <br />    `}` |
+| Titanium Object properties<br /><br />`Titanium.UI.createButton({`<br /><br />`text:` `"Foobar"``,`<br /><br />`top:` `0``,`<br /><br />`width: Ti.UI.SIZE`<br /><br />`});` | * XML attribute if the property can be expressed as a string, number or Titanium SDK constant. Some properties that take Titanium objects can be expressed inline using XML tags. For more information, refer to [Alloy XML Markup: Property Mapping](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#property-mapping).<br />    <br />    `<Button title=``"Foobar"` `top=``"0"` `width=``"Ti.UI.SIZE"``/>`<br />    <br />* TSS attribute if the property can be directly expressed as a string, number, Titanium SDK constant, dictionary or array. Indirectly, you can assign a method or value to the Alloy Globals or CFG namespace and reference it in the TSS file. For more information, refer to [Alloy Styles and Themes](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/).<br />    <br />    `"Button"``:{`<br />    <br />    `title:` `"Foobar"``,`<br />    <br />    `top:` `0``,`<br />    <br />    `width: Ti.UI.SIZE`<br />    <br />    `}` |
+| Titanium Object methods<br /><br />`var button = Titanium.UI.createButton();`<br /><br />`button.setTitle(``'Push Me!'``);` | Use in the controller code. You need to define the id attribute of the object in the XML markup, so the object can be referenced in the controller.<br /><br />`// Need to give the object an ID, for example, <Button id="button" />`<br /><br />`$.button.setTitle(``'Push Me!'``);` |
+| Titanium Object events<br /><br />`var button = Titanium.UI.createButton();`<br /><br />`button.addEventListener(``'click'``, doClick);` | XML attribute to bind a callback in the associated controller. Capitalize the first character of the event name and append 'on' to the beginning of the name.<br /><br />`<!-- doClick needs to be declared in the associated controller -->`<br /><br />`<Button onClick=``"doClick"``/>` |
 
 ## Convention over configuration
 
@@ -154,94 +77,7 @@ To simplify development, Alloy uses a directory structure and naming conventions
 
 The following is a list of directories and files that can be found in an Alloy project:
 
-app
-
-Contains the models, views, controllers and assets of the application. All work should be done here. See folder descriptions below.
-
-app/alloy.jmk
-
-Build configuration file.
-See [Build Configuration File (alloy.jmk)](/docs/appc/Alloy_Framework/Alloy_How-tos/Alloy_Reference_Guides/Build_Configuration_File_(alloy.jmk)/).
-
-app/alloy.js
-
-Initializer file used to preconfigure components or override Alloy methods before the main controller is executed.
-See [Initializer File (alloy.js)](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#Initializerfile(alloy.js)) for more information.
-
-app/config.json
-
-Project configuration file.
-See [Project Configuration File (config.json)](/docs/appc/Alloy_Framework/Alloy_How-tos/Alloy_Reference_Guides/Project_Configuration_File_(config.json)/).
-
-app/assets
-
-Contains image assets and other files that need to be copied into the Resources directory.
-Reference these files in the code without the 'app/assets' path and without the platform-specific folder if it is inside one.
-
-app/controllers
-
-Contains controllers in the format filename.js to a corresponding view file app/views/filename.xml.
-See [Alloy Controllers](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/) for more information.
-
-app/i18n
-
-Since Alloy 1.8.0 and Titanium 5.2.0 [Language Strings](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Cross-Platform_Mobile_Development_In_Titanium/Internationalization/#Languagestrings) are sourced from app/i18n and Alloy will generate the i18n folder in the project root.
-
-app/lib
-
-Contains application-specific library code, typically in the CommonJS format.
-See [Library code and CommonJS modules](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#LibrarycodeandCommonJSmodules) for more information.
-
-app/migrations
-
-Contains database migration files in the format <DATETIME>\_filename.js.
-See [Migrations](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Sync_Adapters_and_Migrations/#Migrations) for more information.
-
-[Alloy Sync Adapters and Migrations:Migrations](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Sync_Adapters_and_Migrations/#Migrations)
-
-app/models
-
-Contains model files in the format filename.js.
-See [Alloy Models](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/) for more information.
-
-app/platform
-
-Since Alloy 1.8.0 platform resources are sourced from app/platform and Alloy will generate the platform folder in the project root.
-
-app/specs
-
-Like the app/lib folder except it is only used if the deploy type is **not** production (since **Alloy 1.2.0**).
-See [Library Code](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#LibrarycodeandCommonJSModules) for more information.
-
-app/styles
-
-Contains view styling in the format filename.tss, which is applied to a corresponding view file app/views/filename.xml.
-See [Titanium Style Sheets](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#TitaniumStyleSheets) for more information.
-
-app/themes
-
-Contains themes to customize the assets and styles of the entire GUI.
-See [Themes](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#Themes) for more information.
-
-app/views
-
-Contains views in the format filename.xml with the optional corresponding files app/controllers/filename.js and app/styles/filename.tss.
-See [Alloy XML Markup](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/) for more information.
-
-app/widgets
-
-Contains widget files. Each widget will have its own app\-like directory structure.
-See [Widgets](#Widgets) for more information.
-
-i18n
-
-Since Alloy 1.8.0 and Titanium 5.2.0 [Language Strings](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Cross-Platform_Mobile_Development_In_Titanium/Internationalization/#Languagestrings) are sourced from app/i18n and Alloy will generate the i18n folder in the project root. Before Alloy 1.8.0 and Titanium 5.2.0 you were expected to manage the i18n folder in the project root, just like you do without Alloy.
-
-Resources
-
-Contains the Titanium files generated by the Alloy interface from the app directory. All files will be overwritten each time the application is built.
-Since Alloy 1.3.0, Alloy creates a separate Titanium project for each platform you build for in the Resources/<platform> folder.
-See [Compilation process](#Compilationprocess) for more information.
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>app</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Contains the models, views, controllers and assets of the application. All work should be done here. See folder descriptions below.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>app/alloy.jmk</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Build configuration file.<br>See <a class="document-link" href="#!/guide/Build_Configuration_File_(alloy.jmk)">Build Configuration File (alloy.jmk)</a>.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>app/alloy.js</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Initializer file used to preconfigure components or override Alloy methods before the main controller is executed.<br>See <a class="document-link" href="#!/guide/Alloy_Controllers-section-src-34636384_safe-id-QWxsb3lDb250cm9sbGVycy1Jbml0aWFsaXplcmZpbGUoYWxsb3kuanMp">Initializer File (alloy.js)</a> for more information.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>app/config.json</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Project configuration file.<br>See <a class="document-link" href="#!/guide/Project_Configuration_File_(config.json)">Project Configuration File (config.json)</a>.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>app/assets</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Contains image assets and other files that need to be copied into the <tt>Resources</tt> directory.<br>Reference these files in the code without the 'app/assets' path and without the platform-specific folder if it is inside one.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>app/controllers</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Contains controllers in the format <tt class="">filename.js</tt> to a corresponding view file <tt class="">app/views/filename.xml</tt>.<br>See <a class="document-link" href="#!/guide/Alloy_Controllers">Alloy Controllers</a> for more information.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>app/i18n</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Since Alloy 1.8.0 and Titanium 5.2.0 <a class="document-link" href="#!/guide/Internationalization-section-src-29004892_Internationalization-Languagestrings">Language Strings</a> are sourced from <tt class="">app/i18n</tt> and Alloy will generate the <tt>i18n</tt> folder in the project root.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>app/lib</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Contains application-specific library code, typically in the CommonJS format.<br>See <a class="document-link" href="#!/guide/Alloy_Controllers-section-src-34636384_AlloyControllers-LibrarycodeandCommonJSmodules">Library code and CommonJS modules</a> for more information.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>app/migrations</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Contains database migration files in the format <tt class="">&lt;DATETIME&gt;_filename.js</tt>.<br>See <a class="document-link" href="#!/guide/Alloy_Sync_Adapters_and_Migrations-section-src-36739597_AlloySyncAdaptersandMigrations-Migrations">Migrations</a> for more information.</p><p><a class="document-link" href="#!/guide/Alloy_Sync_Adapters_and_Migrations-section-src-36739597_AlloySyncAdaptersandMigrations-Migrations">Alloy Sync Adapters and Migrations:Migrations</a></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>app/models</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Contains model files in the format <tt class="">filename.js</tt>.<br>See <a class="document-link" href="#!/guide/Alloy_Models">Alloy Models</a> for more information.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>app/platform</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Since Alloy 1.8.0 platform resources are sourced from <tt class="">app/platform</tt> and Alloy will generate the <tt>platform</tt> folder in the project root.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>app/specs</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Like the <tt class="">app/lib</tt> folder except it is only used if the deploy type is <strong class="">not</strong> production (since <strong class="">Alloy 1.2.0</strong>).<br>See <a class="document-link" href="#!/guide/Alloy_Controllers-section-src-34636384_AlloyControllers-LibrarycodeandCommonJSModules">Library Code</a> for more information.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>app/styles</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Contains view styling in the format <tt class="">filename.tss</tt>, which is applied to a corresponding view file <tt class="">app/views/filename.xml</tt>.<br>See <a class="document-link" href="#!/guide/Alloy_Styles_and_Themes-section-src-35621526_AlloyStylesandThemes-TitaniumStyleSheets">Titanium Style Sheets</a> for more information.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>app/themes</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Contains themes to customize the assets and styles of the entire GUI.<br>See <a class="document-link" href="#!/guide/Alloy_Styles_and_Themes-section-src-35621526_AlloyStylesandThemes-Themes">Themes</a> for more information.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>app/views</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Contains views in the format <tt class="">filename.xml</tt> with the optional corresponding files <tt class="">app/controllers/filename.js</tt> and <tt class="">app/styles/filename.tss</tt>.<br>See <a class="document-link" href="#!/guide/Alloy_XML_Markup">Alloy XML Markup</a> for more information.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>app/widgets</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Contains widget files. Each widget will have its own <tt class="">app</tt>-like directory structure.<br>See <a class="document-link" href="#!/guide/Alloy_Concepts-section-src-34636240_AlloyConcepts-Widgets">Widgets</a> for more information.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>i18n</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Since Alloy 1.8.0 and Titanium 5.2.0 <a class="document-link" href="#!/guide/Internationalization-section-src-29004892_Internationalization-Languagestrings">Language Strings</a> are sourced from <tt class="">app/i18n</tt> and Alloy will generate the <tt class="">i18n</tt> folder in the project root. Before Alloy 1.8.0 and Titanium 5.2.0 you were expected to manage the <tt>i18n</tt> folder in the project root, just like you do without Alloy.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>Resources</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Contains the Titanium files generated by the Alloy interface from the <tt class="">app</tt> directory. All files will be overwritten each time the application is built.<br>Since Alloy 1.3.0, Alloy creates a separate Titanium project for each platform you build for in the <tt class="">Resources/&lt;platform&gt;</tt> folder.<br>See <a class="document-link" href="#!/guide/Alloy_Concepts-section-src-34636240_AlloyConcepts-Compilationprocess">Compilation process</a> for more information.</p></td></tr></tbody></table>
 
 **Notes:** the lib, migrations, themes and widgets folders are not automatically generated when creating a new project. The migrations and widgets folder will be generated by the Alloy command-line interface if any of those components are generated. The lib and themes folders will need to be manually created.
 
@@ -255,37 +91,35 @@ For example, an iOS-specific view and an Android-specific controller would be lo
 
 * app
 
-  * controllers
+    * controllers
 
-    * android
+        * android
 
-      * index.js
+            * index.js
 
-    * index.js
+        * index.js
 
-  * views
+    * views
 
-    * ios
+        * ios
 
-      * index.xml
+            * index.xml
 
-    * index.xml
+        * index.xml
 
+Alternatively, you can use special conditional code and attributes inside the controllers, views and styles to apply platform-specific code and components. Refer to [Controller Conditional Code](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#conditional-code) and [Conditional Code](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#conditional-code) for more details.
 
-Alternatively, you can use special conditional code and attributes inside the controllers, views and styles to apply platform-specific code and components. Refer to [Controller Conditional Code](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#Conditionalcode) and [Conditional Code](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#Conditionalcode) for more details.
-
-Additionally, the assets folder is laid out the same way as the Resources folder in a Titanium project for platform-specific files and density-specific images. Refer to [Platform-Specific Resources](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Cross-Platform_Mobile_Development_In_Titanium/Supporting_Multiple_Platforms_in_a_Single_Codebase/#Platform-specificresources) for more information.
+Additionally, the assets folder is laid out the same way as the Resources folder in a Titanium project for platform-specific files and density-specific images. Refer to [Platform-Specific Resources](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Cross-Platform_Mobile_Development_In_Titanium/Supporting_Multiple_Platforms_in_a_Single_Codebase/#platform-specific-resources) for more information.
 
 ## Widgets
 
 Widgets are self-contained components that can be easily dropped into Alloy-powered Titanium projects. They were conceived as a way to reuse code in multiple applications or to be used multiple times in the same application. Widgets have their own models, views, controllers, styles and assets and are laid out the same as the app directory in the Alloy project.
 
-* For information on using widgets in a project, see [Importing Widgets](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#Importingwidgets).
+* For information on using widgets in a project, see [Importing Widgets](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#importing-widgets).
 
-* For information on creating widgets, see [Creating Widgets](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Widgets/#Creatingwidgets).
+* For information on creating widgets, see [Creating Widgets](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Widgets/#creating-widgets).
 
 * To search publicly available widgets, visit [gitTio](http://gitt.io/) .
-
 
 ## Builtins
 

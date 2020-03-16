@@ -14,7 +14,6 @@ Attempts to build applications with the com.appcelerator.apm module will receive
 
 * Updated role select list on organization _Members_ and _Teams_ views to indicate the services to which roles are associated.
 
-
 ## Fixed issue
 
 * Resolved issue where counts on _Unique Devices_ analytics views may have been incorrectly calculated.

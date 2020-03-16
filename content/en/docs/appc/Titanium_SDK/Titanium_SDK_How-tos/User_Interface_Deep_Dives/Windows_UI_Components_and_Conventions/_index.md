@@ -1,13 +1,12 @@
 {"title":"Windows UI Components and Conventions","weight":"120"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Back button](#Backbutton)
+* [Back button](#back-button)
 
-* [Command Bar](#CommandBar)
+* [Command Bar](#command-bar)
 
-* [Asset qualifiers](#Assetqualifiers)
-
+* [Asset qualifiers](#asset-qualifiers)
 
 As of Titanium 9.0.0, building Windows apps is no longer supported.
 
@@ -55,42 +54,23 @@ As of 5.0.0 of the SDK, you can create an event that can prevent accidental clos
 
 The command bar displays a row of buttons the user can tap to invoke additional functionality with your application (similar to the Action Bar in Android or Toolbar in iOS). On a phone, the command bar always appears at the bottom of the application, and on a tablet, the user needs to tap the More icon (\[...\]) to reveal the command bar. If you are testing locally on your Windows computer, right-click on the application to reveal the command bar.
 
-Windows Phone app
-
-Windows Store app
-
-* Buttons are centered
-
-* Room for only four buttons
-
-* Command bar is always present
-
-
-![wp_commandbar](/Images/appc/download/attachments/43309475/wp_commandbar.PNG)
-
-* Buttons are right-aligned
-
-* Room for more than four buttons
-
-* Command bar must be revealed by the user
-
-
-![ws_commandbar](/Images/appc/download/attachments/43309475/ws_commandbar.png)
+| Windows Phone app | Windows Store app |
+| --- | --- |
+| * Buttons are centered<br />    <br />* Room for only four buttons<br />    <br />* Command bar is always present<br />    <br /><br />![wp_commandbar](/Images/appc/download/attachments/43309475/wp_commandbar.PNG) | * Buttons are right-aligned<br />    <br />* Room for more than four buttons<br />    <br />* Command bar must be revealed by the user<br />    <br /><br />![ws_commandbar](/Images/appc/download/attachments/43309475/ws_commandbar.png) |
 
 To create a command bar:
 
 1. Create buttons and separator objects using the following methods:
 
-  * [Titanium.UI.Windows.createAppBarButton()](#!/api/Titanium.UI.Windows-method-createAppBarButton)
+    * [Titanium.UI.Windows.createAppBarButton()](#!/api/Titanium.UI.Windows-method-createAppBarButton)
 
-  * [Titanium.UI.Windows.createAppBarToggleButton()](#!/api/Titanium.UI.Windows-method-createAppBarToggleButton)
+    * [Titanium.UI.Windows.createAppBarToggleButton()](#!/api/Titanium.UI.Windows-method-createAppBarToggleButton)
 
-  * [Titanium.UI.Windows.createAppBarSeparator()](#!/api/Titanium.UI.Windows-method-createAppBarSeparator) – note that separators only appear for Windows Store apps (for the tablet)
+    * [Titanium.UI.Windows.createAppBarSeparator()](#!/api/Titanium.UI.Windows-method-createAppBarSeparator) – note that separators only appear for Windows Store apps (for the tablet)
 
 2. Pass an array of button and separator objects to the items property when creating a command bar with the [Titanium.UI.Windows.createCommandBar()](#!/api/Titanium.UI.Windows-method-createCommandBar) method. Note that on the phone only four buttons can be displayed.
 
 3. Add the command bar to a [Titanium.UI.Window](#!/api/Titanium.UI.Window) object.
-
 
 `var` `backButton = Ti.UI.Windows.createAppBarButton({`
 

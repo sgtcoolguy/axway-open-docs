@@ -1,33 +1,32 @@
 {"title":"Coding Best Practices","weight":"10"}
 
-* [JavaScript and general recommendations](#JavaScriptandgeneralrecommendations)
+* [JavaScript and general recommendations](#javascript-and-general-recommendations)
 
-  * [Avoid the global scope](#Avoidtheglobalscope)
+    * [Avoid the global scope](#avoid-the-global-scope)
 
-  * [Avoid local objects in global event listeners](#Avoidlocalobjectsinglobaleventlisteners)
+    * [Avoid local objects in global event listeners](#avoid-local-objects-in-global-event-listeners)
 
-  * [Do not name custom events with spaces](#Donotnamecustomeventswithspaces)
+    * [Do not name custom events with spaces](#do-not-name-custom-events-with-spaces)
 
-  * [Defer script loading](#Deferscriptloading)
+    * [Defer script loading](#defer-script-loading)
 
-* [Titanium-specific recommendations](#Titanium-specificrecommendations)
+* [Titanium-specific recommendations](#titanium-specific-recommendations)
 
-  * [Don't extend Titanium prototypes](#Don'textendTitaniumprototypes)
+    * [Don't extend Titanium prototypes](#don't-extend-titanium-prototypes)
 
-  * [Coding strategies for multiplatform apps](#Codingstrategiesformultiplatformapps)
+    * [Coding strategies for multiplatform apps](#coding-strategies-for-multiplatform-apps)
 
-  * [Don't store sensitive data in non-JavaScript files](#Don'tstoresensitivedatainnon-JavaScriptfiles)
+    * [Don't store sensitive data in non-JavaScript files](#don't-store-sensitive-data-in-non-javascript-files)
 
-  * [Set local variables to avoid calling native methods](#Setlocalvariablestoavoidcallingnativemethods)
+    * [Set local variables to avoid calling native methods](#set-local-variables-to-avoid-calling-native-methods)
 
-* [App architecture recommendations](#Apparchitecturerecommendations)
+* [App architecture recommendations](#app-architecture-recommendations)
 
-  * [Modular components with CommonJS](#ModularcomponentswithCommonJS)
+    * [Modular components with CommonJS](#modular-components-with-commonjs)
 
-    * [Custom objects as components](#Customobjectsascomponents)
+        * [Custom objects as components](#custom-objects-as-components)
 
-    * [Classical-based patterns](#Classical-basedpatterns)
-
+        * [Classical-based patterns](#classical-based-patterns)
 
 The Appcelerator-approved standard for apps developed on the Titanium platform specifies a **single-context**, **modular pattern**, with **well-structured code**, and **well-organized resources**. By following these standards, developers will create apps that meet the preceding checklist of Stable, Rapid, Performant, and Readable.
 
@@ -43,13 +42,11 @@ Putting objects into the global scope can cause various problems:
 
 * The global scope of app.js is not accessible from other contexts or within CommonJS modules. So, you can't just dump variables there so you can access them throughout your app.
 
-
 For these reasons, avoid defining variables in the global scope. Objects are placed in the global scope when:
 
 * You declare a variable outside of a function or CommonJS module. _Using a modular pattern will alleviate this problem._
 
 * You omit the var keyword when declaring a variable (within or outside of a function). _So always use_ var _when declaring variables._
-
 
 ### Avoid local objects in global event listeners
 
@@ -168,7 +165,6 @@ Many users attempt to add to the Ti namespace as a means to persist data across 
 2. Sometimes you might be able to store things on the namespace but it's not changeable (i.e. an array stored on the namespace might not be able to be modified - mutable, etc.). Other-times your stored objects will be completely null.
 
 3. Since this isn't an approved way of storing anything, there's no guarantee it will work in future releases of Titanium.
-
 
 As a rule do not add to, or extend via the prototype, any object or module in the Titanium namespace. If you want to extend a core part of the Titanium API you should build a native module to accomplish this. If you're just looking for an extendible JS namespace, create your own (i.e. {{var MyApp={} }}).
 

@@ -2,14 +2,13 @@
 
 This documentation has information on how to determine which version of Aptana Studio is installed.
 
-* [Studio Standalone](#StudioStandalone)
+* [Studio Standalone](#studio-standalone)
 
-* [Studio Plugin in Eclipse](#StudioPlugininEclipse)
+* [Studio Plugin in Eclipse](#studio-plugin-in-eclipse)
 
-* [Studio Firebug Extension](#StudioFirebugExtension)
+* [Studio Firebug Extension](#studio-firebug-extension)
 
-* [Studio IE Debugger Extension](#StudioIEDebuggerExtension)
-
+* [Studio IE Debugger Extension](#studio-ie-debugger-extension)
 
 ## Studio Standalone
 
@@ -18,7 +17,6 @@ This documentation has information on how to determine which version of Aptana S
 * on Windows, from the **Help** menu, select **About Aptana Studio 3**
 
 * on Mac, from the **Aptana Studio 3** menu, select **About Aptana Studio 3**
-
 
 2\. Check the first line of text for the version number (as shown below).
 
@@ -31,7 +29,6 @@ This documentation has information on how to determine which version of Aptana S
 * On Windows, from the **Help** menu, select **About Eclipse SDK**.
 
 * On Mac, from the **Eclipse** menu, select **About Eclipse SDK**.
-
 
 2\. Click on the Studio logo. A comprehensive list of all features associated with Studio will be listed with corresponding version numbers.
 

@@ -1,37 +1,36 @@
 {"title":"Managing Accounts","weight":"10"}
 
-* [User menu](#Usermenu)
+* [User menu](#user-menu)
 
-* [Manage accounts](#Manageaccounts)
+* [Manage accounts](#manage-accounts)
 
-* [Edit account](#Editaccount)
+* [Edit account](#edit-account)
 
-  * [Verify your phone number](#PhoneVerifyyourphonenumber)
+    * [Verify your phone number](#verify-your-phone-number)
 
-  * [Manage your public developer link profile](#DevLinkManageyourpublicdeveloperlinkprofile)
+    * [Manage your public developer link profile](#manage-your-public-developer-link-profile)
 
-* [View organizations and roles](#Vieworganizationsandroles)
+* [View organizations and roles](#view-organizations-and-roles)
 
-* [Manage credentials](#Managecredentials)
+* [Manage credentials](#manage-credentials)
 
-  * [Change your password](#Changeyourpassword)
+    * [Change your password](#change-your-password)
 
-  * [Manage multi-factor authentication](#2FAManagemulti-factorauthentication)
+    * [Manage multi-factor authentication](#manage-multi-factor-authentication)
 
-* [Managing settings](#Managingsettings)
+* [Managing settings](#managing-settings)
 
-  * [Select the org login rule](#loginpathSelecttheorgloginrule)
+    * [Select the org login rule](#select-the-org-login-rule)
 
-* [Managing organizations](#Managingorganizations)
+* [Managing organizations](#managing-organizations)
 
-* [Managing members](#Managingmembers)
+* [Managing members](#managing-members)
 
-* [Viewing usage](#Viewingusage)
+* [Viewing usage](#viewing-usage)
 
-* [Managing billing](#Managingbilling)
+* [Managing billing](#managing-billing)
 
-* [Access the Download Center](#AccesstheDownloadCenter)
-
+* [Access the Download Center](#access-the-download-center)
 
 ## User menu
 
@@ -57,7 +56,6 @@ The _User Menu_ allows you to manage your account, organization, and billing inf
 
 * **Sign out** - Select to sign out of your account.
 
-
 ## Manage accounts
 
 To manage your account information, select **Account** from the User menu. Selecting Account opens the **Account** tab.
@@ -82,7 +80,6 @@ The Account Information page includes the following account information:
 
 * DevLink Profile - Click the **Manage** link to manage your public developer link profile. Refer to [Manage your public developer link profile](#DevLink).
 
-
 ## Edit account
 
 To edit your account details, click the **Edit Account** button.
@@ -101,11 +98,11 @@ To verify your phone number:
 
 2. Click the **Verify** button. When the **Verify** button is clicked, Dashboard sends a phone verification code to the phone number entered in the **Phone Number** field, and the **Verification Code** field is displayed. If you do not receive a verification code, click **Resend**.
 
-  ![phone_number_verificaton_latest](/Images/appc/download/attachments/60145214/phone_number_verificaton_latest.png)
+    ![phone_number_verificaton_latest](/Images/appc/download/attachments/60145214/phone_number_verificaton_latest.png)
 3. Enter the received verification code in the **Verification Code** field. If you have not received a verification code, click the **Resend** button.
-  Once a valid verification code is entered, Dashboard will process the verification and update the verification status of the phone number.
+    Once a valid verification code is entered, Dashboard will process the verification and update the verification status of the phone number.
 
-  ![phone_number_verified_latest](/Images/appc/download/attachments/60145214/phone_number_verified_latest.png)
+    ![phone_number_verified_latest](/Images/appc/download/attachments/60145214/phone_number_verified_latest.png)
 
 ### Manage your public developer link profile
 
@@ -129,13 +126,12 @@ To change your password:
 
 2. Enter a new password in the **Change Password** field. The password should be at least eight characters. As you enter a new password in the **Change Password** field, the **Confirm Password** field is displayed.
 
-  ![change_password_latest](/Images/appc/download/attachments/60145214/change_password_latest.png)
+    ![change_password_latest](/Images/appc/download/attachments/60145214/change_password_latest.png)
 3. Confirm the new password in the **Confirm Password** field. The entry in the **Confirm Password** field must be the same as the entry in the **Password** field.
 
 4. Select the **Force Logout** checkbox to force the log out of any current sessions.
 
 5. Click the **Save** button. The password changes are saved, and the Dashboard sends an Account Information Changed notification email.
-
 
 ### Manage multi-factor authentication
 
@@ -147,7 +143,6 @@ To enable multi-factor authentication:
 
 3. Click **Save**.
 
-
 Once the **Enabled** checkbox is selected and the account saved, multi-factor authentication will be enabled, and a notification email will be sent.
 
 To disable multi-factor authentication:
@@ -157,7 +152,6 @@ To disable multi-factor authentication:
 2. Deselect the **Multi-Factor Authentication Enabled** checkbox.
 
 3. Click **Save**.
-
 
 Once the **Enabled** checkbox is deselected and the account saved, multi-factor authentication will be disabled, and the multi-factor authentication is disabled notification email will be sent.
 
@@ -176,7 +170,6 @@ If you are a member or owner of multiple accounts, to configure the login path a
 * **Use Default Org** - The default account will be logged in to on every login.
 
 * **Always ask for Org** - You will be queried for which account to log in.
-
 
 To view details of a listed organization, click on the organization name and refer to [Managing Organizations](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Organizations/).
 

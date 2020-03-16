@@ -1,11 +1,10 @@
 {"title":"A Simple Command","weight":"30"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [The Code](#TheCode)
+* [The Code](#the-code)
 
-* [Using Environment Variables](#UsingEnvironmentVariables)
-
+* [Using Environment Variables](#using-environment-variables)
 
 ## Overview
 

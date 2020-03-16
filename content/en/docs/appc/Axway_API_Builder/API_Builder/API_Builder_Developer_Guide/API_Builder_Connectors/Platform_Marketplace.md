@@ -6,20 +6,19 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-  * [Marketplace access and search](#Marketplaceaccessandsearch)
+    * [Marketplace access and search](#marketplace-access-and-search)
 
-* [Install a service connector](#Installaserviceconnector)
+* [Install a service connector](#install-a-service-connector)
 
-* [Install a model-first connector](#Installamodel-firstconnector)
+* [Install a model-first connector](#install-a-model-first-connector)
 
-* [Searching for connectors](#Searchingforconnectors)
+* [Searching for connectors](#searching-for-connectors)
 
-  * [Search suggestions](#Searchsuggestions)
+    * [Search suggestions](#search-suggestions)
 
-* [Pre-built connectors](#Pre-builtconnectors)
-
+* [Pre-built connectors](#pre-built-connectors)
 
 This document provides an overview of the [Axway Marketplace](https://marketplace.axway.com/).
 
@@ -35,7 +34,6 @@ Currently, the Marketplace lists the following component types for API Builder:
 
 * Connectors: Used for building APIs
 
-
 To search through the connectors available on the Marketplace, select Connector in the Categories list. To search through the API Builder connectors, select API Builder in the API Management list.
 
 The following API Builder model-first connectors are offered on the [Axway Marketplace](https://marketplace.axway.com/home): ArrowDB, Box.com, CompositeJS, Elastic Search, Google Custom Search, HL7 FHIR Swagger Docs, LokiJS, Microsoft Azure, Microsoft SQL Server, MongoDB, MySQL, OData, Oracle Database, Redis, Salesforce, SOAP, Swagger, and Twilio.
@@ -50,18 +48,17 @@ To install a service connector:
 
 2. Unzip the service connector into the /serviceconnectors/<connector name> folder in your project directory.
 
-  The new service connectors are plain flow-node modules but they are not installed as such in API Builder V3.0.0. The zip file will contain the package folder that contains the actual connector. Rename the package folder after unzipping to match your connector name.
+    The new service connectors are plain flow-node modules but they are not installed as such in API Builder V3.0.0. The zip file will contain the package folder that contains the actual connector. Rename the package folder after unzipping to match your connector name.
 
 3. From the project directory, execute the following command to install the HTTP communication module:
 
-  `npm i requester-ce`
+    `npm i requester-ce`
 
 4. From the project directory, execute the following command:
 
-  `appc run`
+    `appc run`
 
 5. Open the API Orchestration flow editor in the API Builder Console and verify that the service connector is listed and is available for use in flow-node flows.
-
 
 ## Install a model-first connector
 

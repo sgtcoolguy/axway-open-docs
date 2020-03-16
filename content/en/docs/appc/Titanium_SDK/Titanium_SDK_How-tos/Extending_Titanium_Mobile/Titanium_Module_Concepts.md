@@ -1,23 +1,22 @@
 {"title":"Titanium Module Concepts","weight":"20"}
 
-* [Packaged Titanium modules](#PackagedTitaniummodules)
+* [Packaged Titanium modules](#packaged-titanium-modules)
 
-  * [Native modules](#Nativemodules)
+    * [Native modules](#native-modules)
 
-    * [Proxies](#Proxies)
+        * [Proxies](#proxies)
 
-    * [Native module objects](#Nativemoduleobjects)
+        * [Native module objects](#native-module-objects)
 
-    * [Views and view proxies](#Viewsandviewproxies)
+        * [Views and view proxies](#views-and-view-proxies)
 
-    * [Converting between JavaScript and native objects](#ConvertingbetweenJavaScriptandnativeobjects)
+        * [Converting between JavaScript and native objects](#converting-between-javascript-and-native-objects)
 
-    * [Events and callbacks](#Eventsandcallbacks)
+        * [Events and callbacks](#events-and-callbacks)
 
-    * [Threading](#Threading)
+        * [Threading](#threading)
 
-  * [Packaged JavaScript and hybrid modules](#PackagedJavaScriptandhybridmodules)
-
+    * [Packaged JavaScript and hybrid modules](#packaged-javascript-and-hybrid-modules)
 
 The Titanium API is made up of _modules_\--collections of related methods, properties, and constants. There are several types of modules:
 
@@ -26,7 +25,6 @@ The Titanium API is made up of _modules_\--collections of related methods, prope
 * Packaged modules are optional extensions to the Titanium API that can be imported into your application using the require method. Packaged modules are imported using an identifier (such as ti.cloud). Packaged modules can include native code, JavaScript, or both. Packaged modules are available from the Appcelerator Marketplace, as well as other sources.
 
 * CommonJS modules can be used in your application to structure and organize code. Unlike packaged modules, CommonJS modules are not managed by Studio or the titanium command-line interface. To import a CommonJS module, you import it using the absolute or relative path to the module inside your project's Resources folder.
-
 
 This section deals with extending the Titanium API by building packaged modules, which can be sold through the Appcelerator Marketplace or distributed through other means.
 
@@ -53,7 +51,6 @@ To write a native module for Android or iOS, you need to be familiar with severa
 * Events and Callbacks
 
 * Threading
-
 
 #### Proxies
 
@@ -109,7 +106,6 @@ There are several special features about view and view proxies:
 
 * When a view proxy's properties are updated, the view is updated as well.
 
-
 #### Converting between JavaScript and native objects
 
 When you pass an object to a native method, or return an object from a native method or property to JavaScript, objects must be converted from JavaScript objects to native objects, and vice-versa.
@@ -122,7 +118,6 @@ Each native platform has its own set of helpers for converting between JavaScrip
 
 * More complex types can be passed by creating a special proxy class to represent them.
 
-
 #### Events and callbacks
 
 When performing an asynchronous operation, you can send data back to the JavaScript layer using events or callbacks.
@@ -130,7 +125,6 @@ When performing an asynchronous operation, you can send data back to the JavaScr
 * An _event_ results in an event listener function being called on all registered listeners.
 
 * A _callback_ invokes a specific JavaScript function.
-
 
 Because events can have multiple registered listeners, they are somewhat more flexible than callbacks.
 
@@ -141,7 +135,6 @@ JavaScript is inherently single-threaded; it provides no mechanisms for synchron
 * Use the UI thread when directly manipulating native UI elements.
 
 * Avoid blocking the UI thread for any reason.
-
 
 When performing a long-running task in native code, you can spawn a thread or use a native API that is asynchronous. You can deliver results back to the JavaScript runtime thread by calling a callback method or firing an event. Callback functions and event listeners are invoked on the JavaScript runtime thread.
 

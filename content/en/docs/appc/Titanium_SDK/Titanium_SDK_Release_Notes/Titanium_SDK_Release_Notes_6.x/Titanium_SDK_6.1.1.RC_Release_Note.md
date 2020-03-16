@@ -2,18 +2,17 @@
 
 ## Contents
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-* [API changes](#APIchanges)
-
+* [API changes](#api-changes)
 
 ## About this release
 
 Titanium SDK 6.1.1.RC is a patch release of the SDK which addresses important fixes for 6.1.0.
 
-As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Fixed issues
 
@@ -46,7 +45,6 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 * [TIMOB-24799](https://jira.appcelerator.org/browse/TIMOB-24799) - Android: Theme Causing Issues in SDK 6.2.2.GA
 
 * [TIMOB-24809](https://jira.appcelerator.org/browse/TIMOB-24809) - Android: HTTPClient - "onload" not dispatched
-
 
 ## API changes
 

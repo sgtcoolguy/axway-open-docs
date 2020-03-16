@@ -14,7 +14,6 @@ This update includes the following bug fixes and enhancements:
 
 * Website: Fixed an issue with SMTP settings. If a TLS value was specified, it was not properly checked.
 
-
 ## Future behavior changes
 
 In a future release, currently scheduled in a few months, the following changes are being made to user sessions and geo query.

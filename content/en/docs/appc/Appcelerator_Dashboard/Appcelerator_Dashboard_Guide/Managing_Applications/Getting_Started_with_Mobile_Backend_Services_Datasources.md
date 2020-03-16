@@ -2,12 +2,11 @@
 
 This guide provides how-to instructions for getting started with Mobile Backend Services (MBS) datasources.
 
-1. [Creating a datasource](#Creatingadatasource)
+1. [Creating a datasource](#creating-a-datasource)
 
-2. [Creating a user](#Creatingauser)
+2. [Creating a user](#creating-a-user)
 
-3. [Retrieving the app key](#Retrievingtheappkey)
-
+3. [Retrieving the app key](#retrieving-the-app-key)
 
 ## Creating a datasource
 
@@ -23,13 +22,12 @@ To create a standalone Mobile Backend Services datasource (an MBS datasource not
 
 5. Enter the **Name** for the datasource.
 
-  ![AddMobileService](/Images/appc/download/attachments/60151875/AddMobileService.png)
+    ![AddMobileService](/Images/appc/download/attachments/60151875/AddMobileService.png)
 6. If you have multiple environments, select the environments to enable for the datasource.
 
 7. Assign teams to the application by selecting the **+** icons from the Assign Teams list.
 
 8. Click **Create**. Dashboard will redirect you to the **Overview** tab for the new MBS datasource.
-
 
 For additional information on managing MBS datasources, refer to [Managing Mobile Backend Services Datasources](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Mobile_Backend_Services_Datasources/).
 
@@ -46,14 +44,13 @@ To create a user for the new MBS datasource:
 3. Select **Users** from the _Manage Data Objects_ list.
 
 4. Click **\+ User**. The _User_ view is displayed
-  ![user_add](/Images/appc/download/attachments/60151875/user_add.png)
+    ![user_add](/Images/appc/download/attachments/60151875/user_add.png)
 
 5. At a minimum, enter the **Username**, **Email**, and **Password**.
 
-  Record the username and password. You need the username and the password to configure connectivity to an MBS connector. For additional MBS connector information, refer to [MBS Connector](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/mbs_connector.html).
+    Record the username and password. You need the username and the password to configure connectivity to an MBS connector. For additional MBS connector information, refer to [MBS Connector](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/mbs_connector.html).
 
 6. Click **Save**.
-
 
 For additional information on managing MBS data objects, refer to [Managing Mobile Backend Services data objects](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Mobile_Backend_Services_Datasources/Managing_Mobile_Backend_Services_data_objects/).
 
@@ -66,8 +63,8 @@ To retrieve the App Key for the new MBS datasource:
 2. Select the **Keys** tab.
 
 3. Click **Show** to display the App Key.
-  ![app_key](/Images/appc/download/attachments/60151875/app_key.png)
+    ![app_key](/Images/appc/download/attachments/60151875/app_key.png)
 
-  Record the App Key. For additional MBS connector information, refer to [MBS Connector](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/mbs_connector.html).
+    Record the App Key. For additional MBS connector information, refer to [MBS Connector](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/mbs_connector.html).
 
 4. Click **Hide** to hide the App Key.

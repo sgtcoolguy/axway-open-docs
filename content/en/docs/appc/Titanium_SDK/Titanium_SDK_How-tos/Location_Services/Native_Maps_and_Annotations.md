@@ -1,15 +1,14 @@
 {"title":"Native Maps and Annotations","weight":"40"}
 
-* [Displaying a MapView](#DisplayingaMapView)
+* [Displaying a MapView](#displaying-a-mapview)
 
-* [Handling MapView Events](#HandlingMapViewEvents)
+* [Handling MapView Events](#handling-mapview-events)
 
-* [Annotations](#Annotations)
+* [Annotations](#annotations)
 
-* [Routes](#Routes)
+* [Routes](#routes)
 
-* [Google Maps API Key for Android](#GoogleMapsAPIKeyforAndroid)
-
+* [Google Maps API Key for Android](#google-maps-api-key-for-android)
 
 Use [ti.map add-on module](#!/api/Modules.Map) to add native maps support for your application. Google is no longer issuing Google Maps API v1 keys. If you have an application that still uses the old keys, you can either transition to the new module or continue using the built-in Titanium.Maps module. For more information about the add-on module, refer to [Google Maps v2 for Android](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/).
 
@@ -28,7 +27,6 @@ In this chapter, you'll learn how to use Titanium's Map API to visually represen
 * Routes
 
 * Android Maps API Key for Distribution
-
 
 ### Displaying a MapView
 
@@ -95,25 +93,24 @@ The MapView is the core UI component of the Ti.Map module. It allows Titanium to
 As seen above, those few lines of code generate native maps on both iOS and Android, respectively. Now that we have a basic map, let's discuss some of the properties of the Ti.Map.MapView in order to see how it can be manipulated.
 
 * mapType - Indicates what type of map should be displayed. Below we see the Ti.Map.NORMAL\_TYPE, Ti.Map.SATELLITE\_TYPE, and Ti.Map.HYBRID\_TYPE respectively.
-  ![stan](/Images/appc/download/attachments/29004916/stan.png) ![sate](/Images/appc/download/attachments/29004916/sate.png) ![hybr](/Images/appc/download/attachments/29004916/hybr.png)
+    ![stan](/Images/appc/download/attachments/29004916/stan.png) ![sate](/Images/appc/download/attachments/29004916/sate.png) ![hybr](/Images/appc/download/attachments/29004916/hybr.png)
 
 * region - This is an object that contains the 4 properties defining the visible area of the MapView. Below we can see how the same latitude and longitude of a region can be represented with a different level of zoom via the latitudeDelta and longitudeDelta properties.
-  ![stan](/Images/appc/download/attachments/29004916/stan.png)  ![delta](/Images/appc/download/attachments/29004916/delta.png)
+    ![stan](/Images/appc/download/attachments/29004916/stan.png)  ![delta](/Images/appc/download/attachments/29004916/delta.png)
 
-  * latitude\- The latitude of your map's target region
+    * latitude\- The latitude of your map's target region
 
-  * longitude - The longitude of your map's target region
+    * longitude - The longitude of your map's target region
 
-  * latitudeDelta - The measure of latitude north and south from your target region's latitude that will be visible in the MapView. The smaller the delta value, the closer the zoom on your map.
+    * latitudeDelta - The measure of latitude north and south from your target region's latitude that will be visible in the MapView. The smaller the delta value, the closer the zoom on your map.
 
-  * longitudeDelta - The measure of longitude east and west from your target region's longitude that will be visible in the MapView
+    * longitudeDelta - The measure of longitude east and west from your target region's longitude that will be visible in the MapView
 
 * animate - A boolean that indicates whether or not map actions, like opening and adding annotations, should be animated
 
 * regionFit - A boolean that indicates if the map should attempt to fit the MapView into the region in the visible view
 
 * userLocation - A boolean that indicates if the map should show the user's current device location as a pin on the map
-
 
 Android MapView Limitation
 
@@ -133,24 +130,23 @@ Here's the 3 events specific to MapView that give you that additional control, a
 
 * regionChanged - The event is fired when the visible region of our MapViewhas changed. This can occur from programmatic changes, or from user interaction with the map. The new region data is returned in the following structure:
 
-  `{`
+    `{`
 
-  `latitude: 37.389569`
+    `latitude: 37.389569`
 
-  `latitudeDelta: 0.1`
+    `latitudeDelta: 0.1`
 
-  `longitude: -122.050212,`
+    `longitude: -122.050212,`
 
-  `longitudeDelta: 1`
+    `longitudeDelta: 1`
 
-  `source: "[object TiMapView]",`
+    `source: "[object TiMapView]",`
 
-  `type: 'regionChanged'`
+    `type: 'regionChanged'`
 
-  `}`
+    `}`
 
 * error - This event let's us know when ever there is an error encountered by the underlying native maps. Often times these errors are not critical, but need to be handled in order to preserve a quality user experience.
-
 
 As mentioned, the most common way to trigger the above events is through user interaction via scrolling and zooming. Let's change the MapView example code to handle all of the aforementioned events.
 
@@ -388,11 +384,11 @@ As we can see, there's many Annotation properties available for styling and inte
 
 * pincolor\- The color of the default pin representing an annotation. It can have the following values:
 
-  * Ti.Map.ANNOTATION\_GREEN
+    * Ti.Map.ANNOTATION\_GREEN
 
-  * Ti.Map.ANNOTATION\_PURPLE
+    * Ti.Map.ANNOTATION\_PURPLE
 
-  * Ti.Map.ANNOTATION\_RED
+    * Ti.Map.ANNOTATION\_RED
 
 * rightButton - A button that will appear on the right side of your annotation when clicked. This property must have a value equal to the URL of an image, or to a Ti.UI.iPhone.SystemButtonStyle constant.
 
@@ -401,7 +397,6 @@ As we can see, there's many Annotation properties available for styling and inte
 * subtitle - The subtitle text that appears on your annotation when clicked
 
 * title - The main title text that appears on your annotation when clicked
-
 
 So now you know how to create a MapView, handle changes in its region, and add locations of interest via Annotations. There's one more bit of functionality: routes. In the next section we'll discuss routes, a feature that allows us to create paths between locations on a MapView.
 
@@ -586,7 +581,6 @@ In order to get the MD5 hash of your distribution certificate, we run the Java S
 * ALIAS - The alias you assigned to your keystore when you created it
 
 * STOREPASS - The password you assigned to secure your keystore when you created it
-
 
 Upon successful execution of this command you should receive an output similar to the one below. The MD5 hash required is the Certificate fingerprint (MD5) field, which has been highlighted. Copy and/or save the value found in this field.
 

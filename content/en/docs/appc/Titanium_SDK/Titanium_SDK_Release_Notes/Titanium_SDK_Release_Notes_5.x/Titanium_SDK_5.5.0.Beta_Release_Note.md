@@ -2,31 +2,30 @@
 
 ## Contents
 
-* [About This Release](#AboutThisRelease)
+* [About This Release](#about-this-release)
 
-* [Notice of Feature and Behavior Changes](#NoticeofFeatureandBehaviorChanges)
+* [Notice of Feature and Behavior Changes](#notice-of-feature-and-behavior-changes)
 
-  * [iOS Platform](#iOSPlatform)
+    * [iOS Platform](#ios-platform)
 
-* [New Features](#NewFeatures)
+* [New Features](#new-features)
 
-  * [iOS Platform](#iOSPlatform.1)
+    * [iOS Platform](#ios-platform)
 
-* [Fixed Issues](#FixedIssues)
+* [Fixed Issues](#fixed-issues)
 
-* [Improvements patch releases](#Improvementspatchreleases)
+* [Improvements patch releases](#improvements-patch-releases)
 
-* [Known Issues in 5.5.0.Beta](#KnownIssuesin5.5.0.Beta)
+* [Known Issues in 5.5.0.Beta](#known-issues-in-5.5.0.beta)
 
-* [API Changes](#APIChanges)
-
+* [API Changes](#api-changes)
 
 ## About This Release
 
 Titanium SDK 5.5.0.Beta is a minor release of the SDK, addressing high-priority issues from previous releases.
 This release primarily adds support for iOS 10 and Xcode 8.
 
-As of this release, Titanium SDK 5.4.x will not be supported six months from 5.5.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Titanium SDK 5.4.x will not be supported six months from 5.5.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Notice of Feature and Behavior Changes
 
@@ -42,237 +41,235 @@ As of this release, Titanium SDK 5.4.x will not be supported six months from 5.5
 
 * Minimum iOS SDK version is set to 8.0 by default if not explicitly set in the tiapp.xml when compiling using Xcode 8
 
-
 ## New Features
 
 ### iOS Platform
 
 * [TIMOB-23509](https://jira.appcelerator.org/browse/TIMOB-23509) - iOS10: Expose new visual effects on Ti.UI.iOS.BlurView
 
-  * Exposed UIBlurEffectStyleProminent and UIBlurEffectStyleRegular on Ti.UI.iOS.BlurView
+    * Exposed UIBlurEffectStyleProminent and UIBlurEffectStyleRegular on Ti.UI.iOS.BlurView
 
-  * Demo:
+    * Demo:
 
-    `var` `win = Ti.UI.createWindow({`
+        `var` `win = Ti.UI.createWindow({`
 
-    `backgroundColor:` `"#fff"`
+        `backgroundColor:` `"#fff"`
 
-    `});`
+        `});`
 
-    `// Reference image (or view)`
+        `// Reference image (or view)`
 
-    `var` `img = Ti.UI.createImageView({`
+        `var` `img = Ti.UI.createImageView({`
 
-    `image:` `"/default_app_logo.png"``,`
+        `image:` `"/default_app_logo.png"``,`
 
-    `top: 100,`
+        `top: 100,`
 
-    `width: 300,`
+        `width: 300,`
 
-    `height: 300`
+        `height: 300`
 
-    `});`
+        `});`
 
-    `// Blur view`
+        `// Blur view`
 
-    `var` `blur = Ti.UI.iOS.createBlurView({`
+        `var` `blur = Ti.UI.iOS.createBlurView({`
 
-    `width: Ti.UI.FILL,`
+        `width: Ti.UI.FILL,`
 
-    `height: Ti.UI.FILL`
+        `height: Ti.UI.FILL`
 
-    `});`
+        `});`
 
-    `img.add(blur);`
+        `img.add(blur);`
 
-    `// Effect controls`
+        `// Effect controls`
 
-    `var` `tabs = Ti.UI.iOS.createTabbedBar({`
+        `var` `tabs = Ti.UI.iOS.createTabbedBar({`
 
-    `labels:` `"Extra light"``,` `"Light"``,` `"Dark"``,` `"Regular"``,` `"Prominent"``,`
+        `labels:` `"Extra light"``,` `"Light"``,` `"Dark"``,` `"Regular"``,` `"Prominent"``,`
 
-    `bottom: 100`
+        `bottom: 100`
 
-    `});`
+        `});`
 
-    `// Available blur effects`
+        `// Available blur effects`
 
-    `var` `effects =`
+        `var` `effects =`
 
-    `Ti.UI.iOS.BLUR_EFFECT_STYLE_EXTRA_LIGHT,`
+        `Ti.UI.iOS.BLUR_EFFECT_STYLE_EXTRA_LIGHT,`
 
-    `Ti.UI.iOS.BLUR_EFFECT_STYLE_LIGHT,`
+        `Ti.UI.iOS.BLUR_EFFECT_STYLE_LIGHT,`
 
-    `Ti.UI.iOS.BLUR_EFFECT_STYLE_DARK,`
+        `Ti.UI.iOS.BLUR_EFFECT_STYLE_DARK,`
 
-    `Ti.UI.iOS.BLUR_EFFECT_STYLE_REGULAR,`
+        `Ti.UI.iOS.BLUR_EFFECT_STYLE_REGULAR,`
 
-    `Ti.UI.iOS.BLUR_EFFECT_STYLE_PROMINENT`
+        `Ti.UI.iOS.BLUR_EFFECT_STYLE_PROMINENT`
 
-    `;`
+        `;`
 
-    `tabs.addEventListener(``"click"``,` `function``(e) {`
+        `tabs.addEventListener(``"click"``,` `function``(e) {`
 
-    `blur.setEffect(effectse.index);`
+        `blur.setEffect(effectse.index);`
 
-    `});`
+        `});`
 
-    `win.add(tabs);`
+        `win.add(tabs);`
 
-    `win.add(img);`
+        `win.add(img);`
 
-    `win.open();`
+        `win.open();`
 
 * [TIMOB-23513](https://jira.appcelerator.org/browse/TIMOB-23513) - iOS10: Support for new WatchConnectivity features
 
-  * Added support for the new WatchConnectivity features such as hasContentPending and remainingComplicationUserInfoTransfers
+    * Added support for the new WatchConnectivity features such as hasContentPending and remainingComplicationUserInfoTransfers
 
-  * Demo:
+    * Demo:
 
-    `Ti.WatchSession.activateSession();`
+        `Ti.WatchSession.activateSession();`
 
-    `Ti.API.warn(``"Has content pending: "` `+ Ti.WatchSession.hasContentPending);`
+        `Ti.API.warn(``"Has content pending: "` `+ Ti.WatchSession.hasContentPending);`
 
-    `Ti.API.warn(``"Number of remaining complication userInfo transfers: "` `+ Ti.WatchSession.remainingComplicationUserInfoTransfers);`
+        `Ti.API.warn(``"Number of remaining complication userInfo transfers: "` `+ Ti.WatchSession.remainingComplicationUserInfoTransfers);`
 
 * [TIMOB-23519](https://jira.appcelerator.org/browse/TIMOB-23519) - iOS10: Expose new Ti.UI.Pasteboard APIs
 
-  * Exposed hasURLs, hasImages, and hasColors in the Ti.UI.Pasteboard API
+    * Exposed hasURLs, hasImages, and hasColors in the Ti.UI.Pasteboard API
 
-  * Demo:
+    * Demo:
 
-    `Ti.API.warn(``"Has URLs:"` `+ Ti.UI.Clipboard.hasURLs());`
+        `Ti.API.warn(``"Has URLs:"` `+ Ti.UI.Clipboard.hasURLs());`
 
-    `Ti.API.warn(``"Has images"` `+ Ti.UI.Clipboard.hasImages());`
+        `Ti.API.warn(``"Has images"` `+ Ti.UI.Clipboard.hasImages());`
 
-    `Ti.API.warn(``"Has colors:"` `+ Ti.UI.Clipboard.hasColors());`
+        `Ti.API.warn(``"Has colors:"` `+ Ti.UI.Clipboard.hasColors());`
 
 * [TIMOB-23524](https://jira.appcelerator.org/browse/TIMOB-23524) - iOS10: Support RefreshControl in Ti.UI.ScrollView
 
-  * Added support for refreshControl in Ti.UI.ScrollView for iOS10
+    * Added support for refreshControl in Ti.UI.ScrollView for iOS10
 
-  * Demo:
+    * Demo:
 
-    `var` `win = Ti.UI.createWindow({`
+        `var` `win = Ti.UI.createWindow({`
 
-    `backgroundColor:` `"#fff"`
+        `backgroundColor:` `"#fff"`
 
-    `});`
+        `});`
 
-    `var` `refreshControl = Ti.UI.createRefreshControl({`
+        `var` `refreshControl = Ti.UI.createRefreshControl({`
 
-    `tintColor:` `"red"`
+        `tintColor:` `"red"`
 
-    `});`
+        `});`
 
-    `var` `scroll = Ti.UI.createScrollView({`
+        `var` `scroll = Ti.UI.createScrollView({`
 
-    `backgroundColor:` `"yellow"``,`
+        `backgroundColor:` `"yellow"``,`
 
-    `refreshControl: refreshControl`
+        `refreshControl: refreshControl`
 
-    `});`
+        `});`
 
-    `refreshControl.addEventListener(``"refreshstart"``,` `function``() {`
+        `refreshControl.addEventListener(``"refreshstart"``,` `function``() {`
 
-    `setTimeout(``function``() {`
+        `setTimeout(``function``() {`
 
-    `refreshControl.endRefreshing();`
+        `refreshControl.endRefreshing();`
 
-    `},1000);`
+        `},1000);`
 
-    `})`
+        `})`
 
-    `scroll.add(Ti.UI.createLabel({`
+        `scroll.add(Ti.UI.createLabel({`
 
-    `text:` `"Scroll down!"`
+        `text:` `"Scroll down!"`
 
-    `}));`
+        `}));`
 
-    `win.add(scroll);`
+        `win.add(scroll);`
 
-    `win.open();`
+        `win.open();`
 
 * [TIMOB-23528](https://jira.appcelerator.org/browse/TIMOB-23528) - iOS10: Support new CoreSpotlight APIs
 
-  * Added support for CoreSpotlight framework particularly for CSSearchableItemAttributeSet and CSSearchQuery
+    * Added support for CoreSpotlight framework particularly for CSSearchableItemAttributeSet and CSSearchQuery
 
-  * Demo:
+    * Demo:
 
-    `var` `win = Ti.UI.createWindow({`
+        `var` `win = Ti.UI.createWindow({`
 
-    `backgroundColor :` `"#fff"`
+        `backgroundColor :` `"#fff"`
 
-    `});`
+        `});`
 
-    `var` `btn = Ti.UI.createButton({`
+        `var` `btn = Ti.UI.createButton({`
 
-    `title :` `"Add searchable index"`
+        `title :` `"Add searchable index"`
 
-    `});`
+        `});`
 
-    `btn.addEventListener(``"click"``,` `function``() {`
+        `btn.addEventListener(``"click"``,` `function``() {`
 
-    `addToSearchableIndex();`
+        `addToSearchableIndex();`
 
-    `});`
+        `});`
 
-    `win.add(btn);`
+        `win.add(btn);`
 
-    `var` `nav = Ti.UI.iOS.createNavigationWindow({window: win});`
+        `var` `nav = Ti.UI.iOS.createNavigationWindow({window: win});`
 
-    `nav.open();`
+        `nav.open();`
 
-    `function` `addToSearchableIndex() {`
+        `function` `addToSearchableIndex() {`
 
-    `var` `itemAttr = Ti.App.iOS.createSearchableItemAttributeSet({`
+        `var` `itemAttr = Ti.App.iOS.createSearchableItemAttributeSet({`
 
-    `itemContentType: Ti.App.iOS.UTTYPE_AUDIO,`
+        `itemContentType: Ti.App.iOS.UTTYPE_AUDIO,`
 
-    `title:` `'Who rocks iOS 10?'``,`
+        `title:` `'Who rocks iOS 10?'``,`
 
-    `// iOS 10 only`
+        `// iOS 10 only`
 
-    `fullyFormattedAddress:` `"1732 N 1st St, San Jose, CA 95112"``,`
+        `fullyFormattedAddress:` `"1732 N 1st St, San Jose, CA 95112"``,`
 
-    `postalCode:` `"95112"``,`
+        `postalCode:` `"95112"``,`
 
-    `thoroughfare:` `"N 1st St"``,`
+        `thoroughfare:` `"N 1st St"``,`
 
-    `subThoroughfare:` `"1732"``,`
+        `subThoroughfare:` `"1732"``,`
 
-    `keywords:` `'appcelerator'``,` `'titanium_mobile'``,` `'ios10'``,` `'corespotlight'`
+        `keywords:` `'appcelerator'``,` `'titanium_mobile'``,` `'ios10'``,` `'corespotlight'`
 
-    `});`
+        `});`
 
-    `var` `item = Ti.App.iOS.createSearchableItem({`
+        `var` `item = Ti.App.iOS.createSearchableItem({`
 
-    `identifier:` `'core-spotlight'``,`
+        `identifier:` `'core-spotlight'``,`
 
-    `domainIdentifier:` `'ios10'``,`
+        `domainIdentifier:` `'ios10'``,`
 
-    `attributeSet: itemAttr`
+        `attributeSet: itemAttr`
 
-    `});`
+        `});`
 
-    `var` `indexer = Ti.App.iOS.createSearchableIndex();`
+        `var` `indexer = Ti.App.iOS.createSearchableIndex();`
 
-    `indexer.addToDefaultSearchableIndex(item,` `function``(e) {`
+        `indexer.addToDefaultSearchableIndex(item,` `function``(e) {`
 
-    `if` `(e.success) {`
+        `if` `(e.success) {`
 
-    `alert(``'Press the home button and now search for your keywords'``);`
+        `alert(``'Press the home button and now search for your keywords'``);`
 
-    `}` `else` `{`
+        `}` `else` `{`
 
-    `alert(``'Error: '` `+ JSON.stringify(e.error));`
+        `alert(``'Error: '` `+ JSON.stringify(e.error));`
 
-    `}`
+        `}`
 
-    `});`
+        `});`
 
-    `}`
-
+        `}`
 
 ## Fixed Issues
 
@@ -306,48 +303,45 @@ As of this release, Titanium SDK 5.4.x will not be supported six months from 5.5
 
 * [TIMOB-23790](https://jira.appcelerator.org/browse/TIMOB-23790) - node-ios-device: emitter error during process exit and uncaught exception
 
-
 ## Improvements patch releases
 
 * [TIMOB-23514](https://jira.appcelerator.org/browse/TIMOB-23514) - iOS10: Deprecate iAds
 
-  * iAds has been depreciated ([iOS 10.0 API Diffs](https://developer.apple.com/library/prerelease/content/releasenotes/General/iOS10APIDiffs/Objective-C/iAd.html))
+    * iAds has been depreciated ([iOS 10.0 API Diffs](https://developer.apple.com/library/prerelease/content/releasenotes/General/iOS10APIDiffs/Objective-C/iAd.html))
 
 * [TIMOB-23778](https://jira.appcelerator.org/browse/TIMOB-23778) - iOS: Improve warning when calling iOS10 visual effects for Ti.UI.iOS.BlurView on < iOS10
 
-  * Improved the warning when calling iOS10 visual effects for Ti.UI.iOS.BlurView on non-iOS10 devices. The error message should look something like this:
+    * Improved the warning when calling iOS10 visual effects for Ti.UI.iOS.BlurView on non-iOS10 devices. The error message should look something like this:
 
-    `ERROR : The provided value` `for` `the Ti.UI.iOS.BlurView.effect property is not available in` `this` `iOS version.`
-
+        `ERROR : The provided value` `for` `the Ti.UI.iOS.BlurView.effect property is not available in` `this` `iOS version.`
 
 ## Known Issues in 5.5.0.Beta
 
 * [TIMOB-23726](https://jira.appcelerator.org/browse/TIMOB-23726) - iOS: Debugger for Alloy project hangs on Device with run-on-main-thread enabled
 
-  * Running an Alloy project in Debug mode to Device causes the app to hang on "The Debugger is waiting for you to launch the app on your device".
+    * Running an Alloy project in Debug mode to Device causes the app to hang on "The Debugger is waiting for you to launch the app on your device".
 
-  * This is a Regression from 5.3.0.GA
+    * This is a Regression from 5.3.0.GA
 
-  * The hang does not occur on simulator, classic titanium mobile project, or with run-on-main-thread disabled
+    * The hang does not occur on simulator, classic titanium mobile project, or with run-on-main-thread disabled
 
 * [TIMOB-23781](https://jira.appcelerator.org/browse/TIMOB-23781) - iOS8: Image Assets are distorted with Xcode 8.0
 
-  * Image assets are distorted in apps built with Xcode 8.0 (10.0 SDK) on iOS8 devices. For a default two-tabbed classic application with an ImageView, it affects:
+    * Image assets are distorted in apps built with Xcode 8.0 (10.0 SDK) on iOS8 devices. For a default two-tabbed classic application with an ImageView, it affects:
 
-    * The LaunchScreen Icon
+        * The LaunchScreen Icon
 
-    * The two Tab Icons
+        * The two Tab Icons
 
-    * The Custom Image within the ImageView
+        * The Custom Image within the ImageView
 
-  * This does not occur in Simulators or with iOS9 or iOS10
+    * This does not occur in Simulators or with iOS9 or iOS10
 
-  * When reverting to Xcode 7.3 (9.3 SDK), the issue is no longer reproducible
+    * When reverting to Xcode 7.3 (9.3 SDK), the issue is no longer reproducible
 
-  * This affects Classic & Alloy Projects
+    * This affects Classic & Alloy Projects
 
 * [TIMOB-23786](https://jira.appcelerator.org/browse/TIMOB-23786) - iOS10: Logs not working on iOS 10 devices
-
 
 ## API Changes
 

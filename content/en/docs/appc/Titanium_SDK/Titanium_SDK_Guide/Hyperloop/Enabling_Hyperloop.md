@@ -1,24 +1,22 @@
 {"title":"Enabling Hyperloop","weight":"10"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-  * [Requirements](#Requirements)
+    * [Requirements](#requirements)
 
+* [Using Hyperloop on existing projects](#using-hyperloop-on-existing-projects)
 
-* [Using Hyperloop on existing projects](#UsingHyperlooponexistingprojects)
+    * [On SDKs older than 7.0.0](#on-sdks-older-than-7.0.0)
 
-  * [On SDKs older than 7.0.0](#OnSDKsolderthan7.0.0)
+* [Enabling via CLI](#enabling-via-cli)
 
-* [Enabling via CLI](#EnablingviaCLI)
+    * [Enabling via Studio](#enabling-via-studio)
 
-  * [Enabling via Studio](#EnablingviaStudio)
+    * [Creating new Hyperloop-enabled project](#creating-new-hyperloop-enabled-project)
 
-  * [Creating new Hyperloop-enabled project](#CreatingnewHyperloop-enabledproject)
+    * [Enabling Hyperloop on non-Hyperloop projects](#enabling-hyperloop-on-non-hyperloop-projects)
 
-  * [Enabling Hyperloop on non-Hyperloop projects](#EnablingHyperlooponnon-Hyperloopprojects)
-
-  * [Getting Started](#GettingStarted)
-
+    * [Getting Started](#getting-started)
 
 ## Introduction
 
@@ -35,7 +33,6 @@ Refer to [Hyperloop Requirements](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyp
 * If you attempt to create an app that is called "Hyperloop" (the app-name in the **tiapp.xml**) you may experience failures in the build process, because it is a reserved word. Please use a different project name for this case.
 
 * Hyperloop expects Xcode to be in **/Applications/Xcode.app** to reference system-libraries, so please ensure that Xcode is located at the this location.
-
 
 ## Using Hyperloop on existing projects
 
@@ -77,13 +74,12 @@ With Appcelerator Studio open and logged in, follow these steps to create a new 
 
 1. Open **New Mobile App** **Project** wizard.
 
-  ![enable-hyperloop](/Images/appc/download/attachments/46253574/enable-hyperloop.png)
+    ![enable-hyperloop](/Images/appc/download/attachments/46253574/enable-hyperloop.png)
 2. In the **Enable AMPLIFY Appcelerator Platform Services** section, you will see Hyperloop listed along with Cloud and Analytics (if you are entitled to use it). **Check the Enable AMPLIFY Appcelerator Services** toggle.
 
 3. Click **Finish**.
 
 4. During the project creation, Studio will prompt you with a **confirmation to enable Hyperloop**. The prompt should say something like this: "Would you like to enable Hyperloop for this app (This may take a while...)". Click **Yes** to confirm. You may also see the same confirmation request for Appcelerator Test in which case you can click No and continue on.
-
 
 To confirm that Hyperloop was set up, you can open the tiapp.xml file in the Service section.
 

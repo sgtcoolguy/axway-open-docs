@@ -9,7 +9,7 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 To configure a find and modify users flow:
 
 1. Click the **Create Flow** icon associated with finding and modifying simple users.
-  The API Orchestration user interface is displayed.
+    The API Orchestration user interface is displayed.
 
 2. Select and pull a Set Context flow-node onto the flow editor from the Core list. Note that the Start flow-node is automatically connected to the input of the Set Context flow-node.
 
@@ -81,7 +81,7 @@ To configure a find and modify users flow:
 
 36. Connect the notfound output of the Find and modify users flow-node to the input of the Users not found flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage Nodes](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Flows/Manage_Nodes/). The completed flow is displayed.
 
-  ![Find_and_modify](/Images/appc/download/attachments/52298572/Find_and_modify.png)
+    ![Find_and_modify](/Images/appc/download/attachments/52298572/Find_and_modify.png)
 37. Click **Save**.
 
 38. On the next screen, click **Proceed**. The server will be restarted and the Find and modify users flow will be saved and enabled.

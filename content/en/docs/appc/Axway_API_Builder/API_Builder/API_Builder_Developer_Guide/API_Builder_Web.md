@@ -6,26 +6,25 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Route definition](#Routedefinition)
+* [Route definition](#route-definition)
 
-* [Renderer engines](#Rendererengines)
+* [Renderer engines](#renderer-engines)
 
-  * [Pre-built renderer engines](#Pre-builtrendererengines)
+    * [Pre-built renderer engines](#pre-built-renderer-engines)
 
-  * [Custom renderer engines](#Customrendererengines)
+    * [Custom renderer engines](#custom-renderer-engines)
 
-  * [Handlebars partials and helpers](#Handlebarspartialsandhelpers)
+    * [Handlebars partials and helpers](#handlebars-partials-and-helpers)
 
-    * [Helpers](#Helpers)
+        * [Helpers](#helpers)
 
-    * [Partials](#Partials)
+        * [Partials](#partials)
 
-* [API Builder APIs from API Builder Web](#APIBuilderAPIsfromAPIBuilderWeb)
+* [API Builder APIs from API Builder Web](#api-builder-apis-from-api-builder-web)
 
-* [Interacting with models](#Interactingwithmodels)
-
+* [Interacting with models](#interacting-with-models)
 
 ## Introduction
 
@@ -36,7 +35,6 @@ This guide covers the basics for creating API Builder Web interfaces. An API Bui
 * templates (EJS, Handelbars, Markdown or ReactJS) located in the web/views folder
 
 * API Builder Routes (endpoint definitions) located in the web/routes folder
-
 
 You can create custom logic in your API Builder Routes, which can internally access your service's models and APIs.
 
@@ -50,56 +48,17 @@ Place all API Builder route definition files in the service's web/routes folder.
 
 3. Exports the defined endpoint using the module.exports variable
 
-
 Set the following keys in the object passed to the Router.extend() method to define the API endpoint.
 
-Name
-
-Required
-
-Description
-
-name
-
-true
-
-Name of the route.
-
-path
-
-true
-
-Endpoint/path for the route.
-
-enabled
-
-false
-
-Specifies whether the route is enabled. If not, it won’t be registered, and won’t accept requests.
-
-sort
-
-false
-
-An integer that determines the order routes are registered. Routes with a higher sort value are prioritized and registered earlier. For example, say you have /route/:id and /route/foo. If the route with the wildcard has a higher sort than the static route, the static route runs. So create the first with a lower sort, and /route/foo routes properly, as does /api/bar.
-
-method
-
-true
-
-HTTP method (GET, POST, PUT, DELETE).
-
-description
-
-true
-
-Description of the route.
-
-action
-
-true
-
-The function that allows you to interact with API Builder APIs and models and send data to your template engine.
+| Name | Required | Description |
+| --- | --- | --- |
+| name | true | Name of the route. |
+| path | true | Endpoint/path for the route. |
+| enabled | false | Specifies whether the route is enabled. If not, it won’t be registered, and won’t accept requests. |
+| sort | false | An integer that determines the order routes are registered. Routes with a higher sort value are prioritized and registered earlier. For example, say you have /route/:id and /route/foo. If the route with the wildcard has a higher sort than the static route, the static route runs. So create the first with a lower sort, and /route/foo routes properly, as does /api/bar. |
+| method | true | HTTP method (GET, POST, PUT, DELETE). |
+| description | true | Description of the route. |
+| action | true | The function that allows you to interact with API Builder APIs and models and send data to your template engine. |
 
 ## Renderer engines
 
@@ -109,25 +68,12 @@ A renderer engine renders data (or locals in the Express framework) to the view 
 
 API Builder Web supports the EJS, Handlebars, Markdown, and ReactJS renderer engines. Place all template files with the appropriate extension in the web/templates folder.
 
-Renderer Engine
-
-File Extension
-
-EJS
-
-.ejs
-
-Handlebars
-
-.hbs
-
-Markdown
-
-.md
-
-ReactJS
-
-.jsx
+| Renderer Engine | File Extension |
+| --- | --- |
+| EJS | .ejs |
+| Handlebars | .hbs |
+| Markdown | .md |
+| ReactJS | .jsx |
 
 To use a template in the API Builder Route's logic, reference its filename without the extension. Because the template is referenced using the filename, you cannot have the same filename with multiple extensions.
 
@@ -138,7 +84,6 @@ To create a custom renderer engine you need to create a renderer engine and regi
 1. Create an object that implements the createRenderer() method and specifies the extension property.
 
 2. Pass the object to the Middleware instance's registerRendererEngine() method. You can retrieve a Middleware instance by using the middleware property of the API Builder instance.
-
 
 For example, to implement a renderer engine for Jade templates:
 
@@ -184,7 +129,6 @@ Helpers are functions that you can evaluate in your Handlebar templates. To use 
 
 2. Call either the Handlebar renderer engine's registerHelper() to register a helper function. Pass the method the name of the helper and the function to invoke.
 
-
 `var` `Arrow = require(``'arrow'``),`
 
 `hbs = Arrow.Middleware.getRendererEngine(``'hbs'``);`
@@ -220,7 +164,6 @@ Partials are subviews that you can embed in a template. To use a partial, you ne
 1. Get a reference to the Handlebar renderer engine using the Arrow.Middleware.getRendererEngine('hbs') method.
 
 2. Call either the Handlebar renderer engine's registerPartial() to register a partial file. Pass the method the name of the partial and the template file to use as a partial.
-
 
 `var` `Arrow = require(``'arrow'``),`
 

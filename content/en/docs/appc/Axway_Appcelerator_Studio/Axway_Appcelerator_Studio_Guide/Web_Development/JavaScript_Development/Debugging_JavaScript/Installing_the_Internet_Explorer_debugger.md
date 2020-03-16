@@ -1,19 +1,18 @@
 {"title":"Installing the Internet Explorer debugger","weight":"60"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Instructions](#Instructions)
+* [Instructions](#instructions)
 
-* [Troubleshooting tips](#Troubleshootingtips)
+* [Troubleshooting tips](#troubleshooting-tips)
 
-  * [Enabling the Aptana Debugger add-ons](#EnablingtheAptanaDebuggeradd-ons)
+    * [Enabling the Aptana Debugger add-ons](#enabling-the-aptana-debugger-add-ons)
 
-  * [Enabling script debugging](#Enablingscriptdebugging)
+    * [Enabling script debugging](#enabling-script-debugging)
 
-  * [Updating your DLL Version](#UpdatingyourDLLVersion)
+    * [Updating your DLL Version](#updating-your-dll-version)
 
-  * [Items not yet supported](#Itemsnotyetsupported)
-
+    * [Items not yet supported](#items-not-yet-supported)
 
 ## Overview
 
@@ -25,11 +24,10 @@ The debugger for IE works the same as the JavaScript debugger for Firefox, but y
 
 2. From the **Debug** menu ![IconDebug1](/Images/appc/download/attachments/30083102/IconDebug1.png) , select **Debug...** to open a **Debug** window (shown below).
 
-  ![IEdebugWindow](/Images/appc/download/attachments/30083102/IEdebugWindow.png)
+    ![IEdebugWindow](/Images/appc/download/attachments/30083102/IEdebugWindow.png)
 3. If you do not already have a Web Browser configuration for IE, create a new one and point it to the location where IE is installed on your computer. (See [Installing the JavaScript debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Installing_the_JavaScript_debugger/) for details.)
 
 4. In the lower-right corner of the window, click the **Debug** button and follow the prompts to install the IE debugger and start debugging your page.
-
 
 ## Troubleshooting tips
 
@@ -45,7 +43,7 @@ To enable the add-ons:
 
 2. Make sure that the two Aptana debugger plug-ins are enabled (shown below). If not, select each plug-in and choose the Enable settings option.
 
-  ![ManageAddOns](/Images/appc/download/attachments/30083102/ManageAddOns.png)
+    ![ManageAddOns](/Images/appc/download/attachments/30083102/ManageAddOns.png)
 
 ### Enabling script debugging
 
@@ -59,7 +57,7 @@ To enable script debugging:
 
 3. Under **Browsing**, make sure that the **Disable script debugging (Internet Explorer)** option is unchecked (shown below).
 
-  ![DisableScriptDebugging](/Images/appc/download/attachments/30083102/DisableScriptDebugging.png)
+    ![DisableScriptDebugging](/Images/appc/download/attachments/30083102/DisableScriptDebugging.png)
 
 ### Updating your DLL Version
 
@@ -72,7 +70,6 @@ If you determined that you have an older version of the IE debugger (the latest 
 3. Replace it with the latest version: [aptanadebugger.dll](https://github.com/aptana/studio3/blob/development/bundles/com.aptana.js.debug.core.ie/res/ie/AptanaDebugger.dll)
 
 4. Create aptanadebugger.dll.noupdate file in the same folder.
-
 
 ### Items not yet supported
 

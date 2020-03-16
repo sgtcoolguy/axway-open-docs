@@ -28,7 +28,6 @@ To set the hit count for a breakpoint:
 
 6. Click the **Resume** button ![IconResume](/Images/appc/download/attachments/30083105/IconResume.png) to resume the execution of your code.
 
-
 ### Making a breakpoint conditional
 
 You might want to make a breakpoint conditional if you only want your JavaScript code to break on that point if certain conditions are met.
@@ -44,7 +43,6 @@ To make a breakpoint conditional:
 4. Click **OK**.
 
 5. Click the **Resume** button ![IconResume](/Images/appc/download/attachments/30083105/IconResume.png) to resume the execution of your code.
-
 
 ### Related Topics
 

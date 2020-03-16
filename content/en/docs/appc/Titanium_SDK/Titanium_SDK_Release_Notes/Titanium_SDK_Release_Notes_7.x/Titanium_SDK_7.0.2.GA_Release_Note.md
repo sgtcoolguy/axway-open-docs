@@ -1,25 +1,24 @@
 {"title":"Titanium SDK 7.0.2.GA - 9 February 2018","weight":"250"}
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [Community credits](#Communitycredits)
+* [Community credits](#community-credits)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-  * [Android](#Android)
+    * [Android](#android)
 
-  * [iOS](#iOS)
+    * [iOS](#ios)
 
-  * [Hyperloop](#Hyperloop)
+    * [Hyperloop](#hyperloop)
 
-* [API changes](#APIchanges)
-
+* [API changes](#api-changes)
 
 ## About this release
 
 Titanium SDK 7.0.2.GA is a patch release of the SDK, addressing high-priority issues from previous releases.
 
-As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Community credits
 
@@ -27,10 +26,9 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 * [Aleksey Gureiev](https://github.com/alg)
 
-  * Android: EmailDialog file attachments not working on Android 7 and higher ([TIMOB-25541](https://jira.appcelerator.org/browse/TIMOB-25541))
+    * Android: EmailDialog file attachments not working on Android 7 and higher ([TIMOB-25541](https://jira.appcelerator.org/browse/TIMOB-25541))
 
-  * Android: EmailDialog fails to attach files when using Outlook ([TIMOB-23482](https://jira.appcelerator.org/browse/TIMOB-23482))
-
+    * Android: EmailDialog fails to attach files when using Outlook ([TIMOB-23482](https://jira.appcelerator.org/browse/TIMOB-23482))
 
 ## Fixed issues
 
@@ -68,7 +66,6 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 * [TIMOB-25735](https://jira.appcelerator.org/browse/TIMOB-25735) - Android: Replace Activity.isDestroyed() with Android 4.1 compatible alternative
 
-
 ### iOS
 
 * [TIMOB-17572](https://jira.appcelerator.org/browse/TIMOB-17572) - iOS: ActivityIndicator does not reset when used in ListView
@@ -101,7 +98,6 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 * [TIMOB-25752](https://jira.appcelerator.org/browse/TIMOB-25752) - iOS: 7.0.2 RC fails to build on device due to Ti.Media errors
 
-
 ### Hyperloop
 
 * [TIMOB-23933](https://jira.appcelerator.org/browse/TIMOB-23933) - Hyperloop - Android: JS Wrappers not being generated for org.json .JAR
@@ -109,7 +105,6 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 * [TIMOB-24684](https://jira.appcelerator.org/browse/TIMOB-24684) - Hyperloop: Android - Cannot iterate over List interface
 
 * [TIMOB-25604](https://jira.appcelerator.org/browse/TIMOB-25604) - Hyperloop: Examples project throws error on iOS
-
 
 ## API changes
 

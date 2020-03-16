@@ -6,7 +6,6 @@ Dashboard 4.5.0 is a minor release, which includes new feature, improvements, an
 
 * Optional ability to restrict API access for organizations requiring client certificates
 
-
 ![profile](/Images/appc/download/attachments/46241748/profile.png)
 
 ## Improvements
@@ -20,7 +19,6 @@ Dashboard 4.5.0 is a minor release, which includes new feature, improvements, an
 * Users should only receive one email after activation of Platform
 
 * Users can now link their Stack Overflow profile to their [Appcelerator DevLink](https://devlink.appcelerator.com/) profile
-
 
 ## Fixed Issues
 

@@ -105,7 +105,6 @@ Keep in mind that when writing comments, the entire goal is to quickly provide t
 
 * Any "gotchas" that need to be kept in mind.
 
-
 If a developer should need to talk to the original developer who wrote the code in order to quickly understand the overall code structure and purpose, then the clarity of the code and level of documentation should be re-evaluated.
 In General, the baseline standard outlines the documentation structure for a class and when documentation is needed but it will be elaborated on here:
 
@@ -118,7 +117,6 @@ In General, the baseline standard outlines the documentation structure for a cla
 * A method documentation block should only be omitted when the purpose of the method is overwhelmingly clear to anyone who looks at it.
 
 * A variable comment should be used if there is some larger scope to the variable that may not be clear. For example, if the variable is used locally but changing it can also drive changes in other classes or areas of the code base.
-
 
 While documenting, the choice between standard comments and Javadoc needs to be made on a case by case basis. In general, if the comment is for something that is not private then Javadoc should be used so that the comments are available as eclipse comment popups when looking at public or protected methods and variables.
 

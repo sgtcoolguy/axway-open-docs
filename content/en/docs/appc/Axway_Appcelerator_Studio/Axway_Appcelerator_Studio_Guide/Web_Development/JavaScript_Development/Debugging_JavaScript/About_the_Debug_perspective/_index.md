@@ -1,11 +1,10 @@
 {"title":"About the Debug perspective","weight":"10"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Instructions](#Instructions)
+* [Instructions](#instructions)
 
-* [Related Topics](#RelatedTopics)
-
+* [Related Topics](#related-topics)
 
 This page gives an overview of the Debug perspective.
 
@@ -25,7 +24,6 @@ Switch to the Debug perspective when you want to debug the JavaScript code on on
 
 * **AJAX Monitor View** - The AJAX Monitor View displays current AJAX requests triggered inside the browser during the current debug session.
 
-
 In addition to the above debugging-specific views, you will also have access to some views from the Web perspective that you are probably familiar with:
 
 * **Editor** - The Editor area displays the file currently being debugged in its appropriate Editor.
@@ -33,7 +31,6 @@ In addition to the above debugging-specific views, you will also have access to 
 * **Outline View** - The Outline View displays an outline of the code for the file that is currently being debugged.
 
 * **Console View** - The Console View displays log output from the debugger.
-
 
 ![DebugPerspective](/Images/appc/download/attachments/30083106/DebugPerspective.png)
 
@@ -46,7 +43,6 @@ To switch to the Debug perspective:
 2. Select **Other > Debug**.
 
 3. Click **OK**.
-
 
 ## Related Topics
 

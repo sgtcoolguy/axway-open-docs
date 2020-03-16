@@ -6,7 +6,6 @@ Dashboard 4.8.1 is a patch release, which includes new features, improvements, a
 
 * In ArrowDB Manage Data UI, GeoFences can be filtered by location
 
-
 ## Improvements
 
 * The Trial notification banner will now show the number of days remaining in the user's trial
@@ -16,7 +15,6 @@ Dashboard 4.8.1 is a patch release, which includes new features, improvements, a
 * Exporting of ArrowDB data is available for all users
 
 * Exporting of Analytics chart and table series data is enabled for all users
-
 
 ## Fixed Issues
 

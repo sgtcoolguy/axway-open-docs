@@ -1,17 +1,16 @@
 {"title":"Modifying an existing Ruble","weight":"90"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Modifying an existing Ruble](#ModifyinganexistingRuble)
+* [Modifying an existing Ruble](#modifying-an-existing-ruble)
 
-  * [Edit this bundle](#Editthisbundle)
+    * [Edit this bundle](#edit-this-bundle)
 
-  * [Extend an existing Ruble](#ExtendanexistingRuble)
+    * [Extend an existing Ruble](#extend-an-existing-ruble)
 
-* [Specific overrides](#Specificoverrides)
+* [Specific overrides](#specific-overrides)
 
-  * [Overriding an existing command](#Overridinganexistingcommand)
-
+    * [Overriding an existing command](#overriding-an-existing-command)
 
 ## Overview
 
@@ -26,17 +25,15 @@ The [Ruble Specification](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerato
 You can edit an existing Ruble by cloning the existing version from Github and editing the files.
 
 1. Select **Commands > _RubleName_ > Edit this bundle.**
-  The ruble is cloned from Github and imported as a project into your workspace.
+    The ruble is cloned from Github and imported as a project into your workspace.
 
 2. At this point, you now have a complete copy of the Ruble to edit as you like. However, you won't get automatic updates if the remote content changes.
-
 
 To update your Ruble, do one of the following:
 
 * Select **Commands > Bundle Development > Update User Bundles.**
 
 * Right-click on the project folder in **Project Explorer** and select **Team > Pull.**
-
 
 ### Extend an existing Ruble
 
@@ -46,18 +43,17 @@ You need to reference the _name_ of the Ruble, not the display name (which may b
 
 2. Add a bundle.rb file with the following content:
 
-  `require` `'ruble'`
+    `require` `'ruble'`
 
-  `bundle` `"XXX"`  `do` `|bundle|`
+    `bundle` `"XXX"`  `do` `|bundle|`
 
-  `bundle.display_name =` `'YYY'`
+    `bundle.display_name =` `'YYY'`
 
-  `end`
+    `end`
 
 3. Replace "XXX" with the name of the Ruble you are extending, and "YYY" with the display name.
 
 4. Save and close ruble.rb.
-
 
 ## Specific overrides
 
@@ -69,43 +65,42 @@ This replaces a current command's implementation with the new implementation. We
 
 1. Follow the instructions to "Extend an Existing Ruble":
 
-  1. Create a folder in a workspace project titled **bundles/htmlextension.ruble.**
+    1. Create a folder in a workspace project titled **bundles/htmlextension.ruble.**
 
-  2. Create a **bundle.rb** file with the following content:
+    2. Create a **bundle.rb** file with the following content:
 
-    `require` `'ruble'`
+        `require` `'ruble'`
 
-    `bundle` `"html"`  `do` `|bundle|`
+        `bundle` `"html"`  `do` `|bundle|`
 
-    `bundle.display_name =` `'HTML'`
+        `bundle.display_name =` `'HTML'`
 
-    `end`
+        `end`
 
-  3. Create a folder at **bundles/htmlextension.ruble/commands.**
+    3. Create a folder at **bundles/htmlextension.ruble/commands.**
 
-  4. Create a file in the **commands** folder, which is a copy of an existing command; in other words, **strip\_html\_tags.rb**.
+    4. Create a file in the **commands** folder, which is a copy of an existing command; in other words, **strip\_html\_tags.rb**.
 
-  5. Add new content to suit:
+    5. Add new content to suit:
 
-    `require` `'ruble'`
+        `require` `'ruble'`
 
-    `command` `'Strip HTML Tags from Document / Selection'`  `do` `|cmd|`
+        `command` `'Strip HTML Tags from Document / Selection'`  `do` `|cmd|`
 
-    `cmd.scope =` `'text.html'`
+        `cmd.scope =` `'text.html'`
 
-    `cmd.output = :replace_selection`
+        `cmd.output = :replace_selection`
 
-    `cmd.input = :selection, :document`
+        `cmd.input = :selection, :document`
 
-    `cmd.invoke` `do` `|context|`
+        `cmd.invoke` `do` `|context|`
 
-    `CONSOLE.puts` `"Testing..."`
+        `CONSOLE.puts` `"Testing..."`
 
-    `end`
+        `end`
 
-    `end`
+        `end`
 
-  6. Modify the above code to suit.
-
+    6. Modify the above code to suit.
 
 Running the above command from the HTML menu should use your new implementation.

@@ -1,23 +1,22 @@
 {"title":"Titanium SDK 7.2.0.RC - 7 June 2018","weight":"200"}
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [GDPR](#GDPR)
+* [GDPR](#gdpr)
 
-* [GDPR opt out sample app](#GDPRoptoutsampleapp)
+* [GDPR opt out sample app](#gdpr-opt-out-sample-app)
 
-  * [External Modules](#ExternalModules)
+    * [External Modules](#external-modules)
 
-  * [Questions?](#Questions?)
+    * [Questions?](#questions?)
 
-* [New features](#Newfeatures)
+* [New features](#new-features)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-* [Improvements](#Improvements)
+* [Improvements](#improvements)
 
-* [API changes](#APIchanges)
-
+* [API changes](#api-changes)
 
 ## About this release
 
@@ -25,7 +24,7 @@ Titanium SDK 7.2.0.RC is a minor release of the SDK, addressing high-priority is
 
 This release primarily focuses on GDPR compliance and implementing them in the Analytics API.
 
-As of this release, Titanium SDK 7.1.x will not be supported six months from 7.2.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Titanium SDK 7.1.x will not be supported six months from 7.2.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## GDPR
 
@@ -40,7 +39,6 @@ You can contact the Axway Data Protection Office by sending an email to **[priva
 * EMEA: Axway Software, Tour W, 102 Terrasse Boieldieu - 92807 Puteaux Cedex, FRANCE
 
 * APAC: Axway Australia, Suite 1301, 99 Mount Street, North Sydney, 2060 NSW, AUSTRALIA
-
 
 ## GDPR opt out sample app
 
@@ -82,7 +80,6 @@ There are many other components of app-development that should become GDPR-compl
 
 * [Ti.Firebase](https://github.com/hansemannn/titanium-firebase)
 
-
 ### Questions?
 
 If you have further questions about how GDPR works in Titanium, feel free to open a [JIRA ticket](https://jira.appcelerator.org/) or reach out to us via [TiSlack](http://tislack.org/).
@@ -91,42 +88,39 @@ If you have further questions about how GDPR works in Titanium, feel free to ope
 
 * The following API's have been added for all platforms:
 
-  * Ti.Analytics.optedOut
+    * Ti.Analytics.optedOut
 
-  * Ti.Analytics.setOptedOut(Boolean optedOut)
+    * Ti.Analytics.setOptedOut(Boolean optedOut)
 
-  * Ti.Analytics.getOptedOut() -> Boolean
+    * Ti.Analytics.getOptedOut() -> Boolean
 
 * [TIMOB-26003](https://jira.appcelerator.org/browse/TIMOB-26003) - Android: Provide API to support opt-out of Analytics at runtime
 
-  * Implemented API interface for GDPR compliance
+    * Implemented API interface for GDPR compliance
 
 * [TIMOB-26004](https://jira.appcelerator.org/browse/TIMOB-26004) - iOS: Provide API to support opt-out of Analytics at runtime
 
-  * Implemented API interface for GDPR compliance
+    * Implemented API interface for GDPR compliance
 
 * [TIMOB-26005](https://jira.appcelerator.org/browse/TIMOB-26005) - Windows: Provide API to support opt-out of Analytics at runtime
 
-  * Implemented API interface for GDPR compliance
-
+    * Implemented API interface for GDPR compliance
 
 ## Fixed issues
 
 * [TIMOB-26027](https://jira.appcelerator.org/browse/TIMOB-26027) - Android: Analytics can cause a crash on Android 8 if app is backgrounded
 
-
 ## Improvements
 
 * [TIMOB-26083](https://jira.appcelerator.org/browse/TIMOB-26083) - Titanium CLI: Add ability opt-out analytics and remove email from analytics payload
 
-  * Added option to opt out of analytics in Titanium CLI
+    * Added option to opt out of analytics in Titanium CLI
 
-  * You can opt out using this command: appc ti config cli.analytics false
+    * You can opt out using this command: appc ti config cli.analytics false
 
 * [TIMOB-26084](https://jira.appcelerator.org/browse/TIMOB-26084) - Remove project directory from analytics payloads
 
-  * Removed project directory analytic info when opting out of analytics
-
+    * Removed project directory analytic info when opting out of analytics
 
 ## API changes
 

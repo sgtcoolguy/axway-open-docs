@@ -2,28 +2,27 @@
 
 For those contributing to the Aptana source code base, we follow a few conventions.
 
-* [Code Submission Checklist](#CodeSubmissionChecklist)
+* [Code Submission Checklist](#code-submission-checklist)
 
-* [Basic Coding Guidelines](#BasicCodingGuidelines)
+* [Basic Coding Guidelines](#basic-coding-guidelines)
 
-* [Naming Conventions](#NamingConventions)
+* [Naming Conventions](#naming-conventions)
 
-* [License](#License)
+* [License](#license)
 
-  * [GPL](#GPL)
+    * [GPL](#gpl)
 
-  * [EPL](#EPL)
+    * [EPL](#epl)
 
-  * [Private Code](#PrivateCode)
+    * [Private Code](#private-code)
 
-* [PMD](#PMD)
+* [PMD](#pmd)
 
-* [Java Formatting](#JavaFormatting)
+* [Java Formatting](#java-formatting)
 
-* [Externalized Strings](#ExternalizedStrings)
+* [Externalized Strings](#externalized-strings)
 
-* [Unit Testing](#UnitTesting)
-
+* [Unit Testing](#unit-testing)
 
 ## Code Submission Checklist
 
@@ -43,7 +42,6 @@ For those contributing to the Aptana source code base, we follow a few conventio
 
 * There is at least one unit test for the checked-in code, preferably that does not need to run as a plugin.. Comments should be _relevant_
 
-
 ## Basic Coding Guidelines
 
 Above all, the code should be **elegant**. It should be well-spaced and easy to follow.
@@ -56,31 +54,29 @@ Above all, the code should be **elegant**. It should be well-spaced and easy to 
 
 * Private variables may begin with an underscore, but we specifically do not follow the Eclipse 'f' prefix convention. You should be consistent within your class.
 
-
 ## Naming Conventions
 
 * Interfaces begin with 'I'
 
 * Plugin Activator names are derived from the plugin package name.
 
-  1. Strip the first two segments from the plugin (generally "com.aptana" or "com.appcelerator" assuming a reverse domain name naming system)
+    1. Strip the first two segments from the plugin (generally "com.aptana" or "com.appcelerator" assuming a reverse domain name naming system)
 
-  2. Initial case the rest of the segments
+    2. Initial case the rest of the segments
 
-  3. Strip the periods
+    3. Strip the periods
 
-  4. Add the word "Plugin" at the end. Some examples:
+    4. Add the word "Plugin" at the end. Some examples:
 
-    * **com.aptana.scripting** -> ScriptingPlugin
+        * **com.aptana.scripting** -> ScriptingPlugin
 
-    * **com.appcelerator.titanium.branding** -> TitaniumBrandingPlugin
+        * **com.appcelerator.titanium.branding** -> TitaniumBrandingPlugin
 
 * Plugin-specific classes (like I\*SystemProperties, I\*DebugScopes, I\*PreferenceConstants) also follow the same convention for the creation of the \* section as plugin activators
 
-  * **com.appcelerator.titanium.core** -> ITitaniumCoreSystemProperties
+    * **com.appcelerator.titanium.core** -> ITitaniumCoreSystemProperties
 
-  * **com.aptana.editor.epl** -> IEditorEplDebugScopes
-
+    * **com.aptana.editor.epl** -> IEditorEplDebugScopes
 
 ## License
 
@@ -142,7 +138,6 @@ We use PMD to check code consistency.
 
 5. Click your way through the following pages to install the plug-in.
 
-
 For those interested, our PMD file is located at: [https://github.com/aptana/studio3-sdk/blob/master/tools/eclipse/aptana\_pmd\_rules.xml](https://github.com/aptana/studio3-sdk/blob/master/tools/eclipse/aptana_pmd_rules.xml)
 
 You will need to download that file, set PMD preferences, clear out the existing rule set, and import the new one from this file. You can then manually run PMD on a file or package from the right-click menu.
@@ -157,27 +152,25 @@ Our Java formatting conventions are relatively easy going, though we do add brac
 
 3. Click on "Import..." and choose the file you just downloaded
 
-
 ## Externalized Strings
 
 1. Right-click on a file, choose "Source", "Externalize Strings". Make sure the "Use Eclipse's String Mechanism" is checked. (See how this has been done this elsewhere, with a Messages class and a messages.properties file)
 
-  1. This will require you to change the "Common Prefix". Just replace the '.' with a '_'. i.e. FileExplorerView. becomes FileExplorerView_
+    1. This will require you to change the "Common Prefix". Just replace the '.' with a '_'. i.e. FileExplorerView. becomes FileExplorerView_
 
-  2. You will need to manually rename the keys that are to be externalized from the auto-numbers it creates. Just type something useful, like a pascal-cased shorthand for the original string: "ThisIsAnErrorMessage".
+    2. You will need to manually rename the keys that are to be externalized from the auto-numbers it creates. Just type something useful, like a pascal-cased shorthand for the original string: "ThisIsAnErrorMessage".
 
 2. Do the externalization per-package, not per-plugin.
 
-  **Make sure you add the messages.properties file to the build.properties file.** You want to make sure that message.properties file is included in the binary build.
+    **Make sure you add the messages.properties file to the build.properties file.** You want to make sure that message.properties file is included in the binary build.
 
 3. Exclude _all_ strings in any unit testing plugins, or any case where it does not make sense to translate that piece of text.
 
-  **Use StringUtils.format() instead of "string " + variable.** Again, take a look at how we use this elsewhere. The easiest way to do this is to try and run the externalization wizard. Notice where you have "constructed" strings. Cancel out of the wizard, and then fix them. Then run the wizard again.
+    **Use StringUtils.format() instead of "string " + variable.** Again, take a look at how we use this elsewhere. The easiest way to do this is to try and run the externalization wizard. Notice where you have "constructed" strings. Cancel out of the wizard, and then fix them. Then run the wizard again.
 
 4. Make sure you add the messages.properties file to source control
 
 5. Also ensure that you comment all the methods in the messages file to remove any generated warnings
-
 
 ## Unit Testing
 

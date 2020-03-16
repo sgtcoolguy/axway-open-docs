@@ -2,14 +2,13 @@
 
 ## Contents
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Definitions](#Definitions)
+* [Definitions](#definitions)
 
-* [Proposed Tasks](#ProposedTasks)
+* [Proposed Tasks](#proposed-tasks)
 
-  * [Ti.Buffer](#Ti.Buffer)
-
+    * [Ti.Buffer](#ti.buffer)
 
 ## Overview
 
@@ -21,11 +20,9 @@ A separate spec exists that outlines encoding support for numeric and string val
 
 * Buffer - Generally represents temporary storage for data when moving from one location to another (such as reading data off a socket and then writing to a file). In our case, the buffer will be a container for binary data rather than being limited to only string data.
 
-
 ## Proposed Tasks
 
 * Create Buffer data type for use with Stream IO
-
 
 ### Ti.Buffer
 

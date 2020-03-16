@@ -6,16 +6,15 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-* [Add API endpoints](#AddAPIendpoints)
+* [Add API endpoints](#add-api-endpoints)
 
-* [View flows](#Viewflows)
+* [View flows](#view-flows)
 
-* [Create flows](#Createflows)
+* [Create flows](#create-flows)
 
-* [Edit flows](#Editflows)
+* [Edit flows](#edit-flows)
 
-* [Delete flows](#Deleteflows)
-
+* [Delete flows](#delete-flows)
 
 Flows are acyclic directed graphs of operational flow-nodes which are composed of inputs, logic, and outputs. They are used by endpoints, which require them for their runtime functionality of taking inputs and turning them into responses when an endpoint is hit. For reference information on flow orchestration, refer to [Flow Orchestration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Flows/Flow_Orchestration/).
 
@@ -35,7 +34,6 @@ To view a flow using the API Builder GUI:
 
 4. To exit the API Orchestration user interface and return to the API Lists page, select **Cancel**.
 
-
 ## Create flows
 
 To create a flow using the API Builder GUI:
@@ -52,12 +50,11 @@ To create a flow using the API Builder GUI:
 
 6. When the flow is complete, click the **Save** button. The Flow save caution window is displayed.
 
-  Only valid flows can be saved.
+    Only valid flows can be saved.
 
-  ![save_caution](/Images/appc/download/attachments/51252040/save_caution.png)
+    ![save_caution](/Images/appc/download/attachments/51252040/save_caution.png)
 
 7. Select **Proceed** to save the flow. Select **Cancel** to return to the API Orchestration user interface. If **Proceed** is selected, the server is restarted and the flow is saved. Once the server restart is completed, the APIs List page is displayed and the flow is enabled. For flow creation examples, refer to [Flow Examples](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Flows/Manage_Flows/Flow_Examples/).
-
 
 ## Edit flows
 
@@ -73,9 +70,8 @@ To edit a flow using the API Builder GUI:
 
 5. Once the flow edits are completed, click the **Save** button. The Flow save caution window is displayed.
 
-  ![save_caution](/Images/appc/download/attachments/51252040/save_caution.png)
+    ![save_caution](/Images/appc/download/attachments/51252040/save_caution.png)
 6. Select **Proceed** to save the flow. Select **Cancel** to return to the API Orchestration user interface. If **Proceed** is selected, the server is restarted and the flow is saved. Once the server restart is completed, the APIs List page is displayed.
-
 
 ## Delete flows
 
@@ -87,5 +83,5 @@ To delete a flow using the API Builder GUI:
 
 3. Select the **Delete** icon for the API endpoint to delete. The Endpoint delete caution window is displayed.
 
-  ![endpoint_del_caution](/Images/appc/download/attachments/51252040/endpoint_del_caution.png)
+    ![endpoint_del_caution](/Images/appc/download/attachments/51252040/endpoint_del_caution.png)
 4. Select **Proceed** to the delete the selected API endpoint. Select Cancel to return to the APIs List page. If **Proceed** is selected, the endpoint and any associated flow are deleted and the server is restarted. Once the server restart is completed, the APIs List page is displayed.

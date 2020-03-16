@@ -10,13 +10,11 @@ This manual assumes that you have already had **Python and Jython and IronPython
 
 * uninstalling
 
-
 [Configuring the interpreter](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Getting_Started/PyDev_Interpreter_Configuration/)
 
 * specify the python interpreter and system PYTHONPATH
 
 * choose the modules to be dynamically analyzed (forced builtins)
-
 
 [Creating a project](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Getting_Started/PyDev_Project_Creation/)
 
@@ -24,24 +22,20 @@ This manual assumes that you have already had **Python and Jython and IronPython
 
 * Specify referenced projects
 
-
 [Further configuring your project](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Getting_Started/PyDev_Project_Configuration/)
 
 * specify folders containing the sources – added to the project PYTHONPATH
 
 * specify additional external folders to be added to the project PYTHONPATH
 
-
 [Creating your first python module](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Getting_Started/PyDev_Module_Creation/)
 
 * Checking code-completion
-
 
 [Running/Debugging your program](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Getting_Started/PyDev_Running_a_program/)
 [Configuring Eclipse Essentials](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Getting_Started/PyDev_Configuring_Eclipse/)
 
 * Auto-refresh
-
 
 [Tips for programming with PyDev](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Getting_Started/PyDev_Useful_tips/)
 

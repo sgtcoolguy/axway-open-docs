@@ -16,10 +16,6 @@ Examples of how you might interact with methods of the Terminal class.
 
 Terminal objects have the following static method:
 
-Property
-
-Description
-
-open(command, working directory)
-
-The command to execute, and the working directory in which the execute it. The working directory is optional.
+| Property | Description |
+| --- | --- |
+| open(command, working directory) | The command to execute, and the working directory in which the execute it. The working directory is optional. |

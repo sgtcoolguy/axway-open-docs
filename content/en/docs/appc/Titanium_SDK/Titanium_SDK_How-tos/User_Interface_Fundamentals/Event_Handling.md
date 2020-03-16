@@ -1,39 +1,38 @@
 {"title":"Event Handling","weight":"30"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [UI event bubbling](#UIeventbubbling)
+    * [UI event bubbling](#ui-event-bubbling)
 
-    * [Bubbling and non-bubbling events](#Bubblingandnon-bubblingevents)
+        * [Bubbling and non-bubbling events](#bubbling-and-non-bubbling-events)
 
-    * [Managing event bubbling](#Managingeventbubbling)
+        * [Managing event bubbling](#managing-event-bubbling)
 
-    * [Event bubbling notes](#Eventbubblingnotes)
+        * [Event bubbling notes](#event-bubbling-notes)
 
-  * [Firing events](#Firingevents)
+    * [Firing events](#firing-events)
 
-  * [Custom events](#Customevents)
+    * [Custom events](#custom-events)
 
-  * [Application-level events](#Application-levelevents)
+    * [Application-level events](#application-level-events)
 
-  * [Removing event listeners](#Removingeventlisteners)
+    * [Removing event listeners](#removing-event-listeners)
 
-  * [Special events](#Specialevents)
+    * [Special events](#special-events)
 
-  * [Considerations and best practices](#Considerationsandbestpractices)
+    * [Considerations and best practices](#considerations-and-best-practices)
 
-* [Hands-on practice](#Hands-onpractice)
+* [Hands-on practice](#hands-on-practice)
 
-  * [Goal](#Goal)
+    * [Goal](#goal)
 
-  * [Steps](#Steps)
+    * [Steps](#steps)
 
-  * [References and further reading](#Referencesandfurtherreading)
+    * [References and further reading](#references-and-further-reading)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Objective
 
@@ -67,7 +66,6 @@ Each Titanium component is capable of listening for a particular subset of event
 
 * touchstart, touchmove, and touchend which define the three stages of an action where the user touches the screen, moves his or her finger in an arbitrary direction, then lifts the finger
 
-
 In addition to the common event types, some modules have their own special events. For example, the location services API includes events for heading and location changes. The gestures module enables you to listen for the shake event. See the API docs for more information.
 
 Common event object properties include:
@@ -79,7 +77,6 @@ Common event object properties include:
 * type which is the name of the event type
 
 * source which is a reference to the object on which the event was fired
-
 
 globalPoint is an iOS only event property.
 
@@ -121,7 +118,6 @@ Some special containers, such as windows, have no parents in the view hierarchy,
 
 * Window
 
-
 Event bubbling ends when it reaches the special containers.
 
 #### Bubbling and non-bubbling events
@@ -156,32 +152,16 @@ The following events bubble:
 
 * twofingertap
 
-
 That is, all of the events defined by Titanium.UI.View _except_ postlayout.
 
 #### Managing event bubbling
 
 Release 3.0 adds several features to allow more control over event bubbling. The Titanium.Event object has two new properties:
 
-API
-
-Type
-
-Description
-
-bubbles
-
-boolean
-
-Indicates whether the event can bubble. This property is set at creation time and cannot be changed. For events fired by the Titanium SDK, this property is set to ensure that event-bubbling behavior matches the 2.X event bubbling behavior.
-
-When firing custom events, bubbles can be specified as part of the event data to enable or disable bubbling.
-
-cancelBubble
-
-boolean
-
-If true, stop the event from propagating any further. The cancelBubble property is always false when an event handler is invoked. While handling the event, the application can set cancelBubble to true to prevent any further bubbling.
+| API | Type | Description |
+| --- | --- | --- |
+| bubbles | boolean | Indicates whether the event can bubble. This property is set at creation time and cannot be changed. For events fired by the Titanium SDK, this property is set to ensure that event-bubbling behavior matches the 2.X event bubbling behavior.  <br />  <br />When firing custom events, bubbles can be specified as part of the event data to enable or disable bubbling. |
+| cancelBubble | boolean | If true, stop the event from propagating any further. The cancelBubble property is always false when an event handler is invoked. While handling the event, the application can set cancelBubble to true to prevent any further bubbling. |
 
 In addition, all views and view-like objects have a new bubbleParent property, which determines whether the view bubbles to its parent. This property is read/write. By default, bubbleParent is set so that event bubbling behavior for a given view matches its Release 2.X event bubbling behavior. This property is defined as a property of Titanium.Proxy\--the parent of all Titanium objects. However, the property is only used on views and view-like objects that act as containers for views.
 
@@ -190,7 +170,6 @@ In addition, all views and view-like objects have a new bubbleParent property, w
 * Event bubbling happens after native event handling. That is, native event handling (such as highlighting a view) has already happened before any event fires.
 
 * Multiple events of different types are treated separately. That is, if the user lifting their finger triggers 'touchend', 'singletap', and 'click' events, any actions done on the 'touchend' event (such as setting cancelBubble) do not affect the bubbling or firing of either 'singletap' or 'click' events.
-
 
 ### Firing events
 
@@ -298,37 +277,15 @@ Prior to Release 3.0.0, these events were named with a colon right after the and
 
 Since Release 3.2.0, all windows are heavyweight by default and you cannot control the type of window created.
 
-**Event**
-
-**Fired when ...**
-
-androidback
-
-The back button is released
-
-androidhome
-
-The home button is released
-
-androidsearch
-
-The search button is released
-
-androidcamera
-
-The camera button is released
-
-androidfocus
-
-Fired when the camera button is pressed halfway and then released.
-
-androidvolup
-
-The volume-up rocker button is released
-
-androidvoldown
-
-The volume-down rocker button is released
+| **Event** | **Fired when ...** |
+| --- | --- |
+| androidback | The back button is released |
+| androidhome | The home button is released |
+| androidsearch | The search button is released |
+| androidcamera | The camera button is released |
+| androidfocus | Fired when the camera button is pressed halfway and then released. |
+| androidvolup | The volume-up rocker button is released |
+| androidvoldown | The volume-down rocker button is released |
 
 See the [Window](#!/api/Titanium.UI.Window) reference page for more information on these special events. The Menu button is handled specially as an event fired against the Android activity. See this [Kitchen Sink example](https://github.com/appcelerator-developer-relations/KitchenSink/blob/master/Resources/ui/handheld/android/baseui/android_menu_1.js) for sample code for creating and displaying a menu.
 
@@ -356,37 +313,35 @@ Determine if events bubble up or trickle down and do the platforms match...put a
 
 2. Remove all of the code from app.js. Write new code to define the following elements:
 
-  * A window with a white background color. Add a custom property named whichObj with the value 'window' to your window object.
+    * A window with a white background color. Add a custom property named whichObj with the value 'window' to your window object.
 
-  * A view that fills 80% of the width and height of the window. It should have a yellow background. Add a custom property named whichObj with the value 'view' to your view object. Make sure to add the view to the window.
+    * A view that fills 80% of the width and height of the window. It should have a yellow background. Add a custom property named whichObj with the value 'view' to your view object. Make sure to add the view to the window.
 
-  * A button centered vertically and horizontally within the view. Add a custom property named whichObj with the value 'button' to your button object. Make sure to add the button to the view.
+    * A button centered vertically and horizontally within the view. Add a custom property named whichObj with the value 'button' to your button object. Make sure to add the button to the view.
 
 3. Add a click event listener on the window object. It should log two messages to the console:
 
-  * Message 1: Simply output the word 'window' to the log so you know the window received the click event
+    * Message 1: Simply output the word 'window' to the log so you know the window received the click event
 
-  * Message 2: Log the whichObj property value to the console so you know which object actually received the user's click. Keep in mind the event object properties that you'll need to reference to access this property.
+    * Message 2: Log the whichObj property value to the console so you know which object actually received the user's click. Keep in mind the event object properties that you'll need to reference to access this property.
 
 4. Add a click event listener to the view object. It should log the word 'view' to the console so you know the view received the click event.
 
 5. Add a click event listener to the button. It should take two actions:
 
-  * It should print the word 'button' to the log so you know the button received the click event.
+    * It should print the word 'button' to the log so you know the button received the click event.
 
-  * It should fire an app-level event named changeBG and pass an anonymous object defining a color.
+    * It should fire an app-level event named changeBG and pass an anonymous object defining a color.
 
 6. Add an app-level event listener which watches for the changeBG event. When received, it should update the view's background color with the value passed via the event object.
 
 7. Build and test the app by clicking the button. Do events bubble up (button receives the click first, then the view, then the window) or do events trickle down (window, then view, then button)? If you can build for both Android and iOS, compare the output on the two platforms. Do they react the same?
-
 
 ### References and further reading
 
 * [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/3.3_events.zip)
 
 * [Window module](#!/api/Titanium.UI.Window)
-
 
 ## Summary
 

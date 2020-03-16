@@ -12,7 +12,6 @@ The API Builder configuration is stored on disk at rest. For example, connectors
 
 * [Encryption Configuration](#Encryption) - Recommended for larger teams or organizations
 
-
 ## Environment Configuration
 
 One security configuration option is to remove the configuration settings from the API Builder configuration and retrieve them from the environment configuration. For example, to protect the salutation in the greetflow.default.js sample:
@@ -53,88 +52,88 @@ The second security configuration option is to keep the API Builder configuratio
 
 1. Generate the encrypted value. The following example is a simple CLI that will AES encrypt a value passed in on the CLI:
 
-  `const crypto = require(``'crypto'``);`
+    `const crypto = require(``'crypto'``);`
 
-  `const algorithm =` `'aes256'``;`
+    `const algorithm =` `'aes256'``;`
 
-  `const key = process.env.KEY ||` `'getKeyFromSomewhere'``;`
+    `const key = process.env.KEY ||` `'getKeyFromSomewhere'``;`
 
-  `const cipherEncoding =` `'hex'``;`
+    `const cipherEncoding =` `'hex'``;`
 
-  `const textEncoding =` `'utf-8'``;`
+    `const textEncoding =` `'utf-8'``;`
 
-  `function` `encrypt(clearText) {`
+    `function` `encrypt(clearText) {`
 
-  `const cipher = crypto.createCipher(algorithm, key)`
+    `const cipher = crypto.createCipher(algorithm, key)`
 
-  `let cipherText = cipher.update(clearText, textEncoding, cipherEncoding)`
+    `let cipherText = cipher.update(clearText, textEncoding, cipherEncoding)`
 
-  `cipherText += cipher.final(cipherEncoding);`
+    `cipherText += cipher.final(cipherEncoding);`
 
-  `return` `cipherText;`
+    `return` `cipherText;`
 
-  `}`
+    `}`
 
-  `function` `decrypt(cipherText){`
+    `function` `decrypt(cipherText){`
 
-  `const decipher = crypto.createDecipher(algorithm, key)`
+    `const decipher = crypto.createDecipher(algorithm, key)`
 
-  `let clearText = decipher.update(cipherText, cipherEncoding, textEncoding)`
+    `let clearText = decipher.update(cipherText, cipherEncoding, textEncoding)`
 
-  `clearText += decipher.final(textEncoding);`
+    `clearText += decipher.final(textEncoding);`
 
-  `return` `clearText;`
+    `return` `clearText;`
 
-  `}`
+    `}`
 
-  `const text = process.argv[2]`
+    `const text = process.argv[2]`
 
-  `const cipherText = encrypt(text)`
+    `const cipherText = encrypt(text)`
 
-  ``console.log(`CIPHERTEXT: ${cipherText}`);``
+    ``console.log(`CIPHERTEXT: ${cipherText}`);``
 
-  ``console.log(`CLEARTEXT: ${decrypt(cipherText)}`);``
+    ``console.log(`CLEARTEXT: ${decrypt(cipherText)}`);``
 
-  Encryption key:
+    Encryption key:
 
-  `$ node .``/crypt` `Hello`
+    `$ node .``/crypt` `Hello`
 
-  `CIPHERTEXT: 6b05e3830ba6638b0790a55cde19cdd7`
+    `CIPHERTEXT: 6b05e3830ba6638b0790a55cde19cdd7`
 
-  `CLEARTEXT: Hello`
+    `CLEARTEXT: Hello`
 
 2. Place the encrypted value in the API Builder configuration. For this to work, API Builder must be able to decrypt the encrypted value. The decrypt function could be placed in a utility and used across multiple config files:
 
-  `const crypto = require(``'crypto'``);`
+    `const crypto = require(``'crypto'``);`
 
-  `const algorithm =` `'aes256'``;`
+    `const algorithm =` `'aes256'``;`
 
-  `const key = process.env.KEY;`
+    `const key = process.env.KEY;`
 
-  `function` `decrypt(cipherText){`
+    `function` `decrypt(cipherText){`
 
-  `const decipher = crypto.createDecipher(algorithm, key)`
+    `const decipher = crypto.createDecipher(algorithm, key)`
 
-  `let clearText = decipher.update(cipherText,` `'hex'``,` `'utf-8'``)`
+    `let clearText = decipher.update(cipherText,` `'hex'``,` `'utf-8'``)`
 
-  `clearText += decipher.final(``'utf-8'``);`
+    `clearText += decipher.final(``'utf-8'``);`
 
-  `return` `clearText;`
+    `return` `clearText;`
 
-  `}`
+    `}`
 
-  `module.exports = {`
+    `module.exports = {`
 
-  `"helloworld"``: {`
+    `"helloworld"``: {`
 
-  `"salutation"``: decrypt(``'6b05e3830ba6638b0790a55cde19cdd7'``)`
+    `"salutation"``: decrypt(``'6b05e3830ba6638b0790a55cde19cdd7'``)`
 
-  `}`
+    `}`
 
-  `};`
+    `};`
 
 3. Set the environment variable in the cloud using the encryption key:
 
-  `appc cloud config --``set`  `"KEY=mySecretKey"`
+    `appc cloud config --``set`  `"KEY=mySecretKey"`
 
-  Now, when the application is published, API Builder will be able to decrypt the encrypted value.
+    Now, when the application is published, API Builder will be able to decrypt the encrypted value.

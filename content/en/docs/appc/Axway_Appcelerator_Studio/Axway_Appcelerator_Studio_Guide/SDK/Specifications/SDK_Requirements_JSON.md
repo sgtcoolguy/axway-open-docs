@@ -1,17 +1,16 @@
 {"title":"SDK Requirements JSON","weight":"60"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Versioning](#Versioning)
+* [Versioning](#versioning)
 
-* [Overall Structure](#OverallStructure)
+* [Overall Structure](#overall-structure)
 
-* [Android SDKs](#AndroidSDKs)
+* [Android SDKs](#android-sdks)
 
-* [iOS](#iOS)
+* [iOS](#ios)
 
-* [Complete Example](#CompleteExample)
-
+* [Complete Example](#complete-example)
 
 ## Overview
 
@@ -21,17 +20,7 @@ When Studio starts up, it contacts a remote server to determine what versions of
 
 The versioning information follows OSGI conventions, so similar flexibility in defining version information is available here too.
 
-Definition
-
-Description
-
-4.0, 4.4
-
-Version 4.0 to 4.4.X inclusive, but not including version 4.5.X
-
-4.0, 4.4
-
-Version 4.0 to 4.3.X inclusive, but not including version 4.4.X
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>Definition</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Description</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>4.0, 4.4</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Version 4.0 to 4.4.X inclusive, but not including version 4.5.X</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>4.0, 4.4</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Version 4.0 to 4.3.X inclusive, but not including version 4.4.X</p></td></tr></tbody></table>
 
 ## Overall Structure
 
@@ -69,20 +58,19 @@ Structure:
 
 * "android"
 
-  * platform ("osx"/"win32")
+    * platform ("osx"/"win32")
 
-    * requiredAddOns: array of strings, corresponding with Google add-on names
+        * requiredAddOns: array of strings, corresponding with Google add-on names
 
-    * requiredSDKTools: array of integers, corresponding with Google SDK Tooling levels
+        * requiredSDKTools: array of integers, corresponding with Google SDK Tooling levels
 
-    * requiredPlatformTools: array of integers, corresponding with Google Platform levels (2.1 == 7, 2.2 == 8, etc.)
+        * requiredPlatformTools: array of integers, corresponding with Google Platform levels (2.1 == 7, 2.2 == 8, etc.)
 
-    * requiredPlatforms: array of regular expression strings, corresponding with Google Platform levels
+        * requiredPlatforms: array of regular expression strings, corresponding with Google Platform levels
 
-    * sdkURL: String to .zip file of latest SDK download location
+        * sdkURL: String to .zip file of latest SDK download location
 
-    * jdkURL (Windows only): String to .zip file of latest JDK download installation
-
+        * jdkURL (Windows only): String to .zip file of latest JDK download installation
 
 `{`
 

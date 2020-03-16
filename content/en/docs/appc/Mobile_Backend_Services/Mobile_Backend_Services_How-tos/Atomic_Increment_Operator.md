@@ -10,7 +10,6 @@ You can use $inc to increment (or decrement) a [custom field](/docs/appc/Mobile_
 
 * It can only be applied to a single field per method call.
 
-
 $inc is specified with the following form, where fieldName is the name of the field to update and value is a positive (or negative) number to increment (or decrement) fieldName by:
 
 `"fieldName"``: {` `"$inc:"` `value}`
@@ -38,7 +37,6 @@ The operator must be enclosed in quotes, as shown above. The following methods s
 * [Users.update](/arrowdb/latest/#!/api/Users-method-update)
 
 * [Statuses.update](/arrowdb/latest/#!/api/Statuses-method-update)
-
 
 ### Examples
 

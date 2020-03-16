@@ -194,7 +194,6 @@ If you're running SDK 1.8+
 
 5. Clean your project, then build for either the Simulator or device.
 
-
 If you're running SDK <1.8
 
 1. Download a copy of the [KitchenSink app](https://github.com/appcelerator/KitchenSink)
@@ -206,7 +205,6 @@ If you're running SDK <1.8
 4. Edit the settings, as described below.
 
 5. Clean your project, then build for either the Simulator or device.
-
 
 In the Xcode Property List editor, you'll see the app's name defined in Item 0. The three preferences defined by KitchenSink appear under Items 1, 2, and 3. You can modify these to suit your needs or add new properties items following the pattern set out in these items.
 
@@ -242,16 +240,15 @@ To complete this activity, you will need an Intel-based Mac with the iOS develop
 
 8. Because the app remains running (iOS doesn't fully close an app when you return to the Springboard), you'll need to close and relaunch the simulator or use the Fast App Switcher to kill the app. If using the simulator launched by Studio, using the Fast App Switcher might crash the simulator.
 
-  1. Close the AppSettings app, if necessary
+    1. Close the AppSettings app, if necessary
 
-  2. Double-click the Home button to display the Fast App Switcher tray.
+    2. Double-click the Home button to display the Fast App Switcher tray.
 
-  3. Press and hold on the AppSetting icon in the tray until it begins to shake. Tap its red minus-sign button to kill the app.
+    3. Press and hold on the AppSetting icon in the tray until it begins to shake. Tap its red minus-sign button to kill the app.
 
-  4. Press Home to leave "edit mode" then press Home again to return to the Springboard.
+    4. Press Home to leave "edit mode" then press Home again to return to the Springboard.
 
-  5. You can now re-open the app to see the new settings in place.
-
+    5. You can now re-open the app to see the new settings in place.
 
 ### References and Further Reading
 
@@ -262,7 +259,6 @@ To complete this activity, you will need an Intel-based Mac with the iOS develop
 * [Apple's Introduction to Property Lists](http://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html)
 
 * [Sample code for create app preferences](http://developer.apple.com/library/ios/#samplecode/AppPrefs/Introduction/Intro.html) (Settings)
-
 
 ## Summary
 

@@ -16,9 +16,9 @@ API Builder lets you build and deploy API endpoints that can be consumed by any 
 
 * **API Builder APIs** can be defined in two ways:
 
-  * **Programmatically**: Defined in JavaScript via the API Builder API. These are custom endpoints that allow you to access and execute custom operations on data.
+    * **Programmatically**: Defined in JavaScript via the API Builder API. These are custom endpoints that allow you to access and execute custom operations on data.
 
-  * **Configuration**: Defined as Swagger 2.0 document. These are files which describe and document RESTful APIs which are composed of one or more endpoints.
+    * **Configuration**: Defined as Swagger 2.0 document. These are files which describe and document RESTful APIs which are composed of one or more endpoints.
 
 * **API Builder Blocks** are filters that allow you to pre- or post-process data
 
@@ -32,7 +32,6 @@ API Builder lets you build and deploy API endpoints that can be consumed by any 
 
 * **API Builder Models** are structured data with predefined API endpoints to access them
 
-
 **Relevant Topics:** [API Builder Getting Started Guide](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Getting_Started_Guide/), [API Builder Project](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/), [API Builder API reference](#!/api/Arrow)
 
 ### AMPLIFY Runtime Services
@@ -42,6 +41,5 @@ AMPLIFY Runtime Services hosts applications, built with API Builder, and Appcele
 * **Mobile Backend Services** (formerly known as ArrowDB) provides pre-built REST objects, such as Users or Photos. Mobile Backend Services can be integrated with your Titanium, Node.js, Android, or iOS application.
 
 * **Mobile Backend Services** provides the ability to send push notifications to Android and iOS devices subscribed to push channels. Mobile Backend Services can be integrated with your Titanium, Android or iOS application.
-
 
 **Relevant Topics**: [AMPLIFY Runtime Services](/docs/appc/AMPLIFY_Runtime_Services/), [Mobile Backend Services](/docs/appc/Mobile_Backend_Services/)

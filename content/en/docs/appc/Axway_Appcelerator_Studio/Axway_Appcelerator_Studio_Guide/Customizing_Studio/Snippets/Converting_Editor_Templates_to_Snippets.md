@@ -1,13 +1,12 @@
 {"title":"Converting Editor Templates to Snippets","weight":"20"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Exporting Existing Editor Templates from Aptana Studio 2](#ExportingExistingEditorTemplatesfromAptanaStudio2)
+* [Exporting Existing Editor Templates from Aptana Studio 2](#exporting-existing-editor-templates-from-aptana-studio-2)
 
-* [Editor Template Format](#EditorTemplateFormat)
+* [Editor Template Format](#editor-template-format)
 
-* [Converting a template entry](#Convertingatemplateentry)
-
+* [Converting a template entry](#converting-a-template-entry)
 
 ## Overview
 
@@ -28,7 +27,6 @@ The editor templates are located under Aptana Studio 2 preferences. For example,
 3. Click on Export...
 
 4. Select the destination for your exported templates.
-
 
 ![Export_Editor_Templates](/Images/appc/download/attachments/30083260/Export_Editor_Templates.png)
 
@@ -63,7 +61,6 @@ As you may know from the [Creating a New Snippet](/docs/appc/Axway_Appcelerator_
 * expansion: The content inside the <template> node.
 
 * scope: The editor scope where this snippet will be active (in this case, it would be javascript).
-
 
 The description attribute of "Function" also corresponds to the description of the snippet.
 

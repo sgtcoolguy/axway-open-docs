@@ -1,15 +1,14 @@
 {"title":"Installing the JavaScript debugger","weight":"70"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Instructions for Firefox](#InstructionsforFirefox)
+* [Instructions for Firefox](#instructions-for-firefox)
 
-  * [Troubleshooting tips](#Troubleshootingtips)
+    * [Troubleshooting tips](#troubleshooting-tips)
 
-* [Instructions for Internet Explorer](#InstructionsforInternetExplorer)
+* [Instructions for Internet Explorer](#instructions-for-internet-explorer)
 
-* [Related Topics](#RelatedTopics)
-
+* [Related Topics](#related-topics)
 
 ## Introduction
 
@@ -23,26 +22,25 @@ To install the Firefox debugger:
 
 1. Create a new Debug configuration for your Firefox browser unless it is already created by Studio.
 
-  1. From the **Debug** toolbar drop-down item ![IconDebug1](/Images/appc/download/attachments/30083104/IconDebug1.png) , select **Debug...** to open a **Debug** window (shown below).
+    1. From the **Debug** toolbar drop-down item ![IconDebug1](/Images/appc/download/attachments/30083104/IconDebug1.png) , select **Debug...** to open a **Debug** window (shown below).
 
-    ![DebugLaunchConfigurationDialog](/Images/appc/download/attachments/30083104/DebugLaunchConfigurationDialog.png)
-  2. In the upper-left corner of the **Debug** window, in the toolbar, click the **New Launch Configuration** button ![IconNewLaunchConfiguration](/Images/appc/download/attachments/30083104/IconNewLaunchConfiguration.png) to create a new configuration.
+        ![DebugLaunchConfigurationDialog](/Images/appc/download/attachments/30083104/DebugLaunchConfigurationDialog.png)
+    2. In the upper-left corner of the **Debug** window, in the toolbar, click the **New Launch Configuration** button ![IconNewLaunchConfiguration](/Images/appc/download/attachments/30083104/IconNewLaunchConfiguration.png) to create a new configuration.
 
-  3. In the **Name** field, type a name for your new configuration (e.g. "Firefox").
+    3. In the **Name** field, type a name for your new configuration (e.g. "Firefox").
 
-  4. Under **Start Action**, choose the option for the start page for the debugger. You can either use the currently open page, browse to a specific file, or specify a URL.
+    4. Under **Start Action**, choose the option for the start page for the debugger. You can either use the currently open page, browse to a specific file, or specify a URL.
 
-  5. Under **Server**, unless you want to use an external web server, use the default choice of the **Built-in web server**.
+    5. Under **Server**, unless you want to use an external web server, use the default choice of the **Built-in web server**.
 
 2. Install the debugger into your web browser.
 
-  1. On the **Debug** window with your configuration set up, click the **Debug** button.
+    1. On the **Debug** window with your configuration set up, click the **Debug** button.
 
-  2. A browser window opens, checks for the Debugger extension, and then closes. Aptana displays a prompt asking if you would like to install the Debugger Extension.
+    2. A browser window opens, checks for the Debugger extension, and then closes. Aptana displays a prompt asking if you would like to install the Debugger Extension.
 
-    ![InstallDebuggerPromptFirefox](/Images/appc/download/attachments/30083104/InstallDebuggerPromptFirefox.png)
-  3. Follow the instructions in the prompts to install the debugger into your browser.
-
+        ![InstallDebuggerPromptFirefox](/Images/appc/download/attachments/30083104/InstallDebuggerPromptFirefox.png)
+    3. Follow the instructions in the prompts to install the debugger into your browser.
 
 The debugger is now installed in your browser. To start debugging, return to the Aptana IDE and switch to the Debug perspective. See [Running the debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Running_the_debugger/) for more information.
 

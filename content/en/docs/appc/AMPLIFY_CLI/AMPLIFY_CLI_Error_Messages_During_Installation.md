@@ -2,12 +2,11 @@
 
 At some point, you may experience error message during installation of one or more modules. This document aims to assist in those problems.
 
-* [Permission denied to mkdir](#Permissiondeniedtomkdir)
+* [Permission denied to mkdir](#permission-denied-to-mkdir)
 
-* [Install failure with npm install](#Installfailurewithnpminstall)
+* [Install failure with npm install](#install-failure-with-npm-install)
 
-* [Keytar failed to install](#Keytarfailedtoinstall)
-
+* [Keytar failed to install](#keytar-failed-to-install)
 
 ## Permission denied to mkdir
 
@@ -61,7 +60,6 @@ Confirm that the package you're trying to install didn't fail to install.
 
 4. Try installing the package again.
 
-
 ## Keytar failed to install
 
 If you are using ACLI 1.1.0 and earlier, then you may encounter this issue. Later versions shouldn't have this problem.
@@ -81,6 +79,5 @@ It's likely that keytar failed to install during the installation of ACLI. To fi
 2. Re-install ACLI using the \--unsafe-perm flag: \[sudo\] npm i -g --unsafe-perm @axway/amplify-cli
 
 3. Try logging in again.
-
 
 If you do not wish to install keytar, you can disable secure store and fallback to the file-based store by executing this command: amplify config set auth.tokenStoreType file.

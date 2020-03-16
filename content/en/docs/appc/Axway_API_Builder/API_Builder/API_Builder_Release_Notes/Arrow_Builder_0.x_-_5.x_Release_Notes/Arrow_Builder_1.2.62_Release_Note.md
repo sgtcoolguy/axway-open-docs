@@ -16,7 +16,6 @@ Arrow Builder 1.2.62 is a patch release, addressing high-priority issues from pr
 
 * Support clearing local logs in the Admin Console.
 
-
 ### Fixed Issues
 
 * API-1013: Logs in the root directory caused the server to reload

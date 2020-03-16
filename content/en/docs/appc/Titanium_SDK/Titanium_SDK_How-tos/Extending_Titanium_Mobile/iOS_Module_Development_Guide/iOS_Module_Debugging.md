@@ -1,15 +1,14 @@
 {"title":"iOS Module Debugging","weight":"50"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Prerequisites](#Prerequisites)
+* [Prerequisites](#prerequisites)
 
-* [Preparing Xcode project](#PreparingXcodeproject)
+* [Preparing Xcode project](#preparing-xcode-project)
 
-* [Adding and linking module](#Addingandlinkingmodule)
+* [Adding and linking module](#adding-and-linking-module)
 
-* [Build and Debug](#BuildandDebug)
-
+* [Build and Debug](#build-and-debug)
 
 ## Introduction
 

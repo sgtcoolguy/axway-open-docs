@@ -8,7 +8,6 @@
 
 * **user\_id field renamed to sudo\_id for admin operations** — The user\_id field, which was used to indicate the user that an application administrator could perform an ACS API call on behalf of, was renamed to the sudo\_id field. For details, see [Admin Access-Perform ACS API Calls on Behalf of Another User](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Admin_Access/).
 
-
 ## Bug fix
 
 * Fixed an issue where a delayed job, such as exporting a large data set, would exit silently.

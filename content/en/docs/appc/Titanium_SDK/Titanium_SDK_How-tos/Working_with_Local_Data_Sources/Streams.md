@@ -1,19 +1,18 @@
 {"title":"Streams","weight":"60"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [BufferStream](#BufferStream)
+* [BufferStream](#bufferstream)
 
-  * [BufferStream examples](#BufferStreamexamples)
+    * [BufferStream examples](#bufferstream-examples)
 
-* [FileStream](#FileStream)
+* [FileStream](#filestream)
 
-  * [FileStream examples](#FileStreamexamples)
+    * [FileStream examples](#filestream-examples)
 
-* [BlobStream](#BlobStream)
+* [BlobStream](#blobstream)
 
-  * [BlobStream examples](#BlobStreamexamples)
-
+    * [BlobStream examples](#blobstream-examples)
 
 ## Overview
 
@@ -26,7 +25,6 @@ A stream is a data type used to serially read and write bytes. The term "Stream"
 * Titanium.Filesystem.FileStream, for reading and writing files on the mobile device.
 
 * Titanium.Network.Socket.TCP, a TCP socket implementation which, among other things, implements the Stream interface. Sockets, of course, have lots of other interesting features beyond their stream implementation, and therefore there will be another installment of this article series devoted to sockets. We won't cover sockets any further in this article.
-
 
 ## BufferStream
 

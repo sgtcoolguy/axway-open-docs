@@ -8,7 +8,6 @@ This release of Arrow Cloud includes version 1.0.23 of the CLI and version 1.1.1
 
 * Changed the permission of the appc cloud config --maxsize parameter to allow anyone to set the maximum number of servers an application can be deployed to. Previously, only an application admin could set the maximum value.
 
-
 **New Features and Improvements**
 
 * New appc cloud server command to select the container size to run the application on.

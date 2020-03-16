@@ -2,14 +2,13 @@
 
 Studio 4.9.1.RC is a patch release that includes several improvements and bug fixes.
 
-As of this GA release, the previous Studio patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous Studio patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Improvements
 
 * [TISTUD-8746](https://jira.appcelerator.org/browse/TISTUD-8746) - Android: Studio should now use 'id' for emulator instead of 'name' when building for android emulator.
 
-  * The AVD id for the emulator is now used instead of the name when building for Android
-
+    * The AVD id for the emulator is now used instead of the name when building for Android
 
 ## Fixed issues
 

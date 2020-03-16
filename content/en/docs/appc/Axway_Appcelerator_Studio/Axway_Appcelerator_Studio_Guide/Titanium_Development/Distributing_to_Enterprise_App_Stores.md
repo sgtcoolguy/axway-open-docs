@@ -4,22 +4,21 @@ Enterprise Subscription Required!
 
 This AMPLIFY Appcelerator Services feature requires an Enterprise Subscription.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [AirWatch Platform](#AirWatchPlatform)
+* [AirWatch Platform](#airwatch-platform)
 
-  * [Install the AirWatch Plugin](#InstalltheAirWatchPlugin)
+    * [Install the AirWatch Plugin](#install-the-airwatch-plugin)
 
-  * [Obtain the Host URL and API Key](#ObtaintheHostURLandAPIKey)
+    * [Obtain the Host URL and API Key](#obtain-the-host-url-and-api-key)
 
-  * [Publish to AirWatch](#PublishtoAirWatch)
+    * [Publish to AirWatch](#publish-to-airwatch)
 
-* [MobileIron Platform](#MobileIronPlatform)
+* [MobileIron Platform](#mobileiron-platform)
 
-  * [Install the MobileIron Plugin](#InstalltheMobileIronPlugin)
+    * [Install the MobileIron Plugin](#install-the-mobileiron-plugin)
 
-  * [Publish to MobileIron](#PublishtoMobileIron)
-
+    * [Publish to MobileIron](#publish-to-mobileiron)
 
 ## Introduction
 
@@ -31,10 +30,9 @@ Before publishing to AirWatch, you need install the AirWatch plugin on Appcelera
 
 You also need the following items to package an application:
 
-* For Android applications, generate a keypair and certificate to sign your applications. For help, see [Distributing Android apps: Generate keypair and certificate](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_Android_apps/#Generateakeypairandcertificate).
+* For Android applications, generate a keypair and certificate to sign your applications. For help, see [Distributing Android apps: Generate keypair and certificate](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_Android_apps/#generate-a-keypair-and-certificate).
 
 * For iOS applications, create a distribution certificate and provisioning profile to sign your application. For help, see [Distributing iOS apps](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_iOS_apps/).
-
 
 ### Install the AirWatch Plugin
 
@@ -46,18 +44,17 @@ Appcelerator Studio requires AirWatch integration to be installed as a separate 
 
 3. Click **Add**. A dialog appears asking for the name and location of the update site.
 
-  1. For **Name**, enter 'AirWatch' or something similar.
+    1. For **Name**, enter 'AirWatch' or something similar.
 
-  2. For **Location**, copy and paste one of the the following URLs:
+    2. For **Location**, copy and paste one of the the following URLs:
 
-    1. Release Candidate Build: [http://preview.appcelerator.com/appcelerator/studio/airwatch/update/rc/](http://preview.appcelerator.com/appcelerator/studio/airwatch/update/rc/)
+        1. Release Candidate Build: [http://preview.appcelerator.com/appcelerator/studio/airwatch/update/rc/](http://preview.appcelerator.com/appcelerator/studio/airwatch/update/rc/)
 
-  3. Click **OK**.
+    3. Click **OK**.
 
 4. An item called **AirWatch Integration** should appear. Select to install it, that is, make sure the box is checked, then click **Finish****.**
 
 5. Follow the rest of the wizard directions to install it. When prompted, restart Studio.
-
 
 ### Obtain the Host URL and API Key
 
@@ -75,7 +72,6 @@ In order to publish to AirWatch, you need to obtain a REST API key and endpoint.
 
 6. Copy the host name of the REST URL field (without the protocol and any paths). You need to paste the value to the Host URL field when registering an AirWatch target. By default, the hostname is apidev-as.awmdm.com.
 
-
 ### Publish to AirWatch
 
 To publish an application to **AirWatch**:
@@ -86,39 +82,38 @@ To publish an application to **AirWatch**:
 
 3. In the **Target** step:
 
-  1. Select the platform to deploy to, either Android or iOS.
+    1. Select the platform to deploy to, either Android or iOS.
 
-  2. Select a Publish Target. If you have not created a publish target, click **Register Existing****...** to open the **Register AirWatch target** dialog to enter your AirWatch information. Click **OK** when you are finished.
+    2. Select a Publish Target. If you have not created a publish target, click **Register Existing****...** to open the **Register AirWatch target** dialog to enter your AirWatch information. Click **OK** when you are finished.
 
-    ![AirWatchTarget](/Images/appc/download/attachments/43298667/AirWatchTarget.png)
-  3. Click **Next**.
+        ![AirWatchTarget](/Images/appc/download/attachments/43298667/AirWatchTarget.png)
+    3. Click **Next**.
 
 4. In the **Configuration** step, enter a name, version number and description for your application, then click **Next**. Some of these fields will be auto-populated by existing information from the tiapp.xml file.
 
 5. In the **Platform** step:
 
-  1. For Android applications, enter the following information:
+    1. For Android applications, enter the following information:
 
-    1. **Android SDK Version**: Select the version of the tools to build your application.
+        1. **Android SDK Version**: Select the version of the tools to build your application.
 
-    2. **Distribution Location****:** Path where the Android application package (APK) file will be copied to.
+        2. **Distribution Location****:** Path where the Android application package (APK) file will be copied to.
 
-    3. **Keystore Location**: Path to your keystore file that is used to sign your application. Click the **New** button to create a new keystore.
+        3. **Keystore Location**: Path to your keystore file that is used to sign your application. Click the **New** button to create a new keystore.
 
-    4. **Keystore Password****:** Password to your keystore.
+        4. **Keystore Password****:** Password to your keystore.
 
-    5. **Keypair password**: Password for the keystore private key.
+        5. **Keypair password**: Password for the keystore private key.
 
-    6. **Key Alias**: Alias associated with your application's certificate.
+        6. **Key Alias**: Alias associated with your application's certificate.
 
-  2. For iOS applications, select the Distribution Certificate, Keychain, Provision Profile and SDK Version to use.
+    2. For iOS applications, select the Distribution Certificate, Keychain, Provision Profile and SDK Version to use.
 
-  3. Click **Next**.
+    3. Click **Next**.
 
 6. In the **Summary** step, review the information you entered. To restart the wizard after you start the publishing process, check **Restart**.
 
 7. Click **Publish**.
-
 
 After Appcelerator Studio finishes uploading your application, Studio opens the AirWatch Web Console in your default browser. Use the web console to manage the distribution of your application, then users can use the AirWatch application to download it.
 
@@ -128,10 +123,9 @@ Before publishing to MobileIron, you need install the MobileIron plugin on Appce
 
 You also need the following items to package an application:
 
-* For Android applications, generate a keypair and certificate to sign your applications. For help, see [Distributing Android apps: Generate keypair and certificate](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_Android_apps/#Generateakeypairandcertificate).
+* For Android applications, generate a keypair and certificate to sign your applications. For help, see [Distributing Android apps: Generate keypair and certificate](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_Android_apps/#generate-a-keypair-and-certificate).
 
 * For iOS applications, create a distribution certificate and provisioning profile to sign your application. For help, see [Distributing iOS apps](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_iOS_apps/).
-
 
 ### Install the MobileIron Plugin
 
@@ -143,18 +137,17 @@ Appcelerator Studio requires MobileIron integration to be installed as a separat
 
 3. Click **Add**. A dialog appears asking for the name and location of the update site.
 
-  1. For **Name**, enter 'MobileIron' or something similar.
+    1. For **Name**, enter 'MobileIron' or something similar.
 
-  2. For **Location**, copy and paste one of the the following URLs:
+    2. For **Location**, copy and paste one of the the following URLs:
 
-    1. Release Candidate Build: [http://preview.appcelerator.com/appcelerator/studio/mobileiron/update/rc/](http://preview.appcelerator.com/appcelerator/studio/mobileiron/update/rc/)
+        1. Release Candidate Build: [http://preview.appcelerator.com/appcelerator/studio/mobileiron/update/rc/](http://preview.appcelerator.com/appcelerator/studio/mobileiron/update/rc/)
 
-  3. Click **OK**.
+    3. Click **OK**.
 
 4. An item called **MobileIron Integration** should appear. Select to install it, that is, make sure the box is checkmarked, then click **Finish****.**
 
 5. Follow the rest of the wizard directions to install it. When prompted, restart Studio.
-
 
 ### Publish to MobileIron
 
@@ -164,50 +157,49 @@ To publish an application to **MobileIron's Enterprise App Storefront**:
 
 2. Select **Publish** > **Mobile****Iron** > **Publish...**. to open the **Publish to Mobile Iron** wizard.
 
-  ![MobileIronRightContextMenu](/Images/appc/download/attachments/43298667/MobileIronRightContextMenu.png)
+    ![MobileIronRightContextMenu](/Images/appc/download/attachments/43298667/MobileIronRightContextMenu.png)
 3. In the **Target** step:
 
-  1. Select the platform to deploy to, either Android or iOS.
+    1. Select the platform to deploy to, either Android or iOS.
 
-  2. Select a Publish Target. If you have not created a publish target, click **Register Existing****...** to open the **Register MobileIron target** dialog to enter your MobileIron information. Click **OK** when you are finished.
+    2. Select a Publish Target. If you have not created a publish target, click **Register Existing****...** to open the **Register MobileIron target** dialog to enter your MobileIron information. Click **OK** when you are finished.
 
-    ![MobileIronTarget](/Images/appc/download/attachments/43298667/MobileIronTarget.png)
-  3. Click **Next**.
+        ![MobileIronTarget](/Images/appc/download/attachments/43298667/MobileIronTarget.png)
+    3. Click **Next**.
 
 4. In the **Configuration** step:
 
-  1. Enter a name, version number and description for your application. Some of these fields will be auto-populated by existing information from the tiapp.xml file.
+    1. Enter a name, version number and description for your application. Some of these fields will be auto-populated by existing information from the tiapp.xml file.
 
-  2. To remove the application if a policy is broken or a device is signed out in multi-user mode, check **Quarantinable**.
+    2. To remove the application if a policy is broken or a device is signed out in multi-user mode, check **Quarantinable**.
 
-  3. To highlight the app in the featured list, check **Featured**.
+    3. To highlight the app in the featured list, check **Featured**.
 
-  4. Click **Next**.
+    4. Click **Next**.
 
-    ![ConfigurationStep](/Images/appc/download/attachments/43298667/ConfigurationStep.png)
+        ![ConfigurationStep](/Images/appc/download/attachments/43298667/ConfigurationStep.png)
 5. In the **Platform** step:
 
-  1. For Android applications, enter the following information:
+    1. For Android applications, enter the following information:
 
-    1. **Android SDK Version**: Select the version of the tools to build your application.
+        1. **Android SDK Version**: Select the version of the tools to build your application.
 
-    2. **Distribution Location****:** Path where the Android application package (APK) file will be copied to.
+        2. **Distribution Location****:** Path where the Android application package (APK) file will be copied to.
 
-    3. **Keystore Location**: Path to your keystore file that is used to sign your application. Click the **New** button to create a new keystore.
+        3. **Keystore Location**: Path to your keystore file that is used to sign your application. Click the **New** button to create a new keystore.
 
-    4. **Keystore Password****:** Password to your keystore.
+        4. **Keystore Password****:** Password to your keystore.
 
-    5. **Keypair password**: Password for the keystore private key.
+        5. **Keypair password**: Password for the keystore private key.
 
-    6. **Key Alias**: Alias associated with your application's certificate.
+        6. **Key Alias**: Alias associated with your application's certificate.
 
-  2. For iOS applications, select the Distribution Certificate, Keychain, Provision Profile and SDK Version to use.
+    2. For iOS applications, select the Distribution Certificate, Keychain, Provision Profile and SDK Version to use.
 
-  3. Click **Next**.
+    3. Click **Next**.
 
 6. In the **Summary** step, review the information you entered. To restart the wizard after you start the publishing process, check **Restart**.
 
 7. Click **Publish**.
-
 
 After Appcelerator Studio finishes uploading your application, Studio opens the MobileIron Admin portal in your default browser. Use the portal to manage the distribution of your application, then users can use the MobileIron application to download it.

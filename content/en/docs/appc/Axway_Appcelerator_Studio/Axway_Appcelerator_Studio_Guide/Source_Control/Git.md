@@ -1,45 +1,44 @@
 {"title":"Git","weight":"20"}
 
-* [Getting Started with Git](#GettingStartedwithGit)
+* [Getting Started with Git](#getting-started-with-git)
 
-  * [Installation](#Installation)
+    * [Installation](#installation)
 
-    * [Windows](#Windows)
+        * [Windows](#windows)
 
-    * [Re-Installing Portable Git](#Re-InstallingPortableGit)
+        * [Re-Installing Portable Git](#re-installing-portable-git)
 
-* [Importing an existing Git repository](#ImportinganexistingGitrepository)
+* [Importing an existing Git repository](#importing-an-existing-git-repository)
 
-* [Importing and forking a Github repository](#ImportingandforkingaGithubrepository)
+* [Importing and forking a Github repository](#importing-and-forking-a-github-repository)
 
-* [Creating a new Git repo for an existing project](#CreatinganewGitrepoforanexistingproject)
+* [Creating a new Git repo for an existing project](#creating-a-new-git-repo-for-an-existing-project)
 
-  * [Project Explorer](#ProjectExplorer)
+    * [Project Explorer](#project-explorer)
 
-  * [App Explorer](#AppExplorer)
+    * [App Explorer](#app-explorer)
 
-* [Git Actions](#GitActions)
+* [Git Actions](#git-actions)
 
-  * [Staging/Unstaging files](#Staging/Unstagingfiles)
+    * [Staging/Unstaging files](#staging/unstaging-files)
 
-  * [Reverting files](#Revertingfiles)
+    * [Reverting files](#reverting-files)
 
-  * [Committing](#Committing)
+    * [Committing](#committing)
 
-  * [Push/Pull](#Push/Pull)
+    * [Push/Pull](#push/pull)
 
-  * [Branch-related actions](#Branch-relatedactions)
+    * [Branch-related actions](#branch-related-actions)
 
-  * [Tag actions](#Tagactions)
+    * [Tag actions](#tag-actions)
 
-* [Git UI modifications](#GitUImodifications)
+* [Git UI modifications](#git-ui-modifications)
 
-* [Preferences](#Preferences)
+* [Preferences](#preferences)
 
-  * [Keyboard shortcuts](#Keyboardshortcuts)
+    * [Keyboard shortcuts](#keyboard-shortcuts)
 
-  * [App Explorer-specific functionality](#AppExplorer-specificfunctionality)
-
+    * [App Explorer-specific functionality](#app-explorer-specific-functionality)
 
 Aptana Studio 3 is shipped with a built-in support for Git source control.
 
@@ -50,7 +49,6 @@ It may be helpful to review tutorials on getting started with Git outside the ID
 * [http://help.github.com/](http://help.github.com/) - Github's help docs, which are a great starting place.
 
 * [http://cworth.org/hgbook-git/tour/](http://cworth.org/hgbook-git/tour/)
-
 
 ### Installation
 
@@ -70,7 +68,6 @@ If you happen to have skipped the git installation to begin with, and now need t
 
 3. Restart Studio
 
-
 ## Importing an existing Git repository
 
 To clone (or "import") a git repository, select File > Import... or right-click in the Project or App Explorer and Choose Import... Then select the Git > Git Repository as New Project entry. This will present a very basic dialog asking you to enter the Git source URI and the destination. The source URI is the same you'd pass in the command line as the first argument to 'git clone'.
@@ -88,7 +85,6 @@ Inside the Project Explorer, Git actions live under the right-click "Team" menu.
 1. Click **Team > Share Project...**
 
 2. Select location and click **Create**
-
 
 ### App Explorer
 

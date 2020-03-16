@@ -12,20 +12,19 @@ For now, you will need to be aware of the JS support levels in each platform. [h
 
 * On iOS, by default we use the TiCore JS engine, which is essentially an old fork of JavaScriptCore engine - and does not support ES6 features. However, you can "turn on" the JavaScriptCore engine bundled with iOS by setting a value in your tiapp.xml:
 
-  `<``ti``:app>`
+    `<``ti``:app>`
 
-  `<``ios``>`
+    `<``ios``>`
 
-  `<``use``-jscore-framework>true</``use``-jscore-framework>`
+    `<``use``-jscore-framework>true</``use``-jscore-framework>`
 
-  `</``ios``>`
+    `</``ios``>`
 
-  `</``ti``:app>`
+    `</``ti``:app>`
 
-  See [tiapp.xml and timodule.xml Reference: use-jscore-framework](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#use-jscore-framework). As a general reference: iOS 8 only supports 17% of ES6, iOS 9 supports 54%, and iOS 10+ supports 100%.
+    See [tiapp.xml and timodule.xml Reference: use-jscore-framework](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#use-jscore-framework). As a general reference: iOS 8 only supports 17% of ES6, iOS 9 supports 54%, and iOS 10+ supports 100%.
 
 * On Windows, we use a relatively recent fork of JavaScriptCore that should support most of ES6
-
 
 ## Known issues
 

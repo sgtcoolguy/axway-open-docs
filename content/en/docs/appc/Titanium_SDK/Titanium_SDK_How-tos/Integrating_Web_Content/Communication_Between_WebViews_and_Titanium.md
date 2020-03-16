@@ -1,19 +1,18 @@
 {"title":"Communication Between WebViews and Titanium","weight":"20"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [Local web content](#Localwebcontent)
+    * [Local web content](#local-web-content)
 
-    * [Logging](#Logging)
+        * [Logging](#logging)
 
-    * [Ti.App Events](#Ti.AppEvents)
+        * [Ti.App Events](#ti.app-events)
 
-  * [Remote web content](#Remotewebcontent)
+    * [Remote web content](#remote-web-content)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 With Titanium SDK 8.0.0, we now use [WKWebView](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/WKWebView/) to implement Ti.UI.WebView (as Apple has deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview)).
 
@@ -40,7 +39,6 @@ You can use the Ti.API logging methods within HTML content loaded from the devic
 * log(type, message) - Creates a Titanium log out of the message parameter and assigns it the log level of the given parameter type
 
 * warn(message) - Creates a Titanium log out of the message parameter and assigns it the log level of warn
-
 
 These functions are great for adding logging to our native Titanium code, but they can also be used to add logging to web content in WebViews. Let's take a look at a simple example. Here will we add Titanium logging to a WebView to let us know when the <body> element of the web content has loaded.
 
@@ -169,7 +167,6 @@ You cannot use any Titanium statements within HTML content loaded from a remote 
 * You must pass in the code to run as a single _string_. (Hint: You'll have to JSON.stringify any complex data types you pass into the webview.)
 
 * This method returns a string, so make sure any data you retrieve is a string or it will be treated as a null.
-
 
 Let's see an example. The following loads a remote web page, then uses evalJS() to retrieve the cookies set by that server:
 

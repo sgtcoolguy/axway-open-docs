@@ -28,51 +28,51 @@ The Ruby editor is no longer included as part of the Studio installer. To edit R
 
 * [Ruble API](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/)
 
-  * [Browser Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Browser_Class/)
+    * [Browser Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Browser_Class/)
 
-  * [Command Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Command_Class/)
+    * [Command Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Command_Class/)
 
-  * [Document Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Document_Class/)
+    * [Document Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Document_Class/)
 
-  * [Editor Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Editor_Class/)
+    * [Editor Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Editor_Class/)
 
-  * [Job Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Job_Class/)
+    * [Job Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Job_Class/)
 
-  * [Logger Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Logger_Class/)
+    * [Logger Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Logger_Class/)
 
-  * [Project Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Project_Class/)
+    * [Project Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Project_Class/)
 
-  * [Selection Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Selection_Class/)
+    * [Selection Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Selection_Class/)
 
-  * [Terminal Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Terminal_Class/)
+    * [Terminal Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/Terminal_Class/)
 
-  * [UI Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/UI_Class/)
+    * [UI Class](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_API/UI_Class/)
 
 * [Ruble Cookbook](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/)
 
-  * [A Command Which Outputs a Snippet](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/A_Command_Which_Outputs_a_Snippet/)
+    * [A Command Which Outputs a Snippet](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/A_Command_Which_Outputs_a_Snippet/)
 
-  * [Adding Popup Windows in Rubles](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Adding_Popup_Windows_in_Rubles/)
+    * [Adding Popup Windows in Rubles](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Adding_Popup_Windows_in_Rubles/)
 
-  * [A Simple Command](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/A_Simple_Command/)
+    * [A Simple Command](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/A_Simple_Command/)
 
-  * [A Simple Snippet](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/A_Simple_Snippet/)
+    * [A Simple Snippet](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/A_Simple_Snippet/)
 
-  * [Executing an External Command](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Executing_an_External_Command/)
+    * [Executing an External Command](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Executing_an_External_Command/)
 
-  * [Filtering Ruble Items Per-Platform](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Filtering_Ruble_Items_Per-Platform/)
+    * [Filtering Ruble Items Per-Platform](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Filtering_Ruble_Items_Per-Platform/)
 
-  * [Interacting with Eclipse or Java](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Interacting_with_Eclipse_or_Java/)
+    * [Interacting with Eclipse or Java](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Interacting_with_Eclipse_or_Java/)
 
-  * [Opening a Browser](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Opening_a_Browser/)
+    * [Opening a Browser](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Opening_a_Browser/)
 
-  * [Print Editor Properties](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Print_Editor_Properties/)
+    * [Print Editor Properties](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Print_Editor_Properties/)
 
-  * [Setting Activation Characters](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Setting_Activation_Characters/)
+    * [Setting Activation Characters](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Setting_Activation_Characters/)
 
-  * [Trigger on Save](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Trigger_on_Save/)
+    * [Trigger on Save](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Trigger_on_Save/)
 
-  * [Using a Custom Gem](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Using_a_Custom_Gem/)
+    * [Using a Custom Gem](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Cookbook/Using_a_Custom_Gem/)
 
 * [Ruble environment variables](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_environment_variables/)
 

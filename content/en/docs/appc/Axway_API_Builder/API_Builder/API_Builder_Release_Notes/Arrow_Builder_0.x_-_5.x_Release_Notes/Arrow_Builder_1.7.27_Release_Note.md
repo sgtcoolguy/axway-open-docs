@@ -22,7 +22,6 @@ You can add models before the server starts and have them stand up their route p
 
 * Port 80 is now the default port in client SDKs.
 
-
 ## Fixed Issues
 
 * Fixed issue with logging out and running an Arrow project that throws the error message of "Uncaught Exception Unexpected token u"

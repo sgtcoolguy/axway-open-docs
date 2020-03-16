@@ -2,38 +2,37 @@
 
 This document contains information on where to download the project scaffold, overview of core concepts and conventions, events, managing orientation UI and cross-platform and form factor files, and app namespace.
 
-* [Download](#Download)
+* [Download](#download)
 
-* [Core Concepts and Conventions](#CoreConceptsandConventions)
+* [Core Concepts and Conventions](#core-concepts-and-conventions)
 
-  * [Standard Patterns](#StandardPatterns)
+    * [Standard Patterns](#standard-patterns)
 
-  * [Global Namespace](#GlobalNamespace)
+    * [Global Namespace](#global-namespace)
 
-  * [Models](#Models)
+    * [Models](#models)
 
-  * [UI and Styles](#UIandStyles)
+    * [UI and Styles](#ui-and-styles)
 
-  * [Controllers](#Controllers)
+    * [Controllers](#controllers)
 
-  * [Modules](#Modules)
+    * [Modules](#modules)
 
-* [Events](#Events)
+* [Events](#events)
 
-* [Managing Orientation UI](#ManagingOrientationUI)
+* [Managing Orientation UI](#managing-orientation-ui)
 
-* [Managing cross-platform and form factor files](#Managingcross-platformandformfactorfiles)
+* [Managing cross-platform and form factor files](#managing-cross-platform-and-form-factor-files)
 
-  * [Form Factors](#FormFactors)
+    * [Form Factors](#form-factors)
 
-  * [Cross platform and type handling](#Crossplatformandtypehandling)
+    * [Cross platform and type handling](#cross-platform-and-type-handling)
 
-* [The 'App' Namespace](#The'App'Namespace)
+* [The 'App' Namespace](#the-'app'-namespace)
 
-  * [App.API](#App.API)
+    * [App.API](#app.api)
 
-  * [App.Platform](#App.Platform)
-
+    * [App.Platform](#app.platform)
 
 ## Download
 
@@ -124,7 +123,6 @@ Titanium doesn't handle different layouts in orientation very well (because of a
 1. Via the controller – For complex orientation handling the controller will need an 'orientationUpdate()' method. This will handle all orientation needs the controller is managing.
 
 2. Via the UI – This is the most common scenario. The orientationObserverUpdate method will check if the current controller's UI and other listening objects have an orientationUpdate() method in the UI namespace. If so it will fire them and the UI will update accordingly. NOTE: See /ui/dashboard/dashboard.js for an example.
-
 
 Either method above will pass a landscape / portrait argument which can be used by the UI's corresponding style sheet. e.g.
 
@@ -296,7 +294,6 @@ There are numerous properties to be appended to the 'App' namespace. The followi
 
 * App.orientationObserverUpdate - Handles orientation update
 
-
 ### App.API
 
 This area handles the data layers of the app.
@@ -314,7 +311,6 @@ This area handles the data layers of the app.
 * syncModel - Syncs the supplied data to local storage
 
 * syncFullEvent - Sync full event (all models: sessions, registration, etc)
-
 
 ### App.Platform
 

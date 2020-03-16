@@ -1,44 +1,42 @@
 {"title":"Camera and Photo Gallery APIs","weight":"40"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [Permissions](#Permissions)
+    * [Permissions](#permissions)
 
-    * [Android permissions](#Androidpermissions)
+        * [Android permissions](#android-permissions)
 
-    * [Requesting Permissions](#RequestingPermissions)
+        * [Requesting Permissions](#requesting-permissions)
 
-  * [Camera](#Camera)
+    * [Camera](#camera)
 
-    * [Front/rear camera support](#Front/rearcamerasupport)
+        * [Front/rear camera support](#front/rear-camera-support)
 
-  * [Alternative Android capture video example](#AlternativeAndroidcapturevideoexample)
+    * [Alternative Android capture video example](#alternative-android-capture-video-example)
 
-* [Gallery](#Gallery)
+* [Gallery](#gallery)
 
-  * [Getting images into the simulator/emulator's gallery](#Gettingimagesintothesimulator/emulator'sgallery)
+    * [Getting images into the simulator/emulator's gallery](#getting-images-into-the-simulator/emulator's-gallery)
 
-* [Windows development considerations](#Windowsdevelopmentconsiderations)
+* [Windows development considerations](#windows-development-considerations)
 
-  * [Grant access to video stream and audio stream](#Grantaccesstovideostreamandaudiostream)
+    * [Grant access to video stream and audio stream](#grant-access-to-video-stream-and-audio-stream)
 
-  * [Grant access to pictures library](#Grantaccesstopictureslibrary)
+    * [Grant access to pictures library](#grant-access-to-pictures-library)
 
-  * [Displaying builtin camera for Windows](#DisplayingbuiltincameraforWindows)
+    * [Displaying builtin camera for Windows](#displaying-builtin-camera-for-windows)
 
-    * [For Windows 10 Mobile](#ForWindows10Mobile)
+        * [For Windows 10 Mobile](#for-windows-10-mobile)
 
+* [Hands-on practice](#hands-on-practice)
 
-* [Hands-on practice](#Hands-onpractice)
+    * [Goal](#goal)
 
-  * [Goal](#Goal)
+    * [Steps](#steps)
 
-  * [Steps](#Steps)
-
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Objective
 
@@ -314,7 +312,6 @@ Some other useful properties include:
 
 * transform a transformation matrix that applies to the camera UI (not to the media returned) (iOS only)
 
-
 You can check for the availability of the camera with the Titanium.Media.isCameraSupported property: it's false if the device has no camera. The simulator/emulator does not have camera support. Other devices without cameras include 3rd generation and older iPods, the Nook Color, and Kindle Fire.
 
 #### Front/rear camera support
@@ -511,7 +508,6 @@ Some other useful properties include:
 
 * (iPad only) arrowDirection control the type of arrow and position of the gallery
 
-
 #### Getting images into the simulator/emulator's gallery
 
 The photo gallery on the simulator/emulator is of course empty to start. If you'll be testing photo gallery code, you'll need to put some images there. You can do so by following this procedure:
@@ -523,7 +519,6 @@ The photo gallery on the simulator/emulator is of course empty to start. If you'
 3. Long-press on the image, when you release, you should get a menu of options.
 
 4. Tap Save Image (or your device's equivalent button) to save the image to the gallery.
-
 
 ### Windows development considerations
 
@@ -581,7 +576,7 @@ In order to enable camera and audio recording for Windows Phone, you need to pro
 
 `</``ti``:app>`
 
-For more information about audio configuration in tiapp.xml, see [Windows-specific](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#Windows-specific) section in [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/).
+For more information about audio configuration in tiapp.xml, see [Windows-specific](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#windows-specific) section in [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/).
 
 #### Displaying builtin camera for Windows
 
@@ -625,18 +620,17 @@ In this activity, you will write an app that will capture an image from the came
 
 4. When the button is clicked, show the camera if it's available, otherwise open the photo gallery. You'll need three callbacks--write your code to reuse the same three functions to minimize duplicated code. You'll need these callbacks:
 
-  * Success: set the ImageView's image property to the media returned from the camera or gallery. Output the mediaType to the info console.
+    * Success: set the ImageView's image property to the media returned from the camera or gallery. Output the mediaType to the info console.
 
-  * Cancel: don't do anything in this function
+    * Cancel: don't do anything in this function
 
-  * Error: Display an alert dialog box showing the error.code describing why the operation failed.
+    * Error: Display an alert dialog box showing the error.code describing why the operation failed.
 
 5. Open the simulator/emulator and save at least one photo to it, following the steps above.
 
 6. Build the app and run it on the simulator/emulator. The gallery should open.
 
 7. (Optional) Install the app onto a device and run it from there. The camera should open.
-
 
 ## Summary
 

@@ -22,7 +22,6 @@ The Appcelerator Platform consists of several components:
 
 * **[AMPLIFY Appcelerator Services](/docs/appc/AMPLIFY_Appcelerator_Services/)**: set of features that includes free analytics services, and the performance management and automated testing services, which require an Enterprise subscription.
 
-
 To start using the Appcelerator Platform, you need an account to log in to the Appcelerator Dashboard and Appcelerator Studio.
 
 * If you want to try the Appcelerator Platform for free, [sign up for an Appcelerator Platform account](http://www.appcelerator.com/signup/).

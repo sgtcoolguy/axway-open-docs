@@ -1,19 +1,18 @@
 {"title":"Spotlight Search","weight":"70"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-  * [Private vs. public indexing](#Privatevs.publicindexing)
+    * [Private vs. public indexing](#private-vs.-public-indexing)
 
-* [Index application content](#Indexapplicationcontent)
+* [Index application content](#index-application-content)
 
-* [Index activities](#Indexactivities)
+* [Index activities](#index-activities)
 
-* [Respond to an application launch from Spotlight](#RespondtoanapplicationlaunchfromSpotlight)
+* [Respond to an application launch from Spotlight](#respond-to-an-application-launch-from-spotlight)
 
-* [Mark up web content](#Markupwebcontent)
+* [Mark up web content](#mark-up-web-content)
 
-* [Further reading](#Furtherreading)
-
+* [Further reading](#further-reading)
 
 ## Introduction
 
@@ -26,7 +25,6 @@ To add a search index of your application for iOS, the Titanium SDK exposes the 
 * [Titanium.App.iOS.SearchableItem](#!/api/Titanium.App.iOS.SearchableItem): assembles the SearchableItemAttributeSet as an unique object package to be indexed.
 
 * [Titanium.App.iOS.SearchableIndex](#!/api/Titanium.App.iOS.SearchableIndex): exposes the iOS search index to add the SearchableItems to the index.
-
 
 In addition to the APIs exposed by the Titanium SDK, if some of your content is available as web content, you can add special markup to make it discoverable by Apple.
 
@@ -45,7 +43,6 @@ To index application content:
 2. Create a SearchableItem object and set its attributeSet property to the previously created SearchItemAttributeSet object.
 
 3. Create an instance of a SearchableIndex and pass the SearchableItem object to the AddToDefaultSearchableIndex() method.
-
 
 To create a SearchableItemAttributeSet object, use the Titanium.App.iOS.createSearchableItemAttributeSet() method and pass the method a dictionary with the itemContentType attribute set to a [uniform type identifier](https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html). You must set this property when creating the object. Use either the Titanium.App.iOS.UTTYPE\_\* constants or the string indentifier. The property describes the content type of the item you will be indexing, for example, an image (public.image), movie (public.movie) or PDF (com.adobe.pdf).
 
@@ -76,7 +73,6 @@ To create a SearchableItem object, use the Titanium.App.iOS.createSearchableItem
 * expirationDate: set to have the content removed by that date. By default, the indexed data will be removed after one month.
 
 * uniqueIdentifier: user-defined string that uniquely identifiers the object within the application.
-
 
 `var` `item = Ti.App.iOS.createSearchableItem({`
 
@@ -121,7 +117,6 @@ To index an activity:
 3. Optional. To make the activity searchable to other users, you need to set the eligibleForPublicIndexing property to true, and set either the webpageURL or requiredUserInfoKeys property. The activity will be added to Apple's server-side index.
 
 4. Invoke the UserActivity object's addContentAttributeSet() and pass it the SearchableItemAttributeSet object, which adds the attribute set to the device's index and optionally Apple's server-side index.
-
 
 For example, if the user activity is editing a document, you may want to advertise the activity to spotlight.
 
@@ -172,7 +167,6 @@ The event will be passed an object with the following properties:
 * searchableItemActivityIdentifier: Will be set to the unique identifier of the search item
 
 * title: Title of the item if available
-
 
 To respond to a launch from Spotlight, check to see if the activityType is set to com.apple.corespotlightitem, then use the searchableItemActivityIdentifier to navigate to the item.
 

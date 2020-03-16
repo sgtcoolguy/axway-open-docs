@@ -2,42 +2,27 @@
 
 Appcelerator CLI 7.0.3.GA is a minor release that includes several bug fixes.
 
-As of this GA release, the previous CLI patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous CLI patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Component versions
 
 The following components are shipped with CLI 7.0.3:
 
-Alloy
-
-1.12.0
-
-API Builder
-
-3.0.0
-
-Cloud CLI
-
-2.0.8
-
-Titanium CLI
-
-5.1.0
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Alloy</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>1.12.0</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>API Builder</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>3.0.0</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Cloud CLI</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>2.0.8</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium CLI</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>5.1.0</p></td></tr></tbody></table>
 
 ## Improvements
 
 * [ALOY-1602](https://jira.appcelerator.org/browse/ALOY-1602) - Avoid some global variables to be only available in parent controller
 
-  * Implemented some global variables to be only available in parent controller
+    * Implemented some global variables to be only available in parent controller
 
 * [ALOY-1603](https://jira.appcelerator.org/browse/ALOY-1603) - Update Moment.js to version 2.21.0
 
-  * Updated Moment.js from version 2.16.0 to version 2.20.1
+    * Updated Moment.js from version 2.16.0 to version 2.20.1
 
 * [ALOY-1609](https://jira.appcelerator.org/browse/ALOY-1609) - Add alloy.js plugin file to .gitignore
 
-  * Added alloy.js file to .gitignore
-
+    * Added alloy.js file to .gitignore
 
 ## Fixed issues
 

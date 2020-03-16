@@ -4,7 +4,7 @@ Appcelerator CLI 7.0.4 is a patch release that includes one bug fix.
 
 This release primarily focuses on GDPR compliance and implementing them in the Analytics API.
 
-As of this GA release, the previous CLI patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous CLI patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## GDPR
 
@@ -20,30 +20,11 @@ You can contact the Axway Data Protection Office by sending an email to **[priva
 
 * APAC: Axway Australia, Suite 1301, 99 Mount Street, North Sydney, 2060 NSW, AUSTRALIA
 
-
 ## Component versions
 
 The following components are shipped with CLI 7.0.4:
 
-Alloy
-
-1.12.0
-
-API Builder
-
-3.0.0
-
-Appc Daemon
-
-1.1.3
-
-Cloud CLI
-
-2.0.8
-
-Titanium CLI
-
-5.1.1
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Alloy</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>1.12.0</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>API Builder</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>3.0.0</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Appc Daemon</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>1.1.3</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Cloud CLI</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>2.0.8</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium CLI</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>5.1.1</p></td></tr></tbody></table>
 
 ## Fixed issues
 

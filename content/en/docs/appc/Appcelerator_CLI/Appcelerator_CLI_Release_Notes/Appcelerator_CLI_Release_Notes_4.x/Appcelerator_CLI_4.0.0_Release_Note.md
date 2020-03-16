@@ -6,25 +6,12 @@ Initial release. This release of the Appcelerator CLI includes version 4.0.0 of 
 
 The following components are shipped with CLI 4.0.0:
 
-Name
-
-Version
-
-Alloy
-
-1.6.0
-
-Arrow Builder
-
-0.4.0
-
-Arrow Cloud CLI
-
-1.0.24
-
-Titanium CLI
-
-4.0.0
+| Name | Version |
+| --- | --- |
+| Alloy | 1.6.0 |
+| Arrow Builder | 0.4.0 |
+| Arrow Cloud CLI | 1.0.24 |
+| Titanium CLI | 4.0.0 |
 
 ## Known Issues
 

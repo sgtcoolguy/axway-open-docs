@@ -1,25 +1,24 @@
 {"title":"Creating a New Snippet","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Creating a new snippet](#Creatinganewsnippet)
+* [Creating a new snippet](#creating-a-new-snippet)
 
-  * [Special Characters](#SpecialCharacters)
+    * [Special Characters](#special-characters)
 
-* [Executing shell commands](#Executingshellcommands)
+* [Executing shell commands](#executing-shell-commands)
 
-* [Adding tab stops](#Addingtabstops)
+* [Adding tab stops](#adding-tab-stops)
 
-* [Mirroring](#Mirroring)
+* [Mirroring](#mirroring)
 
-  * [Restricting the scope of a snippet](#Restrictingthescopeofasnippet)
+    * [Restricting the scope of a snippet](#restricting-the-scope-of-a-snippet)
 
-  * [Adding a snippet to a menu](#Addingasnippettoamenu)
+    * [Adding a snippet to a menu](#adding-a-snippet-to-a-menu)
 
-  * [Adding a Snippet Category](#AddingaSnippetCategory)
+    * [Adding a Snippet Category](#adding-a-snippet-category)
 
-  * [Adding additional information about a snippet](#Addingadditionalinformationaboutasnippet)
-
+    * [Adding additional information about a snippet](#adding-additional-information-about-a-snippet)
 
 ## Overview
 
@@ -37,16 +36,15 @@ Snippets are templates that show up in content assist and the Snippets View.
 
 2. Add the following content to the bottom of the file:
 
-  `snippet` `"My Snippet"`  `do` `|snip|`
+    `snippet` `"My Snippet"`  `do` `|snip|`
 
-  `snip.trigger =` `"foo"`
+    `snip.trigger =` `"foo"`
 
-  `snip.expansion =` `"my_super_snippet"`
+    `snip.expansion =` `"my_super_snippet"`
 
-  `end`
+    `end`
 
 3. Save and close bundle.rb.
-
 
 If you now open a new file (for example a .js file) and type "fo", you should see you snippet show up in the list. Selecting it will insert "my\_super\_snippet" into the document.
 
@@ -79,18 +77,17 @@ Tab stops allow you to modify a snippet once it has been inserted easily.
 
 2. Add the following content to the bottom of the file:
 
-  `snippet` `"My Second Snippet"`  `do` `|s|`
+    `snippet` `"My Second Snippet"`  `do` `|s|`
 
-  `s.trigger =` `"foo"`
+    `s.trigger =` `"foo"`
 
-  `s.expansion =` `"${1:method_name}: function(${2:attribute}){}"`
+    `s.expansion =` `"${1:method_name}: function(${2:attribute}){}"`
 
-  `end`
+    `end`
 
 3. The ${X:Y} indicates a tab stop. X indicates the order of the tab stop, and Y indicates the default content that will be placed there.
 
 4. Save and close bundle.rb
-
 
 Now attempt to complete the snippet as before. If you type "foo" + Tab, you will get a list showing the two snippets you've created. Selecting the "My Second Snippet" will insert the snippet and allow you to tab through the two variables listed as $1 and $2 above, where you can replace the default content just by typing. Pressing Tab enough times will exit the snippet.
 
@@ -102,18 +99,17 @@ Mirroring means that you can have the same content appear to update in multiple 
 
 2. Update the content to add a second $2 item:
 
-  `snippet` `"My Second Snippet"`  `do` `|s|`
+    `snippet` `"My Second Snippet"`  `do` `|s|`
 
-  `s.trigger =` `"foo"`
+    `s.trigger =` `"foo"`
 
-  `s.expansion =` `"${1:method_name}: function(${2:attribute}){${2:attribute}}"`
+    `s.expansion =` `"${1:method_name}: function(${2:attribute}){${2:attribute}}"`
 
-  `end`
+    `end`
 
 3. Repeating a tab stop means that the content will be mirrored. If you update the value of one tab stop, the other identically numbered one will also update simultaneously.
 
 4. Save and close bundle.rb.
-
 
 Attempt to complete the snippet as before. Note that when you start typing for tab stop #2, both items labeled #2 will update.
 
@@ -125,18 +121,17 @@ Adding a scope means that the snippet will only show up in certain editors or la
 
 2. Add this to the bottom of the file:
 
-  `snippet` `"My JavaScript Snippet 2"`  `do` `|s|`
+    `snippet` `"My JavaScript Snippet 2"`  `do` `|s|`
 
-  `s.trigger =` `"foo"`
+    `s.trigger =` `"foo"`
 
-  `s.scope =` `"source.js"`
+    `s.scope =` `"source.js"`
 
-  `s.expansion =` `"function($1) {};"`
+    `s.expansion =` `"function($1) {};"`
 
-  `end`
+    `end`
 
 3. Save and close bundle.rb.
-
 
 Note that this snippet is now only available in JavaScript files. A list of scopes is available here: [Current Theme Scopes](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Themes/Current_Theme_Scopes/)
 

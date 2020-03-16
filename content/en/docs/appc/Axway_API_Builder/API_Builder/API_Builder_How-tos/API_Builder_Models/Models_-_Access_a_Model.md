@@ -14,20 +14,19 @@ Any callback in the application that is passed the request object can access the
 
 3. Invoke one of the following methods on the Model instance and pass it a callback function, which is passed an error and results object:
 
-  * create(object, callback): Creates a model
+    * create(object, callback): Creates a model
 
-  * query(options, callback): Retrieves models specified by the query
+    * query(options, callback): Retrieves models specified by the query
 
-  * findAll(callback): Retrieves all models
+    * findAll(callback): Retrieves all models
 
-  * findById(id, callback): Retrieves the model specified by the id parameter
+    * findById(id, callback): Retrieves the model specified by the id parameter
 
-  * update(instance, callback): Updates the passed model
+    * update(instance, callback): Updates the passed model
 
-  * deleteAll(callback): Deletes all models
+    * deleteAll(callback): Deletes all models
 
-  * delete(instance, callback): Deletes the passed model
-
+    * delete(instance, callback): Deletes the passed model
 
 **Example**:
 

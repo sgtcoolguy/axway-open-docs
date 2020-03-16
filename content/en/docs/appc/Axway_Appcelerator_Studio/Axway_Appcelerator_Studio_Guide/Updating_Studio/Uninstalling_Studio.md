@@ -8,7 +8,6 @@ This document contains information on how to uninstall Studio. Read all steps fo
 
 2. Delete /Applications/Aptana Studio 3, /Applications/Titanium Studio, and /Application/Appcelerator Studio folders.
 
-
 ## Windows
 
 1. **Quit Axway Appcelerator Studio** if it is currently running.
@@ -19,12 +18,11 @@ This document contains information on how to uninstall Studio. Read all steps fo
 
 4. **Delete the remaining application folder(s)** off the hard drive (we do not automatically delete these folders in some cases). If you did not change your installation location on disk during the install, it is likely in:
 
-  * **Windows 10**: C:\\Users\\<username>\\AppData\\Roaming\\Appcelerator\\Appcelerator Studio\\
+    * **Windows 10**: C:\\Users\\<username>\\AppData\\Roaming\\Appcelerator\\Appcelerator Studio\\
 
-  * **Windows Vista/7**: C:\\Users\\<username>\\AppData\\Local\\Appcelerator Studio, C:\\Users\\<username>\\AppData\\Local\\Titanium Studio, and C:\\Users\\<username>\\AppData\\Local\\Aptana Studio
+    * **Windows Vista/7**: C:\\Users\\<username>\\AppData\\Local\\Appcelerator Studio, C:\\Users\\<username>\\AppData\\Local\\Titanium Studio, and C:\\Users\\<username>\\AppData\\Local\\Aptana Studio
 
-  * **Windows XP**: C:\\Program Files\\Aptana Studio or Titanium Studio
-
+    * **Windows XP**: C:\\Program Files\\Aptana Studio or Titanium Studio
 
 ## Eclipse Plugin
 

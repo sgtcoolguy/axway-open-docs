@@ -8,7 +8,6 @@ Dashboard 4.12.2 is a patch release, which includes improvements and several bug
 
 * Improved security of device authorization process
 
-
 ## Fixed issues
 
 * Fixed issue where users may not be able to import an existing app into the org to which it's currently registered

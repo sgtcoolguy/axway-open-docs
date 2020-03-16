@@ -1,51 +1,50 @@
 {"title":"Native Android Debugging and Testing Tools","weight":"20"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [Accessing the emulator with DDMS](#AccessingtheemulatorwithDDMS)
+    * [Accessing the emulator with DDMS](#accessing-the-emulator-with-ddms)
 
-    * [Examining log output with DDMS](#ExamininglogoutputwithDDMS)
+        * [Examining log output with DDMS](#examining-log-output-with-ddms)
 
-    * [Simulating network conditions](#Simulatingnetworkconditions)
+        * [Simulating network conditions](#simulating-network-conditions)
 
-    * [Simulating calls and SMS messages](#SimulatingcallsandSMSmessages)
+        * [Simulating calls and SMS messages](#simulating-calls-and-sms-messages)
 
-    * [Setting GPS coordinates](#SettingGPScoordinates)
+        * [Setting GPS coordinates](#setting-gps-coordinates)
 
-    * [Exploring the file system with DDMS](#ExploringthefilesystemwithDDMS)
+        * [Exploring the file system with DDMS](#exploring-the-file-system-with-ddms)
 
-    * [Memory monitoring with DDMS](#MemorymonitoringwithDDMS)
+        * [Memory monitoring with DDMS](#memory-monitoring-with-ddms)
 
-  * [Accessing the emulator with adb](#Accessingtheemulatorwithadb)
+    * [Accessing the emulator with adb](#accessing-the-emulator-with-adb)
 
-    * [Examining log output with adb](#Examininglogoutputwithadb)
+        * [Examining log output with adb](#examining-log-output-with-adb)
 
-    * [Exploring the file system with adb](#Exploringthefilesystemwithadb)
+        * [Exploring the file system with adb](#exploring-the-file-system-with-adb)
 
-    * [Accessing SQLite databases with adb](#AccessingSQLitedatabaseswithadb)
+        * [Accessing SQLite databases with adb](#accessing-sqlite-databases-with-adb)
 
-  * [Creating an emulator](#Creatinganemulator)
+    * [Creating an emulator](#creating-an-emulator)
 
-    * [Using the Command-Line](#UsingtheCommand-Line)
+        * [Using the Command-Line](#using-the-command-line)
 
-    * [Using the AVD manager](#UsingtheAVDmanager)
+        * [Using the AVD manager](#using-the-avd-manager)
 
-  * [Modifying the emulator](#Modifyingtheemulator)
+    * [Modifying the emulator](#modifying-the-emulator)
 
-    * [Increase the emulator's disk space](#Increasetheemulator'sdiskspace)
+        * [Increase the emulator's disk space](#increase-the-emulator's-disk-space)
 
-    * [Resize the emulator](#Resizetheemulator)
+        * [Resize the emulator](#resize-the-emulator)
 
-    * [Resize the emulator on the fly](#Resizetheemulatoronthefly)
+        * [Resize the emulator on the fly](#resize-the-emulator-on-the-fly)
 
-  * [Note on Native Java debugging](#NoteonNativeJavadebugging)
+    * [Note on Native Java debugging](#note-on-native-java-debugging)
 
-  * [References](#References)
+    * [References](#references)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Objective
 
@@ -64,7 +63,6 @@ In this part, you'll see how to use DDMS to:
 * Access the file system on the emulator or device
 
 * Set emulator parameters and simulate operating conditions
-
 
 #### Examining log output with DDMS
 
@@ -113,7 +111,6 @@ adb offers many of the features of DDMS, including the means to:
 * Access SQLite databases on the emulator or device
 
 * Issue shell commands on the emulator or device
-
 
 #### Examining log output with adb
 
@@ -196,7 +193,6 @@ Keep in mind these points:
 * The sqlite3 binary offers various commands, which are preceded by a period and _not_ terminated with a semicolon. Enter .help for a list of those commands.
 
 * You're interacting with your app's actual database. So if you make modifications, you could create error conditions within your app.
-
 
 ### Creating an emulator
 
@@ -314,7 +310,7 @@ The AVD manager provides a GUI to create and manage your emulators.
 
 1. Launch the AVD manager from the console by running:
 
-  `path_to_android_sdk``/tools/android` `avd`
+    `path_to_android_sdk``/tools/android` `avd`
 
 2. Once the AVD manager appears, click the **New** button on the right side. A dialog opens.
 
@@ -324,7 +320,6 @@ The AVD manager provides a GUI to create and manage your emulators.
 
 5. Click **OK.**
 
-
 ### Modifying the emulator
 
 #### Increase the emulator's disk space
@@ -333,14 +328,13 @@ By default, when a new emulator is created, it only has enough space to install 
 
 1. Open the AVD configuration file with your favorite text editor. The following are the default locations:
 
-  1. On Mac OS X systems, open ~/.android/avd/<AVD\_name>.avd/config.ini.
+    1. On Mac OS X systems, open ~/.android/avd/<AVD\_name>.avd/config.ini.
 
-  2. On Windows 7 and 8 systems, open C:\\Users\\<user>\\.android\\avd\\<AVD\_name>.avd\\config.ini.
+    2. On Windows 7 and 8 systems, open C:\\Users\\<user>\\.android\\avd\\<AVD\_name>.avd\\config.ini.
 
 2. Add or edit the following variable:
 
-  `disk.dataPartition.size=<size_in_MB>m`
-
+    `disk.dataPartition.size=<size_in_MB>m`
 
 #### Resize the emulator
 
@@ -355,7 +349,6 @@ By default, when a new emulator is created, it only has enough space to install 
 5. Press the **Edit** button, change the resolution, and press the **Edit AVD** button to save.
 
 6. Close the AVD Manager and launch your app again from Studio. The new resolution will take effect.
-
 
 #### Resize the emulator on the fly
 
@@ -385,7 +378,7 @@ Once the emulator is launched, it can be scaled "on-the-fly" by connecting to th
 
 Debugging Java or C++ code is beyond the scope of this document. See [Debugging](http://developer.android.com/guide/developing/debugging/index.html) in the Android Developer Guide for more information.
 
-Note that debugging Java requires setting the Android debuggable flag as described in [Enabling the debugger by default](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#Enablingthedebuggerbydefault).
+Note that debugging Java requires setting the Android debuggable flag as described in [Enabling the debugger by default](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#enabling-the-debugger-by-default).
 
 ### References
 
@@ -398,7 +391,6 @@ Note that debugging Java requires setting the Android debuggable flag as describ
 * SQLite commands: [http://www.sqlite.org/lang.html](http://www.sqlite.org/lang.html) and [http://www.sqlite.org/pragma.html](http://www.sqlite.org/pragma.html)
 
 * Android Debugging docs: [Debugging](http://developer.android.com/guide/developing/debugging/index.html)
-
 
 ## Summary
 

@@ -19,7 +19,6 @@ Servers view
 
 4. Click **OK.**
 
-
 Generic web server settings
 
 ## Starting a server

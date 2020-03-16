@@ -2,24 +2,23 @@
 
 ## Contents
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Numbers / widths](#Numbers/widths)
+* [Numbers / widths](#numbers-/-widths)
 
-* [Byte Order](#ByteOrder)
+* [Byte Order](#byte-order)
 
-* [Proposed API](#ProposedAPI)
+* [Proposed API](#proposed-api)
 
-  * [Ti Module](#TiModule)
+    * [Ti Module](#ti-module)
 
-    * [Ti Module Methods](#TiModuleMethods)
+        * [Ti Module Methods](#ti-module-methods)
 
-  * [Ti.Codec Module](#Ti.CodecModule)
+    * [Ti.Codec Module](#ti.codec-module)
 
-    * [Ti.Codec Constants](#Ti.CodecConstants)
+        * [Ti.Codec Constants](#ti.codec-constants)
 
-    * [Ti.Codec Methods](#Ti.CodecMethods)
-
+        * [Ti.Codec Methods](#ti.codec-methods)
 
 ## Overview
 
@@ -29,47 +28,14 @@ Applications that read and manipulate binary data also require the ability to en
 
 This is a list of the accepted encoding types for numbers, and their corresponding width in bytes
 
-Name
-
-Encoding Type
-
-Width in bytes
-
-byte
-
-integer
-
-1
-
-short
-
-integer
-
-2
-
-int
-
-integer
-
-4
-
-float
-
-single precision floating-point
-
-4
-
-long
-
-integer
-
-8
-
-double
-
-double precision floating-point
-
-8
+| Name | Encoding Type | Width in bytes |
+| --- | --- | --- |
+| byte | integer | 1 |
+| short | integer | 2 |
+| int | integer | 4 |
+| float | single precision floating-point | 4 |
+| long | integer | 8 |
+| double | double precision floating-point | 8 |
 
 ## Byte Order
 
@@ -78,7 +44,6 @@ Depending on the use of a Ti.Buffer, different underlying primitive byte orders 
 * Little Endian : Least significant byte first
 
 * Big Endian : Most significant byte first (aka Network Order)
-
 
 Byte Order should only matter for operations on multi-byte primitive values ("Numbers")
 
@@ -90,16 +55,15 @@ Byte Order should only matter for operations on multi-byte primitive values ("Nu
 
 * Ti.Buffer createBuffer(Object args) : Create a new buffer
 
-  * args : named arguments
+    * args : named arguments
 
-    * Number length : The length of the buffer (optional, default value is 0 unless value is specified, at which case the length of the encoded data is used)
+        * Number length : The length of the buffer (optional, default value is 0 unless value is specified, at which case the length of the encoded data is used)
 
-    * String|Number value : Value to be encoded. If value is a Number, type must also be set. (this is simply a convenient way of calling Ti.Codec.encodeString or Ti.Codec.encodeNumber)
+        * String|Number value : Value to be encoded. If value is a Number, type must also be set. (this is simply a convenient way of calling Ti.Codec.encodeString or Ti.Codec.encodeNumber)
 
-    * String type : The type of data encoding to use with value. Required when value is a Number. When value is a String, Ti.Codec.CHARSET\_UTF8 is the default.
+        * String type : The type of data encoding to use with value. Required when value is a Number. When value is a String, Ti.Codec.CHARSET\_UTF8 is the default.
 
-    * Number byteOrder : The byte order of this buffer. The OS native byte order is used by default
-
+        * Number byteOrder : The byte order of this buffer. The OS native byte order is used by default
 
 ### Ti.Codec Module
 
@@ -133,73 +97,72 @@ Byte Order should only matter for operations on multi-byte primitive values ("Nu
 
 * Number LITTLE\_ENDIAN : Little Endian byte order
 
-
 #### Ti.Codec Methods
 
 * Number encodeNumber(Object args) : encodes the Number source into dest using the passed in data type
 
-  * args : Named arguments
+    * args : Named arguments
 
-    * Number source : The Number to encode (required)
+        * Number source : The Number to encode (required)
 
-    * Ti.Buffer dest : The destination buffer (required)
+        * Ti.Buffer dest : The destination buffer (required)
 
-    * Number position : The position in dest to set the encoded data (optional, default: 0)
+        * Number position : The position in dest to set the encoded data (optional, default: 0)
 
-    * String type : The encoding type to use. Must be TYPE\_BYTE, TYPE\_SHORT, TYPE\_INT, TYPE\_FLOAT, TYPE\_LONG, or TYPE\_DOUBLE (required)
+        * String type : The encoding type to use. Must be TYPE\_BYTE, TYPE\_SHORT, TYPE\_INT, TYPE\_FLOAT, TYPE\_LONG, or TYPE\_DOUBLE (required)
 
-    * Number byteOrder : The byte order to encode with (optional, default: native byte order)
+        * Number byteOrder : The byte order to encode with (optional, default: native byte order)
 
-  * returns the position after the encoded Number inside dest
+    * returns the position after the encoded Number inside dest
 
 * Number decodeNumber(Object args) : decodes source (starting at the optional position) using the passed in data type
 
-  * args : Named arguments
+    * args : Named arguments
 
-    * Ti.Buffer source : The buffer to decode (required)
+        * Ti.Buffer source : The buffer to decode (required)
 
-    * String type : The encoding type to use. Must be TYPE\_BYTE, TYPE\_SHORT, TYPE\_INT, TYPE\_FLOAT, TYPE\_LONG, or TYPE\_DOUBLE (required)
+        * String type : The encoding type to use. Must be TYPE\_BYTE, TYPE\_SHORT, TYPE\_INT, TYPE\_FLOAT, TYPE\_LONG, or TYPE\_DOUBLE (required)
 
-    * Number position : The position to start at (optional, default: 0)
+        * Number position : The position to start at (optional, default: 0)
 
-    * Number byteOrder : The byte order to decode with (optional, default: native byte order)
+        * Number byteOrder : The byte order to decode with (optional, default: native byte order)
 
-  * returns the Number decoded from source
+    * returns the Number decoded from source
 
-  * throws an Exception if buffer is null, or position is greater than buffer's length
+    * throws an Exception if buffer is null, or position is greater than buffer's length
 
 * Number encodeString(Object args) : encodes the String source into dest using charset
 
-  * args : Named arguments
+    * args : Named arguments
 
-    * String source : The string to encode (required)
+        * String source : The string to encode (required)
 
-    * Ti.Buffer dest : The destination buffer (required)
+        * Ti.Buffer dest : The destination buffer (required)
 
-    * Number destPosition : The position to set the encoded data (optional, default: 0)
+        * Number destPosition : The position to set the encoded data (optional, default: 0)
 
-    * Number sourcePosition : The position in source to start encoding (optional, default: 0)
+        * Number sourcePosition : The position in source to start encoding (optional, default: 0)
 
-    * Number sourceLength : The number of characters in source to encode (optional, default: length of source)
+        * Number sourceLength : The number of characters in source to encode (optional, default: length of source)
 
-    * String charset : The character set to use when encoding this string to bytes (optional, default: CHARSET\_UTF8)
+        * String charset : The character set to use when encoding this string to bytes (optional, default: CHARSET\_UTF8)
 
-  * returns the position after the encoded String inside dest
+    * returns the position after the encoded String inside dest
 
-  * throws an Exception if charset is not a valid character set, string is null, or either sourcePosition, sourceLength, or sourcePosition+sourceLength is greater than string's length
+    * throws an Exception if charset is not a valid character set, string is null, or either sourcePosition, sourceLength, or sourcePosition+sourceLength is greater than string's length
 
 * String decodeString(Object args) : decodes the passed in buffer into a String starting at position, with length bytes, using the supplied character set
 
-  * args : Named arguments
+    * args : Named arguments
 
-    * Ti.Buffer source : The buffer to decode (required)
+        * Ti.Buffer source : The buffer to decode (required)
 
-    * Number position : The position to start decoding (optional, default: 0)
+        * Number position : The position to start decoding (optional, default: 0)
 
-    * Number length : The number of bytes to decode (optional, default: length of source)
+        * Number length : The number of bytes to decode (optional, default: length of source)
 
-    * String charset : The character set to use when decoding this buffer (optional, default: CHARSET\_UTF8)
+        * String charset : The character set to use when decoding this buffer (optional, default: CHARSET\_UTF8)
 
-  * throws an Exception if charset is not a valid character set, buffer is null, or either position, length, or position+length is greater than buffer's length
+    * throws an Exception if charset is not a valid character set, buffer is null, or either position, length, or position+length is greater than buffer's length
 
 * Number getNativeByteOrder() : Get the OS native byte order (either BIG\_ENDIAN or LITTLE\_ENDIAN)

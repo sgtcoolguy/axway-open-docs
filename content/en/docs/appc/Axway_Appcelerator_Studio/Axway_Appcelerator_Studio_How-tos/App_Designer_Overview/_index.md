@@ -36,9 +36,8 @@ Before starting this guide, ensure that the App Designer plugin has been install
 
 5. With the project created and the **Project Explorer** view open, **expand** the following folders until you get to **index.xml**:
 
-  * ![image2016-5-2_13_52_2](/Images/appc/download/attachments/46249378/image2016-5-2_13_52_2.png)
-6. Open the **App Designer editor**: click on the **App Designer [Perspectives](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_How-tos/App_Designer_Overview/App_Designer_Quick_Start_Guide/#Perspectives)** button (found in the upper right corner of Studio). This perspective includes the following views: Project Explorer, Outline, App Designer editor, Properties, and Elements. If these views don't open, please following the instructions below to add them manually to your perspective.
-
+    * ![image2016-5-2_13_52_2](/Images/appc/download/attachments/46249378/image2016-5-2_13_52_2.png)
+6. Open the **App Designer editor**: click on the **App Designer [Perspectives](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_How-tos/App_Designer_Overview/App_Designer_Quick_Start_Guide/#perspectives)** button (found in the upper right corner of Studio). This perspective includes the following views: Project Explorer, Outline, App Designer editor, Properties, and Elements. If these views don't open, please following the instructions below to add them manually to your perspective.
 
 ### Manually adding views to App Designer perspective
 
@@ -49,7 +48,6 @@ If the **Properties**, **Elements**, and **Outline** views didn't open when you 
 1. To launch the **Outline** view, go to **Window** > **Show View...**. In the Show View window, expand **General**, select **Outline**, and click **OK**.
 
 2. To open the **Properties** and **Elements** views, go to **Window** > **Show View** > **Other...** again, expand **App Designer**, **shift-select Elements** and **Properties**, and click **OK**.
-
 
 Once you have these helpful views open, you can drag and drop the views that best assists your in your app design workflow. The image below shows a typical layout for using the Outline, Properties, and Elements views in conjunction with the App Designer design view.
 
@@ -70,7 +68,6 @@ To add the App Designer perspective to the Perspective toggle options,
 2. Select the **App Designer** icon ![image2016-5-12_9_19_26](/Images/appc/download/attachments/46249378/image2016-5-12_9_19_26.png) from the dialog window and click **OK**. This will launch the App Designer perspective with the additional views of Properties, Elements, and Outline.
 
 3. Double-click on any Alloy view file to launch that project into the App Designer editor.
-
 
 ![image2016-5-12_9_14_5](/Images/appc/download/attachments/46249378/image2016-5-12_9_14_5.png)
 App Designer enabled
@@ -93,14 +90,13 @@ In this short tutorial, we will modify the background of our app to have a red b
 
 5. In the **RGB Sliders** option, set the following colors:
 
-  1. Red: 181
+    1. Red: 181
 
-  2. Green: 13
+    2. Green: 13
 
-  3. Blue: 0
+    3. Blue: 0
 
 6. **Close the Color picker** window to apply the color to the selected (Window) object.
-
 
 You should now have a red background to your app.
 
@@ -122,14 +118,13 @@ The following instructions will show you how to create a button element from the
 
 5. Finally, change the **font size** and **font family** in the **font parameters** found under the **Appearance** property.
 
-  1. Set the **fontSize** to **14**.
+    1. Set the **fontSize** to **14**.
 
-  2. Set the **fontFamily** to a family such as **Arial**. To see the font family change, you will need to click off that parameter.
+    2. Set the **fontFamily** to a family such as **Arial**. To see the font family change, you will need to click off that parameter.
 
 6. To make the button to look more like a button, change the rigid looking corners to a rounded corner. Under the **Borders** property, set **borderColor** to #b50d00 (using the Color picker) and **borderRadius** to 15.
 
 7. Finally, change the text of the button element by **title parameter** (under Appearance property) to display "Tutorials".
-
 
 Now, let's give this button an action by modifying it's code via the XML view.
 
@@ -137,12 +132,11 @@ Now, let's give this button an action by modifying it's code via the XML view.
 
 2. Change the following code:
 
-  `<Button id=``"Tutorials"``/>`
+    `<Button id=``"Tutorials"``/>`
 
 3. To this:
 
-  `<Button id=``"Tutorials"` `onClick=``"loadTutorials"``/>`
-
+    `<Button id=``"Tutorials"` `onClick=``"loadTutorials"``/>`
 
 Back in the Properties view, you will now see the click parameter (under Events) has a value of loadTutorials. The loadTutorials event hasn't been defined anywhere so it won't do anything. Defining that event is beyond the scope of this tutorial.
 
@@ -162,34 +156,33 @@ These steps will show you how to create a label element from the Outline view an
 
 4. In the **Properties** view, modify the following parameters:
 
-  1. **id**: App Designer
+    1. **id**: App Designer
 
-  2. Position
+    2. Position
 
-    1. **left**: 0
+        1. **left**: 0
 
-    2. **top**: 10%
+        2. **top**: 10%
 
-  3. Size
+    3. Size
 
-    1. **height**: 12%
+        1. **height**: 12%
 
-    2. **width**: 100%
+        2. **width**: 100%
 
-  4. Appearance
+    4. Appearance
 
-    1. **color**: #ffffff
+        1. **color**: #ffffff
 
-    2. font
+        2. font
 
-      1. **fontSize**: 48
+            1. **fontSize**: 48
 
-      2. **fontFamily**: Arial
+            2. **fontFamily**: Arial
 
-    3. **text (xml)**: App Designer
+        3. **text (xml)**: App Designer
 
-    4. **textAlign**: [Titanium.UI.TEXT\_ALIGNMENT\_CENTER](#!/api/Titanium.UI.Label-property-textAlign)
-
+        4. **textAlign**: [Titanium.UI.TEXT\_ALIGNMENT\_CENTER](#!/api/Titanium.UI.Label-property-textAlign)
 
 We should now have a nicely positioned prominent title label for our app that reads App Designer. There are a bazillion properties, methods, and events you can apply to your elements. As you can see in the textAlign parameter, we used the text align property from the Titanium.UI.Label module. More UI label modules can be found in the [Titanium.UI](#!/api/Titanium.UI) documentation.
 
@@ -209,22 +202,21 @@ The following steps shows you how to copy an element via the Outline view and mo
 
 4. Next, let's modify this copied element. In the **Properties** view, make the following changes to the parameters of this new element:
 
-  1. **id**: Links
+    1. **id**: Links
 
-  2. Position
+    2. Position
 
-    1. Remove the value listed in the **left** **parameter**.
+        1. Remove the value listed in the **left** **parameter**.
 
-    2. **right**: 30%
+        2. **right**: 30%
 
-  3. Appearance
+    3. Appearance
 
-    1. **title**: Links
+        1. **title**: Links
 
-  4. Events
+    4. Events
 
-    1. **click**: loadLinks
-
+        1. **click**: loadLinks
 
 As you can see, creating a new element from an existing one and modifying it a bit is pretty quick. If everything went well in these tutorials, your app should look something like this:
 
@@ -232,6 +224,6 @@ As you can see, creating a new element from an existing one and modifying it a b
 
 ## Review
 
-In this guide, we created a [new Alloy project](#StudioSetup), learned how to add the new [App Designer perspective](#Perspectives), set up the Outline, Elements, and Properties views for commonly used workflows, and [created and modified a few elements](#Creatingandmodifyingelements) using both the Design and XML views.
+In this guide, we created a [new Alloy project](#studio-setup), learned how to add the new [App Designer perspective](#perspectives), set up the Outline, Elements, and Properties views for commonly used workflows, and [created and modified a few elements](#creating-and-modifying-elements) using both the Design and XML views.
 
 ![image2016-5-11_14_22_51](/Images/appc/download/attachments/46249378/image2016-5-11_14_22_51.png) Copied button element

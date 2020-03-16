@@ -10,5 +10,4 @@ Samples in the widgets/ folder demonstrates how to create and use [Alloy widgets
 
 * [WPATH Example](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Widgets/WPATH_Example/) — Demonstrates how to use the WPATH() macro to easily map image and library paths to the widget folder.
 
-
 You can find more Alloy widgets created by the community at [gitt.io/](http://gitt.io/).

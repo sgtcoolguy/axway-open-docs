@@ -1,23 +1,22 @@
 {"title":"HTML Development","weight":"60"}
 
-* [HTML Support](#HTMLSupport)
+* [HTML Support](#html-support)
 
-  * [Creating a project using the New Project wizard](#CreatingaprojectusingtheNewProjectwizard)
+    * [Creating a project using the New Project wizard](#creating-a-project-using-the-new-project-wizard)
 
-  * [Creating a project using the import wizard](#Creatingaprojectusingtheimportwizard)
+    * [Creating a project using the import wizard](#creating-a-project-using-the-import-wizard)
 
-* [Editing](#Editing)
+* [Editing](#editing)
 
-  * [Syntax Coloring](#SyntaxColoring)
+    * [Syntax Coloring](#syntax-coloring)
 
-  * [Code Assist](#CodeAssist)
+    * [Code Assist](#code-assist)
 
-  * [Auto Indentation & Code Formatting](#AutoIndentation&CodeFormatting)
+    * [Auto Indentation & Code Formatting](#auto-indentation-&-code-formatting)
 
-* [Validation](#Validation)
+* [Validation](#validation)
 
-* [Previewing](#Previewing)
-
+* [Previewing](#previewing)
 
 ## HTML Support
 
@@ -31,7 +30,7 @@ A project can be created through the File->New->Web Project, or by right-clickin
 
 Once you type in a project name, a 'Next' button is enabled to allow you to select a project template in case you wish to do so.
 
-![html_project_templates](/Images/appc/download/attachments/30083084/html_project_templates.jpg)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083084/html_project_templates.jpg" alt="images/download/attachments/30083084/html_project_templates.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 Some of those templates will actually call a 'git clone' command to grab the latest project content from a remote site.
 
@@ -61,7 +60,6 @@ The HTML editor provides these features:
 
 * Previewing
 
-
 ### Syntax Coloring
 
 Like with any other Studio-contributed editor, the syntax highlighting settings are controlled by the 'Theme' preference page in Studio's preferences.
@@ -75,12 +73,11 @@ The editor provides a code-assist mechanism that displays suggestions by the con
 
 * Typing a letter or part of a word and then Ctrl+Space will bring up any possible completion proposals that start with the character's input. The content pop-up will show proposals for known HTML tags, and also for any HTML code snippets that were contributed by the [HTML Ruble](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Specification/).
 
-  ![html_template_completion](/Images/appc/download/attachments/30083084/html_template_completion.jpg)
+    <table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083084/html_template_completion.jpg" alt="images/download/attachments/30083084/html_template_completion.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 * When inside a tag, the content assist will suggest the relevant options according to the edit-point context.
 
-  ![html_context_ca](/Images/appc/download/attachments/30083084/html_context_ca.jpg)
-
+    <table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083084/html_context_ca.jpg" alt="images/download/attachments/30083084/html_context_ca.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 ### Auto Indentation & Code Formatting
 
@@ -108,11 +105,11 @@ Note that the 'off' and 'on' tags are also customizable through the formatter pr
 Studio is bundled with a **Tidy** HTML validator that performs validation on the edited HTML and outputs any warnings and errors to the editor's annotations ruler and the 'Problems View'.
 It's possible to turn off the validation through the preferences, under the 'Validation' page:
 
-![html_validation_pref](/Images/appc/download/attachments/30083084/html_validation_pref.jpg)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083084/html_validation_pref.jpg" alt="images/download/attachments/30083084/html_validation_pref.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 You can hover over any warning or error that the validation output to see its details:
 
-![html_validation](/Images/appc/download/attachments/30083084/html_validation.jpg)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083084/html_validation.jpg" alt="images/download/attachments/30083084/html_validation.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 ## Previewing
 

@@ -14,8 +14,7 @@ Then, to run the file, you can:
 
 * Go to the menu: Alt + R + S + The number of the Run you wish (It can be Python, Jython, unit-test, and so forth).
 
-  If you were using **unit-tests**, you could use: **Ctrl+F9** to run the unit-tests from the module (and even selecting which tests should be run).
-
+    If you were using **unit-tests**, you could use: **Ctrl+F9** to run the unit-tests from the module (and even selecting which tests should be run).
 
 External files may be launched, but an associated project must be available. So, a file may be dragged from the filesystem into Eclipse, and later, with the editor open, F9 may be pressed to run the file...It'll still ask for a project to resolve the PYTHONPATH and interpreter to be used (you can probably use any project you have that has the interpreter you want to use for the run or create a PyDev project as 'external\_projects' and bind those runs to it).– The configuration created may be changed later on in the menu: Run > Run configurations.
 

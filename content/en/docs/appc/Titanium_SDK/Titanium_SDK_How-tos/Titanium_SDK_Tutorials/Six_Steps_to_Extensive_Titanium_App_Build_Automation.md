@@ -1,21 +1,20 @@
 {"title":"Six Steps to Extensive Titanium App Build Automation","weight":"40"}
 
-* [Testing and launching is NOT time-consuming or complicated](#TestingandlaunchingisNOTtime-consumingorcomplicated)
+* [Testing and launching is NOT time-consuming or complicated](#testing-and-launching-is-not-time-consuming-or-complicated)
 
-* [Mobile build automation, a high-level overview](#Mobilebuildautomation,ahigh-leveloverview)
+* [Mobile build automation, a high-level overview](#mobile-build-automation,-a-high-level-overview)
 
-* [Preparing the codebase](#Preparingthecodebase)
+* [Preparing the codebase](#preparing-the-codebase)
 
-* [Unit testing with TiUnit](#UnittestingwithTiUnit)
+* [Unit testing with TiUnit](#unit-testing-with-tiunit)
 
-* [Analyzing the codebase quality](#Analyzingthecodebasequality)
+* [Analyzing the codebase quality](#analyzing-the-codebase-quality)
 
-* [UI testing on real devices](#UItestingonrealdevices)
+* [UI testing on real devices](#ui-testing-on-real-devices)
 
-* [Archiving and sharing the artifacts](#Archivingandsharingtheartifacts)
+* [Archiving and sharing the artifacts](#archiving-and-sharing-the-artifacts)
 
-* [Sending notifications](#Sendingnotifications)
-
+* [Sending notifications](#sending-notifications)
 
 Guest writer: [Yakup Kalin](https://www.appcelerator.com/blog/author/yakup-kalin/)
 
@@ -38,7 +37,6 @@ Typically, a high-level view of a build automation process with Titanium apps ca
 5. Archiving and sharing artifacts (Sonatype Nexus)
 
 6. Notifying people
-
 
 ## Preparing the codebase
 

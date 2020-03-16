@@ -2,28 +2,27 @@
 
 ## Contents
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-  * [Android](#Android)
+    * [Android](#android)
 
-  * [iOS](#iOS)
+    * [iOS](#ios)
 
-  * [Windows](#Windows)
+    * [Windows](#windows)
 
-* [Improvements](#Improvements)
+* [Improvements](#improvements)
 
-* [Known issues](#Knownissues)
+* [Known issues](#known-issues)
 
-* [API changes](#APIchanges)
-
+* [API changes](#api-changes)
 
 ## About this release
 
 Titanium SDK 6.1.1.GA is a patch release of the SDK which addresses important fixes for 6.1.0.
 
-As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Fixed issues
 
@@ -61,7 +60,6 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 * [TIMOB-24870](https://jira.appcelerator.org/browse/TIMOB-24870) - Android: Reopening a closed window causes all components in the window to be lost
 
-
 ### iOS
 
 * [TIMOB-24680](https://jira.appcelerator.org/browse/TIMOB-24680) - iOS: Enterprise ad hoc provisioning profiles not validating properly for watch extensions
@@ -76,22 +74,19 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 * [TIMOB-24884](https://jira.appcelerator.org/browse/TIMOB-24884) - CLI: Minification produces invalid code
 
-
 ### Windows
 
 * [TIMOB-24751](https://jira.appcelerator.org/browse/TIMOB-24751) - Windows: Cannot build for Android if Windows SDK is not installed
-
 
 ## Improvements
 
 * [TIMOB-24853](https://jira.appcelerator.org/browse/TIMOB-24853) - Windows: Update module apiversion in manifest
 
-  * Bumped apiversion in manifest to 3
+    * Bumped apiversion in manifest to 3
 
 * [TIMOB-24750](https://jira.appcelerator.org/browse/TIMOB-24750) - Only configure platforms that are deployment targets
 
-  * Allows for configuring builds for specific platforms. For example, if you wish to configure an app for Android only, use the following command: appc run -p android --build-only
-
+    * Allows for configuring builds for specific platforms. For example, if you wish to configure an app for Android only, use the following command: appc run -p android --build-only
 
 ## Known issues
 

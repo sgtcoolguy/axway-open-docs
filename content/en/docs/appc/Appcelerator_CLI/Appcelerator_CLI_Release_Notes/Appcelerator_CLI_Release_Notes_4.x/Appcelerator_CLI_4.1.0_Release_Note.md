@@ -8,22 +8,9 @@ See the [full list of issues addressed in Release 4.1.0](https://jira.appcelerat
 
 The following components are shipped with CLI 4.1.0:
 
-Name
-
-Version
-
-Alloy
-
-1.6.2
-
-**[Arrow Builder](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Release_Notes/)**
-
-**1.1.0 (update)**
-
-**Arrow Cloud CLI**
-
-**1.0.25 (update)**
-
-Titanium CLI
-
-4.0.1
+| Name | Version |
+| --- | --- |
+| Alloy | 1.6.2 |
+| **[Arrow Builder](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Release_Notes/)** | **1.1.0 (update)** |
+| **Arrow Cloud CLI** | **1.0.25 (update)** |
+| Titanium CLI | 4.0.1 |

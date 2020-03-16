@@ -2,14 +2,13 @@
 
 This page describes how to preview your project in a web browser.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Previewing in a separate web browser window](#Previewinginaseparatewebbrowserwindow)
+* [Previewing in a separate web browser window](#previewing-in-a-separate-web-browser-window)
 
-* [Previewing in the Preview pane](#PreviewinginthePreviewpane)
+* [Previewing in the Preview pane](#previewing-in-the-preview-pane)
 
-* [Previewing your project from another computer or device](#Previewingyourprojectfromanothercomputerordevice)
-
+* [Previewing your project from another computer or device](#previewing-your-project-from-another-computer-or-device)
 
 ## Introduction
 
@@ -28,7 +27,6 @@ To preview a project in a web browser:
 * To switch configurations, click the downward-pointing arrow just to the right of the **Run** button ![run](/Images/appc/download/attachments/30083122/run.png) , and select a configuration from the menu.
 
 * If the default behavior opens the wrong URL, you will need to create a new configuration. To learn how to set up additional configurations, see [Setting up your web browser configuration](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Previewing/Setting_up_your_web_browser_configuration/).
-
 
 Studio opens your project in a new web browser window.
 

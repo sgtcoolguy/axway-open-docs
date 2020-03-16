@@ -2,12 +2,11 @@
 
 This document describes how to debug Titanium applications using an Emulator or Simulator.
 
-* [To Debug on Android Emulator or iOS Simulator](#ToDebugonAndroidEmulatororiOSSimulator)
+* [To Debug on Android Emulator or iOS Simulator](#to-debug-on-android-emulator-or-ios-simulator)
 
-* [To Debug a Specific Run Configuration](#ToDebugaSpecificRunConfiguration)
+* [To Debug a Specific Run Configuration](#to-debug-a-specific-run-configuration)
 
-* [Related Topics](#RelatedTopics)
-
+* [Related Topics](#related-topics)
 
 ## To Debug on Android Emulator or iOS Simulator
 
@@ -27,7 +26,6 @@ This document describes how to debug Titanium applications using an Emulator or 
 
 8. When Studio prompts you to switch to the **Debug** perspective, click **Yes**.
 
-
 Any breakpoints you set should be hit when the app loads (or if they are in event listeners or separate files, when those execute). Some other things you should be able to do:
 
 * Edit variables by clicking their values while inside a breakpoint.
@@ -37,7 +35,6 @@ Any breakpoints you set should be hit when the app loads (or if they are in even
 * Set conditions on breakpoints by going to the "Breakpoints" view, right clicking on the breakpoint, clicking on "Properties", and hit the checkmark next to "Enable Condition".
 
 * Click on various frames in the stack trace to see values of other variables in your call stack (See [Using the Debug View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Debug_View/)).
-
 
 ## To Debug a Specific Run Configuration
 
@@ -55,26 +52,25 @@ By specifying a run configuration, you can choose the iOS version of the emulato
 
 6. Click **Debug** to launch the debug session.
 
-
 ## Related Topics
 
 * [Debugging Titanium Applications](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/)
 
-  * [Debugging on Android Devices](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_Android_Devices/)
+    * [Debugging on Android Devices](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_Android_Devices/)
 
-  * [Debugging on iOS Devices](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_iOS_Devices/)
+    * [Debugging on iOS Devices](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_iOS_Devices/)
 
 * [About the Debug perspective](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/)
 
-  * [Using the Debug View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Debug_View/)
+    * [Using the Debug View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Debug_View/)
 
-  * [Using the Variables View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Variables_View/)
+    * [Using the Variables View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Variables_View/)
 
-  * [Using the Console View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Using_the_Console_View/)
+    * [Using the Console View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Using_the_Console_View/)
 
-  * [Using the Breakpoints View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Breakpoints_View/)
+    * [Using the Breakpoints View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Breakpoints_View/)
 
-  * [Using the Expressions View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Expressions_View/)
+    * [Using the Expressions View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Expressions_View/)
 
 * [Stepping into and over functions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Stepping_into_and_over_functions/)
 

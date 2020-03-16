@@ -1,13 +1,12 @@
 {"title":"Hyperloop Sample Apps","weight":"40"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-  * [Requirements](#Requirements)
+    * [Requirements](#requirements)
 
-  * [Running this app](#Runningthisapp)
+    * [Running this app](#running-this-app)
 
-* [Hyperloop examples organization on Github](#HyperloopexamplesorganizationonGithub)
-
+* [Hyperloop examples organization on Github](#hyperloop-examples-organization-on-github)
 
 ## Introduction
 
@@ -21,13 +20,11 @@ Our cross-platform example app can be found in this Github repo: [https://github
 
 * Examples for the UICollectionView, Beacons, Android Bottom Navigation View, native Android XML layouts, iOS storyboards, XIB's, and so on.
 
-
 ### Requirements
 
 * Titanium 7.0.0+
 
 * Alloy 1.10.0+
-
 
 ### Running this app
 
@@ -45,15 +42,14 @@ Here are a few of them, but be sure to check out the [organization on Github](ht
 
 * [https://github.com/hyperloop-modules/ti.speech](https://github.com/hyperloop-modules/ti.speech)
 
-  * Use the iOS 10+ Speech framework in Hyperloop
+    * Use the iOS 10+ Speech framework in Hyperloop
 
 * [https://github.com/hyperloop-modules/ti.mapbox](https://github.com/hyperloop-modules/ti.mapbox)
 
-  * Use the native Mapbox iOS-SDK in Hyperloop & CocoaPods
+    * Use the native Mapbox iOS-SDK in Hyperloop & CocoaPods
 
 * [https://github.com/hyperloop-modules/ti.snackbar](https://github.com/hyperloop-modules/ti.snackbar)
 
-  * Use the native Android Snackbar UI-widget in Hyperloop
-
+    * Use the native Android Snackbar UI-widget in Hyperloop
 
 There are more samples in development right now, so stay tuned and ensure to get in touch with the community on [TiSlack](http://tislack.org) in the **#hyperloop** channel!

@@ -2,64 +2,50 @@
 
 Appcelerator CLI 5.2.0 is a minor release that includes a few improvements and several bug fixes.
 
-As of this release, CLI 5.1.x will not be supported six months from 5.2.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, CLI 5.1.x will not be supported six months from 5.2.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Component Versions
 
 The following components are shipped with CLI 5.2.0:
 
-Name
-
-Version
-
-Alloy
-
-1.7.33
-
-Arrow Builder
-
-1.7.27
-
-Arrow Cloud CLI
-
-1.1.0
-
-Titanium CLI
-
-5.0.6
+| Name | Version |
+| --- | --- |
+| Alloy | 1.7.33 |
+| Arrow Builder | 1.7.27 |
+| Arrow Cloud CLI | 1.1.0 |
+| Titanium CLI | 5.0.6 |
 
 ## Improvements
 
 * [CLI-746](https://jira.appcelerator.org/browse/CLI-746) - Add SPDX-compliant license string
 
-  * Users can now use the SPDX "LicenseRef-LICENSE" instead of "Appcelerator Commercial" in the package.json files to avoid the "license should be a valid SPDX license expression" warning.
+    * Users can now use the SPDX "LicenseRef-LICENSE" instead of "Appcelerator Commercial" in the package.json files to avoid the "license should be a valid SPDX license expression" warning.
 
-  * The root also now includes a LICENSE.md file
+    * The root also now includes a LICENSE.md file
 
 * [CLI-852](https://jira.appcelerator.org/browse/CLI-852) - appc run can not set port for Arrow apps
 
-  * You can now set the port for Arrow apps by using this command: appc run --port xxxx
+    * You can now set the port for Arrow apps by using this command: appc run --port xxxx
 
 * [CLI-858](https://jira.appcelerator.org/browse/CLI-858) - Add timestamps to logging output
 
-  * When using \-l trace or \-l debug, a timestamp is added to log levels of the output. For example:
+    * When using \-l trace or \-l debug, a timestamp is added to log levels of the output. For example:
 
-    `2015``-``10``-29T08:``38``:``48``+``00``:``00` `| INFO | Get the registry...`
+        `2015``-``10``-29T08:``38``:``48``+``00``:``00` `| INFO | Get the registry...`
 
 * [CLI-934](https://jira.appcelerator.org/browse/CLI-934) - Output warning message if appc-install is less than 4.2.3-2
 
-  * Appc CLI 5.2.0 requires appc-install 4.2.3-2+ to work. If a lesser version is installed, users will see the following error message:
+    * Appc CLI 5.2.0 requires appc-install 4.2.3-2+ to work. If a lesser version is installed, users will see the following error message:
 
-    `Appcelerator Command-Line Interface, version` `5.2``.``0``-``249`
+        `Appcelerator Command-Line Interface, version` `5.2``.``0``-``249`
 
-    `Copyright (c)` `2014``-``2016``, Appcelerator, Inc. All Rights Reserved.`
+        `Copyright (c)` `2014``-``2016``, Appcelerator, Inc. All Rights Reserved.`
 
-    `AppC CLI requires appcelerator``@4``.2.``3` `or newer.`
+        `AppC CLI requires appcelerator``@4``.2.``3` `or newer.`
 
-    `To install the latest version: [sudo] npm install appcelerator -g`
+        `To install the latest version: [sudo] npm install appcelerator -g`
 
-    `....`
-
+        `....`
 
 ## Fixed Issues
 

@@ -10,7 +10,6 @@ To publish an application to Arrow Cloud 1.2.0, you must use at least version 4.
 
 * Node version 0.8.x is no longer supported for Node.ACS MVC applications. Set the engines.node field in the package.json file to version 0.10.x or greater.
 
-
 **New Features**
 
 * **Node version**: specify any version of Node for the application to use in the package.json file. Previously, only versions 0.8.26 and 0.10.22 were supported.
@@ -20,7 +19,6 @@ To publish an application to Arrow Cloud 1.2.0, you must use at least version 4.
 * **Port binding**: define the PORT environment variable to explicitly set the listening port of your application.
 
 * **Provision the container**: install any third-party tool or package on your server container using the scripts.preinstall or scripts.postinstall fields in the package.json file.
-
 
 **Known Issues**
 

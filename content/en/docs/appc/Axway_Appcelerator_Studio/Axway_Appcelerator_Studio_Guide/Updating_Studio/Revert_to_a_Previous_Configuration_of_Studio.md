@@ -22,7 +22,6 @@ As you install, upgrade, and uninstall software into your system, configuration 
 
 7. **Restart** Studio.
 
-
 ## Deleting a Studio configuration
 
 1. Navigate back to the **Axway Appcelerator Studio Install Details** window.
@@ -37,7 +36,6 @@ As you install, upgrade, and uninstall software into your system, configuration 
 
 6. **Restart** Studio.
 
-
 ## Installing older versions of Studio
 
 ### Versions prior to 5.1.0
@@ -48,7 +46,7 @@ If you don't have the version you are looking for, you can download the Studio p
 
 ### Versions 5.1.0 and later
 
-With Studio 5.1.0, as mentioned in [Cannot update from Studio 5.0.0 to Studio 5.1.0](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Release_Notes/Studio_Release_Notes_5.x/Studio_5.1.0.RC_Release_Note/Studio_5.1.0_Changes/#CannotupdatefromStudio5.0.0toStudio5.1.0), you cannot revert to previous versions of Studio as 5.1.0 and later requires removal of the older version and a fresh install.
+With Studio 5.1.0, as mentioned in [Cannot update from Studio 5.0.0 to Studio 5.1.0](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Release_Notes/Studio_Release_Notes_5.x/Studio_5.1.0.RC_Release_Note/Studio_5.1.0_Changes/#cannot-update-from-studio-5.0.0-to-studio-5.1.0), you cannot revert to previous versions of Studio as 5.1.0 and later requires removal of the older version and a fresh install.
 
 ## Direct Studio package downloads
 

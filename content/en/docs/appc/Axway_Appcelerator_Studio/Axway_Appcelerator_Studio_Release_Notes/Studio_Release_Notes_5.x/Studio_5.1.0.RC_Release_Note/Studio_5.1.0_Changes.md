@@ -1,23 +1,22 @@
 {"title":"Studio 5.1.0 Changes","weight":"10"}
 
-* [Cannot update from Studio 5.0.0 to Studio 5.1.0](#CannotupdatefromStudio5.0.0toStudio5.1.0)
+* [Cannot update from Studio 5.0.0 to Studio 5.1.0](#cannot-update-from-studio-5.0.0-to-studio-5.1.0)
 
-* [Noteworthy changes](#Noteworthychanges)
+* [Noteworthy changes](#noteworthy-changes)
 
-* [Installers](#Installers)
+* [Installers](#installers)
 
-  * [For MacOS](#ForMacOS)
+    * [For MacOS](#for-macos)
 
-    * [Studio configuration file](#Studioconfigurationfile)
+        * [Studio configuration file](#studio-configuration-file)
 
-  * [Windows](#Windows)
+    * [Windows](#windows)
 
-* [Java support matrix](#Javasupportmatrix)
+* [Java support matrix](#java-support-matrix)
 
-  * [Studio 5.0.0 and earlier installers](#Studio5.0.0andearlierinstallers)
+    * [Studio 5.0.0 and earlier installers](#studio-5.0.0-and-earlier-installers)
 
-  * [Studio 5.1.0+ installers](#Studio5.1.0+installers)
-
+    * [Studio 5.1.0+ installers](#Studio5.1.0+installers)
 
 ## Cannot update from Studio 5.0.0 to Studio 5.1.0
 
@@ -26,7 +25,6 @@
 * Due to several internal changes, it is not possible to update from Studio 5.0.0 to 5.1.0. Users are advised to download and install a fresh copy of Studio 5.1.0 installer directly for both Windows and MacOS. Please review [Uninstalling Studio](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Updating_Studio/Uninstalling_Studio/) for removing Studio (as necessary for your setup).
 
 * You are advised to use the existing workspace directory when launching Studio 5.1.0 to get your old studio projects
-
 
 ## Noteworthy changes
 
@@ -41,7 +39,6 @@
 * Studio installs Java 1.8.162 if there are not supported Java versions installed (by default)
 
 * Updated JRuby and Ruby to versions 9.1.16 and 2.5 respectively to be compatible with Java 9 (useful for loading templates like HTML, JSON, Ruby, and so)
-
 
 ## Installers
 
@@ -58,7 +55,6 @@ To view the contents of “AppceleratorStudio” file,
 1. Right-click on **AppceleratorStudio**.
 
 2. Select **Show Package Contents**.
-
 
 #### Studio configuration file
 
@@ -78,94 +74,23 @@ With Studio 5.1.0, we introduce support for 64-bit Studio builds so that we can 
 
 ### Studio 5.0.0 and earlier installers
 
-Studio 5.0.0 and earlier
-
-Java Version
-
-Status
-
-Windows installer (32-bit)
-
-Java 8 (32-bit)
-
-Functional
-
-Windows installer (32-bit)
-
-Java 8 (64-bit)
-
-Not compatible
-
-MacOS installer (64-bit)
-
-Java 8 (64-bit)
-
-Functional
+| Studio 5.0.0 and earlier | Java Version | Status |
+| --- | --- | --- |
+| Windows installer (32-bit) | Java 8 (32-bit) | Functional |
+| Windows installer (32-bit) | Java 8 (64-bit) | Not compatible |
+| MacOS installer (64-bit) | Java 8 (64-bit) | Functional |
 
 ### Studio 5.1.0+ installers
 
-Studio 5.1.0 installer
-
-Java Version
-
-Status
-
-Windows installer (32-bit)
-
-Java 8 (32-bit)
-
-Functional
-
-Windows installer (32-bit)
-
-Java 8 (64-bit)
-
-Not compatible
-
-Windows installer (32-bit)
-
-Java 9 (32-bit)
-
-32-bit Java 9 is not available
-
-Windows installer (32-bit)
-
-Java 9 (64-bit)
-
-Incompatible (32-bit installer requires 32-bit Java)
-
-Windows installer (64-bit)
-
-Java 8 (64-bit)
-
-Functional
-
-Windows installer (64-bit)
-
-Java 8 (32-bit)
-
-Incompatible (64-bit installer requires 64-bit Java)
-
-Windows installer (64-bit)
-
-Java 9 (64-bit)
-
-Functional
-
-Windows installer (64-bit)
-
-Java 9 (32-bit)
-
-32-bit Java 9 is not available
-
-MacOS installer (64-bit)
-
-Java 8 (64-bit)
-
-Functional
-
-MacOS installer (64-bit)
-
-Java 9 (64-bit)
-
-Functional
+| Studio 5.1.0 installer | Java Version | Status |
+| --- | --- | --- |
+| Windows installer (32-bit) | Java 8 (32-bit) | Functional |
+| Windows installer (32-bit) | Java 8 (64-bit) | Not compatible |
+| Windows installer (32-bit) | Java 9 (32-bit) | 32-bit Java 9 is not available |
+| Windows installer (32-bit) | Java 9 (64-bit) | Incompatible (32-bit installer requires 32-bit Java) |
+| Windows installer (64-bit) | Java 8 (64-bit) | Functional |
+| Windows installer (64-bit) | Java 8 (32-bit) | Incompatible (64-bit installer requires 64-bit Java) |
+| Windows installer (64-bit) | Java 9 (64-bit) | Functional |
+| Windows installer (64-bit) | Java 9 (32-bit) | 32-bit Java 9 is not available |
+| MacOS installer (64-bit) | Java 8 (64-bit) | Functional |
+| MacOS installer (64-bit) | Java 9 (64-bit) | Functional |

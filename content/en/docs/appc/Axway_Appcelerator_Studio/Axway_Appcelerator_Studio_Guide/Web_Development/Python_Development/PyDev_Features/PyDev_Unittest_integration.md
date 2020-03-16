@@ -75,7 +75,6 @@ The most interesting features related to seeing the tests are:
 
 * A filter to show only errors is available.
 
-
 And the most interesting actions are:
 
 * A test session can be rerun.
@@ -85,7 +84,6 @@ And the most interesting actions are:
 * The test session can be stopped.
 
 * The results of a previously run test session can be seen again.
-
 
 ## Running and showing results in the PyUnit view
 

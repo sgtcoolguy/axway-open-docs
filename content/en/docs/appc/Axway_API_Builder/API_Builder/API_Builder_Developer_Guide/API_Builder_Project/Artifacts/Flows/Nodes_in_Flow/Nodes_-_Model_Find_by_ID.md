@@ -8,49 +8,21 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 This document describes the model find by ID and provides instance configuration and parameters information.
 
-Name
-
-Description
-
-ModelFindByID
-
-A Model specific flow-node. Invokes the Find by ID API on a specified model and returns the response.
+| Name | Description |
+| --- | --- |
+| ModelFindByID | A Model specific flow-node. Invokes the Find by ID API on a specified model and returns the response. |
 
 ## Instance configuration
 
-Property
-
-Description
-
-Required
-
-Type
-
-model
-
-The name of the model of which to invoke the Find by ID API.
-
-yes
-
-string
+| Property | Description | Required | Type |
+| --- | --- | --- | --- |
+| model | The name of the model of which to invoke the Find by ID API. | yes | string |
 
 ## Instance parameters
 
-Property
-
-Description
-
-Type
-
-Required
-
-id
-
-The ID of the record to find.
-
-string
-
-true
+| Property | Description | Type | Required |
+| --- | --- | --- | --- |
+| id | The ID of the record to find. | string | true |
 
 ### Example
 

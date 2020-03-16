@@ -8,49 +8,21 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 This document describes the model distinct flow-node and provides instance configuration and parameters information.
 
-Name
-
-Description
-
-ModelDistinct
-
-A Model specific flow-node. Invokes the Distinct API on a specified model and returns the response.
+| Name | Description |
+| --- | --- |
+| ModelDistinct | A Model specific flow-node. Invokes the Distinct API on a specified model and returns the response. |
 
 ## Instance configuration
 
-Property
-
-Description
-
-Required
-
-Type
-
-model
-
-The name of the model of which to invoke the Distinct API.
-
-yes
-
-string
+| Property | Description | Required | Type |
+| --- | --- | --- | --- |
+| model | The name of the model of which to invoke the Distinct API. | yes | string |
 
 ## Instance parameters
 
-Property
-
-Description
-
-Required
-
-Type
-
-field
-
-The field name that must be distinct.
-
-yes
-
-number
+| Property | Description | Required | Type |
+| --- | --- | --- | --- |
+| field | The field name that must be distinct. | yes | number |
 
 ### Example
 

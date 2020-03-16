@@ -1,17 +1,16 @@
 {"title":"Dynamic Styling","weight":"60"}
 
-* [Raw style modules](#Rawstylemodules)
+* [Raw style modules](#raw-style-modules)
 
-* [Creating and using style objects](#Creatingandusingstyleobjects)
+* [Creating and using style objects](#creating-and-using-style-objects)
 
-* [Creating styled Titanium proxies](#CreatingstyledTitaniumproxies)
+* [Creating styled Titanium proxies](#creating-styled-titanium-proxies)
 
-* [Adding and removing TSS classes](#AddingandremovingTSSclasses)
+* [Adding and removing TSS classes](#adding-and-removing-tss-classes)
 
-* [Autostyle property](#Autostyleproperty)
+* [Autostyle property](#autostyle-property)
 
-* [See also](#Seealso)
-
+* [See also](#see-also)
 
 Demonstrates different approaches to [changing styles at runtime](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Dynamic_Styles/) in Alloy. The sample application displays a menu of options that discuss or demonstrate the different approaches and techniques for dynamic styling. See each section below for a discussion of each approach.
 
@@ -407,7 +406,7 @@ Console output
 
 `[INFO] }`
 
-Autostyle is necessary to take full advantage of the [addClass()](#!/api/Alloy.Controller-method-addClass), [removeClass()](#!/api/Alloy.Controller-method-removeClass), and [resetClass()](#!/api/Alloy.Controller-method-resetClass) methods to properly update the view as classes are removed and added. For a better demonstration of the benefits of enabling auto-styling, see the discussion above for [Adding and Removing TSS Classes](#AddingandremovingTSSclasses).
+Autostyle is necessary to take full advantage of the [addClass()](#!/api/Alloy.Controller-method-addClass), [removeClass()](#!/api/Alloy.Controller-method-removeClass), and [resetClass()](#!/api/Alloy.Controller-method-resetClass) methods to properly update the view as classes are removed and added. For a better demonstration of the benefits of enabling auto-styling, see the discussion above for [Adding and Removing TSS Classes](#adding-and-removing-tss-classes).
 
 There is a small performance overhead associated with enabling auto-styling on components, which is why autoStyle is not disabled for all components by default. You should use autoStyle only on elements that will actually use the ability to add/remove classes at runtime.
 

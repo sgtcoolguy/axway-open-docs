@@ -30,7 +30,6 @@ By default, API Builder generates the following API endpoints for models:
 
 * DELETE /api/<model\_name>: Delete all objects
 
-
 To disable API Builder from generating these endpoints, set the Model's autogen property to false when defining the model. You will need to create [API Builder APIs](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_APIs/) to access the model.
 
 **Example:**

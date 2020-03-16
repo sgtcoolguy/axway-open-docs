@@ -34,7 +34,6 @@ Dashboard 6.4.0 is a minor release, which includes several improvements and bug 
 
 * Migrated AMPLIFY Crash Analytics views to display crash.breadcrumb events.
 
-
 ## Fixed issues
 
 * Resolved an issue uploading symbol files for applications.

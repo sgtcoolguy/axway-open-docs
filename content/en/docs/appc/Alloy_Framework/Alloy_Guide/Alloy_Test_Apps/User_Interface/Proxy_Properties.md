@@ -14,24 +14,23 @@ Many Titanium UI objects and properties can be declared in Alloy as mark-up. The
 
 * <Button/>
 
-  * <LeftNavButton/>
+    * <LeftNavButton/>
 
-  * <RightNavButton/>
+    * <RightNavButton/>
 
-  * <TitleControl/>
+    * <TitleControl/>
 
 * <TextField/>
 
-  * <LeftButton/>
+    * <LeftButton/>
 
-  * <RightButton/>
+    * <RightButton/>
 
-  * <KeyboardToolbar/>
+    * <KeyboardToolbar/>
 
-    * <Toolbar/>
+        * <Toolbar/>
 
-      * <Items/>
-
+            * <Items/>
 
 Proxies that represent properties of objects are nested inside the parent element. For example, a <Window/> element's [leftNavProperty](#!/api/Titanium.UI.Window-property-leftNavButton) is represented by a <LeftNavButton/> child element. Proxies can nest multiple levels, as shown with the Toolbar element in the XML view below.
 

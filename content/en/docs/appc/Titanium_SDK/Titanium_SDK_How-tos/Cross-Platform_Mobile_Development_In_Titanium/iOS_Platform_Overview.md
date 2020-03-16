@@ -1,17 +1,16 @@
 {"title":"iOS Platform Overview","weight":"20"}
 
-* [User interface conventions](#Userinterfaceconventions)
+* [User interface conventions](#user-interface-conventions)
 
-* [Minimalist hardware design](#Minimalisthardwaredesign)
+* [Minimalist hardware design](#minimalist-hardware-design)
 
-* [Apple's Human Interface Guidelines](#Apple'sHumanInterfaceGuidelines)
+* [Apple's Human Interface Guidelines](#apple's-human-interface-guidelines)
 
-* [Cocoa Touch](#CocoaTouch)
+* [Cocoa Touch](#cocoa-touch)
 
-* [Curated app distribution](#Curatedappdistribution)
+* [Curated app distribution](#curated-app-distribution)
 
-* [References and Further Reading](#ReferencesandFurtherReading)
-
+* [References and Further Reading](#references-and-further-reading)
 
 ## Objective
 
@@ -30,7 +29,6 @@ iOS stands apart from most other mobile operating systems in that both its softw
 * Cocoa Touch
 
 * Curated and closely controlled app distribution system
-
 
 ### User interface conventions
 
@@ -64,7 +62,6 @@ Cocoa Touch provides the key frameworks for developing applications on devices r
 
 * Map Kit Framework
 
-
 Titanium enables easy access to each of those functions. For example, Titanium enables access to the rich set of UI controls defined in UIKit.
 
 ### Curated app distribution
@@ -80,7 +77,6 @@ A key consideration is that you will need an [iOS Developer Center](http://devel
 * [Cocoa Touch](http://developer.apple.com/technologies/ios/cocoa-touch.html)
 
 * [Apple's iOS Developer Center](http://developer.apple.com/devcenter/ios/index.action)
-
 
 ## Summary
 

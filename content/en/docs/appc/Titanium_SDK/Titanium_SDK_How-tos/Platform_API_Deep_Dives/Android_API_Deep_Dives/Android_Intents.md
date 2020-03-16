@@ -1,27 +1,26 @@
 {"title":"Android Intents","weight":"10"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Intent types](#Intenttypes)
+* [Intent types](#intent-types)
 
-* [Create an intent](#Createanintent)
+* [Create an intent](#create-an-intent)
 
-  * [Create an explicit intent](#Createanexplicitintent)
+    * [Create an explicit intent](#create-an-explicit-intent)
 
-  * [Add extra data](#Addextradata)
+    * [Add extra data](#add-extra-data)
 
-  * [Add a category](#Addacategory)
+    * [Add a category](#add-a-category)
 
-* [Start an activity with an intent](#Startanactivitywithanintent)
+* [Start an activity with an intent](#start-an-activity-with-an-intent)
 
-* [Force an intent chooser](#Forceanintentchooser)
+* [Force an intent chooser](#force-an-intent-chooser)
 
-* [Example](#Example)
+* [Example](#example)
 
-  * [Complete code](#Completecode)
+    * [Complete code](#complete-code)
 
-* [Further reading](#Furtherreading)
-
+* [Further reading](#further-reading)
 
 ## Introduction
 
@@ -35,7 +34,6 @@ Intents can be used to start an activity, start a service or start a broadcast. 
 
 * To receive intents from other applications, see [Android Intent Filters](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Intent_Filters/).
 
-
 ## Intent types
 
 There are two kinds of intents:
@@ -44,30 +42,7 @@ There are two kinds of intents:
 
 * _Implicit intents_ do **NOT** specify the application to start. Instead, they declare a general action. The user can decide which application to start if multiple applications can handle the action or a default application has not been selected by the user. For example, if a user opens their browser and highlights some text, the user can share that text with other Android apps, such as an e-mail application, SMS application or a social networking application.
 
-
-The user highlights the text and
-clicks the **Share** button.
-
-The **Share** dialog appears and
-the user can select the application
-to send the text to, such as...
-
-...an e-mail application,
-
-...an SMS application
-
-...or a social networking
-application like Google+.
-
-![HighlightText](/Images/appc/download/attachments/43287298/HighlightText.png)
-
-![ShareDialog](/Images/appc/download/attachments/43287298/ShareDialog.png)
-
-![EmailClient](/Images/appc/download/attachments/43287298/EmailClient.png)
-
-![SmsClient](/Images/appc/download/attachments/43287298/SmsClient.png)
-
-![GooglePlusShare](/Images/appc/download/attachments/43287298/GooglePlusShare.png)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>The user highlights the text and<br>clicks the <strong>Share</strong> button.</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The <strong>Share</strong> dialog appears and<br>the user can select the application<br>to send the text to, such as...</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>...an e-mail application,</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>...an SMS application</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>...or a social networking<br>application like Google+.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/HighlightText.png" alt="images/download/attachments/43287298/HighlightText.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/ShareDialog.png" alt="images/download/attachments/43287298/ShareDialog.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/EmailClient.png" alt="images/download/attachments/43287298/EmailClient.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/SmsClient.png" alt="images/download/attachments/43287298/SmsClient.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/GooglePlusShare.png" alt="images/download/attachments/43287298/GooglePlusShare.png" class="confluence-embedded-image"></p><p></p></td></tr></tbody></table>
 
 ## Create an intent
 
@@ -75,16 +50,15 @@ To create an intent, use the Titanium.Android.createIntent() method to create an
 
 * action: Action to associate with the intent. Specify one of the Titanium.Android.ACTION\_\* constants. The most commonly used actions are:
 
-  * Titanium.Android.ACTION\_SEND: Send data to an application.
+    * Titanium.Android.ACTION\_SEND: Send data to an application.
 
-  * Titanium.Android.ACTION\_VIEW: View data in an application.
+    * Titanium.Android.ACTION\_VIEW: View data in an application.
 
 * flags: Optional flags to set to modify the behavior of the intent. Bitwise-OR the Titanium.Android.FLAG\_\* constants with the Intent object's flag property rather than specifying them during creation.
 
 * data: Optional data URI to pass to an application's activity.
 
 * type: Optional MIME type for the intent.
-
 
 For the action, you can also define your own custom action name. Use a reverse domain scheme to name the action to avoid potential conflicts, for example, com.appcelerator.action.LINT . Custom actions are only useful to communicate between your applications and application activities using intents.
 
@@ -107,7 +81,6 @@ To create an explicit intent, in addition to the previously mentioned intent pro
 * packageName: Package name of the application. For Titanium project's, this is the project's application ID located in the tiapp.xml file.
 
 * url: URL of the JavaScript activity file to launch.
-
 
 The following example creates an intent to launch the main activity of the MyApp application:
 
@@ -177,7 +150,6 @@ To add a category to an intent, use the Intent's addCategory() method. A categor
 
 * Titanium.Android.CATEGORY\_TEST: Activity is for testing purposes.
 
-
 For categories, you can also define your own custom category name. Use a reverse domain scheme to name the category to avoid potential conflicts, for example, org.foo.category.SUPER . Custom categories are only useful to communicate between your applications and application activities using intents.
 
 ## Start an activity with an intent
@@ -187,7 +159,6 @@ To start an activity (application or application component), call the applicatio
 * The startActivity() method starts an Activity by passing it only an intent object.
 
 * The startActivityForResult() method starts an Activity by passing it an intent object and a callback function to handle the response returned by the activity when it finishes. Use this method if the application wants to communicate between two activities.
-
 
 Wait for the TabGroup or Window to open before invoking any methods on its activity.
 
@@ -277,11 +248,7 @@ Finally, pass the intent to the application's current Activity's startActivity()
 
 When the intent is sent, the OS should display a list of applications to launch if it has multiple applications that can receive text intents. If there are not many applications installed on the device or if the user selected a default application to handle text, the default application will be launched.
 
-![AppUI](/Images/appc/download/attachments/43287298/AppUI.png)
-
-![ShareDialog2](/Images/appc/download/attachments/43287298/ShareDialog2.png)
-
-![EmailClient2](/Images/appc/download/attachments/43287298/EmailClient2.png)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/AppUI.png" alt="images/download/attachments/43287298/AppUI.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/ShareDialog2.png" alt="images/download/attachments/43287298/ShareDialog2.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/EmailClient2.png" alt="images/download/attachments/43287298/EmailClient2.png" class="confluence-embedded-image"></p></td></tr></tbody></table>
 
 ### Complete code
 

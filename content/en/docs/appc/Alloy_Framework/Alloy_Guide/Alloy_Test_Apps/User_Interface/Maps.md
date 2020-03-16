@@ -1,11 +1,10 @@
 {"title":"Maps","weight":"90"}
 
-* [Android setup](#Androidsetup)
+* [Android setup](#android-setup)
 
-* [App configuration](#Appconfiguration)
+* [App configuration](#app-configuration)
 
-* [See also](#Seealso)
-
+* [See also](#see-also)
 
 Demonstrates how to use the Maps module and display annotations on iOS and Android.
 
@@ -37,14 +36,13 @@ Alternatively, you add the module to your project by clicking the green ![add](/
 
 To use the Maps module on Android, there are some setup tasks you first need to complete:
 
-* [Install the Google Play Services SDK](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/#InstalltheGooglePlayServicesSDK)
+* [Install the Google Play Services SDK](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/#install-the-google-play-services-sdk)
 
-* [Obtain and Add a Google API Key](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/#ObtainandAddaGoogleAPIKey)
+* [Obtain and Add a Google API Key](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/#obtain-and-add-a-google-api-key)
 
-* [Obtain the SHA-1 certificate fingerprint](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/#ObtaintheSHA-1certificatefingerprint)
+* [Obtain the SHA-1 certificate fingerprint](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/#obtain-the-sha-1-certificate-fingerprint)
 
-* [Add the Google API key and permissions to the tiapp.xml file](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/#AddtheGoogleAPIkeyandpermissionstothetiapp.xmlfile)
-
+* [Add the Google API key and permissions to the tiapp.xml file](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/#add-the-google-api-key-and-permissions-to-the-tiapp.xml-file)
 
 Once these steps are complete, using the Map module is the same on Android or iOS.
 

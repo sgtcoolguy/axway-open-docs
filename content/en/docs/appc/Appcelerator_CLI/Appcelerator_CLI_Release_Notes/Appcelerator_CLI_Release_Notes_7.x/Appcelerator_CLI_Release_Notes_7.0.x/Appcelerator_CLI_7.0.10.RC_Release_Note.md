@@ -2,42 +2,23 @@
 
 Appcelerator CLI 7.0.10.RC is a patch release that includes several improvements and bug fixes. This release has been re-issued. This release also drops support for SOASTA.
 
-As of this GA release, the previous CLI patch release is no longer supported. End of support for this version will be up to 2019-08-20 or until the next patch release . Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous CLI patch release is no longer supported. End of support for this version will be up to 2019-08-20 or until the next patch release . Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Component versions
 
 The following components are shipped with CLI 7.0.10:
 
-Alloy
-
-1.13.8
-
-API Builder
-
-3.2.11
-
-Cloud CLI
-
-2.0.12
-
-Titanium CLI
-
-5.1.1
-
-Daemon
-
-1.1.3
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Alloy</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p class="p1">1.13.8</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>API Builder</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p class="p1">3.2.11</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Cloud CLI</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p class="p1">2.0.12</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium CLI</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p class="p1">5.1.1</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Daemon</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>1.1.3</p></td></tr></tbody></table>
 
 ## Improvements
 
 * [ALOY-1639](https://jira.appcelerator.org/browse/ALOY-1639) - Use Matrix2D/Matrix3D instead of 2DMatrix/3DMatrix
 
-  * Deprecated 2DMatrix and 3DMatrix which is replaced by Matrix2D and Matrix3D
+    * Deprecated 2DMatrix and 3DMatrix which is replaced by Matrix2D and Matrix3D
 
 * [ALOY-1640](https://jira.appcelerator.org/browse/ALOY-1640) - Modify <TabbedBar/> to use "Ti.UI" instead of "Ti.UI.iOS" for 8.0.0
 
-  * Parity for Android
-
+    * Parity for Android
 
 ## Fixed issues
 

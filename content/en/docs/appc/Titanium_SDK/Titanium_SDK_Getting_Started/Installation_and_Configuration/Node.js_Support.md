@@ -1,15 +1,14 @@
 {"title":"Node.js Support","weight":"80"}
 
-* [Minor differences](#Minordifferences)
+* [Minor differences](#minor-differences)
 
-* [Algorithm summary](#Algorithmsummary)
+* [Algorithm summary](#algorithm-summary)
 
-  * [Require(X) from module at path Y](#Require(X)frommoduleatpathY)
+    * [Require(X) from module at path Y](#requirex-from-module-at-path-y)
 
-  * [LOAD\_AS\_FILE(X)](#LOAD_AS_FILE(X))
+    * [LOAD\_AS\_FILE(X)](#load_as_filex)
 
-  * [LOAD\_AS\_DIRECTORY(X)](#LOAD_AS_DIRECTORY(X))
-
+    * [LOAD\_AS\_DIRECTORY(X)](#load_as_directoryx)
 
 Titanium SDK has full NodeJS support so users can use NPM modules Android and iOS platforms.
 
@@ -25,7 +24,6 @@ This implementation includes the NodeJS require algorithm with some minor differ
 
 * The SDK will load JSON files and directories (package.json's main property (look at it, resolve it, and try to load it), index.js, and index.json)
 
-
 ## Algorithm summary
 
 To summarize the algorithm the SDK uses, here are three summaries for requiring a module, loading as file, and loading as directory:
@@ -34,34 +32,33 @@ To summarize the algorithm the SDK uses, here are three summaries for requiring 
 
 1. If X is a core module,
 
-  1. return the core module
+    1. return the core module
 
-  2. STOP
+    2. STOP
 
 2. If X begins with ./, or ../,
 
-  1. LOAD\_AS\_FILE(Y + X)
+    1. LOAD\_AS\_FILE(Y + X)
 
-  2. LOAD\_AS\_DIRECTORY(Y + X)
+    2. LOAD\_AS\_DIRECTORY(Y + X)
 
 3. If X begins with /,
 
-  1. LOAD\_AS\_FILE(X)
+    1. LOAD\_AS\_FILE(X)
 
-  2. LOAD\_AS\_DIRECTORY(X)
+    2. LOAD\_AS\_DIRECTORY(X)
 
 4. If X does not contain '/', assume it should try and load CommonJS module first....
 
-  1. LOAD\_AS\_FILE(X/X.js): try to load "legacy" CommonJS file named module.id/module.id.js.
+    1. LOAD\_AS\_FILE(X/X.js): try to load "legacy" CommonJS file named module.id/module.id.js.
 
-  2. LOAD\_AS\_DIRECTORY(X): try to load CommonJS module as a directory
+    2. LOAD\_AS\_DIRECTORY(X): try to load CommonJS module as a directory
 
 5. WARN user about possible bad require being treated as absolute THROW "not found"
 
-  1. LOAD\_AS\_FILE(X)
+    1. LOAD\_AS\_FILE(X)
 
-  2. LOAD\_AS\_DIRECTORY(X)
-
+    2. LOAD\_AS\_DIRECTORY(X)
 
 ### LOAD\_AS\_FILE(X)
 
@@ -71,15 +68,14 @@ To summarize the algorithm the SDK uses, here are three summaries for requiring 
 
 3. If X.json is a file, parse X.json to a JavaScript Object. STOP
 
-
 ### LOAD\_AS\_DIRECTORY(X)
 
 1. If X/package.json is a file, If X/index.js is a file, load X/index.js as JavaScript text. STOP
 
-  1. Parse X/package.json and look for "main" field.
+    1. Parse X/package.json and look for "main" field.
 
-  2. let M = X + (json main field)
+    2. let M = X + (json main field)
 
-  3. LOAD\_AS\_FILE(M)
+    3. LOAD\_AS\_FILE(M)
 
 2. If X/index.json is a file, parse X/index.json to a JavaScript object. STOP

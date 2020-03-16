@@ -2,31 +2,18 @@
 
 Appcelerator CLI 5.1.0 is a minor release that includes improvements and bug fixes.
 
-As of this release, CLI 5.0.x will not be supported six months from 5.1.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, CLI 5.0.x will not be supported six months from 5.1.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Component Versions
 
 The following components are shipped with CLI 5.1.0:
 
-Name
-
-Version
-
-Alloy
-
-1.7.26
-
-**[Arrow Builder](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Release_Notes/)**
-
-**1.3.22**
-
-Arrow Cloud CLI
-
-1.0.31
-
-Titanium CLI
-
-5.0.5
+| Name | Version |
+| --- | --- |
+| Alloy | 1.7.26 |
+| **[Arrow Builder](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Release_Notes/)** | **1.3.22** |
+| Arrow Cloud CLI | 1.0.31 |
+| Titanium CLI | 5.0.5 |
 
 ## Fixed Issues and Improvements
 

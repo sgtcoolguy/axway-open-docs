@@ -88,5 +88,4 @@ You will need the HTTPS module and the ti.cloud module to test this sample app.
 
 5. Click **btn**.
 
-
 When testing the HTTP client connecting to the https site at this point, you should get an error message saying that no user or password was found, which is what is expected to report if everything was set up properly.

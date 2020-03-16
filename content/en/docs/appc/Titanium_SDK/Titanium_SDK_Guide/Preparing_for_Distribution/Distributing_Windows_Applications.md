@@ -1,35 +1,34 @@
 {"title":"Distributing Windows Applications","weight":"60"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Create an Application](#CreateanApplication)
+* [Create an Application](#create-an-application)
 
-* [Update the tiapp.xml File](#Updatethetiapp.xmlFile)
+* [Update the tiapp.xml File](#update-the-tiapp.xml-file)
 
-* [Package for Windows Phone Store](#PackageforWindowsPhoneStore)
+* [Package for Windows Phone Store](#package-for-windows-phone-store)
 
-  * [Set the Publisher ID](#SetthePublisherID)
+    * [Set the Publisher ID](#set-the-publisher-id)
 
-  * [Package for Windows Phone Store with Studio](#PackageforWindowsPhoneStorewithStudio)
+    * [Package for Windows Phone Store with Studio](#package-for-windows-phone-store-with-studio)
 
-  * [Package for Windows Phone Store with the CLI](#PackageforWindowsPhoneStorewiththeCLI)
+    * [Package for Windows Phone Store with the CLI](#package-for-windows-phone-store-with-the-cli)
 
-* [Package for Windows Store](#PackageforWindowsStore)
+* [Package for Windows Store](#package-for-windows-store)
 
-  * [Package for Windows Store with Studio](#PackageforWindowsStorewithStudio)
+    * [Package for Windows Store with Studio](#package-for-windows-store-with-studio)
 
-  * [Package for Windows Store with the CLI](#PackageforWindowsStorewiththeCLI)
+    * [Package for Windows Store with the CLI](#package-for-windows-store-with-the-cli)
 
-* [Submit an Application](#SubmitanApplication)
+* [Submit an Application](#submit-an-application)
 
-  * [Pricing and availability](#Pricingandavailability)
+    * [Pricing and availability](#pricing-and-availability)
 
-  * [App properties](#Appproperties)
+    * [App properties](#app-properties)
 
-  * [Packages](#Packages)
+    * [Packages](#packages)
 
-  * [Description](#Description)
-
+    * [Description](#description)
 
 As of Titanium 9.0.0, building Windows apps is no longer supported.
 
@@ -47,7 +46,6 @@ To distribute an application on the Windows Store (for x86-based applications) a
 
 4. Start an application submission and upload your APPX file(s) with the submission.
 
-
 ## Create an Application
 
 To submit an application to the Windows Store or Windows Phone Store, you need to create an application project in the Windows Dev Center.
@@ -61,7 +59,6 @@ If you have not created an application yet:
 3. Click **Create a new app** in the left navigation.
 
 4. Enter a name for your application and click **Reserve app name**.
-
 
 The Windows Dev Center will create a new application in your dashboard. The process will generate IDs and other fields that will need to be updated in the tiapp.xml file.
 
@@ -79,12 +76,9 @@ Titanium uses the settings in the tiapp.xml file to package your project. Some o
 
 5. Add the <id> element to the <windows> element. The node text of the element must match the Package/Identity/Name of the application, which was generated when you created the application in the Windows Dev Center Dashboard.
 
-
 Prior to Release 5.1.0
 
 Prior to Release 5.1.0, set the Package/Identity/Name of the application to the <id> element under the <ti:app> element rather than the <windows> element.
-
-
 
 **To retrieve your Windows publisher ID and Publisher display name:**
 
@@ -93,7 +87,6 @@ Prior to Release 5.1.0, set the Package/Identity/Name of the application to the 
 2. Click **Dashboard** in the top-right corner.
 
 3. Click **Account settings** in the left navigation.
-
 
 The publisher ID will be under the **Account details** section as the **Windows publisher ID** field, and the publisher display name will be under the **Contact info** section as the **Publisher display name** field.
 
@@ -106,7 +99,6 @@ The publisher ID will be under the **Account details** section as the **Windows 
 3. Click the application project in the left navigation.
 
 4. Expand **App management** and click **App identity**.
-
 
 tiapp.xml
 
@@ -150,7 +142,6 @@ To package with Studio:
 
 4. If the **Launch Automatically** option is enabled under the **Target** drop-down list, the application will be automatically launched after the device is selected. If not, you need to click the **Launch** button to start the build process.
 
-
 Studio will prompt you to enter a location to copy the generated APPX file to.
 
 ![WindowsPhonePackage](/Images/appc/download/attachments/43308729/WindowsPhonePackage.png)
@@ -176,7 +167,6 @@ To package with Studio:
 3. Select **Windows > Windows Store** from the **Target** drop-down list.
 
 4. If the **Launch Automatically** option is enabled under the **Target** drop-down list, the build process will automatically start. If not, you need to click the **Launch** button to start the build process.
-
 
 ![PackageWindowsStore](/Images/appc/download/attachments/43308729/PackageWindowsStore.png)
 
@@ -212,7 +202,6 @@ You will be prompted to enter the same password in subsequent dialogs and to gen
 
 * generated.pkv: private key
 
-
 After the certificate is generated, the CLI will automatically create and sign the APPX file.
 
 To package an APPX file for the Windows Store after you have generated the certificate, run:
@@ -230,7 +219,6 @@ In the Windows Dev Center Dashboard:
 2. Click **Submission** in the left navigation.
 
 3. Click **Start your Submission**.
-
 
 Complete the following fields in each category, then click **Submit to the Store** to start the certification process.
 
@@ -260,84 +248,12 @@ You are required to enter a description and upload one screenshot of your applic
 
 The following table describes the image assets you may upload with your application. Only the screenshots are required for application submission.
 
-Type
-
-Dimensions (pixels)
-
-File Type
-
-File Size
-
-Notes
-
-Desktop screenshot
-
-* 1366 x 768 or larger
-
-* 768 x 1366 or larger
-
-
-PNG
-
-< 2MB
-
-May submit up to 9
-
-Mobile screenshot
-
-* 768 x 1280
-
-* 720 x 1280
-
-* 480 x 800
-
-* 1280 x 768
-
-* 1280 x 720
-
-* 800 x 480
-
-
-PNG
-
-< 2 MB
-
-May submit up to 8
-
-App tile icon
-
-300 x 300
-
-PNG
-
-For Windows Phone and earlier
-
-Promotional artwork
-
-* 358 x 173 (wide icon)
-
-* 358 x 358 (square icon)
-
-* 1000 x 800 (background image)
-
-* 414 x 180
-
-* 414 x 468
-
-* 558 x 558
-
-* 558 x 756
-
-* 846 x 468
-
-* 2400 x 1200 (recommended)
-
-
-Used to showcase your application in the store.
-
-May submit only one image per file size.
-
-It is highly recommended to submit a 2400 x 1200 image, which the Microsoft team will resize and crop for promotional layouts.
+| Type | Dimensions (pixels) | File Type | File Size | Notes |
+| --- | --- | --- | --- | --- |
+| Desktop screenshot | * 1366 x 768 or larger<br />    <br />* 768 x 1366 or larger | PNG | < 2MB | May submit up to 9 |
+| Mobile screenshot | * 768 x 1280<br />    <br />* 720 x 1280<br />    <br />* 480 x 800<br />    <br />* 1280 x 768<br />    <br />* 1280 x 720<br />    <br />* 800 x 480 | PNG | < 2 MB | May submit up to 8 |
+| App tile icon | 300 x 300 | PNG |  | For Windows Phone and earlier |
+| Promotional artwork | * 358 x 173 (wide icon)<br />    <br />* 358 x 358 (square icon)<br />    <br />* 1000 x 800 (background image)<br />    <br />* 414 x 180<br />    <br />* 414 x 468<br />    <br />* 558 x 558<br />    <br />* 558 x 756<br />    <br />* 846 x 468<br />    <br />* 2400 x 1200 (recommended) |  |  | Used to showcase your application in the store.<br /><br />May submit only one image per file size.<br /><br />It is highly recommended to submit a 2400 x 1200 image, which the Microsoft team will resize and crop for promotional layouts. |
 
 For more information about screenshot and app icons, see also [App screenshots, images, and trailers](https://docs.microsoft.com/en-us/windows/uwp/publish/app-screenshots-and-images).
 

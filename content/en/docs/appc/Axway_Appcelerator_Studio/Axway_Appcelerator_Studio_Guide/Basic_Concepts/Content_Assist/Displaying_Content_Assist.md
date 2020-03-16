@@ -2,31 +2,29 @@
 
 As you code, Content Assist provides tips on available properties and methods and the parameters that a method takes. See [About Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/About_Content_Assist/) for a detailed explanation.
 
-* [Instructions](#Instructions)
+* [Instructions](#instructions)
 
-* [Understanding what browser/user agents enable which features](#Understandingwhatbrowser/useragentsenablewhichfeatures)
+* [Understanding what browser/user agents enable which features](#understanding-what-browser/user-agents-enable-which-features)
 
-* [Setting content assist preferences](#Settingcontentassistpreferences)
+* [Setting content assist preferences](#setting-content-assist-preferences)
 
-  * [Changing the user agents shown with content assist](#Changingtheuseragentsshownwithcontentassist)
+    * [Changing the user agents shown with content assist](#changing-the-user-agents-shown-with-content-assist)
 
-  * [Filter the proposal list by supported items](#Filtertheproposallistbysupporteditems)
+    * [Filter the proposal list by supported items](#filter-the-proposal-list-by-supported-items)
 
-  * [Single proposal options](#Singleproposaloptions)
+    * [Single proposal options](#single-proposal-options)
 
-  * [Content display options](#Contentdisplayoptions)
+    * [Content display options](#content-display-options)
 
-  * [Hover options](#Hoveroptions)
+    * [Hover options](#hover-options)
 
-* [Related Topics](#RelatedTopics)
-
+* [Related Topics](#related-topics)
 
 ## Instructions
 
 To display the tips provided by content assist:
 
 * Content Assist automatically pops up a context menu or yellow tip box as you type the name of an object or function to which Content Assist applies.
-
 
 To display a longer Tool Tip, press **F2** while your cursor is on the function or object. (You can also select **ShowToolTip** from the **Edit** menu while your cursor is on the function or object.)
 
@@ -37,7 +35,6 @@ By default, content assist will show a list of "user agents" with each proposal.
 * Full-color: the property is available
 
 * Greyed-out: the property is not available
-
 
 If no information is available, the property is assumed to be **available**. In the image below, you can see some items apply only to Chrome, some to Firefox, and some to IE.
 
@@ -59,7 +56,6 @@ Content assist has several options which may be adjusted.
 
 4. Press **OK**
 
-
 ### Filter the proposal list by supported items
 
 You can choose to show proposals in content assist only if they match certain conditions. This option is set for all project types.
@@ -71,7 +67,6 @@ Show proposals that contain:
 * One or more selected user agents: a proposal will appear if one of more of the selected user agents support this feature.
 
 * All selected user agents: a proposal will only appear if _all_ user agents support this feature.
-
 
 ### Single proposal options
 

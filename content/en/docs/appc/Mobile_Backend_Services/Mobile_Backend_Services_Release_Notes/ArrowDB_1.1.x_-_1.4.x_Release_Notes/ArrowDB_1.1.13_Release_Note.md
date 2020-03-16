@@ -4,7 +4,6 @@
 
 * Added the ability to batch create custom objects using the [objects/:classname/batch\_create.json method](/arrowdb/latest/#!/api/CustomObjects-method-batch_create).
 
-
 ## Bug fixes
 
 * Fixed an issue where relational fields were not expanded in responses from Message APIs.

@@ -2,20 +2,19 @@
 
 To preview PHP pages and have them rendered appropriately, you need a web server, such as [XAMPP](http://www.apachefriends.org/en/xampp.html), which can serve PHP pages. If you are using OS X, you may be able to use the pre-bundled web server that comes with the operating system, or you can download XAMPP too. In either case, the instructions will be relatively similar.
 
-* [Install XAMPP](#InstallXAMPP)
+* [Install XAMPP](#install-xampp)
 
-* [Set up your project](#Setupyourproject)
+* [Set up your project](#set-up-your-project)
 
-  * [Create a new project](#Createanewproject)
+    * [Create a new project](#create-a-new-project)
 
-  * [Import an existing project](#Importanexistingproject)
+    * [Import an existing project](#import-an-existing-project)
 
-* [Create your preview server](#Createyourpreviewserver)
+* [Create your preview server](#create-your-preview-server)
 
-* [Start the external server](#Starttheexternalserver)
+* [Start the external server](#start-the-external-server)
 
-* [Preview your files](#Previewyourfiles)
-
+* [Preview your files](#preview-your-files)
 
 If you are currently running IIS (which runs on Port 80 by default), make sure you don't have a Port conflict when you set up the webserver. If your web server uses Port 80, you can stop IIS to use this port for your web server.
 
@@ -26,7 +25,6 @@ If you are currently running IIS (which runs on Port 80 by default), make sure y
 * Windows: \\xampp\\htdocs
 
 * OS X: /Applications/XAMPP/htdocs/
-
 
 If you decide to use a different install location (or a different server), the above paths may be somewhat different, but make a note of the document root as it will become important in the next step.
 
@@ -48,16 +46,14 @@ For this document, we will refer to a project named **myproject**. Replace this 
 
 4. Create a new folder in that directory with the same name as your project and select that new folder for your project location (shown below). Using the above paths, that would equate to _\\xampp\\htdocs\\myproject_ on Windows, or _/Applications/XAMPP/htdocs/myproject_ on OSX.
 
-  ![XamppProject](/Images/appc/download/attachments/30083123/XamppProject.png)
+    ![XamppProject](/Images/appc/download/attachments/30083123/XamppProject.png)
 5. Continue to choose a project template, or Click the **Finish** button.
-
 
 ### Import an existing project
 
 1. In Finder, Windows Explorer, or equivalent, copy the files from their current location into a sub-folder under the **htdocs** (or equivalent) folder in your server installation directory. Using the above paths, that would equate to _\\xampp\\htdocs\\myproject_ on Windows, or _/Applications/XAMPP/htdocs/myproject_ on OSX.
 
 2. Follow the steps here [Importing an Existing Project](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Working_with_Projects/Importing_an_Existing_Project/).
-
 
 ## Create your preview server
 
@@ -71,18 +67,16 @@ _A more detailed discussion of this step can be found at [Creating a Custom Prev
 
 4. Fill out the form:
 
-  * **Name:** Choose a descriptive name that describes the server uniquely.
+    * **Name:** Choose a descriptive name that describes the server uniquely.
 
-  * **Base URL:** The URL of the server up to the document root; in other words
-    http://localhost/myproject
+    * **Base URL:** The URL of the server up to the document root; in other words
+        http://localhost/myproject
 
-    from above.
+        from above.
 
-  * **Document Root:** The path to the public root of the web site, in other words, **\\xampp\\htdocs\\myproject** from above.
-
+    * **Document Root:** The path to the public root of the web site, in other words, **\\xampp\\htdocs\\myproject** from above.
 
 5. Click **OK** and **OK.**
-
 
 ## Start the external server
 

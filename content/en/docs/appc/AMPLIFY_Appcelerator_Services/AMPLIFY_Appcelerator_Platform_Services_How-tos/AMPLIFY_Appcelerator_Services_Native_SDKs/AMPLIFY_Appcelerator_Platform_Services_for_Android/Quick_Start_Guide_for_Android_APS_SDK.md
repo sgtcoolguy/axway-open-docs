@@ -4,42 +4,41 @@ Pro or Enterprise Subscription Required
 
 This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Setup](#Setup)
+* [Setup](#setup)
 
-  * [Register an APS SDK application](#RegisteranAPSSDKapplication)
+    * [Register an APS SDK application](#register-an-aps-sdk-application)
 
-  * [Register an API or Microservice application](#RegisteranAPIorMicroserviceapplication)
+    * [Register an API or Microservice application](#register-an-api-or-microservice-application)
 
-  * [Register a Website or Web application](#RegisteraWebsiteorWebapplication)
+    * [Register a Website or Web application](#register-a-website-or-web-application)
 
-  * [Register a Custom application](#RegisteraCustomapplication)
+    * [Register a Custom application](#register-a-custom-application)
 
-* [Quick tutorial](#Quicktutorial)
+* [Quick tutorial](#quick-tutorial)
 
-  * [Modify the application](#Modifytheapplication)
+    * [Modify the application](#modify-the-application)
 
-  * [Building the application](#Buildingtheapplication)
+    * [Building the application](#building-the-application)
 
-  * [Capture user session events](#Captureusersessionevents)
+    * [Capture user session events](#capture-user-session-events)
 
-  * [Send an Analytics feature event](#SendanAnalyticsfeatureevent)
+    * [Send an Analytics feature event](#send-an-analytics-feature-event)
 
-  * [Query Cloud users](#QueryCloudusers)
+    * [Query Cloud users](#query-cloud-users)
 
-  * [Log in to a Cloud account](#LogintoaCloudaccount)
+    * [Log in to a Cloud account](#log-in-to-a-cloud-account)
 
-  * [Log a handled exception](#Logahandledexception)
+    * [Log a handled exception](#log-a-handled-exception)
 
-  * [Set a username for crash logs](#Setausernameforcrashlogs)
+    * [Set a username for crash logs](#set-a-username-for-crash-logs)
 
-  * [Testing the tutorial sample](#Testingthetutorialsample)
+    * [Testing the tutorial sample](#testing-the-tutorial-sample)
 
-  * [Next Steps for Appcelerator Analytics and Cloud](#NextStepsforAppceleratorAnalyticsandCloud)
-
+    * [Next Steps for Appcelerator Analytics and Cloud](#next-steps-for-appcelerator-analytics-and-cloud)
 
 ## Introduction
 
@@ -67,7 +66,6 @@ This document assumes you have an existing Android application and are familiar 
 
 * Eclipse 3.6 or later with the ADT plug-in (see [Android Developers: ADT Plugin](http://developer.android.com/sdk/installing/installing-adt.html)), or the Apache Ant command-line tool (see [Apache Ant](http://ant.apache.org/)).
 
-
 ADT has been discontinued, and we don't recommend using it.
 
 ## Setup
@@ -79,7 +77,6 @@ Before you can use Appcelerator Services in your application you need to:
 * Download the SDK and appcelerator-test utility
 
 * Get the application keys
-
 
 ### Register an APS SDK application
 
@@ -95,7 +92,7 @@ To register an APS SDK application for services:
 
 4. Select **APS SDK** from the _Type_ selection menu.
 
-  ![RegisterAppForService_latest_APSSDK](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_APSSDK.png)
+    ![RegisterAppForService_latest_APSSDK](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_APSSDK.png)
 5. Select a **Platform** (**Andriod** or **iOS**).
 
 6. Optionally, enter a unique **Identifier** for your application.
@@ -104,14 +101,13 @@ To register an APS SDK application for services:
 
 8. Select **Services** for your application by selecting or deselecting the check-boxes for the following:
 
-  * Analytics
+    * Analytics
 
-  * Provision Cloud Services (Mobile Backend Services)
+    * Provision Cloud Services (Mobile Backend Services)
 
 9. Add teams to the application from your organization by clicking the add (**+**) button in the Assign Teams list.
 
 10. Click **OK**.
-
 
 Appcelerator Dashboard displays the **Services** tab for your application. Follow the directions to add Platform Services to your application.
 
@@ -127,7 +123,7 @@ To register an API or microservice application:
 
 4. Select **API/Microservice** from the _Type_ selection menu.
 
-  ![RegisterAppForService_latest_API](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_API.png)
+    ![RegisterAppForService_latest_API](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_API.png)
 5. Enter a **Platform** for your application.
 
 6. Optionally, enter a unique **Identifier** for your application.
@@ -136,14 +132,13 @@ To register an API or microservice application:
 
 8. Select **Services** for your application by selecting or deselecting the check-boxes for the following:
 
-  * Analytics
+    * Analytics
 
-  * Provision Cloud Services (Mobile Backend Services)
+    * Provision Cloud Services (Mobile Backend Services)
 
 9. Add teams to the application from your organization by clicking the add (**+**) button in the Assign Teams list.
 
 10. Click **OK**.
-
 
 ### Register a Website or Web application
 
@@ -157,7 +152,7 @@ To register a Website or Web application:
 
 4. Select **Website/Web App** from the _Type_ selection menu.
 
-  ![RegisterAppForService_latest_Web](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_Web.png)
+    ![RegisterAppForService_latest_Web](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_Web.png)
 5. Enter a **Platform** for your application.
 
 6. Optionally, enter a unique **Identifier** for your application.
@@ -166,14 +161,13 @@ To register a Website or Web application:
 
 8. Select **Services** for your application by selecting or deselecting the check-boxes for the following:
 
-  * Analytics
+    * Analytics
 
-  * Provision Cloud Services (Mobile Backend Services)
+    * Provision Cloud Services (Mobile Backend Services)
 
 9. Add teams to the application from your organization by clicking the add (**+**) button in the Assign Teams list.
 
 10. Click **OK**.
-
 
 ### Register a Custom application
 
@@ -187,7 +181,7 @@ To register a custom application (other than APS SDK, API/Microservice, or Websi
 
 4. Select **Other** from the _Type_ selection menu.
 
-  ![RegisterAppForService_latest_Other](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_Other.png)
+    ![RegisterAppForService_latest_Other](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_Other.png)
 5. Enter a **Platform** for your application.
 
 6. Optionally, enter a unique **Identifier** for your application.
@@ -196,14 +190,13 @@ To register a custom application (other than APS SDK, API/Microservice, or Websi
 
 8. Select **Services** for your application by selecting or deselecting the check-boxes for the following:
 
-  * Analytics
+    * Analytics
 
-  * Provision Cloud Services (Mobile Backend Services)
+    * Provision Cloud Services (Mobile Backend Services)
 
 9. Add teams to the application from your organization by clicking the add (**+**) button in the Assign Teams list.
 
 10. Click **OK**.
-
 
 Dashboard displays the Platform Services tab for your application. In the tab, you can download the APS SDK and appcelerator-test utility, and get code snippets to copy and paste into your application.
 
@@ -223,64 +216,63 @@ The following tutorial demonstrates basic setup and usage of Analytics and Cloud
 
 4. Modify the project's AndroidManifest.xml file to include the ACCESS\_NETWORK\_STATE, ACCESS\_WIFI\_STATE, GET\_TASKS, INTERNET, READ\_LOGS, and WRITER\_EXTERNAL\_STORAGE user permissions and declare the com.appcelerator.aps.AnalyticsService as a Service class, which allows the APS library to send analytic events to the APS servers while the application is in the background:
 
-  AndroidManifest.xml
+    AndroidManifest.xml
 
-  `<?``xml`  `version``=``"1.0"`  `encoding``=``"utf-8"``?>`
+    `<?``xml`  `version``=``"1.0"`  `encoding``=``"utf-8"``?>`
 
-  `<``manifest`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"`
+    `<``manifest`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"`
 
-  `package``=``"com.appcelerator.sample"`
+    `package``=``"com.appcelerator.sample"`
 
-  `android:versionCode``=``"1"`
+    `android:versionCode``=``"1"`
 
-  `android:versionName``=``"1.0"` `>`
+    `android:versionName``=``"1.0"` `>`
 
-  `<!-- Add these permissions to enable Analytics and Cloud -->`
+    `<!-- Add these permissions to enable Analytics and Cloud -->`
 
-  `<``uses``-permission` `android:name``=``"android.permission.ACCESS_NETWORK_STATE"``/>`
+    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_NETWORK_STATE"``/>`
 
-  `<``uses``-permission` `android:name``=``"android.permission.ACCESS_WIFI_STATE"``/>`
+    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_WIFI_STATE"``/>`
 
-  `<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
+    `<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
 
-  `<``uses``-permission` `android:name``=``"android.permission.WRITE_EXTERNAL_STORAGE"``/>`
+    `<``uses``-permission` `android:name``=``"android.permission.WRITE_EXTERNAL_STORAGE"``/>`
 
-  `<``uses``-permission` `android:name``=``"android.permission.GET_TASKS"` `/>`
+    `<``uses``-permission` `android:name``=``"android.permission.GET_TASKS"` `/>`
 
-  `<``uses``-permission` `android:name``=``"android.permission.READ_LOGS"``/>`
+    `<``uses``-permission` `android:name``=``"android.permission.READ_LOGS"``/>`
 
-  `<``application``>`
+    `<``application``>`
 
-  `<``activity``>`
+    `<``activity``>`
 
-  `...`
+    `...`
 
-  `</``activity``>`
+    `</``activity``>`
 
-  `<!-- Add this service to enable Analytics -->`
+    `<!-- Add this service to enable Analytics -->`
 
-  `<``service`  `android:name``=``"com.appcelerator.aps.APSAnalyticsService"`
+    `<``service`  `android:name``=``"com.appcelerator.aps.APSAnalyticsService"`
 
-  `android:exported``=``"false"` `/>`
+    `android:exported``=``"false"` `/>`
 
-  `</``application``>`
+    `</``application``>`
 
-  `</``manifest``>`
+    `</``manifest``>`
 
 5. Add the following import statement to the main Activity of the project:
 
-  MainActivity.java
+    MainActivity.java
 
-  `import` `com.appcelerator.aps.APSServiceManager;`
+    `import` `com.appcelerator.aps.APSServiceManager;`
 
 6. In the main Activity's onCreate() method, add the following method call to enable the APS services.
 
-  MainActivity.java
+    MainActivity.java
 
-  `APSServiceManager.getInstance().enable(getApplicationContext(),` `"APP_KEY"``);`
+    `APSServiceManager.getInstance().enable(getApplicationContext(),` `"APP_KEY"``);`
 
-  The Android application is now ready to make method calls using the APS SDK APIs.
-
+    The Android application is now ready to make method calls using the APS SDK APIs.
 
 ### Modify the application
 
@@ -294,138 +286,137 @@ Customize the application's UI to display a spinner, text field and button, and 
 
 4. In the MainActivity.java file, modify the code to save an instance of the current activity, Spinner and EditText widgets. Modify the application to bind a doClick method to the Button's onClick listener and create an empty function called populateSpinner. You also need to import additional packages. In the following sections, you will add code to these handlers that call the Cloud and Analytics services.
 
-  MainActivity.java
+    MainActivity.java
 
-  `// Import the following packages`
+    `// Import the following packages`
 
-  `import` `android.app.Activity;`
+    `import` `android.app.Activity;`
 
-  `import` `android.util.Log;`
+    `import` `android.util.Log;`
 
-  `import` `android.widget.ArrayAdapter;`
+    `import` `android.widget.ArrayAdapter;`
 
-  `import` `android.widget.Button;`
+    `import` `android.widget.Button;`
 
-  `import` `android.widget.EditText;`
+    `import` `android.widget.EditText;`
 
-  `import` `android.widget.Spinner;`
+    `import` `android.widget.Spinner;`
 
-  `import` `java.util.HashMap;`
+    `import` `java.util.HashMap;`
 
-  `import` `org.json.JSONArray;`
+    `import` `org.json.JSONArray;`
 
-  `import` `com.appcelerator.aps.APSAnalytics;`
+    `import` `com.appcelerator.aps.APSAnalytics;`
 
-  `import` `com.appcelerator.aps.APSCloudException;`
+    `import` `com.appcelerator.aps.APSCloudException;`
 
-  `import` `com.appcelerator.aps.APSPerformance;`
+    `import` `com.appcelerator.aps.APSPerformance;`
 
-  `import` `com.appcelerator.aps.APSResponse;`
+    `import` `com.appcelerator.aps.APSResponse;`
 
-  `import` `com.appcelerator.aps.APSResponseHandler;`
+    `import` `com.appcelerator.aps.APSResponseHandler;`
 
-  `import` `com.appcelerator.aps.APSServiceManager;`
+    `import` `com.appcelerator.aps.APSServiceManager;`
 
-  `import` `com.appcelerator.aps.APSUsers;`
+    `import` `com.appcelerator.aps.APSUsers;`
 
-  `public`  `class` `MainActivity` `extends` `ActionBarActivity {`
+    `public`  `class` `MainActivity` `extends` `ActionBarActivity {`
 
-  `// Handle to current activity`
+    `// Handle to current activity`
 
-  `private`  `static` `Activity currentActivity;`
+    `private`  `static` `Activity currentActivity;`
 
-  `@Override`
+    `@Override`
 
-  `protected`  `void` `onCreate(Bundle savedInstanceState) {`
+    `protected`  `void` `onCreate(Bundle savedInstanceState) {`
 
-  `super``.onCreate(savedInstanceState);`
+    `super``.onCreate(savedInstanceState);`
 
-  `setContentView(R.layout.activity_main);`
+    `setContentView(R.layout.activity_main);`
 
-  `// Save the current activity`
+    `// Save the current activity`
 
-  `currentActivity =` `this``;`
+    `currentActivity =` `this``;`
 
-  `APSServiceManager.getInstance().enable(getApplicationContext(),` `"APP_KEY"``);`
+    `APSServiceManager.getInstance().enable(getApplicationContext(),` `"APP_KEY"``);`
 
-  `if` `(savedInstanceState ==` `null``) {`
+    `if` `(savedInstanceState ==` `null``) {`
 
-  `getSupportFragmentManager().beginTransaction()`
+    `getSupportFragmentManager().beginTransaction()`
 
-  `.add(R.id.container,` `new` `PlaceholderFragment())`
+    `.add(R.id.container,` `new` `PlaceholderFragment())`
 
-  `.commit();`
+    `.commit();`
 
-  `}`
+    `}`
 
-  `}`
+    `}`
 
-  `public`  `static`  `class` `PlaceholderFragment` `extends` `Fragment {`
+    `public`  `static`  `class` `PlaceholderFragment` `extends` `Fragment {`
 
-  `// Handle to Spinner and EditText widgets`
+    `// Handle to Spinner and EditText widgets`
 
-  `Spinner spinner;`
+    `Spinner spinner;`
 
-  `EditText textField;`
+    `EditText textField;`
 
-  `public` `PlaceholderFragment() {`
+    `public` `PlaceholderFragment() {`
 
-  `}`
+    `}`
 
-  `@Override`
+    `@Override`
 
-  `public` `View onCreateView(LayoutInflater inflater, ViewGroup container,`
+    `public` `View onCreateView(LayoutInflater inflater, ViewGroup container,`
 
-  `Bundle savedInstanceState) {`
+    `Bundle savedInstanceState) {`
 
-  `View rootView = inflater.inflate(R.layout.fragment_main, container,` `false``);`
+    `View rootView = inflater.inflate(R.layout.fragment_main, container,` `false``);`
 
-  `// Bind the Button do the doClick method`
+    `// Bind the Button do the doClick method`
 
-  `Button button = (Button)rootView.findViewById(R.id.button1);`
+    `Button button = (Button)rootView.findViewById(R.id.button1);`
 
-  `button.setOnClickListener(``new` `Button.OnClickListener()`
+    `button.setOnClickListener(``new` `Button.OnClickListener()`
 
-  `{`
+    `{`
 
-  `@Override`
+    `@Override`
 
-  `public`  `void` `onClick(View v){`
+    `public`  `void` `onClick(View v){`
 
-  `doClick();`
+    `doClick();`
 
-  `}`
+    `}`
 
-  `});`
+    `});`
 
-  `// Save the Spinner and EditText instances`
+    `// Save the Spinner and EditText instances`
 
-  `spinner = (Spinner)rootView.findViewById(R.id.spinner1);`
+    `spinner = (Spinner)rootView.findViewById(R.id.spinner1);`
 
-  `textField = (EditText)rootView.findViewById(R.id.editText1);`
+    `textField = (EditText)rootView.findViewById(R.id.editText1);`
 
-  `// Place holder for the next tutorial steps`
+    `// Place holder for the next tutorial steps`
 
-  `populateSpinner();`
+    `populateSpinner();`
 
-  `return` `rootView;`
+    `return` `rootView;`
 
-  `}`
+    `}`
 
-  `// Placeholder for next tutorial steps`
+    `// Placeholder for next tutorial steps`
 
-  `public`  `void` `doClick() {`
+    `public`  `void` `doClick() {`
 
-  `}`
+    `}`
 
-  `public`  `void` `populateSpinner() {`
+    `public`  `void` `populateSpinner() {`
 
-  `}`
+    `}`
 
-  `}`
+    `}`
 
-  `}`
-
+    `}`
 
 ### Building the application
 
@@ -739,7 +730,6 @@ Before testing the sample, you need to create user accounts for the application 
 
 8. Click **Save Changes**.
 
-
 To create a Cloud user account, you only need a username or e-mail address and a password.
 
 For more information about managing Cloud user accounts, see [Managing Organizations](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Organizations/).
@@ -763,7 +753,6 @@ Once the application launches:
 7. In the Real-Time view, you should see at least one active session.
 
 8. In the left navbar, click **Events**. You should see the "sample.feature.login" feature event.
-
 
 ### Next Steps for Appcelerator Analytics and Cloud
 

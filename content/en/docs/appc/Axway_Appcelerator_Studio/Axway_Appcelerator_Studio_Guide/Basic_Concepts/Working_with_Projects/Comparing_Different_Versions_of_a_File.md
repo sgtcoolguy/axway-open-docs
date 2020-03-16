@@ -20,7 +20,6 @@ To view the history of a file:
 
 4. To view the changes from one version to the next, double click the date/time entry in the view. An editor should open that highlights the changes that were made between the two versions.
 
-
 ## Setting Local History Preferences
 
 By default, Studio saves previous versions of a file for up to seven days or 50 versions of a file, with a maximum file size of 1 MB. You can modify these preferences to fit your editing needs best.
@@ -28,6 +27,5 @@ By default, Studio saves previous versions of a file for up to seven days or 50 
 To change your Local History preferences:
 
 1. Select **Preferences... > General > Workspace > Local History**.
-
 
 ![local_history_prefs](/Images/appc/download/attachments/30083310/local_history_prefs.png)

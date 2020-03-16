@@ -1,23 +1,22 @@
 {"title":"Titanium SDK 8.2.1.GA - 25 October 2019","weight":"110"}
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [New features](#Newfeatures)
+* [New features](#new-features)
 
-* [Community credits](#Communitycredits)
+* [Community credits](#community-credits)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-  * [Android platform](#Androidplatform)
+    * [Android platform](#android-platform)
 
-  * [iOS platform](#iOSplatform)
-
+    * [iOS platform](#ios-platform)
 
 ## About this release
 
 Titanium SDK 8.2.1 is a patch release of the SDK, addressing high-priority issues from previous releases.
 
-As of this GA release, the previous Titanium SDK patch release is no longer supported. End of support for this version will be 2020-04-25 or until the next patch release. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous Titanium SDK patch release is no longer supported. End of support for this version will be 2020-04-25 or until the next patch release. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 The latest version of Xcode (11.2.1) has introduced a breaking change to our CLI, we recommend waiting with updating Xcode until we have solved that problem, or downgrade Xcode in case you already updated. You can download Xcode 11.1 from the [Apple Developer site](https://developer.apple.com).
 
@@ -27,13 +26,11 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 * [MOD-2545](https://jira.appcelerator.org/browse/MOD-2545) - ti.map: update to 3.3.0-ios, 4.5.0-android module releases ([e1156a0](https://github.com/appcelerator/titanium_mobile/commit/e1156a09c06a902826c03a5b3ffc2ef31e3c0811))
 
-
 ## Community credits
 
 * teunklijn
 
-  * [TIMOB-27165](https://jira.appcelerator.org/browse/TIMOB-27165) - localnotificationaction event contains notification id instead of the action id ([3a42ee4](https://github.com/appcelerator/titanium_mobile/commit/3a42ee478fd387db28e23c761527720d23c3ffea))
-
+    * [TIMOB-27165](https://jira.appcelerator.org/browse/TIMOB-27165) - localnotificationaction event contains notification id instead of the action id ([3a42ee4](https://github.com/appcelerator/titanium_mobile/commit/3a42ee478fd387db28e23c761527720d23c3ffea))
 
 ## Fixed issues
 
@@ -42,7 +39,6 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 * [TIMOB-27431](https://jira.appcelerator.org/browse/TIMOB-27431), [TIMOB-27434](https://jira.appcelerator.org/browse/TIMOB-27434) - Re-layout of deeply nested views can cause performance issues as of 7.5.0 ([38dc352](https://github.com/appcelerator/titanium_mobile/commit/38dc3523699fe3e1e81162aa564658365fd23126))
 
 * [TIMOB-27398](https://jira.appcelerator.org/browse/TIMOB-27398) - Random assets missing after compiling
-
 
 ### iOS platform
 

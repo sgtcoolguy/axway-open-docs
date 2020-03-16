@@ -1,15 +1,14 @@
 {"title":"PHP Script Debugging","weight":"10"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Attaching a PHP Interpreter](#AttachingaPHPInterpreter)
+* [Attaching a PHP Interpreter](#attaching-a-php-interpreter)
 
-  * [Attaching a PHP INI](#AttachingaPHPINI)
+    * [Attaching a PHP INI](#attaching-a-php-ini)
 
-* [The Script Debugger](#TheScriptDebugger)
+* [The Script Debugger](#the-script-debugger)
 
-* [Script Debug/Run Sessions](#ScriptDebug/RunSessions)
-
+* [Script Debug/Run Sessions](#script-debug/run-sessions)
 
 ## Introduction
 
@@ -18,7 +17,6 @@ The Studio supports two types of PHP debugging:
 1. Internal debugging (for example, Script debug without a server-side involvement).
 
 2. Web Page debugging that uses a debugger extension (either Zend or XDebug) installed on a server.
-
 
 This page will guide you through the setup process and the debugging process when a single script is debugged.
 The single-script mode is a quick way to debug through the functionality of a single PHP file. In case you are debugging a PHP application, you will find that a '_Web Page_' debugging is the way to go.
@@ -34,8 +32,7 @@ In order to attach an interpreter:
 
 3. The php.ini location is optional in that dialog, and when not specified, the system will look for one under the executable path.
 
-
-![add-interpreter](/Images/appc/download/attachments/30083032/add-interpreter.png)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083032/add-interpreter.png" alt="images/download/attachments/30083032/add-interpreter.png" class="confluence-embedded-image"></p></td></tr></tbody></table>
 
 ### Attaching a PHP INI
 
@@ -49,8 +46,7 @@ When you attach a php.ini location to the interpreter settings, you will be able
 
 * Validate the settings
 
-
-![PhpIniEditor](/Images/appc/download/attachments/30083032/PhpIniEditor.jpg)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083032/PhpIniEditor.jpg" alt="images/download/attachments/30083032/PhpIniEditor.jpg" class="confluence-embedded-image"></p></td></tr></tbody></table>
 
 _A little bit on the validation process:_
 
@@ -78,7 +74,6 @@ Once you have a PHP interpreter set up correctly, you can attach a debugger exte
 
 5. Click to validate your PHP ini to see if the extension was loaded correctly.
 
-
 Once it's all set-up, you are ready for a script _Debug_ (or _Run_) session.
 
 ## Script Debug/Run Sessions
@@ -96,7 +91,6 @@ Option 1:
 4. From here, you can do a step into, step over and step return by clicking the buttons on the stack view or by using F5/F6/F7 keys.
 
 5. You can set more breakpoints as you debug, or even run to a line that you mark (right-click + 'Run to line' action or Ctrl+R).
-
 
 Option 2:
 Click _Run_ in the application menu bar and then click _Debug Configurations..._. Create a new _PHP Script_ debug configuration. Make sure that the selected debugger-type match the type that was set for the selected PHP executable, then launch the session.

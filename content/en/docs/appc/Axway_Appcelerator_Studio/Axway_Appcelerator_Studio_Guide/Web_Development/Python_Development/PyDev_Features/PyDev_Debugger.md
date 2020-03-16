@@ -14,7 +14,6 @@ The first thing we'll want to do is add a breakpoint. Let's do that in line 5 (p
 
 * Typing **Ctrl+F10** to open the context menu (see image below)
 
-
 ![debugger2](/Images/appc/pydev.org/images/debugger/debugger2.png)
 
 **Image:** Context-menu
@@ -57,7 +56,6 @@ This perspective has the actions needed for debugging and allows you to see the 
 
 * **5\. Console**: When you run a file through the PyDev debugger, the first thing that appears is a 'PyDev debugger' string, to indicate that you're running the file through the debugger.
 
-
 Now, the basic things you can do in the debugger have some keybindings:
 
 * Step in: **F5**
@@ -67,7 +65,6 @@ Now, the basic things you can do in the debugger have some keybindings:
 * Step out: **F7**
 
 * Resume: **F8**
-
 
 And you can also evaluate some expressions or make the breakpoint a conditional breakpoint. We'll see how this works below.
 

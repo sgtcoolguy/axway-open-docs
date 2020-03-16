@@ -1,11 +1,10 @@
 {"title":"Sockets","weight":"20"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Sockets explained](#Socketsexplained)
+* [Sockets explained](#sockets-explained)
 
-* [Usage examples](#Usageexamples)
-
+* [Usage examples](#usage-examples)
 
 ## Overview
 

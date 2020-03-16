@@ -12,7 +12,6 @@ Studio provides additional rubles that are not installed by default. You can bro
 
 3. The bundle is installed
 
-
 ## To add new Rubles to the list
 
 The current list comes from the Rubles hosted on the Aptana GitHub servers. If you wish to contribute a new Ruble, please contact us about adding your content to our repository

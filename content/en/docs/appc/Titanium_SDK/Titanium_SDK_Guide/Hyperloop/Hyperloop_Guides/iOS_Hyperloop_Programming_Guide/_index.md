@@ -1,43 +1,42 @@
 {"title":"iOS Hyperloop Programming Guide","weight":"30"}
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Classes](#Classes)
+* [Classes](#classes)
 
-* [Instantiation](#Instantiation)
+* [Instantiation](#instantiation)
 
-* [Methods and properties](#Methodsandproperties)
+* [Methods and properties](#methods-and-properties)
 
-* [Named methods](#Namedmethods)
+* [Named methods](#named-methods)
 
-* [Constants, enumerations, and functions](#Constants,enumerations,andfunctions)
+* [Constants, enumerations, and functions](#constants,-enumerations,-and-functions)
 
-* [Casting](#Casting)
+* [Casting](#casting)
 
-* [Blocks](#Blocks)
+* [Blocks](#blocks)
 
-* [Function pointers](#Functionpointers)
+* [Function pointers](#function-pointers)
 
-* [Creating your own classes](#Creatingyourownclasses)
+* [Creating your own classes](#creating-your-own-classes)
 
-* [Using third-party libraries](#Usingthird-partylibraries)
+* [Using third-party libraries](#using-third-party-libraries)
 
-  * [CocoaPods](#CocoaPods)
+    * [CocoaPods](#cocoapods)
 
-  * [Custom frameworks and libraries](#Customframeworksandlibraries)
+    * [Custom frameworks and libraries](#custom-frameworks-and-libraries)
 
-  * [Using Swift](#UsingSwift)
+    * [Using Swift](#using-swift)
 
-  * [Customizing your Xcode build](#CustomizingyourXcodebuild)
+    * [Customizing your Xcode build](#customizing-your-xcode-build)
 
-* [Resources](#Resources)
-
+* [Resources](#resources)
 
 This document provides information on iOS Hyperloop programming requirements, classes, instantiation, methods and properties, named methods, constants, enumerations, and functions, casting, blocks, function pointers, creating your own classes, using 3rd party libraries, and additional resources.
 
 ## Requirements
 
-See [Hyperloop Requirements](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyperloop/Hyperloop_Guides/Hyperloop_Requirements/#Requirements) for software requirements for using Hyperloop.
+See [Hyperloop Requirements](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyperloop/Hyperloop_Guides/Hyperloop_Requirements/#requirements) for software requirements for using Hyperloop.
 
 Important notes about your Xcode location
 
@@ -229,7 +228,6 @@ Hyperloop supports the following set of properties for adding methods:
 
 * returnType can be a String return type (which can be either Objective-C encoding types or general type names such as float or int). If no return is required (a void return type), you can omit the returnType property altogether and void will be implied.
 
-
 Another example with multiple arguments using simplified types:
 
 `MyView.addMethod({`
@@ -358,7 +356,6 @@ appc.js
 
 * The resource property can be either an Array or String of resource directories to search for resources or files to compile (images, story boards, xibs, etc). These files will be flattened and copied directly into the root of the application and can be loaded with NSBundle.
 
-
 To provide additional compiler flags, you can add them in the xcodebuild property of ios such as:
 
 appc.js
@@ -438,7 +435,6 @@ The following resources will be compiled automatically:
 * XC Data Model (\*.xcdatamodel, \*.xcdatamodeld, \*.xcmappingmodel)
 
 * Interface Builder (\*.xib)
-
 
 The other resources will be copied such as PNG files.
 

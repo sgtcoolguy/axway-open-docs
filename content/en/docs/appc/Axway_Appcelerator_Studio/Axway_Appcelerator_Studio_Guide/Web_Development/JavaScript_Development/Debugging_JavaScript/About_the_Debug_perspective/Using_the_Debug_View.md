@@ -22,13 +22,11 @@ To suspend a thread:
 
 2. Click the **Suspend** button ![IconSuspend](/Images/appc/download/attachments/30083103/IconSuspend.png) to suspend the JavaScript code on the first executed line. While the thread is suspended, your web browser user interface will be completely disabled.
 
-
 After you suspend the thread, you can perform common debugging tasks, such as those listed below:
 
 * [Stepping into and over functions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Stepping_into_and_over_functions/)
 
 * [Adding a breakpoint](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Adding_a_breakpoint/)
-
 
 ## Related Topics
 

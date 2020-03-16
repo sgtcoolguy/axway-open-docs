@@ -10,7 +10,6 @@ Dashboard 6.2.0 is a minor release, which includes new features, improvements, b
 
 * Added links to **Developer Portal****,** **Community Portal**, and **Support Portal** to AMPLIFY Platform home page.
 
-
 ## Improvements
 
 * Improved display and accuracy of Location analytics data, e.g., Installs by Location.
@@ -25,7 +24,6 @@ Dashboard 6.2.0 is a minor release, which includes new features, improvements, b
 
 * Updated the links on the common footer navbar.
 
-
 ## Behavior Changes
 
 * Signing up for the AMPLIFY Platform now starts beta trials in Choreography and Mesh Governance. Signing up no longer starts an Application Development trial. New users may request their 60-day trial of AMPLIFY Application Development offers by clicking "Start Free Trial" on the home page.
@@ -39,7 +37,6 @@ Dashboard 6.2.0 is a minor release, which includes new features, improvements, b
 * Added a deprecation warning to the Appcelerator Performance Management (Crittercism) embedded interface, prompting users to update their applications to use the AMPLIFY Crash Analytics module. For more details, please refer to the [documentation](https://docs.axway.com/bundle/AMPLIFY_Appcelerator_Services_allOS_en/page/amplify_crash_analytics.html).
 
 * Added a deprecation warning to the Appcelerator CloudTest (SOASTA) embedded interface.
-
 
 ## Fixed issues
 

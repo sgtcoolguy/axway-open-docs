@@ -1,21 +1,20 @@
 {"title":"Using a Custom Gem","weight":"120"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Setup](#Setup)
+* [Setup](#setup)
 
-  * [Using 'gem unpack'](#Using'gemunpack')
+    * [Using 'gem unpack'](#using-'gem-unpack')
 
-  * [Manually unzipping](#Manuallyunzipping)
+    * [Manually unzipping](#manually-unzipping)
 
-  * [Manipulate the path in each place the gem is referenced](#Manipulatethepathineachplacethegemisreferenced)
+    * [Manipulate the path in each place the gem is referenced](#manipulate-the-path-in-each-place-the-gem-is-referenced)
 
-  * [Manipulate the path globally for all commands](#Manipulatethepathgloballyforallcommands)
+    * [Manipulate the path globally for all commands](#manipulate-the-path-globally-for-all-commands)
 
-* [The Code](#TheCode)
+* [The Code](#the-code)
 
-* [Result](#Result)
-
+* [Result](#result)
 
 ## Overview
 
@@ -33,7 +32,6 @@ First, unpack the gem. Here we use the JSON gem from [http://flori.github.com/js
 
 3. Run \`gem unpack json\`, and then optionally rename the resulting subdirectory to be **'json'**.
 
-
 ### Manually unzipping
 
 1. Download the source version of the gem as a .zip file.
@@ -41,7 +39,6 @@ First, unpack the gem. Here we use the JSON gem from [http://flori.github.com/js
 2. Unzip the archive and rename it to **'json'**.
 
 3. Place it underneath the **/lib** folder in the ruble. You will see a structure like:
-
 
 ![Screen_Shot_2011-12-27_at_1.21.00_PM](/Images/appc/download/attachments/30083229/Screen_Shot_2011-12-27_at_1.21.00_PM.png)
 
@@ -63,12 +60,11 @@ Here, we take advantage of the fact that items in the **"lib"** directory are au
 
 2. Add the following code://
 
-  `$: << File.dirname(__FILE__) +` `'json/lib'`
+    `$: << File.dirname(__FILE__) +` `'json/lib'`
 
-  `require` `'json'`
+    `require` `'json'`
 
 3. Now, we can require "json" as normal in other commands
-
 
 ## The Code
 

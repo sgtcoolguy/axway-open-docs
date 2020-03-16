@@ -8,5 +8,4 @@ To recover a deleted file using Local History:
 
 2. Right-click the empty file and select **Replace With > Previous from Local History**.
 
-
 The Local History feature will replace the content of the empty file with the content from the last version of the file in Studio.

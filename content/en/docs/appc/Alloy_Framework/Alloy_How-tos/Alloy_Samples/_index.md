@@ -14,5 +14,4 @@ This document provides a top-level list of links to Alloy samples.
 
 * [Widgets](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Widgets/)
 
-
 Want to check out Alloy Samples in an actual app? Look at the [KitchenSink-v2 application on GitHub](https://github.com/appcelerator/kitchensink-v2).

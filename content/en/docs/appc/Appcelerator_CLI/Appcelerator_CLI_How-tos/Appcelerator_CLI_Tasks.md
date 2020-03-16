@@ -2,52 +2,51 @@
 
 This document provides information on how to build cloud and mobile applications with Appcelerator CLI.
 
-* [Build cloud applications](#Buildcloudapplications)
+* [Build cloud applications](#build-cloud-applications)
 
-  * [Create an Arrow project](#CreateanArrowproject)
+    * [Create an Arrow project](#create-an-arrow-project)
 
-  * [Run an Arrow project](#RunanArrowproject)
+    * [Run an Arrow project](#run-an-arrow-project)
 
-  * [Publish an Arrow project to Arrow Cloud](#PublishanArrowprojecttoArrowCloud)
+    * [Publish an Arrow project to Arrow Cloud](#publish-an-arrow-project-to-arrow-cloud)
 
-  * [Generate Cloud components](#GenerateCloudcomponents)
+    * [Generate Cloud components](#generate-cloud-components)
 
-* [Build mobile applications](#Buildmobileapplications)
+* [Build mobile applications](#build-mobile-applications)
 
-  * [Create a Alloy project](#CreateaAlloyproject)
+    * [Create a Alloy project](#create-a-alloy-project)
 
-  * [Create a Titanium Classic project](#CreateaTitaniumClassicproject)
+    * [Create a Titanium Classic project](#create-a-titanium-classic-project)
 
-  * [Build an Alloy or Titanium Classic project](#BuildanAlloyorTitaniumClassicproject)
+    * [Build an Alloy or Titanium Classic project](#build-an-alloy-or-titanium-classic-project)
 
-    * [Android emulator](#Androidemulator)
+        * [Android emulator](#android-emulator)
 
-    * [Android device](#Androiddevice)
+        * [Android device](#android-device)
 
-    * [iOS simulator](#iOSsimulator)
+        * [iOS simulator](#ios-simulator)
 
-    * [iOS device](#iOSdevice)
+        * [iOS device](#ios-device)
 
-    * [Windows Phone emulator](#WindowsPhoneemulator)
+        * [Windows Phone emulator](#windows-phone-emulator)
 
-    * [Windows Phone device](#WindowsPhonedevice)
+        * [Windows Phone device](#windows-phone-device)
 
-    * [Windows computer](#Windowscomputer)
+        * [Windows computer](#windows-computer)
 
-  * [Package an application](#Packageanapplication)
+    * [Package an application](#package-an-application)
 
-    * [Google Play APK](#GooglePlayAPK)
+        * [Google Play APK](#google-play-apk)
 
-    * [iOS ad hoc distribution](#iOSadhocdistribution)
+        * [iOS ad hoc distribution](#ios-ad-hoc-distribution)
 
-    * [iTunes store](#iTunesstore)
+        * [iTunes store](#itunes-store)
 
-    * [Windows Phone Store](#WindowsPhoneStore)
+        * [Windows Phone Store](#windows-phone-store)
 
-    * [Windows Store](#WindowsStore)
+        * [Windows Store](#windows-store)
 
-  * [Clean your build folder](#Cleanyourbuildfolder)
-
+    * [Clean your build folder](#clean-your-build-folder)
 
 ## Build cloud applications
 
@@ -106,25 +105,23 @@ Once the application is installed and launched, use native tools to test, debug 
 The CLI checks several settings to see which SDK version to use to build your application. The following is a list of locations in the order of precedence. If an SDK version is not defined in that location, the next location is checked.
 
 1. tiapp.xml file version specified with the sdk-version tag.
-  To change this version, manually edit the tiapp.xml file with a text editor or use Studio.
+    To change this version, manually edit the tiapp.xml file with a text editor or use Studio.
 
 2. \--sdk command-line option with the appc run command.
 
 3. app.sdk setting specified with the appc ti config command.
-  To check the version, run appc ti config and to change the version, run appc ti config app.sdk <sdk\_version>.
+    To check the version, run appc ti config and to change the version, run appc ti config app.sdk <sdk\_version>.
 
 4. SDK select version.
-  To check or change this version, run appc ti sdk select.
-
+    To check or change this version, run appc ti sdk select.
 
 #### Android emulator
 
 You need to create an Android emulator or setup Genymotion before running these commands.
 
-* To create an Android emulator, see [Native Android Debugging and Testing Tools: Creating an emulator](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Debugging_and_Profiling/Native_Android_Debugging_and_Testing_Tools/#Creatinganemulator).
+* To create an Android emulator, see [Native Android Debugging and Testing Tools: Creating an emulator](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Debugging_and_Profiling/Native_Android_Debugging_and_Testing_Tools/#creating-an-emulator).
 
 * To setup Genymotion, see [Installing Genymotion](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Genymotion/).
-
 
 To build for an emulator, run appc run -p android. Because no other options were specified, the CLI launches your default Android emulator and installs the application on it.
 

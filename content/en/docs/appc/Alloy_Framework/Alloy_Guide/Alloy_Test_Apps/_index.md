@@ -12,7 +12,6 @@ To build and run one of the test applications, do the following:
 
 4. Build and run the application on a device, simulator, or emulator.
 
-
 The sample apps are organized in several folders representing the following categories:
 
 * [User Interface](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/User_Interface/)
@@ -24,7 +23,6 @@ The sample apps are organized in several folders representing the following cate
 * [Alloy Test Models](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Alloy_Test_Models/) — Samples in the alloy/test/apps/models/ folder demonstrates using models, collections, and data binding in Alloy.
 
 * [Widgets](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Widgets/)
-
 
 Note that some samples demonstrate platform-specific features that only run on certain platforms.
 
@@ -64,12 +62,11 @@ Creating a test project
 
 1. To build a sample using **Appcelerator Studio**, first create a new Alloy project by selecting **File** > **New** \> **Mobile App Project**.
 
-  ![new-Alloy-project](/Images/appc/download/attachments/41845629/new-Alloy-project.png)
+    ![new-Alloy-project](/Images/appc/download/attachments/41845629/new-Alloy-project.png)
 2. Drag and drop the contents of the desired test app folder from the desktop into the new project's /app folder in Project Explorer.
 
 3. When prompted, select **Copy file and folders** option in the File and Folder Operation dialog and click OK.
 
 4. Select **Yes To All** when asked if you want to overwrite files in the target folder.
-
 
 You can now build or run the application on a target device, simulator or emulator.

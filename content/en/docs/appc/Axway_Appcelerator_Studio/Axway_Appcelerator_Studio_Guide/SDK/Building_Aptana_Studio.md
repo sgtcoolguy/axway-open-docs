@@ -40,13 +40,11 @@ There are also several other related repositories with the name \*.ruble. These 
 
 3. Once all projects are imported, you will need to close several depending on the version of Eclipse you have installed. If you are using Eclipse 3.7 (recommended), close the following:
 
-  * com.aptana.portal.ui.eclipse35
-
+    * com.aptana.portal.ui.eclipse35
 
 ### Python Errors
 
 1. There will be lots of build errors. Find org.python.pydev.core/tests/org.python.pydev.core/TestDependent.OS.template. You should create a copy of that file in that same dir named TestDependent.java and set the needed things according to your installation. If that still fails to resolve the errors, you can close the com.python and org.python project for now.
-
 
 ### FTP Errors
 
@@ -56,13 +54,11 @@ If you do not wish to close the FTP projects, you can get a trial license for FT
 
 2. Unzip the package and drop /lib/\*.jar into com.aptana.ide.libraries.subscription.
 
-
 ### Launching
 
 1. Inside Studio RCP, there is an aptana.product file.
 
 2. Click on the link that says "Launch an Eclipse Application".
-
 
 ## Building Installers
 

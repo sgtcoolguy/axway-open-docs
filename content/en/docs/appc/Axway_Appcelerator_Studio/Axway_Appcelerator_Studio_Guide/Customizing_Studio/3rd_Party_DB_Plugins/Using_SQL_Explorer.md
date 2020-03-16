@@ -56,7 +56,6 @@ Additionally, you can use a generated SELECT statement to query a table. To gene
 
 2. Right-click the table that you want to query, and select **Generate Select Statement** from the context menu.
 
-
 SQL Explorer generates the SELECT statement for you.
 
 ### Additional resources

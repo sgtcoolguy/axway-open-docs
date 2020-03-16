@@ -1,41 +1,40 @@
 {"title":"Adding a new Publish Provider","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Prerequisites](#Prerequisites)
+* [Prerequisites](#prerequisites)
 
-* [Required APIs](#RequiredAPIs)
+* [Required APIs](#required-apis)
 
-* [Publish Workflow](#PublishWorkflow)
+* [Publish Workflow](#publish-workflow)
 
-* [Publish Provider Extension Point](#PublishProviderExtensionPoint)
+* [Publish Provider Extension Point](#publish-provider-extension-point)
 
-  * [Markup](#Markup)
+    * [Markup](#markup)
 
-  * [Example](#Example)
+    * [Example](#example)
 
-* [Implementation](#Implementation)
+* [Implementation](#implementation)
 
-  * [Implement IPublishType and IPublishTarget](#ImplementIPublishTypeandIPublishTarget)
+    * [Implement IPublishType and IPublishTarget](#implement-ipublishtype-and-ipublishtarget)
 
-  * [Contribute to Publish Menus](#ContributetoPublishMenus)
+    * [Contribute to Publish Menus](#contribute-to-publish-menus)
 
-  * [PublishProvider extension](#PublishProviderextension)
+    * [PublishProvider extension](#publishprovider-extension)
 
-* [Customization](#Customization)
+* [Customization](#customization)
 
-  * [Provide Publish Target Dialog](#ProvidePublishTargetDialog)
+    * [Provide Publish Target Dialog](#provide-publish-target-dialog)
 
-  * [Preference Page](#PreferencePage)
+    * [Preference Page](#preference-page)
 
-  * [Publish Wizard](#PublishWizard)
+    * [Publish Wizard](#publish-wizard)
 
-    * [Configuration Page](#ConfigurationPage)
+        * [Configuration Page](#configuration-page)
 
-    * [Summary Page](#SummaryPage)
+        * [Summary Page](#summary-page)
 
-* [Distribution](#Distribution)
-
+* [Distribution](#distribution)
 
 ## Overview
 
@@ -57,20 +56,19 @@ To implement the publish extension, the only requirement is that there is an ava
 
 2. The publish wizard walks the user through the publish operation, requesting data from the user. The first page of the publish wizard, the Target page, allows users to specify which platforms and target to publish to. The available platforms and publish target is defined in the extension point and the IPublishTarget subclass. See the **"IPublishType and IPublishTarget"** section for more information.
 
-  ![Screen_Shot_2012-04-02_at_11.08.27_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.08.27_AM.png)
+    ![Screen_Shot_2012-04-02_at_11.08.27_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.08.27_AM.png)
 3. The next page of the publish wizard is the Configuration page. This page allows publish providers to request information specific to their publish operation. If no additional information is required, the Configuration page is not shown. See the **"Configuration Page"** section for more information.
 
-  ![Screen_Shot_2012-04-02_at_11.08.55_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.08.55_AM.png)
+    ![Screen_Shot_2012-04-02_at_11.08.55_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.08.55_AM.png)
 4. The next page of the wizard is the Platform page. The page displayed is determined by the selected platform on the Target page. This page is specific to how projects are built using Titanium, so these pages are not customizable.
 
-  ![Screen_Shot_2012-04-02_at_11.09.13_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.09.13_AM.png)
+    ![Screen_Shot_2012-04-02_at_11.09.13_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.09.13_AM.png)
 5. The final page of the wizard is the Summary page. This page displays the settings for the publish operation. There is a section in on the page that allows publish providers to display settings specific to the publish provider. See the **"Summary Page"** section for more information.
 
-  ![Screen_Shot_2012-04-02_at_11.09.28_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.09.28_AM.png)
+    ![Screen_Shot_2012-04-02_at_11.09.28_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.09.28_AM.png)
 6. Clicking the "Publish" button will initiate the publish operation. The publish operation consists of two parts: the Titanium build and the distribution operation. The Titanium build is performed by Titanium Studio. The result of the build is stored at a specified location. Publish providers are expected to implement the distribution operation, which is specific to the purpose of the publish provider. The distribution is performed in the following method:
 
-  `com.appcelerator.titanium.publish.IPublishType#publish(com.appcelerator.titanium.publish.IPublishTarget, java.util.Map)`
-
+    `com.appcelerator.titanium.publish.IPublishType#publish(com.appcelerator.titanium.publish.IPublishTarget, java.util.Map)`
 
 The publish operation is performed as an org.eclipse.debug.core.ILaunch, utilizing an org.eclipse.debug.core.ILaunchConfiguration to store information.
 
@@ -146,7 +144,6 @@ The Publish Provider definition is defined as follows:
 
 * **preferencePageId** - Preference page id for this publish type
 
-
 `<!ELEMENT supportedPlatform EMPTY>`
 
 `<!ATTLIST supportedPlatform`
@@ -158,7 +155,6 @@ The Publish Provider definition is defined as follows:
 Used to specify a supported platform
 
 * **name** - Platform name
-
 
 ### Example
 
@@ -492,7 +488,6 @@ The following Titanium-specific reference definitionIds can be used:
 
 * com.appcelerator.titanium.isAndroidProject
 
-
 ### PublishProvider extension
 
 All the subsequent steps are used in the definition of the PublishProvider. Additional information about the extension point can be found in the reference at the top of the page. Following is the extension for the Sample publish provider:
@@ -547,7 +542,6 @@ Implementors wanting customized behavior should override the following methods:
 
 * com.appcelerator.titanium.publish.ui.RegisterPublishTargetDialog#savePublishTarget() to provide external saving of the target
 
-
 ### Preference Page
 
 A preference page can be defined to allow the management of the publish targets. The preference page is defined using the Eclipse [org.eclipse.ui.preferencePages](http://help.eclipse.org/indigo/index.jsp?topic=/org.eclipse.platform.doc.isv/reference/extension-points/org_eclipse_ui_preferencePages.html) extension point. An abstract implementation of a Publish Provider preference page is provided: **com.appcelerator.titanium.publish.preferences.AbstractPublishTargetPreferencePage**.
@@ -575,7 +569,6 @@ The id of the preference page should be defined in the Publish Provider extensio
 Implementors wanting a customized look should override the following methods:
 
 * com.appcelerator.titanium.publish.preferences.AbstractPublishTargetPreferencePage#createPublishTargetTableColumns() - specifies what columns are displayed in the table
-
 
 ### Publish Wizard
 

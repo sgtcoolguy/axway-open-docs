@@ -8,36 +8,35 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 This document provides references to answer several API Builder frequently asked questions (FAQs).
 
-* [Submit a bug](#Submitabug)
+* [Submit a bug](#submit-a-bug)
 
-* [Setup Appcelerator CLI](#SetupAppceleratorCLI)
+* [Setup Appcelerator CLI](#setup-appcelerator-cli)
 
-* [Create an API Builder project](#CreateanAPIBuilderproject)
+* [Create an API Builder project](#create-an-api-builder-project)
 
-* [Run an API Builder project](#RunanAPIBuilderproject)
+* [Run an API Builder project](#run-an-api-builder-project)
 
-* [Deploy an API Builder project](#DeployanAPIBuilderproject)
+* [Deploy an API Builder project](#deploy-an-api-builder-project)
 
-* [Publish source code](#Publishsourcecode)
+* [Publish source code](#publish-source-code)
 
-* [Publish source code by providing a Dockerfile](#PublishsourcecodebyprovidingaDockerfile)
+* [Publish source code by providing a Dockerfile](#publish-source-code-by-providing-a-dockerfile)
 
-* [Publish source code using an existing Dockerfile](#PublishsourcecodeusinganexistingDockerfile)
+* [Publish source code using an existing Dockerfile](#publish-source-code-using-an-existing-dockerfile)
 
-* [Configure access to the API Builder Admin console](#ConfigureaccesstotheAPIBuilderAdminconsole)
+* [Configure access to the API Builder Admin console](#configure-access-to-the-api-builder-admin-console)
 
-* [Create a model using the API Builder Admin console](#CreateamodelusingtheAPIBuilderAdminconsole)
+* [Create a model using the API Builder Admin console](#create-a-model-using-the-api-builder-admin-console)
 
-* [Access API Builder Swagger definitions](#AccessAPIBuilderSwaggerdefinitions)
+* [Access API Builder Swagger definitions](#access-api-builder-swagger-definitions)
 
-* [Create API endpoints](#CreateAPIendpoints)
+* [Create API endpoints](#create-api-endpoints)
 
-* [Configure API Builder](#ConfigureAPIBuilder)
+* [Configure API Builder](#configure-api-builder)
 
-* [Create API Builder connectors](#CreateAPIBuilderconnectors)
+* [Create API Builder connectors](#create-api-builder-connectors)
 
-* [Secure API Builder configuration](#SecureAPIBuilderconfiguration)
-
+* [Secure API Builder configuration](#secure-api-builder-configuration)
 
 ## Submit a bug
 

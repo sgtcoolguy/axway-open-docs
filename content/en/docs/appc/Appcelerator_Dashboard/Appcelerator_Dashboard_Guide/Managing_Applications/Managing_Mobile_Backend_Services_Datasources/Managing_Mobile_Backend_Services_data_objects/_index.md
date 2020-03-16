@@ -2,22 +2,21 @@
 
 The **Manage Data** tab in Dashboard provides a visual interface to the various [Mobile Backend Services APIs](/arrowdb/latest/#!/api) for creating, updating, deleting, and querying your application's Mobile Backend Services (MBS) objects – Photos and Chats, for example – on behalf of its users. You can also create and edit administrative MBS objects, like access control lists and email templates.
 
-* [Editing and Deleting objects](#EditingandDeletingobjects)
+* [Editing and Deleting objects](#editing-and-deleting-objects)
 
-* [Filtering Mobile Backend Services object data](#FilteringFilteringMobileBackendServicesobjectdata)
+* [Filtering Mobile Backend Services object data](#filtering-mobile-backend-services-object-data)
 
-* [Deleting application data](#Deletingapplicationdata)
+* [Deleting application data](#deleting-application-data)
 
-* [Exporting application data](#Exportingapplicationdata)
+* [Exporting application data](#exporting-application-data)
 
-* [Creating Mobile Backend Services objects](#CreatingMobileBackendServicesobjects)
+* [Creating Mobile Backend Services objects](#creating-mobile-backend-services-objects)
 
-  * [Common object fields](#Commonobjectfields)
+    * [Common object fields](#common-object-fields)
 
-  * [Creating custom fields](#Creatingcustomfields)
+    * [Creating custom fields](#creating-custom-fields)
 
-  * [Creating Geo Coordinates](#CreatingGeoCoordinates)
-
+    * [Creating Geo Coordinates](#creating-geo-coordinates)
 
 To manage MBS objects of a specific API, select the API from the Dashboard home page **Apps** tab whose data objects you want to manage. Then, select the **Manage Data** tab, as shown below. The main screen displays a table listing all MBS object types and the total number of each type.
 
@@ -35,27 +34,17 @@ To delete an object or objects, select an object or objects from the list and cl
 
 To refresh the object list, click the **Refresh** icon.
 
-Icon
-
-Function
-
-![filter_icon](/Images/appc/download/thumbnails/60148480/filter_icon.png)
-
-Filter icon
-
-![delete_icon](/Images/appc/download/thumbnails/60148480/delete_icon.png)
-
-Delete icon
-
-![refresh_icon](/Images/appc/download/thumbnails/60148480/refresh_icon.png)
-
-Refresh icon
+| Icon | Function |
+| --- | --- |
+| ![filter_icon](/Images/appc/download/thumbnails/60148480/filter_icon.png) | Filter icon |
+| ![delete_icon](/Images/appc/download/thumbnails/60148480/delete_icon.png) | Delete icon |
+| ![refresh_icon](/Images/appc/download/thumbnails/60148480/refresh_icon.png) | Refresh icon |
 
 To quickly switch to another object type, click the **Type** drop-down menu and select the desired MBS type.
 
 ![menu_latest](/Images/appc/download/attachments/60148480/menu_latest.png)
 
-Click a row to expand it and view additional fields. To edit an object, either click its name in the row heading or select **Edit** from the _Tools_ drop-down menu. To delete an object, select the **Action Menu** icon and select **Delete**. See [Editing and Deleting objects](#EditingandDeletingobjects).
+Click a row to expand it and view additional fields. To edit an object, either click its name in the row heading or select **Edit** from the _Tools_ drop-down menu. To delete an object, select the **Action Menu** icon and select **Delete**. See [Editing and Deleting objects](#editing-and-deleting-objects).
 
 ![user_click_latest](/Images/appc/download/attachments/60148480/user_click_latest.png)
 
@@ -73,7 +62,6 @@ Some MBS object tables can be filtered according to one or more queries that you
 
 * To remove all filters, click **Clear Filter**.
 
-
 Each rule consists of three parts:
 
 * **Field name** – The name of the field on which to filter. The list of filterable fields varies by object type.
@@ -82,56 +70,15 @@ Each rule consists of three parts:
 
 * **Value** – The value to apply to the operation. This can either be a simple string value, regular expression, or a complex value specified in multiple form fields.
 
-
-Operation
-
-Field type
-
-Description
-
-Contained in
-
-Number
-
-Displays objects where the field value is within the range of the inputted values. The range is inclusive.
-
-Equals
-
-Boolean, Date, Number, String
-
-Displays objects where the field value is the same as the inputted value.
-
-Greater than
-
-Date
-
-Displays objects where the field value is greater than the inputted value.
-
-Less than
-
-Date
-
-Displays objects where the field value is less than the inputted value.
-
-Not equal to
-
-Number, String
-
-Displays objects where the field value is not the same as the inputted value.
-
-Regular expression
-
-String
-
-Displays objects where the field value matches the regular expression.
-
-Currently, only prefix matches are supported, that is, the regular expression must begin with an anchor (^) followed by a letter or digit. For example, '^a', '^a.\*', and '^a.\*$' are allowed, but not '^.\*a\*'.
-
-Starts with
-
-String
-
-Displays objects where the field value starts with the inputted value.
+| Operation | Field type | Description |
+| --- | --- | --- |
+| Contained in | Number | Displays objects where the field value is within the range of the inputted values. The range is inclusive. |
+| Equals | Boolean, Date, Number, String | Displays objects where the field value is the same as the inputted value. |
+| Greater than | Date | Displays objects where the field value is greater than the inputted value. |
+| Less than | Date | Displays objects where the field value is less than the inputted value. |
+| Not equal to | Number, String | Displays objects where the field value is not the same as the inputted value. |
+| Regular expression | String | Displays objects where the field value matches the regular expression.<br /><br />Currently, only prefix matches are supported, that is, the regular expression must begin with an anchor (^) followed by a letter or digit. For example, '^a', '^a.\*', and '^a.\*$' are allowed, but not '^.\*a\*'. |
+| Starts with | String | Displays objects where the field value starts with the inputted value. |
 
 For example, the Users table below has been filtered to display only those users whose username starts with the letter "t".
 
@@ -149,7 +96,6 @@ You can delete all the MBS objects created by your application.
 
 3. Click **I understand that this is a permanent and irreversible action. Continue** to permanently delete the application data store data or select **Cancel** to stop the operation.
 
-
 ## Exporting application data
 
 You can export the data from your application to a JSON format, either for a specific period or all MBS data. The export creates a JSON file for each MBS object type with a non-zero object count. Each object is output one per-line in the JSON file.
@@ -162,7 +108,6 @@ The following limitations apply to exported data:
 
 * A total of 9,800,000 (9.8 million) objects per application can be exported.
 
-
 For a given export, if the total number of objects of a specific MBS type data is over 700,000, or if the total number of objects being exported is over 9,800,000, the export will stop.
 
 **To export an application's data**:
@@ -171,9 +116,8 @@ For a given export, if the total number of objects of a specific MBS type data i
 
 2. In the **Export App Data** dialog box, select **All** to export all application data, or to export data created during a certain period, select **Between** and select a date range.
 
-  ![export_latest](/Images/appc/download/attachments/60148480/export_latest.png)
+    ![export_latest](/Images/appc/download/attachments/60148480/export_latest.png)
 3. Click **Export App Data.** When the export package is ready to download, an email will be sent to your Dashboard user's registered email address.
-
 
 You cannot export data if it has been exported in the past seven (7) days.
 
@@ -191,14 +135,13 @@ Each MBS object has fields unique to its purpose and function. Several types of 
 
 * **ID** – Object GUID.
 
-* **Custom Fields** – One more name/value pairs you can define for an object. See [Creating custom fields](#Creatingcustomfields).
+* **Custom Fields** – One more name/value pairs you can define for an object. See [Creating custom fields](#creating-custom-fields).
 
-* **Geo Coordinates** – One or more geographic coordinates. See [Creating Geo Coordinates](#CreatingGeoCoordinates).
+* **Geo Coordinates** – One or more geographic coordinates. See [Creating Geo Coordinates](#creating-geo-coordinates).
 
 * **Tags** – A comma-delimited list of strings to which to tag the object.
 
 * **Access Control List** – An ACL to restrict read or write access to the object.
-
 
 ### Creating custom fields
 
@@ -208,35 +151,14 @@ Most all MBS object creation forms have a **Custom Fields** field you use to att
 
 A custom field can be one of the following data types:
 
-Type
-
-Example
-
-Boolean
-
-true or false
-
-String
-
-"blue"
-
-Number
-
-23 or 1.234
-
-Date
-
-"2011-11-02 17:07:37 -0700".
-
-If a string value matches date format "yyyy-mm-dd hh:mm:ss +zzzz" or "yyyy-mm-ddThh:mm:ss+zzzz" it will be converted to Date type on the MBS backend.
-
-Array
-
-\[1, 2, 3, 4\] or \[ "words", "go", "here" \]
-
-Dictionary
-
-{ "property": "value", "anotherProperty": true, "thirdProp": 123 }
+| Type | Example |
+| --- | --- |
+| Boolean | true or false |
+| String | "blue" |
+| Number | 23 or 1.234 |
+| Date | "2011-11-02 17:07:37 -0700".<br /><br />If a string value matches date format "yyyy-mm-dd hh:mm:ss +zzzz" or "yyyy-mm-ddThh:mm:ss+zzzz" it will be converted to Date type on the MBS backend. |
+| Array | \[1, 2, 3, 4\] or \[ "words", "go", "here" \] |
+| Dictionary | { "property": "value", "anotherProperty": true, "thirdProp": 123 } |
 
 **To add a custom field to an object:**
 
@@ -247,7 +169,6 @@ Dictionary
 3. In the **Value** field, enter the custom field's value, or select it from the provided control (Boolean or Date fields, only).
 
 4. Click the **+** icon to create the custom field
-
 
 **To delete a custom field from an object**, hover your mouse over an existing custom field and click the **X** to delete it.
 

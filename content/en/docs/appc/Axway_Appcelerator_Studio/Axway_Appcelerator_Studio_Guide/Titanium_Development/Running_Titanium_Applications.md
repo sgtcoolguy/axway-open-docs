@@ -1,33 +1,32 @@
 {"title":"Running Titanium Applications","weight":"40"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Run Configurations](#RunConfigurations)
+* [Run Configurations](#run-configurations)
 
-  * [Android Application Installer](#AndroidApplicationInstaller)
+    * [Android Application Installer](#android-application-installer)
 
-  * [Android Emulator](#AndroidEmulator)
+    * [Android Emulator](#android-emulator)
 
-  * [iOS Application Installer](#iOSApplicationInstaller)
+    * [iOS Application Installer](#ios-application-installer)
 
-  * [iOS Simulator](#iOSSimulator)
+    * [iOS Simulator](#ios-simulator)
 
-  * [Mobile Web Previewer on Emulator](#MobileWebPrevieweronEmulator)
+    * [Mobile Web Previewer on Emulator](#mobile-web-previewer-on-emulator)
 
-  * [Mobile Web Previewer](#MobileWebPreviewer)
+    * [Mobile Web Previewer](#mobile-web-previewer)
 
-* [Troubleshooting](#Troubleshooting)
+* [Troubleshooting](#troubleshooting)
 
-  * [Android Emulator](#AndroidEmulator.1)
+    * [Android Emulator](#android-emulator)
 
-    * [Application Fails to Install Due to Insufficient Memory](#ApplicationFailstoInstallDuetoInsufficientMemory)
+        * [Application Fails to Install Due to Insufficient Memory](#application-fails-to-install-due-to-insufficient-memory)
 
-  * [iOS Simulator](#iOSSimulator.1)
+    * [iOS Simulator](#ios-simulator)
 
-    * [Reserved Folder Names](#ReservedFolderNames)
+        * [Reserved Folder Names](#reserved-folder-names)
 
-    * [Reset the Simulator](#ResettheSimulator)
-
+        * [Reset the Simulator](#reset-the-simulator)
 
 ## Introduction
 
@@ -36,7 +35,6 @@ In Studio, Titanium applications may be executed in two modes:
 * In run mode, the program executes, but the execution may not be suspended or examined.
 
 * In debug mode, execution may be suspended and resumed, variables may be inspected, and expressions may be evaluated. For more information about debug mode, refer to [Debugging Titanium Applications](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/).
-
 
 To launch a project in run mode, first select the project in the **Project Explorer** view, then in the global tool bar, select **Run** from the **Launch Mode** drop-down list and a device from the **Target** drop-down list. If the **Launch Automatically** option is enabled under the **Target** drop-down list, the application will be automatically launched after the target is selected. If not, you need to click the **Launch** button to start the build process.
 
@@ -62,13 +60,11 @@ The following sections below list the run configurations for building your appli
 
 * **Enable JavaScript Minification**: if enabled, your JavaScript code is minified (unnecessary white space is removed and code is obfuscated) before building. This is an option for most device builds (application installer).
 
-
 ### Android Application Installer
 
 Configuration settings for building your application for Android devices:
 
 * **Android SDK Version**: select the Google API level to build your application against.
-
 
 ### Android Emulator
 
@@ -77,7 +73,6 @@ Configuration settings for building your application for the Android emulator:
 * **Android API**: select the Google API level to build your application against.
 
 * **Screen**: select the emulator skin, which varies by the Google API selected in the previous option. For a description of the options, refer to [http://developer.android.com/tools/revisions/platforms.html](http://developer.android.com/tools/revisions/platforms.html).
-
 
 ### iOS Application Installer
 
@@ -90,7 +85,6 @@ Configuration settings for building your application for an iOS device:
 * **Provisioning Profile**: select your iOS development provisioning profile.
 
 * **SDK Version**: select the iOS SDK version to build your application against.
-
 
 If you have not obtained a development certificate or created a provisioning profile, refer to [Deploying to iOS devices](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Deploying_to_iOS_devices/).
 
@@ -108,7 +102,6 @@ Configuration settings for building your application for an iOS simulator:
 
 * **Display Type**: select the simulator screen size: **Non-Retina**, **Retina** or **Retina & Tall**.
 
-
 ### Mobile Web Previewer on Emulator
 
 Configuration settings for building your application to be previewed in a browser in an Android emulator:
@@ -119,7 +112,6 @@ Configuration settings for building your application to be previewed in a browse
 
 * **Preview Server**: select the web server to deliver the application.
 
-
 ### Mobile Web Previewer
 
 Configuration settings for building your application to be previewed in a desktop browser:
@@ -127,7 +119,6 @@ Configuration settings for building your application to be previewed in a deskto
 * **Web Browser**: select the desktop browser to preview your application with.
 
 * **Preview Server**: select the web server to deliver the application.
-
 
 ## Troubleshooting
 
@@ -139,19 +130,17 @@ Try cleaning and rebuilding your project.
 
 3. Build your project again. You can optionally enable the **Re-build Project on Launch** option with a **Run Configuration** for simulator and emulator builds.
 
-
 ### Android Emulator
 
 #### Application Fails to Install Due to Insufficient Memory
 
 1. Open the AVD configuration file with your favorite text editor. The following are the default locations:
 
-  1. On Mac OS X systems, open ~/.android/avd/<AVD\_name>.avd/config.ini.
+    1. On Mac OS X systems, open ~/.android/avd/<AVD\_name>.avd/config.ini.
 
-  2. On Windows 7 and 8 systems, open C:\\Users\\<user>\\.android\\avd\\<AVD\_name>.avd\\config.ini.
+    2. On Windows 7 and 8 systems, open C:\\Users\\<user>\\.android\\avd\\<AVD\_name>.avd\\config.ini.
 
 2. Add or edit the following variable:
-
 
 `disk.dataPartition.size=<size_in_MB>m`
 
@@ -164,7 +153,6 @@ Double-check that your project does not contain the following directories, which
 * Resources/Resources
 
 * Resources/Frameworks
-
 
 #### Reset the Simulator
 

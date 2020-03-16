@@ -139,7 +139,6 @@ Strings defined here may be used in:
 
 * launch configuration for the main module
 
-
 They can be used in those places in the format: ${DECLARED\_VARIABLE}
 
 ## Cygwin users

@@ -1,25 +1,24 @@
 {"title":"Deploying to Windows Devices","weight":"50"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Windows Phone](#WindowsPhone)
+* [Windows Phone](#windows-phone)
 
-  * [Set the publisher ID](#SetthepublisherID)
+    * [Set the publisher ID](#set-the-publisher-id)
 
-  * [Register the device](#Registerthedevice)
+    * [Register the device](#register-the-device)
 
-  * [Deploy to a device with Studio](#DeploytoadevicewithStudio)
+    * [Deploy to a device with Studio](#deploy-to-a-device-with-studio)
 
-  * [Deploy to a device with the CLI](#DeploytoadevicewiththeCLI)
+    * [Deploy to a device with the CLI](#deploy-to-a-device-with-the-cli)
 
-* [Windows tablet](#Windowstablet)
+* [Windows tablet](#windows-tablet)
 
-  * [Edit group policy settings](#Editgrouppolicysettings)
+    * [Edit group policy settings](#edit-group-policy-settings)
 
-  * [Install the certificate](#Installthecertificate)
+    * [Install the certificate](#install-the-certificate)
 
-  * [Install the package](#Installthepackage)
-
+    * [Install the package](#install-the-package)
 
 As of Titanium 9.0.0, building Windows apps is no longer supported.
 
@@ -38,7 +37,6 @@ Before deploying the application to a Windows Phone device, you will need to:
 * Register the device using the Windows Phone Developer Registration tool (part of the Windows Phone SDK)
 
 * Connect the device to your computer with a USB cable
-
 
 Currently, only one Windows Phone device may be plugged in to your computer to deploy. If multiple devices are plugged in, the build process will fail with an error.
 
@@ -66,7 +64,6 @@ The following instructions are from [Windows Dev Center: How to register your ph
 
 9. After your phone is successfully registered, the **Status** message displays: "Congratulations! You have successfully unlocked your Windows Phone."
 
-
 Your phone is now registered. You can now deploy apps to the phone.
 
 ### Deploy to a device with Studio
@@ -80,7 +77,6 @@ To deploy with Studio:
 3. Select **Windows Phone Device** from the **Target** drop-down list.
 
 4. If the **Launch Automatically** option is enabled under the **Target** drop-down list, the application will be automatically launched after the device is selected. If not, you need to click the **Launch** button to start the build process.
-
 
 Your app will be built, installed to your device and automatically launched.
 
@@ -104,7 +100,6 @@ To deploy to a Windows tablet, you need to [sideload](https://technet.microsoft.
 
 4. Execute a PowerShell command to install the package to the tablet with the Add-AppDevPackage PowerShell script.
 
-
 After you package the application, copy the project's generated.cer and ./dist/<PACKAGE\_NAME>\_Win32.appx files to to a USB drive and plug it into the tablet.
 
 ### Edit group policy settings
@@ -125,7 +120,6 @@ To enable installation of the package, you need to update the device's group pol
 
 7. Click **OK.**
 
-
 ### Install the certificate
 
 Install the certificate you copied to the USB drive to the device's Trusted Root Certification Authorities store. You will need administrative privileges.
@@ -140,7 +134,6 @@ Install the certificate you copied to the USB drive to the device's Trusted Root
 
 5. Click **Finish**.
 
-
 A dialog should appear that the certificate was installed successfully.
 
 ### Install the package
@@ -153,7 +146,6 @@ Open PowerShell and execute the Add-AppDevPackage command to install the applica
 
 3. Execute the following command to install the package:
 
-  `<TITANIUM_PROJECT_DIR>\build\windows\win10.x86\AppPackages\ProjectFolder\<PACKAGE_NAME>\Add``-AppDevPackage``.ps1`
-
+    `<TITANIUM_PROJECT_DIR>\build\windows\win10.x86\AppPackages\ProjectFolder\<PACKAGE_NAME>\Add``-AppDevPackage``.ps1`
 
 The application will be installed to the device and you can access it from the **All apps** screen.

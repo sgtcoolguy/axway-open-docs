@@ -2,26 +2,25 @@
 
 This document provides information about custom objects and fields, how to create custom objects, adding and removing custom fields, and supported data types.
 
-* [Custom objects and custom fields](#Customobjectsandcustomfields)
+* [Custom objects and custom fields](#custom-objects-and-custom-fields)
 
-* [Creating custom objects](#Creatingcustomobjects)
+* [Creating custom objects](#creating-custom-objects)
 
-* [Adding custom fields to predefined objects](#Addingcustomfieldstopredefinedobjects)
+* [Adding custom fields to predefined objects](#adding-custom-fields-to-predefined-objects)
 
-* [Supported data types](#Supporteddatatypes)
+* [Supported data types](#supported-data-types)
 
-* [Indexing size limit for custom objects and fields](#Indexingsizelimitforcustomobjectsandfields)
+* [Indexing size limit for custom objects and fields](#indexing-size-limit-for-custom-objects-and-fields)
 
-* [Geographic coordinates in custom fields](#Geographiccoordinatesincustomfields)
+* [Geographic coordinates in custom fields](#geographic-coordinates-in-custom-fields)
 
-  * [Remove a field](#Removeafield)
+    * [Remove a field](#remove-a-field)
 
-  * [Querying custom fields](#Queryingcustomfields)
+    * [Querying custom fields](#querying-custom-fields)
 
-* [Availability](#Availability)
+* [Availability](#availability)
 
-* [iOS](#iOS)
-
+* [iOS](#ios)
 
 ## Custom objects and custom fields
 
@@ -129,39 +128,19 @@ Custom Data is returned in the custom\_fields JSON response field in the type th
 
 ## Supported data types
 
-Type
-
-Example
-
-Boolean
-
-true or false
-
-String
-
-"blue"
-
-Number
-
-23 or 1.234
-
-Date
-
-"2011-11-02 17:07:37 -0700". If a string value matches date format "yyyy-mm-dd hh:mm:ss+zzzz" or "yyyy-mm-dd:hh:mm:ss+zzzz", it will be converted to Date type on the API Builder backend
+| Type | Example |
+| --- | --- |
+| Boolean | true or false |
+| String | "blue" |
+| Number | 23 or 1.234 |
+| Date | "2011-11-02 17:07:37 -0700". If a string value matches date format "yyyy-mm-dd hh:mm:ss+zzzz" or "yyyy-mm-dd:hh:mm:ss+zzzz", it will be converted to Date type on the API Builder backend |
 
 You could also store more complex data types, such as Array and Hash. Hash and Array can be embedded into each other. Currently, data stored inside a Hash is not queryable.
 
-Type
-
-Example
-
-Hash
-
-{"age":23,"scores":{"math":90, "physics":100}, "my\_favorite\_colors":\["blue","red"\]}
-
-Array
-
-\["nissan", "honda"\] or \[2006, 2008\], \[{"age":28}, {"color":"blue"}\]
+| Type | Example |
+| --- | --- |
+| Hash | {"age":23,"scores":{"math":90, "physics":100}, "my\_favorite\_colors":\["blue","red"\]} |
+| Array | \["nissan", "honda"\] or \[2006, 2008\], \[{"age":28}, {"color":"blue"}\] |
 
 ## Indexing size limit for custom objects and fields
 
@@ -251,60 +230,21 @@ The following MBS objects allow you to add one or more extra data fields during 
 
 * [Users.create](/arrowdb/latest/#!/api/Users-method-create) and [update](/arrowdb/latest/#!/api/Users-method-update)
 
-
 ## iOS
 
 If you are using the [iOS APS SDK](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/AMPLIFY_Appcelerator_Platform_Services_SDK_for_iOS_Mobile_Backend_Services/) to create an object's custom fields, use an NSDictionary to construct the custom data you want to associate with the object.
 
 The following table lists the data types you can define with the iOS APS SDK:
 
-Type
-
-Example
-
-iOS Class
-
-String
-
-"blue"
-
-NString
-
-Number
-
-123 or 1.234
-
-\[NSNumber numberWithInt:\] or \[NSNumber numberWithDouble:\]
-
-Boolean
-
-true or false
-
-\[NSNumber numberWithBool:\]
-
-Date
-
-"2011-11-02 17:07:37 -0700"
-
-NSString
-
-Hash
-
-{"age": 23, "color": "blue"}
-
-NSDictionary
-
-Array
-
-\[123, 234\] or \["mike", "joe"\]
-
-NSArray
-
-Geo-coordinates
-
-\[lng, lat\], e.g. \[122.33, 37.48\]
-
-NSArray with two NSNumber elements
+| Type | Example | iOS Class |
+| --- | --- | --- |
+| String | "blue" | NString |
+| Number | 123 or 1.234 | \[NSNumber numberWithInt:\] or \[NSNumber numberWithDouble:\] |
+| Boolean | true or false | \[NSNumber numberWithBool:\] |
+| Date | "2011-11-02 17:07:37 -0700" | NSString |
+| Hash | {"age": 23, "color": "blue"} | NSDictionary |
+| Array | \[123, 234\] or \["mike", "joe"\] | NSArray |
+| Geo-coordinates | \[lng, lat\], e.g. \[122.33, 37.48\] | NSArray with two NSNumber elements |
 
 For example, if you want to create a user with custom fields, such as eye\_color, enrolled\_at, etc., you can put all the custom fields in an NSDictionary.
 

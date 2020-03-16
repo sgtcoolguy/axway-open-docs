@@ -14,7 +14,6 @@ Studio displays the Outline View in Web Perspective by default, and it is locate
 
 * To close the **Outline View**, click the Close button (**X**) in the upper right of the tab.
 
-
 ![outline_view](/Images/appc/download/attachments/30083303/outline_view.png)
 
 ## Related Topics

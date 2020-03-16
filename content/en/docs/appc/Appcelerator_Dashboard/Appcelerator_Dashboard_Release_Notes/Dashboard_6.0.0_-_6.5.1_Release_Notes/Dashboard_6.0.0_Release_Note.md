@@ -24,7 +24,6 @@ Dashboard 6.0.0 is a major release, which includes new features, improvements, a
 
 * Changes to a user email address are temporarily disabled.
 
-
 ## Improvements
 
 * Added Application Name to Custom Query builder fields.
@@ -44,7 +43,6 @@ Dashboard 6.0.0 is a major release, which includes new features, improvements, a
 * Updated API Builder Getting Started Guide, About, and Developer Guide links to point to API Builder Standalone v4.0.0 documentation.
 
 * Improved the Platform Terms of Use acceptance during user activation.
-
 
 ## Fixed issues
 

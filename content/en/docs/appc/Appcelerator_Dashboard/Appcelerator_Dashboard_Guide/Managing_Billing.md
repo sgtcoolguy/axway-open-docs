@@ -2,32 +2,31 @@
 
 To manage your account information, select **Billing** on the **User** menu. Selecting **Billing** opens the _Billing_ page.
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Choose Plan](#ChooseChoosePlan)
+* [Choose Plan](#choose-plan)
 
-  * [Application Development](#ApplicationDevelopment)
+    * [Application Development](#application-development)
 
-    * [Compare plans](#Compareplans)
+        * [Compare plans](#compare-plans)
 
-  * [Runtime Services](#RuntimeServices)
+    * [Runtime Services](#runtime-services)
 
-    * [Run APIs and Microservices](#RunAPIsandMicroservices)
+        * [Run APIs and Microservices](#run-apis-and-microservices)
 
-    * [Enterprise Cloud Capacity and Support](#EnterpriseCloudCapacityandSupport)
+        * [Enterprise Cloud Capacity and Support](#enterprise-cloud-capacity-and-support)
 
-  * [Mobile Backend Services](#MobileBackendServices)
+    * [Mobile Backend Services](#mobile-backend-services)
 
-    * [Mobile Backend Services](#MobileBackendServices.1)
+        * [Mobile Backend Services](#mobile-backend-services)
 
-    * [Enterprise Cloud Capacity and Support](#EnterpriseCloudCapacityandSupport.1)
+        * [Enterprise Cloud Capacity and Support](#enterprise-cloud-capacity-and-support)
 
-  * [Application Integration](#ApplicationIntegration)
+    * [Application Integration](#application-integration)
 
-* [Payment History](#PaymentHistory)
+* [Payment History](#payment-history)
 
-* [Billing Info](#BillingInfo)
-
+* [Billing Info](#billing-info)
 
 ## Overview
 
@@ -43,11 +42,11 @@ The **Cloud Capacity and Mobile Services** section provides the current usage of
 
 * Container Points - Allocate container points for the cloud resources to run your server-side application. Each container can run a single application as follows:
 
-  * Medium Container (4 points): 512M memory/4G disk/2000 CPU share
+    * Medium Container (4 points): 512M memory/4G disk/2000 CPU share
 
-  * Large Container (8 points): 1G memory/8G disk/4000 CPU share
+    * Large Container (8 points): 1G memory/8G disk/4000 CPU share
 
-  * X-Large Container (16 points): 2G memory/16G disk/8000 CPU share
+    * X-Large Container (16 points): 2G memory/16G disk/8000 CPU share
 
 * Push Calls - Number of pushes to mobile devices.
 
@@ -60,7 +59,6 @@ The **Cloud Capacity and Mobile Services** section provides the current usage of
 * File Storage - Storage for uploaded files or photos.
 
 * Analytics Events - The number of analytic events sent. Paid events are retained for a year.
-
 
 ## Choose Plan
 
@@ -88,7 +86,6 @@ You can claim an Indie seat for free by clicking the Claim for Free button. An I
 
 * Community support
 
-
 You can select Pro seats by selecting the number of Pro seats to add and then clicking the Add to Cart button. Pro seats provide serious power and are perfect for growing mobile businesses. Pro seats include all Indie seat features plus the following additional features:
 
 * 2 million analytics events monthly
@@ -107,7 +104,6 @@ You can select Pro seats by selecting the number of Pro seats to add and then cl
 
 * eSupport
 
-
 To learn more about the Pro seat feature, click **Learn more about Pro features**.
 
 To add Enterprise seats, either call one of the listed numbers or click the **Talk To Sales** button and complete the _Get in Touch_ form. Enterprise seats include all Pro seat features plus the following additional features:
@@ -119,7 +115,6 @@ To add Enterprise seats, either call one of the listed numbers or click the **Ta
 * Premier Support, including Elite SLAs
 
 * Medium and Large development teams of size four or above
-
 
 #### Compare plans
 
@@ -157,7 +152,6 @@ The **Enterprise Cloud Capacity and Support** section provides a list of benefit
 
 * GovCloud
 
-
 To request additional information on enterprise plans or to customize your current enterprise plan, either call one of the listed numbers or click the **Talk To Sales** button and complete the _Get in Touch_ form.
 
 ### Mobile Backend Services
@@ -180,7 +174,6 @@ The **Mobile Backend Services** section provides pre-built, scalable cloud servi
 
 * File storage - Adjust your allocated file storage space to increase your space to store uploaded files and photos.
 
-
 #### Enterprise Cloud Capacity and Support
 
 The **Enterprise Cloud Capacity and Support** section provides a list of benefits offered with an enterprise-level plan for cloud capacity. Enterprise plans for cloud capacity offer:
@@ -198,7 +191,6 @@ The **Enterprise Cloud Capacity and Support** section provides a list of benefit
 * Safe harbor compliance
 
 * GovCloud
-
 
 To request additional information on enterprise plans or to customize your current enterprise plan, either call one of the listed numbers or click the **Talk To Sales** button and complete the _Get in Touch_ form.
 
@@ -226,7 +218,6 @@ The **Payment History** tab lists the payment history of the selected account. T
 
 * Training subscriptions
 
-
 ![billing_payment_history](/Images/appc/download/attachments/60145220/billing_payment_history.png)
 
 ## Billing Info
@@ -241,58 +232,58 @@ To update the Billing Information, click the **Update** button. The _Payment Met
 
 1. In the **Payment Information** section, complete the following fields or verify the information in the following fields:
 
-  * Credit Card Number
+    * Credit Card Number
 
-  * Expiry
+    * Expiry
 
-  * CVV
+    * CVV
 
 2. In the **Billing Information** section, complete the following fields or verify the information in the following fields:
 
-  * First Name
+    * First Name
 
-  * Last Name
+    * Last Name
 
-  * Country
+    * Country
 
-  * Region
+    * Region
 
-  * City
+    * City
 
-  * Street Address
+    * Street Address
 
-  * Postal Code
+    * Postal Code
 
 3. Optionally, complete the following fields or verify the information in the following fields:
 
-  * Phone
+    * Phone
 
-  * Apt., Suite, Bldg.
+    * Apt., Suite, Bldg.
 
 4. In the **Shipping Information** section, select the **Same as billing information** checkbox if your shipping address is the same as your billing address. If your shipping address is not the same as your billing address, deselect the **Same as billing information** checkbox and complete the following fields or verify the information in the following fields:
 
-  * First Name
+    * First Name
 
-  * Last Name
+    * Last Name
 
-  * Email Address
+    * Email Address
 
-  * Country
+    * Country
 
-  * Region
+    * Region
 
-  * City
+    * City
 
-  * Street Address
+    * Street Address
 
-  * Postal Code
+    * Postal Code
 
 5. Optionally, complete the following fields or verify the information in the following fields:
 
-  * Company
+    * Company
 
-  * Phone
+    * Phone
 
-  * Apt., Suite, Bldg.
+    * Apt., Suite, Bldg.
 
 6. Make sure your billing and payment information is correct, then click **Save changes**.

@@ -8,31 +8,15 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 This document describes a Codeblock flow-node and provides information on Codeblock flow-node configuration, metadata, and functionality.
 
-Name
-
-Description
-
-Codeblock
-
-A flow-node that can be used for executing user code and returns the response. This flow-node allows custom business logic to be executed as part of the flow.
+| Name | Description |
+| --- | --- |
+| Codeblock | A flow-node that can be used for executing user code and returns the response. This flow-node allows custom business logic to be executed as part of the flow. |
 
 ## Instance configuration (config)
 
-Property
-
-Description
-
-Required
-
-Type
-
-method
-
-The name of the Codeblock to execute.
-
-yes
-
-string
+| Property | Description | Required | Type |
+| --- | --- | --- | --- |
+| method | The name of the Codeblock to execute. | yes | string |
 
 The typical usage of code blocks in a flow involves setting parameters, mapping responses, and setting required configs as noted in the example below.
 
@@ -40,37 +24,11 @@ The typical usage of code blocks in a flow involves setting parameters, mapping 
 
 Codeblock metadata should be included in the /codeblocks directory of an API Builder Project. It is defined as a JSON file with the following properties:
 
-Property
-
-Description
-
-Required
-
-Type
-
-name
-
-The name of the Codeblock
-
-yes
-
-string
-
-description
-
-The description of the Codeblock
-
-yes
-
-string
-
-path
-
-The relative path to the function to be invoked.
-
-yes
-
-string
+| Property | Description | Required | Type |
+| --- | --- | --- | --- |
+| name | The name of the Codeblock | yes | string |
+| description | The description of the Codeblock | yes | string |
+| path | The relative path to the function to be invoked. | yes | string |
 
 ### Configuration and metadata example
 
@@ -154,10 +112,9 @@ The functional part of a Codeblock should be a .js file which exports a function
 
 * cb <Function> - Callback.
 
-  * err - Error. Passing this will cause the flow to cease processing and a 500 error to be returned from the endpoint which called it.
+    * err - Error. Passing this will cause the flow to cease processing and a 500 error to be returned from the endpoint which called it.
 
-  * response - The data to be returned as the flow-node response.
-
+    * response - The data to be returned as the flow-node response.
 
 Most of the time errors should be returned in the callback as a standard response. Using the first parameter to return errors is the same as throwing an error in the Codeblock and should rarely need to be used.
 

@@ -2,40 +2,39 @@
 
 Contents
 
-* [General](#General)
+* [General](#general)
 
-* [Files](#Files)
+* [Files](#files)
 
-* [Variables](#Variables)
+* [Variables](#variables)
 
-* [Functions](#Functions)
+* [Functions](#functions)
 
-* [Objects](#Objects)
+* [Objects](#objects)
 
-* [Modules](#Modules)
+* [Modules](#modules)
 
-* [Whitespace](#Whitespace)
+* [Whitespace](#whitespace)
 
-* [Braces](#Braces)
+* [Braces](#braces)
 
-* [Semicolons](#Semicolons)
+* [Semicolons](#semicolons)
 
-* [Loops](#Loops)
+* [Loops](#loops)
 
-* [Conditionals](#Conditionals)
+* [Conditionals](#conditionals)
 
-* [Data Types](#DataTypes)
+* [Data Types](#data-types)
 
-* [Allowed Constructs](#AllowedConstructs)
+* [Allowed Constructs](#allowed-constructs)
 
-* [Disallowed Constructs](#DisallowedConstructs)
+* [Disallowed Constructs](#disallowed-constructs)
 
-* [Comments](#Comments)
+* [Comments](#comments)
 
-* [Documentation](#Documentation)
+* [Documentation](#documentation)
 
-* [Exception Handling](#ExceptionHandling)
-
+* [Exception Handling](#exception-handling)
 
 ## General
 
@@ -49,7 +48,6 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 
 3. BE CONSISTENT.
 
-
 ## Files
 
 1. Filenames SHOULD be all lower case if the file does not contain any instantiable objects (classes).
@@ -57,7 +55,6 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 2. Filenames SHOULD be CamelCase if the file contains an instantiable object (class).
 
 3. Directories SHOULD be all lower case and unless the directory serves as a part of a module path (i.e. /path/to/Ti/Filesystem).
-
 
 ## Variables
 
@@ -77,7 +74,6 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 
 8. Complementary names MUST be used for complementary entities (i.e. get/set, add/remove, create/destroy, start/stop, etc).
 
-
 ## Functions
 
 1. Public functions and methods SHOULD be mixedCase (i.e. myFunction, doSomething, etc).
@@ -92,7 +88,6 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 
 6. Method names SHOULD be verbs or verb phrases (i.e. getValue(), isEnabled()).
 
-
 ## Objects
 
 1. Methods SHOULD be defined on the object's prototype, not via "this" in the constructor.
@@ -102,7 +97,6 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 3. Array and object properties MUST NOT be added to the prototype.
 
 4. Properties that are boolean-ish and default to falsey (false, null, undefined, 0) do not NEED to be defined before use.
-
 
 ## Modules
 
@@ -122,7 +116,6 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 
 8. AMD modules MUST NOT contain more than one anonymous module definition.
 
-
 ## Whitespace
 
 1. Tabs (set to 4 spaces) MUST be used for indentation rather than spaces.
@@ -135,7 +128,7 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 
 5. Ternary operators (inline-ifs) SHOULD have spaces around both the ? and : operators.
 
-  `drink = (location ==` `"scotland"``) ?` `"whisky"` `:` `"whiskey"``;`
+    `drink = (location ==` `"scotland"``) ?` `"whisky"` `:` `"whiskey"``;`
 
 6. Semi-colons in for loops SHOULD be followed by a space.
 
@@ -145,7 +138,6 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 
 9. Statements MAY be aligned wherever it improves readability.
 
-
 ## Braces
 
 1. All block structures including if, else, switch, try, catch, function, while, for, and so on MUST use braces around body.
@@ -153,7 +145,6 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 2. Opening braces SHOULD be at the end of the first line of the block statement.
 
 3. Closing braces SHOULD be on a separate line and indented to match indentation of the opening brace's line.
-
 
 `if` `(error) {`
 
@@ -165,8 +156,7 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 
 1. All lines of code MUST end with one and only one semicolon.
 
-  1. A compile-time JavaScript minifier may remove semicolons to reduce file size.
-
+    1. A compile-time JavaScript minifier may remove semicolons to reduce file size.
 
 ## Loops
 
@@ -178,14 +168,13 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 
 4. for loops SHOULD be used instead of for-in loops when looping over arrays.
 
-  1. for-in is acceptable for looping over objects, though it is preferred to use the ECMAScript 5 Object.keys() method.
+    1. for-in is acceptable for looping over objects, though it is preferred to use the ECMAScript 5 Object.keys() method.
 
 5. You SHOULD use a for loop instead of Array.forEach().
 
-  1. The overhead of calling a function for each items is significant.
+    1. The overhead of calling a function for each items is significant.
 
 6. Iterator variables SHOULD be named i, j, k, etc.
-
 
 ## Conditionals
 
@@ -200,7 +189,6 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 5. Use !~ with an indexOf() to check if it contains a value.
 
 6. Use !(a<b || b<a) to check if two dates or arrays are equal.
-
 
 ## Data Types
 
@@ -224,11 +212,9 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 
 10. Floating point constants SHOULD be written with a digit, followed by a decimal point, and at least one decimal (i.e. 1.0).
 
-
 ## Allowed Constructs
 
 1. Use built-in standard functions (i.e. string.charAt(3) instead of string\[pe:3\]).
-
 
 ## Disallowed Constructs
 
@@ -236,31 +222,27 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 
 2. You SHOULD NOT modify prototypes of internal objects.
 
-  1. Possible exception when trying to shim a standardized function that is missing in the given implementation.
+    1. Possible exception when trying to shim a standardized function that is missing in the given implementation.
 
 3. You SHOULD NOT use parenthesis when using delete, typeof, void or calling return, throw, case, in, or new.
 
 4. You SHOULD NOT use commas at the beginning of a line; they should be at the end of the line.
 
-
 ## Comments
 
 1. Single line comments MUST use C++ style single-line comments, introduced by two slashes:
 
-  `// my comment`
-
+    `// my comment`
 
 1. Multi-line comments MUST use C-style comments, beginning with /\* and ending with \*/:
 
-  `/* my multi-`
+    `/* my multi-`
 
-  `line comment */`
-
+    `line comment */`
 
 ## Documentation
 
 1. Code SHOULD be documented using JSDoc annotations ([https://github.com/jsdoc3/jsdoc](https://github.com/jsdoc3/jsdoc)).
-
 
 ## Exception Handling
 
@@ -268,4 +250,4 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 
 2. Thrown exceptions SHOULD use built-in exception types: a string, Error, EvalError, RangeError, ReferenceError, SyntaxError, TypeError, URIError.
 
-  1. Custom exceptions are acceptable as long as they define their own toString() function.
+    1. Custom exceptions are acceptable as long as they define their own toString() function.

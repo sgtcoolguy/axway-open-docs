@@ -37,7 +37,6 @@ If you have the sources from an existing project that wasn't created in Eclipse,
 
 * Create a new project in the default workspace and create a folder that's a **link to your existing sources**. Note that this link folder must be added to the PYTHONPATH in the next step.
 
-
 **Note 1**: **Links** can be used **above the source folder** or **as the source folder**, but **never inside a source folder**, as it's not supported by PyDev)
 
 **Note 2**: To create the folder as a link, choose the **file > new > folder** from the menu, and in the new folder dialog, select the **Advanced >>** options.

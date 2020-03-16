@@ -1,19 +1,18 @@
 {"title":"Installing the Android Development Tools","weight":"50"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Install the Eclipse Java Development Tools plugin](#InstalltheEclipseJavaDevelopmentToolsplugin)
+* [Install the Eclipse Java Development Tools plugin](#install-the-eclipse-java-development-tools-plugin)
 
-* [Install the ADT plugin](#InstalltheADTplugin)
+* [Install the ADT plugin](#install-the-adt-plugin)
 
-* [Configure Studio to use the SDKs](#ConfigureStudiotousetheSDKs)
+* [Configure Studio to use the SDKs](#configure-studio-to-use-the-sdks)
 
-* [Launch the emulator and app](#Launchtheemulatorandapp)
+* [Launch the emulator and app](#launch-the-emulator-and-app)
 
-* [Add the DDMS perspective button](#AddtheDDMSperspectivebutton)
+* [Add the DDMS perspective button](#add-the-ddms-perspective-button)
 
-* [Use the tools](#Usethetools)
-
+* [Use the tools](#use-the-tools)
 
 ## Overview
 
@@ -33,7 +32,6 @@ ADT has been discontinued, and we don't recommend using it.
 
 * Click the **Add** button to add the Google ADT Plugin update site.
 
-
 ![ADT_install_08](/Images/appc/download/attachments/30083134/ADT_install_08.png)
 
 * In the **Name** field, enter something descriptive, such as **Google ADT.**
@@ -41,7 +39,6 @@ ADT has been discontinued, and we don't recommend using it.
 * Paste the Google ADT update site URL, copied to the clipboard in the previous step, into the **Location** field.
 
 * Click the **OK** button.
-
 
 ![ADT_install_09](/Images/appc/download/attachments/30083134/ADT_install_09.png)
 
@@ -55,18 +52,15 @@ ADT has been discontinued, and we don't recommend using it.
 
 * Click the **Next** button on the **Install Details** screen that follows.
 
-
 ![ADT_install_10](/Images/appc/download/attachments/30083134/ADT_install_10.png)
 
 * Select each package in turn from the left-hand pane and accept the respective license agreement.
 
 * Click the **Finish** button.
 
-
 ![ADT_install_11](/Images/appc/download/attachments/30083134/ADT_install_11.png)
 
 * Once the installation is complete, click the **Restart Now** button.
-
 
 ![ADT_install_12](/Images/appc/download/attachments/30083134/ADT_install_12.png)
 
@@ -78,15 +72,13 @@ ADT has been discontinued, and we don't recommend using it.
 
 * Browse the resulting project file list, right-click tiapp.xml in the root of the project, select **Open With > TiApp Editor.**
 
-
 ![ADT_install_13](/Images/appc/download/attachments/30083134/ADT_install_13.png)
 
 * Choose your preferred Titanium SDK version from the **SDK Version** drop-down list.
 
-* Check the [Android SDK / Target Android Platform](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#AndroidSDK/TargetAndroidplatform) section of the Titanium Compatibility Matrix to determine which Android versions are compatible with your chosen Titanium SDK. The information found in that document will be needed for the configuration in the following steps.
+* Check the [Android SDK / Target Android Platform](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#android-sdk-/-target-android-platform) section of the Titanium Compatibility Matrix to determine which Android versions are compatible with your chosen Titanium SDK. The information found in that document will be needed for the configuration in the following steps.
 
 * Close tiapp.xml.
-
 
 ![ADT_install_14](/Images/appc/download/attachments/30083134/ADT_install_14.png)
 
@@ -106,8 +98,7 @@ ADT has been discontinued, and we don't recommend using it.
 
 * Click **OK** to save preference changes.
 
-
-As explained in the [Android SDK / Target Android Platform](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#AndroidSDK/TargetAndroidplatform), if you require advanced Android features, such as Maps, remember to choose a target that includes the enhanced Google APIs, listed as **Google APIs** in the **Default Android SDK** list.
+As explained in the [Android SDK / Target Android Platform](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#android-sdk-/-target-android-platform), if you require advanced Android features, such as Maps, remember to choose a target that includes the enhanced Google APIs, listed as **Google APIs** in the **Default Android SDK** list.
 
 ## Launch the emulator and app
 
@@ -115,16 +106,13 @@ As explained in the [Android SDK / Target Android Platform](/docs/appc/Titanium_
 
 * Using the **Launch** toolbar button, located between the **Project Explorer** tab and its file list, select **Android Emulator** to launch the project app.
 
-
 ## Add the DDMS perspective button
 
 * While the emulator boots, open the ADT perspective. From the Studio menu bar, select the **Window > Open Perspective > Other...**
 
-
 ![ADT_install_19](/Images/appc/download/attachments/30083134/ADT_install_19.png)
 
 * Select **DDMS** (which stands for Dalvik Debug Monitor Server) from the list of available perspectives.
-
 
 ![ADT_install_20](/Images/appc/download/attachments/30083134/ADT_install_20.png)
 
@@ -132,13 +120,11 @@ As explained in the [Android SDK / Target Android Platform](/docs/appc/Titanium_
 
 * Click the **OK** button when the resulting _Do you want to reset the current DDMS perspective to its defaults?_ dialog displays.
 
-
 ![ADT_install_21](/Images/appc/download/attachments/30083134/ADT_install_21.png)
 
 ## Use the tools
 
 * Click the **LogCat** viewer tab above the bottom pane, to watch the console output while the emulator boots.
-
 
 ![ADT_install_22](/Images/appc/download/attachments/30083134/ADT_install_22.png)
 
@@ -146,18 +132,15 @@ As explained in the [Android SDK / Target Android Platform](/docs/appc/Titanium_
 
 * To show only Ti.API log messages, create a logcat filter using the green _plus_ icon in the logcat toolbar and set the by Log Tag field to "TiAPI". See [Reading and Writing Logs](http://developer.android.com/guide/developing/debugging/debugging-log.html) for more information about logcat filters.
 
-
 ![ADT_install_logcat_filter](/Images/appc/download/attachments/30083134/ADT_install_logcat_filter.png)
 
 * Once booted, unlock the emulator and wait for the app to launch.
-
 
 ![ADT_install_23](/Images/appc/download/attachments/30083134/ADT_install_23.png)
 
 * Now that the emulator is running, select it from the list of devices in the left-hand pane, and inspect it using the tools.
 
 * For example, select the **File Explorer** tab, and navigate to the directory /data/data/yourAppId.
-
 
 ![ADT_install_24](/Images/appc/download/attachments/30083134/ADT_install_24.png)
 

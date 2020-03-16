@@ -20,7 +20,6 @@ Mobile Backend Services also provides the ability to send push notifications to 
 
 * [Integrate with a Node.js app](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Mobile_Backend_Services_SDKs/Mobile_Backend_Services_SDK_for_Node.js/)
 
-
 ## Release notes
 
 * [Mobile Backend Services Release Notes](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Release_Notes/)

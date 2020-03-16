@@ -1,61 +1,60 @@
 {"title":"Setting up Studio","weight":"10"}
 
-* [Getting help overview](#Gettinghelpoverview)
+* [Getting help overview](#getting-help-overview)
 
-* [Compatibility and download](#Compatibilityanddownload)
+* [Compatibility and download](#compatibility-and-download)
 
-* [Preparing for Studio](#PreparingforStudio)
+* [Preparing for Studio](#preparing-for-studio)
 
-  * [System requirements](#Systemrequirements)
+    * [System requirements](#system-requirements)
 
-    * [Memory](#Memory)
+        * [Memory](#memory)
 
-    * [Disk space](#Diskspace)
+        * [Disk space](#disk-space)
 
-    * [Operating system](#Operatingsystem)
+        * [Operating system](#operating-system)
 
-    * [Node.js](#Node.js)
+        * [Node.js](#node.js)
 
-* [Minor differences](#Minordifferences)
+* [Minor differences](#minor-differences)
 
-* [Algorithm summary](#Algorithmsummary)
+* [Algorithm summary](#algorithm-summary)
 
-  * [Require(X) from module at path Y](#Require(X)frommoduleatpathY)
+    * [Require(X) from module at path Y](#requirex-from-module-at-path-y)
 
-  * [LOAD\_AS\_FILE(X)](#LOAD_AS_FILE(X))
+    * [LOAD\_AS\_FILE(X)](#load_as_filex)
 
-  * [LOAD\_AS\_DIRECTORY(X)](#LOAD_AS_DIRECTORY(X))
+    * [LOAD\_AS\_DIRECTORY(X)](#load_as_directoryx)
 
-  * [Software locations](#Softwarelocations)
+    * [Software locations](#software-locations)
 
-* [Installing Studio](#InstallingStudio)
+* [Installing Studio](#installing-studio)
 
-  * [OS X](#OSX)
+    * [OS X](#os-x)
 
-  * [Windows](#Windows)
+    * [Windows](#windows)
 
-* [Launching Studio](#LaunchingStudio)
+* [Launching Studio](#launching-studio)
 
-  * [Selecting a workspace folder](#Selectingaworkspacefolder)
+    * [Selecting a workspace folder](#selecting-a-workspace-folder)
 
-  * [Logging in to Studio](#LoggingintoStudio)
+    * [Logging in to Studio](#logging-in-to-studio)
 
-  * [Checking for Studio and SDK updates](#CheckingforStudioandSDKupdates)
+    * [Checking for Studio and SDK updates](#checking-for-studio-and-sdk-updates)
 
-  * [Installing platform SDKs](#InstallingplatformSDKs)
+    * [Installing platform SDKs](#installing-platform-sdks)
 
-* [Configuring advanced platform settings](#Configuringadvancedplatformsettings)
+* [Configuring advanced platform settings](#configuring-advanced-platform-settings)
 
-  * [Android settings](#Androidsettings)
+    * [Android settings](#android-settings)
 
-  * [iOS settings](#iOSsettings)
+    * [iOS settings](#ios-settings)
 
-    * [Managing certificates, provisioning profiles and devices](#Managingcertificates,provisioningprofilesanddevices)
+        * [Managing certificates, provisioning profiles and devices](#managing-certificates,-provisioning-profiles-and-devices)
 
-* [Troubleshooting](#Troubleshooting)
+* [Troubleshooting](#troubleshooting)
 
-* [Next steps - verifying Studio](#Nextsteps-verifyingStudio)
-
+* [Next steps - verifying Studio](#next-steps---verifying-studio)
 
 ## Getting help overview
 
@@ -77,29 +76,11 @@ A system must satisfy the following requirements in order to run Studio.
 
 #### Memory
 
-Product
-
-Host Operating System
-
-Storage
-
-Appcelerator Studio
-
-All
-
-1 GB (contiguous)
-
-Latest Android SDK
-
-macOS
-
-1.5 GB (contiguous)
-
-Latest Android SDK
-
-Windows
-
-1 GB (contiguous)
+| Product | Host Operating System | Storage |
+| --- | --- | --- |
+| Appcelerator Studio | All | 1 GB (contiguous) |
+| Latest Android SDK | macOS | 1.5 GB (contiguous) |
+| Latest Android SDK | Windows | 1 GB (contiguous) |
 
 Minimum system memory requirements is 8GB of RAM. 16GB is highly recommended.
 
@@ -107,57 +88,22 @@ Minimum system memory requirements is 8GB of RAM. 16GB is highly recommended.
 
 We recommend the following as a guideline for estimating how much disk space is necessary to build applications using Axway Appcelerator Studio:
 
-Application
-
-Recommended disk space
-
-Comments
-
-Xcode
-
-15 - 20GB
-
-Xcode includes the latest iOS and related simulator(s).
-
-Android Studio
-
-10 - 15GB
-
-You may need to select with SDK(s), NDK(s), and emulators to use.
-
-Axway Appcelerator Studio
-
-~250MB
-
-Genymotion
-
-~1GB
-
-Genymotion is optional
-
-Mobile app (workspace)
-
-50MB - 3GB
-
-Disk usage depends on many factors.
+| Application | Recommended disk space | Comments |
+| --- | --- | --- |
+| Xcode | 15 - 20GB | Xcode includes the latest iOS and related simulator(s). |
+| Android Studio | 10 - 15GB | You may need to select with SDK(s), NDK(s), and emulators to use. |
+| Axway Appcelerator Studio | ~250MB |  |
+| Genymotion | ~1GB | Genymotion is optional |
+| Mobile app (workspace) | 50MB - 3GB | Disk usage depends on many factors. |
 
 #### Operating system
 
 Titanium is supported on the following Operating Systems:
 
-Operating System
-
-Version
-
-macOS
-
-10.11.5 (Mavericks) and later
-
-Windows
-
-Windows 7 and later(Android)
-Windows 8.1 and later (Windows Phone)
-Windows 10 and later (Windows 10 Mobile)
+| Operating System | Version |
+| --- | --- |
+| macOS | 10.11.5 (Mavericks) and later |
+| Windows | Windows 7 and later(Android)  <br />Windows 8.1 and later (Windows Phone)  <br />Windows 10 and later (Windows 10 Mobile) |
 
 As of Titanium 9.0.0, building Windows apps is no longer supported.
 
@@ -169,12 +115,11 @@ Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3
 
 * [Algorithm summary](#Node.jsSupport-Algorithmsummary)
 
-  * [Require(X) from module at path Y](#Node.jsSupport-Require(X)frommoduleatpathY)
+    * [Require(X) from module at path Y](#Node.jsSupport-Require(X)frommoduleatpathY)
 
-  * [LOAD\_AS\_FILE(X)](#Node.jsSupport-LOAD_AS_FILE(X))
+    * [LOAD\_AS\_FILE(X)](#Node.jsSupport-LOAD_AS_FILE(X))
 
-  * [LOAD\_AS\_DIRECTORY(X)](#Node.jsSupport-LOAD_AS_DIRECTORY(X))
-
+    * [LOAD\_AS\_DIRECTORY(X)](#Node.jsSupport-LOAD_AS_DIRECTORY(X))
 
 Titanium SDK has full NodeJS support so users can use NPM modules Android and iOS platforms.
 
@@ -190,7 +135,6 @@ This implementation includes the NodeJS require algorithm with some minor differ
 
 * The SDK will load JSON files and directories (package.json's main property (look at it, resolve it, and try to load it), index.js, and index.json)
 
-
 ## Algorithm summary
 
 To summarize the algorithm the SDK uses, here are three summaries for requiring a module, loading as file, and loading as directory:
@@ -199,34 +143,33 @@ To summarize the algorithm the SDK uses, here are three summaries for requiring 
 
 1. If X is a core module,
 
-  1. return the core module
+    1. return the core module
 
-  2. STOP
+    2. STOP
 
 2. If X begins with ./, or ../,
 
-  1. LOAD\_AS\_FILE(Y + X)
+    1. LOAD\_AS\_FILE(Y + X)
 
-  2. LOAD\_AS\_DIRECTORY(Y + X)
+    2. LOAD\_AS\_DIRECTORY(Y + X)
 
 3. If X begins with /,
 
-  1. LOAD\_AS\_FILE(X)
+    1. LOAD\_AS\_FILE(X)
 
-  2. LOAD\_AS\_DIRECTORY(X)
+    2. LOAD\_AS\_DIRECTORY(X)
 
 4. If X does not contain '/', assume it should try and load CommonJS module first....
 
-  1. LOAD\_AS\_FILE(X/X.js): try to load "legacy" CommonJS file named module.id/module.id.js.
+    1. LOAD\_AS\_FILE(X/X.js): try to load "legacy" CommonJS file named module.id/module.id.js.
 
-  2. LOAD\_AS\_DIRECTORY(X): try to load CommonJS module as a directory
+    2. LOAD\_AS\_DIRECTORY(X): try to load CommonJS module as a directory
 
 5. WARN user about possible bad require being treated as absolute THROW "not found"
 
-  1. LOAD\_AS\_FILE(X)
+    1. LOAD\_AS\_FILE(X)
 
-  2. LOAD\_AS\_DIRECTORY(X)
-
+    2. LOAD\_AS\_DIRECTORY(X)
 
 ### LOAD\_AS\_FILE(X)
 
@@ -236,19 +179,17 @@ To summarize the algorithm the SDK uses, here are three summaries for requiring 
 
 3. If X.json is a file, parse X.json to a JavaScript Object. STOP
 
-
 ### LOAD\_AS\_DIRECTORY(X)
 
 1. If X/package.json is a file, If X/index.js is a file, load X/index.js as JavaScript text. STOP
 
-  1. Parse X/package.json and look for "main" field.
+    1. Parse X/package.json and look for "main" field.
 
-  2. let M = X + (json main field)
+    2. let M = X + (json main field)
 
-  3. LOAD\_AS\_FILE(M)
+    3. LOAD\_AS\_FILE(M)
 
 2. If X/index.json is a file, parse X/index.json to a JavaScript object. STOP
-
 
 ### Software locations
 
@@ -272,16 +213,15 @@ In addition to installing Studio, the installer for OS X also downloads and inst
 
 4. After the check, the license agreement appears. Click **Continue**, then click **Agree** to accept the license agreement.
 
-  ![Screen_Shot_2018-03-16_at_12.10.37_AM](/Images/appc/download/attachments/37540095/Screen_Shot_2018-03-16_at_12.10.37_AM.png)
+    ![Screen_Shot_2018-03-16_at_12.10.37_AM](/Images/appc/download/attachments/37540095/Screen_Shot_2018-03-16_at_12.10.37_AM.png)
 5. Select a destination, typically this will be the **Macintosh HD**, then click **Continue**.
 
 6. Click **Install** to start the installation process. The installer will install the prerequisites and Studio
 
 7. After installation is complete, click **Close** and eject the Appcelerator Studio volume.
 
-  ![Screen_Shot_2018-03-16_at_12.11.57_AM](/Images/appc/download/attachments/37540095/Screen_Shot_2018-03-16_at_12.11.57_AM.png)
+    ![Screen_Shot_2018-03-16_at_12.11.57_AM](/Images/appc/download/attachments/37540095/Screen_Shot_2018-03-16_at_12.11.57_AM.png)
 8. To start Studio, from the Dock, select **Applications** \> **Appcelerator Studio** \> **AppceleratorStudio**.
-
 
 **To install and run Studio on OS X using the CLI:**
 
@@ -292,7 +232,6 @@ In addition to installing Studio, the installer for OS X also downloads and inst
 3. Enter your sudo password when prompted. The installer will install the prerequisites and Studio.
 
 4. To start Studio, execute open /Applications/Appcelerator\_Studio/AppceleratorStudio.app/.
-
 
 `$ hdiutil attach ~/Downloads/Appcelerator_Studio.dmg`
 
@@ -316,19 +255,18 @@ In addition to installing Studio, the installer for Windows also downloads and i
 
 2. Select the install location. By default, Studio is installed to %USERPROFILE%\\AppData\\Roaming\\Appcelerator\\Appcelerator Studio\\ folder.
 
-  Installing Studio to a common system location (such as %PROGRAMFILES%) is not currently recommended as it causes problems during the Studio software update process.
+    Installing Studio to a common system location (such as %PROGRAMFILES%) is not currently recommended as it causes problems during the Studio software update process.
 
 3. Check the **I agree to the License terms and condition** checkbox.
-  ![4](/Images/appc/download/attachments/37540095/4.JPG)
+    ![4](/Images/appc/download/attachments/37540095/4.JPG)
 
 4. Click the **INSTALL** button. The installer determines if the prerequisites are installed. If not, the installer automatically installs them for you.
 
 5. Once the prerequisites are installed, the installer installs Studio. When the installation completes, click **Finish.
-  ![6](/Images/appc/download/attachments/37540095/6.JPG)
-  **
+    ![6](/Images/appc/download/attachments/37540095/6.JPG)
+    **
 
 6. To start Studio, double-click the Studio icon on the Desktop or the Start screen (on Windows 8).
-
 
 **To install Studio on Windows using the CLI:**
 
@@ -337,7 +275,6 @@ In addition to installing Studio, the installer for Windows also downloads and i
 2. Execute the AppceleratorStudio.exe executable with the /exenoui and /q flags. The installer installs the prerequisites and Studio.
 
 3. To start Studio, execute the AppceleratorStudio.exe.
-
 
 `C:\Users\JDoe\Downloads>``"Appcelerator Studio.exe"` `/exenoui /q`
 
@@ -361,7 +298,6 @@ The first time you launch Studio you need to select a **workspace**, or folder w
 
 3. Click **OK**.
 
-
 To select a different workspace folder at any time:
 
 1. Select **File > Switch Workspace** **\> Other...** to open the Workspace Launcher.
@@ -371,7 +307,6 @@ To select a different workspace folder at any time:
 3. Browse to the new workspace folder and click **Open.**
 
 4. Click **OK** in the Workspace Launcher.
-
 
 To re-enable the the workspace prompt on startup option:
 
@@ -385,7 +320,6 @@ To re-enable the the workspace prompt on startup option:
 
 5. Restart Studio, which will prompt you for a workspace upon launch.
 
-
 ### Logging in to Studio
 
 On initial launch, Studio asks you to provide your AMPLIFY Appcelerator Services account credentials. Studio requires an internet connection to authenticate the user to the Appcelerator cloud
@@ -395,7 +329,6 @@ On initial launch, Studio asks you to provide your AMPLIFY Appcelerator Services
 2. Optionally click **Proxy Setup**... to configure your proxy settings if needed.
 
 3. Click **Login.**
-
 
 Studio remembers your login credentials until you sign out of Studio.
 
@@ -411,7 +344,6 @@ When Studio launches for the first time, it automatically downloads the latest v
 
 * Required NPM packages
 
-
 ### Installing platform SDKs
 
 To develop native applications with Titanium you need the SDKs and tools for those native platforms installed on your system. For example, to develop Android applications you need the Android SDK and toolchain installed.
@@ -426,7 +358,6 @@ The first time you launch Studio the **Platform Configuration** dialog opens. Th
 
 3. Click **Configure** to start the installation process.
 
-
 Studio begins downloading and installing each SDK you selected, according to the settings you specified. In the case of iOS, Studio launches the App Store application installed on your Mac to the XCode download page.
 
 ![PlatformConfigDialog](/Images/appc/download/attachments/37540095/PlatformConfigDialog.png)
@@ -439,13 +370,13 @@ Typically, you can use the Platform Configuration dialog to download and install
 
 1. Open the Preferences  dialog:
 
-  * On Mac OS X, press **Command key-Comma (,)** or **Appcelerator Studio** \> **Preferences** from the application menu.
+    * On Mac OS X, press **Command key-Comma (,)** or **Appcelerator Studio** \> **Preferences** from the application menu.
 
-  * On Windows, select **Window > Preferences** .
+    * On Windows, select **Window > Preferences** .
 
 2. Navigate to the **Studio > Platforms** preferences section that contains sections for configuring each mobile platform SDK.
 
-  ![Screen_Shot_2018-03-16_at_1.05.17_AM](/Images/appc/download/thumbnails/37540095/Screen_Shot_2018-03-16_at_1.05.17_AM.png)
+    ![Screen_Shot_2018-03-16_at_1.05.17_AM](/Images/appc/download/thumbnails/37540095/Screen_Shot_2018-03-16_at_1.05.17_AM.png)
 
 The section below describe the settings for each SDK.
 
@@ -459,17 +390,15 @@ Under the **Android** settings item, you can configure the following settings:
 
 * **Default Emulator** - The default Android emulator used to launch your application
 
-  ![AndroidPreferences](/Images/appc/download/attachments/37540095/AndroidPreferences.png)
+    ![AndroidPreferences](/Images/appc/download/attachments/37540095/AndroidPreferences.png)
 
 **To create a new Android emulator or modify an existing one**:
 
 * Click **Manage AVDs...** to open the **Android Virtual Device** **Manage** **r** . See [Managing AVDs with AVD Manager](http://developer.android.com/tools/devices/managing-avds.html) for more information.
 
-
 **To install additional Android SDKs:**
 
 * Click **Install SDKs...** to open the **Platform Configuration** wizard to install additional Android SDKs.
-
 
 **To manage Android keystores for distribution:**
 
@@ -478,7 +407,6 @@ Under the **Android** settings item, you can configure the following settings:
 * To add an existing keystore, click **Add Existing...** and browse to the keystore file.
 
 * To create a new keystore, click **Create New...** to open the Create Keystore dialog. Enter the keystore information and click **OK** to create the keystore file.
-
 
 ### iOS settings
 
@@ -491,7 +419,6 @@ Under the **iOS** item, you can configure:
 * Click **Update...** to launch the App Store to update Xcode.
 
 * Click **Refresh** to update the **iOS SDK Home** setting if changed.
-
 
 ![iOSPreferences](/Images/appc/download/attachments/37540095/iOSPreferences.png)
 
@@ -509,7 +436,6 @@ The **Certificates** section displays a list of your current certificates.
 
 * To get a new developer certificate, click **Get New...** to open the Apple Developer Center in your browser.
 
-
 The **Provisioning Profiles** section displays a list of provisioning profiles for your development team or organization.
 
 ![provisioning](/Images/appc/download/attachments/37540095/provisioning.png)
@@ -519,7 +445,6 @@ The **Provisioning Profiles** section displays a list of provisioning profiles f
 * Click **Browse...** to import a new provisioning profile from your system.
 
 * Click **Get New...** to open the Apple Developer Center in your browser.
-
 
 The **Devices** section lets you register a device for development. Click **Register Devices...** to open the Apple Deveoper
 

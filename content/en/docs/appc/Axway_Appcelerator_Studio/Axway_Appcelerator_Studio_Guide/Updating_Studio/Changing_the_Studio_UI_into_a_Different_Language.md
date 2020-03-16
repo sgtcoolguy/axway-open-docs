@@ -1,15 +1,14 @@
 {"title":"Changing the Studio UI into a Different Language","weight":"90"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Downloading Translations](#DownloadingTranslations)
+* [Downloading Translations](#downloading-translations)
 
-* [Setting Your Language](#SettingYourLanguage)
+* [Setting Your Language](#setting-your-language)
 
-* [Language abbreviations](#Languageabbreviations)
+* [Language abbreviations](#language-abbreviations)
 
-* [Translation Help](#TranslationHelp)
-
+* [Translation Help](#translation-help)
 
 ## Overview
 
@@ -27,7 +26,6 @@ You can change the language of the user interface to a different language than w
 
 4. Continue through the wizard. Make sure you change your language settings, as noted below.
 
-
 ## Setting Your Language
 
 You can do either of the following to change the language of your user interface:
@@ -36,16 +34,15 @@ You can do either of the following to change the language of your user interface
 
 2. Change your application configuration options.
 
-  1. Follow the instructions here: [Adding Command-Line Options](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Adding_Command-Line_Options/).
+    1. Follow the instructions here: [Adding Command-Line Options](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Adding_Command-Line_Options/).
 
-  2. Add the option (see below for language options):
+    2. Add the option (see below for language options):
 
-    `-nl`
+        `-nl`
 
-    `Language-abbreviation`
+        `Language-abbreviation`
 
 3. Save and close, and restart Studio.
-
 
 ## Language abbreviations
 

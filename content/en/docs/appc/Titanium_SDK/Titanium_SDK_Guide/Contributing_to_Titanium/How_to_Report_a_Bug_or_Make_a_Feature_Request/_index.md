@@ -1,27 +1,26 @@
 {"title":"How to Report a Bug or Make a Feature Request","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Introducing JIRA](#IntroducingJIRA)
+* [Introducing JIRA](#introducing-jira)
 
-  * [Searching JIRA](#SearchingJIRA)
+    * [Searching JIRA](#searching-jira)
 
-  * [Projects overview](#Projectsoverview)
+    * [Projects overview](#projects-overview)
 
-    * [Appcelerator - INBOX project](#Appcelerator-INBOXproject)
+        * [Appcelerator - INBOX project](#appcelerator---inbox-project)
 
-* [Submitting tickets](#Submittingtickets)
+* [Submitting tickets](#submitting-tickets)
 
-  * [The bug-reporting lifecycle](#Thebug-reportinglifecycle)
+    * [The bug-reporting lifecycle](#the-bug-reporting-lifecycle)
 
-  * [Creating a test case](#Creatingatestcase)
+    * [Creating a test case](#creating-a-test-case)
 
-  * [Creating a JIRA ticket](#CreatingaJIRAticket)
+    * [Creating a JIRA ticket](#creating-a-jira-ticket)
 
-  * [JIRA ticket checklist](#JIRAticketchecklist)
+    * [JIRA ticket checklist](#jira-ticket-checklist)
 
-* [Related topics](#Relatedtopics)
-
+* [Related topics](#related-topics)
 
 ## Overview
 
@@ -47,75 +46,14 @@ To help organize the information, every JIRA ticket is assigned to one of a smal
 
 **JIRA Project Permissions** **for Community Members**
 
-Project
-
-Key
-
-View
-
-Create
-
-Comment
-
-[Aptana Studio](http://jira.appcelerator.org/browse/APSTUD)
-
-APSTUD
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
-
-![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png)
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
-
-[Appcelerator - INBOX](http://jira.appcelerator.org/browse/AC)
-
-AC
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
-
-[Documentation](http://jira.appcelerator.org/browse/TIDOC)
-
-TIDOC
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
-
-![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png)
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
-
-[Titanium SDK & CLI](http://jira.appcelerator.org/browse/TIMOB)
-
-TIMOB
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
-
-![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png)
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
-
-[Alloy](http://jira.appcelerator.org/browse/ALOY)
-
-ALOY
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
-
-![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png)
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
-
-[Appcelerator Studio](http://jira.appcelerator.org/browse/TISTUD)
-
-TISTUD
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
-
-![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png)
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
+| Project | Key | View | Create | Comment |
+| --- | --- | --- | --- | --- |
+| [Aptana Studio](http://jira.appcelerator.org/browse/APSTUD) | APSTUD | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png) | ![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png) | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png) |
+| [Appcelerator - INBOX](http://jira.appcelerator.org/browse/AC) | AC | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png) | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png) | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png) |
+| [Documentation](http://jira.appcelerator.org/browse/TIDOC) | TIDOC | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png) | ![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png) | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png) |
+| [Titanium SDK & CLI](http://jira.appcelerator.org/browse/TIMOB) | TIMOB | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png) | ![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png) | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png) |
+| [Alloy](http://jira.appcelerator.org/browse/ALOY) | ALOY | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png) | ![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png) | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png) |
+| [Appcelerator Studio](http://jira.appcelerator.org/browse/TISTUD) | TISTUD | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png) | ![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png) | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png) |
 
 You can drill down via the [Browse Projects](https://jira.appcelerator.org/secure/BrowseProjects.jspa#all) page to obtain a summary of the recent achievements of each project.
 
@@ -151,15 +89,14 @@ To summarize the process you should follow if you encounter unexplained Titanium
 
 6. **create a JIRA ticket**, only after there is no doubt about the bug's existence, Create one ticket per bug, bearing the following in mind:
 
-  * **keep to the point:** concise, complete and factual tickets are the most appreciated
+    * **keep to the point:** concise, complete and factual tickets are the most appreciated
 
-  * **include all the information:** without a test case and all the information described in the [JIRA Ticket Checklist](#JIRATicketChecklist), we cannot accept your ticket
+    * **include all the information:** without a test case and all the information described in the [JIRA Ticket Checklist](#JIRATicketChecklist), we cannot accept your ticket
 
-  * **watch your ticket:** This makes us aware of your vote for the ticket's quick resolution
-    NOTE: Your JIRA login is different than your AMPLIFY Appcelerator Services login. If you do not have a JIRA login with us, please select the link under the login boxes to contact the JIRA administrators and request a login. Logins typically provided within one business day.
+    * **watch your ticket:** This makes us aware of your vote for the ticket's quick resolution
+        NOTE: Your JIRA login is different than your AMPLIFY Appcelerator Services login. If you do not have a JIRA login with us, please select the link under the login boxes to contact the JIRA administrators and request a login. Logins typically provided within one business day.
 
 7. **post the ticket's URL to your Q&A question.** Add this as a comment under the question that helped you most and mark it as "best" to make it easy for everyone to find
-
 
 ### Creating a test case
 
@@ -183,7 +120,6 @@ In summary, to create a test case:
 
 * **ensure your code runs without any modification:** test your code by copying it into a blank app.js file and launching
 
-
 A good read on this is Eric Lippert's [How to debug small programs](http://ericlippert.com/2014/03/05/how-to-debug-small-programs/).
 
 ### Creating a JIRA ticket
@@ -191,7 +127,7 @@ A good read on this is Eric Lippert's [How to debug small programs](http://ericl
 Assuming you have consulted the community via the Q&A, and you have your [test case](#CreatingaTestCase) to hand, you are ready to create a ticket:
 
 * open the JIRA [Titanium Community](http://jira.appcelerator.org/browse/TC) project page. See the [#Projects Overview](#ProjectsOverview) section for more information about the projects.
-  NOTE: Your JIRA login is different than your AMPLIFY Appcelerator Services login. If you do not have a JIRA login with us, please select the link under the login boxes to contact the JIRA administrators and request a login. Logins typically provided within one business day.
+    NOTE: Your JIRA login is different than your AMPLIFY Appcelerator Services login. If you do not have a JIRA login with us, please select the link under the login boxes to contact the JIRA administrators and request a login. Logins typically provided within one business day.
 
 * select from the list of ticket types in the top right-hand corner, although usually only **Bug**, **Improvement** or **New Feature** will be applicable
 
@@ -199,116 +135,23 @@ Assuming you have consulted the community via the Q&A, and you have your [test c
 
 * as the reporter, you will automatically receive any updates to the ticket. However, it's always a good idea to also watch all tickets where the resolution is crucial to your projects. This helps our team gauge the issue's impact on the community, from the total number watchers in the list
 
-
 ### JIRA ticket checklist
 
 The following table explains what information must be included in which fields in order for a ticket to be accepted.
 
 If you have been directed to this section after creating a ticket in JIRA, it likely means that you have omitted some information or not provided it in a suitable [format](http://wiki.appcelerator.org/renderer/notationhelp.action). Please correct the ticket using the instructions below, to enable us to pass it to our engineering teams.
 
-Field
-
-Required
-
-Information to include
-
-Summary
-
-![check](/Images/appc/images/icons/emoticons/check.png)
-
-**A concise summary** that distinguishes it from other tickets, making it easy for the core team to determine at a glance the nature of the issue.
-Format: <COMPONENT>: <SUB-COMPONENT> - Description _(eg. "iOS: Facebook - Unable to login on iPod")_
-
-Assignee
-
-![check](/Images/appc/images/icons/emoticons/check.png)
-
-Leave as default
-
-Reporter
-
-![check](/Images/appc/images/icons/emoticons/check.png)
-
-Leave as default
-
-Severity
-
-![error](/Images/appc/images/icons/emoticons/error.png)
-
-Optionally, one of the following descriptions may be chosen to reflect the issue's impact on your project:
-
-* **Blocker:** issue is blocking project
-
-* **Major:** crashing or incorrect behavior issue that may have a workaround or is not stopping ship
-
-* **Minor:** crash or incorrect behavior that does have a reasonable workaround or low impact
-
-* **Trivial:** functions correctly, but appearance/functionality needs improvement
-
-* **None:** default
-
-
-Components
-
-![check](/Images/appc/images/icons/emoticons/check.png)
-
-Choose a component from the list
-
-Environment
-
-![check](/Images/appc/images/icons/emoticons/check.png)
-
-_The tested environment (only include the versions of each component that exhibit the problem and have been physically tested)_
-
-* **Titanium SDK version:** number, build date and build hash, or output to the console output at application launch
-
-* **Javascript Engine:** V8
-
-* **Platform & version:** iOS x.x, Android x.x, OS X x.x, Windows x, and/or Ubuntu x.x
-
-* **Device Details:** iOS simulator, Android emulator, or physical device model
-
-* **Host Operating System:** OS X x.x, Windows x, or Ubuntu x.x
-
-* **Titanium Studio version:** available in Help > About
-
-
-Description
-
-![check](/Images/appc/images/icons/emoticons/check.png)
-
-A concise, factual, description containing the following sections (use the [JIRA Ticket Template](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/JIRA_Ticket_Template/) as a starting point):
-
-**Problem**
-_Explanation of the problem, including the actual behavior and the expected behavior_
-
-**Test case**
-_Steps to reproduce plus simple working code that demonstrates the issue and follows the_ _[Creating a Test Case](#Creatingatestcase)_ _guidelines, placed within a {code} markup block in the body of the ticket_
-
-**Community Discussion**
-_A link to the Q&A question in which you asked the community to verify the observed behavior_
-
-**Log**
-_Logged messages from the following locations, depending on the problem, placed within a {code} markup block in the body of the ticket:_
-
-* **Android and iOS Development:** Titanium Studio console output of exceptions
-
-* **Packaging:** contents of build.log (Android: <PROJECT>/build.log, iOS: build/iphone/build/build.log)
-
-* **Titanium Studio:** contents of menu item Help > Titanium Studio > View Log File (contents of <workspace-dir>/log file)
-
-
-Attachment
-
-![error](/Images/appc/images/icons/emoticons/error.png)
-
-Attach images and assets, but try to **keep code in the description field**
-
-Labels
-
-![error](/Images/appc/images/icons/emoticons/error.png)
-
-The only valid labels are regression for regressions and parity for differences between platforms. All others will be removed before the ticket is accepted.
+| Field | Required | Information to include |
+| --- | --- | --- |
+| Summary | ![check](/Images/appc/images/icons/emoticons/check.png) | **A concise summary** that distinguishes it from other tickets, making it easy for the core team to determine at a glance the nature of the issue.  <br />Format: <COMPONENT>: <SUB-COMPONENT> - Description _(eg. "iOS: Facebook - Unable to login on iPod")_ |
+| Assignee | ![check](/Images/appc/images/icons/emoticons/check.png) | Leave as default |
+| Reporter | ![check](/Images/appc/images/icons/emoticons/check.png) | Leave as default |
+| Severity | ![error](/Images/appc/images/icons/emoticons/error.png) | Optionally, one of the following descriptions may be chosen to reflect the issue's impact on your project:<br /><br />* **Blocker:** issue is blocking project<br />    <br />* **Major:** crashing or incorrect behavior issue that may have a workaround or is not stopping ship<br />    <br />* **Minor:** crash or incorrect behavior that does have a reasonable workaround or low impact<br />    <br />* **Trivial:** functions correctly, but appearance/functionality needs improvement<br />    <br />* **None:** default |
+| Components | ![check](/Images/appc/images/icons/emoticons/check.png) | Choose a component from the list |
+| Environment | ![check](/Images/appc/images/icons/emoticons/check.png) | _The tested environment (only include the versions of each component that exhibit the problem and have been physically tested)_<br /><br />* **Titanium SDK version:** number, build date and build hash, or output to the console output at application launch<br />    <br />* **Javascript Engine:** V8<br />    <br />* **Platform & version:** iOS x.x, Android x.x, OS X x.x, Windows x, and/or Ubuntu x.x<br />    <br />* **Device Details:** iOS simulator, Android emulator, or physical device model<br />    <br />* **Host Operating System:** OS X x.x, Windows x, or Ubuntu x.x<br />    <br />* **Titanium Studio version:** available in Help > About |
+| Description | ![check](/Images/appc/images/icons/emoticons/check.png) | A concise, factual, description containing the following sections (use the [JIRA Ticket Template](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/JIRA_Ticket_Template/) as a starting point):<br /><br />**Problem**  <br />_Explanation of the problem, including the actual behavior and the expected behavior_<br /><br />**Test case**  <br />_Steps to reproduce plus simple working code that demonstrates the issue and follows the_ _[Creating a Test Case](#creating-a-test-case)_ _guidelines, placed within a {code} markup block in the body of the ticket_<br /><br />**Community Discussion**  <br />_A link to the Q&A question in which you asked the community to verify the observed behavior_<br /><br />**Log**  <br />_Logged messages from the following locations, depending on the problem, placed within a {code} markup block in the body of the ticket:_<br /><br />* **Android and iOS Development:** Titanium Studio console output of exceptions<br />    <br />* **Packaging:** contents of build.log (Android: <PROJECT>/build.log, iOS: build/iphone/build/build.log)<br />    <br />* **Titanium Studio:** contents of menu item Help > Titanium Studio > View Log File (contents of <workspace-dir>/log file) |
+| Attachment | ![error](/Images/appc/images/icons/emoticons/error.png) | Attach images and assets, but try to **keep code in the description field** |
+| Labels | ![error](/Images/appc/images/icons/emoticons/error.png) | The only valid labels are regression for regressions and parity for differences between platforms. All others will be removed before the ticket is accepted. |
 
 We do not underestimate the time and conscientiousness involved in raising good tickets, and we very much appreciate it. Thank you for all your efforts!
 

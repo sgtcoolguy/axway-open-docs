@@ -2,16 +2,15 @@
 
 This document provides information on app overview and service keys, what the API Builder, test, and performance tabs entail, how to view real-time and aggregated analytics, and managing application team members.
 
-* [App Overview and Service Keys](#AppOverviewandServiceKeys)
+* [App Overview and Service Keys](#app-overview-and-service-keys)
 
-* [APIs Tab](#APIsTab)
+* [APIs Tab](#apis-tab)
 
-* [Crashes Tab](#CrashesTab)
+* [Crashes Tab](#crashes-tab)
 
-* [Viewing Real-time and Aggregated Analytics](#AnalyticsViewingReal-timeandAggregatedAnalytics)
+* [Viewing Real-time and Aggregated Analytics](#viewing-real-time-and-aggregated-analytics)
 
-* [Application Preview](#ApplicationPreview)
-
+* [Application Preview](#application-preview)
 
 ## App Overview and Service Keys
 
@@ -57,13 +56,11 @@ To upload symbol files:
 
 5. Click **Upload**.
 
-
 To filter and search crashes by username:
 
 1. Enter the username in the **Search by username** field.
 
 2. Click **Search.**
-
 
 ## Viewing Real-time and Aggregated Analytics
 

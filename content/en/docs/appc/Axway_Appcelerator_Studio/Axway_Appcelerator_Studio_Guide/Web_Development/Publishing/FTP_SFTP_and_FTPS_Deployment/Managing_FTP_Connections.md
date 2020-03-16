@@ -1,13 +1,12 @@
 {"title":"Managing FTP Connections","weight":"20"}
 
-* [Opening the Connection Manager](#OpeningtheConnectionManager)
+* [Opening the Connection Manager](#opening-the-connection-manager)
 
-* [Creating a New Connection](#CreatingaNewConnection)
+* [Creating a New Connection](#creating-a-new-connection)
 
-* [Modifying a Connection](#ModifyingaConnection)
+* [Modifying a Connection](#modifying-a-connection)
 
-* [Deleting a Connection](#DeletingaConnection)
-
+* [Deleting a Connection](#deleting-a-connection)
 
 Once you have created a connection, you can manage it in the Connection Manager.
 
@@ -16,7 +15,6 @@ Once you have created a connection, you can manage it in the Connection Manager.
 1. Select a project in the **Project Explorer** View and expand it.
 
 2. Right-click on the **Connections** node and select **Connection Manager...**
-
 
 ![Connection_Manager](/Images/appc/download/attachments/30083202/Connection_Manager.png)
 
@@ -30,7 +28,6 @@ Once you have created a connection, you can manage it in the Connection Manager.
 
 4. Click **OK.**
 
-
 ## Modifying a Connection
 
 1. Select a connection in the list to the left.
@@ -40,7 +37,6 @@ Once you have created a connection, you can manage it in the Connection Manager.
 3. Select an appropriate destination, either an existing remote server, another project, or a place on the file system. If you do not yet have a remote server set up, click the **New** button to create one.
 
 4. Click **OK.**
-
 
 ## Deleting a Connection
 

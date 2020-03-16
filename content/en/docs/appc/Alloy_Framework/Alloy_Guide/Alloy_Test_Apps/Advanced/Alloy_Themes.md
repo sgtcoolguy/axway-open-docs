@@ -92,4 +92,4 @@ app/config.json
 
 * [Project Configuration File](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Basics/Project_Configuration_File/)
 
-* [Style Priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#Stylepriorities)
+* [Style Priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#style-priorities)

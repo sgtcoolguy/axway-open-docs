@@ -1,35 +1,34 @@
 {"title":"Google Maps v2 for Android","weight":"30"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-  * [Install the Google Play Services SDK](#InstalltheGooglePlayServicesSDK)
+    * [Install the Google Play Services SDK](#install-the-google-play-services-sdk)
 
-  * [Obtain and Add a Google API Key](#ObtainandAddaGoogleAPIKey)
+    * [Obtain and Add a Google API Key](#obtain-and-add-a-google-api-key)
 
-    * [Obtain the SHA-1 certificate fingerprint](#ObtaintheSHA-1certificatefingerprint)
+        * [Obtain the SHA-1 certificate fingerprint](#obtain-the-sha-1-certificate-fingerprint)
 
-    * [Add the Google API key and permissions to the tiapp.xml file](#AddtheGoogleAPIkeyandpermissionstothetiapp.xmlfile)
+        * [Add the Google API key and permissions to the tiapp.xml file](#add-the-google-api-key-and-permissions-to-the-tiapp.xml-file)
 
-  * [Add the module to your project](#Addthemoduletoyourproject)
+    * [Add the module to your project](#add-the-module-to-your-project)
 
-* [Transitioning from Titanium.Map](#TransitioningfromTitanium.Map)
+* [Transitioning from Titanium.Map](#transitioning-from-titanium.map)
 
-* [Check for Google Play Services](#CheckforGooglePlayServices)
+* [Check for Google Play Services](#check-for-google-play-services)
 
-* [Views](#Views)
+* [Views](#views)
 
-* [Annotations](#Annotations)
+* [Annotations](#annotations)
 
-* [Routes](#Routes)
+* [Routes](#routes)
 
-* [Event handling](#Eventhandling)
+* [Event handling](#event-handling)
 
-* [Troubleshooting](#Troubleshooting)
+* [Troubleshooting](#troubleshooting)
 
-  * [Map is blank](#Mapisblank)
+    * [Map is blank](#map-is-blank)
 
-* [Further reading](#Furtherreading)
-
+* [Further reading](#further-reading)
 
 ## Introduction
 
@@ -41,18 +40,17 @@ The Google Maps Ti.Map module uses Google Maps Android API v2, which requires th
 
 1. To launch the Android SDK manager:
 
-  `#If the Android SDK tools folder is in your PATH:`
+    `#If the Android SDK tools folder is in your PATH:`
 
-  `android`
+    `android`
 
-  `#If not`
+    `#If not`
 
-  `<path_to_android_sdk>/tools/android`
+    `<path_to_android_sdk>/tools/android`
 
 2. After the Android SDK Manager application launches, in the **Extras** folder, select **Google Play services**, then click **Install X Packages....**
 
 3. A dialog appears confirming your selection. Accept the license and click **Install** to continue.
-
 
 ### Obtain and Add a Google API Key
 
@@ -62,10 +60,9 @@ To use the Google Maps v2 module, you need to create a Google API project, enabl
 
 2. Obtain and add a Google Maps API key to your project (see [Get an Android API key](https://developers.google.com/maps/documentation/android/signup#get_an_android_api_key)). To generate a Google Maps API key, you need a package name and a SHA-1 certificate fingerprint.
 
-  1. The package name is the Application ID from the tiapp.xml file.
+    1. The package name is the Application ID from the tiapp.xml file.
 
-  2. For the SHA-1 certificate fingerprint, use JDK keytool command to extract the SHA-1 string from either the debug certificate, shipped with the Titanium SDK, or from a release certificate that you generate yourself to distribute an application. If you are using the Run command from Studio to build and test your application for an Android Device, use the debug certificate. If you are using the Publish command from Studio to package and distribute your application to the Android App Store, use the release certificate.
-
+    2. For the SHA-1 certificate fingerprint, use JDK keytool command to extract the SHA-1 string from either the debug certificate, shipped with the Titanium SDK, or from a release certificate that you generate yourself to distribute an application. If you are using the Run command from Studio to build and test your application for an Android Device, use the debug certificate. If you are using the Publish command from Studio to package and distribute your application to the Android App Store, use the release certificate.
 
 #### Obtain the SHA-1 certificate fingerprint
 
@@ -109,7 +106,6 @@ The ti.map module is included as part of the Titanium SDK and you do not need to
 
 * or in a text editor, add the following to your modules section:
 
-
 `...`
 
 `<``modules``>`
@@ -148,7 +144,6 @@ The new add-on module behaves the same as the built-in Titanium.Map proxy with t
 
 * Requires Google Maps API key for both development and production.
 
-
 **New features:**
 
 * **Support for multiple map views.** Unlike the built-in Titanium.Map proxy, the new Google Maps v2 module can display multiple map views.
@@ -163,7 +158,6 @@ The new add-on module behaves the same as the built-in Titanium.Map proxy with t
 
 * **Additional Annotation colors.** The new Google Map v2 module has more color constants besides ANNOTATION\_GREEN and ANNOTATION\_RED.
 
-
 **Behavior changes:**
 
 * **Route class.** In the Google Maps v2 module, you need to create a Route object before adding it. Previously in the Titanium.Map proxy, routes were created using an abstract data type with the addRoute method.
@@ -172,16 +166,15 @@ The new add-on module behaves the same as the built-in Titanium.Map proxy with t
 
 * **Missing View properties.** The following properties and their accessors are not supported on the View class in the Google Maps v2 module: hideAnnotationWhenTouchMap , latitudeDelta , longitudeDelta and regionFit .
 
-  * For the hideAnnotationWhenTouchMap property, annotations can be deselected by either touching the annotation again or touching the View outside the annotation. Previously in the Titanium.Map proxy, you had to choose one of these behaviors to deselect the annotation. In the Google Maps v2 module, both methods of deselecting an annotation work by default.
+    * For the hideAnnotationWhenTouchMap property, annotations can be deselected by either touching the annotation again or touching the View outside the annotation. Previously in the Titanium.Map proxy, you had to choose one of these behaviors to deselect the annotation. In the Google Maps v2 module, both methods of deselecting an annotation work by default.
 
-  * The latitudeDelta and longitudeDelta properties were read-only properties in the Titanium.Map proxy that can be accessed using View's region property with the Google Maps v2 module.
+    * The latitudeDelta and longitudeDelta properties were read-only properties in the Titanium.Map proxy that can be accessed using View's region property with the Google Maps v2 module.
 
 * **Missing Map constants.**
 
-  * The STANDARD\_TYPE constant is missing from the Google Maps v2 module. Use the NORMAL\_TYPE constant instead.
+    * The STANDARD\_TYPE constant is missing from the Google Maps v2 module. Use the NORMAL\_TYPE constant instead.
 
-  * The ANNOTATION\_PURPLE constant is missing from the Google Maps v2 module. Use the ANNOTATION\_VIOLET constant instead.
-
+    * The ANNOTATION\_PURPLE constant is missing from the Google Maps v2 module. Use the ANNOTATION\_VIOLET constant instead.
 
 ## Check for Google Play Services
 
@@ -341,30 +334,29 @@ As seen above, changing a few lines of code alters the appearance of each map. T
 
 * mapType - Indicates what type of map should be displayed. Choses are:
 
-  * <MapObject>.STANDARD\_TYPE - Basic map with labels.
+    * <MapObject>.STANDARD\_TYPE - Basic map with labels.
 
-  * <MapObject>.SATELLITE\_TYPE - Satellite imagery without map labels.
+    * <MapObject>.SATELLITE\_TYPE - Satellite imagery without map labels.
 
-  * <MapObject>.TERRAIN\_TYPE - Terrain map with labels.
+    * <MapObject>.TERRAIN\_TYPE - Terrain map with labels.
 
-  * <MapObject>.HYBRID\_TYPE - SATELLITE\_TYPE with map labels.
+    * <MapObject>.HYBRID\_TYPE - SATELLITE\_TYPE with map labels.
 
 * region - This is an object that contains the four properties defining the visible area of the View. The same latitude and longitude of a region can be represented with a different level of zoom via the latitudeDelta and longitudeDelta properties.
 
-  * latitude\- The latitude of your map's target region.
+    * latitude\- The latitude of your map's target region.
 
-  * longitude - The longitude of your map's target region.
+    * longitude - The longitude of your map's target region.
 
-  * latitudeDelta - The measure of latitude north and south from your target regions's latitude that will be visible in the View. The smaller the delta value, the closer the zoom on your map.
+    * latitudeDelta - The measure of latitude north and south from your target regions's latitude that will be visible in the View. The smaller the delta value, the closer the zoom on your map.
 
-  * longitudeDelta - The measure of longitude east and west from your target regions's longitude that will be visible in the View.
+    * longitudeDelta - The measure of longitude east and west from your target regions's longitude that will be visible in the View.
 
 * animate - A boolean that indicates whether or not map actions, like opening and adding annotations, should be animated.
 
 * traffic - A boolean that indicates if the map should display traffic conditions. This varies by region.
 
 * userLocation - A boolean that indicates if the map should show the user's current device location as a pin on the map.
-
 
 There are two more components that add a significant amount of functionality to your map View\--Annotation and Route. They allow us to add places of interest to our maps as well as plot paths between them.
 
@@ -438,7 +430,6 @@ The previous example creates three annotations and adds them to the view–two o
 
 * The random annotation uses a Label instead of the default pin image, set with the customView property, and is also draggable, set with the draggable property.
 
-
 L et's take a look at each of the properties used in this example.
 
 * customView – A custom view to be used in place of the default pin image. This property takes precedence over the image property. The annotation only responds to the map view's events and not the events of the view component.
@@ -453,30 +444,29 @@ L et's take a look at each of the properties used in this example.
 
 * pincolor \- The color of the default pin representing an annotation. It can have the following values:
 
-  * <MapObject>.ANNOTATION\_AZURE
+    * <MapObject>.ANNOTATION\_AZURE
 
-  * <MapObject>.ANNOTATION\_BLUE
+    * <MapObject>.ANNOTATION\_BLUE
 
-  * <MapObject>.ANNOTATION\_CYAN
+    * <MapObject>.ANNOTATION\_CYAN
 
-  * <MapObject>.ANNOTATION\_GREEN
+    * <MapObject>.ANNOTATION\_GREEN
 
-  * <MapObject>.ANNOTATION\_MAGENTA
+    * <MapObject>.ANNOTATION\_MAGENTA
 
-  * <MapObject>.ANNOTATION\_ORANGE
+    * <MapObject>.ANNOTATION\_ORANGE
 
-  * <MapObject>.ANNOTATION\_RED
+    * <MapObject>.ANNOTATION\_RED
 
-  * <MapObject>.ANNOTATION\_ROSE
+    * <MapObject>.ANNOTATION\_ROSE
 
-  * <MapObject>.ANNOTATION\_VIOLET
+    * <MapObject>.ANNOTATION\_VIOLET
 
-  * <MapObject>.ANNOTATION\_YELLOW
+    * <MapObject>.ANNOTATION\_YELLOW
 
 * subtitle - The subtitle text that appears on your annotation when clicked.
 
 * title - The main title text that appears on your annotation when clicked.
-
 
 The next section discusses the Route class, a feature to create paths between locations on a View.
 
@@ -572,7 +562,6 @@ After creating the three annotation points, the application creates a route obje
 
 * width \- Specifies the width of the line in pixels.
 
-
 Once the route object is created, the application can add it to the view using the addRoute method.
 
 ## Event handling
@@ -585,12 +574,11 @@ The Map View object provides a few extra events that provide additional control 
 
 * pinchangedragstate \- This event fires when the pin's drag state changes if the pin's draggable property is set to true. Check the event object's annotation property to see which annotation was clicked and the newState property for one of the following:
 
-  * < MapModule>.ANNOTATION\_DRAG\_STATE\_START – indicates the user started dragging the pin.
+    * < MapModule>.ANNOTATION\_DRAG\_STATE\_START – indicates the user started dragging the pin.
 
-  * <MapModule>.ANNOTATION\_DRAG\_STATE\_END – indicates the user stopped dragging the pin.
+    * <MapModule>.ANNOTATION\_DRAG\_STATE\_END – indicates the user stopped dragging the pin.
 
 * regionchanged - This event fires when the user either changes the zoom level or pans the Map View. The event returns the new latitude and longitude coordinates as well as delta values.
-
 
 For example, the following code listens to each of the previous events and outputs information to the console when each event fires:
 
@@ -669,7 +657,6 @@ If we run the example code, then:
 * Click the subtitle on the info window, and
 
 * Pan to the left
-
 
 The following output is printed to the console using the adb logcat command:
 

@@ -2,10 +2,9 @@
 
 Studio allows you to only show API functionality available across all platforms. To tweak these settings, you can adjust the content assist preferences.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Tweaking platform display settings](#Tweakingplatformdisplaysettings)
-
+* [Tweaking platform display settings](#tweaking-platform-display-settings)
 
 ## Introduction
 
@@ -22,6 +21,5 @@ When typing in the JavaScript editor, you can have Studio show you which API ite
 3. Select the platforms you wish to see, or click the **Restore Defaults** button
 
 4. Press **OK**
-
 
 For more information and additional settings, see [Displaying Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/Displaying_Content_Assist/).

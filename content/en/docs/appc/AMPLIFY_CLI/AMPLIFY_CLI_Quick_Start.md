@@ -1,31 +1,30 @@
 {"title":"AMPLIFY CLI Quick Start","weight":"10"}
 
-* [Quick start](#Quickstart)
+* [Quick start](#quick-start)
 
-* [Installation](#Installation)
+* [Installation](#installation)
 
-* [Finding ACLI's commands](#FindingACLI'scommands)
+* [Finding ACLI's commands](#finding-acli's-commands)
 
-* [Authentication](#Authentication)
+* [Authentication](#authentication)
 
-  * [Logging in](#Loggingin)
+    * [Logging in](#logging-in)
 
-* [Managing packages](#Managingpackages)
+* [Managing packages](#managing-packages)
 
-  * [Searching for packages](#Searchingforpackages)
+    * [Searching for packages](#searching-for-packages)
 
-  * [Installing a package](#Installingapackage)
+    * [Installing a package](#installing-a-package)
 
-  * [Using select versions](#Usingselectversions)
+    * [Using select versions](#using-select-versions)
 
-  * [Updating packages](#Updatingpackages)
+    * [Updating packages](#updating-packages)
 
-  * [Starting a packageIn some cases, a package has a start option. The command would look something like this: amplify <product> start](#StartingapackageInsomecases,apackagehasastartoption.Thecommandwouldlooksomethinglikethis:amplify<product>start)
+    * [Starting a packageIn some cases, a package has a start option. The command would look something like this: amplify <product> start](#starting-a-packagein-some-cases,-a-package-has-a-start-option.-the-command-would-look-something-like-this:-amplify-<product>-start)
 
-  * [Purging unused versions](#Purgingunusedversions)
+    * [Purging unused versions](#purging-unused-versions)
 
-  * [Uninstalling a package](#Uninstallingapackage)
-
+    * [Uninstalling a package](#uninstalling-a-package)
 
 ## Quick start
 
@@ -92,7 +91,6 @@ Now let's suppose that you want to use a select version of the Appc Daemon.
 2. Before using a select version of a package, we need to install it using a command like this: amplify pm install <package>@#.#.#. In this case, we want to install the 1.1.3 version of the Appc Daemon: amplify pm install appcd@1.1.3. Installing a version should automatically set it to an active version. If it doesn't, follow step #3.
 
 3. To active a select version, use this command: amplify pm use <package>@#.#.#. To active the Appc Daemon to version 1.1.3, use this command: amplify pm use appcd@1.1.3
-
 
 ### Updating packages
 

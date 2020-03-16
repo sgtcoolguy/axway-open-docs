@@ -2,24 +2,23 @@
 
 ## /\*<!\[CDATA\[\*/ div.rbtoc1584037348253 {padding: 0px;} div.rbtoc1584037348253 ul {list-style: disc;margin-left: 0px;} div.rbtoc1584037348253 li {margin-left: 0px;padding-left: 0px;} /\*\]\]>\*/
 
-* [Introduction](#-Introduction)
+* [Introduction](#introduction)
 
-* [Create simple Windows Runtime component in C#](#-CreatesimpleWindowsRuntimecomponentinC#)
+* [Create simple Windows Runtime component in C#](#create-simple-windows-runtime-component-in-c#)
 
-* [Call Windows Runtime component from Titanium module](#-CallWindowsRuntimecomponentfromTitaniummodule)
+* [Call Windows Runtime component from Titanium module](#call-windows-runtime-component-from-titanium-module)
 
-  * [Create new Titanium module](#-CreatenewTitaniummodule)
+    * [Create new Titanium module](#create-new-titanium-module)
 
-  * [Copy MyComponent.winmd into windows/lib folder of your module project](#-CopyMyComponent.winmdintowindows/libfolderofyourmoduleproject)
+    * [Copy MyComponent.winmd into windows/lib folder of your module project](#copy-mycomponent.winmd-into-windows/lib-folder-of-your-module-project)
 
-  * [Modify Titanium module to use MyComponent](#-ModifyTitaniummoduletouseMyComponent)
+    * [Modify Titanium module to use MyComponent](#modify-titanium-module-to-use-mycomponent)
 
-  * [C++ built-in types and Windows Runtime types](#-C++built-intypesandWindowsRuntimetypes)
+    * [C++ built-in types and Windows Runtime types](#-C++built-intypesandWindowsRuntimetypes)
 
-  * [Build module with --run-cmake option](#-Buildmodulewith--run-cmakeoption)
+    * [Build module with --run-cmake option](#build-module-with---run-cmake-option)
 
-* [Next steps](#-Nextsteps)
-
+* [Next steps](#next-steps)
 
 ## Introduction
 
@@ -34,7 +33,6 @@ This section we are going to create a basic Windows Runtime Component in C# that
 2. In Solution Explorer, rename the Class1.cs to MyComponent.cs that is the class basically what we want to export.
 
 3. Then, changes the name of the namespace to MyComponent, and change the name of the class to Speaker.
-
 
 MyComponent.cs
 

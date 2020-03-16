@@ -1,11 +1,10 @@
 {"title":"Debugging Studio","weight":"30"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Enable Debug Logging](#EnableDebugLogging)
+* [Enable Debug Logging](#enable-debug-logging)
 
-* [Using the Studio Console](#UsingtheStudioConsole)
-
+* [Using the Studio Console](#using-the-studio-console)
 
 ## Overview
 
@@ -15,15 +14,14 @@ Studio uses a number of techniques for enabling debugging. If a Studio developer
 
 1. Open **Preferences > Studio > Troubleshooting**
 
-  ![Screen_Shot_2012-04-22_at_6.26.55_AM](/Images/appc/download/attachments/30083285/Screen_Shot_2012-04-22_at_6.26.55_AM.png)
+    ![Screen_Shot_2012-04-22_at_6.26.55_AM](/Images/appc/download/attachments/30083285/Screen_Shot_2012-04-22_at_6.26.55_AM.png)
 2. Change the severity drop-down to see the desired level of messages written to the log. Caution--"ALL" really does mean all messages!
 
 3. If you wish to show only show specific error messages, you can enable "specific component" debugging and check the area in question. If you are unsure, ask a Studio developer to help you find the area you need. Some common areas:
 
-  * com.aptana.core/debug/builder: Writes out when studio starts and stops building projects
+    * com.aptana.core/debug/builder: Writes out when studio starts and stops building projects
 
-  * com.aptana.core/debug/shell: Writes out what processes Studio is running on the command line
-
+    * com.aptana.core/debug/shell: Writes out what processes Studio is running on the command line
 
 ## Using the Studio Console
 

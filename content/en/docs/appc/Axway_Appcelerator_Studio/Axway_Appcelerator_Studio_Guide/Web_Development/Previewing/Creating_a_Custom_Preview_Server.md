@@ -2,10 +2,9 @@
 
 You can customize the URLs used during previewing to accommodate the case where the webroot of your site does not match your project structure, or you can't use the internal server.
 
-* [Using a Local Web Server](#UsingaLocalWebServer)
+* [Using a Local Web Server](#using-a-local-web-server)
 
-* [Using a Remote Web Server](#UsingaRemoteWebServer)
-
+* [Using a Remote Web Server](#using-a-remote-web-server)
 
 ## Using a Local Web Server
 
@@ -26,7 +25,6 @@ As an example, we consider a set of web sites like the following, where we wish 
 
 * **Studio Project Root (optional):** /Documents/workspace/project1/
 
-
 The goal is that http://locahost:2020/index.html serves the file located at /Documents/workspace/project1/public/index.html.
 
 The files in question do not have to be part of a Studio project, but we illustrate the case above for additional clarity.
@@ -38,17 +36,15 @@ The files in question do not have to be part of a Studio project, but we illustr
 3. Select **Simple Web server**.
 
 4. Fill out the form shown below:
-  ![Screen_shot_2011-04-22_at_2.29.43_PM](/Images/appc/download/attachments/30083125/Screen_shot_2011-04-22_at_2.29.43_PM.png)
+    ![Screen_shot_2011-04-22_at_2.29.43_PM](/Images/appc/download/attachments/30083125/Screen_shot_2011-04-22_at_2.29.43_PM.png)
 
-  * **Name:** Choose a descriptive name that describes the server uniquely
+    * **Name:** Choose a descriptive name that describes the server uniquely
 
-  * **Base URL:** The URL of the server up to the document root (for example, http://localhost:2020/ from above)
+    * **Base URL:** The URL of the server up to the document root (for example, http://localhost:2020/ from above)
 
-  * **Document Root:** The path to the public root of the web site (for example, /Documents/workspace/project1/public/ from above)
-
+    * **Document Root:** The path to the public root of the web site (for example, /Documents/workspace/project1/public/ from above)
 
 5. Click **OK** and **OK**.
-
 
 The above configuration does not copy files between the Studio project and the webroot - it is a direct link with both items mapping to the same place. Thus, when you save index.html inside Studio, you are editing the same file served by the webserver listed above. If you instead need to preview against a remote web server, you can use a similar setting as above, but you will want to set up a deployment option to "upload on save". See below.
 
@@ -62,7 +58,6 @@ The process for previewing against a remote web server is much the same--the onl
 
 * **Document Root:** /Documents/workspace/project1/public/
 
-
 The goal is that http://www.mywebsite.com/index.html serves the file located at /Documents/workspace/project1/public/index.html.
 
 1. Right-click on a project in the "Project Explorer" view and select **Properties**.
@@ -72,17 +67,15 @@ The goal is that http://www.mywebsite.com/index.html serves the file located at 
 3. Select **Simple Web server**.
 
 4. Fill out the form shown below:
-  ![Screen_shot_2011-04-22_at_2.29.43_PM](/Images/appc/download/attachments/30083125/Screen_shot_2011-04-22_at_2.29.43_PM.png)
+    ![Screen_shot_2011-04-22_at_2.29.43_PM](/Images/appc/download/attachments/30083125/Screen_shot_2011-04-22_at_2.29.43_PM.png)
 
-  * **Name:** Choose a descriptive name that describes the server uniquely
+    * **Name:** Choose a descriptive name that describes the server uniquely
 
-  * **Base URL:** The URL of the server up to the document root (for example, http://www.mywebsite.com/ from above)
+    * **Base URL:** The URL of the server up to the document root (for example, http://www.mywebsite.com/ from above)
 
-  * **Document Root:** The path to the public root of the web site (for example, /Documents/workspace/project1/public/ from above). This is actually ignored in this case, but we must fill in a value, so we use the local path.
-
+    * **Document Root:** The path to the public root of the web site (for example, /Documents/workspace/project1/public/ from above). This is actually ignored in this case, but we must fill in a value, so we use the local path.
 
 5. Click **OK** and **OK**.
-
 
 Now, set up the deployment options:
 
@@ -91,6 +84,5 @@ Now, set up the deployment options:
 2. When setting up the site, you may wish to choose "Automatically sync my changes...".
 
 3. Save and close the dialog.
-
 
 Pressing the preview button will now preview a file against the remote server. Now, when you save and upload a file (or upload automatically on save if you have chosen that option), you can refresh the preview and see your changes.

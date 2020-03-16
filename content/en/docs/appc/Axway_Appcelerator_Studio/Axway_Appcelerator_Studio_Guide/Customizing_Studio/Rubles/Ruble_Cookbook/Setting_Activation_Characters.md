@@ -50,26 +50,8 @@ Below is a sample to change the activation characters for the CSS editor. The ac
 
 To set the activate characters for a specific language, you need to know the editor's plugin id and the associated preference key. Below is a table providing that information. Replace the "pluginId" and "prefKey" assignments in the above example to the setting appropriate for the language you wish to update.
 
-Language
-
-Plugin Id
-
-Preference Key
-
-CSS
-
-com.aptana.editor.css
-
-CSS\_ACTIVATION\_CHARACTERS
-
-HTML
-
-com.aptana.editor.html
-
-HTML\_ACTIVATION\_CHARACTERS
-
-JS
-
-com.aptana.editor.js
-
-JS\_ACTIVATION\_CHARACTERS
+| Language | Plugin Id | Preference Key |
+| --- | --- | --- |
+| CSS | com.aptana.editor.css | CSS\_ACTIVATION\_CHARACTERS |
+| HTML | com.aptana.editor.html | HTML\_ACTIVATION\_CHARACTERS |
+| JS | com.aptana.editor.js | JS\_ACTIVATION\_CHARACTERS |

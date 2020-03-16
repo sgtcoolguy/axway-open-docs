@@ -6,7 +6,7 @@ This release also includes [App Designer](/docs/appc/Axway_Appcelerator_Studio/A
 
 **Note**: You cannot package an application for Windows 10. A fix is on the way in 4.7.0. In the meantime, use this CLI command: appc run -p windows -T dist-phonestore --wp-sdk 10.0
 
-As of this release, Studio 4.5.x will not be supported six months from 4.6.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Studio 4.5.x will not be supported six months from 4.6.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## App Preview
 
@@ -28,28 +28,27 @@ Please review [App Designer Overview](/docs/appc/Axway_Appcelerator_Studio/Axway
 
 * [TISTUD-7717](https://jira.appcelerator.org/browse/TISTUD-7717) - Reconnect to the debug session after the app is restarted
 
-  * Reconnect to the debug session after the app is restarted. If the app is accidentally crashed or terminated on a device or simulator, then the user doesn't need to re-launch the studio debug session, rather it automatically connects upon the app launch.
+    * Reconnect to the debug session after the app is restarted. If the app is accidentally crashed or terminated on a device or simulator, then the user doesn't need to re-launch the studio debug session, rather it automatically connects upon the app launch.
 
 * [TISTUD-7946](https://jira.appcelerator.org/browse/TISTUD-7946) - User should be able to set Arrow port in the launch configuration for Studio
 
-  * Studio users can set Arrow port through Studio Arrow preference option. This option provides a provision to set user specific port, any free port, and default configuration port.
+    * Studio users can set Arrow port through Studio Arrow preference option. This option provides a provision to set user specific port, any free port, and default configuration port.
 
 * [TISTUD-8003](https://jira.appcelerator.org/browse/TISTUD-8003) - Non-modal dialog for submitting JIRA ticket from the studio
 
-  * Non-modal dialog for submitting JIRA tickets from Studio
+    * Non-modal dialog for submitting JIRA tickets from Studio
 
 * [TISTUD-8012](https://jira.appcelerator.org/browse/TISTUD-8012) - Studio needs to call "appc run" / "ti build" to build iOS/Android modules
 
-  * Studio builds iOS and Android modules using appc run command that avoids the dependency of python and ant scripts for iOS and Android builds
+    * Studio builds iOS and Android modules using appc run command that avoids the dependency of python and ant scripts for iOS and Android builds
 
 * [TISTUD-8447](https://jira.appcelerator.org/browse/TISTUD-8447) - Windows: Studio needs to specify the Windows SDK to be used when building to a Windows 10 emulator
 
-  * Studio sends a windows SDK flag \--wp-sdk while building for Windows platform emulators to enable SDK specific builds
+    * Studio sends a windows SDK flag \--wp-sdk while building for Windows platform emulators to enable SDK specific builds
 
 * [TISTUD-8466](https://jira.appcelerator.org/browse/TISTUD-8466) - App designer in full screen mode - Showing Properties and Elements on the leftside
 
-  * App Designer's perspective includes showing Properties and Elements on the right side
-
+    * App Designer's perspective includes showing Properties and Elements on the right side
 
 ## Fixed Issues
 

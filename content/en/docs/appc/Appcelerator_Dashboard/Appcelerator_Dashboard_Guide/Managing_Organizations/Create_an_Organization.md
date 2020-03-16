@@ -12,7 +12,6 @@ If your organization is an authorized AMPLIFY Appcelerator Services Reseller and
 
 * External organizations, called **Customers**, is a group that has purchased the AMPLIFY Appcelerator Services, which is allotted a pool of user and device resources.
 
-
 To create an organization:
 
 1. Sign in to the [AMPLIFY Platform](https://platform.axway.com).
@@ -33,6 +32,6 @@ To create an organization:
 
 9. (New Org) To invite users to the new organization, click **Invite Members to this Organization.**
 
-  This button is disabled if the specified number of **Dashboard Users** is not greater than 1.
+    This button is disabled if the specified number of **Dashboard Users** is not greater than 1.
 
 10. Click **Create**.

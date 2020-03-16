@@ -1,13 +1,12 @@
 {"title":"Packaging Titanium Applications","weight":"60"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Android](#Android)
+* [Android](#android)
 
-* [iOS](#iOS)
+* [iOS](#ios)
 
-* [Mobile Web](#MobileWeb)
-
+* [Mobile Web](#mobile-web)
 
 ## Introduction
 
@@ -30,7 +29,6 @@ To package an Android application, first select the project in the **Project Exp
 * **Keystore Password****:** Password to your keystore.
 
 * **Key Alias**: Alias associated with your application's certificate.
-
 
 Click the **Publish** button once you have entered all of the above information. Studio builds your application and generates an APK file in the specified location.
 
@@ -59,6 +57,5 @@ To package a Mobile Web application, first select the project in the **Project E
 * **Copy Mobile Web app to an exisiting project**: this option copies the Mobile Web app to an existing project.
 
 * **Create a new project for the Mobile Web app**: this option creates a new Web project (not a Mobile project) based on your Mobile Web app.
-
 
 Click the **Publish** button. Studio builds your Mobile Web app and copies it to the specified location.

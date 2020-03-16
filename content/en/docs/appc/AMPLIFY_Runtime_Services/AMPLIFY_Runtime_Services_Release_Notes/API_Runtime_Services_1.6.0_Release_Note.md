@@ -8,23 +8,21 @@ This release of Arrow Cloud includes version 2.0.4 of the CLI and 1.6.0 of the s
 
 * Added support to store persistent data on the filesystem
 
-
 ## New features and improvements
 
 * Added support to publish an app from Dockerfile or image
 
 * Added product\_type to user\_input.json so that the user has an option to indicate which product to utilize
 
-  * Valid options are arrowdb, arrowcloud, or all
+    * Valid options are arrowdb, arrowcloud, or all
 
-    * arrowdb: deploy ArrowDB and common services
+        * arrowdb: deploy ArrowDB and common services
 
-    * arrowcloud: deploy Arrow Cloud and common services
+        * arrowcloud: deploy Arrow Cloud and common services
 
-    * all: deploy both Arrow Cloud and ArrowDB services
+        * all: deploy both Arrow Cloud and ArrowDB services
 
 * Depreciated MVC app support as of this release. Please use a free app as the default app for acs new.
-
 
 ## Bug fixes
 

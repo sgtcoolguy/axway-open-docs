@@ -10,7 +10,6 @@ To use it, do **Ctrl+Alt+Enter** (while in the PyDev editor) to:
 
 * Make an execfile of the current editor in the console (if no text is selected), so that its symbols are available for further experimentation.
 
-
 Alternatively, it can be initialized from the console view from the dropdown for a new console
 (rightmost corner icon in the console view)
 
@@ -22,7 +21,6 @@ Choose the console type – this will determine the PYTHONPATH and the interpret
 * PYTHONPATH containing all the paths from Python (for all the projects in the workspace)
 
 * PYTHONPATH containing all the paths from Jython (for all the projects in the workspace)
-
 
 ![choose_console](/Images/appc/pydev.org/images/console/choose_console.png)
 Code completion can be activated with Ctrl+Space (or the default keybinding in the target installation). All the features available for code completion in the editor are also available in the console (and they're controlled from the same place).

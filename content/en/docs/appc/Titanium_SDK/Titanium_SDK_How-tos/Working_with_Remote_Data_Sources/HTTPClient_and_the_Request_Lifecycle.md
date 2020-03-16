@@ -1,29 +1,28 @@
 {"title":"HTTPClient and the Request Lifecycle","weight":"10"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [GET requests](#GETrequests)
+    * [GET requests](#get-requests)
 
-  * [POST requests](#POSTrequests)
+    * [POST requests](#post-requests)
 
-  * [HTTP headers](#HTTPheaders)
+    * [HTTP headers](#http-headers)
 
-  * [XHR lifecycle](#XHRlifecycle)
+    * [XHR lifecycle](#xhr-lifecycle)
 
-  * [Hands-on practice](#Hands-onpractice)
+    * [Hands-on practice](#hands-on-practice)
 
-    * [Goal](#Goal)
+        * [Goal](#goal)
 
-    * [Resources](#Resources)
+        * [Resources](#resources)
 
-    * [Steps](#Steps)
+        * [Steps](#steps)
 
-  * [References and further reading](#Referencesandfurtherreading)
+    * [References and further reading](#references-and-further-reading)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Objective
 
@@ -91,7 +90,6 @@ Making a GET (or any other type of) request to a resource on the web consists of
 
 * Sending an HTTP request (line 19)
 
-
 Most of the time, simply sending the request is not useful to your application. You are likely interested in the data the server will respond with, which is available in the response body. In order to access this data, you can specify callback functions to be executed at specific points in the lifecycle of the request. As shown in the code above, onload is called after a response from the resource has been successfully received, and oneerror is called if there is an error.
 
 Within those callback functions:
@@ -101,7 +99,6 @@ Within those callback functions:
 * this.responseXML holds the payload as an [XML document](#!/api/Titanium.XML.DOMDocument) instance
 
 * this.responseData holds the payload as a BLOB (binary data)
-
 
 ### POST requests
 
@@ -154,7 +151,6 @@ HTTPClient implements the [five XHR ready states](http://www.w3.org/TR/XMLHttpRe
 * LOADING – The response entity body is being received.
 
 * DONE – The data transfer has been completed or something went wrong during the transfer (e.g. infinite redirects).
-
 
 In code, it would look like this:
 
@@ -254,29 +250,27 @@ To perform the steps in this activity, you will need to reference the HTTPClient
 
 3. Write an onload callback for your HTTPClient that will perform these operations:
 
-  * Log the HTTP status code to the console. See the API docs for the correct property to use to access the status code.
+    * Log the HTTP status code to the console. See the API docs for the correct property to use to access the status code.
 
-  * Define an ImageView object whose image property is set equal to the binary data returned from the network.
+    * Define an ImageView object whose image property is set equal to the binary data returned from the network.
 
-  * Add that ImageView object to the win1 window so that it will be displayed.
+    * Add that ImageView object to the win1 window so that it will be displayed.
 
 4. Write an onerror callback for your HTTPClient that will perform these operations:
 
-  * Log the HTTP status code to the console.
+    * Log the HTTP status code to the console.
 
-  * Display the contents of the error message in an alert() dialog.
+    * Display the contents of the error message in an alert() dialog.
 
 5. Make sure to open and then send the request.
 
 6. Build and test your app. The photo should be displayed on the first tab after it is downloaded.
-
 
 ### References and further reading
 
 * [Finished code](http://assets.appcelerator.com.s3.amazonaws.com/app_u/ebook/6.1_httpclient.zip)
 
 * [HTTPClient API docs](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Network.HTTPClient)
-
 
 ## Summary
 

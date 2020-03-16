@@ -12,18 +12,18 @@ To create a custom error message filter:
 
 1. From the **Window** menu (on Windows) or **Studio** menu (on Mac OS X), select **Preferences...** to open a **Preferences** window.
 
-  1. Navigate to **Studio >** **Validation**.
+    1. Navigate to **Studio >** **Validation**.
 
-  2. Select the language that you are interested in editing.
-    Studio displays the error message filters for the Editor that you selected (shown below).
+    2. Select the language that you are interested in editing.
+        Studio displays the error message filters for the Editor that you selected (shown below).
 
-    ![ValidationDialog](/Images/appc/download/attachments/30083301/ValidationDialog.png)
+        ![ValidationDialog](/Images/appc/download/attachments/30083301/ValidationDialog.png)
 2. Add your new filter.
 
-  1. On the **Validation** preferences screen, click the **Add** button ![Plus](/Images/appc/download/attachments/30083301/Plus.png) to open an **Ignore Warning/Error** pop-up window.
+    1. On the **Validation** preferences screen, click the **Add** button ![Plus](/Images/appc/download/attachments/30083301/Plus.png) to open an **Ignore Warning/Error** pop-up window.
 
-  2. In the **Message** field on the **Ignore Warning/Error** pop-up window, type either the exact error or warning message that you want the Validation to ignore. You can also use an asterisk (\*) as a wildcard to create a regular expression.
+    2. In the **Message** field on the **Ignore Warning/Error** pop-up window, type either the exact error or warning message that you want the Validation to ignore. You can also use an asterisk (\*) as a wildcard to create a regular expression.
 
-  3. Click **OK** to add your error message to the list of filters.
+    3. Click **OK** to add your error message to the list of filters.
 
 3. Click **OK** to save the changes to your preferences and to close the **Preferences** window.

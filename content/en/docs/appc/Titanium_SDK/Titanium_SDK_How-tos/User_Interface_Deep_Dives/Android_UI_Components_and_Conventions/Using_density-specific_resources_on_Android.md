@@ -2,28 +2,27 @@
 
 ## Contents
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Platform-specific images Folder](#Platform-specificimagesFolder)
+* [Platform-specific images Folder](#platform-specific-images-folder)
 
-* [More control](#Morecontrol)
+* [More control](#more-control)
 
-* [Folder name breakdown](#Foldernamebreakdown)
+* [Folder name breakdown](#folder-name-breakdown)
 
-* [Working with the folder names](#Workingwiththefoldernames)
+* [Working with the folder names](#working-with-the-folder-names)
 
-* [Documentation](#Documentation)
+* [Documentation](#documentation)
 
-* [Subfolders](#Subfolders)
+* [Subfolders](#subfolders)
 
-  * [Notes](#Notes)
+    * [Notes](#notes)
 
-* [The appicon](#Theappicon)
+* [The appicon](#the-appicon)
 
-* [Using Density Independent Pixels](#UsingDensityIndependentPixels)
+* [Using Density Independent Pixels](#using-density-independent-pixels)
 
-  * [Code Examples](#CodeExamples)
-
+    * [Code Examples](#code-examples)
 
 ## Overview
 
@@ -59,7 +58,6 @@ Images that are in a folder named "res-long-land-hdpi" will be used for:
 
 * **High-density screens**; approximately 240dpi.
 
-
 ## Working with the folder names
 
 With this naming convention you can be as specific or as broad as you need to be.
@@ -69,16 +67,13 @@ For instance, if you have these two folders in "Resources/android/images":
 
 * "res-notlong-land-hdpi"
 
-
 But you don't need to have different images based on it being long or notlong. So all you need to do is remove that property from the folder name. So you end up with one folder named:
 
 * "res-land-hdpi"
 
-
 that will cover both instances. And if you where also going to use the same images for hdpi devices, no matter if it is portrait or landscape you could just name that folder
 
 * "res-hdpi"
-
 
 ## Documentation
 
@@ -94,7 +89,6 @@ If you want to put your image in a subfolder, you would put it in "Resources/and
 
 * Using "high", "medium", and "low" is the same as using "res-hdpi", "res-mdpi", and "res-ldpi".
 
-
 ## The appicon
 
 The method above will not work for the appicon.png because the it is referenced directly from the android project and does not pass through titanium. When you use the method above the names of images are mangled to avoid collisions and we are only able to reference them through titanium.
@@ -104,7 +98,6 @@ To use density specific versions of the appicon you will need to create a folder
 * "<app>/platform/android/res/drawable"
 
 * "<app>/platform/android/res/drawable-hdpi"
-
 
 ![20110915-93bn2rtifjcjk838xmrjsx4y5](/Images/appc/download/attachments/29004808/20110915-93bn2rtifjcjk838xmrjsx4y5.jpg)
 

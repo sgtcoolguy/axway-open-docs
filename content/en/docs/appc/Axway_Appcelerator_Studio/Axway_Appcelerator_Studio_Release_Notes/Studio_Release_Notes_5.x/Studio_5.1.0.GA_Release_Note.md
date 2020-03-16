@@ -2,52 +2,51 @@
 
 Studio 5.1.0.GA is a minor release that includes new features, improvements, and bug fixes.
 
-As of this release, Studio 5.0.x will not be supported six months from 5.1.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Studio 5.0.x will not be supported six months from 5.1.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Improvements
 
 * [TISTUD-7565](https://jira.appcelerator.org/browse/TISTUD-7565) - Upgrade Eclipse base to Oxygen (4.7)
 
-  * Updated Eclipse base to Oxygen (4.7)
+    * Updated Eclipse base to Oxygen (4.7)
 
 * [TISTUD-8878](https://jira.appcelerator.org/browse/TISTUD-8878) - Axway Appcelerator Studio support for JDK 1.8.152/153 and JDK 9
 
-  * Added support for JDK 1.8.152/153 and JDK 9
+    * Added support for JDK 1.8.152/153 and JDK 9
 
 * [TISTUD-9006](https://jira.appcelerator.org/browse/TISTUD-9006) - The "full\_uninstall.txt" file in the Appcelerator folder is outdated
 
-  * Removed the outdated full\_uninstall.txt file from Studio. Users are advised to visit [Uninstalling Studio](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Updating_Studio/Uninstalling_Studio/) for details on uninstalling Studio.
+    * Removed the outdated full\_uninstall.txt file from Studio. Users are advised to visit [Uninstalling Studio](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Updating_Studio/Uninstalling_Studio/) for details on uninstalling Studio.
 
 * [TISTUD-9017](https://jira.appcelerator.org/browse/TISTUD-9017) \- Install Java 1.8.162 with the Studio 5.1.0 installers
 
-  * By default, Studio 5.1.0 installs the Java 1.8.162 version
+    * By default, Studio 5.1.0 installs the Java 1.8.162 version
 
 * [TISTUD-9018](https://jira.appcelerator.org/browse/TISTUD-9018) - Supporting 64-bit Studio Windows installers as there is no 32-bit Java 9
 
-  * Added support for 64-bit Windows Installers
+    * Added support for 64-bit Windows Installers
 
 * [TISTUD-9019](https://jira.appcelerator.org/browse/TISTUD-9019) - Updating JRuby plugins to support Java 9
 
-  * Updated jRuby to 9.1.16, Ruby to 2.5.0
+    * Updated jRuby to 9.1.16, Ruby to 2.5.0
 
-  * Updated ruby gems (rake to 12.3.0)
+    * Updated ruby gems (rake to 12.3.0)
 
 * [TISTUD-9063](https://jira.appcelerator.org/browse/TISTUD-9063) \- Update [http://go.appcelerator.com/installer\_git\_windows.exe](http://go.appcelerator.com/installer_git_windows.exe) link to Git-2.16.2 32 bit version
 
-  * Updated Git Windows installer to version 2.16.2 (32-bit version)
+    * Updated Git Windows installer to version 2.16.2 (32-bit version)
 
 * [TISTUD-9082](https://jira.appcelerator.org/browse/TISTUD-9082) - Studio compliance with the GDPR
 
-  * To make Studio GDPR compliant, we included an option to opt-out for any data tracking (Data usage and Studio crash) as well as provide a statement as to what we do track as noted in [Studio Analytics Events](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Studio_Analytics_Events/)
+    * To make Studio GDPR compliant, we included an option to opt-out for any data tracking (Data usage and Studio crash) as well as provide a statement as to what we do track as noted in [Studio Analytics Events](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Studio_Analytics_Events/)
 
 * [TISTUD-9085](https://jira.appcelerator.org/browse/TISTUD-9085) - Update to liveview 1.2.2
 
-  * Updated to liveview to version 1.2.2 to address [TIMOB-25790](https://jira.appcelerator.org/browse/TIMOB-25790)
+    * Updated to liveview to version 1.2.2 to address [TIMOB-25790](https://jira.appcelerator.org/browse/TIMOB-25790)
 
 * [TISTUD-9086](https://jira.appcelerator.org/browse/TISTUD-9086) - Add transpile identifer to the tiapp.xml schema
 
-  * Added transpile to the tiapp.xml schema
-
+    * Added transpile to the tiapp.xml schema
 
 ## Fixed issues
 
@@ -114,7 +113,6 @@ As of this release, Studio 5.0.x will not be supported six months from 5.1.0.GA'
 * [TISTUD-9093](https://jira.appcelerator.org/browse/TISTUD-9093) - Windows: Studio says it requires Windows 8.1 SDK
 
 * [TISTUD-9097](https://jira.appcelerator.org/browse/TISTUD-9097) - Studio shows the wrong node update
-
 
 ## Breaking changes
 

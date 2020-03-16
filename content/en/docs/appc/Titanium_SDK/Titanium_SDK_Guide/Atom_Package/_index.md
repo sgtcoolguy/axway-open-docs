@@ -1,59 +1,58 @@
 {"title":"Atom Package","weight":"60"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Installation](#Installation)
+* [Installation](#installation)
 
-  * [Via Atom Editor](#ViaAtomEditor)
+    * [Via Atom Editor](#via-atom-editor)
 
-  * [Via CLI](#ViaCLI)
+    * [Via CLI](#via-cli)
 
-  * [Dependencies](#Dependencies)
+    * [Dependencies](#dependencies)
 
-* [Features](#Features)
+* [Features](#features)
 
-  * [Commands](#Commands)
+    * [Commands](#commands)
 
-  * [Snippets](#Snippets)
+    * [Snippets](#snippets)
 
-  * [Shortcuts](#Shortcuts)
+    * [Shortcuts](#shortcuts)
 
-  * [Build tools](#Buildtools)
+    * [Build tools](#build-tools)
 
-    * [Toolbar](#Toolbar)
+        * [Toolbar](#toolbar)
 
-    * [Build](#Build)
+        * [Build](#build)
 
-      * [iOS code signing](#iOScodesigning)
+            * [iOS code signing](#ios-code-signing)
 
-      * [Android keystore](#Androidkeystore)
+            * [Android keystore](#android-keystore)
 
-    * [Console](#Console)
+        * [Console](#console)
 
-  * [Autocompletion](#Autocompletion)
+    * [Autocompletion](#autocompletion)
 
-    * [Generation](#Generation)
+        * [Generation](#generation)
 
-    * [Titanium and Alloy](#TitaniumandAlloy)
+        * [Titanium and Alloy](#titanium-and-alloy)
 
-    * [Project references](#Projectreferences)
+        * [Project references](#project-references)
 
-    * [Class and ID references](#ClassandIDreferences)
+        * [Class and ID references](#class-and-id-references)
 
-    * [Images](#Images)
+        * [Images](#images)
 
-  * [Alloy file and component generation](#Alloyfileandcomponentgeneration)
+    * [Alloy file and component generation](#alloy-file-and-component-generation)
 
-  * [Open related files](#Openrelatedfiles)
+    * [Open related files](#open-related-files)
 
-  * [Jump-to-definition](#Jump-to-definition)
+    * [Jump-to-definition](#jump-to-definition)
 
-    * [Alloy](#Alloy)
+        * [Alloy](#alloy)
 
-    * [Strings](#Strings)
+        * [Strings](#strings)
 
-    * [Images](#Images.1)
-
+        * [Images](#images)
 
 ## Overview
 
@@ -70,7 +69,6 @@ With the release of [SDK 7.0.0](/docs/appc/Titanium_SDK/Titanium_SDK_Release_Not
 * Create new Alloy widgets, controllers, views, styles, models, or alloy.jmk files in existing projects
 
 * Utilize the Atom Command Palette to initiate commands
-
 
 Atom 1.21 or later is required.
 
@@ -92,7 +90,6 @@ Installation via the editor is just like any other Atom package.
 
 4. Click the **Install button**.
 
-
 ### Via CLI
 
 If you have the apm command installed, from the command line run:
@@ -107,41 +104,16 @@ Some functionality provided by the Appcelerator Titanium package, such as jump-t
 
 ### Commands
 
-Command
-
-Description
-
-appc:build
-
-Build using the current selected command and configuration
-
-appc:stop
-
-Stop the current build
-
-appc:console
-
-Toggle the console
-
-appc:generate
-
-Open dialog to generate a new alloy file or component
-
-appc:open view
-
-Open the related Alloy XML file
-
-appc:open style
-
-Open the related Alloy TSS file
-
-appc:open controller
-
-Open the related JavaScript file
-
-appc:open close related
-
-Toggle the related Alloy XML, TSS and Javascript files
+| Command | Description |
+| --- | --- |
+| appc:build | Build using the current selected command and configuration |
+| appc:stop | Stop the current build |
+| appc:console | Toggle the console |
+| appc:generate | Open dialog to generate a new alloy file or component |
+| appc:open view | Open the related Alloy XML file |
+| appc:open style | Open the related Alloy TSS file |
+| appc:open controller | Open the related JavaScript file |
+| appc:open close related | Toggle the related Alloy XML, TSS and Javascript files |
 
 ### Snippets
 
@@ -149,133 +121,44 @@ With [1.1.0](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Atom_Package/Atom_Packag
 
 Code snippets for common Alloy and Titanium APIs are provided for use in Alloy controllers and modules. A description of the snippet and link to documentation are provided where appropriate. Type the prefix and the autocomplete overlay will be displayed with matching snippets.
 
-Prefix
-
-Description
-
-tidebug
-
-Debug log message
-
-tierror
-
-Error log message
-
-tiinfo
-
-Info log message
-
-tiwarn
-
-Warn log message
-
-titrace
-
-Trace log message
-
-tiaddevent
-
-Add event listener
-
-tiremevent
-
-Remove event listener
-
-tifireevent
-
-Fire event
-
-tialer
-
-Show alert dialog
-
-tiopt
-
-Show option dialog
-
-tianim
-
-View animation
-
-tifile
-
-Open file
-
-tisound
-
-Play sound
-
-tiaudio
-
-Play local or remote audio
-
-tivideo
-
-Play local or remote video
-
-ticamera
-
-Open camera
-
-alglo
-
-Alloy Globals object
-
-alcfg
-
-Allog CFG object
-
-alcon
-
-Alloy create controller function
-
-alcol
-
-Alloy create collection function
-
-almod
-
-Alloy create model function
-
-alwid
-
-Alloy create widget function
-
-ifios
-
-iOS conditional statement
-
-idand
-
-Android conditional statement
-
-Irwin
-
-Windows conditional statement
+| Prefix | Description |
+| --- | --- |
+| tidebug | Debug log message |
+| tierror | Error log message |
+| tiinfo | Info log message |
+| tiwarn | Warn log message |
+| titrace | Trace log message |
+| tiaddevent | Add event listener |
+| tiremevent | Remove event listener |
+| tifireevent | Fire event |
+| tialer | Show alert dialog |
+| tiopt | Show option dialog |
+| tianim | View animation |
+| tifile | Open file |
+| tisound | Play sound |
+| tiaudio | Play local or remote audio |
+| tivideo | Play local or remote video |
+| ticamera | Open camera |
+| alglo | Alloy Globals object |
+| alcfg | Allog CFG object |
+| alcon | Alloy create controller function |
+| alcol | Alloy create collection function |
+| almod | Alloy create model function |
+| alwid | Alloy create widget function |
+| ifios | iOS conditional statement |
+| idand | Android conditional statement |
+| Irwin | Windows conditional statement |
 
 ### Shortcuts
 
 As of [1.1.0](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Atom_Package/Atom_Package_Release_Notes/Atom_Package_1.1.0_Release_Note/), we introduced shortcuts:
 
-Keymap
-
-Operation
-
-ctrl + alt + a
-
-Open or close related files
-
-ctrl + alt + c
-
-Open related Controller
-
-ctrl + alt + s
-
-Open related Style
-
-ctrl + alt + v
-
-Open related View
+| Keymap | Operation |
+| --- | --- |
+| ctrl + alt + a | Open or close related files |
+| ctrl + alt + c | Open related Controller |
+| ctrl + alt + s | Open related Style |
+| ctrl + alt + v | Open related View |
 
 ### Build tools
 
@@ -299,7 +182,6 @@ The toolbar provides a UI for commonly used commands when developing a Titanium 
 
 7. Console: Toggle display of the console which outputs debug information during build and run.
 
-
 #### Build
 
 ![33169524-ed2b85ca-d03c-11e7-881e-4eb9e301649d](/Images/appc/download/thumbnails/52298060/33169524-ed2b85ca-d03c-11e7-881e-4eb9e301649d.png)
@@ -314,10 +196,9 @@ The build select button executes and provides selections of the build command. D
 
 * Custom: execute appc run -d <project\_dir> with custom arguments
 
-
 ##### iOS code signing
 
-When building for a device and ad-hoc or App Store distribution, a certificate and provisioning profile must be selected. Click the [code signing/keystore button](#Toolbar) to display the code signing options.
+When building for a device and ad-hoc or App Store distribution, a certificate and provisioning profile must be selected. Click the [code signing/keystore button](#toolbar) to display the code signing options.
 
 ![33169525-ed3f58a2-d03c-11e7-9b58-48b361328d69](/Images/appc/download/attachments/52298060/33169525-ed3f58a2-d03c-11e7-9b58-48b361328d69.png)
 
@@ -325,7 +206,7 @@ Certificates are populated according to the selected build option (developer/dis
 
 ##### Android keystore
 
-When building for distribution through Google Play, the app must be signed with a keystore. Click the [code signing/keystore button](#Toolbar) to display the keystore options.
+When building for distribution through Google Play, the app must be signed with a keystore. Click the [code signing/keystore button](#toolbar) to display the keystore options.
 
 The path to the keystore can be entered manually or by using the file picker. Keystore path and alias are stored in package configuration.
 
@@ -389,14 +270,13 @@ A UI for the alloy generate command is provided. The **Generate File** dialog is
 
 ### Open related files
 
-Opening Alloy-related files is supported (see [Commands](#Commands)).
+Opening Alloy-related files is supported (see [Commands](#commands)).
 
 * From View, open related Style and/or Controller
 
 * From Style, open related View and/or Controller
 
 * From Controller, open related View and/or Style
-
 
 ### Jump-to-definition
 

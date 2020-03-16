@@ -1,15 +1,14 @@
 {"title":"Titanium Angular - Limitations and Workarounds","weight":"50"}
 
-* [TypeScript API](#TypeScriptAPI)
+* [TypeScript API](#typescript-api)
 
-* [Working with Titanium elements](#WorkingwithTitaniumelements)
+* [Working with Titanium elements](#working-with-titanium-elements)
 
-  * [Accessing the Titanium view/proxy of template elements](#AccessingtheTitaniumview/proxyoftemplateelements)
+    * [Accessing the Titanium view/proxy of template elements](#accessing-the-titanium-view/proxy-of-template-elements)
 
-  * [Configuring template elements programmatically](#Configuringtemplateelementsprogrammatically)
+    * [Configuring template elements programmatically](#configuring-template-elements-programmatically)
 
-* [Titanium Router](#TitaniumRouter)
-
+* [Titanium Router](#titanium-router)
 
 Titanium Angular is currently in an early preview stage. This means that some features are still under development or already available features may still be buggy.
 
@@ -37,22 +36,21 @@ The basic features of all elements under the UI namespace are supported as of no
 
 * Android
 
-  * DrawerLayout
+    * DrawerLayout
 
-  * ProgressIndicator
+    * ProgressIndicator
 
-  * SearchView
+    * SearchView
 
 * iOS
 
-  * CoverFlowView
+    * CoverFlowView
 
-  * SplitWindow
+    * SplitWindow
 
 * Multiple platforms
 
-  * NavigationWindow
-
+    * NavigationWindow
 
 ### Accessing the Titanium view/proxy of template elements
 

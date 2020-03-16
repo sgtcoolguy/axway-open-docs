@@ -1,39 +1,38 @@
 {"title":"Ruby Debugger","weight":"10"}
 
-* [Pre-requisites](#Pre-requisites)
+* [Pre-requisites](#pre-requisites)
 
-  * [Using ruby-debug](#Usingruby-debug)
+    * [Using ruby-debug](#using-ruby-debug)
 
-* [Installing ruby-debug-ide on Windows](#Installingruby-debug-ideonWindows)
+* [Installing ruby-debug-ide on Windows](#installing-ruby-debug-ide-on-windows)
 
-  * [Ruby 1.8](#Ruby1.8)
+    * [Ruby 1.8](#ruby-1.8)
 
-  * [Ruby 1.9](#Ruby1.9)
+    * [Ruby 1.9](#ruby-1.9)
 
-    * [Troubleshooting](#Troubleshooting)
+        * [Troubleshooting](#troubleshooting)
 
-* [Starting a Debug Session](#StartingaDebugSession)
+* [Starting a Debug Session](#starting-a-debug-session)
 
-* [Debug Views](#DebugViews)
+* [Debug Views](#debug-views)
 
-  * [Variables View](#VariablesView)
+    * [Variables View](#variables-view)
 
-    * [Show Constants and Classes](#ShowConstantsandClasses)
+        * [Show Constants and Classes](#show-constants-and-classes)
 
-    * [Arrays](#Arrays)
+        * [Arrays](#arrays)
 
-    * [Hashes](#Hashes)
+        * [Hashes](#hashes)
 
-  * [Breakpoints View](#BreakpointsView)
+    * [Breakpoints View](#breakpoints-view)
 
-  * [Expressions View](#ExpressionsView)
+    * [Expressions View](#expressions-view)
 
-  * [Display View](#DisplayView)
+    * [Display View](#display-view)
 
-* [Automatic Code Reloading](#AutomaticCodeReloading)
+* [Automatic Code Reloading](#automatic-code-reloading)
 
-* [Debugging in Ruby gems/libraries](#DebugginginRubygems/libraries)
-
+* [Debugging in Ruby gems/libraries](#debugging-in-ruby-gems/libraries)
 
 This page gives an overview of how to use the Ruby debugger.
 
@@ -111,7 +110,6 @@ To start a Ruby debug session:
 
 3. In the launch view, use step into, step over, step return to step through the code. Use the **Resume** button to resume the application.
 
-
 ![rubyDebugPerspective](/Images/appc/download/attachments/30083024/rubyDebugPerspective.png)
 
 ## Debug Views
@@ -131,7 +129,6 @@ The debug perspective contains the following views per default:
 * Console
 
 * Tasks
-
 
 In addition to these, there are two more views for the debug perspective: the Expression and Display view. The Expression view will be opened for displaying the results of inspect commands (runtime evaluation). The Display view allows entering arbitrary ruby commands for evaluation.
 
@@ -209,7 +206,6 @@ Results of ruby expression evaluation are displayed here. The evaluation takes p
 
 * If you select "inspect key" in the context menu of a hash value in the variable view
 
-
 ![ExpressionViewWithInspectResult](/Images/appc/download/attachments/30083024/ExpressionViewWithInspectResult.png)
 
 ### Display View
@@ -231,7 +227,6 @@ If there is a debug session, every file you edit and save will be reloaded from 
 * The interpreter reloads the file with the updated content and, therefore, also executes the code at the main level. That might turn the application in an undesirable state.
 
 * You cannot delete methods by reloading.
-
 
 ## Debugging in Ruby gems/libraries
 

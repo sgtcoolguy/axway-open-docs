@@ -2,14 +2,13 @@
 
 Studio includes several templates to be used as jumping-off points for Titanium development
 
-* [Importing a Sample](#ImportingaSample)
+* [Importing a Sample](#importing-a-sample)
 
-* [Single Window Application](#SingleWindowApplication)
+* [Single Window Application](#single-window-application)
 
-* [Master/Detail Application](#Master/DetailApplication)
+* [Master/Detail Application](#master/detail-application)
 
-* [Tabbed Application](#TabbedApplication)
-
+* [Tabbed Application](#tabbed-application)
 
 ## Importing a Sample
 
@@ -23,7 +22,8 @@ A single window application with a single view - a mostly blank canvas.
 
 ### Screenshots
 
-![SingleWindowTemplate](/Images/appc/download/attachments/30083145/SingleWindowTemplate.png)
+| ![SingleWindowTemplate](/Images/appc/download/attachments/30083145/SingleWindowTemplate.png) |
+| --- |
 
 ## Master/Detail Application
 
@@ -31,9 +31,7 @@ A master detail view, utilizing a native table view component and platform-speci
 
 ### Screenshots
 
-![MasterTemplate](/Images/appc/download/attachments/30083145/MasterTemplate.png)
-
-![DetailTemplate](/Images/appc/download/attachments/30083145/DetailTemplate.png)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTh" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083145/MasterTemplate.png" alt="images/download/attachments/30083145/MasterTemplate.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083145/DetailTemplate.png" alt="images/download/attachments/30083145/DetailTemplate.png" class="confluence-embedded-image"></p></td></tr></tbody></table>
 
 ## Tabbed Application
 
@@ -41,6 +39,4 @@ A tabbed application, consisting of multiple stacks of windows associated with t
 
 ### Screenshots
 
-![TabbedApplicationMain](/Images/appc/download/attachments/30083145/TabbedApplicationMain.png)
-
-![TabbedApplicationNewWindow](/Images/appc/download/attachments/30083145/TabbedApplicationNewWindow.png)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTh" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083145/TabbedApplicationMain.png" alt="images/download/attachments/30083145/TabbedApplicationMain.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083145/TabbedApplicationNewWindow.png" alt="images/download/attachments/30083145/TabbedApplicationNewWindow.png" class="confluence-embedded-image"></p></td></tr></tbody></table>

@@ -1,59 +1,58 @@
 {"title":"iOS Module Architecture","weight":"20"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Example module](#Examplemodule)
+* [Example module](#example-module)
 
-* [Module](#Module)
+* [Module](#module)
 
-  * [Module Class](#ModuleClass)
+    * [Module Class](#module-class)
 
-  * [Module Lifecycle](#ModuleLifecycle)
+    * [Module Lifecycle](#module-lifecycle)
 
-* [Proxy](#Proxy)
+* [Proxy](#proxy)
 
-  * [Proxy Class](#ProxyClass)
+    * [Proxy Class](#proxy-class)
 
-  * [Proxy Methods](#ProxyMethods)
+    * [Proxy Methods](#proxy-methods)
 
-  * [Proxy Properties](#ProxyProperties)
+    * [Proxy Properties](#proxy-properties)
 
-  * [Type Conversions](#TypeConversions)
+    * [Type Conversions](#type-conversions)
 
-    * [Returning Object Values](#ReturningObjectValues)
+        * [Returning Object Values](#returning-object-values)
 
-    * [Returning Primitive Values](#ReturningPrimitiveValues)
+        * [Returning Primitive Values](#returning-primitive-values)
 
-    * [Returning Complex Values](#ReturningComplexValues)
+        * [Returning Complex Values](#returning-complex-values)
 
-    * [Returning Files](#ReturningFiles)
+        * [Returning Files](#returning-files)
 
-    * [Returning Blobs](#ReturningBlobs)
+        * [Returning Blobs](#returning-blobs)
 
-    * [Returning CGRect](#ReturningCGRect)
+        * [Returning CGRect](#returning-cgrect)
 
-    * [Returning CGPoint](#ReturningCGPoint)
+        * [Returning CGPoint](#returning-cgpoint)
 
-    * [Returning NSRange](#ReturningNSRange)
+        * [Returning NSRange](#returning-nsrange)
 
-    * [Returning UIColor](#ReturningUIColor)
+        * [Returning UIColor](#returning-uicolor)
 
-  * [Setting Proxy Values](#SettingProxyValues)
+    * [Setting Proxy Values](#setting-proxy-values)
 
-  * [Handling Events](#HandlingEvents)
+    * [Handling Events](#handling-events)
 
-  * [Memory Management](#MemoryManagement)
+    * [Memory Management](#memory-management)
 
-* [View Proxy and View](#ViewProxyandView)
+* [View Proxy and View](#view-proxy-and-view)
 
-  * [View Proxy Class](#ViewProxyClass)
+    * [View Proxy Class](#view-proxy-class)
 
-  * [View Class](#ViewClass)
+    * [View Class](#view-class)
 
-  * [View Properties](#ViewProperties)
+    * [View Properties](#view-properties)
 
-  * [View Methods](#ViewMethods)
-
+    * [View Methods](#view-methods)
 
 ## Introduction
 
@@ -66,7 +65,6 @@ The Titanium SDK is based on a modular architecture, which can be utilized to ex
 * **_ViewProxy_**: A specialized Proxy that knows how to render Views
 
 * **_View_**: The visual representation of a UI component which Titanium can render
-
 
 When building a Module, you can only have one Module class but you can have zero or more Proxies, Views and ViewProxies.
 
@@ -202,13 +200,11 @@ Titanium provides several convenience macros for typecasting incoming values to 
 
 * The second parameter is the type name that the value should be.
 
-
 This macro will do two actions:
 
 1. Pull out the first argument, that is, \[args objectAtIndex:0\].
 
 2. Cast the return value to the type passed in the second argument.
-
 
 This macro can only be used for single-argument methods. If you have multiple arguments, you should simply used the normal array accessor methods.
 
@@ -294,65 +290,13 @@ In the getter method, your property method must return a value as either a NSObj
 
 The following Objective-C types can be returned without conversion:
 
-**Objective-C**
-
-NSString
-
-NSDictionary
-
-NSArray
-
-NSNumber
-
-NSDate
-
-NSNull
-
-**JavaScript**
-
-String
-
-Object
-
-Array
-
-Number
-
-Date
-
-null
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Objective-C</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>NSString</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>NSDictionary</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>NSArray</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>NSNumber</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>NSDate</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>NSNull</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>JavaScript</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>String</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Object</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Array</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Number</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Date</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>null</p></td></tr></tbody></table>
 
 #### Returning Primitive Values
 
 To return a primitive value from either a method or property, you should return an NSNumber with the appropriate wrapped primitive value. Titanium provides a set of macros to make this easier:
 
-**Macro**
-
-**Description**
-
-NUMINT
-
-Equivalent to \[NSNumber numberWithInt:value\]
-
-NUMBOOL
-
-Equivalent to \[NSNumber numberWithInt:value\]
-
-NUMLONG
-
-Equivalent to \[NSNumber numberWithLong:value\]
-
-NUMLONGLONG
-
-Equivalent to \[NSNumber numberWithLongLong:value\]
-
-NUMDOUBLE
-
-Equivalent to \[NSNumber numberWithDouble:value\]
-
-NUMFLOAT
-
-Equivalent to \[NSNumber numberWithFloat:value\]
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Macro</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Description</strong></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>NUMINT</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Equivalent to [NSNumber numberWithInt:value]</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>NUMBOOL</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Equivalent to [NSNumber numberWithInt:value]</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>NUMLONG</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Equivalent to [NSNumber numberWithLong:value]</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>NUMLONGLONG</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Equivalent to [NSNumber numberWithLongLong:value]</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>NUMDOUBLE</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Equivalent to [NSNumber numberWithDouble:value]</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>NUMFLOAT</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Equivalent to [NSNumber numberWithFloat:value]</p></td></tr></tbody></table>
 
 #### Returning Complex Values
 
@@ -361,7 +305,6 @@ There are two approaches to returning complex values:
 * The first approach is to set values in a NSDictionary and it. When returning a NSDictionary, Titanium converts this to a JavaScript object with each key/value being mapped into JavaScript object property/values.
 
 * The second approach is to create a specialized Proxy. The Proxy should then be returned which will be exposed as a JavaScript object with functions and properties. Invocation against the returned Proxy will be invoked against your returned proxy instance. When you return a Proxy instance, you must autorelease it if you created it in your method.
-
 
 #### Returning Files
 
@@ -481,7 +424,6 @@ When you invoke the property of a proxy, the following will happen:
 
 * If you have not defined a setter, the property and value will be stored internally in the dynprops.
 
-
 If you implement a setter, you should also manually store the property yourself in dynprops. You can do this by calling the following method:
 
 `- (``void``)setBar:(id)value`
@@ -547,7 +489,6 @@ In addition to any additional event arguments passed, Titanium automatically pro
 * source — The source object (proxy) that fired the event
 
 * type — The type of event
-
 
 You can also check for the existing of a listener (recommended) before firing an event. This is done with the \_hasListeners method.
 

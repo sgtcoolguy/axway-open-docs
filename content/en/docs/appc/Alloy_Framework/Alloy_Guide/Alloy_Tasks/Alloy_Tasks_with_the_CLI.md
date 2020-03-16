@@ -1,37 +1,36 @@
 {"title":"Alloy Tasks with the CLI","weight":"20"}
 
-* [Creating a new application](#Creatinganewapplication)
+* [Creating a new application](#creating-a-new-application)
 
-* [Creating a new application using a test application](#Creatinganewapplicationusingatestapplication)
+* [Creating a new application using a test application](#creating-a-new-application-using-a-test-application)
 
-* [Generating components](#Generatingcomponents)
+* [Generating components](#generating-components)
 
-  * [Generating a controller](#Generatingacontroller)
+    * [Generating a controller](#generating-a-controller)
 
-  * [Generating a view](#Generatingaview)
+    * [Generating a view](#generating-a-view)
 
-  * [Generating a style](#Generatingastyle)
+    * [Generating a style](#generating-a-style)
 
-  * [Generating a model](#Generatingamodel)
+    * [Generating a model](#generating-a-model)
 
-  * [Generating a migration](#Generatingamigration)
+    * [Generating a migration](#generating-a-migration)
 
-  * [Generating a widget](#Generatingawidget)
+    * [Generating a widget](#generating-a-widget)
 
-  * [Generating alloy.jmk](#Generatingalloy.jmk)
+    * [Generating alloy.jmk](#generating-alloy.jmk)
 
-* [Extracting localization strings](#Extractinglocalizationstrings)
+* [Extracting localization strings](#extracting-localization-strings)
 
-* [Compiling a specific view-controller](#Compilingaspecificview-controller)
+* [Compiling a specific view-controller](#compiling-a-specific-view-controller)
 
-* [Building an application](#Buildinganapplication)
+* [Building an application](#building-an-application)
 
-* [Installing special project components](#Installingspecialprojectcomponents)
+* [Installing special project components](#installing-special-project-components)
 
-  * [Installing the compiler plugin](#Installingthecompilerplugin)
+    * [Installing the compiler plugin](#installing-the-compiler-plugin)
 
-
-Alloy provides a command-line interface to create a new projects, generate skeleton components, and compile Alloy code to Titanium code. See [Command-Line Interface Installation](/docs/appc/Alloy_Framework/Alloy_Getting_Started/#Command-lineinterfaceinstallation) for directions on installing the latest released Alloy CLI.
+Alloy provides a command-line interface to create a new projects, generate skeleton components, and compile Alloy code to Titanium code. See [Command-Line Interface Installation](/docs/appc/Alloy_Framework/Alloy_Getting_Started/#command-line-interface-installation) for directions on installing the latest released Alloy CLI.
 
 Run appc alloy --help to see all available target options or see the [Alloy Command-Line Interface Reference](/docs/appc/Alloy_Framework/Alloy_How-tos/Alloy_Reference_Guides/Alloy_Command-Line_Interface_Reference/).
 
@@ -141,13 +140,11 @@ The alloy extract-i18n command inspects your JS and TSS (since Alloy 1.2.0), and
 
 * \--apply – Optional. If present, the command writes new localization entries to the target language strings.xml file. Existing i18n entries are left untouched. If the XML file doesn't exist, it is created for you. If this parameter is absent, a preview of the changes are displayed in the terminal window.
 
-
 The following localization functions are supported:
 
 * Titanium.Locale.getString()
 
 * L()
-
 
 The command extracts the first parameter (the i18n key) from each localization function and, if it's a string, adds it to the target language strings.xml file. For example, suppose a JavaScript file in your application contained the following code:
 
@@ -229,7 +226,7 @@ To build and run an application, execute the following command:
 
 Running this from the root directory of the project compiles the files to the correct location automatically.
 
-See the [Titanium Command-Line Interface Reference guide](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_Command-Line_Interface_Reference/#Build) for a complete explanation of the available options.
+See the [Titanium Command-Line Interface Reference guide](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_Command-Line_Interface_Reference/#build) for a complete explanation of the available options.
 
 ## Installing special project components
 

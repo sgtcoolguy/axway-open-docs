@@ -156,4 +156,4 @@ You can even use conditional queries by defining custom methods in your models i
 
 As you can see, there’s lots of ways to use custom queries within Alloy, to reduce the amount of JavaScript you need to write and take advantage of these conditions running before any rendering is carried out, providing a smoother app experience.
 
-You can find out more about buy checking out our guide on [Custom query styles](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#Customquerystyles).
+You can find out more about buy checking out our guide on [Custom query styles](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#custom-query-styles).

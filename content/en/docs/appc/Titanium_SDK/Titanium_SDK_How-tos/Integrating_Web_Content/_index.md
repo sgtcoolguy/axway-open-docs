@@ -12,7 +12,6 @@ While it's highly encouraged to use native UI components whenever possible, ther
 
 * Integrating web-based tools
 
-
 But be cautious when using WebViews. They are the heaviest of native UI components. They take time to render and can affect the performance of your apps if used too often. This will be discussed in more detail in [WebView Use Cases](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Integrating_Web_Content/WebView_Use_Cases/).
 
 ## WebView documents

@@ -1,17 +1,16 @@
 {"title":"Setting Memory Levels","weight":"70"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Showing your current memory level](#Showingyourcurrentmemorylevel)
+* [Showing your current memory level](#showing-your-current-memory-level)
 
-* [Setting your memory configuration](#Settingyourmemoryconfiguration)
+* [Setting your memory configuration](#setting-your-memory-configuration)
 
-* [Configuration files across platforms](#Configurationfilesacrossplatforms)
+* [Configuration files across platforms](#configuration-files-across-platforms)
 
-  * [Windows](#Windows)
+    * [Windows](#windows)
 
-  * [OS X](#OSX)
-
+    * [OS X](#os-x)
 
 ## Overview
 

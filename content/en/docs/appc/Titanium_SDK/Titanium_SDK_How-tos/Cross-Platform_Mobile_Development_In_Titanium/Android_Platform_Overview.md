@@ -1,31 +1,30 @@
 {"title":"Android Platform Overview","weight":"10"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [User interface conventions](#Userinterfaceconventions)
+    * [User interface conventions](#user-interface-conventions)
 
-    * [Hardware buttons](#Hardwarebuttons)
+        * [Hardware buttons](#hardware-buttons)
 
-    * [Screen sizes and densities](#Screensizesanddensities)
+        * [Screen sizes and densities](#screen-sizes-and-densities)
 
-    * [Comparison with iOS](#ComparisonwithiOS)
+        * [Comparison with iOS](#comparison-with-ios)
 
-  * [Application components](#Applicationcomponents)
+    * [Application components](#application-components)
 
-    * [Activities](#Activities)
+        * [Activities](#activities)
 
-      * [Services](#Services)
+            * [Services](#services)
 
-    * [Intents](#Intents)
+        * [Intents](#intents)
 
-      * [Intent Filters](#IntentFilters)
+            * [Intent Filters](#intent-filters)
 
-  * [References and further reading](#Referencesandfurtherreading)
+    * [References and further reading](#references-and-further-reading)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Objective
 
@@ -55,14 +54,13 @@ Android devices feature four dedicated-function "hardware" buttons: Back, Menu, 
 
 * Search – display search functionality, either in-app or system-wide
 
-
 The Home button behavior cannot be overridden, but you can interact with the Back, Search and Menu buttons.
 
 To override the default behavior for the Back button, add an event listener for the [Window.androidback](#!/api/Titanium.UI.Window-event-androidback) event. (Prior to Release 3.0, this event was named [Window.android:back](#!/api/Titanium.UI.Window-event-android:back). The older name is now deprecated.)
 
 To receive an event when the Search button is pressed, add an event listener for the [Window.androidsearch](#!/api/Titanium.UI.Window-event-androidsearch) event. (Prior to Release 3.0, this event was named [Window.android:search](#!/api/Titanium.UI.Window-event-android:search). The older name is now deprecated.)
 
-You cannot directly override the Menu button, but you can customize the menu displayed when the user presses the Menu button. See [Android Menus in the Android UI Components and Conventions](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/#Androidmenus) section for more information.
+You cannot directly override the Menu button, but you can customize the menu displayed when the user presses the Menu button. See [Android Menus in the Android UI Components and Conventions](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/#android-menus) section for more information.
 
 #### Screen sizes and densities
 
@@ -75,7 +73,6 @@ Android devices vary greatly in screen size and density. **Screen size** represe
 * large screens are at least 640dp x 480dp
 
 * xlarge screens are at least 960dp x 720dp
-
 
 Aspect ratios vary as well, though Android generally lumps them into two buckets: long and "notlong" with the latter corresponding to devices with an aspect ratio not significantly different than the 320 x 470 "normal" screen.
 
@@ -93,7 +90,6 @@ Finally, density describes the actual pixels (aka dots) per square inch resoluti
 
 * xxhdpi screens are roughly 480 dpi
 
-
 Titanium enables you to simply scale your user interface to fit the device's screen. But it also offers convenient features for specifically handling assets and layout for various screen sizes. You should plan to test on multiple devices if you want your user interface to be "pixel perfect" on all devices.
 
 There is also a nodpi option where your images will not be scaled by the system if you do not want to create various assets for each density.
@@ -108,7 +104,6 @@ The Android user interface features some key differences that iOS users should n
 
 * The Navigation bar does more than just give battery and signal-strength info. It is the common location for system and app notification messages. Likewise, Android doesn't use the "badge" indicator like iOS.
 
-
 ### Application components
 
 Android applications are built from the following components. Titanium shields you from some of the particulars, though it also gives you the tools to interact with these components when you want to.
@@ -118,7 +113,6 @@ Android applications are built from the following components. Titanium shields y
 * Services
 
 * Intents
-
 
 (We're simplifying things a bit here by ignoring content providers and broadcast receivers. Read Google's [Android Fundamentals](http://developer.android.com/guide/topics/fundamentals.html) guide for more detailed information.)
 
@@ -163,7 +157,6 @@ More information about intents and intent filters are available from the [Androi
 * [Supporting Multiple Screens](http://developer.android.com/guide/practices/screens_support.html)
 
 * [Screen Sizes and Densities in use now](http://developer.android.com/resources/dashboard/screens.html)
-
 
 ## Summary
 

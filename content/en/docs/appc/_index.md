@@ -18,7 +18,6 @@ Here you will find documentation and guides that cover Titanium Mobile and Titan
 
 * [AMPLIFY Appcelerator Platform Troubleshooting](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/AMPLIFY_Appcelerator_Platform_Troubleshooting/)
 
-
 ### AMPLIFY Runtime Services
 
 * [AMPLIFY Runtime Services Guide](/docs/appc/AMPLIFY_Runtime_Services/AMPLIFY_Runtime_Services_Guide/)
@@ -29,11 +28,9 @@ Here you will find documentation and guides that cover Titanium Mobile and Titan
 
 * [AMPLIFY Runtime Services FAQ](/docs/appc/AMPLIFY_Runtime_Services/AMPLIFY_Runtime_Services_FAQ/)
 
-
 ### Axway API Builder
 
 * [API Builder](/docs/appc/Axway_API_Builder/API_Builder/)
-
 
 ### Mobile Backend Services
 
@@ -47,7 +44,6 @@ Here you will find documentation and guides that cover Titanium Mobile and Titan
 
 * [Mobile Backend Services FAQ](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_FAQ/)
 
-
 ### AMPLIFY Appcelerator Services
 
 * [AMPLIFY Appcelerator Services Guide](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/)
@@ -55,7 +51,6 @@ Here you will find documentation and guides that cover Titanium Mobile and Titan
 * [AMPLIFY Appcelerator Platform Services How-tos](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/)
 
 * [AMPLIFY Appcelerator Services FAQ](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_FAQ/)
-
 
 ### Alloy Framework
 
@@ -69,7 +64,6 @@ Here you will find documentation and guides that cover Titanium Mobile and Titan
 
 * [Alloy FAQ](/docs/appc/Alloy_Framework/Alloy_FAQ/)
 
-
 ### Titanium SDK
 
 * [Titanium SDK Getting Started](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/)
@@ -82,7 +76,6 @@ Here you will find documentation and guides that cover Titanium Mobile and Titan
 
 * [Titanium SDK FAQ](/docs/appc/Titanium_SDK/Titanium_SDK_FAQ/)
 
-
 ### Appcelerator Dashboard
 
 * [Appcelerator Dashboard Getting Started](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Getting_Started/)
@@ -92,7 +85,6 @@ Here you will find documentation and guides that cover Titanium Mobile and Titan
 * [Appcelerator Dashboard Release Notes](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Release_Notes/)
 
 * [Appcelerator Dashboard FAQ](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_FAQ/)
-
 
 ### Appcelerator CLI
 
@@ -106,7 +98,6 @@ Here you will find documentation and guides that cover Titanium Mobile and Titan
 
 * [Appcelerator CLI FAQ](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_FAQ/)
 
-
 ### AMPLIFY CLI
 
 * [AMPLIFY CLI Quick Start](/docs/appc/AMPLIFY_CLI/AMPLIFY_CLI_Quick_Start/)
@@ -114,7 +105,6 @@ Here you will find documentation and guides that cover Titanium Mobile and Titan
 * [AMPLIFY CLI Commands](/docs/appc/AMPLIFY_CLI/AMPLIFY_CLI_Commands/)
 
 * [AMPLIFY CLI Error Messages During Installation](/docs/appc/AMPLIFY_CLI/AMPLIFY_CLI_Error_Messages_During_Installation/)
-
 
 ### Axway Appcelerator Studio
 

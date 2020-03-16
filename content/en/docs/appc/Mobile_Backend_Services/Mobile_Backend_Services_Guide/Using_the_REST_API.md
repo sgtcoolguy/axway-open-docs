@@ -1,19 +1,18 @@
 {"title":"Using the REST API","weight":"70"}
 
-* [REST API basics](#RESTAPIbasics)
+* [REST API basics](#rest-api-basics)
 
-* [Authentication](#Authentication)
+* [Authentication](#authentication)
 
-* [User sessions and cookies](#Usersessionsandcookies)
+* [User sessions and cookies](#user-sessions-and-cookies)
 
-* [Testing with cURL and wget](#TestingwithcURLandwget)
+* [Testing with cURL and wget](#testing-with-curl-and-wget)
 
-* [Uploading photos](#Uploadingphotos)
+* [Uploading photos](#uploading-photos)
 
-* [Object IDs](#ObjectIDs)
+* [Object IDs](#object-ids)
 
-* [Response paging](#Responsepaging)
-
+* [Response paging](#response-paging)
 
 Mobile Backend Services (MBS) provides a REST API accessible from any networked client device for creating, querying, updating, and deleting MBS objects.
 
@@ -38,7 +37,6 @@ API responses are returned as JSON objects. In most cases, the response JSON inc
 * meta - An object containing response metadata, including the response status code and error message, if any.
 
 * response - An object containing the actual data for the request. The response object is omitted for some requests, such as delete requests, that return no data.
-
 
 ## Authentication
 

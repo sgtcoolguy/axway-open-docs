@@ -14,7 +14,6 @@ Dashboard 5.1.1 is a patch release, which includes several improvements and bug 
 
 * Improved validation for org and usernames to reduce maximum allowable length.
 
-
 ## Fixed issues
 
 * Fixed an issue where the cancel button on Mobile Backend Services forms may not have functioned as expected.

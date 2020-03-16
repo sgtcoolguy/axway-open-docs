@@ -14,7 +14,6 @@ The following code sample demonstrates how to gather device information and atta
 
 * location
 
-
 `aca.setMetadata(``'device'``, {`
 
 `orientation: Ti.Gesture.portrait ?` `'portrait'` `:` `'landscape'``,`

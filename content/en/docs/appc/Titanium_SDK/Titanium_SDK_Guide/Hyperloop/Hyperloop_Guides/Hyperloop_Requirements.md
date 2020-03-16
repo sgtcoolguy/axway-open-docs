@@ -1,19 +1,18 @@
 {"title":"Hyperloop Requirements","weight":"10"}
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-  * [Optional Dependencies](#OptionalDependencies)
+    * [Optional Dependencies](#optional-dependencies)
 
-* [Installation](#Installation)
+* [Installation](#installation)
 
-  * [Appcelerator Studio](#AppceleratorStudio)
+    * [Appcelerator Studio](#appcelerator-studio)
 
-  * [Titanium SDK](#TitaniumSDK)
+    * [Titanium SDK](#titanium-sdk)
 
-  * [Appcelerator CLI](#AppceleratorCLI)
+    * [Appcelerator CLI](#appcelerator-cli)
 
-  * [Alloy Framework](#AlloyFramework)
-
+    * [Alloy Framework](#alloy-framework)
 
 ## Requirements
 
@@ -25,7 +24,6 @@ You’ll need to have the following installed on your machine as the recommended
 
 * Appcelerator CLI: 7.0.0+
 
-
 You can install [Appcelerator Studio](https://platform.axway.com/#/product/studio) and [Appcelerator CLI](https://platform.axway.com/#/product/cli) to get the latest version of all these components.
 
 ### Optional Dependencies
@@ -36,8 +34,7 @@ These dependencies are used only if you plan to integrate hyperloop with them. Y
 
 * [CocoaPods](https://cocoapods.org/) 1.0.0+ (see note)
 
-
-Note: If you plan on using CocoaPods as a third-party dependencies manager, you will need to have (at a minimum) CocoaPods 1.0.0 or later installed. See [Using third-party libraries with CocoaPods](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyperloop/Hyperloop_Guides/iOS_Hyperloop_Programming_Guide/#CocoaPods) for details on how to install and set up your project.
+Note: If you plan on using CocoaPods as a third-party dependencies manager, you will need to have (at a minimum) CocoaPods 1.0.0 or later installed. See [Using third-party libraries with CocoaPods](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyperloop/Hyperloop_Guides/iOS_Hyperloop_Programming_Guide/#cocoapods) for details on how to install and set up your project.
 
 ## Installation
 
@@ -51,8 +48,7 @@ To download and install Appcelerator Studio:
 
 3. Click on the installer for your OS. Wait a moment while the installer downloads.
 
-4. Launch the downloaded installer and follow the steps to install. If the installer asks to install a specific version of Java, allow it. See [Titanium Compatibility Matrix#JavaDevelopmentKit](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#JavaDevelopmentKit) for details on which versions we support.
-
+4. Launch the downloaded installer and follow the steps to install. If the installer asks to install a specific version of Java, allow it. See [Titanium Compatibility Matrix#JavaDevelopmentKit](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#java-development-kit) for details on which versions we support.
 
 ### Titanium SDK
 

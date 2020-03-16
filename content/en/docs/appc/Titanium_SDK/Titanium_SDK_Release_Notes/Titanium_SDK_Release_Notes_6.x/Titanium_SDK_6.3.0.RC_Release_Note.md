@@ -2,34 +2,33 @@
 
 # Titanium SDK 6.3.0.RC - 17 October 2017
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [New features](#Newfeatures)
+* [New features](#new-features)
 
-  * [Android platform](#Androidplatform)
+    * [Android platform](#android-platform)
 
-  * [iOS platform](#iOSplatform)
+    * [iOS platform](#ios-platform)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-  * [Android](#Android)
+    * [Android](#android)
 
-  * [iOS](#iOS)
+    * [iOS](#ios)
 
-  * [Windows](#Windows)
+    * [Windows](#windows)
 
-* [Improvements patch releases](#Improvementspatchreleases)
+* [Improvements patch releases](#improvements-patch-releases)
 
-* [API changes](#APIchanges)
+* [API changes](#api-changes)
 
-  * [New APIs](#NewAPIs)
-
+    * [New APIs](#new-apis)
 
 ## About this release
 
 Titanium SDK 6.3.0.RC is a minor release of the SDK, addressing high-priority issues from previous releases.
 
-As of this release, Titanium SDK 6.2.x will not be supported six months from 6.3.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Titanium SDK 6.2.x will not be supported six months from 6.3.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA.
 
@@ -39,33 +38,31 @@ Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3
 
 * [TIMOB-25197](https://jira.appcelerator.org/browse/TIMOB-25197) - Android: Support RefreshControl in Ti.UI.ScrollView
 
-  * Added RefreshControl support to vertical and horizontal ScrollViews
-
+    * Added RefreshControl support to vertical and horizontal ScrollViews
 
 ### iOS platform
 
 * [TIMOB-24780](https://jira.appcelerator.org/browse/TIMOB-24780) - iOS 11: Expose new API's to Ti.SafariDialog
 
-  * Added support for iOS 11's APIs
+    * Added support for iOS 11's APIs
 
 * [TIMOB-24805](https://jira.appcelerator.org/browse/TIMOB-24805) - iOS: Support large window-titles
 
-  * Added support for large window titles
+    * Added support for large window titles
 
 * [TIMOB-24808](https://jira.appcelerator.org/browse/TIMOB-24808) - iOS 11 / Android O: Add support for Password AutoFill
 
-  * Added support for Password AutoFill
+    * Added support for Password AutoFill
 
 * [TIMOB-25076](https://jira.appcelerator.org/browse/TIMOB-25076) - iOS 11: Add new MapKit API's
 
-  * Added support of iOS 11 MapKit APIs
+    * Added support of iOS 11 MapKit APIs
 
 * [TIMOB-25270](https://jira.appcelerator.org/browse/TIMOB-25270) - iPhone X: Support for FaceID
 
-  * Created the new Ti.Identity module to support touch-id, face-id, and keychain-access
+    * Created the new Ti.Identity module to support touch-id, face-id, and keychain-access
 
-  * Note: Ti.TouchID will be deprecated
-
+    * Note: Ti.TouchID will be deprecated
 
 ## Fixed issues
 
@@ -77,7 +74,7 @@ Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3
 
 * [TIMOB-25258](https://jira.appcelerator.org/browse/TIMOB-25258) - Android: TableView bottom border extends past the last table row
 
-  * This was introduced in 6.2.0
+    * This was introduced in 6.2.0
 
 * [TIMOB-25266](https://jira.appcelerator.org/browse/TIMOB-25266) - Android: Loading url in WebView crashes on Android 4.1
 
@@ -92,7 +89,6 @@ Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3
 * [TIMOB-25376](https://jira.appcelerator.org/browse/TIMOB-25376) - Android:List item is not rendering properly with 6.2.X and above
 
 * [TIMOB-25377](https://jira.appcelerator.org/browse/TIMOB-25377) - Android: ScrollView child percent size should be relative to container size
-
 
 ### iOS
 
@@ -122,7 +118,6 @@ Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3
 
 * [TIMOB-25393](https://jira.appcelerator.org/browse/TIMOB-25393) - Adding Third-Party iOS Framework causes build error with 6.2.x
 
-
 ### Windows
 
 * [TIMOB-24934](https://jira.appcelerator.org/browse/TIMOB-24934) - Windows: App fails to install to device if newer VCLibs package exists
@@ -145,25 +140,23 @@ Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3
 
 * [TIMOB-25385](https://jira.appcelerator.org/browse/TIMOB-25385) - Windows: Broken display text after 6.2.2.GA updated
 
-
 ## Improvements patch releases
 
 * [TIMOB-8898](https://jira.appcelerator.org/browse/TIMOB-8898) - Android: Support FILL behavior on contentWidth/contentHeight property of scroll view
 
-  * Added Ti.UI.Fill and Ti.UI.SIZE support to ScrollView "contentWidth" and "contentHeight" properties
+    * Added Ti.UI.Fill and Ti.UI.SIZE support to ScrollView "contentWidth" and "contentHeight" properties
 
 * [TIMOB-25064](https://jira.appcelerator.org/browse/TIMOB-25064) - Windows: Hyperloop does not pick DLL in lib folders
 
-  * Added capability to managed DLL with Hyperloop
+    * Added capability to managed DLL with Hyperloop
 
 * [TIMOB-25322](https://jira.appcelerator.org/browse/TIMOB-25322) - iOS: Geolocation should be able to handle iOS 11 permission upgrade, Media should warn when writing to gallery
 
-  * Updated geolocation to handle iOS 11 permission upgrade
+    * Updated geolocation to handle iOS 11 permission upgrade
 
 * [TIMOB-25355](https://jira.appcelerator.org/browse/TIMOB-25355) - iOS 11: Update Ti.Facebook iOS to 4.27.0
 
-  * Updated Ti.Facebook iOS to 5.6.0
-
+    * Updated Ti.Facebook iOS to 5.6.0
 
 ## API changes
 
@@ -171,80 +164,17 @@ Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3
 
 The following APIs are new or have expanded platform support in Release 6.3.0 as of November 1st, 2017.
 
-API
-
-Type
-
-Notes
-
-Titanium.UI.Window.extendSafeArea
-
-property
-
-Specifies whether the content (subviews) of the window will render inside the safe-area or not. Only used in iOS 11 and later. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Window.getExtendSafeArea
-
-method
-
-Gets the value of the Titanium.UI.Window.extendSafeArea property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Window.getLargeTitleDisplayMode
-
-method
-
-Gets the value of the Titanium.UI.Window.largeTitleDisplayMode property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Window.getLargeTitleEnabled
-
-method
-
-Gets the value of the Titanium.UI.Window.largeTitleEnabled property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Window.largeTitleDisplayMode
-
-property
-
-The mode to use when displaying the title of the navigation bar. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Window.largeTitleEnabled
-
-property
-
-A Boolean value indicating whether the title should be displayed in a large format. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Window.setExtendSafeArea
-
-method
-
-Sets the value of the Titanium.UI.Window.extendSafeArea property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Window.setLargeTitleDisplayMode
-
-method
-
-Sets the value of the Titanium.UI.Window.largeTitleDisplayMode property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Window.setLargeTitleEnabled
-
-method
-
-Sets the value of the Titanium.UI.Window.largeTitleEnabled property. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.iOS.LARGE\_TITLE\_DISPLAY\_MODE\_ALWAYS
-
-property
-
-Always use a larger title when this item is top most. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.iOS.LARGE\_TITLE\_DISPLAY\_MODE\_AUTOMATIC
-
-property
-
-Automatically use the large out-of-line title based on the state of the p revious item in the navigation bar. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.iOS.LARGE\_TITLE\_DISPLAY\_MODE\_NEVER
-
-property
-
-Never use a larger title when this item is top most. (New API, supported on iPhone and iPad.)
+| API | Type | Notes |
+| --- | --- | --- |
+| Titanium.UI.Window.extendSafeArea | property | Specifies whether the content (subviews) of the window will render inside the safe-area or not. Only used in iOS 11 and later. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Window.getExtendSafeArea | method | Gets the value of the Titanium.UI.Window.extendSafeArea property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Window.getLargeTitleDisplayMode | method | Gets the value of the Titanium.UI.Window.largeTitleDisplayMode property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Window.getLargeTitleEnabled | method | Gets the value of the Titanium.UI.Window.largeTitleEnabled property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Window.largeTitleDisplayMode | property | The mode to use when displaying the title of the navigation bar. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Window.largeTitleEnabled | property | A Boolean value indicating whether the title should be displayed in a large format. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Window.setExtendSafeArea | method | Sets the value of the Titanium.UI.Window.extendSafeArea property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Window.setLargeTitleDisplayMode | method | Sets the value of the Titanium.UI.Window.largeTitleDisplayMode property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Window.setLargeTitleEnabled | method | Sets the value of the Titanium.UI.Window.largeTitleEnabled property. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.iOS.LARGE\_TITLE\_DISPLAY\_MODE\_ALWAYS | property | Always use a larger title when this item is top most. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.iOS.LARGE\_TITLE\_DISPLAY\_MODE\_AUTOMATIC | property | Automatically use the large out-of-line title based on the state of the p revious item in the navigation bar. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.iOS.LARGE\_TITLE\_DISPLAY\_MODE\_NEVER | property | Never use a larger title when this item is top most. (New API, supported on iPhone and iPad.) |

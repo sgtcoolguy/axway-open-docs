@@ -1,9 +1,8 @@
 {"title":"Leverage Custom Queries to gather insights from Crash Analytics Data","weight":"30"}
 
-* [Troubleshooting crashes reported by a user](#Troubleshootingcrashesreportedbyauser)
+* [Troubleshooting crashes reported by a user](#troubleshooting-crashes-reported-by-a-user)
 
-* [Crash Events, Feature Events, and Breadcrumbs](#CrashEvents,FeatureEvents,andBreadcrumbs)
-
+* [Crash Events, Feature Events, and Breadcrumbs](#crash-events,-feature-events,-and-breadcrumbs)
 
 ## Troubleshooting crashes reported by a user
 
@@ -11,14 +10,13 @@ App crashes happen. With the help of the custom queries interface found in AMPLI
 
 1. In the **Dashboard**, you browse to the Application and lookup **tabCrashIssue**.
 
-  ![tabCrashIssue](/Images/appc/download/attachments/60143477/tabCrashIssue.png)
+    ![tabCrashIssue](/Images/appc/download/attachments/60143477/tabCrashIssue.png)
 2. Click on **Analytics** > **Custom Queries**.
 
-  ![custom_queries](/Images/appc/download/attachments/60143477/custom_queries.png)
+    ![custom_queries](/Images/appc/download/attachments/60143477/custom_queries.png)
 3. Select **Crash** as the option under **Grouping** to group the results and use **data.meta.username** as the property name to filter the username. Note: if you are using ACA version 1.2, use **data.username** instead of data.meta.username.
 
 4. To **filter** on the **username value**, you should set the username value with the [setusername](https://docs.appcelerator.com/platform/latest/#!/api/Modules.Performance-method-setUsername). You can also set properties that would provide diagnostic information, like battery information, network conditions, or custom app properties using [setMetadata](https://docs.appcelerator.com/platform/latest/#!/api/Modules.Performance-method-setUsername) and query for those values by filtering against data.meta.key. Additionally, the custom queries interface provides options to filter on platform versions, device model, app versions, and other properties that are supported by the platform by default.
-
 
 ## Crash Events, Feature Events, and Breadcrumbs
 

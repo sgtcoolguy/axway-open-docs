@@ -1,23 +1,22 @@
 {"title":"Using Studio From Behind a Proxy","weight":"30"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Startup splash screen](#Startupsplashscreen)
+* [Startup splash screen](#startup-splash-screen)
 
-* [Preferences window](#Preferenceswindow)
+* [Preferences window](#preferences-window)
 
-* [Windows system settings](#Windowssystemsettings)
+* [Windows system settings](#windows-system-settings)
 
-* [Whitelisting URLs](#WhitelistingURLs)
+* [Whitelisting URLs](#whitelisting-urls)
 
-* [Network connections](#Networkconnections)
+* [Network connections](#network-connections)
 
-  * [Proxy entries](#Proxyentries)
-
+    * [Proxy entries](#proxy-entries)
 
 ## Overview
 
-Studio **requires** an internet connection to authenticate the user to the Appcelerator cloud on the first launch, although the credentials are cached for subsequent use. Also, internet access is used for news, documentation, and code updates. This guide explains how to configure it for use behind a proxy. For Windows systems, use the system proxy settings (see the [Windows system settings](#Windowssystemsettings) section below for details).
+Studio **requires** an internet connection to authenticate the user to the Appcelerator cloud on the first launch, although the credentials are cached for subsequent use. Also, internet access is used for news, documentation, and code updates. This guide explains how to configure it for use behind a proxy. For Windows systems, use the system proxy settings (see the [Windows system settings](#windows-system-settings) section below for details).
 
 ## Startup splash screen
 
@@ -33,9 +32,9 @@ To configure your proxy settings once Studio has started, open the **Preferences
 
 1. From the menu bar,
 
-  1. **Windows**: select **Windows** > **Preferences**.
+    1. **Windows**: select **Windows** > **Preferences**.
 
-  2. **Mac OS**:  select **Titanium Studio** > **Preferences** or **Appcelerator Studio** > **Preferences**.
+    2. **Mac OS**:  select **Titanium Studio** > **Preferences** or **Appcelerator Studio** > **Preferences**.
 
 2. Navigate to **General** \> **Network Connections**.
 
@@ -48,7 +47,6 @@ To configure your proxy settings once Studio has started, open the **Preferences
 6. Click **OK** to apply your settings.
 
 7. Restart Studio. All internet traffic will be directed via this proxy.
-
 
 ## Windows system settings
 
@@ -64,7 +62,6 @@ For Windows systems, Studio should use the system's proxy settings. You may need
 
 5. Restart Studio. All internet traffic will be directed via the Windows system proxy settings.
 
-
 ## Whitelisting URLs
 
 You may need to whitelist several URLs in some network environments. Below are the set of URLs to whitelist. If possible, it is easiest to whitelist \*.appcelerator.com.
@@ -76,7 +73,6 @@ You may need to whitelist several URLs in some network environments. Below are t
 * [university.axway.com/](https://university.axway.com)
 
 * [developer.appcelerator.com](https://developer.appcelerator.com)
-
 
 **Software**
 
@@ -102,7 +98,6 @@ You may need to whitelist several URLs in some network environments. Below are t
 
 * [downloads.platform.axway.com](http://downloads.platform.axway.com)
 
-
 The port numbers used for the URLs are 80 and 443.
 
 For debugger and profiler, Studio will find a free port for the specific IP address, and if it does not locate one, it will use 8999 as the default. For LiveView, it requires ports 8323 and 8324.
@@ -113,45 +108,20 @@ For the local web server that Studio creates, the range of the port Studio looks
 
 This section describes the preferences available on the General > Network Connections preference page.
 
-Option
-
-Description
-
-Default
-
-Active Provider
-
-Specifies the settings profile to be used when opening connections. Choosing the **Direct** provider causes all the connections to be opened without the use of a proxy server. Selecting **Manual** causes settings defined in Eclipse to be used. On some platforms, there is also a **Native** provider available, selecting this one causes settings that were discovered in the OS to be used.
-
-Native (if present)
-Manual (otherwise)
-
-Proxy entries
-
-The table displays entries that are available for all providers. Checkboxes in the first column of the table indicate entries to be used for the currently selected provider.
-
-Proxy bypass
-
-Use this table to specify, either by name or pattern, which hosts should not use any proxy. A direct connection will always be used for matching hosts. Checkboxes in the first column of the table indicate entries to be used for the currently selected provider.
+| Option | Description | Default |
+| --- | --- | --- |
+| Active Provider | Specifies the settings profile to be used when opening connections. Choosing the **Direct** provider causes all the connections to be opened without the use of a proxy server. Selecting **Manual** causes settings defined in Eclipse to be used. On some platforms, there is also a **Native** provider available, selecting this one causes settings that were discovered in the OS to be used. | Native (if present)  <br />Manual (otherwise) |
+| Proxy entries | The table displays entries that are available for all providers. Checkboxes in the first column of the table indicate entries to be used for the currently selected provider. |  |
+| Proxy bypass | Use this table to specify, either by name or pattern, which hosts should not use any proxy. A direct connection will always be used for matching hosts. Checkboxes in the first column of the table indicate entries to be used for the currently selected provider. |  |
 
 ### Proxy entries
 
 When using **Manual** proxy provider, there are three predefined schemas to set settings for: HTTP, HTTPS, and SOCKS. Configuration for each schema is displayed in the **Proxy entries** table. To edit settings for a particular schema, double-click the entry or select the entry and click **Edit...** button. If the **Port** field is left blank, the default port number will be used. Following table lists default port numbers for each of the predefined schemas.
 
-Schema
-
-Default Port
-
-HTTP
-
-80
-
-SSL
-
-443
-
-SOCKS
-
-1080
+| Schema | Default Port |
+| --- | --- |
+| HTTP | 80 |
+| SSL | 443 |
+| SOCKS | 1080 |
 
 This section was adapted from [Eclipse's Network Connections](https://help.eclipse.org/mars/index.jsp?topic=/org.eclipse.platform.doc.user/reference/ref-net-preferences.htm) document.

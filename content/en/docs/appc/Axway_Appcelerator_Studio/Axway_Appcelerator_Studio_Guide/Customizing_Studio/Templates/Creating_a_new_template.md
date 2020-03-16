@@ -1,19 +1,18 @@
 {"title":"Creating a new template","weight":"20"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Creating a new file template](#Creatinganewfiletemplate)
+* [Creating a new file template](#creating-a-new-file-template)
 
-* [Creating a new project template](#Creatinganewprojecttemplate)
+* [Creating a new project template](#creating-a-new-project-template)
 
-  * [Project types](#Projecttypes)
+    * [Project types](#project-types)
 
-  * [Local content](#Localcontent)
+    * [Local content](#local-content)
 
-  * [Remote content](#Remotecontent)
+    * [Remote content](#remote-content)
 
-  * [Template variables](#Templatevariables)
-
+    * [Template variables](#template-variables)
 
 ## Overview
 
@@ -31,13 +30,13 @@ New file templates are templates that show up after a user has entered a file na
 
 2. Add the following content to the bottom of the file:
 
-  `template` `"Sample File Template"`  `do` `|t|`
+    `template` `"Sample File Template"`  `do` `|t|`
 
-  `t.filetype =` `"*.txt"`
+    `t.filetype =` `"*.txt"`
 
-  `t.location =` `"templates/sample.txt"`
+    `t.location =` `"templates/sample.txt"`
 
-  `end`
+    `end`
 
 3. Replace the "sample" and "txt" values with values appropriate to your filetype.
 
@@ -46,7 +45,6 @@ New file templates are templates that show up after a user has entered a file na
 5. Drop-in file sample.txt (or the specific file you have created).
 
 6. Save and close bundle.rb.
-
 
 If you now go to **File > New > File...** and create a file name of the appropriate extension above, you should see your template in the list.
 
@@ -62,37 +60,7 @@ You can create project templates that reference a local .zip file or retrieve co
 
 Project templates can be added to existing project wizards by the specification of the "type" element:
 
-Type
-
-Project
-
-all
-
-All project types
-
-ruby
-
-Ruby projects
-
-php
-
-PHP projects
-
-web
-
-Web projects
-
-python
-
-Python projects
-
-titanium\_desktop
-
-Titanium Desktop projects
-
-titanium\_mobile
-
-Titanium Mobile projects
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>Type</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Project</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>all</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>All project types</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>ruby</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Ruby projects</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>php</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>PHP projects</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>web</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Web projects</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>python</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Python projects</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>titanium_desktop</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium Desktop projects</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>titanium_mobile</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium Mobile projects</p></td></tr></tbody></table>
 
 ### Local content
 
@@ -102,28 +70,27 @@ If your content is hosted locally, you can reference a .zip file containing the 
 
 2. Add the following content to the project\_templates.rb file:
 
-  `require` `'ruble'`
+    `require` `'ruble'`
 
-  `project_template` `"Sample Project Template"`  `do` `|t|`
+    `project_template` `"Sample Project Template"`  `do` `|t|`
 
-  `t.type = :web`
+    `t.type = :web`
 
-  `t.location =` `"templates/sample_project.zip"`
+    `t.location =` `"templates/sample_project.zip"`
 
-  `t.description =` `"A sample project template"`
+    `t.description =` `"A sample project template"`
 
-  `t.icon =` `"template.png"`  `// Ideally a ruble-relative path to a 48x48px icon. Could also be a URL to a remote file`
+    `t.icon =` `"template.png"`  `// Ideally a ruble-relative path to a 48x48px icon. Could also be a URL to a remote file`
 
-  `t.tags = [``'Titanium Classic'``]`
+    `t.tags = [``'Titanium Classic'``]`
 
-  `end`
+    `end`
 
 3. Replace the template name, "web", and "sample\_project.zip" values with values appropriate to your project.
 
 4. Drop the file sample\_project.zip in the templates folder.
 
 5. Save and close project\_templates.rb.
-
 
 **File > New > Project...** and create a project of the appropriate type above; you should see your template in the list.
 
@@ -137,26 +104,25 @@ If you instead have a project template hosted on a Git repo, you can reference t
 
 2. Add the following content to the project\_templates.rb file:
 
-  `require` `'ruble'`
+    `require` `'ruble'`
 
-  `project_template` `"Sample Remote Project Template"`  `do` `|t|`
+    `project_template` `"Sample Remote Project Template"`  `do` `|t|`
 
-  `t.type = :web`
+    `t.type = :web`
 
-  `t.location =` `"git://github.com/repo.git"`
+    `t.location =` `"git://github.com/repo.git"`
 
-  `t.description =` `"Remote template. Requires network access."`
+    `t.description =` `"Remote template. Requires network access."`
 
-  `t.icon =` `"template.png"`  `// Ideally a ruble-relative path to a 48x48px icon. Could also be a URL to a remote file`
+    `t.icon =` `"template.png"`  `// Ideally a ruble-relative path to a 48x48px icon. Could also be a URL to a remote file`
 
-  `t.tags = [``'Titanium Classic'``]`
+    `t.tags = [``'Titanium Classic'``]`
 
-  `end`
+    `end`
 
 3. Replace the template name, "web", and "location" values with values appropriate to your project.
 
 4. Save and close project\_templates.rb.
-
 
 **File > New > Project...** and create a project of the appropriate type above; you should see your template in the list.
 
@@ -170,29 +136,7 @@ By default, variables are not replaced. If you need to turn this on, use "t.repl
 
 The following variables are supported:
 
-TM\_NEW\_FILE\_BASENAME
-
-The file name, without the file extension.
-
-TM\_NEW\_FILE
-
-The absolute path to the current file.
-
-TM\_NEW\_FILE\_DIRECTORY
-
-The directory path for the current file.
-
-TM\_PROJECTNAME
-
-The name of the created project.
-
-TIME
-
-The current time (in words).
-
-YEAR
-
-The current year.
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>TM_NEW_FILE_BASENAME</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The file name, without the file extension.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>TM_NEW_FILE</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The absolute path to the current file.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>TM_NEW_FILE_DIRECTORY</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The directory path for the current file.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>TM_PROJECTNAME</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The name of the created project.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>TIME</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The current time (in words).</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>YEAR</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The current year.</p></td></tr></tbody></table>
 
 Variables should be inserted inside a ${} blocks into your code. For example:
 

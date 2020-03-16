@@ -1,33 +1,32 @@
 {"title":"iOS Interactive Notifications","weight":"30"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Interactive notification types](#Interactivenotificationtypes)
+* [Interactive notification types](#interactive-notification-types)
 
-  * [Alert dialog](#Alertdialog)
+    * [Alert dialog](#alert-dialog)
 
-  * [Banner message](#Bannermessage)
+    * [Banner message](#banner-message)
 
-  * [Lock screen or notification center](#Lockscreenornotificationcenter)
+    * [Lock screen or notification center](#lock-screen-or-notification-center)
 
-* [Create a notification action](#Createanotificationaction)
+* [Create a notification action](#create-a-notification-action)
 
-* [Create a notification category](#Createanotificationcategory)
+* [Create a notification category](#create-a-notification-category)
 
-* [Register notification categories](#Registernotificationcategories)
+* [Register notification categories](#register-notification-categories)
 
-* [Monitor interactive notifications](#Monitorinteractivenotifications)
+* [Monitor interactive notifications](#monitor-interactive-notifications)
 
-  * [localnotificationaction](#localnotificationaction)
+    * [localnotificationaction](#localnotificationaction)
 
-  * [remotenotificationaction](#remotenotificationaction)
+    * [remotenotificationaction](#remotenotificationaction)
 
-* [Schedule an interactive local notification](#Scheduleaninteractivelocalnotification)
+* [Schedule an interactive local notification](#schedule-an-interactive-local-notification)
 
-* [Send an interactive push notification](#Sendaninteractivepushnotification)
+* [Send an interactive push notification](#send-an-interactive-push-notification)
 
-* [Example](#Example)
-
+* [Example](#example)
 
 ## Introduction
 
@@ -42,7 +41,6 @@ To create an interactive notification, the applications needs to:
 3. Register the notification categories
 
 4. Monitor the localnotificationaction event to respond to local notifications and the remotenotificationaction event to respond to push notifications
-
 
 ## Interactive notification types
 
@@ -74,9 +72,9 @@ To create a notification action, use the Titanium.App.iOS.createUserNotification
 
 * activationMode:
 
-  * Set to Titanium.App.iOS.USER\_NOTIFICATION\_ACTIVATION\_MODE\_BACKGROUND to activate the application in the background to respond to the action unless the application is already in the foreground.
+    * Set to Titanium.App.iOS.USER\_NOTIFICATION\_ACTIVATION\_MODE\_BACKGROUND to activate the application in the background to respond to the action unless the application is already in the foreground.
 
-  * Set to Titanium.App.iOS.USER\_NOTIFICATION\_ACTIVATION\_MODE\_FOREGROUND to launch the application in the foreground to respond to the action.
+    * Set to Titanium.App.iOS.USER\_NOTIFICATION\_ACTIVATION\_MODE\_FOREGROUND to launch the application in the foreground to respond to the action.
 
 * authenticationRequired: set to true if the action requires the device to be unlocked.
 
@@ -85,7 +83,6 @@ To create a notification action, use the Titanium.App.iOS.createUserNotification
 * identifier: string identifier of the action. Used to identify the action the user pressed.
 
 * title: title of the button to display in the notification
-
 
 `// The following action launches the application in the foreground and requires the device to be unlocked`
 
@@ -130,7 +127,6 @@ To create a notification action, use the Titanium.App.iOS.createUserNotification
 * actionsForMinimalContext: Array of notification action objects to display for non-dialog-style notifications. If not specified, the first two actions from actionsForDefaultContent are displayed.
 
 * identifier: string identifier of the group of actions. When scheduling a notification, pass this value to the category property.
-
 
 `var` `invitationCategory = Ti.App.iOS.createUserNotificationCategory({`
 
@@ -194,7 +190,6 @@ Monitor the iOS application-level localnotificationaction event to respond to an
 
 * identifier : string identifier indicating the notification action the user pressed
 
-
 Use the properties to have the application decide how to respond to the interactive notification.
 
 `Ti.App.iOS.addEventListener(``'localnotificationaction'``,` `function``(e) {`
@@ -244,7 +239,6 @@ Monitor the iOS application-level remotenotificationaction event to respond to a
 * data: push notification payload as a JSON object
 
 * identifier: string identifier indicating the notification action the user pressed
-
 
 Use the properties to have the application decide how to respond to the interactive notification.
 
@@ -327,7 +321,6 @@ To send the payload, you can use either the:
 * Titanium Cloud Module (ti.cloud) APIs: [Cloud.PushNotifications.notify()](#!/api/Modules.Cloud.PushNotifications-method-notify) or [Cloud.PushNotifications.notifyTokens()](#!/api/Modules.Cloud.PushNotifications-method-notifyTokens)
 
 * Arrow REST APIs: [PushNotification.notify](/arrowdb/latest/#!/api/PushNotifications-method-notify) or [PushNotification.notify\_tokens](/arrowdb/latest/#!/api/PushNotifications-method-notify_token)
-
 
 ## Example
 

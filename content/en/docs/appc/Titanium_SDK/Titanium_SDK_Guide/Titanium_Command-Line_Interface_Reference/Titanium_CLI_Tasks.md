@@ -1,45 +1,44 @@
 {"title":"Titanium CLI Tasks","weight":"30"}
 
-* [Development environment](#Developmentenvironment)
+* [Development environment](#development-environment)
 
-  * [Check your development environment](#Checkyourdevelopmentenvironment)
+    * [Check your development environment](#check-your-development-environment)
 
-  * [Check the development environment against the Titanium SDK](#CheckthedevelopmentenvironmentagainsttheTitaniumSDK)
+    * [Check the development environment against the Titanium SDK](#check-the-development-environment-against-the-titanium-sdk)
 
-  * [Configuring your development environment](#Configuringyourdevelopmentenvironment)
+    * [Configuring your development environment](#configuring-your-development-environment)
 
-* [Building applications](#Buildingapplications)
+* [Building applications](#building-applications)
 
-  * [Create a Titanium project](#CreateaTitaniumproject)
+    * [Create a Titanium project](#create-a-titanium-project)
 
-  * [Build an application](#Buildanapplication)
+    * [Build an application](#build-an-application)
 
-    * [Android emulator](#Androidemulator)
+        * [Android emulator](#android-emulator)
 
-    * [Android device](#Androiddevice)
+        * [Android device](#android-device)
 
-    * [iOS simulator](#iOSsimulator)
+        * [iOS simulator](#ios-simulator)
 
-    * [iOS device](#iOSdevice)
+        * [iOS device](#ios-device)
 
-    * [Windows Mobile Emulator](#WindowsMobileEmulator)
+        * [Windows Mobile Emulator](#windows-mobile-emulator)
 
-    * [Windows Mobile device](#WindowsMobiledevice)
+        * [Windows Mobile device](#windows-mobile-device)
 
-    * [Windows local machine](#Windowslocalmachine)
+        * [Windows local machine](#windows-local-machine)
 
-  * [Package an application](#Packageanapplication)
+    * [Package an application](#package-an-application)
 
-    * [Google Play APK](#GooglePlayAPK)
+        * [Google Play APK](#google-play-apk)
 
-    * [iOS ad hoc distribution](#iOSadhocdistribution)
+        * [iOS ad hoc distribution](#ios-ad-hoc-distribution)
 
-    * [iTunes Store](#iTunesStore)
+        * [iTunes Store](#itunes-store)
 
-    * [Windows Store](#WindowsStore)
+        * [Windows Store](#windows-store)
 
-  * [Clean your build folder](#Cleanyourbuildfolder)
-
+    * [Clean your build folder](#clean-your-build-folder)
 
 Titainum provides a command-line interface to check and configure your environment setup, create and build applications, and much more. The Titanium CLI is distributed as apart of the Appcelerator CLI. Please refer to [Appcelerator CLI Getting Started](/docs/appc/Appcelerator_CLI/Appcelerator_CLI_Getting_Started/) for details on installing the Appcelerator CLI.
 
@@ -144,25 +143,23 @@ Once the application is installed and launched, use native tools to test, debug 
 The CLI checks several settings to see which SDK version to use to build your application. The following is a list of locations in the order of precedence. If an SDK version is not defined in that location, the next location is checked.
 
 1. tiapp.xml file version specified with the sdk-version tag.
-  To change this version, manually edit the tiapp.xml file with a text editor or use Studio.
+    To change this version, manually edit the tiapp.xml file with a text editor or use Studio.
 
 2. \--sdk command-line option with the titanium build command.
 
 3. app.sdk setting specified with the titanium config command.
-  To check the version, run titanium config and to change the version, run appc ti config app.sdk <sdk\_version>.
+    To check the version, run titanium config and to change the version, run appc ti config app.sdk <sdk\_version>.
 
 4. SDK select version.
-  To check or change this version, run appc ti sdk select.
-
+    To check or change this version, run appc ti sdk select.
 
 #### Android emulator
 
 You need to create an Android emulator or setup Genymotion before running these commands.
 
-* To create an Android emulator, see [Native Android Debugging and Testing Tools: Creating an emulator](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Debugging_and_Profiling/Native_Android_Debugging_and_Testing_Tools/#Creatinganemulator).
+* To create an Android emulator, see [Native Android Debugging and Testing Tools: Creating an emulator](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Debugging_and_Profiling/Native_Android_Debugging_and_Testing_Tools/#creating-an-emulator).
 
 * To setup Genymotion, see [Installing Genymotion](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Genymotion/).
-
 
 To build for an emulator, run appc run -p android. Because no other options were specified, the CLI launches your default Android emulator and installs the application on it.
 
@@ -270,7 +267,7 @@ If you omit any of the optional parameters, the CLI will prompt you with options
 
 Before packaging for the iTunes Store, you need to generate a distribution certificate and distribution provisioning profile, and have an iTunes Connect account. See [Distributing iOS apps](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_iOS_apps/).
 
-If you are using Mac OS X 10.9 (Mavericks) or newer, make sure you grant CLI access to the computer as described in [Note for Mavericks (and later)](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_iOS_SDK/#NoteforMavericks(andlater)).
+If you are using Mac OS X 10.9 (Mavericks) or newer, make sure you grant CLI access to the computer as described in [Note for Mavericks (and later)](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_iOS_SDK/#note-for-mavericks-and-later).
 
 To package an APP bundle for the iTunes store, run:
 

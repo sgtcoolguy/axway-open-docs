@@ -6,7 +6,6 @@ Dashboard 4.4.1 is a patch release, which includes an improvement and a few bug 
 
 * You can now delete Arrow Cloud applications and ArrowDB datasources from the All Projects view.
 
-
 ## Fixed Issues
 
 * Fixed issue where the map was not appearing on the Dashboard main page.

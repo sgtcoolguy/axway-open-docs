@@ -2,18 +2,17 @@
 
 **Contents**
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Signing the Contributors License Agreement (CLA)](#SigningtheContributorsLicenseAgreement(CLA))
+* [Signing the Contributors License Agreement (CLA)](#signing-the-contributors-license-agreement-cla)
 
-* [Create a Ticket](#CreateaTicket)
+* [Create a Ticket](#create-a-ticket)
 
-* [Submitting Contributions](#SubmittingContributions)
+* [Submitting Contributions](#submitting-contributions)
 
-  * [Versioning](#Versioning)
+    * [Versioning](#versioning)
 
-  * [Checklist](#Checklist)
-
+    * [Checklist](#checklist)
 
 ## Overview
 
@@ -43,9 +42,7 @@ When submitting a fix:
 
 * Include the ticket number and module name in each commit message
 
-  `[MOD-``1268``] UrbanAirship: open sourcing`
-
-
+    `[MOD-``1268``] UrbanAirship: open sourcing`
 
 * Increment the version of the module.
 
@@ -57,4 +54,4 @@ When submitting a fix:
 
 * Add a comment to the associated ticket with the pull request URL.
 
-  `PR: https:``//github.com/appcelerator/titanium_modules/pull/0`
+    `PR: https:``//github.com/appcelerator/titanium_modules/pull/0`

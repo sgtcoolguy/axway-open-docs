@@ -2,22 +2,21 @@
 
 Studio has a "Theme" preference page, which allows you to set the default look and color scheme of Studio editors.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Changing themes](#Changingthemes)
+* [Changing themes](#changing-themes)
 
-* [Invasive theming/applying editor fonts to views](#Invasivetheming/applyingeditorfontstoviews)
+* [Invasive theming/applying editor fonts to views](#invasive-theming/applying-editor-fonts-to-views)
 
-  * [Enabling/disabling invasive theming](#Enabling/disablinginvasivetheming)
+    * [Enabling/disabling invasive theming](#enabling/disabling-invasive-theming)
 
-  * [Applying editor fonts to views](#Applyingeditorfontstoviews)
+    * [Applying editor fonts to views](#applying-editor-fonts-to-views)
 
-* [Changing scope colors, or adding a new scope](#Changingscopecolors,oraddinganewscope)
+* [Changing scope colors, or adding a new scope](#changing-scope-colors,-or-adding-a-new-scope)
 
-* [Duplicating, renaming or removing a theme](#Duplicating,renamingorremovingatheme)
+* [Duplicating, renaming or removing a theme](#duplicating,-renaming-or-removing-a-theme)
 
-* [Importing/exporting themes](#Importing/exportingthemes)
-
+* [Importing/exporting themes](#importing/exporting-themes)
 
 ## Introduction
 
@@ -35,28 +34,15 @@ By default, Studio ships with multiple themes, and a dark theme selected by defa
 
 2. Click "Apply".
 
-
 For those who prefer a lighter theme, the "Aptana Studio 2.x" theme is on a white background. A comparison:
 
-![theme_dark](/Images/appc/download/attachments/30083317/theme_dark.png)
-
-![theme_light](/Images/appc/download/attachments/30083317/theme_light.png)
-
-Aptana Studio Default Theme
-
-Aptana Studio 2.x Theme
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083317/theme_dark.png" alt="images/download/attachments/30083317/theme_dark.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083317/theme_light.png" alt="images/download/attachments/30083317/theme_light.png" class="confluence-embedded-image"></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Aptana Studio Default Theme</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Aptana Studio 2.x Theme</p></td></tr></tbody></table>
 
 ## Invasive theming/applying editor fonts to views
 
 By default, "invasive theming" is on. Invasive theming is a mode whereby non-Studio views and editors are colorized with the same color settings as Studio editors and views. The practical effect of this is to see the whole IDE with a unified color scheme, or just the editor windows, as shown below:
 
-![invasive_on](/Images/appc/download/attachments/30083317/invasive_on.png)
-
-![invasive_off](/Images/appc/download/attachments/30083317/invasive_off.png)
-
-invasive theming on
-
-invasive theming off
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083317/invasive_on.png" alt="images/download/attachments/30083317/invasive_on.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083317/invasive_off.png" alt="images/download/attachments/30083317/invasive_off.png" class="confluence-embedded-image"></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>invasive theming on</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>invasive theming off</p></td></tr></tbody></table>
 
 You can see the difference in the Project Explorer and Outline views, though the same results would apply to any Eclipse-generic view or editor.
 
@@ -65,7 +51,6 @@ You can see the difference in the Project Explorer and Outline views, though the
 1. Within the Theme preference page, check or uncheck the "Enable Invasive Themes" checkbox.
 
 2. Click "Apply".
-
 
 ### Applying editor fonts to views
 
@@ -89,7 +74,6 @@ To duplicate a theme:
 
 3. Click **OK.**
 
-
 To rename a theme:
 
 1. Click the "Rename" button. Only user-added themes may be renamed.
@@ -98,7 +82,6 @@ To rename a theme:
 
 3. Click **OK.**
 
-
 To removing a theme:
 
 1. Click the "-" button. Only user-added themes may be removed.
@@ -106,7 +89,6 @@ To removing a theme:
 2. Accept the confirmation.
 
 3. Click **OK.**
-
 
 ## Importing/exporting themes
 
@@ -120,7 +102,6 @@ To import a theme:
 
 3. Click **Open.**
 
-
 To export a theme:
 
 1. Click the "Export" button.
@@ -128,6 +109,5 @@ To export a theme:
 2. A new file is suggested with a \*tmTheme extension.
 
 3. Click **Save.**
-
 
 You can find more themes under [User Themes](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Themes/User_Themes/).

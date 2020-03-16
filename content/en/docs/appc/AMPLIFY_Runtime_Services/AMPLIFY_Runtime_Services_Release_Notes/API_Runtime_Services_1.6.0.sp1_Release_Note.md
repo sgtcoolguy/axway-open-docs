@@ -14,7 +14,6 @@ API Runtime Services 1.6.0.sp1 introduces mandatory dedication of three (3) swar
 
 5. Wait about two minutes and execute the arrowcluster verify postinstall command to verify all services are working well.
 
-
 **Note**: Users should use Arrowcluster 1.6.1.
 
 ## Requirements
@@ -25,30 +24,29 @@ For this release, existing clusters are required to upgrade Docker to version 17
 
 * Introduced **has\_internet\_access** (boolean (true/false)) in the user\_input.json file
 
-  * There are situations when API Runtime Services cannot accurately determine if a target cluster in an on-premise environment has Internet access. To remedy this issue, you can set has\_internet\_access to true if the cluster has full Internet access so that the installer can retrieve and install required software such as Docker. Otherwise, the cluster should be pre-installed with the following required software:
+    * There are situations when API Runtime Services cannot accurately determine if a target cluster in an on-premise environment has Internet access. To remedy this issue, you can set has\_internet\_access to true if the cluster has full Internet access so that the installer can retrieve and install required software such as Docker. Otherwise, the cluster should be pre-installed with the following required software:
 
-    * nfs-utils
+        * nfs-utils
 
-    * docker 17.06
+        * docker 17.06
 
-    * nc (for port check)
+        * nc (for port check)
 
-    * lsof (for port check)
+        * lsof (for port check)
 
 * Introduced **swarm\_manager\_hosts** in the user\_input.json file
 
-  * For production deployment, we recommend at least three dedicated swarm manager hosts to ensure the high availability of the cluster. The number of swarm managers should be an odd number equal to or less than three.
+    * For production deployment, we recommend at least three dedicated swarm manager hosts to ensure the high availability of the cluster. The number of swarm managers should be an odd number equal to or less than three.
 
-  * Note: if you don't set swarm\_manager\_hosts or it contains less than three hosts, you will receive a warning message to the effect of this:
+    * Note: if you don't set swarm\_manager\_hosts or it contains less than three hosts, you will receive a warning message to the effect of this:
 
-    `WARN[``2017``-``07``-``14`  `14``:``39``:``22``] You did not specify dedicated swarm manager hosts. For production environment, there should be at least` `3` `dedicated swarm managers. You should maintain an odd number of managers in the swarm to support manager node failures.`
+        `WARN[``2017``-``07``-``14`  `14``:``39``:``22``] You did not specify dedicated swarm manager hosts. For production environment, there should be at least` `3` `dedicated swarm managers. You should maintain an odd number of managers in the swarm to support manager node failures.`
 
-    `Enter` `'y'``/``'yes'` `to` `continue` `OR` `'n'``/``'no'` `to exit, then hit enter:`
+        `Enter` `'y'``/``'yes'` `to` `continue` `OR` `'n'``/``'no'` `to exit, then hit enter:`
 
-    `If your cluster is non production, enter yes to` `continue``.`
+        `If your cluster is non production, enter yes to` `continue``.`
 
-  * Usage: swarm\_manager\_hosts:\["ip1", "ip2",...\]
-
+    * Usage: swarm\_manager\_hosts:\["ip1", "ip2",...\]
 
 ## Bug fix
 

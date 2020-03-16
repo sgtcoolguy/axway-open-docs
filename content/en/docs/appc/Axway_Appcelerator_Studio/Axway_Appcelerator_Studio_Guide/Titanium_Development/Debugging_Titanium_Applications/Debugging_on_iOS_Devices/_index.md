@@ -1,31 +1,30 @@
 {"title":"Debugging on iOS Devices","weight":"30"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Network Setup](#NetworkSetup)
+* [Network Setup](#network-setup)
 
-* [Launching a Debug Session](#LaunchingaDebugSession)
+* [Launching a Debug Session](#launching-a-debug-session)
 
-  * [Initiate the Debug Session](#InitiatetheDebugSession)
+    * [Initiate the Debug Session](#initiate-the-debug-session)
 
-  * [iTunes Deployment](#iTunesDeployment)
+    * [iTunes Deployment](#itunes-deployment)
 
-  * [Launch the Application and Debug](#LaunchtheApplicationandDebug)
+    * [Launch the Application and Debug](#launch-the-application-and-debug)
 
-* [Troubleshooting iOS On-Device Debugging Problems](#TroubleshootingiOSOn-DeviceDebuggingProblems)
+* [Troubleshooting iOS On-Device Debugging Problems](#troubleshooting-ios-on-device-debugging-problems)
 
-  * [iTunes Fails to Sync the Application to the Device After First Launch](#iTunesFailstoSynctheApplicationtotheDeviceAfterFirstLaunch)
+    * [iTunes Fails to Sync the Application to the Device After First Launch](#itunes-fails-to-sync-the-application-to-the-device-after-first-launch)
 
-  * [Debugger Fails to Connect](#DebuggerFailstoConnect)
+    * [Debugger Fails to Connect](#debugger-fails-to-connect)
 
-  * [Wi-Fi Sync Problems](#Wi-FiSyncProblems)
+    * [Wi-Fi Sync Problems](#wi-fi-sync-problems)
 
-  * [Testing Network Connection](#TestingNetworkConnection)
+    * [Testing Network Connection](#testing-network-connection)
 
-* [Related Topics](#RelatedTopics)
-
+* [Related Topics](#related-topics)
 
 When using Safari Web Inspector to debug your Titanium iOS apps, see [Debugging iOS Apps with 3rd-party Tools](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_iOS_Devices/Debugging_iOS_Apps_with_3rd-party_Tools/) for details!
 
@@ -43,7 +42,6 @@ Titanium SDK enables Studio to initiate a debug session on an iOS device. Debugg
 
 * Application initiates debug session with Studio over the local Wi-Fi network.
 
-
 This page will guide you through the setup, and the launch, of a debug session.
 
 Debugging on iOS devices is only supported on macOS. You must already be set up to run applications on your iOS device, as documented in [Deploying to iOS devices](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Deploying_to_iOS_devices/).
@@ -56,13 +54,11 @@ To debug on an iOS device, you must:
 
 * Connect the macOS machine and the device to the same wireless (Wi-Fi) network. The debugger protocol runs over the network (a cable does _not_ serve as an alternative).
 
-
 Each time you run the debugger, Studio builds the application and attempts to install it using iTunes. In order to install the application using iTunes, you must either:
 
 * Connect your device using the USB cable (recommended).
 
 * Configure your device to sync with iTunes over Wi-Fi. To sync over Wi-Fi, your device must be connected to a power source, and may require multicast and Universal Plug and Play (UPnP) to be enabled on the router. Wi-Fi sync is slower and less reliable than syncing using the USB cable.
-
 
 For convenience, if you use iTunes for syncing applications to device, it is recommended that you configure iTunes to sync applications automatically.
 
@@ -87,7 +83,6 @@ Before debugging, you must have created a Titanium project with an iPhone/iPad d
 
 3. Launch the application from the device and start debugging
 
-
 ### Initiate the Debug Session
 
 1. Make sure your project is selected in the **Project Explorer** view.
@@ -99,7 +94,6 @@ Before debugging, you must have created a Titanium project with an iPhone/iPad d
 4. Click the **Launch** button.
 
 5. Complete the wizard to initiate a debug session. Studio prompts you to pick the certificate, provisioning profile, and SDK version to use for the debug build.
-
 
 After you complete the wizard once, Studio creates a launch configuration for you, named **Titanium iOS Device - <AppName>**. You can select this launch configuration, after launching the **Debug Configuration** wizard by select **Debug Configurations** from the **Target** drop-down list, to skip the wizard and start a new debug session using the same parameters.
 
@@ -115,9 +109,8 @@ After the application finishes installing:
 
 2. A dialog appears on the device indicating it's waiting for the debug session to start on the indicated WiFi network. Both the host computer and target iOS device must be on the same WiFi network in order to debug. If they differ, you need to change either host computer's or target iOS device's WiFi settings to match the other's WiFi network. You may need to cancel the debug session and restart the debug process.
 
-  ![ios_debugger_dialog](/Images/appc/download/attachments/33623072/ios_debugger_dialog.png)
+    ![ios_debugger_dialog](/Images/appc/download/attachments/33623072/ios_debugger_dialog.png)
 3. The device connects to Studio, and a debug session begins (and is visible in Studio's **Debug** perspective).
-
 
 In the unlikely case that you have the same debug version of the application installed on two devices at the same time, and you launch them at the same time, Studio prompts you to select which version to debug.
 
@@ -127,13 +120,11 @@ In the unlikely case that you have the same debug version of the application ins
 
 * Check the _Apps_ tab in your iTunes. Make sure it's set to sync automatically, and that the new app appears with a checkmark next to it. If it doesn't, check the app and hit Apply.
 
-
 ### Debugger Fails to Connect
 
 * Make sure both the iOS device and the computer are connected to the same Wi-Fi network.
 
 * Initiate a new debug session from Studio. You cannot restart a debug session by restarting the application on the device.
-
 
 ### Wi-Fi Sync Problems
 
@@ -141,9 +132,7 @@ You should be able to see the device in iTunes when it is not connected using th
 
 * Check that the Wi-Fi network has multicast or broadcast addressing enabled. This is enabled by default on most home Wi-Fi routers, but may not be true on corporate or public Wi-Fi networks. Multicast or broadcast addressing is required for Wi-Fi sync – it is not required for debugging if you are using a USB cable for sync.
 
-
 * Follow the steps described in [iTunes 10.5 and later: Troubleshooting iTunes Wi-Fi Syncing](http://support.apple.com/kb/TS4062) on the Apple Support site.
-
 
 ### Testing Network Connection
 
@@ -153,21 +142,21 @@ If you need to test whether your device and computer are on the same network, yo
 
 * Inside Studio, create a new web project:
 
-  * Click **File** > **New** > **Project**.
+    * Click **File** > **New** > **Project**.
 
-  * Select **Web Project** and click **Next**.
+    * Select **Web Project** and click **Next**.
 
-  * Select **Default Template** and click **Next**.
+    * Select **Default Template** and click **Next**.
 
-  * Enter a project name and click **Finish**.
+    * Enter a project name and click **Finish**.
 
 * Create a HTML file inside that web project:
 
-  * In the **Project Explorer** view, select the project folder and click **File** > **New**.
+    * In the **Project Explorer** view, select the project folder and click **File** > **New**.
 
-  * Enter test.html for the filename.
+    * Enter test.html for the filename.
 
-  * Edit the new file and add some basic HTML.
+    * Edit the new file and add some basic HTML.
 
 * Open the **Preferences** dialog and navigate to **Studio** > **Web Servers** > **Built-in**.
 
@@ -178,36 +167,35 @@ If you need to test whether your device and computer are on the same network, yo
 * In the **Project Explorer** view, click on the HTML file you created.
 
 * Click Run > Run.
-  A browser opens, directed to the web page.
+    A browser opens, directed to the web page.
 
 * Open up a web browser on your iOS device.
 
 * Navigate to the URL shown in the URL bar in the browser on your machine.
 
-  * If you can see the page on the iOS device, networking is set up correctly.
+    * If you can see the page on the iOS device, networking is set up correctly.
 
-  * If you cannot see the page, you have a networking problem.
-
+    * If you cannot see the page, you have a networking problem.
 
 ## Related Topics
 
 * [Debugging Titanium Applications](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/)
 
-  * [Debugging on the Emulator or Simulator](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_the_Emulator_or_Simulator/)
+    * [Debugging on the Emulator or Simulator](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_the_Emulator_or_Simulator/)
 
-  * [Debugging on Android Devices](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_Android_Devices/)
+    * [Debugging on Android Devices](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_Android_Devices/)
 
 * [About the Debug perspective](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/)
 
-  * [Using the Debug View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Debug_View/)
+    * [Using the Debug View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Debug_View/)
 
-  * [Using the Variables View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Variables_View/)
+    * [Using the Variables View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Variables_View/)
 
-  * [Using the Console View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Using_the_Console_View/)
+    * [Using the Console View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Using_the_Console_View/)
 
-  * [Using the Breakpoints View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Breakpoints_View/)
+    * [Using the Breakpoints View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Breakpoints_View/)
 
-  * [Using the Expressions View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Expressions_View/)
+    * [Using the Expressions View](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/Using_the_Expressions_View/)
 
 * [Stepping into and over functions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Stepping_into_and_over_functions/)
 

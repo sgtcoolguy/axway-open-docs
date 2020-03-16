@@ -1,27 +1,26 @@
 {"title":"Integrate a WatchKit App Built in Xcode","weight":"50"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-  * [Prerequisites](#Prerequisites)
+    * [Prerequisites](#prerequisites)
 
-* [Create an Apple Watch Application](#CreateanAppleWatchApplication)
+* [Create an Apple Watch Application](#create-an-apple-watch-application)
 
-* [Share Data Between the Application and Extension](#ShareDataBetweentheApplicationandExtension)
+* [Share Data Between the Application and Extension](#share-data-between-the-application-and-extension)
 
-  * [Setup a Session](#SetupaSession)
+    * [Setup a Session](#setup-a-session)
 
-  * [Transfer Data](#TransferData)
+    * [Transfer Data](#transfer-data)
 
-  * [Transfer Files](#TransferFiles)
+    * [Transfer Files](#transfer-files)
 
-* [Provisioning Profiles](#ProvisioningProfiles)
+* [Provisioning Profiles](#provisioning-profiles)
 
-* [Run the Project](#RuntheProject)
+* [Run the Project](#run-the-project)
 
-* [Package the Application](#PackagetheApplication)
+* [Package the Application](#package-the-application)
 
-* [Further Reading](#FurtherReading)
-
+* [Further Reading](#further-reading)
 
 ## Introduction
 
@@ -41,7 +40,6 @@ A WatchKit app contains a specialized app extension that runs on either the Appl
 
 * Paired iOS devices must run iOS 9.0 or greater
 
-
 As of SDK 6.0.0, the watchOS 1 template and all related code are no longer supported. See [TIMOB-20083](https://jira.appcelerator.org/browse/TIMOB-20083) for details.
 
 ## Create an Apple Watch Application
@@ -55,7 +53,6 @@ To create an Apple Watch application:
 2. Under the _Apple watchOS 2 App_ section, click **Create New...**
 
 3. A dialog will prompt you for the name of the application. Enter a name for the watch application, then click **OK**.
-
 
 Studio will generate a new Xcode WatchKit project in the Titaniuim project's extensions folder and updates the ios extensions element in the tiapp.xml file. Open the Xcode project's <NAME>.xcodeproj to start developing the watch application.
 
@@ -97,29 +94,11 @@ In the Titanium application, you must also check to see if the paried devices su
 
 To check if the session is activated and the paired watch application is reachable, use the following APIs. Some APIs require that the applications are in a reachable state.
 
-Watch Connectivity Framework API
-
-Titanium.WatchSession API
-
-Description
-
-+isSupported
-
-[Ti.WatchSession.isSupported](#!/api/Titanium.WatchSession-property-isSupported)
-
-Checks to see if the paired device supports Watch Connectivity sessions.
-
-reachable
-
-[Ti.WatchSession.isReachable](#!/api/Titanium.WatchSession-property-isReachable)
-
-Checks to see if the paired devices share a Watch Connectivity session and both applications are in the foreground.
-
-\-sessionReachabilityDidChange:
-
-[Ti.WatchSession.reachabilitychanged](#!/api/Titanium.WatchSession-event-reachabilitychanged)
-
-Called or fired when the reachability state changes on the paired device.
+| Watch Connectivity Framework API | Titanium.WatchSession API | Description |
+| --- | --- | --- |
+| +isSupported | [Ti.WatchSession.isSupported](#!/api/Titanium.WatchSession-property-isSupported) | Checks to see if the paired device supports Watch Connectivity sessions. |
+| reachable | [Ti.WatchSession.isReachable](#!/api/Titanium.WatchSession-property-isReachable) | Checks to see if the paired devices share a Watch Connectivity session and both applications are in the foreground. |
+| \-sessionReachabilityDidChange: | [Ti.WatchSession.reachabilitychanged](#!/api/Titanium.WatchSession-event-reachabilitychanged) | Called or fired when the reachability state changes on the paired device. |
 
 ### Transfer Data
 
@@ -127,106 +106,38 @@ The Watch Connectivity framework provides a few different ways to exchange data 
 
 * **Application Context**: a shared data object between the paired devices that lasts for the current active session. Use the application context mechanism to synchronization the state between the watch and iOS device.
 
-  Watch Connectivity Framework API
-
-  Titanium.WatchSession API
-
-  Description
-
-  applicationContext
-
-  [Ti.WatchSession.recentApplicationContext](#!/api/Titanium.WatchSession-property-recentApplicationContext)
-
-  Retrieve the current application context.
-
-  \-updateApplicationContext:error:
-
-  [Ti.WatchSession.updateApplicationContext()](#!/api/Titanium.WatchSession-method-updateApplicationContext)
-
-  Updates the session's application context.
-
-  \-session:didReceiveApplicationContext:
-
-  [Ti.WatchSession.receiveapplicationcontext](#!/api/Titanium.WatchSession-event-receiveapplicationcontext)
-
-  Called or fired when the session receives an update from the paired device.
+    | Watch Connectivity Framework API | Titanium.WatchSession API | Description |
+    | --- | --- | --- |
+    | applicationContext | [Ti.WatchSession.recentApplicationContext](#!/api/Titanium.WatchSession-property-recentApplicationContext) | Retrieve the current application context. |
+    | \-updateApplicationContext:error: | [Ti.WatchSession.updateApplicationContext()](#!/api/Titanium.WatchSession-method-updateApplicationContext) | Updates the session's application context. |
+    | \-session:didReceiveApplicationContext: | [Ti.WatchSession.receiveapplicationcontext](#!/api/Titanium.WatchSession-event-receiveapplicationcontext) | Called or fired when the session receives an update from the paired device. |
 
 * **Messages**: pass a data object immediately between the paired devices. Requires that both applications are reachable.
 
-  Watch Connectivity Framework API
+    | Watch Connectivity Framework API | Titanium.WatchSession API | Description |
+    | --- | --- | --- |
+    | \-sendMessage:replyHandler:errorHandler: | [Ti.WatchSession.sendMessage()](#!/api/Titanium.WatchSession-method-sendMessage) | Sends a message to the paired device. |
+    | \-session:didReceiveMessage: | [Ti.WatchSession.receivemessage](#!/api/Titanium.WatchSession-event-receivemessage) | Called or fired when the device receives a message from the paired device. |
 
-  Titanium.WatchSession API
-
-  Description
-
-  \-sendMessage:replyHandler:errorHandler:
-
-  [Ti.WatchSession.sendMessage()](#!/api/Titanium.WatchSession-method-sendMessage)
-
-  Sends a message to the paired device.
-
-  \-session:didReceiveMessage:
-
-  [Ti.WatchSession.receivemessage](#!/api/Titanium.WatchSession-event-receivemessage)
-
-  Called or fired when the device receives a message from the paired device.
-
-  If you are using SDK 5.1.0 or earlier, you should form your request like this: Ti.WatchSession.sendMessage(message). If you are using SDK 5.1.0 and above, form your request like this: Ti.WatchSession.sendMessage(params).
+    If you are using SDK 5.1.0 or earlier, you should form your request like this: Ti.WatchSession.sendMessage(message). If you are using SDK 5.1.0 and above, form your request like this: Ti.WatchSession.sendMessage(params).
 
 * **User Info Transfer**: pass a data object in the background. Queued and delivered later when the application is reachable again.
 
-  Watch Connectivity Framework API
-
-  Titanium.WatchSession API
-
-  Description
-
-  \-transferUserInfo:
-
-  [Ti.WatchSession.transferUserInfo()](#!/api/Titanium.WatchSession-method-transferUserInfo)
-
-  Transfers user info (data object) to the paired device in the background.
-
-  \-session:didReceiveUserInfo:
-
-  [Ti.WatchSession.receiveuserinfo](#!/api/Titanium.WatchSession-event-receiveuserinfo)
-
-  Called or fired when the device receives user info from the paired device.
-
-  \-session:didFinishUserInfoTransfer:error:
-
-  [Ti.WatchSession. finishuserinfotransfer](#!/api/Titanium.WatchSession-event-finishuserinfotransfer)
-
-  Called of fired when the transfer completes on the paired device.
-
+    | Watch Connectivity Framework API | Titanium.WatchSession API | Description |
+    | --- | --- | --- |
+    | \-transferUserInfo: | [Ti.WatchSession.transferUserInfo()](#!/api/Titanium.WatchSession-method-transferUserInfo) | Transfers user info (data object) to the paired device in the background. |
+    | \-session:didReceiveUserInfo: | [Ti.WatchSession.receiveuserinfo](#!/api/Titanium.WatchSession-event-receiveuserinfo) | Called or fired when the device receives user info from the paired device. |
+    | \-session:didFinishUserInfoTransfer:error: | [Ti.WatchSession. finishuserinfotransfer](#!/api/Titanium.WatchSession-event-finishuserinfotransfer) | Called of fired when the transfer completes on the paired device. |
 
 ### Transfer Files
 
 Besides data, you can transfer files between the paired devices. Use the following APIs to transfer files:
 
-Watch Connectivity Framework API
-
-Titanium.WatchSession API
-
-Description
-
-\-transferFile:metadata:
-
-[Ti.WatchSession.transferFile()](#!/api/Titanium.WatchSession-method-transferFile)
-
-Transfers a file to the paired device in the background.
-
-\-session:didReceiveFile:
-
-[Ti.WatchSession.receivefile](#!/api/Titanium.WatchSession-event-receivefile)
-
-Called or fired when the device receives a file transfer from the paired device.
-
-\-session:didFinishFileTransfer:error:
-
-[Ti.WatchSession.finishfiletransfer](#!/api/Titanium.WatchSession-event-finishfiletransfer)
-
-Called or fired when the transfer completes (successfully or not) on the paired device.
+| Watch Connectivity Framework API | Titanium.WatchSession API | Description |
+| --- | --- | --- |
+| \-transferFile:metadata: | [Ti.WatchSession.transferFile()](#!/api/Titanium.WatchSession-method-transferFile) | Transfers a file to the paired device in the background. |
+| \-session:didReceiveFile: | [Ti.WatchSession.receivefile](#!/api/Titanium.WatchSession-event-receivefile) | Called or fired when the device receives a file transfer from the paired device. |
+| \-session:didFinishFileTransfer:error: | [Ti.WatchSession.finishfiletransfer](#!/api/Titanium.WatchSession-event-finishfiletransfer) | Called or fired when the transfer completes (successfully or not) on the paired device. |
 
 ## Provisioning Profiles
 
@@ -246,7 +157,6 @@ After you create your provisioning profiles and add them to Xcode, you need to a
 
 4. For each distribution target, select in drop-down the provisioning profile you want to use for the WatchApp and WatchApp extension.
 
-
 **Using a Text Editor:**
 
 1. Open the tiapp.xml file.
@@ -259,12 +169,11 @@ After you create your provisioning profiles and add them to Xcode, you need to a
 
 5. Under each target element, you should see three self-closing elements: devices, dist-appstore and dist-adhoc. Add the UUID of the provisioning profile as node text for each deployment type.
 
-  1. devices: Add the UUID of the development provisioning profile
+    1. devices: Add the UUID of the development provisioning profile
 
-  2. dist-appstore: Add the UUID of the app store distribution provisioning profile
+    2. dist-appstore: Add the UUID of the app store distribution provisioning profile
 
-  3. dist-adhoc: Add the UUID of the ad hoc distribution provisioning profile
-
+    3. dist-adhoc: Add the UUID of the ad hoc distribution provisioning profile
 
 The example below add the development provisioning profiles to the file.
 

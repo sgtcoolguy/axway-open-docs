@@ -18,7 +18,6 @@ To update the Firefox debugger extension, please choose the menu option Tools > 
 
 4. Close and restart Firefox.
 
-
 The debugger will be uninstalled the next time that you start Firefox.
 
 ## Related Topics

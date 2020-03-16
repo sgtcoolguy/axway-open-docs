@@ -1,15 +1,14 @@
 {"title":"Exporting and importing preferences","weight":"40"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Exporting General Preferences](#ExportingGeneralPreferences)
+* [Exporting General Preferences](#exporting-general-preferences)
 
-* [Importing General Preferences](#ImportingGeneralPreferences)
+* [Importing General Preferences](#importing-general-preferences)
 
-* [Exporting Specific Preferences](#ExportingSpecificPreferences)
+* [Exporting Specific Preferences](#exporting-specific-preferences)
 
-* [Importing Specific Preferences](#ImportingSpecificPreferences)
-
+* [Importing Specific Preferences](#importing-specific-preferences)
 
 ## Overview
 
@@ -27,7 +26,6 @@ Exporting and importing your preference settings is handy for switching between 
 
 5. Click the **Finish** button, Studio saves your preferences.
 
-
 ## Importing General Preferences
 
 1. From the **File** menu, select **Import...** to open the **Import** window.
@@ -40,7 +38,6 @@ Exporting and importing your preference settings is handy for switching between 
 
 5. Click the **Finish** button, and Studio imports the preferences from the specified file.
 
-
 ## Exporting Specific Preferences
 
 1. From the **File** menu, select **Export...** to open the **Export** wizard.
@@ -50,7 +47,6 @@ Exporting and importing your preference settings is handy for switching between 
 3. Enter or select a file to which the preferences should be written.
 
 4. Click the **Finish** button, Studio saves your preferences.
-
 
 ## Importing Specific Preferences
 

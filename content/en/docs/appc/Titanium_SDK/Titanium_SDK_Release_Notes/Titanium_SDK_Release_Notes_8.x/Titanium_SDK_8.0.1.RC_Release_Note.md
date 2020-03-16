@@ -1,35 +1,34 @@
 {"title":"Titanium SDK 8.0.1.RC - 1 May 2019","weight":"60"}
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [Community credits](#Communitycredits)
+* [Community credits](#community-credits)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-  * [Android platform](#Androidplatform)
+    * [Android platform](#android-platform)
 
-  * [iOS platform](#iOSplatform)
+    * [iOS platform](#ios-platform)
 
-  * [Multiple platforms](#Multipleplatforms)
+    * [Multiple platforms](#multiple-platforms)
 
-* [Improvements](#Improvements)
+* [Improvements](#improvements)
 
-* [API changes](#APIchanges)
+* [API changes](#api-changes)
 
-* [SDK modules versions](#SDKmodulesversions)
+* [SDK modules versions](#sdk-modules-versions)
 
-  * [Android and iOS](#AndroidandiOS)
+    * [Android and iOS](#android-and-ios)
 
-  * [CommonJS](#CommonJS)
+    * [CommonJS](#commonjs)
 
-  * [Hyperloop](#Hyperloop)
-
+    * [Hyperloop](#hyperloop)
 
 ## About this release
 
 Titanium SDK 8.0.1 is a patch release of the SDK, addressing high-priority issues from previous releases.
 
-As of this GA release, the previous Titanium SDK patch release is no longer supported. End of support for this version will be 2019-11-01 or until the next patch release. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous Titanium SDK patch release is no longer supported. End of support for this version will be 2019-11-01 or until the next patch release. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Community credits
 
@@ -46,7 +45,6 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 * [Michael Gangolf](https://github.com/m1ga) - [TIMOB-26914](https://jira.appcelerator.org/browse/TIMOB-26914)
 
 * [grebulon](https://github.com/grebulon) - [TIMOB-17089](https://jira.appcelerator.org/browse/TIMOB-17089)
-
 
 ## Fixed issues
 
@@ -106,7 +104,6 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 * [TIMOB-26996](https://jira.appcelerator.org/browse/TIMOB-26996) - Android: Window/TabGroup close() method call is ignored until "open" event has been fired
 
-
 ### iOS platform
 
 * [TIMOB-26655](https://jira.appcelerator.org/browse/TIMOB-26655) - iOS: Shortcut-item ID does not has to be unique
@@ -135,22 +132,19 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 * [TIMOB-26985](https://jira.appcelerator.org/browse/TIMOB-26985) \- iOS: Native modules are not protected
 
-
 ### Multiple platforms
 
 * [TIMOB-26788](https://jira.appcelerator.org/browse/TIMOB-26788) - require fails on directory with package.json whose 'main' field points at another directory
-
 
 ## Improvements
 
 * [TIMOB-26695](https://jira.appcelerator.org/browse/TIMOB-26695) - iOS: Do not show Node.js path-tracking in console
 
-  * Revised the debug logs
+    * Revised the debug logs
 
 * [TIMOB-26767](https://jira.appcelerator.org/browse/TIMOB-26767) - Auto-select only valid certificate and/or provisioning profile when building to device
 
-  * Auto select certificate and/or provisioning profile (iOS) if there is only one valid entry
-
+    * Auto select certificate and/or provisioning profile (iOS) if there is only one valid entry
 
 ## API changes
 
@@ -160,88 +154,27 @@ There were no API changes in this release.
 
 ### Android and iOS
 
-Module
-
-Android version
-
-iOS version
-
-urlSession
-
-n/a
-
-2.1.0
-
-facebook
-
-8.0.0
-
-6.0.0
-
-ti\_coremotion
-
-n/a
-
-2.0.1
-
-ti\_map
-
-4.3.1
-
-3.1.0
-
-ti\_safaridialog
-
-n/a
-
-1.1.1
-
-ti\_webdialog
-
-1.1.0
-
-1.1.0
-
-ti\_touchid
-
-3.0.1
-
-2.1.4
-
-ti\_identity
-
-2.1.0
-
-1.0.5
-
-ti\_cloudpush
-
-6.0.1
-
-n/a
-
-ti\_playservices
-
-16.1.3
-
-n/a
+| Module | Android version | iOS version |
+| --- | --- | --- |
+| urlSession | n/a | 2.1.0 |
+| facebook | 8.0.0 | 6.0.0 |
+| ti\_coremotion | n/a | 2.0.1 |
+| ti\_map | 4.3.1 | 3.1.0 |
+| ti\_safaridialog | n/a | 1.1.1 |
+| ti\_webdialog | 1.1.0 | 1.1.0 |
+| ti\_touchid | 3.0.1 | 2.1.4 |
+| ti\_identity | 2.1.0 | 1.0.5 |
+| ti\_cloudpush | 6.0.1 | n/a |
+| ti\_playservices | 16.1.3 | n/a |
 
 ### CommonJS
 
-Module
-
-Version
-
-ti.cloud
-
-3.2.11
+| Module | Version |
+| --- | --- |
+| ti.cloud | 3.2.11 |
 
 ### Hyperloop
 
-Module
-
-Version
-
-Hyperloop
-
-4.0.2
+| Module | Version |
+| --- | --- |
+| Hyperloop | 4.0.2 |

@@ -10,7 +10,6 @@ Dashboard 4.15.0 is a minor release, which includes new features, behavior chang
 
 * First-time visitors to the new Platform landing page are presented with a welcome message.
 
-
 ## Behavior changes
 
 * Trial period lengthened from 45 days to 60 days.
@@ -25,7 +24,6 @@ Dashboard 4.15.0 is a minor release, which includes new features, behavior chang
 
 * Accessing Dashboard on [https://platform.appcelerator.com](https://platform.appcelerator.com) may redirect to [https://platform.axway.com](https://platform.axway.com) if you are not currently logged in.
 
-
 ## Improvements
 
 * Updated Getting Started Guides for Appcelerator Studio and Appcelerator CLI.
@@ -37,7 +35,6 @@ Dashboard 4.15.0 is a minor release, which includes new features, behavior chang
 * Updated icons for API Builder and Mobile Backend Services.
 
 * AMPLIFY Runtime Services application logs now show 25 entries per page, instead of 10.
-
 
 ## Fixed issues
 

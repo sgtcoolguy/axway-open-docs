@@ -12,7 +12,6 @@ Dashboard 5.0.1 is a patch release, which includes improvements and several bug 
 
 * Average Session Length values are now rounded to nearest second.
 
-
 ## Fixed issues
 
 * Fixed issue where Mobile Backend Services SMTP Settings may not be able to be saved.

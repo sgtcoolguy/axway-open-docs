@@ -1,13 +1,12 @@
 {"title":"AMPLIFY CLI","weight":"120"}
 
-* [Extensions](#Extensions)
+* [Extensions](#extensions)
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Installation](#Installation)
+* [Installation](#installation)
 
-* [Next steps](#Nextsteps)
-
+* [Next steps](#next-steps)
 
 The AMPLIFY Command Line Interface (ACLI) is a unified command line interface provides a single entry-point for multiple external CLI's and the Axway AMPLIFY platform. External CLI's are registered with the ACLI (via a config file) and are responsible for all application logic.
 
@@ -23,7 +22,6 @@ With the ACLI, you can:
 
 * Apply authentication credentials per command
 
-
 ![AMPLIFY_CLI](/Images/appc/download/attachments/58726425/AMPLIFY_CLI.png)
 
 ## Extensions
@@ -38,17 +36,10 @@ If an extension is a npm package, the AMPLIFY CLI will automatically invoke it u
 
 ## Requirements
 
-Component
-
-Version
-
-[Node.js](https://nodejs.org/en/)
-
-8.10.0 or later
-
-[npm](https://www.npmjs.com/)
-
-6.6.0 or later
+| Component | Version |
+| --- | --- |
+| [Node.js](https://nodejs.org/en/) | 8.10.0 or later |
+| [npm](https://www.npmjs.com/) | 6.6.0 or later |
 
 ## Installation
 
@@ -65,6 +56,5 @@ You can learn more about ACLI by reading the following documents:
 * [AMPLIFY CLI Commands](/docs/appc/AMPLIFY_CLI/AMPLIFY_CLI_Commands/)
 
 * [AMPLIFY CLI Error Messages During Installation](/docs/appc/AMPLIFY_CLI/AMPLIFY_CLI_Error_Messages_During_Installation/)
-
 
 Last Modified: Jul 23, 2019 10:54

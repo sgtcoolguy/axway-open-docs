@@ -1,21 +1,20 @@
 {"title":"Hello World","weight":"10"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Creating a New Mobile Project](#CreatingaNewMobileProject)
+* [Creating a New Mobile Project](#creating-a-new-mobile-project)
 
-  * [App ID Naming Guidelines](#AppIDNamingGuidelines)
+    * [App ID Naming Guidelines](#app-id-naming-guidelines)
 
-* [Running Your App](#RunningYourApp)
+* [Running Your App](#running-your-app)
 
-* [Simulator/Emulator](#Simulator/Emulator)
+* [Simulator/Emulator](#simulator/emulator)
 
-* [Under the Covers](#UndertheCovers)
+* [Under the Covers](#under-the-covers)
 
-* [Hands-on Practice](#Hands-onPractice)
+* [Hands-on Practice](#hands-on-practice)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Objective
 
@@ -29,7 +28,6 @@ Before we can build our first app, we need to create a mobile project in Studio.
 
 * Launching projects in the simulator/emulator
 
-
 ## Creating a New Mobile Project
 
 You can create a new project in Studio one fo two ways:
@@ -38,19 +36,17 @@ You can create a new project in Studio one fo two ways:
 
 * Project Explorer, right-click in a open area and select **New** \> **Mobile App Project**
 
-
 The **New Mobile Project** wizard appears. The first step is to select a project template (in the **Project Template** window). You can choose between:
 
 * **Alloy** - create a project utilizing the Titanium MVC framework called Alloy
 
 * **Classic** - create a classic Titanium project with no defined framework
 
-
 In the **Project Location** window, you'll need to fill in the following fields:
 
 * **Project name**: Your app's name as seen by users.
 
-* **App Id**: Titanium SDK's version of the Android Application Package Name or CF Bundle Identifier. [See below](#AppIDNamingGuidelines) for guidelines and rules for App ID names.
+* **App Id**: Titanium SDK's version of the Android Application Package Name or CF Bundle Identifier. [See below](#app-id-naming-guidelines) for guidelines and rules for App ID names.
 
 * **Company/Personal URL**: URL of any website you wish to associate with the app.
 
@@ -59,7 +55,6 @@ In the **Project Location** window, you'll need to fill in the following fields:
 * **Deployment Targets**: you can create a single project to target.
 
 * **Enable Axway Appcelerator Platform Services**: Toggle to enable or disable app features such as [Cloud](/docs/appc/AMPLIFY_Appcelerator_Services/), [Analytics](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/), and [Hyperloop](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyperloop/).
-
 
 Once filling in these fields, Studio will create a default project structure for you based on the given meta-information.
 
@@ -70,7 +65,6 @@ Once filling in these fields, Studio will create a default project structure for
 * **app.js**: your project's bootstrap file. Every project has one; it's the file loaded first when your app is launched
 
 * **tiapp.xml**: The details you enter in the new project wizard are used to populate the tiapp.xml file and the manifest file.
-
 
 Those are basically the only required files, but you can augment the project with others. For example, you don't have to put all of your code into app.js. You could put all your graphics in the Resources/assets/images folder, or you could put them into subfolders. We'll dig more deeply into cross-platform development later, but the android and iphone directories within Resources are locations for your platform-specific assets.
 
@@ -89,7 +83,6 @@ Some additional points:
 * You cannot change the App ID once you publish an app because the App Store/Market would consider the change to mean you're publishing a new app, not an upgrade.
 
 * The App ID is related to the Bundle Identifier you define in the iOS Provisioning Portal or iTunes Connect, see [Distributing iOS apps](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_iOS_apps/) for more info.
-
 
 (On Android, the App ID is technically an Application Package Name, not a Java Package Name. See [http://blog.javia.org/android-package-name/](http://blog.javia.org/android-package-name/) for further info on the distinction.)
 
@@ -121,15 +114,15 @@ Your JavaScript code will be encrypted when you build your app for "production" 
 
 1. In Studio, use the **New Mobile Project** wizard to create a new **Classic** project. For this exercise, we'll fill in the following:
 
-  * Project name: hello\_world
+    * Project name: hello\_world
 
-  * App Id: com.test.helloworld
+    * App Id: com.test.helloworld
 
-  * Titanium SDK Version: Select the latest version installed
+    * Titanium SDK Version: Select the latest version installed
 
-  * Deployment Targets: have at least one target enabled
+    * Deployment Targets: have at least one target enabled
 
-  * Enable Axway Appcelerator Platform Services: disable this option
+    * Enable Axway Appcelerator Platform Services: disable this option
 
 2. If the App Explore view isn't open, go to **Window** > **Show View** > **App Explorer**.
 
@@ -144,7 +137,6 @@ Your JavaScript code will be encrypted when you build your app for "production" 
 7. **Test the application** in the simulator/emulator. Close the simulator when you're done.
 
 8. Using Project or app Explorer, examine the project files created by Studio.
-
 
 ## Summary
 

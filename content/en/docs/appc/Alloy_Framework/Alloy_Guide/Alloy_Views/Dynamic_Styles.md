@@ -1,15 +1,14 @@
 {"title":"Dynamic Styles","weight":"30"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Define Class Styles](#DefineClassStyles)
+* [Define Class Styles](#define-class-styles)
 
-* [Generate a Dynamic Style](#GenerateaDynamicStyle)
+* [Generate a Dynamic Style](#generate-a-dynamic-style)
 
-* [Modify TSS Classes](#ModifyTSSClasses)
+* [Modify TSS Classes](#modify-tss-classes)
 
-* [Autostyle](#Autostyle)
-
+* [Autostyle](#autostyle)
 
 ## Introduction
 
@@ -293,7 +292,7 @@ Later on, you can change the classes. The following code removes all classes fro
 
 `dialog.resetClass(dialog.button,` `'nice_button orangetext hdpi'``);`
 
-To take advantage of these APIs, you need to enable [autostyle](#Autostyle) for the components or else the view may not update properly.
+To take advantage of these APIs, you need to enable [autostyle](#autostyle) for the components or else the view may not update properly.
 
 ## Autostyle
 
@@ -347,10 +346,10 @@ To enable autostyle, set the autoStyle attribute to true either in the XML marku
 
 * To enable autostyle for all controllers in an Alloy project, set the **autoStyle** field to true in the config.json file, for example:
 
-  app/config.json
+    app/config.json
 
-  `{`
+    `{`
 
-  `"autoStyle"``:` `true`
+    `"autoStyle"``:` `true`
 
-  `}`
+    `}`

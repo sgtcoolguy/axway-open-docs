@@ -2,7 +2,7 @@
 
 Studio 4.6.0.Beta is a minor release that includes new features, improvements, and bug fixes.
 
-As of this release, Studio 4.5.x will not be supported six months from 4.6.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Studio 4.5.x will not be supported six months from 4.6.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## New Features
 
@@ -32,33 +32,31 @@ For those of you who have App Designer installed on versions of Studio prior to 
 
 7. Click **Yes** to restart Studio.
 
-
 ## Improvements
 
 * [TISTUD-7717](https://jira.appcelerator.org/browse/TISTUD-7717) - Reconnect to the debug session after the app is restarted
 
-  * Reconnect to the debug session after the app is restarted. If the app is accidentally crashed or terminated on a device or simulator, then the user doesn't need to re-launch the studio debug session, rather it automatically connects upon the app launch.
+    * Reconnect to the debug session after the app is restarted. If the app is accidentally crashed or terminated on a device or simulator, then the user doesn't need to re-launch the studio debug session, rather it automatically connects upon the app launch.
 
 * [TISTUD-7946](https://jira.appcelerator.org/browse/TISTUD-7946) - User should be able to set Arrow port in the launch configuration for Studio
 
-  * Studio users can set Arrow port through Studio Arrow preference option. This option provides a provision to set user specific port, any free port, and default configuration port.
+    * Studio users can set Arrow port through Studio Arrow preference option. This option provides a provision to set user specific port, any free port, and default configuration port.
 
 * [TISTUD-8003](https://jira.appcelerator.org/browse/TISTUD-8003) - Non-modal dialog for submitting JIRA ticket from the studio
 
-  * Non-modal dialog for submitting JIRA tickets from Studio
+    * Non-modal dialog for submitting JIRA tickets from Studio
 
 * [TISTUD-8012](https://jira.appcelerator.org/browse/TISTUD-8012) - Studio needs to call "appc run" / "ti build" to build iOS/Android modules
 
-  * Studio builds iOS and Android modules using appc run command that avoids the dependency of python and ant scripts for iOS and Android builds
+    * Studio builds iOS and Android modules using appc run command that avoids the dependency of python and ant scripts for iOS and Android builds
 
 * [TISTUD-8447](https://jira.appcelerator.org/browse/TISTUD-8447) - Windows: Studio needs to specify the Windows SDK to be used when building to a Windows 10 emulator
 
-  * Studio sends a windows SDK flag --wp-sdk while building for Windows platform emulators to enable SDK specific builds
+    * Studio sends a windows SDK flag --wp-sdk while building for Windows platform emulators to enable SDK specific builds
 
 * [TISTUD-8455](https://jira.appcelerator.org/browse/TISTUD-8455) - An option to set App designer Scratchpad XML editor as a default alloy view editor
 
-  * Studio 4.6.0 comes with App Designer as a default editor for Alloy Views, but that can be changed to standard Alloy View editor using Studio editor preference options
-
+    * Studio 4.6.0 comes with App Designer as a default editor for Alloy Views, but that can be changed to standard Alloy View editor using Studio editor preference options
 
 ## Fixed Issues
 

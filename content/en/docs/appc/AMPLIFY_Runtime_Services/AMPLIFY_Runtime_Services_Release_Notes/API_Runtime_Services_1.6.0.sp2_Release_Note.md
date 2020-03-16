@@ -10,7 +10,6 @@ This release of API Runtime Services (APIRS) includes version 2.0.7 of the CLI a
 
 * Upgraded to Docker 17.06 on all Ubuntu builds. **Note:** All UDP ports must be open for MongoDB access on Ubuntu.
 
-
 ## Fixed issues
 
 * Resolved issue with the service health check, not including a StartPeriod configuration parameter. Now, the service health check includes a configurable StartPeriod parameter.

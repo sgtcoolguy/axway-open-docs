@@ -1,27 +1,26 @@
 {"title":"Titanium SDK 8.0.2.GA - 18 June 2019","weight":"40"}
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [Community credits](#Communitycredits)
+* [Community credits](#community-credits)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-* [API changes](#APIchanges)
+* [API changes](#api-changes)
 
-* [SDK modules versions](#SDKmodulesversions)
+* [SDK modules versions](#sdk-modules-versions)
 
-  * [Android and iOS](#AndroidandiOS)
+    * [Android and iOS](#android-and-ios)
 
-  * [CommonJS](#CommonJS)
+    * [CommonJS](#commonjs)
 
-  * [Hyperloop](#Hyperloop)
-
+    * [Hyperloop](#hyperloop)
 
 ## About this release
 
 Titanium SDK 8.0.2 is a patch release of the SDK, addressing high-priority issues from previous releases.
 
-As of this GA release, the previous Titanium SDK patch release is no longer supported. End of support for this version will be 2019-12-18 or until the next patch release. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous Titanium SDK patch release is no longer supported. End of support for this version will be 2019-12-18 or until the next patch release. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Community credits
 
@@ -30,7 +29,6 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 * Ray Belisle - [TIMOB-27075](https://jira.appcelerator.org/browse/TIMOB-27075)
 
 * David Bankier - [TIMOB-27106](https://jira.appcelerator.org/browse/TIMOB-27106)
-
 
 ## Fixed issues
 
@@ -66,7 +64,6 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 * [TIMOB-27117](https://jira.appcelerator.org/browse/TIMOB-27117) - Android: TabGroup bar's background color is wrongly transparent on Android 4.4 as of 8.0.0
 
-
 ## API changes
 
 There were no API changes for this release.
@@ -75,88 +72,27 @@ There were no API changes for this release.
 
 ### Android and iOS
 
-Module
-
-Android version
-
-iOS version
-
-urlSession
-
-n/a
-
-2.1.0
-
-facebook
-
-8.0.0
-
-6.0.0
-
-ti\_coremotion
-
-n/a
-
-2.0.1
-
-ti\_map
-
-4.3.1
-
-3.1.0
-
-ti\_safaridialog
-
-n/a
-
-1.1.1
-
-ti\_webdialog
-
-1.1.0
-
-1.1.0
-
-ti\_touchid
-
-3.0.1
-
-2.1.4
-
-ti\_identity
-
-2.1.0
-
-1.0.5
-
-ti\_cloudpush
-
-6.0.1
-
-n/a
-
-ti\_playservices
-
-16.1.3
-
-n/a
+| Module | Android version | iOS version |
+| --- | --- | --- |
+| urlSession | n/a | 2.1.0 |
+| facebook | 8.0.0 | 6.0.0 |
+| ti\_coremotion | n/a | 2.0.1 |
+| ti\_map | 4.3.1 | 3.1.0 |
+| ti\_safaridialog | n/a | 1.1.1 |
+| ti\_webdialog | 1.1.0 | 1.1.0 |
+| ti\_touchid | 3.0.1 | 2.1.4 |
+| ti\_identity | 2.1.0 | 1.0.5 |
+| ti\_cloudpush | 6.0.1 | n/a |
+| ti\_playservices | 16.1.3 | n/a |
 
 ### CommonJS
 
-Module
-
-Version
-
-ti.cloud
-
-3.2.11
+| Module | Version |
+| --- | --- |
+| ti.cloud | 3.2.11 |
 
 ### Hyperloop
 
-Module
-
-Version
-
-Hyperloop
-
-4.0.2
+| Module | Version |
+| --- | --- |
+| Hyperloop | 4.0.2 |

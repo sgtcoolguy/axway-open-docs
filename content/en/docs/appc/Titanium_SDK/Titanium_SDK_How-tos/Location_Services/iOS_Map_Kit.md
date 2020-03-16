@@ -1,21 +1,20 @@
 {"title":"iOS Map Kit","weight":"20"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Getting started](#Gettingstarted)
+* [Getting started](#getting-started)
 
-* [Views](#Views)
+* [Views](#views)
 
-* [Annotations](#Annotations)
+* [Annotations](#annotations)
 
-* [Routes](#Routes)
+* [Routes](#routes)
 
-* [Camera](#Camera)
+* [Camera](#camera)
 
-* [Event handling](#Eventhandling)
+* [Event handling](#event-handling)
 
-* [Further reading](#Furtherreading)
-
+* [Further reading](#further-reading)
 
 ## Introduction
 
@@ -28,7 +27,6 @@ The Ti.Map module is included as part of the Titanium SDK. To include it in your
 * Using the GUI Overview version of the tiapp.xml editor, in the **Modules** section, click the add button (green plus sign), select the ti.map module, then click the OK button to add it.
 
 * If you are using a text editor, add the following to your modules section:
-
 
 `...`
 
@@ -43,7 +41,6 @@ The Ti.Map module is included as part of the Titanium SDK. To include it in your
 `...`
 
 * To use the userLocation property of the map-view, add either the [NSLocationWhenInUseUsageDescription](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) or [NSLocationAlwaysUsageDescription](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) key to the iOS plist section. For iOS 11+, also add the [NSLocationAlwaysAndWhenInUseUsageDescription](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) key for best user experience:
-
 
 `...`
 
@@ -181,30 +178,29 @@ As seen above, changing a few lines of code alters the appearance of each map. T
 
 * mapType - Indicates what type of map should be displayed. Choses are:
 
-  * <MapObject>.STANDARD\_TYPE - Basic map with labels.
+    * <MapObject>.STANDARD\_TYPE - Basic map with labels.
 
-  * <MapObject>.SATELLITE\_TYPE - Satellite imagery without map labels.
+    * <MapObject>.SATELLITE\_TYPE - Satellite imagery without map labels.
 
-  * <MapObject>.HYBRID\_TYPE - SATELLITE\_TYPE with map labels.
+    * <MapObject>.HYBRID\_TYPE - SATELLITE\_TYPE with map labels.
 
 * region - This is an object that contains the four properties defining the visible area of the View. The same latitude and longitude of a region can be represented with a different level of zoom via the latitudeDelta and longitudeDelta properties.
 
-  * latitude\- The latitude of your map's target region.
+    * latitude\- The latitude of your map's target region.
 
-  * longitude - The longitude of your map's target region.
+    * longitude - The longitude of your map's target region.
 
-  * latitudeDelta - The measure of latitude north and south from your target regions's latitude that will be visible in the View. The smaller the delta value, the closer the zoom on your map.
+    * latitudeDelta - The measure of latitude north and south from your target regions's latitude that will be visible in the View. The smaller the delta value, the closer the zoom on your map.
 
-  * longitudeDelta - The measure of longitude east and west from your target regions's longitude that will be visible in the View.
+    * longitudeDelta - The measure of longitude east and west from your target regions's longitude that will be visible in the View.
 
 * animate - A boolean that indicates whether or not map actions, like opening and adding annotations, should be animated.
 
 * userLocation - A boolean that indicates if the map should show the user's current device location as a pin on the map.
 
-* camera - Specify a Camera object to view the map in a 3D perspective. For more details, see the [Camera section](#Camera).
+* camera - Specify a Camera object to view the map in a 3D perspective. For more details, see the [Camera section](#camera).
 
 * rotatesEnabled - A boolean that indicates if the map can be rotated by the user.
-
 
 There are two more components that add a significant amount of functionality to your map View, Annotation and Route instances. They allow us to add places of interest to our maps as well as plot paths between them.
 
@@ -282,7 +278,6 @@ The previous example creates two annotations and adds them to the view. Note tha
 
 * The Sydney Opera House annotation uses an image of the opera house instead of the default pin image, set with the image property. The callout window contains the iOS add system button, set with the rightButton property.
 
-
 L et's take a look at some of the properties that can be used to customize an annotation.
 
 * canShowCallout - Set to false to disable showing the callout window when the annotation is clicked. Default is true.
@@ -299,16 +294,15 @@ L et's take a look at some of the properties that can be used to customize an an
 
 * pincolor \- The color of the default pin representing an annotation. It can have the following values:
 
-  * <MapObject>.ANNOTATION\_GREEN
+    * <MapObject>.ANNOTATION\_GREEN
 
-  * <MapObject>.ANNOTATION\_PURPLE
+    * <MapObject>.ANNOTATION\_PURPLE
 
-  * <MapObject>.ANNOTATION\_RED
+    * <MapObject>.ANNOTATION\_RED
 
 * subtitle - The subtitle text that appears on your annotation when clicked.
 
 * title - The main title text that appears on your annotation when clicked.
-
 
 The next section discusses the Route class, a feature to create paths between locations on a View.
 
@@ -406,7 +400,6 @@ After creating the three annotation points, the application creates a route obje
 
 * level - Specifies which overlay level to place the route. Set to either <MapObject>.OVERLAY\_LEVEL\_ABOVE\_LABELS (above map labels) or <MapObject>.OVERLAY\_LEVEL\_ABOVE\_ROADS (below labels but above roads).
 
-
 Once the route object is created, the application can add it to the view using the addRoute method.
 
 ## Camera
@@ -421,7 +414,6 @@ You can view the map using a 3D perspective by specifying a Camera object that d
 
 * pitch: angle to tilt the camera downwards in degrees. This property is set to 0 (flat, no tilt) if the map type is either satellite or hybrid.
 
-
 After you have created your Camera object, you can either set it to the View's camera property or pass the object to the View's animateCamera method. The property changes the perspective without an animation, while the method animates the perspective change. The map view needs to be on screen before using these APIs.
 
 You can customize the look of the map by specifying the following Map View properties:
@@ -431,7 +423,6 @@ You can customize the look of the map by specifying the following Map View prope
 * showsBuildings - A boolean specifying whether to display extruding building information if available.
 
 * showsPointsOfInterest - A boolean specifying whether to display points of interest.
-
 
 The example below views the Eiffel Tower looking towards the Seine River.
 
@@ -515,12 +506,11 @@ The Map View object provides a few extra events that provide additional control 
 
 * pinchangedragstate \- This event fires when the pin's drag state changes if the pin's draggable property is set to true. Check the event object's annotation property to see which annotation was clicked and the newState property for one of the following:
 
-  * < MapModule>.ANNOTATION\_DRAG\_STATE\_START – indicates the user started dragging the pin.
+    * < MapModule>.ANNOTATION\_DRAG\_STATE\_START – indicates the user started dragging the pin.
 
-  * <MapModule>.ANNOTATION\_DRAG\_STATE\_END – indicates the user stopped dragging the pin.
+    * <MapModule>.ANNOTATION\_DRAG\_STATE\_END – indicates the user stopped dragging the pin.
 
 * regionchanged - This event fires when the user either changes the zoom level or pans the Map View. The event returns the new latitude and longitude coordinates as well as delta values.
-
 
 For example, the following code listens to each of the previous events and outputs information to the console when each event fires:
 

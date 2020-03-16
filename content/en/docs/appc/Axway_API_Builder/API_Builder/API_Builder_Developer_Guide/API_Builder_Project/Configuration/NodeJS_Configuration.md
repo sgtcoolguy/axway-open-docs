@@ -6,28 +6,27 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-* [Dependencies](#Dependencies)
+* [Dependencies](#dependencies)
 
-* [Engines](#Engines)
+* [Engines](#engines)
 
-* [Health check](#Healthcheck)
+* [Health check](#health-check)
 
-* [Main](#Main)
+* [Main](#main)
 
-* [Name](#Name)
+* [Name](#name)
 
-* [npmAuthentication](#npmAuthentication)
+* [npmAuthentication](#npmauthentication)
 
-* [npmRegistry](#npmRegistry)
+* [npmRegistry](#npmregistry)
 
-* [Scripts](#Scripts)
+* [Scripts](#scripts)
 
-  * [Preinstall and post-install](#Preinstallandpost-install)
+    * [Preinstall and post-install](#preinstall-and-post-install)
 
-  * [Start](#Start)
+    * [Start](#start)
 
-* [Version](#Version)
-
+* [Version](#version)
 
 An API Builder application contains a file called package.json located in the root directory of the project. AMPLIFY Runtime Services uses the package.json file to configure settings and install dependencies for the application.
 

@@ -14,5 +14,4 @@ If you run into an issue where the FTP connection continues to prompt for passwo
 
 6. A message about password recovery for a new master password will appear, and you could choose to set up questions and answers for future password recovery.
 
-
 Now the FTP connection should no longer prompt for password after restarting Studio.

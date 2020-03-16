@@ -14,7 +14,6 @@ Dashboard 6.2.1 is a patch release, which includes improvements and bug fixes.
 
 * Added a link to Central on the title of the Mesh Governance tile.
 
-
 ## Fixed issues
 
 * Resolved an issue where users may not be able to enable multi-factor authentication or may see verbiage indicating their account is associated with an external identity provider.

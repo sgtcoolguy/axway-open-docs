@@ -2,24 +2,23 @@
 
 To view the details of an API Builder application, select it from the Dashboard home page **Apps** tab.
 
-* [View API Builder Application Information](#ViewAPIBuilderApplicationInformation)
+* [View API Builder Application Information](#view-api-builder-application-information)
 
-  * [Restart Application](#RestartApplication)
+    * [Restart Application](#restart-application)
 
-  * [Change App Server Settings](#ChangeAppServerSettings)
+    * [Change App Server Settings](#change-app-server-settings)
 
-  * [Delete the application](#Deletetheapplication)
+    * [Delete the application](#delete-the-application)
 
-* [View Analytics](#ViewAnalytics)
+* [View Analytics](#view-analytics)
 
-* [View Connected Applications](#ViewConnectedApplications)
+* [View Connected Applications](#view-connected-applications)
 
-* [View Publish History](#ViewPublishHistory)
+* [View Publish History](#view-publish-history)
 
-* [View and Filter API Logs](#ViewandFilterAPILogs)
+* [View and Filter API Logs](#view-and-filter-api-logs)
 
-* [View Documentation](#ViewDocumentation)
-
+* [View Documentation](#view-documentation)
 
 ## View API Builder Application Information
 
@@ -35,7 +34,6 @@ To restart the application server:
 
 3. Confirm that you want to restart the application. Select **Continue** on the confirmation screen to restart the application and return to the **Overview** tab. Select **Cancel** on the confirmation screen to return to the **Overview** tab without restarting the application.
 
-
 ### Change App Server Settings
 
 To update the App Server Settings:
@@ -46,15 +44,15 @@ To update the App Server Settings:
 
 3. Update the **Container Type** by selecting a container type from the drop-down menu. The listed container types are:
 
-  * Dev
+    * Dev
 
-  * Small
+    * Small
 
-  * Medium
+    * Medium
 
-  * Large
+    * Large
 
-  * XLarge
+    * XLarge
 
 4. Update the **Min Container Count**.
 
@@ -63,7 +61,6 @@ To update the App Server Settings:
 6. Enter any **Environmental Variables**.
 
 7. Click the **Update Config** button to update your App Server Settings and return to the **Overview** tab. Click the **Cancel** button to return to the **Overview** tab without updating your App Service Settings.
-
 
 ### Delete the application
 
@@ -74,7 +71,6 @@ To delete the application:
 2. Select **Delete**.
 
 3. Confirm you want to delete the application. To permanently delete the application, type the name of the application you would like to delete permanently, and select, **I understand that this a permanent and irreversible action. Continue**. Click the **Cancel** button to return the Overview tab without deleting the application.
-
 
 ## View Analytics
 
@@ -103,7 +99,6 @@ The Logs table includes the following fields:
 * **Container** – ID of the application server container used to handle the request.
 
 * **Date/Time** – Date and time of the request in UTC.
-
 
 To view the access logs, select the **Access** tab. To view the application logs, select the **Application** tab.
 

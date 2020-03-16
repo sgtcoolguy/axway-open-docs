@@ -1,13 +1,12 @@
 {"title":"Mercurial","weight":"30"}
 
-* [Mercurial Support](#MercurialSupport)
+* [Mercurial Support](#mercurial-support)
 
-  * [MercurialEclipse support](#MercurialEclipsesupport)
+    * [MercurialEclipse support](#mercurialeclipse-support)
 
-  * [Clone a Mercurial Respository](#CloneaMercurialRespository)
+    * [Clone a Mercurial Respository](#clone-a-mercurial-respository)
 
-  * [Additional Mercurial Questions](#AdditionalMercurialQuestions)
-
+    * [Additional Mercurial Questions](#additional-mercurial-questions)
 
 ## Mercurial Support
 
@@ -33,7 +32,6 @@ You may use [MercurialEclipse](http://javaforge.com/project/HGE) to provide Merc
 
 * Mercurial extensions (mqueue, transplant and such)
 
-
 ### Clone a Mercurial Respository
 
 1. Go to **File** -> **Import** -> **Mercurial**
@@ -41,7 +39,6 @@ You may use [MercurialEclipse](http://javaforge.com/project/HGE) to provide Merc
 2. Fill in the Mercurial repository URL you wish to clone
 
 3. Follow the wizard's pages to complete the project import.
-
 
 ### Additional Mercurial Questions
 

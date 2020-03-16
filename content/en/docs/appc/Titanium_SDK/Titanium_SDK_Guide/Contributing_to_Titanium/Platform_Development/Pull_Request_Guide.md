@@ -1,29 +1,28 @@
 {"title":"Pull Request Guide","weight":"30"}
 
-* [Prerequisites](#Prerequisites)
+* [Prerequisites](#prerequisites)
 
-* [Pull Request Process](#PullRequestProcess)
+* [Pull Request Process](#pull-request-process)
 
-  * [1\. Review and sign the Contributors License Agreement (CLA).](#1.ReviewandsigntheContributorsLicenseAgreement(CLA).)
+    * [1\. Review and sign the Contributors License Agreement (CLA).](#1.-review-and-sign-the-contributors-license-agreement-cla.)
 
-  * [2\. Find or create a JIRA ticket / GitHub issue to associate with your pull request.](#2.FindorcreateaJIRAticket/GitHubissuetoassociatewithyourpullrequest.)
+    * [2\. Find or create a JIRA ticket / GitHub issue to associate with your pull request.](#2.-find-or-create-a-jira-ticket-/-github-issue-to-associate-with-your-pull-request.)
 
-  * [3\. Fork the Titanium SDK Repository on GitHub.](#3.ForktheTitaniumSDKRepositoryonGitHub.)
+    * [3\. Fork the Titanium SDK Repository on GitHub.](#3.-fork-the-titanium-sdk-repository-on-github.)
 
-  * [4\. Clone, setup remotes, and branch.](#4.Clone,setupremotes,andbranch.)
+    * [4\. Clone, setup remotes, and branch.](#4.-clone,-setup-remotes,-and-branch.)
 
-  * [5\. Make your changes to the development branch.](#5.Makeyourchangestothedevelopmentbranch.)
+    * [5\. Make your changes to the development branch.](#5.-make-your-changes-to-the-development-branch.)
 
-  * [6\. Compile and test the modified titanium\_mobile project.](#6.Compileandtestthemodifiedtitanium_mobileproject.)
+    * [6\. Compile and test the modified titanium\_mobile project.](#6.-compile-and-test-the-modified-titanium_mobile-project.)
 
-  * [7\. Add or modify the API docs (if necessary)](#7.AddormodifytheAPIdocs(ifnecessary))
+    * [7\. Add or modify the API docs (if necessary)](#7.-add-or-modify-the-api-docs-if-necessary)
 
-  * [8\. Rebase your development branch with master (optional)](#8.Rebaseyourdevelopmentbranchwithmaster(optional))
+    * [8\. Rebase your development branch with master (optional)](#8.-rebase-your-development-branch-with-master-optional)
 
-  * [9\. Submit pull request in GitHub.](#9.SubmitpullrequestinGitHub.)
+    * [9\. Submit pull request in GitHub.](#9.-submit-pull-request-in-github.)
 
-* [Frequently Asked Questions](#FrequentlyAskedQuestions)
-
+* [Frequently Asked Questions](#frequently-asked-questions)
 
 So you want to make a contribution to the **Titanium SDK**? Got a bug you want to fix, or a feature you want to add? This is the guide that will help you do so. It'll walk you through all the necessary steps for creating a successful pull request against the [titanium\_mobile github repository](https://github.com/appcelerator/titanium_mobile).
 
@@ -35,7 +34,6 @@ Aside from functioning in an educational capacity, this guide also serves to mak
 
 * Give you an opportunity to expedite the acceptance of your own pull requests. **Complete, high quality pull requests will receive priority**.
 
-
 ## Prerequisites
 
 * Familiarity with the open source [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html), the license that governs the Titanium Mobile SDK.
@@ -44,19 +42,18 @@ Aside from functioning in an educational capacity, this guide also serves to mak
 
 * A [github.com account](https://github.com/signup/free)
 
-
 You must also have all of the software required to build the Titanium SDK from source. For details, see [Building the Titanium SDK From Source](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Building_the_Titanium_SDK_From_Source/).
 
 There are a number of GUI interfaces for git. This guide provides instructions for using git from the command line, but these can easily be adapted to other tools.
 
 ## Pull Request Process
 
-[#1. Review and sign the Contributors License Agreement (CLA).](#1.ReviewandsigntheContributorsLicenseAgreement(CLA).)
+[#1. Review and sign the Contributors License Agreement (CLA).](#1.-review-and-sign-the-contributors-license-agreement-cla.)
 [#2. Find or create a Jira ticket to associate with your pull request.](#2.FindorcreateaJiratickettoassociatewithyourpullrequest.)
 [#3. Fork the Titanium SDK Repository on Github.](#3.ForktheTitaniumSDKRepositoryonGithub.)
-[#4. Clone, setup remotes, and branch.](#4.Clone,setupremotes,andbranch.)
-[#5. Make your changes to the development branch.](#5.Makeyourchangestothedevelopmentbranch.)
-[#6. Compile and test the modified titanium\_mobile project.](#6.Compileandtestthemodifiedtitanium_mobileproject.)
+[#4. Clone, setup remotes, and branch.](#4.-clone,-setup-remotes,-and-branch.)
+[#5. Make your changes to the development branch.](#5.-make-your-changes-to-the-development-branch.)
+[#6. Compile and test the modified titanium\_mobile project.](#6.-compile-and-test-the-modified-titanium_mobile-project.)
 [#7. Add or modify the API docs (if necessary).](#7.AddormodifytheAPIdocs(ifnecessary).)
 [#8. Rebase your development branch with the master (optional).](#8.Rebaseyourdevelopmentbranchwiththemaster(optional).)
 [#9. Submit pull request in Github.](#9.SubmitpullrequestinGithub.)
@@ -69,7 +66,6 @@ The CLA is a simple form you can sign electronically by visiting the following U
 
 * [https://cla.appcelerator.com](https://cla.appcelerator.com)
 
-
 You must first electronically sign the before you can contribute code, documentation or any other materials to the project. **You are only required to do this once**.
 
 ### 2\. Find or create a JIRA ticket / GitHub issue to associate with your pull request.
@@ -81,7 +77,6 @@ All pull requests that get integrated into the Titanium SDK have an associated J
 2. Find or create a new ticket in the Titanium Community (TC) Jira project. Community members have the ability to create new tickets here, unlike the TIMOB project. If you want to add a feature or fix a bug that has not yet been logged in either Jira project, you can do so at the following link: [Titanium Community (TC) Jira project](http://jira.appcelerator.org/browse/TC)
 
 3. File a new GitHub issue on the main repository ([appcelerator/titanium\_mobile](https://github.com/appcelerator/titanium_mobile)) by filling out the template with the feature, bugfix or improvement you want to contribute. Our team links GitHub issues with Jira, so it can be tracked by the internal engineering team
-
 
 Once you have created/found the Jira ticket or GitHub issue that you would like to address with your pull request, remember it. The ticket number will be used to identify your development branch in a later step. In addition, code for testing your pull request should be included in the Jira ticket.
 
@@ -96,7 +91,6 @@ To be able to submit changes to the Titanium Mobile SDK, you first need your own
 2. Go to the [appcelerator/titanium\_mobile](https://github.com/appcelerator/titanium_mobile) project on GitHub.
 
 3. Click the "Fork" button at the top of the screen.
-
 
 ![Bildschirmfoto_2018-05-04_um_11.17.17](/Images/appc/download/attachments/29004753/Bildschirmfoto_2018-05-04_um_11.17.17.png)
 
@@ -121,16 +115,15 @@ It is assumed that if you are planning to develop against the titanium\_mobile p
 In the commands above, we are performing 3 distinct git operations to prepare for developing against the titanium\_mobile project.
 
 * **git clone**
-  Given a remote repository, clone will create a local copy of the recently forked repository that you can modify. As noted above, you need to replace **YOUR\_ACCOUNT** with your Github account name
+    Given a remote repository, clone will create a local copy of the recently forked repository that you can modify. As noted above, you need to replace **YOUR\_ACCOUNT** with your Github account name
 
 * **git remote add**
-  This command adds the original appcelerator/titanium\_mobile repository as a remote source for your local repository. This allows you to update your local repository with any changes that are made to the main appcelerator/titanium\_mobile repository.
+    This command adds the original appcelerator/titanium\_mobile repository as a remote source for your local repository. This allows you to update your local repository with any changes that are made to the main appcelerator/titanium\_mobile repository.
 
 * **git checkout**
-  This command, when given the \-b option, creates a local development branch by the name PROJECT-NAME. As mentioned above, the name should correspond to the Jira ticket that you identified in step 2. So if you are planning to address ticket number 1234 in the TIMOB project, your full command would look like this:
+    This command, when given the \-b option, creates a local development branch by the name PROJECT-NAME. As mentioned above, the name should correspond to the Jira ticket that you identified in step 2. So if you are planning to address ticket number 1234 in the TIMOB project, your full command would look like this:
 
-  `git checkout -b TIMOB-``1234`
-
+    `git checkout -b TIMOB-``1234`
 
 You only need to clone your Github repo and set up the remote repository once. For any subsequent pull requests, you'd do the following:
 
@@ -150,10 +143,9 @@ This is where you will make your changes to the Titanium SDK. There's a few thin
 
 * Parity between platforms must be preserved when adding functionality, where possible. To achieve this, you have 2 options
 
-  * Submit any pull requests for both Android and iOS
+    * Submit any pull requests for both Android and iOS
 
-  * Submit your pull request for one platform, then submit a "parity" Jira ticket for the unsupported platform.
-
+    * Submit your pull request for one platform, then submit a "parity" Jira ticket for the unsupported platform.
 
 For example, let's assume you submitted a new feature on Android that has a corresponding feature on iOS, but you did not implement it on iOS. What you would do it submit the Android-only pull request, then create a [Titanium Community](http://jira.appcelerator.org/browse/TC) Jira ticket indicating that your pull request is not implemented in iOS. That way our platform engineers, as well as other community members, will have an opportunity to resolve the parity issue.
 
@@ -170,7 +162,6 @@ For now, compiling and testing your modified SDK is a very basic process.
 3. Run node scons.js cleanbuild to do a clean build for iOS and Android that also packages and installs the SDK. If you only want to build for one platform, add either "ios" or "android" to the command
 
 4. Run your test app in Appcelerator Studio / CLI against your newly installed SDK.
-
 
 See [Building the Titanium SDK From Source](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Building_the_Titanium_SDK_From_Source/) for detailed instructions for building the SDK.
 
@@ -226,7 +217,6 @@ For a more detailed account of this process, see:
 
 * [Titanium API Doc Style Guide](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Documentation/Titanium_API_Doc_Style_Guide/)
 
-
 ### 8\. Rebase your development branch with master (optional)
 
 If you have made a number of commits related to your fix over time, you may want to rebase your changes on the master titanium branch. This step is optional.
@@ -247,7 +237,7 @@ To raise a Github pull request, follow these steps:
 
 1. Push your changes to your Github fork.
 
-  `git push origin PROJECT-NUMBER`
+    `git push origin PROJECT-NUMBER`
 
 2. Go to the appcelerator/itanium\_mobile repository. Usually, it will be highlighted automatically and prompt you to create a pull request. If not, open a pull request manually (steps 3-6)
 
@@ -257,23 +247,22 @@ To raise a Github pull request, follow these steps:
 
 5. Click the "New pull request" button:
 
-  ![github-pr](/Images/appc/download/attachments/29004753/github-pr.png)
+    ![github-pr](/Images/appc/download/attachments/29004753/github-pr.png)
 6. Click the "compare across forks" link, select your fork and branch from the list:
 
-  ![github-compare](/Images/appc/download/attachments/29004753/github-compare.png)
+    ![github-compare](/Images/appc/download/attachments/29004753/github-compare.png)
 
-  Add a message using the form on the following page, and click the "Create Pull Request" button to submit it. Some guidelines:
+    Add a message using the form on the following page, and click the "Create Pull Request" button to submit it. Some guidelines:
 
-  1. Put the JIRA ticket first, in brackets, e.g.: [\[TIMOB-26010\] Android: Add a missing null check in getResponseHeaders](https://github.com/appcelerator/titanium_mobile/pull/10025)
+    1. Put the JIRA ticket first, in brackets, e.g.: [\[TIMOB-26010\] Android: Add a missing null check in getResponseHeaders](https://github.com/appcelerator/titanium_mobile/pull/10025)
 
-  2. If you have multiple JIRA tickets, list them. You should only have 1 ticket per PR, e.g.: [\[TIMOB-10350\] \[TIMOB-9558\] Anvil test case for xml test suite](https://github.com/appcelerator/titanium_mobile/pull/5039)
+    2. If you have multiple JIRA tickets, list them. You should only have 1 ticket per PR, e.g.: [\[TIMOB-10350\] \[TIMOB-9558\] Anvil test case for xml test suite](https://github.com/appcelerator/titanium_mobile/pull/5039)
 
-  3. If you are doing a back port, put the branch name after the JIRA number in parenthesis. Use the ACTUAL name of the branch, e.g.: [\[TIMOB-25936\] (7\_1\_X) iOS: Fix appendSection & appendRow on main-thread](https://github.com/appcelerator/titanium_mobile/pull/9987)
+    3. If you are doing a back port, put the branch name after the JIRA number in parenthesis. Use the ACTUAL name of the branch, e.g.: [\[TIMOB-25936\] (7\_1\_X) iOS: Fix appendSection & appendRow on main-thread](https://github.com/appcelerator/titanium_mobile/pull/9987)
 
-  4. Use the title of the JIRA ticket (or a close approximation) for titling the PR.
+    4. Use the title of the JIRA ticket (or a close approximation) for titling the PR.
 
-  5. Add a link to the JIRA ticket in the description of the PR.
-
+    5. Add a link to the JIRA ticket in the description of the PR.
 
 At this point, your request is ready for review. In most cases a member of the Titanium core team should review your request within a few days. Reviews may take longer if there is a large volume of pull requests outstanding.
 

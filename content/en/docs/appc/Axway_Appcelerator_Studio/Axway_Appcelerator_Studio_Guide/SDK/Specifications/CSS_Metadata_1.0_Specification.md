@@ -1,11 +1,10 @@
 {"title":"CSS Metadata 1.0 Specification","weight":"80"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Short Example](#ShortExample)
-
+* [Short Example](#short-example)
 
 ## Overview
 
@@ -28,7 +27,6 @@ The section for each element includes the following information:
 * Longer explanation of the element
 
 * Example(s)
-
 
 This file is currently for internal use only, but Studio may in the future, allow users to contribute additions to this file.
 

@@ -1,11 +1,10 @@
 {"title":"Determining Your Studio Configuration","weight":"40"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Why Send the Configuration Log?](#WhySendtheConfigurationLog?)
+* [Why Send the Configuration Log?](#why-send-the-configuration-log?)
 
-* [How to I get access to the configuration log?](#HowtoIgetaccesstotheconfigurationlog?)
-
+* [How to I get access to the configuration log?](#how-to-i-get-access-to-the-configuration-log?)
 
 ## Overview
 

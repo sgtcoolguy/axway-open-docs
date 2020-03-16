@@ -1,35 +1,34 @@
 {"title":"Android Module Quick Start","weight":"10"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Android module prerequisites](#Androidmoduleprerequisites)
+* [Android module prerequisites](#android-module-prerequisites)
 
-* [Create a new module](#Createanewmodule)
+* [Create a new module](#create-a-new-module)
 
-* [Build and package the module](#Buildandpackagethemodule)
+* [Build and package the module](#build-and-package-the-module)
 
-* [Test the module](#Testthemodule)
+* [Test the module](#test-the-module)
 
-  * [Create a test application](#Createatestapplication)
+    * [Create a test application](#create-a-test-application)
 
-  * [Add the module as a dependency to the project](#Addthemoduleasadependencytotheproject)
+    * [Add the module as a dependency to the project](#add-the-module-as-a-dependency-to-the-project)
 
-  * [Load the module and make module API calls](#LoadthemoduleandmakemoduleAPIcalls)
+    * [Load the module and make module API calls](#load-the-module-and-make-module-api-calls)
 
-  * [Run the application](#Runtheapplication)
+    * [Run the application](#run-the-application)
 
-* [Modify the module](#Modifythemodule)
+* [Modify the module](#modify-the-module)
 
-  * [Add a View Proxy and View](#AddaViewProxyandView)
+    * [Add a View Proxy and View](#add-a-view-proxy-and-view)
 
-  * [Add a property](#Addaproperty)
+    * [Add a property](#add-a-property)
 
-  * [Test the module](#Testthemodule.1)
+    * [Test the module](#test-the-module)
 
-* [Next steps](#Nextsteps)
+* [Next steps](#next-steps)
 
-* [AIDL support](#AIDLsupport)
-
+* [AIDL support](#aidl-support)
 
 ## Introduction
 
@@ -51,13 +50,11 @@ To develop an Android-based Module, you need to install the following tools and 
 
 * Python, Python setuptools and the markdown module, and Python in your system PATH. See [Installing Python](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Python/) and [Installing Required Python Packages](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Required_Python_Packages/).
 
-
 If you want to use Studio, install:
 
 * [Eclipse Java Development Tools plugin](https://eclipse.org/jdt/). See [Installing the Java Development Tools](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/Installing_the_Java_Development_Tools/).
 
 * [Android Development Tools plugin](http://developer.android.com/tools/sdk/eclipse-adt.html). See [Installing the Android Development Tools](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/Installing_the_Android_Development_Tools/).
-
 
 ## Create a new module
 
@@ -84,7 +81,6 @@ In Studio:
 4. In **Deployment Targets**, select **Android**.
 
 5. Click **Next**, then click **Finish**.
-
 
 Studio sets up a new folder called test that contains your module project.
 
@@ -116,7 +112,6 @@ In Studio:
 
 5. Click **Finish**.
 
-
 Studio builds and installs the module to the Titanium SDK home path.
 
 ## Test the module
@@ -143,14 +138,13 @@ In Studio:
 
 3. On the **Project Location** page, enter the following information:
 
-  * In the **Project Name** field, enter **Hello**.
+    * In the **Project Name** field, enter **Hello**.
 
-  * In the **App ID** field, enter **com.example.hello**.
+    * In the **App ID** field, enter **com.example.hello**.
 
-  * In **Deployment Targets**, select **Android**.
+    * In **Deployment Targets**, select **Android**.
 
 4. Click **Finish** to create the project.
-
 
 Studio sets up a new folder called Hello that contains the test application you will be using to test the module.
 
@@ -181,7 +175,6 @@ In Studio:
 3. Select **com.example.test**.
 
 4. Click **OK**.
-
 
 ### Load the module and make module API calls
 
@@ -232,7 +225,6 @@ First, look at some of the default files created by the Titanium SDK. Expand the
 * TestModule.java: This is a boiler plate Module class. Every module requires a module class, which acts as the base API for the module, such as providing the module ID, GUID, etc.
 
 * ExampleProxy.java: This is a boiler plate Proxy class that you can model your module Proxy and View components on. All Proxy classes must end with Proxy in the name of the class and file.
-
 
 ### Add a View Proxy and View
 
@@ -434,7 +426,6 @@ The ExampleProxy class extends the TiViewProxy class. This class exposes the vie
 
 * **setColor** : Calls the setColor method of the view and sets the color property on the JavaScript proxy object. Note the @Kroll.setProperty annotation before the method. This annotation exposes the property and setter to JavaScript.
 
-
 The ExampleView class extends the TiUIView class. The TiUIView can be added to other Titanium views and windows, which makes it the perfect place for a UIView to be added so that it can be displayed in a Titanium app. This class creates the native view to display. The class implements the the constructor and one method of the TiUIView class, and a custom setter method:
 
 * **constructor**: The constructor must be implemented in every class that extends a TiUIView.
@@ -442,7 +433,6 @@ The ExampleView class extends the TiUIView class. The TiUIView can be added to o
 * **processProperties** : This method allows the application to processes properties passed in when the view is created. In this example, the application intercepts the color property to set the native view's background color.
 
 * **setColor** : Sets the background color of the native view. This method is called by the View Proxy's setColor method.
-
 
 Notice the @Kroll.proxy(creatableInModule=TestModule.class) annotation before the View Proxy class declaration. This annotation exposes the createExample() method to JavaScript to create the view from a Titanium application. The name of the method is the name of the View Proxy class without the Proxy suffix, then prefixed with create. For example, if the class was calledTestViewProxy (rather than ExampleProxy), the method would be called createTestView() (rather than createExample()).
 
@@ -560,7 +550,6 @@ Console
 
 * For more examples of using the module API, see the [ti.moddevguide Github project](https://github.com/appcelerator-modules/ti.moddevguide/tree/master/android).
 
-
 ## AIDL support
 
 As of 5.2.0, building Android modules now supports AIDL files. To use AIDL files in your app, apply the following steps:
@@ -568,7 +557,6 @@ As of 5.2.0, building Android modules now supports AIDL files. To use AIDL files
 1. Using Studio, you can generate the AIDL .java file. The AIDL file is only used to generate the Java interface code. Once that file is available, it isn't required anymore. See Android Developer's page called Preparing Your In-app Billing Application for more details.
 
 2. Copy over the AIDL file into the correct namespace package folder into the src directory of the Appcelerator Studio module.
-
 
 See [IInAppBillingService.java](https://github.com/appcelerator-modules/ti.inappbilling/blob/stable/android/src/com/android/vending/billing/IInAppBillingService.java) for reference information.
 

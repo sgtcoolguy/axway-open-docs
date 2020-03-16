@@ -14,7 +14,6 @@ Dashboard 7.1.3 is a patch release, which includes several improvements and bug 
 
 * Improved the display of service roles on the _Add New Member_ form and _Members_ view to show the service to which the role corresponds.
 
-
 ## Fixed issues
 
 * Resolved an issue with the pagination of push notifications subscribed device logs.

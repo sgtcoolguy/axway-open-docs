@@ -12,12 +12,12 @@ This chapter has several sections dedicated to how-to instructions for API Build
 
 * [API Builder Models](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_How-tos/API_Builder_Models/)
 
-  * [Models - Access a Model](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_How-tos/API_Builder_Models/Models_-_Access_a_Model/)
+    * [Models - Access a Model](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_How-tos/API_Builder_Models/Models_-_Access_a_Model/)
 
-  * [Models - Composite](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_How-tos/API_Builder_Models/Models_-_Composite/)
+    * [Models - Composite](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_How-tos/API_Builder_Models/Models_-_Composite/)
 
-  * [Models - Definition](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_How-tos/API_Builder_Models/Models_-_Definition/)
+    * [Models - Definition](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_How-tos/API_Builder_Models/Models_-_Definition/)
 
-  * [Models - Predefined or Custom Endpoints](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_How-tos/API_Builder_Models/Models_-_Predefined_or_Custom_Endpoints/)
+    * [Models - Predefined or Custom Endpoints](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_How-tos/API_Builder_Models/Models_-_Predefined_or_Custom_Endpoints/)
 
 * [API Builder Secure Configuration at Rest](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_How-tos/API_Builder_Secure_Configuration_at_Rest/)

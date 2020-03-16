@@ -6,12 +6,11 @@ Hyperloop 2.1.0 is a minor release that includes two new features and several bu
 
 * [TIMOB-24098](https://jira.appcelerator.org/browse/TIMOB-24098) - Windows: Async native function calls
 
-  * Integrated WinRT async operations with JavaScript Promises
+    * Integrated WinRT async operations with JavaScript Promises
 
 * [TIMOB-24101](https://jira.appcelerator.org/browse/TIMOB-24101) - Windows: Ability to use 3rd-party native classes
 
-  * Added ability to use third-party dependencies in Hyperloop-enabled projects
-
+    * Added ability to use third-party dependencies in Hyperloop-enabled projects
 
 ## Fixed issues
 

@@ -10,7 +10,7 @@ To create a widget them, inside your Alloy project's themes/ folder create a new
 
 ![theme_widgets](/Images/appc/download/attachments/41845679/theme_widgets.png)
 
-For example, the sample application defines a widget named "starrating" whose and assets and styles are overridden by those found in the app/themes/widgets/assets and app/themes/widgets/assets folders, respectively. The sample also specifies a theme named "plusminus" that is specified as the global style by the application's config.json file. The global styles, theme styles, and widget styles are combined during compilation according to well-defined style priorities (see [Style Priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#Stylepriorities)).
+For example, the sample application defines a widget named "starrating" whose and assets and styles are overridden by those found in the app/themes/widgets/assets and app/themes/widgets/assets folders, respectively. The sample also specifies a theme named "plusminus" that is specified as the global style by the application's config.json file. The global styles, theme styles, and widget styles are combined during compilation according to well-defined style priorities (see [Style Priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#style-priorities)).
 
 App folder structure
 
@@ -100,10 +100,10 @@ App folder structure
 
 `└──widget.json`
 
-Platform-specific assets and style selectors in the widget override non-platform-specific assets and styles in your theme. See [Style priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#Stylepriorities) for details.
+Platform-specific assets and style selectors in the widget override non-platform-specific assets and styles in your theme. See [Style priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#style-priorities) for details.
 
 ## See also
 
 * [Alloy Styles and Themes](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/)
 
-* [Style priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#Stylepriorities)
+* [Style priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#style-priorities)

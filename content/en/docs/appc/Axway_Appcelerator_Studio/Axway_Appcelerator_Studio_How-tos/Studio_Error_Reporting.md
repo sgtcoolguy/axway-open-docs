@@ -1,17 +1,16 @@
 {"title":"Studio Error Reporting","weight":"50"}
 
-* [Error reporting configuration](#Errorreportingconfiguration)
+* [Error reporting configuration](#error-reporting-configuration)
 
-* [Disabling error reporting](#Disablingerrorreporting)
+* [Disabling error reporting](#disabling-error-reporting)
 
-* [Send error reports silently from Appcelerator Studio](#SenderrorreportssilentlyfromAppceleratorStudio)
+* [Send error reports silently from Appcelerator Studio](#send-error-reports-silently-from-appcelerator-studio)
 
-* [Controlling error reporting actions](#Controllingerrorreportingactions)
+* [Controlling error reporting actions](#controlling-error-reporting-actions)
 
-* [Error reporting action options](#Errorreportingactionoptions)
+* [Error reporting action options](#error-reporting-action-options)
 
-* [Error reporting notification configuration](#Errorreportingnotificationconfiguration)
-
+* [Error reporting notification configuration](#error-reporting-notification-configuration)
 
 Appcelerator Studio comes with a built-in error reporting tool that can be used to identify problems within Studio and automatically upload problems to the Appcelerator analytics server which will provide key insights as to where problems may exist in Studio and how they can be improved. At present, errors identified in Studio are often shown with a dialog to the end user or simply written to a log (visible with Help > Studio > View Log File). Often these problems go ignored or unreported.
 
@@ -55,7 +54,6 @@ Click **Send** to submit the error to Appcelerator.
 
 4. Click on **Apply** and **OK**.
 
-
 ## Send error reports silently from Appcelerator Studio
 
 1. Go to Appcelerator Studio **Preferences**
@@ -65,7 +63,6 @@ Click **Send** to submit the error to Appcelerator.
 3. From the **Action** list, select **Always send silently**. This will avoid asking the permission from the user.
 
 4. Click on **Apply** and **OK**.
-
 
 ## Controlling error reporting actions
 

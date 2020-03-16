@@ -1,21 +1,20 @@
 {"title":"Android Module Upgrade Guide","weight":"40"}
 
-* [Summary](#Summary)
+* [Summary](#summary)
 
-* [Migration to SDK 9.0.0](#MigrationtoSDK9.0.0)
+* [Migration to SDK 9.0.0](#migration-to-sdk-9.0.0)
 
-* [Manifest file](#Manifestfile)
+* [Manifest file](#manifest-file)
 
-  * [apiversion](#apiversion)
+    * [apiversion](#apiversion)
 
-  * [minsdk](#minsdk)
+    * [minsdk](#minsdk)
 
-  * [architecture](#architecture)
+    * [architecture](#architecture)
 
-  * [Version](#Version)
+    * [Version](#version)
 
-* [API updates](#APIupdates)
-
+* [API updates](#api-updates)
 
 ## Summary
 
@@ -35,7 +34,6 @@ The following components of the Android manifest file need to be updated:
 
 * version: Update the value to the next major version (read more about semantic versioning [here](https://semver.org/)). If your module version is "1.2.0" right now, it should be revised to "2.0.0"
 
-
 Please see the "ti.map" module's manifest file for an example on how it should be configured when building with Titanium SDK 9.0.0 or higher.
 
 [https://github.com/appcelerator-modules/ti.map/blob/master/android/manifest](https://github.com/appcelerator-modules/ti.map/blob/master/android/manifest)
@@ -46,81 +44,33 @@ The following tables provide an overview of the relations between different prop
 
 ### apiversion
 
-SDK
-
-required apiversion
-
-9.x.x
-
-4
-
-8.x.x
-
-4
-
-7.x.x
-
-4
-
-6.x.x
-
-3
-
-5.x.x
-
-2
+| SDK | required apiversion |
+| --- | --- |
+| 9.x.x | 4 |
+| 8.x.x | 4 |
+| 7.x.x | 4 |
+| 6.x.x | 3 |
+| 5.x.x | 2 |
 
 ### minsdk
 
-SDK
-
-required apiversion
-
-9.x.x
-
-9.0.0.GA
-
-8.x.x
-
-7.0.0.GA
-
-7.x.x
-
-7.0.0.GA
-
-6.x.x
-
-6.0.0.GA
-
-5.x.x
-
-5.0.0.GA
+| SDK | required apiversion |
+| --- | --- |
+| 9.x.x | 9.0.0.GA |
+| 8.x.x | 7.0.0.GA |
+| 7.x.x | 7.0.0.GA |
+| 6.x.x | 6.0.0.GA |
+| 5.x.x | 5.0.0.GA |
 
 ### architecture
 
-SDK
-
-Architecture
-
-9.x.x
-
-arm64-v8a armeabi-v7a x86 x86\_64
-
-8.x.x
-
-arm64-v8a armeabi-v7a x86
-
-7.x.x
-
-arm64-v8a armeabi-v7a x86
-
-6.x.x
-
-armeabi-v7a x86
-
-5.x.x
-
-armeabi armeabi-v7a x86
+| SDK | Architecture |
+| --- | --- |
+| 9.x.x | arm64-v8a armeabi-v7a x86 x86\_64 |
+| 8.x.x | arm64-v8a armeabi-v7a x86 |
+| 7.x.x | arm64-v8a armeabi-v7a x86 |
+| 6.x.x | armeabi-v7a x86 |
+| 5.x.x | armeabi armeabi-v7a x86 |
 
 ### Version
 

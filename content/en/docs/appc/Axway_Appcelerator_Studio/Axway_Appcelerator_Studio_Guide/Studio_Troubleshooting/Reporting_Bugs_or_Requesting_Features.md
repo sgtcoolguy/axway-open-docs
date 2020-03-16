@@ -1,21 +1,20 @@
 {"title":"Reporting Bugs or Requesting Features","weight":"100"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Ticket checklist](#Ticketchecklist)
+* [Ticket checklist](#ticket-checklist)
 
-* [Web tools feature requests/bugs](#Webtoolsfeaturerequests/bugs)
+* [Web tools feature requests/bugs](#web-tools-feature-requests/bugs)
 
-* [Titanium tools feature requests/bugs](#Titaniumtoolsfeaturerequests/bugs)
+* [Titanium tools feature requests/bugs](#titanium-tools-feature-requests/bugs)
 
-* [Requesting a feature](#Requestingafeature)
+* [Requesting a feature](#requesting-a-feature)
 
-* [Bug submission steps](#Bugsubmissionsteps)
+* [Bug submission steps](#bug-submission-steps)
 
-  * [Creating a good use-case](#Creatingagooduse-case)
+    * [Creating a good use-case](#creating-a-good-use-case)
 
-  * [Creating a Jira ticket](#CreatingaJiraticket)
-
+    * [Creating a Jira ticket](#creating-a-jira-ticket)
 
 ## Overview
 
@@ -27,62 +26,16 @@ The following table explains what information must be included in which fields i
 
 If you have been directed to this section after creating a ticket in Jira, it probably means that you have omitted some vital information. If a field is omitted from the list below, you can leave it at the default value.
 
-If the bug relates to the Titanium SDK rather than Studio, please follow the [Titanium Ticket Checklist](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/#JIRAticketchecklist) instead.
+If the bug relates to the Titanium SDK rather than Studio, please follow the [Titanium Ticket Checklist](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/#jira-ticket-checklist) instead.
 
-Field
-
-Required
-
-Information to include
-
-Summary
-
-![check](/Images/appc/download/attachments/30083282/check.png)
-
-**A concise summary** that makes it easy to determine the nature of the issue
-
-Severity
-
-![check](/Images/appc/download/attachments/30083282/check.png)
-
-One of the following descriptions may be chosen to describe the issue's impact on your project :
-
-* Blocker: issue is blocking project
-
-* Major: crashing or incorrect behavior issue that may have a workaround
-
-* Minor: crash or incorrect behavior that does have a reasonable workaround
-
-* Trivial: functions correctly, but appearance/functionality needs improvement
-
-* None: default
-
-
-Component/s
-
-![check](/Images/appc/download/attachments/30083282/check.png)
-
-Find a component which most closely describes the problem area
-
-Environment
-
-![check](/Images/appc/download/attachments/30083282/check.png)
-
-**Studio version:** copied and pasted from Help / About
-
-Description
-
-![check](/Images/appc/download/attachments/30083282/check.png)
-
-**a concise, factual, description**
-**steps that demonstrate issue**, in a bulleted list, or placed within a {code} markdown block (if code)
-**a snippet of the main errors from the log**, placed within a {code} markdown block
-
-Attachment
-
-![check](/Images/appc/download/attachments/30083282/check.png)
-
-Always attach the Studio log, and depending on the issue, various other logs are helpful. See [Accessing the Log File](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Studio_Troubleshooting/Accessing_the_Log_File/) for which logs to attach. You may also be asked to attach your configuration log. See [Determining Your Studio Configuration](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Studio_Troubleshooting/Determining_Your_Studio_Configuration/).
+| Field | Required | Information to include |
+| --- | --- | --- |
+| Summary | ![check](/Images/appc/download/attachments/30083282/check.png) | **A concise summary** that makes it easy to determine the nature of the issue |
+| Severity | ![check](/Images/appc/download/attachments/30083282/check.png) | One of the following descriptions may be chosen to describe the issue's impact on your project :<br /><br />* Blocker: issue is blocking project<br />    <br />* Major: crashing or incorrect behavior issue that may have a workaround<br />    <br />* Minor: crash or incorrect behavior that does have a reasonable workaround<br />    <br />* Trivial: functions correctly, but appearance/functionality needs improvement<br />    <br />* None: default |
+| Component/s | ![check](/Images/appc/download/attachments/30083282/check.png) | Find a component which most closely describes the problem area |
+| Environment | ![check](/Images/appc/download/attachments/30083282/check.png) | **Studio version:** copied and pasted from Help / About |
+| Description | ![check](/Images/appc/download/attachments/30083282/check.png) | **a concise, factual, description**  <br />**steps that demonstrate issue**, in a bulleted list, or placed within a {code} markdown block (if code)  <br />**a snippet of the main errors from the log**, placed within a {code} markdown block |
+| Attachment | ![check](/Images/appc/download/attachments/30083282/check.png) | Always attach the Studio log, and depending on the issue, various other logs are helpful. See [Accessing the Log File](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Studio_Troubleshooting/Accessing_the_Log_File/) for which logs to attach. You may also be asked to attach your configuration log. See [Determining Your Studio Configuration](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Studio_Troubleshooting/Determining_Your_Studio_Configuration/). |
 
 ## Web tools feature requests/bugs
 
@@ -108,7 +61,6 @@ Please file a report at [http://jira.appcelerator.org/browse/AC](http://jira.app
 
 7. If you can, write the feature yourself and submit it to the project. This speeds up the process considerably!
 
-
 ## Bug submission steps
 
 1. Find possible bug
@@ -117,16 +69,15 @@ Please file a report at [http://jira.appcelerator.org/browse/AC](http://jira.app
 
 3. Once certain of a bug:
 
-  * Create a Jira ticket (one ticket per bug)
+    * Create a Jira ticket (one ticket per bug)
 
-  * Keep it as concise and as factual as possible
+    * Keep it as concise and as factual as possible
 
-  * Include your usecase, and all the information described in checklist below
+    * Include your usecase, and all the information described in checklist below
 
-  * Watch ticket, to show your support for the ticket's resolution
+    * Watch ticket, to show your support for the ticket's resolution
 
 4. If coming here to create a ticket from another forum, help others by posting the ticket's URL back in the source location.
-
 
 ### Creating a good use-case
 
@@ -138,7 +89,6 @@ A "usecase" is a working script that reliably reproduces a specific bug. The _be
 
 * Try and create the smallest possible sample that illustrates the problem
 
-
 ### Creating a Jira ticket
 
 * Open the Jira project page above. Tickets may be created in APSTUD directly, but TISTUD tickets will need to be verified by support personnel first. Please do not add Titanium tickets in the Aptana Studio tracker--they will be marked as invalid and you will be asked to resubmit the issue.
@@ -148,6 +98,5 @@ A "usecase" is a working script that reliably reproduces a specific bug. The _be
 * Complete as many fields as you can. Refer to checklist for help with this
 
 * As the reporter, you will automatically receive any updates to the ticket. However, it's always a good idea to also watch the ticket if its resolution is crucial to your projects, in order for our team to gauge the issue's impact on the community from the watchers list
-
 
 Thank you for your time!

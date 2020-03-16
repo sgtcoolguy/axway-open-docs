@@ -1,23 +1,22 @@
 {"title":"Rails Development","weight":"40"}
 
-* [Rails Support](#RailsSupport)
+* [Rails Support](#rails-support)
 
-  * [Getting Started](#GettingStarted)
+    * [Getting Started](#getting-started)
 
-    * [Windows](#Windows)
+        * [Windows](#windows)
 
-  * [Creating/Importing a Rails Project](#Creating/ImportingaRailsProject)
+    * [Creating/Importing a Rails Project](#creating/importing-a-rails-project)
 
-    * [Creating a project using the new-project wizard](#Creatingaprojectusingthenew-projectwizard)
+        * [Creating a project using the new-project wizard](#creating-a-project-using-the-new-project-wizard)
 
-    * [Importing a Rails Project](#ImportingaRailsProject)
+        * [Importing a Rails Project](#importing-a-rails-project)
 
-  * [Editing](#Editing)
+    * [Editing](#editing)
 
-  * [Deprecated Views - Servers, Plugins, Gems, Generators](#DeprecatedViews-Servers,Plugins,Gems,Generators)
+    * [Deprecated Views - Servers, Plugins, Gems, Generators](#deprecated-views---servers,-plugins,-gems,-generators)
 
-* [Related Topics](#RelatedTopics)
-
+* [Related Topics](#related-topics)
 
 ## Rails Support
 
@@ -42,7 +41,7 @@ We highly recommend that users install Rails via [Rails Installer](http://railsi
 The Rails project wizard can be accessed through multiple locations in the workspace.
 A project can be created through the File->New->Rails Project, or by right-clicking the 'Project Explorer' or the 'App Explorer' and select New->Rails Project.
 
-![rails_project_wizard](/Images/appc/download/attachments/30083026/rails_project_wizard.png)
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083026/rails_project_wizard.png" alt="images/download/attachments/30083026/rails_project_wizard.png" class="confluence-embedded-image image-center"></p></td></tr></tbody></table>
 
 #### Importing a Rails Project
 

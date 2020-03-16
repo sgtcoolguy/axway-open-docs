@@ -1,85 +1,84 @@
 {"title":"ScriptDoc XML (SDOCML) 2.0 Specification","weight":"20"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Short Example](#ShortExample)
+* [Short Example](#short-example)
 
-* [Types](#Types)
+* [Types](#types)
 
-* [Reference](#Reference)
+* [Reference](#reference)
 
-  * [alias](#alias)
+    * [alias](#alias)
 
-  * [aliases](#aliases)
+    * [aliases](#aliases)
 
-  * [availability](#availability)
+    * [availability](#availability)
 
-  * [browser](#browser)
+    * [browser](#browser)
 
-  * [browsers](#browsers)
+    * [browsers](#browsers)
 
-  * [class](#class)
+    * [class](#class)
 
-  * [constructor](#constructor)
+    * [constructor](#constructor)
 
-  * [constructors](#constructors)
+    * [constructors](#constructors)
 
-  * [deprecated](#deprecated)
+    * [deprecated](#deprecated)
 
-  * [description](#description)
+    * [description](#description)
 
-  * [example](#example)
+    * [example](#example)
 
-  * [exception](#exception)
+    * [exception](#exception)
 
-  * [exceptions](#exceptions)
+    * [exceptions](#exceptions)
 
-  * [interface](#interface)
+    * [interface](#interface)
 
-  * [interfaces](#interfaces)
+    * [interfaces](#interfaces)
 
-  * [javascript](#javascript)
+    * [javascript](#javascript)
 
-  * [method](#method)
+    * [method](#method)
 
-  * [methods](#methods)
+    * [methods](#methods)
 
-  * [mixin](#mixin)
+    * [mixin](#mixin)
 
-  * [mixins](#mixins)
+    * [mixins](#mixins)
 
-  * [parameter](#parameter)
+    * [parameter](#parameter)
 
-  * [parameters](#parameters)
+    * [parameters](#parameters)
 
-  * [properties](#properties)
+    * [properties](#properties)
 
-  * [property](#property)
+    * [property](#property)
 
-  * [reference](#reference)
+    * [reference](#reference)
 
-  * [references](#references)
+    * [references](#references)
 
-  * [remarks](#remarks)
+    * [remarks](#remarks)
 
-  * [return-description](#return-description)
+    * [return-description](#return-description)
 
-  * [return-type](#return-type)
+    * [return-type](#return-type)
 
-  * [return-types](#return-types)
+    * [return-types](#return-types)
 
-  * [specification](#specification)
+    * [specification](#specification)
 
-  * [type-map](#type-map)
+    * [type-map](#type-map)
 
-  * [type-maps](#type-maps)
+    * [type-maps](#type-maps)
 
-  * [value](#value)
+    * [value](#value)
 
-  * [values](#values)
-
+    * [values](#values)
 
 ## Overview
 
@@ -102,7 +101,6 @@ The section for each element includes the following information:
 * Longer explanation of the element
 
 * Example(s)
-
 
 Once you have created this file, see [Using JavaScript Libraries](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Using_JavaScript_Libraries/) for the specifics on how to use it. Check the Aptana Log file (Help Menu > Troubleshooting > Aptana Log File) to see if there are any errors generated when loading it. There is also an available XSD to validate your document.
 
@@ -220,7 +218,6 @@ We support an optional notation when describing types:
 
 * Array<Array<String>> - Array of Array of Strings
 
-
 **Functions**
 
 * Function - function with no params, and no return value
@@ -232,7 +229,6 @@ We support an optional notation when describing types:
 * Function:(String | Number) - function with no params, returns String or Number
 
 * Function(String, Number) - function with two params, first of type String, second of type Number, and no return value
-
 
 **A ScriptDoc sample**
 
@@ -311,7 +307,6 @@ No children.
 * name - Name of the alias
 
 * type - Type that the alias represents
-
 
 **Description**
 
@@ -429,7 +424,6 @@ Parent of: [#description](#description)
 
 * osVersion - OS version
 
-
 **Description**
 
 The browser element lists the browser support information that applies to a class, constructor, method, or property.
@@ -541,7 +535,6 @@ Parent of: [#aliases](#aliases), [#availability](#availability), [#browsers](#br
 * superclass - Superclass that the class belongs to. Separate multiple superclasses with a space
 
 * visibility - If internal only, specify "internal", otherwise, leave blank.
-
 
 **Description**
 
@@ -722,7 +715,6 @@ Parent of: [#availability](#availability), [#browsers](#browsers), [#description
 * scope - Instance or static.
 
 * visibility - If internal only, specify "internal". Otherwise, leave blank. (Optional.)
-
 
 **Description**
 
@@ -938,7 +930,6 @@ Parent of: [#description](#description)
 
 * type - Name of the error type (e.g. "DOMException")
 
-
 **Description**
 
 The exception element holds the error type and description information for an exception that can be thrown for a method.
@@ -979,7 +970,6 @@ Parent of: [#exception](#exception)
 
 * type - Name of the error type (e.g. "DOMException")
 
-
 **Description**
 
 The exceptions element is a container node for the individual exception elements for a method.
@@ -1015,7 +1005,6 @@ No children
 **Attributes and values**
 
 * type - Name of interface type
-
 
 **Description**
 
@@ -1174,7 +1163,6 @@ Parent of: [#availability](#availability), [#browsers](#browsers), [#deprecated]
 * name - Name of the method
 
 * scope - instance or static
-
 
 **Description**
 
@@ -1404,7 +1392,6 @@ Parent of: [#mixin](#mixin)
 
 * scope - instance or static
 
-
 **Description**
 
 The mixin element indicates what properties and methods of a class will be "mixed-in". In the example below, the static methods and properties of Class1 and Class2 will be available as instance properties and methods on the parent class holding this mixins node. The case of mixins scope="instance", mixin scope="instance" is effectively regular inheritance, so while possible to specify using this interface, using the regular superclass attribute is preferred.
@@ -1524,7 +1511,6 @@ Parent of: [#description](#description), [#values](#values)
 * type - JavaScript type of the parameter (e.g. Object).
 
 * usage - Whether the parameter is "required", "optional", or can take "one-or-more" values.
-
 
 **Description**
 
@@ -2004,7 +1990,6 @@ Parent of: [#availability](#availability), [#browsers](#browsers), [#deprecated]
 
 * visibility - internal or blank.
 
-
 **Description**
 Contains the information for an individual property for a class.
 
@@ -2057,7 +2042,6 @@ No children.
 **Attributes and values**
 
 * name - Name of the reference.
-
 
 **Description**
 
@@ -2236,7 +2220,6 @@ No children.
 
 * type - JavaScript type returned by the method.
 
-
 **Description**
 
 Contains the JavaScript return type for a method.
@@ -2367,7 +2350,6 @@ No children.
 
 * version - Version of the specification (optional)
 
-
 **Description**
 
 The specification element(s) lists the specifications (e.g. JavaScript version, JScript version and/or ECMAScript version) that apply to a class, constructor, method, or property.
@@ -2407,7 +2389,6 @@ Parent of: none
 * sourceType - The name of the type to map to the destination type
 
 * destinationType - The new type value to use when replacing the source type
-
 
 ### type-maps
 
@@ -2474,7 +2455,6 @@ No children.
 * name - Name of the attribute.
 
 * description - Attribute description.
-
 
 **Description**
 

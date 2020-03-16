@@ -1,25 +1,24 @@
 {"title":"Managing Memory and Finding Leaks","weight":"50"}
 
-* [JavaScript garbage collection](#JavaScriptgarbagecollection)
+* [JavaScript garbage collection](#javascript-garbage-collection)
 
-* [When Titanium releases memory](#WhenTitaniumreleasesmemory)
+* [When Titanium releases memory](#when-titanium-releases-memory)
 
-* [Memory leaks](#Memoryleaks)
+* [Memory leaks](#memory-leaks)
 
-  * [Example sources of memory leaks](#Examplesourcesofmemoryleaks)
+    * [Example sources of memory leaks](#example-sources-of-memory-leaks)
 
-* [Monitoring allocations on iOS](#MonitoringallocationsoniOS)
+* [Monitoring allocations on iOS](#monitoring-allocations-on-ios)
 
-* [Monitoring allocations on Android](#MonitoringallocationsonAndroid)
+* [Monitoring allocations on Android](#monitoring-allocations-on-android)
 
-* [Monitoring allocations on Windows](#MonitoringallocationsonWindows)
+* [Monitoring allocations on Windows](#monitoring-allocations-on-windows)
 
-* [Hands-on practice](#Hands-onpractice)
+* [Hands-on practice](#hands-on-practice)
 
-  * [Android notes](#Androidnotes)
+    * [Android notes](#android-notes)
 
-* [References](#References)
-
+* [References](#references)
 
 ## Objective
 
@@ -47,8 +46,7 @@ The upside of this is that if you see a crash or device log referencing jetsam, 
 
 * iPad: Limited to between 30-50 MB; smaller is always better
 
-* Android: 24-32MB heap, optional "large heap" of 128MB ([Application properties](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#Applicationproperties) for how to enable this)
-
+* Android: 24-32MB heap, optional "large heap" of 128MB ([Application properties](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#application-properties) for how to enable this)
 
 Compared to the memory space available to the desktop, these are severely restricted amounts. Furthermore, iOS, Android and Windows can force-reclaim memory or force-quit an app when the system needs more free memory. You'll want to limit your memory use and free allocations when you can. Let's see how JavaScript frees memory and then how you can release memory in your Titanium app.
 
@@ -65,7 +63,6 @@ In this way, JavaScript automatically clears out objects that are not being used
 Titanium is a bridge between JavaScript and the native operating system. When you define a Titanium object, such as a Button or View, Titanium creates a matching proxy in the native operating system. Titanium will destroy that native proxy object, freeing the memory it used, when the corresponding JavaScript object is destroyed.
 
 * Calling _parent_.remove() then setting the JavaScript object to null destroys both the proxy and JavaScript object. You won't be able to add() it to the view hierarchy later without redefining it.
-
 
 To be clear, calling _parent_.remove() on its own does _not_ destroy either the JavaScript or proxy object. You must null the JavaScript object to destroy its related proxy.
 
@@ -125,7 +122,6 @@ Memory leaks occur when your app allocates memory but doesn't release it. Leaks 
 
 * Declaring objects within a "global" event listener means those objects will remain in scope as long as the event listener exists. Global event listeners include those set on Ti.App, Ti.Geolocation, Ti.Gesture, and so forth.
 
-
 Creating and fixing a memory leak in a global event listener
 
 `function doSomething(_event) {`
@@ -158,9 +154,8 @@ To run a Titanium app from the Xcode build, you have two choices:
 
 1. Change your Xcode Workspace settings in **Xcode** > **Preferences** > **Locations** > **Derived Data** > **Advanced** > Select **Custom** in the Build Location options and select **Relative to Workspace** from the drop down.
 
-  ![Xcode9Workspace](/Images/appc/download/attachments/29004941/Xcode9Workspace.png)
+    ![Xcode9Workspace](/Images/appc/download/attachments/29004941/Xcode9Workspace.png)
 2. Copy the contents of your Resources/ (same for Alloy by including the generated Alloy code) directory to the "Resources" group in Xcode
-
 
 Lets continue! Apple's Instruments application is a handy tool for monitoring and discovering memory leaks. Here's how you can use it for this purpose:
 
@@ -168,66 +163,28 @@ Lets continue! Apple's Instruments application is a handy tool for monitoring an
 
 2. Open Instruments:
 
-  * Start Xcode and from the menu, select **Xcode** > **Open Developer Tools** > **Instruments**.
+    * Start Xcode and from the menu, select **Xcode** > **Open Developer Tools** > **Instruments**.
 
-  * In the Choose a Template window, click **Allocations** and click **Choose**.
+    * In the Choose a Template window, click **Allocations** and click **Choose**.
 
 3. Attach your application to Instruments.
 
-  1. Click **Choose Target**, click **More...** under **System**, then scroll down and click your app's name.
+    1. Click **Choose Target**, click **More...** under **System**, then scroll down and click your app's name.
 
-  2. Click **Record**. Wait a moment till data begins recording.
+    2. Click **Record**. Wait a moment till data begins recording.
 
 4. In the Instrument Detail filter box, enter a filter string, such as "TiUI" to show only relevant allocation information.
 
 5. Click and use your app while watching these values in Instruments:
 
-
-**Column**
-
-**Shows**
-
-**Notes**
-
-**Persistent Bytes
-(or Live Bytes)**
-
-Memory currently being used by active instances of the object in memory
-
-You may have a leak if this number continues to grow as you use your app.
-
-**#Persistent
-(or #Living)**
-
-Number of active instances of the object in memory
-
-You may have a leak if this number continues to grow as you use your app.
-
-**#Transient
-(or #Transitory)**
-
-Number of ready-to-be-garbage-collected instances of the object
-
-Transitory objects might or might not be in memory. It doesn't matter if this value grows over time. JavaScriptCore will garbage collect periodically; any transitory objects will be destroyed when it does so.
-
-**Total Bytes
-(or Overall Bytes)**
-
-Bytes used by Living and Transitory objects
-
-This number will grow until garbage collection runs.
-
-**#Total
-(or #Overall)**
-
-Sum of Living and Transitory
-
-This number will grow over time.
-
-**Transient / Total Bytes
-\[or # Allocations (Net / Overall)\]**
-
-A histogram of the current and total accounts.
+| **Column** | **Shows** | **Notes** |
+| --- | --- | --- |
+| **Persistent Bytes  <br />(or Live Bytes)** | Memory currently being used by active instances of the object in memory | You may have a leak if this number continues to grow as you use your app. |
+| **#Persistent  <br />(or #Living)** | Number of active instances of the object in memory | You may have a leak if this number continues to grow as you use your app. |
+| **#Transient  <br />(or #Transitory)** | Number of ready-to-be-garbage-collected instances of the object | Transitory objects might or might not be in memory. It doesn't matter if this value grows over time. JavaScriptCore will garbage collect periodically; any transitory objects will be destroyed when it does so. |
+| **Total Bytes  <br />(or Overall Bytes)** | Bytes used by Living and Transitory objects | This number will grow until garbage collection runs. |
+| **#Total  <br />(or #Overall)** | Sum of Living and Transitory | This number will grow over time. |
+| **Transient / Total Bytes  <br />\[or # Allocations (Net / Overall)\]** | A histogram of the current and total accounts. |  |
 
 If you make a change to your app, the most reliable way to gather new statistics in Instruments is to close it and start over.
 
@@ -249,31 +206,31 @@ Android's [DDMS Tool](https://developer.android.com/studio/profile/monitor.html)
 
 3. Copy the <application> node, a sample of which is shown here (your app name would vary, of course):
 
-  `<``application`  `android:icon``=``"@drawable/appicon"`
+    `<``application`  `android:icon``=``"@drawable/appicon"`
 
-  `android:label``=``"AppLeak"`  `android:name``=``"AppleakApplication"`
+    `android:label``=``"AppLeak"`  `android:name``=``"AppleakApplication"`
 
-  `android:debuggable``=``"false"``>`
+    `android:debuggable``=``"false"``>`
 
 4. Paste that into your app's tiapp.xml file, modifying the <android> node as shown:
 
-  `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
+    `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
 
-  `<``manifest``>`
+    `<``manifest``>`
 
-  `<``application`  `android:icon``=``"@drawable/appicon"`
+    `<``application`  `android:icon``=``"@drawable/appicon"`
 
-  `android:label``=``"AppLeak"`  `android:name``=``"AppleakApplication"`
+    `android:label``=``"AppLeak"`  `android:name``=``"AppleakApplication"`
 
-  `android:debuggable``=``"true"``>`
+    `android:debuggable``=``"true"``>`
 
-  `</``application``>`
+    `</``application``>`
 
-  `</``manifest``>`
+    `</``manifest``>`
 
-  `</``android``>`
+    `</``android``>`
 
-  Notice that we've set debuggable to true and added and completed a couple of the nodes.
+    Notice that we've set debuggable to true and added and completed a couple of the nodes.
 
 5. Save and build your app for the Android emulator again.
 
@@ -286,7 +243,6 @@ Android's [DDMS Tool](https://developer.android.com/studio/profile/monitor.html)
 9. Here's where you'll exercise your app and watch for memory leaks. For example, if you're using the AppLeak sample app linked to below, click the Test 1 button, click Back, and repeat. Memory and the object count in DDMS will grow, though that number includes objects that are ready to be garbage collected.
 
 10. Click Cause GC to force garbage collection. If there's a leak, the values of Allocated and # Objects won't return to their former values.
-
 
 These steps don't tell you exactly what is causing the leak in your app. Unlike Instruments, DDMS doesn't clearly show which objects are remaining in memory rather than being collected. You will need to test your app and watch the memory values to infer the potential causes of the leak.
 
@@ -302,18 +258,18 @@ Microsoft Visual Studio has "Diagnostic Tools" for monitoring memory usage.
 
 3. Select **Choose Target** drop down list and choose target to profile. For instance choose **Installed App...** for monitoring installed Windows Store app. This tool also supports analyzing target against simulators and remote machine. Please refer to [Remote Debugging](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k(vs.debug.remote.overview)&rd=true) for more information.
 
-  ![win1](/Images/appc/download/attachments/29004941/win1.png)
+    ![win1](/Images/appc/download/attachments/29004941/win1.png)
 4. Choose **Memory Usage** from **Available Tools** section, to investigate application memory to find issues such as memory leaks.
 
-  ![win3](/Images/appc/download/attachments/29004941/win3.png)
+    ![win3](/Images/appc/download/attachments/29004941/win3.png)
 5. Start monitoring by clicking **Start**
 
 6. When you want to take memory snapshot of the application, push **Take snapshot** button.
 
-  ![takesnap2](/Images/appc/download/attachments/29004941/takesnap2.png)
+    ![takesnap2](/Images/appc/download/attachments/29004941/takesnap2.png)
 7. Then Visual Studio shows native heap and allocation details when you take snapshot and Visual Studio finishes diagnostics session.
 
-  ![takesnapdetail](/Images/appc/download/attachments/29004941/takesnapdetail.png)
+    ![takesnapdetail](/Images/appc/download/attachments/29004941/takesnapdetail.png)
 
 For more information about Profiling Tools please refer to [Running Profiling Tools With or Without the Debugger](https://msdn.microsoft.com/en-us/library/mt695328.aspx).
 
@@ -335,13 +291,13 @@ You'll examine an app that has a memory leak deliberately included. You'll apply
 
 4. Open Instruments and attach it to your app's process:
 
-  1. In the Choose a Template window, click Allocations and then click Choose.
+    1. In the Choose a Template window, click Allocations and then click Choose.
 
-  2. Click Choose Target, Attach to Process, then under System, click AppLeak.
+    2. Click Choose Target, Attach to Process, then under System, click AppLeak.
 
-  3. Click Record. Wait a moment till data begins recording.
+    3. Click Record. Wait a moment till data begins recording.
 
-  4. In the Instrument Detail filter box, enter TiUITable.
+    4. In the Instrument Detail filter box, enter TiUITable.
 
 5. In the simulator, click the Test 1 button. In Instruments, the # Living column for TiUITableViewRowProxy should show 5 objects are in memory; these objects correspond to the rows in the table. Close the modal window, then click Test 1 again. This time, # Living should increase to 10. The original 5 rows were not released and 5 new rows are allocated in memory. While the actual usage is small, if you were to repeatedly show this window enough times the app would exhaust its available memory and crash.
 
@@ -351,18 +307,17 @@ You'll examine an app that has a memory leak deliberately included. You'll apply
 
 8. Add this code after the existing app-level event listener:
 
-  `test1win.addEventListener(``'close'``,` `function``() {`
+    `test1win.addEventListener(``'close'``,` `function``() {`
 
-  `Ti.App.removeEventListener(``'bad:idea'``, doSomething);`
+    `Ti.App.removeEventListener(``'bad:idea'``, doSomething);`
 
-  `});`
+    `});`
 
 9. Build your app for the simulator again.
 
 10. Repeat the Instruments testing steps listed above. This time, you should see the numbers in the # Transitory column increase as you open and close the Test 1 window. These values represent objects that have been garbage collected. You might see # Living go up above the 5 active rows occasionally; this simply reflects Instruments reacting more slowly than you clicking through the app. Note that because these objects are managed by garbage collection, you may not see them released immediately.
 
 11. Close the Simulator and Instruments; don't save the log results.
-
 
 The app-level listener added within build() remains in scope after the window is closed. This forces the objects the window contains to remain in scope, which means they cannot be garbage collected. When build() runs again, a new window and table are created, which also cannot be garbage collected. You've got a leak! By removing the event listener when the window closes, the rest of the objects can be marked as ready for garbage collection. Even though a new set of objects are created by build(), the old ones are gone from memory and this leak is fixed.
 

@@ -1,11 +1,10 @@
 {"title":"Photo Uploading and Resizing","weight":"30"}
 
-* [Custom photo sizes](#Customphotosizes)
+* [Custom photo sizes](#custom-photo-sizes)
 
-* [Synchronous photo uploading](#Synchronousphotouploading)
+* [Synchronous photo uploading](#synchronous-photo-uploading)
 
-* [Deprecated behavior](#Deprecatedbehavior)
-
+* [Deprecated behavior](#deprecated-behavior)
 
 Mobile Backend Services provides a great amount of flexibility when creating photo objects or adding photos to other objects.
 
@@ -371,58 +370,11 @@ After processing, all photo sizes will be available and processed=true will be s
 
 ACS applications used to create the following default photo sizes when a photo was created:
 
-Size Name
-
-Max Width
-
-Max Height
-
-Aspect Ratio
-
-square\_75
-
-75
-
-75
-
-square
-
-thumb\_100
-
-100
-
-67
-
-original
-
-small\_240
-
-240
-
-160
-
-original
-
-medium\_500
-
-500
-
-333
-
-original
-
-medium\_640
-
-640
-
-427
-
-original
-
-large\_1024
-
-1024
-
-683
-
-original
+| Size Name | Max Width | Max Height | Aspect Ratio |
+| --- | --- | --- | --- |
+| square\_75 | 75 | 75 | square |
+| thumb\_100 | 100 | 67 | original |
+| small\_240 | 240 | 160 | original |
+| medium\_500 | 500 | 333 | original |
+| medium\_640 | 640 | 427 | original |
+| large\_1024 | 1024 | 683 | original |

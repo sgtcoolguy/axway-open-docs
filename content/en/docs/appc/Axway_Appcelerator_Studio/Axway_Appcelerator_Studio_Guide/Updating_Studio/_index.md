@@ -12,7 +12,6 @@ There are three update types:
 
 * **Nightly** updates are bleeding-edge releases. This is straight from the developer server. As such, you will see new features first, but there is the possibility of blocker bugs or file corruption. Use it at your own risk.
 
-
 To update to one of these, see [Changing the Update Type](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Updating_Studio/Changing_the_Update_Type/). If you run into an error updating, see [Errors While Updating](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Studio_Troubleshooting/Errors_While_Updating/).
 
 ## Related documentation

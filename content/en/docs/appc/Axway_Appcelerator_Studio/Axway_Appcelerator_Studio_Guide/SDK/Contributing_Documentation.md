@@ -2,32 +2,31 @@
 
 This document provides basic information on how to contribute to the Appcelerator documentation space within Confluence.
 
-* [Keep it simple and consistent](#Keepitsimpleandconsistent)
+* [Keep it simple and consistent](#keep-it-simple-and-consistent)
 
-* [User macros and plugins](#Usermacrosandplugins)
+* [User macros and plugins](#user-macros-and-plugins)
 
-* [Table of contents](#Tableofcontents)
+* [Table of contents](#table-of-contents)
 
-* [Structure your document using headings h2 to h5](#Structureyourdocumentusingheadingsh2toh5)
+* [Structure your document using headings h2 to h5](#structure-your-document-using-headings-h2-to-h5)
 
-* [Emphasize important information using panels](#Emphasizeimportantinformationusingpanels)
+* [Emphasize important information using panels](#emphasize-important-information-using-panels)
 
-* [Use the code macro for syntax highlighting](#Usethecodemacroforsyntaxhighlighting)
+* [Use the code macro for syntax highlighting](#use-the-code-macro-for-syntax-highlighting)
 
-* [Inline code highlighting](#Inlinecodehighlighting)
+* [Inline code highlighting](#inline-code-highlighting)
 
-* [Writing navigation instructions](#Writingnavigationinstructions)
+* [Writing navigation instructions](#writing-navigation-instructions)
 
-* [Images](#Images)
+* [Images](#images)
 
-* [Labels](#Labels)
+* [Labels](#labels)
 
-  * [Labeling tips](#Labelingtips)
+    * [Labeling tips](#Labelingtips)
 
 * [Commenting](#Commenting)
 
 * [JIRA Linking](#JIRALinking)
-
 
 ## Keep it simple and consistent
 
@@ -83,7 +82,6 @@ When writing about how to navigate the Studio user interface, bold terms that re
 
 * To the right of the path for the **Error Log**, click **View** > **Display Log**.
 
-
 ## Images
 
 All images used in our documentation must be attached to the target page. Do not link images outside Confluence. We need to guarantee that the image is available to the doc site and offline users of our documentation.
@@ -96,9 +94,8 @@ Which results in:
 
 * Item 2
 
-  ![Screen_shot_2011-03-29_at_8.53.25_AM](/Images/appc/download/attachments/30083166/Screen_shot_2011-03-29_at_8.53.25_AM.png)
+    ![Screen_shot_2011-03-29_at_8.53.25_AM](/Images/appc/download/attachments/30083166/Screen_shot_2011-03-29_at_8.53.25_AM.png)
 * Item 3
-
 
 If the image has a large field of white around the item of interest, place a border around it via the Image Property feature.
 
@@ -108,23 +105,4 @@ Don't iterate the names of the images, reattach, and repoint the page to use dif
 
 ## Labels
 
-
-
-Labels are key words or tags that you can add to pages. Adding labels to pages is important as it helps promote the page in the search index.
-
-#### Labeling tips
-
-* Don't use plurals (e.g. contributes, documents, uploads)
-
-* Only use key terms (e.g. contribute documentation)
-
-* Don't use past or active tense of a term (e.g contributed, contributing); only use the present tense (e.g. contribute, upload)
-
-
-### Commenting
-
-Upon edit a page, add a comment as to what you changed and why. This helps everyone identify those changes in case of the need to revert the page back to a previous version.
-
-### JIRA Linking
-
-If you must use a JIRA ticket in your document, simply copy and paste the URL of the JIRA ticket. Confluence will handle the conversion of this link into a live JIRA link and present the JIRA link, status of ticket, and summary automatically. Don't include JIRA macros in public-facing documentation.
+<table class="sectionMacro conf-macro output-block"><colgroup><col> </colgroup><tbody><tr class="sectionMacroRow"><td class="columnMacro conf-macro output-block" rowspan="1" colspan="1"><p>Labels are key words or tags that you can add to pages. Adding labels to pages is important as it helps promote the page in the search index.</p><h4 id="src-30083166_ContributingDocumentation-Labelingtips" class="heading"><span>Labeling tips</span></h4><p></p><ul class=""><li><p>Don't use plurals (e.g. contributes, documents, uploads)</p></li><li><p>Only use key terms (e.g. contribute documentation)</p></li><li><p>Don't use past or active tense of a term (e.g contributed, contributing); only use the present tense (e.g. contribute, upload)</p></li></ul><h3 id="src-30083166_ContributingDocumentation-Commenting" class="heading"><span>Commenting</span></h3><p>Upon edit a page, add a comment as to what you changed and why. This helps everyone identify those changes in case of the need to revert the page back to a previous version.</p><h3 id="src-30083166_ContributingDocumentation-JIRALinking" class="heading"><span>JIRA Linking</span></h3><p></p><p>If you must use a JIRA ticket in your document, simply copy and paste the URL of the JIRA ticket. Confluence will handle the conversion of this link into a live JIRA link and present the JIRA link, status of ticket, and summary automatically. Don't include JIRA macros in public-facing documentation.</p></td></tr></tbody></table>

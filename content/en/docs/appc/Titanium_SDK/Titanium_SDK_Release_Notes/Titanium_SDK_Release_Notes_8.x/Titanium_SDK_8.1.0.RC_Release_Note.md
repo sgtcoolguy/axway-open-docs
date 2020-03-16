@@ -1,59 +1,58 @@
 {"title":"Titanium SDK 8.1.0.RC - 22 July 2019","weight":"30"}
 
-* [About this release](#Aboutthisrelease)
+* [About this release](#about-this-release)
 
-* [Notice of feature and behavior Changes](#NoticeoffeatureandbehaviorChanges)
+* [Notice of feature and behavior Changes](#notice-of-feature-and-behavior-changes)
 
-* [New features](#Newfeatures)
+* [New features](#new-features)
 
-  * [Android platform](#Androidplatform)
+    * [Android platform](#android-platform)
 
-  * [iOS platform](#iOSplatform)
+    * [iOS platform](#ios-platform)
 
-  * [Windows platform](#Windowsplatform)
+    * [Windows platform](#windows-platform)
 
-  * [Multiple platforms](#Multipleplatforms)
+    * [Multiple platforms](#multiple-platforms)
 
-* [Community credits](#Communitycredits)
+* [Community credits](#community-credits)
 
-* [Fixed issues](#Fixedissues)
+* [Fixed issues](#fixed-issues)
 
-  * [Android](#Android)
+    * [Android](#android)
 
-  * [iOS](#iOS)
+    * [iOS](#ios)
 
-  * [Windows](#Windows)
+    * [Windows](#windows)
 
-  * [Multiple platforms](#Multipleplatforms.1)
+    * [Multiple platforms](#multiple-platforms)
 
-* [Improvements](#Improvements)
+* [Improvements](#improvements)
 
-  * [Android](#Android.1)
+    * [Android](#android)
 
-  * [iOS](#iOS.1)
+    * [iOS](#ios)
 
-  * [Windows](#Windows.1)
+    * [Windows](#windows)
 
-  * [Multiple platforms](#Multipleplatforms.2)
+    * [Multiple platforms](#multiple-platforms)
 
-* [API changes](#APIchanges)
+* [API changes](#api-changes)
 
-  * [New APIs](#NewAPIs)
+    * [New APIs](#new-apis)
 
-* [SDK modules versions](#SDKmodulesversions)
+* [SDK modules versions](#sdk-modules-versions)
 
-  * [Android and iOS](#AndroidandiOS)
+    * [Android and iOS](#android-and-ios)
 
-  * [CommonJS](#CommonJS)
+    * [CommonJS](#commonjs)
 
-  * [Hyperloop](#Hyperloop)
-
+    * [Hyperloop](#hyperloop)
 
 ## About this release
 
 Titanium SDK 8.1.0 is a minor release of the SDK, addressing high-priority issues from previous releases.
 
-As of this release, Titanium SDK 8.0.x will not receive updates more than six months after the release of 8.1.0 (current) (2020-01-22). Any needed fixes will be in 8.1.x or later supported releases within the 8.x branch. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Titanium SDK 8.0.x will not receive updates more than six months after the release of 8.1.0 (current) (2020-01-22). Any needed fixes will be in 8.1.x or later supported releases within the 8.x branch. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. Node.js 10.13.0 will be the new minimum supported version with SDK 9.0.0.
 
@@ -61,8 +60,7 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 * [TIMOB-27250](https://jira.appcelerator.org/browse/TIMOB-27250) - Add Node 8 deprecation warning for SDK 9.0 release
 
-  * With the release of Titanium SDK 9.0.0, users should see a deprecation notice for Node.js if they are using a version lower than 10.13
-
+    * With the release of Titanium SDK 9.0.0, users should see a deprecation notice for Node.js if they are using a version lower than 10.13
 
 ## New features
 
@@ -70,241 +68,237 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 * [TIMOB-4041](https://jira.appcelerator.org/browse/TIMOB-4041) - Android: Add "separatorStyle" property to Ti.UI.ListView
 
-  * Added support for ListView.separatorStyle
+    * Added support for ListView.separatorStyle
 
-  * ListView.separatorStyle
+    * ListView.separatorStyle
 
-    `var` `win = Ti.UI.createWindow({ backgroundColor:` `'black'``, fullscreen:` `true` `});`
+        `var` `win = Ti.UI.createWindow({ backgroundColor:` `'black'``, fullscreen:` `true` `});`
 
-    `var` `listView = Ti.UI.createListView({`
+        `var` `listView = Ti.UI.createListView({`
 
-    `separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE,`
+        `separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE,`
 
-    `});`
+        `});`
 
-    `var` `section = Ti.UI.createListSection();`
+        `var` `section = Ti.UI.createListSection();`
 
-    `var` `sectionData = ;`
+        `var` `sectionData = ;`
 
-    `var` `i = 25;`
+        `var` `i = 25;`
 
-    `for` `(``var` `k = 0; k < 25; k++) {`
+        `for` `(``var` `k = 0; k < 25; k++) {`
 
-    `sectionData.push({`
+        `sectionData.push({`
 
-    `properties: {`
+        `properties: {`
 
-    `title:` `'Row '` `+ (k + 1)`
+        `title:` `'Row '` `+ (k + 1)`
 
-    `}`
+        `}`
 
-    `});`
+        `});`
 
-    `}`
+        `}`
 
-    `section.setItems(sectionData);`
+        `section.setItems(sectionData);`
 
-    `listView.sections = section;`
+        `listView.sections = section;`
 
-    `win.add(listView);`
+        `win.add(listView);`
 
-    `win.open();`
+        `win.open();`
 
 * [TIMOB-14460](https://jira.appcelerator.org/browse/TIMOB-14460) - Android: Add Ti.Platform.canOpenURL() support
 
-  * Added support for Ti.Platform.canOpenURL()
+    * Added support for Ti.Platform.canOpenURL()
 
 * [TIMOB-26793](https://jira.appcelerator.org/browse/TIMOB-26793) - Android: Hide radio buttons OptionDialog
 
-  * Added support to use OptionDialog without radio buttons
+    * Added support to use OptionDialog without radio buttons
 
-  * OptionDialog
+    * OptionDialog
 
-    `var` `win = Ti.UI.createWindow({`
+        `var` `win = Ti.UI.createWindow({`
 
-    `title:` `'Click window to test OptionDialog'``,`
+        `title:` `'Click window to test OptionDialog'``,`
 
-    `backgroundColor:` `'white'`
+        `backgroundColor:` `'white'`
 
-    `});`
+        `});`
 
-    `var` `opts = {`
+        `var` `opts = {`
 
-    `title:` `'Select an option'``,`
+        `title:` `'Select an option'``,`
 
-    `options:` `'Option 1'``,` `'Option 2'``,` `'Option 3'``,` `'Option 4'``,`
+        `options:` `'Option 1'``,` `'Option 2'``,` `'Option 3'``,` `'Option 4'``,`
 
-    `buttonNames:` `'Cancel'`
+        `buttonNames:` `'Cancel'`
 
-    `}`
+        `}`
 
-    `var` `dialog;`
+        `var` `dialog;`
 
-    `win.addEventListener(``'click'``,` `function``() {`
+        `win.addEventListener(``'click'``,` `function``() {`
 
-    `dialog = Ti.UI.createOptionDialog(opts);`
+        `dialog = Ti.UI.createOptionDialog(opts);`
 
-    `dialog.addEventListener(``'click'``, onSelectDialog);`
+        `dialog.addEventListener(``'click'``, onSelectDialog);`
 
-    `dialog.addEventListener(``'cancel'``,` `function``(e) {`
+        `dialog.addEventListener(``'cancel'``,` `function``(e) {`
 
-    `alert(``'Dialog canceled! e.cancel = '` `+ e.cancel +` `', e.index = '` `+ e.index);`
+        `alert(``'Dialog canceled! e.cancel = '` `+ e.cancel +` `', e.index = '` `+ e.index);`
 
-    `})`
+        `})`
 
-    `dialog.show();`
+        `dialog.show();`
 
-    `});`
+        `});`
 
-    `function` `onSelectDialog(e) {`
+        `function` `onSelectDialog(e) {`
 
-    `console.log(e);`
+        `console.log(e);`
 
-    `}`
+        `}`
 
-    `var` `btn = Ti.UI.createButton({`
+        `var` `btn = Ti.UI.createButton({`
 
-    `title:` `"toggle selected index"``,`
+        `title:` `"toggle selected index"``,`
 
-    `bottom: 5`
+        `bottom: 5`
 
-    `});`
+        `});`
 
-    `btn.addEventListener(``"click"``,` `function``() {`
+        `btn.addEventListener(``"click"``,` `function``() {`
 
-    `if` `(opts.selectedIndex == 0) {`
+        `if` `(opts.selectedIndex == 0) {`
 
-    `opts.selectedIndex = -1;`
+        `opts.selectedIndex = -1;`
 
-    `}` `else` `{`
+        `}` `else` `{`
 
-    `opts.selectedIndex = 0;`
+        `opts.selectedIndex = 0;`
 
-    `}`
+        `}`
 
-    `});`
+        `});`
 
-    `win.add(btn);`
+        `win.add(btn);`
 
-    `win.open();`
-
+        `win.open();`
 
 ### iOS platform
 
 * [TIMOB-18421](https://jira.appcelerator.org/browse/TIMOB-18421) - iOS: Add animation properties "springVelocity" and "dampingRatio"
 
-  * Added dampingRatio and springVelocity to allow iOS spring animations
+    * Added dampingRatio and springVelocity to allow iOS spring animations
 
 * [TIMOB-26523](https://jira.appcelerator.org/browse/TIMOB-26523) - iOS 11+: Support large title style (dynamic fonts)
 
-  * Added support for dynamic fonts in UIFontTextStyleLargeTitle
+    * Added support for dynamic fonts in UIFontTextStyleLargeTitle
 
-  * UIFontTextStyleLargeTitle
+    * UIFontTextStyleLargeTitle
 
-    `var` `win = Ti.UI.createWindow({`
+        `var` `win = Ti.UI.createWindow({`
 
-    `backgroundColor:` `'#fff'``,`
+        `backgroundColor:` `'#fff'``,`
 
-    `extendSafeArea:` `false`
+        `extendSafeArea:` `false`
 
-    `});`
+        `});`
 
-    `var` `scrollView = Ti.UI.createScrollView({ layout:` `'vertical'``, top: 50 });`
+        `var` `scrollView = Ti.UI.createScrollView({ layout:` `'vertical'``, top: 50 });`
 
-    `var` `textStyles =`
+        `var` `textStyles =`
 
-    `Ti.UI.TEXT_STYLE_HEADLINE,`
+        `Ti.UI.TEXT_STYLE_HEADLINE,`
 
-    `Ti.UI.TEXT_STYLE_SUBHEADLINE,`
+        `Ti.UI.TEXT_STYLE_SUBHEADLINE,`
 
-    `Ti.UI.TEXT_STYLE_BODY,`
+        `Ti.UI.TEXT_STYLE_BODY,`
 
-    `Ti.UI.TEXT_STYLE_FOOTNOTE,`
+        `Ti.UI.TEXT_STYLE_FOOTNOTE,`
 
-    `Ti.UI.TEXT_STYLE_CAPTION1,`
+        `Ti.UI.TEXT_STYLE_CAPTION1,`
 
-    `Ti.UI.TEXT_STYLE_CAPTION2,`
+        `Ti.UI.TEXT_STYLE_CAPTION2,`
 
-    `Ti.UI.TEXT_STYLE_CALLOUT,`
+        `Ti.UI.TEXT_STYLE_CALLOUT,`
 
-    `Ti.UI.TEXT_STYLE_TITLE1,`
+        `Ti.UI.TEXT_STYLE_TITLE1,`
 
-    `Ti.UI.TEXT_STYLE_TITLE2,`
+        `Ti.UI.TEXT_STYLE_TITLE2,`
 
-    `Ti.UI.TEXT_STYLE_TITLE3,`
+        `Ti.UI.TEXT_STYLE_TITLE3,`
 
-    `Ti.UI.TEXT_STYLE_LARGE_TITLE,`
+        `Ti.UI.TEXT_STYLE_LARGE_TITLE,`
 
-    `;`
+        `;`
 
-    `for` `(``var` `i = 0; i < textStyles.length; i++) {`
+        `for` `(``var` `i = 0; i < textStyles.length; i++) {`
 
-    `var` `textStyle = textStylesi;`
+        `var` `textStyle = textStylesi;`
 
-    `scrollView.add(Ti.UI.createLabel({`
+        `scrollView.add(Ti.UI.createLabel({`
 
-    `top: 20,`
+        `top: 20,`
 
-    `text: textStyle,`
+        `text: textStyle,`
 
-    `font: {`
+        `font: {`
 
-    `textStyle: textStyle`
+        `textStyle: textStyle`
 
-    `}`
+        `}`
 
-    `}));`
+        `}));`
 
-    `}`
+        `}`
 
-    `win.add(scrollView);`
+        `win.add(scrollView);`
 
-    `win.open();`
+        `win.open();`
 
 * [TIMOB-26599](https://jira.appcelerator.org/browse/TIMOB-26599) - iOS: Add "allowTranscoding" option to Ti.Media.openPhotoGallery()
 
-  * Added option to disable video compression when importing video
+    * Added option to disable video compression when importing video
 
 * [TIMOB-26973](https://jira.appcelerator.org/browse/TIMOB-26973) - iOS: Add accessibilityIdentifier
 
-  * Added accessibilityIdentifier which can compose views on iOS the same way content description is composed on Android
+    * Added accessibilityIdentifier which can compose views on iOS the same way content description is composed on Android
 
 * [TIMOB-27124](https://jira.appcelerator.org/browse/TIMOB-27124) - iOS 13: Support running on Xcode 11 Simulators
 
-  * Added support for Xcode 11
-
+    * Added support for Xcode 11
 
 ### Windows platform
 
 * [TIMOB-25778](https://jira.appcelerator.org/browse/TIMOB-25778) - Windows: Implement Ti.UI.Label.ellipsize
 
-  * Implemented Ti.UI.Label.ellipsize
+    * Implemented Ti.UI.Label.ellipsize
 
-  * TEXT\_ELLIPSIZE\_TRUNCATE\_START , TEXT\_ELLIPSIZE\_TRUNCATE\_MIDDLE, and TEXT\_ELLIPSIZE\_TRUNCATE\_MARQUEE are not supported on Windows because platform component doesn't support them
-
+    * TEXT\_ELLIPSIZE\_TRUNCATE\_START , TEXT\_ELLIPSIZE\_TRUNCATE\_MIDDLE, and TEXT\_ELLIPSIZE\_TRUNCATE\_MARQUEE are not supported on Windows because platform component doesn't support them
 
 ### Multiple platforms
 
 * [TIMOB-26571](https://jira.appcelerator.org/browse/TIMOB-26571) - TiAPI: Global process object compatible with Node.js
 
-  * Expanded the global process object to be more compatible with Node.js
+    * Expanded the global process object to be more compatible with Node.js
 
 * [TIMOB-26669](https://jira.appcelerator.org/browse/TIMOB-26669) - TiAPI: Create Node-compatible assert module API
 
-  * Added Node.js-compatible asset module API
+    * Added Node.js-compatible asset module API
 
 * [TIMOB-26670](https://jira.appcelerator.org/browse/TIMOB-26670) - TiAPI: Create Node-compatible util module API
 
-  * Added Node.js-compatible util module API
+    * Added Node.js-compatible util module API
 
-  * This API does not include every method of util.types, nor does it include util.extends(), util.isDeepStrictEqual(), or util.inspect
+    * This API does not include every method of util.types, nor does it include util.extends(), util.isDeepStrictEqual(), or util.inspect
 
-  * Currently supports depth, showHidden, and to some degree breakLength
+    * Currently supports depth, showHidden, and to some degree breakLength
 
 * [TIMOB-27150](https://jira.appcelerator.org/browse/TIMOB-27150) - Add ability to alias required modules in Titanium
 
-  * Added ability to alias required modules
-
+    * Added ability to alias required modules
 
 ## Community credits
 
@@ -340,7 +334,6 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 * Mark Henderson - [TIMOB-27098](https://jira.appcelerator.org/browse/TIMOB-27098)
 
-
 ## Fixed issues
 
 ### Android
@@ -374,7 +367,6 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 * [TIMOB-27188](https://jira.appcelerator.org/browse/TIMOB-27188) - Android: TabGroup crashes if tab "title" property is not set as of 8.0.2
 
 * [TIMOB-27232](https://jira.appcelerator.org/browse/TIMOB-27232) - Android: Setting Window "barColor" while using a theme without an ActionBar/TitleBar will cause a crash as of 8.1.0
-
 
 ### iOS
 
@@ -418,7 +410,6 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 * [TIMOB-27230](https://jira.appcelerator.org/browse/TIMOB-27230) - iOS: CLI prefers Xcode 11/iOS 13 even though Xcode 10.2.1 is selected
 
-
 ### Windows
 
 * [TIMOB-24418](https://jira.appcelerator.org/browse/TIMOB-24418) - Windows Phone: OptionDialog undefined error
@@ -445,11 +436,9 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 * [TIMOB-27257](https://jira.appcelerator.org/browse/TIMOB-27257) - \[Windows\] Error is shown when packaging a windows module
 
-
 ### Multiple platforms
 
 * [TIMOB-27204](https://jira.appcelerator.org/browse/TIMOB-27204) - CLI: apiversion validation always fails for native modules installed via npm
-
 
 ## Improvements
 
@@ -457,147 +446,143 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 * [TIMOB-26686](https://jira.appcelerator.org/browse/TIMOB-26686) - Android: Allow Ti.Network.HTTPClient "file" parameter to be set to Ti.Filesystem.File object like iOS
 
-  * Parity for File object support
+    * Parity for File object support
 
 * [TIMOB-26817](https://jira.appcelerator.org/browse/TIMOB-26817) - Android: Add parity for Window's barColor property.
 
-  * Parity for barColor property of Ti.UI.Window
+    * Parity for barColor property of Ti.UI.Window
 
 * [TIMOB-26848](https://jira.appcelerator.org/browse/TIMOB-26848) - Android: Re-add "baseURL" support to WebView.setHtml() that was removed in 6.0.3
 
-  * Re-implemented baseURL to support WebView.setHtml
+    * Re-implemented baseURL to support WebView.setHtml
 
 * [TIMOB-26877](https://jira.appcelerator.org/browse/TIMOB-26877) - Android: Ti.Database.install() should throw exception like iOS if source db file not found
 
-  * Modified Ti.Database.install() to throw an exception if given source database file was not found
+    * Modified Ti.Database.install() to throw an exception if given source database file was not found
 
 * [TIMOB-26909](https://jira.appcelerator.org/browse/TIMOB-26909) - Android: Improve V8 cold start performance
 
-  * Updated V8 to 7.3.492.26 which provides performance updates
+    * Updated V8 to 7.3.492.26 which provides performance updates
 
 * [TIMOB-26957](https://jira.appcelerator.org/browse/TIMOB-26957) - Android: Update V8 runtime to 7.3.492.26
 
-  * Updated V8 to 7.3.492.26 which provides performance updates
+    * Updated V8 to 7.3.492.26 which provides performance updates
 
 * [TIMOB-27042](https://jira.appcelerator.org/browse/TIMOB-27042) - Android: Update ti.playservices to 16.1.3
 
-  * Updated ti.playservices to version 16.1.3
+    * Updated ti.playservices to version 16.1.3
 
 * [TIMOB-27111](https://jira.appcelerator.org/browse/TIMOB-27111) - Android: Implement async Ti.Database.DB methods
 
-  * Implement asynchronous Ti.Database.DB methods for executing SQL queries
+    * Implement asynchronous Ti.Database.DB methods for executing SQL queries
 
-    * Ti.Database.DB.executeAsync(query, parameters\[\], callback)
+        * Ti.Database.DB.executeAsync(query, parameters\[\], callback)
 
-    * Ti.Database.DB.executeAllAsync(queries\[\], callback)
+        * Ti.Database.DB.executeAllAsync(queries\[\], callback)
 
-  * Implement method for executing multiple queries in one request
-
+    * Implement method for executing multiple queries in one request
 
 ### iOS
 
 * [TIMOB-26509](https://jira.appcelerator.org/browse/TIMOB-26509) - iOS: Allow Ti.UI.SearchBar to be displayed in navigation-bar
 
-  * Added support to show search bar navigation for TiUIListView and TiUITableView
+    * Added support to show search bar navigation for TiUIListView and TiUITableView
 
 * [TIMOB-26770](https://jira.appcelerator.org/browse/TIMOB-26770) - iOS: Use Swift 5 by default
 
-  * Added support for Swift 5
+    * Added support for Swift 5
 
 * [TIMOB-27043](https://jira.appcelerator.org/browse/TIMOB-27043) - Cache JS processing between builds
 
-  * Improved incremental app build times
+    * Improved incremental app build times
 
 * [TIMOB-27047](https://jira.appcelerator.org/browse/TIMOB-27047) - iOS: Version of SDKs default modules are not up to date
 
-  * Updated the following modules
+    * Updated the following modules
 
-    * urlSession from 2.1.0 to 2.2.0
+        * urlSession from 2.1.0 to 2.2.0
 
-    * ti.map from 3.1.0 to 3.1.2
+        * ti.map from 3.1.0 to 3.1.2
 
-    * ti.safaridialog from 1.1.1 to 3.1.0
+        * ti.safaridialog from 1.1.1 to 3.1.0
 
-    * ti.identity from 1.0.5 to 1.0.6
+        * ti.identity from 1.0.5 to 1.0.6
 
 * [TIMOB-27164](https://jira.appcelerator.org/browse/TIMOB-27164) - iOS: Implement async Ti.Database.DB methods
 
-  * Implement asynchronous Ti.Database.DB methods for executing SQL queries
+    * Implement asynchronous Ti.Database.DB methods for executing SQL queries
 
-    * Ti.Database.DB.executeAsync(query, parameters\[\], callback)
+        * Ti.Database.DB.executeAsync(query, parameters\[\], callback)
 
-    * Ti.Database.DB.executeAllAsync(queries\[\], callback)
+        * Ti.Database.DB.executeAllAsync(queries\[\], callback)
 
-  * Implement method for executing multiple queries in one request
-
+    * Implement method for executing multiple queries in one request
 
 ### Windows
 
 * [TIMOB-19965](https://jira.appcelerator.org/browse/TIMOB-19965) - Windows: Implement WebView.data
 
-  * Implemented WebView.data
+    * Implemented WebView.data
 
-  * WebView.data
+    * WebView.data
 
-    `var` `win = Ti.UI.createWindow({`
+        `var` `win = Ti.UI.createWindow({`
 
-    `backgroundColor:` `'green'`
+        `backgroundColor:` `'green'`
 
-    `});`
+        `});`
 
-    `var` `blob = Ti.Filesystem.getFile(``'app.js'``).read();`
+        `var` `blob = Ti.Filesystem.getFile(``'app.js'``).read();`
 
-    `var` `webview = Ti.UI.createWebView({`
+        `var` `webview = Ti.UI.createWebView({`
 
-    `data: blob,`
+        `data: blob,`
 
-    `height: Ti.UI.FILL,`
+        `height: Ti.UI.FILL,`
 
-    `width: Ti.UI.FILL`
+        `width: Ti.UI.FILL`
 
-    `});`
+        `});`
 
-    `webview.addEventListener(``'load'``,` `function` `() {`
+        `webview.addEventListener(``'load'``,` `function` `() {`
 
-    `Ti.API.info(``typeof` `webview.data);`
+        `Ti.API.info(``typeof` `webview.data);`
 
-    `});`
+        `});`
 
-    `win.add(webview);`
+        `win.add(webview);`
 
-    `win.open();`
+        `win.open();`
 
 * [TIMOB-26575](https://jira.appcelerator.org/browse/TIMOB-26575) - Windows: Support async variants of Ti.Network.TCP #read and #write
 
-  * Parity for async variants of Ti.Network.TCP
+    * Parity for async variants of Ti.Network.TCP
 
 * [TIMOB-26855](https://jira.appcelerator.org/browse/TIMOB-26855) - Windows: Add "baseURL" support to WebView.setHtml()
 
-  * Re-implemented baseURL to support WebView.setHtml
-
+    * Re-implemented baseURL to support WebView.setHtml
 
 ### Multiple platforms
 
 * [TIMOB-26574](https://jira.appcelerator.org/browse/TIMOB-26574) - TiAPI: Implement set/clearImmediate
 
-  * Implemented process.nextTick() and the global setImmediate/clearImmediate
+    * Implemented process.nextTick() and the global setImmediate/clearImmediate
 
 * [TIMOB-26729](https://jira.appcelerator.org/browse/TIMOB-26729) - TiAPI: Ship baseline polyfills in built SDK
 
-  * This update injects the core-js/regenerator polyfills into the bundle common JS SDK code we ship when we build
+    * This update injects the core-js/regenerator polyfills into the bundle common JS SDK code we ship when we build
 
 * [TIMOB-27045](https://jira.appcelerator.org/browse/TIMOB-27045) - Pass along ENV variables to process.env on development builds
 
-  * Write env.json file with ENV variables
+    * Write env.json file with ENV variables
 
 * [TIMOB-27182](https://jira.appcelerator.org/browse/TIMOB-27182) - Update Hyperloop to 4.0.3
 
-  * Android: Debugging in Hyperloop enabled projects
+    * Android: Debugging in Hyperloop enabled projects
 
-  * iOS: Debugging in Hyperloop enabled projects
+    * iOS: Debugging in Hyperloop enabled projects
 
-  * iOS: Correctly require minimum SDK 8.0.0
-
+    * iOS: Correctly require minimum SDK 8.0.0
 
 ## API changes
 
@@ -605,242 +590,58 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
 The following APIs are new or have expanded platform support in release 8.1.0.
 
-API
-
-Type
-
-Notes
-
-Titanium.Database.DB.executeAll
-
-method
-
-Synchronously executes an array of SQL statements against the database and returns an array of ResultSet.On failure, this will throw an Error that reports the failed index and partial results(New API, supported on Android.)
-
-Titanium.Database.DB.executeAllAsync
-
-method
-
-Asynchronously executes an array of SQL statements against the database and fires a callback with a possible Error, and an array of ResultSet.On failure, this will call the callback with an Error that reports the failed index, and a second arguemnt with the partial results(New API, supported on Android.)
-
-Titanium.Database.DB.executeAsync
-
-method
-
-Asynchronously executes an SQL statement against the database and fires a callback with a possible Error argument, and a second argument holding a possible ResultSet.(New API, supported on Android.)
-
-Titanium.Platform.canOpenURL
-
-method
-
-Returns whether the system is configured with a default application to handle the URL's protocol/scheme.(Added support for Android.)
-
-Titanium.UI.Animation.dampingRatio
-
-property
-
-The damping ratio for the spring animation as it approaches its quiescent state.(New API, supported on iPhone and iPad.)
-
-Titanium.UI.Animation.getDampingRatio
-
-method
-
-Access Titanium.UI.Animation.dampingRatio instead.
-
-Titanium.UI.Animation.getSpringVelocity
-
-method
-
-Access Titanium.UI.Animation.springVelocity instead.
-
-Titanium.UI.Animation.setDampingRatio
-
-method
-
-Set the value using Titanium.UI.Animation.dampingRatio instead.
-
-Titanium.UI.Animation.setSpringVelocity
-
-method
-
-Set the value using Titanium.UI.Animation.springVelocity instead.
-
-Titanium.UI.Animation.springVelocity
-
-property
-
-The initial spring velocity. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.ListView.getSeparatorStyle
-
-method
-
-Access Titanium.UI.ListView.separatorStyle instead.
-
-Titanium.UI.ListView.getShowSearchBarInNavBar
-
-method
-
-Access Titanium.UI.ListView.showSearchBarInNavBar instead.
-
-Titanium.UI.ListView.separatorStyle
-
-property
-
-Separator style constant. (Added support for Android.)
-
-Titanium.UI.ListView.setSeparatorStyle
-
-method
-
-Set the value using Titanium.UI.ListView.separatorStyle instead.
-
-Titanium.UI.ListView.setShowSearchBarInNavBar
-
-method
-
-Set the value using Titanium.UI.ListView.showSearchBarInNavBar instead.
-
-Titanium.UI.ListView.showSearchBarInNavBar
-
-property
-
-A Boolean indicating whether search bar will be in navigation bar. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.TEXT\_STYLE\_LARGE\_TITLE
-
-property
-
-Specifies the text style for the Font Object. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.TableView.getShowSearchBarInNavBar
-
-method
-
-Access Titanium.UI.TableView.showSearchBarInNavBar instead.
-
-Titanium.UI.TableView.setShowSearchBarInNavBar
-
-method
-
-Set the value using Titanium.UI.TableView.showSearchBarInNavBar instead.
-
-Titanium.UI.TableView.showSearchBarInNavBar
-
-property
-
-A Boolean indicating whether search bar will be in navigation bar. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.WebView.setHtml
-
-method
-
-Sets the value of html property. (Added support for Android.)
-
-Titanium.UI.Window.getHidesSearchBarWhenScrolling
-
-method
-
-Access Titanium.UI.Window.hidesSearchBarWhenScrolling instead.
-
-Titanium.UI.Window.hidesSearchBarWhenScrolling
-
-property
-
-A Boolean value indicating whether the integrated search bar is hidden when scrolling any underlying content. (New API, supported on iPhone and iPad.)
-
-Titanium.UI.Window.setHidesSearchBarWhenScrolling
-
-method
-
-Set the value using Titanium.UI.Window.hidesSearchBarWhenScrolling instead.
+| API | Type | Notes |
+| --- | --- | --- |
+| Titanium.Database.DB.executeAll | method | Synchronously executes an array of SQL statements against the database and returns an array of ResultSet.On failure, this will throw an Error that reports the failed index and partial results(New API, supported on Android.) |
+| Titanium.Database.DB.executeAllAsync | method | Asynchronously executes an array of SQL statements against the database and fires a callback with a possible Error, and an array of ResultSet.On failure, this will call the callback with an Error that reports the failed index, and a second arguemnt with the partial results(New API, supported on Android.) |
+| Titanium.Database.DB.executeAsync | method | Asynchronously executes an SQL statement against the database and fires a callback with a possible Error argument, and a second argument holding a possible ResultSet.(New API, supported on Android.) |
+| Titanium.Platform.canOpenURL | method | Returns whether the system is configured with a default application to handle the URL's protocol/scheme.(Added support for Android.) |
+| Titanium.UI.Animation.dampingRatio | property | The damping ratio for the spring animation as it approaches its quiescent state.(New API, supported on iPhone and iPad.) |
+| Titanium.UI.Animation.getDampingRatio | method | Access Titanium.UI.Animation.dampingRatio instead. |
+| Titanium.UI.Animation.getSpringVelocity | method | Access Titanium.UI.Animation.springVelocity instead. |
+| Titanium.UI.Animation.setDampingRatio | method | Set the value using Titanium.UI.Animation.dampingRatio instead. |
+| Titanium.UI.Animation.setSpringVelocity | method | Set the value using Titanium.UI.Animation.springVelocity instead. |
+| Titanium.UI.Animation.springVelocity | property | The initial spring velocity. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.ListView.getSeparatorStyle | method | Access Titanium.UI.ListView.separatorStyle instead. |
+| Titanium.UI.ListView.getShowSearchBarInNavBar | method | Access Titanium.UI.ListView.showSearchBarInNavBar instead. |
+| Titanium.UI.ListView.separatorStyle | property | Separator style constant. (Added support for Android.) |
+| Titanium.UI.ListView.setSeparatorStyle | method | Set the value using Titanium.UI.ListView.separatorStyle instead. |
+| Titanium.UI.ListView.setShowSearchBarInNavBar | method | Set the value using Titanium.UI.ListView.showSearchBarInNavBar instead. |
+| Titanium.UI.ListView.showSearchBarInNavBar | property | A Boolean indicating whether search bar will be in navigation bar. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.TEXT\_STYLE\_LARGE\_TITLE | property | Specifies the text style for the Font Object. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.TableView.getShowSearchBarInNavBar | method | Access Titanium.UI.TableView.showSearchBarInNavBar instead. |
+| Titanium.UI.TableView.setShowSearchBarInNavBar | method | Set the value using Titanium.UI.TableView.showSearchBarInNavBar instead. |
+| Titanium.UI.TableView.showSearchBarInNavBar | property | A Boolean indicating whether search bar will be in navigation bar. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.WebView.setHtml | method | Sets the value of html property. (Added support for Android.) |
+| Titanium.UI.Window.getHidesSearchBarWhenScrolling | method | Access Titanium.UI.Window.hidesSearchBarWhenScrolling instead. |
+| Titanium.UI.Window.hidesSearchBarWhenScrolling | property | A Boolean value indicating whether the integrated search bar is hidden when scrolling any underlying content. (New API, supported on iPhone and iPad.) |
+| Titanium.UI.Window.setHidesSearchBarWhenScrolling | method | Set the value using Titanium.UI.Window.hidesSearchBarWhenScrolling instead. |
 
 ## SDK modules versions
 
 ### Android and iOS
 
-Module
-
-Android version
-
-iOS version
-
-urlSession
-
-n/a
-
-2.2.0
-
-facebook
-
-8.0.0
-
-6.0.0
-
-ti\_coremotion
-
-n/a
-
-2.0.1
-
-ti\_map
-
-4.3.1
-
-3.1.2
-
-ti\_safaridialog
-
-n/a
-
-1.1.1
-
-ti\_webdialog
-
-1.1.0
-
-1.1.0
-
-ti\_touchid
-
-3.0.1
-
-2.1.4
-
-ti\_identity
-
-2.1.0
-
-1.0.6
-
-ti\_cloudpush
-
-6.0.1
-
-n/a
-
-ti\_playservices
-
-16.1.3
-
-n/a
+| Module | Android version | iOS version |
+| --- | --- | --- |
+| urlSession | n/a | 2.2.0 |
+| facebook | 8.0.0 | 6.0.0 |
+| ti\_coremotion | n/a | 2.0.1 |
+| ti\_map | 4.3.1 | 3.1.2 |
+| ti\_safaridialog | n/a | 1.1.1 |
+| ti\_webdialog | 1.1.0 | 1.1.0 |
+| ti\_touchid | 3.0.1 | 2.1.4 |
+| ti\_identity | 2.1.0 | 1.0.6 |
+| ti\_cloudpush | 6.0.1 | n/a |
+| ti\_playservices | 16.1.3 | n/a |
 
 ### CommonJS
 
-Module
-
-Version
-
-ti.cloud
-
-3.2.11
+| Module | Version |
+| --- | --- |
+| ti.cloud | 3.2.11 |
 
 ### Hyperloop
 
-Module
-
-Version
-
-Hyperloop
-
-4.0.3
+| Module | Version |
+| --- | --- |
+| Hyperloop | 4.0.3 |

@@ -1,23 +1,22 @@
 {"title":"Executing an External Command","weight":"50"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Calling an external application and displaying the results](#Callinganexternalapplicationanddisplayingtheresults)
+* [Calling an external application and displaying the results](#calling-an-external-application-and-displaying-the-results)
 
-  * [Single-line approach](#Single-lineapproach)
+    * [Single-line approach](#single-line-approach)
 
-  * [Blocks](#Blocks)
+    * [Blocks](#blocks)
 
-* [Passing the current contents of the editor to an external application](#Passingthecurrentcontentsoftheeditortoanexternalapplication)
+* [Passing the current contents of the editor to an external application](#passing-the-current-contents-of-the-editor-to-an-external-application)
 
-  * [Using the selection in the executed command](#Usingtheselectionintheexecutedcommand)
+    * [Using the selection in the executed command](#using-the-selection-in-the-executed-command)
 
-  * [Referencing STDIN](#ReferencingSTDIN)
+    * [Referencing STDIN](#referencing-stdin)
 
-* [Running different commands per OS](#RunningdifferentcommandsperOS)
+* [Running different commands per OS](#running-different-commands-per-os)
 
-* [Running a bash script](#Runningabashscript)
-
+* [Running a bash script](#running-a-bash-script)
 
 ## Overview
 
@@ -72,7 +71,6 @@ Often it is useful to select something in the editor and call an external tool b
 * **:document:** the entire current document
 
 * **:clipboard:** the contents of the clipboard
-
 
 ### Using the selection in the executed command
 

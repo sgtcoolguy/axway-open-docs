@@ -1,131 +1,33 @@
 {"title":"Studio Feature Comparison","weight":"40"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Appcelerator Studio](#AppceleratorStudio)
+* [Appcelerator Studio](#appcelerator-studio)
 
-* [Titanium Studio](#TitaniumStudio)
+* [Titanium Studio](#titanium-studio)
 
-* [Aptana Studio](#AptanaStudio)
-
+* [Aptana Studio](#aptana-studio)
 
 ## Overview
 
 Appcelerator and Titanium Studio are extended versions of [Aptana Studio](http://www.aptana.com/), the professional, open-source, Integrated Development Environment (IDE) tool for web development. In addition to Aptana Studio's web features, Titanium Studio adds the opportunity to develop Appcelerator Titanium Mobile projects.
 
-Project Type
-
-CSS
-
-HTML
-
-JavaScript
-
-Python
-
-Ruby
-
-Ruby on Rails
-
-PHP
-
-Titanium SDK
-
-Additional Features
-
-Appcelerator Studio
-
-![check](/Images/appc/download/attachments/30083020/check.png)
-
-![check](/Images/appc/download/attachments/30083020/check.png)
-
-![check](/Images/appc/download/attachments/30083020/check.png)
-
-Add-On\*
-
-Add-On\*
-
-Add-On\*
-
-Add-On\*
-
-![check](/Images/appc/download/attachments/30083020/check.png)
-
-![check](/Images/appc/download/attachments/30083020/check.png)
-
-Titanium Studio
-
-![check](/Images/appc/download/attachments/30083020/check.png)
-
-![check](/Images/appc/download/attachments/30083020/check.png)
-
-![check](/Images/appc/download/attachments/30083020/check.png)
-
-Add-On\*
-
-Add-On\*
-
-Add-On\*
-
-Add-On\*
-
-![check](/Images/appc/download/attachments/30083020/check.png)
-
-![error](/Images/appc/download/attachments/30083020/error.png)
-
-Aptana Studio
-
-![check](/Images/appc/download/attachments/30083020/check.png)
-
-![check](/Images/appc/download/attachments/30083020/check.png)
-
-![check](/Images/appc/download/attachments/30083020/check.png)
-
-![check](/Images/appc/download/attachments/30083020/check.png)
-
-![check](/Images/appc/download/attachments/30083020/check.png)
-
-![check](/Images/appc/download/attachments/30083020/check.png)
-
-![check](/Images/appc/download/attachments/30083020/check.png)
-
-![error](/Images/appc/download/attachments/30083020/error.png)
-
-![error](/Images/appc/download/attachments/30083020/error.png)
+| Project Type | CSS | HTML | JavaScript | Python | Ruby | Ruby on Rails | PHP | Titanium SDK | Additional Features |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Appcelerator Studio | ![check](/Images/appc/download/attachments/30083020/check.png) | ![check](/Images/appc/download/attachments/30083020/check.png) | ![check](/Images/appc/download/attachments/30083020/check.png) | Add-On\* | Add-On\* | Add-On\* | Add-On\* | ![check](/Images/appc/download/attachments/30083020/check.png) | ![check](/Images/appc/download/attachments/30083020/check.png) |
+| Titanium Studio | ![check](/Images/appc/download/attachments/30083020/check.png) | ![check](/Images/appc/download/attachments/30083020/check.png) | ![check](/Images/appc/download/attachments/30083020/check.png) | Add-On\* | Add-On\* | Add-On\* | Add-On\* | ![check](/Images/appc/download/attachments/30083020/check.png) | ![error](/Images/appc/download/attachments/30083020/error.png) |
+| Aptana Studio | ![check](/Images/appc/download/attachments/30083020/check.png) | ![check](/Images/appc/download/attachments/30083020/check.png) | ![check](/Images/appc/download/attachments/30083020/check.png) | ![check](/Images/appc/download/attachments/30083020/check.png) | ![check](/Images/appc/download/attachments/30083020/check.png) | ![check](/Images/appc/download/attachments/30083020/check.png) | ![check](/Images/appc/download/attachments/30083020/check.png) | ![error](/Images/appc/download/attachments/30083020/error.png) | ![error](/Images/appc/download/attachments/30083020/error.png) |
 
 \*Refer to [Adding PHP Ruby or Python Support](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/Adding_PHP_Ruby_or_Python_Support/) for installing these add-on modules. As they are so closely related, we often use the term "Studio" to refer to Appcelerator, Titanium, and Aptana Studio together.
 
 When updating or adding Eclipse plugins or software, the software repository varies with the version of Studio:
 
-Appcelerator/Titanium Studio Version
-
-Eclipse Repository Name
-
-Eclipse Version
-
-2.1.x
-
-Helios
-
-3.6
-
-3.0.x - 3.1.3
-
-Indigo
-
-3.7
-
-3.1.4 - 3.4.x
-
-Kepler
-
-4.3
-
-4.0.0 - latest
-
-Luna
-
-4.4
+| Appcelerator/Titanium Studio Version | Eclipse Repository Name | Eclipse Version |
+| --- | --- | --- |
+| 2.1.x | Helios | 3.6 |
+| 3.0.x - 3.1.3 | Indigo | 3.7 |
+| 3.1.4 - 3.4.x | Kepler | 4.3 |
+| 4.0.0 - latest | Luna | 4.4 |
 
 ## Appcelerator Studio
 

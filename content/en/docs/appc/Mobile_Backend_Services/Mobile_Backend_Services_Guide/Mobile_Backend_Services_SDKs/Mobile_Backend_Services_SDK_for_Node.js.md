@@ -1,32 +1,30 @@
 {"title":"Mobile Backend Services SDK for Node.js","weight":"40"}
 
-* [Installation](#Installation)
+* [Installation](#installation)
 
-* [API usage](#APIusage)
+* [API usage](#api-usage)
 
-  * [Setup](#Setup)
+    * [Setup](#setup)
 
-  * [Standard Mobile Back Services APIs](#StandardMobileBackServicesAPIs)
+    * [Standard Mobile Back Services APIs](#standard-mobile-back-services-apis)
 
-    * [User login example](#Userloginexample)
+        * [User login example](#user-login-example)
 
-    * [Photo or file upload example](#Photoorfileuploadexample)
+        * [Photo or file upload example](#photo-or-file-upload-example)
 
-  * [Generic Mobile Back Services APIs](#GenericMobileBackServicesAPIs)
+    * [Generic Mobile Back Services APIs](#generic-mobile-back-services-apis)
 
-* [User login session management](#UserloginsessionmanagementUserloginsessionmanagement)
+* [User login session management](#user-login-session-management)
 
-  * [Cookie-based session management](#Cookie-basedsessionmanagement)
+    * [Cookie-based session management](#cookie-based-session-management)
 
-  * [Manual session management](#Manualsessionmanagement)
-
+    * [Manual session management](#manual-session-management)
 
 The Mobile Back Services (MBS) Node SDK lets you easily integrate MBS services with your Node.js application. The SDK provides two APIs:
 
 * An API for each class and method.
 
 * A set of generic REST APIs.
-
 
 Your Node application can optionally handle session data itself. For more information, see the [User login session management](#Userloginsessionmanagement) section.
 
@@ -70,7 +68,6 @@ You may optionally pass the constructor an object as the second argument. You ma
 
 * responseJsonDepth: Sets the response\_json\_depth parameter for all API calls. By default, the value is 1. You may set the value from 1 to 8.
 
-
 For example:
 
 `var` `ArrowDB = require(``'arrowdb'``),`
@@ -106,7 +103,6 @@ The callback is passed an Error object (or null if successful) and the results o
 * response: [Node.js http.ServerResponse object](https://nodejs.org/docs/latest/api/http.html#http_class_http_serverresponse).
 
 * statusCode: HTTP status code.
-
 
 To access the results from the returned object, use the object's body property to access the HTTP response body. The body object will contain a meta object, which contains the metadata of the response and a response object, which contains the results of the method call.
 
@@ -254,7 +250,6 @@ The MBS Node SDK provides the following four methods for making generic calls to
 
 * sdkObject.delete(path, parameters, callback)
 
-
 Each method is passed the following parameters:
 
 * path: The path of the REST resource to call relative to the base URL (by default, it is https://api.cloud.appcelerator.com).
@@ -262,7 +257,6 @@ Each method is passed the following parameters:
 * parameters: The parameters to pass to the method. It can be omitted.
 
 * callback: The function to call when the request completes. The callback is passed an Error object (or null if successful) and the results of the method call.
-
 
 Below is a complete REST example that is functionally equivalent to the previous version that used the standard MBS APIs.
 
@@ -305,7 +299,6 @@ Most of the MBS APIs require a user to be logged in, so it is important to have 
 * **Cookie-based**. Cookies are used to store session information and passed between the client and the server.
 
 * **Session ID**. Must pass a session ID with every API call.
-
 
 These methods are described in the following sections.
 
@@ -358,7 +351,6 @@ The example below retrieves and sets the cookie string:
 * The MBS Node SDK sets the cookie header in the response object, which must be done _before_ sending any response data (for example, by calling the response object's send method). If you send any response data _before_ the API callback function is invoked, the MBS Node SDK will throw an exception when it tries to set the cookie headers, with a message like, "Can't render headers after they are sent to the client."
 
 * Session information is stored in a cookie named \_session\_id. You can also manually set this session ID cookie on the client-side. For example, if you are calling your AMPLIFY Runtime Services from a Titanium application that uses MBS directly, you can retrieve the active session ID from the Titanium.Cloud.sessionId property, and adding a Set-Cookie header when requesting the AMPLIFY Runtime Services.
-
 
 ### Manual session management
 

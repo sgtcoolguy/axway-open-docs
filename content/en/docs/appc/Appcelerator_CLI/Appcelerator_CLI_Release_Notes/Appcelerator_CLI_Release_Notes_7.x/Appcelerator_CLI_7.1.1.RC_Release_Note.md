@@ -2,42 +2,23 @@
 
 Appcelerator CLI 7.1.1.RC is a patch release that includes one improvement and several bug fixes.
 
-As of this GA release, the previous CLI patch release is no longer supported. End of support for this version will be up to 2020-02-22 or until the next patch release. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous CLI patch release is no longer supported. End of support for this version will be up to 2020-02-22 or until the next patch release. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Component versions
 
 The following components are shipped with CLI 7.1.1:
 
-Alloy
-
-1.14.1
-
-API Builder
-
-3.2.13
-
-Cloud CLI
-
-2.1.2
-
-Titanium CLI
-
-5.2.1
-
-Daemon
-
-1.1.3
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Alloy</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p class="p1">1.14.1</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>API Builder</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p class="p1">3.2.13</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Cloud CLI</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p class="p1">2.1.2</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium CLI</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p class="p1">5.2.1</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Daemon</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p class="p1">1.1.3</p></td></tr></tbody></table>
 
 ## Improvements
 
 * [ALOY-1697](https://jira.appcelerator.org/browse/ALOY-1697) - Add WebView "onlink" callback support
 
-  * added support for setting onlink in views
+    * added support for setting onlink in views
 
 * [CLI-1362](https://jira.appcelerator.org/browse/CLI-1362) - Update to latest acs cli
 
-  * Updated acs to version 2.1.2
-
+    * Updated acs to version 2.1.2
 
 ## Fixed issues
 

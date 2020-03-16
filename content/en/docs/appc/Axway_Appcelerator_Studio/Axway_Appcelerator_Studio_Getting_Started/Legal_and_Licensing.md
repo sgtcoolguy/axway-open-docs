@@ -2,22 +2,21 @@
 
 This document provides common legal and licensing questions and answers for Appcelerator Studio.
 
-* [Can I make changes, add to, or combine Aptana products with other things and redistribute the result?](#CanImakechanges,addto,orcombineAptanaproductswithotherthingsandredistributetheresult?)
+* [Can I make changes, add to, or combine Aptana products with other things and redistribute the result?](#can-i-make-changes,-add-to,-or-combine-aptana-products-with-other-things-and-redistribute-the-result?)
 
-* [Can I redistribute Aptana Studio as is, without any modifications?](#CanIredistributeAptanaStudioasis,withoutanymodifications?)
+* [Can I redistribute Aptana Studio as is, without any modifications?](#can-i-redistribute-aptana-studio-as-is,-without-any-modifications?)
 
-* [Can I repackage Aptana Studio and distribute it?](#CanIrepackageAptanaStudioanddistributeit?)
+* [Can I repackage Aptana Studio and distribute it?](#can-i-repackage-aptana-studio-and-distribute-it?)
 
-* [Do I need to pay a license fee for using Aptana Studio to develop a commercial web site?](#DoIneedtopayalicensefeeforusingAptanaStudiotodevelopacommercialwebsite?)
+* [Do I need to pay a license fee for using Aptana Studio to develop a commercial web site?](#do-i-need-to-pay-a-license-fee-for-using-aptana-studio-to-develop-a-commercial-web-site?)
 
-* [Does the GPL v3 affect the existing work that I developed under other licenses?](#DoestheGPLv3affecttheexistingworkthatIdevelopedunderotherlicenses?)
+* [Does the GPL v3 affect the existing work that I developed under other licenses?](#does-the-gpl-v3-affect-the-existing-work-that-i-developed-under-other-licenses?)
 
-* [If I make modifications or customizations to Aptana products for internal use, must I make these changes publicly available?](#IfImakemodificationsorcustomizationstoAptanaproductsforinternaluse,mustImakethesechangespubliclyavailable?)
+* [If I make modifications or customizations to Aptana products for internal use, must I make these changes publicly available?](#if-i-make-modifications-or-customizations-to-aptana-products-for-internal-use,-must-i-make-these-changes-publicly-available?)
 
-* [May I develop commercial web sites using Aptana Studio?](#MayIdevelopcommercialwebsitesusingAptanaStudio?)
+* [May I develop commercial web sites using Aptana Studio?](#may-i-develop-commercial-web-sites-using-aptana-studio?)
 
-* [Why does Aptana use a dual licensing model?](#WhydoesAptanauseaduallicensingmodel?)
-
+* [Why does Aptana use a dual licensing model?](#why-does-aptana-use-a-dual-licensing-model?)
 
 ## Can I make changes, add to, or combine Aptana products with other things and redistribute the result?
 

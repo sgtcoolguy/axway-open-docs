@@ -9,7 +9,7 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 To configure a query a user flow:
 
 1. Click the **Create Flow** icon associated with querying a simple user.
-  The API Orchestration user interface is displayed.
+    The API Orchestration user interface is displayed.
 
 2. Select and pull the simpleusers flow-node onto the flow editor from the Models list. Note that the Start flow-node is automatically connected to the input of the simpleusers flow-node.
 
@@ -39,7 +39,7 @@ To configure a query a user flow:
 
 15. Connect the next output of the Query a user flow-node to the input of the Query succeeded flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage nodes](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Flows/Manage_Nodes/). The completed flow is displayed.
 
-  ![Query](/Images/appc/download/attachments/52298579/Query.png)
+    ![Query](/Images/appc/download/attachments/52298579/Query.png)
 16. Click **Save**.
 
 17. On the next screen, click **Proceed**. The server will be restarted and the Query a user flow will be saved and enabled.

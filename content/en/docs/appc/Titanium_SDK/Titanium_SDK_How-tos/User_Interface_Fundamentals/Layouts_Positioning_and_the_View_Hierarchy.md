@@ -1,37 +1,36 @@
 {"title":"Layouts Positioning and the View Hierarchy","weight":"20"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [Units](#Units)
+    * [Units](#units)
 
-    * [Setting default units in tiapp.xml](#Settingdefaultunitsintiapp.xml)
+        * [Setting default units in tiapp.xml](#setting-default-units-in-tiapp.xml)
 
-  * [The coordinates grid](#Thecoordinatesgrid)
+    * [The coordinates grid](#the-coordinates-grid)
 
-  * [Positioning and dimensions of elements](#Positioninganddimensionsofelements)
+    * [Positioning and dimensions of elements](#positioning-and-dimensions-of-elements)
 
-  * [Layout modes](#Layoutmodes)
+    * [Layout modes](#layout-modes)
 
-  * [Auto-size behaviors](#Auto-sizebehaviors)
+    * [Auto-size behaviors](#auto-size-behaviors)
 
-    * [ScrollView content sizes](#ScrollViewcontentsizes)
+        * [ScrollView content sizes](#scrollview-content-sizes)
 
-  * [zIndex & default stacking](#zIndex&defaultstacking)
+    * [zIndex & default stacking](#zindex-&-default-stacking)
 
-  * [Hands-on practice](#Hands-onpractice)
+    * [Hands-on practice](#hands-on-practice)
 
-    * [Goal](#Goal)
+        * [Goal](#goal)
 
-    * [Resources](#Resources)
+        * [Resources](#resources)
 
-    * [Steps](#Steps)
+        * [Steps](#steps)
 
-* [Summary](#Summary)
+* [Summary](#summary)
 
-* [References and further reading](#Referencesandfurtherreading)
-
+* [References and further reading](#references-and-further-reading)
 
 ## Objective
 
@@ -53,7 +52,6 @@ In this guide, we're going to explore the following factors that affect how you 
 
 * zIndex & default stacking order
 
-
 ### Units
 
 Placement and dimensions of UI elements are specified using a numeric value plus an implicit or explicit unit of measurement. If you don't specify a unit of measurement, the "system" unit is assumed. You can also set a default unit of measurement to use in your app by setting a tiapp.xml property.
@@ -64,35 +62,33 @@ First, a couple of definitions we'll use in the rest of this guide:
 
 * **System unit**: A platform-dependent unit which is the default for how the system presents its view information to the native layout system. On Android this is pixels; on iOS it is dip.
 
-
 Supported units are:
 
 * Absolute measurements
 
-  * **px**: pixels
+    * **px**: pixels
 
-  * **mm**: millimeters
+    * **mm**: millimeters
 
-  * **cm**: centimeters
+    * **cm**: centimeters
 
-  * **in**: inches
+    * **in**: inches
 
-  * **dp/dip**: Density-independent pixels (we sometimes call these "points")
+    * **dp/dip**: Density-independent pixels (we sometimes call these "points")
 
-    * Android: actual pixels = dip \* (screen density) / 160
+        * Android: actual pixels = dip \* (screen density) / 160
 
-    * iOS: actual pixels = dip \* (screen density) / 163 (effectively 1dip=1px on standard, 1dip=2px on retina)
+        * iOS: actual pixels = dip \* (screen density) / 163 (effectively 1dip=1px on standard, 1dip=2px on retina)
 
-    * Windows: actual pixels = dip \* (screen density) / 96
+        * Windows: actual pixels = dip \* (screen density) / 96
 
 * Relative measurements
 
-  * **%**: Percentage of the size of the parent.
+    * **%**: Percentage of the size of the parent.
 
-    * For x-axis values (width, left, right, center.x) this is relative to the parent's width
+        * For x-axis values (width, left, right, center.x) this is relative to the parent's width
 
-    * For y-axis values (height, top, bottom, center.y) this is relative to the parent's height.
-
+        * For y-axis values (height, top, bottom, center.y) this is relative to the parent's height.
 
 You would use these units of measurement like this:
 
@@ -130,12 +126,11 @@ Titanium uses a grid coordinate system for layout. Grid locations are based on t
 
 * Android device screen sizes vary. Considering these emulator examples:
 
-  * HVGA emulator is 320 x 480 px
+    * HVGA emulator is 320 x 480 px
 
-  * WVGA800 emulator is 480 x 800 px
+    * WVGA800 emulator is 480 x 800 px
 
-  * WVGA854 emulator is 480 x 854 px
-
+    * WVGA854 emulator is 480 x 854 px
 
 Remember that you can specify dp or dip units on Android (and even set an app-level default in tiapp.xml) to achieve the same density-independent grid as offered by default on iOS.
 
@@ -152,7 +147,6 @@ Elements in Titanium are positioned relative to their parent container, such as 
 * right property which is relative to the parent's right edge. (Zero is located at the parent's right edge and higher numbers are to the left of the right edge.)
 
 * center property specifying the position of the view's center point relative to the parent's top/left corner.
-
 
 (A read-only size property is available, which provides the width and height of a view after it has been laid out by the window. This property won't provide the actual size of the view until a postlayout event has been received.)
 
@@ -244,7 +238,6 @@ Titanium Windows and Views can employ one of three layout modes by setting its l
 
 * horizontal - This layout mode lines up child views horizontally from left to right, starting from the parent's top/left corner. If horizontalWrap is set true, will wrap views to the next row if they don't fit on the current row. The child's left property becomes an offset. It's the position from the previous sibling's right edge and can be used as padding.
 
-
 Here's an example of these layouts in action:
 ![vert_and_horiz](/Images/appc/download/attachments/29004895/vert_and_horiz.png)
 
@@ -322,56 +315,21 @@ You can auto-size a UI element by setting its width and height properties to one
 
 * Ti.UI.FILL will set the width or height to fill the parent. For a composite layout , this will be equal to the parent's width or height and will disregard previously added child views. For horizontal and vertical layouts, this takes into account previously added child views and will fill the remaining width or height available within the parent
 
-
 UI components exhibit default SIZE or FILL behaviors, as listed in this table:
 
-SIZE views
-
-FILL views
-
-Mixed behavior
-
-Button
-
-Window
-
-Toolbar: FILL for width, SIZE for height
-
-Label
-
-View
-
-TableViewRow: FILL for width, SIZE for height
-
-ImageView
-
-TabGroup
-
-Slider: FILL for width, SIZE for height
-
-ProgressBar
-
-TableView
-
-Switch
-
-WebView
-
-TextArea
-
-ScrollView
-
-TextField
-
-ScrollableView
-
-Picker
-
-SearchBar
-
-ButtonBar
-
-TableViewSection
+| SIZE views | FILL views | Mixed behavior |
+| --- | --- | --- |
+| Button | Window | Toolbar: FILL for width, SIZE for height |
+| Label | View | TableViewRow: FILL for width, SIZE for height |
+| ImageView | TabGroup | Slider: FILL for width, SIZE for height |
+| ProgressBar | TableView |  |
+| Switch | WebView |  |
+| TextArea | ScrollView |  |
+| TextField | ScrollableView |  |
+| Picker |  |  |
+| SearchBar |  |  |
+| ButtonBar |  |  |
+| TableViewSection |  |  |
 
 #### ScrollView content sizes
 
@@ -380,7 +338,6 @@ In the case of ScrollView, contentWidth and contentHeight may also be set to "au
 * When all children views have FILL behavior, the content area of the scroll view will be clipped to the physical size of the scroll view
 
 * Otherwise, the content area will grow according to the bottom offset of the bottom-most View and the right offset of right-most View. In some cases the bottom-most and right-most View may be the same View.
-
 
 ### zIndex & default stacking
 
@@ -413,7 +370,6 @@ To perform the steps in this activity, you will need the gridlines module from [
 6. Adjust the positioning properties of the various boxes to test positioning rules.
 
 7. Try setting the window's layout property to vertical or horizontal to see the effect on the lines and boxes. Adjust the code so that the boxes are visible.
-
 
 ## Summary
 

@@ -4,106 +4,105 @@ To see an example of this spec in use, check out the documentation for Titanium.
 
 **Contents**
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Goals](#Goals)
+* [Goals](#goals)
 
-* [Definitions](#Definitions)
+* [Definitions](#definitions)
 
-* [Proposed Documentation Specification](#ProposedDocumentationSpecification)
+* [Proposed Documentation Specification](#proposed-documentation-specification)
 
-  * [YAML](#YAML)
+    * [YAML](#yaml)
 
-    * [Justification for choosing YAML](#JustificationforchoosingYAML)
+        * [Justification for choosing YAML](#justification-for-choosing-yaml)
 
-      * [Alternatives](#Alternatives)
+            * [Alternatives](#alternatives)
 
-      * [Tool Support](#ToolSupport)
+            * [Tool Support](#tool-support)
 
-      * [Significant Whitespace](#SignificantWhitespace)
+            * [Significant Whitespace](#significant-whitespace)
 
-      * [Precedent](#Precedent)
+            * [Precedent](#precedent)
 
-  * [Data Types](#DataTypes)
+    * [Data Types](#data-types)
 
-    * [Simple Data Types](#SimpleDataTypes)
+        * [Simple Data Types](#simple-data-types)
 
-    * [Compound Data Types](#CompoundDataTypes)
+        * [Compound Data Types](#compound-data-types)
 
-    * [Arrays](#Arrays)
+        * [Arrays](#arrays)
 
-    * [Pseudo-Types](#Pseudo-Types)
+        * [Pseudo-Types](#pseudo-types)
 
-  * [Inheritance](#Inheritance)
+    * [Inheritance](#inheritance)
 
-  * [Folders and Files](#FoldersandFiles)
+    * [Folders and Files](#folders-and-files)
 
-    * [File Extension](#FileExtension)
+        * [File Extension](#file-extension)
 
-    * [Three New Documentation Files: Proxy.yml, Module.yml and Event.yml](#ThreeNewDocumentationFiles:Proxy.yml,Module.ymlandEvent.yml)
+        * [Three New Documentation Files: Proxy.yml, Module.yml and Event.yml](#three-new-documentation-files:-proxy.yml,-module.yml-and-event.yml)
 
-    * [Indentation Within Files](#IndentationWithinFiles)
+        * [Indentation Within Files](#indentation-within-files)
 
-      * [A Note About Indentation in Sequences](#ANoteAboutIndentationinSequences)
+            * [A Note About Indentation in Sequences](#a-note-about-indentation-in-sequences)
 
-  * [Documentation of Types](#DocumentationofTypes)
+    * [Documentation of Types](#documentation-of-types)
 
-    * [YAML Specification for Type Documentation](#YAMLSpecificationforTypeDocumentation)
+        * [YAML Specification for Type Documentation](#yaml-specification-for-type-documentation)
 
-      * [A Type Documentation is a YAML Document](#ATypeDocumentationisaYAMLDocument)
+            * [A Type Documentation is a YAML Document](#a-type-documentation-is-a-yaml-document)
 
-      * [Valid Keys in the Documentation of a Type](#ValidKeysintheDocumentationofaType)
+            * [Valid Keys in the Documentation of a Type](#valid-keys-in-the-documentation-of-a-type)
 
-      * [Method Specification](#MethodSpecification)
+            * [Method Specification](#method-specification)
 
-        * [Method Parameter Specification](#MethodParameterSpecification)
+                * [Method Parameter Specification](#MethodParameterSpecification)
 
-        * [Method Documentation Definitions](#MethodDocumentationDefinitions)
+                * [Method Documentation Definitions](#MethodDocumentationDefinitions)
 
-      * [Property Specification](#PropertySpecification)
+            * [Property Specification](#property-specification)
 
-      * [Event Specification](#EventSpecification)
+            * [Event Specification](#event-specification)
 
-        * [Event Listener Object Property Specification](#EventListenerObjectPropertySpecification)
+                * [Event Listener Object Property Specification](#EventListenerObjectPropertySpecification)
 
-    * [Free-Form Text Values](#Free-FormTextValues)
+        * [Free-Form Text Values](#free-form-text-values)
 
-      * [Short One-Liners](#ShortOne-Liners)
+            * [Short One-Liners](#short-one-liners)
 
-      * [Multiline with Folding](#MultilinewithFolding)
+            * [Multiline with Folding](#multiline-with-folding)
 
-      * [Preserving Line Breaks and Inserting Code Blocks](#PreservingLineBreaksandInsertingCodeBlocks)
+            * [Preserving Line Breaks and Inserting Code Blocks](#preserving-line-breaks-and-inserting-code-blocks)
 
-        * [Language of Code Blocks](#LanguageofCodeBlocks)
+                * [Language of Code Blocks](#LanguageofCodeBlocks)
 
-      * [Referring to External Files](#ReferringtoExternalFiles)
+            * [Referring to External Files](#referring-to-external-files)
 
-    * [Code Examples](#CodeExamples)
+        * [Code Examples](#code-examples)
 
-    * [Documenting Callbacks](#DocumentingCallbacks)
+        * [Documenting Callbacks](#documenting-callbacks)
 
-    * [Documenting Object Literals and Interfaces](#DocumentingObjectLiteralsandInterfaces)
+        * [Documenting Object Literals and Interfaces](#documenting-object-literals-and-interfaces)
 
-      * [Object Literals](#ObjectLiterals)
+            * [Object Literals](#object-literals)
 
-      * [Interfaces](#Interfaces)
+            * [Interfaces](#interfaces)
 
-      * [Solution: Pseudo-Types](#Solution:Pseudo-Types)
+            * [Solution: Pseudo-Types](#solution:-pseudo-types)
 
-        * [Pseudo-Types Useful to Just One Titanium Type](#Pseudo-TypesUsefultoJustOneTitaniumType)
+                * [Pseudo-Types Useful to Just One Titanium Type](#Pseudo-TypesUsefultoJustOneTitaniumType)
 
-        * [Pseudo-Types Useful to a Single Module](#Pseudo-TypesUsefultoaSingleModule)
+                * [Pseudo-Types Useful to a Single Module](#Pseudo-TypesUsefultoaSingleModule)
 
-        * [Pseudo-Types Useful in Multiple Modules](#Pseudo-TypesUsefulinMultipleModules)
+                * [Pseudo-Types Useful in Multiple Modules](#Pseudo-TypesUsefulinMultipleModules)
 
-  * [Intra-Documentation Links](#Intra-DocumentationLinks)
+    * [Intra-Documentation Links](#intra-documentation-links)
 
-    * [Type Specifications Do Not Need Backticks](#TypeSpecificationsDoNotNeedBackticks)
+        * [Type Specifications Do Not Need Backticks](#type-specifications-do-not-need-backticks)
 
-    * [Markdown Links in Free-Form Text Values](#MarkdownLinksinFree-FormTextValues)
+        * [Markdown Links in Free-Form Text Values](#markdown-links-in-free-form-text-values)
 
-* [Real-World Example](#Real-WorldExample)
-
+* [Real-World Example](#real-world-example)
 
 ## Overview
 
@@ -129,7 +128,6 @@ The goals of the new documentation format are:
 
 * Generate documentation as well as content assist files.
 
-
 ## Definitions
 
 * TDoc - The file extension used for the previous API documentation files was "tdoc"; several such files (one per module or proxy). Because of this file extension, the documents themselves are often called simply "TDocs" in our "Titanium vernacular."
@@ -139,7 +137,6 @@ The goals of the new documentation format are:
 * JSCA - "JSON for Studio Content Assist". JSCA files contain the JSON which feeds the content assist available to developers using Studio. The requirement to generate JSCA from the documentation is one of the drivers behind this spec.
 
 * YAML - [YAML Ain't Markup Language](http://yaml.org). "YAML is a human-readable data serialization format" (Wikipedia).
-
 
 ## Proposed Documentation Specification
 
@@ -163,7 +160,6 @@ XML, JSON, Markdown and YAML are common choices when external (outside-the-code)
 
 * Markdown versus YAML: "[Markdown](http://daringfireball.net/projects/markdown/) is a text-to-HTML conversion tool for web _writers_." We've italicized _writers_ here to emphasize the fact that Markdown is really meant for writing top-down articles (blog posts, free-form documentation pages, etc.) as opposed to structured documentation. It is, in fact, relatively parseable, as our existing TDoc specification has shown. However, the more you want to annotate it with structured data outside of the free-form text that it caters to, the more unwieldy it becomes. You start inventing ways to delimit parseable data, such as by surrounding certain pieces of text with square brackets or some other braces. We've been through this with the existing TDoc specification and we are not alone. When adding more and more annotations – as we wish to do with this new specification – it becomes difficult to choose how to mark up the annotations.
 
-
 Our solution is to use the strengths of YAML – structured data representation – as our primary means of documentation, and to use Markdown's strength – easy text formatting – where it's applicable, namely in the "free form text" YAML properties such as a method's description or a code example.
 
 ##### Tool Support
@@ -186,43 +182,21 @@ There is precedent within the Titanium family for YAML: the Titanium Desktop SDK
 
 #### Simple Data Types
 
-Type
-
-Notes
-
-Boolean
-
-Number
-
-Open to discussion as to whether more specific numeric types – int, float, etc. – are needed. JSCA, for example, only supports Number
-
-String
-
-Date
-
-Loosely defined here as a Javascript Date
+| Type | Notes |
+| --- | --- |
+| Boolean |  |
+| Number | Open to discussion as to whether more specific numeric types – int, float, etc. – are needed. JSCA, for example, only supports Number |
+| String |  |
+| Date | Loosely defined here as a Javascript Date |
 
 #### Compound Data Types
 
-Type
-
-Notes
-
-Object
-
-Please don't misuse. We wish to emphasize the use of strong types.
-
-Titanium.XX.XX
-
-This is shorthand to signify the types that are defined within the documentation. In fact, they don't have to be the Titanium.XX namespace; any fully-qualified name defined within the set of documentation being parsed can be used as a type name. But since this specification will first be used for Titanium Mobile, Titanium.XX is used here as the example.
-
-Dictionary<\[type\]>
-
-A special type+syntax indicating a dictionary – i.e., an object literal – whose members can be the properties of the specified \[type\]. Example: Dictionary<Titanium.UI.Window>. You might use this if you provide your own documentation for a proxy-creation method such as Titanium.UI.createWindow rather than rely on the auto-generated documentation for proxy-creation methods. In that case, you would use Dictionary<Titanium.UI.Window> for the type of the single parameter that createWindow takes.
-
-Callback<\[type\]>
-
-A special type+syntax indicating a function used as a callback, whose single callback argument (the info passed to the callback) is of type \[type\], where \[type\] can be a type that you define elsewhere. We'll see examples of this in the special section on [callbacks](#DocumentingCallbacks). The angle bracket notation is optional: Callback by itself signifies simply a function that gets called, with no precise information concerning what is passed to it, if anything.
+| Type | Notes |
+| --- | --- |
+| Object | Please don't misuse. We wish to emphasize the use of strong types. |
+| Titanium.XX.XX | This is shorthand to signify the types that are defined within the documentation. In fact, they don't have to be the Titanium.XX namespace; any fully-qualified name defined within the set of documentation being parsed can be used as a type name. But since this specification will first be used for Titanium Mobile, Titanium.XX is used here as the example. |
+| Dictionary<\[type\]> | A special type+syntax indicating a dictionary – i.e., an object literal – whose members can be the properties of the specified \[type\]. Example: Dictionary<Titanium.UI.Window>. You might use this if you provide your own documentation for a proxy-creation method such as Titanium.UI.createWindow rather than rely on the auto-generated documentation for proxy-creation methods. In that case, you would use Dictionary<Titanium.UI.Window> for the type of the single parameter that createWindow takes. |
+| Callback<\[type\]> | A special type+syntax indicating a function used as a callback, whose single callback argument (the info passed to the callback) is of type \[type\], where \[type\] can be a type that you define elsewhere. We'll see examples of this in the special section on [callbacks](#documenting-callbacks). The angle bracket notation is optional: Callback by itself signifies simply a function that gets called, with no precise information concerning what is passed to it, if anything. |
 
 #### Arrays
 
@@ -238,7 +212,7 @@ Array<Titanium.UI.View>
 
 #### Pseudo-Types
 
-Additionally, other "pseudo-types" (for lack of a better term) may be defined inside the documents as stand-ins for things like callback arguments, object literals that are passed as parameters, or objects that implement a particular interface. We'll see examples of this in the special sections on [callbacks](#DocumentingCallbacks) and [object literals and interfaces](#DocumentingObjectLiteralsandInterfaces).
+Additionally, other "pseudo-types" (for lack of a better term) may be defined inside the documents as stand-ins for things like callback arguments, object literals that are passed as parameters, or objects that implement a particular interface. We'll see examples of this in the special sections on [callbacks](#documenting-callbacks) and [object literals and interfaces](#documenting-object-literals-and-interfaces).
 
 ### Inheritance
 
@@ -314,95 +288,22 @@ Hicky.yml
 
 These are the keys (i.e., YAML properties/members) which are valid in the documentation of a Type. The order of these keys is not relevant to YAML, however this a suggested order. By convention, the name, description, platforms, extends and since keys should be defined first (i.e., appear at the top of the document).
 
-Key
-
-Notes
-
-Example
-
-name
-
-A fully-qualified name for the type
-
-name: Titanium.Do.Hicky
-
-summary
-
-A short, "one-liner" summary of the type, in Markdown format. Keep it short, as it will often be generated next to the type name in lists, for example. Deeper information about the type should go into the description property. **Please start summaries with a capital letter and end with a period.**
-
-summary: View which automatically renders as an octagon.
-
-description
-
-(**Optional**) Free-form , longer format text description of the Type, in Markdown format, or "file:" followed by the name of a file which contains the description. If an external file is used, the contents should be in Markdown format and the file extension should be .md.
-
-See [#Free-Form Text Values](#Free-FormTextValues) below.
-
-createable
-
-(**Optional**) Applicable only to "proxy" types (types having Titanium.Proxy as an ancestor). This indicates whether a standard createXXXX method is supported to create an instance of the proxy from the module in which it is located. The default is true since almost all proxies can be created in that way.
-
-createable: false
-
-platforms
-
-(**Optional**) Array of supported platforms. If missing, it is to be assumed that all platforms are supported. Note that ipad is its own platform. As the example shows, a simple YAML array syntax is to enclose a comma-separated list in square brackets.
-
-platforms: \[android, iphone, ipad\]
-
-extends
-
-(**Optional**). Either a single fully-qualified type name, or an array of fully-qualified type names from which the documented Type inherits.
-
-extends: Titanium.UI.View
-
-excludes
-
-(**Optional**). For excluding inherited methods, properties or events. Can have one or more of these members: methods, properties, events. Each of those is an array of strings indicating which methods (or properties, or events) to exclude.
-
-excludes: {methods: \[add, remove\], events: \[click\]}
-
-since
-
-Indicates in which Titanium version the Type first appeared. Either a single value if the Type appeared at the same time on all platforms, or a dictionary object with keys per platform and values containing the relevant version number. NOTE: YAML will interpret values such as 0.8 as numbers, which can lead to parser libraries ending up with values such as 0.800000000001 because of floating points. Enclose version numbers in full-quotations so as to avoid this.
-
-since: "0.8" or since: {android: "1.6.0", iphone: "0.8", ipad: "1.4.2"}
-
-deprecated
-
-(**Optional**) A simple dictionary object with keys since, removed and notes. since and removed values should hold Titanium version numbers indicating since when the type was deprecated and when (if ever) it will be removed. since should always be present. removed is optional. notes, which is also optional, can hold free-form text and should especially emphasize which alternative type to use in place of the deprecated type, if any.
-
-deprecated: {since: "1.6.0", removed: "1.8.0", notes: "Use <Titanium.Do.Hicky2> instead"}
-
-osver
-
-(**Optional**). Can be used to specify operating system version number requirements for the given type. This should be a dictionary with keys for each OS whose version needs to be specified (ios/android). The key values should then also be dictionaries with the keys min, max and/or versions, each of which is optional. min and max should have stringified version numbers, whereas versions, if present, should be an array of stringified version numbers.
-
-osver: {android: {min: "2.1"}} or osver: {ios: {max: "3.2"}} or osver: {android: {versions: \["1.6", "2.1"\]}}
-
-examples
-
-(**Optional**). An array of objects wherein each element has title and example properties. The title property should briefly describe the particular example. The example property should be a free-form text block in Markdown format for showing code examples, or "file:" followed by the name of a file which contains the code examples. If an external file is used, the contents should be in Markdown format and the file extension should be .md. In the text block or external file, the blocks of code themselves should be indented four spaces to follow the Markdown standard and guarantee that generated HTML will include <pre> and <code> tags. So-called "fenced code blocks" (~~~) are not supported, as they are non-standard and not all Markdown parsers support them.
-
-See [#Code Examples](#CodeExamples) below.
-
-methods
-
-(**Optional**). An array of method definitions describing the type's methods.
-
-See [#Method Specification](#MethodSpecification) below.
-
-properties
-
-(**Optional**). An array of property definitions describing the type's methods.
-
-See [#Property Specification](#PropertySpecification) below.
-
-events
-
-(**Optional**). An array of event definitions describing the type's events.
-
-See [#Event Specification](#EventSpecification) below.
+| Key | Notes | Example |
+| --- | --- | --- |
+| name | A fully-qualified name for the type | name: Titanium.Do.Hicky |
+| summary | A short, "one-liner" summary of the type, in Markdown format. Keep it short, as it will often be generated next to the type name in lists, for example. Deeper information about the type should go into the description property. **Please start summaries with a capital letter and end with a period.** | summary: View which automatically renders as an octagon. |
+| description | (**Optional**) Free-form , longer format text description of the Type, in Markdown format, or "file:" followed by the name of a file which contains the description. If an external file is used, the contents should be in Markdown format and the file extension should be .md. | See [#Free-Form Text Values](#free-form-text-values) below. |
+| createable | (**Optional**) Applicable only to "proxy" types (types having Titanium.Proxy as an ancestor). This indicates whether a standard createXXXX method is supported to create an instance of the proxy from the module in which it is located. The default is true since almost all proxies can be created in that way. | createable: false |
+| platforms | (**Optional**) Array of supported platforms. If missing, it is to be assumed that all platforms are supported. Note that ipad is its own platform. As the example shows, a simple YAML array syntax is to enclose a comma-separated list in square brackets. | platforms: \[android, iphone, ipad\] |
+| extends | (**Optional**). Either a single fully-qualified type name, or an array of fully-qualified type names from which the documented Type inherits. | extends: Titanium.UI.View |
+| excludes | (**Optional**). For excluding inherited methods, properties or events. Can have one or more of these members: methods, properties, events. Each of those is an array of strings indicating which methods (or properties, or events) to exclude. | excludes: {methods: \[add, remove\], events: \[click\]} |
+| since | Indicates in which Titanium version the Type first appeared. Either a single value if the Type appeared at the same time on all platforms, or a dictionary object with keys per platform and values containing the relevant version number. NOTE: YAML will interpret values such as 0.8 as numbers, which can lead to parser libraries ending up with values such as 0.800000000001 because of floating points. Enclose version numbers in full-quotations so as to avoid this. | since: "0.8" or since: {android: "1.6.0", iphone: "0.8", ipad: "1.4.2"} |
+| deprecated | (**Optional**) A simple dictionary object with keys since, removed and notes. since and removed values should hold Titanium version numbers indicating since when the type was deprecated and when (if ever) it will be removed. since should always be present. removed is optional. notes, which is also optional, can hold free-form text and should especially emphasize which alternative type to use in place of the deprecated type, if any. | deprecated: {since: "1.6.0", removed: "1.8.0", notes: "Use <Titanium.Do.Hicky2> instead"} |
+| osver | (**Optional**). Can be used to specify operating system version number requirements for the given type. This should be a dictionary with keys for each OS whose version needs to be specified (ios/android). The key values should then also be dictionaries with the keys min, max and/or versions, each of which is optional. min and max should have stringified version numbers, whereas versions, if present, should be an array of stringified version numbers. | osver: {android: {min: "2.1"}} or osver: {ios: {max: "3.2"}} or osver: {android: {versions: \["1.6", "2.1"\]}} |
+| examples | (**Optional**). An array of objects wherein each element has title and example properties. The title property should briefly describe the particular example. The example property should be a free-form text block in Markdown format for showing code examples, or "file:" followed by the name of a file which contains the code examples. If an external file is used, the contents should be in Markdown format and the file extension should be .md. In the text block or external file, the blocks of code themselves should be indented four spaces to follow the Markdown standard and guarantee that generated HTML will include <pre> and <code> tags. So-called "fenced code blocks" (~~~) are not supported, as they are non-standard and not all Markdown parsers support them. | See [#Code Examples](#code-examples) below. |
+| methods | (**Optional**). An array of method definitions describing the type's methods. | See [#Method Specification](#method-specification) below. |
+| properties | (**Optional**). An array of property definitions describing the type's methods. | See [#Property Specification](#property-specification) below. |
+| events | (**Optional**). An array of event definitions describing the type's events. | See [#Event Specification](#event-specification) below. |
 
 Our running example so far:
 
@@ -458,71 +359,18 @@ As noted above, the type documentation includes a methods key, which is describe
 
 A single method documentation definition may contain the following keys:
 
-Key
-
-Notes
-
-Examples
-
-name
-
-The method name.
-
-name: doSomething
-
-summary
-
-A short, "one-liner" summary of the method, in Markdown format. Keep it short, as it will often be generated next to the method name in lists, for example. Deeper information about the method should go into the description property. **Please start summaries with a capital letter and end with a period.**
-
-summary: Does something on the view.
-
-description
-
-(**Optional**) Free-form , longer format text description of the method, in Markdown format, or "file:" followed by the name of a file which contains the description. If an external file is used, the contents should be in Markdown format and the file extension should be .md.
-
-See [#Free-Form Text Values](#Free-FormTextValues) below.
-
-returns
-
-(**Optional**). A dictionary object with type and description keys and their values. The description key is optional. The type key's value should be a [type identifier](#DataTypes). If it is possible for the method to return different types, set this to an array of these dictionaries. This key is **optional** in the sense that if it is missing, then it is assumed that there is no return value. There is no need to specify void return types.
-
-returns: {type: "String", description: "The system's locale"} or, in the case of multiple possible return types, returns: \[{type: "String", description: "The system's locale"}, {type: "Object", description: "A locale object"}\].
-
-platforms
-
-(**Optional**). Identical to the platforms key defined in the [Valid Keys in the Documentation of a Type](#ValidKeysintheDocumentationofaType) section, but applied here to a method. This is **optional**. If missing it is assume that the value would be the same as the type's platforms value.
-
-platforms: \[android, iphone, ipad\]
-
-since
-
-(**Optional**). Identical to the since key defined in the [Valid Keys in the Documentation of a Type](#ValidKeysintheDocumentationofaType) section, but applied here to a method. This is **optional**. If missing, it is assumed that the value would be the same as the type's since value.
-
-since: "0.8" or since: {android: "1.6.0", iphone: "0.8", ipad: "1.4.2"}
-
-deprecated
-
-(**Optional**) A simple dictionary object with keys since, removed and notes. since and removed values should hold Titanium version numbers indicating since when the method was deprecated and when (if ever) it will be removed. since should always be present. removed is optional. notes, which is also optional, can hold free-form text and should especially emphasize which alternative method to use in place of the deprecated method, if any.
-
-deprecated: {since: "1.6.0", removed: "1.8.0", notes: "Use <Titanium.Do.Hicky.doThat> instead."}
-
-osver
-
-(**Optional**). Can be used to specify operating system version number requirements for the given method. This should be a dictionary with keys for each OS whose version needs to be specified (ios/android). The key values should then also be dictionaries with the keys min, max and/or versions, each of which is optional. min and max should have stringified version numbers, whereas versions, if present, should be an array of stringified version numbers.
-
-osver: {android: {min: "2.1"}} or osver: {ios: {max: "3.2"}} or osver: {android: {versions: \["1.6", "2.1"\]}}
-
-examples
-
-(**Optional**). Identical to the examples key defined in the [Valid Keys in the Documentation of a Type](#ValidKeysintheDocumentationofaType) section, but in this case to show examples specifically for the method.
-
-See [#Code Examples](#CodeExamples) below.
-
-parameters
-
-(**Optional**). An array of parameter definitions documenting the method parameters.
-
-See [#Method Parameter Specification](#MethodParameterSpecification) below.
+| Key | Notes | Examples |
+| --- | --- | --- |
+| name | The method name. | name: doSomething |
+| summary | A short, "one-liner" summary of the method, in Markdown format. Keep it short, as it will often be generated next to the method name in lists, for example. Deeper information about the method should go into the description property. **Please start summaries with a capital letter and end with a period.** | summary: Does something on the view. |
+| description | (**Optional**) Free-form , longer format text description of the method, in Markdown format, or "file:" followed by the name of a file which contains the description. If an external file is used, the contents should be in Markdown format and the file extension should be .md. | See [#Free-Form Text Values](#free-form-text-values) below. |
+| returns | (**Optional**). A dictionary object with type and description keys and their values. The description key is optional. The type key's value should be a [type identifier](#data-types). If it is possible for the method to return different types, set this to an array of these dictionaries. This key is **optional** in the sense that if it is missing, then it is assumed that there is no return value. There is no need to specify void return types. | returns: {type: "String", description: "The system's locale"} or, in the case of multiple possible return types, returns: \[{type: "String", description: "The system's locale"}, {type: "Object", description: "A locale object"}\]. |
+| platforms | (**Optional**). Identical to the platforms key defined in the [Valid Keys in the Documentation of a Type](#valid-keys-in-the-documentation-of-a-type) section, but applied here to a method. This is **optional**. If missing it is assume that the value would be the same as the type's platforms value. | platforms: \[android, iphone, ipad\] |
+| since | (**Optional**). Identical to the since key defined in the [Valid Keys in the Documentation of a Type](#valid-keys-in-the-documentation-of-a-type) section, but applied here to a method. This is **optional**. If missing, it is assumed that the value would be the same as the type's since value. | since: "0.8" or since: {android: "1.6.0", iphone: "0.8", ipad: "1.4.2"} |
+| deprecated | (**Optional**) A simple dictionary object with keys since, removed and notes. since and removed values should hold Titanium version numbers indicating since when the method was deprecated and when (if ever) it will be removed. since should always be present. removed is optional. notes, which is also optional, can hold free-form text and should especially emphasize which alternative method to use in place of the deprecated method, if any. | deprecated: {since: "1.6.0", removed: "1.8.0", notes: "Use <Titanium.Do.Hicky.doThat> instead."} |
+| osver | (**Optional**). Can be used to specify operating system version number requirements for the given method. This should be a dictionary with keys for each OS whose version needs to be specified (ios/android). The key values should then also be dictionaries with the keys min, max and/or versions, each of which is optional. min and max should have stringified version numbers, whereas versions, if present, should be an array of stringified version numbers. | osver: {android: {min: "2.1"}} or osver: {ios: {max: "3.2"}} or osver: {android: {versions: \["1.6", "2.1"\]}} |
+| examples | (**Optional**). Identical to the examples key defined in the [Valid Keys in the Documentation of a Type](#valid-keys-in-the-documentation-of-a-type) section, but in this case to show examples specifically for the method. | See [#Code Examples](#code-examples) below. |
+| parameters | (**Optional**). An array of parameter definitions documenting the method parameters. | See [#Method Parameter Specification](#MethodParameterSpecification) below. |
 
 ###### Method Parameter Specification
 
@@ -530,53 +378,15 @@ A method may, of course, have zero or more parameters. This section is the speci
 
 The valid keys are:
 
-Key
-
-Notes
-
-Examples
-
-name
-
-The parameter name.
-
-name: x
-
-summary
-
-A short, "one-liner" summary of the parameter, in Markdown format. Keep it short, as it will often be generated next to the parameter name in lists, for example. Deeper information about the parameter should go into the description property. **Please start summaries with a capital letter and end with a period.**
-
-summary: type of thing.
-
-type
-
-A data type specifier indicating the type of the parameter, or an array of data type specifiers in case multiple types are allowed for the parameter. A view dimension is a typical use-case for the latter, since we support numeric values (interpreted as pixels) or string values ("auto", "10dp", etc.).
-
-type: Number
-
-optional
-
-(**Optional**) Whether the parameter is optional. Default is false.
-
-optional: true
-
-repeatable
-
-(**Optional**) Whether the parameter is repeatable. Default is false. Setting to true means the parameter becomes a "varargs" parameter (and therefore the method becomes variadic), similar to the use of ellipses in C or Java. (Java example: void myMethod(String... args) ).
-
-repeatable: true
-
-default
-
-(**Optional**) Describes the default value for the parameter; useful if the parameter is optional.
-
-default: 0 or default: The device's default locale or default: <Titanium.Codec.CHARSET\_UTF8>
-
-constants
-
-( **Optional** ). Array of Titanium constant values the parameter can take. You can use a wildcard character at the end of the value to match more than one constant
-
-constants: \[ Titanium.UI.LANDSCAPE\_\*, Titanium.UI.PORTRAIT, Titanium.UI.UPSIDE\_PORTRAIT\]
+| Key | Notes | Examples |
+| --- | --- | --- |
+| name | The parameter name. | name: x |
+| summary | A short, "one-liner" summary of the parameter, in Markdown format. Keep it short, as it will often be generated next to the parameter name in lists, for example. Deeper information about the parameter should go into the description property. **Please start summaries with a capital letter and end with a period.** | summary: type of thing. |
+| type | A data type specifier indicating the type of the parameter, or an array of data type specifiers in case multiple types are allowed for the parameter. A view dimension is a typical use-case for the latter, since we support numeric values (interpreted as pixels) or string values ("auto", "10dp", etc.). | type: Number |
+| optional | (**Optional**) Whether the parameter is optional. Default is false. | optional: true |
+| repeatable | (**Optional**) Whether the parameter is repeatable. Default is false. Setting to true means the parameter becomes a "varargs" parameter (and therefore the method becomes variadic), similar to the use of ellipses in C or Java. (Java example: void myMethod(String... args) ). | repeatable: true |
+| default | (**Optional**) Describes the default value for the parameter; useful if the parameter is optional. | default: 0 or default: The device's default locale or default: <Titanium.Codec.CHARSET\_UTF8> |
+| constants | ( **Optional** ). Array of Titanium constant values the parameter can take. You can use a wildcard character at the end of the value to match more than one constant | constants: \[ Titanium.UI.LANDSCAPE\_\*, Titanium.UI.PORTRAIT, Titanium.UI.UPSIDE\_PORTRAIT\] |
 
 ###### Method Documentation Definitions
 
@@ -738,107 +548,24 @@ The type documentation includes a properties key, which is described as an array
 
 A single property documentation definition may contain the following keys:
 
-Key
-
-Notes
-
-Examples
-
-name
-
-The property name.
-
-name: x
-
-summary
-
-A short, "one-liner" summary of the property, in Markdown format. Keep it short, as it will often be generated next to the property name in lists, for example. Deeper information about the property should go into the description property. **Please start summaries with a capital letter and end with a period.**
-
-summary: X-axis of the dohicky.
-
-description
-
-(**Optional**) Free-form , longer format text description of the property, in Markdown format, or "file:" followed by the name of a file which contains the description. If an external file is used, the contents should be in Markdown format and the file extension should be .md.
-
-See [#Free-Form Text Values](#Free-FormTextValues) below.
-
-type
-
-A data type specifier indicating the type of the parameter, or an array of data type specifiers in case multiple types are allowed for the parameter. A view dimension is a typical use-case for the latter, since we support numeric values (interpreted as pixels) or string values ("auto", "10dp", etc.).
-
-type: Number
-
-platforms
-
-(**Optional**). Identical to the platforms key defined in the [Valid Keys in the Documentation of a Type](#ValidKeysintheDocumentationofaType) section, but applied here to a property.
-
-platforms: \[android, iphone, ipad\]
-
-since
-
-(**Optional**). Identical to the since key defined in the [Valid Keys in the Documentation of a Type](#ValidKeysintheDocumentationofaType) section, but applied here to a property.
-
-since: "0.8" or since: {android: "1.6.0", iphone: "0.8", ipad: "1.4.2"}
-
-deprecated
-
-(**Optional**) A simple dictionary object with keys since, removed and notes. since and removed values should hold Titanium version numbers indicating since when the property was deprecated and when (if ever) it will be removed. since should always be present. removed is optional. notes, which is also optional, can hold free-form text and should especially emphasize which alternative property to use in place of the deprecated property, if any.
-
-deprecated: {since: "1.6.0", removed: "1.8.0", notes: "Use <Titanium.Do.Hicky.backgroundColor> instead."}
-
-osver
-
-(**Optional**). Can be used to specify operating system version number requirements for the given property. This should be a dictionary with keys for each OS whose version needs to be specified (ios/android). The key values should then also be dictionaries with the keys min, max and/or versions, each of which is optional. min and max should have stringified version numbers, whereas versions, if present, should be an array of stringified version numbers.
-
-osver: {android: {min: "2.1"}} or osver: {ios: {max: "3.2"}} or osver: {android: {versions: \["1.6", "2.1"\]}}
-
-examples
-
-(**Optional**). Identical to the examples key defined in the [Valid Keys in the Documentation of a Type](#ValidKeysintheDocumentationofaType) section, but in this case to show examples specifically for the property.
-
-See [#Code Examples](#CodeExamples) below.
-
-permission
-
-(**Optional**). One of read-only, write-only or read-write. If missing, the value is assumed to be read-write.
-
-permission: read-only
-
-availability
-
-(**Optional**). When the property can be written to, in the sense that some of our proxy properties can only be set in the dictionary object passed to a createXXX({...}) method. Valid values here are always, creation and not-creation. creation means it can (or should – this is a cue to the SDK user) only be set in the dictionary object passed to createXXX({...}), whereas not-creation means it can only be set directly on the proxy object and _not_ via the createXXX({...}) method. If missing, the value is assumed to be always.
-
-availability: always
-
-accessors
-
-(**Optional**). Whether a getter and setter method exist for the property (true/false, default true).
-
-accessors: false to indicate that there is no setter/getter for the property.
-
-optional
-
-(**Optional**). Whether it's considered optional to have the property set in the object. The default is true (i.e., not every object property needs to have a value). There may be cases where it is useful to set this to false to indicate that a value is required, for example when passing an object (see pseudo-object discussion below) as a paramater to a method.
-
-optional: false
-
-value
-
-(**Optional**). The fixed value of the property. Particularly useful to express that something is a constant, such as by setting permission: read-only and by setting a value.
-
-value: 0
-
-default
-
-(**Optional**). The default value of a property. You can use this to set a specific value (such as 0) or free text explaining how the default value is determined.
-
-default: 0 or default: <Titanium.Codec.CHARSET\_UTF8> or default: The device's current locale
-
-constants
-
-( **Optional** ). Array of Titanium constant values the property can be assigned. You can use a wildcard character at the end of the value to match more than one constant
-
-constants: \[ Titanium.UI.LANDSCAPE\_\*, Titanium.UI.PORTRAIT, Titanium.UI.UPSIDE\_PORTRAIT\]
+| Key | Notes | Examples |
+| --- | --- | --- |
+| name | The property name. | name: x |
+| summary | A short, "one-liner" summary of the property, in Markdown format. Keep it short, as it will often be generated next to the property name in lists, for example. Deeper information about the property should go into the description property. **Please start summaries with a capital letter and end with a period.** | summary: X-axis of the dohicky. |
+| description | (**Optional**) Free-form , longer format text description of the property, in Markdown format, or "file:" followed by the name of a file which contains the description. If an external file is used, the contents should be in Markdown format and the file extension should be .md. | See [#Free-Form Text Values](#free-form-text-values) below. |
+| type | A data type specifier indicating the type of the parameter, or an array of data type specifiers in case multiple types are allowed for the parameter. A view dimension is a typical use-case for the latter, since we support numeric values (interpreted as pixels) or string values ("auto", "10dp", etc.). | type: Number |
+| platforms | (**Optional**). Identical to the platforms key defined in the [Valid Keys in the Documentation of a Type](#valid-keys-in-the-documentation-of-a-type) section, but applied here to a property. | platforms: \[android, iphone, ipad\] |
+| since | (**Optional**). Identical to the since key defined in the [Valid Keys in the Documentation of a Type](#valid-keys-in-the-documentation-of-a-type) section, but applied here to a property. | since: "0.8" or since: {android: "1.6.0", iphone: "0.8", ipad: "1.4.2"} |
+| deprecated | (**Optional**) A simple dictionary object with keys since, removed and notes. since and removed values should hold Titanium version numbers indicating since when the property was deprecated and when (if ever) it will be removed. since should always be present. removed is optional. notes, which is also optional, can hold free-form text and should especially emphasize which alternative property to use in place of the deprecated property, if any. | deprecated: {since: "1.6.0", removed: "1.8.0", notes: "Use <Titanium.Do.Hicky.backgroundColor> instead."} |
+| osver | (**Optional**). Can be used to specify operating system version number requirements for the given property. This should be a dictionary with keys for each OS whose version needs to be specified (ios/android). The key values should then also be dictionaries with the keys min, max and/or versions, each of which is optional. min and max should have stringified version numbers, whereas versions, if present, should be an array of stringified version numbers. | osver: {android: {min: "2.1"}} or osver: {ios: {max: "3.2"}} or osver: {android: {versions: \["1.6", "2.1"\]}} |
+| examples | (**Optional**). Identical to the examples key defined in the [Valid Keys in the Documentation of a Type](#valid-keys-in-the-documentation-of-a-type) section, but in this case to show examples specifically for the property. | See [#Code Examples](#code-examples) below. |
+| permission | (**Optional**). One of read-only, write-only or read-write. If missing, the value is assumed to be read-write. | permission: read-only |
+| availability | (**Optional**). When the property can be written to, in the sense that some of our proxy properties can only be set in the dictionary object passed to a createXXX({...}) method. Valid values here are always, creation and not-creation. creation means it can (or should – this is a cue to the SDK user) only be set in the dictionary object passed to createXXX({...}), whereas not-creation means it can only be set directly on the proxy object and _not_ via the createXXX({...}) method. If missing, the value is assumed to be always. | availability: always |
+| accessors | (**Optional**). Whether a getter and setter method exist for the property (true/false, default true). | accessors: false to indicate that there is no setter/getter for the property. |
+| optional | (**Optional**). Whether it's considered optional to have the property set in the object. The default is true (i.e., not every object property needs to have a value). There may be cases where it is useful to set this to false to indicate that a value is required, for example when passing an object (see pseudo-object discussion below) as a paramater to a method. | optional: false |
+| value | (**Optional**). The fixed value of the property. Particularly useful to express that something is a constant, such as by setting permission: read-only and by setting a value. | value: 0 |
+| default | (**Optional**). The default value of a property. You can use this to set a specific value (such as 0) or free text explaining how the default value is determined. | default: 0 or default: <Titanium.Codec.CHARSET\_UTF8> or default: The device's current locale |
+| constants | ( **Optional** ). Array of Titanium constant values the property can be assigned. You can use a wildcard character at the end of the value to match more than one constant | constants: \[ Titanium.UI.LANDSCAPE\_\*, Titanium.UI.PORTRAIT, Titanium.UI.UPSIDE\_PORTRAIT\] |
 
 Multiple property documentation definitions can be put together into a YAML sequence by following the same syntax as for [multiple methods](#ArrayofMethodDocumentationDefinitions).
 
@@ -978,65 +705,17 @@ The type documentation includes a events key, which is described as an array of 
 
 A single event documentation definition may contain the following keys:
 
-Key
-
-Notes
-
-Examples
-
-name
-
-The event name.
-
-name: flummered
-
-summary
-
-A short, "one-liner" summary of the event, in Markdown format. Keep it short, as it will often be generated next to the event name in lists, for example. Deeper information about the event should go into the description property. **Please start summaries with a capital letter and end with a period.**
-
-summary: Fires when something happens.
-
-description
-
-(**Optional**) Free-form , longer format text description of the event, in Markdown format, or "file:" followed by the name of a file which contains the description. If an external file is used, the contents should be in Markdown format and the file extension should be .md.
-
-See [#Free-Form Text Values](#Free-FormTextValues) below.
-
-extends
-
-(**Optional**). Either a single fully-qualified type name, or an array of fully-qualified type names from which the event object inherits. As a convenience, this can be omitted and it will then be assumed that the event object extends Titanium.Event, which only contains the standard type and source properties.
-
-extends: Titanium.Event
-
-platforms
-
-(**Optional**). Identical to the platforms key defined in the [Valid Keys in the Documentation of a Type](#ValidKeysintheDocumentationofaType) section, but applied here to an event.
-
-platforms: \[android, iphone, ipad\]
-
-since
-
-(**Optional**). Identical to the since key defined in the [Valid Keys in the Documentation of a Type](#ValidKeysintheDocumentationofaType) section, but applied here to an event.
-
-since: "0.8" or since: {android: "1.6.0", iphone: "0.8", ipad: "1.4.2"}
-
-deprecated
-
-(**Optional**) A simple dictionary object with keys since, removed and notes. since and removed values should hold Titanium version numbers indicating since when the event was deprecated and when (if ever) it will be removed. since should always be present. removed is optional. notes, which is also optional, can hold free-form text and should especially emphasize which alternative event to use in place of the deprecated event, if any.
-
-deprecated: {since: "1.6.0", removed: "1.8.0", notes: "Use <Titanium.Do.Hicky.flummered2> instead."}
-
-osver
-
-(**Optional**). Can be used to specify operating system version number requirements for the given event. This should be a dictionary with keys for each OS whose version needs to be specified (ios/android). The key values should then also be dictionaries with the keys min, max and/or versions, each of which is optional. min and max should have stringified version numbers, whereas versions, if present, should be an array of stringified version numbers.
-
-osver: {android: {min: "2.1"}} or osver: {ios: {max: "3.2"}} or osver: {android: {versions: \["1.6", "2.1"\]}}
-
-properties
-
-(**Optional**). A sequence of [event listener object property definitions](#EventListenerObjectPropertySpecification) which describe the properties in the event object passed to a listener for this event.
-
-See [#Event Listener Object Property Specification](#EventListenerObjectPropertySpecification).
+| Key | Notes | Examples |
+| --- | --- | --- |
+| name | The event name. | name: flummered |
+| summary | A short, "one-liner" summary of the event, in Markdown format. Keep it short, as it will often be generated next to the event name in lists, for example. Deeper information about the event should go into the description property. **Please start summaries with a capital letter and end with a period.** | summary: Fires when something happens. |
+| description | (**Optional**) Free-form , longer format text description of the event, in Markdown format, or "file:" followed by the name of a file which contains the description. If an external file is used, the contents should be in Markdown format and the file extension should be .md. | See [#Free-Form Text Values](#free-form-text-values) below. |
+| extends | (**Optional**). Either a single fully-qualified type name, or an array of fully-qualified type names from which the event object inherits. As a convenience, this can be omitted and it will then be assumed that the event object extends Titanium.Event, which only contains the standard type and source properties. | extends: Titanium.Event |
+| platforms | (**Optional**). Identical to the platforms key defined in the [Valid Keys in the Documentation of a Type](#valid-keys-in-the-documentation-of-a-type) section, but applied here to an event. | platforms: \[android, iphone, ipad\] |
+| since | (**Optional**). Identical to the since key defined in the [Valid Keys in the Documentation of a Type](#valid-keys-in-the-documentation-of-a-type) section, but applied here to an event. | since: "0.8" or since: {android: "1.6.0", iphone: "0.8", ipad: "1.4.2"} |
+| deprecated | (**Optional**) A simple dictionary object with keys since, removed and notes. since and removed values should hold Titanium version numbers indicating since when the event was deprecated and when (if ever) it will be removed. since should always be present. removed is optional. notes, which is also optional, can hold free-form text and should especially emphasize which alternative event to use in place of the deprecated event, if any. | deprecated: {since: "1.6.0", removed: "1.8.0", notes: "Use <Titanium.Do.Hicky.flummered2> instead."} |
+| osver | (**Optional**). Can be used to specify operating system version number requirements for the given event. This should be a dictionary with keys for each OS whose version needs to be specified (ios/android). The key values should then also be dictionaries with the keys min, max and/or versions, each of which is optional. min and max should have stringified version numbers, whereas versions, if present, should be an array of stringified version numbers. | osver: {android: {min: "2.1"}} or osver: {ios: {max: "3.2"}} or osver: {android: {versions: \["1.6", "2.1"\]}} |
+| properties | (**Optional**). A sequence of [event listener object property definitions](#EventListenerObjectPropertySpecification) which describe the properties in the event object passed to a listener for this event. | See [#Event Listener Object Property Specification](#EventListenerObjectPropertySpecification). |
 
 Multiple event documentation definitions can be put together into a YAML sequence by following the same syntax as for [multiple methods](#ArrayofMethodDocumentationDefinitions).
 
@@ -1222,49 +901,16 @@ In that example, the source and type are what we are calling "event listener obj
 
 A single event listener object property documentation definition may contain the following keys:
 
-Key
+| Key | Notes | Examples |
+| --- | --- | --- |
+| name | The property name. | name: x |
+| summary | A short, "one-liner" summary of the property, in Markdown format. **Please start summaries with a capital letter and end with a period.** | summary: The x point of the event in receiving view coordinates. |
+| type | A data type specifier indicating the type of the property, or an array of data type specifiers in case multiple types are allowed for the property. A view dimension is a typical use-case for the latter, since we support numeric values (interpreted as pixels) or string values ("auto", "10dp", etc.). | type: Number |
+| platforms | (**Optional**). Identical to the platforms key defined in the [Valid Keys in the Documentation of a Type](#valid-keys-in-the-documentation-of-a-type) section, but applied here to an event listener object property. | platforms: \[android, iphone, ipad\] |
+| deprecated | (**Optional**) A simple dictionary object with keys since and removed, whose values should hold Titanium version numbers indicating since when the property was deprecated and when (if ever) it will be removed. since should always be present. removed is optional. | deprecated: {since: "1.6.0", removed: "1.8.0"} |
+| constants | ( **Optional** ). Array of Titanium constant values the property can be assigned. You can use a wildcard character at the end of the value to match more than one constant | constants: \[ Titanium.UI.LANDSCAPE\_\*, Titanium.UI.PORTRAIT, Titanium.UI.UPSIDE\_PORTRAIT\] |
 
-Notes
-
-Examples
-
-name
-
-The property name.
-
-name: x
-
-summary
-
-A short, "one-liner" summary of the property, in Markdown format. **Please start summaries with a capital letter and end with a period.**
-
-summary: The x point of the event in receiving view coordinates.
-
-type
-
-A data type specifier indicating the type of the property, or an array of data type specifiers in case multiple types are allowed for the property. A view dimension is a typical use-case for the latter, since we support numeric values (interpreted as pixels) or string values ("auto", "10dp", etc.).
-
-type: Number
-
-platforms
-
-(**Optional**). Identical to the platforms key defined in the [Valid Keys in the Documentation of a Type](#ValidKeysintheDocumentationofaType) section, but applied here to an event listener object property.
-
-platforms: \[android, iphone, ipad\]
-
-deprecated
-
-(**Optional**) A simple dictionary object with keys since and removed, whose values should hold Titanium version numbers indicating since when the property was deprecated and when (if ever) it will be removed. since should always be present. removed is optional.
-
-deprecated: {since: "1.6.0", removed: "1.8.0"}
-
-constants
-
-( **Optional** ). Array of Titanium constant values the property can be assigned. You can use a wildcard character at the end of the value to match more than one constant
-
-constants: \[ Titanium.UI.LANDSCAPE\_\*, Titanium.UI.PORTRAIT, Titanium.UI.UPSIDE\_PORTRAIT\]
-
-For examples, see the YAML sample above in the [#Event Specification](#EventSpecification).
+For examples, see the YAML sample above in the [#Event Specification](#event-specification).
 
 #### Free-Form Text Values
 
@@ -1319,7 +965,6 @@ All code blocks are assumed to be Javascript, unless the language is specified u
 * The first line of the indented code block should be a comment (using whatever single-line comment syntax the language uses) containing {{language:\[language\]}}.
 
 * \[language\] should be one of the "Short names" values specified by [Pygments](http://pygments.org/docs/lexers/), since that is a very popular syntax highlighter, and syntax highlighting is very likely the most common why someone would be interested in this information.
-
 
 Examples:
 
@@ -1379,7 +1024,6 @@ The examples property for type, method and property definitions is actually an a
 
 * An example property, which is free-form text (as described in the previous section) wherein you can put both explanatory text and any code blocks. This is parsed as Markdown, so simply indent each code block by another four characters for the Markdown processor to recognize it as code.
 
-
 Note that you should put the vertical bar (|) at the start of the example value, followed by a line break and indentation. This is so that any further indentation that you do, such as for code blocks, is preserved.
 
 Example:
@@ -1428,7 +1072,7 @@ We have created the following syntax to indicate a particular type of callback, 
 
 \[type\] should be replaced with the name of a type that you document simply for purposes of documenting this callback parameter. These can perhaps be thought of as _pseudo-types_, in the sense that they are only "being documented for the documentation", or to make the documentation complete.
 
-The next section, [#Documenting Object Literals and Interfaces](#DocumentingObjectLiteralsandInterfaces), describes how to document these _pseudo-types_. For the time being, imagine you have defined a _pseudo-type_ named ScreenshotResult to be used with the callback for Titanium.Media.takeScreenshot. In that case, the documentation for the parameters of takeScreenshot would look like this:
+The next section, [#Documenting Object Literals and Interfaces](#documenting-object-literals-and-interfaces), describes how to document these _pseudo-types_. For the time being, imagine you have defined a _pseudo-type_ named ScreenshotResult to be used with the callback for Titanium.Media.takeScreenshot. In that case, the documentation for the parameters of takeScreenshot would look like this:
 
 `name: takeScreenshot`
 
@@ -1444,7 +1088,7 @@ Note: If a callback is called without parameters, it can be specified simply wit
 
 ##### Object Literals
 
-As the section on [#Documenting Callbacks](#DocumentingCallbacks) shows, there are some occasions when we wish to provide "strongly-typed documentation" for what are actually simple Javascript object literals with Java HashMap or Objective-C NSDictionary instances behind them. The single parameter accepted by callbacks is one good example; in that case, we wish to document which properties can be expected in the object literal passed to the callback, what data types should be expected for those properties, etc.
+As the section on [#Documenting Callbacks](#documenting-callbacks) shows, there are some occasions when we wish to provide "strongly-typed documentation" for what are actually simple Javascript object literals with Java HashMap or Objective-C NSDictionary instances behind them. The single parameter accepted by callbacks is one good example; in that case, we wish to document which properties can be expected in the object literal passed to the callback, what data types should be expected for those properties, etc.
 
 Another example is [Titanium.Media.openPhotoGallery](#!/api/Titanium.Media-method-openPhotoGallery), which takes a single argument: an object literal that should contain several properties. If you look at the existing documentation for that method's single parameter, you will see that it is just a bunch of text describing what should go into the object literal; this is not useful for automated tools and utilities, such as the Code Assist feature of Studio. We would rather have structured documentation for this object literal.
 
@@ -1460,7 +1104,7 @@ To provide "strongly typed documentation" for these object literals and shared i
 
 Some of these _pseudo-types_ might be useful only to one Titanium type being documented. An example of this is the object that gets passed to Titanium.Media.openPhotoGallery: there is no other part of the Titanium Mobile SDK which cares about that object. In such cases, you should document the pseudo-type in the same file in which you are documenting the main type.
 
-With YAML, you can document multiple types in a single documentation file simply by starting a new "document". You'll recall from [#A Type Documentation is a YAML Document](#ATypeDocumentationisaYAMLDocument) that a new document begins with three dashes (---) alone on a line. So if you wish to write documentation for a pseudo-type that is only used in one place, you can simply start a new YAML document at the bottom of the file.
+With YAML, you can document multiple types in a single documentation file simply by starting a new "document". You'll recall from [#A Type Documentation is a YAML Document](#a-type-documentation-is-a-yaml-document) that a new document begins with three dashes (---) alone on a line. So if you wish to write documentation for a pseudo-type that is only used in one place, you can simply start a new YAML document at the bottom of the file.
 
 Using our running example type Titanium.Do.Hicky, we can document a method, adjustFlubber, which accepts a dictionary object (or "object literal") as a parameter. The object should have the properties x and y, which are coordinates, and callback, which is a function that will be called upon completion. The callback accepts an object that has success and error members. The documentation definition might look like this:
 
@@ -1562,7 +1206,7 @@ The real-world example documentation for Titanium.UI.View also contains some pse
 
 ###### Pseudo-Types Useful in Multiple Modules
 
-If a _pseudo-type_ is useful in multiple modules, it should go in a common/ folder which is at the root of the documentation directories, i.e., as a sibling to Titanium/. One example of this is the documentation definition for the Stream interface described in [#Interfaces](#Interfaces) above. In that case, a file in common/ should exist – perhaps common/TiStream.yml – with contents similar to this example:
+If a _pseudo-type_ is useful in multiple modules, it should go in a common/ folder which is at the root of the documentation directories, i.e., as a sibling to Titanium/. One example of this is the documentation definition for the Stream interface described in [#Interfaces](#interfaces) above. In that case, a file in common/ should exist – perhaps common/TiStream.yml – with contents similar to this example:
 
 TiStream.yml
 
@@ -1648,15 +1292,13 @@ When a type is specified (such as a return type, a method parameter type or a pr
 
 #### Markdown Links in Free-Form Text Values
 
-As [explained earlier](#Free-FormTextValues), a few of the documentation YAML key values accept free-form text which is treated as Markdown. Backticks and double-brackets will no longer be used within these text blocks as indicators that links to type documentation should automatically be generated. Instead, Markdown shall be followed more closely. In Markdown, the backtick has no meaning with respect to linking – nor does a set of double square brackets.
+As [explained earlier](#free-form-text-values), a few of the documentation YAML key values accept free-form text which is treated as Markdown. Backticks and double-brackets will no longer be used within these text blocks as indicators that links to type documentation should automatically be generated. Instead, Markdown shall be followed more closely. In Markdown, the backtick has no meaning with respect to linking – nor does a set of double square brackets.
 
 Instead, use one of these two Markdown standards:
 
 * Angle brackets, if you don't need any custom text for the link. Example: <Titanium.UI.View> becomes a link with "Titanium.UI.View" as the link text and the reference being the appropriate address to the Titanium.UI.View documentation.
 
-
 * The standard, most common Markdown "inline link" syntax. Example: \[Your custom link text here\](Titanium.UI.View) becomes a link with "Your custom link text here" as the link text and the reference being the appropriate address to the Titanium.UI.View documentation.
-
 
 Our scripts will then evaluate the link and if the link value precisely matches the full, namespace-qualified name of a documented type, then the script will know to generate the link to the type's documentation.
 

@@ -2,32 +2,31 @@
 
 This document provides answers and links to commonly asked questions about Titanium SDK.
 
-* [Can I use Swift code to develop apps for Android in Hyperloop?](#CanIuseSwiftcodetodevelopappsforAndroidinHyperloop?)
+* [Can I use Swift code to develop apps for Android in Hyperloop?](#can-i-use-swift-code-to-develop-apps-for-android-in-hyperloop?)
 
-* [Does geofence module uses coreLocation (for iOS) or does it use something else?](#DoesgeofencemoduleusescoreLocation(foriOS)ordoesitusesomethingelse?)
+* [Does geofence module uses coreLocation (for iOS) or does it use something else?](#does-geofence-module-uses-corelocation-for-ios-or-does-it-use-something-else?)
 
-* [How do I use Titanium.Android.Intent in Android for calendar](#HowdoIuseTitanium.Android.IntentinAndroidforcalendar)
+* [How do I use Titanium.Android.Intent in Android for calendar](#how-do-i-use-titanium.android.intent-in-android-for-calendar)
 
-* [Create an Appcelerator Android module with armeabi-v7a,x86 architectures](#CreateanAppceleratorAndroidmodulewitharmeabi-v7a,x86architectures)
+* [Create an Appcelerator Android module with armeabi-v7a,x86 architectures](#create-an-appcelerator-android-module-with-armeabi-v7a,x86-architectures)
 
 * [iOS 10+ and plist](#iOS10+andplist)
 
-* [How to change the Android buildtools version](#HowtochangetheAndroidbuildtoolsversion)
+* [How to change the Android buildtools version](#how-to-change-the-android-buildtools-version)
 
-* [How do you check if a module supports 64bit or not?](#Howdoyoucheckifamodulesupports64bitornot?)
+* [How do you check if a module supports 64bit or not?](#how-do-you-check-if-a-module-supports-64bit-or-not?)
 
-* [Localization supports for the plist file](#Localizationsupportsfortheplistfile)
+* [Localization supports for the plist file](#localization-supports-for-the-plist-file)
 
-* [Where can I find the best practices for Titanium SDK?](#WherecanIfindthebestpracticesforTitaniumSDK?)
+* [Where can I find the best practices for Titanium SDK?](#where-can-i-find-the-best-practices-for-titanium-sdk?)
 
-* [What are the system requirements?](#Whatarethesystemrequirements?)
+* [What are the system requirements?](#what-are-the-system-requirements?)
 
-* [What are the reserved words?](#Whatarethereservedwords?)
+* [What are the reserved words?](#what-are-the-reserved-words?)
 
-* [What is Hyperloop?](#WhatisHyperloop?)
+* [What is Hyperloop?](#what-is-hyperloop?)
 
-* [How do I enable Hyperloop?](#HowdoIenableHyperloop?)
-
+* [How do I enable Hyperloop?](#how-do-i-enable-hyperloop?)
 
 ## Can I use Swift code to develop apps for Android in Hyperloop?
 
@@ -65,7 +64,6 @@ Create a Titanium module:
 
 4. Verify the libs and dist/<whatever>.zip file only contains the desired architectures.
 
-
 ## iOS 10+ and plist
 
 For the iOS 10 or later version, you have to add the following keys in the plist of the tiapp.xml file, if you use any of the following:
@@ -79,7 +77,6 @@ For the iOS 10 or later version, you have to add the following keys in the plist
 * **NSPhotoLibraryUsageDescription**: If you use the Ti.Media.openPhotoGallery API to access the photo gallery or Ti.Media.showCamera API to save photos
 
 * **NSMicrophoneUsageDescription**: If you use the Ti.Media.AudioRecorder API to record audio or Ti.Media.showCamera to record videos
-
 
 An example of updated tiapp.xml file might look something like this:
 
@@ -128,7 +125,6 @@ You can change the build tools version using this command: appc ti config androi
 2. Open a terminal and change directories to the module's last directory (where the libti.modulename.a is located).
 
 3. Execute either xcrun lipo -info or xcrun lipo -info libti.modulename.a. For example, executing xcrun lipo -info libti.barcode.a should return this info: Architectures in the fat file: libti.barcode.a are: armv7 i386 x86\_64 arm64
-
 
 ## Localization supports for the plist file
 
@@ -183,7 +179,6 @@ Your system environment must meet the following requirements to run Studio:
 * **Java Runtime:** Oracle JDK (no other brand of Java is suitable)
 
 * **Node.js:** Required for the Titanium command-line tools like the CLI, Alloy and AMPLIFY Runtime Services
-
 
 For Windows, you can use either 32-bit or 64-bit versions of Java JDK. Please refer to [Studio Java Support](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/Studio_Java_Support/) for more information.
 

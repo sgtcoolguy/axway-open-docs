@@ -1,19 +1,18 @@
 {"title":"Prerequisites","weight":"20"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-  * [Memory](#Memory)
+    * [Memory](#memory)
 
-  * [Operating System](#OperatingSystem)
+    * [Operating System](#operating-system)
 
-  * [Required Software](#RequiredSoftware)
+    * [Required Software](#required-software)
 
-    * [Java Development Kit](#JavaDevelopmentKit)
+        * [Java Development Kit](#java-development-kit)
 
-    * [Node.js](#Node.js)
+        * [Node.js](#node.js)
 
-  * [Titanium Compatibility Matrix](#TitaniumCompatibilityMatrix)
-
+    * [Titanium Compatibility Matrix](#titanium-compatibility-matrix)
 
 ## Overview
 
@@ -23,29 +22,11 @@ This document lists the minimum requirements necessary to run a Titanium environ
 
 The minimum memory requirement for Studio and the Titanium SDK is as follows:
 
-Product
-
-Host Operating System
-
-Storage
-
-Appcelerator Studio
-
-All
-
-1 GB (contiguous)
-
-Latest Android SDK
-
-macOS
-
-1.5 GB (contiguous)
-
-Latest Android SDK
-
-Windows
-
-1 GB (contiguous)
+| Product | Host Operating System | Storage |
+| --- | --- | --- |
+| Appcelerator Studio | All | 1 GB (contiguous) |
+| Latest Android SDK | macOS | 1.5 GB (contiguous) |
+| Latest Android SDK | Windows | 1 GB (contiguous) |
 
 Minimum system memory requirements is 8GB of RAM. 16GB is highly recommended.
 
@@ -53,19 +34,10 @@ Minimum system memory requirements is 8GB of RAM. 16GB is highly recommended.
 
 Titanium is supported on the following Operating Systems:
 
-Operating System
-
-Version
-
-macOS
-
-10.11.5 (Mavericks) and later
-
-Windows
-
-Windows 7 and later(Android)
-Windows 8.1 and later (Windows Phone)
-Windows 10 and later (Windows 10 Mobile)
+| Operating System | Version |
+| --- | --- |
+| macOS | 10.11.5 (Mavericks) and later |
+| Windows | Windows 7 and later(Android)  <br />Windows 8.1 and later (Windows Phone)  <br />Windows 10 and later (Windows 10 Mobile) |
 
 As of Titanium 9.0.0, building Windows apps is no longer supported.
 
@@ -87,51 +59,10 @@ Titanium supports the following versions of JDK for each respective Operating Sy
 
 ![download_05](/Images/appc/download/attachments/29004836/download_05.png)
 
-Operating System
-
-Min JDK Version
-
-Max JDK Version
-
-Package Arch Version
-
-Download Location
-
-Notes
-
-OS X
-
-8
-
-8 latest revision
-
-64-bit
-
-[Official Website](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-
-* On Mac OS X 10.6 (Snow Leopard) and earlier, the JDK is preinstalled.
-
-* On Mac OS X 10.7 (Lion) and later, the OS should prompt you to install it when needed.
-
-* Android Development on OS X systems requires JDK 8 or higher to be installed.
-
-
-Windows
-
-8
-
-8 latest revision
-
-**32-bit** (x86 / i586) (see note)
-
-[Official Website](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-
-* The 32-bit version of the JDK is required regardless of whether Titanium is running on a 32-bit Windows system.
-
-* Studio offers to install JDK 8 if no JDK is found.
-
-
-**Note**: From Studio 5.1.0 and up, 64-bit JDK is supported
+| Operating System | Min JDK Version | Max JDK Version | Package Arch Version | Download Location | Notes |
+| --- | --- | --- | --- | --- | --- |
+| OS X | 8 | 8 latest revision | 64-bit | [Official Website](http://www.oracle.com/technetwork/java/javase/downloads/index.html) | * On Mac OS X 10.6 (Snow Leopard) and earlier, the JDK is preinstalled.<br />    <br />* On Mac OS X 10.7 (Lion) and later, the OS should prompt you to install it when needed.<br />    <br />* Android Development on OS X systems requires JDK 8 or higher to be installed. |
+| Windows | 8 | 8 latest revision | **32-bit** (x86 / i586) (see note) | [Official Website](http://www.oracle.com/technetwork/java/javase/downloads/index.html) | * The 32-bit version of the JDK is required regardless of whether Titanium is running on a 32-bit Windows system.<br />    <br />* Studio offers to install JDK 8 if no JDK is found.<br />    <br /><br />**Note**: From Studio 5.1.0 and up, 64-bit JDK is supported |
 
 See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for detailed instructions.
 
@@ -143,21 +74,9 @@ On Mac OS X and Windows, if you have selected to install Titanium updates, Studi
 
 ![download_05](/Images/appc/download/attachments/29004836/download_05.png)
 
-Operating System
-
-Min Node Version
-
-Max Node Version
-
-Download Location
-
-macOS / Windows / Linux
-
-8.0
-
-10.X
-
-[Official Website](https://nodejs.org/en/download/releases/)
+| Operating System | Min Node Version | Max Node Version | Download Location |
+| --- | --- | --- | --- |
+| macOS / Windows / Linux | 8.0 | 10.X | [Official Website](https://nodejs.org/en/download/releases/) |
 
 See [Installing Node](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Node/) for detailed instructions.
 

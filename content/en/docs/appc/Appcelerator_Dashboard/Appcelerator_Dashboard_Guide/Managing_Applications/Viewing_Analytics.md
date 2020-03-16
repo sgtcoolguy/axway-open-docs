@@ -1,57 +1,56 @@
 {"title":"Viewing Analytics","weight":"60"}
 
-* [Analytics tab for client services](#Analyticstabforclientservices)
+* [Analytics tab for client services](#analytics-tab-for-client-services)
 
-  * [Real-time tab](#Real-timetab)
+    * [Real-time tab](#real-time-tab)
 
-  * [Sessions tab](#Sessionstab)
+    * [Sessions tab](#sessions-tab)
 
-  * [Avg. Session Length tab](#Avg.SessionLengthtab)
+    * [Avg. Session Length tab](#avg.-session-length-tab)
 
-  * [Installs tab](#Installstab)
+    * [Installs tab](#installs-tab)
 
-  * [Updates tab](#Updatestab)
+    * [Updates tab](#updates-tab)
 
-  * [Version Adoption tab](#VersionAdoptiontab)
+    * [Version Adoption tab](#version-adoption-tab)
 
-  * [Unique Devices tab](#UniqueDevicestab)
+    * [Unique Devices tab](#unique-devices-tab)
 
-  * [Events tab](#Eventstab)
+    * [Events tab](#events-tab)
 
-  * [Event Funnels tab](#EventFunnelstab)
+    * [Event Funnels tab](#event-funnels-tab)
 
-  * [Custom Queries tab](#CustomQueriestab)
+    * [Custom Queries tab](#custom-queries-tab)
 
-* [Analytics tab for Mobile Backend Services](#AnalyticstabforMobileBackendServices)
+* [Analytics tab for Mobile Backend Services](#analytics-tab-for-mobile-backend-services)
 
-  * [All APIs tab](#AllAPIstab)
+    * [All APIs tab](#all-apis-tab)
 
-  * [Authentication tab](#Authenticationtab)
+    * [Authentication tab](#authentication-tab)
 
-  * [Communication tab](#Communicationtab)
+    * [Communication tab](#communication-tab)
 
-  * [Custom tab](#Customtab)
+    * [Custom tab](#custom-tab)
 
-  * [Location tab](#Locationtab)
+    * [Location tab](#location-tab)
 
-  * [Media tab](#Mediatab)
+    * [Media tab](#media-tab)
 
-  * [Social tab](#Socialtab)
+    * [Social tab](#social-tab)
 
-* [Data filters](#DataFiltersDatafilters)
+* [Data filters](#data-filters)
 
-  * [Custom date/time range filter](#Customdate/timerangefilter)
+    * [Custom date/time range filter](#custom-date/time-range-filter)
 
-* [Export data](#ExportExportdata)
+* [Export data](#export-data)
 
-* [Unspecified metric names and values](#Unspecifiedmetricnamesandvalues)
+* [Unspecified metric names and values](#unspecified-metric-names-and-values)
 
-  * [Platform icons for Mobile Backend Services requests](#PlatformiconsforMobileBackendServicesrequests)
+    * [Platform icons for Mobile Backend Services requests](#platform-icons-for-mobile-backend-services-requests)
 
-  * [Version and environment values for Crash and Test metrics](#VersionandenvironmentvaluesforCrashandTestmetrics)
+    * [Version and environment values for Crash and Test metrics](#version-and-environment-values-for-crash-and-test-metrics)
 
-  * [Geographic analysis](#Geographicanalysis)
-
+    * [Geographic analysis](#geographic-analysis)
 
 ## Analytics tab for client services
 
@@ -89,7 +88,6 @@ Session length is calculated based on the following user actions:
 
 * Resuming an application that was in the background, and closing it
 
-
 If the application was placed in the background and resumed within the timeout value (default is 30 seconds), both events are canceled, and the previous session remains active.
 
 In the Platform view:
@@ -98,7 +96,6 @@ In the Platform view:
 
 * Below the chart, a table displays additional details for the metric
 
-
 In the Location view:
 
 * Double-click the map to zoom in on a region to view more granular session counts by region.
@@ -106,7 +103,6 @@ In the Location view:
 * Hover over a circle to view an outline of the region represented by the displayed count.
 
 * To zoom out, shift+click on the map. You can also use the on-screen zoom controls.
-
 
 ### Avg. Session Length tab
 
@@ -126,7 +122,6 @@ In the Platform and Version views:
 
 * Below the chart, a table displays additional details for the metric.
 
-
 In the Location view:
 
 * Double-click the map to zoom in on a region to view more granular session counts by region.
@@ -134,7 +129,6 @@ In the Location view:
 * Hover over a circle to view an outline of the region represented by the displayed count.
 
 * To zoom out, shift+click on the map. You can also use the on-screen zoom controls.
-
 
 ### Updates tab
 
@@ -148,7 +142,6 @@ In the Platform and Version views:
 
 * Below the chart, a table displays additional details for the metric.
 
-
 In the Location view:
 
 * Double-click the map to zoom in on a region to view more granular session counts by region.
@@ -156,7 +149,6 @@ In the Location view:
 * Hover over a circle to view an outline of the region represented by the displayed count.
 
 * To zoom out, shift+click on the map. You can also use the on-screen zoom controls.
-
 
 ### Version Adoption tab
 
@@ -175,7 +167,6 @@ In the Platform and Version views:
 * At the top, a line chart displays the time series of the metric; hover your mouse over an inflection point in the chart to view data for that time.
 
 * Below the chart, a table displays additional details for the metric.
-
 
 ### Events tab
 
@@ -261,15 +252,15 @@ To filter data for a specific time interval, either select one of the predefined
 
 1. Click on the date filter and select a granularity level from the granularity drop-down list.
 
-  1. **Last 3 Months**: aggregate results by the last three months.
+    1. **Last 3 Months**: aggregate results by the last three months.
 
-  2. **Last 30 Days**: aggregate results by the last 30 days.
+    2. **Last 30 Days**: aggregate results by the last 30 days.
 
-  3. **Last 7 Days**: aggregate results by the last seven days.
+    3. **Last 7 Days**: aggregate results by the last seven days.
 
-  4. **Last 24 Hours**: aggregate results by day.
+    4. **Last 24 Hours**: aggregate results by day.
 
-  5. **Last 60 Minutes**: aggregate results by the last 60 minutes.
+    5. **Last 60 Minutes**: aggregate results by the last 60 minutes.
 
 2. To set a custom time range, click on one of the calendar date fields.
 
@@ -278,7 +269,6 @@ To filter data for a specific time interval, either select one of the predefined
 4. If the dates selected are less than four days apart, you also need to select a start time and end time with the time picker.
 
 5. Click **Set**.
-
 
 The data on the dashboard page will be updated based on the newly set date/time range filter. Note that the filters you select persist when navigating through the Dashboard.
 
@@ -292,15 +282,13 @@ You can export chart and table data to CSV format to use in other programs, such
 
 2. Click the **Action Menu** icon, then select either:
 
-  1. **Refresh** - To refresh the data export and the displayed analytics information**.** The elapsed time since the last data refresh is displayed.
+    1. **Refresh** - To refresh the data export and the displayed analytics information**.** The elapsed time since the last data refresh is displayed.
 
-  2. **Chart** - To export the data in the chart.
+    2. **Chart** - To export the data in the chart.
 
-  3. **Table** - To export the data from the table.
+    3. **Table** - To export the data from the table.
 
-
-  ![export_data](/Images/appc/download/thumbnails/60145251/export_data.png)
-
+    ![export_data](/Images/appc/download/thumbnails/60145251/export_data.png)
 
 Once you select the export option, your data download begins.
 

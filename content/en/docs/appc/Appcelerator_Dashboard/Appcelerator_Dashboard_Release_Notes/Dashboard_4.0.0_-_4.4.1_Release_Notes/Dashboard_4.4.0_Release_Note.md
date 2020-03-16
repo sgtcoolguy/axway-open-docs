@@ -12,7 +12,6 @@ Dashboard 4.4.0 is a minor release, which includes behavior changes and a few bu
 
 * The default date range for analytics was changed from 7 days to 24 hours.
 
-
 ## Roles and Features
 
 Dashboard 4.4.0 introduces the capability to assign users to different roles that grant them different rights to the dashboard. Those roles and rights are:
@@ -25,7 +24,6 @@ Dashboard 4.4.0 introduces the capability to assign users to different roles tha
 
 * **Insight** - user who has a "read-only" access such as viewing performance management, crash analytics, and query builder results to the team's assigned apps
 
-
 In addition to these user roles, you can add the following features to your roles:
 
 * Support
@@ -33,7 +31,6 @@ In addition to these user roles, you can add the following features to your role
 * Test (available for enterprise only)
 
 * Performance management (included to enterprise)
-
 
 ## Fixed Issues
 

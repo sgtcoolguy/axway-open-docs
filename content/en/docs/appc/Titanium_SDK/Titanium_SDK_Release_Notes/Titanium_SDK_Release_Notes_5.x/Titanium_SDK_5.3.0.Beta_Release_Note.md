@@ -2,34 +2,33 @@
 
 ## Contents
 
-* [About This Release](#AboutThisRelease)
+* [About This Release](#about-this-release)
 
-  * [Windows 8.1 and Windows 10](#Windows8.1andWindows10)
+    * [Windows 8.1 and Windows 10](#windows-8.1-and-windows-10)
 
-* [New Features](#NewFeatures)
+* [New Features](#new-features)
 
-  * [Windows Platform](#WindowsPlatform)
+    * [Windows Platform](#windows-platform)
 
-* [Community Credits](#CommunityCredits)
+* [Community Credits](#community-credits)
 
-* [Fixed Issues](#FixedIssues)
+* [Fixed Issues](#fixed-issues)
 
-* [Improvements](#Improvements)
+* [Improvements](#improvements)
 
-* [API Changes](#APIChanges)
-
+* [API Changes](#api-changes)
 
 ## About This Release
 
 Titanium SDK 5.3.0.Beta is a minor release of the SDK, addressing high-priority issues from previous releases.
 
-As of this release, Titanium SDK 5.2.x will not be supported six months from 5.3.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Titanium SDK 5.2.x will not be supported six months from 5.3.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ### Windows 8.1 and Windows 10
 
 With the release of SDK 5.3.0, we put some focus on supporting Windows 10 and Windows 10 mobile features ([TIMOB-19816](https://jira.appcelerator.org/browse/TIMOB-19816)).
 
-We updated the way you can specify capabilities of your app in the tiapp.xml to account for namespace and naming differences between Windows 8.1 and 10 apps ( [TIMOB-20231](https://jira.appcelerator.org/browse/TIMOB-20231)). Previously, you would have to include capabilities in the xml namespace on the tag. You had to know what namespace prefix to use based on what capability your app for each platform and version. See [Handling differing capabilities between Windows 8.1 and 10](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#HandlingdifferingcapabilitiesbetweenWindows8.1and10) for some examples on for Windows 8.1 and Windows 10 capabilities.
+We updated the way you can specify capabilities of your app in the tiapp.xml to account for namespace and naming differences between Windows 8.1 and 10 apps ( [TIMOB-20231](https://jira.appcelerator.org/browse/TIMOB-20231)). Previously, you would have to include capabilities in the xml namespace on the tag. You had to know what namespace prefix to use based on what capability your app for each platform and version. See [Handling differing capabilities between Windows 8.1 and 10](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#handling-differing-capabilities-between-windows-8.1-and-10) for some examples on for Windows 8.1 and Windows 10 capabilities.
 
 This release also includes support of localization ([TIMOB-20315](https://jira.appcelerator.org/browse/TIMOB-20315)) that includes localization of application name and properties for the Ti.Locale module:
 
@@ -55,18 +54,17 @@ Finally, we updated Ti.Media.AudioPlayer’s use of background audio APIs due to
 
 * [TIMOB-17917](https://jira.appcelerator.org/browse/TIMOB-17917) - Windows: Implement Ti.Media.AudioRecorder
 
-  * Implemented the [Ti.Media.AudioRecoder](#!/api/Titanium.Media.AudioRecorder) API
+    * Implemented the [Ti.Media.AudioRecoder](#!/api/Titanium.Media.AudioRecorder) API
 
 * [TIMOB-20163](https://jira.appcelerator.org/browse/TIMOB-20163) - Windows: Add Contact group functionality for Windows 10
 
-  * Added support for [Ti.Contacts](#!/api/Titanium.Contacts), [Ti.Contacts.Group](#!/api/Titanium.Contacts.Group), and [Ti.Contacts.Person](#!/api/Titanium.Contacts.Person) for Windows 10
+    * Added support for [Ti.Contacts](#!/api/Titanium.Contacts), [Ti.Contacts.Group](#!/api/Titanium.Contacts.Group), and [Ti.Contacts.Person](#!/api/Titanium.Contacts.Person) for Windows 10
 
 * [TIMOB-20257](https://jira.appcelerator.org/browse/TIMOB-20257) - Windows: Support Ti.Blob.imageAs\* methods
 
-  * Implemented image manipulation for Windows Phone
+    * Implemented image manipulation for Windows Phone
 
-  * Please note that Ti.Blob.imageAsThumbnail doesn't support/ignores the borderSize and cornerRadius arguments.
-
+    * Please note that Ti.Blob.imageAsThumbnail doesn't support/ignores the borderSize and cornerRadius arguments.
 
 ## Community Credits
 
@@ -83,7 +81,6 @@ Finally, we updated Ti.Media.AudioPlayer’s use of background audio APIs due to
 * [Timan Rebel](https://github.com/timanrebel) for his contribution on support remote debugging / inspecting of Android webviews ([TIMOB-18066](https://jira.appcelerator.org/browse/TIMOB-18066))
 
 * [Alex Montgomery](mailto:alex@appwapp.com) for contributing to add session identifiers to urlSession events
-
 
 ## Fixed Issues
 
@@ -211,66 +208,46 @@ Finally, we updated Ti.Media.AudioPlayer’s use of background audio APIs due to
 
 * [TIMOB-23237](https://jira.appcelerator.org/browse/TIMOB-23237) - Windows: Inconsistencies in Ti.API.log
 
-
 ## Improvements
 
 * [CLI-963](https://jira.appcelerator.org/browse/CLI-963) - CLI: enable template options when creating Alloy project
 
-  * Added feature that allows for creating two\_tabbed Alloy project from CL
+    * Added feature that allows for creating two\_tabbed Alloy project from CL
 
 * [TIMOB-18066](https://jira.appcelerator.org/browse/TIMOB-18066) - Support remote debugging / inspecting of Android webviews
 
-  * Support remote debugging and inspecting of Android webviews
+    * Support remote debugging and inspecting of Android webviews
 
 * [TIMOB-18531](https://jira.appcelerator.org/browse/TIMOB-18531) - Windows: Use default publisher-guid when none is given on build
 
-  * Ti CLI now uses a default publisher GUID for non-production builds (00000000-0000-1000-8000-000000000000) and will prompt developers to enter a guid only when building for dist-phonestore or dist-winstore with no value for windows.publisherId configured
+    * Ti CLI now uses a default publisher GUID for non-production builds (00000000-0000-1000-8000-000000000000) and will prompt developers to enter a guid only when building for dist-phonestore or dist-winstore with no value for windows.publisherId configured
 
 * [TIMOB-18707](https://jira.appcelerator.org/browse/TIMOB-18707) - Windows: Support Ti.UI.View border\* properties
 
-  * Added support for Ti.UI.View border properties (borderColor, borderRadius, and borderWidth)
+    * Added support for Ti.UI.View border properties (borderColor, borderRadius, and borderWidth)
 
 * [TIMOB-19946](https://jira.appcelerator.org/browse/TIMOB-19946) - Windows: Implement Titanium.UI.AlertDialog.hide
 
-  * Added Titanium.UI.AlertDialog.hide for Windows
+    * Added Titanium.UI.AlertDialog.hide for Windows
 
 * [TIMOB-20085](https://jira.appcelerator.org/browse/TIMOB-20085) - Windows: ti clean should cleanup VS temporary build directory
 
-  * The ti clean command cleans up the temporary build directory
+    * The ti clean command cleans up the temporary build directory
 
 * [TIMOB-20241](https://jira.appcelerator.org/browse/TIMOB-20241) - Windows: Implement Ti.UI.View.convertPointToView( point, destinationView )
 
-  * Implemented the [Ti.UI.View.convertPointToView](#!/api/Titanium.UI.View-method-convertPointToView) method
+    * Implemented the [Ti.UI.View.convertPointToView](#!/api/Titanium.UI.View-method-convertPointToView) method
 
 * [TIMOB-20281](https://jira.appcelerator.org/browse/TIMOB-20281) - Windows: Implement enabled property for View
 
-  * Implemented the Ti.UI.View.enabled property. This is currently not in our docs, but Android (and now Windows) has it. This makes it so that the backgroundDisabledColor and backgroundDisabledImage would be shown when enabled is set to false (otherwise, I’m not sure when those values would ever be used). Other than that, I don’t think it “disables” all the controls on the view from being clickable/editable/etc for us. Since this wasn’t really defined ind acs, I’m guessing we may need to revisit and make sure we’re in parity with Android.
-
+    * Implemented the Ti.UI.View.enabled property. This is currently not in our docs, but Android (and now Windows) has it. This makes it so that the backgroundDisabledColor and backgroundDisabledImage would be shown when enabled is set to false (otherwise, I’m not sure when those values would ever be used). Other than that, I don’t think it “disables” all the controls on the view from being clickable/editable/etc for us. Since this wasn’t really defined ind acs, I’m guessing we may need to revisit and make sure we’re in parity with Android.
 
 ## API Changes
 
 The following APIs are deprecated in Release 5.3.0.Beta.
 
-API
-
-Type
-
-Notes
-
-Titanium.UI.Picker.getUseSpinner
-
-method
-
-This property is deprecated. Please use the default native "dropdown" style.
-
-Titanium.UI.Picker.setUseSpinner
-
-method
-
-This property is deprecated. Please use the default native "dropdown" style.
-
-Titanium.UI.Picker.useSpinner
-
-property
-
-This property is deprecated. Please use the default native "dropdown" style.
+| API | Type | Notes |
+| --- | --- | --- |
+| Titanium.UI.Picker.getUseSpinner | method | This property is deprecated. Please use the default native "dropdown" style. |
+| Titanium.UI.Picker.setUseSpinner | method | This property is deprecated. Please use the default native "dropdown" style. |
+| Titanium.UI.Picker.useSpinner | property | This property is deprecated. Please use the default native "dropdown" style. |

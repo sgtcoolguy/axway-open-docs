@@ -20,14 +20,13 @@ To display the variables for a stack frame:
 
 2. Suspend the current JavaScript thread.
 
-  1. In the Debug View, select the thread that you want to suspend.
+    1. In the Debug View, select the thread that you want to suspend.
 
-  2. Click the **Suspend** button ![IconSuspend](/Images/appc/download/attachments/30083100/IconSuspend.png) to suspend the JavaScript code on the first executed line. While the thread is suspended, your web browser user interface will be completely disabled.
+    2. Click the **Suspend** button ![IconSuspend](/Images/appc/download/attachments/30083100/IconSuspend.png) to suspend the JavaScript code on the first executed line. While the thread is suspended, your web browser user interface will be completely disabled.
 
 3. In the Debug View, expand **Thread** and select the stack frame that you want to view the variables for.
 
 4. Click the Variables View tab to display the variables for the stack frame that you selected.
-
 
 Studio displays the variables for the stack frame in the Variables View.
 
@@ -48,7 +47,6 @@ To change the value of a variable:
 3. On the **Set Value** pop-up window, type the new value for your variable.
 
 4. Click **OK** to set the new value of the variable.
-
 
 ## Related Topics
 

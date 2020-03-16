@@ -1,20 +1,18 @@
 {"title":"Authentication","weight":"20"}
 
-* [Application key over SSL](#ApplicationkeyoverSSL)
+* [Application key over SSL](#application-key-over-ssl)
 
-* [2-Legged OAuth](#2-LeggedOAuth)
+* [2-Legged OAuth](#2-legged-oauth)
 
-  * [OAuth example](#OAuthexample)
+    * [OAuth example](#oauth-example)
 
-* [Access Control Lists (ACLs)](#AccessControlLists(ACLs))
-
+* [Access Control Lists (ACLs)](#access-control-lists-acls)
 
 To keep your data secure from unauthorized access, your application must prove that it is allowed to communicate with Mobile Backend Services (MBS) in each HTTP request. There are two ways your application can do this:
 
 * Application key over SSL
 
 * 2-Legged OAuth
-
 
 To authenticate user access to individual MBS data objects within your application, such as [Photos](/arrowdb/latest/#!/api/Photos) or [Files](/arrowdb/latest/#!/api/Files), you can use access control lists (ACLs). See [Access Control Lists](/arrowdb/latest/#!/api/ACLs) for more information.
 
@@ -38,7 +36,7 @@ MBS defaults to using the application key over SSL.
 
 5. On the **Keys** tab, click **Show** next to the **App Key** label to show your application key.
 
-  ![appkey_latest](/Images/appc/download/attachments/49153754/appkey_latest.png)
+    ![appkey_latest](/Images/appc/download/attachments/49153754/appkey_latest.png)
 
 ## 2-Legged OAuth
 
@@ -74,7 +72,7 @@ Below is an example of an OAuth HTTP header:
 
 5. On the **Keys** tab, click **Show** next to the **OAuth Consumer Key** and **OAuth Secret** labels.
 
-  ![oauthkeysecret_latest](/Images/appc/download/attachments/49153754/oauthkeysecret_latest.png)
+    ![oauthkeysecret_latest](/Images/appc/download/attachments/49153754/oauthkeysecret_latest.png)
 
 ### OAuth example
 

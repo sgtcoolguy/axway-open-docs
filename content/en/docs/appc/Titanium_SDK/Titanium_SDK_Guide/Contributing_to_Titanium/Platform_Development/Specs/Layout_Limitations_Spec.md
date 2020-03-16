@@ -2,32 +2,31 @@
 
 This document provides information on layout limitations, sizes, and positioning.
 
-* [Layout limitations specification](#Layoutlimitationsspecification)
+* [Layout limitations specification](#layout-limitations-specification)
 
-  * [Definitions](#Definitions)
+    * [Definitions](#definitions)
 
-* [Size](#Size)
+* [Size](#size)
 
-  * [All Layouts](#AllLayouts)
+    * [All Layouts](#all-layouts)
 
-  * [Vertical layout](#Verticallayout)
+    * [Vertical layout](#vertical-layout)
 
-  * [Horizontal Layout](#HorizontalLayout)
+    * [Horizontal Layout](#horizontal-layout)
 
-  * [Absolute (composite) layout](#Absolute(composite)layout)
+    * [Absolute (composite) layout](#absolute-composite-layout)
 
-* [Positioning](#Positioning)
+* [Positioning](#positioning)
 
-  * [Vertical layout](#Verticallayout.1)
+    * [Vertical layout](#vertical-layout)
 
-  * [Horizontal layout](#Horizontallayout)
+    * [Horizontal layout](#horizontal-layout)
 
-    * [Without Wrap](#WithoutWrap)
+        * [Without Wrap](#without-wrap)
 
-    * [With Wrap](#WithWrap)
+        * [With Wrap](#with-wrap)
 
-  * [Absolute layout](#Absolutelayout)
-
+    * [Absolute layout](#absolute-layout)
 
 ## Layout limitations specification
 
@@ -48,7 +47,6 @@ In these definition, for container (parent) view both _View_ and _Container_ def
 
 2. For container with flexible width (_Container Flexible Dimension_), effective width of children with flexible width (_View Flexible Dimension_) is 0. In other words, the effective width of a container with flexible width is the sum widths of all its children with constrained width (_View Constrained Dimension_). A runtime warning should be issued for these child views.
 
-
 ### Vertical layout
 
 For vertical container with constrained height (_Container Constrained Dimension_), only one child with FILL height is supported.
@@ -62,7 +60,6 @@ Horizontal layout has two modes: with wrap (default) and without wrap.
 1. For horizontal non-wrapping container with constrained width (_Container Constrained Dimension_), only one child with FILL width is supported. That child will occupy all the remaining horizontal space of the container (container width minus widths of all other children). Effective width for any other children with FILL width is 0. A runtime warning should be issued for these child views.
 
 2. No other restrictions for horizontal wrapping container with constrained width (_Container Constrained Dimension_).
-
 
 ### Absolute (composite) layout
 

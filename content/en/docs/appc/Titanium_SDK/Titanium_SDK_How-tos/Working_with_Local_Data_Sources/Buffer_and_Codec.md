@@ -1,19 +1,18 @@
 {"title":"Buffer and Codec","weight":"50"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Definitions](#Definitions)
+* [Definitions](#definitions)
 
-* [Titanium.Buffer](#Titanium.Buffer)
+* [Titanium.Buffer](#titanium.buffer)
 
-* [Titanium.Codec](#Titanium.Codec)
+* [Titanium.Codec](#titanium.codec)
 
-  * [Numeric conversions](#Numericconversions)
+    * [Numeric conversions](#numeric-conversions)
 
-  * [String conversions](#Stringconversions)
+    * [String conversions](#string-conversions)
 
-  * [Buffer creation with encode](#Buffercreationwithencode)
-
+    * [Buffer creation with encode](#buffer-creation-with-encode)
 
 ## Objective
 

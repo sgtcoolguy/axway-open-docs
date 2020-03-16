@@ -2,34 +2,33 @@
 
 For a push notification to reach a user, the user (or device) must be subscribed to receive push notifications on one or more notification _channels_. The application must also obtain a _device token_, which permits Mobile Backend Services (MBS) to communicate with the push service provider (Google Cloud Messaging (GCM), Firebase Cloud Messaging (FCM), or Apple Push Notification). [Firebase Cloud Messaging](http://firebase.google.com/docs/cloud-messaging/) (FCM) is the new version of GCM. This guide explains how to how obtain a device token, and how to use the [PushNotifications API](#!/api/Modules.Cloud.PushNotifications) to manage your user's notification subscriptions.
 
-* [Obtaining a device token](#Obtainingadevicetoken)
+* [Obtaining a device token](#obtaining-a-device-token)
 
-  * [Obtaining a device token on Android](#ObtainingadevicetokenonAndroid)
+    * [Obtaining a device token on Android](#obtaining-a-device-token-on-android)
 
-  * [Obtaining a device token on iOS](#ObtainingadevicetokenoniOS)
+    * [Obtaining a device token on iOS](#obtaining-a-device-token-on-ios)
 
-* [Using the Titanium PushNotifications API](#UsingtheTitaniumPushNotificationsAPI)
+* [Using the Titanium PushNotifications API](#using-the-titanium-pushnotifications-api)
 
-  * [Session- and token-based subscriptions](#Session-andtoken-basedsubscriptions)
+    * [Session- and token-based subscriptions](#session--and-token-based-subscriptions)
 
-  * [Adding the Cloud module to your project](#AddingtheCloudmoduletoyourproject)
+    * [Adding the Cloud module to your project](#adding-the-cloud-module-to-your-project)
 
-  * [Subscribing to Push Notifications with Device Tokens](#SubscribingtoPushNotificationswithDeviceTokens)
+    * [Subscribing to Push Notifications with Device Tokens](#subscribing-to-push-notifications-with-device-tokens)
 
-  * [Subscribing to Push Notifications with User Sessions](#SubscribingtoPushNotificationswithUserSessions)
+    * [Subscribing to Push Notifications with User Sessions](#subscribing-to-push-notifications-with-user-sessions)
 
-  * [Updating Subscriptions with Device Location](#UpdatingSubscriptionswithDeviceLocation)
+    * [Updating Subscriptions with Device Location](#updating-subscriptions-with-device-location)
 
-* [Parsing a notification payload](#Parsinganotificationpayload)
+* [Parsing a notification payload](#parsing-a-notification-payload)
 
-* [More examples](#Moreexamples)
+* [More examples](#more-examples)
 
-* [Troubleshooting](#Troubleshooting)
+* [Troubleshooting](#troubleshooting)
 
-  * [Unable to retrieve a device token (iOS)](#Unabletoretrieveadevicetoken(iOS))
+    * [Unable to retrieve a device token (iOS)](#unable-to-retrieve-a-device-token-ios)
 
-  * [Error: APSCloudPush has not been enabled. Call APSCloud.enable(context, key) to enable. (Android)](#Error:APSCloudPushhasnotbeenenabled.CallAPSCloud.enable(context,key)toenable.(Android))
-
+    * [Error: APSCloudPush has not been enabled. Call APSCloud.enable(context, key) to enable. (Android)](#error:-apscloudpush-has-not-been-enabled.-call-apscloud.enablecontext,-key-to-enable.-android)
 
 ## Obtaining a device token
 
@@ -38,7 +37,6 @@ To receive push notifications, your application first needs to obtain a _device 
 * On Android, call the [CloudPush](#!/api/Modules.CloudPush) module's retrieveDeviceToken()method
 
 * On iOS, call the Titanium.Network.registerForPushNotifications()
-
 
 Once your application has obtained a device token it should save it for later use.
 
@@ -53,7 +51,6 @@ To obtain a device token from GCM or FCM, you first need to add the CloudPush mo
 2. In the **Modules** section, click the add (**+**) button.
 
 3. Select **ti.cloudpush** and click **OK**.
-
 
 In your application code, require the ti.cloudpush module and call its retrieveDeviceToken() method, and register event handlers to respond to success and error events. Once a device token has been retrieved, your application can listen for the callback event to process incoming push notifications. Your application should save the device token for later use. The following code demonstrates the minimal code required to obtain a device token and setup event handlers:
 
@@ -165,11 +162,11 @@ You need to register the user notification types you want to use with the Titani
 
 ## Using the Titanium PushNotifications API
 
-Once your application has [obtained a device token](#Obtainingadevicetoken) and setup callback event handlers, you can use the [Modules.Cloud.PushNotifications](#!/api/Modules.Cloud.PushNotifications) APIs to manage the user's notification subscriptions. You use the PushNotifications API to subscribe and unsubscribe to notifications _channels_, send notifications to other MBS users or devices, or query MBS for the current user's subscriptions.
+Once your application has [obtained a device token](#obtaining-a-device-token) and setup callback event handlers, you can use the [Modules.Cloud.PushNotifications](#!/api/Modules.Cloud.PushNotifications) APIs to manage the user's notification subscriptions. You use the PushNotifications API to subscribe and unsubscribe to notifications _channels_, send notifications to other MBS users or devices, or query MBS for the current user's subscriptions.
 
 ### Session- and token-based subscriptions
 
-Arrow Push provides two ways for an application to manage its push notification subscriptions: **session-based** and **token-based.** Session-based subscriptions require that the current user be [logged in](/arrowdb/latest/#!/api/Users-method-login) to MBS to subscribe/unsubscribe, send, or receive push notifications. Token-based notifications only require the application to retrieve a device token (see [Obtaining a device token](#Obtainingadevicetoken) ).
+Arrow Push provides two ways for an application to manage its push notification subscriptions: **session-based** and **token-based.** Session-based subscriptions require that the current user be [logged in](/arrowdb/latest/#!/api/Users-method-login) to MBS to subscribe/unsubscribe, send, or receive push notifications. Token-based notifications only require the application to retrieve a device token (see [Obtaining a device token](#obtaining-a-device-token) ).
 
 The [Cloud.PushNotifications](#!/api/Modules.Cloud.PushNotifications-method-subscribe) API provides equivalent methods for using either of these approaches. For instance, you call the subscribe()method to subscribe the currently logged in API Builder Push user to a channel, or subscribeToken() to subscribe an application user with only the obtained token. Similarly, there are equivalent methods for unsubscribing from a channel (unsubscribe() and unsubscribeToken()) and sending notifications (notify() and notifyToken()).
 
@@ -187,12 +184,11 @@ The Cloud module is included with the Titanium SDK, but is not enabled by defaul
 
 3. Select **ti.cloud** and click **OK** **.**
 
-
 ### Subscribing to Push Notifications with Device Tokens
 
 To subscribe your application to receive push notifications using only a device the token, you call the subscribeToken()method. In the following sample code, the user is subscribed to the "news\_alerts" channel when tap the Subscribe button; tapping the Unsubscribe button calls the unsubscribeToken()method.
 
-The following example is functionally identical to the [token-based version](#SubscribingtoPushNotificationswithUserSessions), except that it includes functionality to log the user into MBS.
+The following example is functionally identical to the [token-based version](#subscribing-to-push-notifications-with-user-sessions), except that it includes functionality to log the user into MBS.
 
 `// You first need to get a device token (see previous section):`
 
@@ -282,9 +278,9 @@ The following example is functionally identical to the [token-based version](#Su
 
 ### Subscribing to Push Notifications with User Sessions
 
-You can subscribe to receive push notifications based the user's current MBS session. If you do not require push notifications to be sent to specific users, then consider using [token-based notifications](#SubscribingtoPushNotificationswithDeviceTokens) . You can create an MBS user in Appcelerator Dashboard or programmatically (as shown in the [example](#!/api/Modules.Cloud.Users) for [Modules.Cloud.Users](#!/api/Modules.Cloud.Users) ).
+You can subscribe to receive push notifications based the user's current MBS session. If you do not require push notifications to be sent to specific users, then consider using [token-based notifications](#subscribing-to-push-notifications-with-device-tokens) . You can create an MBS user in Appcelerator Dashboard or programmatically (as shown in the [example](#!/api/Modules.Cloud.Users) for [Modules.Cloud.Users](#!/api/Modules.Cloud.Users) ).
 
-The following example is identical to the [token-based version](#SubscribingtoPushNotificationswithDeviceTokens), except that it includes functionality to log the user into API Builder.
+The following example is identical to the [token-based version](#subscribing-to-push-notifications-with-device-tokens), except that it includes functionality to log the user into API Builder.
 
 `// For this example to work, you need to get the device token. See the previous section.`
 

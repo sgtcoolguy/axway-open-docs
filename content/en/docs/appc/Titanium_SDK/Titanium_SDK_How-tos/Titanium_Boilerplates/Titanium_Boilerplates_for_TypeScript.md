@@ -1,19 +1,18 @@
 {"title":"Titanium Boilerplates for TypeScript","weight":"10"}
 
-* [Getting started with our templates](#Gettingstartedwithourtemplates)
+* [Getting started with our templates](#getting-started-with-our-templates)
 
-* [TypeScript Support for Existing Projects](#TypeScriptSupportforExistingProjects)
+* [TypeScript Support for Existing Projects](#typescript-support-for-existing-projects)
 
-* [Install TypeScript compiler](#InstallTypeScriptcompiler)
+* [Install TypeScript compiler](#install-typescript-compiler)
 
-* [Create tsconfig.json](#Createtsconfig.json)
+* [Create tsconfig.json](#create-tsconfig.json)
 
-  * [ALLOY ONLY: copy Alloy typings](#ALLOYONLY:copyAlloytypings)
+    * [ALLOY ONLY: copy Alloy typings](#alloy-only:-copy-alloy-typings)
 
-* [Migrating your JavaScript files](#MigratingyourJavaScriptfiles)
+* [Migrating your JavaScript files](#migrating-your-javascript-files)
 
-* [Installing the pre-compile hook](#Installingthepre-compilehook)
-
+* [Installing the pre-compile hook](#installing-the-pre-compile-hook)
 
 This tutorial introduces the first in a series of Titanium boilerplate projects. In this document, we'll cover [TypeScript](https://www.typescriptlang.org/) in both Alloy and classic apps.
 
@@ -27,7 +26,6 @@ To get you started quickly with TypeScript, we have prepared two example apps:
 
 * [typescript-classic-app](https://github.com/appcelerator/titanium-boilerplates/tree/master/templates/typescript-classic-app#readme)
 
-
 You can also find them in our new [titanium-boilerplates](https://github.com/appcelerator/titanium-boilerplates) repository on GitHub.
 
 These are simple greeter app examples written in TypeScript that is already setup with typings for all Titanium APIs, including Alloy, a base configuration for TypeScript, and linting using TSLint.
@@ -36,14 +34,13 @@ These are simple greeter app examples written in TypeScript that is already setu
 
 Enabling TypeScript support in your existing project can be done with the following steps:
 
-1. [Install TypeScript compiler](#InstallTypeScriptcompiler)
+1. [Install TypeScript compiler](#install-typescript-compiler)
 
-2. [Create tsconfig.json](#Createtsconfig.json)
+2. [Create tsconfig.json](#create-tsconfig.json)
 
-3. [Migrating your JavaScript files](#MigratingyourJavaScriptfiles)
+3. [Migrating your JavaScript files](#migrating-your-javascript-files)
 
-4. [Installing the pre-compile hook](#Installingthepre-compilehook)
-
+4. [Installing the pre-compile hook](#installing-the-pre-compile-hook)
 
 ## Install TypeScript compiler
 

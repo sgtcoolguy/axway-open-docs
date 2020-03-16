@@ -1,11 +1,10 @@
 {"title":"Adding New Properties to Existing Ruble Objects","weight":"10"}
 
-* [Update the element class](#Updatetheelementclass)
+* [Update the element class](#update-the-element-class)
 
-* [Update the project\_template.rb wrapper file](#Updatetheproject_template.rbwrapperfile)
+* [Update the project\_template.rb wrapper file](#update-the-project_template.rb-wrapper-file)
 
-* [Update the Bundle View](#UpdatetheBundleView)
-
+* [Update the Bundle View](#update-the-bundle-view)
 
 If you add new properties to an existing Ruble object, you'll need to make a few related changes. Here, we discuss the addition of a new "Icon" property to the Project Template Element. This is a property that enables a user to set a path to an icon for a project template.
 

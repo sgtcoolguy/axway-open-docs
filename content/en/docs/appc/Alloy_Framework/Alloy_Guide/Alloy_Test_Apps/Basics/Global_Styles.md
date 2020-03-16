@@ -8,12 +8,11 @@ alloy/test/apps/**basics/global\_style**
 
 ![ios](/Images/appc/download/attachments/41845687/ios.png)
 
-An Alloy project can include a [global style file](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#Globalstyles) located at app/styles/app.tss. The styles defined by this file apply to all controls and views, but are over-ridden by "local" styles declared by the following:
+An Alloy project can include a [global style file](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#global-styles) located at app/styles/app.tss. The styles defined by this file apply to all controls and views, but are over-ridden by "local" styles declared by the following:
 
 * ID or class styles declared by a controller styles (views/index.tss, for example).
 
 * Styles assigned directly to an XML element
-
 
 In this example, the main **index.xml** view requires **item.xml.**
 

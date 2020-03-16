@@ -1,17 +1,16 @@
 {"title":"Supporting Gestures","weight":"50"}
 
-* [Shake](#Shake)
+* [Shake](#shake)
 
-* [Swipe](#Swipe)
+* [Swipe](#swipe)
 
-* [Touch](#Touch)
+* [Touch](#touch)
 
-* [Pinch](#Pinch)
+* [Pinch](#pinch)
 
-* [Long press](#Longpress)
+* [Long press](#long-press)
 
-* [Accelerometer](#Accelerometer)
-
+* [Accelerometer](#accelerometer)
 
 ## Objective
 
@@ -32,7 +31,6 @@ Mobile devices offer opportunity for inputs that go beyond simple taps. "Best of
 * Long presses
 
 * and accelerometer inputs by which you gauge pitch, roll, and yaw.
-
 
 We'll breeze through each of these in this section.
 
@@ -73,7 +71,6 @@ Touch events are associated with the Titanium UI components. There are four touc
 * touchmove – fires continuously as the user drags his or her finger on the screen.
 
 * touchcancel – fired if the operating system interrupts an ongoing touch event, such as when a phone call is received.
-
 
 The event object associated with these events has only two useful properties: the X and Y coordinates of the event. You can use that information to track the user's finger across your app's UI.
 

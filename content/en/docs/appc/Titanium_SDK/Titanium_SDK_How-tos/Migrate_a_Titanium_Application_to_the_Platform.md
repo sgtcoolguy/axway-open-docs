@@ -1,17 +1,16 @@
 {"title":"Migrate a Titanium Application to the Platform","weight":"140"}
 
-* [Titanium Community Analytics, ACS and Push, and Node.ACS Deactivation](#TitaniumCommunityAnalytics,ACSandPush,andNode.ACSDeactivation)
+* [Titanium Community Analytics, ACS and Push, and Node.ACS Deactivation](#titanium-community-analytics,-acs-and-push,-and-node.acs-deactivation)
 
-* [Migrate a Titanium Application to the Platform](#MigrateaTitaniumApplicationtothePlatform)
+* [Migrate a Titanium Application to the Platform](#migrate-a-titanium-application-to-the-platform)
 
-  * [First, make a backup!](#First,makeabackup!)
+    * [First, make a backup!](#first,-make-a-backup!)
 
-  * [Replace or keep existing ACS keys](#ReplaceorkeepexistingACSkeys)
+    * [Replace or keep existing ACS keys](#replace-or-keep-existing-acs-keys)
 
-  * [Using Appcelerator Studio](#UsingAppceleratorStudio)
+    * [Using Appcelerator Studio](#using-appcelerator-studio)
 
-  * [Using Appcelerator CLI](#UsingAppceleratorCLI)
-
+    * [Using Appcelerator CLI](#using-appcelerator-cli)
 
 ## Titanium Community Analytics, ACS and Push, and Node.ACS Deactivation
 
@@ -42,7 +41,6 @@ Follow these steps and your app will be imported into the Platform.
 2. On the main dashboard, click the **Import an existing project** button.
 
 3. You will be presented with an Import dialog. Select **Appcelerator** > **Existing Mobile Project**, then click the **Next** **\>** button.
-
 
 ### Using Appcelerator CLI
 

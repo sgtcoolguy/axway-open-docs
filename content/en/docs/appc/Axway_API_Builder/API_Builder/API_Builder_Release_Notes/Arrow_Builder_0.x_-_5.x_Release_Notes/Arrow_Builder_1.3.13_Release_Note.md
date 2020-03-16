@@ -14,13 +14,11 @@ Arrow Builder 1.3.13 is a minor release that includes new features, improvements
 
 * When using the guided connector development, after adding a new capability, the Arrow application will stop running and output instructions on what to do next. Previously, the Arrow application would restart, which could cause a crash.
 
-
 ### New Features and Improvements
 
 * Add ability to set descriptions for auto-generated APIs. For details, see the _Model Properties_ section in the Arrow Admin console.
 
 * Allow Arrow client sessions to end when the browser session ends.
-
 
 ### Fixed Issues
 
@@ -30,13 +28,13 @@ Arrow Builder 1.3.13 is a minor release that includes new features, improvements
 
 * Fixed an issue using the Photo sync images parameter with Arrow. Use the following syntax to pass the parameter:
 
-  `{`
+    `{`
 
-  `'photo_sizes'``: {preview:` `'120x120#'``},`
+    `'photo_sizes'``: {preview:` `'120x120#'``},`
 
-  `'photo_sync_sizes[]'``:` `'preview'`
+    `'photo_sync_sizes[]'``:` `'preview'`
 
-  `}`
+    `}`
 
 * Fixed an issue where the Arrow application now throws a 504 error code if the request takes more than 60 seconds.
 

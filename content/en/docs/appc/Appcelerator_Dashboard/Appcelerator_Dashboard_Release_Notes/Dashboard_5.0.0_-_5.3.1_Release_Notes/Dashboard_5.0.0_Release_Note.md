@@ -28,7 +28,6 @@ Dashboard 5.0.0 is a major release, which includes new features, improvements, a
 
 * Added new Version Adoption chart.
 
-
 ## Improvements
 
 * Revised interface site-wide to improve consistency with other Axway cloud products UI.
@@ -73,15 +72,14 @@ Dashboard 5.0.0 is a major release, which includes new features, improvements, a
 
 * Added link on member profile back to Manage Members view.
 
-
 ## Fixed issues
 
 * Corrected status of AMPLIFY Runtime Services applications.
 
-  * Green: active application
+    * Green: active application
 
-  * Red: faulty application
+    * Red: faulty application
 
-  * Grey: inactive or not yet published application
+    * Grey: inactive or not yet published application
 
 * Remove regular expression filter on Mobile Backend Services Manage Data table view filters.

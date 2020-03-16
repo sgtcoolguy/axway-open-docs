@@ -10,7 +10,6 @@ This release of Arrow Cloud includes version 1.0.28 of the CLI and 1.3.1 of the 
 
 * **Timestamps**: The usage command now displays timestamps in local time. Previously, the timestamp was in UTC.
 
-
 **Bug Fixes**
 
 * Fixed an issue where a project could not run locally if the main field in the package.json file points to a directory.

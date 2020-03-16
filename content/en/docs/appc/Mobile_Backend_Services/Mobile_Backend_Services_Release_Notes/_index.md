@@ -8,7 +8,6 @@ This release of Mobile Backend Services 1.6.5 is a minor release, which includes
 
 * Previously, the customer documentation had a reference to an internal Docker GitHub repository. Now, the reference to the internal GitHub repository has been removed and replaced with references to customer accessible Docker installation packages.
 
-
 ## Fixed issues
 
 * Previously, the export of customer data from a Mobile Backend Services application would fail when an attempt was made to export a large amount of data. Now, the export issue has been resolved, and customers can export date from Mobile Backend Services applications even when there is a large amount of data to export.
@@ -16,7 +15,6 @@ This release of Mobile Backend Services 1.6.5 is a minor release, which includes
 * Previously, pull requests to upload files would not pass the DEP check and failed to upload the dependency check. Now, the pull requests to upload files are completed.
 
 * Previously, push notifications were not working for customer applications, and they would receive the "App is not configured for Push Notification" error message while sending test notifications from Dashboard. Now, push notifications are properly configured and are working for customer applications.
-
 
 ## Recent Releases
 

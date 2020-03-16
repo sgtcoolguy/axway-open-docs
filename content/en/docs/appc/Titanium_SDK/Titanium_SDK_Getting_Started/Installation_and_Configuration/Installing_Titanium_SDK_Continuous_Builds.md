@@ -1,19 +1,18 @@
 {"title":"Installing Titanium SDK Continuous Builds","weight":"40"}
 
-* [Summary](#Summary)
+* [Summary](#summary)
 
-* [Obtaining the build](#Obtainingthebuild)
+* [Obtaining the build](#obtaining-the-build)
 
-* [Installing the build](#Installingthebuild)
+* [Installing the build](#installing-the-build)
 
-  * [Appcelerator CLI install](#AppceleratorCLIinstall)
+    * [Appcelerator CLI install](#appcelerator-cli-install)
 
-  * [Studio install](#Studioinstall)
+    * [Studio install](#studio-install)
 
-  * [Manual install](#Manualinstall)
+    * [Manual install](#manual-install)
 
-* [SDK archive file structure](#SDKarchivefilestructure)
-
+* [SDK archive file structure](#sdk-archive-file-structure)
 
 ## Summary
 
@@ -45,7 +44,6 @@ To install a Titanium SDK using the appc cli, follow these steps:
 
 * You can view additional command line options by executing: appc ti sdk install -h
 
-
 ### Studio install
 
 To install a Titanium SDK using Studio, follow these steps:
@@ -58,7 +56,6 @@ To install a Titanium SDK using Studio, follow these steps:
 
 * Paste the link into textbox, then click **Finish**
 
-
 ### Manual install
 
 We strongly recommend that you use Studio or the CLI to manage SDKs. Please see the previous section.
@@ -69,39 +66,14 @@ To manually install a Titanium SDK, follow these steps:
 
 * Move the versioned directory, for example named in the format 6.0.0.v20160702162201, into your Titanium installation folder, which is contingent on your platform, as follows:
 
-
-Operating System
-
-Target Platform Type
-
-Local Path
-
-OS X (Pre-Lion)
-
-Mobile
-
-/Library/Application Support/Titanium
-
-OS X (Lion+)
-
-Mobile
-
-~/Library/Application Support/Titanium
-
-Windows 7+
-
-Mobile
-
-%ProgramData%\\Titanium\\mobilesdk\\win32
-
-Windows XP
-
-Mobile
-
-C:\\Documents and Settings\\All Users\\Application Data\\Titanium
+| Operating System | Target Platform Type | Local Path |
+| --- | --- | --- |
+| OS X (Pre-Lion) | Mobile | /Library/Application Support/Titanium |
+| OS X (Lion+) | Mobile | ~/Library/Application Support/Titanium |
+| Windows 7+ | Mobile | %ProgramData%\\Titanium\\mobilesdk\\win32 |
+| Windows XP | Mobile | C:\\Documents and Settings\\All Users\\Application Data\\Titanium |
 
 * Restart Studio, open the project's tiapp.xml file, and select the new SDK from the SDK Version drop-down menu
-
 
 ## SDK archive file structure
 

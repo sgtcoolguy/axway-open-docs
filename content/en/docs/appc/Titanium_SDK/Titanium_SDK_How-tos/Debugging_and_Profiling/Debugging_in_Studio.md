@@ -1,31 +1,30 @@
 {"title":"Debugging in Studio","weight":"40"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [Running a program in debug mode](#Runningaprogramindebugmode)
+    * [Running a program in debug mode](#running-a-program-in-debug-mode)
 
-  * [Debug perspective](#Debugperspective)
+    * [Debug perspective](#debug-perspective)
 
-  * [Setting breakpoints](#Settingbreakpoints)
+    * [Setting breakpoints](#setting-breakpoints)
 
-    * [Setting manual breakpoints](#Settingmanualbreakpoints)
+        * [Setting manual breakpoints](#setting-manual-breakpoints)
 
-    * [Setting exception breakpoints](#Settingexceptionbreakpoints)
+        * [Setting exception breakpoints](#setting-exception-breakpoints)
 
-  * [Stepping Through Code](#SteppingThroughCode)
+    * [Stepping Through Code](#stepping-through-code)
 
-  * [Variables view](#Variablesview)
+    * [Variables view](#variables-view)
 
-  * [Viewing error messages in the console](#Viewingerrormessagesintheconsole)
+    * [Viewing error messages in the console](#viewing-error-messages-in-the-console)
 
-  * [Studio build log](#Studiobuildlog)
+    * [Studio build log](#studio-build-log)
 
-  * [References](#References)
+    * [References](#references)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Objective
 
@@ -45,7 +44,6 @@ To see how this works, we'll need to look at these topics:
 
 * Stepping into, through, and over breakpoints and examining the stack trace
 
-
 ### Running a program in debug mode
 
 To use Studio's debugging tools, you'll need to run your app in Debug mode. You can do so in the iOS Simulator or Android emulator. You can debug on a physical device as well.
@@ -57,7 +55,6 @@ This section discusses debugging using a simulator or emulator. Debugging on dev
 * [Debugging on Android Devices](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_Android_Devices/)
 
 * [Debugging on iOS Devices](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_iOS_Devices/)
-
 
 ### Debug perspective
 
@@ -73,7 +70,6 @@ The Debug perspective contains several views that are not found in the Web persp
 
 * **Expressions View** - The Expressions View displays the value of current expressions.
 
-
 In addition to the above debugging-specific views, you will also have access to some views from the Web perspective that you are probably familiar with:
 
 * **Editor** - The Editor area displays the file currently being debugged in its appropriate Editor.
@@ -81,7 +77,6 @@ In addition to the above debugging-specific views, you will also have access to 
 * **Outline View** - The Outline View displays an outline of the code for the file that is currently being debugged.
 
 * **Console View** - The Console View displays log output from the debugger.
-
 
 These are labeled in the following diagram.
 
@@ -101,7 +96,6 @@ Breakpoints are locations within your app where execution will pause, giving you
 
 * Click on various frames in the stack trace to see values of other variables in your call stack.
 
-
 #### Setting manual breakpoints
 
 A manual, or explicit, breakpoint marks a specific line of code within your application at which execution should pause. You set these yourself by either:
@@ -109,7 +103,6 @@ A manual, or explicit, breakpoint marks a specific line of code within your appl
 * Double-clicking in the margin in the Editor's code view, or,
 
 * Right-clicking the margin and choosing Toggle Breakpoint from the context menu.
-
 
 #### Setting exception breakpoints
 
@@ -123,61 +116,32 @@ An exception breakpoint causes your app to pause when an exception is raised tha
 
 4. Run the app in debug mode. If the exception is thrown, your app will pause and Studio will switch to the Debug perspective.
 
-
 To remove an exception breakpoint:
 
 1. Switch to the Debug perspective, if necessary.
 
 2. Display the Breakpoints view, which will list the current breakpoints in your app.
 
-  ![removingexceptionbreakpoint](/Images/appc/download/attachments/29004940/removingexceptionbreakpoint.png)
+    ![removingexceptionbreakpoint](/Images/appc/download/attachments/29004940/removingexceptionbreakpoint.png)
 3. Then, take one of the following actions:
 
-  * Right-click the breakpoint and choose Disable, Remove, or Remove All breakpoints.
+    * Right-click the breakpoint and choose Disable, Remove, or Remove All breakpoints.
 
-  * With the breakpoint selected, use the associated toolbar buttons to Disable, Remove, or Remove All breakpoints.
+    * With the breakpoint selected, use the associated toolbar buttons to Disable, Remove, or Remove All breakpoints.
 
-    ![breakpointtoolbar](/Images/appc/download/attachments/29004940/breakpointtoolbar.png)
+        ![breakpointtoolbar](/Images/appc/download/attachments/29004940/breakpointtoolbar.png)
 
 ### Stepping Through Code
 
 Stepping through code is a common debugging technique that lets you examine your code's operation line by line. Studio supports three types of stepping: Step Into, Step Over, and Step Return. Studio provides various buttons in the Debug perspective to make it easy to step through your code:
 
-**Button**
-
-**Name**
-
-**When you click ...**
-
-![IconStepInto](/Images/appc/download/attachments/29004940/IconStepInto.png)
-
-Step Into
-
-If set before a function call, execution will move to the first line of the function then stop. If set before a statement, execution will proceed until the next breakpoint (if one is set).
-
-![IconStepOver](/Images/appc/download/attachments/29004940/IconStepOver.png)
-
-Step Over
-
-Studio will execute the function then stop on the next line in your app.
-
-![IconStepReturn](/Images/appc/download/attachments/29004940/IconStepReturn.png)
-
-Step Return
-
-When you've Stepped Into a function, execution will finish in the current function, then return you to the spot where you went into the function, then pause again.
-
-![iconResume](/Images/appc/download/attachments/29004940/iconResume.png)
-
-Resume
-
-Execution will resume; it will stop at the next breakpoint (if one is set).
-
-![iconTerminate](/Images/appc/download/attachments/29004940/iconTerminate.png)
-
-Terminate
-
-Execution of your app will terminate.
+| **Button** | **Name** | **When you click ...** |
+| --- | --- | --- |
+| ![IconStepInto](/Images/appc/download/attachments/29004940/IconStepInto.png) | Step Into | If set before a function call, execution will move to the first line of the function then stop. If set before a statement, execution will proceed until the next breakpoint (if one is set). |
+| ![IconStepOver](/Images/appc/download/attachments/29004940/IconStepOver.png) | Step Over | Studio will execute the function then stop on the next line in your app. |
+| ![IconStepReturn](/Images/appc/download/attachments/29004940/IconStepReturn.png) | Step Return | When you've Stepped Into a function, execution will finish in the current function, then return you to the spot where you went into the function, then pause again. |
+| ![iconResume](/Images/appc/download/attachments/29004940/iconResume.png) | Resume | Execution will resume; it will stop at the next breakpoint (if one is set). |
+| ![iconTerminate](/Images/appc/download/attachments/29004940/iconTerminate.png) | Terminate | Execution of your app will terminate. |
 
 If you set a breakpoint at a Titanium function that invokes native code, that function is treated as a single statement. Thus, Step Into and Step Over will do the same thing: execute the function then stop on the next line.
 
@@ -195,7 +159,6 @@ To change the value of a variable, when paused at a breakpoint:
 
 3. Enter the new value and press Return (or Enter)
 
-
 Alternatively,
 
 1. Right-click the variable that you want to change, and choose **Change Value...** from the context menu to open the **Set Value** dialog box.
@@ -203,7 +166,6 @@ Alternatively,
 2. Enter the new value for your variable.
 
 3. Click **OK**.
-
 
 ### Viewing error messages in the console
 
@@ -214,7 +176,6 @@ In most cases, error messages that cause your app to crash will be displayed in 
 2. In the Debug pane, click the "exit value: -1" line, typically the last one.
 
 3. More detailed log output should then be visible in the Console pane.
-
 
 ### Studio build log
 
@@ -231,7 +192,6 @@ Studio maintains a log of messages output during your project build processes. E
 * [Debugging on iOS Devices](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_iOS_Devices/)
 
 * Eclipse [Execution Control Commands](http://help.eclipse.org/indigo/index.jsp?topic=/org.eclipse.jdt.doc.user/reference/views/debug/ref-executioncontrolcommands.htm)
-
 
 ## Summary
 

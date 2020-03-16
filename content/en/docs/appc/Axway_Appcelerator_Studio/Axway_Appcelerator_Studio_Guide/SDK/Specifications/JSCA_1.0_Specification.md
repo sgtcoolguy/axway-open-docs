@@ -1,177 +1,176 @@
 {"title":"JSCA 1.0 Specification","weight":"30"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Short Example](#ShortExample)
+* [Short Example](#short-example)
 
-* [Top-Level Properties](#Top-LevelProperties)
+* [Top-Level Properties](#top-level-properties)
 
-  * [Version Property](#VersionProperty)
+    * [Version Property](#version-property)
 
-  * [Build Property](#BuildProperty)
+    * [Build Property](#build-property)
 
-  * [Aliases Property](#AliasesProperty)
+    * [Aliases Property](#aliases-property)
 
-  * [Types Property](#TypesProperty)
+    * [Types Property](#types-property)
 
-* [Types](#Types)
+* [Types](#types)
 
-  * [Alias Type](#AliasType)
+    * [Alias Type](#alias-type)
 
-    * [Name Property](#NameProperty)
+        * [Name Property](#name-property)
 
-    * [Description Property](#DescriptionProperty)
+        * [Description Property](#description-property)
 
-    * [Type Property](#TypeProperty)
+        * [Type Property](#type-property)
 
-  * [Type Type](#TypeType)
+    * [Type Type](#type-type)
 
-    * [Name Property](#NameProperty.1)
+        * [Name Property](#name-property)
 
-    * [Description Property](#DescriptionProperty.1)
+        * [Description Property](#description-property)
 
-    * [Deprecated Property](#DeprecatedProperty)
+        * [Deprecated Property](#deprecated-property)
 
-    * [UserAgents Property](#UserAgentsProperty)
+        * [UserAgents Property](#useragents-property)
 
-    * [Since Property](#SinceProperty)
+        * [Since Property](#since-property)
 
-    * [Inherits Property](#InheritsProperty)
+        * [Inherits Property](#inherits-property)
 
-    * [Properties Property](#PropertiesProperty)
+        * [Properties Property](#properties-property)
 
-    * [Functions Property](#FunctionsProperty)
+        * [Functions Property](#functions-property)
 
-    * [Events Property](#EventsProperty)
+        * [Events Property](#events-property)
 
-    * [Remarks Property](#RemarksProperty)
+        * [Remarks Property](#remarks-property)
 
-    * [Examples Property](#ExamplesProperty)
+        * [Examples Property](#examples-property)
 
-    * [IsInternal Property](#IsInternalProperty)
+        * [IsInternal Property](#isinternal-property)
 
-  * [UserAgent Type](#UserAgentType)
+    * [UserAgent Type](#useragent-type)
 
-    * [Platform Property](#PlatformProperty)
+        * [Platform Property](#platform-property)
 
-    * [Version Property](#VersionProperty.1)
+        * [Version Property](#version-property)
 
-    * [OS Property](#OSProperty)
+        * [OS Property](#os-property)
 
-    * [OSVersion Property](#OSVersionProperty)
+        * [OSVersion Property](#osversion-property)
 
-    * [Description Property.](#DescriptionProperty.)
+        * [Description Property.](#description-property.)
 
-  * [Since Type](#SinceType)
+    * [Since Type](#since-type)
 
-    * [Name Property](#NameProperty.2)
+        * [Name Property](#name-property)
 
-    * [Version Property](#VersionProperty.2)
+        * [Version Property](#version-property)
 
-  * [Property Type](#PropertyType)
+    * [Property Type](#property-type)
 
-    * [Name Property](#NameProperty.3)
+        * [Name Property](#name-property)
 
-    * [Description Property](#DescriptionProperty.2)
+        * [Description Property](#description-property)
 
-    * [UserAgents Property](#UserAgentsProperty.1)
+        * [UserAgents Property](#useragents-property)
 
-    * [Since Property](#SinceProperty.1)
+        * [Since Property](#since-property)
 
-    * [IsInstanceProperty Property](#IsInstancePropertyProperty)
+        * [IsInstanceProperty Property](#isinstanceproperty-property)
 
-    * [IsClassProperty Property](#IsClassPropertyProperty)
+        * [IsClassProperty Property](#isclassproperty-property)
 
-    * [IsInternal Property](#IsInternalProperty.1)
+        * [IsInternal Property](#isinternal-property)
 
-    * [Type Property](#TypeProperty.1)
+        * [Type Property](#type-property)
 
-    * [Examples Property](#ExamplesProperty.1)
+        * [Examples Property](#examples-property)
 
-    * [Permission Property](#PermissionProperty)
+        * [Permission Property](#permission-property)
 
-    * [Availability Property](#AvailabilityProperty)
+        * [Availability Property](#availability-property)
 
-    * [Constants Property](#ConstantsProperty)
+        * [Constants Property](#constants-property)
 
-  * [Function Type](#FunctionType)
+    * [Function Type](#function-type)
 
-    * [Name Property](#NameProperty.4)
+        * [Name Property](#name-property)
 
-    * [Description Property](#DescriptionProperty.3)
+        * [Description Property](#description-property)
 
-    * [UserAgents Property](#UserAgentsProperty.2)
+        * [UserAgents Property](#useragents-property)
 
-    * [Since Property](#SinceProperty.2)
+        * [Since Property](#since-property)
 
-    * [IsInstanceProperty Property](#IsInstancePropertyProperty.1)
+        * [IsInstanceProperty Property](#isinstanceproperty-property)
 
-    * [IsClassProperty Property](#IsClassPropertyProperty.1)
+        * [IsClassProperty Property](#isclassproperty-property)
 
-    * [IsInternal Property](#IsInternalProperty.2)
+        * [IsInternal Property](#isinternal-property)
 
-    * [Examples Property](#ExamplesProperty.2)
+        * [Examples Property](#examples-property)
 
-    * [Parameters Property](#ParametersProperty)
+        * [Parameters Property](#parameters-property)
 
-    * [References Property](#ReferencesProperty)
+        * [References Property](#references-property)
 
-    * [Exceptions Property](#ExceptionsProperty)
+        * [Exceptions Property](#exceptions-property)
 
-    * [ReturnTypes Property](#ReturnTypesProperty)
+        * [ReturnTypes Property](#returntypes-property)
 
-    * [IsConstructor Property](#IsConstructorProperty)
+        * [IsConstructor Property](#isconstructor-property)
 
-    * [IsMethod Property](#IsMethodProperty)
+        * [IsMethod Property](#ismethod-property)
 
-  * [Event Type](#EventType)
+    * [Event Type](#event-type)
 
-    * [Name Property](#NameProperty.5)
+        * [Name Property](#name-property)
 
-    * [Description Property](#DescriptionProperty.4)
+        * [Description Property](#description-property)
 
-    * [Properties Property](#PropertiesProperty.1)
+        * [Properties Property](#properties-property)
 
-  * [EventProperty Type](#EventPropertyType)
+    * [EventProperty Type](#eventproperty-type)
 
-    * [Name Property](#NameProperty.6)
+        * [Name Property](#name-property)
 
-    * [Description Property](#DescriptionProperty.5)
+        * [Description Property](#description-property)
 
-    * [Type Property](#TypeProperty.2)
+        * [Type Property](#type-property)
 
-    * [Constants Property](#ConstantsProperty.1)
+        * [Constants Property](#constants-property)
 
-  * [ReturnType Type](#ReturnTypeType)
+    * [ReturnType Type](#returntype-type)
 
-    * [Type Property](#TypeProperty.3)
+        * [Type Property](#type-property)
 
-    * [Description Property](#DescriptionProperty.6)
+        * [Description Property](#description-property)
 
-  * [Example Type](#ExampleType)
+    * [Example Type](#example-type)
 
-    * [Name Property](#NameProperty.7)
+        * [Name Property](#name-property)
 
-    * [Code Property](#CodeProperty)
+        * [Code Property](#code-property)
 
-  * [Parameter Type](#ParameterType)
+    * [Parameter Type](#parameter-type)
 
-    * [Name Property](#NameProperty.8)
+        * [Name Property](#name-property)
 
-    * [Type Property](#TypeProperty.4)
+        * [Type Property](#type-property)
 
-    * [Usage Property](#UsageProperty)
+        * [Usage Property](#usage-property)
 
-    * [Description Property](#DescriptionProperty.7)
+        * [Description Property](#description-property)
 
-    * [Constants Property](#ConstantsProperty.2)
+        * [Constants Property](#constants-property)
 
-  * [Exception Type](#ExceptionType)
+    * [Exception Type](#exception-type)
 
-    * [Type Property](#TypeProperty.5)
+        * [Type Property](#type-property)
 
-    * [Description Property](#DescriptionProperty.8)
-
+        * [Description Property](#description-property)
 
 ## Overview
 

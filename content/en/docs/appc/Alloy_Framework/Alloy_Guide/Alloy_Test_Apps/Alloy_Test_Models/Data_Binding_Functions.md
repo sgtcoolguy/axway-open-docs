@@ -104,4 +104,4 @@ app/alloy.js
 
 ## See also
 
-* [Alloy Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Data_Binding/#Alloybinding)
+* [Alloy Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Data_Binding/#alloy-binding)

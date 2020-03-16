@@ -10,58 +10,57 @@ Contents
 
 * [Standards](#Standards)
 
-  * [import vs. include](#importvs.include)
+    * [import vs. include](#importvs.include)
 
-  * [Class Naming](#ClassNaming)
+    * [Class Naming](#ClassNaming)
 
-  * [Protocols](#Protocols)
+    * [Protocols](#Protocols)
 
-  * [Category naming](#Categorynaming)
+    * [Category naming](#Categorynaming)
 
-  * [ivars](#ivars)
+    * [ivars](#ivars)
 
-    * [@public, @protected, and @private](#@public,@protected,and@private)
+        * [@public, @protected, and @private](#@public,@protected,and@private)
 
-  * [@property and @synthesize](#@propertyand@synthesize)
+    * [@property and @synthesize](#@propertyand@synthesize)
 
-  * [Methods](#Methods)
+    * [Methods](#Methods)
 
-    * [init](#init)
+        * [init](#init)
 
-  * [Blocks](#Blocks)
+    * [Blocks](#Blocks)
 
-  * [Fast enumeration (for x in y)](#Fastenumeration(forxiny))
+    * [Fast enumeration (for x in y)](#Fastenumeration(forxiny))
 
-  * [File names](#Filenames)
+    * [File names](#Filenames)
 
-  * [@implementation ordering](#@implementationordering)
+    * [@implementation ordering](#@implementationordering)
 
-  * [nil and NULL](#nilandNULL)
+    * [nil and NULL](#nilandNULL)
 
-  * [BOOL types](#BOOLtypes)
+    * [BOOL types](#BOOLtypes)
 
-  * [Exceptions to the C standard](#ExceptionstotheCstandard)
+    * [Exceptions to the C standard](#ExceptionstotheCstandard)
 
-    * [Comments](#Comments)
+        * [Comments](#Comments)
 
-    * [Order of declarations](#Orderofdeclarations)
+        * [Order of declarations](#Orderofdeclarations)
 
-    * [Braces](#Braces)
+        * [Braces](#Braces)
 
-    * [Variables](#Variables)
+        * [Variables](#Variables)
 
-  * [Exceptions to the C++ standard](#ExceptionstotheC++standard)
+    * [Exceptions to the C++ standard](#ExceptionstotheC++standard)
 
-  * [Other Rules](#OtherRules)
+    * [Other Rules](#OtherRules)
 
-    * [3rd party libraries](#3rdpartylibraries)
+        * [3rd party libraries](#3rdpartylibraries)
 
-    * [Deprecated classes and methods](#Deprecatedclassesandmethods)
+        * [Deprecated classes and methods](#Deprecatedclassesandmethods)
 
-    * [@compatibility\_alias](#@compatibility_alias)
+        * [@compatibility\_alias](#@compatibility_alias)
 
-    * [pragma mark](#pragmamark)
-
+        * [pragma mark](#pragmamark)
 
 ## Synopsis
 
@@ -83,7 +82,6 @@ We use "Modern Objective-C", the features of which are described in these docume
 
 * [Blocks Programming Topics](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Blocks/Articles/00_Introduction.html)
 
-
 ## Appcelerator C/C++ standards
 
 You are expected to follow the [C/C++ coding guidelines](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Coding_Standards/C_and_C++_Coding_Standards/) when writing Objective-C except where explicitly specified. These standards take precedence over any generic rules listed in the style guidelines above, although we have our own exceptions.
@@ -102,10 +100,9 @@ Always @import (not #import) Objective-C headers, and #include C (or C++) header
 
 * Objective-C classes are to be named with:
 
-  * The prefix Ti, or another project-appropriate prefix
+    * The prefix Ti, or another project-appropriate prefix
 
-  * Camelcase
-
+    * Camelcase
 
 Example
 
@@ -131,7 +128,6 @@ Protocols follow the same naming conventions as classes, with the following exce
 
 * Protocols which are a _delegate_ should end with the word Delegate.
 
-
 Example
 
 `@protocol` `TiScrolling;` `// Gerund; behavior type is "this object scrolls"`
@@ -149,7 +145,6 @@ Header files which define an interface for a category only should be named <base
 * Categories on existing classes should be named appropriately, with the category describing the set of extensions.
 
 * Categories which are intended to describe a private API within an implementation file should be the empty category ().
-
 
 ### ivars
 
@@ -178,7 +173,6 @@ Use the default synthesis property of ivars. You should rarely need @synthesize.
 * If method declarations, definitions, or calls are spread across multiple lines, their : characters should be aligned rather than spaced on tabstops.
 
 * The opening brace of a method should be on its own line for implementations.
-
 
 Example
 
@@ -228,7 +222,7 @@ Note the single braces. You may wish to turn off the "initializer not fully brac
 
 * Block variables should never be a raw type; they should always have a typedefassociated with them and that name used as the variable type.
 
-  * **EXCEPTION:** The void (^varname)(void) block type does not require a typedef, although there are plenty of existing convenience typedefs for this block type which should be used when appropriate.
+    * **EXCEPTION:** The void (^varname)(void) block type does not require a typedef, although there are plenty of existing convenience typedefs for this block type which should be used when appropriate.
 
 * Blocks should have their opening brace on the same line as their ^, and their closing brace on its own line, indented with the surrounding scope.
 
@@ -237,7 +231,6 @@ Note the single braces. You may wish to turn off the "initializer not fully brac
 * The void ^(void) block type should always be written as {{ ^{ ... } }}.
 
 * \_\_block storage specifier objects should be used with care. Remember that if a \_\_block variable goes out of scope when a block tries to access it, there can be unpredictable and bad results.
-
 
 Example
 
@@ -265,7 +258,6 @@ The following file names are acceptable for Objective-C:
 
 * .pch (precompiled header)
 
-
 ### @implementation ordering
 
 Methods should be ordered in @implementation in the following way:
@@ -286,7 +278,6 @@ Methods should be ordered in @implementation in the following way:
 
 * Methods for @protocol, @required first, then @optional
 
-
 The protocol implementation sections may be repeated as necessary.
 
 ### nil and NULL
@@ -294,7 +285,6 @@ The protocol implementation sections may be repeated as necessary.
 * Do not mix nil and NULL. NULL should only be used for C-style pointers, and nil for all Objective-C object (and id) types.
 
 * It is illegal to use a statement such as {{ if (objcObject) { ... } }}. Instead directly compare to nil, **only where required**. Remember that it is actually faster to send a message to nil than to perform the cmp/jmp instructions from an if **and** make a method call. This is especially true on RISC architectures like ARM.
-
 
 ### BOOL types
 
@@ -309,7 +299,6 @@ There are a number of exceptions to the C standard, to make our Objective-C code
 * Classes, methods, and properties are to be documented as part of their @interface, not @implementation.
 
 * Anything intended to be accessible through a public API of any kind should be tagged with comments suitable for appledoc generation; see [appledoc](http://gentlebytes.com/appledoc/) for format info. You may wish to brew install appledoc as well.
-
 
 #### Order of declarations
 
@@ -326,7 +315,6 @@ Rather than namespace-contents, the basic block for an Objective-C header is obj
 * Class methods
 
 * Instance methods
-
 
 The following is the order of declarations for an Objective-C or Objective-C++ header:
 
@@ -352,7 +340,6 @@ The following is the order of declarations for an Objective-C or Objective-C++ h
 
 * namespace-contents (for declared namespaces in Objective-C++ headers only)
 
-
 #### Braces
 
 Rather than spacing a brace on a newline in C, in Objective-C there are some cases in which an opening brace is placed on the same line as the preceding statement, with a space before it:
@@ -360,7 +347,6 @@ Rather than spacing a brace on a newline in C, in Objective-C there are some cas
 * Blocks (see above)
 
 * Flow control (if/while/for/do...while/switch...case)
-
 
 #### Variables
 

@@ -2,7 +2,7 @@
 
 Studio 4.4.0 is a minor release that includes new features, improvements, and bug fixes. See the [full list of issues address in Release 4.4.0](https://jira.appcelerator.org/issues/?filter=17008).
 
-As of this release, Studio 4.3.x will not be supported six months from 4.4.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Studio 4.3.x will not be supported six months from 4.4.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## New Features and Improvements
 
@@ -17,7 +17,6 @@ As of this release, Studio 4.3.x will not be supported six months from 4.4.0.GA'
 * Updated [go.appcelerator.com](http://go.appcelerator.com) with the new Node.js version (4.2.2).
 
 * Appcelerator Studio Windows Installer now installs NodeJS 4.2.2 on a clean machine.
-
 
 ## Fixed Issues
 

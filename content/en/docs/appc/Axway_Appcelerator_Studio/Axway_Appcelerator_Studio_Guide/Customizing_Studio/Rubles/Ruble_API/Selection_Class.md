@@ -14,22 +14,9 @@ Examples of how you might interact with instance and static methods of the selec
 
 Selection objects have the following properties and methods.
 
-Property
-
-Description
-
-offset
-
-The offset of the selection in the document.
-
-text
-
-The text of the current selection.
-
-start\_line
-
-The line on which the selection starts.
-
-end\_line
-
-The line on which the selection ends.
+| Property | Description |
+| --- | --- |
+| offset | The offset of the selection in the document. |
+| text | The text of the current selection. |
+| start\_line | The line on which the selection starts. |
+| end\_line | The line on which the selection ends. |

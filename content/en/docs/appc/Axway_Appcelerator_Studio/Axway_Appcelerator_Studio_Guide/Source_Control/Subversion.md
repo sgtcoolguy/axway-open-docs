@@ -1,17 +1,16 @@
 {"title":"Subversion","weight":"50"}
 
-* [Subversion Support](#SubversionSupport)
+* [Subversion Support](#subversion-support)
 
-  * [Installation](#Installation)
+    * [Installation](#installation)
 
-  * [Eclipse Subversive Functionality](#EclipseSubversiveFunctionality)
+    * [Eclipse Subversive Functionality](#eclipse-subversive-functionality)
 
-* [Import or Checkout an SVN Respository](#ImportorCheckoutanSVNRespository)
+* [Import or Checkout an SVN Respository](#import-or-checkout-an-svn-respository)
 
-  * [Utilize the SVN Perspective](#UtilizetheSVNPerspective)
+    * [Utilize the SVN Perspective](#utilize-the-svn-perspective)
 
-  * [Additional SVN Questions](#AdditionalSVNQuestions)
-
+    * [Additional SVN Questions](#additional-svn-questions)
 
 ## Subversion Support
 
@@ -19,35 +18,12 @@ The Studio uses the [Eclipse Subversive](http://www.eclipse.org/subversive/) to 
 
 When updating or adding Eclipse plugins or software, the software repository varies with the version of Studio:
 
-Appcelerator/Titanium Studio Version
-
-Eclipse Repository Name
-
-Eclipse Version
-
-2.1.x
-
-Helios
-
-3.6
-
-3.0.x - 3.1.3
-
-Indigo
-
-3.7
-
-3.1.4 - 3.4.x
-
-Kepler
-
-4.3
-
-4.0.0 - latest
-
-Luna
-
-4.4
+| Appcelerator/Titanium Studio Version | Eclipse Repository Name | Eclipse Version |
+| --- | --- | --- |
+| 2.1.x | Helios | 3.6 |
+| 3.0.x - 3.1.3 | Indigo | 3.7 |
+| 3.1.4 - 3.4.x | Kepler | 4.3 |
+| 4.0.0 - latest | Luna | 4.4 |
 
 ### Installation
 
@@ -55,16 +31,15 @@ Luna
 
 * Make sure that the main Eclipse update site is checked 'on'. In this example, the update site is the Eclipse 'Helios' site. Click 'OK' to commit any changes made to this page and exit.
 
-  ![update_sites](/Images/appc/download/attachments/30083194/update_sites.jpg)
+    <table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083194/update_sites.jpg" alt="images/download/attachments/30083194/update_sites.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 * Click **Help** -> **Install New Software**and select the Eclipse update site. It may take a couple of minutes to populate the plugin options.
 
-  ![svn_install](/Images/appc/download/attachments/30083194/svn_install.jpg)
+    <table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083194/svn_install.jpg" alt="images/download/attachments/30083194/svn_install.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 * Select the Subversion plugin and follow the wizard's 'Next' or 'Finish' to complete the installation.
 
 * Restart the Studio. Note that the Subversion plugin may ask you to download and install additional support after the restart.
-
 
 ### Eclipse Subversive Functionality
 
@@ -80,7 +55,6 @@ Luna
 
 * Merge changes
 
-
 ## Import or Checkout an SVN Respository
 
 1. Go to **File**\->**Import**
@@ -91,13 +65,11 @@ Luna
 
 4. Complete Wizard with your SVN repository details.
 
-
 ### Utilize the SVN Perspective
 
 1. Go to **Window** -> **Open Perspective...** -> **Other**.
 
 2. Select **SVN Respository Exploring**
-
 
 ### Additional SVN Questions
 

@@ -1,13 +1,12 @@
 {"title":"ListView","weight":"80"}
 
-* [Basic](#Basic)
+* [Basic](#basic)
 
-* [Sections](#Sections)
+* [Sections](#sections)
 
-* [Templates](#Templates)
+* [Templates](#templates)
 
-* [See also](#Seealso)
-
+* [See also](#see-also)
 
 Demonstrate basic use of the ListView element to create vertically scrolling lists of items.
 
@@ -85,7 +84,7 @@ app/controllers/basic.js
 
 `}`
 
-You can also detect click events on views within an item template, as discussed in [Handling Events on Template Views](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/ListViews/Alloy_ListView_Guide/#Handlingeventsontemplateviews).
+You can also detect click events on views within an item template, as discussed in [Handling Events on Template Views](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/ListViews/Alloy_ListView_Guide/#handling-events-on-template-views).
 
 ## Sections
 
@@ -329,7 +328,7 @@ app/controllers/templates.js
 
 * [Alloy ListView Guide](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/ListViews/Alloy_ListView_Guide/)
 
-  * [Handling Events](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/ListViews/Alloy_ListView_Guide/#Handlingevents)
+    * [Handling Events](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/ListViews/Alloy_ListView_Guide/#handling-events)
 
 * [Titanium.UI.ListView](#!/api/Titanium.UI.ListView)
 

@@ -6,15 +6,14 @@ Appcelerator Studio, and the Titanium CLI, uses the **xcode-select** command (ty
 
 1. Open a Terminal window and execute the following command:
 
-  `sudo xcode-select -``switch` `<xcode_folder_path>`
+    `sudo xcode-select -``switch` `<xcode_folder_path>`
 
-  The **<xcode\_folder\_path>** is typically /Applications/Xcode.app/Contents/Developer for Xcode 4.3 and later (or /Developer or /Developer-x.x for Xcode 4.2).
+    The **<xcode\_folder\_path>** is typically /Applications/Xcode.app/Contents/Developer for Xcode 4.3 and later (or /Developer or /Developer-x.x for Xcode 4.2).
 
 2. In Studio, open the Studio Preferences and navigate to **Studio** > **Platforms** > **iOS.**
 
 3. In the iOS section, click the **Refresh** button.
 
 4. The newly specified Xcode folder path should be displayed.
-
 
 You may need to restart Studio for your changes to take effect.

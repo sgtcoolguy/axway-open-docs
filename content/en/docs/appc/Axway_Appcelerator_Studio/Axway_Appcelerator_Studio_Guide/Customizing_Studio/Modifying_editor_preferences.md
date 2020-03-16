@@ -20,7 +20,6 @@ Smart typing pairs is when you type a character such as ' or (, and it auto-inse
 
 5. Save the file. Your new settings should be in effect.
 
-
 ### Example
 
 As an example, we remove the auto-character insertion of quotes in the HTML/PHP editors, but leave parens and braces alone.
@@ -29,14 +28,14 @@ As an example, we remove the auto-character insertion of quotes in the HTML/PHP 
 
 2. Open the file HTML / bundle.rb. searching for the following:
 
-  `smart_typing_pairs[``"text.html meta.tag - punctuation.definition.tag.begin"``] = [``'"'``,` `'"'``,` `'('``,` `')'``,` `'{'``,` `'}'``,` `'['``,` `']'``,` `"'"``,` `"'"``]`
+    `smart_typing_pairs[``"text.html meta.tag - punctuation.definition.tag.begin"``] = [``'"'``,` `'"'``,` `'('``,` `')'``,` `'{'``,` `'}'``,` `'['``,` `']'``,` `"'"``,` `"'"``]`
 
-  `...`
+    `...`
 
 3. Edit the smart\_typing\_pairs property to use the new key command to the following:
 
-  `smart_typing_pairs[``"text.html meta.tag - punctuation.definition.tag.begin"``] = [``'('``,` `')'``,` `'{'``,` `'}'``,` `'['``,` `']'``]`
+    `smart_typing_pairs[``"text.html meta.tag - punctuation.definition.tag.begin"``] = [``'('``,` `')'``,` `'{'``,` `'}'``,` `'['``,` `']'``]`
 
-  `...`
+    `...`
 
 4. Save the file. The update should work as expected.

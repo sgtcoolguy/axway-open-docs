@@ -1,25 +1,24 @@
 {"title":"OpenShift Deployment","weight":"50"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Installation](#Installation)
+* [Installation](#installation)
 
-* [Create a new Red Hat OpenShift Project](#CreateanewRedHatOpenShiftProject)
+* [Create a new Red Hat OpenShift Project](#create-a-new-red-hat-openshift-project)
 
-  * [Deploy an OpenShift Project](#DeployanOpenShiftProject)
+    * [Deploy an OpenShift Project](#deploy-an-openshift-project)
 
-  * [Preview Remote Site](#PreviewRemoteSite)
+    * [Preview Remote Site](#preview-remote-site)
 
-* [Deploy an existing project to OpenShift](#DeployanexistingprojecttoOpenShift)
+* [Deploy an existing project to OpenShift](#deploy-an-existing-project-to-openshift)
 
-* [Removing your password](#Removingyourpassword)
+* [Removing your password](#removing-your-password)
 
-* [Deleting an OpenShift application](#DeletinganOpenShiftapplication)
+* [Deleting an OpenShift application](#deleting-an-openshift-application)
 
-* [Viewing OpenShift application information](#ViewingOpenShiftapplicationinformation)
+* [Viewing OpenShift application information](#viewing-openshift-application-information)
 
-* [Related Topics](#RelatedTopics)
-
+* [Related Topics](#related-topics)
 
 ## Overview
 
@@ -37,29 +36,28 @@ OpenShift Integration is available via the [Appcelerator Marketplace](http://mar
 
 3. Select the wizard in question. Press **Next >**
 
-  ![openshift_new_project_1](/Images/appc/download/attachments/30083205/openshift_new_project_1.png)
+    ![openshift_new_project_1](/Images/appc/download/attachments/30083205/openshift_new_project_1.png)
 4. If you do not have an OpenShift account yet, you can sign up by entering a domain name, your email, and a password.
 
-  1. Domain: The name of your "company". This must be globally unique across all namespaces, and it will let you know if the name is already in use.
+    1. Domain: The name of your "company". This must be globally unique across all namespaces, and it will let you know if the name is already in use.
 
-  2. Email: your login email.
+    2. Email: your login email.
 
-  3. Password/Confirm Password: Any value with at least six characters is accepted.
+    3. Password/Confirm Password: Any value with at least six characters is accepted.
 
-  4. Once you have completed this step, you will be directed to watch for an activation email. Once you receive this email and log in to OpenShift once, you can continue with the process.
+    4. Once you have completed this step, you will be directed to watch for an activation email. Once you receive this email and log in to OpenShift once, you can continue with the process.
 
 5. If you already have an account, you can switch the radio button below and enter your email/password to sign in. You will only need to sign in once.
 
-  ![openshift_new_project_2](/Images/appc/download/attachments/30083205/openshift_new_project_2.png)
+    ![openshift_new_project_2](/Images/appc/download/attachments/30083205/openshift_new_project_2.png)
 6. Press **Next >.**
 
 7. Create your project. The name of the project must be unique within your namespace.
 
-  ![openshift_new_project_3](/Images/appc/download/attachments/30083205/openshift_new_project_3.png)
+    ![openshift_new_project_3](/Images/appc/download/attachments/30083205/openshift_new_project_3.png)
 8. You can switch to use a different account by clicking on **Switch to a different account...** button.
 
 9. Press **Finish.**
-
 
 The project is created. Depending on the type of project, the root file structure will be different.
 
@@ -81,7 +79,7 @@ To preview the remote site associated with an OpenShift project in a browser, ri
 
 4. On the next page, provide a name to your application (default to the project name) and select the type of application it is, then click **Finish**.
 
-  ![openshift_deploy_project](/Images/appc/download/attachments/30083205/openshift_deploy_project.png)
+    ![openshift_deploy_project](/Images/appc/download/attachments/30083205/openshift_deploy_project.png)
 
 All the files in the selected project will be pushed to the OpenShift remote git repository. Be careful not to overwrite any configuration files in the new project, and merge the values as appropriate.
 
@@ -91,7 +89,6 @@ You could deploy new local file changes by right-clicking on the project and sel
 
 * Delete **Preferences > General > Security > Secure Storage > Contents** or use **Switch to a different account...** button in the OpenShift project creation wizard.
 
-
 ## Deleting an OpenShift application
 
 OpenShift has a limit on the number of applications one can create in a domain, and there are a couple of ways to delete a remote application if you have hit the limit or want to remove one.
@@ -99,7 +96,6 @@ OpenShift has a limit on the number of applications one can create in a domain, 
 1. Right-click on the OpenShift project and select **Publish > Delete Remote App**.
 
 2. Go to the main menu and use **Commands > OpenShift > Delete Remote App...**; there, you would need to type in the name of the application to be deleted.
-
 
 ## Viewing OpenShift application information
 

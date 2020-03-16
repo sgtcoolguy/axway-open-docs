@@ -2,29 +2,27 @@
 
 Alloy 5.4.0.GA is a minor release that includes new features, improvements, and bug fixes.
 
-As of this release, Alloy 5.3.x will not be supported six months from 5.4.0's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Alloy 5.3.x will not be supported six months from 5.4.0's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## New Features
 
 * [ALOY-1481](https://jira.appcelerator.org/browse/ALOY-1481) - Data binding: Support binding multiple models to the same view
 
-  * Support binding multiple models to the same view
+    * Support binding multiple models to the same view
 
 * [ALOY-1482](https://jira.appcelerator.org/browse/ALOY-1482) - Data binding: Support deep binding of model object attributes
 
-  * Support deep binding of model attributes
+    * Support deep binding of model attributes
 
 * [ALOY-1494](https://jira.appcelerator.org/browse/ALOY-1494) - iOS: Support Ti.UI.iOS.Stepper in Alloy
 
-  * Added support for the new Stepper UI element on iOS
-
+    * Added support for the new Stepper UI element on iOS
 
 ## Improvements
 
 * [ALOY-1281](https://jira.appcelerator.org/browse/ALOY-1281) - RSS sample should be removed in favour of Studio version
 
-  * Updated the RSS sample to reflect recent changes to Studio
-
+    * Updated the RSS sample to reflect recent changes to Studio
 
 ## Fixed Issues
 

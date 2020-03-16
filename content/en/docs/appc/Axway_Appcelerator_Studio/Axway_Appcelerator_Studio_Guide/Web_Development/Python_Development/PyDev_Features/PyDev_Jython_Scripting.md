@@ -48,7 +48,6 @@ You will receive (currently) 4 commands:
 
 * **onDispose**: Called when the PyEdit is going to dispose of itself.
 
-
 And that's it. We've seen how to create scripts and make PyDev load them for editor actions. If you want to keep on, you should check some example scripts that come with PyDev (those come in the org.python.pydev.jython\_xxx/jysrc folder – there are links to them in the resources section at the end of this page). You should check:
 
 * **pyedit\_example.py**: this is the simple example we covered here, to see the output of the commands we have
@@ -56,7 +55,6 @@ And that's it. We've seen how to create scripts and make PyDev load them for edi
 * **pyedit\_example2.py**: this is an example on how to bind some action to the **'default' keybinding structure** that is provided by PyDev for Jython scripts.
 
 * **pyedit\_next\_problem.py**: This is the implementation of the **go-to next problem** that is implemented at PyDev. **Disclaimer**: the way it binds to the keybinding would require you to change the plugin.xml as it is based on the Eclipse structure, which is much more static than the way of binding things to the PyDev editor presented to you on pyedit\_example2.py (it would require changes in the plugin.xml file of the plugin, but on the other way, it would also allow you to change the keybinding for it).
-
 
 **IMPORTANT NOTES:**
 
@@ -67,7 +65,6 @@ And that's it. We've seen how to create scripts and make PyDev load them for edi
 * Some commands rely on having some specific command, so, you might not 'see' the change until you restart the editor (this is the case when registering actions depending on: **onCreateActions**).
 
 * If you have further doubts about scripting, you can register at the **pydev-code** list at SourceForge, and ask them there, and if you've been able to create some useful script, you can contribute it back to PyDev by creating a bug and attaching your script there.
-
 
 So, that's it... Happy Scripting!
 

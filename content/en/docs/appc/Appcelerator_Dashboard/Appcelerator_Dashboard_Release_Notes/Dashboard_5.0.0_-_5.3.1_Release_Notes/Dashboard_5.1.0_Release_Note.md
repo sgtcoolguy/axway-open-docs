@@ -12,7 +12,6 @@ Dashboard 5.1.0 is a minor release, which includes new features, improvements, a
 
 * Added a warning on the Mobile Backend Services Push Notification form if an uploaded iOS push certificate is disabled or expired.
 
-
 ## Improvements
 
 * Improved the AMPLIFY Home and Labs views to make primary actions more obvious.
@@ -20,7 +19,6 @@ Dashboard 5.1.0 is a minor release, which includes new features, improvements, a
 * Unified navigation notifications indicator will now dismiss once all notifications have been read.
 
 * Improved Titanium and APS SDK analytics views' environments ("deploy type") filter to no longer include Virtual Private Cloud environments.
-
 
 ## Fixed issues
 

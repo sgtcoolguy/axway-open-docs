@@ -1,29 +1,28 @@
 {"title":"Errors While Updating","weight":"80"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Updating Studio](#UpdatingStudio)
+* [Updating Studio](#updating-studio)
 
-  * [No updates were found](#Noupdateswerefound)
+    * [No updates were found](#no-updates-were-found)
 
-  * [Conflicting dependency](#Conflictingdependency)
+    * [Conflicting dependency](#conflicting-dependency)
 
-  * [Error while loading manipulator or Error locating companion launcher jar](#ErrorwhileloadingmanipulatororErrorlocatingcompanionlauncherjar)
+    * [Error while loading manipulator or Error locating companion launcher jar](#error-while-loading-manipulator-or-error-locating-companion-launcher-jar)
 
-  * [An error occurred while collecting items to be installed](#Anerroroccurredwhilecollectingitemstobeinstalled)
+    * [An error occurred while collecting items to be installed](#an-error-occurred-while-collecting-items-to-be-installed)
 
-  * [No Update URLs](#NoUpdateURLs)
+    * [No Update URLs](#no-update-urls)
 
-    * [Titanium Studio](#TitaniumStudio)
+        * [Titanium Studio](#titanium-studio)
 
-    * [Aptana Studio](#AptanaStudio)
+        * [Aptana Studio](#aptana-studio)
 
-* [Updating Titanium Components](#UpdatingTitaniumComponents)
+* [Updating Titanium Components](#updating-titanium-components)
 
-  * [Unable to update to a released version](#Unabletoupdatetoareleasedversion)
+    * [Unable to update to a released version](#unable-to-update-to-a-released-version)
 
-  * [Prompted repeatedly to install the same NPM package](#PromptedrepeatedlytoinstallthesameNPMpackage)
-
+    * [Prompted repeatedly to install the same NPM package](#prompted-repeatedly-to-install-the-same-npm-package)
 
 ## Overview
 
@@ -43,7 +42,6 @@ If there is a new version of Studio available but your current Studio shows "No 
 
 3. Try **Help > Check for Titanium Updates** or **Help > Check for Appcelerator Updates** again.
 
-
 Prior to Release 3.2.0, to check for update, select **Help > Check for Updates**.
 
 ### Conflicting dependency
@@ -60,7 +58,6 @@ It can also happen in a few other circumstances:
 
 * If you previously installed PyDev and are trying to install Studio over the top of that.
 
-
 In the first two cases, check your URL. In the last case, uninstall PyDev and install studio instead. It includes PyDev.
 
 ### Error while loading manipulator or Error locating companion launcher jar
@@ -71,13 +68,12 @@ There is an error with your .ini file.
 
 2. Replace the following lines at the top of the file (we are replacing the 1.1.0 version with the 1.1.1 version):
 
-  \-startup
-  ../../../plugins/org.eclipse.equinox.launcher\_1.1.1.R36x\_v20101122\_1400.jar
+    \-startup
+    ../../../plugins/org.eclipse.equinox.launcher\_1.1.1.R36x\_v20101122\_1400.jar
 
-  Make sure that plugin exists in your plugins directory. If a different version exists, you may need to change the above line.
+    Make sure that plugin exists in your plugins directory. If a different version exists, you may need to change the above line.
 
 3. Save and restart.
-
 
 ### An error occurred while collecting items to be installed
 
@@ -97,7 +93,6 @@ There are a few possibilities:
 
 3. Start updating from a different branch to the one that has failed, by switching the values in "Available Software Sites" (i.e. if on stable, update from nightly). Then stop the download before it completes, restore the initial software sites settings, and try updating from the desired site again.
 
-
 ### No Update URLs
 
 If you should happen to find your update list without any URLs, you can re-enter them as below:
@@ -106,13 +101,11 @@ If you should happen to find your update list without any URLs, you can re-enter
 
 * Standalone version: [http://download.appcelerator.com/appcelerator/studio/standalone/update/stable/](http://download.appcelerator.com/appcelerator/studio/standalone/update/stable/)
 
-
 #### Aptana Studio
 
 * Eclipse plug-in version: [http://download.aptana.com/studio3/plugin/update/](http://download.aptana.com/studio3/plugin/update/)
 
 * Standalone version: [http://download.aptana.com/studio3-rcp/plugin/update/](http://download.aptana.com/studio3-rcp/plugin/update/)
-
 
 ## Updating Titanium Components
 
@@ -126,14 +119,13 @@ It may be that the update server is not serving the appropriate list of availabl
 
 2. Paste in the url [https://api.appcelerator.net/p/v2/release-list?name=mobilesdk&v=](https://api.appcelerator.net/p/v2/release-list?name=mobilesdk&v=)<version>&limit=5&os=<os>, substituting your operating system value, and version of **Studio**with only the first three version specifiers
 
-  * <os>: osx, win32
+    * <os>: osx, win32
 
-  * <version>: 2.0.1.2012042345 => 2.0.1
+    * <version>: 2.0.1.2012042345 => 2.0.1
 
 3. An example might be: [https://api.appcelerator.net/p/v2/release-list?name=mobilesdk&v=2.0.0&limit=5&os=osx](https://api.appcelerator.net/p/v2/release-list?name=mobilesdk&v=2.0.0&limit=5&os=osx)
 
 4. You should see a list of releases
-
 
 If the release you expect is not in not in that list:
 
@@ -144,7 +136,6 @@ If the release you expect is not in not in that list:
 * If it is the latest item, and Studio still does not see it, [check the log file](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Studio_Troubleshooting/Accessing_the_Log_File/) for information on how to find that file and file a bug.
 
 * If there is (or isn't) something in the log file [file a bug](http://jira.appcelerator.org).
-
 
 ### Prompted repeatedly to install the same NPM package
 
@@ -168,4 +159,4 @@ If Studio prompts you to install the same Node.js packages (CLI, ACS, Alloy, etc
 
 `export NPM_CONFIG_PREFIX = <PATH_TO_NPM>`
 
-For Windows, follow the directions from [Configuring Environment Variables on Windows](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#ConfiguringEnvironmentVariablesonWindows) to add the environment variable.
+For Windows, follow the directions from [Configuring Environment Variables on Windows](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#configuring-environment-variables-on-windows) to add the environment variable.

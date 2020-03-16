@@ -1,17 +1,16 @@
 {"title":"Sample Actions","weight":"80"}
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Description](#Description)
+* [Description](#description)
 
-* [Invocation](#Invocation)
+* [Invocation](#invocation)
 
-* [List the available Samples](#ListtheavailableSamples)
+* [List the available Samples](#list-the-available-samples)
 
-* [Import a Sample](#ImportaSample)
+* [Import a Sample](#import-a-sample)
 
-* [Listening to Sample Changes](#ListeningtoSampleChanges)
-
+* [Listening to Sample Changes](#listening-to-sample-changes)
 
 ## Requirements
 
@@ -40,29 +39,13 @@ To get the JSON list of samples, _dispatch_ this call:
 
 The returned JSON holds this information:
 
-key
-
-description
-
-category
-
-The sample's category
-
-name
-
-The name of the sample
-
-id
-
-A unique sample identifier which should also be used when importing a sample
-
-description
-
-A description of the sample
-
-image
-
-(currently empty for all samples) Will hold an image URL for the sample
+| key | description |
+| --- | --- |
+| category | The sample's category |
+| name | The name of the sample |
+| id | A unique sample identifier which should also be used when importing a sample |
+| description | A description of the sample |
+| image | (currently empty for all samples) Will hold an image URL for the sample |
 
 ## Import a Sample
 
@@ -88,18 +71,8 @@ Here is a sample of a way you can listen to such events (based on the [studio3-s
 
 The _update_ call receives an event object that holds the following information, and can be used to update the UI:
 
-key
-
-value
-
-event
-
-The event identifier (in this case, always 'samples')
-
-eventType
-
-'added' or 'deleted'
-
-data
-
-A JSON representation of the Sample-Info (as described above)
+| key | value |
+| --- | --- |
+| event | The event identifier (in this case, always 'samples') |
+| eventType | 'added' or 'deleted' |
+| data | A JSON representation of the Sample-Info (as described above) |

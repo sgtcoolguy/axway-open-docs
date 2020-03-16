@@ -6,54 +6,53 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Project structure](#Projectstructure)
+* [Project structure](#project-structure)
 
-* [Initializer file](#Initializerfile)
+* [Initializer file](#initializer-file)
 
-* [Deploy the application](#Deploytheapplication)
+* [Deploy the application](#deploy-the-application)
 
-* [Log output](#Logoutput)
+* [Log output](#log-output)
 
-* [View log files](#Viewlogfiles)
+* [View log files](#view-log-files)
 
-  * [Logging utilities](#Loggingutilities)
+    * [Logging utilities](#logging-utilities)
 
-  * [About logged execution times](#Aboutloggedexecutiontimes)
+    * [About logged execution times](#about-logged-execution-times)
 
-* [Node.js version](#Node.jsversion)
+* [Node.js version](#node.js-version)
 
-* [Port binding](#Portbinding)
+* [Port binding](#port-binding)
 
-* [Install custom binaries](#Installcustombinaries)
+* [Install custom binaries](#install-custom-binaries)
 
-* [Declare dependencies](#Declaredependencies)
+* [Declare dependencies](#declare-dependencies)
 
-* [Define environment variables](#Defineenvironmentvariables)
+* [Define environment variables](#define-environment-variables)
 
-* [Scale the application](#Scaletheapplication)
+* [Scale the application](#scale-the-application)
 
-* [Access a specific container](#Accessaspecificcontainer)
+* [Access a specific container](#access-a-specific-container)
 
-* [Custom domains](#Customdomains)
+* [Custom domains](#custom-domains)
 
-  * [Set a custom domain and path](#Setacustomdomainandpath)
+    * [Set a custom domain and path](#set-a-custom-domain-and-path)
 
-  * [Wildcard subdomains](#Wildcardsubdomains)
+    * [Wildcard subdomains](#wildcard-subdomains)
 
-* [Add a custom SSL certificate](#AddacustomSSLcertificate)
+* [Add a custom SSL certificate](#add-a-custom-ssl-certificate)
 
-* [Create child processes](#Createchildprocesses)
+* [Create child processes](#create-child-processes)
 
-* [Application limitations](#Applicationlimitations)
+* [Application limitations](#application-limitations)
 
-  * [Disk space](#Diskspace)
+    * [Disk space](#disk-space)
 
-  * [Server containers](#ServercontainersServercontainers)
+    * [Server containers](#server-containers)
 
-  * [Server Ports](#ServerPorts)
-
+    * [Server Ports](#server-ports)
 
 ## Overview
 
@@ -67,93 +66,29 @@ A project is made up of several components. To simplify development, API Builder
 
 The following is a list of directories and files that can be found in a project:
 
-File/Folder Name
-
-Description
-
-apis
-
-Contains API JavaScript files, used to create custom entry points for the application. For details, see [API Builder APIs](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_APIs/).
-
-app.js
-
-The entry point to the application if it is used as a server. You can monitor the startup and shutdown sequence.
-
-appc.json
-
-Contains component dependencies and AMPLIFY Runtime Services deployment settings. For details, see [API Runtime Configuration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Runtime_Configuration/).
-
-blocks
-
-Contains Block JavaScript files, used to create pre- and post-processing filters. For details, see [API Builder Blocks](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_How-tos/API_Builder_Blocks/).
-
-codeblocks
-
-Contains Codeblock, JSON, and Javascript files, used for defining custom functions for use in Flows.
-
-conf
-
-Contains configuration files in JSON format for the project and required connectors. For details, see [Console Configuration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/Console_Configuration/).
-
-docs
-
-Contains generated docs for your project's APIs.
-
-endpoints
-
-Contains Endpoint JSON files, these are OpenAPI 2.0 (Swagger) documents used to create custom entry points for the application, with execution logic defined by linked Flows
-
-flows
-
-Contains Flow JSON files, used for defining business logic for Endpoints.
-
-index.js
-
-The entry point to the application if it is used as a module.
-
-logs
-
-Contains generated log files when running your project locally.
-
-models
-
-Contains Model JavaScript files, used to define the schema for your data. For details, see [Models](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Models/).
-
-node\_modules
-
-Contains project dependencies. API Builder automatically installs any project dependencies declared in the package.json file.
-
-nodes
-
-Contains custom flow-nodes for use in Flows. Flow-nodes must be Node.js packages in their own folders named nodehandler-\*.
-
-package.json
-
-NPM configuration file to declare project dependencies and other build or runtime configurations. For details, see [NodeJS Configuration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Configuration/NodeJS_Configuration/).
-
-package-lock.json
-
-NPM configuration file that is generated when NPM modifies either the node\_modules tree or the package.json file. It describes the exact tree that was generated so that subsequent installs are able to generate identical trees, regardless of intermediate dependency updates. The npm shrinkwrap command repurposes the package-lock.json file into a publishable npm-shrinkwrap.json file. For additional information on shrink wrapping a project, refer to npm shrinkwrap.
-
-serviceconnectors
-
-Contains installed service connectors used within Flows for connecting to and interacting with external services.
-
-web
-
-Contains Web files, used to create endpoints that render UI.
-
-web/public
-
-Contains static assets, such as CSS, HTML, image, or JavaScript files, for your Web interface.
-
-web/routes
-
-Contains Route JavaScript files, used to define the API endpoint and logic for your Web interface.
-
-web/views
-
-Contains template files for your Web interface. Files must have one of the following extensions: ejs, hbs, md, or jsx.
+| File/Folder Name | Description |
+| --- | --- |
+| apis | Contains API JavaScript files, used to create custom entry points for the application. For details, see [API Builder APIs](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_APIs/). |
+| app.js | The entry point to the application if it is used as a server. You can monitor the startup and shutdown sequence. |
+| appc.json | Contains component dependencies and AMPLIFY Runtime Services deployment settings. For details, see [API Runtime Configuration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Runtime_Configuration/). |
+| blocks | Contains Block JavaScript files, used to create pre- and post-processing filters. For details, see [API Builder Blocks](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_How-tos/API_Builder_Blocks/). |
+| codeblocks | Contains Codeblock, JSON, and Javascript files, used for defining custom functions for use in Flows. |
+| conf | Contains configuration files in JSON format for the project and required connectors. For details, see [Console Configuration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/Console_Configuration/). |
+| docs | Contains generated docs for your project's APIs. |
+| endpoints | Contains Endpoint JSON files, these are OpenAPI 2.0 (Swagger) documents used to create custom entry points for the application, with execution logic defined by linked Flows |
+| flows | Contains Flow JSON files, used for defining business logic for Endpoints. |
+| index.js | The entry point to the application if it is used as a module. |
+| logs | Contains generated log files when running your project locally. |
+| models | Contains Model JavaScript files, used to define the schema for your data. For details, see [Models](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Models/). |
+| node\_modules | Contains project dependencies. API Builder automatically installs any project dependencies declared in the package.json file. |
+| nodes | Contains custom flow-nodes for use in Flows. Flow-nodes must be Node.js packages in their own folders named nodehandler-\*. |
+| package.json | NPM configuration file to declare project dependencies and other build or runtime configurations. For details, see [NodeJS Configuration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Configuration/NodeJS_Configuration/). |
+| package-lock.json | NPM configuration file that is generated when NPM modifies either the node\_modules tree or the package.json file. It describes the exact tree that was generated so that subsequent installs are able to generate identical trees, regardless of intermediate dependency updates. The npm shrinkwrap command repurposes the package-lock.json file into a publishable npm-shrinkwrap.json file. For additional information on shrink wrapping a project, refer to npm shrinkwrap. |
+| serviceconnectors | Contains installed service connectors used within Flows for connecting to and interacting with external services. |
+| web | Contains Web files, used to create endpoints that render UI. |
+| web/public | Contains static assets, such as CSS, HTML, image, or JavaScript files, for your Web interface. |
+| web/routes | Contains Route JavaScript files, used to define the API endpoint and logic for your Web interface. |
+| web/views | Contains template files for your Web interface. Files must have one of the following extensions: ejs, hbs, md, or jsx. |
 
 ## Initializer file
 
@@ -207,7 +142,6 @@ AMPLIFY Runtime Services can capture two kinds of log output from applications:
 
 * application logs – explicit log calls made in the application
 
-
 To capture access logs, use the appc-logger module, and to capture application logs, you can either use the standard JavaScript console.log() and console.error() methods, or you can use the appc-logger module.
 
 By default, when an application is initialized, it loads and creates an appc-logger instance. The appc-logger instance is bound to the server instance, which will automatically capture access logs for the application.
@@ -252,7 +186,6 @@ An application typically runs in the cloud, so being able to see what is happeni
 
 * Errors such as syntax errors, application crashes, and system level failures are logged automatically.
 
-
 ### Logging utilities
 
 The Appcelerator CLI provides three commands for viewing logs for a published application: **accesslog**, **logcat**, and **loglist**.
@@ -262,7 +195,6 @@ The Appcelerator CLI provides three commands for viewing logs for a published ap
 * The appc cloud loglist command lists your published application's log for a specific period. By default, a maximum of 100 log messages is returned at a time.
 
 * The appc cloud logcat command lists your published application's log continuously from Appcelerator Cloud.
-
 
 ### About logged execution times
 
@@ -552,7 +484,6 @@ To create a PEM file, you will need the following three files provided by your S
 
 * Key used to generate the certificate (customapp.com.key, for example)
 
-
 You need to combine the contents of the three files into a single text file, called a PEM file, which you will add to your application. The PEM file must have the following structure:
 
 `-----BEGIN CERTIFICATE-----`
@@ -647,70 +578,17 @@ Each application runs in a specific container size with different resources (mem
 
 * To specify a bigger container for the application, set the cloud.container field in the appc.json file or use the appc cloud server command.
 
-* To use more than one container for your application, see [Scale the Application](#Scaletheapplication).
-
+* To use more than one container for your application, see [Scale the Application](#scale-the-application).
 
 You can specify one of the following container sizes depending on your AMPLIFY Appcelerator Services subscription:
 
-Name
-
-Point Cost
-
-Memory
-
-CPU Shares
-
-Archive Behavior
-
-Dev
-
-1
-
-512MB
-
-1000
-
-After an hour of inactivity
-
-Small
-
-2
-
-256MB
-
-1000
-
-After a week of inactivity
-
-Medium
-
-4
-
-512MB
-
-2000
-
-After a week of inactivity
-
-Large
-
-8
-
-1024MB
-
-4000
-
-After a week of inactivity
-
-XLarge
-
-16
-
-2048MB
-
-8000
-
-After a week of inactivity
+| Name | Point Cost | Memory | CPU Shares | Archive Behavior |
+| --- | --- | --- | --- | --- |
+| Dev | 1 | 512MB | 1000 | After an hour of inactivity |
+| Small | 2 | 256MB | 1000 | After a week of inactivity |
+| Medium | 4 | 512MB | 2000 | After a week of inactivity |
+| Large | 8 | 1024MB | 4000 | After a week of inactivity |
+| XLarge | 16 | 2048MB | 8000 | After a week of inactivity |
 
 It is important to choose Dev (512MB) and Small (256MB) containers wisely. The minimum recommended container sizeis "Medium". Though you may be able to deploy to a "Dev" or "Small" container, for better memory usage and performance it is highly recommended that you use medium or bigger size containers.
 

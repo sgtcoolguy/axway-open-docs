@@ -1,23 +1,22 @@
 {"title":"Accessibility","weight":"90"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Designing universal accessible applications](#Designinguniversalaccessibleapplications)
+* [Designing universal accessible applications](#designing-universal-accessible-applications)
 
-* [Spoken feedback accessibility features](#Spokenfeedbackaccessibilityfeatures)
+* [Spoken feedback accessibility features](#spoken-feedback-accessibility-features)
 
-  * [Android TalkBack vs. iOS VoiceOver behavior](#AndroidTalkBackvs.iOSVoiceOverbehavior)
+    * [Android TalkBack vs. iOS VoiceOver behavior](#android-talkback-vs.-ios-voiceover-behavior)
 
-  * [Testing spoken feedback accessibility features](#Testingspokenfeedbackaccessibilityfeatures)
+    * [Testing spoken feedback accessibility features](#testing-spoken-feedback-accessibility-features)
 
-    * [Android emulator](#Androidemulator)
+        * [Android emulator](#android-emulator)
 
-    * [Android device](#Androiddevice)
+        * [Android device](#android-device)
 
-    * [iOS simulator](#iOSsimulator)
+        * [iOS simulator](#ios-simulator)
 
-    * [iOS device](#iOSdevice)
-
+        * [iOS device](#ios-device)
 
 ## Introduction
 
@@ -39,7 +38,6 @@ Review the following external guides for information about designing accessible 
 
 * [Web Accessibility Initiative](http://www.w3.org/WAI/)
 
-
 ## Spoken feedback accessibility features
 
 Android TalkBack and iOS VoiceOver are accessibility features for the visually impaired for Android and iOS devices, respectively. Both of these features provide spoken feedback to the user to describe what they are touching, selecting, activating, etc.
@@ -48,35 +46,12 @@ On the Android platform, TalkBack varies by Android version. Both the supported 
 
 To support both spoken feedback assistants, all Titanium view elements support a set of accessibility properties (see table below), which can be used to specify the text spoken back for the UI element. Many of these view elements have a default value based on the control type and may already be accessible to visually-impaired users. Setting these properties may not be necessary for your application. If you have non-textual elements in your application, that is, you are providing information in a graphical way, such as a star-rating system, you need to explicitly set these properties with helpful hints, labels, and values, so they can convey the same information and be accessible.
 
-Property
-
-Default Value
-
-Description
-
-[accessibilityHidden](#!/api/Titanium.UI.View-property-accessibilityHidden)
-
-false
-
-Whether the view should be "hidden" from (i.e., ignored by) the accessibility service.
-
-[accessibilityHint](#!/api/Titanium.UI.View-property-accessibilityHint)
-
-\-
-
-Briefly describes what performing an action, such as a click, on the view will do.
-
-[accessibilityLabel](#!/api/Titanium.UI.View-property-accessibilityLabel)
-
-Title or label of the control.
-
-A succinct label identifying the view for the device's accessibility service.
-
-[accessibilityValue](#!/api/Titanium.UI.View-property-accessibilityValue)
-
-State or value of the control.
-
-A string describing the value (if any) of the view for the device's accessibility service.
+| Property | Default Value | Description |
+| --- | --- | --- |
+| [accessibilityHidden](#!/api/Titanium.UI.View-property-accessibilityHidden) | false | Whether the view should be "hidden" from (i.e., ignored by) the accessibility service. |
+| [accessibilityHint](#!/api/Titanium.UI.View-property-accessibilityHint) | \- | Briefly describes what performing an action, such as a click, on the view will do. |
+| [accessibilityLabel](#!/api/Titanium.UI.View-property-accessibilityLabel) | Title or label of the control. | A succinct label identifying the view for the device's accessibility service. |
+| [accessibilityValue](#!/api/Titanium.UI.View-property-accessibilityValue) | State or value of the control. | A string describing the value (if any) of the view for the device's accessibility service. |
 
 For the Android platform, a custom string is created based on these properties, in the order, accessibilityLabel, accessibilityValue, then accessibilityHint, which maps to the [android:contentDescription property](http://developer.android.com/reference/android/view/View.html#attr_android:contentDescription). Do not specify the accessibilityLabel property for view elements that display textual items, such as the Label text or Button title, unless you want to override the default behavior. If this property is defined, the text on these view elements will not be spoken.
 
@@ -250,53 +225,15 @@ For the iOS platform, do not specify accessibility properties for container view
 
 The following table describes the responses based on accessibility property settings (if the win3.accessibilityHint is removed, which blocks most of the view elements from being spoken by VoiceOver).
 
-Element
-
-TalkBack Response
-
-VoiceOver Response
-
-button
-
-"Open. Button."
-
-"Open. Button."
-
-slider
-
-"Seek control. 50 percent."
-
-"50 percent. Adjustable. Slide up and down to adjust the value."
-
-label
-
-"I pity the foo."
-
-"I pity the foo."
-
-button2
-
-"Double-click me to close the red window. Button."
-
-"Double-click me to close the red window. Button."
-
-label2
-
-"I do not speak French."
-
-"Salut, Monde. I do not speak French."
-
-button3
-
-"Close the blue window. Button."
-
-"Blue. Button. Close the blue window."
-
-label3
-
-"You pushed me. Nominal. I am a label."
-
-"You pushed me. Nominal. I am a label."
+| Element | TalkBack Response | VoiceOver Response |
+| --- | --- | --- |
+| button | "Open. Button." | "Open. Button." |
+| slider | "Seek control. 50 percent." | "50 percent. Adjustable. Slide up and down to adjust the value." |
+| label | "I pity the foo." | "I pity the foo." |
+| button2 | "Double-click me to close the red window. Button." | "Double-click me to close the red window. Button." |
+| label2 | "I do not speak French." | "Salut, Monde. I do not speak French." |
+| button3 | "Close the blue window. Button." | "Blue. Button. Close the blue window." |
+| label3 | "You pushed me. Nominal. I am a label." | "You pushed me. Nominal. I am a label." |
 
 ### Testing spoken feedback accessibility features
 
@@ -317,7 +254,6 @@ To enable TalkBack:
 3. Click the **TalkBack** switch to on to enable TalkBack.
 
 4. A dialog box appears asking you to confirm your selection. Click the **OK** button.
-
 
 To use TalkBack, tap on a view element to select it, then double-tap to activate the element. Swipe left or right to select the previous or next item, respectively. Swipe right then left or left then right in one motion to scroll vertically or horizontally through views.
 
@@ -341,7 +277,6 @@ To disable TalkBack:
 
 9. Tap the **OK** button to select it, then double-tap to confirm.
 
-
 For more information about using Talkback, see the [Nexus Accessibility Guide](http://support.google.com/nexus/bin/topic.py?hl=en&topic=2692466).
 
 #### iOS simulator
@@ -356,7 +291,6 @@ To enable Accessibility Inspector:
 
 3. Switch **Accessibility** **Inspector** to on.
 
-
 A rainbow colored bar appears in the simulator. To temporary enable or disable the utility during testing, click the 'x' icon in the top-left corner to uncollapse and collapse the accessibility information preview, respectively. While the utility is enabled, in your application, click on a view element to select it to preview the information in the Accessibility Inspector. To navigate in your application while the utility is enabled, for most view elements, tap the view element to select it, then double-tap or triple-tap to activate it.
 
 To disable Accessibility Inspector:
@@ -364,7 +298,6 @@ To disable Accessibility Inspector:
 1. Click the 'x' icon in the top-left corner of Accessibility Inspector to collapse the utility to disable it.
 
 2. Repeat the steps to enable it except switch Accessibility Inspector to off.
-
 
 For more information about using Accessibility Inspector, refer to [Accessibility Programming Guide for iOS: Testing the Accessibility of Your iPhone Application](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/iPhoneAccessibility/Testing_Accessibility/Testing_Accessibility.html).
 
@@ -377,7 +310,6 @@ To enable VoiceOver:
 2. Navigate to **General** > **Accessibility** > **VoiceOver**.
 
 3. Click the **VoiceOver** switch to on to enable VoiceOver.
-
 
 To use VoiceOver, tap on a view element to select it, then double- or triple-tap to activate the element. Swipe left or right to select the previous or next item, respectively. Swipe with three fingers to scroll vertically or horizontally. If your screen is locked, double-tap it to unlock it.
 
@@ -392,6 +324,5 @@ To disable VoiceOver:
 4. Tap **VoiceOver** to select it, then double-tap to open it.
 
 5. Tap **VoiceOver** switch to select it, then double-tap to disable it.
-
 
 For more information about using VoiceOver, refer to [Accessibility Programming Guide for iOS: Testing the Accessibility of Your iPhone Application](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/iPhoneAccessibility/Testing_Accessibility/Testing_Accessibility.html).

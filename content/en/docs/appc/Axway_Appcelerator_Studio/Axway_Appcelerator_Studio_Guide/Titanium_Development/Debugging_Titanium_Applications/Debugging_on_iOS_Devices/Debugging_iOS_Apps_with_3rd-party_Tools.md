@@ -34,26 +34,25 @@ Since iOS 7, the pre-packaged JScore framework has contained a debugging agent a
 
 ## Debugging with Safari DevTools
 
-Be sure to turn on use-jscore-framework as listed in [Enable use-jscore-framework](#Enableuse-jscore-framework).
+Be sure to turn on use-jscore-framework as listed in [Enable use-jscore-framework](#enable-use-jscore-framework).
 
 1. Launch the app on the device or a simulator.
 
-  If using a device, make its connected by an USB cable before debugging.
+    If using a device, make its connected by an USB cable before debugging.
 
-  1. Launch you application via Studio or command-line: appc run -p ios
+    1. Launch you application via Studio or command-line: appc run -p ios
 
 2. Launch Safari and enable the **Develop** mode (**Safari** > **Preferences** > **Advanced** and enable **Show Develop menu in menu bar**).
 
-  It is important to have the Web Inspector enabled to allow connections for debugging. Otherwise, neither Studio nor Safari's debugger will be able to connect to the device using the web-inspector based protocol.
+    It is important to have the Web Inspector enabled to allow connections for debugging. Otherwise, neither Studio nor Safari's debugger will be able to connect to the device using the web-inspector based protocol.
 
-  ![enabled_develop_safari](/Images/appc/download/attachments/49160781/enabled_develop_safari.png)
+    ![enabled_develop_safari](/Images/appc/download/attachments/49160781/enabled_develop_safari.png)
 
 3. Once the app is up and running, connecting to the debugger depends on whether you are using a simulator or device.
 
-  1. Simulator: **Safari** > **Developer** > **Simulator** > **JSContext**
+    1. Simulator: **Safari** > **Developer** > **Simulator** > **JSContext**
 
-  2. Device: **Safari** > **Developer** > **<device name>** > **JSContext**
-
+    2. Device: **Safari** > **Developer** > **<device name>** > **JSContext**
 
 ### Safari Breakpoints
 

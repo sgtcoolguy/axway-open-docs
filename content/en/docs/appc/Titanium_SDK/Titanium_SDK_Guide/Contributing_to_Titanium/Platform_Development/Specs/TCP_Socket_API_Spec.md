@@ -2,42 +2,41 @@
 
 ## Contents
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Concepts and Definitions](#ConceptsandDefinitions)
+* [Concepts and Definitions](#concepts-and-definitions)
 
-* [Basis of spec](#Basisofspec)
+* [Basis of spec](#basis-of-spec)
 
-* [Namespacing](#Namespacing)
+* [Namespacing](#namespacing)
 
-* [Transport layer support](#Transportlayersupport)
+* [Transport layer support](#transport-layer-support)
 
-* [Socket lifecycle](#Socketlifecycle)
+* [Socket lifecycle](#socket-lifecycle)
 
-* [Connecting (outbound) sockets](#Connecting(outbound)sockets)
+* [Connecting (outbound) sockets](#connecting-outbound-sockets)
 
-* [Listening (accepting) sockets](#Listening(accepting)sockets)
+* [Listening (accepting) sockets](#listening-accepting-sockets)
 
-* [Accepted sockets](#Acceptedsockets)
+* [Accepted sockets](#accepted-sockets)
 
-* [Changes to existing Ti.Network.TCPSocket on iOS](#ChangestoexistingTi.Network.TCPSocketoniOS)
+* [Changes to existing Ti.Network.TCPSocket on iOS](#changes-to-existing-ti.network.tcpsocket-on-ios)
 
-* [Security issues](#Securityissues)
+* [Security issues](#security-issues)
 
-* [INADDR\_ANY](#INADDR_ANY)
+* [INADDR\_ANY](#inaddr_any)
 
-* [I/O Layer](#I/OLayer)
+* [I/O Layer](#i/o-layer)
 
-* [Proposed API](#ProposedAPI)
+* [Proposed API](#proposed-api)
 
-  * [Ti.Network](#Ti.Network)
+    * [Ti.Network](#ti.network)
 
-  * [Ti.Network.Socket](#Ti.Network.Socket)
+    * [Ti.Network.Socket](#ti.network.socket)
 
-  * [Ti.Network.Socket.TCP](#Ti.Network.Socket.TCP)
+    * [Ti.Network.Socket.TCP](#ti.network.socket.tcp)
 
-* [Pseudo Code Examples](#PseudoCodeExamples)
-
+* [Pseudo Code Examples](#pseudo-code-examples)
 
 ## Overview
 
@@ -63,7 +62,6 @@ It should be noted that this spec is in flux based on the pending definition of 
 
 * Connector: A socket which connects to a specified host/port.
 
-
 Throughout this document, except where specified, the word "socket" indicates a socket that uses the TCP transport layer.
 
 ## Basis of spec
@@ -83,7 +81,6 @@ It is proposed that we create a new Ti.Network.Socket namespace within Ti.Networ
 * The name Ti.Network.TCPSocket is currently reserved on iOS and cannot be deprecated until a later time (see below). This makes it impractical to use the Ti.Network namespace as a container for TCPSocket, UDPSocket, etc.
 
 * This allows us to reserve a specific namespace for implementation of further transport layers, and give users a convenient space to present any custom transport layers they implement.
-
 
 ## Transport layer support
 
@@ -147,7 +144,6 @@ Presenting sockets to the world introduces a host of security issues, including 
 
 * Providing specialized training for end developers specifically for advanced network programming
 
-
 It is worth noting that on iOS, an application listening over the CDN **is** considered grounds for rejection.
 
 ## INADDR\_ANY
@@ -168,29 +164,27 @@ The current iOS TCPSocket does not present a unified I/O layer with any other in
 
 * Namespace
 
-  * Ti.Network.Socket : Namespace for all socket types and related constants.
-
+    * Ti.Network.Socket : Namespace for all socket types and related constants.
 
 ### Ti.Network.Socket
 
 * Properties
 
-  * INITIALIZED : Constant representing the "initialized" state a socket
+    * INITIALIZED : Constant representing the "initialized" state a socket
 
-  * CONNECTED : Constant representing the "connected" state for a socket
+    * CONNECTED : Constant representing the "connected" state for a socket
 
-  * LISTENING : Constant representing the "listening" state for a socket
+    * LISTENING : Constant representing the "listening" state for a socket
 
-  * CLOSED : Constant representing the "closed" state for a socket
+    * CLOSED : Constant representing the "closed" state for a socket
 
-  * ERROR : Constant representing the "error" state for a socket
+    * ERROR : Constant representing the "error" state for a socket
 
 * Functions
 
-  * Ti.Network.Socket.TCP createTCP(Object args)}} : Creates a new TCP socket.
+    * Ti.Network.Socket.TCP createTCP(Object args)}} : Creates a new TCP socket.
 
-  * Ti.Network.Socket.UDP createUDP(Object args)}} : Creates a new UDP socket. RESERVED ; not intended to be implemented immediately.
-
+    * Ti.Network.Socket.UDP createUDP(Object args)}} : Creates a new UDP socket. RESERVED ; not intended to be implemented immediately.
 
 ### Ti.Network.Socket.TCP
 
@@ -198,53 +192,51 @@ While not currently used in this proposal, the "options" property name would be 
 
 * Properties
 
-  * host : The host to connect to. **Cannot** be modified when not in the INITIALIZED state. Supports both IPv4 and IPv6.
+    * host : The host to connect to. **Cannot** be modified when not in the INITIALIZED state. Supports both IPv4 and IPv6.
 
-  * port : The port to connect to. **Cannot** be modified when not in the INITIALIZED state.
+    * port : The port to connect to. **Cannot** be modified when not in the INITIALIZED state.
 
-  * listenQueueSize : Max number of pending incoming connections to be allowed when listen() is called. Any incoming connections received while the max number of pending connections has been reached will be rejected.
+    * listenQueueSize : Max number of pending incoming connections to be allowed when listen() is called. Any incoming connections received while the max number of pending connections has been reached will be rejected.
 
-  * timeout : The timeout for connect() and all I/O write() operations. **Cannot** be modified when not in the INITIALIZED state.
+    * timeout : The timeout for connect() and all I/O write() operations. **Cannot** be modified when not in the INITIALIZED state.
 
-  * options : Options for the socket (such as reuse, multicast, etc.) RESERVED ; not to be implemented immediately.
+    * options : Options for the socket (such as reuse, multicast, etc.) RESERVED ; not to be implemented immediately.
 
-  * connected : The callback to be fired after the socket enters the "connected" state. Only invoked following a successful connect()call.
+    * connected : The callback to be fired after the socket enters the "connected" state. Only invoked following a successful connect()call.
 
-    * Argument parameters:
+        * Argument parameters:
 
-      * socket : The socket which was connected
+            * socket : The socket which was connected
 
-  * error : The callback to be fired after the socket enters the ERRORstate.
+    * error : The callback to be fired after the socket enters the ERRORstate.
 
-    * Argument parameters:
+        * Argument parameters:
 
-      * socket : The socket that experienced the error
+            * socket : The socket that experienced the error
 
-      * error : A stringified description of the error
+            * error : A stringified description of the error
 
-      * errorCode : The error code of the error (potentially system-dependent)
+            * errorCode : The error code of the error (potentially system-dependent)
 
-  * accepted: The callback to be fired when a listener accepts a connection.
+    * accepted: The callback to be fired when a listener accepts a connection.
 
-    * Argument parameters:
+        * Argument parameters:
 
-      * socket : The socket which received the connection
+            * socket : The socket which received the connection
 
-      * inbound : A Ti.Network.Socket object which represents the inbound connection; this should be considered a "connected" socket and is created in the CONNECTED state.
+            * inbound : A Ti.Network.Socket object which represents the inbound connection; this should be considered a "connected" socket and is created in the CONNECTED state.
 
-  * state\[spe:read-only\] : The current state of the socket.
-
+    * state\[spe:read-only\] : The current state of the socket.
 
 * Functions
 
-  * void connect() : Attempts to connect the socket to its host/port. Throws exception if the socket is in a CONNECTED or LISTENING state. Throws exception if a valid host and port has not been set on the proxy. Nonblocking; connection attempts are asynchronous.
+    * void connect() : Attempts to connect the socket to its host/port. Throws exception if the socket is in a CONNECTED or LISTENING state. Throws exception if a valid host and port has not been set on the proxy. Nonblocking; connection attempts are asynchronous.
 
-  * void listen() : Attempts to start listening on the socket's host/port. listen() call will attempt to listen on the specified host and/or port property for the socket if they are set. This function blocks execution and throws an exception on error (and sets the socket state to ERROR) but does not fire the error callback in this event. Throws exception if the socket is in a LISTENING or CONNECTED state.
+    * void listen() : Attempts to start listening on the socket's host/port. listen() call will attempt to listen on the specified host and/or port property for the socket if they are set. This function blocks execution and throws an exception on error (and sets the socket state to ERROR) but does not fire the error callback in this event. Throws exception if the socket is in a LISTENING or CONNECTED state.
 
-  * void accept(Object params) : Tells a LISTENING socket to accept a connection request at the top of a listener's request queue when one becomes available. Takes an argument, a box object which assigns callbacks to the created socket. Note that the connected callback is **not** called (the socket does not "transition to" the CONNECTED state - it's created in the CONNECTED state) on the newly created socket. The accepted callback **is** called when a new connection is accepted as a result of calling accept(). If the socket is already flagged to accept the next connection, the existing accept options will be update to use the newly specified options object. Throws an exception if the socket is not in a LISTENING state.
+    * void accept(Object params) : Tells a LISTENING socket to accept a connection request at the top of a listener's request queue when one becomes available. Takes an argument, a box object which assigns callbacks to the created socket. Note that the connected callback is **not** called (the socket does not "transition to" the CONNECTED state - it's created in the CONNECTED state) on the newly created socket. The accepted callback **is** called when a new connection is accepted as a result of calling accept(). If the socket is already flagged to accept the next connection, the existing accept options will be update to use the newly specified options object. Throws an exception if the socket is not in a LISTENING state.
 
-  * void close() : Closes a socket. Throws exception if the socket is not in a CONNECTED or LISTENING state. Blocking.
-
+    * void close() : Closes a socket. Throws exception if the socket is not in a CONNECTED or LISTENING state. Blocking.
 
 ## Pseudo Code Examples
 

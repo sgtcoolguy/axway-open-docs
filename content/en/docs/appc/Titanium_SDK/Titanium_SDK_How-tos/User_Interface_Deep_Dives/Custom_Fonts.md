@@ -1,25 +1,24 @@
 {"title":"Custom Fonts","weight":"70"}
 
-* [Finding fonts](#Findingfonts)
+* [Finding fonts](#finding-fonts)
 
-* [Using a custom font (Alloy application)](#Usingacustomfont(Alloyapplication))
+* [Using a custom font (Alloy application)](#using-a-custom-font-alloy-application)
 
-  * [Rename font file to match PostScript name](#RenamefontfiletomatchPostScriptname)
+    * [Rename font file to match PostScript name](#rename-font-file-to-match-postscript-name)
 
-  * [Using platform-specific styles](#Usingplatform-specificstyles)
+    * [Using platform-specific styles](#using-platform-specific-styles)
 
-  * [Finding a font's PostScript name](#Findingafont'sPostScriptname)
+    * [Finding a font's PostScript name](#finding-a-font's-postscript-name)
 
-* [Using a custom font (Classic application)](#Usingacustomfont(Classicapplication))
+* [Using a custom font (Classic application)](#using-a-custom-font-classic-application)
 
-  * [iOS platform notes](#iOSplatformnotes)
+    * [iOS platform notes](#ios-platform-notes)
 
-  * [Platform-switching sugar](#Platform-switchingsugar)
+    * [Platform-switching sugar](#platform-switching-sugar)
 
-* [Sample application](#Sampleapplication)
+* [Sample application](#sample-application)
 
-* [Resources](#Resources)
-
+* [Resources](#resources)
 
 Custom fonts are a quick and easy way to personalize or brand your application. Titanium Mobile supports TrueType and OpenType fonts on both iOS and Android. There are some differences between how fonts are referenced on iOS and Android that need to be considered.
 
@@ -34,7 +33,6 @@ You will need TTF or OTF font files to ship with your Titanium Mobile project. D
 * [Google WebFonts](http://www.google.com/webfonts) - Free fonts, mostly open source but some licenses for use in commercial projects
 
 * [FontSquirrel](http://www.fontsquirrel.com/) - Freeware fonts licensed for commercial and open source projects
-
 
 ## Using a custom font (Alloy application)
 
@@ -62,10 +60,9 @@ Create style rules for the #spicyrice and #burnstowndam elements that assigns th
 
 * Android expects fontFamily to be the font's file name without the file extension (.otf or .tff).
 
-* iOS expects fontFamily to be the font's PostScript name (see [Finding a font's PostScript name](#Findingafont'sPostScriptname)). This name is embedded in the font file and does not change if you rename the file.
+* iOS expects fontFamily to be the font's PostScript name (see [Finding a font's PostScript name](#finding-a-font's-postscript-name)). This name is embedded in the font file and does not change if you rename the file.
 
 * Windows expects fontFamily to be font name or \[FontFilePath\]#\[FontName\].
-
 
 For example, in the following code the file name of the Burnstown Dam font is "burnstown\_dam.otf". For an Android application you therefore assign the value **burnstown\_dam** to fontFamily:
 
@@ -111,7 +108,7 @@ This is the approach taken in the [CustomFonts](./attachments_37685705_2_Custom_
 
 ### Using platform-specific styles
 
-You can also use platform-specific styles in your TSS file (see [Alloy Styles and Themes](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#Platform-specificstyles)) to assign the proper fontFamily name. At build time, only those settings appropriate to your target platform are included in the build.
+You can also use platform-specific styles in your TSS file (see [Alloy Styles and Themes](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#platform-specific-styles)) to assign the proper fontFamily name. At build time, only those settings appropriate to your target platform are included in the build.
 
 Platform-specific font styling
 
@@ -147,7 +144,7 @@ iOS applications expect the font's PostScript name, while Android expect the fon
 
 3. Press Cmd+I to view the **PostScript name** for the font.
 
-  ![postscript-name](/Images/appc/download/attachments/29004935/postscript-name.png)
+    ![postscript-name](/Images/appc/download/attachments/29004935/postscript-name.png)
 
 A font's PostScript name is often the same as its "friendly name" but not always, especially with font variants (italic, bold, etc.).
 
@@ -161,44 +158,43 @@ Using a custom font in a classic Titanium application requires adding some runti
 
 2. The code you use varies a bit by platform, as illustrated in the following code sample:
 
-  `/*`
+    `/*`
 
-  `* Let's say you downloaded the "Spicy Rice" font from Google WebFonts.`
+    `* Let's say you downloaded the "Spicy Rice" font from Google WebFonts.`
 
-  `* You'd have a file named SpicyRice-Regular.ttf in your fonts directory`
+    `* You'd have a file named SpicyRice-Regular.ttf in your fonts directory`
 
-  `*/`
+    `*/`
 
-  `var` `customFont =` `'Spicy Rice'``;` `// use the friendly-name on iOS`
+    `var` `customFont =` `'Spicy Rice'``;` `// use the friendly-name on iOS`
 
-  `if``(Ti.Platform.osname==``'android'``) {`
+    `if``(Ti.Platform.osname==``'android'``) {`
 
-  `// on Android, use the "base name" of the file (name without extension)`
+    `// on Android, use the "base name" of the file (name without extension)`
 
-  `customFont =` `'SpicyRice-Regular'``;`
+    `customFont =` `'SpicyRice-Regular'``;`
 
-  `}`
+    `}`
 
-  `var` `label1 = Titanium.UI.createLabel({`
+    `var` `label1 = Titanium.UI.createLabel({`
 
-  `color:` `'#000'``,`
+    `color:` `'#000'``,`
 
-  `text:` `'I am Window 1'``,`
+    `text:` `'I am Window 1'``,`
 
-  `font: {`
+    `font: {`
 
-  `fontSize: 40,`
+    `fontSize: 40,`
 
-  `fontFamily: customFont`
+    `fontFamily: customFont`
 
-  `},`
+    `},`
 
-  `textAlign:` `'center'`
+    `textAlign:` `'center'`
 
-  `});`
+    `});`
 
 3. On Android, build your project and the custom font should show up.
-
 
 ### iOS platform notes
 

@@ -10,43 +10,41 @@ Dashboard 4.1.0 is a minor release, which includes behavior changes, new feature
 
 * Capped maximum date range to one year in date filters. Previously, there was not a maximum date range.
 
-
 ## New Features
 
 * New Add menu (**+**) in the top navigation bar. Click the add button, then select:
 
-  * **Register App for Services** to register a new Android or iOS application with the Appcelerator Platform
+    * **Register App for Services** to register a new Android or iOS application with the Appcelerator Platform
 
-  * **Create ArrowDB Datasource** to create a new standalone ArrowDB datasource
+    * **Create ArrowDB Datasource** to create a new standalone ArrowDB datasource
 
-  * **Add Org Member** to add a new member to your organization. Note the **Add Org Member** option will be hidden if you do not have any seats to allocate
+    * **Add Org Member** to add a new member to your organization. Note the **Add Org Member** option will be hidden if you do not have any seats to allocate
 
 * Add ability to create standalone ArrowDB datasources (an ArrowDB datasource that is not tied to a specific client application). To create a new ArrowDB datasource:
 
-  1. Click the Add menu (**+**) in the top navigation bar
+    1. Click the Add menu (**+**) in the top navigation bar
 
-  2. Select **Create ArrowDB Datasource**
+    2. Select **Create ArrowDB Datasource**
 
-  3. Enter a name for the ArrowDB datasource
+    3. Enter a name for the ArrowDB datasource
 
-  4. If you have multiple environments, select the environment to enable.
+    4. If you have multiple environments, select the environment to enable.
 
-  5. Click **OK**. Dashboard will redirect you to the new ArrowDB datasource.
+    5. Click **OK**. Dashboard will redirect you to the new ArrowDB datasource.
 
 * Add ability to rename ArrowDB datasources. To rename a datasource:
 
-  1. Select the datasource from the **Apps** menu or the **All** page.
+    1. Select the datasource from the **Apps** menu or the **All** page.
 
-  2. Click the Edit button to the right of the datasource name.
+    2. Click the Edit button to the right of the datasource name.
 
-  3. Enter a new name for the datasource.
+    3. Enter a new name for the datasource.
 
-  4. Click **OK**.
+    4. Click **OK**.
 
 * Add a link to [http://status.appcelerator.com](http://status.appcelerator.com/) to the footer. Click the **Status** link in the footer.
 
 * In the **All** page (formerly the **All Projects** page), added the ability to filter projects by type. Click the **All**, **Apps**, **Arrow** or **ArrowDB** links to view only those types of projects.
-
 
 ## Fixed Issues
 

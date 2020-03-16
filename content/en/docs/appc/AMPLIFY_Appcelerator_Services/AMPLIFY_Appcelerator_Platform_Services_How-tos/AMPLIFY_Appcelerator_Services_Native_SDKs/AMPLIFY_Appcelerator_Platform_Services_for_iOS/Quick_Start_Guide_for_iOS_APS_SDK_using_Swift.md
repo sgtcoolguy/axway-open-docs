@@ -4,36 +4,35 @@ Pro or Enterprise Subscription Required
 
 This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Setup](#Setup)
+* [Setup](#setup)
 
-  * [Register an APS SDK application](#RegisteranAPSSDKapplication)
+    * [Register an APS SDK application](#register-an-aps-sdk-application)
 
-  * [Register an API or Microservice application](#RegisteranAPIorMicroserviceapplication)
+    * [Register an API or Microservice application](#register-an-api-or-microservice-application)
 
-  * [Register a Website or Web application](#RegisteraWebsiteorWebapplication)
+    * [Register a Website or Web application](#register-a-website-or-web-application)
 
-  * [Register a Custom application](#RegisteraCustomapplication)
+    * [Register a Custom application](#register-a-custom-application)
 
-* [Quick Tutorial](#QuickTutorial)
+* [Quick Tutorial](#quick-tutorial)
 
-  * [Modify the Application](#ModifytheApplication)
+    * [Modify the Application](#modify-the-application)
 
-  * [Send an Analytics Feature Event](#SendanAnalyticsFeatureEvent)
+    * [Send an Analytics Feature Event](#send-an-analytics-feature-event)
 
-  * [Query Cloud Users](#QueryCloudUsers)
+    * [Query Cloud Users](#query-cloud-users)
 
-  * [Log in to a Cloud Account](#LogintoaCloudAccount)
+    * [Log in to a Cloud Account](#log-in-to-a-cloud-account)
 
-  * [Set a Username for Crash Logs](#SetaUsernameforCrashLogs)
+    * [Set a Username for Crash Logs](#set-a-username-for-crash-logs)
 
-  * [Testing the Tutorial Sample](#TestingtheTutorialSample)
+    * [Testing the Tutorial Sample](#testing-the-tutorial-sample)
 
-* [Next Steps for Appcelerator Analytics and Cloud](#NextStepsforAppceleratorAnalyticsandCloud)
-
+* [Next Steps for Appcelerator Analytics and Cloud](#next-steps-for-appcelerator-analytics-and-cloud)
 
 ## Introduction
 
@@ -53,21 +52,9 @@ For Titanium Applications, see [Quick Start](/docs/appc/Quick_Start/).
 
 You should be familiar with developing native iOS applications using Xcode and Swift. The SDKs supports the following base SDK and target iOS versions:
 
-Maximum SDK version
-
-Minimum SDK version
-
-Maximum target iOS version
-
-Minimum target iOS version
-
-9.0.x
-
-8.0.x
-
-9.0.x
-
-7.1.x
+| Maximum SDK version | Minimum SDK version | Maximum target iOS version | Minimum target iOS version |
+| --- | --- | --- | --- |
+| 9.0.x | 8.0.x | 9.0.x | 7.1.x |
 
 ## Setup
 
@@ -78,7 +65,6 @@ Before you can use Appcelerator Services in your application you need to:
 * Download the SDK
 
 * Get the APS application key
-
 
 ### Register an APS SDK application
 
@@ -94,7 +80,7 @@ To register an APS SDK application for services:
 
 4. Select **APS SDK** from the _Type_ selection menu.
 
-  ![RegisterAppForService_latest_APSSDK](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_APSSDK.png)
+    ![RegisterAppForService_latest_APSSDK](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_APSSDK.png)
 5. Select a **Platform** (**Andriod** or **iOS**).
 
 6. Optionally, enter a unique **Identifier** for your application.
@@ -103,14 +89,13 @@ To register an APS SDK application for services:
 
 8. Select **Services** for your application by selecting or deselecting the check-boxes for the following:
 
-  * Analytics
+    * Analytics
 
-  * Provision Cloud Services (Mobile Backend Services)
+    * Provision Cloud Services (Mobile Backend Services)
 
 9. Add teams to the application from your organization by clicking the add (**+**) button in the Assign Teams list.
 
 10. Click **OK**.
-
 
 Appcelerator Dashboard displays the **Services** tab for your application. Follow the directions to add Platform Services to your application.
 
@@ -126,7 +111,7 @@ To register an API or microservice application:
 
 4. Select **API/Microservice** from the _Type_ selection menu.
 
-  ![RegisterAppForService_latest_API](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_API.png)
+    ![RegisterAppForService_latest_API](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_API.png)
 5. Enter a **Platform** for your application.
 
 6. Optionally, enter a unique **Identifier** for your application.
@@ -135,14 +120,13 @@ To register an API or microservice application:
 
 8. Select **Services** for your application by selecting or deselecting the check-boxes for the following:
 
-  * Analytics
+    * Analytics
 
-  * Provision Cloud Services (Mobile Backend Services)
+    * Provision Cloud Services (Mobile Backend Services)
 
 9. Add teams to the application from your organization by clicking the add (**+**) button in the Assign Teams list.
 
 10. Click **OK**.
-
 
 ### Register a Website or Web application
 
@@ -156,7 +140,7 @@ To register a Website or Web application:
 
 4. Select **Website/Web App** from the _Type_ selection menu.
 
-  ![RegisterAppForService_latest_Web](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_Web.png)
+    ![RegisterAppForService_latest_Web](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_Web.png)
 5. Enter a **Platform** for your application.
 
 6. Optionally, enter a unique **Identifier** for your application.
@@ -165,14 +149,13 @@ To register a Website or Web application:
 
 8. Select **Services** for your application by selecting or deselecting the check-boxes for the following:
 
-  * Analytics
+    * Analytics
 
-  * Provision Cloud Services (Mobile Backend Services)
+    * Provision Cloud Services (Mobile Backend Services)
 
 9. Add teams to the application from your organization by clicking the add (**+**) button in the Assign Teams list.
 
 10. Click **OK**.
-
 
 ### Register a Custom application
 
@@ -186,7 +169,7 @@ To register a custom application (other than APS SDK, API/Microservice, or Websi
 
 4. Select **Other** from the _Type_ selection menu.
 
-  ![RegisterAppForService_latest_Other](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_Other.png)
+    ![RegisterAppForService_latest_Other](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_Other.png)
 5. Enter a **Platform** for your application.
 
 6. Optionally, enter a unique **Identifier** for your application.
@@ -195,14 +178,13 @@ To register a custom application (other than APS SDK, API/Microservice, or Websi
 
 8. Select **Services** for your application by selecting or deselecting the check-boxes for the following:
 
-  * Analytics
+    * Analytics
 
-  * Provision Cloud Services (Mobile Backend Services)
+    * Provision Cloud Services (Mobile Backend Services)
 
 9. Add teams to the application from your organization by clicking the add (**+**) button in the Assign Teams list.
 
 10. Click **OK**.
-
 
 Dashboard displays the **Platform Services** tab for your application. In the tab, you can download the APS SDK, and get code snippets to copy and paste into your application.
 
@@ -217,7 +199,7 @@ The following tutorial demonstrates the basic setup and usage of Analytics and C
 1. In Xcode, create a new iOS Project (Single View Application). When prompted for options, select **Swift** in the **Language** drop-down.
 
 2. Create a Header File and name it <PROJECT\_NAME>-Bridging-Header.h. Make sure the main project's application target folder is selected, then from the menu, select **File** > **New** > **File...** or drag a **Header File** from the **File Template** library to the application target folder. The application target folder is a folder under the root project folder and will be named the same as the project if the name has not been changed.
-  ![BridgeHeadingFile](/Images/appc/download/attachments/43298728/BridgeHeadingFile.png)
+    ![BridgeHeadingFile](/Images/appc/download/attachments/43298728/BridgeHeadingFile.png)
 
 3. Unzip the appcelerator-sdk-ios-<VERSION>.zip file and drag the Appcelerator.framework folder into the root project folder.
 
@@ -234,18 +216,17 @@ The following tutorial demonstrates the basic setup and usage of Analytics and C
 9. Expand the **Linking** section and add \-ObjC to Other Linker Flags.
 
 10. Expand the **Swift Compiler - Code Generation** section (near the bottom) and add the bridging header file (with the relative path from the root folder) to **Objective-C Bridging Header**, for example, <PROJECT\_NAME\>/<PROJECT\_NAME>-Bridging-Header.h.
-  ![SwiftCompiler](/Images/appc/download/attachments/43298728/SwiftCompiler.png)
+    ![SwiftCompiler](/Images/appc/download/attachments/43298728/SwiftCompiler.png)
 
 11. Open the bridging header file and add the following import statement:
 
-  `#``import` `<Appcelerator/Appcelerator.h>`
+    `#``import` `<Appcelerator/Appcelerator.h>`
 
 12. Open the application delegate file (AppDelegate.swift) and add the following initialization code to the application() method:
 
-  `APSServiceManager.sharedInstance().enableWithAppKey(``"APS_APP_KEY"``);`
+    `APSServiceManager.sharedInstance().enableWithAppKey(``"APS_APP_KEY"``);`
 
-  The iOS application is now ready to make method calls using the APS SDK APIs.
-
+    The iOS application is now ready to make method calls using the APS SDK APIs.
 
 If the application attempts to make APS SDK API calls without first setting the application key, the application will raise an exception and crash.
 
@@ -263,7 +244,6 @@ Alternatively, to have Xcode automatically create a bridging header file and add
 
 5. Follow steps 10 and 11.
 
-
 ### Modify the Application
 
 Customize the application's UI to display a picker, text field and button, and add some logic to respond to user interaction. The picker will display a list of available user accounts. The user can enter their password in the text field, then click the button to log in.
@@ -278,108 +258,107 @@ Customize the application's UI to display a picker, text field and button, and a
 
 5. Control-drag the Picker View to the **View Controller** icon at the top of the view. Select **dataSource**. Repeat for the **delegate** option.
 
-  ![ViewController](/Images/appc/download/attachments/43298728/ViewController.png)
+    ![ViewController](/Images/appc/download/attachments/43298728/ViewController.png)
 
 6. Drag the Picker View to the header file to create an IBOutlet. Name the outlet picker and click **Connect**. Repeat the same procedure for the Text Field and name it textField.
 
-  ![OutletCollection](/Images/appc/download/attachments/43298728/OutletCollection.png)
+    ![OutletCollection](/Images/appc/download/attachments/43298728/OutletCollection.png)
 
 7. In the ViewController.swift file:
 
-  1. Declare the View Controller to implement the UIPickerViewDelegate, UIPickerViewDataSource, and UITextFieldDelegate protocols.
+    1. Declare the View Controller to implement the UIPickerViewDelegate, UIPickerViewDataSource, and UITextFieldDelegate protocols.
 
-  2. Add a Dictionary array called usernames to keep track of the Picker View's data source and a String variable called username to reference the current selection.
+    2. Add a Dictionary array called usernames to keep track of the Picker View's data source and a String variable called username to reference the current selection.
 
-  3. Create an IBAction callback for the button named doClick. In the following sections, you will add code to this handler that calls Cloud and Analytics services.
+    3. Create an IBAction callback for the button named doClick. In the following sections, you will add code to this handler that calls Cloud and Analytics services.
 
-  4. Implement the methods of UIPickerViewDelegate, UIPickerViewDataSource and UITextFieldDelegate protocols. Add the following code to the file:
+    4. Implement the methods of UIPickerViewDelegate, UIPickerViewDataSource and UITextFieldDelegate protocols. Add the following code to the file:
 
+    ViewController.swift
 
-  ViewController.swift
+    `import` `UIKit`
 
-  `import` `UIKit`
+    `class` `ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {`
 
-  `class` `ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {`
+    `@IBOutlet` `weak var textField: UITextField!`
 
-  `@IBOutlet` `weak var textField: UITextField!`
+    `@IBOutlet` `weak var picker: UIPickerView!`
 
-  `@IBOutlet` `weak var picker: UIPickerView!`
+    `// Add these variables`
 
-  `// Add these variables`
+    `var username: String =` `""`
 
-  `var username: String =` `""`
+    `var usernames: [Dictionary<String,AnyObject>] = []`
 
-  `var usernames: [Dictionary<String,AnyObject>] = []`
+    `override func viewDidLoad() {`
 
-  `override func viewDidLoad() {`
+    `super``.viewDidLoad()`
 
-  `super``.viewDidLoad()`
+    `// Add these statements to dismiss the keyboard`
 
-  `// Add these statements to dismiss the keyboard`
+    `self.textField.delegate = self`
 
-  `self.textField.delegate = self`
+    `self.textField.resignFirstResponder()`
 
-  `self.textField.resignFirstResponder()`
+    `}`
 
-  `}`
+    `override func didReceiveMemoryWarning() {`
 
-  `override func didReceiveMemoryWarning() {`
+    `super``.didReceiveMemoryWarning()`
 
-  `super``.didReceiveMemoryWarning()`
+    `}`
 
-  `}`
+    `// Add these methods`
 
-  `// Add these methods`
+    `@IBAction` `func onClick(sender: UIButton) {`
 
-  `@IBAction` `func onClick(sender: UIButton) {`
+    `}`
 
-  `}`
+    `// MARK: Picker DataSource/Delegate`
 
-  `// MARK: Picker DataSource/Delegate`
+    `func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {`
 
-  `func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {`
+    `return`  `1``;`
 
-  `return`  `1``;`
+    `}`
 
-  `}`
+    `func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {`
 
-  `func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {`
+    `return` `self.usernames.count`
 
-  `return` `self.usernames.count`
+    `}`
 
-  `}`
+    `func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {`
 
-  `func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {`
+    `return` `self.usernames[row][``"username"``] as String`
 
-  `return` `self.usernames[row][``"username"``] as String`
+    `}`
 
-  `}`
+    `func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {`
 
-  `func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {`
+    `self.username = self.usernames[row][``"username"``] as String`
 
-  `self.username = self.usernames[row][``"username"``] as String`
+    `}`
 
-  `}`
+    `// MARK: TextField Delegate`
 
-  `// MARK: TextField Delegate`
+    `func textFieldShouldBeginEditing(textField: UITextField) -> Bool {`
 
-  `func textFieldShouldBeginEditing(textField: UITextField) -> Bool {`
+    `return`  `true`
 
-  `return`  `true`
+    `}`
 
-  `}`
+    `func textFieldShouldReturn(textField: UITextField) -> Bool {`
 
-  `func textFieldShouldReturn(textField: UITextField) -> Bool {`
+    `return`  `true`
 
-  `return`  `true`
+    `}`
 
-  `}`
-
-  `}`
+    `}`
 
 8. Control-drag the Button to the onClick() method to create an action connection.
 
-  ![ConnectAction](/Images/appc/download/attachments/43298728/ConnectAction.png)
+    ![ConnectAction](/Images/appc/download/attachments/43298728/ConnectAction.png)
 
 ### Send an Analytics Feature Event
 
@@ -503,7 +482,6 @@ Before testing the sample, you need to create user accounts for the application 
 
 8. Click **Save Changes**.
 
-
 To create a Cloud user account, you only need a username or e-mail address and a password.
 
 For more information about managing Cloud user accounts, see [Managing Organizations](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Organizations/).
@@ -525,7 +503,6 @@ Once the application launches:
 6. In the Real-Time view, you should see at least one active session.
 
 7. In the left navbar, click **Events**. You should see the "sample.feature.login" feature event.
-
 
 ## Next Steps for Appcelerator Analytics and Cloud
 

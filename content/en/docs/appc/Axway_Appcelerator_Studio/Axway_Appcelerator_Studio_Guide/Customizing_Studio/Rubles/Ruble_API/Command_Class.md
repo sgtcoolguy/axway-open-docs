@@ -14,10 +14,6 @@ Examples of how you might interact with methods of the Command class.
 
 Command objects have the following static method:
 
-Property
-
-Description
-
-new(name)
-
-The name of the command.
+| Property | Description |
+| --- | --- |
+| new(name) | The name of the command. |

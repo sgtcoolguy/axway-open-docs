@@ -1,31 +1,30 @@
 {"title":"Appcelerator Analytics","weight":"10"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Terminology](#Terminology)
+* [Terminology](#terminology)
 
-* [Getting started with Analytics](#GettingstartedwithAnalytics)
+* [Getting started with Analytics](#getting-started-with-analytics)
 
-* [Creating custom events](#Creatingcustomevents)
+* [Creating custom events](#creating-custom-events)
 
-  * [Feature events](#Featureevents)
+    * [Feature events](#feature-events)
 
-* [Creating and viewing event funnels](#Creatingandviewingeventfunnels)
+* [Creating and viewing event funnels](#creating-and-viewing-event-funnels)
 
-  * [Creating an event funnel](#Creatinganeventfunnel)
+    * [Creating an event funnel](#creating-an-event-funnel)
 
-  * [Viewing event funnels](#Viewingeventfunnels)
-
+    * [Viewing event funnels](#viewing-event-funnels)
 
 ## Introduction
 
-Appcelerator Analytics collects real-time data about your application's usage, which can then be viewed in the **[Analytics dashboard](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Client_Applications/#AnalyticsViewingReal-timeandAggregatedAnalytics)**. By default, the Analytics dashboard provides information about app installs, the number of sessions, and average app session length (organized by app name, platform, and geography). Your app can also utilize custom analytic events and event funnels.
+Appcelerator Analytics collects real-time data about your application's usage, which can then be viewed in the **[Analytics dashboard](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Client_Applications/#viewing-real-time-and-aggregated-analytics)**. By default, the Analytics dashboard provides information about app installs, the number of sessions, and average app session length (organized by app name, platform, and geography). Your app can also utilize custom analytic events and event funnels.
 
 This document provides an overview of the features provided by Analytics and how to use them using the Titanium SDK. **If you are developing an iOS application with Objective-C or Swift or an Android application with Java**, see [APS Analytics for iOS](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_iOS/APS_Analytics_for_iOS/) or [APS Analytics for Android](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_Android/APS_Analytics_for_Android/) for details on using Analytics.
 
 For platform-specific details about how analytics captured, see [Analytics Architecture](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/Analytics_Architecture/).
 
-For information about viewing analytics data, see [Managing Client Applications](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Client_Applications/#AnalyticsViewingReal-timeandAggregatedAnalytics).
+For information about viewing analytics data, see [Managing Client Applications](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Client_Applications/#viewing-real-time-and-aggregated-analytics).
 
 ## Terminology
 
@@ -49,20 +48,18 @@ Enabling analytics is enabled by default when creating a project using **Appcele
 
 2. Make sure the **Enable Axway Appcelerator Platform Services** option is enabled in the New Mobile App Project dialog, and select the appropriate organization from the Organization pop-up menu. The application is tied to the account and organization used to create it.
 
-  ![Enable_serices](/Images/appc/download/attachments/43298693/Enable_serices.png)
+    ![Enable_serices](/Images/appc/download/attachments/43298693/Enable_serices.png)
 3. Enter the rest of the required project information and click **Finish**.
 
 4. Build your application and deploy it to devices to begin collecting analytics data.
-
 
 Next steps
 
 * Once deployed, you can begin to view data captured for your application in the [Analytics dashboard](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Client_Applications/)
 
-* Use [custom events](#Creatingcustomevents) to track basic usage and navigation patterns
+* Use [custom events](#creating-custom-events) to track basic usage and navigation patterns
 
 * Create [event funnels](#CreatingandViewingEventFunnels) to analyze a specific process better
-
 
 Enabling Appcelerator Services modifies your project's tiapp.xml file and other application files. Do not modify these code changes as it may break your project. See [Platform Services](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Platform_Services/) for details on what changes are made to your code.
 
@@ -124,12 +121,11 @@ You use Dashboard to [create](#CreatinganEventFunnel) and [view](#ViewingEventFu
 
 2. **Identifying the custom events** to be recorded and when they should be captured in the process.
 
-3. **Instrumenting the custom events** in your application, as described in [Creating Custom Events](#Creatingcustomevents).
+3. **Instrumenting the custom events** in your application, as described in [Creating Custom Events](#creating-custom-events).
 
 4. **Deploying the application** to devices and begin collecting custom event data. Until the application has been deployed to a device, simulator, or emulator, the custom events won't appear in Dashboard.
 
-5. **Creating the** **event funnel** in Dashboard (see [Creating an Event Funnel](#Creatinganeventfunnel)).
-
+5. **Creating the** **event funnel** in Dashboard (see [Creating an Event Funnel](#creating-an-event-funnel)).
 
 ### Creating an event funnel
 
@@ -140,7 +136,6 @@ When you create an event funnel in Dashboard, you select the events you want to 
 **Note**
 
 * An event funnel must contain at least two events
-
 
 **To create an event funnel**
 
@@ -156,14 +151,13 @@ When you create an event funnel in Dashboard, you select the events you want to 
 
 6. Drag two or more custom events from the left column to the right column. Enter the name of an event in the Custom Events text field to filter available events by name.
 
-  To get custom events to appear on this list, you must build your application and trigger each event to ensure that the events are registered with the analytics engine.
+    To get custom events to appear on this list, you must build your application and trigger each event to ensure that the events are registered with the analytics engine.
 
 7. To re-order an event, drag its reorder control up or down in the event list. Keep in mind that the order of the events you include is significant in terms of how the event funnel data is analyzed and presented.
 
 8. Remove an event by clicking the '**X**'  next to its name.
 
 9. Click **Save** to save the event funnel.
-
 
 ### Viewing event funnels
 
@@ -181,7 +175,6 @@ Once you've created an event funnel, you can begin analyzing the funnel results.
 
 4. To filter data by version, environment, or custom date range, use the drop-down lists located right below the main navigation bar.
 
-
 **To edit an event funnel**
 
 1. In the Analytics Dashboard, make sure your application is selected.
@@ -194,16 +187,15 @@ Once you've created an event funnel, you can begin analyzing the funnel results.
 
 5. From the edit screen you can:
 
-  1. Move new custom events you want to track from the left column to the right column.
+    1. Move new custom events you want to track from the left column to the right column.
 
-  2. Reorder events in the funnel.
+    2. Reorder events in the funnel.
 
-  3. Remove events from the funnel by clicking the **×** next to the event.
+    3. Remove events from the funnel by clicking the **×** next to the event.
 
-  4. Rename the event funnel.
+    4. Rename the event funnel.
 
 6. Click **Save** to save your changes.
-
 
 **To remove an event funnel**
 

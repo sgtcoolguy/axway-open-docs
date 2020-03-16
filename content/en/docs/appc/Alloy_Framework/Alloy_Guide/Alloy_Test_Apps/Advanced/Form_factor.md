@@ -6,11 +6,8 @@ App folder location
 
 _alloy_/test/apps/**advanced/form\_factor**
 
-![iphone](/Images/appc/download/attachments/41845659/iphone.png)
-
-![ipad](/Images/appc/download/attachments/41845659/ipad.png)
-
-![android_handheld](/Images/appc/download/attachments/41845659/android_handheld.png)
+| ![iphone](/Images/appc/download/attachments/41845659/iphone.png) | ![ipad](/Images/appc/download/attachments/41845659/ipad.png) | ![android_handheld](/Images/appc/download/attachments/41845659/android_handheld.png) |
+| --- | --- | --- |
 
 On handhelds, the main Label text is set to "I'm a handheld!" and to "I'm a tablet!" on tablets. The platformLabel Label displays the platform as well as form factor.
 
@@ -70,4 +67,4 @@ app/styles/index.tss
 
 ## See also
 
-* [Alloy XML:Conditional Code](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#Conditionalcode)
+* [Alloy XML:Conditional Code](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_XML_Markup/#conditional-code)

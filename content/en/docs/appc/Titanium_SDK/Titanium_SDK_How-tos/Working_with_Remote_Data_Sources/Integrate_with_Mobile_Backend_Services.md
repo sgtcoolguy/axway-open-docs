@@ -1,21 +1,20 @@
 {"title":"Integrate with Mobile Backend Services","weight":"70"}
 
-* [Integrating Mobile Backend Services into your app](#IntegratingMobileBackendServicesintoyourapp)
+* [Integrating Mobile Backend Services into your app](#integrating-mobile-backend-services-into-your-app)
 
-  * [Step 1. Register Your App with API Builder](#Step1.RegisterYourAppwithAPIBuilder)
+    * [Step 1. Register Your App with API Builder](#step-1.-register-your-app-with-api-builder)
 
-  * [Step 2. Configure your Titanium project](#Step2.ConfigureyourTitaniumproject)
+    * [Step 2. Configure your Titanium project](#step-2.-configure-your-titanium-project)
 
-  * [Step 3. Authentication](#Step3.Authentication)
+    * [Step 3. Authentication](#step-3.-authentication)
 
-  * [Step 4. Implement the Titanium Mobile Backend Services APIs](#Step4.ImplementtheTitaniumMobileBackendServicesAPIs)
+    * [Step 4. Implement the Titanium Mobile Backend Services APIs](#step-4.-implement-the-titanium-mobile-backend-services-apis)
 
-  * [Step 5. Managing your app's data](#Step5.Managingyourapp'sdata)
+    * [Step 5. Managing your app's data](#step-5.-managing-your-app's-data)
 
-  * [Step 6. Sharing MBS Objects](#Step6.SharingMBSObjects)
+    * [Step 6. Sharing MBS Objects](#step-6.-sharing-mbs-objects)
 
-* [References](#References)
-
+* [References](#references)
 
 ## Objective
 
@@ -49,7 +48,6 @@ To integrate MBS into your app, you'll need to follow these four general steps:
 
 4. Implement the Titanium MBS API calls within your app
 
-
 You might want to add a fifth step to this list: Manage the data your app collects by using the MBS control panel or RESTful API.
 
 #### Step 1. Register Your App with API Builder
@@ -59,7 +57,6 @@ Using MBS API to store and retrieve data for your app is easy.
 * When creating a new application in Appcelerator Studio, make sure the **Enable Appcelerator Services** checkbox is enabled.
 
 * For a previously created project, open your tiapp.xml file, then click the **Enable Services** button under the _Appcelerator Service_ section.
-
 
 #### Step 2. Configure your Titanium project
 
@@ -229,9 +226,7 @@ The Cloud module supports Access Control Lists (ACLs) to control access to ACL r
 
 * **Read permission**. Includes the ability to show, query and search MBS objects.
 
-
 * **Write permission**. Includes the ability to update and delete MBS objects.
-
 
 An ACL can include:
 
@@ -242,7 +237,6 @@ An ACL can include:
 * A public read flag granting read permission to **all** users.
 
 * A public write flag granting write permission to **all** users.
-
 
 The object's owner always has read and write permission.
 
@@ -257,7 +251,6 @@ See [Ti.Cloud.ACLs](#!/api/Modules.Cloud.ACLs) for methods to create and update 
 * [Cloud Module Reference](#!/api/Modules.Cloud)
 
 * [Mobile Backend Services Getting Started](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Getting_Started/)
-
 
 ## Summary
 

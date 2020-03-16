@@ -8,7 +8,6 @@ Titanium does much more than just build apps that run on multiple platforms. Its
 
 * Participate in the platform ecosystem, for example using platform-appropriate notification mechanisms
 
-
 Your Titanium apps should do more than just run on iOS and Android. When running on an iOS device, your app should _feel_ like an iOS app. Your Android app should _feel_ like an Android app.
 
 In this chapter, we'll take a look at strategies for writing best-of-breed apps. You'll learn a variety of techniques for creating scalable, performant cross platform mobile projects. Finally, you'll learn how to increase the accessibility of your apps with internationalization.

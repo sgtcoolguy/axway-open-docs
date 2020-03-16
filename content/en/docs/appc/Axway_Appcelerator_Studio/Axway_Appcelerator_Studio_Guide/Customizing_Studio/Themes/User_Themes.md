@@ -1,11 +1,10 @@
 {"title":"User Themes","weight":"30"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Solarized (Dark)](#Solarized(Dark))
+* [Solarized (Dark)](#solarized-dark)
 
-* [Solarized (Light)](#Solarized(Light))
-
+* [Solarized (Light)](#solarized-light)
 
 ## Overview
 

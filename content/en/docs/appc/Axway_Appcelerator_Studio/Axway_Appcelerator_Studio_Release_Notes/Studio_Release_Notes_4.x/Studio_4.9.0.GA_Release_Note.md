@@ -2,103 +2,101 @@
 
 Studio 4.9.0.GA is a minor release that includes new features, improvements, and bug fixes.
 
-As of this release, Studio 4.8.x will not be supported six months from 4.9.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Studio 4.8.x will not be supported six months from 4.9.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## New features
 
 * [GB-521](https://jira.appcelerator.org/browse/GB-521) - App Designer for Windows Phone apps
 
-  * Added support to use App Designer for Windows Phones
+    * Added support to use App Designer for Windows Phones
 
 * [TISTUD-7138](https://jira.appcelerator.org/browse/TISTUD-7138) - AppceleratorStudio: Unable to configure which IP should the LiveView use
 
-  * Added configurability for LiveView to be set with select IP. Please review [LiveView](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/LiveView/) for details.
-
+    * Added configurability for LiveView to be set with select IP. Please review [LiveView](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/LiveView/) for details.
 
 ## Improvements
 
 * [GB-501](https://jira.appcelerator.org/browse/GB-501) - Add search/filter bar in the Properties view
 
-  * Added a search/filter field in the Properties view
+    * Added a search/filter field in the Properties view
 
 * [GB-535](https://jira.appcelerator.org/browse/GB-535) - Default size of the mobile screen to fit into a page
 
-  * Configured default zoom percentages based on the mobile screen fit into the designer page
+    * Configured default zoom percentages based on the mobile screen fit into the designer page
 
-  * Added default zoom percentages for mobile web
+    * Added default zoom percentages for mobile web
 
-  * Changed the text from "1080x1920 iPhone 6+" to 1080x1920 iPhone 6 Plus"
+    * Changed the text from "1080x1920 iPhone 6+" to 1080x1920 iPhone 6 Plus"
 
-  * Changed "Snap To" combo to uneditable
+    * Changed "Snap To" combo to uneditable
 
 * [GB-539](https://jira.appcelerator.org/browse/GB-539) - Properties - App Designer: Enable Delete with Keyboard Delete on ColorCellEditors
 
-  * Added support to delete the assigned color for ColorCell type values
+    * Added support to delete the assigned color for ColorCell type values
 
 * [GB-540](https://jira.appcelerator.org/browse/GB-540) - Allow deselect of elements in App Designer
 
-  * Added support to deselect element from the Cursor key icon from the editor toolbar or by tapping the ESC key
+    * Added support to deselect element from the Cursor key icon from the editor toolbar or by tapping the ESC key
 
 * [TISTUD-7979](https://jira.appcelerator.org/browse/TISTUD-7979) - Liveview for the Windows Platform
 
-  * Implemented LiveView for the Windows
+    * Implemented LiveView for the Windows
 
 * [TISTUD-8538](https://jira.appcelerator.org/browse/TISTUD-8538) - Publishing: Block field input until 'Use Existing' is selected by the user on Windows Phone packaging
 
-  * Locked input fields for certificate location and password unless the user selects the Use Existing option
+    * Locked input fields for certificate location and password unless the user selects the Use Existing option
 
 * [TISTUD-8557](https://jira.appcelerator.org/browse/TISTUD-8557) - limit the size of a symbol file uploaded to crashserver to 250Mb
 
-  * Set limit of 250MB of symbol file uploads to crashserver
+    * Set limit of 250MB of symbol file uploads to crashserver
 
 * [TISTUD-8563](https://jira.appcelerator.org/browse/TISTUD-8563) - Studio startup performance improvement
 
-  * Improved Studio startup performance
+    * Improved Studio startup performance
 
 * [TISTUD-8570](https://jira.appcelerator.org/browse/TISTUD-8570) - Remove call to provisioner.py
 
-  * Deprecated Studio's use of provisioner.py script
+    * Deprecated Studio's use of provisioner.py script
 
 * [TISTUD-8579](https://jira.appcelerator.org/browse/TISTUD-8579) - Android: Update link to Android tools
 
-  * Revised Studio's update link for Android tooling
+    * Revised Studio's update link for Android tooling
 
 * [TISTUD-8598](https://jira.appcelerator.org/browse/TISTUD-8598) - Arrow: Handle error from Arrow deployment better
 
-  * Improved error handling when appc publish returns an error when an app cannot be started
+    * Improved error handling when appc publish returns an error when an app cannot be started
 
 * [TISTUD-8605](https://jira.appcelerator.org/browse/TISTUD-8605) - Studio must no longer rely on wait\_for\_device.py
 
-  * Deprecated wait\_for\_device.py
+    * Deprecated wait\_for\_device.py
 
 * [TISTUD-8668](https://jira.appcelerator.org/browse/TISTUD-8668) - Studio should not use removed options for build commands
 
-  * Deprecated sim-type and sim-version from Studio
+    * Deprecated sim-type and sim-version from Studio
 
 * [TISTUD-8685](https://jira.appcelerator.org/browse/TISTUD-8685) - Upgrade Appcelerator Studio JDK version to 1.8
 
-  * Upgrade Studio JDK version to JDK 1.8
+    * Upgrade Studio JDK version to JDK 1.8
 
 * [TISTUD-8713](https://jira.appcelerator.org/browse/TISTUD-8713) - Provide example AppID format in the new project creation wizard
 
-  * Improved the New Project Creation wizard to include a sample AppID in the app ID form
+    * Improved the New Project Creation wizard to include a sample AppID in the app ID form
 
-  * For example: com.companyname.appname
+    * For example: com.companyname.appname
 
 * [TISTUD-8714](https://jira.appcelerator.org/browse/TISTUD-8714) - Avoid showing error reporting message sent confirmation pop-up dialog
 
-  * Removed redundant error reporting server confirmation message after the error has been sent to the server
+    * Removed redundant error reporting server confirmation message after the error has been sent to the server
 
 * [TISTUD-8718](https://jira.appcelerator.org/browse/TISTUD-8718) - Send error reports in the silent mode by default
 
-  * Changed the default error reporting send action from "Ask before sending" to "Always send silently"
+    * Changed the default error reporting send action from "Ask before sending" to "Always send silently"
 
 * [TISTUD-8729](https://jira.appcelerator.org/browse/TISTUD-8729) - Add support for enterprise ad hoc provisioning profiles
 
-  * Added support for enterprise ad hoc provisioning profiles
+    * Added support for enterprise ad hoc provisioning profiles
 
 * [TISTUD-8747](https://jira.appcelerator.org/browse/TISTUD-8747) - Update node installer links to Node.js v6.10.3(Latest LTS)
-
 
 ## Fixed Issues
 
@@ -189,7 +187,6 @@ As of this release, Studio 4.8.x will not be supported six months from 4.9.0.GA'
 * [TISTUD-8760](https://jira.appcelerator.org/browse/TISTUD-8760) - Android: Debugging for android device throws "java.lang.NoClassDefFoundError: org/chromium/sdk/JavascriptVmFactory"
 
 * [TISTUD-8772](https://jira.appcelerator.org/browse/TISTUD-8772) - Hyperloop: Errors when running project with liveview and hyperloop enabled
-
 
 ## Known issues
 

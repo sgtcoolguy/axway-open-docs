@@ -1,29 +1,28 @@
 {"title":"Deploy an API Builder Standalone application to AMPLIFY Runtime Services","weight":"20"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Prerequisites](#Prerequisites)
+* [Prerequisites](#prerequisites)
 
-  * [AMPLIFY Platform account](#AMPLIFYPlatformaccount)
+    * [AMPLIFY Platform account](#amplify-platform-account)
 
-  * [Docker](#Docker)
+    * [Docker](#docker)
 
-  * [API Builder CLI](#APIBuilderCLI)
+    * [API Builder CLI](#api-builder-cli)
 
-  * [AMPLIFY Cloud Services (ACS) CLI](#AMPLIFYCloudServices(ACS)CLI)
+    * [AMPLIFY Cloud Services (ACS) CLI](#amplify-cloud-services-acs-cli)
 
-* [Create your application](#Createyourapplication)
+* [Create your application](#create-your-application)
 
-* [Create your Platform application](#CreateyourPlatformapplication)
+* [Create your Platform application](#create-your-platform-application)
 
-* [Build a Docker image](#BuildaDockerimage)
+* [Build a Docker image](#build-a-docker-image)
 
-* [Publish image to Platform](#PublishimagetoPlatform)
+* [Publish image to Platform](#publish-image-to-platform)
 
-* [Check publish status](#checkpublishstatusCheckpublishstatus)
+* [Check publish status](#check-publish-status)
 
-* [Try your application](#Tryyourapplication)
-
+* [Try your application](#try-your-application)
 
 ## Introduction
 

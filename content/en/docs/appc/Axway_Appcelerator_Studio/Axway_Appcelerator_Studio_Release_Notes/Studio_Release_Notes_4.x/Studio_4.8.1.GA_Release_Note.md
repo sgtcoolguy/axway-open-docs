@@ -2,14 +2,13 @@
 
 Studio 4.8.1.GA is a patch release that includes one new feature and one bug fix.
 
-As of this GA release, the previous Studio patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous Studio patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Improvements
 
 * [TISTUD-8659](https://jira.appcelerator.org/browse/TISTUD-8659) - Show Hyperloop release notes in the studio update wizard
 
-  * Studio shows the release note for the current release within the program
-
+    * Studio shows the release note for the current release within the program
 
 ## Fixed issues
 

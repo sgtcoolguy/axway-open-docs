@@ -1,27 +1,26 @@
 {"title":"Viewing Metrics","weight":"70"}
 
-* [Metrics Overview](#MetricsOverview)
+* [Metrics Overview](#metrics-overview)
 
-* [Average Session Length](#AverageSessionLength)
+* [Average Session Length](#average-session-length)
 
-* [Crashes](#Crashes)
+* [Crashes](#crashes)
 
-* [Events](#Events)
+* [Events](#events)
 
-* [Installs](#Installs)
+* [Installs](#installs)
 
-* [Mobile Backend Service Requests](#MobileBackendServiceRequests)
+* [Mobile Backend Service Requests](#mobile-backend-service-requests)
 
-* [Push Notifications](#PushNotifications)
+* [Push Notifications](#push-notifications)
 
-* [Runtime Services Requests](#RuntimeServicesRequests)
+* [Runtime Services Requests](#runtime-services-requests)
 
-* [Sessions](#Sessions)
+* [Sessions](#sessions)
 
-* [Unique Devices](#UniqueDevices)
+* [Unique Devices](#unique-devices)
 
-* [Updates](#Updates)
-
+* [Updates](#updates)
 
 ## Metrics Overview
 
@@ -51,7 +50,6 @@ The following metrics are displayed:
 
 * **Runtime Services Requests** – Total number of Runtime Services requests made during the provided time range.
 
-
 The displayed metrics can be filtered by the selected time interval and environment. For information on selecting a time interval or setting a custom time interval, refer to the **Data Filter** section of [Viewing Analytics](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Viewing_Analytics/).
 
 ![all_metrics](/Images/appc/download/attachments/60145254/all_metrics.png)
@@ -79,7 +77,6 @@ The Metrics drop-menu includes the following selections:
 * **Unique Devices** - Displays detailed unique devices metrics.
 
 * **Updates** - Displays detailed metric information for updates.
-
 
 ## Average Session Length
 

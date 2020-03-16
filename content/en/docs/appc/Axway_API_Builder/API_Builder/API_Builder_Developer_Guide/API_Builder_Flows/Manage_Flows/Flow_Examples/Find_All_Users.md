@@ -9,7 +9,7 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 To configure a find all users flow:
 
 1. Click the **Create Flow** icon associated with finding all simple users.
-  The API Orchestration user interface is displayed.
+    The API Orchestration user interface is displayed.
 
 2. Select and pull the simpleusers flow-node onto the flow editor from the Models list. Note that the Start flow-node is automatically connected to the input of the simpleusers flow-node.
 
@@ -35,7 +35,7 @@ To configure a find all users flow:
 
 13. Connect the next output of the Find all users flow-node to the input of the Find succeeded flow-node. For additional information on connecting flow-nodes in a flow, refer to [Manage Nodes](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Flows/Manage_Nodes/). The completed flow is displayed.
 
-  ![Find_all](/Images/appc/download/attachments/52298568/Find_all.png)
+    ![Find_all](/Images/appc/download/attachments/52298568/Find_all.png)
 14. Click **Save**.
 
 15. On the next screen, click **Proceed**. The server will be restarted and the Find all users flow will be saved and enabled.

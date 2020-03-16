@@ -6,10 +6,9 @@
 
 * **Default JSON response depth** — If not specified in the request, the default value for the response\_json\_depth parameter for ACS method calls is now **1**. For applications created prior to ACS 1.1.7, the default value for response\_json\_depth is still **3**. Valid values are between 1-8.
 
-  A higher response\_json\_depth value can reduce the number of API calls your application makes to retrieve related or dependent objects. It can also increase the size of the JSON response payload and the server's response time.
+    A higher response\_json\_depth value can reduce the number of API calls your application makes to retrieve related or dependent objects. It can also increase the size of the JSON response payload and the server's response time.
 
 * **Filtering of unauthorized results** — In prior ACS releases, if a query request matched objects whose ACL settings did not allow access to the current user, the response would include "placeholder" records that indicate the permissions error. In applications created with ACS 1.1.7 and later, query objects the current user is not allowed to view are not included in the response at all.
-
 
 ## Bug fixes
 

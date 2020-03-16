@@ -1,41 +1,40 @@
 {"title":"WKWebView","weight":"190"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Titanium SDK 8.0.0 release](#TitaniumSDK8.0.0release)
+* [Titanium SDK 8.0.0 release](#titanium-sdk-8.0.0-release)
 
-* [Features](#Features)
+* [Features](#features)
 
-  * [API's](#API's)
+    * [API's](#api's)
 
-  * [WebView](#WebView)
+    * [WebView](#webview)
 
-    * [Properties](#Properties)
+        * [Properties](#properties)
 
-    * [Methods](#Methods)
+        * [Methods](#methods)
 
-    * [Events](#Events)
+        * [Events](#events)
 
-    * [Constants](#Constants)
+        * [Constants](#constants)
 
-    * [WebView <-> App Communication](#WebView<->AppCommunication)
+        * [WebView <-> App Communication](#webview-<->-app-communication)
 
-    * [Saving Images](#SavingImages)
+        * [Saving Images](#saving-images)
 
-    * [Inter-App Communication](#Inter-AppCommunication)
+        * [Inter-App Communication](#inter-app-communication)
 
-    * [Generic Property Observing](#GenericPropertyObserving)
+        * [Generic Property Observing](#generic-property-observing)
 
-  * [Configuration](#Configuration)
+    * [Configuration](#configuration)
 
-    * [Properties](#Properties.1)
+        * [Properties](#properties)
 
-  * [Process pool](#Processpool)
+    * [Process pool](#process-pool)
 
-  * [Handle custom URL-schemes](#HandlecustomURL-schemes)
-
+    * [Handle custom URL-schemes](#handle-custom-url-schemes)
 
 ## Overview
 
@@ -48,7 +47,6 @@
 * iOS 9+
 
 * Xcode 7+
-
 
 ## Titanium SDK 8.0.0 release
 
@@ -106,262 +104,68 @@ tiapp.xml update
 
 ### API's
 
-Name
-
-Example
-
-WebView
-
-WK.createWebView(args)
-
-ProcessPool
-
-WK.createProcessPool()
-
-Configuration
-
-WK.createConfiguration()
+| Name | Example |
+| --- | --- |
+| WebView | WK.createWebView(args) |
+| ProcessPool | WK.createProcessPool() |
+| Configuration | WK.createConfiguration() |
 
 ### WebView
 
 #### Properties
 
-Name
-
-Type
-
-disableBounce
-
-Boolean
-
-scalesPageToFit
-
-Boolean
-
-disableZoom
-
-Boolean
-
-allowsBackForwardNavigationGestures
-
-Boolean
-
-allowsLinkPreview
-
-Boolean
-
-scrollsToTop
-
-Boolean
-
-disableContextMenu
-
-Boolean
-
-userAgent
-
-String
-
-url
-
-String
-
-data
-
-Ti.Blob, Ti.File
-
-html
-
-String
-
-title
-
-String
-
-progress
-
-Number
-
-backForwardList
-
-Object
-
-ignoreSslError
-
-Boolean
-
-basicAuhentication
-
-Object
-
-* username (String)
-
-* password (String)
-
-* persistence (CREDENTIAL\_PERSISTENCE\_\*)
-
-
-cachePolicy
-
-CACHE\_POLICY\_\*
-
-timeout
-
-Number
-
-selectionGranularity
-
-SELECTION\_GRANULARITY\_\*
-
-allowedURLSchemes
-
-Array<String>
-
-touchEnabled
-
-Boolean
-
-willHandleTouches
-
-Boolean
-
-requestHeaders
-
-Object<String, Any>
-
-zoomLevel
-
-Number
-
-keyboardDisplayRequiresUserAction
-
-Boolean
+| Name | Type |
+| --- | --- |
+| disableBounce | Boolean |
+| scalesPageToFit | Boolean |
+| disableZoom | Boolean |
+| allowsBackForwardNavigationGestures | Boolean |
+| allowsLinkPreview | Boolean |
+| scrollsToTop | Boolean |
+| disableContextMenu | Boolean |
+| userAgent | String |
+| url | String |
+| data | Ti.Blob, Ti.File |
+| html | String |
+| title | String |
+| progress | Number |
+| backForwardList | Object |
+| ignoreSslError | Boolean |
+| basicAuhentication | Object<br /><br />* username (String)<br />    <br />* password (String)<br />    <br />* persistence (CREDENTIAL\_PERSISTENCE\_\*) |
+| cachePolicy | CACHE\_POLICY\_\* |
+| timeout | Number |
+| selectionGranularity | SELECTION\_GRANULARITY\_\* |
+| allowedURLSchemes | Array<String> |
+| touchEnabled | Boolean |
+| willHandleTouches | Boolean |
+| requestHeaders | Object<String, Any> |
+| zoomLevel | Number |
+| keyboardDisplayRequiresUserAction | Boolean |
 
 #### Methods
 
-Name
-
-Parameter
-
-Return
-
-stopLoading
-
-\-
-
-Void
-
-setHtml
-
-html, options (Object - { baseURL, mimeType }, optional)
-
-Void
-
-reload
-
-\-
-
-Void
-
-repaint
-
-\-
-
-Void
-
-goBack
-
-\-
-
-Void
-
-goForward
-
-\-
-
-Void
-
-canGoBack
-
-\-
-
-Boolean
-
-canGoForward
-
-\-
-
-Boolean
-
-isLoading
-
-\-
-
-Boolean
-
-evalJS \*\*
-
-Code (String), Callback (Function)
-
-startListeningToProperties
-
-Array
-
-Void
-
-stopListeningToProperties
-
-Array
-
-Void
-
-fireEvent
-
-Name (String), Payload (Object)
-
-Void
-
-addEventListener
-
-Name (String), Callback (Function)
-
-Void
-
-removeEventListener
-
-Name (String), Callback (Function)
-
-Void
-
-takeSnapshot \*
-
-Callback (Function)
-
-Void
-
-addUserScript
-
-Object: source (String), injectionTime (INJECTION\_TIME\_\*), mainFrameOnly (Boolean)
-
-Void
-
-removeAllUserScripts
-
-\-
-
-Void
-
-addScriptMessageHandler
-
-Name (String)
-
-Void
-
-removeScriptMessageHandler
-
-Name (String)
-
-Void
+| Name | Parameter | Return |
+| --- | --- | --- |
+| stopLoading | \- | Void |
+| setHtml | html, options (Object - { baseURL, mimeType }, optional) | Void |
+| reload | \- | Void |
+| repaint | \- | Void |
+| goBack | \- | Void |
+| goForward | \- | Void |
+| canGoBack | \- | Boolean |
+| canGoForward | \- | Boolean |
+| isLoading | \- | Boolean |
+| evalJS \*\* | Code (String), Callback (Function) |  |
+| startListeningToProperties | Array | Void |
+| stopListeningToProperties | Array | Void |
+| fireEvent | Name (String), Payload (Object) | Void |
+| addEventListener | Name (String), Callback (Function) | Void |
+| removeEventListener | Name (String), Callback (Function) | Void |
+| takeSnapshot \* | Callback (Function) | Void |
+| addUserScript | Object: source (String), injectionTime (INJECTION\_TIME\_\*), mainFrameOnly (Boolean) | Void |
+| removeAllUserScripts | \- | Void |
+| addScriptMessageHandler | Name (String) | Void |
+| removeScriptMessageHandler | Name (String) | Void |
 
 \* Available on iOS 11.0+
 
@@ -375,123 +179,40 @@ Void
 
 #### Events
 
-Name
-
-Properties
-
-message
-
-name, body, url, isMainFrame
-
-progress
-
-value, url
-
-beforeload
-
-url, navigationType, title
-
-load
-
-url, title
-
-redirect
-
-url, title
-
-error
-
-success, url, error, code
-
-sslerror
-
-url
-
-handleurl
-
-url
-
-blacklisturl
-
-url
+| Name | Properties |
+| --- | --- |
+| message | name, body, url, isMainFrame |
+| progress | value, url |
+| beforeload | url, navigationType, title |
+| load | url, title |
+| redirect | url, title |
+| error | success, url, error, code |
+| sslerror | url |
+| handleurl | url |
+| blacklisturl | url |
 
 #### Constants
 
-Name
-
-Property
-
-CREDENTIAL\_PERSISTENCE\_NONE
-
-basicAuthentication.persistence
-
-CREDENTIAL\_PERSISTENCE\_FOR\_SESSION
-
-basicAuthentication.persistence
-
-CREDENTIAL\_PERSISTENCE\_PERMANENT
-
-basicAuthentication.persistence
-
-CREDENTIAL\_PERSISTENCE\_SYNCHRONIZABLE
-
-basicAuthentication.persistence
-
-AUDIOVISUAL\_MEDIA\_TYPE\_NONE
-
-mediaTypesRequiringUserActionForPlayback
-
-AUDIOVISUAL\_MEDIA\_TYPE\_AUDIO
-
-mediaTypesRequiringUserActionForPlayback
-
-AUDIOVISUAL\_MEDIA\_TYPE\_VIDEO
-
-mediaTypesRequiringUserActionForPlayback
-
-AUDIOVISUAL\_MEDIA\_TYPE\_ALL
-
-mediaTypesRequiringUserActionForPlayback
-
-CACHE\_POLICY\_USE\_PROTOCOL\_CACHE\_POLICY
-
-cachePolicy
-
-CACHE\_POLICY\_RELOAD\_IGNORING\_LOCAL\_CACHE\_DATA
-
-cachePolicy
-
-CACHE\_POLICY\_RETURN\_CACHE\_DATA\_ELSE\_LOAD
-
-cachePolicy
-
-CACHE\_POLICY\_RETURN\_CACHE\_DATA\_DONT\_LOAD
-
-cachePolicy
-
-SELECTION\_GRANULARITY\_AUTOMATIC
-
-selectionGranularity
-
-SELECTION\_GRANULARITY\_CHARACTER
-
-selectionGranularity
-
-ACTION\_POLICY\_CANCEL
-
-handleurl (Event)
-
-ACTION\_POLICY\_ALLOW
-
-handleurl (Event)
-
-INJECTION\_TIME\_DOCUMENT\_START
-
-addUserScript.injectionTime
-
-INJECTION\_TIME\_DOCUMENT\_END
-
-addUserScript.injectionTime
+| Name | Property |
+| --- | --- |
+| CREDENTIAL\_PERSISTENCE\_NONE | basicAuthentication.persistence |
+| CREDENTIAL\_PERSISTENCE\_FOR\_SESSION | basicAuthentication.persistence |
+| CREDENTIAL\_PERSISTENCE\_PERMANENT | basicAuthentication.persistence |
+| CREDENTIAL\_PERSISTENCE\_SYNCHRONIZABLE | basicAuthentication.persistence |
+| AUDIOVISUAL\_MEDIA\_TYPE\_NONE | mediaTypesRequiringUserActionForPlayback |
+| AUDIOVISUAL\_MEDIA\_TYPE\_AUDIO | mediaTypesRequiringUserActionForPlayback |
+| AUDIOVISUAL\_MEDIA\_TYPE\_VIDEO | mediaTypesRequiringUserActionForPlayback |
+| AUDIOVISUAL\_MEDIA\_TYPE\_ALL | mediaTypesRequiringUserActionForPlayback |
+| CACHE\_POLICY\_USE\_PROTOCOL\_CACHE\_POLICY | cachePolicy |
+| CACHE\_POLICY\_RELOAD\_IGNORING\_LOCAL\_CACHE\_DATA | cachePolicy |
+| CACHE\_POLICY\_RETURN\_CACHE\_DATA\_ELSE\_LOAD | cachePolicy |
+| CACHE\_POLICY\_RETURN\_CACHE\_DATA\_DONT\_LOAD | cachePolicy |
+| SELECTION\_GRANULARITY\_AUTOMATIC | selectionGranularity |
+| SELECTION\_GRANULARITY\_CHARACTER | selectionGranularity |
+| ACTION\_POLICY\_CANCEL | handleurl (Event) |
+| ACTION\_POLICY\_ALLOW | handleurl (Event) |
+| INJECTION\_TIME\_DOCUMENT\_START | addUserScript.injectionTime |
+| INJECTION\_TIME\_DOCUMENT\_END | addUserScript.injectionTime |
 
 #### WebView <-> App Communication
 
@@ -513,7 +234,6 @@ After sending the message from your HTML file, it will trigger the message event
 
 * isMainFrame: A boolean determine if the message was sent from the main-frame
 
-
 For sending messages from the app to the Web View, use evalJS to call your JS methods like this:
 
 Send messages from the app to the Web View
@@ -531,7 +251,6 @@ Note 2: Since 2.4.0, this modules also supports Ti.App-like events that allows t
 * addEventListener
 
 * removeEventListener
-
 
 Different to the Ti.App events, these ones are fired on the top-level module instance.
 
@@ -625,44 +344,15 @@ Configuration API
 
 #### Properties
 
-Name
-
-Type
-
-mediaTypesRequiringUserActionForPlayback
-
-AUDIOVISUAL\_MEDIA\_TYPE\_\*
-
-suppressesIncrementalRendering
-
-Boolean
-
-preferences
-
-Object
-
-* minimumFontSize (Double)
-
-* javaScriptEnabled (Boolean)
-
-* javaScriptCanOpenWindowsAutomatically (Boolean)
-
-
-allowsInlineMediaPlayback
-
-Boolean
-
-allowsAirPlayMediaPayback
-
-Boolean
-
-allowsPictureInPictureMediaPlaback
-
-Boolean
-
-processPool
-
-ProcessPool
+| Name | Type |
+| --- | --- |
+| mediaTypesRequiringUserActionForPlayback | AUDIOVISUAL\_MEDIA\_TYPE\_\* |
+| suppressesIncrementalRendering | Boolean |
+| preferences | Object<br /><br />* minimumFontSize (Double)<br />    <br />* javaScriptEnabled (Boolean)<br />    <br />* javaScriptCanOpenWindowsAutomatically (Boolean) |
+| allowsInlineMediaPlayback | Boolean |
+| allowsAirPlayMediaPayback | Boolean |
+| allowsPictureInPictureMediaPlaback | Boolean |
+| processPool | ProcessPool |
 
 ### Process pool
 
@@ -689,7 +379,6 @@ Process pools
 * Passes the url for a custom url-scheme
 
 * The event was introduced because iOS 10+ causes issues for some custom url-schemes and forwarding the url in an event is a simpler short term solution than implementing the WKURLSchemeHandler which is iOS 11+ only.
-
 
 `// Add an event listener to listen for a custom URL-scheme`
 

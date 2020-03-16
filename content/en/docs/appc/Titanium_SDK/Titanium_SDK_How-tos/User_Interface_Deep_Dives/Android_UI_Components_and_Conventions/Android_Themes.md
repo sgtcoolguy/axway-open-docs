@@ -1,33 +1,32 @@
 {"title":"Android Themes","weight":"20"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Android themes](#Androidthemes)
+* [Android themes](#android-themes)
 
-* [Titanium themes](#Titaniumthemes)
+* [Titanium themes](#titanium-themes)
 
-* [Custom themes](#Customthemes)
+* [Custom themes](#custom-themes)
 
-* [Material theme](#Materialtheme)
+* [Material theme](#material-theme)
 
-  * [Example](#Example)
+    * [Example](#example)
 
-  * [Theme comparison](#Themecomparison)
+    * [Theme comparison](#theme-comparison)
 
-  * [Material theme further reading](#Materialthemefurtherreading)
+    * [Material theme further reading](#material-theme-further-reading)
 
-* [Override a theme](#Overrideatheme)
+* [Override a theme](#override-a-theme)
 
-  * [Override a window theme](#Overrideawindowtheme)
+    * [Override a window theme](#override-a-window-theme)
 
-  * [Override an activity theme](#Overrideanactivitytheme)
+    * [Override an activity theme](#override-an-activity-theme)
 
-* [Custom theme generator](#Customthemegenerator)
+* [Custom theme generator](#custom-theme-generator)
 
-  * [Android Action Bar Style Generator](#AndroidActionBarStyleGenerator)
+    * [Android Action Bar Style Generator](#android-action-bar-style-generator)
 
-* [Further reading](#Furtherreading)
-
+* [Further reading](#further-reading)
 
 ## Introduction
 
@@ -44,7 +43,6 @@ To update the look of your application, you can either:
 * Use the Android Material Theme to quickly customize the theme's color palette
 
 * Use third-party tools to help you generate a custom theme
-
 
 You can specify a unique theme per window or per activity.
 
@@ -86,17 +84,9 @@ Finally, to use a theme in your application, modify the Android section of your 
 
 The screenshots below show the difference between the various built-in themes:
 
-AppCompat.Light
-
-AppCompat/Holo
-
-AppCompat.Light.DarkActionBar
-
-![HoloLight](/Images/appc/download/attachments/34636181/HoloLight.png)
-
-![Holo](/Images/appc/download/attachments/34636181/Holo.png)
-
-![LightDarBar](/Images/appc/download/attachments/34636181/LightDarBar.png)
+| AppCompat.Light | AppCompat/Holo | AppCompat.Light.DarkActionBar |
+| --- | --- | --- |
+| ![HoloLight](/Images/appc/download/attachments/34636181/HoloLight.png) | ![Holo](/Images/appc/download/attachments/34636181/Holo.png) | ![LightDarBar](/Images/appc/download/attachments/34636181/LightDarBar.png) |
 
 ## Titanium themes
 
@@ -104,57 +94,15 @@ The Titanium SDK includes a few predefined themes. You can use these themes in y
 
 **NOTE: Do not create a theme with the same name as a predefined theme.**
 
-Theme Name
-
-SDK Version
-
-Description
-
-Theme.Titanium
-
-\*
-
-Theme based off the Android SDK's default AppCompat theme with the splash screen image as the default background.
-
-Prior to 3.3.0, displays the title bar.
-
-Since 3.3.0 and later, hides the action and title bar.
-
-Theme.AppCompat.Translucent
-
-3.4.0
-
-Theme based off the AppCompat theme with a transparent background and a solid action bar
-
-Theme.AppCompat.Translucent.NoTitleBar
-
-3.4.0
-
-Same as Theme.AppCompat.Translucent but with no action or title bar.
-
-Theme.AppCompat.Translucent.NoTitleBar.Fullscreen
-
-3.4.0
-
-Same as Theme.AppCompat.Translucent.NoTitleBar but the window is fullscreen (covers the status bar).
-
-Theme.AppCompat.Fullscreen
-
-3.4.0
-
-Theme based off the AppCompat theme with a fullscreen window (covers the status bar) with no action or title bar.
-
-Theme.AppCompat.NoTitleBar
-
-4.2.0
-
-Theme based off the AppCompat theme with no action and title bar.
-
-Theme.AppCompat.NoTitleBar.Fullscreen
-
-4.2.0
-
-Same as Theme.AppCompat.NoTitleBar with a fullscreen window (covers the status bar).
+| Theme Name | SDK Version | Description |
+| --- | --- | --- |
+| Theme.Titanium | \* | Theme based off the Android SDK's default AppCompat theme with the splash screen image as the default background.<br /><br />Prior to 3.3.0, displays the title bar.<br /><br />Since 3.3.0 and later, hides the action and title bar. |
+| Theme.AppCompat.Translucent | 3.4.0 | Theme based off the AppCompat theme with a transparent background and a solid action bar |
+| Theme.AppCompat.Translucent.NoTitleBar | 3.4.0 | Same as Theme.AppCompat.Translucent but with no action or title bar. |
+| Theme.AppCompat.Translucent.NoTitleBar.Fullscreen | 3.4.0 | Same as Theme.AppCompat.Translucent.NoTitleBar but the window is fullscreen (covers the status bar). |
+| Theme.AppCompat.Fullscreen | 3.4.0 | Theme based off the AppCompat theme with a fullscreen window (covers the status bar) with no action or title bar. |
+| Theme.AppCompat.NoTitleBar | 4.2.0 | Theme based off the AppCompat theme with no action and title bar. |
+| Theme.AppCompat.NoTitleBar.Fullscreen | 4.2.0 | Same as Theme.AppCompat.NoTitleBar with a fullscreen window (covers the status bar). |
 
 To apply a theme globally, in the tiapp.xml file, set the android:theme attribute to the theme name in the application element of the Android manifest section.
 
@@ -271,7 +219,6 @@ The theme file above contains two custom style items:
 
 4. The last item overrides the whole style used for buttons. The custom style is defined in the theme's file as a child of Widget.AppCompat.Button. In the custom style every property of it can be overriden. In this example the minimum width and height for every button are set to custom values. For convenience dimensions can be defined in a separate file located at platform/android/res/values/dimens.xml
 
-
 To use the "Theme.MyTheme" theme in your application, modify the Android section of your tiapp.xml file:
 
 `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
@@ -302,53 +249,19 @@ Do not set the parent attribute to @android:style/Theme.Material or one of its v
 
 ![MaterialThemeAnnotated](/Images/appc/download/attachments/34636181/MaterialThemeAnnotated.png)
 
-Color Palette Attribute
-
-Description
-
-colorPrimaryDark
-
-Sets the color of the status bar. Only works with Android 5.0 (API 21) and greater.
-
-colorPrimary
-
-Sets the color of the action bar.
-
-colorAccent
-
-Sets the accent color, which is usually the color of the control when it is activated.
-
-colorControlNormal
-
-Sets the color of the control when it is not activated.
-
-colorControlActivated
-
-Sets the color when the control is activated. Overwrites the colorAccent attribute.
-
-colorControlHighlight
-
-Sets the color when the user clicks on a control. Only works with Android 5.0 (API 21) and greater.
-
-colorSwitchThumbNormal
-
-Sets the color of a toggle switch's thumb when it is not enabled. Only works with Android 5.0 (API 21) and greater.
-
-android:colorButtonNormal
-
-Sets the color of a button when it is not pressed. Only works with Android 5.0 (API 21) and greater.
-
-android:colorEdgeEffect
-
-Sets the edge effect color when the user tries to scroll beyond the content's boundaries. Only works with Android 5.0 (API 21) and greater.
-
-android:navigationBarColor
-
-Sets the color of the navigation bar (the bar that appears at the bottom of the device that contains the Back, Home and Recent App buttons). Only works with Android 5.0 (API 21) and greater.
-
-android:textColorPrimary
-
-Sets the color of text on controls. Prior to Android 5.0, this only sets the color of the action bar title and overflow menu.
+| Color Palette Attribute | Description |
+| --- | --- |
+| colorPrimaryDark | Sets the color of the status bar. Only works with Android 5.0 (API 21) and greater. |
+| colorPrimary | Sets the color of the action bar. |
+| colorAccent | Sets the accent color, which is usually the color of the control when it is activated. |
+| colorControlNormal | Sets the color of the control when it is not activated. |
+| colorControlActivated | Sets the color when the control is activated. Overwrites the colorAccent attribute. |
+| colorControlHighlight | Sets the color when the user clicks on a control. Only works with Android 5.0 (API 21) and greater. |
+| colorSwitchThumbNormal | Sets the color of a toggle switch's thumb when it is not enabled. Only works with Android 5.0 (API 21) and greater. |
+| android:colorButtonNormal | Sets the color of a button when it is not pressed. Only works with Android 5.0 (API 21) and greater. |
+| android:colorEdgeEffect | Sets the edge effect color when the user tries to scroll beyond the content's boundaries. Only works with Android 5.0 (API 21) and greater. |
+| android:navigationBarColor | Sets the color of the navigation bar (the bar that appears at the bottom of the device that contains the Back, Home and Recent App buttons). Only works with Android 5.0 (API 21) and greater. |
+| android:textColorPrimary | Sets the color of text on controls. Prior to Android 5.0, this only sets the color of the action bar title and overflow menu. |
 
 ### Example
 
@@ -388,17 +301,9 @@ platform/android/res/values/custom\_theme.xml
 
 The following table compares the same application when using different Android versions and themes. Note that the Android 4.4. screenshots use the old style toggle button due to [Android bug #78262](https://code.google.com/p/android/issues/detail?id=78262).
 
-Example Material Theme / Android 5.0
-
-Example Material Theme / Android 4.4
-
-Default AppCompat / Android 4.4
-
-![MaterialTheme](/Images/appc/download/attachments/34636181/MaterialTheme.png)
-
-![MaterialThemePreLollipop](/Images/appc/download/attachments/34636181/MaterialThemePreLollipop.png)
-
-![AppCompatTheme](/Images/appc/download/attachments/34636181/AppCompatTheme.png)
+| Example Material Theme / Android 5.0 | Example Material Theme / Android 4.4 | Default AppCompat / Android 4.4 |
+| --- | --- | --- |
+| ![MaterialTheme](/Images/appc/download/attachments/34636181/MaterialTheme.png) | ![MaterialThemePreLollipop](/Images/appc/download/attachments/34636181/MaterialThemePreLollipop.png) | ![AppCompatTheme](/Images/appc/download/attachments/34636181/AppCompatTheme.png) |
 
 ### Material theme further reading
 
@@ -407,7 +312,6 @@ Default AppCompat / Android 4.4
 * [Android Developers Blog: AppCompat v21 — Material Design for Pre-Lollipop Devices!](http://android-developers.blogspot.com/2014/10/appcompat-v21-material-design-for-pre.html)
 
 * [Google Design Guidelines: Style - Color](http://www.google.com/design/spec/style/color.html)
-
 
 ## Override a theme
 
@@ -507,7 +411,6 @@ To create a custom Action Bar style:
 4. Choose the style customizations you want to use.
 
 5. Click **Download .ZIP** button near the button of the web page to download your custom theme.
-
 
 Once you have your custom Action Bar style, unpack the ZIP file and copy the res folder to your project's platform/android folder. Then, modify your tiapp.xml file to use the custom style, for example:
 

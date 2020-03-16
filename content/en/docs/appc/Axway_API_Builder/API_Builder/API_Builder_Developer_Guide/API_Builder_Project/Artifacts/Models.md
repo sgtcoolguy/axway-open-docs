@@ -6,16 +6,15 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Create a new model](#Createanewmodel)
+* [Create a new model](#create-a-new-model)
 
-* [Edit a model](#Editamodel)
+* [Edit a model](#edit-a-model)
 
-* [Composing a new model](#Composinganewmodel)
+* [Composing a new model](#composing-a-new-model)
 
-* [Generate endpoints](#Generateendpoints)
-
+* [Generate endpoints](#generate-endpoints)
 
 ## Introduction
 
@@ -35,31 +34,31 @@ To create a new model using the GUI:
 
 2. In the model window.
 
-  ![new_model_%281%29](/Images/appc/download/attachments/49153275/new_model_%281%29.png)
+    ![new_model_%281%29](/Images/appc/download/attachments/49153275/new_model_%281%29.png)
 
-  1. Enter the **Model name** (required).
+    1. Enter the **Model name** (required).
 
-  2. Select a **Connector** (required).
+    2. Select a **Connector** (required).
 
-  3. Enter a **description** for the new model. While this is an optional field, we encourage you to provide a clear and concise description of what the model does.
+    3. Enter a **description** for the new model. While this is an optional field, we encourage you to provide a clear and concise description of what the model does.
 
-  4. Click **Next** to start the process of creating a new model.
+    4. Click **Next** to start the process of creating a new model.
 
 3. In the New Model page, you will see the name of the model you just created with an option to edit that name and the Connector you selected for it to use.
 
 4. To add a new field, click the **\+ Field** button. In the model window,
 
-  1. Enter the **Field** name (required).
+    1. Enter the **Field** name (required).
 
-  2. Select the **Type** for this new field.
+    2. Select the **Type** for this new field.
 
-  3. Enter a **Default** **value** (optional).
+    3. Enter a **Default** **value** (optional).
 
-  4. Enter a **Description**.
+    4. Enter a **Description**.
 
-  5. Check off the **Read-only** and/or the **Required** boxes.
+    5. Check off the **Read-only** and/or the **Required** boxes.
 
-  6. Click **Add field to model** to complete the addition of this new field.
+    6. Click **Add field to model** to complete the addition of this new field.
 
 5. Repeat step 4 as needed to add as many fields as necessary.
 
@@ -67,23 +66,23 @@ To create a new model using the GUI:
 
 7. If the field isn't needed, you can remove it by clicking on the trashcan icon at the end of the field row.
 
-  There is no warning for deleting a field. Once you delete the field, you will not be prompted for a confirmation of the action.
+    There is no warning for deleting a field. Once you delete the field, you will not be prompted for a confirmation of the action.
 
 8. Click the **Next >** button.
 
 9. Optional: on the endpoint generation page, select the methods that will be automatically generated for the API endpoints. When you click **Next**, you are brought to the API generation page where you can optionally generate an API definition for your new model, and choose the method(s) that you wish to generate. To generate API endpoints:
 
-  1. Select the methods that will be automatically generated for the API endpoints.
+    1. Select the methods that will be automatically generated for the API endpoints.
 
-  2. You can change the singular and plural values for this new model. These values are used in the API documentation (e.g. "Create a user", or "Count users"), but these values are also used in the body of the API responses.
+    2. You can change the singular and plural values for this new model. These values are used in the API documentation (e.g. "Create a user", or "Count users"), but these values are also used in the body of the API responses.
 
-  3. If you are satisfied with your new field(s), click the **Save** button.
+    3. If you are satisfied with your new field(s), click the **Save** button.
 
 10. Also on this page, you can change the singular and plural values for this new model.
 
 11. If you are satisfied with your new field(s), click the **Save** button.
 
-  ![model_page](/Images/appc/download/attachments/49153275/model_page.png)
+    ![model_page](/Images/appc/download/attachments/49153275/model_page.png)
 
 ## Edit a model
 
@@ -93,7 +92,7 @@ To edit an existing model using the GUI:
 
 2. Locate the model you wish to edit and click the **Tool** icon at the end of the row. A dialogue box will open.
 
-  ![edit-compose-generate_model](/Images/appc/download/thumbnails/49153275/edit-compose-generate_model.png)
+    ![edit-compose-generate_model](/Images/appc/download/thumbnails/49153275/edit-compose-generate_model.png)
 3. Click **Edit this model**. A dialogue window will open up and allow you to make changes to your selected model.
 
 4. You can edit the model name by clicking the **Pencil** icon next to the model name.
@@ -112,7 +111,6 @@ To edit an existing model using the GUI:
 
 11. Click the **Save** button if you are satisfied with your changes.
 
-
 ## Composing a new model
 
 To compose a new model using the GUI:
@@ -121,7 +119,7 @@ To compose a new model using the GUI:
 
 2. Enter a model name (required) and a description.
 
-  ![compose_model](/Images/appc/download/attachments/49153275/compose_model.png)
+    ![compose_model](/Images/appc/download/attachments/49153275/compose_model.png)
 3. In the Composite Model page, you can edit the name of the composite and modify the fields (as needed). If you want to rename the composite, click the **Pencil** icon and fill in the fields of the Composite Model model window as necessary. Click Update when you have finished.
 
 4. If you wish to modify the fields of this new composite, click the **Pencil** icon at the end of the row for the field in question.
@@ -135,7 +133,6 @@ To compose a new model using the GUI:
 8. Modify the Singular and Plural fields as necessary.
 
 9. Click Save to commit your new composite model.
-
 
 ## Generate endpoints
 

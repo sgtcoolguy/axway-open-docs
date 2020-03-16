@@ -1,13 +1,12 @@
 {"title":"Project Wizard Actions","weight":"60"}
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Invocation](#Invocation)
+* [Invocation](#invocation)
 
-* [Open a Project Wizard](#OpenaProjectWizard)
+* [Open a Project Wizard](#open-a-project-wizard)
 
-* [Open a Project Wizard with a Project Template](#OpenaProjectWizardwithaProjectTemplate)
-
+* [Open a Project Wizard with a Project Template](#open-a-project-wizard-with-a-project-template)
 
 ## Requirements
 
@@ -40,7 +39,6 @@ Sample wizard ids:
 * New Mobile App Project: "com.appcelerator.titanium.mobile.project\_wizard"
 
 * New Mobile Module Project: "com.appcelerator.titanium.mobile.module.wizard"
-
 
 ## Open a Project Wizard with a Project Template
 

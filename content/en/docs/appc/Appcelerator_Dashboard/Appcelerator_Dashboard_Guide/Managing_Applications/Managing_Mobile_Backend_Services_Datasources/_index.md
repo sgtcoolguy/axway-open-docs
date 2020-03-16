@@ -2,40 +2,39 @@
 
 To view service details and manage data properties for a Mobile Backend Services (MBS) datasource, select it from the Dashboard home page **Apps** tab.
 
-* [Create a New Datasource](#CreateaNewDatasource)
+* [Create a New Datasource](#create-a-new-datasource)
 
-* [Change the Name of the Datasource](#ChangetheNameoftheDatasource)
+* [Change the Name of the Datasource](#change-the-name-of-the-datasource)
 
-* [Delete the Datasource](#DeletetheDatasource)
+* [Delete the Datasource](#delete-the-datasource)
 
-* [View API Usage Data](#ViewAPIUsageData)
+* [View API Usage Data](#view-api-usage-data)
 
-* [View Connected Applications](#ViewConnectedApplications)
+* [View Connected Applications](#view-connected-applications)
 
-* [View API Analytics](#ViewAPIAnalytics)
+* [View API Analytics](#view-api-analytics)
 
-* [Manage Data](#ManageData)
+* [Manage Data](#manage-data)
 
-* [View and Filter API Logs](#ViewandFilterAPILogs)
+* [View and Filter API Logs](#view-and-filter-api-logs)
 
-* [Configuration](#Configuration)
+* [Configuration](#configuration)
 
-* [Manage Push Notifications](#ManagePushNotifications)
+* [Manage Push Notifications](#manage-push-notifications)
 
-  * [Push Notification Logs](#PushNotificationLogs)
+    * [Push Notification Logs](#push-notification-logs)
 
-  * [Push Notification Settings](#PushNotSetPushNotificationSettings)
+    * [Push Notification Settings](#push-notification-settings)
 
-    * [iOS Push Notification Settings](#iOSPushNotificationSettings)
+        * [iOS Push Notification Settings](#ios-push-notification-settings)
 
-    * [Android Cloud Messaging Settings](#AndroidCloudMessagingSettings)
+        * [Android Cloud Messaging Settings](#android-cloud-messaging-settings)
 
-  * [View Subscribed Devices](#ViewSubDevicesViewSubscribedDevices)
+    * [View Subscribed Devices](#view-subscribed-devices)
 
-  * [View Scheduled Notifications](#ViewScheduledNotifications)
+    * [View Scheduled Notifications](#view-scheduled-notifications)
 
-* [View Documentation](#ViewDocumentation)
-
+* [View Documentation](#view-documentation)
 
 ## Create a New Datasource
 
@@ -47,13 +46,12 @@ To create a standalone Mobile Backend Services datasource (an MBS datasource tha
 
 3. Enter a name for the datasource.
 
-  ![AddMobileService](/Images/appc/download/attachments/60145242/AddMobileService.png)
+    ![AddMobileService](/Images/appc/download/attachments/60145242/AddMobileService.png)
 4. If you have multiple environments, select the environments to enable for the datasource.
 
 5. Assign teams to the application by selecting the **+** icons from the Assign Teams list.
 
 6. Click **Create**. Dashboard will redirect you to the new MBS datasource.
-
 
 ## Change the Name of the Datasource
 
@@ -65,11 +63,10 @@ To change the name of the datasource:
 
 3. Enter a new name for the datasource.
 
-  ![Rename_new](/Images/appc/download/attachments/60145242/Rename_new.png)
+    ![Rename_new](/Images/appc/download/attachments/60145242/Rename_new.png)
 4. (Optional) Enter a datasource description.
 
 5. Click **OK**.
-
 
 ## Delete the Datasource
 
@@ -80,7 +77,6 @@ To delete the datasource:
 2. Select **Delete**.
 
 3. Confirm you want to delete the datasource. To permanently delete the datasource, type the name of the data store (datasource) you would like to permanently delete and select, **I understand that this a permanent and irreversible action. Continue**. Click the **Cancel** button to return the Overview tab without deleting the data store.
-
 
 ## View API Usage Data
 
@@ -124,13 +120,11 @@ The table includes the following fields:
 
 * **Date** – Date and time of the request in UTC.
 
-
 Clicking a table row expands it to display the following additional fields:
 
 * **Source IP** – IP address of the client that made the request.
 
 * **Parameters** – Click **Show** to view a list of request parameters, and the full URL request.
-
 
 You can filter MBS API requests by their date.
 
@@ -146,7 +140,6 @@ On the **Configuration** tab you can select from the following sub-tabs:
 
 * **Email** – Provide SMTP or MessageGears server settings for Dashboard to send an email on behalf of your application. Additionally, you can enable or disable the email test mode.
 
-
 For details, see [Configuring Cloud Services](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Configuring_Cloud_Services/).
 
 ![configuration_latest](/Images/appc/download/attachments/60145242/configuration_latest.png)
@@ -157,7 +150,7 @@ The **Push Notifications** tab lets you select from the following sub-tabs:
 
 * **Send –** See [Sending and Scheduling Push Notifications](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Sending_and_Scheduling_Push_Notifications/) for details.
 
-* **Logs** – Paginated and filterable table of push notification log items. See [Push Notification Logs](#PushNotificationLogs).
+* **Logs** – Paginated and filterable table of push notification log items. See [Push Notification Logs](#push-notification-logs).
 
 * **iOS** – Configure API Builder Push to communicate with the Apple Push Notification Service (APNS). See [iOS and Android Push Notification Settings](#PushNotSet) for details.
 
@@ -166,7 +159,6 @@ The **Push Notifications** tab lets you select from the following sub-tabs:
 * **Devices** – View a list of devices subscribed to receive push notifications. See [View Subscribed Devices](#ViewSubDevices).
 
 * **Scheduled** – View a list of scheduled pushes.
-
 
 ![push_notifications_latest](/Images/appc/download/attachments/60145242/push_notifications_latest.png)
 
@@ -192,7 +184,6 @@ Click the **Logs** tab to view a paginated table of push notifications delivered
 
 * **Sent** – Time and date the notification was sent.
 
-
 You can filter the listing of push notifications by channel name or creation date.
 
 ### Push Notification Settings
@@ -213,7 +204,7 @@ Click the **iOS** tab to configure the application to use the Apple Push Notific
 
 5. Click **Save**.
 
-  ![iOS_push_latest](/Images/appc/download/attachments/60145242/iOS_push_latest.png)
+    ![iOS_push_latest](/Images/appc/download/attachments/60145242/iOS_push_latest.png)
 
 #### Android Cloud Messaging Settings
 
@@ -225,7 +216,7 @@ Click the **Android** tab to configure the application to use the Firebase Cloud
 
 3. Click **Save**.
 
-  ![android_cloud_messaging_latest](/Images/appc/download/attachments/60145242/android_cloud_messaging_latest.png)
+    ![android_cloud_messaging_latest](/Images/appc/download/attachments/60145242/android_cloud_messaging_latest.png)
 
 ### View Subscribed Devices
 
@@ -239,7 +230,6 @@ Click the **Devices** tab to view a list of subscribed users, devices, and chann
 
 * **Device Token** – The device token obtained from the Firebase Cloud Messaging or Apple Push Notification service. Click the expander (**+**) button to view the complete device token.
 
-
 You can filter the list of subscribed devices by channel, type, or user ID. To filter the list:
 
 1. Click the **Filter** button.
@@ -250,14 +240,13 @@ You can filter the list of subscribed devices by channel, type, or user ID. To f
 
 4. In the last field, enter the value you want to filter by:
 
-  1. For **User ID**, enter the object ID of the User.
+    1. For **User ID**, enter the object ID of the User.
 
-  2. For **Type**, either enter android or ios **.**
+    2. For **Type**, either enter android or ios **.**
 
-  3. For **Channel**, enter the name of the channel.
+    3. For **Channel**, enter the name of the channel.
 
 5. Click **Apply Filters**.
-
 
 To remove the filter, click **Clear Filter**.
 
@@ -273,7 +262,6 @@ Click the **Scheduled** tab to display a list of one-time or recurring scheduled
 
 * **Start Time –** The date and time (in UTC) that the notifications are scheduled to start being delivered.
 
-
 Click the expander button (**+**) next a list item to view details about the schedule, or to edit or delete the schedule. The details view contains the following fields:
 
 * **Channel** – Name of the channel the notification will be sent.
@@ -283,7 +271,6 @@ Click the expander button (**+**) next a list item to view details about the sch
 * **Starts On/Ends On** – Start and end date and time the scheduled starts and expires.
 
 * **Recurs** – How often the schedule repeats. Possible values are Daily, Weekly, or Monthly.
-
 
 ## View Documentation
 

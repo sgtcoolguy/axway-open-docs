@@ -1,21 +1,20 @@
 {"title":"iOS Local Notifications","weight":"20"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Notification Types](#NotificationTypes)
+* [Notification Types](#notification-types)
 
-* [Configure Notification Settings](#ConfigureNotificationSettings)
+* [Configure Notification Settings](#configure-notification-settings)
 
-* [Send a Local Notification](#SendaLocalNotification)
+* [Send a Local Notification](#send-a-local-notification)
 
-  * [Register for Local Notifications](#RegisterforLocalNotifications)
+    * [Register for Local Notifications](#register-for-local-notifications)
 
-  * [Schedule a Local Notification](#ScheduleaLocalNotification)
+    * [Schedule a Local Notification](#schedule-a-local-notification)
 
-  * [Monitor Local Notifications](#MonitorLocalNotifications)
+    * [Monitor Local Notifications](#monitor-local-notifications)
 
-  * [Cancel a Notification](#CancelaNotification)
-
+    * [Cancel a Notification](#cancel-a-notification)
 
 ## Introduction
 
@@ -69,7 +68,6 @@ The user can configure how to receive notifications from your application using 
 
 * For iOS 7, tap **Notification Center**, then tap the application to configure.
 
-
 In the **Notifications** screen, the user can selectively decide which notification types to receive.
 
 ![NotificationSettings](/Images/appc/download/attachments/40929226/NotificationSettings.png)
@@ -89,7 +87,6 @@ For devices running iOS 8 and later, you need to register the application to use
 * Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_NONE: disable application UI notifications. The application will still be notified of the notification by the notification event.
 
 * Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_SOUND: allow the application to play a sound.
-
 
 `// Check if the device is running iOS 8 or later, before registering for local notifications`
 
@@ -142,7 +139,6 @@ To send a local notification, use the Titanium.App.iOS.scheduleLocalNotification
 * timezone: t imezone of the date configured for the notification. If not set, the system timezone is used.
 
 * userInfo: extra data to pass to the application that can be processed in the notification event.
-
 
 ![LockedAlertAnnotated](/Images/appc/download/attachments/40929226/LockedAlertAnnotated.png)
 
@@ -223,7 +219,6 @@ If the application needs to cancel a notification, it can either selectively cho
 1. Keep a reference to the notification object and call the cancel() method on the object.
 
 2. Add an ID to the notification and pass the ID to the Titanium.App.iOS.cancelLocalNotification() method. To add an ID to the notification, set the id property of the userInfo dictionary passed to the scheduleLocationNotification() method.
-
 
 `var notification = Ti.App.iOS.scheduleLocalNotification({`
 

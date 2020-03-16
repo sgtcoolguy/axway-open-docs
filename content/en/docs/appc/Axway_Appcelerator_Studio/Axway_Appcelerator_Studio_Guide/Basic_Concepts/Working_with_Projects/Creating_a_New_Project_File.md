@@ -18,7 +18,6 @@ To add a new file to a project:
 
 6. If you would like to choose from an existing template, click the **Next** button and select the template of your choice.
 
-
 The file will be created and added to your project.
 
 ## Reserved words

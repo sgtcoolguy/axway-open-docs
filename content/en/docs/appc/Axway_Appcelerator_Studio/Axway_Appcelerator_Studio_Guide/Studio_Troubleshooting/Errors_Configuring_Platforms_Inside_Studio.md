@@ -1,13 +1,12 @@
 {"title":"Errors Configuring Platforms Inside Studio","weight":"120"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [iOS SDK version XXX not found](#iOSSDKversionXXXnotfound)
+* [iOS SDK version XXX not found](#ios-sdk-version-xxx-not-found)
 
-* [Could not locate the Android SDK at the given path](#CouldnotlocatetheAndroidSDKatthegivenpath)
+* [Could not locate the Android SDK at the given path](#could-not-locate-the-android-sdk-at-the-given-path)
 
-* [iOS configuration issues](#iOSconfigurationissues)
-
+* [iOS configuration issues](#ios-configuration-issues)
 
 ## Overview
 
@@ -25,7 +24,6 @@ This will happen if you have upgraded your iOS SDKs, and the old one is not avai
 
 4. Save and close the dialog.
 
-
 ## Could not locate the Android SDK at the given path
 
 This usually appears inside the **Preference** dialog inside Studio. Studio runs a Python script to determine your current configuration. To diagnose the exact issue, please try the following:
@@ -38,10 +36,9 @@ This usually appears inside the **Preference** dialog inside Studio. Studio runs
 
 4. You should see a command line invocation of avd.py, for example:
 
-  `"/usr/bin/python"`  `"/Library/Application Support/Titanium/mobilesdk/osx/1.8.0.1/android/avd.py"`  `"/Users/username/Documents/android"`
+    `"/usr/bin/python"`  `"/Library/Application Support/Titanium/mobilesdk/osx/1.8.0.1/android/avd.py"`  `"/Users/username/Documents/android"`
 
 5. Copy and paste that complete command line into a terminal window and run it. Check the output. If it doesn't find minimum required Android SDK, the configuration will be marked as invalid.
-
 
 It may be that you don't have an avd.py script at the location it's looking. To solve that, just install the latest [Continuous Build](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_SDK_Continuous_Builds/), ensuring that you choose the master branch from the drop-down menu of the download site, and restart Studio.
 

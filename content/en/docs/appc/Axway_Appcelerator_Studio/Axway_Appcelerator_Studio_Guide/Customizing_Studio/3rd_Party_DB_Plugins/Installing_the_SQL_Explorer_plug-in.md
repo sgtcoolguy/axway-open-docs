@@ -14,7 +14,6 @@ To install the SQL Explorer plug-in:
 
 3. Re-start your workspace.
 
-
 After you install the SQL Explorer plug-in, your next step is to [deploy ConnectorJ](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Deploying_ConnectorJ/).
 
 ## Related Topics

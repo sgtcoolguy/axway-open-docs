@@ -1,17 +1,16 @@
 {"title":"Windows Platform Overview","weight":"30"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Windows Phone](#WindowsPhone)
+* [Windows Phone](#windows-phone)
 
-  * [Hardware buttons](#Hardwarebuttons)
+    * [Hardware buttons](#hardware-buttons)
 
-  * [User interface](#Userinterface)
+    * [User interface](#user-interface)
 
-* [Windows Store](#WindowsStore)
+* [Windows Store](#windows-store)
 
-* [Further reading](#Furtherreading)
-
+* [Further reading](#further-reading)
 
 As of Titanium 9.0.0, building Windows apps is no longer supported.
 
@@ -23,29 +22,11 @@ The Titanium SDK allows you to develop ARM-based or x86-based applications for W
 
 Both Windows Phone and Store apps share common APIs, UI elements and design. The main difference between the two platforms are the device's form factor. The table below provides some generalized specifications.
 
-Form Factor
-
-Phone
-
-Tablet
-
-Display type/Resolution
-
-1080p, 720p, WXGA, WVGA
-
-1024 x 768 and larger
-
-Screen Size
-
-4" - 6"
-
-\> 10"
-
-Default Orientation
-
-Portrait
-
-Landscape
+| Form Factor | Phone | Tablet |
+| --- | --- | --- |
+| Display type/Resolution | 1080p, 720p, WXGA, WVGA | 1024 x 768 and larger |
+| Screen Size | 4" - 6" | \> 10" |
+| Default Orientation | Portrait | Landscape |
 
 More details about each platform are provided in the sections below.
 
@@ -67,7 +48,6 @@ Windows Phone devices may have three hardware buttons for navigation:
 
 * **Search**: Allows the user to search for content.
 
-
 ### User interface
 
 A Windows Phone application is divided into three parts:
@@ -77,7 +57,6 @@ A Windows Phone application is divided into three parts:
 * **Content**: Information or controls to present to the user.
 
 * **Command elements**: Commonly located at the bottom of the application, the command elements provide the user alternative ways to interact with your application. For example, the command bar can be used to provide additional functionality.
-
 
 If the phone is in landscape mode, the navigation and command elements will appear on the sides.
 
@@ -90,7 +69,6 @@ To support tablet form factors, build and deploy Windows Store apps. Windows Sto
 * The only hardware button a Windows tablet provides is the Start button. You will need to build the back navigation into your application if you need to use that feature.
 
 * To get to the **All apps** screen, from the bottom edge of the screen, swipe up.
-
 
 ![ws_tablet](/Images/appc/download/attachments/43308580/ws_tablet.png)
 

@@ -10,7 +10,6 @@ The 'Open Definition Quick Outline' allows you to quickly see (and go to) all th
 
 * Class and instance attributes
 
-
 **KEYBINDING:** Ctrl+Shift+T (with focus on the PyDev editor)
 
 The image below shows the filter applied for all the definitions that started with 'stri'.

@@ -10,7 +10,6 @@ The Dashboard 4.0.0 release is a major release, introducing new features and beh
 
 * In the _Application_ page, the **APIs** tab was renamed to **Arrow** in the left navigation.
 
-
 ## New Features
 
 * To delete data from an ArrowDB application (formerly an ACS app or Data APIs), you will now be presented with a dialog that asks you to confirm the data deletion by entering the name of the application. The dialog appears after you click **Delete** from the ArrowDB application's _Manage Data_ page.

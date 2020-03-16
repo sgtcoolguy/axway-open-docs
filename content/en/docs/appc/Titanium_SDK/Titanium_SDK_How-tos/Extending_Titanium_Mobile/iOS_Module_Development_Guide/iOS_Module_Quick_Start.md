@@ -1,39 +1,38 @@
 {"title":"iOS Module Quick Start","weight":"10"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [iOS module prerequisites](#iOSmoduleprerequisites)
+* [iOS module prerequisites](#ios-module-prerequisites)
 
-* [Create a new module](#Createanewmodule)
+* [Create a new module](#create-a-new-module)
 
-* [Validate the SDK version](#ValidatetheSDKversion)
+* [Validate the SDK version](#validate-the-sdk-version)
 
-* [Build and package the module](#Buildandpackagethemodule)
+* [Build and package the module](#build-and-package-the-module)
 
-* [Test the module](#Testthemodule)
+* [Test the module](#test-the-module)
 
-  * [Create a test application](#Createatestapplication)
+    * [Create a test application](#create-a-test-application)
 
-  * [Add the module as a dependency to the project](#Addthemoduleasadependencytotheproject)
+    * [Add the module as a dependency to the project](#add-the-module-as-a-dependency-to-the-project)
 
-  * [Load the module and make module API calls](#LoadthemoduleandmakemoduleAPIcalls)
+    * [Load the module and make module API calls](#load-the-module-and-make-module-api-calls)
 
-    * [Use require() to import your module](#Userequire()toimportyourmodule)
+        * [Use require() to import your module](#use-require-to-import-your-module)
 
-  * [Run the application](#Runtheapplication)
+    * [Run the application](#run-the-application)
 
-* [Modify the module](#Modifythemodule)
+* [Modify the module](#modify-the-module)
 
-  * [Open the module in Xcode](#OpenthemoduleinXcode)
+    * [Open the module in Xcode](#open-the-module-in-xcode)
 
-  * [Add a view proxy and view](#Addaviewproxyandview)
+    * [Add a view proxy and view](#add-a-view-proxy-and-view)
 
-  * [Add a property](#Addaproperty)
+    * [Add a property](#add-a-property)
 
-  * [Test the module](#Testthemodule.1)
+    * [Test the module](#test-the-module)
 
-* [Next steps](#Nextsteps)
-
+* [Next steps](#next-steps)
 
 ## Introduction
 
@@ -48,7 +47,6 @@ To develop an iOS-based Module, you'll need all of the software required to buil
 * Supported versions of Xcode and the iOS SDK, as described in [Installing the iOS SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_iOS_SDK/)
 
 * Studio or the Appcelerator Command-Line Interface (CLI) for creating modules, and building and running test applications
-
 
 ComExampleTestModuleIn addition, Python, Python setuptools and the Python markdown (or markdown2) module are both required by the module build scripts. For Mac OS X, Python and the Python setuptools should already be installed. For the markdown module, see [Installing Required Python Packages](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Required_Python_Packages/).
 
@@ -79,7 +77,6 @@ In Studio:
 4. In **Deployment Targets**, select **iOS**.
 
 5. Click **Next**, then click **Finish**.
-
 
 Studio sets up a new folder called test that contains your module project.
 
@@ -115,7 +112,6 @@ In Studio:
 
 5. Click **Finish**.
 
-
 Studio builds and installs the module to the Titanium SDK home path.
 
 ## Test the module
@@ -142,14 +138,13 @@ In Studio:
 
 3. On the **Project Location** page, enter the following information:
 
-  * In the **Project Name** field, enter **Hello**.
+    * In the **Project Name** field, enter **Hello**.
 
-  * In the **App ID** field, enter **com.example.hello**.
+    * In the **App ID** field, enter **com.example.hello**.
 
-  * In **Deployment Targets**, select **iPhone** and **iPad**.
+    * In **Deployment Targets**, select **iPhone** and **iPad**.
 
 4. Click **Finish** to create the project.
-
 
 Studio sets up a new folder called Hello that contains the test application you will be using to test the module.
 
@@ -180,7 +175,6 @@ In Studio:
 3. Select **com.example.test**.
 
 4. Click **OK**.
-
 
 ### Load the module and make module API calls
 
@@ -261,15 +255,13 @@ In Studio:
 
 2. In the Terminal, run the following command:
 
-  `open` `.`
-
+    `open` `.`
 
 Your module project is now open in Xcode. Expand the Classes folder and take a look at the default files created by the Titanium SDK:
 
 * ComExampleTestModule.h and ComExampleTestModule.m: These are the header and source file for the module class. Every module requires a module class (and only one module class), which acts as the base API for the module, such as providing the module ID, GUID, etc.
 
 * ComExampleTestModuleAssets.h and ComExampleTestModuleAssets.m: These are the header and source files to manage module assets. These files are auto-generated. You can ignore these for now in this tutorial.
-
 
 Notice that all the files start with the module ID in camel case notation. Every file and class you add to the module project must start with name and every file and class you add must end with Proxy, ViewProxy or View, which determines how Titanium uses the files. Titanium uses a strict naming convention and directory structure to manage the module classes and resources. If a file or class is added to the project and does not conform to these conventions, it will be treated as a normal non-Titanium class. It will be accessible from Objective-C code but not from JavaScript.
 
@@ -292,7 +284,6 @@ In Xcode, for each file:
 6. Ensure that the **Target** test is selected.
 
 7. Click **Create**.
-
 
 ComExampleTestViewProxy.h
 
@@ -377,7 +368,6 @@ The ComExampleTestView class extends the TiUIView class. The TiUIView can be add
 * **frameSizeChanged** : This method is called when the view's dimensions change. The method calls a TiUtils helper function to update the dimensions of square. In JavaScript, this occurs when the width, height, top, bottom, left or right properties are invoked.
 
 * **setColor\_** : All setter methods in a View class must end with an underscore (\_), which exposes the property to the JavaScript application. When color property is invoked, the method updates the background color of the square.
-
 
 Notice that there is no code tying ComExampleTestView to ComExampleTestViewProxy. The naming convention is what causes the View to be connected to its ViewProxy.
 

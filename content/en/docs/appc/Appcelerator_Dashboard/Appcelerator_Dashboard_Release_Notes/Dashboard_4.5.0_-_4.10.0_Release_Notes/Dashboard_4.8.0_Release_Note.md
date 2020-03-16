@@ -6,7 +6,6 @@ Dashboard 4.8.0 is a minor release, which includes behavior changes, improvement
 
 * Users logging into an inactive organization will be redirected to the billing page
 
-
 ## Improvements
 
 * Revised default package limits and features. See [Plans & Pricing](https://www.appcelerator.com/pricing/) for more details.
@@ -16,7 +15,6 @@ Dashboard 4.8.0 is a minor release, which includes behavior changes, improvement
 * Revised the activation email message for users signing up for Free Trial
 
 * On sites that require a login, users will no longer be redirected back to the same page when signing out
-
 
 ## Fixed Issues
 

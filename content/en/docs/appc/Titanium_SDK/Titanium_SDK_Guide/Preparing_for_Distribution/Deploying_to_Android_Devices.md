@@ -1,31 +1,30 @@
 {"title":"Deploying to Android Devices","weight":"10"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [Configure the Android device](#ConfiguretheAndroiddevice)
+    * [Configure the Android device](#configure-the-android-device)
 
-  * [Install the USB driver (Windows only)](#InstalltheUSBdriver(Windowsonly))
+    * [Install the USB driver (Windows only)](#install-the-usb-driver-windows-only)
 
-  * [Connect the device](#Connectthedevice)
+    * [Connect the device](#connect-the-device)
 
-  * [Deploy the application using adb](#Deploytheapplicationusingadb)
+    * [Deploy the application using adb](#deploy-the-application-using-adb)
 
-  * [Deploy to remote testers](#Deploytoremotetesters)
+    * [Deploy to remote testers](#deploy-to-remote-testers)
 
-  * [Install to the SD card](#InstalltotheSDcard)
+    * [Install to the SD card](#install-to-the-sd-card)
 
-  * [Change the version number](#Changetheversionnumber)
+    * [Change the version number](#change-the-version-number)
 
-  * [Troubleshooting](#Troubleshooting)
+    * [Troubleshooting](#troubleshooting)
 
-    * [Restart adb](#Restartadb)
+        * [Restart adb](#restart-adb)
 
-    * [USB cord](#USBcord)
+        * [USB cord](#usb-cord)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Objective
 
@@ -58,7 +57,6 @@ For Android 4.2 and later devices, you need to enable **Developer options** by o
 9. Optional: Enable **Allow mock locations**, that is, check this option. This option creates fake GPS locations to test location services.
 
 10. Back out of or close **Settings**.
-
 
 These configuration settings are the default Android settings. Some options may not appear or you may need to configure other manufacturer-specific settings.
 
@@ -122,7 +120,6 @@ By default, your application is installed to the device's internal storage. To c
 
 * **internalOnly** - which specifies that your app cannot be installed to the SD card. See the [Android docs](http://developer.android.com/guide/appendix/install-location.html#ShouldNot) for the various reasons why you might choose this option.
 
-
 tiapp.xml
 
 `<android xmlns:android=``"http://schemas.android.com/apk/res/android"``>`
@@ -138,7 +135,6 @@ To change the version of the application, add the following attributes to the ma
 * **android:versionCode** - A 32-bit integer (i.e.: a whole number like "2") that must be incremented up whenever a newer version is being submitted to the app store. It cannot be set to a floating point number.
 
 * **android:versionName** - The version name string can be anything you want.
-
 
 tiapp.xml
 

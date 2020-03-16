@@ -6,25 +6,12 @@ Appcelerator CLI 4.0.1 is a patch release, addressing high-priority issues from 
 
 The following components are shipped with CLI 4.0.1:
 
-Name
-
-Version
-
-Alloy
-
-1.6.0
-
-**[Arrow Builder](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Release_Notes/)**
-
-**0.4.1 (update)**
-
-Arrow Cloud CLI
-
-1.0.24
-
-Titanium CLI
-
-4.0.0
+| Name | Version |
+| --- | --- |
+| Alloy | 1.6.0 |
+| **[Arrow Builder](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Release_Notes/)** | **0.4.1 (update)** |
+| Arrow Cloud CLI | 1.0.24 |
+| Titanium CLI | 4.0.0 |
 
 ## Fixed Issues
 

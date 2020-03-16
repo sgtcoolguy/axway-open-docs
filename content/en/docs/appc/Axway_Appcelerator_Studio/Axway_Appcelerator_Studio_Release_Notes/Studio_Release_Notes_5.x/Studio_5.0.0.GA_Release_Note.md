@@ -2,17 +2,17 @@
 
 Studio 5.0.0.GA is a major release that includes new features, improvements, and bug fixes.
 
-As of this release, Studio 4.x will not be supported one calendar year from 5.0.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this release, Studio 4.x will not be supported one calendar year from 5.0.0.GA's release date. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 * Continued to update Axway Appcelerator Studio with branding changes ([DASH-31](https://jira.appcelerator.org/browse/DASH-31))
 
 * Removed MobileWeb support from Studio
 
-  * [TISTUD-8880](https://jira.appcelerator.org/browse/TISTUD-8880)
+    * [TISTUD-8880](https://jira.appcelerator.org/browse/TISTUD-8880)
 
-  * [GB-517](https://jira.appcelerator.org/browse/GB-517)
+    * [GB-517](https://jira.appcelerator.org/browse/GB-517)
 
-  * [TISTUD-8899](https://jira.appcelerator.org/browse/TISTUD-8899)
+    * [TISTUD-8899](https://jira.appcelerator.org/browse/TISTUD-8899)
 
 * Removed Windows 8.1 support from Studio ([TISTUD-8886](https://jira.appcelerator.org/browse/TISTUD-8886))
 
@@ -20,27 +20,25 @@ As of this release, Studio 4.x will not be supported one calendar year from 5.0.
 
 * Integrated Appcelerator Daemon with Studio
 
-  * [TISTUD-8911](https://jira.appcelerator.org/browse/TISTUD-8911)
+    * [TISTUD-8911](https://jira.appcelerator.org/browse/TISTUD-8911)
 
-  * [TISTUD-8926](https://jira.appcelerator.org/browse/TISTUD-8926)
+    * [TISTUD-8926](https://jira.appcelerator.org/browse/TISTUD-8926)
 
-  * [TISTUD-8927](https://jira.appcelerator.org/browse/TISTUD-8927)
-
+    * [TISTUD-8927](https://jira.appcelerator.org/browse/TISTUD-8927)
 
 ## Improvements
 
 * [TISTUD-7981](https://jira.appcelerator.org/browse/TISTUD-7981) - Use appc daemon to request system info
 
-  * Studio no longer uses ti info -t <platform> with the introduction of the appc daemon. Studio connects to this server over a WebSocket and query the system information and listen for changes.
+    * Studio no longer uses ti info -t <platform> with the introduction of the appc daemon. Studio connects to this server over a WebSocket and query the system information and listen for changes.
 
 * [TISTUD-8873](https://jira.appcelerator.org/browse/TISTUD-8873) - iOS: Use JSCore by default with SDK 7.0
 
-  * JSCore will be configured by default if you're working with SDK 7.0 and higher
+    * JSCore will be configured by default if you're working with SDK 7.0 and higher
 
 * [TISTUD-8890](https://jira.appcelerator.org/browse/TISTUD-8890) - Install node.js 8.7 with the studio 5.0 installers
 
-  * Install node.js 8.7 with the Atudio 5.0 installers and increase the minimum version required to 7.6
-
+    * Install node.js 8.7 with the Atudio 5.0 installers and increase the minimum version required to 7.6
 
 ## Fixed issues
 
@@ -102,25 +100,24 @@ As of this release, Studio 4.x will not be supported one calendar year from 5.0.
 
 * [TISTUD-8948](https://jira.appcelerator.org/browse/TISTUD-8948) - Error on Android preference page when Genymotion not installed on system
 
-
 ## Known issues
 
 * [TISTUD-8878](https://jira.appcelerator.org/browse/TISTUD-8878) - Axway Appcelerator Studio support for JDK 9
 
-  * Studio 5.0.0 and lower does not support JDK 9. It is currently slated to be supported with Studio 6.0.0.
+    * Studio 5.0.0 and lower does not support JDK 9. It is currently slated to be supported with Studio 6.0.0.
 
-  * To manually fix this issue, follow these steps:
+    * To manually fix this issue, follow these steps:
 
-    1. Make sure you have JDK 1.8.131 on your system. Look for this: /Library/Java/JavaVirtualMachines/jdk1.8.0\_1131.jdk
+        1. Make sure you have JDK 1.8.131 on your system. Look for this: /Library/Java/JavaVirtualMachines/jdk1.8.0\_1131.jdk
 
-    2. Edit the Appcelerator Studio.ini file which is located here: /Applications/Appcelerator/ Studio/AppceleratorStudio.app/Contents/MacOS/AppceleratorStudio.ini
+        2. Edit the Appcelerator Studio.ini file which is located here: /Applications/Appcelerator/ Studio/AppceleratorStudio.app/Contents/MacOS/AppceleratorStudio.ini
 
-    3. Force Studio to use jdk1.8.0\_131.jdk by adding the following \-vm argument before the \-vmargs entry:
+        3. Force Studio to use jdk1.8.0\_131.jdk by adding the following \-vm argument before the \-vmargs entry:
 
-      `-vm /Library/Java/JavaVirtualMachines/jdk1.``8``.0_131.jdk/Contents/Home/bin/java`
+            `-vm /Library/Java/JavaVirtualMachines/jdk1.``8``.0_131.jdk/Contents/Home/bin/java`
 
-    4. Restart Studio.
+        4. Restart Studio.
 
 * [TISTUD-8953](https://jira.appcelerator.org/browse/TISTUD-8953) - Mac: Studio won't start, hangs on initial dialog
 
-  * Studio 5.0.0.GA does not support JDK 1.8.0\_152 and higher
+    * Studio 5.0.0.GA does not support JDK 1.8.0\_152 and higher

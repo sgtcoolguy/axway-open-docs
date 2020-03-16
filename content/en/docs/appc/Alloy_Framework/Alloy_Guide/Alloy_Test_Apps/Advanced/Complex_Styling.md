@@ -272,6 +272,6 @@ However, styles defined by the index.tss style file have a higher precedence tha
 
 ## See Also
 
-* [Style priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#Stylepriorities)
+* [Style priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#style-priorities)
 
 * [Custom TSS Queries](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/Advanced/Custom_TSS_Queries/) demo app

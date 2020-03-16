@@ -28,13 +28,11 @@ Code analysis provides error finding in python programs. It finds common errors 
 
 * Bad indentation (incorrect number of spaces when indenting).
 
-
 **Advantages** of the **PyDev Code Analysis**
 
 * It can analyze your modules **while you are coding**, and not just when you have the module saved in your disk.
 
 * It is **'very' fast** when compared to current alternatives.
-
 
 You may still configure PyDev to analyze your code only when you save a file if you want.
 

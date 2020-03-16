@@ -1,43 +1,42 @@
 {"title":"CommonJS Modules in Titanium","weight":"20"}
 
-* [Synopsis](#Synopsis)
+* [Synopsis](#synopsis)
 
-  * [Definitions](#Definitions)
+    * [Definitions](#definitions)
 
-* [CommonJS Module Specification implementation](#CommonJSModuleSpecificationimplementation)
+* [CommonJS Module Specification implementation](#commonjs-module-specification-implementation)
 
-  * [Simple usage](#Simpleusage)
+    * [Simple usage](#simple-usage)
 
-  * [Native/Compiled versus JavaScript modules](#Native/CompiledversusJavaScriptmodules)
+    * [Native/Compiled versus JavaScript modules](#native/compiled-versus-javascript-modules)
 
-    * [Native/Compiled modules](#Native/Compiledmodules)
+        * [Native/Compiled modules](#native/compiled-modules)
 
-    * [JavaScript modules](#JavaScriptmodules)
+        * [JavaScript modules](#javascript-modules)
 
-  * [JavaScript module path resolution](#JavaScriptmodulepathresolution)
+    * [JavaScript module path resolution](#javascript-module-path-resolution)
 
-  * [JavaScript module composition](#JavaScriptmodulecomposition)
+    * [JavaScript module composition](#javascript-module-composition)
 
-    * [Antipatterns and unsupported behavior](#Antipatternsandunsupportedbehavior)
+        * [Antipatterns and unsupported behavior](#antipatterns-and-unsupported-behavior)
 
-  * [Caching](#Caching)
+    * [Caching](#caching)
 
-  * [Security and sandboxing](#Securityandsandboxing)
+    * [Security and sandboxing](#security-and-sandboxing)
 
-    * [Stateful modules](#Statefulmodules)
+        * [Stateful modules](#stateful-modules)
 
-    * [Global variables](#Globalvariables)
+        * [Global variables](#global-variables)
 
-* [JavaScript module examples](#JavaScriptmoduleexamples)
+* [JavaScript module examples](#javascript-module-examples)
 
-  * [Utility libraries](#Utilitylibraries)
+    * [Utility libraries](#utility-libraries)
 
-  * [Packages of related functionality](#Packagesofrelatedfunctionality)
+    * [Packages of related functionality](#packages-of-related-functionality)
 
-  * [Instantiable objects](#Instantiableobjects)
+    * [Instantiable objects](#instantiable-objects)
 
-  * [Node.js support](#Node.jssupport)
-
+    * [Node.js support](#node.js-support)
 
 ## Synopsis
 
@@ -54,7 +53,6 @@ Since Titanium SDK 7.1.0, you can also use ES6+ classes to export your modules i
 * exports - a free variable within a module, to which multiple properties may be added to create a public interface
 
 * module.exports - an object within a module, which may be REPLACED by an object representing the public interface to the module
-
 
 ## CommonJS Module Specification implementation
 
@@ -111,7 +109,6 @@ Relative paths may be specified as well. Assume we have modules located in the f
 * Resources/app/ui/widgets/SomeOtherCustomView.js
 
 * Resources/app/lib/myModule.js
-
 
 Now assume we are writing code inside the SomeCustomView.js module file. The following are valid require statements:
 
@@ -307,7 +304,7 @@ statefulModule.js
 
 `exports.stepVal = _stepVal;`
 
-**NOTE:** A module is created once per Titanium JavaScript context, so if additional contexts are created, new module objects will be created. For more on JavaScript contexts, [see here](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Cross-Platform_Mobile_Development_In_Titanium/Coding_Strategies/#Executioncontexts).
+**NOTE:** A module is created once per Titanium JavaScript context, so if additional contexts are created, new module objects will be created. For more on JavaScript contexts, [see here](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Cross-Platform_Mobile_Development_In_Titanium/Coding_Strategies/#execution-contexts).
 
 #### Global variables
 

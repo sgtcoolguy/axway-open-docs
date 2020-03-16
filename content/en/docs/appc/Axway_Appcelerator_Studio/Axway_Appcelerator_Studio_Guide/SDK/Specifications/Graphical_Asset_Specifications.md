@@ -1,31 +1,30 @@
 {"title":"Graphical Asset Specifications","weight":"90"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Splash Screen](#SplashScreen)
+* [Splash Screen](#splash-screen)
 
-* [About Image - about.gif](#AboutImage-about.gif)
+* [About Image - about.gif](#about-image---about.gif)
 
-* [Mac OSX DMG Background](#MacOSXDMGBackground)
+* [Mac OSX DMG Background](#mac-osx-dmg-background)
 
-* [Windows Installer](#WindowsInstaller)
+* [Windows Installer](#windows-installer)
 
-  * [Left panel](#Leftpanel)
+    * [Left panel](#left-panel)
 
-  * [Top Panel](#TopPanel)
+    * [Top Panel](#top-panel)
 
-  * [Bottom Panel](#BottomPanel)
+    * [Bottom Panel](#bottom-panel)
 
-  * [Installer Splash](#InstallerSplash)
+    * [Installer Splash](#installer-splash)
 
-  * [Background Color](#BackgroundColor)
+    * [Background Color](#background-color)
 
-* [In-Product Imagery](#In-ProductImagery)
+* [In-Product Imagery](#in-product-imagery)
 
-  * [General Icons](#GeneralIcons)
+    * [General Icons](#general-icons)
 
-  * [Wizard Banners](#WizardBanners)
-
+    * [Wizard Banners](#wizard-banners)
 
 ## Overview
 
@@ -35,17 +34,7 @@ A collection of all of the various assets required when developing Aptana And Ti
 
 ![splash](/Images/appc/download/attachments/33031056/splash.bmp)
 
-Filename
-
-splash.bmp
-
-Dimension
-
-590 x 405 pixels
-
-Notes
-
-The space to the right of the Appcelerator logo should be left blank for the login user interface
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Filename</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>splash.bmp</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Dimension</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>590 x 405 pixels</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Notes</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The space to the right of the Appcelerator logo should be left blank for the login user interface</p></td></tr></tbody></table>
 
 Usage:
 
@@ -57,13 +46,7 @@ Splash screen
 
 ![about](/Images/appc/download/attachments/33031056/about.gif)
 
-Filename
-
-about.gif
-
-Dimension
-
-131 x 222 pixels
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Filename</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>about.gif</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Dimension</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>131 x 222 pixels</p></td></tr></tbody></table>
 
 Usage:
 
@@ -75,20 +58,7 @@ About Dialog
 
 ![background](/Images/appc/download/attachments/33031056/background.gif)
 
-Filename
-
-com.appcelerator.titanium.mac.installer/dmgbuilder/background.png
-
-Dimensions
-
-600 x 600 pixels
-
-Notes
-
-* Ensure the top-left label background accommodates the width/height of a wrapped product name
-
-* Copyright should be updated appropriately
-
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Filename</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.appcelerator.titanium.mac.installer/dmgbuilder/background.png</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Dimensions</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>600 x 600 pixels</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Notes</p></td><td class="confluenceTd" rowspan="1" colspan="1"><ul class=""><li><p>Ensure the top-left label background accommodates the width/height of a wrapped product name</p></li><li><p>Copyright should be updated appropriately</p></li></ul></td></tr></tbody></table>
 
 Usage:
 
@@ -105,61 +75,25 @@ The installer uses three images that are butted up against each other to compose
 
 ![LeftBranding](/Images/appc/download/attachments/33031056/LeftBranding.bmp)
 
-Filename
-
-com.appcelerator.win.installer/windows-nsis/Tools/unicode\_nsis/Contrib/ExperienceUI/Skins/Appcelerator/LeftBranding.bmp
-
-Dimensions
-
-240 x 349 pixels
-
-Notes
-
-Ensure the color of the right most edge matches the color set in the installer. The color in the installer can be modified
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Filename</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.appcelerator.win.installer/windows-nsis/Tools/unicode_nsis/Contrib/ExperienceUI/Skins/Appcelerator/LeftBranding.bmp</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Dimensions</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>240 x 349 pixels</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Notes</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Ensure the color of the right most edge matches the color set in the installer. The color in the installer can be modified</p></td></tr></tbody></table>
 
 ### Top Panel
 
 ![Header](/Images/appc/download/attachments/33031056/Header.bmp)
 
-Filename
-
-com.appcelerator.win.installer/windows-nsis/Tools/unicode\_nsis/Contrib/ExperienceUI/Skins/Appcelerator/Header.bmp
-
-Dimensions
-
-1 x 57 pixels
-
-Notes
-
-The one pixel strip is repeated across the header. The strip should include the border between the title and the main content
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Filename</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.appcelerator.win.installer/windows-nsis/Tools/unicode_nsis/Contrib/ExperienceUI/Skins/Appcelerator/Header.bmp</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Dimensions</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>1 x 57 pixels</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Notes</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The one pixel strip is repeated across the header. The strip should include the border between the title and the main content</p></td></tr></tbody></table>
 
 ### Bottom Panel
 
 ![Bottom](/Images/appc/download/attachments/33031056/Bottom.bmp)
 
-Filename
-
-com.appcelerator.win.installer/windows-nsis/Tools/unicode\_nsis/Contrib/ExperienceUI/Skins/Appcelerator/Bottom.bmp
-
-Dimensions
-
-693 x 70 pixels
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Filename</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.appcelerator.win.installer/windows-nsis/Tools/unicode_nsis/Contrib/ExperienceUI/Skins/Appcelerator/Bottom.bmp</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Dimensions</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>693 x 70 pixels</p></td></tr></tbody></table>
 
 ### Installer Splash
 
 (Same images as the splash.bmp)
 
-Filename
-
-com.appcelerator.win.installer/windows-nsis/Bitmaps/splash.bmp
-
-Dimension
-
-590 x 405 pixels
-
-Notes
-
-Same as splash.bmp
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Filename</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.appcelerator.win.installer/windows-nsis/Bitmaps/splash.bmp</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Dimension</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>590 x 405 pixels</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Notes</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Same as splash.bmp</p></td></tr></tbody></table>
 
 ### Background Color
 
@@ -187,13 +121,7 @@ Note the icons are colorful and shaded, with a generally "dimensional" feel.
 
 ![web](/Images/appc/download/attachments/33031056/web.png)
 
-Filename
-
-web.png
-
-Dimensions
-
-16 x 16 pixels
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Filename</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>web.png</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Dimensions</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>16 x 16 pixels</p></td></tr></tbody></table>
 
 ### Wizard Banners
 
@@ -203,10 +131,4 @@ Use the file below as the background of the image and save as a PNG with transpa
 
 ![wizard_background](/Images/appc/download/attachments/33031056/wizard_background.png)
 
-Filename
-
-wizard\_background.png
-
-Dimensions
-
-75 x 66 pixels
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Filename</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>wizard_background.png</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Dimensions</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>75 x 66 pixels</p></td></tr></tbody></table>

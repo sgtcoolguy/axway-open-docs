@@ -22,7 +22,6 @@ To create a new database connection in SQL Explorer:
 
 6. Click the **OK** button.
 
-
 SQL Explorer creates a new connection to your database.
 
 ## Related Topics

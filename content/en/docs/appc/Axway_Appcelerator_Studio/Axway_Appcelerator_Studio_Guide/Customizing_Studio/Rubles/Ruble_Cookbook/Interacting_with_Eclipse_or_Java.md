@@ -1,15 +1,14 @@
 {"title":"Interacting with Eclipse or Java","weight":"70"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Interacting with an Editor: Folding code in the editor](#InteractingwithanEditor:Foldingcodeintheeditor)
+* [Interacting with an Editor: Folding code in the editor](#interacting-with-an-editor:-folding-code-in-the-editor)
 
-* [Interacting with an Editor: increasing the editor's font size](#InteractingwithanEditor:increasingtheeditor'sfontsize)
+* [Interacting with an Editor: increasing the editor's font size](#interacting-with-an-editor:-increasing-the-editor's-font-size)
 
-* [GUI: A simple input dialog](#GUI:Asimpleinputdialog)
+* [GUI: A simple input dialog](#gui:-a-simple-input-dialog)
 
-* [Code Equivalents](#CodeEquivalents)
-
+* [Code Equivalents](#code-equivalents)
 
 ## Overview
 
@@ -133,14 +132,6 @@ We create a simple dialog to prompt the user for input. Note we have one file fo
 
 Some examples of calling code in Ruby and Java.
 
-Description
-
-Ruby
-
-Java
-
-Grabbing an IFile from the current editor.
-
-`context.editor.editor_input.file`
-
-`IFile editorInput = editor.getEditorInput().getFile();`
+| Description | Ruby | Java |
+| --- | --- | --- |
+| Grabbing an IFile from the current editor. | `context.editor.editor_input.file` | `IFile editorInput = editor.getEditorInput().getFile();` |

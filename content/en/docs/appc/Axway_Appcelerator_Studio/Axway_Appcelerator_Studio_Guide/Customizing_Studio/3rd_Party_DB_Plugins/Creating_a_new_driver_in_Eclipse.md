@@ -16,20 +16,19 @@ To create a new driver in Eclipse using the ConnectorJ drivers:
 
 4. On the **Create New Driver** window, specify the information for your new driver:
 
-  1. In the **Name** field, type **MySQL Connector/J Driver** for the name of your driver.
+    1. In the **Name** field, type **MySQL Connector/J Driver** for the name of your driver.
 
-  2. In the **Example URL** field, type an example URL for your driver if you have one. (e.g. "jdbc:mysql://localhost:3306/").
+    2. In the **Example URL** field, type an example URL for your driver if you have one. (e.g. "jdbc:mysql://localhost:3306/").
 
-  3. Click the **Extra Class Path** tab, and click the **New** button to add the classpath for ConnectorJ.
+    3. Click the **Extra Class Path** tab, and click the **New** button to add the classpath for ConnectorJ.
 
-  4. Browse to the location for your **mysql-connector-java-5.1.7-bin.jar** file that you unzipped as part of the [Deploying ConnectorJ](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Deploying_ConnectorJ/) Help topic.
+    4. Browse to the location for your **mysql-connector-java-5.1.7-bin.jar** file that you unzipped as part of the [Deploying ConnectorJ](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Deploying_ConnectorJ/) Help topic.
 
-  5. In the **Driver Class Name** field, type **com.mysql.jdbc.Driver** for your driver.
-    The **Create New Driver** window should look similar to the image below.
+    5. In the **Driver Class Name** field, type **com.mysql.jdbc.Driver** for your driver.
+        The **Create New Driver** window should look similar to the image below.
 
-    ![CreateNewDriver](/Images/appc/download/attachments/4195076/CreateNewDriver.png)
-  6. Click the **OK** button to create the driver.
-
+        ![CreateNewDriver](/Images/appc/download/attachments/4195076/CreateNewDriver.png)
+    6. Click the **OK** button to create the driver.
 
 SQL Explorer creates the new driver for you in Eclipse.
 

@@ -18,79 +18,78 @@ The repository for this tutorial can be found open-source on **[Github](https://
 
 5. Use File/New/Target/Application Extension/Intents Extension to create the extension target. By default, Xcode will add some demo code to handle Message Intents, but you can implement whatever Intent extension you want here.
 
-  ![Screen_Shot_2016-12-01_at_08.26.39](/Images/appc/download/attachments/49152581/Screen_Shot_2016-12-01_at_08.26.39.png)
+    ![Screen_Shot_2016-12-01_at_08.26.39](/Images/appc/download/attachments/49152581/Screen_Shot_2016-12-01_at_08.26.39.png)
 6. Name the extension testapp and change the "Organization Identifier" to com.appc.testapp so that the "Bundle Identifier" is com.appc.testapp.testapp - You can also suffix it to something like siriextension, but let's keeps it simple for now.
 
-  ![Screen_Shot_2016-12-01_at_08.23.35](/Images/appc/download/attachments/49152581/Screen_Shot_2016-12-01_at_08.23.35.png)
+    ![Screen_Shot_2016-12-01_at_08.23.35](/Images/appc/download/attachments/49152581/Screen_Shot_2016-12-01_at_08.23.35.png)
 7. If you wish, you can activate scheme when prompted, but it doesn't matter because we won't need to open the standalone Xcode-project while building.
 
 8. Create a folder called extensions in the Titanium project (root) folder and copy the Xcode extension project into it.
 
 9. In the tiapp.xml, include the following properties in the <ios> section of it:
 
-  tiapp.xml
+    tiapp.xml
 
-  `<``extensions``>`
+    `<``extensions``>`
 
-  `<``extension`  `projectPath``=``"extensions/TestApp/TestApp.xcodeproj"``>`
+    `<``extension`  `projectPath``=``"extensions/TestApp/TestApp.xcodeproj"``>`
 
-  `<``target`  `name``=``"testapp"``> <!-- or "siriextension" if you name the target differently -->`
+    `<``target`  `name``=``"testapp"``> <!-- or "siriextension" if you name the target differently -->`
 
-  `<``provisioning``-profiles>`
+    `<``provisioning``-profiles>`
 
-  `<``device``>INSERT YOUR EXTENSION PROVISIONING PROFILE ID HERE</``device``>`
+    `<``device``>INSERT YOUR EXTENSION PROVISIONING PROFILE ID HERE</``device``>`
 
-  `<``dist``-appstore/>`
+    `<``dist``-appstore/>`
 
-  `<``dist``-adhoc/>`
+    `<``dist``-adhoc/>`
 
-  `</``provisioning``-profiles>`
+    `</``provisioning``-profiles>`
 
-  `</``target``>`
+    `</``target``>`
 
-  `</``extension``>`
+    `</``extension``>`
 
-  `</``extensions``>`
+    `</``extensions``>`
 
 10. Create or edit your App-ID in the [iOS Developer Center](https://developer.apple.com/account/ios/identifier/bundle) to include the "SiriKit" capability, just like you would do with "Access Groups" or "Push Notifications" for other platform-services. Create one app with a wildcard identifier and one without (e.g. com.appc.testapp.\* and com.appc.testapp). The first one is linked in the <provisioning-profiles> section of the target, the latter one is used to build the main target (your app) to the device. Note that SiriKit is supported in the Simulator by Apple, because it doesn't support Siri so far (Status: iOS 10 / November 2016).
 
-  ![devcenter-1](/Images/appc/download/attachments/49152581/devcenter-1.png)
+    ![devcenter-1](/Images/appc/download/attachments/49152581/devcenter-1.png)
 11. Generate two provisioning profiles (one for your main app and one for the Siri target) in the "[Provisioning Profiles](https://developer.apple.com/account/ios/profile/limited)" section.
 
 12. Add the following to the plist-section of your tiapp.xml (<tiapp> > <ios> > <plist>):
 
-  tiapp.xml
+    tiapp.xml
 
-  `<``key``>NSSiriUsageDescription</``key``>`
+    `<``key``>NSSiriUsageDescription</``key``>`
 
-  `<``string``>Can we use Siri to do great stuff?</``string``> `
+    `<``string``>Can we use Siri to do great stuff?</``string``> `
 
 13. Create a file called TestApp.entitlements in your Titanium project root. Note: if you also use push-entitlements, copy those keys over there as well since it will override the CLI-generated key and paste the following into it:
 
-  TestApp.entitlements
+    TestApp.entitlements
 
-  `<?``xml`  `version``=``"1.0"`  `encoding``=``"UTF-8"``?>`
+    `<?``xml`  `version``=``"1.0"`  `encoding``=``"UTF-8"``?>`
 
-  `<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "``http://www.apple.com/DTDs/PropertyList-1.0.dtd``">`
+    `<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "``http://www.apple.com/DTDs/PropertyList-1.0.dtd``">`
 
-  `<``plist`  `version``=``"1.0"``>`
+    `<``plist`  `version``=``"1.0"``>`
 
-  `<``dict``>`
+    `<``dict``>`
 
-  `<``key``>com.apple.developer.siri</``key``>`
+    `<``key``>com.apple.developer.siri</``key``>`
 
-  `<``true``/>`
+    `<``true``/>`
 
-  `</``dict``>`
+    `</``dict``>`
 
-  `</``plist``>`
+    `</``plist``>`
 
 14. You made it!! Use appc run -p ios -T device or Appcelerator Studio to run your app on the device. Remember that iOS currently does not support Siri on the Simulator.
 
 15. You can test the changes by talking to Siri:
 
-  > Send a Message with TestApp
-
+    > Send a Message with TestApp
 
 It will know that your app uses the Intent Extension for handling messages and will ask you for Siri permissions by displaying the message you specified in your plist. You can also change the UI of the Intent by changing the storyboard in your "testappUI" target or specify multiple intents. Just create another target and link it the same way as we did above.
 
@@ -101,6 +100,5 @@ And finally, use [Hyperloop](https://www.appcelerator.com/mobile-app-development
 * [http://jamesonquave.com/blog/adding-siri-to-ios-10-apps-in-swift-tutorial/](http://jamesonquave.com/blog/adding-siri-to-ios-10-apps-in-swift-tutorial/)
 
 * [http://willowtreeapps.com/blog/a-deeper-look-at-sirikit-for-ios-10/](http://willowtreeapps.com/blog/a-deeper-look-at-sirikit-for-ios-10/)
-
 
 Code strong!

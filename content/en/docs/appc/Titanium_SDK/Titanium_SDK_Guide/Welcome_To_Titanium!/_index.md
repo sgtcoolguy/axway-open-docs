@@ -16,7 +16,6 @@ Titanium's unique trait among the various available cross-platform mobile soluti
 
 * and much more!
 
-
 Titanium empowers you to create immersive, full-featured applications that go beyond the boundaries of the browser. We do the heavy-lifting on cross platform compatibility so you don’t have to. Featuring over 80%code reuse across mobile apps, Titanium provides a deep, yet highly-reusable development platform. Appcelerator licenses Titanium under the Apache 2 license and is free for both personal and commercial use.
 
 In this chapter, you'll and learn the basics of writing cross-platform mobile apps with Titanium and become familiar with resources available to you. In addition, we'll take a brief look at the JavaScript skills you'll need to be an effective Titanium developer.

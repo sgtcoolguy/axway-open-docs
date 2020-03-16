@@ -16,7 +16,6 @@ To deploy ConnectorJ:
 
 4. Browse your Connectors folder and make sure that you now have a **mysql-connector-java** sub-folder.
 
-
 This deploys ConnectorJ for mySQL.
 
 Your next step in setting up SQL Explorer is to [create a new driver in Eclipse](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/3rd_Party_DB_Plugins/Creating_a_new_driver_in_Eclipse/).

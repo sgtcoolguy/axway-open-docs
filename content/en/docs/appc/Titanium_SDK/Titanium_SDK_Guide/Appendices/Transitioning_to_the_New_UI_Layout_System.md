@@ -1,57 +1,56 @@
 {"title":"Transitioning to the New UI Layout System","weight":"50"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Understanding the UI Layout System Changes](#UnderstandingtheUILayoutSystemChanges)
+* [Understanding the UI Layout System Changes](#understanding-the-ui-layout-system-changes)
 
-  * [Summary of Layout Properties](#SummaryofLayoutProperties)
+    * [Summary of Layout Properties](#summary-of-layout-properties)
 
-  * [View Types and Default Layout Behavior](#ViewTypesandDefaultLayoutBehavior)
+    * [View Types and Default Layout Behavior](#view-types-and-default-layout-behavior)
 
-    * [Auto Size Views](#AutoSizeViews)
+        * [Auto Size Views](#auto-size-views)
 
-    * [Auto Fill Views](#AutoFillViews)
+        * [Auto Fill Views](#auto-fill-views)
 
-    * [Auto Fill Width Views](#AutoFillWidthViews)
+        * [Auto Fill Width Views](#auto-fill-width-views)
 
-  * [Layout Precedence](#LayoutPrecedence)
+    * [Layout Precedence](#layout-precedence)
 
-  * [Batch Layout Updates](#BatchLayoutUpdates)
+    * [Batch Layout Updates](#batch-layout-updates)
 
-  * [Control Size and Position and Post-Layout Event](#ControlSizeandPositionandPost-LayoutEvent)
+    * [Control Size and Position and Post-Layout Event](#control-size-and-position-and-post-layout-event)
 
-  * [Universal Unit Support](#UniversalUnitSupport)
+    * [Universal Unit Support](#universal-unit-support)
 
-  * [Horizontal and Vertical Layouts](#HorizontalandVerticalLayouts)
+    * [Horizontal and Vertical Layouts](#horizontal-and-vertical-layouts)
 
-  * [Special Cases for Parent and Child Sizing](#SpecialCasesforParentandChildSizing)
+    * [Special Cases for Parent and Child Sizing](#special-cases-for-parent-and-child-sizing)
 
-* [Behavior Changes in Release 2.0](#BehaviorChangesinRelease2.0)
+* [Behavior Changes in Release 2.0](#behavior-changes-in-release-2.0)
 
-  * [iOS Behavior Changes](#iOSBehaviorChanges)
+    * [iOS Behavior Changes](#ios-behavior-changes)
 
-    * [Clipping](#Clipping)
+        * [Clipping](#clipping)
 
-    * [Auto Sizes in iOS](#AutoSizesiniOS)
+        * [Auto Sizes in iOS](#auto-sizes-in-ios)
 
-    * [Undefined Sizes in OS](#UndefinedSizesinOS)
+        * [Undefined Sizes in OS](#undefined-sizes-in-os)
 
-    * [Positioning Pins in iOS](#PositioningPinsiniOS)
+        * [Positioning Pins in iOS](#positioning-pins-in-ios)
 
-    * [Horizontal Layout in iOS](#HorizontalLayoutiniOS)
+        * [Horizontal Layout in iOS](#horizontal-layout-in-ios)
 
-  * [Android Behavior Changes](#AndroidBehaviorChanges)
+    * [Android Behavior Changes](#android-behavior-changes)
 
-    * [Layout Precedence in Android](#LayoutPrecedenceinAndroid)
+        * [Layout Precedence in Android](#layout-precedence-in-android)
 
-    * [Undefined Sizes in Android](#UndefinedSizesinAndroid)
+        * [Undefined Sizes in Android](#undefined-sizes-in-android)
 
-    * [Positioning Pins in Android](#PositioningPinsinAndroid)
+        * [Positioning Pins in Android](#positioning-pins-in-android)
 
-  * [Mobile Web Layout Behavior](#MobileWebLayoutBehavior)
+    * [Mobile Web Layout Behavior](#mobile-web-layout-behavior)
 
-* [Migrating Applications to Release 2.0](#MigratingApplicationstoRelease2.0)
-
+* [Migrating Applications to Release 2.0](#migrating-applications-to-release-2.0)
 
 ## Overview
 
@@ -65,7 +64,6 @@ These changes affect existing layout behavior on all platforms, so you may see U
 
 * How to update your application to work with the new layout system
 
-
 ## Understanding the UI Layout System Changes
 
 This section explains the new layout system implemented in Release 2.0. While many of the details are familiar from previous releases, there are a number of changes designed to unify layout behavior on the different platforms.
@@ -74,59 +72,7 @@ This section explains the new layout system implemented in Release 2.0. While ma
 
 The following table summarizes the layout properties that affect the layout of views.
 
-Name
-
-Description
-
-width
-
-Defines the width of a UI component.
-
-height
-
-Defines the height of a UI component.
-
-left
-
-Pins the left side of a UI component relative to its parent. Measured from the parent's left bound.
-Acts as padding between UI siblings in horizontal layouts.
-
-right
-
-Pins the right side of a UI component relative to its parent. Measured from the parent's right bound.
-Acts as padding between UI siblings in horizontal layouts.
-
-top
-
-Pins the top of a UI component relative to its parent. Measured from the parent's top bound.
-Acts as padding between UI siblings in vertical layouts.
-
-bottom
-
-Pins the bottom of a UI component relative to its parent. Measured from the parent's bottom bound.
-Acts as padding between UI siblings in vertical layouts.
-
-center
-
-Dictionary with properties x and y. Pins the center of the view to the defined point. Measured from parent's left and top bounds.
-
-layout
-
-Defines how the component lays out its children. One of "vertical", "horizontal" or "composite".
-Default is "composite". The value "absolute" is a synonym for "composite".
-
-zIndex
-
-Stack order of UI component in its parent. Higher values are rendered towards the top, in front of components with lower values.
-If no zIndex value is set, components stack in the order in which they are added to the parent, with the last child added displayed on top of earlier children. Any component with a defined zIndex value is displayed in front of any components with undefined zIndex. Does not affect the actual layout of this component.
-
-size
-
-Could be used as a layout parameter prior to Release 2.0. In Release 2.0, size is a read-only parameter that can be used to determine the dimensions of the view. See [#Control Size and Position and Post-Layout Event](#ControlSizeandPositionandPost-LayoutEvent) for details.
-
-rect
-
-New in Release 2.0, rect is a read-only parameter that can be used to determine the size and position of the view. See [#Control Size and Position and Post-Layout Event](#ControlSizeandPositionandPost-LayoutEvent) for details.
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Name</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Description</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>width</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Defines the width of a UI component.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>height</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Defines the height of a UI component.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>left</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Pins the left side of a UI component relative to its parent. Measured from the parent's left bound.<br>Acts as padding between UI siblings in horizontal layouts.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>right</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Pins the right side of a UI component relative to its parent. Measured from the parent's right bound.<br>Acts as padding between UI siblings in horizontal layouts.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>top</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Pins the top of a UI component relative to its parent. Measured from the parent's top bound.<br>Acts as padding between UI siblings in vertical layouts.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>bottom</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Pins the bottom of a UI component relative to its parent. Measured from the parent's bottom bound.<br>Acts as padding between UI siblings in vertical layouts.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>center</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Dictionary with properties <tt class="">x</tt> and <tt>y</tt>. Pins the center of the view to the defined point. Measured from parent's left and top bounds.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>layout</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Defines how the component lays out its children. One of "vertical", "horizontal" or "composite".<br>Default is "composite". The value "absolute" is a synonym for "composite".</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>zIndex</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Stack order of UI component in its parent. Higher values are rendered towards the top, in front of components with lower values.<br>If no <tt class="">zIndex</tt> value is set, components stack in the order in which they are added to the parent, with the last child added displayed on top of earlier children. Any component with a defined <tt class="">zIndex</tt> value is displayed in front of any components with undefined <tt>zIndex</tt>. Does not affect the actual layout of this component.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>size</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Could be used as a layout parameter prior to Release 2.0. In Release 2.0, <tt class="">size</tt> is a read-only parameter that can be used to determine the dimensions of the view. See <a class="document-link" href="#!/guide/Transitioning_to_the_New_UI_Layout_System-section-src-30088148_TransitioningtotheNewUILayoutSystem-ControlSizeandPositionandPost-LayoutEvent">#Control Size and Position and Post-Layout Event</a> for details.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>rect</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>New in Release 2.0, <tt class="">rect</tt> is a read-only parameter that can be used to determine the size and position of the view. See <a class="document-link" href="#!/guide/Transitioning_to_the_New_UI_Layout_System-section-src-30088148_TransitioningtotheNewUILayoutSystem-ControlSizeandPositionandPost-LayoutEvent">#Control Size and Position and Post-Layout Event</a> for details.</p></td></tr></tbody></table>
 
 ### View Types and Default Layout Behavior
 
@@ -145,7 +91,6 @@ Views are logically grouped into three categories:
 * Views that should size themselves to their content by default
 
 * Views that should fill in the horizontal direction only (for example, toolbars)
-
 
 Windows fill the screen by default.
 
@@ -174,7 +119,6 @@ the same as specifying Ti.UI.SIZE.
 
 * TableViewSection
 
-
 #### Auto Fill Views
 
 For the following views, specifying 'auto' for either \`height\` or \`width\` is
@@ -194,7 +138,6 @@ the same as specifying Ti.UI.FILL.
 
 * ScrollableView
 
-
 #### Auto Fill Width Views
 
 The following views fill the available **width** by default, and scale vertically to fit
@@ -208,7 +151,6 @@ their contents.
 
 * SearchBar
 
-
 For these views, 'auto' specifies FILL behavior when it is used as a
 width value, and SIZE behavior when it is used as a height value.
 
@@ -216,63 +158,7 @@ width value, and SIZE behavior when it is used as a height value.
 
 This section describes the precedence rules that determine which settings take precedence if conflicting layout parameters are specified.
 
-Name
-
-Notes
-
-1
-
-width
-
-If width is defined, it takes precedence and the positioning pins are not used to determine the view's width.
-If width is not defined, and at least two horizontal positioning pins are defined, the width is calculated implicitly from the pins. For example, left and right or left and center.x. If all three horizontal pins are defined, the width is determined by the left and center.x pins. If width cannot be implicitly calculated it follows the view's default sizing behavior.
-
-2
-
-left
-
-If left is defined, it always takes precedence for positioning the view horizontally.
-
-3
-
-center.x
-
-Used to position the view horizontally if left is not set.
-If left is set, this property is not used to position the view, although it may be used to determine its width.
-
-4
-
-right
-
-Used to position the view horizontally when neither left or center.x is set.
-If either left or center.x is set, this property is not used to position the view, although it may be used to determine its width.
-
-5
-
-height
-
-If height is defined, it takes precedence and the positioning pins are not used to determine the view's height.
-If height is not defined, and at least two vertical positioning pins are defined, the height is determined implicitly from the pins. If all three vertical pins are defined, the height is determined by the top and center.y pins. If height cannot be implicitly calculated it follows the view's default sizing behavior.
-
-6
-
-top
-
-If specified, always takes precedence for positioning the view horizontally.
-
-7
-
-center.y
-
-Used to position the view vertically if top is not set.
-If top is defined, this property is not used to position the view, although it may be used to determine its height.
-
-8
-
-bottom
-
-Used to position the view vertically if neither top or center.y is set.
-If either top or center.y is set, this property is ignored. this property is not used to position the view, although it may be used to determine its height.
+<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Name</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Notes</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>1</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>width</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>If <tt class="">width</tt> is defined, it takes precedence and the positioning pins are not used to determine the view's width.<br>If <tt class="">width</tt> is not defined, and at least two horizontal positioning pins are defined, the width is calculated implicitly from the pins. For example, <tt class="">left</tt> and <tt class="">right</tt> or <tt class="">left</tt> and <tt class="">center.x</tt>. If all three horizontal pins are defined, the width is determined by the <tt class="">left</tt> and <tt>center.x</tt> pins. If width cannot be implicitly calculated it follows the view's default sizing behavior.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>2</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>left</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>If <tt>left</tt> is defined, it always takes precedence for positioning the view horizontally.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>3</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>center.x</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Used to position the view horizontally if <tt class="">left</tt> is not set.<br>If <tt>left</tt> is set, this property is not used to position the view, although it may be used to determine its width.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>4</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>right</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Used to position the view horizontally when neither <tt class="">left</tt> or <tt class="">center.x</tt> is set.<br>If either <tt class="">left</tt> or <tt>center.x</tt> is set, this property is not used to position the view, although it may be used to determine its width.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>5</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>height</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>If <tt class="">height</tt> is defined, it takes precedence and the positioning pins are not used to determine the view's height.<br>If <tt class="">height</tt> is not defined, and at least two vertical positioning pins are defined, the height is determined implicitly from the pins. If all three vertical pins are defined, the height is determined by the <tt class="">top</tt> and <tt>center.y</tt> pins. If height cannot be implicitly calculated it follows the view's default sizing behavior.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>6</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>top</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>If specified, always takes precedence for positioning the view horizontally.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>7</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>center.y</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Used to position the view vertically if <tt class="">top</tt> is not set.<br>If <tt>top</tt> is defined, this property is not used to position the view, although it may be used to determine its height.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>8</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>bottom</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Used to position the view vertically if neither <tt class="">top</tt> or <tt class="">center.y</tt> is set.<br>If either <tt class="">top</tt> or <tt>center.y</tt> is set, this property is ignored. this property is not used to position the view, although it may be used to determine its height.</p></td></tr></tbody></table>
 
 ### Batch Layout Updates
 
@@ -328,43 +214,14 @@ In previous releases, it was possible to change a view's size on iOS by updating
 
 All platforms now support specifying units for size and position values. The following table lists the supported units:
 
-Unit
-
-Abbreviation
-
-Note
-
-pixels
-
-px
-
-density-independent pixels
-
-dip or dp
-
-Equivalent to Apple "points."
-
-inches
-
-in
-
-millimeters
-
-mm
-
-Android, iOS only
-
-centimeters
-
-cm
-
-Android, iOS only
-
-points
-
-pt
-
-1/72 of an inch. Android only. Not to be confused with Apple "points."
+| Unit | Abbreviation | Note |
+| --- | --- | --- |
+| pixels | px |  |
+| density-independent pixels | dip or dp | Equivalent to Apple "points." |
+| inches | in |  |
+| millimeters | mm | Android, iOS only |
+| centimeters | cm | Android, iOS only |
+| points | pt | 1/72 of an inch. Android only. Not to be confused with Apple "points." |
 
 On Android, a density-independent pixel (DIP) corresponds to one pixel on a 160DPI display.
 
@@ -382,10 +239,9 @@ If no units are specified, a system-default unit is assumed. The system default 
 
 * DIP on Mobile Web
 
-
 ### Horizontal and Vertical Layouts
 
-There are no significant changes to the function of the relative layout modes, horizontal and vertical, but the same [precedence rules](#LayoutPrecedence) apply.
+There are no significant changes to the function of the relative layout modes, horizontal and vertical, but the same [precedence rules](#layout-precedence) apply.
 
 UI components with the layout parameter defined as either 'vertical' or 'horizontal' follow the same layout principles as the composite layout, but the view adds extra layout logic. Each child is laid out inside its own pre-calculated "sandbox", such that no two sandboxes overlap. Due to this two-step nature horizontal and vertical layouts are inherently slower than the composite layout, which simply uses the parent bounds as its sandbox.
 
@@ -409,7 +265,6 @@ Prior to Release 2.1, horizontal layout behavior was not consistent across platf
 
 * On iOS **Prior to Release 2.0.1**, the sandbox height of a child was independent of its siblings.
 
-
 ### Special Cases for Parent and Child Sizing
 
 In some cases, the size values for a parent and child may conflict:
@@ -419,7 +274,6 @@ In some cases, the size values for a parent and child may conflict:
 * When a child follows FILL behavior and the parent follows SIZE behavior, the parent effectively follows FILL behavior (the child will try and push the parent bounds until a constraining bound can be determined).
 
 * When a child has its dimensions defined as a percentage (child dimension based on parent bounds) and the parent follows SIZE behavior (parent dimensions based on child bounds) the result is undefined.
-
 
 ## Behavior Changes in Release 2.0
 
@@ -449,13 +303,9 @@ iOS now follows the same behavior as Android, and clips child views to the bound
 
 `win.open();`
 
-1.8 Behavior
-
-2.0 Behavior
-
-![worddav4fb91409ce9c13430f86da138c242336](/Images/appc/download/attachments/30088148/worddav4fb91409ce9c13430f86da138c242336.png)
-
-![worddavbf9f40926df0f9b0242053ab5cffb0df](/Images/appc/download/attachments/30088148/worddavbf9f40926df0f9b0242053ab5cffb0df.png)
+| 1.8 Behavior | 2.0 Behavior |
+| --- | --- |
+| ![worddav4fb91409ce9c13430f86da138c242336](/Images/appc/download/attachments/30088148/worddav4fb91409ce9c13430f86da138c242336.png) | ![worddavbf9f40926df0f9b0242053ab5cffb0df](/Images/appc/download/attachments/30088148/worddavbf9f40926df0f9b0242053ab5cffb0df.png) |
 
 #### Auto Sizes in iOS
 
@@ -477,13 +327,9 @@ When width or height parameters are specified as "auto", components will follow 
 
 `win.open();`
 
-1.8 Behavior
-
-2.0 Behavior
-
-![worddavaa6088d3ad3bd20bc33d30d227550b02](/Images/appc/download/attachments/30088148/worddavaa6088d3ad3bd20bc33d30d227550b02.png)
-
-![worddav126852fc23b07781c639da6fd1f28592](/Images/appc/download/attachments/30088148/worddav126852fc23b07781c639da6fd1f28592.png)
+| 1.8 Behavior | 2.0 Behavior |
+| --- | --- |
+| ![worddavaa6088d3ad3bd20bc33d30d227550b02](/Images/appc/download/attachments/30088148/worddavaa6088d3ad3bd20bc33d30d227550b02.png) | ![worddav126852fc23b07781c639da6fd1f28592](/Images/appc/download/attachments/30088148/worddav126852fc23b07781c639da6fd1f28592.png) |
 
 To restore 1.8 behavior on iOS, you can simply replace any "auto" sizes with Ti.UI.SIZE.
 
@@ -505,13 +351,9 @@ The following excerpt shows a label with undefined size and no position pins. In
 
 `win.open();`
 
-1.8 Behavior
-
-2.0 Behavior
-
-![worddav31f54ed77be22eccd2e469571c481964](/Images/appc/download/attachments/30088148/worddav31f54ed77be22eccd2e469571c481964.png)
-
-![worddava29d893857b83cbd19758ea1af58133a](/Images/appc/download/attachments/30088148/worddava29d893857b83cbd19758ea1af58133a.png)
+| 1.8 Behavior | 2.0 Behavior |
+| --- | --- |
+| ![worddav31f54ed77be22eccd2e469571c481964](/Images/appc/download/attachments/30088148/worddav31f54ed77be22eccd2e469571c481964.png) | ![worddava29d893857b83cbd19758ea1af58133a](/Images/appc/download/attachments/30088148/worddava29d893857b83cbd19758ea1af58133a.png) |
 
 The following excerpt shows a label with undefined size and position pins. In 1.8, this uses the FILL behavior, but in 2.0, the size is calculated implicitly from the position pins.
 
@@ -529,13 +371,9 @@ The following excerpt shows a label with undefined size and position pins. In 1.
 
 `win.open();`
 
-1.8 Behavior
-
-2.0 Behavior
-
-![worddav6e41b637f89f6875f5d501b01c4a9984](/Images/appc/download/attachments/30088148/worddav6e41b637f89f6875f5d501b01c4a9984.png)
-
-![worddav967bf3a3d42ea8df79601245d623401e](/Images/appc/download/attachments/30088148/worddav967bf3a3d42ea8df79601245d623401e.png)
+| 1.8 Behavior | 2.0 Behavior |
+| --- | --- |
+| ![worddav6e41b637f89f6875f5d501b01c4a9984](/Images/appc/download/attachments/30088148/worddav6e41b637f89f6875f5d501b01c4a9984.png) | ![worddav967bf3a3d42ea8df79601245d623401e](/Images/appc/download/attachments/30088148/worddav967bf3a3d42ea8df79601245d623401e.png) |
 
 To restore a view's 1.8 behavior on iOS, explicitly specify sizes as Ti.UI.FILL.
 
@@ -561,19 +399,15 @@ The following excerpt creates a view that has conflicting position pins. In Rele
 
 `win.open();`
 
-1.8 Behavior
-
-2.0 Behavior
-
-![worddav732cce0bec8f86aa2991ebd30aca9e12](/Images/appc/download/attachments/30088148/worddav732cce0bec8f86aa2991ebd30aca9e12.png)
-
-![worddav89cf18b21e03efa4a099bbdc479b58fc](/Images/appc/download/attachments/30088148/worddav89cf18b21e03efa4a099bbdc479b58fc.png)
+| 1.8 Behavior | 2.0 Behavior |
+| --- | --- |
+| ![worddav732cce0bec8f86aa2991ebd30aca9e12](/Images/appc/download/attachments/30088148/worddav732cce0bec8f86aa2991ebd30aca9e12.png) | ![worddav89cf18b21e03efa4a099bbdc479b58fc](/Images/appc/download/attachments/30088148/worddav89cf18b21e03efa4a099bbdc479b58fc.png) |
 
 Note that in this example, an animation that moved the child view by changing its center value would not work, because the center value is overridden by the left and top values.
 
 #### Horizontal Layout in iOS
 
-In previous versions of the Titanium SDK, the sandbox height of a child was independent of its sibling's dimensions. Now all children in a row have the same sandbox height. (See section on [#Horizontal and Vertical Layouts](#HorizontalandVerticalLayouts) below).
+In previous versions of the Titanium SDK, the sandbox height of a child was independent of its sibling's dimensions. Now all children in a row have the same sandbox height. (See section on [#Horizontal and Vertical Layouts](#horizontal-and-vertical-layouts) below).
 
 **Test Code**
 
@@ -599,13 +433,9 @@ Note that there are still inconsistencies between Android, iOS and Mobile Web in
 
 `win.open();`
 
-1.8 Behavior
-
-2.0 Behavior
-
-![worddav3daf8cc96bf475e175f9fc1e669263bc](/Images/appc/download/attachments/30088148/worddav3daf8cc96bf475e175f9fc1e669263bc.png)
-
-![worddav4f9852f2fadcc9f123e2713b77d09987](/Images/appc/download/attachments/30088148/worddav4f9852f2fadcc9f123e2713b77d09987.png)
+| 1.8 Behavior | 2.0 Behavior |
+| --- | --- |
+| ![worddav3daf8cc96bf475e175f9fc1e669263bc](/Images/appc/download/attachments/30088148/worddav3daf8cc96bf475e175f9fc1e669263bc.png) | ![worddav4f9852f2fadcc9f123e2713b77d09987](/Images/appc/download/attachments/30088148/worddav4f9852f2fadcc9f123e2713b77d09987.png) |
 
 ### Android Behavior Changes
 
@@ -631,13 +461,9 @@ In previous releases, the positioning properties would determine the width or he
 
 `win.open();`
 
-1.8 Behavior
-
-2.0 Behavior
-
-![worddave1adec9f3c6d250f72cc785e6f8b76ac](/Images/appc/download/attachments/30088148/worddave1adec9f3c6d250f72cc785e6f8b76ac.png)
-
-![worddav339a691008b1de03900c82a9aa7558d6](/Images/appc/download/attachments/30088148/worddav339a691008b1de03900c82a9aa7558d6.png)
+| 1.8 Behavior | 2.0 Behavior |
+| --- | --- |
+| ![worddave1adec9f3c6d250f72cc785e6f8b76ac](/Images/appc/download/attachments/30088148/worddave1adec9f3c6d250f72cc785e6f8b76ac.png) | ![worddav339a691008b1de03900c82a9aa7558d6](/Images/appc/download/attachments/30088148/worddav339a691008b1de03900c82a9aa7558d6.png) |
 
 #### Undefined Sizes in Android
 
@@ -661,13 +487,9 @@ The following excerpt shows a child view with positioning pins but no defined wi
 
 `win.open();`
 
-1.8 Behavior
-
-2.0 Behavior
-
-![worddavb4ef228203e68062d1cd1ba1ca94674c](/Images/appc/download/attachments/30088148/worddavb4ef228203e68062d1cd1ba1ca94674c.png)
-
-![worddav8a407370cd8830143e4ed0a9faf90cca](/Images/appc/download/attachments/30088148/worddav8a407370cd8830143e4ed0a9faf90cca.png)
+| 1.8 Behavior | 2.0 Behavior |
+| --- | --- |
+| ![worddavb4ef228203e68062d1cd1ba1ca94674c](/Images/appc/download/attachments/30088148/worddavb4ef228203e68062d1cd1ba1ca94674c.png) | ![worddav8a407370cd8830143e4ed0a9faf90cca](/Images/appc/download/attachments/30088148/worddav8a407370cd8830143e4ed0a9faf90cca.png) |
 
 #### Positioning Pins in Android
 
@@ -691,13 +513,9 @@ In previous versions of the Titanium SDK, the precedence of positioning pins was
 
 `win.open();`
 
-1.8 Behavior
-
-2.0 Behavior
-
-![worddav898d6f54c105c1e4f9559eaef1e91a0a](/Images/appc/download/attachments/30088148/worddav898d6f54c105c1e4f9559eaef1e91a0a.png)
-
-![worddav538f8f90df1cf9ae4a1481ed2500025e](/Images/appc/download/attachments/30088148/worddav538f8f90df1cf9ae4a1481ed2500025e.png)
+| 1.8 Behavior | 2.0 Behavior |
+| --- | --- |
+| ![worddav898d6f54c105c1e4f9559eaef1e91a0a](/Images/appc/download/attachments/30088148/worddav898d6f54c105c1e4f9559eaef1e91a0a.png) | ![worddav538f8f90df1cf9ae4a1481ed2500025e](/Images/appc/download/attachments/30088148/worddav538f8f90df1cf9ae4a1481ed2500025e.png) |
 
 ### Mobile Web Layout Behavior
 
@@ -717,7 +535,6 @@ On iOS, the following changes apply:
 * Any UI component with the width property defined as "auto" can safely define its width parameter as Ti.UI.SIZE to return to 1.8 behavior.
 
 * Any UI component with the width property undefined and with less than 2 positioning pins defined can safely define its width parameter as Ti.UI.FILL to return to 1.8 behavior.
-
 
 The same principles apply to the height property.
 

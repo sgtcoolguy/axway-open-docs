@@ -1,17 +1,16 @@
 {"title":"Managing Non-Titanium Client Applications in Dashboard","weight":"10"}
 
-* [Register an Application for Services](#RegisteranApplicationforServices)
+* [Register an Application for Services](#register-an-application-for-services)
 
-  * [Register an APS SDK application](#RegisteranAPSSDKapplication)
+    * [Register an APS SDK application](#register-an-aps-sdk-application)
 
-  * [Register an API or Microservice application](#RegisteranAPIorMicroserviceapplication)
+    * [Register an API or Microservice application](#register-an-api-or-microservice-application)
 
-  * [Register a Website or Web application](#RegisteraWebsiteorWebapplication)
+    * [Register a Website or Web application](#register-a-website-or-web-application)
 
-  * [Register a Custom application](#RegisteraCustomapplication)
+    * [Register a Custom application](#register-a-custom-application)
 
-* [Enable Platform Services](#EnablePlatformServices)
-
+* [Enable Platform Services](#enable-platform-services)
 
 To use Appcelerator Platform Services in your Android and iOS applications, you need to first register an application in Appcelerator Dashboard. Registering the application defines the name, platform, and other metadata about the application. Once you've registered the application in Dashboard, you can download the libraries and frameworks to integrate Appcelerator Platform Services into your application. Appcelerator Dashboard also generates a new Mobile Backend Services datasource and the application keys required to enable the services in your app.
 
@@ -31,7 +30,7 @@ To register an APS SDK application for services:
 
 4. Select **APS SDK** from the _Type_ selection menu.
 
-  ![RegisterAppForService_latest_APSSDK](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_APSSDK.png)
+    ![RegisterAppForService_latest_APSSDK](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_APSSDK.png)
 5. Select a **Platform** (**Andriod** or **iOS**).
 
 6. Optionally, enter a unique **Identifier** for your application.
@@ -40,14 +39,13 @@ To register an APS SDK application for services:
 
 8. Select **Services** for your application by selecting or deselecting the check-boxes for the following:
 
-  * Analytics
+    * Analytics
 
-  * Provision Cloud Services (Mobile Backend Services)
+    * Provision Cloud Services (Mobile Backend Services)
 
 9. Add teams to the application from your organization by clicking the add (**+**) button in the Assign Teams list.
 
 10. Click **OK**.
-
 
 Appcelerator Dashboard displays the **Services** tab for your application. Follow the directions to add Platform Services to your application.
 
@@ -63,7 +61,7 @@ To register an API or microservice application:
 
 4. Select **API/Microservice** from the _Type_ selection menu.
 
-  ![RegisterAppForService_latest_API](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_API.png)
+    ![RegisterAppForService_latest_API](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_API.png)
 5. Enter a **Platform** for your application.
 
 6. Optionally, enter a unique **Identifier** for your application.
@@ -72,14 +70,13 @@ To register an API or microservice application:
 
 8. Select **Services** for your application by selecting or deselecting the check-boxes for the following:
 
-  * Analytics
+    * Analytics
 
-  * Provision Cloud Services (Mobile Backend Services)
+    * Provision Cloud Services (Mobile Backend Services)
 
 9. Add teams to the application from your organization by clicking the add (**+**) button in the Assign Teams list.
 
 10. Click **OK**.
-
 
 ### Register a Website or Web application
 
@@ -93,7 +90,7 @@ To register a Website or Web application:
 
 4. Select **Website/Web App** from the _Type_ selection menu.
 
-  ![RegisterAppForService_latest_Web](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_Web.png)
+    ![RegisterAppForService_latest_Web](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_Web.png)
 5. Enter a **Platform** for your application.
 
 6. Optionally, enter a unique **Identifier** for your application.
@@ -102,14 +99,13 @@ To register a Website or Web application:
 
 8. Select **Services** for your application by selecting or deselecting the check-boxes for the following:
 
-  * Analytics
+    * Analytics
 
-  * Provision Cloud Services (Mobile Backend Services)
+    * Provision Cloud Services (Mobile Backend Services)
 
 9. Add teams to the application from your organization by clicking the add (**+**) button in the Assign Teams list.
 
 10. Click **OK**.
-
 
 ### Register a Custom application
 
@@ -123,7 +119,7 @@ To register a custom application (other than APS SDK, API/Microservice, or Websi
 
 4. Select **Other** from the _Type_ selection menu.
 
-  ![RegisterAppForService_latest_Other](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_Other.png)
+    ![RegisterAppForService_latest_Other](/Images/appc/download/attachments/60148494/RegisterAppForService_latest_Other.png)
 5. Enter a **Platform** for your application.
 
 6. Optionally, enter a unique **Identifier** for your application.
@@ -132,14 +128,13 @@ To register a custom application (other than APS SDK, API/Microservice, or Websi
 
 8. Select **Services** for your application by selecting or deselecting the check-boxes for the following:
 
-  * Analytics
+    * Analytics
 
-  * Provision Cloud Services (Mobile Backend Services)
+    * Provision Cloud Services (Mobile Backend Services)
 
 9. Add teams to the application from your organization by clicking the add (**+**) button in the Assign Teams list.
 
 10. Click **OK**.
-
 
 ## Enable Platform Services
 
@@ -153,13 +148,11 @@ The **Services** tab also provides the functionality for you to generate a new s
 
 3. Verify that you want to generate a new key for the selected environment. Click **Continue** to generate the new key. Click **Cancel** to return to the Services tab without generating a new key.
 
-
 To integrate the Cloud and Analytics services with your application:
 
 1. Click the **Download** button to download the APS SDK, unpack it, and then add the library to your project.
 
 2. Copy the code snippets to your application as instructed to enable the services. Before copying and pasting the code snippet to enable or initialize services, use the **Environment** drop-down list to select the environment to which to deploy your application.
-
 
 For more detailed instructions, see the [Quick Start Guide for Android APS SDK](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_Android/Quick_Start_Guide_for_Android_APS_SDK/) and [Quick Start Guide for iOS APS SDK](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_iOS/Quick_Start_Guide_for_iOS_APS_SDK/) guides.
 

@@ -2,18 +2,17 @@
 
 This document contains information on where to download the community app and overview of core concepts and conventions.
 
-* [Download](#Download)
+* [Download](#download)
 
-* [Core Concepts and Conventions](#CoreConceptsandConventions)
+* [Core Concepts and Conventions](#core-concepts-and-conventions)
 
-  * [CommonJS pattern](#CommonJSpattern)
+    * [CommonJS pattern](#commonjs-pattern)
 
-  * [Global namespace](#Globalnamespace)
+    * [Global namespace](#global-namespace)
 
-  * [Platform build directories](#Platformbuilddirectories)
+    * [Platform build directories](#platform-build-directories)
 
-  * [Wrapping proxy objects](#Wrappingproxyobjects)
-
+    * [Wrapping proxy objects](#wrapping-proxy-objects)
 
 ## Download
 
@@ -32,7 +31,6 @@ This app features a number of Titanium current-practices, including:
 * Heavy use of the platform build directories to create user experiences tailored to the user's operating system
 
 * Wrapping of proxies to avoid the need to extend the Titanium objects
-
 
 This app is not a template for new projects. It is a living app, one that is in constant development by our Development Relations team. We encourage you to pull ideas from the app rather than specific code.
 

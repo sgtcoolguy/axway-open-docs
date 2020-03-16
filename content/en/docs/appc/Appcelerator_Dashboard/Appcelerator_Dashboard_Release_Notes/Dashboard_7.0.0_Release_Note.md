@@ -20,7 +20,6 @@ Dashboard 7.0.0 is a major release, which includes new features, several improve
 
 * Added OS and app version breakdown to AMPLIFY Crash Analytics crash detail view.
 
-
 ## Improvements
 
 * Added the end-of-life (EOL) date of November 26, 2019 to the deprecation message on app _Performance_ view.
@@ -38,7 +37,6 @@ Dashboard 7.0.0 is a major release, which includes new features, several improve
 * Improved consistency of headers and navigation on Org and User management views.
 
 * Improved consistency of form views' primary action controls and buttons.
-
 
 ## Fixed issues
 

@@ -6,22 +6,21 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-  * [Connectors](#Connectors)
+    * [Connectors](#connectors)
 
-  * [Models](#Models)
+    * [Models](#models)
 
-  * [APIs](#APIs)
+    * [APIs](#apis)
 
-  * [Blocks](#Blocks)
+    * [Blocks](#blocks)
 
-  * [Webs](#Webs)
+    * [Webs](#webs)
 
-  * [Flows](#Flows)
+    * [Flows](#flows)
 
-* [Topics](#Topics)
-
+* [Topics](#topics)
 
 With the release of version 1.10.0, **Arrow Builder** will now be known as **API Builder**. The following pages reference many concepts and original features from Arrow Builder but there also several new features and workflows that are uniquely part of API Builder.
 

@@ -6,7 +6,6 @@ Dashboard 4.9.1 is a patch release, which includes a behavior change, improvemen
 
 * Sign-ups using addresses from temporary email providers will now be rejected
 
-
 ## Improvements
 
 * Revised error message with users whose trial plan has expired when attempting to login in through the CLI
@@ -14,7 +13,6 @@ Dashboard 4.9.1 is a patch release, which includes a behavior change, improvemen
 * Improved display of Arrow Quick Start content
 
 * Updated "Switch Org" button on the Manage Organization UI and fixed case where users may not be shown the option to switch from an inactive organization to an active one
-
 
 ## Fixed Issues
 

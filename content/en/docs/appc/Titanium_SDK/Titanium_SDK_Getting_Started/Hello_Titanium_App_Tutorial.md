@@ -10,39 +10,38 @@ The first step is to create a new Mobile App Project and select a starting templ
 
 1. In Studio, either:
 
-  1. Press **⌘+N** (Mac) or **Ctrl+N** (Windows) to open the project wizard dialog.
+    1. Press **⌘+N** (Mac) or **Ctrl+N** (Windows) to open the project wizard dialog.
 
-  2. Or from the menu bar, select **File** > **New** > **Mobile App Project**.
+    2. Or from the menu bar, select **File** > **New** > **Mobile App Project**.
 
 2. Select **Mobile App Project** as the wizard type and click **Next**.
 
-  ![Studio-Select-a-wizard](/Images/appc/download/attachments/53870988/Studio-Select-a-wizard.png)
+    ![Studio-Select-a-wizard](/Images/appc/download/attachments/53870988/Studio-Select-a-wizard.png)
 3. On the **Project Template** page, select **Default Alloy Project** as the template type. Click **Next**.
 
-  ![Studio-Project-Template](/Images/appc/download/attachments/53870988/Studio-Project-Template.png)
+    ![Studio-Project-Template](/Images/appc/download/attachments/53870988/Studio-Project-Template.png)
 4. On the **Project Location** page, enter the following information:
 
-  * In the **Project Name** field, enter **Hello**.
+    * In the **Project Name** field, enter **Hello**.
 
-  * In the **App ID** field, enter **com.example.hello**. This format is called reverse domain notation. You must use your own domain before publishing your application to market, but for testing purposes a temporary domain is fine.
+    * In the **App ID** field, enter **com.example.hello**. This format is called reverse domain notation. You must use your own domain before publishing your application to market, but for testing purposes a temporary domain is fine.
 
-  * Select one or more **Deployment Targets**. By default, Studio selects all available targets platforms that you have installed.
+    * Select one or more **Deployment Targets**. By default, Studio selects all available targets platforms that you have installed.
 
-  * Disable enable Axway Appcelerator Platform Services (defaults to enabled) as we won't use this service for this app.
+    * Disable enable Axway Appcelerator Platform Services (defaults to enabled) as we won't use this service for this app.
 
-    ![Studio-Project-Location](/Images/appc/download/attachments/53870988/Studio-Project-Location.png)
+        ![Studio-Project-Location](/Images/appc/download/attachments/53870988/Studio-Project-Location.png)
 5. Click **Finish** to create the project. By default, the application's configuration file called tiapp.xml opens up in the TiApp Editor. You can close that file.
 
 6. In the **Project Explorer** view, open **index.xml** located in the **app/views** folder.
 
-  ![Studio-Hello-Titanium](/Images/appc/download/attachments/53870988/Studio-Hello-Titanium.png)
+    ![Studio-Hello-Titanium](/Images/appc/download/attachments/53870988/Studio-Hello-Titanium.png)
 
-  When developing an app in Alloy, you create your UI declaratively using XML elements that, during compilations, are mapped to standard Titanium SDK objects. For instance, the default Alloy template includes a <Label> element that corresponds to a [Label](#!/api/Titanium.UI.Label) object.
+    When developing an app in Alloy, you create your UI declaratively using XML elements that, during compilations, are mapped to standard Titanium SDK objects. For instance, the default Alloy template includes a <Label> element that corresponds to a [Label](#!/api/Titanium.UI.Label) object.
 
 7. In index.xml, change the text inside the <Label> element from Hello, World to Hello, Titanium.
 
 8. Save your changes. Now we're ready to run the application.
-
 
 ## Running the application
 
@@ -53,10 +52,9 @@ To run the application you select a target simulator, emulator, or device, and c
 2. Make sure **Run** is selected in the **Launch Mode** drop-down.
 
 3. From the **Target** drop-down, select an iOS simulator.
-  ![select_sim](/Images/appc/download/attachments/53870988/select_sim.png)
+    ![select_sim](/Images/appc/download/attachments/53870988/select_sim.png)
 
 4. Click **Run**. Your application will compile and launch in the iOS Simulator. Click the **Hello, Titanium** label text. An alert dialog appears.
-  ![sim_output_loaded](/Images/appc/download/attachments/53870988/sim_output_loaded.png) ![sim_output_alert](/Images/appc/download/attachments/53870988/sim_output_alert.png)
-
+    ![sim_output_loaded](/Images/appc/download/attachments/53870988/sim_output_loaded.png) ![sim_output_alert](/Images/appc/download/attachments/53870988/sim_output_alert.png)
 
 If you run into problems running your application, see [Studio Troubleshooting](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Studio_Troubleshooting/).

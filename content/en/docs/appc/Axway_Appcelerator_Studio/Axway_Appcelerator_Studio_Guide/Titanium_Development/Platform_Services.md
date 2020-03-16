@@ -1,17 +1,16 @@
 {"title":"Platform Services","weight":"130"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Enable Appcelerator Services](#EnableAppceleratorServices)
+* [Enable Appcelerator Services](#enable-appcelerator-services)
 
-  * [tiapp.xml](#tiapp.xml)
+    * [tiapp.xml](#tiapp.xml)
 
-    * [Android Permissions](#AndroidPermissions)
+        * [Android Permissions](#android-permissions)
 
-* [Troubleshooting](#Troubleshooting)
+* [Troubleshooting](#troubleshooting)
 
-  * [Unable to enable Appcelerator Services](#UnabletoenableAppceleratorServices)
-
+    * [Unable to enable Appcelerator Services](#unable-to-enable-appcelerator-services)
 
 ## Introduction
 
@@ -25,7 +24,6 @@ Appcelerator Services are a set of features that are enabled through Appcelerato
 
 * **Appcelerator Analytics**: Track your applications' user adoption and engagement. Understand how your application is used, which features are not used and decide what will go in the next version of your application. For more information, see [Appcelerator Analytics](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/).
 
-
 You can monitor and manage these services using the Appcelerator Dashboard at [https://platform.appcelerator.com](https://platform.appcelerator.com).
 
 For information on using the dashboard, see [Appcelerator Dashboard](/docs/appc/Appcelerator_Dashboard/).
@@ -37,7 +35,6 @@ To enable Appcelerator Services for a Titanium or Alloy project:
 * When creating a new application in Appcelerator Studio, make sure the **Enable Appcelerator Services** checkbox is enabled.
 
 * For a previously created project, open your tiapp.xml file, then click the **Enable Services** button under the _Appcelerator Service_ section.
-
 
 Appcelerator Studio injects code in to the tiapp.xml file to enable these services for your project. See code examples below. Do not modify these changes or else you will disable these services.
 
@@ -203,36 +200,14 @@ tiapp.xml
 
 The application requires the following Android permissions to use AMPLIFY Appcelerator Services for Titanium and Alloy applications.
 
-Permission
-
-Required By
-
-ACCESS\_WIFI\_STATE
-
-All services to access the Wi-Fi state of the device.
-
-BLUETOOTH
-
-The Test service to uniquely identify the device.
-
-BLUETOOTH\_ADMIN
-
-The Test service to uniquely identify the device.
-
-GET\_TASKS
-
-* The Performance service to accurately log which activity caused a crash or error
-
-* The Test service to detect UI changes, UI interactions and playback changes.
-
-
-INTERNET
-
-All services to access the Appcelerator Platform servers.
-
-READ\_PHONE\_STATE
-
-The Test service to uniquely identify the device.
+| Permission | Required By |
+| --- | --- |
+| ACCESS\_WIFI\_STATE | All services to access the Wi-Fi state of the device. |
+| BLUETOOTH | The Test service to uniquely identify the device. |
+| BLUETOOTH\_ADMIN | The Test service to uniquely identify the device. |
+| GET\_TASKS | * The Performance service to accurately log which activity caused a crash or error<br />    <br />* The Test service to detect UI changes, UI interactions and playback changes. |
+| INTERNET | All services to access the Appcelerator Platform servers. |
+| READ\_PHONE\_STATE | The Test service to uniquely identify the device. |
 
 ## Troubleshooting
 

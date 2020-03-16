@@ -1,17 +1,16 @@
 {"title":"iOS Module 64-bit Support","weight":"40"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Module Builds](#ModuleBuilds)
+* [Module Builds](#module-builds)
 
-* [Troubleshooting](#Troubleshooting)
+* [Troubleshooting](#troubleshooting)
 
-  * [Couldn't find module: X for architecture: X](#Couldn'tfindmodule:Xforarchitecture:X)
+    * [Couldn't find module: X for architecture: X](#couldn't-find-module:-x-for-architecture:-x)
 
-  * [Undefined symbols for architecture](#Undefinedsymbolsforarchitecture)
+    * [Undefined symbols for architecture](#undefined-symbols-for-architecture)
 
-  * [Module building for armv7, i386, and arm64 but not x86\_64](#Modulebuildingforarmv7,i386,andarm64butnotx86_64)
-
+    * [Module building for armv7, i386, and arm64 but not x86\_64](#module-building-for-armv7,-i386,-and-arm64-but-not-x86_64)
 
 ## Overview
 
@@ -30,7 +29,6 @@ To update an existing iOS module and make it 64-bit compatible follow these step
 3. Update each of the TARGET (not project) architectures to standard aka $(ARCHS\_STANDARD). This can be done by selecting _Architectures_ and hitting the _delete_ key on the keyboard.
 
 4. Set the **iOS Deployment Target** to iOS 6.0 or newer.
-
 
 That's it. Build the module normally with this Release and it should now be 64-bit compatible. To verify, run the following command:
 
@@ -70,11 +68,9 @@ This could happen if:
 
 * The module being required does not have the architecture the app is running on (arm64 in this case).
 
-
 #### Solution(s):
 
 * The module needs to be rebuilt with 64-bit support. See the instructions above.
-
 
 ### Undefined symbols for architecture
 
@@ -191,7 +187,6 @@ This may happen if your module depends on a 3rd party library that does not incl
 #### Solution(s):
 
 * Rebuild the module with a new build of the library that includes the missing architecture (x86\_64 in this case).
-
 
 Error Log
 
@@ -551,10 +546,9 @@ This log shows a number of linker errors referencing the "_std_" namespace. This
 
 * In the _module.xcconfig_, tell the compiler to link against the _libstdc++_ library by adding the following line as you would when including a framework.
 
-  module.xcconfig
+    module.xcconfig
 
-  `OTHER_LDFLAGS=$(inherited) -lstdc++.6.0.9`
-
+    `OTHER_LDFLAGS=$(inherited) -lstdc++.6.0.9`
 
 ### Module building for armv7, i386, and arm64 but not x86\_64
 
@@ -566,20 +560,20 @@ Here are two different ways to update the _build.py_:
 
 * Edit the existing _build.py_
 
-  1. Open the _build.py_ in a text editor
+    1. Open the _build.py_ in a text editor
 
-  2. Search for "**\-arch i386**" if you find it, remove that text so that the line looks something like this
+    2. Search for "**\-arch i386**" if you find it, remove that text so that the line looks something like this
 
-    build.py
+        build.py
 
-    `rc` `=` `os.system(``"xcodebuild -sdk iphonesimulator -configuration Release"``)`
+        `rc` `=` `os.system(``"xcodebuild -sdk iphonesimulator -configuration Release"``)`
 
-  3. Rebuild your module, and see if it includes x86\_64 using _xcrun lipo --info_ as mentioned above.
+    3. Rebuild your module, and see if it includes x86\_64 using _xcrun lipo --info_ as mentioned above.
 
 * Update the _build.py_
 
-  1. Create a new module using the same _moduleid_ as the module you are updating
+    1. Create a new module using the same _moduleid_ as the module you are updating
 
-  2. Copy the new _build.py_ it into your old module (overwriting the old _build.py_)
+    2. Copy the new _build.py_ it into your old module (overwriting the old _build.py_)
 
-  3. Rebuild your module, and see if it includes x86\_64 using _xcrun lipo --info_ as mentioned above.
+    3. Rebuild your module, and see if it includes x86\_64 using _xcrun lipo --info_ as mentioned above.

@@ -6,38 +6,37 @@ Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgra
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Configuration](#Configuration)
+* [Configuration](#configuration)
 
-* [API Builder tabs](#APIBuildertabs)
+* [API Builder tabs](#api-builder-tabs)
 
-  * [Summary](#Summary)
+    * [Summary](#summary)
 
-  * [API Doc & Test](#APIDoc&Test)
+    * [API Doc & Test](#api-doc-&-test)
 
-  * [Models](#Models)
+    * [Models](#models)
 
-  * [Configurations](#Configurations)
+    * [Configurations](#configurations)
 
-  * [Connectors](#Connectors)
+    * [Connectors](#connectors)
 
-  * [Logs](#Logs)
+    * [Logs](#logs)
 
-    * [Filtering logs](#Filteringlogs)
+        * [Filtering logs](#filtering-logs)
 
-    * [Clear log](#Clearlog)
+        * [Clear log](#clear-log)
 
-    * [Log pagination](#Logpagination)
+        * [Log pagination](#log-pagination)
 
-* [Information and search](#Informationandsearch)
+* [Information and search](#information-and-search)
 
-* [API Builder and Swagger](#APIBuilderandSwagger)
+* [API Builder and Swagger](#api-builder-and-swagger)
 
-  * [API Builder project Swagger](#APIBuilderprojectSwagger)
+    * [API Builder project Swagger](#api-builder-project-swagger)
 
-  * [Individual APIs](#IndividualAPIs)
-
+    * [Individual APIs](#individual-apis)
 
 ## Introduction
 
@@ -53,53 +52,13 @@ To configure access to the Admin Console, open the project's ./conf/default.js f
 
 The admin dictionary can contain the following keys:
 
-Key
-
-Type
-
-Default
-
-Description
-
-allowedHosts
-
-Array<String>
-
-\-
-
-When the application is in production, restrict access to the Admin Console to the specified hosts
-
-disableAPIDoc
-
-Boolean
-
-false
-
-Set to true to not display the generated API Docs. Changing the setting only works in production. Swagger is always available in dev mode.
-
-enabled
-
-Boolean
-
-true
-
-Set to true to enable the Admin Console.
-
-validEmails
-
-Array<String>
-
-developer's e-mail address
-
-When the application is in production, restrict access to the Admin Console to the specified accounts.
-
-validOrgs
-
-Array<Number>
-
-developer's organization
-
-When the application is in production, restrict access to the Admin Console to the specified organizations.
+| Key | Type | Default | Description |
+| --- | --- | --- | --- |
+| allowedHosts | Array<String> | \- | When the application is in production, restrict access to the Admin Console to the specified hosts |
+| disableAPIDoc | Boolean | false | Set to true to not display the generated API Docs. Changing the setting only works in production. Swagger is always available in dev mode. |
+| enabled | Boolean | true | Set to true to enable the Admin Console. |
+| validEmails | Array<String> | developer's e-mail address | When the application is in production, restrict access to the Admin Console to the specified accounts. |
+| validOrgs | Array<Number> | developer's organization | When the application is in production, restrict access to the Admin Console to the specified organizations. |
 
 **Example:**
 
@@ -174,7 +133,6 @@ The **Models** tab lets you create new models. The model build process involves 
 2. Add fields to your new model.
 
 3. Select auto-generated API endpoint.
-
 
 ![model_page](/Images/appc/download/attachments/49153257/model_page.png)
 

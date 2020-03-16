@@ -1,13 +1,12 @@
 {"title":"Relational Fields","weight":"50"}
 
-* [Create a relational field](#Createarelationalfield)
+* [Create a relational field](#create-a-relational-field)
 
-* [Show a relational field](#Showarelationalfield)
+* [Show a relational field](#show-a-relational-field)
 
-* [Query a relational field](#Queryarelationalfield)
+* [Query a relational field](#query-a-relational-field)
 
-* [Remove a relational field](#Removearelationalfield)
-
+* [Remove a relational field](#remove-a-relational-field)
 
 Relational Fields provide a simple way for users to define relations between any Mobile Backend Services (MBS) objects.
 

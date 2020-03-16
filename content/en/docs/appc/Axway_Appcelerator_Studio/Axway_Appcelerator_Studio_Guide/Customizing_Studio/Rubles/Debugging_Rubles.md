@@ -1,19 +1,18 @@
 {"title":"Debugging Rubles","weight":"50"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Writing to the console](#Writingtotheconsole)
+* [Writing to the console](#writing-to-the-console)
 
-* [Set the logging level](#Setthelogginglevel)
+* [Set the logging level](#set-the-logging-level)
 
-* [Logging to the console](#Loggingtotheconsole)
+* [Logging to the console](#logging-to-the-console)
 
-* [Writing out properties](#Writingoutproperties)
+* [Writing out properties](#writing-out-properties)
 
-* [Writing out available methods](#Writingoutavailablemethods)
+* [Writing out available methods](#writing-out-available-methods)
 
-* [Disabling caching](#Disablingcaching)
-
+* [Disabling caching](#disabling-caching)
 
 ## Overview
 
@@ -42,7 +41,6 @@ Logging levels are:
 * warning
 
 * error
-
 
 You might add this to the top of your file. With broader logging levels containing all the content from more restrictive ones (in other words, trace contains info, warning, and error as well).
 

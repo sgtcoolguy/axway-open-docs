@@ -1,33 +1,32 @@
 {"title":"JavaScript Development Primer","weight":"30"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [JavaScript Resources](#JavaScriptResources)
+* [JavaScript Resources](#javascript-resources)
 
-  * [Online and virtual courses](#Onlineandvirtualcourses)
+    * [Online and virtual courses](#online-and-virtual-courses)
 
-  * [Online Books and Resources](#OnlineBooksandResources)
+    * [Online Books and Resources](#online-books-and-resources)
 
-  * [Print Books](#PrintBooks)
+    * [Print Books](#print-books)
 
-* [A few best practices](#Afewbestpractices)
+* [A few best practices](#a-few-best-practices)
 
-  * [Don't pollute the global scope!](#Don'tpollutetheglobalscope!)
+    * [Don't pollute the global scope!](#don't-pollute-the-global-scope!)
 
-  * [Use === and !== instead of == and !=](#Use===and!==insteadof==and!=)
+    * [Use === and !== instead of == and !=](#use-===-and-!==-instead-of-==-and-!=)
 
-  * [Ternary operator](#Ternaryoperator)
+    * [Ternary operator](#ternary-operator)
 
-  * [Lots of variables? Use a comma](#Lotsofvariables?Useacomma)
+    * [Lots of variables? Use a comma](#lots-of-variables?-use-a-comma)
 
-  * [Efficient loops](#Efficientloops)
+    * [Efficient loops](#efficient-loops)
 
-  * [Wrap self-calling functions in parenthesis](#Wrapself-callingfunctionsinparenthesis)
+    * [Wrap self-calling functions in parenthesis](#wrap-self-calling-functions-in-parenthesis)
 
-  * [Summary](#Summary)
-
+    * [Summary](#summary)
 
 ## Objective
 
@@ -49,7 +48,6 @@ While Javascript popularity stems from its strong web browser presence, it has b
 
 * Titanium is, of course, a JavaScript framework for mobile app development (see [ECMA-262-5 Compliance](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/ECMA-262-5_Compliance/) for more info on language support and standards compliance).
 
-
 Here are a few of the features of the language that make it a favorite among its developers:
 
 * Dynamic typing (which allows [Duck typing](http://en.wikipedia.org/wiki/Duck_typing))
@@ -61,7 +59,6 @@ Here are a few of the features of the language that make it a favorite among its
 * A small set of standard functions and syntactical elements - learn the whole language in a day!
 
 * [Closures](http://en.wikipedia.org/wiki/Closure_(computer_science))
-
 
 ## JavaScript Resources
 
@@ -81,7 +78,6 @@ The following is an alphabetical list of online JavaScript course offerings that
 
 * Take free online courses in JavaScript and programming for the web from top universities and institutions including Microsoft and W3C from [edX](https://www.edx.org/learn/javascript)
 
-
 ### Online Books and Resources
 
 The following are some recommended JavaScript resources, freely-available on the web, that you will likely want to refer to while you build your Titanium application.
@@ -98,7 +94,6 @@ The following are some recommended JavaScript resources, freely-available on the
 
 * [Learning Advanced JavaScript](http://ejohn.org/apps/learn/) from John Resig, the creator of jQuery. As you can see from its [stated goal](http://ejohn.org/apps/learn/#2), this is advanced stuff to be studied once you master the basics.
 
-
 ### Print Books
 
 Here are a few good books to get you started. These should be considered required reading for those serious about understanding Javascript and leveraging it to its full capacity.
@@ -110,7 +105,6 @@ Here are a few good books to get you started. These should be considered require
 * [JavaScript Patterns](http://oreilly.com/catalog/9780596806767), by Stoyan Stefanov
 
 * [Eloquent JavaScript](http://www.amazon.com/gp/product/1593272820?ie=UTF8&tag=marijhaver-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=1593272820), by Marijn Haverbeke
-
 
 ## A few best practices
 

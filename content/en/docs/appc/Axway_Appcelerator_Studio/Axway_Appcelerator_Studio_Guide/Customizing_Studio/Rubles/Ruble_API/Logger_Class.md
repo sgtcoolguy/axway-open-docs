@@ -38,26 +38,10 @@ Examples of how you might interact with methods of the Logger class.
 
 Logger objects have the following static methods:
 
-Property
-
-Description
-
-log\_level
-
-Sets the current log level to one of none, trace, info, warning, or error.
-
-log\_error(message)
-
-Write out an error message to the log file.
-
-log\_warning(message)
-
-Write out a warning message to the log file.
-
-log\_info(message)
-
-Write out an info message to the log file.
-
-trace(message)
-
-Write out a trace message to the log file.
+| Property | Description |
+| --- | --- |
+| log\_level | Sets the current log level to one of none, trace, info, warning, or error. |
+| log\_error(message) | Write out an error message to the log file. |
+| log\_warning(message) | Write out a warning message to the log file. |
+| log\_info(message) | Write out an info message to the log file. |
+| trace(message) | Write out a trace message to the log file. |

@@ -1,27 +1,26 @@
 {"title":"Alloy Widgets","weight":"60"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Using widgets](#Usingwidgets)
+* [Using widgets](#using-widgets)
 
-* [Creating widgets](#Creatingwidgets)
+* [Creating widgets](#creating-widgets)
 
-  * [Assets and libs](#Assetsandlibs)
+    * [Assets and libs](#assets-and-libs)
 
-  * [Configuration](#Configuration)
+    * [Configuration](#configuration)
 
-  * [Controllers](#Controllers)
+    * [Controllers](#controllers)
 
-  * [Models](#Models)
+    * [Models](#models)
 
-  * [Styles](#Styles)
+    * [Styles](#styles)
 
-  * [Themes](#Themes)
+    * [Themes](#themes)
 
-  * [Views](#Views)
+    * [Views](#views)
 
-  * [Widgets](#Widgets)
-
+    * [Widgets](#widgets)
 
 ## Introduction
 
@@ -85,7 +84,7 @@ The main TSS file is called widget.tss instead of index.tss.
 
 ### Themes
 
-Widget themes work the same as project themes except for the placement of the files. Inside your theme folder (app/themes/<THEME\_NAME>), create widgets/<WIDGET\_NAME> folders, where <THEME\_NAME> is the name of the theme and <WIDGET\_NAME> is the name of the widget. Create two folders, assets and styles, to place your custom images and styles for your widget, respectively. The assets and styles folders need to be placed in the folder that is named after the widget. When using a theme, the files in these folders replace the files in the widget's folders. For more details, see [Alloy Styles and Themes: Themes](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#Themes).
+Widget themes work the same as project themes except for the placement of the files. Inside your theme folder (app/themes/<THEME\_NAME>), create widgets/<WIDGET\_NAME> folders, where <THEME\_NAME> is the name of the theme and <WIDGET\_NAME> is the name of the widget. Create two folders, assets and styles, to place your custom images and styles for your widget, respectively. The assets and styles folders need to be placed in the folder that is named after the widget. When using a theme, the files in these folders replace the files in the widget's folders. For more details, see [Alloy Styles and Themes: Themes](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#themes).
 
 To use a theme, in the project's config.json file, add the theme key with the name of the theme folder as the value.
 

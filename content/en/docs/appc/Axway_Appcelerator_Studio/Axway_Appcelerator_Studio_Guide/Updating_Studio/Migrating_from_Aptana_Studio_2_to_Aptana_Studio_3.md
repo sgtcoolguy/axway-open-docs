@@ -2,40 +2,39 @@
 
 This document contains information on how to migrate Aptana Studio 2 to version 3.
 
-* [Migrating Projects](#MigratingProjects)
+* [Migrating Projects](#migrating-projects)
 
-  * [To migrate your projects from Studio 2 to Studio 3](#TomigrateyourprojectsfromStudio2toStudio3)
+    * [To migrate your projects from Studio 2 to Studio 3](#to-migrate-your-projects-from-studio-2-to-studio-3)
 
-  * [Migrating Web, PHP and Rails projects](#MigratingWeb,PHPandRailsprojects)
+    * [Migrating Web, PHP and Rails projects](#migrating-web,-php-and-rails-projects)
 
-* [File View/Remote Connections](#FileView/RemoteConnections)
+* [File View/Remote Connections](#file-view/remote-connections)
 
-* [Content Assist](#ContentAssist)
+* [Content Assist](#content-assist)
 
-* [PHP](#PHP)
+* [PHP](#php)
 
-* [Rails](#Rails)
+* [Rails](#rails)
 
-* [Customization/Preferences](#Customization/Preferences)
+* [Customization/Preferences](#customization/preferences)
 
-  * [Scripting](#Scripting)
+    * [Scripting](#scripting)
 
-  * [Previewing Files/Run/Launch Configurations](#PreviewingFiles/Run/LaunchConfigurations)
+    * [Previewing Files/Run/Launch Configurations](#previewing-files/run/launch-configurations)
 
-  * [Colorization/Themes](#Colorization/Themes)
+    * [Colorization/Themes](#colorization/themes)
 
-* [Differences between Aptana Studio 2 and 3](#DifferencesbetweenAptanaStudio2and3)
+* [Differences between Aptana Studio 2 and 3](#differences-between-aptana-studio-2-and-3)
 
-  * [Code Formatter](#CodeFormatter)
+    * [Code Formatter](#code-formatter)
 
-    * [New Features](#NewFeatures)
+        * [New Features](#new-features)
 
-    * [HTML](#HTML)
+        * [HTML](#html)
 
-    * [XML](#XML)
+        * [XML](#xml)
 
-    * [JavaScript](#JavaScript)
-
+        * [JavaScript](#javascript)
 
 ## Migrating Projects
 
@@ -57,7 +56,6 @@ It is not recommended to edit a project in both Studio 2 and Studio 3. Once you 
 
 6. Click the **Finish** button.
 
-
 ### Migrating Web, PHP and Rails projects
 
 Studio 3 changed a few things underneath the hood regarding how projects are processed. We've attempted to automate the migration process for you as you move from one environment to the other, but it's possible this process may not work in every possible circumstance. You would notice it most specifically with regards to missing content assist. To fix this, you'll need to reset the "Natures" on a project.
@@ -71,7 +69,6 @@ Importing connections is a separate step:
 2. Make sure the "Workspace" radio button is selected, and browse to your Aptana Studio 2 workspace
 
 3. Click Finish. Your connections will show up in the Remote Connections view, and attached to projects.
-
 
 ![Screen_shot_2011-04-20_at_12.51.09_PM](/Images/appc/download/attachments/30083277/Screen_shot_2011-04-20_at_12.51.09_PM.png)
 
@@ -90,7 +87,6 @@ Studio 3 simplified the concept of adding JavaScript content assist greatly. Rat
 * [Using JavaScript Libraries](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Using_JavaScript_Libraries/)
 
 * [JavaScript Library Support](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Using_JavaScript_Libraries/JavaScript_Library_Support/)
-
 
 ## PHP
 
@@ -132,7 +128,6 @@ There are no PHP, Ruby, ERB, and JSON formatters in Studio 2, so Studio 3 format
 
 * PHP, JS, Ruby, CSS, and HTML all support wrapping comments to a specified length
 
-
 The remaining differences are a result of us simplifying and removing code that appeared little used. If a beloved option has disappeared from the preferences, please let us know by filing a Lighthouse ticket.
 
 #### HTML
@@ -142,7 +137,6 @@ The remaining differences are a result of us simplifying and removing code that 
 * The 'Force Wrap' section no longer exists in Studio 3. Instead, we have only a 'Comments' tab that allows wrapping settings for comments only.
 
 * The indentation settings were changed as well. Studio 2 did not have any item in its exclusion list, while Studio 3 defines 22 elements that will not cause an increase of indentation.
-
 
 #### XML
 
@@ -154,7 +148,6 @@ The remaining differences are a result of us simplifying and removing code that 
 
 * 'Preserve extra carriage returns' was substituted with a set of 'Blank Lines' settings.
 
-
 #### JavaScript
 
 * "Insert new line before 'if' statement" was removed – We always insert one now.
@@ -162,7 +155,6 @@ The remaining differences are a result of us simplifying and removing code that 
 * "Insert new line before 'return' statement" was removed – We always insert one now.
 
 * The 'if-else' group settings in the 'Control Statement' is not supported in Studio 3. Many of those settings are controlled by the 'New Lines' general settings.
-
 
 The two items that are removed from the Studio 3 formatter are: "Keep 'then' statement on the same line" and "Keep 'return' or 'throw' clause on one line".
 

@@ -1,127 +1,126 @@
 {"title":"Titanium Compatibility Matrix","weight":"70"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-  * [Supported SDK releases](#SupportedSDKreleases)
+    * [Supported SDK releases](#supported-sdk-releases)
 
-  * [Pre-release versions](#Pre-releaseversions)
+    * [Pre-release versions](#pre-release-versions)
 
-* [Minimum system requirements](#Minimumsystemrequirements)
+* [Minimum system requirements](#minimum-system-requirements)
 
-  * [Memory](#Memory)
+    * [Memory](#memory)
 
-  * [Operating system](#Operatingsystem)
+    * [Operating system](#operating-system)
 
-* [Java Development Kit](#JavaDevelopmentKit)
+* [Java Development Kit](#java-development-kit)
 
-* [Studio](#Studio)
+* [Studio](#studio)
 
-  * [Studio Node, CLI, and Titanium SDK supported versions](#StudioNode,CLI,andTitaniumSDKsupportedversions)
+    * [Studio Node, CLI, and Titanium SDK supported versions](#studio-node,-cli,-and-titanium-sdk-supported-versions)
 
-    * [Disk space](#Diskspace)
+        * [Disk space](#disk-space)
 
-    * [Node](#Node)
+        * [Node](#node)
 
-      * [Versions of Node.js supported](#VersionsofNode.jssupported)
+            * [Versions of Node.js supported](#versions-of-node.js-supported)
 
-      * [Not supported](#Notsupported)
+            * [Not supported](#not-supported)
 
-    * [CLI](#CLI)
+        * [CLI](#cli)
 
-      * [Supported versions of CLI](#SupportedversionsofCLI)
+            * [Supported versions of CLI](#supported-versions-of-cli)
 
-      * [Unsupported versions of CLI](#UnsupportedversionsofCLI)
+            * [Unsupported versions of CLI](#unsupported-versions-of-cli)
 
-    * [Titanium SDK](#TitaniumSDK)
+        * [Titanium SDK](#titanium-sdk)
 
-      * [Supported versions of SDK](#SupportedversionsofSDK)
+            * [Supported versions of SDK](#supported-versions-of-sdk)
 
-      * [Unsupported versions of SDK](#UnsupportedversionsofSDK)
+            * [Unsupported versions of SDK](#unsupported-versions-of-sdk)
 
-  * [Java support](#Javasupport)
+    * [Java support](#java-support)
 
-  * [Studio 5.0.0 and earlier installers](#Studio5.0.0andearlierinstallers)
+    * [Studio 5.0.0 and earlier installers](#studio-5.0.0-and-earlier-installers)
 
-  * [Studio 5.1.0+ installers](#Studio5.1.0+installers)
+    * [Studio 5.1.0+ installers](#Studio5.1.0+installers)
 
-* [Node.js](#Node.js)
+* [Node.js](#node.js)
 
-* [Appcelerator Studio](#AppceleratorStudio)
+* [Appcelerator Studio](#appcelerator-studio)
 
-* [Mobile development](#Mobiledevelopment)
+* [Mobile development](#mobile-development)
 
-  * [Android](#Android)
+    * [Android](#android)
 
-    * [Required Android Packages](#RequiredAndroidPackages)
+        * [Required Android Packages](#required-android-packages)
 
-    * [Android SDK / Target Android platform](#AndroidSDK/TargetAndroidplatform)
+        * [Android SDK / Target Android platform](#android-sdk-/-target-android-platform)
 
-    * [Android Native Add-on Module Development on macOS](#AndroidNativeAdd-onModuleDevelopmentonmacOS)
+        * [Android Native Add-on Module Development on macOS](#android-native-add-on-module-development-on-macos)
 
-  * [iOS](#iOS)
+    * [iOS](#ios)
 
-    * [Xcode](#Xcode)
+        * [Xcode](#xcode)
 
-      * [Supported versions of Xcode](#SupportedversionsofXcode)
+            * [Supported versions of Xcode](#supported-versions-of-xcode)
 
-      * [Unsupported versions of Xcode](#UnsupportedversionsofXcode)
+            * [Unsupported versions of Xcode](#unsupported-versions-of-xcode)
 
-    * [iOS SDK / Target iOS platform](#iOSSDK/TargetiOSplatform)
+        * [iOS SDK / Target iOS platform](#ios-sdk-/-target-ios-platform)
 
-      * [Supported versions of iOS SDK / Target iOS platform](#SupportedversionsofiOSSDK/TargetiOSplatform)
+            * [Supported versions of iOS SDK / Target iOS platform](#supported-versions-of-ios-sdk-/-target-ios-platform)
 
-      * [Unsupported versions of iOS SDK / Target iOS platform](#UnsupportedversionsofiOSSDK/TargetiOSplatform)
+            * [Unsupported versions of iOS SDK / Target iOS platform](#unsupported-versions-of-ios-sdk-/-target-ios-platform)
 
-  * [Windows](#Windows)
+    * [Windows](#windows)
 
-    * [Visual Studio](#VisualStudio)
+        * [Visual Studio](#visual-studio)
 
-      * [Supported versions of VS](#SupportedversionsofVS)
+            * [Supported versions of VS](#supported-versions-of-vs)
 
-      * [Unsupported versions of VS](#UnsupportedversionsofVS)
+            * [Unsupported versions of VS](#unsupported-versions-of-vs)
 
-    * [Supported Platforms](#SupportedPlatforms)
+        * [Supported Platforms](#supported-platforms)
 
-      * [Supported platform versions](#Supportedplatformversions)
+            * [Supported platform versions](#supported-platform-versions)
 
-      * [Unsupported platform versions](#Unsupportedplatformversions)
+            * [Unsupported platform versions](#unsupported-platform-versions)
 
-  * [Unified CLI compatibility matrix](#UnifiedCLIcompatibilitymatrix)
+    * [Unified CLI compatibility matrix](#unified-cli-compatibility-matrix)
 
-    * [Unified CLI Includes](#UnifiedCLIIncludes)
+        * [Unified CLI Includes](#unified-cli-includes)
 
-      * [Supported versions of CLI includes](#SupportedversionsofCLIincludes)
+            * [Supported versions of CLI includes](#supported-versions-of-cli-includes)
 
-      * [Unsupported versions of CLI includes](#UnsupportedversionsofCLIincludes)
+            * [Unsupported versions of CLI includes](#unsupported-versions-of-cli-includes)
 
-    * [Appc NPM](#AppcNPM)
+        * [Appc NPM](#appc-npm)
 
-      * [Supported version of Appc NPM](#SupportedversionofAppcNPM)
+            * [Supported version of Appc NPM](#supported-version-of-appc-npm)
 
-      * [Unsupported version of Appc NPM](#UnsupportedversionofAppcNPM)
+            * [Unsupported version of Appc NPM](#unsupported-version-of-appc-npm)
 
-    * [Node.js](#Node.js.1)
+        * [Node.js](#node.js)
 
-      * [Supported version of node.js](#Supportedversionofnode.js)
+            * [Supported version of node.js](#supported-version-of-node.js)
 
-      * [Unsupported version of node.js](#Unsupportedversionofnode.js)
+            * [Unsupported version of node.js](#unsupported-version-of-node.js)
 
-  * [Desktop browser](#Desktopbrowser)
+    * [Desktop browser](#desktop-browser)
 
-    * [Android emulator](#Androidemulator)
+        * [Android emulator](#android-emulator)
 
-* [Other useful software](#Otherusefulsoftware)
+* [Other useful software](#other-useful-software)
 
-  * [Git](#Git)
+    * [Git](#git)
 
-  * [Python](#Python)
+    * [Python](#python)
 
-  * [Required Python packages](#RequiredPythonpackages)
+    * [Required Python packages](#required-python-packages)
 
-  * [gperf](#gperf)
+    * [gperf](#gperf)
 
-  * [Ant](#Ant)
-
+    * [Ant](#ant)
 
 ## Overview
 
@@ -139,7 +138,6 @@ Some information about legacy Titanium SDK versions is included here solely for 
 
 * 6.0.x - 6.3.x
 
-
 ### Pre-release versions
 
 Be aware that any components notated as _Pre-release_ are not officially supported. This includes Beta, Developer Preview, and Release Candidate versions, as well as any development SDKs released via the [Continuous Builds](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_SDK_Continuous_Builds/) download site.
@@ -148,29 +146,11 @@ Be aware that any components notated as _Pre-release_ are not officially support
 
 ### Memory
 
-Product
-
-Host Operating System
-
-Storage
-
-Appcelerator Studio
-
-All
-
-1 GB (contiguous)
-
-Latest Android SDK
-
-macOS
-
-1.5 GB (contiguous)
-
-Latest Android SDK
-
-Windows
-
-1 GB (contiguous)
+| Product | Host Operating System | Storage |
+| --- | --- | --- |
+| Appcelerator Studio | All | 1 GB (contiguous) |
+| Latest Android SDK | macOS | 1.5 GB (contiguous) |
+| Latest Android SDK | Windows | 1 GB (contiguous) |
 
 Minimum system memory requirements is 8GB of RAM. 16GB is highly recommended.
 
@@ -178,19 +158,10 @@ Minimum system memory requirements is 8GB of RAM. 16GB is highly recommended.
 
 Titanium is supported on the following Operating Systems:
 
-Operating System
-
-Version
-
-macOS
-
-10.11.5 (Mavericks) and later
-
-Windows
-
-Windows 7 and later(Android)
-Windows 8.1 and later (Windows Phone)
-Windows 10 and later (Windows 10 Mobile)
+| Operating System | Version |
+| --- | --- |
+| macOS | 10.11.5 (Mavericks) and later |
+| Windows | Windows 7 and later(Android)  <br />Windows 8.1 and later (Windows Phone)  <br />Windows 10 and later (Windows 10 Mobile) |
 
 As of Titanium 9.0.0, building Windows apps is no longer supported.
 
@@ -206,51 +177,10 @@ Titanium supports the following versions of JDK for each respective Operating Sy
 
 ![download_05](/Images/appc/download/attachments/29004836/download_05.png)
 
-Operating System
-
-Min JDK Version
-
-Max JDK Version
-
-Package Arch Version
-
-Download Location
-
-Notes
-
-OS X
-
-8
-
-8 latest revision
-
-64-bit
-
-[Official Website](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-
-* On Mac OS X 10.6 (Snow Leopard) and earlier, the JDK is preinstalled.
-
-* On Mac OS X 10.7 (Lion) and later, the OS should prompt you to install it when needed.
-
-* Android Development on OS X systems requires JDK 8 or higher to be installed.
-
-
-Windows
-
-8
-
-8 latest revision
-
-**32-bit** (x86 / i586) (see note)
-
-[Official Website](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-
-* The 32-bit version of the JDK is required regardless of whether Titanium is running on a 32-bit Windows system.
-
-* Studio offers to install JDK 8 if no JDK is found.
-
-
-**Note**: From Studio 5.1.0 and up, 64-bit JDK is supported
+| Operating System | Min JDK Version | Max JDK Version | Package Arch Version | Download Location | Notes |
+| --- | --- | --- | --- | --- | --- |
+| OS X | 8 | 8 latest revision | 64-bit | [Official Website](http://www.oracle.com/technetwork/java/javase/downloads/index.html) | * On Mac OS X 10.6 (Snow Leopard) and earlier, the JDK is preinstalled.<br />    <br />* On Mac OS X 10.7 (Lion) and later, the OS should prompt you to install it when needed.<br />    <br />* Android Development on OS X systems requires JDK 8 or higher to be installed. |
+| Windows | 8 | 8 latest revision | **32-bit** (x86 / i586) (see note) | [Official Website](http://www.oracle.com/technetwork/java/javase/downloads/index.html) | * The 32-bit version of the JDK is required regardless of whether Titanium is running on a 32-bit Windows system.<br />    <br />* Studio offers to install JDK 8 if no JDK is found.<br />    <br /><br />**Note**: From Studio 5.1.0 and up, 64-bit JDK is supported |
 
 See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for detailed instructions.
 
@@ -262,231 +192,89 @@ See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started
 
 We recommend the following as a guideline for estimating how much disk space is necessary to build applications using Axway Appcelerator Studio:
 
-Application
-
-Recommended disk space
-
-Comments
-
-Xcode
-
-15 - 20GB
-
-Xcode includes the latest iOS and related simulator(s).
-
-Android Studio
-
-10 - 15GB
-
-You may need to select with SDK(s), NDK(s), and emulators to use.
-
-Axway Appcelerator Studio
-
-~250MB
-
-Genymotion
-
-~1GB
-
-Genymotion is optional
-
-Mobile app (workspace)
-
-50MB - 3GB
-
-Disk usage depends on many factors.
+| Application | Recommended disk space | Comments |
+| --- | --- | --- |
+| Xcode | 15 - 20GB | Xcode includes the latest iOS and related simulator(s). |
+| Android Studio | 10 - 15GB | You may need to select with SDK(s), NDK(s), and emulators to use. |
+| Axway Appcelerator Studio | ~250MB |  |
+| Genymotion | ~1GB | Genymotion is optional |
+| Mobile app (workspace) | 50MB - 3GB | Disk usage depends on many factors. |
 
 #### Node
 
 ##### Versions of Node.js supported
 
-Studio
-
-Version
-
-5.1.3 - latest
-
-8.16.0 - 10.x
-
-5.0.0 - 5.1.2
-
-8.x
+| Studio | Version |
+| --- | --- |
+| 5.1.3 - latest | 8.16.0 - 10.x |
+| 5.0.0 - 5.1.2 | 8.x |
 
 If you use any version of Node.js beyond 8.9.x, Studio will hang at launch time.
 
 ##### Not supported
 
-Studio
-
-Version
-
-4.9.1
-
-4.6 through but not including 6.x
-
-4.3.0 - 4.9.0
-
-4.6 through but not including 6.x
-
-4.0.0, 4.1.0, and 4.2.0
-
-Versions prior to 6.0
+| Studio | Version |
+| --- | --- |
+| 4.9.1 | 4.6 through but not including 6.x |
+| 4.3.0 - 4.9.0 | 4.6 through but not including 6.x |
+| 4.0.0, 4.1.0, and 4.2.0 | Versions prior to 6.0 |
 
 #### CLI
 
 ##### Supported versions of CLI
 
-Studio
-
-Version
-
-5.0.0 and latest
-
-6.2.0+
+| Studio | Version |
+| --- | --- |
+| 5.0.0 and latest | 6.2.0+ |
 
 ##### Unsupported versions of CLI
 
-Studio
-
-Version
-
-4.9.1
-
-6.0.0+
-
-4.3.0 - 4.9.0
-
-5.0.0+
-
-4.0.0, 4.1.0, and 4.2.0
-
-4.x
+| Studio | Version |
+| --- | --- |
+| 4.9.1 | 6.0.0+ |
+| 4.3.0 - 4.9.0 | 5.0.0+ |
+| 4.0.0, 4.1.0, and 4.2.0 | 4.x |
 
 #### Titanium SDK
 
 ##### Supported versions of SDK
 
-Studio
-
-Version
-
-5.0.0 and latest
-
-6.2.0+
+| Studio | Version |
+| --- | --- |
+| 5.0.0 and latest | 6.2.0+ |
 
 ##### Unsupported versions of SDK
 
-Studio
-
-Version
-
-4.9.1
-
-6.0.0+
-
-4.3.0 - 4.9.0
-
-5.0.0+
-
-4.0.0, 4.1.0, and 4.2.0
-
-4.x
+| Studio | Version |
+| --- | --- |
+| 4.9.1 | 6.0.0+ |
+| 4.3.0 - 4.9.0 | 5.0.0+ |
+| 4.0.0, 4.1.0, and 4.2.0 | 4.x |
 
 ### Java support
 
 ### Studio 5.0.0 and earlier installers
 
-Studio 5.0.0 and earlier
-
-Java Version
-
-Status
-
-Windows installer (32-bit)
-
-Java 8 (32-bit)
-
-Functional
-
-Windows installer (32-bit)
-
-Java 8 (64-bit)
-
-Not compatible
-
-MacOS installer (64-bit)
-
-Java 8 (64-bit)
-
-Functional
+| Studio 5.0.0 and earlier | Java Version | Status |
+| --- | --- | --- |
+| Windows installer (32-bit) | Java 8 (32-bit) | Functional |
+| Windows installer (32-bit) | Java 8 (64-bit) | Not compatible |
+| MacOS installer (64-bit) | Java 8 (64-bit) | Functional |
 
 ### Studio 5.1.0+ installers
 
-Studio 5.1.0 installer
-
-Java Version
-
-Status
-
-Windows installer (32-bit)
-
-Java 8 (32-bit)
-
-Functional
-
-Windows installer (32-bit)
-
-Java 8 (64-bit)
-
-Not compatible
-
-Windows installer (32-bit)
-
-Java 9 (32-bit)
-
-32-bit Java 9 is not available
-
-Windows installer (32-bit)
-
-Java 9 (64-bit)
-
-Incompatible (32-bit installer requires 32-bit Java)
-
-Windows installer (64-bit)
-
-Java 8 (64-bit)
-
-Functional
-
-Windows installer (64-bit)
-
-Java 8 (32-bit)
-
-Incompatible (64-bit installer requires 64-bit Java)
-
-Windows installer (64-bit)
-
-Java 9 (64-bit)
-
-Functional
-
-Windows installer (64-bit)
-
-Java 9 (32-bit)
-
-32-bit Java 9 is not available
-
-MacOS installer (64-bit)
-
-Java 8 (64-bit)
-
-Functional
-
-MacOS installer (64-bit)
-
-Java 9 (64-bit)
-
-Functional
+| Studio 5.1.0 installer | Java Version | Status |
+| --- | --- | --- |
+| Windows installer (32-bit) | Java 8 (32-bit) | Functional |
+| Windows installer (32-bit) | Java 8 (64-bit) | Not compatible |
+| Windows installer (32-bit) | Java 9 (32-bit) | 32-bit Java 9 is not available |
+| Windows installer (32-bit) | Java 9 (64-bit) | Incompatible (32-bit installer requires 32-bit Java) |
+| Windows installer (64-bit) | Java 8 (64-bit) | Functional |
+| Windows installer (64-bit) | Java 8 (32-bit) | Incompatible (64-bit installer requires 64-bit Java) |
+| Windows installer (64-bit) | Java 9 (64-bit) | Functional |
+| Windows installer (64-bit) | Java 9 (32-bit) | 32-bit Java 9 is not available |
+| MacOS installer (64-bit) | Java 8 (64-bit) | Functional |
+| MacOS installer (64-bit) | Java 9 (64-bit) | Functional |
 
 ## Node.js
 
@@ -496,27 +284,15 @@ On Mac OS X and Windows, if you have selected to install Titanium updates, Studi
 
 ![download_05](/Images/appc/download/attachments/29004836/download_05.png)
 
-Operating System
-
-Min Node Version
-
-Max Node Version
-
-Download Location
-
-macOS / Windows / Linux
-
-8.0
-
-10.X
-
-[Official Website](https://nodejs.org/en/download/releases/)
+| Operating System | Min Node Version | Max Node Version | Download Location |
+| --- | --- | --- | --- |
+| macOS / Windows / Linux | 8.0 | 10.X | [Official Website](https://nodejs.org/en/download/releases/) |
 
 See [Installing Node](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Node/) for details.
 
 ## Appcelerator Studio
 
-Appcelerator Studio is a Java application, which requires Oracle's Java Runtime Environment (JRE) installed. As JRE is a component of Oracle's Java Development Kit (JDK) and JDK is a prerequisite for development with other SDKs, JDK needs to be installed on all systems working with Titanium. Refer to the [Java Development Kit](#JavaDevelopmentKit) section of this document.
+Appcelerator Studio is a Java application, which requires Oracle's Java Runtime Environment (JRE) installed. As JRE is a component of Oracle's Java Development Kit (JDK) and JDK is a prerequisite for development with other SDKs, JDK needs to be installed on all systems working with Titanium. Refer to the [Java Development Kit](#java-development-kit) section of this document.
 
 Use the latest stable version of Studio.
 
@@ -526,43 +302,11 @@ See [Titanium SDK Getting Started](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_
 
 Titanium can provide a development environment for third-party mobile platforms where a Software Development Kit (SDK) has been made available by the platform vendor. With this in mind, development with the following combinations of Operating Systems and SDKs are possible:
 
-Platform
-
-macOS
-
-Windows
-
-Notes
-
-Android Development
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
-(tick)
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
-(tick)
-
-iOS Development
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
-(tick)
-
-![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png)
-(error)
-
-Due to Apple's license agreement, iOS applications may only be developed on Apple hardware.
-
-Windows Development
-
-![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png)
-(error)
-
-![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)
-(tick)
-
-Windows applications may only be developed on hardware running Microsoft Windows.
-
-Currently, Windows development is only supported using the Titanium CLI 3.3.0 and later, Titanium SDK 3.3.0 and later, and Visual Studio 2012/2013 Pro edition or higher.
+| Platform | macOS | Windows | Notes |
+| --- | --- | --- | --- |
+| Android Development | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)  <br />(tick) | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)  <br />(tick) |  |
+| iOS Development | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)  <br />(tick) | ![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png)  <br />(error) | Due to Apple's license agreement, iOS applications may only be developed on Apple hardware. |
+| Windows Development | ![error](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png)  <br />(error) | ![check](/Images/appc/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png)  <br />(tick) | Windows applications may only be developed on hardware running Microsoft Windows.<br /><br />Currently, Windows development is only supported using the Titanium CLI 3.3.0 and later, Titanium SDK 3.3.0 and later, and Visual Studio 2012/2013 Pro edition or higher. |
 
 ### Android
 
@@ -582,23 +326,11 @@ As of Titanium 9.0.0, the build system will automatically download the Android S
 
 For Titanium 8.x.x, you need to installed the following packages via the Android SDK Manager yourself:
 
-Package
-
-Minimum Version
-
-Android SDK Tools
-
-Rev 28
-
-Android SDK Build-tools
-
-Rev 23
-
-Android SDK Platform (API Level)
-
-API Level 29 for Titanium 8.3.x
-
-API Level 28 for Titanium version older than 8.3.0
+| Package | Minimum Version |
+| --- | --- |
+| Android SDK Tools | Rev 28 |
+| Android SDK Build-tools | Rev 23 |
+| Android SDK Platform (API Level) | API Level 29 for Titanium 8.3.x<br /><br />API Level 28 for Titanium version older than 8.3.0 |
 
 Titanium SDK 7.0.0+ requires Android SDK Tools v25 or newer as a minimum requirement.
 
@@ -612,189 +344,33 @@ Each Titanium SDK supports building against a specific range of Android versions
 
 ##### Supported versions
 
-Titanium SDK Version
-
-Min Target Android/SDK Version
-(android:targetSdkVersion)
-
-Max Target Android/SDK Version
-(android:targetSdkVersion)
-
-Minimum Android/SDK Version
-(android:minSdkVersion)
-
-8.3.0 - latest
-
-6.0.x (API 23)
-
-10.0.x (API 29)
-
-4.4.x (API 19)
-
-8.0.0 - 8.2.2
-
-6.0.x (API 23)
-
-9.0.x (API 28)
-
-4.4.x (API 19)
-
-7.5.0 - 7.5.1
-
-6.0.x (API 23)
-
-9.0.x (API 28)
-
-4.1.x (API 16)
-
-7.3.0 - 7.4.1
-
-6.0.x (API 23)
-
-8.1.x (API 27)
-
-4.1.x (API 16)
-
-7.0.0 - 7.2.0
-
-6.0.x (API 23)
-
-7.0.x (API 25)
-
-4.1.x (API 16)
+| Titanium SDK Version | Min Target Android/SDK Version  <br />(android:targetSdkVersion) | Max Target Android/SDK Version  <br />(android:targetSdkVersion) | Minimum Android/SDK Version  <br />(android:minSdkVersion) |
+| --- | --- | --- | --- |
+| 8.3.0 - latest | 6.0.x (API 23) | 10.0.x (API 29) | 4.4.x (API 19) |
+| 8.0.0 - 8.2.2 | 6.0.x (API 23) | 9.0.x (API 28) | 4.4.x (API 19) |
+| 7.5.0 - 7.5.1 | 6.0.x (API 23) | 9.0.x (API 28) | 4.1.x (API 16) |
+| 7.3.0 - 7.4.1 | 6.0.x (API 23) | 8.1.x (API 27) | 4.1.x (API 16) |
+| 7.0.0 - 7.2.0 | 6.0.x (API 23) | 7.0.x (API 25) | 4.1.x (API 16) |
 
 ##### Unsupported versions
 
-Titanium SDK Version
-
-Min Target Android/SDK Version
-(android:targetSdkVersion)
-
-Max Target Android/SDK Version
-(android:targetSdkVersion)
-
-Minimum Android/SDK Version
-(android:minSdkVersion)
-
-6.2.0 - 6.3.0
-
-7.1.x (API 25)
-
-6.0.x (API 23)
-
-4.1.x (API 16)
-
-6.0.0 - 6.1.x
-
-6.0.x (API 23)
-
-6.0.x (API 23)
-
-4.1.x (API 16)
-
-5.1.0 - 5.5.x
-
-6.0.x (API 23)
-
-6.0.x (API 23)
-
-4.0.x (API 14)
-
-5.0.0 - 5.0.x
-
-5.0.x (API 21)
-
-6.0.x (API 23)
-
-4.0.x (API 14)
-
-4.0.0 - 4.1.x
-
-5.0.x (API 21)
-
-5.1.x (API 22)
-
-4.0.x (API 14)
-
-3.4.1 - 3.5.1
-
-4.0.x (API 14)\*
-
-5.0.x (API 21)\*\*
-
-2.3.x (API 10)
-
-3.3.0 - 3.4.0
-
-4.0.x (API 14)\*
-
-4.4.x (API 19)
-
-2.3.x (API 10)
-
-3.2.0 - 3.2.3
-
-2.3.x (API 10)\*
-
-4.4.x (API 19)
-
-2.3.x (API 10)
-
-3.1.2 - 3.1.3
-
-2.3.x (API 10)
-
-4.3.x (API 18)
-
-2.3.x (API 10)
-
-3.1.1
-
-2.3.x (API 10)
-
-4.2.x (API 17)
-
-2.3.x (API 10)
-
-3.1.0
-
-2.2 (API 8)
-
-4.2.x (API 17)
-
-2.2 (API 8)
-
-2.1.2 - 3.0.2
-
-2.2 (API 8)
-
-4.1.x (API 16)
-
-2.2 (API 8)
-
-2.0 - 2.1.1
-
-2.2 (API 8)
-
-4.0.x (API 15)
-
-2.2 (API 8)
-
-1.8.x
-
-2.2 (API 8)
-
-3.x.x (API 11)
-
-2.2 (API 8)
-
-1.7.x
-
-2.1 (API 7)
-
-3.x.x (API 11)
-
-2.1 (API 7)
+| Titanium SDK Version | Min Target Android/SDK Version  <br />(android:targetSdkVersion) | Max Target Android/SDK Version  <br />(android:targetSdkVersion) | Minimum Android/SDK Version  <br />(android:minSdkVersion) |
+| --- | --- | --- | --- |
+| 6.2.0 - 6.3.0 | 7.1.x (API 25) | 6.0.x (API 23) | 4.1.x (API 16) |
+| 6.0.0 - 6.1.x | 6.0.x (API 23) | 6.0.x (API 23) | 4.1.x (API 16) |
+| 5.1.0 - 5.5.x | 6.0.x (API 23) | 6.0.x (API 23) | 4.0.x (API 14) |
+| 5.0.0 - 5.0.x | 5.0.x (API 21) | 6.0.x (API 23) | 4.0.x (API 14) |
+| 4.0.0 - 4.1.x | 5.0.x (API 21) | 5.1.x (API 22) | 4.0.x (API 14) |
+| 3.4.1 - 3.5.1 | 4.0.x (API 14)\* | 5.0.x (API 21)\*\* | 2.3.x (API 10) |
+| 3.3.0 - 3.4.0 | 4.0.x (API 14)\* | 4.4.x (API 19) | 2.3.x (API 10) |
+| 3.2.0 - 3.2.3 | 2.3.x (API 10)\* | 4.4.x (API 19) | 2.3.x (API 10) |
+| 3.1.2 - 3.1.3 | 2.3.x (API 10) | 4.3.x (API 18) | 2.3.x (API 10) |
+| 3.1.1 | 2.3.x (API 10) | 4.2.x (API 17) | 2.3.x (API 10) |
+| 3.1.0 | 2.2 (API 8) | 4.2.x (API 17) | 2.2 (API 8) |
+| 2.1.2 - 3.0.2 | 2.2 (API 8) | 4.1.x (API 16) | 2.2 (API 8) |
+| 2.0 - 2.1.1 | 2.2 (API 8) | 4.0.x (API 15) | 2.2 (API 8) |
+| 1.8.x | 2.2 (API 8) | 3.x.x (API 11) | 2.2 (API 8) |
+| 1.7.x | 2.1 (API 7) | 3.x.x (API 11) | 2.1 (API 7) |
 
 Notes
 
@@ -828,7 +404,6 @@ There are two ways to obtain Xcode, the application that installs and manages iO
 
 2. Enroll with the Apple Developer website and browse the [iOS Developer Center](https://developer.apple.com/download/) page to manually download the installer application (includes all previously-released iOS SDKs and new Beta versions).
 
-
 Both of the above options are free of charge, although may require credit card details to be entered. Since 2016, you can also test your apps on your device using the free Apple developer program. If you wish to deploy your applications to the App Store for production, however, you will need to become a member of the _iOS Developer Program_, by way of an annual subscription charge of $99 at the time of writing.
 
 #### Xcode
@@ -839,95 +414,24 @@ Each Titanium SDK supports a specific range of Xcode versions, shown in the tabl
 
 ##### Supported versions of Xcode
 
-Titanium SDK Version
-
-Min Xcode Version
-
-Max Xcode Version
-
-Notes
-
-8.2.0
-
-8.0.x
-
-11.x
-
-Full support for iOS 13
-
-8.0.0 - 8.1.1
-
-8.0.x
-
-10.x
-
-7.5.0 - 7.5.2
-
-8.0.x
-
-10.x
+| Titanium SDK Version | Min Xcode Version | Max Xcode Version | Notes |
+| --- | --- | --- | --- |
+| 8.2.0 | 8.0.x | 11.x | Full support for iOS 13 |
+| 8.0.0 - 8.1.1 | 8.0.x | 10.x |  |
+| 7.5.0 - 7.5.2 | 8.0.x | 10.x |  |
 
 ##### Unsupported versions of Xcode
 
-Titanium SDK Version
-
-Min Xcode Version
-
-Max Xcode Version
-
-Notes
-
-7.4.0 - 7.4.2
-
-8.0.x
-
-10.x
-
-Full support for iOS 12
-
-7.0.0 - 7.3.1
-
-6.0.x
-
-9.0.x
-
-6.3.0
-
-6.0.x
-
-9.0.x
-
-6.2.x
-
-6.0.x
-
-9.0.x
-
-Full support for iOS 11
-
-5.5.x - 6.1.x
-
-6.0.x
-
-8.0.x
-
-5.0.0 - 5.4.0
-
-6.0.x
-
-7.0.x
-
-4.0.0 - 4.1.x
-
-6.0.x
-
-6.4.x
-
-3.4.0 - 3.5.x
-
-6.0.x
-
-6.0.x
+| Titanium SDK Version | Min Xcode Version | Max Xcode Version | Notes |
+| --- | --- | --- | --- |
+| 7.4.0 - 7.4.2 | 8.0.x | 10.x | Full support for iOS 12 |
+| 7.0.0 - 7.3.1 | 6.0.x | 9.0.x |  |
+| 6.3.0 | 6.0.x | 9.0.x |  |
+| 6.2.x | 6.0.x | 9.0.x | Full support for iOS 11 |
+| 5.5.x - 6.1.x | 6.0.x | 8.0.x |  |
+| 5.0.0 - 5.4.0 | 6.0.x | 7.0.x |  |
+| 4.0.0 - 4.1.x | 6.0.x | 6.4.x |  |
+| 3.4.0 - 3.5.x | 6.0.x | 6.0.x |  |
 
 Deploying for iOS 11.x requires Xcode 9.x, and macOS 10.12.4 and later.
 
@@ -939,207 +443,31 @@ Each Titanium SDK supports a specific range of iOS base SDKs and deployment targ
 
 ##### Supported versions of iOS SDK / Target iOS platform
 
-Titanium SDK version
-
-Minimum SDK version
-
-Maximum SDK version
-
-Minimum target iOS version
-
-Maximum target iOS version
-
-8.0.0 - latest
-
-9.0.x
-
-12.x
-
-9.0
-
-12.x
-
-7.4.0 - 7.5.x
-
-8.0.x
-
-12.x
-
-8.0
-
-12.x
-
-7.0.0 - 7.3.x
-
-8.0.x
-
-11.x
-
-8.0
-
-12.x
+| Titanium SDK version | Minimum SDK version | Maximum SDK version | Minimum target iOS version | Maximum target iOS version |
+| --- | --- | --- | --- | --- |
+| 8.0.0 - latest | 9.0.x | 12.x | 9.0 | 12.x |
+| 7.4.0 - 7.5.x | 8.0.x | 12.x | 8.0 | 12.x |
+| 7.0.0 - 7.3.x | 8.0.x | 11.x | 8.0 | 12.x |
 
 ##### Unsupported versions of iOS SDK / Target iOS platform
 
-Titanium SDK version
-
-Minimum SDK version
-
-Maximum SDK version
-
-Minimum target iOS version
-
-Maximum target iOS version
-
-6.2.0 - 6.3.x
-
-8.0.x
-
-11.x
-
-8.0
-
-12.x
-
-6.0.0 - 6.1.x
-
-8.0.x
-
-10.x
-
-8.0
-
-12.x
-
-5.5.x
-
-8.0.x
-
-10.x
-
-7.1.x
-
-9.3.x
-
-5.0.0 - 5.4.x
-
-8.0.x
-
-9.3.x
-
-7.1.x
-
-9.3.x
-
-4.0.0 - 4.1.x
-
-8.0.x
-
-8.4.x
-
-7.1.x
-
-8.4.x
-
-3.4.0 - 3.5.x
-
-8.0.x
-
-8.0.x
-
-7.1.x
-
-8.0.x
-
-3.2.2 - 3.3.0
-
-7.0.x
-
-7.1.x
-
-6.1.x
-
-7.1.x
-
-3.1.3 - 3.2.1
-
-7.0.x
-
-7.0.x
-
-6.1.x
-
-7.0.x
-
-3.1.1 - 3.1.2
-
-5.0.x
-
-6.1.x
-
-5.0.x
-
-6.1.x
-
-3.1.0
-
-4.3.x
-
-6.1.x
-
-4.3.x
-
-6.1.x
-
-2.1.3 - 3.0.x
-
-4.0.x
-
-6.1.x
-
-4.0.x
-
-6.1.x
-
-2.1.0 - 2.1.2
-
-4.0.x
-
-5.1.x
-
-4.0.x
-
-5.1.x
-
-2.0.x
-
-4.0.x
-
-5.1.x
-
-4.0.x
-
-5.1.x
-
-1.8.x
-
-4.0.x
-
-5.0.x
-
-4.0.x
-
-5.0.x
-
-1.7.1+
-
-3.1.2
-
-5.0.x
-
-3.1.2
-
-5.0.x
+| Titanium SDK version | Minimum SDK version | Maximum SDK version | Minimum target iOS version | Maximum target iOS version |
+| --- | --- | --- | --- | --- |
+| 6.2.0 - 6.3.x | 8.0.x | 11.x | 8.0 | 12.x |
+| 6.0.0 - 6.1.x | 8.0.x | 10.x | 8.0 | 12.x |
+| 5.5.x | 8.0.x | 10.x | 7.1.x | 9.3.x |
+| 5.0.0 - 5.4.x | 8.0.x | 9.3.x | 7.1.x | 9.3.x |
+| 4.0.0 - 4.1.x | 8.0.x | 8.4.x | 7.1.x | 8.4.x |
+| 3.4.0 - 3.5.x | 8.0.x | 8.0.x | 7.1.x | 8.0.x |
+| 3.2.2 - 3.3.0 | 7.0.x | 7.1.x | 6.1.x | 7.1.x |
+| 3.1.3 - 3.2.1 | 7.0.x | 7.0.x | 6.1.x | 7.0.x |
+| 3.1.1 - 3.1.2 | 5.0.x | 6.1.x | 5.0.x | 6.1.x |
+| 3.1.0 | 4.3.x | 6.1.x | 4.3.x | 6.1.x |
+| 2.1.3 - 3.0.x | 4.0.x | 6.1.x | 4.0.x | 6.1.x |
+| 2.1.0 - 2.1.2 | 4.0.x | 5.1.x | 4.0.x | 5.1.x |
+| 2.0.x | 4.0.x | 5.1.x | 4.0.x | 5.1.x |
+| 1.8.x | 4.0.x | 5.0.x | 4.0.x | 5.0.x |
+| 1.7.1+ | 3.1.2 | 5.0.x | 3.1.2 | 5.0.x |
 
 ### Windows
 
@@ -1149,67 +477,30 @@ As of Titanium 9.0.0, building Windows apps is no longer supported.
 
 ##### Supported versions of VS
 
-Titanium SDK Version
-
-Min Visual Studio Version
-
-Max Visual Studio Version
-
-7.0.0 - 8.3.x
-
-Visual Studio 2015
-
-Visual Studio 2017
+| Titanium SDK Version | Min Visual Studio Version | Max Visual Studio Version |
+| --- | --- | --- |
+| 7.0.0 - 8.3.x | Visual Studio 2015 | Visual Studio 2017 |
 
 ##### Unsupported versions of VS
 
-Titanium SDK Version
-
-Min Visual Studio Version
-
-Max Visual Studio Version
-
-6.2.0 - 6.3.0
-
-Visual Studio 2013
-
-Visual Studio 2017
-
-5.1.0 - 6.2.0
-
-Visual Studio 2013
-
-Visual Studio 2015
+| Titanium SDK Version | Min Visual Studio Version | Max Visual Studio Version |
+| --- | --- | --- |
+| 6.2.0 - 6.3.0 | Visual Studio 2013 | Visual Studio 2017 |
+| 5.1.0 - 6.2.0 | Visual Studio 2013 | Visual Studio 2015 |
 
 #### Supported Platforms
 
 ##### Supported platform versions
 
-Titanium SDK Version
-
-Supported Mobile Platforms
-
-Supported Desktop Platforms
-
-7.0.0 - 8.3.x
-
-Windows 10 Mobile
-
-Windows 10
+| Titanium SDK Version | Supported Mobile Platforms | Supported Desktop Platforms |
+| --- | --- | --- |
+| 7.0.0 - 8.3.x | Windows 10 Mobile | Windows 10 |
 
 ##### Unsupported platform versions
 
-Titanium SDK Version
-
-Supported Mobile Platforms
-
-Supported Desktop Platforms
-
-5.1.0 - 6.3.0
-
-Windows 10 Mobile, Windows Phone
-
-Windows 10, Windows 8.1
+| Titanium SDK Version | Supported Mobile Platforms | Supported Desktop Platforms |
+| --- | --- | --- |
+| 5.1.0 - 6.3.0 | Windows 10 Mobile, Windows Phone | Windows 10, Windows 8.1 |
 
 ### Unified CLI compatibility matrix
 
@@ -1219,429 +510,68 @@ The following table lists the various CLI component versions:
 
 ##### Supported versions of CLI includes
 
-Unified CLI
-
-Alloy
-
-API Builder
-
-Cloud CLI
-
-Titanium CLI
-
-Appc Daemon
-
-7.1.0
-
-1.14.0
-
-3.2.13
-
-2.1.0
-
-5.2.1
-
-1.1.3
-
-7.0.12
-
-1.13.10
-
-3.2.13
-
-2.1.0
-
-5.1.1
-
-1.1.3
-
-7.0.11
-
-1.13.9
-
-3.2.12
-
-2.1.0
-
-5.1.1
-
-1.1.3
-
-7.0.10
-
-1.13.8
-
-3.2.11
-
-2.0.12
-
-5.1.1
-
-1.1.3
-
-7.0.9
-
-1.13.4
-
-3.2.7
-
-2.0.12
-
-5.1.1
-
-1.1.3
-
-7.0.8
-
-1.13.4
-
-3.2.7
-
-2.0.11
-
-5.1.1
-
-1.1.3
-
-7.0.7
-
-1.13.2
-
-3.2.5
-
-2.0.10
-
-5.1.1
-
-1.1.3
-
-7.0.6
-
-1.13.2
-
-3.0.0
-
-2.0.10
-
-5.1.1
-
-1.1.3
-
-7.0.5
-
-1.12.0
-
-3.0.0
-
-2.0.10
-
-5.1.1
-
-1.1.3
-
-7.0.4
-
-1.12.0
-
-3.0.0
-
-2.0.8
-
-5.1.1
-
-1.1.3
-
-7.0.3
-
-1.12.0
-
-3.0.0
-
-2.0.8
-
-5.1.0
-
-N/A
-
-7.0.2
-
-1.10.12
-
-3.0.0
-
-2.0.8
-
-5.0.14
-
-N/A
-
-7.0.1
-
-1.10.10
-
-3.0.0
-
-2.0.8
-
-5.0.14
-
-N/A
-
-7.0.0
-
-1.10.9
-
-3.0.0-19
-
-2.0.8
-
-5.0.14
-
-N/A
+| Unified CLI | Alloy | API Builder | Cloud CLI | Titanium CLI | Appc Daemon |
+| --- | --- | --- | --- | --- | --- |
+| 7.1.0 | 1.14.0 | 3.2.13 | 2.1.0 | 5.2.1 | 1.1.3 |
+| 7.0.12 | 1.13.10 | 3.2.13 | 2.1.0 | 5.1.1 | 1.1.3 |
+| 7.0.11 | 1.13.9 | 3.2.12 | 2.1.0 | 5.1.1 | 1.1.3 |
+| 7.0.10 | 1.13.8 | 3.2.11 | 2.0.12 | 5.1.1 | 1.1.3 |
+| 7.0.9 | 1.13.4 | 3.2.7 | 2.0.12 | 5.1.1 | 1.1.3 |
+| 7.0.8 | 1.13.4 | 3.2.7 | 2.0.11 | 5.1.1 | 1.1.3 |
+| 7.0.7 | 1.13.2 | 3.2.5 | 2.0.10 | 5.1.1 | 1.1.3 |
+| 7.0.6 | 1.13.2 | 3.0.0 | 2.0.10 | 5.1.1 | 1.1.3 |
+| 7.0.5 | 1.12.0 | 3.0.0 | 2.0.10 | 5.1.1 | 1.1.3 |
+| 7.0.4 | 1.12.0 | 3.0.0 | 2.0.8 | 5.1.1 | 1.1.3 |
+| 7.0.3 | 1.12.0 | 3.0.0 | 2.0.8 | 5.1.0 | N/A |
+| 7.0.2 | 1.10.12 | 3.0.0 | 2.0.8 | 5.0.14 | N/A |
+| 7.0.1 | 1.10.10 | 3.0.0 | 2.0.8 | 5.0.14 | N/A |
+| 7.0.0 | 1.10.9 | 3.0.0-19 | 2.0.8 | 5.0.14 | N/A |
 
 ##### Unsupported versions of CLI includes
 
-Unified CLI
-
-Alloy
-
-API Builder
-
-Cloud CLI
-
-Titanium CLI
-
-6.3.0
-
-1.10.5
-
-2.0.2
-
-2.0.7
-
-5.0.14
-
-6.2.4
-
-1.9.14
-
-2.0.2
-
-2.0.5
-
-5.0.14
-
-6.2.3
-
-1.9.13
-
-2.0.2
-
-2.0.5
-
-5.0.14
-
-6.2.2
-
-1.9.11
-
-2.0.2
-
-2.0.5
-
-5.0.14
-
-6.2.1
-
-1.9.11
-
-2.0.0
-
-2.0.4
-
-5.0.13
-
-6.2.0
-
-1.9.11
-
-2.0.3
-
-2.0.4
-
-5.0.12
-
-6.1.0
-
-1.9.5
-
-1.10.1
-
-1.2.2
-
-5.0.11
-
-6.0.0
-
-1.9.4
-
-1.8.12
-
-1.2.2
-
-5.0.11
-
-5.5.1
-
-1.9.2
-
-1.8.6
-
-1.2.1
-
-5.0.9
-
-5.5.0
-
-1.9.2
-
-1.8.6
-
-1.2.1
-
-5.0.9
-
-5.4.0
-
-1.9.1
-
-1.8.2
-
-1.2.1
-
-5.0.9
-
-5.3.1
-
-1.8.7
-
-1.8.2
-
-1.2.0
-
-5.0.8
-
-5.3.0
-
-1.8.7
-
-1.7.31
-
-1.2.0
-
-5.0.8
-
-5.2.2
-
-1.8.3
-
-1.7.29
-
-1.2.0
-
-5.0.6
-
-5.2.1
-
-1.8.2
-
-1.7.29
-
-1.2.0
-
-5.0.6
-
-5.2.0
-
-1.7.33
-
-1.7.27
-
-1.1.0
-
-5.0.6
-
-5.1.0
-
-1.7.32
-
-1.3.22
-
-1.0.32
-
-5.0.6
+| Unified CLI | Alloy | API Builder | Cloud CLI | Titanium CLI |
+| --- | --- | --- | --- | --- |
+| 6.3.0 | 1.10.5 | 2.0.2 | 2.0.7 | 5.0.14 |
+| 6.2.4 | 1.9.14 | 2.0.2 | 2.0.5 | 5.0.14 |
+| 6.2.3 | 1.9.13 | 2.0.2 | 2.0.5 | 5.0.14 |
+| 6.2.2 | 1.9.11 | 2.0.2 | 2.0.5 | 5.0.14 |
+| 6.2.1 | 1.9.11 | 2.0.0 | 2.0.4 | 5.0.13 |
+| 6.2.0 | 1.9.11 | 2.0.3 | 2.0.4 | 5.0.12 |
+| 6.1.0 | 1.9.5 | 1.10.1 | 1.2.2 | 5.0.11 |
+| 6.0.0 | 1.9.4 | 1.8.12 | 1.2.2 | 5.0.11 |
+| 5.5.1 | 1.9.2 | 1.8.6 | 1.2.1 | 5.0.9 |
+| 5.5.0 | 1.9.2 | 1.8.6 | 1.2.1 | 5.0.9 |
+| 5.4.0 | 1.9.1 | 1.8.2 | 1.2.1 | 5.0.9 |
+| 5.3.1 | 1.8.7 | 1.8.2 | 1.2.0 | 5.0.8 |
+| 5.3.0 | 1.8.7 | 1.7.31 | 1.2.0 | 5.0.8 |
+| 5.2.2 | 1.8.3 | 1.7.29 | 1.2.0 | 5.0.6 |
+| 5.2.1 | 1.8.2 | 1.7.29 | 1.2.0 | 5.0.6 |
+| 5.2.0 | 1.7.33 | 1.7.27 | 1.1.0 | 5.0.6 |
+| 5.1.0 | 1.7.32 | 1.3.22 | 1.0.32 | 5.0.6 |
 
 #### Appc NPM
 
 ##### Supported version of Appc NPM
 
-Unified CLI Version
-
-Min Appc NPM Version
-
-7.1.0 - latest
-
-4.2.14
-
-7.0.3 - 7.0.12
-
-4.2.13
-
-7.0.0
-
-4.2.10
+| Unified CLI Version | Min Appc NPM Version |
+| --- | --- |
+| 7.1.0 - latest | 4.2.14 |
+| 7.0.3 - 7.0.12 | 4.2.13 |
+| 7.0.0 | 4.2.10 |
 
 ##### Unsupported version of Appc NPM
 
-Unified CLI Version
-
-Min Appc NPM Version
-
-6.3.0
-
-4.2.10
-
-6.2.4
-
-4.2.9
-
-5.4.0
-
-4.2.4-1
-
-5.3.1
-
-4.2.4-1
-
-5.3.0
-
-4.2.4-1
-
-5.2.2
-
-4.2.4-1
-
-5.2.1
-
-4.0.0
-
-5.2.0
-
-4.0.0
-
-5.1.0
-
-4.0.0
+| Unified CLI Version | Min Appc NPM Version |
+| --- | --- |
+| 6.3.0 | 4.2.10 |
+| 6.2.4 | 4.2.9 |
+| 5.4.0 | 4.2.4-1 |
+| 5.3.1 | 4.2.4-1 |
+| 5.3.0 | 4.2.4-1 |
+| 5.2.2 | 4.2.4-1 |
+| 5.2.1 | 4.0.0 |
+| 5.2.0 | 4.0.0 |
+| 5.1.0 | 4.0.0 |
 
 #### Node.js
 
@@ -1649,43 +579,17 @@ To run Unified CLI, you must have Node.js 6.x or later.
 
 ##### Supported version of node.js
 
-Unified CLI Version
-
-Min Node Version
-
-Max Node Version
-
-7.1.0 - latest
-
-8.x
-
-10.x
-
-6.2.2 - 7.0.12
-
-6.x
-
-8.15.x
+| Unified CLI Version | Min Node Version | Max Node Version |
+| --- | --- | --- |
+| 7.1.0 - latest | 8.x | 10.x |
+| 6.2.2 - 7.0.12 | 6.x | 8.15.x |
 
 ##### Unsupported version of node.js
 
-Unified CLI Version
-
-Min Node Version
-
-Max Node Version
-
-6.0.0 - 6.2.1
-
-4.2.0
-
-4.6.2
-
-5.1.0 - 5.4.0
-
-0.10.x
-
-4.2.x
+| Unified CLI Version | Min Node Version | Max Node Version |
+| --- | --- | --- |
+| 6.0.0 - 6.2.1 | 4.2.0 | 4.6.2 |
+| 5.1.0 - 5.4.0 | 0.10.x | 4.2.x |
 
 ### Desktop browser
 
@@ -1695,10 +599,9 @@ The following desktop browsers are recommended for previewing and debugging appl
 
 * Firefox (with Firebug extension)
 
-
 #### Android emulator
 
-Refer to the [Android requirements and instructions below](#Android) for installing the Android SDK, which contains the Android emulator.
+Refer to the [Android requirements and instructions below](#android) for installing the Android SDK, which contains the Android emulator.
 
 ## Other useful software
 
@@ -1712,41 +615,11 @@ Obtain the version that pertains to your particular Operating System from the li
 
 ![download_05](/Images/appc/download/attachments/29004836/download_05.png)
 
-Operating System
-
-Package Name
-
-Package Version
-
-Download Location
-
-Notes
-
-OS X
-
-git
-
-Latest
-
-[Official Website](http://git-scm.com/download)
-
-Windows
-
-msysgit
-
-Latest
-
-[Official Website](http://git-scm.com/download)
-
-On Studio 3.2.0 and later, portablegit is installed by default if no other Git client is installed.
-
-Ubuntu
-
-git
-
-Latest
-
-Default Repositories
+| Operating System | Package Name | Package Version | Download Location | Notes |
+| --- | --- | --- | --- | --- |
+| OS X | git | Latest | [Official Website](http://git-scm.com/download) |  |
+| Windows | msysgit | Latest | [Official Website](http://git-scm.com/download) | On Studio 3.2.0 and later, portablegit is installed by default if no other Git client is installed. |
+| Ubuntu | git | Latest | Default Repositories |  |
 
 See [Installing Git](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Git/) for detailed instructions.
 
@@ -1758,37 +631,11 @@ Titanium supports the following versions of Python for each respective Operating
 
 ![download_05](/Images/appc/download/attachments/29004836/download_05.png)
 
-Operating System
-
-Package Version
-
-Package Architecture Version
-
-Download Location
-
-OS X
-
-2.x.x (currently, 2.7.x)
-
-32bit and 64bit
-
-Installed on OS by default
-
-Windows
-
-2.x.x (currently, 2.7.x)
-
-32bit **only**
-
-[Official Python Website](http://www.python.org/download/)
-
-Ubuntu
-
-2.x.x (currently, 2.7.x)
-
-32bit and 64bit
-
-Default Repositories
+| Operating System | Package Version | Package Architecture Version | Download Location |
+| --- | --- | --- | --- |
+| OS X | 2.x.x (currently, 2.7.x) | 32bit and 64bit | Installed on OS by default |
+| Windows | 2.x.x (currently, 2.7.x) | 32bit **only** | [Official Python Website](http://www.python.org/download/) |
+| Ubuntu | 2.x.x (currently, 2.7.x) | 32bit and 64bit | Default Repositories |
 
 Download the installer from the applicable download location above.
 
@@ -1800,37 +647,11 @@ Python's setuptools can be installed from the following locations:
 
 ![download_05](/Images/appc/download/attachments/29004836/download_05.png)
 
-Operating System
-
-Package Version
-
-Package Architecture Version
-
-Download Location
-
-OS X
-
-Latest version compatible with installed Python version
-
-32-bit and 64-bit
-
-Installed on OS by default
-
-Windows
-
-Latest version compatible with installed Python version
-
-32-bit **only**
-
-[Official setuptools Website](http://pypi.python.org/pypi/setuptools#downloads)
-
-Ubuntu
-
-Latest version compatible with installed Python version
-
-32-bit and 64-bit
-
-Default Repositories
+| Operating System | Package Version | Package Architecture Version | Download Location |
+| --- | --- | --- | --- |
+| OS X | Latest version compatible with installed Python version | 32-bit and 64-bit | Installed on OS by default |
+| Windows | Latest version compatible with installed Python version | 32-bit **only** | [Official setuptools Website](http://pypi.python.org/pypi/setuptools#downloads) |
+| Ubuntu | Latest version compatible with installed Python version | 32-bit and 64-bit | Default Repositories |
 
 See [Installing Required Python Packages](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Required_Python_Packages/) for detailed instructions.
 
@@ -1846,23 +667,10 @@ Obtain the latest stable version of gperf.
 
 ![download_05](/Images/appc/download/attachments/29004836/download_05.png)
 
-Operating System
-
-Package Version
-
-Download Location
-
-OS X
-
-Latest Stable
-
-Included with the Xcode developer tools.
-
-Windows
-
-Latest Stable
-
-[gnuwin32.sourceforge.net](http://gnuwin32.sourceforge.net/packages/gperf.htm)
+| Operating System | Package Version | Download Location |
+| --- | --- | --- |
+| OS X | Latest Stable | Included with the Xcode developer tools. |
+| Windows | Latest Stable | [gnuwin32.sourceforge.net](http://gnuwin32.sourceforge.net/packages/gperf.htm) |
 
 See [Installing gperf](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_gperf/) for detailed instructions.
 
@@ -1878,28 +686,10 @@ Obtain the latest stable version of Apache Ant. Ant is supplied as a multi-platf
 
 ![download_05](/Images/appc/download/attachments/29004836/download_05.png)
 
-Operating System
-
-Package Version
-
-Download Location
-
-OS X
-
-Latest Stable
-
-[Official Website](http://ant.apache.org/bindownload.cgi)
-
-Windows
-
-Latest Stable
-
-[Official Website](http://ant.apache.org/bindownload.cgi)
-
-Ubuntu
-
-Latest Stable
-
-Default Repositories or [Official Website](http://ant.apache.org/bindownload.cgi)
+| Operating System | Package Version | Download Location |
+| --- | --- | --- |
+| OS X | Latest Stable | [Official Website](http://ant.apache.org/bindownload.cgi) |
+| Windows | Latest Stable | [Official Website](http://ant.apache.org/bindownload.cgi) |
+| Ubuntu | Latest Stable | Default Repositories or [Official Website](http://ant.apache.org/bindownload.cgi) |
 
 See [Installing Ant](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Ant/) for detailed instructions.

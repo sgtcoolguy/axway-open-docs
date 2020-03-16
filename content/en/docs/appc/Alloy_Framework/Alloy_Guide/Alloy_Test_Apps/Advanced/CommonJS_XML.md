@@ -64,7 +64,6 @@ The application's main index.xml view shows the two ways to declaratively create
 
 * Lastly, you can declare the desired view by adding a an XML element whose name matches the base name of the view constructor function, minus the "create" prefix. In this example, the <MassiveGreenView/> element automatically calls the createMassiveGreenView() function.
 
-
 By default, the module's **createView()** method is invoked on the module to get the desired view. You can also specify a custom function to invoke with the the method attribute of the <Module/> element.
 
 app/views/index.xml
@@ -135,4 +134,4 @@ app/views/index.xml
 
 ## See also
 
-* [Library Code and CommonJS Modules](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#LibrarycodeandCommonJSmodules)
+* [Library Code and CommonJS Modules](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#library-code-and-commonjs-modules)

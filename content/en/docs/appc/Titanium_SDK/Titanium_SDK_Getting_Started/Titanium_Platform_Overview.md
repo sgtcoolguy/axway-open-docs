@@ -1,33 +1,32 @@
 {"title":"Titanium Platform Overview","weight":"10"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-  * [Titanium SDK](#TitaniumSDK)
+    * [Titanium SDK](#titanium-sdk)
 
-  * [Appcelerator CLI](#AppceleratorCLI)
+    * [Appcelerator CLI](#appcelerator-cli)
 
-  * [Hyperloop](#Hyperloop)
+    * [Hyperloop](#hyperloop)
 
-  * [Alloy](#Alloy)
+    * [Alloy](#alloy)
 
-  * [Titanium APIs](#TitaniumAPIs)
+    * [Titanium APIs](#titanium-apis)
 
-  * [Axway Appcelerator Studio](#AxwayAppceleratorStudio)
+    * [Axway Appcelerator Studio](#axway-appcelerator-studio)
 
-  * [Modules](#Modules)
+    * [Modules](#modules)
 
-  * [Axway Appcelerator Dashboard](#AxwayAppceleratorDashboard)
+    * [Axway Appcelerator Dashboard](#axway-appcelerator-dashboard)
 
-  * [Axway API Builder](#AxwayAPIBuilder)
+    * [Axway API Builder](#axway-api-builder)
 
-* [Titanium at 10,000 feet](#Titaniumat10,000feet)
+* [Titanium at 10,000 feet](#titanium-at-10,000-feet)
 
-  * [Going Native](#GoingNative)
+    * [Going Native](#going-native)
 
-* [References and Further Reading](#ReferencesandFurtherReading)
+* [References and Further Reading](#references-and-further-reading)
 
-* [Start using Titanium Platform](#StartusingTitaniumPlatform)
-
+* [Start using Titanium Platform](#start-using-titanium-platform)
 
 ## Objective
 
@@ -39,24 +38,23 @@ The Titanium Platform allows you to create, run, and package native mobile appli
 
 At a high-level, Titanium is the combination of:
 
-* [Titanium SDK](#TitaniumSDK)
+* [Titanium SDK](#titanium-sdk)
 
-* [Appcelerator CLI](#AppceleratorCLI)
+* [Appcelerator CLI](#appcelerator-cli)
 
-* [Hyperloop](#Hyperloop)
+* [Hyperloop](#hyperloop)
 
 * [Alloy](#undefined)
 
-* [Titanium APIs](#TitaniumAPIs)
+* [Titanium APIs](#titanium-apis)
 
-* [Axway Appcelerator Studio](#AxwayAppceleratorStudio)
+* [Axway Appcelerator Studio](#axway-appcelerator-studio)
 
 * [Modules](#undefined)
 
 * [Axway Appcelerator Dashboard](#AppceleratorDashboard)
 
-* [Axway API Builder](#AxwayAPIBuilder)
-
+* [Axway API Builder](#axway-api-builder)
 
 ### Titanium SDK
 

@@ -1,27 +1,26 @@
 {"title":"Code Analyzer","weight":"120"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Analyzing an Application](#AnalyzinganApplication)
+* [Analyzing an Application](#analyzing-an-application)
 
-  * [Starting Code Analysis](#StartingCodeAnalysis)
+    * [Starting Code Analysis](#starting-code-analysis)
 
-  * [Displaying the Results](#DisplayingtheResults)
+    * [Displaying the Results](#displaying-the-results)
 
-  * [Saving the Results](#SavingtheResults)
+    * [Saving the Results](#saving-the-results)
 
-  * [Interpreting the Results in the Project Files](#InterpretingtheResultsintheProjectFiles)
+    * [Interpreting the Results in the Project Files](#interpreting-the-results-in-the-project-files)
 
-  * [Interpreting the Results in the HTML Page](#InterpretingtheResultsintheHTMLPage)
+    * [Interpreting the Results in the HTML Page](#interpreting-the-results-in-the-html-page)
 
-    * [Error and Warning Interpretation](#ErrorandWarningInterpretation)
+        * [Error and Warning Interpretation](#error-and-warning-interpretation)
 
-* [Configuring the Code Analyzer](#ConfiguringtheCodeAnalyzer)
+* [Configuring the Code Analyzer](#configuring-the-code-analyzer)
 
-* [Troubleshooting](#Troubleshooting)
+* [Troubleshooting](#troubleshooting)
 
-  * [Fails with the message: Node.js maximum call stack size exceeded](#Failswiththemessage:Node.jsmaximumcallstacksizeexceeded)
-
+    * [Fails with the message: Node.js maximum call stack size exceeded](#fails-with-the-message:-node.js-maximum-call-stack-size-exceeded)
 
 This page describes how to use the Appcelerator Studio Code Analyzer to analyze JavaScript code in your mobile projects.
 
@@ -47,13 +46,11 @@ In the **Project Explorer** view, either:
 
 * Select your project, and from the menu bar, select **Run > Code Analysis**, then select an option.
 
-
 You can choose to either run code analysis for a single platform or for multiple platforms:
 
 * For a single platform, select one of the first set of options, which correspond to the deploy targets in the tiapp.xml file.
 
 * For multiple platforms, select **Multiple...**. A dialog appears. Select the platforms to analyze, then click **Analyze**.
-
 
 A dialog appears or progress indicator starts indicating the code analysis has started. The speed of the code analyzer depends on the complexity of your code.
 
@@ -83,7 +80,6 @@ To save the currently displayed results:
 
 4. Click **Open**.
 
-
 Studio saves the results in the location you chose in a folder called <Project\_Name> (<platform>).
 
 To export results for multiple platforms:
@@ -95,7 +91,6 @@ To export results for multiple platforms:
 3. Enter a directory to export the results to in the **Export Location** textbox.
 
 4. Click **Export****.**
-
 
 Studio saves the results in the location you chose in a folder called <Project\_Name> (<platform>).
 
@@ -115,118 +110,27 @@ These results are also shown in the **Problems** view, which displays an aggrega
 
 Studio opens a new view to display an HTML page with different tabs of results from the code analyzer and its plugins:
 
-Tab Section
-
-Description
-
-**Summary**
-
-Provides a summary of the API warnings and errors, and code processor options and plugins used.
-
-**API Usage Finder**
-
-Provides a breakdown of the APIs by usage and by file.
-
-**Project Score**
-
-This score is a work in progress and is only an estimate based on Appcelerator best practices and the code analyzer's interpretation of the JavaScript specification. This score should not be used to evaluate personal performance. This score is generated based on the errors and warnings found by the code analyzer.
-
-**Analysis Coverage**
-
-Provides coverage statistics about the files and how much code the code analyzer was able to visit and process. Results can vary depending on the configuration settings.
-
-**Platform Validator**
-
-Provides detailed results of any invalid platform-specific API usage. Lists each occurrence of a misused API and its location (filename and line number).
-
-**API Deprecation Finder**
-
-Provides detailed results of any deprecated API usage. Lists each occurrence of a deprecated API and its location (filename and line number).
+| Tab Section | Description |
+| --- | --- |
+| **Summary** | Provides a summary of the API warnings and errors, and code processor options and plugins used. |
+| **API Usage Finder** | Provides a breakdown of the APIs by usage and by file. |
+| **Project Score** | This score is a work in progress and is only an estimate based on Appcelerator best practices and the code analyzer's interpretation of the JavaScript specification. This score should not be used to evaluate personal performance. This score is generated based on the errors and warnings found by the code analyzer. |
+| **Analysis Coverage** | Provides coverage statistics about the files and how much code the code analyzer was able to visit and process. Results can vary depending on the configuration settings. |
+| **Platform Validator** | Provides detailed results of any invalid platform-specific API usage. Lists each occurrence of a misused API and its location (filename and line number). |
+| **API Deprecation Finder** | Provides detailed results of any deprecated API usage. Lists each occurrence of a deprecated API and its location (filename and line number). |
 
 #### Error and Warning Interpretation
 
 The table below lists some of the common errors and warnings, how to interpret them and how to resolve them. This is not an exhaustive list of warning and errors generated by the code analyzer. You may receive some false positives based on your code analyzer configuration settings (see the "Configuring Code Analyzer" section). Additionally, your code may run fine but the code analyzer was unable to evaluate the context for some of your code.
 
-Error/Warning
-
-Reason for Error/Warning
-
-Suggested Resolution
-
-"Maximum callstack exceeded" or "Maximum recursion depth reached"
-
-You have a recursive call where the context could not be definitively evaluated, so the code analyzer processed as deep as it could until it ran out of stack space or its internal limit was reached. For example:
-
-`// Since the initial value cannot be definitively evaluated,`
-
-`// the code analyzer continually processes the function`
-
-`// until its stack space runs out`
-
-`function factorial (value) {`
-
-`if` `(value ==` `0``) {`
-
-`return`  `1``;`
-
-`}` `else` `{`
-
-`return` `value * factorial(value -` `1``);`
-
-`}`
-
-`}`
-
-`factorial(Date.now());`
-
-May be a false positive.
-
-"Null value has no property <X>" or "undefined value has no property <X>"
-
-You are referencing a property of an object that does not exist or does not have a value.
-
-This may be caused by using Ti.include calls that could not be resolved.
-
-It is recommended to change your Ti.include calls to require calls.
-
-"A value that could not be evaluated was passed to require" or
-"A value that could not be evaluated was passed to Ti.include"
-
-You are passing a variable and not a hard-coded value to your require or Ti.include method and the code analyzer could not process it. As a side effect, this may generate other errors or the code analyzer may skip parts of the application. For example:
-
-`// If getPath was not defined or Invoke Methods was disabled,`
-
-`// the code analyzer cannot resolve the following path`
-
-`var path = getPath(Ti.Platform.osname);`
-
-`require(path +` `"/foo"``);`
-
-Hard code the module you want to load in to your require or Ti.include call.
-
-"Property <X> is not supported on <platform>"
-
-According to the documentation file inside the Titanium SDK, this API does not exist for the platform you are running the code analyzer for.
-
-May be a false positive if **Process Univisited Code** is enabled in your Code Analyzer settings since it visits all code.
-
-May need to place conditional code around this API call.
-
-May be a bug in the documentation file.
-
-"<X> has been deprecated"
-
-According to the documentation file inside the Titanium SDK, this API has been marked deprecated and will be removed in a future SDK version.
-
-Update your code to the non-deprecated API.
-
-May be a bug in the documentation file.
-
-"<X> is not defined"
-
-The code analyzer could not find this API reference.
-
-Check your spelling and that the API exist.
+| Error/Warning | Reason for Error/Warning | Suggested Resolution |
+| --- | --- | --- |
+| "Maximum callstack exceeded" or "Maximum recursion depth reached" | You have a recursive call where the context could not be definitively evaluated, so the code analyzer processed as deep as it could until it ran out of stack space or its internal limit was reached. For example:<br /><br />`// Since the initial value cannot be definitively evaluated,`<br /><br />`// the code analyzer continually processes the function`<br /><br />`// until its stack space runs out`<br /><br />`function factorial (value) {`<br /><br />`if` `(value ==` `0``) {`<br /><br />`return`  `1``;`<br /><br />`}` `else` `{`<br /><br />`return` `value * factorial(value -` `1``);`<br /><br />`}`<br /><br />`}`<br /><br />`factorial(Date.now());` | May be a false positive. |
+| "Null value has no property <X>" or "undefined value has no property <X>" | You are referencing a property of an object that does not exist or does not have a value.<br /><br />This may be caused by using Ti.include calls that could not be resolved. | It is recommended to change your Ti.include calls to require calls. |
+| "A value that could not be evaluated was passed to require" or  <br />"A value that could not be evaluated was passed to Ti.include" | You are passing a variable and not a hard-coded value to your require or Ti.include method and the code analyzer could not process it. As a side effect, this may generate other errors or the code analyzer may skip parts of the application. For example:<br /><br />`// If getPath was not defined or Invoke Methods was disabled,`<br /><br />`// the code analyzer cannot resolve the following path`<br /><br />`var path = getPath(Ti.Platform.osname);`<br /><br />`require(path +` `"/foo"``);` | Hard code the module you want to load in to your require or Ti.include call. |
+| "Property <X> is not supported on <platform>" | According to the documentation file inside the Titanium SDK, this API does not exist for the platform you are running the code analyzer for. | May be a false positive if **Process Univisited Code** is enabled in your Code Analyzer settings since it visits all code.<br /><br />May need to place conditional code around this API call.<br /><br />May be a bug in the documentation file. |
+| "<X> has been deprecated" | According to the documentation file inside the Titanium SDK, this API has been marked deprecated and will be removed in a future SDK version. | Update your code to the non-deprecated API.<br /><br />May be a bug in the documentation file. |
+| "<X> is not defined" | The code analyzer could not find this API reference. | Check your spelling and that the API exist. |
 
 ## Configuring the Code Analyzer
 
@@ -234,20 +138,19 @@ To configure the Code Analyzer:
 
 1. Open **Appcelerator Studio Preferences**.
 
-  * On Mac OS X, in the menu, select **Appcelerator Studio > Preferences**.
+    * On Mac OS X, in the menu, select **Appcelerator Studio > Preferences**.
 
-  * On Windows, in the menu, select **Window > Preferences**.
+    * On Windows, in the menu, select **Window > Preferences**.
 
 2. Navigate to **Studio > Code Analyzer**.
 
 3. Enable or disable the following behavior by checking and unchecking the item checkboxes, respectively:
 
-  * **Invoke Methods** – Indicates whether or not to invoke methods.
+    * **Invoke Methods** – Indicates whether or not to invoke methods.
 
-  * **Evaluate Loops** – Indicates whether or not to evaluate loops. Disabling this option only evaluates the loop once and increases the speed performance of the analyzer.
+    * **Evaluate Loops** – Indicates whether or not to evaluate loops. Disabling this option only evaluates the loop once and increases the speed performance of the analyzer.
 
-  * **Process Unvisited Code** – Indicates whether or not to process unvisited code.
-
+    * **Process Unvisited Code** – Indicates whether or not to process unvisited code.
 
 For accuracy, it is recommended to keep the default values, where **Invoke Methods** and **Evaluate Loops** are enabled, and **Process Univisited Code** is disabled.
 
@@ -270,6 +173,5 @@ To increase the stack size of the node command for the Code Analyzer:
 2. In the **Max Stack Size** field, enter **10000** or a value greater than the default, which is usually 1000.
 
 3. Click **OK** and rerun the Code Analyzer.
-
 
 Finding the correct size is a bit of an art. Too low and you get this exception, but too high and Node.js itself will segfault. Note that a correct value may not exist for this app, meaning that it is possible that this app cannot be analyzed using the code analyzer.

@@ -22,7 +22,6 @@ Studio 5.1.2.RC is a patch release that includes several bug fixes.
 
 * [TISTUD-9126](https://jira.appcelerator.org/browse/TISTUD-9126) - Studio 5.1.1.GA does not show the right release notes for SDK 7.4.0.GA
 
-
 ## Known issues
 
 * [TISTUD-9110](https://jira.appcelerator.org/browse/TISTUD-9110) - Using Debugger breakpoint is not working on studio 5.1.0 (alloy and classic)

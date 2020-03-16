@@ -1,35 +1,34 @@
 {"title":"Alloy Getting Started","weight":"10"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Command-line interface installation](#Command-lineinterfaceinstallation)
+* [Command-line interface installation](#command-line-interface-installation)
 
-* [Create a project](#Createaproject)
+* [Create a project](#create-a-project)
 
-  * [Using Studio](#UsingStudio)
+    * [Using Studio](#using-studio)
 
-  * [Using the CLI](#UsingtheCLI)
+    * [Using the CLI](#using-the-cli)
 
-* [Simple example](#Simpleexample)
+* [Simple example](#simple-example)
 
-  * [View](#View)
+    * [View](#view)
 
-  * [Style](#Style)
+    * [Style](#style)
 
-  * [Controller](#Controller)
+    * [Controller](#controller)
 
-  * [Asset](#Asset)
+    * [Asset](#asset)
 
-  * [Compile and run](#Compileandrun)
+    * [Compile and run](#compile-and-run)
 
-    * [Using Studio](#UsingStudio.1)
+        * [Using Studio](#using-studio)
 
-    * [Using the CLI](#UsingtheCLI.1)
+        * [Using the CLI](#using-the-cli)
 
-* [More examples](#Moreexamples)
+* [More examples](#more-examples)
 
-* [Next steps](#Nextsteps)
-
+* [Next steps](#next-steps)
 
 ## Overview
 
@@ -43,14 +42,13 @@ To create and manage Alloy applications, you need the Alloy command-line interfa
 
 2. From a terminal, run the following command to install the CLI:
 
-  `[sudo] npm install appcelerator -g`
+    `[sudo] npm install appcelerator -g`
 
 3. After installation, run the setup command to install required components:
 
-  `appc setup`
+    `appc setup`
 
-  After the CLI downloads and installs the required components, you will be prompted to login and authorize your computer. The CLI will ask to send an authorization token to your e-mail account or as a text to your mobile phone. Enter the authorization token once you receive it to complete the registration process.
-
+    After the CLI downloads and installs the required components, you will be prompted to login and authorize your computer. The CLI will ask to send an authorization token to your e-mail account or as a text to your mobile phone. Enter the authorization token once you receive it to complete the registration process.
 
 ## Create a project
 
@@ -63,7 +61,6 @@ To create a new Alloy project, start Appcelerator Studio, then
 2. Select **Alloy** in the **Available Templates** box, choose a template, then click the **Next** button.
 
 3. Complete all of the fields, then click the **Finish** button.
-
 
 A new skeleton Alloy project will be generated. If you are familiar with classic Titanium development, the Resources folder is hidden from the App and Project Explorer. All work for an Alloy project is done in the app directory.
 

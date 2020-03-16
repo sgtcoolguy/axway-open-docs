@@ -1,25 +1,24 @@
 {"title":"TableViews","weight":"20"}
 
-* [Objective](#Objective)
+* [Objective](#objective)
 
-* [Contents](#Contents)
+* [Contents](#contents)
 
-  * [Assigning data to your table](#Assigningdatatoyourtable)
+    * [Assigning data to your table](#assigning-data-to-your-table)
 
-    * [Emptying a table](#Emptyingatable)
+        * [Emptying a table](#emptying-a-table)
 
-    * [Setting data vs. setData() vs. appendRow()](#Settingdatavs.setData()vs.appendRow())
+        * [Setting data vs. setData() vs. appendRow()](#setting-data-vs.-setdata-vs.-appendrow)
 
-  * [Row properties](#Rowproperties)
+    * [Row properties](#row-properties)
 
-    * [Row indicators](#Rowindicators)
+        * [Row indicators](#row-indicators)
 
-  * [Custom rows](#Customrows)
+    * [Custom rows](#custom-rows)
 
-  * [Grouped rows](#Groupedrows)
+    * [Grouped rows](#grouped-rows)
 
-  * [Headers and footers](#Headersandfooters)
-
+    * [Headers and footers](#headers-and-footers)
 
 ## Objective
 
@@ -50,7 +49,6 @@ Some key table properties include:
 * footerTitle / footerView – controls the table's footer
 
 * scrollable (boolean) – controls whether the table is scrollable (vertically)
-
 
 ### Assigning data to your table
 
@@ -142,7 +140,6 @@ Now that we've seen how to create tables and rows, let's learn a bit more about 
 
 * backgroundColor – set this property to a color string to set the row's background color
 
-
 So let's augment the properties of the prior TableView example rows. In the following code we'll utilize the above properties on a per row basis, making for a highly styled set of table rows.
 
 ![table2](/Images/appc/download/attachments/29004930/table2.png)
@@ -186,7 +183,6 @@ Row indicators are icons that provide visual cues to your users related to your 
 * hasDetail – indicates a detail view or alert will appear when row is tapped (not supported on Android)
 
 * hasCheck – an on/off or yes/no indicator
-
 
 ### Custom rows
 

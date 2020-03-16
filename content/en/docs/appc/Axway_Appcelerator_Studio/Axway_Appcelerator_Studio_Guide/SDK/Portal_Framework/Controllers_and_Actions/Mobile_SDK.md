@@ -1,23 +1,22 @@
 {"title":"Mobile SDK","weight":"40"}
 
-* [Requirements](#Requirements)
+* [Requirements](#requirements)
 
-* [Invocation](#Invocation)
+* [Invocation](#invocation)
 
-* [Description](#Description)
+* [Description](#description)
 
-* [SDK Info Command](#SDKInfoCommand)
+* [SDK Info Command](#sdk-info-command)
 
-  * [Reading the SDK-Info](#ReadingtheSDK-Info)
+    * [Reading the SDK-Info](#reading-the-sdk-info)
 
-* [Trigger an Install/Update](#TriggeranInstall/Update)
+* [Trigger an Install/Update](#trigger-an-install/update)
 
-* [Trigger a SDK refresh](#TriggeraSDKrefresh)
+* [Trigger a SDK refresh](#trigger-a-sdk-refresh)
 
-* [MobileWeb Browser Check](#MobileWebBrowserCheck)
+* [MobileWeb Browser Check](#mobileweb-browser-check)
 
-  * [Note](#Note)
-
+    * [Note](#note)
 
 ## Requirements
 
@@ -90,25 +89,12 @@ The example above calls _portal.sdks.update(e);_ whenever the Studio fires a _mo
 
 The event that the Studio sends contains these fields:
 
-key
-
-content
-
-response
-
-The event type. In this case, the studio is 'responding' an SDK-info request.
-
-data
-
-The JSON data that the Studio collected. This data holds the actual SDK info (see)
-
-data.sdkName
-
-An 'sdkName' field inside the sdk-data. This field allows the JS part to determine the SDK type that this response is referring to.
-
-data.sdkInfo
-
-The data JSON that the Studio collected for the SDK-Info request. That data may be later sent to be rendered on the UI
+| key | content |
+| --- | --- |
+| response | The event type. In this case, the studio is 'responding' an SDK-info request. |
+| data | The JSON data that the Studio collected. This data holds the actual SDK info (see) |
+| data.sdkName | An 'sdkName' field inside the sdk-data. This field allows the JS part to determine the SDK type that this response is referring to. |
+| data.sdkInfo | The data JSON that the Studio collected for the SDK-Info request. That data may be later sent to be rendered on the UI |
 
 `update : function(sdkEvent) {`
 
@@ -144,131 +130,28 @@ The data JSON that the Studio collected for the SDK-Info request. That data may 
 
 The SDK-info JSON object holds the following information:
 
-key
-
-content
-
-restrictions
-
-installedPlatform
-
-An array of the installed SDK platform versions (Android/iOS
-
-None
-
-requiredPlatform
-
-An array of required SDK platform versions
-
-None
-
-sdkURL
-
-A URL for the SDK (An installer URL for Android, or an iOS installation page
-
-None
-
-errorInfo
-
-An **_optional_** key that holds additional error information that should be displayed
-
-None
-
-shouldUpdatePlatform
-
-A boolean value that indicates that an update/install is needed (based on version comparison of the items above)
-
-Android Only
-
-installedPlatformTools
-
-Android installed 'Platform Tools' version
-
-Android Only
-
-requiredPlatformTools
-
-Android required 'Platform tools' version
-
-Android Only
-
-shouldUpdatePlatformTools
-
-A boolean value that indicates that an update/install is needed for the Android 'Platform Tools'
-
-Android Only
-
-installedSDKTools
-
-Android installed 'SDK Tools' version
-
-Android Only
-
-requiredSDKTools
-
-Android required 'Platform Tools' version
-
-Android Only
-
-shouldUpdateSDKTools
-
-A boolean value that indicates that an update/install is needed for the Android 'SDK Tools'
-
-Android Only
-
-installedAddOns
-
-An array of installed Android 'Add-Ons'
-
-Android Only
-
-requiredAddOns
-
-An array of required Android 'Add-Ons'
-
-Android Only
-
-shouldUpdateAddOns
-
-A boolean value that indicates that an update/install is needed for the Android 'Add-Ons'
-
-Android Only
-
-installedAPILevels
-
-An array of API-levels for the installed Android platforms
-
-Android Only, TiStud 2.0.2+
-
-requiredAPILevels
-
-An array of Android API-levels required by all of the installed Titanium SDK versions
-
-Android Only, TiStud 2.0.2+
-
-shouldUpdateAPILevels
-
-A boolean value that indicates that an update/install is needed for the Android platforms (API-levels)
-
-Android Only, TiStud 2.0.2+
-
-hasJavaHome
-
-A boolean value that indicates that the system environment contains a JAVA\_HOME setting
-
-Android Only
-
-hasJDK
-
-A boolean value that indicates that the system has a valid JDK installed
-
-Android Only
-
-jdkURL
-
-A JDK installer URL
-
-Android Only
+| key | content | restrictions |
+| --- | --- | --- |
+| installedPlatform | An array of the installed SDK platform versions (Android/iOS | None |
+| requiredPlatform | An array of required SDK platform versions | None |
+| sdkURL | A URL for the SDK (An installer URL for Android, or an iOS installation page | None |
+| errorInfo | An **_optional_** key that holds additional error information that should be displayed | None |
+| shouldUpdatePlatform | A boolean value that indicates that an update/install is needed (based on version comparison of the items above) | Android Only |
+| installedPlatformTools | Android installed 'Platform Tools' version | Android Only |
+| requiredPlatformTools | Android required 'Platform tools' version | Android Only |
+| shouldUpdatePlatformTools | A boolean value that indicates that an update/install is needed for the Android 'Platform Tools' | Android Only |
+| installedSDKTools | Android installed 'SDK Tools' version | Android Only |
+| requiredSDKTools | Android required 'Platform Tools' version | Android Only |
+| shouldUpdateSDKTools | A boolean value that indicates that an update/install is needed for the Android 'SDK Tools' | Android Only |
+| installedAddOns | An array of installed Android 'Add-Ons' | Android Only |
+| requiredAddOns | An array of required Android 'Add-Ons' | Android Only |
+| shouldUpdateAddOns | A boolean value that indicates that an update/install is needed for the Android 'Add-Ons' | Android Only |
+| installedAPILevels | An array of API-levels for the installed Android platforms | Android Only, TiStud 2.0.2+ |
+| requiredAPILevels | An array of Android API-levels required by all of the installed Titanium SDK versions | Android Only, TiStud 2.0.2+ |
+| shouldUpdateAPILevels | A boolean value that indicates that an update/install is needed for the Android platforms (API-levels) | Android Only, TiStud 2.0.2+ |
+| hasJavaHome | A boolean value that indicates that the system environment contains a JAVA\_HOME setting | Android Only |
+| hasJDK | A boolean value that indicates that the system has a valid JDK installed | Android Only |
+| jdkURL | A JDK installer URL | Android Only |
 
 **Example (from the studio3\_sdk repository):**
 
@@ -513,29 +396,11 @@ For Example:
 The _getSDKInfo_ call, when called with a _'MobileWeb'_ argument, will perform a Browser check and will return a data set that contains information about the required and the detected browsers.
 The call will compare the browsers that are set in the Studio's preferences to the browsers and versions required by the MobileWeb. When a mismatch is detected, the Studio will run a detection process that will update the preferences. After that detection, another check is made before returning a JSON response to the caller.
 
-key
-
-content
-
-restrictions
-
-installedBrowsers
-
-An array of the installed browsers versions
-
-None
-
-requiredBrowsers
-
-An array of required browsers versions (read from the sdk\_info.json)
-
-None
-
-shouldUpdateBrowsers
-
-A boolean value that indicates that an update/install is needed (based on version comparison of the items above)
-
-None
+| key | content | restrictions |
+| --- | --- | --- |
+| installedBrowsers | An array of the installed browsers versions | None |
+| requiredBrowsers | An array of required browsers versions (read from the sdk\_info.json) | None |
+| shouldUpdateBrowsers | A boolean value that indicates that an update/install is needed (based on version comparison of the items above) | None |
 
 ### Note
 

@@ -1,53 +1,52 @@
 {"title":"ScriptDoc (SDOC) 2.0 Specification","weight":"50"}
 
-* [Overview](#Overview)
+* [Overview](#overview)
 
-* [Reference](#Reference)
+* [Reference](#reference)
 
-  * [alias](#alias)
+    * [alias](#alias)
 
-  * [author](#author)
+    * [author](#author)
 
-  * [classDescription](#classDescription)
+    * [classDescription](#classdescription)
 
-  * [constructor](#constructor)
+    * [constructor](#constructor)
 
-  * [deprecated](#deprecated)
+    * [deprecated](#deprecated)
 
-  * [example](#example)
+    * [example](#example)
 
-  * [exception](#exception)
+    * [exception](#exception)
 
-  * [id](#id)
+    * [id](#id)
 
-  * [inherits](#inherits)
+    * [inherits](#inherits)
 
-  * [internal](#internal)
+    * [internal](#internal)
 
-  * [memberOf](#memberOf)
+    * [memberOf](#memberof)
 
-  * [method](#method)
+    * [method](#method)
 
-  * [namespace](#namespace)
+    * [namespace](#namespace)
 
-  * [param](#param)
+    * [param](#param)
 
-  * [private](#private)
+    * [private](#private)
 
-  * [projectDescription](#projectDescription)
+    * [projectDescription](#projectdescription)
 
-  * [property](#property)
+    * [property](#property)
 
-  * [return](#return)
+    * [return](#return)
 
-  * [see](#see)
+    * [see](#see)
 
-  * [since](#since)
+    * [since](#since)
 
-  * [type](#type)
+    * [type](#type)
 
-  * [version](#version)
-
+    * [version](#version)
 
 ## Overview
 
@@ -66,7 +65,6 @@ The section for each tag includes the following information:
 * Longer explanation of the tag
 
 * Example (Some tags have multiple examples)
-
 
 ## Reference
 
@@ -138,7 +136,7 @@ Use @author to credit the author of a JavaScript file or function.
 
 **Example**
 
-This example shows the @author tag used with the [@projectDescription](#projectDescription) and [@version](#version) tags to provide header information for a JavaScript file.
+This example shows the @author tag used with the [@projectDescription](#projectdescription) and [@version](#version) tags to provide header information for a JavaScript file.
 
 `/**`
 
@@ -274,7 +272,9 @@ Use the @example tag when you want to show an example of how to use the code tha
 
 This example shows a documentation block for a "move" function that takes the arguments "layerID" and "direction" and includes an @example tag with code example. Use HTML tags to format your descriptions. Use the
 
-    {code}{code}
+```
+{code}{code}
+```
 
 tag set to format the example as code. (This example uses the @remarks tag to give more information about the function.)
 
@@ -774,7 +774,7 @@ Specifies the version number of the JavaScript file or class.
 
 **Example**
 
-This example shows the @version tag used with the [@projectDescription](#projectDescription) and [@author](#author) tags to provide header information for a JavaScript file.
+This example shows the @version tag used with the [@projectDescription](#projectdescription) and [@author](#author) tags to provide header information for a JavaScript file.
 
 `/**`
 

@@ -1,23 +1,22 @@
 {"title":"Distributing Android apps","weight":"20"}
 
-* [Register with Google Play](#RegisterwithGooglePlay)
+* [Register with Google Play](#register-with-google-play)
 
-* [Generate a keypair and certificate](#Generateakeypairandcertificate)
+* [Generate a keypair and certificate](#generate-a-keypair-and-certificate)
 
-* [Verify your keystore](#Verifyyourkeystore)
+* [Verify your keystore](#verify-your-keystore)
 
-* [Build and sign your app](#Buildandsignyourapp)
+* [Build and sign your app](#build-and-sign-your-app)
 
-* [Build and sign your app using the CLI](#BuildandsignyourappusingtheCLI)
+* [Build and sign your app using the CLI](#build-and-sign-your-app-using-the-cli)
 
-* [Verify your app is signed correctly and ready to be uploaded](#Verifyyourappissignedcorrectlyandreadytobeuploaded)
+* [Verify your app is signed correctly and ready to be uploaded](#verify-your-app-is-signed-correctly-and-ready-to-be-uploaded)
 
-* [Upload the app and publish it to Google Play](#UploadtheappandpublishittoGooglePlay)
+* [Upload the app and publish it to Google Play](#upload-the-app-and-publish-it-to-google-play)
 
-  * [Capturing screenshots](#Capturingscreenshots)
+    * [Capturing screenshots](#capturing-screenshots)
 
-* [References](#References)
-
+* [References](#references)
 
 ## Objective
 
@@ -38,7 +37,6 @@ The diagram below illustrates the steps involved in publishing to Google Play. T
 5. Verify your app is signed correctly and ready to be uploaded
 
 6. Upload the app and publish it to Google Play
-
 
 ### Register with Google Play
 
@@ -86,7 +84,6 @@ The **Distribute** wizard appears asking you to fill in key pieces of informatio
 
 * **Key Alias**: Alias associated with your application's certificate.
 
-
 Click the **Publish** button once you have entered all of the above information. Studio builds your application and generates both an APK file and AAB file in the specified location.
 
 Note that an Android App Bundle (AAB) file will only be built by Titanium 9.0.0 and higher. You cannot install and run an AAB file on an Android device. This is a "publishing" format that only the Google Play app store supports. Once uploaded, Google will then generate multiple APK files from that one AAB file split by CPU architecture and image density, allowing for smaller downloads from the app store to the respective Android device.
@@ -115,13 +112,13 @@ Visit [https://play.google.com/apps/publish](https://play.google.com/apps/publis
 
 * Minimum of two (2) screenshots of your app
 
-  * In one of these sizes: 320 x 480, 480 x 800, or 480 x 854
+    * In one of these sizes: 320 x 480, 480 x 800, or 480 x 854
 
-  * 24-bit PNG or JPEG (no alpha)
+    * 24-bit PNG or JPEG (no alpha)
 
-  * Full bleed, no border in art
+    * Full bleed, no border in art
 
-  * You may upload screenshots in landscape orientation. The thumbnails will appear to be rotated, but the actual images and their orientations will be preserved.
+    * You may upload screenshots in landscape orientation. The thumbnails will appear to be rotated, but the actual images and their orientations will be preserved.
 
 * One (1) high resolution app icon – 512 x 512, 32-bit PNG or JPEG
 
@@ -137,7 +134,6 @@ Visit [https://play.google.com/apps/publish](https://play.google.com/apps/publis
 
 * Contact information – you'll need to provide some way for customers to reach you. This information will be shown to potential buyers.
 
-
 You should read, and then you'll have to check the boxes indicating you agree to the Google Play's terms and conditions. There are many additional assets you could provide, such as videos and larger promotional graphics. You can set a price and currency options for your app if you've set up a Google Checkout account.
 
 #### Capturing screenshots
@@ -151,7 +147,6 @@ As noted above, you'll need at least two screenshots to publish your app. You ca
 * [Google Play for Developers: Graphic Assets for your Application](http://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&answer=1078870)
 
 * [Google Play](https://play.google.com/apps/publish)
-
 
 ## Summary
 

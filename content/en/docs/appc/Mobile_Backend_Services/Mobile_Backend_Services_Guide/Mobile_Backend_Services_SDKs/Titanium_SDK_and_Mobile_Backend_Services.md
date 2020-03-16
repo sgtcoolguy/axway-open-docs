@@ -1,29 +1,28 @@
 {"title":"Titanium SDK and Mobile Backend Services","weight":"10"}
 
-* [Adding Mobile Backend Services to your Titanium project](#AddingMobileBackendServicestoyourTitaniumproject)
+* [Adding Mobile Backend Services to your Titanium project](#adding-mobile-backend-services-to-your-titanium-project)
 
-  * [Adding Mobile Backend Services to a new Titanium application](#AddingMobileBackendServicestoanewTitaniumapplication)
+    * [Adding Mobile Backend Services to a new Titanium application](#adding-mobile-backend-services-to-a-new-titanium-application)
 
-  * [Adding Mobile Backend Services to an existing Titanium application](#AddingMobileBackendServicestoanexistingTitaniumapplication)
+    * [Adding Mobile Backend Services to an existing Titanium application](#adding-mobile-backend-services-to-an-existing-titanium-application)
 
-  * [Adding an existing Mobile Backend Services application to a Titanium project](#AddinganexistingMobileBackendServicesapplicationtoaTitaniumproject)
+    * [Adding an existing Mobile Backend Services application to a Titanium project](#adding-an-existing-mobile-backend-services-application-to-a-titanium-project)
 
-  * [Virtual private cloud configuration](#Virtualprivatecloudconfiguration)
+    * [Virtual private cloud configuration](#virtual-private-cloud-configuration)
 
-* [Importing the module](#Importingthemodule)
+* [Importing the module](#importing-the-module)
 
-* [Authenticating your application](#Authenticatingyourapplication)
+* [Authenticating your application](#authenticating-your-application)
 
-* [Push notifications](#Pushnotifications)
+* [Push notifications](#push-notifications)
 
-* [Using the Mobile Backend Services APIs](#UsingtheMobileBackendServicesAPIs)
+* [Using the Mobile Backend Services APIs](#using-the-mobile-backend-services-apis)
 
-* [Examples](#Examples)
+* [Examples](#examples)
 
-* [Importing and running the Ti.Cloud sample application](#ImportingandrunningtheTi.Cloudsampleapplication)
+* [Importing and running the Ti.Cloud sample application](#importing-and-running-the-ti.cloud-sample-application)
 
-* [References](#References)
-
+* [References](#references)
 
 The Mobile Backend Services (MBS) APIs are supported in Titanium using the ti.cloud module, an optional module that is packaged with the Titanium SDK.
 
@@ -47,7 +46,6 @@ If you are using Studio to create a new Titanium application, you can create a n
 
 4. Enter the project name and ID and click **Finish**.
 
-
 ![studio-enable-new](/Images/appc/download/attachments/49153760/studio-enable-new.png)
 
 Clicking Finish creates a new Titanium application, a new MBS datasource, and configures the Titanium project to access MBS.
@@ -60,7 +58,6 @@ If you have an existing Titanium project in Studio and want to create a new MBS 
 
 2. Click to **Enable Services**.
 
-
 ![studio-enable-existing](/Images/appc/download/attachments/49153760/studio-enable-existing.png)
 
 ### Adding an existing Mobile Backend Services application to a Titanium project
@@ -71,24 +68,23 @@ If you have already created an MBS datasource, you can add it to a Titanium proj
 
 2. Add the following entries to the file:
 
-  `<``property`  `name``=``"acs-api-key-development"`  `type``=``"string"``>YOUR DEVELOPMENT APP KEY HERE</``property``>`
+    `<``property`  `name``=``"acs-api-key-development"`  `type``=``"string"``>YOUR DEVELOPMENT APP KEY HERE</``property``>`
 
-  `<``property`  `name``=``"acs-api-key-production"`  `type``=``"string"``>YOUR PRODUCTION APP KEY HERE</``property``>`
+    `<``property`  `name``=``"acs-api-key-production"`  `type``=``"string"``>YOUR PRODUCTION APP KEY HERE</``property``>`
 
 3. Find the <modules> element in the file, and add the following:
 
-  `<``module`  `platform``=``"commonjs"``>ti.cloud</``module``>`
+    `<``module`  `platform``=``"commonjs"``>ti.cloud</``module``>`
 
-  If there is no <modules> element, add the following inside the <ti:app> element:
+    If there is no <modules> element, add the following inside the <ti:app> element:
 
-  `<``modules``>`
+    `<``modules``>`
 
-  `<``module`  `platform``=``"commonjs"``>ti.cloud</``module``>`
+    `<``module`  `platform``=``"commonjs"``>ti.cloud</``module``>`
 
-  `</``modules``>`
+    `</``modules``>`
 
-  (This element is usually placed just above the <deployment-targets> element.)
-
+    (This element is usually placed just above the <deployment-targets> element.)
 
 ### Virtual private cloud configuration
 
@@ -130,7 +126,6 @@ The response callback receives a single object, which is a slightly modified ver
 
 * response : Object - Response data that is specific to the call. For example, if you search for places, the response object contains an array of places.
 
-
 The module's response object includes any properties from response at the top level of the includes. For example, if the REST response includes response.places, this is included as places.
 
 The module's response object also includes the following fields:
@@ -144,7 +139,6 @@ The module's response object also includes the following fields:
 * message : String - Error message, if available.
 
 * code : Number - Error code, if available.
-
 
 ## Examples
 
@@ -286,51 +280,50 @@ The Titanium Cloud module also includes a sample application that demonstrates e
 
 2. Select the Classic application type with the Default Project template.
 
-  ![classic](/Images/appc/download/attachments/49153760/classic.png)
+    ![classic](/Images/appc/download/attachments/49153760/classic.png)
 3. In the New Mobile App Project dialog, enter values for the **Project Name** and **App ID** fields, and check the option to **Enable AMPLIFY Appcelerator Services**.
 
-  ![enableservices](/Images/appc/download/attachments/49153760/enableservices.png)
+    ![enableservices](/Images/appc/download/attachments/49153760/enableservices.png)
 4. Click **Finish**.
 
 5. From your desktop, navigate to the following folder, where <latest\_version> is the folder containing the latest SDK version:
 
-  * **Mac**: ~Library/Application Support/Titanium/modules/commonjs/ti.cloud/<latest\_version>/example
+    * **Mac**: ~Library/Application Support/Titanium/modules/commonjs/ti.cloud/<latest\_version>/example
 
-  * **Windows 7**: %ProgramData%\\Titanium\\modules\\commonjs\\ti.cloud\\<latest\_version>\\example
+    * **Windows 7**: %ProgramData%\\Titanium\\modules\\commonjs\\ti.cloud\\<latest\_version>\\example
 
-  * **Windows 8**: %AppData%\\Titanium\\modules\\commonjs\\ti.cloud\\<latest\_version>\\example
+    * **Windows 8**: %AppData%\\Titanium\\modules\\commonjs\\ti.cloud\\<latest\_version>\\example
 
-  * **Linux**: ~/titaniumsdk/modules/commonjs/ti.cloud/<latest\_version>\\example
+    * **Linux**: ~/titaniumsdk/modules/commonjs/ti.cloud/<latest\_version>\\example
 
 6. Select all the folders and files in the **example** folder and drag them to your project's **Resources** folder.
 
-  ![dragfiles](/Images/appc/download/attachments/49153760/dragfiles.png)
-  * If prompted, select the option to **Copy Files and Folders** and click **OK**.
+    ![dragfiles](/Images/appc/download/attachments/49153760/dragfiles.png)
+    * If prompted, select the option to **Copy Files and Folders** and click **OK**.
 
-  * Click **Yes to All** when asked if you want to overwrite files.
+    * Click **Yes to All** when asked if you want to overwrite files.
 
 7. Open the project's tiapp.xml file and, in the **Modules** section, add the **facebook** and **ti.cloudpush** modules.
 
-  ![modules](/Images/appc/download/attachments/49153760/modules.png)
+    ![modules](/Images/appc/download/attachments/49153760/modules.png)
 8. Save the tiapp.xml file and run the project on the desired device or emulator/simulator.
-
 
 Once the application is running, try the following:
 
 * Create a new user by selecting **Users** \> **Create User**. Enter a username, password and password confirmation, first name, and last name, then click **Create**. If the user is created successfully, the following dialog is shown:
 
-  ![new_user_success](/Images/appc/download/attachments/49153760/new_user_success.png)
+    ![new_user_success](/Images/appc/download/attachments/49153760/new_user_success.png)
 * View the newly created user in Dashboard:
 
-  1. Log into the [AMPLIFY Platform](https://platform.axway.com/).
+    1. Log into the [AMPLIFY Platform](https://platform.axway.com/).
 
-  2. Select the **Dashboard** link on the Dashboard tile.
+    2. Select the **Dashboard** link on the Dashboard tile.
 
-  3. Select your MBS application from the **Apps** tab.
+    3. Select your MBS application from the **Apps** tab.
 
-  4. Select **Manage Data**, then click **Users** in the Manage Data Objects table. You should see the user you created listed in the Users table.
+    4. Select **Manage Data**, then click **Users** in the Manage Data Objects table. You should see the user you created listed in the Users table.
 
-    ![verify_new_user_latest](/Images/appc/download/attachments/49153760/verify_new_user_latest.png)
+        ![verify_new_user_latest](/Images/appc/download/attachments/49153760/verify_new_user_latest.png)
 
 ## References
 

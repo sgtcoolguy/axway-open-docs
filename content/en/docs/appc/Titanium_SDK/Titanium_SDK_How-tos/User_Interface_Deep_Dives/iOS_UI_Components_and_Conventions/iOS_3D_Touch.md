@@ -1,21 +1,20 @@
 {"title":"iOS 3D Touch","weight":"10"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Quick Actions](#QuickActions)
+* [Quick Actions](#quick-actions)
 
-  * [Add Static Shortcuts](#AddStaticShortcuts)
+    * [Add Static Shortcuts](#add-static-shortcuts)
 
-  * [Add Dynamic Shortcuts](#AddDynamicShortcuts)
+    * [Add Dynamic Shortcuts](#add-dynamic-shortcuts)
 
-  * [Respond to Quick Actions](#RespondtoQuickActions)
+    * [Respond to Quick Actions](#respond-to-quick-actions)
 
-* [Peek and Pop](#PeekandPop)
+* [Peek and Pop](#peek-and-pop)
 
-* [Example](#Example)
+* [Example](#example)
 
-* [Further Reading](#FurtherReading)
-
+* [Further Reading](#further-reading)
 
 ## Introduction
 
@@ -24,7 +23,6 @@ Titanium SDK supports the [Peek and Pop, and Quick Action features](https://deve
 * **Peek and Pop** provides a way for the user to quickly preview item content in the application by pressing on it, then optionally switching to the peeked item.
 
 * **Quick Action** provides application shortcuts when the user presses the application icon on the Home Screen. The shortcuts allow the user to quickly perform an action with your application without navigating through the application.
-
 
 3D Touch != Force Touch
 
@@ -53,7 +51,6 @@ To define static shortcuts, add the [UIApplicationShortcutItems](https://develop
 * UIApplicationShortcutItemIconFile: Hash of a 35 x 35 dp icon to display with the quick action. To retrieve the hash of the icon, build the project once and retrieve the hash of the corresponding image from build/iphone/Assets.xcassets.
 
 * UIApplicationShortcutItemUserInfo: custom dictionary that is passed to the event.
-
 
 Localization
 
@@ -175,14 +172,13 @@ To create a dynamic shortcut:
 
 3. Invoke the addDynamicShortcut()method on the ApplicationShortcut instance and pass method a dictionary with the following parameters:
 
-  * itemtype (required): unique identifier of the quick action passed to the event. Use a reverse domain notation, for example, com.foocompany.fooapp.fooshortcut.
+    * itemtype (required): unique identifier of the quick action passed to the event. Use a reverse domain notation, for example, com.foocompany.fooapp.fooshortcut.
 
-  * title (required): title of the quick action.
+    * title (required): title of the quick action.
 
-  * subtitle: subtitle of the quick action displayed beneath the title.
+    * subtitle: subtitle of the quick action displayed beneath the title.
 
-  * icon: icon to display with the quick action. May be assigned a Titanium.UI.iOS.SHORTCUT\_ICON\_TYPE\_\* constant, an image URL or a Titanium.Contacts.Person. If you use an image file, you need to enable slicing. See the note in the previous section for instructions.
-
+    * icon: icon to display with the quick action. May be assigned a Titanium.UI.iOS.SHORTCUT\_ICON\_TYPE\_\* constant, an image URL or a Titanium.Contacts.Person. If you use an image file, you need to enable slicing. See the note in the previous section for instructions.
 
 To remove a dynamic shortcut, invoke the ApplicationShortcut instance's removeDynamicShortcut() method and pass it the itemtype identifier of the dynamic shortcut to remove or invoke the removeAllDynamicShortcuts() method to remove all dynamic shortcuts.
 
@@ -250,16 +246,15 @@ To enable Peek and Pop:
 
 2. Create a PreviewContext object using the Titanium.UI.iOS.createPreviewContext() method. Pass the method a dictionary with the following properties:
 
-  * preview: view object to use as the peeked view.
+    * preview: view object to use as the peeked view.
 
-  * actions: array of [PreviewActions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iOS.PreviewAction) or [PreviewActionGroup](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iOS.PreviewActionGroup) objects to use as the quick actions.
+    * actions: array of [PreviewActions](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iOS.PreviewAction) or [PreviewActionGroup](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iOS.PreviewActionGroup) objects to use as the quick actions.
 
-  * contentHeight: height of the preview window. Defaults to fill most of the screen.
+    * contentHeight: height of the preview window. Defaults to fill most of the screen.
 
 3. Add the peek and pop events to the created preview context to receive updates about the current preview state.
 
 4. Attach the PreviewContext object to a view. Set the view's previewContext property to the PreviewContext object.
-
 
 **Example:**
 

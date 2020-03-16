@@ -1,27 +1,26 @@
 {"title":"Images and ImageView APIs","weight":"30"}
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Background Images](#BackgroundImages)
+* [Background Images](#background-images)
 
-* [ImageView](#ImageView)
+* [ImageView](#imageview)
 
-  * [Flipbook animations](#Flipbookanimations)
+    * [Flipbook animations](#flipbook-animations)
 
-  * [Density-specific images](#Density-specificimages)
+    * [Density-specific images](#density-specific-images)
 
-    * [Android Platform](#AndroidPlatform)
+        * [Android Platform](#android-platform)
 
-    * [iOS Platform](#iOSPlatform)
+        * [iOS Platform](#ios-platform)
 
-    * [Windows Platform](#WindowsPlatform)
+        * [Windows Platform](#windows-platform)
 
-      * [Grant access to pictures library](#Grantaccesstopictureslibrary)
+            * [Grant access to pictures library](#grant-access-to-pictures-library)
 
-  * [References](#References)
+    * [References](#references)
 
-* [Summary](#Summary)
-
+* [Summary](#summary)
 
 ## Introduction
 
@@ -83,7 +82,6 @@ If you specify a width and/or height property on the image, the image will be sc
 
 * If either the ImageView's height or width are specified (not both), the image will be scaled to fit the specified dimension. The graphic's aspect ratio will be maintained.
 
-
 ### Flipbook animations
 
 You can display flipbook-style animations with the ImageView by assigning an array of images to the images property.
@@ -134,41 +132,13 @@ For more details, see [Using density-specific resources on Android](/docs/appc/T
 
 iOS devices have different screen densities. Most devices either have a non-retina or retina display. The only exception is the iPhone 6 Plus, which has a higher screen density. You may also add the ~iphone and ~ipad suffixes for iPhone- and iPad-specific images, respectively. To support multiple screen densities, add the following suffixes to the image name:
 
-Suffix
-
-Device
-
-Example
-
-No suffix
-
-Devices with non-retina displays (iPad 2 and first generation iPad mini)
-
-foo.png
-
-@2x
-
-Devices with retina displays (most iPhones and iPads)
-
-foo@2x.png
-
-@3x
-
-iPhone 6 Plus
-
-foo@3x.png
-
-~iphone
-
-iPhone-specific image
-
-foo~iphone.png
-
-~ipad
-
-iPad-specific image
-
-foo~ipad.png
+| Suffix | Device | Example |
+| --- | --- | --- |
+| No suffix | Devices with non-retina displays (iPad 2 and first generation iPad mini) | foo.png |
+| @2x | Devices with retina displays (most iPhones and iPads) | foo@2x.png |
+| @3x | iPhone 6 Plus | foo@3x.png |
+| ~iphone | iPhone-specific image | foo~iphone.png |
+| ~ipad | iPad-specific image | foo~ipad.png |
 
 To use both the display and device suffixes, add the display suffix first, followed by the device suffix, for example, foo@2x~iphone.png.
 
@@ -194,49 +164,12 @@ For the Windows Platform, add the scale qualifier to the filename. Place the qua
 
 Use the qualifiers below to support devices with different DPIs or screen resolutions. The scaling is based on the logical density factor returned by the device. The Windows Phone DPI column is an approximate value.
 
-Qualifier
-
-Logical Density Factor
-
-Windows Phone DPI
-
-Windows Store Resolution
-
-Notes
-
-scale-100
-
-1.0
-
-Up to ~96
-
-At least 1024x768
-
-scale-140
-
-1.4
-
-Up to ~134 (WVGA emulator)
-
-At least 1440x1080
-
-scale-180
-
-1.8
-
-Up to ~172 (720p emulator)
-
-At least 1920x1440
-
-scale-240
-
-2.4
-
-Up to ~230 (WXGA and 1080p emulators)
-
-N/A
-
-Windows Phone OS 8.1 only
+| Qualifier | Logical Density Factor | Windows Phone DPI | Windows Store Resolution | Notes |
+| --- | --- | --- | --- | --- |
+| scale-100 | 1.0 | Up to ~96 | At least 1024x768 |  |
+| scale-140 | 1.4 | Up to ~134 (WVGA emulator) | At least 1440x1080 |  |
+| scale-180 | 1.8 | Up to ~172 (720p emulator) | At least 1920x1440 |  |
+| scale-240 | 2.4 | Up to ~230 (WXGA and 1080p emulators) | N/A | Windows Phone OS 8.1 only |
 
 For more details, see [Windows Asset Qualifiers](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Windows_UI_Components_and_Conventions/Windows_Asset_Qualifiers/).
 
@@ -268,12 +201,11 @@ In order to grant access to pictures library for Windows Phone, you need to prov
 
 `</``ti``:app>`
 
-For more information about audio configuration in tiapp.xml, see [Windows-specific](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#Windows-specific) section in [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/).
+For more information about audio configuration in tiapp.xml, see [Windows-specific](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#windows-specific) section in [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/).
 
 ### References
 
 * API Docs - [ImageView object](#!/api/Titanium.UI.ImageView)
-
 
 ## Summary
 

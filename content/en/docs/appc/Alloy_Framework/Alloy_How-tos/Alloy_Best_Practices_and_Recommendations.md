@@ -1,21 +1,20 @@
 {"title":"Alloy Best Practices and Recommendations","weight":"10"}
 
-* [Titanium-to-Alloy Guidance](#Titanium-to-AlloyGuidance)
+* [Titanium-to-Alloy Guidance](#titanium-to-alloy-guidance)
 
-  * [In my Titanium application, I previously loaded libraries upon startup. In organizing my patterns with MVC, do I need to organize application functionality further under namespaces within controllers?](#InmyTitaniumapplication,Ipreviouslyloadedlibrariesuponstartup.InorganizingmypatternswithMVC,doIneedtoorganizeapplicationfunctionalityfurtherundernamespaceswithincontrollers?)
+    * [In my Titanium application, I previously loaded libraries upon startup. In organizing my patterns with MVC, do I need to organize application functionality further under namespaces within controllers?](#in-my-titanium-application,-i-previously-loaded-libraries-upon-startup.-in-organizing-my-patterns-with-mvc,-do-i-need-to-organize-application-functionality-further-under-namespaces-within-controllers?)
 
-  * [Are there best practices to employ within controllers for performance?](#Aretherebestpracticestoemploywithincontrollersforperformance?)
+    * [Are there best practices to employ within controllers for performance?](#are-there-best-practices-to-employ-within-controllers-for-performance?)
 
-  * [Is there a best practice that I should use to help out Alloy for my own organization here, as I did in the standard Titanium applications?](#IsthereabestpracticethatIshouldusetohelpoutAlloyformyownorganizationhere,asIdidinthestandardTitaniumapplications?)
+    * [Is there a best practice that I should use to help out Alloy for my own organization here, as I did in the standard Titanium applications?](#is-there-a-best-practice-that-i-should-use-to-help-out-alloy-for-my-own-organization-here,-as-i-did-in-the-standard-titanium-applications?)
 
-* [Coding Style Best Practices](#CodingStyleBestPractices)
+* [Coding Style Best Practices](#coding-style-best-practices)
 
-  * [Naming Conventions](#NamingConventions)
+    * [Naming Conventions](#naming-conventions)
 
-  * [Global Variables](#GlobalVariables)
+    * [Global Variables](#global-variables)
 
-  * [Global Events](#GlobalEvents)
-
+    * [Global Events](#global-events)
 
 This guide provides recommendations for writing Alloy applications. This guide supplements the existing Titanium SDK [Best Practices and Recommendations](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Best_Practices_and_Recommendations/) guide with a primary focus on the [Coding Best Practices](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Best_Practices_and_Recommendations/Coding_Best_Practices/) and [Style and Conventions](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Best_Practices_and_Recommendations/Style_and_Conventions/) pages.
 
@@ -47,11 +46,9 @@ It depends on the size and depth of your existing organization. You need to dete
 
 * Do not use JavaScript reserved words as IDs. For a complete list, see [Reserved Words](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Best_Practices_and_Recommendations/Reserved_Words/).
 
-
 ### Global Variables
 
 * Do not declare global variables in app.js and use them in other files. Such usage is currently allowed but not recommended, and it will be deprecated in the future. Users who wish to use globals in Alloy applications can declare the following in their JS files:
-
 
 `var Alloy = require(``'alloy'``), Backbone = require(``'alloy/backbone'``), _ = require(``'alloy/underscore'``)._;`
 
@@ -84,7 +81,6 @@ Although you can use Ti.App.fireEvent('name') to call an event declared as Ti.Ap
 Instead of that, you can use better approaches, depending on the problem you are addressing:
 
 * If you have the classic problem communication between a master - child screens (you need that a child event triggers something in the parent), then use the callback approach: you can pass a function to be called as a callback when needed:
-
 
 `//master.js`
 
@@ -121,7 +117,6 @@ Instead of that, you can use better approaches, depending on the problem you are
 `...`
 
 * If you need to communicate between different parts of the app, then use the Backbone dispatcher approach: create a global object with Backbone capabilities. You can do either, declare it in a file and require it when needed or, more practical, create it in alloy.js file to be available to all your project. Another advantage of use the Backbone approach is that you can cancel the events in any place because are global:
-
 
 `//alloy.js`
 

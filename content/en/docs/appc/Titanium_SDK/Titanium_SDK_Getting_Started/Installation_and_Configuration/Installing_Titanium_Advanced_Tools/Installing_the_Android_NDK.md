@@ -2,10 +2,9 @@
 
 ## Contents
 
-* [Compatibility and Download](#CompatibilityandDownload)
+* [Compatibility and Download](#compatibility-and-download)
 
-* [Installation](#Installation)
-
+* [Installation](#installation)
 
 ## Compatibility and Download
 

@@ -1,79 +1,78 @@
 {"title":"Titanium Command-Line Interface Reference","weight":"110"}
 
-* [Titanium CLI quick start](#TitaniumCLIquickstart)
+* [Titanium CLI quick start](#titanium-cli-quick-start)
 
-  * [Install Node.js](#InstallNode.js)
+    * [Install Node.js](#install-node.js)
 
-  * [Install and configure the CLI](#InstallandconfiguretheCLI)
+    * [Install and configure the CLI](#install-and-configure-the-cli)
 
-* [Titanium commands](#Titaniumcommands)
+* [Titanium commands](#titanium-commands)
 
-  * [Build](#Build)
+    * [Build](#build)
 
-    * [Generic build options and flags](#Genericbuildoptionsandflags)
+        * [Generic build options and flags](#generic-build-options-and-flags)
 
-    * [Android build options](#Androidbuildoptions)
+        * [Android build options](#android-build-options)
 
-    * [iOS build options and flags](#iOSbuildoptionsandflags)
+        * [iOS build options and flags](#ios-build-options-and-flags)
 
-    * [Windows build options](#Windowsbuildoptions)
+        * [Windows build options](#windows-build-options)
 
-  * [Clean](#Clean)
+    * [Clean](#clean)
 
-    * [Clean options](#Cleanoptions)
+        * [Clean options](#clean-options)
 
-  * [Config](#Config)
+    * [Config](#config)
 
-    * [Config Options](#ConfigOptions)
+        * [Config Options](#config-options)
 
-  * [Create](#Create)
+    * [Create](#create)
 
-    * [Create options](#Createoptions)
+        * [Create options](#create-options)
 
-  * [Help](#Help)
+    * [Help](#help)
 
-  * [Info](#Info)
+    * [Info](#info)
 
-    * [Info options](#Infooptions)
+        * [Info options](#info-options)
 
-  * [Module](#Module)
+    * [Module](#module)
 
-    * [Module list](#Modulelist)
+        * [Module list](#module-list)
 
-      * [Module list options](#Modulelistoptions)
+            * [Module list options](#module-list-options)
 
-  * [Plugin](#Plugin)
+    * [Plugin](#plugin)
 
-    * [Plugin list](#Pluginlist)
+        * [Plugin list](#plugin-list)
 
-      * [Plugin list options](#Pluginlistoptions)
+            * [Plugin list options](#plugin-list-options)
 
-  * [Project](#Project)
+    * [Project](#project)
 
-    * [Project options](#Projectoptions)
+        * [Project options](#project-options)
 
-  * [SDK](#SDK)
+    * [SDK](#sdk)
 
-    * [SDK install](#SDKinstall)
+        * [SDK install](#sdk-install)
 
-      * [SDK install options](#SDKinstalloptions)
+            * [SDK install options](#sdk-install-options)
 
-    * [SDK list](#SDKlist)
+        * [SDK list](#sdk-list)
 
-      * [SDK list options](#SDKlistoptions)
+            * [SDK list options](#sdk-list-options)
 
-    * [SDK select](#SDKselect)
+        * [SDK select](#sdk-select)
 
-    * [SDK uninstall](#SDKuninstall)
+        * [SDK uninstall](#sdk-uninstall)
 
-      * [SDK uninstall options](#SDKuninstalloptions)
+            * [SDK uninstall options](#sdk-uninstall-options)
 
-    * [SDK update](#SDKupdate)
+        * [SDK update](#sdk-update)
 
-      * [SDK update options](#SDKupdateoptions)
+            * [SDK update options](#sdk-update-options)
 
-  * [Setup](#Setup)
-
+    * [Setup](#setup)
 
 The Titanium Command-Line Interface (CLI) is a Node.js-based command-line tool for managing, building, and deploying Titanium projects.
 
@@ -85,23 +84,19 @@ Getting started with the CLI only requires two steps:
 
 2. Install and configure the CLI.
 
-
 ### Install Node.js
 
 The CLI requires Node.js 4 or later. It is highly recommended you use a LTS (long term support) Node.js release. If you don't have Node installed, install it from:
 
 * [nodejs.org](http://nodejs.org)
 
-
 Before installing the CLI, you should decide where you want the Node Package Manager (npm) to install packages. By default npm installs into /usr/local on OS X, which requires that you run npm as root. This is not recommended. You can avoid having to run npm by doing one of the following:
 
 * Make the /usr/local directory writable by all: sudo chmod 777 /usr/local
 
-
 * Set npm to install to your home directory, or another directory of your choosing by setting the npm prefix. For example, you can add the following to your .bash\_profile or other initialization file: export NPM\_CONFIG\_PREFIX=$HOME
 
-  * In this case, npm packages are installed to $HOME/lib/node\_modules and launch scripts are installed in $HOME/bin. $HOME/bin must be in your PATH.
-
+    * In this case, npm packages are installed to $HOME/lib/node\_modules and launch scripts are installed in $HOME/bin. $HOME/bin must be in your PATH.
 
 For more information, see [Installing Node](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Node/).
 
@@ -109,47 +104,45 @@ For more information, see [Installing Node](/docs/appc/Titanium_SDK/Titanium_SDK
 
 1. Install the titanium CLI.
 
-  `npm` `install` `titanium -g`
+    `npm` `install` `titanium -g`
 
 2. Download the latest UNSTABLE Titanium SDK continuous integration build.
 
-  `titanium sdk` `install` `--branch master --default`
+    `titanium sdk` `install` `--branch master --default`
 
 3. Configure CLI (optional).
 
-  `titanium setup`
+    `titanium setup`
 
-  The script prompts you to enter basic information, such as your name, default locale, default SDK version, and default workspace folder.
+    The script prompts you to enter basic information, such as your name, default locale, default SDK version, and default workspace folder.
 
-
-If you encounter an error installing titanium, see [Issues installing NPM packages](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Node/#IssuesinstallingNPMpackages).
+If you encounter an error installing titanium, see [Issues installing NPM packages](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Node/#issues-installing-npm-packages).
 
 ## Titanium commands
 
 If you don't specify all of the required options, titanium prompts you for the missing options.
 
-* [Build](#Build)
+* [Build](#build)
 
-* [Clean](#Clean)
+* [Clean](#clean)
 
-* [Config](#Config)
+* [Config](#config)
 
-* [Create](#Create)
+* [Create](#create)
 
-* [Help](#Help)
+* [Help](#help)
 
-* [Info](#Info)
+* [Info](#info)
 
-* [Module](#Module)
+* [Module](#module)
 
-* [Plugin](#Plugin)
+* [Plugin](#plugin)
 
-* [Project](#Project)
+* [Project](#project)
 
-* [SDK](#SDK)
+* [SDK](#sdk)
 
-* [Setup](#Setup)
-
+* [Setup](#setup)
 
 ### Build
 
@@ -160,16 +153,15 @@ Builds and runs an application or module project.
 The CLI checks several settings to see which SDK version to use to build your application. The following is a list of locations in the order of precedence. If an SDK version is not defined in that location, the next location is checked.
 
 1. tiapp.xml file version specified with the sdk-version tag.
-  To change this version, manually edit the tiapp.xml file with a text editor or use Studio.
+    To change this version, manually edit the tiapp.xml file with a text editor or use Studio.
 
 2. \--sdk command-line option with the titanium build command.
 
 3. app.sdk setting specified with the titanium config command.
-  To check the version, run titanium config and to change the version, run titanium config app.sdk <sdk\_version>.
+    To check the version, run titanium config and to change the version, run titanium config app.sdk <sdk\_version>.
 
 4. SDK select version.
-  To check or change this version, run titanium sdk select.
-
+    To check or change this version, run titanium sdk select.
 
 `# Titanium CLI`
 
@@ -181,195 +173,57 @@ The CLI checks several settings to see which SDK version to use to build your ap
 
 #### Generic build options and flags
 
-Option
-
-Description
-
-\-b, --build-only
-
-Only perform the build; when specified, does not install or run the app.
-
-When building a Windows project using appc run -p windows -T wp-device --wp-sdk ## --build-only, you can now use SDK values (e.g. 10.0.10240.0, 10.0.10586.0, etc.).
-
-\-f, --force
-
-Force a clean rebuild.
-
-\--skip-js-minify
-
-Bypasses JavaScript minification. Simulator builds are never minified. Only supported for Android and iOS.
-
-\--log-level <level>
-
-Minimum logging level. Supported options are **trace**, **debug**, **info**, **warn**, and **error**.
-
-\-p, --platforms <platform>
-
-Target build platform: Supported values are **android**, **ios**, and **windows**. (**iphone** and **ipad** are currently accepted as synonyms for **ios**.)
-
-\-d, --project-dir <directory>
-
-Directory containing the project, otherwise the current working directory is assumed.
-
-\-s, --sdk <version>
-
-Titanium SDK version to build with. If not specified, uses the configured default SDK.
+| Option | Description |
+| --- | --- |
+| \-b, --build-only | Only perform the build; when specified, does not install or run the app.  <br />  <br />When building a Windows project using appc run -p windows -T wp-device --wp-sdk ## --build-only, you can now use SDK values (e.g. 10.0.10240.0, 10.0.10586.0, etc.). |
+| \-f, --force | Force a clean rebuild. |
+| \--skip-js-minify | Bypasses JavaScript minification. Simulator builds are never minified. Only supported for Android and iOS. |
+| \--log-level <level> | Minimum logging level. Supported options are **trace**, **debug**, **info**, **warn**, and **error**. |
+| \-p, --platforms <platform> | Target build platform: Supported values are **android**, **ios**, and **windows**. (**iphone** and **ipad** are currently accepted as synonyms for **ios**.) |
+| \-d, --project-dir <directory> | Directory containing the project, otherwise the current working directory is assumed. |
+| \-s, --sdk <version> | Titanium SDK version to build with. If not specified, uses the configured default SDK. |
 
 #### Android build options
 
-Option
-
-Description
-
-\-A, --android-sdk <path>
-
-Path to the Android SDK.
-
-\-C, --device-id <name>
-
-Name of the device or emulator to install the application to. When --target is "device", then you can specify "all" to install the app to all connected devices.
-
-\-D, --deploy-type <type>
-
-Controls several settings such as optimization, encryption, and analytics. Type can be **development**, **test**, or **production**.
-
-When --target is "emulator", the deploy type defaults to **development**, but can be set to **test**.
-
-When --target is "device", the deploy type defaults to **test**, but can be set to **development**.
-
-When --target is "dist-playstore", the deploy type is **production** and cannot be overwritten.
-
-Note that **test** will minify and encrypt your JavaScript source code. Any JavaScript syntax errors, even files you are not using, will result in a build failure.
-
-\-K, --keystore <path>
-
-Location of the keystore file.
-
-\--key-password <keypass>
-
-Password of the keystore private key. Defaults to value specified with --store-password.
-
-\--liveview
-
-Starts a [LiveView](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/LiveView/) session to let you quickly preview changes to your application's UI. **Requires Appcelerator Studio.**
-
-\-L, --alias <alias>
-
-Alias for the keystore.
-
-\--no-launch
-
-Disables launching the app after installing.
-
-\-O, --output-dir <dir>
-
-Output directory (used when target is **dist-playstore**).
-
-\-P, --store-password <password>
-
-Password for the keystore.
-
-\--sigalg <algorithm>
-
-The digital signature algorithm to sign the .apk with. Possible algorithms are **MD5withRSA**, **SHA1withRSA**, and **SHA256withRSA**.
-
-\-T, --target <value>
-
-Target to build for. Target can be **emulator**, **device**, or **dist-playstore**.
+| Option | Description |
+| --- | --- |
+| \-A, --android-sdk <path> | Path to the Android SDK. |
+| \-C, --device-id <name> | Name of the device or emulator to install the application to. When --target is "device", then you can specify "all" to install the app to all connected devices. |
+| \-D, --deploy-type <type> | Controls several settings such as optimization, encryption, and analytics. Type can be **development**, **test**, or **production**.<br /><br />When --target is "emulator", the deploy type defaults to **development**, but can be set to **test**.<br /><br />When --target is "device", the deploy type defaults to **test**, but can be set to **development**.<br /><br />When --target is "dist-playstore", the deploy type is **production** and cannot be overwritten.<br /><br />Note that **test** will minify and encrypt your JavaScript source code. Any JavaScript syntax errors, even files you are not using, will result in a build failure. |
+| \-K, --keystore <path> | Location of the keystore file. |
+| \--key-password <keypass> | Password of the keystore private key. Defaults to value specified with --store-password. |
+| \--liveview | Starts a [LiveView](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/LiveView/) session to let you quickly preview changes to your application's UI. **Requires Appcelerator Studio.** |
+| \-L, --alias <alias> | Alias for the keystore. |
+| \--no-launch | Disables launching the app after installing. |
+| \-O, --output-dir <dir> | Output directory (used when target is **dist-playstore**). |
+| \-P, --store-password <password> | Password for the keystore. |
+| \--sigalg <algorithm> | The digital signature algorithm to sign the .apk with. Possible algorithms are **MD5withRSA**, **SHA1withRSA**, and **SHA256withRSA**. |
+| \-T, --target <value> | Target to build for. Target can be **emulator**, **device**, or **dist-playstore**. |
 
 #### iOS build options and flags
 
-Option
-
-Description
-
-\-C, --device-id <name>
-
-Name of the device or emulator to install the application to. When --target is "device", then you can specify "all" to install the app to all connected devices.
-
-\-D, --deploy-type <type>
-
-Controls several settings such as optimization, encryption, and analytics. Type can be **development**, **test**, or **production**.
-
-When --target is "simulator", the deploy type defaults to **development**, but can be set to **test**.
-
-When --target is "device", the deploy type defaults to **test**, but can be set to **development**.
-
-When --target is "dist-appstore" or "dist-adhoc", the deploy type is **production** and cannot be overwritten.
-
-Note that **test** will minify and encrypt your JavaScript source code. Any JavaScript syntax errors, even files you are not using, will result in a build failure.
-
-\--force-copy
-
-Forces files to be copied instead of symlinked for simulator builds only.
-
-\--force-copy-all
-
-Identical to the --force-copy flag except this will also copy the 32.5 MB libTiCore.a file. **Removed since 8.0.0 and moving to the native JavaScriptCore library.**
-
-\--launch-watch-app
-
-Launch both the watch app and main app; only used when target is **simulator**.
-
-\--launch-watch-app-only
-
-Launch only the watch app; only used when target is **simulator**.
-
-\--sim-focus
-
-Focus the iOS simulator (default is true). To not focus the simulator, use --no-sim-focus.
-
-\-V, --developer-name <name>
-
-iOS Developer Certificate to use; required when target is **device**.
-
-\-F, --device-family <value>
-
-Device family to build for (**iphone**, **ipad**, or **universal**). Default is **universal**, however if --target is set to "ipad", then the value defaults to **ipad**.
-
-\-I, --ios-version <value>
-
-iOS SDK version to build for. Default: latest installed iOS SDK.
-
-\-K, --keychain <value>
-
-Path to the distribution keychain to use instead of the system default; only used when target is **device**, **dist-appstore**, or **dist-adhoc**.
-
-\--launch-bundle-id <id>
-
-After installing the app in the iOS Simulator, launch a different app instead of the app that was just built. Useful if you need to launch a test runner that in turn launches your app.
-
-\-O, --output-dir <dir>
-
-Output directory. Only used when target is **dist-adhoc**.
-
-\-P, --pp-uuid <uuid>
-
-Provisioning profile uuid; required when target is **device**, **dist-appstore**, or **dist-adhoc**.
-
-\-R, --distribution-name <name>
-
-iOS Distribution Certificate to use; required when target is **dist-appstore** or **dist-adhoc**.
-
-\--sim-focus
-
-Focus the iOS Simulator after launching. Defaults to **true**.
-
-\-T, --target <value>
-
-Target to build for: **simulator**, **device**, **dist-appstore**, or **dist-adhoc**.
-
-\--watch-app-name <name>
-
-Name of the watch app to launch; only used when target is **simulator**.
-
-\-W, --watch-device-id <udid>
-
-Watch simulator UDID to launch when building an app with a watch app; only used when target is **simulator**.
-
-\-Y, --sim-type <type>
-
-iOS Simulator type: **iphone** or **ipad**; only used when target is **simulator**.
+| Option | Description |
+| --- | --- |
+| \-C, --device-id <name> | Name of the device or emulator to install the application to. When --target is "device", then you can specify "all" to install the app to all connected devices. |
+| \-D, --deploy-type <type> | Controls several settings such as optimization, encryption, and analytics. Type can be **development**, **test**, or **production**.<br /><br />When --target is "simulator", the deploy type defaults to **development**, but can be set to **test**.<br /><br />When --target is "device", the deploy type defaults to **test**, but can be set to **development**.<br /><br />When --target is "dist-appstore" or "dist-adhoc", the deploy type is **production** and cannot be overwritten.<br /><br />Note that **test** will minify and encrypt your JavaScript source code. Any JavaScript syntax errors, even files you are not using, will result in a build failure. |
+| \--force-copy | Forces files to be copied instead of symlinked for simulator builds only. |
+| \--force-copy-all | Identical to the --force-copy flag except this will also copy the 32.5 MB libTiCore.a file. **Removed since 8.0.0 and moving to the native JavaScriptCore library.** |
+| \--launch-watch-app | Launch both the watch app and main app; only used when target is **simulator**. |
+| \--launch-watch-app-only | Launch only the watch app; only used when target is **simulator**. |
+| \--sim-focus | Focus the iOS simulator (default is true). To not focus the simulator, use --no-sim-focus. |
+| \-V, --developer-name <name> | iOS Developer Certificate to use; required when target is **device**. |
+| \-F, --device-family <value> | Device family to build for (**iphone**, **ipad**, or **universal**). Default is **universal**, however if --target is set to "ipad", then the value defaults to **ipad**. |
+| \-I, --ios-version <value> | iOS SDK version to build for. Default: latest installed iOS SDK. |
+| \-K, --keychain <value> | Path to the distribution keychain to use instead of the system default; only used when target is **device**, **dist-appstore**, or **dist-adhoc**. |
+| \--launch-bundle-id <id> | After installing the app in the iOS Simulator, launch a different app instead of the app that was just built. Useful if you need to launch a test runner that in turn launches your app. |
+| \-O, --output-dir <dir> | Output directory. Only used when target is **dist-adhoc**. |
+| \-P, --pp-uuid <uuid> | Provisioning profile uuid; required when target is **device**, **dist-appstore**, or **dist-adhoc**. |
+| \-R, --distribution-name <name> | iOS Distribution Certificate to use; required when target is **dist-appstore** or **dist-adhoc**. |
+| \--sim-focus | Focus the iOS Simulator after launching. Defaults to **true**. |
+| \-T, --target <value> | Target to build for: **simulator**, **device**, **dist-appstore**, or **dist-adhoc**. |
+| \--watch-app-name <name> | Name of the watch app to launch; only used when target is **simulator**. |
+| \-W, --watch-device-id <udid> | Watch simulator UDID to launch when building an app with a watch app; only used when target is **simulator**. |
+| \-Y, --sim-type <type> | iOS Simulator type: **iphone** or **ipad**; only used when target is **simulator**. |
 
 #### Windows build options
 
@@ -377,89 +231,22 @@ As of Titanium 9.0.0, building Windows apps is no longer supported.
 
 Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
 
-Options
-
-Description
-
-\-C, --device-id <value>
-
-UDID of the Windows Phone 8 device or emulator to build for. Only used when the target is **wp-emulator** or **wp-device**.
-
-Note: An app can only be installed to a single device at a time.
-
-\-D, --deploy-type <type>
-
-Type of deployment (**test**, **development** or **production**). Only used when the target is **wp-emulator**, **wp-device** or **ws-local**.
-
-\-G, --wp-publisher-guid <GUID>
-
-Windows Phone Publisher ID. Only used when the target is **wp-emulator**, **wp-device** or **dist-**phonestore****.
-
-\-I, --win-publisher-id <ID>
-
-Windows Publisher ID. Required to build the application.
-
-\--wp-product-guid <GUID>
-
-**Deprecated as of 6.1.0**. Windows 8 product ID, used for upgrading Win 8 apps to Win 8.1. Deprecated and will be removed in future version, use --win-product-guid instead.
-
-\-H, --win-product-guid <GUID>
-
-**Since Release 6.1.0**. Windows 10 product ID, used for upgrading Windows 8.1 apps to Windows 10.
-
-\-O, --output-dir <dir>
-
-Output directory. Only used when target is **dist-phonestore** or **dist-winstore**.
-
-\--ws-cert <file>
-
-**Deprecated as of Release 6.1.0**. Location of the Windows Store certificate file. Only used when target is **ws-local** or **dist-winstore**. Deprecated and will be removed in future version, use --win-cert instead.
-
-\-R, --win-cert <file>
-
-**Since Release 6.1.0**. Location of the Windows Store certificate file. Only used when target is **ws-local** or **dist-winstore**.
-
-\--wp-sdk <version>
-
-**Deprecated as of Release 6.1.0**. Windows Phone SDK version. Deprecated and will be removed in future version, use --win-sdk instead.
-
-\-S, --win-sdk <version>
-
-**Since Release 6.1.0**. Windows SDK version. When you run CLI on Windows 10, you can specify **10.0** to indicate building for Windows 10 _Universal Windows Platform_ (_UWP_) app. You can target more specific SDK version, such as **10.0.15063.0**.
-
-\-V, --vs-target <version>
-
-Visual Studio target to build for.
-
-* **12.0** to use Visual Studio 2013
-
-* **14.0** to use Visual Studio 2015
-
-* **Visual Studio Community 2017** to use Visual Studio Community 2017
-
-* **Visual Studio Professional 2017** to use Visual Studio Professional 2017
-
-* **Visual Studio Enterprise 2017** to use Visual Studio Enterprise 2017
-
-
-\-T, --target <value>
-
-Target to build for:
-
-* **wp-emulator** to run a Windows Phone app on the emulator
-
-* **wp-device** to run a Window Phone app on a device connected to your host machine
-
-* **dist-**phonestore**** to pakcage a Windows Phone app
-
-* **ws-local** to run a Windows Store app on your local machine
-
-* **dist-winstore** to package a Windows Store app
-
-
-\--skipInstallDependencies
-
-**Since Release 6.1.0.** Skip installing dependency packages. If you had trouble with app deployment on device, try this option.
+| Options | Description |
+| --- | --- |
+| \-C, --device-id <value> | UDID of the Windows Phone 8 device or emulator to build for. Only used when the target is **wp-emulator** or **wp-device**.<br /><br />Note: An app can only be installed to a single device at a time. |
+| \-D, --deploy-type <type> | Type of deployment (**test**, **development** or **production**). Only used when the target is **wp-emulator**, **wp-device** or **ws-local**. |
+| \-G, --wp-publisher-guid <GUID> | Windows Phone Publisher ID. Only used when the target is **wp-emulator**, **wp-device** or **dist-**phonestore****. |
+| \-I, --win-publisher-id <ID> | Windows Publisher ID. Required to build the application. |
+| \--wp-product-guid <GUID> | **Deprecated as of 6.1.0**. Windows 8 product ID, used for upgrading Win 8 apps to Win 8.1. Deprecated and will be removed in future version, use --win-product-guid instead. |
+| \-H, --win-product-guid <GUID> | **Since Release 6.1.0**. Windows 10 product ID, used for upgrading Windows 8.1 apps to Windows 10. |
+| \-O, --output-dir <dir> | Output directory. Only used when target is **dist-phonestore** or **dist-winstore**. |
+| \--ws-cert <file> | **Deprecated as of Release 6.1.0**. Location of the Windows Store certificate file. Only used when target is **ws-local** or **dist-winstore**. Deprecated and will be removed in future version, use --win-cert instead. |
+| \-R, --win-cert <file> | **Since Release 6.1.0**. Location of the Windows Store certificate file. Only used when target is **ws-local** or **dist-winstore**. |
+| \--wp-sdk <version> | **Deprecated as of Release 6.1.0**. Windows Phone SDK version. Deprecated and will be removed in future version, use --win-sdk instead. |
+| \-S, --win-sdk <version> | **Since Release 6.1.0**. Windows SDK version. When you run CLI on Windows 10, you can specify **10.0** to indicate building for Windows 10 _Universal Windows Platform_ (_UWP_) app. You can target more specific SDK version, such as **10.0.15063.0**. |
+| \-V, --vs-target <version> | Visual Studio target to build for.<br /><br />* **12.0** to use Visual Studio 2013<br />    <br />* **14.0** to use Visual Studio 2015<br />    <br />* **Visual Studio Community 2017** to use Visual Studio Community 2017<br />    <br />* **Visual Studio Professional 2017** to use Visual Studio Professional 2017<br />    <br />* **Visual Studio Enterprise 2017** to use Visual Studio Enterprise 2017 |
+| \-T, --target <value> | Target to build for:<br /><br />* **wp-emulator** to run a Windows Phone app on the emulator<br />    <br />* **wp-device** to run a Window Phone app on a device connected to your host machine<br />    <br />* **dist-**phonestore**** to pakcage a Windows Phone app<br />    <br />* **ws-local** to run a Windows Store app on your local machine<br />    <br />* **dist-winstore** to package a Windows Store app |
+| \--skipInstallDependencies | **Since Release 6.1.0.** Skip installing dependency packages. If you had trouble with app deployment on device, try this option. |
 
 ### Clean
 
@@ -479,25 +266,12 @@ As of Titanium SDK 7.3.0 release, you need to keep historical version of your mo
 
 #### Clean options
 
-Option
-
-Description
-
-\--log-level <level>
-
-Minimum logging level. Supported options are **trace**, **debug**, **info**, **warn**, and **error**.
-
-\-p, --platforms <platform>
-
-A single platform to clean: **android**, **ios**, and **windows**.
-
-\-d, --project-dir <directory>
-
-Directory containing the project, otherwise the current working directory is assumed.
-
-\-s, --sdk <version>
-
-Titanium SDK version to build with. If not specified, uses the configured default SDK.
+| Option | Description |
+| --- | --- |
+| \--log-level <level> | Minimum logging level. Supported options are **trace**, **debug**, **info**, **warn**, and **error**. |
+| \-p, --platforms <platform> | A single platform to clean: **android**, **ios**, and **windows**. |
+| \-d, --project-dir <directory> | Directory containing the project, otherwise the current working directory is assumed. |
+| \-s, --sdk <version> | Titanium SDK version to build with. If not specified, uses the configured default SDK. |
 
 ### Config
 
@@ -513,21 +287,11 @@ Gets and sets configuration options. If no key is specified, then all key/values
 
 #### Config Options
 
-Option
-
-Description
-
-\-a, --append
-
-Appenda a value to a key containing a list of values.
-
-\-r, --remove
-
-Removes the specified config key and all its descendants.
-
-\-o, --output <value>
-
-Selects the output format: **report**, **json**, or **json-object**. Defaults to **report**.
+| Option | Description |
+| --- | --- |
+| \-a, --append | Appenda a value to a key containing a list of values. |
+| \-r, --remove | Removes the specified config key and all its descendants. |
+| \-o, --output <value> | Selects the output format: **report**, **json**, or **json-object**. Defaults to **report**. |
 
 ### Create
 
@@ -543,56 +307,18 @@ Creates a new application or module project.
 
 #### Create options
 
-Option
-
-Description
-
-\-f, --force
-
-Force creation of the project, even if the path already exists.
-
-\--id <value>
-
-Application ID. For uniqueness, application IDs should be based on a registered domain name, in reverse-DNS order (for example, com.example.mygreatapp).
-
-\--log-level <level>
-
-Minimum logging level. Supported options are **trace**, **debug**, **info**, **warn**, and **error**.
-
-\--template <value>
-
-Project template to use--either a name of a template to use or files to copy over to the newly created project. The file to be copied over can either be placed in a directory, ZIP file or ZIP file with a remote URL.
-
-\-d, --workspace-dir <value>
-
-Directory to place the project in. Defaults to the workspace directory set in the titanium configuration, if any.
-
-\-n, --name <value>
-
-Name of the project. Used as the default human-readable name for the project.
-
-\-p, --platforms <platform>
-
-Comma-separated list of platforms: supported values are **android**, **ios**, and **windows**. (**iphone** and **ipad** are currently accepted as synonyms for **ios**.)
-
-\-s, --sdk <version>
-
-Titanium SDK version to build with. If not specified, uses the configured default SDK. This can be changed later in the tiapp.xml.
-
-\-t, --type <value>
-
-Type of project to create (defaul:
-
-* **app** (default)
-
-* **applewatch**
-
-* **module** (or **timodule** if using the Appcelerator CLI)
-
-
-\-u --url <value>
-
-Your company/personal URL.
+| Option | Description |
+| --- | --- |
+| \-f, --force | Force creation of the project, even if the path already exists. |
+| \--id <value> | Application ID. For uniqueness, application IDs should be based on a registered domain name, in reverse-DNS order (for example, com.example.mygreatapp). |
+| \--log-level <level> | Minimum logging level. Supported options are **trace**, **debug**, **info**, **warn**, and **error**. |
+| \--template <value> | Project template to use--either a name of a template to use or files to copy over to the newly created project. The file to be copied over can either be placed in a directory, ZIP file or ZIP file with a remote URL. |
+| \-d, --workspace-dir <value> | Directory to place the project in. Defaults to the workspace directory set in the titanium configuration, if any. |
+| \-n, --name <value> | Name of the project. Used as the default human-readable name for the project. |
+| \-p, --platforms <platform> | Comma-separated list of platforms: supported values are **android**, **ios**, and **windows**. (**iphone** and **ipad** are currently accepted as synonyms for **ios**.) |
+| \-s, --sdk <version> | Titanium SDK version to build with. If not specified, uses the configured default SDK. This can be changed later in the tiapp.xml. |
+| \-t, --type <value> | Type of project to create (defaul:<br /><br />* **app** (default)<br />    <br />* **applewatch**<br />    <br />* **module** (or **timodule** if using the Appcelerator CLI) |
+| \-u --url <value> | Your company/personal URL. |
 
 ### Help
 
@@ -632,17 +358,10 @@ Displays development environment information.
 
 #### Info options
 
-Option
-
-Description
-
-\-o, --output <value>
-
-Selects the output format: **report** or **json**. Defaults to **report**.
-
-\-t, --types <value>
-
-Comma-separated list of types to display: **all**, **os**, **nodejs**, **titanium**, **ios**, **jdk**, **haxm** and **android**. Defaults to **all**.
+| Option | Description |
+| --- | --- |
+| \-o, --output <value> | Selects the output format: **report** or **json**. Defaults to **report**. |
+| \-t, --types <value> | Comma-separated list of types to display: **all**, **os**, **nodejs**, **titanium**, **ios**, **jdk**, **haxm** and **android**. Defaults to **all**. |
 
 ### Module
 
@@ -674,17 +393,10 @@ Prints a list of installed modules.
 
 ##### Module list options
 
-Option
-
-Description
-
-\-o, --output <value>
-
-Selects the output format: **report**, **json** or **grid**. Defaults to **report**.
-
-\--project-dir <value>
-
-Directory of the project to analyze. Defaults to the current working directory.
+| Option | Description |
+| --- | --- |
+| \-o, --output <value> | Selects the output format: **report**, **json** or **grid**. Defaults to **report**. |
+| \--project-dir <value> | Directory of the project to analyze. Defaults to the current working directory. |
 
 ### Plugin
 
@@ -716,17 +428,10 @@ Prints a list of installed plugins.
 
 ##### Plugin list options
 
-Option
-
-Description
-
-\-o, --output <value>
-
-Selects the output format: **report**, **json** or **grid**. Defaults to **report**.
-
-\--project-dir <value>
-
-Directory of the project to analyze. Defaults to the current working directory.
+| Option | Description |
+| --- | --- |
+| \-o, --output <value> | Selects the output format: **report**, **json** or **grid**. Defaults to **report**. |
+| \--project-dir <value> | Directory of the project to analyze. Defaults to the current working directory. |
 
 ### Project
 
@@ -744,17 +449,10 @@ It also allows you to set the deployment-targets using a comma-separated list of
 
 #### Project options
 
-Option
-
-Description
-
-\-o, --output <value>
-
-Selects the output format: **report**, **json** or **text**. Defaults to **report**.
-
-\--project-dir <directory>
-
-Directory containing the project, otherwise the current working directory is assumed.
+| Option | Description |
+| --- | --- |
+| \-o, --output <value> | Selects the output format: **report**, **json** or **text**. Defaults to **report**. |
+| \--project-dir <directory> | Directory containing the project, otherwise the current working directory is assumed. |
 
 ### SDK
 
@@ -798,25 +496,12 @@ To override this behavior, set the sdk.defaultInstallLocation key to a path wher
 
 ##### SDK install options
 
-Option
-
-Description
-
-\-d, --default
-
-Sets as the default SDK.
-
-\-f, --force
-
-Forces reinstallation.
-
-\-k, --keep-files
-
-Keep downloaded files after install.
-
-\-b, --branch <branch name>
-
-Branch to install or "latest".
+| Option | Description |
+| --- | --- |
+| \-d, --default | Sets as the default SDK. |
+| \-f, --force | Forces reinstallation. |
+| \-k, --keep-files | Keep downloaded files after install. |
+| \-b, --branch <branch name> | Branch to install or "latest". |
 
 #### SDK list
 
@@ -836,21 +521,11 @@ Prints a list of installed SDK versions.
 
 ##### SDK list options
 
-Option
-
-Description
-
-\-b, --branches
-
-Retrieves and prints all branches.
-
-\-r, --releases
-
-Retrieves and prints all releases.
-
-\-o, --output <value>
-
-Selects the output format: **report** or **json**. Defaults to **report**.
+| Option | Description |
+| --- | --- |
+| \-b, --branches | Retrieves and prints all branches. |
+| \-r, --releases | Retrieves and prints all releases. |
+| \-o, --output <value> | Selects the output format: **report** or **json**. Defaults to **report**. |
 
 #### SDK select
 
@@ -878,13 +553,9 @@ Uninstalls a specific Titanium SDK version.
 
 ##### SDK uninstall options
 
-Option
-
-Description
-
-\-f, --force
-
-Forces uninstallation without confirmation.
+| Option | Description |
+| --- | --- |
+| \-f, --force | Forces uninstallation without confirmation. |
 
 #### SDK update
 
@@ -900,25 +571,12 @@ Finds the latest version of the Titanium SDK.
 
 ##### SDK update options
 
-Option
-
-Description
-
-\-d, --default
-
-Sets as the default SDK.
-
-\-f, --force
-
-Forces reinstallation.
-
-\-i, --install
-
-Installs the latest version.
-
-\-b, --branch <branch name>
-
-Branch to update from.
+| Option | Description |
+| --- | --- |
+| \-d, --default | Sets as the default SDK. |
+| \-f, --force | Forces reinstallation. |
+| \-i, --install | Installs the latest version. |
+| \-b, --branch <branch name> | Branch to update from. |
 
 ### Setup
 

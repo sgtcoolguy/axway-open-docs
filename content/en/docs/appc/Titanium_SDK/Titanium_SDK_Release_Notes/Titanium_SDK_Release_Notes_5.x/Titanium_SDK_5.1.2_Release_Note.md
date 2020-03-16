@@ -2,20 +2,19 @@
 
 ## Contents
 
-* [About This Release](#AboutThisRelease)
+* [About This Release](#about-this-release)
 
-* [Fixed Issues](#FixedIssues)
+* [Fixed Issues](#fixed-issues)
 
-* [Improvements](#Improvements)
+* [Improvements](#improvements)
 
-* [API Changes](#APIChanges)
-
+* [API Changes](#api-changes)
 
 ## About This Release
 
 Titanium SDK 5.1.2.GA is a patch release of the SDK, addressing high-priority issues from previous releases.
 
-As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#NominalLifetimes) documents for details.
+As of this GA release, the previous Titanium SDK patch release is no longer supported. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
 ## Fixed Issues
 
@@ -69,49 +68,28 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 * [TIMOB-20110](https://jira.appcelerator.org/browse/TIMOB-20110): Windows: Ti.UI.Textfield passwordMask=true doesn't work
 
-
 ## Improvements
 
 * [TIMOB-19842](https://jira.appcelerator.org/browse/TIMOB-19842): Android: CardView cardPreventCornerOverlap and cardUseCompatPadding should not start with card
 
-  * Deprecating cardPreventCornerOverlap and cardUseCompatPadding in favor or preventCornerOverlap and useCompatPadding. Developers will see a depreciation notice.
+    * Deprecating cardPreventCornerOverlap and cardUseCompatPadding in favor or preventCornerOverlap and useCompatPadding. Developers will see a depreciation notice.
 
 * [TIMOB-19802](https://jira.appcelerator.org/browse/TIMOB-19802): Android: CardView should use standard property names
 
-  * Deprecating non-standard property names in favor of Android's CardView property names.
+    * Deprecating non-standard property names in favor of Android's CardView property names.
 
-  * Old Property Name
-
-    New Property Name
-
-    cardBackgroundColor
-
-    backgroundColor
-
-    cardCornerRadius
-
-    borderRadius
-
-    cardElevation
-
-    elevation
-
-    cardMaxElevation
-
-    maxElevation
-
-    contentPadding
-
-    padding
-
-    contentPadding<side>
-
-    padding<side>
+    * | Old Property Name | New Property Name |
+        | --- | --- |
+        | cardBackgroundColor | backgroundColor |
+        | cardCornerRadius | borderRadius |
+        | cardElevation | elevation |
+        | cardMaxElevation | maxElevation |
+        | contentPadding | padding |
+        | contentPadding<side> | padding<side> |
 
 * [TIMOB-19045](https://jira.appcelerator.org/browse/TIMOB-19045): Windows: Add -t windows to ti info command
 
-  * You can now specify windows output with the \-t flag with the ti info command.
-
+    * You can now specify windows output with the \-t flag with the ti info command.
 
 ## API Changes
 

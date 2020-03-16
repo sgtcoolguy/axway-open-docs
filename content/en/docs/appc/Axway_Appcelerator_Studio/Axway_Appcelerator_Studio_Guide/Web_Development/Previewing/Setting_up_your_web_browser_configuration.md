@@ -2,14 +2,13 @@
 
 This page explains how to set up the different web browser configuration options to preview a project in a web browser.
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
 
-* [Instructions](#Instructions)
+* [Instructions](#instructions)
 
-* [Setting which page to preview](#Settingwhichpagetopreview)
+* [Setting which page to preview](#setting-which-page-to-preview)
 
-* [Specifying the default or an external webserver](#Specifyingthedefaultoranexternalwebserver)
-
+* [Specifying the default or an external webserver](#specifying-the-default-or-an-external-webserver)
 
 ## Introduction
 
@@ -25,24 +24,22 @@ To create a new browser configuration:
 
 1. To access the **Run Configuration** window, click the arrow to the right of the **Run** button ![run](/Images/appc/download/attachments/30083124/run.png) .
 
-  Studio opens the **Run Configuration** window (shown below).
+    Studio opens the **Run Configuration** window (shown below).
 
-  ![Screen_shot_2011-04-22_at_2.40.42_PM](/Images/appc/download/attachments/30083124/Screen_shot_2011-04-22_at_2.40.42_PM.png)
-  1. In the upper left of the **Run Configuration** window, click the **New launch configuration** button ![IconNewLaunchConfiguration](/Images/appc/download/attachments/30083124/IconNewLaunchConfiguration.png) .
-    The new configuration appears with a placeholder name of "New\_configuration" on the **Configurations** tree.
+    ![Screen_shot_2011-04-22_at_2.40.42_PM](/Images/appc/download/attachments/30083124/Screen_shot_2011-04-22_at_2.40.42_PM.png)
+    1. In the upper left of the **Run Configuration** window, click the **New launch configuration** button ![IconNewLaunchConfiguration](/Images/appc/download/attachments/30083124/IconNewLaunchConfiguration.png) .
+        The new configuration appears with a placeholder name of "New\_configuration" on the **Configurations** tree.
 
-  2. On the **Configurations** list, select the new configuration.
+    2. On the **Configurations** list, select the new configuration.
 
-  3. In the **Name** text box, type a name for the new configuration (e.g. "Firefox").
+    3. In the **Name** text box, type a name for the new configuration (e.g. "Firefox").
 
 2. Specify which web browser window should launch for the new configuration:
 
-  * In the Browser executable field, specify or browse to the location where the web browser that you want to add is installed (for example, "C:\\Program Files\\Mozilla Firefox\\firefox.exe", or "/Applications/Safari.app").
-    The default value for this field is the default location where Firefox is installed on most users' systems. If your Firefox installation is in a different location, you will need to browse to that location, or to the location of a different web browser.
+    * In the Browser executable field, specify or browse to the location where the web browser that you want to add is installed (for example, "C:\\Program Files\\Mozilla Firefox\\firefox.exe", or "/Applications/Safari.app").
+        The default value for this field is the default location where Firefox is installed on most users' systems. If your Firefox installation is in a different location, you will need to browse to that location, or to the location of a different web browser.
 
-  * Click the **Apply** button to save your changes.
-
-
+    * Click the **Apply** button to save your changes.
 
 The instructions above set up a basic new configuration to launch a page preview in a new web browser window. To learn about additional options for your configuration, read through the optional instructions below.
 
@@ -54,15 +51,13 @@ To specify which page to preview by default for this configuration:
 
 1. In the Start Action box, choose one of the following options:
 
-  * **Use the current page** - Opens the page currently open in the HMTL editor in the browser window.
+    * **Use the current page** - Opens the page currently open in the HMTL editor in the browser window.
 
-  * **Specific page** - Opens the specified page in the browser window. (You can also set a specific page by right-clicking on an HTML file in the Project View and selecting **Set as Start Page** from the context menu.)
+    * **Specific page** - Opens the specified page in the browser window. (You can also set a specific page by right-clicking on an HTML file in the Project View and selecting **Set as Start Page** from the context menu.)
 
-  * **Start URL** - Opens the specified URL in the browser window.
-
+    * **Start URL** - Opens the specified URL in the browser window.
 
 2. Click the **Apply** button to save your changes.
-
 
 ## Specifying the default or an external webserver
 
@@ -72,14 +67,12 @@ To change the server configuration:
 
 1. In the **Server** box, choose one of the following options:
 
-  * **Use built-in Web server** - Use the web server built into Studio.
+    * **Use built-in Web server** - Use the web server built into Studio.
 
-  * **Use selected server** - Use a server configuration created in [project preferences](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Previewing/Creating_a_Custom_Preview_Server/).
+    * **Use selected server** - Use a server configuration created in [project preferences](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Previewing/Creating_a_Custom_Preview_Server/).
 
-  * **Use an external server** - Use the specified external web server.
-
+    * **Use an external server** - Use the specified external web server.
 
 2. Click the **Apply** button to save your changes.
-
 
 To preview a project after you have set up your configuration, click the **Run** button ![run](/Images/appc/download/attachments/30083124/run.png) to open the preview in a new browser window.

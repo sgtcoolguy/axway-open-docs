@@ -2,16 +2,15 @@
 
 The Email Templates screen lets you create and edit plain text and HTML email templates. The email template's subject and body can contain [placeholder values](#placeholder) that are dynamically replaced with values you specify when sending the email using the Mobile Backend Services (MBS) [email\_from\_template](/arrowdb/latest/#!/api/Emails-method-email_from_template) REST API, Titanium.Cloud.Emails.send() method or equivalent native [iOS](http://docs.appcelerator.com/aps-sdk-apidoc/latest/ios/Classes/APSEmails.html#//api/name/send:withBlock:) or [Android](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSEmails.html) method. The email can be sent as plain text, HTML, or multi-part using these methods.
 
-* [Creating an email template](#Creatinganemailtemplate)
+* [Creating an email template](#creating-an-email-template)
 
-* [Editing an email template](#Editinganemailtemplate)
+* [Editing an email template](#editing-an-email-template)
 
-* [Deleting an email template](#Deletinganemailtemplate)
+* [Deleting an email template](#deleting-an-email-template)
 
-* [Sending email based on a template](#Sendingemailbasedonatemplate)
+* [Sending email based on a template](#sending-email-based-on-a-template)
 
-* [Using placeholder fields](#Usingplaceholderfields)
-
+* [Using placeholder fields](#using-placeholder-fields)
 
 ## Creating an email template
 
@@ -27,19 +26,18 @@ To create an email template:
 
 4. Click the **Code** tab, and provide values for the following fields:
 
-  1. **Name** – Name of the email template. You will specify this name when [sending](#!/api/Modules.Cloud.Emails) the email.
+    1. **Name** – Name of the email template. You will specify this name when [sending](#!/api/Modules.Cloud.Emails) the email.
 
-  2. **Subject** – The email's subject. The subject can contain [placeholder values](#placeholder) in double curly brackets.
+    2. **Subject** – The email's subject. The subject can contain [placeholder values](#placeholder) in double curly brackets.
 
-  3. **Body (HTML)** – The email's HTML-formatted body text. The body can contain [placeholder values](#placeholder) in double curly brackets.
+    3. **Body (HTML)** – The email's HTML-formatted body text. The body can contain [placeholder values](#placeholder) in double curly brackets.
 
-  4. **Body (Plain Text)** – The email's plain text-formatted body text. The body can contain [placeholder values](#placeholder) in double curly brackets.
+    4. **Body (Plain Text)** – The email's plain text-formatted body text. The body can contain [placeholder values](#placeholder) in double curly brackets.
 
 5. Click **Preview** to view a rendered version of the HTML body text.
 
-  ![email_template_latest](/Images/appc/download/attachments/60145278/email_template_latest.png)
+    ![email_template_latest](/Images/appc/download/attachments/60145278/email_template_latest.png)
 6. Click **Save**.
-
 
 Below is the sample HTML used in the above screenshot:
 
@@ -157,7 +155,6 @@ To edit an email template:
 
 7. Click **Save**.
 
-
 ## Deleting an email template
 
 To delete an email template:
@@ -173,7 +170,6 @@ To delete an email template:
 5. Select **Delete** from the _Action_ menu list.
 
 6. Click **Continue** to confirm the deletion of the email template.
-
 
 ## Sending email based on a template
 

@@ -12,7 +12,6 @@ Dashboard 6.5.1 is a patch release, which includes several new features and impr
 
 * Added option to the application level **Custom Queries** view to query and group by **Crash** events, display the crashes' error messages, and link to the crash details view.
 
-
 ## Improvements
 
 * Improved behavior of the **Environments** dropdown on analytics views. Aside from default **Development** and **Production** values, the options will only include values received within the queried date range.

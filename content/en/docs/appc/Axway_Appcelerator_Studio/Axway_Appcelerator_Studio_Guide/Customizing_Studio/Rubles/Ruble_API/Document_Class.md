@@ -8,7 +8,9 @@ Examples of how you might interact with methods of the document class. Note that
 
 ### Instance:
 
-`doc = context.editor.document.get`
+```
+doc = context.editor.document.get
+```
 
 ## Document Methods
 
@@ -36,16 +38,13 @@ Document objects have the following properties and methods.
 
 ### Inserting a newline, based on the current document settings
 
-`require` `'ruble'`
+```
+require 'ruble'
 
-`command` `"Insert Newline"`  `do` `|cmd|`
-
-`cmd.output = :insert_as_text`
-
-`cmd.invoke` `do` `|context|`
-
-`return` `context.editor.document.legal_line_delimiters[``0``]`
-
-`end`
-
-`end`
+command "Insert Newline" do |cmd|
+  cmd.output = :insert_as_text
+  cmd.invoke do |context|
+    return context.editor.document.legal_line_delimiters[0]
+  end
+end
+```

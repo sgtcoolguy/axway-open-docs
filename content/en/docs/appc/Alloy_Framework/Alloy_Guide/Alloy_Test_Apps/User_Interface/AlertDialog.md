@@ -2,7 +2,7 @@
 
 Demonstrates basic use of an AlertDialog.
 
-Example App Source Location
+*Example App Source Location*
 
 You can find this example app in the Alloy repository under [samples/apps/ui/alertdialog](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/alertdialog). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
 
@@ -12,69 +12,45 @@ An [AlertDialog](#!/api/Titanium.UI.AlertDialog) presents a modal dialog with a 
 
 The main index.xml view declares the AlertDialog element, and a Button that calls the showAlert() function defined by the main view-controller to show the dialog.
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<Alloy>`
+```xml
+<Alloy>
+    <Window>
+        <!--
+            Declare AlertDialog, which will be opened by an event.
+            The AlertDialog is not part of the view hierarchy.
+        -->
+        <AlertDialog id="alertDialog" title="title" message="This is my message" cancel="1">
+            <ButtonNames>
+                <ButtonName>OK</ButtonName>
+                <ButtonName>cancel</ButtonName>
+                <ButtonName platform="android">android</ButtonName>
+            </ButtonNames>
+            <!--
+                Only on Android, an additional view can be added to be rendered in
+                the AlertDialog, replacing any declared buttons. It will be added
+                to the AlertDialog's view hierarchy like any other View.
+            -->
+            <View layout="horizontal" platform="android">
+                <ImageView id="avImage" image="/appc4.png" height="40dp" width="40dp"/>
+                <Label id="avLabel">custom view label</Label>
+            </View>
+        </AlertDialog>
+        <!-- The actual view hierarchy code -->
+        <Button onClick="showAlert">show alert</Button>
+    </Window>
+</Alloy>
+```
 
-`<Window>`
+*app/controllers/index.js*
 
-`<!--`
-
-`Declare AlertDialog, which will be opened by an event.`
-
-`The AlertDialog is not part of the view hierarchy.`
-
-`-->`
-
-`<AlertDialog id=``"alertDialog"` `title=``"title"` `message=``"This is my message"` `cancel=``"1"``>`
-
-`<ButtonNames>`
-
-`<ButtonName>OK</ButtonName>`
-
-`<ButtonName>cancel</ButtonName>`
-
-`<ButtonName platform=``"android"``>android</ButtonName>`
-
-`</ButtonNames>`
-
-`<!--`
-
-`Only on Android, an additional view can be added to be rendered in`
-
-`the AlertDialog, replacing any declared buttons. It will be added`
-
-`to the AlertDialog's view hierarchy like any other View.`
-
-`-->`
-
-`<View layout=``"horizontal"` `platform=``"android"``>`
-
-`<ImageView id=``"avImage"` `image=``"/appc4.png"` `height=``"40dp"` `width=``"40dp"``/>`
-
-`<Label id=``"avLabel"``>custom view label</Label>`
-
-`</View>`
-
-`</AlertDialog>`
-
-`<!-- The actual view hierarchy code -->`
-
-`<Button onClick=``"showAlert"``>show alert</Button>`
-
-`</Window>`
-
-`</Alloy>`
-
-app/controllers/index.js
-
-`function showAlert(e) {`
-
-`$.alertDialog.show();`
-
-`}`
-
-`$.index.open();`
+```javascript
+function showAlert(e) {
+    $.alertDialog.show();
+}
+$.index.open();
+```
 
 ## See Also
 

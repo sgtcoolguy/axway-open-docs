@@ -32,61 +32,37 @@ In this chapter, you'll learn how to use Titanium's Map API to visually represen
 
 The MapView is the core UI component of the Ti.Map module. It allows Titanium to make use of a mobile device's underlying native maps to view geographic data and add annotations and routes. As it is a native UI component, users will also have access to features like scrolling and multi-touch zoom. In its most basic form, the MapView can simply display a basic map given a geographic position via latitude and longitude.
 
-`const Map = require(``'ti.map'``);`
+```javascript
+const Map = require('ti.map');
+const win = Ti.UI.createWindow();
+const mapview = Map.createView({
+    mapType: Map.NORMAL_TYPE,
+    region: {latitude:37.389569, longitude:-122.050212,
+            latitudeDelta:0.1, longitudeDelta:0.1},
+    animate:true,
+    regionFit:true,
+    userLocation:false
+});
+mapview.addEventListener('complete', function(e) {
+    Ti.API.info('complete');
+    Ti.API.info(e);
+});
+mapview.addEventListener('error', function(e) {
+    Ti.API.info('error');
+    Ti.API.info(e);
+});
+mapview.addEventListener('loading', function(e) {
+    Ti.API.info('loading');
+    Ti.API.info(e);
+});
+mapview.addEventListener('regionChanged', function(e) {
+    Ti.API.info('regionChanged');
+    Ti.API.info(e);
+});
 
-`const win = Ti.UI.createWindow();`
-
-`const mapview = Map.createView({`
-
-`mapType: Map.NORMAL_TYPE,`
-
-`region: {latitude:37.389569, longitude:-122.050212,`
-
-`latitudeDelta:0.1, longitudeDelta:0.1},`
-
-`animate:``true``,`
-
-`regionFit:``true``,`
-
-`userLocation:``false`
-
-`});`
-
-`mapview.addEventListener(``'complete'``,` `function``(e) {`
-
-`Ti.API.info(``'complete'``);`
-
-`Ti.API.info(e);`
-
-`});`
-
-`mapview.addEventListener(``'error'``,` `function``(e) {`
-
-`Ti.API.info(``'error'``);`
-
-`Ti.API.info(e);`
-
-`});`
-
-`mapview.addEventListener(``'loading'``,` `function``(e) {`
-
-`Ti.API.info(``'loading'``);`
-
-`Ti.API.info(e);`
-
-`});`
-
-`mapview.addEventListener(``'regionChanged'``,` `function``(e) {`
-
-`Ti.API.info(``'regionChanged'``);`
-
-`Ti.API.info(e);`
-
-`});`
-
-`win.add(mapview);`
-
-`win.open();`
+win.add(mapview);
+win.open();
+```
 
 ![iphone_map](/Images/appc/download/attachments/29004916/iphone_map.png) ![android_map](/Images/appc/download/attachments/29004916/android_map.png)
 
@@ -112,7 +88,7 @@ As seen above, those few lines of code generate native maps on both iOS and Andr
 
 * userLocation - A boolean that indicates if the map should show the user's current device location as a pin on the map
 
-Android MapView Limitation
+*Android MapView Limitation*
 
 On Android, only a **single** map view is supported per application. Adding a second map view to an application results in an exception being thrown.
 
@@ -130,81 +106,52 @@ Here's the 3 events specific to MapView that give you that additional control, a
 
 * regionChanged - The event is fired when the visible region of our MapViewhas changed. This can occur from programmatic changes, or from user interaction with the map. The new region data is returned in the following structure:
 
-    `{`
-
-    `latitude: 37.389569`
-
-    `latitudeDelta: 0.1`
-
-    `longitude: -122.050212,`
-
-    `longitudeDelta: 1`
-
-    `source: "[object TiMapView]",`
-
-    `type: 'regionChanged'`
-
-    `}`
+    ```
+    {
+        latitude: 37.389569
+        latitudeDelta: 0.1
+        longitude: -122.050212,
+        longitudeDelta: 1
+        source: "[object TiMapView]",
+        type: 'regionChanged'
+    }
+    ```
 
 * error - This event let's us know when ever there is an error encountered by the underlying native maps. Often times these errors are not critical, but need to be handled in order to preserve a quality user experience.
 
 As mentioned, the most common way to trigger the above events is through user interaction via scrolling and zooming. Let's change the MapView example code to handle all of the aforementioned events.
 
-`const Map = require(``'ti.map'``);`
+```javascript
+const Map = require('ti.map');
+const win = Ti.UI.createWindow();
+const mapview = Titanium.Map.createView({
+    mapType: Titanium.Map.NORMAL_TYPE,
+    region: {latitude:37.389569, longitude:-122.050212,
+            latitudeDelta:0.1, longitudeDelta:0.1},
+    animate:true,
+    regionFit:true,
+    userLocation:false
+});
+mapview.addEventListener('complete', function(e) {
+  Ti.API.info('complete');
+  Ti.API.info(e);
+});
+mapview.addEventListener('error', function(e) {
+  Ti.API.info('error');
+  Ti.API.info(e);
+});
+mapview.addEventListener('loading', function(e) {
+  Ti.API.info('loading');
+  Ti.API.info(e);
+});
+mapview.addEventListener('regionChanged', function(e) {
+  Ti.API.info('regionChanged');
+  Ti.API.info(e);
+});
 
-`const win = Ti.UI.createWindow();`
-
-`const mapview = Titanium.Map.createView({`
-
-`mapType: Titanium.Map.NORMAL_TYPE,`
-
-`region: {latitude:37.389569, longitude:-122.050212,`
-
-`latitudeDelta:0.1, longitudeDelta:0.1},`
-
-`animate:``true``,`
-
-`regionFit:``true``,`
-
-`userLocation:``false`
-
-`});`
-
-`mapview.addEventListener(``'complete'``,` `function``(e) {`
-
-`Ti.API.info(``'complete'``);`
-
-`Ti.API.info(e);`
-
-`});`
-
-`mapview.addEventListener(``'error'``,` `function``(e) {`
-
-`Ti.API.info(``'error'``);`
-
-`Ti.API.info(e);`
-
-`});`
-
-`mapview.addEventListener(``'loading'``,` `function``(e) {`
-
-`Ti.API.info(``'loading'``);`
-
-`Ti.API.info(e);`
-
-`});`
-
-`mapview.addEventListener(``'regionChanged'``,` `function``(e) {`
-
-`Ti.API.info(``'regionChanged'``);`
-
-`Ti.API.info(e);`
-
-`});`
-
-`win.add(mapview);`
-
-`win.open();`
+win.add(mapview);
+win.open();
+```
 
 Now we'll run the example again, this time zooming the map out after it renders.
 
@@ -212,43 +159,27 @@ Now we'll run the example again, this time zooming the map out after it renders.
 
 And here is the event console output from this interaction.
 
-`[INFO] loading`
-
-`[INFO] {`
-
-`source =` `"[object TiMapView]"``;`
-
-`type = loading;`
-
-`}`
-
-`[INFO] complete`
-
-`[INFO] {`
-
-`source =` `"[object TiMapView]"``;`
-
-`type = complete;`
-
-`}`
-
-`[INFO] regionChanged`
-
-`[INFO] {`
-
-`latitude =` `"37.35867258291223"``;`
-
-`latitudeDelta =` `"1.883241287989044"``;`
-
-`longitude =` `"-122.049009169728"``;`
-
-`longitudeDelta =` `"1.648237229196269"``;`
-
-`source =` `"[object TiMapView]"``;`
-
-`type = regionChanged;`
-
-`}`
+```
+[INFO] loading
+[INFO] {
+    source = "[object TiMapView]";
+    type = loading;
+}
+[INFO] complete
+[INFO] {
+    source = "[object TiMapView]";
+    type = complete;
+}
+[INFO] regionChanged
+[INFO] {
+    latitude = "37.35867258291223";
+    latitudeDelta = "1.883241287989044";
+    longitude = "-122.049009169728";
+    longitudeDelta = "1.648237229196269";
+    source = "[object TiMapView]";
+    type = regionChanged;
+}
+```
 
 Notice the order of events. loading is first, signifying that new map data needs to be queried. complete follows, letting us know that the preceding map query has completed. Finally, we get the regionChanged event which gives us the new coordinates and deltas for the visible map region. This is the typical flow for all map interactions.
 
@@ -260,113 +191,63 @@ Annotations, created with the Ti.Map.createAnnotation() function, allow us to ma
 
 Adding an annotation to a MapView is simple. Let's modify the basic MapView example to see how we can add the Appcelerator headquarters, and a few other locations, as annotations. To make things more interesting, we'll use a number of the styling properties available to annotations through the Titanium API.
 
-`const Map = require(``'ti.map'``);`
+```javascript
+const Map = require('ti.map');
+const win = Ti.UI.createWindow();
+const annotations = [
+    Map.createAnnotation({
+        latitude: 37.389569,
+        longitude: -122.050212,
+        title: 'Appcelerator HQ',
+        subtitle: 'Mountain View, CA',
+        animate: true,
+        pincolor: Map.ANNOTATION_GREEN,
+        leftButton: 'appcelerator.gif'
+    }),
+    Map.createAnnotation({
+        latitude: 37.331689,
+        longitude: -122.030731,
+        title: 'Apple HQ',
+        subtitle: 'Cupertino, CA',
+        animate: true,
+        pincolor: Map.ANNOTATION_RED,
+        rightButton: 'apple.png'
+    }),
+    Map.createAnnotation({
+        latitude: 37.422502,
+        longitude: -122.0855498,
+        title: 'Google HQ',
+        subtitle: 'Mountain View, CA',
+        animate: true,
+        image: 'google.png',
+        leftView: Ti.UI.createButton({
+            title: 'leftView',
+            height: 32,
+            width: 70
+        }),
+        rightView: Ti.UI.createLabel({
+            text: 'rightView',
+            color: '#fff'
+        })
+    })
+];
+const mapview = Map.createView({
+    mapType: Map.NORMAL_TYPE,
+    region: {
+        latitude:37.389569,
+        longitude:-122.050212,
+        latitudeDelta:.05,
+        longitudeDelta:.05
+    },
+    animate:true,
+    regionFit:true,
+    userLocation:false,
+    annotations: annotations
+});
 
-`const win = Ti.UI.createWindow();`
-
-`const annotations = [`
-
-`Map.createAnnotation({`
-
-`latitude: 37.389569,`
-
-`longitude: -122.050212,`
-
-`title:` `'Appcelerator HQ'``,`
-
-`subtitle:` `'Mountain View, CA'``,`
-
-`animate:` `true``,`
-
-`pincolor: Map.ANNOTATION_GREEN,`
-
-`leftButton:` `'appcelerator.gif'`
-
-`}),`
-
-`Map.createAnnotation({`
-
-`latitude: 37.331689,`
-
-`longitude: -122.030731,`
-
-`title:` `'Apple HQ'``,`
-
-`subtitle:` `'Cupertino, CA'``,`
-
-`animate:` `true``,`
-
-`pincolor: Map.ANNOTATION_RED,`
-
-`rightButton:` `'apple.png'`
-
-`}),`
-
-`Map.createAnnotation({`
-
-`latitude: 37.422502,`
-
-`longitude: -122.0855498,`
-
-`title:` `'Google HQ'``,`
-
-`subtitle:` `'Mountain View, CA'``,`
-
-`animate:` `true``,`
-
-`image:` `'google.png'``,`
-
-`leftView: Ti.UI.createButton({`
-
-`title:` `'leftView'``,`
-
-`height: 32,`
-
-`width: 70`
-
-`}),`
-
-`rightView: Ti.UI.createLabel({`
-
-`text:` `'rightView'``,`
-
-`color:` `'#fff'`
-
-`})`
-
-`})`
-
-`];`
-
-`const mapview = Map.createView({`
-
-`mapType: Map.NORMAL_TYPE,`
-
-`region: {`
-
-`latitude:37.389569,`
-
-`longitude:-122.050212,`
-
-`latitudeDelta:.05,`
-
-`longitudeDelta:.05`
-
-`},`
-
-`animate:``true``,`
-
-`regionFit:``true``,`
-
-`userLocation:``false``,`
-
-`annotations: annotations`
-
-`});`
-
-`win.add(mapview);`
-
-`win.open();`
+win.add(mapview);
+win.open();
+```
 
 We just created an array full of annotations, then passed that array to the MapView for use when it was created. Even if we had only one annotation, we still need to pass it to the MapView as an entry in an array. With the array of annotations constructed, we are ready to display them in a MapView. Here's what it looks like on Android and iPhone, respectively.
 
@@ -406,157 +287,90 @@ Routes allow us to draw paths between locations on a MapView. These paths can be
 
 Routes are added to MapViews via the Ti.Map.MapView.addRoute() function. To use the addRoute() function, we pass it a properly structured route object that will then be represented on the MapView. The route object should take the following form:
 
-`{`
-
-`name:` `'route name'``,`
-
-`color:` `'#f00'``,`
-
-`width: 4,`
-
-`points: [`
-
-`{latitude:50, longitude:50},`
-
-`...`
-
-`]`
-
-`}`
+```
+{
+    name: 'route name',
+    color: '#f00',
+    width: 4,
+    points: [
+        {latitude:50, longitude:50},
+        ...
+    ]
+}
+```
 
 While the name, color, and width fields are self-explanatory, the points array could use some additional detail. points holds the array of latitude and longitude coordinates that represent each point in our route. As geometry dictates, you must have at least 2 points to draw a line, or route in this case. Limitations on the number of points you can use in a route are platform specific and are not governed by the Titanium API.
 
 So let's go back to our MapView example one more time and add a route to it. We'll create a route that connects the 3 locations we've already annotated. The route will go from north to south, connecting each location with a red, 4 pixel wide line.
 
-`const Map = require(``'ti.map'``);`
-
-`const win = Ti.UI.createWindow();`
-
-`const annotations = [`
-
-`Map.createAnnotation({`
-
-`latitude: 37.389569,`
-
-`longitude: -122.050212,`
-
-`title:` `'Appcelerator HQ'``,`
-
-`subtitle:` `'Mountain View, CA'``,`
-
-`animate:` `true``,`
-
-`pincolor: Map.ANNOTATION_GREEN,`
-
-`leftButton:` `'appcelerator.gif'`
-
-`}),`
-
-`Map.createAnnotation({`
-
-`latitude: 37.331689,`
-
-`longitude: -122.030731,`
-
-`title:` `'Apple HQ'``,`
-
-`subtitle:` `'Cupertino, CA'``,`
-
-`animate:` `true``,`
-
-`pincolor: Map.ANNOTATION_RED,`
-
-`rightButton:` `'apple.png'`
-
-`}),`
-
-`Map.createAnnotation({`
-
-`latitude: 37.422502,`
-
-`longitude: -122.0855498,`
-
-`title:` `'Google HQ'``,`
-
-`subtitle:` `'Mountain View, CA'``,`
-
-`animate:` `true``,`
-
-`image:` `'google.png'``,`
-
-`leftView: Ti.UI.createButton({`
-
-`title:` `'leftView'``,`
-
-`height: 32,`
-
-`width: 70`
-
-`}),`
-
-`rightView: Ti.UI.createLabel({`
-
-`text:` `'rightView'``,`
-
-`color:` `'#fff'`
-
-`})`
-
-`})`
-
-`];`
-
-`const mapview = Map.createView({`
-
-`mapType: Map.NORMAL_TYPE,`
-
-`region: {`
-
-`latitude:37.389569,`
-
-`longitude:-122.050212,`
-
-`latitudeDelta:.05,`
-
-`longitudeDelta:.05`
-
-`},`
-
-`animate:``true``,`
-
-`regionFit:``true``,`
-
-`userLocation:``false``,`
-
-`annotations: annotations`
-
-`});`
-
-`var` `route = Map.createRoute({`
-
-`name:` `'myroute'``,`
-
-`width: 4,`
-
-`color:` `'#f00'``,`
-
-`points: [`
-
-`{latitude:37.422502, longitude:-122.0855498},`
-
-`{latitude:37.389569, longitude:-122.050212},`
-
-`{latitude:37.331689, longitude:-122.030731}`
-
-`]`
-
-`});`
-
-`mapview.addRoute(route);`
-
-`win.add(mapview);`
-
-`win.open();`
+```javascript
+const Map = require('ti.map');
+const win = Ti.UI.createWindow();
+const annotations = [
+    Map.createAnnotation({
+        latitude: 37.389569,
+        longitude: -122.050212,
+        title: 'Appcelerator HQ',
+        subtitle: 'Mountain View, CA',
+        animate: true,
+        pincolor: Map.ANNOTATION_GREEN,
+        leftButton: 'appcelerator.gif'
+    }),
+    Map.createAnnotation({
+        latitude: 37.331689,
+        longitude: -122.030731,
+        title: 'Apple HQ',
+        subtitle: 'Cupertino, CA',
+        animate: true,
+        pincolor: Map.ANNOTATION_RED,
+        rightButton: 'apple.png'
+    }),
+    Map.createAnnotation({
+        latitude: 37.422502,
+        longitude: -122.0855498,
+        title: 'Google HQ',
+        subtitle: 'Mountain View, CA',
+        animate: true,
+        image: 'google.png',
+        leftView: Ti.UI.createButton({
+            title: 'leftView',
+            height: 32,
+            width: 70
+        }),
+        rightView: Ti.UI.createLabel({
+            text: 'rightView',
+            color: '#fff'
+        })
+    })
+];
+const mapview = Map.createView({
+    mapType: Map.NORMAL_TYPE,
+    region: {
+        latitude:37.389569,
+        longitude:-122.050212,
+        latitudeDelta:.05,
+        longitudeDelta:.05
+    },
+    animate:true,
+    regionFit:true,
+    userLocation:false,
+    annotations: annotations
+});
+var route = Map.createRoute({
+    name: 'myroute',
+    width: 4,
+    color: '#f00',
+    points: [
+        {latitude:37.422502, longitude:-122.0855498},
+        {latitude:37.389569, longitude:-122.050212},
+        {latitude:37.331689, longitude:-122.030731}
+    ]
+});
+
+mapview.addRoute(route);
+win.add(mapview);
+win.open();
+```
 
 After we add the route to the existing MapView, we get the following map on iPhone.
 
@@ -574,7 +388,9 @@ Google uses the MD5 fingerprint of the certificate that signs your mobile applic
 
 In order to get the MD5 hash of your distribution certificate, we run the Java SDK keystore tool keytool from command line with the following parameters, explained below:
 
-`keytool -list -keystore YOUR_KEYSTORE -alias ALIAS -storepass STOREPASS`
+```
+keytool -list -keystore YOUR_KEYSTORE -alias ALIAS -storepass STOREPASS
+```
 
 * YOUR\_KEYSTORE - The full path to your app's keystore file. For more details on how a keystore is generated, please reference the [Distributing Android apps](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_Android_apps/) chapter of this book, as well as the [Android app signing documentation](http://developer.android.com/guide/publishing/app-signing.html).
 
@@ -600,89 +416,55 @@ Paste in your fingerprint and agree to the terms. Press Generate API Key. You sh
 
 Once you have received your API key, you need only include it in your project's tiapp.xml file to use it. To do so, we add an application property to the existing file under the main <ti:app> element. The property will look like this:
 
-`<property name=``"ti.android.google.map.api.key"``>YOUR_ANDROID_MAPS_API_KEY</property>`
+```xml
+<property name="ti.android.google.map.api.key">YOUR_ANDROID_MAPS_API_KEY</property>
+```
 
 So if you were to include this in a basic tiapp.xml file, it would look something like this:
 
-`<?``xml`  `version``=``"1.0"`  `encoding``=``"UTF-8"``?>`
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <deployment-targets>
+        <target device="mobileweb">false</target>
+        <target device="iphone">false</target>
+        <target device="ipad">false</target>
+        <target device="android">true</target>
+    </deployment-targets>
+    <id>com.maps</id>
+    <name>maps</name>
+    <version>1.0</version>
+    <publisher>tlukasavage</publisher>
+    <url>http://appcelerator.com</url>
+    <description>not specified</description>
+    <copyright>2011 by tlukasavage</copyright>
+    <icon>appicon.png</icon>
+    <persistent-wifi>false</persistent-wifi>
+    <prerendered-icon>false</prerendered-icon>
+    <statusbar-style>default</statusbar-style>
+    <statusbar-hidden>false</statusbar-hidden>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>YOUR_GUID</guid>
+    <iphone>
+        <orientations device="iphone">
+            <orientation>Ti.UI.PORTRAIT</orientation>
+        </orientations>
+        <orientations device="ipad">
+            <orientation>Ti.UI.PORTRAIT</orientation>
+            <orientation>Ti.UI.UPSIDE_PORTRAIT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
+        </orientations>
+    </iphone>
+    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
+    <modules/>
 
-`<``ti``:app` `xmlns:ti``=``"http://ti.appcelerator.org"``>`
-
-`<``deployment``-targets>`
-
-`<``target`  `device``=``"mobileweb"``>false</``target``>`
-
-`<``target`  `device``=``"iphone"``>false</``target``>`
-
-`<``target`  `device``=``"ipad"``>false</``target``>`
-
-`<``target`  `device``=``"android"``>true</``target``>`
-
-`</``deployment``-targets>`
-
-`<``id``>com.maps</``id``>`
-
-`<``name``>maps</``name``>`
-
-`<``version``>1.0</``version``>`
-
-`<``publisher``>tlukasavage</``publisher``>`
-
-`<``url``>``http://appcelerator.com``</``url``>`
-
-`<``description``>not specified</``description``>`
-
-`<``copyright``>2011 by tlukasavage</``copyright``>`
-
-`<``icon``>appicon.png</``icon``>`
-
-`<``persistent``-wifi>false</``persistent``-wifi>`
-
-`<``prerendered``-icon>false</``prerendered``-icon>`
-
-`<``statusbar``-style>default</``statusbar``-style>`
-
-`<``statusbar``-hidden>false</``statusbar``-hidden>`
-
-`<``fullscreen``>false</``fullscreen``>`
-
-`<``navbar``-hidden>false</``navbar``-hidden>`
-
-`<``analytics``>true</``analytics``>`
-
-`<``guid``>YOUR_GUID</``guid``>`
-
-`<``iphone``>`
-
-`<``orientations`  `device``=``"iphone"``>`
-
-`<``orientation``>Ti.UI.PORTRAIT</``orientation``>`
-
-`</``orientations``>`
-
-`<``orientations`  `device``=``"ipad"``>`
-
-`<``orientation``>Ti.UI.PORTRAIT</``orientation``>`
-
-`<``orientation``>Ti.UI.UPSIDE_PORTRAIT</``orientation``>`
-
-`<``orientation``>Ti.UI.LANDSCAPE_LEFT</``orientation``>`
-
-`<``orientation``>Ti.UI.LANDSCAPE_RIGHT</``orientation``>`
-
-`</``orientations``>`
-
-`</``iphone``>`
-
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``/>`
-
-`<``modules``/>`
-
-`<!-- Here's where we add the API key -->`
-
-`<``property`  `name``=``"ti.android.google.map.api.key"``>YOUR_ANDROID_MAPS_API_KEY</``property``>`
-
-`</``ti``:app>`
+    <!-- Here's where we add the API key -->
+    <property name="ti.android.google.map.api.key">YOUR_ANDROID_MAPS_API_KEY</property>
+</ti:app>
+```
 
 You are now ready to use the Google map views in your distributable Titanium app.
 

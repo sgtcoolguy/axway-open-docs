@@ -57,11 +57,15 @@ After completing [simulators](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Visua
 
 2. Let's modify this file to say something custom like "Greetings and salutations". In line 3, you should see something like this:
 
-    `<``Label`  `id``=``"label"`  `onClick``=``"doClick"``>Hello, World</``Label``>`
+    ```xml
+    <Label id="label" onClick="doClick">Hello, World</Label>
+    ```
 
     Replace it with this:
 
-    `<``Label`  `id``=``"label"`  `onClick``=``"doClick"``>Greetings and salutations</``Label``>`
+    ```xml
+    <Label id="label" onClick="doClick">Greetings and salutations</Label>
+    ```
 
 3. **Save** your changes.
 

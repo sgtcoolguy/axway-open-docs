@@ -60,39 +60,29 @@ By default, files in the applicationDataDirectoryand applicationSupportDirectory
 
 For example, to disable backing up the entire application support directory, you need to recursively set the property on every file in the folder and its subfolders.
 
-`function` `walk(folder) {`
-
-`var` `dir = Ti.Filesystem.getFile(folder);`
-
-`var` `dir_files = dir.getDirectoryListing();`
-
-`for` `(``var` `i = 0; i < dir_files.length; i++) {`
-
-`var` `file = Ti.Filesystem.getFile(folder, dir_files[i]);`
-
-`file.remoteBackup =` `false``;`
-
-`var` `nativePath = file.nativePath;`
-
-`// Subfolder not a file`
-
-`if` `(nativePath.lastIndexOf(``'/'``) == nativePath.length - 1) {`
-
-`walk(file.nativePath);`
-
-`}`
-
-`}`
-
-`}`
-
-`walk(Ti.Filesystem.applicationSupportDirectory);`
+```javascript
+function walk(folder) {
+    var dir = Ti.Filesystem.getFile(folder);
+    var dir_files = dir.getDirectoryListing();
+    for (var i = 0; i < dir_files.length; i++) {
+        var file = Ti.Filesystem.getFile(folder, dir_files[i]);
+        file.remoteBackup = false;
+        var nativePath = file.nativePath;
+        // Subfolder not a file
+        if (nativePath.lastIndexOf('/') == nativePath.length - 1) {
+            walk(file.nativePath);
+        }
+    }
+}
+walk(Ti.Filesystem.applicationSupportDirectory);
+```
 
 Database files created using the Titanium.Database API are not stored in the data or application support directories. To disable backing up a database file, use the [file](#!/api/Titanium.Database.DB-property-file) property after opening a database to access the database file, then set the remoteBackup property on the database file to false.
 
-`var` `db = Ti.Database.open(``'foostore'``);`
-
-`db.file.remoteBackup =` `false`
+```javascript
+var db = Ti.Database.open('foostore');
+db.file.remoteBackup = false
+```
 
 ## Perform a manual backup
 

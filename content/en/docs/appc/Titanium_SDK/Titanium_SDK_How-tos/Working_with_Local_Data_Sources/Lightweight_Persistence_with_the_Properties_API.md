@@ -34,101 +34,73 @@ Titanium.App.Properties has six sets of get/set methods for handling six differe
 
 The _get_ methods accept a property name and its default value. Thus, if a property has never been set before, the default value will be returned. Each _set_ method requires a property name and property value pair. All of these methods are demonstrated below:
 
-`var` `window = Titanium.UI.createWindow({`
-
-`backgroundColor:` `'white'`
-
-`});`
-
-`var` `myArray = [`
-
-`{ name:` `'Name 1'``, address:` `'1 Main St'` `},`
-
-`{ name:` `'Name 2'``, address:` `'2 Main St'``},`
-
-`{ name:` `'Name 3'``, address:` `'3 Main St'``},`
-
-`{ name:` `'Name 4'``, address:` `'4 Main St'` `}`
-
-`];`
-
-`Ti.App.Properties.setString(``'myString'``,``'This is a string'``);`
-
-`Ti.App.Properties.setInt(``'myInt'``,10);`
-
-`Ti.App.Properties.setBool(``'myBool'``,``true``);`
-
-`Ti.App.Properties.setDouble(``'myDouble'``,10.6);`
-
-`Ti.App.Properties.setList(``'myList'``,myArray);`
-
-`// **********************************************`
-
-`// Notice the use of the second argument of the get* methods below`
-
-`// that would be returned if no property exists with that name`
-
-`// **********************************************`
-
-`Ti.API.info(``'String: '` `+ Ti.App.Properties.getString(``'myString'``,` `'This is a string default'``));`
-
-`Ti.API.info(``'Integer: '` `+ Ti.App.Properties.getInt(``'myInt'``, 20));`
-
-`Ti.API.info(``'Boolean: '` `+ Ti.App.Properties.getBool(``'myBool'``,` `false``));`
-
-`Ti.API.info(``'Double: '` `+ Ti.App.Properties.getDouble(``'myDouble'``, 20.6));`
-
-`Ti.API.info(``'List: '` `+ Ti.App.Properties.getList(``'myList'``));`
-
-`window.open();`
+```javascript
+var window = Titanium.UI.createWindow({
+  backgroundColor: 'white'
+});
+var myArray = [
+  { name: 'Name 1', address: '1 Main St' },
+  { name: 'Name 2', address: '2 Main St'},
+  { name: 'Name 3', address: '3 Main St'},
+  { name: 'Name 4', address: '4 Main St' }
+];
+Ti.App.Properties.setString('myString','This is a string');
+Ti.App.Properties.setInt('myInt',10);
+Ti.App.Properties.setBool('myBool',true);
+Ti.App.Properties.setDouble('myDouble',10.6);
+Ti.App.Properties.setList('myList',myArray);
+// **********************************************
+// Notice the use of the second argument of the get* methods below
+// that would be returned if no property exists with that name
+// **********************************************
+Ti.API.info('String: ' + Ti.App.Properties.getString('myString', 'This is a string default'));
+Ti.API.info('Integer: ' + Ti.App.Properties.getInt('myInt', 20));
+Ti.API.info('Boolean: ' + Ti.App.Properties.getBool('myBool', false));
+Ti.API.info('Double: ' + Ti.App.Properties.getDouble('myDouble', 20.6));
+Ti.API.info('List: ' + Ti.App.Properties.getList('myList'));
+window.open();
+```
 
 This code outputs the following results:
 
-`String: This is a string`
-
-`Integer:` `10`
-
-`Boolean:` `true`
-
-`Double:` `10.600000381469727`
-
-`List:`
-
-`{` `'address'` `:` `'1 Main St'`  `'name'` `:` `'Name 1'` `},`
-
-`{` `'address'` `:` `'2 Main St'`  `'name'` `:` `'Name 2'` `},`
-
-`{` `'address'` `:` `'3 Main St'`  `'name'` `:` `'Name 3'` `},`
-
-`{` `'address'` `:` `'4 Main St'`  `'name'` `:` `'Name 4'` `}`
+```
+String: This is a string
+Integer: 10
+Boolean: true
+Double: 10.600000381469727
+List:
+  {  'address' :  '1 Main St' 'name' :  'Name 1' },
+  {  'address' :  '2 Main St' 'name' :  'Name 2' },
+  {  'address' :  '3 Main St' 'name' :  'Name 3' },
+  {  'address' :  '4 Main St' 'name' :  'Name 4' }
+```
 
 ### Storing JS objects as JSON in properties
 
 If you have a complex Javascript object, you can convert it to a [JSON](http://en.wikipedia.org/wiki/JSON) string using JSON.stringify() provided by [Titanium.JSON](http://developer.appcelerator.com/apidoc/desktop/latest/Titanium.JSON), which will allow you to store it in the database using the [Titanium.App.Properties.setString()](#!/api/Titanium.App.Properties-method-setString) method.
 
-`var` `window = Titanium.UI.createWindow({`
-
-`backgroundColor:` `'white'`
-
-`});`
-
-`var` `weatherData = {` `"reports"` `: [ {` `"city"``:` `"Mountain View"``,` `"condition"``:` `"Cloudy"``,` `"icon"``:` `"http://www.worldweather.org/img_cartoon/pic23.gif"` `}, {` `"city"``:` `"Washington, DC"``,` `"condition"``:` `"Mostly Cloudy"``,` `"icon"``:` `"http://www.worldweather.org/img_cartoon/pic20.gif"` `}, {` `"city"``:` `"Brasilia"``,` `"condition"``:` `"Thunderstorm"``,` `"icon"``:` `"http://www.worldweather.org/img_cartoon/pic02.gif"` `} ] };`
-
-`Ti.App.Properties.setString(``'myJSON'``, JSON.stringify(weatherData));`
-
-`var` `retrievedJSON=Ti.App.Properties.getString(``'myJSON'``,` `'myJSON not found'``);`
-
-`Ti.API.info(``"The myJSON property contains: "` `+ retrievedJSON);`
-
-`window.open();`
+```javascript
+var window = Titanium.UI.createWindow({
+  backgroundColor: 'white'
+});
+var weatherData = { "reports" : [ { "city": "Mountain View", "condition": "Cloudy", "icon": "http://www.worldweather.org/img_cartoon/pic23.gif" }, { "city": "Washington, DC", "condition": "Mostly Cloudy", "icon": "http://www.worldweather.org/img_cartoon/pic20.gif" }, { "city": "Brasilia", "condition": "Thunderstorm", "icon": "http://www.worldweather.org/img_cartoon/pic02.gif" } ] };
+Ti.App.Properties.setString('myJSON', JSON.stringify(weatherData));
+var retrievedJSON=Ti.App.Properties.getString('myJSON', 'myJSON not found');
+Ti.API.info("The myJSON property contains: " + retrievedJSON);
+window.open();
+```
 
 This will output the following to the log:
 
-`The myJSON property contains: {``"reports"``:[{``"city"``:``"Mountain View"``,``"condition"``:``"Cloudy"``,``"icon"``:``"http://www.worldweather.org/img_cartoon/pic23.gif"``},{``"city"``:` `"Washington, DC"``,``"condition"``:` `"Mostly Cloudy"``,``"icon"``:` `"http://www.worldweather.org/img_cartoon/pic20.gif"``},{``"city"``:` `"Brasilia"``,``"condition"``:` `"Thunderstorm"``,``"icon"``:` `"http://www.worldweather.org/img_cartoon/pic02.gif"``}]}`
+```
+The myJSON property contains: {"reports":[{"city":"Mountain View","condition":"Cloudy","icon":"http://www.worldweather.org/img_cartoon/pic23.gif"},{"city": "Washington, DC","condition": "Mostly Cloudy","icon": "http://www.worldweather.org/img_cartoon/pic20.gif"},{"city": "Brasilia","condition": "Thunderstorm","icon": "http://www.worldweather.org/img_cartoon/pic02.gif"}]}
+```
 
 This stored JSON string can later be converted back to a Javascript object using JSON.parse():
 
-`var myObject = JSON.parse(Ti.App.Properties.getString(``'myJSON'``));`
+```javascript
+var myObject = JSON.parse(Ti.App.Properties.getString('myJSON'));
+```
 
 ### Hands-on Practice
 
@@ -148,31 +120,25 @@ In this activity, you will write an app that prompts the user to select temperat
 
     * Define and add a label with these properties:
 
-        `color:` `'black'``,`
-
-        `text:` `'Fahrenheit'``,`
-
-        `font: { fontSize:` `22``, fontWeight:` `'bold'` `},`
-
-        `left:` `10``,`
-
-        `top:` `5``,`
-
-        `height:` `25`
+        ```
+        color: 'black',
+        text: 'Fahrenheit',
+        font: { fontSize: 22, fontWeight: 'bold' },
+        left: 10,
+        top: 5,
+        height: 25
+        ```
 
     * Define and add a "sub" label with these properties:
 
-        `color:` `'black'``,`
-
-        `text:` `'Output will be shown in Celsius'``,`
-
-        `font: { fontSize:` `18` `},`
-
-        `left:` `10``,`
-
-        `top:` `40``,`
-
-        `height:` `20`
+        ```
+        color: 'black',
+        text: 'Output will be shown in Celsius',
+        font: { fontSize: 18 },
+        left: 10,
+        top: 40,
+        height: 20
+        ```
 
     * Define and add a switch positioned at right: 10, top: 5 with an auto width. Its value should be a zero or one depending on the value of the units app property. If that property equals c, set the switch value to 0, otherwise set it to 1.
 

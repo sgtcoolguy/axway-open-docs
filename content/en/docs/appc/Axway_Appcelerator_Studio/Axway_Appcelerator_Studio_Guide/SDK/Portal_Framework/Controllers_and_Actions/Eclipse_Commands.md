@@ -36,62 +36,52 @@ This command is executed immediately in a synchronous way.
 
 Executing an Eclipse command that does not require any arguments:
 
-`dispatch($H({`
-
-`controller:` `'portal.commands'``,`
-
-`action:` `"execute"``,`
-
-`args: [``"org.eclipse.ui.help.aboutAction"``].toJSON()`
-
-`}).toJSON());`
+```
+dispatch($H({
+  controller: 'portal.commands',
+  action: "execute",
+  args: ["org.eclipse.ui.help.aboutAction"].toJSON()
+}).toJSON());
+```
 
 ## An Eclipse command that accepts arguments
 
-`dispatch($H({`
-
-`controller:` `'portal.commands'``,`
-
-`action:` `"execute"``,`
-
-`args: [``"org.eclipse.ui.views.showView"``, {``"org.eclipse.ui.views.showView.viewId"``:` `"org.eclipse.debug.ui.BreakpointView"``}].toJSON()`
-
-`}).toJSON());`
+```
+dispatch($H({
+ controller: 'portal.commands',
+ action: "execute",
+ args: ["org.eclipse.ui.views.showView", {"org.eclipse.ui.views.showView.viewId": "org.eclipse.debug.ui.BreakpointView"}].toJSON()
+}).toJSON());
+```
 
 ## Examples
 
 ### Open Studio's "New Web Project Wizard"
 
-`dispatch($H({`
-
-`controller:` `'portal.commands'``,`
-
-`action:` `"execute"``,`
-
-`args: [``"org.eclipse.ui.newWizard"``, {``"newWizardId"``:` `"com.aptana.ui.wizards.NewWebProject"``}].toJSON()`
-
-`}).toJSON());`
+```
+dispatch($H({
+  controller: 'portal.commands',
+  action: "execute",
+  args: ["org.eclipse.ui.newWizard", {"newWizardId": "com.aptana.ui.wizards.NewWebProject"}].toJSON()
+}).toJSON());
+```
 
 ### Open Titanium Studio "New Mobile App Project Wizard"
 
-`dispatch($H({`
-
-`controller:` `'portal.commands'``,`
-
-`action:` `"execute"``,`
-
-`args: [``"org.eclipse.ui.newWizard"``, {``"newWizardId"``:` `"com.appcelerator.titanium.mobile.project_wizard"``}].toJSON()`
-
-`}).toJSON());`
+```
+dispatch($H({
+  controller: 'portal.commands',
+  action: "execute",
+  args: ["org.eclipse.ui.newWizard", {"newWizardId": "com.appcelerator.titanium.mobile.project_wizard"}].toJSON()
+}).toJSON());
+```
 
 ### Open Titanium Studio "New Desktop Project Wizard"
 
-`dispatch($H({`
-
-`controller:` `'portal.commands'``,`
-
-`action:` `"execute"``,`
-
-`args: [``"org.eclipse.ui.newWizard"``, {``"newWizardId"``:` `"com.appcelerator.titanium.desktop.project_wizard"``}].toJSON()`
-
-`}).toJSON());`
+```
+dispatch($H({
+  controller: 'portal.commands',
+  action: "execute",
+  args: ["org.eclipse.ui.newWizard", {"newWizardId": "com.appcelerator.titanium.desktop.project_wizard"}].toJSON()
+}).toJSON());
+```

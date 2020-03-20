@@ -62,59 +62,39 @@ As of this release, Titanium SDK 6.0.x will not be supported six months from 6.1
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+          backgroundColor : 'white',
+          layout : 'vertical'
+        });
 
-        `backgroundColor :` `'white'``,`
+        var aTextField = Ti.UI.createTextField({
+          height : Ti.UI.SIZE,
+          top : 10,
+          width : Ti.UI.FILL,
+          hintText : 'This is hint text',
+          softKeyboardOnFocus : Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, // Android only
+          keyboardType : Ti.UI.KEYBOARD_DEFAULT,
+          returnKeyType : Ti.UI.RETURNKEY_DEFAULT,
+          borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED
+        });
 
-        `layout :` `'vertical'`
+        win.add(aTextField);
 
-        `});`
+        var aTextField1 = Ti.UI.createTextField({
+          height : Ti.UI.SIZE,
+          top : 10,
+          width : Ti.UI.FILL,
+          hintText : 'This is hint text',
+          softKeyboardOnFocus : Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS, // Android only
+          keyboardType : Ti.UI.KEYBOARD_DEFAULT,
+          returnKeyType : Ti.UI.RETURNKEY_DEFAULT,
+          borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED
+        });
 
-        `var` `aTextField = Ti.UI.createTextField({`
-
-        `height : Ti.UI.SIZE,`
-
-        `top : 10,`
-
-        `width : Ti.UI.FILL,`
-
-        `hintText :` `'This is hint text'``,`
-
-        `softKeyboardOnFocus : Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS,` `// Android only`
-
-        `keyboardType : Ti.UI.KEYBOARD_DEFAULT,`
-
-        `returnKeyType : Ti.UI.RETURNKEY_DEFAULT,`
-
-        `borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED`
-
-        `});`
-
-        `win.add(aTextField);`
-
-        `var` `aTextField1 = Ti.UI.createTextField({`
-
-        `height : Ti.UI.SIZE,`
-
-        `top : 10,`
-
-        `width : Ti.UI.FILL,`
-
-        `hintText :` `'This is hint text'``,`
-
-        `softKeyboardOnFocus : Ti.UI.Android.SOFT_KEYBOARD_DEFAULT_ON_FOCUS,` `// Android only`
-
-        `keyboardType : Ti.UI.KEYBOARD_DEFAULT,`
-
-        `returnKeyType : Ti.UI.RETURNKEY_DEFAULT,`
-
-        `borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED`
-
-        `});`
-
-        `win.add(aTextField1);`
-
-        `win.open();`
+        win.add(aTextField1);
+        win.open();
+        ```
 
 * [TIMOB-16369](https://jira.appcelerator.org/browse/TIMOB-16369) - Android: Disable copy,define,share popup contextual bar inside webview when selecting text
 
@@ -134,59 +114,38 @@ As of this release, Titanium SDK 6.0.x will not be supported six months from 6.1
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: '#ddd',
+        });
 
-        `backgroundColor:` `'#ddd'``,`
+        var attr = Ti.UI.createAttributedString({
+            text: 'x2 + y3, hello world!',
+            attributes: [
+                {
+                    type: Ti.UI.ATTRIBUTE_SUPERSCRIPT_STYLE,
+                    range: [1, 1]
+                },
+                {
+                    type: Ti.UI.ATTRIBUTE_SUPERSCRIPT_STYLE,
+                    range: [6, 1]
+                },
+                {
+                    type: Ti.UI.ATTRIBUTE_SUBSCRIPT_STYLE,
+                    range: [15, 5]
+                }
+            ]
+        });
 
-        `});`
+        var label = Ti.UI.createLabel({
+            height: 50,
+            color: "#000",
+            attributedString: attr
+        });
 
-        `var` `attr = Ti.UI.createAttributedString({`
-
-        `text:` `'x2 + y3, hello world!'``,`
-
-        `attributes: [`
-
-        `{`
-
-        `type: Ti.UI.ATTRIBUTE_SUPERSCRIPT_STYLE,`
-
-        `range: [1, 1]`
-
-        `},`
-
-        `{`
-
-        `type: Ti.UI.ATTRIBUTE_SUPERSCRIPT_STYLE,`
-
-        `range: [6, 1]`
-
-        `},`
-
-        `{`
-
-        `type: Ti.UI.ATTRIBUTE_SUBSCRIPT_STYLE,`
-
-        `range: [15, 5]`
-
-        `}`
-
-        `]`
-
-        `});`
-
-        `var` `label = Ti.UI.createLabel({`
-
-        `height: 50,`
-
-        `color:` `"#000"``,`
-
-        `attributedString: attr`
-
-        `});`
-
-        `win.add(label);`
-
-        `win.open();`
+        win.add(label);
+        win.open();
+        ```
 
 * [TIMOB-23429](https://jira.appcelerator.org/browse/TIMOB-23429) - Android N: File Permissions
 
@@ -236,47 +195,34 @@ As of this release, Titanium SDK 6.0.x will not be supported six months from 6.1
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow();`
+        ```javascript
+        var win = Ti.UI.createWindow();
+        var list = Ti.UI.createListView();
+        var items = [];
 
-        `var` `list = Ti.UI.createListView();`
+        for (var i = 0; i < 200; i++) {
+            items.push({
+                properties: {
+                    title: "Item " + i
+                }
+            });
+        }
 
-        `var` `items = [];`
+        list.setSections([Ti.UI.createListSection({items: items})]);
 
-        `for` `(``var` `i = 0; i < 200; i++) {`
+        list.addEventListener("prefetch", function(e) {
+            Ti.API.warn("event:prefetch");
+            Ti.API.warn(e.prefetchedItems);
+        });
 
-        `items.push({`
+        list.addEventListener("cancelprefetch", function(e) {
+            Ti.API.warn("event:cancelprefetch");
+            Ti.API.warn(e.prefetchedItems);
+        });
 
-        `properties: {`
-
-        `title:` `"Item "` `+ i`
-
-        `}`
-
-        `});`
-
-        `}`
-
-        `list.setSections([Ti.UI.createListSection({items: items})]);`
-
-        `list.addEventListener(``"prefetch"``,` `function``(e) {`
-
-        `Ti.API.warn(``"event:prefetch"``);`
-
-        `Ti.API.warn(e.prefetchedItems);`
-
-        `});`
-
-        `list.addEventListener(``"cancelprefetch"``,` `function``(e) {`
-
-        `Ti.API.warn(``"event:cancelprefetch"``);`
-
-        `Ti.API.warn(e.prefetchedItems);`
-
-        `});`
-
-        `win.add(list);`
-
-        `win.open();`
+        win.add(list);
+        win.open();
+        ```
 
 * [TIMOB-23837](https://jira.appcelerator.org/browse/TIMOB-23837) - iOS10: Support new TabGroup API's
 
@@ -284,43 +230,30 @@ As of this release, Titanium SDK 6.0.x will not be supported six months from 6.1
 
     * Demo:
 
-        `var` `tabGroup = Ti.UI.createTabGroup({`
+        ```javascript
+        var tabGroup = Ti.UI.createTabGroup({
+            unselectedItemTintColor: "red",
+            tabs: [createTab("Tab 1"), createTab("Tab 2"), createTab("Tab 3"), createTab("Tab 4")]
+        });
 
-        `unselectedItemTintColor:` `"red"``,`
+        // Sets the badge after 3 seconds
+        setTimeout(function() {
+            tabGroup.tabs[1].badge = 3;
+            tabGroup.tabs[1].badgeColor = "gray";
+        },3000);
 
-        `tabs: [createTab(``"Tab 1"``), createTab(``"Tab 2"``), createTab(``"Tab 3"``), createTab(``"Tab 4"``)]`
+        tabGroup.open();
 
-        `});`
-
-        `// Sets the badge after 3 seconds`
-
-        `setTimeout(``function``() {`
-
-        `tabGroup.tabs[1].badge = 3;`
-
-        `tabGroup.tabs[1].badgeColor =` `"gray"``;`
-
-        `},3000);`
-
-        `tabGroup.open();`
-
-        `function` `createTab(title) {`
-
-        `return` `Ti.UI.createTab({`
-
-        `title: title,`
-
-        `icon:` `"chat.png"``,`
-
-        `window: Ti.UI.createWindow({`
-
-        `title: title`
-
-        `})`
-
-        `})`
-
-        `}`
+        function createTab(title) {
+            return Ti.UI.createTab({
+                title: title,
+                icon: "chat.png",
+                window: Ti.UI.createWindow({
+                    title: title
+                })
+            })
+        }
+        ```
 
 * [TIMOB-23992](https://jira.appcelerator.org/browse/TIMOB-23992) - iOS: Disable context menu inside webview when selecting text
 
@@ -368,49 +301,35 @@ As of this release, Titanium SDK 6.0.x will not be supported six months from 6.1
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: '#fff'
+        });
 
-        `backgroundColor:` `'#fff'`
+        var container = Ti.UI.createView({
+            width: 300,
+            height: 300,
+            backgroundColor: 'red'
+        });
 
-        `});`
+        var btn = Ti.UI.createButton({
+            title: 'Get view by ID',
+            id: 'myButton'
+        });
 
-        `var` `container = Ti.UI.createView({`
+        btn.addEventListener('click', function () {
+            var myButton = win.getViewById('myButton');
 
-        `width: 300,`
+            // If no button is found, it will return null
+            if (myButton) {
+                myButton.setTitle('Worked! ');
+            }
+        });
 
-        `height: 300,`
-
-        `backgroundColor:` `'red'`
-
-        `});`
-
-        `var` `btn = Ti.UI.createButton({`
-
-        `title:` `'Get view by ID'``,`
-
-        `id:` `'myButton'`
-
-        `});`
-
-        `btn.addEventListener(``'click'``,` `function` `() {`
-
-        `var` `myButton = win.getViewById(``'myButton'``);`
-
-        `// If no button is found, it will return null`
-
-        `if` `(myButton) {`
-
-        `myButton.setTitle(``'Worked! '``);`
-
-        `}`
-
-        `});`
-
-        `container.add(btn);`
-
-        `win.add(container);`
-
-        `win.open();`
+        container.add(btn);
+        win.add(container);
+        win.open();
+        ```
 
 ## Community credits
 
@@ -814,29 +733,22 @@ As of this release, Titanium SDK 6.0.x will not be supported six months from 6.1
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: 'white'
+        });
 
-        `backgroundColor:` `'white'`
+        var label = Ti.UI.createLabel({
+            text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore',
+            minimumFontSize: 6,
+            width: 200,
+            height: 30,
+            color: "#333"
+        });
 
-        `});`
-
-        `var` `label = Ti.UI.createLabel({`
-
-        `text:` `'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore'``,`
-
-        `minimumFontSize: 6,`
-
-        `width: 200,`
-
-        `height: 30,`
-
-        `color:` `"#333"`
-
-        `});`
-
-        `win.add(label);`
-
-        `win.open();`
+        win.add(label);
+        win.open();
+        ```
 
 * [TIMOB-16080](https://jira.appcelerator.org/browse/TIMOB-16080) - Android: Remove Default Sound Effect when touchEnabled = false
 
@@ -848,87 +760,57 @@ As of this release, Titanium SDK 6.0.x will not be supported six months from 6.1
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: "#fff"
+        });
+        var btn1 = Ti.UI.createButton({
+            title: "Add views together",
+            top: 0
+        });
 
-        `backgroundColor:` `"#fff"`
+        var view1 = Ti.UI.createView({
+            backgroundColor: "red",
+            top: 50,
+            height: 100
+        });
+        var view2 = Ti.UI.createView({
+            backgroundColor: "green",
+            bottom: 50,
+            height: 100
+        });
 
-        `});`
+        btn1.addEventListener("click", function() {
+            win.remove(view1);
+            win.remove(view2);
 
-        `var` `btn1 = Ti.UI.createButton({`
+            // Just to see that they are actually removed before
+            setTimeout(function() {
+                win.add([view1, view2]);
+            }, 250);
+        });
 
-        `title:` `"Add views together"``,`
+        var btn2 = Ti.UI.createButton({
+            title: "Add views after each other",
+            bottom: 0
+        });
 
-        `top: 0`
+        btn2.addEventListener("click", function() {
+            win.remove(view1);
+            win.remove(view2);
 
-        `});`
+            // Just to see that they are actually removed before
+            setTimeout(function() {
+                win.add(view1);
+                win.add(view2);
+            }, 250);
+        });
 
-        `var` `view1 = Ti.UI.createView({`
+        win.add(btn1);
+        win.add(btn2);
 
-        `backgroundColor:` `"red"``,`
-
-        `top: 50,`
-
-        `height: 100`
-
-        `});`
-
-        `var` `view2 = Ti.UI.createView({`
-
-        `backgroundColor:` `"green"``,`
-
-        `bottom: 50,`
-
-        `height: 100`
-
-        `});`
-
-        `btn1.addEventListener(``"click"``,` `function``() {`
-
-        `win.remove(view1);`
-
-        `win.remove(view2);`
-
-        `// Just to see that they are actually removed before`
-
-        `setTimeout(``function``() {`
-
-        `win.add([view1, view2]);`
-
-        `}, 250);`
-
-        `});`
-
-        `var` `btn2 = Ti.UI.createButton({`
-
-        `title:` `"Add views after each other"``,`
-
-        `bottom: 0`
-
-        `});`
-
-        `btn2.addEventListener(``"click"``,` `function``() {`
-
-        `win.remove(view1);`
-
-        `win.remove(view2);`
-
-        `// Just to see that they are actually removed before`
-
-        `setTimeout(``function``() {`
-
-        `win.add(view1);`
-
-        `win.add(view2);`
-
-        `}, 250);`
-
-        `});`
-
-        `win.add(btn1);`
-
-        `win.add(btn2);`
-
-        `win.open(); `
+        win.open();
+        ```
 
 * [TIMOB-19985](https://jira.appcelerator.org/browse/TIMOB-19985) - Android - ListView doesn't have canScroll property
 
@@ -952,81 +834,54 @@ As of this release, Titanium SDK 6.0.x will not be supported six months from 6.1
 
     * Demo:
 
-        `function` `showCalendars(calendars) {`
+        ```javascript
+        function showCalendars(calendars) {
+            for (var i = 0; i < calendars.length; i++) {
+                Ti.API.info(calendars[i].name);
+                Ti.API.info(calendars[i].sourceTitle);
+                Ti.API.info(calendars[i].sourceIdentifier);
+                Ti.API.info(formatSourceType(calendars[i].sourceType)+ '\n');
+            }
+        }
 
-        `for` `(``var` `i = 0; i < calendars.length; i++) {`
+         function formatSourceType(type) {
+            switch (type) {
+                case Ti.Calendar.SOURCE_TYPE_LOCAL:
+                return "Ti.Calendar.SOURCE_TYPE_LOCAL";
 
-        `Ti.API.info(calendars[i].name);`
+                case Ti.Calendar.SOURCE_TYPE_EXCHANGE:
+                return "Ti.Calendar.SOURCE_TYPE_EXCHANGE";
 
-        `Ti.API.info(calendars[i].sourceTitle);`
+                case Ti.Calendar.SOURCE_TYPE_CALDAV:
+                return "Ti.Calendar.SOURCE_TYPE_CALDAV";
 
-        `Ti.API.info(calendars[i].sourceIdentifier);`
+                case Ti.Calendar.SOURCE_TYPE_MOBILEME:
+                return "Ti.Calendar.SOURCE_TYPE_MOBILEME";
 
-        `Ti.API.info(formatSourceType(calendars[i].sourceType)+` `'\n'``);`
+                case Ti.Calendar.SOURCE_TYPE_SUBSCRIBED:
+                return "Ti.Calendar.SOURCE_TYPE_SUBSCRIBED";
 
-        `}`
+                case Ti.Calendar.SOURCE_TYPE_BIRTHDAYS:
+                return "Ti.Calendar.SOURCE_TYPE_BIRTHDAYS";
+            }
 
-        `}`
+            return "Unknown attendee role: " + type;
+        }
 
-        `function` `formatSourceType(type) {`
-
-        `switch` `(type) {`
-
-        `case` `Ti.Calendar.SOURCE_TYPE_LOCAL:`
-
-        `return`  `"Ti.Calendar.SOURCE_TYPE_LOCAL"``;`
-
-        `case` `Ti.Calendar.SOURCE_TYPE_EXCHANGE:`
-
-        `return`  `"Ti.Calendar.SOURCE_TYPE_EXCHANGE"``;`
-
-        `case` `Ti.Calendar.SOURCE_TYPE_CALDAV:`
-
-        `return`  `"Ti.Calendar.SOURCE_TYPE_CALDAV"``;`
-
-        `case` `Ti.Calendar.SOURCE_TYPE_MOBILEME:`
-
-        `return`  `"Ti.Calendar.SOURCE_TYPE_MOBILEME"``;`
-
-        `case` `Ti.Calendar.SOURCE_TYPE_SUBSCRIBED:`
-
-        `return`  `"Ti.Calendar.SOURCE_TYPE_SUBSCRIBED"``;`
-
-        `case` `Ti.Calendar.SOURCE_TYPE_BIRTHDAYS:`
-
-        `return`  `"Ti.Calendar.SOURCE_TYPE_BIRTHDAYS"``;`
-
-        `}`
-
-        `return`  `"Unknown attendee role: "` `+ type;`
-
-        `}`
-
-        `Ti.API.info(``'ALL CALENDARS:'``+``'\n'``);`
-
-        `if` `(Ti.Calendar.hasCalendarPermissions()) {`
-
-        `showCalendars(Ti.Calendar.allCalendars);`
-
-        `}` `else` `{`
-
-        `Ti.Calendar.requestCalendarPermissions(``function``(e) {`
-
-        `if` `(e.success) {`
-
-        `showCalendars(Ti.Calendar.allCalendars);`
-
-        `}` `else` `{`
-
-        `Ti.API.error(e.error);`
-
-        `alert(``'Access to calendar is not allowed'``);`
-
-        `}`
-
-        `});`
-
-        `} `
+        Ti.API.info('ALL CALENDARS:'+'\n');
+        if (Ti.Calendar.hasCalendarPermissions()) {
+            showCalendars(Ti.Calendar.allCalendars);
+        } else {
+            Ti.Calendar.requestCalendarPermissions(function(e) {
+                if (e.success) {
+                    showCalendars(Ti.Calendar.allCalendars);
+                } else {
+                    Ti.API.error(e.error);
+                    alert('Access to calendar is not allowed');
+                }
+            });
+        }
+        ```
 
 * [TIMOB-23281](https://jira.appcelerator.org/browse/TIMOB-23281) - Search Bar: search results listview background color change
 
@@ -1034,123 +889,72 @@ As of this release, Titanium SDK 6.0.x will not be supported six months from 6.1
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: '#000',
+            fullscreen: true
+        });
+        var search = Ti.UI.createSearchBar({
+            barColor: '#000',
+            showCancel: true,
+            height: 43,
+            top: 0,
+        });
+        search.addEventListener('cancel', function() {
+            search.blur();
+        });
 
-        `backgroundColor:` `'#000'``,`
+        var listView = Ti.UI.createListView({
+            searchView: search,
+            caseInsensitiveSearch: true,
+            backgroundColor: 'transparent',
 
-        `fullscreen:` `true`
+            // NEW since 6.1.0
+            resultsBackgroundColor: "red",
+            resultsSeparatorColor: "green",
+            resultsSeparatorInsets: {
+                left: 0
+            },
 
-        `});`
+            templates: {
+                "a": {
+                    properties: {
+                        backgroundColor: 'transparent'
+                    },
+                    childTemplates: [{
+                        type: 'Ti.UI.Label',
+                        bindId: 'bindLabel',
+                        properties: {
+                            color: '#fff'
+                        }
 
-        `var` `search = Ti.UI.createSearchBar({`
+                    }]
+                }
+            }
+        });
 
-        `barColor:` `'#000'``,`
-
-        `showCancel:` `true``,`
-
-        `height: 43,`
-
-        `top: 0,`
-
-        `});`
-
-        `search.addEventListener(``'cancel'``,` `function``() {`
-
-        `search.blur();`
-
-        `});`
-
-        `var` `listView = Ti.UI.createListView({`
-
-        `searchView: search,`
-
-        `caseInsensitiveSearch:` `true``,`
-
-        `backgroundColor:` `'transparent'``,`
-
-        `// NEW since 6.1.0`
-
-        `resultsBackgroundColor:` `"red"``,`
-
-        `resultsSeparatorColor:` `"green"``,`
-
-        `resultsSeparatorInsets: {`
-
-        `left: 0`
-
-        `},`
-
-        `templates: {`
-
-        `"a"``: {`
-
-        `properties: {`
-
-        `backgroundColor:` `'transparent'`
-
-        `},`
-
-        `childTemplates: [{`
-
-        `type:` `'Ti.UI.Label'``,`
-
-        `bindId:` `'bindLabel'``,`
-
-        `properties: {`
-
-        `color:` `'#fff'`
-
-        `}`
-
-        `}]`
-
-        `}`
-
-        `}`
-
-        `});`
-
-        `var` `listSection = Ti.UI.createListSection();`
-
-        `var` `fruits = [``'Papaya'``,` `'Peach'``,` `'Pear'``,` `'Persimmon'``,` `'Pineapple'``,` `'Pluot'``,` `'Pomegranate'``];`
-
-        `var` `data = [];`
-
-        `for` `(``var` `i = 0; i < fruits.length; i++) {`
-
-        `data.push({`
-
-        `template:` `'a'``,`
-
-        `properties: {`
-
-        `searchableText: fruits[i]`
-
-        `},`
-
-        `bindLabel: {`
-
-        `text: fruits[i]`
-
-        `}`
-
-        `});`
-
-        `}`
-
-        `listSection.setItems(data);`
-
-        `listView.addEventListener(``'noresults'``,` `function``(e) {`
-
-        `alert(``"No results found!"``);`
-
-        `});`
-
-        `listView.sections = [listSection];`
-
-        `win.add(listView);`
-
-        `win.open();`
+        var listSection = Ti.UI.createListSection();
+        var fruits = ['Papaya', 'Peach', 'Pear', 'Persimmon', 'Pineapple', 'Pluot', 'Pomegranate'];
+        var data = [];
+        for (var i = 0; i < fruits.length; i++) {
+            data.push({
+                template: 'a',
+                properties: {
+                    searchableText: fruits[i]
+                },
+                bindLabel: {
+                    text: fruits[i]
+                }
+            });
+        }
+        listSection.setItems(data);
+        listView.addEventListener('noresults', function(e) {
+            alert("No results found!");
+        });
+        listView.sections = [listSection];
+        win.add(listView);
+        win.open();
+        ```
 
 * [TIMOB-23327](https://jira.appcelerator.org/browse/TIMOB-23327) - iOS: Webview request send out beforeload event is excuted on Webview (Parity)
 
@@ -1202,13 +1006,12 @@ As of this release, Titanium SDK 6.0.x will not be supported six months from 6.1
 
     * Example:
 
-        `<windows>`
-
-        `<TargetPlatformVersion>``10.0``.``14393.0``</TargetPlatformVersion>`
-
-        `<TargetPlatformMinVersion>``10.0``.``10240.0``</TargetPlatformMinVersion>`
-
-        `</windows>`
+        ```xml
+        <windows>
+            <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+            <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+        </windows>
+        ```
 
 * [TIMOB-23760](https://jira.appcelerator.org/browse/TIMOB-23760) - Windows: --wp-sdk option should handle actual Windows SDK versions
 

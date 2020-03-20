@@ -1,6 +1,6 @@
 {"title":"JavaScript Coding Standards","weight":"30"}
 
-Contents
+*Contents*
 
 * [General](#general)
 
@@ -128,7 +128,9 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 
 5. Ternary operators (inline-ifs) SHOULD have spaces around both the ? and : operators.
 
-    `drink = (location ==` `"scotland"``) ?` `"whisky"` `:` `"whiskey"``;`
+    ```
+    drink = (location == "scotland") ? "whisky" : "whiskey";
+    ```
 
 6. Semi-colons in for loops SHOULD be followed by a space.
 
@@ -146,11 +148,11 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 
 3. Closing braces SHOULD be on a separate line and indented to match indentation of the opening brace's line.
 
-`if` `(error) {`
-
-`crashAndBurn();`
-
-`}`
+```
+if (error) {
+   crashAndBurn();
+}
+```
 
 ## Semicolons
 
@@ -232,13 +234,16 @@ This guide serves as the coding standard for all Appcelerator JavaScript code in
 
 1. Single line comments MUST use C++ style single-line comments, introduced by two slashes:
 
-    `// my comment`
+    ```
+    // my comment
+    ```
 
 1. Multi-line comments MUST use C-style comments, beginning with /\* and ending with \*/:
 
-    `/* my multi-`
-
-    `line comment */`
+    ```
+    /* my multi-
+    line comment */
+    ```
 
 ## Documentation
 

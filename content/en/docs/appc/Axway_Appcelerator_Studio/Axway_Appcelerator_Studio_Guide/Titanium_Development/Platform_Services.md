@@ -42,159 +42,92 @@ Appcelerator Studio injects code in to the tiapp.xml file to enable these servic
 
 The following changes are made to the tiapp.xml file to enable Appcelerator Services for both classic mobile and Alloy projects.
 
-tiapp.xml
-
-`<!-- Crittercism Application ID for Appcelerator Performance service -->`
-
-`<``property`  `name``=``"com-apm-id"`  `type``=``"string"``>CRITTERCISM_APP_ID</``property``>`
-
-`<!-- Set keys for the ArrowDB service -->`
-
-`<``property`  `name``=``"acs-api-key-production"`  `type``=``"string"``>API_KEY_PROD</``property``>`
-
-`<``property`  `name``=``"acs-authbase-url"`  `type``=``"string"``>ACS_AUTH_URL</``property``>`
-
-`<``property`  `name``=``"acs-base-url"`  `type``=``"string"``>ACS_BASE_URL</``property``>`
-
-`<``property`  `name``=``"acs-api-key-development"`  `type``=``"string"``>API_KEY_DEV</``property``>`
-
-`<!-- Enable the Appcelerator Analytics service -->`
-
-`<``analytics``>true</``analytics``>`
-
-`<!-- Android Manifest keys for the Appcelerator Test service -->`
-
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-`<``manifest``>`
-
-`<``application``>`
-
-`<``activity`
-
-`android:configChanges``=``"keyboardHidden|orientation"`
-
-`android:label="<AppName>"`
-
-`android:name=".<``Appname``>androidActivity" android:theme="@style/Theme.Titanium">`
-
-`<``intent``-filter>`
-
-`<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
-
-`<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
-
-`</``intent``-filter>`
-
-`<``intent``-filter>`
-
-`<``data` `android:scheme="touchtest-<GUID>"/>`
-
-`<``action`  `android:name``=``"android.intent.action.VIEW"``/>`
-
-`<``category`  `android:name``=``"android.intent.category.BROWSABLE"``/>`
-
-`<``category`  `android:name``=``"android.intent.category.DEFAULT"``/>`
-
-`</``intent``-filter>`
-
-`</``activity``>`
-
-`<``service`  `android:enabled``=``"true"`  `android:exported``=``"false"`  `android:name``=``"com.soasta.android.touchtest.TouchTestService"``/>`
-
-`</``application``>`
-
-`<!-- All services require the ACCESS_WIFI_STATE and INTERNET permissions -->`
-
-`<``uses``-permission` `android:name``=``"android.permission.ACCESS_WIFI_STATE"``/>`
-
-`<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
-
-`<!-- The Appcelerator Test service requires READ_PHONE_STATE, BLUETOOTH, and BLUETOOTH_ADMIN permissions -->`
-
-`<``uses``-permission` `android:name``=``"android.permission.READ_PHONE_STATE"``/>`
-
-`<``uses``-permission` `android:name``=``"android.permission.BLUETOOTH"``/>`
-
-`<``uses``-permission` `android:name``=``"android.permission.BLUETOOTH_ADMIN"``/>`
-
-`<!-- The Appcelerator Performance and Test services require the GET_TASKS permission -->`
-
-`<``uses``-permission` `android:name``=``"android.permission.GET_TASKS"``/>`
-
-`</``manifest``>`
-
-`</``android``>`
-
-`<!-- Include modules for Appcelerator Performance, Cloud and Test services -->`
-
-`<``modules``>`
-
-`<``module`  `platform``=``"commonjs"``>ti.cloud</``module``>`
-
-`<``module`  `platform``=``"android"``>com.appcelerator.apm</``module``>`
-
-`<``module`  `platform``=``"iphone"``>com.appcelerator.apm</``module``>`
-
-`<``module`  `deploy-type``=``"test"`  `platform``=``"iphone"`  `version``=``"1.0"``>com.soasta.touchtest</``module``>`
-
-`<``module`  `deploy-type``=``"development"`  `platform``=``"iphone"`  `version``=``"1.0"``>com.soasta.touchtest</``module``>`
-
-`<``module`  `deploy-type``=``"test"`  `platform``=``"android"`  `version``=``"1.0"``>com.soasta.touchtest</``module``>`
-
-`<``module`  `deploy-type``=``"development"`  `platform``=``"android"`  `version``=``"1.0"``>com.soasta.touchtest</``module``>`
-
-`</``modules``>`
-
-`<!-- Configure Appcelerator Test settings -->`
-
-`<``ios``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<``key``>CFBundleURLTypes</``key``>`
-
-`<``array``>`
-
-`<``dict``>`
-
-`<``key``>CFBundleTypeRole</``key``>`
-
-`<``string``>Editor</``string``>`
-
-`<``key``>CFBundleURLName</``key``>`
-
-`<``string``>PACKAGE</``string``>`
-
-`<``key``>CFBundleURLSchemes</``key``>`
-
-`<``array``>`
-
-`<``string``>touchtest-<``GUID``></``string``>`
-
-`</``array``>`
-
-`</``dict``>`
-
-`</``array``>`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`</``ios``>`
-
-`<``plugins``>`
-
-`<``plugin``>com.soasta.touchtest.android</``plugin``>`
-
-`</``plugins``>`
-
-`<``property`  `name``=``"com-soasta-touchtest-version"`  `type``=``"string"``>VERSION</``property``>`
-
-`<``property`  `name``=``"com-soasta-touchtest-ios-appId"`  `type``=``"string"``>TEST_APP_ID</``property``>`
+*tiapp.xml*
+
+```xml
+<!-- Crittercism Application ID for Appcelerator Performance service -->
+    <property name="com-apm-id" type="string">CRITTERCISM_APP_ID</property>
+
+    <!-- Set keys for the ArrowDB service -->
+    <property name="acs-api-key-production" type="string">API_KEY_PROD</property>
+    <property name="acs-authbase-url" type="string">ACS_AUTH_URL</property>
+    <property name="acs-base-url" type="string">ACS_BASE_URL</property>
+    <property name="acs-api-key-development" type="string">API_KEY_DEV</property>
+
+    <!-- Enable the Appcelerator Analytics service -->
+    <analytics>true</analytics>
+
+    <!-- Android Manifest keys for the Appcelerator Test service -->
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest>
+            <application>
+                <activity
+                    android:configChanges="keyboardHidden|orientation"
+                    android:label="<AppName>"
+                    android:name=".<Appname>androidActivity" android:theme="@style/Theme.Titanium">
+                    <intent-filter>
+                        <action android:name="android.intent.action.MAIN"/>
+                        <category android:name="android.intent.category.LAUNCHER"/>
+                    </intent-filter>
+                    <intent-filter>
+                        <data android:scheme="touchtest-<GUID>"/>
+                        <action android:name="android.intent.action.VIEW"/>
+                        <category android:name="android.intent.category.BROWSABLE"/>
+                        <category android:name="android.intent.category.DEFAULT"/>
+                    </intent-filter>
+                </activity>
+                <service android:enabled="true" android:exported="false" android:name="com.soasta.android.touchtest.TouchTestService"/>
+            </application>
+            <!-- All services require the ACCESS_WIFI_STATE and INTERNET permissions -->
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <!-- The Appcelerator Test service requires READ_PHONE_STATE, BLUETOOTH, and BLUETOOTH_ADMIN permissions -->
+            <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+            <uses-permission android:name="android.permission.BLUETOOTH"/>
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+            <!-- The Appcelerator Performance and Test services require the GET_TASKS permission -->
+            <uses-permission android:name="android.permission.GET_TASKS"/>
+        </manifest>
+    </android>
+
+    <!-- Include modules for Appcelerator Performance, Cloud and Test services -->
+    <modules>
+        <module platform="commonjs">ti.cloud</module>
+        <module platform="android">com.appcelerator.apm</module>
+        <module platform="iphone">com.appcelerator.apm</module>
+        <module deploy-type="test" platform="iphone" version="1.0">com.soasta.touchtest</module>
+        <module deploy-type="development" platform="iphone" version="1.0">com.soasta.touchtest</module>
+        <module deploy-type="test" platform="android" version="1.0">com.soasta.touchtest</module>
+        <module deploy-type="development" platform="android" version="1.0">com.soasta.touchtest</module>
+    </modules>
+
+    <!-- Configure Appcelerator Test settings -->
+    <ios>
+        <plist>
+            <dict>
+                <key>CFBundleURLTypes</key>
+                <array>
+                    <dict>
+                        <key>CFBundleTypeRole</key>
+                        <string>Editor</string>
+                        <key>CFBundleURLName</key>
+                        <string>PACKAGE</string>
+                        <key>CFBundleURLSchemes</key>
+                        <array>
+                            <string>touchtest-<GUID></string>
+                        </array>
+                    </dict>
+                </array>
+            </dict>
+        </plist>
+    </ios>
+    <plugins>
+        <plugin>com.soasta.touchtest.android</plugin>
+    </plugins>
+
+    <property name="com-soasta-touchtest-version" type="string">VERSION</property>
+    <property name="com-soasta-touchtest-ios-appId" type="string">TEST_APP_ID</property>
+```
 
 #### Android Permissions
 

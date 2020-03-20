@@ -106,4 +106,4 @@ As a last resort, consider using this workaround:
 
 **Ti.include workaround**
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class="js keyword">function</tt> <tt class="js plain">include(file) {</tt><tt class="js spaces"> </tt><tt class="js keyword">return</tt> <tt class="js plain">eval(Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, file).read().text);</tt><tt class="js plain">}</tt></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class="js keyword ">function</tt> <tt class="js plain ">include(file) {</tt><tt class="js spaces "> </tt><tt class="js keyword ">return</tt> <tt class="js plain ">eval(Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, file).read().text);</tt><tt class="js plain ">}</tt></p></td></tr></tbody></table>

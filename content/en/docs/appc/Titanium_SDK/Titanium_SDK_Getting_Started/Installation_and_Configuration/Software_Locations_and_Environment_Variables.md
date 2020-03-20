@@ -75,7 +75,9 @@ Bear in mind the following caveats:
 
 * All Windows systems must have the following paths **at the beginning** of their PATH environment variable to function properly:
 
-    `%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;`
+    ```
+    %SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;
+    ```
 
 * Installing Appcelerator Studio to a common system location, such as %PROGRAMFILES%, is not currently recommended, due to [Eclipse Bug 249133](https://bugs.eclipse.org/bugs/show_bug.cgi?id=249133) and the complications it causes with updates.
 

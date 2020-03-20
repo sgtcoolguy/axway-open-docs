@@ -4,21 +4,18 @@ Alloy provides hooks to customize the compilation process using a special JavaSc
 
 Example of a JMK file:
 
-alloy.jmk
+*alloy.jmk*
 
-`task(``'pre:compile'``, function(event, logger) {`
+```
+task('pre:compile', function(event, logger) {
+    logger.showTimestamp = true;
+    logger.info('building project at '+ event.dir.project);
+});
 
-`logger.showTimestamp =` `true``;`
-
-`logger.info(``'building project at '``+ event.dir.project);`
-
-`});`
-
-`task(``'post:compile'``, function(event, logger) {`
-
-`logger.info(``'compile finished!'``);`
-
-`});`
+task('post:compile', function(event, logger) {
+    logger.info('compile finished!');
+});
+```
 
 To customize the build process, call the task function with the event name and provide a function callback, which will be called when the event is triggered by the compiler.
 

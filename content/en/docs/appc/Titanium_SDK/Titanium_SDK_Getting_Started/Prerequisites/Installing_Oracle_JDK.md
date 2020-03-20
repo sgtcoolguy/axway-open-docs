@@ -71,13 +71,12 @@ See the [Software Locations and Environment Variables](/docs/appc/Titanium_SDK/T
 
 To install the Oracle JDK, enable the archive repositories and install the package using the apt-get command:
 
-`sudo` `add-apt-repository` `"deb http://archive.canonical.com/ lucid partner"`
-
-`sudo` `add-apt-repository` `"deb http://archive.ubuntu.com/ubuntu hardy main multiverse"`
-
-`sudo` `apt-get update`
-
-`sudo` `apt-get` `install` `oracle-java8-installer`
+```bash
+sudo add-apt-repository "deb http://archive.canonical.com/ lucid partner"
+sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu hardy main multiverse"
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+```
 
 If installing the 64-bit JDK, run sudo apt-get install ia32-libs.
 
@@ -89,24 +88,22 @@ Alternatively, you can download and launch the installation package from Oracle.
 
 Run the following commands from the command-line or terminal on any operating system to determine whether JDK has been installed and configured correctly:
 
-`java -version`
-
-`javac -version`
+```
+java -version
+javac -version
+```
 
 You should receive results similar to the following, where both commands are recognized and return the correct version.
 
-`Microsoft Windows [Version 10.0.16299.248]`
+```
+Microsoft Windows [Version 10.0.16299.248]
+(c) 2017 Microsoft Corporation. All rights reserved.
 
-`(c) 2017 Microsoft Corporation. All rights reserved.`
+C:\Users\appcel>java -version
+java version "1.8.0_162"
+Java(TM) SE Runtime Environment (build 1.8.0_162-b12)
+Java HotSpot(TM) Client VM (build 25.162-b12, mixed mode)
 
-`C:\Users\appcel>java` `-version`
-
-`java version` `"1.8.0_162"`
-
-`Java(TM) SE Runtime Environment (build 1.8.0_162-b12)`
-
-`Java HotSpot(TM) Client VM (build 25.162-b12, mixed mode)`
-
-`C:\Users\appcel>javac` `-version`
-
-`javac 1.8.0_162`
+C:\Users\appcel>javac -version
+javac 1.8.0_162
+```

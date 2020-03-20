@@ -16,31 +16,27 @@ In XML markup, use the Require tag to add controller-less views into another vie
 
 For instance, a button view could be reused repeatedly in a view-controller to construct a dialog box. For example, the following view can be defined without a controller:
 
-app/views/foo.xml
+*app/views/foo.xml*
 
-`<Alloy>`
-
-`<Button id=``'fooButton'``>I am a foo button!</Button>`
-
-`</Alloy>`
+```xml
+<Alloy>
+    <Button id='fooButton'>I am a foo button!</Button>
+</Alloy>
+```
 
 This view can be inserted into another view multiple times by using the Require tag and assigning it an unique ID. For example,
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<Alloy>`
-
-`<Window layout=``"vertical"``>`
-
-`<Require id=``"button1"` `src=``"foo"` `type=``"view"``/>`
-
-`<Require id=``"button2"` `src=``"foo"` `type=``"view"``/>`
-
-`<Require id=``"button3"` `src=``"foo"` `type=``"view"``/>`
-
-`</Window>`
-
-`</Alloy>`
+```xml
+<Alloy>
+    <Window layout="vertical">
+        <Require id="button1" src="foo" type="view"/>
+        <Require id="button2" src="foo" type="view"/>
+        <Require id="button3" src="foo" type="view"/>
+    </Window>
+</Alloy>
+```
 
 Then, the controller can use $.button1, $.button2 and $.button3 to access each instance of the foo view.
 
@@ -62,51 +58,38 @@ Unlike other style dictionaries in Alloy, when using the updateViews() method, y
 
 For example, the following view defines an image with a label below it:
 
-app/views/profile.xml
+*app/views/profile.xml*
 
-`<Alloy>`
-
-`<View id=``"container"``>`
-
-`<ImageView id=``"picture"``/>`
-
-`<Label id=``"name"``/>`
-
-`</View>`
-
-`</Alloy>`
+```xml
+<Alloy>
+    <View id="container">
+        <ImageView id="picture"/>
+        <Label id="name"/>
+    </View>
+</Alloy>
+```
 
 The controller code creates an instance of the controller-less view and adds the instance to main view in the controller.
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`var profile = Alloy.createController(``'profile'``);`
+```javascript
+var profile = Alloy.createController('profile');
+profile.updateViews({
+  "#container" : {
+        layout : "vertical"
+  },
+  "#picture" : {
+        image : "/appicon.png"
+  },
+  "#name" : {
+        text : "Mr. Man"
+  }
+});
+$.index.add(profile.getView());
 
-`profile.updateViews({`
-
-`"#container"` `: {`
-
-`layout :` `"vertical"`
-
-`},`
-
-`"#picture"` `: {`
-
-`image :` `"/appicon.png"`
-
-`},`
-
-`"#name"` `: {`
-
-`text :` `"Mr. Man"`
-
-`}`
-
-`});`
-
-`$.index.add(profile.getView());`
-
-`$.index.open();`
+$.index.open();
+```
 
 **Prior to Alloy 1.4.0**, to dynamically generate a view with a controller:
 
@@ -118,22 +101,16 @@ app/controllers/index.js
 
 4. Use the add() method to add the view to a view component in the controller. Pass the instance of the controller-less view to the method. The view component that wants to add the controller-less view should call the method.
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`// Create an instance of the controller`
-
-`var profile = Alloy.createController(``'profile'``);`
-
-`// Modify the properties`
-
-`profile.container.layout =` `'vertical'``;`
-
-`profile.picture.image =` `'/appicon.png'``;`
-
-`profile.name.text =` `'Mr. Man'``;`
-
-`// Add the view`
-
-`$.index.add(profile.getView());`
-
-`$.index.open();`
+```javascript
+// Create an instance of the controller
+var profile = Alloy.createController('profile');
+// Modify the properties
+profile.container.layout = 'vertical';
+profile.picture.image = '/appicon.png';
+profile.name.text = 'Mr. Man';
+// Add the view
+$.index.add(profile.getView());
+$.index.open();
+```

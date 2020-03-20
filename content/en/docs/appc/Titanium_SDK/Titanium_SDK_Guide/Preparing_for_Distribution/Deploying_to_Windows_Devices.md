@@ -86,7 +86,9 @@ Your app will be built, installed to your device and automatically launched.
 
 To deploy an application to a device with the CLI, run the following command:
 
-`appc run -p windows -T wp-device`
+```bash
+appc run -p windows -T wp-device
+```
 
 ## Windows tablet
 
@@ -146,6 +148,8 @@ Open PowerShell and execute the Add-AppDevPackage command to install the applica
 
 3. Execute the following command to install the package:
 
-    `<TITANIUM_PROJECT_DIR>\build\windows\win10.x86\AppPackages\ProjectFolder\<PACKAGE_NAME>\Add``-AppDevPackage``.ps1`
+    ```xml
+    <TITANIUM_PROJECT_DIR>\build\windows\win10.x86\AppPackages\ProjectFolder\<PACKAGE_NAME>\Add-AppDevPackage.ps1
+    ```
 
 The application will be installed to the device and you can access it from the **All apps** screen.

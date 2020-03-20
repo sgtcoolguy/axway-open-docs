@@ -36,17 +36,14 @@ The instruction here assumes that you already have a running server with PHP con
 
 * Open the file and add the following lines (these paths _must_ be modified according to your system type):
 
-    `;Hook the XDebug`
-
-    `zend_extension_ts=C:\php\ext\php_xdebug-``2.0``.``3``-``5.2``.``5``.dll`
-
-    `xdebug.remote_enable=``1`
-
-    `xdebug.remote_host=``127.0``.``0.1`
-
-    `xdebug.remote_port=``9000`
-
-    `xdebug.remote_handler=``"dbgp"`
+    ```
+    ;Hook the XDebug
+     zend_extension_ts=C:\php\ext\php_xdebug-2.0.3-5.2.5.dll
+     xdebug.remote_enable=1
+     xdebug.remote_host=127.0.0.1
+     xdebug.remote_port=9000
+     xdebug.remote_handler="dbgp"
+    ```
 
 * Note that the XDebug extension should be added as a zend\_extension or as a zend\_extension\_ts for Thread-Safe PHP environments. And, of course, change the version according to what you have.
 
@@ -112,15 +109,13 @@ In case you already have a PHP project set up in your Aptana Studio, and you cho
 
 For example, a project named RemoteDebugTest should have this Alias setting in the httpd.conf:
 
-`Alias /RemoteDebugTest C:\Eclipse\workspace\RemoteDebugTest`
-
-`<Directory C:\Eclipse\workspace\RemoteDebugTest>`
-
-`Order allow,deny`
-
-`Allow from all`
-
-`</Directory>`
+```
+Alias /RemoteDebugTest C:\Eclipse\workspace\RemoteDebugTest
+<Directory C:\Eclipse\workspace\RemoteDebugTest>
+  Order allow,deny
+  Allow from all
+</Directory>
+```
 
 After saving httpd.conf, restart Apache to make your changes effective.
 
@@ -146,15 +141,13 @@ The first thing we'll need to check is the communication link between the server
 
 * Create a new PHP file. Name if debugTest.php and paste this code into it:
 
-    `<?php`
-
-    `$w =` `'world'``;`
-
-    `echo` `'Hello '``;`
-
-    `echo $w;`
-
-    `?>`
+    ```xml
+    <?php
+     $w = 'world';
+     echo 'Hello ';
+     echo $w;
+    ?>
+    ```
 
 * Open the launch configuration dialog by accessing the debug shortcut (or by using the action from the menu Run > Open Debug Dialog): **Create a new\*PHP Web Page** debug configuration.
 
@@ -239,4 +232,4 @@ When launching a PHP session, the Studio will inform you in case the port it's l
 
 For example, if the php.ini indicates that the XDebug debugger should contact port 9001, while the Studio listens on port 9000, a message box will indicate the problem and will direct you to change the listen port or the ini setting.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083033/XDebugPortNotification.jpg" alt="images/download/attachments/30083033/XDebugPortNotification.jpg" class="confluence-embedded-image"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083033/XDebugPortNotification.jpg" alt="images/download/attachments/30083033/XDebugPortNotification.jpg" class="confluence-embedded-image"></p></td></tr></tbody></table>

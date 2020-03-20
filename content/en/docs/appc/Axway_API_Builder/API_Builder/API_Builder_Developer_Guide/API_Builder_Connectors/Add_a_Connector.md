@@ -1,6 +1,6 @@
 {"title":"Add a Connector","weight":"30"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -62,11 +62,15 @@ To install a service connector:
 
 3. From the project directory, execute the following command to install the HTTP communication module:
 
-    `npm i requester-ce`
+    ```bash
+    npm i requester-ce
+    ```
 
 4. From the project directory, execute the following command:
 
-    `appc run`
+    ```bash
+    appc run
+    ```
 
 5. Open the API Orchestration flow editor in the API Builder Console and verify that the service connector is listed and is available for use in flows.
 
@@ -82,111 +86,82 @@ The following sections describe how to install, configure, use, and remove the m
 
 To install a model-first connector, execute the appc install connector/<CONNECTOR\_NAME> command from the project's directory. The command downloads and installs the connector in the node\_modules/connector directory, updates the appc.json file, and creates a connector configuration file in the project's conf directory.
 
-`$ appc` `install` `connector``/appc``.mysql`
+```bash
+$ appc install connector/appc.mysql
+Appcelerator Command-Line Interface, version 0.2.230
+Copyright (c) 2014-2015, Appcelerator, Inc.  All Rights Reserved.
 
-`Appcelerator Command-Line Interface, version 0.2.230`
-
-`Copyright (c) 2014-2015, Appcelerator, Inc. All Rights Reserved.`
-
-`Installing dependencies... <APIBuilderProject>`
-
-`Checking` `for` `1 module: connector``/appc``.mysql`
-
-`Fetching connector``/appc``.mysql@1.0.43`
-
-`Installed 1 module`
-
-`connector``/appc``.mysql provided a default configuration example` `which` `was written to conf``/appc``.mysql.default.js`
-
-`You must update the config` `file` `located` `in` `./<APIBuilderProject>``/conf/appc``.mysql.default.js before you can use it!`
-
-`Installed: connector``/appc``.mysql`
+Installing dependencies... <APIBuilderProject>
+Checking for 1 module: connector/appc.mysql
+Fetching connector/appc.mysql@1.0.43
+Installed 1 module
+connector/appc.mysql provided a default configuration example which was written to conf/appc.mysql.default.js
+You must update the config file located in ./<APIBuilderProject>/conf/appc.mysql.default.js before you can use it!
+Installed:  connector/appc.mysql
+```
 
 ### Configure the model-first connector
 
 Depending on the connector you installed, you may need to modify the configuration settings of the connector. Open the project's conf/<CONNECTOR\_NAME>.js file to modify its settings. Some connectors have multiple files for different deployment environments, such as the appc.arrowdb connector. For example, the MySQL connector's configuration file contains keys for you to define the database host URL, port number, admin user, admin password, and database name as well as additional database access settings.
 
-conf/appc.mysql.default.js
+*conf/appc.mysql.default.js*
 
-`module.exports = {`
-
-`connectors: {`
-
-`'appc.mysql'``: {`
-
-`connectionPooling:` `true``,`
-
-`connectionLimit: 10,`
-
-`database:` `'test'``,`
-
-`user:` `'root'``,`
-
-`password:` `''``,`
-
-`host:` `'localhost'``,`
-
-`port: 3306,`
-
-`generateModelsFromSchema:` `true``,`
-
-`modelAutogen:` `true`
-
-`}`
-
-`}`
-
-`};`
+```javascript
+module.exports = {
+    connectors: {
+        'appc.mysql': {
+            connectionPooling: true,
+            connectionLimit: 10,
+            database: 'test',
+            user: 'root',
+            password: '',
+            host: 'localhost',
+            port: 3306,
+            generateModelsFromSchema: true,
+            modelAutogen: true
+        }
+    }
+};
+```
 
 #### Disable API endpoints
 
 By default, when you install a connector, it will add its API endpoints to the application, for example, api/myconnector/model. If you do not want to generate these API endpoints, set the modelAutogen key to false in the connector's configuration file in the project.
 
-conf/myconnector.default.js
+*conf/myconnector.default.js*
 
-`module.exports = {`
-
-`connectors: {`
-
-`'connector.name'``: {`
-
-`setting1:` `'foo'``,`
-
-`setting2:` `'bar'``,`
-
-`setting3:` `'baz'``,`
-
-`modelAutogen:` `false`
-
-`}`
-
-`}`
-
-`};`
+```javascript
+module.exports = {
+    connectors: {
+        'connector.name': {
+            setting1: 'foo',
+            setting2: 'bar',
+            setting3: 'baz',
+            modelAutogen: false
+        }
+    }
+};
+```
 
 ### Use the model-first connector
 
 To use the connector, simply assign the connector key in a Model file to the name of the connector. For example, the model file below is using the employee table (or model) accessed by the MySQL connector.
 
-models/employee.js
+*models/employee.js*
 
-`var` `Arrow = require(``'arrow'``);`
+```javascript
+var Arrow = require('arrow');
 
-`var` `employee = Arrow.Model.reduce(``'appc.mysql/employee'``,``'employee'``,{`
+var employee = Arrow.Model.reduce('appc.mysql/employee','employee',{
+    fields: {
+        first_name: {type: String, description: 'Give name'}
+        last_name: {type: String, description: 'Family name'}
+    },
+    connector: 'appc.mysql'
+});
 
-`fields: {`
-
-`first_name: {type: String, description:` `'Give name'``}`
-
-`last_name: {type: String, description:` `'Family name'``}`
-
-`},`
-
-`connector:` `'appc.mysql'`
-
-`});`
-
-`module.exports = employee;`
+module.exports = employee;
+```
 
 ### Remove a model-first connector
 
@@ -194,21 +169,16 @@ To remove a connector from your project, you need to manually update the appc.js
 
 1. Open the appc.json file and delete the connector you want to remove from the dependencies object. For example, if you want to remove the MySQL connector, remove the "connector/appc.mysql": "^1.0.34". Note that you will need to remove the trailing comma at the end of the arrowdb line.
 
-    `{`
-
-    `"type"``:` `"api"``,`
-
-    `"group"``:` `"arrow"``,`
-
-    `"dependencies"``: {`
-
-    `"connector/appc.arrowdb"``:` `"^1.0.52"``,`
-
-    `"connector/appc.mysql"``:` `"^1.0.34"`
-
-    `}`
-
-    `}`
+    ```
+    {
+      "type": "api",
+      "group": "arrow",
+      "dependencies": {
+        "connector/appc.arrowdb": "^1.0.52",
+        "connector/appc.mysql": "^1.0.34"
+      }
+    }
+    ```
 
 2. Delete the connector's configuration file(s) from the project conf directory. The file(s) will contain the name of the connector.
 

@@ -46,51 +46,32 @@ For details on using the action bar, see [Android Action Bar](/docs/appc/Titaniu
 
 Android devices have a hardware or software button that is used to display a menu of options. In native Android, every [Activity](http://developer.android.com/reference/android/app/Activity.html) can have an associated menu. In Titanium, every ["heavyweight" window](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Cross-Platform_Mobile_Development_In_Titanium/Android_Platform_Overview/#Heavyweightandlightweightwindows) can have its own menu, as all heavyweight windows having a corresponding Android Activity. Because of the menu's association with the underlying Activity, it is created in a special Android-specific Activity event called onCreateOptionsMenu. Below we see how a basic Android menu is declared using Titanium.
 
-`// Associated directly with an activity`
+```javascript
+// Associated directly with an activity
+activity = Ti.Android.currentActivity;
+activity.onCreateOptionsMenu = function(e) {
+    var menu = e.menu;
+    var menuItem = menu.add({ title: "Item 1" });
+    menuItem.setIcon("item1.png");
+    menuItem.addEventListener("click", function(e) {
+        // do something when the menu item is tapped
+    });
+};
 
-`activity = Ti.Android.currentActivity;`
-
-`activity.onCreateOptionsMenu =` `function``(e) {`
-
-`var` `menu = e.menu;`
-
-`var` `menuItem = menu.add({ title:` `"Item 1"` `});`
-
-`menuItem.setIcon(``"item1.png"``);`
-
-`menuItem.addEventListener(``"click"``,` `function``(e) {`
-
-`// do something when the menu item is tapped`
-
-`});`
-
-`};`
-
-`// or with your heavyweight window, set here with navBarHidden`
-
-`var` `win = Titanium.UI.createWindow({`
-
-`navBarHidden:` `false``,`
-
-`activity: {`
-
-`onCreateOptionsMenu:` `function``(e) {`
-
-`var` `menu = e.menu;`
-
-`var` `menuItem = menu.add({ title:` `'Item 1'` `});`
-
-`menuItem.setIcon(``"item1.png"``);`
-
-`menuItem.addEventListener(``'click'``,` `function``(e) {`
-
-`// do something when the menu item is tapped`
-
-`});`
-
-`}`
-
-`}`
+// or with your heavyweight window, set here with navBarHidden
+var win = Titanium.UI.createWindow({
+  navBarHidden: false,
+  activity: {
+    onCreateOptionsMenu: function(e) {
+      var menu = e.menu;
+      var menuItem = menu.add({ title: 'Item 1' });
+      menuItem.setIcon("item1.png");
+      menuItem.addEventListener('click', function(e) {
+        // do something when the menu item is tapped
+      });
+    }
+  }
+```
 
 If you're writing a cross-platform app, you would want to wrap the first of the above code-snippets in platform-detection code. iOS knows nothing of activities and could throw an error. The second of the above examples will run just fine on iOS. iOS will ignore the activity property of the window (actually, it would create a custom property for the object and set it to null).
 
@@ -100,57 +81,43 @@ On Android 3.0 and later, menu items can appear on the action bar. See [Android 
 
 As with the Menu button, the Android Back button is associated with Activities or heavyweight windows. Users expect when they tap the Back button, that they'll "page back" through the stack of open windows. In addition, users will often use the Back button to exit or pause your app. For this reason, you may find it beneficial to handle presses of the Back button to clean up your app and the resources it may be utilizing.
 
-`// must be a heavyweight window to capture the androidback event`
-
-`// so set something like fullscreen:false`
-
-`var` `win = Ti.UI.createWindow({`
-
-`title:` `'Hello world'``,`
-
-`backgroundColor:` `'#fff'``,`
-
-`fullscreen:` `false`
-
-`});`
-
-`win.addEventListener(``'androidback'``,``function``() {`
-
-`// do something`
-
-`});`
+```javascript
+// must be a heavyweight window to capture the androidback event
+// so set something like fullscreen:false
+var win = Ti.UI.createWindow({
+  title: 'Hello world',
+  backgroundColor: '#fff',
+  fullscreen: false
+});
+win.addEventListener('androidback',function() {
+  // do something
+});
+```
 
 ### Android Labels
 
 Titanium Labels have the ability to use inline HTML, as well as embedded links, on Android. You can include simple formatting HTML within a label and Android will render it properly. To do so, you use the html property rather than the text property. This is pretty handy for cross-platform apps so that you can provide platform-specific label text.
 
-`var` `label = Ti.UI.createLabel({`
-
-`html:` `'Testing <b>bold</b> <i>italic</i> text'``,`
-
-`text:` `'This is for iOS'``,`
-
-`top: 125,`
-
-`height: 50,`
-
-`width:` `'100%'`
-
-`});`
+```javascript
+var label = Ti.UI.createLabel({
+  html: 'Testing <b>bold</b> <i>italic</i> text',
+  text: 'This is for iOS',
+  top: 125,
+  height: 50,
+  width: '100%'
+});
+```
 
 Android also will "linkify" text within your labels. Given the following, the user could tap on the email address to open their mail client; tap the phone number to open the dialer; tap the URL to open their browser; or tap the address to open Maps.
 
-`var` `lbl = Ti.UI.createLabel({`
-
-`autoLink: Ti.UI.AUTOLINK_ALL,` `// Prior to SDK 3.0, Ti.UI.Android.LINKIFY_ALL`
-
-`left: 5, top: 5, right: 5, height: 100,`
-
-`backgroundColor:` `'#222'``,`
-
-`text:` `'Contact\n test@test.com\n 817-555-5555\n http://bit.ly\n 440 Bernardo Ave, Mountain View, CA'`
-
-`});`
+```javascript
+var lbl = Ti.UI.createLabel({
+  autoLink: Ti.UI.AUTOLINK_ALL, // Prior to SDK 3.0, Ti.UI.Android.LINKIFY_ALL
+  left: 5, top: 5, right: 5, height: 100,
+  backgroundColor: '#222',
+  text: 'Contact\n test@test.com\n 817-555-5555\n http://bit.ly\n 440 Bernardo Ave, Mountain View, CA'
+});
+```
 
 The linkification options include:
 
@@ -170,21 +137,17 @@ The constants shown in parenthesis are the constants used prior to SDK 3.0. The 
 
 Android enables simple "toast" style notifications. These are short messages that briefly float over all other content in your app, disappearing a short time later. You can create such notifications in Titanium by using the Ti.UI.createNotification() method as shown here:
 
-`var` `n = Ti.UI.createNotification({message:``"Howdy folks"``});`
+```javascript
+var n = Ti.UI.createNotification({message:"Howdy folks"});
+n.duration = Ti.UI.NOTIFICATION_DURATION_LONG;
+// Also valid is NOTIFICATION_DURATION_SHORT
 
-`n.duration = Ti.UI.NOTIFICATION_DURATION_LONG;`
-
-`// Also valid is NOTIFICATION_DURATION_SHORT`
-
-`// Optionally, set the X & Y Offsets, by default`
-
-`n.offsetX = 100;`
-
-`n.offsetY = 75;`
-
-`// display the toast message`
-
-`n.show();`
+// Optionally, set the X & Y Offsets, by default
+n.offsetX = 100;
+n.offsetY = 75;
+// display the toast message
+n.show();
+```
 
 ![not2](/Images/appc/download/attachments/29004929/not2.png)
 
@@ -192,49 +155,30 @@ Android enables simple "toast" style notifications. These are short messages tha
 
 The Android status bar provides a central location for application and system notifications. Titanium enables you to post messages to the Status bar (sometimes referred to as the Notification bar) via the Titanium.Android.Notification module. To do so, you'll need to explore the Android-specific world of Intents, PendingIntents, and Activities. We won't go deep into those concepts in this guide, but here's a taste of what can be done:
 
-`// Need an Intent to define what will happen when user taps the notification message`
-
-`// In this case, it will open the Dialer ready to dial a fictitious number`
-
-`var` `intent = Ti.Android.createIntent({`
-
-`action: Ti.Android.ACTION_DIAL,`
-
-`data:` `"tel:8175551212"`
-
-`});`
-
-`// Create a PendingIntent to tie together the Activity and Intent`
-
-`var` `pending = Titanium.Android.createPendingIntent({`
-
-`activity: Titanium.Android.currentActivity,`
-
-`intent: intent,`
-
-`type: Titanium.Android.PENDING_INTENT_FOR_ACTIVITY,`
-
-`flags: Titanium.Android.FLAG_UPDATE_CURRENT`
-
-`});`
-
-`// Here's the notification now`
-
-`var` `notification = Titanium.Android.createNotification({`
-
-`icon: 0x7f020000,`
-
-`contentTitle:` `'Dial Now!'``,`
-
-`contentText:` `'817-555-1212'``,`
-
-`contentIntent: pending`
-
-`});`
-
-`// Send the Notification to the manager, the digit is an ID you could use to later cancel the notification`
-
-`Titanium.Android.NotificationManager.notify(1, notification);`
+```javascript
+// Need an Intent to define what will happen when user taps the notification message
+// In this case, it will open the Dialer ready to dial a fictitious number
+var intent = Ti.Android.createIntent({
+  action: Ti.Android.ACTION_DIAL,
+    data: "tel:8175551212"
+});
+// Create a PendingIntent to tie together the Activity and Intent
+var pending = Titanium.Android.createPendingIntent({
+    activity: Titanium.Android.currentActivity,
+    intent: intent,
+    type: Titanium.Android.PENDING_INTENT_FOR_ACTIVITY,
+    flags: Titanium.Android.FLAG_UPDATE_CURRENT
+});
+// Here's the notification now
+var notification = Titanium.Android.createNotification({
+        icon: 0x7f020000,
+        contentTitle: 'Dial Now!',
+    contentText: '817-555-1212',
+        contentIntent: pending
+});
+// Send the Notification to the manager, the digit is an ID you could use to later cancel the notification
+Titanium.Android.NotificationManager.notify(1, notification);
+```
 
 ![status1](/Images/appc/download/attachments/29004929/status1.png) ![status2](/Images/appc/download/attachments/29004929/status2.png)
 
@@ -248,11 +192,11 @@ Name the file with the extension .9.png, for example, Resources/images/myimage.9
 
 To use a nine-patch image, reference the image in your code like you would a regular image without the .9 part of the extension, for example:
 
-`var` `button = Ti.UI.createButton({`
-
-`backgroundImage:` `'/images/myimage.png'`
-
-`});`
+```javascript
+var button = Ti.UI.createButton({
+    backgroundImage: '/images/myimage.png'
+});
+```
 
 Nine-patch images only work as background images. For example, you can use a nine-patch image to set an ImageView's backgroundImage property but not the image property.
 

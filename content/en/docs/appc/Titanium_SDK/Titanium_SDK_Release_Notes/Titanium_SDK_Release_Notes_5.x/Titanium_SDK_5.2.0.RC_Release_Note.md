@@ -54,17 +54,18 @@ As of this release, Titanium SDK 5.1..x will not be supported six months from 5.
 
 To install this update, launch **Appcelerator Studio.** In the menu **Preferences**, go to **Studio** > **Updates.** From there, choose **Release Candidate Build**. It will install the updates. After installing the updates in Studio, you will need to execute the following commands to complete the installation of the update:
 
-`$ [sudo] npm install -g appcelerator``@4``.2.``3``-``2`
-
-`$ appc use` `5.2``.``0``-``265`
+```bash
+$ [sudo] npm install -g appcelerator@4.2.3-2
+$ appc use 5.2.0-265
+```
 
 If you wish to install the updates via the command line, execute these commands:
 
-`$ appc ti sdk install -d` `5.2``.``0``.v20160216202526 -b 5_2_X`
-
-`$ [sudo] npm install -g appcelerator``@4``.2.``3``-``2`
-
-`$ appc use` `5.2``.``0``-``265`
+```bash
+$ appc ti sdk install -d 5.2.0.v20160216202526 -b 5_2_X
+$ [sudo] npm install -g appcelerator@4.2.3-2
+$ appc use 5.2.0-265
+```
 
 ## New Features
 
@@ -82,21 +83,18 @@ This section lists new features and improvements only available on the Android p
 
 **Street View** panorama for Google Maps Android API v2 has been implemented. Follow the [instructions to add the ti.map module to your project](#!/api/Modules.Map) and try it out with the following test code:
 
-`// Add in the module`
+```javascript
+// Add in the module
+var MapModule = require('ti.map');
+var win = Ti.UI.createWindow({backgroundColor: 'white'});
 
-`var` `MapModule = require(``'ti.map'``);`
+var street = MapModule.createStreetViewPanorama({
+  position: {latitude:1.281581286057009, longitude:103.8641372560966}
+});
 
-`var` `win = Ti.UI.createWindow({backgroundColor:` `'white'``});`
-
-`var` `street = MapModule.createStreetViewPanorama({`
-
-`position: {latitude:1.281581286057009, longitude:103.8641372560966}`
-
-`});`
-
-`win.add(street);`
-
-`win.open();`
+win.add(street);
+win.open();
+```
 
 **Hide Soft Navigation Bar**
 
@@ -108,7 +106,9 @@ During the launching of an app, you can hide the navigation bar however, there a
 
 To try this feature out, set this property in the TiApp.xml to true:
 
-`<fullscreen>``true``</fullscreen>`
+```xml
+<fullscreen>true</fullscreen>
+```
 
 ### iOS Platform
 
@@ -134,7 +134,9 @@ This section lists new features and improvements only available on the iOS platf
 
 When building a new app, you won't have to do anything other than build your app to take advantage of the storyboard-based launch screen. There is a default LaunchScreen.storyboard that ships with Titanium. It is a simple white background with a centered ImageView. It uses an image set called **LaunchLogo** from the asset catalog. Existing apps will have to enable this manually by adding the following to the <ios> section fo the tiapp.xml:
 
-`<enable-launch-screen-storyboard>``true``</enable-launch-screen-storyboard>`
+```xml
+<enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
+```
 
 By default, this property is set to true so that all new projects have the storyboard launch screen enabled.
 
@@ -158,11 +160,11 @@ Any missing images will be generated from the DefaultIcon.png. If DefaultIcon.pn
 
 By default, the launch screen's background color is white. However, the LaunchLogo may look better against some other background color. You can specify the default background color in the tiapp.xml's <ios> section:
 
-`<ios>`
-
-`<``default``-background-color>#ff0000</``default``-background-color>`
-
-`</ios>`
+```xml
+<ios>
+    <default-background-color>#ff0000</default-background-color>
+</ios>
+```
 
 The default-background-color must be either a 3 or 6 character RGB hex value. Note: the # is optional for this hex value.
 
@@ -180,23 +182,17 @@ With the addition of the launchScreen.storyboard features, you can now enable th
 
 1. In **tiapp.xml** , set the following properties:
 
-    * `...`
-
-        `<ios>`
-
-        `<enable-launch-screen-storyboard>``true``</enable-launch-screen-storyboard>`
-
-        `<use-auto-layout>``true``</use-auto-layout>`
-
-        `<plist>`
-
-        `<dict>`
-
-        `<key>UIRequiresFullScreen</key>`
-
-        `<``false``/>`
-
-        `...`
+    * ```
+        ...
+        <ios>
+            <enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
+            <use-auto-layout>true</use-auto-layout>
+            <plist>
+              <dict>
+                <key>UIRequiresFullScreen</key>
+                <false/>
+        ...
+        ```
 
 2. Run **appc run -p ios -F ipad** .
 
@@ -222,49 +218,34 @@ With the addition of the launchScreen.storyboard features, you can now enable th
 
     * Demo:
 
-    * `Titanium.UI.setBackgroundColor(``'#fff'``);`
+    * ```javascript
+        Titanium.UI.setBackgroundColor('#fff');
+        var tabGroup = Titanium.UI.createTabGroup();
 
-        `var tabGroup = Titanium.UI.createTabGroup();`
+        var win1 = Titanium.UI.createWindow();
+        var tab1 = Titanium.UI.createTab({
+          window: win1,
+          icon:'images/tabs/KS_nav_ui.png',
+          iconInsets: {
+            top:6,
+            bottom:-6,
+            right:0,
+            left:0
+          }
+        });
 
-        `var win1 = Titanium.UI.createWindow();`
+        var win2 = Titanium.UI.createWindow();
+        var tab2 = Titanium.UI.createTab({
+          window: win2,
+          icon:'images/tabs/KS_nav_ui.png',
+          title: "Test"
+        });
 
-        `var tab1 = Titanium.UI.createTab({`
+        tabGroup.addTab(tab1);
+        tabGroup.addTab(tab2);
 
-        `window: win1,`
-
-        `icon:``'images/tabs/KS_nav_ui.png'``,`
-
-        `iconInsets: {`
-
-        `top:``6``,`
-
-        `bottom:-``6``,`
-
-        `right:``0``,`
-
-        `left:``0`
-
-        `}`
-
-        `});`
-
-        `var win2 = Titanium.UI.createWindow();`
-
-        `var tab2 = Titanium.UI.createTab({`
-
-        `window: win2,`
-
-        `icon:``'images/tabs/KS_nav_ui.png'``,`
-
-        `title:` `"Test"`
-
-        `});`
-
-        `tabGroup.addTab(tab1);`
-
-        `tabGroup.addTab(tab2);`
-
-        `tabGroup.open();`
+        tabGroup.open();
+        ```
 
 * Added Swift versions of the applewatch templates so you have a choice of watchos2-swift (Swift and new default) and watchos2-objc (Obj-C).
 

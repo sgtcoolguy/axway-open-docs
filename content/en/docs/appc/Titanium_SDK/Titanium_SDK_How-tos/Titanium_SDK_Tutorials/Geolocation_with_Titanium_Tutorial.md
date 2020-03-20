@@ -24,43 +24,33 @@ Let's start out with creating a fresh Titanium app and start setting up the tiap
 
 For iOS users, use this:
 
-tiapp.xml - iOS
+*tiapp.xml - iOS*
 
-`<``ios``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<``key``>NSLocationWhenInUseUsageDescription</``key``>`
-
-`<``string``>We need your location while using because...</``string``>`
-
-`<``key``>NSLocationAlwaysAndWhenInUseUsageDescription</``key``>`
-
-`<``string``>We always need you location because...</``string``>`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`</``ios``>`
+```xml
+<ios>
+    <plist>
+        <dict>
+            <key>NSLocationWhenInUseUsageDescription</key>
+            <string>We need your location while using because...</string>
+            <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+            <string>We always need you location because...</string>
+        </dict>
+    </plist>
+</ios>
+```
 
 For Android:
 
-tiapp.xml - Android
+*tiapp.xml - Android*
 
-`<``android` `xmlns:android=“``http://schemas.android.com/apk/res/android``”>`
-
-`<``manifest``>`
-
-`<``uses``-permission android:name=“android.permission.ACCESS_FINE_LOCATION”/>`
-
-`<``uses``-permission android:name=“android.permission.ACCESS_COARSE_LOCATION”/>`
-
-`</``manifest``>`
-
-`</``android``>`
+```xml
+<android xmlns:android=“http://schemas.android.com/apk/res/android”>
+    <manifest>
+        <uses-permission android:name=“android.permission.ACCESS_FINE_LOCATION”/>
+        <uses-permission android:name=“android.permission.ACCESS_COARSE_LOCATION”/>
+    </manifest>
+</android>
+```
 
 With this code, you can try to use Geolocation services in the app. The OS will inform the user that the app needs permission which the user can approve or deny the request.
 
@@ -74,19 +64,17 @@ Titanium SDK 7.1.0 introduced support for FusedLocationProvider on Android. To e
 
 Assuming the user will approve the request to track location, the device's position can be obtained via this code (works on both Android and iOS):
 
-Geolocate: get current position
+*Geolocate: get current position*
 
-`function` `getLocation( ) {`
+```javascript
+function getLocation( ) {
+    Ti.Geolocation.getCurrentPosition(function(e) {
+        console.log(e);
+    });
+}
 
-`Ti.Geolocation.getCurrentPosition(``function``(e) {`
-
-`console.log(e);`
-
-`});`
-
-`}`
-
-`getLocation();`
+getLocation();
+```
 
 Keep in mind that if the user denied the permission request from the OS, this code will fail (as it doesn't check if permission was granted or handles any types of errors). To offer a great app experience, the app should have the relevant permission before attempting to use the Geolocation service. The user can modify the location permission at any time and, on iOS, there is a friendly reminder that pops up from time to time to remind the user that the app is still using location feature.
 
@@ -94,43 +82,33 @@ Keep in mind that if the user denied the permission request from the OS, this co
 
 To check for permissions, our Geolocation service code should be wrapped with a permission check:
 
-Geolocation permission check
+*Geolocation permission check*
 
-`if` `(Ti.Geolocation.hasLocationPermissions()) {`
-
-`getLocation();`
-
-`}` `else` `{`
-
-`Ti.Geolocation.requestLocationPermissions(Ti.Geolocation.AUTHORIZATION_WHEN_IN_USE,` `function` `(e) {`
-
-`if` `(e.success) {`
-
-`getLocation();`
-
-`}` `else` `{`
-
-`alert(‘could not obtain location permissions’);`
-
-`}`
-
-`});`
-
-`}`
+```javascript
+if (Ti.Geolocation.hasLocationPermissions()) {
+  getLocation();
+} else {
+    Ti.Geolocation.requestLocationPermissions(Ti.Geolocation.AUTHORIZATION_WHEN_IN_USE, function (e) {
+        if (e.success) {
+            getLocation();
+        } else {
+            alert(‘could not obtain location permissions’);
+        }
+    });
+}
+```
 
 Here, we are checking for AUTHORIZATION\_WHEN\_IN\_USE because the app is currently focused on getting the location. Note: this code is just obtaining the location once. It should include a timer to run every so often. It should also avoid wasting checks if the device's position hasn't changed after a period of time. We can solve this by using the location event by modifying the getLocation function so it will listen for changes based on location.
 
-Listen for location changes
+*Listen for location changes*
 
-`function` `getLocation( ) {`
-
-`Ti.Geolocation.addEventListener(``"location"``,``function``(e) {`
-
-`console.log(e);`
-
-`});`
-
-`}`
+```javascript
+function getLocation( ) {
+  Ti.Geolocation.addEventListener("location",function(e) {
+    console.log(e);
+  });
+}
+```
 
 This updated code will execute at the start of the app and whenever the device's location changes.
 
@@ -138,45 +116,29 @@ This updated code will execute at the start of the app and whenever the device's
 
 The data sent back looks something like this:
 
-Location data
+*Location data*
 
-`{`
-
-`code = 0;`
-
-`coords = {`
-
-`accuracy = 5;`
-
-`altitude = 0;`
-
-`altitudeAccuracy =` `"-1"``;`
-
-`floor = {`
-
-`level = 0;`
-
-`};`
-
-`heading =` `"-1"``;`
-
-`latitude =` `"51.25243759155273"``;`
-
-`longitude =` `"-1.603847026824951"``;`
-
-`speed =` `"-1"``;`
-
-`timestamp = 1553776951640;`
-
-`};`
-
-`source =` `"[object GeolocationModule]"``;`
-
-`success = 1;`
-
-`type = location;`
-
-`}`
+```
+{
+  code = 0;
+  coords = {
+    accuracy = 5;
+    altitude = 0;
+    altitudeAccuracy = "-1";
+    floor = {
+      level = 0;
+    };
+    heading = "-1";
+    latitude = "51.25243759155273";
+    longitude = "-1.603847026824951";
+    speed = "-1";
+    timestamp = 1553776951640;
+  };
+  source = "[object GeolocationModule]";
+  success = 1;
+  type = location;
+}
+```
 
 With this data (longitude, latitude, altitude, heading, speed, and elevation), the app can determine if the user is walking/running/riding/ on a mountain side or a beach.
 
@@ -190,9 +152,11 @@ To adjust the accuracy, tweak the Ti.Geolocation.accuracy property to set this t
 
 To fine tune the settings for Android, set up the Ti.Geolocation.Android.LocationRule. The following code will tell the device to skip location update unless the accuracy is less than 20m and at least 10 seconds has lapsed.
 
-Location rule
+*Location rule*
 
-`Ti.Geolocation.Android.addLocationRule({accuracy: 20, minAge: 10000});`
+```
+Ti.Geolocation.Android.addLocationRule({accuracy: 20, minAge: 10000});
+```
 
 You can also use the activity property (Ti.Geolocation.ACTIVITYTYPE\_FITNESS and Ti.Geolocation.ACTIVITYTYPE\_AUTOMOTIVE\_NAVIGATION) to determine when locations updates happen as the OS may have paused it.
 

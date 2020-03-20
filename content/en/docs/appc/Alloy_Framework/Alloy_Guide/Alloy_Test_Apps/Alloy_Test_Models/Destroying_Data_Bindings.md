@@ -2,7 +2,7 @@
 
 Demonstrates best practices for data binding memory management.
 
-App Folder Location
+*App Folder Location*
 
 alloy/test/apps/**models/binding\_destroy**
 
@@ -10,75 +10,62 @@ alloy/test/apps/**models/binding\_destroy**
 
 To prevent memory leaks and ensure that bindings are properly released, you should always call destroy() on a controller that references a global data collection when you are done with that controller. Calling this method frees binding resources associated with this controller and its UI components. The sample app's main index.xml view, shown below, declares global references to the movies collection and info model.
 
-views/index.xml
+*views/index.xml*
 
-`<``Alloy``>`
-
-`<!-- global reference to info model -->`
-
-`<``Model`  `src``=``"info"``/>`
-
-`<!-- global reference to movies collection -->`
-
-`<``Collection`  `src``=``"movies"``/>`
-
-`<!-- ...abbreviated for clarity... -->`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <!-- global reference to info model -->
+    <Model src="info"/>
+    <!-- global reference to movies collection -->
+    <Collection src="movies"/>
+    <!-- ...abbreviated for clarity... -->
+    </Window>
+</Alloy>
+```
 
 This info model and movies collection are bound to the info.xml and movies.xml views, respectively.
 
-app/views/info.xml
+*app/views/info.xml*
 
-`<``Alloy``>`
+```xml
+<Alloy>
+    <Window layout="vertical">
+        <Label text="{info.name}"/>
+        <Label text="{info.email}"/>
+        <Label text="{info.twitter}"/>
+    </Window>
+</Alloy>
+```
 
-`<``Window`  `layout``=``"vertical"``>`
+*app/views/movie.xml*
 
-`<``Label`  `text``=``"{info.name}"``/>`
-
-`<``Label`  `text``=``"{info.email}"``/>`
-
-`<``Label`  `text``=``"{info.twitter}"``/>`
-
-`</``Window``>`
-
-`</``Alloy``>`
-
-app/views/movie.xml
-
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<``TableView`  `dataCollection``=``"movies"``>`
-
-`<``TableViewRow`  `title``=``"{title}"``/>`
-
-`</``TableView``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window>
+        <TableView dataCollection="movies">
+            <TableViewRow title="{title}"/>
+        </TableView>
+    </Window>
+</Alloy>
+```
 
 The view-controllers for the movies and info views call $.destroy() from their close event handlers to properly dispose of allocated memory.
 
-app/controllers/info.js
+*app/controllers/info.js*
 
-`$.info.addEventListener(``'close'``,` `function``() {`
+```javascript
+$.info.addEventListener('close', function() {
+    $.destroy();
+});
+```
 
-`$.destroy();`
+*app/controllers/movies.js*
 
-`});`
-
-app/controllers/movies.js
-
-`$.movies.addEventListener(``'close'``,` `function``() {`
-
-`$.destroy();`
-
-`});`
+```javascript
+$.movies.addEventListener('close', function() {
+    $.destroy();
+});
+```
 
 ## See Also
 

@@ -72,7 +72,9 @@ The following environment variables must be set in order to build the SDK from s
 
 The simplest way to get the SDK source is to simply clone it:
 
-`git clone https:``//github.com/appcelerator/titanium_mobile.git`
+```
+git clone https://github.com/appcelerator/titanium_mobile.git
+```
 
 However, if you have any interest in contributing to Titanium, you should create your own fork of the titanium\_mobile repository on github, as described in the [Pull Request Guide](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Pull_Request_Guide/).
 
@@ -86,37 +88,44 @@ If you want to test a changes that is a pull request on Github, you can add and 
 
 2. Locate the appcelerator/titanum\_mobile repo contents in the file. Note that the remote repo name will be different depending on how you retrieved the appcelerator/titanum\_mobile remote repo. In the example below, it was name "upstream".
 
-    `[remote` `"upstream"``]`
-
-    `fetch = +refs/heads/*:refs/remotes/upstream/*`
-
-    `url = https:``//github.com/appcelerator/titanium_mobile.git`
+    ```
+    [remote "upstream"]
+            fetch = +refs/heads/*:refs/remotes/upstream/*
+            url = https://github.com/appcelerator/titanium_mobile.git
+    ```
 
 3. Add the following line to the section and replace <remote\_name> with the name of the remote repo:
 
-    `fetch = +refs/pull/*/head:refs/remotes/<remote_name>/pr/*`
+    ```
+    fetch = +refs/pull/*/head:refs/remotes/<remote_name>/pr/*
+    ```
 
     In the previous example, the section now looks like:
 
-    `[remote` `"upstream"``]`
-
-    `fetch = +refs/heads``/*:refs/remotes/upstream/*`
-
-    `url = https://github.com/appcelerator/titanium_mobile.git`
-
-    `fetch = +refs/pull/*/``head:refs/remotes/upstream/pr/*`
+    ```
+    [remote "upstream"]
+            fetch = +refs/heads/*:refs/remotes/upstream/*
+            url = https://github.com/appcelerator/titanium_mobile.git
+            fetch = +refs/pull/*/head:refs/remotes/upstream/pr/*
+    ```
 
 4. Fetch the remote PR branches:
 
-    `git fetch upstream`
+    ```
+    git fetch upstream
+    ```
 
 5. Checkout the PR you want to test:
 
-    `git checkout pr/####`
+    ```
+    git checkout pr/####
+    ```
 
 **To remove the PR remote branches, run the following command:**
 
-`git fetch upstream --prune`
+```
+git fetch upstream --prune
+```
 
 ## Build the SDK
 
@@ -124,9 +133,11 @@ The method written below is the old way. The repo has now been updated to do awa
 
 In the root of your titanium\_mobile repo, run the following commands:
 
-`npm install`
+```bash
+npm install
 
-`node scons.js cleanbuild`
+node scons.js cleanbuild
+```
 
 By default, the above will build the SDK for all platforms. You can specify platforms to limit the generation of unmentioned platforms, e.g. node scons.js cleanbuild ios.
 

@@ -2,7 +2,7 @@
 
 Demonstrates basic use of Menu and MenuItem objects to display items in the Android action bar.
 
-Example App Source Location
+*Example App Source Location*
 
 You can find this example app in the Alloy repository under [samples/apps/ui/android\_menu](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/android_menu). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
 
@@ -10,65 +10,49 @@ The [Menu](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Android
 
 ![screenshot](/Images/appc/download/attachments/41845737/screenshot.png)
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
+```xml
+<Alloy>
+    <Window>
+        <ActionBar id="actionbar" title="My XML Menu" />
+        <!-- This will add an Android menu -->
+        <Menu>
+            <MenuItem title="option 1" icon="/ic_menu_help.png" onClick="doClick"/>
+            <MenuItem title="option 2" icon="/ic_menu_home.png" onClick="openWin2"/>
+        </Menu>
 
-`<``Window``>`
-
-`<``ActionBar`  `id``=``"actionbar"`  `title``=``"My XML Menu"` `/>`
-
-`<!-- This will add an Android menu -->`
-
-`<``Menu``>`
-
-`<``MenuItem`  `title``=``"option 1"`  `icon``=``"/ic_menu_help.png"`  `onClick``=``"doClick"``/>`
-
-`<``MenuItem`  `title``=``"option 2"`  `icon``=``"/ic_menu_home.png"`  `onClick``=``"openWin2"``/>`
-
-`</``Menu``>`
-
-`<!-- Build the rest of your UI as usual -->`
-
-`<``Label``>Window 1</``Label``>`
-
-`<``Label`  `bottom``=``"20dp"``>Press the menu button</``Label``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+        <!-- Build the rest of your UI as usual -->
+        <Label>Window 1</Label>
+        <Label bottom="20dp">Press the menu button</Label>
+    </Window>
+</Alloy>
+```
 
 The "option 1" and "option 2" MenuItem elements contains onClick attributes that define functions, doClick() and openWin2(), that are invoked when selected.
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`function` `doClick(e) {`
+```javascript
+function doClick(e) {
+    alert(e.source.title);
+}
+function openWin2(e) {
+    Alloy.createController('win2').getView().open();
+}
+$.index.open();
+```
 
-`alert(e.source.title);`
+*app/views/menu.xml*
 
-`}`
-
-`function` `openWin2(e) {`
-
-`Alloy.createController(``'win2'``).getView().open();`
-
-`}`
-
-`$.index.open();`
-
-app/views/menu.xml
-
-`<``Alloy``>`
-
-`<``Menu``>`
-
-`<``MenuItem`  `title``=``"require 1"`  `icon``=``"/ic_menu_goto.png"`  `onClick``=``"doClick"``/>`
-
-`<``MenuItem`  `title``=``"require 2"`  `icon``=``"/ic_menu_manage.png"`  `onClick``=``"doClick"``/>`
-
-`</``Menu``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Menu>
+        <MenuItem title="require 1" icon="/ic_menu_goto.png" onClick="doClick"/>
+        <MenuItem title="require 2" icon="/ic_menu_manage.png" onClick="doClick"/>
+    </Menu>
+</Alloy>
+```
 
 ## See Also
 

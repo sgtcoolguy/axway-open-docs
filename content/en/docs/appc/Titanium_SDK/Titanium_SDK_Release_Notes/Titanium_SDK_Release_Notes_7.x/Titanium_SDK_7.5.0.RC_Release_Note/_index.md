@@ -80,19 +80,16 @@ As of this release, Titanium SDK 7.5.x will not be supported six months from 7.5
 
     * Implemented Ti.UI.WebView.mixedContentMode which allows the loading of insecure resources from a secure origin
 
-    * `const win = Ti.UI.createWindow({ backgroundColor:` `'gray'` `}),`
+    * ```javascript
+        const win = Ti.UI.createWindow({ backgroundColor: 'gray' }),
+            webView = Ti.UI.createWebView({
+                url: 'https://www.bennish.net/mixed-content.html',
+                mixedContentMode: true
+            });
 
-        `webView = Ti.UI.createWebView({`
-
-        `url:` `'https://www.bennish.net/mixed-content.html'``,`
-
-        `mixedContentMode:` `true`
-
-        `});`
-
-        `win.add(webView);`
-
-        `win.open();`
+        win.add(webView);
+        win.open();
+        ```
 
 * [TIMOB-24317](https://jira.appcelerator.org/browse/TIMOB-24317) - Android: Extend Ti.UI.View "swipe" gesture properties using ScaleGestureDetector
 
@@ -102,39 +99,25 @@ As of this release, Titanium SDK 7.5.x will not be supported six months from 7.5
 
     * Implemented Ti.UI.ShortcutItem pinning
 
-    * `var` `win = Ti.UI.createWindow({backgroundColor:` `'grey'``}),`
-
-        `btn = Ti.UI.createButton({title:` `'PIN SHORTCUT'``}),`
-
-        `shortcut = Ti.UI.createShortcutItem({`
-
-        `id:` `'test_shortcut'``,`
-
-        `icon: Ti.Android.R.drawable.ic_dialog_info,`
-
-        `title:` `'TEST'``,`
-
-        `description:` `'DESCRIPTION'`
-
-        `});`
-
-        `Ti.App.addEventListener(``'shortcutitemclick'``,` `function``() {`
-
-        `win.backgroundColor =` `'blue'``;`
-
-        `});`
-
-        `btn.addEventListener(``'click'``, () => {`
-
-        `win.backgroundColor =` `'red'``;`
-
-        `shortcut.pin();`
-
-        `});`
-
-        `win.add(btn);`
-
-        `win.open();`
+    * ```javascript
+        var win = Ti.UI.createWindow({backgroundColor: 'grey'}),
+            btn = Ti.UI.createButton({title: 'PIN SHORTCUT'}),
+            shortcut = Ti.UI.createShortcutItem({
+                id: 'test_shortcut',
+                icon: Ti.Android.R.drawable.ic_dialog_info,
+                title: 'TEST',
+                description: 'DESCRIPTION'
+            });
+        Ti.App.addEventListener('shortcutitemclick', function() {
+            win.backgroundColor = 'blue';
+        });
+        btn.addEventListener('click', () => {
+            win.backgroundColor = 'red';
+            shortcut.pin();
+        });
+        win.add(btn);
+        win.open();
+        ```
 
 * [TIMOB-24817](https://jira.appcelerator.org/browse/TIMOB-24817) - Android: ListView item template support CommonJS modules
 
@@ -144,241 +127,135 @@ As of this release, Titanium SDK 7.5.x will not be supported six months from 7.5
 
     * Added clipViews and padding properties to ScrollableView
 
-    * `var` `win = Ti.UI.createWindow({`
-
-        `title:` `'ScrollableView clipViews'``,`
-
-        `backgroundColor:``'#eee'`
-
-        `});`
-
-        `// Common params`
-
-        `var` `params = {`
-
-        `clipViews:` `false``,`
-
-        `showPagingControl:` `false``,`
-
-        `top: 0`
-
-        `};`
-
-        `if` `(Ti.Platform.name ===` `'android'``) {`
-
-        `// Android specific params`
-
-        `params.padding = {`
-
-        `left: 40,`
-
-        `right: 40`
-
-        `};`
-
-        `}` `else` `{`
-
-        `// iOS specific params`
-
-        `params.width =` `'90%'``;`
-
-        `}`
-
-        `var` `scrollableView = Titanium.UI.createScrollableView(params);`
-
-        `var` `view1 = Ti.UI.createView({ id:` `'view1'``, backgroundColor:` `'#836'` `});`
-
-        `var` `view2 = Ti.UI.createView({ id:` `'view2'``, backgroundColor:` `'#246'` `});`
-
-        `var` `view3 = Ti.UI.createView({ id:` `'view3'``, backgroundColor:` `'#48b'` `});`
-
-        `scrollableView.setViews([view1, view2, view3]);`
-
-        `win.add(scrollableView);`
-
-        `win.open();`
+    * ```javascript
+        var win = Ti.UI.createWindow({
+          title: 'ScrollableView clipViews',
+          backgroundColor:'#eee'
+        });
+        // Common params
+        var params = {
+          clipViews: false,
+          showPagingControl: false,
+          top: 0
+        };
+        if (Ti.Platform.name === 'android') {
+          // Android specific params
+          params.padding = {
+            left: 40,
+            right: 40
+          };
+        } else {
+          // iOS specific params
+          params.width = '90%';
+        }
+        var scrollableView = Titanium.UI.createScrollableView(params);
+        var view1 = Ti.UI.createView({ id: 'view1', backgroundColor: '#836' });
+        var view2 = Ti.UI.createView({ id: 'view2', backgroundColor: '#246' });
+        var view3 = Ti.UI.createView({ id: 'view3', backgroundColor: '#48b' });
+        scrollableView.setViews([view1, view2, view3]);
+        win.add(scrollableView);
+        win.open();
+        ```
 
 * [TIMOB-25855](https://jira.appcelerator.org/browse/TIMOB-25855) - Android: Add TextArea lines and maxLines support
 
     * Added support for TextArea lines and maxLines
 
-    * `var` `win = Ti.UI.createWindow({ backgroundColor:` `'#fff'` `});`
-
-        `var` `sv = Ti.UI.createScrollView({`
-
-        `layout:``"vertical"``,`
-
-        `height:Ti.UI.FILL`
-
-        `});`
-
-        `var` `tf1 = Ti.UI.createTextArea({`
-
-        `borderColor:` `"#000"``,`
-
-        `borderWidth: 1,`
-
-        `color:` `"#000"``,`
-
-        `width: 200,`
-
-        `hintText:``"1 to 5"``,`
-
-        `hintTextColor:``"#999"``,`
-
-        `lines: 1,`
-
-        `maxLines: 5`
-
-        `});`
-
-        `var` `tf2 = Ti.UI.createTextArea({`
-
-        `lines: 2,`
-
-        `maxLines: 2,`
-
-        `borderColor:` `"#000"``,`
-
-        `borderWidth: 1,`
-
-        `color:` `"#000"``,`
-
-        `width: 200,`
-
-        `hintText:``"2 to 2 -> setting lines to 4"``,`
-
-        `hintTextColor:``"#999"`
-
-        `});`
-
-        `tf2.lines = 4;`
-
-        `var` `tf3 = Ti.UI.createTextArea({`
-
-        `lines: 2,`
-
-        `maxLines: 2,`
-
-        `borderColor:` `"#000"``,`
-
-        `borderWidth: 1,`
-
-        `color:` `"#000"``,`
-
-        `width: 200,`
-
-        `hintText:``"2 to 2"``,`
-
-        `hintTextColor:``"#999"`
-
-        `});`
-
-        `tf3.maxLines = 2;`
-
-        `var` `tf4 = Ti.UI.createTextArea({`
-
-        `lines: 2,`
-
-        `maxLines: 2,`
-
-        `borderColor:` `"#000"``,`
-
-        `borderWidth: 1,`
-
-        `color:` `"#000"``,`
-
-        `width: 200,`
-
-        `hintText:``"2 to 2 -> setting max to 4"``,`
-
-        `hintTextColor:``"#999"`
-
-        `});`
-
-        `tf4.maxLines = 4;`
-
-        `var` `textField1 = Ti.UI.createTextField({`
-
-        `borderColor:` `"#000"``,`
-
-        `borderWidth: 1,`
-
-        `color:` `"#000"``,`
-
-        `width: 200,`
-
-        `hintText:``"Textfield"``,`
-
-        `hintTextColor:``"#999"`
-
-        `});`
-
-        `var` `lbl1 = Ti.UI.createLabel({`
-
-        `color:``"#000"``,`
-
-        `bottom: 10,`
-
-        `text:``"one line"`
-
-        `});`
-
-        `var` `lbl2 = Ti.UI.createLabel({`
-
-        `color:``"#000"``,`
-
-        `bottom: 10,`
-
-        `text:``"two\nline"`
-
-        `});`
-
-        `var` `lbl3 = Ti.UI.createLabel({`
-
-        `color:``"#000"``,`
-
-        `bottom: 10,`
-
-        `text:``"max 3 multi\n1 multi\n2 multi\n3 multi\n4 multi\nmulti\nline"``,`
-
-        `maxLines: 3`
-
-        `});`
-
-        `var` `lbl4 = Ti.UI.createLabel({`
-
-        `color:``"#000"``,`
-
-        `bottom: 10,`
-
-        `text:``"line 2 multi\n1 multi\n2 multi\n3 multi\n4 multi\nmulti\nline"``,`
-
-        `lines: 2`
-
-        `});`
-
-        `win.add(sv);`
-
-        `sv.add(tf1);`
-
-        `sv.add(tf2);`
-
-        `sv.add(tf3);`
-
-        `sv.add(tf4);`
-
-        `sv.add(textField1);`
-
-        `sv.add(lbl1);`
-
-        `sv.add(lbl2);`
-
-        `sv.add(lbl3);`
-
-        `sv.add(lbl4);`
-
-        `win.open();`
+    * ```javascript
+        var win = Ti.UI.createWindow({ backgroundColor: '#fff' });
+        var sv = Ti.UI.createScrollView({
+          layout:"vertical",
+          height:Ti.UI.FILL
+        });
+        var tf1 = Ti.UI.createTextArea({
+          borderColor: "#000",
+          borderWidth: 1,
+          color: "#000",
+          width: 200,
+          hintText:"1 to 5",
+          hintTextColor:"#999",
+          lines: 1,
+          maxLines: 5
+        });
+        var tf2 = Ti.UI.createTextArea({
+          lines: 2,
+          maxLines: 2,
+          borderColor: "#000",
+          borderWidth: 1,
+          color: "#000",
+          width: 200,
+          hintText:"2 to 2 -> setting lines to 4",
+          hintTextColor:"#999"
+        });
+        tf2.lines = 4;
+
+        var tf3 = Ti.UI.createTextArea({
+          lines: 2,
+          maxLines: 2,
+          borderColor: "#000",
+          borderWidth: 1,
+          color: "#000",
+          width: 200,
+          hintText:"2 to 2",
+          hintTextColor:"#999"
+        });
+        tf3.maxLines = 2;
+
+        var tf4 = Ti.UI.createTextArea({
+          lines: 2,
+          maxLines: 2,
+          borderColor: "#000",
+          borderWidth: 1,
+          color: "#000",
+          width: 200,
+          hintText:"2 to 2 -> setting max to 4",
+          hintTextColor:"#999"
+        });
+        tf4.maxLines = 4;
+
+        var textField1 = Ti.UI.createTextField({
+          borderColor: "#000",
+          borderWidth: 1,
+          color: "#000",
+          width: 200,
+          hintText:"Textfield",
+          hintTextColor:"#999"
+        });
+        var lbl1 = Ti.UI.createLabel({
+          color:"#000",
+          bottom: 10,
+          text:"one line"
+        });
+        var lbl2 = Ti.UI.createLabel({
+          color:"#000",
+          bottom: 10,
+          text:"two\nline"
+        });
+        var lbl3 = Ti.UI.createLabel({
+          color:"#000",
+          bottom: 10,
+          text:"max 3 multi\n1 multi\n2 multi\n3 multi\n4 multi\nmulti\nline",
+          maxLines: 3
+        });
+        var lbl4 = Ti.UI.createLabel({
+          color:"#000",
+          bottom: 10,
+          text:"line 2 multi\n1 multi\n2 multi\n3 multi\n4 multi\nmulti\nline",
+          lines: 2
+        });
+
+        win.add(sv);
+        sv.add(tf1);
+        sv.add(tf2);
+        sv.add(tf3);
+        sv.add(tf4);
+        sv.add(textField1);
+        sv.add(lbl1);
+        sv.add(lbl2);
+        sv.add(lbl3);
+        sv.add(lbl4);
+        win.open();
+        ```
 
 * [TIMOB-26427](https://jira.appcelerator.org/browse/TIMOB-26427) - Android: Add "safeAreaPadding" property to Ti.UI.Window
 
@@ -412,59 +289,40 @@ As of this release, Titanium SDK 7.5.x will not be supported six months from 7.5
 
     * Implemented WebView.onlink callback
 
-    * `var` `window = Ti.UI.createWindow(),`
-
-        `webView = Ti.UI.createWebView({`
-
-        `url:` `'https://en.wikipedia.org/wiki/Portable_Document_Format'``,`
-
-        `onlink:` `function` `(e) {`
-
-        `if` `(e.url.endsWith(``'.pdf'``)) {`
-
-        `alert(``'PDF: '` `+ e.url);`
-
-        `return`  `false``;`
-
-        `}`
-
-        `return`  `true``;`
-
-        `}`
-
-        `});`
-
-        `window.add(webView);`
-
-        `window.open();`
+    * ```javascript
+        var window = Ti.UI.createWindow(),
+            webView = Ti.UI.createWebView({
+                url: 'https://en.wikipedia.org/wiki/Portable_Document_Format',
+                onlink: function (e) {
+                    if (e.url.endsWith('.pdf')) {
+                        alert('PDF: ' + e.url);
+                        return false;
+                    }
+                    return true;
+                }
+            });
+        window.add(webView);
+        window.open();
+        ```
 
 * [TIMOB-25881](https://jira.appcelerator.org/browse/TIMOB-25881) - Windows: Implement WebView.blacklistedURLs
 
     * Implement WebView.blacklistedURLs
 
-    * `var` `win = Titanium.UI.createWindow();`
-
-        `var` `webview = Titanium.UI.createWebView({`
-
-        `blacklistedURLs: [``'http://www.appcelerator.com/'``]`
-
-        `});`
-
-        `win.addEventListener(``'open'``,` `function` `() {`
-
-        `webview.url =` `'http://www.appcelerator.com/'``;`
-
-        `});`
-
-        `webview.addEventListener(``'blacklisturl'``,` `function` `(e) {`
-
-        `alert(``'WebView blocked loading '` `+ e.url);`
-
-        `});`
-
-        `win.add(webview);`
-
-        `win.open();`
+    * ```javascript
+        var win = Titanium.UI.createWindow();
+        var webview = Titanium.UI.createWebView({
+            blacklistedURLs: ['http://www.appcelerator.com/']
+        });
+        win.addEventListener('open', function () {
+            webview.url = 'http://www.appcelerator.com/';
+        });
+        webview.addEventListener('blacklisturl', function (e) {
+            alert('WebView blocked loading ' + e.url);
+        });
+        win.add(webview);
+        win.open();
+        ```
 
 * [TIMOB-26078](https://jira.appcelerator.org/browse/TIMOB-26078) - Windows: Remove Ti.UI.currentWindow
 
@@ -480,39 +338,30 @@ As of this release, Titanium SDK 7.5.x will not be supported six months from 7.5
 
     * Implemented feature that lets the user select which language to use at runtime
 
-    * est-Setup (requires a hello\_world language file in i18n/de and i18n/en)
+    * *est-Setup (requires a hello\_world language file in i18n/de and i18n/en)*
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: '#fff'
+         });
 
-        `backgroundColor:` `'#fff'`
+         var label = Ti.UI.createLabel({
+             text: 'Current Locale: ' + Ti.Locale.currentLanguage + ' (' + L('hello_world') + ')',
+             top: 100
+         })
 
-        `});`
+         var btn = Ti.UI.createButton({
+           title: 'Change to German'
+         });
 
-        `var` `label = Ti.UI.createLabel({`
+         btn.addEventListener('click', function() {
+           Ti.Locale.setLanguage('de');
+         });
 
-        `text:` `'Current Locale: '` `+ Ti.Locale.currentLanguage +` `' ('` `+ L(``'hello_world'``) +` `')'``,`
-
-        `top: 100`
-
-        `})`
-
-        `var` `btn = Ti.UI.createButton({`
-
-        `title:` `'Change to German'`
-
-        `});`
-
-        `btn.addEventListener(``'click'``,` `function``() {`
-
-        `Ti.Locale.setLanguage(``'de'``);`
-
-        `});`
-
-        `win.add(btn);`
-
-        `win.add(label);`
-
-        `win.open();`
+         win.add(btn);
+         win.add(label);
+         win.open();
+        ```
 
 * [TIMOB-25048](https://jira.appcelerator.org/browse/TIMOB-25048) - TiAPI: Android/iOS "ApplicationShortcuts" parity
 
@@ -526,25 +375,22 @@ As of this release, Titanium SDK 7.5.x will not be supported six months from 7.5
 
     * Added support for console.timeLog
 
-    * `console.time(``'mytimer'``);` `// Start timer`
-
-        `console.timeLog(``'mytimer'``);` `// Log time taken so far`
-
-        `console.timeLog(``'mytimer'``,` `'with'``,` `'some'``,` `'extra'``,` `'info'``);` `// Log time taken with extra logging`
-
-        `console.timeLog(``'mytimer'``, [` `'a'``,` `'b'``,` `'c'` `], { objects:` `true` `});` `// Should handle Arrays and Objects`
-
-        `console.timeEnd(``'mytimer'``);`
+    * ```
+        console.time('mytimer'); // Start timer
+        console.timeLog('mytimer'); // Log time taken so far
+        console.timeLog('mytimer', 'with', 'some', 'extra', 'info'); // Log time taken with extra logging
+        console.timeLog('mytimer', [ 'a', 'b', 'c' ], { objects: true }); // Should handle Arrays and Objects
+        console.timeEnd('mytimer');
+        ```
 
     * Responds with
 
-        `[INFO] mytimer: 1ms`
-
-        `[INFO] mytimer: 2ms with some extra info`
-
-        `[INFO] mytimer: 3ms [``"a"``,``"b"``,``"c"``] {``"objects"``:``true``}`
-
-        `[INFO] mytimer: 3ms`
+        ```
+        [INFO]  mytimer: 1ms
+        [INFO]  mytimer: 2ms with some extra info
+        [INFO]  mytimer: 3ms ["a","b","c"] {"objects":true}
+        [INFO]  mytimer: 3ms
+        ```
 
 ### Community credits
 
@@ -894,29 +740,23 @@ As of this release, Titanium SDK 7.5.x will not be supported six months from 7.5
 
     * Implemented missing Titanium.App events
 
-    * `Ti.App.addEventListener(``'resume'``, () => {`
+    * ```
+        Ti.App.addEventListener('resume', () => {
+            Ti.API.info('RESUME');
+        });
 
-        `Ti.API.info(``'RESUME'``);`
+        Ti.App.addEventListener('pause', () => {
+            Ti.API.info('PAUSE');
+        });
 
-        `});`
+        Ti.App.addEventListener('resumed', () => {
+            Ti.API.info('RESUMED');
+        });
 
-        `Ti.App.addEventListener(``'pause'``, () => {`
-
-        `Ti.API.info(``'PAUSE'``);`
-
-        `});`
-
-        `Ti.App.addEventListener(``'resumed'``, () => {`
-
-        `Ti.API.info(``'RESUMED'``);`
-
-        `});`
-
-        `Ti.App.addEventListener(``'paused'``, () => {`
-
-        `Ti.API.info(``'PAUSED'``);`
-
-        `});`
+        Ti.App.addEventListener('paused', () => {
+            Ti.API.info('PAUSED');
+        });
+        ```
 
 * [TIMOB-26435](https://jira.appcelerator.org/browse/TIMOB-26435) - Android: Update gradle to support JDK 11
 
@@ -934,47 +774,31 @@ As of this release, Titanium SDK 7.5.x will not be supported six months from 7.5
 
     * Added support for paragraph styles to AttributedString
 
-    * `var` `win = Ti.UI.createWindow({`
+    * ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: '#fff'
+        });
+        var label = Ti.UI.createLabel();
+        var str = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dolor consequat turpis pharetra laoreet vitae a sapien. Aliquam erat volutpat. Nulla sit amet tellus sapien, a pulvinar metus. Suspendisse risus elit, dictum id molestie ac, ullamcorper id dui. Vivamus dapibus, eros nec sodales semper, sem dui semper eros, id condimentum quam tellus at ligula. Ut justo magna, tempor et vestibulum id, tincidunt sit amet quam. Maecenas dictum metus vel diam blandit facilisis. Ut tincidunt nibh non ligula sagittis nec tincidunt augue vehicula. Suspendisse sem dui, ornare in condimentum ut, convallis ut quam. Proin pharetra augue sed tortor aliquam iaculis. Etiam non erat lectus. In ac metus massa, quis dictum metus. Quisque faucibus quam non leo fringilla sit amet mattis mauris dictum. Duis viverra ipsum blandit dolor congue sed adipiscing tortor porta. Nullam malesuada felis ut dolor dignissim faucibus.";
 
-        `backgroundColor:` `'#fff'`
+        label.attributedString = Ti.UI.createAttributedString({
+            text: str,
+            attributes: [{
+                type: Ti.UI.ATTRIBUTE_PARAGRAPH_STYLE,
+                value: {
+                    alignment: Ti.UI.TEXT_ALIGNMENT_JUSTIFY,
+                    minimumLineHeight: 3,
+                    headIndent: 5,
+                    lineSpacing: 5,
+                    lineBreakMode: Ti.UI.ATTRIBUTE_LINE_BREAK_BY_WORD_WRAPPING,
+                },
+                range: [0,str.length]
+            }]
+        });
 
-        `});`
-
-        `var` `label = Ti.UI.createLabel();`
-
-        `var` `str =` `"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dolor consequat turpis pharetra laoreet vitae a sapien. Aliquam erat volutpat. Nulla sit amet tellus sapien, a pulvinar metus. Suspendisse risus elit, dictum id molestie ac, ullamcorper id dui. Vivamus dapibus, eros nec sodales semper, sem dui semper eros, id condimentum quam tellus at ligula. Ut justo magna, tempor et vestibulum id, tincidunt sit amet quam. Maecenas dictum metus vel diam blandit facilisis. Ut tincidunt nibh non ligula sagittis nec tincidunt augue vehicula. Suspendisse sem dui, ornare in condimentum ut, convallis ut quam. Proin pharetra augue sed tortor aliquam iaculis. Etiam non erat lectus. In ac metus massa, quis dictum metus. Quisque faucibus quam non leo fringilla sit amet mattis mauris dictum. Duis viverra ipsum blandit dolor congue sed adipiscing tortor porta. Nullam malesuada felis ut dolor dignissim faucibus."``;`
-
-        `label.attributedString = Ti.UI.createAttributedString({`
-
-        `text: str,`
-
-        `attributes: [{`
-
-        `type: Ti.UI.ATTRIBUTE_PARAGRAPH_STYLE,`
-
-        `value: {`
-
-        `alignment: Ti.UI.TEXT_ALIGNMENT_JUSTIFY,`
-
-        `minimumLineHeight: 3,`
-
-        `headIndent: 5,`
-
-        `lineSpacing: 5,`
-
-        `lineBreakMode: Ti.UI.ATTRIBUTE_LINE_BREAK_BY_WORD_WRAPPING,`
-
-        `},`
-
-        `range: [0,str.length]`
-
-        `}]`
-
-        `});`
-
-        `win.add(label);`
-
-        `win.open();`
+        win.add(label);
+        win.open();
+        ```
 
 * [TIMOB-24909](https://jira.appcelerator.org/browse/TIMOB-24909) - iOS: Move Ti.Media.AudioPlayer to AVPlayer internally, remove external library-dependency
 
@@ -984,65 +808,46 @@ As of this release, Titanium SDK 7.5.x will not be supported six months from 7.5
 
     * Added ability to hide back button on NavigationWindow
 
-    * `var` `win2 = Titanium.UI.createWindow({`
+    * ```javascript
+        var win2 = Titanium.UI.createWindow({
+            backgroundColor: 'red',
+            title: 'Red Window'
+        });
 
-        `backgroundColor:` `'red'``,`
+        var win1 = Titanium.UI.iOS.createNavigationWindow({ window: win2 });
 
-        `title:` `'Red Window'`
+        var win3 = Titanium.UI.createWindow({
+            backgroundColor: 'blue',
+            title: 'Blue Window'
+        });
 
-        `});`
+        var button = Titanium.UI.createButton({ title: 'Open Blue Window' });
+        button.addEventListener('click', function(){
+            win1.openWindow(win3, {animated:true});
+        });
 
-        `var` `win1 = Titanium.UI.iOS.createNavigationWindow({ window: win2 });`
+        win2.add(button);
+        var button2 = Titanium.UI.createButton({ title: 'Open Gray Window(Back Button Hidden)' });
+        button2.addEventListener('click', function(){
+          win1.openWindow(win4, {animated:true});
+        });
 
-        `var` `win3 = Titanium.UI.createWindow({`
+        win3.add(button2);
+        win1.open();
 
-        `backgroundColor:` `'blue'``,`
+        var win4 = Titanium.UI.createWindow({
+            backgroundColor: 'gray',
+            title: 'Gray Window',
+            hidesBackButton: true
+        });
 
-        `title:` `'Blue Window'`
+        var button4 = Titanium.UI.createButton({ title: 'Close Gray Window' });
+        win4.add(button4);
 
-        `});`
-
-        `var` `button = Titanium.UI.createButton({ title:` `'Open Blue Window'` `});`
-
-        `button.addEventListener(``'click'``,` `function``(){`
-
-        `win1.openWindow(win3, {animated:``true``});`
-
-        `});`
-
-        `win2.add(button);`
-
-        `var` `button2 = Titanium.UI.createButton({ title:` `'Open Gray Window(Back Button Hidden)'` `});`
-
-        `button2.addEventListener(``'click'``,` `function``(){`
-
-        `win1.openWindow(win4, {animated:``true``});`
-
-        `});`
-
-        `win3.add(button2);`
-
-        `win1.open();`
-
-        `var` `win4 = Titanium.UI.createWindow({`
-
-        `backgroundColor:` `'gray'``,`
-
-        `title:` `'Gray Window'``,`
-
-        `hidesBackButton:` `true`
-
-        `});`
-
-        `var` `button4 = Titanium.UI.createButton({ title:` `'Close Gray Window'` `});`
-
-        `win4.add(button4);`
-
-        `button4.addEventListener(``'click'``,` `function``(){`
-
-        `win1.closeWindow(win4, {animated:``false``});`
-
-        `});`
+        button4.addEventListener('click', function(){
+            win1.closeWindow(win4, {animated:false});
+        });
+        ```
 
 * [TIMOB-25879](https://jira.appcelerator.org/browse/TIMOB-25879) - iOS: Create modules in "dist" directory (Parity with Android)
 
@@ -1052,41 +857,26 @@ As of this release, Titanium SDK 7.5.x will not be supported six months from 7.5
 
     * Parity: moved navigationWindow API to cross platform Ti.UI namespace
 
-    * `var` `win = Ti.UI.createWindow({ backgroundColor:` `'#fff'` `});`
-
-        `var` `newNavWindow = Ti.UI.createNavigationWindow({ window: win })`
-
-        `Ti.API.warn(``'API (new) = '` `+ newNavWindow.apiName);`
-
-        `var` `btn = Ti.UI.createButton({ title:` `'Open Modal Window'` `});`
-
-        `btn.addEventListener(``'click'``,` `function``() {`
-
-        `var` `button = Ti.UI.createButton({ title:` `'Close'` `});`
-
-        `var` `modalWindow = Ti.UI.createWindow({`
-
-        `title:` `'Modal Window'``,`
-
-        `backgroundColor:` `'red'``,`
-
-        `rightNavButton: button`
-
-        `});`
-
-        `var` `oldNavWindow = Ti.UI.iOS.createNavigationWindow({ window: modalWindow });`
-
-        `Ti.API.warn(``'API (old) = '` `+ oldNavWindow.apiName);`
-
-        `button.addEventListener(``'click'``,` `function``() { oldNavWindow.close(); });`
-
-        `oldNavWindow.open({ modal:` `true` `});`
-
-        `});`
-
-        `win.add(btn);`
-
-        `newNavWindow.open();`
+    * ```javascript
+        var win = Ti.UI.createWindow({ backgroundColor: '#fff' });
+        var newNavWindow = Ti.UI.createNavigationWindow({ window: win })
+        Ti.API.warn('API (new) = ' + newNavWindow.apiName);
+        var btn = Ti.UI.createButton({ title: 'Open Modal Window' });
+        btn.addEventListener('click', function() {
+            var button = Ti.UI.createButton({ title: 'Close' });
+            var modalWindow = Ti.UI.createWindow({
+                title: 'Modal Window',
+                backgroundColor: 'red',
+                rightNavButton: button
+            });
+            var oldNavWindow = Ti.UI.iOS.createNavigationWindow({ window: modalWindow });
+            Ti.API.warn('API (old) = ' + oldNavWindow.apiName);
+            button.addEventListener('click', function() { oldNavWindow.close(); });
+            oldNavWindow.open({ modal: true });
+        });
+        win.add(btn);
+        newNavWindow.open();
+        ```
 
 * [TIMOB-26073](https://jira.appcelerator.org/browse/TIMOB-26073) - iOS: Implement support for custom TextField backgroundColor in SearchBar
 

@@ -50,9 +50,11 @@ You have two ways to use Launch Files: with our builtin Storyboard or your own.
 
 Both need to be enabled in the <ios> section of your [tiapp.xml](https://github.com/appcelerator-developer-relations/appc-sample-ti520/blob/master/tiapp.xml#L28):
 
-tiapp.xml
+*tiapp.xml*
 
-`<``enable``-launch-screen-storyboard>true</``enable``-launch-screen-storyboard>`
+```xml
+<enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
+```
 
 The templates for new Titanium projects have this property enabled by default.
 
@@ -80,9 +82,11 @@ You can generate these images with TiCons [Web](http://ticons.fokkezb.nl/) or [C
 
 By default the background color is white. You can set a different color via the <ios> section of your [tiapp.xml](https://github.com/appcelerator-developer-relations/appc-sample-ti520/blob/master/tiapp.xml#L31):
 
-tiapp.xml
+*tiapp.xml*
 
-`<``default``-background-color>#C7172C</``default``-background-color>`
+```xml
+<default-background-color>#C7172C</default-background-color>
+```
 
 This will also change the background color of your app between after the launch files is dismissed and before a view (with a solid background color) is opened, or [Ti.UI.backgroundColor](#!/api/Titanium.UI-property-backgroundColor) is set. The sample [opens with a 2s delay](https://github.com/appcelerator-developer-relations/appc-sample-ti520/blob/master/app/controllers/index.js#L23-L30) so you can see this better.
 

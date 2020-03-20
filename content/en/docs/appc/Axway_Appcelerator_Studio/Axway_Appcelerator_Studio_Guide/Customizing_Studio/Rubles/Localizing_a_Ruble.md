@@ -32,29 +32,30 @@ Inside the ruble code, to allow for translations, we externalize the string. To 
 
 For example, we have the following command defined:
 
-commands/example.rb
+*commands/example.rb*
 
-`command` `"Example"`  `do` `|c|`
-
-`...`
-
-`end`
+```ruby
+command "Example" do |c|
+  ...
+end
+```
 
 We would replace the "Example" string with a new key representing the string, and a call to the **t** translate method. That string gets moved into the English translation pack in **config/locales/en.yml**, as a key-pair. The key is the symbol we chose to replace the string, and the value is the string we replaced.
 
-commands/example.rb
+*commands/example.rb*
 
-`command t(:example)` `do` `|c|`
+```ruby
+command t(:example) do |c|
+  ...
+end
+```
 
-`...`
+*config/locales/en.yml*
 
-`end`
-
-config/locales/en.yml
-
-`en:`
-
-`example:` `"Example"`
+```yml
+en:
+  example: "Example"
+```
 
 A quick note here, the root "en:" key in the translation pack groups the indented key-value pairs as belonging to the **en** (or English) language. Simply naming the file **en.yml** will not associate the enclosed strings as being English.
 
@@ -62,31 +63,31 @@ A quick note here, the root "en:" key in the translation pack groups the indente
 
 If the string is not simply a static value but inserts values inside, the full signature form of the **t(key, variables = {})** method should be used.
 
-commands/variables.rb
+*commands/variables.rb*
 
-`command` `"Power of #{number}"`  `do` `|c|`
-
-`...`
-
-`end`
+```ruby
+command "Power of #{number}" do |c|
+  ...
+end
+```
 
 We would replace the "Power of #{number}" string with a new key representing the string, and a call to the **t** translate method. That string gets moved into the English translation pack in **config/locales/en.yml**, as a key-pair. The key is the symbol we chose to replace the string, and the value is the string we replaced. Note that the string interpolation gets changed to a **{variable\_name}** syntax, and the key in the argument hash must match the **variable\_name**.
 
-commands/variables.rb
+*commands/variables.rb*
 
-`command t(:complicated, :number => x)` `do` `|c|`
+```ruby
+command t(:complicated, :number => x) do |c|
+  ...
+end
+```
 
-`...`
+*config/locales/en.yml*
 
-`end`
-
-config/locales/en.yml
-
-`en:`
-
-`example:` `"Example"`
-
-`complicated:` `"Power of {number}"`
+```yml
+en:
+  example: "Example"
+  complicated: "Power of {number}"
+```
 
 ## Translation lookups
 

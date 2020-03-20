@@ -32,17 +32,19 @@ Your Node application can optionally handle session data itself. For more inform
 
 To use the module within your Node application, add the arrowdb module to the dependencies section of your package.json file, as follows:
 
-`"dependencies"``: {`
-
-`"arrowdb"``:` `">=1.0.6"`
-
-`}`
+```
+"dependencies": {
+  "arrowdb": ">=1.0.6"
+}
+```
 
 You can then run npm install from your application folder to install the module and its dependencies.
 
 You can also install the module directly using npm:
 
-`[sudo] npm install arrowdb`
+```bash
+[sudo] npm install arrowdb
+```
 
 As of this writing, the latest version is **1.0.6**.
 
@@ -52,11 +54,11 @@ As of this writing, the latest version is **1.0.6**.
 
 To use the MBS APIs, load the arrowdb module, then create an instance with the new constructor, passing it your MBS application key. Invoke API calls on the instance.
 
-`var` `ArrowDB = require(``'arrowdb'``),`
-
-`arrowDBApp =` `new` `ArrowDB(``'<App Key>'``);`
-
-`arrowDBApp.usersLogin(params, callback);`
+```javascript
+var ArrowDB = require('arrowdb'),
+    arrowDBApp = new ArrowDB('<App Key>');
+arrowDBApp.usersLogin(params, callback);
+```
 
 Invoking the API calls on the instance only needs to be done once, typically in the main app.js script file.
 
@@ -70,17 +72,14 @@ You may optionally pass the constructor an object as the second argument. You ma
 
 For example:
 
-`var` `ArrowDB = require(``'arrowdb'``),`
-
-`arrowDBApp =` `new` `ArrowDB(``'<App Key>'``, {`
-
-`apiEntryPoint:` `'https://api.cloud.appcelerator.com'`
-
-`autoSessionManagement:` `false``,`
-
-`responseJsonDepth: 3`
-
-`});`
+```javascript
+var ArrowDB = require('arrowdb'),
+    arrowDBApp = new ArrowDB('<App Key>', {
+        apiEntryPoint: 'https://api.cloud.appcelerator.com'
+        autoSessionManagement: false,
+        responseJsonDepth: 3
+    });
+```
 
 ### Standard Mobile Back Services APIs
 
@@ -110,43 +109,27 @@ To access the results from the returned object, use the object's body property t
 
 The following example uses the standard MBS APIs to log in to a user. It defines a custom login() function that takes the username and password properties from the HTTP request body, and in turn, pass those values as input to the User.login() method. On successful login, the user's information is displayed in the console, or, in case of an error, the error response is displayed.
 
-`var` `ArrowDB = require(``'arrowdb'``),`
-
-`arrowDBApp =` `new` `ArrowDB(``'<App Key>'``);`
-
-`function` `login(req, res) {`
-
-`var` `data = {`
-
-`login: req.body.username,`
-
-`password: req.body.password,`
-
-`// the req and res parameters are optional`
-
-`req: req,`
-
-`res: res`
-
-`};`
-
-`arrowDBApp.usersLogin(data,` `function``(err, result) {`
-
-`if` `(err) {`
-
-`console.error(``"Login error:"` `+ (err.message || result.reason));`
-
-`}` `else` `{`
-
-`console.log(``"Login successful!"``);`
-
-`console.log(``"UserInfo: "` `+ JSON.stringify(result.body.response.users[0]));`
-
-`}`
-
-`});`
-
-`}`
+```javascript
+var ArrowDB = require('arrowdb'),
+    arrowDBApp = new ArrowDB('<App Key>');
+function login(req, res) {
+    var data = {
+        login: req.body.username,
+        password: req.body.password,
+        // the req and res parameters are optional
+        req: req,
+        res: res
+    };
+    arrowDBApp.usersLogin(data, function(err, result) {
+        if (err) {
+            console.error("Login error:" + (err.message || result.reason));
+        } else {
+            console.log("Login successful!");
+            console.log("UserInfo: " + JSON.stringify(result.body.response.users[0]));
+        }
+    });
+}
+```
 
 #### Photo or file upload example
 
@@ -154,89 +137,51 @@ The following example uses the standard MBS APIs to upload a photo or a file. It
 
 For increased file security, it is recommended that files be encrypted before uploading them.
 
-`function` `upload(req, res) {`
+```javascript
+function upload(req, res) {
+    console.log(req.body.fileName);
+    //console.log(req.body.fileObject);
 
-`console.log(req.body.fileName);`
-
-`//console.log(req.body.fileObject);`
-
-`// Create buffer for string and readable stream`
-
-`var` `buffer =` `new` `Buffer(req.body.fileObject);`
-
-`var` `base64String = buffer.toString(``"base64"``);`
-
-`var` `bufferStream =` `new` `stream.PassThrough();`
-
-`bufferStream.end(buffer);`
-
-`// Setup and login to ArrowDB`
-
-`var` `ArrowDB = require(``'arrowdb'``),`
-
-`arrowDBApp =` `new` `ArrowDB(``'<App Key>'``);`
-
-`arrowDBApp.usersLogin({`
-
-`login:` `'<login>'``,`
-
-`password:` `'<password>'`
-
-`},` `function``(err, result) {`
-
-`if` `(err) {`
-
-`console.error(err.message);`
-
-`}` `else` `{`
-
-`arrowDBApp.sessionCookieString = result.cookieString;`
-
-`sessionID = result.body.meta.session_id;`
-
-`bufferStream.end(base64String);`
-
-`var` `fileInfo = {`
-
-`value: bufferStream,`
-
-`options: {`
-
-`filename: req.body.fileName,`
-
-`knownLength: req.body.fileObject.length`
-
-`}`
-
-`}`
-
-`// On login success create the file`
-
-`arrowDBApp.filesCreate({`
-
-`name: req.body.fileName,`
-
-`file: fileInfo`
-
-`},` `function``(err, result) {`
-
-`if` `(err) {`
-
-`console.error(JSON.stringify(err,` `null``,` `"\t"``));`
-
-`}` `else` `{`
-
-`console.log(result.body.response.files[0]);`
-
-`}`
-
-`});`
-
-`}`
-
-`});`
-
-`}`
+    // Create buffer for string and readable stream
+    var buffer = new Buffer(req.body.fileObject);
+    var base64String = buffer.toString("base64");
+    var bufferStream = new stream.PassThrough();
+    bufferStream.end(buffer);
+    // Setup and login to ArrowDB
+    var ArrowDB = require('arrowdb'),
+    arrowDBApp = new ArrowDB('<App Key>');
+    arrowDBApp.usersLogin({
+        login: '<login>',
+        password: '<password>'
+    }, function(err, result) {
+        if (err) {
+            console.error(err.message);
+        } else {
+            arrowDBApp.sessionCookieString = result.cookieString;
+            sessionID = result.body.meta.session_id;
+            bufferStream.end(base64String);
+            var fileInfo = {
+                value: bufferStream,
+                options: {
+                    filename: req.body.fileName,
+                    knownLength: req.body.fileObject.length
+                }
+            }
+            // On login success create the file
+            arrowDBApp.filesCreate({
+                name: req.body.fileName,
+                file: fileInfo
+            }, function(err, result) {
+                if (err) {
+                    console.error(JSON.stringify(err, null, "\t"));
+                } else {
+                    console.log(result.body.response.files[0]);
+                }
+            });
+        }
+    });
+}
+```
 
 ### Generic Mobile Back Services APIs
 
@@ -260,37 +205,24 @@ Each method is passed the following parameters:
 
 Below is a complete REST example that is functionally equivalent to the previous version that used the standard MBS APIs.
 
-`var` `ArrowDB = require(``'arrowdb'``),`
-
-`arrowDBApp =` `new` `ArrowDB(``'<App Key>'``);`
-
-`function` `login(req, res) {`
-
-`var` `data = {`
-
-`login: req.body.username,`
-
-`password: req.body.password`
-
-`};`
-
-`arrowDBApp.post(``'/v1/users/login.json'``, data,` `function``(err, result) {`
-
-`if` `(err) {`
-
-`console.error(``"Login error:"` `+ (err.message || result.reason));`
-
-`}` `else` `{`
-
-`console.log(``"Login successful!"``);`
-
-`console.log(``"UserInfo: "` `+ JSON.stringify(result.body.response.users[0]));`
-
-`}`
-
-`});`
-
-`}`
+```javascript
+var ArrowDB = require('arrowdb'),
+    arrowDBApp = new ArrowDB('<App Key>');
+function login(req, res) {
+    var data = {
+        login: req.body.username,
+        password: req.body.password
+    };
+    arrowDBApp.post('/v1/users/login.json', data, function(err, result) {
+        if (err) {
+            console.error("Login error:" + (err.message || result.reason));
+        } else {
+            console.log("Login successful!");
+            console.log("UserInfo: " + JSON.stringify(result.body.response.users[0]));
+        }
+    });
+}
+```
 
 ## User login session management
 
@@ -314,37 +246,24 @@ To manually manage cookie sessions, disable automatic session management by pass
 
 The example below retrieves and sets the cookie string:
 
-`var` `ArrowDB = require(``'arrowdb'``),`
-
-`arrowDBApp =` `new` `ArrowDB(``'<App Key>'``, {autoSessionManagement:` `false``});`
-
-`function` `login(req, res) {`
-
-`var` `data = {`
-
-`login: req.body.username,`
-
-`password: req.body.password`
-
-`};`
-
-`arrowDBApp.post(``'/v1/users/login.json'``, data,` `function``(err, result){`
-
-`if` `(err) {`
-
-`console.error(``"Login error:"` `+ (err.message || result.reason));`
-
-`}` `else` `{`
-
-`console.log(``"Login successful!"``);`
-
-`arrowDBApp.sessionCookieString = result.cookieString;`
-
-`}`
-
-`});`
-
-`}`
+```javascript
+var ArrowDB = require('arrowdb'),
+    arrowDBApp = new ArrowDB('<App Key>', {autoSessionManagement: false});
+function login(req, res) {
+    var data = {
+        login: req.body.username,
+        password: req.body.password
+    };
+    arrowDBApp.post('/v1/users/login.json', data, function(err, result){
+        if (err) {
+            console.error("Login error:" + (err.message || result.reason));
+        } else {
+            console.log("Login successful!");
+            arrowDBApp.sessionCookieString = result.cookieString;
+        }
+    });
+}
+```
 
 **Important**
 
@@ -356,38 +275,27 @@ The example below retrieves and sets the cookie string:
 
 An MBS user login session is identified by a session\_id parameter in the request or response data. When logging in to a user account or creating a new user, the session\_id is returned in the response data of the API calls. It can be retrieved from the response data by using the body.meta.session\_id property of the callback's result object. For example:
 
-`function` `loginUser(req, res) {`
-
-`arrowDBApp.usersLogin({`
-
-`login:` `'test'``,`
-
-`password:` `'test'`
-
-`},` `function``(err, result) {`
-
-`console.log(``'Login session is: '` `+ result.body.meta.session_id);`
-
-`});`
-
-`}`
+```javascript
+function loginUser(req, res) {
+    arrowDBApp.usersLogin({
+        login: 'test',
+        password: 'test'
+    }, function(err, result) {
+        console.log('Login session is: ' + result.body.meta.session_id);
+    });
+}
+```
 
 To reuse this session for making other API calls, pass it in as part of the request parameters (session\_id: \_stored\_session\_id\_). This gives you full control of the sessions. You can store a session and reuse it (as long as the session is not expired on the MBS server) later for making API calls. For example:
 
-`function` `createPlace(req, res) {`
-
-`arrowDBApp.placesCreate({`
-
-`name:` `'test'``,`
-
-`city:` `'city_name'``,`
-
-`session_id:` `'<stored session_id>'`
-
-`},` `function``(err, result) {`
-
-`console.log(``'New place created!'``);`
-
-`});`
-
-`}`
+```javascript
+function createPlace(req, res) {
+    arrowDBApp.placesCreate({
+        name: 'test',
+        city: 'city_name',
+        session_id: '<stored session_id>'
+    }, function(err, result) {
+        console.log('New place created!');
+    });
+}
+```

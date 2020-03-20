@@ -50,51 +50,45 @@ We use the term "scope" a bit loosely here, as the scopes don't quite match the 
 
 3. Edit the file to add a line such as:
 
-    `com.aptana.core/debug/logger=``true`
+    ```
+    com.aptana.core/debug/logger=true
+    ```
 
 4. The initial default value of true/false is not relevant here--when enabling a scope, we default to true
 
 5. Create a new Interface of the form I\*DebugScopes in the main package of your plugin, where \* is derived from the name of the plugin. See [here](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Source_Code_Conventions/) for naming convention:
 
-    `package` `com.aptana.core;`
-
-    `/**`
-
-    `* A interface to capture the various scopes available during debugging. These need to match the items in the .options`
-
-    `* file at the root of the plugin`
-
-    `*`
-
-    `* @author Ingo Muschenetz`
-
-    `*/`
-
-    `public`  `interface` `ICoreDebugScopes`
-
-    `{`
-
-    `/**`
-
-    `* Items related to the logging process`
-
-    `*/`
-
-    `String LOGGER = CorePlugin.PLUGIN_ID +` `"/debug/logger"``;` `//$NON-NLS-1$`
-
-    `}`
+    ```
+    package com.aptana.core;
+    /**
+     * A interface to capture the various scopes available during debugging. These need to match the items in the .options
+     * file at the root of the plugin
+     *
+     * @author Ingo Muschenetz
+     */
+    public interface ICoreDebugScopes
+    {
+      /**
+       * Items related to the logging process
+       */
+      String LOGGER = CorePlugin.PLUGIN_ID + "/debug/logger"; //$NON-NLS-1$
+    }
+    ```
 
 ### Using a Scope
 
 In your code, call the scope above by using a log method of the form:
 
-`IdeLog.logInfo(CorePlugin.getDefault(),` `"My info message"``, ICoreDebugScopes.LOGGER);`
+```
+IdeLog.logInfo(CorePlugin.getDefault(), "My info message", ICoreDebugScopes.LOGGER);
+```
 
 If you need to test if logging is enabled before compiling an errors sting (say there are performance considerations involved), you can test using IdeLog.isOutputEnabled(). An example:
 
-`IdeLog.isOutputEnabled(ScriptingActivator.getDefault(), IdeLog.StatusLevel.INFO,`
-
-`ICoreDebugScopes.SHOW_ELEMENT_REGISTRATION)`
+```
+IdeLog.isOutputEnabled(ScriptingActivator.getDefault(), IdeLog.StatusLevel.INFO,
+        ICoreDebugScopes.SHOW_ELEMENT_REGISTRATION)
+```
 
 There are also severity-specific versions, such as isInfoEnabled(), isWarningEnabled(), etc...
 

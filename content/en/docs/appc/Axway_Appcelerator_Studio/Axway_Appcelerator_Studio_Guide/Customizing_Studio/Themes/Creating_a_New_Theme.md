@@ -12,9 +12,11 @@ If you'd like to color something, which does not currently appear to be colored 
 
 1. Check the list of scopes at [Current Theme Scopes](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Themes/Current_Theme_Scopes/). It may well be that the current theme already has a rule defined for the scope in question. As an example:
 
-    `#a #b #c {`
+    ```
+    #a #b #c {
 
-    `}`
+    }
+    ```
 
     already had a rule in most themes named **CSS: Selectors #ID**, which references the list of IDs. Changing the color of that rule changes the colors in your document.
 

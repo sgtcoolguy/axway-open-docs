@@ -19,30 +19,20 @@ When mixed together, 'os' values override 'env' values, which override 'global' 
 
 Example of a configuration file:
 
-`{`
-
-`"global"``: {` `"foo"``:` `1` `},`
-
-`"env:development"``: {` `"foo"``:` `2` `},`
-
-`"env:test"``: {` `"foo"``:` `3` `},`
-
-`"env:production"``: {` `"foo"``:` `4` `},`
-
-`"os:ios env:production"``: {` `"foo"``:` `5` `},`
-
-`"os:ios env:development"``: {` `"foo"``:` `6` `},`
-
-`"os:ios env:test"``: {` `"foo"``:` `7` `},`
-
-`"os:android"``: {` `"foo"``:` `8` `},`
-
-`"dependencies"``: {`
-
-`"com.foo.widget"``:` `"1.0"`
-
-`}`
-
-`}`
+```
+{
+    "global": { "foo": 1 },
+    "env:development": { "foo": 2 },
+    "env:test": { "foo": 3 },
+    "env:production": { "foo": 4 },
+    "os:ios env:production": { "foo": 5 },
+    "os:ios env:development": { "foo": 6 },
+    "os:ios env:test": { "foo": 7 },
+    "os:android": { "foo": 8 },
+    "dependencies": {
+        "com.foo.widget": "1.0"
+    }
+}
+```
 
 In the above example, if the application is ran on the iPhone simulator and prints out 'foo' using Ti.API.info(Alloy.CFG.foo), it will return '6.'

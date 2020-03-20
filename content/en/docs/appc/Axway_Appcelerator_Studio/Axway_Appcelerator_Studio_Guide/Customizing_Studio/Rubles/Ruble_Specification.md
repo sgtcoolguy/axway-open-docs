@@ -205,11 +205,11 @@ Before we can discuss these mechanisms, we need to get some terminology out of t
 
 In it's simplest form, a bundle can be defined as follows:
 
-`# $APPLICATION_DIRECTORY/bundles/FunBundle.ruble/bundle.rb`
-
-`require` `'ruble'`
-
-`bundle`
+```
+# $APPLICATION_DIRECTORY/bundles/FunBundle.ruble/bundle.rb
+require 'ruble'
+bundle
+```
 
 Of course, this bundle is not of much use, but it is important to understand what this minimal example does. We see that the bundle directory is contained within the application bundles directory; therefore, this bundle has the lowest precedence as defined in _Bundle Loading_. Interpreting this will become clearer shortly. We also know that since the name of the bundle is derived from its bundle directory, the bundle's name is "FunBundle".
 
@@ -217,25 +217,19 @@ Of course, this bundle is not of much use, but it is important to understand wha
 
 In this next example, we flesh out our bundle with a little skeleton content as well as define a like-named bundle directory at higher precedence.
 
-`# $APPLICATION_DIRECTORY/bundles/FunBundle.ruble/bundle.rb`
+```
+# $APPLICATION_DIRECTORY/bundles/FunBundle.ruble/bundle.rb
+require 'ruble'
+bundle do |b|
+  command "A" { |cmd| ... }
+end
 
-`require` `'ruble'`
-
-`bundle` `do` `|b|`
-
-`command` `"A"` `{ |cmd| ... }`
-
-`end`
-
-`# $USER_DOCUMENT_DIRECTORY/bundles/FunBundle.ruble/bundle.rb`
-
-`require` `'ruble'`
-
-`bundle` `do` `|b|`
-
-`command` `"B"` `{ |cmd| ... }`
-
-`end`
+# $USER_DOCUMENT_DIRECTORY/bundles/FunBundle.ruble/bundle.rb
+require 'ruble'
+bundle do |b|
+  command "B" { |cmd| ... }
+end
+```
 
 We've added an "A" command to our application bundle. We've also defined a bundle with the same name, but this time within the user bundles directory. The user bundles directory has higher precedence than the application bundles directory. This means that our active FunBundle bundle will contain the "B" command only.
 
@@ -245,25 +239,19 @@ When two bundle directories have the same name, the bundle directory with higher
 
 In another scenario, you may be perfectly happy with the content of the application bundle, but you need to add another command to it.
 
-`# $APPLICATION_DIRECTORY/bundles/FunBundle.ruble/bundle.rb`
+```
+# $APPLICATION_DIRECTORY/bundles/FunBundle.ruble/bundle.rb
+require 'ruble'
+bundle do |b|
+  command "A" { |cmd| ... }
+end
 
-`require` `'ruble'`
-
-`bundle` `do` `|b|`
-
-`command` `"A"` `{ |cmd| ... }`
-
-`end`
-
-`# $USER_DOCUMENT_DIRECTORY/bundles/FunBundleExtension.ruble/bundle.rb`
-
-`require` `'ruble'`
-
-`bundle` `"FunBundle"`  `do` `|b|`
-
-`command` `"B"` `{ |cmd| ... }`
-
-`end`
+# $USER_DOCUMENT_DIRECTORY/bundles/FunBundleExtension.ruble/bundle.rb
+require 'ruble'
+bundle "FunBundle" do |b|
+  command "B" { |cmd| ... }
+end
+```
 
 This looks almost identical to the previous example; however, it has two very important differences. The first difference you may notice is that the bundle method now takes a string. This string changes this user bundle instance into a bundle reference.
 
@@ -275,25 +263,19 @@ The second difference is that we've changed the bundle directory name to "FunBun
 
 In our last scenario, perhaps you find that you are happy with the content of the application "FunBundle" bundle, but you want to change the behavior of one command. The following shows how you would go about that.
 
-`# $APPLICATION_DIRECTORY/bundles/FunBundle.ruble/bundle.rb`
+```
+# $APPLICATION_DIRECTORY/bundles/FunBundle.ruble/bundle.rb
+require 'ruble'
+bundle do |b|
+  command "A" { |cmd| ... }
+end
 
-`require` `'ruble'`
-
-`bundle` `do` `|b|`
-
-`command` `"A"` `{ |cmd| ... }`
-
-`end`
-
-`# $USER_DOCUMENT_DIRECTORY/bundles/MyFunBundleExtension.ruble/bundle.rb`
-
-`require` `'ruble'`
-
-`bundle` `"FunBundle"`  `do` `|b|`
-
-`command` `"A"` `{ |cmd| ... }`
-
-`end`
+# $USER_DOCUMENT_DIRECTORY/bundles/MyFunBundleExtension.ruble/bundle.rb
+require 'ruble'
+bundle "FunBundle" do |b|
+  command "A" { |cmd| ... }
+end
+```
 
 As you can see, we use the same mechanism we used to extend a bundle; however, this time since we are using the same name of a command that was defined in our target bundle, our active bundle only contains an "A" command, and that is the command that is defined in the user bundles directory.
 
@@ -333,19 +315,25 @@ A scope selector describes a pattern of scopes and is composed of dotted names, 
 
 #### Example - simple name selector
 
-`text`
+```
+text
+```
 
 A scope selector needs only to match the prefix of a name to be considered a match. In the above example, the selector will match "text", "text.html", "text.html.ruby"; however, it will not match "texts.physics". A prefix match must end at a dot within the scope or at the end of the scope itself.
 
 #### Example - dotted name selector
 
-`text.html`
+```
+text.html
+```
 
 A scope selector name may be extended to create a hierarchy. Each name is delimited by a period without spaces between the names and the periods. The same prefix rule, as described in "Simple Name Pattern", applies. For example, in the above snippet, the selector will match "text.html" and "text.html.ruby".
 
 #### Example - descendant selector
 
-`text.html source.ruby`
+```
+text.html source.ruby
+```
 
 A scope may be defined as a hierarchy of scopes. In this sense, scope selectors match against that hierarchy, much like CSS matches against the HTML DOM. In the above example, the selector will match when the editor's cursor is within Ruby code which is within HTML. The same matching rules described in the simple name pattern apply to each dotted name. For instance, the last example will match "text.html.ruby source.ruby.embedded.html" since "text.html" is a prefix of "text.html.ruby" and likewise "source.ruby" is a prefix of "source.ruby.embedded.html".
 
@@ -353,31 +341,41 @@ It is important to note that a descendant match can occur anywhere within scope,
 
 #### Example - union selector
 
-`text.html.ruby, text.html source.ruby`
+```
+text.html.ruby, text.html source.ruby
+```
 
 In this example, our selector defines a list of selectors to be used for matching. The comma serves as an OR operator. Specifically, this selector is saying match "text.html.ruby" OR "text.html source.ruby". All matching rules described previously apply; however, if an alternation fails, matching will restart using the next alternation. Matching ends when either an alternation returns success or once all alternations have been exhausted.
 
 #### Example - union selector 2
 
-`text.html.ruby | text.html source.ruby`
+```
+text.html.ruby | text.html source.ruby
+```
 
 The pipe operator behaves the same as the comma operator. The only difference between the two is in their precedence levels, with the pipe operator having lower precedence than the comma operator. This allows alternations to be expressed more naturally for those of you that are comfortable with C-like expressions.
 
 #### Example - intersection selector
 
-`text & source`
+```
+text & source
+```
 
 The ampersand or intersection operator matches only when the expressions on both sides of the operator are true. For example, the above "text & source" selector will match the "text.html source.ruby" since "text" and "ruby" both match according to the name selector rules.
 
 #### Example - grouping
 
-`source & (js | ruby)`
+```
+source & (js | ruby)
+```
 
 Parentheses can be used to clarify the argument of a selector or to group and override operator precedence levels. For example, in the above selector, the parentheses are used to group "js" and "ruby" as part of the intersection with "source". If the parentheses were removed, the effective precedence would be equivalent to (source & js) | (ruby).
 
 #### Example - negative lookahead
 
-`text.html - source.ruby`
+```
+text.html - source.ruby
+```
 
 Sometimes you want to match a scope unless it is being used within a child's scope. For instance, in the above selector, the negative lookahead operator, '-', is being used to select all "text.html" scopes that do not have a matching scope of "source.ruby" anywhere after it. If we had selector "a b - c", this would match "a b", "a b y", "x a b", "x a b y", but not "a b c", "x a b c", "x a b c y", nor "a b x y c". Notice in the last example that the lookahead extends to the end of the scope that is being matched and not just the next segment as with the descendant selector.
 
@@ -411,57 +409,45 @@ Commands are the fundamental building blocks of Bundles. A command has the follo
 
 Example command:
 
-`command` `"Documentation for Word"`  `do` `|cmd|`
+```
+command "Documentation for Word" do |cmd|
+  cmd.scope = "source.ruby.rails, text.html.ruby, text.haml"
 
-`cmd.scope =` `"source.ruby.rails, text.html.ruby, text.haml"`
+  cmd.key_binding = "Control+H"
+  cmd.key_binding.mac = "Command+H"
 
-`cmd.key_binding =` `"Control+H"`
+  cmd.input = [ :selection, :word ]
+  cmd.output = :show_as_html
 
-`cmd.key_binding.mac =` `"Command+H"`
-
-`cmd.input = [` `:selection``,` `:word` `]`
-
-`cmd.output =` `:show_as_html`
-
-`cmd.invoke` `do` `|context|`
-
-`url =` `"http://apidock.com/rails/search/quick?query="` `+` `CGI``.escape(context.input)`
-
-`context.browser.open url,` `:new_window` `=>` `true`
-
-`end`
-
-`end`
+  cmd.invoke do |context|
+    url = "http://apidock.com/rails/search/quick?query=" + CGI.escape(context.input)
+    context.browser.open url, :new_window => true
+  end
+end
+```
 
 ## Snippets
 
 Snippets are a specialized form of commands designed to make it easier to specify the behavior of tab triggers. Snippets have a name, a scope, a trigger, and an expansion. You can think of these two declarations as being equivalent:
 
-`snippet` `"My Snippet"`  `do` `|snip|`
+```
+snippet "My Snippet" do |snip|
+  snip.trigger = "foo"
+  snip.expansion = "my_super_snippet"
+end
 
-`snip.trigger =` `"foo"`
+command "My Snippet" do |cmd|
+  cmd.trigger = "foo"
+  cmd.expansion = "my_super_snippet"
 
-`snip.expansion =` `"my_super_snippet"`
+  cmd.input = :none
+  cmd.output = :insert_as_snippet
 
-`end`
-
-`command` `"My Snippet"`  `do` `|cmd|`
-
-`cmd.trigger =` `"foo"`
-
-`cmd.expansion =` `"my_super_snippet"`
-
-`cmd.input =` `:none`
-
-`cmd.output =` `:insert_as_snippet`
-
-`cmd.invoke` `do` `|context|`
-
-`context.output = cmd.expansion`
-
-`end`
-
-`end`
+  cmd.invoke do |context|
+    context.output = cmd.expansion
+  end
+end
+```
 
 Here are the properties specific to snippets. Note that the trigger is required, unlike the case for commands.
 
@@ -561,7 +547,9 @@ Bundles have metadata associated with them. The following properties are pre-def
 
 Additional properties can be accessed, though, simply by referring to them as though they already exist, for example:
 
-`bundle.foo =` `"bar"`
+```
+bundle.foo = "bar"
+```
 
 ### Menus
 
@@ -575,45 +563,31 @@ Menus also have a scope, which defines the contexts in which the entire menu is 
 
 The following is a real but extremely minimal bundle.rb file, which defines a 'Rails' menu, which in turn contains only a single 'Go To' submenu.
 
-`require` `'ruble'`
+```
+require 'ruble'
 
-`bundle` `do` `|bundle|`
+bundle do |bundle|
+  bundle.name = "Ruby on Rails"
+  bundle.author = "Many"
+  bundle.repository = "git://github.com/aptana/rails.ruble.git"
 
-`bundle.name =` `"Ruby on Rails"`
+  bundle.menu "Rails" do |rails_menu|
+    # this menu should be shown when any of the following scopes is active:
+    rails_menu.scope = [ "source.ruby", "project.rails" ]
 
-`bundle.author =` `"Many"`
-
-`bundle.repository =` `"git://github.com/aptana/rails.ruble.git"`
-
-`bundle.menu` `"Rails"`  `do` `|rails_menu|`
-
-`# this menu should be shown when any of the following scopes is active:`
-
-`rails_menu.scope = [` `"source.ruby"``,` `"project.rails"` `]`
-
-`rails_menu.menu` `"Go To"`  `do` `|goto_menu|`
-
-`goto_menu.command` `"Go to File on Current Line"`
-
-`goto_menu.separator`
-
-`goto_menu.command` `"Go to Model"`
-
-`goto_menu.command` `"Inline Command"`  `do` `|cmd|`
-
-`cmd.invoke` `do` `|ctx|`
-
-`CONSOLE``.puts` `"Hello!"`
-
-`end`
-
-`end`
-
-`# etc....`
-
-`end`
-
-`end`
+    rails_menu.menu "Go To" do |goto_menu|
+      goto_menu.command "Go to File on Current Line"
+      goto_menu.separator
+      goto_menu.command "Go to Model"
+      goto_menu.command "Inline Command" do |cmd|
+        cmd.invoke do |ctx|
+          CONSOLE.puts "Hello!"
+        end
+      end
+      # etc....
+    end
+end
+```
 
 ## Commands and snippets
 
@@ -625,21 +599,28 @@ A command can optionally have one or more key bindings associated with it. These
 
 If there is only one key binding associated with the command:
 
-`command.key_binding =` `KEY_SEQUENCE`
+```
+command.key_binding = KEY_SEQUENCE
+```
 
 Examples:
 
-`command.key_binding =` `"CONTROL+T"`  `# Single key stroke key binding`
-
-`command.key_binding =` `"M1+M3+Q C"`  `# Multiple key stroke key binding`
+```
+command.key_binding = "CONTROL+T" # Single key stroke key binding
+command.key_binding = "M1+M3+Q C" # Multiple key stroke key binding
+```
 
 If there are more than one key bindings associated with the command, an array of key binding sequences can be specified.
 
-`command.key_binding = [` `KEY_SEQUENCE``,` `KEY_SEQUENCE``, etc. ]`
+```
+command.key_binding = [ KEY_SEQUENCE, KEY_SEQUENCE, etc. ]
+```
 
 Example:
 
-`command.key_binding = [` `"M1+W"``,` `"M1+F4"` `]` `# Multiple keybindings for same command`
+```
+command.key_binding = [ "M1+W", "M1+F4" ] # Multiple keybindings for same command
+```
 
 The KEY\_SEQUENCE syntax follows the Eclipse conventions since those are more portable than the ones used in TextMate. A KEY\_SEQUENCE should consist of one or more keystrokes. Keystrokes are separated by spaces. A keystroke consists of one or more keys held down at the same time. This should be zero or more modifier keys and one other key. The keys are separated by the + character. The recognized modifiers keys are ALT or OPTION, COMMAND, CTRL, and SHIFT. Also, M1, M2, M3, M4 modifier keys are recognized. The "M" modifier keys are a platform-independent way of representing keys, and these are generally preferred. M1 is the COMMAND key on MacOS X and the CTRL key on most other platforms. M2 is the SHIFT key. M3 is the Option key on MacOS X, and the ALT key on most other platforms. M4 is the CTRL key on MacOS X and is undefined on other platforms. Since M2+M3+<Letter> (Alt+Shift+<Letter>) is reserved on MacOS X for writing special characters.
 
@@ -683,9 +664,10 @@ We strongly recommend against the use of SHIFT or M2 without including another C
 It is possible for commands to define specific key bindings for specific platforms. To enable this, the key\_binding can be made platform-specific. Platform-specific bindings always take
 precedence over the generic binding regardless of the declaration order. See the example below:
 
-`command.key_binding =` `"CONTROL+V"`
-
-`command.key_binding.mac =` `"COMMAND+V"`
+```
+command.key_binding = "CONTROL+V"
+command.key_binding.mac = "COMMAND+V"
+```
 
 The allowed specifications are defined in the PLATFORM\_SPECIFIER section.
 
@@ -695,19 +677,27 @@ Commands can take their input from a variety of different sources, or a combinat
 
 Inputs can be specified using the **single input specifier** form:
 
-`command.input =` `INPUT_SPECIFIER`
+```
+command.input = INPUT_SPECIFIER
+```
 
 or the **multiple input specifier** form:
 
-`command.input = [` `INPUT_SPECIFIER``,` `INPUT_SPECIFIER``, etc. ]`
+```
+command.input = [ INPUT_SPECIFIER, INPUT_SPECIFIER, etc. ]
+```
 
 or the **path specifier** form:
 
-`command.input =` `PATH_SPECIFIER`
+```
+command.input = PATH_SPECIFIER
+```
 
 In the **multiple input specifier** form, each INPUT\_SPECIFIER is processed in order until a valid INPUT\_SPECIFIER was found. So if, for example, the command specified:
 
-`cmd.input = [` `:selection``,` `:word` `]`
+```
+cmd.input = [ :selection, :word ]
+```
 
 Then the :selection specifier would be checked to see if it evaluated to a non-empty value. If it did not have such a value, the :word specifier would be checked. If the caret was not within a valid word, then the command would be invoked with a nil input.
 
@@ -715,11 +705,15 @@ Then the :selection specifier would be checked to see if it evaluated to a non-e
 
 As with input, commands may wish to generate output in several different ways. In Ruble, the output can be specified using the **single output specifier** form:
 
-`command.output =` `OUTPUT_SPECIFIER`
+```
+command.output = OUTPUT_SPECIFIER
+```
 
 or the **path specifier** form:
 
-`command.output =` `PATH_SPECIFIER`
+```
+command.output = PATH_SPECIFIER
+```
 
 As with the input specifier, the **path specifier** form allows you to define a filename or other stream specifier to which to write the output.
 
@@ -729,17 +723,14 @@ As described above, ever command must define an invoke property that specifies t
 
 Also, you can specify platform-specific invoke properties by specifying the platform definitions:
 
-`# general form, used if no platform specific form is provided`
-
-`command.invoke =` `"ls"`
-
-`command.invoke.windows =` `"dir /s"`
-
-`command.invoke.linux` `do` `|context|`
-
-`# some ruby stuff`
-
-`end`
+```
+# general form, used if no platform specific form is provided
+command.invoke = "ls"
+command.invoke.windows = "dir /s"
+command.invoke.linux do |context|
+# some ruby stuff
+end
+```
 
 The allowed platforms are defined in the PLATFORM\_SPECIFIER section of this document.
 

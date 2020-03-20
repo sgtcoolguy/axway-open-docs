@@ -26,7 +26,9 @@ To open the portal, you can create an eclipse startup class, and create a comman
 
 In any case, to open the new portal page you will need to call the ''Portal ''class this way:
 
-`Portal.getInstance().openPortal(``new` `URL(MyBrowserEditor.MY_URL), MyBrowserEditor.EDITOR_ID);`
+```
+Portal.getInstance().openPortal(new URL(MyBrowserEditor.MY_URL), MyBrowserEditor.EDITOR_ID);
+```
 
 Note that you can restrict the opening of the portal by looking at the preferences. The Portal system can support preferences 'set' and 'get' from the web-page itself (see example below on how to achieve that).
 
@@ -40,17 +42,18 @@ The portal system was designed to interact with remote content that is opened in
 
 Add the following to the head of the web page in question:
 
-`<script src=``"resources/prototype.js"` `type=``"text/javascript"``></script>`
-
-`<script src=``"resources/elements.js"` `type=``"text/javascript"``></script>`
-
-`<script src=``"resources/preferences.js"` `type=``"text/javascript"``></script>`
-
-`<script src=``"resources/portal.js"` `type=``"text/javascript"``></script>`
+```xml
+<script src="resources/prototype.js" type="text/javascript"></script>
+<script src="resources/elements.js" type="text/javascript"></script>
+<script src="resources/preferences.js" type="text/javascript"></script>
+<script src="resources/portal.js" type="text/javascript"></script>
+```
 
 then, modify the body tag to start the portal functionality:
 
-`<body onload=``"loadPortal(false)"``>`
+```xml
+<body onload="loadPortal(false)">
+```
 
 ## Adding Handlers for Special Functionality
 
@@ -66,9 +69,10 @@ You can either call them directly via a link or by using a checkbox to switch pr
 
 4. Show list of recently-opened files.
 
-`<div id=``"toolboxPref"`  `class``=``"preference checkbox"` `text=``"Load the Welcome Screen on startup"` `key=``"open_welcome"``>`
-
-`</div>`
+```xml
+<div id="toolboxPref" class="preference checkbox" text="Load the Welcome Screen on startup" key="open_welcome">
+</div>
+```
 
 ## Notes
 
@@ -78,16 +82,16 @@ You can either call them directly via a link or by using a checkbox to switch pr
 
 Making JQuery play nice with Prototype:
 
-`<script language=``"javascript"` `type=``"text/javascript"``>`
-
-`jQuery.noConflict();`
-
-`</script>`
+```xml
+<script language="javascript" type="text/javascript">
+    jQuery.noConflict();
+</script>
+```
 
 Scoping the '$' sign for JQuery
 
-`(function($) {`
-
-`$.jqotetag(` `'$'` `);`
-
-`}(jQuery));`
+```
+(function($) {
+    $.jqotetag( '$' );
+}(jQuery));
+```

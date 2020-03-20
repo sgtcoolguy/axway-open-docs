@@ -46,17 +46,14 @@ Enabling TypeScript support in your existing project can be done with the follow
 
 First, install the required dependencies via npm in your project root directory. To save your installed dependencies, create a minimal package.json with the following content (if your project does not already have one):
 
-`{`
-
-`"name"``:` `"my-typescript-app"``,`
-
-`"version"``:` `"1.0.0"``,`
-
-`"main"``:` `"index.js"``,`
-
-`"private"``:` `true`
-
-`}`
+```
+{
+  "name": "my-typescript-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true
+}
+```
 
 Now install the TypeScript compiler and the required typings for Titanium and save them to your dev dependencies:
 
@@ -68,53 +65,32 @@ Next, create a tsconfig.json for your project. The configuration slightly differ
 
 For Alloy projects, the tsconfig.json looks like this:
 
-`{`
-
-`"compilerOptions"``: {`
-
-`"baseUrl"``:` `"."``,`
-
-`"paths"``: {`
-
-`"*"``: [`
-
-`"*"``,`
-
-`"app/lib/*"`
-
-`]`
-
-`},`
-
-`"target"``:` `"es5"``,`
-
-`"module"``:` `"commonjs"``,`
-
-`"lib"``: [`
-
-`"es2015"``,`
-
-`"es2015.iterable"`
-
-`],`
-
-`"downlevelIteration"``:` `true``,`
-
-`"strict"``:` `true``,`
-
-`"esModuleInterop"``:` `true``,`
-
-`"noImplicitAny"``:` `false`
-
-`},`
-
-`"include"``: [`
-
-`"app/**/*"`
-
-`]`
-
-`}`
+```
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*",
+        "app/lib/*"
+      ]
+    },
+    "target": "es5",
+    "module": "commonjs",
+    "lib": [
+      "es2015",
+      "es2015.iterable"
+    ],
+    "downlevelIteration": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false
+  },
+  "include": [
+    "app/**/*"
+  ]
+}
+```
 
 In classic projects, you can omit the paths compiler options and need to adjust the include setting to Resources/\*\*/\*.
 
@@ -134,60 +110,37 @@ You didn’t really migrate anything, yet. We recommend reading through [Migrati
 
 Finally, the CLI hook triggers the compilation of the TypeScript files. Create a new file hooks/pre-compile.js in your project and paste the following content to it:
 
-`'use strict'``;`
+```javascript
+'use strict';
 
-`const path = require(``'path'``);`
+const path = require('path');
+const spawn = require('child_process').spawn;
 
-`const spawn = require(``'child_process'``).spawn;`
-
-`exports.id =` `'ti.typescript'``;`
-
-`exports.init = (logger, config, cli) => {`
-
-`cli.on(``'build.pre.compile'``, {`
-
-`priority: 900,` `// explicitly lower priority to make sure this hook runs before the Alloy compiler`
-
-`post: (builder, callback) => {`
-
-`const tscPath = path.resolve(__dirname,` `'..'``,` `'node_modules'``,` `'.bin'``,` `'tsc'``)`
-
-`const args = [ tscPath ];`
-
-`logger.info(``'Compiling TypeScript files'``);`
-
-``logger.trace(`Executing: node ${args.join(```' '```)}`);``
-
-`const child = spawn(``'node'``, args, {`
-
-`stdio:` `'inherit'``,`
-
-`cwd: cli.argv[``'project-dir'``]`
-
-`});`
-
-`child.on(``'close'``, code => {`
-
-`if` `(code === 0) {`
-
-`callback();`
-
-`}` `else` `{`
-
-`const error =` `new` ``Error(`TypeScript compiler exited`` `with` ``non-zero exit code ${code}`);``
-
-`error.code = code;`
-
-`callback(error);`
-
-`}`
-
-`});`
-
-`}`
-
-`});`
-
-`};`
+exports.id = 'ti.typescript';
+exports.init = (logger, config, cli) => {
+  cli.on('build.pre.compile', {
+    priority: 900, // explicitly lower priority to make sure this hook runs before the Alloy compiler
+    post: (builder, callback) => {
+      const tscPath = path.resolve(__dirname, '..', 'node_modules', '.bin', 'tsc')
+      const args = [ tscPath ];
+      logger.info('Compiling TypeScript files');
+      logger.trace(`Executing: node ${args.join(' ')}`);
+      const child = spawn('node', args, {
+        stdio: 'inherit',
+        cwd: cli.argv['project-dir']
+      });
+      child.on('close', code => {
+        if (code === 0) {
+          callback();
+        } else {
+          const error = new Error(`TypeScript compiler exited with non-zero exit code ${code}`);
+          error.code = code;
+          callback(error);
+        }
+      });
+    }
+  });
+};
+```
 
 You can now use TypeScript in your project.

@@ -42,9 +42,10 @@ For all other users, send an e-mail to [support@appcelerator.com](mailto:support
 
 Close Studio and perform an update using the Appcelerator CLI.
 
-`[sudo] npm install -g appcelerator`
-
-`appc setup`
+```bash
+[sudo] npm install -g appcelerator
+appc setup
+```
 
 Start Studio after the update completes.
 

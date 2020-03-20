@@ -1,6 +1,6 @@
 {"title":"Quick Start Guide for iOS APS SDK","weight":"10"}
 
-Pro or Enterprise Subscription Required
+*Pro or Enterprise Subscription Required*
 
 This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.
 
@@ -40,7 +40,7 @@ This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscrip
 
 This guide walks through the setup of the AMPLIFY Appcelerator Services for iOS applications. The AMPLIFY Appcelerator Services SDK gives you access to the Appcelerator Analytics and Cloud services. To enable the Appcelerator Test for a project, run the appceletator-test utility against either the project or the IPA file.
 
-Not developing a native iOS application with Objective-C?
+*Not developing a native iOS application with Objective-C?*
 
 See the following topics to use the AMPLIFY Appcelerator Services on other platforms:
 
@@ -216,11 +216,15 @@ The following tutorial demonstrates the basic setup and usage of Analytics and C
 
 9. In your application delegate implementation file, import **Appcelerator/Appcelerator.h.**
 
-    `#``import` `<Appcelerator/Appcelerator.h>`
+    ```
+    #import <Appcelerator/Appcelerator.h>
+    ```
 
 10. Add the following initialization code to your application delegate's application:didFinishLaunchingWithOptions method, replacing the placeholder string with your APS application key:
 
-    `[[APSServiceManager sharedInstance] enableWithAppKey:@``"APS_APP_KEY"``];`
+    ```
+    [[APSServiceManager sharedInstance] enableWithAppKey:@"APS_APP_KEY"];
+    ```
 
     The iOS application is now ready to make method calls using the APS SDK APIs.
 
@@ -245,111 +249,84 @@ Customize the application's UI to display a picker, text field and button, and a
 
 7. In the ViewController.h file, declare the View Controller to implement the UIPickerViewDelegate, UIPickerViewDataSource, and UITextFieldDelegate protocols. Add an NSArray property called usernames to keep track of the Picker View's data source and an NSString property called username to reference the current selection. The final header file should look like:
 
-    ViewController.h
+    *ViewController.h*
 
-    `#``import` `<UIKit/UIKit.h>`
+    ```objc
+    #import <UIKit/UIKit.h>
+    #import <CoreLocation/CoreLocation.h>
+    @interface ViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
 
-    `#``import` `<CoreLocation/CoreLocation.h>`
+    @property (weak, nonatomic) IBOutlet UIPickerView *picker;
+    @property (weak, nonatomic) IBOutlet UITextField *textField;
+    @property (strong, nonatomic) NSArray *usernames;
+    @property (strong, nonatomic) NSString *username;
 
-    `@interface` `ViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>`
-
-    `@property` `(weak, nonatomic) IBOutlet UIPickerView *picker;`
-
-    `@property` `(weak, nonatomic) IBOutlet UITextField *textField;`
-
-    `@property` `(strong, nonatomic) NSArray *usernames;`
-
-    `@property` `(strong, nonatomic) NSString *username;`
-
-    `@end`
+    @end
+    ```
 
 8. In the ViewController.m file, create an IBAction for the button named doClick. In the following sections, you will add code to this handler that calls Cloud and Analytics services. The View Controller needs to implement the methods of UIPickerViewDelegate, UIPickerViewDataSource and UITextFieldDelegate protocols. Add the following code to the file:
 
-    ViewController.m
+    *ViewController.m*
 
-    `#``import`  `"ViewController.h"`
+    ```objc
+    #import "ViewController.h"
+    // Add this import statement
+    #import <Appcelerator/Appcelerator.h>
 
-    `// Add this import statement`
+    @implementation ViewController
 
-    `#``import` `<Appcelerator/Appcelerator.h>`
+    - (void)viewDidLoad
+    {
+        [super viewDidLoad];
 
-    `@implementation` `ViewController`
+        // Add these statements to dismiss the keyboard
+        self.textField.delegate = self;
+        [self.textField resignFirstResponder];
+    }
 
-    `- (``void``)viewDidLoad`
+    - (void)didReceiveMemoryWarning
+    {
+        [super didReceiveMemoryWarning];
+    }
 
-    `{`
+    // Add these methods
+    - (IBAction)onClick:(id)sender {
 
-    `[``super` `viewDidLoad];`
+    }
 
-    `// Add these statements to dismiss the keyboard`
+    #pragma mark Picker DataSource/Delegate
 
-    `self.textField.delegate = self;`
+    - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+        return 1;
+    }
 
-    `[self.textField resignFirstResponder]; `
+    - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+        return _usernames.count;
+    }
 
-    `}`
+    - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+        return [_usernames[row] objectForKey:@"username"];
+    }
 
-    `- (``void``)didReceiveMemoryWarning`
+    - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+        _username = [_usernames[row] objectForKey:@"username"];
+    }
 
-    `{`
+    #pragma mark TextField Delegate
 
-    `[``super` `didReceiveMemoryWarning];`
+    - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+    {
+        return YES;
+    }
 
-    `}`
+    - (BOOL)textFieldShouldReturn:(UITextField *)textField
+    {
+        [textField resignFirstResponder];
+        return YES;
+    }
 
-    `// Add these methods`
-
-    `- (IBAction)onClick:(id)sender {`
-
-    `}`
-
-    `#pragma mark Picker DataSource/Delegate`
-
-    `- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {`
-
-    `return`  `1``;`
-
-    `}`
-
-    `- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {`
-
-    `return` `_usernames.count;`
-
-    `}`
-
-    `- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {`
-
-    `return` `[_usernames[row] objectForKey:@``"username"``];`
-
-    `}`
-
-    `- (``void``)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {`
-
-    `_username = [_usernames[row] objectForKey:@``"username"``];`
-
-    `}`
-
-    `#pragma mark TextField Delegate`
-
-    `- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField`
-
-    `{`
-
-    `return` `YES;`
-
-    `}`
-
-    `- (BOOL)textFieldShouldReturn:(UITextField *)textField`
-
-    `{`
-
-    `[textField resignFirstResponder];`
-
-    `return` `YES;`
-
-    `}`
-
-    `@end`
+    @end
+    ```
 
 9. Control-drag the Button to the onClick:sender method to create an action connection.
 
@@ -361,13 +338,12 @@ The Analytics library automatically captures and sends application life-cycle ev
 
 In the doClick method, add a sendAppFeatureEvent: method call to send a feature event with the string "sample.feature.login". The optional payload parameter is set to nil for this example, but it lets you send additional data along with the event.
 
-`- (IBAction)doClick:(id)sender {`
-
-`// Call Analytics method`
-
-`[[APSAnalytics sharedInstance] sendAppFeatureEvent:@``"sample.feature.login"` `payload:nil];`
-
-`}`
+```
+- (IBAction)doClick:(id)sender {
+  // Call Analytics method
+  [[APSAnalytics sharedInstance] sendAppFeatureEvent:@"sample.feature.login" payload:nil];
+}
+```
 
 ### Query Cloud Users
 
@@ -375,81 +351,57 @@ To use the APS Cloud component, most of the methods require a user to be logged 
 
 Every APS Cloud method includes a withBlock parameter that specifies the callback to handle the server response. The callback is passed an APSResponse object that contains response metadata (such as success or failure) and the response payload.
 
-ViewController.m
+*ViewController.m*
 
-`- (``void``)viewDidLoad`
+```objc
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
 
-`{`
-
-`[``super` `viewDidLoad];`
-
-`// Call the APSUsers query method`
-
-`[APSUsers query:nil withBlock:^(APSResponse *e){`
-
-`if` `(e.success) {`
-
-`_usernames = [e.response objectForKey:@``"users"``];`
-
-`[self.picker reloadAllComponents];`
-
-`}` `else` `{`
-
-`UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@``"Error"`
-
-`message:@``"Unable to retrieve user accounts!"`
-
-`delegate:nil`
-
-`cancelButtonTitle:@``"OK"`
-
-`otherButtonTitles: nil];`
-
-`[alert show];`
-
-`}`
-
-`}];`
-
-`}`
+    // Call the APSUsers query method
+    [APSUsers query:nil withBlock:^(APSResponse *e){
+        if (e.success) {
+            _usernames = [e.response objectForKey:@"users"];
+            [self.picker reloadAllComponents];
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:@"Unable to retrieve user accounts!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles: nil];
+            [alert show];
+        }
+    }];
+}
+```
 
 ### Log in to a Cloud Account
 
 To log in to a Cloud account, you need the username and password. Since the application was modified to get all available user accounts and populate the Picker View, the application needs to get the current value of the picker and the text entered in the Text Field. These values are passed to the login:withBlock: method. Modify the doClick method to login to a Cloud user account.
 
-ViewController.m
+*ViewController.m*
 
-`- (IBAction)doClick:(id)sender {`
+```objc
+- (IBAction)doClick:(id)sender {
+  [[APSAnalytics sharedInstance] sendAppFeatureEvent:@"sample.feature.login" payload:nil];
 
-`[[APSAnalytics sharedInstance] sendAppFeatureEvent:@``"sample.feature.login"` `payload:nil];`
+    // Construct the request parameters
+    NSDictionary *params = [[NSDictionary alloc]
+                                 initWithObjectsAndKeys:_username,@"login",
+                                 [_textField text],@"password",
+                                 nil];
 
-`// Construct the request parameters`
+    // Call the APSUsers login method
+    [APSUsers login:params withBlock:^(APSResponse *e){
+        if (e.success) {
+            NSLog(@"Successfully logged in as %@", _username);
 
-`NSDictionary *params = [[NSDictionary alloc]`
-
-`initWithObjectsAndKeys:_username,@``"login"``,`
-
-`[_textField text],@``"password"``,`
-
-`nil];`
-
-`// Call the APSUsers login method`
-
-`[APSUsers login:params withBlock:^(APSResponse *e){`
-
-`if` `(e.success) {`
-
-`NSLog(@``"Successfully logged in as %@"``, _username);`
-
-`}` `else` `{`
-
-`NSLog(@``"ERROR: Failed to log in!"``);`
-
-`}`
-
-`}];`
-
-`} `
+        } else {
+            NSLog(@"ERROR: Failed to log in!");
+        }
+    }];
+}
+```
 
 ### Log a Handled Exception
 
@@ -457,51 +409,40 @@ The Performance library automatically logs application crashes (unhandled except
 
 For example, you can replace the Log calls in the catch statements with logHandledException calls. Instead, the application will generate a runtime exception, and then call the logHandledException method to log that exception to the Performance backend. To the doClick method, add the following new code:
 
-`- (IBAction)doClick:(id)sender {`
+```
+- (IBAction)doClick:(id)sender {
 
-`// Analytics call...`
-
-`// Cloud call...`
-
-`@try` `{`
-
-`[NSException raise:NSGenericException format:@``"Something happened..."``];`
-
-`}` `@catch` `(NSException *exception) {`
-
-`[[APSPerformance sharedInstance] logHandledException:exception];`
-
-`}`
-
-`}`
+    // Analytics call...
+    // Cloud call...
+    @try {
+        [NSException raise:NSGenericException format:@"Something happened..."];
+    } @catch (NSException *exception) {
+        [[APSPerformance sharedInstance] logHandledException:exception];
+    }
+}
+```
 
 ### Set a Username for Crash Logs
 
 To help differentiate crash logs, use the username property. When the application successfully logs in to the Cloud user account, the application sets the username property.
 
-ViewController.m
+*ViewController.m*
 
-`- (IBAction)doClick:(id)sender {`
+```objc
+- (IBAction)doClick:(id)sender {
 
-`[APSUsers login:params withBlock:^(APSResponse *e){`
+    [APSUsers login:params withBlock:^(APSResponse *e){
+        if (e.success) {
+            NSLog(@"Successfully logged in as %@", _username);
+            // Add this APS Performance method call
+            [[APSPerformance sharedInstance] username] = _username;
+        } else {
+            NSLog(@"ERROR: Failed to log in!");
+        }
+    }];
 
-`if` `(e.success) {`
-
-`NSLog(@``"Successfully logged in as %@"``, _username);`
-
-`// Add this APS Performance method call`
-
-`[[APSPerformance sharedInstance] username] = _username;`
-
-`}` `else` `{`
-
-`NSLog(@``"ERROR: Failed to log in!"``);`
-
-`}`
-
-`}];`
-
-`} `
+}
+```
 
 ### Testing the tutorial sample
 

@@ -194,23 +194,22 @@ Markdown format allows you to use inline HTML. This is especially useful for add
 
 When deprecating an API, add the deprecated tag. You must specify a since version. You should specify a notes field directing the user to the replacement API or APIs.
 
-`deprecated:`
-
-`since:` `"7.0.0"`
-
-`notes: Use [SOMETHING_ELSE](Titanium.UI.SOMETHING_ELSE) instead.`
+```
+deprecated:
+    since: "7.0.0"
+    notes: Use [SOMETHING_ELSE](Titanium.UI.SOMETHING_ELSE) instead.
+```
 
 The removed version should **NOT** be specified until the API is actually removed.
 
 When the API is removed, add the removed version to the deprecated tag. **DO NOT** remove the API from the docs.
 
-`deprecated:`
-
-`since:` `"7.0.0"`
-
-`notes: Use [SOMETHING_ELSE](Titanium.UI.SOMETHING_ELSE) instead.`
-
-`removed:` `"8.0.0"`
+```
+deprecated:
+    since: "7.0.0"
+    notes: Use [SOMETHING_ELSE](Titanium.UI.SOMETHING_ELSE) instead.
+    removed: "8.0.0"
+```
 
 Removed APIs should stay in the docs (marked as removed) for a full deprecation cycle. That is, if APIs deprecated in release A are _removed_ in release B, the APIs _removed_ in release A can be removed from the doc in release B.
 

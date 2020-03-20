@@ -46,25 +46,24 @@ A common use for the global namespace in Titanium apps is as a storehouse for "s
 
 For example, you could create a single global App object to which you may append objects as needed. While there may be times when another global object is needed, everything will be placed in this namespace and documented in order to stay organized and avoid conflicts. e.g. App.livedata = {}; could be the home of transient session data for this app.
 
-`var App = {};` `// app to which you'll store objects, properties, & session data`
-
-`var someComponent = require(``'foo'``).init(App);` `// pass the object into the module`
-
-`someComponent.doSomething(App.livedata.someProperty);` `// or pass a specific property to a method`
+```javascript
+var App = {}; // app to which you'll store objects, properties, & session data
+var someComponent = require('foo').init(App); // pass the object into the module
+someComponent.doSomething(App.livedata.someProperty); // or pass a specific property to a method
+```
 
 ### Platform build directories
 
 The Community app makes heavy use of an under-appreciated feature of Titanium: the platform build directories. Titanium supports an overrides system by which you can provide platform-specific files that will be used in place of those in the main Resources branch. Here's the app.js:
 
-`//do any global bootstrapping - none needed now`
+```javascript
+//do any global bootstrapping - none needed now
+//..
 
-`//..`
-
-`//platform-specific UI bootstrap`
-
-`var app = require(``'/ui/bootstrap'``);`
-
-`app.launch();`
+//platform-specific UI bootstrap
+var app = require('/ui/bootstrap');
+app.launch();
+```
 
 But when you look at the Resources/ui folder, you won't find a file named bootstrap.js. That's because there are platform-specific versions of that file as shown in this screenshot.
 
@@ -78,42 +77,31 @@ A key gotcha that we try to point out frequently is that you should not extend o
 
 Still, there are times when it's so hard to resist storing some data in a proxy. For that, we suggest you wrap proxies in standard JavaScript objects and extend those JavaScript objects. The Community app does this. See the /ui/components.js for example code. Here's an excerpt:
 
-`function Component(``/*Titanium Proxy Object*/` `tiView) {`
+```javascript
+function Component(/*Titanium Proxy Object*/ tiView) {
+  this.viewProxy = tiView;
+}
 
-`this``.viewProxy = tiView;`
-
-`}`
-
-`//Wrappers for common Titanium view construction functions`
-
-`Component.prototype.add = function(tiChildView) {`
-
-`var v = tiChildView.viewProxy||tiChildView;`
-
-`this``.viewProxy.add(v);`
-
-`};`
-
-`// ... lots more here`
+//Wrappers for common Titanium view construction functions
+Component.prototype.add = function(tiChildView) {
+  var v = tiChildView.viewProxy||tiChildView;
+  this.viewProxy.add(v);
+};
+// ... lots more here
+```
 
 The other modules could then call on this component object to wrap Titanium proxies, like this:
 
-`var ui = require(``'/ui/components'``);`
-
-`var myview =` `new` `ui.Component(``new` `ui.View({`
-
-`height:``44``,`
-
-`top:``0``,`
-
-`backgroundImage:``'/images/sliver.png'`
-
-`}));`
-
-`myview.someMethod = function() {`
-
-`// do stuff here`
-
-`};`
+```javascript
+var ui = require('/ui/components');
+var myview = new ui.Component(new ui.View({
+     height:44,
+     top:0,
+     backgroundImage:'/images/sliver.png'
+}));
+myview.someMethod = function() {
+    // do stuff here
+};
+```
 
 Because these wrapped objects have a slightly different interface (different methods & properties) than the standard objects they represent, you probably want to use them only when required.

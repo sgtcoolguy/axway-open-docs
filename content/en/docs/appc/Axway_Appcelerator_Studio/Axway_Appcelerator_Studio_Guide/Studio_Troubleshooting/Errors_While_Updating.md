@@ -79,11 +79,11 @@ There is an error with your .ini file.
 
 If an update fails with an error similar to the following:
 
-`An error occurred` `while` `collecting items to be installed`
-
-`session context was:(profile=AppceleratorProfile, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).`
-
-`No repository found containing`
+```
+An error occurred while collecting items to be installed
+session context was:(profile=AppceleratorProfile, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).
+No repository found containing
+```
 
 There are a few possibilities:
 
@@ -157,6 +157,8 @@ If you should run into any issues, run npm cache clean and then retry the steps 
 
 If Studio prompts you to install the same Node.js packages (CLI, ACS, Alloy, etc.), despite the fact that they appear to install successfully each time, Studio may be checking a different installation path than the one you have designated to install your NPM packages. To resolve this issue, add the environment variable NPM\_CONFIG\_PREFIX. For example, on Mac OS X, add the following to your Bash profile (~/.bash\_profile):
 
-`export NPM_CONFIG_PREFIX = <PATH_TO_NPM>`
+```
+export NPM_CONFIG_PREFIX = <PATH_TO_NPM>
+```
 
 For Windows, follow the directions from [Configuring Environment Variables on Windows](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#configuring-environment-variables-on-windows) to add the environment variable.

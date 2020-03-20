@@ -26,17 +26,15 @@ As was stated in the [previous chapter](/docs/appc/Titanium_SDK/Titanium_SDK_How
 
 Inside your handler function, if your response has an XML Content-Type header, Titanium will automatically serialize the response text into XML for your use:
 
-`xhr.onload = function(e) {`
+```javascript
+xhr.onload = function(e) {
+  var doc = this.responseXML.documentElement;
+  //this is the XML document object
 
-`var doc =` `this``.responseXML.documentElement;`
-
-`//this is the XML document object`
-
-`//Use the DOM API to parse the document`
-
-`var elements = doc.getElementsByTagName(``"someTag"``);`
-
-`};`
+  //Use the DOM API to parse the document
+  var elements = doc.getElementsByTagName("someTag");
+};
+```
 
 ### Parsing XML
 
@@ -68,47 +66,30 @@ You'll often use these methods when parsing an XML document:
 
 Consider this code snippet, which parses RSS (XML) data retrieved from a blog:
 
-`xhr.onload =` `function``() {`
+```javascript
+xhr.onload = function() {
+  // Data is returned from the blog, start parsing
+  var xml = this.responseXML;
+  // the blog's title is in a node named "channel"
+  var channel = xml.documentElement.getElementsByTagName("channel");
 
-`// Data is returned from the blog, start parsing`
-
-`var` `xml =` `this``.responseXML;`
-
-`// the blog's title is in a node named "channel"`
-
-`var` `channel = xml.documentElement.getElementsByTagName(``"channel"``);`
-
-`// begin looping through blog posts`
-
-`var` `data = [];`
-
-`// blog posts are in nodes named "item"`
-
-`var` `items = xml.documentElement.getElementsByTagName(``"item"``);`
-
-`for` `(``var` `i = 0; i < items.length; i++) {`
-
-`data.push({`
-
-`postTitle: items.item(i).getElementsByTagName(``"title"``).item(0).textContent,`
-
-`postLink: items.item(i).getElementsByTagName(``"link"``).item(0).textContent`
-
-`});`
-
-`}`
-
-`// fire an app-level event to notify the UI that the blog data is available`
-
-`Ti.App.fireEvent(``'net:rssDataReturned'``, {`
-
-`blogTitle: channel.item(0).getElementsByTagName(``"title"``).item(0).textContent,`
-
-`blogPosts: data`
-
-`});`
-
-`};`
+  // begin looping through blog posts
+  var data = [];
+  // blog posts are in nodes named "item"
+  var items = xml.documentElement.getElementsByTagName("item");
+  for (var i = 0; i < items.length; i++) {
+    data.push({
+      postTitle: items.item(i).getElementsByTagName("title").item(0).textContent,
+      postLink: items.item(i).getElementsByTagName("link").item(0).textContent
+    });
+  }
+  // fire an app-level event to notify the UI that the blog data is available
+  Ti.App.fireEvent('net:rssDataReturned', {
+    blogTitle: channel.item(0).getElementsByTagName("title").item(0).textContent,
+    blogPosts: data
+  });
+};
+```
 
 A key point to note for working with XML: you'll need to know the node hierarchy for your document in order to properly parse it. In other words, you'll need to know its DTD (document type definition). Some DTDs are standardized, such as the RSS ATOM feed XML format. Others are proprietary, defined by the companies that create them. A useful tool for viewing the XML structure of data retrieved from a web API is [http://apigee.com/](http://apigee.com/).
 

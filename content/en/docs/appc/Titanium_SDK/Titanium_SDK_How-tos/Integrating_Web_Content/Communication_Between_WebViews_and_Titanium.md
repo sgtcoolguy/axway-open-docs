@@ -42,27 +42,24 @@ You can use the Ti.API logging methods within HTML content loaded from the devic
 
 These functions are great for adding logging to our native Titanium code, but they can also be used to add logging to web content in WebViews. Let's take a look at a simple example. Here will we add Titanium logging to a WebView to let us know when the <body> element of the web content has loaded.
 
-logging.html
+*logging.html*
 
-`<html>`
+```html
+<html>
+    <body onload="Ti.API.info('body loaded!');"></body>
+</html>
+```
 
-`<body onload=``"Ti.API.info('body loaded!');"``></body>`
+*app.js*
 
-`</html>`
-
-app.js
-
-`var win = Ti.UI.createWindow();`
-
-`var webview = Ti.UI.createWebView({`
-
-`url:` `'logging.html'`
-
-`});`
-
-`win.add(webview);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow();
+var webview = Ti.UI.createWebView({
+    url: 'logging.html'
+});
+win.add(webview);
+win.open();
+```
 
 When the above app runs and the <body> of the WebView is loaded, it will put an informational message in the Titanium logging console that says "body loaded!". This is a very simple case, but shows that you can use the logging capabilities of Titanium even when executing Javascript from the context of a WebView's content. These API calls can be made anywhere in your web content's Javascript.
 
@@ -74,83 +71,51 @@ So how do application level events help us communicate with WebViews? Well they 
 
 Let's take a look at an example of how we can use application level events to communicate bidirectionally with a WebView. We will create an app with a native UI button and a button rendered in a WebView. The WebView will listen for events fired from the native button, and the native Titanium code will listen for events fired from the WebView button. Whenever one of these events is received, the appropriate execution context will popup an alert notifying us that the event was received.
 
-`<!DOCTYPE html>`
+```javascript
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <script>
+      // Send event from the web-view to the app
+      function sendEventToApp() {
+      Ti.App.fireEvent('app:fromWebView', {
+      message: 'Event fired from WebView, handled in Titanium'
+    });
+      }
 
-`<html>`
+    // Subscribe to global event
+      Ti.App.addEventListener("app:fromTitanium", function(e) {
+        alert(e.message);
+      });
+    </script>
+  </head>
+  <body>
+    <button onclick="sendEventToApp()">From WebView -> Titanium</button>
+  </body>
+</html>
+```
 
-`<head>`
-
-`<meta name=``"viewport"` `content=``"width=device-width, user-scalable=no"` `/>`
-
-`<script>`
-
-`// Send event from the web-view to the app`
-
-`function sendEventToApp() {`
-
-`Ti.App.fireEvent(``'app:fromWebView'``, {`
-
-`message:` `'Event fired from WebView, handled in Titanium'`
-
-`});`
-
-`}`
-
-`// Subscribe to global event`
-
-`Ti.App.addEventListener(``"app:fromTitanium"``, function(e) {`
-
-`alert(e.message);`
-
-`});`
-
-`</script>`
-
-`</head>`
-
-`<body>`
-
-`<button onclick=``"sendEventToApp()"``>From WebView -> Titanium</button>`
-
-`</body>`
-
-`</html>`
-
-`var win = Ti.UI.createWindow();`
-
-`var webView = Ti.UI.createWebView({`
-
-`url:` `'logging.html'`
-
-`});`
-
-`var button = Ti.UI.createButton({`
-
-`title:` `'From Titanium -> WebView'``,`
-
-`});`
-
-`button.addEventListener(``'click'``, function(e) {`
-
-`Ti.App.fireEvent(``'app:fromTitanium'``, {`
-
-`message:` `'Event fired from Titanium, handled in WebView'`
-
-`});`
-
-`});`
-
-`Ti.App.addEventListener(``'app:fromWebView'``, function(e) {`
-
-`alert(e.message);`
-
-`});`
-
-`win.add(webView);`
-
-`win.add(button);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow();
+var webView = Ti.UI.createWebView({
+    url: 'logging.html'
+});
+var button = Ti.UI.createButton({
+    title: 'From Titanium -> WebView',
+});
+button.addEventListener('click', function(e) {
+    Ti.App.fireEvent('app:fromTitanium', {
+        message: 'Event fired from Titanium, handled in WebView'
+    });
+});
+Ti.App.addEventListener('app:fromWebView', function(e) {
+    alert(e.message);
+});
+win.add(webView);
+win.add(button);
+win.open();
+```
 
 With the above app, we would see the following application flow when testing its functionality:
 
@@ -170,27 +135,21 @@ You cannot use any Titanium statements within HTML content loaded from a remote 
 
 Let's see an example. The following loads a remote web page, then uses evalJS() to retrieve the cookies set by that server:
 
-app.js
+*app.js*
 
-`var webView = Ti.UI.createWebView({`
+```javascript
+var webView = Ti.UI.createWebView({
+    url: 'https://google.com'
+});
 
-`url:` `'https://google.com'`
-
-`});`
-
-`webView.addEventListener(``'load'``, function(e) {`
-
-`var cookies = webview.evalJS(``'document.cookie'``).split(``';'``);`
-
-`Ti.API.info(``'# of cookies -> '` `+ cookies.length);`
-
-`for` `(var i =` `0``; i <= cookies.length -` `1``; i++) {`
-
-`Ti.API.info(``'Cookie -> '` `+ cookies[i]);`
-
-`}`
-
-`});`
+webView.addEventListener('load', function(e) {
+    var cookies = webview.evalJS('document.cookie').split(';');
+    Ti.API.info('# of cookies -> ' + cookies.length);
+    for (var i = 0; i <= cookies.length - 1; i++) {
+        Ti.API.info('Cookie -> ' + cookies[i]);
+    }
+});
+```
 
 As noted, the use of evalJS() is nested within the WebView's load event so we're sure the page is loaded before injecting our code. You'll see we're passing in a single string ("document.cookie") which in this case simply retrieves the string of the cookies set by the site. The rest of the code is within Titanium and extracts the cookie values and logs them to the console.
 

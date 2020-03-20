@@ -69,83 +69,56 @@ Next, copy the following block of code into your file:
 
 * Update the path to your built app. **Note**: In this document, we are pointing to the app built for the simulator. You can also test against physical devices, but we aren’t covering that here.
 
-`"use strict"``;`
+```javascript
+"use strict";
 
-`const opts = {`
+const opts = {
+  port: 4723,
+  desiredCapabilities: {
+      "platformName": "iOS",
+      "platformVersion": "11.2",
+      "deviceName": "iPad Pro (12.9-inch) (2nd generation)",
+      "app": "/Users/{USERDIR}/Documents/Appcelerator_Studio_Workspace/DASH/build/iphone/build/Products/Debug-iphonesimulator/MyAppName.app",
+      "automationName": "XCUITest",
+        "noReset": true
+  }
+};
 
-`port: 4723,`
+var wd = require("webdriverio");
 
-`desiredCapabilities: {`
+describe("FIRST APP TEST", function () {
+  this.timeout(300000);
+  var driver;
+  var allPassed = true;
 
-`"platformName"``:` `"iOS"``,`
+  before(function () {
+    driver = wd.remote(opts);
+    return driver.init();
+  });
 
-`"platformVersion"``:` `"11.2"``,`
+  after(function () {
+    return driver
+      .end()
+  });
 
-`"deviceName"``:` `"iPad Pro (12.9-inch) (2nd generation)"``,`
+  afterEach(function () {
+    allPassed = allPassed && this.currentTest.state === 'passed';
+  });
 
-`"app"``:` `"/Users/{USERDIR}/Documents/Appcelerator_Studio_Workspace/DASH/build/iphone/build/Products/Debug-iphonesimulator/MyAppName.app"``,`
+   it("Should Login", function () {
+      return driver
+      .element("~Enter Username").setValue("testusername")
+      .element("~Enter Password").setValue("testpassword")
+      .click("~Attempting to Log In")
+  });
 
-`"automationName"``:` `"XCUITest"``,`
+  it("Should Do Something else", function () {
+      return driver
+      //Do another test here
+  });
 
-`"noReset"``:` `true`
-
-`}`
-
-`};`
-
-`var` `wd = require(``"webdriverio"``);`
-
-`describe(``"FIRST APP TEST"``,` `function` `() {`
-
-`this``.timeout(300000);`
-
-`var` `driver;`
-
-`var` `allPassed =` `true``;`
-
-`before(``function` `() {`
-
-`driver = wd.remote(opts);`
-
-`return` `driver.init();`
-
-`});`
-
-`after(``function` `() {`
-
-`return` `driver`
-
-`.end()`
-
-`});`
-
-`afterEach(``function` `() {`
-
-`allPassed = allPassed &&` `this``.currentTest.state ===` `'passed'``;`
-
-`});`
-
-`it(``"Should Login"``,` `function` `() {`
-
-`return` `driver`
-
-`.element(``"~Enter Username"``).setValue(``"testusername"``)`
-
-`.element(``"~Enter Password"``).setValue(``"testpassword"``)`
-
-`.click(``"~Attempting to Log In"``)`
-
-`});`
-
-`it(``"Should Do Something else"``,` `function` `() {`
-
-`return` `driver`
-
-`//Do another test here`
-
-`});`
-
-`});`
+});
+```
 
 While it is possible to write these tests using node without mocha, the structure that mocha uses may be a matter of personal preference. using mocha and the sample script (above), you should see these results:
 
@@ -160,7 +133,9 @@ Write test commands for your app. This is where webdriver io stands apart form t
 
 Update your Appcelerator UI components with Accessibility Features (in this example, this would be the TextField used for the username). See [Appcelerator and Accessibility](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Accessibility/) for more information.
 
-`<``TextField`  `accessibilityLabel``=``"Enter Username"` `/>`
+```xml
+<TextField accessibilityLabel="Enter Username" />
+```
 
 Now, you should have mocha configured and a sample test script using webdriver io as the client to interface with your Titanium App (keying off of the AccessibilityId). Before continuing to the final piece (automation) you should ensure your test runs successfully on its own: mocha firstapp\_test.js
 
@@ -172,53 +147,41 @@ Review Fastlane’s [Getting Started Guide](https://docs.fastlane.tools/) to ins
 
 For each mobile app, you will have a fastlane folder in the root with a few config files.
 
-`- fastlane (folder)`
-
-`- Pluginfile (``this` `gets created automatically` `for` `you)`
-
-`- Fastfile (``this` `file you create and define the required steps)`
+```
+-  fastlane (folder)
+  - Pluginfile (this gets created automatically for you)
+  - Fastfile (this file you create and define the required steps)
+```
 
 As a way to jump start the process, copy the following into your Fastfile file of your app:
 
-`default_platform :ios`
+```bash
+default_platform :ios
 
-`platform :ios` `do`
+platform :ios do
 
-`before_all` `do`
+    before_all do
+    end
 
-`end`
+    desc "Build App for Simulator Tests"
+    lane :buildapp do
+      ti_build_app(
+    appc_cli: "appc run build --platform ios --target dist-adhoc --distribution-name 'implicitli, LLC. (G52GS5PAND)' --pp-uuid c6ea530d-70ea-5661-b013-beb4d25b2a7b --output-dir /dist"
+  )
+    end
 
-`desc` `"Build App for Simulator Tests"`
+    desc "Runs the tests of the iOS App"
+    lane :test do
+      ti_build_app(
+          appc_cli: "appc run -f -T simulator -p ipad -i 11.2 --device-id 6945AC80-7F29-4A5A-8256-49467E9D1A7D --build-only"
+        )
+      mocha_run_tests(
+        mocha_js_file_name: '/Users/{USERDIR}/Appium_Tests/dash_test.js'
+      )
+    end
 
-`lane :buildapp` `do`
-
-`ti_build_app(`
-
-`appc_cli:` `"appc run build --platform ios --target dist-adhoc --distribution-name 'implicitli, LLC. (G52GS5PAND)' --pp-uuid c6ea530d-70ea-5661-b013-beb4d25b2a7b --output-dir /dist"`
-
-`)`
-
-`end`
-
-`desc` `"Runs the tests of the iOS App"`
-
-`lane :test` `do`
-
-`ti_build_app(`
-
-`appc_cli:` `"appc run -f -T simulator -p ipad -i 11.2 --device-id 6945AC80-7F29-4A5A-8256-49467E9D1A7D --build-only"`
-
-`)`
-
-`mocha_run_tests(`
-
-`mocha_js_file_name:` `'/Users/{USERDIR}/Appium_Tests/dash_test.js'`
-
-`)`
-
-`end`
-
-`end`
+end
+```
 
 The Fastfile file doesn't use file extensions.
 

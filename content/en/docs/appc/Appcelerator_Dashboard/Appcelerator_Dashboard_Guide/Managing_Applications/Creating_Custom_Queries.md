@@ -377,17 +377,14 @@ To configure advanced filtering:
 
 2. Enter a JSON coded filter in the code field. Note that the code field will be highlighted unless a valid filter code is entered. For example, to create a filter to match application installation in the production environment, enter the following code in the field:
 
-    `{`
-
-    `"$match"``: {`
-
-    `"event"``:` `"app.install"``,`
-
-    `"distribution.environment"``:` `"production"`
-
-    `}`
-
-    `}`
+    ```
+    {
+        "$match": {
+            "event": "app.install",
+            "distribution.environment": "production"
+        }
+    }
+    ```
 
 3. To save the configured filtering as part of a custom query, click **Save**.
 
@@ -399,22 +396,16 @@ To delete a filter, select the **Delete** icon associated with the filter to del
 
 If a featureEvent is specified:
 
-`function doClick(e) {`
-
-`Ti.Analytics.featureEvent(``'testFeature'``,`
-
-`{`
-
-`testString:` `'hello world'`
-
-`}`
-
-`);`
-
-`alert($.label.text);`
-
-`}`
-
-`$.index.open();`
+```javascript
+function doClick(e) {
+  Ti.Analytics.featureEvent('testFeature',
+{
+    testString: 'hello world'
+  }
+);
+  alert($.label.text);
+}
+$.index.open();
+```
 
 The query to filter on the data testString that is attached to the featureEvent would be a data.testString equal to hello world.

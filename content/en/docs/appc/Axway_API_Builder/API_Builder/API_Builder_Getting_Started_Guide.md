@@ -1,6 +1,6 @@
 {"title":"API Builder Getting Started Guide","weight":"10"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -40,11 +40,15 @@ To run API Builder, you need to install Node.js and Axway Appcelerator CLI. If y
 
 2. From a console window, execute the following command to install the CLI:
 
-    `npm` `install` `appcelerator -g`
+    ```bash
+    npm install appcelerator -g
+    ```
 
 3. After installation, execute the setup command to install the required components:
 
-    `appc setup`
+    ```bash
+    appc setup
+    ```
 
     This installation and setup can take several minutes.
 
@@ -60,7 +64,9 @@ To create a new project:
 
 1. Navigate to your workspace directory and execute the following command:
 
-    `appc new`
+    ```bash
+    appc new
+    ```
 
     Appcelerator CLI will prompt you to select a project type and project name.
 
@@ -70,7 +76,9 @@ To create a new project:
 
 4. Navigate to the project directory. For example, projectname.
 
-    `cd` `projectname`
+    ```
+    cd projectname
+    ```
 
 ## Run the project
 
@@ -78,7 +86,9 @@ To run the project locally:
 
 1. From the project directory, execute the following command:
 
-    `appc run`
+    ```bash
+    appc run
+    ```
 
     The CLI will download and install any dependencies for the project, then start the application. The application will launch a server that you can access from a browser or other clients. As the app is launching, you will see the various services it is starting and the localhost console URL for the application.
 
@@ -86,7 +96,7 @@ To run the project locally:
 
 Upon reviewing the left navigation, you can navigate to the following items:
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/thumbnails/49153255/summary_%281%29.png" alt="images/download/thumbnails/49153255/summary_%281%29.png" class="confluence-embedded-image confluence-thumbnail" width="60"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Summary</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Your app's admin home page.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/thumbnails/49153255/api.png" alt="images/download/thumbnails/49153255/api.png" class="confluence-embedded-image confluence-thumbnail" width="60"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>API Doc &amp; Test</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Auto-generated documentation about your API endpoints. Provides help for the client application to access your application.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/thumbnails/49153255/models.png" alt="images/download/thumbnails/49153255/models.png" class="confluence-embedded-image confluence-thumbnail" width="60"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Models</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Interface to help you build models. A model represents data stored from another source.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/thumbnails/49153255/configuration.png" alt="images/download/thumbnails/49153255/configuration.png" class="confluence-embedded-image confluence-thumbnail" width="60"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Configurations</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Lists configuration files that you can modify and save within a browser.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/thumbnails/49153255/connectors.png" alt="images/download/thumbnails/49153255/connectors.png" class="confluence-embedded-image confluence-thumbnail" width="60"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Connectors</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Lists and filters installed connectors.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/thumbnails/49153255/button-logs.png" alt="images/download/thumbnails/49153255/button-logs.png" class="confluence-embedded-image confluence-thumbnail" width="60"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Logs</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Lists of access logs, clients trying to access your application.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/thumbnails/49153255/View_Documentation.png" alt="images/download/thumbnails/49153255/View_Documentation.png" class="confluence-embedded-image confluence-thumbnail" width="60"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>View Documentation</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Links to the Axway documentation site for API Builder's guide.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/thumbnails/49153255/sidebar_toggle.png" alt="images/download/thumbnails/49153255/sidebar_toggle.png" class="confluence-embedded-image confluence-thumbnail" width="60"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Sidebar toggle</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Toggles the width of the sidebar.</p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/thumbnails/49153255/summary_%281%29.png" alt="images/download/thumbnails/49153255/summary_%281%29.png" class="confluence-embedded-image confluence-thumbnail" width="60"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Summary</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Your app's admin home page.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/thumbnails/49153255/api.png" alt="images/download/thumbnails/49153255/api.png" class="confluence-embedded-image confluence-thumbnail" width="60"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">API Doc &amp; Test</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Auto-generated documentation about your API endpoints. Provides help for the client application to access your application.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/thumbnails/49153255/models.png" alt="images/download/thumbnails/49153255/models.png" class="confluence-embedded-image confluence-thumbnail" width="60"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Models</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Interface to help you build models. A model represents data stored from another source.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/thumbnails/49153255/configuration.png" alt="images/download/thumbnails/49153255/configuration.png" class="confluence-embedded-image confluence-thumbnail" width="60"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Configurations</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Lists configuration files that you can modify and save within a browser.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/thumbnails/49153255/connectors.png" alt="images/download/thumbnails/49153255/connectors.png" class="confluence-embedded-image confluence-thumbnail" width="60"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Connectors</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Lists and filters installed connectors.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/thumbnails/49153255/button-logs.png" alt="images/download/thumbnails/49153255/button-logs.png" class="confluence-embedded-image confluence-thumbnail" width="60"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Logs</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Lists of access logs, clients trying to access your application.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/thumbnails/49153255/View_Documentation.png" alt="images/download/thumbnails/49153255/View_Documentation.png" class="confluence-embedded-image confluence-thumbnail" width="60"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">View Documentation</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Links to the Axway documentation site for API Builder's guide.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/thumbnails/49153255/sidebar_toggle.png" alt="images/download/thumbnails/49153255/sidebar_toggle.png" class="confluence-embedded-image confluence-thumbnail" width="60"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Sidebar toggle</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Toggles the width of the sidebar.</p></td></tr></tbody></table>
 
 You can disable the Admin Console by changing the configuration settings in the conf/default.js file. For now, let's explore some of the features of the Admin Console.
 
@@ -194,33 +204,28 @@ To deploy the project to the cloud:
 
 1. From the project directory, execute the following command:
 
-    `appc publish`
+    ```bash
+    appc publish
+    ```
 
     It will take a few minutes for your application to be deployed to AMPLIFY Runtime Services. After the command completes, the URL to your application will be displayed in the console.
 
-    `Appcelerator Command-Line Interface, version 5.5.1`
+    ```bash
+    Appcelerator Command-Line Interface, version 5.5.1
+    Copyright (c) 2014-2016, Appcelerator, Inc.  All Rights Reserved.
 
-    `Copyright (c) 2014-2016, Appcelerator, Inc. All Rights Reserved.`
+    Publishing application ... this could take several minutes
+    Packaging application ...
+    Deploying application ...
+    Starting application ...
+    Application deployed to https://<SUB_DOMAIN_TOKEN>.cloudapp-enterprise.appcelerator.com
+    Published api/QuickStart2@1.0.0
 
-    `Publishing application ... this could take several minutes`
-
-    `Packaging application ...`
-
-    `Deploying application ...`
-
-    `Starting application ...`
-
-    `Application deployed to https:``//``<SUB_DOMAIN_TOKEN>.cloudapp-enterprise.appcelerator.com`
-
-    `Published api``/QuickStart2``@1.0.0`
-
-    `Tips:`
-
-    ``- Run `appc cloud logcat` to view logs.``
-
-    ``- Run `appc cloud loglist --build_log` to view the build log.``
-
-    ``- Run `appc cloud usage` `` `for` `performance metrics.`
+    Tips:
+     - Run `appc cloud logcat` to view logs.
+     - Run `appc cloud loglist --build_log` to view the build log.
+     - Run `appc cloud usage` for performance metrics.
+    ```
 
     Let's quickly test the published application. In your browser, navigate to your published cloud application. You should see the API Builder Logo.
 

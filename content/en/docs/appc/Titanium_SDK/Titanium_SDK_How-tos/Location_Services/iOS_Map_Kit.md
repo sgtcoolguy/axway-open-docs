@@ -28,147 +28,100 @@ The Ti.Map module is included as part of the Titanium SDK. To include it in your
 
 * If you are using a text editor, add the following to your modules section:
 
-`...`
-
-`<``modules``>`
-
-`<!-- Add this line to your <``modules``> section -->`
-
-`<``module``>ti.map</``module``>`
-
-`</``modules``>`
-
-`...`
+```
+...
+    <modules>
+        <!-- Add this line to your <modules> section -->
+        <module>ti.map</module>
+    </modules>
+...
+```
 
 * To use the userLocation property of the map-view, add either the [NSLocationWhenInUseUsageDescription](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) or [NSLocationAlwaysUsageDescription](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) key to the iOS plist section. For iOS 11+, also add the [NSLocationAlwaysAndWhenInUseUsageDescription](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) key for best user experience:
 
-`...`
-
-`<``ios``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<``key``>NSLocationAlwaysUsageDescription</``key``>`
-
-`<``string``>`
-
-`Specify the reason for accessing the user's location information.`
-
-`This appears in the alert dialog when asking the user for permission to`
-
-`access their location.`
-
-`</``string``>`
-
-`<!-- iOS 11+ only. Ignored on older iOS versions -->`
-
-`<``key``>NSLocationAlwaysAndWhenInUseUsageDescription</``key``>`
-
-`<``string``>`
-
-`Specify additional information on accessing the user location. Refer`
-
-`to the Apple docs for details.`
-
-`</``string``>`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`</``ios``>`
-
-`...`
+```
+...
+    <ios>
+        <plist>
+            <dict>
+                <key>NSLocationAlwaysUsageDescription</key>
+                <string>
+                    Specify the reason for accessing the user's location information.
+                    This appears in the alert dialog when asking the user for permission to
+                    access their location.
+                </string>
+        <!-- iOS 11+ only. Ignored on older iOS versions -->
+        <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+        <string>
+          Specify additional information on accessing the user location. Refer
+          to the Apple docs for details.
+        </string>
+            </dict>
+        </plist>
+    </ios>
+...
+```
 
 Within your application's JavaScript files, instantiate the module with the require('ti.map') method:
 
-`var` `MapModule = require(``'ti.map'``);`
+```javascript
+var MapModule = require('ti.map');
+```
 
 Then, you can make subsequent API calls using the previously created MapModule object .
 
-`// Create a default Map.View class`
-
-`var` `mapView = MapModule.createView({`
-
-`mapType:MapModule.NORMAL_TYPE`
-
-`});`
+```javascript
+// Create a default Map.View class
+var mapView = MapModule.createView({
+  mapType:MapModule.NORMAL_TYPE
+});
+```
 
 ## Views
 
 The View class is the core UI component of the ti.map module. It allows Titanium to use the iOS map kit framework to view geographic data and add annotations and routes. As it is a native UI component, users will also have access to features like scrolling and multi-touch zoom. In its most basic form, the View can simply display a basic map given a geographic position via latitude and longitude.
 
-`// Add in the module`
+```javascript
+// Add in the module
+var MapModule = require('ti.map');
 
-`var` `MapModule = require(``'ti.map'``);`
+var win = Ti.UI.createWindow({ backgroundColor: 'white' });
+var oneThird = Ti.Platform.displayCaps.platformHeight / 3;
+var map1 = MapModule.createView({
+    userLocation: true,
+    mapType: MapModule.NORMAL_TYPE,
+    animate: true,
+    region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },
+    height: '33%',
+    top: 0,
+    width: Ti.UI.FILL
+});
 
-`var` `win = Ti.UI.createWindow({ backgroundColor:` `'white'` `});`
+var map2 = MapModule.createView({
+    userLocation: true,
+    mapType: MapModule.HYBRID_TYPE,
+    animate: true,
+    region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },
+    height: '33%',
+    top: oneThird,
+    width: Ti.UI.FILL
+});
 
-`var` `oneThird = Ti.Platform.displayCaps.platformHeight / 3;`
+var map3 = MapModule.createView({
+    userLocation: true,
+    mapType: MapModule.SATELLITE_TYPE,
+    animate: true,
+    region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },
+    height: '33%',
+    top: 2 * oneThird,
+    width: Ti.UI.FILL
+});
 
-`var` `map1 = MapModule.createView({`
-
-`userLocation:` `true``,`
-
-`mapType: MapModule.NORMAL_TYPE,`
-
-`animate:` `true``,`
-
-`region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },`
-
-`height:` `'33%'``,`
-
-`top: 0,`
-
-`width: Ti.UI.FILL`
-
-`});`
-
-`var` `map2 = MapModule.createView({`
-
-`userLocation:` `true``,`
-
-`mapType: MapModule.HYBRID_TYPE,`
-
-`animate:` `true``,`
-
-`region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },`
-
-`height:` `'33%'``,`
-
-`top: oneThird,`
-
-`width: Ti.UI.FILL`
-
-`});`
-
-`var` `map3 = MapModule.createView({`
-
-`userLocation:` `true``,`
-
-`mapType: MapModule.SATELLITE_TYPE,`
-
-`animate:` `true``,`
-
-`region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },`
-
-`height:` `'33%'``,`
-
-`top: 2 * oneThird,`
-
-`width: Ti.UI.FILL`
-
-`});`
-
-`win.add(map1);`
-
-`win.add(map2);`
-
-`win.add(map3);`
-
-`win.open();`
+win.add(map1);
+win.add(map2);
+win.add(map3);
+win.open();
+```
 
 ![MultiViewMap-New](/Images/appc/download/attachments/37540542/MultiViewMap-New.jpg)
 
@@ -210,65 +163,41 @@ Annotations, created with the createAnnotation method, mark places of interest o
 
 Adding an annotation to a View is simple. Let's modify the previous example to show only one view of Sydney with some landmarks.
 
-`var` `MapModule = require(``'ti.map'``);`
+```javascript
+var MapModule = require('ti.map');
+var win = Ti.UI.createWindow();
+var opera = MapModule.createAnnotation({
+    latitude: -33.8569,
+    longitude: 151.2153,
+    centerOffset: { x: 80, y: 25 },
+    image: 'SydneyOperaHouse.png', // 80x80px in this example
+    title: 'Sydney Opera House',
+    subtitle: 'Sydney, New South Wales, Australia',
+    // For events, use the Map View's click event
+    // and monitor the clicksource property for 'rightButton'.
+    rightButton: Ti.UI.iOS.SystemButton.CONTACT_ADD
+});
 
-`var` `win = Ti.UI.createWindow();`
+var bridge = MapModule.createAnnotation({
+    latitude: -33.852222,
+    longitude: 151.210556,
+    pincolor: MapModule.ANNOTATION_PURPLE,
+    title: 'Sydney Harbour Bridge',
+    subtitle: 'Port Jackson',
+    // For eventing, use the Map View's click event
+    // and monitor the clicksource property for 'leftButton'.
+    leftButton: Ti.UI.iOS.SystemButton.INFO_DARK
+});
 
-`var` `opera = MapModule.createAnnotation({`
+var mapview = MapModule.createView({
+    mapType: MapModule.NORMAL_TYPE,
+    region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },
+    annotations: [bridge, opera]
+});
 
-`latitude: -33.8569,`
-
-`longitude: 151.2153,`
-
-`centerOffset: { x: 80, y: 25 },`
-
-`image:` `'SydneyOperaHouse.png'``,` `// 80x80px in this example`
-
-`title:` `'Sydney Opera House'``,`
-
-`subtitle:` `'Sydney, New South Wales, Australia'``,`
-
-`// For events, use the Map View's click event`
-
-`// and monitor the clicksource property for 'rightButton'.`
-
-`rightButton: Ti.UI.iOS.SystemButton.CONTACT_ADD`
-
-`});`
-
-`var` `bridge = MapModule.createAnnotation({`
-
-`latitude: -33.852222,`
-
-`longitude: 151.210556,`
-
-`pincolor: MapModule.ANNOTATION_PURPLE,`
-
-`title:` `'Sydney Harbour Bridge'``,`
-
-`subtitle:` `'Port Jackson'``,`
-
-`// For eventing, use the Map View's click event`
-
-`// and monitor the clicksource property for 'leftButton'.`
-
-`leftButton: Ti.UI.iOS.SystemButton.INFO_DARK`
-
-`});`
-
-`var` `mapview = MapModule.createView({`
-
-`mapType: MapModule.NORMAL_TYPE,`
-
-`region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },`
-
-`annotations: [bridge, opera]`
-
-`});`
-
-`win.add(mapview);`
-
-`win.open();`
+win.add(mapview);
+win.open();
+```
 
 ![Annotation](/Images/appc/download/attachments/37540542/Annotation.jpg)
 
@@ -310,85 +239,55 @@ The next section discusses the Route class, a feature to create paths between lo
 
 Routes, created with the createRoute method, allow us to draw paths between locations on a View. These paths can be driving directions, bike paths, or any other reason you have to connect point A to point B. In the example below, a route is created going between three points:
 
-`var` `MapModule = require(``'ti.map'``);`
+```javascript
+var MapModule = require('ti.map');
 
-`var` `win = Ti.UI.createWindow({ backgroundColor:` `'white'` `});`
+var win = Ti.UI.createWindow({ backgroundColor: 'white' });
 
-`var` `appc = MapModule.createAnnotation({`
+var appc = MapModule.createAnnotation({
+    latitude: 37.389569,
+    longitude: -122.050212,
+    title: 'Appcelerator HQ',
+    subtitle: 'Mountain View, CA',
+    pincolor: MapModule.ANNOTATION_GREEN
+});
 
-`latitude: 37.389569,`
+var apple = MapModule.createAnnotation({
+    latitude: 37.331689,
+    longitude: -122.030731,
+    title: 'Apple HQ',
+    subtitle: 'Cupertino, CA',
+    pincolor: MapModule.ANNOTATION_RED
+});
 
-`longitude: -122.050212,`
+var google = MapModule.createAnnotation({
+    latitude: 37.422502,
+    longitude: -122.0855498,
+    title: 'Google HQ',
+    subtitle: 'Mountain View, CA',
+    pincolor: MapModule.ANNOTATION_RED
+});
 
-`title:` `'Appcelerator HQ'``,`
+var route = MapModule.createRoute({
+    width: 4,
+    color: '#f00',
+    points: [
+        { latitude: google.latitude, longitude: google.longitude },
+        { latitude: appc.latitude, longitude: appc.longitude },
+        { latitude: apple.latitude, longitude: apple.longitude }
+    ]
+});
 
-`subtitle:` `'Mountain View, CA'``,`
+var mapview = MapModule.createView({
+    mapType: MapModule.NORMAL_TYPE,
+    region: { latitude: 37.389569, longitude: -122.050212, latitudeDelta: 0.2, longitudeDelta: 0.2 },
+    annotations: [google, appc, apple]
+});
 
-`pincolor: MapModule.ANNOTATION_GREEN`
-
-`});`
-
-`var` `apple = MapModule.createAnnotation({`
-
-`latitude: 37.331689,`
-
-`longitude: -122.030731,`
-
-`title:` `'Apple HQ'``,`
-
-`subtitle:` `'Cupertino, CA'``,`
-
-`pincolor: MapModule.ANNOTATION_RED`
-
-`});`
-
-`var` `google = MapModule.createAnnotation({`
-
-`latitude: 37.422502,`
-
-`longitude: -122.0855498,`
-
-`title:` `'Google HQ'``,`
-
-`subtitle:` `'Mountain View, CA'``,`
-
-`pincolor: MapModule.ANNOTATION_RED`
-
-`});`
-
-`var` `route = MapModule.createRoute({`
-
-`width: 4,`
-
-`color:` `'#f00'``,`
-
-`points: [`
-
-`{ latitude: google.latitude, longitude: google.longitude },`
-
-`{ latitude: appc.latitude, longitude: appc.longitude },`
-
-`{ latitude: apple.latitude, longitude: apple.longitude }`
-
-`]`
-
-`});`
-
-`var` `mapview = MapModule.createView({`
-
-`mapType: MapModule.NORMAL_TYPE,`
-
-`region: { latitude: 37.389569, longitude: -122.050212, latitudeDelta: 0.2, longitudeDelta: 0.2 },`
-
-`annotations: [google, appc, apple]`
-
-`});`
-
-`mapview.addRoute(route);`
-
-`win.add(mapview);`
-
-`win.open();`
+mapview.addRoute(route);
+win.add(mapview);
+win.open();
+```
 
 After creating the three annotation points, the application creates a route object, using the createRoute method. Let's take a look at each of the route properties.
 
@@ -426,73 +325,45 @@ You can customize the look of the map by specifying the following Map View prope
 
 The example below views the Eiffel Tower looking towards the Seine River.
 
-`var` `MapModule = require(``'ti.map'``);`
+```javascript
+var MapModule = require('ti.map');
+var win = Ti.UI.createWindow();
 
-`var` `win = Ti.UI.createWindow();`
+// Camera view centered on the Eiffel Tower
+var pariscam = MapModule.createCamera({
+    altitude: 300,
+    centerCoordinate: {
+        longitude: 2.2945,
+        latitude: 48.8582
+    },
+    heading: -45,
+    pitch: 60
+});
 
-`// Camera view centered on the Eiffel Tower`
+// Map centered on the Eiffel Tower
+var mapview = MapModule.createView({
+    mapType: MapModule.NORMAL_TYPE,
+    animate: true,
+    region: { latitude: 48.8582, longitude: 2.2945, latitudeDelta: 0.02, longitudeDelta: 0.02 }
+});
 
-`var` `pariscam = MapModule.createCamera({`
-
-`altitude: 300,`
-
-`centerCoordinate: {`
-
-`longitude: 2.2945,`
-
-`latitude: 48.8582`
-
-`},`
-
-`heading: -45,`
-
-`pitch: 60`
-
-`});`
-
-`// Map centered on the Eiffel Tower`
-
-`var` `mapview = MapModule.createView({`
-
-`mapType: MapModule.NORMAL_TYPE,`
-
-`animate:` `true``,`
-
-`region: { latitude: 48.8582, longitude: 2.2945, latitudeDelta: 0.02, longitudeDelta: 0.02 }`
-
-`});`
-
-`// Change the view perspective after the map view appears on the display`
-
-`function` `animateCamera() {`
-
-`// Remove the event listener or else you cannot pan the view`
-
-`mapview.removeEventListener(``'complete'``, animateCamera);`
-
-`// Does not animate the camera change`
-
-`//mapview.camera = pariscam;`
-
-`// Animates the camera change`
-
-`mapview.animateCamera({`
-
-`camera: pariscam,`
-
-`curve: Ti.UI.ANIMATION_CURVE_EASE_IN,`
-
-`duration: 500`
-
-`});`
-
-`};`
-
-`mapview.addEventListener(``'complete'``, animateCamera);`
-
-`win.add(mapview);`
-
-`win.open();`
+// Change the view perspective after the map view appears on the display
+function animateCamera() {
+    // Remove the event listener or else you cannot pan the view
+    mapview.removeEventListener('complete', animateCamera);
+  // Does not animate the camera change
+  //mapview.camera = pariscam;
+  // Animates the camera change
+  mapview.animateCamera({
+    camera: pariscam,
+    curve: Ti.UI.ANIMATION_CURVE_EASE_IN,
+    duration: 500
+  });
+};
+mapview.addEventListener('complete', animateCamera);
+win.add(mapview);
+win.open();
+```
 
 ![ParisCamera](/Images/appc/download/attachments/37540542/ParisCamera.png)
 
@@ -514,69 +385,44 @@ The Map View object provides a few extra events that provide additional control 
 
 For example, the following code listens to each of the previous events and outputs information to the console when each event fires:
 
-`var` `MapModule = require(``'ti.map'``);`
+```javascript
+var MapModule = require('ti.map');
+var win = Ti.UI.createWindow();
+var appc = MapModule.createAnnotation({
+    latitude: 37.389569,
+    longitude: -122.050212,
+    title: 'Appcelerator HQ',
+    subtitle: 'Mountain View, CA',
+    pincolor: MapModule.ANNOTATION_GREEN,
+    draggable: true
+});
+var mapview = MapModule.createView({
+    mapType: MapModule.HYBRID_TYPE,
+    region: { latitude: 37.389569, longitude: -122.050212, latitudeDelta: 0.2, longitudeDelta: 0.2 },
+    annotations: [appc]
+});
+mapview.addEventListener('pinchangedragstate', function (e) {
+    Ti.API.info(e.type);
+    Ti.API.info(JSON.stringify(e.newState));
+});
 
-`var` `win = Ti.UI.createWindow();`
+mapview.addEventListener('click', function (e) {
+    Ti.API.info(e.type);
+    Ti.API.info(JSON.stringify(e.clicksource));
+});
 
-`var` `appc = MapModule.createAnnotation({`
+mapview.addEventListener('regionchanged', function (e) {
+    Ti.API.info(e.type);
+    Ti.API.info(e.latitude + ',' + e.longitude);
+});
 
-`latitude: 37.389569,`
+mapview.addEventListener('complete', function (e) {
+    Ti.API.info(e.type);
+});
 
-`longitude: -122.050212,`
-
-`title:` `'Appcelerator HQ'``,`
-
-`subtitle:` `'Mountain View, CA'``,`
-
-`pincolor: MapModule.ANNOTATION_GREEN,`
-
-`draggable:` `true`
-
-`});`
-
-`var` `mapview = MapModule.createView({`
-
-`mapType: MapModule.HYBRID_TYPE,`
-
-`region: { latitude: 37.389569, longitude: -122.050212, latitudeDelta: 0.2, longitudeDelta: 0.2 },`
-
-`annotations: [appc]`
-
-`});`
-
-`mapview.addEventListener(``'pinchangedragstate'``,` `function` `(e) {`
-
-`Ti.API.info(e.type);`
-
-`Ti.API.info(JSON.stringify(e.newState));`
-
-`});`
-
-`mapview.addEventListener(``'click'``,` `function` `(e) {`
-
-`Ti.API.info(e.type);`
-
-`Ti.API.info(JSON.stringify(e.clicksource));`
-
-`});`
-
-`mapview.addEventListener(``'regionchanged'``,` `function` `(e) {`
-
-`Ti.API.info(e.type);`
-
-`Ti.API.info(e.latitude +` `','` `+ e.longitude);`
-
-`});`
-
-`mapview.addEventListener(``'complete'``,` `function` `(e) {`
-
-`Ti.API.info(e.type);`
-
-`});`
-
-`win.add(mapview);`
-
-`win.open();`
+win.add(mapview);
+win.open();
+```
 
 The application responds to the user's interaction of selecting the annotation and panning as seen by the console output.
 

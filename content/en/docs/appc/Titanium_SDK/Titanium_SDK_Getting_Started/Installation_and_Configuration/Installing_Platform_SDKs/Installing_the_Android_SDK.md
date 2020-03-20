@@ -98,7 +98,7 @@ Each Titanium SDK supports building against a specific range of Android versions
 | 1.8.x | 2.2 (API 8) | 3.x.x (API 11) | 2.2 (API 8) |
 | 1.7.x | 2.1 (API 7) | 3.x.x (API 11) | 2.1 (API 7) |
 
-Notes
+*Notes*
 
 \* If you are building an Android module, you need to have Android SDK 6.0.x (API 23) installed if using Release 6.0.0 and greater.
 
@@ -300,4 +300,6 @@ To use the Android SDK with Appcelerator Studio, the path to the SDK must be set
 
 To use the Android SDK with the Titanium CLI, the path to the SDK must be set in the Titanium CLI configuration settings. Run the following command and replace /Users/appc/sdk/android-sdk/ with the path to your Android SDK:
 
-`titanium config android.sdk /Users/appc/sdk/android-sdk/`
+```
+titanium config android.sdk /Users/appc/sdk/android-sdk/
+```

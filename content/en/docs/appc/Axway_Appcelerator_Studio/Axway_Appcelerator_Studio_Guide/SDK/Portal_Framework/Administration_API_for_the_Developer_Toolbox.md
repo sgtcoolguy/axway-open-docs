@@ -114,61 +114,40 @@ The action field is the most important and complex part of the Toolbox-Studio in
 
 Here is the structure outline of the JSON command, followed by an example:
 
-`{`
-
-`"command"``:``"<command_name>"``,`
-
-`"os"``: {`
-
-`"<windows | linux | macosx | all>"``: {`
-
-`"action"``:` `"<action>"``,`
-
-`"attributes"``: {``"<key>"``:` `"<value>"` `... },`
-
-`"urls"``: <array of strings or a single string>`
-
-`}`
-
-`}`
-
-`}`
+```
+{
+    "command":"<command_name>",
+    "os": {
+        "<windows | linux | macosx | all>": {
+            "action": "<action>",
+            "attributes": {"<key>": "<value>" ... },
+            "urls": <array of strings or a single string>
+        }
+    }
+}
+```
 
 _Example:_
 
-`{`
-
-`"command"``:``"ruby"``,`
-
-`"os"``: {`
-
-`"windows"``: {`
-
-`"action"``:` `"install"``,`
-
-`"attributes"``: {``"install_dir"``:` `"C:\/Ruby"``},`
-
-`"urls"``: [`
-
-`"http://rubyforge.org/frs/download.php/71492/rubyinstaller-1.8.7-p299.exe"``,`
-
-`"http://rubyforge.org/frs/download.php/66888/devkit-3.4.5r3-20091110.7z"`
-
-`]`
-
-`},`
-
-`"all"``: {`
-
-`"action"``:``"open"``,`
-
-`"urls"``:` `"http://www.ruby-lang.org/en/downloads/"`
-
-`}`
-
-`}`
-
-`}`
+```
+{
+    "command":"ruby",
+    "os": {
+        "windows": {
+            "action": "install",
+            "attributes": {"install_dir": "C:\/Ruby"},
+            "urls": [
+                "http://rubyforge.org/frs/download.php/71492/rubyinstaller-1.8.7-p299.exe",
+                "http://rubyforge.org/frs/download.php/66888/devkit-3.4.5r3-20091110.7z"
+            ]
+        },
+        "all": {
+            "action":"open",
+            "urls": "http://www.ruby-lang.org/en/downloads/"
+        }
+    }
+}
+```
 
 In the following example, we call for the ‘ruby’ command. The toolbox JavaScript framework looks at the ‘item\_type’ value and decides how to proceed and which controller to call.
 
@@ -182,53 +161,36 @@ Note that some **installers**, such as Ruby, require a specific order of URLs. T
 
 Here are a couple of more examples that will install a plugin and a JavaScript library:
 
-`{`
-
-`"command"``:``"plugins"``,`
-
-`"os"``: {`
-
-`"all"``: {`
-
-`"attributes"``: {`
-
-`"feature_id"``:` `"com.aptana.php.feature"``,`
-
-`"plugin_id"``:` `"com.aptana.editor.php"``,`
-
-`"plugin_version"``:` `"3.0.0"``},`
-
-`"action"``:` `"install"``,`
-
-`"urls"``:` `"http://download.aptana.com/studio3/plugin/install"`
-
-`}`
-
-`}`
-
-`}`
+```
+{
+    "command":"plugins",
+    "os": {
+        "all": {
+            "attributes": {
+                "feature_id": "com.aptana.php.feature",
+                "plugin_id": "com.aptana.editor.php",
+                "plugin_version": "3.0.0"},
+            "action": "install",
+            "urls": "http://download.aptana.com/studio3/plugin/install"
+        }
+    }
+}
+```
 
 \---------------------------------------------------------------------------------------
 
-`{`
-
-`"command"``:``"js_library"``,`
-
-`"os"``: {`
-
-`"all"``: {`
-
-`"attributes"``: {``"name"` `:` `"prototype 1.6.1"``},`
-
-`"action"``:` `"install"``,`
-
-`"urls"``:` `"http://prototypejs.org/assets/2009/8/31/prototype.js"`
-
-`}`
-
-`}`
-
-`}`
+```
+{
+    "command":"js_library",
+    "os": {
+        "all": {
+            "attributes": {"name" : "prototype 1.6.1"},
+            "action": "install",
+            "urls": "http://prototypejs.org/assets/2009/8/31/prototype.js"
+        }
+    }
+}
+```
 
 Pay attention that installing a Plug-in or a JavaScript library is more generic then installing a specific application. The command for installing a Plug-in is always ‘plugins’, and the command for installing a JS library is always ‘js\_library’.
 

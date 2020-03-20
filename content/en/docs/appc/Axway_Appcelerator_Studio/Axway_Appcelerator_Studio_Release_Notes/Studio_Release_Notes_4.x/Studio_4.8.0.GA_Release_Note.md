@@ -150,7 +150,9 @@ This version of Studio adds support to create, build, and test Windows modules (
         ![_thumb_60015](/Images/appc/download/attachments/48432905/_thumb_60015.png)
     * If your default Java environment is set to 64-bit, then you need to add the following argument in the Appcelerator.ini file (found in the installation directory):
 
-        `C:\Program Files(x86)\Java\jdk1.``7``.0_71\bin\javaw.exe`
+        ```
+        C:\Program Files(x86)\Java\jdk1.7.0_71\bin\javaw.exe
+        ```
 
 * [TISTUD-8613](https://jira.appcelerator.org/browse/TISTUD-8613) - iOS Debugger: Breakpoint is not hit for the first time for a clean alloy project
 
@@ -165,28 +167,18 @@ This version of Studio adds support to create, build, and test Windows modules (
 
     * When you check for Appcelerator Studio updates, you'll see an error in the Studio Log detailing a 403 error message like this:
 
-        `!ENTRY com.appcelerator.titanium.update.core` `4`  `0`  `2016``-``11``-``09`  `14``:``33``:``50.565`
-
-        `!MESSAGE (Build` `4.8``.``0.201611092408``) [ERROR] Server returned HTTP response code:` `403`  `for` `URL: http:``//builds.appcelerator.com.s3.amazonaws.com/mobile/5.2.0/index.json`
-
-        `!STACK` `0`
-
-        `java.io.IOException: Server returned HTTP response code:` `403`  `for` `URL: http:``//builds.appcelerator.com.s3.amazonaws.com/mobile/5.2.0/index.json`
-
-        `at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:``1626``)`
-
-        `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.getURIContents(TitaniumReleasesUpdater.java:``699``)`
-
-        `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.getReleases(TitaniumReleasesUpdater.java:``603``)`
-
-        `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.getSDKReleases(TitaniumReleasesUpdater.java:``549``)`
-
-        `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.getLatestSDKRelease(TitaniumReleasesUpdater.java:``805``)`
-
-        `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.hasSDKUpdates(TitaniumReleasesUpdater.java:``246``)`
-
-        `at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.hasUpdates(TitaniumReleasesUpdater.java:``202``)`
-
-        `at com.appcelerator.titanium.update.ui.handler.TitaniumUpdateHandler$``1``.run(TitaniumUpdateHandler.java:``63``)`
-
-        `at org.eclipse.core.internal.jobs.Worker.run(Worker.java:``54``)`
+        ```
+        !ENTRY com.appcelerator.titanium.update.core 4 0 2016-11-09 14:33:50.565
+        !MESSAGE (Build 4.8.0.201611092408) [ERROR]  Server returned HTTP response code: 403 for URL: http://builds.appcelerator.com.s3.amazonaws.com/mobile/5.2.0/index.json
+        !STACK 0
+        java.io.IOException: Server returned HTTP response code: 403 for URL: http://builds.appcelerator.com.s3.amazonaws.com/mobile/5.2.0/index.json
+          at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1626)
+          at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.getURIContents(TitaniumReleasesUpdater.java:699)
+          at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.getReleases(TitaniumReleasesUpdater.java:603)
+          at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.getSDKReleases(TitaniumReleasesUpdater.java:549)
+          at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.getLatestSDKRelease(TitaniumReleasesUpdater.java:805)
+          at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.hasSDKUpdates(TitaniumReleasesUpdater.java:246)
+          at com.appcelerator.titanium.update.internal.core.TitaniumReleasesUpdater.hasUpdates(TitaniumReleasesUpdater.java:202)
+          at com.appcelerator.titanium.update.ui.handler.TitaniumUpdateHandler$1.run(TitaniumUpdateHandler.java:63)
+          at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+        ```

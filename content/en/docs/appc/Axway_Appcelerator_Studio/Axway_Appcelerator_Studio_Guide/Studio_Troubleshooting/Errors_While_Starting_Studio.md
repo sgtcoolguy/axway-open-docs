@@ -32,11 +32,11 @@ These are errors pop up a dialog box, asking you to look at a log file
 
 Open the log file at the specified location. If you see messages like:
 
-`org.osgi.framework.BundleException: Exception in org.eclipse.core.resources.ResourcesPlugin.start() of bundle org.eclipse.core.resources.`
-
-`...`
-
-`Caused by: org.eclipse.core.internal.dtree.ObjectNotFoundException: Tree element` `'XXX'` `not found.`
+```
+org.osgi.framework.BundleException: Exception in org.eclipse.core.resources.ResourcesPlugin.start() of bundle org.eclipse.core.resources.
+...
+Caused by: org.eclipse.core.internal.dtree.ObjectNotFoundException: Tree element 'XXX' not found.
+```
 
 It is caused by [this](https://bugs.eclipse.org/bugs/show_bug.cgi?id=149121) bug in Eclipse, most likely due to a case where Studio quit or was closed unexpectedly, corrupting a particular file.
 

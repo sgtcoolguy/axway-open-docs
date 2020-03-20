@@ -38,17 +38,14 @@ We updated the way you can specify capabilities of your app in the tiapp.xml to 
 
 This release also includes support of localization ([TIMOB-20315](https://jira.appcelerator.org/browse/TIMOB-20315)) that includes localization of application name and properties for the Ti.Locale module:
 
-`currentCountry`
-
-`currentLanguage`
-
-`currentLocale`
-
-`getCurrencyCode`
-
-`getCurrencySymbol`
-
-`getLocaleCurrencySymbol`
+```
+currentCountry
+currentLanguage
+currentLocale
+getCurrencyCode
+getCurrencySymbol
+getLocaleCurrencySymbol
+```
 
 On the SDK and tooling side, we added support for Windows 10 detection and tooling without requiring the user to also have Windows 8.1 SDK/tooling ([TIMOB-20198](https://jira.appcelerator.org/browse/TIMOB-20198)). Listing of emulators was improved when no specific Windows SDK version is specified to include all available emulators ([TIMOB-20571](https://jira.appcelerator.org/browse/TIMOB-20571) and [TISTUD-8447](https://jira.appcelerator.org/browse/TISTUD-8447)). The SDK no longer requires explicit setting of t he --wp-sdk option for SDK version when the version of the SDK can be determined by the chosen emulator (i.e. If a user chooses to build for a Windows 10 emulator, they no longer _also_ have to provide the \--wp-sdk 10.0 flag). Updated CLI and tooling to support deploying to Windows 10 mobile devices and emulators ([TIMOB-20096](https://jira.appcelerator.org/browse/TIMOB-20096)). And, to support Windows 10 policy changes for signing apps, we now support generating private keys to sign for Windows 10 mobile apps. FA temporary key is generated for development if the user has no certificate or private key ([TIMOB-20145](https://jira.appcelerator.org/browse/TIMOB-20145)).
 

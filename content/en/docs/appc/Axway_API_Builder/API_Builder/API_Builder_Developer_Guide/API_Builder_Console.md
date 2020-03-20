@@ -1,6 +1,6 @@
 {"title":"API Builder Console","weight":"10"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -62,47 +62,34 @@ The admin dictionary can contain the following keys:
 
 **Example:**
 
-./conf/default.js
+*./conf/default.js*
 
-`{`
+```javascript
+{
+  admin: {
+    // control whether the admin website is available
+    enabled: true,
 
-`admin: {`
+    // if you set disableAPIDoc, your APIs docs will not show up (Only works in production. Swagger is always
+  // available in dev mode.)
+    disableAPIDoc: false,
 
-`// control whether the admin website is available`
+    // set the email addresses you want to enable while in production
+    validEmails: ["jsmith@foo.com"],
 
-`enabled:` `true``,`
+    // set the organization ids you want to enable while in production
+    validOrgs: [199546299]
 
-`// if you set disableAPIDoc, your APIs docs will not show up (Only works in production. Swagger is always`
-
-`// available in dev mode.)`
-
-`disableAPIDoc:` `false``,`
-
-`// set the email addresses you want to enable while in production`
-
-`validEmails: [``"jsmith@foo.com"``],`
-
-`// set the organization ids you want to enable while in production`
-
-`validOrgs: [199546299]`
-
-`// set the list of IP addresses, IP ranges and hostnames from which connections to the admin interfaces`
-
-`// will be accepted`
-
-`allowedHosts: [`
-
-`'127.0.0.1'``,`
-
-`'myhost.axawy.com'``,`
-
-`'10.1.1.1/24'``,`
-
-`]`
-
-`}`
-
-`}`
+    // set the list of IP addresses, IP ranges and hostnames from which connections to the admin interfaces
+    // will be accepted
+    allowedHosts: [
+        '127.0.0.1',
+        'myhost.axawy.com',
+        '10.1.1.1/24',
+    ]
+  }
+}
+```
 
 ## API Builder tabs
 
@@ -196,7 +183,9 @@ API Builder contains a [Swagger](http://swagger.io/) definition that can be used
 
 Your API Builder project Swagger file describes all of the APIs in the project that can be accessed via the following URL:
 
-`https:``//``<SUB_DOMAIN_TOKEN>.cloudapp-enterprise.appcelerator.com``/apidoc/swagger``.json`
+```
+https://<SUB_DOMAIN_TOKEN>.cloudapp-enterprise.appcelerator.com/apidoc/swagger.json
+```
 
 ### Individual APIs
 
@@ -204,70 +193,47 @@ Each API also has a separate Swagger definition associated with the API. This is
 
 For example, if you have a model and associated APIs for an _account_ as follows:
 
-`var` `Arrow = require(``'arrow'``);`
-
-`var` `Model = Arrow.Model.reduce(``'appc.salesforce/Account'``,` `'Account'``, {`
-
-`fields: {`
-
-`Name: {`
-
-`type: String,`
-
-`description:` `'Account Name'``,`
-
-`maxlength: 255,`
-
-`required:` `true``,`
-
-`optional:` `false`
-
-`},`
-
-`Type: {`
-
-`type: String,`
-
-`description:` `'Account Type'``,`
-
-`maxlength: 40`
-
-`},`
-
-`Phone: {`
-
-`type: String,`
-
-`description:` `'Account Phone'``,`
-
-`maxlength: 40`
-
-`}`
-
-`},`
-
-`actions: [`
-
-`'create'``,`
-
-`'read'``,`
-
-`'update'``,`
-
-`'delete'``,`
-
-`'deleteAll'`
-
-`]`
-
-`});`
-
-`module.exports = Model;`
+```javascript
+var Arrow = require('arrow');
+var Model = Arrow.Model.reduce('appc.salesforce/Account', 'Account', {
+    fields: {
+        Name: {
+            type: String,
+            description: 'Account Name',
+            maxlength: 255,
+            required: true,
+            optional: false
+        },
+        Type: {
+            type: String,
+            description: 'Account Type',
+            maxlength: 40
+        },
+        Phone: {
+            type: String,
+            description: 'Account Phone',
+            maxlength: 40
+        }
+    },
+    actions: [
+        'create',
+        'read',
+        'update',
+        'delete',
+        'deleteAll'
+    ]
+});
+module.exports = Model;
+```
 
 The API Builder documentation for this API can be found via this URL:
 
-`https:``//``<SUB_DOMAIN_TOKEN>.cloudapp-enterprise.appcelerator.com``/apidoc/docs``.html?apis``/account``.html`
+```
+https://<SUB_DOMAIN_TOKEN>.cloudapp-enterprise.appcelerator.com/apidoc/docs.html?apis/account.html
+```
 
 The Swagger definition for the _account_ can be found here:
 
-`https:``//``<SUB_DOMAIN_TOKEN>.cloudapp-enterprise.appcelerator.com``/apidoc/docs``.json?apis``/account`
+```
+https://<SUB_DOMAIN_TOKEN>.cloudapp-enterprise.appcelerator.com/apidoc/docs.json?apis/account
+```

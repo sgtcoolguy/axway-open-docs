@@ -618,17 +618,15 @@ Hyperloop 4.0.0 is only compatible with SDK 8.0.0 and newer.
 
 * Added support for dotted enums (like in Swift)
 
-    `// before`
+    ```
+    // before
+    import { UIControlStateNormal, UIControlStateSelected } from 'UIKit';
+    alert(UIControlStateNormal);
 
-    `import` `{ UIControlStateNormal, UIControlStateSelected } from` `'UIKit'``;`
-
-    `alert(UIControlStateNormal);`
-
-    `// now`
-
-    `import` `{ UIControlState } from` `'UIKit'``;`
-
-    `alert(UIControlState.Normal);`
+    // now
+    import { UIControlState } from 'UIKit';
+    alert(UIControlState.Normal);
+    ```
 
 * Refactored iOS metabase generation to improve build time
 
@@ -648,7 +646,9 @@ Hyperloop 4.0.0 is only compatible with SDK 8.0.0 and newer.
 
 * Added support for namespace-based imports like Android
 
-    `import` `{ UICommand, MessageDialog } from` `'Windows.UI.Popups.*'``;`
+    ```
+    import { UICommand, MessageDialog } from 'Windows.UI.Popups.*';
+    ```
 
 ## API changes
 

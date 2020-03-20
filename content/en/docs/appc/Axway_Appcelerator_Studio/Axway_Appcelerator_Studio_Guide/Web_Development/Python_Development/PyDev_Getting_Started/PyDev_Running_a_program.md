@@ -4,9 +4,10 @@ Ok, now that you're already up and running, let's **run a program from within Ec
 
 For that, we will extend the module we created in the previous chapter with the following program:
 
-`if` `__name__` `=``=`  `'__main__'``:`
-
-`print`  `'Hello World'`
+```
+if __name__ == '__main__':
+    print 'Hello World'
+```
 
 Then, to run the file, you can:
 

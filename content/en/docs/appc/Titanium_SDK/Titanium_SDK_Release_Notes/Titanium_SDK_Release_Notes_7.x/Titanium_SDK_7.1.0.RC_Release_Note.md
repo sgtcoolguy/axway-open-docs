@@ -98,11 +98,11 @@ As of this release, Titanium SDK 7.0.x will not be supported six months from 7.1
 
     * This feature can be disabled by setting false on use-auto-versioning in windows section:
 
-        `<``windows``>`
-
-        `<``use``-auto-versioning>false</``use``-auto-versioning>`
-
-        `</``windows``>`
+        ```xml
+        <windows>
+          <use-auto-versioning>false</use-auto-versioning>
+        </windows>
+        ```
 
 ### Multiple platforms
 
@@ -110,7 +110,7 @@ As of this release, Titanium SDK 7.0.x will not be supported six months from 7.1
 
     * Added transpiling user JavaScript code to ES5 or minimum target OS/JS engine support
 
-        <table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class="jscript plain">&lt;tiapp&gt;</tt><tt class="jscript spaces"> </tt><tt class="jscript plain">&lt;transpile&gt;</tt><tt class="jscript keyword">true</tt><tt class="jscript plain">&lt;/transpile&gt;</tt><tt class="jscript plain">&lt;/tiapp&gt;</tt></p></td></tr></tbody></table>
+        <table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class="jscript plain ">&lt;tiapp&gt;</tt><tt class="jscript spaces "> </tt><tt class="jscript plain ">&lt;transpile&gt;</tt><tt class="jscript keyword ">true</tt><tt class="jscript plain ">&lt;/transpile&gt;</tt><tt class="jscript plain ">&lt;/tiapp&gt;</tt></p></td></tr></tbody></table>
 
     * Adding this property and having it set to true will enable transpilation during the build process using babel-preset-env to target the underlying JS engine version. For Android we target the version of v8 we build with. For iOS we target the version of iOS's included JavaScriptCore engine for the minimum iOS version the SDK targets.
 

@@ -218,11 +218,11 @@ Additionally, other "pseudo-types" (for lack of a better term) may be defined in
 
 The specification supports what might be called "multiple documentation inheritance", whereby a Titanium type that is being documented (i.e., a proxy or module) has an extends property that can be set to a single qualified type name or an array of type names, thereby giving the child type all of the method, property and event documentation defined in the super types. Example:
 
-`---`
-
-`name: Titanium.UI.Window`
-
-`extends``: Titanium.UI.View`
+```
+---
+name: Titanium.UI.Window
+extends: Titanium.UI.View
+```
 
 The example indicates that Titanium.UI.Window shall inherit all of the method, property and event documentation of the Titanium.UI.View type.
 
@@ -252,15 +252,13 @@ Indentation within the .yml files should be four characters. YAML does not allow
 
 You will notice in our samples that we often use "[block sequences](http://www.yaml.org/spec/1.2/spec.html#id2759963)" for our API documentation. The "methods" collection here in this very simple example shows a block sequence:
 
-`methods:`
-
-`- name: myMethod`
-
-`description: My method.`
-
-`- name: yourMethod`
-
-`description: Your method`
+```
+methods:
+  - name: myMethod
+    description: My method.
+  - name: yourMethod
+    description: Your method
+```
 
 The dash that is used to indicate the start of a block sequence entry _is part of the indentation_. So whereas it may look like the example is using two levels of two-character indentation, it's in fact using one level of four-character indentation; it's just that part of the indentation – the dash – is meaningful.
 
@@ -278,11 +276,12 @@ Types shall be documented in a YAML "document". YAML marks the beginning of a do
 
 Throughout this document we will add to an example .yml file that adheres to our specification. The example will document the fictitious Titanium.Do.Hicky type. So far, we have the following:
 
-Hicky.yml
+*Hicky.yml*
 
-`# Documentation of Titanium.Do.Hicky`
-
-`---`
+```yml
+# Documentation of Titanium.Do.Hicky
+---
+```
 
 ##### Valid Keys in the Documentation of a Type
 
@@ -307,51 +306,36 @@ These are the keys (i.e., YAML properties/members) which are valid in the docume
 
 Our running example so far:
 
-Hicky.yml
+*Hicky.yml*
 
-`# Documentation of Titanium.Do.Hicky`
+```yml
+# Documentation of Titanium.Do.Hicky
+---
+name: Titanium.Do.Hicky
+summary: A view which automatically renders as an octagon.
+platforms: [android, ipad, iphone]
+extends: Titanium.UI.View
+since: {android: "1.6.0", iphone: "0.8", ipad: "1.4.0"}
+# We could also just do this if all platforms got the type at the same time:
+# since: "0.8"
 
-`---`
+description: It's important *not* to use this view on a scrollview!  Behavior there is undefined!
+# We could also have specified that the description is in an external file, like this:
+# description: file:Hicky_description.md
 
-`name: Titanium.Do.Hicky`
+examples:
+  - title: Put a Hicky on a Window
+    example:
+        The following example shows putting a Hicky directly on a window:
 
-`summary: A view which automatically renders as an octagon.`
+            var win = Ti.UI.createWindow({backgroundColor: '#ccc'});
+            win.add(Ti.Do.createHicky());
 
-`platforms: [android, ipad, iphone]`
-
-`extends``: Titanium.UI.View`
-
-`since: {android:` `"1.6.0"``, iphone:` `"0.8"``, ipad:` `"1.4.0"``}`
-
-`# We could also just` `do`  `this`  `if` `all platforms got the type at the same time:`
-
-`# since:` `"0.8"`
-
-`description: It's important *not* to use` `this` `view on a scrollview! Behavior there is undefined!`
-
-`# We could also have specified that the description is in an external file, like` `this``:`
-
-`# description: file:Hicky_description.md`
-
-`examples:`
-
-`- title: Put a Hicky on a Window`
-
-`example:`
-
-`The following example shows putting a Hicky directly on a window:`
-
-`var win = Ti.UI.createWindow({backgroundColor:` `'#ccc'``});`
-
-`win.add(Ti.Do.createHicky());`
-
-`# In following sections we'll show ...`
-
-`# methods: ...`
-
-`# properties: ...`
-
-`# events: ...`
+# In following sections we'll show ...
+# methods: ...
+# properties: ...
+# events: ...
+```
 
 ##### Method Specification
 
@@ -392,153 +376,93 @@ The valid keys are:
 
 So far this section has concentrated on the specification for a single method's documentation. Of course, a type will most often have multiple methods that need to be documented, and therefore the type documentation specification's methods key expects an array of method documentation definitions, or, more accurately, what YAML calls a "Sequence of Mappings". Similarly, each method may have 0 or more parameters, therefore a sequence of parameter documentation definitions is also required for the method specification's parameters key. It's quite simple to put multiple definitions together in a sequence in YAML. This shows how it is done, both for methods and parameters:
 
-`methods:`
-
-`- name: doSomething`
-
-`summary: This method, when called, will` `do` `something.`
-
-`since:` `"0.8"`
-
-`platforms: [android, iphone, ipad]`
-
-`returns: {type:` `"String"``, description:` `"The thing done."``}`
-
-`parameters:`
-
-`- name: x`
-
-`summary: The x-axis value`
-
-`type: Number`
-
-`- name: y`
-
-`summary: The y-axis value`
-
-`type: Number`
-
-`- name: multiply`
-
-`summary: Multiplies two factors and returns product.`
-
-`since:` `"0.8"`
-
-`platforms: [android, iphone, ipad]`
-
-`returns: {type:` `"Number"``, description:` `"The multiplication result"``}`
-
-`parameters:`
-
-`- name: num1`
-
-`description: First factor.`
-
-`type: Number`
-
-`- name: num2`
-
-`description: Second factor.`
-
-`type: Number`
+```
+methods:
+  - name: doSomething
+    summary: This method, when called, will do something.
+    since: "0.8"
+    platforms: [android, iphone, ipad]
+    returns: {type: "String", description: "The thing done."}
+    parameters:
+      - name: x
+        summary: The x-axis value
+        type: Number
+      - name: y
+        summary: The y-axis value
+        type: Number
+  - name: multiply
+    summary: Multiplies two factors and returns product.
+    since: "0.8"
+    platforms: [android, iphone, ipad]
+    returns: {type: "Number", description: "The multiplication result"}
+    parameters:
+      - name: num1
+        description: First factor.
+        type: Number
+    - name: num2
+        description: Second factor.
+        type: Number
+```
 
 As the example shows, a sequence that is a value of a key is indented, and a dash indicates the beginning of an element in the sequence, followed by the keys and values for that element.
 
 Our running example so far:
 
-Hicky.yml
+*Hicky.yml*
 
-`# Documentation of Titanium.Do.Hicky`
+```yml
+# Documentation of Titanium.Do.Hicky
+---
+name: Titanium.Do.Hicky
+summary: A view which automatically renders as an octagon.
+platforms: [android, ipad, iphone]
+extends: Titanium.UI.View
+since: {android: "1.6.0", iphone: "0.8", ipad: "1.4.0"}
+# We could also just do this if all platforms got the type at the same time:
+# since: "0.8"
 
-`---`
+description: It's important *not* to use this view on a scrollview!  Behavior there is undefined!
+# We could also have specified that the description is in an external file, like this:
+# description: file:Hicky_description.md
 
-`name: Titanium.Do.Hicky`
+examples:
+  -  title: Put a Hicky on a Window
+     example: |
+         The following example shows putting a Hicky directly on a window:
 
-`summary: A view which automatically renders as an octagon.`
+             var win = Ti.UI.createWindow({backgroundColor: '#ccc'});
+             win.add(Ti.Do.createHicky());
 
-`platforms: [android, ipad, iphone]`
+methods:
+  - name: doSomething
+    summary: This method, when called, will do something.
+    since: "0.8"
+    platforms: [android, iphone, ipad]
+    returns: {type: "String", description: "The thing done"}
+    parameters:
+      - name: x
+        summary: The x-axis value
+        type: Number
+      - name: y
+        summary: The y-axis value
+        type: Number
+  - name: multiply
+    summary: Multiplies two factors and returns product.
+    since: "0.8"
+    platforms: [android, iphone, ipad]
+    returns: {type: "Number", description: "The multiplication result"}
+    parameters:
+      - name: num1
+        summary: First factor.
+        type: Number
+      - name: num2
+        summary: Second factor.
+        type: Number
 
-`extends``: Titanium.UI.View`
-
-`since: {android:` `"1.6.0"``, iphone:` `"0.8"``, ipad:` `"1.4.0"``}`
-
-`# We could also just` `do`  `this`  `if` `all platforms got the type at the same time:`
-
-`# since:` `"0.8"`
-
-`description: It's important *not* to use` `this` `view on a scrollview! Behavior there is undefined!`
-
-`# We could also have specified that the description is in an external file, like` `this``:`
-
-`# description: file:Hicky_description.md`
-
-`examples:`
-
-`- title: Put a Hicky on a Window`
-
-`example: |`
-
-`The following example shows putting a Hicky directly on a window:`
-
-`var win = Ti.UI.createWindow({backgroundColor:` `'#ccc'``});`
-
-`win.add(Ti.Do.createHicky());`
-
-`methods:`
-
-`- name: doSomething`
-
-`summary: This method, when called, will` `do` `something.`
-
-`since:` `"0.8"`
-
-`platforms: [android, iphone, ipad]`
-
-`returns: {type:` `"String"``, description:` `"The thing done"``}`
-
-`parameters:`
-
-`- name: x`
-
-`summary: The x-axis value`
-
-`type: Number`
-
-`- name: y`
-
-`summary: The y-axis value`
-
-`type: Number`
-
-`- name: multiply`
-
-`summary: Multiplies two factors and returns product.`
-
-`since:` `"0.8"`
-
-`platforms: [android, iphone, ipad]`
-
-`returns: {type:` `"Number"``, description:` `"The multiplication result"``}`
-
-`parameters:`
-
-`- name: num1`
-
-`summary: First factor.`
-
-`type: Number`
-
-`- name: num2`
-
-`summary: Second factor.`
-
-`type: Number`
-
-`# In following sections we'll show ...`
-
-`# properties: ...`
-
-`# events: ...`
+# In following sections we'll show ...
+# properties: ...
+# events: ...
+```
 
 ##### Property Specification
 
@@ -571,133 +495,79 @@ Multiple property documentation definitions can be put together into a YAML sequ
 
 Our running example so far, which includes a sequence of property definitions:
 
-Hicky.yml
+*Hicky.yml*
 
-`# Documentation of Titanium.Do.Hicky`
+```yml
+# Documentation of Titanium.Do.Hicky
+---
+name: Titanium.Do.Hicky
+summary: A view which automatically renders as an octagon.
+platforms: [android, ipad, iphone]
+extends: Titanium.UI.View
+since: {android: "1.6.0", iphone: "0.8", ipad: "1.4.0"}
+# We could also just do this if all platforms got the type at the same time:
+# since: "0.8"
 
-`---`
+description: It's important *not* to use this view on a scrollview!  Behavior there is undefined!
+# We could also have specified that the description is in an external file, like this:
+# description: file:Hicky_description.md
 
-`name: Titanium.Do.Hicky`
+examples:
+  - title: Put a Hicky on a Window
+    example: |
+        The following example shows putting a Hicky directly on a window:
 
-`summary: A view which automatically renders as an octagon.`
+            var win = Ti.UI.createWindow({backgroundColor: '#ccc'});
+            win.add(Ti.Do.createHicky());
 
-`platforms: [android, ipad, iphone]`
+methods:
+  - name: doSomething
+    summary: This method, when called, will do something.
+    since: "0.8"
+    platforms: [android, iphone, ipad]
+    returns: {type: "String", description: "The thing done."}
+    parameters:
+      - name: x
+        summary: The x-axis value
+        type: Number
+      - name: y
+        summary: The y-axis value
+        type: Number
+  - name: multiply
+    summary: Multiplies two factors and returns product.
+    since: "0.8"
+    platforms: [android, iphone, ipad]
+    returns: {type: "Number", description: "The multiplication result"}
+    parameters:
+      - name: num1
+        summary: First factor.
+        type: Number
+      - name: num2
+        summary: Second factor.
+        type: Number
 
-`extends``: Titanium.UI.View`
+properties:
+  - name: x
+    summary: The x-axis value.
+    type: Number
+    availability: always
+    permission: read-write
+  - name: y
+    summary: The y-axis value.
+    type: Number
+  - name: z
+    summary: The z-axis value.
+    type: Number
+    platforms: [ipad]
+    since: "1.4.0"
+    deprecated:
+        since: "1.6.0"
+        removed: "1.8.0"
+        notes: Use <Titanium.Do.Hicky.zz> instead.
 
-`since: {android:` `"1.6.0"``, iphone:` `"0.8"``, ipad:` `"1.4.0"``}`
-
-`# We could also just` `do`  `this`  `if` `all platforms got the type at the same time:`
-
-`# since:` `"0.8"`
-
-`description: It's important *not* to use` `this` `view on a scrollview! Behavior there is undefined!`
-
-`# We could also have specified that the description is in an external file, like` `this``:`
-
-`# description: file:Hicky_description.md`
-
-`examples:`
-
-`- title: Put a Hicky on a Window`
-
-`example: |`
-
-`The following example shows putting a Hicky directly on a window:`
-
-`var win = Ti.UI.createWindow({backgroundColor:` `'#ccc'``});`
-
-`win.add(Ti.Do.createHicky());`
-
-`methods:`
-
-`- name: doSomething`
-
-`summary: This method, when called, will` `do` `something.`
-
-`since:` `"0.8"`
-
-`platforms: [android, iphone, ipad]`
-
-`returns: {type:` `"String"``, description:` `"The thing done."``}`
-
-`parameters:`
-
-`- name: x`
-
-`summary: The x-axis value`
-
-`type: Number`
-
-`- name: y`
-
-`summary: The y-axis value`
-
-`type: Number`
-
-`- name: multiply`
-
-`summary: Multiplies two factors and returns product.`
-
-`since:` `"0.8"`
-
-`platforms: [android, iphone, ipad]`
-
-`returns: {type:` `"Number"``, description:` `"The multiplication result"``}`
-
-`parameters:`
-
-`- name: num1`
-
-`summary: First factor.`
-
-`type: Number`
-
-`- name: num2`
-
-`summary: Second factor.`
-
-`type: Number`
-
-`properties:`
-
-`- name: x`
-
-`summary: The x-axis value.`
-
-`type: Number`
-
-`availability: always`
-
-`permission: read-write`
-
-`- name: y`
-
-`summary: The y-axis value.`
-
-`type: Number`
-
-`- name: z`
-
-`summary: The z-axis value.`
-
-`type: Number`
-
-`platforms: [ipad]`
-
-`since:` `"1.4.0"`
-
-`deprecated:`
-
-`since:` `"1.6.0"`
-
-`removed:` `"1.8.0"`
-
-`notes: Use <Titanium.Do.Hicky.zz> instead.`
-
-`# In following sections we'll show ...`
-
-`# events: ...`
+# In following sections we'll show ...
+# events: ...
+```
 
 ##### Event Specification
 
@@ -721,181 +591,108 @@ Multiple event documentation definitions can be put together into a YAML sequenc
 
 Our running example so far, which includes a sequence of event definitions:
 
-Hicky.yml
-
-`# Documentation of Titanium.Do.Hicky`
-
-`---`
-
-`name: Titanium.Do.Hicky`
-
-`summary: A view which automatically renders as an octagon.`
-
-`platforms: [android, ipad, iphone]`
-
-`extends``: Titanium.UI.View`
-
-`since: {android:` `"1.6.0"``, iphone:` `"0.8"``, ipad:` `"1.4.0"``}`
-
-`# We could also just` `do`  `this`  `if` `all platforms got the type at the same time:`
-
-`# since:` `"0.8"`
-
-`description: It's important *not* to use` `this` `view on a scrollview! Behavior there is undefined!`
-
-`# We could also have specified that the description is in an external file, like` `this``:`
-
-`# description: file:Hicky_description.md`
-
-`examples:`
-
-`- title: Put a Hicky on a Window`
-
-`example: |`
-
-`The following example shows putting a Hicky directly on a window:`
-
-`var win = Ti.UI.createWindow({backgroundColor:` `'#ccc'``});`
-
-`win.add(Ti.Do.createHicky());`
-
-`methods:`
-
-`- name: doSomething`
-
-`summary: This method, when called, will` `do` `something.`
-
-`since:` `"0.8"`
-
-`platforms: [android, iphone, ipad]`
-
-`returns: {type:` `"String"``, description:` `"The thing done."``}`
-
-`parameters:`
-
-`- name: x`
-
-`summary: The x-axis value`
-
-`type: Number`
-
-`- name: y`
-
-`summary: The y-axis value`
-
-`type: Number`
-
-`- name: multiply`
-
-`summary: Multiplies two factors and returns product.`
-
-`since:` `"0.8"`
-
-`platforms: [android, iphone, ipad]`
-
-`returns: {type:` `"Number"``, description:` `"The multiplication result"``}`
-
-`parameters:`
-
-`- name: num1`
-
-`summary: First factor.`
-
-`type: Number`
-
-`- name: num2`
-
-`summary: Second factor.`
-
-`type: Number`
-
-`properties:`
-
-`- name: x`
-
-`summary: The x-axis value.`
-
-`type: Number`
-
-`availability: always`
-
-`permission: read-write`
-
-`- name: y`
-
-`summary: The y-axis value.`
-
-`type: Number`
-
-`- name: z`
-
-`summary: The z-axis value.`
-
-`type: Number`
-
-`platforms: [ipad]`
-
-`since:` `"1.4.0"`
-
-`deprecated:`
-
-`since:` `"1.6.0"`
-
-`removed:` `"1.8.0"`
-
-`notes: Use <Titanium.Do.Hicky.zz> instead.`
-
-`events:`
-
-`- name: flubbered`
-
-`summary: Event occurs when the Hicky is flubbered.`
-
-`since:` `"1.4.0"`
-
-`properties:`
-
-`- name: flubtime`
-
-`summary: the time at which Hicky was flubbered.`
-
-`type: Date`
-
-`- name: x`
-
-`summary: the x-axis position on which the flubber occurred.`
-
-`type: Number`
-
-`- name: y`
-
-`summary: the y-axis position on which the flubber occurred.`
-
-`type: Number`
-
-`- name: zinkered`
-
-`summary: An event that happens` `if` `the Hicky is zinkered.`
-
-`properties:`
-
-`- name: zinkerText`
-
-`summary: The zinker text message.`
-
-`type: String`
+*Hicky.yml*
+
+```yml
+# Documentation of Titanium.Do.Hicky
+---
+name: Titanium.Do.Hicky
+summary: A view which automatically renders as an octagon.
+platforms: [android, ipad, iphone]
+extends: Titanium.UI.View
+since: {android: "1.6.0", iphone: "0.8", ipad: "1.4.0"}
+# We could also just do this if all platforms got the type at the same time:
+# since: "0.8"
+
+description: It's important *not* to use this view on a scrollview!  Behavior there is undefined!
+# We could also have specified that the description is in an external file, like this:
+# description: file:Hicky_description.md
+
+examples:
+  - title: Put a Hicky on a Window
+    example: |
+        The following example shows putting a Hicky directly on a window:
+
+            var win = Ti.UI.createWindow({backgroundColor: '#ccc'});
+            win.add(Ti.Do.createHicky());
+
+methods:
+  - name: doSomething
+    summary: This method, when called, will do something.
+    since: "0.8"
+    platforms: [android, iphone, ipad]
+    returns: {type: "String", description: "The thing done."}
+    parameters:
+      - name: x
+        summary: The x-axis value
+        type: Number
+      - name: y
+        summary: The y-axis value
+        type: Number
+  - name: multiply
+    summary: Multiplies two factors and returns product.
+    since: "0.8"
+    platforms: [android, iphone, ipad]
+    returns: {type: "Number", description: "The multiplication result"}
+    parameters:
+      - name: num1
+        summary: First factor.
+        type: Number
+      - name: num2
+        summary: Second factor.
+        type: Number
+
+properties:
+  - name: x
+    summary: The x-axis value.
+    type: Number
+    availability: always
+    permission: read-write
+  - name: y
+    summary: The y-axis value.
+    type: Number
+  - name: z
+    summary: The z-axis value.
+    type: Number
+    platforms: [ipad]
+    since: "1.4.0"
+    deprecated:
+        since: "1.6.0"
+        removed: "1.8.0"
+        notes: Use <Titanium.Do.Hicky.zz> instead.
+
+events:
+  - name: flubbered
+    summary: Event occurs when the Hicky is flubbered.
+    since: "1.4.0"
+    properties:
+    - name: flubtime
+    summary: the time at which Hicky was flubbered.
+    type: Date
+    - name: x
+    summary: the x-axis position on which the flubber occurred.
+    type: Number
+    - name: y
+    summary: the y-axis position on which the flubber occurred.
+    type: Number
+  - name: zinkered
+    summary: An event that happens if the Hicky is zinkered.
+    properties:
+      - name: zinkerText
+        summary: The zinker text message.
+        type: String
+```
 
 ###### Event Listener Object Property Specification
 
 Each event contains a properties sequence. This section describes the specification for each member of that sequence. We refer to them as "Event Listener Object Properties" because they are properties of the single object that gets passed to all event listeners in Titanium. These objects are often given the parameter name e, though that is not a requirement, such as in this example:
 
-`button.addEventListener(``'click'``, function(e) {`
-
-`Titanium.API.info(``'Event source: '` `+ e.source);`
-
-`Titanium.API.info(``'Event type: '` `+ e.type);`
-
-`});`
+```
+button.addEventListener('click', function(e) {
+  Titanium.API.info('Event source: ' + e.source);
+  Titanium.API.info('Event type: ' + e.type);
+});
+```
 
 In that example, the source and type are what we are calling "event listener object properties" here.
 
@@ -920,7 +717,9 @@ Four of the YAML keys described in previous sections – summary, description, t
 
 For relatively short text blocks, simply type the text right after the key:
 
-`summary: This method does` `this` `and that.`
+```
+summary: This method does this and that.
+```
 
 By convention, the summary key (for types, methods, method parameters, properties and events) should be a single line, relatively short blurb like the example shown above. Please adhere to this, as these short one-liners will often appear next to the type/method/property/event name in lists.
 
@@ -930,13 +729,12 @@ Also, although these are short one-liners and may not be grammatical sentences, 
 
 Line-breaks can be used for longer text blocks in order to make the YAML itself more readable. The second and following lines need to be indented one level from the key. The parser will fold the line breaks and remove the indentation spaces:
 
-`description: Now is the time`
-
-`for` `all good men`
-
-`to come to the aid`
-
-`of their country.`
+```
+description: Now is the time
+    for all good men
+    to come to the aid
+    of their country.
+```
 
 The parser will convert that key value to Now is the time for all good men to come to the aid of their country.
 
@@ -944,17 +742,15 @@ The parser will convert that key value to Now is the time for all good men to co
 
 When line-breaks are relevant, free-form text block values can take advantage of the YAML vertical bar syntax which preserves line-breaks. The vertical bar is followed by a new line, and then the text block should be indented by one level. The line-breaks in the text block will be preserved. This is the approach that should be taken for the examples key value, since it will most likely contain separate code blocks:
 
-`examples:`
+```javascript
+examples:
+  - title: Order of Operations
+    example: |
+        The `doSomethingElse` method should always be called *after* the `doSomething` method:
 
-`- title: Order of Operations`
-
-`example: |`
-
-``The `doSomethingElse` method should always be called *after* the `doSomething` method:``
-
-`var result = doSomething();`
-
-`doSomethingElse();`
+            var result = doSomething();
+            doSomethingElse();
+```
 
 Note that the actual code block is preceded by an empty line and then indented by at least four spaces, as the Markdown standard specifies.
 
@@ -968,37 +764,31 @@ All code blocks are assumed to be Javascript, unless the language is specified u
 
 Examples:
 
-`example: |`
+```javascript
+example: |
+    Here is a Javascript example:
 
-`Here is a Javascript example:`
+        var x = y;
 
-`var x = y;`
+    Here is a Java example:
 
-`Here is a Java example:`
+        // {{language:java}}
+        int x = 0;
 
-`// {{language:java}}`
+    Here is an Objective-C example:
 
-`int` `x =` `0``;`
+        // {{language:obj-c}}
+        - (id)init
+        {
+            return self;
+        }
 
-`Here is an Objective-C example:`
+    Here is a Python example:
 
-`// {{language:obj-c}}`
-
-`- (id)init`
-
-`{`
-
-`return` `self;`
-
-`}`
-
-`Here is a Python example:`
-
-`# {{language:python}}`
-
-`def doNothing():`
-
-`pass`
+        # {{language:python}}
+        def doNothing():
+            pass
+```
 
 ##### Referring to External Files
 
@@ -1006,7 +796,9 @@ Particularly, long free-form text blocks can optionally be placed in an external
 
 For example:
 
-`description: file:Hicky_description.md`
+```
+description: file:Hicky_description.md
+```
 
 This is not part of the YAML specification; it is a convenience that our own scripts will recognize.
 
@@ -1028,27 +820,21 @@ Note that you should put the vertical bar (|) at the start of the example value,
 
 Example:
 
-`examples:`
+```javascript
+examples:
+  - title: Calling doSomething from a Callback
+    example: |
+        This shows how to properly call `doSomething` from a callback:
 
-`- title: Calling doSomething from a Callback`
+            function myCallback() {
+                doSomething();
+            }
+  - title: Calling doSomething from a View
+    example: |
+        To properly invoke `doSomething`from a view, be sure to do it as follows:
 
-`example: |`
-
-``This shows how to properly call `doSomething` from a callback:``
-
-`function myCallback() {`
-
-`doSomething();`
-
-`}`
-
-`- title: Calling doSomething from a View`
-
-`example: |`
-
-``To properly invoke `doSomething`from a view, be sure to`` `do` `it as follows:`
-
-`view.addEventListener(``'click'``, function(){doSomething();});`
+            view.addEventListener('click', function(){doSomething();});
+```
 
 #### Documenting Callbacks
 
@@ -1056,31 +842,31 @@ Documentation for callbacks is tricky. The place in documentation where a callba
 
 For example, [Titanium.Media.takeScreenshot](#!/api/Titanium.Media-method-takeScreenshot) takes a single parameter, a callback function. The documentation could easily be something like this:
 
-`name: takeScreenshot`
-
-`parameters:`
-
-`- name: callback`
-
-`type: Function`
+```
+name: takeScreenshot
+parameters:
+  - name: callback
+    type: Function
+```
 
 That's awkward, because it does not give any information about what the callback function should look for and evaluate when it gets called. All of our callbacks use the simple pattern of taking a single parameter which is an object literal whose relevant members can then be evaluated by the callback function. The problem is, those relevant object members vary. For the callback invoked at the completion of Titanium.Media.takeScreenshot, the relevant member of the object literal which is passed back is media. Titanium.Geolocation.reverseGeocoder, on the other hand, sends an object literal with several members to its callback, among them street, city and country.
 
 We have created the following syntax to indicate a particular type of callback, meaning a callback that accepts an object literal that is documented as having particular properties:
 
-`type: Callback<[type]>`
+```
+type: Callback<[type]>
+```
 
 \[type\] should be replaced with the name of a type that you document simply for purposes of documenting this callback parameter. These can perhaps be thought of as _pseudo-types_, in the sense that they are only "being documented for the documentation", or to make the documentation complete.
 
 The next section, [#Documenting Object Literals and Interfaces](#documenting-object-literals-and-interfaces), describes how to document these _pseudo-types_. For the time being, imagine you have defined a _pseudo-type_ named ScreenshotResult to be used with the callback for Titanium.Media.takeScreenshot. In that case, the documentation for the parameters of takeScreenshot would look like this:
 
-`name: takeScreenshot`
-
-`parameters:`
-
-`- name: callback`
-
-`type: Callback<ScreenshotResult>`
+```
+name: takeScreenshot
+parameters:
+  - name: callback
+    type: Callback<ScreenshotResult>
+```
 
 Note: If a callback is called without parameters, it can be specified simply with Callback, i.e., without the angle-bracketed type specifier.
 
@@ -1108,95 +894,56 @@ With YAML, you can document multiple types in a single documentation file simply
 
 Using our running example type Titanium.Do.Hicky, we can document a method, adjustFlubber, which accepts a dictionary object (or "object literal") as a parameter. The object should have the properties x and y, which are coordinates, and callback, which is a function that will be called upon completion. The callback accepts an object that has success and error members. The documentation definition might look like this:
 
-`# MAIN TYPE (a user-facing Titanium type) being documented in` `this` `file.`
+```javascript
+# MAIN TYPE (a user-facing Titanium type) being documented in this file.
+---
+name: Titanium.Do.Hicky
+summary: A view which automatically renders as an octagon.
+platforms: [android, ipad, iphone]
+extends: Titanium.UI.View
+since: {android: "1.6.0", iphone: "0.8", ipad: "1.4.0"}
+(etc., etc., etc.)
 
-`---`
+methods:
+  - name: adjustFlubber
+    summary: Does an async adjustment of a flubber.
+    parameters:
+      - name: options
+        summary: flubber adjustment options
+        type: FlubberAdjustmentSpec
+(etc., etc., etc.)
 
-`name: Titanium.Do.Hicky`
+# NEW DOCUMENT (in same file) to describe pseudo type FlubberAdjustmentSpec
+---
+name: FlubberAdjustmentSpec
+summary: Specification for a flubber adjustment
+platforms: [android, ipad, iphone]
+since: {android: "1.6.0", iphone: "0.8", ipad: "1.4.0"}
+properties:
+  - name: x
+    summary: desired new x-axis value
+    type: Number
+  - name: y
+    summary: desired new y-axis value
+    type: Number
+  - name: callback
+    summary: function will be called when adjustment has finished.
+    type: Callback<FlubberAdjustmentResult>
 
-`summary: A view which automatically renders as an octagon.`
-
-`platforms: [android, ipad, iphone]`
-
-`extends``: Titanium.UI.View`
-
-`since: {android:` `"1.6.0"``, iphone:` `"0.8"``, ipad:` `"1.4.0"``}`
-
-`(etc., etc., etc.)`
-
-`methods:`
-
-`- name: adjustFlubber`
-
-`summary: Does an async adjustment of a flubber.`
-
-`parameters:`
-
-`- name: options`
-
-`summary: flubber adjustment options`
-
-`type: FlubberAdjustmentSpec`
-
-`(etc., etc., etc.)`
-
-`# NEW DOCUMENT (in same file) to describe pseudo type FlubberAdjustmentSpec`
-
-`---`
-
-`name: FlubberAdjustmentSpec`
-
-`summary: Specification` `for` `a flubber adjustment`
-
-`platforms: [android, ipad, iphone]`
-
-`since: {android:` `"1.6.0"``, iphone:` `"0.8"``, ipad:` `"1.4.0"``}`
-
-`properties:`
-
-`- name: x`
-
-`summary: desired` `new` `x-axis value`
-
-`type: Number`
-
-`- name: y`
-
-`summary: desired` `new` `y-axis value`
-
-`type: Number`
-
-`- name: callback`
-
-`summary: function will be called when adjustment has finished.`
-
-`type: Callback<FlubberAdjustmentResult>`
-
-`# NEW DOCUMENT (in same file) to describe pseudo type FlubberAdjustmentResult`
-
-`---`
-
-`name: FlubberAdjustmentResult`
-
-`summary: Object with properties describing the result of flubber adjustment.`
-
-`platforms: [android, ipad, iphone]`
-
-`since: {android:` `"1.6.0"``, iphone:` `"0.8"``, ipad:` `"1.4.0"``}`
-
-`properties:`
-
-`- name: success`
-
-`summary: indicates success/failure`
-
-`type: Boolean`
-
-`- name: error`
-
-`summary: error string that will be set` `if` `success==``false`
-
-`type: String`
+# NEW DOCUMENT (in same file) to describe pseudo type FlubberAdjustmentResult
+---
+name: FlubberAdjustmentResult
+summary: Object with properties describing the result of flubber adjustment.
+platforms: [android, ipad, iphone]
+since: {android: "1.6.0", iphone: "0.8", ipad: "1.4.0"}
+properties:
+  - name: success
+    summary: indicates success/failure
+    type: Boolean
+  - name: error
+    summary: error string that will be set if success==false
+    type: String
+```
 
 ###### Pseudo-Types Useful to a Single Module
 
@@ -1208,63 +955,38 @@ The real-world example documentation for Titanium.UI.View also contains some pse
 
 If a _pseudo-type_ is useful in multiple modules, it should go in a common/ folder which is at the root of the documentation directories, i.e., as a sibling to Titanium/. One example of this is the documentation definition for the Stream interface described in [#Interfaces](#interfaces) above. In that case, a file in common/ should exist – perhaps common/TiStream.yml – with contents similar to this example:
 
-TiStream.yml
+*TiStream.yml*
 
-`# TiStream.yml - Documents common Stream` `interface` `used`
-
-`# in multiple Titanium modules.`
-
-`---`
-
-`name: TiStream`
-
-`summary: Titanium Stream` `interface`
-
-`since:` `"1.7.0"`
-
-`methods:`
-
-`- name: read`
-
-`summary: reads buffer.length amount of data from stream into buffer.`
-
-`returns: {type:` `"Number"``, description:` `"Count of bytes read"``}`
-
-`parameters:`
-
-`- name: buffer`
-
-`summary: Buffer into which read bytes will be placed.`
-
-`type: Titanium.Buffer`
-
-`- name: read`
-
-`summary: reads` `"length"` `number of bytes into` `"buffer"` `starting at` `"offset"` `in stream.`
-
-`returns: {type:` `"Number"``, description:` `"Count of bytes read"``}`
-
-`parameters:`
-
-`- name: buffer`
-
-`summary: Buffer into which read bytes will be placed.`
-
-`type: Titanium.Buffer`
-
-`- name: offset`
-
-`summary: Offset in stream at which to start read`
-
-`type: Number`
-
-`- name: length`
-
-`summary: Number of bytes to read`
-
-`type: Number`
-
-`# ETC ETC`
+```yml
+# TiStream.yml - Documents common Stream interface used
+# in multiple Titanium modules.
+---
+name: TiStream
+summary: Titanium Stream interface
+since: "1.7.0"
+methods:
+  - name: read
+    summary: reads buffer.length amount of data from stream into buffer.
+    returns: {type: "Number", description: "Count of bytes read"}
+    parameters:
+      - name: buffer
+        summary: Buffer into which read bytes will be placed.
+        type: Titanium.Buffer
+  - name: read
+    summary: reads "length" number of bytes into "buffer" starting at "offset" in stream.
+    returns: {type: "Number", description: "Count of bytes read"}
+    parameters:
+      - name: buffer
+        summary: Buffer into which read bytes will be placed.
+        type: Titanium.Buffer
+      - name: offset
+        summary: Offset in stream at which to start read
+        type: Number
+      - name: length
+        summary: Number of bytes to read
+        type: Number
+# ETC ETC
+```
 
 ### Intra-Documentation Links
 
@@ -1276,19 +998,19 @@ When a type is specified (such as a return type, a method parameter type or a pr
 
 **Incorrect:**
 
-`parameters:`
-
-`- name: view`
-
-``type: `Titanium.UI.View` # WRONG!``
+```
+parameters:
+  - name: view
+    type: `Titanium.UI.View` # WRONG!
+```
 
 **Correct:**
 
-`parameters:`
-
-`- name: view`
-
-`type: Titanium.UI.View`
+```
+parameters:
+  - name: view
+    type: Titanium.UI.View
+```
 
 #### Markdown Links in Free-Form Text Values
 
@@ -1304,23 +1026,21 @@ Our scripts will then evaluate the link and if the link value precisely matches 
 
 **Incorrect:**
 
-``example: The following code shows how easy it is to get a [View](`Titanium.UI.View`): # WRONG!``
-
-`# ...`
-
-``description: This type is often used in conjunction with `Titanium.UI.2DMatrix`. # WRONG!``
-
-`# ...`
-
-`description: This type is often used in conjunction with [[Titanium.UI.2DMatrix]]. # WRONG`
+```
+example: The following code shows how easy it is to get a [View](`Titanium.UI.View`): # WRONG!
+# ...
+description: This type is often used in conjunction with `Titanium.UI.2DMatrix`. # WRONG!
+# ...
+description: This type is often used in conjunction with [[Titanium.UI.2DMatrix]]. # WRONG
+```
 
 **Correct:**
 
-`example: The following code shows how easy it is to get a [View](Titanium.UI.View):`
-
-`# ...`
-
-`description: This type is often used in conjunction with <Titanium.UI.2DMatrix>.`
+```
+example: The following code shows how easy it is to get a [View](Titanium.UI.View):
+# ...
+description: This type is often used in conjunction with <Titanium.UI.2DMatrix>.
+```
 
 ## Real-World Example
 

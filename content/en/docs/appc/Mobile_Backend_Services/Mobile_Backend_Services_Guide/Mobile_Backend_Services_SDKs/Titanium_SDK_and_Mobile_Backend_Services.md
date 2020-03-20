@@ -68,21 +68,24 @@ If you have already created an MBS datasource, you can add it to a Titanium proj
 
 2. Add the following entries to the file:
 
-    `<``property`  `name``=``"acs-api-key-development"`  `type``=``"string"``>YOUR DEVELOPMENT APP KEY HERE</``property``>`
-
-    `<``property`  `name``=``"acs-api-key-production"`  `type``=``"string"``>YOUR PRODUCTION APP KEY HERE</``property``>`
+    ```xml
+    <property name="acs-api-key-development" type="string">YOUR DEVELOPMENT APP KEY HERE</property>
+    <property name="acs-api-key-production" type="string">YOUR PRODUCTION APP KEY HERE</property>
+    ```
 
 3. Find the <modules> element in the file, and add the following:
 
-    `<``module`  `platform``=``"commonjs"``>ti.cloud</``module``>`
+    ```xml
+    <module platform="commonjs">ti.cloud</module>
+    ```
 
     If there is no <modules> element, add the following inside the <ti:app> element:
 
-    `<``modules``>`
-
-    `<``module`  `platform``=``"commonjs"``>ti.cloud</``module``>`
-
-    `</``modules``>`
+    ```xml
+    <modules>
+        <module platform="commonjs">ti.cloud</module>
+    </modules>
+    ```
 
     (This element is usually placed just above the <deployment-targets> element.)
 
@@ -90,21 +93,21 @@ If you have already created an MBS datasource, you can add it to a Titanium proj
 
 If you are using a virtual private cloud (VPC), you need to configure your Mobile Backend Services dispatcher URL to send push notifications with Google Cloud Messaging (GCM) or Firebase Cloud Messaging. [Firebase Cloud Messaging](http://firebase.google.com/docs/cloud-messaging/) (FCM) is the new version of GCM. In the tiapp.xml file, add the acs-push-api-url application property and set the node text to the push dispatcher URL provided to you. The URL may be the same as your custom MBS endpoint and have deployment-specific settings, that is, two URLs--one for production and another for the development environment.
 
-`<``ti``:app>`
-
-`<``property`  `name``=``"acs-push-api-url-production"``>YOUR PRODUCTION PUSH DISPATCHER URL HERE</``property``>`
-
-`<``property`  `name``=``"acs-push-api-url-development"``>YOUR DEVELOPMENT PUSH DISPATCHER URL HERE</``property``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    <property name="acs-push-api-url-production">YOUR PRODUCTION PUSH DISPATCHER URL HERE</property>
+    <property name="acs-push-api-url-development">YOUR DEVELOPMENT PUSH DISPATCHER URL HERE</property>
+</ti:app>
+```
 
 ## Importing the module
 
 Mobile Backend Services support is baked into Titanium. However, you must include the cloud services module into your project to use MBS functionality. In your app.js (or another suitable file), include the require() statement as shown here:
 
-`var Cloud = require('ti.cloud');`
-
-`Cloud.debug = true; // optional; if you add this line, set it to false for production`
+```javascript
+var Cloud = require('ti.cloud');
+Cloud.debug = true;  // optional; if you add this line, set it to false for production
+```
 
 ## Authenticating your application
 
@@ -146,127 +149,80 @@ With over 25 APIs available for you to use, we obviously can't cover them all he
 
 Create a user:
 
-`// example assumes you have a set of text fields named username, password, etc.`
-
-`Cloud.Users.create({`
-
-`username: username.value,`
-
-`password: password.value,`
-
-`password_confirmation: confirmPassword.value,`
-
-`first_name: firstName.value,`
-
-`last_name: lastName.value`
-
-`},` `function` `(e) {`
-
-`if` `(e.success) {`
-
-`// user created successfully`
-
-`}` `else` `{`
-
-`// oops, something went wrong`
-
-`}`
-
-`});`
+```javascript
+// example assumes you have a set of text fields named username, password, etc.
+Cloud.Users.create({
+    username: username.value,
+    password: password.value,
+    password_confirmation: confirmPassword.value,
+    first_name: firstName.value,
+    last_name: lastName.value
+}, function (e) {
+    if (e.success) {
+        // user created successfully
+    } else {
+        // oops, something went wrong
+    }
+});
+```
 
 Post a photo to a collection. To post a photo to a collection, you need to create the collection first using [PhotoCollections](/arrowdb/latest/#!/api/PhotoCollections-method-create).
 
-`// assumes you've obtained a photo from the camera or gallery, with blob data stored in an object named photo,`
-
-`// and that collectionID contains the ID of an existing photo collection.`
-
-`Cloud.Photos.create({`
-
-`photo: photo,`
-
-`collection_id: collectionID,`
-
-`'photo_sync_sizes[]'``:` `'small_240'`
-
-`},` `function` `(e) {`
-
-`if` `(e.success) {`
-
-`// null out our photo objects to clean up memory`
-
-`photo =` `null``;`
-
-`collectionID =` `null``;`
-
-`}` `else` `{`
-
-`// oops, something went wrong`
-
-`}`
-
-`});`
+```javascript
+// assumes you've obtained a photo from the camera or gallery, with blob data stored in an object named photo,
+// and that collectionID contains the ID of an existing photo collection.
+Cloud.Photos.create({
+    photo: photo,
+    collection_id: collectionID,
+    'photo_sync_sizes[]': 'small_240'
+}, function (e) {
+    if (e.success) {
+        // null out our photo objects to clean up memory
+        photo = null;
+        collectionID = null;
+    } else {
+        // oops, something went wrong
+    }
+});
+```
 
 To link a Facebook login to your app, you must already be logged in using the Titanium [Facebook module](http://docs.appcelerator.com//platform/latest/#!/api/Modules.Facebook) before calling the externalAccountLogin method.
 
-`// Not shown is the code to implement the Facebook module in your app`
+```javascript
+// Not shown is the code to implement the Facebook module in your app
+var Facebook = require('facebook');
 
-`var` `Facebook = require(``'facebook'``);`
+// call the ArrowDB Facebook SocialIntegrations API to link logged in states
+function updateLoginStatus() {
+    if (Facebook.loggedIn) {
+        label.text = 'Logging in to ArrowDB as well, please wait...';
+        Cloud.SocialIntegrations.externalAccountLogin({
+            type: 'facebook',
+            token: Facebook.accessToken
+        }, function (e) {
+            if (e.success) {
+                var user = e.users[0];
+                alert('Logged in! You are now logged in as ' + user.id);
+            }
+            else {
+                error(e);
+            }
+        });
+    }
+    else {
+        label.text = 'Please login to Facebook.';
+    }
+}
 
-`// call the ArrowDB Facebook SocialIntegrations API to link logged in states`
+// when the user logs into or out of Facebook, link their login state with ArrowDB
+Facebook.addEventListener('login', updateLoginStatus);
+Facebook.addEventListener('logout', updateLoginStatus);
 
-`function` `updateLoginStatus() {`
-
-`if` `(Facebook.loggedIn) {`
-
-`label.text =` `'Logging in to ArrowDB as well, please wait...'``;`
-
-`Cloud.SocialIntegrations.externalAccountLogin({`
-
-`type:` `'facebook'``,`
-
-`token: Facebook.accessToken`
-
-`},` `function` `(e) {`
-
-`if` `(e.success) {`
-
-`var` `user = e.users[0];`
-
-`alert(``'Logged in! You are now logged in as '` `+ user.id);`
-
-`}`
-
-`else` `{`
-
-`error(e);`
-
-`}`
-
-`});`
-
-`}`
-
-`else` `{`
-
-`label.text =` `'Please login to Facebook.'``;`
-
-`}`
-
-`}`
-
-`// when the user logs into or out of Facebook, link their login state with ArrowDB`
-
-`Facebook.addEventListener(``'login'``, updateLoginStatus);`
-
-`Facebook.addEventListener(``'logout'``, updateLoginStatus);`
-
-`// add the Facebook login button`
-
-`win.add(Facebook.createLoginButton({`
-
-`top: 10`
-
-`}));`
+// add the Facebook login button
+win.add(Facebook.createLoginButton({
+    top: 10
+}));
+```
 
 For more examples, see the [Mobile Backend Services API documentation](/arrowdb/latest/#!/api).
 

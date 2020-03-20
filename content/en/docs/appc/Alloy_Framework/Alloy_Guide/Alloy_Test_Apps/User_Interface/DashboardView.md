@@ -2,7 +2,7 @@
 
 Demonstrates basic use of a DashboardView control in an Alloy application.
 
-Example App Source Location
+*Example App Source Location*
 
 You can find this example app in the Alloy repository under [samples/apps/ui/dashboard](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/dashboard). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
 
@@ -12,95 +12,59 @@ The [DashboardView](#!/api/Titanium.UI.DashboardView) control presents a grid of
 
 The index.xml view declares a DashboardView, and defines event handlers for [click](#!/api/Titanium.UI.DashboardView-event-click), [edit](#!/api/Titanium.UI.DashboardView-event-edit) and [commit](#!/api/Titanium.UI.DashboardView-event-commit) events that are defined by the view-controller.
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<``Toolbar`  `top``=``"0dp"``>`
-
-`<``Items``>`
-
-`<``Button`  `id``=``"editButton"`  `onClick``=``"toggleEditMode"``>Edit</``Button``>`
-
-`</``Items``>`
-
-`</``Toolbar``>`
-
-`<``DashboardView`  `id``=``"dash"`  `onClick``=``"resetBadge"`  `onEdit``=``"handleEdit"`  `onCommit``=``"handleCommit"``>`
-
-`<``DashboardItem`  `image``=``"account_off.png"`  `selectedImage``=``"account_on.png"`  `badge``=``"10"`  `label``=``"account"``/>`
-
-`<``DashboardItem`  `image``=``"calls_off.png"`  `selectedImage``=``"calls_on.png"`  `badge``=``"110"`  `label``=``"calls"``/>`
-
-`<``DashboardItem`  `image``=``"cases_off.png"`  `selectedImage``=``"cases_on.png"`  `label``=``"cases"``/>`
-
-`<``DashboardItem`  `image``=``"contacts_off.png"`  `selectedImage``=``"contacts_on.png"`  `badge``=``"23"`  `label``=``"contacts"``/>`
-
-`<``DashboardItem`  `image``=``"emps_off.png"`  `selectedImage``=``"emps_on.png"`  `label``=``"employees"``/>`
-
-`<``DashboardItem`  `image``=``"leads_off.png"`  `selectedImage``=``"leads_on.png"`  `badge``=``"1"`  `label``=``"leads"``/>`
-
-`<``DashboardItem`  `image``=``"meetings_off.png"`  `selectedImage``=``"meetings_on.png"`  `badge``=``"5"`  `label``=``"meetings"``/>`
-
-`<``DashboardItem`  `image``=``"opps_off.png"`  `selectedImage``=``"opps_on.png"`  `label``=``"opps"``/>`
-
-`<``DashboardItem`  `image``=``"tasks_off.png"`  `selectedImage``=``"tasks_on.png"`  `label``=``"tasks"``/>`
-
-`</``DashboardView``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window>
+        <Toolbar top="0dp">
+            <Items>
+                <Button id="editButton" onClick="toggleEditMode">Edit</Button>
+            </Items>
+        </Toolbar>
+        <DashboardView id="dash" onClick="resetBadge" onEdit="handleEdit" onCommit="handleCommit">
+            <DashboardItem image="account_off.png" selectedImage="account_on.png" badge="10" label="account"/>
+            <DashboardItem image="calls_off.png" selectedImage="calls_on.png" badge="110" label="calls"/>
+            <DashboardItem image="cases_off.png" selectedImage="cases_on.png" label="cases"/>
+            <DashboardItem image="contacts_off.png" selectedImage="contacts_on.png" badge="23" label="contacts"/>
+            <DashboardItem image="emps_off.png" selectedImage="emps_on.png" label="employees"/>
+            <DashboardItem image="leads_off.png" selectedImage="leads_on.png" badge="1" label="leads"/>
+            <DashboardItem image="meetings_off.png" selectedImage="meetings_on.png" badge="5" label="meetings"/>
+            <DashboardItem image="opps_off.png" selectedImage="opps_on.png" label="opps"/>
+            <DashboardItem image="tasks_off.png" selectedImage="tasks_on.png" label="tasks"/>
+        </DashboardView>
+    </Window>
+</Alloy>
+```
 
 The view-controller defines the event handler functions.
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`var isEditable = false;`
-
-`function resetBadge(e) {`
-
-`e.item.badge = 0;`
-
-`}`
-
-`function toggleEditMode(e) {`
-
-`if (isEditable) {`
-
-`$.dash.stopEditing();`
-
-`} else {`
-
-`$.dash.startEditing();`
-
-`}`
-
-`}`
-
-`function handleEdit(e) {`
-
-`$.editButton.title = 'Done';`
-
-`$.editButton.style = Ti.UI.iPhone.SystemButtonStyle.DONE;`
-
-`isEditable = true;`
-
-`}`
-
-`function handleCommit(e) {`
-
-`$.editButton.title = 'Edit';`
-
-`$.editButton.style = Ti.UI.iPhone.SystemButtonStyle.PLAIN;`
-
-`isEditable = false;`
-
-`}`
-
-`$.index.open();`
+```javascript
+var isEditable = false;
+function resetBadge(e) {
+    e.item.badge = 0;
+}
+function toggleEditMode(e) {
+    if (isEditable) {
+        $.dash.stopEditing();
+    } else {
+        $.dash.startEditing();
+    }
+}
+function handleEdit(e) {
+    $.editButton.title = 'Done';
+    $.editButton.style = Ti.UI.iPhone.SystemButtonStyle.DONE;
+    isEditable = true;
+}
+function handleCommit(e) {
+    $.editButton.title = 'Edit';
+    $.editButton.style = Ti.UI.iPhone.SystemButtonStyle.PLAIN;
+    isEditable = false;
+}
+$.index.open();
+```
 
 ## See Also
 

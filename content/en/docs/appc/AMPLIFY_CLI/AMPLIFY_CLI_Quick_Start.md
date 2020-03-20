@@ -56,27 +56,19 @@ To search for an AMPLIFY package, use this command: amplify pm search
 
 You should see something like this in your terminal:
 
-`NAME | VERSION | TYPE | DESCRIPTION`
-
-`...`
-
-`@axway``/amplify-builder-cli` `| 0.0.9 | amplify-cli-plugin | Manage API Builder Standalone projects`
-
-`appc.arrowdb | 1.1.1 | apib-data-connector | This is an API Builder connector` `for` `ArrowDB.`
-
-`| | | Instructions` `for` `installation from CLI provided`
-
-`| | |` `in` `the Product Website's readme. Start`
-
-`| | | creating API's today` `for`  `free` `with Axway API`
-
-`| | | Builder http:``//platform``.axway.com`
-
-`appcd | 2.0.1 | amplify-cli-plugin | A daemon that powers Appcelerator tooling and`
-
-`| | | makes the impossible possible.`
-
-`...`
+```
+NAME                           | VERSION  | TYPE                | DESCRIPTION
+...
+@axway/amplify-builder-cli     | 0.0.9    | amplify-cli-plugin  | Manage API Builder Standalone projects
+appc.arrowdb                   | 1.1.1    | apib-data-connector | This is an API Builder connector for ArrowDB.
+                               |          |                     | Instructions for installation from CLI provided
+                               |          |                     | in the Product Website's readme.   Start
+                               |          |                     | creating API's today for free with Axway API
+                               |          |                     | Builder http://platform.axway.com
+appcd                          | 2.0.1    | amplify-cli-plugin  | A daemon that powers Appcelerator tooling and
+                               |          |                     | makes the impossible possible.
+...
+```
 
 ### Installing a package
 

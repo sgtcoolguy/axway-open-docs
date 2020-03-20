@@ -18,39 +18,36 @@ When running into issues with the Appcelerator CLI, there are some simple steps 
 
 Refer to [Reporting Bugs or Requesting Features](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Studio_Troubleshooting/Reporting_Bugs_or_Requesting_Features/) for more information. Check [JIRA](https://jira.appcelerator.org/projects/CLI/issues) first as the issue may already have been reported with a fix or workaround. When submitting a bug, it is often helpful to provide a stack trace and debug log. You can do so by running the CLI with an extra parameter of DEBUG=\* before the regular command and a trace flag after the regular command. For example (replace <command> with the actual command):
 
-OS X/Linux
+*OS X/Linux*
 
-`DEBUG=* appc <``command``> -l trace`
+```bash
+DEBUG=* appc <command> -l trace
+```
 
-Windows
+*Windows*
 
-`cmd` `/C`  `"set DEBUG=* && appc <command> -l trace"`
+```bash
+cmd /C "set DEBUG=* && appc <command> -l trace"
+```
 
 Another useful piece of information is which version of Node you are running and which **versions** of the Appc CLI you are using. Here are some useful commands to get the Appc CLI versions:
 
-`npm` `ls` `-g appcelerator` `# shows you the version of Appc CLI from NPM that is currently installed`
+```bash
+npm ls -g appcelerator # shows you the version of Appc CLI from NPM that is currently installed
+$ npm ls -g appcelerator
+/usr/local/lib
+└── appcelerator@4.2.12
 
-`$ npm` `ls` `-g appcelerator`
+appc use # shows you the version of Appc CLI from Registry that is currently selected and installed
+$ appc use
+The following versions are available:
 
-`/usr/local/lib`
-
-`└── appcelerator@4.2.12`
-
-`appc use` `# shows you the version of Appc CLI from Registry that is currently selected and installed`
-
-`$ appc use`
-
-`The following versions are available:`
-
-`6.2.4 Not Installed`
-
-`6.3.0 Not Installed`
-
-`7.0.0 Installed`
-
-`7.0.1 Installed`
-
-`7.0.2 Installed (Active)`
+6.2.4    Not Installed
+6.3.0    Not Installed
+7.0.0    Installed
+7.0.1    Installed
+7.0.2    Installed (Active)
+```
 
 ## Errors
 
@@ -64,17 +61,19 @@ This error manifests items in several different ways, such as:
 
 This is often best solved by two options: reinstalling the appcelerator command line via NPM or logging out with -D:
 
-Reinstall
+*Reinstall*
 
-`[``sudo``] npm` `install` `-g appcelerator`
+```bash
+[sudo] npm install -g appcelerator
+appc use latest
+```
 
-`appc use latest`
+*Log out -D*
 
-Log out -D
-
-`appc` `logout` `-D`
-
-`appc login` `# reauthenticate again with access code`
+```bash
+appc logout -D
+appc login # reauthenticate again with access code
+```
 
 ### Application deployment failed
 

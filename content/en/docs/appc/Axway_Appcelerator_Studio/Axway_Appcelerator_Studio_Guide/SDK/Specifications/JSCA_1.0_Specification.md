@@ -180,275 +180,168 @@ Please note, that in general, properties on a JSON object may occur in any order
 
 ## Short Example
 
-`{`
-
-`"types"``: [`
-
-`{`
-
-`"name"``:` `"Titanium.Android.NotificationManager"``,`
-
-`"examples"``: [],`
-
-`"functions"``: [`
-
-`{`
-
-`"name"``:` `"addEventListener"``,`
-
-`"parameters"``: [`
-
-`{`
-
-`"name"``:` `"name"``,`
-
-`"usage"``:` `""``,`
-
-`"type"``:` `"String"``,`
-
-`"description"``:` `"name of the event"`
-
-`},`
-
-`{`
-
-`"name"``:` `"callback"``,`
-
-`"usage"``:` `""``,`
-
-`"type"``:` `"Function"``,`
-
-`"description"``:` `"callback function to invoke when the event is fired"`
-
-`}`
-
-`],`
-
-`"userAgents"``: [`
-
-`{`
-
-`"platform"``:` `"android"`
-
-`}`
-
-`],`
-
-`"since"``: [`
-
-`{`
-
-`"version"``:` `"1.5"``,`
-
-`"name"``:` `"Titanium Mobile SDK"`
-
-`}`
-
-`],`
-
-`"isConstructor"``:` `false``,`
-
-`"isClassProperty"``:` `false``,`
-
-`"examples"``: [],`
-
-`"isInternal"``:` `false``,`
-
-`"exceptions"``: [],`
-
-`"references"``: [],`
-
-`"isMethod"``:` `true``,`
-
-`"isInstanceProperty"``:` `true``,`
-
-`"description"``:` `"add an event listener for the instance to receive view triggered events"`
-
-`}`
-
-`],`
-
-`"events"``: [],`
-
-`"userAgents"``: [`
-
-`{`
-
-`"platform"``:` `"android"`
-
-`}`
-
-`],`
-
-`"remarks"``: [`
-
-`"<p>The constants above are taken from other docs</p>"`
-
-`],`
-
-`"deprecated"``:` `false``,`
-
-`"since"``: [`
-
-`{`
-
-`"version"``:` `"1.5"``,`
-
-`"name"``:` `"Titanium Mobile SDK"`
-
-`}`
-
-`],`
-
-`"properties"``: [`
-
-`{`
-
-`"name"``:` `"DEFAULT_ALL"``,`
-
-`"isInternal"``:` `false``,`
-
-`"isInstanceProperty"``:` `false``,`
-
-`"since"``: [`
-
-`{`
-
-`"version"``:` `"1.5"``,`
-
-`"name"``:` `"Titanium Mobile SDK"`
-
-`}`
-
-`],`
-
-`"examples"``: [],`
-
-`"userAgents"``: [`
-
-`{`
-
-`"platform"``:` `"android"`
-
-`}`
-
-`],`
-
-`"type"``:` `"Number"``,`
-
-`"isClassProperty"``:` `true``,`
-
-`"description"``:` `"<p>Use all default values (where applicable).</p>"`
-
-`}`
-
-`],`
-
-`"description"``:` `"<p>Module to notify users of events that happen.</p>"`
-
-`}`
-
-`],`
-
-`"aliases"``: [`
-
-`{`
-
-`"type"``:` `"Titanium"``,`
-
-`"name"``:` `"Ti"`
-
-`}`
-
-`],`
-
-`"version"``:` `"1.0"`
-
-`"build"``:` `"1.7.0-201103300900"`
-
-`}`
+```javascript
+{
+  "types": [
+    {
+      "name": "Titanium.Android.NotificationManager",
+      "examples": [],
+      "functions": [
+        {
+          "name": "addEventListener",
+          "parameters": [
+            {
+              "name": "name",
+              "usage": "",
+              "type": "String",
+              "description": "name of the event"
+            },
+            {
+              "name": "callback",
+              "usage": "",
+              "type": "Function",
+              "description": "callback function to invoke when the event is fired"
+            }
+          ],
+          "userAgents": [
+            {
+              "platform": "android"
+            }
+          ],
+          "since": [
+            {
+              "version": "1.5",
+              "name": "Titanium Mobile SDK"
+            }
+          ],
+          "isConstructor": false,
+          "isClassProperty": false,
+          "examples": [],
+          "isInternal": false,
+          "exceptions": [],
+          "references": [],
+          "isMethod": true,
+          "isInstanceProperty": true,
+          "description": "add an event listener for the instance to receive view triggered events"
+        }
+      ],
+      "events": [],
+      "userAgents": [
+        {
+          "platform": "android"
+        }
+      ],
+      "remarks": [
+        "<p>The constants above are taken from other docs</p>"
+      ],
+      "deprecated": false,
+      "since": [
+        {
+          "version": "1.5",
+          "name": "Titanium Mobile SDK"
+        }
+      ],
+      "properties": [
+        {
+          "name": "DEFAULT_ALL",
+          "isInternal": false,
+          "isInstanceProperty": false,
+          "since": [
+            {
+              "version": "1.5",
+              "name": "Titanium Mobile SDK"
+            }
+          ],
+          "examples": [],
+          "userAgents": [
+            {
+              "platform": "android"
+            }
+          ],
+          "type": "Number",
+          "isClassProperty": true,
+          "description": "<p>Use all default values (where applicable).</p>"
+        }
+      ],
+      "description": "<p>Module to notify users of events that happen.</p>"
+    }
+  ],
+  "aliases": [
+    {
+      "type": "Titanium",
+      "name": "Ti"
+    }
+  ],
+  "version": "1.0"
+  "build": "1.7.0-201103300900"
+}
+```
 
 ## Top-Level Properties
 
 The JSCA file format consists of a single top-level object with the following properties: version, build, aliases, and types. Below is a description of each of these properties
 
-`{`
-
-`"version"``:` `"http://url-to-version-spec"``,`
-
-`"aliases"``: [],`
-
-`"types"``: []`
-
-`}`
+```
+{
+  "version": "http://url-to-version-spec",
+  "aliases": [],
+  "types": []
+}
+```
 
 ### Version Property
 
 The version property indicates the file format version number of the JSCA file. The current version number is 1.0. It is expected that this value will change as new JSCA structures are defined.
 
-`"version"``:` `"1.0"`
+```
+"version": "1.0"
+```
 
 ### Build Property
 
 The build property indicates the current build of the file
 
-`"build"``:` `"1.7.0-201103300900"`
+```
+"build": "1.7.0-201103300900"
+```
 
 ### Aliases Property
 
 The aliases property allows for the definition of shortcuts to deeply nested types. This property consists of an array of Alias types. This property is optional.
 
-`"aliases"``: [`
-
-`{`
-
-`"type"``:` `"Titanium"``,`
-
-`"name"``:` `"Ti"`
-
-`}`
-
-`]`
+```
+"aliases": [
+    {
+      "type": "Titanium",
+      "name": "Ti"
+    }
+  ]
+```
 
 ### Types Property
 
 This is perhaps the most important top-level property. This property contains a list of Type types used to defined the types in the JSCA file. This property is optional.
 
-`{`
-
-`"types"``: [`
-
-`{`
-
-`"name"``:` `"Titanium.Android.NotificationManager"``,`
-
-`"examples"``: [],`
-
-`"functions"``: [],`
-
-`"events"``: [],`
-
-`"userAgents"``: [],`
-
-`"remarks"``: [],`
-
-`"deprecated"``:` `false``,`
-
-`"since"``: [],`
-
-`"properties"``: [],`
-
-`"description"``:` `"<p>Module to notify users of events that happen.</p>"`
-
-`},`
-
-`...`
-
-`],`
-
-`...`
-
-`}`
+```
+{
+  "types": [
+    {
+      "name": "Titanium.Android.NotificationManager",
+      "examples": [],
+      "functions": [],
+      "events": [],
+      "userAgents": [],
+      "remarks": [],
+      "deprecated": false,
+      "since": [],
+      "properties": [],
+      "description": "<p>Module to notify users of events that happen.</p>"
+    },
+    ...
+  ],
+  ...
+}
+```
 
 ## Types
 

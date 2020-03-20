@@ -161,27 +161,19 @@ Appcelerator Dashboard provides two forms, Standard and Advanced, for you to com
 
 Below is a more advanced custom JSON payload:
 
-`{`
-
-`"alert"``:` `"Sample alert"``,`
-
-`"badge"``:` `"+2"``,`
-
-`"category"``:` `"sampleCategory"``,`
-
-`"icon"``:` `"little_star"``,`
-
-`"sound"``:` `"door_bell"``,`
-
-`"title"``:` `"Example"``,`
-
-`"vibrate"``:` `true``,`
-
-`"custom_field_1"``:` `"Arrow Push Rocks!"``,`
-
-`"custom_field_2"``:` `"Hi Push"`
-
-`}`
+```
+{
+    "alert": "Sample alert",
+    "badge": "+2",
+    "category": "sampleCategory",
+    "icon": "little_star",
+    "sound": "door_bell",
+    "title": "Example",
+    "vibrate": true,
+    "custom_field_1": "Arrow Push Rocks!",
+    "custom_field_2": "Hi Push"
+}
+```
 
 When the device receives this payload, it will do the following:
 
@@ -209,59 +201,39 @@ The notification payload that Mobile Backend Services delivers to either FCM or 
 
 For Android, all Android-specific fields are contained in an **android** dictionary, while all other iOS-only and custom fields are top-level keys of the payload. For example, the payload shown in [Custom JSON payloads](#custom-json-payloads) will be delivered to an Android application as follows:
 
-`{`
-
-`"android"``: {`
-
-`"title"``:` `"Example"``,`
-
-`"alert"``:` `"Sample alert"``,`
-
-`"icon"``:` `"little_star"``,`
-
-`"badge"``:` `"+2"``,`
-
-`"sound"``:` `"door_bell"``,`
-
-`"vibrate"``:` `true``,`
-
-`},`
-
-`"category"``:` `"sampleCategory"``,`
-
-`"custom_field_1"``:` `"Arrow Push Services Rocks!"``,`
-
-`"custom_field_2"``:` `"Hi Push"`
-
-`}`
+```
+{
+    "android": {
+        "title": "Example",
+        "alert": "Sample alert",
+        "icon": "little_star",
+        "badge": "+2",
+        "sound": "door_bell",
+        "vibrate": true,
+    },
+    "category": "sampleCategory",
+    "custom_field_1": "Arrow Push Services Rocks!",
+    "custom_field_2": "Hi Push"
+}
+```
 
 For iOS devices, all iOS-specific fields are contained in an aps dictionary, while all Android-specific and custom fields are top-level keys of the payload. For example, the payload shown in [Custom JSON payloads](#custom-json-payloads) will be delivered to an iOS application as follows:
 
-`{`
-
-`"aps"``: {`
-
-`"alert"``:` `"Sample alert"``,`
-
-`"badge"``:` `"+2"``,`
-
-`"category"``:` `"sampleCategory"``,`
-
-`"sound"``:` `"door_bell"`
-
-`},`
-
-`"title"``:` `"Example"``,`
-
-`"icon"``:` `"little_star"``,`
-
-`"vibrate"``:` `true``,`
-
-`"custom_field_1"``:` `"Arrow Push Rocks!"``,`
-
-`"custom_field_2"``:` `"Hi Push"`
-
-`}`
+```
+{
+    "aps": {
+        "alert": "Sample alert",
+        "badge": "+2",
+        "category": "sampleCategory",
+        "sound": "door_bell"
+    },
+    "title": "Example",
+    "icon": "little_star",
+    "vibrate": true,
+    "custom_field_1": "Arrow Push Rocks!",
+    "custom_field_2": "Hi Push"
+}
+```
 
 ### Notification Features
 
@@ -275,27 +247,19 @@ Since Titanium SDK 7.3.0, you can create rich notifications for users running iO
 
 Remote attachments example:
 
-`{`
-
-`"aps"``: {`
-
-`"alert"``: {`
-
-`"title"``:` `"Weather Update"``,`
-
-`"body"``:` `"The weather out here is getting serious, remember to bring an umbrella!"`
-
-`},`
-
-`"mutable-content"``: 1`
-
-`},`
-
-`"attachment-url"``:` `"https://api.buienradar.nl/Image/1.0/RadarMapNL"``,`
-
-`"attachment-name"``:` `"example.gif"`
-
-`}`
+```
+{
+    "aps": {
+        "alert": {
+            "title": "Weather Update",
+            "body": "The weather out here is getting serious, remember to bring an umbrella!"
+        },
+        "mutable-content": 1
+    },
+    "attachment-url": "https://api.buienradar.nl/Image/1.0/RadarMapNL",
+    "attachment-name": "example.gif"
+}
+```
 
 Important: Make sure to include the mutable-content flag in your JSON payload, which is used to trigger the notification extension. Also, the attachement-url is downloaded and persisted in your local filesystem using the attachment-name key. The developer is responsible to structure the extension and the way it deals with remote content. See our [example Swift extension](https://github.com/appcelerator-developer-relations/appc-sample-ios-push-notifications/blob/master/extensions/NotificationServiceExtension/notificationservice/NotificationService.swift) that can be used as part of the [App Extensions](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/iOS_API_Deep_Dives/Creating_iOS_Extensions_-_Siri_Intents/) guide.
 
@@ -389,13 +353,12 @@ The Titanium application may also specify any of the properties in Titanium.Andr
 
 The icon payload field specifies an image to display with the notification on Android devices. (For image specifications, see [Icons and Splash Screens: Notification Icons](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Icons_and_Splash_Screens/).) Its value is the name of a local image file, minus the extension of the icon to display. The file must be placed your project's /res/drawable folder for native Android applications or the /Resources folder for Titanium applications. By default, the application's icon is displayed with the notification.
 
-`{`
-
-`"alert"``:` `"You're a star!"`
-
-`"icon"``:` `"little_star"`
-
-`}`
+```
+{
+  "alert": "You're a star!"
+  "icon": "little_star"
+}
+```
 
 ![icon_location](/Images/appc/download/attachments/60145229/icon_location.png)
 

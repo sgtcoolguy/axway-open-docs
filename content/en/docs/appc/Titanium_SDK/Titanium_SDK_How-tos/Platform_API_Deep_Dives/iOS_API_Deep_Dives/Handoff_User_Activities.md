@@ -66,105 +66,84 @@ To create an Activity, use the Titanium.App.iOS.createUserActivity() method. Pas
 
 Once you are ready to share the activity, use the supported property to check if the user activity is supported by the application, then invoke its becomeCurrent() method to indicate that the activity is in use by the current device.
 
-app.js
+*app.js*
 
-`var activity = Ti.App.iOS.createUserActivity({`
+```javascript
+var activity =  Ti.App.iOS.createUserActivity({
+    activityType:'com.foo.message',
+    title:'Handoff Messenger',
+    userInfo:{
+        msg: 'Tag! You\'re it!'
+    }
+});
 
-`activityType:``'com.foo.message'``,`
-
-`title:``'Handoff Messenger'``,`
-
-`userInfo:{`
-
-`msg:` `'Tag! You\'re it!'`
-
-`}`
-
-`});`
-
-`if``(!activity.supported){`
-
-`alert(``'activity is not supported'``);`
-
-`}` `else` `{`
-
-`activity.becomeCurrent();`
-
-`}`
+if(!activity.supported){
+    alert('activity is not supported');
+} else {
+    activity.becomeCurrent();
+}
+```
 
 Before using the activity, you will need to register each activity type in the plist section of the tiapp.xml file. Under the <dict> element in the <ios><plist> elements, add the NSUserActivityTypes key with the value set to an array of strings, where each string is the activityType property that you want the application to support.
 
-tiapp.xml
+*tiapp.xml*
 
-`<ti:app>`
-
-`<ios>`
-
-`<plist>`
-
-`<dict>`
-
-`<key>NSUserActivityTypes</key>`
-
-`<array>`
-
-`<string>com.foo.message</string>`
-
-`<string>com.foo.bar</string>`
-
-`</array>`
-
-`</dict>`
-
-`</plist>`
-
-`</ios>`
-
-`</ti:app>`
+```xml
+<ti:app>
+  <ios>
+    <plist>
+      <dict>
+        <key>NSUserActivityTypes</key>
+        <array>
+          <string>com.foo.message</string>
+          <string>com.foo.bar</string>
+        </array>
+      </dict>
+    </plist>
+  </ios>
+</ti:app>
+```
 
 ### Monitor the Activity
 
 Listen for the [useractivitywascontinued](#!/api/Titanium.App.iOS.UserActivity-event-useractivitywascontinued) event to determine when the user activity was handed off to another device. The event will be passed the activityType, title, userInfo and webpageURL properties that were set on the user activity.
 
-app.js
+*app.js*
 
-`activity.addEventListener(``'useractivitywascontinued'``, function(e) {`
-
-`Ti.API.info(``'Activity moved to a different device.'``);`
-
-`});`
+```javascript
+activity.addEventListener('useractivitywascontinued', function(e) {
+    Ti.API.info('Activity moved to a different device.');
+});
+```
 
 ### Update the Activity
 
 _Every time_ something happens that requires the activity's state to be updated before it could be handed off, set the UserActivity object's needsSave property to true. Listen for the useractivitywillsave event to actually update the activity state or content, such as saving changes to an API. This event is triggered at the discretion of iOS and when you call becomCurrent(). The event will be passed the current activityType, title, userInfo and webpageURL properties. After the event is fired, iOS will reset the needsSave property to false.
 
-app.js
+*app.js*
 
-`activity.addEventListener(``'useractivitywillsave'``, function(e) {`
+```javascript
+activity.addEventListener('useractivitywillsave', function(e) {
+    Ti.API.info('Updating content...');
+});
 
-`Ti.API.info(``'Updating content...'``);`
-
-`});`
-
-`// Every time the activity needs to be updated set:`
-
-`activity.needsSave =` `true``;`
+// Every time the activity needs to be updated set:
+activity.needsSave = true;
+```
 
 ## Continue the Activity
 
 To continue the activity on another paired device, listen for the Ti.App.iOS module's continueactivityevent. The handoff event will be passed the activityType, title, userInfo and webpageURL properties that were set on the user activity. Use the passed information to continue the activity.
 
-app.js
+*app.js*
 
-`Ti.App.iOS.addEventListener(``'continueactivity'``, function(e){`
-
-`if` `(e.activityType ===` `'com.foo.message'` `&& e.userInfo.msg) {`
-
-`alert(e.userInfo.msg);`
-
-`}`
-
-`});`
+```javascript
+Ti.App.iOS.addEventListener('continueactivity', function(e){
+    if (e.activityType === 'com.foo.message' && e.userInfo.msg) {
+        alert(e.userInfo.msg);
+    }
+});
+```
 
 ## Test the Sample
 

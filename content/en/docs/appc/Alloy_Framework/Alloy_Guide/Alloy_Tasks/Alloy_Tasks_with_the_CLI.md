@@ -38,7 +38,9 @@ Run appc alloy --help to see all available target options or see the [Alloy Comm
 
 To create an Alloy application, run the following command from your work space directory:
 
-`appc` `new` `-t titanium`
+```bash
+appc new -t titanium
+```
 
 You will be prompted to enter an application name and application ID.
 
@@ -52,11 +54,11 @@ You can generate a new Alloy project using a test application from the Alloy Git
 
 To create an Alloy application based on a test application, first create a skeleton Titanium project, then run the Alloy new command with the \--testapp <path\_to\_test\_app> option. Pass the option the relative path to the test application after the alloy/test/apps path.
 
-`appc new -t titanium --classic -i com.appc.picker -n AlloyPicker`
-
-`cd` `AlloyPicker`
-
-`appc alloy new --testapp ui``/picker`
+```bash
+appc new -t titanium --classic -i com.appc.picker -n AlloyPicker
+cd AlloyPicker
+appc alloy new --testapp ui/picker
+```
 
 ## Generating components
 
@@ -66,7 +68,9 @@ The CLI can generate skeleton controllers (with views and styles), models, datab
 
 To generate a controller with a style and view, run the following command:
 
-`appc alloy generate controller <name> [--widgetname <widget_name>] [-o path_to_project/app] [--platform <platform>]`
+```bash
+appc alloy generate controller <name> [--widgetname <widget_name>] [-o path_to_project/app] [--platform <platform>]
+```
 
 This creates app/controllers/<name>.js, app/styles/<name>.tss, and app/views/<name>.xml.
 
@@ -74,7 +78,9 @@ This creates app/controllers/<name>.js, app/styles/<name>.tss, and app/views/<na
 
 To generate a view and style **without** a controller, run the following command:
 
-`appc alloy generate view <name> [--widgetname <widget_name>] [-o path_to_project/app] [--platform <platform>]`
+```bash
+appc alloy generate view <name>  [--widgetname <widget_name>] [-o path_to_project/app] [--platform <platform>]
+```
 
 This creates app/styles/<name>.tss and app/views/<name>.xml.
 
@@ -82,13 +88,17 @@ This creates app/styles/<name>.tss and app/views/<name>.xml.
 
 To generate a style for a view-controller, run the following command:
 
-`appc alloy generate style <name> [--widgetname <widget_name>]`
+```bash
+appc alloy generate style <name> [--widgetname <widget_name>]
+```
 
 Alloy uses the id and attribute names in the markup file to populate the skeleton style file. This creates app/styles/<name>.tss.
 
 To generate style files for all view-controllers, run the following command:
 
-`appc alloy generate style --all`
+```bash
+appc alloy generate style --all
+```
 
 If you add new id or class attributes to the markup file, running either of these commands updates the style file with the new attributes.
 
@@ -96,7 +106,9 @@ If you add new id or class attributes to the markup file, running either of thes
 
 To generate a model, run the following command:
 
-`appc alloy generate model <name> <adapter> [<col_name_1>:<col_type_1> <col_name_2>:<col_type_2> ...] [-o path_to_project/app]`
+```bash
+appc alloy generate model <name> <adapter> [<col_name_1>:<col_type_1> <col_name_2>:<col_type_2> ...] [-o path_to_project/app]
+```
 
 The fourth parameter selects the adapter type, either sql for SQLite engine (Android and iOS platforms) or properties for storing models locally in Titanium SDK context.
 
@@ -108,7 +120,9 @@ This creates app/models/<name>.js, and app/migrations/DATETIME\_<name>.js if the
 
 To generate a standalone migration for a specific model, run the following command:
 
-`appc alloy generate migration <name> [-o path_to_project/app]`
+```bash
+appc alloy generate migration <name> [-o path_to_project/app]
+```
 
 This creates a timestamp-ordered migration file for the model specified, that is, app/migrations/DATETIME\_<name>.js
 
@@ -116,7 +130,9 @@ This creates a timestamp-ordered migration file for the model specified, that is
 
 To generate a basic widget, run the following command:
 
-`appc alloy generate widget <name> [-o path_to_project/app]`
+```bash
+appc alloy generate widget <name> [-o path_to_project/app]
+```
 
 This creates a default widget in the project's app/widgets path, generating a configuration file, controller, style and view: app/widgets/<name>/widget.json, app/widgets/<name>/controllers/widget.js, app/widgets/<name>/styles/widget.tss, and app/widgets/<name>/views/widget.xml. The widget is automatically added as a dependency in the Alloy project's configuration file config.json.
 
@@ -124,7 +140,9 @@ This creates a default widget in the project's app/widgets path, generating a co
 
 To generate the build customization file alloy.jmk, run the following command:
 
-`appc alloy generate jmk [-o path_to_project/app]`
+```bash
+appc alloy generate jmk [-o path_to_project/app]
+```
 
 This creates the JavaScript Makefile app/alloy.jmk with a few task hooks in place. Refer to [Build Configuration File (alloy.jmk)](/docs/appc/Alloy_Framework/Alloy_How-tos/Alloy_Reference_Guides/Build_Configuration_File_(alloy.jmk)/) for more details.
 
@@ -132,7 +150,9 @@ This creates the JavaScript Makefile app/alloy.jmk with a few task hooks in plac
 
 The alloy extract-i18n command inspects your JS and TSS (since Alloy 1.2.0), and XML files (since Alloy 1.6.0) for instances of Titanium's localization functions and adds those strings to an i18n strings.xml file. The command has the following syntax:
 
-`appc alloy extract-i18n [language] [--apply]`
+```bash
+appc alloy extract-i18n [language] [--apply]
+```
 
 **Parameters**:
 
@@ -148,81 +168,78 @@ The following localization functions are supported:
 
 The command extracts the first parameter (the i18n key) from each localization function and, if it's a string, adds it to the target language strings.xml file. For example, suppose a JavaScript file in your application contained the following code:
 
-`var name = Ti.Locale.getString(``'name'``);`
-
-`var color = Titanium.Locale.getString(``'color'``);`
-
-`var currency = L(``'currency'``);`
+```javascript
+var name = Ti.Locale.getString('name');
+var color = Titanium.Locale.getString('color');
+var currency = L('currency');
+```
 
 To create an English language localization file, run the following command:
 
-`appc alloy extract-i18n --apply`
+```bash
+appc alloy extract-i18n --apply
+```
 
 This generates app/i18n/en/strings.xml or (before Alloy 1.8.0) i18n/en/strings.xml in your project directory, if it doesn't exist. The contents of the generated XML file would appear as follows:
 
-`<``resources``>`
-
-`<``string`  `name``=``"name"``>name</``string``>`
-
-`<``string`  `name``=``"color"``>color</``string``>`
-
-`<``string`  `name``=``"currency"``>currency</``string``>`
-
-`</``resources``>`
+```xml
+<resources>
+  <string name="name">name</string>
+  <string name="color">color</string>
+  <string name="currency">currency</string>
+</resources>
+```
 
 If you later add more localization functions to your code and run the same command again, the new entries would be added to strings.xml. Existing entries are left untouched.
 
 To generate a strings.xml for a specific language, pass the two-letter language code as a parameter. For example, the following command creates a strings.xml file for Spanish language locales (app/i18n/es/strings.xml or - before Alloy 1.8.0 - i18n/es/strings.xml ):
 
-` appc alloy extract-i18n es --apply`
+```bash
+appc alloy extract-i18n es --apply
+```
 
 When called with \--apply, the command only adds new i18n entries and leaves existing entries untouched. For this reason, alloy extract-i18n --apply is a safe operation, but you can also preview changes in the terminal by calling the command without \--apply , as shown below.
 
-`appc alloy extract-i18n`
+```bash
+appc alloy extract-i18n
+```
 
 The output of this command shows the content of the current en/strings.xml file (before) and its content once you apply the changes (after) with \--apply.
 
-`[INFO] ######## BEFORE ########`
-
-`<``resources``>`
-
-`<``string`  `name``=``"name"``>name</``string``>`
-
-`<``string`  `name``=``"color"``>color</``string``>`
-
-`<``string`  `name``=``"currency"``>currency</``string``>`
-
-`</``resources``>`
-
-`[INFO] ######## AFTER ########`
-
-`<``resources``>`
-
-`<``string`  `name``=``"name"``>name</``string``>`
-
-`<``string`  `name``=``"color"``>color</``string``>`
-
-`<``string`  `name``=``"currency"``>currency</``string``>`
-
-`<``string`  `name``=``"test"``>test</``string``>`
-
-`</``resources``>`
+```
+[INFO] ######## BEFORE ########
+<resources>
+  <string name="name">name</string>
+  <string name="color">color</string>
+  <string name="currency">currency</string>
+</resources>
+[INFO] ######## AFTER  ########
+<resources>
+  <string name="name">name</string>
+  <string name="color">color</string>
+  <string name="currency">currency</string>
+  <string name="test">test</string>
+</resources>
+```
 
 ## Compiling a specific view-controller
 
 You can select which Alloy view-controller to compile to Titanium code. Use the command to update the Titanium base code for incremental changes to the Alloy project. Pass the file=<filename> to the \--config option when running the Alloy compile command.
 
-`appc alloy compile --config platform=<platform>,``file``=<``file``>`
+```bash
+appc alloy compile --config platform=<platform>,file=<file>
 
-`## Example`
-
-`appc alloy compile --config platform=android,``file``=app``/controller/index``.js`
+## Example
+appc alloy compile --config platform=android,file=app/controller/index.js
+```
 
 ## Building an application
 
 To build and run an application, execute the following command:
 
-`appc run --platform <platform> [--project-dir <value>] [--sdk <value>] [ <platform_build_options> ]`
+```bash
+appc run --platform <platform> [--project-dir <value>] [--sdk <value>] [ <platform_build_options> ]
+```
 
 Running this from the root directory of the project compiles the files to the correct location automatically.
 
@@ -234,6 +251,8 @@ See the [Titanium Command-Line Interface Reference guide](/docs/appc/Titanium_SD
 
 To install the compiler plugin that hooks the Alloy project to Studio, run the following command:
 
-`appc alloy` `install` `plugin [path_to_project]`
+```bash
+appc alloy install plugin [path_to_project]
+```
 
 Use this command to update the compiler plugin if your project was created using an older version of Alloy.

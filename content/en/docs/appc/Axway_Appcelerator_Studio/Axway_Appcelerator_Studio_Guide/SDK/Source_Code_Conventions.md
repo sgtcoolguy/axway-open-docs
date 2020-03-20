@@ -84,45 +84,36 @@ Please ensure that the following header is at the top of each Studio file, or at
 
 ### GPL
 
-`/**`
-
-`* Aptana Studio`
-
-`* Copyright (c) 2005-2011 by Appcelerator, Inc. All Rights Reserved.`
-
-`* Licensed under the terms of the GNU Public License (GPL) v3 (with exceptions).`
-
-`* Please see the license.html included with this distribution for details.`
-
-`* Any modifications to this file must keep this entire header intact.`
-
-`*/`
+```
+/**
+ * Aptana Studio
+ * Copyright (c) 2005-2011 by Appcelerator, Inc. All Rights Reserved.
+ * Licensed under the terms of the GNU Public License (GPL) v3 (with exceptions).
+ * Please see the license.html included with this distribution for details.
+ * Any modifications to this file must keep this entire header intact.
+ */
+```
 
 ### EPL
 
-`/**`
-
-`* Copyright (c) 2005-2011 by Appcelerator, Inc. All Rights Reserved.`
-
-`* Licensed under the terms of the Eclipse Public License (EPL).`
-
-`* Please see the license.txt included with this distribution for details.`
-
-`* Any modifications to this file must keep this entire header intact.`
-
-`*/`
+```
+/**
+ * Copyright (c) 2005-2011 by Appcelerator, Inc. All Rights Reserved.
+ * Licensed under the terms of the Eclipse Public License (EPL).
+ * Please see the license.txt included with this distribution for details.
+ * Any modifications to this file must keep this entire header intact.
+ */
+```
 
 ### Private Code
 
-`/**`
-
-`* Appcelerator Titanium Studio`
-
-`* Copyright (c) 2011 by Appcelerator, Inc. All Rights Reserved.`
-
-`* Proprietary and Confidential - This source code is not for redistribution`
-
-`*/`
+```
+/**
+ * Appcelerator Titanium Studio
+ * Copyright (c) 2011 by Appcelerator, Inc. All Rights Reserved.
+ * Proprietary and Confidential - This source code is not for redistribution
+ */
+```
 
 ## PMD
 

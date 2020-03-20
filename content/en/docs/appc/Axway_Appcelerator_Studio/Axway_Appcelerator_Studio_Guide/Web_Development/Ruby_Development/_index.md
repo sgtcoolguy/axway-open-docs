@@ -92,21 +92,16 @@ As of version 3.0.4, the formatter also provides an ability to turn off and turn
 
 For example:
 
-`# @formatter:off`
-
-`case` `a %` `2`
-
-`when`  `1`
-
-`puts` `"odd"`
-
-`when`  `0`
-
-`puts` `"even"`
-
-`end`
-
-`# @formatter:on`
+```
+# @formatter:off
+case a % 2
+  when 1
+    puts "odd"
+  when 0
+    puts "even"
+end
+# @formatter:on
+```
 
 Note that the 'off' and 'on' tags are also customizable through the formatter preferences.
 

@@ -49,7 +49,9 @@ The project must be some web project: Web, PHP, Python, Ruby, Rails. You can con
 
 3. In your **sample.js** file, add the following snippet:
 
-    `$(document).ready(function(){});`
+    ```
+    $(document).ready(function(){});
+    ```
 
 4. Inside that, add the following line: $("p")
 

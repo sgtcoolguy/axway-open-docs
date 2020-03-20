@@ -120,59 +120,39 @@ Create the .project and .pydevproject files from the template below and use File
 
 The .project file contents (must replace the **MyProject** with the project name):
 
-`<``projectDescription``>`
-
-`<``name``>MyProject</``name``>`
-
-`<``comment``></``comment``>`
-
-`<``projects``>`
-
-`</``projects``>`
-
-`<``buildSpec``>`
-
-`<``buildCommand``>`
-
-`<``name``>org.python.pydev.PyDevBuilder</``name``>`
-
-`<``arguments``>`
-
-`</``arguments``>`
-
-`</``buildCommand``>`
-
-`</``buildSpec``>`
-
-`<``natures``>`
-
-`<``nature``>org.python.pydev.pythonNature</``nature``>`
-
-`</``natures``>`
-
-`</``projectDescription``>`
+```xml
+<projectDescription>
+    <name>MyProject</name>
+    <comment></comment>
+    <projects>
+    </projects>
+    <buildSpec>
+        <buildCommand>
+            <name>org.python.pydev.PyDevBuilder</name>
+            <arguments>
+            </arguments>
+        </buildCommand>
+    </buildSpec>
+    <natures>
+        <nature>org.python.pydev.pythonNature</nature>
+    </natures>
+</projectDescription>
+```
 
 The .pydevproject file contents (must replace the path (**/MyProject/src**) with the actual folders to be in the PYTHONPATH):
 
-`<?``eclipse``-pydev` `version``=``"1.0"``?>`
-
-`<``pydev_project``>`
-
-`<``pydev_property`  `name``=``"org.python.pydev.PYTHON_PROJECT_INTERPRETER"``>Default</``pydev_property``>`
-
-`<``pydev_property`  `name``=``"org.python.pydev.PYTHON_PROJECT_VERSION"``>python 2.7</``pydev_property``>`
-
-`<``pydev_variables_property`  `name``=``"org.python.pydev.PROJECT_VARIABLE_SUBSTITUTION"``>`
-
-`</``pydev_variables_property``>`
-
-`<``pydev_pathproperty`  `name``=``"org.python.pydev.PROJECT_SOURCE_PATH"``>`
-
-`<``path``>/MyProject/src</``path``>`
-
-`</``pydev_pathproperty``>`
-
-`</``pydev_project``>`
+```xml
+<?eclipse-pydev version="1.0"?>
+<pydev_project>
+    <pydev_property name="org.python.pydev.PYTHON_PROJECT_INTERPRETER">Default</pydev_property>
+    <pydev_property name="org.python.pydev.PYTHON_PROJECT_VERSION">python 2.7</pydev_property>
+    <pydev_variables_property name="org.python.pydev.PROJECT_VARIABLE_SUBSTITUTION">
+    </pydev_variables_property>
+    <pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
+        <path>/MyProject/src</path>
+    </pydev_pathproperty>
+</pydev_project>
+```
 
 How do I import existing projects/sources for a Django project into PyDev?
 
@@ -183,17 +163,14 @@ Follow the same steps in the FAQ above to import a PyDev project, then right-cli
 
 If the .pydevproject file was created, those values could already be added to it in the entry org.python.pydev.PROJECT\_VARIABLE\_SUBSTITUTION:
 
-`<``pydev_variables_property`  `name``=``"org.python.pydev.PROJECT_VARIABLE_SUBSTITUTION"``>`
-
-`<``key``>DJANGO_MANAGE_LOCATION</``key``>`
-
-`<``value``>src/my_project/manage.py</``value``>`
-
-`<``key``>DJANGO_SETTINGS_MODULE</``key``>`
-
-`<``value``>my_project.settings</``value``>`
-
-`</``pydev_variables_property``>`
+```xml
+<pydev_variables_property name="org.python.pydev.PROJECT_VARIABLE_SUBSTITUTION">
+    <key>DJANGO_MANAGE_LOCATION</key>
+    <value>src/my_project/manage.py</value>
+    <key>DJANGO_SETTINGS_MODULE</key>
+    <value>my_project.settings</value>
+</pydev_variables_property>
+```
 
 ## How do I configure my PYTHONPATH?
 
@@ -306,9 +283,10 @@ The problem is that PyDev passes a dict as the \__builtins_\_ module to execfile
 
 Use this:
 
-`import` `_builtin_`
-
-`_builtin_.xxx = something`
+```
+import _builtin_
+_builtin_.xxx = something
+```
 
 It's the same thing but works when debugging.
 
@@ -334,31 +312,21 @@ The solution is to set the trace function for the ORB threads explicitly.
 
 2. Remove the file called pydevd.pyc, make a backup copy of the file pydevd.py, and make this change to the PyDB::run() method from file pydevd.py:
 
-    `...`
-
-    `if`  `globals`  `is`  `None``:`
-
-    `...`
-
-    `globals`  `=` `m._dict_`
-
-    `#`
-
-    `# Hack: keep a reference to the PyDev debugger's`
-
-    `# trace function in a global variable. This can`
-
-    `# be used by the debugged script to set up the`
-
-    `# trace function for the ORB worker threads.`
-
-    `#`
-
-    `globals``[``'pydev_hook'``]` `=`  `self``.trace_dispatch`
-
-    `#`
-
-    `...`
+    ```javascript
+    ...
+    if globals is None:
+    ...
+    globals = m._dict_
+    #
+    # Hack: keep a reference to the PyDev debugger's
+    # trace function in a global variable. This can
+    # be used by the debugged script to set up the
+    # trace function for the ORB worker threads.
+    #
+    globals['pydev_hook'] = self.trace_dispatch
+    #
+    ...
+    ```
 
 3. Make changes similar to those below to your python app.
 
@@ -368,51 +336,39 @@ The solution is to set the trace function for the ORB threads explicitly.
 
     1. Import this undocumented ORB function
 
-        `from` `omniORB` `import` `addWThreadHook`
+        ```
+        from omniORB import addWThreadHook
+        ```
 
     2. Add this function:
 
-        `def` `dbg_trace(flag``=``0``, wt``=``None``):`
-
-        `""``"This function is called whenever the ORB creates a worker thread (e.g. when a client calls a CORBA interface of the engine). The ORB worker threads are not created with the functions from the 'threading' module so, if we want to debug them with PyDev, we need to "``manually``" set the trace function for them."``""`
-
-        `if` `flag` `=``=`  `0``:` `# WTHREAD_CREATED`
-
-        `sys.settrace(pydev_trace_func)`
+        ```javascript
+        def dbg_trace(flag=0, wt=None):
+        """This function is called whenever the ORB creates a worker thread (e.g. when a client calls a CORBA interface of the engine). The ORB worker threads are not created with the functions from the 'threading' module so, if we want to debug them with PyDev, we need to "manually" set the trace function for them."""
+        if flag == 0: # WTHREAD_CREATED
+        sys.settrace(pydev_trace_func)
+        ```
 
     3. Finally, make these changes:
 
-        `try``:`
-
-        `# check if pydev_hook is defined`
-
-        `hook` `=` `pydev_hook`
-
-        `except``:`
-
-        `hook` `=`  `None`
-
-        `if` `hook` `is`  `not`  `None``:`
-
-        `# keep a copy of the pydev_hook in a global`
-
-        `# variable, so that dbg_trace() can find it later`
-
-        `# on`
-
-        `global` `pydev_trace_func`
-
-        `pydev_trace_func` `=` `pydev_hook`
-
-        `# NOTE: the ORB will call dbg_trace each time it`
-
-        `# creates a worker thread. The function below`
-
-        `# MUST be used *before* the ORB creates the first`
-
-        `# worker thread.`
-
-        `addWThreadHook(dbg_trace)`
+        ```javascript
+        try:
+        # check if pydev_hook is defined
+        hook = pydev_hook
+        except:
+        hook = None
+        if hook is not None:
+        # keep a copy of the pydev_hook in a global
+        # variable, so that dbg_trace() can find it later
+        # on
+        global pydev_trace_func
+        pydev_trace_func = pydev_hook
+        # NOTE: the ORB will call dbg_trace each time it
+        # creates a worker thread. The function below
+        # MUST be used *before* the ORB creates the first
+        # worker thread.
+        addWThreadHook(dbg_trace)
+        ```
 
 ## OK, I know that many features are available, but I don't know how I can access them through my keyboard!!
 

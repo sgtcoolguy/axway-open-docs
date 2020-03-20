@@ -12,21 +12,17 @@
 
 Let's take a closer look at the directory structure of an Titanium Angular project;
 
-Titanium Angular project structure
+*Titanium Angular project structure*
 
-`.`
-
-`└── project-name`
-
-`├── app`
-
-`├── hooks`
-
-`├── platform`
-
-`├── Resources`
-
-`└── tiapp.xml`
+```
+.
+└── project-name
+    ├── app
+    ├── hooks
+    ├── platform
+    ├── Resources
+    └── tiapp.xml
+```
 
 These various files and folders all have a specific purpose:
 
@@ -42,35 +38,23 @@ These various files and folders all have a specific purpose:
 
 Inside the app folder you'll find all important files that will bootstrap the Angular core inside a Titanium app. This is also the folder you'll be working with most of the time as it contains your Angular source files as well as all other app resources.
 
-`project-name`
-
-`└── app`
-
-`├── assets`
-
-`├── platform`
-
-`│ ├── android`
-
-`│ └── ios`
-
-`├── src`
-
-`│ ├── app.component.ts`
-
-`│ ├── app.module.ts`
-
-`│ ├── main.ts`
-
-`│ └── ...`
-
-`├── vendor`
-
-`├── tsconfig.json`
-
-`├── webpack.config.json`
-
-`└── ...`
+```
+project-name
+└── app
+    ├── assets
+    ├── platform
+    │   ├── android
+    │   └── ios
+    ├── src
+    │   ├── app.component.ts
+    │   ├── app.module.ts
+    │   ├── main.ts
+    │   └── ...
+    ├── vendor
+    ├── tsconfig.json
+    ├── webpack.config.json
+    └── ...
+```
 
 Here is what those various files and folder do:
 
@@ -90,7 +74,7 @@ Here is what those various files and folder do:
 
 * **webpack.config.json**: Configuration file for Webpack
 
-Ahead-of-time compilation issue
+*Ahead-of-time compilation issue*
 
 Among those files, you will notice additional files with an .aot file extension. Those are for Angular's Ahead-of-time compilation that is used for faster load times in production builds. This is currently not yet supported in the current Tech Preview.
 
@@ -98,65 +82,55 @@ Among those files, you will notice additional files with an .aot file extension.
 
 The files in the app/src folder are almost identical to the files in an [Angular web application](https://angular.io/guide/quickstart#the-src-folder). Let's take a closer look at those files to point out the differences, starting with the main.ts.
 
-main.ts
+*main.ts*
 
-`import { platformTitaniumDynamic } from` `'titanium-angular'``;`
+```typescript
+import { platformTitaniumDynamic } from 'titanium-angular';
+import { AppModule } from './app.module';
 
-`import { AppModule } from` `'./app.module'``;`
-
-`platformTitaniumDynamic().bootstrapModule(AppModule);`
+platformTitaniumDynamic().bootstrapModule(AppModule);
+```
 
 Through an import statement, we pull in the platformTitaniumDynamic function and a TypeScript class calles AppModule. The platformTitaniumDynamic function comes from the titanium-angular module, which provides the platform which is required to run Angular inside Titanium. Just like Angular's own platformBrowserDynamic function is used to setup Angular in an browser enviornment, platformTitaniumDynamic sets up Angular in Titanium App.
 
 The following bootstrapModule function is the same as in an Angular web application. It expects an Angular module that is responsible for providing the main configuration of your app.
 
-app.module.ts
+*app.module.ts*
 
-`import { NgModule, NO_ERRORS_SCHEMA } from` `'@angular/core'``;`
+```typescript
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { TitaniumModule } from 'titanium-angular';
+import { AppComponent } from './app.component';
 
-`import { TitaniumModule } from` `'titanium-angular'``;`
-
-`import { AppComponent } from` `'./app.component'``;`
-
-`@NgModule({`
-
-`declarations: [AppComponent],`
-
-`bootstrap: [AppComponent],`
-
-`imports: [TitaniumModule],`
-
-`schemas: [NO_ERRORS_SCHEMA]`
-
-`})`
-
-`export class AppModule { }`
+@NgModule({
+    declarations: [AppComponent],
+    bootstrap: [AppComponent],
+    imports: [TitaniumModule],
+    schemas: [NO_ERRORS_SCHEMA]
+})
+export class AppModule { }
+```
 
 The two important things here to note are the bootstrap and imports properties. Through the import property, we pull in the TitaniumModule, which, for example, allows you to use Titanium elements as tags in templates but also does a lot more under the hood to properly setup Angular for the use in Titanium.
 
 The bootstrap property defines that, after Angular is done with its internal bootstrap process, it loads the AppComponent. You can see an excerpt of the file bellow.
 
-app.component.ts
+*app.component.ts*
 
-`import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from` `'@angular/core'``;`
+```typescript
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AlertDialog, DeviceEnvironment } from 'titanium-angular';
 
-`import { AlertDialog, DeviceEnvironment } from` `'titanium-angular'``;`
+@Component({
+    selector: "ti-app",
+    templateUrl: "./app.component.html"
+})
+export class AppComponent implements AfterViewInit, OnInit {
+    ...
+}
+```
 
-`@Component({`
-
-`selector:` `"ti-app"``,`
-
-`templateUrl:` `"./app.component.html"`
-
-`})`
-
-`export class AppComponent implements AfterViewInit, OnInit {`
-
-`...`
-
-`}`
-
-Component interaction with the template and Titanium views
+*Component interaction with the template and Titanium views*
 
 If you open the file in your editor, you'll notice that the file contains different examples that demonstrate how you can interact with Titanium views within the component. This follows the same pattern as in a default Angular web application. Visit Angular's [Components & Templates](https://angular.io/guide/displaying-data) guide for an in depth tutorial on this topic.
 
@@ -170,7 +144,9 @@ To create a simple button, for example, you can use the Button element. This use
 
 Let's take a look at some examples that will explain in detail how to use Titanium UI elements in Angular.
 
-`<``Button` `#demoButton` `title``=``"Tap me!"` `(click)="increaseTapCount()"></``Button``>`
+```xml
+<Button #demoButton title="Tap me!" (click)="increaseTapCount()"></Button>
+```
 
 Note that all elements in an Angular template need to be closed by a matching tag. Self-closing elements, as you may know them from HTML, or maybe Alloy, are not allowed.
 
@@ -184,7 +160,9 @@ Here is what all of the above does in detail:
 
 * (click): This sets up an event listener to the button's click event. It binds to the increaseTapCount method in the component class. You can also pass $event into the function to gain access to the Titanium event: (click)="increaseTapCount($event)".
 
-`<``Label`  `color``=``"white"` `[font]="{ fontSize: 32 }"` `top``=``"100"`  `left``=``"10"``>Now on Titanium</``Label``>`
+```xml
+<Label color="white" [font]="{ fontSize: 32 }" top="100" left="10">Now on Titanium</Label>
+```
 
 This creates a new Label and sets some properties on it, just like you would on HTML elements. For elements that have a text or title property, you can write the text you want directly between the element tags. Titanium Angular will automatically populate those properties for you. The other attributes of the above code do the following:
 
@@ -202,20 +180,18 @@ To control how Titanium positions your UI elements, you have three different lay
 
 To define a layout in an Angular template you can either specifiy the layout property or use the HorizontalLayout and VerticalLayout directives.
 
-`<``View`  `layout``=``"vertical"``>`
+```xml
+<View layout="vertical">
+  <TextField hintText="Username"></TextField>
+  <TextField hintText="Password"></TextField>
+</View>
+```
 
-`<``TextField`  `hintText``=``"Username"``></``TextField``>`
-
-`<``TextField`  `hintText``=``"Password"``></``TextField``>`
-
-`</``View``>`
-
-`<``VerticalLayout``>`
-
-`<``TextField`  `hintText``=``"Username"``></``TextField``>`
-
-`<``TextField`  `hintText``=``"Password"``></``TextField``>`
-
-`</``VerticalLayout``>`
+```xml
+<VerticalLayout>
+  <TextField hintText="Username"></TextField>
+  <TextField hintText="Password"></TextField>
+</VerticalLayout>
+```
 
 The layout directives internally also use a View that wraps the content and sets the layout property to either horizontal or vertical.

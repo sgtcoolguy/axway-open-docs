@@ -6,75 +6,46 @@ You only need to generate your certificate if you are using the HTTPS module and
 
 You will need the HTTPS module and the ti.cloud module to test this sample app.
 
-`var` `Cloud = require(``'ti.cloud'``);`
+```javascript
+var Cloud = require('ti.cloud');
+var win = Ti.UI.createWindow({
+  backgroundColor: 'white'
+});
 
-`var` `win = Ti.UI.createWindow({`
+Cloud.createX509CertificatePinningSecurityManager([
+    {
+        url: "https://api.cloud.appcelerator.com",
+        serverCertificate: "api.cloud.appcelerator.com.der"
+    }
+]);
 
-`backgroundColor:` `'white'`
+var btn = Ti.UI.createButton({
+  title: 'Login User in Ti.Cloud',
+  top: '50%'
+});
 
-`});`
-
-`Cloud.createX509CertificatePinningSecurityManager([`
-
-`{`
-
-`url:` `"https://api.cloud.appcelerator.com"``,`
-
-`serverCertificate:` `"api.cloud.appcelerator.com.der"`
-
-`}`
-
-`]);`
-
-`var` `btn = Ti.UI.createButton({`
-
-`title:` `'Login User in Ti.Cloud'``,`
-
-`top:` `'50%'`
-
-`});`
-
-`btn.addEventListener(``'click'``,` `function``(e) {`
-
-`//any Cloud calls here will do`
-
-`Cloud.Users.login({`
-
-`login:` `'test@mycompany.com'``,`
-
-`password:` `'test_password'`
-
-`},` `function` `(e) {`
-
-`if` `(e.success) {`
-
-`var` `user = e.users[0];`
-
-`alert(``'Success:\n'` `+`
-
-`'id: '` `+ user.id +` `'\n'` `+`
-
-`'sessionId: '` `+ Cloud.sessionId +` `'\n'` `+`
-
-`'first name: '` `+ user.first_name +` `'\n'` `+`
-
-`'last name: '` `+ user.last_name);`
-
-`}` `else` `{`
-
-`alert(``'Error:\n'` `+`
-
-`((e.error && e.message) || JSON.stringify(e)));`
-
-`}`
-
-`});`
-
-`});`
-
-`win.add(btn);`
-
-`win.open();`
+btn.addEventListener('click', function(e) {
+//any Cloud calls here will do
+  Cloud.Users.login({
+      login: 'test@mycompany.com',
+      password: 'test_password'
+  }, function (e) {
+      if (e.success) {
+          var user = e.users[0];
+          alert('Success:\n' +
+              'id: ' + user.id + '\n' +
+              'sessionId: ' + Cloud.sessionId + '\n' +
+              'first name: ' + user.first_name + '\n' +
+              'last name: ' + user.last_name);
+      } else {
+          alert('Error:\n' +
+              ((e.error && e.message) || JSON.stringify(e)));
+      }
+  });
+});
+win.add(btn);
+win.open();
+```
 
 ## Steps to test
 

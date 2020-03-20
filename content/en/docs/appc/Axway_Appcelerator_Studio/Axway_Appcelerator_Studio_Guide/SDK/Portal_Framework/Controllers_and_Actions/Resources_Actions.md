@@ -24,12 +24,11 @@ This command is executed immediately in a synchronous way.
 
 The following _dispatch_ call will get a names array of all the accessible (open and existing) project names:
 
-`var allProjects = dispatch($H({`
-
-`controller:` `'portal.resources'``,`
-
-`action:` `"getProjects"`
-
-`}).toJSON()).evalJSON();`
+```javascript
+var allProjects = dispatch($H({
+  controller: 'portal.resources',
+  action: "getProjects"
+}).toJSON()).evalJSON();
+```
 
 The returned value is an array of strings (names).

@@ -6,7 +6,9 @@ Appcelerator Studio, and the Titanium CLI, uses the **xcode-select** command (ty
 
 1. Open a Terminal window and execute the following command:
 
-    `sudo xcode-select -``switch` `<xcode_folder_path>`
+    ```bash
+    sudo xcode-select -switch <xcode_folder_path>
+    ```
 
     The **<xcode\_folder\_path>** is typically /Applications/Xcode.app/Contents/Developer for Xcode 4.3 and later (or /Developer or /Developer-x.x for Xcode 4.2).
 

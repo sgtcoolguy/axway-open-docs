@@ -8,9 +8,10 @@ Examples of how you might interact with methods of the Terminal class.
 
 ### Static:
 
-`require` `'ruble/terminal'`
-
-`Ruble::Terminal.open(``"cap -v #{target}"``, ENV[``'TM_PROJECT_DIRECTORY'``])`
+```
+require 'ruble/terminal'
+Ruble::Terminal.open("cap -v #{target}", ENV['TM_PROJECT_DIRECTORY'])
+```
 
 ## Terminal Methods
 

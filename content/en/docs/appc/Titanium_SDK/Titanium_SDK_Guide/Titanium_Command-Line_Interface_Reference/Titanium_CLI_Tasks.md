@@ -56,21 +56,20 @@ To check if you current development environment is setup correctly to build proj
 
 The following output indicates that node and npm are installed correctly but may be updated.
 
-`Node.js`
-
-`★ node` `new` `version v0.``10.28` `available! (currently v0.``10.13``)`
-
-`★ npm` `new` `version v1.``4.13` `available! (currently v1.``3.2``)`
+```bash
+Node.js
+  ★  node               new version v0.10.28 available! (currently v0.10.13)
+  ★  npm                new version v1.4.13 available! (currently v1.3.2)
+```
 
 The following output indicates that your Android environment is not setup correctly.
 
-`Android Environment`
-
-`! sdk Android SDK not found`
-
-`! targets no targets found`
-
-`! avds no avds found`
+```
+Android Environment
+  !  sdk                Android SDK not found
+  !  targets            no targets found
+  !  avds               no avds found
+```
 
 ### Check the development environment against the Titanium SDK
 
@@ -80,43 +79,36 @@ The appc ti info command retrieves detailed information about your platform envi
 
 The following output indicates that your Android environment is not setup correctly and provides you with some resolution steps.
 
-`Android Issues`
-
-`✕ Unable to locate an Android SDK. If you have already downloaded and installed the Android SDK,`
-
-`you can tell Titanium where the Android SDK is located by running 'titanium config`
-
-`android.sdkPath /path/to/android-sdk``', otherwise you can install it by running '``titanium setup`
-
-`android' or manually downloading from http:``//appcelerator.com/android-sdk.`
+```
+Android Issues
+  ✕  Unable to locate an Android SDK. If you have already downloaded and installed the Android SDK,
+     you can tell Titanium where the Android SDK is located by running 'titanium config
+     android.sdkPath /path/to/android-sdk', otherwise you can install it by running 'titanium setup
+     android' or manually downloading from http://appcelerator.com/android-sdk.
+```
 
 The following output indicates that your iOS environment is fine, but you have older versions of Xcode installed.
 
-`iOS Issues`
-
-`! Xcode` `4.3` `is too old and is no longer supported by Titanium SDK` `3.3``.``0``. The minimum supported`
-
-`Xcode version by Titanium SDK` `3.3``.``0` `is Xcode` `5.0``.`
-
-`! Xcode` `4.4``.``1` `is too old and is no longer supported by Titanium SDK` `3.3``.``0``. The minimum supported`
-
-`Xcode version by Titanium SDK` `3.3``.``0` `is Xcode` `5.0``.`
+```
+iOS Issues
+  !  Xcode 4.3 is too old and is no longer supported by Titanium SDK 3.3.0. The minimum supported
+     Xcode version by Titanium SDK 3.3.0 is Xcode 5.0.
+  !  Xcode 4.4.1 is too old and is no longer supported by Titanium SDK 3.3.0. The minimum supported
+     Xcode version by Titanium SDK 3.3.0 is Xcode 5.0.
+```
 
 ### Configuring your development environment
 
 By default, the Titanium CLI uses your environment variables to search for paths to executables and other development tools. If you installed these tools in custom locations or the CLI cannot find them, you will need to use the appc ti config command to tell the CLI where to find these tools. The example below sets some common Android configuration options. For a detailed list of configurable options, see [Titanium CLI Options](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_Command-Line_Interface_Reference/Titanium_CLI_Options/).
 
-`## Set the location of the Android SDK`
-
-`appc ti config android.sdkPath ~``/opt/android_sdk`
-
-`## Set the location of the Android NDK`
-
-`appc ti config android.ndkPath ~``/opt/android_ndk`
-
-`## Enable support for Genymotion virtual device`
-
-`appc ti config genymotion.enabled` `true`
+```bash
+## Set the location of the Android SDK
+appc ti config android.sdkPath ~/opt/android_sdk
+## Set the location of the Android NDK
+appc ti config android.ndkPath ~/opt/android_ndk
+## Enable support for Genymotion virtual device
+appc ti config genymotion.enabled true
+```
 
 ## Building applications
 
@@ -126,11 +118,11 @@ Once you have your development environment correctly configured, you can create 
 
 To create a new Titanium project, run the appc new command. The CLI will prompt you to fill in the necessary information to create a project, such as which platforms the application runs on and the name of the project. To create a new project with all the information specified in the command, run:
 
-`appc new -t app --``id` `<APP_ID> -n <APP_NAME> -p <PLATFORMS> -d <WORKSPACE_DIRECTORY> -u <APP_URL>`
-
-`## Example`
-
-`appc new -t app --``id` `com.appcelerator.sample -n SampleProject -p android,ios -d ~``/Documents/Titanium_Studio_Workspace` `-u http:``//www``.appcelerator.com`
+```bash
+appc new -t app --id <APP_ID> -n <APP_NAME> -p <PLATFORMS> -d <WORKSPACE_DIRECTORY> -u <APP_URL>
+## Example
+appc new -t app --id com.appcelerator.sample -n SampleProject -p android,ios -d ~/Documents/Titanium_Studio_Workspace -u http://www.appcelerator.com
+```
 
 ### Build an application
 
@@ -165,7 +157,9 @@ To build for an emulator, run appc run -p android. Because no other options were
 
 To launch a specific Android or Genymotion emulator, add the \-C <EMULATOR\_NAME> option.
 
-`appc run -p android -C` `"Google Nexus 7 - 4.4.2 - API 19 - 800x1280"`
+```bash
+appc run -p android -C "Google Nexus 7 - 4.4.2 - API 19 - 800x1280"
+```
 
 To retrieve a list of Android or Genymotion emulators, run the appc ti info -p android command.
 
@@ -173,11 +167,11 @@ To retrieve a list of Android or Genymotion emulators, run the appc ti info -p a
 
 To build for an Android device, connect your device to the computer with a USB cable, then run:
 
-`appc run -p android -T device -C <DEVICE_ID>`
-
-`## Example`
-
-`appc run -p android -T device -C deadbeef`
+```bash
+appc run -p android -T device -C <DEVICE_ID>
+## Example
+appc run -p android -T device -C deadbeef
+```
 
 #### iOS simulator
 
@@ -185,7 +179,9 @@ To build for an iOS simulator, run appc run -p ios. Because no other options wer
 
 To use a specific simulator, add the \-C <SIMULATOR\_NAME> option.
 
-`appc run -p ios -C` `"iPad Retina"`
+```bash
+appc run -p ios -C "iPad Retina"
+```
 
 To retrieve a list of simulator names, run the appc run --help option and look at the \-C, --device-id option under the "Build iOS Options".
 
@@ -197,13 +193,12 @@ The CLI allows you to install your application directly to the device connected 
 
 To build for an iOS device, run:
 
-`appc run -p ios -T device -C <DEVICE_UDID> [-V` `"<DEVELOPER_CERTIFICATE_NAME>"` `-P <PROVISIONING_PROFILE_UUID>]`
-
-`## Example`
-
-`appc run -p ios -T device -C itunes -V` `"Loretta Martin (GE7BAC5)"` `-P` `"11111111-2222-3333-4444-555555555555"`
-
-`appc run -p ios -T device -C` `"iOS Device"` `-V` `"Loretta Martin (GE7BAC5)"` `-P` `"11111111-2222-3333-4444-555555555555"`
+```bash
+appc run -p ios -T device  -C <DEVICE_UDID> [-V "<DEVELOPER_CERTIFICATE_NAME>"  -P <PROVISIONING_PROFILE_UUID>]
+## Example
+appc run -p ios -T device -C itunes -V "Loretta Martin (GE7BAC5)" -P "11111111-2222-3333-4444-555555555555"
+appc run -p ios -T device -C "iOS Device" -V "Loretta Martin (GE7BAC5)" -P "11111111-2222-3333-4444-555555555555"
+```
 
 If you omit the \-V and \-P options, the CLI will prompt you with options. You can also retrieve the information from Xcode's Devices window (or Organizer window for Xcode 5.x and older) or with the appc ti info -p ios command.
 
@@ -213,25 +208,29 @@ To build for Windows Mobile Emulator, run appc run -p windows. Because no other 
 
 To use a specific emulator, add the \-C <EMULATOR\_ID> option.
 
-`appc run -p windows`
+```bash
+appc run -p windows
+## or
+appc run -p windows -T wp-emulator
 
-`## or`
-
-`appc run -p windows -T wp-emulator`
-
-`appc run -p windows -C 10-0-1`
+appc run -p windows -C 10-0-1
+```
 
 #### Windows Mobile device
 
 Due to the Windows SDK tooling, Titanium only supports installing to a single connected device at a time. Therefore, you do not need to specify a device using the \-C option.
 
-`appc run -p windows -T wp-device`
+```bash
+appc run -p windows -T wp-device
+```
 
 #### Windows local machine
 
 To build a Titanium app for your Windows desktop, you will need to build for your local machine.
 
-`appc run -p windows -T ws-``local`
+```bash
+appc run -p windows -T ws-local
+```
 
 ### Package an application
 
@@ -241,11 +240,11 @@ Before packaging an APK file for distribution, you need to generate a keypair an
 
 To package an APK for Google Play, run:
 
-`appc run -p android -T dist-playstore [-K <KEYSTORE_FILE> -P <KEYSTORE_PASSWORD> -L <KEYSTORE_ALIAS> -O <OUTPUT_DIRECTORY>]`
-
-`## Example`
-
-`appc run -p android -T dist-playstore -K ~``/android``.keystore -P secret -L foo -O .``/dist/`
+```bash
+appc run -p android -T dist-playstore [-K <KEYSTORE_FILE> -P <KEYSTORE_PASSWORD> -L <KEYSTORE_ALIAS> -O <OUTPUT_DIRECTORY>]
+## Example
+appc run -p android -T dist-playstore -K ~/android.keystore -P secret -L foo -O ./dist/
+```
 
 If you omit any of the optional parameters, you will be prompted by the CLI to enter these values. If the password for the private key of the keystore is different from the password for the keystore, add the \--key-password <KEYPASS> option with the password of your private key.
 
@@ -255,11 +254,11 @@ Before packaging for the iOS ad hoc distribution, you need to generate a distrib
 
 To package an IPA file for Ad Hoc distribution, run:
 
-`appc run -p ios -T dist-adhoc [-R <DISTRIBUTION_CERTIFICATE_NAME> -P <PROVISIONING_PROFILE_UUID> -O <OUTPUT_DIRECTORY>]`
-
-`## Example`
-
-`appc run -p ios -T dist-adhoc -R` `"Pseudo, Inc."` `-P` `"FFFFFFFF-EEEE-DDDD-CCCC-BBBBBBBBBBBB"` `-O .``/dist/`
+```bash
+appc run -p ios -T dist-adhoc [-R <DISTRIBUTION_CERTIFICATE_NAME> -P <PROVISIONING_PROFILE_UUID> -O <OUTPUT_DIRECTORY>]
+## Example
+appc run -p ios -T dist-adhoc -R "Pseudo, Inc." -P "FFFFFFFF-EEEE-DDDD-CCCC-BBBBBBBBBBBB" -O ./dist/
+```
 
 If you omit any of the optional parameters, the CLI will prompt you with options.
 
@@ -271,11 +270,11 @@ If you are using Mac OS X 10.9 (Mavericks) or newer, make sure you grant CLI acc
 
 To package an APP bundle for the iTunes store, run:
 
-`appc run -p ios -T dist-appstore [-R <DISTRIBUTION_CERTIFICATE_NAME> -P <PROVISIONING_PROFILE_UUID>]`
-
-`## Example`
-
-`appc run -p ios -T dist-appstore -R` `"Pseudo, Inc."` `-P` `"AAAAAAAA-0000-9999-8888-777777777777"`
+```bash
+appc run -p ios -T dist-appstore [-R <DISTRIBUTION_CERTIFICATE_NAME> -P <PROVISIONING_PROFILE_UUID>]
+## Example
+appc run -p ios -T dist-appstore -R "Pseudo, Inc." -P "AAAAAAAA-0000-9999-8888-777777777777"
+```
 
 The CLI installs the package to Xcode's Organizer and launches Organizer for you to start the submission process.
 
@@ -285,22 +284,21 @@ If you omit any of the optional parameters, the CLI will prompt you with options
 
 Titanium apps can be published for the Windows Store or the Windows Mobile Store. Please refer to the build help (appc run --help) for detail of how to specify your Windows Publisher GUID and distribution certificates.
 
-`## publish as a desktop app`
+```bash
+## publish as a desktop app
+appc run -p windows -T dist-winstore
 
-`appc run -p windows -T dist-winstore`
-
-`## publish as a mobile app`
-
-`appc run -p windows -T dist-phonestore`
+## publish as a mobile app
+appc run -p windows -T dist-phonestore
+```
 
 ### Clean your build folder
 
 If you run into issues building your application, you may need to clean your build folder. Run the ti clean command or to clean for a specific platform, add the \-p <PLATFORM> option.
 
-`appc ti clean [-p <PLATFORM>]`
-
-`## Examples`
-
-`appc ti clean`
-
-`appc ti clean -p ios`
+```bash
+appc ti clean [-p <PLATFORM>]
+## Examples
+appc ti clean
+appc ti clean -p ios
+```

@@ -1,6 +1,6 @@
 {"title":"API Builder Blocks","weight":"10"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -41,24 +41,19 @@ Set the following keys in the object passed to the Block.extend() method to defi
 
 The following Block replaces the id parameter to 2 and logs the change.
 
-`var` `Arrow = require(``'arrow'``);`
+```javascript
+var Arrow = require('arrow');
 
-`var` `PreBlock = Arrow.Block.extend({`
+var PreBlock = Arrow.Block.extend({
+    name: 'pre_example',
+    description: 'will set a header named "Foo"',
 
-`name:` `'pre_example'``,`
+    execute: function(req, res, next) {
+        req.params.id = 2;
+        req.log.info("Changing params.id to 2");
+        next();
+    }
+});
 
-`description:` `'will set a header named "Foo"'``,`
-
-`execute:` `function``(req, res, next) {`
-
-`req.params.id = 2;`
-
-`req.log.info(``"Changing params.id to 2"``);`
-
-`next();`
-
-`}`
-
-`});`
-
-`module.exports = PreBlock;`
+module.exports = PreBlock;
+```

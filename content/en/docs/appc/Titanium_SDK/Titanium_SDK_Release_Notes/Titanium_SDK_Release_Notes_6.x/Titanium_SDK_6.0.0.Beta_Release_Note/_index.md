@@ -215,39 +215,27 @@ Note, you may also need to edit the Java code to remove references to deprecate 
 
     * Demo:
 
-        `var` `MapModule = require(``'ti.map'``);`
+        ```javascript
+        var MapModule = require('ti.map');
 
-        `var` `win = Ti.UI.createWindow({`
+        var win = Ti.UI.createWindow({
+            backgroundColor: 'white'
+        });
 
-        `backgroundColor:` `'white'`
-
-        `});`
-
-        `var` `Snapshotter = MapModule.createSnapshotter({`
-
-        `mapType: MapModule.HYBRID_TYPE,`
-
-        `region: {`
-
-        `latitude: 37.3382,`
-
-        `longitude: -121.8863,`
-
-        `latitudeDelta: 0.4,`
-
-        `longitudeDelta: 0.4`
-
-        `},`
-
-        `size: {`
-
-        `width: 300,`
-
-        `height: 200`
-
-        `}`
-
-        `});`
+        var Snapshotter = MapModule.createSnapshotter({
+            mapType: MapModule.HYBRID_TYPE,
+            region: {
+                latitude: 37.3382,
+                longitude: -121.8863,
+                latitudeDelta: 0.4,
+                longitudeDelta: 0.4
+            },
+            size: {
+                width: 300,
+                height: 200
+            }
+        });
+        ```
 
 * [TIMOB-23442](https://jira.appcelerator.org/browse/TIMOB-23442) - iOS: Dismiss keyboard on drag / interactively in ScrollView & ListView
 
@@ -259,59 +247,41 @@ Note, you may also need to edit the Java code to remove references to deprecate 
 
     * Demo:
 
-        `/**`
+        ```javascript
+        /**
+         *  TIMOB-23567
+         *
+         *  Opens `MAX_WINDOWS` windows inside the navigation window stack and closes all after
+         *  reaching the 3rd window.
+         **/
 
-        `* TIMOB-23567`
+        var i = 0;
+        var MAX_WINDOWS = 3;
+        var nav = Ti.UI.iOS.createNavigationWindow({window: createWindow(++i)});
 
-        `*`
+        nav.open();
 
-        ``* Opens `MAX_WINDOWS` windows inside the navigation window stack and closes all after``
+        function createWindow(num) {
+            var win = Ti.UI.createWindow({title: "Window " + num, backgroundColor: "#fff"});
+            var btn = Ti.UI.createButton({title: (i == MAX_WINDOWS) ? "Close all windows" : ("Open Window " + (num + 1))});
 
-        `* reaching the 3rd window.`
+            win.addEventListener("close", function() {
+                Ti.API.warn("Closing " + this.title);
+            });
 
-        `**/`
+            btn.addEventListener("click", function() {
+                if (i == MAX_WINDOWS) {
+                    nav.popToRootWindow({animated: true});
+                    i = 0;
+                    return;
+                }
+                nav.openWindow(createWindow(++i));
+            });
 
-        `var` `i = 0;`
-
-        `var` `MAX_WINDOWS = 3;`
-
-        `var` `nav = Ti.UI.iOS.createNavigationWindow({window: createWindow(++i)});`
-
-        `nav.open();`
-
-        `function` `createWindow(num) {`
-
-        `var` `win = Ti.UI.createWindow({title:` `"Window "` `+ num, backgroundColor:` `"#fff"``});`
-
-        `var` `btn = Ti.UI.createButton({title: (i == MAX_WINDOWS) ?` `"Close all windows"` `: (``"Open Window "` `+ (num + 1))});`
-
-        `win.addEventListener(``"close"``,` `function``() {`
-
-        `Ti.API.warn(``"Closing "` `+` `this``.title);`
-
-        `});`
-
-        `btn.addEventListener(``"click"``,` `function``() {`
-
-        `if` `(i == MAX_WINDOWS) {`
-
-        `nav.popToRootWindow({animated:` `true``});`
-
-        `i = 0;`
-
-        `return``;`
-
-        `}`
-
-        `nav.openWindow(createWindow(++i));`
-
-        `});`
-
-        `win.add(btn);`
-
-        `return` `win;`
-
-        `}`
+            win.add(btn);
+            return win;
+        }
+        ```
 
 * [TIMOB-23675](https://jira.appcelerator.org/browse/TIMOB-23675) - iOS9: Support preferred alert action
 
@@ -319,49 +289,32 @@ Note, you may also need to edit the Java code to remove references to deprecate 
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: "#fff"
+        });
+        var btn = Ti.UI.createButton({
+            title: "Show alert"
+        });
 
-        `backgroundColor:` `"#fff"`
+        btn.addEventListener("click", function() {
+            var alert = Ti.UI.createAlertDialog({
+                title: "Test",
+                message: "Message",
+                buttonNames: ["OK", "Cancel", "Destructive"],
+                cancel: 1,
+                destructive: 2,
+                preferred: 0
+            });
+            alert.addEventListener("click", function(e) {
+                Ti.API.warn(e);
+            })
+            alert.show();
+        });
 
-        `});`
-
-        `var` `btn = Ti.UI.createButton({`
-
-        `title:` `"Show alert"`
-
-        `});`
-
-        `btn.addEventListener(``"click"``,` `function``() {`
-
-        `var` `alert = Ti.UI.createAlertDialog({`
-
-        `title:` `"Test"``,`
-
-        `message:` `"Message"``,`
-
-        `buttonNames: [``"OK"``,` `"Cancel"``,` `"Destructive"``],`
-
-        `cancel: 1,`
-
-        `destructive: 2,`
-
-        `preferred: 0`
-
-        `});`
-
-        `alert.addEventListener(``"click"``,` `function``(e) {`
-
-        `Ti.API.warn(e);`
-
-        `})`
-
-        `alert.show();`
-
-        `});`
-
-        `win.add(btn);`
-
-        `win.open();`
+        win.add(btn);
+        win.open();
+        ```
 
 * [TIMOB-23691](https://jira.appcelerator.org/browse/TIMOB-23691) - iOS: Expose status-bar background-color
 
@@ -369,35 +322,26 @@ Note, you may also need to edit the Java code to remove references to deprecate 
 
     * Demo:
 
-        `// Set the global status-bar background-color`
+        ```javascript
+        // Set the global status-bar background-color
+        Ti.UI.iOS.setStatusBarBackgroundColor("red");
 
-        `Ti.UI.iOS.setStatusBarBackgroundColor(``"red"``);`
+        var win = Ti.UI.createWindow({
+            backgroundColor : "#fff"
+        });
+        var nav = Ti.UI.iOS.createNavigationWindow({window:win});
+        var btn = Ti.UI.createButton({
+            title : "Open another window"
+        });
 
-        `var` `win = Ti.UI.createWindow({`
+        btn.addEventListener("click", function() {
+            // Open a new window to see that the status-bar background persists across windows
+            nav.openWindow(Ti.UI.createWindow({backgroundColor: "#fff"}));
+        });
 
-        `backgroundColor :` `"#fff"`
-
-        `});`
-
-        `var` `nav = Ti.UI.iOS.createNavigationWindow({window:win});`
-
-        `var` `btn = Ti.UI.createButton({`
-
-        `title :` `"Open another window"`
-
-        `});`
-
-        `btn.addEventListener(``"click"``,` `function``() {`
-
-        `// Open a new window to see that the status-bar background persists across windows`
-
-        `nav.openWindow(Ti.UI.createWindow({backgroundColor:` `"#fff"``}));`
-
-        `});`
-
-        `win.add(btn);`
-
-        `nav.open(); `
+        win.add(btn);
+        nav.open();
+        ```
 
 * [TIMOB-23891](https://jira.appcelerator.org/browse/TIMOB-23891) - iOS 10: Support iPhone 7 Haptic Engine API
 
@@ -405,129 +349,82 @@ Note, you may also need to edit the Java code to remove references to deprecate 
 
     * Demo:
 
-        `var` `dataStructure = [`
+        ```javascript
+        var dataStructure = [
+          "FEEDBACK_GENERATOR_TYPE_SELECTION",
+          "FEEDBACK_GENERATOR_TYPE_IMPACT",
+          "FEEDBACK_GENERATOR_TYPE_NOTIFICATION",
+        ];
 
-        `"FEEDBACK_GENERATOR_TYPE_SELECTION"``,`
+        var win = Ti.UI.createWindow({
+            backgroundColor: "#fff",
+          title: "iOS 10 Haptic Engine",
+          translucent: false
+        });
 
-        `"FEEDBACK_GENERATOR_TYPE_IMPACT"``,`
+        var nav = Ti.UI.iOS.createNavigationWindow({
+          window: win
+        });
 
-        `"FEEDBACK_GENERATOR_TYPE_NOTIFICATION"``,`
+        var list = Ti.UI.createListView({
+          sections: [
+            Ti.UI.createListSection({
+              items: createItems()
+            })
+          ]
+        });
 
-        `];`
+        list.addEventListener("itemclick", function(e) {
+          var type = e.itemId;
+          var args = {
+            type: Ti.UI.iOS[type] // Same as Ti.UI.iOS.FEEDBACK_GENERATOR_TYPE_SELECTION etc.
+          };
 
-        `var` `win = Ti.UI.createWindow({`
+          // If we select the impact-feedback, the style property specifies the style of it
+          if (Ti.UI.iOS[type] == Ti.UI.iOS.FEEDBACK_GENERATOR_TYPE_IMPACT) {
+            args["style"] = Ti.UI.iOS.FEEDBACK_GENERATOR_IMPACT_STYLE_MEDIUM;
+          }
 
-        `backgroundColor:` `"#fff"``,`
+          // Create the generator with the selected type
+          var generator = Ti.UI.iOS.createFeedbackGenerator(args);
+          generator.prepare(); // Prepare the feedback before to avoid latence
 
-        `title:` `"iOS 10 Haptic Engine"``,`
+          // Execute different feedbacks based on the type
+          switch (generator.type) {
+            case Ti.UI.iOS.FEEDBACK_GENERATOR_TYPE_SELECTION:
+              generator.selectionChanged();
+            break;
+            case Ti.UI.iOS.FEEDBACK_GENERATOR_TYPE_IMPACT:
+              generator.impactOccurred();
+            break;
+            case Ti.UI.iOS.FEEDBACK_GENERATOR_TYPE_NOTIFICATION:
+              generator.notificationOccurred(Ti.UI.iOS.FEEDBACK_GENERATOR_NOTIFICATION_TYPE_SUCCESS);
+            break;
+          }
 
-        `translucent:` `false`
+          this.deselectItem(e.sectionIndex, e.itemIndex);
+        });
 
-        `});`
+        win.add(list);
+        nav.open();
 
-        `var` `nav = Ti.UI.iOS.createNavigationWindow({`
+        function createItems() {
+          var items = [];
 
-        `window: win`
+          for (var i = 0; i < dataStructure.length; i++) {
+            items.push({
+              properties: {
+                itemId: dataStructure[i],
+                title: dataStructure[i],
+                height: 60,
+                accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_DISCLOSURE
+              }
+            });
+          }
 
-        `});`
-
-        `var` `list = Ti.UI.createListView({`
-
-        `sections: [`
-
-        `Ti.UI.createListSection({`
-
-        `items: createItems()`
-
-        `})`
-
-        `]`
-
-        `});`
-
-        `list.addEventListener(``"itemclick"``,` `function``(e) {`
-
-        `var` `type = e.itemId;`
-
-        `var` `args = {`
-
-        `type: Ti.UI.iOS[type]` `// Same as Ti.UI.iOS.FEEDBACK_GENERATOR_TYPE_SELECTION etc.`
-
-        `};`
-
-        `// If we select the impact-feedback, the style property specifies the style of it`
-
-        `if` `(Ti.UI.iOS[type] == Ti.UI.iOS.FEEDBACK_GENERATOR_TYPE_IMPACT) {`
-
-        `args[``"style"``] = Ti.UI.iOS.FEEDBACK_GENERATOR_IMPACT_STYLE_MEDIUM;`
-
-        `}`
-
-        `// Create the generator with the selected type`
-
-        `var` `generator = Ti.UI.iOS.createFeedbackGenerator(args);`
-
-        `generator.prepare();` `// Prepare the feedback before to avoid latence`
-
-        `// Execute different feedbacks based on the type`
-
-        `switch` `(generator.type) {`
-
-        `case` `Ti.UI.iOS.FEEDBACK_GENERATOR_TYPE_SELECTION:`
-
-        `generator.selectionChanged();`
-
-        `break``;`
-
-        `case` `Ti.UI.iOS.FEEDBACK_GENERATOR_TYPE_IMPACT:`
-
-        `generator.impactOccurred();`
-
-        `break``;`
-
-        `case` `Ti.UI.iOS.FEEDBACK_GENERATOR_TYPE_NOTIFICATION:`
-
-        `generator.notificationOccurred(Ti.UI.iOS.FEEDBACK_GENERATOR_NOTIFICATION_TYPE_SUCCESS);`
-
-        `break``;`
-
-        `}`
-
-        `this``.deselectItem(e.sectionIndex, e.itemIndex);`
-
-        `});`
-
-        `win.add(list);`
-
-        `nav.open();`
-
-        `function` `createItems() {`
-
-        `var` `items = [];`
-
-        `for` `(``var` `i = 0; i < dataStructure.length; i++) {`
-
-        `items.push({`
-
-        `properties: {`
-
-        `itemId: dataStructure[i],`
-
-        `title: dataStructure[i],`
-
-        `height: 60,`
-
-        `accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_DISCLOSURE`
-
-        `}`
-
-        `});`
-
-        `}`
-
-        `return` `items;`
-
-        `}`
+          return items;
+        }
+        ```
 
 #### Windows platform
 
@@ -585,81 +482,48 @@ Note, you may also need to edit the Java code to remove references to deprecate 
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({backgroundColor:` `'white'``}),`
+        ```javascript
+        var win = Ti.UI.createWindow({backgroundColor: 'white'}),
+            favoriteAction = {
+              identifier: 'setFavorite',
+                title: 'Favorite',
+                style: Ti.UI.iOS.ROW_ACTION_STYLE_DEFAULT
+            },
+            unfavoriteAction = {
+              identifier: 'unsetFavorite',
+                title: 'Unfavorite',
+                style: Ti.UI.iOS.ROW_ACTION_STYLE_NORMAL
+            },
+            data = [
+                {properties: {canEdit: true, editActions: [favoriteAction], title: 'Kitten Whiskers'}},
+                {properties: {canEdit: true, editActions: [favoriteAction], title: 'Copper Kettle'}},
+                {properties: {canEdit: true, editActions: [favoriteAction], title: 'Woolen Mittens'}},
+                {properties: {canEdit: true, editActions: [favoriteAction], title: 'Apple Strudel'}},
+                {properties: {canEdit: true, editActions: [favoriteAction], title: 'Brown Packages'}},
+                {properties: {canEdit: true, editActions: [favoriteAction], title: 'Dog Bites'}},
+                {properties: {canEdit: true, editActions: [favoriteAction], title: 'Bee Stings'}}
+            ],
+            listSection = Ti.UI.createListSection({
+                items: data
+            }),
+            listView = Ti.UI.createListView({
+                top: 15,
+                sections: [listSection]
+            });
 
-        `favoriteAction = {`
+        listView.addEventListener('editaction', function(e) {
+            var item = e.section.getItemAt(e.itemIndex)
+            if (e.identifier === 'setFavorite') {
+                item.properties.editActions = [unfavoriteAction];
+            } else if (e.identifier === 'unsetFavorite') {
+                item.properties.editActions = [favoriteAction];
+            }
+            e.section.updateItemAt(e.itemIndex, item);
+        });
 
-        `identifier:` `'setFavorite'``,`
-
-        `title:` `'Favorite'``,`
-
-        `style: Ti.UI.iOS.ROW_ACTION_STYLE_DEFAULT`
-
-        `},`
-
-        `unfavoriteAction = {`
-
-        `identifier:` `'unsetFavorite'``,`
-
-        `title:` `'Unfavorite'``,`
-
-        `style: Ti.UI.iOS.ROW_ACTION_STYLE_NORMAL`
-
-        `},`
-
-        `data = [`
-
-        `{properties: {canEdit:` `true``, editActions: [favoriteAction], title:` `'Kitten Whiskers'``}},`
-
-        `{properties: {canEdit:` `true``, editActions: [favoriteAction], title:` `'Copper Kettle'``}},`
-
-        `{properties: {canEdit:` `true``, editActions: [favoriteAction], title:` `'Woolen Mittens'``}},`
-
-        `{properties: {canEdit:` `true``, editActions: [favoriteAction], title:` `'Apple Strudel'``}},`
-
-        `{properties: {canEdit:` `true``, editActions: [favoriteAction], title:` `'Brown Packages'``}},`
-
-        `{properties: {canEdit:` `true``, editActions: [favoriteAction], title:` `'Dog Bites'``}},`
-
-        `{properties: {canEdit:` `true``, editActions: [favoriteAction], title:` `'Bee Stings'``}}`
-
-        `],`
-
-        `listSection = Ti.UI.createListSection({`
-
-        `items: data`
-
-        `}),`
-
-        `listView = Ti.UI.createListView({`
-
-        `top: 15,`
-
-        `sections: [listSection]`
-
-        `});`
-
-        `listView.addEventListener(``'editaction'``,` `function``(e) {`
-
-        `var` `item = e.section.getItemAt(e.itemIndex)`
-
-        `if` `(e.identifier ===` `'setFavorite'``) {`
-
-        `item.properties.editActions = [unfavoriteAction];`
-
-        `}` `else`  `if` `(e.identifier ===` `'unsetFavorite'``) {`
-
-        `item.properties.editActions = [favoriteAction];`
-
-        `}`
-
-        `e.section.updateItemAt(e.itemIndex, item);`
-
-        `});`
-
-        `win.add(listView);`
-
-        `win.open();`
+        win.add(listView);
+        win.open();
+        ```
 
 * [TIMOB-20083](https://jira.appcelerator.org/browse/TIMOB-20083) - Remove watchos1 template and related code
 
@@ -671,33 +535,25 @@ Note, you may also need to edit the Java code to remove references to deprecate 
 
     * Demo:
 
-        `// this sets the background color of the master UIView (when there are no windows/tab groups on it)`
+        ```javascript
+        // this sets the background color of the master UIView (when there are no windows/tab groups on it)
+        Titanium.UI.setBackgroundColor('#000');
 
-        `Titanium.UI.setBackgroundColor(``'#000'``);`
+        var win = Titanium.UI.createWindow({title:'TIMOB-23501'}),
+        view = Titanium.UI.createView({
+           borderRadius:10,
+           backgroundColor:'blue',
+           width:Ti.UI.FILL,
+           height:Ti.UI.FILL
+        });
 
-        `var` `win = Titanium.UI.createWindow({title:``'TIMOB-23501'``}),`
+        view.addEventListener("touchmove", function(e) {
+          Ti.API.info("View",e);
+        });
 
-        `view = Titanium.UI.createView({`
-
-        `borderRadius:10,`
-
-        `backgroundColor:``'blue'``,`
-
-        `width:Ti.UI.FILL,`
-
-        `height:Ti.UI.FILL`
-
-        `});`
-
-        `view.addEventListener(``"touchmove"``,` `function``(e) {`
-
-        `Ti.API.info(``"View"``,e);`
-
-        `});`
-
-        `win.add(view);`
-
-        `win.open();`
+        win.add(view);
+        win.open();
+        ```
 
 * [TIMOB-23506](https://jira.appcelerator.org/browse/TIMOB-23506) - Add event listener for applicationWillTerminate
 
@@ -705,19 +561,17 @@ Note, you may also need to edit the Java code to remove references to deprecate 
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+          backgroundColor : "#fff"
+        });
 
-        `backgroundColor :` `"#fff"`
+        Ti.App.addEventListener("close", function() {
+            Ti.API.warn("applicationWillTerminate");
+        });
 
-        `});`
-
-        `Ti.App.addEventListener(``"close"``,` `function``() {`
-
-        `Ti.API.warn(``"applicationWillTerminate"``);`
-
-        `});`
-
-        `win.open();`
+        win.open();
+        ```
 
 * [TIMOB-23514](https://jira.appcelerator.org/browse/TIMOB-23514) - iOS10: Deprecate iAds
 
@@ -725,7 +579,9 @@ Note, you may also need to edit the Java code to remove references to deprecate 
 
     * Demo: Try the code below and it should throw a warning on Xcode 8 but not on Xcode 7.x:
 
-        `var` `adView = Ti.UI.iOS.createAdView();`
+        ```javascript
+        var adView = Ti.UI.iOS.createAdView();
+        ```
 
 * [TIMOB-23538](https://jira.appcelerator.org/browse/TIMOB-23538) - iOS: Refactor default new app-projects
 
@@ -737,41 +593,32 @@ Note, you may also need to edit the Java code to remove references to deprecate 
 
     * Demo:
 
-        `// Set a global tintColor once`
+        ```javascript
+        // Set a global tintColor once
+        Ti.UI.setTintColor("#f00");
 
-        `Ti.UI.setTintColor(``"#f00"``);`
+        var win = Ti.UI.createWindow({backgroundColor : "#fff", title: "First Window"});
+        var nav = Ti.UI.iOS.createNavigationWindow({window: win});
 
-        `var` `win = Ti.UI.createWindow({backgroundColor :` `"#fff"``, title:` `"First Window"``});`
+        var btn = Ti.UI.createButton({
+            title : "Open Sub-Window (button should be red)"
+        });
 
-        `var` `nav = Ti.UI.iOS.createNavigationWindow({window: win});`
+        btn.addEventListener("click", function() {
+            var win2 = Ti.UI.createWindow({backgroundColor : "#fff", title: "Sub Window"});
+            var btn2 = Ti.UI.createButton({title: "Close Sub-Window (button should be green)", tintColor: "green"});
 
-        `var` `btn = Ti.UI.createButton({`
+            btn2.addEventListener("click", function() {
+                nav.closeWindow(win2);
+            });
 
-        `title :` `"Open Sub-Window (button should be red)"`
+            win2.add(btn2);
+            nav.openWindow(win2);
+        });
 
-        `});`
-
-        `btn.addEventListener(``"click"``,` `function``() {`
-
-        `var` `win2 = Ti.UI.createWindow({backgroundColor :` `"#fff"``, title:` `"Sub Window"``});`
-
-        `var` `btn2 = Ti.UI.createButton({title:` `"Close Sub-Window (button should be green)"``, tintColor:` `"green"``});`
-
-        `btn2.addEventListener(``"click"``,` `function``() {`
-
-        `nav.closeWindow(win2);`
-
-        `});`
-
-        `win2.add(btn2);`
-
-        `nav.openWindow(win2);`
-
-        `});`
-
-        `win.add(btn);`
-
-        `nav.open(); `
+        win.add(btn);
+        nav.open();
+        ```
 
 * [TIMOB-23584](https://jira.appcelerator.org/browse/TIMOB-23584) - Add support for iOS 9 Text Style additions
 
@@ -785,49 +632,34 @@ Note, you may also need to edit the Java code to remove references to deprecate 
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+          backgroundColor: "#fff",
+          title: "TIMOB-23684",
+          layout: "vertical"
+        });
 
-        `backgroundColor:` `"#fff"``,`
+        win.add(createButtonWithAction("hidesBarsOnSwipe"));
+        win.add(createButtonWithAction("hidesBarsOnTap"));
+        win.add(createButtonWithAction("hidesBarsWhenVerticallyCompact"));
+        win.add(createButtonWithAction("hidesBarsWhenKeyboardAppears"));
+        win.add(Ti.UI.createTextField({width: 200,height:50,backgroundColor: "#ccc", top: 20}));
 
-        `title:` `"TIMOB-23684"``,`
+        var nav = Ti.UI.iOS.createNavigationWindow({window: win});
 
-        `layout:` `"vertical"`
+        nav.open();
 
-        `});`
-
-        `win.add(createButtonWithAction(``"hidesBarsOnSwipe"``));`
-
-        `win.add(createButtonWithAction(``"hidesBarsOnTap"``));`
-
-        `win.add(createButtonWithAction(``"hidesBarsWhenVerticallyCompact"``));`
-
-        `win.add(createButtonWithAction(``"hidesBarsWhenKeyboardAppears"``));`
-
-        `win.add(Ti.UI.createTextField({width: 200,height:50,backgroundColor:` `"#ccc"``, top: 20}));`
-
-        `var` `nav = Ti.UI.iOS.createNavigationWindow({window: win});`
-
-        `nav.open();`
-
-        `function` `createButtonWithAction(action) {`
-
-        `var` `btn = Ti.UI.createButton({`
-
-        `title: action,`
-
-        `top: 60`
-
-        `});`
-
-        `btn.addEventListener(``"click"``,` `function``() {`
-
-        `win[action] =` `true``;`
-
-        `});`
-
-        `return` `btn;`
-
-        `} `
+        function createButtonWithAction(action) {
+          var btn = Ti.UI.createButton({
+            title: action,
+            top: 60
+          });
+          btn.addEventListener("click", function() {
+            win[action] = true;
+          });
+          return btn;
+        }
+        ```
 
 * [TIMOB-24007](https://jira.appcelerator.org/browse/TIMOB-24007) - iOS: Selected color not available in Ti.UI.ListItem
 
@@ -853,35 +685,25 @@ Note, you may also need to edit the Java code to remove references to deprecate 
 
     * Sample:
 
-        `var` `win = Ti.UI.createWindow({ backgroundColor:` `'red'` `}),`
+        ```javascript
+        var win = Ti.UI.createWindow({ backgroundColor: 'red' }),
+            tableView = Ti.UI.createTableView({
+                width: '80%',
+                height: '80%',
+                backgroundColor: 'orange',
+                borderWidth: 5,
+                borderColor: 'yellow',
+                borderRadius: 5,
+                data: [{ title: 'Apples' }, { title: 'Bananas' }, { title: 'Carrots' }, { title: 'Potatoes' }]
+            });
 
-        `tableView = Ti.UI.createTableView({`
+        tableView.addEventListener('click', function (e) {
+            alert(JSON.stringify(e.row.title));
+        });
 
-        `width:` `'80%'``,`
-
-        `height:` `'80%'``,`
-
-        `backgroundColor:` `'orange'``,`
-
-        `borderWidth: 5,`
-
-        `borderColor:` `'yellow'``,`
-
-        `borderRadius: 5,`
-
-        `data: [{ title:` `'Apples'` `}, { title:` `'Bananas'` `}, { title:` `'Carrots'` `}, { title:` `'Potatoes'` `}]`
-
-        `});`
-
-        `tableView.addEventListener(``'click'``,` `function` `(e) {`
-
-        `alert(JSON.stringify(e.row.title));`
-
-        `});`
-
-        `win.add(tableView);`
-
-        `win.open();`
+        win.add(tableView);
+        win.open();
+        ```
 
 * [TIMOB-23399](https://jira.appcelerator.org/browse/TIMOB-23399) - Analytics: Implement nettype property for Windows platform
 
@@ -913,75 +735,49 @@ Note, you may also need to edit the Java code to remove references to deprecate 
 
     * Sample:
 
-        `var` `win = Ti.UI.createWindow({ backgroundColor:` `'green'``, layout:` `'vertical'` `}),`
+        ```javascript
+        var win = Ti.UI.createWindow({ backgroundColor: 'green', layout: 'vertical' }),
+            openButton = Ti.UI.createButton({ title: 'OPEN CAMERA', backgroundColor: 'blue' }),
+            imageView = Ti.UI.createImageView({ width: Ti.UI.FILL, height: '70%' });
 
-        `openButton = Ti.UI.createButton({ title:` `'OPEN CAMERA'``, backgroundColor:` `'blue'` `}),`
+        var overlay = Ti.UI.createView({
+            layout: 'vertical',
+            height: '20%', width: Ti.UI.FILL,
+            bottom: 0
+        }),
+        takeButton = Ti.UI.createButton({ title: 'TAKE A PHOTO', backgroundColor: 'red' }),
+        hideButton = Ti.UI.createButton({ title: 'HIDE PREVIEW', backgroundColor: 'red' });
 
-        `imageView = Ti.UI.createImageView({ width: Ti.UI.FILL, height:` `'70%'` `});`
+        takeButton.addEventListener('click', function () {
+            Ti.Media.takePicture();
+        });
 
-        `var` `overlay = Ti.UI.createView({`
+        hideButton.addEventListener('click', function () {
+            Ti.Media.hideCamera();
+        });
 
-        `layout:` `'vertical'``,`
+        overlay.add(takeButton);
+        overlay.add(hideButton);
 
-        `height:` `'20%'``, width: Ti.UI.FILL,`
+        openButton.addEventListener('click', function () {
+            Ti.Media.showCamera({
+                whichCamera: Titanium.Media.CAMERA_FRONT, // Titanium.Media.CAMERA_REAR
+                mediaTypes: [Ti.Media.MEDIA_TYPE_PHOTO],
+                overlay: overlay,
+                success: function (e) {
+                    Ti.API.info('showCamera() success');
+                    imageView.image = e.media;
+                },
+                error: function (e) {
+                    alert('showCamera() error: ' + JSON.stringify(e));
+                }
+            });
+        });
 
-        `bottom: 0`
-
-        `}),`
-
-        `takeButton = Ti.UI.createButton({ title:` `'TAKE A PHOTO'``, backgroundColor:` `'red'` `}),`
-
-        `hideButton = Ti.UI.createButton({ title:` `'HIDE PREVIEW'``, backgroundColor:` `'red'` `});`
-
-        `takeButton.addEventListener(``'click'``,` `function` `() {`
-
-        `Ti.Media.takePicture();`
-
-        `});`
-
-        `hideButton.addEventListener(``'click'``,` `function` `() {`
-
-        `Ti.Media.hideCamera();`
-
-        `});`
-
-        `overlay.add(takeButton);`
-
-        `overlay.add(hideButton);`
-
-        `openButton.addEventListener(``'click'``,` `function` `() {`
-
-        `Ti.Media.showCamera({`
-
-        `whichCamera: Titanium.Media.CAMERA_FRONT,` `// Titanium.Media.CAMERA_REAR`
-
-        `mediaTypes: [Ti.Media.MEDIA_TYPE_PHOTO],`
-
-        `overlay: overlay,`
-
-        `success:` `function` `(e) {`
-
-        `Ti.API.info(``'showCamera() success'``);`
-
-        `imageView.image = e.media;`
-
-        `},`
-
-        `error:` `function` `(e) {`
-
-        `alert(``'showCamera() error: '` `+ JSON.stringify(e));`
-
-        `}`
-
-        `});`
-
-        `});`
-
-        `win.add(openButton);`
-
-        `win.add(imageView);`
-
-        `win.open(); `
+        win.add(openButton);
+        win.add(imageView);
+        win.open();
+        ```
 
 * [TIMOB-23775](https://jira.appcelerator.org/browse/TIMOB-23775) - Windows: Impose restrictions on feature events
 
@@ -1007,47 +803,38 @@ Note, you may also need to edit the Java code to remove references to deprecate 
 
     * Demo:
 
-        `// Check the initial properties (should only be the iOS ones)`
+        ```
+        // Check the initial properties (should only be the iOS ones)
+        Ti.API.warn(Ti.App.Properties.listProperties());
 
-        `Ti.API.warn(Ti.App.Properties.listProperties());`
+        // Add all possible property-types (bool, int, double, string, object & list)
+        Ti.App.Properties.setBool("testBool", true)
+        Ti.API.warn(Ti.App.Properties.getBool("testBool"));
 
-        `// Add all possible property-types (bool, int, double, string, object & list)`
+        Ti.App.Properties.setInt("testInt", 1337)
+        Ti.API.warn(Ti.App.Properties.getInt("testInt", 1337));
 
-        `Ti.App.Properties.setBool(``"testBool"``,` `true``)`
+        Ti.App.Properties.setDouble("testDouble", 13.37);
+        Ti.API.warn(Ti.App.Properties.getDouble("testDouble", 13.37));
 
-        `Ti.API.warn(Ti.App.Properties.getBool(``"testBool"``));`
+        Ti.App.Properties.setString("testString", "john_doe")
+        Ti.API.warn(Ti.App.Properties.getString("testString", "john_doe"));
 
-        `Ti.App.Properties.setInt(``"testInt"``, 1337)`
+        Ti.App.Properties.setObject("testObject", {appc: "rocks"})
+        Ti.API.warn(Ti.App.Properties.getObject("testObject", {appc: "rocks"}));
 
-        `Ti.API.warn(Ti.App.Properties.getInt(``"testInt"``, 1337));`
+        Ti.App.Properties.setList("testList", ["appc", "rocks"])
+        Ti.API.warn(Ti.App.Properties.getList("testList", ["appc", "rocks"]));
 
-        `Ti.App.Properties.setDouble(``"testDouble"``, 13.37);`
+        // Check the properties again. It should now include the keys of the custom properties
+        Ti.API.warn(Ti.App.Properties.listProperties());
 
-        `Ti.API.warn(Ti.App.Properties.getDouble(``"testDouble"``, 13.37));`
+        // Remove all custom properties
+        Ti.API.warn(Ti.App.Properties.removeAllProperties());
 
-        `Ti.App.Properties.setString(``"testString"``,` `"john_doe"``)`
-
-        `Ti.API.warn(Ti.App.Properties.getString(``"testString"``,` `"john_doe"``));`
-
-        `Ti.App.Properties.setObject(``"testObject"``, {appc:` `"rocks"``})`
-
-        `Ti.API.warn(Ti.App.Properties.getObject(``"testObject"``, {appc:` `"rocks"``}));`
-
-        `Ti.App.Properties.setList(``"testList"``, [``"appc"``,` `"rocks"``])`
-
-        `Ti.API.warn(Ti.App.Properties.getList(``"testList"``, [``"appc"``,` `"rocks"``]));`
-
-        `// Check the properties again. It should now include the keys of the custom properties`
-
-        `Ti.API.warn(Ti.App.Properties.listProperties());`
-
-        `// Remove all custom properties`
-
-        `Ti.API.warn(Ti.App.Properties.removeAllProperties());`
-
-        `// Check the properties a last time. The custom properties should not be included anymore`
-
-        `Ti.API.warn(Ti.App.Properties.listProperties());`
+        // Check the properties a last time. The custom properties should not be included anymore
+        Ti.API.warn(Ti.App.Properties.listProperties());
+        ```
 
 * [TIMOB-23649](https://jira.appcelerator.org/browse/TIMOB-23649) - Use per-platform moduleAPIVersions in the SDK manifest.json
 
@@ -1530,19 +1317,15 @@ The following APIs have been removed in Release 6.0.0 as of November 14th, 2016.
 
     * Projects that include or reference Hyperloop and have LiveView enabled encounter the following error
 
-        `[INFO] : [LiveView] Error Evaluating app.js @ Line: <``null``>`
-
-        `[ERROR] : Couldn't find module: UIKit/UIAlertController` `for` `architecture: arm64`
-
-        `[ERROR] : File: app.js`
-
-        `[ERROR] : Line: <``null``>`
-
-        `[ERROR] : SourceId: <``null``>`
-
-        `[ERROR] : Backtrace:`
-
-        `[ERROR] : undefined`
+        ```
+        [INFO] :   [LiveView] Error Evaluating app.js @ Line: <null>
+        [ERROR] :  Couldn't find module: UIKit/UIAlertController for architecture: arm64
+        [ERROR] :  File: app.js
+        [ERROR] :  Line: <null>
+        [ERROR] :  SourceId: <null>
+        [ERROR] :  Backtrace:
+        [ERROR] :   undefined
+        ```
 
 * [TIMOB-24037](https://jira.appcelerator.org/browse/TIMOB-24037) - Android: Debugging not working with hyperloop enabled with run-on-main-thread set to true or false
 

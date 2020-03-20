@@ -233,17 +233,14 @@ In addition to installing Studio, the installer for OS X also downloads and inst
 
 4. To start Studio, execute open /Applications/Appcelerator\_Studio/AppceleratorStudio.app/.
 
-`$ hdiutil attach ~/Downloads/Appcelerator_Studio.dmg`
-
-`$ sudo installer -pkg` `"/Volumes/Appcelerator Studio/Appcelerator Studio.pkg"` `-target` `"/"`
-
-`Password:`
-
-`installer: Package name is Appcelerator Studio`
-
-`installer: Upgrading at base path /`
-
-`installer: The upgrade was successful.`
+```bash
+$ hdiutil attach ~/Downloads/Appcelerator_Studio.dmg
+$ sudo installer -pkg "/Volumes/Appcelerator Studio/Appcelerator Studio.pkg" -target "/"
+Password:
+installer: Package name is Appcelerator Studio
+installer: Upgrading at base path /
+installer: The upgrade was successful.
+```
 
 ### Windows
 
@@ -276,11 +273,11 @@ In addition to installing Studio, the installer for Windows also downloads and i
 
 3. To start Studio, execute the AppceleratorStudio.exe.
 
-`C:\Users\JDoe\Downloads>``"Appcelerator Studio.exe"` `/exenoui /q`
-
-`C:\Users\JDoe\Downloads>cd ..`
-
-`C:\Users\JDoe>``"AppData\Roaming\Appcelerator\Appcelerator Studio\AppceleratorStudio.exe"`
+```
+C:\Users\JDoe\Downloads>"Appcelerator Studio.exe" /exenoui /q
+C:\Users\JDoe\Downloads>cd ..
+C:\Users\JDoe>"AppData\Roaming\Appcelerator\Appcelerator Studio\AppceleratorStudio.exe"
+```
 
 Windows systems must have the following paths at the beginning of their PATH environment variable for Studio to function properly. Most modern Windows systems will already have these paths properly set.
 

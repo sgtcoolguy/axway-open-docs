@@ -96,15 +96,13 @@ The following terms are important concepts used with ListView:
 
 A ListView object is used to manipulate ListSections, which contain ListItems--the actual items you want to display to a user. The data is presented as a list of rows that is vertically scrollable. To create a list view, use the Titanium.UI.createListView method, then add list sections using the sections property:
 
-`var` `listView = Titanium.UI.createListView({`
-
-`// properties`
-
-`sections: [section1, section2, section3],`
-
-`headerTitle:` `"Shopping List"`
-
-`});`
+```javascript
+var listView = Titanium.UI.createListView({
+  // properties
+  sections: [section1, section2, section3],
+    headerTitle: "Shopping List"
+});
+```
 
 Some properties specific to list view include:
 
@@ -136,15 +134,13 @@ After the list view renders, use the appendSection, deleteSectionAt, insertSecti
 
 A ListSection object is used to manipulate ListItems contained within it, allowing you to organize your list items into groups. To create a list section, use the Titanium.UI.createListSection method, then add ListDataItems (not ListItems) to the section using the items property:
 
-`var` `listSection = Titanium.UI.createListSection({`
-
-`// properties`
-
-`items: [item1, item2, item3],`
-
-`headerTitle:` `"Section A"`
-
-`});`
+```javascript
+var listSection = Titanium.UI.createListSection({
+    // properties
+    items: [item1, item2, item3],
+    headerTitle: "Section A"
+});
+```
 
 Some properties specific to list section include:
 
@@ -202,95 +198,60 @@ Item templates only support the following view classes:
 
 To bind the list data item to an item template, use the list view's templates property to map the template to a style name, then use the style name to either set the list view's defaultItemTemplate property to globally set the style for all items or set the template property of the list data item to override or individually set the style.
 
-`var` `itemTemplate = {`
-
-`properties: {`
-
-`// These are the same as the list data item properties`
-
-`// The list data item properties supersedes these if both are defined`
-
-`accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_NONE`
-
-`},`
-
-`events: {`
-
-`// Bind event callbacks for bubbled events`
-
-`// Events caught here are fired by the subcomponent views of the ListItem`
-
-`click: clickCB`
-
-`},`
-
-`childTemplates: [` `// Add view subcomponents to the ListItem`
-
-`{`
-
-`// Display a Label`
-
-`type:` `'Ti.UI.Label'``,`
-
-`// If there is a rowtitle dictionary in the ListDataItem,`
-
-`// that data binds with this view subcomponent`
-
-`bindId:` `'rowtitle'``,`
-
-`properties: {`
-
-`// Set view properties for the Label view subcomponent`
-
-`font: {fontSize:` `'14dp'``}`
-
-`},`
-
-`events: {`
-
-`// Bind event callbacks only to the subcomponent`
-
-`click: clickCB`
-
-`},`
-
-`childTemplates: [`
-
-`// View subcomponents can also have subcomponents`
-
-`],`
-
-`},`
-
-`// ...add more components`
-
-`]`
-
-`}`
+```javascript
+var itemTemplate = {
+    properties: {
+        // These are the same as the list data item properties
+        // The list data item properties supersedes these if both are defined
+        accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_NONE
+    },
+    events: {
+        // Bind event callbacks for bubbled events
+        // Events caught here are fired by the subcomponent views of the ListItem
+        click: clickCB
+    },
+    childTemplates: [ // Add view subcomponents to the ListItem
+        {
+            // Display a Label
+            type: 'Ti.UI.Label',
+            // If there is a rowtitle dictionary in the ListDataItem,
+            // that data binds with this view subcomponent
+            bindId: 'rowtitle',
+            properties: {
+                // Set view properties for the Label view subcomponent
+                font: {fontSize: '14dp'}
+            },
+            events: {
+                // Bind event callbacks only to the subcomponent
+                click: clickCB
+            },
+            childTemplates: [
+                // View subcomponents can also have subcomponents
+            ],
+        },
+        // ...add more components
+    ]
+}
+```
 
 ### ListDataItem
 
 A list data item is a JavaScript object with data you want to display in a list. The simplest way to display data is to use the default template and pass the data you want to display by setting the title property in the list data item's properties dictionary, then pass the list data items to the list section:
 
-`// Simplest list data items that can be displayed in a list view`
+```javascript
+// Simplest list data items that can be displayed in a list view
+var data = [
+    { properties: { title: 'Row 1'} },
+    { properties: { title: 'Row 2'} },
+    { properties: { title: 'Row 3'} }
+];
 
-`var` `data = [`
+// Add the list data items to a section
+var listSection = Titanium.UI.createListSection({items: data});
 
-`{ properties: { title:` `'Row 1'``} },`
-
-`{ properties: { title:` `'Row 2'``} },`
-
-`{ properties: { title:` `'Row 3'``} }`
-
-`];`
-
-`// Add the list data items to a section`
-
-`var` `listSection = Titanium.UI.createListSection({items: data});`
-
-`// Add the list section to a list view`
-
-`var` `listView = Titanium.UI.createListView({sections: [listSection]});`
+// Add the list section to a list view
+var listView = Titanium.UI.createListView({sections: [listSection]});
+```
 
 View elements you can set in the properties dictionary include:
 
@@ -356,35 +317,23 @@ You can bind event callbacks to either ListViews or ListItems.
 
 ListView's itemclick event can be used to monitor click events on all ListItems.
 
-`listView.addEventListener(``'itemclick'``,` `function``(e){`
-
-`var` `item = e.section.getItemAt(e.itemIndex);`
-
-`if` `(item.properties.accessoryType == Ti.UI.LIST_ACCESSORY_TYPE_NONE) {`
-
-`item.properties.accessoryType = Ti.UI.LIST_ACCESSORY_TYPE_CHECKMARK;`
-
-`}`
-
-`else` `{`
-
-`item.properties.accessoryType = Ti.UI.LIST_ACCESSORY_TYPE_NONE;`
-
-`}`
-
-`e.section.updateItemAt(e.itemIndex, item);`
-
-`alert(`
-
-`"ItemId: "` `+ e.itemId +` `"\n"` `+`
-
-`"BindId: "` `+ e.bindId +` `"\n"` `+`
-
-`"Section Index: "` `+ e.sectionIndex +` `", Item Index: "` `+ e.itemIndex`
-
-`);`
-
-`});`
+```javascript
+listView.addEventListener('itemclick', function(e){
+    var item = e.section.getItemAt(e.itemIndex);
+    if (item.properties.accessoryType == Ti.UI.LIST_ACCESSORY_TYPE_NONE) {
+        item.properties.accessoryType = Ti.UI.LIST_ACCESSORY_TYPE_CHECKMARK;
+    }
+    else {
+        item.properties.accessoryType = Ti.UI.LIST_ACCESSORY_TYPE_NONE;
+    }
+    e.section.updateItemAt(e.itemIndex, item);
+    alert(
+        "ItemId: " + e.itemId + "\n" +
+        "BindId: " + e.bindId + "\n" +
+        "Section Index: " + e.sectionIndex + ", Item Index: " + e.itemIndex
+    );
+});
+```
 
 If this event is fired, the code toggles the checkmark accessory on or off and displays an alert message with event information. As shown above, you have access to an event object that holds important information about the location of the user interaction:
 
@@ -412,71 +361,43 @@ Since Release 3.2.0, ListView fires the marker event when the user scrolls up or
 
 Starting with Release 4.1.0, use the addMarker() method to add additional markers. Note that if you call the setMarker() method again, it will remove and override any previous set markers.
 
-`var` `win = Ti.UI.createWindow({backgroundColor:` `'white'``, fullscreen:` `true``});`
+```javascript
+var win = Ti.UI.createWindow({backgroundColor: 'white', fullscreen: true});
+var listView = Ti.UI.createListView();
+var section = Ti.UI.createListSection();
+var sectionData = [];
+var i = 25;
+for (var k = 0; k < 25; k++) {
+    sectionData.push({
+        properties : {
+            title: 'Row ' + (k + 1)
+        }
+    });
+}
+section.setItems(sectionData);
+listView.sections = [section];
+win.add(listView);
+win.open();
 
-`var` `listView = Ti.UI.createListView();`
+// Set the initial item threshold
+listView.setMarker({sectionIndex:0, itemIndex: (i - 1) });
 
-`var` `section = Ti.UI.createListSection();`
-
-`var` `sectionData = [];`
-
-`var` `i = 25;`
-
-`for` `(``var` `k = 0; k < 25; k++) {`
-
-`sectionData.push({`
-
-`properties : {`
-
-`title:` `'Row '` `+ (k + 1)`
-
-`}`
-
-`});`
-
-`}`
-
-`section.setItems(sectionData);`
-
-`listView.sections = [section];`
-
-`win.add(listView);`
-
-`win.open();`
-
-`// Set the initial item threshold`
-
-`listView.setMarker({sectionIndex:0, itemIndex: (i - 1) });`
-
-`// Load more data and set a new threshold when item threshold is reached`
-
-`listView.addEventListener(``'marker'``,` `function``(e){`
-
-`var` `max = i + 25;`
-
-`var` `data = [];`
-
-`for` `(``var` `k = i; k < max; k++) {`
-
-`data.push({`
-
-`properties : {`
-
-`title:` `'Row '` `+ (k + 1)`
-
-`}`
-
-`});`
-
-`}`
-
-`section.appendItems(data);`
-
-`i = i + 25;`
-
-`listView.setMarker({sectionIndex:0, itemIndex: (i - 1)});`
-
-`});`
+// Load more data and set a new threshold when item threshold is reached
+listView.addEventListener('marker', function(e){
+    var max = i + 25;
+    var data = [];
+    for (var k = i; k < max; k++) {
+        data.push({
+            properties : {
+                title: 'Row ' + (k + 1)
+            }
+        });
+    }
+    section.appendItems(data);
+    i = i + 25;
+    listView.setMarker({sectionIndex:0, itemIndex: (i - 1)});
+});
+```
 
 ### ListView move and delete events
 
@@ -518,145 +439,83 @@ For ListItems, add the events to the events dictionary of either the item templa
 
 The example below creates an item template to display a title on the left side of the row, an image view in the center, and a button on the right side of the row. When the list view is created, the item template is mapped to the style name called plain, which is used to set the defaultItemTemplate property to globally set the plain template for each list item. A click event callback is set on the button control of the list item, and another callback, which toggles the checkmark accessory, is set on the ListView's itemclick event but only responds to clicks on the label and image.
 
-`var` `win = Ti.UI.createWindow({backgroundColor:` `'white'``});`
-
-`var` `plainTemplate = {`
-
-`childTemplates: [`
-
-`{`
-
-`type:` `'Ti.UI.Label'``,` `// Use a label`
-
-`bindId:` `'rowtitle'``,` `// Bind ID for this label`
-
-`properties: {` `// Sets the Label.left property`
-
-`left:` `'10dp'`
-
-`}`
-
-`},`
-
-`{`
-
-`type:` `'Ti.UI.ImageView'``,` `// Use an image view`
-
-`bindId:` `'pic'``,` `// Bind ID for this image view`
-
-`properties: {` `// Sets the ImageView.image property`
-
-`image:` `'KS_nav_ui.png'`
-
-`}`
-
-`},`
-
-`{`
-
-`type:` `'Ti.UI.Button'``,` `// Use a button`
-
-`bindId:` `'button'``,` `// Bind ID for this button`
-
-`properties: {` `// Sets several button properties`
-
-`width:` `'80dp'``,`
-
-`height:` `'30dp'``,`
-
-`right:` `'10dp'``,`
-
-`title:` `'press me'`
-
-`},`
-
-`events: { click : report }` `// Binds a callback to the button's click event`
-
-`}`
-
-`]`
-
-`};`
-
-`function` `report(e) {`
-
-`Ti.API.info(e.type);`
-
-`}`
-
-`var` `listView = Ti.UI.createListView({`
-
-`// Maps the plainTemplate object to the 'plain' style name`
-
-`templates: {` `'plain'``: plainTemplate },`
-
-`// Use the plain template, that is, the plainTemplate object defined earlier`
-
-`// for all data list items in this list view`
-
-`defaultItemTemplate:` `'plain'`
-
-`});`
-
-`var` `data = [];`
-
-`for` `(``var` `i = 0; i < 10; i++) {`
-
-`data.push({`
-
-`// Maps to the rowtitle component in the template`
-
-`// Sets the text property of the Label component`
-
-`rowtitle : { text:` `'Row '` `+ (i + 1) },`
-
-`// Sets the regular list data properties`
-
-`properties : {`
-
-`itemId:` `'row'` `+ (i + 1),`
-
-`accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_NONE`
-
-`}`
-
-`});`
-
-`}`
-
-`var` `section = Ti.UI.createListSection({items: data});`
-
-`listView.sections = [section];`
-
-`listView.addEventListener(``'itemclick'``,` `function``(e){`
-
-`// Only respond to clicks on the label (rowtitle) or image (pic)`
-
-`if` `(e.bindId ==` `'rowtitle'` `|| e.bindId ==` `'pic'``) {`
-
-`var` `item = e.section.getItemAt(e.itemIndex);`
-
-`if` `(item.properties.accessoryType == Ti.UI.LIST_ACCESSORY_TYPE_NONE) {`
-
-`item.properties.accessoryType = Ti.UI.LIST_ACCESSORY_TYPE_CHECKMARK;`
-
-`}`
-
-`else` `{`
-
-`item.properties.accessoryType = Ti.UI.LIST_ACCESSORY_TYPE_NONE;`
-
-`}`
-
-`e.section.updateItemAt(e.itemIndex, item);`
-
-`}`
-
-`});`
-
-`win.add(listView);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow({backgroundColor: 'white'});
+
+var plainTemplate = {
+    childTemplates: [
+        {
+            type: 'Ti.UI.Label', // Use a label
+            bindId: 'rowtitle',  // Bind ID for this label
+            properties: {        // Sets the Label.left property
+                left: '10dp'
+            }
+        },
+        {
+            type: 'Ti.UI.ImageView',  // Use an image view
+            bindId: 'pic',            // Bind ID for this image view
+            properties: {             // Sets the ImageView.image property
+              image: 'KS_nav_ui.png'
+            }
+        },
+        {
+            type: 'Ti.UI.Button',   // Use a button
+            bindId: 'button',       // Bind ID for this button
+            properties: {           // Sets several button properties
+                width: '80dp',
+                height: '30dp',
+                right: '10dp',
+                title: 'press me'
+            },
+            events: { click : report }  // Binds a callback to the button's click event
+        }
+    ]
+};
+
+function report(e) {
+  Ti.API.info(e.type);
+}
+
+var listView = Ti.UI.createListView({
+    // Maps the plainTemplate object to the 'plain' style name
+    templates: { 'plain': plainTemplate },
+    // Use the plain template, that is, the plainTemplate object defined earlier
+    // for all data list items in this list view
+    defaultItemTemplate: 'plain'
+});
+
+var data = [];
+for (var i = 0; i < 10; i++) {
+    data.push({
+        // Maps to the rowtitle component in the template
+        // Sets the text property of the Label component
+        rowtitle : { text: 'Row ' + (i + 1) },
+        // Sets the regular list data properties
+        properties : {
+            itemId: 'row' + (i + 1),
+            accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_NONE
+        }
+    });
+}
+
+var section = Ti.UI.createListSection({items: data});
+listView.sections = [section];
+listView.addEventListener('itemclick', function(e){
+    // Only respond to clicks on the label (rowtitle) or image (pic)
+    if (e.bindId == 'rowtitle' || e.bindId == 'pic') {
+        var item = e.section.getItemAt(e.itemIndex);
+        if (item.properties.accessoryType == Ti.UI.LIST_ACCESSORY_TYPE_NONE) {
+            item.properties.accessoryType = Ti.UI.LIST_ACCESSORY_TYPE_CHECKMARK;
+        }
+        else {
+            item.properties.accessoryType = Ti.UI.LIST_ACCESSORY_TYPE_NONE;
+        }
+        e.section.updateItemAt(e.itemIndex, item);
+    }
+});
+win.add(listView);
+win.open();
+```
 
 ![ItemTemplateExample](/Images/appc/download/attachments/37521650/ItemTemplateExample.png)
 
@@ -668,71 +527,42 @@ The following sections describe some advanced features to customize the look and
 
 Since Release 3.2.0, you can create a custom header or footer for the list or list sections. Create a custom View object with other view objects, then set the ListView or ListSection's headerView or footerView property to this object. For example:
 
-`// Function to create a view with a label`
+```javascript
+// Function to create a view with a label
+var createCustomView = function(title) {
+    var view = Ti.UI.createView({
+        backgroundColor: '#222',
+        height: 40
+    });
+    var text = Ti.UI.createLabel({
+        text: title,
+        left: 20,
+        color: '#fff'
+    });
+    view.add(text);
+    return view;
+};
 
-`var` `createCustomView =` `function``(title) {`
-
-`var` `view = Ti.UI.createView({`
-
-`backgroundColor:` `'#222'``,`
-
-`height: 40`
-
-`});`
-
-`var` `text = Ti.UI.createLabel({`
-
-`text: title,`
-
-`left: 20,`
-
-`color:` `'#fff'`
-
-`});`
-
-`view.add(text);`
-
-`return` `view;`
-
-`};`
-
-`var` `win = Ti.UI.createWindow({backgroundColor:` `'white'``, fullscreen:` `true``});`
-
-`var` `listView = Ti.UI.createListView({`
-
-`headerView: createCustomView(``'Header View'``),`
-
-`footerView: createCustomView(``'Footer View'``)`
-
-`});`
-
-`var` `section = Ti.UI.createListSection({`
-
-`// Or add a custom header or footer to the section`
-
-`// headerView: createCustomView('Section Header'),`
-
-`// footerView: createCustomView('Section Footer')`
-
-`});`
-
-`var` `sectionData = [`
-
-`{properties: { title:` `'Row 1'``}},`
-
-`{properties: { title:` `'Row 2'``}},`
-
-`{properties: { title:` `'Row 3'``}},`
-
-`];`
-
-`section.setItems(sectionData);`
-
-`listView.sections = [section];`
-
-`win.add(listView);`
-
-`win.open();`
+var win = Ti.UI.createWindow({backgroundColor: 'white', fullscreen: true});
+var listView = Ti.UI.createListView({
+    headerView: createCustomView('Header View'),
+    footerView: createCustomView('Footer View')
+});
+var section = Ti.UI.createListSection({
+    // Or add a custom header or footer to the section
+    // headerView: createCustomView('Section Header'),
+    // footerView: createCustomView('Section Footer')
+});
+var sectionData = [
+    {properties: { title: 'Row 1'}},
+    {properties: { title: 'Row 2'}},
+    {properties: { title: 'Row 3'}},
+];
+section.setItems(sectionData);
+listView.sections = [section];
+win.add(listView);
+win.open();
+```
 
 ![HeaderFooterView](/Images/appc/download/attachments/37521650/HeaderFooterView.png)
 
@@ -766,69 +596,44 @@ For the Android platform, you can also use a Titanium.UI.Android.SearchView obje
 
 To use the searchText property, set the property to the value you want to search for and the list automatically updates with the results. You still need to add the searchableText property to each item in your list. See the commented code sections below.
 
-`var` `win = Ti.UI.createWindow({backgroundColor:` `'white'``, fullscreen:` `true``});`
+```javascript
+var win = Ti.UI.createWindow({backgroundColor: 'white', fullscreen: true});
 
-`var` `search = Titanium.UI.createSearchBar({`
+var search = Titanium.UI.createSearchBar({
+    barColor:'#000',
+    showCancel:true,
+    height:43,
+    top:0,
+});
+search.addEventListener('cancel', function(){
+    search.blur();
+});
+// for textSearch, use the change event to update the search value
+// search.addEventListener('change', function(e){
+//     listView.searchText = e.value;
+// });
 
-`barColor:``'#000'``,`
+var listView = Ti.UI.createListView({searchView: search, caseInsensitiveSearch: true});
+// for textSearch, add the search bar or text field as a header view
+// var listView = Ti.UI.createListView({headerView: search, caseInsensitiveSearch: true});
 
-`showCancel:``true``,`
+var listSection = Ti.UI.createListSection();
+var fruits = ['Papaya', 'Peach', 'Pear', 'Persimmon', 'Pineapple', 'Pluot', 'Pomegranate'];
+var data = [];
+for (var i = 0; i < fruits.length; i++) {
+    data.push({
+        properties: {title: fruits[i], searchableText: fruits[i]}
+    });
+}
+listSection.setItems(data);
 
-`height:43,`
-
-`top:0,`
-
-`});`
-
-`search.addEventListener(``'cancel'``,` `function``(){`
-
-`search.blur();`
-
-`});`
-
-`// for textSearch, use the change event to update the search value`
-
-`// search.addEventListener('change', function(e){`
-
-`// listView.searchText = e.value;`
-
-`// });`
-
-`var` `listView = Ti.UI.createListView({searchView: search, caseInsensitiveSearch:` `true``});`
-
-`// for textSearch, add the search bar or text field as a header view`
-
-`// var listView = Ti.UI.createListView({headerView: search, caseInsensitiveSearch: true});`
-
-`var` `listSection = Ti.UI.createListSection();`
-
-`var` `fruits = [``'Papaya'``,` `'Peach'``,` `'Pear'``,` `'Persimmon'``,` `'Pineapple'``,` `'Pluot'``,` `'Pomegranate'``];`
-
-`var` `data = [];`
-
-`for` `(``var` `i = 0; i < fruits.length; i++) {`
-
-`data.push({`
-
-`properties: {title: fruits[i], searchableText: fruits[i]}`
-
-`});`
-
-`}`
-
-`listSection.setItems(data);`
-
-`listView.addEventListener(``'noresults'``,` `function``(e){`
-
-`alert(``"No results found!"``);`
-
-`});`
-
-`listView.sections = [listSection];`
-
-`win.add(listView);`
-
-`win.open();`
+listView.addEventListener('noresults', function(e){
+    alert("No results found!");
+});
+listView.sections = [listSection];
+win.add(listView);
+win.open();
+```
 
 ![SearchView](/Images/appc/download/attachments/37521650/SearchView.png)
 
@@ -868,81 +673,48 @@ To use an action item:
 
 The example below creates a list where you can favorite or unfavorite items.
 
-`var` `win = Ti.UI.createWindow({backgroundColor:` `'white'``}),`
+```javascript
+var win = Ti.UI.createWindow({backgroundColor: 'white'}),
+    favoriteAction = {
+        title: 'Favorite',
+        style: Ti.UI.iOS.ROW_ACTION_STYLE_DEFAULT
+    },
+    unfavoriteAction = {
+        title: 'Unfavorite',
+        style: Ti.UI.iOS.ROW_ACTION_STYLE_NORMAL
+    },
+    data = [
+        {properties: {canEdit: true, editActions: [favoriteAction], title: 'Kitten Whiskers'}},
+        {properties: {canEdit: true, editActions: [favoriteAction], title: 'Copper Kettle'}},
+        {properties: {canEdit: true, editActions: [favoriteAction], title: 'Woolen Mittens'}},
+        {properties: {canEdit: true, editActions: [favoriteAction], title: 'Apple Strudel'}},
+        {properties: {canEdit: true, editActions: [favoriteAction], title: 'Brown Packages'}},
+        {properties: {canEdit: true, editActions: [favoriteAction], title: 'Dog Bites'}},
+        {properties: {canEdit: true, editActions: [favoriteAction], title: 'Bee Stings'}}
+    ],
+    listSection = Ti.UI.createListSection({
+        items: data
+    }),
+    listView = Ti.UI.createListView({
+        top: 15,
+        sections: [listSection]
+    });
 
-`favoriteAction = {`
+listView.addEventListener('editaction', function(e) {
+    var item = e.section.getItemAt(e.itemIndex)
+    if (e.action === 'Favorite') {
+        item.properties.editActions = [unfavoriteAction];
+        item.properties.image = '/star.png';
+    } else if (e.action === 'Unfavorite') {
+        item.properties.editActions = [favoriteAction];
+        item.properties.image = null;
+    }
+    e.section.updateItemAt(e.itemIndex, item);
+});
 
-`title:` `'Favorite'``,`
-
-`style: Ti.UI.iOS.ROW_ACTION_STYLE_DEFAULT`
-
-`},`
-
-`unfavoriteAction = {`
-
-`title:` `'Unfavorite'``,`
-
-`style: Ti.UI.iOS.ROW_ACTION_STYLE_NORMAL`
-
-`},`
-
-`data = [`
-
-`{properties: {canEdit:` `true``, editActions: [favoriteAction], title:` `'Kitten Whiskers'``}},`
-
-`{properties: {canEdit:` `true``, editActions: [favoriteAction], title:` `'Copper Kettle'``}},`
-
-`{properties: {canEdit:` `true``, editActions: [favoriteAction], title:` `'Woolen Mittens'``}},`
-
-`{properties: {canEdit:` `true``, editActions: [favoriteAction], title:` `'Apple Strudel'``}},`
-
-`{properties: {canEdit:` `true``, editActions: [favoriteAction], title:` `'Brown Packages'``}},`
-
-`{properties: {canEdit:` `true``, editActions: [favoriteAction], title:` `'Dog Bites'``}},`
-
-`{properties: {canEdit:` `true``, editActions: [favoriteAction], title:` `'Bee Stings'``}}`
-
-`],`
-
-`listSection = Ti.UI.createListSection({`
-
-`items: data`
-
-`}),`
-
-`listView = Ti.UI.createListView({`
-
-`top: 15,`
-
-`sections: [listSection]`
-
-`});`
-
-`listView.addEventListener(``'editaction'``,` `function``(e) {`
-
-`var` `item = e.section.getItemAt(e.itemIndex)`
-
-`if` `(e.action ===` `'Favorite'``) {`
-
-`item.properties.editActions = [unfavoriteAction];`
-
-`item.properties.image =` `'/star.png'``;`
-
-`}` `else`  `if` `(e.action ===` `'Unfavorite'``) {`
-
-`item.properties.editActions = [favoriteAction];`
-
-`item.properties.image =` `null``;`
-
-`}`
-
-`e.section.updateItemAt(e.itemIndex, item);`
-
-`});`
-
-`win.add(listView);`
-
-`win.open();`
+win.add(listView);
+win.open();
+```
 
 ![RowActions](/Images/appc/download/attachments/37521650/RowActions.png)
 
@@ -950,7 +722,9 @@ The example below creates a list where you can favorite or unfavorite items.
 
 You can specify a row animation constant with ListSection's appendItems, deleteItemsAt, insertItemsAt, replaceItemsAt, and updateItemAt methods and ListView's appendSection , deleteSectionAt , insertSectionAt and replaceSectionAt methods to add, remove or modify a row(s) with an animation. For example, the code below makes the application remove the first ten rows in the section with an animation that shifts the rows to the left before they are deleted:
 
-`listSection.removeItemsAt(``0``,` `10``, {animationStyle: Titanium.UI.iOS.RowAnimationStyle.LEFT});`
+```
+listSection.removeItemsAt(0, 10, {animationStyle: Titanium.UI.iOS.RowAnimationStyle.LEFT});
+```
 
 ### Built-in templates
 
@@ -968,91 +742,53 @@ Each template displays the image view on the left side and accessory on the righ
 
 To use a built-in template, set either the list view's defaultItemTemplate property or the list data item's template property. The default template is used if a template is not specified using either of these properties.
 
-`var` `win = Ti.UI.createWindow({backgroundColor:` `'white'``});`
+```javascript
+var win = Ti.UI.createWindow({backgroundColor: 'white'});
 
-`var` `data = [`
+var data = [
+    {
+        properties: {
+            title: 'Title',
+            subtitle: 'Subtitle',
+            image: 'KS_nav_views.png', // not used by this template
+            accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_NONE
+        },
+        template: Ti.UI.LIST_ITEM_TEMPLATE_CONTACTS
+    },
+    {
+        properties: {
+            title: 'Title',
+            subtitle: 'Subtitle',
+            image: 'KS_nav_views.png',
+            accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_CHECKMARK
+        },
+        template: Ti.UI.LIST_ITEM_TEMPLATE_SETTINGS
+    },
+    {
+        properties: {
+            title: 'Title',
+            subtitle: 'Subtitle',
+            image: 'KS_nav_views.png',
+            accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_DETAIL
+        },
+        template: Ti.UI.LIST_ITEM_TEMPLATE_SUBTITLE
+    },
+    {
+        properties: {
+            title: 'Title',
+            subtitle: 'Subtitle', // not used by this template
+            image: 'KS_nav_views.png',
+            accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_DISCLOSURE
+        },
+        template: Ti.UI.LIST_ITEM_TEMPLATE_DEFAULT
+    }
+];
 
-`{`
-
-`properties: {`
-
-`title:` `'Title'``,`
-
-`subtitle:` `'Subtitle'``,`
-
-`image:` `'KS_nav_views.png'``,` `// not used by this template`
-
-`accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_NONE`
-
-`},`
-
-`template: Ti.UI.LIST_ITEM_TEMPLATE_CONTACTS`
-
-`},`
-
-`{`
-
-`properties: {`
-
-`title:` `'Title'``,`
-
-`subtitle:` `'Subtitle'``,`
-
-`image:` `'KS_nav_views.png'``,`
-
-`accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_CHECKMARK`
-
-`},`
-
-`template: Ti.UI.LIST_ITEM_TEMPLATE_SETTINGS`
-
-`},`
-
-`{`
-
-`properties: {`
-
-`title:` `'Title'``,`
-
-`subtitle:` `'Subtitle'``,`
-
-`image:` `'KS_nav_views.png'``,`
-
-`accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_DETAIL`
-
-`},`
-
-`template: Ti.UI.LIST_ITEM_TEMPLATE_SUBTITLE`
-
-`},`
-
-`{`
-
-`properties: {`
-
-`title:` `'Title'``,`
-
-`subtitle:` `'Subtitle'``,` `// not used by this template`
-
-`image:` `'KS_nav_views.png'``,`
-
-`accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_DISCLOSURE`
-
-`},`
-
-`template: Ti.UI.LIST_ITEM_TEMPLATE_DEFAULT`
-
-`}`
-
-`];`
-
-`var` `listSection = Ti.UI.createListSection({items: data});`
-
-`var` `listView = Ti.UI.createListView({sections: [listSection]});`
-
-`win.add(listView);`
-
-`win.open();`
+var listSection = Ti.UI.createListSection({items: data});
+var listView = Ti.UI.createListView({sections: [listSection]});
+win.add(listView);
+win.open();
+```
 
 ![BuiltInTemplateExample](/Images/appc/download/attachments/37521650/BuiltInTemplateExample.png)
 
@@ -1066,99 +802,61 @@ While editing mode is enabled for the list, the user can use the deletion contro
 
 In the example below, the items in the fruit section can be moved or deleted.
 
-`var` `win = Ti.UI.createWindow({backgroundColor:` `'white'``, fullscreen:` `true``, title:` `'Shopping List'``});`
+```javascript
+var win = Ti.UI.createWindow({backgroundColor: 'white', fullscreen: true, title: 'Shopping List'});
+var navWin = Ti.UI.iOS.createNavigationWindow({window: win});
 
-`var` `navWin = Ti.UI.iOS.createNavigationWindow({window: win});`
+var listView = Ti.UI.createListView();
 
-`var` `listView = Ti.UI.createListView();`
+// Listen when items are deleted or moved
+function report (e) {
+    Ti.API.info('Item ' + e.itemIndex + ' was ' + e.type + 'd!');
+}
+listView.addEventListener('delete', report);
+listView.addEventListener('move', report);
+// Left navigation button to toggle between editing and selection mode
+var button = Ti.UI.createButton({title: 'Edit'});
+win.leftNavButton = button;
+var flag = false;
+button.addEventListener('click', function(){
+    flag = !flag;
+    listView.editing = flag;
+    if (flag) {
+        button.title = "Stop Editing";
+    } else {
+        button.title = 'Edit';
+    }
+});
 
-`// Listen when items are deleted or moved`
+var sections = [];
+var fruitSection = Ti.UI.createListSection({ headerTitle: 'Fruits'});
+var fruitDataSet = [
+    {properties: { title: 'Apple', canEdit: true, canMove: true}},
+    {properties: { title: 'Banana', canEdit: true, canMove: true}}
+];
+fruitSection.setItems(fruitDataSet);
+sections.push(fruitSection);
 
-`function` `report (e) {`
+var vegSection = Ti.UI.createListSection({ headerTitle: 'Vegetables'});
+var vegDataSet = [
+    {properties: { title: 'Carrots'}},
+    {properties: { title: 'Potatoes'}}
+];
+vegSection.setItems(vegDataSet);
+sections.push(vegSection);
 
-`Ti.API.info(``'Item '` `+ e.itemIndex +` `' was '` `+ e.type +` `'d!'``);`
+var fishSection = Ti.UI.createListSection({ headerTitle: 'Fish'});
+var fishDataSet = [
+    {properties: { title: 'Cod'}},
+    {properties: { title: 'Haddock'}}
+];
+fishSection.setItems(fishDataSet);
+sections.push(fishSection);
 
-`}`
-
-`listView.addEventListener(``'delete'``, report);`
-
-`listView.addEventListener(``'move'``, report);`
-
-`// Left navigation button to toggle between editing and selection mode`
-
-`var` `button = Ti.UI.createButton({title:` `'Edit'``});`
-
-`win.leftNavButton = button;`
-
-`var` `flag =` `false``;`
-
-`button.addEventListener(``'click'``,` `function``(){`
-
-`flag = !flag;`
-
-`listView.editing = flag;`
-
-`if` `(flag) {`
-
-`button.title =` `"Stop Editing"``;`
-
-`}` `else` `{`
-
-`button.title =` `'Edit'``;`
-
-`}`
-
-`});`
-
-`var` `sections = [];`
-
-`var` `fruitSection = Ti.UI.createListSection({ headerTitle:` `'Fruits'``});`
-
-`var` `fruitDataSet = [`
-
-`{properties: { title:` `'Apple'``, canEdit:` `true``, canMove:` `true``}},`
-
-`{properties: { title:` `'Banana'``, canEdit:` `true``, canMove:` `true``}}`
-
-`];`
-
-`fruitSection.setItems(fruitDataSet);`
-
-`sections.push(fruitSection);`
-
-`var` `vegSection = Ti.UI.createListSection({ headerTitle:` `'Vegetables'``});`
-
-`var` `vegDataSet = [`
-
-`{properties: { title:` `'Carrots'``}},`
-
-`{properties: { title:` `'Potatoes'``}}`
-
-`];`
-
-`vegSection.setItems(vegDataSet);`
-
-`sections.push(vegSection);`
-
-`var` `fishSection = Ti.UI.createListSection({ headerTitle:` `'Fish'``});`
-
-`var` `fishDataSet = [`
-
-`{properties: { title:` `'Cod'``}},`
-
-`{properties: { title:` `'Haddock'``}}`
-
-`];`
-
-`fishSection.setItems(fishDataSet);`
-
-`sections.push(fishSection);`
-
-`listView.sections = sections;`
-
-`win.add(listView);`
-
-`navWin.open();`
+listView.sections = sections;
+win.add(listView);
+navWin.open();
+```
 
 ![EditingMode](/Images/appc/download/attachments/37521650/EditingMode.png)
 

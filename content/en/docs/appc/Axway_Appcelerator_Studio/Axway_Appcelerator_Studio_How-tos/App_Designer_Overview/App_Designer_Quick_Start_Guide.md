@@ -134,11 +134,15 @@ Now, let's give this button an action by modifying it's code via the XML view.
 
 2. Change the following code:
 
-    * `<Button id=``"Tutorials"``/>`
+    * ```xml
+        <Button id="Tutorials"/>
+        ```
 
 3. To this:
 
-    * `<Button id=``"Tutorials"` `onClick=``"loadTutorials"``/>`
+    * ```xml
+        <Button id="Tutorials" onClick="loadTutorials"/>
+        ```
 
 Back in the Properties view, you will now see the click parameter (under Events) has a value of loadTutorials. The loadTutorials event hasn't been defined anywhere so it won't do anything. Defining that event is beyond the scope of this tutorial.
 

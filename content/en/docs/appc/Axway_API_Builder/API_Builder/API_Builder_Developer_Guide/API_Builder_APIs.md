@@ -1,6 +1,6 @@
 {"title":"API Builder APIs","weight":"50"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -54,45 +54,31 @@ Set the following keys in the object passed to the API.extend() method to define
 
 The following API definition file creates an endpoint that can be accessed by a client using GET <HOST\_ADDRESS>/api/test/:id. Before the request is initiated by the server, the formatRequestBlock is executed, then the server performs the request (executes the action logic). The action logic tries to find the user model with the specified ID. After the logic executes, the cachingBlock and analyticsBlocks are executed.
 
-apis/test.js
+*apis/test.js*
 
-`var` `Arrow = require(``'arrow'``);`
+```javascript
+var Arrow = require('arrow');
 
-`var` `TestAPI = Arrow.API.extend({`
+var TestAPI = Arrow.API.extend({
+    group: 'test',
+    path: '/api/test/:id',
+    method: 'GET',
+    description: 'this is an api that shows how to implement an API',
+    model: 'user',
+    before: 'formatRequestBlock',
+    after: ['cachingBlock', 'analyticsBlock'],
+    parameters: {
+        // 'id' is required to execute this endpoint
+        id: {description:'the user id'}
+    },
+    action: function (req, res, next) {
+        // call the 'find' method on our model to get the data passing the incoming path value id
+        res.stream(req.model.find, req.params.id, next);
+    }
+});
 
-`group:` `'test'``,`
-
-`path:` `'/api/test/:id'``,`
-
-`method:` `'GET'``,`
-
-`description:` `'this is an api that shows how to implement an API'``,`
-
-`model:` `'user'``,`
-
-`before:` `'formatRequestBlock'``,`
-
-`after: [``'cachingBlock'``,` `'analyticsBlock'``],`
-
-`parameters: {`
-
-`// 'id' is required to execute this endpoint`
-
-`id: {description:``'the user id'``}`
-
-`},`
-
-`action:` `function` `(req, res, next) {`
-
-`// call the 'find' method on our model to get the data passing the incoming path value id`
-
-`res.stream(req.model.find, req.params.id, next);`
-
-`}`
-
-`});`
-
-`module.exports = TestAPI;`
+module.exports = TestAPI;
+```
 
 ## Invoke API endpoints in API Builder
 
@@ -110,38 +96,26 @@ To invoke an API endpoint:
 
 The Route below is invoking the GET <SERVER\_ADDRESS>/api/car method programmatically.
 
-web/routes/testroute.js
+*web/routes/testroute.js*
 
-`var` `TestRoute = Arrow.Router.extend({`
+```javascript
+var TestRoute = Arrow.Router.extend({
+    name: 'car',
+    path: '/car',
+    method: 'GET',
+    description: 'get some cars',
+    action: function (req, res, next) {
 
-`name:` `'car'``,`
+        req.server.getAPI('api/car', 'GET').execute({}, function(err, results) {
+            if (err) {
+                next(err);
+            } else {
+                req.log.info('got cars ' + JSON.stringify(results));
+                res.render('car', results);
+            }
+        });
+    }
+});
 
-`path:` `'/car'``,`
-
-`method:` `'GET'``,`
-
-`description:` `'get some cars'``,`
-
-`action:` `function` `(req, res, next) {`
-
-`req.server.getAPI(``'api/car'``,` `'GET'``).execute({},` `function``(err, results) {`
-
-`if` `(err) {`
-
-`next(err);`
-
-`}` `else` `{`
-
-`req.log.info(``'got cars '` `+ JSON.stringify(results));`
-
-`res.render(``'car'``, results);`
-
-`}`
-
-`});`
-
-`}`
-
-`});`
-
-`module.exports = TestRoute;`
+module.exports = TestRoute;
+```

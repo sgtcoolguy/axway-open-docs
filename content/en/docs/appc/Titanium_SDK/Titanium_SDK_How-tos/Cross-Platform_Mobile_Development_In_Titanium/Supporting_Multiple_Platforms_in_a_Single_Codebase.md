@@ -72,19 +72,15 @@ Another concern is platform-specific constants. Explore the API docs and you'll 
 
 Titanium gives you various ways to include platform-specific resources, like images, stylesheets, and scripts, in your project. Titanium uses an "overrides" system to make it easy to use platform-specific resources. Any file in the platform-specific Resources directories (Resources/android, Resources/iphone, or Resources/mobileweb) will override, or be used in place of, those in the Resources directory. You don't have to use any special notation in your code to specify that these files should be used.
 
-`var` `img = Ti.UI.createImageView({`
-
-`image:` `'logo.png'`
-
-`/* Resources/android/logo.png or Resources/iphone/logo.png or`
-
-`* Resources/mobileweb/logo.png will be used automatically if they exist`
-
-`* when you build for those platforms, respectively`
-
-`*/`
-
-`});`
+```javascript
+var img = Ti.UI.createImageView({
+  image: 'logo.png'
+  /* Resources/android/logo.png or Resources/iphone/logo.png  or
+  *  Resources/mobileweb/logo.png will be used automatically if they exist
+  *  when you build for those platforms, respectively
+  */
+});
+```
 
 You can maintain a hierarchy of folders within the Resources or platform-specific folder. For example, let's say you put most of your images into the Resources/images folder. To include platform-specific overrides, you would duplicate that folder hierarchy in the platform folders. Thus, you'd need to put the images into the Resources/android/images, Resources/iphone/images, and Resources/mobileweb/images folders.
 
@@ -98,57 +94,49 @@ Branching in code is useful when your code will be _mostly the same_ across plat
 
 It's best practice to query the platform value once, then store it in a globally accessible variable. Each time you request one of those properties, Titanium has to query the operating system for the value. This "trip across the bridge" takes a few cycles and if used too frequently could possibly slow your program. Something like the following would be more efficient:
 
-`// create a JavaScript alias to the platform-specific property`
+```javascript
+// create a JavaScript alias to the platform-specific property
+var osname = Ti.Platform.osname;
+// Booleans identifying the platforms are handy too
+var isAndroid = (osname === 'android') ? true : false;
 
-`var` `osname = Ti.Platform.osname;`
-
-`// Booleans identifying the platforms are handy too`
-
-`var` `isAndroid = (osname ===` `'android'``) ?` `true` `:` `false``;`
-
-`if` `(isAndroid) {`
-
-`// do Android specific stuff`
-
-`}` `else` `{`
-
-`// do iOS, mobileweb, or other platform stuff`
-
-`}`
+if (isAndroid) {
+  // do Android specific stuff
+} else {
+  // do iOS, mobileweb, or other platform stuff
+}
+```
 
 You can use JavaScript's [ternary operator](http://en.wikipedia.org/wiki/Ternary_operation#C.2C_Java.2C_JavaScript) when you need to branch on a specific property, like this:
 
-`var` `isAndroid = (Ti.Platform.osname ===` `'android'``) ?` `true` `:` `false``;`
-
-`var` `win = Ti.UI.createWindow({`
-
-`softInputMode: (isAndroid) ? Ti.UI.Android.SOFT_INPUT_ADJUST_PAN :` `null`
-
-`});`
+```javascript
+var isAndroid = (Ti.Platform.osname === 'android') ? true : false;
+var win = Ti.UI.createWindow({
+  softInputMode: (isAndroid) ? Ti.UI.Android.SOFT_INPUT_ADJUST_PAN : null
+});
+```
 
 Keep in mind the growing list of supported platforms and don't fall prey to coding in an if/else relationship that won't support new platforms. For example, don't do the following:
 
-Anti-pattern!
+*Anti-pattern!*
 
-`var` `osname = Ti.Platform.osname;`
-
-`if` `(osname !==` `'android'``) {`
-
-`// don't assume this means iOS! It could be mobile web or some future-supported platform.`
-
-`}`
+```javascript
+var osname = Ti.Platform.osname;
+if (osname !== 'android') {
+   // don't assume this means iOS! It could be mobile web or some future-supported platform.
+}
+```
 
 #### Platform-specific JS files
 
 Using platform-specific JS files is likely to be most useful when your code is _mostly different_ across platforms. This removes long if...then blocks from your main code. Separating platform-specific code reduces the chances of an error that comes from accidentally using the wrong platform's API or property. However, you'll have to remember to apply changes and fixes to _each_ of the platform-specific files. So this approach could increase your work rather than reduce it.
 
-`var` `label2 = require(``'ui'``).label;`
-
-`// will include /android/ui.js on Android`
-
-`// and /iphone/ui.js on iOS`
-
-`// there doesn't even need to be a /ui.js file!`
+```javascript
+var label2 = require('ui').label;
+// will include /android/ui.js on Android
+// and /iphone/ui.js on iOS
+// there doesn't even need to be a /ui.js file!
+```
 
 #### References and Further Reading
 

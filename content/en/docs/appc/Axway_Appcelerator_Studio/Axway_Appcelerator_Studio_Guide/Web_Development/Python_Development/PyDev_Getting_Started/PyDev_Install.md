@@ -39,7 +39,7 @@ In the next screen, add the update site(s) you want to work with (**See below fo
 
 ## Available update sites
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>Main:</p></td><td class="confluenceTd" rowspan="1" colspan="1"><ul class=""><li><p><a class="external-link external-link" href="http://pydev.org/updates" target="_blank">http://pydev.org/updates</a></p></li></ul></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>Nightly builds:</p></td><td class="confluenceTd" rowspan="1" colspan="1"><ul class=""><li><p><a class="external-link external-link" href="http://pydev.org/nightly" target="_blank">http://pydev.org/nightly</a></p></li></ul></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>Main:</p></td><td class="confluenceTd" rowspan="1" colspan="1"><ul class=" "><li class=" "><p><a class="external-link external-link" href="http://pydev.org/updates" target="_blank">http://pydev.org/updates</a></p></li></ul></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>Nightly builds:</p></td><td class="confluenceTd" rowspan="1" colspan="1"><ul class=" "><li class=" "><p><a class="external-link external-link" href="http://pydev.org/nightly" target="_blank">http://pydev.org/nightly</a></p></li></ul></td></tr></tbody></table>
 
 After entering the update sites, select the update site you entered or select "All available sites" and add a filter for PyDev so that it shows the contents of all the update sites that have PyDev, then select what you want to install and click 'Next'.
 

@@ -2,7 +2,7 @@
 
 Demonstrates how to manually trigger a UI update between the data model and a view.
 
-App Folder Location
+*App Folder Location*
 
 alloy/test/apps/**models/binding\_dataFunction**
 
@@ -12,95 +12,64 @@ By default, a view is automatically updated whenever it's associated data collec
 
 The main XML view defines the <TableView/> element and assigns the value "updateUI" to the dataFunction attribute. It also provides some Labels (which act as buttons) to call the doChanges() and updateUI() functions defined in the view-controller.
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``TableView`  `id``=``"table"`  `dataCollection``=``"locations"`  `dataFunction``=``"updateUi"`  `dataTransform``=``"transformData"``>`
-
-`<``Require`  `src``=``"row"``/>`
-
-`</``TableView``>`
-
-`<``View`  `id``=``"footer"`  `class``=``"toolbar"``>`
-
-`<``Label`  `id``=``"leftButton"`  `onClick``=``"doChanges"``>change</``Label``>`
-
-`<``View`  `class``=``"divider"``/>`
-
-`<``Label`  `id``=``"rightButton"`  `onClick``=``"updateUi"``>update</``Label``>`
-
-`</``View``>`
+```xml
+<TableView id="table" dataCollection="locations" dataFunction="updateUi" dataTransform="transformData">
+  <Require src="row"/>
+</TableView>
+<View id="footer" class="toolbar">
+    <Label id="leftButton" onClick="doChanges">change</Label>
+    <View class="divider"/>
+    <Label id="rightButton" onClick="updateUi">update</Label>
+</View>
+```
 
 Clicking **Change** in the sample app calls the doChanges() function, which modifies the data model used by the TableView. The model.set() method's second parameter is passed silent: true, which prevents the data binding from firing automatically. Clicking the **Update** button invokes the updateUI() function, which then causes the UI to update.
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`function` `doChanges(e) {`
-
-`// grab a random model by index`
-
-`var` `index = Math.round((locations.length-1)*Math.random());`
-
-`var` `model = locations.at(index);`
-
-`// Modify the model by adding a "+" to the end of the model's name`
-
-`model.set(`
-
-`{ name: model.get(``'name'``) +` `'+'` `},`
-
-`// set silent to true to prevent data binding from firing automatically. `
-
-`// Silent changes will not trigger data binding to update.`
-
-`{ silent:` `true` `}`
-
-`);`
-
-`}`
-
-`// On first run, call the binding function name we defined in the TableView's dataFunction attribute`
-
-`updateUi();`
+```javascript
+function doChanges(e) {
+  // grab a random model by index
+  var index = Math.round((locations.length-1)*Math.random());
+  var model = locations.at(index);
+  // Modify the model by adding a "+" to the end of the model's name
+  model.set(
+    { name: model.get('name') + '+' },
+    // set silent to true to prevent data binding from firing automatically.
+    // Silent changes will not trigger data binding to update.
+    { silent: true }
+  );
+}
+// On first run, call the binding function name we defined in the TableView's dataFunction attribute
+updateUi();
+```
 
 The sample's data collection is created by the alloy.js file.
 
-app/alloy.js
+*app/alloy.js*
 
-`var` `Location = Backbone.Model.extend();`
-
-`var` `Locations = Backbone.Collection.extend({`
-
-`model: Location`
-
-`});`
-
-`Alloy.Collections.locations =` `new` `Locations();`
-
-`Alloy.Collections.locations.reset([`
-
-`{ name:` `'G.I. Lab'``, color:` `'#a00'``, direction:` `'left'` `},`
-
-`{ name:` `'Medical Treatment Unit'``, color:` `'#a00'``, direction:` `'right'` `},`
-
-`{ name:` `'Outpatient Surgery'``, color:` `'#a00'``, direction:` `'left'` `},`
-
-`{ name:` `'Telephone'``, color:` `'#a00'``, direction:` `'right'` `},`
-
-`{ name:` `'Central Village'``, color:` `'#008'``, direction:` `'left'` `},`
-
-`{ name:` `'Psychiatric Unit'``, color:` `'#008'``, direction:` `'left'` `},`
-
-`{ name:` `'Tower Elevators'``, color:` `'#05B8CC'``, direction:` `'left'` `},`
-
-`{ name:` `'Main Village'``, color:` `'#3B5323'``, direction:` `'left'` `},`
-
-`{ name:` `'Conference Center'``, color:` `'#3B5323'``, direction:` `'left'` `},`
-
-`{ name:` `'Parking Garage'``, color:` `'#3B5323'``, direction:` `'left'` `},`
-
-`{ name:` `'Suite A-D'``, color:` `'#3B5323'``, direction:` `'left'` `}`
-
-`]);`
+```javascript
+var Location = Backbone.Model.extend();
+var Locations = Backbone.Collection.extend({
+  model: Location
+});
+Alloy.Collections.locations = new Locations();
+Alloy.Collections.locations.reset([
+  { name: 'G.I. Lab', color: '#a00', direction: 'left' },
+  { name: 'Medical Treatment Unit', color: '#a00', direction: 'right' },
+  { name: 'Outpatient Surgery', color: '#a00', direction: 'left' },
+  { name: 'Telephone', color: '#a00', direction: 'right' },
+  { name: 'Central Village', color: '#008', direction: 'left' },
+  { name: 'Psychiatric Unit', color: '#008', direction: 'left' },
+  { name: 'Tower Elevators', color: '#05B8CC', direction: 'left' },
+  { name: 'Main Village', color: '#3B5323', direction: 'left' },
+  { name: 'Conference Center', color: '#3B5323', direction: 'left' },
+  { name: 'Parking Garage', color: '#3B5323', direction: 'left' },
+  { name: 'Suite A-D', color: '#3B5323', direction: 'left' }
+]);
+```
 
 ## See also
 

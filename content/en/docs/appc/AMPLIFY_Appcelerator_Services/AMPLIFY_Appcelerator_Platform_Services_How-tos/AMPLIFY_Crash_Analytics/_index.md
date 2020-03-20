@@ -20,7 +20,7 @@
 
 * [Known issue](#known-issue)
 
-Subscription Required!
+*Subscription Required!*
 
 This AMPLIFY Service feature requires a Pro, Enterprise, or purchased subscription.
 
@@ -60,17 +60,21 @@ Once com.appcelerator.aca has been added to the tiapp.xml file, the module will 
 
 To access module methods, you will need to require the module:
 
-Require and initialize ACA
+*Require and initialize ACA*
 
-`const aca = require(``'com.appcelerator.aca'``);`
+```javascript
+const aca = require('com.appcelerator.aca');
+```
 
 If you are upgrading from a previous version of ACA, you no longer need the init statement (just the requirement statement will do). For example, the following code should be replaced with the code directly above:
 
-Older version of requiring and initializing ACA
+*Older version of requiring and initializing ACA*
 
-`var` `apm = require(``'com.appcelerator.apm'``);`
+```javascript
+var apm = require('com.appcelerator.apm');
 
-`apm.init();`
+apm.init();
+```
 
 You may need to do a thorough code update to replace the older variable apm with aca.
 
@@ -78,59 +82,38 @@ You may need to do a thorough code update to replace the older variable apm with
 
 To make it easier to track the events leading up to a crash, use the leaveBreadcrumb method to add breadcrumbs in your code. Place breadcrumbs near events and application state changes to track problematic paths that can lead to an application crash. Append variables to your breadcrumbs to track their state. For example:
 
-`// If Alloy project`
+```javascript
+// If Alloy project
+// var aca = Alloy.Globals.aca;
 
-`// var aca = Alloy.Globals.aca;`
+function alphaCB (args) {
+    aca.leaveBreadcrumb('enter alphaCB:' + JSON.stringify(args));
+    //do some stuff...
+    aca.leaveBreadcrumb('exit alphaCB:' + result);
+    return result;
+}
 
-`function` `alphaCB (args) {`
+function betaCB (args) {
+    aca.leaveBreadcrumb('enter betaCB:' + JSON.stringify(args));
+    // do some stuff...
+    aca.leaveBreadcrumb('exit betaCB:' + result);
+    return result;
+}
 
-`aca.leaveBreadcrumb(``'enter alphaCB:'` `+ JSON.stringify(args));`
-
-`//do some stuff...`
-
-`aca.leaveBreadcrumb(``'exit alphaCB:'` `+ result);`
-
-`return` `result;`
-
-`}`
-
-`function` `betaCB (args) {`
-
-`aca.leaveBreadcrumb(``'enter betaCB:'` `+ JSON.stringify(args));`
-
-`// do some stuff...`
-
-`aca.leaveBreadcrumb(``'exit betaCB:'` `+ result);`
-
-`return` `result;`
-
-`}`
-
-`switch` `(state) {`
-
-`aca.leaveBreadcrumb(``'switch:'` `+ state);`
-
-`case` `x :`
-
-`alphaCB({foo: 1});`
-
-`break``;`
-
-`case` `y :`
-
-`alphaCB({foo: 2});`
-
-`betaCB({foo: 1});`
-
-`break``;`
-
-`default` `:`
-
-`alphaCB({foobar: 0});`
-
-`betaCB({foobar: 0});`
-
-`}`
+switch (state) {
+    aca.leaveBreadcrumb('switch:' + state);
+    case x :
+        alphaCB({foo: 1});
+        break;
+    case y :
+        alphaCB({foo: 2});
+        betaCB({foo: 1});
+        break;
+    default :
+        alphaCB({foobar: 0});
+        betaCB({foobar: 0});
+}
+```
 
 These breadcrumbs are collected and passed to the ACA.
 
@@ -142,35 +125,25 @@ Breadcrumbs will only be reported in the case of a handled exception or a crash 
 
 Use the setUsername and setMetadata methods to differentiate users of your application when viewing reports on the AMPLIFY Crash Analytics dashboard. For example:
 
-`// If Alloy project`
+```javascript
+// If Alloy project
+// var aca = Alloy.Globals.aca;
 
-`// var aca = Alloy.Globals.aca;`
+var status = login(username);
+if (status) {
+    // Sets the username
+    aca.setUsername(username);
+    // Sets some user state metadata for tracking errors
+    aca.setMetadata('lastLogin', datetime);
+}
 
-`var` `status = login(username);`
-
-`if` `(status) {`
-
-`// Sets the username`
-
-`aca.setUsername(username);`
-
-`// Sets some user state metadata for tracking errors`
-
-`aca.setMetadata(``'lastLogin'``, datetime);`
-
-`}`
-
-`// Track the user's state`
-
-`aca.setMetadata(``'gameLevel'``, 0);`
-
-`// do some stuff...`
-
-`aca.setMetadata(``'gameLevel'``, 1);`
-
-`// do some stuff...`
-
-`aca.setMetadata(``'gameLevel'``, 2);`
+// Track the user's state
+aca.setMetadata('gameLevel', 0);
+// do some stuff...
+aca.setMetadata('gameLevel', 1);
+// do some stuff...
+aca.setMetadata('gameLevel', 2);
+```
 
 By default, a username is not included. The username appears with the crash or error reports. Both setUsername and setMetadata can be used in any part of the application's code. They are not invoked when the crash occurs, the information gathered by ACA when these calls are made will be sent to the platform with the crash event.
 
@@ -178,21 +151,17 @@ By default, a username is not included. The username appears with the crash or e
 
 You can track handled errors in your application by passing a JavaScript Error object to the logHandledException method, which can help identify and analyze potential errors and hot spots. For example:
 
-`// If Alloy project`
+```javascript
+// If Alloy project
+// var aca = Alloy.Globals.aca;
 
-`// var aca = Alloy.Globals.aca;`
-
-`try` `{`
-
-`var` `err =` `new` `Error(``'FATAL ERROR: Value cannot be null or undefined!'``);`
-
-`if` `(value ===` `null` `|| value === undefined)` `throw` `err;`
-
-`}` `catch` `(err) {`
-
-`aca.logHandledException(err);`
-
-`}`
+try {
+    var err = new Error('FATAL ERROR: Value cannot be null or undefined!');
+    if (value === null || value === undefined) throw err;
+} catch (err) {
+    aca.logHandledException(err);
+}
+```
 
 Error logs are useful for tracking crashes in third-party SDKs, code that syncs data between services, or detecting bad data that is returned from a server.
 
@@ -202,13 +171,13 @@ Error logs are useful for tracking crashes in third-party SDKs, code that syncs 
 
 Use the setOptOutStatus method to allow the user NOT to send any information to the ACA. Passing true to this method disables sending data to ACA.
 
-`// If Alloy project`
+```javascript
+// If Alloy project
+// var aca = Alloy.Globals.aca;
 
-`// var aca = Alloy.Globals.aca;`
-
-`// Disable sending data to Crash Analytics`
-
-`aca.setOptOutStatus(``true``);`
+// Disable sending data to Crash Analytics
+aca.setOptOutStatus(true);
+```
 
 ## Known issue
 

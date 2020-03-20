@@ -30,13 +30,13 @@ You can create samples that reference a local .zip file or retrieve content from
 
 Here are the current possible values for the "category" element:
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>Sample Category</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Category Id</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Web</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.aptana.projects.samples.web.category</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium Mobile</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.appcelerator.titanium.mobile.samples.category</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium Desktop</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.appcelerator.titanium.desktop.samples.category</p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>Sample Category</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Category Id</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Web</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.aptana.projects.samples.web.category</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium Mobile</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.appcelerator.titanium.mobile.samples.category</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium Desktop</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.appcelerator.titanium.desktop.samples.category</p></td></tr></tbody></table>
 
 ### Project natures
 
 Project natures can be added to samples by the specification of the "natures" element:
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>Project Type</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Nature Id</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Web</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.aptana.projects.webnature</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Ruby</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.aptana.ruby.core.rubynature</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>PHP</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.aptana.editor.php.phpNature</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Python</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>org.python.pydev.pythonNature</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Alloy</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.appcelerator.titanium.alloy.core.nature</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium Mobile</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.appcelerator.titanium.mobile.nature</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium Desktop</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.appcelerator.titanium.desktop.nature</p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>Project Type</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Nature Id</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Web</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.aptana.projects.webnature</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Ruby</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.aptana.ruby.core.rubynature</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>PHP</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.aptana.editor.php.phpNature</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Python</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>org.python.pydev.pythonNature</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Alloy</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.appcelerator.titanium.alloy.core.nature</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium Mobile</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.appcelerator.titanium.mobile.nature</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium Desktop</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>com.appcelerator.titanium.desktop.nature</p></td></tr></tbody></table>
 
 ### Local content
 
@@ -46,23 +46,18 @@ If your content is hosted locally, you can simply reference a .zip file containi
 
 2. Add the following content to the project\_samples.rb file:
 
-    `require` `'ruble'`
+    ```
+    require 'ruble'
 
-    `project_sample` `"Local Project Sample Example"`  `do` `|s|`
-
-    `s.id =` `"sample.local"`
-
-    `s.category =` `"com.appcelerator.titanium.mobile.samples.category"`
-
-    `s.location =` `"samples/local_sample.zip"`
-
-    `s.description =` `"A local sample example"`
-
-    `s.natures = [``"com.appcelerator.titanium.mobile.nature"``,` `"com.aptana.projects.webnature"``]`
-
-    `s.icon = [``"samples/local_sample.png"``]`
-
-    `end`
+    project_sample "Local Project Sample Example" do |s|
+      s.id = "sample.local"
+      s.category = "com.appcelerator.titanium.mobile.samples.category"
+      s.location = "samples/local_sample.zip"
+      s.description = "A local sample example"
+      s.natures = ["com.appcelerator.titanium.mobile.nature", "com.aptana.projects.webnature"]
+      s.icon = ["samples/local_sample.png"]
+    end
+    ```
 
 3. Replace the sample name, id, category, location, description, nature, and icon values with values appropriate to your sample. The description, natures, and icon are optional.
 
@@ -82,23 +77,18 @@ If you instead have a project sample hosted on a Git repo, you can reference tha
 
 2. Add the following content to the project\_samples.rb file:
 
-    `require` `'ruble'`
+    ```
+    require 'ruble'
 
-    `project_sample` `"Remote Project Sample Example"`  `do` `|s|`
-
-    `s.id =` `"sample.remote"`
-
-    `s.category =` `"com.appcelerator.titanium.mobile.samples.category"`
-
-    `s.location =` `"git://github.com/repo.git"`
-
-    `s.description =` `"Remote sample. Requires network access."`
-
-    `s.natures = [``"com.appcelerator.titanium.mobile.nature"``,` `"com.aptana.projects.webnature"``]`
-
-    `s.icon = [``"http://sample_icon.png"``]`
-
-    `end`
+    project_sample "Remote Project Sample Example" do |s|
+      s.id = "sample.remote"
+      s.category = "com.appcelerator.titanium.mobile.samples.category"
+      s.location = "git://github.com/repo.git"
+      s.description = "Remote sample. Requires network access."
+      s.natures = ["com.appcelerator.titanium.mobile.nature", "com.aptana.projects.webnature"]
+      s.icon = ["http://sample_icon.png"]
+    end
+    ```
 
 3. Replace the sample name, id, category, location, description, nature, and icon values with values appropriate to your sample.
 

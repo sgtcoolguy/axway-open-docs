@@ -46,19 +46,15 @@ Starting with Release 3.3.0, the Titanium SDK uses the appcompat library to prov
 
 Prior to Release 3.3.0, to enable the action bar features, applications must be built with a target SDK version of 11 (Android 3.0/Honeycomb) or later. For expanding and collapsing action items, the target SDK version must be at least 14. To set the target SDK version, add code like this in your tiapp.xml file:
 
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``> `
-
-`<``tool``-api-level>14</``tool``-api-level> `
-
-`<``manifest``> `
-
-`<``uses``-sdk` `android:targetSdkVersion``=``"14"``/> `
-
-`<!-- other manifest entries --> `
-
-`</``manifest``> `
-
-`</``android``>`
+```xml
+<android xmlns:android="http://schemas.android.com/apk/res/android">
+  <tool-api-level>14</tool-api-level>
+  <manifest>
+    <uses-sdk android:targetSdkVersion="14"/>
+    <!-- other manifest entries -->
+  </manifest>
+</android>
+```
 
 The tool-api-level identifies the version of the Android tools to use. If in doubt, use a recent version, such as 15. This does not have to correspond to the targetSdkVersion.
 
@@ -70,49 +66,40 @@ There are two ways to hide the Action Bar. You can either hide the activity's Ac
 
 **In your JavaScript code**, get the activity's action bar instance and call the [hide](#!/api/Titanium.Android.ActionBar-method-hide) method. This hides the action bar once it appears on screen.
 
-`// "win" is a previously opened window`
-
-`// you can only get the activity after the window appears on screen`
-
-`win.activity.actionBar.hide();`
+```
+// "win" is a previously opened window
+// you can only get the activity after the window appears on screen
+win.activity.actionBar.hide();
+```
 
 **To automatically hide the action bar when opening a window or tab group,** you need to modify the theme to hide the action bar:
 
 1\. Add a custom theme file to your project, and set the android:windowActionBar item to false and android:windowNoTitle to true.
 
-platform/android/res/values/custom\_theme.xml
+*platform/android/res/values/custom\_theme.xml*
 
-`<?``xml`  `version``=``"1.0"`  `encoding``=``"utf-8"``?>`
-
-`<``resources``>`
-
-`<``style`  `name``=``"Theme.NoActionBar"`  `parent``=``"@style/Theme.AppCompat"``>`
-
-`<``item`  `name``=``"android:windowActionBar"``>false</``item``>`
-
-`<``item`  `name``=``"android:windowNoTitle"``>true</``item``>`
-
-`<!-- AppCompat Compatibility -->`
-
-`<``item`  `name``=``"windowActionBar"``>false</``item``>`
-
-`<``item`  `name``=``"windowNoTitle"``>true</``item``>`
-
-`</``style``>`
-
-`</``resources``> `
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.NoActionBar" parent="@style/Theme.AppCompat">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    <!-- AppCompat Compatibility -->
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+    </style>
+</resources>
+```
 
 2\. Modify your tiapp.xml file to use the modified theme. This will globally hide the action bar in all of your activities:
 
-` <``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-`<``manifest``>`
-
-`<``application`  `android:theme``=``"@style/Theme.NoActionBar"``/>`
-
-`</``manifest``>`
-
-`</``android``>`
+```xml
+<android xmlns:android="http://schemas.android.com/apk/res/android">
+    <manifest>
+        <application android:theme="@style/Theme.NoActionBar"/>
+    </manifest>
+</android>
+```
 
 ## Action bar tabs
 
@@ -138,27 +125,19 @@ You can OR the above values with one of the following modifiers:
 
 The following code sample creates a basic action item:
 
-`win1.activity.onCreateOptionsMenu =` `function``(e) { `
-
-`var` `menu = e.menu;`
-
-`var` `menuItem = menu.add({`
-
-`title:` `"Compose"``, `
-
-`icon:` `"images/compose_icon.png"``, `
-
-`showAsAction: Ti.Android.SHOW_AS_ACTION_IF_ROOM `
-
-`}); `
-
-`menuItem.addEventListener(``"click"``,` `function``(e) { `
-
-`Ti.API.info(``"Action Item Clicked!"``); `
-
-`}); `
-
-`};`
+```javascript
+win1.activity.onCreateOptionsMenu = function(e) {
+  var menu = e.menu;
+  var menuItem = menu.add({
+    title: "Compose",
+    icon: "images/compose_icon.png",
+    showAsAction: Ti.Android.SHOW_AS_ACTION_IF_ROOM
+  });
+  menuItem.addEventListener("click", function(e) {
+    Ti.API.info("Action Item Clicked!");
+  });
+};
+```
 
 Android has very specific guidelines for action item icons, including density-specific size requirements. So you'll probably want to generate icons for each density and store them in the density-specific folders in Resources/android. For example, Resources/android/images/res-hdpi.
 
@@ -181,59 +160,36 @@ When creating action items, keep in mind:
 
 Since the options menu is considered always open when the action bar is in use, onCreateOptionsMenu is only called when the window or tab group is opened. To force the onCreateOptionsMenu method to be executed again, call Activity.invalidateOptionsMenu. The following code sample shows one way to switch the action items when the user changes tabs in a tab group.
 
-`// Copy and paste this code to the end of the Classic Default Project`
+```javascript
+// Copy and paste this code to the end of the Classic Default Project
+if (Ti.Platform.name === "android") {
+    tabGroup.addEventListener("open", function(e) {
+        var activity = tabGroup.getActivity();
+        activity.onCreateOptionsMenu = function(e) {
+            var item, menu;
+            menu = e.menu;
+            menu.clear();
+            if (tabGroup.activeTab == tab1) {
+                item = menu.add({
+                    title: "Tab1 Item",
+                    icon: "images/icon1.png",
+                    showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS
+                });
+            } else if (tabGroup.activeTab == tab2) {
+                item = menu.add({
+                    title: "Tab2 Item",
+                    icon: "images/icon2.png",
+                    showAsAction: Ti.Android.SHOW_AS_ACTION_IF_ROOM
+                });
+            }
+        };
+    });
 
-`if` `(Ti.Platform.name ===` `"android"``) {`
-
-`tabGroup.addEventListener(``"open"``,` `function``(e) {`
-
-`var` `activity = tabGroup.getActivity();`
-
-`activity.onCreateOptionsMenu =` `function``(e) {`
-
-`var` `item, menu;`
-
-`menu = e.menu;`
-
-`menu.clear();`
-
-`if` `(tabGroup.activeTab == tab1) {`
-
-`item = menu.add({`
-
-`title:` `"Tab1 Item"``,`
-
-`icon:` `"images/icon1.png"``,`
-
-`showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS`
-
-`});`
-
-`}` `else`  `if` `(tabGroup.activeTab == tab2) {`
-
-`item = menu.add({`
-
-`title:` `"Tab2 Item"``,`
-
-`icon:` `"images/icon2.png"``,`
-
-`showAsAction: Ti.Android.SHOW_AS_ACTION_IF_ROOM`
-
-`});`
-
-`}`
-
-`};`
-
-`});`
-
-`tabGroup.addEventListener(``"focus"``,` `function``(e) {`
-
-`tabGroup.getActivity().invalidateOptionsMenu();`
-
-`});`
-
-`}`
+    tabGroup.addEventListener("focus", function(e) {
+        tabGroup.getActivity().invalidateOptionsMenu();
+    });
+}
+```
 
 ## Other action bar features
 
@@ -243,27 +199,23 @@ Currently, the tab group activity is only available from using the TabGroup.getA
 
 To receive a callback when the home icon is clicked, set the ActionBar.onHomeIconItemSelected property to a callback function:
 
-`win.addEventListener(``"open"``,` `function``(evt) { `
-
-`var` `actionBar = win.activity.actionBar;`
-
-`actionBar.onHomeIconItemSelected =` `function``() { `
-
-`Ti.API.info(``"Home clicked!"``); `
-
-`}; `
-
-`});`
+```javascript
+win.addEventListener("open", function(evt) {
+  var actionBar = win.activity.actionBar;
+  actionBar.onHomeIconItemSelected = function() {
+    Ti.API.info("Home clicked!");
+  };
+});
+```
 
 You can use the ActionBar title, backgroundImage, icon, and logo properties to set the title, background, app icon, and app logo used in the action bar, respectively. Set the ActionBar.displayHomeAsUp property to true to display the "up" affordance. ActionBar also provides show and hide methods to show and hide the action bar. For example, to show the "up" affordance on a tab group's action bar you could use code like this:
 
-`var` `activity = tabGroup.getActivity();`
-
-`if` `(activity != undefined && activity.actionBar != undefined) {`
-
-`activity.actionBar.displayHomeAsUp =` `true``; `
-
-`}`
+```javascript
+var activity = tabGroup.getActivity();
+if (activity != undefined && activity.actionBar != undefined) {
+  activity.actionBar.displayHomeAsUp = true;
+}
+```
 
 ## Styling the action bar
 
@@ -273,107 +225,82 @@ To change the style of the action bar, create a custom theme to override the [Ac
 
 2. In the XML file, create an action bar style resource and set the parent style of the action bar style to Widget.AppCompat.ActionBar or another supported Action Bar parent.
 
-    `<``style`  `name``=``"MyTheme"`  `parent``=``"@style/Widget.AppCompat.ActionBar"` `/>`
+    ```xml
+    <style name="MyTheme" parent="@style/Widget.AppCompat.ActionBar" />
+    ```
 
 3. Define action bar properties in the style resource to override the default values from the parent style. To support devices running Android 2.3.x, the property name does not use the android: prefix, so you need to duplicate the properties then remove the android: prefix from the name.
 
-    `<``style`  `name``=``"MyTheme"`  `parent``=``"@style/Widget.AppCompat.ActionBar"``>`
-
-    `<!-- For Android 3.x. and above -->`
-
-    `<``item`  `name``=``"android:background"``>@drawable/actionbar_background</``item``>`
-
-    `<!-- For Android 2.3.x -->`
-
-    `<``item`  `name``=``"background"``>@drawable/actionbar_background</``item``>`
-
-    `</``style``>`
+    ```xml
+    <style name="MyTheme" parent="@style/Widget.AppCompat.ActionBar">
+        <!-- For Android 3.x. and above -->
+        <item name="android:background">@drawable/actionbar_background</item>
+        <!-- For Android 2.3.x -->
+        <item name="background">@drawable/actionbar_background</item>
+    </style>
+    ```
 
 4. In the theme, set the android:actionBarStyle to name of action bar style you created.
 
-    `<``style`  `name``=``"Theme.CustomActionBar"`  `parent``=``"@style/Theme.AppCompat"``>`
-
-    `<``item`  `name``=``"android:actionBarStyle"``>@style/MyActionBar</``item``>`
-
-    `<``item`  `name``=``"actionBarStyle"``>@style/MyActionBar</``item``>`
-
-    `</``style``>`
+    ```xml
+    <style name="Theme.CustomActionBar" parent="@style/Theme.AppCompat">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+    ```
 
 5. Modify your tiapp.xml file to use the custom theme:
 
-    tiapp.xml
+    *tiapp.xml*
 
-    `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-    `<``manifest``>`
-
-    `<``application`  `android:theme``=``"@style/Theme.CustomActionBar"``/>`
-
-    `<!-- Need to specify at least API level 11 for Titanium SDK 3.2.x and prior -->`
-
-    `<``uses``-sdk` `android:minSdkVersion``=``"14"`  `android:targetSdkVersion``=``"19"``/>`
-
-    `</``manifest``>`
-
-    `</``android``>`
+    ```xml
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest>
+            <application android:theme="@style/Theme.CustomActionBar"/>
+            <!-- Need to specify at least API level 11 for Titanium SDK 3.2.x and prior -->
+            <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19"/>
+        </manifest>
+    </android>
+    ```
 
 The example below modifies the Action Bar's background color and title text color.
 
-platform/android/res/values/mytheme.xml
+*platform/android/res/values/mytheme.xml*
 
-`<?``xml`  `version``=``"1.0"`  `encoding``=``"utf-8"``?>`
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CustomActionBar" parent="@style/Theme.AppCompat">
+        <!-- Specify an Action Bar style to use -->
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <!-- This item is required for Android 2.3.x support -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
 
-`<``resources``>`
+    <!-- Define the ActionBar styles -->
+    <style name="MyActionBar"
+           parent="@style/Widget.AppCompat.ActionBar">
+        <!-- Create another style resource to specify the text color -->
+        <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
 
-`<``style`  `name``=``"Theme.CustomActionBar"`  `parent``=``"@style/Theme.AppCompat"``>`
+        <!-- For Android 3.x and later, you can specify either a color or background image -->
+        <item name="android:background">#ffa500</item>
 
-`<!-- Specify an Action Bar style to use -->`
+        <!-- These item are required for Android 2.3.x support -->
+        <item name="titleTextStyle">@style/MyActionBarTitleText</item>
 
-`<``item`  `name``=``"android:actionBarStyle"``>@style/MyActionBar</``item``>`
+        <!-- For Android 2.3.x, you can only specify a background image not a color -->
+        <!-- This example references the platform/android/res/drawable-nodpi/actionbar_background.png image -->
+        <item name="background">@drawable/actionbar_background</item>
+    </style>
 
-`<!-- This item is required for Android 2.3.x support -->`
-
-`<``item`  `name``=``"actionBarStyle"``>@style/MyActionBar</``item``>`
-
-`</``style``>`
-
-`<!-- Define the ActionBar styles -->`
-
-`<``style`  `name``=``"MyActionBar"`
-
-`parent``=``"@style/Widget.AppCompat.ActionBar"``>`
-
-`<!-- Create another style resource to specify the text color -->`
-
-`<``item`  `name``=``"android:titleTextStyle"``>@style/MyActionBarTitleText</``item``>`
-
-`<!-- For Android 3.x and later, you can specify either a color or background image -->`
-
-`<``item`  `name``=``"android:background"``>#ffa500</``item``>`
-
-`<!-- These item are required for Android 2.3.x support -->`
-
-`<``item`  `name``=``"titleTextStyle"``>@style/MyActionBarTitleText</``item``>`
-
-`<!-- For Android 2.3.x, you can only specify a background image not a color -->`
-
-`<!-- This example references the platform/android/res/drawable-nodpi/actionbar_background.png image -->`
-
-`<``item`  `name``=``"background"``>@drawable/actionbar_background</``item``>`
-
-`</``style``>`
-
-`<!-- Define a text color for the Action Bar title -->`
-
-`<``style`  `name``=``"MyActionBarTitleText"`
-
-`parent``=``"@style/TextAppearance.AppCompat.Widget.ActionBar.Title"``>`
-
-`<``item`  `name``=``"android:textColor"``>#000080</``item``>`
-
-`</``style``>`
-
-`</``resources``>`
+    <!-- Define a text color for the Action Bar title -->
+    <style name="MyActionBarTitleText"
+           parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#000080</item>
+    </style>
+</resources>
+```
 
 ### Further reading
 

@@ -1,6 +1,6 @@
 {"title":"Models - Access a Model","weight":"10"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -32,42 +32,29 @@ Any callback in the application that is passed the request object can access the
 
 The Route example below retrieves all car model.
 
-web/routes/testroute.js
+*web/routes/testroute.js*
 
-`var` `Arrow = require(``'arrow'``);`
+```javascript
+var Arrow = require('arrow');
 
-`var` `TestRoute = Arrow.Router.extend({`
+var TestRoute = Arrow.Router.extend({
+    name: 'car',
+    path: '/car',
+    method: 'GET',
+    description: 'get some cars',
+    action: function (req, res, next) {
+        var model = req.server.getModel('car');
+        model.findAll(function(err, results){
+            if (err) {
+                next(err);
+            } else {
+                req.log.info('got cars ' + JSON.stringify(results));
+                res.render('car', {cars:results});
+            }
 
-`name:` `'car'``,`
+        });
+    }
+});
 
-`path:` `'/car'``,`
-
-`method:` `'GET'``,`
-
-`description:` `'get some cars'``,`
-
-`action:` `function` `(req, res, next) {`
-
-`var` `model = req.server.getModel(``'car'``);`
-
-`model.findAll(``function``(err, results){`
-
-`if` `(err) {`
-
-`next(err);`
-
-`}` `else` `{`
-
-`req.log.info(``'got cars '` `+ JSON.stringify(results));`
-
-`res.render(``'car'``, {cars:results});`
-
-`}`
-
-`});`
-
-`}`
-
-`});`
-
-`module.exports = TestRoute;`
+module.exports = TestRoute;
+```

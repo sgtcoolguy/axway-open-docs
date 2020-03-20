@@ -78,14 +78,11 @@ Currently, the supported flags are:
 
 **Example:**
 
-`class` `Struct:`
-
-`'''Attributes passed` `in` `constructor.`
-
-`*``@DynamicAttrs``*`
-
-`'''`
-
-`def` `__init__(``self``,` `*``entries):`
-
-`self``.__dict__.update(entries)`
+```
+class Struct:
+    '''Attributes passed in constructor.
+    *@DynamicAttrs*
+    '''
+    def __init__(self, *entries):
+        self.__dict__.update(entries)
+```

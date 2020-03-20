@@ -1,6 +1,6 @@
 {"title":"AMPLIFY Appcelerator Services Native SDKs","weight":"10"}
 
-Pro or Enterprise Subscription Required
+*Pro or Enterprise Subscription Required*
 
 This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.
 

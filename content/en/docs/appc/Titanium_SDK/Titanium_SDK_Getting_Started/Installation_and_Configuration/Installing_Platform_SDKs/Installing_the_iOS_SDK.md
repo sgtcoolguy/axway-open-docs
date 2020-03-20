@@ -165,7 +165,9 @@ To install the command-line tools or older simulator from Xcode:
 
 To install the command-line tools from a terminal, run the following command under "sudo" permissions:
 
-`sudo` `xcode-``select` `--``install`
+```bash
+sudo xcode-select --install
+```
 
 ## Select the active Xcode version
 
@@ -173,7 +175,9 @@ For systems with multiple Xcode versions installed, the current version can be s
 
 For example:
 
-`sudo` `xcode-``select` `-switch` `/Applications/Xcode``.app``/Contents/Developer/`
+```bash
+sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer/
+```
 
 If you are using Studio, you need to restart Studio for your changes to take effect.
 

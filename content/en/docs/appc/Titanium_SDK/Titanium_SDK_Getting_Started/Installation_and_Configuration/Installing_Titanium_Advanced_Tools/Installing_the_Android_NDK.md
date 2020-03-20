@@ -31,4 +31,6 @@ The path to the NDK must not contain spaces or special characters, such as a dol
 After installing the NDK, define an environment variable identifying the path to the NDK. For example,
 on OS X, you might add the following to your .bash\_profile:
 
-`export ANDROID_NDK=~/android-ndk-r11c` `//path to your NDK`
+```
+export ANDROID_NDK=~/android-ndk-r11c //path to your NDK
+```

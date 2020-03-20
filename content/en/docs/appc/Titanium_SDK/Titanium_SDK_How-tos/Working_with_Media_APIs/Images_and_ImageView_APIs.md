@@ -46,35 +46,24 @@ Android supports remote images as background images. On Android, you can set the
 
 The ImageView is Titanium's component for representing an image file. You create one with the Ti.UI.createImageView() method. With this component, you have full control over dimensions, positioning, opacity, and more. The ImageView has a number of interesting methods, such as show() and hide(), start() and stop(), and toImage().
 
-`var win = Ti.UI.createWindow({backgroundColor:` `'white'``});`
+```javascript
+var win = Ti.UI.createWindow({backgroundColor: 'white'});
+var myImage = Ti.UI.createImageView({
+  width: 100,
+  height: 100
+  image: 'foo.png' /* accepts URL, local path, or Ti.Filesystem.File */
+});
+/*
+// this would work:
+myImage.image = 'http://example.com/foo.png'
+// set myImage.defaultImage = 'localFoo.png' to show an image while the remote one is loading
 
-`var myImage = Ti.UI.createImageView({`
-
-`width:` `100``,`
-
-`height:` `100`
-
-`image:` `'foo.png'`  `/* accepts URL, local path, or Ti.Filesystem.File */`
-
-`});`
-
-`/*`
-
-`// this would work:`
-
-`myImage.image = 'http://example.com/foo.png'`
-
-`// set myImage.defaultImage = 'localFoo.png' to show an image while the remote one is loading`
-
-`// as would`
-
-`myImage.image = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory,'foo.png');`
-
-`*/`
-
-`win.add(myImage);`
-
-`win.open();`
+// as would
+myImage.image = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory,'foo.png');
+*/
+win.add(myImage);
+win.open();
+```
 
 If you specify a width and/or height property on the image, the image will be scaled to fit according to these considerations:
 
@@ -86,31 +75,23 @@ If you specify a width and/or height property on the image, the image will be sc
 
 You can display flipbook-style animations with the ImageView by assigning an array of images to the images property.
 
-`// from the Kitchen Sink, examples/image_view_animated.js`
+```javascript
+// from the Kitchen Sink, examples/image_view_animated.js
 
-`var images = [];`
+var images = [];
+for (var i = 1; i < 18; i++) {
+  images.push('../images/campFire' + ((i < 10) ? '0' + i:i)+'.gif');
+}
 
-`for` `(var i =` `1``; i <` `18``; i++) {`
-
-`images.push(``'../images/campFire'` `+ ((i <` `10``) ?` `'0'` `+ i:i)+``'.gif'``);`
-
-`}`
-
-`var imageView = Titanium.UI.createImageView({`
-
-`images: images,`
-
-`duration:` `100``,` `// in milliseconds, the time before next frame is shown`
-
-`repeatCount:` `0``,` `// 0 means animation repeats indefinitely, use > 1 to control repeat count`
-
-`top:` `0`
-
-`});`
-
-`// imageView.stop() would stop the animation`
-
-`// imageView.start() would start the animation again`
+var imageView = Titanium.UI.createImageView({
+  images: images,
+  duration: 100, // in milliseconds, the time before next frame is shown
+  repeatCount: 0,  // 0 means animation repeats indefinitely, use > 1 to control repeat count
+  top: 0
+});
+// imageView.stop() would stop the animation
+// imageView.start() would start the animation again
+```
 
 ### Density-specific images
 
@@ -144,17 +125,16 @@ To use both the display and device suffixes, add the display suffix first, follo
 
 In your code, reference the image without the suffix:
 
-`var img = Ti.UI.createImageView({`
-
-`image:` `'foo.png'`
-
-`/* logo@2x.png will be used automatically if it exists with retina devices */`
-
-`});`
+```javascript
+var img = Ti.UI.createImageView({
+  image: 'foo.png'
+  /* logo@2x.png will be used automatically if it exists with retina devices */
+});
+```
 
 On iOS, you can retrieve density-specific images from a remote URL as well. You will have to use Ti.Platform.displayCaps.logicalDensityFactor to build the URL to fetch the right image for the device. Then add the hires=true property to your ImageView to specify that the remote URL is a high-resolution image. Optionally, Set the img.defaultImage property equal to a _local_ image and it will be displayed while your remote image is being downloaded.
 
-Asset Catalog
+*Asset Catalog*
 
 Starting with Release 5.1.0, PNG and JPEG images following this naming convention will be added to an Asset Catalog to support App Thinning. When a user installs the application to their device, only the relevant images will be included. Note that you will not be able to access images added to the Asset Catalog from the filesystem, that is, you cannot use the Ti.Filesystem APIs or equivalent to access the files with a URL or path.
 
@@ -179,27 +159,19 @@ In order to grant access to pictures library for Windows Phone, you need to prov
 
 ##### Grant access to pictures library
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`...`
-
-`<``Capabilities``>`
-
-`<``Capability`  `Name``=``"picturesLibrary"` `/>`
-
-`</``Capabilities``>`
-
-`...`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  ...
+  <windows>
+    ...
+    <Capabilities>
+        <Capability Name="picturesLibrary" />
+    </Capabilities>
+    ...
+  </windows>
+  ...
+</ti:app>
+```
 
 For more information about audio configuration in tiapp.xml, see [Windows-specific](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#windows-specific) section in [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/).
 

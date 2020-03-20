@@ -56,7 +56,9 @@ For more tasks, see [API Builder Tools Project](#undefined).
 
 To create a new Arrow project, run the appc new command. The CLI will prompt you to fill in the necessary information to create a project, such as the name of the project. To create a new project with all the information specified in the command, run:
 
-`appc new -t arrow -n <PROJECT_NAME>`
+```bash
+appc new -t arrow -n <PROJECT_NAME>
+```
 
 ### Run an Arrow project
 
@@ -80,11 +82,11 @@ Once you have your development environment correctly configured, you can create 
 
 An alloy project will be created by default when the appc new command is run. The CLI will prompt you to fill in the necessary information to create a project, such as which platforms the application runs on and the name of the project. To create a new project with all the information specified in the command, run:
 
-`appc new -t app --``id` `<APP_ID> -n <APP_NAME>`
-
-`## Example`
-
-`appc new -t app --``id` `com.appcelerator.sample -n SampleProject`
+```bash
+appc new -t app --id <APP_ID> -n <APP_NAME>
+## Example
+appc new -t app --id com.appcelerator.sample -n SampleProject
+```
 
 A new app will be created for all supported platforms by default, depending on the operating system.
 
@@ -92,7 +94,9 @@ A new app will be created for all supported platforms by default, depending on t
 
 To create a classic Titanium project, follow the same directions when creating an Alloy project, except add the \--classic flag to generate a Titanium classic project.
 
-`appc` `new` `-t app --id <APP_ID> -n <APP_NAME> --classic`
+```bash
+appc new -t app --id <APP_ID> -n <APP_NAME> --classic
+```
 
 ### Build an Alloy or Titanium Classic project
 
@@ -127,7 +131,9 @@ To build for an emulator, run appc run -p android. Because no other options were
 
 To launch a specific Android or Genymotion emulator, add the \-C <EMULATOR\_NAME> option.
 
-`appc run -p android -C` `"Google Nexus 7 - 4.4.2 - API 19 - 800x1280"`
+```bash
+appc run -p android -C "Google Nexus 7 - 4.4.2 - API 19 - 800x1280"
+```
 
 To retrieve a list of Android or Genymotion emulators, run the ti info -p android command.
 
@@ -135,11 +141,11 @@ To retrieve a list of Android or Genymotion emulators, run the ti info -p androi
 
 To build for an Android device, connect your device to the computer with a USB cable, then run:
 
-`appc run -p android -T device -C <DEVICE_ID>`
-
-`## Example`
-
-`appc run -p android -T device -C deadbeef`
+```bash
+appc run -p android -T device -C <DEVICE_ID>
+## Example
+appc run -p android -T device -C deadbeef
+```
 
 #### iOS simulator
 
@@ -147,7 +153,9 @@ To build for an iOS simulator, run appc run -p ios. Because no other options wer
 
 To use a specific simulator, add the \-C <DEVICE\_UDID> option.
 
-`appc run -p ios -C` `"D27F9E87-7E09-48D8-9DD1-10277A0B51A"`
+```bash
+appc run -p ios -C "D27F9E87-7E09-48D8-9DD1-10277A0B51A"
+```
 
 To retrieve the simulator's UDID, run the appc ti info -p ios command.
 
@@ -159,13 +167,12 @@ The CLI allows you to install your application either to iTunes or directly to t
 
 To build for an iOS device, run:
 
-`appc run -p ios -T device -C <DEVICE_UDID> [-V` `"<DEVELOPER_CERTIFICATE_NAME>"` `-P <PROVISIONING_PROFILE_UUID>]`
-
-`## Example`
-
-`appc run -p ios -T device -C itunes -V` `"Loretta Martin (GE7BAC5)"` `-P` `"11111111-2222-3333-4444-555555555555"`
-
-`appc run -p ios -T device -C` `"iOS Device"` `-V` `"Loretta Martin (GE7BAC5)"` `-P` `"11111111-2222-3333-4444-555555555555"`
+```bash
+appc run -p ios -T device  -C <DEVICE_UDID> [-V "<DEVELOPER_CERTIFICATE_NAME>"  -P <PROVISIONING_PROFILE_UUID>]
+## Example
+appc run -p ios -T device -C itunes -V "Loretta Martin (GE7BAC5)" -P "11111111-2222-3333-4444-555555555555"
+appc run -p ios -T device -C "iOS Device" -V "Loretta Martin (GE7BAC5)" -P "11111111-2222-3333-4444-555555555555"
+```
 
 If you omit the \-V and \-P options, the CLI will prompt you with options. You can also retrieve the information from Xcode's Devices window or with the appc ti info -p ios command.
 
@@ -179,15 +186,15 @@ To build for a Windows Phone emulator, you need to obtain your Windows publisher
 
 To build for a Windows Phone emulator, run:
 
-`appc run -p windows [-C <DEVICE_UDID> -I <WINDOWS_PUBLISHER_ID>]`
-
-`## Example`
-
-`appc run -p windows -C 8-1-1 -I` `"CN=00000000-0000-1000-8000-000000000000"`
+```bash
+appc run -p windows [-C <DEVICE_UDID> -I <WINDOWS_PUBLISHER_ID>]
+## Example
+appc run -p windows -C 8-1-1 -I "CN=00000000-0000-1000-8000-000000000000"
+```
 
 If you omit any of the optional parameters, the CLI will prompt you with options.
 
-Windows Phone Publisher GUID
+*Windows Phone Publisher GUID*
 
 Prior to Release 5.0.0, you need to pass the \-G option with your Windows Phone Publisher GUID rather than using the \-I option with your Windows Publisher ID.
 
@@ -201,15 +208,15 @@ To build for a Windows Phone emulator, you need to obtain your Windows publisher
 
 To deploy to a Windows Phone device, connect the device to your computer with a USB cable, then run:
 
-`appc run -p windows -T wp-device [-C <DEVICE_UDID> -I <WINDOWS_PUBLISHER_ID>]`
-
-`## Example`
-
-`appc run -p windows -T wp-device -C 0 -I` `"CN=00000000-0000-1000-8000-000000000000"`
+```bash
+appc run -p windows -T wp-device [-C <DEVICE_UDID> -I <WINDOWS_PUBLISHER_ID>]
+## Example
+appc run -p windows -T wp-device -C 0 -I "CN=00000000-0000-1000-8000-000000000000"
+```
 
 If you omit any of the optional parameters, the CLI will prompt you with options.
 
-Windows Phone Publisher GUID
+*Windows Phone Publisher GUID*
 
 Prior to Release 5.0.0, you need to pass the \-G option with your Windows Phone Publisher GUID rather than using the \-I option with your Windows Publisher ID.
 
@@ -223,7 +230,9 @@ To deploy the application to your local Windows machine, you will need a certifi
 
 To deploy to your local machine, run:
 
-`appc run -p windows -T ws-``local` `[-R <PFX_CERTIFICATE_FILE> -P <PFX_PASSWORD> -I <WINDOWS_PUBLISHER_ID>]`
+```bash
+appc run -p windows -T ws-local [-R <PFX_CERTIFICATE_FILE> -P <PFX_PASSWORD> -I <WINDOWS_PUBLISHER_ID>]
+```
 
 If you omit any of the optional parameters, the CLI will prompt you with options. Prior to Release 5.0.0, the \-I option was not required.
 
@@ -237,11 +246,11 @@ Before packaging an APK file for distribution, you need to generate a keypair an
 
 To package an APK for Google Play, run:
 
-`appc run -p android -T dist-playstore [-K <KEYSTORE_FILE> -P <KEYSTORE_PASSWORD> -L <KEYSTORE_ALIAS> -O <OUTPUT_DIRECTORY>]`
-
-`## Example`
-
-`appc run -p android -T dist-playstore -K ~``/android``.keystore -P secret -L foo -O .``/dist/`
+```bash
+appc run -p android -T dist-playstore [-K <KEYSTORE_FILE> -P <KEYSTORE_PASSWORD> -L <KEYSTORE_ALIAS> -O <OUTPUT_DIRECTORY>]
+## Example
+appc run -p android -T dist-playstore -K ~/android.keystore -P secret -L foo -O ./dist/
+```
 
 If you omit any of the optional parameters, you will be prompted by the CLI to enter these values. If the password for the private key of the keystore is different from the password for the keystore, add the \--key-password <KEYPASS> option with the password of your private key.
 
@@ -251,11 +260,11 @@ Before packaging for the iOS ad hoc distribution, you need to generate a distrib
 
 To package an IPA file for Ad Hoc distribution, run:
 
-`appc run -p ios -T dist-adhoc [-R <DISTRIBUTION_CERTIFICATE_NAME> -P <PROVISIONING_PROFILE_UUID> -O <OUTPUT_DIRECTORY>]`
-
-`## Example`
-
-`appc run -p ios -T dist-adhoc -R` `"Pseudo, Inc."` `-P` `"FFFFFFFF-EEEE-DDDD-CCCC-BBBBBBBBBBBB"` `-O .``/dist/`
+```bash
+appc run -p ios -T dist-adhoc [-R <DISTRIBUTION_CERTIFICATE_NAME> -P <PROVISIONING_PROFILE_UUID> -O <OUTPUT_DIRECTORY>]
+## Example
+appc run -p ios -T dist-adhoc -R "Pseudo, Inc." -P "FFFFFFFF-EEEE-DDDD-CCCC-BBBBBBBBBBBB" -O ./dist/
+```
 
 If you omit any of the optional parameters, the CLI will prompt you with options.
 
@@ -267,11 +276,11 @@ If you are using Mac OS X 10.9 (Mavericks), make sure you grant CLI access to th
 
 To package an APP bundle for the iTunes store, run:
 
-`appc run -p ios -T dist-appstore [-R <DISTRIBUTION_CERTIFICATE_NAME> -P <PROVISIONING_PROFILE_UUID>]`
-
-`## Example`
-
-`appc run -p ios -T dist-appstore -R` `"Pseudo, Inc."` `-P` `"AAAAAAAA-0000-9999-8888-777777777777"`
+```bash
+appc run -p ios -T dist-appstore [-R <DISTRIBUTION_CERTIFICATE_NAME> -P <PROVISIONING_PROFILE_UUID>]
+## Example
+appc run -p ios -T dist-appstore -R "Pseudo, Inc." -P "AAAAAAAA-0000-9999-8888-777777777777"
+```
 
 The CLI installs the package to Xcode's Organizer and launches Organizer for you to start the submission process.
 
@@ -287,11 +296,13 @@ To package for the Windows Phone Store (ARM architecture), you need to obtain yo
 
 To package an APPX file for the Windows Phone Store, run:
 
-`appc run -p windows -T dist-phonestore [-I <WINDOWS_PUBLISHER_ID> -O <OUTPUT_DIRECTORY>]`
+```bash
+appc run -p windows -T dist-phonestore [-I <WINDOWS_PUBLISHER_ID> -O <OUTPUT_DIRECTORY>]
+```
 
 If you omit any of the optionals parameters, the CLI will prompt you with options.
 
-Windows Phone Publisher GUID
+*Windows Phone Publisher GUID*
 
 Prior to Release 5.0.0, you need to pass the \-G option with your Windows Phone Publisher GUID rather than using the \-I option with your Windows Publisher ID.
 
@@ -305,7 +316,9 @@ To package for the Windows Store (x86 architecture), you will need a certificate
 
 To package an APPX file for the Windows Store, run:
 
-`appc run -p windows -T dist-winstore [-I <WINDOWS_PUBLISHER_ID> -R <PFX_CERTIFICATE_FILE> -P <PFX_PASSWORD> -O <OUTPUT_DIRECTORY>]`
+```bash
+appc run -p windows -T dist-winstore [-I <WINDOWS_PUBLISHER_ID> -R <PFX_CERTIFICATE_FILE> -P <PFX_PASSWORD> -O <OUTPUT_DIRECTORY>]
+```
 
 If you omit any of the optional parameters, the CLI will prompt you with options. Prior to Release 5.0.0, the \-I was not required.
 
@@ -313,10 +326,9 @@ If you omit any of the optional parameters, the CLI will prompt you with options
 
 If you run into issues building your application, you may need to clean your build folder. Run the appc ti clean command or to clean for a specific platform, add the \-p <PLATFORM> option.
 
-`appc ti clean [-p <PLATFORM>]`
-
-`## Examples`
-
-`appc ti clean`
-
-`appc ti clean -p ios`
+```bash
+appc ti clean [-p <PLATFORM>]
+## Examples
+appc ti clean
+appc ti clean -p ios
+```

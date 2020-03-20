@@ -31,7 +31,7 @@ A master detail view, utilizing a native table view component and platform-speci
 
 ### Screenshots
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTh" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083145/MasterTemplate.png" alt="images/download/attachments/30083145/MasterTemplate.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083145/DetailTemplate.png" alt="images/download/attachments/30083145/DetailTemplate.png" class="confluence-embedded-image"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTh" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083145/MasterTemplate.png" alt="images/download/attachments/30083145/MasterTemplate.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083145/DetailTemplate.png" alt="images/download/attachments/30083145/DetailTemplate.png" class="confluence-embedded-image"></p></td></tr></tbody></table>
 
 ## Tabbed Application
 
@@ -39,4 +39,4 @@ A tabbed application, consisting of multiple stacks of windows associated with t
 
 ### Screenshots
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTh" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083145/TabbedApplicationMain.png" alt="images/download/attachments/30083145/TabbedApplicationMain.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083145/TabbedApplicationNewWindow.png" alt="images/download/attachments/30083145/TabbedApplicationNewWindow.png" class="confluence-embedded-image"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTh" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083145/TabbedApplicationMain.png" alt="images/download/attachments/30083145/TabbedApplicationMain.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083145/TabbedApplicationNewWindow.png" alt="images/download/attachments/30083145/TabbedApplicationNewWindow.png" class="confluence-embedded-image"></p></td></tr></tbody></table>

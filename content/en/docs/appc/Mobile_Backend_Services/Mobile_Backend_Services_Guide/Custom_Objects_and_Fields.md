@@ -36,93 +36,57 @@ If you would like to store additional custom data into any predefined MBS object
 
 For example, if you are using the Users API and want to store the age and favorite color of each user, include JSON encoding of custom\_fields.
 
-`custom_fields='{`
-
-`"age"``: 23,`
-
-`"favorite_color"``:` `"blue"`
-
-`}'`
+```
+custom_fields='{
+  "age": 23,
+  "favorite_color": "blue"
+}'
+```
 
 For example, to associate the above custom fields to users:
 
-`$ curl -b cookies.txt -c cookies.txt -X POST --data-urlencode` `"email=john.smith@company.com"` `--data-urlencode`
+```
+$ curl -b cookies.txt -c cookies.txt -X POST --data-urlencode "email=john.smith@company.com" --data-urlencode
+"role=teacher" --data-urlencode "first_name=John" --data-urlencode "last_name=Smith" --data-urlencode
+"password=pass" --data-urlencode "password_confirmation=pass" --data-urlencode 'custom_fields={"age":23,
+"favorite_color":"blue"}' https://api.cloud.appcelerator.com/v1/users/create.json?key=<YOUR APP APP KEY>
+{
+  "meta": {
+    "status": "ok",
+    "code": 200,
+    "method_name": "createUser",
+    "session_id": "xdqCplQqcXBq8WW1ir9nzq5U4nE"
+  },
+  "response": {
+    "users": [
+      {
+        "id": "4ec5907bd9ca72020c000005",
+        "first_name": "John",
+        "last_name": "Smith",
+        "created_at": "2011-11-17T22:53:48+0000",
+        "updated_at": "2011-11-17T22:53:48+0000",
+        "external_accounts": [
 
-`"role=teacher"` `--data-urlencode` `"first_name=John"` `--data-urlencode` `"last_name=Smith"` `--data-urlencode`
-
-`"password=pass"` `--data-urlencode` `"password_confirmation=pass"` `--data-urlencode 'custom_fields={``"age"``:23,`
-
-`"favorite_color"``:``"blue"``}' https:``//api.cloud.appcelerator.com/v1/users/create.json?key=<YOUR APP APP KEY>`
-
-`{`
-
-`"meta"``: {`
-
-`"status"``:` `"ok"``,`
-
-`"code"``: 200,`
-
-`"method_name"``:` `"createUser"``,`
-
-`"session_id"``:` `"xdqCplQqcXBq8WW1ir9nzq5U4nE"`
-
-`},`
-
-`"response"``: {`
-
-`"users"``: [`
-
-`{`
-
-`"id"``:` `"4ec5907bd9ca72020c000005"``,`
-
-`"first_name"``:` `"John"``,`
-
-`"last_name"``:` `"Smith"``,`
-
-`"created_at"``:` `"2011-11-17T22:53:48+0000"``,`
-
-`"updated_at"``:` `"2011-11-17T22:53:48+0000"``,`
-
-`"external_accounts"``: [`
-
-`],`
-
-`"role"``:` `"teacher"``,`
-
-`"email"``:` `"john.smith@company.com"``,`
-
-`"custom_fields"``: {`
-
-`"age"``: 23,`
-
-`"favorite_color"``:` `"blue"`
-
-`},`
-
-`"stats"``: {`
-
-`"photos"``: {`
-
-`"total_count"``: 0`
-
-`},`
-
-`"storage"``: {`
-
-`"used"``: 0`
-
-`}`
-
-`}`
-
-`}`
-
-`]`
-
-`}`
-
-`}`
+        ],
+        "role": "teacher",
+        "email": "john.smith@company.com",
+        "custom_fields": {
+          "age": 23,
+          "favorite_color": "blue"
+        },
+        "stats": {
+          "photos": {
+            "total_count": 0
+          },
+          "storage": {
+            "used": 0
+          }
+        }
+      }
+    ]
+  }
+}
+```
 
 Custom Data is returned in the custom\_fields JSON response field in the type that was specified. Attempting to define custom fields using invalid types or an incorrect naming convention will be silently ignored.
 
@@ -150,53 +114,42 @@ If a custom field's name or value exceeds this size, then no index entry for tha
 
 For instance, in the previous example, suppose the string value assigned to the model was greater than 1KB. If you queried the cars collection for objects whose model matched that value, no objects would be returned:
 
-`Cloud.Objects.query({`
-
-`classname:` `'cars'``,`
-
-`where: {`
-
-`make: {`
-
-`$regex:``"^That Really Long Model Name*"`
-
-`}`
-
-`}`
-
-`},` `function` `(e) {`
-
-`if` `(e.success) {`
-
-`console.log(e.cars.length);` `// 0`
-
-`}`
-
-`});`
+```javascript
+Cloud.Objects.query({
+    classname: 'cars',
+    where: {
+        make: {
+          $regex:"^That Really Long Model Name*"
+        }
+    }
+}, function (e) {
+      if (e.success) {
+        console.log(e.cars.length); // 0
+      }
+});
+```
 
 ## Geographic coordinates in custom fields
 
 To enable geographical searches, there is a predefined custom coordinates field for optionally storing geographic coordinates. The coordinates field can store a single location as an array ( \[longitude, latitude\] ) or multiple locations as an array of arrays ( \[\[longitude1,latitude1\], \[longitude2, latitude2\]\] ). So for the above example, to store location information about the user, we might have:
 
-`custom_fields = '{`
-
-`"color"``:` `"blue"``,`
-
-`"age"``: 23,`
-
-`"coordinates"``: [-122.1, 37.1]`
-
-`}'`
+```
+custom_fields = '{
+    "color": "blue",
+    "age": 23,
+    "coordinates": [-122.1, 37.1]
+}'
+```
 
 ### Remove a field
 
 If you wish to remove a custom field during an update, set the field value to null.
 
-`{`
-
-`"age"``:` `null`
-
-`}`
+```
+{
+  "age": null
+}
+```
 
 ### Querying custom fields
 
@@ -248,96 +201,60 @@ The following table lists the data types you can define with the iOS APS SDK:
 
 For example, if you want to create a user with custom fields, such as eye\_color, enrolled\_at, etc., you can put all the custom fields in an NSDictionary.
 
-`NSMutableDictionary *customFields = [NSMutableDictionary dictionary];`
+```
+NSMutableDictionary *customFields = [NSMutableDictionary dictionary];
+[customFields setObject:@"brown" forKey:@"eye_color"]; // set a string
+[customFields setObject:@"2011-11-02 17:07:37 -0700" forKey:@"enrolled_at"]; // set a date
+[customFields setObject:[NSNumber numberWithInt:23] forKey:@"age"]; // set a number
+[customFields setObject:[NSNumber numberWithBool:true] forKey:@"student"]; // set a boolean
+[customFields setObject:[NSArray arrayWithObjects:@"hiking", @"reading", nil] forKey:@"hobby"]; // set an array
+[customFields setObject:[NSDictionary dictionaryWithObjectsAndKeys:@"cookies", @"favorite", nil]
+forKey:@"others"];
 
-`[customFields setObject:@``"brown"` `forKey:@``"eye_color"``];` `// set a string`
+NSMutableDictionary *params = [NSMutableDictionary dictionary];
+[params setObject:@"john@usc.com" forKey:@"email"];
+[params setObject:@"John" forKey:@"first_name"];
+[params setObject:@"Woo" forKey:@"last_name"];
+[params setObject:@"pass" forKey:@"password"];
+[params setObject:@"pass" forKey:@"password_confirmation"];
+[params setObject:customFields forKey:@"custom_fields"]; // add custom fields
 
-`[customFields setObject:@``"2011-11-02 17:07:37 -0700"` `forKey:@``"enrolled_at"``];` `// set a date`
-
-`[customFields setObject:[NSNumber numberWithInt:23] forKey:@``"age"``];` `// set a number`
-
-`[customFields setObject:[NSNumber numberWithBool:``true``] forKey:@``"student"``];` `// set a boolean`
-
-`[customFields setObject:[NSArray arrayWithObjects:@``"hiking"``, @``"reading"``, nil] forKey:@``"hobby"``];` `// set an array`
-
-`[customFields setObject:[NSDictionary dictionaryWithObjectsAndKeys:@``"cookies"``, @``"favorite"``, nil]`
-
-`forKey:@``"others"``];`
-
-`NSMutableDictionary *params = [NSMutableDictionary dictionary];`
-
-`[params setObject:@``"john@usc.com"` `forKey:@``"email"``];`
-
-`[params setObject:@``"John"` `forKey:@``"first_name"``];`
-
-`[params setObject:@``"Woo"` `forKey:@``"last_name"``];`
-
-`[params setObject:@``"pass"` `forKey:@``"password"``];`
-
-`[params setObject:@``"pass"` `forKey:@``"password_confirmation"``];`
-
-`[params setObject:customFields forKey:@``"custom_fields"``];` `// add custom fields`
-
-`[APSUsers create:params withBlock:^(APSResponse *e){`
-
-`if` `(e.success) {`
-
-`NSArray *users = [e.response valueForKey:@``"users"``];`
-
-`if` `([users count] == 1) {`
-
-`NSDictionary *user = users[0];`
-
-`NSLog(@``"Successfully registered user %@"``, [user valueForKey:@``"email"``]);`
-
-`NSLog(@``"custom fields are %@"``, [user valueForKey:@``"custom_fields"``]);`
-
-`}`
-
-`}` `else` `{`
-
-`[[[UIAlertView alloc] initWithTitle:@``"Error"` `message:e.errorMessage delegate:nil`
-
-`cancelButtonTitle:@``"OK"` `otherButtonTitles:nil] show];`
-
-`}`
+[APSUsers create:params withBlock:^(APSResponse *e){
+    if (e.success) {
+        NSArray *users = [e.response valueForKey:@"users"];
+        if ([users count] == 1) {
+            NSDictionary *user = users[0];
+            NSLog(@"Successfully registered user %@", [user valueForKey:@"email"]);
+            NSLog(@"custom fields are %@", [user valueForKey:@"custom_fields"]);
+        }
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:e.errorMessage delegate:nil
+cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+```
 
 If you would like to use your custom data type, you need to provide a class method to JSON to encode the data of your object.
 
-`@interface MyObject : NSObject`
+```
+@interface MyObject : NSObject
+  @property NSString *color;
+  @property NSNumber *mileage;
+@end
 
-`@property NSString *color;`
+@implementation MyObject
+/*!
+ Converts the object to an encodable JSON object.
+ @return Object encodable as JSON, such as a NSDictionary or NSArray.
+ */
+- (id)toJSON
+{
+    return [NSDictionary dictionaryWithObjectsAndKeys:self.color, @"color", self.mileage, @"mileage", nil];
+}
+@end
 
-`@property NSNumber *mileage;`
-
-`@end`
-
-`@implementation MyObject`
-
-`/*!`
-
-`Converts the object to an encodable JSON object.`
-
-`@return Object encodable as JSON, such as a NSDictionary or NSArray.`
-
-`*/`
-
-`- (id)toJSON`
-
-`{`
-
-`return` `[NSDictionary dictionaryWithObjectsAndKeys:self.color, @``"color"``, self.mileage, @``"mileage"``, nil];`
-
-`}`
-
-`@end`
-
-`MyObject *object = [[MyObject alloc] init];`
-
-`object.color = @``"green"``;`
-
-`object.mileage = [NSNumber numberWithDouble:23.3];`
-
-`NSMutableDictionary *customFields = [NSMutableDictionary dictionary];`
-
-`[customFields setObject:[object toJSON] forKey:@``"MyObject"``];`
+MyObject *object = [[MyObject alloc] init];
+object.color = @"green";
+object.mileage = [NSNumber numberWithDouble:23.3];
+NSMutableDictionary *customFields = [NSMutableDictionary dictionary];
+[customFields setObject:[object toJSON] forKey:@"MyObject"];
+```

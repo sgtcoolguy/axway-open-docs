@@ -36,54 +36,39 @@ The _Mobile SDK_ command handler can also trigger a download and install process
 
 The following sample triggers a **request** for an SDK info. The _'sdk'_ variable can accept **android** and **ios** strings.
 
-`dispatch($H({`
-
-`controller:` `'portal.mobileSDK'``,`
-
-`action:` `"getSDKInfo"``,`
-
-`args: [sdk].toJSON()`
-
-`}).toJSON());`
+```
+dispatch($H({
+  controller: 'portal.mobileSDK',
+  action: "getSDKInfo",
+  args: [sdk].toJSON()
+}).toJSON());
+```
 
 When triggered, the Studio will perform the required checks and will later on send a notification to the portal by calling a JavaScript function _**eventsDispatcher.notify()**_ and passing an _**event**_ JSON into it.
 
 The portal should handle this by defining an _**eventsDispatcher**_ object that has a _**notify**_ function that accepts an argument.
 For example (taken from the _studio3-sdk_ repository):
 
-`var Events = {MOBILE_SDK :` `'mobileSDK'``};`
+```javascript
+var Events = {MOBILE_SDK : 'mobileSDK'};
+// Creates the eventsDispatcher which contains the notify() function.
+// IMPORTANT! The Studio expects the observable to be called 'eventsDispatcher', and
+// expects the eventsDispatcher function to be called 'notify()'. Do not change these names.
+var eventsDispatcher = new Observable();
 
-`// Creates the eventsDispatcher which contains the notify() function.`
-
-`// IMPORTANT! The Studio expects the observable to be called 'eventsDispatcher', and`
-
-`// expects the eventsDispatcher function to be called 'notify()'. Do not change these names.`
-
-`var eventsDispatcher =` `new` `Observable();`
-
-`/**`
-
-`* The Portal class`
-
-`*/`
-
-`var Portal = Class.create({`
-
-`initialize: function() {`
-
-`// Create the UI parts and render them`
-
-`this``.sdks =` `new` `MobileSDK();`
-
-`this``.sdks.render();`
-
-`// Add a Mobile SDKs observer to the dispatcher. Render the Mobile SDK table on a 'mobileSDK' events.`
-
-`eventsDispatcher.addObserver(Events.MOBILE_SDK, function(e) { portal.sdks.update(e); });`
-
-`}`
-
-`});`
+/**
+ * The Portal class
+ */
+var Portal = Class.create({
+  initialize: function() {
+    // Create the UI parts and render them
+    this.sdks = new MobileSDK();
+    this.sdks.render();
+    // Add a Mobile SDKs observer to the dispatcher. Render the Mobile SDK table on a 'mobileSDK' events.
+    eventsDispatcher.addObserver(Events.MOBILE_SDK, function(e) { portal.sdks.update(e); });
+  }
+});
+```
 
 The example above calls _portal.sdks.update(e);_ whenever the Studio fires a _mobileSDK_ event. The _update_ function than handles the event by reading the JSON content from it and re-render the UI.
 
@@ -96,35 +81,23 @@ The event that the Studio sends contains these fields:
 | data.sdkName | An 'sdkName' field inside the sdk-data. This field allows the JS part to determine the SDK type that this response is referring to. |
 | data.sdkInfo | The data JSON that the Studio collected for the SDK-Info request. That data may be later sent to be rendered on the UI |
 
-`update : function(sdkEvent) {`
-
-`if` `(sdkEvent[``"eventType"``] ==` `"response"``) {`
-
-`eventData = sdkEvent[``"data"``];`
-
-`sdkName = eventData[``"sdkName"``];`
-
-`sdkInfo = eventData[``"sdkInfo"``];`
-
-`if``(typeof (console) !==` `'undefined'``) {`
-
-`console.log(``"Got an update for the "` `+ sdkName +` `" SDK info."``);`
-
-`}`
-
-`if` `(sdkName ==` `"ios"``) {`
-
-`this``.renderIOS(sdkInfo);`
-
-`}` `else`  `if` `(sdkName ==` `"android"``) {`
-
-`this``.renderAndroid(sdkInfo);`
-
-`}`
-
-`}`
-
-`},`
+```
+update : function(sdkEvent) {
+  if (sdkEvent["eventType"] == "response") {
+    eventData = sdkEvent["data"];
+    sdkName = eventData["sdkName"];
+    sdkInfo = eventData["sdkInfo"];
+    if(typeof (console) !== 'undefined') {
+      console.log("Got an update for the " + sdkName + " SDK info.");
+    }
+    if (sdkName == "ios") {
+      this.renderIOS(sdkInfo);
+    } else if (sdkName == "android") {
+      this.renderAndroid(sdkInfo);
+    }
+  }
+},
+```
 
 ### Reading the SDK-Info
 
@@ -155,224 +128,129 @@ The SDK-info JSON object holds the following information:
 
 **Example (from the studio3\_sdk repository):**
 
-`/**`
-
-`* Render the Android SDK table, potentially replacing the previous content with an updated one.`
-
-`*/`
-
-`renderAndroid : function(androidVersionInfo) {`
-
-`mobileSDKDiv = $(``'mobileSDKs'``);`
-
-`with(Elements.Builder) {`
-
-`androidTable = table({`
-
-`"border"``:` `"1"``,`
-
-`"style"``:` `"border-collapse:collapse"`
-
-`},`
-
-`tbody(tr(`
-
-`td(``"Installed Platforms: "``),`
-
-`td(androidVersionInfo[``"installedPlatforms"``])),`
-
-`tr(`
-
-`td(``"Required Platforms: "``),`
-
-`td(androidVersionInfo[``"requiredPlatforms"``])),`
-
-`tr(`
-
-`td(``"Needs Platforms Update: "``),`
-
-`td(androidVersionInfo[``"shouldUpdatePlatforms"``])),`
-
-`tr(`
-
-`td(``"Installed Platform-Tools: "``),`
-
-`td(androidVersionInfo[``"installedPlatformTools"``])),`
-
-`tr(`
-
-`td(``"Required Platform-Tools: "``),`
-
-`td(androidVersionInfo[``"requiredPlatformTools"``])),`
-
-`tr(`
-
-`td(``"Needs Platform-Tools Update: "``),`
-
-`td(androidVersionInfo[``"shouldUpdatePlatformTools"``])),`
-
-`tr(`
-
-`td(``"Installed SDK-Tools: "``),`
-
-`td(androidVersionInfo[``"installedSDKTools"``])),`
-
-`tr(`
-
-`td(``"Required SDK-Tools: "``),`
-
-`td(androidVersionInfo[``"requiredSDKTools"``])),`
-
-`tr(`
-
-`td(``"Needs SDK-Tools Update: "``),`
-
-`td(androidVersionInfo[``"shouldUpdateSDKTools"``])),`
-
-`tr(`
-
-`td(``"Installed Add-Ons: "``),`
-
-`td(androidVersionInfo[``"installedAddOns"``])),`
-
-`tr(`
-
-`td(``"Required Add-Ons: "``),`
-
-`td(androidVersionInfo[``"requiredAddOns"``])),`
-
-`tr(`
-
-`td(``"Needs Add-Ons Update: "``),`
-
-`td(androidVersionInfo[``"shouldUpdateAddOns"``])),`
-
-`tr(`
-
-`td(``"SDK-Tools URL: "``),`
-
-`td(androidVersionInfo[``"sdkURL"``])),`
-
-`tr(`
-
-`td(``"Has JAVA_HOME Setting: "``),`
-
-`td(androidVersionInfo[``"hasJavaHome"``])),`
-
-`tr(`
-
-`td(``"Has JDK: "``),`
-
-`td(androidVersionInfo[``"hasJDK"``])),`
-
-`tr(`
-
-`td(``"JDK URL: "``),`
-
-`td(androidVersionInfo[``"jdkURL"``]))`
-
-`));`
-
-`// Create a div that wraps all of it, so we can easily replace the children on`
-
-`// render calls that were made as a result of an event handling.`
-
-`wrapperDiv = div({`
-
-`'id'``:` `'androidSDKDiv'`
-
-`});`
-
-`wrapperDiv.appendChild(div({`
-
-`"style"``:` `"color: red"`
-
-`},` `"=== Android ==="``));`
-
-`wrapperDiv.appendChild(androidTable);`
-
-`// An install/update Android link.`
-
-`// Note that for iOS we should just show install instructions.`
-
-`wrapperDiv.appendChild(div({`
-
-`"style"``:` `"color: red"`
-
-`},` `"=== Android Install/Update ==="``));`
-
-`installOrUpdate = table(tbody(tr(td(a({`
-
-`'href'` `:` `'#'`
-
-`},` `"Install/Update Android"``)))));`
-
-`wrapperDiv.appendChild(installOrUpdate);`
-
-`var prevContent = $(``'androidSDKDiv'``);`
-
-`if``(prevContent) {`
-
-`mobileSDKDiv.replaceChild(wrapperDiv, prevContent);`
-
-`}` `else` `{`
-
-`mobileSDKDiv.appendChild(wrapperDiv);`
-
-`}`
-
-`installOrUpdate.observe(``'click'``, function(e) {`
-
-`if``( typeof (console) !==` `'undefined'` `&& typeof (dispatch) !==` `'undefined'``) {`
-
-`console.log(``"Dispatching the 'execute' action on the 'portal.mobileSDK' controller..."``);`
-
-`dispatch($H({`
-
-`controller:` `'portal.mobileSDK'``,`
-
-`action:` `"installOrUpdateSDK"``,`
-
-`args: [``"Android"``].toJSON()`
-
-`}).toJSON());`
-
-`}`
-
-`return`  `false``;`
-
-`});`
-
-`}`
-
-`},`
+```javascript
+/**
+ * Render the Android SDK table, potentially replacing the previous content with an updated one.
+ */
+renderAndroid : function(androidVersionInfo) {
+  mobileSDKDiv = $('mobileSDKs');
+  with(Elements.Builder) {
+    androidTable = table({
+      "border": "1",
+      "style": "border-collapse:collapse"
+    },
+    tbody(tr(
+      td("Installed Platforms: "),
+      td(androidVersionInfo["installedPlatforms"])),
+    tr(
+      td("Required Platforms: "),
+      td(androidVersionInfo["requiredPlatforms"])),
+    tr(
+      td("Needs Platforms Update: "),
+      td(androidVersionInfo["shouldUpdatePlatforms"])),
+    tr(
+      td("Installed Platform-Tools: "),
+      td(androidVersionInfo["installedPlatformTools"])),
+    tr(
+      td("Required Platform-Tools: "),
+      td(androidVersionInfo["requiredPlatformTools"])),
+    tr(
+      td("Needs Platform-Tools Update: "),
+      td(androidVersionInfo["shouldUpdatePlatformTools"])),
+    tr(
+      td("Installed SDK-Tools: "),
+      td(androidVersionInfo["installedSDKTools"])),
+    tr(
+      td("Required SDK-Tools: "),
+      td(androidVersionInfo["requiredSDKTools"])),
+    tr(
+      td("Needs SDK-Tools Update: "),
+      td(androidVersionInfo["shouldUpdateSDKTools"])),
+    tr(
+      td("Installed Add-Ons: "),
+      td(androidVersionInfo["installedAddOns"])),
+    tr(
+      td("Required Add-Ons: "),
+      td(androidVersionInfo["requiredAddOns"])),
+    tr(
+      td("Needs Add-Ons Update: "),
+      td(androidVersionInfo["shouldUpdateAddOns"])),
+    tr(
+      td("SDK-Tools URL: "),
+      td(androidVersionInfo["sdkURL"])),
+    tr(
+      td("Has JAVA_HOME Setting: "),
+      td(androidVersionInfo["hasJavaHome"])),
+    tr(
+      td("Has JDK: "),
+      td(androidVersionInfo["hasJDK"])),
+    tr(
+      td("JDK URL: "),
+      td(androidVersionInfo["jdkURL"]))
+    ));
+    // Create a div that wraps all of it, so we can easily replace the children on
+    // render calls that were made as a result of an event handling.
+    wrapperDiv = div({
+      'id': 'androidSDKDiv'
+    });
+    wrapperDiv.appendChild(div({
+      "style": "color: red"
+    }, "=== Android ==="));
+    wrapperDiv.appendChild(androidTable);
+
+    // An install/update Android link.
+    // Note that for iOS we should just show install instructions.
+    wrapperDiv.appendChild(div({
+      "style": "color: red"
+    }, "=== Android Install/Update ==="));
+    installOrUpdate = table(tbody(tr(td(a({
+      'href' : '#'
+    }, "Install/Update Android")))));
+    wrapperDiv.appendChild(installOrUpdate);
+
+    var prevContent = $('androidSDKDiv');
+    if(prevContent) {
+      mobileSDKDiv.replaceChild(wrapperDiv, prevContent);
+    } else {
+      mobileSDKDiv.appendChild(wrapperDiv);
+    }
+    installOrUpdate.observe('click', function(e) {
+      if( typeof (console) !== 'undefined' && typeof (dispatch) !== 'undefined') {
+        console.log("Dispatching the 'execute' action on the 'portal.mobileSDK' controller...");
+        dispatch($H({
+          controller: 'portal.mobileSDK',
+          action: "installOrUpdateSDK",
+          args: ["Android"].toJSON()
+        }).toJSON());
+      }
+      return false;
+    });
+  }
+},
+```
 
 ## Trigger an Install/Update
 
 To trigger an SDK installation or Update, all that needs to be done is to call the _**installOrUpdateSDK**_ action, and passing the SDK type as an argument.
 For Example:
 
-`dispatch($H({`
-
-`controller:` `'portal.mobileSDK'``,`
-
-`action:` `"installOrUpdateSDK"``,`
-
-`args: [``"Android"``].toJSON()`
-
-`}).toJSON());`
+```
+dispatch($H({
+  controller: 'portal.mobileSDK',
+  action: "installOrUpdateSDK",
+  args: ["Android"].toJSON()
+}).toJSON());
+```
 
 For the Android installer, you may choose to force the installer UI even when the installed SDK matches the requirements. You do so by passing _'true'_ as a second command argument.
 
-`dispatch($H({`
-
-`controller:` `'portal.mobileSDK'``,`
-
-`action:` `"installOrUpdateSDK"``,`
-
-`args: [``"Android"``,` `true``].toJSON()`
-
-`}).toJSON());`
+```
+dispatch($H({
+  controller: 'portal.mobileSDK',
+  action: "installOrUpdateSDK",
+  args: ["Android", true].toJSON()
+}).toJSON());
+```
 
 (The example in the sections above shows the integration of this code when observing the link _click_ event)
 
@@ -381,15 +259,13 @@ For the Android installer, you may choose to force the installer UI even when th
 To trigger a 'manual' refresh for a specific SDK, all that needs to be done is to call the _**refreshSDK**_ action, and passing the SDK type as an argument.
 For Example:
 
-`dispatch($H({`
-
-`controller:` `'portal.mobileSDK'``,`
-
-`action:` `"refreshSDK"``,`
-
-`args: [``"Android"``].toJSON()`
-
-`}).toJSON());`
+```
+dispatch($H({
+  controller: 'portal.mobileSDK',
+  action: "refreshSDK",
+  args: ["Android"].toJSON()
+}).toJSON());
+```
 
 ## MobileWeb Browser Check
 

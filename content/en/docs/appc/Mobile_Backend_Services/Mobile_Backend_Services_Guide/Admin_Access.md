@@ -74,139 +74,81 @@ This admin operation is supported by any create, update and delete method, as we
 
 For example, the following curl command creates a new status for the specified user:
 
-`curl -b cookies.txt -c cookies.txt -F` `"su_id=520289441e1ef70b1a0236d2"` `-F` `"message=Hola, Mundo\!"`
+```
+curl -b cookies.txt -c cookies.txt -F "su_id=520289441e1ef70b1a0236d2" -F "message=Hola, Mundo\!"
+"api.cloud.appcelerator.com/v1/statuses/create.json?key=APP_API_KEY"
+{
+  "meta": {
+    "code": 200,
+    "status": "ok",
+    "method_name": "createStatus"
+  },
+  "response": {
+    "statuses": [
+      {
+        "id": "5202c1ed87173a0afc024524",
+        "message": "Hola, Mundo\\!",
+        "created_at": "2013-08-07T21:53:49+0000",
+        "updated_at": "2013-08-07T21:53:49+0000",
+        "user": {
+          "id": "520289441e1ef70b1a0236d2",
+          "created_at": "2013-08-07T17:52:04+0000",
+          "updated_at": "2013-08-07T17:52:04+0000",
+          "external_accounts": [
 
-`"api.cloud.appcelerator.com/v1/statuses/create.json?key=APP_API_KEY"`
-
-`{`
-
-`"meta"``: {`
-
-`"code"``: 200,`
-
-`"status"``:` `"ok"``,`
-
-`"method_name"``:` `"createStatus"`
-
-`},`
-
-`"response"``: {`
-
-`"statuses"``: [`
-
-`{`
-
-`"id"``:` `"5202c1ed87173a0afc024524"``,`
-
-`"message"``:` `"Hola, Mundo\\!"``,`
-
-`"created_at"``:` `"2013-08-07T21:53:49+0000"``,`
-
-`"updated_at"``:` `"2013-08-07T21:53:49+0000"``,`
-
-`"user"``: {`
-
-`"id"``:` `"520289441e1ef70b1a0236d2"``,`
-
-`"created_at"``:` `"2013-08-07T17:52:04+0000"``,`
-
-`"updated_at"``:` `"2013-08-07T17:52:04+0000"``,`
-
-`"external_accounts"``: [`
-
-`],`
-
-`"confirmed_at"``:` `"2013-08-07T17:52:04+0000"``,`
-
-`"username"``:` `"not_an_admin"``,`
-
-`"admin"``:` `"false"`
-
-`}`
-
-`}`
-
-`]`
-
-`}`
-
-`}`
+          ],
+          "confirmed_at": "2013-08-07T17:52:04+0000",
+          "username": "not_an_admin",
+          "admin": "false"
+        }
+      }
+    ]
+  }
+}
+```
 
 To verify that the specified user created this status and not the admin user, run the following curl command and compare the user IDs:
 
-`curl -b cookies.txt -c cookies.txt`
+```
+curl -b cookies.txt -c cookies.txt
+"https://api.cloud.appcelerator.com/v1/statuses/show.json?key=APP_API_KEY&status_id=5202c1ed87173a0afc024524"
+{
+  "meta": {
+    "code": 200,
+    "status": "ok",
+    "method_name": "showStatus"
+  },
+  "response": {
+    "statuses": [
+      {
+        "id": "5202c1ed87173a0afc024524",
+        "message": "Hola, Mundo\\!",
+        "created_at": "2013-08-07T21:53:49+0000",
+        "updated_at": "2013-08-07T21:53:49+0000",
+        "user": {
+          "id": "520289441e1ef70b1a0236d2",
+          "created_at": "2013-08-07T17:52:04+0000",
+          "updated_at": "2013-08-07T17:52:04+0000",
+          "external_accounts": [
 
-`"https://api.cloud.appcelerator.com/v1/statuses/show.json?key=APP_API_KEY&status_id=5202c1ed87173a0afc024524"`
-
-`{`
-
-`"meta"``: {`
-
-`"code"``: 200,`
-
-`"status"``:` `"ok"``,`
-
-`"method_name"``:` `"showStatus"`
-
-`},`
-
-`"response"``: {`
-
-`"statuses"``: [`
-
-`{`
-
-`"id"``:` `"5202c1ed87173a0afc024524"``,`
-
-`"message"``:` `"Hola, Mundo\\!"``,`
-
-`"created_at"``:` `"2013-08-07T21:53:49+0000"``,`
-
-`"updated_at"``:` `"2013-08-07T21:53:49+0000"``,`
-
-`"user"``: {`
-
-`"id"``:` `"520289441e1ef70b1a0236d2"``,`
-
-`"created_at"``:` `"2013-08-07T17:52:04+0000"``,`
-
-`"updated_at"``:` `"2013-08-07T17:52:04+0000"``,`
-
-`"external_accounts"``: [`
-
-`],`
-
-`"confirmed_at"``:` `"2013-08-07T17:52:04+0000"``,`
-
-`"username"``:` `"not_an_admin"``,`
-
-`"admin"``:` `"false"``,`
-
-`"stats"``: {`
-
-`"photos"``: {`
-
-`"total_count"``: 0`
-
-`},`
-
-`"storage"``: {`
-
-`"used"``: 0`
-
-`}`
-
-`}`
-
-`}`
-
-`}`
-
-`]`
-
-`}`
-
-`}`
+          ],
+          "confirmed_at": "2013-08-07T17:52:04+0000",
+          "username": "not_an_admin",
+          "admin": "false",
+          "stats": {
+            "photos": {
+              "total_count": 0
+            },
+            "storage": {
+              "used": 0
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+```
 
 ## Batch delete
 
@@ -218,23 +160,17 @@ Certain MBS objects can have dependencies on other objects. For example, when yo
 
 For example, the following deletes all User objects whose favorite\_color custom field is 'blue'.
 
-`$curl -b cookies.txt -c cookies.txt -X DELETE -F` `"where={\"favorite_color\":\"blue\"}"`
-
-`api.cloud.appcelerator.com/v1/user/batch_delete.json?key<API_KEY>&pretty_json=``true`
-
-`{`
-
-`"meta"``: {`
-
-`"status"``:` `"ok"``,`
-
-`"code"``: 200,`
-
-`"method_name"``:` `"adminBatchDelete"`
-
-`}`
-
-`}`
+```
+$curl -b cookies.txt -c cookies.txt -X DELETE -F "where={\"favorite_color\":\"blue\"}"
+ api.cloud.appcelerator.com/v1/user/batch_delete.json?key<API_KEY>&pretty_json=true
+ {
+  "meta": {
+    "status": "ok",
+    "code": 200,
+    "method_name": "adminBatchDelete"
+  }
+}
+```
 
 Note that the method returns an HTTP 200 code (success) even if the query matched no objects.
 
@@ -268,22 +204,16 @@ An application admin user can also drop a Custom Object collection using the adm
 
 For example, the following deletes the car collection:
 
-`$ curl -b c.txt -c c.txt -X DELETE`
-
-`"api.cloud.appcelerator.com/v1/objects/car/admin_drop_collection.json?key=hPkMYgNozXR8xegNvWjqBVTcWK8P5fIX"`
-
-`{`
-
-`"meta"``: {`
-
-`"status"``:` `"ok"``,`
-
-`"code"``: 200,`
-
-`"method_name"``:` `"dropCollection"`
-
-`}`
-
-`}`
+```
+$ curl -b c.txt -c c.txt -X DELETE
+"api.cloud.appcelerator.com/v1/objects/car/admin_drop_collection.json?key=hPkMYgNozXR8xegNvWjqBVTcWK8P5fIX"
+{
+  "meta": {
+    "status": "ok",
+    "code": 200,
+    "method_name": "dropCollection"
+  }
+}
+```
 
 Only Custom Objects support the drop custom collection method.

@@ -1,6 +1,6 @@
 {"title":"Authentication Schemes","weight":"30"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -42,61 +42,47 @@ The following describes the authentication mechanisms.
 
 In HTTP basic access authentication, the client needs to send a username and password, sent as a base64-encoded string "<username>:<password>", in the Authorization header of the HTTP request, for example:
 
-`GET api``/model` `HTTP``/1``.0`
-
-`Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==`
+```
+GET api/model HTTP/1.0
+Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
+```
 
 For API Builder applications, the username is the API key and the password field is left blank. For a Titanium application, you can construct the header and request as follows:
 
-`var` `xhr = Ti.Network.createHTTPClient({`
+```javascript
+var xhr = Ti.Network.createHTTPClient({
+    onload: function onLoad() {
+        alert("Loaded: " + this.status + ": " + this.responseText);
+    },
+    onerror: function onError() {
+        alert("Error: " + this.status + ": " + this.responseText);
+    }
+});
 
-`onload:` `function` `onLoad() {`
-
-`alert(``"Loaded: "` `+` `this``.status +` `": "` `+` `this``.responseText);`
-
-`},`
-
-`onerror:` `function` `onError() {`
-
-`alert(``"Error: "` `+` `this``.status +` `": "` `+` `this``.responseText);`
-
-`}`
-
-`});`
-
-`xhr.open(``"GET"``, REQUEST_URL);`
-
-`var` `authstr =` `'Basic '` `+ Ti.Utils.base64encode(API_KEY +` `':'``);`
-
-`xhr.setRequestHeader(``"Authorization"``, authstr);`
-
-`xhr.send();`
+xhr.open("GET", REQUEST_URL);
+var authstr = 'Basic ' + Ti.Utils.base64encode(API_KEY + ':');
+xhr.setRequestHeader("Authorization", authstr);
+xhr.send();
+```
 
 ## HTTP header authentication
 
 In HTTP header authentication, the client sends the API key in a custom APIKey header. The server must only support HTTPS requests, so the key is not sent as plain text (unencrypted).
 
-`var` `xhr = Ti.Network.createHTTPClient({`
+```javascript
+var xhr = Ti.Network.createHTTPClient({
+    onload: function onLoad() {
+        alert("Loaded: " + this.status + ": " + this.responseText);
+    },
+    onerror: function onError() {
+        alert("Error: " + this.status + ": " + this.responseText);
+    }
+});
 
-`onload:` `function` `onLoad() {`
-
-`alert(``"Loaded: "` `+` `this``.status +` `": "` `+` `this``.responseText);`
-
-`},`
-
-`onerror:` `function` `onError() {`
-
-`alert(``"Error: "` `+` `this``.status +` `": "` `+` `this``.responseText);`
-
-`}`
-
-`});`
-
-`xhr.open(``"GET"``, REQUEST_URL);`
-
-`xhr.setRequestHeader(``"APIKey"``, API_KEY);`
-
-`xhr.send();`
+xhr.open("GET", REQUEST_URL);
+xhr.setRequestHeader("APIKey", API_KEY);
+xhr.send();
+```
 
 ## LDAP
 
@@ -118,31 +104,22 @@ To use the plugin, you need to pass your LDAP settings to the ldap object in the
 
 **Example:**
 
-conf/default.js
+*conf/default.js*
 
-` module.exports = {`
-
-`...`
-
-`APIKeyAuthType:` `'ldap'``,`
-
-`ldap: {`
-
-`url:` `'ldap://ldap.foo.com:389'``,`
-
-`adminDn:` `'cn=read-only-admin,dc=example,dc=com'``,`
-
-`adminPassword:` `'password'``,`
-
-`searchBase:` `'dc=example,dc=com'``,`
-
-`searchFilter:` `'(uid={{username}})'`
-
-`},`
-
-`...`
-
-`}`
+```javascript
+module.exports = {
+    ...
+    APIKeyAuthType: 'ldap',
+    ldap: {
+        url: 'ldap://ldap.foo.com:389',
+        adminDn: 'cn=read-only-admin,dc=example,dc=com',
+        adminPassword: 'password',
+        searchBase: 'dc=example,dc=com',
+        searchFilter: '(uid={{username}})'
+    },
+    ...
+}
+```
 
 ## Custom authentication
 
@@ -162,112 +139,75 @@ In the conf/default.js file, set the APIKeyAuthPlugin key to the location of the
 
 For example, if your client applications send a custom header, called X-Secret, for each request and you want to check the value sent with the request against one stored in your configuration file, you can use the plugin below.
 
-conf/default.js
+*conf/default.js*
 
-`module.exports = {`
+```javascript
+module.exports = {
+    ...
+    APIKeyAuthType: 'plugin',
+    APIKeyAuthPlugin: './lib/plugin.js',
+    secret: 'secret',
+    ...
+}
+```
 
-`...`
+*lib/plugin.js*
 
-`APIKeyAuthType:` `'plugin'``,`
+```javascript
+// Constructor to get a reference to the config object
+function Plugin(server) {
+    this.config = server.config || {secret: null};
+}
 
-`APIKeyAuthPlugin:` `'./lib/plugin.js'``,`
+// Only validate requests to /api/foo
+Plugin.prototype.matchURL = function(request) {
+    return request.url.indexOf('/api/foo') !== 0;
+};
 
-`secret:` `'secret'``,`
+// Check if the request has the X-Secret header and its value matches the config file
+Plugin.prototype.validateRequest = function(request, response) {
+    if (request.headers['x-secret'] && request.headers['x-secret'] === this.config.secret) {
+        return true;
+    } else {
+        return false;
+    }
+};
 
-`...`
+// Add the X-Secret header for internal requests
+Plugin.prototype.applyCredentialsForTest = function(options) {
+    options.headers['x-secret'] = this.config.secret;
+};
 
-`}`
+// Do not process the response
+Plugin.prototype.applyResponseForTest = function(response, body) {
+    return body;
+};
 
-lib/plugin.js
+// Describe the x-security header for the Swagger 2.0 feed
+Plugin.prototype.getSwaggerSecurity = function () {
+  return {
+    securityDefinitions: {
+      app_auth: {
+        type: 'apiKey',
+        name: 'x-secret',
+        in: 'header',
+        description: 'Require authorized access to API'
+      }
+    },
+    security: [{
+      app_auth: []
+    }]
+  }
+}
 
-`// Constructor to get a reference to the config object`
-
-`function` `Plugin(server) {`
-
-`this``.config = server.config || {secret:` `null``};`
-
-`}`
-
-`// Only validate requests to /api/foo`
-
-`Plugin.prototype.matchURL =` `function``(request) {`
-
-`return` `request.url.indexOf(``'/api/foo'``) !== 0;`
-
-`};`
-
-`// Check if the request has the X-Secret header and its value matches the config file`
-
-`Plugin.prototype.validateRequest =` `function``(request, response) {`
-
-`if` `(request.headers[``'x-secret'``] && request.headers[``'x-secret'``] ===` `this``.config.secret) {`
-
-`return`  `true``;`
-
-`}` `else` `{`
-
-`return`  `false``;`
-
-`}`
-
-`};`
-
-`// Add the X-Secret header for internal requests`
-
-`Plugin.prototype.applyCredentialsForTest =` `function``(options) {`
-
-`options.headers[``'x-secret'``] =` `this``.config.secret;`
-
-`};`
-
-`// Do not process the response`
-
-`Plugin.prototype.applyResponseForTest =` `function``(response, body) {`
-
-`return` `body;`
-
-`};`
-
-`// Describe the x-security header for the Swagger 2.0 feed`
-
-`Plugin.prototype.getSwaggerSecurity =` `function` `() {`
-
-`return` `{`
-
-`securityDefinitions: {`
-
-`app_auth: {`
-
-`type:` `'apiKey'``,`
-
-`name:` `'x-secret'``,`
-
-`in``:` `'header'``,`
-
-`description:` `'Require authorized access to API'`
-
-`}`
-
-`},`
-
-`security: [{`
-
-`app_auth: []`
-
-`}]`
-
-`}`
-
-`}`
-
-`module.exports = Plugin;`
+module.exports = Plugin;
+```
 
 To test the plugin, add the \-H 'X-Secret: secret' command-line option to the cURL request.
 
-`$ curl` `"http://127.0.0.1:8080/api/foo"`
-
-`{``"id"``:``"com.appcelerator.api.unauthorized"``,``"message"``:``"Unauthorized"``,``"success"``:``false``}`
-
-`$ curl` `"http://127.0.0.1:8080/api/foo"` `-H` `'X-Secret: secret'`
-
-`{``"success"``:``true``,``"request-id"``:``"0d2141f7-57ea-4c78-82cf-b6fa9497c16a"``,` `"foo"``:``"bar"``}`
+```
+$ curl "http://127.0.0.1:8080/api/foo"
+{"id":"com.appcelerator.api.unauthorized","message":"Unauthorized","success":false}
+$ curl "http://127.0.0.1:8080/api/foo" -H 'X-Secret: secret'
+{"success":true,"request-id":"0d2141f7-57ea-4c78-82cf-b6fa9497c16a", "foo":"bar"}
+```

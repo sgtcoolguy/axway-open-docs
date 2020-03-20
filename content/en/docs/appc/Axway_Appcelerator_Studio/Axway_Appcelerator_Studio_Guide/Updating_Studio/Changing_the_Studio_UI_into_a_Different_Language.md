@@ -38,9 +38,10 @@ You can do either of the following to change the language of your user interface
 
     2. Add the option (see below for language options):
 
-        `-nl`
-
-        `Language-abbreviation`
+        ```
+        -nl
+        Language-abbreviation
+        ```
 
 3. Save and close, and restart Studio.
 

@@ -130,7 +130,9 @@ Download the appropriate Genymotion installer from [https://www.genymotion.com/d
 
 To enable support for Genymotion with the Titanium toolchain, you need to configure the Titanium CLI. If you have not modified the default installation of VirtualBox and Genymotion, you only need to set the genymotion.enabled value to true with the appc ti config command. If you are using Studio, restart Studio after updating the CLI configuration.
 
-`appc ti config genymotion.enabled` `true`
+```bash
+appc ti config genymotion.enabled true
+```
 
 The table below describes the default locations. If you have a custom installation of either VirtualBox or Genymotion, you need to set the below CLI options in order to use it with the Titanium toolchain.
 
@@ -164,11 +166,11 @@ Studio uses the configuration settings from the Titanium CLI to support Genymoti
 
 To launch an Android application on a Genymotion virtual device, run the following CLI command:
 
-`appc run -p android -C <GENYMOTION_AVD_NAME>`
-
-`## Example`
-
-`appc run -p android -C` `"Nexus 7 - 4.2.2 - API 17 - 800x1280"`
+```bash
+appc run -p android -C <GENYMOTION_AVD_NAME>
+## Example
+appc run -p android -C "Nexus 7 - 4.2.2 - API 17 - 800x1280"
+```
 
 Where <GENYMOTION\_AVD\_NAME> is the name given to the Genymotion virtual device when you downloaded it. To get a complete list of Android virtual devices, run the appc ti info -t android command. The Genymotion devices are listed at the end right before any warning messages.
 
@@ -206,29 +208,29 @@ In the screen shot below, there are three virtual devices to choose: a user-crea
 
 3. Restart adb, then restart Studio. To restart adb, from a terminal, run:
 
-    `adb kill-server`
-
-    `adb start-server`
+    ```
+    adb kill-server
+    adb start-server
+    ```
 
 ### Failed to start daemon
 
 When building an application, if the following error(s) is reported:
 
-`[ERROR] Error: Failed to start ADB (code` `255``): ADB server didn't ACK`
-
-`* failed to start daemon *`
+```
+[ERROR] Error: Failed to start ADB (code 255): ADB server didn't ACK
+* failed to start daemon *
+```
 
 or
 
-`adb server is out of date. killing...`
-
-`cannot bind` `'tcp:5037'`
-
-`ADB server didn't ACK`
-
-`* failed to start daemon *`
-
-`error:`
+```
+adb server is out of date.  killing...
+cannot bind 'tcp:5037'
+ADB server didn't ACK
+* failed to start daemon *
+error:
+```
 
 This indicates the ADB version shipped with Genymotion is out of date with the Android platform tools. To fix this issue, manually set the ADB tool to use in the Genymotion settings:
 

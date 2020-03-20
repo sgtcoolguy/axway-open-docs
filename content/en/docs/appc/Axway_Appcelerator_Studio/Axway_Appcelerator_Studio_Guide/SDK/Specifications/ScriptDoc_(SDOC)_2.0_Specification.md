@@ -88,37 +88,25 @@ Use the @alias tag to ID a class or function if you have used a "shorthand" way 
 
 This example shows the @alias tag used to id a function called fooBar in the FOO.Lib namespace.
 
-`FOO.Lib.update(FOO.Lib) {`
+```javascript
+FOO.Lib.update(FOO.Lib) {
 
-`/**`
-
-`* Returns a function that will return a number one greater than the previous returned value, starting at n.`
-
-`* @alias fooBar`
-
-`* @alias FOO.Lib.fooBar`
-
-`* @param {Object} n Number to start with. Default is 1.`
-
-`* @return {Function) Returns a function that will return a number one greater than the previous returned value.`
-
-`*/`
-
-`fooBar:` `function` `(n``/* = 1 */``) {`
-
-`if` `(arguments.length === 0) {`
-
-`n = 1;`
-
-`}`
-
-`return`  `function` `() {`
-
-`return` `n++;`
-
-`};`
-
-`},`
+/**
+ * Returns a function that will return a number one greater than the previous returned value, starting at n.
+ * @alias fooBar
+ * @alias FOO.Lib.fooBar
+ * @param {Object} n  Number to start with. Default is 1.
+ * @return {Function) Returns a function that will return a number one greater than the previous returned value.
+ */
+    fooBar: function (n/* = 1 */) {
+        if (arguments.length === 0) {
+            n = 1;
+        }
+        return function () {
+            return n++;
+        };
+    },
+```
 
 ### author
 
@@ -138,17 +126,14 @@ Use @author to credit the author of a JavaScript file or function.
 
 This example shows the @author tag used with the [@projectDescription](#projectdescription) and [@version](#version) tags to provide header information for a JavaScript file.
 
-`/**`
-
-`* @projectDescription Joe Smith's wonderful JavaScript library.`
-
-`*`
-
-`* @author Joe Smith jsmith@company.com`
-
-`* @version 0.1`
-
-`*/`
+```
+/**
+* @projectDescription   Joe Smith's wonderful JavaScript library.
+*
+* @author  Joe Smith jsmith@company.com
+* @version  0.1
+*/
+```
 
 ### classDescription
 
@@ -168,25 +153,18 @@ Use the @classDescription tag to give a short description of the class (if appli
 
 This example shows a sample documentation block for a basic Shape class.
 
-`/**`
-
-`* Create a new instance of Shape.`
-
-`*`
-
-`* @classDescription This class creates a new Shape.`
-
-`* @return {Shape} Returns a new Shape.`
-
-`* @type {Object}`
-
-`* @constructor`
-
-`*/`
-
-`function` `Shape() {`
-
-`}`
+```javascript
+/**
+* Create a new instance of Shape.
+*
+* @classDescription  This class creates a new Shape.
+* @return {Shape}  Returns a new Shape.
+* @type {Object}
+* @constructor
+*/
+function Shape() {
+}
+```
 
 ### constructor
 
@@ -206,23 +184,17 @@ Use the @constructor tag to signify that a function is a constructor if you are 
 
 This example shows a sample documentation block for a basic Shape class.
 
-`/**`
-
-`* Create a new instance of Shape.`
-
-`*`
-
-`* @classDescription This class creates a new Shape.`
-
-`* @return {Object} Returns a new Shape object.`
-
-`* @constructor`
-
-`*/`
-
-`function` `Shape() {`
-
-`}`
+```javascript
+/**
+* Create a new instance of Shape.
+*
+* @classDescription  This class creates a new Shape.
+* @return {Object}  Returns a new Shape object.
+* @constructor
+*/
+function Shape() {
+}
+```
 
 ### deprecated
 
@@ -242,17 +214,14 @@ Use the @deprecated tag to show that a function or a property has been deprecate
 
 This example shows a @deprecated tag added to a documentation block for a function.
 
-`/**`
-
-`* This function gets a foo by name.`
-
-`* @param {Object} fooName Name of the foo to retrieve.`
-
-`* @return {Object} Returns a new foo.`
-
-`* @deprecated`
-
-`*/`
+```javascript
+/**
+* This function gets a foo by name.
+* @param {Object}  fooName  Name of the foo to retrieve.
+* @return {Object}  Returns a new foo.
+* @deprecated
+*/
+```
 
 ### example
 
@@ -278,29 +247,20 @@ This example shows a documentation block for a "move" function that takes the ar
 
 tag set to format the example as code. (This example uses the @remarks tag to give more information about the function.)
 
-`/**`
-
-`* This` `function` `moves a layer` `in` `the specified direction.`
-
-`* @param {String} layerID The ID` `for` `the layer to be moved.`
-
-`* @param {String} direction The direction` `for` `the layer to be moved.`
-
-`* @param {Number} number Number of pixels to move the layer.`
-
-`* @remarks The direction argument can be` `"right"``,` `"left"``,` `"up"``, or` `"down"``.`
-
-`* You cannot move the layer beyond the boundaries of the browser window.`
-
-`* @example Using the move` `function`
-
-`* This example uses the move` `function` `to move myLayer to the right by 50 pixels.`
-
-`* move(myLayer, right, 50)`
-
-`* /`
-
-`function` `move(layerID, direction, number)`
+```javascript
+/**
+* This function moves a layer in the specified direction.
+* @param {String}  layerID  The ID for the layer to be moved.
+* @param {String}  direction  The direction for the layer to be moved.
+* @param {Number}  number  Number of pixels to move the layer.
+* @remarks The direction argument can be "right", "left", "up", or "down".
+*          You cannot move the layer beyond the boundaries of the browser window.
+* @example  Using the move function
+*           This example uses the move function to move myLayer to the right by 50 pixels.
+*           move(myLayer, right, 50)
+* /
+function move(layerID, direction, number)
+```
 
 ### exception
 
@@ -320,19 +280,15 @@ Use the @exception tag to specify any exceptions thrown by a function. You can s
 
 This example shows a function that throws two exceptions--a "MemoryException" and a "GeneralShapeException".
 
-`/**`
-
-`* This function creates a new Shape object.`
-
-`*`
-
-`* @exception {MemoryException} Throws a memory exception if out of memory.`
-
-`* @exception {GeneralShapeException} Throws a general shape exception if the object is not a shape.`
-
-`* @return {Object} Returns a new shape object.`
-
-`*/`
+```javascript
+/**
+* This function creates a new Shape object.
+*
+* @exception  {MemoryException}  Throws a memory exception if out of memory.
+* @exception  {GeneralShapeException}  Throws a general shape exception if the object is not a shape.
+* @return   {Object}  Returns a new shape object.
+*/
+```
 
 ### id
 
@@ -352,13 +308,12 @@ Use @id to link a function or property to its documentation in an external @sdoc
 
 This example shows an inline @id tag for the function foo.
 
-`/** @id */`
-
-`function` `foo() {`
-
-`alert(``"Foo!"``);`
-
-`}`
+```javascript
+/** @id */
+function foo() {
+   alert("Foo!");
+}
+```
 
 ### inherits
 
@@ -368,13 +323,16 @@ Applies to: Function
 
 **Syntax**
 
-`@inherits _functionNameA_`
-
-`@inherits _functionNameB_`
+```
+@inherits _functionNameA_
+ @inherits _functionNameB_
+```
 
 or
 
-`@inherits _functionNameA_, _functionNameB_`
+```
+@inherits _functionNameA_, _functionNameB_
+```
 
 **Description**
 
@@ -384,15 +342,14 @@ Use @inherits to indicate that one "class" subclasses another in object-oriented
 
 This example shows that bar inherits from foo.
 
-`function` `foo() {`
+```javascript
+function foo() {
+}
 
-`}`
-
-`/** @inherits foo */`
-
-`function` `bar() {`
-
-`}`
+/** @inherits foo */
+function bar() {
+}
+```
 
 ### internal
 
@@ -412,11 +369,11 @@ Specifies that a function or property should not be made visible by Content Assi
 
 This example shows an @internal tag.
 
-`/**`
-
-`* @internal`
-
-`*/`
+```
+/**
+* @internal
+*/
+```
 
 ### memberOf
 
@@ -436,15 +393,13 @@ Use the @memberOf tag to signify that a function is a member of the specified cl
 
 This example shows that the getFoo function is a member of the fooBar class.
 
-`/**`
-
-`* @memberOf fooBar`
-
-`*/`
-
-`function` `getFoo(){`
-
-`}`
+```javascript
+/**
+* @memberOf fooBar
+*/
+function getFoo(){
+}
+```
 
 ### method
 
@@ -464,11 +419,11 @@ Use the @method tag to signify a method of a class if you are coding in an objec
 
 This example shows a @method tag.
 
-`/**`
-
-`* @method`
-
-`*/`
+```
+/**
+* @method
+*/
+```
 
 ### namespace
 
@@ -490,11 +445,11 @@ This example shows how to use the @namespace tag to link the namespace of a libr
 
 The excerpt below would go at both the top of the library file that contains the "ajax" namespace for the "snazzyLib" library and the corresponding "ajax.sdoc" file that contains the documentation for the "ajax" namespace in snazzyLib:
 
-`/**`
-
-`* @namespace snazzyLib.ajax`
-
-`*/`
+```
+/**
+ * @namespace snazzyLib.ajax
+ */
+```
 
 ### param
 
@@ -516,31 +471,31 @@ _Standard example_
 
 The following example shows a parameter for a function that takes a String named myDog.
 
-`/**`
-
-`* @param {String} myDog The name of the dog.`
-
-`*/`
+```
+/**
+ * @param {String} myDog The name of the dog.
+ */
+```
 
 _Optional parameter example_
 
 The following example shows an optional parameter that can be either a String or a Date.
 
-`/**`
-
-`* @param {String, Date} [myDate] Specifies the date, if applicable.`
-
-`*/`
+```
+/**
+ * @param {String, Date} [myDate] Specifies the date, if applicable.
+ */
+```
 
 _Multiple objects example_
 
 The following example shows a parameter that can be one or more Strings.
 
-`/**`
-
-`* @param {String} ... Takes one or more dog parameters.`
-
-`*/`
+```
+/**
+ * @param {String} ... Takes one or more dog parameters.
+ */
+```
 
 ### private
 
@@ -560,15 +515,13 @@ Use the @private tag to signify that a class or function is private. The ScriptD
 
 This example shows a private function that returns a foo.
 
-`/**`
-
-`* This function creates a new foo.`
-
-`* @private`
-
-`* @return {Object} Returns a foo.`
-
-`*/`
+```javascript
+/**
+ * This function creates a new foo.
+ * @private
+ * @return {Object} Returns a foo.
+ */
+```
 
 ### projectDescription
 
@@ -588,17 +541,14 @@ Use the @projectDescription tag as the first tag in the first documentation bloc
 
 This example shows the @projectDescription tag used with the [@author](#author) and [@version](#version) tags to provide header information for a JavaScript file.
 
-`/**`
-
-`* @projectDescription This library contains a lot of classes and functions.`
-
-`*`
-
-`* @author Joe Smith jsmith@company.com`
-
-`* @version 0.1`
-
-`*/`
+```
+/**
+ * @projectDescription  This library contains a lot of classes and functions.
+ *
+ * @author   Joe Smith jsmith@company.com
+ * @version   0.1
+ */
+```
 
 ### property
 
@@ -618,17 +568,14 @@ Use the @property tag to indicate that the following member is a property (as op
 
 This example shows the @property tag being used to define a "myProperty" property on the MyClass class. The property contains a description and will be treated as a String.
 
-`/**`
-
-`* This is a property of class MyClass`
-
-`*`
-
-`* @alias MyClass.myProperty`
-
-`* @property {String}`
-
-`*/`
+```
+/**
+ * This is a property of class MyClass
+ *
+ * @alias MyClass.myProperty
+ * @property {String}
+ */
+```
 
 ### return
 
@@ -648,11 +595,11 @@ Applies to: Function
 
 This example shows a return value for a function that returns a new foo object.
 
-`/**`
-
-`* @return {Object} Returns a new foo object.`
-
-`*/`
+```
+/**
+ * @return {Object} Returns a new foo object.
+ */
+```
 
 ### see
 
@@ -674,31 +621,31 @@ _Function example_
 
 This example shows a link to a function named "foo" in the same class as the one being documented.
 
-`/**`
-
-`* @see #foo`
-
-`*/`
+```
+/**
+ * @see #foo
+ */
+```
 
 _Class example_
 
 This example shows a link to a class named "fooBar".
 
-`/**`
-
-`* @see fooBar`
-
-`*/`
+```
+/**
+ * @see fooBar
+ */
+```
 
 _Function in another class example_
 
 This example shows a link to a function named "foo" in another class named "fooBar".
 
-`/**`
-
-`* @see fooBar#foo`
-
-`*/`
+```
+/**
+ * @see fooBar#foo
+ */
+```
 
 ### since
 
@@ -718,19 +665,15 @@ Specifies since which version the library, function, or property became valid.
 
 This example shows a @since tag, used in conjunction with @projectDescription, @author, and @version tags. A documentation block like this would go at the top of a JavaScript file.
 
-`/**`
-
-`* @projectDescription This library contains a lot of classes and functions.`
-
-`*`
-
-`* @author Joe Smith jsmith@company.com`
-
-`* @version 1.1`
-
-`* @since 1.0`
-
-`*/`
+```
+/**
+ * @projectDescription  This library contains a lot of classes and functions.
+ *
+ * @author   Joe Smith jsmith@company.com
+ * @version   1.1
+ * @since  1.0
+ */
+```
 
 ### type
 
@@ -750,13 +693,12 @@ Specifies what data type a property is.
 
 This example uses the @type tag to show the type for a property.
 
-`/**`
-
-`* This property describes what type of shape an object is.`
-
-`* @type {Object} This property describes what type of shape an object is.`
-
-`*/`
+```
+/**
+ * This property describes what type of shape an object is.
+ * @type {Object} This property describes what type of shape an object is.
+ */
+```
 
 ### version
 
@@ -776,14 +718,11 @@ Specifies the version number of the JavaScript file or class.
 
 This example shows the @version tag used with the [@projectDescription](#projectdescription) and [@author](#author) tags to provide header information for a JavaScript file.
 
-`/**`
-
-`* @projectDescription A description of the file ahead`
-
-`*`
-
-`* @author Joe Smith jsmith@company.com`
-
-`* @version 0.1`
-
-`*/`
+```
+/**
+ * @projectDescription A description of the file ahead
+ *
+ * @author   Joe Smith jsmith@company.com
+ * @version   0.1
+ */
+```

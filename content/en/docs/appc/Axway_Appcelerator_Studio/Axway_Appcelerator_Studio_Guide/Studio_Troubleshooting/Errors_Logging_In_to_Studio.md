@@ -30,7 +30,9 @@ If you are unable to log in to Studio, please try the following diagnostic steps
 
 1. Try the to login using the appc login command or using the command below on the command line:
 
-    `curl -F` `"username=XXXX"` `-F` `"password=YYYY"` `https:``//dashboard``.appcelerator.com``/api/v1/auth/login`
+    ```
+    curl -F "username=XXXX" -F "password=YYYY" https://dashboard.appcelerator.com/api/v1/auth/login
+    ```
 
     (replacing XXXX and YYYY with your username and password. The username needs to be url-escaped, like user@company.com => user%40company.com)
 
@@ -50,9 +52,10 @@ If the exception generated is **javax.net.ssl.SSLHandshakeException**, **javax.n
 
 For **Appcelerator Studio**, on an OS X system, run:
 
-`openssl s_client -showcerts -connect dashboard.appcelerator.com:443 <``/dev/null` `2>``/dev/null``|openssl x509 -outform PEM >dashboard.pem`
-
-`sudo` `keytool -``import` `-keystore` `/System/Library/Java/Support/CoreDeploy``.bundle``/Contents/Home/lib/security/cacerts` `-``alias` `dashboard -``file` `dashboard.pem`
+```bash
+openssl s_client -showcerts -connect dashboard.appcelerator.com:443 </dev/null 2>/dev/null|openssl x509 -outform PEM >dashboard.pem
+sudo keytool -import -keystore /System/Library/Java/Support/CoreDeploy.bundle/Contents/Home/lib/security/cacerts -alias dashboard -file dashboard.pem
+```
 
 The first command downloads the server certificate, and the second command imports it to system Java's cacerts store.
 
@@ -90,39 +93,25 @@ If one of these issues matches your problem, try these suggestions to fix it:
 
 If Studio fails to save the user credentials, it prompts you to enter userId and password every time it is restarted. This could be resultant of either change in master password of OS secure keyring, or corrupted secured storage. To resolve this issue, please try the following diagnostic steps and verify whether they address the problem. The Studio log will have series of exceptions on similar lines:
 
-`!MESSAGE (Build 3.1.1.1364101697) [ERROR] Failed to save the signed-``in` `user`
-
-`!STACK 0`
-
-`org.eclipse.equinox.security.storage.StorageException: No password provided.`
-
-`at org.eclipse.equinox.internal.security.storage.SecurePreferencesRoot.getModulePassword(SecurePreferencesRoot.java:304)`
-
-`at org.eclipse.equinox.internal.security.storage.SecurePreferencesRoot.getPassword(SecurePreferencesRoot.java:224)`
-
-`at org.eclipse.equinox.internal.security.storage.SecurePreferences.put(SecurePreferences.java:224)`
-
-`at org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper.put(SecurePreferencesWrapper.java:110)`
-
-`at com.appcelerator.titanium.core.TitaniumUserManager.saveSignedInUser(TitaniumUserManager.java:474)`
-
-`at com.appcelerator.titanium.``rcp``.IDEWorkbenchWindowAdvisor.postWindowOpen(IDEWorkbenchWindowAdvisor.java:376)`
-
-`at org.eclipse.ui.internal.WorkbenchWindow.fireWindowOpened(WorkbenchWindow.java:1365)`
-
-`at org.eclipse.ui.internal.WorkbenchWindow.``open``(WorkbenchWindow.java:826)`
-
-`at org.eclipse.ui.internal.Workbench$70.runWithException(Workbench.java:3724)`
-
-`at org.eclipse.ui.internal.StartupThreading$StartupRunnable.run(StartupThreading.java:31)`
-
-`at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)`
-
-`at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)`
-
-`at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3563)`
-
-`at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3212)`
+```
+!MESSAGE (Build 3.1.1.1364101697) [ERROR]  Failed to save the signed-in user
+!STACK 0
+org.eclipse.equinox.security.storage.StorageException: No password provided.
+    at org.eclipse.equinox.internal.security.storage.SecurePreferencesRoot.getModulePassword(SecurePreferencesRoot.java:304)
+    at org.eclipse.equinox.internal.security.storage.SecurePreferencesRoot.getPassword(SecurePreferencesRoot.java:224)
+    at org.eclipse.equinox.internal.security.storage.SecurePreferences.put(SecurePreferences.java:224)
+    at org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper.put(SecurePreferencesWrapper.java:110)
+    at com.appcelerator.titanium.core.TitaniumUserManager.saveSignedInUser(TitaniumUserManager.java:474)
+    at com.appcelerator.titanium.rcp.IDEWorkbenchWindowAdvisor.postWindowOpen(IDEWorkbenchWindowAdvisor.java:376)
+    at org.eclipse.ui.internal.WorkbenchWindow.fireWindowOpened(WorkbenchWindow.java:1365)
+    at org.eclipse.ui.internal.WorkbenchWindow.open(WorkbenchWindow.java:826)
+    at org.eclipse.ui.internal.Workbench$70.runWithException(Workbench.java:3724)
+    at org.eclipse.ui.internal.StartupThreading$StartupRunnable.run(StartupThreading.java:31)
+    at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+    at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+    at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3563)
+    at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3212)
+```
 
 Deleting the secure storage from Studio
 

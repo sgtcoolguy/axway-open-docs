@@ -1,6 +1,6 @@
 {"title":"Platform Marketplace","weight":"40"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -52,11 +52,15 @@ To install a service connector:
 
 3. From the project directory, execute the following command to install the HTTP communication module:
 
-    `npm i requester-ce`
+    ```bash
+    npm i requester-ce
+    ```
 
 4. From the project directory, execute the following command:
 
-    `appc run`
+    ```bash
+    appc run
+    ```
 
 5. Open the API Orchestration flow editor in the API Builder Console and verify that the service connector is listed and is available for use in flow-node flows.
 

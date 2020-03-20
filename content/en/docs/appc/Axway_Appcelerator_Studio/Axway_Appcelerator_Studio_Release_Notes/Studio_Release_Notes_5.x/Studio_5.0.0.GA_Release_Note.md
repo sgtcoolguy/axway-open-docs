@@ -114,7 +114,9 @@ As of this release, Studio 4.x will not be supported one calendar year from 5.0.
 
         3. Force Studio to use jdk1.8.0\_131.jdk by adding the following \-vm argument before the \-vmargs entry:
 
-            `-vm /Library/Java/JavaVirtualMachines/jdk1.``8``.0_131.jdk/Contents/Home/bin/java`
+            ```
+            -vm /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/bin/java
+            ```
 
         4. Restart Studio.
 

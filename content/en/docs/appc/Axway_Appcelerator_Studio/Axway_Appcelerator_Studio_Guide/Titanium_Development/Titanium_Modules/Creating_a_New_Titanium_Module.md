@@ -36,7 +36,7 @@ As an additional note, you need to make sure the path to your Studio workspace d
 
 Creating a new module is accomplished by running through a wizard. Below summarizes the properties required, and a description of the values.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>Property</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Description/Purpose</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>moduleid</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a read-only module id of your module that is generated when you created your project. You should not edit this value.</p><div class="confbox admonition admonition-note aui-message warning shadowed information-macro"><p>You must generate a unique id. We recommend using your reverse-DNS company name + module_name as a pattern to guarantee uniqueness. The Titanium Marketplace will only allow unique module ids when distributing modules. If you must edit this value, you must also edit the value in your module implementation file.</p></div></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>version</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is the version of your module. You should change this value each time you make major changes and distribute them. Version should be in the dotted notation (X.Y.Z) and must not con-tain any spaces or non-number characters.</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>description</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable description of your module. It should be short and suitable for display next to your module name.</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>author</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable author name you want to display next to your module. It can simply be your personal name or an organizational name such as "Appcelerator".</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>license</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable name of your license. You should use a short description such as "Apache Public License" or "Commercial".</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>copyright</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable copyright string for your module. For example, "Copyright (c) 2010 by Appcelerator, Inc."</p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>Property</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Description/Purpose</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>moduleid</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a read-only module id of your module that is generated when you created your project. You should not edit this value.</p><div class="confbox admonition admonition-note aui-message warning shadowed information-macro"><p>You must generate a unique id. We recommend using your reverse-DNS company name + module_name as a pattern to guarantee uniqueness. The Titanium Marketplace will only allow unique module ids when distributing modules. If you must edit this value, you must also edit the value in your module implementation file.</p></div></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>version</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is the version of your module. You should change this value each time you make major changes and distribute them. Version should be in the dotted notation (X.Y.Z) and must not con-tain any spaces or non-number characters.</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>description</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable description of your module. It should be short and suitable for display next to your module name.</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>author</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable author name you want to display next to your module. It can simply be your personal name or an organizational name such as "Appcelerator".</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>license</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable name of your license. You should use a short description such as "Apache Public License" or "Commercial".</p></td></tr><tr><td class="confluenceTh" rowspan="1" colspan="1"><p>copyright</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable copyright string for your module. For example, "Copyright (c) 2010 by Appcelerator, Inc."</p></td></tr></tbody></table>
 
 ### Module Creation Steps
 
@@ -72,21 +72,21 @@ You may then choose to deploy the module for all projects, or for a specific pro
 
 #### Your Android application project path contains spaces
 
-`[exec] Android NDK: Your Android application project path contains spaces:` `'/Users/username/Documents/Aptana Studio 3 Workspace/testModule/build/generated'`
-
-`[exec] Android NDK: The Android NDK build cannot work here. Please move your project to a different location.`
-
-`[exec] /Users/username/Documents/android-ndk-r7/build/core/build-local.mk:``109``: *** Android NDK: Aborting. . Stop.`
+```
+[exec] Android NDK: Your Android application project path contains spaces: '/Users/username/Documents/Aptana Studio 3 Workspace/testModule/build/generated'
+[exec] Android NDK: The Android NDK build cannot work here. Please move your project to a different location.
+[exec] /Users/username/Documents/android-ndk-r7/build/core/build-local.mk:109: *** Android NDK: Aborting.    .  Stop.
+```
 
 You need to change your Studio workspace to not have spaces in the path. See the top of the page for information on how to do that.
 
 #### Android.ndk property is not set
 
-`BUILD FAILED`
-
-`/Library/Application Support/Titanium/mobilesdk/osx/``1.8``.``0.1``/module/android/build.xml:``192``: The following error occurred` `while` `executing` `this` `line:`
-
-`/Library/Application Support/Titanium/mobilesdk/osx/``1.8``.``0.1``/module/android/build.xml:``175``: Neither the ANDROID_NDK environment variable, or the android.ndk property is not set to an existing Android NDK installation (check your module's build.properties)`
+```
+BUILD FAILED
+/Library/Application Support/Titanium/mobilesdk/osx/1.8.0.1/module/android/build.xml:192: The following error occurred while executing this line:
+/Library/Application Support/Titanium/mobilesdk/osx/1.8.0.1/module/android/build.xml:175: Neither the ANDROID_NDK environment variable, or the android.ndk property is not set to an existing Android NDK installation (check your module's build.properties)
+```
 
 If you see this, you need to add android.ndk to the build.properties file. Set it to the path where you installed the NDK to begin with.
 

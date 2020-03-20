@@ -40,11 +40,12 @@ For this release, existing clusters are required to upgrade Docker to version 17
 
     * Note: if you don't set swarm\_manager\_hosts or it contains less than three hosts, you will receive a warning message to the effect of this:
 
-        `WARN[``2017``-``07``-``14`  `14``:``39``:``22``] You did not specify dedicated swarm manager hosts. For production environment, there should be at least` `3` `dedicated swarm managers. You should maintain an odd number of managers in the swarm to support manager node failures.`
+        ```
+        WARN[2017-07-14 14:39:22] You did not specify dedicated swarm manager hosts. For production environment, there should be at least 3 dedicated swarm managers. You should maintain an odd number of managers in the swarm to support manager node failures.
 
-        `Enter` `'y'``/``'yes'` `to` `continue` `OR` `'n'``/``'no'` `to exit, then hit enter:`
-
-        `If your cluster is non production, enter yes to` `continue``.`
+        Enter 'y'/'yes' to continue OR 'n'/'no' to exit, then hit enter:
+        If your cluster is non production, enter yes to continue.
+        ```
 
     * Usage: swarm\_manager\_hosts:\["ip1", "ip2",...\]
 

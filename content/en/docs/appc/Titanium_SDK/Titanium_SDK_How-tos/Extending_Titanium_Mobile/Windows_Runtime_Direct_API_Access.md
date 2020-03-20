@@ -38,61 +38,49 @@ Before using an API make sure it can be supported first. Open the [API reference
 
 To include a WinRT C++ class, pass the fully qualified class name to the require() method. Do not pass variables or concatenated strings that evaluate to the class name to the require() call. The Titanium SDK looks specifically for any string literals that start with Windows. in order to include the class when building the application.
 
-`// WILL WORK`
+```javascript
+// WILL WORK
+var win = require('Windows.UI.Xaml.Window');
 
-`var` `win = require(``'Windows.UI.Xaml.Window'``);`
+// WILL NOT WORK
+var window_class = 'Windows.UI.Xaml.Window',
+    win = require(win_class);
 
-`// WILL NOT WORK`
-
-`var` `window_class =` `'Windows.UI.Xaml.Window'``,`
-
-`win = require(win_class);`
-
-`var` `windows_ui_xaml_ns =` `'Windows.UI.Xaml'``,`
-
-`win = require(windows_ui_xaml_ns +` `'Window'``);`
+var windows_ui_xaml_ns = 'Windows.UI.Xaml',
+    win = require(windows_ui_xaml_ns + 'Window');
+```
 
 After requiring in the class, you can invoke API calls:
 
-`var` `Window = require(``'Windows.UI.Xaml.Window'``),`
+```javascript
+var Window = require('Windows.UI.Xaml.Window'),
+    TextBlock = require('Windows.UI.Xaml.Controls.TextBlock'),
+    window = Window.Current,
+    text = new TextBlock();
+    text.Text = "Click me, please!";
 
-`TextBlock = require(``'Windows.UI.Xaml.Controls.TextBlock'``),`
-
-`window = Window.Current,`
-
-`text =` `new` `TextBlock();`
-
-`text.Text =` `"Click me, please!"``;`
-
-`// For enum values, you do not need to require in the class`
-
-`// See the next section`
-
-`text.TextAlignment = Windows.UI.Xaml.TextAlignment.Center;`
-
-`text.VerticalAlignment = Windows.UI.Xaml.VerticalAlignment.Center;`
-
-`text.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Center;`
-
-`text.FontSize = 60;`
-
-`window.Content = text;`
-
-`window.Activate();`
+// For enum values, you do not need to require in the class
+// See the next section
+text.TextAlignment = Windows.UI.Xaml.TextAlignment.Center;
+text.VerticalAlignment = Windows.UI.Xaml.VerticalAlignment.Center;
+text.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Center;
+text.FontSize = 60;
+window.Content = text;
+window.Activate();
+```
 
 ### Enumerations
 
 Enumerations in WinRT are exposed automatically for you when you require any API that may use that enumeration. For example, the Windows.UI.Xaml.TextAlignment, Windows.UI.Xaml.VerticalAlignment and Windows.UI.Xaml.HorizontalAlignment enum values will automatically be included when you require Windows.UI.Xaml.Controls.TextBlock.
 
-`var` `TextBlock = require(``'Windows.UI.Xaml.Controls.TextBlock'``),`
+```javascript
+var TextBlock = require('Windows.UI.Xaml.Controls.TextBlock'),
+    text = new TextBlock();
 
-`text =` `new` `TextBlock();`
-
-`text.TextAlignment = Windows.UI.Xaml.TextAlignment.Center;`
-
-`text.VerticalAlignment = Windows.UI.Xaml.VerticalAlignment.Center;`
-
-`text.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Center;`
+text.TextAlignment = Windows.UI.Xaml.TextAlignment.Center;
+text.VerticalAlignment = Windows.UI.Xaml.VerticalAlignment.Center;
+text.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Center;
+```
 
 ### Event handling
 
@@ -100,23 +88,23 @@ Event handling follows the JavaScript syntax by adding and removing event handle
 
 In C++, you would create an event handler and assign it to an event property of a Windows object or class.
 
-DO NOT USE C++ Syntax
+*DO NOT USE C++ Syntax*
 
-`click_event_ = component->Tapped += ref` `new` `TappedEventHandler([``this``, ctx](Platform::Object^ sender, TappedRoutedEventArgs^ e) {`
-
-`// do something`
-
-`});`
+```
+click_event_ = component->Tapped += ref new TappedEventHandler([this, ctx](Platform::Object^ sender, TappedRoutedEventArgs^ e) {
+    // do something
+});
+```
 
 In JavaScript, invoke the addEventListener() method on the Windows object or class, and pass the event name and event handler to the method.
 
-Use JavaScript Syntax
+*Use JavaScript Syntax*
 
-`component.addEventListener(``'Tapped'``,` `function``(e) {`
-
-`// do something`
-
-`});`
+```
+component.addEventListener('Tapped', function(e) {
+    // do something
+});
+```
 
 ### Async return types
 
@@ -126,23 +114,17 @@ For methods that return an asynchronous return type, the operation will be wrapp
 
 After invoking the method, chain either the then(fulfilledFunction, rejectedFunction) or catch(rejectedFunction) method to the invoked WinRT method to handle the response after the operation completes.
 
-`var` `PathIO = require(``'Windows.Storage.PathIO'``);`
-
-`PathIO.ReadTextAsync(``'ms-appdata:///somefile.txt'``).then(`
-
-`function` `(content) {`
-
-`alert(content);`
-
-`},`
-
-`function` `(err) {`
-
-`alert(``'It failed!'``);`
-
-`}`
-
-`);`
+```javascript
+var PathIO = require('Windows.Storage.PathIO');
+PathIO.ReadTextAsync('ms-appdata:///somefile.txt').then(
+    function (content) {
+        alert(content);
+    },
+    function (err) {
+        alert('It failed!');
+    }
+);
+```
 
 ### Mix WinRT APIs with Titanium APIs
 

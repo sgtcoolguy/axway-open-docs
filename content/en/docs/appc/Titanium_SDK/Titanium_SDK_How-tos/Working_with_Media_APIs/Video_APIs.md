@@ -36,25 +36,18 @@ You can play local video files by calling the setMedia() method or by setting th
 
 The VideoPlayer is treated like a regular Titanium View. Thus, you can overlay images and views over the VideoPlayer by adding them to the view hierarchy. Like this:
 
-`var activeMovie = Titanium.Media.createVideoPlayer();`
-
-`// create a label`
-
-`var movieLabel = Titanium.UI.createLabel({`
-
-`text:` `'Do not try this at home'``,`
-
-`height:` `35``,`
-
-`color:` `'white'``,`
-
-`font: {fontSize:` `24``, fontFamily:` `'Helvetica Neue'``}`
-
-`});`
-
-`// add label to view`
-
-`activeMovie.add(movieLabel);`
+```javascript
+var activeMovie = Titanium.Media.createVideoPlayer();
+// create a label
+var movieLabel = Titanium.UI.createLabel({
+  text: 'Do not try this at home',
+  height: 35,
+  color: 'white',
+  font: {fontSize: 24, fontFamily: 'Helvetica Neue'}
+});
+// add label to view
+activeMovie.add(movieLabel);
+```
 
 ### Fullscreen and embedded players
 
@@ -64,13 +57,12 @@ On iOS, you can embed the video player within a window or view; it doesn't have 
 
 You can control the way in which the video playback controls are shown for the player. You can "embed" the within the player, which removes them from the player's surrounding chrome giving more space to your video. You do so by setting the movieControlStyle property, like this
 
-`var` `activeMovie = Titanium.Media.createVideoPlayer({`
-
-`url:` `'../movie.mp4'``,`
-
-`movieControlStyle: Titanium.Media.VIDEO_CONTROL_EMBEDDED`
-
-`});`
+```javascript
+var activeMovie = Titanium.Media.createVideoPlayer({
+  url: '../movie.mp4',
+  movieControlStyle: Titanium.Media.VIDEO_CONTROL_EMBEDDED
+});
+```
 
 ### Movie events
 
@@ -84,11 +76,11 @@ The VideoPlayer supports quite a few events that you can use to control the play
 
 A technique you should consider is stopping the movie when the video it's embedded in closes. You can do that simply with code like this:
 
-`win.addEventListener(``'close'``,` `function``() {`
-
-`activeMovie.stop();`
-
-`});`
+```
+win.addEventListener('close', function() {
+  activeMovie.stop();
+});
+```
 
 ### Hands-on practice
 
@@ -120,7 +112,7 @@ In this activity, you will write a simple app to stream a movie from a remote UR
 
 6. Build and test your app in the simulator/emulator or on device.
 
-Simulator / emulator rotation
+*Simulator / emulator rotation*
 
 Rotate the iPhone simulator by pressing Command and either the left or right arrow key. Rotate the Android emulator by pressing Control+F12.
 
@@ -132,53 +124,36 @@ In order to enable camera and audio recording for Windows Phone, you need to pro
 
 #### Grant access to video stream and audio stream
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`...`
-
-`<``Capabilities``>`
-
-`<``DeviceCapability`  `Name``=``"microphone"` `/>`
-
-`<``DeviceCapability`  `Name``=``"webcam"` `/>`
-
-`</``Capabilities``>`
-
-`...`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  ...
+  <windows>
+    ...
+    <Capabilities>
+        <DeviceCapability Name="microphone" />
+        <DeviceCapability Name="webcam" />
+    </Capabilities>
+    ...
+  </windows>
+  ...
+</ti:app>
+```
 
 #### Grant access to music library
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`...`
-
-`<``Capabilities``>`
-
-`<``Capability`  `Name``=``"musicLibrary"` `/>`
-
-`</``Capabilities``>`
-
-`...`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  ...
+  <windows>
+    ...
+    <Capabilities>
+        <Capability Name="musicLibrary" />
+    </Capabilities>
+    ...
+  </windows>
+  ...
+</ti:app>
+```
 
 For more information about audio configuration in tiapp.xml, see [Windows-specific section](#!/guide/tiapp.xml_and_timodule.xml_Reference-section-29004921_tiapp.xmlandtimodule.xmlReference-Windows-specificsection) in [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/).
 

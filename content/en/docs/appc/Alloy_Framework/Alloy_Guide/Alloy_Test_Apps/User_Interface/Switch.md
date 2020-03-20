@@ -2,7 +2,7 @@
 
 Demonstrates how to use a Switch element.
 
-Example App Source Location
+*Example App Source Location*
 
 You can find this example app in the Alloy repository under [samples/apps/ui/switch](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/switch). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
 
@@ -18,71 +18,47 @@ The following screenshots show the sample app running on Android and iOS.
 
 The main index.xml view displays a default Switch control that appears on all platforms, a titled switch that appears on Android and mobile web, and a checkbox style switch that only appears on Android.
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<!-- just the default switch, works on all platforms -->`
-
-`<``Switch``/>`
-
-`<!-- switch with some platform-specific styling -->`
-
-`<``Switch`  `class``=``"titles"`  `platform``=``"android,mobileweb"``/>`
-
-`<!-- an android checkbox -->`
-
-`<``Switch`  `class``=``"checkbox"`  `platform``=``"android"``/>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+  <Window>
+    <!-- just the default switch, works on all platforms -->
+    <Switch/>
+    <!-- switch with some platform-specific styling -->
+    <Switch class="titles" platform="android,mobileweb"/>
+    <!-- an android checkbox -->
+    <Switch class="checkbox" platform="android"/>
+    </Window>
+</Alloy>
+```
 
 The main XML view's TSS file defines the initial [value](#!/api/Titanium.UI.Switch-property-value), [titleOn](#!/api/Titanium.UI.Switch-property-titleOn) and [titleOff](#!/api/Titanium.UI.Switch-property-titleOff) properties for the titled switch, and sets the [style](#!/api/Titanium.UI.Switch-property-style) and title values of the checkbox-styled switch.
 
-app/styles/index.tss
+*app/styles/index.tss*
 
-`'Switch'``: {`
-
-`top``:` `'70dp'`
-
-`}`
-
-`'#index'``: {`
-
-`backgroundColor:` `'#fff'``,`
-
-`modal: false,`
-
-`exitOnClose: true,`
-
-`layout:` `'vertical'`
-
-`}`
-
-`'.titles'``: {`
-
-`value: false,`
-
-`titleOn:` `"I'm on"``,`
-
-`titleOff:` `"I'm off"`
-
-`}`
-
-`'.checkbox'``: {`
-
-`value: true,`
-
-`style: Ti.UI.Android.SWITCH_STYLE_CHECKBOX,`
-
-`titleOn:` `"I'm on"``,`
-
-`titleOff:` `"I'm off"`
-
-`}`
+```
+'Switch': {
+  top: '70dp'
+}
+'#index': {
+  backgroundColor: '#fff',
+  modal: false,
+  exitOnClose: true,
+  layout: 'vertical'
+}
+'.titles': {
+  value: false,
+  titleOn: "I'm on",
+  titleOff: "I'm off"
+}
+'.checkbox': {
+  value: true,
+  style: Ti.UI.Android.SWITCH_STYLE_CHECKBOX,
+    titleOn: "I'm on",
+    titleOff: "I'm off"
+}
+```
 
 ## See also
 

@@ -36,45 +36,29 @@ With Mobile Web apps, in order to access cross-domain resources (resources not o
 
 As shown in the code example below, you declare an HTTPClient object and pass to it a number of parameters. Of these, the most critical is the onload callback function. It is the function called when data is returned and available for use. The onerror callback function is called when there's a network error, such as a timeout.
 
-Ti.Network.HTTPClient skeleton
+*Ti.Network.HTTPClient skeleton*
 
-`var url =` `'https://www.appcelerator.com'``;`
-
-`var xhr = Ti.Network.createHTTPClient({`
-
-`onload: function(e) {`
-
-`// this function is called when data is returned from the server and available for use`
-
-`// this.responseText holds the raw text return of the message (used for text/JSON)`
-
-`// this.responseXML holds any returned XML (including SOAP)`
-
-`// this.responseData holds any returned binary data`
-
-`Ti.API.debug(``this``.responseText);`
-
-`alert(``'success'``);`
-
-`},`
-
-`onerror: function(e) {`
-
-`// this function is called when an error occurs, including a timeout`
-
-`Ti.API.debug(e.error);`
-
-`alert(``'error'``);`
-
-`},`
-
-`timeout:` `5000`  `// milliseconds`
-
-`});`
-
-`xhr.open(``'GET'``, url);`
-
-`xhr.send();` `// request is actually sent with this statement`
+```javascript
+var url = 'https://www.appcelerator.com';
+var xhr = Ti.Network.createHTTPClient({
+    onload: function(e) {
+    // this function is called when data is returned from the server and available for use
+        // this.responseText holds the raw text return of the message (used for text/JSON)
+        // this.responseXML holds any returned XML (including SOAP)
+        // this.responseData holds any returned binary data
+        Ti.API.debug(this.responseText);
+        alert('success');
+    },
+    onerror: function(e) {
+    // this function is called when an error occurs, including a timeout
+        Ti.API.debug(e.error);
+        alert('error');
+    },
+    timeout: 5000 // milliseconds
+});
+xhr.open('GET', url);
+xhr.send();  // request is actually sent with this statement
+```
 
 It is possible to use HTTPClient to interact with many popular types of web services, but the easiest form to work with are REST-style web services. Defining and explaining RESTful web services is beyond the scope of this guide, but [you can learn more about REST here](http://en.wikipedia.org/wiki/Representational_State_Transfer). For our purposes, it is sufficient to understand that a 'resource' is some bit of data on the web, identified by a [URI](http://en.wikipedia.org/wiki/Uniform_Resource_Identifier). Most commonly, your mobile application will interact with this data on the web using HTTP GET or POST requests, though the full range of HTTP verbs are supported by HTTPClient: GET, POST, PUT, and DELETE. PATCH is supported on the Android platform since Release 4.1.0.
 
@@ -104,39 +88,36 @@ Within those callback functions:
 
 Often you will need to send data to the server in the body of your request, as you would in a standard HTML form. This is typically accomplished via a POST (or PUT) request. Titanium provides an easy way of sending along a POST body with a request, automatically serializing JavaScript object graphs into form-encoded POST parameters:
 
-`var` `xhr = Ti.Network.createHTTPClient();`
+```javascript
+var xhr = Ti.Network.createHTTPClient();
 
-`xhr.onload =` `function``(e) {`
+xhr.onload = function(e) {
+  // handle response, which at minimum will be an HTTP status code
+};
 
-`// handle response, which at minimum will be an HTTP status code`
-
-`};`
-
-`xhr.open(``'POST'``,` `'http://www.myblog.com/post.php'``);`
-
-`xhr.send({`
-
-`title:` `'My awesome blog'``,`
-
-`body:` `'Today I met Susy at the laundromat. Best day EVER\!'`
-
-`});`
+xhr.open('POST', 'http://www.myblog.com/post.php');
+xhr.send({
+  title: 'My awesome blog',
+  body: 'Today I met Susy at the laundromat. Best day EVER\!'
+});
+```
 
 You can also send arbitrary string data as the body of your post by passing a string to send:
 
-`xhr.send(``'<some><xml><data></data></xml></some>'``);`
+```
+xhr.send('<some><xml><data></data></xml></some>');
+```
 
 ### HTTP headers
 
 It is often necessary to manually add HTTP headers to your requests. This can be accomplished easily by using the setRequestHeader function on HTTPClient. **NOTE: HTTP Headers must be set AFTER client.open(), but before client.send(), as below:**
 
-`var client = Ti.Network.createHTTPClient();`
-
-`client.open(``'POST'``,` `'http://someserver.com/files/new'``);`
-
-`client.setRequestHeader(``'Content-Type'``,` `'text/csv'``);`
-
-`client.send(``'foo,bar,foo,bar'``);`
+```javascript
+var client = Ti.Network.createHTTPClient();
+client.open('POST', 'http://someserver.com/files/new');
+client.setRequestHeader('Content-Type', 'text/csv');
+client.send('foo,bar,foo,bar');
+```
 
 ### XHR lifecycle
 
@@ -154,83 +135,48 @@ HTTPClient implements the [five XHR ready states](http://www.w3.org/TR/XMLHttpRe
 
 In code, it would look like this:
 
-Monitoring ready state changes
+*Monitoring ready state changes*
 
-`var` `xhr = Ti.Network.createHTTPClient({`
-
-`onload:` `function``(e) {`
-
-`Ti.API.info(``'onload called'``);`
-
-`},`
-
-`onerror:` `function``(e) {`
-
-`Ti.API.info(``'onerror called'``);`
-
-`},`
-
-`ondatastream:` `function``(e) {`
-
-`Ti.API.info(``'ondatastream called'``);`
-
-`},`
-
-`onsendstream:` `function``(e) {`
-
-`Ti.API.info(``'onsendstream called'``);`
-
-`},`
-
-`onreadystatechange:` `function``(e) {`
-
-`switch``(``this``.readyState) {`
-
-`case` `Ti.Network.HTTPClient.UNSENT:`
-
-`Ti.API.info(``'readyState: UNSENT'``);`
-
-`break``;`
-
-`case` `Ti.Network.HTTPClient.OPENED:`
-
-`Ti.API.info(``'readyState: OPENED'``);`
-
-`break``;`
-
-`case` `Ti.Network.HTTPClient.HEADERS_RECEIVED:`
-
-`Ti.API.info(``'readyState: HEADERS_RECEIVED'``);`
-
-`break``;`
-
-`case` `Ti.Network.HTTPClient.LOADING:`
-
-`Ti.API.info(``'readyState: LOADING'``);`
-
-`break``;`
-
-`case` `Ti.Network.HTTPClient.DONE:`
-
-`Ti.API.info(``'readyState: DONE'``);`
-
-`break``;`
-
-`default``:`
-
-`Ti.API.info(``'readyState: UNKNOWN '` `+` `this``.readyState);`
-
-`}`
-
-`},`
-
-`timeout: 5000` `// milliseconds`
-
-`});`
-
-`xhr.open(``'GET'``,` `'https://www.appcelerator.com/blog/'``);`
-
-`xhr.send();` `// request is actually sent with this statement`
+```javascript
+var xhr = Ti.Network.createHTTPClient({
+    onload: function(e) {
+        Ti.API.info('onload called');
+    },
+    onerror: function(e) {
+        Ti.API.info('onerror called');
+    },
+    ondatastream: function(e) {
+        Ti.API.info('ondatastream called');
+    },
+    onsendstream: function(e) {
+        Ti.API.info('onsendstream called');
+    },
+    onreadystatechange: function(e) {
+        switch(this.readyState) {
+            case Ti.Network.HTTPClient.UNSENT:
+                Ti.API.info('readyState: UNSENT');
+            break;
+            case Ti.Network.HTTPClient.OPENED:
+                Ti.API.info('readyState: OPENED');
+            break;
+            case Ti.Network.HTTPClient.HEADERS_RECEIVED:
+                Ti.API.info('readyState: HEADERS_RECEIVED');
+            break;
+            case Ti.Network.HTTPClient.LOADING:
+                Ti.API.info('readyState: LOADING');
+            break;
+            case Ti.Network.HTTPClient.DONE:
+                Ti.API.info('readyState: DONE');
+            break;
+            default:
+                Ti.API.info('readyState: UNKNOWN ' + this.readyState);
+        }
+    },
+    timeout: 5000  // milliseconds
+});
+xhr.open('GET', 'https://www.appcelerator.com/blog/');
+xhr.send();  // request is actually sent with this statement
+```
 
 ### Hands-on practice
 

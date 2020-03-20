@@ -2,7 +2,7 @@
 
 Demonstrates how to build modular views using the <Require/> element to include sub-views defined in external XML files.
 
-App Folder Location
+*App Folder Location*
 
 alloy/test/apps/**basics/markup\_require**
 
@@ -10,53 +10,45 @@ In the sample application, the main **index.xml** view requires the view defined
 
 ![screenshot](/Images/appc/download/attachments/41845691/screenshot.png)
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
+```xml
+<Alloy>
+  <Window>
+    <View id="top" />
+    <Require src="theRest"/>
+  </Window>
+</Alloy>
+```
 
-`<``Window``>`
+*app/views/theRest.xml*
 
-`<``View`  `id``=``"top"` `/>`
+```xml
+<Alloy>
+  <Require src="middle" id="middle"/>
+  <Require src="bottom" id="bottom"/>
+</Alloy>
+```
 
-`<``Require`  `src``=``"theRest"``/>`
+*app/views/middle.xml*
 
-`</``Window``>`
+```xml
+<Alloy>
+  <View>
+    <Label id="t">Middle</Label>
+  </View>
+</Alloy>
+```
 
-`</``Alloy``>`
+*app/views/bottom.xml*
 
-app/views/theRest.xml
-
-`<``Alloy``>`
-
-`<``Require`  `src``=``"middle"`  `id``=``"middle"``/>`
-
-`<``Require`  `src``=``"bottom"`  `id``=``"bottom"``/>`
-
-`</``Alloy``>`
-
-app/views/middle.xml
-
-`<``Alloy``>`
-
-`<``View``>`
-
-`<``Label`  `id``=``"t"``>Middle</``Label``>`
-
-`</``View``>`
-
-`</``Alloy``>`
-
-app/views/bottom.xml
-
-`<``Alloy``>`
-
-`<``View``>`
-
-`<``Button`  `id``=``"b"``></``Button``>`
-
-`</``View``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+  <View>
+    <Button id="b"></Button>
+  </View>
+</Alloy>
+```
 
 ## See also
 

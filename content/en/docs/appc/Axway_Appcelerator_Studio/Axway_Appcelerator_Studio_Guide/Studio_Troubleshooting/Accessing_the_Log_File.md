@@ -50,13 +50,12 @@ In the Studio-specific submenu, navigate to **Help > Studio > Run Diagnostic Tes
 
 If you get a console error when building a project, the correct log to submit depends on the platform you are building. An example error:
 
-`Traceback (most recent call last):`
-
-`File` `"/Users/loganbest/Library/Application Support/Titanium/mobilesdk/osx/1.7.1/iphone/builder.py"``, line` `1397``, in <module>`
-
-`main(sys.argv)`
-
-`...`
+```
+Traceback (most recent call last):
+  File "/Users/loganbest/Library/Application Support/Titanium/mobilesdk/osx/1.7.1/iphone/builder.py", line 1397, in <module>
+    main(sys.argv)
+  ...
+```
 
 ### iOS
 

@@ -1,6 +1,6 @@
 {"title":"API Builder Project","weight":"30"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -96,37 +96,27 @@ The app.js file contains code that initializes the server instance. You can hook
 
 For example, the following server.app.use call forces the client to use a secure connection by redirecting any unsecured connections to the HTTPS URL.
 
-app.js
+*app.js*
 
-`var` `Arrow = require(``'arrow'``);`
+```javascript
+var Arrow = require('arrow');
+var server = new Arrow();
 
-`var` `server =` `new` `Arrow();`
+server.on('starting', function () {
+    server.logger.debug('server is starting!');
 
-`server.on(``'starting'``,` `function` `() {`
-
-`server.logger.debug(``'server is starting!'``);`
-
-`// server.app reference the Express app instance`
-
-`server.app.use(``function` `(req, res, next) {`
-
-`if` `(!req.secure) {`
-
-`return` `res.redirect(``'https://'` `+ req.get(``'Host'``) + req.originalUrl);`
-
-`}` `else` `{`
-
-`next();`
-
-`}`
-
-`});`
-
-`});`
-
-`// start the server`
-
-`server.start();`
+    // server.app reference the Express app instance
+    server.app.use(function (req, res, next) {
+        if (!req.secure) {
+            return res.redirect('https://' + req.get('Host') + req.originalUrl);
+        } else {
+            next();
+        }
+    });
+});
+// start the server
+server.start();
+```
 
 ## Deploy the application
 
@@ -148,33 +138,23 @@ By default, when an application is initialized, it loads and creates an appc-log
 
 To make log calls, use the logger property from either the API Builder instance, request object or response object to invoke [appc-logger APIs](#!/api/Arrow.Logger).
 
-`var` `Arrow = require(``'arrow'``);`
+```javascript
+var Arrow = require('arrow');
+var TestAPI = Arrow.API.extend({
+    group: 'ping',
+    path: '/healthCheck',
+    method: 'GET',
+    description: 'Health-check endpoint',
+    action: function (req, res, next) {
+        req.logger.info('ping');
+        res.status(200).send('OK');
+        res.logger.info('pong');
+        next();
+    }
+});
 
-`var` `TestAPI = Arrow.API.extend({`
-
-`group:` `'ping'``,`
-
-`path:` `'/healthCheck'``,`
-
-`method:` `'GET'``,`
-
-`description:` `'Health-check endpoint'``,`
-
-`action:` `function` `(req, res, next) {`
-
-`req.logger.info(``'ping'``);`
-
-`res.status(200).send(``'OK'``);`
-
-`res.logger.info(``'pong'``);`
-
-`next();`
-
-`}`
-
-`});`
-
-`module.exports = TestAPI;`
+module.exports = TestAPI;
+```
 
 ## View log files
 
@@ -200,25 +180,22 @@ The Appcelerator CLI provides three commands for viewing logs for a published ap
 
 The execution time reported by the loglist and accesslog commands report slightly different values. The accesslog command reports the time required by Appcelerator Cloud to handle the initial user request, pass it to your Node.js application for processing, and deliver the response. In contrast, loglist only reports the execution time for your application itself, not including the time required to process the request and response. Consequently, the accesslog execution times are a slightly longer than those of the corresponding loglist log item. For instance, below is accesslog output:
 
-`[12``/11/2013` `08:43:55.790] 127.0.0.1 / 10074ms`
-
-`[12``/11/2013` `08:43:23.712] 127.0.0.1 / 10073ms`
-
-`[12``/11/2013` `08:43:07.237] 127.0.0.1 / 10073ms`
-
-`[12``/11/2013` `08:42:48.365] 127.0.0.1 / 10075ms`
+```
+[12/11/2013 08:43:55.790]   127.0.0.1   /   10074ms
+[12/11/2013 08:43:23.712]   127.0.0.1   /   10073ms
+[12/11/2013 08:43:07.237]   127.0.0.1   /   10073ms
+[12/11/2013 08:42:48.365]   127.0.0.1   /   10075ms
+```
 
 And below is the corresponding loglist output.
 
-`12``/11/2013` `16:42:028.139 [INFO] [43210] App started`
-
-`[PERF] GET / 10069 ms`
-
-`[PERF] GET / 10072 ms`
-
-`[PERF] GET / 10072 ms`
-
-`[PERF] GET / 10066 ms`
+```
+12/11/2013 16:42:028.139 [INFO] [43210] App started
+[PERF]  GET / 10069 ms
+[PERF]  GET / 10072 ms
+[PERF]  GET / 10072 ms
+[PERF]  GET / 10066 ms
+```
 
 ## Node.js version
 
@@ -228,37 +205,31 @@ Starting with AMPLIFY Runtime Services 1.2.0, you may specify any version of Nod
 
 To specify a Node.js version, in the package.json file, set the engines.node key to the version of Node.js you want to use. DO NOT SPECIFY A RANGE. If you do not specify a Node.js version, the application will use 4.4.7 by default (as of SDK 6.0.0).
 
-package.json
+*package.json*
 
-`{`
-
-`"engines"``: {`
-
-`"node"``:` `"0.12.4"`
-
-`}`
-
-`}`
+```json
+{
+  "engines": {
+    "node": "0.12.4"
+  }
+}
+```
 
 ## Port binding
 
 Starting with AMPLIFY Runtime Services 1.2.0, you may explicitly set the port the application listens on. Set the cloud.environment.PORT key in the appc.json file. or use the appc cloud config --set "PORT=<PORT\_NUMBER>" command to set the special environment variable PORT. If you do not set PORT explicitly before publishing your application, AMPLIFY Runtime Services sets it to 80 by default.
 
-appc.json
+*appc.json*
 
-`{`
-
-`cloud: {`
-
-`environment: {`
-
-`PORT: 8080`
-
-`}`
-
-`}`
-
-`}`
+```json
+{
+  cloud: {
+    environment: {
+      PORT: 8080
+    }
+  }
+}
+```
 
 Verify that the application listens on PORT, otherwise your app cannot be connected. Use process.env.PORT in the application to verify the application is connected to a port.
 
@@ -268,43 +239,40 @@ AMPLIFY Runtime Services allows you to install additional binaries before your a
 
 Starting with AMPLIFY Runtime Services 1.3.0, to install additional third-party tools, create a script called install.sh in the project's root folder, which installs the required packages.
 
-ImageMagick and PhantomJS
+*ImageMagick and PhantomJS*
 
 Both ImageMagick and PhantomJS are pre-installed on the containers.
 
 Below is a sample script located in the ./install.sh folder in the application's directory.
 
-install.sh
+*install.sh*
 
-`#!/bin/bash`
+```bash
+#!/bin/bash
 
-`echo`  `"---"`
+echo "---"
+echo "Start installing some tools..."
+echo "(This bash script is run at npm preinstall.)"
+echo "---"
 
-`echo`  `"Start installing some tools..."`
+apt-get install -qq tar bzip2 libaio1
 
-`echo`  `"(This bash script is run at npm preinstall.)"`
+apt-get install -y wget
 
-`echo`  `"---"`
-
-`apt-get` `install` `-qq` `tar`  `bzip2` `libaio1`
-
-`apt-get` `install` `-y wget`
-
-`echo`  `"---"`
-
-`echo`  `"done installing additional tools!"`
-
-`echo`  `"---"`
+echo "---"
+echo "done installing additional tools!"
+echo "---"
+```
 
 Prior to Release 1.3.0, you needed to create a script in your project folder (no name restrictions) and add the script to the package.json file. In the package.json file, set the scripts.preinstall or scripts.postinstall field to the path to the script:
 
-package.json
+*package.json*
 
-`"scripts"``: {`
-
-`"preinstall"``:` `"myscript.sh"`
-
-`}`
+```json
+"scripts": {
+    "preinstall": "myscript.sh"
+  }
+```
 
 Note that from AMPLIFY Runtime Services 1.3.0 and later, you can still use the above method but do not name the script install.sh or it will run twice, and only install the binaries in the project directory. Prior to AMPLIFY Runtime Services 1.3.0, binaries could be installed outside the project directory.
 
@@ -312,33 +280,29 @@ Note that from AMPLIFY Runtime Services 1.3.0 and later, you can still use the a
 
 The application can import any third-party modules that are supported by standard Node.js applications. Before publishing the app to the cloud, make sure all dependencies are listed in the dependencies field in the application's package.json file. For example, to add support for MongoDB 1.2.0 or greater:
 
-package.json
+*package.json*
 
-`{`
-
-`"dependencies"``:{` `"mongodb"``:` `">1.2.0"` `}`
-
-`}`
+```json
+{
+    "dependencies":{ "mongodb": ">1.2.0" }
+}
+```
 
 ## Define environment variables
 
 To set environment variables, add them to the cloud.environment object in the project's appc.json file.
 
-appc.json
+*appc.json*
 
-`{`
-
-`cloud: {`
-
-`environment: {`
-
-`foo:` `'abc'`
-
-`}`
-
-`}`
-
-`}`
+```json
+{
+  cloud: {
+    environment: {
+      foo: 'abc'
+    }
+  }
+}
+```
 
 You can also use the Appcelerator CLI to manage the environment variables.
 
@@ -350,7 +314,7 @@ To unset an environment variable, use the appc cloud config --unset <key> comman
 
 To check the current environment variables, use the appc cloud config --env command.
 
-Blacklist Variable Names
+*Blacklist Variable Names*
 
 Prior to AMPLIFY Runtime Services 1.2.0, you could not use the following names for environment variables: "appid", "basedir", "bodyParser", "customConfig", "dirname", "framework", "fullpath", "name", "serverId", "port", "version", "NODE", "NODE\_PATH", "PATH", "PWD", "PORT", "TMPDIR", and "USER".
 
@@ -358,11 +322,11 @@ After changing an environment variable, you will be prompted to restart the appl
 
 The following example sets the foo environment variables, lists all set environment variables, then unsets the foo variable:
 
-`appc cloud config --``set` `foo=abc`
-
-`appc cloud config --``env`
-
-`appc cloud config --``unset` `foo`
+```bash
+appc cloud config --set foo=abc
+appc cloud config --env
+appc cloud config --unset foo
+```
 
 ## Scale the application
 
@@ -370,31 +334,26 @@ To customize the number of cloud servers the application can enable the auto-sca
 
 The following example enables autoscaling, using a maximum of five servers when there are at least 20 queued requests. The application is also configured to automatically scale down the number of servers when the number of queued requests drops below 20.
 
-appc.json
+*appc.json*
 
-`{`
-
-`cloud: {`
-
-`maximum: 5,`
-
-`minimum: 1,`
-
-`maxqueuedrequests: 20`
-
-`}`
-
-`}`
+```json
+{
+  cloud: {
+    maximum: 5,
+    minimum: 1,
+    maxqueuedrequests: 20
+  }
+}
+```
 
 You can also use the appc cloud config command to configure autoscaling:
 
-`appc cloud config --maxsize 5 MyFirstApp`
-
-`appc cloud config --maxqueuedrequests 20 MyFirstApp`
-
-`appc cloud config --autoscaleup` `true` `MyFirstApp`
-
-`appc cloud config --autoscaledown` `true` `MyFirstApp`
+```bash
+appc cloud config --maxsize 5 MyFirstApp
+appc cloud config --maxqueuedrequests 20 MyFirstApp
+appc cloud config --autoscaleup true MyFirstApp
+appc cloud config --autoscaledown true MyFirstApp
+```
 
 ## Access a specific container
 
@@ -402,7 +361,9 @@ Starting with AMPLIFY Runtime Services 1.3.1, if you have scaled your applicatio
 
 Example:
 
-`https:``//``<APP_GUID>.cloudapp-enterprise.appcelerator.com?_serverid=<SERVER_ID>`
+```
+https://<APP_GUID>.cloudapp-enterprise.appcelerator.com?_serverid=<SERVER_ID>
+```
 
 ## Custom domains
 
@@ -414,19 +375,16 @@ The alias to set should be a valid domain name that has been already configured 
 
 To set a custom domain, set the cloud.domain field in the appc.json file. You can optionally set the cloud.domainPath field to assign a path to the application. The following example sets a domain and path on the application that can be accessed from www.foo.com/v2:
 
-appc.json
+*appc.json*
 
-`{`
-
-`cloud: {`
-
-`domain:` `'www.foo.com'``,`
-
-`domainPath:` `'v2'`
-
-`}`
-
-`}`
+```json
+{
+  cloud: {
+    domain: 'www.foo.com',
+    domainPath: 'v2'
+  }
+}
+```
 
 You can also use the Appcelerator CLI to manage the domain and path.
 
@@ -438,17 +396,18 @@ To route, an application based on a path with the domain name, use the appc clou
 
 The following example allows the application to be accessed from www.foo.com :
 
-`appc cloud domain --``set` `www.foo.com`
+```bash
+appc cloud domain --set www.foo.com
+```
 
 The following example allows the LegacyApp application to be accessed from www.foo.com/v1 and the BrandNewApp application to be accessed from www.foo.com/v2 :
 
-`appc cloud domain --``set` `www.foo.com LegacyApp`
-
-`appc cloud domain --path v1 LegacyApp`
-
-`appc cloud domain --``set` `www.foo.com BrandNewApp`
-
-`appc cloud domain --path v2 BrandNewApp`
+```bash
+appc cloud domain --set www.foo.com LegacyApp
+appc cloud domain --path v1 LegacyApp
+appc cloud domain --set www.foo.com BrandNewApp
+appc cloud domain --path v2 BrandNewApp
+```
 
 ### Wildcard subdomains
 
@@ -456,21 +415,16 @@ The pre-defined cloudapp.appcelerator.com URL that Appcelerator Cloud uses to pu
 
 For example, if your published URL is https://1234567890.cloudapp.appcelerator.com/, you can navigate to your application using the same domain and add a custom token as the subdomain, for example, https://deadbeef.1234567890.cloudapp.appcelerator.com/, where deadbeef is the wildcard subdomain. Then, the application can retrieve the host and subdomain:
 
-`var` `http = require(``'http'``),`
-
-`url = require(``'url'``);`
-
-`http.createServer(``function` `(req, res) {`
-
-`var` `host = req.headers[``'host'``],`
-
-`subdomain = host && url.parse(``'http://'``+host).hostname.split(``'.'``)[0];`
-
-`res.writeHead(200, {``'Content-Type'``:` `'text/plain'``});`
-
-`res.end(``'Your host is: '` `+ host +` `'. Subdomain is: '` `+ subdomain);`
-
-`}).listen(process.env.PORT || 8080); `
+```javascript
+var http = require('http'),
+    url = require('url');
+http.createServer(function (req, res) {
+    var host = req.headers['host'],
+        subdomain = host && url.parse('http://'+host).hostname.split('.')[0];
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Your host is: ' + host + '. Subdomain is: ' + subdomain);
+}).listen(process.env.PORT || 8080);
+```
 
 ## Add a custom SSL certificate
 
@@ -486,45 +440,41 @@ To create a PEM file, you will need the following three files provided by your S
 
 You need to combine the contents of the three files into a single text file, called a PEM file, which you will add to your application. The PEM file must have the following structure:
 
-`-----BEGIN CERTIFICATE-----`
-
-`<SSL certificate` `file` `contents>`
-
-`-----END CERTIFICATE-----`
-
-`-----BEGIN CERTIFICATE-----`
-
-`<Intermediate certificate` `file` `contents>`
-
-`-----END CERTIFICATE-----`
-
-`-----BEGIN RSA PRIVATE KEY-----`
-
-`<Private key` `file` `contents>`
-
-`-----END RSA PRIVATE KEY----`
+```
+-----BEGIN CERTIFICATE-----
+<SSL certificate file contents>
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+<Intermediate certificate file contents>
+-----END CERTIFICATE-----
+-----BEGIN RSA PRIVATE KEY-----
+<Private key file contents>
+-----END RSA PRIVATE KEY----
+```
 
 Use a text editor or the cat command to merge the files together:
 
-`cat` `customapp.com.crt gd_bundle.crt customapp.com.key > customapp.com.pem`
+```
+cat customapp.com.crt gd_bundle.crt customapp.com.key > customapp.com.pem
+```
 
 Once you have created the PEM file, set the cloud.certificate field to the path of the certificate file.
 
-appc.json
+*appc.json*
 
-`{`
-
-`cloud: {`
-
-`certificate:` `'customapp.com.pem'`
-
-`}`
-
-`}`
+```json
+{
+  cloud: {
+    certificate: 'customapp.com.pem'
+  }
+}
+```
 
 You can also add it to your application by executing the following command:
 
-`appc cloud crt --add customapp.com.pem`
+```bash
+appc cloud crt --add customapp.com.pem
+```
 
 ## Create child processes
 
@@ -534,37 +484,33 @@ To use this feature, your application uses [cluster.setupMaster()](http://nodejs
 
 **Example**:
 
-app.js
+*app.js*
 
-`var` `cluster = require(``'cluster'``);`
+```javascript
+var cluster = require('cluster');
+var http = require('http');
+var numCPUs = require('os').cpus().length;
 
-`var` `http = require(``'http'``);`
+cluster.setupMaster({exec: __dirname + '/child.js'});
 
-`var` `numCPUs = require(``'os'``).cpus().length;`
+// Fork workers
+for (var i = 0; i < numCPUs; i++) {
+    cluster.fork();
+}
+```
 
-`cluster.setupMaster({exec: __dirname +` `'/child.js'``});`
+*child.js*
 
-`// Fork workers`
+```javascript
+var http = require('http');
 
-`for` `(``var` `i = 0; i < numCPUs; i++) {`
+console.log('Running in child process of a cluster.')
 
-`cluster.fork();`
-
-`}`
-
-child.js
-
-`var` `http = require(``'http'``);`
-
-`console.log(``'Running in child process of a cluster.'``)`
-
-`http.createServer(``function``(req, res) {`
-
-`res.writeHead(200);`
-
-`res.end(``"hello world!!!\n"``);`
-
-`}).listen(9000);`
+http.createServer(function(req, res) {
+    res.writeHead(200);
+    res.end("hello world!!!\n");
+}).listen(9000);
+```
 
 ## Application limitations
 
@@ -596,43 +542,29 @@ If your application is archived, to reactivate the application, make a request t
 
 Note that each container your application runs on costs a certain number of points. To see how many points you have used and are allocated, or to see which containers your application is using, execute the appc cloud list command.
 
-`$ appc cloud list MyArrowApp`
+```bash
+$ appc cloud list MyArrowApp
+ACS: Appcelerator Cloud Services Command-Line Interface, version 1.0.23
+Copyright (c) 2012-2015, Appcelerator, Inc.  All Rights Reserved.
+Admin Hostname: https://admin.cloudapp-enterprise-preprod.appctest.com
 
-`ACS: Appcelerator Cloud Services Command-Line Interface, version 1.0.23`
+============
+Points:
+ -- Quota: 17
+ -- Used: 16
 
-`Copyright (c) 2012-2015, Appcelerator, Inc. All Rights Reserved.`
-
-`Admin Hostname: https:``//admin``.cloudapp-enterprise-preprod.appctest.com`
-
-`============`
-
-`Points:`
-
-`-- Quota: 17`
-
-`-- Used: 16`
-
-`App name: MyArrowApp`
-
-`-- Created by: joeuser@appcelerator.com`
-
-`-- URL: https:``//myapp``.cloudapp-enterprise-preprod.appctest.com`
-
-`-- Created at: Mon Mar 23 2015 21:58:36 GMT-0700 (PDT)`
-
-`-- Node Version: 0.10.22`
-
-`-- Server Size: XLarge`
-
-`-- Maximum allowed number of servers: 1`
-
-`-- Desired minimum number of servers: 1`
-
-`-- Active version: 1.0.0`
-
-`-- Published at: Thu Mar 26 2015 13:54:07 GMT-0700 (PDT)`
-
-`-- Status: Deployed`
+App name: MyArrowApp
+ -- Created by: joeuser@appcelerator.com
+ -- URL: https://myapp.cloudapp-enterprise-preprod.appctest.com
+ -- Created at: Mon Mar 23 2015 21:58:36 GMT-0700 (PDT)
+ -- Node Version: 0.10.22
+ -- Server Size: XLarge
+ -- Maximum allowed number of servers: 1
+ -- Desired minimum number of servers: 1
+ -- Active version: 1.0.0
+ -- Published at: Thu Mar 26 2015 13:54:07 GMT-0700 (PDT)
+ -- Status: Deployed
+```
 
 ### Server Ports
 

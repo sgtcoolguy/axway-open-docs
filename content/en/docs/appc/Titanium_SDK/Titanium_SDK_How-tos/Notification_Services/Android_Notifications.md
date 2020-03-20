@@ -34,7 +34,7 @@
 
 Local notifications alert the user that something is happening to your application while it is in the background. On Android, notifications appear in the notification drawer until the user clears them and on the lock screen for devices running Android 5.0 or greater. The application can also play a sound or vibrate to alert the user there is a new notification, customize the notification layout from the basic title, text and icon layout; and use the devices default alert settings or override them. Note that the user can filter or turn notifications on and off from **Settings**.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/29004809/LockScreen.png" alt="images/download/attachments/29004809/LockScreen.png" class="confluence-embedded-image"></p><p>Lock Screen (Android 5.0 and greater)</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/29004809/NotificationCenter.png" alt="images/download/attachments/29004809/NotificationCenter.png" class="confluence-embedded-image"></p><p>Notification Drawer</p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/29004809/LockScreen.png" alt="images/download/attachments/29004809/LockScreen.png" class="confluence-embedded-image"></p><p>Lock Screen (Android 5.0 and greater)</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/29004809/NotificationCenter.png" alt="images/download/attachments/29004809/NotificationCenter.png" class="confluence-embedded-image"></p><p>Notification Drawer</p></td></tr></tbody></table>
 
 ## Configure notification settings
 
@@ -124,27 +124,19 @@ Specify the following properties to modify the basic layout of the notification:
 
 For example, the code below creates the notification pictured above. A blank intent is attached to the notification, so when the user taps the notification, it will be removed from the drawer. Note that by default, the notification's flags property (see description in the _Other customizations_ section) is set to Titanium.Android.FLAG\_AUTO\_CANCEL, which automatically clears a notification when the intent is executed.
 
-`var` `notification = Titanium.Android.createNotification({`
-
-`contentTitle:` `'Notification 2'``,`
-
-`contentText :` `'Just another notification'``,`
-
-`// Blank intent that will remove the notification when the user taps it`
-
-`// Do not override the default value of the 'flags' property`
-
-`contentIntent: Ti.Android.createPendingIntent({intent: Ti.Android.createIntent({})}),`
-
-`// Image file located at /platform/android/res/drawable/warn.png`
-
-`icon: Ti.App.Android.R.drawable.warn,`
-
-`number: 5,`
-
-`when:` `new` `Date()`
-
-`});`
+```javascript
+var notification = Titanium.Android.createNotification({
+    contentTitle: 'Notification 2',
+    contentText : 'Just another notification',
+    // Blank intent that will remove the notification when the user taps it
+    // Do not override the default value of the 'flags' property
+    contentIntent: Ti.Android.createPendingIntent({intent: Ti.Android.createIntent({})}),
+    // Image file located at /platform/android/res/drawable/warn.png
+    icon: Ti.App.Android.R.drawable.warn,
+    number: 5,
+    when: new Date()
+});
+```
 
 ### Sound
 
@@ -152,25 +144,18 @@ To play a sound when the notification first appears, assign the Notification obj
 
 By default, the sound plays each time the application calls the notify() method. To override this behavior, add the Titanium.Android.FLAG\_ONLY\_ALERT\_ONCE constant to the Notification object's flags property.
 
-`var` `notification = Titanium.Android.createNotification({`
-
-`contentTitle:` `'Notification 2'``,`
-
-`contentText :` `'Just another notification'``,`
-
-`contentIntent: Ti.Android.createPendingIntent({intent: Ti.Android.createIntent({})}),`
-
-`icon: Ti.App.Android.R.drawable.warn,`
-
-`number: 5,`
-
-`when:` `new` `Date().getTime(),`
-
-`// Sound file located at /platform/android/res/raw/sound.wav`
-
-`sound: Ti.Filesystem.getResRawDirectory() +` `'sound.wav'``,`
-
-`});`
+```javascript
+var notification = Titanium.Android.createNotification({
+    contentTitle: 'Notification 2',
+    contentText : 'Just another notification',
+    contentIntent: Ti.Android.createPendingIntent({intent: Ti.Android.createIntent({})}),
+    icon: Ti.App.Android.R.drawable.warn,
+    number: 5,
+    when: new Date().getTime(),
+    // Sound file located at /platform/android/res/raw/sound.wav
+  sound: Ti.Filesystem.getResRawDirectory() + 'sound.wav',
+});
+```
 
 ### Custom layout
 
@@ -192,79 +177,58 @@ To create the following notification that displays a message with two buttons:
 
 1. Create an XML layout that uses a LinearLayout to display a TextView and two Button widgets:
 
-    /platform/android/res/layout/customview.xml
+    */platform/android/res/layout/customview.xml*
 
-    `<?``xml`  `version``=``"1.0"`  `encoding``=``"utf-8"``?>`
-
-    `<``LinearLayout`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"`
-
-    `android:layout_width``=``"match_parent"`
-
-    `android:layout_height``=``"match_parent"`
-
-    `android:orientation``=``"horizontal"` `>`
-
-    `<``TextView`  `android:id``=``"@+id/message"`
-
-    `android:layout_width``=``"wrap_content"`
-
-    `android:layout_height``=``"wrap_content"`
-
-    `android:textSize``=``"18dp"`
-
-    `android:text``=``"Default text"` `/>`
-
-    `<``Button`  `android:id``=``"@+id/okbutton"`
-
-    `android:layout_width``=``"wrap_content"`
-
-    `android:layout_height``=``"wrap_content"`
-
-    `android:text``=``"OK"` `/>`
-
-    `<``Button`  `android:id``=``"@+id/cancelbutton"`
-
-    `android:layout_width``=``"wrap_content"`
-
-    `android:layout_height``=``"wrap_content"`
-
-    `android:text``=``"Cancel"` `/>`
-
-    `</``LinearLayout``>`
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="horizontal" >
+        <TextView android:id="@+id/message"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textSize="18dp"
+                  android:text="Default text" />
+        <Button android:id="@+id/okbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OK" />
+        <Button android:id="@+id/cancelbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel" />
+    </LinearLayout>
+    ```
 
 2. In the application, create a RemoteViews object using the XML layout as a reference, then modify the RemoteViews by changing the default text and binding PendingIntents to the buttons:
 
-    /Resources/app.js
+    */Resources/app.js*
 
-    `var customView = Ti.Android.createRemoteViews({`
+    ```javascript
+    var customView = Ti.Android.createRemoteViews({
+        layoutId: Ti.App.Android.R.layout.customview
+    });
 
-    `layoutId: Ti.App.Android.R.layout.customview`
+    // Blank intents (example) that will remove the notification when the user taps one of them
+    var downloadIntent = Ti.Android.createPendingIntent({intent: Ti.Android.createIntent()});
+    var cancelIntent = Ti.Android.createPendingIntent({intent: Ti.Android.createIntent()});
 
-    `});`
-
-    `// Blank intents (example) that will remove the notification when the user taps one of them`
-
-    `var downloadIntent = Ti.Android.createPendingIntent({intent: Ti.Android.createIntent()});`
-
-    `var cancelIntent = Ti.Android.createPendingIntent({intent: Ti.Android.createIntent()});`
-
-    `// Reference elements in the layout by prefixing the IDs with 'Ti.App.Android.R.id'`
-
-    `customView.setTextViewText(Ti.App.Android.R.id.message, "Update available!");`
-
-    `customView.setTextViewText(Ti.App.Android.R.id.okbutton, "Download");`
-
-    `customView.setOnClickPendingIntent(Ti.App.Android.R.id.okbutton, downloadIntent);`
-
-    `customView.setTextViewText(Ti.App.Android.R.id.cancelbutton, "Not now");`
-
-    `customView.setOnClickPendingIntent(Ti.App.Android.R.id.cancelbutton, cancelIntent);`
+    // Reference elements in the layout by prefixing the IDs with 'Ti.App.Android.R.id'
+    customView.setTextViewText(Ti.App.Android.R.id.message, "Update available!");
+    customView.setTextViewText(Ti.App.Android.R.id.okbutton, "Download");
+    customView.setOnClickPendingIntent(Ti.App.Android.R.id.okbutton, downloadIntent);
+    customView.setTextViewText(Ti.App.Android.R.id.cancelbutton, "Not now");
+    customView.setOnClickPendingIntent(Ti.App.Android.R.id.cancelbutton, cancelIntent);
+    ```
 
 3. Finally, assign the RemoteViews object to the Notification object's contentView property.
 
-    /Resources/app.js
+    */Resources/app.js*
 
-    `var notification = Titanium.Android.createNotification({contentView: customView});`
+    ```javascript
+    var notification = Titanium.Android.createNotification({contentView: customView});
+    ```
 
 ### Other customizations
 
@@ -352,17 +316,19 @@ The following properties are available for devices running Android 5.0 and great
 
 To send a notification, use the Titanium.Android.NotificationManager.notify() method. Pass the method a numeric ID as the first argument to identify it if it needs to be removed and the notification object as the second argument. This method sends the notification immediately.
 
-`Ti.Android.NotificationManager.notify(1, notification);`
-
-`// Pass '1' to the Titanium.Android.NotificationManager.cancel method if you need to clear the notification programmatically`
+```
+Ti.Android.NotificationManager.notify(1, notification);
+// Pass '1' to the Titanium.Android.NotificationManager.cancel method if you need to clear the notification programmatically
+```
 
 ## Update a notification
 
 To update a notification that is currently being displayed, use the Notification object's [setLatestEventInfo()](#!/api/Titanium.Android.Notification-method-setLatestEventInfo) method. Pass the method an updated or the existing title, message and intent. You need to pass the method all three parameters.
 
-`// Update the title and message but keep the existing intent`
-
-`notification.setLatestEventInfo(``'Wake me up'``,` `'Before you go go'``, notification.contentIntent);`
+```
+// Update the title and message but keep the existing intent
+notification.setLatestEventInfo('Wake me up', 'Before you go go', notification.contentIntent);
+```
 
 ## Remove a notification
 
@@ -372,13 +338,12 @@ If the application needs to remove a notification it sent from the notification 
 
 **To remove a specific notification**, call the Titanium.Android.NotificationManager.cancel() method and pass it the ID that was assigned to it by the Titanium.Android.NotificationManager.notify() call.
 
-`// Remove all notifications sent by the application`
-
-`Titanium.Android.NotificationManager.cancelAll();`
-
-`// Remove a specific notification sent by the application`
-
-`Titanium.Android.NotificationManager.cancel(1);`
+```
+// Remove all notifications sent by the application
+Titanium.Android.NotificationManager.cancelAll();
+// Remove a specific notification sent by the application
+Titanium.Android.NotificationManager.cancel(1);
+```
 
 ## Respond to a notification
 
@@ -398,21 +363,17 @@ Use the intent's addCategory() method to add the Ti.Android.CATEGORY\_LAUNCHER c
 
 Pass the intent to the [Titanium.Android. createPendingIntent()](#!/api/Titanium.Android-method-createPendingIntent) method to create a PendingIntent, which can be assigned to the Notification's contentIntent property.
 
-`var` `intent = Ti.Android.createIntent({`
+```javascript
+var intent = Ti.Android.createIntent({
+    action: Ti.Android.ACTION_MAIN,
+    className: 'com.appcelerator.testapp.MyappActivity',
+    packageName: 'com.appcelerator.testapp'
+});
+intent.flags |= Ti.Android.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED | Ti.Android.FLAG_ACTIVITY_SINGLE_TOP;
+intent.addCategory(Ti.Android.CATEGORY_LAUNCHER);
 
-`action: Ti.Android.ACTION_MAIN,`
-
-`className:` `'com.appcelerator.testapp.MyappActivity'``,`
-
-`packageName:` `'com.appcelerator.testapp'`
-
-`});`
-
-`intent.flags |= Ti.Android.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED | Ti.Android.FLAG_ACTIVITY_SINGLE_TOP;`
-
-`intent.addCategory(Ti.Android.CATEGORY_LAUNCHER);`
-
-`notification.contentIntent = Ti.Android.createPendingIntent({intent: intent});`
+notification.contentIntent = Ti.Android.createPendingIntent({intent: intent});
+```
 
 ## Schedule a notification
 
@@ -424,189 +385,139 @@ To create a service that sends a notification at a specific time:
 
 1. In a separate JavaScript file, code the creation of the notification. After the notification is sent, be sure to stop the service since it will no longer be needed and to stop it from sending the same notification again.
 
-    Resources/ExampleService.js
+    *Resources/ExampleService.js*
 
-    `// Retrieves a reference to the service and its intent`
+    ```javascript
+    // Retrieves a reference to the service and its intent
+    var service = Ti.Android.currentService,
+        serviceIntent = service.getIntent(),
+        // Information passed in from the intent
+        timestamp = new Date(serviceIntent.getStringExtra('timestamp'));
 
-    `var service = Ti.Android.currentService,`
+    // Wait for right moment to create and send the notification
+    if (new Date() > timestamp) {
 
-    `serviceIntent = service.getIntent(),`
+        // Create a notification
+        var notification = Ti.Android.createNotification({...});
 
-    `// Information passed in from the intent`
+        // Send the notification
+        Ti.Android.NotificationManager.notify(1, notification);
 
-    `timestamp =` `new` `Date(serviceIntent.getStringExtra(``'timestamp'``));`
-
-    `// Wait for right moment to create and send the notification`
-
-    `if` `(``new` `Date() > timestamp) {`
-
-    `// Create a notification`
-
-    `var notification = Ti.Android.createNotification({...});`
-
-    `// Send the notification`
-
-    `Ti.Android.NotificationManager.notify(``1``, notification);`
-
-    `// Stop the service once the notification is sent`
-
-    `Ti.Android.stopService(serviceIntent);`
-
-    `}`
+        // Stop the service once the notification is sent
+        Ti.Android.stopService(serviceIntent);
+    }
+    ```
 
 2. Add the <services> tag to the <android> section of the tiapp.xml and add a <service> tag as a child of the <services> tag. In the <service> tag, assign the type attribute to interval to indicate the service runs at regular intervals and the url attribute to the JavaScript file the application needs to run as a service.
 
-    tiapp.xml
+    *tiapp.xml*
 
-    `<``ti``:app> `
-
-    `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-    `<!-- the services tag must be added so that our service will run -->`
-
-    `<``services``>`
-
-    `<``service`  `url``=``"ExampleService.js"`  `type``=``"interval"` `/>`
-
-    `</``services``>`
-
-    `</``android``>`
-
-    `</``ti``:app>`
+    ```xml
+    <ti:app>
+        <android xmlns:android="http://schemas.android.com/apk/res/android">
+            <!-- the services tag must be added so that our service will run -->
+            <services>
+                <service url="ExampleService.js" type="interval" />
+            </services>
+        </android>
+    </ti:app>
+    ```
 
 3. In the main application, create an intent by assigning the JavaScript file to the Intent's url property and start the service by passing the intent to the Titanium.Android.startService () method. The application needs to set the interval for the service by using the Intent object's putExtra() method. You can also use this method to pass in data to the service. Pass the method the property name as the first argument and a value as the second argument. To set the service interval, set the property name to interval and the value to how often to call the service in milliseconds.
 
-    Resources/app.js
+    *Resources/app.js*
 
-    `// Create an intent using the JavaScript service file`
+    ```javascript
+    // Create an intent using the JavaScript service file
+    var intent = Ti.Android.createServiceIntent({
+        url : 'ExampleService.js'
+    });
 
-    `var` `intent = Ti.Android.createServiceIntent({`
+    // Set the interval to run the service; set to five seconds in this example
+    intent.putExtra('interval', 5000);
 
-    `url :` `'ExampleService.js'`
+    // Send extra data to the service; send the notification 30 seconds from now in this example
+    intent.putExtra('timestamp', new Date(new Date().getTime() + 30 * 1000));
 
-    `});`
-
-    `// Set the interval to run the service; set to five seconds in this example`
-
-    `intent.putExtra(``'interval'``, 5000);`
-
-    `// Send extra data to the service; send the notification 30 seconds from now in this example`
-
-    `intent.putExtra(``'timestamp'``,` `new` `Date(``new` `Date().getTime() + 30 * 1000));`
-
-    `// Start the service`
-
-    `Ti.Android.startService(intent);`
+    // Start the service
+    Ti.Android.startService(intent);
+    ```
 
 **Example**
 
 In the following example, the main application passes the message and title of the notification to the service as well as when to send it. The service waits until the right moment to create and send the notification, then stops itself. Note that the service can only send one notification. The application can launch more service instances but all of them will be stopped when the first notification is sent.
 
-Resources/app.js
+*Resources/app.js*
 
-`var win = Ti.UI.createWindow();`
+```javascript
+var win = Ti.UI.createWindow();
 
-`var btn = Ti.UI.createButton({`
+var btn = Ti.UI.createButton({
+    title : 'Add Notification'
+});
 
-`title :` `'Add Notification'`
+btn.addEventListener('click', function(e) {
+    var intent = Ti.Android.createServiceIntent({
+        url : 'ExampleService.js'
+    });
+    intent.putExtra('title' , 'Richard III');
+    intent.putExtra('message' , 'Now is the winter of our discontent...');
+    intent.putExtra('timestamp', new Date(new Date().getTime() + 30 * 1000));
+    intent.putExtra('interval', 5000);
+    Ti.Android.startService(intent);
+});
+win.add(btn);
+win.open();
+```
 
-`});`
+*Resources/ExampleService.js*
 
-`btn.addEventListener(``'click'``, function(e) {`
+```javascript
+var service = Ti.Android.currentService;
+var serviceIntent = service.getIntent();
+var timestamp = new Date(serviceIntent.getStringExtra('timestamp'));
 
-`var intent = Ti.Android.createServiceIntent({`
+if (new Date() > timestamp) {
+    // Grab extra data sent with the intent
+    var title = serviceIntent.getStringExtra('title');
+    var message = serviceIntent.getStringExtra('message');
 
-`url :` `'ExampleService.js'`
+    // Create an intent that launches the application
+    var intent = Ti.Android.createIntent({
+        action : Ti.Android.ACTION_MAIN,
+        className: 'com.appcelerator.testapp.MyappActivity',
+        packageName: 'com.appcelerator.testapp'
+    });
+    intent.flags |= Ti.Android.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED | Ti.Android.FLAG_ACTIVITY_SINGLE_TOP;
+    intent.addCategory(Ti.Android.CATEGORY_LAUNCHER);
 
-`});`
+    // Create notification
+    var notification = Ti.Android.createNotification({
+        contentIntent : Ti.Android.createPendingIntent({intent : intent}),
+        contentTitle : title,
+        contentText : message,
+    });
 
-`intent.putExtra(``'title'` `,` `'Richard III'``);`
+    // Send the notification
+    Ti.Android.NotificationManager.notify(1, notification);
 
-`intent.putExtra(``'message'` `,` `'Now is the winter of our discontent...'``);`
+    // Stop the service once the notification is sent
+    Ti.Android.stopService(serviceIntent);
+}
+```
 
-`intent.putExtra(``'timestamp'``,` `new` `Date(``new` `Date().getTime() +` `30` `*` `1000``));`
+*tiapp.xml*
 
-`intent.putExtra(``'interval'``,` `5000``);`
-
-`Ti.Android.startService(intent);`
-
-`});`
-
-`win.add(btn);`
-
-`win.open(); `
-
-Resources/ExampleService.js
-
-`var` `service = Ti.Android.currentService;`
-
-`var` `serviceIntent = service.getIntent();`
-
-`var` `timestamp =` `new` `Date(serviceIntent.getStringExtra(``'timestamp'``));`
-
-`if` `(``new` `Date() > timestamp) {`
-
-`// Grab extra data sent with the intent`
-
-`var` `title = serviceIntent.getStringExtra(``'title'``);`
-
-`var` `message = serviceIntent.getStringExtra(``'message'``);`
-
-`// Create an intent that launches the application`
-
-`var` `intent = Ti.Android.createIntent({`
-
-`action : Ti.Android.ACTION_MAIN,`
-
-`className:` `'com.appcelerator.testapp.MyappActivity'``,`
-
-`packageName:` `'com.appcelerator.testapp'`
-
-`});`
-
-`intent.flags |= Ti.Android.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED | Ti.Android.FLAG_ACTIVITY_SINGLE_TOP;`
-
-`intent.addCategory(Ti.Android.CATEGORY_LAUNCHER);`
-
-`// Create notification`
-
-`var` `notification = Ti.Android.createNotification({`
-
-`contentIntent : Ti.Android.createPendingIntent({intent : intent}),`
-
-`contentTitle : title,`
-
-`contentText : message,`
-
-`});`
-
-`// Send the notification`
-
-`Ti.Android.NotificationManager.notify(1, notification);`
-
-`// Stop the service once the notification is sent`
-
-`Ti.Android.stopService(serviceIntent);`
-
-`} `
-
-tiapp.xml
-
-`<``ti``:app>`
-
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-`<!-- the services tag must be added so that our service will run -->`
-
-`<``services``>`
-
-`<``service`  `url``=``"ExampleService.js"`  `type``=``"interval"` `/>`
-
-`</``services``>`
-
-`</``android``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <!-- the services tag must be added so that our service will run -->
+        <services>
+            <service url="ExampleService.js" type="interval" />
+        </services>
+    </android>
+</ti:app>
+```
 
 ## Further reading
 

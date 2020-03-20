@@ -36,7 +36,7 @@ In this section, we'll see what factors go into determining how much memory your
 
 Memory limits vary by operating system and device and are not clearly documented by the vendors. Based on our sleuthing, here are the limits you must be concerned with:
 
-iOS notes
+*iOS notes*
 
 The numbers for iOS are rough estimates. Apple does not publish information about their app termination threshold, managed by processes called "watchdog" (responsible for monitoring) and "jetsam" (responsible for warnings/purging). App termination is controlled entirely at the discretion of these processes and their behavior may change at any time.
 
@@ -68,45 +68,30 @@ To be clear, calling _parent_.remove() on its own does _not_ destroy either the 
 
 Destroying a parent object (setting it to null) will destroy any child objects as long as no other references to those child objects exist. Consider the following code snippet to get a feel for the specifics:
 
-`var button = Ti.UI.createButton({`
+```javascript
+var button = Ti.UI.createButton({
+  // parameters go here...
+});
+var view = Ti.UI.createView({
+  // some parameters here...
+});
+view.add(button);
+// ... later
+win.remove(view);  // view & button still exist
+view = null; // deletes the view and its proxy, but not the button!
 
-`// parameters go here...`
+// compare that to:
 
-`});`
-
-`var view = Ti.UI.createView({`
-
-`// some parameters here...`
-
-`});`
-
-`view.add(button);`
-
-`// ... later`
-
-`win.remove(view);` `// view & button still exist`
-
-`view =` `null``;` `// deletes the view and its proxy, but not the button!`
-
-`// compare that to:`
-
-`var view = Ti.UI.createView({`
-
-`// some parameters here...`
-
-`});`
-
-`view.add(Ti.UI.createButton({`
-
-`// parameters go here...`
-
-`}));`
-
-`// ... later`
-
-`win.remove(view);`
-
-`view =` `null``;` `// deletes the view, button, and their proxies`
+var view = Ti.UI.createView({
+  // some parameters here...
+});
+view.add(Ti.UI.createButton({
+  // parameters go here...
+}));
+// ... later
+win.remove(view);
+view = null; // deletes the view, button, and their proxies
+```
 
 Make sure that you actively manage the Titanium objects you create, such as Windows, Views, and Buttons. Remove them from the view hierarchy and destroy them when you no longer need them. You might do this when a user closes a "dialog box" (view) or changes tabs in your app.
 
@@ -122,31 +107,23 @@ Memory leaks occur when your app allocates memory but doesn't release it. Leaks 
 
 * Declaring objects within a "global" event listener means those objects will remain in scope as long as the event listener exists. Global event listeners include those set on Ti.App, Ti.Geolocation, Ti.Gesture, and so forth.
 
-Creating and fixing a memory leak in a global event listener
+*Creating and fixing a memory leak in a global event listener*
 
-`function doSomething(_event) {`
+```javascript
+function doSomething(_event) {
+  var foo = bar;
+}
+// adding this event listener causes a memory leak
+// as references remain valid as long as the app is running
+Ti.App.addEventListener('bad:idea', doSomething);
 
-`var foo = bar;`
-
-`}`
-
-`// adding this event listener causes a memory leak`
-
-`// as references remain valid as long as the app is running`
-
-`Ti.App.addEventListener(``'bad:idea'``, doSomething);`
-
-`// you can plug this leak by removing the event listener, for example when the window is closed`
-
-`thisWindow.addEventListener(``'close'``, function() {`
-
-`// to remove an event listener, you must use the exact same function signature`
-
-`// as when the listener was added`
-
-`Ti.App.removeEventListener(``'bad:idea'``, doSomething);`
-
-`});`
+// you can plug this leak by removing the event listener, for example when the window is closed
+thisWindow.addEventListener('close', function() {
+  // to remove an event listener, you must use the exact same function signature
+  // as when the listener was added
+  Ti.App.removeEventListener('bad:idea', doSomething);
+});
+```
 
 ### Monitoring allocations on iOS
 
@@ -188,7 +165,7 @@ Lets continue! Apple's Instruments application is a handy tool for monitoring an
 
 If you make a change to your app, the most reliable way to gather new statistics in Instruments is to close it and start over.
 
-Tracking memory more accurately
+*Tracking memory more accurately*
 
 On iOS, the runtime and other systems may frequently allocate (or deallocate) objects which can't be managed directly through your javascript code. In general, when checking your app for memory leaks, you should be filtering for objects with the "Ti" prefix.
 
@@ -206,29 +183,24 @@ Android's [DDMS Tool](https://developer.android.com/studio/profile/monitor.html)
 
 3. Copy the <application> node, a sample of which is shown here (your app name would vary, of course):
 
-    `<``application`  `android:icon``=``"@drawable/appicon"`
-
-    `android:label``=``"AppLeak"`  `android:name``=``"AppleakApplication"`
-
-    `android:debuggable``=``"false"``>`
+    ```xml
+    <application android:icon="@drawable/appicon"
+      android:label="AppLeak" android:name="AppleakApplication"
+      android:debuggable="false">
+    ```
 
 4. Paste that into your app's tiapp.xml file, modifying the <android> node as shown:
 
-    `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-    `<``manifest``>`
-
-    `<``application`  `android:icon``=``"@drawable/appicon"`
-
-    `android:label``=``"AppLeak"`  `android:name``=``"AppleakApplication"`
-
-    `android:debuggable``=``"true"``>`
-
-    `</``application``>`
-
-    `</``manifest``>`
-
-    `</``android``>`
+    ```xml
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+      <manifest>
+        <application android:icon="@drawable/appicon"
+          android:label="AppLeak" android:name="AppleakApplication"
+          android:debuggable="true">
+        </application>
+      </manifest>
+    </android>
+    ```
 
     Notice that we've set debuggable to true and added and completed a couple of the nodes.
 
@@ -307,11 +279,11 @@ You'll examine an app that has a memory leak deliberately included. You'll apply
 
 8. Add this code after the existing app-level event listener:
 
-    `test1win.addEventListener(``'close'``,` `function``() {`
-
-    `Ti.App.removeEventListener(``'bad:idea'``, doSomething);`
-
-    `});`
+    ```
+    test1win.addEventListener('close', function() {
+      Ti.App.removeEventListener('bad:idea', doSomething);
+    });
+    ```
 
 9. Build your app for the simulator again.
 

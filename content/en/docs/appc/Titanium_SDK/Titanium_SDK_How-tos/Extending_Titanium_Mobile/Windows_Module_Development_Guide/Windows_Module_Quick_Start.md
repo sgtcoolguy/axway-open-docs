@@ -52,15 +52,15 @@ Like Windows application development, Windows module development is only support
 
 First, create a new module project.
 
-CLI Instructions
+*CLI Instructions*
 
 From a terminal, change the current working directory to your workspace and run:
 
-`cd`  `/PATH/TO/WORKSPACE`
-
-`appc new -n` `test` `--``id` `com.example.``test`
-
-`### when prompted for the project type, select "Titanium Module"`
+```bash
+cd /PATH/TO/WORKSPACE
+appc new -n test --id com.example.test
+### when prompted for the project type, select "Titanium Module"
+```
 
 In Studio:
 
@@ -80,13 +80,14 @@ Studio sets up a new folder called test that contains your module project.
 
 Next, build the module and package it. This process produces a ZIP file containing a binary library with unprocessed module assets, example code and documentation.
 
-CLI Instructions
+*CLI Instructions*
 
 From a terminal, go to the module's windows directory and run the appc run -p windows --build-only:
 
-`cd`  `test``/windows`
-
-`appc run -p windows --build-only`
+```bash
+cd test/windows
+appc run -p windows --build-only
+```
 
 After the build completes, unzip the built module in the Titanium SDK home path: (C:\\ProgramData\\Titanium).
 
@@ -110,15 +111,15 @@ To test the module, create a test application and add the module as a dependency
 
 ### Create a test application
 
-CLI Instructions
+*CLI Instructions*
 
 From a new terminal window, change the current working directory to your workspace and run the following commands:
 
-`cd`  `/PATH/TO/WORKSPACE`
-
-`appc new -t titanium -p windows -n Hello -u http:``//` `--``id` `com.example.hello`
-
-`cd` `Hello/`
+```bash
+cd /PATH/TO/WORKSPACE
+appc new -t titanium -p windows -n Hello -u http:// --id com.example.hello
+cd Hello/
+```
 
 In Studio:
 
@@ -142,19 +143,17 @@ Studio sets up a new folder called Hello that contains the test application you 
 
 To load the module in the application, you need to add it as a dependency to the project.
 
-CLI Instructions
+*CLI Instructions*
 
 Open the tiapp.xml and update the <modules/> element to include the module as a dependency to the project:
 
-`<``ti``:app>`
-
-`<``modules``>`
-
-`<``module`  `platform``=``"windows"``>com.example.test</``module``>`
-
-`</``modules``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    <modules>
+        <module platform="windows">com.example.test</module>
+    </modules>
+</ti:app>
+```
 
 In Studio:
 
@@ -172,25 +171,25 @@ The module can be loaded by passing the module ID to the require() method, which
 
 Open the app/alloy.js file and replace the code with the following, which invokes API calls to the module:
 
-app/alloy.js
+*app/alloy.js*
 
-`var` `test = require(``'com.example.test'``);`
-
-`Ti.API.info(``"module is => "` `+ test);`
-
-`Ti.API.info(``"module example() method returns => "` `+ test.example());`
-
-`Ti.API.info(``"module exampleProp is => "` `+ test.exampleProp);`
-
-`test.exampleProp =` `"This is a test value"``;`
+```javascript
+var test = require('com.example.test');
+Ti.API.info("module is => " + test);
+Ti.API.info("module example() method returns => " + test.example());
+Ti.API.info("module exampleProp is => " + test.exampleProp);
+test.exampleProp = "This is a test value";
+```
 
 ### Run the application
 
-CLI Instructions
+*CLI Instructions*
 
 From a terminal that has the test app as its current working directory, run:
 
-`appc run -p windows`
+```bash
+appc run -p windows
+```
 
 In the Studio toolbar, select **Run** in **Launch Modes** and select an Windows Phone simulator in **Launch Targets**.
 
@@ -198,13 +197,13 @@ Studio builds and launches the application on the select Windows Phone simulator
 
 The console lines seen below show us that the module is working as expected.
 
-Console
+*Console*
 
-`[INFO] module is => [object ComExampleTestModule]`
-
-`[INFO] module example() method returns => hello world`
-
-`[INFO] module exampleProp is => hello world`
+```
+[INFO]  module is => [object ComExampleTestModule]
+[INFO]  module example() method returns => hello world
+[INFO]  module exampleProp is => hello world
+```
 
 ## Modify the module
 
@@ -220,262 +219,184 @@ First, look at some of the default files created by the Titanium SDK. Expand the
 
 A Module is a key/value store like an Object. Without any modification, you can set properties on a Module and then read them back at will as if they were properties. You can also override the getters and setters to add some custom logic. Modify the default module class files to store and retrieve a string value. First, modify the ComExampleTestModule.hpp file to declare a variable to hold the string:
 
-ComExampleTest.hpp
+*ComExampleTest.hpp*
 
-`class` `COMEXAMPLETEST_EXPORT Test :` `public` `Titanium::Module,` `public` `JSExport<Test>`
-
-`{`
-
-`public``:`
-
-`...`
-
-`TITANIUM_PROPERTY_DEF(exampleProp);`
-
-`...`
-
-`private``:`
-
-`std::string exampleProp__;`
-
-`};`
+```hpp
+class COMEXAMPLETEST_EXPORT Test : public Titanium::Module, public JSExport<Test>
+{
+    public:
+        ...
+        TITANIUM_PROPERTY_DEF(exampleProp);
+        ...
+    private:
+        std::string exampleProp__;
+};
+```
 
 Next, modify the example setter and getter to actually set and get the variable you just declared. These methods are already declared in the ComExampleTestModule.cpp file but not implemented. TitaniumKit provides useful macro to declare setter and getter, which is TITANIUM\_PROPERTY\_GETTER and TITANIUM\_PROPERTY\_GETTER . TitaniumKit requires property value being treated as an JSValue datatype. Once you implement the method, register it using TITANIUM\_ADD\_FUNCTION in JSExportInitialize.
 
-ComExampleTest.cpp
+*ComExampleTest.cpp*
 
-`TITANIUM_PROPERTY_GETTER(Test, exampleProp)`
+```cpp
+TITANIUM_PROPERTY_GETTER(Test, exampleProp)
+{
+    // example property getter
+    //
+    // Getter should return JavaScript value (JSValue).
+    //
+    // For more information on how to use JSContext / JSValue / JSObject, check out HAL:
+    //      https://github.com/appcelerator/HAL
+    //
+    return get_context().CreateString(exampleProp__);
+}
 
-`{`
+TITANIUM_PROPERTY_SETTER(Test, exampleProp)
+{
+    // example property setter
+    //
+    // There are a variable expanded from TITANIUM_PROPERTY_SETTER macro here:
+    //     JSValue argument ... JavaScript value that is passed to this setter
+    //
+    // Example:
+    //   # Check if it's a string
+    //      auto _0 = argument.IsString();
+    //
+    //   # Convert argument to std::string
+    //      auto _0 = static_cast<std::string>(argument);
+    //
+    //   For more information on how to use JSContext / JSValue / JSObject, check out HAL:
+    //      https://github.com/appcelerator/HAL
 
-`// example property getter`
+    // Update property string
+    exampleProp__ = static_cast<std::string>(argument);
 
-`//`
+    //
+    // Setter should return true if the property was set, otherwise false.
+    //
+    return true;
+}
 
-`// Getter should return JavaScript value (JSValue).`
+void Test::JSExportInitialize()
+{
+    JSExport<Test>::SetClassVersion(1);
+    JSExport<Test>::SetParent(JSExport<Titanium::Module>::Class());
 
-`//`
-
-`// For more information on how to use JSContext / JSValue / JSObject, check out HAL:`
-
-`// https://github.com/appcelerator/HAL`
-
-`//`
-
-`return` `get_context().CreateString(exampleProp__);`
-
-`}`
-
-`TITANIUM_PROPERTY_SETTER(Test, exampleProp)`
-
-`{`
-
-`// example property setter`
-
-`//`
-
-`// There are a variable expanded from TITANIUM_PROPERTY_SETTER macro here:`
-
-`// JSValue argument ... JavaScript value that is passed to this setter`
-
-`//`
-
-`// Example:`
-
-`// # Check if it's a string`
-
-`// auto _0 = argument.IsString();`
-
-`//`
-
-`// # Convert argument to std::string`
-
-`// auto _0 = static_cast<std::string>(argument);`
-
-`//`
-
-`// For more information on how to use JSContext / JSValue / JSObject, check out HAL:`
-
-`// https://github.com/appcelerator/HAL`
-
-`// Update property string`
-
-`exampleProp__ =` `static_cast``<std::string>(argument);`
-
-`//`
-
-`// Setter should return true if the property was set, otherwise false.`
-
-`//`
-
-`return`  `true``;`
-
-`}`
-
-`void` `Test::JSExportInitialize()`
-
-`{`
-
-`JSExport<Test>::SetClassVersion(1);`
-
-`JSExport<Test>::SetParent(JSExport<Titanium::Module>::Class());`
-
-`// register exampleProp property`
-
-`TITANIUM_ADD_PROPERTY(Test, exampleProp);`
-
-`...`
-
-`}`
+    // register exampleProp property
+    TITANIUM_ADD_PROPERTY(Test, exampleProp);
+...
+}
+```
 
 ### Add a function
 
 In order to add JavaScript function to Module, modify the default module class files to return JavaScript value First, modify the ComExampleTestModule.hpp file to declare a JavaScript function using TITANIUM\_FUNCTION\_DEF:
 
-ComExampleTest.hpp
+*ComExampleTest.hpp*
 
-`class` `COMEXAMPLETEST_EXPORT Test :` `public` `Titanium::Module,` `public` `JSExport<Test>`
-
-`{`
-
-`public``:`
-
-`...`
-
-`TITANIUM_FUNCTION_DEF(example);`
-
-`...`
-
-`};`
+```hpp
+class COMEXAMPLETEST_EXPORT Test : public Titanium::Module, public JSExport<Test>
+{
+    public:
+        ...
+        TITANIUM_FUNCTION_DEF(example);
+        ...
+};
+```
 
 Next, modify the example function to actually return variable you just declared. These methods are already declared in the ComExampleTestModule.cpp file but not implemented. TitaniumKit provides useful macro to declare JavaScript function, which is TITANIUM\_FUNCTION. TITANIUM\_FUNCTION should return JSValue datatype. Once you implement the method, register it using TITANIUM\_ADD\_PROPERTY in JSExportInitialize.
 
-ComExampleTest.cpp
+*ComExampleTest.cpp*
 
-`TITANIUM_FUNCTION(Test, example)`
+```cpp
+TITANIUM_FUNCTION(Test, example)
+{
+    // example method
+    //
+    // There are variables expanded from TITANIUM_FUNCTION macro here:
+    //     std::vector<JSValue> arguments ... list of arguments that is passed to this function
+    //     JSObject this_object           ... "this" JavaScript object
+    //
+    // Example:
+    //    # Get first argument and convert to std::string
+    //      auto _0 = static_cast<std::string>(arguments.at(0));
+    //
+    //    # Get first argument and convert to double
+    //      auto _0 = static_cast<double>(arguments.at(0));
+    //
+    //    # Get first argument and convert to std::uint32_t
+    //      auto _0 = static_cast<std::uint32_t>(arguments.at(0));
+    //
+    //   Function should return JSValue.
+    //   For more information on how to use JSContext / JSValue / JSObject, check out HAL:
+    //      https://github.com/appcelerator/HAL
+    //
 
-`{`
+    // Let's return exampleProp value for now
+    return get_context().CreateString(exampleProp__);
+}
 
-`// example method`
+void Test::JSExportInitialize()
+{
+    JSExport<Test>::SetClassVersion(1);
+    JSExport<Test>::SetParent(JSExport<Titanium::Module>::Class());
 
-`//`
-
-`// There are variables expanded from TITANIUM_FUNCTION macro here:`
-
-`// std::vector<JSValue> arguments ... list of arguments that is passed to this function`
-
-`// JSObject this_object ... "this" JavaScript object`
-
-`//`
-
-`// Example:`
-
-`// # Get first argument and convert to std::string`
-
-`// auto _0 = static_cast<std::string>(arguments.at(0));`
-
-`//`
-
-`// # Get first argument and convert to double`
-
-`// auto _0 = static_cast<double>(arguments.at(0));`
-
-`//`
-
-`// # Get first argument and convert to std::uint32_t`
-
-`// auto _0 = static_cast<std::uint32_t>(arguments.at(0));`
-
-`//`
-
-`// Function should return JSValue.`
-
-`// For more information on how to use JSContext / JSValue / JSObject, check out HAL:`
-
-`// https://github.com/appcelerator/HAL`
-
-`//`
-
-`// Let's return exampleProp value for now`
-
-`return` `get_context().CreateString(exampleProp__);`
-
-`}`
-
-`void` `Test::JSExportInitialize()`
-
-`{`
-
-`JSExport<Test>::SetClassVersion(1);`
-
-`JSExport<Test>::SetParent(JSExport<Titanium::Module>::Class());`
-
-`// register example function`
-
-`TITANIUM_ADD_FUNCTION(Test, example);`
-
-`...`
-
-`}`
+    // register example function
+    TITANIUM_ADD_FUNCTION(Test, example);
+...
+}
+```
 
 ### Firing callbacks
 
 There are multiple way to fire JavaScript functions as a callback. First, the easiest way to fire callback is leveraging Titanium's event mechanics such as addEventListener.
 So let say you are listening somethingfired event. In this case you can add listener in JavaScript like below.
 
-app.js
+*app.js*
 
-`test.addEventListener(``'somethingfired'``,` `function``(e) {`
-
-`Ti.API.info(e.type +` `' my_number:'` `+ e.my_number);`
-
-`});`
+```javascript
+test.addEventListener('somethingfired', function(e) {
+    Ti.API.info(e.type + ' my_number:' + e.my_number);
+});
+```
 
 In this case, you can fire this callback from the module by executing fireEvent like below.
 
-ComExampleTest.cpp
+*ComExampleTest.cpp*
 
-`TITANIUM_FUNCTION(YourModule, doTheMyNumberEvent)`
-
-`{`
-
-`const` `auto ctx = get_context();`
-
-`auto e = ctx.CreateObject();`
-
-`e.SetProperty(``"my_number"``, ctx.CreateNumber(12345));`
-
-`fireEvent(``"somethingfired"``, e);`
-
-`}`
+```cpp
+TITANIUM_FUNCTION(YourModule, doTheMyNumberEvent)
+{
+    const auto ctx = get_context();
+    auto e = ctx.CreateObject();
+    e.SetProperty("my_number", ctx.CreateNumber(12345));
+    fireEvent("somethingfired", e);
+}
+```
 
 There is another way to do the callback, by calling JSObject as a function directly. This is basic functionality on HAL framework.
 
-app.js
+*app.js*
 
-`test.doTheCallbackImmediately(``function``(str) {`
-
-`Ti.API.info(str);`
-
-`});`
+```javascript
+test.doTheCallbackImmediately(function(str) {
+    Ti.API.info(str);
+});
+```
 
 Since HAL JSObject is callable, you can just execute it with arguments like below.
 
-ComExampleTest.cpp
+*ComExampleTest.cpp*
 
-`TITANIUM_FUNCTION(YourModule, doTheCallbackImmediately)`
+```cpp
+TITANIUM_FUNCTION(YourModule, doTheCallbackImmediately)
+{
+    ENSURE_OBJECT_AT_INDEX(my_callback, 0);
 
-`{`
-
-`ENSURE_OBJECT_AT_INDEX(my_callback, 0);`
-
-`const` `std::vector<JSValue> args { get_context().CreateString(``"TEST"``) };`
-
-`my_callback(args, get_object());`
-
-`return` `get_context().CreateUndefined();`
-
-`}`
+    const std::vector<JSValue> args { get_context().CreateString("TEST") };
+    my_callback(args, get_object());
+    return get_context().CreateUndefined();
+}
+```
 
 ## Next steps
 

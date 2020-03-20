@@ -46,35 +46,28 @@ In the following sections we'll see exactly how we can create WebViews in our ap
 
 In its simplest form, a WebView is created with the Ti.UI.createWebView() function and added to the view hierarchy just as we would any other view component. Let's look at a simple example. Here we'll display an existing website in our native app using just a few lines of code.
 
-`var win = Ti.UI.createWindow();`
-
-`var webview = Ti.UI.createWebView({`
-
-`url:` `'http://www.appcelerator.com'`
-
-`});`
-
-`win.add(webview);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow();
+var webview = Ti.UI.createWebView({
+  url: 'http://www.appcelerator.com'
+});
+win.add(webview);
+win.open();
+```
 
 ![appc](/Images/appc/download/attachments/29004918/appc.png)
 
 As pictured above, we need only specify the url of a remote website in order to display it in a WebView. And just like other view components, we are free to resize and position the WebView any way we like. For example, if we wanted to have a smaller WebView that was only a portion of the visible screen, we could do something like this:
 
-`var win = Ti.UI.createWindow();`
-
-`var webview = Ti.UI.createWebView({`
-
-`url:` `'http://www.appcelerator.com'``,`
-
-`height:` `'200dp'`
-
-`});`
-
-`win.add(webview);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow();
+var webview = Ti.UI.createWebView({
+    url: 'http://www.appcelerator.com',
+    height: '200dp'
+});
+win.add(webview);
+win.open();
+```
 
 ![appc_small](/Images/appc/download/attachments/29004918/appc_small.png)
 
@@ -86,75 +79,57 @@ One of the more interesting uses of remote WebViews is displaying mobile optimiz
 
 Often times when dealing with web content we'll want to load it from local resources. This allows offline usage and can decrease the load time of the WebView. This web content can include HTML, CSS, and even Javascript libraries. The syntax for loading local web content is identical to that of the remote:
 
-`var win = Ti.UI.createWindow();`
-
-`var webview = Ti.UI.createWebView({`
-
-`url:` `'local.html'`
-
-`});`
-
-`win.add(webview);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow();
+var webview = Ti.UI.createWebView({
+  url: 'local.html'
+});
+win.add(webview);
+win.open();
+```
 
 local.html refers to a local HTML file included in our project. The path used by the url property when referring to local web content is relative to your project's Resources directory for Titanium projects, or app/assets and app/lib directories for Alloy project. This is important to note as you include more complex local web content, as we'll discuss next.
 
 Let's say you not only want to show a local HTML file, but you also want that HTML file to have access to local CSS and Javascript files. All you need to do is remember that all local web content is available relative to your project's Resources directory for Titanium projects, or app/assets and app/lib directories for Alloy project.. You can think of the directory almost as a local web server root path. To illustrate this point, let's take the prior example and expand it to use local CSS and Javascript files.
 
-local.html
+*local.html*
 
-`<html>`
+```html
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local HTML</title>
+    <link rel="stylesheet" type="text/css" href="local.css"/>
+    <script src="local.js"></script>
+  </head>
+  <body onload="addParagraphAlert();">
+    <p id="localtest">
+      Here some text that will be styled by the included local style sheet. If you click it,
+      the included local JS file will cause an alert to pop up.
+    </p>
+  </body>
+</html>
+```
 
-`<head>`
+*local.css*
 
-`<meta name=``"viewport"` `content=``"width=device-width, initial-scale=1.0"``>`
+```css
+p {
+  color: #880000;
+  font-weight: bold;
+  font-size: 24px;
+}
+```
 
-`<title>Local HTML</title>`
+*local.js*
 
-`<link rel=``"stylesheet"` `type=``"text/css"` `href=``"local.css"``/>`
-
-`<script src=``"local.js"``></script>`
-
-`</head>`
-
-`<body onload=``"addParagraphAlert();"``>`
-
-`<p id=``"localtest"``>`
-
-`Here some text that will be styled by the included local style sheet. If you click it,`
-
-`the included local JS file will cause an alert to pop up.`
-
-`</p>`
-
-`</body>`
-
-`</html>`
-
-local.css
-
-`p {`
-
-`color: #``880000``;`
-
-`font-weight: bold;`
-
-`font-size: 24px;`
-
-`}`
-
-local.js
-
-`function addParagraphAlert() {`
-
-`document.getElementById(``'localtest'``).addEventListener(``'click'``, function(e) {`
-
-`alert(``'you clicked the paragraph'``);`
-
-`});`
-
-`}`
+```javascript
+function addParagraphAlert() {
+  document.getElementById('localtest').addEventListener('click', function(e) {
+    alert('you clicked the paragraph');
+  });
+}
+```
 
 All of the above files are placed in the Resources directory of your project. Below we can see what this would look like on an iPhone:
 
@@ -164,17 +139,14 @@ The included HTML/CSS/JS does not have to be this simplistic, though. With local
 
 In addition to being able to specify local HTML files, you can also add HTML dynamically to your WebViews via the html property. This can be used for adding everything from simple styled text to a full fledged webpage. Here's how you would specify HTML in your own WebView via html. This would display a very simple paragraph in an unstyled WebView.
 
-`var win = Ti.UI.createWindow();`
-
-`var webview = Ti.UI.createWebView({`
-
-`html:` `'<html><body><p>Here is my paragraph</p></body></html>'`
-
-`});`
-
-`win.add(webview);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow();
+var webview = Ti.UI.createWebView({
+  html: '<html><body><p>Here is my paragraph</p></body></html>'
+});
+win.add(webview);
+win.open();
+```
 
 One additional, and extremely powerful, bit of functionality available to you with local WebViews is the ability for your local web content to be able to communicate bidirectionally with your Titanium code via application level events. What this means is that interactions and data from your WebViews can be shared with your native Titanium code, and vice versa. This will be discussed in more detail in the [Communication Between WebViews and Titanium](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Integrating_Web_Content/Communication_Between_WebViews_and_Titanium/) section.
 

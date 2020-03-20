@@ -82,27 +82,33 @@ Deploying the application using the CLI
 
 To launch the application using the Titanium CLI, run the following command:
 
-`appc run -p android -T device --device-``id`  `"<DEVICE_ID>"`
+```bash
+appc run -p android -T device --device-id "<DEVICE_ID>"
+```
 
 You may omit the \--device-id parameter if you only have one device connected. To retrieve a list of connected devices, run one of the following commands:
 
-`appc ti info -t android`
-
-`## or`
-
-`adb devices -l`
+```bash
+appc ti info -t android
+## or
+adb devices -l
+```
 
 ### Deploy the application using adb
 
 You can use the adb command to install apps to a connected device if you have a built APK file. If the platform-tools directory (within the Android SDK) is in your system's PATH, from a terminal, run the following command:
 
-`adb` `install` `-r your_project``/build/android/bin/app``.apk`
+```
+adb install -r your_project/build/android/bin/app.apk
+```
 
 Hint: use the \-e switch to interact with a single running Android emulator; use \-d to interact with a single connected device.
 
 You can uninstall an app with adb as well via your app's unique Android package name:
 
-`adb uninstall com.your.appid`
+```
+adb uninstall com.your.appid
+```
 
 ### Deploy to remote testers
 
@@ -120,13 +126,13 @@ By default, your application is installed to the device's internal storage. To c
 
 * **internalOnly** - which specifies that your app cannot be installed to the SD card. See the [Android docs](http://developer.android.com/guide/appendix/install-location.html#ShouldNot) for the various reasons why you might choose this option.
 
-tiapp.xml
+*tiapp.xml*
 
-`<android xmlns:android=``"http://schemas.android.com/apk/res/android"``>`
-
-`<manifest android:installLocation=``"preferExternal"``/>`
-
-`</android>`
+```xml
+<android xmlns:android="http://schemas.android.com/apk/res/android">
+   <manifest android:installLocation="preferExternal"/>
+</android>
+```
 
 ### Change the version number
 
@@ -136,13 +142,13 @@ To change the version of the application, add the following attributes to the ma
 
 * **android:versionName** - The version name string can be anything you want.
 
-tiapp.xml
+*tiapp.xml*
 
-`<android xmlns:android=``"http://schemas.android.com/apk/res/android"``>`
-
-`<manifest android:versionCode=``"2"` `android:versionName=``"8.675.309"``/>`
-
-`</android>`
+```xml
+<android xmlns:android="http://schemas.android.com/apk/res/android">
+    <manifest android:versionCode="2" android:versionName="8.675.309"/>
+</android>
+```
 
 For more information on versioning in Android, see [http://developer.android.com/guide/publishing/versioning.html](http://developer.android.com/guide/publishing/versioning.html).
 
@@ -154,13 +160,12 @@ For more information on versioning in Android, see [http://developer.android.com
 
 If your device is not recognized after following the above instructions, the adb process may have hung. Run the following commands in a terminal to restart adb:
 
-`adb devices` `//` `print list of attached devices`
-
-`adb` `kill``-server`
-
-`adb start-server`
-
-`adb devices` `//` `verify that device has been recognized`
+```
+adb devices // print list of attached devices
+adb kill-server
+adb start-server
+adb devices // verify that device has been recognized
+```
 
 #### USB cord
 

@@ -20,20 +20,25 @@ As illustrated in the image above, Zero-downtime upgrading is set to true. A tru
 
 From the command line, you can use the \--nodowntime flag to set this property:
 
-`appc acs config --nodowntime` `false`
-
-`appc acs config --nodowntime` `true`
+```bash
+appc acs config --nodowntime false
+appc acs config --nodowntime true
+```
 
 ## One-time In-place Upgrade
 
 As noted above, when Zero-downtime upgrading is set to true, the upgrade will use additional containers. However, you can disable this with an option when publishing:
 
-`appc acs publish --force --inplace`
+```bash
+appc acs publish --force --inplace
+```
 
 The inplace flag makes upgrading happen in-place for this one time.
 
 Similarly:
 
-`appc acs config --set key=value --inplace`
+```bash
+appc acs config --set key=value --inplace
+```
 
 This makes environment variable change happen in-place for this one time.

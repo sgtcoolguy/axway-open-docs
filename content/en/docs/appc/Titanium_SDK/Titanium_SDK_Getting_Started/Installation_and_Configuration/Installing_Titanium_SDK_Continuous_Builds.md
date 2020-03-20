@@ -79,12 +79,11 @@ To manually install a Titanium SDK, follow these steps:
 
 Especially in corporate environments, it may be necessary to compile Titanium SDKs and make them available on a server. Be aware that Studio requires that the SDK file structure follows this convention:
 
-`.zip root`
-
-`|--mobilesdk`
-
-`|-- osx | linux | win32`
-
-`|-- VERSION.NUMBER`
+```
+.zip root
+|--mobilesdk
+   |-- osx | linux | win32
+      |-- VERSION.NUMBER
+```
 
 This must be archived as mobilesdk-VERSION.NUMBER-OS.zip.

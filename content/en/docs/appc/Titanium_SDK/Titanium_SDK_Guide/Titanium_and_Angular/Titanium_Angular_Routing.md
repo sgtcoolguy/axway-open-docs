@@ -18,113 +18,90 @@ If you followed our [Titanium Angular Getting Started Guide](/docs/appc/Titanium
 
 First, open app/src/app.component.ts and copy its content to app/src/intro.component.ts. Do the same for app/src/app.component.html and copy it over to app/src/intro.component.html. Open intro.component.ts again and change the component name and its template to reflect those recent changes.
 
-intro.component.ts
+*intro.component.ts*
 
-`@Component({`
-
-`templateUrl:` `"./intro.component.html"`
-
-`})`
-
-`export class IntroComponent implements AfterViewInit, OnInit {`
-
-`...`
-
-`}`
+```typescript
+@Component({
+    templateUrl: "./intro.component.html"
+})
+export class IntroComponent implements AfterViewInit, OnInit {
+  ...
+}
+```
 
 Now, open app.component.ts and replace it with an empty AppComponent.
 
-`import { Component } from` `'@angular/core'``;`
+```
+import { Component } from '@angular/core';
 
-`@Component({`
-
-`selector:` `"ti-app"``,`
-
-`templateUrl:` `"./app.component.html"`
-
-`})`
-
-`export class AppComponent { }`
+@Component({
+    selector: "ti-app",
+    templateUrl: "./app.component.html"
+})
+export class AppComponent { }
+```
 
 After that, open app.component.html and replace its content with the Titanium router outlet directive.
 
-app.component.html
+*app.component.html*
 
-`<``ti``-router-outlet></``ti``-router-outlet>`
+```html
+<ti-router-outlet></ti-router-outlet>
+```
 
 This is the place where Angular will load the routed views.
 
 To let Angular know which routes your application has, create another file named app-routing.module.ts and paste the following code into it.
 
-`import { NgModule } from` `'@angular/core'``;`
+```javascript
+import { NgModule } from '@angular/core';
+import { Router, RouterModule, Routes } from '@angular/router';
+import { TitaniumRouterModule } from 'titanium-angular';
 
-`import { Router, RouterModule, Routes } from` `'@angular/router'``;`
+import { IntroComponent } from './intro.component';
 
-`import { TitaniumRouterModule } from` `'titanium-angular'``;`
+const appRoutes: Routes = [
+    { path: '', redirectTo: '/intro', pathMatch: 'full' },
+    { path: 'intro', component: IntroComponent }
+];
 
-`import { IntroComponent } from` `'./intro.component'``;`
-
-`const appRoutes: Routes = [`
-
-`{ path:` `''``, redirectTo:` `'/intro'``, pathMatch:` `'full'` `},`
-
-`{ path:` `'intro'``, component: IntroComponent }`
-
-`];`
-
-`@NgModule({`
-
-`imports: [TitaniumRouterModule.forRoot(appRoutes)],`
-
-`exports: [TitaniumRouterModule]`
-
-`})`
-
-`export class AppRoutingModule { }`
+@NgModule({
+    imports: [TitaniumRouterModule.forRoot(appRoutes)],
+    exports: [TitaniumRouterModule]
+})
+export class AppRoutingModule { }
+```
 
 This will setup a route for your previously created IntroComponent under the path /intro. It also instructs Angular to load this route upon the initial app launch by setting up a redirect for an empty path string.
 
-Path routing in Titanium
+*Path routing in Titanium*
 
 You may be wondering how routing via paths is working inside a native app. The short answer is that we emulate the browsers [History API](https://developer.mozilla.org/en-US/docs/Web/API/History) and let Angular's router do its magic to load the configured components. We also make sure to properly handle native navigation events such the Android back button or the iOS swipe left-to-right gesture to trigger a back navigation.
 
 Finally, open up the app.module.ts and add imports for the AppRoutingModule and IntroComponent, add the module to the imports and the component to the declarations of the AppModule configuration. Your app.module.ts should look like this afterwards:
 
-`import { NgModule, NO_ERRORS_SCHEMA } from` `'@angular/core'``;`
+```
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { TitaniumModule } from 'titanium-angular';
 
-`import { TitaniumModule } from` `'titanium-angular'``;`
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home.component';
 
-`import { AppComponent } from` `'./app.component'``;`
-
-`import { AppRoutingModule } from` `'./app-routing.module'``;`
-
-`import { HomeComponent } from` `'./home.component'``;`
-
-`@NgModule({`
-
-`imports: [`
-
-`TitaniumModule,`
-
-`AppRoutingModule`
-
-`],`
-
-`declarations: [`
-
-`AppComponent,`
-
-`HomeComponent`
-
-`],`
-
-`bootstrap: [AppComponent],`
-
-`schemas: [NO_ERRORS_SCHEMA]`
-
-`})`
-
-`export class AppModule { }`
+@NgModule({
+    imports: [
+        TitaniumModule,
+        AppRoutingModule
+    ],
+    declarations: [
+        AppComponent,
+        HomeComponent
+    ],
+    bootstrap: [AppComponent],
+    schemas: [NO_ERRORS_SCHEMA]
+})
+export class AppModule { }
+```
 
 You can now build your app again and routing will be enabled. But the app won't be any different than before so let's change that and see the router in action.
 
@@ -132,123 +109,98 @@ You can now build your app again and routing will be enabled. But the app won't 
 
 Now that routing is in place, it is time to add a new component and navigate to it using the Angular Router. Create app/src/home.component.ts and paste the following code.
 
-home.component.ts
+*home.component.ts*
 
-`import { Component } from` `'@angular/core'``;`
+```typescript
+import { Component } from '@angular/core';
 
-`@Component({`
+@Component({
+    templateUrl: "./home.component.html"
+})
+export class HomeComponent {
 
-`templateUrl:` `"./home.component.html"`
-
-`})`
-
-`export class HomeComponent {`
-
-`}`
+}
+```
 
 Since we focus on the routing aspect here, we just use a very simple template. Create app/src/home.component.html and create the following user interface.
 
-home.component.html
+*home.component.html*
 
-`<``Window`  `backgroundColor``=``"#fafafa"``>`
-
-`<``Label``>Hello World!</``Label``>`
-
-`</``Window``>`
+```html
+<Window backgroundColor="#fafafa">
+    <Label>Hello World!</Label>
+</Window>
+```
 
 Now you need to go back to your app-routing.module.ts and add a route for your newly created component.
 
-`import { NgModule } from` `'@angular/core'``;`
+```javascript
+import { NgModule } from '@angular/core';
+import { Router, RouterModule, Routes } from '@angular/router';
+import { TitaniumRouterModule } from 'titanium-angular';
 
-`import { Router, RouterModule, Routes } from` `'@angular/router'``;`
+import { IntroComponent } from './intro.component';
+import { HomeComponent } from './home.component';
 
-`import { TitaniumRouterModule } from` `'titanium-angular'``;`
+const appRoutes: Routes = [
+    { path: '', redirectTo: '/intro', pathMatch: 'full' },
+    { path: 'intro', component: IntroComponent },
+    { path: 'home', component: HomeComponent }
+];
 
-`import { IntroComponent } from` `'./intro.component'``;`
-
-`import { HomeComponent } from` `'./home.component'``;`
-
-`const appRoutes: Routes = [`
-
-`{ path:` `''``, redirectTo:` `'/intro'``, pathMatch:` `'full'` `},`
-
-`{ path:` `'intro'``, component: IntroComponent },`
-
-`{ path:` `'home'``, component: HomeComponent }`
-
-`];`
-
-`@NgModule({`
-
-`imports: [TitaniumRouterModule.forRoot(appRoutes)],`
-
-`exports: [TitaniumRouterModule]`
-
-`})`
-
-`export class AppRoutingModule { }`
+@NgModule({
+    imports: [TitaniumRouterModule.forRoot(appRoutes)],
+    exports: [TitaniumRouterModule]
+})
+export class AppRoutingModule { }
+```
 
 After that, go to your app.module.ts and add the HomeComponent to the declarations property.
 
-`import { NgModule, NO_ERRORS_SCHEMA } from` `'@angular/core'``;`
+```
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { TitaniumModule } from 'titanium-angular';
 
-`import { TitaniumModule } from` `'titanium-angular'``;`
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { IntroComponent } from './intro.component';
+import { HomeComponent } from 'home.component';
 
-`import { AppComponent } from` `'./app.component'``;`
-
-`import { AppRoutingModule } from` `'./app-routing.module'``;`
-
-`import { IntroComponent } from` `'./intro.component'``;`
-
-`import { HomeComponent } from` `'home.component'``;`
-
-`@NgModule({`
-
-`imports: [`
-
-`TitaniumModule,`
-
-`AppRoutingModule`
-
-`],`
-
-`declarations: [`
-
-`AppComponent,`
-
-`IntroComponent,`
-
-`HomeComponent`
-
-`],`
-
-`bootstrap: [AppComponent],`
-
-`schemas: [NO_ERRORS_SCHEMA]`
-
-`})`
-
-`export class AppModule { }`
+@NgModule({
+    imports: [
+        TitaniumModule,
+        AppRoutingModule
+    ],
+    declarations: [
+        AppComponent,
+        IntroComponent,
+        HomeComponent
+    ],
+    bootstrap: [AppComponent],
+    schemas: [NO_ERRORS_SCHEMA]
+})
+export class AppModule { }
+```
 
 At this point the routing setup is done and Angular knows about your new component and its route. The last thing that is missing now is to actually trigger the navigation. Go back to the intro.component.html and change the Button element that is marked with the #demoButton identifier to the following.
 
-`<``Button` `#demoButton` `title``=``"Tap me!"`  `tiRouterLink``=``"/home"`  `bottom``=``"40"`  `height``=``"40"`  `width``=``"150"`  `backgroundColor``=``"#1976d2"`  `color``=``"white"`  `borderRadius``=``"20"``></``Button``>`
+```xml
+<Button #demoButton title="Tap me!" tiRouterLink="/home" bottom="40" height="40" width="150" backgroundColor="#1976d2" color="white" borderRadius="20"></Button>
+```
 
 Note the usage of the tiRouterLink directive which is used to trigger the navigation to a new route. You can use this directive on all elements that support the click Event. If you need to trigger the navigation from your code, for example, the click event isn't available or you need to execute some other logic first, you can also navigate using the TitaniumRouter. For this you inject the router into your component and then call the navigate or navigateByUrl methods as demonstrated by the code below.
 
-`import { TitaniumRouter } from` `'titanium-angular'``;`
+```
+import { TitaniumRouter } from 'titanium-angular';
 
-`class ExampleComponent {`
+class ExampleComponent {
+  constructor(private router: TitaniumRouter) { }
 
-`constructor(private router: TitaniumRouter) { }`
-
-`openHome() {`
-
-`this``.router.navigate([``'home'``]).``catch``(e => Ti.API.error(e.message));`
-
-`}`
-
-`}`
+  openHome() {
+    this.router.navigate(['home']).catch(e => Ti.API.error(e.message));
+  }
+}
+```
 
 These methods take the same parameters as [navigate](https://angular.io/api/router/Router#navigate) and [navigateByUrl](https://angular.io/api/router/Router#navigateByUrl) from the original Angular router.
 

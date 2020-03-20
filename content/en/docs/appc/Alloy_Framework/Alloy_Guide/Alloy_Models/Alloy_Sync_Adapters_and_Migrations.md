@@ -28,31 +28,27 @@ Models are accessed from persistent storage (or the collection) based on its id 
 
 The sync method depends on calls to other Backbone methods as described in the table below.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Backbone Method</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Sync CRUD Method</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Equivalent HTTP Method</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Equivalent SQL Method</strong></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Collection.fetch</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>read</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>GET</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>SELECT</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Collection.create (id == null)<br>or<br>Collection.create (id != null)</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>create<br>or<br>update</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>POST<br>or<br>PUT</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>INSERT<br>or<br>UPDATE</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Model.fetch</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>read</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>GET</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>SELECT</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Model.save (id == null)<br>or<br>Model.save (id != null)</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>create<br>or<br>update</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>POST<br>or<br>PUT</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>INSERT<br>or<br>UPDATE</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Model.destroy</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>delete</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>DELETE</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>DELETE</p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Backbone Method</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Sync CRUD Method</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Equivalent HTTP Method</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Equivalent SQL Method</strong></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Collection.fetch</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>read</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>GET</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>SELECT</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Collection.create (id == null)<br>or<br>Collection.create (id != null)</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>create<br>or<br>update</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>POST<br>or<br>PUT</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>INSERT<br>or<br>UPDATE</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Model.fetch</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>read</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>GET</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>SELECT</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Model.save (id == null)<br>or<br>Model.save (id != null)</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>create<br>or<br>update</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>POST<br>or<br>PUT</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>INSERT<br>or<br>UPDATE</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Model.destroy</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>delete</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>DELETE</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>DELETE</p></td></tr></tbody></table>
 
 For example, the code below describes the default sync method behavior with the following Backbone calls:
 
-`// Since the urlRoot attribute is defined, all HTTP commands are to /library`
+```javascript
+// Since the urlRoot attribute is defined, all HTTP commands are to /library
+var Book = Backbone.Model.extend({urlRoot:'/library'})
+var book = new Book();
 
-`var Book = Backbone.Model.extend({urlRoot:``'/library'``})`
+// Performs a POST on /library with the arguments as a payload and the server returns the id as 1
+book.save({title:'Bossypants',author:'Tina Fey',checkout:false})
 
-`var book =` `new` `Book();`
+// Performs a GET on /library/1
+book.fetch({id:1});
 
-`// Performs a POST on /library with the arguments as a payload and the server returns the id as 1`
+// Performs a PUT on /library/1 with the entire modified object as a payload.
+book.save({checkout:true});
 
-`book.save({title:``'Bossypants'``,author:``'Tina Fey'``,checkout:``false``})`
-
-`// Performs a GET on /library/1`
-
-`book.fetch({id:``1``});`
-
-`// Performs a PUT on /library/1 with the entire modified object as a payload.`
-
-`book.save({checkout:``true``});`
-
-`// Performs a DELETE on /library/1`
-
-`book.destroy();`
+// Performs a DELETE on /library/1
+book.destroy();
+```
 
 In Alloy, you need to use or implement a sync adapter to access persistent storage when using Alloy Model and Collection objects.
 
@@ -76,63 +72,48 @@ The sql sync adapter has a few extra features compared to the other sync adapter
 
 The Backbone.Collection.fetch method supports SQL queries as a parameter. Use query as the key in the dictionary object to create a simple query or query with a prepared statement. To use a simple query, set the query property to your SQL query. To use a query with a prepared statement, set query.statement to your SQL statement template and set query.params to the values you want to pass to the statement. For example:
 
-`var library = Alloy.createCollection(``'book'``);`
-
-`// The table name is the same as the collection_name value from the 'config.adapter' object. This may be different from the model name.`
-
-`var table = library.config.adapter.collection_name;`
-
-`// use a simple query`
-
-`library.fetch({query:``'SELECT * from '` `+ table +` `' where author="'` `+ searchAuthor +` `'"'``});`
-
-`// or a prepared statement`
-
-`library.fetch({query: { statement:` `'SELECT * from '` `+ table +` `' where author = ?'``, params: [searchAuthor] }});`
+```javascript
+var library = Alloy.createCollection('book');
+// The table name is the same as the collection_name value from the 'config.adapter' object. This may be different from the model name.
+var table = library.config.adapter.collection_name;
+// use a simple query
+library.fetch({query:'SELECT * from ' + table + ' where author="' + searchAuthor + '"'});
+// or a prepared statement
+library.fetch({query: { statement: 'SELECT * from ' + table + ' where author = ?', params: [searchAuthor] }});
+```
 
 ##### Fetch method accepts ID attribute
 
 Since Alloy 1.3.0, to fetch a single model using its ID, pass a dictionary with one key-value pair, where id is the key and the model's ID as the value to retrieve that model, to the fetch method instead of using a SQL query. For example:
 
-`myModel.fetch({id:` `123``});`
-
-`// is equivalent to`
-
-`myModel.fetch({query:` `'select * from ... where id = '` `+` `123` `});`
+```
+myModel.fetch({id: 123});
+// is equivalent to
+myModel.fetch({query: 'select * from ... where id = ' + 123 });
+```
 
 #### Columns accept SQLite keywords
 
 The columns values accept SQLite keywords, such as AUTOINCREMENT and PRIMARY KEY. For example, the Alloy model file below defines the book\_id to be an auto-incremented, primary key in the books table.
 
-app/models/book.js
+*app/models/book.js*
 
-`exports.definition = {`
-
-`config: {`
-
-`"columns"``: {`
-
-`"title"``:` `"TEXT"``,`
-
-`"author"``:` `"TEXT"``,`
-
-`"book_id"``:` `"INTEGER PRIMARY KEY AUTOINCREMENT"`
-
-`},`
-
-`"adapter"``: {`
-
-`"type"``:` `"sql"``,`
-
-`"collection_name"``:` `"books"``,`
-
-`"idAttribute"``:` `"book_id"`
-
-`}`
-
-`}`
-
-`}`
+```javascript
+exports.definition = {
+    config: {
+        "columns": {
+            "title": "TEXT",
+            "author": "TEXT",
+            "book_id": "INTEGER PRIMARY KEY AUTOINCREMENT"
+        },
+        "adapter": {
+            "type": "sql",
+            "collection_name": "books",
+            "idAttribute": "book_id"
+        }
+    }
+}
+```
 
 ##### Specify columns property as primary ID
 
@@ -189,90 +170,58 @@ Currently, migrations are only used with the sql sync adapter.
 
 For example, the migration file below is the initial version of the database that preloads some data in the table.
 
-app/migrations/20120610049877\_book.js
+*app/migrations/20120610049877\_book.js*
 
-`var preload_data = [`
+```javascript
+var preload_data = [
+  {title: 'To Kill a Mockingbird', author:'Harper Lee'},
+  {title: 'The Catcher in the Rye', author:'J. D. Salinger'},
+  {title: 'Of Mice and Men', author:'John Steinbeck'},
+  {title: 'Lord of the Flies', author:'William Golding'},
+  {title: 'The Great Gatsby', author:'F. Scott Fitzgerald'},
+  {title: 'Animal Farm', author:'George Orwell'}
+];
 
-`{title:` `'To Kill a Mockingbird'``, author:``'Harper Lee'``},`
+migration.up = function(migrator) {
+    migrator.createTable({
+        "columns":
+        {
+            "book": "TEXT",
+            "author": "TEXT"
+        }
+    });
+    for (var i = 0; i < preload_data.length; i++) {
+      migrator.insertRow(preload_data[i]);
+    }
+};
 
-`{title:` `'The Catcher in the Rye'``, author:``'J. D. Salinger'``},`
-
-`{title:` `'Of Mice and Men'``, author:``'John Steinbeck'``},`
-
-`{title:` `'Lord of the Flies'``, author:``'William Golding'``},`
-
-`{title:` `'The Great Gatsby'``, author:``'F. Scott Fitzgerald'``},`
-
-`{title:` `'Animal Farm'``, author:``'George Orwell'``}`
-
-`];`
-
-`migration.up = function(migrator) {`
-
-`migrator.createTable({`
-
-`"columns"``:`
-
-`{`
-
-`"book"``:` `"TEXT"``,`
-
-`"author"``:` `"TEXT"`
-
-`}`
-
-`});`
-
-`for` `(var i =` `0``; i < preload_data.length; i++) {`
-
-`migrator.insertRow(preload_data[i]);`
-
-`}`
-
-`};`
-
-`migration.down = function(migrator) {`
-
-`migrator.dropTable();`
-
-`};`
+migration.down = function(migrator) {
+    migrator.dropTable();
+};
+```
 
 Suppose later, you want to include some additional information for your books, such as an ISBN. The below migration file upgrades or rolls back the changes. Since SQLite does not support the DROP COLUMN operation, the migration needs to create a temporary table to hold the data, drop the new database, create the old database, then copy the data back to the regressed table. Note that if the Alloy Model file does not specify an idAttribute property, Alloy creates the alloy\_id column. This column needs to be copied over as part of the migration as shown below.
 
-app/migrations/20130118069778\_book.js
+*app/migrations/20130118069778\_book.js*
 
-`migration.up = function(migrator) {`
+```javascript
+migration.up = function(migrator) {
+    migrator.db.execute('ALTER TABLE ' + migrator.table + ' ADD COLUMN isbn INT;');
+};
 
-`migrator.db.execute(``'ALTER TABLE '` `+ migrator.table +` `' ADD COLUMN isbn INT;'``);`
-
-`};`
-
-`migration.down = function(migrator) {`
-
-`var db = migrator.db;`
-
-`var table = migrator.table;`
-
-`db.execute(``'CREATE TEMPORARY TABLE book_backup(title,author,alloy_id);'``)`
-
-`db.execute(``'INSERT INTO book_backup SELECT title,author,alloy_id FROM '` `+ table +` `';'``);`
-
-`migrator.dropTable();`
-
-`migrator.createTable({`
-
-`columns: {`
-
-`title:``"TEXT"``,`
-
-`author:``"TEXT"``,`
-
-`},`
-
-`});`
-
-`db.execute(``'INSERT INTO '` `+ table +` `' SELECT title,author,alloy_id FROM book_backup;'``);`
-
-`db.execute(``'DROP TABLE book_backup;'``);`
-
-`};`
+migration.down = function(migrator) {
+    var db = migrator.db;
+    var table = migrator.table;
+    db.execute('CREATE TEMPORARY TABLE book_backup(title,author,alloy_id);')
+    db.execute('INSERT INTO book_backup SELECT title,author,alloy_id FROM ' + table + ';');
+    migrator.dropTable();
+    migrator.createTable({
+        columns: {
+            title:"TEXT",
+            author:"TEXT",
+        },
+    });
+    db.execute('INSERT INTO ' + table + ' SELECT title,author,alloy_id FROM book_backup;');
+    db.execute('DROP TABLE book_backup;');
+};
+```

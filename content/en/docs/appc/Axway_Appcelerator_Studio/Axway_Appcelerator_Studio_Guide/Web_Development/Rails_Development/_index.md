@@ -41,7 +41,7 @@ We highly recommend that users install Rails via [Rails Installer](http://railsi
 The Rails project wizard can be accessed through multiple locations in the workspace.
 A project can be created through the File->New->Rails Project, or by right-clicking the 'Project Explorer' or the 'App Explorer' and select New->Rails Project.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083026/rails_project_wizard.png" alt="images/download/attachments/30083026/rails_project_wizard.png" class="confluence-embedded-image image-center"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083026/rails_project_wizard.png" alt="images/download/attachments/30083026/rails_project_wizard.png" class="confluence-embedded-image image-center"></p></td></tr></tbody></table>
 
 #### Importing a Rails Project
 

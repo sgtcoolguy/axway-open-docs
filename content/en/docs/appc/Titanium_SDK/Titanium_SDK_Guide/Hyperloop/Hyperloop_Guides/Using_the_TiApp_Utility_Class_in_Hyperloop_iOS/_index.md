@@ -22,15 +22,15 @@ When developing iOS modules with Hyperloop, there are situations where you want 
 
 That's why Hyperloop includes a number of utility methods that solve these kind of problems. They are exposed in the "TiApp" class that can be required as the following:
 
-indes.js
+*indes.js*
 
-`// ES5`
+```javascript
+// ES5
+var TiApp = require('Titanium/TiApp');
 
-`var` `TiApp = require(``'Titanium/TiApp'``);`
-
-`// ES6+`
-
-`import TiApp from` `'Titanium/TiApp'``;`
+// ES6+
+import TiApp from 'Titanium/TiApp';
+```
 
 And that's basically it. As the TiApp class is a singleton in Titanium, the instance methods are done on the TiApp.app() singleton and the class methods on TiApp directly. See the following table for a reference of the available utilities:
 
@@ -80,51 +80,45 @@ Call these properties on the TiApp.app() singleton.
 
 This example shows how to open a new view controller in your current application context.
 
-`var myNewViewController =` `new` `UIViewController();` `// Create a new view controller or pass it from existing libraries / SDK's`
+```javascript
+var myNewViewController = new UIViewController(); // Create a new view controller or pass it from existing libraries / SDK's
+var myNewView = UIView.alloc().initWithFrame(CGRectMake(0,0, 200, 200)); // Create a  new UIView with a 200x200 frame
+myNewView.backgroundColor = UIColor.greenColor; // Set a green background color
+myNewViewController.view = myNewView; // Assign the UIView instance to your UIViewController
 
-`var myNewView = UIView.alloc().initWithFrame(CGRectMake(``0``,``0``,` `200``,` `200``));` `// Create a new UIView with a 200x200 frame`
-
-`myNewView.backgroundColor = UIColor.greenColor;` `// Set a green background color`
-
-`myNewViewController.view = myNewView;` `// Assign the UIView instance to your UIViewController`
-
-`TiApp.app().showModalController(myNewViewController,` `true``);` `// Present the view controller`
+TiApp.app().showModalController(myNewViewController, true); // Present the view controller
+```
 
 ### Pass the current view controller
 
 This example shows how to pass your top presented controller to a native method (e.g. in the Facebook SDK).
 
-`var FBSDKShareDialog = require(``'FBSDKShareKit/FBSDKShareDialog'``);`
+```javascript
+var FBSDKShareDialog = require('FBSDKShareKit/FBSDKShareDialog');
+var FBSDKShareDialogModeAutomatic = require('FBSDKShareKit').FBSDKShareDialogModeAutomatic;
+var FBSDKShareLinkContent = require('FBSDKShareKit/FBSDKShareLinkContent');
+var NSURL = require('Foundation/NSURL');
+var TiApp = require('Titanium/TiApp');
 
-`var FBSDKShareDialogModeAutomatic = require(``'FBSDKShareKit'``).FBSDKShareDialogModeAutomatic;`
+var dialog = new FBSDKShareDialog(); // Create a new share dialog. Equals "FBSDKShareDialog.alloc().init()".
+var content = new FBSDKShareLinkContent(); // Create new share content (link-based). Equals "FBSDKShareLinkContent.alloc().init()".
 
-`var FBSDKShareLinkContent = require(``'FBSDKShareKit/FBSDKShareLinkContent'``);`
+content.contentURL = NSURL.URLWithString('http://appcelerator.com'); // Construct a native URL
+dialog.setMode(FBSDKShareDialogModeAutomatic); // Use enumerations to define how the dialog should be shown
+dialog.setFromViewController(TiApp.controller); // <- This is where you pass your current context
+dialog.setShareContent(content); // Assign the share content
 
-`var NSURL = require(``'Foundation/NSURL'``);`
-
-`var TiApp = require(``'Titanium/TiApp'``);`
-
-`var dialog =` `new` `FBSDKShareDialog();` `// Create a new share dialog. Equals "FBSDKShareDialog.alloc().init()".`
-
-`var content =` `new` `FBSDKShareLinkContent();` `// Create new share content (link-based). Equals "FBSDKShareLinkContent.alloc().init()".`
-
-`content.contentURL = NSURL.URLWithString(``'http://appcelerator.com'``); // Construct a` `native` `URL`
-
-`dialog.setMode(FBSDKShareDialogModeAutomatic);` `// Use enumerations to define how the dialog should be shown`
-
-`dialog.setFromViewController(TiApp.controller);` `// <- This is where you pass your current context`
-
-`dialog.setShareContent(content);` `// Assign the share content`
-
-`dialog.show();` `// Present it!`
+dialog.show(); // Present it!
+```
 
 ### Get the device's push notifications UUID
 
 This examples shows how to receive the device's UUID used for remote notifications.
 
-`var remoteUUID = TiApp.app().remoteDeviceUUID;`
-
-`Ti.API.info(``'UUID: '` `+ remoteUUID);`
+```javascript
+var remoteUUID = TiApp.app().remoteDeviceUUID;
+Ti.API.info('UUID: ' + remoteUUID);
+```
 
 ### Subscribe to the UIApplicationDelegate
 
@@ -132,60 +126,39 @@ This example shows how to subscribe to the UIApplicationDelegate in order to use
 
 Note: Many native SDK's recommend to initialize them in this delegate. In the Titanium world, you can also do this in the open event of your initial window, which effectively does the same and is more cross-platform fashioned way of implementing this.
 
-`var TiApp = require(``'Titanium/TiApp'``);`
+```javascript
+var TiApp = require('Titanium/TiApp');
+var UIApplicationDelegate = require('UIKit').UIApplicationDelegate;
 
-`var UIApplicationDelegate = require(``'UIKit'``).UIApplicationDelegate;`
+// Create a new class to handle the delegate
+var TiAppApplicationDelegate = Hyperloop.defineClass('TiAppApplicationDelegate', 'NSObject', 'UIApplicationDelegate');
 
-`// Create a new class to handle the delegate`
+// Add the selector to handle the result
+TiAppApplicationDelegate.addMethod({
+  selector: 'application:didFinishLaunchingWithOptions:',
+  instance: true,
+  returnType: 'BOOL',
+  arguments: [
+    'UIApplication',
+    'NSDictionary'
+  ],
+  callback: function(application, options) {
+    if (this.didFinishLaunchingWithOptions) {
+      return this.didFinishLaunchingWithOptions(application, options);
+    }
+    return true;
+  }
+});
 
-`var TiAppApplicationDelegate = Hyperloop.defineClass(``'TiAppApplicationDelegate'``,` `'NSObject'``,` `'UIApplicationDelegate'``);`
+// Instantiate the delegate subclass
+var applicationDelegate = new TiAppApplicationDelegate();
 
-`// Add the selector to handle the result`
+// Called when the application finished launching. Initialize SDK's here for example
+applicationDelegate.didFinishLaunchingWithOptions = function(application, options) {
+  Ti.API.info('Hey there!');
+  return true
+};
 
-`TiAppApplicationDelegate.addMethod({`
-
-`selector:` `'application:didFinishLaunchingWithOptions:'``,`
-
-`instance:` `true``,`
-
-`returnType:` `'BOOL'``,`
-
-`arguments: [`
-
-`'UIApplication'``,`
-
-`'NSDictionary'`
-
-`],`
-
-`callback: function(application, options) {`
-
-`if` `(``this``.didFinishLaunchingWithOptions) {`
-
-`return`  `this``.didFinishLaunchingWithOptions(application, options);`
-
-`}`
-
-`return`  `true``;`
-
-`}`
-
-`});`
-
-`// Instantiate the delegate subclass`
-
-`var applicationDelegate =` `new` `TiAppApplicationDelegate();`
-
-`// Called when the application finished launching. Initialize SDK's here for example`
-
-`applicationDelegate.didFinishLaunchingWithOptions = function(application, options) {`
-
-`Ti.API.info(``'Hey there!'``);`
-
-`return`  `true`
-
-`};`
-
-`// Finally, assign your subclass to the "applicationDelegate" property of the TiApp class`
-
-`TiApp.app().registerApplicationDelegate(applicationDelegate);`
+// Finally, assign your subclass to the "applicationDelegate" property of the TiApp class
+TiApp.app().registerApplicationDelegate(applicationDelegate);
+```

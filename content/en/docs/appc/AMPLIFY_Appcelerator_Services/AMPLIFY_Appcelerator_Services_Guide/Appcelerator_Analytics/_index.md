@@ -75,39 +75,30 @@ Feature event names should be as generic as possible and without spaces (for exa
 
 User actions can be logged using feature events; here's an example of logging a user opening the home window of an app.
 
-`// Detect when home window is opened.`
-
-`home_window.addEventListener(``'open'``, e => {`
-
-`// Send analytics feature event to log user action.`
-
-`Ti.Analytics.featureEvent(``'home_window.open'``);`
-
-`...`
-
-`});`
+```
+// Detect when home window is opened.
+home_window.addEventListener('open', e => {
+  // Send analytics feature event to log user action.
+  Ti.Analytics.featureEvent('home_window.open');
+  ...
+});
+```
 
 In some cases, additional data can also be sent, which can be queried on Dashboard. In this example, an analytics event is sent when the user backgrounds their app.
 
-`// Detect when application is backgrounded.`
+```
+// Detect when application is backgrounded.
+Ti.App.addEventListener('paused', e => {
 
-`Ti.App.addEventListener(``'paused'``, e => {`
-
-`// Send analytics feature event with payload.`
-
-`// In this example, the user may have added items to their shopping basket but decided to exit the app.`
-
-`// We can log how many items were in the users basket and query this data on Dashboard.`
-
-`Ti.Analytics.featureEvent(``'shopping_basket.backgrounded'``, {`
-
-`items: shopping_basket.count`
-
-`});`
-
-`...`
-
-`});`
+  // Send analytics feature event with payload.
+  // In this example, the user may have added items to their shopping basket but decided to exit the app.
+  // We can log how many items were in the users basket and query this data on Dashboard.
+  Ti.Analytics.featureEvent('shopping_basket.backgrounded', {
+    items: shopping_basket.count
+  });
+  ...
+});
+```
 
 We can then create a custom query in Dashboard to calculate the average number of items users had in their basket upon backgrounding the application.
 

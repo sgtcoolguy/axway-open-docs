@@ -36,11 +36,15 @@ Before uploading your APK file to the Google Play store or another Android marke
 
 To verify your APK is correctly signed, run the following command:
 
-`jarsigner -verify -verbose YOUR_PACKAGE.apk`
+```
+jarsigner -verify -verbose YOUR_PACKAGE.apk
+```
 
 To install your APK file to a single Android device or emulator, run the following command:
 
-`android-sdk/platform-tools/adb install YOUR_PACKAGE.apk`
+```
+android-sdk/platform-tools/adb install YOUR_PACKAGE.apk
+```
 
 Refer to [Distributing Android apps](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_Android_apps/) for more information about the Google Play store and generating a keypair and certificate.
 

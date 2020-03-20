@@ -54,241 +54,162 @@ Firstly, it is important to have the required permissions to take photos and cap
 
 On Android you **must** define the required camera permissions in your _tiapp.xml_:
 
-Android Camera Permissions
+*Android Camera Permissions*
 
-`<``uses``-permission` `android:name``=``"android.permission.CAMERA"` `/>`
-
-`<``uses``-feature` `android:name``=``"android.hardware.camera"` `/>`
+```xml
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-feature android:name="android.hardware.camera" />
+```
 
 Additionally, to capture audio; you **must** also define the required audio permissions in your _tiapp.xml_:
 
-Android Audio Permission
+*Android Audio Permission*
 
-`<``uses``-permission` `android:name``=``"android.permission.RECORD_AUDIO"` `/>`
+```xml
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+```
 
 #### Requesting Permissions
 
 For all platforms you must verify you have the correct permissions to capture media and request them from the user if they are not available. You can do this by using the provided _Titanium.Media_ APIs:
 
-Requesting Permissions
+*Requesting Permissions*
 
-`// check if we already have permissions to capture media`
+```javascript
+// check if we already have permissions to capture media
+if (!Ti.Media.hasCameraPermissions()) {
 
-`if` `(!Ti.Media.hasCameraPermissions()) {`
+    // request permissions to capture media
+    Ti.Media.requestCameraPermissions(function (e) {
 
-`// request permissions to capture media`
+        // success! we can capture media!
+        if (e.success) {
+            Ti.Media.showCamera({ ... });
 
-`Ti.Media.requestCameraPermissions(``function` `(e) {`
-
-`// success! we can capture media!`
-
-`if` `(e.success) {`
-
-`Ti.Media.showCamera({ ... });`
-
-`// oops! could not obtain required permissions...`
-
-`}` `else` `{`
-
-`Ti.API.error(``'could not obtain camera permissions!'``);`
-
-`}`
-
-`});`
-
-`}` `else` `{`
-
-`// yay! we already have permissions!`
-
-`Ti.Media.showCamera({ ... });`
-
-`}`
+        // oops! could not obtain required permissions...
+        } else {
+            Ti.API.error('could not obtain camera permissions!');
+        }
+    });
+} else {
+    // yay! we already have permissions!
+    Ti.Media.showCamera({ ... });
+}
+```
 
 ### Camera
 
 You can access both the rear-facing and front-facing cameras in devices that have them. You can capture still images and video from the camera. Then you can use the resulting images in your app, save them to the file system, upload them, or save them to the gallery. You open the camera by calling the [showCamera()](#!/api/Titanium.Media-method-showCamera) method. When doing so, you define three callback functions that are called for the success, cancel, and error events, as shown here:
 
-`var` `win = Ti.UI.createWindow({`
-
-`layout:` `'vertical'``,`
-
-`backgroundColor:` `'gray'`
-
-`}),`
-
-`photoBtn = Ti.UI.createButton({`
-
-`title:` `'TAKE PHOTO'`
-
-`}),`
-
-`videoBtn = Ti.UI.createButton({`
-
-`title:` `'RECORD VIDEO'`
-
-`});`
-
-`/**`
-
-`* showCamera: handle required permissions and display camera for video capture`
-
-`* and photo capture`
-
-`*`
-
-`* @param type: capture type, can be Ti.Media.MEDIA_TYPE_VIDEO or Ti.Media.MEDIA_TYPE_PHOTO`
-
-`* @param callback: callback from camera`
-
-`* @param error: defined when an error has occurred, otherwise null`
-
-`* @param result: result from the camera containing captured media information`
-
-`*/`
-
-`function` `showCamera (type, callback) {`
-
-`var` `camera =` `function` `() {`
-
-`// call Titanium.Media.showCamera and respond callbacks`
-
-`Ti.Media.showCamera({`
-
-`success:` `function` `(e) {`
-
-`callback(``null``, e);`
-
-`},`
-
-`cancel:` `function` `(e) {`
-
-`callback(e,` `null``);`
-
-`},`
-
-`error:` `function` `(e) {`
-
-`callback(e,` `null``);`
-
-`},`
-
-`saveToPhotoGallery:` `true``,` `// save our media to the gallery`
-
-`mediaTypes: [ type ]`
-
-`});`
-
-`};`
-
-`// check if we already have permissions to capture media`
-
-`if` `(!Ti.Media.hasCameraPermissions()) {`
-
-`// request permissions to capture media`
-
-`Ti.Media.requestCameraPermissions(``function` `(e) {`
-
-`// success! display the camera`
-
-`if` `(e.success) {`
-
-`camera();`
-
-`// oops! could not obtain required permissions`
-
-`}` `else` `{`
-
-`callback(``new` `Error(``'could not obtain camera permissions!'``),` `null``);`
-
-`}`
-
-`});`
-
-`}` `else` `{`
-
-`camera();`
-
-`}`
-
-`}`
-
-`photoBtn.addEventListener(``'click'``,` `function` `() {`
-
-`// attempt to take a photo with the camera`
-
-`showCamera(Ti.Media.MEDIA_TYPE_PHOTO,` `function` `(error, result) {`
-
-`if` `(error) {`
-
-`alert(``'could not take photo'``);`
-
-`return``;`
-
-`}`
-
-`// validate we taken a photo`
-
-`if` `(result.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {`
-
-`// create an imageView to display our photo`
-
-`var` `imageView = Ti.UI.createImageView({`
-
-`image: result.media`
-
-`});`
-
-`// add the imageView to the window`
-
-`win.add(imageView);`
-
-`}`
-
-`});`
-
-`});`
-
-`videoBtn.addEventListener(``'click'``,` `function` `() {`
-
-`// attempt to capture video with the camera`
-
-`showCamera(Ti.Media.MEDIA_TYPE_VIDEO,` `function` `(error, result) {`
-
-`if` `(error) {`
-
-`alert(``'could not capture video'``);`
-
-`return``;`
-
-`}`
-
-`// validate we taken a video`
-
-`if` `(result.mediaType == Ti.Media.MEDIA_TYPE_VIDEO) {`
-
-`// create a videoPlayer to display our video`
-
-`var` `videoPlayer = Ti.Media.createVideoPlayer({`
-
-`url: result.media.nativePath,`
-
-`autoplay:` `true`
-
-`});`
-
-`// add the videoPlayer to the window`
-
-`win.add(videoPlayer);`
-
-`}`
-
-`});`
-
-`});`
-
-`win.add([ photoBtn, videoBtn ]);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow({
+        layout: 'vertical',
+        backgroundColor: 'gray'
+    }),
+    photoBtn = Ti.UI.createButton({
+        title: 'TAKE PHOTO'
+    }),
+    videoBtn = Ti.UI.createButton({
+        title: 'RECORD VIDEO'
+    });
+
+/**
+ * showCamera: handle required permissions and display camera for video capture
+ *             and photo capture
+ *
+ * @param type: capture type, can be Ti.Media.MEDIA_TYPE_VIDEO or Ti.Media.MEDIA_TYPE_PHOTO
+ * @param callback: callback from camera
+ *     @param error: defined when an error has occurred, otherwise null
+ *     @param result: result from the camera containing captured media information
+ */
+function showCamera (type, callback) {
+    var camera = function () {
+        // call Titanium.Media.showCamera and respond callbacks
+        Ti.Media.showCamera({
+            success: function (e) {
+                callback(null, e);
+            },
+            cancel: function (e) {
+                callback(e, null);
+            },
+            error: function (e) {
+                callback(e, null);
+            },
+            saveToPhotoGallery: true, // save our media to the gallery
+            mediaTypes: [ type ]
+        });
+    };
+
+    // check if we already have permissions to capture media
+    if (!Ti.Media.hasCameraPermissions()) {
+
+        // request permissions to capture media
+        Ti.Media.requestCameraPermissions(function (e) {
+
+            // success! display the camera
+            if (e.success) {
+                camera();
+
+            // oops! could not obtain required permissions
+            } else {
+                callback(new Error('could not obtain camera permissions!'), null);
+            }
+        });
+    } else {
+        camera();
+    }
+}
+
+photoBtn.addEventListener('click', function () {
+
+    // attempt to take a photo with the camera
+    showCamera(Ti.Media.MEDIA_TYPE_PHOTO, function (error, result) {
+        if (error) {
+            alert('could not take photo');
+            return;
+        }
+
+        // validate we taken a photo
+        if (result.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
+
+            // create an imageView to display our photo
+            var imageView = Ti.UI.createImageView({
+                image: result.media
+            });
+
+            // add the imageView to the window
+            win.add(imageView);
+        }
+    });
+});
+
+videoBtn.addEventListener('click', function () {
+
+    // attempt to capture video with the camera
+    showCamera(Ti.Media.MEDIA_TYPE_VIDEO, function (error, result) {
+        if (error) {
+            alert('could not capture video');
+            return;
+        }
+
+        // validate we taken a video
+        if (result.mediaType == Ti.Media.MEDIA_TYPE_VIDEO) {
+
+            // create a videoPlayer to display our video
+            var videoPlayer = Ti.Media.createVideoPlayer({
+                url: result.media.nativePath,
+                autoplay: true
+            });
+
+            // add the videoPlayer to the window
+            win.add(videoPlayer);
+        }
+    });
+});
+
+win.add([ photoBtn, videoBtn ]);
+win.open();
+```
 
 The saveToPhotoGallery property controls whether the photo or video is automatically saved to the device's photo gallery. Using Ti.Filesystem you could save to the filesystem in addition to or in place of saving to the gallery. Because the user can delete items from the gallery separately from your app, you should save media to the filesystem if your app will depend on its availability later.
 
@@ -318,125 +239,83 @@ You can check for the availability of the camera with the Titanium.Media.isCamer
 
 You can access both the front and rear facing cameras, if a device has such cameras. The code snippet below shows one way you might do this. Key properties are the Ti.Media.CAMERA\_REAR and Ti.Media.CAMERA\_FRONT as well as the Ti.Media.switchCamera() method.
 
-`var cameras = Ti.Media.availableCameras;`
+```javascript
+var cameras = Ti.Media.availableCameras;
+for (var i = 0; i < cameras.length; i++) {
+  if (cameras[i] == Ti.Media.CAMERA_REAR) {
 
-`for` `(var i =` `0``; i < cameras.length; i++) {`
-
-`if` `(cameras[i] == Ti.Media.CAMERA_REAR) {`
-
-`cameraType.addEventListener(``'click'``, function () {`
-
-`if` `(Ti.Media.camera == Ti.Media.CAMERA_FRONT) {`
-
-`cameraType.title =` `'front'``;`
-
-`Ti.Media.switchCamera(Ti.Media.CAMERA_REAR);`
-
-`}` `else` `{`
-
-`cameraType.title =` `'rear'``;`
-
-`Ti.Media.switchCamera(Ti.Media.CAMERA_FRONT);`
-
-`}`
-
-`});`
-
-`break``;`
-
-`}`
-
-`}`
+    cameraType.addEventListener('click', function () {
+      if (Ti.Media.camera == Ti.Media.CAMERA_FRONT) {
+        cameraType.title = 'front';
+        Ti.Media.switchCamera(Ti.Media.CAMERA_REAR);
+      } else {
+        cameraType.title = 'rear';
+        Ti.Media.switchCamera(Ti.Media.CAMERA_FRONT);
+      }
+    });
+    break;
+  }
+}
+```
 
 #### Alternative Android capture video example
 
 On Android you can alternatively create an intent to capture video. This intent is used to start a new activity, which launches the camera to record video. After the user stops recording, the video is saved to the device's gallery. The callback retrieves the URI of the video media and stores the reference in a global variable. Using the global variable, you can launch the video in a media player or save the content to a different location.
 
-`var` `win = Ti.UI.createWindow({`
+```javascript
+var win = Ti.UI.createWindow({
+        layout: 'vertical',
+        backgroundColor: 'gray'
+    }),
+    recordButton = Ti.UI.createButton({
+        title: 'RECORD VIDEO'
+    }),
+    playButton = Ti.UI.createButton({
+        title: 'PLAY VIDEO',
+        visible: false
+    }),
+    videoIntent = Ti.Android.createIntent({
+        // http://developer.android.com/reference/android/provider/MediaStore.html#ACTION_VIDEO_CAPTURE
+        action: 'android.media.action.VIDEO_CAPTURE'
+    }),
+    videoURL = null;
 
-`layout:` `'vertical'``,`
+recordButton.addEventListener('click', function () {
 
-`backgroundColor:` `'gray'`
+    // start an intent to capture video
+    win.getActivity().startActivityForResult(videoIntent, function (e) {
 
-`}),`
+        // video capture activity returned successfully
+        if (e.resultCode === Ti.Android.RESULT_OK) {
 
-`recordButton = Ti.UI.createButton({`
+            // verify we have a video URL
+            if (e.intent.data != null) {
+                videoURL = e.intent.data;
+                playButton.visible = true;
 
-`title:` `'RECORD VIDEO'`
+           } else {
+                Ti.API.error('could not retrieve media URL!');
+            }
 
-`}),`
+        // video capture was cancelled
+        } else if (e.resultCode == Ti.Android.RESULT_CANCELED) {
+            Ti.API.trace('user cancelled video capture session.');
 
-`playButton = Ti.UI.createButton({`
+        // handle all other results as a failure
+        } else {
+            Ti.API.error('could not record video!');
+        }
+    });
+});
 
-`title:` `'PLAY VIDEO'``,`
+playButton.addEventListener('click', function (e) {
+    var player = Ti.Media.createVideoPlayer({ url: videoURL, autoplay: true });
+    win.add(player);
+});
 
-`visible:` `false`
-
-`}),`
-
-`videoIntent = Ti.Android.createIntent({`
-
-`// http://developer.android.com/reference/android/provider/MediaStore.html#ACTION_VIDEO_CAPTURE`
-
-`action:` `'android.media.action.VIDEO_CAPTURE'`
-
-`}),`
-
-`videoURL =` `null``;`
-
-`recordButton.addEventListener(``'click'``,` `function` `() {`
-
-`// start an intent to capture video`
-
-`win.getActivity().startActivityForResult(videoIntent,` `function` `(e) {`
-
-`// video capture activity returned successfully`
-
-`if` `(e.resultCode === Ti.Android.RESULT_OK) {`
-
-`// verify we have a video URL`
-
-`if` `(e.intent.data !=` `null``) {`
-
-`videoURL = e.intent.data;`
-
-`playButton.visible =` `true``;`
-
-`}` `else` `{`
-
-`Ti.API.error(``'could not retrieve media URL!'``);`
-
-`}`
-
-`// video capture was cancelled`
-
-`}` `else`  `if` `(e.resultCode == Ti.Android.RESULT_CANCELED) {`
-
-`Ti.API.trace(``'user cancelled video capture session.'``);`
-
-`// handle all other results as a failure`
-
-`}` `else` `{`
-
-`Ti.API.error(``'could not record video!'``);`
-
-`}`
-
-`});`
-
-`});`
-
-`playButton.addEventListener(``'click'``,` `function` `(e) {`
-
-`var` `player = Ti.Media.createVideoPlayer({ url: videoURL, autoplay:` `true` `});`
-
-`win.add(player);`
-
-`});`
-
-`win.add([ recordButton, playButton ]);`
-
-`win.open();`
+win.add([ recordButton, playButton ]);
+win.open();
+```
 
 Some third party Android camera apps may choose to ignore video recording quality settings. If you wish to specifically set the video quality, don't assume EXTRA\_VIDEO\_QUALITY intent will be respected by the camera app and use Titanium's built-in camera window which can be used to assign the "overlay" property when calling the showCamera() method.
 
@@ -444,49 +323,33 @@ Some third party Android camera apps may choose to ignore video recording qualit
 
 You open the native gallery by calling the [openPhotoGallery()](#!/api/Titanium.Media-method-openPhotoGallery) method. As with the camera, you define three callback functions that are called for the success, cancel, and error events:
 
-Gallery
+*Gallery*
 
-`var` `win = Ti.UI.createWindow(),`
+```javascript
+var win = Ti.UI.createWindow(),
+    btn = Ti.UI.createButton({
+        title: 'OPEN GALLERY',
+    });
 
-`btn = Ti.UI.createButton({`
+btn.addEventListener('click', function(){
+    Ti.Media.openPhotoGallery({
+        mediaTypes: [ Titanium.Media.MEDIA_TYPE_PHOTO ],
+        success: function (e) {
+            alert('media.width: ' + e.media.width
+                + '\nmedia.height: ' + e.media.height
+                + '\nmedia.length: ' + e.media.length
+                + '\nmedia.mimeType: ' + e.media.mimeType
+                + '\nmedia.nativePath: ' + e.media.nativePath);
+        },
+        error: function (e) {
+            alert('error opening image: ' + e);
+        }
+    });
+});
 
-`title:` `'OPEN GALLERY'``,`
-
-`});`
-
-`btn.addEventListener(``'click'``,` `function``(){`
-
-`Ti.Media.openPhotoGallery({`
-
-`mediaTypes: [ Titanium.Media.MEDIA_TYPE_PHOTO ],`
-
-`success:` `function` `(e) {`
-
-`alert(``'media.width: '` `+ e.media.width`
-
-`+` `'\nmedia.height: '` `+ e.media.height`
-
-`+` `'\nmedia.length: '` `+ e.media.length`
-
-`+` `'\nmedia.mimeType: '` `+ e.media.mimeType`
-
-`+` `'\nmedia.nativePath: '` `+ e.media.nativePath);`
-
-`},`
-
-`error:` `function` `(e) {`
-
-`alert(``'error opening image: '` `+ e);`
-
-`}`
-
-`});`
-
-`});`
-
-`win.add(btn);`
-
-`win.open();`
+win.add(btn);
+win.open();
+```
 
 Some other useful properties include:
 
@@ -528,53 +391,36 @@ In order to enable camera and audio recording for Windows Phone, you need to pro
 
 #### Grant access to video stream and audio stream
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`...`
-
-`<``Capabilities``>`
-
-`<``DeviceCapability`  `Name``=``"microphone"` `/>`
-
-`<``DeviceCapability`  `Name``=``"webcam"` `/>`
-
-`</``Capabilities``>`
-
-`...`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  ...
+  <windows>
+    ...
+    <Capabilities>
+        <DeviceCapability Name="microphone" />
+        <DeviceCapability Name="webcam" />
+    </Capabilities>
+    ...
+  </windows>
+  ...
+</ti:app>
+```
 
 #### Grant access to pictures library
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`...`
-
-`<``Capabilities``>`
-
-`<``Capability`  `Name``=``"picturesLibrary"` `/>`
-
-`</``Capabilities``>`
-
-`...`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  ...
+  <windows>
+    ...
+    <Capabilities>
+        <Capability Name="picturesLibrary" />
+    </Capabilities>
+    ...
+  </windows>
+  ...
+</ti:app>
+```
 
 For more information about audio configuration in tiapp.xml, see [Windows-specific](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#windows-specific) section in [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/).
 
@@ -584,25 +430,18 @@ For more information about audio configuration in tiapp.xml, see [Windows-specif
 
 As of Titanium 5.4.0, you can launch "default camera UI" that is builtin to the platform when you use Ti.Media.showCamera(options) without specifying overlay property. This Windows builtin camera UI provides same look & feel that [Microsoft Windows Camera](https://www.microsoft.com/en-us/store/apps/windows-camera/9wzdncrfjbbg) app provides. Note that this builtin camera UI is supported as of Windows 10 apps including Mobile.
 
-`var` `imageView = Ti.UI.createImageView();`
-
-`Ti.Media.showCamera({`
-
-`mediaTypes: [Ti.Media.MEDIA_TYPE_PHOTO],`
-
-`success:` `function` `(e) {`
-
-`imageView.image = e.media;`
-
-`},`
-
-`error:` `function` `(e) {`
-
-`Ti.API.error(JSON.stringify(e));`
-
-`}`
-
-`});`
+```javascript
+var imageView = Ti.UI.createImageView();
+Ti.Media.showCamera({
+    mediaTypes: [Ti.Media.MEDIA_TYPE_PHOTO],
+    success: function (e) {
+        imageView.image = e.media;
+    },
+    error: function (e) {
+        Ti.API.error(JSON.stringify(e));
+    }
+});
+```
 
 ## Hands-on practice
 

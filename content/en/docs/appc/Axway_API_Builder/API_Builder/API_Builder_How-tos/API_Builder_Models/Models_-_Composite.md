@@ -1,6 +1,6 @@
 {"title":"Models - Composite","weight":"20"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -48,136 +48,94 @@ To define the join operation, set the metadata property to either the left\_join
 
 The example below combines the employee and managers models to create the employee\_manager model. The models are joined based on a match between the managers model's employee\_id and the employee model's auto-generated id.
 
-models/employee\_manager.js
+*models/employee\_manager.js*
 
-`var` `Arrow = require(``'arrow'``);`
+```javascript
+var Arrow = require('arrow');
 
-`var` `employee_manager = Arrow.createModel(``'employee_manager'``,{`
+var employee_manager = Arrow.createModel('employee_manager',{
+    fields: {
+        fname: {type:String, description:'First name', model:'employee'},
+        manager: {type:String, description:'manager of employee',model:'managers'}
+    },
+    connector: 'appc.composite',
+    metadata: {
+        left_join: {
+            model: 'managers',
+            join_properties: {
+                employee_id: 'id'
+            }
+        }
+    }
+});
 
-`fields: {`
+module.exports = employee_manager;
+```
 
-`fname: {type:String, description:``'First name'``, model:``'employee'``},`
+*models/employee.js*
 
-`manager: {type:String, description:``'manager of employee'``,model:``'managers'``}`
+```javascript
+var Arrow = require('arrow');
 
-`},`
+var employee = Arrow.Model.reduce('appc.mysql/employee','employee',{
+    fields: {
+        fname: {type:String, description:'First name', name:'first_name'}
+    },
+    connector: 'appc.mysql'
+});
 
-`connector:` `'appc.composite'``,`
+module.exports = employee;
+```
 
-`metadata: {`
+*models/managers.js*
 
-`left_join: {`
+```javascript
+var Arrow = require('arrow');
 
-`model:` `'managers'``,`
+var managers = Arrow.Model.reduce('appc.mysql/employee_manager','managers',{
+    fields: {
+        employee_id: { type: Number, description: 'Employee ID' },
+        manager: {type:String, name:'manager_name', description:'manager name'}
+    },
+    connector: 'appc.mysql'
+});
 
-`join_properties: {`
-
-`employee_id:` `'id'`
-
-`}`
-
-`}`
-
-`}`
-
-`});`
-
-`module.exports = employee_manager;`
-
-models/employee.js
-
-`var` `Arrow = require(``'arrow'``);`
-
-`var` `employee = Arrow.Model.reduce(``'appc.mysql/employee'``,``'employee'``,{`
-
-`fields: {`
-
-`fname: {type:String, description:``'First name'``, name:``'first_name'``}`
-
-`},`
-
-`connector:` `'appc.mysql'`
-
-`});`
-
-`module.exports = employee;`
-
-models/managers.js
-
-`var` `Arrow = require(``'arrow'``);`
-
-`var` `managers = Arrow.Model.reduce(``'appc.mysql/employee_manager'``,``'managers'``,{`
-
-`fields: {`
-
-`employee_id: { type: Number, description:` `'Employee ID'` `},`
-
-`manager: {type:String, name:``'manager_name'``, description:``'manager name'``}`
-
-`},`
-
-`connector:` `'appc.mysql'`
-
-`});`
-
-`module.exports = managers;`
+module.exports = managers;
+```
 
 ### Inner join example
 
 The example below performs an inner join on the employee, employee\_manager, and employee\_habit models. Both the employee\_manager and employee\_habit properties will try to match the employee\_id property.
 
-`var` `Arrow = require(``'arrow'``);`
+```javascript
+var Arrow = require('arrow');
 
-`// create a model from a mysql table`
+// create a model from a mysql table
+var employee_composite = Arrow.createModel('employee_composite',{
+    fields: {
+        fname: {type: String, description: 'First name', model: 'employee'},
+        manager: {type: String, description: 'Manager of employee', model: 'employee_manager'},
+        habit: {type: String, description: 'Habit of employee', model: 'employee_habit'}
+    },
+    connector: 'appc.composite',
+    metadata: {
+        inner_join: [
+            {
+                model: 'employee_manager',
+                join_properties: {
+                    employee_id: 'id'
+                }
+            },
+            {
+                model:'employee_habit',
+                multiple:true,
+                join_properties:{
+                    employee_id:'id'
+                }
+            }
+        ]
+    }
+});
 
-`var` `employee_composite = Arrow.createModel(``'employee_composite'``,{`
-
-`fields: {`
-
-`fname: {type: String, description:` `'First name'``, model:` `'employee'``},`
-
-`manager: {type: String, description:` `'Manager of employee'``, model:` `'employee_manager'``},`
-
-`habit: {type: String, description:` `'Habit of employee'``, model:` `'employee_habit'``}`
-
-`},`
-
-`connector:` `'appc.composite'``,`
-
-`metadata: {`
-
-`inner_join: [`
-
-`{`
-
-`model:` `'employee_manager'``,`
-
-`join_properties: {`
-
-`employee_id:` `'id'`
-
-`}`
-
-`},`
-
-`{`
-
-`model:``'employee_habit'``,`
-
-`multiple:``true``,`
-
-`join_properties:{`
-
-`employee_id:``'id'`
-
-`}`
-
-`}`
-
-`]`
-
-`}`
-
-`});`
-
-`module.exports = employee_composite;`
+module.exports = employee_composite;
+```

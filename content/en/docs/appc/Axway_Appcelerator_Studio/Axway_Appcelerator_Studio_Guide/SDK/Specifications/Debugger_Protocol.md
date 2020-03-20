@@ -76,15 +76,21 @@ A reference to the Studio Debugger Protocol used in Aptana Studio, Titanium Stud
 
 Request packet format:
 
-`length*request_id*command*arg0*arg1*arg2*...argN`
+```
+length*request_id*command*arg0*arg1*arg2*...argN
+```
 
 Reply packet format:
 
-`length*request_id*arg0*arg1*arg2*...argN`
+```
+length*request_id*arg0*arg1*arg2*...argN
+```
 
 Unsolicited message format:
 
-`length*message*arg0*arg1*arg2*...argN`
+```
+length*message*arg0*arg1*arg2*...argN
+```
 
 where:
 
@@ -100,7 +106,9 @@ where:
 
 An argument could be split into sub-arguments:
 
-`arg=subarg0|subarg1|subarg2|...subargN`
+```
+arg=subarg0|subarg1|subarg2|...subargN
+```
 
 Requests with empty _request\_id_ should not be replied.
 
@@ -128,9 +136,10 @@ Reply arguments:
 
 Example:
 
-`=>` `1176979825719``*version`
-
-`<=` `1176979825719``*``1``*``0.2``.``8.14083`
+```
+=> 1176979825719*version
+ <= 1176979825719*1*0.2.8.14083
+```
 
 ### Force debugger extension update
 
@@ -142,9 +151,10 @@ Reply arguments:
 
 Example:
 
-`=>` `1176979825720``*update`
-
-`<=` `1176979825720``*``0.2``.``8.15000`
+```
+=> 1176979825720*update
+ <= 1176979825720*0.2.8.15000
+```
 
 ### Set debugger options
 
@@ -158,9 +168,10 @@ Request arguments:
 Reply arguments: _none_
 Example:
 
-`=>` `1176979825721``*option*suspendOnFirstLine*``false`
-
-`<=` `1176979825721`
+```
+=> 1176979825721*option*suspendOnFirstLine*false
+ <= 1176979825721
+```
 
 ### Turn on debug mode
 
@@ -169,9 +180,10 @@ Request arguments: _none_
 Reply arguments: _none_
 Example:
 
-`=>` `1176979825726``*enable`
-
-`<=` `1176979825726`
+```
+=> 1176979825726*enable
+ <= 1176979825726
+```
 
 ### Turn off debug mode
 
@@ -180,9 +192,10 @@ Request arguments: _none_
 Reply arguments: _none_
 Example:
 
-`=>` `1176979825727``*disable`
-
-`<=` `1176979825727`
+```
+=> 1176979825727*disable
+ <= 1176979825727
+```
 
 ### Terminate session
 
@@ -191,9 +204,10 @@ Request arguments: _none_
 Reply arguments: _none_
 Example:
 
-`=>` `1176979825820``*terminate`
-
-`<=` `1176979825820`
+```
+=> 1176979825820*terminate
+ <= 1176979825820
+```
 
 ### Create/modify/remove breakpoint
 
@@ -220,13 +234,13 @@ Reply arguments:
 
 Example:
 
-`=>` `1176979825728``*breakpoint*create*http:``//127.0.0.1:8000/debug_tests.html*116*1*0**1`
+```
+=> 1176979825728*breakpoint*create*http://127.0.0.1:8000/debug_tests.html*116*1*0**1
+ <= 1176979825728*created
 
-`<=` `1176979825728``*created`
-
-`=>` `1176979825729``*breakpoint*remove*http:``//127.0.0.1:8000/debug_tests.html*116`
-
-`<=` `1176979825729``*removed`
+ => 1176979825729*breakpoint*remove*http://127.0.0.1:8000/debug_tests.html*116
+ <= 1176979825729*removed
+```
 
 ### Create/modify/remove exception breakpoints
 
@@ -243,9 +257,10 @@ Reply arguments:
 
 Example:
 
-`=>` `1176979825729``*exception*create*TypeError`
-
-`<=` `1176979825729``*created`
+```
+=> 1176979825729*exception*create*TypeError
+ <= 1176979825729*created
+```
 
 ### Set detail formatters
 
@@ -261,9 +276,10 @@ Request arguments:
 Reply arguments: _none_
 Example:
 
-`=>` `1176979825730``*detailFormatters*Date|``this``.toGMTString();`
-
-`<=` `1176979825730`
+```
+=> 1176979825730*detailFormatters*Date|this.toGMTString();
+ <= 1176979825730
+```
 
 ### Open page URL
 
@@ -275,9 +291,10 @@ Request arguments:
 Reply arguments: _none_
 Example:
 
-`=>` `1176979825729``*openUrl*http:``//127.0.0.1:8000/debug_tests.html`
-
-`<=` `1176979825729`
+```
+=> 1176979825729*openUrl*http://127.0.0.1:8000/debug_tests.html
+ <= 1176979825729
+```
 
 ### Get file sources
 
@@ -294,9 +311,10 @@ Reply arguments:
 
 Example:
 
-`=>` `1176979825730``*getSource*http:``//127.0.0.1:8000/debug_tests.html`
-
-`<=` `1176979825730``*success*<html><body></body></html>`
+```
+=> 1176979825730*getSource*http://127.0.0.1:8000/debug_tests.html
+ <= 1176979825730*success*<html><body></body></html>
+```
 
 ### Suspend script execution
 
@@ -309,13 +327,12 @@ Request arguments (**version 2**):
 Reply arguments: _none_
 Example:
 
-`=>` `1176979825731``*suspend`
-
-`<=` `1176979825731`
-
-`=>` `1176979825731``*suspend*``2`
-
-`<=` `1176979825731`
+```
+=> 1176979825731*suspend
+ <= 1176979825731
+ => 1176979825731*suspend*2
+ <= 1176979825731
+```
 
 ### Resume script execution
 
@@ -328,13 +345,12 @@ Request arguments (**version 2**):
 Reply arguments: _none_
 Example:
 
-`=>` `1176979825732``*resume`
-
-`<=` `1176979825732`
-
-`=>` `1176979825732``*resume*``2`
-
-`<=` `1176979825732`
+```
+=> 1176979825732*resume
+ <= 1176979825732
+ => 1176979825732*resume*2
+ <= 1176979825732
+```
 
 ### Step into
 
@@ -347,13 +363,12 @@ Request arguments (**version 2**):
 Reply arguments: _none_
 Example:
 
-`=>` `1176979825733``*stepInto`
-
-`<=` `1176979825733`
-
-`=>` `1176979825733``*stepInto*``2`
-
-`<=` `1176979825733`
+```
+=> 1176979825733*stepInto
+ <= 1176979825733
+ => 1176979825733*stepInto*2
+ <= 1176979825733
+```
 
 ### Step over
 
@@ -366,13 +381,12 @@ Request arguments (**version 2**):
 Reply arguments: _none_
 Example:
 
-`=>` `1176979825734``*stepOver`
-
-`<=` `1176979825734`
-
-`=>` `1176979825734``*stepOver*``2`
-
-`<=` `1176979825734`
+```
+=> 1176979825734*stepOver
+ <= 1176979825734
+ => 1176979825734*stepOver*2
+ <= 1176979825734
+```
 
 ### Step return
 
@@ -385,13 +399,12 @@ Request arguments (**version 2**):
 Reply arguments: _none_
 Example:
 
-`=>` `1176979825735``*stepReturn`
-
-`<=` `1176979825735`
-
-`=>` `1176979825735``*stepReturn*``2`
-
-`<=` `1176979825735`
+```
+=> 1176979825735*stepReturn
+ <= 1176979825735
+ => 1176979825735*stepReturn*2
+ <= 1176979825735
+```
 
 ### Step to frame
 
@@ -409,13 +422,12 @@ Request arguments (**version 2**):
 Reply arguments: _none_
 Example:
 
-`=>` `1176979825736``*stepToFrame*``2`
-
-`<=` `1176979825736`
-
-`=>` `1176979825736``*stepToFrame*``2``*``2`
-
-`<=` `1176979825736`
+```
+=> 1176979825736*stepToFrame*2
+ <= 1176979825736
+ => 1176979825736*stepToFrame*2*2
+ <= 1176979825736
+```
 
 ### Get stack frames
 
@@ -447,13 +459,12 @@ Reply arguments:
 
 Example:
 
-`=>` `1176979825740``*frames`
-
-`<=` `1176979825740``*``0``|testVariables||http:``//127.0.0.1:8000/debug_tests.html|166|false|226|238*1|onclick|MouseEvent|http://127.0.0.1:8000/debug_tests.html|1|false|4|261`
-
-`=>` `1176979825740``*frames*``2`
-
-`<=` `1176979825740``*``0``|testVariables||http:``//127.0.0.1:8000/debug_tests.html|166|false|226|238*1|onclick|MouseEvent|http://127.0.0.1:8000/debug_tests.html|1|false|4|261`
+```
+=> 1176979825740*frames
+ <= 1176979825740*0|testVariables||http://127.0.0.1:8000/debug_tests.html|166|false|226|238*1|onclick|MouseEvent|http://127.0.0.1:8000/debug_tests.html|1|false|4|261
+ => 1176979825740*frames*2
+ <= 1176979825740*0|testVariables||http://127.0.0.1:8000/debug_tests.html|166|false|226|238*1|onclick|MouseEvent|http://127.0.0.1:8000/debug_tests.html|1|false|4|261
+```
 
 ### Get variables
 
@@ -484,17 +495,15 @@ See [#Special variables](#special-variables).
 
 Example:
 
-`=>` `1176979825731``*variables*frame[``0``]`
+```
+=> 1176979825731*variables*frame[0]
+ <= 1176979825731*this|Window|o|[object Window]*vArray|Array|lowpv|item0,,,itemN*vBool|Boolean|lwpv|false*vDate|Date|lwpv|Thu Apr 19 2007 17:50:33 GMT+0700*vError|Error|lowpv|Error*vMyObj|MyObject|lowpv|[object Object]*vNum|Number|lwpv|7*vObj|Object|lowpv|[object Object]*vObj2|Object|lowpv|Object toString() method is used here*vRect|Shape|lowpv|[object Object]*vStr|String|lwpv|"Hello, World!"
 
-`<=` `1176979825731``*``this``|Window|o|[object Window]*vArray|Array|lowpv|item0,,,itemN*vBool|Boolean|lwpv|``false``*vDate|Date|lwpv|Thu Apr` `19`  `2007`  `17``:``50``:``33` `GMT+``0700``*vError|Error|lowpv|Error*vMyObj|MyObject|lowpv|[object Object]*vNum|Number|lwpv|``7``*vObj|Object|lowpv|[object Object]*vObj2|Object|lowpv|Object toString() method is used here*vRect|Shape|lowpv|[object Object]*vStr|String|lwpv|``"Hello, World!"`
-
-`=>` `1176979825733``*variables*eval[``0``]`
-
-`<=` `1176979825733``*height|integer|wn|``1``*type|String|wn|``"rect"``*width|integer|wn|``1``*x|integer|wn|``0``*y|integer|wn|``0`
-
-`=>` `1176979825733``*variables*``2``*eval[``0``]`
-
-`<=` `1176979825733``*height|integer|wn|``1``*type|String|wn|``"rect"``*width|integer|wn|``1``*x|integer|wn|``0``*y|integer|wn|``0`
+ => 1176979825733*variables*eval[0]
+ <= 1176979825733*height|integer|wn|1*type|String|wn|"rect"*width|integer|wn|1*x|integer|wn|0*y|integer|wn|0
+ => 1176979825733*variables*2*eval[0]
+ <= 1176979825733*height|integer|wn|1*type|String|wn|"rect"*width|integer|wn|1*x|integer|wn|0*y|integer|wn|0
+```
 
 ### Get variable details
 
@@ -517,13 +526,12 @@ Reply arguments:
 
 Example:
 
-`=>` `1176979825734``*details*frame[``0``].vRect`
-
-`<=` `1176979825734``*result*{x:` `0``, y:` `0``, w:` `10``, h:` `10``}`
-
-`=>` `1176979825734``*details*``2``*frame[``0``].vRect`
-
-`<=` `1176979825734``*result*{x:` `0``, y:` `0``, w:` `10``, h:` `10``}`
+```
+=> 1176979825734*details*frame[0].vRect
+ <= 1176979825734*result*{x: 0, y: 0, w: 10, h: 10}
+ => 1176979825734*details*2*frame[0].vRect
+ <= 1176979825734*result*{x: 0, y: 0, w: 10, h: 10}
+```
 
 ### Evaluate expression
 
@@ -558,17 +566,14 @@ Reply arguments:
 
 Example:
 
-`=>` `1176979825732``*eval*frame[``0``]*vRect`
-
-`<=` `1176979825732``*result*``0``*Shape|ow|[object Object]`
-
-`or`
-
-`<=` `1176979825732``*exception*Undefined variable`
-
-`=>` `1176979825732``*eval*``2``*frame[``0``]*vRect`
-
-`<=` `1176979825732``*result*``0``*Shape|ow|[object Object]`
+```
+=> 1176979825732*eval*frame[0]*vRect
+ <= 1176979825732*result*0*Shape|ow|[object Object]
+ or
+ <= 1176979825732*exception*Undefined variable
+ => 1176979825732*eval*2*frame[0]*vRect
+ <= 1176979825732*result*0*Shape|ow|[object Object]
+```
 
 ### Change variable value
 
@@ -601,13 +606,12 @@ Reply arguments:
 
 Example:
 
-`=>` `1176979825735``*setValue*frame[``0``].vRect2*eval[``1``]`
-
-`<=` `1176979825735``*result*String|w|Hello!`
-
-`=>` `1176979825735``*setValue*``2``*frame[``0``].vRect2*eval[``1``]`
-
-`<=` `1176979825735``*result*String|w|Hello!`
+```
+=> 1176979825735*setValue*frame[0].vRect2*eval[1]
+ <= 1176979825735*result*String|w|Hello!
+ => 1176979825735*setValue*2*frame[0].vRect2*eval[1]
+ <= 1176979825735*result*String|w|Hello!
+```
 
 ## Unsolicited messages
 
@@ -634,13 +638,12 @@ Message arguments (**version 2**):
 
 Example:
 
-`<= suspended*keyword*http:``//127.0.0.1:8000/debug_tests.html*166`
-
-`<= suspended*stepInto*http:``//127.0.0.1:8000/debug_tests.html*167`
-
-`<= suspended*``2``*keyword*http:``//127.0.0.1:8000/debug_tests.html*166`
-
-`<= suspended*``2``*stepInto*http:``//127.0.0.1:8000/debug_tests.html*167`
+```xml
+<= suspended*keyword*http://127.0.0.1:8000/debug_tests.html*166
+ <= suspended*stepInto*http://127.0.0.1:8000/debug_tests.html*167
+ <= suspended*2*keyword*http://127.0.0.1:8000/debug_tests.html*166
+ <= suspended*2*stepInto*http://127.0.0.1:8000/debug_tests.html*167
+```
 
 ### Resume notification
 
@@ -657,17 +660,14 @@ Message arguments (**version 2**):
 
 Example:
 
-`<= resumed*start`
-
-`<= resumed*stepInto`
-
-`<= resumed*resume`
-
-`<= resumed*``2``*start`
-
-`<= resumed*``2``*stepInto`
-
-`<= resumed*``2``*resume`
+```xml
+<= resumed*start
+ <= resumed*stepInto
+ <= resumed*resume
+ <= resumed*2*start
+ <= resumed*2*stepInto
+ <= resumed*2*resume
+```
 
 ### Client action notifications
 
@@ -686,11 +686,11 @@ Message arguments:
 
 Example:
 
-`<= threads*created*``1``*main`
-
-`<= threads*created*``2``*worker`
-
-`<= threads*destroyed*``2`
+```xml
+<= threads*created*1*main
+ <= threads*created*2*worker
+ <= threads*destroyed*2
+```
 
 ### Log console message
 
@@ -723,11 +723,11 @@ Message arguments:
 
 Example:
 
-`<= log*out*Start message`
-
-`<= log*out*src*http:``//127.0.0.1:8000/debug_tests.html*170`
-
-`<= log*out*trace*testVariables||http:``//127.0.0.1:8000/debug_tests.html|166*onclick|MouseEvent|http://127.0.0.1:8000/debug_tests.html|1`
+```xml
+<= log*out*Start message
+ <= log*out*src*http://127.0.0.1:8000/debug_tests.html*170
+ <= log*out*trace*testVariables||http://127.0.0.1:8000/debug_tests.html|166*onclick|MouseEvent|http://127.0.0.1:8000/debug_tests.html|1
+```
 
 ### Scripts notification
 
@@ -762,13 +762,12 @@ Message arguments:
 
 Example:
 
-`<= scripts*created*``225``|http:``//127.0.0.1:8000/debug_tests.html|testStepping|26|8`
-
-`<= scripts*created*``234``|http:``//127.0.0.1:8000/debug_tests.html|anonymous|137|1`
-
-`<= scripts*resolved*``234``|toString*``240``|myFunc0*``241``|myFunc1*``242``|myFunc2*``252``|onreadystatechange`
-
-`<= scripts*destroyed*``234``*``235``*``236`
+```xml
+<= scripts*created*225|http://127.0.0.1:8000/debug_tests.html|testStepping|26|8
+ <= scripts*created*234|http://127.0.0.1:8000/debug_tests.html|anonymous|137|1
+ <= scripts*resolved*234|toString*240|myFunc0*241|myFunc1*242|myFunc2*252|onreadystatechange
+ <= scripts*destroyed*234*235*236
+```
 
 ### Threads notification (Version 2)
 
@@ -783,11 +782,11 @@ Message arguments:
 
 Example:
 
-`<= threads*created*``1``*main`
-
-`<= threads*created*``2``*worker`
-
-`<= threads*destroyed*``2`
+```xml
+<= threads*created*1*main
+ <= threads*created*2*worker
+ <= threads*destroyed*2
+```
 
 ## Appendix
 

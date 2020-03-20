@@ -42,19 +42,15 @@ View the video, [scrollingviews.mov](./attachments_29229692_1_scrollingviews.mov
 
 You create a ScrollView using the createScrollView() method, as shown here:
 
-`var sv = Ti.UI.createScrollView({`
-
-`height:` `200``,`
-
-`width:` `200``,`
-
-`/* left & right work too */`
-
-`contentHeight: Ti.UI.SIZE,`
-
-`contentWidth: Ti.UI.SIZE`
-
-`})`
+```javascript
+var sv = Ti.UI.createScrollView({
+  height: 200,
+  width: 200,
+  /* left & right work too */
+  contentHeight: Ti.UI.SIZE,
+  contentWidth: Ti.UI.SIZE
+})
+```
 
 The height and width properties define the dimensions of the ScrollView – meaning how much space within the window is used by the ScrollView. The contentHeight and contentWidth properties define the dimensions of the scrolling content within the ScrollView. By default, these values are set to the size of the content. If you set contentHeight/contentWidth smaller than the content requires, that content will be clipped. If you set those dimensions larger than the content, extra "padding" will be displayed.
 
@@ -62,7 +58,7 @@ The height and width properties define the dimensions of the ScrollView – mean
 
 There are a few interesting properties on the ScrollView. These include:
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Property</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Description</strong></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>zoomScale, minZoomScale, maxZoomScale</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>You can control zooming of the content within the ScrollView with these properties. Each accepts a numeric value between 0 and 1.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>horizontalBounce, verticalBounce</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>(iOS only) These Boolean values control whether the ScrollView displays that "bounce" effect when the user has reached the end of the scrolling content.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>showHorizontalScrollIndicator, showVerticalScrollIndicator</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>These Boolean values control whether the scroll indicator (scrollbar-like gizmo) is displayed.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>scrollType</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>On Android, you can set the ScrollView to either "vertical" or "horizontal" but not both.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>canCancelEvents</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>On iOS, you can set this value to <tt>true</tt> (default) so that events are handled by the ScrollView rather than the views it contains.</p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Property</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Description</strong></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>zoomScale, minZoomScale, maxZoomScale</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>You can control zooming of the content within the ScrollView with these properties. Each accepts a numeric value between 0 and 1.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>horizontalBounce, verticalBounce</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>(iOS only) These Boolean values control whether the ScrollView displays that "bounce" effect when the user has reached the end of the scrolling content.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>showHorizontalScrollIndicator, showVerticalScrollIndicator</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>These Boolean values control whether the scroll indicator (scrollbar-like gizmo) is displayed.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>scrollType</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>On Android, you can set the ScrollView to either "vertical" or "horizontal" but not both.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>canCancelEvents</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>On iOS, you can set this value to <tt class=" ">true</tt> (default) so that events are handled by the ScrollView rather than the views it contains.</p></td></tr></tbody></table>
 
 ##### Android specifics
 
@@ -82,31 +78,21 @@ You can add eventListeners to your ScrollView the same way you'd add them to but
 
 ScrollableViews display a set of Ti.UI.View objects within a scrolling container. You can create those sub-views prior to creating the ScrollableView or add them later, as shown here:
 
-`var view1 = Titanium.UI.createView({backgroundColor:``'#123'``});`
-
-`var view2 = Titanium.UI.createView({backgroundColor:``'#234'``});`
-
-`var view3 = Titanium.UI.createView({backgroundColor:``'#345'``});`
-
-`var scrollable = Titanium.UI.createScrollableView({`
-
-`views:[view1,view2,view3],`
-
-`showPagingControl:` `true`
-
-`});`
-
-`win.add(scrollable);`
-
-`// add another view`
-
-`var view4 = Titanium.UI.createView({backgroundColor:``'#456'``});`
-
-`scrollable.addView(view4);`
-
-`// and you could remove a view with`
-
-`scrollable.removeView(view1);`
+```javascript
+var view1 = Titanium.UI.createView({backgroundColor:'#123'});
+var view2 = Titanium.UI.createView({backgroundColor:'#234'});
+var view3 = Titanium.UI.createView({backgroundColor:'#345'});
+var scrollable = Titanium.UI.createScrollableView({
+    views:[view1,view2,view3],
+  showPagingControl: true
+});
+win.add(scrollable);
+// add another view
+var view4 = Titanium.UI.createView({backgroundColor:'#456'});
+scrollable.addView(view4);
+// and you could remove a view with
+scrollable.removeView(view1);
+```
 
 In general, you should define the views first and add them to the views array when you create the ScrollableView. That method will (in theory) render the quickest.
 
@@ -114,11 +100,11 @@ In general, you should define the views first and add them to the views array wh
 
 There are a few interesting properties on the ScrollView. These include:
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Property</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Description</strong></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>showPagingControl</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Boolean, set to <tt>false</tt> (default) to hide the paging control (the dots that show which page you're viewing)</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>pagingControlColor</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Set the background color for the paging control; you can't control the color of the dots.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>pagingControlHeight</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Set the height of the paging control area.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>currentPage</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This property accepts an index number of the view to display (zero-based, so <tt>currentPage=2</tt> would show the third view within the ScrollableView)</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>cacheSize</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This iOS-only property accepts an integer value to control the number of views pre-rendered. See the <a class="external-link external-link" href="#!/api/Titanium.UI.ScrollableView">API docs</a> for considerations when using this property.</p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Property</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Description</strong></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>showPagingControl</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Boolean, set to <tt class=" ">false</tt> (default) to hide the paging control (the dots that show which page you're viewing)</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>pagingControlColor</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Set the background color for the paging control; you can't control the color of the dots.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>pagingControlHeight</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Set the height of the paging control area.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>currentPage</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This property accepts an index number of the view to display (zero-based, so <tt class=" ">currentPage=2</tt> would show the third view within the ScrollableView)</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>cacheSize</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This iOS-only property accepts an integer value to control the number of views pre-rendered. See the <a class="external-link external-link" href="#!/api/Titanium.UI.ScrollableView">API docs</a> for considerations when using this property.</p></td></tr></tbody></table>
 
 #### ScrollableView methods
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Method</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Description</strong></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>scrollToView()</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Accepts an integer or object reference of the sub-view to scroll into view within the ScrollableView.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>addView()</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Adds a view to the ScrollableView, as shown in the code above.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>removeView()</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Removes a view from the ScrollableView, as shown in the code above.</p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Method</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Description</strong></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>scrollToView()</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Accepts an integer or object reference of the sub-view to scroll into view within the ScrollableView.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>addView()</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Adds a view to the ScrollableView, as shown in the code above.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>removeView()</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Removes a view from the ScrollableView, as shown in the code above.</p></td></tr></tbody></table>
 
 #### ScrollableView events
 

@@ -1,6 +1,6 @@
 {"title":"AMPLIFY Runtime Services Release Notes","weight":"30"}
 
-Monitor Published Applications!
+*Monitor Published Applications!*
 
 The status of your applications that are published to a production environment should be monitored using Pingdom, New Relic, or a similar website performance monitoring program. For information on Pingdom, refer to the [Pingdom](https://www.pingdom.com/) website. For information on New Relic, refer to the [New Relic](https://newrelic.com/) website.
 
@@ -20,75 +20,51 @@ AMPLIFY Runtime Services 1.6.5 is a minor release, which includes improvements a
 
 * Previously, the Amazon Web Services (AWS) credentials and region were coded into the user.json input configuration file.
 
-    `{`
-
-    `"platform"` `: {`
-
-    `"infrastructure"` `:` `"aws"``,`
-
-    `"aws"``: {`
-
-    `"aws_access_key_id"``: AKIA``"xxxxx"``,`
-
-    `"aws_secret_access_key"``:` `"xxxxxx"``,`
-
-    `"aws_region"``:` `"us-west-1"`
-
-    `}`
-
-    `},`
-
-    `...`
+    ```
+    {
+    "platform" : {
+    "infrastructure" : "aws",
+    "aws": {
+    "aws_access_key_id": AKIA"xxxxx",
+    "aws_secret_access_key": "xxxxxx",
+    "aws_region": "us-west-1"
+    }
+    },
+    ...
+    ```
 
     Now, the AWS section has been removed from the user.json input configuration file.
 
-    `{`
-
-    `"platform"` `: {`
-
-    `"infrastructure"` `:` `"aws"`
-
-    `},`
-
-    `...`
+    ```
+    {
+    "platform" : {
+    "infrastructure" : "aws"
+    },
+    ...
+    ```
 
     And the AWS credentials are configured as environmental variables in the CLI using the **arrowcluster-vpc** command.
 
-    `Usage: arrowcluster-vpc COMMAND [``command``-specific-options]`
-
-    `Deploy and manage an ArrowCloud cluster` `in` `an AWS VPC environment. Type` `"arrowcluster-vpc COMMAND -h"`  `for`  `more` `details:`
-
-    `Environment:`
-
-    `AWS_REGION AWS region`
-
-    `AWS_ACCESS_KEY_ID AWS access key` `id`
-
-    `AWS_SECRET_ACCESS_KEY AWS secret access key`
-
-    `AWS_SESSION_TOKEN [Optional] AWS session token (temporary security credentials)`
-
-    `Commands:`
-
-    `deploy deploy a new arrowcloud arrowcloud cluster` `in` `AWS VPC environment`
-
-    `teardown teardown an existing arrowcloud AWS VPC cluster`
-
-    `verify perform optional sanity checks after cluster installation`
-
-    `upgrade upgrade an arrowcloud cluster to a new version`
-
-    `downgrade downgrade an arrowcloud cluster to an old version`
-
-    `add-host add new hosts to cluster`
-
-    `info show arrowcloud VPCs and other resources`
-
-    `Options:`
-
-    `-h, --help output usage information`
-
-    `-``v``, --version output the version of the cli`
+    ```
+    Usage: arrowcluster-vpc COMMAND [command-specific-options]
+     Deploy and manage an ArrowCloud cluster in an AWS VPC environment. Type "arrowcluster-vpc COMMAND -h" for more details:
+     Environment:
+      AWS_REGION                         AWS region
+      AWS_ACCESS_KEY_ID                  AWS access key id
+      AWS_SECRET_ACCESS_KEY              AWS secret access key
+      AWS_SESSION_TOKEN [Optional]       AWS session token (temporary security credentials)
+     Commands:
+      deploy       deploy a new arrowcloud arrowcloud cluster in AWS VPC environment
+      teardown     teardown an existing arrowcloud AWS VPC cluster
+      verify       perform optional sanity checks after cluster installation
+      upgrade      upgrade an arrowcloud cluster to a new version
+      downgrade    downgrade an arrowcloud cluster to an old version
+      add-host     add new hosts to cluster
+      info         show arrowcloud VPCs and other resources
+     Options:
+      -h, --help       output usage information
+      -v, --version    output the version of the cli
+    ```
 
 ## Fixed issues
 

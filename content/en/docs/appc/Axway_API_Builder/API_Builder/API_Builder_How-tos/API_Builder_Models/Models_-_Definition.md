@@ -1,6 +1,6 @@
 {"title":"Models - Definition","weight":"30"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -52,26 +52,19 @@ The fields property (mentioned above) supports a number of sub-properties as wel
 
 The example below creates the car model with the specified schema. The car models will be stored in Mobile Backend Services as CustomObjects. Since the autogen property was not set to false, API Builder automatically generates the pre-defined endpoints for the client to access the car models using the <SEVER\_ADDRESS>/ api/car endpoints.
 
-`var` `Arrow = require(``'arrow'``);`
+```javascript
+var Arrow = require('arrow');
 
-`var` `car = Arrow.createModel(``'car'``, {`
+var car = Arrow.createModel('car', {
+    fields: {
+        make:{type:String, description:'the make of a car '},
+        model:{type:String, description:'the model of the car', required:true},
+        year: {type:Number, description:'year the car was made', required:true},
+        bluebook: {type:Number, description:'kelly bluebook value of the car', required:true},
+        mileage: {type:Number, description:'current mileage of the car', required:true}
+    },
+    connector: 'appc.arrowdb'
+});
 
-`fields: {`
-
-`make:{type:String, description:``'the make of a car '``},`
-
-`model:{type:String, description:``'the model of the car'``, required:``true``},`
-
-`year: {type:Number, description:``'year the car was made'``, required:``true``},`
-
-`bluebook: {type:Number, description:``'kelly bluebook value of the car'``, required:``true``},`
-
-`mileage: {type:Number, description:``'current mileage of the car'``, required:``true``}`
-
-`},`
-
-`connector:` `'appc.arrowdb'`
-
-`});`
-
-`module.exports = car;`
+module.exports = car;
+```

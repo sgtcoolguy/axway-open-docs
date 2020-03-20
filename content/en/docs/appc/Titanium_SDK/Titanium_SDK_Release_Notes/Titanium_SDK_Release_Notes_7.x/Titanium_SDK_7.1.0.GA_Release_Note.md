@@ -98,11 +98,11 @@ As of this release, Titanium SDK 7.0.x will not be supported six months from 7.1
 
     * This feature can be disabled by setting false on use-auto-versioning in windows section:
 
-        `<``windows``>`
-
-        `<``use``-auto-versioning>false</``use``-auto-versioning>`
-
-        `</``windows``>`
+        ```xml
+        <windows>
+          <use-auto-versioning>false</use-auto-versioning>
+        </windows>
+        ```
 
 ### Multiple platforms
 
@@ -110,11 +110,11 @@ As of this release, Titanium SDK 7.0.x will not be supported six months from 7.1
 
     * Added transpiling user JavaScript code to ES5 or minimum target OS/JS engine support
 
-        `<tiapp>`
-
-        `<transpile>``true``</transpile>`
-
-        `</tiapp>`
+        ```xml
+        <tiapp>
+          <transpile>true</transpile>
+        </tiapp>
+        ```
 
     * Adding this property and having it set to true will enable transpilation during the build process using babel-preset-env to target the underlying JS engine version. For Android we target the version of v8 we build with. For iOS we target the version of iOS's included JavaScriptCore engine for the minimum iOS version the SDK targets.
 

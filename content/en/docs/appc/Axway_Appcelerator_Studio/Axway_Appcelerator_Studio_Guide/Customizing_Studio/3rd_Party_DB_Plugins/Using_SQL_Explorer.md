@@ -12,43 +12,42 @@ This section explains how to do some of the most common tasks that you will perf
 
 To create a new database in SQL Explorer, paste the SQL below into the SQL editor and click the **Execute** button:
 
-`CREATE DATABASE cookbook;`
+```
+CREATE DATABASE cookbook;
+```
 
 ### Creating a new table
 
 To create a new database table in SQL Explorer, paste the following SQL into your SQL Editor and click the **Execute** button:
 
-``CREATE TABLE `recipes` (``
-
-`` `id` `` `int``(``11``) NOT NULL AUTO_INCREMENT,`
-
-`` `title` varchar(```255``) NOT NULL,`
-
-`` `instructions` text NOT NULL,``
-
-``PRIMARY KEY (`id`)``
-
-`) ENGINE=InnoDB DEFAULT CHARSET=utf8;`
+```
+CREATE TABLE `recipes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `instructions` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
 
 ### Inserting data into a table
 
 To insert data into a database table in SQL Explorer, paste the following SQL code into your SQL Editor and click the **Execute** button:
 
-``INSERT INTO `recipes` ``
-
-`(title, instructions)`
-
-`VALUES`
-
-`(``'test'``,` `'this is a test record'``);`
+```
+INSERT INTO `recipes`
+  (title, instructions)
+VALUES
+  ('test', 'this is a test record');
+```
 
 ### Querying a table
 
 To query a database table, paste the following SQL code into your SQL Editor and click the **Execute** button:
 
-`SELECT *`
-
-``FROM `recipes`;``
+```
+SELECT *
+  FROM `recipes`;
+```
 
 Additionally, you can use a generated SELECT statement to query a table. To generate a SELECT statement:
 

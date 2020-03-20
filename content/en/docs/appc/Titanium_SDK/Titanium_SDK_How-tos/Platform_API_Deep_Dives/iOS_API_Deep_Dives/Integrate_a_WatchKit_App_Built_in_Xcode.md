@@ -60,7 +60,9 @@ Studio will generate a new Xcode WatchKit project in the Titaniuim project's ext
 
 To create an Apple Watch application, run the following command from the Titanium project that will include the watch application:
 
-`appc` `new` `-t applewatch -n <WATCH_APP_NAME> --template watchos2`
+```bash
+appc new -t applewatch -n <WATCH_APP_NAME> --template watchos2
+```
 
 If you omit the \--template option, the CLI will create a watchOS 2 project by default.
 
@@ -74,23 +76,21 @@ For watchOS 2 extensions (or later), use the [Watch Connectivity Framework](http
 
 To setup a Watch Connectivity session, the watch application needs to check if the paired device supports Watch Connectivity sessions before retrieving a default session and activating it. Activating the session opens a channel between the paired devices.
 
-`if` `([WCSession isSupported]) {`
-
-`watchSession = [WCSession defaultSession];`
-
-`watchSession.delegate = self;`
-
-`[watchSession activateSession];`
-
-`}`
+```
+if ([WCSession isSupported]) {
+    watchSession = [WCSession defaultSession];
+    watchSession.delegate = self;
+    [watchSession activateSession];
+}
+```
 
 In the Titanium application, you must also check to see if the paried devices supports Watch Connectivity sessions with the Titanium.WatchSession.isSupported property, then call the Titanium.WatchSession.activateSession() method to activate the session allowing messages to be transferred between devices.
 
-`if` `(Ti.WatchSession.isSupported) {`
-
-`Ti.WatchSession.activateSession();`
-
-`}`
+```
+if (Ti.WatchSession.isSupported) {
+    Ti.WatchSession.activateSession();
+}
+```
 
 To check if the session is activated and the paired watch application is reachable, use the following APIs. Some APIs require that the applications are in a reachable state.
 
@@ -177,55 +177,34 @@ After you create your provisioning profiles and add them to Xcode, you need to a
 
 The example below add the development provisioning profiles to the file.
 
-tiapp.xml
+*tiapp.xml*
 
-`<ti:app>`
-
-`<ios>`
-
-`<!-- Required` `for` `Xcode` `8` `and later (Titanium SDK` `5.5``.``0``+) -->`
-
-`<team-id>YOUR-TEAM-ID</team-id>`
-
-`<extensions>`
-
-`<extension projectPath=``"extensions/foo/foo.xcodeproj"``>`
-
-`<target name=``"foo WatchApp Extension"``>`
-
-`<provisioning-profiles>`
-
-`<devices>``12345678``-``0987``-``6543``-``2121``-fedcba098765</devices>`
-
-`<dist-appstore/>`
-
-`<dist-adhoc/>`
-
-`</provisioning-profiles>`
-
-`</target>`
-
-`<target name=``"foo WatchApp"``>`
-
-`<provisioning-profiles>`
-
-`<devices>abcdef-dead-beef-``0909``-``01234567``</devices>`
-
-`<dist-appstore/>`
-
-`<dist-adhoc/>`
-
-`</provisioning-profiles>`
-
-`</target>`
-
-`</extension>`
-
-`</extensions>`
-
-`<ios>`
-
-`</ti:app>`
+```xml
+<ti:app>
+  <ios>
+    <!-- Required for Xcode 8 and later (Titanium SDK 5.5.0+) -->
+    <team-id>YOUR-TEAM-ID</team-id>
+    <extensions>
+      <extension projectPath="extensions/foo/foo.xcodeproj">
+        <target name="foo WatchApp Extension">
+          <provisioning-profiles>
+            <devices>12345678-0987-6543-2121-fedcba098765</devices>
+            <dist-appstore/>
+            <dist-adhoc/>
+          </provisioning-profiles>
+        </target>
+        <target name="foo WatchApp">
+          <provisioning-profiles>
+            <devices>abcdef-dead-beef-0909-01234567</devices>
+            <dist-appstore/>
+            <dist-adhoc/>
+          </provisioning-profiles>
+        </target>
+      </extension>
+    </extensions>
+  <ios>
+</ti:app>
+```
 
 ## Run the Project
 
@@ -237,7 +216,9 @@ For Studio, use the run command from the launch options toolbar. If you want to 
 
 For the CLI, execute appc run -p ios with the additional build options.
 
-`appc run -p ios --launch-watch-app`
+```bash
+appc run -p ios --launch-watch-app
+```
 
 If you have more than one watch application extensions, specify the watch application to launch with the \--watch-app-name <APP\_NAME> option.
 

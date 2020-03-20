@@ -26,7 +26,7 @@ To turn Quick Diff on or off:
 
 1. Right-click in the gray margin at the left of the editor (The images below show the margin with and without line numbers turned on).
 
-    <table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083192/MarginNumbers.png" alt="images/download/attachments/30083192/MarginNumbers.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083192/MarginNoNumbers.png" alt="images/download/attachments/30083192/MarginNoNumbers.png" class="confluence-embedded-image"></p></td></tr></tbody></table>
+    <table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083192/MarginNumbers.png" alt="images/download/attachments/30083192/MarginNumbers.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083192/MarginNoNumbers.png" alt="images/download/attachments/30083192/MarginNoNumbers.png" class="confluence-embedded-image"></p></td></tr></tbody></table>
 
 2. From the context menu, select **Show Quick Diff** to toggle the Quick Diff feature on and off.
 

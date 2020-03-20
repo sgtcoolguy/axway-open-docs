@@ -40,13 +40,12 @@ The Google Maps Ti.Map module uses Google Maps Android API v2, which requires th
 
 1. To launch the Android SDK manager:
 
-    `#If the Android SDK tools folder is in your PATH:`
-
-    `android`
-
-    `#If not`
-
-    `<path_to_android_sdk>/tools/android`
+    ```
+    #If the Android SDK tools folder is in your PATH:
+    android
+    #If not
+    <path_to_android_sdk>/tools/android
+    ```
 
 2. After the Android SDK Manager application launches, in the **Extras** folder, select **Google Play services**, then click **Install X Packages....**
 
@@ -68,7 +67,9 @@ To use the Google Maps v2 module, you need to create a Google API project, enabl
 
 For the debug certificate, the SHA-1 certificate fingerprint is stored in a keystore file that comes with each Titanium SDK. The keystore is located at mobilesdk/<platform>/<sdk\_version>/android/dev\_keystore in your Titanium SDK home directory. For example, to retrieve the SHA-1 fingerprint on macOS, for Titanium SDK 7.2.0.GA in the default install location, run the following command:
 
-`keytool -list -``v` `-keystore ~``/Library/Application``\ Support``/platform/mobilesdk/osx/7``.2.0.GA``/android/dev_keystore`
+```
+keytool -list -v -keystore ~/Library/Application\ Support/platform/mobilesdk/osx/7.2.0.GA/android/dev_keystore
+```
 
 If prompted for a password, hit enter (no password). Use the SHA1 string under Certificate fingerprints.
 
@@ -78,25 +79,18 @@ For the release certificate, follow the directions from [Distributing Android ap
 
 After you have obtained a Google API key, add it your tiapp.xml file. Add the meta-data element to the android section as shown below. You may need to add the manifest and application elements.
 
-`<``ti``:app>`
-
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-`<``manifest``>`
-
-`<``application``>`
-
-`<!-- Replace "PASTE YOUR GOOGLE MAPS API KEY HERE" with the Google API key you obtained -->`
-
-`<``meta``-data` `android:name``=``"com.google.android.maps.v2.API_KEY"`  `android:value``=``"PASTE YOUR GOOGLE MAPS API KEY HERE"``/>`
-
-`</``application``>`
-
-`</``manifest``>`
-
-`</``android``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest>
+            <application>
+                <!-- Replace "PASTE YOUR GOOGLE MAPS API KEY HERE" with the Google API key you obtained -->
+                <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="PASTE YOUR GOOGLE MAPS API KEY HERE"/>
+            </application>
+        </manifest>
+    </android>
+</ti:app>
+```
 
 ### Add the module to your project
 
@@ -106,31 +100,29 @@ The ti.map module is included as part of the Titanium SDK and you do not need to
 
 * or in a text editor, add the following to your modules section:
 
-`...`
-
-`<``modules``>`
-
-`<!-- Add this line to your modules section -->`
-
-`<``module`  `platform``=``"android"``>ti.map</``module``>`
-
-`</``modules``>`
-
-`...`
+```
+...
+    <modules>
+        <!-- Add this line to your modules section -->
+        <module platform="android">ti.map</module>
+    </modules>
+...
+```
 
 Within your application's JavaScript files, instantiate the module with the require('ti.map') method:
 
-`var` `MapModule = require(``'ti.map'``);`
+```javascript
+var MapModule = require('ti.map');
+```
 
 Then, you can make subsequent API calls using the previously created MapModule object .
 
-`// Create a default Map.View class`
-
-`var` `mapView = MapModule.createView({`
-
-`mapType:MapModule.NORMAL_TYPE`
-
-`});`
+```javascript
+// Create a default Map.View class
+var mapView = MapModule.createView({
+  mapType:MapModule.NORMAL_TYPE
+});
+```
 
 ## Transitioning from Titanium.Map
 
@@ -180,47 +172,29 @@ The new add-on module behaves the same as the built-in Titanium.Map proxy with t
 
 In order to view maps, Google Play services needs to be installed on the device. Use the isGooglePlayServicesAvailable() method to check to see if Google Play services is installed.
 
-`var` `MapModule = require(``'ti.map'``);`
-
-`var` `rc = MapModule.isGooglePlayServicesAvailable();`
-
-`switch` `(rc) {`
-
-`case` `MapModule.SUCCESS:`
-
-`Ti.API.info(``'Google Play services is installed.'``);`
-
-`break``;`
-
-`case` `MapModule.SERVICE_MISSING:`
-
-`alert(``'Google Play services is missing. Please install Google Play services from the Google Play store.'``);`
-
-`break``;`
-
-`case` `MapModule.SERVICE_VERSION_UPDATE_REQUIRED:`
-
-`alert(``'Google Play services is out of date. Please update Google Play services.'``);`
-
-`break``;`
-
-`case` `MapModule.SERVICE_DISABLED:`
-
-`alert(``'Google Play services is disabled. Please enable Google Play services.'``);`
-
-`break``;`
-
-`case` `MapModule.SERVICE_INVALID:`
-
-`alert(``'Google Play services cannot be authenticated. Reinstall Google Play services.'``);`
-
-`break``;`
-
-`default``:`
-
-`alert(``'Unknown error.'``);`
-
-`}`
+```javascript
+var MapModule = require('ti.map');
+var rc = MapModule.isGooglePlayServicesAvailable();
+switch (rc) {
+    case MapModule.SUCCESS:
+        Ti.API.info('Google Play services is installed.');
+        break;
+    case MapModule.SERVICE_MISSING:
+        alert('Google Play services is missing. Please install Google Play services from the Google Play store.');
+        break;
+    case MapModule.SERVICE_VERSION_UPDATE_REQUIRED:
+        alert('Google Play services is out of date. Please update Google Play services.');
+        break;
+    case MapModule.SERVICE_DISABLED:
+        alert('Google Play services is disabled. Please enable Google Play services.');
+        break;
+    case MapModule.SERVICE_INVALID:
+        alert('Google Play services cannot be authenticated. Reinstall Google Play services.');
+        break;
+    default:
+        alert('Unknown error.');
+}
+```
 
 If Google Play services is not installed on device, either the map view is black, displays a message that Google Services is missing or the application crashes.
 
@@ -228,103 +202,63 @@ If Google Play services is not installed on device, either the map view is black
 
 The View class is the core UI component of the Google Maps v2 module. It allows Titanium to make use of Google's Android Maps v2 API to view geographic data and add annotations and routes. As it is a native UI component, users will also have access to features like scrolling and multi-touch zoom. In its most basic form, the View can simply display a basic map given a geographic position via latitude and longitude.
 
-`// Add in the module`
+```javascript
+// Add in the module
+var MapModule = require('ti.map');
 
-`var` `MapModule = require(``'ti.map'``);`
+var win = Ti.UI.createWindow({ backgroundColor: 'white' });
 
-`var` `win = Ti.UI.createWindow({ backgroundColor:` `'white'` `});`
+var map1 = MapModule.createView({
+    userLocation: true,
+    mapType: MapModule.NORMAL_TYPE,
+    animate: true,
+    region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },
+    height: '50%',
+    top: 0,
+    left: 0,
+    width: '50%'
+});
 
-`var` `map1 = MapModule.createView({`
+var map2 = MapModule.createView({
+    userLocation: true,
+    mapType: MapModule.TERRAIN_TYPE,
+    animate: true,
+    region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },
+    height: '50%',
+    top: 0,
+    right: 0,
+    width: '50%'
+});
 
-`userLocation:` `true``,`
+var map3 = MapModule.createView({
+    userLocation: true,
+    mapType: MapModule.SATELLITE_TYPE,
+    animate: true,
+    region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },
+    height: '50%',
+    bottom: 0,
+  left: 0,
+    width: '50%'
+});
 
-`mapType: MapModule.NORMAL_TYPE,`
+var map4 = MapModule.createView({
+    userLocation: true,
+    mapType: MapModule.HYBRID_TYPE,
+    animate: true,
+    region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },
+    height: '50%',
+    bottom: 0,
+    right: 0,
+    width: '50%',
+    traffic: true
+});
 
-`animate:` `true``,`
-
-`region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },`
-
-`height:` `'50%'``,`
-
-`top: 0,`
-
-`left: 0,`
-
-`width:` `'50%'`
-
-`});`
-
-`var` `map2 = MapModule.createView({`
-
-`userLocation:` `true``,`
-
-`mapType: MapModule.TERRAIN_TYPE,`
-
-`animate:` `true``,`
-
-`region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },`
-
-`height:` `'50%'``,`
-
-`top: 0,`
-
-`right: 0,`
-
-`width:` `'50%'`
-
-`});`
-
-`var` `map3 = MapModule.createView({`
-
-`userLocation:` `true``,`
-
-`mapType: MapModule.SATELLITE_TYPE,`
-
-`animate:` `true``,`
-
-`region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },`
-
-`height:` `'50%'``,`
-
-`bottom: 0,`
-
-`left: 0,`
-
-`width:` `'50%'`
-
-`});`
-
-`var` `map4 = MapModule.createView({`
-
-`userLocation:` `true``,`
-
-`mapType: MapModule.HYBRID_TYPE,`
-
-`animate:` `true``,`
-
-`region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },`
-
-`height:` `'50%'``,`
-
-`bottom: 0,`
-
-`right: 0,`
-
-`width:` `'50%'``,`
-
-`traffic:` `true`
-
-`});`
-
-`win.add(map1);`
-
-`win.add(map2);`
-
-`win.add(map3);`
-
-`win.add(map4);`
-
-`win.open();`
+win.add(map1);
+win.add(map2);
+win.add(map3);
+win.add(map4);
+win.open();
+```
 
 ![QuadroMap](/Images/appc/download/attachments/36739898/QuadroMap.jpg)
 
@@ -366,59 +300,38 @@ Annotations, created with the createAnnotation method, mark places of interest o
 
 Adding an annotation to a View is simple. Let's modify the previous example to show only one view of Sydney with some landmarks.
 
-`var` `MapModule = require(``'ti.map'``);`
+```javascript
+var MapModule = require('ti.map');
+var win = Ti.UI.createWindow();
+var opera = MapModule.createAnnotation({
+    latitude: -33.8569,
+    longitude: 151.2153,
+    centerOffset: { x: 80, y: 25 },
+    image: 'SydneyOperaHouse.png',
+    title: 'Sydney Opera House',
+    subtitle: 'Sydney, New South Wales, Australia'
+});
 
-`var` `win = Ti.UI.createWindow();`
+var bridge = MapModule.createAnnotation({
+    latitude: -33.852222,
+    longitude: 151.210556,
+    pincolor: MapModule.ANNOTATION_PURPLE,
+    title: 'Sydney Harbour Bridge',
+    subtitle: 'Port Jackson',
+    // For eventing, use the Map View's click event
+    // and monitor the clicksource property for 'leftButton'.
+    leftButton: Ti.UI.createButton({ title: 'Detail' })
+});
 
-`var` `opera = MapModule.createAnnotation({`
+var mapview = MapModule.createView({
+    mapType: MapModule.NORMAL_TYPE,
+    region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },
+    annotations: [bridge, opera]
+});
 
-`latitude: -33.8569,`
-
-`longitude: 151.2153,`
-
-`centerOffset: { x: 80, y: 25 },`
-
-`image:` `'SydneyOperaHouse.png'``,`
-
-`title:` `'Sydney Opera House'``,`
-
-`subtitle:` `'Sydney, New South Wales, Australia'`
-
-`});`
-
-`var` `bridge = MapModule.createAnnotation({`
-
-`latitude: -33.852222,`
-
-`longitude: 151.210556,`
-
-`pincolor: MapModule.ANNOTATION_PURPLE,`
-
-`title:` `'Sydney Harbour Bridge'``,`
-
-`subtitle:` `'Port Jackson'``,`
-
-`// For eventing, use the Map View's click event`
-
-`// and monitor the clicksource property for 'leftButton'.`
-
-`leftButton: Ti.UI.createButton({ title:` `'Detail'` `})`
-
-`});`
-
-`var` `mapview = MapModule.createView({`
-
-`mapType: MapModule.NORMAL_TYPE,`
-
-`region: { latitude: -33.87365, longitude: 151.20689, latitudeDelta: 0.1, longitudeDelta: 0.1 },`
-
-`annotations: [bridge, opera]`
-
-`});`
-
-`win.add(mapview);`
-
-`win.open();`
+win.add(mapview);
+win.open();
+```
 
 ![Annotations](/Images/appc/download/attachments/36739898/Annotations.jpg)
 
@@ -474,85 +387,55 @@ The next section discusses the Route class, a feature to create paths between lo
 
 Routes, created with the createRoute method, allow us to draw paths between locations on a View. These paths can be driving directions, bike paths, or any other reason you have to connect point A to point B. In the example below, a route is created going between three points:
 
-`var` `MapModule = require(``'ti.map'``);`
+```javascript
+var MapModule = require('ti.map');
 
-`var` `win = Ti.UI.createWindow({backgroundColor:` `'white'``});`
+var win = Ti.UI.createWindow({backgroundColor: 'white'});
 
-`var` `appc = MapModule.createAnnotation({`
+var appc = MapModule.createAnnotation({
+    latitude: 37.389569,
+    longitude: -122.050212,
+    title: 'Appcelerator HQ',
+    subtitle: 'Mountain View, CA',
+    pincolor: MapModule.ANNOTATION_GREEN
+});
 
-`latitude: 37.389569,`
+var apple = MapModule.createAnnotation({
+    latitude: 37.331689,
+    longitude: -122.030731,
+    title: 'Apple HQ',
+    subtitle: 'Cupertino, CA',
+    pincolor: MapModule.ANNOTATION_RED
+});
 
-`longitude: -122.050212,`
+var google = MapModule.createAnnotation({
+    latitude: 37.422502,
+    longitude: -122.0855498,
+    title: 'Google HQ',
+    subtitle: 'Mountain View, CA',
+    pincolor: MapModule.ANNOTATION_VIOLET
+});
 
-`title:` `'Appcelerator HQ'``,`
+var route = MapModule.createRoute({
+    width: 4,
+    color: '#f00',
+    points: [
+        {latitude:google.latitude, longitude:google.longitude},
+        {latitude:appc.latitude, longitude:appc.longitude},
+        {latitude:apple.latitude, longitude:apple.longitude}
+    ]
+});
 
-`subtitle:` `'Mountain View, CA'``,`
+var mapview = MapModule.createView({
+    mapType: MapModule.NORMAL_TYPE,
+    region: {latitude: 37.389569, longitude: -122.050212, latitudeDelta: 0.2, longitudeDelta: 0.2},
+    annotations: [google,appc,apple]
+});
 
-`pincolor: MapModule.ANNOTATION_GREEN`
-
-`});`
-
-`var` `apple = MapModule.createAnnotation({`
-
-`latitude: 37.331689,`
-
-`longitude: -122.030731,`
-
-`title:` `'Apple HQ'``,`
-
-`subtitle:` `'Cupertino, CA'``,`
-
-`pincolor: MapModule.ANNOTATION_RED`
-
-`});`
-
-`var` `google = MapModule.createAnnotation({`
-
-`latitude: 37.422502,`
-
-`longitude: -122.0855498,`
-
-`title:` `'Google HQ'``,`
-
-`subtitle:` `'Mountain View, CA'``,`
-
-`pincolor: MapModule.ANNOTATION_VIOLET`
-
-`});`
-
-`var` `route = MapModule.createRoute({`
-
-`width: 4,`
-
-`color:` `'#f00'``,`
-
-`points: [`
-
-`{latitude:google.latitude, longitude:google.longitude},`
-
-`{latitude:appc.latitude, longitude:appc.longitude},`
-
-`{latitude:apple.latitude, longitude:apple.longitude}`
-
-`]`
-
-`});`
-
-`var` `mapview = MapModule.createView({`
-
-`mapType: MapModule.NORMAL_TYPE,`
-
-`region: {latitude: 37.389569, longitude: -122.050212, latitudeDelta: 0.2, longitudeDelta: 0.2},`
-
-`annotations: [google,appc,apple]`
-
-`});`
-
-`mapview.addRoute(route);`
-
-`win.add(mapview);`
-
-`win.open();`
+mapview.addRoute(route);
+win.add(mapview);
+win.open();
+```
 
 After creating the three annotation points, the application creates a route object, using the createRoute method. Let's take a look at each of the route properties.
 
@@ -582,69 +465,44 @@ The Map View object provides a few extra events that provide additional control 
 
 For example, the following code listens to each of the previous events and outputs information to the console when each event fires:
 
-`var` `MapModule = require(``'ti.map'``);`
+```javascript
+var MapModule = require('ti.map');
+var win = Ti.UI.createWindow({backgroundColor: 'white'});
+var appc = MapModule.createAnnotation({
+    latitude: 37.389569,
+    longitude: -122.050212,
+    title: 'Appcelerator HQ',
+    subtitle: 'Mountain View, CA',
+    pincolor: MapModule.ANNOTATION_GREEN,
+    draggable: true
+});
+var mapview = MapModule.createView({
+    mapType: MapModule.HYBRID_TYPE,
+    region: {latitude: 37.389569, longitude: -122.050212, latitudeDelta: 0.2, longitudeDelta: 0.2},
+    annotations: [appc]
+});
+mapview.addEventListener('pinchangedragstate', function(e){
+    Ti.API.info(e.type);
+    Ti.API.info(JSON.stringify(e.newState));
+});
 
-`var` `win = Ti.UI.createWindow({backgroundColor:` `'white'``});`
+mapview.addEventListener('click', function(e){
+    Ti.API.info(e.type);
+    Ti.API.info(JSON.stringify(e.clicksource));
+});
 
-`var` `appc = MapModule.createAnnotation({`
+mapview.addEventListener('regionchanged', function(e){
+    Ti.API.info(e.type);
+    Ti.API.info(e.latitude + "," + e.longitude);
+});
 
-`latitude: 37.389569,`
+mapview.addEventListener('complete', function(e){
+    Ti.API.info(e.type);
+});
 
-`longitude: -122.050212,`
-
-`title:` `'Appcelerator HQ'``,`
-
-`subtitle:` `'Mountain View, CA'``,`
-
-`pincolor: MapModule.ANNOTATION_GREEN,`
-
-`draggable:` `true`
-
-`});`
-
-`var` `mapview = MapModule.createView({`
-
-`mapType: MapModule.HYBRID_TYPE,`
-
-`region: {latitude: 37.389569, longitude: -122.050212, latitudeDelta: 0.2, longitudeDelta: 0.2},`
-
-`annotations: [appc]`
-
-`});`
-
-`mapview.addEventListener(``'pinchangedragstate'``,` `function``(e){`
-
-`Ti.API.info(e.type);`
-
-`Ti.API.info(JSON.stringify(e.newState));`
-
-`});`
-
-`mapview.addEventListener(``'click'``,` `function``(e){`
-
-`Ti.API.info(e.type);`
-
-`Ti.API.info(JSON.stringify(e.clicksource));`
-
-`});`
-
-`mapview.addEventListener(``'regionchanged'``,` `function``(e){`
-
-`Ti.API.info(e.type);`
-
-`Ti.API.info(e.latitude +` `","` `+ e.longitude);`
-
-`});`
-
-`mapview.addEventListener(``'complete'``,` `function``(e){`
-
-`Ti.API.info(e.type);`
-
-`});`
-
-`win.add(mapview);`
-
-`win.open();`
+win.add(mapview);
+win.open();
+```
 
 If we run the example code, then:
 
@@ -660,27 +518,19 @@ If we run the example code, then:
 
 The following output is printed to the console using the adb logcat command:
 
-`I``/TiAPI` `( 3499): complete`
-
-`I``/TiAPI` `( 3499): pinchangedragstate`
-
-`I``/TiAPI` `( 3499): 0`
-
-`I``/TiAPI` `( 3499): pinchangedragstate`
-
-`I``/TiAPI` `( 3499): 1`
-
-`I``/TiAPI` `( 3499): click`
-
-`I``/TiAPI` `( 3499):` `"pin"`
-
-`I``/TiAPI` `( 3499): click`
-
-`I``/TiAPI` `( 3499):` `"subtitle"`
-
-`I``/TiAPI` `( 3499): regionchanged`
-
-`I``/TiAPI` `( 3499): 37.389843440466116,-121.93723306059837`
+```
+I/TiAPI   ( 3499):  complete
+I/TiAPI   ( 3499):  pinchangedragstate
+I/TiAPI   ( 3499):  0
+I/TiAPI   ( 3499):  pinchangedragstate
+I/TiAPI   ( 3499):  1
+I/TiAPI   ( 3499):  click
+I/TiAPI   ( 3499):  "pin"
+I/TiAPI   ( 3499):  click
+I/TiAPI   ( 3499):  "subtitle"
+I/TiAPI   ( 3499):  regionchanged
+I/TiAPI   ( 3499):  37.389843440466116,-121.93723306059837
+```
 
 The application responds to the user's interaction of selecting the annotation and panning as seen by the console output.
 

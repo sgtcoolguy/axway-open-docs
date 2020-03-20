@@ -1,6 +1,6 @@
 {"title":"API Runtime Configuration","weight":"80"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -8,41 +8,27 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 By default, each project includes a configuration file, in JSON format, called appc.json located in the project's top-level folder. The settings in the file tell the Appcelerator CLI and AMPLIFY Runtime Services the nature of the project, which components are required by the project, and any special deployment settings.
 
-appc.json
+*appc.json*
 
-`{`
-
-`"type"``:` `"api"``,`
-
-`"group"``:` `"arrow"``,`
-
-`"dependencies"``: {`
-
-`"connector/appc.arrowdb"``:` `"*"``,`
-
-`"connector/appc.composite"``:` `"*"`
-
-`},`
-
-`"cloud"``: {`
-
-`"container"``:` `"Dev"``,`
-
-`"minimum"``: 1,`
-
-`"maximum"``: 1,`
-
-`"maxqueuesize"``: 50,`
-
-`"environment"``: {},`
-
-`"cname"``:` `null``,`
-
-`"certificate"``:` `null`
-
-`}`
-
-`}`
+```json
+{
+  "type": "api",
+  "group": "arrow",
+  "dependencies": {
+    "connector/appc.arrowdb": "*",
+    "connector/appc.composite": "*"
+  },
+  "cloud": {
+    "container": "Dev",
+    "minimum": 1,
+    "maximum": 1,
+    "maxqueuesize": 50,
+    "environment": {},
+    "cname": null,
+    "certificate": null
+  }
+}
+```
 
 ## Cloud
 

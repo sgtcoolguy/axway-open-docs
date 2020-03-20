@@ -1,6 +1,6 @@
 {"title":"APIs and Endpoints","weight":"20"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -23,108 +23,58 @@ APIs have the following extensions to the swagger specification:
 
 This example API below is similar to the one that comes with every API Builder Project. It contains an Endpoint which takes a username, invokes the flow called “greetflow”, and returns a greeting. However, since it has an x-enabled flag set, the Endpoint will be disabled, and no requests will be able to be made to it.
 
-`{`
-
-`"swagger"``:` `"2.0"``,`
-
-`"info"``: {`
-
-`"description"``:` `"Greeting functions"``,`
-
-`"version"``:` `"1.0.0"``,`
-
-`"title"``:` `"Greeting API"`
-
-`},`
-
-`"x-enabled"``: {`
-
-`"enabled"``:` `false`
-
-`},`
-
-`"paths"``: {`
-
-`"/greet"``: {`
-
-`"get"``: {`
-
-`"x-flow"``:` `"greetflow"``,`
-
-`"consumes"``: [`
-
-`"application/json"`
-
-`],`
-
-`"description"``:` `""``,`
-
-`"operationId"``:` `"Greet"``,`
-
-`"parameters"``: [`
-
-`{`
-
-`"description"``:` `"The username"``,`
-
-`"in"``:` `"query"``,`
-
-`"name"``:` `"username"``,`
-
-`"required"``:` `true``,`
-
-`"type"``:` `"string"`
-
-`}`
-
-`],`
-
-`"produces"``: [`
-
-`"application/json"`
-
-`],`
-
-`"responses"``: {`
-
-`"200"``: {`
-
-`"description"``:` `"greeting"``,`
-
-`"schema"``: {`
-
-`"type"``:` `"string"`
-
-`}`
-
-`},`
-
-`"400"``: {`
-
-`"description"``:` `"bad request"``,`
-
-`"schema"``: {`
-
-`"type"``:` `"string"`
-
-`}`
-
-`}`
-
-`},`
-
-`"summary"``:` `"Greet a user"``,`
-
-`"tags"``: [`
-
-`"helloworld"`
-
-`]`
-
-`}`
-
-`}`
-
-`}`
-
-`}`
+```
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Greeting functions",
+     "version": "1.0.0",
+     "title": "Greeting API"
+  },
+  "x-enabled": {
+    "enabled": false
+  },
+  "paths": {
+    "/greet": {
+      "get": {
+        "x-flow": "greetflow",
+        "consumes": [
+          "application/json"
+         ],
+         "description": "",
+         "operationId": "Greet",
+         "parameters": [
+           {
+             "description": "The username",
+             "in": "query",
+             "name": "username",
+             "required": true,
+             "type": "string"
+           }
+         ],
+         "produces": [
+           "application/json"
+         ],
+         "responses": {
+           "200": {
+             "description": "greeting",
+             "schema": {
+               "type": "string"
+             }
+           },
+           "400": {
+             "description": "bad request",
+             "schema": {
+               "type": "string"
+             }
+           }
+         },
+         "summary": "Greet a user",
+         "tags": [
+           "helloworld"
+         ]
+       }
+     }
+   }
+}
+```

@@ -20,9 +20,10 @@ To create a Google API Console project and client ID, follow these steps:
 
     1. In the **Authorized JavaScript origins** field, enter the origin for your app. You can enter multiple origins to allow for your app to run on different protocols, domains, or subdomains. You cannot use wildcards. In the example below, the second URL could be a production URL.
 
-        `http:``//localhost:8080`
-
-        `https:``//myproductionurl.example.com`
+        ```
+        http://localhost:8080
+        https://myproductionurl.example.com
+        ```
 
     2. The **Authorized redirect URI** field does not require a value. Redirect URIs are not used with JavaScript APIs.
 

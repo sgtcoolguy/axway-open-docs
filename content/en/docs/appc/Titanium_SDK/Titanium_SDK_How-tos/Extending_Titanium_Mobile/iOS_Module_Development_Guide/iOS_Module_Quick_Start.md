@@ -56,15 +56,15 @@ Like iOS application development, iOS module development is only supported on OS
 
 First, create a new module project.
 
-CLI Instructions
+*CLI Instructions*
 
 From a terminal, change the current working directory to your workspace and run:
 
-`cd`  `/PATH/TO/WORKSPACE`
-
-`appc new -n` `test` `--``id` `com.example.``test`
-
-`### when prompted for the project type, select "Titanium Module"`
+```bash
+cd /PATH/TO/WORKSPACE
+appc new -n test --id com.example.test
+### when prompted for the project type, select "Titanium Module"
+```
 
 In Studio:
 
@@ -88,17 +88,20 @@ You should validate the used Titanium SDK version inside the titanium.xcconfig t
 
 Next, build the module and package it. This process produces a ZIP file containing a binary library with unprocessed module assets, example code and documentation.
 
-CLI Instructions
+*CLI Instructions*
 
 From a terminal, go to the module's ios directory and run the appc run command:
 
-`cd`  `test``/ios`
-
-`appc run -p ios --build-only`
+```bash
+cd test/ios
+appc run -p ios --build-only
+```
 
 Optional: After the build completes, either unzip the built module in the Titanium SDK home path or in your local project:
 
-`unzip -o com.example.``test``-iphone-1.0.0.zip -d ~``/Library/Application``\ Support``/Titanium/`
+```
+unzip -o com.example.test-iphone-1.0.0.zip -d ~/Library/Application\ Support/Titanium/
+```
 
 In Studio:
 
@@ -120,15 +123,15 @@ To test the module, create a test application and add the module as a dependency
 
 ### Create a test application
 
-CLI Instructions
+*CLI Instructions*
 
 From a new terminal window, change the current working directory to your workspace and run the following commands:
 
-`cd`  `/PATH/TO/WORKSPACE`
-
-`appc new -t titanium -p ios -n Hello -u http:``//` `--``id` `com.example.hello`
-
-`cd` `Hello/`
+```bash
+cd /PATH/TO/WORKSPACE
+appc new -t titanium -p ios -n Hello -u http:// --id com.example.hello
+cd Hello/
+```
 
 In Studio:
 
@@ -152,19 +155,17 @@ Studio sets up a new folder called Hello that contains the test application you 
 
 To load the module in the application, you need to add it as a dependency to the project.
 
-CLI Instructions
+*CLI Instructions*
 
 Open the tiapp.xml and update the <modules/> element to include the module as a dependency to the project:
 
-`<``ti``:app>`
-
-`<``modules``>`
-
-`<``module`  `platform``=``"iphone"``>com.example.test</``module``>`
-
-`</``modules``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  <modules>
+    <module platform="iphone">com.example.test</module>
+  </modules>
+</ti:app>
+```
 
 In Studio:
 
@@ -187,39 +188,37 @@ Open the app/alloy.js file and replace the code with the following, which invoke
 
 Before SDK 7.1.0, modules are imported as the following:
 
-app/alloy.js
+*app/alloy.js*
 
-`var` `test = require(``'com.example.test'``);`
-
-`Ti.API.info(``'module is => '` `+ test);`
-
-`Ti.API.info(``'module example() method returns => '` `+ test.example());`
-
-`Ti.API.info(``'module exampleProp is => '` `+ test.exampleProp);`
-
-`test.exampleProp =` `'This is a test value'``;`
+```javascript
+var test = require('com.example.test');
+Ti.API.info('module is => ' + test);
+Ti.API.info('module example() method returns => ' + test.example());
+Ti.API.info('module exampleProp is => ' + test.exampleProp);
+test.exampleProp = 'This is a test value';
+```
 
 Since SDK 7.1.0, you can use import statements and template strings, see the following:
 
-app/alloy.js
+*app/alloy.js*
 
-`import test from` `'com.example.test'``;`
-
-``Ti.API.info(`module is => ${test}`);``
-
-``Ti.API.info(`module example() method returns => ${test.example()}`);``
-
-``Ti.API.info(`module exampleProp is => ${test.exampleProp}`);``
-
-`test.exampleProp =` `"This is a test value"``;`
+```javascript
+import test from 'com.example.test';
+Ti.API.info(`module is => ${test}`);
+Ti.API.info(`module example() method returns => ${test.example()}`);
+Ti.API.info(`module exampleProp is => ${test.exampleProp}`);
+test.exampleProp = "This is a test value";
+```
 
 ### Run the application
 
-CLI Instructions
+*CLI Instructions*
 
 From a terminal that has the test app as its current working directory, run:
 
-`appc run -p ios`
+```bash
+appc run -p ios
+```
 
 In the Studio toolbar, select **Run** in **Launch Modes** and select an iOS simulator in **Launch Targets**.
 
@@ -227,13 +226,13 @@ Studio builds and launches the application on the select iOS simulator. Monitor 
 
 The console lines seen below show us that the module is working as expected.
 
-Console
+*Console*
 
-`[INFO] module is => [object ComExampleTestModule]`
-
-`[INFO] module example() method returns => hello world`
-
-`[INFO] module exampleProp is => hello world`
+```
+[INFO] module is => [object ComExampleTestModule]
+[INFO] module example() method returns => hello world
+[INFO] module exampleProp is => hello world
+```
 
 ## Modify the module
 
@@ -243,11 +242,13 @@ Let's modify the module code to create a view object and access a string propert
 
 Titanium creates a basic Xcode project, which is used to build the module. You can open this project in Xcode, the IDE used to develop iOS applications and used by the Titanium toolchain to build your iOS applications and modules.
 
-CLI Instructions
+*CLI Instructions*
 
 From a terminal, run:
 
-`open`  `test``/ios/test``.xcodeproj`
+```
+open test/ios/test.xcodeproj
+```
 
 In Studio:
 
@@ -255,7 +256,9 @@ In Studio:
 
 2. In the Terminal, run the following command:
 
-    `open` `.`
+    ```
+    open .
+    ```
 
 Your module project is now open in Xcode. Expand the Classes folder and take a look at the default files created by the Titanium SDK:
 
@@ -285,79 +288,65 @@ In Xcode, for each file:
 
 7. Click **Create**.
 
-ComExampleTestViewProxy.h
+*ComExampleTestViewProxy.h*
 
-`#``import`  `"TiViewProxy.h"`
+```objc
+#import "TiViewProxy.h"
+@interface ComExampleTestViewProxy: TiViewProxy {
 
-`@interface` `ComExampleTestViewProxy: TiViewProxy {`
+}
+@end
+```
 
-`}`
+*ComExampleTestViewProxy.m*
 
-`@end`
+```objc
+#import "ComExampleTestViewProxy.h"
 
-ComExampleTestViewProxy.m
+@implementation ComExampleTestViewProxy
+@end
+```
 
-`#``import`  `"ComExampleTestViewProxy.h"`
+*ComExampleTestView.h*
 
-`@implementation` `ComExampleTestViewProxy`
+```objc
+#import "TiUIView.h"
+@interface ComExampleTestView: TiUIView {
+  UIView *square;
+}
+@end
+```
 
-`@end`
+*ComExampleTestView.m*
 
-ComExampleTestView.h
+```objc
+#import "ComExampleTestView.h"
+#import "TiUtils.h"
 
-`#``import`  `"TiUIView.h"`
+@implementation ComExampleTestView
 
-`@interface` `ComExampleTestView: TiUIView {`
+- (void)initializeState
+{
+  // Creates and keeps a reference to the view upon initialization
+  square = [[UIView alloc] initWithFrame:[self frame]];
+  [self addSubview:square];
+  [super initializeState];
+}
 
-`UIView *square;`
+- (void)frameSizeChanged:(CGRect)frame bounds:(CGRect)bounds
+{
+  // Sets the size and position of the view
+  [TiUtils setView:square positionRect:bounds];
+}
 
-`}`
+- (void)setColor_:(id)color
+{
+  // Assigns the view's background color
+  square.backgroundColor = [[TiUtils colorValue:color] _color];
+}
 
-`@end`
-
-ComExampleTestView.m
-
-`#``import`  `"ComExampleTestView.h"`
-
-`#``import`  `"TiUtils.h"`
-
-`@implementation` `ComExampleTestView`
-
-`- (``void``)initializeState`
-
-`{`
-
-`// Creates and keeps a reference to the view upon initialization`
-
-`square = [[UIView alloc] initWithFrame:[self frame]];`
-
-`[self addSubview:square];`
-
-`[``super` `initializeState];`
-
-`}`
-
-`- (``void``)frameSizeChanged:(CGRect)frame bounds:(CGRect)bounds`
-
-`{`
-
-`// Sets the size and position of the view`
-
-`[TiUtils setView:square positionRect:bounds];`
-
-`}`
-
-`- (``void``)setColor_:(id)color`
-
-`{`
-
-`// Assigns the view's background color`
-
-`square.backgroundColor = [[TiUtils colorValue:color] _color];`
-
-`}`
-
-`@end`
+@end
+```
 
 The ComExampleTestViewProxy class extends the TiViewProxy class. This class exposes the view to the JavaScript and acts as an intermediary between the JavaScript and the native view. Normally, you do not need to implement any APIs in this class, but you can hook into the View's lifecycle events.
 
@@ -375,19 +364,16 @@ To call the method to create the view from JavaScript, call the module's createV
 
 Below is an example of calling createView(), and passing dimensions and color properties to the method.
 
-Example
+*Example*
 
-`var` `view = test.createView({`
-
-`color:` `'blue'``,`
-
-`height: 50,`
-
-`width: 50`
-
-`});`
-
-`win.add(view);`
+```javascript
+var view = test.createView({
+  color: 'blue',
+  height: 50,
+  width: 50
+});
+win.add(view);
+```
 
 ### Add a property
 
@@ -397,95 +383,82 @@ Modify the default module class files to store and retrieve a string value.
 
 First, modify the ComExampleTestModule.h file to declare a variable to hold the string:
 
-`@interface` `ComExampleTestModule : TiModule {`
-
-`NSString *foo;`
-
-`}`
-
-`@end`
+```
+@interface ComExampleTestModule : TiModule {
+  NSString *foo;
+}
+@end
+```
 
 Next, modify the example setter and getter to actually set and get the variable you just declared. These methods are already declared in the ComExampleTestModule.m file but not implemented. Titanium requires that all setter methods be declared with the method name starting with set and being passed an id datatype.
 
-`// More methods here ...`
-
-`- (NSString *)exampleProp`
-
-`{`
-
-`NSLog(@``"[INFO] In Module - the stored value for exampleProp: %@"``, foo);`
-
-`return` `foo;`
-
-`}`
-
-`- (``void``)setExampleProp:(id)value`
-
-`{`
-
-`// Macro from TiBase.h to type check the data`
-
-`ENSURE_STRING(value);`
-
-`// Pass the new value to our existing property`
-
-`foo = value;`
-
-`NSLog(@``"[INFO] In Module - the new value for exampleProp: %@"``, value);`
-
-`}`
+```
+// More methods here ...
+- (NSString *)exampleProp
+{
+  NSLog(@"[INFO] In Module - the stored value for exampleProp: %@", foo);
+  return foo;
+}
+- (void)setExampleProp:(id)value
+{
+  // Macro from TiBase.h to type check the data
+  ENSURE_STRING(value);
+  // Pass the new value to our existing property
+  foo = value;
+  NSLog(@"[INFO] In Module - the new value for exampleProp: %@", value);
+}
+```
 
 In the JavaScript code, the foo string can be accessed using the exampleProp property, and getExampleProp() and setExampleProp () methods.
 
 If you do not need a custom getter or setter, you can use the @property notation with the copy attribute to create a property.
 
-`@interface` `ComExampleTestModule : TiModule`
+```
+@interface ComExampleTestModule : TiModule
 
-`@property``(copy) NSString *foo;`
+@property(copy) NSString *foo;
 
-`@end`
+@end
+```
 
 ### Test the module
 
 Open the app/views/index.xml file and replace the code with the following, which loads the module and displays a red square:
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<!-- Invokes the createView method and provides a reference to the module in the controller -->`
-
-`<``Module`  `id``=``"test"`  `module``=``"com.example.test"`  `method``=``"createView"`  `height``=``"50"`  `width``=``"50"`  `color``=``"red"``/>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+  <Window>
+    <!-- Invokes the createView method and provides a reference to the module in the controller -->
+    <Module id="test" module="com.example.test" method="createView" height="50" width="50" color="red"/>
+  </Window>
+</Alloy>
+```
 
 Open the app/controllers/index.js file and replace the code with the following, which invokes API calls to the module:
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`$.index.open();`
+```javascript
+$.index.open();
 
-`Ti.API.info(``'module ->'` `+ $.test);`
-
-`$.test.exampleProp =` `'foobar'``;`
-
-`Ti.API.info(``'exampleProp: '` `+ $.test.getExampleProp());`
+Ti.API.info('module ->' + $.test);
+$.test.exampleProp = 'foobar';
+Ti.API.info('exampleProp: ' + $.test.getExampleProp());
+```
 
 Build and install your module, then run the example app.
 
 When the application starts running, you see should a red square in the middle of the screen and see the log output below, which means the application successfully loaded the module and called its APIs.
 
-Console
+*Console*
 
-`[INFO] In Module - the new value` `for` `exampleProp => foobar`
-
-`[INFO] In Module - the stored value` `for` `exampleProp => foobar`
-
-`[INFO] exampleProp: foobar`
+```
+[INFO] In Module - the new value for exampleProp => foobar
+[INFO] In Module - the stored value for exampleProp => foobar
+[INFO] exampleProp: foobar
+```
 
 ## Next steps
 

@@ -60,17 +60,14 @@ In many cases, a proxy object is a wrapper, or proxy, for a native object such a
 
 When you create an instance of a proxy object and return it to the JavaScript layer, the JavaScript engine creates a corresponding JavaScript object. When you call a method on the JavaScript object that's bound to a native method on the proxy object, the JavaScript engine invokes the native method. Likewise, when you access a property on the JavaScript object that's bound to a property on the proxy object, the JavaScript engine invokes a setter or getter for that property. For example, consider the following code:
 
-`// 1. Create a proxy object`
-
-`var` `win = Ti.UI.createWindow();`
-
-`// 2. Set a property`
-
-`win.title =` `"Hello World"``;`
-
-`// 3. Call a method on the proxy.`
-
-`win.open();`
+```javascript
+// 1. Create a proxy object
+var win = Ti.UI.createWindow();
+// 2. Set a property
+win.title = "Hello World";
+// 3. Call a method on the proxy.
+win.open();
+```
 
 The following diagram represents what happens when this code is executed.
 
@@ -78,11 +75,11 @@ The following diagram represents what happens when this code is executed.
 
 Although the win object appears like an ordinary JavaScript object to a Titanium application, it is important to remember that there are actually two objects – the JavaScript object and the native proxy object. Only properties and methods that are bound to the native proxy object actually invoke calls to the native proxy. Setting an arbitrary property on an object after creation time will add the property to the JavaScript object, but _not_ the proxy object. Consider the following code:
 
-`var` `win = Ti.UI.createWindow();`
-
-`win.myProp =` `"Some other string"``;`
-
-`win.title =` `"Hello World"``;`
+```javascript
+var win = Ti.UI.createWindow();
+win.myProp = "Some other string";
+win.title = "Hello World";
+```
 
 In this example, setting the title property on win causes the title to be set on the native window proxy, but the myProp property is only set on the JavaScript object, and is not passed to the native layer.
 
@@ -152,10 +149,9 @@ You can place additional JavaScript CommonJS modules in the assets folder and im
 
 If your module includes both JavaScript and native code, the native and JavaScript module contents are merged when the module is packaged. For example, if your native module exposes a createView method, and you have a JavaScript module that exposes a animateView method, both of these methods are available on your module:
 
-`var` `myModule = require(``"com.example.module"``);`
-
-`var` `view = myModule.createView({ width: 200, height: 200 });`
-
-`win.add(view);`
-
-`myModule.animateView(view);`
+```javascript
+var myModule = require("com.example.module");
+var view = myModule.createView({ width: 200, height: 200 });
+win.add(view);
+myModule.animateView(view);
+```

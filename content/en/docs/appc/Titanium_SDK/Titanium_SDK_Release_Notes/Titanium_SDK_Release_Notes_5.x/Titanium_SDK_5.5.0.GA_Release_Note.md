@@ -54,41 +54,26 @@ Although the SDK and CLI take care of most of the iOS 10 changes, there are some
 
 For example:
 
-`<``ios``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<``key``>NSContactsUsageDescription</``key``>`
-
-`<``string``>Can we use to your contacts?</``string``>`
-
-`<``key``>NSCameraUsageDescription</``key``>`
-
-`<``string``>Can we use your camera?</``string``>`
-
-`<``key``>NSCalendarsUsageDescription</``key``>`
-
-`<``string``>Can we use your calendar?</``string``>`
-
-`<``key``>NSPhotoLibraryUsageDescription</``key``>`
-
-`<``string``>Can we save to your library?</``string``>`
-
-`<``key``>NSMicrophoneUsageDescription</``key``>`
-
-`<``string``>Can we use your microphone?</``string``>`
-
-`<``key``>NSAppleMusicUsageDescription</``key``>`
-
-`<``string``>Can we use your music library?</``string``>`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`</``ios``>`
+```xml
+<ios>
+    <plist>
+        <dict>
+            <key>NSContactsUsageDescription</key>
+            <string>Can we use to your contacts?</string>
+            <key>NSCameraUsageDescription</key>
+            <string>Can we use your camera?</string>
+            <key>NSCalendarsUsageDescription</key>
+            <string>Can we use your calendar?</string>
+            <key>NSPhotoLibraryUsageDescription</key>
+            <string>Can we save to your library?</string>
+            <key>NSMicrophoneUsageDescription</key>
+            <string>Can we use your microphone?</string>
+            <key>NSAppleMusicUsageDescription</key>
+            <string>Can we use your music library?</string>
+        </dict>
+    </plist>
+</ios>
+```
 
 If you test your application on iOS 10, the SDK will log an error that you haven't included these permissions so that you know when the API requires a certain permission. On devices prior to iOS 10, the privacy-keys are not required but are recommended.
 
@@ -106,29 +91,21 @@ This release also includes the following iOS changes:
 
 To log in using Facebook on iOS Simulator, you now must include an entitlements file that enables Keychain Sharing Capabilities. While the entitlement file is not necessary for device builds (it is self-generated), it won't affect anything in your build. To do this, create a /platform/ios/<name>.entitlements file (replace <name> with the name element in tiapp.xml) with this content:
 
-Facebook login with iOS 10 and Xcode 8
+*Facebook login with iOS 10 and Xcode 8*
 
-`<?``xml`  `version``=``"1.0"`  `encoding``=``"UTF-8"``?>`
-
-`<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "``http://www.apple.com/DTDs/PropertyList-1.0.dtd``">`
-
-`<``plist`  `version``=``"1.0"``>`
-
-`<``dict``>`
-
-`<``key``>keychain-access-groups</``key``>`
-
-`<``array``>`
-
-`<!-- APP_ID same as the id value in the tiapp.xml file -->`
-
-`<``string``>$(AppIdentifierPrefix)APP_ID</``string``>`
-
-`</``array``>`
-
-`</``dict``>`
-
-`</``plist``>`
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>keychain-access-groups</key>
+    <array>
+        <!-- APP_ID same as the id value in the tiapp.xml file -->
+        <string>$(AppIdentifierPrefix)APP_ID</string>
+    </array>
+</dict>
+</plist>
+```
 
 ### Using iOS Hyperloop with more than one version of Xcode installed
 
@@ -148,13 +125,12 @@ If you use Appc CLI for development and have more than one version of Xcode inst
 
 * Team id is now required in tiapp.xml when building an app with a watch extension and Xcode 8. Add the <team-id> to the <ios> section of your tiapp.xml:
 
-    `<ios>`
-
-    `<team-id>YOUR-TEAM-ID</team-id>`
-
-    `<!-- more iOS specific keys -->`
-
-    `</ios>`
+    ```xml
+    <ios>
+        <team-id>YOUR-TEAM-ID</team-id>
+        <!-- more iOS specific keys -->
+    </ios>
+    ```
 
 * [TIMOB-23509](https://jira.appcelerator.org/browse/TIMOB-23509) - iOS10: Expose new visual effects on Ti.UI.iOS.BlurView
 
@@ -162,75 +138,50 @@ If you use Appc CLI for development and have more than one version of Xcode inst
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: "#fff"
+        });
 
-        `backgroundColor:` `"#fff"`
+        // Reference image (or view)
+        var img = Ti.UI.createImageView({
+            image: "/default_app_logo.png",
+            top: 100,
+            width: 300,
+            height: 300
+        });
 
-        `});`
+        // Blur view
+        var blur = Ti.UI.iOS.createBlurView({
+            width: Ti.UI.FILL,
+            height: Ti.UI.FILL
+        });
 
-        `// Reference image (or view)`
+        img.add(blur);
 
-        `var` `img = Ti.UI.createImageView({`
+        // Effect controls
+        var tabs = Ti.UI.iOS.createTabbedBar({
+            labels: ["Extra light", "Light", "Dark", "Regular", "Prominent"],
+            bottom: 100
+        });
 
-        `image:` `"/default_app_logo.png"``,`
+        // Available blur effects
+        var effects = [
+          Ti.UI.iOS.BLUR_EFFECT_STYLE_EXTRA_LIGHT,
+            Ti.UI.iOS.BLUR_EFFECT_STYLE_LIGHT,
+            Ti.UI.iOS.BLUR_EFFECT_STYLE_DARK,
+            Ti.UI.iOS.BLUR_EFFECT_STYLE_REGULAR,
+            Ti.UI.iOS.BLUR_EFFECT_STYLE_PROMINENT
+        ];
 
-        `top: 100,`
+        tabs.addEventListener("click", function(e) {
+            blur.setEffect(effects[e.index]);
+        });
 
-        `width: 300,`
-
-        `height: 300`
-
-        `});`
-
-        `// Blur view`
-
-        `var` `blur = Ti.UI.iOS.createBlurView({`
-
-        `width: Ti.UI.FILL,`
-
-        `height: Ti.UI.FILL`
-
-        `});`
-
-        `img.add(blur);`
-
-        `// Effect controls`
-
-        `var` `tabs = Ti.UI.iOS.createTabbedBar({`
-
-        `labels: [``"Extra light"``,` `"Light"``,` `"Dark"``,` `"Regular"``,` `"Prominent"``],`
-
-        `bottom: 100`
-
-        `});`
-
-        `// Available blur effects`
-
-        `var` `effects = [`
-
-        `Ti.UI.iOS.BLUR_EFFECT_STYLE_EXTRA_LIGHT,`
-
-        `Ti.UI.iOS.BLUR_EFFECT_STYLE_LIGHT,`
-
-        `Ti.UI.iOS.BLUR_EFFECT_STYLE_DARK,`
-
-        `Ti.UI.iOS.BLUR_EFFECT_STYLE_REGULAR,`
-
-        `Ti.UI.iOS.BLUR_EFFECT_STYLE_PROMINENT`
-
-        `];`
-
-        `tabs.addEventListener(``"click"``,` `function``(e) {`
-
-        `blur.setEffect(effects[e.index]);`
-
-        `});`
-
-        `win.add(tabs);`
-
-        `win.add(img);`
-
-        `win.open();`
+        win.add(tabs);
+        win.add(img);
+        win.open();
+        ```
 
 * [TIMOB-23513](https://jira.appcelerator.org/browse/TIMOB-23513) - iOS10: Support for new WatchConnectivity features
 
@@ -238,11 +189,12 @@ If you use Appc CLI for development and have more than one version of Xcode inst
 
     * Demo:
 
-        `Ti.WatchSession.activateSession();`
+        ```
+        Ti.WatchSession.activateSession();
 
-        `Ti.API.warn(``"Has content pending: "` `+ Ti.WatchSession.hasContentPending);`
-
-        `Ti.API.warn(``"Number of remaining complication userInfo transfers: "` `+ Ti.WatchSession.remainingComplicationUserInfoTransfers);`
+        Ti.API.warn("Has content pending: " + Ti.WatchSession.hasContentPending);
+        Ti.API.warn("Number of remaining complication userInfo transfers: " + Ti.WatchSession.remainingComplicationUserInfoTransfers);
+        ```
 
 * [TIMOB-23519](https://jira.appcelerator.org/browse/TIMOB-23519) - iOS10: Expose new Ti.UI.Pasteboard APIs
 
@@ -250,39 +202,26 @@ If you use Appc CLI for development and have more than one version of Xcode inst
 
     * Demo:
 
-        `Ti.API.warn(``"Has URLs:"` `+ Ti.UI.Clipboard.hasURLs());`
+        ```javascript
+        Ti.API.warn("Has URLs:" + Ti.UI.Clipboard.hasURLs());
+        Ti.API.warn("Has images" + Ti.UI.Clipboard.hasImages());
+        Ti.API.warn("Has colors:" + Ti.UI.Clipboard.hasColors());
+        var localOnly = Ti.UI.CLIPBOARD_OPTION_LOCAL_ONLY;
+        var expirationDate = Ti.UI.CLIPBOARD_OPTION_EXPIRATION_DATE;
 
-        `Ti.API.warn(``"Has images"` `+ Ti.UI.Clipboard.hasImages());`
-
-        `Ti.API.warn(``"Has colors:"` `+ Ti.UI.Clipboard.hasColors());`
-
-        `var` `localOnly = Ti.UI.CLIPBOARD_OPTION_LOCAL_ONLY;`
-
-        `var` `expirationDate = Ti.UI.CLIPBOARD_OPTION_EXPIRATION_DATE;`
-
-        `// Set mime-type based items with additional options`
-
-        `Ti.UI.Clipboard.setItems({`
-
-        `items: [{`
-
-        `"text/plain"``:` `"John"``,`
-
-        `},{`
-
-        `"text/plain"``:` `"Doe"`
-
-        `}],`
-
-        `options: {`
-
-        `localOnly:` `true``,`
-
-        `expirationDate:` `new` `Date(2020, 04, 20)`
-
-        `}`
-
-        `});`
+        // Set mime-type based items with additional options
+        Ti.UI.Clipboard.setItems({
+            items: [{
+                "text/plain": "John",
+            },{
+                "text/plain": "Doe"
+            }],
+            options: {
+                localOnly: true,
+                expirationDate: new Date(2020, 04, 20)
+            }
+        });
+        ```
 
 * [TIMOB-23524](https://jira.appcelerator.org/browse/TIMOB-23524) - iOS10: Support RefreshControl in Ti.UI.ScrollView
 
@@ -290,45 +229,33 @@ If you use Appc CLI for development and have more than one version of Xcode inst
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: "#fff"
+        });
 
-        `backgroundColor:` `"#fff"`
+        var refreshControl = Ti.UI.createRefreshControl({
+            tintColor: "red"
+        });
 
-        `});`
+        var scroll = Ti.UI.createScrollView({
+            backgroundColor: "yellow",
+            refreshControl: refreshControl
+        });
 
-        `var` `refreshControl = Ti.UI.createRefreshControl({`
+        refreshControl.addEventListener("refreshstart", function() {
+            setTimeout(function() {
+                refreshControl.endRefreshing();
+            },1000);
+        })
 
-        `tintColor:` `"red"`
+        scroll.add(Ti.UI.createLabel({
+            text: "Scroll down!"
+        }));
 
-        `});`
-
-        `var` `scroll = Ti.UI.createScrollView({`
-
-        `backgroundColor:` `"yellow"``,`
-
-        `refreshControl: refreshControl`
-
-        `});`
-
-        `refreshControl.addEventListener(``"refreshstart"``,` `function``() {`
-
-        `setTimeout(``function``() {`
-
-        `refreshControl.endRefreshing();`
-
-        `},1000);`
-
-        `})`
-
-        `scroll.add(Ti.UI.createLabel({`
-
-        `text:` `"Scroll down!"`
-
-        `}));`
-
-        `win.add(scroll);`
-
-        `win.open();`
+        win.add(scroll);
+        win.open();
+        ```
 
 * [TIMOB-23528](https://jira.appcelerator.org/browse/TIMOB-23528) - iOS10: Support new Ti.App.iOS.SearchableItemAttributeSet properties
 
@@ -336,79 +263,51 @@ If you use Appc CLI for development and have more than one version of Xcode inst
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+          backgroundColor : "#fff"
+        });
 
-        `backgroundColor :` `"#fff"`
+        var btn = Ti.UI.createButton({
+            title : "Add searchable index"
+        });
 
-        `});`
+        btn.addEventListener("click", function() {
+            addToSearchableIndex();
+        });
 
-        `var` `btn = Ti.UI.createButton({`
+        win.add(btn);
+        var nav = Ti.UI.iOS.createNavigationWindow({window: win});
+        nav.open();
 
-        `title :` `"Add searchable index"`
+        function addToSearchableIndex() {
+            var itemAttr = Ti.App.iOS.createSearchableItemAttributeSet({
+                itemContentType: Ti.App.iOS.UTTYPE_AUDIO,
+                title: 'Who rocks iOS 10?',
+                // iOS 10 only
+                fullyFormattedAddress: "1732 N 1st St, San Jose, CA 95112",
+                postalCode: "95112",
+                thoroughfare: "N 1st St",
+                subThoroughfare: "1732",
+                keywords: 'appcelerator', 'titanium_mobile', 'ios10', 'corespotlight'
+            });
 
-        `});`
+            var item = Ti.App.iOS.createSearchableItem({
+                identifier: 'core-spotlight',
+                domainIdentifier: 'ios10',
+                attributeSet: itemAttr
+            });
 
-        `btn.addEventListener(``"click"``,` `function``() {`
-
-        `addToSearchableIndex();`
-
-        `});`
-
-        `win.add(btn);`
-
-        `var` `nav = Ti.UI.iOS.createNavigationWindow({window: win});`
-
-        `nav.open();`
-
-        `function` `addToSearchableIndex() {`
-
-        `var` `itemAttr = Ti.App.iOS.createSearchableItemAttributeSet({`
-
-        `itemContentType: Ti.App.iOS.UTTYPE_AUDIO,`
-
-        `title:` `'Who rocks iOS 10?'``,`
-
-        `// iOS 10 only`
-
-        `fullyFormattedAddress:` `"1732 N 1st St, San Jose, CA 95112"``,`
-
-        `postalCode:` `"95112"``,`
-
-        `thoroughfare:` `"N 1st St"``,`
-
-        `subThoroughfare:` `"1732"``,`
-
-        `keywords:` `'appcelerator'``,` `'titanium_mobile'``,` `'ios10'``,` `'corespotlight'`
-
-        `});`
-
-        `var` `item = Ti.App.iOS.createSearchableItem({`
-
-        `identifier:` `'core-spotlight'``,`
-
-        `domainIdentifier:` `'ios10'``,`
-
-        `attributeSet: itemAttr`
-
-        `});`
-
-        `var` `indexer = Ti.App.iOS.createSearchableIndex();`
-
-        `indexer.addToDefaultSearchableIndex(item,` `function``(e) {`
-
-        `if` `(e.success) {`
-
-        `alert(``'Press the home button and now search for your keywords'``);`
-
-        `}` `else` `{`
-
-        `alert(``'Error: '` `+ JSON.stringify(e.error));`
-
-        `}`
-
-        `});`
-
-        `}`
+            var indexer = Ti.App.iOS.createSearchableIndex();
+            indexer.addToDefaultSearchableIndex(item, function(e) {
+                if (e.success) {
+                    alert('Press the home button and now search for your keywords');
+                } else {
+                    alert('Error: ' + JSON.stringify(e.error));
+                }
+            });
+        }
+        ```
 
 * [TIMOB-23828](https://jira.appcelerator.org/browse/TIMOB-23828) - iOS10: Support the new CoreSpotlight CSSearchQuery API
 
@@ -416,123 +315,80 @@ If you use Appc CLI for development and have more than one version of Xcode inst
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: "#fff"
+        });
+        var btn = Ti.UI.createButton({
+            title: "Start search-query"
+        });
 
-        `backgroundColor:` `"#fff"`
+        var searchItems = [];
+        var itemAttr = Ti.App.iOS.createSearchableItemAttributeSet({
+            itemContentType: Ti.App.iOS.UTTYPE_IMAGE,
+            title: "Titanium Core Spotlight Tutorial"
+        });
 
-        `});`
+        itemAttr.contentDescription = "Tech Example \nOn: " + String.formatDate(new Date(), "short");
+        itemAttr.keywords = ["Mobile", "Appcelerator", "Titanium"];
+        itemAttr.displayName = "Hello world";
 
-        `var` `btn = Ti.UI.createButton({`
+        var item = Ti.App.iOS.createSearchableItem({
+            uniqueIdentifier: "my-id",
+            domainIdentifier: "com.mydomain",
+            attributeSet: itemAttr
+        });
+        searchItems.push(item);
 
-        `title:` `"Start search-query"`
+        var indexer = Ti.App.iOS.createSearchableIndex();
 
-        `});`
+        indexer.addToDefaultSearchableIndex(searchItems, function(e) {
+            if (e.success) {
+                Ti.API.info("Press the home button and now search for your keywords");
+            } else {
+                alert("Errored: " + JSON.stringify(e.error));
+            }
+        });
 
-        `var` `searchItems = [];`
+        btn.addEventListener("click", function() {
+            // An array of found Ti.App.iOS.SearchableItem's
+            var allItems = [];
 
-        `var` `itemAttr = Ti.App.iOS.createSearchableItemAttributeSet({`
+            // The search-query
+            var searchQuery = Ti.App.iOS.createSearchQuery({
+                queryString: 'title == "Titanium*"',
+                attributes: ["title", "displayName", "keywords", "contentType"]
+            });
 
-        `itemContentType: Ti.App.iOS.UTTYPE_IMAGE,`
+            // The event to be called when a new batch of items is found
+            searchQuery.addEventListener("founditems", function(e) {
+                for (var i = 0; i < e.items.length; i++) {
+                    allItems.push(e.items[i]);
+                }
+            });
 
-        `title:` `"Titanium Core Spotlight Tutorial"`
+            // The event to be called when the search-query completes
+            searchQuery.addEventListener("completed", function(e) {
+                if (!e.success) {
+                    alert(e.error);
+                }
 
-        `});`
+                for (var i = 0; i < allItems.length; i++) {
+                    var attributeSet = allItems[i].attributeSet
+                    var foundTitle = attributeSet.title
+                    var foundDisplayName = attributeSet.displayName
 
-        `itemAttr.contentDescription =` `"Tech Example \nOn: "` `+ String.formatDate(``new` `Date(),` `"short"``);`
+                    Ti.API.info("title: " + foundTitle + ", displayName: " + foundDisplayName);
+                }
+            });
 
-        `itemAttr.keywords = [``"Mobile"``,` `"Appcelerator"``,` `"Titanium"``];`
+            // Start the search-query (or use searchQuery.cancel()) to abort it
+            searchQuery.start();
+        });
 
-        `itemAttr.displayName =` `"Hello world"``;`
-
-        `var` `item = Ti.App.iOS.createSearchableItem({`
-
-        `uniqueIdentifier:` `"my-id"``,`
-
-        `domainIdentifier:` `"com.mydomain"``,`
-
-        `attributeSet: itemAttr`
-
-        `});`
-
-        `searchItems.push(item);`
-
-        `var` `indexer = Ti.App.iOS.createSearchableIndex();`
-
-        `indexer.addToDefaultSearchableIndex(searchItems,` `function``(e) {`
-
-        `if` `(e.success) {`
-
-        `Ti.API.info(``"Press the home button and now search for your keywords"``);`
-
-        `}` `else` `{`
-
-        `alert(``"Errored: "` `+ JSON.stringify(e.error));`
-
-        `}`
-
-        `});`
-
-        `btn.addEventListener(``"click"``,` `function``() {`
-
-        `// An array of found Ti.App.iOS.SearchableItem's`
-
-        `var` `allItems = [];`
-
-        `// The search-query`
-
-        `var` `searchQuery = Ti.App.iOS.createSearchQuery({`
-
-        `queryString:` `'title == "Titanium*"'``,`
-
-        `attributes: [``"title"``,` `"displayName"``,` `"keywords"``,` `"contentType"``]`
-
-        `});`
-
-        `// The event to be called when a new batch of items is found`
-
-        `searchQuery.addEventListener(``"founditems"``,` `function``(e) {`
-
-        `for` `(``var` `i = 0; i < e.items.length; i++) {`
-
-        `allItems.push(e.items[i]);`
-
-        `}`
-
-        `});`
-
-        `// The event to be called when the search-query completes`
-
-        `searchQuery.addEventListener(``"completed"``,` `function``(e) {`
-
-        `if` `(!e.success) {`
-
-        `alert(e.error);`
-
-        `}`
-
-        `for` `(``var` `i = 0; i < allItems.length; i++) {`
-
-        `var` `attributeSet = allItems[i].attributeSet`
-
-        `var` `foundTitle = attributeSet.title`
-
-        `var` `foundDisplayName = attributeSet.displayName`
-
-        `Ti.API.info(``"title: "` `+ foundTitle +` `", displayName: "` `+ foundDisplayName);`
-
-        `}`
-
-        `});`
-
-        `// Start the search-query (or use searchQuery.cancel()) to abort it`
-
-        `searchQuery.start();`
-
-        `});`
-
-        `win.add(btn);`
-
-        `win.open();`
+        win.add(btn);
+        win.open();
+        ```
 
 ## Fixed Issues
 
@@ -598,7 +454,9 @@ If you use Appc CLI for development and have more than one version of Xcode inst
 
     * Improved the warning when calling iOS10 visual effects for Ti.UI.iOS.BlurView on non-iOS10 devices. The error message should look something like this:
 
-        `ERROR : The provided value` `for` `the Ti.UI.iOS.BlurView.effect property is not available in` `this` `iOS version.`
+        ```
+        ERROR : The provided value for the Ti.UI.iOS.BlurView.effect property is not available in this iOS version.
+        ```
 
 * [TIMOB-23797](https://jira.appcelerator.org/browse/TIMOB-23797) - iOS: Improve Pasteboard support
 
@@ -610,83 +468,56 @@ If you use Appc CLI for development and have more than one version of Xcode inst
 
     * Sample code:
 
-        `var` `safari = require(``'ti.safaridialog'``);`
+        ```javascript
+        var safari = require('ti.safaridialog');
 
-        `var` `win = Ti.UI.createWindow({`
+        var win = Ti.UI.createWindow({
+            backgroundColor: 'white'
+        })
 
-        `backgroundColor:` `'white'`
+        var btn = Ti.UI.createButton({
+            title: "Open safari dialog"
+        });
 
-        `})`
+        btn.addEventListener("click", function() {
+            safari.open({
+                url:"http://hans-knoechel.de/TIMOB-23884.php",
+                title:"Hello World"
+            });
+        });
 
-        `var` `btn = Ti.UI.createButton({`
+        Ti.App.iOS.addEventListener("handleurl", function(e) {
+            // If the handled url is provided by the safari-dialog, close it (use-case for OAuth)
+            if (e.launchOptions.source == "com.apple.SafariViewService") {
+                safari.close();
+            }
+        });
 
-        `title:` `"Open safari dialog"`
-
-        `});`
-
-        `btn.addEventListener(``"click"``,` `function``() {`
-
-        `safari.open({`
-
-        `url:``"http://hans-knoechel.de/TIMOB-23884.php"``,`
-
-        `title:``"Hello World"`
-
-        `});`
-
-        `});`
-
-        `Ti.App.iOS.addEventListener(``"handleurl"``,` `function``(e) {`
-
-        `// If the handled url is provided by the safari-dialog, close it (use-case for OAuth)`
-
-        `if` `(e.launchOptions.source ==` `"com.apple.SafariViewService"``) {`
-
-        `safari.close();`
-
-        `}`
-
-        `});`
-
-        `win.add(btn);`
-
-        `win.open();`
+        win.add(btn);
+        win.open();
+        ```
 
     * You will need to update the tiapp.xml file to be able to handle the url-scheme safaritest://:
 
-        `<``ios``>`
-
-        `<``plist``>`
-
-        `<``dict``>`
-
-        `<``key``>CFBundleURLTypes</``key``>`
-
-        `<``array``>`
-
-        `<``dict``>`
-
-        `<``key``>CFBundleURLName</``key``>`
-
-        `<``string``>com.appc.safaridialogtest</``string``>`
-
-        `<``key``>CFBundleURLSchemes</``key``>`
-
-        `<``array``>`
-
-        `<``string``>safaritest</``string``>`
-
-        `</``array``>`
-
-        `</``dict``>`
-
-        `</``array``>`
-
-        `</``dict``>`
-
-        `</``plist``>`
-
-        `</``ios``>`
+        ```xml
+        <ios>
+            <plist>
+              <dict>
+                <key>CFBundleURLTypes</key>
+                <array>
+                  <dict>
+                    <key>CFBundleURLName</key>
+                    <string>com.appc.safaridialogtest</string>
+                    <key>CFBundleURLSchemes</key>
+                    <array>
+                      <string>safaritest</string>
+                    </array>
+                  </dict>
+                </array>
+              </dict>
+            </plist>
+        </ios>
+        ```
 
 ## Known Issues
 

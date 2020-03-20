@@ -50,33 +50,22 @@ You can use the Ti.Media.Sound object to add beeps and other user-feedback sound
 
 The Sound object includes a few useful methods, including play(), pause(), and stop(). The url property accepts a local file path or a URL to a remote sound file. (The entire sound file must be downloaded before it can be played; it won't be streamed). You can control the volume with either the setVolume() method or by setting the volume property. See the [API docs](#!/api/Titanium.Media.Sound) for full information.
 
-`// create the sound/media object`
-
-`var` `sound = Titanium.Media.createSound({`
-
-`url:` `'your_sound_file.mp3'``,`
-
-`preload:` `true`
-
-`});`
-
-`var` `button = Ti.UI.createButton({`
-
-`title:` `'Click to play sound'``,`
-
-`width:` `'200'``,`
-
-`height:` `'40'``,`
-
-`top: 20`
-
-`});`
-
-`button.addEventListener(``'click'``,` `function``() {`
-
-`sound.play();`
-
-`});`
+```javascript
+// create the sound/media object
+var sound = Titanium.Media.createSound({
+  url: 'your_sound_file.mp3',
+  preload: true
+});
+var button = Ti.UI.createButton({
+  title: 'Click to play sound',
+  width: '200',
+  height: '40',
+  top: 20
+});
+button.addEventListener('click', function() {
+  sound.play();
+});
+```
 
 In this sample, we attached an event listener to a button so that the sound plays when the button is clicked. You could add an event listener to a view or window (say, to watch for the open event) to play the sound while that component is visible. Typically, you'd attach a listener to another component, such as a different view or window, to stop the sound when the window loses focus. This sort of "background" sound won't continue playing when the app closes unless you set allowBackground=true, though any buffered portion might continue to play after the app closes.
 
@@ -84,35 +73,27 @@ In this sample, we attached an event listener to a button so that the sound play
 
 You can stream audio from a web URL with the Ti.Media.AudioPlayer object. The AudioPlayer supports pseudo-streaming (of MP3 or other files) as well as [HTML Live Streaming](http://developer.apple.com/library/ios/#documentation/networkinginternet/conceptual/streamingmediaguide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008332-CH1-DontLinkElementID_39). You could also implement HTML live streaming with a WebView, but the native player gives you easier programmatic control and handling of events within your app's native (non-HTML) code.
 
-`var` `streamer = Ti.Media.createAudioPlayer({`
-
-`url:` `'http://example.com/somefile.mp3'`
-
-`});`
-
-`streamer.start();`
+```javascript
+var streamer = Ti.Media.createAudioPlayer({
+  url: 'http://example.com/somefile.mp3'
+});
+streamer.start();
+```
 
 When using streaming, you should make sure to account for interruptions, such as receiving a phone call while the audio plays. You can pause and resume the audio automatically by watching a couple of app-level events.
 
-`Titanium.App.addEventListener(``'pause'``,` `function``(e) {`
-
-`// app is paused during phone call, so pause the stream`
-
-`streamer.setPaused(``true``);`
-
-`// you could also use streamer.pause()`
-
-`});`
-
-`Titanium.App.addEventListener(``'resume'``,` `function``(e) {`
-
-`// app resumes when call ends, so un-pause the stream`
-
-`streamer.setPaused(``false``);`
-
-`// or use streamer.start()`
-
-`});`
+```
+Titanium.App.addEventListener('pause', function(e) {
+  // app is paused during phone call, so pause the stream
+    streamer.setPaused(true);
+  // you could also use streamer.pause()
+});
+Titanium.App.addEventListener('resume', function(e) {
+  // app resumes when call ends, so un-pause the stream
+    streamer.setPaused(false);
+  // or use streamer.start()
+});
+```
 
 ### Recording audio
 
@@ -181,93 +162,61 @@ In order to enable background audio for Windows Phone, you need to provide appro
 
 #### Grant access to background audio
 
-`<``ti``:app>`
+```xml
+<ti:app>
+  ...
+  <windows>
+    ...
+    <manifest>
+      <Extensions>
 
-`...`
-
-`<``windows``>`
-
-`...`
-
-`<``manifest``>`
-
-`<``Extensions``>`
-
-`<``Extension`  `Category``=``"windows.backgroundTasks"`
-
-`Executable``=``"$targetnametoken$.exe"`
-
-`EntryPoint``=``"TitaniumWindows_Media.AudioBackground"``>`
-
-`<``BackgroundTasks``>`
-
-`<``Task`  `Type``=``"audio"` `/>`
-
-`</``BackgroundTasks``>`
-
-`</``Extension``>`
-
-`</``Extensions``>`
-
-`</``manifest``>`
-
-`...`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+ <Extension Category="windows.backgroundTasks"
+Executable="$targetnametoken$.exe"
+EntryPoint="TitaniumWindows_Media.AudioBackground">
+          <BackgroundTasks>
+            <Task Type="audio" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </manifest>
+    ...
+  </windows>
+  ...
+</ti:app>
+```
 
 #### Grant access to video stream and audio stream
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`...`
-
-`<``Capabilities``>`
-
-`<``DeviceCapability`  `Name``=``"microphone"` `/>`
-
-`<``DeviceCapability`  `Name``=``"webcam"` `/>`
-
-`</``Capabilities``>`
-
-`...`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  ...
+  <windows>
+    ...
+    <Capabilities>
+        <DeviceCapability Name="microphone" />
+        <DeviceCapability Name="webcam" />
+    </Capabilities>
+    ...
+  </windows>
+  ...
+</ti:app>
+```
 
 #### Grant access to music library
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`...`
-
-`<``Capabilities``>`
-
-`<``Capability`  `Name``=``"musicLibrary"` `/>`
-
-`</``Capabilities``>`
-
-`...`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  ...
+  <windows>
+    ...
+    <Capabilities>
+        <Capability Name="musicLibrary" />
+    </Capabilities>
+    ...
+  </windows>
+  ...
+</ti:app>
+```
 
 For more information about audio configuration in tiapp.xml, see [Windows-specific section](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#tiapp.xmlandtimodule.xmlReference-Windows-specific) in [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/).
 

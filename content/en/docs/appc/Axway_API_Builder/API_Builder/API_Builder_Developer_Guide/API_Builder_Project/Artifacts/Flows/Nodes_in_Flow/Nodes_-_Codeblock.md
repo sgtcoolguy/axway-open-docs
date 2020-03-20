@@ -1,6 +1,6 @@
 {"title":"Nodes - Codeblock","weight":"20"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -32,73 +32,42 @@ Codeblock metadata should be included in the /codeblocks directory of an API Bui
 
 ### Configuration and metadata example
 
-`{`
-
-`"schemaVersion"``:` `"1"``,`
-
-`"name"``:` `"Greet"``,`
-
-`"description"``:` `"Some codeblock to run with Greet flow"``,`
-
-`"path"``:` `"Greet.js"``,`
-
-`"parameter"``: {`
-
-`"type"``:` `"object"``,`
-
-`"properties"``: {`
-
-`"username"``: {`
-
-`"type"``:` `"string"`
-
-`}`
-
-`},`
-
-`"required"``: [`
-
-`"username"`
-
-`],`
-
-`"additionalProperties"``:` `false`
-
-`},`
-
-`"outputs"``: {`
-
-`"next"``: {`
-
-`"description"``:` `"The codeblock completed."``,`
-
-`"context"``:` `"$.greeting"``,`
-
-`"schema"``: {`
-
-`"$ref"``:` `"schema:///schema/foo/greeting"`
-
-`}`
-
-`},`
-
-`"error"``: {`
-
-`"description"``:` `"The codeblock failed to complete."``,`
-
-`"context"``:` `"$.error"``,`
-
-`"schema"``: {`
-
-`"$ref"``:` `"schema:///schema/foo/error"`
-
-`}`
-
-`}`
-
-`}`
-
-`}`
+```
+{
+    "schemaVersion": "1",
+    "name": "Greet",
+    "description": "Some codeblock to run with Greet flow",
+    "path": "Greet.js",
+    "parameter": {
+        "type": "object",
+        "properties": {
+            "username": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "username"
+        ],
+        "additionalProperties": false
+    },
+    "outputs": {
+        "next": {
+            "description": "The codeblock completed.",
+            "context": "$.greeting",
+            "schema": {
+                "$ref": "schema:///schema/foo/greeting"
+            }
+        },
+        "error": {
+            "description": "The codeblock failed to complete.",
+            "context": "$.error",
+            "schema": {
+                "$ref": "schema:///schema/foo/error"
+            }
+        }
+    }
+}
+```
 
 ## Functionality
 
@@ -120,24 +89,16 @@ Most of the time errors should be returned in the callback as a standard respons
 
 ### Functionality example
 
-`function` `invoke(arrow, params, cb) {`
-
-`const salutation = arrow.config.helloworld.salutation;`
-
-`if` `(!params.username) {`
-
-`return` `cb(``null``, {`
-
-`error:` `'Invalid name'`
-
-`});`
-
-`}`
-
-`const body = salutation +` `' '` `+ params.username;`
-
-`cb(``null``, body);`
-
-`}`
-
-`exports = module.exports = invoke`
+```javascript
+function invoke(arrow, params, cb) {
+    const salutation = arrow.config.helloworld.salutation;
+    if (!params.username) {
+        return cb(null, {
+            error: 'Invalid name'
+        });
+    }
+    const body = salutation + ' ' + params.username;
+    cb(null, body);
+}
+exports = module.exports = invoke
+```

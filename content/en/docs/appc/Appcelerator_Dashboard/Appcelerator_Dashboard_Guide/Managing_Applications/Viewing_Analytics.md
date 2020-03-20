@@ -294,35 +294,28 @@ Once you select the export option, your data download begins.
 
 In the example below, session data over a custom time interval for all the organization's projects were exported. Since the granularity level for the data/time range file is set to daily, each data point in the table is also daily.
 
-appceleratordemo\_sessions\_app\_chart\_day\_20140501\_20140625\_20140625221049.csv
+*appceleratordemo\_sessions\_app\_chart\_day\_20140501\_20140625\_20140625221049.csv*
 
-`"Date/Time","iOS","Android","Mobileweb"`
+```
+"Date/Time","iOS","Android","Mobileweb"
+"2014-05-01 23:59:59+00:00","1510","3121","1126"
+"2014-05-02 23:59:59+00:00","4087","1332","636"
+"2014-05-03 23:59:59+00:00","3235","4849","3673"
+...
+```
 
-`"2014-05-01 23:59:59+00:00","1510","3121","1126"`
+*appceleratordemo\_sessions\_app\_table\_day\_20140501\_20140625\_20140625221052*
 
-`"2014-05-02 23:59:59+00:00","4087","1332","636"`
-
-`"2014-05-03 23:59:59+00:00","3235","4849","3673"`
-
-`...`
-
-appceleratordemo\_sessions\_app\_table\_day\_20140501\_20140625\_20140625221052
-
-`"Application","Sessions"`
-
-`"1726483d-aae6-43e1-a2ba-8104e679247e","4117"`
-
-`"30c6f050-3289-4be5-86cc-fdfb44ee5f42","3344"`
-
-`"18a950f6-2888-420b-b9b1-927e61f1f46c","4075"`
-
-`"89b45622-b9bd-466d-8c81-454bf013a9ec","4076"`
-
-`"4ac81c71-7c4a-4903-96d2-ecd59dfd286c","2283"`
-
-`"f0249b68-4e4b-4d4c-bded-52a1a21feae6","4844"`
-
-`"710c3f3b-ae73-49e8-8a01-78076d67141f","2897"`
+```
+"Application","Sessions"
+"1726483d-aae6-43e1-a2ba-8104e679247e","4117"
+"30c6f050-3289-4be5-86cc-fdfb44ee5f42","3344"
+"18a950f6-2888-420b-b9b1-927e61f1f46c","4075"
+"89b45622-b9bd-466d-8c81-454bf013a9ec","4076"
+"4ac81c71-7c4a-4903-96d2-ecd59dfd286c","2283"
+"f0249b68-4e4b-4d4c-bded-52a1a21feae6","4844"
+"710c3f3b-ae73-49e8-8a01-78076d67141f","2897"
+```
 
 ## Unspecified metric names and values
 

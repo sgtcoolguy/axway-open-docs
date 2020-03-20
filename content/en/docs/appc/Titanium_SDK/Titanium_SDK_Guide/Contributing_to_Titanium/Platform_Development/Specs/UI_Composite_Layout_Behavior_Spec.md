@@ -322,49 +322,39 @@ For clarity, scrollview contentWidth and contentHeight behave as if they were se
 
 Each of these examples contrast the way something is done today ("old") with the way it will be done with the new dynamic size / rect properties, and batch updating semantics ("new").
 
-Updating Layout Parameters
+*Updating Layout Parameters*
 
-`// [old] changes the top and left of the view directly, re-layout twice`
+```
+// [old] changes the top and left of the view directly, re-layout twice
+view.top = 50;
+view.left = 50;
 
-`view.top =` `50``;`
+// [new] change top and left, but only request a single layout
+view.startLayout();
+view.top = 50;
+view.left = 50;
+view.finishLayout();
 
-`view.left =` `50``;`
+// [new] equivalent to above, but using batch update for convenience
+view.updateLayout({
+    top: 50, left: 50
+});
+```
 
-`// [new] change top and left, but only request a single layout`
+*Get Native and Model parameters*
 
-`view.startLayout();`
+```
+view.width = 100;
 
-`view.top =` `50``;`
+// [old] get the views's native width, but user supplied width is unavailable
+// view.width may not necessarily be 100 after being laid out
+Ti.API.debug("view width = " + view.width);
 
-`view.left =` `50``;`
-
-`view.finishLayout();`
-
-`// [new] equivalent to above, but using batch update for convenience`
-
-`view.updateLayout({`
-
-`top:` `50``, left:` `50`
-
-`});`
-
-Get Native and Model parameters
-
-`view.width =` `100``;`
-
-`// [old] get the views's native width, but user supplied width is unavailable`
-
-`// view.width may not necessarily be 100 after being laid out`
-
-`Ti.API.debug(``"view width = "` `+ view.width);`
-
-`// [new] get the view's native width, and the user supplied width`
-
-`// view.rect, view.size, are the new dynamic/native APIs`
-
-`// view.X will always have the user-supplied layout params`
-
-`Ti.API.debug(``"button width = "` `+ view.rect.width +` `", my width = "` `+ view.width);`
+// [new] get the view's native width, and the user supplied width
+// view.rect, view.size, are the new dynamic/native APIs
+// view.X will always have the user-supplied layout params
+Ti.API.debug("button width = " + view.rect.width + ", my width = " + view.width);
+```
 
 ## Proposed API
 

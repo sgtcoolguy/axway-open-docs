@@ -12,31 +12,23 @@ If you wish a user to have additional control over their environment, you can im
 
 * Create a new Interface of the form I\*SystemProperties, where \* is derived from the name of the plugin. See [here](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Source_Code_Conventions/) for naming conventions
 
-    `package` `com.appcelerator.titanium.ui;`
+    ```
+    package com.appcelerator.titanium.ui;
 
-    `/**`
+    /**
+     * Various options that can be passed on the command line to control Studio behavior
+     *
+     * @author ingo
+     */
+    public interface ITitaniumUISystemProperties
+    {
+      /**
+       * The url of the Titanium dashboard
+       */
+      public static String DASHBOARD_URL = "titanium.dashboardUrl"; //$NON-NLS-1$
 
-    `* Various options that can be passed on the command line to control Studio behavior`
-
-    `*`
-
-    `* @author ingo`
-
-    `*/`
-
-    `public`  `interface` `ITitaniumUISystemProperties`
-
-    `{`
-
-    `/**`
-
-    `* The url of the Titanium dashboard`
-
-    `*/`
-
-    `public`  `static` `String DASHBOARD_URL =` `"titanium.dashboardUrl"``;` `//$NON-NLS-1$`
-
-    `}`
+    }
+    ```
 
 * Create a new string for the system property. Note the following naming convention:
 

@@ -36,125 +36,81 @@ As of this release, Titanium SDK 7.3.x will not be supported six months (2019-03
 
     * Sample app
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+          backgroundColor: '#fff'
+        });
 
-        `backgroundColor:` `'#fff'`
+        var identifierBtn = Ti.UI.createButton({
+          top: 100,
+          title: 'Persistent Identifier'
+        });
 
-        `});`
+        var btn = Ti.UI.createButton({
+          top: 200,
+          title: 'Delete UserActivity for identifier'
+        });
 
-        `var` `identifierBtn = Ti.UI.createButton({`
+        var deleteBtn = Ti.UI.createButton({
+          top: 300,
+          title: 'Delete All UserActivity'
+        });
 
-        `top: 100,`
+        var itemAttr = Ti.App.iOS.createSearchableItemAttributeSet({
+          itemContentType: Ti.App.iOS.UTTYPE_IMAGE,
+          title: 'Titanium Siri Shortcut Tutorial',
+          contentDescription: 'Tech Example \nOn: ' + (new Date().toLocaleString()),
+        });
 
-        `title:` `'Persistent Identifier'`
+        var activity = Ti.App.iOS.createUserActivity({
+          activityType: 'com.appcelerator.titanium',
+          title: 'Siri shortcut activity',
+          userInfo: {
+            msg: 'hello world'
+          },
+          eligibleForSearch: true,
+          eligibleForPrediction: true,
+          persistentIdentifier: 'titanium_siri_identifier'
+        });
 
-        `});`
+        activity.addContentAttributeSet(itemAttr);
 
-        `var` `btn = Ti.UI.createButton({`
+        if (!activity.isSupported()) {
+          alert('User Activities are not supported on this device!');
+        } else {
+          activity.becomeCurrent();
 
-        `top: 200,`
+          Ti.App.iOS.addEventListener('continueactivity', function(e) {
+            Ti.API.info('continueactivity called');
+            if (e.activityType === 'com.appcelerator.titanium' && e.userInfo.msg) {
+              alert(e.userInfo.msg);
+            }
+          });
+        }
 
-        `title:` `'Delete UserActivity for identifier'`
+        activity.addEventListener('useractivitydeleted', function(e) {
+          Ti.API.info('useractivitydeleted called');
+          alert('user activity deleted');
+        });
 
-        `});`
+        btn.addEventListener('click', function() {
+          activity.deleteSavedUserActivitiesForPersistentIdentifiers('titanium_siri_identifier');
+        });
 
-        `var` `deleteBtn = Ti.UI.createButton({`
+        identifierBtn.addEventListener('click', function() {
+          Ti.API.info('persistent identfier is: ' +activity.persistentIdentifier);
+          Ti.API.info('\neligibleForPrediction is: ' +activity.eligibleForPrediction);
+        });
 
-        `top: 300,`
+        deleteBtn.addEventListener('click', function() {
+          activity.deleteAllSavedUserActivities();
+        });
 
-        `title:` `'Delete All UserActivity'`
-
-        `});`
-
-        `var` `itemAttr = Ti.App.iOS.createSearchableItemAttributeSet({`
-
-        `itemContentType: Ti.App.iOS.UTTYPE_IMAGE,`
-
-        `title:` `'Titanium Siri Shortcut Tutorial'``,`
-
-        `contentDescription:` `'Tech Example \nOn: '` `+ (``new` `Date().toLocaleString()),`
-
-        `});`
-
-        `var` `activity = Ti.App.iOS.createUserActivity({`
-
-        `activityType:` `'com.appcelerator.titanium'``,`
-
-        `title:` `'Siri shortcut activity'``,`
-
-        `userInfo: {`
-
-        `msg:` `'hello world'`
-
-        `},`
-
-        `eligibleForSearch:` `true``,`
-
-        `eligibleForPrediction:` `true``,`
-
-        `persistentIdentifier:` `'titanium_siri_identifier'`
-
-        `});`
-
-        `activity.addContentAttributeSet(itemAttr);`
-
-        `if` `(!activity.isSupported()) {`
-
-        `alert(``'User Activities are not supported on this device!'``);`
-
-        `}` `else` `{`
-
-        `activity.becomeCurrent();`
-
-        `Ti.App.iOS.addEventListener(``'continueactivity'``,` `function``(e) {`
-
-        `Ti.API.info(``'continueactivity called'``);`
-
-        `if` `(e.activityType ===` `'com.appcelerator.titanium'` `&& e.userInfo.msg) {`
-
-        `alert(e.userInfo.msg);`
-
-        `}`
-
-        `});`
-
-        `}`
-
-        `activity.addEventListener(``'useractivitydeleted'``,` `function``(e) {`
-
-        `Ti.API.info(``'useractivitydeleted called'``);`
-
-        `alert(``'user activity deleted'``);`
-
-        `});`
-
-        `btn.addEventListener(``'click'``,` `function``() {`
-
-        `activity.deleteSavedUserActivitiesForPersistentIdentifiers(``'titanium_siri_identifier'``);`
-
-        `});`
-
-        `identifierBtn.addEventListener(``'click'``,` `function``() {`
-
-        `Ti.API.info(``'persistent identfier is: '` `+activity.persistentIdentifier);`
-
-        `Ti.API.info(``'\neligibleForPrediction is: '` `+activity.eligibleForPrediction);`
-
-        `});`
-
-        `deleteBtn.addEventListener(``'click'``,` `function``() {`
-
-        `activity.deleteAllSavedUserActivities();`
-
-        `});`
-
-        `win.add(identifierBtn);`
-
-        `win.add(btn);`
-
-        `win.add(deleteBtn);`
-
-        `win.open();`
+        win.add(identifierBtn);
+        win.add(btn);
+        win.add(deleteBtn);
+        win.open();
+        ```
 
 ## Fixed issues
 
@@ -198,29 +154,22 @@ As of this release, Titanium SDK 7.3.x will not be supported six months (2019-03
 
     * Sample code
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: '#ddd'
+        });
 
-        `backgroundColor:` `'#ddd'`
+        var field = Ti.UI.createTextField({
+            autofillType: Ti.UI.AUTOFILL_TYPE_PASSWORD,
+            passwordRules: 'required: upper; required: lower; required: digit; max-consecutive: 2; minlength: 8;',
+            passwordMask: true,
+            width: 300,
+            height: 40,
+            backgroundColor: '#fff' });
 
-        `});`
-
-        `var` `field = Ti.UI.createTextField({`
-
-        `autofillType: Ti.UI.AUTOFILL_TYPE_PASSWORD,`
-
-        `passwordRules:` `'required: upper; required: lower; required: digit; max-consecutive: 2; minlength: 8;'``,`
-
-        `passwordMask:` `true``,`
-
-        `width: 300,`
-
-        `height: 40,`
-
-        `backgroundColor:` `'#fff'` `});`
-
-        `win.add(field);`
-
-        `win.open()`
+        win.add(field);
+        win.open()
+        ```
 
 ## Known issues
 

@@ -36,195 +36,130 @@ A common need in a mobile application is to upload a file (like an image) to a r
 
 Assuming you have a server-side service which accepts file uploads, you should find upload fairly straightforward. Titanium handles the setting of headers and marshaling POST parameters for you, so you simply need to pass a Titanium [blob](http://en.wikipedia.org/wiki/Blob_(computing)) object to send(). A blob is returned by many different Titanium APIs, including Titanium.Filesystem.File.read. Below, you will find an example of how you might select a photo from the device photo gallery, and upload that blob to a web service:
 
-`Titanium.Media.openPhotoGallery({`
-
-`success: function(event) {`
-
-`/* success callback fired after media retrieved from gallery */`
-
-`var xhr = Titanium.Network.createHTTPClient();`
-
-`xhr.onload = function(e) {`
-
-`Ti.UI.createAlertDialog({`
-
-`title:` `'Success'``,`
-
-`message:` `'Status Code: '` `+` `this``.status`
-
-`}).show();`
-
-`};`
-
-`xhr.open(``'POST'``,` `'https://myserver.com/api/uploadAndPost.do'``);`
-
-`xhr.send({`
-
-`theImage: event.media,` `/* event.media holds blob from gallery */`
-
-`username:` `'foo'``,`
-
-`password:` `'bar'`
-
-`});`
-
-`}`
-
-`});`
+```javascript
+Titanium.Media.openPhotoGallery({
+  success: function(event) {
+    /* success callback fired after media retrieved from gallery */
+    var xhr = Titanium.Network.createHTTPClient();
+    xhr.onload = function(e) {
+      Ti.UI.createAlertDialog({
+            title: 'Success',
+            message: 'Status Code: ' + this.status
+        }).show();
+    };
+    xhr.open('POST', 'https://myserver.com/api/uploadAndPost.do');
+    xhr.send({
+        theImage: event.media,  /* event.media holds blob from gallery */
+        username: 'foo',
+        password: 'bar'
+    });
+  }
+});
+```
 
 Note: this file upload process is only valid if using Mobile Backend Services services file update. The event.media doesn't contain file contents but rather just the information about the file, location, size, dimensions, and so on.To upload the file, you will need to use Ti.Filesystem to get a handle on the file and access to the file itself. For example:
 
-`var` `file = Ti.Filesystem.getFile(event.media.nativePath);`
+```javascript
+var file = Ti.Filesystem.getFile(event.media.nativePath);
 
-`if` `(file.exists()) {`
-
-`//file handling logic`
-
-`}` `else` `{`
-
-`...`
-
-`}`
+if (file.exists()) {
+  //file handling logic
+} else {
+  ...
+}
+```
 
 #### Monitoring upload progress
 
 Using the xhr.onsendstream event, you can monitor upload progress and update a progress bar. This event is called at regular intervals as the data is being transmitted. When the event is fired, the progress property of the event object will contain a value from 0.0-1.0 with the progress. That's exactly the type of value you'll need for a [Ti.UI.ProgressBar](#!/api/Titanium.UI.ProgressBar).
 
-`/* Create a progress bar */`
+```javascript
+/* Create a progress bar */
+var progressBar = Ti.UI.createProgressBar({
+  width: 200,
+  height: 50,
+  min: 0,
+  max: 1,
+  value: 0,
+  style: Titanium.UI.iOS.ProgressBarStyle.PLAIN,
+  top: 10,
+  message: 'Uploading image ...',
+  font:  {fontSize: 12, fontWeight: 'bold' },
+  color: '#888'
+});
 
-`var progressBar = Ti.UI.createProgressBar({`
+win.add(progressBar);
+progressBar.show();
 
-`width:` `200``,`
+var xhr = Ti.Network.createHTTPClient();
 
-`height:` `50``,`
-
-`min:` `0``,`
-
-`max:` `1``,`
-
-`value:` `0``,`
-
-`style: Titanium.UI.iOS.ProgressBarStyle.PLAIN,`
-
-`top:` `10``,`
-
-`message:` `'Uploading image ...'``,`
-
-`font: {fontSize:` `12``, fontWeight:` `'bold'` `},`
-
-`color:` `'#888'`
-
-`});`
-
-`win.add(progressBar);`
-
-`progressBar.show();`
-
-`var xhr = Ti.Network.createHTTPClient();`
-
-`// onsendstream called repeatedly, use the progress property to`
-
-`// update the progress bar`
-
-`xhr.onsendstream = function(e) {`
-
-`progressBar.value = e.progress ;`
-
-`Ti.API.info(``'ONSENDSTREAM - PROGRESS: '` `+ e.progress);`
-
-`};`
+// onsendstream called repeatedly, use the progress property to
+// update the progress bar
+xhr.onsendstream = function(e) {
+  progressBar.value = e.progress ;
+  Ti.API.info('ONSENDSTREAM - PROGRESS: ' + e.progress);
+};
+```
 
 ### File download
 
 Occasionally, you will also need to download and store a file from a remote server. In concert with the Ti.Filesystem module, you can fetch and save a file. Below is a cross-platform example for fetching a remote image and saving it to the applicationDataDirectory:
 
-`var win = Ti.UI.createWindow({`
+```javascript
+var win = Ti.UI.createWindow({
+  backgroundColor: '#fff'
+});
 
-`backgroundColor:` `'#fff'`
+var loadingLabel = Ti.UI.createLabel({
+  text: 'Loading ...',
+  top: 20,
+  left: 10
+});
+win.add(loadingLabel);
 
-`});`
+var image = Ti.UI.createImageView({
+  top: 20,
+  left: 10
+});
+win.add(image);
 
-`var loadingLabel = Ti.UI.createLabel({`
+var xhr = Ti.Network.createHTTPClient({
+  onload: function() {
+    // first, grab a "handle" to the file where you'll store the downloaded data
+    var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'mygraphic.png');
+    file.write(this.responseData); // write to the file
+    Ti.App.fireEvent('graphic_downloaded', { filepath: file.nativePath });
+  },
+  timeout: 10000
+});
+xhr.open('GET','http://www.appcelerator.com/wp-content/uploads/2009/06/titanium_desk.png');
+xhr.send();
 
-`text:` `'Loading ...'``,`
+Ti.App.addEventListener('graphic_downloaded', function(e) {
+  // you don't have to fire an event like this, but perhaps multiple components will
+  // want to know when the image has been downloaded and saved
+  win.remove(loadingLabel);
+  image.image = e.filepath;
+});
 
-`top:` `20``,`
-
-`left:` `10`
-
-`});`
-
-`win.add(loadingLabel);`
-
-`var image = Ti.UI.createImageView({`
-
-`top:` `20``,`
-
-`left:` `10`
-
-`});`
-
-`win.add(image);`
-
-`var xhr = Ti.Network.createHTTPClient({`
-
-`onload: function() {`
-
-`// first, grab a "handle" to the file where you'll store the downloaded data`
-
-`var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,` `'mygraphic.png'``);`
-
-`file.write(``this``.responseData);` `// write to the file`
-
-`Ti.App.fireEvent(``'graphic_downloaded'``, { filepath: file.nativePath });`
-
-`},`
-
-`timeout:` `10000`
-
-`});`
-
-`xhr.open(``'GET'``,``'http://www.appcelerator.com/wp-content/uploads/2009/06/titanium_desk.png'``);`
-
-`xhr.send();`
-
-`Ti.App.addEventListener(``'graphic_downloaded'``, function(e) {`
-
-`// you don't have to fire an event like this, but perhaps multiple components will`
-
-`// want to know when the image has been downloaded and saved`
-
-`win.remove(loadingLabel);`
-
-`image.image = e.filepath;`
-
-`});`
-
-`win.open();`
+win.open();
+```
 
 On iOS, a simple property of the HTTPClient object lets you save a file to the local file system. Below is an iOS-only example of how to fetch a file from a server and store it in the applicationDataDirectory, the primary location for any read/write Filesystem IO in a Titanium application:
 
-`var xhr = Ti.Network.createHTTPClient({`
-
-`onload: function() {`
-
-`Ti.API.info(``'PDF downloaded to applicationDataDirectory/test.pdf'``);`
-
-`},`
-
-`timeout:` `10000`
-
-`});`
-
-`xhr.open(``'GET'``,` `'http://www.appcelerator.com/assets/The_iPad_App_Wave.pdf'``);`
-
-`// on iOS, you can use the file property to save a downloaded file`
-
-`// though you must set it after calling open()`
-
-`xhr.file = Titanium.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,` `'test.pdf'``);`
-
-`xhr.send();`
+```javascript
+var xhr = Ti.Network.createHTTPClient({
+  onload: function() {
+    Ti.API.info('PDF downloaded to applicationDataDirectory/test.pdf');
+  },
+  timeout: 10000
+});
+xhr.open('GET', 'http://www.appcelerator.com/assets/The_iPad_App_Wave.pdf');
+// on iOS, you can use the file property to save a downloaded file
+// though you must set it after calling open()
+xhr.file = Titanium.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'test.pdf');
+xhr.send();
+```
 
 #### File storage locations
 
@@ -244,17 +179,14 @@ The Ti.Filesystem.resourcesDirectory is read-only on a device, but is read/write
 
 As with uploads, you can use an HTTPClient callback to monitor download progress. In this case, it's the xhr.ondatastream callback. You'd use it like this (assuming you have a progress bar named ind as with the upload progress example):
 
-`// ondatastream called repeatedly as file downloaded, use the progress property to`
-
-`// update the progress bar`
-
-`xhr.ondatastream = function(e) {`
-
-`ind.value = e.progress ;`
-
-`Ti.API.info(``'ONDATASTREAM - PROGRESS: '` `+ e.progress);`
-
-`};`
+```
+// ondatastream called repeatedly as file downloaded, use the progress property to
+// update the progress bar
+xhr.ondatastream = function(e) {
+  ind.value = e.progress ;
+  Ti.API.info('ONDATASTREAM - PROGRESS: ' + e.progress);
+};
+```
 
 ### Hands-on practice
 

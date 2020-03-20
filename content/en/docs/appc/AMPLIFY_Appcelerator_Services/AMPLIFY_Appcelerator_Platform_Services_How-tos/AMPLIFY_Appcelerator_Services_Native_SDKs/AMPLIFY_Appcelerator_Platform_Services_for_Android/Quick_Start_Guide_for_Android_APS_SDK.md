@@ -1,6 +1,6 @@
 {"title":"Quick Start Guide for Android APS SDK","weight":"10"}
 
-Pro or Enterprise Subscription Required
+*Pro or Enterprise Subscription Required*
 
 This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.
 
@@ -44,7 +44,7 @@ This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscrip
 
 This guide walks through the setup of the AMPLIFY Appcelerator Services for Android applications. The AMPLIFY Appcelerator Services SDK gives you access to the Appcelerator Analytics and Cloud services. To enable the Appcelerator Test for a project, run the AppceletatorTest utility against either the project or APK file.
 
-Not developing a native Android application with Java?
+*Not developing a native Android application with Java?*
 
 See the following topics to use the AMPLIFY Appcelerator Services on other platforms:
 
@@ -216,61 +216,49 @@ The following tutorial demonstrates basic setup and usage of Analytics and Cloud
 
 4. Modify the project's AndroidManifest.xml file to include the ACCESS\_NETWORK\_STATE, ACCESS\_WIFI\_STATE, GET\_TASKS, INTERNET, READ\_LOGS, and WRITER\_EXTERNAL\_STORAGE user permissions and declare the com.appcelerator.aps.AnalyticsService as a Service class, which allows the APS library to send analytic events to the APS servers while the application is in the background:
 
-    AndroidManifest.xml
+    *AndroidManifest.xml*
 
-    `<?``xml`  `version``=``"1.0"`  `encoding``=``"utf-8"``?>`
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.appcelerator.sample"
+        android:versionCode="1"
+        android:versionName="1.0" >
 
-    `<``manifest`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"`
+        <!-- Add these permissions to enable Analytics and Cloud -->
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+        <uses-permission android:name="android.permission.INTERNET"/>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        <uses-permission android:name="android.permission.GET_TASKS" />
+        <uses-permission android:name="android.permission.READ_LOGS"/>
+        <application>
+            <activity>
+                ...
+            </activity>
 
-    `package``=``"com.appcelerator.sample"`
-
-    `android:versionCode``=``"1"`
-
-    `android:versionName``=``"1.0"` `>`
-
-    `<!-- Add these permissions to enable Analytics and Cloud -->`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_NETWORK_STATE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_WIFI_STATE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.WRITE_EXTERNAL_STORAGE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.GET_TASKS"` `/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.READ_LOGS"``/>`
-
-    `<``application``>`
-
-    `<``activity``>`
-
-    `...`
-
-    `</``activity``>`
-
-    `<!-- Add this service to enable Analytics -->`
-
-    `<``service`  `android:name``=``"com.appcelerator.aps.APSAnalyticsService"`
-
-    `android:exported``=``"false"` `/>`
-
-    `</``application``>`
-
-    `</``manifest``>`
+            <!-- Add this service to enable Analytics -->
+            <service android:name="com.appcelerator.aps.APSAnalyticsService"
+                android:exported="false" />
+        </application>
+    </manifest>
+    ```
 
 5. Add the following import statement to the main Activity of the project:
 
-    MainActivity.java
+    *MainActivity.java*
 
-    `import` `com.appcelerator.aps.APSServiceManager;`
+    ```java
+    import com.appcelerator.aps.APSServiceManager;
+    ```
 
 6. In the main Activity's onCreate() method, add the following method call to enable the APS services.
 
-    MainActivity.java
+    *MainActivity.java*
 
-    `APSServiceManager.getInstance().enable(getApplicationContext(),` `"APP_KEY"``);`
+    ```java
+    APSServiceManager.getInstance().enable(getApplicationContext(), "APP_KEY");
+    ```
 
     The Android application is now ready to make method calls using the APS SDK APIs.
 
@@ -286,137 +274,87 @@ Customize the application's UI to display a spinner, text field and button, and 
 
 4. In the MainActivity.java file, modify the code to save an instance of the current activity, Spinner and EditText widgets. Modify the application to bind a doClick method to the Button's onClick listener and create an empty function called populateSpinner. You also need to import additional packages. In the following sections, you will add code to these handlers that call the Cloud and Analytics services.
 
-    MainActivity.java
-
-    `// Import the following packages`
-
-    `import` `android.app.Activity;`
-
-    `import` `android.util.Log;`
-
-    `import` `android.widget.ArrayAdapter;`
-
-    `import` `android.widget.Button;`
-
-    `import` `android.widget.EditText;`
-
-    `import` `android.widget.Spinner;`
-
-    `import` `java.util.HashMap;`
-
-    `import` `org.json.JSONArray;`
-
-    `import` `com.appcelerator.aps.APSAnalytics;`
-
-    `import` `com.appcelerator.aps.APSCloudException;`
-
-    `import` `com.appcelerator.aps.APSPerformance;`
-
-    `import` `com.appcelerator.aps.APSResponse;`
-
-    `import` `com.appcelerator.aps.APSResponseHandler;`
-
-    `import` `com.appcelerator.aps.APSServiceManager;`
-
-    `import` `com.appcelerator.aps.APSUsers;`
-
-    `public`  `class` `MainActivity` `extends` `ActionBarActivity {`
-
-    `// Handle to current activity`
-
-    `private`  `static` `Activity currentActivity;`
-
-    `@Override`
-
-    `protected`  `void` `onCreate(Bundle savedInstanceState) {`
-
-    `super``.onCreate(savedInstanceState);`
-
-    `setContentView(R.layout.activity_main);`
-
-    `// Save the current activity`
-
-    `currentActivity =` `this``;`
-
-    `APSServiceManager.getInstance().enable(getApplicationContext(),` `"APP_KEY"``);`
-
-    `if` `(savedInstanceState ==` `null``) {`
-
-    `getSupportFragmentManager().beginTransaction()`
-
-    `.add(R.id.container,` `new` `PlaceholderFragment())`
-
-    `.commit();`
-
-    `}`
-
-    `}`
-
-    `public`  `static`  `class` `PlaceholderFragment` `extends` `Fragment {`
-
-    `// Handle to Spinner and EditText widgets`
-
-    `Spinner spinner;`
-
-    `EditText textField;`
-
-    `public` `PlaceholderFragment() {`
-
-    `}`
-
-    `@Override`
-
-    `public` `View onCreateView(LayoutInflater inflater, ViewGroup container,`
-
-    `Bundle savedInstanceState) {`
-
-    `View rootView = inflater.inflate(R.layout.fragment_main, container,` `false``);`
-
-    `// Bind the Button do the doClick method`
-
-    `Button button = (Button)rootView.findViewById(R.id.button1);`
-
-    `button.setOnClickListener(``new` `Button.OnClickListener()`
-
-    `{`
-
-    `@Override`
-
-    `public`  `void` `onClick(View v){`
-
-    `doClick();`
-
-    `}`
-
-    `});`
-
-    `// Save the Spinner and EditText instances`
-
-    `spinner = (Spinner)rootView.findViewById(R.id.spinner1);`
-
-    `textField = (EditText)rootView.findViewById(R.id.editText1);`
-
-    `// Place holder for the next tutorial steps`
-
-    `populateSpinner();`
-
-    `return` `rootView;`
-
-    `}`
-
-    `// Placeholder for next tutorial steps`
-
-    `public`  `void` `doClick() {`
-
-    `}`
-
-    `public`  `void` `populateSpinner() {`
-
-    `}`
-
-    `}`
-
-    `}`
+    *MainActivity.java*
+
+    ```java
+    // Import the following packages
+    import android.app.Activity;
+    import android.util.Log;
+    import android.widget.ArrayAdapter;
+    import android.widget.Button;
+    import android.widget.EditText;
+    import android.widget.Spinner;
+    import java.util.HashMap;
+    import org.json.JSONArray;
+    import com.appcelerator.aps.APSAnalytics;
+    import com.appcelerator.aps.APSCloudException;
+    import com.appcelerator.aps.APSPerformance;
+    import com.appcelerator.aps.APSResponse;
+    import com.appcelerator.aps.APSResponseHandler;
+    import com.appcelerator.aps.APSServiceManager;
+    import com.appcelerator.aps.APSUsers;
+
+    public class MainActivity extends ActionBarActivity {
+        // Handle to current activity
+      private static Activity currentActivity;
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+
+            // Save the current activity
+            currentActivity = this;
+
+            APSServiceManager.getInstance().enable(getApplicationContext(), "APP_KEY");
+
+            if (savedInstanceState == null) {
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.container, new PlaceholderFragment())
+                        .commit();
+            }
+        }
+        public static class PlaceholderFragment extends Fragment {
+
+            // Handle to Spinner and EditText widgets
+          Spinner spinner;
+          EditText textField;
+
+            public PlaceholderFragment() {
+            }
+
+            @Override
+            public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                    Bundle savedInstanceState) {
+                View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
+                // Bind the Button do the doClick method
+                Button button = (Button)rootView.findViewById(R.id.button1);
+                button.setOnClickListener(new Button.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v){
+                        doClick();
+                    }
+                });
+
+                // Save the Spinner and EditText instances
+                spinner = (Spinner)rootView.findViewById(R.id.spinner1);
+                textField = (EditText)rootView.findViewById(R.id.editText1);
+                // Place holder for the next tutorial steps
+                populateSpinner();
+                return rootView;
+            }
+
+            // Placeholder for next tutorial steps
+            public void doClick() {
+            }
+
+            public void populateSpinner() {
+            }
+        }
+    }
+    ```
 
 ### Building the application
 
@@ -424,35 +362,32 @@ If you use Maven or Gradle as part of your build process, you will need to publi
 
 First, unzip the APS SDK and install the dependencies into your local Maven repository:
 
-`unzip appcelerator-sdk-android-1.0.0.zip`
-
-`mvn` `install``:``install``-``file` `-Dfile=appcelerator-sdk-android-1.0.0``/appcelerator-sdk-android-1``.0.0.jar -DgroupId=com.appcelerator -DartifactId=appcelerator-sdk-android -Dversion=1.0.0 -Dpackaging=jar`
+```
+unzip appcelerator-sdk-android-1.0.0.zip
+mvn install:install-file -Dfile=appcelerator-sdk-android-1.0.0/appcelerator-sdk-android-1.0.0.jar -DgroupId=com.appcelerator -DartifactId=appcelerator-sdk-android -Dversion=1.0.0 -Dpackaging=jar
+```
 
 Next, add the following lines of code to your Maven or Gradle POMs:
 
-Gradle
+*Gradle*
 
-`dependencies {`
+```
+dependencies {
+    compile 'com.appcelerator: appcelerator-sdk-android:1.0.0'
+}
+```
 
-`compile` `'com.appcelerator: appcelerator-sdk-android:1.0.0'`
+*Maven*
 
-`}`
-
-Maven
-
-`<``dependencies``>`
-
-`    <``dependency``>`
-
-`        <``groupId``>com.appcelerator</``groupId``>`
-
-`        <``artifactId``>appcelerator-sdk-android</``artifactId``>`
-
-`        <``version``>1.0.0</``version``>`
-
-`    </``dependency``>`
-
-`</``dependencies``>`
+```xml
+<dependencies>
+    <dependency>
+        <groupId>com.appcelerator</groupId>
+        <artifactId>appcelerator-sdk-android</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+</dependencies>
+```
 
 ### Capture user session events
 
@@ -462,41 +397,33 @@ Use the Activity's lifetime events to track when the user is actively using your
 
 Before calling API calls to the APSAnalytics class, you need to get a shared instance of the APSAnalytics class using the getInstance() method.
 
-`@Override`
+```
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
 
-`protected`  `void` `onCreate(Bundle savedInstanceState) {`
+    APSAnalytics.getInstance().sendAppEnrollEvent();
 
-`super``.onCreate(savedInstanceState);`
-
-`setContentView(R.layout.activity_main);`
-
-`APSAnalytics.getInstance().sendAppEnrollEvent();`
-
-`// Other init calls...`
-
-`}`
+    // Other init calls...
+}
+```
 
 Use onPause() and onResume() to call the APSAnalytics' sendAppBackgroundEvent() and sendAppForegroundEvent(), respectively. These two APSAnalytics methods send user session events to the APS Analytics servers to track how long a user engages with your application.
 
-`@Override`
+```
+@Override
+public void onPause(){
+    super.onPause();
+    APSAnalytics.getInstance().sendAppBackgroundEvent();
+}
 
-`public`  `void` `onPause(){`
-
-`super``.onPause();`
-
-`APSAnalytics.getInstance().sendAppBackgroundEvent();`
-
-`}`
-
-`@Override`
-
-`public`  `void` `onResume(){`
-
-`super``.onResume();`
-
-`APSAnalytics.getInstance().sendAppForegroundEvent();`
-
-`}`
+@Override
+public void onResume(){
+    super.onResume();
+    APSAnalytics.getInstance().sendAppForegroundEvent();
+}
+```
 
 ### Send an Analytics feature event
 
@@ -504,13 +431,13 @@ Besides user session events, you can also send custom analytics events, as shown
 
 In the doClick() function, add an APSAnalytics' sendAppFeatureEvent() method call to send a feature event with the string "sample.feature.login". The optional second parameter is set to null for this example, but you can send additional data as a JSON object with the event.
 
-MainActivity.java
+*MainActivity.java*
 
-`public`  `void` `doClick(View view){`
-
-`APSAnalytics.getInstance().sendAppFeatureEvent(``"sample.feature.login"``,` `null``);`
-
-`}; `
+```java
+public void doClick(View view){
+     APSAnalytics.getInstance().sendAppFeatureEvent("sample.feature.login", null);
+};
+```
 
 ### Query Cloud users
 
@@ -518,135 +445,85 @@ To use the APS Cloud component, most of the methods require a user to be logged 
 
 Every APS Cloud method includes a handler parameter that specifies the callback to handle the server response. The callback is passed an APSResponse object that contains response metadata (such as success or failure) and the response payload.
 
-MainActivity.java
+*MainActivity.java*
 
-`public`  `void` `populateSpinner() {`
+```java
+public void populateSpinner() {
+    try {
+        APSUsers.query(null, new APSResponseHandler() {
+            @Override
+            public void onResponse(final APSResponse e) {
+                if (e.getSuccess()) {
+                    try {
+                      JSONArray payload = e.getResponse().getJSONArray("users");
+                      String[] items = new String[payload.length()];
+                      for (int i = 0; i < payload.length(); i++) {
+                          items[i] = payload.getJSONObject(i).getString("username");
+                      }
+                      ArrayAdapter spinnerArrayAdapter = new ArrayAdapter(currentActivity,
+                          android.R.layout.simple_spinner_item, items);
+                      spinner.setAdapter(spinnerArrayAdapter);
+                  } catch (Exception ex) {
+                      Log.e("ACSUsers", "Error parsing JSON object: " + ex.toString());
+                  }
+                }
+                else {
+                  Toast.makeText(currentActivity, "ERROR: Unable to get users.", Toast.LENGTH_SHORT).show();
+                    Log.e("ACSUsers", e.getResponseString());
+                }
+            }
 
-`try` `{`
-
-`APSUsers.query(``null``,` `new` `APSResponseHandler() {`
-
-`@Override`
-
-`public`  `void` `onResponse(``final` `APSResponse e) {`
-
-`if` `(e.getSuccess()) {`
-
-`try` `{`
-
-`JSONArray payload = e.getResponse().getJSONArray(``"users"``);`
-
-`String[] items =` `new` `String[payload.length()];`
-
-`for` `(``int` `i =` `0``; i < payload.length(); i++) {`
-
-`items[i] = payload.getJSONObject(i).getString(``"username"``);`
-
-`}`
-
-`ArrayAdapter spinnerArrayAdapter =` `new` `ArrayAdapter(currentActivity,`
-
-`android.R.layout.simple_spinner_item, items);`
-
-`spinner.setAdapter(spinnerArrayAdapter);`
-
-`}` `catch` `(Exception ex) {`
-
-`Log.e(``"ACSUsers"``,` `"Error parsing JSON object: "` `+ ex.toString());`
-
-`}`
-
-`}`
-
-`else` `{`
-
-`Toast.makeText(currentActivity,` `"ERROR: Unable to get users."``, Toast.LENGTH_SHORT).show();`
-
-`Log.e(``"ACSUsers"``, e.getResponseString());`
-
-`}`
-
-`}`
-
-`@Override`
-
-`public`  `void` `onException(APSCloudException e) {`
-
-`Log.e(``"ACSUsers"``, e.toString());`
-
-`}`
-
-`});`
-
-`}` `catch` `(APSCloudException e) {`
-
-`Log.e(``"ACSUsers"``, e.toString());`
-
-`}`
-
-`}`
+            @Override
+            public void onException(APSCloudException e) {
+                Log.e("ACSUsers", e.toString());
+            }
+        });
+    } catch (APSCloudException e) {
+        Log.e("ACSUsers", e.toString());
+    }
+}
+```
 
 ### Log in to a Cloud account
 
 To log in to a Cloud account, you need the username and password. Since the application was modified to get all available user accounts and populate the Spinner, the application needs to get the current value of the spinner and the text entered in the EditText widget. These values are passed to the APSUsers.login() method. Modify the doClick() method to login to a Cloud user account.
 
-`public`  `void` `doClick(){`
+```
+public void doClick(){
+  APSAnalytics.getInstance().sendAppFeatureEvent("sample.feature.login", null);
 
-`APSAnalytics.getInstance().sendAppFeatureEvent(``"sample.feature.login"``,` `null``);`
+    // Get the current value of the Spinner and EditField widgets
+  final String username = spinner.getSelectedItem().toString();
+  String password = textField.getText().toString();
 
-`// Get the current value of the Spinner and EditField widgets`
+  // Use a HashMap to send the method parameters for the request
+    HashMap<String, Object> data = new HashMap<String, Object>();
+    data.put("login", username);
+    data.put("password", password);
 
-`final` `String username = spinner.getSelectedItem().toString();`
+    try {
+        APSUsers.login(data, new APSResponseHandler() {
+            @Override
+            public void onResponse(final APSResponse e) {
+                if (e.getSuccess()) {
+                  Log.i("ACSUsers", "Successfully logged in as " + username);
+                }
+                else {
+                    Log.e("ACSUsers", e.getMessage());
+                }
+            }
 
-`String password = textField.getText().toString();`
+            @Override
+            public void onException(APSCloudException e) {
+                Log.e("ACSUsers", e.toString());
 
-`// Use a HashMap to send the method parameters for the request`
-
-`HashMap<String, Object> data =` `new` `HashMap<String, Object>();`
-
-`data.put(``"login"``, username);`
-
-`data.put(``"password"``, password);`
-
-`try` `{`
-
-`APSUsers.login(data,` `new` `APSResponseHandler() {`
-
-`@Override`
-
-`public`  `void` `onResponse(``final` `APSResponse e) {`
-
-`if` `(e.getSuccess()) {`
-
-`Log.i(``"ACSUsers"``,` `"Successfully logged in as "` `+ username);`
-
-`}`
-
-`else` `{`
-
-`Log.e(``"ACSUsers"``, e.getMessage());`
-
-`}`
-
-`}`
-
-`@Override`
-
-`public`  `void` `onException(APSCloudException e) {`
-
-`Log.e(``"ACSUsers"``, e.toString());`
-
-`}`
-
-`});`
-
-`}` `catch` `(APSCloudException e) {`
-
-`Log.e(``"ACSUsers"``, e.toString());`
-
-`}`
-
-`}`
+            }
+        });
+    } catch (APSCloudException e) {
+        Log.e("ACSUsers", e.toString());
+    }
+}
+```
 
 ### Log a handled exception
 
@@ -658,57 +535,42 @@ Before making API calls to the APSPerformance class, you need to retrieve a shar
 
 To the doClick method, add the following new code:
 
-MainActivity.java
+*MainActivity.java*
 
-`public`  `void` `doClick(){`
-
-`// Analytics call...`
-
-`// Cloud call...`
-
-`try` `{`
-
-`throw`  `new` `Exception(``"Something happened..."``);`
-
-`}` `catch` `(Exception exception) {`
-
-`APSPerformance.getInstance().logHandledException(exception);`
-
-`}`
-
-`}`
+```java
+public void doClick(){
+    // Analytics call...
+    // Cloud call...
+    try {
+      throw new Exception("Something happened...");
+    } catch (Exception exception) {
+      APSPerformance.getInstance().logHandledException(exception);
+    }
+}
+```
 
 ### Set a username for crash logs
 
 To help differentiate crash logs, use the APSPerformance's setUsername() method. When the application successfully logs in to the Cloud user account, the application calls APSPerformance's setUsername() method.
 
-MainActivity.java
+*MainActivity.java*
 
-`APSUsers.login(data,` `new` `APSResponseHandler() {`
+```java
+APSUsers.login(data, new APSResponseHandler() {
+    @Override
+    public void onResponse(final APSResponse e) {
+        if (e.getSuccess()) {
+            Log.i("ACSUsers", "Successfully logged in as " + username);
 
-`@Override`
-
-`public`  `void` `onResponse(``final` `APSResponse e) {`
-
-`if` `(e.getSuccess()) {`
-
-`Log.i(``"ACSUsers"``,` `"Successfully logged in as "` `+ username);`
-
-`// Add this method call`
-
-`APSPerformance.getInstance().setUsername(``"username"``);`
-
-`}`
-
-`else` `{`
-
-`Log.e(``"ACSUsers"``, e.getMessage());`
-
-`}`
-
-`}`
-
-`});`
+            // Add this method call
+            APSPerformance.getInstance().setUsername("username");
+        }
+        else {
+            Log.e("ACSUsers", e.getMessage());
+        }
+    }
+});
+```
 
 ### Testing the tutorial sample
 

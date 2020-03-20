@@ -66,22 +66,32 @@ The following Python libraries are necessary for compiling Titanium's SDK and AP
 
 ### PyCrypto
 
-`easy_install pycrypto`
+```
+easy_install pycrypto
+```
 
 ### pyOpenSSL
 
-`easy_install pyopenssl`
+```
+easy_install pyopenssl
+```
 
 ### PyYAML
 
-`easy_install pyyaml`
+```
+easy_install pyyaml
+```
 
 ### Pygments
 
-`easy_install Pygments`
+```
+easy_install Pygments
+```
 
 ### Markdown
 
 Markdown is required for building module documentation when packaging a Titanium module.
 
-`easy_install markdown`
+```
+easy_install markdown
+```

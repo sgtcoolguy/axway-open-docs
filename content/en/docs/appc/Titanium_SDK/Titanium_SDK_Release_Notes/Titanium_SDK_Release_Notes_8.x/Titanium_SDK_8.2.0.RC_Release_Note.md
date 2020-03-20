@@ -42,23 +42,17 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
     * In iOS 13, Apple introduced support for users to adopt a system-wide Dark Mode setting where the screens, view, menus, and controls use a darker color palette. You can read more about this in the [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/). There are two aspects to dark mode that can be specified for your app: colors and images. To specify colors for dark mode, also known as semantic colors, first create a file called semantic.colors.json in the Resources directory for classic applications, or in the assets directory for Alloy applications. Then you can specify color names in the following format:
 
-        `{`
-
-        `"textColor"``: {` `// the name for your color`
-
-        `"dark"``: {`
-
-        `"color"``:` `"#ff85e2"``,` `// hex color code to be set`
-
-        `"alpha"``:` `"50.0"`  `// can be set from a range of 0-100`
-
-        `},`
-
-        `"light"``:` `"#ff1f1f"`
-
-        `}`
-
-        `}`
+        ```
+        {
+          "textColor": { // the name for your color
+            "dark": {
+              "color": "#ff85e2", // hex color code to be set
+              "alpha": "50.0" // can be set from a range of 0-100
+            },
+            "light": "#ff1f1f"
+          }
+        }
+        ```
 
     * To reference these colors in your application use the [Titanium.UI.fetchSemanticColor](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI-method-fetchSemanticColor) API method, this is a cross platform API that on iOS 13 and above will use the native method that checks the users system-wide setting, and in all other instances will check the [Titanium.UI.semanticColorType](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI-property-semanticColorType) property and return the correct color for the current setting.
 
@@ -90,173 +84,113 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
     * Added support for [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/)
 
-    * `var` `win = Ti.UI.createWindow({`
+    * ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: '#fff'
+        });
+        var triangle = Ti.UI.iOS.systemImage('drop.triangle.fill');
+        var forward = Ti.UI.iOS.systemImage('forward');
+        var backward = Ti.UI.iOS.systemImage('backward');
+        var folder = Ti.UI.iOS.systemImage('folder.fill');
 
-        `backgroundColor:` `'#fff'`
+        var imageView = Ti.UI.createImageView({
+            width: '150',
+            height: '150',
+            image: triangle,
+            tintColor: 'red'
+        });
 
-        `});`
+        var button = Ti.UI.createButton({
+            top: 60,
+            width: 100,
+            height: 50,
+            //backgroundImage: folder
+            image: folder
+        })
 
-        `var` `triangle = Ti.UI.iOS.systemImage(``'drop.triangle.fill'``);`
+        var stepper = Ti.UI.iOS.createStepper({
+            top: 150,
+            incrementImage: forward,
+            decrementImage: backward
+        });
 
-        `var` `forward = Ti.UI.iOS.systemImage(``'forward'``);`
-
-        `var` `backward = Ti.UI.iOS.systemImage(``'backward'``);`
-
-        `var` `folder = Ti.UI.iOS.systemImage(``'folder.fill'``);`
-
-        `var` `imageView = Ti.UI.createImageView({`
-
-        `width:` `'150'``,`
-
-        `height:` `'150'``,`
-
-        `image: triangle,`
-
-        `tintColor:` `'red'`
-
-        `});`
-
-        `var` `button = Ti.UI.createButton({`
-
-        `top: 60,`
-
-        `width: 100,`
-
-        `height: 50,`
-
-        `//backgroundImage: folder`
-
-        `image: folder`
-
-        `})`
-
-        `var` `stepper = Ti.UI.iOS.createStepper({`
-
-        `top: 150,`
-
-        `incrementImage: forward,`
-
-        `decrementImage: backward`
-
-        `});`
-
-        `win.add(button);`
-
-        `win.add(stepper);`
-
-        `win.add(imageView);`
-
-        `win.open();`
+        win.add(button);
+        win.add(stepper);
+        win.add(imageView);
+        win.open();
+        ```
 
 * [TIMOB-27142](https://jira.appcelerator.org/browse/TIMOB-27142) - iOS 13 : Multiple row selection in ListView
 
     * Added multiple row selection support in ListView and TableView
 
-    * Ti.UI.ListView
+    * *Ti.UI.ListView*
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: '#fff'
+        });
 
-        `backgroundColor:` `'#fff'`
+        var nav = Ti.UI.createNavigationWindow({
+          window: win,
+         });
 
-        `});`
+         var items = [];
+         for (var i = 0; i < 20; i++) {
+            items.push({
+                    properties: {
+                        title: 'Item ' + i,
+                        canEdit: true,
+                    }
+                });
+          }
 
-        `var` `nav = Ti.UI.createNavigationWindow({`
+        var list = Ti.UI.createListView({
+            allowsMultipleSelectionDuringEditing: true,
+            allowsMultipleSelectionInteraction: true,
+            sections: [Ti.UI.createListSection({
+                        items: items
+                    })]
+        })
 
-        `window: win,`
+         list.addEventListener('itemclick', function(e) {
+            Ti.API.info('click at index: ' + e.itemIndex);
+        })
 
-        `});`
+         list.addEventListener("delete", function(e){
+            Ti.API.info("Deleted Row Index is is: " +e.itemIndex);
+            Ti.API.info("Deleted Section Index is is: " +e.sectionIndex);
 
-        `var` `items = [];`
+         });
 
-        `for` `(``var` `i = 0; i < 20; i++) {`
+          list.addEventListener("itemsselected", function(e){
+            Ti.API.info("Selected  Item count is: " +e.selectedItems.length);
 
-        `items.push({`
+          var dialog = Ti.UI.createAlertDialog({
+            buttonNames: ['Change Color', 'Cancel'],
+            message: 'Would you like to change title color of selected rows?',
+          });
 
-        `properties: {`
+          dialog.addEventListener('click', function(f) {
+            if (f.index === 1) {
+              list.editing = false;
+            } else {
+                for (var i = 0; i < e.selectedItems.length; i++) {
+                    var rowObject = e.selectedItems[i];
+                    var item = rowObject.section.getItemAt(rowObject.itemIndex)
+                    item.properties.color = 'green';
+                    rowObject.section.updateItemAt(rowObject.itemIndex, item);
+                }
+                list.editing = false;
+            }
+          });
+         dialog.show();
 
-        `title:` `'Item '` `+ i,`
+        });
 
-        `canEdit:` `true``,`
-
-        `}`
-
-        `});`
-
-        `}`
-
-        `var` `list = Ti.UI.createListView({`
-
-        `allowsMultipleSelectionDuringEditing:` `true``,`
-
-        `allowsMultipleSelectionInteraction:` `true``,`
-
-        `sections: [Ti.UI.createListSection({`
-
-        `items: items`
-
-        `})]`
-
-        `})`
-
-        `list.addEventListener(``'itemclick'``,` `function``(e) {`
-
-        `Ti.API.info(``'click at index: '` `+ e.itemIndex);`
-
-        `})`
-
-        `list.addEventListener(``"delete"``,` `function``(e){`
-
-        `Ti.API.info(``"Deleted Row Index is is: "` `+e.itemIndex);`
-
-        `Ti.API.info(``"Deleted Section Index is is: "` `+e.sectionIndex);`
-
-        `});`
-
-        `list.addEventListener(``"itemsselected"``,` `function``(e){`
-
-        `Ti.API.info(``"Selected Item count is: "` `+e.selectedItems.length);`
-
-        `var` `dialog = Ti.UI.createAlertDialog({`
-
-        `buttonNames: [``'Change Color'``,` `'Cancel'``],`
-
-        `message:` `'Would you like to change title color of selected rows?'``,`
-
-        `});`
-
-        `dialog.addEventListener(``'click'``,` `function``(f) {`
-
-        `if` `(f.index === 1) {`
-
-        `list.editing =` `false``;`
-
-        `}` `else` `{`
-
-        `for` `(``var` `i = 0; i < e.selectedItems.length; i++) {`
-
-        `var` `rowObject = e.selectedItems[i];`
-
-        `var` `item = rowObject.section.getItemAt(rowObject.itemIndex)`
-
-        `item.properties.color =` `'green'``;`
-
-        `rowObject.section.updateItemAt(rowObject.itemIndex, item);`
-
-        `}`
-
-        `list.editing =` `false``;`
-
-        `}`
-
-        `});`
-
-        `dialog.show();`
-
-        `});`
-
-        `win.add(list);`
-
-        `nav.open();`
+        win.add(list);
+        nav.open();
+        ```
 
 ## Community credits
 
@@ -308,45 +242,37 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
     * Added support to prevent modal windows from being swiped down
 
-    * `var` `window1 = Ti.UI.createWindow({`
+    * ```javascript
+        var window1 = Ti.UI.createWindow({
+            title: "Modal Window",
+            backgroundColor: 'white'
+        });
 
-        `title:` `"Modal Window"``,`
+        var win = Ti.UI.createNavigationWindow({ window: window1 });
 
-        `backgroundColor:` `'white'`
+        var button1 = Ti.UI.createButton({ title: 'Open Window' });
 
-        `});`
+        window1.add(button1);
 
-        `var` `win = Ti.UI.createNavigationWindow({ window: window1 });`
+        win.open();
 
-        `var` `button1 = Ti.UI.createButton({ title:` `'Open Window'` `});`
+        var window2 = Ti.UI.createWindow({ backgroundColor: 'blue' });
 
-        `window1.add(button1);`
+        var button2 = Ti.UI.createButton({ title: 'Close Window' });
 
-        `win.open();`
+        window2.add(button2);
 
-        `var` `window2 = Ti.UI.createWindow({ backgroundColor:` `'blue'` `});`
+        button1.addEventListener('click', function(e){
+          window2.open({
+            modal:true,
+            forceModal: true
+          });
+        });
 
-        `var` `button2 = Ti.UI.createButton({ title:` `'Close Window'` `});`
-
-        `window2.add(button2);`
-
-        `button1.addEventListener(``'click'``,` `function``(e){`
-
-        `window2.open({`
-
-        `modal:``true``,`
-
-        `forceModal:` `true`
-
-        `});`
-
-        `});`
-
-        `button2.addEventListener(``'click'``,` `function``(e){`
-
-        `window2.close();`
-
-        `});`
+        button2.addEventListener('click', function(e){
+          window2.close();
+        });
+        ```
 
 * [TIMOB-27171](https://jira.appcelerator.org/browse/TIMOB-27171) - iOS 13: Support new UITableViewStyleInsetGrouped style in list-view
 
@@ -356,83 +282,63 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
     * Added feature that allows for detection of dark and light mode
 
-    * `var` `currentStyle = Ti.App.iOS.userInterfaceStyle;`
+    * ```javascript
+        var currentStyle = Ti.App.iOS.userInterfaceStyle;
 
-        `console.log(``'Initial style:'` `+ formattedUserInterfaceStyle(currentStyle));`
+        console.log('Initial style:' + formattedUserInterfaceStyle(currentStyle));
 
-        `var` `win = Ti.UI.createWindow({`
+        var win = Ti.UI.createWindow({
+            backgroundColor: '#fff'
+        });
 
-        `backgroundColor:` `'#fff'`
+        var btn = Ti.UI.createButton({
+            title: 'Check User Interface Style'
+        });
 
-        `});`
+        btn.addEventListener('click', function() {
+            Ti.API.info('User Interface Style: ' + formattedUserInterfaceStyle(currentStyle));
+        });
 
-        `var` `btn = Ti.UI.createButton({`
+        Ti.App.iOS.addEventListener('traitcollectionchange', function (event) {
+            if (currentStyle !== Ti.App.iOS.userInterfaceStyle) {
+                currentStyle = Ti.App.iOS.userInterfaceStyle;
+                Ti.API.info('User Interface Style changed: ' + formattedUserInterfaceStyle(currentStyle));
+            }
+        });
 
-        `title:` `'Check User Interface Style'`
+        win.add(btn);
+        win.open();
 
-        `});`
+        function formattedUserInterfaceStyle(style) {
+            switch (style) {
+                case Ti.App.iOS.USER_INTERFACE_STYLE_LIGHT: return 'Light';
+                case Ti.App.iOS.USER_INTERFACE_STYLE_DARK: return 'Dark';
+            }
 
-        `btn.addEventListener(``'click'``,` `function``() {`
-
-        `Ti.API.info(``'User Interface Style: '` `+ formattedUserInterfaceStyle(currentStyle));`
-
-        `});`
-
-        `Ti.App.iOS.addEventListener(``'traitcollectionchange'``,` `function` `(event) {`
-
-        `if` `(currentStyle !== Ti.App.iOS.userInterfaceStyle) {`
-
-        `currentStyle = Ti.App.iOS.userInterfaceStyle;`
-
-        `Ti.API.info(``'User Interface Style changed: '` `+ formattedUserInterfaceStyle(currentStyle));`
-
-        `}`
-
-        `});`
-
-        `win.add(btn);`
-
-        `win.open();`
-
-        `function` `formattedUserInterfaceStyle(style) {`
-
-        `switch` `(style) {`
-
-        `case` `Ti.App.iOS.USER_INTERFACE_STYLE_LIGHT:` `return`  `'Light'``;`
-
-        `case` `Ti.App.iOS.USER_INTERFACE_STYLE_DARK:` `return`  `'Dark'``;`
-
-        `}`
-
-        `return`  `'Unspecified'``;`
-
-        `}`
+            return 'Unspecified';
+        }
+        ```
 
 * [TIMOB-27273](https://jira.appcelerator.org/browse/TIMOB-27273) - iOS 13: Support new type of status bar style UIStatusBarStyleDarkContent
 
     * Added support for UIStatusBarStyleDarkContent
 
-    * `var` `win = Ti.UI.createWindow({`
+    * ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: 'white',
+            statusBarStyle: Ti.UI.iOS.StatusBar.DARK_CONTENT
+        });
 
-        `backgroundColor:` `'white'``,`
+        var btn = Ti.UI.createButton({ title: 'Trigger' });
 
-        `statusBarStyle: Ti.UI.iOS.StatusBar.DARK_CONTENT`
+        btn.addEventListener('click', function() {
+            Ti.API.info('Hello world!');
+            Ti.API.info(Ti.UI.iOS.StatusBar.DARK_CONTENT);
+        });
 
-        `});`
-
-        `var` `btn = Ti.UI.createButton({ title:` `'Trigger'` `});`
-
-        `btn.addEventListener(``'click'``,` `function``() {`
-
-        `Ti.API.info(``'Hello world!'``);`
-
-        `Ti.API.info(Ti.UI.iOS.StatusBar.DARK_CONTENT);`
-
-        `});`
-
-        `win.add(btn);`
-
-        `win.open(); `
+        win.add(btn);
+        win.open();
+        ```
 
 * [TIMOB-27310](https://jira.appcelerator.org/browse/TIMOB-27310) - iOS 13: Support new type of UIBlurEffectStyle constants
 

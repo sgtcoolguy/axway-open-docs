@@ -32,27 +32,25 @@ This topic covers how to write controller code as well as other JavaScript files
 
 In Alloy, controllers contain the application logic used to control the UI and communicate with the model. The following code contains the presentation logic (index.js) associated with the view (index.xml).
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`function doClick(e) {`
+```javascript
+function doClick(e) {
+    alert($.label.text);
+}
 
-`alert($.label.text);`
+$.index.open();
+```
 
-`}`
+*app/views/index.xml*
 
-`$.index.open();`
-
-app/views/index.xml
-
-`<``Alloy``>`
-
-`<``Window`  `class``=``"container"``>`
-
-`<``Label`  `id``=``"label"`  `onClick``=``"doClick"``>Hello, World</``Label``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window class="container">
+        <Label id="label" onClick="doClick">Hello, World</Label>
+    </Window>
+</Alloy>
+```
 
 All UI elements which have an id attribute in a view are automatically defined and available as a property prefixed by the special variable $ in the controller. The $ is a reference to the controller. For example, the $.label prefix in the controller is used to access the Ti.UI.Label object instance in the view. This reference is used to directly access properties or methods of this object. For example, calling $.label.hide() hides the label from the view or you can change the label text with $.label.text.
 
@@ -66,37 +64,35 @@ Controllers extend BackBone.Events and as such can dispatch events.
 
 For example, our index view could also require another controller to deliver the label and listen to an event:
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
-
-`<``Window`  `class``=``"container"``>`
-
-`<``Require`  `id``=``"label"`  `src``=``"label"`  `onNotify``=``"doSomething"` `/>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window class="container">
+        <Require id="label" src="label" onNotify="doSomething" />
+    </Window>
+</Alloy>
+```
 
 The view of the required label-controller would listen to the click event of the label itself:
 
-app/views/label.xml
+*app/views/label.xml*
 
-`<``Alloy``>`
-
-`<``Label`  `id``=``"label"`  `onClick``=``"passClick"``>Hello, World</``Label``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Label id="label" onClick="passClick">Hello, World</Label>
+</Alloy>
+```
 
 And that label-controller would in turn fire the notify event on itself so the index controller will receive it:
 
-app/controllers/label.js
+*app/controllers/label.js*
 
-`function` `passClick(e) {`
-
-`$.trigger(``'notify'``);`
-
-`}`
+```javascript
+function passClick(e) {
+    $.trigger('notify');
+}
+```
 
 ### Inheritance
 
@@ -104,35 +100,33 @@ Controllers can inherit from other controllers by assigning them as a base (pare
 
 For example, the animal view-controller defines a label object with a speak method:
 
-app/controllers/animal.js
+*app/controllers/animal.js*
 
-`exports.speak =` `function``() {`
+```javascript
+exports.speak = function() {
+    alert("Yelp!");
+};
+```
 
-`alert(``"Yelp!"``);`
+*app/views/animal.xml*
 
-`};`
-
-app/views/animal.xml
-
-`<``Alloy``>`
-
-`<``Label`  `id``=``"animalLabel"``>Animal</``Label``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Label id="animalLabel">Animal</Label>
+</Alloy>
+```
 
 Then, the following code inherits from the animal view-controller and overrides the speak method and label text property to customize it for a dog controller.
 
-app/controllers/dog.js
+*app/controllers/dog.js*
 
-`exports.baseController =` `"animal"``;`
-
-`$.animalLabel.text =` `"Dog"``;`
-
-`exports.speak =` `function``() {`
-
-`alert(``"Bark!"``);`
-
-`};`
+```javascript
+exports.baseController = "animal";
+$.animalLabel.text = "Dog";
+exports.speak = function() {
+    alert("Bark!");
+};
+```
 
 ### Conditional code
 
@@ -160,25 +154,20 @@ The following are the constants defined by Alloy for use in the controller code:
 
 For example, since iOS devices do not include a back button, the application can conditionally add one to a window controller:
 
-`if` `(OS_IOS) {`
+```javascript
+if (OS_IOS) {
+  var closeButton = Ti.UI.createButton({
+        title: 'Close',
+        style: Ti.UI.iPhone.SystemButtonStyle.PLAIN
+    });
 
-`var` `closeButton = Ti.UI.createButton({`
+    closeButton.addEventListener('click', function(){
+        $.window.close();
+    });
 
-`title:` `'Close'``,`
-
-`style: Ti.UI.iPhone.SystemButtonStyle.PLAIN`
-
-`});`
-
-`closeButton.addEventListener(``'click'``,` `function``(){`
-
-`$.window.close();`
-
-`});`
-
-`$.window.leftNavButton = closeButton;`
-
-`}`
+    $.window.leftNavButton = closeButton;
+}
+```
 
 ### Passing arguments
 
@@ -186,45 +175,42 @@ When initializing an external controller, you can pass arguments to customize it
 
 For the TableViewRow object, called 'row', the view contains only the object, and the controller contains only a few lines of code to parse the arguments:
 
-app/views/row.xml
+*app/views/row.xml*
 
-`<``Alloy``>`
+```xml
+<Alloy>
+    <TableViewRow id="rowView"/>
+</Alloy>
+```
 
-`<``TableViewRow`  `id``=``"rowView"``/>`
+*app/controllers/row.js (Alloy 1.6+)*
 
-`</``Alloy``>`
+```
+$.rowView.title = $.args.title || '';
+$.rowView.url = $.args.url || '';
+```
 
-app/controllers/row.js (Alloy 1.6+)
+*app/controllers/row.js (Alloy <1.6)*
 
-`$.rowView.title = $.args.title ||` `''``;`
-
-`$.rowView.url = $.args.url ||` `''``;`
-
-app/controllers/row.js (Alloy <1.6)
-
-`var` `args = arguments[0] || {};`
+```javascript
+var args = arguments[0] || {};
+```
 
 In a separate controller containing the TableView object, called 'tableView', the code is cycling through an array of data and creating new instances of 'row' to supply it to 'tableView.'
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`var` `data[];`
-
-`for` `(``var` `i=0; i<source.length; i++) {`
-
-`var` `arg = {`
-
-`title: source[i].postTitle,`
-
-`url: source[i].postLink`
-
-`};`
-
-`data.push(Alloy.createController(``'row'``, arg).getView());`
-
-`}`
-
-`$.tableView.setData(data);`
+```javascript
+var data[];
+for (var i=0; i<source.length; i++) {
+    var arg = {
+        title: source[i].postTitle,
+        url: source[i].postLink
+    };
+    data.push(Alloy.createController('row', arg).getView());
+}
+$.tableView.setData(data);
+```
 
 As seen in the example above, the controller is passing different arguments to the 'row' controller, creating unique instances of 'row'.
 
@@ -234,15 +220,17 @@ Controllers can store and access global variables using the Alloy.Globals namesp
 
 Store the parent window:
 
-`$.index.open();`
-
-`Alloy.Globals.parent = $.index;`
+```
+$.index.open();
+Alloy.Globals.parent = $.index;
+```
 
 Access the parent window in another controller:
 
-`var parent = Alloy.Globals.parent;`
-
-`parent.close();`
+```javascript
+var parent = Alloy.Globals.parent;
+parent.close();
+```
 
 Other non-controller JavaScript code can access the Globals variable but need to require the Alloy module. See [Extending Alloy](#extending-alloy,-underscore.js-and-backbone.js) below.
 
@@ -252,11 +240,11 @@ The initializer file app/alloy.js can be used to execute some code near the begi
 
 For instance, the default isTablet method returns true if it is identified as an iPad, an Android device in the large or extra large group, or if either dimension exceeds 400 dp for Mobile Web application. To override that behavior, you can add the following code to alloy.js.
 
-`Alloy.isTablet = function(){`
-
-`return` `!(Math.min(Ti.Platform.displayCaps.platformHeight, Ti.Platform.displayCaps.platformWidth) <` `600``);`
-
-`}`
+```
+Alloy.isTablet = function(){
+    return !(Math.min(Ti.Platform.displayCaps.platformHeight, Ti.Platform.displayCaps.platformWidth) < 600);
+}
+```
 
 ## Library code and CommonJS modules
 
@@ -264,9 +252,10 @@ Some JavaScript code might not be suitable as controller code, since it does not
 
 To use the library or CommonJS module, require it with the library name or module name without the 'app/lib' path and '.js' extension:
 
-`var` `lib = require(``'library_name'``);`
-
-`lib.foo();`
+```javascript
+var lib = require('library_name');
+lib.foo();
+```
 
 Titanium and Alloy do not support the Node.js concept of "folders as modules". That is, requiring a folder name does not automatically load the index.js or index.json file inside the folder, or use the package.json file to locate the main entry point. You need to explicitly require the file that serves as the main entry point to the library.
 
@@ -278,58 +267,47 @@ Create a folder called specs in the app directory of your Alloy project. Add you
 
 Use the ENV\_PROD variable to check if the application is running as a production target or not, before using the files in the specs folder.
 
-`if` `(!ENV_PROD) {`
-
-`// Executes the fooFunction from the foo module`
-
-`require(``'specs/foo'``).fooFuntion();`
-
-`}`
+```
+if (!ENV_PROD) {
+    // Executes the fooFunction from the foo module
+  require('specs/foo').fooFuntion();
+}
+```
 
 ### Platform-specific library folders
 
 Starting with Alloy 1.5.0, you can also create platform-specific subfolders in the lib directory. Just add a folder named **android** or **ios** under the component folder and add your platform-specific files for Android or iOS into the folder, respectively. Do not include the platform-specific folder name when referencing the file.
 
-`app/`
-
-`├──lib`
-
-`│ ├──ios`
-
-`│ │ └── library_name.js`
-
-`│ └── library_name.js`
-
-`├──models`
-
-`├──styles`
-
-`└──views`
-
-`└── index.xml`
+```
+app/
+├──lib
+│  ├──ios
+│  │   └── library_name.js
+│  └── library_name.js
+├──models
+├──styles
+└──views
+   └── index.xml
+```
 
 ### Extending Alloy, Underscore.js and Backbone.js
 
 To access the Alloy API methods, such as createController and createModel, as well as Underscore.js and Backbone.js in CommonJS modules and JavaScript files in app/lib, you need to load those modules in to the library:
 
-`var` `Alloy = require(``'alloy'``), _ = require(``"alloy/underscore"``)._, Backbone = require(``"alloy/backbone"``);`
+```javascript
+var Alloy = require('alloy'), _ = require("alloy/underscore")._, Backbone = require("alloy/backbone");
 
-`// Alloy extended`
+// Alloy extended
+Alloy.createController('foo').getView().open();
 
-`Alloy.createController(``'foo'``).getView().open();`
+// Underscore extended
+var even = _.find([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+Ti.API.info(even);
 
-`// Underscore extended`
-
-`var` `even = _.find([1, 2, 3, 4, 5, 6],` `function``(num){` `return` `num % 2 == 0; });`
-
-`Ti.API.info(even);`
-
-`// Backbone extended`
-
-`var` `Book = Backbone.Model.extend();`
-
-`var` `book =` `new` `Book({title:` `'Ulysses'``, author:` `'James Joyce'``});`
-
-`Ti.API.info(JSON.stringify(book));`
+// Backbone extended
+var Book = Backbone.Model.extend();
+var book = new Book({title: 'Ulysses', author: 'James Joyce'});
+Ti.API.info(JSON.stringify(book));
+```
 
 Currently, these modules are automatically available in the global scope and these APIs can be used without loading the modules. Referencing these modules without loading them first with the require method is discouraged and this behavior may be deprecated in the future. To ensure compatibility with future releases, always use the require method to load and use these modules.

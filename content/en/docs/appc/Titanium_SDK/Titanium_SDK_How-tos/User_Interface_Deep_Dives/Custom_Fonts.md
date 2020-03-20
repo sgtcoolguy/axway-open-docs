@@ -42,19 +42,16 @@ To use a custom font in an Alloy project, place the font file in a "fonts" folde
 
 Create a text-based UI element, such as a [Label](#!/api/Titanium.UI.Label) element, and optionally assign it an ID or class, as shown below.
 
-View - index.xml
+*View - index.xml*
 
-`<``Alloy``>`
-
-`<``View``>`
-
-`<``Label`  `id``=``"spicyrice"``>This is Spicy Rice.</``Label``>`
-
-`<``Label`  `id``=``"burnstowndam"``>This is Burnstown Dam.</``Label``>`
-
-`</``View``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+  <View>
+      <Label id="spicyrice">This is Spicy Rice.</Label>
+      <Label id="burnstowndam">This is Burnstown Dam.</Label>
+  </View>
+</Alloy>
+```
 
 Create style rules for the #spicyrice and #burnstowndam elements that assigns the font to the rule's [fontFamily](#!/api/Font-property-fontFamily) property. The value you assign to fontFamily depends on the platform.
 
@@ -66,43 +63,37 @@ Create style rules for the #spicyrice and #burnstowndam elements that assigns th
 
 For example, in the following code the file name of the Burnstown Dam font is "burnstown\_dam.otf". For an Android application you therefore assign the value **burnstown\_dam** to fontFamily:
 
-`"#burnstowndam"``: {`
-
-`font``: {`
-
-`fontFamily:` `'burnstown_dam'`
-
-`}`
-
-`}`
+```
+"#burnstowndam": {
+  font: {
+      fontFamily: 'burnstown_dam'
+  }
+}
+```
 
 The PostScript name for Burnstown Dam is **BurnstownDam-Regular**, so for an iOS application you assign that value to fontFamily:
 
-`"#burnstowndam"``: {`
-
-`font``: {`
-
-`fontFamily:` `'BurnstownDam-Regular'`
-
-`}`
-
-`}`
+```
+"#burnstowndam": {
+  font: {
+      fontFamily: 'BurnstownDam-Regular'
+  }
+}
+```
 
 ### Rename font file to match PostScript name
 
 One way to handle cross-platform font differences easier is to rename the base name of the font file to match the font's PostScript name. You can then use that same value for fontFamily for both iOS and Android. To apply this to the previous example, rename "burnstown\_dam.otf" to **BurnstownDam-Regular.otf** (the PostScript name). Then you can use a single style rule for both platforms.
 
-Font file renamed to match PostScript name
+*Font file renamed to match PostScript name*
 
-`"#burnstowndam"``: {`
-
-`font``: {`
-
-`fontFamily:` `'BurnstownDam-Regular'`
-
-`}`
-
-`}`
+```
+"#burnstowndam": {
+  font: {
+      fontFamily: 'BurnstownDam-Regular'
+  }
+}
+```
 
 This is the approach taken in the [CustomFonts](./attachments_37685705_2_Custom_Fonts.zip) sample application.
 
@@ -110,27 +101,20 @@ This is the approach taken in the [CustomFonts](./attachments_37685705_2_Custom_
 
 You can also use platform-specific styles in your TSS file (see [Alloy Styles and Themes](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#platform-specific-styles)) to assign the proper fontFamily name. At build time, only those settings appropriate to your target platform are included in the build.
 
-Platform-specific font styling
+*Platform-specific font styling*
 
-`"#burnstowndam[platform=ios]"``: {`
-
-`font``: {`
-
-`fontFamily:` `"BurnstownDam-Regular"`
-
-`}`
-
-`},`
-
-`"#burnstowndam[platform=android]"``: {`
-
-`font``: {`
-
-`fontFamily:` `"burnstown_dam"`
-
-`}`
-
-`}`
+```
+"#burnstowndam[platform=ios]": {
+  font: {
+    fontFamily: "BurnstownDam-Regular"
+  }
+},
+"#burnstowndam[platform=android]": {
+  font: {
+    fontFamily: "burnstown_dam"
+  }
+}
+```
 
 ### Finding a font's PostScript name
 
@@ -158,41 +142,28 @@ Using a custom font in a classic Titanium application requires adding some runti
 
 2. The code you use varies a bit by platform, as illustrated in the following code sample:
 
-    `/*`
+    ```javascript
+    /*
+    * Let's say you downloaded the "Spicy Rice" font from Google WebFonts.
+    * You'd have a file named SpicyRice-Regular.ttf in your fonts directory
+    */
 
-    `* Let's say you downloaded the "Spicy Rice" font from Google WebFonts.`
+    var customFont = 'Spicy Rice'; // use the friendly-name on iOS
+    if(Ti.Platform.osname=='android') {
+       // on Android, use the "base name" of the file (name without extension)
+       customFont = 'SpicyRice-Regular';
+    }
 
-    `* You'd have a file named SpicyRice-Regular.ttf in your fonts directory`
-
-    `*/`
-
-    `var` `customFont =` `'Spicy Rice'``;` `// use the friendly-name on iOS`
-
-    `if``(Ti.Platform.osname==``'android'``) {`
-
-    `// on Android, use the "base name" of the file (name without extension)`
-
-    `customFont =` `'SpicyRice-Regular'``;`
-
-    `}`
-
-    `var` `label1 = Titanium.UI.createLabel({`
-
-    `color:` `'#000'``,`
-
-    `text:` `'I am Window 1'``,`
-
-    `font: {`
-
-    `fontSize: 40,`
-
-    `fontFamily: customFont`
-
-    `},`
-
-    `textAlign:` `'center'`
-
-    `});`
+    var label1 = Titanium.UI.createLabel({
+       color: '#000',
+       text: 'I am Window 1',
+       font: {
+          fontSize: 40,
+          fontFamily: customFont
+       },
+       textAlign: 'center'
+    });
+    ```
 
 3. On Android, build your project and the custom font should show up.
 
@@ -204,65 +175,42 @@ For iOS builds, all fonts located in the Resources/fonts folder are automaticall
 
 Building in those if/then statements can make for some hard to read and maintain code. So, here's a little trick pulled from Kevin Whinnery's Tweetanium app. First, include the following function in your app (maybe in your library of helper functions):
 
-`/*`
-
-`Branching logic based on OS`
-
-`*/`
-
-`var` `osname = Ti.Platform.osname;`
-
-`var` `os =` `function``(``/*Object*/` `map) {`
-
-`var` `def = map.def||``null``;` `//default function or value`
-
-`if` `(map[osname]) {`
-
-`if` `(``typeof` `map[osname] ==` `'function'``) {` `return` `map[osname](); }`
-
-`else` `{` `return` `map[osname]; }`
-
-`}`
-
-`else` `{`
-
-`if` `(``typeof` `def ==` `'function'``) {` `return` `def(); }`
-
-`else` `{` `return` `def; }`
-
-`}`
-
-`};`
+```javascript
+/*
+  Branching logic based on OS
+*/
+var osname = Ti.Platform.osname;
+var os = function(/*Object*/ map) {
+  var def = map.def||null; //default function or value
+  if (map[osname]) {
+    if (typeof map[osname] == 'function') { return map[osname](); }
+    else { return map[osname]; }
+  }
+  else {
+    if (typeof def == 'function') { return def(); }
+    else { return def; }
+  }
+};
+```
 
 With that in place, you can now put the platform-dependent values right in line with the property assignment. Like this:
 
-`var` `label1 = Titanium.UI.createLabel({`
-
-`color:` `'#000'``,`
-
-`text:` `'I am Window 1'``,`
-
-`font: {`
-
-`fontSize: 40,`
-
-`fontFamily: os({`
-
-`iphone:` `'Spicy Rice'``,`
-
-`ipad:` `'Spicy Rice'``,`
-
-`ipod:` `'Spicy Rice'``,`
-
-`android:` `'SpicyRice-Regular'`
-
-`})`
-
-`},`
-
-`textAlign:` `'center'`
-
-`});`
+```javascript
+var label1 = Titanium.UI.createLabel({
+  color: '#000',
+  text: 'I am Window 1',
+  font: {
+    fontSize: 40,
+    fontFamily: os({
+      iphone: 'Spicy Rice',
+      ipad: 'Spicy Rice',
+      ipod: 'Spicy Rice',
+      android: 'SpicyRice-Regular'
+    })
+  },
+  textAlign: 'center'
+});
+```
 
 The os() function will take the values you provide for each of the platforms, and return the correct one for the OS on which your code is running. You can use any of the values returned by Ti.Platform.osname as keys for that function's single argument, as shown above.
 

@@ -16,11 +16,15 @@ Displays if the code fails at the specified point.
 
 **Syntax**
 
-`aptana.fail(message,arg1,arg2,...);`
+```
+aptana.fail(message,arg1,arg2,...);
+```
 
 **Example**
 
-`aptana.fail(``"Failed!"``,` `"arg1"``,` `"arg2"``);`
+```
+aptana.fail("Failed!", "arg1", "arg2");
+```
 
 ### aptana.assert
 
@@ -28,11 +32,15 @@ Asserts the specified statement.
 
 **Syntax**
 
-`aptana.``assert``(object, arg1, arg2, ...);`
+```
+aptana.assert(object, arg1, arg2, ...);
+```
 
 **Example**
 
-`aptana.``assert``(``null``,` `"This is my assert message!"``,` `"arg1"``,` `"arg2"``);`
+```
+aptana.assert(null, "This is my assert message!", "arg1", "arg2");
+```
 
 ### aptana.assertEquals
 
@@ -40,11 +48,15 @@ Returns true if the arguments are equal.
 
 **Syntax**
 
-`aptana.assertEquals(o1,o2,arguments);`
+```
+aptana.assertEquals(o1,o2,arguments);
+```
 
 **Example**
 
-`aptana.assertEquals(``1``,``2``,` `"arg1"``,` `"arg2"``);`
+```
+aptana.assertEquals(1,2, "arg1", "arg2");
+```
 
 ### aptana.assertNotEquals
 
@@ -52,11 +64,15 @@ Returns true if the arguments are not equal.
 
 **Syntax**
 
-`aptana.assertNotEquals(o1,o2,arguments);`
+```
+aptana.assertNotEquals(o1,o2,arguments);
+```
 
 **Example**
 
-`aptana.assertNotEquals(``1``,``1`  `"arg1"``,` `"arg2"``);`
+```
+aptana.assertNotEquals(1,1 "arg1", "arg2");
+```
 
 ### aptana.assertGreater
 
@@ -64,11 +80,15 @@ Returns true if the first argument is greater than the second argument(s).
 
 **Syntax**
 
-`aptana.assertGreater(o1,o2,arguments);`
+```
+aptana.assertGreater(o1,o2,arguments);
+```
 
 **Example**
 
-`aptana.assertGreater(``1``,``2``,``"arg1"``,` `"arg2"``);`
+```
+aptana.assertGreater(1,2,"arg1", "arg2");
+```
 
 ### aptana.assertNotGreater
 
@@ -76,11 +96,15 @@ Returns true if the first argument is not greater than the second argument(s).
 
 **Syntax**
 
-`aptana.assertNotGreater(o1,o2,arguments);`
+```
+aptana.assertNotGreater(o1,o2,arguments);
+```
 
 **Example**
 
-`aptana.assertNotGreater(``1``,``2``,``"arg1"``,` `"arg2"``);`
+```
+aptana.assertNotGreater(1,2,"arg1", "arg2");
+```
 
 ### aptana.assertLess
 
@@ -88,11 +112,15 @@ Returns true if the first argument is less than the second argument(s).
 
 **Syntax**
 
-`aptana.assertLess(o1,o2,arguments);`
+```
+aptana.assertLess(o1,o2,arguments);
+```
 
 **Example**
 
-`aptana.assertLess(``2``,``1``,` `"arg1"``,` `"arg2"``);`
+```
+aptana.assertLess(2,1, "arg1", "arg2");
+```
 
 ### aptana.assertNotLess
 
@@ -100,11 +128,15 @@ Returns true if the first argument is not less than the second argument(s).
 
 **Syntax**
 
-`aptana.assertNotLess(o1,o2,arguments);`
+```
+aptana.assertNotLess(o1,o2,arguments);
+```
 
 **Example**
 
-`aptana.assertNotLess(``2``,``1``,` `"arg1"``,` `"arg2"``);`
+```
+aptana.assertNotLess(2,1, "arg1", "arg2");
+```
 
 ### aptana.assertContains
 
@@ -112,11 +144,15 @@ Returns true if the objects contain the arguments.
 
 **Syntax**
 
-`aptana.assertContains(o1,o2,arguments);`
+```
+aptana.assertContains(o1,o2,arguments);
+```
 
 **Example**
 
-`aptana.assertContains(``"x"``,window,` `"arg1"``,` `"arg2"``);`
+```
+aptana.assertContains("x",window, "arg1", "arg2");
+```
 
 ### aptana.assertNotContains
 
@@ -124,11 +160,15 @@ Returns true if the objects do not contain the arguments.
 
 **Syntax**
 
-`aptana.assertNotContains(o1,o2,arguments);`
+```
+aptana.assertNotContains(o1,o2,arguments);
+```
 
 **Example**
 
-`aptana.assertNotContains(``"document"``,window,` `"arg1"``,` `"arg2"``);`
+```
+aptana.assertNotContains("document",window, "arg1", "arg2");
+```
 
 ### aptana.assertTrue
 
@@ -136,11 +176,15 @@ Returns true if the specified condition is true.
 
 **Syntax**
 
-`aptana.assertTrue(object,arguments);`
+```
+aptana.assertTrue(object,arguments);
+```
 
 **Example**
 
-`aptana.assertTrue(``false``,` `"arg1"``,` `"arg2"``);`
+```
+aptana.assertTrue(false, "arg1", "arg2");
+```
 
 ### aptana.assertFalse
 
@@ -148,11 +192,15 @@ Returns true if the specified condition is false.
 
 **Syntax**
 
-`aptana.assertFalse(object,arguments);`
+```
+aptana.assertFalse(object,arguments);
+```
 
 **Example**
 
-`aptana.assertFalse(``true``,` `"arg1"``,` `"arg2"``);`
+```
+aptana.assertFalse(true, "arg1", "arg2");
+```
 
 ### aptana.assertNull
 
@@ -160,11 +208,15 @@ Returns true if the specified object/arguments are null.
 
 **Syntax**
 
-`aptana.assertNull(object,arguments);`
+```
+aptana.assertNull(object,arguments);
+```
 
 **Example**
 
-`aptana.assertNull(window,` `"arg1"``,` `"arg2"``);`
+```
+aptana.assertNull(window, "arg1", "arg2");
+```
 
 ### aptana.assertNotNull
 
@@ -172,11 +224,15 @@ Returns true if the specified object/arguments are not null.
 
 **Syntax**
 
-`aptana.assertNotNull(object,arguments);`
+```
+aptana.assertNotNull(object,arguments);
+```
 
 **Example**
 
-`aptana.assertNotNull(``null``,` `"arg1"``,` `"arg2"``);`
+```
+aptana.assertNotNull(null, "arg1", "arg2");
+```
 
 ### aptana.assertUndefined
 
@@ -184,11 +240,15 @@ Returns true if the specified object/arguments are undefined.
 
 **Syntax**
 
-`aptana.assertUndefined(object,arguments);`
+```
+aptana.assertUndefined(object,arguments);
+```
 
 **Example**
 
-`aptana.assertUndefined(window,` `"arg1"``,` `"arg2"``);`
+```
+aptana.assertUndefined(window, "arg1", "arg2");
+```
 
 ### aptana.assertNotUndefined
 
@@ -196,11 +256,15 @@ Returns true if the specified object/arguments are not undefined.
 
 **Syntax**
 
-`aptana.assertNotUndefined(object,arguments);`
+```
+aptana.assertNotUndefined(object,arguments);
+```
 
 **Example**
 
-`var x; aptana.assertNotUndefined(x,` `"arg1"``,` `"arg2"``);`
+```javascript
+var x; aptana.assertNotUndefined(x, "arg1", "arg2");
+```
 
 ### aptana.assertInstanceOf
 
@@ -208,11 +272,15 @@ Returns true if the argument(s) are an instance of the object(s).
 
 **Syntax**
 
-`aptana.assertInstanceOf(o1,o2,arguments);`
+```
+aptana.assertInstanceOf(o1,o2,arguments);
+```
 
 **Example**
 
-`aptana.assertInstanceOf(``"str"``,Date,` `"arg1"``,` `"arg2"``);`
+```
+aptana.assertInstanceOf("str",Date, "arg1", "arg2");
+```
 
 ### aptana.assertNotInstanceOf
 
@@ -220,11 +288,15 @@ Returns true if the argument(s) are not an instance of the objects.
 
 **Syntax**
 
-`aptana.assertNotInstanceOf(o1,o2,arguments);`
+```
+aptana.assertNotInstanceOf(o1,o2,arguments);
+```
 
 **Example**
 
-`aptana.assertNotInstanceOf(``new` `Date(),Date,` `"arg1"``,` `"arg2"``);`
+```
+aptana.assertNotInstanceOf(new Date(),Date, "arg1", "arg2");
+```
 
 ### aptana.assertTypeOf
 
@@ -232,11 +304,15 @@ Returns true if the argument(s) are the type of the objects.
 
 **Syntax**
 
-`aptana.assertTypeOf(o1,o2,arguments);`
+```
+aptana.assertTypeOf(o1,o2,arguments);
+```
 
 **Example**
 
-`aptana.assertTypeOf(``1``,` `"string"``,` `"arg1"``,` `"arg2"``);`
+```
+aptana.assertTypeOf(1, "string", "arg1", "arg2");
+```
 
 ### aptana.assertNotTypeOf
 
@@ -244,11 +320,15 @@ Returns true if the argument(s) are not a type of objects.
 
 **Syntax**
 
-`aptana.assertNotTypeOf(o1,o2,arguments);`
+```
+aptana.assertNotTypeOf(o1,o2,arguments);
+```
 
 **Example**
 
-`aptana.assertNotTypeOf(``1``,``"number"``,` `"arg1"``,` `"arg2"``);`
+```
+aptana.assertNotTypeOf(1,"number", "arg1", "arg2");
+```
 
 ### Related Topics
 

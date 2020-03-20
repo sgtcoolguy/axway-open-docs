@@ -56,17 +56,19 @@ Variable names start with a category noun (lowercase) so that they are easier to
 
 **Variable examples**
 
-`personName, personAddress`
-
-`personNameLast, personNameFirst`
+```
+personName, personAddress
+personNameLast, personNameFirst
+```
 
 Function names follow a similar convention, though we start with a category verb (lowercase) and are often followed by an associated variable name (if any).
 
 **Function examples**
 
-`getPersonName, setPersonAddress`
-
-`driveCarBlue, stopCarRed`
+```
+getPersonName, setPersonAddress
+driveCarBlue, stopCarRed
+```
 
 Both variables and functions (or properties and methods, respectively) start with a lowercase word so that they are easier to differentiate from major namespace objects or 'classes'.
 
@@ -78,9 +80,10 @@ Major objects and class-like functions (constructors) follow a standard pattern 
 
 **Examples**
 
-`Car, GarbageCollector`
-
-`IKSystem, MCStyle`
+```
+Car, GarbageCollector
+IKSystem, MCStyle
+```
 
 #### Namespace
 
@@ -100,11 +103,11 @@ Factory functions are located within a major namespace object, start with 'creat
 
 **Examples**
 
-`createPhotoGallery`
-
-`App.UI.createWidget`
-
-`App.Network.createRequest`
+```
+createPhotoGallery
+App.UI.createWidget
+App.Network.createRequest
+```
 
 #### Operators
 
@@ -112,63 +115,46 @@ Type data and operators should always be separated by a single space.
 
 **Examples**
 
-`var nameFull = nameFirst + nameLast;`
-
-`for` `(var i =` `0``, cl = content.length; i < cl; i++) {}`
+```javascript
+var nameFull = nameFirst + nameLast;
+for (var i = 0, cl = content.length; i < cl; i++) {}
+```
 
 ### Indentation
 
 Both K&R/1TBS and Allman styles are acceptable. **_Consistency is most important and a combination is not to be used on the same project. Clean indentation is required._**
 
-`// K&R/1TBS Style`
+```
+// K&R/1TBS Style
+if (x < 10) {
+  if (y > 10) {
+    // do this
+  }
+} else {
+  // do this
+}
+```
 
-`if` `(x <` `10``) {`
+```
+// Allman Style
+if (x < 10)
+{
+  if (y > 10)
+  {
+    // do this
+  }
+}
+else
+{
+  // do this
+}
 
-`if` `(y >` `10``) {`
-
-`// do this`
-
-`}`
-
-`}` `else` `{`
-
-`// do this`
-
-`}`
-
-`// Allman Style`
-
-`if` `(x <` `10``)`
-
-`{`
-
-`if` `(y >` `10``) `
-
-`{`
-
-`// do this`
-
-`}`
-
-`}`
-
-`else`
-
-`{`
-
-`// do this`
-
-`}`
-
-`// but never do this within a function:`
-
-`return`
-
-`{`
-
-`foo:` `'bar'`
-
-`}`
+// but never do this within a function:
+return
+{
+  foo: 'bar'
+}
+```
 
 As noted, you should never put return on its own line followed by an object literal definition. Doing so will return an undefined value rather than the object. See [this blog post](http://encosia.com/in-javascript-curly-brace-placement-matters-an-example/) or [Crockford's JavaScript: The Good Parts](http://www.amazon.com/dp/0596517742/?tag=stackoverfl08-20) for more info.
 
@@ -177,52 +163,49 @@ As noted, you should never put return on its own line followed by an object lite
 **Concatenation**
 Strings concatenated using the + operator must always use a space be added before and after the + operator to improve readability:
 
-`var` `someString =` `'My name is '` `+ firstName +` `'and I am a developer'``;`
+```javascript
+var someString = 'My name is ' + firstName + 'and I am a developer';
+```
 
 **Primitive type construction**
 Do not use the primitive type object constructors unless you have a very clear reason for doing so.
 
-`// Don't do this`
-
-`var` `test =` `new` `String(``'My String'``);`
+```javascript
+// Don't do this
+var test = new String('My String');
+```
 
 ### Control statements
 
 Switch statements have a single space before the opening parenthesis of the conditional statement and also a single space after the closing parenthesis. Switch statement content is indented with one tab. Content in each case is indented one tab as well:
 
-`switch` `(someTest) {`
+```
+switch (someTest) {
+    case 1:
+        break;
 
-`case`  `1``:`
+    case 2:
+        break;
 
-`break``;`
-
-`case`  `2``:`
-
-`break``;`
-
-`default``:`
-
-`break``;`
-
-`}`
+    default:
+        break;
+}
+```
 
 ### Comments and documentation
 
 Single-line comments are required to reduce programmer error. However, specialized block commenting is preferred when documenting functions. Inline statement comments should be used at a minimum or not at all.
 
-`// Calculate position using initial `
+```javascript
+// Calculate position using initial
+// and offset x coordinates.
+var finalPos = initPosX + offsetPosX;
 
-`// and offset x coordinates.`
-
-`var finalPos = initPosX + offsetPosX;`
-
-`/**`
-
-`* @param {String} customerName Customer's full name.`
-
-`*/`
-
-`function getCustomer(customerName) {}`
+/**
+ * @param {String} customerName Customer's full name.
+ */
+function getCustomer(customerName) {}
+```
 
 ## References and further reading
 

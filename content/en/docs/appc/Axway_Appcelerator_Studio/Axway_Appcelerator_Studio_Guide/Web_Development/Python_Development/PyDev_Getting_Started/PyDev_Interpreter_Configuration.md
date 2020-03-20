@@ -21,7 +21,7 @@ On **Mac** it's usually at someplace resembling the image below (so, if you want
 
 Select only folders that will **NOT be used as source folders for any project** of yours (those should be later configured as source folders in the project).
 
-IMPORTANT for Mac users
+*IMPORTANT for Mac users*
 
 The Python version that usually ships with Mac doesn't seem to have the .py source files available, which are required for PyDev, so using a different interpreter is recommended (for example, download it from [http://python.org](http://python.org)). If you don't want to use a different interpreter, get the source files for the Python '/Lib' folder and add those to the system installation.
 
@@ -91,33 +91,28 @@ A predefined completion module may be created by having a module with the extens
 
 Example of **my.source.module** (must be declared in the **my.source.module.pypredef** file):
 
-`MyConstantA` `=`  `int`
+```
+MyConstantA = int
+MyConstantB = int
 
-`MyConstantB` `=`  `int`
+class MyClass:
 
-`class` `MyClass:`
+    instanceAttribute = QObject
 
-`instanceAttribute` `=` `QObject`
+    def __init__(self, parent=None):
+        '''
 
-`def` `__init__(``self``, parent``=``None``):`
+        @type parent: QObject
+        '''
 
-`'''`
+    def registerTimer(interval, object):
+        '''
 
-`@type` `parent: QObject`
-
-`'''`
-
-`def` `registerTimer(interval,` `object``):`
-
-`'''`
-
-`@type` `interval:` `int`
-
-`@type`  `object``: QObject`
-
-`'''`
-
-`return`  `int`
+        @type interval: int
+        @type object: QObject
+        '''
+        return int
+```
 
 **Note 1**: the name of the file is the exact name of the module
 

@@ -48,29 +48,23 @@ To guide you through the GDPR compliance process for you app, we have create a [
 
 Here is a practical example: Let's assume, you have a Ti.UI.Switch instance in your app that controls whether or not the user should opt out of Analytics. By default, the user is opted in to Analytics.
 
-``// Create a switch, default optOut status = `false` ``
+```javascript
+// Create a switch, default optOut status = `false`
+const switch = Ti.UI.createSwitch({ value: false });
 
-`const` `switch` `= Ti.UI.createSwitch({ value:` `false` `});`
+// On change, toggle the opt-out property
+switch.addEventListener('change', (event) => {
+  Ti.Analytics.optedOut = event.value;
+});
 
-`// On change, toggle the opt-out property`
+// ...
 
-`switch``.addEventListener(``'change'``, (event) => {`
-
-`Ti.Analytics.optedOut = event.value;`
-
-`});`
-
-`// ...`
-
-``// For every Analytics event, validate the `Ti.Analytics.optedOut` property. If the user opted out``
-
-`// and you did not validate it, the Analatyics event will be skipped silently.`
-
-`if` `(!Ti.Analytics.optedOut) {`
-
-`Ti.Analytics.featureEvent(``'i_love_gdpr'``, { really:` `true` `});`
-
-`}`
+// For every Analytics event, validate the `Ti.Analytics.optedOut` property. If the user opted out
+// and you did not validate it, the Analatyics event will be skipped silently.
+if (!Ti.Analytics.optedOut) {
+  Ti.Analytics.featureEvent('i_love_gdpr', { really: true });
+}
+```
 
 ### External Modules
 

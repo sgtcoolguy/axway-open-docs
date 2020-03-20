@@ -29,11 +29,12 @@ Android developers can debug using Chrome DevTools with Titanium SDK 7.0.x and l
 
     1. After building, the console will log the required debugger information, e.g.
 
-Console
+*Console*
 
-`[WARN] JSDebugger: (main) [13,555] Debugger listening on ws:``//127``.0.0.1:51388``/6b8d130f-5a6c-7623-a760-ffc319010448`
-
-`[WARN] JSDebugger: (main) [1,556] To connect Chrome DevTools,` `open` `Chrome to chrome-devtools:``//devtools/bundled/inspector``.html?experiments=``true``&v8only=``true``&ws=127.0.0.1:51388``/6b8d130f-5a6c-7623-a760-ffc319010448`
+```
+[WARN]  JSDebugger: (main) [13,555] Debugger listening on ws://127.0.0.1:51388/6b8d130f-5a6c-7623-a760-ffc319010448
+[WARN]  JSDebugger: (main) [1,556] To connect Chrome DevTools, open Chrome to chrome-devtools://devtools/bundled/inspector.html?experiments=true&v8only=true&ws=127.0.0.1:51388/6b8d130f-5a6c-7623-a760-ffc319010448
+```
 
 Refer to [Google's Get Started with Remote Debugging Android Devices](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/) tutorial for further details on how to debug with Chrome DevTools.
 
@@ -41,11 +42,11 @@ Refer to [Google's Get Started with Remote Debugging Android Devices](https://de
 
 The following is a sample build and debug information to test out your debugging routine on Chrome.
 
-`appc new -t titanium -p android -n inspector --``id` `com.axway.debugger.``test` `-u http:``//www``.example.com`
-
-`cd` `inspector`
-
-`appc run -p android --debug-host` `/127``.0.0.1:51388`
+```bash
+appc new -t titanium -p android -n inspector --id com.axway.debugger.test -u http://www.example.com
+cd inspector
+appc run -p android --debug-host /127.0.0.1:51388
+```
 
 Once the app launches, it should stay on the "splash screen" and spit out some logs that it's waiting 60 seconds for the debugger as well as details on how to connect to it. Specifically it should spit out a URL you can open in Google Chrome browser to debug the app. The debugger should "pause" on the very first line of app.js.
 

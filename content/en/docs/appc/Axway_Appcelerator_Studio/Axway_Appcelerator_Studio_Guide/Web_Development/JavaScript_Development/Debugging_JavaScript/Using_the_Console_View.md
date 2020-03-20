@@ -32,11 +32,15 @@ To add a new log message to the Console View:
 
 3. Add the following line of code to your code:
 
-    `aptana.log(``''``logMessage``''``);`
+    ```
+    aptana.log(''logMessage'');
+    ```
 
     _logMessage_ should be the message that you want to be printed out to the Console View. (e.g.
 
-    `aptana.log(``"Now is "` `+ tDate);`
+    ```
+    aptana.log("Now is " + tDate);
+    ```
 
 4. Click the **Debug** button ![IconDebug1](/Images/appc/download/attachments/30083112/IconDebug1.png) to run/debug your code in your browser.
 

@@ -60,15 +60,15 @@ If you want to use Studio, install:
 
 First, create a new module project.
 
-CLI Instructions
+*CLI Instructions*
 
 From a terminal, change the current working directory to your workspace and run:
 
-`cd /PATH/TO/WORKSPACE`
-
-`appc` `new` `--n test --id com.example.test -p Android`
-
-`## when prompted, select` `"Titanium Module"`
+```bash
+cd /PATH/TO/WORKSPACE
+appc new --n test --id com.example.test -p Android
+## when prompted, select "Titanium Module"
+```
 
 In Studio:
 
@@ -88,17 +88,20 @@ Studio sets up a new folder called test that contains your module project.
 
 Next, build the module and package it. This process produces a ZIP file in the android /dist directory containing a binary library with unprocessed module assets, example code and documentation.
 
-CLI Instructions
+*CLI Instructions*
 
 From a terminal, go to the module's android directory and run appc run -p android --build-only:
 
-`cd test/android`
-
-`appc run -p android --build-only`
+```bash
+cd test/android
+appc run -p android --build-only
+```
 
 After the build completes, unzip the built module in the Titanium SDK home path:
 
-`unzip -o com.example.test-android-``1.0``.``0``.zip -d ~/Library/Application\ Support/Titanium/`
+```
+unzip -o com.example.test-android-1.0.0.zip -d ~/Library/Application\ Support/Titanium/
+```
 
 In Studio:
 
@@ -120,15 +123,15 @@ To test the module, create a test application and add the module as a dependency
 
 ### Create a test application
 
-CLI Instructions
+*CLI Instructions*
 
 From a new terminal window, change the current working directory to your workspace and run the following commands:
 
-`cd /PATH/TO/WORKSPACE`
-
-`appc` `new` `-t titanium -p android -d . -n Hello -u http:``// --id com.example.hello`
-
-`cd Hello/`
+```bash
+cd /PATH/TO/WORKSPACE
+appc new -t titanium -p android -d . -n Hello -u http:// --id com.example.hello
+cd Hello/
+```
 
 In Studio:
 
@@ -152,19 +155,17 @@ Studio sets up a new folder called Hello that contains the test application you 
 
 To load the module in the application, you need to add it as a dependency to the project.
 
-CLI Instructions
+*CLI Instructions*
 
 Open the tiapp.xml and update the <modules/> element to include the module as a dependency to the project:
 
-`<ti:app>`
-
-`<modules>`
-
-`<module platform=``"android"``>com.example.test</module>`
-
-`</modules>`
-
-`</ti:app>`
+```xml
+<ti:app>
+    <modules>
+        <module platform="android">com.example.test</module>
+    </modules>
+</ti:app>
+```
 
 In Studio:
 
@@ -182,25 +183,25 @@ The module can be loaded by passing the module ID to the require()method, which 
 
 Open the app/alloy.js file and replace the code with the following, which invokes API calls to the module:
 
-app/alloy.js
+*app/alloy.js*
 
-`var test = require(``'com.example.test'``);`
-
-`Ti.API.info(``"module is => "` `+ test);`
-
-`Ti.API.info(``"module example() method returns => "` `+ test.example());`
-
-`Ti.API.info(``"module exampleProp is => "` `+ test.exampleProp);`
-
-`test.exampleProp =` `"This is a test value"``;`
+```javascript
+var test = require('com.example.test');
+Ti.API.info("module is => " + test);
+Ti.API.info("module example() method returns => " + test.example());
+Ti.API.info("module exampleProp is => " + test.exampleProp);
+test.exampleProp = "This is a test value";
+```
 
 ### Run the application
 
-CLI Instructions
+*CLI Instructions*
 
 From a terminal that has the test app as its current working directory, run:
 
-`appc run -p android`
+```bash
+appc run -p android
+```
 
 In the Studio toolbar, select **Run** in **Launch Modes** and select an Android emulator in **Launch Targets**.
 
@@ -208,13 +209,13 @@ Studio builds and launches the application on the selected Android simulator. Mo
 
 The console lines seen below show us that the module is working as expected.
 
-Console
+*Console*
 
-`[INFO] module is => [object Object]`
-
-`[INFO] module example() method returns => hello world`
-
-`[INFO] module exampleProp is => hello world`
+```
+[INFO]  module is => [object Object]
+[INFO]  module example() method returns => hello world
+[INFO]  module exampleProp is => hello world
+```
 
 ## Modify the module
 
@@ -230,195 +231,112 @@ First, look at some of the default files created by the Titanium SDK. Expand the
 
 To display any UI with a module, create a view proxy and view class in pairs. Open the ExampleProxy.java file and replace its contents with the following:
 
-ExampleProxy.java
-
-`package` `com.example.test;`
-
-`import` `org.appcelerator.kroll.KrollDict;`
-
-`import` `org.appcelerator.kroll.annotations.Kroll;`
-
-`import` `org.appcelerator.kroll.common.AsyncResult;`
-
-`import` `org.appcelerator.kroll.common.TiMessenger;`
-
-`import` `org.appcelerator.titanium.TiApplication;`
-
-`import` `org.appcelerator.titanium.TiC;`
-
-`import` `org.appcelerator.titanium.util.TiConvert;`
-
-`import` `org.appcelerator.titanium.proxy.TiViewProxy;`
-
-`import` `org.appcelerator.titanium.view.TiCompositeLayout;`
-
-`import` `org.appcelerator.titanium.view.TiCompositeLayout.LayoutArrangement;`
-
-`import` `org.appcelerator.titanium.view.TiUIView;`
-
-`import` `android.app.Activity;`
-
-`import` `android.os.Handler;`
-
-`import` `android.os.Message;`
-
-`import` `android.view.View;`
-
-`@Kroll``.proxy(creatableInModule=TestModule.``class``)`
-
-`public`  `class` `ExampleProxy` `extends` `TiViewProxy`
-
-`{`
-
-`private`  `static`  `final`  `int` `MSG_SET_COLOR =` `70000``;`
-
-`private`  `static`  `final` `String PROPERTY_COLOR =` `"color"``;`
-
-`private`  `class` `ExampleView` `extends` `TiUIView`
-
-`{`
-
-`public` `ExampleView(TiViewProxy proxy) {`
-
-`super``(proxy);`
-
-`LayoutArrangement arrangement = LayoutArrangement.DEFAULT;`
-
-`if` `(proxy.hasProperty(TiC.PROPERTY_LAYOUT)) {`
-
-`String layoutProperty = TiConvert.toString(proxy.getProperty(TiC.PROPERTY_LAYOUT));`
-
-`if` `(layoutProperty.equals(TiC.LAYOUT_HORIZONTAL)) {`
-
-`arrangement = LayoutArrangement.HORIZONTAL;`
-
-`}` `else`  `if` `(layoutProperty.equals(TiC.LAYOUT_VERTICAL)) {`
-
-`arrangement = LayoutArrangement.VERTICAL;`
-
-`}`
-
-`}`
-
-`setNativeView(``new` `TiCompositeLayout(proxy.getActivity(), arrangement));`
-
-`}`
-
-`@Override`
-
-`public`  `void` `processProperties(KrollDict props)`
-
-`{`
-
-`super``.processProperties(props);`
-
-`// Check if the color is specified when the view was created`
-
-`if` `(props.containsKey(PROPERTY_COLOR)) {`
-
-`View square = (View)getNativeView();`
-
-`square.setBackgroundColor(TiConvert.toColor(props, PROPERTY_COLOR));`
-
-`square.invalidate();`
-
-`}`
-
-`}`
-
-`// Setter method called by the proxy when the 'color' property is set.`
-
-`public`  `void` `setColor(String color)`
-
-`{`
-
-`// Use the TiConvert method to get the values from the arguments`
-
-`int` `newColor = TiConvert.toColor(color);`
-
-`View square = (View)getNativeView();`
-
-`square.setBackgroundColor(newColor);`
-
-`}`
-
-`}`
-
-`@Override`
-
-`public` `TiUIView createView(Activity activity)`
-
-`{`
-
-`TiUIView view =` `new` `ExampleView(``this``);`
-
-`view.getLayoutParams().autoFillsHeight =` `true``;`
-
-`view.getLayoutParams().autoFillsWidth =` `true``;`
-
-`return` `view;`
-
-`}`
-
-`@Kroll``.setProperty(retain=``false``)`
-
-`public`  `void` `setColor(``final` `String color)`
-
-`{`
-
-`// Get the view object from the proxy and set the color`
-
-`if` `(view !=` `null``) {`
-
-`if` `(!TiApplication.isUIThread()) {`
-
-`// If we are not on the UI thread, need to use a message to set the color`
-
-`TiMessenger.sendBlockingMainMessage(``new` `Handler(TiMessenger.getMainMessenger().getLooper(),` `new` `Handler.Callback() {`
-
-`public`  `boolean` `handleMessage(Message msg) {`
-
-`switch` `(msg.what) {`
-
-`case` `MSG_SET_COLOR: {`
-
-`AsyncResult result = (AsyncResult) msg.obj;`
-
-`ExampleView fooView = (ExampleView)view;`
-
-`fooView.setColor(color);`
-
-`result.setResult(``null``);`
-
-`return`  `true``;`
-
-`}`
-
-`}`
-
-`return`  `false``;`
-
-`}`
-
-`}).obtainMessage(MSG_SET_COLOR), color);`
-
-`}` `else` `{`
-
-`ExampleView fooView = (ExampleView)view;`
-
-`fooView.setColor(color);`
-
-`}`
-
-`}`
-
-`// Updates the property on the JavaScript proxy object`
-
-`setProperty(``"color"``, color,` `true``);`
-
-`}`
-
-`}`
+*ExampleProxy.java*
+
+```java
+package com.example.test;
+
+import org.appcelerator.kroll.KrollDict;
+import org.appcelerator.kroll.annotations.Kroll;
+import org.appcelerator.kroll.common.AsyncResult;
+import org.appcelerator.kroll.common.TiMessenger;
+import org.appcelerator.titanium.TiApplication;
+import org.appcelerator.titanium.TiC;
+import org.appcelerator.titanium.util.TiConvert;
+import org.appcelerator.titanium.proxy.TiViewProxy;
+import org.appcelerator.titanium.view.TiCompositeLayout;
+import org.appcelerator.titanium.view.TiCompositeLayout.LayoutArrangement;
+import org.appcelerator.titanium.view.TiUIView;
+import android.app.Activity;
+import android.os.Handler;
+import android.os.Message;
+import android.view.View;
+
+@Kroll.proxy(creatableInModule=TestModule.class)
+public class ExampleProxy extends TiViewProxy
+{
+    private static final int MSG_SET_COLOR = 70000;
+    private static final String PROPERTY_COLOR = "color";
+
+    private class ExampleView extends TiUIView
+    {
+        public ExampleView(TiViewProxy proxy) {
+            super(proxy);
+            LayoutArrangement arrangement = LayoutArrangement.DEFAULT;
+            if (proxy.hasProperty(TiC.PROPERTY_LAYOUT)) {
+                String layoutProperty = TiConvert.toString(proxy.getProperty(TiC.PROPERTY_LAYOUT));
+                if (layoutProperty.equals(TiC.LAYOUT_HORIZONTAL)) {
+                    arrangement = LayoutArrangement.HORIZONTAL;
+                } else if (layoutProperty.equals(TiC.LAYOUT_VERTICAL)) {
+                    arrangement = LayoutArrangement.VERTICAL;
+                }
+            }
+            setNativeView(new TiCompositeLayout(proxy.getActivity(), arrangement));
+        }
+
+        @Override
+        public void processProperties(KrollDict props)
+        {
+            super.processProperties(props);
+
+            // Check if the color is specified when the view was created
+            if (props.containsKey(PROPERTY_COLOR)) {
+                View square = (View)getNativeView();
+                square.setBackgroundColor(TiConvert.toColor(props, PROPERTY_COLOR));
+                square.invalidate();
+            }
+        }
+
+        // Setter method called by the proxy when the 'color' property is set.
+        public void setColor(String color)
+        {
+            // Use the TiConvert method to get the values from the arguments
+            int newColor = TiConvert.toColor(color);
+            View square = (View)getNativeView();
+            square.setBackgroundColor(newColor);
+        }
+    }
+
+    @Override
+    public TiUIView createView(Activity activity)
+    {
+        TiUIView view = new ExampleView(this);
+        view.getLayoutParams().autoFillsHeight = true;
+        view.getLayoutParams().autoFillsWidth = true;
+        return view;
+    }
+
+    @Kroll.setProperty(retain=false)
+    public void setColor(final String color)
+    {
+        // Get the view object from the proxy and set the color
+        if (view != null) {
+            if (!TiApplication.isUIThread()) {
+                // If we are not on the UI thread, need to use a message to set the color
+                TiMessenger.sendBlockingMainMessage(new Handler(TiMessenger.getMainMessenger().getLooper(), new Handler.Callback() {
+                    public boolean handleMessage(Message msg) {
+                        switch (msg.what) {
+                            case MSG_SET_COLOR: {
+                                AsyncResult result = (AsyncResult) msg.obj;
+                                ExampleView fooView = (ExampleView)view;
+                                fooView.setColor(color);
+                                result.setResult(null);
+                                return true;
+                            }
+                        }
+                        return false;
+                    }
+                }).obtainMessage(MSG_SET_COLOR), color);
+            } else {
+                ExampleView fooView = (ExampleView)view;
+                fooView.setColor(color);
+            }
+        }
+        // Updates the property on the JavaScript proxy object
+        setProperty("color", color, true);
+    }
+}
+```
 
 The ExampleProxy class extends the TiViewProxy class. This class exposes the view to the JavaScript and acts as an intermediary between the JavaScript and the native view. The class implements one method of the TiViewProxy class and a custom setter method:
 
@@ -438,19 +356,16 @@ Notice the @Kroll.proxy(creatableInModule=TestModule.class) annotation before th
 
 Below is an example of calling createExample(), and passing dimensions and color properties to the method.
 
-Example
+*Example*
 
-`var` `view = test.createExample({`
-
-`color:` `'blue'``,`
-
-`height: 50,`
-
-`width: 50`
-
-`});`
-
-`win.add(view);`
+```javascript
+var view = test.createExample({
+    color: 'blue',
+    height: 50,
+    width: 50
+});
+win.add(view);
+```
 
 ### Add a property
 
@@ -458,89 +373,75 @@ A Proxy is a key/value store like an Object. Without any modification, you can s
 
 Modify the default module class file to store and retrieve a string value. Add a private variable to store the string value, then modify the example setter and getter to actually set and get the variable you just declared. These methods are already declared in the ComExampleTestModule.m file but not implemented. Titanium requires that all setter methods be declared with the method name starting with set and being passed an id datatype.
 
-TestModule.java
+*TestModule.java*
 
-`private` `String foo;`
+```java
+private String foo;
+...
+    @Kroll.getProperty @Kroll.method
+    public String getExampleProp()
+    {
+        Log.i(LCAT, "In Module - the stored value for exampleProp:" + foo);
+        return foo;
+    }
 
-`...`
-
-`@Kroll``.getProperty` `@Kroll``.method`
-
-`public` `String getExampleProp()`
-
-`{`
-
-`Log.i(LCAT,` `"In Module - the stored value for exampleProp:"` `+ foo);`
-
-`return` `foo;`
-
-`}`
-
-`@Kroll``.setProperty` `@Kroll``.method`
-
-`public`  `void` `setExampleProp(String value) {`
-
-`Log.i(LCAT,` `"In Module - the new value for exampleProp:"` `+ foo);`
-
-`foo = value;`
-
-`}`
+    @Kroll.setProperty @Kroll.method
+    public void setExampleProp(String value) {
+        Log.i(LCAT, "In Module - the new value for exampleProp:" + foo);
+        foo = value;
+    }
+```
 
 In the JavaScript code, the foo string can be accessed using the exampleProp property, and getExampleProp() and setExampleProp () methods.
 
 To create a property without a custom getter or setter, add the property name in the propertyAccessors element list of the @Kroll.proxy or @Kroll.module annotation type:
 
-`// package...`
-
-`// import(s)...`
-
-`@Kroll``.module(name=``"Test"``, id=``"com.example.test"``, propertyAccessors = {``"exampleProp"``})`
-
-`public`  `class` `TestModule` `extends` `KrollModule {`
-
-`// Class stuff...`
-
-`}`
+```
+// package...
+// import(s)...
+@Kroll.module(name="Test", id="com.example.test", propertyAccessors = {"exampleProp"})
+public class TestModule extends KrollModule {
+    // Class stuff...
+}
+```
 
 ### Test the module
 
 Open the app/views/index.xml file and replace the code with the following, which loads the module and displays a red square:
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<!-- Invokes the createView method and provides a reference to the module in the controller -->`
-
-`<``Module`  `id``=``"test"`  `module``=``"com.example.test"`  `method``=``"createView"`  `height``=``"50"`  `width``=``"50"`  `color``=``"red"``/>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+  <Window>
+        <!-- Invokes the createView method and provides a reference to the module in the controller -->
+    <Module id="test" module="com.example.test" method="createView" height="50" width="50" color="red"/>
+  </Window>
+</Alloy>
+```
 
 Open the app/controllers/index.js file and replace the code with the following, which invokes API calls to the module:
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`$.index.open();`
+```javascript
+$.index.open();
 
-`$.test.exampleProp =` `'foobar'``;`
-
-`Ti.API.info(``'exampleProp: '` `+ $.test.getExampleProp());`
+$.test.exampleProp = 'foobar';
+Ti.API.info('exampleProp: ' + $.test.getExampleProp());
+```
 
 Build and install your module, then run the example app.
 
 When the application starts running, you see should a red square in the middle of the screen and see the log output below, which means the application successfully loaded the module and called its APIs.
 
-Console
+*Console*
 
-`[INFO] : TestModule: (KrollRuntimeThread) [1,165] In Module - the new value` `for` `exampleProp:foobar`
-
-`[INFO] : TestModule: (KrollRuntimeThread) [2,167] In Module - the stored value` `for` `exampleProp:foobar`
-
-`[INFO] exampleProp: foobar`
+```
+[INFO] :   TestModule: (KrollRuntimeThread) [1,165] In Module - the new value for exampleProp:foobar
+[INFO] :   TestModule: (KrollRuntimeThread) [2,167] In Module - the stored value for exampleProp:foobar
+[INFO]  exampleProp: foobar
+```
 
 ## Next steps
 

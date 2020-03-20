@@ -24,7 +24,7 @@ Titanium SDK supports the [Peek and Pop, and Quick Action features](https://deve
 
 * **Quick Action** provides application shortcuts when the user presses the application icon on the Home Screen. The shortcuts allow the user to quickly perform an action with your application without navigating through the application.
 
-3D Touch != Force Touch
+*3D Touch != Force Touch*
 
 Apple also has a feature called Force Touch for the Apple Watch, MacBook and Magic Trackpad, which should not be confused with 3D touch.
 
@@ -52,113 +52,72 @@ To define static shortcuts, add the [UIApplicationShortcutItems](https://develop
 
 * UIApplicationShortcutItemUserInfo: custom dictionary that is passed to the event.
 
-Localization
+*Localization*
 
 Place localized strings for the title and subtitle of the quick actions in the app.xml file as opposed to the strings.xml file.
 
-Custom Quick Action Icons
+*Custom Quick Action Icons*
 
 If you specify a custom quick action icon using the UIApplicationShortcutItemIconFile, you need to enable slicing, that is, adding images to the asset catalog. To enable slicing, add the use-app-thinning element to the ios element in the tiapp.xml file and set the value to true.
 
-tiapp.xml
+*tiapp.xml*
 
-`<``ti``:app>`
-
-`<``ios``>`
-
-`<``use``-app-thinning>true</``use``-app-thinning>`
-
-`</``ios``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  <ios>
+    <use-app-thinning>true</use-app-thinning>
+  </ios>
+</ti:app>
+```
 
 **Example:**
 
-tiapp.xml
+*tiapp.xml*
 
-`<``ti``:app>`
-
-`<``ios``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<!-- Define static shortcuts here -->`
-
-`<``key``>UIApplicationShortcutItems</``key``>`
-
-`<``array``>`
-
-`<!-- First item uses hard-coded values and a default icon -->`
-
-`<``dict``>`
-
-`<``key``>UIApplicationShortcutItemIconType</``key``>`
-
-`<``string``>UIApplicationShortcutIconTypeAdd</``string``>`
-
-`<``key``>UIApplicationShortcutItemTitle</``key``>`
-
-`<``string``>Add an Image</``string``>`
-
-`<``key``>UIApplicationShortcutItemSubtitle</``key``>`
-
-`<``string``>JPEG, PNG or GIF</``string``>`
-
-`<``key``>UIApplicationShortcutItemType</``key``>`
-
-`<``string``>com.appcelerator.example.addimage</``string``>`
-
-`</``dict``>`
-
-`<!-- Second item uses localized strings and a custom icon -->`
-
-`<``dict``>`
-
-`<!-- Find the corresponding hash in build/iphone/Assets.xcassets -->`
-
-`<``key``>UIApplicationShortcutItemIconFile</``key``>`
-
-`<``string``>6ce9fb071294c440a20ff73b7c09fef2082c2206</``string``>`
-
-`<!-- Title and subtitle in an i18n/<``lang``>/app.xml file -->`
-
-`<``key``>UIApplicationShortcutItemTitle</``key``>`
-
-`<``string``>add_photo_title</``string``>`
-
-`<``key``>UIApplicationShortcutItemSubtitle</``key``>`
-
-`<``string``>add_photo_subtitle</``string``>`
-
-`<``key``>UIApplicationShortcutItemType</``key``>`
-
-`<``string``>com.appcelerator.example.addphoto</``string``>`
-
-`<!-- Custom dictionary (object) to receive in the event -->`
-
-`<``key``>UIApplicationShortcutItemUserInfo</``key``>`
-
-`<``dict``>`
-
-`<``key``>myCustomKey</``key``>`
-
-`<``string``>myCustomValue</``string``>`
-
-`</``dict``>`
-
-`</``dict``>`
-
-`</``array``>`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`</``ios``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    <ios>
+        <plist>
+            <dict>
+                <!-- Define static shortcuts here -->
+                <key>UIApplicationShortcutItems</key>
+                <array>
+                    <!-- First item uses hard-coded values and a default icon -->
+                    <dict>
+                        <key>UIApplicationShortcutItemIconType</key>
+                        <string>UIApplicationShortcutIconTypeAdd</string>
+                        <key>UIApplicationShortcutItemTitle</key>
+                        <string>Add an Image</string>
+                        <key>UIApplicationShortcutItemSubtitle</key>
+                        <string>JPEG, PNG or GIF</string>
+                        <key>UIApplicationShortcutItemType</key>
+                        <string>com.appcelerator.example.addimage</string>
+                    </dict>
+                    <!-- Second item uses localized strings and a custom icon -->
+                    <dict>
+                        <!-- Find the corresponding hash in build/iphone/Assets.xcassets -->
+                        <key>UIApplicationShortcutItemIconFile</key>
+                        <string>6ce9fb071294c440a20ff73b7c09fef2082c2206</string>
+                        <!-- Title and subtitle in an i18n/<lang>/app.xml file -->
+                        <key>UIApplicationShortcutItemTitle</key>
+                        <string>add_photo_title</string>
+                        <key>UIApplicationShortcutItemSubtitle</key>
+                        <string>add_photo_subtitle</string>
+                        <key>UIApplicationShortcutItemType</key>
+                        <string>com.appcelerator.example.addphoto</string>
+                        <!-- Custom dictionary (object) to receive in the event -->
+                        <key>UIApplicationShortcutItemUserInfo</key>
+                        <dict>
+                            <key>myCustomKey</key>
+                            <string>myCustomValue</string>
+                        </dict>
+                    </dict>
+                </array>
+            </dict>
+        </plist>
+    </ios>
+</ti:app>
+```
 
 ### Add Dynamic Shortcuts
 
@@ -182,57 +141,42 @@ To create a dynamic shortcut:
 
 To remove a dynamic shortcut, invoke the ApplicationShortcut instance's removeDynamicShortcut() method and pass it the itemtype identifier of the dynamic shortcut to remove or invoke the removeAllDynamicShortcuts() method to remove all dynamic shortcuts.
 
-app.js
+*app.js*
 
-`if` `(Ti.UI.iOS.forceTouchSupported) {`
-
-`// Create an applicationShortcuts instance`
-
-`appShortcuts = Ti.UI.iOS.createApplicationShortcuts();`
-
-`// Add a dynamic shortcut`
-
-`appShortcuts.addDynamicShortcut({`
-
-`itemtype:` `'com.appcelerator.example.details'``,`
-
-`title:` `'Open the last picture'``,`
-
-`icon: Ti.UI.iOS.SHORTCUT_ICON_TYPE_LOVE,`
-
-`userInfo: {`
-
-`filename:` `'foo.png'`
-
-`}`
-
-`});`
-
-`}`
+```javascript
+if (Ti.UI.iOS.forceTouchSupported) {
+    // Create an applicationShortcuts instance
+    appShortcuts = Ti.UI.iOS.createApplicationShortcuts();
+    // Add a dynamic shortcut
+    appShortcuts.addDynamicShortcut({
+        itemtype: 'com.appcelerator.example.details',
+        title: 'Open the last picture',
+        icon: Ti.UI.iOS.SHORTCUT_ICON_TYPE_LOVE,
+        userInfo: {
+            filename: 'foo.png'
+        }
+    });
+}
+```
 
 ### Respond to Quick Actions
 
 When the user taps a Quick Action, the shortcutitemclickevent is fired for the Ti.App.iOS static class. The payload includes all properties set for the static or dynamic shortcut except the icon. Simply use the itemtype to identify the shortcut and act accordingly.
 
-`function` `respondToShortcut(e) {`
+```javascript
+function respondToShortcut(e) {
+    switch(e.itemtype) {
+        case 'com.appcelerator.example.addphoto':
+            addPhoto();
+            break;
+        case 'com.appcelerator.example.details':
+            openImage(e.userInfo.filename);
 
-`switch``(e.itemtype) {`
+    }
+};
 
-`case`  `'com.appcelerator.example.addphoto'``:`
-
-`addPhoto();`
-
-`break``;`
-
-`case`  `'com.appcelerator.example.details'``:`
-
-`openImage(e.userInfo.filename);`
-
-`}`
-
-`};`
-
-`Ti.App.iOS.addEventListener(``'shortcutitemclick'``, respondToShortcut);`
+Ti.App.iOS.addEventListener('shortcutitemclick', respondToShortcut);
+```
 
 ## Peek and Pop
 
@@ -260,67 +204,50 @@ To enable Peek and Pop:
 
 The following example shows how to attach a PreviewContext to an ImageView in an Alloy view. Note that the example omits the preview and pop views referenced in the controller code.
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
+```xml
+<Alloy>
+  <Window>
+    <ImageView id="peekView"/>
+  </Window>
+</Alloy>
+```
 
-`<``Window``>`
+*app/controllers.index.js*
 
-`<``ImageView`  `id``=``"peekView"``/>`
+```javascript
+function popView() {
+    Alloy.createController('pop').getView().open();
+};
 
-`</``Window``>`
+if (Ti.UI.iOS.forceTouchSupported) {
 
-`</``Alloy``>`
+    var share = Ti.UI.iOS.createPreviewAction({
+        title: "Share",
+        style: Ti.UI.iOS.PREVIEW_ACTION_STYLE_DEFAULT
+    });
 
-app/controllers.index.js
+    share.addEventListener("click", function(e) {
+        // Implement share logic here
+    });
 
-`function` `popView() {`
+    $.peekView.previewContext = Ti.UI.iOS.createPreviewContext({
+        preview: Alloy.createController('preview').getView(),
+        pop: popView(),
+        actions: [share]
+    });
 
-`Alloy.createController(``'pop'``).getView().open();`
+    $.peekView.previewContext.addEventListener("peek", function() {
+        Ti.API.warn("The view was peeked - Update the preview here if you want to");
+    });
 
-`};`
-
-`if` `(Ti.UI.iOS.forceTouchSupported) {`
-
-`var` `share = Ti.UI.iOS.createPreviewAction({`
-
-`title:` `"Share"``,`
-
-`style: Ti.UI.iOS.PREVIEW_ACTION_STYLE_DEFAULT`
-
-`});`
-
-`share.addEventListener(``"click"``,` `function``(e) {`
-
-`// Implement share logic here`
-
-`});`
-
-`$.peekView.previewContext = Ti.UI.iOS.createPreviewContext({`
-
-`preview: Alloy.createController(``'preview'``).getView(),`
-
-`pop: popView(),`
-
-`actions: [share]`
-
-`});`
-
-`$.peekView.previewContext.addEventListener(``"peek"``,` `function``() {`
-
-`Ti.API.warn(``"The view was peeked - Update the preview here if you want to"``);`
-
-`});`
-
-`$.peekView.previewContext.addEventListener(``"pop"``,` `function``() {`
-
-`Ti.API.warn(``"The view was popped - Open the full context here"``);`
-
-`popView();`
-
-`});`
-
-`}`
+    $.peekView.previewContext.addEventListener("pop", function() {
+        Ti.API.warn("The view was popped - Open the full context here");
+        popView();
+    });
+}
+```
 
 ## Example
 

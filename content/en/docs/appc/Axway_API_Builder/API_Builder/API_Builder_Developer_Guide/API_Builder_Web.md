@@ -1,6 +1,6 @@
 {"title":"API Builder Web","weight":"90"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -87,33 +87,22 @@ To create a custom renderer engine you need to create a renderer engine and regi
 
 For example, to implement a renderer engine for Jade templates:
 
-`var` `jade = require(``'jade'``),`
-
-`engine = {};`
-
-`engine.jade = jade;`
-
-`engine.createRenderer =` `function` `(content, filename, app) {`
-
-`return`  `function``(filename, opts, callback) {`
-
-`if` `(!content) {`
-
-`content = require(``'fs'``).readFileSync(filename,` `'utf8'``).toString();`
-
-`}`
-
-`callback(``null``, jade.render(content, opts));`
-
-`}`
-
-`};`
-
-`engine.extension =` `'jade'``;`
-
-`// server is an Arrow instance`
-
-`server.middleware.registerRendererEngine(engine);`
+```javascript
+var jade = require('jade'),
+    engine = {};
+engine.jade = jade;
+engine.createRenderer = function (content, filename, app) {
+    return function(filename, opts, callback) {
+        if (!content) {
+            content = require('fs').readFileSync(filename, 'utf8').toString();
+        }
+        callback(null, jade.render(content, opts));
+    }
+};
+engine.extension = 'jade';
+// server is an Arrow instance
+server.middleware.registerRendererEngine(engine);
+```
 
 Any view with a jade extension will be routed to the Jade renderer engine.
 
@@ -129,33 +118,27 @@ Helpers are functions that you can evaluate in your Handlebar templates. To use 
 
 2. Call either the Handlebar renderer engine's registerHelper() to register a helper function. Pass the method the name of the helper and the function to invoke.
 
-`var` `Arrow = require(``'arrow'``),`
+```javascript
+var Arrow = require('arrow'),
+    hbs = Arrow.Middleware.getRendererEngine('hbs');
 
-`hbs = Arrow.Middleware.getRendererEngine(``'hbs'``);`
-
-`hbs.registerHelper(``'doFoo'``,` `function``(foo) {`
-
-`// this.name references the name parameter passed to the template`
-
-`// in the render call, that is, res.render('template', {name: 'Joe'});`
-
-`if` `(foo) {`
-
-`return`  `this``.name +` `' is great!'``;`
-
-`}` `else` `{`
-
-`return`  `this``.name +` `' is ok.'``;`
-
-`}`
-
-`});`
+hbs.registerHelper('doFoo', function(foo) {
+    // this.name references the name parameter passed to the template
+    // in the render call, that is, res.render('template', {name: 'Joe'});
+    if (foo) {
+        return this.name + ' is great!';
+    } else {
+        return this.name + ' is ok.';
+    }
+});
+```
 
 **Template example:**
 
-`<div>doFoo(``true``)</div>`
-
-`<div>doFoo(``false``)</div>`
+```xml
+<div>doFoo(true)</div>
+<div>doFoo(false)</div>
+```
 
 #### Partials
 
@@ -165,63 +148,50 @@ Partials are subviews that you can embed in a template. To use a partial, you ne
 
 2. Call either the Handlebar renderer engine's registerPartial() to register a partial file. Pass the method the name of the partial and the template file to use as a partial.
 
-`var` `Arrow = require(``'arrow'``),`
-
-`hbs = Arrow.Middleware.getRendererEngine(``'hbs'``);`
-
-`hbs.registerPartial(``'fooView'``,` `'web/views/foo.hbs'``);`
+```javascript
+var Arrow = require('arrow'),
+    hbs = Arrow.Middleware.getRendererEngine('hbs');
+hbs.registerPartial('fooView', 'web/views/foo.hbs');
+```
 
 **Template example:**
 
-`<!-- Partial web/views/foo.hbs -->`
+```xml
+<!-- Partial web/views/foo.hbs -->
+<!-- id and name are passed as data to the res.render() method -->
+<a href="/people/{{id}}">{{name}}</a>
 
-`<!-- id and name are passed as data to the res.render() method -->`
-
-`<a href=``"/people/{{id}}"``>{{name}}</a>`
-
-`<!-- Main Template web/views/main.hbs -->`
-
-`<ul>{{``#people}}<li>{{> fooView}}</li>{{/people}}</ul>`
+<!-- Main Template web/views/main.hbs -->
+<ul>{{#people}}<li>{{> fooView}}</li>{{/people}}</ul>
+```
 
 ## API Builder APIs from API Builder Web
 
 You can interact with API Builder APIs from your API Builder Web route. The following is an example.
 
-`var` `Arrow = require(``'arrow'``);`
+```javascript
+var Arrow = require('arrow');
 
-`var` `TestRoute = Arrow.Router.extend({`
+var TestRoute = Arrow.Router.extend({
+    name: 'car',
+    path: '/car',
+    method: 'GET',
+    description: 'get some cars',
+    action: function (req, resp, next) {
 
-`name:` `'car'``,`
+        req.server.getAPI('api/car', 'GET').execute({}, function(err, results) {
+            if (err) {
+                next(err);
+            } else {
+                req.log.info('got cars ' + JSON.stringify(results));
+                resp.render('car', results);
+            }
+        });
+    }
+});
 
-`path:` `'/car'``,`
-
-`method:` `'GET'``,`
-
-`description:` `'get some cars'``,`
-
-`action:` `function` `(req, resp, next) {`
-
-`req.server.getAPI(``'api/car'``,` `'GET'``).execute({},` `function``(err, results) {`
-
-`if` `(err) {`
-
-`next(err);`
-
-`}` `else` `{`
-
-`req.log.info(``'got cars '` `+ JSON.stringify(results));`
-
-`resp.render(``'car'``, results);`
-
-`}`
-
-`});`
-
-`}`
-
-`});`
-
-`module.exports = TestRoute;`
+module.exports = TestRoute;
+```
 
 In the preceding example, the route calls the car API. You can retrieve a reference to an API by specifying its path or nickname property when specified by the model/API that you are using. For example:
 
@@ -229,9 +199,11 @@ req.server.getAPI('api/car');
 
 This code returns a reference to the car API. Once you have the API, you need to call execute:
 
-`req.server.getAPI(``'api/car'``).execute({},` `function``(err, results){`
+```
+req.server.getAPI('api/car').execute({}, function(err, results){
 
-`});`
+});
+```
 
 This first argument to execute is the input required by your API. In this example, none are required since findAll is being called. The second argument is a callback function. The first argument in the callback function is an error object. The second is data returned from the API call.
 
@@ -243,65 +215,46 @@ In this example, car references the name of a handlebars template file (car.hbs)
 
 Following is the handlebars template for this example. It iterates through the cars array.
 
-`<``html``>`
-
-`<``head``>`
-
-`</``head``>`
-
-`<``body``>`
-
-`{{#each cars}}`
-
-`<``div``>{{make}} {{model}} {{year}}</``div``>`
-
-`{{/each}}`
-
-`</``body``>`
-
-`</``html``>`
+```xml
+<html>
+<head>
+</head>
+<body>
+    {{#each cars}}
+        <div>{{make}} {{model}} {{year}}</div>
+    {{/each}}
+</body>
+</html>
+```
 
 ## Interacting with models
 
 The preceding example shows how to access APIs from a route. You can also directly access models. The following modifies the preceding example to use the car model.
 
-`ar Arrow = require(``'arrow'``);`
+```javascript
+ar Arrow = require('arrow');
 
-`var` `TestRoute = Arrow.Router.extend({`
+var TestRoute = Arrow.Router.extend({
+    name: 'car',
+    path: '/car',
+    method: 'GET',
+    description: 'get some cars',
+    action: function (req, resp, next) {
+        var model = req.server.getModel('car');
+        model.findAll(function(err, results){
+            if (err) {
+                next(err);
+            } else {
+                req.log.info('got cars ' + JSON.stringify(results));
+                resp.render('car', {cars:results});
+            }
 
-`name:` `'car'``,`
+        });
+    }
+});
 
-`path:` `'/car'``,`
-
-`method:` `'GET'``,`
-
-`description:` `'get some cars'``,`
-
-`action:` `function` `(req, resp, next) {`
-
-`var` `model = req.server.getModel(``'car'``);`
-
-`model.findAll(``function``(err, results){`
-
-`if` `(err) {`
-
-`next(err);`
-
-`}` `else` `{`
-
-`req.log.info(``'got cars '` `+ JSON.stringify(results));`
-
-`resp.render(``'car'``, {cars:results});`
-
-`}`
-
-`});`
-
-`}`
-
-`});`
-
-`module.exports = TestRoute;`
+module.exports = TestRoute;
+```
 
 The first line of the action function retrieves the car model by name:
 

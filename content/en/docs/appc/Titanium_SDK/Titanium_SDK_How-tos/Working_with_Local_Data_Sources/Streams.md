@@ -36,109 +36,83 @@ One use-case might be if you want to prepare a message in its entirety before op
 
 Here's a simple example of writing strings to a BufferStream and then reading them back.
 
-ex01-bufferstream-create.js
+*ex01-bufferstream-create.js*
 
-`// Create the buffer & stream`
+```javascript
+// Create the buffer & stream
+var paragraph = Titanium.createBuffer({length: 1024});
+var stream = Titanium.Stream.createStream({
+  mode: Titanium.Stream.MODE_WRITE, // There is also MODE_APPEND for writing
+  source: paragraph
+});
+```
 
-`var` `paragraph = Titanium.createBuffer({length: 1024});`
+*ex02-bufferstream-write.js*
 
-`var` `stream = Titanium.Stream.createStream({`
+```javascript
+// Write to stream in chunks, filling up "paragraph" buffer.
+// Each chunk will be an encoded UTF-8 string because we
+// don't specify otherwise.
+var length = 0;
+length += stream.write(Titanium.createBuffer({
+  value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+}));
+length += stream.write(Titanium.createBuffer({
+  value: "Morbi vel mi in nunc bibendum congue at a ligula. Nunc at mauris dui, ac posuere ligula. "
+}));
+length += stream.write(Titanium.createBuffer({
+  value: " Curabitur posuere cursus orci, id convallis metus venenatis sed."
+}));
 
-`mode: Titanium.Stream.MODE_WRITE,` `// There is also MODE_APPEND for writing`
+// Close the stream. The buffer still has the data in it.
+stream.close();
+```
 
-`source: paragraph`
+*ex03-bufferstream-resetlength.js*
 
-`});`
+```javascript
+// Set the buffer length to the actual bytes written.
+paragraph.length = length;
+```
 
-ex02-bufferstream-write.js
+*ex04-bufferstream-create2.js*
 
-`// Write to stream in chunks, filling up "paragraph" buffer.`
+```javascript
+// Read back the buffer in chunks.
+// Create the read stream & buffer.
+var CHUNK_SIZE = 10;
+var read_buffer = Titanium.createBuffer({length: 1024});
+stream = Titanium.Stream.createStream({
+  mode: Titanium.Stream.MODE_READ,
+  source: paragraph
+});
+```
 
-`// Each chunk will be an encoded UTF-8 string because we`
+*ex05-bufferstream-readchunks.js*
 
-`// don't specify otherwise.`
+```javascript
+// Read until end.
+length = 0;
+var bytes_read = 0;
+while ((length = stream.read(read_buffer, bytes_read, CHUNK_SIZE)) > 0) {
+  bytes_read += length;
+};
+```
 
-`var` `length = 0;`
+*ex07-bufferstream-decode.js*
 
-`length += stream.write(Titanium.createBuffer({`
+```javascript
+// Get the read_buffer contents into a string.
+var lorem = Ti.Codec.decodeString({
+  source: read_buffer,
+  charset: Ti.Codec.CHARSET_UTF8,
+  length: bytes_read,
+  position: 0
+});
 
-`value:` `"Lorem ipsum dolor sit amet, consectetur adipiscing elit. "`
-
-`}));`
-
-`length += stream.write(Titanium.createBuffer({`
-
-`value:` `"Morbi vel mi in nunc bibendum congue at a ligula. Nunc at mauris dui, ac posuere ligula. "`
-
-`}));`
-
-`length += stream.write(Titanium.createBuffer({`
-
-`value:` `" Curabitur posuere cursus orci, id convallis metus venenatis sed."`
-
-`}));`
-
-`// Close the stream. The buffer still has the data in it.`
-
-`stream.close();`
-
-ex03-bufferstream-resetlength.js
-
-`// Set the buffer length to the actual bytes written.`
-
-`paragraph.length = length;`
-
-ex04-bufferstream-create2.js
-
-`// Read back the buffer in chunks.`
-
-`// Create the read stream & buffer.`
-
-`var` `CHUNK_SIZE = 10;`
-
-`var` `read_buffer = Titanium.createBuffer({length: 1024});`
-
-`stream = Titanium.Stream.createStream({`
-
-`mode: Titanium.Stream.MODE_READ,`
-
-`source: paragraph`
-
-`});`
-
-ex05-bufferstream-readchunks.js
-
-`// Read until end.`
-
-`length = 0;`
-
-`var` `bytes_read = 0;`
-
-`while` `((length = stream.read(read_buffer, bytes_read, CHUNK_SIZE)) > 0) {`
-
-`bytes_read += length;`
-
-`};`
-
-ex07-bufferstream-decode.js
-
-`// Get the read_buffer contents into a string.`
-
-`var` `lorem = Ti.Codec.decodeString({`
-
-`source: read_buffer,`
-
-`charset: Ti.Codec.CHARSET_UTF8,`
-
-`length: bytes_read,`
-
-`position: 0`
-
-`});`
-
-`// Cleanup`
-
-`stream.close();`
+// Cleanup
+stream.close();
+```
 
 ## FileStream
 
@@ -152,75 +126,72 @@ The supported modes are Titanium.Filesystem.MODE\_READ, Titanium.Filesytem.MODE\
 
 This simple example reads and writes a file in 1K chunks rather than loading up the entirety of the file in memory. In this example we get streams by first getting <code>File</code> objects then calling their open() methods. However, in the case of the output file, we show the alternative openStream(...) method as well in a commented line.
 
-ex01-filestream-getfile.js
+*ex01-filestream-getfile.js*
 
-`// Get the source file (this one is in Resources).`
+```javascript
+// Get the source file (this one is in Resources).
+var infile = Titanium.Filesystem.getFile('emmy.jpg');
+if (!infile.exists()) {
+  Ti.API.error("File not exists()");
+  return;
+}
+```
 
-`var` `infile = Titanium.Filesystem.getFile(``'emmy.jpg'``);`
+*ex02-filestream-openread.js*
 
-`if` `(!infile.exists()) {`
+```javascript
+// Open for reading.
+var instream = infile.open(Titanium.Filesystem.MODE_READ);
+```
 
-`Ti.API.error(``"File not exists()"``);`
+*ex03-filestream-getoutfile.js*
 
-`return``;`
+```javascript
+// Get a file descriptor for output file. (Doesn't need to exist.)
+var outfile =
+  Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory, 'emmy_out.jpg');
+```
 
-`}`
+*ex04-filestream-openwrite.js*
 
-ex02-filestream-openread.js
+```javascript
+// Open for writing.
+var outstream = outfile.open(Titanium.Filesystem.MODE_WRITE);
+```
 
-`// Open for reading.`
+*ex04a-filestream-openstream.js*
 
-`var` `instream = infile.open(Titanium.Filesystem.MODE_READ);`
+```javascript
+// The last two steps could have been combined into one using this code:
+//var outstream =
+// Titanium.Filesystem.openStream(Titanium.Filesystem.MODE_WRITE, Titanium.Filesystem.applicationDataDirectory, 'emmy_out.jpg');
+```
 
-ex03-filestream-getoutfile.js
+*ex05-filestream-buffer.js*
 
-`// Get a file descriptor for output file. (Doesn't need to exist.)`
+```javascript
+// Create a 1K buffer for reading chunks.
+var buffer = Titanium.createBuffer({length: 1024});
+```
 
-`var` `outfile =`
+*ex06-filestream-loopreadwrite.js*
 
-`Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory,` `'emmy_out.jpg'``);`
+```javascript
+// Read and write chunks.
+var size = 0;
+while ((size = instream.read(buffer)) > -1) {
+  outstream.write(buffer);
+  Titanium.API.info('Wrote ' + size + ' bytes');
+}
+```
 
-ex04-filestream-openwrite.js
+*ex07-filestream-cleanup.js*
 
-`// Open for writing.`
-
-`var` `outstream = outfile.open(Titanium.Filesystem.MODE_WRITE);`
-
-ex04a-filestream-openstream.js
-
-`// The last two steps could have been combined into one using this code:`
-
-`//var outstream =`
-
-`// Titanium.Filesystem.openStream(Titanium.Filesystem.MODE_WRITE, Titanium.Filesystem.applicationDataDirectory, 'emmy_out.jpg');`
-
-ex05-filestream-buffer.js
-
-`// Create a 1K buffer for reading chunks.`
-
-`var` `buffer = Titanium.createBuffer({length: 1024});`
-
-ex06-filestream-loopreadwrite.js
-
-`// Read and write chunks.`
-
-`var` `size = 0;`
-
-`while` `((size = instream.read(buffer)) > -1) {`
-
-`outstream.write(buffer);`
-
-`Titanium.API.info(``'Wrote '` `+ size +` `' bytes'``);`
-
-`}`
-
-ex07-filestream-cleanup.js
-
-`// Cleanup.`
-
-`instream.close();`
-
-`outstream.close();`
+```javascript
+// Cleanup.
+instream.close();
+outstream.close();
+```
 
 ## BlobStream
 
@@ -230,54 +201,32 @@ The BlobStream is a read-only stream that provides you with the ability to read 
 
 In this example, we use [Titanium.Media.showCamera](#!/api/Titanium.Media-method-showCamera) to take a photo and stream its bytes to a file.
 
-ex01-blobstream-full.js
+*ex01-blobstream-full.js*
 
-`Ti.Media.showCamera({`
-
-`success:` `function``(e) {`
-
-`// Open stream on blob.`
-
-`var` `instream = Titanium.Stream.createStream({`
-
-`mode: Titanium.Stream.MODE_READ,`
-
-`source: e.media` `// e.media is a Blob`
-
-`});`
-
-`// Open an output stream for a file`
-
-`// to hold the blob data.`
-
-`var` `f =`
-
-`Titanium.Filesystem.getFile(`
-
-`Titanium.Filesystem.applicationDataDirectory,` `"out.jpg"``);`
-
-`var` `outstream = f.open(Titanium.Filesystem.MODE_WRITE);`
-
-`// Create a buffer for chunking the data.`
-
-`var` `buffer = Ti.createBuffer({length: 1024});`
-
-`// Read and write chunks.`
-
-`var` `read_bytes = 0;`
-
-`while` `((read_bytes = instream.read(buffer)) > 0) {`
-
-`outstream.write(buffer, 0, read_bytes);`
-
-`}`
-
-`// Cleanup.`
-
-`instream.close();`
-
-`outstream.close();`
-
-`}`
-
-`});`
+```javascript
+Ti.Media.showCamera({
+  success: function(e) {
+    // Open stream on blob.
+    var instream = Titanium.Stream.createStream({
+      mode: Titanium.Stream.MODE_READ,
+      source: e.media // e.media is a Blob
+    });
+    // Open an output stream for a file
+    // to hold the blob data.
+    var f =
+      Titanium.Filesystem.getFile(
+          Titanium.Filesystem.applicationDataDirectory, "out.jpg");
+    var outstream = f.open(Titanium.Filesystem.MODE_WRITE);
+    // Create a buffer for chunking the data.
+    var buffer = Ti.createBuffer({length: 1024});
+    // Read and write chunks.
+    var read_bytes = 0;
+    while ((read_bytes = instream.read(buffer)) > 0) {
+      outstream.write(buffer, 0, read_bytes);
+    }
+    // Cleanup.
+    instream.close();
+    outstream.close();
+  }
+});
+```

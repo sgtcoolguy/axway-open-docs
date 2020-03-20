@@ -88,25 +88,18 @@ For devices running iOS 8 and later, you need to register the application to use
 
 * Titanium.App.iOS.USER\_NOTIFICATION\_TYPE\_SOUND: allow the application to play a sound.
 
-`// Check if the device is running iOS 8 or later, before registering for local notifications`
-
-`if` `(Ti.Platform.name ==` `"iPhone OS"` `&& parseInt(Ti.Platform.version.split(``"."``)[``0``]) >=` `8``) {`
-
-`Ti.App.iOS.registerUserNotificationSettings({`
-
-`types: [`
-
-`Ti.App.iOS.USER_NOTIFICATION_TYPE_ALERT,`
-
-`Ti.App.iOS.USER_NOTIFICATION_TYPE_SOUND,`
-
-`Ti.App.iOS.USER_NOTIFICATION_TYPE_BADGE`
-
-`]`
-
-`});`
-
-`}`
+```
+// Check if the device is running iOS 8 or later, before registering for local notifications
+if (Ti.Platform.name == "iPhone OS" && parseInt(Ti.Platform.version.split(".")[0]) >= 8) {
+    Ti.App.iOS.registerUserNotificationSettings({
+      types: [
+            Ti.App.iOS.USER_NOTIFICATION_TYPE_ALERT,
+            Ti.App.iOS.USER_NOTIFICATION_TYPE_SOUND,
+            Ti.App.iOS.USER_NOTIFICATION_TYPE_BADGE
+        ]
+    });
+}
+```
 
 If you are using interactive notifications, the application also needs to register the notification categories you want to use. Set the categories property of the dictionary passed to the registerUserNotificationSettings() method to an array of notification category objects that the application needs to use. For more details, see the [iOS Interactive Notifications](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/iOS_Interactive_Notifications/).
 
@@ -144,69 +137,47 @@ To send a local notification, use the Titanium.App.iOS.scheduleLocalNotification
 
 The scheduleLocalNotification() method returns a LocalNotification object. The application can use the object to call the cancel() method in case it needs to cancel the notification.
 
-`// The following code snippet schedules an alert to be sent within three seconds`
-
-`var` `notification = Ti.App.iOS.scheduleLocalNotification({`
-
-`// Alert will display 'slide to update' instead of 'slide to view'`
-
-`// or 'Update' instead of 'Open' in the alert dialog`
-
-`alertAction:` `"update"``,`
-
-`// Alert will display the following message`
-
-`alertBody:` `"New content available! Update now?"``,`
-
-`// The badge value in the icon will be changed to 1`
-
-`badge: 1,`
-
-`// Alert will be sent in three seconds`
-
-`date:` `new` `Date(``new` `Date().getTime() + 3000),`
-
-`// The following sound file will be played`
-
-`sound:` `"/alert.wav"``,`
-
-`// The following URL is passed to the application `
-
-`userInfo: {` `"url"``:``"http://www.download.com/content/asset.json"``}`
-
-`}); `
+```javascript
+// The following code snippet schedules an alert to be sent within three seconds
+var notification = Ti.App.iOS.scheduleLocalNotification({
+    // Alert will display 'slide to update' instead of 'slide to view'
+    // or 'Update' instead of 'Open' in the alert dialog
+    alertAction: "update",
+    // Alert will display the following message
+    alertBody: "New content available! Update now?",
+    // The badge value in the icon will be changed to 1
+    badge: 1,
+    // Alert will be sent in three seconds
+    date: new Date(new Date().getTime() + 3000),
+    // The following sound file will be played
+    sound: "/alert.wav",
+    // The following URL is passed to the application
+    userInfo: { "url":"http://www.download.com/content/asset.json"}
+});
+```
 
 ### Monitor Local Notifications
 
 The application can monitor incoming local notifications by using the iOS application-level [notification](#!/api/Titanium.App.iOS-event-notification) event if it is in the foreground or returns to the foreground. The event is passed a dictionary containing the same properties as the ones used to schedule the notification except the interval property.
 
-`// Fired when the application receives an incoming local notification when it's in the foreground`
+```
+// Fired when the application receives an incoming local notification when it's in the foreground
+Ti.App.iOS.addEventListener('notification', function(e) {
 
-`Ti.App.iOS.addEventListener(``'notification'``,` `function``(e) {`
+    // Process custom data
+    if (e.userInfo && "url" in e.userInfo){
+        httpGetRequest(e.userInfo.url);
+    }
 
-`// Process custom data`
-
-`if` `(e.userInfo &&` `"url"`  `in` `e.userInfo){`
-
-`httpGetRequest(e.userInfo.url);`
-
-`}`
-
-`// Reset the badge value`
-
-`if` `(e.badge > 0) {`
-
-`Ti.App.iOS.scheduleLocalNotification({`
-
-`date:` `new` `Date(``new` `Date().getTime()),`
-
-`badge: -1`
-
-`});`
-
-`}`
-
-`});`
+    // Reset the badge value
+    if (e.badge > 0) {
+        Ti.App.iOS.scheduleLocalNotification({
+            date: new Date(new Date().getTime()),
+            badge: -1
+        });
+    }
+});
+```
 
 ### Cancel a Notification
 
@@ -220,20 +191,15 @@ If the application needs to cancel a notification, it can either selectively cho
 
 2. Add an ID to the notification and pass the ID to the Titanium.App.iOS.cancelLocalNotification() method. To add an ID to the notification, set the id property of the userInfo dictionary passed to the scheduleLocationNotification() method.
 
-`var notification = Ti.App.iOS.scheduleLocalNotification({`
+```javascript
+var notification = Ti.App.iOS.scheduleLocalNotification({
+    // Create an ID for the notification
+    userInfo: {"id": "foo"},
+    alertBody: "Test? Test?",
+    date: new Date(new Date().getTime() + 3000)
+});
 
-`// Create an ID for the notification`
-
-`userInfo: {``"id"``:` `"foo"``},`
-
-`alertBody:` `"Test? Test?"``,`
-
-`date:` `new` `Date(``new` `Date().getTime() +` `3000``)`
-
-`});`
-
-`// Either one of these methods will cancel the notification `
-
-`notification.cancel();`
-
-`Ti.App.iOS.cancelLocalNotification(``"foo"``);`
+// Either one of these methods will cancel the notification
+notification.cancel();
+Ti.App.iOS.cancelLocalNotification("foo");
+```

@@ -48,43 +48,31 @@ The use of several patterns will be required throughout this app. For overall ob
 
 Example of a revealing module pattern:
 
-`App.Models.Messages = function(someId) {`
+```javascript
+App.Models.Messages = function(someId) {
+  var id = someId;
 
-`var id = someId;`
+  // Member method
+    function getLatestMessages() {
+        var data = [
+            { text: 'This is a test' },
+            { text: 'This is a test 2' },
+            { text: 'This is a test 3' }
+        ];
 
-`// Member method`
+        return data;
+    }
 
-`function getLatestMessages() {`
+    // Return this object's 'public API'
+    return {
+        getLatestMessages: getLatestMessages,
+        id: someId
+    }
+};
 
-`var data = [`
-
-`{ text:` `'This is a test'` `},`
-
-`{ text:` `'This is a test 2'` `},`
-
-`{ text:` `'This is a test 3'` `}`
-
-`];`
-
-`return` `data;`
-
-`}`
-
-`// Return this object's 'public API'`
-
-`return` `{`
-
-`getLatestMessages: getLatestMessages,`
-
-`id: someId`
-
-`}`
-
-`};`
-
-`// This example must be instantiated using the 'new' keyword`
-
-`var model =` `new` `App.Models.Messages(``32``);`
+// This example must be instantiated using the 'new' keyword
+var model = new App.Models.Messages(32);
+```
 
 If inheritance is needed for any reason then those parent objects will be built with this prepended to its public methods / properties. The use of apply/call will be used to inherit methods in to child objects. Due to Titanium's poor performance around mixins, mixin type inheritance shouldn't be used unless it is for small objects.
 
@@ -126,47 +114,30 @@ Titanium doesn't handle different layouts in orientation very well (because of a
 
 Either method above will pass a landscape / portrait argument which can be used by the UI's corresponding style sheet. e.g.
 
-`function orientationUpdate(type) {`
+```javascript
+function orientationUpdate(type) {
+    wrapper.height = App.Styles.Example[type].wrapper.height;
+}
+Orientation specific styles will be separated like so:
 
-`wrapper.height = App.Styles.Example[type].wrapper.height;`
-
-`}`
-
-`Orientation specific styles will be separated like so:`
-
-`App.Styles.Example = {`
-
-`// Orientation specific`
-
-`portrait: {`
-
-`wrapper: {`
-
-`height:` `100`
-
-`}`
-
-`},`
-
-`landscape: {`
-
-`wrapper: {`
-
-`height:` `'auto'`
-
-`}`
-
-`},`
-
-`// Defaults (probably won't be necessar once we have a global property of current orientation)`
-
-`wrapper: {`
-
-`height:` `'auto'`
-
-`}`
-
-`};`
+App.Styles.Example = {
+    // Orientation specific
+    portrait: {
+      wrapper: {
+        height: 100
+      }
+    },
+    landscape: {
+      wrapper: {
+        height: 'auto'
+      }
+    },
+    // Defaults (probably won't be necessar once we have a global property of current orientation)
+    wrapper: {
+        height: 'auto'
+    }
+};
+```
 
 ## Managing cross-platform and form factor files
 
@@ -176,27 +147,24 @@ There are several conventions to follow when building against different platform
 
 Conditionals can be built off of the different form factors for this app, i.e. tablet / handheld. For hardcoded values you can simply use something like:
 
-`if``(App.formFactor ===` `'tablet'``) {`
-
-`// do something here`
-
-`}`
+```
+if(App.formFactor === 'tablet') {
+  // do something here
+}
+```
 
 In many cases hard conditionals aren't needed since it's almost always related to UI branching. It's better to use the following:
 
-`// No conditionals needed`
+```javascript
+// No conditionals needed
+var wrapper = Ti.UI.createView(App.Styles.Example[formFactor].wrapper);
+Branch by file if the UI or functionality in a form factor is drastically different:
 
-`var wrapper = Ti.UI.createView(App.Styles.Example[formFactor].wrapper);`
-
-`Branch by file` `if` `the UI or functionality in a form factor is drastically different:`
-
-`// For a form factor e.g. dashboard.tablet.js`
-
-`Ti.include(``'ui/dashboard/dashboard.'` `+ App.formFactor +` `'.js'``);`
-
-`// Or if just a platform type is needed e.g. dashboard.ios.js`
-
-`Ti.include(``'ui/dashboard/dashboard.'` `+ App.type +` `'.js'``);`
+// For a form factor e.g. dashboard.tablet.js
+Ti.include('ui/dashboard/dashboard.' + App.formFactor + '.js');
+// Or if just a platform type is needed e.g. dashboard.ios.js
+Ti.include('ui/dashboard/dashboard.' + App.type + '.js');
+```
 
 ### Cross platform and type handling
 
@@ -204,57 +172,38 @@ In similar fashion, iOS / Android / Google TV, etc can be branched by either fil
 
 A style.js example for the above scenarios with combined styles can look like this:
 
-`App.Styles.Example = {`
-
-`menu: {`
-
-`handset: {`
-
-`android: {`
-
-`buttonTrack: {`
-
-`height:` `30``,`
-
-`top:` `0`
-
-`}`
-
-`},`
-
-`ios: {`
-
-`buttonTrack: {`
-
-`height:` `30`
-
-`}`
-
-`}`
-
-`},`
-
-`tablet: {`
-
-`buttonTrack: {`
-
-`height:` `100`
-
-`}`
-
-`}`
-
-`}`
-
-`}`
+```
+App.Styles.Example = {
+    menu: {
+        handset: {
+          android: {
+        buttonTrack: {
+                  height: 30,
+                  top: 0
+              }
+          },
+          ios: {
+            buttonTrack: {
+                  height: 30
+              }
+          }
+        },
+        tablet: {
+            buttonTrack: {
+                height: 100
+            }
+        }
+    }
+}
+```
 
 To avoid excessive dirty nesting like the above example, branch by file will be used when it makes sense:
 
-`// This extreme example shows when an included file for a specific form factor AND platform is needed.`
-
-`// Amounts to a file named 'style.handset.ios.js' for instance`
-
-`Ti.include(``'ui/dashboard/style.'` `+ App.formFactor +` `'.'` `+ App.type +` `'js'``);`
+```
+// This extreme example shows when an included file for a specific form factor AND platform is needed.
+// Amounts to a file named 'style.handset.ios.js' for instance
+Ti.include('ui/dashboard/style.' + App.formFactor + '.' + App.type + 'js');
+```
 
 ## The 'App' Namespace
 
@@ -316,54 +265,33 @@ This area handles the data layers of the app.
 
 This endpoint has several features that help determine things like logic branching based on platform, device type, etc. This endpoint uses the platform module. Some useful examples of how this can be used:
 
-`var orientationModes = App.Platform.is({`
+```javascript
+var orientationModes = App.Platform.is({
+  handheld:[Ti.UI.PORTRAIT],
+  tablet:[Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT]
+});
 
-`handheld:[Ti.UI.PORTRAIT],`
+var pointOffset = iApp.Platform.s({
+  ios:100,
+  android:120
+});
 
-`tablet:[Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT]`
-
-`});`
-
-`var pointOffset = iApp.Platform.s({`
-
-`ios:``100``,`
-
-`android:``120`
-
-`});`
-
-`App.Platform.is({`
-
-`handheld: {`
-
-`ios: function() {`
-
-`//do iphone/ipod stuff`
-
-`},`
-
-`android: function() {`
-
-`//do android handheld stuff`
-
-`}`
-
-`},`
-
-`tablet: {`
-
-`ios: function() {`
-
-`//do ipad stuff`
-
-`},`
-
-`android: function() {`
-
-`//do android tablet stuff`
-
-`}`
-
-`}`
-
-`});`
+App.Platform.is({
+  handheld: {
+    ios: function() {
+      //do iphone/ipod stuff
+    },
+    android: function() {
+      //do android handheld stuff
+    }
+  },
+  tablet: {
+    ios: function() {
+      //do ipad stuff
+    },
+    android: function() {
+      //do android tablet stuff
+    }
+  }
+});
+```

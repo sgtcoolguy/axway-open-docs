@@ -31,21 +31,22 @@ The following components are shipped with CLI 5.2.0:
 
     * When using \-l trace or \-l debug, a timestamp is added to log levels of the output. For example:
 
-        `2015``-``10``-29T08:``38``:``48``+``00``:``00` `| INFO | Get the registry...`
+        ```
+        2015-10-29T08:38:48+00:00 | INFO   | Get the registry...
+        ```
 
 * [CLI-934](https://jira.appcelerator.org/browse/CLI-934) - Output warning message if appc-install is less than 4.2.3-2
 
     * Appc CLI 5.2.0 requires appc-install 4.2.3-2+ to work. If a lesser version is installed, users will see the following error message:
 
-        `Appcelerator Command-Line Interface, version` `5.2``.``0``-``249`
+        ```bash
+        Appcelerator Command-Line Interface, version 5.2.0-249
+        Copyright (c) 2014-2016, Appcelerator, Inc.  All Rights Reserved.
 
-        `Copyright (c)` `2014``-``2016``, Appcelerator, Inc. All Rights Reserved.`
-
-        `AppC CLI requires appcelerator``@4``.2.``3` `or newer.`
-
-        `To install the latest version: [sudo] npm install appcelerator -g`
-
-        `....`
+        AppC CLI requires appcelerator@4.2.3 or newer.
+        To install the latest version: [sudo] npm install appcelerator -g
+        ....
+        ```
 
 ## Fixed Issues
 

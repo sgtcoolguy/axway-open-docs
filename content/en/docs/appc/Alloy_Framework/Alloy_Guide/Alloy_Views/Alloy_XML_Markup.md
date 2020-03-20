@@ -50,17 +50,15 @@ In Alloy, the XML markup abstracts the Titanium SDK UI components, so you do not
 
 The following code is an example of a view file:
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
-
-`<``Window`  `class``=``"container"``>`
-
-`<``Label`  `id``=``"label"`  `onClick``=``"doClick"``>Hello, World</``Label``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window class="container">
+        <Label id="label" onClick="doClick">Hello, World</Label>
+    </Window>
+</Alloy>
+```
 
 The Alloy tag is the root element for the XML markup and is required in all views. The Window element defines an instance of the Ti.UI.Window object and within that window instance is the Label element which defines an instance of a Ti.UI.Label object. Almost all of the Alloy XML tags are the class names of the Titanium UI components without the preceding namespace. Exceptions to this rule are listed in the Element table below.
 
@@ -72,19 +70,16 @@ If the top-level UI component does not have an ID defined, it can be referenced 
 
 The following code is how you would traditionally code the markup example using the Titanium SDK:
 
-Resources/app.js
+*Resources/app.js*
 
-`var` `win = Ti.UI.createWindow();`
-
-`var` `label = Ti.UI.createLabel({`
-
-`text:` `'Hello, World'`
-
-`});`
-
-`label.addEventListener(``'click'``, doClick);`
-
-`win.add(label);`
+```javascript
+var win = Ti.UI.createWindow();
+var label = Ti.UI.createLabel({
+  text: 'Hello, World'
+});
+label.addEventListener('click', doClick);
+win.add(label);
+```
 
 In the previous example, the win.open call and implementation of the doClick callback are missing. In Alloy, your JavaScript code and Titanium API calls need to be placed in the associated controller file to the view. For this example, the code would need be placed in app/controllers/index.js.
 
@@ -136,45 +131,42 @@ The collection singleton is available in the Alloy.Collections namespace for the
 
 For example, the code below creates a collection singleton based on a model called book:
 
-`<``Alloy``>`
-
-`<``Collection`  `src``=``"book"` `/>`
-
-`<``Window``>`
-
-`<``TableView`  `id``=``"table"` `/>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Collection src="book" />
+    <Window>
+        <TableView id="table" />
+    </Window>
+</Alloy>
+```
 
 The code below demonstrates how to access this collection from a controller:
 
-`var` `library = Alloy.Collections.book;`
+```javascript
+var library = Alloy.Collections.book;
 
-`library.fetch();`
+library.fetch();
+```
 
 The Collection tag can also be used to create an instance of a collection that is only available to one controller. To create an instance of a collection, use the Collection tag, assign the src attribute to the model file minus the .js extension, assign the id attribute to access the collection in the controller, and set the instance attribute to true. To access the instance in a controller, use the ID that was defined in the markup.
 
 For example, the code below creates a collection instance based on a model called book:
 
-`<``Alloy``>`
-
-`<``Collection`  `id``=``"localLibrary"`  `src``=``"book"`  `instance``=``"true"``/>`
-
-`<``Window``>`
-
-`<``TableView`  `id``=``"table"` `/>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Collection id="localLibrary" src="book" instance="true"/>
+    <Window>
+        <TableView id="table" />
+    </Window>
+</Alloy>
+```
 
 The code below demonstrates how to access this collection from a controller:
 
-`var` `library = $.localLibrary;`
-
-`library.fetch();`
+```javascript
+var library = $.localLibrary;
+library.fetch();
+```
 
 ## Model element
 
@@ -184,49 +176,44 @@ The model singleton is available in the Alloy.Models namespace for the controlle
 
 For example, the code below creates a model singleton based on a model called book:
 
-`<``Alloy``>`
-
-`<``Model`  `src``=``"book"` `/>`
-
-`<``Window``>`
-
-`<``TableView`  `id``=``"table"` `/>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Model src="book" />
+    <Window>
+        <TableView id="table" />
+    </Window>
+</Alloy>
+```
 
 The code below demonstrates how to access this model from a controller:
 
-`var` `drama = Alloy.Models.book;`
+```javascript
+var drama = Alloy.Models.book;
 
-`drama.set(``'title'``,` `'Hamlet'``);`
-
-`drama.set(``'author'``,` `'William Shakespeare'``);`
+drama.set('title', 'Hamlet');
+drama.set('author', 'William Shakespeare');
+```
 
 The Model tag can also be used to create an instance of a model that is only available to one controller. To create an instance of a model, use the Model tag, assign the src attribute to the model file minus the .js extension, assign the id attribute to access the model in the controller, and set the instance attribute to true. To access the instance in a controller, use the ID that was defined in the XML.
 
 For example, the code below creates a model instance based on a model called book:
 
-`<``Alloy``>`
-
-`<``Model`  `id``=``"myBook"`  `src``=``"book"`  `instance``=``"true"``/>`
-
-`<``Window``>`
-
-`<``TableView`  `id``=``"table"` `/>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Model id="myBook" src="book" instance="true"/>
+    <Window>
+        <TableView id="table" />
+    </Window>
+</Alloy>
+```
 
 The code below demonstrates how to access this model from a controller:
 
-`var` `drama = $.myBook;`
-
-`drama.set(``'title'``,` `'Hamlet'``);`
-
-`drama.set(``'author'``,` `'William Shakespeare'``);`
+```javascript
+var drama = $.myBook;
+drama.set('title', 'Hamlet');
+drama.set('author', 'William Shakespeare');
+```
 
 ## Module attribute
 
@@ -238,55 +225,39 @@ You can require a CommonJS module in an Alloy view using the module attribute of
 
 For example, the following CommonJS module, called foo.js, exposes the createFoo method, which returns a Label object inside a View object. In the Alloy view, to include this object, add the Foo tag and set the module attribute to foo.
 
-app/lib/foo.js
+*app/lib/foo.js*
 
-`// XML attributes are passed to the function`
+```javascript
+// XML attributes are passed to the function
+exports.createFoo = function (args) {
+    var viewArgs = {
+        backgroundColor: args.color || 'white',
+        width: 100,
+        height: 100
+    };
+    var view = Ti.UI.createView(viewArgs);
+    var labelArgs = {
+        color: args.textColor || 'black',
+        text: args.text || 'Foobar'
+    };
+    var label = Ti.UI.createLabel(labelArgs);
+    view.add(label);
 
-`exports.createFoo =` `function` `(args) {`
+    // Return a UI object that can be added to a view
+    return view;
+};
+```
 
-`var` `viewArgs = {`
+*app/views/index.xml*
 
-`backgroundColor: args.color ||` `'white'``,`
-
-`width: 100,`
-
-`height: 100`
-
-`};`
-
-`var` `view = Ti.UI.createView(viewArgs);`
-
-`var` `labelArgs = {`
-
-`color: args.textColor ||` `'black'``,`
-
-`text: args.text ||` `'Foobar'`
-
-`};`
-
-`var` `label = Ti.UI.createLabel(labelArgs);`
-
-`view.add(label);`
-
-`// Return a UI object that can be added to a view`
-
-`return` `view;`
-
-`}; `
-
-app/views/index.xml
-
-`<``Alloy``>`
-
-`<``Window`  `backgroundColor``=``"white"``>`
-
-`<!-- Requires in the lib/foo.js module and calls the createFoo method -->`
-
-`<``Foo`  `module``=``"foo"`  `color``=``"blue"`  `textColor``=``"orange"`  `text``=``"Hello, World!"``/>`
-
-`</``Window``>`
-
-`</``Alloy``> `
+```xml
+<Alloy>
+    <Window backgroundColor="white">
+        <!-- Requires in the lib/foo.js module and calls the createFoo method -->
+        <Foo module="foo" color="blue" textColor="orange" text="Hello, World!"/>
+    </Window>
+</Alloy>
+```
 
 ## Module element
 
@@ -304,31 +275,28 @@ You can also include a view from a native module using the Module XML element. T
 
 For example, to use the [Paint Module](https://marketplace.appcelerator.com/apps/4977?790167903), first download and add the module to your project. The Paint Module creates a Titanium View, which can be drawn on, using the createPaintView method. To use this view in the index view-controller, you need to add it as a child of a window (or similar parent view object). In the code below, the Module tag is used to add the Paint Module to the window and passes properties inline that are specific to the module. You may also pass any Titanium.UI.View properties to the module since it extends a Titanium View.
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<``Module`  `id``=``"paint"`  `module``=``"ti.paint"`  `method``=``"createPaintView"`  `eraseMode``=``"false"`  `strokeWidth``=``"1.0"`  `strokeColor``=``"red"`  `strokeAlpha``=``"100"` `/>`
-
-`<``Button`  `onClick``=``"eraseMe"`  `bottom``=``"0"``>Erase</``Button``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+  <Window>
+    <Module id="paint" module="ti.paint" method="createPaintView" eraseMode="false" strokeWidth="1.0" strokeColor="red" strokeAlpha="100" />
+    <Button onClick="eraseMe" bottom="0">Erase</Button>
+  </Window>
+</Alloy>
+```
 
 If you can call methods on the created object, then you can invoke those methods in the controller using the assigned ID from the view as a reference to the object. For example, the PaintView object created earlier has a method called clear that erases all content in the Titanium View. The view in the previous example contains a button with the eraseMe function bound to a click event, and since the module has an id defined, the controller can invoke the clear method:
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`function` `eraseMe() {`
+```javascript
+function eraseMe() {
+  $.paint.clear();
+}
 
-`$.paint.clear();`
-
-`}`
-
-`$.index.open();`
+$.index.open();
+```
 
 ## Require element
 
@@ -342,55 +310,45 @@ The example below creates a tab group in the main view file and includes two sep
 
 Contents of the main view file (index.xml) that includes the rss and about views:
 
-`<``Alloy``>`
-
-`<``TabGroup``>`
-
-`<``Tab`  `id``=``"leftTab"``>`
-
-`<``Require`  `type``=``"view"`  `src``=``"rss"`  `id``=``"rssTab"``/>`
-
-`</``Tab``>`
-
-`<``Tab`  `id``=``"rightTab"``>`
-
-`<``Require`  `type``=``"view"`  `src``=``"about"`  `id``=``"aboutTab"``/>`
-
-`</``Tab``>`
-
-`</``TabGroup``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <TabGroup>
+        <Tab id="leftTab">
+            <Require type="view" src="rss" id="rssTab"/>
+        </Tab>
+        <Tab id="rightTab">
+            <Require type="view" src="about" id="aboutTab"/>
+        </Tab>
+    </TabGroup>
+</Alloy>
+```
 
 Contents of the rss view file (rss.xml):
 
-`<``Alloy``>`
-
-`<``Window`  `id``=``"rssWindow"``>`
-
-`<``WebView`  `id``=``"rssView"` `/>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window id="rssWindow">
+        <WebView id="rssView" />
+    </Window>
+</Alloy>
+```
 
 Contents of the about view file (about.xml):
 
-`<``Alloy``>`
-
-`<``Window`  `id``=``"aboutWindow"``>`
-
-`<``WebView`  `id``=``"aboutView"` `/>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window id="aboutWindow">
+        <WebView id="aboutView" />
+    </Window>
+</Alloy>
+```
 
 To use UI objects from the included views, the controller needs to reference the ID specified in the Require element and use the getView function with the ID of the object as the argument: var object = $.requireId.getView('objectId'). The code below demonstrates how to access the web view object from the about view, in the previous example code, to change the URL property.
 
-`var aboutView = $.aboutTab.getView(``'aboutView'``);`
-
-`aboutView.url =` `'http://www.google.com'``;`
+```javascript
+var aboutView = $.aboutTab.getView('aboutView');
+aboutView.url = 'http://www.google.com';
+```
 
 ### Importing widgets
 
@@ -412,97 +370,84 @@ You can optionally add the id and name attributes to the Require element:
 
 For example, to import the mywidget widget in to a project, copy mywidget to the app/widgets folder.
 
-`app`
-
-`├── config.json`
-
-`├── controllers`
-
-`│ └── index.js`
-
-`├── views`
-
-`│ └── index.xml`
-
-`└── widgets`
-
-`└── mywidget`
-
-`├── controllers`
-
-`│ ├── foo.js`
-
-`│ └── widget.js`
-
-`├── views`
-
-`│ ├── foo.xml`
-
-`│ └── widget.xml`
-
-`└── widget.json`
+```
+app
+├── config.json
+├── controllers
+│   └── index.js
+├── views
+│   └── index.xml
+└── widgets
+    └── mywidget
+        ├── controllers
+        │   ├── foo.js
+        │   └── widget.js
+        ├── views
+        │   ├── foo.xml
+        │   └── widget.xml
+        └── widget.json
+```
 
 Then, add the <Widget> tag in the XML. Specify the src attribute as mywidget. Additionally, define the id and name attributes. Since the name attribute is defined, the foo view-controller is used instead of the widget view-controller.
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<``Widget`  `src``=``"mywidget"`  `id``=``"foo"`  `name``=``"foo"` `/>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window>
+        <Widget src="mywidget" id="foo" name="foo" />
+    </Window>
+</Alloy>
+```
 
 Since the id attribute is defined, the widget can be accessed from the controller.
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`$.index.open();`
-
-`$.foo.myMethod();`
+```javascript
+$.index.open();
+$.foo.myMethod();
+```
 
 Finally, update the dependencies object in the config.json file by adding a key/value pair with the mywidget as the key and the 1.0 as the value:
 
-`...`
-
-`"dependencies"``: {`
-
-`"mywidget"``:``"1.0"`
-
-`}`
+```
+...
+    "dependencies": {
+        "mywidget":"1.0"
+    }
+```
 
 ### Passing arguments
 
 You can add any custom attributes to the markup to initialize a widget or controller. For example, consider the following mark-up:
 
-apps/views/index.xml
+*apps/views/index.xml*
 
-`<Require id=``"foobar"` `src=``"foo"` `customTitle=``"Hello"` `customImage=``"hello.png"``/>`
+```xml
+<Require id="foobar" src="foo" customTitle="Hello" customImage="hello.png"/>
+```
 
 This is equivalent to the following JavaScript:
 
-apps/controllers/index.js
+*apps/controllers/index.js*
 
-`var` `foobar = Alloy.createController(``'foo'``, {`
-
-`id:` `'foobar'``,`
-
-`customTitle:` `'Hello'``,`
-
-`customImage:` `'images/hello.png'`  `// Filesystem: app/assets/images/hello.png`
-
-`});`
+```javascript
+var foobar = Alloy.createController('foo', {
+    id: 'foobar',
+    customTitle: 'Hello',
+    customImage: 'images/hello.png' // Filesystem: app/assets/images/hello.png
+});
+```
 
 In the required view's controller, the custom properties can be referenced using the $.args variable, for example:
 
-apps/controllers/foo.js
+*apps/controllers/foo.js*
 
-`var` `title = $.args.customTitle ||` `'Foobar'``;`
-
-`var` `image = $.args.customImage ||` `'default.png'``;`
+```javascript
+var title = $.args.customTitle || 'Foobar';
+var image = $.args.customImage || 'default.png';
+```
 
 See [Alloy Controllers: Passing Arguments](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#passing-arguments) for more details.
 
@@ -512,25 +457,27 @@ To bind a callback to an event in a required view using the on attribute as deta
 
 Parent View:
 
-`<Require id=``"fooButton"` `src=``"button"` `onClick=``"doClick"` `/>`
+```xml
+<Require id="fooButton" src="button" onClick="doClick" />
+```
 
 Button View:
 
-`<Alloy>`
-
-`<Button id=``"button"``>Click Me!</Button>`
-
-`</Alloy>`
+```xml
+<Alloy>
+    <Button id="button">Click Me!</Button>
+</Alloy>
+```
 
 The doClick method is defined in the parent's controller.
 
 In the controller of the required view, you need to define an event listener that triggers the event for the parent view to receive:
 
-`$.button.addEventListener(``'click'``, function(e) {`
-
-`$.trigger(``'click'``, e);`
-
-`});`
+```
+$.button.addEventListener('click', function(e) {
+    $.trigger('click', e);
+});
+```
 
 When the button is clicked in the parent view, the controller code in the required view fires a click event, which is caught by the parent view and executes the doClick method.
 
@@ -540,51 +487,50 @@ If your Require element is a parent view, you can add children elements to it. T
 
 In the example below, you have the index view which is using the Require element to include another view called info. The required view is a yellow box with a brown border. Its controller adds the label view element passed in as the first element of the $.args.children array.
 
-app/views/info.xml
+*app/views/info.xml*
 
-`<Alloy>`
+```xml
+<Alloy>
+    <View backgroundColor="yellow" borderWidth="0.5" borderColor="brown"/>
+</Alloy>
+```
 
-`<View backgroundColor=``"yellow"` `borderWidth=``"0.5"` `borderColor=``"brown"``/>`
+*controllers/info.js*
 
-`</Alloy>`
+```javascript
+// add children if there are any
+_.each($.args.children || [], function(child) {
+    $.info.add(child);
+});
 
-controllers/info.js
+$.info.height = Ti.UI.SIZE;
+```
 
-`// add children if there are any`
+*app/views/index.xml*
 
-`_.each($.args.children || [],` `function``(child) {`
-
-`$.info.add(child);`
-
-`});`
-
-`$.info.height = Ti.UI.SIZE; `
-
-app/views/index.xml
-
-`<``Alloy``>`
-
-`<``Window`  `class``=``"container"``>`
-
-`<``Require`  `src``=``"info"``>`
-
-`<``Label``>I am an info box.</``Label``>`
-
-`</``Require``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window class="container">
+        <Require src="info">
+            <Label>I am an info box.</Label>
+        </Require>
+    </Window>
+</Alloy>
+```
 
 ## Namespace
 
 By default, all UI components specified in the views are prefixed with Titanium.UI for convenience. However, to use a component not part of the Titanium.UI namespace, use the ns attribute. For example, to use the Titanium.UI.iOS.BlurView, do:
 
-`<BlurView ns=``"Ti.UI.iOS"` `id=``"blurView"``/>`
+```xml
+<BlurView ns="Ti.UI.iOS" id="blurView"/>
+```
 
 For UI objects that belong to a specific platform, such as the navigation window. Use the platform attribute to use the object, for example:
 
-`<SplitWindow platform=``"ios"``/>`
+```xml
+<SplitWindow platform="ios"/>
+```
 
 If you used <NavigationWindow platform="ios"/> prior to Titanium 8.0.0, you will need to specify the platform type.
 
@@ -627,27 +573,19 @@ You can use all the attributes in any combination.
 
 In the example below, different Annotation objects are displayed in the view based on the platform and device size.
 
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<``Module`  `id``=``"mapview"`  `module``=``"ti.map"`  `method``=``"createView"``>`
-
-`<``Annotation`  `title``=``"Cupertino"`  `platform``=``'ios'`  `formFactor``=``'tablet'`  `latitude``=``'37.3231'`  `longitude``=``'-122.0311'``/>`
-
-`<``Annotation`  `title``=``"Redwood City"`  `platform``=``'ios'`  `formFactor``=``'handheld'`  `latitude``=``'37.4853'`  `longitude``=``'-122.2353'``/>`
-
-`<``Annotation`  `title``=``"Mountain View"`  `platform``=``'android'`  `latitude``=``'37.3861'`  `longitude``=``'-122.0828'``/>`
-
-`<``Annotation`  `title``=``"Palo Alto"`  `platform``=``'android,ios,mobileweb'`  `latitude``=``'37.4419'`  `longitude``=``'-122.1419'``/>`
-
-`<``Annotation`  `title``=``"San Francisco"`  `platform``=``'mobileweb'`  `latitude``=``'37.7750'`  `longitude``=``'-122.4183'``/>`
-
-`</``View``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window>
+        <Module id="mapview" module="ti.map" method="createView">
+            <Annotation title="Cupertino" platform='ios' formFactor='tablet' latitude='37.3231' longitude='-122.0311'/>
+            <Annotation title="Redwood City" platform='ios' formFactor='handheld' latitude='37.4853' longitude='-122.2353'/>
+            <Annotation title="Mountain View" platform='android' latitude='37.3861' longitude='-122.0828'/>
+            <Annotation title="Palo Alto" platform='android,ios,mobileweb' latitude='37.4419' longitude='-122.1419'/>
+            <Annotation title="San Francisco" platform='mobileweb' latitude='37.7750' longitude='-122.4183'/>
+        </View>
+    </Window>
+</Alloy>
+```
 
 You can also create subfolders, named as the platform, in the views directory as another way to create platform-specific views. Refer to [Alloy Concepts: Platform-Specific Resources](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Concepts/#platform-specific-resources).
 
@@ -657,7 +595,9 @@ Each Titanium UI object property is defined as an attribute in the XML and TSS f
 
 For example, the following code defines multiple Ti.UI.Label properties and defines the Label text property as node text:
 
-`<Label borderWidth=``"1"` `borderColor=``"red"` `color=``"red"` `width=``"Ti.UI.FILL"``>Hello, World!</Label>`
+```xml
+<Label borderWidth="1" borderColor="red" color="red" width="Ti.UI.FILL">Hello, World!</Label>
+```
 
 Refer to the [Titanium API Guides](#!/api) for the properties of each UI object.
 
@@ -665,19 +605,15 @@ Refer to the [Titanium API Guides](#!/api) for the properties of each UI object.
 
 For properties that are assigned Titanium proxies, such as Views or Buttons, these properties can be declared. Create a child tag under the Titanium UI object tag, using the name of the property with the first character capitalized. Then, declare your Titanium proxy inline with the child property tag. For example, the following code declares a rightNavButton for a Window:
 
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<``RightNavButton``>`
-
-`<``Button`  `title``=``"Back"`  `onClick``=``"closeWindow"` `/>`
-
-`</``RightNavButton``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window>
+        <RightNavButton>
+            <Button title="Back" onClick="closeWindow" />
+        </RightNavButton>
+    </Window>
+</Alloy>
+```
 
 Currently, the following Titanium proxies and properties implemented using this syntax are:
 
@@ -699,125 +635,98 @@ Currently, the following Titanium proxies and properties implemented using this 
 
 You can set [ActionBar properties](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Android.ActionBar) in the ActionBar element to modify the application's action bar. Add the ActionBar element as a child of either a Window or TabGroup, then set ActionBar attributes in the XML or TSS file. To add action items to the action bar, add the Menu element as a child of either a Window or TabGroup , then add MenuItem elements as children of the Menu element. S et MenuItem attributes in either the XML or TSS file.
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
+```xml
+<Alloy>
+    <Window title="My App">
+        <ActionBar id="actionbar" platform="android" title="Home Screen" onHomeIconItemSelected="showInfo" />
+        <Menu>
+            <MenuItem id="editItem" title="Edit" onClick="editInfo" />
+            <MenuItem id="viewItem" title="View" onClick="viewInfo" />
+        </Menu>
+        <Label id="label">Use the ActionBar to Perform an Action.</Label>
+    </Window>
+</Alloy>
+```
 
-`<``Window`  `title``=``"My App"``>`
+*app/styles/index.tss*
 
-`<``ActionBar`  `id``=``"actionbar"`  `platform``=``"android"`  `title``=``"Home Screen"`  `onHomeIconItemSelected``=``"showInfo"` `/>`
-
-`<``Menu``>`
-
-`<``MenuItem`  `id``=``"editItem"`  `title``=``"Edit"`  `onClick``=``"editInfo"` `/>`
-
-`<``MenuItem`  `id``=``"viewItem"`  `title``=``"View"`  `onClick``=``"viewInfo"` `/>`
-
-`</``Menu``>`
-
-`<``Label`  `id``=``"label"``>Use the ActionBar to Perform an Action.</``Label``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
-
-app/styles/index.tss
-
-`"MenuItem"``: {`
-
-`showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS`
-
-`},`
-
-`"#item1"``: {`
-
-`icon: Ti.Android.R.drawable.ic_menu_edit`
-
-`},`
-
-`"#item2"``: {`
-
-`icon: Ti.Android.R.drawable.ic_menu_view`
-
-`},`
-
-`"#actionbar"``: {`
-
-`icon:` `"/appicon.png"``,`
-
-`}`
+```
+"MenuItem": {
+    showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS
+},
+"#item1": {
+    icon: Ti.Android.R.drawable.ic_menu_edit
+},
+"#item2": {
+    icon: Ti.Android.R.drawable.ic_menu_view
+},
+"#actionbar": {
+    icon: "/appicon.png",
+}
+```
 
 ### iOS navigation button shorthand
 
 When specifying either the LeftNavButton or RightNavButton element with a Window or iPad Popover object, you do not need to create a separate Button object inside these elements in the XML file. Instead, you can define the Button attributes with the LeftNavButton and RightNavButton elements. Note that you cannot use node text to define the button title. It must be specified as the title attribute. For example:
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
-
-`<``NavigationWindow``>`
-
-`<``Window``>`
-
-`<``LeftNavButton`  `title``=``"Back"`  `onClick``=``"goBack"` `/>`
-
-`<``Label``>I am iOS!</``Label``>`
-
-`</``Window``>`
-
-`</``NavigationWindow``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <NavigationWindow>
+        <Window>
+            <LeftNavButton title="Back" onClick="goBack" />
+            <Label>I am iOS!</Label>
+        </Window>
+    </NavigationWindow>
+</Alloy>
+```
 
 ### iOS systemButton shorthand
 
 When specifying the [systemButton attribute](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Button-property-systemButton) for a Button object, you do not need to use the Ti.UI.iOS.SystemButton namespace. For example, the following markup creates the iOS camera button:
 
-`<``Button`  `systemButton``=``"CAMERA"``/>`
-
-`<!-- Instead of -->`
-
-`<``Button`  `systemButton``=``"Titanium.UI.iOS.SystemButton.CAMERA"``/>`
+```xml
+<Button systemButton="CAMERA"/>
+<!-- Instead of -->
+<Button systemButton="Titanium.UI.iOS.SystemButton.CAMERA"/>
+```
 
 ### TextField keyboard shorthands
 
 When specifying the [keyboardType attribute](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextField-property-keyboardType) or [returnKeyType attribute](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TextField-property-returnKeyType) for a TextField object, you do not need to use the Titanium.UI.KEYBOARD\_ or Titanium.UI.RETURNKEY\_ namespace, respectively. If you are using these shorthands in the TSS file, the shorthand must be specified as strings, so place them in quotes. For example:
 
-`<``TextField`  `id``=``"txt"`  `keyboardType``=``"DECIMAL_PAD"`  `returnKeyType``=``"DONE"``/>`
+```xml
+<TextField id="txt" keyboardType="DECIMAL_PAD" returnKeyType="DONE"/>
 
-`"#txt": {`
+"#txt": {
+  keyboardType: "DECIMAL_PAD",
+  returnKeyType: "DONE"
+}
 
-`keyboardType: "DECIMAL_PAD",`
+<!-- Instead of -->
 
-`returnKeyType: "DONE"`
+<TextField id="txt" keyboardType="Titanium.UI.KEYBOARD_DECIMAL_PAD" returnKeyType="Titanium.UI.RETURNKEY_DONE"/>
 
-`}`
-
-`<!-- Instead of -->`
-
-`<``TextField`  `id``=``"txt"`  `keyboardType``=``"Titanium.UI.KEYBOARD_DECIMAL_PAD"`  `returnKeyType``=``"Titanium.UI.RETURNKEY_DONE"``/>`
-
-`"#txt": {`
-
-`keyboardType: Titanium.UI.KEYBOARD_DECIMAL_PAD,`
-
-`returnKeyType: "Titanium.UI.RETURNKEY_DONE"`
-
-`}`
+"#txt": {
+  keyboardType: Titanium.UI.KEYBOARD_DECIMAL_PAD,
+  returnKeyType: "Titanium.UI.RETURNKEY_DONE"
+}
+```
 
 ## Event handling
 
 In Alloy, events may be added in the views using a special attribute. Capitalize the first character of the event name and prefix it with on, so the Ti.UI.Button object events click, dblclick and swipe events will become the attributes: onClick, onDblclick, and onSwipe, respectively. These attributes can be used to assign callbacks from the corresponding controller. For example, the view code below binds the button click event to the confirmCB callback using the onClick attribute. The confirmCB callback needs to be defined in the associated controller of the view.
 
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<``Button`  `id``=``"confirmButton"`  `onClick``=``"confirmCB"``>OK</``Button``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window>
+        <Button id="confirmButton" onClick="confirmCB">OK</Button>
+    </Window>
+</Alloy>
+```
 
 Refer to the [Titanium API Guides](#!/api) for the events of each UI object.
 

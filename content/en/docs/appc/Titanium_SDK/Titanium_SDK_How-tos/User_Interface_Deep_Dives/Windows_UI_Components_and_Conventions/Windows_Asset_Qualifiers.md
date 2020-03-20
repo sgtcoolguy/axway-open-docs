@@ -64,45 +64,32 @@ For the language qualifiers, the notation differs if you place them in a folder 
 
 A crazy technical writer decides to arrange the assets using the folders and filenames as shown below. Note that this example is to show the different ways to combine qualifiers. Do not structure your project this way.
 
-`app`
-
-`└── assets`
-
-`└── windows`
-
-`├── Image.lang-fr-CA_scale-``100``.png`
-
-`├── Image.lang-fr-FR.png`
-
-`├── Image.png`
-
-`├── en-US`
-
-`│ ├── scale-``100`
-
-`│ │ └── Image.png`
-
-`│ ├── scale-``140`
-
-`│ │ └── Image.png`
-
-`│ ├── scale-``180`
-
-`│ │ └── Image.png`
-
-`│ └── scale-``240`
-
-`│ └── Image.png`
-
-`└── en-US_contrast_high`
-
-`└── Image.png`
+```
+app
+└── assets
+    └── windows
+        ├── Image.lang-fr-CA_scale-100.png
+        ├── Image.lang-fr-FR.png
+        ├── Image.png
+        ├── en-US
+        │   ├── scale-100
+        │   │   └── Image.png
+        │   ├── scale-140
+        │   │   └── Image.png
+        │   ├── scale-180
+        │   │   └── Image.png
+        │   └── scale-240
+        │       └── Image.png
+        └── en-US_contrast_high
+            └── Image.png
+```
 
 Each image file can be referenced by just using the filename Image.png.
 
-`// Reference the image without any of the qualifiers and the windows platform directory`
-
-`imageView.image =` `'Image.png'``;`
+```
+// Reference the image without any of the qualifiers and the windows platform directory
+imageView.image = 'Image.png';
+```
 
 The qualifiers tell Windows which image file to use.
 

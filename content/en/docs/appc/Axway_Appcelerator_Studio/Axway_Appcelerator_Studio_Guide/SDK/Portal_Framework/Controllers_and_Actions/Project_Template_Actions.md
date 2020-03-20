@@ -22,13 +22,12 @@ This command is executed immediately in a synchronous way.
 
 Gets the different types of project templates available, dispatch this call:
 
-`dispatch($H({`
-
-`controller:` `'portal.project.templates'``,`
-
-`action:` `'getTemplateTypes'`
-
-`}).toJSON()).evalJSON();`
+```
+dispatch($H({
+  controller: 'portal.project.templates',
+  action: 'getTemplateTypes'
+}).toJSON()).evalJSON();
+```
 
 Returns:
 An array of strings
@@ -37,15 +36,13 @@ An array of strings
 
 Gets the project templates that matches the project template types, dispatch this call:
 
-`dispatch($H({`
-
-`controller:` `'portal.project.templates'``,`
-
-`action:` `'getTemplates'``,`
-
-`args:` `'["WEB","TITANIUM_MOBILE"]'`
-
-`}).toJSON()).evalJSON();`
+```
+dispatch($H({
+  controller: 'portal.project.templates',
+  action: 'getTemplates',
+  args: '["WEB","TITANIUM_MOBILE"]'
+}).toJSON()).evalJSON();
+```
 
 Arguments:
 List of project template types. If no arguments are specified, all project templates will be returned
@@ -58,7 +55,9 @@ An array of Project Templates. Each template has the following attributes: "name
 Some of the templates may be loaded or removed after the portal is opened. In this case, the Studio fires events that indicate a Template addition or removal.
 Here is a sample of a way you can listen to such events (based on the [studio3-sdk](https://github.com/aptana/studio3-sdk) sample):
 
-`eventsDispatcher.addObserver(``'templates'``, function(e) { portal.templates.update(e); });`
+```
+eventsDispatcher.addObserver('templates', function(e) { portal.templates.update(e); });
+```
 
 The _update_ call receives an event object that holds the following information, and can be used to update the UI:
 

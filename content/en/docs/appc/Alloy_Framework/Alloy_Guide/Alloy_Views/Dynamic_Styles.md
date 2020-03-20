@@ -20,101 +20,57 @@ Before reading this guide, review [Alloy Styles and Themes](/docs/appc/Alloy_Fra
 
 Before using either method, you need to create class styles in the TSS files, either in the global style file or in the individual TSS files. For example, suppose you have the following styles defined:
 
-app/styles/app.tss
+*app/styles/app.tss*
 
-`".bluetext"` `: {`
-
-`color:` `'blue'`
-
-`},`
-
-`".orangetext"` `: {`
-
-`color:` `'orange'`
-
-`},`
-
-`".shadow"` `: {`
-
-`shadowColor:` `'#88f'``,`
-
-`shadowOffset: {x:``1``,y:``3``}`
-
-`},`
-
-`".ldpi"` `: {`
-
-`font: {fontSize:` `'9dp'``, fontWeight:` `'normal'` `}`
-
-`},`
-
-`".mdpi"` `: {`
-
-`font: {fontSize:` `'12dp'``, fontWeight:` `'normal'` `}`
-
-`},`
-
-`".hdpi"` `: {`
-
-`font: {fontSize:` `'18dp'``, fontWeight:` `'bold'` `}`
-
-`},`
-
-`".xhdpi"` `: {`
-
-`font: {fontSize:` `'24dp'``, fontWeight:` `'bold'` `}`
-
-`},`
-
-`"Label"` `: {`
-
-`font: {fontSize:` `'14dp'``, fontWeight:` `'normal'` `},`
-
-`shadow : {},`
-
-`color :` `'black'`
-
-`},`
-
-`".rude_button"` `: {`
-
-`title:` `'Go Away'`
-
-`},`
-
-`".nice_button"` `: {`
-
-`title:` `'Please Close'`
-
-`},`
-
-`"Button"` `: {`
-
-`width: Ti.UI.SIZE,`
-
-`height: Ti.UI.SIZE`
-
-`}`
-
-`".tiny_win"` `: {`
-
-`height:` `'150dp'``,`
-
-`width:` `'200dp'``,`
-
-`backgroundColor:` `'blue'`
-
-`},`
-
-`".big_win"` `: {`
-
-`height:` `'300dp'``,`
-
-`width:` `'400dp'``,`
-
-`backgroundColor:` `'red'`
-
-`}`
+```
+".bluetext" : {
+  color: 'blue'
+},
+".orangetext" : {
+  color: 'orange'
+},
+".shadow" : {
+  shadowColor: '#88f',
+  shadowOffset: {x:1,y:3}
+},
+".ldpi" : {
+  font: {fontSize: '9dp', fontWeight: 'normal' }
+},
+".mdpi" : {
+  font: {fontSize: '12dp', fontWeight: 'normal' }
+},
+".hdpi" : {
+  font: {fontSize: '18dp', fontWeight: 'bold' }
+},
+".xhdpi" : {
+  font: {fontSize: '24dp', fontWeight: 'bold' }
+},
+"Label" : {
+  font: {fontSize: '14dp', fontWeight: 'normal' },
+  shadow : {},
+  color : 'black'
+},
+".rude_button" : {
+  title: 'Go Away'
+},
+".nice_button" : {
+  title: 'Please Close'
+},
+"Button" : {
+    width: Ti.UI.SIZE,
+    height: Ti.UI.SIZE
+}
+".tiny_win" : {
+  height: '150dp',
+  width: '200dp',
+  backgroundColor: 'blue'
+},
+".big_win" : {
+  height: '300dp',
+  width: '400dp',
+  backgroundColor: 'red'
+}
+```
 
 The previous style sheet defines various class and markup element styles for labels, buttons and windows. Alloy assigns a priority for each class, based on its order in the TSS file. Styles listed first receive a lower priority than ones listed afterwards. For example, if both the ldpi and hdpi classes are assigned to a label, since hdpi is after ldpi, the label text is 24 dp not 9 dp. Since the Label size of 14 dp is a markup element style and even though it appears after the class styles, it does not have a higher priority number since class styles have higher precedence over markup element styles. The label is still 24 dp not 14 dp. Properties define inline in the markup and TSS id styles still take precedence over class styles.
 
@@ -126,139 +82,92 @@ You can use the controller's UI.create method to create a view component that is
 
 For example, suppose that the following view-controller is defined in an Alloy project.
 
-app/views/dialog.xml
+*app/views/dialog.xml*
 
-`<Alloy>`
+```xml
+<Alloy>
+    <Window id="win">
+        <Button id="button" onClick="doClick" />
+    </Window>
+</Alloy>
+```
 
-`<Window id=``"win"``>`
+*app/controllers/dialog.js*
 
-`<Button id=``"button"` `onClick=``"doClick"` `/>`
+```javascript
+function doClick(e) {
+    $.win.close();
+}
 
-`</Window>`
-
-`</Alloy>`
-
-app/controllers/dialog.js
-
-`function doClick(e) {`
-
-`$.win.close();`
-
-`}`
-
-`args = arguments[``0``] || {};`
-
-`if` `(args.button) {`
-
-`var style = $.createStyle({`
-
-`classes: args.button,`
-
-`apiName:` `'Button'``,`
-
-`color:` `'blue'`
-
-`});`
-
-`$.button.applyProperties(style);`
-
-`}`
-
-`if` `(args.win) {`
-
-`var style = $.createStyle({`
-
-`classes: args.win,`
-
-`apiName:` `'Window'``,`
-
-`// Since backgroundColor is defined inline, this overrides the class style`
-
-`backgroundColor:` `'white'`
-
-`});`
-
-`$.win.applyProperties(style);`
-
-`}`
-
-`if` `(args.label) {`
-
-`args.label.top =` `10`
-
-`var label = $.UI.create(``"Label"``, args.label);`
-
-`$.win.add(label);`
-
-`}`
+args = arguments[0] || {};
+if (args.button) {
+    var style = $.createStyle({
+        classes: args.button,
+        apiName: 'Button',
+        color: 'blue'
+    });
+    $.button.applyProperties(style);
+}
+if (args.win) {
+    var style = $.createStyle({
+        classes: args.win,
+        apiName: 'Window',
+        // Since backgroundColor is defined inline, this overrides the class style
+        backgroundColor: 'white'
+    });
+    $.win.applyProperties(style);
+}
+if (args.label) {
+    args.label.top = 10
+    var label = $.UI.create("Label", args.label);
+    $.win.add(label);
+}
+```
 
 Then, create an instance of this view-controller:
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`var args = {};`
-
-`args.button = [``'rude_button'``];`
-
-`args.win = [``'tiny_win'``];`
-
-`args.label = {`
-
-`classes: [``'hdpi'``,` `'shadow'``],`
-
-`text:` `'No zombies allowed!'`
-
-`};`
-
-`Alloy.createController(``'dialog'``, args).getView().open(); `
+```javascript
+var args = {};
+args.button = ['rude_button'];
+args.win = ['tiny_win'];
+args.label = {
+    classes: ['hdpi', 'shadow'],
+    text: 'No zombies allowed!'
+};
+Alloy.createController('dialog', args).getView().open();
+```
 
 In this example, the index view-controller passes specific classes for the dialog view-controller to use. In the dialog-view controller, for the button and window, it uses the passed classes to generate styles with the createStyle method and update the styles of the components with the applyProperties method. The dialog controller defines extra properties to apply in the dictionary. The background color of the tiny\_win class is overridden by the inline property defined in the dictionary, making the window white not blue. For the label, the dialog-view controller uses the passed dictionary to generate a label object with the UI.create method and adds it to the window.
 
 In this example, the dialog controller code is not necessary. The dialog can be generated and styled outside the view-controller. The following code using only the previous XML markup is equivalent to what the previous two controllers are doing:
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`var dialog = Alloy.createController(``'dialog'``);`
-
-`var style = dialog.createStyle({`
-
-`classes:` `'rude_button'``,`
-
-`apiName:` `'Button'``,`
-
-`color:` `'blue'`
-
-`});`
-
-`dialog.button.applyProperties(style);`
-
-`style = dialog.createStyle({`
-
-`classes:` `'tiny_win'``,`
-
-`apiName:` `'Window'``,`
-
-`backgroundColor:` `'white'`
-
-`});`
-
-`dialog.win.applyProperties(style);`
-
-`style = {`
-
-`top:` `10``,`
-
-`text:` `'No zombies allowed!'``,`
-
-`classes:` `'hdpi shadow'`
-
-`}`
-
-`var label = dialog.UI.create(``'Label'``, style);`
-
-`dialog.win.add(label);`
-
-`dialog.getView().open();`
+```javascript
+var dialog = Alloy.createController('dialog');
+var style = dialog.createStyle({
+    classes: 'rude_button',
+    apiName: 'Button',
+    color: 'blue'
+});
+dialog.button.applyProperties(style);
+style = dialog.createStyle({
+    classes: 'tiny_win',
+    apiName: 'Window',
+    backgroundColor: 'white'
+});
+dialog.win.applyProperties(style);
+style = {
+    top: 10,
+    text: 'No zombies allowed!',
+    classes: 'hdpi shadow'
+}
+var label = dialog.UI.create('Label', style);
+dialog.win.add(label);
+dialog.getView().open();
+```
 
 Note that code outside of the dialog view-controller is using the instance variable name dialog to make the API calls with the createStyle and UI.create methods rather than the $ variable, which is used when making controller API calls inside its self view-controller.
 
@@ -266,31 +175,26 @@ Note that code outside of the dialog view-controller is using the instance varia
 
 To modify the TSS classes of an object that has already been created, use the controller's addClass, removeClass and resetClass methods, which adds, removes or resets the TSS classes of a view object, respectively. Pass a reference to the view object as the first parameter, then pass the classes to add or remove as an array or space-separated string as the second parameter. You can optionally specify inline properties related to the component to modify as an optional third parameter. As the classes are modified using these API calls, the view is automatically updated. For example, the following code is equivalent to the previous example:
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`var dialog = Alloy.createController(``'dialog'``);`
-
-`dialog.addClass(dialog.win,` `'tiny_win'``, {backgroundColor:``'white'``});`
-
-`dialog.addClass(dialog.button,` `'rude_button'``, {color:` `'blue'``});`
-
-`var style = {`
-
-`top:` `10``,`
-
-`text:` `'No zombies allowed!'``,`
-
-`classes:` `'hdpi shadow'`
-
-`}`
-
-`var label = dialog.UI.create(``'Label'``, style);`
-
-`dialog.getView().open();`
+```javascript
+var dialog = Alloy.createController('dialog');
+dialog.addClass(dialog.win, 'tiny_win', {backgroundColor:'white'});
+dialog.addClass(dialog.button, 'rude_button', {color: 'blue'});
+var style = {
+    top: 10,
+    text: 'No zombies allowed!',
+    classes: 'hdpi shadow'
+}
+var label = dialog.UI.create('Label', style);
+dialog.getView().open();
+```
 
 Later on, you can change the classes. The following code removes all classes from the button object, then adds the nice\_button, orangetext and hdpi classes:
 
-`dialog.resetClass(dialog.button,` `'nice_button orangetext hdpi'``);`
+```
+dialog.resetClass(dialog.button, 'nice_button orangetext hdpi');
+```
 
 To take advantage of these APIs, you need to enable [autostyle](#autostyle) for the components or else the view may not update properly.
 
@@ -300,39 +204,31 @@ A view component with autostyle enabled has its TSS classes stored with the view
 
 To better understand when and why this feature is useful, consider the following XML view, TSS file and view-controller code:
 
-app/styles/index.tss
+*app/styles/index.tss*
 
-`".coloronly"` `: {`
-
-`color:` `'red'`
-
-`},`
-
-`".colorsize"` `: {`
-
-`color:` `'blue'``,`
-
-`font: {fontSize:` `'24dp'``}`
-
-`},`
-
-`"Label"` `: {`
-
-`color:` `'black'``,`
-
-`font: {fontSize:` `'12dp'``}`
-
-`}`
+```
+".coloronly" : {
+    color: 'red'
+},
+".colorsize" : {
+    color: 'blue',
+    font: {fontSize: '24dp'}
+},
+"Label" : {
+    color: 'black',
+    font: {fontSize: '12dp'}
+}
+```
 
 The view-controller calls $.addClass() to add two classes to the label object, then calls removeClass() twice, removing a class each time. The result of each method call is show as a comment next to the associated line of code.
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`$.addClass($.label,` `"coloronly colorsize"``);` `// --> appears blue and 24dp`
-
-`$.removeClass($.label,` `"colorsize"``);` `// --> appears red and 24dp`
-
-`$.removeClass($.label,` `"coloronly"``);` `// --> appears red and 24dp`
+```javascript
+$.addClass($.label, "coloronly colorsize"); // --> appears blue and 24dp
+$.removeClass($.label, "colorsize"); // --> appears red and 24dp
+$.removeClass($.label, "coloronly"); // --> appears red and 24dp
+```
 
 Even though the classes are removed, the view does not update as expected. For the first remove statement, the color updates correctly but not the font size. For the second remove statement, neither the color nor the size updates correctly even though markup element class defines these properties.
 
@@ -346,10 +242,10 @@ To enable autostyle, set the autoStyle attribute to true either in the XML marku
 
 * To enable autostyle for all controllers in an Alloy project, set the **autoStyle** field to true in the config.json file, for example:
 
-    app/config.json
+    *app/config.json*
 
-    `{`
-
-    `"autoStyle"``:` `true`
-
-    `}`
+    ```json
+    {
+        "autoStyle": true
+    }
+    ```

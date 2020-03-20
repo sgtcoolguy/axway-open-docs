@@ -4,49 +4,31 @@ The AMPLIFY Crash Analytics (ACA) [API](https://docs.appcelerator.com/platform/l
 
 This sample code will automatically log the request time, response code, and response time in the breadcrumbs.
 
-`function` `request(type, url, opts) {`
+```javascript
+function request(type, url, opts) {
+    const client = Ti.Network.createHTTPClient({
+        onload: e => {
+            aca.leaveBreadcrumb(`request.onload: ${e.source.status} -> ${url}`);
+            opts && opts.onload && opts.onload(e);
+        },
+        onerror: e => {
+            aca.leaveBreadcrumb(`request.onerror: ${e.source.status} (${e.error}) -> ${url}`);
+            opts && opts.onerror && opts.onerror(e);
+        },
+        timeout: (opts && opts.timeout) || 5000
+    });
+    client.open(type, url);
+    client.send();
+    aca.leaveBreadcrumb(`request: ${url}`);
+}
 
-`const client = Ti.Network.createHTTPClient({`
-
-`onload: e => {`
-
-``aca.leaveBreadcrumb(`request.onload: ${e.source.status} -> ${url}`);``
-
-`opts && opts.onload && opts.onload(e);`
-
-`},`
-
-`onerror: e => {`
-
-``aca.leaveBreadcrumb(`request.onerror: ${e.source.status} (${e.error}) -> ${url}`);``
-
-`opts && opts.onerror && opts.onerror(e);`
-
-`},`
-
-`timeout: (opts && opts.timeout) || 5000`
-
-`});`
-
-`client.open(type, url);`
-
-`client.send();`
-
-``aca.leaveBreadcrumb(`request: ${url}`);``
-
-`}`
-
-`// Example request to Google.`
-
-`request(``'GET'``,` `'https://google.com/'``, {`
-
-`onload: e => {`
-
-``Ti.API.info(`onload: ${e.source.responseText}`);``
-
-`}`
-
-`});`
+// Example request to Google.
+request('GET', 'https://google.com/', {
+    onload: e => {
+        Ti.API.info(`onload: ${e.source.responseText}`);
+    }
+});
+```
 
 In the Dashboard , if you navigate to the Application's Crashes - > Crash Details -> Occurrences tab, you can view the breadcrumb by expanding a crash occurrence.
 

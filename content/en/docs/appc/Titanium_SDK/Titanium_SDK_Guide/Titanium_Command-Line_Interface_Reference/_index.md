@@ -104,15 +104,21 @@ For more information, see [Installing Node](/docs/appc/Titanium_SDK/Titanium_SDK
 
 1. Install the titanium CLI.
 
-    `npm` `install` `titanium -g`
+    ```bash
+    npm install titanium -g
+    ```
 
 2. Download the latest UNSTABLE Titanium SDK continuous integration build.
 
-    `titanium sdk` `install` `--branch master --default`
+    ```
+    titanium sdk install --branch master --default
+    ```
 
 3. Configure CLI (optional).
 
-    `titanium setup`
+    ```
+    titanium setup
+    ```
 
     The script prompts you to enter basic information, such as your name, default locale, default SDK version, and default workspace folder.
 
@@ -163,13 +169,13 @@ The CLI checks several settings to see which SDK version to use to build your ap
 4. SDK select version.
     To check or change this version, run titanium sdk select.
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium build --platform <platform> [--build-only] [--force] [--project-dir <value>] [--sdk <value>] [--log-level <level>] [ <platform_build_options> ]
 
-`titanium build --platform <platform> [--build-only] [--force] [--project-``dir` `<value>] [--sdk <value>] [--log-level <level>] [ <platform_build_options> ]`
-
-`# Appcelerator CLI`
-
-`appc run --platform <platform> [--build-only] [--force] [--project-``dir` `<value>] [--sdk <value>] [--log-level <level>] [ <platform_build_options> ]`
+# Appcelerator CLI
+appc run --platform <platform> [--build-only] [--force] [--project-dir <value>] [--sdk <value>] [--log-level <level>] [ <platform_build_options> ]
+```
 
 #### Generic build options and flags
 
@@ -252,13 +258,13 @@ Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3
 
 Removes the build directories for an application or module project.
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium clean [ --platform <platform> ] [--project-dir <value>] [--sdk <value>] [--log-level <level>]
 
-`titanium clean [ --platform <platform> ] [--project-``dir` `<value>] [--sdk <value>] [--log-level <level>]`
-
-`# Appcelerator CLI`
-
-`appc ti clean [ --platform <platform> ] [--project-``dir` `<value>] [--sdk <value>] [--log-level <level>]`
+# Appcelerator CLI
+appc ti clean [ --platform <platform> ] [--project-dir <value>] [--sdk <value>] [--log-level <level>]
+```
 
 As of Titanium SDK 7.3.0 release, you need to keep historical version of your module in your dist folder in a safe place (e.g. source control). Running this updated command will wipe out anything in the dist folder.
 
@@ -277,13 +283,13 @@ As of Titanium SDK 7.3.0 release, you need to keep historical version of your mo
 
 Gets and sets configuration options. If no key is specified, then all key/values are returned.
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium config [--remove] [--output <value>] [<key>] [<value>]
 
-`titanium config [--remove] [--output <value>] [<key>] [<value>]`
-
-`# Appcelerator CLI`
-
-`appc ti config [--remove] [--output <value>] [<key>] [<value>] `
+# Appcelerator CLI
+appc ti config [--remove] [--output <value>] [<key>] [<value>]
+```
 
 #### Config Options
 
@@ -297,13 +303,13 @@ Gets and sets configuration options. If no key is specified, then all key/values
 
 Creates a new application or module project.
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium create [ --type <type> ] [ --platforms <platforms> ] [--project-dir <value>] [--sdk <value>] [--log-level <level>]
 
-`titanium create [ --``type` `<``type``> ] [ --platforms <platforms> ] [--project-``dir` `<value>] [--sdk <value>] [--log-level <level>]`
-
-`# Appcelerator CLI`
-
-`appc new [ --``type` `<``type``> ] [ --platform <platforms> ] [--project-``dir` `<value>] [--sdk <value>] [--log-level <level>]`
+# Appcelerator CLI
+appc new [ --type <type> ] [ --platform <platforms> ] [--project-dir <value>] [--sdk <value>] [--log-level <level>]
+```
 
 #### Create options
 
@@ -324,37 +330,31 @@ Creates a new application or module project.
 
 Displays the help screen.
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium help
+titanium help <command>
+titanium --help
+titanium <command> --help
 
-`titanium help`
-
-`titanium help <``command``>`
-
-`titanium --help`
-
-`titanium <``command``> --help`
-
-`# Appcelerator CLI`
-
-`appc ti help`
-
-`appc ti help <``command``>`
-
-`appc ti --help`
-
-`appc ti <``command``> --help`
+# Appcelerator CLI
+appc ti help
+appc ti help <command>
+appc ti --help
+appc ti <command> --help
+```
 
 ### Info
 
 Displays development environment information.
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium info [--output <value>] [--types <value>]
 
-`titanium info [--output <value>] [--types <value>]`
-
-`# Appcelerator CLI`
-
-`appc ti info [--output <value>] [--types <value>]`
+# Appcelerator CLI
+appc ti info [--output <value>] [--types <value>]
+```
 
 #### Info options
 
@@ -367,29 +367,27 @@ Displays development environment information.
 
 Manages installed Titanium modules.
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium module [<subcommand>]
 
-`titanium module [<subcommand>]`
-
-`# Appcelerator CLI`
-
-`appc ti module [<subcommand>] `
+# Appcelerator CLI
+appc ti module [<subcommand>]
+```
 
 #### Module list
 
 Prints a list of installed modules.
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium module [--output <value>] [--project-dir <value>]
+titanium module list [--output <value>] [--project-dir <value>]
 
-`titanium module [--output <value>] [--project-``dir` `<value>]`
-
-`titanium module list [--output <value>] [--project-``dir` `<value>]`
-
-`# Appcelerator CLI`
-
-`appc ti module [--output <value>] [--project-``dir` `<value>]`
-
-`appc ti module list [--output <value>] [--project-``dir` `<value>]`
+# Appcelerator CLI
+appc ti module [--output <value>] [--project-dir <value>]
+appc ti module list [--output <value>] [--project-dir <value>]
+```
 
 ##### Module list options
 
@@ -402,29 +400,27 @@ Prints a list of installed modules.
 
 Manages installed Titanium plugins.
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium plugin [<subcommand>]
 
-`titanium plugin [<subcommand>]`
-
-`# Appcelerator CLI`
-
-`appc ti plugin [<subcommand>]`
+# Appcelerator CLI
+appc ti plugin [<subcommand>]
+```
 
 #### Plugin list
 
 Prints a list of installed plugins.
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium plugin [--output <value>] [--project-dir <value>]
+titanium plugin list [--output <value>] [--project-dir <value>]
 
-`titanium plugin [--output <value>] [--project-``dir` `<value>]`
-
-`titanium plugin list [--output <value>] [--project-``dir` `<value>]`
-
-`# Appcelerator CLI`
-
-`appc ti plugin [--output <value>] [--project-``dir` `<value>]`
-
-`appc ti plugin list [--output <value>] [--project-``dir` `<value>]`
+# Appcelerator CLI
+appc ti plugin [--output <value>] [--project-dir <value>]
+appc ti plugin list [--output <value>] [--project-dir <value>]
+```
 
 ##### Plugin list options
 
@@ -439,13 +435,13 @@ Gets tiapp.xml settings.
 
 It also allows you to set the deployment-targets using a comma-separated list of platforms. If a specific platform is being enabled for the first time, it will also non-destructively copy that platform's default resources into your project's Resources folder. For example, if your app currently supports "iphone" and you wish to add Android support, you must specify "iphone,android". Note that the deployment target requires you to explicitly set "iphone" and "ipad".
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium project [--output <value>] [--project-dir <value>] [--template <value>] [--sdk <value>] [--log-level <level>] [<key>] [<value>]
 
-`titanium project [--output <value>] [--project-``dir` `<value>] [--template <value>] [--sdk <value>] [--log-level <level>] [<key>] [<value>]`
-
-`# Appcelerator CLI`
-
-`appc ti project [--output <value>] [--project-``dir` `<value>] [--template <value>] [--sdk <value>] [--log-level <level>] [<key>] [<value>]`
+# Appcelerator CLI
+appc ti project [--output <value>] [--project-dir <value>] [--template <value>] [--sdk <value>] [--log-level <level>] [<key>] [<value>]
+```
 
 #### Project options
 
@@ -458,41 +454,39 @@ It also allows you to set the deployment-targets using a comma-separated list of
 
 Manages installed Titanium SDKs.
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium sdk [<subcommand>]
 
-`titanium sdk [<subcommand>]`
-
-`# Appcelerator CLI`
-
-`appc ti sdk [<subcommand>] `
+# Appcelerator CLI
+appc ti sdk [<subcommand>]
+```
 
 #### SDK install
 
 Downloads the latest Titanium SDK or a specific version.
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+# Can only install Titanium SDK 4.0.0.GA and older or UNSTABLE continuous integration builds
+titanium sdk install [<version>] [--default] [--force] [--branch <branch name>]
 
-`# Can only install Titanium SDK 4.0.0.GA and older or UNSTABLE continuous integration builds`
-
-`titanium sdk` `install` `[<version>] [--default] [--force] [--branch <branch name>]`
-
-`# Appcelerator CLI`
-
-`# Can install any GA Titanium SDK release or UNSTABLE continuous integration build`
-
-`appc ti sdk` `install` `[<version>] [--default] [--force] [--branch <branch name>]`
+# Appcelerator CLI
+# Can install any GA Titanium SDK release or UNSTABLE continuous integration build
+appc ti sdk install [<version>] [--default] [--force] [--branch <branch name>]
+```
 
 <version> may be either a specific version number, such as 3.1.3.GA or a URL to a continuous integration build, such as http://builds.appcelerator.com.s3.amazonaws.com/mobile/3\_1\_X/mobilesdk-3.1.3.v20130904134612-osx.zip.
 
 To override this behavior, set the sdk.defaultInstallLocation key to a path where you want to install the SDKs, for example:
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium config sdk.defaultInstallLocation /path/to/intall/sdks
 
-`titanium config sdk.defaultInstallLocation` `/path/to/intall/sdks`
-
-`# Appcelerator CLI`
-
-`appc ti config sdk.defaultInstallLocation` `/path/to/intall/sdks`
+# Appcelerator CLI
+appc ti config sdk.defaultInstallLocation /path/to/intall/sdks
+```
 
 ##### SDK install options
 
@@ -507,17 +501,15 @@ To override this behavior, set the sdk.defaultInstallLocation key to a path wher
 
 Prints a list of installed SDK versions.
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium sdk [--branches] [--releases] [--output <value>]
+titanium sdk list [--branches] [--releases] [--output <value>]
 
-`titanium sdk [--branches] [--releases] [--output <value>]`
-
-`titanium sdk list [--branches] [--releases] [--output <value>]`
-
-`# Appcelerator CLI`
-
-`appc ti sdk [--branches] [--releases] [--output <value>]`
-
-`appc ti sdk list [--branches] [--releases] [--output <value>] `
+# Appcelerator CLI
+appc ti sdk [--branches] [--releases] [--output <value>]
+appc ti sdk list [--branches] [--releases] [--output <value>]
+```
 
 ##### SDK list options
 
@@ -531,23 +523,23 @@ Prints a list of installed SDK versions.
 
 Used to select which installed Titanium SDK is the active SDK. This is not the SDK your application will be built with but the SDK used to run the CLI commands. However, if the tiapp.xml file does not contain an SDK version or the app.sdk setting is not set with titanium config, then the application will be built with the SDK select version. If the SDK selected is ever deleted or if you are missing CLI commands, select a new active SDK.
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium sdk select [<version>]
 
-`titanium sdk` `select` `[<version>]`
-
-`# Appcelerator CLI`
-
-`appc ti sdk` `select` `[<version>]`
+# Appcelerator CLI
+appc ti sdk select [<version>]
+```
 
 #### SDK uninstall
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium sdk uninstall [<version>] [--force]
 
-`titanium sdk uninstall [<version>] [--force]`
-
-`# Appcelerator CLI`
-
-`appc ti sdk uninstall [<version>] [--force] `
+# Appcelerator CLI
+appc ti sdk uninstall [<version>] [--force]
+```
 
 Uninstalls a specific Titanium SDK version.
 
@@ -561,13 +553,13 @@ Uninstalls a specific Titanium SDK version.
 
 Finds the latest version of the Titanium SDK.
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium sdk update [--default] [--force] [--install] [--branch <branch name>]
 
-`titanium sdk update [--default] [--force] [--``install``] [--branch <branch name>]`
-
-`# Appcelerator CLI`
-
-`appc ti sdk update [--default] [--force] [--``install``] [--branch <branch name>] `
+# Appcelerator CLI
+appc ti sdk update [--default] [--force] [--install] [--branch <branch name>]
+```
 
 ##### SDK update options
 
@@ -582,16 +574,14 @@ Finds the latest version of the Titanium SDK.
 
 Runs the setup wizard.
 
-`# Titanium CLI`
+```bash
+# Titanium CLI
+titanium setup
+titanium setup <section>
 
-`titanium setup`
-
-`titanium setup <section>`
-
-`# Appcelerator CLI`
-
-`appc ti setup`
-
-`appc ti setup <section>`
+# Appcelerator CLI
+appc ti setup
+appc ti setup <section>
+```
 
 The "section" can be one of: **quick**, **check**, **user**, **app**, **network**, **cli**, **sdk**, **ios**, **android**, and **paths**.

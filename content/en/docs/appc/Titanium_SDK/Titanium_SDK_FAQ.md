@@ -42,15 +42,13 @@ Yes, it uses corelocation but it hasn't been verified as a background mode. You 
 
 The following code sample could be used to do this:
 
-`var` `intent = Ti.Android.createIntent({`
-
-`action: Ti.Android.ACTION_INSERT_OR_EDIT,`
-
-`type:` `"vnd.android.cursor.item/event"`
-
-`});`
-
-`Ti.Android.currentActivity.startActivity(intent)`
+```javascript
+var intent = Ti.Android.createIntent({
+   action: Ti.Android.ACTION_INSERT_OR_EDIT,
+   type: "vnd.android.cursor.item/event"
+});
+Ti.Android.currentActivity.startActivity(intent)
+```
 
 ## Create an Appcelerator Android module with armeabi-v7a,x86 architectures
 
@@ -80,37 +78,24 @@ For the iOS 10 or later version, you have to add the following keys in the plist
 
 An example of updated tiapp.xml file might look something like this:
 
-` <``ios``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<``key``>NSContactsUsageDescription</``key``>`
-
-`<``string``>Can we use to your contacts?</``string``>`
-
-`<``key``>NSCameraUsageDescription</``key``>`
-
-`<``string``>Can we use your camera?</``string``>`
-
-`<``key``>NSCalendarsUsageDescription</``key``>`
-
-`<``string``>Can we use your calendar?</``string``>`
-
-`<``key``>NSPhotoLibraryUsageDescription</``key``>`
-
-`<``string``>Can we save to your library?</``string``>`
-
-`<``key``>NSMicrophoneUsageDescription</``key``>`
-
-`<``string``>Can we use your microphone?</``string``>`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`</``ios``>`
+```xml
+<ios>
+   <plist>
+       <dict>
+           <key>NSContactsUsageDescription</key>
+           <string>Can we use to your contacts?</string>
+           <key>NSCameraUsageDescription</key>
+           <string>Can we use your camera?</string>
+           <key>NSCalendarsUsageDescription</key>
+           <string>Can we use your calendar?</string>
+           <key>NSPhotoLibraryUsageDescription</key>
+           <string>Can we save to your library?</string>
+           <key>NSMicrophoneUsageDescription</key>
+           <string>Can we use your microphone?</string>
+       </dict>
+   </plist>
+</ios>
+```
 
 ## How to change the Android buildtools version
 
@@ -130,37 +115,26 @@ You can change the build tools version using this command: appc ti config androi
 
 You can add localization support in the plist file. Here is an example for Japanese language for camera permission:
 
-tiapp.xml
+*tiapp.xml*
 
-`<``ti``:app>`
+```xml
+<ti:app>
+  <ios>
+      <plist>
+          <dict>
+             <key>NSCameraUsageDescription</key>
+                  <string>Can we use your camera?</string>
+          </dict>
+      </plist>
+  </ios>
+</ti:app>
 
-`<``ios``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<``key``>NSCameraUsageDescription</``key``>`
-
-`<``string``>Can we use your camera?</``string``>`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`</``ios``>`
-
-`</``ti``:app>`
-
-`//i18n/ja/app.xml`
-
-`<?``xml`  `version``=``"1.0"`  `encoding``=``"UTF-8"``?>`
-
-`<``resources``>`
-
-`<``string`  `name``=``"NSCameraUsageDescription"``>あなたのカメラは使えますか?</``string``>`
-
-`</``resources``>`
+//i18n/ja/app.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <string name="NSCameraUsageDescription">あなたのカメラは使えますか?</string>
+</resources>
+```
 
 After applying this, if you change your device language to Japanese, you will the changes take effect.
 

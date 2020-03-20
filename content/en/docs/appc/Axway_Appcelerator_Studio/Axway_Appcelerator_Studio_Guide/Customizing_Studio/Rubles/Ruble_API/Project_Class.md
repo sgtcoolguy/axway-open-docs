@@ -8,13 +8,16 @@ Examples of how you might interact with instance and static methods of the proje
 
 ### Instance:
 
-`cmd.invoke {|context| Ruble::Terminal.open(``"rake test"``, context.project.to_dir.path) }`
+```
+cmd.invoke {|context|  Ruble::Terminal.open("rake test", context.project.to_dir.path) }
+```
 
 ### Static
 
-`# Also generate a project` `for` `the bundle and add it in the workspace?`
-
-`proj = Ruble::Project.create(base_name, :location => converted_bundle_path)`
+```
+# Also generate a project for the bundle and add it in the workspace?
+proj = Ruble::Project.create(base_name, :location => converted_bundle_path)
+```
 
 ## Project Methods
 

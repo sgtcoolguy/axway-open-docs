@@ -2,7 +2,7 @@
 
 Demonstrates use of the Alloy configuration file.
 
-App Folder Location
+*App Folder Location*
 
 alloy/test/apps/**basics/config\_json**
 
@@ -12,33 +12,28 @@ The Alloy configuration file is named config.json and located in the Alloy proje
 
 At runtime, you can access a configuration file property by its key name on the global Alloy.CFG object. For instance, in the sample app configuration file defines a global property named **someValue** that's defined for all environments and platforms, and for individual platforms.
 
-apps/config.json
+*apps/config.json*
 
-`{`
-
-`"global"``: {` `"someValue"``:` `"unknown"` `},`
-
-`"os:android"``: {` `"someValue"``:` `"Android"` `},`
-
-`"os:ios"``: {` `"someValue"``:` `"iOS"` `},`
-
-`"os:mobileweb"``: {` `"someValue"``:` `"Mobileweb"` `},`
-
-`"sourcemap"``:` `false``,`
-
-`"adapters"``: []`
-
-`}`
+```json
+{
+    "global": { "someValue": "unknown" },
+    "os:android": { "someValue": "Android" },
+    "os:ios": { "someValue": "iOS" },
+    "os:mobileweb": { "someValue": "Mobileweb" },
+    "sourcemap": false,
+    "adapters": []
+}
+```
 
 The main XML view contains a <Button/> element whose click handler displays the value of Alloy.CFG.someValue, whose value depends on the runtime platform.
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`function showAlert(e) {`
-
-`alert(``'Alloy.CFG.someValue = '` `+ Alloy.CFG.someValue);`
-
-`}`
+```javascript
+function showAlert(e) {
+  alert('Alloy.CFG.someValue = ' + Alloy.CFG.someValue);
+}
+```
 
 ## See Also
 

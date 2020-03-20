@@ -38,93 +38,91 @@ There we can find the basic constructor public ParkedTextView(Context context) a
 
 In Java, you would import a class like this:
 
-`import` `android.view.View;`
-
-`View view =` `new` `View();`
+```
+import android.view.View;
+View view = new View();
+```
 
 The equivalent in Hyperloop would be:
 
-`const View = require(``"android.view.View"``);`
-
-`const view =` `new` `View();`
+```javascript
+const View = require("android.view.View");
+const view = new View();
+```
 
 Before we can create the ParkedTextView object, we need to create the context that is used inside the constructor:
 
-`const Activity = require(``"android.app.Activity"``);`
-
-`const context =` `new` `Activity(Ti.Android.currentActivity);`
+```javascript
+const Activity = require("android.app.Activity");
+const context = new Activity(Ti.Android.currentActivity);
+```
 
 The ParkedTextView class is com.goka.parkedtextview.ParkedTextView, which needs to be imported like this:
 
-`const ParkedTextView = require(``"com.goka.parkedtextview.ParkedTextView"``);`
-
-`const parkedView =` `new` `ParkedView(context);`
+```javascript
+const ParkedTextView = require("com.goka.parkedtextview.ParkedTextView");
+const parkedView = new ParkedView(context);
+```
 
 ### Use the component
 
 Now, we have a JavaScript UI component we can use in our Titanium project in a way we use normal UI components and call some methods:
 
-`parkedView.setParkedTextColor(``"#000000"``);`
-
-`parkedView.setParkedHintColor(``"#999999"``);`
-
-`parkedView.setParkedText(``".slack.com"``);`
-
-`parkedView.setHintText(``"your-team"``);`
+```
+parkedView.setParkedTextColor("#000000");
+parkedView.setParkedHintColor("#999999");
+parkedView.setParkedText(".slack.com");
+parkedView.setHintText("your-team");
+```
 
 Add it to our window or a view:
 
-`$.index.add(parkedView);` `// $.view.add(parkedView);`
+```
+$.index.add(parkedView); // $.view.add(parkedView);
+```
 
 ### Listen to events
 
 Android TextView uses the [TextWatcher ()](https://developer.android.com/reference/android/text/TextWatcher.html) to listen to the change events.
 
-`const TextWatcher = require(``"android.text.TextWatcher"``);`
+```javascript
+const TextWatcher = require("android.text.TextWatcher");
+```
 
 This provides three listeners that we assign to Javascript callback functions:
 
-`const textWatcher =` `new` `TextWatcher({`
-
-`onTextChanged: onTextChanged,`
-
-`afterTextChanged: afterTextChanged,`
-
-`beforeTextChanged: beforeTextChanged`
-
-`});`
-
-`function` `beforeTextChanged( ) {`
-
-`console.log(``"Before: "` `+ parkedView.getText());`
-
-`}`
-
-`function` `onTextChanged( ) {`
-
-`console.log(``"Changed: "` `+ parkedView.getText());`
-
-`}`
-
-`function` `afterTextChanged(s) {`
-
-`console.log(``"After: "` `+ s);`
-
-`}`
+```javascript
+const textWatcher = new TextWatcher({
+    onTextChanged: onTextChanged,
+    afterTextChanged: afterTextChanged,
+    beforeTextChanged: beforeTextChanged
+});
+function beforeTextChanged( ) {
+    console.log("Before: " + parkedView.getText());
+}
+function onTextChanged( ) {
+    console.log("Changed: " + parkedView.getText());
+}
+function afterTextChanged(s) {
+    console.log("After: " + s);
+}
+```
 
 ### Layout
 
 The last step is to apply a layout, so it will take as much space as needed (like Ti.UI.SIZE). To do that, we use the Android LayoutParams. First, import the classes:
 
-`const LayoutParams = require(``"android.widget.FrameLayout.LayoutParams"``);`
-
-`const ViewGroupLayoutParams = require(``"android.view.ViewGroup.LayoutParams"``);`
+```javascript
+const LayoutParams = require("android.widget.FrameLayout.LayoutParams");
+const ViewGroupLayoutParams = require("android.view.ViewGroup.LayoutParams");
+```
 
 Then, apply the layout:
 
-`const layoutParams =` `new` `LayoutParams(ViewGroupLayoutParams.WRAP_CONTENT, ViewGroupLayoutParams.WRAP_CONTENT, Gravity.CENTER);`
-
-`parkedView.setLayoutParams(layoutParams);`
+```javascript
+const layoutParams = new LayoutParams(ViewGroupLayoutParams.WRAP_CONTENT, ViewGroupLayoutParams.WRAP_CONTENT, Gravity.CENTER);
+parkedView.setLayoutParams(layoutParams);
+```
 
 ### Done
 

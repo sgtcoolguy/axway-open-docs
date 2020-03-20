@@ -89,91 +89,60 @@ To make MBS calls from other applications, you need to use the platform's native
 
 For example, the following Ruby code uses the Net::HTTP library to make an MBS request:
 
-`require` `'net/http'`
+```
+require 'net/http'
+require 'json'
 
-`require` `'json'`
-
-`base_url =` `'https://api.cloud.appcelerator.com/v1/'`
-
-`key_param =` `'key=<APP_KEY>'`
-
-`url = URI(base_url +` `'users/create.json?'` `+ key_param)`
-
-`req = Net::HTTP::Post.``new``(url)`
-
-`req.set_form_data(:username =>` `'user1'``, :password =>` `'pass1'``, :password_confirmation =>` `'pass1'``))`
-
-`res = Net::HTTP.start(url.host, url.port, :use_ssl =>` `true``)` `do` `|http|`
-
-`http.request(req)`
-
-`end`
-
-`response = JSON.parse(res.body)`
-
-`puts` `"You are now logged in as "` `+ response[``"response"``][``"users"``][0][``"username"``]`
+base_url = 'https://api.cloud.appcelerator.com/v1/'
+key_param = 'key=<APP_KEY>'
+url = URI(base_url + 'users/create.json?' + key_param)
+req = Net::HTTP::Post.new(url)
+req.set_form_data(:username => 'user1', :password => 'pass1', :password_confirmation => 'pass1'))
+res = Net::HTTP.start(url.host, url.port, :use_ssl => true) do |http|
+  http.request(req)
+end
+response = JSON.parse(res.body)
+puts "You are now logged in as " + response["response"]["users"][0]["username"]
+```
 
 For requests that require a user to be logged in, you will need to retrieve the session\_id from the meta header of the response from either the users/login.json or users/create.json method, then pass the session\_id in the URL as the \_session\_id parameter with the request.
 
-`session_id_param =` `'_session_id='` `+ response[``"meta"``][``"session_id"``]`
-
-`url = URI(base_url +` `'posts/create.json?'` `+ key_param +` `'&'` `+ session_id_param)`
-
-`req = Net::HTTP::Post.``new``(url)`
-
-`req.set_form_data(:content =>` `'Calling ArrowDB from Ruby'``)`
-
-`res = Net::HTTP.start(url.host, url.port, :use_ssl =>` `true``)` `do` `|http|`
-
-`http.request(req)`
-
-`end`
-
-`puts res.body`
+```
+session_id_param = '_session_id=' + response["meta"]["session_id"]
+url = URI(base_url + 'posts/create.json?' + key_param + '&' + session_id_param)
+req = Net::HTTP::Post.new(url)
+req.set_form_data(:content => 'Calling ArrowDB from Ruby')
+res = Net::HTTP.start(url.host, url.port, :use_ssl => true) do |http|
+  http.request(req)
+end
+puts res.body
+```
 
 The SDKs and modules provided by Appcelerator abstract the HTTP request and will automatically handle passing the application key and session ID between the client application and MBS datasource. For example, the following is an equivalent call using the Titanium Cloud module:
 
-`var` `Cloud = require(``'ti.cloud'``);`
-
-`Cloud.Users.create({`
-
-`username:` `'user1'``,`
-
-`password:` `'pass1'``,`
-
-`password_confirmation:` `'pass1'`
-
-`},` `function` `(e) {`
-
-`if` `(e.success) {`
-
-`alert(``'You are now logged in as '` `+ e.users[0].username);`
-
-`}` `else` `{`
-
-`alert(``'Error:\n'` `+ ((e.error && e.message) || JSON.stringify(e)));`
-
-`}`
-
-`});`
-
-`Cloud.Posts.create({`
-
-`content:` `'Calling ArrowDB from Titanium'`
-
-`},` `function` `(e) {`
-
-`if` `(e.success) {`
-
-`alert(``'Post succeeded!'``);`
-
-`}` `else` `{`
-
-`alert(``'Error:\n'` `+ ((e.error && e.message) || JSON.stringify(e)));`
-
-`}`
-
-`});`
+```javascript
+var Cloud = require('ti.cloud');
+Cloud.Users.create({
+    username: 'user1',
+    password: 'pass1',
+    password_confirmation: 'pass1'
+ }, function (e) {
+    if (e.success) {
+        alert('You are now logged in as ' + e.users[0].username);
+    } else {
+        alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+    }
+});
+Cloud.Posts.create({
+    content: 'Calling ArrowDB from Titanium'
+}, function (e) {
+    if (e.success) {
+        alert('Post succeeded!');
+    } else {
+        alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+    }
+});
+```
 
 ## Next steps
 

@@ -38,19 +38,15 @@ A [nice one-page cheat sheet](http://www.scribd.com/doc/10040039/ScriptDoc-Cheat
 
 ## Example: A basic documentation block for a getFoo() function
 
-`/**`
-
-`* Gets the current foo`
-
-`* @param {String} fooId The unique identifier for the foo.`
-
-`* @return {Object} Returns the current foo.`
-
-`*/`
-
-`function getFoo(fooID){`
-
-`}`
+```javascript
+/**
+ * Gets the current foo
+ * @param {String} fooId  The unique identifier for the foo.
+ * @return {Object}          Returns the current foo.
+ */
+ function getFoo(fooID){
+ }
+```
 
 ## Ordering your tags
 
@@ -82,39 +78,25 @@ Add your tags in the following order, as appropriate:
 
 * @see - List @see tags from nearest to furthest access, shown below:
 
-`@see` `#Constructor(Type, Type...)`
-
-`@see` `#Constructor(Type id, Type id...)`
-
-`@see` `#method(Type, Type,...)`
-
-`@see` `#method(Type id, Type, id...)`
-
-`@see` `Class`
-
-`@see` `Class#field`
-
-`@see` `Class#Constructor(Type, Type...)`
-
-`@see` `Class#Constructor(Type id, Type id)`
-
-`@see` `Class#method(Type, Type,...)`
-
-`@see` `Class#method(Type id, Type id,...)`
-
-`@see`  `package``.Class`
-
-`@see`  `package``.Class#field`
-
-`@see`  `package``.Class#Constructor(Type, Type...)`
-
-`@see`  `package``.Class#Constructor(Type id, Type id)`
-
-`@see`  `package``.Class#method(Type, Type,...)`
-
-`@see`  `package``.Class#method(Type id, Type, id)`
-
-`@see`  `package`
+```
+@see #Constructor(Type, Type...)
+ @see #Constructor(Type id, Type id...)
+ @see #method(Type, Type,...)
+ @see #method(Type id, Type, id...)
+ @see Class
+ @see Class#field
+ @see Class#Constructor(Type, Type...)
+ @see Class#Constructor(Type id, Type id)
+ @see Class#method(Type, Type,...)
+ @see Class#method(Type id, Type id,...)
+ @see package.Class
+ @see package.Class#field
+ @see package.Class#Constructor(Type, Type...)
+ @see package.Class#Constructor(Type id, Type id)
+ @see package.Class#method(Type, Type,...)
+ @see package.Class#method(Type id, Type, id)
+ @see package
+```
 
 ## Related Topics
 

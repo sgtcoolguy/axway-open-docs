@@ -96,35 +96,27 @@ The Core Motion module is available as part of the Titanium SDK. To use core mot
 
 1. Modify the modules section of your tiapp.xml file to include the ti.coremotion module or add the module with Studio's TiApp Editor (see [Using a Module](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Using_Modules/Using_a_Module/)):
 
-    `<``modules``>`
-
-    `<``module`  `platform``=``"iphone"``>ti.coremotion</``module``>`
-
-    `</``modules``>`
+    ```xml
+    <modules>
+        <module platform="iphone">ti.coremotion</module>
+    </modules>
+    ```
 
 2. Require in the module in your JavaScript code. Use the reference to make API calls to the module.
 
-    `var` `CoreMotion = require(``'ti.coremotion'``);`
-
-    `var` `Pedometer = CoreMotion.createPedometer();`
-
-    `if` `(Pedometer.isSupported()) {`
-
-    `Pedometer.startPedometerUpdates({`
-
-    `start:` `new` `Date(``new` `Date().getTime() - 60 * 60 * 1000)` `// 1 hr ago`
-
-    `}, ``function``(e) {`
-
-    `Ti.API.info(JSON.stringify(e));`
-
-    `});`
-
-    `}` `else` `{`
-
-    `Ti.API.warn(``'This device does not support the pedometer.'``);`
-
-    `}`
+    ```javascript
+    var CoreMotion = require('ti.coremotion');
+    var Pedometer = CoreMotion.createPedometer();
+    if (Pedometer.isSupported()) {
+        Pedometer.startPedometerUpdates({
+            start: new Date(new Date().getTime() - 60 * 60 * 1000) // 1 hr ago
+        }, function(e) {
+            Ti.API.info(JSON.stringify(e));
+        });
+    } else {
+        Ti.API.warn('This device does not support the pedometer.');
+    }
+    ```
 
 ## Using the Core Motion API
 
@@ -146,75 +138,59 @@ Each core motion feature follows a basic sequence. To use a core motion feature:
 
 1. Create a new accelerometer instance and query the device to see if the feature is available. Use the feature's "is available" method.
 
-    `var` `Accelerometer = CoreMotion.createAccelerometer();`
-
-    `if` `(Accelerometer.isAccelerometerAvailable()) {`
-
-    `// Start the service`
-
-    `accelerometer_state =` `true``;`
-
-    `}`
+    ```javascript
+    var Accelerometer = CoreMotion.createAccelerometer();
+    if (Accelerometer.isAccelerometerAvailable()) {
+       // Start the service
+       accelerometer_state = true;
+    }
+    ```
 
 2. Start the service with or without a callback function to start collecting data. Use the feature's "start" method.
 
     1. If you start the service with a callback, use the feature's "set interval" method to determine how often the device sends data to the application. Note that pushing data from the device to the application requires a lot of CPU cycles. The application may not be able to keep up with the data rate if the device moves rapidly.
 
-        `// Send data at 1 s (1000 ms) intervals`
+        ```javascript
+        // Send data at 1 s (1000 ms) intervals
+        Accelerometer.setAccelerometerUpdateInterval(1000);
+        // Start with a callback
+        Accelerometer.startAccelerometerUpdates(updateAccelData);
 
-        `Accelerometer.setAccelerometerUpdateInterval(1000);`
-
-        `// Start with a callback`
-
-        `Accelerometer.startAccelerometerUpdates(updateAccelData);`
-
-        `function` `updateAccelData (e) {`
-
-        `data = e.acceleration;`
-
-        `xLabel.text = data.x;`
-
-        `yLabel.text = data.y;`
-
-        `zLabel.text = data.z;`
-
-        `}`
+        function updateAccelData (e) {
+            data = e.acceleration;
+            xLabel.text = data.x;
+            yLabel.text = data.y;
+            zLabel.text = data.z;
+        }
+        ```
 
     2. If you start the service without a callback, you need to periodically check for data with the feature's "get" or "query" method.
 
-        `// Start without a callback and get data`
+        ```javascript
+        // Start without a callback and get data
+        Accelerometer.startAccelerometerUpdates();
 
-        `Accelerometer.startAccelerometerUpdates();`
+        // The user manually polls for data
+        button.addEventListener('click', function(e) {
+            updateAccelData(Accelerometer.getAccelerometerData());
+        });
 
-        `// The user manually polls for data`
-
-        `button.addEventListener(``'click'``,` `function``(e) {`
-
-        `updateAccelData(Accelerometer.getAccelerometerData());`
-
-        `});`
-
-        `function` `updateAccelData (e) {`
-
-        `data = e.acceleration;`
-
-        `xLabel.text = data.x;`
-
-        `yLabel.text = data.y;`
-
-        `zLabel.text = data.z;`
-
-        `}`
+        function updateAccelData (e) {
+            data = e.acceleration;
+            xLabel.text = data.x;
+            yLabel.text = data.y;
+            zLabel.text = data.z;
+        }
+        ```
 
 3. Stop the service when the application does not need to collect data. Use the feature's "stop" method.
 
-    `if` `(acceleratormeter_state) {`
-
-    `Accelerometer.stopAccelerometerUpdates();`
-
-    `acceleratormeter_state =` `false``;`
-
-    `}`
+    ```
+    if (acceleratormeter_state) {
+        Accelerometer.stopAccelerometerUpdates();
+        acceleratormeter_state = false;
+    }
+    ```
 
 ### Callbacks
 
@@ -260,13 +236,13 @@ The Device Motion API provides the same interface as the other Core Motion APIs 
 
 * <CoreMotion>.ATTITUDE\_REFERENCE\_FRAME\_X\_TRUE\_NORTH\_Z\_VERTICAL: Describes a reference frame in which the Z axis is vertical and the X axis points toward true north. Note that using this reference frame may require device movement to calibrate the magnetometer. It also requires the location to be available in order to calculate the difference between magnetic and true north.
 
-`// Check to see if the true north reference frame is available`
+```javascript
+// Check to see if the true north reference frame is available
+var DeviceMotion = CoreMotion.createDeviceMotion();
+var frames = DeviceMotion.availableAttitudeReferenceFrames();
 
-`var` `DeviceMotion = CoreMotion.createDeviceMotion();`
-
-`var` `frames = DeviceMotion.availableAttitudeReferenceFrames();`
-
-`return` `(frames & CoreMotion.ATTITUDE_REFERENCE_FRAME_X_TRUE_NORTH_Z_VERTICAL);`
+return (frames & CoreMotion.ATTITUDE_REFERENCE_FRAME_X_TRUE_NORTH_Z_VERTICAL);
+```
 
 To retrieve the default reference frame, call the getAttitudeReferenceFrame method.
 
@@ -298,209 +274,124 @@ The Device Motion API uses five extra dictionaries to report the motion state of
 
 The sample below initializes the Device Motion API with the specified reference frame. If the frame is not available, the application falls back to the default frame or no frame. If the user shakes the device for about 3 s, the application determines the direction the user is shaking, based on the user acceleration data. The application outputs the attitude data to the display.
 
-app/views/index.xml
-
-`<``Alloy``>`
-
-`<``Window`  `backgroundColor``=``"white"`  `layout``=``"vertical"``>`
-
-`<``Label``>Pitch:</``Label``>`
-
-`<``ProgressBar`  `id``=``"pitch"` `/>`
-
-`<``Label``>Roll:</``Label``>`
-
-`<``ProgressBar`  `id``=``"roll"` `/>`
-
-`<``Label``>Yaw:</``Label``>`
-
-`<``ProgressBar`  `id``=``"yaw"` `/>`
-
-`</``Window``>`
-
-`</``Alloy``>`
-
-app/styles/index.tss
-
-`"ProgressBar"` `: {`
-
-`"top"` `:` `10``,`
-
-`"width"` `:` `200``,`
-
-`"min"` `:` `0``,`
-
-`"max"` `:` `3.1415927`
-
-`},`
-
-`"Label"` `: {`
-
-`"font"` `: {`
-
-`textStyle: Ti.UI.TEXT_STYLE_SUBHEADLINE`
-
-`},`
-
-`"top"` `:` `50``,`
-
-`"left"` `:` `10`
-
-`} `
-
-app/controllers/index.js
-
-`var` `accelX = accelY = accelZ = 0;`
-
-`var` `lastX = lastY = lastZ = 0;`
-
-`var` `ACCEL_THRESHOLD = 2;`
-
-`var` `SHAKE_THRESHOLD = 5;`
-
-`var` `CoreMotion = require(``'ti.coremotion'``);`
-
-`var` `DeviceMotion = CoreMotion.createDeviceMotion();`
-
-`if` `(DeviceMotion.isDeviceMotionAvailable()) {`
-
-`DeviceMotion.setDeviceMotionUpdateInterval(500);`
-
-`var` `frames = DeviceMotion.availableAttitudeReferenceFrames();`
-
-`var` `ref_frame = CoreMotion.ATTITUDE_REFERENCE_FRAME_X_TRUE_NORTH_Z_VERTICAL;`
-
-`if` `(frames & ref_frame) {`
-
-`// Use the True North Frame if available`
-
-`Ti.API.debug(``'REFERENCE FRAME: True North'``);`
-
-`DeviceMotion.startDeviceMotionUpdatesUsingReferenceFrame(`
-
-`{referenceFrame: ref_frame},`
-
-`updateMotionData`
-
-`);`
-
-`}` `else`  `if` `(ref_frame = DeviceMotion.getAttitudeReferenceFrame()) {`
-
-`// Use the default frame if it exists`
-
-`Ti.API.debug(``'REFERENCE FRAME: Default '` `+ ref_frame);`
-
-`DeviceMotion.startDeviceMotionUpdatesUsingReferenceFrame(`
-
-`{referenceFrame: ref_frame},`
-
-`updateMotionData`
-
-`);`
-
-`}` `else` `{`
-
-`// Do not use a reference frame`
-
-`Ti.API.debug(``'REFERENCE FRAME: None'``);`
-
-`DeviceMotion.startDeviceMotionUpdates(updateMotionData);`
-
-`}`
-
-`}`
-
-`function` `updateMotionData (e) {`
-
-`if` `(e.success) {`
-
-`var` `data = e.userAcceleration;`
-
-`if` `(Math.abs(lastX - data.x) > ACCEL_THRESHOLD) {`
-
-`accelX++;`
-
-`}`
-
-`if` `(Math.abs(lastY - data.y) > ACCEL_THRESHOLD) {`
-
-`accelY++;`
-
-`}`
-
-`if` `(Math.abs(lastZ - data.z) > ACCEL_THRESHOLD) {`
-
-`accelZ++;`
-
-`}`
-
-`analyzeResults();`
-
-`lastX = data.x;`
-
-`lastY = data.y;`
-
-`lastZ = data.z;`
-
-`data = e.attitude;`
-
-`$.pitch.message = data.pitch;`
-
-`$.pitch.value = Math.abs(data.pitch);`
-
-`$.roll.message = data.roll;`
-
-`$.roll.value = Math.abs(data.roll);`
-
-`$.yaw.message = data.yaw;`
-
-`$.yaw.value = Math.abs(data.yaw);`
-
-`}` `else` `{`
-
-`if` `(e.error) Ti.API.error(e.error);`
-
-`}`
-
-`}`
-
-`function` `analyzeResults() {`
-
-`if` `(accelX > SHAKE_THRESHOLD || accelY > SHAKE_THRESHOLD || accelZ > SHAKE_THRESHOLD) {`
-
-`var` `err = SHAKE_THRESHOLD * 0.5;`
-
-`if` `(accelX > SHAKE_THRESHOLD && (accelY < err && accelZ < err)) {`
-
-`alert(``'Quit shaking me back and forth!'``);`
-
-`}` `else`  `if` `(accelY > SHAKE_THRESHOLD && (accelX < err && accelZ < err)) {`
-
-`alert(``'Quit shaking me up and down!'``);`
-
-`}` `else`  `if` `(accelZ > SHAKE_THRESHOLD && (accelX < err && accelY < err)) {`
-
-`alert(``'Why are you shaking me like that?!'``);`
-
-`}` `else` `{`
-
-`alert(``'Quit shaking me!'``);`
-
-`}`
-
-`accelX = accelY = accelZ = 0;`
-
-`}`
-
-`}`
-
-`$.pitch.show();`
-
-`$.roll.show();`
-
-`$.yaw.show();`
-
-`$.index.open();`
+*app/views/index.xml*
+
+```xml
+<Alloy>
+    <Window backgroundColor="white" layout="vertical">
+        <Label>Pitch:</Label>
+        <ProgressBar id="pitch" />
+        <Label>Roll:</Label>
+        <ProgressBar id="roll" />
+        <Label>Yaw:</Label>
+        <ProgressBar id="yaw" />
+    </Window>
+</Alloy>
+```
+
+*app/styles/index.tss*
+
+```
+"ProgressBar" : {
+    "top" : 10,
+    "width" : 200,
+    "min" : 0,
+    "max" : 3.1415927
+},
+"Label" : {
+    "font" : {
+        textStyle: Ti.UI.TEXT_STYLE_SUBHEADLINE
+    },
+    "top" : 50,
+    "left" : 10
+}
+```
+
+*app/controllers/index.js*
+
+```javascript
+var accelX = accelY = accelZ = 0;
+var lastX = lastY = lastZ = 0;
+var ACCEL_THRESHOLD = 2;
+var SHAKE_THRESHOLD = 5;
+
+var CoreMotion = require('ti.coremotion');
+var DeviceMotion = CoreMotion.createDeviceMotion();
+if (DeviceMotion.isDeviceMotionAvailable()) {
+    DeviceMotion.setDeviceMotionUpdateInterval(500);
+    var frames = DeviceMotion.availableAttitudeReferenceFrames();
+    var ref_frame = CoreMotion.ATTITUDE_REFERENCE_FRAME_X_TRUE_NORTH_Z_VERTICAL;
+    if (frames & ref_frame) {
+        // Use the True North Frame if available
+        Ti.API.debug('REFERENCE FRAME: True North');
+        DeviceMotion.startDeviceMotionUpdatesUsingReferenceFrame(
+            {referenceFrame: ref_frame},
+            updateMotionData
+        );
+    } else if (ref_frame = DeviceMotion.getAttitudeReferenceFrame()) {
+        // Use the default frame if it exists
+        Ti.API.debug('REFERENCE FRAME: Default ' + ref_frame);
+        DeviceMotion.startDeviceMotionUpdatesUsingReferenceFrame(
+            {referenceFrame: ref_frame},
+            updateMotionData
+        );
+    } else {
+        // Do not use a reference frame
+        Ti.API.debug('REFERENCE FRAME: None');
+        DeviceMotion.startDeviceMotionUpdates(updateMotionData);
+    }
+}
+function updateMotionData (e) {
+
+    if (e.success) {
+        var data = e.userAcceleration;
+        if (Math.abs(lastX - data.x) > ACCEL_THRESHOLD) {
+            accelX++;
+        }
+        if (Math.abs(lastY - data.y) > ACCEL_THRESHOLD) {
+            accelY++;
+        }
+        if (Math.abs(lastZ - data.z) > ACCEL_THRESHOLD) {
+            accelZ++;
+        }
+        analyzeResults();
+        lastX = data.x;
+        lastY = data.y;
+        lastZ = data.z;
+
+        data = e.attitude;
+        $.pitch.message = data.pitch;
+        $.pitch.value = Math.abs(data.pitch);
+        $.roll.message = data.roll;
+        $.roll.value = Math.abs(data.roll);
+        $.yaw.message = data.yaw;
+        $.yaw.value = Math.abs(data.yaw);
+    } else {
+        if (e.error) Ti.API.error(e.error);
+    }
+}
+
+function analyzeResults() {
+    if (accelX > SHAKE_THRESHOLD || accelY > SHAKE_THRESHOLD || accelZ > SHAKE_THRESHOLD) {
+        var err = SHAKE_THRESHOLD * 0.5;
+        if (accelX > SHAKE_THRESHOLD && (accelY < err && accelZ < err)) {
+            alert('Quit shaking me back and forth!');
+        } else if (accelY > SHAKE_THRESHOLD && (accelX < err && accelZ < err)) {
+            alert('Quit shaking me up and down!');
+        } else if (accelZ > SHAKE_THRESHOLD && (accelX < err && accelY < err)) {
+            alert('Why are you shaking me like that?!');
+        } else {
+            alert('Quit shaking me!');
+        }
+        accelX = accelY = accelZ = 0;
+    }
+}
+
+$.pitch.show();
+$.roll.show();
+$.yaw.show();
+$.index.open();
+```
 
 ![devicemotion](/Images/appc/download/attachments/38928815/devicemotion.png)
 
@@ -544,115 +435,76 @@ The first five properties indicate a possible motion-related activity that can b
 
 The following Alloy application captures the activity log of the device and displays it as a list to the user. The application checks the confidence level of the captured data and see if the activity changed. The application adds the activity data to the collection, which updates the list in the application.
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
+```xml
+<Alloy>
+    <Collection src="activities"/>
+    <Window class="container">
+        <ListView top="25">
+            <ListSection dataCollection="activities">
+                <ListItem title="{activity}"
+                    subtitle="{timestamp}"
+                    template="Ti.UI.LIST_ITEM_TEMPLATE_SUBTITLE" />
+            </ListSection>
+        </ListView>
+    </Window>
+</Alloy>
+```
 
-`<``Collection`  `src``=``"activities"``/>`
+*app/controllers/index.js*
 
-`<``Window`  `class``=``"container"``>`
+```javascript
+var activities = Alloy.Collections.activities;
+var model = Backbone.Model.extend();
+var CoreMotion = require('ti.coremotion');
+var MotionActivity = CoreMotion.createMotionActivity();
+var last_activity = 'unknown';
 
-`<``ListView`  `top``=``"25"``>`
+MotionActivity.startActivityUpdates(updateActivity);
 
-`<``ListSection`  `dataCollection``=``"activities"``>`
+function updateActivity(e) {
+    var data = e.activity;
+    var dict = {};
+    // Only capture data if the confidence is medium or high
+    if (data.confidence != CoreMotion.MOTION_ACTIVITY_CONFIDENCE_LOW) {
+        dict.timestamp = data.startDate;
+        if (data.automotive) {
+            dict.activity = 'automotive';
+        } else if (data.running) {
+            dict.activity = 'running';
+        } else if (data.stationary) {
+            dict.activity = 'stationary';
+        } else if (data.walking) {
+            dict.activity = 'walking';
+        } else {
+            return;
+        }
 
-`<``ListItem`  `title``=``"{activity}"`
+        if (dict.activity === last_activity) {
+            return;
+        } else {
+            activities.add(new model(dict));
+            last_activity = dict.activity;
+        }
+    }
+}
 
-`subtitle``=``"{timestamp}"`
+$.index.open();
+```
 
-`template``=``"Ti.UI.LIST_ITEM_TEMPLATE_SUBTITLE"` `/>`
+*app/models/activities.js*
 
-`</``ListSection``>`
-
-`</``ListView``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
-
-app/controllers/index.js
-
-`var` `activities = Alloy.Collections.activities;`
-
-`var` `model = Backbone.Model.extend();`
-
-`var` `CoreMotion = require(``'ti.coremotion'``);`
-
-`var` `MotionActivity = CoreMotion.createMotionActivity();`
-
-`var` `last_activity =` `'unknown'``;`
-
-`MotionActivity.startActivityUpdates(updateActivity);`
-
-`function` `updateActivity(e) {`
-
-`var` `data = e.activity;`
-
-`var` `dict = {};`
-
-`// Only capture data if the confidence is medium or high`
-
-`if` `(data.confidence != CoreMotion.MOTION_ACTIVITY_CONFIDENCE_LOW) {`
-
-`dict.timestamp = data.startDate;`
-
-`if` `(data.automotive) {`
-
-`dict.activity =` `'automotive'``;`
-
-`}` `else`  `if` `(data.running) {`
-
-`dict.activity =` `'running'``;`
-
-`}` `else`  `if` `(data.stationary) {`
-
-`dict.activity =` `'stationary'``;`
-
-`}` `else`  `if` `(data.walking) {`
-
-`dict.activity =` `'walking'``;`
-
-`}` `else` `{`
-
-`return``;`
-
-`}`
-
-`if` `(dict.activity === last_activity) {`
-
-`return``;`
-
-`}` `else` `{`
-
-`activities.add(``new` `model(dict));`
-
-`last_activity = dict.activity;`
-
-`}`
-
-`}`
-
-`}`
-
-`$.index.open();`
-
-app/models/activities.js
-
-`exports.definition = {`
-
-`config: {`
-
-`adapter: {`
-
-`type:` `"properties"``,`
-
-`collection_name:` `"activities"`
-
-`}`
-
-`}`
-
-`}; `
+```javascript
+exports.definition = {
+    config: {
+        adapter: {
+            type: "properties",
+            collection_name: "activities"
+        }
+    }
+};
+```
 
 ![activity](/Images/appc/download/attachments/38928815/activity.png)
 
@@ -668,55 +520,39 @@ The Pedometer API keeps track of how many steps a user takes with the device. Th
 
 The sample code below uses the Pedometer API to measure the number of steps a user takes. The device displays the measurement on screen. The user presses the button to retrieve the number of steps taken within the last hour. The application calls the queryStepCount method to retrieve the number of steps taken within the last minute.
 
-`var` `CoreMotion = require(``'ti.coremotion'``);`
+```javascript
+var CoreMotion = require('ti.coremotion');
+var Pedometer = CoreMotion.createPedometer();
 
-`var` `Pedometer = CoreMotion.createPedometer();`
+var win = Ti.UI.createWindow({ backgroundColor: 'white', layout: 'vertical' });
 
-`var` `win = Ti.UI.createWindow({ backgroundColor:` `'white'``, layout:` `'vertical'` `});`
+var step_label = Ti.UI.createLabel({ text: 0, top: 25 });
+win.add(step_label);
 
-`var` `step_label = Ti.UI.createLabel({ text: 0, top: 25 });`
+var step_history_label = Ti.UI.createLabel({ text: 'Press the button for step history.', top: 25 });
+win.add(step_history_label);
 
-`win.add(step_label);`
+if (Pedometer.isStepCountingAvailable()) {
+    Pedometer.startPedometerUpdates({
+        start: new Date(new Date().getTime() - 60 * 60 * 1000)
+    }, function(e) {
+        step_label.text = e.numberOfSteps;
+    });
+}
 
-`var` `step_history_label = Ti.UI.createLabel({ text:` `'Press the button for step history.'``, top: 25 });`
+var button = Ti.UI.createButton({ title: 'Last Minute', top: 25 });
+button.addEventListener('click', function(e) {
+    Pedometer.queryPedometerData({
+        start: new Date(new Date().getTime() - 60*1000),
+        end: new Date()
+    }, function (e) {
+            step_history_label.text = "You walked " + e.numberOfSteps + " steps in the last minute.";
+    });
+});
+win.add(button);
 
-`win.add(step_history_label);`
-
-`if` `(Pedometer.isStepCountingAvailable()) {`
-
-`Pedometer.startPedometerUpdates({`
-
-`start:` `new` `Date(``new` `Date().getTime() - 60 * 60 * 1000)`
-
-`},` `function``(e) {`
-
-`step_label.text = e.numberOfSteps;`
-
-`});`
-
-`}`
-
-`var` `button = Ti.UI.createButton({ title:` `'Last Minute'``, top: 25 });`
-
-`button.addEventListener(``'click'``,` `function``(e) {`
-
-`Pedometer.queryPedometerData({`
-
-`start:` `new` `Date(``new` `Date().getTime() - 60*1000),`
-
-`end:` `new` `Date()`
-
-`},` `function` `(e) {`
-
-`step_history_label.text =` `"You walked "` `+ e.numberOfSteps +` `" steps in the last minute."``;`
-
-`});`
-
-`});`
-
-`win.add(button);`
-
-`win.open();`
+win.open();
+```
 
 ### Accelerometer
 
@@ -730,77 +566,52 @@ If you want to measure acceleration force the user applies to the phone, use the
 
 The sample code below use the Accelerometer API to send acceleration data at 1 s intervals. The device displays the data on screen.
 
-`var` `CoreMotion = require(``'ti.coremotion'``);`
+```javascript
+var CoreMotion = require('ti.coremotion');
+var Accelerometer = CoreMotion.createAccelerometer();
 
-`var` `Accelerometer = CoreMotion.createAccelerometer();`
+if (Accelerometer.isAccelerometerAvailable()) {
+    Accelerometer.setAccelerometerUpdateInterval(1000);
+    Accelerometer.startAccelerometerUpdates(updateAccelData);
+} else {
+  alert('Device does not have an accelerometer.');
+}
 
-`if` `(Accelerometer.isAccelerometerAvailable()) {`
+// GUI to display measurements
+var win = Ti.UI.createWindow({ backgroundColor: 'white', layout: 'vertical' });
 
-`Accelerometer.setAccelerometerUpdateInterval(1000);`
+var progress_bar_args = {
+    max: 1,
+    min: 0,
+    value: 0,
+    width: 200,
+    top: 50
+};
 
-`Accelerometer.startAccelerometerUpdates(updateAccelData);`
+var accelX = Ti.UI.createProgressBar(progress_bar_args);
+var accelY = Ti.UI.createProgressBar(progress_bar_args);
+var accelZ = Ti.UI.createProgressBar(progress_bar_args);
 
-`}` `else` `{`
+win.add(accelX);
+win.add(accelY);
+win.add(accelZ);
 
-`alert(``'Device does not have an accelerometer.'``);`
+accelX.show();
+accelY.show();
+accelZ.show();
 
-`}`
+function updateAccelData (e) {
+    data = e.acceleration;
+    accelX.message = "X: " + data.x;
+    accelX.value = Math.abs(data.x);
+    accelY.message = "Y: " + data.y;
+    accelY.value = Math.abs(data.y);
+    accelZ.message = "Z: " + data.z;
+    accelZ.value = Math.abs(data.z);
+}
 
-`// GUI to display measurements`
-
-`var` `win = Ti.UI.createWindow({ backgroundColor:` `'white'``, layout:` `'vertical'` `});`
-
-`var` `progress_bar_args = {`
-
-`max: 1,`
-
-`min: 0,`
-
-`value: 0,`
-
-`width: 200,`
-
-`top: 50`
-
-`};`
-
-`var` `accelX = Ti.UI.createProgressBar(progress_bar_args);`
-
-`var` `accelY = Ti.UI.createProgressBar(progress_bar_args);`
-
-`var` `accelZ = Ti.UI.createProgressBar(progress_bar_args);`
-
-`win.add(accelX);`
-
-`win.add(accelY);`
-
-`win.add(accelZ);`
-
-`accelX.show();`
-
-`accelY.show();`
-
-`accelZ.show();`
-
-`function` `updateAccelData (e) {`
-
-`data = e.acceleration;`
-
-`accelX.message =` `"X: "` `+ data.x;`
-
-`accelX.value = Math.abs(data.x);`
-
-`accelY.message =` `"Y: "` `+ data.y;`
-
-`accelY.value = Math.abs(data.y);`
-
-`accelZ.message =` `"Z: "` `+ data.z;`
-
-`accelZ.value = Math.abs(data.z);`
-
-`}`
-
-`win.open();`
+win.open();
+```
 
 ### Gyroscope
 
@@ -812,89 +623,58 @@ The Gyroscope API uses a rotationRate dictionary to report the measurements of t
 
 The sample code below use the Gyroscope API to send rotation rate data at 1s intervals. The device displays the data on screen.
 
-`var` `CoreMotion = require(``'ti.coremotion'``);`
+```javascript
+var CoreMotion = require('ti.coremotion');
+var Gyroscope = CoreMotion.createGyroscope();
 
-`var` `Gyroscope = CoreMotion.createGyroscope();`
+if (Gyroscope.isGyroAvailable()) {
+    Gyroscope.setGyroUpdateInterval(1000);
+    Gyroscope.startGyroUpdates(updateGyroData);
+} else {
+  alert("Device does not have an gyroscope.");
+}
 
-`if` `(Gyroscope.isGyroAvailable()) {`
+// GUI to display measurements
+var win = Ti.UI.createWindow({ backgroundColor: 'white', layout: 'vertical' });
 
-`Gyroscope.setGyroUpdateInterval(1000);`
+var progress_bar_args = {
+    max: 1,
+    min: 0,
+    value: 0,
+    width: 200,
+    top: 50
+};
 
-`Gyroscope.startGyroUpdates(updateGyroData);`
+var gyroX = Ti.UI.createProgressBar(progress_bar_args);
+var gyroY = Ti.UI.createProgressBar(progress_bar_args);
+var gyroZ = Ti.UI.createProgressBar(progress_bar_args);
 
-`}` `else` `{`
+win.add(gyroX);
+win.add(gyroY);
+win.add(gyroZ);
 
-`alert(``"Device does not have an gyroscope."``);`
+gyroX.show();
+gyroY.show();
+gyroZ.show();
 
-`}`
+function updateGyroData (e) {
+  if (e.success) {
+      data = e.rotationRate;
+      gyroX.message = 'X: ' + data.x;
+      gyroX.value = Math.abs(data.x);
+      gyroY.message = 'Y: ' + data.y;
+      gyroY.value = Math.abs(data.y);
+      gyroZ.message = 'Z: " + data.z;
+      gyroZ.value = Math.abs(data.z);
+  } else {
+    if (e.error) {
+      Ti.API.error(e.error);
+    }
+  }
+}
 
-`// GUI to display measurements`
-
-`var` `win = Ti.UI.createWindow({ backgroundColor:` `'white'``, layout:` `'vertical'` `});`
-
-`var` `progress_bar_args = {`
-
-`max: 1,`
-
-`min: 0,`
-
-`value: 0,`
-
-`width: 200,`
-
-`top: 50`
-
-`};`
-
-`var` `gyroX = Ti.UI.createProgressBar(progress_bar_args);`
-
-`var` `gyroY = Ti.UI.createProgressBar(progress_bar_args);`
-
-`var` `gyroZ = Ti.UI.createProgressBar(progress_bar_args);`
-
-`win.add(gyroX);`
-
-`win.add(gyroY);`
-
-`win.add(gyroZ);`
-
-`gyroX.show();`
-
-`gyroY.show();`
-
-`gyroZ.show();`
-
-`function` `updateGyroData (e) {`
-
-`if` `(e.success) {`
-
-`data = e.rotationRate;`
-
-`gyroX.message =` `'X: '` `+ data.x;`
-
-`gyroX.value = Math.abs(data.x);`
-
-`gyroY.message =` `'Y: '` `+ data.y;`
-
-`gyroY.value = Math.abs(data.y);`
-
-`gyroZ.message = 'Z: " + data.z;`
-
-`gyroZ.value = Math.abs(data.z);`
-
-`}` `else` `{`
-
-`if` `(e.error) {`
-
-`Ti.API.error(e.error);`
-
-`}`
-
-`}`
-
-`}`
-
-`win.open();`
+win.open();
+```
 
 ### Magnetometer
 
@@ -906,60 +686,40 @@ The Magnetometer API uses a magneticField dictionary to report the measurements 
 
 The sample code below uses the Magnetometer API to take magnetic field measurements. The user must manually press the button to update the data on the display.
 
-`var` `CoreMotion = require(``'ti.coremotion'``);`
+```javascript
+var CoreMotion = require('ti.coremotion');
+var Magnetometer = CoreMotion.createMagnetometer();
 
-`var` `Magnetometer = CoreMotion.createMagnetometer();`
+if (Magnetometer.isMagnetometerAvailable()) {
+    Magnetometer.startMagnetometerUpdates();
+} else {
+    alert("Device does not have a magnetometer.");
+}
 
-`if` `(Magnetometer.isMagnetometerAvailable()) {`
+var win = Ti.UI.createWindow({backgroundColor: 'white', layout: 'vertical'});
 
-`Magnetometer.startMagnetometerUpdates();`
+var xMag = Ti.UI.createLabel({ text: 'X: 0', top: 50 });
+var yMag = Ti.UI.createLabel({ text: 'Y: 0', top: 50 });
+var zMag = Ti.UI.createLabel({ text: 'Z: 0', top: 50 });
+var totalMag = Ti.UI.createLabel({ text: 'TOTAL: 0', top: 50 });
 
-`}` `else` `{`
+win.add(xMag);
+win.add(yMag);
+win.add(zMag);
+win.add(totalMag);
 
-`alert(``"Device does not have a magnetometer."``);`
+var button = Ti.UI.createButton({ title: "Update Values", top: 25 });
+button.addEventListener('click', function(e) {
+    updateMagnetometerData(Magnetometer.getMagnetometerData());
+});
+win.add(button);
+function updateMagnetometerData (e) {
+    data = e.magneticField;
+    xMag.text = "X: " + data.x;
+    yMag.text = "Y: " + data.y;
+    zMag.text = "Z: " + data.z;
+    totalMag.text = "Total: " + Math.sqrt(data.x * data.x + data.y * data.y + data.z * data.z);
+}
 
-`}`
-
-`var` `win = Ti.UI.createWindow({backgroundColor:` `'white'``, layout:` `'vertical'``});`
-
-`var` `xMag = Ti.UI.createLabel({ text:` `'X: 0'``, top: 50 });`
-
-`var` `yMag = Ti.UI.createLabel({ text:` `'Y: 0'``, top: 50 });`
-
-`var` `zMag = Ti.UI.createLabel({ text:` `'Z: 0'``, top: 50 });`
-
-`var` `totalMag = Ti.UI.createLabel({ text:` `'TOTAL: 0'``, top: 50 });`
-
-`win.add(xMag);`
-
-`win.add(yMag);`
-
-`win.add(zMag);`
-
-`win.add(totalMag);`
-
-`var` `button = Ti.UI.createButton({ title:` `"Update Values"``, top: 25 });`
-
-`button.addEventListener(``'click'``,` `function``(e) {`
-
-`updateMagnetometerData(Magnetometer.getMagnetometerData());`
-
-`});`
-
-`win.add(button);`
-
-`function` `updateMagnetometerData (e) {`
-
-`data = e.magneticField;`
-
-`xMag.text =` `"X: "` `+ data.x;`
-
-`yMag.text =` `"Y: "` `+ data.y;`
-
-`zMag.text =` `"Z: "` `+ data.z;`
-
-`totalMag.text =` `"Total: "` `+ Math.sqrt(data.x * data.x + data.y * data.y + data.z * data.z);`
-
-`}`
-
-`win.open();`
+win.open();
+```

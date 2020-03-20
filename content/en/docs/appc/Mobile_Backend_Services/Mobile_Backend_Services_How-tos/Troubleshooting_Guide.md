@@ -30,31 +30,21 @@ If you do have MBS keys, manually enter the MBS key information in the tiapp.xml
 
 3. Insert the following MBS property keys as children of the ti:app parent tag and replace with the application's MBS keys found earlier:
 
-    `<``ti``:app` `xmlns:ti``=``"http://ti.appcelerator.org"``>`
-
-    `<!-- Add these six tags and replace with your application's ArrowDB keys -->`
-
-    `<``property`  `name``=``"acs-oauth-secret-development"`  `type``=``"string"``>OAUTH_CONSUMER_SECRET_DEV</``property``>`
-
-    `<``property`  `name``=``"acs-oauth-key-development"`  `type``=``"string"``>OAUTH_CONSUMER_KEY_DEV</``property``>`
-
-    `<``property`  `name``=``"acs-api-key-development"`  `type``=``"string"``>APP_KEY_DEV</``property``>`
-
-    `<``property`  `name``=``"acs-oauth-secret-production"`  `type``=``"string"``>OAUTH_CONSUMER_SECRET_PROD</``property``>`
-
-    `<``property`  `name``=``"acs-oauth-key-production"`  `type``=``"string"``>OAUTH_CONSUMER_KEY_PROD</``property``>`
-
-    `<``property`  `name``=``"acs-api-key-production"`  `type``=``"string"``>APP_KEY_PROD</``property``>`
-
-    `<!-- Add these two tags if you are using Appcelerator Studio -->`
-
-    `<``property`  `name``=``"acs-authbase-url"`  `type``=``"string"``>``https://secure-identity.cloud.appcelerator.com``</``property``>`
-
-    `<``property`  `name``=``"acs-base-url"`  `type``=``"string"``>``https://api.cloud.appcelerator.com``</``property``>`
-
-    `...`
-
-    `</``ti``:app>`
+    ```xml
+    <ti:app xmlns:ti="http://ti.appcelerator.org">
+        <!-- Add these six tags and replace with your application's ArrowDB keys -->
+        <property name="acs-oauth-secret-development" type="string">OAUTH_CONSUMER_SECRET_DEV</property>
+        <property name="acs-oauth-key-development" type="string">OAUTH_CONSUMER_KEY_DEV</property>
+        <property name="acs-api-key-development" type="string">APP_KEY_DEV</property>
+        <property name="acs-oauth-secret-production" type="string">OAUTH_CONSUMER_SECRET_PROD</property>
+        <property name="acs-oauth-key-production" type="string">OAUTH_CONSUMER_KEY_PROD</property>
+        <property name="acs-api-key-production" type="string">APP_KEY_PROD</property>
+        <!-- Add these two tags if you are using Appcelerator Studio -->
+        <property name="acs-authbase-url" type="string">https://secure-identity.cloud.appcelerator.com</property>
+        <property name="acs-base-url" type="string">https://api.cloud.appcelerator.com</property>
+        ...
+    </ti:app>
+    ```
 
 4. Save and close your tiapp.xml file.
 

@@ -26,13 +26,12 @@ This command is executed immediately in a synchronous way.
 
 The following _dispatch_ call will get the Titanium user basic information:
 
-`userInfo = dispatch($H({`
-
-`controller:` `'portal.user'``,`
-
-`action:` `"getUser"`
-
-`}).toJSON()).evalJSON();`
+```
+userInfo = dispatch($H({
+  controller: 'portal.user',
+  action: "getUser"
+}).toJSON()).evalJSON();
+```
 
 The returned _user information_ JSON holds this information:
 
@@ -47,66 +46,37 @@ The returned _user information_ JSON holds this information:
 
 From _**[studio3-sdk](https://github.com/aptana/studio3-sdk)**_ repository (_user.js_)
 
-`/**`
-
-`* Render the items that will display the Titanium-User information`
-
-`*/`
-
-`render : function() {`
-
-`userDiv = $(``'user'``);`
-
-`with(Elements.Builder) {`
-
-`if``( typeof (console) !==` `'undefined'` `&& typeof (dispatch) !==` `'undefined'``) {`
-
-`console.log(``"Dispatching the 'getUser' action on the 'portal.user' controller..."``);`
-
-`userInfo = dispatch($H({`
-
-`controller:` `'portal.user'``,`
-
-`action:` `"getUser"`
-
-`}).toJSON()).evalJSON();`
-
-`userTable = table({`
-
-`"border"``:` `"1"``,`
-
-`"style"``:` `"border-collapse:collapse"`
-
-`}, tbody(`
-
-`tr(`
-
-`th(``"ID"``),`
-
-`th(``"Name"``),`
-
-`th(``"Email"``),`
-
-`th(``"Image"``)),`
-
-`tr(`
-
-`td(userInfo[``"id"``]),`
-
-`td(userInfo[``"name"``]),`
-
-`td(userInfo[``"email"``]),`
-
-`td(img({``"src"``:` `"http://www.gravatar.com/avatar/"` `+ userInfo[``"hash"``]}))`
-
-`)`
-
-`));`
-
-`userDiv.appendChild(userTable);`
-
-`}`
-
-`}`
-
-`}`
+```
+/**
+ * Render the items that will display the Titanium-User information
+ */
+render : function() {
+  userDiv = $('user');
+  with(Elements.Builder) {
+  if( typeof (console) !== 'undefined' && typeof (dispatch) !== 'undefined') {
+    console.log("Dispatching the 'getUser' action on the 'portal.user' controller...");
+    userInfo = dispatch($H({
+      controller: 'portal.user',
+      action: "getUser"
+    }).toJSON()).evalJSON();
+    userTable = table({
+      "border": "1",
+      "style": "border-collapse:collapse"
+    }, tbody(
+    tr(
+      th("ID"),
+      th("Name"),
+      th("Email"),
+      th("Image")),
+    tr(
+      td(userInfo["id"]),
+      td(userInfo["name"]),
+      td(userInfo["email"]),
+      td(img({"src": "http://www.gravatar.com/avatar/" + userInfo["hash"]}))
+    )
+    ));
+    userDiv.appendChild(userTable);
+    }
+  }
+}
+```

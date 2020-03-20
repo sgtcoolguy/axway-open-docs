@@ -134,4 +134,6 @@ With FCM enabled, you need to update your application's settings page in [Dashbo
 
 **Note**: If you are still seeing the following error message when pushing a notification, uninstall the app and rebuild it:
 
-`Exception Type: GCM; Error Code:` `3006``; Error Message: The sender_id contained in the registration_id does not match the sender_id used to register with the GCM servers`
+```
+Exception Type: GCM; Error Code: 3006; Error Message: The sender_id contained in the registration_id does not match the sender_id used to register with the GCM servers
+```

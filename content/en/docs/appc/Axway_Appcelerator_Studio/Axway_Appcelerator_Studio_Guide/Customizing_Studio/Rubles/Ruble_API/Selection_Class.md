@@ -8,7 +8,9 @@ Examples of how you might interact with instance and static methods of the selec
 
 ### Instance:
 
-`context.editor.selection = (node.getStartingOffset...node.getEndingOffset +` `1``)`
+```
+context.editor.selection = (node.getStartingOffset...node.getEndingOffset + 1)
+```
 
 ## Selection Methods
 

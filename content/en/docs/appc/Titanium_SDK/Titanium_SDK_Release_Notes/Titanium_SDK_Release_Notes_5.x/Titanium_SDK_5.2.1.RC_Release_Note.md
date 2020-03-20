@@ -36,4 +36,6 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 When there is a Arrow version mismatch, you will be see the following error message:
 
-`ERROR | This connector requires at least version` `1.2``.``53` ``of Arrow; please run `appc use latest`.``
+```bash
+ERROR | This connector requires at least version 1.2.53 of Arrow; please run `appc use latest`.
+```

@@ -28,11 +28,11 @@ In this chapter, we’ll examine TableView basics then dig a bit deeper into wha
 
 Let's start by creating a table. You do so with the Ti.UI.createTableView() method, like this:
 
-`var table =` `new` `Titanium.UI.createTableView({`
-
-`/* properties */`
-
-`});`
+```javascript
+var table = new Titanium.UI.createTableView({
+  /* properties */
+});
+```
 
 Some key table properties include:
 
@@ -58,55 +58,39 @@ Table rows are represented by the Ti.UI.TableViewRow object. This object contain
 
 ![table](/Images/appc/download/attachments/29004930/table.png)
 
-Object literals as rows
+*Object literals as rows*
 
-`// create an array of anonymous objects`
-
-`var tbl_data = [`
-
-`{title:``'Row 1'``},`
-
-`{title:``'Row 2'``},`
-
-`{title:``'Row 3'``}`
-
-`];`
-
-`// now assign that array to the table's data property to add those objects as rows`
-
-`var table = Titanium.UI.createTableView({`
-
-`data:tbl_data`
-
-`});`
-
-`// alternatively, you could do`
-
-`table.setData(tbl_data);`
-
-`var win = Ti.UI.createWindow();`
-
-`win.add(table);`
-
-`win.open();`
+```javascript
+// create an array of anonymous objects
+var tbl_data = [
+  {title:'Row 1'},
+  {title:'Row 2'},
+  {title:'Row 3'}
+];
+// now assign that array to the table's data property to add those objects as rows
+var table = Titanium.UI.createTableView({
+  data:tbl_data
+});
+// alternatively, you could do
+table.setData(tbl_data);
+var win = Ti.UI.createWindow();
+win.add(table);
+win.open();
+```
 
 Creating object literals in this way is very handy when pulling data out of a database or across the network. By explicitly creating TableViewRow objects, you gain access to a few handy methods such as add() or fireEvent().
 
-Explicit TableViewRow objects
+*Explicit TableViewRow objects*
 
-`var row = Titanium.UI.createTableViewRow({`
-
-`title:` `'Row 1'`
-
-`/* other properties */`
-
-`});`
-
-`table.appendRow(row);`
-
-`// with an explicit object, you can call methods such as`
-
-`// var imgCapture = row.toImage();`
+```javascript
+var row = Titanium.UI.createTableViewRow({
+    title: 'Row 1'
+    /* other properties */
+});
+table.appendRow(row);
+// with an explicit object, you can call methods such as
+// var imgCapture = row.toImage();
+```
 
 #### Emptying a table
 
@@ -114,11 +98,11 @@ You can empty a table by setting its data property to an empty array.
 
 Do not set a TableView's data property to null or undefined as it will result un unexpected behavior.
 
-`table.setData([]);`
-
-`// or`
-
-`table.data = [];`
+```
+table.setData([]);
+// or
+table.data = [];
+```
 
 #### Setting data vs. setData() vs. appendRow()
 
@@ -144,33 +128,23 @@ So let's augment the properties of the prior TableView example rows. In the foll
 
 ![table2](/Images/appc/download/attachments/29004930/table2.png)
 
-`var` `tbl_data = [`
+```javascript
+var tbl_data = [
+    {title:'Row 1', leftImage: 'KS_nav_ui.png'},
+    {title:'Row 2', rightImage: 'KS_nav_ui.png'},
+    {title:'Row 3', backgroundColor: '#fdd'}
+];
+// now assign that array to the table's data property to add those objects as rows
+var table = Titanium.UI.createTableView({
+    data:tbl_data
+});
+// alternatively, you could do
+table.setData(tbl_data);
 
-`{title:``'Row 1'``, leftImage:` `'KS_nav_ui.png'``},`
-
-`{title:``'Row 2'``, rightImage:` `'KS_nav_ui.png'``},`
-
-`{title:``'Row 3'``, backgroundColor:` `'#fdd'``}`
-
-`];`
-
-`// now assign that array to the table's data property to add those objects as rows`
-
-`var` `table = Titanium.UI.createTableView({`
-
-`data:tbl_data`
-
-`});`
-
-`// alternatively, you could do`
-
-`table.setData(tbl_data);`
-
-`var` `win = Ti.UI.createWindow();`
-
-`win.add(table);`
-
-`win.open();`
+var win = Ti.UI.createWindow();
+win.add(table);
+win.open();
+```
 
 #### Row indicators
 
@@ -192,63 +166,39 @@ Let's once again visit the example TableView code. This time we'll modify it to 
 
 ![table3](/Images/appc/download/attachments/29004930/table3.png)
 
-`// Create an array of explicitly defined custom TableViewRows`
+```javascript
+// Create an array of explicitly defined custom TableViewRows
+var tbl_data = [];
+for (var i = 0; i < 10; i++) {
+  var row = Ti.UI.createTableViewRow();
+  var label = Ti.UI.createLabel({
+    left: 10,
+    text: 'Row ' + (i+1)
+  });
+  var image = Ti.UI.createImageView({
+    image: 'KS_nav_ui.png'
+  });
+  var button = Ti.UI.createButton({
+    right: 10,
+    height: 30,
+    width: 80,
+    title: 'press me'
+  });
+  row.add(label);
+  row.add(image);
+  row.add(button);
+  tbl_data.push(row);
+}
 
-`var` `tbl_data = [];`
+// now assign that array to the table's data property to add those objects as rows
+var table = Titanium.UI.createTableView({
+    data:tbl_data
+});
 
-`for` `(``var` `i = 0; i < 10; i++) {`
-
-`var` `row = Ti.UI.createTableViewRow();`
-
-`var` `label = Ti.UI.createLabel({`
-
-`left: 10,`
-
-`text:` `'Row '` `+ (i+1)`
-
-`});`
-
-`var` `image = Ti.UI.createImageView({`
-
-`image:` `'KS_nav_ui.png'`
-
-`});`
-
-`var` `button = Ti.UI.createButton({`
-
-`right: 10,`
-
-`height: 30,`
-
-`width: 80,`
-
-`title:` `'press me'`
-
-`});`
-
-`row.add(label);`
-
-`row.add(image);`
-
-`row.add(button);`
-
-`tbl_data.push(row);`
-
-`}`
-
-`// now assign that array to the table's data property to add those objects as rows`
-
-`var` `table = Titanium.UI.createTableView({`
-
-`data:tbl_data`
-
-`});`
-
-`var` `win = Ti.UI.createWindow();`
-
-`win.add(table);`
-
-`win.open();`
+var win = Ti.UI.createWindow();
+win.add(table);
+win.open();
+```
 
 This is just one very simple example of how you can create custom rows for your tables. You can literally embed almost any Titanium UI component in any visual configuration to create your rows.
 
@@ -258,33 +208,23 @@ It is tempting to make heavy use of Titanium's flexibility with custom rows. You
 
 On iOS, you can set the style property of the table to display table sections as separate components, as shown in the following graphic.
 
-`var` `inputData = [`
+```javascript
+var inputData = [
+  {title:'row 1', header:'Header 1'},
+  {title:'row 2'},
+  {title:'row 3'},
+  {title:'row 4', header:'Header 2'},
+  {title:'row 5'}
+];
+var table = Titanium.UI.createTableView({
+  data:inputData,
+  style:Titanium.UI.iPhone.TableViewStyle.GROUPED
+});
 
-`{title:``'row 1'``, header:``'Header 1'``},`
-
-`{title:``'row 2'``},`
-
-`{title:``'row 3'``},`
-
-`{title:``'row 4'``, header:``'Header 2'``},`
-
-`{title:``'row 5'``}`
-
-`];`
-
-`var` `table = Titanium.UI.createTableView({`
-
-`data:inputData,`
-
-`style:Titanium.UI.iPhone.TableViewStyle.GROUPED`
-
-`});`
-
-`var` `win = Ti.UI.createWindow();`
-
-`win.add(table);`
-
-`win.open();`
+var win = Ti.UI.createWindow();
+win.add(table);
+win.open();
+```
 
 ![table_grouped_rows](/Images/appc/download/attachments/29004930/table_grouped_rows.png)
 
@@ -292,31 +232,22 @@ On iOS, you can set the style property of the table to display table sections as
 
 You can use the built-in headerTitle and footerTitle to add header and footer titles to your tables. This convenience property allows you to enter arbitrary text for these titles, but will only use the default font formatting.
 
-`var` `data = [`
+```javascript
+var data = [
+  { title: 'Row 1' },
+  { title: 'Row 2' },
+  { title: 'Row 3' }
+];
+var table = Titanium.UI.createTableView ({
+    data:data,
+    headerTitle:'TableView examples and test cases',
+    footerTitle:"Wow. That was cool!",
+});
 
-`{ title:` `'Row 1'` `},`
-
-`{ title:` `'Row 2'` `},`
-
-`{ title:` `'Row 3'` `}`
-
-`];`
-
-`var` `table = Titanium.UI.createTableView ({`
-
-`data:data,`
-
-`headerTitle:``'TableView examples and test cases'``,`
-
-`footerTitle:``"Wow. That was cool!"``,`
-
-`});`
-
-`var` `win = Ti.UI.createWindow();`
-
-`win.add(table);`
-
-`win.open();`
+var win = Ti.UI.createWindow();
+win.add(table);
+win.open();
+```
 
 ![table5](/Images/appc/download/attachments/29004930/table5.png)
 
@@ -324,60 +255,37 @@ A more flexible technique is to use Views for your headers and footers. You can 
 
 ![table4](/Images/appc/download/attachments/29004930/table4.png)
 
-`var` `tbl_data = [`
+```javascript
+var tbl_data = [
+  { title: 'Row 1' },
+  { title: 'Row 2' },
+  { title: 'Row 3' }
+];
 
-`{ title:` `'Row 1'` `},`
+var createCustomView = function(title) {
+  var view = Ti.UI.createView({
+    backgroundColor: '#222',
+    height: 40
+  });
+  var text = Ti.UI.createLabel({
+    text: title,
+    left: 20,
+    color: '#fff'
+  });
+  view.add(text);
+  return view;
+};
 
-`{ title:` `'Row 2'` `},`
+// now assign that array to the table's data property to add those objects as rows
+var table = Titanium.UI.createTableView({
+    data:tbl_data,
+    headerView: createCustomView('Header View'),
+    footerView: createCustomView('Footer View')
+});
+// alternatively, you could do
+table.setData(tbl_data);
 
-`{ title:` `'Row 3'` `}`
-
-`];`
-
-`var` `createCustomView =` `function``(title) {`
-
-`var` `view = Ti.UI.createView({`
-
-`backgroundColor:` `'#222'``,`
-
-`height: 40`
-
-`});`
-
-`var` `text = Ti.UI.createLabel({`
-
-`text: title,`
-
-`left: 20,`
-
-`color:` `'#fff'`
-
-`});`
-
-`view.add(text);`
-
-`return` `view;`
-
-`};`
-
-`// now assign that array to the table's data property to add those objects as rows`
-
-`var` `table = Titanium.UI.createTableView({`
-
-`data:tbl_data,`
-
-`headerView: createCustomView(``'Header View'``),`
-
-`footerView: createCustomView(``'Footer View'``)`
-
-`});`
-
-`// alternatively, you could do`
-
-`table.setData(tbl_data);`
-
-`var` `win = Ti.UI.createWindow();`
-
-`win.add(table);`
-
-`win.open();`
+var win = Ti.UI.createWindow();
+win.add(table);
+win.open();
+```

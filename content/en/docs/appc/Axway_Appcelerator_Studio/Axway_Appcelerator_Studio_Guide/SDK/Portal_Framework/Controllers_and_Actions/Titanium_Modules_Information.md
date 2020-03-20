@@ -36,13 +36,12 @@ This command is executed immediately in a synchronous way.
 
 The following _dispatch_ call will get the Titanium Mobile Modules information:
 
-`modulesInfo = dispatch($H({`
-
-`controller:` `'portal.titanium.modules'``,`
-
-`action:` `"getMobileModules"`
-
-`}).toJSON()).evalJSON();`
+```
+modulesInfo = dispatch($H({
+  controller: 'portal.titanium.modules',
+  action: "getMobileModules"
+}).toJSON()).evalJSON();
+```
 
 The returned _mobules information_ JSON is a Map object that has two roots:
 
@@ -71,21 +70,19 @@ The hash value for the **project\_modules** key holds a _hash_ that maps from a 
 
 Here is an illustration that describes the form of the returned JSON object.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083163/modules_json.png" alt="images/download/attachments/30083163/modules_json.png" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083163/modules_json.png" alt="images/download/attachments/30083163/modules_json.png" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 ### Installing a Module
 
 You can download and install a Mobile Module by using the _'installModule'_ action.
 
-`dispatch($H({`
-
-`controller:` `'portal.titanium.modules'``,`
-
-`action:` `"installModule"``,`
-
-`args:` `'["<url>", "<target>", "<project-name>"]'`
-
-`}).toJSON());`
+```
+dispatch($H({
+    controller: 'portal.titanium.modules',
+    action: "installModule",
+    args: '["<url>", "<target>", "<project-name>"]'
+}).toJSON());
+```
 
 The _"target"_ and the _"project-name"_ are optional arguments.
 The 'target' can be one of _**global\_modules**_ or _**project\_modules**_.
@@ -98,18 +95,19 @@ When the given URL is null or empty, the Studio will display a module-deployment
 
 The following _dispatch_ call will get the Titanium Desktop Modules information:
 
-`modulesInfo = dispatch($H({`
-
-`controller:` `'portal.titanium.modules'``,`
-
-`action:` `"getDesktopModules"`
-
-`}).toJSON()).evalJSON();`
+```
+modulesInfo = dispatch($H({
+  controller: 'portal.titanium.modules',
+  action: "getDesktopModules"
+}).toJSON()).evalJSON();
+```
 
 The returned _mobules information_ JSON is a Map object that holds the _versions_ of the installed modules as _keys_, and holds an array of _module-names_ as values.
 For example:
 
-`{``"1.1.0"` `: [``"php"``,` `"ruby"``,` `"python"``,` `"javascript"``,` `"tiapp"``...]}`
+```
+{"1.1.0" : ["php", "ruby", "python", "javascript", "tiapp"...]}
+```
 
 ## Sample of use
 

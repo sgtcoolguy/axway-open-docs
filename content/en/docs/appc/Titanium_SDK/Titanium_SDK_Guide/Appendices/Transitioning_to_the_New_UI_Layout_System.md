@@ -72,7 +72,7 @@ This section explains the new layout system implemented in Release 2.0. While ma
 
 The following table summarizes the layout properties that affect the layout of views.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Name</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Description</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>width</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Defines the width of a UI component.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>height</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Defines the height of a UI component.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>left</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Pins the left side of a UI component relative to its parent. Measured from the parent's left bound.<br>Acts as padding between UI siblings in horizontal layouts.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>right</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Pins the right side of a UI component relative to its parent. Measured from the parent's right bound.<br>Acts as padding between UI siblings in horizontal layouts.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>top</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Pins the top of a UI component relative to its parent. Measured from the parent's top bound.<br>Acts as padding between UI siblings in vertical layouts.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>bottom</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Pins the bottom of a UI component relative to its parent. Measured from the parent's bottom bound.<br>Acts as padding between UI siblings in vertical layouts.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>center</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Dictionary with properties <tt class="">x</tt> and <tt>y</tt>. Pins the center of the view to the defined point. Measured from parent's left and top bounds.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>layout</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Defines how the component lays out its children. One of "vertical", "horizontal" or "composite".<br>Default is "composite". The value "absolute" is a synonym for "composite".</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>zIndex</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Stack order of UI component in its parent. Higher values are rendered towards the top, in front of components with lower values.<br>If no <tt class="">zIndex</tt> value is set, components stack in the order in which they are added to the parent, with the last child added displayed on top of earlier children. Any component with a defined <tt class="">zIndex</tt> value is displayed in front of any components with undefined <tt>zIndex</tt>. Does not affect the actual layout of this component.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>size</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Could be used as a layout parameter prior to Release 2.0. In Release 2.0, <tt class="">size</tt> is a read-only parameter that can be used to determine the dimensions of the view. See <a class="document-link" href="#!/guide/Transitioning_to_the_New_UI_Layout_System-section-src-30088148_TransitioningtotheNewUILayoutSystem-ControlSizeandPositionandPost-LayoutEvent">#Control Size and Position and Post-Layout Event</a> for details.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>rect</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>New in Release 2.0, <tt class="">rect</tt> is a read-only parameter that can be used to determine the size and position of the view. See <a class="document-link" href="#!/guide/Transitioning_to_the_New_UI_Layout_System-section-src-30088148_TransitioningtotheNewUILayoutSystem-ControlSizeandPositionandPost-LayoutEvent">#Control Size and Position and Post-Layout Event</a> for details.</p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Name</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Description</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">width</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Defines the width of a UI component.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">height</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Defines the height of a UI component.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">left</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Pins the left side of a UI component relative to its parent. Measured from the parent's left bound.<br>Acts as padding between UI siblings in horizontal layouts.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">right</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Pins the right side of a UI component relative to its parent. Measured from the parent's right bound.<br>Acts as padding between UI siblings in horizontal layouts.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">top</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Pins the top of a UI component relative to its parent. Measured from the parent's top bound.<br>Acts as padding between UI siblings in vertical layouts.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">bottom</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Pins the bottom of a UI component relative to its parent. Measured from the parent's bottom bound.<br>Acts as padding between UI siblings in vertical layouts.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">center</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Dictionary with properties <tt class=" ">x</tt> and <tt class=" ">y</tt>. Pins the center of the view to the defined point. Measured from parent's left and top bounds.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">layout</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Defines how the component lays out its children. One of "vertical", "horizontal" or "composite".<br>Default is "composite". The value "absolute" is a synonym for "composite".</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">zIndex</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Stack order of UI component in its parent. Higher values are rendered towards the top, in front of components with lower values.<br>If no <tt class=" ">zIndex</tt> value is set, components stack in the order in which they are added to the parent, with the last child added displayed on top of earlier children. Any component with a defined <tt class=" ">zIndex</tt> value is displayed in front of any components with undefined <tt class=" ">zIndex</tt>. Does not affect the actual layout of this component.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">size</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Could be used as a layout parameter prior to Release 2.0. In Release 2.0, <tt class=" ">size</tt> is a read-only parameter that can be used to determine the dimensions of the view. See <a class="document-link " href="#!/guide/Transitioning_to_the_New_UI_Layout_System-section-src-30088148_TransitioningtotheNewUILayoutSystem-ControlSizeandPositionandPost-LayoutEvent">#Control Size and Position and Post-Layout Event</a> for details.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">rect</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>New in Release 2.0, <tt class=" ">rect</tt> is a read-only parameter that can be used to determine the size and position of the view. See <a class="document-link " href="#!/guide/Transitioning_to_the_New_UI_Layout_System-section-src-30088148_TransitioningtotheNewUILayoutSystem-ControlSizeandPositionandPost-LayoutEvent">#Control Size and Position and Post-Layout Event</a> for details.</p></td></tr></tbody></table>
 
 ### View Types and Default Layout Behavior
 
@@ -158,7 +158,7 @@ width value, and SIZE behavior when it is used as a height value.
 
 This section describes the precedence rules that determine which settings take precedence if conflicting layout parameters are specified.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Name</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Notes</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>1</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>width</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>If <tt class="">width</tt> is defined, it takes precedence and the positioning pins are not used to determine the view's width.<br>If <tt class="">width</tt> is not defined, and at least two horizontal positioning pins are defined, the width is calculated implicitly from the pins. For example, <tt class="">left</tt> and <tt class="">right</tt> or <tt class="">left</tt> and <tt class="">center.x</tt>. If all three horizontal pins are defined, the width is determined by the <tt class="">left</tt> and <tt>center.x</tt> pins. If width cannot be implicitly calculated it follows the view's default sizing behavior.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>2</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>left</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>If <tt>left</tt> is defined, it always takes precedence for positioning the view horizontally.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>3</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>center.x</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Used to position the view horizontally if <tt class="">left</tt> is not set.<br>If <tt>left</tt> is set, this property is not used to position the view, although it may be used to determine its width.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>4</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>right</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Used to position the view horizontally when neither <tt class="">left</tt> or <tt class="">center.x</tt> is set.<br>If either <tt class="">left</tt> or <tt>center.x</tt> is set, this property is not used to position the view, although it may be used to determine its width.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>5</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>height</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>If <tt class="">height</tt> is defined, it takes precedence and the positioning pins are not used to determine the view's height.<br>If <tt class="">height</tt> is not defined, and at least two vertical positioning pins are defined, the height is determined implicitly from the pins. If all three vertical pins are defined, the height is determined by the <tt class="">top</tt> and <tt>center.y</tt> pins. If height cannot be implicitly calculated it follows the view's default sizing behavior.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>6</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>top</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>If specified, always takes precedence for positioning the view horizontally.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>7</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>center.y</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Used to position the view vertically if <tt class="">top</tt> is not set.<br>If <tt>top</tt> is defined, this property is not used to position the view, although it may be used to determine its height.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>8</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>bottom</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Used to position the view vertically if neither <tt class="">top</tt> or <tt class="">center.y</tt> is set.<br>If either <tt class="">top</tt> or <tt>center.y</tt> is set, this property is ignored. this property is not used to position the view, although it may be used to determine its height.</p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>&nbsp;</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Name</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Notes</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>1</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">width</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>If <tt class=" ">width</tt> is defined, it takes precedence and the positioning pins are not used to determine the view's width.<br>If <tt class=" ">width</tt> is not defined, and at least two horizontal positioning pins are defined, the width is calculated implicitly from the pins. For example, <tt class=" ">left</tt> and <tt class=" ">right</tt> or <tt class=" ">left</tt> and <tt class=" ">center.x</tt>. If all three horizontal pins are defined, the width is determined by the <tt class=" ">left</tt> and <tt class=" ">center.x</tt> pins. If width cannot be implicitly calculated it follows the view's default sizing behavior.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>2</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">left</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>If <tt class=" ">left</tt> is defined, it always takes precedence for positioning the view horizontally.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>3</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">center.x</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Used to position the view horizontally if <tt class=" ">left</tt> is not set.<br>If <tt class=" ">left</tt> is set, this property is not used to position the view, although it may be used to determine its width.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>4</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">right</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Used to position the view horizontally when neither <tt class=" ">left</tt> or <tt class=" ">center.x</tt> is set.<br>If either <tt class=" ">left</tt> or <tt class=" ">center.x</tt> is set, this property is not used to position the view, although it may be used to determine its width.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>5</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">height</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>If <tt class=" ">height</tt> is defined, it takes precedence and the positioning pins are not used to determine the view's height.<br>If <tt class=" ">height</tt> is not defined, and at least two vertical positioning pins are defined, the height is determined implicitly from the pins. If all three vertical pins are defined, the height is determined by the <tt class=" ">top</tt> and <tt class=" ">center.y</tt> pins. If height cannot be implicitly calculated it follows the view's default sizing behavior.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>6</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">top</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>If specified, always takes precedence for positioning the view horizontally.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>7</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">center.y</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Used to position the view vertically if <tt class=" ">top</tt> is not set.<br>If <tt class=" ">top</tt> is defined, this property is not used to position the view, although it may be used to determine its height.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>8</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">bottom</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Used to position the view vertically if neither <tt class=" ">top</tt> or <tt class=" ">center.y</tt> is set.<br>If either <tt class=" ">top</tt> or <tt class=" ">center.y</tt> is set, this property is ignored. this property is not used to position the view, although it may be used to determine its height.</p></td></tr></tbody></table>
 
 ### Batch Layout Updates
 
@@ -166,15 +166,13 @@ Another change in this release involves _batch layout updates_. In previous rele
 
 To avoid this, you can batch layout updates, so multiple layout changes only result in a single layout cycle. The [applyProperties](#!/api/Titanium.UI.View-method-applyProperties) method allows you to update a set of layout parameters in a single operation. For example:
 
-`myView.applyProperties({`
-
-`top:` `50``,`
-
-`left:` `50``,`
-
-`width:` `200`
-
-`});`
+```
+myView.applyProperties({
+  top: 50,
+  left: 50,
+  width: 200
+});
+```
 
 The applyProperties method is new in Release 3.0. When working with 2.X releases of the Titanium SDK, [updateLayout](#!/api/Titanium.UI.View-method-updateLayout) can be used in place of applyProperties in the above code sample.
 
@@ -186,23 +184,17 @@ In previous releases, there was no reliable means to determine the size and posi
 
 Because layout can occur asynchronously, it is sometimes difficult to determine the actual size of a control after it has been laid out. To address this issue, a new postlayout event has been added that is fired when a layout cycle completes. For example:
 
-`var postLayoutCallback = function(e){`
-
-`Ti.API.info(String.format(``"Layout done, left: %f, width: %f"``, myView.rect.x, myView.rect.width));`
-
-`myView.removeEventListener(``'postlayout'``, postLayoutCallback);`
-
-`}`
-
-`myView.addEventListener(``'postlayout'``, postLayoutCallback);`
-
-`myView.updateLayout({`
-
-`left:` `'25%'``,`
-
-`width:` `'25%'`
-
-`});`
+```javascript
+var postLayoutCallback  = function(e){
+  Ti.API.info(String.format("Layout done, left: %f, width: %f", myView.rect.x, myView.rect.width));
+  myView.removeEventListener('postlayout', postLayoutCallback);
+}
+myView.addEventListener('postlayout', postLayoutCallback);
+myView.updateLayout({
+  left: '25%',
+  width: '25%'
+});
+```
 
 Note that updating a view's layout in the postlayout event can cause an infinite loop of layout events. Furthermore, endless postlayout cycles can be avoided by careful coding. For instance, only listen to the postlayout event for specific views, not for the entire window. If you are laying out some elements based on the position or size of another element, you can cache the last known size of the element you are interested in, and only make layout changes if the size actually changes.
 
@@ -289,19 +281,15 @@ iOS now follows the same behavior as Android, and clips child views to the bound
 
 **Test Code**
 
-`var win = Ti.UI.createWindow({});`
-
-`//Clipping.`
-
-`var parent = Ti.UI.createView(\{backgroundColor:` `'red'``, width:` `'100'``, height:` `'100'``\})`
-
-`var child = Ti.UI.createView(\{backgroundColor:` `'green'``, width:` `150``, height:` `150``, left:` `5``, top:` `5``\});`
-
-`parent.add(child);`
-
-`win.add(parent);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow({});
+//Clipping.
+var parent = Ti.UI.createView(\{backgroundColor: 'red', width: '100', height: '100'\})
+var child = Ti.UI.createView(\{backgroundColor: 'green', width: 150, height: 150, left: 5, top: 5\});
+parent.add(child);
+win.add(parent);
+win.open();
+```
 
 | 1.8 Behavior | 2.0 Behavior |
 | --- | --- |
@@ -313,19 +301,15 @@ When width or height parameters are specified as "auto", components will follow 
 
 **Test Code**
 
-`var win = Ti.UI.createWindow({});`
-
-`//parent will follow SIZE in 1_8_X, FILL in 2_0_X`
-
-`var parent = Ti.UI.createView({ backgroundColor:` `'red'``, width:` `'auto'``, height:` `'auto'` `})`
-
-`var child = Ti.UI.createView( {backgroundColor:` `'green'``, width:` `100``, height:` `100``, left:` `5``, right:` `5``, top:` `5``, bottom:` `5` `});`
-
-`parent.add(child);`
-
-`win.add(parent);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow({});
+//parent will follow SIZE in 1_8_X, FILL in 2_0_X
+var parent = Ti.UI.createView({ backgroundColor: 'red', width: 'auto', height: 'auto' })
+var child = Ti.UI.createView( {backgroundColor: 'green', width: 100, height: 100, left: 5, right: 5, top: 5, bottom: 5 });
+parent.add(child);
+win.add(parent);
+win.open();
+```
 
 | 1.8 Behavior | 2.0 Behavior |
 | --- | --- |
@@ -343,13 +327,12 @@ For any views that don't have sizes defined _and_ can't be sized implicitly, set
 
 The following excerpt shows a label with undefined size and no position pins. In 1.8, this uses the FILL behavior, but in 2.0, it uses the SIZE behavior.
 
-`var win = Ti.UI.createWindow({});`
-
-`var label = Ti.UI.createLabel({text:` `'I am label'``, backgroundColor:` `'red'``});`
-
-`win.add(label);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow({});
+var label = Ti.UI.createLabel({text: 'I am label', backgroundColor: 'red'});
+win.add(label);
+win.open();
+```
 
 | 1.8 Behavior | 2.0 Behavior |
 | --- | --- |
@@ -357,19 +340,15 @@ The following excerpt shows a label with undefined size and no position pins. In
 
 The following excerpt shows a label with undefined size and position pins. In 1.8, this uses the FILL behavior, but in 2.0, the size is calculated implicitly from the position pins.
 
-`var win = Ti.UI.createWindow({});`
-
-`//Implicit width calculation in 2_0_X`
-
-`var parent = Ti.UI.createView({backgroundColor:` `'red'``, width:` `'100'``, height:` `'100'``})`
-
-`var child = Ti.UI.createView({backgroundColor:` `'green'``, left:` `5``, top:` `5``, center: {x:` `20``, y:` `20``}});`
-
-`parent.add(child);`
-
-`win.add(parent);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow({});
+//Implicit width calculation in 2_0_X
+var parent = Ti.UI.createView({backgroundColor: 'red', width: '100', height: '100'})
+var child = Ti.UI.createView({backgroundColor: 'green', left: 5, top: 5, center: {x: 20, y: 20}});
+parent.add(child);
+win.add(parent);
+win.open();
+```
 
 | 1.8 Behavior | 2.0 Behavior |
 | --- | --- |
@@ -387,17 +366,14 @@ When no positioning pins are defined the child is placed at the center of the pa
 
 The following excerpt creates a view that has conflicting position pins. In Release 1.8, the center values take precedence, but in 2.0, the left,top values take precedence.
 
-`var win = Ti.UI.createWindow({});`
-
-`var parent = Ti.UI.createView({backgroundColor:` `'red'``, width:` `'100'``, height:` `'100'``})`
-
-`var child = Ti.UI.createView({backgroundColor:` `'green'``, width:` `50``, height:` `50``, left:` `5``, top:` `5``, center: {x:` `60``, y:` `60``}});`
-
-`parent.add(child);`
-
-`win.add(parent);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow({});
+var parent = Ti.UI.createView({backgroundColor: 'red', width: '100', height: '100'})
+var child = Ti.UI.createView({backgroundColor: 'green', width: 50, height: 50, left: 5, top: 5, center: {x: 60, y: 60}});
+parent.add(child);
+win.add(parent);
+win.open();
+```
 
 | 1.8 Behavior | 2.0 Behavior |
 | --- | --- |
@@ -415,23 +391,17 @@ The following code sample creates a view with horizontal layout that contains tw
 
 Note that there are still inconsistencies between Android, iOS and Mobile Web in the handling of horizontal layouts. This is a known issue.
 
-`var win = Ti.UI.createWindow({});`
-
-`//Horizontal Layout behavior. Green child centered vertically (No positioning pins)`
-
-`var parent = Ti.UI.createView({backgroundColor:` `'red'``, layout:` `'horizontal'``, width:` `100``, height:` `100``})`
-
-`var child1 = Ti.UI.createView({backgroundColor:` `'green'``, height:` `20``, width:` `50``});`
-
-`var child2 = Ti.UI.createView({backgroundColor:` `'blue'``, height:` `40``, width:` `50``});`
-
-`parent.add(child1);`
-
-`parent.add(child2);`
-
-`win.add(parent);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow({});
+//Horizontal Layout behavior. Green child centered vertically (No positioning pins)
+var parent = Ti.UI.createView({backgroundColor: 'red', layout: 'horizontal', width: 100, height: 100})
+var child1 = Ti.UI.createView({backgroundColor: 'green', height: 20, width: 50});
+var child2 = Ti.UI.createView({backgroundColor: 'blue', height: 40, width: 50});
+parent.add(child1);
+parent.add(child2);
+win.add(parent);
+win.open();
+```
 
 | 1.8 Behavior | 2.0 Behavior |
 | --- | --- |
@@ -447,19 +417,15 @@ In previous releases, the positioning properties would determine the width or he
 
 **Test Code**
 
-`var win = Ti.UI.createWindow({});`
-
-`var parent = Ti.UI.createView({backgroundColor:` `'red'``})`
-
-`//child width/height calculated from top/bottom/right/left properties in 1_8_X, and height/width will be 100 in 2_0_X`
-
-`var child = Ti.UI.createView({backgroundColor:` `'green'``, width:` `100``, height:` `100``, left:` `5``, right:` `5``, top:` `5``, bottom:` `5``})`
-
-`parent.add(child);`
-
-`win.add(parent);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow({});
+var parent = Ti.UI.createView({backgroundColor: 'red'})
+//child width/height calculated from top/bottom/right/left properties in 1_8_X, and height/width will be 100 in 2_0_X
+var child = Ti.UI.createView({backgroundColor: 'green', width: 100, height: 100, left: 5, right: 5, top: 5, bottom: 5})
+parent.add(child);
+win.add(parent);
+win.open();
+```
 
 | 1.8 Behavior | 2.0 Behavior |
 | --- | --- |
@@ -473,19 +439,15 @@ When width or height parameters are undefined, an attempt will be made to calcul
 
 The following excerpt shows a child view with positioning pins but no defined width or height. In 1.8, this resulted
 
-`var win = Ti.UI.createWindow({backgroundColor:` `'white'``,});`
-
-`//Implicit width calculation in 2_0_X`
-
-`var parent = Ti.UI.createView({backgroundColor:` `'red'``, width:` `'100'``, height:` `'100'``})`
-
-`var child = Ti.UI.createView({backgroundColor:` `'green'``, left:` `5``, top:` `5``, center: {x:` `20``, y:` `20``}});`
-
-`parent.add(child);`
-
-`win.add(parent);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow({backgroundColor: 'white',});
+//Implicit width calculation in 2_0_X
+var parent = Ti.UI.createView({backgroundColor: 'red', width: '100', height: '100'})
+var child = Ti.UI.createView({backgroundColor: 'green', left: 5, top: 5, center: {x: 20, y: 20}});
+parent.add(child);
+win.add(parent);
+win.open();
+```
 
 | 1.8 Behavior | 2.0 Behavior |
 | --- | --- |
@@ -497,21 +459,16 @@ In previous versions of the Titanium SDK, the precedence of positioning pins was
 
 **Test Code**
 
-`var win = Ti.UI.createWindow({});`
-
-`//Positioning precedence. center used in 1_8_X. left and top used in 2_0_X`
-
-`//Animation child center will not work in 2_0_X because both left and top are defined`
-
-`var parent = Ti.UI.createView({backgroundColor:` `'red'``, width:` `'100'``,height:` `'100'``})`
-
-`var child = Ti.UI.createView({backgroundColor:` `'green'``, width:` `50``, height:` `50``, left:` `5``, top:` `5``, center: {x:` `60``, y:` `60``}});`
-
-`parent.add(child);`
-
-`win.add(parent);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow({});
+//Positioning precedence. center used in 1_8_X. left and top used in 2_0_X
+//Animation child center will not work in 2_0_X because both left and top are defined
+var parent = Ti.UI.createView({backgroundColor: 'red', width: '100',height: '100'})
+var child = Ti.UI.createView({backgroundColor: 'green', width: 50, height: 50, left: 5, top: 5, center: {x: 60, y: 60}});
+parent.add(child);
+win.add(parent);
+win.open();
+```
 
 | 1.8 Behavior | 2.0 Behavior |
 | --- | --- |

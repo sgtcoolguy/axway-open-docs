@@ -18,12 +18,11 @@ This command is executed immediately in a synchronous way.
 
 To get information regarding the active perspective in the Studio, dispatch this command:
 
-`var activePerspective = dispatch($H({`
-
-`controller:` `'portal.workbench'``,`
-
-`action:` `"getActivePerspective"`
-
-`}).toJSON());`
+```javascript
+var activePerspective = dispatch($H({
+  controller: 'portal.workbench',
+  action: "getActivePerspective"
+}).toJSON());
+```
 
 The _activePerspective_ variable will hold a _Map_ that contains the following keys: _**label, description**_ and _**id**_.

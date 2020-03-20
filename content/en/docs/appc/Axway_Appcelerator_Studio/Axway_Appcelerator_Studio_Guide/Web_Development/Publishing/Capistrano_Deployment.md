@@ -6,7 +6,7 @@ if you're unfamiliar with Capistrano, it's best to take a look at their document
 
 ## Capistrano Integration
 
-Pre-requisites
+*Pre-requisites*
 
 We assume that you have installed the 'capistrano' gem on your own before running the wizard.
 

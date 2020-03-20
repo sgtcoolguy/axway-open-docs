@@ -14,33 +14,23 @@ We update the model element to contain the new getter and setters. Note that we 
 
 In com.aptana.scripting.model.ProjectTemplateElement:
 
-`/*`
+```
+/*
+ * setIconPath
+ */
+public void setIcon(String iconPath)
+{
+  fIconPath = iconPath;
+}
 
-`* setIconPath`
-
-`*/`
-
-`public`  `void` `setIcon(String iconPath)`
-
-`{`
-
-`fIconPath = iconPath;`
-
-`}`
-
-`/*`
-
-`* getIconPath`
-
-`*/`
-
-`public` `String getIcon()`
-
-`{`
-
-`return` `fIconPath;`
-
-`}`
+/*
+ * getIconPath
+ */
+public String getIcon()
+{
+  return fIconPath;
+}
+```
 
 ## Update the project\_template.rb wrapper file
 
@@ -48,17 +38,15 @@ This is the wrapper the Ruby code interacts with. This is translated into the ge
 
 In plugins/com.aptana.scripting/framework/ruble/project.template.rb:
 
-`def icon`
+```
+def icon
+  @jobj.icon
+end
 
-`@jobj``.icon`
-
-`end`
-
-`def icon=(path)`
-
-`@jobj``.icon = path`
-
-`end`
+def icon=(path)
+  @jobj.icon = path
+end
+```
 
 ## Update the Bundle View
 
@@ -66,22 +54,15 @@ The Bundle View shows the properties for the current selected element.
 
 Update com.aptana.scripting.ui.views.ProjectTemplateNode to add an item to the existing enum for the new property:
 
-`...`
-
-`},`
-
-`ICON(Messages.ProjectTemplateNode_Project_Template_Icon_Path)`
-
-`{`
-
-`public` `Object getPropertyValue(ProjectTemplateNode node)`
-
-`{`
-
-`return` `node.projectTemplate.getIcon();`
-
-`}`
-
-`};`
-
-`...`
+```
+...
+},
+ICON(Messages.ProjectTemplateNode_Project_Template_Icon_Path)
+{
+  public Object getPropertyValue(ProjectTemplateNode node)
+  {
+    return node.projectTemplate.getIcon();
+  }
+};
+...
+```

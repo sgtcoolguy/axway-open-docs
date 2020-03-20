@@ -109,7 +109,9 @@ If the top-level UI component in your view has an assigned ID, that is, the id a
 
 Mobile Web applications cannot be built in Studio, since Mobile Web does not support compiler plugins. If you are building a Mobile Web application using Alloy, you need to compile the code using the Alloy command-line interface:
 
-`$ alloy compile --config platform=mobileweb`
+```
+$ alloy compile --config platform=mobileweb
+```
 
 ### Mobile Web: \[ERROR\] alloy run not supported by mobileweb
 

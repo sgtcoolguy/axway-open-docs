@@ -166,62 +166,48 @@ As seen in the screen shots of the Appcelerator Profiling Perspective, many of t
 
 For example, if you declare functions in your JavaScript code using the methods below, the profiler reports the "anonymous function" results.
 
-`button.addEventListener(``'click'``, function(e) {`
+```javascript
+button.addEventListener('click', function(e) {
+    Ti.API.info(e.source);
+});
 
-`Ti.API.info(e.source);`
-
-`});`
-
-`/* Or this`
-
-`var doClick = function(e) {`
-
-`Ti.API.info(e.source);`
-
-`}`
-
-`button.addEventListener('click', doClick);`
-
-`*/`
+/* Or this
+var doClick = function(e) {
+    Ti.API.info(e.source);
+}
+button.addEventListener('click', doClick);
+*/
+```
 
 Instead, declare your functions using the method below, which will report the results as the function name.
 
-`function doClick (e) {`
-
-`Ti.API.info(e.source);`
-
-`};`
-
-`button.addEventListener(``'click'``, doClick);`
+```javascript
+function doClick (e) {
+    Ti.API.info(e.source);
+};
+button.addEventListener('click', doClick);
+```
 
 ### Missing Method Calls on Android
 
 On the Android platform, especially when profiling on device, you may not see all of your method calls. The profiler uses V8's built-in CPU sample profiler to monitor the stack frames over a small threshold of time. The interval for sampling is around 5 ms on Android devices, so methods that do not use too many CPU cycles may not show up in the results. However, the profiler is able to capture and identify CPU-intensive methods. For example, run the following code with the profiler and hit the button several times.
 
-`var win = Titanium.UI.createWindow({`
+```javascript
+var win = Titanium.UI.createWindow({
+    backgroundColor : '#fff'
+});
 
-`backgroundColor :` `'#fff'`
+var button = Ti.UI.createButton({
+    title : 'click'
+});
 
-`});`
+button.addEventListener('click', loopManyTimes);
+function loopManyTimes() {
+    for (var i = 0; i < 10000; i++) {
+        Ti.API.info('-------------' + i);
+    }
+}
 
-`var button = Ti.UI.createButton({`
-
-`title :` `'click'`
-
-`});`
-
-`button.addEventListener(``'click'``, loopManyTimes);`
-
-`function loopManyTimes() {`
-
-`for` `(var i =` `0``; i <` `10000``; i++) {`
-
-`Ti.API.info(``'-------------'` `+ i);`
-
-`}`
-
-`}`
-
-`win.add(button);`
-
-`win.open();`
+win.add(button);
+win.open();
+```

@@ -81,11 +81,11 @@ In the controller code of the repeater object, you can use the special variable 
 
 **IMPORTANT:** When using Alloy's data binding in a view-controller, you **MUST** call the $.destroy() function when closing a controller to prevent potential memory leaks. The destroy function unbinds the callbacks created by Alloy when the collection-view syntax is used. For example, the code below calls the destroy function when the Window's close event is triggered.
 
-`$.win.addEventListener(``"close"``,` `function``(){`
-
-`$.destroy();`
-
-`} `
+```
+$.win.addEventListener("close", function(){
+    $.destroy();
+}
+```
 
 #### Example
 
@@ -93,85 +93,70 @@ The following example demonstrates how to add basic collection-view binding to a
 
 1. Add the <Collection> tag as a child of the <Alloy> tag.
 
-    app/views/index.xml
+    *app/views/index.xml*
 
-    `<``Alloy``>`
-
-    `<``Collection`  `src``=``"album"` `/>`
-
-    `</``Alloy``>`
+    ```xml
+    <Alloy>
+        <Collection src="album" />
+    </Alloy>
+    ```
 
 2. Next, add the view object(s) you want to bind the data to. In this example, data will be bound to a ScrollableView object.
 
-    app/views/index.xml
+    *app/views/index.xml*
 
-    `<``Alloy``>`
-
-    `<``Collection`  `src``=``"album"` `/>`
-
-    `<``Window`  `backgroundColor``=``"white"`  `onClose``=``"cleanup"``>`
-
-    `<``ScrollableView``></``ScrollableView``>`
-
-    `</``Window``>`
-
-    `</``Alloy``>`
+    ```xml
+    <Alloy>
+        <Collection src="album" />
+        <Window backgroundColor="white" onClose="cleanup">
+            <ScrollableView></ScrollableView>
+        </Window>
+    </Alloy>
+    ```
 
 3. Add the dataCollection attribute to the appropriate view object. Assign this attribute to the collection you want to use. For a ScrollableView object, add the attribute to the <ScrollableView> tag. The element to add the attribute to depends on which view object you want to bind data to.
 
-    app/views/index.xml
+    *app/views/index.xml*
 
-    `<``Alloy``>`
-
-    `<``Collection`  `src``=``"album"` `/>`
-
-    `<``Window`  `backgroundColor``=``"white"`  `onClose``=``"cleanup"``>`
-
-    `<``ScrollableView`  `dataCollection``=``"album"``></``ScrollableView``>`
-
-    `</``Window``>`
-
-    `</``Alloy``>`
+    ```xml
+    <Alloy>
+        <Collection src="album" />
+        <Window backgroundColor="white" onClose="cleanup">
+            <ScrollableView dataCollection="album"></ScrollableView>
+        </Window>
+    </Alloy>
+    ```
 
 4. Next, create your repeater object and add model attributes. Enclose the model attributes with curly brackets or braces ('{' and '}'). For a ScrollableView, the repeater object can be a View object with additional children objects. The repeater object depends on which view object you are using.
 
-    app/views/index.xml
+    *app/views/index.xml*
 
-    `<``Alloy``>`
-
-    `<``Collection`  `src``=``"album"``/>`
-
-    `<``Window`  `backgroundColor``=``"white"`  `onClose``=``"cleanup"``>`
-
-    `<``ScrollableView`  `dataCollection``=``"album"``>`
-
-    `<``View`  `layout``=``"vertical"``>`
-
-    `<``ImageView`  `image``=``"{cover}"` `/>`
-
-    `<``Label`  `text``=``"{title} by {artist}"` `/>`
-
-    `</``View``>`
-
-    `</``ScrollableView``>`
-
-    `</``Window``>`
-
-    `</``Alloy``>`
+    ```xml
+    <Alloy>
+        <Collection src="album"/>
+        <Window backgroundColor="white" onClose="cleanup">
+            <ScrollableView dataCollection="album">
+                <View layout="vertical">
+                    <ImageView image="{cover}" />
+                    <Label text="{title} by {artist}" />
+                </View>
+            </ScrollableView>
+        </Window>
+    </Alloy>
+    ```
 
 5. In the controller, call the Collection's fetch() method to initialize the collection and sync any stored models to the view. Remember to call the $.destroy() method when you close the controller to prevent memory leaks.
 
-    app/controllers/index.js
+    *app/controllers/index.js*
 
-    `$.index.open();`
+    ```javascript
+    $.index.open();
+    Alloy.Collections.album.fetch();
 
-    `Alloy.Collections.album.fetch();`
-
-    `function` `cleanup() {`
-
-    `$.destroy();`
-
-    `}`
+    function cleanup() {
+        $.destroy();
+    }
+    ```
 
 The application is now setup for basic collection-view binding. When any new data is added to the collection, the ScrollableView will be updated with the new data.
 
@@ -181,33 +166,23 @@ To bind a single model to a component, create a global singleton or controller-s
 
 To do complex transformations on the model attributes, extend the model prototype with a transform() function. It should return the modified model as a JSON object.
 
-app/models/album.js
+*app/models/album.js*
 
-`exports.definition = {`
-
-`config: {},` `// model definition`
-
-`extendModel:` `function``(Model) {`
-
-`_.extend(Model.prototype, {`
-
-`transform:` `function` `transform() {`
-
-`var` `transformed =` `this``.toJSON();`
-
-`transformed.artist = transformed.artist.toUpperCase();`
-
-`return` `transformed;`
-
-`}`
-
-`});`
-
-`return` `Model;`
-
-`}`
-
-`};`
+```javascript
+exports.definition = {
+  config: {}, // model definition
+  extendModel: function(Model) {
+    _.extend(Model.prototype, {
+      transform: function transform() {
+        var transformed = this.toJSON();
+        transformed.artist = transformed.artist.toUpperCase();
+        return transformed;
+      }
+    });
+    return Model;
+  }
+};
+```
 
 A global singleton instance is a single instance of a particular model that is available for use anywhere in your application. When using global instances that they will be in memory for the duration of your application unless you manually release them. The process of manually releasing the should include:
 
@@ -223,115 +198,78 @@ Note that you need to call the $.destroy() function when closing the controller 
 
 The example below demonstrates how to bind a model to view components in the XML markup. Notice that each attribute is prefixed with the model's name and enclosed with braces.
 
-`<``Alloy``>`
-
-`<``Model`  `src``=``"settings"``/>`
-
-`<``Window`  `backgroundColor``=``"white"`  `onClose``=``"cleanup"``>`
-
-`<``View`  `layout``=``"vertical"``>`
-
-`<``Label`  `text``=``"Text Size"` `/>`
-
-`<``Slider`  `value``=``"{settings.textsize}"`  `max``=``"5"`  `min``=``"1"``/>`
-
-`<``Label`  `text``=``"Bold"``/>`
-
-`<``Switch`  `value``=``"{settings.bold}"` `/>`
-
-`<``Label`  `text``=``"Italics"``/>`
-
-`<``Switch`  `value``=``"{settings.italics}"` `/>`
-
-`</``View``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Model src="settings"/>
+    <Window backgroundColor="white" onClose="cleanup">
+        <View layout="vertical">
+            <Label text="Text Size" />
+            <Slider value="{settings.textsize}" max="5" min="1"/>
+            <Label text="Bold"/>
+            <Switch value="{settings.bold}" />
+            <Label text="Italics"/>
+            <Switch value="{settings.italics}" />
+        </View>
+    </Window>
+</Alloy>
+```
 
 ### Collection example
 
 The example below demonstrates how to display all book models in the collection by the author Mark Twain. It also demonstrates how to use each of the data binding attributes.
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
+```xml
+<Alloy>
+    <Collection src="book" />
+    <Window class="container">
+        <TableView dataCollection="book"
+                   dataTransform="transformFunction"
+                   dataFilter="filterFunction"
+                   dataFunction="updateUI"
+                   onDragEnd="refreshTable">
+            <!-- Also can use Require -->
+            <TableViewRow title="{title}" />
+        </TableView>
+    </Window>
+</Alloy>
+```
 
-`<``Collection`  `src``=``"book"` `/>`
+*app/controllers/index.js*
 
-`<``Window`  `class``=``"container"``>`
+```javascript
+$.index.open();
 
-`<``TableView`  `dataCollection``=``"book"`
+// Encase the title attribute in square brackets
+function transformFunction(model) {
+    // Need to convert the model to a JSON object
+    var transform = model.toJSON();
+    transform.title = '[' + transform.title + ']';
+    // Example of creating a custom attribute, reference in the view using {custom}
+    transform.custom = transform.title + " by " + transform.author;
+    return transform;
+}
 
-`dataTransform``=``"transformFunction"`
+// Show only book models by Mark Twain
+function filterFunction(collection) {
+    return collection.where({author:'Mark Twain'});
+}
 
-`dataFilter``=``"filterFunction"`
+function refreshTable(){
+    // Trigger the binding function identified by the dataFunction attribute
+    updateUI();
+}
 
-`dataFunction``=``"updateUI"`
+// Trigger the synchronization
+var library = Alloy.Collections.book;
+library.fetch();
 
-`onDragEnd``=``"refreshTable"``>`
-
-`<!-- Also can use Require -->`
-
-`<``TableViewRow`  `title``=``"{title}"` `/>`
-
-`</``TableView``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
-
-app/controllers/index.js
-
-`$.index.open();`
-
-`// Encase the title attribute in square brackets`
-
-`function` `transformFunction(model) {`
-
-`// Need to convert the model to a JSON object`
-
-`var` `transform = model.toJSON();`
-
-`transform.title =` `'['` `+ transform.title +` `']'``;`
-
-`// Example of creating a custom attribute, reference in the view using {custom}`
-
-`transform.custom = transform.title +` `" by "` `+ transform.author;`
-
-`return` `transform;`
-
-`}`
-
-`// Show only book models by Mark Twain`
-
-`function` `filterFunction(collection) {`
-
-`return` `collection.where({author:``'Mark Twain'``});`
-
-`}`
-
-`function` `refreshTable(){`
-
-`// Trigger the binding function identified by the dataFunction attribute`
-
-`updateUI();`
-
-`}`
-
-`// Trigger the synchronization`
-
-`var` `library = Alloy.Collections.book;`
-
-`library.fetch();`
-
-`// Free model-view data binding resources when this view-controller closes`
-
-`$.index.addEventListener(``'close'``,` `function``() {`
-
-`$.destroy();`
-
-`});`
+// Free model-view data binding resources when this view-controller closes
+$.index.addEventListener('close', function() {
+    $.destroy();
+});
+```
 
 As the collection is updated, the view reflects the changes made to the models. If you want to suppress an update, specify {silent: true} in the options parameters when calling Backbone methods to change model data.
 
@@ -339,55 +277,44 @@ As the collection is updated, the view reflects the changes made to the models. 
 
 You can bind both a collection of models or an individual model. To bind a model attribute the opening curly bracket is first followed by the model name and then the attribute. To bind a collection you add the dataCollection attribute to the container using the collection name as value. The generated code will then loop over the collection and add the child elements to the container for each model.
 
-`<``Alloy``>`
+```xml
+<Alloy>
+    <Model src="currentCategory" />
+    <Collection src="book" />
+    <Window>
 
-`<``Model`  `src``=``"currentCategory"` `/>`
+        <!-- model data binding -->
+        <Label text="{currentCategory.name}" />
 
-`<``Collection`  `src``=``"book"` `/>`
+        <!-- collection data binding -->
+        <ScrollView dataCollection="book" />
+            <Label text="{title}" />
+        </ScrollView>
 
-`<``Window``>`
-
-`<!-- model data binding -->`
-
-`<``Label`  `text``=``"{currentCategory.name}"` `/>`
-
-`<!-- collection data binding -->`
-
-`<``ScrollView`  `dataCollection``=``"book"` `/>`
-
-`<``Label`  `text``=``"{title}"` `/>`
-
-`</``ScrollView``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+    </Window>
+</Alloy>
+```
 
 ### Global singleton vs Local instance
 
 In the above [code snippet](#undefined), the model and collection are global singletons under Alloy.Model.currentCategory and Alloy.Collection.book. You can also use local instances for the current controller by adding instance="true" as attribute. You also need to assign them an ID in order to reference them in the XML and controller.
 
-`<``Alloy``>`
+```xml
+<Alloy>
+    <Model src="currentCategory" instance="true" id="c" />
+    <Collection src="book" instance="true" id="b" />
+    <Window>
 
-`<``Model`  `src``=``"currentCategory"`  `instance``=``"true"`  `id``=``"c"` `/>`
+        <!-- model data binding -->
+        <Label text="{$.c.name}" />
 
-`<``Collection`  `src``=``"book"`  `instance``=``"true"`  `id``=``"b"` `/>`
+        <!-- collection data binding -->
+        <ScrollView dataCollection="$.b" />
+            <Label text="{title}" />
+        </ScrollView>
 
-`<``Window``>`
-
-`<!-- model data binding -->`
-
-`<``Label`  `text``=``"{$.c.name}"` `/>`
-
-`<!-- collection data binding -->`
-
-`<``ScrollView`  `dataCollection``=``"$.b"` `/>`
-
-`<``Label`  `text``=``"{title}"` `/>`
-
-`</``ScrollView``>`
-
-`</Win`
+    </Win
+```
 
 ### Simple vs Complex data binding
 
@@ -395,25 +322,21 @@ It’s important to understand the difference between simple and complex data bi
 
 Simple data binding involves one model attribute where complex data binding involves a combination of strings (including white space) and model attributes or even multiple model attributes:
 
-`<``Alloy``>`
+```xml
+<Alloy>
+    <Model src="book">
+    <Window>
 
-`<``Model`  `src``=``"book"``>`
+        <!-- simple -->
+        <Label text="{book.title}" />
 
-`<``Window``>`
+        <!-- complex -->
+        <Label text="Title: {book.title}" />
+        <Label text="{book.author.name} {book.author.email}" />
 
-`<!-- simple -->`
-
-`<``Label`  `text``=``"{book.title}"` `/>`
-
-`<!-- complex -->`
-
-`<``Label`  `text``=``"Title: {book.title}"` `/>`
-
-`<``Label`  `text``=``"{book.author.name} {book.author.email}"` `/>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+    </Window>
+</Alloy>
+```
 
 ## Backbone binding
 
@@ -421,23 +344,21 @@ The application can monitor Backbone events to trigger updates to the view.
 
 For instance, the code below demonstrates how to update a table, when a model object is added to a collection by monitoring the add event, which is triggered after a call to Backbone.Collection.add:
 
-`library.on(``'add'``,` `function``(e){`
-
-`// custom function to update the content on the view`
-
-`updateFooView(library);`
-
-`});`
+```javascript
+library.on('add', function(e){
+    // custom function to update the content on the view
+    updateFooView(library);
+});
+```
 
 Another method is to selectively monitor changes. For instance, the code below demonstrates how to update data if a title changes in the collection:
 
-`library.on(``'change:title'``,` `function``(e){`
-
-`// custom function to update the content on the view`
-
-`updateFooView(library);`
-
-`});`
+```javascript
+library.on('change:title', function(e){
+    // custom function to update the content on the view
+    updateFooView(library);
+});
+```
 
 This only works if the Backbone method fires the change event and does not enable {silent: true} as an option.
 
@@ -445,51 +366,46 @@ This only works if the Backbone method fires the change event and does not enabl
 
 You can [bind deep object properties](https://jira.appcelerator.org/browse/ALOY-1482):
 
-`<``Alloy``>`
-
-`<``Model`  `src``=``"book"` `/>`
-
-`<``Label`  `text``=``"{book.author.name}"` `/>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Model src="book" />
+    <Label text="{book.author.name}" />
+</Alloy>
+```
 
 Before, you needed to use a transformer to create a reference like authorName.
 
 Prior to CLI 7.1.0, the only way to set object properties (e.g. font.fontFamily for a Label) was to use TSS. You can use dot notation in XML:
 
-`<``Alloy``>`
-
-`<``Model`  `src``=``"book"` `/>`
-
-`<``Label`  `font.fontFamily``=``"Roboto"``>Hello</``Label``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Model src="book" />
+    <Label font.fontFamily="Roboto">Hello</Label>
+</Alloy>
+```
 
 ## Use models and properties names with special characters
 
 You can bind models and properties that use [names with special characters](https://jira.appcelerator.org/browse/ALOY-1478) like dashes and spaces. Simply wrap the names in square brackets and quotes like you’d do in JavaScript:
 
-`<``Alloy``>`
-
-`<``Model`  `src``=``"my-model"``>`
-
-`<``Label`  `text``=``"['my-model']['my-property']"` `/>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Model src="my-model">
+    <Label text="['my-model']['my-property']" />
+</Alloy>
+```
 
 ## Bind multiple models to the same view
 
 You have the ability to [bind multiple models to the same view](https://jira.appcelerator.org/browse/ALOY-1481):
 
-`<``Alloy``>`
-
-`<``Model`  `src``=``"a"` `/>`
-
-`<``Model`  `src``=``"b"` `/>`
-
-`<``Label`  `text``=``"{a.hello} {b.world}"` `/>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Model src="a" />
+    <Model src="b" />
+    <Label text="{a.hello} {b.world}" />
+</Alloy>
+```
 
 ## Define transformations in the model
 
@@ -497,57 +413,41 @@ Until Alloy 1.8.1, only simple model data-binding would call an optional transfo
 
 Since Alloy 1.8.1, all types of data binding will generate the following logic to determine what object will be bound to the view. Note that only with collection binding you can also define a controller-based transform function to use via the dataTransform XML attribute.
 
-`var` `t;`
-
-`if` `(_.isFunction(<dataTransform>) {` `// only for collection binding`
-
-`t = <dataTransform>(model);`
-
-`}` `else`  `if` `(_.isFunction(model.transform) {`
-
-`t = model.transform();`
-
-`}` `else` `{`
-
-`t = model.toJSON();`
-
-`}`
-
-`$.myLabel.text = t.author.name;`
+```javascript
+var t;
+if (_.isFunction(<dataTransform>) { // only for collection binding
+    t = <dataTransform>(model);
+} else if (_.isFunction(model.transform) {
+    t = model.transform();
+} else {
+    t = model.toJSON();
+}
+$.myLabel.text = t.author.name;
+```
 
 This does mean that the transform method need to return all bound properties, not just the transformed ones. Until Alloy 1.8.1 simple collection data binding did not require this and automatically felt back to the model attributes.
 
 You’d extend a model with a transform() method as such:
 
-`exports.definition = {`
+```javascript
+exports.definition = {
+    // config
+    extendModel: function(Model) {
+        _.extend(Model.prototype, {
+            transform: function( ) {
+                // get model attributes as object
+                var t = this.toJSON();
 
-`// config`
+                // override/add transformed properties
+                t.titleCaps = t.title.toUpperCase();
 
-`extendModel:` `function``(Model) {`
-
-`_.extend(Model.prototype, {`
-
-`transform:` `function``( ) {`
-
-`// get model attributes as object`
-
-`var` `t =` `this``.toJSON();`
-
-`// override/add transformed properties`
-
-`t.titleCaps = t.title.toUpperCase();`
-
-`return` `t;`
-
-`}`
-
-`});`
-
-`return` `Model;`
-
-`}`
-
-`};`
+                return t;
+            }
+        });
+        return Model;
+    }
+};
+```
 
 ## Tips and tricks
 
@@ -559,85 +459,66 @@ A possible disadvantage however is that everywhere you bind the model all transf
 
 You can handle this using [Object.defineProperty()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty). It’s get callback will only be called when the transform key is actually requested. This can improve the performance of you app in particular if you have multiple heavy transformations, like formatting a date:
 
-`var` `moment = require(``'alloy/moment'``);`
+```javascript
+var moment = require('alloy/moment');
 
-`exports.definition = {`
+exports.definition = {
+    // config
+    extendModel: function(Model) {
+        _.extend(Model.prototype, {
+            transform: function( ) {
+                var model = this;
+                var t = this.toJSON();
 
-`// config`
+                Object.defineProperty(t, 'dateFormatted', {
+                  get: function( ) {
+                    return moment(t.date).format('LLLL');
+                  }
+                });
 
-`extendModel:` `function``(Model) {`
-
-`_.extend(Model.prototype, {`
-
-`transform:` `function``( ) {`
-
-`var` `model =` `this``;`
-
-`var` `t =` `this``.toJSON();`
-
-`Object.defineProperty(t,` `'dateFormatted'``, {`
-
-`get:` `function``( ) {`
-
-`return` `moment(t.date).format(``'LLLL'``);`
-
-`}`
-
-`});`
-
-`return` `t;`
-
-`}`
-
-`});`
-
-`return` `Model;`
-
-`}`
-
-`};`
+                return t;
+            }
+        });
+        return Model;
+    }
+};
+```
 
 ### Populating a model after data binding
 
 When Alloy compiles your views and controllers, the [generated view code precedes your controller code](https://github.com/appcelerator/alloy/blob/master/Alloy/template/component.js#L45). Any models you define for data binding in the XML will also be created at that point. So how would you bind an already existing model? I’ve seen several _workarounds_ for this, but if you think about it it is actually not that much different from binding a collection, which also starts off empty. Just like you call fetch() to populate the collection, you do the exact same thing for the model. Depending on the sync adapter you either pass the query/ID as options or first set the model’s id-attribute and then call fetch().
 
-index.xml
+*index.xml*
 
-`<``Alloy``>`
+```xml
+<Alloy>
+    <Model src="book" instance="true" id="current" />
+    <Window>
+        <Label text="{book.title}" />
+    </Window>
+</Alloy>
+```
 
-`<``Model`  `src``=``"book"`  `instance``=``"true"`  `id``=``"current"` `/>`
+*index.js*
 
-`<``Window``>`
+```javascript
+$.current.fetch({
+    id: Ti.App.Properties.getString('currentBook')
+});
 
-`<``Label`  `text``=``"{book.title}"` `/>`
-
-`</``Window``>`
-
-`</``Alloy``> `
-
-index.js
-
-`$.current.fetch({`
-
-`id: Ti.App.Properties.getString(``'currentBook'``)`
-
-`});`
-
-`$.index.open();`
+$.index.open();
+```
 
 With the release of CLI 7.1.0, values passed in at creation of a view can be used as values in TSS and XML. For example, if the **name** property was passed in at creation it can be used on a label:
 
-`<``Alloy``>`
-
-`<``Model`  `src``=``"book"`  `instance``=``"true"`  `id``=``"current"` `/>`
-
-`<``Window``>`
-
-`<``Label`  `text``=``"$.args.foo"` `/>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Model src="book" instance="true" id="current" />
+    <Window>
+        <Label text="$.args.foo" />
+    </Window>
+</Alloy>
+```
 
 #### Tracker as Example
 

@@ -43,13 +43,13 @@ You need to reference the _name_ of the Ruble, not the display name (which may b
 
 2. Add a bundle.rb file with the following content:
 
-    `require` `'ruble'`
+    ```
+    require 'ruble'
 
-    `bundle` `"XXX"`  `do` `|bundle|`
-
-    `bundle.display_name =` `'YYY'`
-
-    `end`
+    bundle "XXX" do |bundle|
+      bundle.display_name = 'YYY'
+    end
+    ```
 
 3. Replace "XXX" with the name of the Ruble you are extending, and "YYY" with the display name.
 
@@ -69,13 +69,13 @@ This replaces a current command's implementation with the new implementation. We
 
     2. Create a **bundle.rb** file with the following content:
 
-        `require` `'ruble'`
+        ```
+        require 'ruble'
 
-        `bundle` `"html"`  `do` `|bundle|`
-
-        `bundle.display_name =` `'HTML'`
-
-        `end`
+        bundle "html" do |bundle|
+          bundle.display_name = 'HTML'
+        end
+        ```
 
     3. Create a folder at **bundles/htmlextension.ruble/commands.**
 
@@ -83,23 +83,18 @@ This replaces a current command's implementation with the new implementation. We
 
     5. Add new content to suit:
 
-        `require` `'ruble'`
+        ```
+        require 'ruble'
 
-        `command` `'Strip HTML Tags from Document / Selection'`  `do` `|cmd|`
-
-        `cmd.scope =` `'text.html'`
-
-        `cmd.output = :replace_selection`
-
-        `cmd.input = :selection, :document`
-
-        `cmd.invoke` `do` `|context|`
-
-        `CONSOLE.puts` `"Testing..."`
-
-        `end`
-
-        `end`
+        command 'Strip HTML Tags from Document / Selection' do |cmd|
+          cmd.scope = 'text.html'
+          cmd.output = :replace_selection
+          cmd.input = :selection, :document
+          cmd.invoke do |context|
+            CONSOLE.puts "Testing..."
+          end
+        end
+        ```
 
     6. Modify the above code to suit.
 

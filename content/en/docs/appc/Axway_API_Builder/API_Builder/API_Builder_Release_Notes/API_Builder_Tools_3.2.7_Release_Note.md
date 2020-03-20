@@ -1,6 +1,6 @@
 {"title":"API Builder Tools 3.2.7 Release Note","weight":"10"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -30,43 +30,41 @@ As of this release, API Builder Tools 3.1.x will not be supported six months (20
 
 * When attempting to create and save a flow for an imported Swagger endpoint that contains a path or paths defined by references such as GET /find, a Page Not Found (404) error will be displayed in the API Builder Console and the flow cannot be saved. For example, a Swagger document with a path reference may look similar to this:
 
-    `{`
-
-    `"swagger"``:` `"2.0"``,`
-
-    `"paths"` `{`
-
-    `"x-path"``: {`
-
-    `"get"``: {}`
-
-    `},`
-
-    `"/find"``: {`
-
-    `"$ref"``:` `"#/paths/x-path"`
-
-    `}`
-
-    `}`
-
-    `}`
+    ```
+    {
+      "swagger": "2.0",
+      "paths" {
+        "x-path": {
+          "get": {}
+        },
+        "/find": {
+          "$ref": "#/paths/x-path"
+        }
+      }
+    }
+    ```
 
     Currently, Swagger documents with path references can be imported and the imported endpoint will be correctly displayed in API Lists, but a flow cannot be created and saved successfully. When the flow editor **Save** button is clicked, a Page Not Found error is displayed. The error occurs because the API Builder Console cannot find the method as it is not in an expected location.
 
 * When rendering the flow editor, the API Builder Console may fail to render the Scalable Vector Graphics (SVG) icons correctly in the Firefox browser. The render failure may result in blank icons being displayed in the tool panel and in the flow diagram. This is due to a long-standing bug in Firefox that fails to scale SVG graphics correctly. To fix, edit the SVG icon and add height and width. For example:
 
-    `<svg ... height=``"80"` `width=``"80"` `/>`
+    ```xml
+    <svg ... height="80" width="80" />
+    ```
 
 * The API Builder Console does not recognize a required consumes value for form parameters if it is appended and the endpoint load will fail. For example:
 
-    `"consumes"``: [` `"multipart/form-data; charset=utf-8"` `],`
+    ```
+    "consumes": [ "multipart/form-data; charset=utf-8" ],
+    ```
 
     The appended character set (charset=utf-8) will cause the endpoint load to fail.
 
 * When deleting endpoints which contain references within paths, a Page Not Found (404) error may be displayed in the API Builder Console. For example, a Swagger document with references within paths may look similar to this:
 
-    `{` `"swagger"``:` `"2.0"``,` `"paths"` `{` `"x-path"``: {` `"get"``: {} },` `"/find"``: {` `"$ref"``:` `"#/paths/x-path"` `},` `"/search"``: {` `"$ref"``:` `"#/paths/x-path"` `} } }`
+    ```
+    { "swagger": "2.0", "paths" { "x-path": { "get": {} }, "/find": { "$ref": "#/paths/x-path" }, "/search": { "$ref": "#/paths/x-path" } } }
+    ```
 
     The API Builder Console will fail to find GET /find since it is inside a $ref. If the API Builder Console has modified the referenced $ref, it could cause unexpected behavior for other paths referencing #/paths/x-path such as /search - deleting GET /find could unexpectedly delete GET /search too.
 

@@ -78,10 +78,13 @@ Git may be installed using the **System** \> **Administration** \> **Synaptic Pa
 
 Run the following commands from the command-line or terminal on any operating system to determine whether git has been installed and configured correctly:
 
-`git version`
+```
+git version
+```
 
 You should receive results similar to the following, where the command is recognized, and returns the correct version.
 
-`appcel$ git version`
-
-`git version 1.7.7`
+```
+appcel$ git version
+git version 1.7.7
+```

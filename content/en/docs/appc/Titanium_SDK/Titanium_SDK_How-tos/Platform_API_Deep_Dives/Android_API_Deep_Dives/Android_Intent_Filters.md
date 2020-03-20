@@ -22,7 +22,7 @@
 
 Android Intent Filters give applications the ability to receive implicit intents from other Android applications. An intent is a message object, usually containing data, sent by another application to start a new application to handle the data. Intents are sent to the Android OS, which directs the intent to the appropriate application to handle the data. If more than one application can handle the data, Android presents a dialog to the user to select an application to launch. An intent filter indicates to the Android OS that your application can handle certain data types or URIs. For example, if a user opens their browser and highlights some text, the user can share that text with other Android apps, such as an e-mail application, SMS application or a social networking application.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>The user highlights the text and<br>clicks the <strong>Share</strong> button.</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The <strong>Share</strong> dialog appears and<br>the user can select the application<br>to send the text to, such as...</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>...an e-mail application,</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>...an SMS application</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>...or a social networking<br>application like Google+.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/HighlightText.png" alt="images/download/attachments/43287298/HighlightText.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/ShareDialog.png" alt="images/download/attachments/43287298/ShareDialog.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/EmailClient.png" alt="images/download/attachments/43287298/EmailClient.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/SmsClient.png" alt="images/download/attachments/43287298/SmsClient.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/GooglePlusShare.png" alt="images/download/attachments/43287298/GooglePlusShare.png" class="confluence-embedded-image"></p><p></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>The user highlights the text and<br>clicks the <strong class=" ">Share</strong> button.</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The <strong class=" ">Share</strong> dialog appears and<br>the user can select the application<br>to send the text to, such as...</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>...an e-mail application,</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>...an SMS application</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>...or a social networking<br>application like Google+.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/HighlightText.png" alt="images/download/attachments/43287298/HighlightText.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/ShareDialog.png" alt="images/download/attachments/43287298/ShareDialog.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/EmailClient.png" alt="images/download/attachments/43287298/EmailClient.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/SmsClient.png" alt="images/download/attachments/43287298/SmsClient.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/GooglePlusShare.png" alt="images/download/attachments/43287298/GooglePlusShare.png" class="confluence-embedded-image"></p><p></p></td></tr></tbody></table>
 
 ## Receive an implicit intent
 
@@ -36,83 +36,54 @@ Before declaring an intent filter, you need to copy the <activity> node containi
 
 2. Open the build/android/AndroidManifest.xml file and and copy the <activity> node that contains your default root activity. The android:name attribute will contain the name of your application.
 
-    android/build/AndroidManifest.xml
+    *android/build/AndroidManifest.xml*
 
-    `<``manifest`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"`  `package``=``"com.example.sample"`  `android:versionCode``=``"1"`  `android:versionName``=``"1.0"``>`
+    ```xml
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.sample" android:versionCode="1" android:versionName="1.0">
+        <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19"/>
+        <application android:icon="@drawable/appicon" android:label="My App" android:name="MyappApplication" android:debuggable="false" android:theme="@style/Theme.AppCompat">
 
-    `<``uses``-sdk` `android:minSdkVersion``=``"14"`  `android:targetSdkVersion``=``"19"``/>`
-
-    `<``application`  `android:icon``=``"@drawable/appicon"`  `android:label``=``"My App"`  `android:name``=``"MyappApplication"`  `android:debuggable``=``"false"`  `android:theme``=``"@style/Theme.AppCompat"``>`
-
-    `<!-- Copy this activity node -->`
-
-    `<``activity`  `android:name``=``".YourapplicationnameActivity"`  `android:label``=``"@string/app_name"`  `android:theme``=``"@style/Theme.Titanium"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``>`
-
-    `<``intent``-filter>`
-
-    `<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
-
-    `<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
-
-    `</``intent``-filter>`
-
-    `</``activity``> `
-
-    `<``activity`  `android:name``=``"org.appcelerator.titanium.TiActivity"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``/>`
-
-    `<``activity`  `android:name``=``"org.appcelerator.titanium.TiTranslucentActivity"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"`  `android:theme``=``"@style/Theme.AppCompat.Translucent"``/>`
-
-    `<``activity`  `android:name``=``"ti.modules.titanium.ui.android.TiPreferencesActivity"`  `android:configChanges``=``"screenSize"``/>`
-
-    `</``application``>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_WIFI_STATE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_NETWORK_STATE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.WRITE_EXTERNAL_STORAGE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_COARSE_LOCATION"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_FINE_LOCATION"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_MOCK_LOCATION"``/>`
-
-    `</``manifest``>`
+            <!-- Copy this activity node -->
+            <activity android:name=".YourapplicationnameActivity" android:label="@string/app_name" android:theme="@style/Theme.Titanium" android:configChanges="keyboardHidden|orientation|screenSize">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN"/>
+                    <category android:name="android.intent.category.LAUNCHER"/>
+                </intent-filter>
+            </activity>
+            <activity android:name="org.appcelerator.titanium.TiActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+            <activity android:name="org.appcelerator.titanium.TiTranslucentActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@style/Theme.AppCompat.Translucent"/>
+            <activity android:name="ti.modules.titanium.ui.android.TiPreferencesActivity" android:configChanges="screenSize"/>
+        </application>
+        <uses-permission android:name="android.permission.INTERNET"/>
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+        <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+    </manifest>
+    ```
 
 3. Paste the default root activity into the Android section of your tiapp.xml file inside the <application> element. You may need to add the <manifest> and <application> elements to the <android> element of your tiapp.xml file:
 
-    tiapp.xml
+    *tiapp.xml*
 
-    `<``ti``:app` `xmlns:ti``=``"http://ti.appcelerator.org"``>`
-
-    `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-    `<``manifest``>`
-
-    `<``application``>`
-
-    `<``activity`  `android:name``=``".YourapplicationnameActivity"`  `android:label``=``"@string/app_name"`  `android:theme``=``"@style/Theme.Titanium"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``>`
-
-    `<``intent``-filter>`
-
-    `<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
-
-    `<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
-
-    `</``intent``-filter>`
-
-    `</``activity``>`
-
-    `</``application``>`
-
-    `</``manifest``>`
-
-    `</``android``>`
-
-    `</``ti``:app>`
+    ```xml
+    <ti:app xmlns:ti="http://ti.appcelerator.org">
+        <android xmlns:android="http://schemas.android.com/apk/res/android">
+            <manifest>
+                <application>
+                    <activity android:name=".YourapplicationnameActivity" android:label="@string/app_name" android:theme="@style/Theme.Titanium" android:configChanges="keyboardHidden|orientation|screenSize">
+                        <intent-filter>
+                            <action android:name="android.intent.action.MAIN"/>
+                            <category android:name="android.intent.category.LAUNCHER"/>
+                        </intent-filter>
+                    </activity>
+                </application>
+            </manifest>
+        </android>
+    </ti:app>
+    ```
 
 Note that the <activity> node you just copied over already contains an <intent-filter> element. The elements inside the filter describe to the Android OS that this activity is the initial activity to launch for the application. Do not remove this intent filter or the application will not be available in the application launcher menu.
 
@@ -158,55 +129,34 @@ Additionally, you can overwrite the appearance of the option in the **Share** di
 
 * android:priority: Integer used to determine the priority to give to the application. By default, set to 0. Can be assigned a value between \-1000 and 1000, inclusive.
 
-tiapp.xml
+*tiapp.xml*
 
-`<!-- slimmed down some of the nodes for example -->`
-
-`<``ti``:app>`
-
-`<``android``>`
-
-`<``manifest``>`
-
-`<``application``>`
-
-`<``activity`  `android:name``=``".YourapplicationnameActivity"``>`
-
-`<!-- default intent filter for launching activity -->`
-
-`<``intent``-filter>`
-
-`<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
-
-`<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
-
-`</``intent``-filter>`
-
-`<!-- example filter to retrieve or view plain text -->`
-
-`<!-- adds a custom title and icon for the share option -->`
-
-`<``intent``-filter` `android:label``=``"Translate To Pig Latin"`  `android:icon``=``"@drawable/pig"``>`
-
-`<``data`  `android:mimeType``=``"text/plain"``/>`
-
-`<``action`  `android:name``=``"android.intent.action.SEND"``/>`
-
-`<``action`  `android:name``=``"android.intent.action.VIEW"``/>`
-
-`<``category`  `android:name``=``"android.intent.category.DEFAULT"``/>`
-
-`</``intent``-filter>`
-
-`</``activity``>`
-
-`</``application``>`
-
-`</``manifest``>`
-
-`</``android``>`
-
-`</``ti``:app>`
+```xml
+<!-- slimmed down some of the nodes for example -->
+<ti:app>
+    <android>
+        <manifest>
+            <application>
+                <activity android:name=".YourapplicationnameActivity">
+                    <!-- default intent filter for launching activity -->
+                    <intent-filter>
+                        <action android:name="android.intent.action.MAIN"/>
+                        <category android:name="android.intent.category.LAUNCHER"/>
+                    </intent-filter>
+                    <!-- example filter to retrieve or view plain text -->
+                    <!-- adds a custom title and icon for the share option -->
+                    <intent-filter android:label="Translate To Pig Latin" android:icon="@drawable/pig">
+                        <data android:mimeType="text/plain"/>
+                        <action android:name="android.intent.action.SEND"/>
+                        <action android:name="android.intent.action.VIEW"/>
+                        <category android:name="android.intent.category.DEFAULT"/>
+                    </intent-filter>
+                </activity>
+            </application>
+        </manifest>
+    </android>
+</ti:app>
+```
 
 ### Retrieve data passed to the activity
 
@@ -218,37 +168,33 @@ To retrieve data sent to an activity using an intent, the application needs to r
 
 * To get the intent of other activities, use the Titanium.Android.currentActivity property to get a reference to the activity, then access the intent using the activity's intent property or getIntent() method.
 
-`// Retrieve intent that launched the application (root activity)`
-
-`var` `rootIntent = Ti.App.Android.launchIntent;`
-
-`// Retrieve intent that launched the window`
-
-`var` `uiActivity = win.activity;`
-
-`var` `uiIntent = uiActivity.getIntent();`
-
-`// Retrieve intent that launch the activity`
-
-`var` `activity = Ti.Android.currentActivity;`
-
-`var` `intent = activity.getIntent();`
+```javascript
+// Retrieve intent that launched the application (root activity)
+var rootIntent = Ti.App.Android.launchIntent;
+// Retrieve intent that launched the window
+var uiActivity = win.activity;
+var uiIntent = uiActivity.getIntent();
+// Retrieve intent that launch the activity
+var activity = Ti.Android.currentActivity;
+var intent = activity.getIntent();
+```
 
 To retrieve the data URI sent with the intent, simply access the data property of the intent or call the intent's getData() method.
 
-`var` `uri = intent.getData();`
+```javascript
+var uri = intent.getData();
+```
 
 To retrieve extras sent with the intent, call the intent's hasExtra() method and pass it the property to retrieve to verify the data exists, then call one of the intent's get\*Extra() methods and pass it the same property name to retrieve the data.
 
 The example below checks for EXTRA\_TEXT data sent with the intent.
 
-`var` `extra;`
-
-`if` `(intent.hasExtra(Ti.Android.EXTRA_TEXT) && (extra = intent.getStringExtra(Ti.Android.EXTRA_TEXT))) {`
-
-`// Do something with the extra`
-
-`}`
+```javascript
+var extra;
+if (intent.hasExtra(Ti.Android.EXTRA_TEXT) && (extra = intent.getStringExtra(Ti.Android.EXTRA_TEXT))) {
+    // Do something with the extra
+}
+```
 
 ### Respond to the calling activity
 
@@ -260,31 +206,26 @@ Pass a Titanium.Android.RESULT\_\* constant to the setResult() method to indicat
 
 The example below returns a string once the activity is created.
 
-someactivity.js
+*someactivity.js*
 
-`// Get a reference to this activity`
+```javascript
+// Get a reference to this activity
+var activity = Ti.Android.currentActivity;
 
-`var` `activity = Ti.Android.currentActivity;`
+// Bind callback to activity's create event
+activity.onCreate = function() {
 
-`// Bind callback to activity's create event`
+    // Create a blank activity to send data back
+    var intent = Ti.Android.createIntent({});
+    intent.putExtra(Ti.Android.EXTRA_TEXT, 'foobar');
 
-`activity.onCreate =` `function``() {`
+    // Set the result code and send data back to calling activity
+    activity.setResult(Ti.Android.RESULT_OK, intent);
 
-`// Create a blank activity to send data back`
-
-`var` `intent = Ti.Android.createIntent({});`
-
-`intent.putExtra(Ti.Android.EXTRA_TEXT,` `'foobar'``);`
-
-`// Set the result code and send data back to calling activity`
-
-`activity.setResult(Ti.Android.RESULT_OK, intent);`
-
-`// Close the activity to return the result`
-
-`activity.finish();`
-
-`}`
+    // Close the activity to return the result
+    activity.finish();
+}
+```
 
 ## MIME Type intent filter example
 
@@ -292,69 +233,52 @@ This example creates an Alloy application that will accept a string from an exte
 
 The view code for the application displays a text area and button.
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
+```xml
+<Alloy>
+    <Window>
+        <TextArea id='textArea'/>
+        <Button id='button' onClick='toPigLatin'>Translate</Button>
+    </Window>
+</Alloy>
+```
 
-`<``Window``>`
+*app/styles/index.tss*
 
-`<``TextArea`  `id``=``'textArea'``/>`
-
-`<``Button`  `id``=``'button'`  `onClick``=``'toPigLatin'``>Translate</``Button``>`
-
-`</``Window``>`
-
-`</``Alloy``> `
-
-app/styles/index.tss
-
-`"Window"` `: {`
-
-`layout:` `'vertical'`
-
-`}`
-
-`"#textArea"` `: {`
-
-`top``:` `'25dp'``,`
-
-`height``:` `'500dp'``,`
-
-`width``: Ti.UI.FILL`
-
-`}`
-
-`"#button"` `: {`
-
-`top``:` `'15dp'`
-
-`} `
+```
+"Window" : {
+  layout: 'vertical'
+}
+"#textArea" : {
+  top: '25dp',
+  height: '500dp',
+  width: Ti.UI.FILL
+}
+"#button" : {
+  top: '15dp'
+}
+```
 
 The controller code retrieves the text string sent to the application if an external application used an intent to start it.
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`$.index.open();`
+```javascript
+$.index.open();
 
-`if` `(OS_ANDROID) {`
+if (OS_ANDROID) {
+    var launchIntent = Ti.App.Android.launchIntent;
+    var extra;
+    if (launchIntent.hasExtra(Ti.Android.EXTRA_TEXT) && (extra = launchIntent.getStringExtra(Ti.Android.EXTRA_TEXT))) {
+        $.textArea.value = extra;
+    }
+}
 
-`var` `launchIntent = Ti.App.Android.launchIntent;`
-
-`var` `extra;`
-
-`if` `(launchIntent.hasExtra(Ti.Android.EXTRA_TEXT) && (extra = launchIntent.getStringExtra(Ti.Android.EXTRA_TEXT))) {`
-
-`$.textArea.value = extra;`
-
-`}`
-
-`}`
-
-`function` `toPigLatin () {`
-
-`// translate $.textArea.value to Pig Latin or some such nonsense`
-
-`} `
+function toPigLatin () {
+    // translate $.textArea.value to Pig Latin or some such nonsense
+}
+```
 
 Now build the application once to generate the AndroidManifest.xml file.
 
@@ -372,49 +296,34 @@ Next, declare the intent filter in the tiapp.xml file.
 
 Note that the activity already had an intent filter declared indicating that the application should be available in the application launcher.
 
-tiapp.xml
+*tiapp.xml*
 
-` <``ti``:app>`
+```xml
+<ti:app>
+    <android>
+        <manifest>
+            <activity android:name=".GibberishActivity"
+                      android:label="Gibberish" android:theme="@style/Theme.Titanium"
+                      android:configChanges="keyboardHidden|orientation">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN"/>
+                    <category android:name="android.intent.category.LAUNCHER"/>
+                </intent-filter>
+                <intent-filter android:label="Translate to Pig Latin">
+                    <data android:mimeType="text/plain"/>
+                    <category android:name="android.intent.category.DEFAULT"/>
+                    <action android:name="android.intent.action.SEND"/>
+                </intent-filter>
+            </activity>
 
-`<``android``>`
-
-`<``manifest``>`
-
-`<``activity`  `android:name``=``".GibberishActivity"`
-
-`android:label``=``"Gibberish"`  `android:theme``=``"@style/Theme.Titanium"`
-
-`android:configChanges``=``"keyboardHidden|orientation"``>`
-
-`<``intent``-filter>`
-
-`<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
-
-`<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
-
-`</``intent``-filter>`
-
-`<``intent``-filter` `android:label``=``"Translate to Pig Latin"``>`
-
-`<``data`  `android:mimeType``=``"text/plain"``/>`
-
-`<``category`  `android:name``=``"android.intent.category.DEFAULT"``/>`
-
-`<``action`  `android:name``=``"android.intent.action.SEND"``/>`
-
-`</``intent``-filter>`
-
-`</``activity``>`
-
-`</``manifest``>`
-
-`</``android``>`
-
-`<``ti``:app>`
+        </manifest>
+    </android>
+<ti:app>
+```
 
 You now have an app that is ready to receive Intents. Install it on either an Android device or emulator and make sure it runs. Close the application. Now you can test the Intent Filter by doing the following:
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Open your Android browser and go to a website.<br>Select some text, then click the <strong>Share</strong> button.</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>You should be greeted with an Intent list that<br>looks something like this.</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Select your app in the list and you will then be directed<br>to your application containing the string you highlighted.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287610/SelectText.png" alt="images/download/attachments/43287610/SelectText.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287610/ShareDialog.png" alt="images/download/attachments/43287610/ShareDialog.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287610/ApplicationWithText.png" alt="images/download/attachments/43287610/ApplicationWithText.png" class="confluence-embedded-image"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>Open your Android browser and go to a website.<br>Select some text, then click the <strong class=" ">Share</strong> button.</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>You should be greeted with an Intent list that<br>looks something like this.</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Select your app in the list and you will then be directed<br>to your application containing the string you highlighted.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287610/SelectText.png" alt="images/download/attachments/43287610/SelectText.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287610/ShareDialog.png" alt="images/download/attachments/43287610/ShareDialog.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287610/ApplicationWithText.png" alt="images/download/attachments/43287610/ApplicationWithText.png" class="confluence-embedded-image"></p></td></tr></tbody></table>
 
 ## URI intent filter example
 
@@ -422,31 +331,24 @@ This example creates a very simple application that will make itself available t
 
 The code for the application simply displays a label to the user that tells them we know they just clicked on a link to www.appcelerator.com.
 
-Resources/app.js
+*Resources/app.js*
 
-`Ti.UI.backgroundColor =` `'#fff'``;`
+```javascript
+Ti.UI.backgroundColor = '#fff';
 
-`var` `win = Ti.UI.createWindow();`
+var win = Ti.UI.createWindow();
+var label = Ti.UI.createLabel({
+  text:"I'll bet you just clicked on a link to http://www.appcelerator.com",
+  color:'#000',
+  font: {
+    fontSize:32
+  },
+  width:'80%'
+});
+win.add(label);
 
-`var` `label = Ti.UI.createLabel({`
-
-`text:``"I'll bet you just clicked on a link to http://www.appcelerator.com"``,`
-
-`color:``'#000'``,`
-
-`font: {`
-
-`fontSize:32`
-
-`},`
-
-`width:``'80%'`
-
-`});`
-
-`win.add(label);`
-
-`win.open();`
+win.open();
+```
 
 If you build and run it, your output should look roughly like this:
 
@@ -468,47 +370,31 @@ Next, declare the intent filter in the tiapp.xml.
 
 Note that the activity already had an intent filter declared indicating that the application should be available in the application launcher.
 
-tiapp.xml
+*tiapp.xml*
 
-`<``ti``:app>`
+```xml
+<ti:app>
+    <android>
+        <manifest>
+            <activity android:name=".IntentFilterTestActivity"
+                      android:label="Intent Filter Test" android:theme="@style/Theme.Titanium"
+                      android:configChanges="keyboardHidden|orientation">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+                <intent-filter>
+                    <data android:scheme="http" android:host="www.appcelerator.com"/>
+                    <category android:name="android.intent.category.DEFAULT" />
+                    <category android:name="android.intent.category.BROWSABLE" />
+                    <action android:name="android.intent.action.VIEW" />
+                </intent-filter>
+            </activity>
 
-`<``android``>`
-
-`<``manifest``>`
-
-`<``activity`  `android:name``=``".IntentFilterTestActivity"`
-
-`android:label``=``"Intent Filter Test"`  `android:theme``=``"@style/Theme.Titanium"`
-
-`android:configChanges``=``"keyboardHidden|orientation"``>`
-
-`<``intent``-filter>`
-
-`<``action`  `android:name``=``"android.intent.action.MAIN"` `/>`
-
-`<``category`  `android:name``=``"android.intent.category.LAUNCHER"` `/>`
-
-`</``intent``-filter>`
-
-`<``intent``-filter>`
-
-`<``data`  `android:scheme``=``"http"`  `android:host``=``"www.appcelerator.com"``/>`
-
-`<``category`  `android:name``=``"android.intent.category.DEFAULT"` `/>`
-
-`<``category`  `android:name``=``"android.intent.category.BROWSABLE"` `/>`
-
-`<``action`  `android:name``=``"android.intent.action.VIEW"` `/>`
-
-`</``intent``-filter>`
-
-`</``activity``>`
-
-`</``manifest``>`
-
-`</``android``>`
-
-`<``ti``:app>`
+        </manifest>
+    </android>
+<ti:app>
+```
 
 You now have an app that is ready to receive Intents. Install it on either an Android device or emulator and make sure it runs. Close the application. Now you can test the Intent Filter by doing the following:
 

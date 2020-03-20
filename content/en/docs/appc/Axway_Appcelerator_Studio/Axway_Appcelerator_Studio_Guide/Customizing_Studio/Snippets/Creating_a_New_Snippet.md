@@ -36,13 +36,12 @@ Snippets are templates that show up in content assist and the Snippets View.
 
 2. Add the following content to the bottom of the file:
 
-    `snippet` `"My Snippet"`  `do` `|snip|`
-
-    `snip.trigger =` `"foo"`
-
-    `snip.expansion =` `"my_super_snippet"`
-
-    `end`
+    ```
+    snippet "My Snippet" do |snip|
+      snip.trigger = "foo"
+      snip.expansion = "my_super_snippet"
+    end
+    ```
 
 3. Save and close bundle.rb.
 
@@ -56,7 +55,9 @@ Snippets, like other ruble elements, are written using ruby. As a result, you sh
 
 The basics are that ruby code surrounded with #{} is interpreted and inserted into the string. References to globals, for example, $my\_global, will be interpreted even if not surrounded by #{}. You should escape $ like so:
 
-`s.expansion =` `"\\$global = 123;"`
+```
+s.expansion = "\\$global = 123;"
+```
 
 This will end up inserting "$global = 123;", whereas if the dollar was not escaped, the $global reference would be interpreted (and would typically produce an empty string replacement).
 Dollar signs are also significant in tab stops (see below). Backticks, \`,\` are used for executing shell commands (described below).
@@ -65,7 +66,9 @@ Dollar signs are also significant in tab stops (see below). Backticks, \`,\` are
 
 You can use backticks to have shellcode executed when the snippet is inserted. The result from running the code gets inserted into the snippet, though with the last newline in the result removed (if present). So for example, to create a snippet that inserts a datestamp in an HTML comment, we can do:
 
-``<!-- File created on: `date` -->``
+```xml
+<!-- File created on: `date` -->
+```
 
 Inside shell code, the only character you need to escape is the backtick.
 
@@ -77,13 +80,12 @@ Tab stops allow you to modify a snippet once it has been inserted easily.
 
 2. Add the following content to the bottom of the file:
 
-    `snippet` `"My Second Snippet"`  `do` `|s|`
-
-    `s.trigger =` `"foo"`
-
-    `s.expansion =` `"${1:method_name}: function(${2:attribute}){}"`
-
-    `end`
+    ```
+    snippet "My Second Snippet" do |s|
+      s.trigger = "foo"
+      s.expansion = "${1:method_name}: function(${2:attribute}){}"
+    end
+    ```
 
 3. The ${X:Y} indicates a tab stop. X indicates the order of the tab stop, and Y indicates the default content that will be placed there.
 
@@ -99,13 +101,12 @@ Mirroring means that you can have the same content appear to update in multiple 
 
 2. Update the content to add a second $2 item:
 
-    `snippet` `"My Second Snippet"`  `do` `|s|`
-
-    `s.trigger =` `"foo"`
-
-    `s.expansion =` `"${1:method_name}: function(${2:attribute}){${2:attribute}}"`
-
-    `end`
+    ```
+    snippet "My Second Snippet" do |s|
+      s.trigger = "foo"
+      s.expansion = "${1:method_name}: function(${2:attribute}){${2:attribute}}"
+    end
+    ```
 
 3. Repeating a tab stop means that the content will be mirrored. If you update the value of one tab stop, the other identically numbered one will also update simultaneously.
 
@@ -121,15 +122,13 @@ Adding a scope means that the snippet will only show up in certain editors or la
 
 2. Add this to the bottom of the file:
 
-    `snippet` `"My JavaScript Snippet 2"`  `do` `|s|`
-
-    `s.trigger =` `"foo"`
-
-    `s.scope =` `"source.js"`
-
-    `s.expansion =` `"function($1) {};"`
-
-    `end`
+    ```
+    snippet "My JavaScript Snippet 2" do |s|
+      s.trigger = "foo"
+      s.scope = "source.js"
+      s.expansion = "function($1) {};"
+    end
+    ```
 
 3. Save and close bundle.rb.
 
@@ -141,68 +140,53 @@ The [Ruble Specification](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerato
 
 Adding a snippet to a menu is identical to adding a command. You add a menu entry with the same name as the snippet:
 
-`require` `'ruble'`
+```
+require 'ruble'
 
-`bundle` `do` `|bundle|`
+bundle do |bundle|
+  bundle.display_name = 'My Ruble'
+  bundle.menu 'My Ruble' do |menu|
+    menu.command 'My Snippet'
+  end
+end
 
-`bundle.display_name =` `'My Ruble'`
-
-`bundle.menu` `'My Ruble'`  `do` `|menu|`
-
-`menu.command` `'My Snippet'`
-
-`end`
-
-`end`
-
-`snippet` `"My Snippet"`  `do` `|snip|`
-
-`snip.trigger =` `"foo"`
-
-`snip.expansion =` `"my_super_snippet"`
-
-`end`
+snippet "My Snippet" do |snip|
+  snip.trigger = "foo"
+  snip.expansion = "my_super_snippet"
+end
+```
 
 ### Adding a Snippet Category
 
 Having categories allows snippets to be grouped with similar snippets, making it easier to find and discover snippets. To add a snippet category, create a snippet\_category entry, and update any corresponding snippets to have the category:
 
-`require` `'ruble'`
+```
+require 'ruble'
 
-`snippet_category` `"my_category"`  `do` `|category|`
+snippet_category "my_category" do |category|
+  category.icon_path = "icons/my_category.png"
+end
 
-`category.icon_path =` `"icons/my_category.png"`
-
-`end`
-
-`snippet` `"My Snippet"`  `do` `|snip|`
-
-`snip.trigger =` `"foo"`
-
-`snip.expansion =` `"my_categorized_snippet"`
-
-`snip.category =` `"my_category"`
-
-`end`
+snippet "My Snippet" do |snip|
+  snip.trigger = "foo"
+  snip.expansion = "my_categorized_snippet"
+  snip.category = "my_category"
+end
+```
 
 ### Adding additional information about a snippet
 
 This provides context and discoverability of snippets. The Snippets View uses this information to group and filter snippets.
 
-`require` `'ruble'`
+```
+require 'ruble'
 
-`snippet` `"My create map Snippet"`  `do` `|snip|`
-
-`snip.trigger =` `"foo"`
-
-`snip.expansion =` `"my_map_snippet"`
-
-`snip.description =` `"Creates a map object and adds the following annotations: current location, paris, and ontario"`
-
-`snip.tags = [``'UI'``,``'map'``,``'annotation'``]`
-
-`snip.category =` `"Maps and Annotations"`
-
-`snip.icon_path =` `"icons/my_map_icon.png"`
-
-`end`
+snippet "My create map Snippet" do |snip|
+  snip.trigger = "foo"
+  snip.expansion = "my_map_snippet"
+  snip.description = "Creates a map object and adds the following annotations: current location, paris, and ontario"
+  snip.tags = ['UI','map','annotation']
+  snip.category = "Maps and Annotations"
+  snip.icon_path = "icons/my_map_icon.png"
+end
+```

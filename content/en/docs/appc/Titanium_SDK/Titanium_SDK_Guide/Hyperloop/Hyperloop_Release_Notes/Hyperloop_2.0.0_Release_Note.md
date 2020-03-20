@@ -10,37 +10,34 @@ This version only supports Titanium SDK 6.0.0 and newer.
 
     * Improved how the SDK handles instance properties for UIColor, NSBundle and other classes. Example:
 
-        `UIColor.greenColor() -> UIColor.greenColor`
-
-        `UIScreen.mainScreen() -> UIScreen.mainScreen`
-
-        `NSBundle.mainBundle() -> NSBundle.mainBundle`
+        ```
+        UIColor.greenColor() -> UIColor.greenColor
+        UIScreen.mainScreen() -> UIScreen.mainScreen
+        NSBundle.mainBundle() -> NSBundle.mainBundle
+        ```
 
 * [TIMOB-24027](https://jira.appcelerator.org/browse/TIMOB-24027) - iOS: Provide migration help for new properties
 
     * Added a migration help for methods that are now accessed via properties in Hyperloop. Example log:
 
-        `[ERROR] !!! CODE MIGRATION REQUIRED !!!`
-
-        `[ERROR]`
-
-        `[ERROR] Due to changes introduced in iOS` `10` `and Hyperloop` `2.0``.``0` `some method calls need`
-
-        `[ERROR] to be changed to property access. It appears that you used some of the affected`
-
-        `[ERROR] methods. Please see the following list to help you migrate your code:`
-
-        `[ERROR]`
-
-        `[ERROR] File: controllers/animateview.js`
-
-        `[ERROR] Line` `67``: UIColor.redColor() -> UIColor.redColor`
+        ```
+        [ERROR] !!! CODE MIGRATION REQUIRED !!!
+        [ERROR]
+        [ERROR] Due to changes introduced in iOS 10 and Hyperloop 2.0.0 some method calls need
+        [ERROR] to be changed to property access. It appears that you used some of the affected
+        [ERROR] methods. Please see the following list to help you migrate your code:
+        [ERROR]
+        [ERROR]   File: controllers/animateview.js
+        [ERROR]     Line 67: UIColor.redColor() -> UIColor.redColor
+        ```
 
 * [TIMOB-23704](https://jira.appcelerator.org/browse/TIMOB-23704) - iOS: Improve error-message if Podfile has no Pods referenced
 
     * Improved error message if the Podfile has no prod reference. You should see a warning message like this:
 
-        `[WARN] : [Hyperloop] Podfile found, but no pod's specified. Skipping ...`
+        ```
+        [WARN] :   [Hyperloop] Podfile found, but no pod's specified. Skipping ...
+        ```
 
 ## Fixed issues
 

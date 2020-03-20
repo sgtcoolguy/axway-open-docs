@@ -2,7 +2,7 @@
 
 This document will guide you on how to use Titanium and Angular together.
 
-Techical Preview
+*Techical Preview*
 
 Titanium and Angular is currently only available as a Technical Preview and is under ongoing development. Expect things to be broken or APIs to change. Titanium Angular is not yet ready for production use!
 
@@ -12,15 +12,15 @@ If you run into problems read the [Titanium Angular - FAQ](/docs/appc/Titanium_S
 
 In order to use Titanium and Angular together you need to have the latest Appcelerator CLI and Titanium SDK nightly builds installed. You can do so by running the following commands from your terminal:
 
-Install Appcelerator CLI with Angular support
+*Install Appcelerator CLI with Angular support*
 
-`# Latest CLI`
+```bash
+# Latest CLI
+appc use 7.0.3-X
 
-`appc use 7.0.3-X`
-
-`# Latest SDK`
-
-`appc ti sdk` `install` `-b master`
+# Latest SDK
+appc ti sdk install -b master
+```
 
 ## Open Source
 

@@ -38,11 +38,11 @@ Refer to [Hyperloop Requirements](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyp
 
 If you’d like to use Hyperloop in a new or existing Titanium project, add the following code to your tiapp.xml to configure the module:
 
-`<``modules``>`
-
-`<``module``>hyperloop</``module``>`
-
-`</``modules``>`
+```xml
+<modules>
+  <module>hyperloop</module>
+</modules>
+```
 
 ### On SDKs older than 7.0.0
 
@@ -50,15 +50,17 @@ You need to change some additional values in your tiapp.xml file to get Hyperloo
 
 For iOS, you’ll need to ensure that the <use-jscore-framework> flag is enabled (This is enabled by default in Titanium SDK 7.0.0 and later, only will only be disabled if explicitly set to false here):
 
-`<``ios``>`
-
-`<``use``-jscore-framework>true</``use``-jscore-framework>`
-
-`</``ios``>`
+```xml
+<ios>
+  <use-jscore-framework>true</use-jscore-framework>
+</ios>
+```
 
 _A_lso ensure to have the "run-on-main-thread" property set in the top-level of your tiapp.xml (It is enabled by default in Titanium SDK 7.0.0 and later, only will only be disabled if explicitly set to false here):
 
-`<``property`  `name``=``"run-on-main-thread"`  `type``=``"bool"``>true</``property``>`
+```xml
+<property name="run-on-main-thread" type="bool">true</property>
+```
 
 ## Enabling via CLI
 
@@ -87,15 +89,13 @@ To confirm that Hyperloop was set up, you can open the tiapp.xml file in the Ser
 
 After enabling Hyperloop, the following tags should have been added to the tiapp.xml file, you can validate them here:
 
-`<``modules``>`
-
-`<``module`  `platform``=``"android"``>hyperloop</``module``>`
-
-`<``module`  `platform``=``"iphone"``>hyperloop</``module``>`
-
-`...`
-
-`</``modules``>`
+```xml
+<modules>
+  <module platform="android">hyperloop</module>
+  <module platform="iphone">hyperloop</module>
+  ...
+</modules>
+```
 
 ### Enabling Hyperloop on non-Hyperloop projects
 

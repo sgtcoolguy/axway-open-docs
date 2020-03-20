@@ -24,11 +24,12 @@ This guide provides recommendations for writing Alloy applications. This guide s
 
 Not unless you want to. If you have a pre-existing set of functionality that you want to make available globally throughout your app, there is no reason to further sub-categorize it unless it serves you in terms of organization or scalability. There is nothing preventing you from requiring your pre-existing modules in all your Alloy controllers, or even making a single global reference to your module that can be referenced throughout your app. For example:
 
-apps/alloy.js
+*apps/alloy.js*
 
-`// Alloy.Globals.refToYourModule will be available in all controllers`
-
-`Alloy.Globals.refToYourModule = require(``'yourModule'``);`
+```javascript
+// Alloy.Globals.refToYourModule will be available in all controllers
+Alloy.Globals.refToYourModule = require('yourModule');
+```
 
 ### Are there best practices to employ within controllers for performance?
 
@@ -50,29 +51,25 @@ It depends on the size and depth of your existing organization. You need to dete
 
 * Do not declare global variables in app.js and use them in other files. Such usage is currently allowed but not recommended, and it will be deprecated in the future. Users who wish to use globals in Alloy applications can declare the following in their JS files:
 
-`var Alloy = require(``'alloy'``), Backbone = require(``'alloy/backbone'``), _ = require(``'alloy/underscore'``)._;`
+```javascript
+var Alloy = require('alloy'), Backbone = require('alloy/backbone'), _ = require('alloy/underscore')._;
+```
 
 As an example:
 
-`if` `(typeof Alloy ===` `'undefined'``) {`
+```javascript
+if (typeof Alloy === 'undefined') {
+    var Alloy = require('alloy');
+}
+if (typeof Backbone === 'undefined') {
+    var Backbone = require('alloy/backbone');
+}
+if (typeof _ === 'undefined') {
+    var _ = require('alloy/underscore')._;
+}
 
-`var Alloy = require(``'alloy'``);`
-
-`}`
-
-`if` `(typeof Backbone ===` `'undefined'``) {`
-
-`var Backbone = require(``'alloy/backbone'``);`
-
-`}`
-
-`if` `(typeof _ ===` `'undefined'``) {`
-
-`var _ = require(``'alloy/underscore'``)._;`
-
-`}`
-
-`var loading = Alloy.createWidget(``"com.appcelerator.loading"``);`
+var loading = Alloy.createWidget("com.appcelerator.loading");
+```
 
 ### Global Events
 
@@ -82,84 +79,57 @@ Instead of that, you can use better approaches, depending on the problem you are
 
 * If you have the classic problem communication between a master - child screens (you need that a child event triggers something in the parent), then use the callback approach: you can pass a function to be called as a callback when needed:
 
-`//master.js`
+```javascript
+//master.js
+...
+function openChild() {
+    Alloy.createController('child', {callback: refreshData});
+}
+function refreshData(value) {
+  // Do the refresh part of master here
+}
+...
 
-`...`
+//child.js
+...
+var args = arguments[0] || {};
 
-`function openChild() {`
-
-`Alloy.createController(``'child'``, {callback: refreshData});`
-
-`}`
-
-`function refreshData(value) {`
-
-`// Do the refresh part of master here`
-
-`}`
-
-`...`
-
-`//child.js`
-
-`...`
-
-`var args = arguments[``0``] || {};`
-
-`function refreshParent() {`
-
-`// You can pass here a return value to the parent`
-
-`args.callback(``true``);`
-
-`}`
-
-`...`
+function refreshParent() {
+    // You can pass here a return value to the parent
+  args.callback(true);
+}
+...
+```
 
 * If you need to communicate between different parts of the app, then use the Backbone dispatcher approach: create a global object with Backbone capabilities. You can do either, declare it in a file and require it when needed or, more practical, create it in alloy.js file to be available to all your project. Another advantage of use the Backbone approach is that you can cancel the events in any place because are global:
 
-`//alloy.js`
+```javascript
+//alloy.js
+...
+Alloy.Events = _.clone(Backbone.Events);
+...
 
-`...`
+//controller_a.js
+...
+// Prepare a "listener" to execute some work when called
+Alloy.Events.on('updateMainUI', refreshData);  // Instead of use Ti.App.addEventListener('updateMainUI', refreshData);
 
-`Alloy.Events = _.clone(Backbone.Events);`
+function refreshData(value) {
+  // Do what you need here
+    // Maybe a "onetime use" event? you can deactivate it here by calling Alloy.Events.off('updateMainUI');
+}
 
-`...`
+// Remember to disable it when no needed (probably when you close your controller) to avoid memory leaking problems
+$.controller_a.addEventListener('close', function() {
+    Alloy.Events.off('updateMainUI');
+});
+...
 
-`//controller_a.js`
-
-`...`
-
-`// Prepare a "listener" to execute some work when called`
-
-`Alloy.Events.on(``'updateMainUI'``, refreshData);` `// Instead of use Ti.App.addEventListener('updateMainUI', refreshData);`
-
-`function refreshData(value) {`
-
-`// Do what you need here`
-
-`// Maybe a "onetime use" event? you can deactivate it here by calling Alloy.Events.off('updateMainUI');`
-
-`}`
-
-`// Remember to disable it when no needed (probably when you close your controller) to avoid memory leaking problems`
-
-`$.controller_a.addEventListener(``'close'``, function() {`
-
-`Alloy.Events.off(``'updateMainUI'``);`
-
-`});`
-
-`...`
-
-`//controller_b.js`
-
-`...`
-
-`// Call the "listener" to execute the work`
-
-`Alloy.Events.trigger(``'updateMainUI'``);` `// Instead of use Ti.App.fireEvent('updateMainUI');`
-
-`...`
+//controller_b.js
+...
+// Call the "listener" to execute the work
+Alloy.Events.trigger('updateMainUI');  // Instead of use Ti.App.fireEvent('updateMainUI');
+...
+```
 
 **Note:** in the first example, Alloy c ontrollers are Backbone event dispatchers as well. So you could do also Alloy.createController('child').on('refresh', refreshData) to get the same behavior of a callback approach but with Backbone approach, and then trigger the event when you need it.

@@ -42,7 +42,9 @@ The Appcelerator CLI needs to be installed and configured before installing the 
 
 2. From a console window, run the following command to install Alloy:
 
-    `sudo npm install -g alloy`
+    ```bash
+    sudo npm install -g alloy
+    ```
 
 By default, these installation directions will install the latest Alloy release. To install a specific released version, use the same directions, except after 'alloy', add the at symbol ('@') with the version number. For instance, executing sudo npm install -g alloy@1.10.0 will install version 1.10.0.
 
@@ -50,17 +52,19 @@ By default, these installation directions will install the latest Alloy release.
 
 To install the latest development version of Alloy, after installing [Node.js](http://nodejs.org/) , clone the Alloy GitHub repository and perform an npm install from the Alloy project's root directory:
 
-`git clone https:``//github.com/appcelerator/alloy.git`
-
-`cd alloy`
-
-`[sudo] npm install -g .`
+```bash
+git clone https://github.com/appcelerator/alloy.git
+cd alloy
+[sudo] npm install -g .
+```
 
 ## New
 
 Creates a new Alloy project on top of an existing new Titanium project, that is, create a classic Titanium project first, then run the command from inside the project directory.
 
-`alloy` `new` `[<project_path>] [<project_template>] [--force] [--no-colors]`
+```
+alloy new [<project_path>] [<project_template>] [--force] [--no-colors]
+```
 
 | Options | Description |
 | --- | --- |
@@ -74,7 +78,9 @@ Creates a new Alloy project on top of an existing new Titanium project, that is,
 
 Creates skeleton Alloy components.
 
-`alloy generate <component> [--widgetname <widget_name>] [--outputPath <output_path>] [--platform <platform>] [--force] [--no-colors]`
+```
+alloy generate <component> [--widgetname <widget_name>] [--outputPath <output_path>] [--platform <platform>] [--force] [--no-colors]
+```
 
 | Options | Description |
 | --- | --- |
@@ -120,7 +126,9 @@ Actually, in the above example, since both the Android and iOS platforms use SQL
 
 Installs special Alloy project components.
 
-`alloy install <module> [<project_path>]`
+```
+alloy install <module> [<project_path>]
+```
 
 | Options | Description |
 | --- | --- |
@@ -132,7 +140,9 @@ Installs special Alloy project components.
 
 Compiles Alloy code to Titanium SDK code.
 
-`alloy compile [<project_path>] [--config <compiler_options>] [--no-colors]`
+```
+alloy compile [<project_path>] [--config <compiler_options>] [--no-colors]
+```
 
 | Options | Description |
 | --- | --- |
@@ -154,7 +164,9 @@ Use the titanium build command to run Alloy projects. See the [Titanium Command-
 
 Inspects your TSS and JS files for instances of Titanium's localization functions, extracts the i18n key from each function and adds it to the target language's strings.xml file.
 
-`alloy extract-i18n [<language>] [--apply]`
+```
+alloy extract-i18n [<language>] [--apply]
+```
 
 | Options | Description |
 | --- | --- |
@@ -169,21 +181,19 @@ The following localization functions are supported:
 
 The syntax options for calling alloy extract-i18n are shown below.
 
-`//` `Show a before and after of your i18n` `file``. Does NOT write changes to the` `file``.`
+```
+// Show a before and after of your i18n file. Does NOT write changes to the file.
+alloy extract-i18n
 
-`alloy extract-i18n`
+// Write changes to "app/i18n/en/strings.xml":
+alloy extract-i18n --apply
 
-`//` `Write changes to` `"app/i18n/en/strings.xml"``:`
+// Specify "es" as the language and write the changes to "app/i18n/es/strings.xml":
+alloy extract-i18n es --apply
 
-`alloy extract-i18n --apply`
-
-`//` `Specify` `"es"` `as the language and write the changes to` `"app/i18n/es/strings.xml"``:`
-
-`alloy extract-i18n es --apply`
-
-`//` `Specify a different language (``"es"``) and preview changes:`
-
-`alloy extract-i18n es`
+// Specify a different language ("es") and preview changes:
+alloy extract-i18n es
+```
 
 Also see [Extracting localization strings](https://docs.appcelerator.com/platform/latest/#!/guide/Alloy_Tasks_with_the_CLI-section-src-37536785_AlloyTaskswiththeCLI-ExtractingLocalizationStrings) in the [Alloy Tasks with the CLI](https://docs.appcelerator.com/platform/latest/#!/guide/Alloy_Tasks_with_the_CLI) guide.
 
@@ -191,19 +201,25 @@ Also see [Extracting localization strings](https://docs.appcelerator.com/platfor
 
 Make a copy of an existing view-controller, which includes the controller, XML and TSS files.
 
-`alloy copy <CONTROLLER_NAME> <COPIED_CONTROLLER_NAME>`
+```
+alloy copy <CONTROLLER_NAME> <COPIED_CONTROLLER_NAME>
+```
 
 ## Move
 
 Rename a view-controller, which includes the controller, XML and TSS files.
 
-`alloy move <CONTROLLER_NAME> <NEW_CONTROLLER_NAME>`
+```
+alloy move <CONTROLLER_NAME> <NEW_CONTROLLER_NAME>
+```
 
 ## Remove
 
 Removes / Deletes a view-controller, which includes the controller, XML and TSS files.
 
-`alloy remove <CONTROLLER_NAME>`
+```
+alloy remove <CONTROLLER_NAME>
+```
 
 ## Additional Options
 

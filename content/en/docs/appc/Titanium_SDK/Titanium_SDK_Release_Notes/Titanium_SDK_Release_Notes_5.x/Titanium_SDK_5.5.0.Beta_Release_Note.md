@@ -51,75 +51,50 @@ As of this release, Titanium SDK 5.4.x will not be supported six months from 5.5
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: "#fff"
+        });
 
-        `backgroundColor:` `"#fff"`
+        // Reference image (or view)
+        var img = Ti.UI.createImageView({
+            image: "/default_app_logo.png",
+            top: 100,
+            width: 300,
+            height: 300
+        });
 
-        `});`
+        // Blur view
+        var blur = Ti.UI.iOS.createBlurView({
+            width: Ti.UI.FILL,
+            height: Ti.UI.FILL
+        });
 
-        `// Reference image (or view)`
+        img.add(blur);
 
-        `var` `img = Ti.UI.createImageView({`
+        // Effect controls
+        var tabs = Ti.UI.iOS.createTabbedBar({
+            labels: "Extra light", "Light", "Dark", "Regular", "Prominent",
+            bottom: 100
+        });
 
-        `image:` `"/default_app_logo.png"``,`
+        // Available blur effects
+        var effects =
+            Ti.UI.iOS.BLUR_EFFECT_STYLE_EXTRA_LIGHT,
+            Ti.UI.iOS.BLUR_EFFECT_STYLE_LIGHT,
+            Ti.UI.iOS.BLUR_EFFECT_STYLE_DARK,
+            Ti.UI.iOS.BLUR_EFFECT_STYLE_REGULAR,
+            Ti.UI.iOS.BLUR_EFFECT_STYLE_PROMINENT
+        ;
 
-        `top: 100,`
+        tabs.addEventListener("click", function(e) {
+            blur.setEffect(effectse.index);
+        });
 
-        `width: 300,`
-
-        `height: 300`
-
-        `});`
-
-        `// Blur view`
-
-        `var` `blur = Ti.UI.iOS.createBlurView({`
-
-        `width: Ti.UI.FILL,`
-
-        `height: Ti.UI.FILL`
-
-        `});`
-
-        `img.add(blur);`
-
-        `// Effect controls`
-
-        `var` `tabs = Ti.UI.iOS.createTabbedBar({`
-
-        `labels:` `"Extra light"``,` `"Light"``,` `"Dark"``,` `"Regular"``,` `"Prominent"``,`
-
-        `bottom: 100`
-
-        `});`
-
-        `// Available blur effects`
-
-        `var` `effects =`
-
-        `Ti.UI.iOS.BLUR_EFFECT_STYLE_EXTRA_LIGHT,`
-
-        `Ti.UI.iOS.BLUR_EFFECT_STYLE_LIGHT,`
-
-        `Ti.UI.iOS.BLUR_EFFECT_STYLE_DARK,`
-
-        `Ti.UI.iOS.BLUR_EFFECT_STYLE_REGULAR,`
-
-        `Ti.UI.iOS.BLUR_EFFECT_STYLE_PROMINENT`
-
-        `;`
-
-        `tabs.addEventListener(``"click"``,` `function``(e) {`
-
-        `blur.setEffect(effectse.index);`
-
-        `});`
-
-        `win.add(tabs);`
-
-        `win.add(img);`
-
-        `win.open();`
+        win.add(tabs);
+        win.add(img);
+        win.open();
+        ```
 
 * [TIMOB-23513](https://jira.appcelerator.org/browse/TIMOB-23513) - iOS10: Support for new WatchConnectivity features
 
@@ -127,11 +102,12 @@ As of this release, Titanium SDK 5.4.x will not be supported six months from 5.5
 
     * Demo:
 
-        `Ti.WatchSession.activateSession();`
+        ```
+        Ti.WatchSession.activateSession();
 
-        `Ti.API.warn(``"Has content pending: "` `+ Ti.WatchSession.hasContentPending);`
-
-        `Ti.API.warn(``"Number of remaining complication userInfo transfers: "` `+ Ti.WatchSession.remainingComplicationUserInfoTransfers);`
+        Ti.API.warn("Has content pending: " + Ti.WatchSession.hasContentPending);
+        Ti.API.warn("Number of remaining complication userInfo transfers: " + Ti.WatchSession.remainingComplicationUserInfoTransfers);
+        ```
 
 * [TIMOB-23519](https://jira.appcelerator.org/browse/TIMOB-23519) - iOS10: Expose new Ti.UI.Pasteboard APIs
 
@@ -139,11 +115,11 @@ As of this release, Titanium SDK 5.4.x will not be supported six months from 5.5
 
     * Demo:
 
-        `Ti.API.warn(``"Has URLs:"` `+ Ti.UI.Clipboard.hasURLs());`
-
-        `Ti.API.warn(``"Has images"` `+ Ti.UI.Clipboard.hasImages());`
-
-        `Ti.API.warn(``"Has colors:"` `+ Ti.UI.Clipboard.hasColors());`
+        ```
+        Ti.API.warn("Has URLs:" + Ti.UI.Clipboard.hasURLs());
+        Ti.API.warn("Has images" + Ti.UI.Clipboard.hasImages());
+        Ti.API.warn("Has colors:" + Ti.UI.Clipboard.hasColors());
+        ```
 
 * [TIMOB-23524](https://jira.appcelerator.org/browse/TIMOB-23524) - iOS10: Support RefreshControl in Ti.UI.ScrollView
 
@@ -151,45 +127,33 @@ As of this release, Titanium SDK 5.4.x will not be supported six months from 5.5
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: "#fff"
+        });
 
-        `backgroundColor:` `"#fff"`
+        var refreshControl = Ti.UI.createRefreshControl({
+            tintColor: "red"
+        });
 
-        `});`
+        var scroll = Ti.UI.createScrollView({
+            backgroundColor: "yellow",
+            refreshControl: refreshControl
+        });
 
-        `var` `refreshControl = Ti.UI.createRefreshControl({`
+        refreshControl.addEventListener("refreshstart", function() {
+            setTimeout(function() {
+                refreshControl.endRefreshing();
+            },1000);
+        })
 
-        `tintColor:` `"red"`
+        scroll.add(Ti.UI.createLabel({
+            text: "Scroll down!"
+        }));
 
-        `});`
-
-        `var` `scroll = Ti.UI.createScrollView({`
-
-        `backgroundColor:` `"yellow"``,`
-
-        `refreshControl: refreshControl`
-
-        `});`
-
-        `refreshControl.addEventListener(``"refreshstart"``,` `function``() {`
-
-        `setTimeout(``function``() {`
-
-        `refreshControl.endRefreshing();`
-
-        `},1000);`
-
-        `})`
-
-        `scroll.add(Ti.UI.createLabel({`
-
-        `text:` `"Scroll down!"`
-
-        `}));`
-
-        `win.add(scroll);`
-
-        `win.open();`
+        win.add(scroll);
+        win.open();
+        ```
 
 * [TIMOB-23528](https://jira.appcelerator.org/browse/TIMOB-23528) - iOS10: Support new CoreSpotlight APIs
 
@@ -197,79 +161,51 @@ As of this release, Titanium SDK 5.4.x will not be supported six months from 5.5
 
     * Demo:
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+          backgroundColor : "#fff"
+        });
 
-        `backgroundColor :` `"#fff"`
+        var btn = Ti.UI.createButton({
+            title : "Add searchable index"
+        });
 
-        `});`
+        btn.addEventListener("click", function() {
+            addToSearchableIndex();
+        });
 
-        `var` `btn = Ti.UI.createButton({`
+        win.add(btn);
+        var nav = Ti.UI.iOS.createNavigationWindow({window: win});
+        nav.open();
 
-        `title :` `"Add searchable index"`
+        function addToSearchableIndex() {
+            var itemAttr = Ti.App.iOS.createSearchableItemAttributeSet({
+                itemContentType: Ti.App.iOS.UTTYPE_AUDIO,
+                title: 'Who rocks iOS 10?',
+                // iOS 10 only
+                fullyFormattedAddress: "1732 N 1st St, San Jose, CA 95112",
+                postalCode: "95112",
+                thoroughfare: "N 1st St",
+                subThoroughfare: "1732",
+                keywords: 'appcelerator', 'titanium_mobile', 'ios10', 'corespotlight'
+            });
 
-        `});`
+           var item = Ti.App.iOS.createSearchableItem({
+                identifier: 'core-spotlight',
+                domainIdentifier: 'ios10',
+                attributeSet: itemAttr
+            });
 
-        `btn.addEventListener(``"click"``,` `function``() {`
-
-        `addToSearchableIndex();`
-
-        `});`
-
-        `win.add(btn);`
-
-        `var` `nav = Ti.UI.iOS.createNavigationWindow({window: win});`
-
-        `nav.open();`
-
-        `function` `addToSearchableIndex() {`
-
-        `var` `itemAttr = Ti.App.iOS.createSearchableItemAttributeSet({`
-
-        `itemContentType: Ti.App.iOS.UTTYPE_AUDIO,`
-
-        `title:` `'Who rocks iOS 10?'``,`
-
-        `// iOS 10 only`
-
-        `fullyFormattedAddress:` `"1732 N 1st St, San Jose, CA 95112"``,`
-
-        `postalCode:` `"95112"``,`
-
-        `thoroughfare:` `"N 1st St"``,`
-
-        `subThoroughfare:` `"1732"``,`
-
-        `keywords:` `'appcelerator'``,` `'titanium_mobile'``,` `'ios10'``,` `'corespotlight'`
-
-        `});`
-
-        `var` `item = Ti.App.iOS.createSearchableItem({`
-
-        `identifier:` `'core-spotlight'``,`
-
-        `domainIdentifier:` `'ios10'``,`
-
-        `attributeSet: itemAttr`
-
-        `});`
-
-        `var` `indexer = Ti.App.iOS.createSearchableIndex();`
-
-        `indexer.addToDefaultSearchableIndex(item,` `function``(e) {`
-
-        `if` `(e.success) {`
-
-        `alert(``'Press the home button and now search for your keywords'``);`
-
-        `}` `else` `{`
-
-        `alert(``'Error: '` `+ JSON.stringify(e.error));`
-
-        `}`
-
-        `});`
-
-        `}`
+            var indexer = Ti.App.iOS.createSearchableIndex();
+            indexer.addToDefaultSearchableIndex(item, function(e) {
+                if (e.success) {
+                    alert('Press the home button and now search for your keywords');
+                } else {
+                    alert('Error: ' + JSON.stringify(e.error));
+                }
+            });
+        }
+        ```
 
 ## Fixed Issues
 
@@ -313,7 +249,9 @@ As of this release, Titanium SDK 5.4.x will not be supported six months from 5.5
 
     * Improved the warning when calling iOS10 visual effects for Ti.UI.iOS.BlurView on non-iOS10 devices. The error message should look something like this:
 
-        `ERROR : The provided value` `for` `the Ti.UI.iOS.BlurView.effect property is not available in` `this` `iOS version.`
+        ```
+        ERROR : The provided value for the Ti.UI.iOS.BlurView.effect property is not available in this iOS version.
+        ```
 
 ## Known Issues in 5.5.0.Beta
 

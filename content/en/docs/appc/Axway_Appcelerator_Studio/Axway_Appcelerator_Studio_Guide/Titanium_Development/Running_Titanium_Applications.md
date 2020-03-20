@@ -142,7 +142,9 @@ Try cleaning and rebuilding your project.
 
 2. Add or edit the following variable:
 
-`disk.dataPartition.size=<size_in_MB>m`
+```
+disk.dataPartition.size=<size_in_MB>m
+```
 
 ### iOS Simulator
 

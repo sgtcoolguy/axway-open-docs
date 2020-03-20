@@ -68,7 +68,9 @@ To implement the publish extension, the only requirement is that there is an ava
     ![Screen_Shot_2012-04-02_at_11.09.28_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-04-02_at_11.09.28_AM.png)
 6. Clicking the "Publish" button will initiate the publish operation. The publish operation consists of two parts: the Titanium build and the distribution operation. The Titanium build is performed by Titanium Studio. The result of the build is stored at a specified location. Publish providers are expected to implement the distribution operation, which is specific to the purpose of the publish provider. The distribution is performed in the following method:
 
-    `com.appcelerator.titanium.publish.IPublishType#publish(com.appcelerator.titanium.publish.IPublishTarget, java.util.Map)`
+    ```
+    com.appcelerator.titanium.publish.IPublishType#publish(com.appcelerator.titanium.publish.IPublishTarget, java.util.Map)
+    ```
 
 The publish operation is performed as an org.eclipse.debug.core.ILaunch, utilizing an org.eclipse.debug.core.ILaunchConfiguration to store information.
 
@@ -76,7 +78,9 @@ The publish operation is performed as an org.eclipse.debug.core.ILaunch, utilizi
 
 The Publish Provider extension point defines how publishing is performed for a particular provider. The publish provider extension point is
 
-`com.appcelerator.titanium.publish.publishProviders`
+```
+com.appcelerator.titanium.publish.publishProviders
+```
 
 The Publish Provider definition is defined as follows:
 
@@ -86,43 +90,30 @@ The Publish Provider definition is defined as follows:
 
 ### Markup
 
-`<!ELEMENT extension (provider)+>`
+```xml
+<!ELEMENT extension (provider)+>
+<!ATTLIST extension
+  point CDATA #REQUIRED
+  id    CDATA #IMPLIED
+  name  CDATA #IMPLIED
+>
+```
 
-`<!ATTLIST extension`
-
-`point CDATA #REQUIRED`
-
-`id CDATA #IMPLIED`
-
-`name CDATA #IMPLIED`
-
-`>`
-
-`<!ELEMENT provider (supportedPlatform+)>`
-
-`<!ATTLIST provider`
-
-`id CDATA #REQUIRED`
-
-`class` `CDATA #REQUIRED`
-
-`name CDATA #REQUIRED`
-
-`description CDATA #IMPLIED`
-
-`url CDATA #IMPLIED`
-
-`icon CDATA #IMPLIED`
-
-`wizard_icon CDATA #IMPLIED`
-
-`createPublishTargetUrl CDATA #IMPLIED`
-
-`registerPublishTargetDialog CDATA #IMPLIED`
-
-`preferencePageId CDATA #IMPLIED`
-
-`>`
+```xml
+<!ELEMENT provider (supportedPlatform+)>
+<!ATTLIST provider
+  id                          CDATA #REQUIRED
+  class                       CDATA #REQUIRED
+  name                        CDATA #REQUIRED
+  description                 CDATA #IMPLIED
+  url                         CDATA #IMPLIED
+  icon                        CDATA #IMPLIED
+  wizard_icon                 CDATA #IMPLIED
+  createPublishTargetUrl      CDATA #IMPLIED
+  registerPublishTargetDialog CDATA #IMPLIED
+  preferencePageId            CDATA #IMPLIED
+>
+```
 
 * **id** - The identifier of the provider
 
@@ -144,13 +135,12 @@ The Publish Provider definition is defined as follows:
 
 * **preferencePageId** - Preference page id for this publish type
 
-`<!ELEMENT supportedPlatform EMPTY>`
-
-`<!ATTLIST supportedPlatform`
-
-`name (iOS|Android|MobileWeb)`
-
-`>`
+```xml
+<!ELEMENT supportedPlatform EMPTY>
+<!ATTLIST supportedPlatform
+  name (iOS|Android|MobileWeb)
+>
+```
 
 Used to specify a supported platform
 
@@ -158,39 +148,25 @@ Used to specify a supported platform
 
 ### Example
 
-`   <``extension`  `point``=``"com.appcelerator.titanium.publish.publishProviders"``>`
-
-`      <``provider`
-
- `class``=``"com.appcelerator.titanium.publish.sample.SamplePublishType"`
-
- `createPublishTargetUrl``=``"http://publisher.com/web/page/to/create/a/new/target/container"`
-
- `description``=``"A sample publish provider that demonstrates how to implement a publish provider"`
-
- `icon``=``"icons/full/obj16/weather_clouds.png"`
-
- `id``=``"com.appcelerator.titanium.publish.sample.provider"`
-
- `name``=``"Sample Publish Provider"`
-
- `preferencePageId``=``"com.appcelerator.titanium.publish.preferences.SamplePreferencePage"`
-
- `registerPublishTargetDialog``=``"com.appcelerator.titanium.publish.sample.ui.SampleRegisterTargetDialog"`
-
- `url``=``"http://publisher.com/web/page/with/more/information"`
-
- `wizard_icon``=``"icons/full/wizban/clouds.png"``>`
-
-`         <``supportedPlatform`  `name``=``"iOS"``/>`
-
-`         <``supportedPlatform`  `name``=``"Android"``/>`
-
-`         <``supportedPlatform`  `name``=``"MobileWeb"``/>`
-
-`      </``provider``>`
-
-`   </``extension``>`
+```xml
+<extension point="com.appcelerator.titanium.publish.publishProviders">
+      <provider
+            class="com.appcelerator.titanium.publish.sample.SamplePublishType"
+            createPublishTargetUrl="http://publisher.com/web/page/to/create/a/new/target/container"
+            description="A sample publish provider that demonstrates how to implement a publish provider"
+            icon="icons/full/obj16/weather_clouds.png"
+            id="com.appcelerator.titanium.publish.sample.provider"
+            name="Sample Publish Provider"
+            preferencePageId="com.appcelerator.titanium.publish.preferences.SamplePreferencePage"
+            registerPublishTargetDialog="com.appcelerator.titanium.publish.sample.ui.SampleRegisterTargetDialog"
+            url="http://publisher.com/web/page/with/more/information"
+            wizard_icon="icons/full/wizban/clouds.png">
+         <supportedPlatform name="iOS"/>
+         <supportedPlatform name="Android"/>
+         <supportedPlatform name="MobileWeb"/>
+      </provider>
+   </extension>
+```
 
 ## Implementation
 
@@ -198,241 +174,142 @@ Used to specify a supported platform
 
 Provide an implementation of IPublishTarget. This defines an object that contains information to describe the publish target. Subclassing **com.appcelerator.titanium.publish.PublishTarget** will provide a more consistent behavior to other publish providers. See **com.appcelerator.titanium.publish.sample.SamplePublishTarget** for an example implementation:
 
-`/**`
+```
+/**
+ * Test Publish Target. Cotnains a username and password
+ */
+public class SamplePublishTarget extends PublishTarget
+{
+ public static final String USERNAME = "user_name"; //$NON-NLS-1$
+ public static final String PASSWORD = "password"; //$NON-NLS-1$
 
-` * Test Publish Target. Cotnains a username and password`
+ /**
+  * Creates a new sample publish target
+  *
+  * @param name
+  * @param properties
+  */
+ public SamplePublishTarget(String name, Map<String, String> properties)
+ {
+  super(name, properties, SamplePublishType.ID);
+ }
 
-` */`
+ /**
+  * Returns the username associated with this sample publish target
+  *
+  * @return username
+  */
+ public String getUsername()
+ {
+  return getProperties().get(USERNAME);
+ }
 
-`public`  `class` `SamplePublishTarget` `extends` `PublishTarget`
-
-`{`
-
-`public`  `static`  `final` `String USERNAME =` `"user_name"``;` `//$NON-NLS-1$`
-
-`public`  `static`  `final` `String PASSWORD =` `"password"``;` `//$NON-NLS-1$ `
-
-`/**`
-
-`* Creates a new sample publish target`
-
-`* `
-
-`* @param name`
-
-`* @param properties`
-
-`*/`
-
-`public` `SamplePublishTarget(String name, Map<String, String> properties)`
-
-`{`
-
-`super``(name, properties, SamplePublishType.ID);`
-
-`}`
-
-`/**`
-
-`* Returns the username associated with this sample publish target`
-
-`* `
-
-`* @return username`
-
-`*/`
-
-`public` `String getUsername()`
-
-`{`
-
-`return` `getProperties().get(USERNAME);`
-
-`}`
-
-`/**`
-
-`* Returns the password associated with this sample publish target`
-
-`* `
-
-`* @return password`
-
-`*/`
-
-`public` `String getPassword()`
-
-`{`
-
-`return` `getProperties().get(PASSWORD);`
-
-`}`
-
-`}`
+ /**
+  * Returns the password associated with this sample publish target
+  *
+  * @return password
+  */
+ public String getPassword()
+ {
+  return getProperties().get(PASSWORD);
+ }
+}
+```
 
 Provide an implementation of IPublishType. This defines how the publication process works for the provider. It also defines the UI elements used in the Publish Wizard. Subclassing **com.appcelerator.titanium.publish.AbstractPublishType** will provide a more consistent behavior to other publish providers. See **com.appcelerator.titanium.publish.sample.SamplePublishType** for an example implementation:
 
-`/**`
-
-` * Test Publish Type. Performs a build and displays the location and settings of the publish`
-
-` */`
-
-`public`  `class` `SamplePublishType` `extends` `AbstractPublishType`
-
-`{`
-
-`public`  `static`  `final` `String ID =` `"com.appcelerator.titanium.publish.testProvider.provider"``;` `//$NON-NLS-1$`
-
-`public`  `static`  `final` `String PUBLISH_PROPERTY_DESCRIPTION =` `"description"``;` `//$NON-NLS-1$`
-
-`public`  `static`  `final` `String PUBLISH_PROPERTY_PRIVATE =` `"private"``;` `//$NON-NLS-1$ `
-
-`/*`
-
-`* (non-Javadoc)`
-
-`* @see com.appcelerator.titanium.publish.IPublishType#createPublishTarget(java.lang.String, java.util.Map)`
-
-`*/`
-
-`public` `IPublishTarget createPublishTarget(String name, Map<String, String> properties)` `throws` `PublishException`
-
-`{`
-
-`return`  `new` `SamplePublishTarget(name, properties);`
-
-`}`
-
-`/*`
-
-`* (non-Javadoc)`
-
-`* @see com.appcelerator.titanium.publish.IPublishType#getManagePublishTargetUrl(com.appcelerator.titanium.publish.`
-
-`* IPublishTarget)`
-
-`*/`
-
-`public` `String getManagePublishTargetUrl(IPublishTarget publishTarget)`
-
-`{`
-
-`// The publish url is the publish target name`
-
-`return` `publishTarget !=` `null` `? publishTarget.getName() :` `null``;`
-
-`}`
-
-`/*`
-
-`* (non-Javadoc)`
-
-`* @see com.appcelerator.titanium.publish.IPublishType#publish(com.appcelerator.titanium.publish.IPublishTarget,`
-
-`* java.util.Map)`
-
-`*/`
-
-`public` `IStatus publish(IPublishTarget publishTarget, Map<String, String> parameters)` `throws` `PublishException`
-
-`{`
-
-`String platform = parameters.get(PUBLISH_PROPERTY_PLATFORM);`
-
-`String target = publishTarget.getName();`
-
-`String publishTypeValueId = publishTarget.getType(); `
-
-`String output = parameters.get(PUBLISH_PROPERTY_OUTPUT);`
-
-`String description = parameters.get(PUBLISH_PROPERTY_DESCRIPTION);`
-
-`String isPrivate = parameters.get(PUBLISH_PROPERTY_PRIVATE);`
-
-`// This is where the magic happens. output is the path to the file that will be published`
-
-`// to whatever is the appropriate URL`
-
-`return`  `new` `Status(IStatus.OK, SampleProviderPlugin.PLUGIN_ID, MessageFormat.format(`
-
-`Messages.TestPublishType_Test_publish_output, platform, target, publishTypeValueId, output,` `new` `File(`
-
-`output).canRead() ?` `"found"` `:` `"missing"``, description, isPrivate));`
-
-`}`
-
-`/*`
-
-`* (non-Javadoc)`
-
-`* @see com.appcelerator.titanium.publish.IPublishType#contributesConfigurationControl()`
-
-`*/`
-
-`public`  `boolean` `contributesConfigurationControl()`
-
-`{`
-
-`return`  `true``;`
-
-`}`
-
-`/*`
-
-`* (non-Javadoc)`
-
-`* @see com.appcelerator.titanium.publish.IPublishType#createConfigurationControl(org.eclipse.swt.widgets.Composite,`
-
-`* java.util.Map, com.aptana.core.util.StatusCollector)`
-
-`*/`
-
-`public`  `void` `createConfigurationControl(Composite parent, Map<String, Object> model, StatusCollector statusCollector)`
-
-`{`
-
-`new` `SampleConfigurationControl(model, statusCollector).create(parent);`
-
-`}`
-
-`/*`
-
-`* (non-Javadoc)`
-
-`* @see com.appcelerator.titanium.publish.IPublishType#contributesSummaryComponent()`
-
-`*/`
-
-`public`  `boolean` `contributesSummaryComponent()`
-
-`{`
-
-`return`  `true``;`
-
-`}`
-
-`/*`
-
-`* (non-Javadoc)`
-
-`* @see com.appcelerator.titanium.publish.IPublishType#createSummaryComponent(org.eclipse.swt.widgets.Composite,`
-
-`* java.util.Map, com.aptana.core.util.StatusCollector)`
-
-`*/`
-
-`public` `ISummaryWizardPageComponent createSummaryComponent(Composite parent, Map<String, Object> model,`
-
-`StatusCollector listener)`
-
-`{`
-
-`return`  `new` `SampleSummaryComponent();`
-
-`}`
-
-`}`
+```
+/**
+ * Test Publish Type. Performs a build and displays the location and settings of the publish
+ */
+public class SamplePublishType extends AbstractPublishType
+{
+ public static final String ID = "com.appcelerator.titanium.publish.testProvider.provider"; //$NON-NLS-1$
+ public static final String PUBLISH_PROPERTY_DESCRIPTION = "description"; //$NON-NLS-1$
+ public static final String PUBLISH_PROPERTY_PRIVATE = "private"; //$NON-NLS-1$
+
+ /*
+  * (non-Javadoc)
+  * @see com.appcelerator.titanium.publish.IPublishType#createPublishTarget(java.lang.String, java.util.Map)
+  */
+ public IPublishTarget createPublishTarget(String name, Map<String, String> properties) throws PublishException
+ {
+  return new SamplePublishTarget(name, properties);
+ }
+
+ /*
+  * (non-Javadoc)
+  * @see com.appcelerator.titanium.publish.IPublishType#getManagePublishTargetUrl(com.appcelerator.titanium.publish.
+  * IPublishTarget)
+  */
+ public String getManagePublishTargetUrl(IPublishTarget publishTarget)
+ {
+  // The publish url is the publish target name
+  return publishTarget != null ? publishTarget.getName() : null;
+ }
+
+ /*
+  * (non-Javadoc)
+  * @see com.appcelerator.titanium.publish.IPublishType#publish(com.appcelerator.titanium.publish.IPublishTarget,
+  * java.util.Map)
+  */
+ public IStatus publish(IPublishTarget publishTarget, Map<String, String> parameters) throws PublishException
+ {
+  String platform = parameters.get(PUBLISH_PROPERTY_PLATFORM);
+  String target = publishTarget.getName();
+  String publishTypeValueId = publishTarget.getType();
+  String output = parameters.get(PUBLISH_PROPERTY_OUTPUT);
+  String description = parameters.get(PUBLISH_PROPERTY_DESCRIPTION);
+  String isPrivate = parameters.get(PUBLISH_PROPERTY_PRIVATE);
+
+  // This is where the magic happens. output is the path to the file that will be published
+  // to whatever is the appropriate URL
+
+  return new Status(IStatus.OK, SampleProviderPlugin.PLUGIN_ID, MessageFormat.format(
+    Messages.TestPublishType_Test_publish_output, platform, target, publishTypeValueId, output, new File(
+      output).canRead() ? "found" : "missing", description, isPrivate));
+ }
+
+ /*
+  * (non-Javadoc)
+  * @see com.appcelerator.titanium.publish.IPublishType#contributesConfigurationControl()
+  */
+ public boolean contributesConfigurationControl()
+ {
+  return true;
+ }
+
+ /*
+  * (non-Javadoc)
+  * @see com.appcelerator.titanium.publish.IPublishType#createConfigurationControl(org.eclipse.swt.widgets.Composite,
+  * java.util.Map, com.aptana.core.util.StatusCollector)
+  */
+ public void createConfigurationControl(Composite parent, Map<String, Object> model, StatusCollector statusCollector)
+ {
+  new SampleConfigurationControl(model, statusCollector).create(parent);
+ }
+
+ /*
+  * (non-Javadoc)
+  * @see com.appcelerator.titanium.publish.IPublishType#contributesSummaryComponent()
+  */
+ public boolean contributesSummaryComponent()
+ {
+  return true;
+ }
+
+ /*
+  * (non-Javadoc)
+  * @see com.appcelerator.titanium.publish.IPublishType#createSummaryComponent(org.eclipse.swt.widgets.Composite,
+  * java.util.Map, com.aptana.core.util.StatusCollector)
+  */
+ public ISummaryWizardPageComponent createSummaryComponent(Composite parent, Map<String, Object> model,
+   StatusCollector listener)
+ {
+  return new SampleSummaryComponent();
+ }
+}
+```
 
 ### Contribute to Publish Menus
 
@@ -440,43 +317,27 @@ Menus are contributed to the Titanium Publish menu. A base implementation of Con
 
 Contributing to the publish menu is accomplished using the Eclipse [org.eclipse.ui.menus](http://help.eclipse.org/indigo/index.jsp?topic=/org.eclipse.platform.doc.isv/reference/extension-points/org_eclipse_ui_menus.html) extension point. Following is an example menu contribution for the Sample menus:
 
-`<``extension`  `point``=``"org.eclipse.ui.menus"``>`
-
-`<``menuContribution`  `locationURI``=``"menu:com.aptana.explorer.deploy?after=group.deploy"``>`
-
-`<``dynamic`
-
-`class``=``"com.appcelerator.titanium.publish.sample.ui.SampleContributionItem"`
-
-`id``=``"com.appcelerator.titanium.publish.SampleContributionItem"``>`
-
-`<``visibleWhen`  `checkEnabled``=``"false"``>`
-
-`<``and``>`
-
-`<``reference`  `definitionId``=``"com.appcelerator.titanium.isMobileProject"``/>`
-
-`<``or``>`
-
-`<``reference`  `definitionId``=``"com.appcelerator.titanium.isIPadProject"``/>`
-
-`<``reference`  `definitionId``=``"com.appcelerator.titanium.isIPhoneProject"``/>`
-
-`<``reference`  `definitionId``=``"com.appcelerator.titanium.isAndroidProject"``/>`
-
-`<``reference`  `definitionId``=``"com.appcelerator.titanium.isMobileWebProject"``/>`
-
-`</``or``>`
-
-`</``and``>`
-
-`</``visibleWhen``>`
-
-`</``dynamic``>`
-
-`</``menuContribution``>`
-
-`</``extension``>`
+```xml
+<extension point="org.eclipse.ui.menus">
+ <menuContribution locationURI="menu:com.aptana.explorer.deploy?after=group.deploy">
+  <dynamic
+   class="com.appcelerator.titanium.publish.sample.ui.SampleContributionItem"
+   id="com.appcelerator.titanium.publish.SampleContributionItem">
+   <visibleWhen checkEnabled="false">
+    <and>
+     <reference definitionId="com.appcelerator.titanium.isMobileProject"/>
+     <or>
+      <reference definitionId="com.appcelerator.titanium.isIPadProject"/>
+      <reference definitionId="com.appcelerator.titanium.isIPhoneProject"/>
+      <reference definitionId="com.appcelerator.titanium.isAndroidProject"/>
+      <reference definitionId="com.appcelerator.titanium.isMobileWebProject"/>
+     </or>
+    </and>
+   </visibleWhen>
+  </dynamic>
+ </menuContribution>
+</extension>
+```
 
 The following Titanium-specific reference definitionIds can be used:
 
@@ -492,35 +353,23 @@ The following Titanium-specific reference definitionIds can be used:
 
 All the subsequent steps are used in the definition of the PublishProvider. Additional information about the extension point can be found in the reference at the top of the page. Following is the extension for the Sample publish provider:
 
-`<``extension`  `point``=``"com.appcelerator.titanium.publish.publishProviders"``>`
-
-`<``provider`  `class``=``"com.appcelerator.titanium.publish.sample.SamplePublishType"`
-
-`createPublishTargetUrl``=``"http://publisher.com/web/page/to/create/a/new/target/container"`
-
-`description``=``"A sample publish provider that demonstrates how to implement a publish provider"`
-
-`icon``=``"icons/full/obj16/weather_clouds.png"`  `id``=``"com.appcelerator.titanium.publish.testProvider.provider"`
-
-`name``=``"Sample Publish Provider"`
-
-`preferencePageId``=``"com.appcelerator.titanium.publish.preferences.SamplePreferencePage"`
-
-`registerPublishTargetDialog``=``"com.appcelerator.titanium.publish.sample.ui.SampleRegisterTargetDialog"`
-
-`url``=``"http://publisher.com/web/page/with/more/information"`
-
-`wizard_icon``=``"icons/full/wizban/clouds.png"``>`
-
-`<``supportedPlatform`  `name``=``"iOS"``/>`
-
-`<``supportedPlatform`  `name``=``"Android"``/>`
-
-`<``supportedPlatform`  `name``=``"MobileWeb"``/>`
-
-`</``provider``>`
-
-`</``extension``>`
+```xml
+<extension point="com.appcelerator.titanium.publish.publishProviders">
+ <provider class="com.appcelerator.titanium.publish.sample.SamplePublishType"
+  createPublishTargetUrl="http://publisher.com/web/page/to/create/a/new/target/container"
+  description="A sample publish provider that demonstrates how to implement a publish provider"
+  icon="icons/full/obj16/weather_clouds.png" id="com.appcelerator.titanium.publish.testProvider.provider"
+  name="Sample Publish Provider"
+  preferencePageId="com.appcelerator.titanium.publish.preferences.SamplePreferencePage"
+  registerPublishTargetDialog="com.appcelerator.titanium.publish.sample.ui.SampleRegisterTargetDialog"
+  url="http://publisher.com/web/page/with/more/information"
+  wizard_icon="icons/full/wizban/clouds.png">
+  <supportedPlatform name="iOS"/>
+  <supportedPlatform name="Android"/>
+  <supportedPlatform name="MobileWeb"/>
+ </provider>
+</extension>
+```
 
 ## Customization
 
@@ -548,21 +397,16 @@ A preference page can be defined to allow the management of the publish targets.
 
 The id of the preference page should be defined in the Publish Provider extension point using the **preferencePageId** attribute. The Sample provider defines the preferencePage using the following extension:
 
-`<``extension`  `point``=``"org.eclipse.ui.preferencePages"``>`
-
-`  <``page`
-
-`category``=``"com.aptana.ui.io.preferences.RemotePreferencePage"`
-
-`class``=``"com.appcelerator.titanium.publish.sample.preferences.SamplePreferencePage"`
-
-`id``=``"com.appcelerator.titanium.publish.preferences.SamplePreferencePage"`
-
-`name``=``"Sample Publish Provider"``>`
-
-`  </``page``>`
-
-`</``extension``>`
+```xml
+<extension  point="org.eclipse.ui.preferencePages">
+  <page
+     category="com.aptana.ui.io.preferences.RemotePreferencePage"
+     class="com.appcelerator.titanium.publish.sample.preferences.SamplePreferencePage"
+     id="com.appcelerator.titanium.publish.preferences.SamplePreferencePage"
+     name="Sample Publish Provider">
+  </page>
+</extension>
+```
 
 ![Screen_Shot_2012-03-19_at_9.22.43_AM](/Images/appc/download/attachments/30083470/Screen_Shot_2012-03-19_at_9.22.43_AM.png)
 

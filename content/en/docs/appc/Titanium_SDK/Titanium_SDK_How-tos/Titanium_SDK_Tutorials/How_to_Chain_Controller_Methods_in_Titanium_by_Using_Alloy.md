@@ -4,27 +4,24 @@ Titanium and Alloy has as great feature to create controllers and be reactive to
 
 For the purpose of this tutorial, let's assume that we want to open a modal settings view and react to the settings being saved BEFORE closing the view. In this case, we might typically write:
 
-`var` `settings = Alloy.createController(“screens/settings”);`
-
-`settings.getView().open({modal:``true``});`
-
-`settings.on(``"saved"``,` `function``( ){`
-
-`// do stuff here`
-
-`settings =` `null``;`
-
-`});`
+```javascript
+var settings = Alloy.createController(“screens/settings”);
+settings.getView().open({modal:true});
+settings.on("saved", function( ){
+  // do stuff here
+  settings = null;
+});
+```
 
 This approach is fine, but it’s a lot of code.
 
 With Alloy, you can chain methods and do ALL this without ever creating the pointer variable:
 
-`Alloy.createController(“screens/settings”).on(``"saved"``,` `function``( ){`
-
-`// do stuff here`
-
-`}).getView().open({modal:` `true``});`
+```
+Alloy.createController(“screens/settings”).on("saved", function( ){
+  // do stuff here
+}).getView().open({modal: true});
+```
 
 We can achieve the same thing in a few lines of code with no pointer created or potential memory leak issues.
 

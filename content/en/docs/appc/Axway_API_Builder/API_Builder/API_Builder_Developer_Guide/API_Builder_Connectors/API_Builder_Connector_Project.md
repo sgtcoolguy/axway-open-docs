@@ -1,6 +1,6 @@
 {"title":"API Builder Connector Project","weight":"20"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -76,27 +76,25 @@ To create a new connector, from your workspace directory, execute the appc gener
 
 * Enter a name and directory name for your project.
 
-`$ appc generate`
+```bash
+$ appc generate
+Appcelerator Command-Line Interface, version 0.2.230
+Copyright (c) 2014-2015, Appcelerator, Inc.  All Rights Reserved.
 
-`Appcelerator Command-Line Interface, version 0.2.230`
-
-`Copyright (c) 2014-2015, Appcelerator, Inc. All Rights Reserved.`
-
-`? What` `type` `of component would you like to generate? Arrow Component`
-
-`? What Arrow component would you like to generate? Arrow Connector`
-
-`? Which Connector would you like to generate? Empty Connector Project`
-
-`? What is the connector name? sample.connector`
-
-`? Which directory to generate into? sample.connector`
+? What type of component would you like to generate? Arrow Component
+? What Arrow component would you like to generate? Arrow Connector
+? Which Connector would you like to generate? Empty Connector Project
+? What is the connector name? sample.connector
+? Which directory to generate into? sample.connector
+```
 
 ### Test the connector
 
 Like an API Builder project, you can locally run the Connector project and make APIs calls to it. From the project directory, execute:
 
-`appc run`
+```bash
+appc run
+```
 
 Once the server starts, you can make cURL or other requests to the server. Open the admin console, then go to the **API Docs** tab to retrieve the cURL commands for the methods. Copy and paste a command in a terminal to test it.
 
@@ -104,7 +102,9 @@ Once the server starts, you can make cURL or other requests to the server. Open 
 
 To publish the connector, execute the following command from the project directory:
 
-`appc publish`
+```bash
+appc publish
+```
 
 By default, the access level for the connector is set to private, so only the creator can access the connector. To share the connector with other people or publicly, specify a different access level with the appc access command and add people or organizations to your component using the appc userand commandsappc org.
 
@@ -116,65 +116,42 @@ The boilerplate index.js file exposes a create() method, which is passed the API
 
 To start developing your connector, run the project in one console window, then edit the files with the connector logic in another console or editor. As you save your files, API Builder will automatically update your connector and restart the server instance, allowing you to work on and test the connector incrementally.
 
-lib/index.js
+*lib/index.js*
 
-`/*`
+```javascript
+/*
+ Welcome to your new connector!
+ TODO: First things first, look at the "capabilities" array TODOs down below.
+ */
+var _ = require('lodash');
 
-`Welcome to your new connector!`
+/**
+ * Creates your connector for Arrow.
+ */
+exports.create = function (Arrow) {
+        var Connector = Arrow.Connector,
+                Capabilities = Connector.Capabilities;
 
-`TODO: First things first, look at the "capabilities" array TODOs down below.`
+        return Connector.extend({
+                filename: module.filename,
+                capabilities: [
+                        // TODO: Get started by uncommenting the next line and running `appc run`.
+                        //Capabilities.ConnectsToADataSource,
 
-`*/`
-
-`var` `_ = require(``'lodash'``);`
-
-`/**`
-
-`* Creates your connector for Arrow.`
-
-`*/`
-
-`exports.create =` `function` `(Arrow) {`
-
-`var` `Connector = Arrow.Connector,`
-
-`Capabilities = Connector.Capabilities;`
-
-`return` `Connector.extend({`
-
-`filename: module.filename,`
-
-`capabilities: [`
-
-``// TODO: Get started by uncommenting the next line and running `appc run`.``
-
-`//Capabilities.ConnectsToADataSource,`
-
-`// TODO: Each of these capabilities is optional; add the ones you want, and delete the rest.`
-
-``// (Hint: I've found it to be easiest to add these one at a time, running `appc run` for guidance.)``
-
-`//Capabilities.ValidatesConfiguration,`
-
-`//Capabilities.ContainsModels,`
-
-`//Capabilities.GeneratesModels,`
-
-`//Capabilities.CanCreate,`
-
-`//Capabilities.CanRetrieve,`
-
-`//Capabilities.CanUpdate,`
-
-`//Capabilities.CanDelete,`
-
-`//Capabilities.AuthenticatesThroughConnector`
-
-`]`
-
-`});`
-
-`};`
+                        // TODO: Each of these capabilities is optional; add the ones you want, and delete the rest.
+                        // (Hint: I've found it to be easiest to add these one at a time, running `appc run` for guidance.)
+                        //Capabilities.ValidatesConfiguration,
+                        //Capabilities.ContainsModels,
+                        //Capabilities.GeneratesModels,
+                        //Capabilities.CanCreate,
+                        //Capabilities.CanRetrieve,
+                        //Capabilities.CanUpdate,
+                        //Capabilities.CanDelete,
+                        //Capabilities.AuthenticatesThroughConnector
+                ]
+        });
+};
+```
 
 ### Capabilities
 
@@ -248,43 +225,33 @@ To have the Appcelerator CLI create a default configuration file for your connec
 
 For example, create a file called example.config.js in the conf directory and add the following content to it:
 
-conf/example.config.js
+*conf/example.config.js*
 
-`module.exports = {`
-
-`connectors: {`
-
-`'connector.name'``: {`
-
-`setting1:` `'foo'``,`
-
-`setting2:` `'bar'``,`
-
-`setting3:` `'baz'`
-
-`}`
-
-`}`
-
-`};`
+```javascript
+module.exports = {
+    connectors: {
+        'connector.name': {
+            setting1: 'foo',
+            setting2: 'bar',
+            setting3: 'baz'
+        }
+    }
+};
+```
 
 Then reference the file in the connector logic using the defaultConfig property:
 
-lib/index.js
+*lib/index.js*
 
-`exports.create =` `function``(Arrow) {`
-
-`var` `Connector = Arrow.Connector;`
-
-`return` `Connector.extend({`
-
-`defaultConfig: require(``'fs'``).readFileSync(__dirname +` `'/../conf/example.config.js'``,` `'utf8'``),`
-
-`...`
-
-`});`
-
-`}`
+```javascript
+exports.create = function(Arrow) {
+    var Connector = Arrow.Connector;
+    return Connector.extend({
+        defaultConfig: require('fs').readFileSync(__dirname + '/../conf/example.config.js', 'utf8'),
+        ...
+    });
+}
+```
 
 When the Appcelerator CLI installs the connector, it will copy and rename the file to the project's conf.
 
@@ -294,60 +261,45 @@ To allow an application to interact with the connector, you need to create a mod
 
 By default, when you install a connector, it will add its API endpoints to the application. If you do not want to generate these API endpoints, set the modelAutogen key to false in the connector's configuration file in the project.
 
-conf/myconnector.default.js
+*conf/myconnector.default.js*
 
-`module.exports = {`
-
-`connectors: {`
-
-`'connector.name'``: {`
-
-`setting1:` `'foo'``,`
-
-`setting2:` `'bar'``,`
-
-`setting3:` `'baz'``,`
-
-`modelAutogen:` `false`
-
-`}`
-
-`}`
-
-`};`
+```javascript
+module.exports = {
+    connectors: {
+        'connector.name': {
+            setting1: 'foo',
+            setting2: 'bar',
+            setting3: 'baz',
+            modelAutogen: false
+        }
+    }
+};
+```
 
 You may specify specific models to generate from a connector. Set the generateModels key to an array of model names you want to include.
 
-`module.exports = {`
-
-`connectors: {`
-
-`'connector.name'``: {`
-
-`generateModels: [`
-
-`'foo'``,`
-
-`'bar'``,`
-
-`'baz'`
-
-`]`
-
-`}`
-
-`}`
-
-`}`
+```javascript
+module.exports = {
+    connectors: {
+        'connector.name': {
+            generateModels: [
+                'foo',
+                'bar',
+                'baz'
+            ]
+        }
+    }
+}
+```
 
 ## Declare dependencies
 
 The application can import any third-party modules that are supported by standard Node.js applications. Before publishing the app to the cloud, make sure all dependencies are listed in the dependencies field in the application's package.json file. For example, to add support for MongoDB 1.2.0 or greater:
 
-package.json
+*package.json*
 
-`{`
-
-`"dependencies"``:{` `"mongodb"``:` `">1.2.0"` `}`
-
-`}`
+```json
+{
+    "dependencies":{ "mongodb": ">1.2.0" }
+}
+```

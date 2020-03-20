@@ -20,21 +20,21 @@ Appcelerator specific points:
 
 5) Compound statements should always use parentheses. For example:
 
-`return` `(myVar ? myVar : defaultVar);`
-
-`int` `x = (a ? (y =` `2``) : z);`
+```
+return (myVar ? myVar : defaultVar);
+int x = (a ? (y = 2) : z);
+```
 
 6) **_if_**, **_while_** and **_for_** control structures must ALWAYS have braces around their contents
 
 7) There should usually be a empty line before the opening line of a **_if_**, **_else if_** or **_else_** check for readability. The exception to this rule is a value assignment that is core to the control statement. For example:
 
-`a =` `true``;` `// boolean previously set to false somewhere else`
-
-`if` `(a) {`
-
-`// do neat things here`
-
-`}`
+```
+a = true; // boolean previously set to false somewhere else
+if (a) {
+     // do neat things here
+}
+```
 
 8) Empty **_for_** and **_while_** loops should have empty braces instead of the braces being purely omitted.
 
@@ -42,53 +42,49 @@ Appcelerator specific points:
 
 10) **_switch_** statements should have a empty line between each **_case_** statement. For example:
 
-`switch` `(condition) {`
+```
+switch (condition) {
+case ABC:
+    statements;
+    /* falls through */
 
-`case` `ABC:`
+case DEF:
+    statements;
+    break;
 
-`statements;`
+case XYZ:
+    statements;
+    break;
 
-`/* falls through */`
-
-`case` `DEF:`
-
-`statements;`
-
-`break``;`
-
-`case` `XYZ:`
-
-`statements;`
-
-`break``;`
-
-`default``:`
-
-`statements;`
-
-`break``;`
-
-`}`
+default:
+    statements;
+    break;
+}
+```
 
 11) Acronyms should NOT be capitalized inside method or variable names. For example:
 
-`int` `HTTPGETFired =` `0``;` `// this is bad`
+```
+int HTTPGETFired = 0; // this is bad
 
-`int` `httpGetFired =` `0``;` `// this is good`
+int httpGetFired = 0; // this is good
+```
 
 12) Use meaningful class, method and variable names. The goal here is for the role of a method or variable to be clear when reading the name (not after reading to source to see what a method does or how a variable is used). For example:
 
-Bad Variable Names
+*Bad Variable Names*
 
-`int` `myVar;` `// glad you have a var, why does it exist?`
+```
+int myVar; // glad you have a var, why does it exist?
 
-`int` `done;` `// unless the positioning of this variable makes it overwhelmingly clear as to what "done" means then this is bad. even if positioned within a small block, a better name can likely be identified`
+int done; // unless the positioning of this variable makes it overwhelmingly clear as to what "done" means then this is bad. even if positioned within a small block, a better name can likely be identified
 
-`int` `shouldFire;` `// fire what? unless this is in the "MyCannon" class, be more specific`
+int shouldFire; // fire what? unless this is in the "MyCannon" class, be more specific
 
-`Class Container (Handler, Processor also work);` `// failboat`
+Class Container (Handler, Processor also work); // failboat
 
-`etc. etc. etc.`
+etc. etc. etc.
+```
 
 13) Regarding variable placement - read section 6.3 of the base standard. Once finished read it a second time for reinforcement. ;)
 

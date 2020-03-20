@@ -116,19 +116,18 @@ There are diagnoses you can perform that will help us understand the issue:
 
 Attach your findings to [APSTUD-2050](https://jira.appcelerator.org/browse/APSTUD-2050) ( "Building Workspace" job takes a while to complete ). You should see entries like:
 
-`!ENTRY com.aptana.core` `1`  `0`  `2012``-``08``-``15`  `14``:``44``:``09.007`
+```
+!ENTRY com.aptana.core 1 0 2012-08-15 14:44:09.007
+!MESSAGE (Build 0.0.0.qualifier) [INFO] com.aptana.core/debug/builder Performing incremental unified build on project 'geolocationClient'
 
-`!MESSAGE (Build` `0.0``.``0``.qualifier) [INFO] com.aptana.core/debug/builder Performing incremental unified build on project` `'geolocationClient'`
+!ENTRY com.aptana.buildpath.core 1 0 2012-08-15 14:44:09.069
+!MESSAGE (Build 0.0.0.qualifier) [INFO] com.aptana.core/debug/builder/participants Executed build participant 'Index Build Participant' on 'file:/Users/ingo/Documents/Aptana%20Workspaces/Aptana%20Studio%203%20Workspace/geolocationClient/LICENSE' in 10.842 ms.
 
-`!ENTRY com.aptana.buildpath.core` `1`  `0`  `2012``-``08``-``15`  `14``:``44``:``09.069`
+...
 
-`!MESSAGE (Build` `0.0``.``0``.qualifier) [INFO] com.aptana.core/debug/builder/participants Executed build participant` `'Index Build Participant'` `on` `'file:/Users/ingo/Documents/Aptana%20Workspaces/Aptana%20Studio%203%20Workspace/geolocationClient/LICENSE'` `in` `10.842` `ms.`
-
-`...`
-
-`!ENTRY com.aptana.core` `1`  `0`  `2012``-``08``-``15`  `14``:``44``:``09.556`
-
-`!MESSAGE (Build` `0.0``.``0``.qualifier) [INFO] com.aptana.core/debug/builder Finished unified build of` `'geolocationClient'``. Took` `589.057` `ms.`
+!ENTRY com.aptana.core 1 0 2012-08-15 14:44:09.556
+!MESSAGE (Build 0.0.0.qualifier) [INFO] com.aptana.core/debug/builder Finished unified build of 'geolocationClient'. Took 589.057 ms.
+```
 
 ## High CPU usage
 

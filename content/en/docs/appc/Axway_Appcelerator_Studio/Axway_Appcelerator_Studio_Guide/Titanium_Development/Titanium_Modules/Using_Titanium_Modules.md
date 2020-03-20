@@ -133,26 +133,23 @@ Switching a SDK will re-validate the modules based on their compatibility with t
 
 4. In the application's tiapp.xml, find the <modules/> node, and replace it with the new <modules> content. If you already have modules, just add a new node for the new module. Note that the "version" and "platform" attributes are optional. When "version" is not specified, the latest version of the module will be used (as of Titanium SDK 2.0.0), and the "platform" tag is only necessary when using a module that is not available on both platforms.
 
-    `<``ti``:app>`
-
-    `<!-- $MODULE_VERSION should be the same as "version" from above -->`
-
-    `<``modules``>`
-
-    `<!-- For example, if we were adding the greystripe module: -->`
-
-    `<``module`  `version``=``"1.1"`  `platform``=``"ios"``>ti.greystripe</``module``>`
-
-    `</``modules``>`
-
-    `</``ti``:app>`
+    ```xml
+    <ti:app>
+      <!-- $MODULE_VERSION should be the same as "version" from above -->
+      <modules>
+        <!-- For example, if we were adding the greystripe module: -->
+        <module version="1.1" platform="ios">ti.greystripe</module>
+      </modules>
+    </ti:app>
+    ```
 
 5. Use the require function to load the module in the app's code, for example:
 
-    `var` `Module = require(``'$MODULE_ID'``);`
+    ```javascript
+    var Module = require('$MODULE_ID');
 
-    `// For example, to load the greystripe module:`
-
-    `var` `greystripe = require(``'ti.greystripe'``);`
+    // For example, to load the greystripe module:
+    var greystripe = require('ti.greystripe');
+    ```
 
 6. The next time the app is launched or built, the module should be included with the application.

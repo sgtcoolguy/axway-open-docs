@@ -22,13 +22,17 @@ Debugging is a bit of a misnomer, as currently, you can only really set trace ou
 
 You can write directly to the Scripting Console by using CONSOLE.puts, i.e.:
 
-`CONSOLE.puts` `"Hello!"`
+```
+CONSOLE.puts "Hello!"
+```
 
 ## Set the logging level
 
 You can set the logging level in a script:
 
-`Ruble::Logger.log_level = :trace`
+```
+Ruble::Logger.log_level = :trace
+```
 
 Logging levels are:
 
@@ -52,81 +56,62 @@ The logging level will persist at the newly set level until it is explicitly cha
 
 An example of turning on logging and writing out the trace, info, warning, and error messages.
 
-`require` `'ruble'`
+```
+require 'ruble'
+require 'ruble/ui'
 
-`require` `'ruble/ui'`
+Ruble::Logger.log_level = :trace
 
-`Ruble::Logger.log_level = :trace`
-
-`command` `'Tidy'`  `do` `|cmd|`
-
-`cmd.output = :replace_document`
-
-`cmd.input = :document`
-
-`cmd.invoke` `do` `|context|`
-
-`Ruble::Logger.trace` `"trace"`
-
-`Ruble::Logger.log_info` `"Info"`
-
-`Ruble::Logger.log_warning` `"Warning"`
-
-`Ruble::Logger.log_error` `"Error"`
-
-`end`
-
-`end`
+command 'Tidy' do |cmd|
+  cmd.output = :replace_document
+  cmd.input = :document
+  cmd.invoke do |context|
+    Ruble::Logger.trace "trace"
+    Ruble::Logger.log_info "Info"
+    Ruble::Logger.log_warning "Warning"
+    Ruble::Logger.log_error "Error"
+  end
+end
+```
 
 ## Writing out properties
 
 It's sometimes helpful to write out the properties of the current context object. An example of doing so:
 
-`command` `"Print Context Properties"`  `do` `|cmd|`
-
-`cmd.invoke` `do` `|context|`
-
-`context.dynamic_properties.each { |k| CONSOLE.puts` `"#{k}\n"` `}`
-
-`end`
-
-`end`
+```
+command "Print Context Properties" do |cmd|
+  cmd.invoke do |context|
+    context.dynamic_properties.each { |k| CONSOLE.puts "#{k}\n" }
+  end
+end
+```
 
 prints:
 
-`project`
-
-`editor`
-
-`input_type`
-
-`browser`
-
-`command`
-
-`bundle`
-
-`TM_SELECTED_FILES`
-
-`1316024714117_env`
-
-`test_property`
-
-`invoked_via`
+```
+project
+editor
+input_type
+browser
+command
+bundle
+TM_SELECTED_FILES
+1316024714117_env
+test_property
+invoked_via
+```
 
 ## Writing out available methods
 
 It's also sometimes useful to write out the methods available on a particular object, i.e.:
 
-`command` `"Print Document Methods"`  `do` `|cmd|`
-
-`cmd.invoke` `do` `|context|`
-
-`CONSOLE.puts context.editor.document.public_methods(``true``).sort`
-
-`end`
-
-`end`
+```
+command "Print Document Methods" do |cmd|
+  cmd.invoke do |context|
+    CONSOLE.puts context.editor.document.public_methods(true).sort
+  end
+end
+```
 
 ## Disabling caching
 

@@ -63,155 +63,91 @@ The application can monitor the [accessibilityChanged](#!/api/Titanium.App-event
 
 Android TalkBack and iOS VoiceOver behave differently with navigation and spoken feedback. Take the following code as an example:
 
-`var` `win = Ti.UI.createWindow({`
-
-`title:` `'Welcome'``,`
-
-`layout:` `'vertical'``,`
-
-`backgroundColor:` `'white'`
-
-`});`
-
-`var` `win2 = Ti.UI.createWindow({`
-
-`layout:` `'vertical'``,`
-
-`left:` `'25dp'``,`
-
-`top:` `'25dp'``,`
-
-`width:` `'100dp'``,`
-
-`height:` `'100dp'``,`
-
-`backgroundColor:` `'red'``,`
-
-`zIndex: 1,`
-
-`});`
-
-`var` `button2 = Ti.UI.createButton({`
-
-`title:` `'Red'``,`
-
-`accessibilityLabel:` `'Double-click me to close the red window'`
-
-`});`
-
-`button2.addEventListener(``'click'``,` `function``(){`
-
-`win2.close();`
-
-`});`
-
-`var` `label2 = Ti.UI.createLabel({`
-
-`text:` `'Salut, Monde!'``,`
-
-`font: {fontSize:` `'24dp'``},`
-
-`accessibilityHint:` `'I do not speak French.'`
-
-`});`
-
-`win2.add(label2);`
-
-`win2.add(button2);`
-
-`var` `win3 = Ti.UI.createWindow({`
-
-`layout:` `'vertical'``,`
-
-`bottom:` `'25dp'``,`
-
-`right:` `'25dp'``,`
-
-`width:` `'100dp'``,`
-
-`height:` `'100dp'``,`
-
-`backgroundColor:` `'blue'``,`
-
-`zIndex: 3,`
-
-`accessibilityHint:` `'I am a blue window'`
-
-`});`
-
-`var` `button3 = Ti.UI.createButton({`
-
-`title:` `'Blue'``,`
-
-`accessibilityHint:` `'Close the blue window.'`
-
-`});`
-
-`button3.addEventListener(``'click'``,` `function``(){`
-
-`win3.close();`
-
-`});`
-
-`var` `label3 = Ti.UI.createLabel({`
-
-`text:` `'Hello, World!'``,`
-
-`font: {fontSize:` `'24dp'``},`
-
-`accessibilityLabel:` `'You pushed me'``,`
-
-`accessibilityValue:` `'Nominal'``,`
-
-`accessibilityHint:` `'I am a label'`
-
-`});`
-
-`win3.add(label3);`
-
-`win3.add(button3);`
-
-`var` `slider = Ti.UI.createSlider({`
-
-`min: 0,`
-
-`max: 100,`
-
-`width:` `'100%'``,`
-
-`value: 50`
-
-`});`
-
-`var` `button = Ti.UI.createButton({`
-
-`title:` `'Open'`
-
-`});`
-
-`button.addEventListener(``'click'``,` `function``() {`
-
-`win2.open();`
-
-`win3.open();`
-
-`});`
-
-`var` `label = Ti.UI.createLabel({`
-
-`text:` `'I pity the foo.'``,`
-
-`font: {fontSize:` `'24dp'``}`
-
-`})`
-
-`win.add(button);`
-
-`win.add(slider);`
-
-`win.add(label);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow({
+    title: 'Welcome',
+    layout: 'vertical',
+    backgroundColor: 'white'
+});
+
+var win2 = Ti.UI.createWindow({
+    layout: 'vertical',
+    left: '25dp',
+    top: '25dp',
+    width: '100dp',
+    height: '100dp',
+    backgroundColor: 'red',
+    zIndex: 1,
+});
+
+var button2 = Ti.UI.createButton({
+    title: 'Red',
+    accessibilityLabel: 'Double-click me to close the red window'
+});
+button2.addEventListener('click', function(){
+  win2.close();
+});
+var label2 = Ti.UI.createLabel({
+    text: 'Salut, Monde!',
+    font: {fontSize: '24dp'},
+    accessibilityHint: 'I do not speak French.'
+});
+
+win2.add(label2);
+win2.add(button2);
+
+var win3 = Ti.UI.createWindow({
+    layout: 'vertical',
+    bottom: '25dp',
+    right: '25dp',
+    width: '100dp',
+    height: '100dp',
+    backgroundColor: 'blue',
+    zIndex: 3,
+    accessibilityHint: 'I am a blue window'
+});
+
+var button3 = Ti.UI.createButton({
+    title: 'Blue',
+    accessibilityHint: 'Close the blue window.'
+});
+button3.addEventListener('click', function(){
+    win3.close();
+});
+var label3 = Ti.UI.createLabel({
+    text: 'Hello, World!',
+    font: {fontSize: '24dp'},
+    accessibilityLabel: 'You pushed me',
+    accessibilityValue: 'Nominal',
+    accessibilityHint: 'I am a label'
+});
+
+win3.add(label3);
+win3.add(button3);
+
+var slider = Ti.UI.createSlider({
+    min: 0,
+    max: 100,
+    width: '100%',
+    value: 50
+});
+var button = Ti.UI.createButton({
+    title: 'Open'
+});
+button.addEventListener('click', function() {
+    win2.open();
+    win3.open();
+});
+var label = Ti.UI.createLabel({
+    text: 'I pity the foo.',
+    font: {fontSize: '24dp'}
+})
+
+win.add(button);
+win.add(slider);
+win.add(label);
+win.open();
+```
 
 Initially, the application displays a white window with a button, slider and label. At this point in the user experience, both TalkBack and VoiceOver behave similarly. Since none of the accessibility properties are defined, both spoken feedback assistants provide default feedback. See the table below for the spoken responses of each element.
 

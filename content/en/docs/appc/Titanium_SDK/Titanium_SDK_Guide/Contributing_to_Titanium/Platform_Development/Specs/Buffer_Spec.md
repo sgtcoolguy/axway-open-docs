@@ -30,98 +30,72 @@ In order to support generic handling of Stream operations, all read / write oper
 
 Creating buffer object:
 
-`// the only creation argument supported is size`
-
-`Buffer Ti.createBuffer()` `// buffer is empty with size 0 if no size is specified`
-
-`Buffer Ti.createBuffer({length: x})`
+```
+// the only creation argument supported is size
+Buffer Ti.createBuffer() // buffer is empty with size 0 if no size is specified
+Buffer Ti.createBuffer({length: x})
+```
 
 Members:
 
-`/*`
-
-`length is accessed via standard get / set methods. When length is modified, `
-
-`the buffer will be re-sized while preserving existing where possible. If the new buffer size`
-
-`is smaller than the size of the existing data then the existing data will be truncated down to `
-
-`the size of the new buffer.`
-
-`*/`
-
-`int` `length;`
+```
+/*
+length is accessed via standard get / set methods.  When length is modified,
+the buffer will be re-sized while preserving existing where possible.  If the new buffer size
+is smaller than the size of the existing data then the existing data will be truncated down to
+the size of the new buffer.
+*/
+int length;
+```
 
 Methods:
 
-`// appends specified buffer to the current buffer. Buffer is grown dynamically to accommodate the `
+```
+// appends specified buffer to the current buffer.  Buffer is grown dynamically to accommodate the
+// additional data if need be.  returns the number of bytes appended
+int append(Buffer sourceBuffer)
 
-`// additional data if need be. returns the number of bytes appended`
+// same as normal append except this allows appending only <sourceLength> bytes from the
+// <sourceBuffer> starting at <sourceOffset>. returns the number of bytes appended
+int append(Buffer sourceBuffer, int sourceOffset, int sourceLength)
 
-`int` `append(Buffer sourceBuffer)`
+// inserts <sourceBuffer> into the current buffer at <offset>.  Buffer is grown to accommodate
+// the new data.  returns the number of bytes inserted
+int insert(Buffer sourceBuffer, int offset)
 
-`// same as normal append except this allows appending only <sourceLength> bytes from the `
+// inserts <sourceLength> amount of data starting at <sourceOffset> from <sourceBuffer> into
+// current buffer at <offset>.  Buffer is grown to accommodate the new data.  returns
+// the number of bytes inserted
+int insert(Buffer sourceBuffer, int offset, int sourceOffset, int sourceLength)
 
-`// <sourceBuffer> starting at <sourceOffset>. returns the number of bytes appended`
+// copies the contents of <sourceBuffer> into the current buffer at <offset>.  will not
+// expand buffer if there is not enough room in the current buffer to accomodate all
+// the requested data from <sourceBuffer>.  returns the number of bytes copied
+int copy(Buffer sourceBuffer, int offset)
 
-`int` `append(Buffer sourceBuffer,` `int` `sourceOffset,` `int` `sourceLength)`
+// copies <sourceLength> contents from <sourceBuffer> starting at <sourceOffset> into the
+// current buffer at <offset>.  will not expand buffer if there is not enough room
+// in the current buffer to accomodate all the request data from <sourceBuffer>.  returns
+// the number of bytes copied
+int copy(Buffer sourceBuffer, int offset, int sourceOffset, int sourceLength)
 
-`// inserts <sourceBuffer> into the current buffer at <offset>. Buffer is grown to accommodate `
+Buffer clone() // create new copy of the current buffer
 
-`// the new data. returns the number of bytes inserted`
+// creates a new buffer from the original buffer contents starting at <offset>
+// and ending at <offset> + <length>
+Buffer clone(int offset, int length)
 
-`int` `insert(Buffer sourceBuffer,` `int` `offset)`
+void fill(int fillByte) // fills buffer with <fillByte>
+// fills buffer starting from <offset> until <length> number of <fillByte> has
+// been written or the end of the buffer is reached
+void fill(int fillByte, int offset, int length)
 
-`// inserts <sourceLength> amount of data starting at <sourceOffset> from <sourceBuffer> into `
+void clear() // clears buffer contents but does not change the size of the buffer
 
-`// current buffer at <offset>. Buffer is grown to accommodate the new data. returns`
+// releases the space allocated to the buffer, sets length to 0.  This is effectively
+// nothing more than an alias for buffer.length = 0
+void release()
 
-`// the number of bytes inserted`
-
-`int` `insert(Buffer sourceBuffer,` `int` `offset,` `int` `sourceOffset,` `int` `sourceLength)`
-
-`// copies the contents of <sourceBuffer> into the current buffer at <offset>. will not `
-
-`// expand buffer if there is not enough room in the current buffer to accomodate all`
-
-`// the requested data from <sourceBuffer>. returns the number of bytes copied`
-
-`int` `copy(Buffer sourceBuffer,` `int` `offset)`
-
-`// copies <sourceLength> contents from <sourceBuffer> starting at <sourceOffset> into the `
-
-`// current buffer at <offset>. will not expand buffer if there is not enough room`
-
-`// in the current buffer to accomodate all the request data from <sourceBuffer>. returns `
-
-`// the number of bytes copied`
-
-`int` `copy(Buffer sourceBuffer,` `int` `offset,` `int` `sourceOffset,` `int` `sourceLength)`
-
-`Buffer clone()` `// create new copy of the current buffer`
-
-`// creates a new buffer from the original buffer contents starting at <offset> `
-
-`// and ending at <offset> + <length>`
-
-`Buffer clone(``int` `offset,` `int` `length)`
-
-`void` `fill(``int` `fillByte)` `// fills buffer with <fillByte>`
-
-`// fills buffer starting from <offset> until <length> number of <fillByte> has `
-
-`// been written or the end of the buffer is reached`
-
-`void` `fill(``int` `fillByte,` `int` `offset,` `int` `length)`
-
-`void` `clear()` `// clears buffer contents but does not change the size of the buffer`
-
-`// releases the space allocated to the buffer, sets length to 0. This is effectively `
-
-`// nothing more than an alias for buffer.length = 0`
-
-`void` `release()`
-
-`String toString()` `// converts buffer to string`
-
-`Blob toBlob()` `// converts buffer to TiBlob`
+String toString() // converts buffer to string
+Blob toBlob() // converts buffer to TiBlob
+```

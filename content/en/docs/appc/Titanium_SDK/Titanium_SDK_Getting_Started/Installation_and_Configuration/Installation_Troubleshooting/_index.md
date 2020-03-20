@@ -30,7 +30,9 @@ If you see the error, "Could not locate the Android SDK at the given path", when
 
 If you see the error, "xcopy is not recognized as an internal or external command", when attempting to install the Android SDK with the Studio configuration wizard, it is caused by a Windows system PATH misconfiguration. To resolve it, add the following path **to the beginning** of your system PATH:
 
-`%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;`
+```
+%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;
+```
 
 See [Configuring Environment Variables on Windows](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Software_Locations_and_Environment_Variables/#configuring-environment-variables-on-windows) for instructions about how to do this.
 
@@ -46,7 +48,9 @@ In order to test your applications on an Android-powered device connected to you
 
 During development, when using the [Titanium.Database](#!/api/Titanium.Database) module in your project, you may receive an error such as:
 
-`Error` `in` `compiler. <class` `'sqlite3.OperationalError'``>, unable to` `open` `database` `file`
+```
+Error in compiler. <class 'sqlite3.OperationalError'>, unable to open database file
+```
 
 Try disabling on-access antivirus scanning to determine whether it is the cause. If so, it is recommended to create an exception rule in the antivirus software, rather than disabling on-access scanning altogether.
 
@@ -82,58 +86,34 @@ To copy your output, ready to paste into a text document or to share:
 
 Do not post your output directly into the [Q&A](http://developer.appcelerator.com/questions/created), as the formatting is likely to be messy making it difficult for others to interpret. Instead, create a new [GitHub Gist](https://gist.github.com/). To do this, paste the **unedited** output into the main Gist text area, click the **Create Public Gist** button at the bottom of the page and copy and share the resulting URL from your browser address bar.
 
-`cls`
-
-`cd` `\`
-
-`echo` `%PROGRAMFILES%`
-
-`echo` `%PROGRAMDATA%`
-
-`echo` `%USERPROFILE%`
-
-`echo` `%PATH%`
-
-`echo` `%JAVA_HOME%`
-
-`java -version`
-
-`javac -version`
-
-`python -V`
-
-`git --version`
-
-`rem` `if` `the ANDROID_SDK variable is configured, please delete it and run this script again`
-
-`echo` `%ANDROID_SDK%`
-
-`adb version`
-
-`cd` `%PROGRAMFILES%`
-
-`android list target`
-
-`cd` `\`
-
-`rem --- The following are optional ---`
-
-`rem ----------------------------------`
-
-`scons -``v`
-
-`rem ----------------------------------`
-
-`echo` `%HTTP_PROXY%`
-
-`echo` `%HTTPS_PROXY%`
-
-`rem ----------------------------------`
-
-`echo` `%SOCKS_PROXY%`
-
-`rem ----------------------------------`
-
-`rem`
+```
+cls
+cd \
+echo %PROGRAMFILES%
+echo %PROGRAMDATA%
+echo %USERPROFILE%
+echo %PATH%
+echo %JAVA_HOME%
+java -version
+javac -version
+python -V
+git --version
+rem if the ANDROID_SDK variable is configured, please delete it and run this script again
+echo %ANDROID_SDK%
+adb version
+cd %PROGRAMFILES%
+android list target
+cd \
+rem --- The following are optional ---
+rem ----------------------------------
+scons -v
+rem ----------------------------------
+echo %HTTP_PROXY%
+echo %HTTPS_PROXY%
+rem ----------------------------------
+echo %SOCKS_PROXY%
+rem ----------------------------------
+rem
+```
 
 Bear in mind that the installed android packages and software versions are correct at the time of writing, but are likely to change in future.

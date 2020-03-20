@@ -48,21 +48,16 @@ To create a SearchableItemAttributeSet object, use the Titanium.App.iOS.createSe
 
 Besides the itemContentType property, set other document-specific properties to describe the content to be indexed. For example, the code below describes an item for an audio file.
 
-`var` `itemAttr = Ti.App.iOS.createSearchableItemAttributeSet({`
-
-`itemContentType: Ti.App.iOS.UTTYPE_AUDIO,`
-
-`title:` `'While My Guitar Gently Weeps'``,`
-
-`artist:` `'The Beatles'``,`
-
-`album:` `'The Beatles (White Album)'``,`
-
-`musicalGenre:` `'Rock'``,`
-
-`keywords: [``'love'``,` `'sleeping'``,` `'floor'``,` `'sweeping'``]`
-
-`});`
+```javascript
+var itemAttr = Ti.App.iOS.createSearchableItemAttributeSet({
+    itemContentType: Ti.App.iOS.UTTYPE_AUDIO,
+    title: 'While My Guitar Gently Weeps',
+    artist: 'The Beatles',
+    album: 'The Beatles (White Album)',
+    musicalGenre: 'Rock',
+    keywords: ['love', 'sleeping', 'floor', 'sweeping']
+});
+```
 
 To create a SearchableItem object, use the Titanium.App.iOS.createSearchableItem() method. Pass the method a dictionary with the following properites defined. Only the attributeSet property is required to be set.
 
@@ -74,33 +69,26 @@ To create a SearchableItem object, use the Titanium.App.iOS.createSearchableItem
 
 * uniqueIdentifier: user-defined string that uniquely identifiers the object within the application.
 
-`var` `item = Ti.App.iOS.createSearchableItem({`
-
-`identifier:` `'beatles-white-album-lp-1-track-7'``,`
-
-`domainIdentifier:` `'beatles-white-album'``,`
-
-`attributeSet: itemAttr`
-
-`});`
+```javascript
+var item = Ti.App.iOS.createSearchableItem({
+    identifier: 'beatles-white-album-lp-1-track-7',
+    domainIdentifier: 'beatles-white-album',
+    attributeSet: itemAttr
+});
+```
 
 To index the item, create an instance of a SearchableIndex with the Titanium.App.iOS.createSearchableIndex() method. Invoke the addToDefaultSearchAbleIndex() method on the instance, and pass the method an array of SearchableItem objects to index and a callback function to handle the success and error cases.
 
-`var` `indexer = Ti.App.iOS.createSearchableIndex();`
-
-`indexer.addToDefaultSearchableIndex([item],` `function``(e) {`
-
-`if` `(e.success) {`
-
-`alert(``'Press the home button and now search for your keywords'``);`
-
-`}` `else` `{`
-
-`alert(``'Error: '` `+ JSON.stringify(e.error));`
-
-`}`
-
-`});`
+```javascript
+var indexer = Ti.App.iOS.createSearchableIndex();
+indexer.addToDefaultSearchableIndex([item], function(e) {
+    if (e.success) {
+        alert('Press the home button and now search for your keywords');
+    } else {
+        alert('Error: ' + JSON.stringify(e.error));
+    }
+});
+```
 
 When you run the above code, after the success dialog appears, close the application and go to Spotlight search by swiping to the right on the home screen. Searching for any of the terms from the attribute set will display the item and application as a result.
 
@@ -120,39 +108,26 @@ To index an activity:
 
 For example, if the user activity is editing a document, you may want to advertise the activity to spotlight.
 
-`var` `itemAttr = Ti.App.iOS.createSearchableItemAttributeSet({`
+```javascript
+var itemAttr = Ti.App.iOS.createSearchableItemAttributeSet({
+    itemContentType: 'com.microsoft.word.doc',
+    title: 'How to Make Activities Searchable',
+    contentDescription: 'How-to guide about making a handoff activity appear in spotlight',
+    editors: ['user@foo.com', 'editor@apple.com'],
+    keywords:['titanium', 'activity', 'handoff', 'spotlight']
+});
 
-`itemContentType:` `'com.microsoft.word.doc'``,`
-
-`title:` `'How to Make Activities Searchable'``,`
-
-`contentDescription:` `'How-to guide about making a handoff activity appear in spotlight'``,`
-
-`editors: [``'user@foo.com'``,` `'editor@apple.com'``],`
-
-`keywords:[``'titanium'``,` `'activity'``,` `'handoff'``,` `'spotlight'``]`
-
-`});`
-
-`var` `activity = Ti.App.iOS.createUserActivity({`
-
-`activityType:` `'com.foo.edit.docx'``,`
-
-`title:``'Edit the Document'``,`
-
-`userInfo:{`
-
-`filename:` `'howto.docx'`
-
-`},`
-
-`eligibleForSearch:` `true`
-
-`});`
-
-`activity.addContentAttributeSet(itemAttr);`
-
-`activity.becomeCurrent();`
+var activity = Ti.App.iOS.createUserActivity({
+    activityType: 'com.foo.edit.docx',
+    title:'Edit the Document',
+    userInfo:{
+        filename: 'howto.docx'
+    },
+    eligibleForSearch: true
+});
+activity.addContentAttributeSet(itemAttr);
+activity.becomeCurrent();
+```
 
 ![activitysearch](/Images/appc/download/attachments/43315092/activitysearch.png)
 
@@ -170,21 +145,19 @@ The event will be passed an object with the following properties:
 
 To respond to a launch from Spotlight, check to see if the activityType is set to com.apple.corespotlightitem, then use the searchableItemActivityIdentifier to navigate to the item.
 
-`Ti.App.iOS.addEventListener(``'continueactivity'``,` `function``(e) {`
+```javascript
+Ti.App.iOS.addEventListener('continueactivity', function(e) {
 
-`// Not launched from Spotlight`
+    // Not launched from Spotlight
+    if (e.activityType !== 'com.apple.corespotlightitem') {
+        return
+    }
 
-`if` `(e.activityType !==` `'com.apple.corespotlightitem'``) {`
+    var uniqueIdentifier = e.searchableItemActivityIdentifier;
 
-`return`
-
-`}`
-
-`var` `uniqueIdentifier = e.searchableItemActivityIdentifier;`
-
-`// Navigate to the content`
-
-`});`
+    // Navigate to the content
+});
+```
 
 ## Mark up web content
 

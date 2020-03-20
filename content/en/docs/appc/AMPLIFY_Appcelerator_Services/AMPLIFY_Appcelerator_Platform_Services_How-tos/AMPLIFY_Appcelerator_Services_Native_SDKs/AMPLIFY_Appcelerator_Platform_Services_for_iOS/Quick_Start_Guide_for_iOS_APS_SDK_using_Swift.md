@@ -1,6 +1,6 @@
 {"title":"Quick Start Guide for iOS APS SDK using Swift","weight":"20"}
 
-Pro or Enterprise Subscription Required
+*Pro or Enterprise Subscription Required*
 
 This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.
 
@@ -38,7 +38,7 @@ This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscrip
 
 This guide walks through the setup of the AMPLIFY Appcelerator Services for iOS applications. The AMPLIFY Appcelerator Services SDK gives you access to the Appcelerator Analytics and Cloud services. Note that the Appcelerator Test service does not currently work with Swift projects.
 
-Not developing a native iOS application with Swift?
+*Not developing a native iOS application with Swift?*
 
 See the following topics to use the AMPLIFY Appcelerator Services on other platforms:
 
@@ -220,17 +220,21 @@ The following tutorial demonstrates the basic setup and usage of Analytics and C
 
 11. Open the bridging header file and add the following import statement:
 
-    `#``import` `<Appcelerator/Appcelerator.h>`
+    ```
+    #import <Appcelerator/Appcelerator.h>
+    ```
 
 12. Open the application delegate file (AppDelegate.swift) and add the following initialization code to the application() method:
 
-    `APSServiceManager.sharedInstance().enableWithAppKey(``"APS_APP_KEY"``);`
+    ```
+    APSServiceManager.sharedInstance().enableWithAppKey("APS_APP_KEY");
+    ```
 
     The iOS application is now ready to make method calls using the APS SDK APIs.
 
 If the application attempts to make APS SDK API calls without first setting the application key, the application will raise an exception and crash.
 
-Bridging Header File
+*Bridging Header File*
 
 Alternatively, to have Xcode automatically create a bridging header file and add the build flag:
 
@@ -274,87 +278,64 @@ Customize the application's UI to display a picker, text field and button, and a
 
     4. Implement the methods of UIPickerViewDelegate, UIPickerViewDataSource and UITextFieldDelegate protocols. Add the following code to the file:
 
-    ViewController.swift
+    *ViewController.swift*
 
-    `import` `UIKit`
+    ```swift
+    import UIKit
 
-    `class` `ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {`
+    class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+        @IBOutlet weak var textField: UITextField!
+        @IBOutlet weak var picker: UIPickerView!
 
-    `@IBOutlet` `weak var textField: UITextField!`
+        // Add these variables
+        var username: String = ""
+        var usernames: [Dictionary<String,AnyObject>] = []
 
-    `@IBOutlet` `weak var picker: UIPickerView!`
+        override func viewDidLoad() {
+            super.viewDidLoad()
 
-    `// Add these variables`
+            // Add these statements to dismiss the keyboard
+            self.textField.delegate = self
+            self.textField.resignFirstResponder()
+        }
 
-    `var username: String =` `""`
+        override func didReceiveMemoryWarning() {
+            super.didReceiveMemoryWarning()
+        }
 
-    `var usernames: [Dictionary<String,AnyObject>] = []`
+        // Add these methods
 
-    `override func viewDidLoad() {`
+        @IBAction func onClick(sender: UIButton) {
 
-    `super``.viewDidLoad()`
+        }
 
-    `// Add these statements to dismiss the keyboard`
+        // MARK: Picker DataSource/Delegate
+        func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+            return 1;
+        }
 
-    `self.textField.delegate = self`
+        func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+            return self.usernames.count
+        }
 
-    `self.textField.resignFirstResponder()`
+        func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+            return self.usernames[row]["username"] as String
+        }
 
-    `}`
+        func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            self.username = self.usernames[row]["username"] as String
+        }
 
-    `override func didReceiveMemoryWarning() {`
+        // MARK: TextField Delegate
+        func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+            return true
+        }
 
-    `super``.didReceiveMemoryWarning()`
-
-    `}`
-
-    `// Add these methods`
-
-    `@IBAction` `func onClick(sender: UIButton) {`
-
-    `}`
-
-    `// MARK: Picker DataSource/Delegate`
-
-    `func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {`
-
-    `return`  `1``;`
-
-    `}`
-
-    `func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {`
-
-    `return` `self.usernames.count`
-
-    `}`
-
-    `func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {`
-
-    `return` `self.usernames[row][``"username"``] as String`
-
-    `}`
-
-    `func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {`
-
-    `self.username = self.usernames[row][``"username"``] as String`
-
-    `}`
-
-    `// MARK: TextField Delegate`
-
-    `func textFieldShouldBeginEditing(textField: UITextField) -> Bool {`
-
-    `return`  `true`
-
-    `}`
-
-    `func textFieldShouldReturn(textField: UITextField) -> Bool {`
-
-    `return`  `true`
-
-    `}`
-
-    `}`
+        func textFieldShouldReturn(textField: UITextField) -> Bool {
+            return true
+        }
+    }
+    ```
 
 8. Control-drag the Button to the onClick() method to create an action connection.
 
@@ -366,9 +347,11 @@ The Analytics library automatically captures and sends application life-cycle ev
 
 In the doClick method, add a APSAnalytics.sharedInstance().sendAppFeatureEvent() method call to send a feature event with the string "sample.feature.login". The optional payload parameter is set to nil for this example, but it lets you send additional data along with the event.
 
-ViewController.swift
+*ViewController.swift*
 
-`APSAnalytics.sharedInstance().sendAppFeatureEvent(``"sample.feature.login"``, payload: nil)`
+```swift
+APSAnalytics.sharedInstance().sendAppFeatureEvent("sample.feature.login", payload: nil)
+```
 
 ### Query Cloud Users
 
@@ -376,91 +359,66 @@ To use the APS Cloud component, most of the methods require a user to be logged 
 
 Every APS Cloud method includes a withBlock parameter that specifies the callback to handle the server response. The callback is passed an APSResponse object that contains response metadata (such as success or failure) and the response payload.
 
-ViewController.swift
+*ViewController.swift*
 
-`APSUsers.query(nil, {(e: APSResponse!) -> Void in`
-
-`if` `(e.success) {`
-
-`self.usernames = e.valueForKey(``"response"``)?.valueForKey(``"users"``) as [Dictionary<String,AnyObject>]`
-
-`self.picker.reloadAllComponents()`
-
-`}` `else` `{`
-
-`var alert: UIAlertView = UIAlertView(title:` `"Error"``, message:` `"Unable to retrieve user accounts!"``, delegate: nil, cancelButtonTitle:` `"OK"``)`
-
-`alert.show()`
-
-`}`
-
-`})`
+```swift
+APSUsers.query(nil, {(e: APSResponse!) -> Void in
+    if (e.success) {
+        self.usernames = e.valueForKey("response")?.valueForKey("users") as [Dictionary<String,AnyObject>]
+        self.picker.reloadAllComponents()
+    } else {
+        var alert: UIAlertView = UIAlertView(title: "Error", message: "Unable to retrieve user accounts!", delegate: nil, cancelButtonTitle: "OK")
+        alert.show()
+    }
+})
+```
 
 ### Log in to a Cloud Account
 
 To log in to a Cloud account, you need the username and password. Since the application was modified to get all available user accounts and populate the Picker View, the application needs to get the current value of the picker and the text entered in the Text Field. These values are passed to the APSUsers.login() method. Modify the doClick method to login to a Cloud user account.
 
-ViewController.swift
+*ViewController.swift*
 
-`@IBAction` `func onClick(sender: UIButton) {`
+```swift
+@IBAction func onClick(sender: UIButton) {
+    // Send analytics feature event
+    APSAnalytics.sharedInstance().sendAppFeatureEvent("sample.feature.login", payload: nil)
 
-`// Send analytics feature event`
-
-`APSAnalytics.sharedInstance().sendAppFeatureEvent(``"sample.feature.login"``, payload: nil)`
-
-`// Login to a Cloud account`
-
-`var params = [`
-
-`"login"` `: self.username,`
-
-`"password"` `: self.textField.text`
-
-`]`
-
-`APSUsers.login(params, { (e: APSResponse!) -> Void in`
-
-`if` `(e.success) {`
-
-`NSLog(``"Successfully logged in as %@"``, self.username)`
-
-`}` `else` `{`
-
-`NSLog(``"ERROR: Failed to log in!"``)`
-
-`}`
-
-`})`
-
-`}`
+    // Login to a Cloud account
+    var params = [
+        "login" : self.username,
+        "password" : self.textField.text
+    ]
+    APSUsers.login(params, { (e: APSResponse!) -> Void in
+        if (e.success) {
+            NSLog("Successfully logged in as %@", self.username)
+        } else {
+            NSLog("ERROR: Failed to log in!")
+        }
+    })
+}
+```
 
 ### Set a Username for Crash Logs
 
 To help differentiate crash logs, use the username property. When the application successfully logs in to the Cloud user account, the application sets the username property.
 
-ViewController.swift
+*ViewController.swift*
 
-`@IBAction` `func onClick(sender: UIButton) {`
+```swift
+@IBAction func onClick(sender: UIButton) {
 
-`APSUsers.login(params, { (e: APSResponse!) -> Void in`
-
-`if` `(e.success) {`
-
-`NSLog(``"Successfully logged in as %@"``, self.username)`
-
-`// Add this Performance call`
-
-`APSPerformance.sharedInstance().username = self.username`
-
-`}` `else` `{`
-
-`NSLog(``"ERROR: Failed to log in!"``)`
-
-`}`
-
-`})`
-
-`}`
+    APSUsers.login(params, { (e: APSResponse!) -> Void in
+        if (e.success) {
+            NSLog("Successfully logged in as %@", self.username)
+            // Add this Performance call
+            APSPerformance.sharedInstance().username = self.username
+        } else {
+            NSLog("ERROR: Failed to log in!")
+        }
+    })
+}
+```
 
 ### Testing the Tutorial Sample
 

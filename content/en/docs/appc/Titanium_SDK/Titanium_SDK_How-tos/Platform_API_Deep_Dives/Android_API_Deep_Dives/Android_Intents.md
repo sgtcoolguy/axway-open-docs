@@ -42,7 +42,7 @@ There are two kinds of intents:
 
 * _Implicit intents_ do **NOT** specify the application to start. Instead, they declare a general action. The user can decide which application to start if multiple applications can handle the action or a default application has not been selected by the user. For example, if a user opens their browser and highlights some text, the user can share that text with other Android apps, such as an e-mail application, SMS application or a social networking application.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>The user highlights the text and<br>clicks the <strong>Share</strong> button.</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The <strong>Share</strong> dialog appears and<br>the user can select the application<br>to send the text to, such as...</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>...an e-mail application,</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>...an SMS application</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>...or a social networking<br>application like Google+.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/HighlightText.png" alt="images/download/attachments/43287298/HighlightText.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/ShareDialog.png" alt="images/download/attachments/43287298/ShareDialog.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/EmailClient.png" alt="images/download/attachments/43287298/EmailClient.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/SmsClient.png" alt="images/download/attachments/43287298/SmsClient.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/GooglePlusShare.png" alt="images/download/attachments/43287298/GooglePlusShare.png" class="confluence-embedded-image"></p><p></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>The user highlights the text and<br>clicks the <strong class=" ">Share</strong> button.</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The <strong class=" ">Share</strong> dialog appears and<br>the user can select the application<br>to send the text to, such as...</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>...an e-mail application,</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>...an SMS application</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>...or a social networking<br>application like Google+.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/HighlightText.png" alt="images/download/attachments/43287298/HighlightText.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/ShareDialog.png" alt="images/download/attachments/43287298/ShareDialog.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/EmailClient.png" alt="images/download/attachments/43287298/EmailClient.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/SmsClient.png" alt="images/download/attachments/43287298/SmsClient.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/GooglePlusShare.png" alt="images/download/attachments/43287298/GooglePlusShare.png" class="confluence-embedded-image"></p><p></p></td></tr></tbody></table>
 
 ## Create an intent
 
@@ -64,13 +64,12 @@ For the action, you can also define your own custom action name. Use a reverse d
 
 The following example creates an intent to view the data URI:
 
-`var` `intent = Ti.Android.createIntent({`
-
-`action: Ti.Android.ACTION_VIEW,`
-
-`data:` `'http://maps.google.com/maps?q=loc:37.3906238,-122.0499305,19'`
-
-`});`
+```javascript
+var intent = Ti.Android.createIntent({
+    action: Ti.Android.ACTION_VIEW,
+    data: 'http://maps.google.com/maps?q=loc:37.3906238,-122.0499305,19'
+});
+```
 
 ### Create an explicit intent
 
@@ -84,37 +83,29 @@ To create an explicit intent, in addition to the previously mentioned intent pro
 
 The following example creates an intent to launch the main activity of the MyApp application:
 
-`var` `intent = Ti.Android.createIntent({`
-
-`action: Ti.Android.ACTION_MAIN,`
-
-`className:` `'com.appcelerator.testapp.MyappActivity'``,`
-
-`packageName:` `'com.appcelerator.testapp'`
-
-`});`
-
-`// Tells the OS to reset the activity if needed or launch the application if it has not already been launched`
-
-`intent.flags |= Ti.Android.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED | Ti.Android.FLAG_ACTIVITY_SINGLE_TOP;`
+```javascript
+var intent = Ti.Android.createIntent({
+    action: Ti.Android.ACTION_MAIN,
+    className: 'com.appcelerator.testapp.MyappActivity',
+    packageName: 'com.appcelerator.testapp'
+});
+// Tells the OS to reset the activity if needed or launch the application if it has not already been launched
+intent.flags |= Ti.Android.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED | Ti.Android.FLAG_ACTIVITY_SINGLE_TOP;
+```
 
 If the application uses a JavaScript activity, add the activity to the tiapp.xml file in order to define the activity as part of the application. Create an <activities> element as a child of the <android> element, then create an <activity> element, as a child of the <activities> element, and assign the url attribute to the URL of the JavaScript file to define it as an Android activity.
 
-tiapp.xml
+*tiapp.xml*
 
-`<``ti``:app>`
-
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-`<``activities``>`
-
-`<``activity`  `url``=``"activity.js"``/>`
-
-`</``activities``>`
-
-`</``android``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  <android xmlns:android="http://schemas.android.com/apk/res/android">
+    <activities>
+      <activity url="activity.js"/>
+    </activities>
+  </android>
+</ti:app>
+```
 
 ### Add extra data
 
@@ -122,9 +113,10 @@ To send extra data with the intent, which can be used by the activity, use the I
 
 The following example adds a custom field called "timestamp" to the intent and the Android-defined EXTRA\_TEXT data:
 
-`intent.putExtra(``'timestamp'``,` `new` `Date());`
-
-`intent.putExtra(Ti.Android.EXTRA_TEXT,` `'Some text that we want to share'``);`
+```
+intent.putExtra('timestamp', new Date());
+intent.putExtra(Ti.Android.EXTRA_TEXT, 'Some text that we want to share');
+```
 
 ### Add a category
 
@@ -164,49 +156,35 @@ Wait for the TabGroup or Window to open before invoking any methods on its activ
 
 The following example starts an activity (another application) to view the data URI:
 
-`var` `intent = Ti.Android.createIntent({`
-
-`action: Ti.Android.ACTION_VIEW,`
-
-`data:` `'http://maps.google.com/maps?q=loc:37.3906238,-122.0499305,19'`
-
-`});`
-
-`win.activity.startActivity(intent);`
+```javascript
+var intent = Ti.Android.createIntent({
+    action: Ti.Android.ACTION_VIEW,
+    data: 'http://maps.google.com/maps?q=loc:37.3906238,-122.0499305,19'
+});
+win.activity.startActivity(intent);
+```
 
 The following example starts an activity to let the user choose a contact. After the user successfully selects a contact and the activity completes, a new intent is created to view the contact using the result of the first activity. Note that the URI returned by first intent is a content provider URI (content://) and the contact information cannot be directly accessed by a Titanium application using the URI. If the application needs to retrieve and manipulate the data, you need to create a native Android module to handle content provider URIs, or in this case, the application can use the Titanium.Contacts API to directly retrieve the contact data.
 
-`// Create an intent to choose a contact`
+```javascript
+// Create an intent to choose a contact
+var intent = Ti.Android.createIntent({
+    action: Ti.Android.ACTION_GET_CONTENT,
+    type: 'vnd.android.cursor.item/contact'
+});
 
-`var` `intent = Ti.Android.createIntent({`
-
-`action: Ti.Android.ACTION_GET_CONTENT,`
-
-`type:` `'vnd.android.cursor.item/contact'`
-
-`});`
-
-`// Start an activity and execute the callback when the result returns`
-
-`win.activity.startActivityForResult(intent,` `function` `(e) {`
-
-`// If successful, open the selected contact`
-
-`if` `(e.resultCode == Ti.Android.RESULT_OK && e.intent.data) {`
-
-`var` `newIntent = Ti.Android.createIntent({`
-
-`action: Ti.Android.ACTION_VIEW,`
-
-`data: e.intent.data`
-
-`});`
-
-`win.activity.startActivity(newIntent);`
-
-`}`
-
-`});`
+// Start an activity and execute the callback when the result returns
+win.activity.startActivityForResult(intent, function (e) {
+  // If successful, open the selected contact
+  if (e.resultCode == Ti.Android.RESULT_OK && e.intent.data) {
+    var newIntent = Ti.Android.createIntent({
+      action: Ti.Android.ACTION_VIEW,
+      data: e.intent.data
+    });
+    win.activity.startActivity(newIntent);
+  }
+});
+```
 
 ## Force an intent chooser
 
@@ -214,9 +192,10 @@ If the user selects a default application to handle a specific action, the **Sha
 
 The following example creates an intent chooser that displays "Send Message" as the title of the dialog.
 
-`var` `chooser = Ti.Android.createIntentChooser(intent,` `"Send Message"``);`
-
-`win.activity.startActivity(chooser);`
+```javascript
+var chooser = Ti.Android.createIntentChooser(intent, "Send Message");
+win.activity.startActivity(chooser);
+```
 
 ## Example
 
@@ -224,111 +203,82 @@ This example shows a very common and effective use of Intents. This examples use
 
 First, create an implicit intent that sends text data. When creating the intent, set the action property to the Ti.Android.ACTION\_SEND constant and the type property to the text/plain MIME type. The following intent tells Android the application wants to send plain text data.
 
-`var` `intent = Ti.Android.createIntent({`
-
-`action: Ti.Android.ACTION_SEND,`
-
-`type:` `"text/plain"`
-
-`});`
+```javascript
+var intent = Ti.Android.createIntent({
+    action: Ti.Android.ACTION_SEND,
+    type: "text/plain"
+});
+```
 
 Next, the application needs to send the text data with the intent. Use the intent's putExtra method to send extra data with the intent. Pass the method the Ti.Android.EXTRA\_TEXT constant as the first parameter and the string to share as the second parameter. The EXTRA\_TEXT constant signifies the intent is passing a standardized Android format with the intent.
 
-`intent.putExtra(Ti.Android.EXTRA_TEXT,` `'Some text that we want to share'``);`
+```
+intent.putExtra(Ti.Android.EXTRA_TEXT, 'Some text that we want to share');
+```
 
 Use the intent's addCategory method to specify the Ti.Android.CATEGORY\_DEFAULT category, which indicates not to use any category filtering.
 
-`intent.addCategory(Ti.Android.CATEGORY_DEFAULT);`
+```
+intent.addCategory(Ti.Android.CATEGORY_DEFAULT);
+```
 
 Finally, pass the intent to the application's current Activity's startActivity() method. The application can use the activity property of either a Window or TabGroup object. Note that to invoke any methods on an activity, the application needs to wait until the Window or TabGroup is open.
 
-`// Wait for the Window or TabGroup to open before invoking any methods on the activity`
-
-`win.activity.startActivity(intent);`
+```
+// Wait for the Window or TabGroup to open before invoking any methods on the activity
+win.activity.startActivity(intent);
+```
 
 When the intent is sent, the OS should display a list of applications to launch if it has multiple applications that can receive text intents. If there are not many applications installed on the device or if the user selected a default application to handle text, the default application will be launched.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/AppUI.png" alt="images/download/attachments/43287298/AppUI.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/ShareDialog2.png" alt="images/download/attachments/43287298/ShareDialog2.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/EmailClient2.png" alt="images/download/attachments/43287298/EmailClient2.png" class="confluence-embedded-image"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/AppUI.png" alt="images/download/attachments/43287298/AppUI.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/ShareDialog2.png" alt="images/download/attachments/43287298/ShareDialog2.png" class="confluence-embedded-image"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/43287298/EmailClient2.png" alt="images/download/attachments/43287298/EmailClient2.png" class="confluence-embedded-image"></p></td></tr></tbody></table>
 
 ### Complete code
 
-`var` `win = Ti.UI.createWindow();`
+```javascript
+var win = Ti.UI.createWindow();
+var label = Ti.UI.createLabel({
+  text: 'Say Something!',
+  color:'white',
+  font: {
+    fontSize:'20dp',
+    fontWeight:'bold'
+  },
+  height:'Ti.UI.SIZE',
+  top:'5dp'
+});
+var textarea = Ti.UI.createTextArea({
+  width:'90%',
+  top:'44dp',
+  bottom: '70dp',
+  left:10,
+  right:10
+});
+var button = Ti.UI.createButton({
+  title:'Share',
+  font: {
+    fontSize:'24dp'
+  },
+  bottom:'10dp',
+  right:10
+});
+button.addEventListener('click', function(e) {
+  var intent = Ti.Android.createIntent({
+    action: Ti.Android.ACTION_SEND,
+    type: "text/plain"
+  });
 
-`var` `label = Ti.UI.createLabel({`
+  intent.putExtra(Ti.Android.EXTRA_TEXT, textarea.value);
+  intent.addCategory(Ti.Android.CATEGORY_DEFAULT);
+  win.activity.startActivity(intent);
+});
 
-`text:` `'Say Something!'``,`
+win.add(label);
+win.add(textarea);
+win.add(button);
 
-`color:``'white'``,`
-
-`font: {`
-
-`fontSize:``'20dp'``,`
-
-`fontWeight:``'bold'`
-
-`},`
-
-`height:``'Ti.UI.SIZE'``,`
-
-`top:``'5dp'`
-
-`});`
-
-`var` `textarea = Ti.UI.createTextArea({`
-
-`width:``'90%'``,`
-
-`top:``'44dp'``,`
-
-`bottom:` `'70dp'``,`
-
-`left:10,`
-
-`right:10`
-
-`});`
-
-`var` `button = Ti.UI.createButton({`
-
-`title:``'Share'``,`
-
-`font: {`
-
-`fontSize:``'24dp'`
-
-`},`
-
-`bottom:``'10dp'``,`
-
-`right:10`
-
-`});`
-
-`button.addEventListener(``'click'``,` `function``(e) {`
-
-`var` `intent = Ti.Android.createIntent({`
-
-`action: Ti.Android.ACTION_SEND,`
-
-`type:` `"text/plain"`
-
-`});`
-
-`intent.putExtra(Ti.Android.EXTRA_TEXT, textarea.value);`
-
-`intent.addCategory(Ti.Android.CATEGORY_DEFAULT);`
-
-`win.activity.startActivity(intent);`
-
-`});`
-
-`win.add(label);`
-
-`win.add(textarea);`
-
-`win.add(button);`
-
-`win.open();`
+win.open();
+```
 
 ## Further reading
 

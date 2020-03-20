@@ -97,19 +97,16 @@ You can update your application's tiapp.xml file visually, or manually in a text
 
 To manually add a module to your project's tiapp.xml file, modify the <modules/> tag in the <ti:app> node as follows:
 
-`<!-- $MODULE_VERSION should be the same as` `"version"` `in the module manifest and directory number -->`
+```xml
+<!-- $MODULE_VERSION should be the same as "version" in the module manifest and directory number -->
+<!-- $MODULE_PLATFORM should be the same as "platform" in the module manifest and directory number. One of "ios", "android" or "windows" -->
 
-`<!-- $MODULE_PLATFORM should be the same as` `"platform"` `in the module manifest and directory number. One of` `"ios"``,` `"android"` `or` `"windows"` `-->`
-
-`<modules>`
-
-`<module version=``"$MODULE_VERSION"` `platform=``"$MODULE_PLATFORM"``>$MODULE_ID</module>`
-
-`<!-- For example,` `if` `we were adding the Ti.Map module -->`
-
-`<module version=``"3.0.2"` `platform=``"ios"``>ti.map</module>`
-
-`</modules>`
+<modules>
+  <module version="$MODULE_VERSION" platform="$MODULE_PLATFORM">$MODULE_ID</module>
+  <!-- For example, if we were adding the Ti.Map module -->
+  <module version="3.0.2" platform="ios">ti.map</module>
+</modules>
+```
 
 #### Selecting a module version
 
@@ -132,21 +129,21 @@ A installed module may include one or more versions that your application can us
 
 Within your app's JavaScript files, you'll instantiate the module via the require() function:
 
-`var Module = require(``'$MODULE_ID'``);`
-
-`// For example, to load the Map module:`
-
-`var Map = require(``'ti.map'``);`
+```javascript
+var Module = require('$MODULE_ID');
+// For example, to load the Map module:
+var Map = require('ti.map');
+```
 
 #### Using import() to load the module in the app's code in ES6+
 
 In addition to the ES5-styled require() function, you can also import modules using the import() statement:
 
-`import` `Module from` `'$MODULE_ID'`
-
-`// For example, to load the Map module:`
-
-`import` `Map from` `'ti.map'`
+```
+import Module from '$MODULE_ID'
+// For example, to load the Map module:
+import Map from 'ti.map'
+```
 
 Finally, you'll use the module's object, properties, and methods to enable its features and functionality. Each module distributed in the Marketplace should include documentation and a sample app that demonstrates the basic use of the module. That information would be a great place to start with learning how to use a specific module.
 
@@ -160,33 +157,27 @@ For this example we will be downloading the [AdMob](https://github.com/appcelera
 
 2. Require the module in your project with the following code:
 
-    `// ES5`
+    ```javascript
+    // ES5
+    var Admob = require('ti.admob');
 
-    `var Admob = require(``'ti.admob'``);`
-
-    `// ES6+`
-
-    `// import Admob from 'ti.admob';`
+    // ES6+
+    // import Admob from 'ti.admob';
+    ```
 
 3. You can now call methods on the admob singleton object:
 
-    `var adview = Admob.createView({`
-
-    `top:` `0``,`
-
-    `testing:` `true``,`
-
-    `adBackgroundColor:` `'black'``,`
-
-    `primaryTextColor:` `'blue'``,`
-
-    `secondaryTextColor:` `'green'``,`
-
-    `publisherId:` `'<< your ID>>'`  `// Replace this string with your own API key!`
-
-    `});`
-
-    `win.add(adview);`
+    ```javascript
+    var adview = Admob.createView({
+        top: 0,
+        testing: true,
+        adBackgroundColor: 'black',
+        primaryTextColor: 'blue',
+        secondaryTextColor: 'green',
+        publisherId: '<< your ID>>' // Replace this string with your own API key!
+    });
+    win.add(adview);
+    ```
 
 ### Troubleshooting
 

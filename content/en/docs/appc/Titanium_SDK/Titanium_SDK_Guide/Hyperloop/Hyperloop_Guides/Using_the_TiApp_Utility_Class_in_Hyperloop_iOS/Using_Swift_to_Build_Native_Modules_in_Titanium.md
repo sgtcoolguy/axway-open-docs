@@ -30,7 +30,9 @@ When it comes to iOS, Titanium always relied on Objective-C based native modules
 
 To get started with Swift modules in Titanium, simply create a new module project from the CLI:
 
-`appc` `new` `-p ios -t timodule`
+```bash
+appc new -p ios -t timodule
+```
 
 It will prompt you to select a name, a module-identifier, project location and finally, the code-base. In Titanium 8+, you can select between Objective-C and Swift based modules. We are not planning to deprecate Objective-C anytime soon and leave it up the developer to select the best fit. Both module code-bases can be used together in one project without issues. And that's it! The generated module contains a <ModuleID>Module.swift and a <ModuleID>ExampleProxy.swift that are the 1:1 pardons of their Objective-C siblings. All required Titanium libraries are already included and you are ready to go.
 
@@ -40,33 +42,30 @@ When it comes to method naming conventions, the concepts that you may be used to
 
 Important to know is that every Swift-based method that you want to call from your Titanium application needs to be annotated with the @objc() attribute:
 
-TiTestModule.swift
+*TiTestModule.swift*
 
-`@objc(post:)`
+```swift
+@objc(post:)
+func post(args: [Any]?) {
+    guard let args = args,
+          let url = args.first as? String,
+          let callback = args[1] as? KrollCallback else { fatalError("Invalid parameters provided!") }
 
-`func post(args: [Any]?) {`
-
-`guard let args = args,`
-
-`let url = args.first as? String,`
-
-`let callback = args[1] as? KrollCallback` `else` `{ fatalError(``"Invalid parameters provided!"``) }`
-
-`// Use the "url" and "callback" properties`
-
-`}`
+    // Use the "url" and "callback" properties
+}
+```
 
 In the above example, we are writing a method named "post()" that can be accessed from the module (assuming it is called "ti.test") as the following:
 
-index.js
+*index.js*
 
-`import Test from` `'ti.test'``;` `// ES6+ imports!`
+```javascript
+import Test from 'ti.test'; // ES6+ imports!
 
-`Test.post(``'https://httpbin.org/headers'``, event => {`
-
-`// Use the event`
-
-`});`
+Test.post('https://httpbin.org/headers', event => {
+  // Use the event
+});
+```
 
 As you noticed, the args parameter is an Optional and should be guarded before it's usage, since it can be nil when calling it with arguments, e.g. Test.post(). The same goes for the first and second parameter of the method, which includes the URL of the method in the first parameter and the callback (an instance of the KrollCallback class) as the second parameter. Once ready, you can pass the arguments to your native API's and return to your proxy (if necessary).
 

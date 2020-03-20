@@ -42,11 +42,15 @@ To create and manage Alloy applications, you need the Alloy command-line interfa
 
 2. From a terminal, run the following command to install the CLI:
 
-    `[sudo] npm install appcelerator -g`
+    ```bash
+    [sudo] npm install appcelerator -g
+    ```
 
 3. After installation, run the setup command to install required components:
 
-    `appc setup`
+    ```bash
+    appc setup
+    ```
 
     After the CLI downloads and installs the required components, you will be prompted to login and authorize your computer. The CLI will ask to send an authorization token to your e-mail account or as a text to your mobile phone. Enter the authorization token once you receive it to complete the registration process.
 
@@ -68,7 +72,9 @@ A new skeleton Alloy project will be generated. If you are familiar with classic
 
 To create a new Alloy project, use the Appcelerator CLI to create a new Alloy project. Run the following command in a terminal:
 
-`appc` `new` `-t titanium`
+```bash
+appc new -t titanium
+```
 
 You will be prompted to enter an application name and application ID.
 
@@ -86,17 +92,14 @@ The view file declares the structure of the GUI. For example, the file below def
 
 Replace the contents of app/views/index.xml with the following:
 
-`<Alloy>`
-
-`<Window>`
-
-`<ImageView id=``"imageView"` `onClick=``"clickImage"``/>`
-
-`<Label id=``"l"``>Click Image of Apple Logo</Label>`
-
-`</Window>`
-
-`</Alloy>`
+```xml
+<Alloy>
+  <Window>
+    <ImageView id="imageView" onClick="clickImage"/>
+    <Label id="l">Click Image of Apple Logo</Label>
+  </Window>
+</Alloy>
+```
 
 ### Style
 
@@ -104,35 +107,23 @@ The style file formats and styles the components in the view file. For example, 
 
 Replace the contents of app/styles/index.tss with the following:
 
-`"Window"``: {`
-
-`backgroundColor:``"white"`
-
-`},`
-
-`"#l"``:{`
-
-`bottom:``20``,`
-
-`width: Ti.UI.SIZE,`
-
-`height: Ti.UI.SIZE,`
-
-`color:``'#999'`
-
-`},`
-
-`"#imageView"``:{`
-
-`image:``"/images/apple_logo.jpg"``,`
-
-`width:``24``,`
-
-`height:``24``,`
-
-`top:``100`
-
-`}`
+```
+"Window": {
+  backgroundColor:"white"
+},
+"#l":{
+  bottom:20,
+  width: Ti.UI.SIZE,
+  height: Ti.UI.SIZE,
+  color:'#999'
+},
+"#imageView":{
+  image:"/images/apple_logo.jpg",
+  width:24,
+  height:24,
+  top:100
+}
+```
 
 ### Controller
 
@@ -140,13 +131,13 @@ The controller file contains the presentation logic, which responds to input fro
 
 Replace the contents of app/controllers/index.js with the following:
 
-`function clickImage(e) {`
+```javascript
+function clickImage(e) {
+  Titanium.UI.createAlertDialog({title:'Image View', message:'You clicked me!'}).show();
+}
 
-`Titanium.UI.createAlertDialog({title:``'Image View'``, message:``'You clicked me!'``}).show();`
-
-`}`
-
-`$.index.open();`
+$.index.open();
+```
 
 ### Asset
 
@@ -164,7 +155,9 @@ In the **Project Explorer** view, select your project, then from the global tool
 
 From a console window, go to the root directory of the project, then
 
-`appc run [-p platform]`
+```bash
+appc run [-p platform]
+```
 
 The Appcelerator CLI contains hooks to the Alloy CLI, so you do not need to run any Alloy commands.
 

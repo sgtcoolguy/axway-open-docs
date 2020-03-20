@@ -84,37 +84,25 @@ To create a notification action, use the Titanium.App.iOS.createUserNotification
 
 * title: title of the button to display in the notification
 
-`// The following action launches the application in the foreground and requires the device to be unlocked`
+```javascript
+// The following action launches the application in the foreground and requires the device to be unlocked
+var acceptAction = Ti.App.iOS.createUserNotificationAction({
+    identifier: "ACCEPT_IDENTIFIER",
+    title: "Accept",
+    activationMode: Ti.App.iOS.USER_NOTIFICATION_ACTIVATION_MODE_FOREGROUND,
+    destructive: false,
+    authenticationRequired: true
+});
 
-`var` `acceptAction = Ti.App.iOS.createUserNotificationAction({`
-
-`identifier:` `"ACCEPT_IDENTIFIER"``,`
-
-`title:` `"Accept"``,`
-
-`activationMode: Ti.App.iOS.USER_NOTIFICATION_ACTIVATION_MODE_FOREGROUND,`
-
-`destructive:` `false``,`
-
-`authenticationRequired:` `true`
-
-`});`
-
-`// The following action will only activate the application in the background, requires the device to be unlocked, and may have a red background.`
-
-`var` `rejectAction = Ti.App.iOS.createUserNotificationAction({`
-
-`identifier:` `"REJECT_IDENTIFIER"``,`
-
-`title:` `"Reject"``,`
-
-`activationMode: Ti.App.iOS.USER_NOTIFICATION_ACTIVATION_MODE_BACKGROUND,`
-
-`destructive:` `true``,`
-
-`authenticationRequired:` `true`
-
-`});`
+// The following action will only activate the application in the background, requires the device to be unlocked, and may have a red background.
+var rejectAction = Ti.App.iOS.createUserNotificationAction({
+    identifier: "REJECT_IDENTIFIER",
+    title: "Reject",
+    activationMode: Ti.App.iOS.USER_NOTIFICATION_ACTIVATION_MODE_BACKGROUND,
+    destructive: true,
+    authenticationRequired: true
+});
+```
 
 ## Create a notification category
 
@@ -128,55 +116,43 @@ To create a notification action, use the Titanium.App.iOS.createUserNotification
 
 * identifier: string identifier of the group of actions. When scheduling a notification, pass this value to the category property.
 
-`var` `invitationCategory = Ti.App.iOS.createUserNotificationCategory({`
-
-`identifier:` `"INVITE_CATEGORY"``,`
-
-`// The following actions will be displayed for an alert dialog`
-
-`actionsForDefaultContext: [acceptAction, rescheduleAction, delayAction, rejectAction],`
-
-`// The following actions will be displayed for all other notifications`
-
-`actionsForMinimalContext: [acceptAction, rejectAction]`
-
-`});`
+```javascript
+var invitationCategory = Ti.App.iOS.createUserNotificationCategory({
+    identifier: "INVITE_CATEGORY",
+    // The following actions will be displayed for an alert dialog
+    actionsForDefaultContext: [acceptAction, rescheduleAction, delayAction, rejectAction],
+    // The following actions will be displayed for all other notifications
+    actionsForMinimalContext: [acceptAction, rejectAction]
+});
+```
 
 ## Register notification categories
 
 Like notification types, you also need to register notification categories with iOS by using the Titanium.App.iOS.registerUserNotificationSettings()method. Pass the method a dictionary with the type property set to the notification types to use and the categories property to an array of notification category objects the application needs to use.
 
-`Ti.App.iOS.registerUserNotificationSettings({`
-
-`types: [Ti.App.iOS.USER_NOTIFICATION_TYPE_ALERT, Ti.App.iOS.USER_NOTIFICATION_TYPE_BADGE],`
-
-`categories: [invitationCategory, downloadCategory]`
-
-`});`
+```
+Ti.App.iOS.registerUserNotificationSettings({
+    types: [Ti.App.iOS.USER_NOTIFICATION_TYPE_ALERT, Ti.App.iOS.USER_NOTIFICATION_TYPE_BADGE],
+    categories: [invitationCategory, downloadCategory]
+});
+```
 
 If you are using push notifications, the application needs to call the Titanium.Network.registerForPushNotifications() method. The application should monitor the usernotificationsettings to register for push notifications.
 
-`function` `registerForPush() {`
+```javascript
+function registerForPush() {
+   Ti.Network.registerForPushNotifications({
+       success: deviceTokenSuccess,
+       error: deviceTokenError,
+       callback: receivePush
+   });
+   // Remove event listener once registered for push notifications
+   Ti.App.iOS.removeEventListener('usernotificationsettings', registerForPush);
+};
 
-`Ti.Network.registerForPushNotifications({`
-
-`success: deviceTokenSuccess,`
-
-`error: deviceTokenError,`
-
-`callback: receivePush`
-
-`});`
-
-`// Remove event listener once registered for push notifications`
-
-`Ti.App.iOS.removeEventListener(``'usernotificationsettings'``, registerForPush);`
-
-`};`
-
-`// Wait for user settings to be registered before registering for push notifications`
-
-`Ti.App.iOS.addEventListener(``'usernotificationsettings'``, registerForPush);`
+// Wait for user settings to be registered before registering for push notifications
+Ti.App.iOS.addEventListener('usernotificationsettings', registerForPush);
+```
 
 ## Monitor interactive notifications
 
@@ -192,43 +168,27 @@ Monitor the iOS application-level localnotificationaction event to respond to an
 
 Use the properties to have the application decide how to respond to the interactive notification.
 
-`Ti.App.iOS.addEventListener(``'localnotificationaction'``,` `function``(e) {`
-
-`// Switch for categories`
-
-`switch` `(e.category) {`
-
-`case`  `"DOWNLOAD_CATEGORY"``:`
-
-`// Switch for actions`
-
-`switch` `(e.identifier) {`
-
-`case`  `"ACCEPT_IDENTIFIER"``:`
-
-`if` `(e.userInfo &&` `"url"`  `in` `e.userInfo){`
-
-`httpGetRequest(e.userInfo.url);`
-
-`}`
-
-`break``;`
-
-`// more actions...`
-
-`}`
-
-`break``;`
-
-`// more categories...`
-
-`default``:`
-
-`break``;`
-
-`};`
-
-`});`
+```
+Ti.App.iOS.addEventListener('localnotificationaction', function(e) {
+    // Switch for categories
+    switch (e.category) {
+        case "DOWNLOAD_CATEGORY":
+            // Switch for actions
+            switch (e.identifier) {
+                case "ACCEPT_IDENTIFIER":
+                    if (e.userInfo && "url" in e.userInfo){
+                        httpGetRequest(e.userInfo.url);
+                    }
+                    break;
+                // more actions...
+            }
+            break;
+        // more categories...
+        default:
+            break;
+    };
+});
+```
 
 ### remotenotificationaction
 
@@ -242,77 +202,54 @@ Monitor the iOS application-level remotenotificationaction event to respond to a
 
 Use the properties to have the application decide how to respond to the interactive notification.
 
-`Ti.App.iOS.addEventListener(``'remotenotificationaction'``,` `function``(e) {`
-
-`// Switch for categories`
-
-`switch` `(e.category) {`
-
-`case`  `"DOWNLOAD_CATEGORY"``:`
-
-`// Switch for actions`
-
-`switch` `(e.identifier) {`
-
-`case`  `"ACCEPT_IDENTIFIER"``:`
-
-`if` `(e.data &&` `"url"`  `in` `e.data){`
-
-`httpGetRequest(e.data.url);`
-
-`}`
-
-`break``;`
-
-`// more actions...`
-
-`}`
-
-`break``;`
-
-`// more categories...`
-
-`default``:`
-
-`break``;`
-
-`};`
-
-`});`
+```
+Ti.App.iOS.addEventListener('remotenotificationaction', function(e) {
+    // Switch for categories
+    switch (e.category) {
+        case "DOWNLOAD_CATEGORY":
+            // Switch for actions
+            switch (e.identifier) {
+                case "ACCEPT_IDENTIFIER":
+                    if (e.data && "url" in e.data){
+                        httpGetRequest(e.data.url);
+                    }
+                    break;
+                // more actions...
+            }
+            break;
+        // more categories...
+        default:
+            break;
+    };
+});
+```
 
 ## Schedule an interactive local notification
 
 To send an interactive local notification, use the Titanium.App.iOS.scheduleLocalNotification() method. Use it the same way when scheduling a non-interactive local notifications except when creating the dictionary of options to pass to the method, the application must specify the category property and set it to the identifier of the notification category to use. The notification category indicates which group of actions to use with the notification. The notification category must also be registered or else the notification will be presented as a default non-interactive notification.
 
-`Ti.App.iOS.scheduleLocalNotification({`
-
-`date:` `new` `Date(``new` `Date().getTime() + 3000),`
-
-`alertBody:` `"New content available! Download now?"``,`
-
-`badge: 1,`
-
-`userInfo: {``"url"``:` `"http://www.download.com/resource/asset.json"``},`
-
-`category:` `"DOWNLOAD_CATEGORY"`
-
-`});`
+```
+Ti.App.iOS.scheduleLocalNotification({
+    date: new Date(new Date().getTime() + 3000),
+    alertBody: "New content available! Download now?",
+    badge: 1,
+    userInfo: {"url": "http://www.download.com/resource/asset.json"},
+    category: "DOWNLOAD_CATEGORY"
+});
+```
 
 ## Send an interactive push notification
 
 To send an interactive push notification, send a payload with the category field set to the identifier of the notification category to use.
 
-`{`
-
-`"alert"``:` `"New content available! Download now?"``,`
-
-`"badge"``: 1,`
-
-`"url"``:` `"http://www.download.com/resource/asset.json"``,`
-
-`"category"``:` `"DOWNLOAD_CATEGORY"`
-
-`}`
+```
+{
+    "alert": "New content available! Download now?",
+    "badge": 1,
+    "url": "http://www.download.com/resource/asset.json",
+    "category": "DOWNLOAD_CATEGORY"
+}
+```
 
 To send the payload, you can use either the:
 
@@ -326,148 +263,84 @@ To send the payload, you can use either the:
 
 In the following example, run the code on an iOS device or simulator. Click the "Trigger Notification" button, then either lock the phone or place the application in the background. You will have three seconds or else the application will respond to the notification in the foreground. If the device or simulator is running iOS 8 or later, you will receive the interactive local notification. If not, you will receive a regular local notification.
 
-`// Check for iOS 8 or greater`
-
-`if` `(Ti.Platform.name ==` `"iPhone OS"` `&& parseInt(Ti.Platform.version.split(``"."``)[0]) >= 8) {`
-
-`Ti.API.info(``"I am iOS 8!"``);`
-
-`// Create notification actions`
-
-`var` `acceptAction = Ti.App.iOS.createUserNotificationAction({`
-
-`identifier:` `"ACCEPT_IDENTIFIER"``,`
-
-`title:` `"Accept"``,`
-
-`activationMode: Ti.App.iOS.USER_NOTIFICATION_ACTIVATION_MODE_FOREGROUND,`
-
-`destructive:` `false``,`
-
-`authenticationRequired:` `true`
-
-`});`
-
-`var` `rejectAction = Ti.App.iOS.createUserNotificationAction({`
-
-`identifier:` `"REJECT_IDENTIFIER"``,`
-
-`title:` `"Reject"``,`
-
-`activationMode: Ti.App.iOS.USER_NOTIFICATION_ACTIVATION_MODE_BACKGROUND,`
-
-`destructive:` `true``,`
-
-`authenticationRequired:` `false`
-
-`});`
-
-`// Create a notification category`
-
-`var` `downloadContent = Ti.App.iOS.createUserNotificationCategory({`
-
-`identifier:` `"DOWNLOAD_CONTENT"``,`
-
-`actionsForDefaultContext: [acceptAction, rejectAction]`
-
-`});`
-
-`// Register for user notifications and categories`
-
-`Ti.App.iOS.registerUserNotificationSettings({`
-
-`types: [`
-
-`Ti.App.iOS.USER_NOTIFICATION_TYPE_ALERT,`
-
-`Ti.App.iOS.USER_NOTIFICATION_TYPE_BADGE,`
-
-`Ti.App.iOS.USER_NOTIFICATION_TYPE_SOUND`
-
-`],`
-
-`categories: [downloadContent]`
-
-`});`
-
-`// Monitor notifications received while app is in the background`
-
-`Ti.App.iOS.addEventListener(``'localnotificationaction'``,` `function``(e) {`
-
-`if` `(e.category ==` `"DOWNLOAD_CONTENT"` `&& e.identifier ==` `"ACCEPT_IDENTIFIER"``) {`
-
-`alert(``"start download"``);`
-
-`}`
-
-`// Reset the badge value`
-
-`if` `(e.badge > 0) {`
-
-`Ti.App.iOS.scheduleLocalNotification({`
-
-`date:` `new` `Date(``new` `Date().getTime() + 3000),`
-
-`badge:` `"-1"`
-
-`});`
-
-`}`
-
-`Ti.API.info(JSON.stringify(e));`
-
-`});`
-
-`}`
-
-`// Monitor notifications received while app is in the foreground`
-
-`Ti.App.iOS.addEventListener(``'notification'``,` `function``(e) {`
-
-`// Reset the badge value`
-
-`if` `(e.badge > 0) {`
-
-`Ti.App.iOS.scheduleLocalNotification({`
-
-`date:` `new` `Date(``new` `Date().getTime() + 3000),`
-
-`badge:` `"-1"`
-
-`});`
-
-`}`
-
-`Ti.API.info(JSON.stringify(e));`
-
-`});`
-
-`// App UI`
-
-`var` `win = Ti.UI.createWindow({backgroundColor:` `'white'``});`
-
-`var` `button = Ti.UI.createButton({title:` `'Trigger Notification'``});`
-
-`button.addEventListener(``'click'``,` `function``(e){`
-
-`// Send a notification in 3 seconds`
-
-`var` `note = Ti.App.iOS.scheduleLocalNotification({`
-
-`date:` `new` `Date(``new` `Date().getTime() + 3000),`
-
-`alertBody:` `"New content available! Download now?"``,`
-
-`badge: 1,`
-
-`userInfo: {``"url"``:` `"http://www.download.com/resource/asset.json"``, id:``"1"``},`
-
-`category:` `"DOWNLOAD_CONTENT"`
-
-`});`
-
-`});`
-
-`win.add(button);`
-
-`win.open();`
+```javascript
+// Check for iOS 8 or greater
+if (Ti.Platform.name == "iPhone OS" && parseInt(Ti.Platform.version.split(".")[0]) >= 8) {
+    Ti.API.info("I am iOS 8!");
+    // Create notification actions
+    var acceptAction = Ti.App.iOS.createUserNotificationAction({
+        identifier: "ACCEPT_IDENTIFIER",
+        title: "Accept",
+        activationMode: Ti.App.iOS.USER_NOTIFICATION_ACTIVATION_MODE_FOREGROUND,
+        destructive: false,
+        authenticationRequired: true
+    });
+
+    var rejectAction = Ti.App.iOS.createUserNotificationAction({
+        identifier: "REJECT_IDENTIFIER",
+        title: "Reject",
+        activationMode: Ti.App.iOS.USER_NOTIFICATION_ACTIVATION_MODE_BACKGROUND,
+        destructive: true,
+        authenticationRequired: false
+    });
+
+    // Create a notification category
+    var downloadContent = Ti.App.iOS.createUserNotificationCategory({
+      identifier: "DOWNLOAD_CONTENT",
+      actionsForDefaultContext: [acceptAction, rejectAction]
+    });
+
+    // Register for user notifications and categories
+    Ti.App.iOS.registerUserNotificationSettings({
+        types: [
+            Ti.App.iOS.USER_NOTIFICATION_TYPE_ALERT,
+            Ti.App.iOS.USER_NOTIFICATION_TYPE_BADGE,
+            Ti.App.iOS.USER_NOTIFICATION_TYPE_SOUND
+        ],
+        categories: [downloadContent]
+    });
+
+    // Monitor notifications received while app is in the background
+    Ti.App.iOS.addEventListener('localnotificationaction', function(e) {
+        if (e.category == "DOWNLOAD_CONTENT" && e.identifier == "ACCEPT_IDENTIFIER") {
+            alert("start download");
+        }
+
+        // Reset the badge value
+        if (e.badge > 0) {
+            Ti.App.iOS.scheduleLocalNotification({
+                date: new Date(new Date().getTime() + 3000),
+                badge: "-1"
+            });
+        }
+        Ti.API.info(JSON.stringify(e));
+    });
+}
+
+// Monitor notifications received while app is in the foreground
+Ti.App.iOS.addEventListener('notification', function(e) {
+    // Reset the badge value
+    if (e.badge > 0) {
+        Ti.App.iOS.scheduleLocalNotification({
+            date: new Date(new Date().getTime() + 3000),
+            badge: "-1"
+        });
+    }
+    Ti.API.info(JSON.stringify(e));
+});
+// App UI
+var win = Ti.UI.createWindow({backgroundColor: 'white'});
+var button = Ti.UI.createButton({title: 'Trigger Notification'});
+button.addEventListener('click', function(e){
+    // Send a notification in 3 seconds
+    var note = Ti.App.iOS.scheduleLocalNotification({
+        date: new Date(new Date().getTime() + 3000),
+        alertBody: "New content available! Download now?",
+        badge: 1,
+        userInfo: {"url": "http://www.download.com/resource/asset.json", id:"1"},
+        category: "DOWNLOAD_CONTENT"
+    });
+});
+win.add(button);
+win.open();
+```

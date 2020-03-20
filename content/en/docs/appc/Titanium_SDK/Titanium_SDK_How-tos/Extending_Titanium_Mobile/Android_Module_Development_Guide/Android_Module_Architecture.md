@@ -62,23 +62,24 @@ A Module is a class that provides an API point with a particular ID. That ID can
 
 All modules must extend the KrollModule class and have the @Kroll.module annotation. All module class names and file names must have the Module suffix.
 
-`package` `com.example.actionbarsearch;`
+```
+package com.example.actionbarsearch;
 
-`import` `org.appcelerator.kroll.KrollModule;`
+import org.appcelerator.kroll.KrollModule;
+import org.appcelerator.kroll.annotations.Kroll;
 
-`import` `org.appcelerator.kroll.annotations.Kroll;`
+@Kroll.module(name="Actionbarsearch", id="com.example.actionbarsearch")
+public class ActionbarsearchModule extends KrollModule
+{
 
-`@Kroll``.module(name=``"Actionbarsearch"``, id=``"com.example.actionbarsearch"``)`
-
-`public`  `class` `ActionbarsearchModule` `extends` `KrollModule`
-
-`{`
-
-`}`
+}
+```
 
 The id annotation element specifies the identifier used with require to import the module. In this case, the JavaScript to require the module would look like this:
 
-`var` `actionBarSearch = require(``"com.example.actionbarsearch"``);`
+```javascript
+var actionBarSearch = require("com.example.actionbarsearch");
+```
 
 The module must have a default constructor (that is, one that takes no arguments).
 
@@ -94,19 +95,17 @@ Use the @Kroll.onAppCreate annotation to declare a method to be called when the 
 
 The app create method is called during application startup. It is only called once, before your module is actually loaded.
 
-`@Kroll``.onAppCreate`
-
-`public`  `static`  `void` `onAppCreate(TiApplication app)`
-
-`{`
-
-`Log.d(LCAT,` `"[MODULE LIFECYCLE EVENT] onAppCreate notification"``);`
-
-`}`
+```
+@Kroll.onAppCreate
+public static void onAppCreate(TiApplication app)
+{
+  Log.d(LCAT, "[MODULE LIFECYCLE EVENT] onAppCreate notification");
+}
+```
 
 The module also provides callbacks that are invoked when the application's root activity is started, stopped, paused, or resumed.
 
-Activity Lifecycle Events
+*Activity Lifecycle Events*
 
 Note that on Titanium applications, the root activity is the one that displays the splash screen. If the first UI component is a heavyweight Window (window with its own activity) or TabGroup, not all of the activity lifecycle events may fire for the root activity. Note that since Release 3.2.0, all Window objects are heavyweight and have their own activity associated with it.
 
@@ -116,9 +115,10 @@ To have the module respond to the activity lifecycle events of a specific activi
 
 To get access to the current activity, first use TiApplication's getInstance() method, and then use the getCurrentActivity() method:
 
-`TiApplication appContext = TiApplication.getInstance();`
-
-`Activity activity = appContext.getCurrentActivity();`
+```
+TiApplication appContext = TiApplication.getInstance();
+Activity activity = appContext.getCurrentActivity();
+```
 
 ## Proxy
 
@@ -126,47 +126,43 @@ A Proxy can expose methods, properties, and constants to JavaScript. Each of the
 
 A proxy must extend [KrollProxy](http://docs.appcelerator.com/module-apidoc/latest/android/org/appcelerator/kroll/KrollProxy.html) and have the @Kroll.proxy annotation. All proxy class names and file names must have the Proxy suffix.
 
-`package` `com.example.test;`
+```
+package com.example.test;
 
-`import` `org.appcelerator.kroll.KrollProxy;`
+import org.appcelerator.kroll.KrollProxy;
+import org.appcelerator.kroll.annotations.Kroll;
 
-`import` `org.appcelerator.kroll.annotations.Kroll;`
+@Kroll.proxy
+public class ExampleProxy extends KrollProxy
+{
 
-`@Kroll``.proxy`
-
-`public`  `class` `ExampleProxy` `extends` `KrollProxy`
-
-`{`
-
-`}`
+}
+```
 
 To automatically generate a "create" method on a parent module, assign the parent module class to the @Kroll.proxy creatableInModule annotation element. For example, the following code will expose the createExample() method to JavaScript in the TestModule:
 
-`package` `com.example.test;`
+```
+package com.example.test;
 
-`import` `org.appcelerator.kroll.KrollProxy;`
+import org.appcelerator.kroll.KrollProxy;
+import org.appcelerator.kroll.annotations.Kroll;
+@Kroll.proxy(creatableInModule=TestModule.class)
+public class ExampleProxy extends KrollProxy
+{
 
-`import` `org.appcelerator.kroll.annotations.Kroll;`
-
-`@Kroll``.proxy(creatableInModule=TestModule.``class``)`
-
-`public`  `class` `ExampleProxy` `extends` `KrollProxy`
-
-`{`
-
-`}`
+}
+```
 
 ### Methods
 
 Methods of a proxy or module are exposed with the [@Kroll.method](http://docs.appcelerator.com/module-apidoc/latest/android/org/appcelerator/kroll/annotations/Kroll.method.html) annotation. A simple example:
 
-`@Kroll``.method`
-
-`public` `String getMessage() {`
-
-`return`  `"Hello World"``;`
-
-`}`
+```
+@Kroll.method
+public String getMessage() {
+    return "Hello World";
+}
+```
 
 You can specify the method parameters in one of two ways:
 
@@ -176,41 +172,36 @@ You can specify the method parameters in one of two ways:
 
 If you specify parameters explicitly _and_ one or more parameters are optional, they must be identified using the @Kroll.argument annotation:
 
-`@Kroll``.method`
-
-`public`  `void` `switchView(``@Kroll``.argument(optional=``true``)` `boolean` `animate) {`
-
-`// do something.`
-
-`}`
+```
+@Kroll.method
+ public void switchView(@Kroll.argument(optional=true) boolean animate) {
+    // do something.
+ }
+```
 
 If one argument is optional, all subsequent arguments must be marked as optional as well.
 
 For methods with a variable number of arguments, specify the signature as taking a single array argument, and check the number and type of the arguments at runtime.
 
-`@Kroll``.method`
-
-`public` `HashMap doSomething(Object[] args) {`
-
-`// check and convert arguments`
-
-`}`
+```
+@Kroll.method
+ public HashMap doSomething(Object[] args) {
+    // check and convert arguments
+ }
+```
 
 For information on runtime type checking and type conversions, see [Type Conversions](#TypeConversions).
 
 If you want to the method name exposed to JavaScript to differ from method name in Java, use the optional name element in the @Kroll.method annotation to specify the JavaScript method name:
 
-`@Kroll``.method(name=``"setTab"``)`
-
-`public`  `void` `setTabProxy(TiViewProxy tabProxy)`
-
-`{`
-
-`setParent(tabProxy);`
-
-`this``.tab = tabProxy;`
-
-`}`
+```
+@Kroll.method(name="setTab")
+public void setTabProxy(TiViewProxy tabProxy)
+{
+    setParent(tabProxy);
+    this.tab = tabProxy;
+}
+```
 
 ### Properties
 
@@ -240,25 +231,20 @@ Properties are exposed as a pair of getter and setter methods with the @Kroll.ge
 
 The following example exposes a writable message property to JavaScript.
 
-`private` `String myMessage;`
+```
+private String myMessage;
 
-`@Kroll``.getProperty`
+@Kroll.getProperty
+public String getMessage() {
+    return myMessage;
+}
 
-`public` `String getMessage() {`
-
-`return` `myMessage;`
-
-`}`
-
-`@Kroll``.setProperty`
-
-`public`  `void` `setMessage(String message) {`
-
-`Log.d(TAG,` `"Tried setting message to: "` `+ message);`
-
-`myMessage = message;`
-
-`}`
+@Kroll.setProperty
+public void setMessage(String message) {
+    Log.d(TAG, "Tried setting message to: " + message);
+  myMessage = message;
+}
+```
 
 Note the following two points:
 
@@ -268,11 +254,12 @@ Note the following two points:
 
 In JavaScript, we can now access message as a property:
 
-`var` `calc = require(``"module.id"``);`
+```javascript
+var calc = require("module.id");
+calc.message = "hi";
 
-`calc.message =` `"hi"``;`
-
-`console.log(``"calc.message = "` `+ calc.message);`
+console.log("calc.message = " + calc.message);
+```
 
 The @Kroll.getProperty and @Kroll.setProperty annotations support an optional name element, which specifies the name of the property. If name is not set, the name of the property is constr
 
@@ -280,9 +267,10 @@ The @Kroll.getProperty and @Kroll.setProperty annotations support an optional na
 
 You can also define a a set of properties in your @Kroll.proxy or @Kroll.method annotation using the propertyAccessors element, and the accessors will be automatically generated for you:
 
-`@Kroll``.proxy(creatableInModule = ActionbarsearchModule.``class``, `
-
-`propertyAccessors = {` `"hintText"``,` `"value"` `})`
+```
+@Kroll.proxy(creatableInModule = ActionbarsearchModule.class,
+             propertyAccessors = { "hintText", "value" })
+```
 
 In this case, the proxy has two properties, hintText and value, each with corresponding setter and getter methods, such as setHintText and getValue. These properties are stored in an internal dictionary. You can query properties using getProperty () or retrieve the entire dictionary using getProperties ().
 
@@ -298,7 +286,9 @@ The model listener pattern is typically used for views, so that property changes
 
 To add a listener, call the proxy's setModelListener() method:
 
-`setModelListener(delegate);`
+```
+setModelListener(delegate);
+```
 
 In the case of view proxies, the view object is automatically added as a model listener. An instance of the KrollModule class acts as its own model listener, providing a convenient mechanism for handling property changes inside a module.
 
@@ -313,87 +303,67 @@ The KrollProxyListener interface defines four methods that you need to implement
 
 To handle properties, you must add logic to processProperties and propertyChanged for each property you support. The processProperties method receives a dictionary of properties:
 
-`@Override`
-
-`public`  `void` `processProperties(KrollDict props) {`
-
-`super``.processProperties(props);`
-
-`if` `(props.containsKey(``"hintText"``)) {`
-
-`searchView.setQueryHint(props.getString(``"hintText"``));`
-
-`}`
-
-`if` `(props.containsKey(``"value"``)) {`
-
-`searchView.setQuery(props.getString(``"value"``),` `false``);`
-
-`}`
-
-`}`
+```
+@Override
+public void processProperties(KrollDict props) {
+  super.processProperties(props);
+  if (props.containsKey("hintText")) {
+      searchView.setQueryHint(props.getString("hintText"));
+    }
+  if (props.containsKey("value")) {
+    searchView.setQuery(props.getString("value"), false);
+  }
+}
+```
 
 The propertyChanged method is fired whenever a property is invoked _after_ the initial call to processProperties.
 
-`@Override`
-
-`public`  `void` `propertyChanged(String key, Object oldValue, Object newValue, KrollProxy proxy) {`
-
-`if` `(key.equals(``"hintText"``)) {`
-
-`searchView.setQueryHint((String) newValue);`
-
-`}` `else`  `if` `(key.equals(``"value"``)) {`
-
-`searchView.setQuery((String) newValue,` `false``);`
-
-`}`
-
-`}`
+```
+@Override
+public void propertyChanged(String key, Object oldValue, Object newValue, KrollProxy proxy) {
+  if (key.equals("hintText")) {
+    searchView.setQueryHint((String) newValue);
+  } else if (key.equals("value")) {
+    searchView.setQuery((String) newValue, false);
+  }
+}
+```
 
 You can set properties programmatically on the proxy using either setProperty()or setPropertyAndFire(). Both methods update the property dictionary and make the new property value visible to JavaScript. The setPropertyAndFire() method also invokes the propertyChanged callback on the model listener. In the case of a view proxy, you would typically call setProperty to make a value from the native view object visible to the JavaScript layer: for example, when the user sets the text value in a text field, you want to make the value available to JavaScript_._ There is no need to fire the propertyChanged callback, since the model listener itself (the view object) is generating the change.
 
 You can also use custom accessor methods when using the model listener. In this case, you'd define the property getter and setter methods using the @Kroll.setProperty and @Kroll.getProperty annotations instead of listing the property in the propertyAccessors element. You can do this if you want to validate or transform the value, or if you want to provide optional arguments in the setter. In the setter, you can then call setPropertyAndFire to store the value and notify the model listener.
 
-`@Kroll``.getProperty`
-
-`public` `String getMessage() {`
-
-`return` `getProperty(``"message"``);`
-
-`}`
-
-`@Kroll``.setProperty`
-
-`public`  `void` `setMessage(String message) {`
-
-`// validate or transform the value`
-
-`...`
-
-`// store the value and fire the callback`
-
-`setPropertyAndFire(``"message"``, message);`
-
-`}`
+```
+@Kroll.getProperty
+public String getMessage() {
+        return getProperty("message");
+}
+@Kroll.setProperty
+public void setMessage(String message) {
+    // validate or transform the value
+    ...
+    // store the value and fire the callback
+    setPropertyAndFire("message", message);
+}
+```
 
 ### Constants
 
 A constant is simply a static property on a @Kroll.module. Annotate the property with @Kroll.constantand declare it as both static and final.
 
-`@Kroll``.module`
-
-`public`  `class` `CalcModule` `extends` `KrollModule {`
-
-`@Kroll``.constant`
-
-`public`  `static`  `final`  `int` `ONE_HUNDRED =` `100``;`
-
-`}`
+```
+@Kroll.module
+public class CalcModule extends KrollModule {
+    @Kroll.constant
+    public static final int ONE_HUNDRED = 100;
+}
+```
 
 The constant can now be referred to directly from JavaScript:
 
-`calc.ONE_HUNDRED == 100.`
+```
+calc.ONE_HUNDRED == 100.
+```
 
 ### Type conversions
 
@@ -418,31 +388,25 @@ The JavaScript, Number, String, Array, Date can be converted into the correspond
 
 For example, if you declare a method with int values in the signature, the JavaScript Number values passed in will be converted to Java integers implicitly:
 
-`@Kroll``.method`
-
-`public`  `int` `multiply(``int` `a,` `int` `b)`
-
-`{`
-
-`return` `a * b;`
-
-`}`
+```
+@Kroll.method
+public int multiply(int a, int b)
+{
+  return a * b;
+}
+```
 
 The same method with explicit type conversion would look like this:
 
-`@Kroll``.method`
-
-`public`  `int` `multiply(Object a, Object b)`
-
-`{`
-
-`int` `aval = TiConvert.toInt(a);`
-
-`int` `bval = TiConvert.toInt(b);`
-
-`return` `aval * bval;`
-
-`}`
+```
+@Kroll.method
+public int multiply(Object a, Object b)
+{
+  int aval = TiConvert.toInt(a);
+  int bval = TiConvert.toInt(b);
+  return aval * bval;
+}
+```
 
 #### Files and blobs
 
@@ -450,21 +414,20 @@ When a JavaScript Titanium object is passed to Java, the Java method receives a 
 
 The Titanium.Blob JavaScript object is represented by an instance of the TiBlobclass. Use TiBlob in method signatures where you want to accept or return a Blob.
 
-`@Kroll``.method`
-
-`public`  `void` `addBlob(TiBlob blob)`
+```
+@Kroll.method
+public void addBlob(TiBlob blob)
+```
 
 To return a Blob from Java, create and return an instance of TiBlob. The TiBlob class provides factory methods to create a Blob from a byte array, File, String, or an Android Bitmap. For example, the following code returns a blob representing a bitmap:
 
-`@Kroll``.method`
-
-`public` `TiBlob loadImage()`
-
-`{`
-
-`return` `TiBlob.blobFromImage(myBitmap);`
-
-`}`
+```
+@Kroll.method
+public TiBlob loadImage()
+{
+  return TiBlob.blobFromImage(myBitmap);
+}
+```
 
 The ModDevGuide project includes sample code for retrieving a bitmap from resources.
 
@@ -472,13 +435,16 @@ A Titanium File object is passed into Java as a FileProxy. Use a TiBaseFile obje
 
 The following example shows one way to create a TiBaseFile using TiFileFactory, and use the new instance to construct a FileProxy:
 
-`TiBaseFile file = TiFileFactory.createTitaniumFile(``new` `String[] { url },` `false``);`
-
-`FileProxy fileProxy =` `new` `FileProxy(file);`
+```
+TiBaseFile file = TiFileFactory.createTitaniumFile(new String[] { url }, false);
+FileProxy fileProxy = new FileProxy(file);
+```
 
 You can retrieve the associated TiBaseFile from a FileProxy using getBaseFile:
 
-`TiBaseFile file = fileProxy.getBaseFile();`
+```
+TiBaseFile file = fileProxy.getBaseFile();
+```
 
 ### Activity lifecycle events
 
@@ -486,39 +452,32 @@ Starting with Titanium SDK 4.0.0, a proxy can respond to [activity lifecycle eve
 
 First, in the module proxy, override the activity lifecycle callbacks you want to respond to, such as onCreate, onStart, onRestart, onResume, onPause, onStop or onDestroy.
 
-ExampleProxy.java
+*ExampleProxy.java*
 
-`@Override`
+```java
+@Override
+    public void onResume(Activity activity) {
+        Log.d(LCAT, "onResume called");
+        loadState();
+    }
 
-`public`  `void` `onResume(Activity activity) {`
-
-`Log.d(LCAT,` `"onResume called"``);`
-
-`loadState();`
-
-`}`
-
-`@Override`
-
-`public`  `void` `onPause(Activity activity) {`
-
-`Log.d(LCAT,` `"onPause called"``);`
-
-`saveState();`
-
-`}`
+    @Override
+    public void onPause(Activity activity) {
+        Log.d(LCAT, "onPause called");
+        saveState();
+    }
+```
 
 Then, in the JavaScript application, when you create the module proxy, assign its lifecycleContainer property to either a Window or TabGroup object to listen for that object's lifecycle events to trigger the module proxy's activity lifecycle callbacks.
 
-app.js
+*app.js*
 
-`var` `win = Ti.UI.createWindow();`
-
-`var` `foo = require(``'com.appc.foo'``);`
-
-`var` `fooProxy = foo.createExample({lifecycleContainer: win});`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow();
+var foo = require('com.appc.foo');
+var fooProxy = foo.createExample({lifecycleContainer: win});
+win.open();
+```
 
 ## View Proxy and View
 
@@ -528,132 +487,90 @@ To display UI elements with a module, create both a View Proxy and a View. A Vie
 
 A View Proxy must extend the TiViewProxy class and have the @Kroll.proxyannotation. All view proxy class names and file names must have the Proxy suffix. Any class that extend the TiViewProxy class must also implement the TiUIView createView(Activity activity)method, which create and returns the associated View.
 
-`package` `com.example.test;`
+```
+package com.example.test;
 
-`import` `org.appcelerator.kroll.annotations.Kroll;`
-
-`import` `org.appcelerator.titanium.proxy.TiViewProxy;`
-
-`@Kroll``.proxy(creatableInModule=TestModule.``class``)`
-
-`public`  `class` `FooProxy` `extends` `TiViewProxy`
-
-`{`
-
-`@Override`
-
-`public` `TiUIView createView(Activity activity)`
-
-`{`
-
-`// Calls the View constructor`
-
-`return`  `new` `FooView(``this``);`
-
-`}`
-
-`}`
+import org.appcelerator.kroll.annotations.Kroll;
+import org.appcelerator.titanium.proxy.TiViewProxy;
+@Kroll.proxy(creatableInModule=TestModule.class)
+public class FooProxy extends TiViewProxy
+{
+    @Override
+    public TiUIView createView(Activity activity)
+    {
+        // Calls the View constructor
+        return new FooView(this);
+    }
+}
+```
 
 To get a reference to the View from the View Proxy, use the view variable:
 
-`FooView fooView = (FooView)view;`
+```
+FooView fooView = (FooView)view;
+```
 
 ### View
 
 A View must extend the TiUIView class. All view class names and file names must have the View suffix. Any class that extends the TiUIView class must implement a constructor and call setNativeView with an instance of a native Android [View](http://developer.android.com/reference/android/view/View.html) either in the constructor or in processProperties.
 
-`package` `com.example.test;`
+```
+package com.example.test;
 
-`import` `org.appcelerator.titanium.view.TiUIView;`
+import org.appcelerator.titanium.view.TiUIView;
+import org.appcelerator.titanium.view.TiCompositeLayout;
+import org.appcelerator.titanium.view.TiCompositeLayout.LayoutArrangement;
+import org.appcelerator.titanium.proxy.TiViewProxy;
+import android.view.View;
 
-`import` `org.appcelerator.titanium.view.TiCompositeLayout;`
-
-`import` `org.appcelerator.titanium.view.TiCompositeLayout.LayoutArrangement;`
-
-`import` `org.appcelerator.titanium.proxy.TiViewProxy;`
-
-`import` `android.view.View;`
-
-`private`  `class` `ExampleView` `extends` `TiUIView`
-
-`{`
-
-`public` `ExampleView(TiViewProxy proxy) {`
-
-`super``(proxy);`
-
-`setNativeView(``new` `TiCompositeLayout(proxy.getActivity(), LayoutArrangement.DEFAULT));`
-
-`}`
-
-`}`
+private class ExampleView extends TiUIView
+{
+    public ExampleView(TiViewProxy proxy) {
+        super(proxy);
+        setNativeView(new TiCompositeLayout(proxy.getActivity(), LayoutArrangement.DEFAULT));
+    }
+}
+```
 
 ### View Property and methods
 
 To set a property or invoke a method on a View, the View Proxy acts as an intermediary between the JavaScript and View. The View Proxy exposes APIs to the JavaScript, then invokes APIs on the View. However, the application must be running on the UI thread. The code below checks to see if the application is running on the UI thread. If it is not, it sends a blocking message until it is back on the UI thread.
 
-FooProxy.java
+*FooProxy.java*
 
-`private`  `static`  `final`  `int` `MSG_SET_COLOR =` `70000``;`
+```java
+private static final int MSG_SET_COLOR = 70000;
 
-`@Kroll``.setProperty(retain=``false``)`
+@Kroll.setProperty(retain=false)
+public void setProperty(final String value)
+{
+    // Get the view object from the proxy and set the property
+    if (view != null) {
+        // Check to see if we are on the UI thread
+        if (!TiApplication.isUIThread()) {
+            // If not,
+            TiMessenger.sendBlockingMainMessage(new Handler(TiMessenger.getMainMessenger().getLooper(), new Handler.Callback() {
+                public boolean handleMessage(Message msg) {
+                    switch (msg.what) {
+                        case MSG_SET_PROPERTY: {
+                            AsyncResult result = (AsyncResult) msg.obj;
+                            FooView fooView = (FooView)view;
+                            fooView.setProperty(value);
+                            result.setResult(null);
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+            }).obtainMessage(MSG_SET_PROPERTY), value);
+        } else {
+            // If we are on the UI thread
+            FooView fooView = (FooView)view;
+            fooView.setProperty(value);
+        }
+    }
 
-`public`  `void` `setProperty(``final` `String value)`
-
-`{`
-
-`// Get the view object from the proxy and set the property`
-
-`if` `(view !=` `null``) {`
-
-`// Check to see if we are on the UI thread`
-
-`if` `(!TiApplication.isUIThread()) {`
-
-`// If not,`
-
-`TiMessenger.sendBlockingMainMessage(``new` `Handler(TiMessenger.getMainMessenger().getLooper(),` `new` `Handler.Callback() {`
-
-`public`  `boolean` `handleMessage(Message msg) {`
-
-`switch` `(msg.what) {`
-
-`case` `MSG_SET_PROPERTY: {`
-
-`AsyncResult result = (AsyncResult) msg.obj;`
-
-`FooView fooView = (FooView)view;`
-
-`fooView.setProperty(value);`
-
-`result.setResult(``null``);`
-
-`return`  `true``;`
-
-`}`
-
-`}`
-
-`return`  `false``;`
-
-`}`
-
-`}).obtainMessage(MSG_SET_PROPERTY), value);`
-
-`}` `else` `{`
-
-`// If we are on the UI thread`
-
-`FooView fooView = (FooView)view;`
-
-`fooView.setProperty(value);`
-
-`}`
-
-`}`
-
-`// Updates the property on the Proxy object`
-
-`setProperty(``"property"``, value,` `true``);`
-
-`}`
+    // Updates the property on the Proxy object
+    setProperty("property", value, true);
+}
+```

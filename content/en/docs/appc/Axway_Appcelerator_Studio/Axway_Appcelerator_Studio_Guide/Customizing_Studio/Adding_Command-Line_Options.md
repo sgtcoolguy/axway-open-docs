@@ -46,19 +46,19 @@ In general, launcher arguments control options about how Studio starts and some 
 
 Launcher arguments can be passed on the command line, like so:
 
-`TitaniumStudio.exe -debug`
+```
+TitaniumStudio.exe -debug
+```
 
 or they can appear in the .ini file:
 
-`-debug`
-
-`--launcher.defaultAction`
-
-`openFile`
-
-`-vmargs`
-
-`-Xms40m`
+```
+-debug
+--launcher.defaultAction
+openFile
+-vmargs
+-Xms40m
+```
 
 Note that launcher arguments always appear first, before the vmargs section. No matter which type of item you are specifying, generally the value goes on the _next_ line (see launcher.defaultAction above)
 
@@ -68,14 +68,15 @@ Virtual machine arguments may be specified in one of two ways:
 
 Use -DpropName=propValue as an argument to the Java Virtual Machine on the command line, like:
 
-`TitaniumStudio.exe -vmargs -DpropName=propValue`
+```
+TitaniumStudio.exe -vmargs -DpropName=propValue
+```
 
 Set the property in question to the desired value in the config.ini file:
 
-`--launcher.defaultAction`
-
-`openFile`
-
-`-vmargs`
-
-`-DpropName=propValue`
+```
+--launcher.defaultAction
+openFile
+-vmargs
+-DpropName=propValue
+```

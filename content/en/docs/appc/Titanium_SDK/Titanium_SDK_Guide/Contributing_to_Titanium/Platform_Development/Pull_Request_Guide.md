@@ -100,15 +100,13 @@ That's it. You will now have a forked copy of the appcelerator/titanium\_mobile 
 
 There are multiple ways to clone the Titanium project locally. You can either use a Git desktop app like [Tower](https://www.git-tower.com/), [GitHub Desktop](https://desktop.github.com/) and [Source Tree](https://www.sourcetreeapp.com/), or alternatively the CLI. Guides for the desktop apps can be found on their documentation. To clone your project from the CLI, you need to do
 
-`git clone git``@github``.com:YOUR_ACCOUNT/titanium_mobile.git # YOUR_ACCOUNT is your Github account name`
-
-`cd titanium_mobile`
-
-`git remote add appcelerator git:``//github.com/appcelerator/titanium_mobile.git`
-
-`git checkout master`
-
-`git checkout -b PROJECT-NUMBER # PROJECT-NUMBER is from step` `2``. For example, TIMOB-``1234` `or TC-``432`
+```
+git clone git@github.com:YOUR_ACCOUNT/titanium_mobile.git   # YOUR_ACCOUNT is your Github account name
+cd titanium_mobile
+git remote add appcelerator git://github.com/appcelerator/titanium_mobile.git
+git checkout master
+git checkout -b PROJECT-NUMBER   # PROJECT-NUMBER is from step 2. For example, TIMOB-1234 or TC-432
+```
 
 It is assumed that if you are planning to develop against the titanium\_mobile project, you already have git installed for your system. If you do not, please use our guide for getting set up: [Installing Git](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Git/)
 
@@ -123,15 +121,17 @@ In the commands above, we are performing 3 distinct git operations to prepare fo
 * **git checkout**
     This command, when given the \-b option, creates a local development branch by the name PROJECT-NAME. As mentioned above, the name should correspond to the Jira ticket that you identified in step 2. So if you are planning to address ticket number 1234 in the TIMOB project, your full command would look like this:
 
-    `git checkout -b TIMOB-``1234`
+    ```
+    git checkout -b TIMOB-1234
+    ```
 
 You only need to clone your Github repo and set up the remote repository once. For any subsequent pull requests, you'd do the following:
 
-`git checkout master #` `return` `to the master branch`
-
-`git pull appcelerator master # update the master branch with the latest code from the main repo`
-
-`git checkout -b PROJECT-NUMBER # create a` `new` `branch based on the current state of the master branch`
+```
+git checkout master              # return to the master branch
+git pull appcelerator master     # update the master branch with the latest code from the main repo
+git checkout -b PROJECT-NUMBER  # create a new branch based on the current state of the master branch
+```
 
 ### 5\. Make your changes to the development branch.
 
@@ -173,43 +173,39 @@ If the changes you've made to titanium\_mobile have added to or changed the publ
 
 The API docs are part of the titanium\_mobile project and can be found at:
 
-`/path/to/titanium_mobile/apidoc`
+```
+/path/to/titanium_mobile/apidoc
+```
 
 The directory structure inside titanium\_mobile/apidoc is organized by namespace, just as the API docs are in the Developer Center. In our case, we are looking for Titanium.UI.View, so we go to the following directory:
 
-`/path/to/titanium_mobile/apidoc/Titanium/UI`
+```
+/path/to/titanium_mobile/apidoc/Titanium/UI
+```
 
 and then we open the **View.yml** file in our favorite editor. We would then scroll down to the **properties** section of the YML document and find where we would put our new property, alphabetically. In our case, myNewProperty would be between the existing layout and opacity properties. The updated documentation would look something like this:
 
-`// layout documentation`
-
-`- name: myNewProperty`
-
-`summary: Useful` `new` `property` `for` `keeping track of stuff.`
-
-`description: |`
-
-`This property is added as an example of how to add/modify existing`
-
-`API docs documentation. The description here is a more comprehensive`
-
-`overview of the property which can include information regarding`
-
-`its functionality, usage, and limitations.`
-
-`type: String`
-
-`default``:` `'stuff'`
-
-`// opacity documentation`
+```
+// layout documentation
+  - name: myNewProperty
+    summary: Useful new property for keeping track of stuff.
+    description: |
+        This property is added as an example of how to add/modify existing
+        API docs documentation. The description here is a more comprehensive
+        overview of the property which can include information regarding
+        its functionality, usage, and limitations.
+    type: String
+    default: 'stuff'
+// opacity documentation
+```
 
 When you are done making your modifications, be sure to build and validate the new API docs. You can do that with the following commands.
 
-`cd /path/to/titanium_mobile/apidoc`
-
-`node validate.js #` `1``. validate the generates API docs`
-
-`node docgen.js #` `2``. generate the API docs in /path/to/titanium_mobile/dist/apidoc/`
+```
+cd /path/to/titanium_mobile/apidoc
+node validate.js               # 1. validate the generates API docs
+node docgen.js                 # 2. generate the API docs in /path/to/titanium_mobile/dist/apidoc/
+```
 
 For a more detailed account of this process, see:
 
@@ -221,15 +217,13 @@ For a more detailed account of this process, see:
 
 If you have made a number of commits related to your fix over time, you may want to rebase your changes on the master titanium branch. This step is optional.
 
-`git commit ... # commit code changes as usual`
-
-`git checkout master # go back to the master branch`
-
-`git pull appcelerator master # make sure the master is up to date`
-
-`git checkout PROJECT-NUMBER # go back to your development branch`
-
-`git rebase master # rebase your development branch as the master`
+```
+git commit ...                           # commit code changes as usual
+git checkout master                      # go back to the master branch
+git pull appcelerator master             # make sure the master is up to date
+git checkout PROJECT-NUMBER              # go back to your development branch
+git rebase master                        # rebase your development branch as the master
+```
 
 ### 9\. Submit pull request in GitHub.
 
@@ -237,7 +231,9 @@ To raise a Github pull request, follow these steps:
 
 1. Push your changes to your Github fork.
 
-    `git push origin PROJECT-NUMBER`
+    ```
+    git push origin PROJECT-NUMBER
+    ```
 
 2. Go to the appcelerator/itanium\_mobile repository. Usually, it will be highlighted automatically and prompt you to create a pull request. If not, open a pull request manually (steps 3-6)
 

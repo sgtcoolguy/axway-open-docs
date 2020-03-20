@@ -168,85 +168,49 @@
 
 The tiapp.xml file and its close cousin the timodule.xml file are XML configuration files that the Titanium SDK uses to generate native resources and code. Many of the configuration that lives in tiapp.xml is cross-platform, but some is platform-specific as well. The timodule.xml file is meant for custom Titanium Modules, and generally **_only_** contains platform-specific configuration.
 
-Example: tiapp.xml
+*Example: tiapp.xml*
 
-`<``ti``:app` `xmlns:ti``=``"http://ti.appcelerator.org"``>`
-
-`<``id``>com.appcelerator.helloWorld</``id``>`
-
-`<``name``>helloWorld</``name``>`
-
-`<``version``>1.0.1</``version``>`
-
-`<``icon``>appicon.png</``icon``>`
-
-`<``fullscreen``>false</``fullscreen``>`
-
-`<``navbar``-hidden>false</``navbar``-hidden>`
-
-`<``analytics``>true</``analytics``>`
-
-`<``guid``>GUID</``guid``>`
-
-`<``ios``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<``key``>UISupportedInterfaceOrientations~iphone</``key``>`
-
-`<``array``>`
-
-`<``string``>Ti.UI.PORTRAIT</``string``>`
-
-`</``array``>`
-
-`<``key``>UISupportedInterfaceOrientations~ipad</``key``>`
-
-`<``array``>`
-
-`<``string``>Ti.UI.PORTRAIT</``string``>`
-
-`<``string``>Ti.UI.UPSIDE_PORTRAIT</``string``>`
-
-`<``string``>Ti.UI.LANDSCAPE_LEFT</``string``>`
-
-`<``string``>Ti.UI.LANDSCAPE_RIGHT</``string``>`
-
-`</``array``>`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`</``ios``>`
-
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-`<``tool``-api-level>10</``tool``-api-level>`
-
-`<``abi``>all</``abi``>`
-
-`</``android``>`
-
-`<``mobileweb``>`
-
-`<``splash``>`
-
-`<``enabled``>true</``enabled``>`
-
-`<``inline``-css-images>true</``inline``-css-images>`
-
-`</``splash``>`
-
-`<``theme``>default</``theme``>`
-
-`</``mobileweb``>`
-
-`<``modules``/>`
-
-`</``ti``:app>`
+```xml
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <id>com.appcelerator.helloWorld</id>
+    <name>helloWorld</name>
+    <version>1.0.1</version>
+    <icon>appicon.png</icon>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>GUID</guid>
+  <ios>
+        <plist>
+            <dict>
+            <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+              <string>Ti.UI.PORTRAIT</string>
+            </array>
+            <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+              <string>Ti.UI.PORTRAIT</string>
+              <string>Ti.UI.UPSIDE_PORTRAIT</string>
+              <string>Ti.UI.LANDSCAPE_LEFT</string>
+              <string>Ti.UI.LANDSCAPE_RIGHT</string>
+            </array>
+            </dict>
+        </plist>
+  </ios>
+  <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <tool-api-level>10</tool-api-level>
+        <abi>all</abi>
+  </android>
+    <mobileweb>
+        <splash>
+            <enabled>true</enabled>
+            <inline-css-images>true</inline-css-images>
+        </splash>
+        <theme>default</theme>
+    </mobileweb>
+  <modules/>
+</ti:app>
+```
 
 A note about encryption and tiapp.xml: tiapp.xml properties are encrypted when building the app for production.
 
@@ -266,17 +230,21 @@ In Android, this ID is used to generate the package ID of the application, which
 
 In iOS, this ID must match the Bundle ID when generating an Explicit App ID in the [Apple Developer: Certificates, Identifiers & Profiles](https://developer.apple.com/account/overview.action) page.
 
-Example
+*Example*
 
-`<``id``>com.mycompany.fakeblock</``id``>`
+```xml
+<id>com.mycompany.fakeblock</id>
+```
 
 ### name
 
 **Required.** The application name. This is generally what is shown under the application icon on the end-user's mobile device.
 
-Example
+*Example*
 
-`<``name``>Fakeblock</``name``>`
+```xml
+<name>Fakeblock</name>
+```
 
 On Android, if you change the name to a value that starts with a digit, you need to prefix the name in the activity with an undersore (\_) if you include activities in the Android section of the tiapp.xml file. For example, if you change the name to 2Foo the activity name will be \_2Foo.
 
@@ -284,9 +252,11 @@ On Android, if you change the name to a value that starts with a digit, you need
 
 Whether or not to automatically collect analytics for this application. Enabled by default. See [Analytics Architecture](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/Analytics_Architecture/).
 
-Example: Enable Ti.Analytics
+*Example: Enable Ti.Analytics*
 
-`<``analytics``>true</``analytics``>`
+```xml
+<analytics>true</analytics>
+```
 
 ### copyright
 
@@ -298,25 +268,24 @@ This element contains subelements of deployment targets used by Studio to determ
 
 * <target device="DEVICE">: Specifies if the target device is supported by the project. Must be placed inside the <deployment-targets> element.
 
-Example: Specify the project only supports Android targets
+*Example: Specify the project only supports Android targets*
 
-`<``deployment``-targets>`
-
-`<``target`  `device``=``"android"``>true</``target``>`
-
-`<``target`  `device``=``"ipad"``>false</``target``>`
-
-`<``target`  `device``=``"iphone"``>false</``target``>`
-
-`<``target`  `device``=``"mobileweb"``>false</``target``>`
-
-`</``deployment``-targets>`
+```xml
+<deployment-targets>
+    <target device="android">true</target>
+    <target device="ipad">false</target>
+    <target device="iphone">false</target>
+    <target device="mobileweb">false</target>
+</deployment-targets>
+```
 
 ### description
 
 The description of this application.
 
-`<``description``>Tap to rock out with this block.</``description``>`
+```xml
+<description>Tap to rock out with this block.</description>
+```
 
 ### fullscreen
 
@@ -328,9 +297,11 @@ Since Release 5.0.0, on Android, the theme will be set to Theme.AppCompat.NoTitl
 
 The application icon's filename. This file should be relative to the application's Resources directory, or alternatively, can also live under a platform-specific folder, such as Resources/iphone or Resources/android.
 
-Example: Default icon in ./Resources or ./Resource/<platform>
+*Example: Default icon in ./Resources or ./Resource/<platform>*
 
-`<``icon``>appicon.png</``icon``> `
+```xml
+<icon>appicon.png</icon>
+```
 
 ### modules
 
@@ -344,15 +315,14 @@ This element includes subelements of modules to include with the project.
 
     Define the deploy-type attribute if you want to use the module in specific environments. To specify one or more environment, comma-separate the environment types. You may specify the following environments: development, test or production.
 
-Example: Include the ti.cloud module
+*Example: Include the ti.cloud module*
 
-`<``modules``>`
-
-`<``module`  `platform``=``"commonjs"``>ti.cloud</``module``>`
-
-`<``module`  `platform``=``"android"`  `deploy-type``=``"development,test"``>junit</``module``>`
-
-`</``modules``>`
+```xml
+<modules>
+    <module platform="commonjs">ti.cloud</module>
+    <module platform="android" deploy-type="development,test">junit</module>
+</modules>
+```
 
 ### navbar-hidden
 
@@ -366,13 +336,13 @@ This element includes subelements of plugins to include with the project.
 
 * <plugin version="PLUGIN\_VERSION">: Defines a plugin to include with the project specified by the plugin's folder name. Place plugins in the plugins folder of the project (same level as the Resources folder). This element must be placed inside the <plugins>element. The version attribute is optional. Define it to include a specific version of the plugin.
 
-Example: Include the Alloy plugin
+*Example: Include the Alloy plugin*
 
-`<``plugins``>`
-
-`<``plugin`  `version``=``"1.0"``>ti.alloy</``plugin``>`
-
-`</``plugins``>`
+```xml
+<plugins>
+    <plugin version="1.0">ti.alloy</plugin>
+</plugins>
+```
 
 ### property
 
@@ -382,9 +352,11 @@ See [Application properties](#app_properties) below.
 
 The publisher of this application.
 
-Example
+*Example*
 
-`<``publisher``>Bluth Company</``publisher``>`
+```xml
+<publisher>Bluth Company</publisher>
+```
 
 ### statusbar-hidden
 
@@ -394,17 +366,21 @@ Only supported on Android. Set to true to set the theme to Theme.AppCompat.NoTit
 
 Specifies the SDK to build against or use for CLI commands.
 
-Example: Use Titanium SDK 8.0.0 GA
+*Example: Use Titanium SDK 8.0.0 GA*
 
-`<``sdk``-version>8.0.0.GA</``sdk``-version>`
+```xml
+<sdk-version>8.0.0.GA</sdk-version>
+```
 
 ### url
 
 The URL of this application.
 
-Example
+*Example*
 
-`<``url``>``http://www.bluthcompany.com/fakeblock``</``url``>`
+```xml
+<url>http://www.bluthcompany.com/fakeblock</url>
+```
 
 ### version
 
@@ -412,9 +388,11 @@ The application version.
 
 For iOS the version number is truncated to three dot-separated numbers. For example, '2.1' remains as '2.1', but '2.1.0.1' will be converted to '2.1.0'.
 
-Example
+*Example*
 
-`<``version``>3.1.4</``version``>`
+```xml
+<version>3.1.4</version>
+```
 
 ### Deprecated elements
 
@@ -434,7 +412,9 @@ Any properties defined inside the tiapp.xml are read-only. Previously, you could
 
 Properties generally follow the form:
 
-`<``property`  `name``=``"name"`  `type``=``"type"``>value</``property``>`
+```xml
+<property name="name" type="type">value</property>
+```
 
 * name is the property name
 
@@ -448,7 +428,9 @@ Properties are also used in specific cases by each platform, which is further ex
 
 The special property ti.ui.defaultunit can be used to set the default unit used for specifying sizes and positions.
 
-`<``property`  `name``=``"ti.ui.defaultunit"``>system</``property``>`
+```xml
+<property name="ti.ui.defaultunit">system</property>
+```
 
 The default unit can be one of the following:
 
@@ -474,9 +456,11 @@ As of Titanium 8.0.0, tiapp.xml property intent-filter-new-task is no longer sup
 
 Since launch modes cannot be used with Titanium Android, to offer similar behavior to android:launchMode="singleTask" when using intent filters, you can set the _intent-filter-new-task_ property in your tiapp.xml:
 
-tiapp.xml
+*tiapp.xml*
 
-`<``property`  `name``=``"intent-filter-new-task"`  `type``=``"bool"``>true</``property``>`
+```xml
+<property name="intent-filter-new-task" type="bool">true</property>
+```
 
 This will start any activity launched from an intent filter as a new task.
 
@@ -484,7 +468,9 @@ This will start any activity launched from an intent filter as a new task.
 
 The special property appc-security-jailbreak-detect can be used to increase the security of your application by preventing the mobile app from running on a Jailbroken (iOS) or rooted (Android) device.
 
-`<``property`  `name``=``"appc-security-jailbreak-detect"``>true</``property``>`
+```xml
+<property name="appc-security-jailbreak-detect">true</property>
+```
 
 This feature is disabled by default. If you enable this feature, you will be required to set the property of remote for appc-sourcecode-encryption-policy in order for it to work. Note: there is no default behavior for appc\_sourcecode-encryption-policy. You must explicitly set this value.
 
@@ -494,7 +480,9 @@ Setting this property to **false** will allow your application to run on devices
 
 The special property appc-security-debugger-detect can be used to increase the security of your application by preventing debugging applications from connecting to your mobile app.
 
-`<``property`  `name``=``"appc-security-debugger-detect"``>true</``property``>`
+```xml
+<property name="appc-security-debugger-detect">true</property>
+```
 
 This feature is disabled by default. If you enable this feature, you will be required to set the property of remote for appc-sourcecode-encryption-policy in order for it to work. Note: there is no default behavior for appc\_sourcecode-encryption-policy. You must explicitly set this value.
 
@@ -508,47 +496,34 @@ The special property appc-sourcecode-encryption-policy determines the encryption
 
 * remote: Stores the encryption key remotely, which requires the device to have an internet connection to run the application (default behavior).
 
-`<``property`  `name``=``"appc-sourcecode-encryption-policy"``>remote</``property``>`
+```xml
+<property name="appc-sourcecode-encryption-policy">remote</property>
+```
 
 ## Android-specific section
 
 Under the top <ti:app> element, you may optionally have an <android> element that contains Android specific configuration. If the application requires any ad-hoc XML from AndroidManifest.xml, make sure to also add the android XML namespace, as shown in the example below. The official [Android Developers](http://developer.android.com/guide/topics/manifest/manifest-intro.html) website describes all the other elements that are supported, such as <service> , <uses-permission> and <activity> for instance, and these will be added using the same logic.
 
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-`<!-- Custom Titanium elements -->`
-
-`<``abi``>all</``abi``>`
-
-`<``activities``>`
-
-`<``activity`  `url``=``"activity.js"``/>`
-
-`</``activities``>`
-
-`<``services``>`
-
-`<``service`  `url``=``"service.js"`  `type``=``"standard"``/>`
-
-`</``services``>`
-
-`<!-- Android Manifest element -->`
-
-`<``manifest``>`
-
-`<``uses``-sdk` `android:minSdkVersion``=``"10"`  `android:targetSdkVersion``=``"14"``/>`
-
-`<``application``>`
-
-`<``activity``>...</``activity``>`
-
-`<``service``>...</``service``>`
-
-`</``application``>`
-
-`</``manifest``>`
-
-`</``android``>`
+```xml
+<android xmlns:android="http://schemas.android.com/apk/res/android">
+  <!-- Custom Titanium elements -->
+  <abi>all</abi>
+  <activities>
+    <activity url="activity.js"/>
+  </activities>
+  <services>
+    <service url="service.js" type="standard"/>
+  </services>
+  <!-- Android Manifest element -->
+  <manifest>
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="14"/>
+    <application>
+        <activity>...</activity>
+        <service>...</service>
+    </application>
+  </manifest>
+</android>
+```
 
 The above example includes all of the common sections to show the structure of the XML elements. All of these sections are optional, and are described below:
 
@@ -616,9 +591,11 @@ Android also supports a number of application properties for various internal se
 | ti.android.debug | bool | false | Turn on detailed logging in the SDK |
 | ti.android.root.reappears.restart | bool | false | Restarts the application if the root task was destroyed by Android after a period of inactivity.<br /><br />**(As of Titanium 8.0.0, this property is no longer supported.)** |
 
-Example: Disable Fastdev
+*Example: Disable Fastdev*
 
-`<``property`  `name``=``"ti.android.fastdev"``>false</``property``>`
+```xml
+<property name="ti.android.fastdev">false</property>
+```
 
 ### Properties to work around Android bugs 2373 and 5277
 
@@ -643,41 +620,31 @@ See [TIMOB-4941](http://jira.appcelerator.org/browse/TIMOB-4941), [TIMOB-1559](h
 
 To indicate that your application supports a certain API Level, add the <uses-sdk> element with the android:minSdkVersion and/or android:targetSdkVersion attributes. It may be necessary to set these attributes to enable certain Android features, such as the action bar or theme. Note that the API Level you enter below must be within the min and max supported levels the Titanium SDK supports as shown in the [Titanium Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/).
 
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-`<``manifest``>`
-
-`<!-- Target Android 10.0 and set min OS version supported to Android 5.0. -->`
-
-`<``uses``-sdk` `android:minSdkVersion``=``"21"`  `android:targetSdkVersion``=``"29"``/>`
-
-`</``manifest``>`
-
-`</``android``>`
+```xml
+<android xmlns:android="http://schemas.android.com/apk/res/android">
+    <manifest>
+        <!-- Target Android 10.0 and set min OS version supported to Android 5.0. -->
+        <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="29"/>
+    </manifest>
+</android>
+```
 
 #### Configuring screen densities
 
 To indicate that your application supports any screen densities, which is a common use-case, add the <supports-screens> element and set the screen size attributes to true:
 
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-`<``manifest``>`
-
-`<``supports``-screens`
-
-`android:smallScreens``=``"true"`
-
-`android:normalScreens``=``"true"`
-
-`android:largeScreens``=``"true"`
-
-`android:xlargeScreens``=``"true"`
-
-`/>`
-
-`</``manifest``>`
-
-`</``android``>`
+```xml
+<android xmlns:android="http://schemas.android.com/apk/res/android">
+    <manifest>
+        <supports-screens
+            android:smallScreens="true"
+            android:normalScreens="true"
+            android:largeScreens="true"
+            android:xlargeScreens="true"
+        />
+    </manifest>
+</android>
+```
 
 Do not set the android:anyDensity attribute to false. Google does not recommend [changing the default value](http://developer.android.com/guide/topics/manifest/supports-screens-element.html#any). Setting this attribute to false may cause undesired behavior.
 
@@ -686,29 +653,25 @@ Do not set the android:anyDensity attribute to false. Google does not recommend 
 To make the app debuggable by default, set the <application> attribute to true (it's false in our default manifest template).
 This setting is required to attach the Java debugger to a running application. It is **not** required for debugging the application's JavaScript in Studio, so setting debuggable to true may be primarily interesting to developers working on native Android modules or debugging issues in the Titanium native libraries.
 
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-`<``manifest``>`
-
-`<``application`  `android:debuggable``=``"true"` `/>`
-
-`</``manifest``>`
-
-`</``android``>`
+```xml
+<android xmlns:android="http://schemas.android.com/apk/res/android">
+    <manifest>
+        <application android:debuggable="true" />
+    </manifest>
+</android>
+```
 
 #### Setting install location preferences
 
 Your Android apps are installed by default to the device's internal storage, but Titanium apps can be installed to the SD card using the following configuration:
 
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-`<``manifest`  `android:installLocation``=``"preferExternal"``>`
-
-`<``uses``-sdk` `android:minSdkVersion``=``"7"` `/>`
-
-`</``manifest``>`
-
-`</``android``>`
+```xml
+<android xmlns:android="http://schemas.android.com/apk/res/android">
+   <manifest android:installLocation="preferExternal">
+      <uses-sdk android:minSdkVersion="7" />
+   </manifest>
+</android>
+```
 
 For the android:installLocation property, choose one of these values:
 
@@ -724,69 +687,51 @@ Finally, you need to add the <uses-sdk> tag within the <manifest> node. This tag
 
 To request a large heap size on Android 3.x and later, set the android:largeHeap property of the <application> attribute to true. Requires API level 11 or higher. Note that you are not guaranteed a fixed increase in available memory, because some devices are constrained by their total available memory.
 
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-`<``manifest``>`
-
-`<``application`  `android:largeHeap``=``"true"``/>`
-
-`</``manifest``>`
-
-`</``android``>`
+```xml
+<android xmlns:android="http://schemas.android.com/apk/res/android">
+    <manifest>
+        <application android:largeHeap="true"/>
+    </manifest>
+</android>
+```
 
 ## iOS-specific section
 
 Under the top <ti:app>element, you may optionally have iOS-specific elements.
 
-`<``ti``:app>`
-
-`<``ios``>`
-
-`<``entitlements``>`
-
-`<``dict``>`
-
-`<!-- Enter entitlements like com.apple.security.application-groups -->`
-
-`</``dict``>`
-
-`<``extensions``>`
-
-`...`
-
-`</``extensions``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<!-- Enter Info.plist entries like UIStatusBarStyle -->`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`<``use``-autolayout>true</``use``-autolayout>`
-
-`</``ios``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    <ios>
+        <entitlements>
+      <dict>
+        <!-- Enter entitlements like com.apple.security.application-groups -->
+      </dict>
+        <extensions>
+            ...
+        </extensions>
+        <plist>
+            <dict>
+                <!-- Enter Info.plist entries like UIStatusBarStyle -->
+            </dict>
+        </plist>
+        <use-autolayout>true</use-autolayout>
+    </ios>
+</ti:app>
+```
 
 ### team-id
 
 **Since Release 5.0.0**. Specifies the team ID to be used as a prefix for the app-id. This property is required when using app extensions (e.g. share extensions, watch extensions and siri extentions).
 
-Example: Enable app-groups for app-extensions
+*Example: Enable app-groups for app-extensions*
 
-`<``ti``:app>`
-
-`<``ios``>`
-
-`<``team``-id>YOUR_TEAM_ID</``team``-id>`
-
-`<``ios``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  <ios>
+    <team-id>YOUR_TEAM_ID</team-id>
+  <ios>
+</ti:app>
+```
 
 ### entitlements
 
@@ -794,33 +739,23 @@ Example: Enable app-groups for app-extensions
 
 Prior to this release, developers could already specify entitlements by using the "Entitlements.plist" in the project root that is merged with the internal entitlements (e.g. push-notifications). Starting in Titanium 6.1.0, developers can also specify entitlements in the central "tiapp.xml" project file. It will be merged with internal entitlements and is able to override existing entitlements keys.
 
-Example: Enable app-groups for app-extensions
+*Example: Enable app-groups for app-extensions*
 
-`<``ti``:app>`
-
-`<``ios``>`
-
-`<``entitlements``>`
-
-`<``dict``>`
-
-`<!-- Example: Enable app-groups for app-extensions -->`
-
-`<``key``>com.apple.security.application-groups</``key``>`
-
-`<``array``>`
-
-`<``string``>group.com.appcelerator.mycoolapp</``string``>`
-
-`</``array``>`
-
-`</``dict``>`
-
-`</``entitlements``>`
-
-`<``ios``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  <ios>
+    <entitlements>
+      <dict>
+        <!-- Example: Enable app-groups for app-extensions -->
+        <key>com.apple.security.application-groups</key>
+         <array>
+          <string>group.com.appcelerator.mycoolapp</string>
+        </array>
+      </dict>
+    </entitlements>
+  <ios>
+</ti:app>
+```
 
 ### extensions
 
@@ -838,79 +773,58 @@ In the target element, add a **<provisioning-profiles>** element, which determin
 
 * **<dist-adhoc/>**: Add to deploy for ad-hoc builds
 
-Example: Include watchOS extensions
+*Example: Include watchOS extensions*
 
-`<``ti``:app>`
-
-`<``ios``>`
-
-`<``extensions``>`
-
-`<``extension`  `projectPath``=``"extensions/foo/foo.xcodeproj"``>`
-
-`<``target`  `name``=``"foo WatchApp Extension"``>`
-
-`<``provisioning``-profiles>`
-
-`<``devices``/>`
-
-`<``dist``-appstore/>`
-
-`<``dist``-adhoc/>`
-
-`</``provisioning``-profiles>`
-
-`</``target``>`
-
-`<``target`  `name``=``"foo WatchApp"``>`
-
-`<``provisioning``-profiles>`
-
-`<``devices``/>`
-
-`<``dist``-appstore/>`
-
-`<``dist``-adhoc/>`
-
-`</``provisioning``-profiles>`
-
-`</``target``>`
-
-`</``extension``>`
-
-`</``extensions``>`
-
-`<``ios``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  <ios>
+    <extensions>
+      <extension projectPath="extensions/foo/foo.xcodeproj">
+        <target name="foo WatchApp Extension">
+          <provisioning-profiles>
+            <devices/>
+            <dist-appstore/>
+            <dist-adhoc/>
+          </provisioning-profiles>
+        </target>
+        <target name="foo WatchApp">
+          <provisioning-profiles>
+            <devices/>
+            <dist-appstore/>
+            <dist-adhoc/>
+          </provisioning-profiles>
+        </target>
+      </extension>
+    </extensions>
+  <ios>
+</ti:app>
+```
 
 ### min-ios-ver
 
 Specifies the minimum iOS version supported by this application. The default value when not specified is "9.0".
 
-Example: Set 9.0 as the minimum iOS version
+*Example: Set 9.0 as the minimum iOS version*
 
-`<``ios``>`
-
-`<!-- Require iOS 9.0 or later -->`
-
-`<``min``-ios-ver>9.0</``min``-ios-ver>`
-
-`</``ios``>`
+```xml
+<ios>
+    <!-- Require iOS 9.0 or later -->
+    <min-ios-ver>9.0</min-ios-ver>
+</ios>
+```
 
 ### min-sdk-ver
 
 Specifies the minimum SDK (Xcode) version supported by this application. The default value when not specified is "8.0".
 
-Example: Set Xcode 4.3 as the minimum SDK version
+*Example: Set Xcode 4.3 as the minimum SDK version*
 
-`<``ios``>`
-
-`<!-- Require Xcode 9 or later -->`
-
-`<``min``-sdk-ver>9.0</``min``-sdk-ver>`
-
-`</``ios``>`
+```xml
+<ios>
+    <!-- Require Xcode 9 or later -->
+    <min-sdk-ver>9.0</min-sdk-ver>
+</ios>
+```
 
 ### plist
 
@@ -922,7 +836,9 @@ For a detailed description of all Info.plist keys, see the [iOS Info.plist Key R
 
 You can specify device-specific configurations by appending ~ipad, ~iphone or ~ipod to the key name, just as in the Info.plist file. For example:
 
-`<``key``>UISupportedInterfaceOrientations~ipad</``key``>`
+```xml
+<key>UISupportedInterfaceOrientations~ipad</key>
+```
 
 Not all keys are supported at this time. See [Unsupported Info.plist Keys](#UnsupportedInfo.plistKeys) for a list of keys that may not be overridden in the tiapp.xml file.
 
@@ -942,41 +858,27 @@ For device-specific configurations, use:
 
 * UISupportedInterfaceOrientations~ipod
 
-Example: Limits iPhone orientation to portait and no limits for iPad
+*Example: Limits iPhone orientation to portait and no limits for iPad*
 
-`<``ios``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<``key``>UISupportedInterfaceOrientations~iphone</``key``>`
-
-`<``array``>`
-
-`<``string``>UIInterfaceOrientationPortrait</``string``>`
-
-`</``array``>`
-
-`<``key``>UISupportedInterfaceOrientations~ipad</``key``>`
-
-`<``array``>`
-
-`<``string``>UIInterfaceOrientationPortrait</``string``>`
-
-`<``string``>UIInterfaceOrientationPortraitUpsideDown</``string``>`
-
-`<``string``>UIInterfaceOrientationLandscapeLeft</``string``>`
-
-`<``string``>UIInterfaceOrientationLandscapeRight</``string``>`
-
-`</``array``>`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`</``ios``>`
+```xml
+<ios>
+<plist>
+<dict>
+  <key>UISupportedInterfaceOrientations~iphone</key>
+  <array>
+    <string>UIInterfaceOrientationPortrait</string>
+  </array>
+  <key>UISupportedInterfaceOrientations~ipad</key>
+  <array>
+    <string>UIInterfaceOrientationPortrait</string>
+    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+    <string>UIInterfaceOrientationLandscapeLeft</string>
+    <string>UIInterfaceOrientationLandscapeRight</string>
+  </array>
+</dict>
+</plist>
+</ios>
+```
 
 #### UIBackgroundModes
 
@@ -984,39 +886,26 @@ A list of background modes this app supports. For a [BackgroundService](#!/api/T
 
 Replaces <backgroundModes>.
 
-Example: Enables all background services
+*Example: Enables all background services*
 
-`<``ios``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<``key``>UIBackgroundModes</``key``>`
-
-`<``array``>`
-
-`<``string``>audio</``string``>`
-
-`<``string``>location</``string``>`
-
-`<``string``>voip</``string``>`
-
-`<``string``>newsstand-content</``string``>`
-
-`<``string``>external-accessory</``string``>`
-
-`<``string``>bluetooth-central</``string``>`
-
-`<``string``>bluetooth-peripheral</``string``>`
-
-`</``array``>`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`</``ios``>`
+```xml
+<ios>
+<plist>
+<dict>
+  <key>UIBackgroundModes</key>
+  <array>
+    <string>audio</string>
+    <string>location</string>
+    <string>voip</string>
+    <string>newsstand-content</string>
+    <string>external-accessory</string>
+    <string>bluetooth-central</string>
+    <string>bluetooth-peripheral</string>
+  </array>
+</dict>
+</plist>
+</ios>
+```
 
 #### UIRequiredDeviceCapabilities
 
@@ -1024,67 +913,40 @@ A list of features this app requires.
 
 Replaces <requires>.
 
-Example: Require all device capabilities
+*Example: Require all device capabilities*
 
-`<``ios``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<``key``>UIRequiredDeviceCapabilities</``key``>`
-
-`<``array``>`
-
-`<``string``>telephony</``string``>`
-
-`<``string``>wifi</``string``>`
-
-`<``string``>sms</``string``>`
-
-`<``string``>still-camera</``string``>`
-
-`<``string``>auto-focus-camera</``string``>`
-
-`<``string``>front-facing-camera</``string``>`
-
-`<``string``>camera-flash</``string``>`
-
-`<``string``>video-camera</``string``>`
-
-`<``string``>accelerometer</``string``>`
-
-`<``string``>gyroscope</``string``>`
-
-`<``string``>location-services</``string``>`
-
-`<``string``>gps</``string``>`
-
-`<``string``>magnetometer</``string``>`
-
-`<``string``>gamekit</``string``>`
-
-`<``string``>microphone</``string``>`
-
-`<``string``>opengles-1</``string``>`
-
-`<``string``>opengles-2</``string``>`
-
-`<``string``>armv6</``string``>`
-
-`<``string``>armv7</``string``>`
-
-`<``string``>peer-peer</``string``>`
-
-`<``string``>bluetooth-le</``string``>`
-
-`</``array``>`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`</``ios``>`
+```xml
+<ios>
+<plist>
+<dict>
+  <key>UIRequiredDeviceCapabilities</key>
+  <array>
+    <string>telephony</string>
+    <string>wifi</string>
+    <string>sms</string>
+    <string>still-camera</string>
+    <string>auto-focus-camera</string>
+    <string>front-facing-camera</string>
+    <string>camera-flash</string>
+    <string>video-camera</string>
+    <string>accelerometer</string>
+    <string>gyroscope</string>
+    <string>location-services</string>
+    <string>gps</string>
+    <string>magnetometer</string>
+    <string>gamekit</string>
+    <string>microphone</string>
+    <string>opengles-1</string>
+    <string>opengles-2</string>
+    <string>armv6</string>
+    <string>armv7</string>
+    <string>peer-peer</string>
+    <string>bluetooth-le</string>
+  </array>
+</dict>
+</plist>
+</ios>
+```
 
 #### UIRequiresPersistentWiFi
 
@@ -1094,7 +956,9 @@ Replaces the top-level <persistent-wifi> element.
 
 Example:
 
-`<``key``>UIRequiresPersistentWiFi</``key``><``true``/>`
+```xml
+<key>UIRequiresPersistentWiFi</key><true/>
+```
 
 Also, the following iOS-only top-level elements will be deprecated:
 
@@ -1104,9 +968,11 @@ Specifies whether the app’s icon already includes a shine effect.
 
 Replaces the top-level <prerendered-icon>element.
 
-Example
+*Example*
 
-`<``key``>UIPrerenderedIcon</``key``><``true``/>`
+```xml
+<key>UIPrerenderedIcon</key><true/>
+```
 
 #### UIStatusBarHidden
 
@@ -1114,9 +980,11 @@ Specifies whether the status bar is initially hidden when the app launches.
 
 Replaces the top-level <statusbar-hidden>element.
 
-Example: Hide the status bar
+*Example: Hide the status bar*
 
-`<``key``>UIStatusBarHidden</``key``><``true``/>`
+```xml
+<key>UIStatusBarHidden</key><true/>
+```
 
 #### UIStatusBarStyle
 
@@ -1124,9 +992,11 @@ Specifies the style of the status bar as the app launches.
 
 Replaces the top-level <statusbar-style>element.
 
-Example: Use the tranluscent style
+*Example: Use the tranluscent style*
 
-`<``key``>UIStatusBarStyle</``key``><``string``>UIStatusBarStyleBlackTranslucent</``string``>`
+```xml
+<key>UIStatusBarStyle</key><string>UIStatusBarStyleBlackTranslucent</string>
+```
 
 #### Unsupported Info.plist keys
 
@@ -1158,87 +1028,74 @@ The following Info.plist properties are ignored in the <plist> section. The valu
 
 With some of the new security features of iOS9, SDK 5.1.2's **canOpenUrl** might fail without adding in the proper properties in the info.plist file. For example,
 
-`<``key``>LSApplicationQueriesSchemes</``key``>`
-
-`<``array``>`
-
-`<``string``>fbapi</``string``>`
-
-`<``string``>fbauth2</``string``>`
-
-`<``string``>fbshareextension</``string``>`
-
-`<``string``>fb-messenger-api</``string``>`
-
-`<``string``>twitter</``string``>`
-
-`<``string``>whatsapp</``string``>`
-
-`<``string``>instagram</``string``>`
-
-`<``string``>comgooglemaps</``string``>`
-
-`</``array``>`
+```xml
+<key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+        <string>fb-messenger-api</string>
+        <string>twitter</string>
+        <string>whatsapp</string>
+        <string>instagram</string>
+        <string>comgooglemaps</string>
+    </array>
+```
 
 ### run-on-main-thread
 
 **Since Release 5.1.0**. Enables running all JavaScript scripts on the main thread as opposed to a secondary thread. It is disabled by default in existing projects and enabled in new projects. It will be enabled automatically in Titanium SDK 7.0.0 and later.
 
-`<``ti``:app>`
-
-`<``property`  `name``=``"run-on-main-thread"`  `type``=``"bool"``>true</``property``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    <property name="run-on-main-thread" type="bool">true</property>
+</ti:app>
+```
 
 ### log-server-port
 
 **Since Release 6.0.0**. Specifies a custom port to use for the iOS log-server. Use this when the default port is causing issues like "Trying to connect to log server port xxxxx ...".
 
-`<``ti``:app>`
-
-`<``ios``>`
-
-`<!-- Or any other available port -->`
-
-`<``log``-server-port>27973</``log``-server>`
-
-`</``ios``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    <ios>
+    <!-- Or any other available port -->
+        <log-server-port>27973</log-server>
+    </ios>
+</ti:app>
+```
 
 ### allow-custom-keyboards
 
 **Since Release 6.1.0**. Allow or disallow custom iOS 8+ keyboard extensions. By default, custom keyboard extensions are allowed. Add this property and set it to false to disallow custom keyboard extensions.
 
-`<``ti``:app>`
-
-`<``property`  `name``=``"allow-custom-keyboards"`  `type``=``"bool"``>false</``property``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    <property name="allow-custom-keyboards" type="bool">false</property>
+</ti:app>
+```
 
 ### use-app-thinning
 
 **Since Release 5.1.0**. Determines whether to enable App Thinning for iOS applications by using an Asset Catalog. An Asset Catalog contains image assets for specific devices. When a user installs your application, only the resources that your device supports will be downloaded. The element is automatically added to new projects since Release 5.1.0. For details, see [App Thinning: Slicing](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_iOS_apps/App_Thinning/#slicing).
 
-Filesystem Access
+*Filesystem Access*
 
 Because images are store in the Asset Catalog, reading image files manually from the filesystem should be done using the Ti.Filesystem.getAsset() method.
 
-`<``ti``:app>`
-
-`<``ios``>`
-
-`<``use``-app-thinning>true</``use``-app-thinning>`
-
-`</``ios``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    <ios>
+         <use-app-thinning>true</use-app-thinning>
+    </ios>
+</ti:app>
+```
 
 ### use-autolayout
 
 **Since Release 5.1.0**. Enables the iOS [auto-layout engine](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/index.html#//apple_ref/doc/uid/TP40010853) to layout the children components of a view. Disabled by default.
 
-Experimental Feature
+*Experimental Feature*
 
 This is an experimental feature with known issues:
 
@@ -1246,29 +1103,25 @@ This is an experimental feature with known issues:
 
 If you find any issue using this feature, file a bug in [JIRA](https://jira.appcelerator.org/).
 
-`<``ti``:app>`
-
-`<``ios``>`
-
-`<``use``-autolayout>true</``use``-autolayout>`
-
-`</``ios``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    <ios>
+        <use-autolayout>true</use-autolayout>
+    </ios>
+</ti:app>
+```
 
 ### use-jscore-framework
 
 **Since Release 4.1.0**. Use the built-in JavaScriptCore framework rather than the custom Titanium one. It will be made default in Titanium SDK 7.0.0 and later.
 
-`<``ti``:app>`
-
-`<``ios``>`
-
-`<``use``-jscore-framework>true</``use``-jscore-framework>`
-
-`</``ios``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    <ios>
+        <use-jscore-framework>true</use-jscore-framework>
+    </ios>
+</ti:app>
+```
 
 ### Legacy iPhone
 
@@ -1321,259 +1174,182 @@ Users can generate capabilities even if they are not defined in the tiapp.xml fi
 
 **app.js**:
 
-`Ti.App.setProximityDetection(``true``);`
+```
+Ti.App.setProximityDetection(true);
+```
 
 **tiapp.xml**:
 
-`<``windows``>`
-
-`<``manifest``>`
-
-`<``Capabilities``>`
-
-`<``Capability`  `Name``=``"internetClient"` `/>`
-
-`<``Capability`  `Name``=``"picturesLibrary"` `/>`
-
-`</``Capabilities``>`
-
-`</``manifest``>`
-
-`</``windows``>`
+```xml
+<windows>
+    <manifest>
+        <Capabilities>
+            <Capability Name="internetClient" />
+            <Capability Name="picturesLibrary" />
+        </Capabilities>
+    </manifest>
+</windows>
+```
 
 And you build the app with this command: appc run -p windows -S 10.0 --build-only
 
 The result should be this:
 
-`...`
-
-`<``Capabilities``>`
-
-`<``Capability`  `Name``=``"internetClient"` `/>`
-
-`<``uap``:Capability` `Name``=``"picturesLibrary"` `/>`
-
-`<``DeviceCapability`  `Name``=``"proximity"` `/>`
-
-`</``Capabilities``>`
-
-`...`
+```
+...
+<Capabilities>
+    <Capability Name="internetClient" />
+    <uap:Capability Name="picturesLibrary" />
+    <DeviceCapability Name="proximity" />
+</Capabilities>
+...
+```
 
 When building a Windows platform module that requires specific capabilities, the user can use timodule.xml the same way Android modules requires specific capabilities. At build time, these required capabilities will be included in the user's app.
 
 For example, when building an app that has the following capability in the timodule.xml:
 
-`<``manifest``>`
-
-`<``Capabilities``>`
-
-`<``DeviceCapability`  `Name``=``"location"` `/>`
-
-`</``Capabilities``>`
-
-`</``manifest``>`
+```xml
+<manifest>
+    <Capabilities>
+        <DeviceCapability Name="location" />
+    </Capabilities>
+</manifest>
+```
 
 Once the app has been built, you should see that the timodule.xml was updated to look something like this:
 
-`...`
-
-`<``Capabilities``>`
-
-`<``Capability`  `Name``=``"internetClient"` `/>`
-
-`<``DeviceCapability`  `Name``=``"location"``/>`
-
-`</``Capabilities``>`
-
-`...`
+```
+...
+<Capabilities>
+    <Capability Name="internetClient" />
+    <DeviceCapability Name="location"/>
+</Capabilities>
+...
+```
 
 ##### Internet capability
 
 Enabled by default, required for _Titanium.Network.\*_
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`<``manifest``>`
-
-`<``Capabilities``>`
-
-`<``Capability`  `Name``=``"internetClient"` `/>`
-
-`</``Capabilities``>`
-
-`</``manifest``>`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  ...
+  <windows>
+    <manifest>
+      <Capabilities>
+        <Capability Name="internetClient" />
+      </Capabilities>
+    </manifest>
+  </windows>
+  ...
+</ti:app>
+```
 
 ##### Location capability
 
 Required for Titanium.Geolocation
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`...`
-
-`<``manifest``>`
-
-`<``Capabilities``>`
-
-`<``DeviceCapability`  `Name``=``"location"` `/>`
-
-`</``Capabilities``>`
-
-`</``manifest``>`
-
-`...`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  ...
+  <windows>
+    ...
+    <manifest>
+      <Capabilities>
+        <DeviceCapability Name="location" />
+      </Capabilities>
+    </manifest>
+    ...
+  </windows>
+  ...
+</ti:app>
+```
 
 ##### Background audio capability
 
 Required for Titanium.Media.AudioPlayer background audio functionality
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`...`
-
-`<``manifest``>`
-
-`<``Extensions``>`
-
-`<``Extension`  `Category``=``"windows.backgroundTasks"`  `Executable``=``"$targetnametoken$.exe"`  `EntryPoint``=``"TitaniumWindows_Media.AudioBackground"``>`
-
-`<``BackgroundTasks``>`
-
-`<``Task`  `Type``=``"audio"` `/>`
-
-`</``BackgroundTasks``>`
-
-`</``Extension``>`
-
-`</``Extensions``>`
-
-`</``manifest``>`
-
-`...`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  ...
+  <windows>
+    ...
+    <manifest>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" Executable="$targetnametoken$.exe" EntryPoint="TitaniumWindows_Media.AudioBackground">
+          <BackgroundTasks>
+            <Task Type="audio" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </manifest>
+    ...
+  </windows>
+  ...
+</ti:app>
+```
 
 ##### Audio recorder
 
 Required for Titanium.Media.AudioRecorder functionality
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`...`
-
-`<``Capabilities``>`
-
-`<``Capability`  `Name``=``"musicLibrary"` `/>`
-
-`<``DeviceCapability`  `Name``=``"microphone"` `/>`
-
-`<``DeviceCapability`  `Name``=``"webcam"` `/>`
-
-`</``Capabilities``>`
-
-`...`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  ...
+  <windows>
+    ...
+    <Capabilities>
+        <Capability Name="musicLibrary" />
+        <DeviceCapability Name="microphone" />
+        <DeviceCapability Name="webcam" />
+    </Capabilities>
+    ...
+  </windows>
+  ...
+</ti:app>
+```
 
 ##### Photo gallery
 
 Required for Titanium.Media.openPhotoGallery functionality
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`...`
-
-`<``Capabilities``>`
-
-`<``Capability`  `Name``=``"picturesLibrary"` `/>`
-
-`</``Capabilities``>`
-
-`...`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  ...
+  <windows>
+    ...
+    <Capabilities>
+        <Capability Name="picturesLibrary" />
+    </Capabilities>
+    ...
+  </windows>
+  ...
+</ti:app>
+```
 
 Capabilities can also be set independently for _store_ or _phone_ applications by specifying the _target_.
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`...`
-
-`<``manifest`  `target``=``"phone"``>`
-
-`<``Capabilities``>`
-
-`<``DeviceCapability`  `Name``=``"location"` `/>`
-
-`</``Capabilities``>`
-
-`</``manifest``>`
-
-`<``manifest`  `target``=``"store"``>`
-
-`<``Capabilities``>`
-
-`<``Capability`  `Name``=``"internetClient"` `/>`
-
-`</``Capabilities``>`
-
-`</``manifest``>`
-
-`...`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  ...
+  <windows>
+    ...
+    <manifest target="phone">
+      <Capabilities>
+        <DeviceCapability Name="location" />
+      </Capabilities>
+    </manifest>
+    <manifest target="store">
+      <Capabilities>
+        <Capability Name="internetClient" />
+      </Capabilities>
+    </manifest>
+    ...
+  </windows>
+  ...
+</ti:app>
+```
 
 For more information regarding Windows App capabilities refer to [https://msdn.microsoft.com/en-us/library/windows/apps/hh464936.aspx](https://msdn.microsoft.com/en-us/library/windows/apps/hh464936.aspx)
 
@@ -1581,13 +1357,12 @@ For more information regarding Windows App capabilities refer to [https://msdn.m
 
 Users can define a target Windows version by configuring the tiapp.xml in the same way one can configure iOS and Android target versions:
 
-`<windows>`
-
-`<TargetPlatformVersion>``10.0``.``14393.0``</TargetPlatformVersion>`
-
-`<TargetPlatformMinVersion>``10.0``.``10240.0``</TargetPlatformMinVersion>`
-
-`</windows>`
+```xml
+<windows>
+  <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+  <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+</windows>
+```
 
 ### Handling differing capabilities between Windows 8.1 and 10
 
@@ -1595,105 +1370,73 @@ Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3
 
 Windows Phone 8.1:
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`<``manifest`  `target``=``"phone"`  `version``=``"8.1"``>`
-
-`<``Capabilities``>`
-
-`<``Capability`  `Name``=``"appointments"` `/>`
-
-`</``Capabilities``>`
-
-`</``manifest``>`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    ...
+    <windows>
+        <manifest target="phone" version="8.1">
+            <Capabilities>
+                <Capability Name="appointments" />
+            </Capabilities>
+        </manifest>
+    </windows>
+    ...
+</ti:app>
+```
 
 Windows 8.1 Store
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`<``manifest`  `target``=``"store"`  `version``=``"8.1"``>`
-
-`<``Capabilities``>`
-
-`<``Capability`  `Name``=``"musicLibrary"` `/>`
-
-`</``Capabilities``>`
-
-`</``manifest``>`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    ...
+    <windows>
+        <manifest target="store" version="8.1">
+            <Capabilities>
+                <Capability Name="musicLibrary" />
+            </Capabilities>
+        </manifest>
+    </windows>
+    ...
+</ti:app>
+```
 
 Windows 10 is universal so target doesn't matter:
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`<``manifest`  `version``=``"10.0"``>`
-
-`<``Capabilities``>`
-
-`<``Capability`  `Name``=``"contacts"``/>`
-
-`</``Capabilities``>`
-
-`</``manifest``>`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    ...
+    <windows>
+        <manifest version="10.0">
+            <Capabilities>
+                <Capability Name="contacts"/>
+            </Capabilities>
+        </manifest>
+    </windows>
+    ...
+</ti:app>
+```
 
 Common capabilities across targets and SDK versions (Windows 10, Windows 8.1 Store, and Windows 8.1 Phone):
 
-`<``ti``:app>`
-
-`...`
-
-`<``windows``>`
-
-`<``manifest``>`
-
-`<``Capabilities``>`
-
-`<``Capability`  `Name``=``"internetClient"` `/>`
-
-`</``Capabilities``>`
-
-`</``manifest``>`
-
-`</``windows``>`
-
-`...`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    ...
+    <windows>
+        <manifest>
+            <Capabilities>
+                <Capability Name="internetClient" />
+            </Capabilities>
+        </manifest>
+    </windows>
+    ...
+</ti:app>
+```
 
 ### Windows-specific application properties
 
 | Property Name | Description |
 | --- | --- |
-| ti.windows.publishername | Must match the Windows publisher ID of your Microsoft Developer account. Used by the Titanium for the Windows SDKs to generate signing certificates and sign your package.<br /><br />**To retrieve your Windows publisher ID:**<br /><br />1. Log into [https://dev.windows.com](https://dev.windows.com/).<br />    <br />2. Click **Dashboard** in the top-right corner.<br />    <br />3. Click **Account settings** in the left navigation.<br />    <br /><br />The publisher GUID will be under the **Account details** section as the **Windows publisher ID** field.<br /><br />Example:<br /><br />`<``property`  `name``=``"ti.windows.publishername"` `type="string”>CN=11111111-2222-3333-4444-555555555555</``property``>` |
+| ti.windows.publishername | Must match the Windows publisher ID of your Microsoft Developer account. Used by the Titanium for the Windows SDKs to generate signing certificates and sign your package.<br /><br />**To retrieve your Windows publisher ID:**<br /><br />1. Log into [https://dev.windows.com](https://dev.windows.com/).<br />    <br />2. Click **Dashboard** in the top-right corner.<br />    <br />3. Click **Account settings** in the left navigation.<br />    <br /><br />The publisher GUID will be under the **Account details** section as the **Windows publisher ID** field.<br /><br />Example:<br /><br />```xml<br /><property name="ti.windows.publishername" type="string”>CN=11111111-2222-3333-4444-555555555555</property><br />``` |
 
 ## Cloud
 
@@ -1714,11 +1457,11 @@ Mobile Backend Services uses the following [Application properties](#app_propert
 
 As of Titanium 9.0.0, if your Android app includes the ti.playservices module, it will automatically check on app startup if Google Play Services is installed on the device and is up-to-date. If not, it will request the end-user to install or update it before executing the app's main script. This is needed so that the Google Play Services libraries included in the app can function. If you want to disable this feature, then you can do so by setting the following tiapp.xml property to false.
 
-`<``ti``:app>`
-
-`<``property`  `name``=``"ti.playservices.validate.on.startup"`  `type``=``"bool"``>false</``property``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    <property name="ti.playservices.validate.on.startup" type="bool">false</property>
+</ti:app>
+```
 
 ## Modules
 
@@ -1732,25 +1475,23 @@ In some cases, metadata defined in the timodule.xml file depends on application-
 
 To support this use case, the timodule.xml file allows token substitution, so you can specify variable values that will be replaced with application-specific values at build time. For example:
 
-timodule.xml
+*timodule.xml*
 
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-`<``manifest``>`
-
-`<``permission`  `android:name``=``"${tiapp.properties['id']}.permission.MY_NEW_PERMISSION"`
-
-`android:protectionLevel``=``"signature"` `/>`
-
-`</``manifest``>`
-
-`</``android``>`
+```xml
+<android xmlns:android="http://schemas.android.com/apk/res/android">
+  <manifest>
+    <permission android:name="${tiapp.properties['id']}.permission.MY_NEW_PERMISSION"
+    android:protectionLevel="signature" />
+  </manifest>
+</android>
+```
 
 Note the token ${tiapp.properties\['id'\]}. In this token, tiapp.properties refers to the collection of top-level properties defined in the
 tiapp.xml file. To access a property in this collection, such as <id>, <name>, <version>, or <publisher\>, use square brackets with the property name in quotes inside, as shown in the example.
 
 If you include this module in an application with the App ID com.example.app, the AndroidManifest.xml file is generated with the following permission element:
 
-`<``permission`  `android:name``=``"com.example.app.permission.MY_NEW_PERMISSION"`
-
-`android:protectionLevel``=``"signature"` `/>`
+```xml
+<permission android:name="com.example.app.permission.MY_NEW_PERMISSION"
+    android:protectionLevel="signature" />
+```

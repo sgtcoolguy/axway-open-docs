@@ -28,52 +28,38 @@ This command is executed **_asynchronously_**.
 
 This is the _dispatch_ call for the check for updates.
 
-`dispatch($H({`
-
-`controller:` `'portal.titanium.sdk.update'``,`
-
-`action:` `"checkForUpdate"`
-
-`}).toJSON());`
+```
+dispatch($H({
+  controller: 'portal.titanium.sdk.update',
+  action: "checkForUpdate"
+}).toJSON());
+```
 
 When triggered, the Studio will perform the required checks and will later on send a notification to the portal by calling a JavaScript function **_eventsDispatcher.notify()_** and passing an **_event_** JSON into it.
 
 The portal should handle this by defining an **_eventsDispatcher_** object that has a **_notify_** function that accepts an argument.
 For example (taken from the _studio3-sdk_ repository):
 
-`var Events = {TITANIUM_SDK :` `'titaniumSDK'``};`
+```javascript
+var Events = {TITANIUM_SDK : 'titaniumSDK'};
+// Creates the eventsDispatcher which contains the notify() function.
+// IMPORTANT! The Studio expects the observable to be called 'eventsDispatcher', and
+// expects the eventsDispatcher function to be called 'notify()'. Do not change these names.
+var eventsDispatcher = new Observable();
 
-`// Creates the eventsDispatcher which contains the notify() function.`
-
-`// IMPORTANT! The Studio expects the observable to be called 'eventsDispatcher', and`
-
-`// expects the eventsDispatcher function to be called 'notify()'. Do not change these names.`
-
-`var eventsDispatcher =` `new` `Observable();`
-
-`/**`
-
-`* The Portal class`
-
-`*/`
-
-`var Portal = Class.create({`
-
-`initialize: function() {`
-
-`// Create the UI parts and render them`
-
-`this``.updates =` `new` `Updates();`
-
-`this``.updates.render();`
-
-`// Add a Mobile SDKs observer to the dispatcher. Render the Mobile SDK table on a 'mobileSDK' events.`
-
-`eventsDispatcher.addObserver(Events.TITANIUM_SDK, function(e) { portal.updates.update(e); });`
-
-`}`
-
-`});`
+/**
+ * The Portal class
+ */
+var Portal = Class.create({
+  initialize: function() {
+    // Create the UI parts and render them
+    this.updates = new Updates();
+    this.updates.render();
+    // Add a Mobile SDKs observer to the dispatcher. Render the Mobile SDK table on a 'mobileSDK' events.
+    eventsDispatcher.addObserver(Events.TITANIUM_SDK, function(e) { portal.updates.update(e); });
+  }
+});
+```
 
 The example above calls _portal.updates.update(e);_ whenever the Studio fires a _titaniumSDK_ event. The _update_ function than handles the event by reading the JSON content from it and re-render the UI.
 
@@ -96,13 +82,12 @@ When the Studio indicates that a Titanium SDK update is available, a displayed l
 
 Here is the _dispatch_ call that does that:
 
-`dispatch($H({`
-
-`controller:` `'portal.titanium.sdk.update'``,`
-
-`action:` `"installUpdate"`
-
-`}).toJSON());`
+```
+dispatch($H({
+  controller: 'portal.titanium.sdk.update',
+  action: "installUpdate"
+}).toJSON());
+```
 
 ## Installing a Titanium SDK update using a URL
 
@@ -110,14 +95,12 @@ You can install a specific Titanium SDK via the url. The _action_ will trigger a
 
 Here is the _dispatch_ call that does that:
 
-`dispatch($H({`
-
-`controller:` `'portal.titanium.sdk.update'``,`
-
-`action:` `"installSDK"``,`
-
-`args:` `'["http://builds.appcelerator.com.s3.amazonaws.com/mobile/1_7_X/mobilesdk-1.7.6.v20111114104114-osx.zip"]'`
-
-`}).toJSON());`
+```
+dispatch($H({
+  controller: 'portal.titanium.sdk.update',
+  action: "installSDK",
+  args: '["http://builds.appcelerator.com.s3.amazonaws.com/mobile/1_7_X/mobilesdk-1.7.6.v20111114104114-osx.zip"]'
+}).toJSON());
+```
 
 The argument passed in is the url to the specific sdk.

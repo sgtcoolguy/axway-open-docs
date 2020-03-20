@@ -65,4 +65,4 @@ There were no API changes for this release.
 
 ### Hyperloop
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><span style="color: #032f62;">hyperloop</span></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>3.1.4</p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><span style="color: #032f62;">hyperloop</span></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>3.1.4</p></td></tr></tbody></table>

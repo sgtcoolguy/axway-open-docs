@@ -48,9 +48,10 @@ Now, we need to reference the gem. To this properly, we need to manipulate the l
 
 Assuming we are creating a command in commands/commands.rb, we reference the JSON gem as:
 
-`$: << File.dirname(__FILE__) +` `'/../lib/json/lib'`
-
-`require` `'json'`
+```
+$: << File.dirname(__FILE__) + '/../lib/json/lib'
+require 'json'
+```
 
 ### Manipulate the path globally for all commands
 
@@ -60,9 +61,10 @@ Here, we take advantage of the fact that items in the **"lib"** directory are au
 
 2. Add the following code://
 
-    `$: << File.dirname(__FILE__) +` `'json/lib'`
-
-    `require` `'json'`
+    ```
+    $: << File.dirname(__FILE__) + 'json/lib'
+    require 'json'
+    ```
 
 3. Now, we can require "json" as normal in other commands
 
@@ -70,49 +72,34 @@ Here, we take advantage of the fact that items in the **"lib"** directory are au
 
 In the snippet below, we manipulate the currently selected text to split it across lines and then wrap each line in a template using mirrored variables (the $1s in the template)
 
-`require` `'ruble'`
+```
+require 'ruble'
+require 'net/http'
+require 'json'
 
-`require` `'net/http'`
+command 'Find Related Git Repos' do |cmd|
+  cmd.scope = 'source'
+  cmd.output = :show_as_tooltip
+  cmd.input = :selection, :word
+  cmd.invoke do |context|
+     # call Github to find all repos that reference the selected text
+     url = "http://github.com/api/v2/json/repos/search/#{URI.encode($stdin.gets)}"
+     resp = Net::HTTP.get_response(URI.parse(url))
+     data = resp.body
 
-`require` `'json'`
+     result = JSON.parse(data)
 
-`command` `'Find Related Git Repos'`  `do` `|cmd|`
+     # Create tooltip text
+     tooltip = ""
+     for k in 0...result["repositories"].length
+       repo = result['repositories'][k]
+       tooltip << "#{repo['name']}: #{repo['description']} (#{repo['url']})\n"
+     end
+     puts tooltip
 
-`cmd.scope =` `'source'`
-
-`cmd.output = :show_as_tooltip`
-
-`cmd.input = :selection, :word`
-
-`cmd.invoke` `do` `|context|`
-
-`# call Github to find all repos that reference the selected text`
-
-`url =` `"http://github.com/api/v2/json/repos/search/#{URI.encode($stdin.gets)}"`
-
-`resp = Net::HTTP.get_response(URI.parse(url))`
-
-`data = resp.body`
-
-`result = JSON.parse(data)`
-
-`# Create tooltip text`
-
-`tooltip =` `""`
-
-`for` `k in` `0``...result[``"repositories"``].length`
-
-`repo = result[``'repositories'``][k]`
-
-`tooltip <<` `"#{repo['name']}: #{repo['description']} (#{repo['url']})\n"`
-
-`end`
-
-`puts tooltip`
-
-`end`
-
-`end`
+  end
+end
+```
 
 ## Result
 

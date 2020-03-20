@@ -50,9 +50,11 @@ Alloy 1.10.12 adds support for Backbone 1.3.3. However, due to breaking changes 
 
 To use Backbone 1.3.3. Add following in config.json
 
-config.json
+*config.json*
 
-`"backbone"``:` `"1.3.3"`
+```json
+"backbone": "1.3.3"
+```
 
 Supported versions of Backbone for Alloy 1.10.12 are 0.9.2, 1.1.2, 1.3.3.
 
@@ -60,31 +62,22 @@ Supported versions of Backbone for Alloy 1.10.12 are 0.9.2, 1.1.2, 1.3.3.
 
 To use Backbone 1.1.2 to support Alloy Model and Collections objects, open the project's ./app/config.json file and add the backbone key to the to the file with the value set to 1.1.2. You may also set this value to 0.9.2 to force support of Backbone 0.9.2. In the example below, the boiler plate configuration file is modified to use Backbone 1.1.2.
 
-app/config.json
+*app/config.json*
 
-`{`
-
-`"global"``: {},`
-
-`"env:development"``: {},`
-
-`"env:test"``: {},`
-
-`"env:production"``: {},`
-
-`"os:android"``: {},`
-
-`"os:blackberry"``: {},`
-
-`"os:ios"``: {},`
-
-`"os:mobileweb"``: {},`
-
-`"dependencies"``: {},`
-
-`"backbone"``:` `"1.1.2"`
-
-`}`
+```json
+{
+    "global": {},
+    "env:development": {},
+    "env:test": {},
+    "env:production": {},
+    "os:android": {},
+    "os:blackberry": {},
+    "os:ios": {},
+    "os:mobileweb": {},
+    "dependencies": {},
+    "backbone": "1.1.2"
+}
+```
 
 ## Summary of Changes
 
@@ -96,55 +89,33 @@ The following sections summarize most of the changes that affect the behavior of
 
 Backbone Collection objects no longer emit the reset event after a fetch() call, which means data-bound views may not update automatically. **This could break existing apps.** To use old functionality, pass {reset: true} when calling fetch() or extend the Collection class. The following sample code extends the Collection and has been added to the new model template. Note that you will need to comment out the code in the new model template.
 
-`exports.definition = {`
-
-`config: {`
-
-`// Model configuration`
-
-`},`
-
-`extendModel: function(Model) {`
-
-`_.extend(Model.prototype, {`
-
-`// extended functions and properties go here`
-
-`});`
-
-`return` `Model;`
-
-`},`
-
-`extendCollection: function(Collection) {`
-
-`_.extend(Collection.prototype, {`
-
-`// For Backbone v1.1.2, uncomment the following to override the`
-
-`// fetch method to account for a breaking change in Backbone.`
-
-`/*`
-
-`fetch: function(options) {`
-
-`options = options ? _.clone(options) : {};`
-
-`options.reset = true;`
-
-`return Backbone.Collection.prototype.fetch.call(this, options);`
-
-`}`
-
-`*/`
-
-`});`
-
-`return` `Collection;`
-
-`}`
-
-`};`
+```
+exports.definition = {
+    config: {
+        // Model configuration
+    },
+    extendModel: function(Model) {
+        _.extend(Model.prototype, {
+            // extended functions and properties go here
+        });
+        return Model;
+    },
+    extendCollection: function(Collection) {
+        _.extend(Collection.prototype, {
+            // For Backbone v1.1.2, uncomment the following to override the
+            // fetch method to account for a breaking change in Backbone.
+            /*
+            fetch: function(options) {
+                options = options ? _.clone(options) : {};
+                options.reset = true;
+                return Backbone.Collection.prototype.fetch.call(this, options);
+            }
+            */
+        });
+        return Collection;
+    }
+};
+```
 
 #### New Set Method
 
@@ -208,49 +179,30 @@ Passing {silent:true} to methods now suppresses the change:attr events, thus a d
 
 If you want the new behavior, where the change events are suppressed, you will need to pass this option or extend the Model or Collection class. The following sample code extends the Model set() method by forcing the silent option to true. This method is where the silent option is used to fire or not fire change events.
 
-`exports.definition = {`
-
-`config: {`
-
-`// Model configuration`
-
-`},`
-
-`extendModel: function(Model) {`
-
-`_.extend(Model.prototype, {`
-
-`// Forces silent true option when the model is updated`
-
-`set: function(attributes, options) {`
-
-`options = options ? _.clone(options) : {};`
-
-`options.silent =` `true``;`
-
-`return` `Backbone.Model.prototype.set.call(``this``, attributes, options);`
-
-`}`
-
-`});`
-
-`return` `Model;`
-
-`},`
-
-`extendCollection: function(Collection) {`
-
-`_.extend(Collection.prototype, {`
-
-`// extended functions and properties go here`
-
-`});`
-
-`return` `Collection;`
-
-`}`
-
-`};`
+```
+exports.definition = {
+    config: {
+        // Model configuration
+    },
+    extendModel: function(Model) {
+        _.extend(Model.prototype, {
+            // Forces silent true option when the model is updated
+            set: function(attributes, options) {
+                options = options ? _.clone(options) : {};
+                options.silent = true;
+                return Backbone.Model.prototype.set.call(this, attributes, options);
+            }
+        });
+        return Model;
+    },
+    extendCollection: function(Collection) {
+        _.extend(Collection.prototype, {
+            // extended functions and properties go here
+        });
+        return Collection;
+    }
+};
+```
 
 ## API Changes
 

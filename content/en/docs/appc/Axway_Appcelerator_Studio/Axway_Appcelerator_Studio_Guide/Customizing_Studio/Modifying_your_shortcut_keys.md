@@ -103,15 +103,13 @@ As an example, we modify the keys for commenting code:
 
 2. Open the file Source / commands / toggle\_comment.rb.
 
-    `command` `'Comment Line / Selection'`  `do` `| cmd |`
-
-    `cmd.key_binding =` `'M1+K'`
-
-    `cmd.output = :insert_as_snippet`
-
-    `cmd.input = :selection, :line`
-
-    `...`
+    ```
+    command 'Comment Line / Selection' do | cmd |
+       cmd.key_binding = 'M1+K'
+       cmd.output = :insert_as_snippet
+       cmd.input = :selection, :line
+       ...
+    ```
 
 3. Edit the key\_bindings property to use the new key command.
 

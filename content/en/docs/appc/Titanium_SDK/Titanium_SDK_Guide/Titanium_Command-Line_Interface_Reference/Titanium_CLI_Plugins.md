@@ -110,23 +110,17 @@ Create a folder for your plugin. You can optionally include a version folder dir
 
 The CLI executes each JavaScript file in the commands and hooks directory. If you have a JavaScript file with helper functions, place that file in a directory that is not named commands or hooks. For example, in the file structure below, a helper library is placed in the libs folder.
 
-`myplugin`
-
-`└──` `1.0`
-
-`├── commands`
-
-`│ └── mycommand.js`
-
-`├── hooks`
-
-`│ └── myhook.js`
-
-`├── libs`
-
-`│ └── helper.js`
-
-`└──` `package``.json`
+```
+myplugin
+└── 1.0
+    ├── commands
+    │   └── mycommand.js
+    ├── hooks
+    │   └── myhook.js
+    ├── libs
+    │   └── helper.js
+    └── package.json
+```
 
 ### Using a Plugin
 
@@ -134,9 +128,10 @@ Plugins can either be global or required in per project.
 
 **To include a plugin globally**, add the paths to CLI configuration options paths.commands and paths.hooks. For example, run the following CLI commands to add the command and hook files:
 
-`ti config -a paths.commands /path/to/myplugin/``1.0``/commands/`
-
-`ti config -a paths.hooks /path/to/myplugin/``1.0``/hooks`
+```
+ti config -a paths.commands /path/to/myplugin/1.0/commands/
+ti config -a paths.hooks /path/to/myplugin/1.0/hooks
+```
 
 These command and hooks will be executed each time you run the Titanium CLI.
 
@@ -150,15 +145,13 @@ These command and hooks will be executed each time you run the Titanium CLI.
 
 4. Add your plugin information to the plugins section. Specify the plugin's folder name as node text of the plugin element. You can optionally specify the version attribute to use a specific version of the plugin. For example:
 
-    `<ti:app xmlns:ti=``"http://ti.appcelerator.org"``>`
-
-    `<plugins>`
-
-    `<plugin version=``"1.0"``>myplugin</plugin>`
-
-    `</plugins>`
-
-    `</ti:app>`
+    ```xml
+    <ti:app xmlns:ti="http://ti.appcelerator.org">
+        <plugins>
+            <plugin version="1.0">myplugin</plugin>
+        </plugins>
+    </ti:app>
+    ```
 
 This plugin will be executed each time the project is built. Note that only hooks are supported when required in locally.
 
@@ -166,119 +159,69 @@ This plugin will be executed each time the project is built. Note that only hook
 
 To add a command to the CLI, you need to create a JavaScript file in your plugin's commands folder and add the path of the file to the paths.commands CLI configuration setting. The name of the JavaScript file is used as the command name. This command file registers with the CLI help command to output your commands options based on the exported properties defined in the command file and the object returned by the command's exported config method. The CLI automatically performs validation against the options you specify in the command file.
 
-myplugin/1.0/commands/mycommand.js
+*myplugin/1.0/commands/mycommand.js*
 
-`// Indicates supported CLI version for the command`
+```javascript
+// Indicates supported CLI version for the command
+// This command must be ran with CLI 3.2.0 or later
+exports.cliVersion = ">=3.2";
+// Short help description: ti help
+exports.desc = "sample custom CLI command";
+// Extended help description: ti mycommand --help
+exports.extendedDesc = "Prints a message to the console depending on the options used";
 
-`// This command must be ran with CLI 3.2.0 or later`
+// Used by the CLI to retrieve the help information
+// Return a JSON object describing the available options and flags
+exports.config = function (logger, config, cli) {
+  return {
+        // Set to false if the user should be logged in to execute the command
+    noAuth: true,
+        // Set to false if you want to output the CLI banner
+        skipBanner: true,
+        // Add your command-line flags
+        flags: {
+            // Name of flag
+            foobar: {
+                // Flag shorthand
+                abbr: 'F',
+                // Help description
+                desc: 'Print out, "Hello, World!"'
+            }
+        },
+        // Add your command-line options
+        options: {
+            // Name of option
+            type: {
+                // Option shorthand
+                abbr: 'T',
+                // Default value
+                default: 'bar',
+                // Help description
+                desc: 'Specify the foo type',
+                // Possible options values
+                // CLI does automatic validation against these values
+                values: ['bar', 'baz']
+            }
+        }
+  };
+};
 
-`exports.cliVersion =` `">=3.2"``;`
+// Executed after calling the command but before running it
+// Use to validate command-line options and flags
+exports.validate = function (logger, config, cli) {
+    // Use the cli.argv property to retrieve the passed in options
+};
 
-`// Short help description: ti help`
-
-`exports.desc =` `"sample custom CLI command"``;`
-
-`// Extended help description: ti mycommand --help`
-
-`exports.extendedDesc =` `"Prints a message to the console depending on the options used"``;`
-
-`// Used by the CLI to retrieve the help information`
-
-`// Return a JSON object describing the available options and flags`
-
-`exports.config = function (logger, config, cli) {`
-
-`return` `{`
-
-`// Set to false if the user should be logged in to execute the command`
-
-`noAuth:` `true``,`
-
-`// Set to false if you want to output the CLI banner`
-
-`skipBanner:` `true``,`
-
-`// Add your command-line flags`
-
-`flags: {`
-
-`// Name of flag`
-
-`foobar: {`
-
-`// Flag shorthand`
-
-`abbr:` `'F'``,`
-
-`// Help description`
-
-`desc:` `'Print out, "Hello, World!"'`
-
-`}`
-
-`},`
-
-`// Add your command-line options`
-
-`options: {`
-
-`// Name of option`
-
-`type: {`
-
-`// Option shorthand`
-
-`abbr:` `'T'``,`
-
-`// Default value`
-
-`default``:` `'bar'``,`
-
-`// Help description`
-
-`desc:` `'Specify the foo type'``,`
-
-`// Possible options values`
-
-`// CLI does automatic validation against these values`
-
-`values: [``'bar'``,` `'baz'``]`
-
-`}`
-
-`}`
-
-`};`
-
-`};`
-
-`// Executed after calling the command but before running it`
-
-`// Use to validate command-line options and flags`
-
-`exports.validate = function (logger, config, cli) {`
-
-`// Use the cli.argv property to retrieve the passed in options`
-
-`};`
-
-`// Executed after calling the command and after the validate method`
-
-`exports.run = function (logger, config, cli) {`
-
-`if` `(cli.argv.foobar) {`
-
-`logger.log(``"Hello, World!"``);`
-
-`}`
-
-`else` `{`
-
-`logger.log(``"I pity the foo"` `+ cli.argv.type +` `"!"``);`
-
-`}`
-
-`};`
+// Executed after calling the command and after the validate method
+exports.run = function (logger, config, cli) {
+    if (cli.argv.foobar) {
+        logger.log("Hello, World!");
+    }
+    else {
+        logger.log("I pity the foo" + cli.argv.type + "!");
+    }
+};
+```
 
 ### CLI Command API
 
@@ -304,9 +247,11 @@ Title to display in the help menu. If not specified, the filename is used (witho
 
 Use the config method to define the command-line options and flags for the command. The CLI uses the information returned by this method to output information to the help command and provide basic validation of the command-line options.
 
-Syntax
+*Syntax*
 
-`config (Object logger, Object config, Object cli): Object`
+```
+config (Object logger, Object config, Object cli): Object
+```
 
 **Parameters**:
 
@@ -324,75 +269,18 @@ Returns an object specifying the commands configurable options. All properties a
 | --- | --- | --- |
 | noAuth | Boolean | If set to true, the user does not need to be logged in to use the command. If set to false, the user is required to be logged in to use the command. |
 | skipBanner | Boolean | If set to true, the CLI's banner message is not outputted to the console. If set to false, the CLI's banner message is outputted to the console when the command is executed. |
-| flags | Object | Contains key-value pairs for the command-line flags. The key is the name of the flag, while the value is an object with the following optional key-value pairs:<br /><br />| Name | Type | Description |<br />| --- | --- | --- | |
-
-| abbr | String | Shorthand notation for the flag. Use capital letters. Lowercase letters is the notation used by global CLI flags. If there is a conflict, the flag will be ignored. |
-| desc | String | Help description for the flag. |
-
-**Example**:
-
-`// Implements: ti mycommand -F`
-
-`var optObj = {`
-
-`flags: {`
-
-`myFlag : {`
-
-`abbr:` `'F'``,`
-
-`desc:` `'This flag does something awesome!'`
-
-`}`
-
-`}`
-
-`};`
-
-options
-
-Object
-
-Contains key-value pairs for the command-line options. The key is the name of the option, while the value is an object with the following optional key-value pairs:
-
-| Name | Type | Description |
-| --- | --- | --- |
-| abbr | String | Shorthand notation for the flag. Use capital letters. Lowercase letters is the notation used by global CLI flags. If there is a conflict, the flag will be ignored. |
-| default | String/Number/Boolean | Default value for the option. |
-| desc | String | Help description for the flag. |
-| values | Array<String/Number/Boolean> | Values that the option will accept. The CLI will automatically validate the option against these values when the command is invoked. |
-
-**Example**:
-
-`//Implements: ti mycommand -O neko`
-
-`var optObj = {`
-
-`options: {`
-
-`myOption : {`
-
-`abbr:` `'O'``,`
-
-`default``:` `'cat'``,`
-
-`desc:` `'I like chicken! I like tuna!'``,`
-
-`values: [``'cat'``,` `'chat'``,` `'gato'``,` `'neko'``]`
-
-`}`
-
-`}`
-
-`};`
+| flags | Object | Contains key-value pairs for the command-line flags. The key is the name of the flag, while the value is an object with the following optional key-value pairs:<br /><br />| Name | Type | Description |<br />| --- | --- | --- |<br />| abbr | String | Shorthand notation for the flag. Use capital letters. Lowercase letters is the notation used by global CLI flags. If there is a conflict, the flag will be ignored. |<br />| desc | String | Help description for the flag. |<br /><br />**Example**:<br /><br />```javascript<br />// Implements: ti mycommand -F<br />var optObj = {<br />    flags: {<br />        myFlag : {<br />            abbr: 'F',<br />            desc: 'This flag does something awesome!'<br />        }<br />    }<br />};<br />``` |
+| options | Object | Contains key-value pairs for the command-line options. The key is the name of the option, while the value is an object with the following optional key-value pairs:<br /><br />| Name | Type | Description |<br />| --- | --- | --- |<br />| abbr | String | Shorthand notation for the flag. Use capital letters. Lowercase letters is the notation used by global CLI flags. If there is a conflict, the flag will be ignored. |<br />| default | String/Number/Boolean | Default value for the option. |<br />| desc | String | Help description for the flag. |<br />| values | Array<String/Number/Boolean> | Values that the option will accept. The CLI will automatically validate the option against these values when the command is invoked. |<br /><br />**Example**:<br /><br />```javascript<br />//Implements: ti mycommand -O neko<br />var optObj = {<br />    options: {<br />        myOption : {<br />            abbr: 'O',<br />            default: 'cat',<br />            desc: 'I like chicken! I like tuna!',<br />            values: ['cat', 'chat', 'gato', 'neko']<br />        }<br />    }<br />};<br />``` |
 
 ##### validate
 
 Use the validate method to execute code after the command is invoked but before actually running the command. This method can be used to provide advance validation of the command-line options.
 
-Syntax
+*Syntax*
 
-`validate (Object logger, Object config, Object cli):` `void`
+```
+validate (Object logger, Object config, Object cli): void
+```
 
 **Parameters**:
 
@@ -406,9 +294,11 @@ Syntax
 
 Use the run method to execute the command when it is invoked.
 
-Syntax
+*Syntax*
 
-`run (Object logger, Object config, Object cli):` `void`
+```
+run (Object logger, Object config, Object cli): void
+```
 
 **Parameters**:
 
@@ -438,41 +328,29 @@ In the init method of the hook, use the passed in CLI object to bind your method
 
 The callback function can either be passed nothing, a data object or a data object and a callback function. If the callback function is passed, you need to invoke it with an err and data object after executing the hook.
 
-`exports.cliVersion =` `">=3.2"``;`
+```javascript
+exports.cliVersion = ">=3.2";
+exports.init = function(logger, config, cli, nodeappc) {
 
-`exports.init = function(logger, config, cli, nodeappc) {`
+    // Function or event hook
+    cli.on(hookName, function (data) {
+        /* Do some stuff */
+    });
 
-`// Function or event hook`
+    // Function or event hook
+    cli.on(hookName, function (data, callback) {
+        /* Do some stuff */
+        callback(err, data);
+    });
 
-`cli.on(hookName, function (data) { `
-
-`/* Do some stuff */`
-
-`});`
-
-`// Function or event hook`
-
-`cli.on(hookName, function (data, callback) {`
-
-`/* Do some stuff */`
-
-`callback(err, data);`
-
-`});`
-
-`// Function hook only`
-
-`cli.on(hookName, {`
-
-`priority:` `999``,`
-
-`pre: function () { ... },`
-
-`post: function () { ... }`
-
-`});`
-
-`};`
+    // Function hook only
+    cli.on(hookName, {
+        priority: 999,
+        pre: function () { ... },
+        post: function () { ... }
+    });
+};
+```
 
 ### Order of Hooks
 
@@ -576,87 +454,55 @@ The following hooks are fired after the cli:pre-execute hook when building a pro
 
 The following example checks for a custom application property in the tiapp.xml file and executes a script before starting the build process. If the return code returned by the script is non-zero, the CLI stops.
 
-`exports.init = function (logger, config, cli, nodeappc) {`
-
-`cli.on(``"build.pre.construct"``, function () {`
-
-`// Check for a custom tiapp property: <property name="fooFeature">true</property>`
-
-`if` `(cli.tiapp.properties.fooFeature && cli.tiapp.properties.fooFeature.value ==` `'true'``) {`
-
-`var rv = exec(``"bash foo.sh"``);`
-
-`if` `(rv.code) {`
-
-`logger.error(``"Script returned the following error code: "` `+ rv.code);`
-
-`process.exit();`
-
-`}`
-
-`}`
-
-`});`
-
-`};`
+```javascript
+exports.init = function (logger, config, cli, nodeappc) {
+    cli.on("build.pre.construct", function () {
+        // Check for a custom tiapp property: <property name="fooFeature">true</property>
+        if (cli.tiapp.properties.fooFeature && cli.tiapp.properties.fooFeature.value == 'true') {
+            var rv = exec("bash foo.sh");
+            if (rv.code) {
+                logger.error("Script returned the following error code: " + rv.code);
+                process.exit();
+            }
+        }
+    });
+};
+```
 
 #### Modify Android Dexer Command
 
 The following example modifies the arguments passed to the dexer command if the correct module is included in the project.
 
-`exports.init = function (logger, config, cli, nodeappc) {`
+```javascript
+exports.init = function (logger, config, cli, nodeappc) {
+    cli.on("build.android.dexer", { pre: function (data, next) {
+        logger.log("build.android.dexer - com.foo.mymodule modifications".yellow);
+        // Helper function to locate compatible modules
+        nodeappc.timodule.find(
+            cli.tiapp.modules,            // Modules included in the project
+            'android',
+            data.ctx.deployType,          // Current deploy type
+            data.ctx.titaniumSdkVersion,  // Titanium SDK version used to build the project
+            config.paths.modules,         // Additional module search paths, searches TiSDK install directories by default
+            logger,
+            function (modules) {
+                // Callback to cycle through found modules
+                for (var i = 0; i < modules.found.length; i++) {
+                    if (modules.found[i].id == "com.foo.mymodule") {
+                        // Modify the arguments if the correct module is found
+                        var jarPath = modules.found[i].modulePath + "/class.foo.jar";
+                        data.args[1].push("-javaagent " + jarPath);
+                        break;
+                    }
+                }
+            }
+        );
 
-`cli.on(``"build.android.dexer"``, { pre: function (data, next) {`
-
-`logger.log(``"build.android.dexer - com.foo.mymodule modifications"``.yellow);`
-
-`// Helper function to locate compatible modules`
-
-`nodeappc.timodule.find(`
-
-`cli.tiapp.modules,` `// Modules included in the project`
-
-`'android'``,`
-
-`data.ctx.deployType,` `// Current deploy type`
-
-`data.ctx.titaniumSdkVersion,` `// Titanium SDK version used to build the project`
-
-`config.paths.modules,` `// Additional module search paths, searches TiSDK install directories by default`
-
-`logger,`
-
-`function (modules) {`
-
-`// Callback to cycle through found modules`
-
-`for` `(var i =` `0``; i < modules.found.length; i++) {`
-
-`if` `(modules.found[i].id ==` `"com.foo.mymodule"``) {`
-
-`// Modify the arguments if the correct module is found`
-
-`var jarPath = modules.found[i].modulePath +` `"/class.foo.jar"``;`
-
-`data.args[``1``].push(``"-javaagent "` `+ jarPath);`
-
-`break``;`
-
-`}`
-
-`}`
-
-`}`
-
-`);`
-
-`// Pass the modified params on`
-
-`next(``null``, data);`
-
-`}});`
-
-`};`
+        // Pass the modified params on
+        next(null, data);
+    }});
+};
+```
 
 ### CLI Hook API
 
@@ -673,9 +519,11 @@ Specify which version(s) of the CLI the command supports. For example, "3.2.0" s
 
 Use the init method to initialize the hook. Implement the hook listeners, which hook into the CLI commands, inside this function.
 
-Syntax
+*Syntax*
 
-`init (Object logger, Object config, Object cli, [Object nodeappc]):` `void`
+```
+init (Object logger, Object config, Object cli, [Object nodeappc]): void
+```
 
 **Parameters**:
 
@@ -739,7 +587,9 @@ CLI version.
 
 Fires a hook event.
 
-`emit(String hookName, [Object context], [Function callback])`
+```
+emit(String hookName, [Object context], [Function callback])
+```
 
 **Parameters**:
 
@@ -753,18 +603,16 @@ Fires a hook event.
 
 Binds a callback to a hook.
 
-`on(String hookName, Function/Object callback)`
+```
+on(String hookName, Function/Object callback)
+```
 
 **Parameters**:
 
 | Name | Type | Description |
 | --- | --- | --- |
 | hookName | String | Name of the hook. |
-| callback | Function/Object | Function to call after the event finishes firing.<br /><br />If an object is used, specify any of the optional properties:<br /><br />| Name | Type | Description |<br />| --- | --- | --- | |
-
-| post | Function | Callback to execute after the hook finishes. |
-| pre | Function | Callback to execute before the hook starts. |
-| priority | Number | Hook execution priority. Lower values are executed first. Default value is 1000. |
+| callback | Function/Object | Function to call after the event finishes firing.<br /><br />If an object is used, specify any of the optional properties:<br /><br />| Name | Type | Description |<br />| --- | --- | --- |<br />| post | Function | Callback to execute after the hook finishes. |<br />| pre | Function | Callback to execute before the hook starts. |<br />| priority | Number | Hook execution priority. Lower values are executed first. Default value is 1000. | |
 
 #### Events
 
@@ -975,9 +823,11 @@ Log levels.
 
 Outputs a debug-level message to the console.
 
-Syntax
+*Syntax*
 
-`debug(String message):` `void`
+```
+debug(String message): void
+```
 
 **Parameters**:
 
@@ -989,9 +839,11 @@ Syntax
 
 Outputs a error-level message to the console.
 
-Syntax
+*Syntax*
 
-`error(String message):` `void`
+```
+error(String message): void
+```
 
 **Parameters**:
 
@@ -1003,9 +855,11 @@ Syntax
 
 Outputs a JavaScript error object to the console. Outputs the error message and stack trace.
 
-Syntax
+*Syntax*
 
-`exception(Error e):` `void`
+```
+exception(Error e): void
+```
 
 **Parameters**:
 
@@ -1017,9 +871,11 @@ Syntax
 
 Retrieves the settable log levels.
 
-Syntax
+*Syntax*
 
-`getLevels(``void``): Array<Strings>`
+```
+getLevels(void): Array<Strings>
+```
 
 **Returns**:
 
@@ -1029,9 +885,11 @@ Array of strings indicating the possible settable log levels.
 
 Outputs an info-level message to the console.
 
-Syntax
+*Syntax*
 
-`info(String message):` `void`
+```
+info(String message): void
+```
 
 **Parameters**:
 
@@ -1043,9 +901,11 @@ Syntax
 
 Outputs a generic log message to the console. This message does not have a log level associated with it.
 
-Syntax
+*Syntax*
 
-`log(String message):` `void`
+```
+log(String message): void
+```
 
 **Parameters**:
 
@@ -1057,9 +917,11 @@ Syntax
 
 Sets the highest log level to display. Pass one of the the logger's levels property as the argument, for example, logger.levels.info.
 
-Syntax
+*Syntax*
 
-`setLevel(Number logLevel):` `void`
+```
+setLevel(Number logLevel): void
+```
 
 **Parameters**:
 
@@ -1071,9 +933,11 @@ Syntax
 
 Set to true to disable console output or false to enable console output.
 
-Syntax
+*Syntax*
 
-`silence(Boolean val):` `void`
+```
+silence(Boolean val): void
+```
 
 **Parameters**:
 
@@ -1085,9 +949,11 @@ Syntax
 
 Outputs a trace-level message to the console.
 
-Syntax
+*Syntax*
 
-`trace(String message):` `void`
+```
+trace(String message): void
+```
 
 **Parameters**:
 
@@ -1099,9 +965,11 @@ Syntax
 
 Outputs a warning-level message to the console.
 
-Syntax
+*Syntax*
 
-`warn(String message):` `void`
+```
+warn(String message): void
+```
 
 **Parameters**:
 
@@ -1121,9 +989,11 @@ Namespace for helper library built on top of the async library.
 
 Run multiple tasks in parallel.
 
-Syntax
+*Syntax*
 
-`parallel (Object context, Array<Functions> tasks, Function callback):` `void`
+```
+parallel (Object context, Array<Functions> tasks, Function callback): void
+```
 
 **Parameters** :
 
@@ -1137,9 +1007,11 @@ Syntax
 
 Run multiple tasks in series.
 
-Syntax
+*Syntax*
 
-`series (Object context, Array<Functions> tasks, Function callback):` `void`
+```
+series (Object context, Array<Functions> tasks, Function callback): void
+```
 
 **Parameters** :
 
@@ -1157,33 +1029,36 @@ CLI busyindicator class. Create an instance of this class, then use the start an
 
 Constructor method.
 
-`new` `busyindicator(``void``): Object`
+```
+new busyindicator(void): Object
+```
 
 ##### start
 
 Starts the busy indicator.
 
-`start(``void``):` `void`
+```
+start(void): void
+```
 
 ##### stop
 
 Stops the busy indicator.
 
-`stop(``void``):` `void`
+```
+stop(void): void
+```
 
 Example
 
-`cli.on(``"build.post.compile"``, function(){`
-
-`var busy =` `new` `nodeappc.busyindicator();`
-
-`busy.start();`
-
-`// do stuff`
-
-`busy.stop();`
-
-`});`
+```javascript
+cli.on("build.post.compile", function(){
+    var busy = new nodeappc.busyindicator();
+    busy.start();
+    // do stuff
+    busy.stop();
+});
+```
 
 #### clitools
 
@@ -1193,9 +1068,11 @@ Namespace for Mac OS X command-line tools helper library.
 
 Detects if the Mac OS X command-line tools are installed.
 
-Syntax
+*Syntax*
 
-`detect ([Object cli], Function callback):` `void`
+```
+detect ([Object cli], Function callback): void
+```
 
 **Parameters** :
 
@@ -1212,9 +1089,11 @@ Namespace for string encoding/decoding helper library.
 
 Decodes a string with octals to a UTF-8 string.
 
-Syntax
+*Syntax*
 
-`decodeOctalUTF8 (String input): String`
+```
+decodeOctalUTF8 (String input): String
+```
 
 **Parameters**:
 
@@ -1228,9 +1107,10 @@ Decoded string.
 
 **Example**:
 
-`var hello = nodeappc.encoding.decodeOctalUTF8(``'\110\145\154\154\157'``);`
-
-`logger.log(hello);` `//> 'Hello'`
+```javascript
+var hello = nodeappc.encoding.decodeOctalUTF8('\110\145\154\154\157');
+logger.log(hello); //> 'Hello'
+```
 
 #### environ
 
@@ -1240,9 +1120,11 @@ Namespace for OS and Titanium SDK environment helper library.
 
 Retrieves OS and Node.js information.
 
-Syntax
+*Syntax*
 
-`getOSInfo (Function callback):` `void`
+```
+getOSInfo (Function callback): void
+```
 
 **Parameters**:
 
@@ -1252,19 +1134,21 @@ Syntax
 
 **Example:**
 
-`nodeappc.environ.getOSInfo(function(result){`
-
-`logger.log(JSON.stringify(result));`
-
-`});`
+```
+nodeappc.environ.getOSInfo(function(result){
+    logger.log(JSON.stringify(result));
+});
+```
 
 ##### getSDK method
 
 Retrieves information about the specified SDK.
 
-Syntax
+*Syntax*
 
-`getSDK (String version): Object`
+```
+getSDK (String version): Object
+```
 
 **Parameters**:
 
@@ -1278,13 +1162,12 @@ Information about the SDK or null if it cannot found.
 
 **Example:**
 
-`var tiSDK = nodeappc.environ.getSDK(``'3.2.1.GA'``);`
-
-`if` `(tiSDK) {`
-
-`logger.log(JSON.stringify(tiSDK));`
-
-`}`
+```javascript
+var tiSDK = nodeappc.environ.getSDK('3.2.1.GA');
+if (tiSDK) {
+    logger.log(JSON.stringify(tiSDK));
+}
+```
 
 #### exception
 
@@ -1300,7 +1183,9 @@ CLI AppcException class. Create an instance of this class by passing in an error
 
 Constructor method.
 
-`new` `exception(String message): Object`
+```
+new exception(String message): Object
+```
 
 **Parameters**:
 
@@ -1312,7 +1197,9 @@ Constructor method.
 
 Outputs the exception to the console using the specified logger handle.
 
-`dump(Object logger):` `void`
+```
+dump(Object logger): void
+```
 
 **Parameters**:
 
@@ -1324,7 +1211,9 @@ Outputs the exception to the console using the specified logger handle.
 
 Logs another error message for the exception.
 
-`dump(String error):` `void`
+```
+dump(String error): void
+```
 
 **Parameters**:
 
@@ -1336,7 +1225,9 @@ Logs another error message for the exception.
 
 Converts the exception to a string
 
-`toString(): String`
+```
+toString(): String
+```
 
 **Returns**:
 
@@ -1344,13 +1235,12 @@ Exception as a string value.
 
 ##### Example
 
-`var err =` `new` `nodeappc.exception(``"Oh noes!"``);`
-
-`err.dump(logger);` `//> '[ERROR] Oh noes!'`
-
-`err.log(``"Warning, Will Robinson"``);`
-
-`logger.log(err.toString());` `//> 'Oh noes!\nWarning, Will Robinson!'`
+```javascript
+var err = new nodeappc.exception("Oh noes!");
+err.dump(logger); //> '[ERROR] Oh noes!'
+err.log("Warning, Will Robinson");
+logger.log(err.toString()); //> 'Oh noes!\nWarning, Will Robinson!'
+```
 
 #### haxm
 
@@ -1360,32 +1250,27 @@ Namespace for Intel HAXM helper library.
 
 Detects if HAXM is installed.
 
-Syntax
+*Syntax*
 
-`detect ([Object config,] [Object options,] Function callback):` `void`
+```
+detect ([Object config,] [Object options,] Function callback): void
+```
 
 **Parameters**:
 
 | Name | Type | Description |
 | --- | --- | --- |
 | config | Object | CLI configuration object. |
-| options | Object | Device options:<br /><br />| Name | Type | Description |<br />| --- | --- | --- | |
-
-| bypassCache | Boolean | If set to false, returns the cached info. If set to true, retrieves values directly from the system. |
-
-callback
-
-Function
-
-Callback to invoke when done. Takes an optional object as its only parameter, which contains the environment information.
+| options | Object | Device options:<br /><br />| Name | Type | Description |<br />| --- | --- | --- |<br />| bypassCache | Boolean | If set to false, returns the cached info. If set to true, retrieves values directly from the system. | |
+| callback | Function | Callback to invoke when done. Takes an optional object as its only parameter, which contains the environment information. |
 
 **Example:**
 
-`nodeappc.hamx.detect(function(result){`
-
-`logger.log(JSON.stringify(result));`
-
-`});`
+```
+nodeappc.hamx.detect(function(result){
+    logger.log(JSON.stringify(result));
+});
+```
 
 #### image
 
@@ -1395,50 +1280,33 @@ Namespace for the image helper library built on top of the imgscalr library.
 
 Resizes the source image according to the destination parameters.
 
-Syntax
+*Syntax*
 
-`resize (String src, Array<Object> dest, [Function callback], [Object logger]):` `void`
+```
+resize (String src, Array<Object> dest, [Function callback], [Object logger]): void
+```
 
 **Parameters:**
 
 | Name | Type | Description |
 | --- | --- | --- |
 | src | String | CLI configuration object. |
-| dst | Array<Object> | Array of objects specifying the required destination properties:<br /><br />| Name | Type | Description |<br />| --- | --- | --- | |
-
-| file | String | Path and name of the resize images. |
-| height | Number | Height to scale the image. |
-| width | Number | Width to scale the image. |
-
-callback
-
-Function
-
-Callback to invoke when done. Takes an optional error and result objects as its only parameter.
-
-logger
-
-Object
-
-Handle to the logger object.
+| dst | Array<Object> | Array of objects specifying the required destination properties:<br /><br />| Name | Type | Description |<br />| --- | --- | --- |<br />| file | String | Path and name of the resize images. |<br />| height | Number | Height to scale the image. |<br />| width | Number | Width to scale the image. | |
+| callback | Function | Callback to invoke when done. Takes an optional error and result objects as its only parameter. |
+| logger | Object | Handle to the logger object. |
 
 **Example:**
 
-`var dst = {`
-
-`file:` `"/tmp/Default2.png"``,`
-
-`width:` `240``,`
-
-`height:` `360`
-
-`};`
-
-`nodeappc.image.resize(``"/tmp/Default.png"``, [dst], function(error, result) {`
-
-`logger.log(result);`
-
-`}, logger);`
+```javascript
+var dst = {
+    file: "/tmp/Default2.png",
+    width: 240,
+    height: 360
+};
+nodeappc.image.resize("/tmp/Default.png", [dst], function(error, result) {
+    logger.log(result);
+}, logger);
+```
 
 #### jdk
 
@@ -1448,32 +1316,27 @@ Namespace for the Java helper library.
 
 Detects if Java and the JDK are installed.
 
-Syntax
+*Syntax*
 
-`detect ([Object config], [Object options], Function callback):` `void`
+```
+detect ([Object config], [Object options], Function callback): void
+```
 
 **Parameters**:
 
 | Name | Type | Description |
 | --- | --- | --- |
 | config | Object | CLI configuration object. |
-| options | Object | Device options:<br /><br />| Name | Type | Description |<br />| --- | --- | --- | |
-
-| bypassCache | Boolean | If set to false, returns the cached info. If set to true, retrieves values directly from the system. |
-
-callback
-
-Function
-
-Callback to invoke when done. Takes an optional results object as its only parameter, which contains the environment information.
+| options | Object | Device options:<br /><br />| Name | Type | Description |<br />| --- | --- | --- |<br />| bypassCache | Boolean | If set to false, returns the cached info. If set to true, retrieves values directly from the system. | |
+| callback | Function | Callback to invoke when done. Takes an optional results object as its only parameter, which contains the environment information. |
 
 **Example:**
 
-`nodeappc.jdk.detect(config, function(result){`
-
-`dump(result);`
-
-`});`
+```
+nodeappc.jdk.detect(config, function(result){
+    dump(result);
+});
+```
 
 #### net
 
@@ -1483,9 +1346,11 @@ Namespace for the network helper library.
 
 Detects all network interfaces.
 
-Syntax
+*Syntax*
 
-`interfaces (Function callback):` `void`
+```
+interfaces (Function callback): void
+```
 
 **Parameters**:
 
@@ -1495,19 +1360,21 @@ Syntax
 
 **Example:**
 
-`nodeappc.net.interfaces(function(result){`
-
-`dump(result);`
-
-`});`
+```
+nodeappc.net.interfaces(function(result){
+    dump(result);
+});
+```
 
 ##### online method
 
 Detects if the current computer is online.
 
-Syntax
+*Syntax*
 
-`interfaces (Function callback):` `void`
+```
+interfaces (Function callback): void
+```
 
 **Parameters**:
 
@@ -1517,23 +1384,23 @@ Syntax
 
 **Example:**
 
-`nodeappc.net.online(function(err, result){`
-
-`if` `(result){`
-
-`logger.info(``"We haz interwebs!"``);`
-
-`}`
-
-`});`
+```
+nodeappc.net.online(function(err, result){
+    if (result){
+        logger.info("We haz interwebs!");
+    }
+});
+```
 
 ##### urlEncode method
 
 Converts an object into an escaped URL-safe string.
 
-Syntax
+*Syntax*
 
-`urlEncode (Object obj): String`
+```
+urlEncode (Object obj): String
+```
 
 **Parameters**:
 
@@ -1547,17 +1414,14 @@ An escaped URL-safe string.
 
 **Example:**
 
-`var obj = {`
-
-`"_session_id"``:` `"11223344deadbeef"``,`
-
-`"message_id"``:` `"00998877"`
-
-`};`
-
-`var str = nodeappc.net.urlEncode(obj);`
-
-`logger.log(str);` `//> _session_id=11223344deadbeef&message_id=00998877`
+```javascript
+var obj = {
+    "_session_id": "11223344deadbeef",
+    "message_id": "00998877"
+};
+var str = nodeappc.net.urlEncode(obj);
+logger.log(str); //> _session_id=11223344deadbeef&message_id=00998877
+```
 
 #### plist
 
@@ -1567,9 +1431,11 @@ CLI plist class. Create an instance of this class by passing it a file (or nothi
 
 Constructor method.
 
-Syntax
+*Syntax*
 
-`new` `plist ([String file]): Object`
+```
+new plist ([String file]): Object
+```
 
 **Parameters**:
 
@@ -1589,29 +1455,28 @@ CLI progress bar class. Create an instance of this class by passing it a format 
 
 Constructor method.
 
-Syntax
+*Syntax*
 
-`new` `progress (String format, Object options): Object`
+```
+new progress (String format, Object options): Object
+```
 
 **Parameters**:
 
 | Name | Type | Description |
 | --- | --- | --- |
 | format | String | Use the following strings to format the progress bar:<br /><br />* ':bar' - progress bar<br />    <br />* ':current' - current progress value<br />    <br />* ':total' - total progress value<br />    <br />* ':elapsed' - current elapsed time of the task<br />    <br />* ':eta' - estimated time when the task completes<br />    <br />* ':percent' - percent value of the current progress<br />    <br />* ':paddedPercent' - padded percent value of the current progress |
-| options | Object | Optional progress bar options:<br /><br />| Name | Type | Description |<br />| --- | --- | --- | |
-
-| complete | String | Character to indicate completed progress in the bar. |
-| incomplete | String | Character to indicate incomplete progress in the bar. |
-| total | Number | Total number to be tracked by the progress bar. |
-| width | Number | Width in characters of the progress bar. |
+| options | Object | Optional progress bar options:<br /><br />| Name | Type | Description |<br />| --- | --- | --- |<br />| complete | String | Character to indicate completed progress in the bar. |<br />| incomplete | String | Character to indicate incomplete progress in the bar. |<br />| total | Number | Total number to be tracked by the progress bar. |<br />| width | Number | Width in characters of the progress bar. | |
 
 ##### tick method
 
 Increments the progress and redraws the progress bar.
 
-Syntax
+*Syntax*
 
-`tick ([Number len]):` `void`
+```
+tick ([Number len]): void
+```
 
 **Parameters**:
 
@@ -1621,39 +1486,26 @@ Syntax
 
 ##### Example
 
-`/*`
+```javascript
+/*
+    Displays the following progress bar:
+    80% [================================........] 0.2s
+*/
 
-`Displays the following progress bar:`
-
-`80% [================================........] 0.2s`
-
-`*/`
-
-`var bar =` `new` `nodeappc.progress(``' :paddedPercent [:bar] :etas'``, {`
-
-`complete:` `'='``.cyan,`
-
-`incomplete:` `'.'``.grey,`
-
-`width:` `40``,`
-
-`total:` `10`
-
-`});`
-
-`var timer = setInterval(function(){`
-
-`bar.tick();`
-
-`if` `(bar.complete) {`
-
-`console.log(``'\ncomplete\n'``);`
-
-`clearInterval(timer);`
-
-`}`
-
-`},` `100``);`
+var bar = new nodeappc.progress('  :paddedPercent [:bar] :etas', {
+    complete: '='.cyan,
+    incomplete: '.'.grey,
+    width: 40,
+    total: 10
+});
+var timer = setInterval(function(){
+    bar.tick();
+    if (bar.complete) {
+        console.log('\ncomplete\n');
+        clearInterval(timer);
+    }
+}, 100);
+```
 
 #### string
 
@@ -1663,9 +1515,11 @@ Namespace for the string helper library.
 
 Capitalizes the string.
 
-Syntax
+*Syntax*
 
-`capitalize (String str): String`
+```
+capitalize (String str): String
+```
 
 **Parameters:**
 
@@ -1681,9 +1535,11 @@ Capitalized string.
 
 Calculates the [Levenshtein distance](http://en.wikipedia.org/wiki/Levenshtein_distance) of two strings.
 
-Syntax
+*Syntax*
 
-`levenshtein (String str1, String str2): Number`
+```
+levenshtein (String str1, String str2): Number
+```
 
 **Parameters:**
 
@@ -1700,9 +1556,11 @@ The distance between the two strings.
 
 Pads the left side of a string so that the total length equals the specified length. If the string is longer than the length, the string is not padded.
 
-Syntax
+*Syntax*
 
-`lpad (String str, Number len, [String pad]): String`
+```
+lpad (String str, Number len, [String pad]): String
+```
 
 **Parameters:**
 
@@ -1720,9 +1578,11 @@ Padded string.
 
 Renders an array of items into columns.
 
-Syntax
+*Syntax*
 
-`renderColumns (Array<String> items, Number margin, Number maxwidth): String`
+```
+renderColumns (Array<String> items, Number margin, Number maxwidth): String
+```
 
 **Parameters:**
 
@@ -1740,9 +1600,11 @@ Formatted string.
 
 Pads the right side of a string so that the total length equals the specified length. If the string is longer than the length, the string is not padded.
 
-Syntax
+*Syntax*
 
-`lpad (String str, Number len, [String pad]): String`
+```
+lpad (String str, Number len, [String pad]): String
+```
 
 **Parameters:**
 
@@ -1760,9 +1622,11 @@ Padded string.
 
 Compares a string to an array of options and suggests close matches based on a given threshold.
 
-Syntax
+*Syntax*
 
-`suggest (String str, Array<Strings> options, Function logger, [Number threshold]):` `void`
+```
+suggest (String str, Array<Strings> options, Function logger, [Number threshold]): void
+```
 
 **Parameters:**
 
@@ -1777,9 +1641,11 @@ Syntax
 
 Inserts line breaks into a string so that the text does not exceed the specified width.
 
-Syntax
+*Syntax*
 
-`wrap (String str, [Number width]): String`
+```
+wrap (String str, [Number width]): String
+```
 
 **Parameters:**
 
@@ -1794,49 +1660,39 @@ Wrapped string.
 
 ##### Examples
 
-`var str1 =` `"saturday"``,`
+```javascript
+var str1 = "saturday",
+    str2 = "sunday",
+    cmd = "confound",
+    commands = ["build", "clean", "config", "create", "help", "info", "setup", "status"];
 
-`str2 =` `"sunday"``,`
+logger.log(nodeappc.string.capitalize(str1)); //> Saturday
 
-`cmd =` `"confound"``,`
+logger.log(nodeappc.string.levenshtein(str1, str2)); //> 3
 
-`commands = [``"build"``,` `"clean"``,` `"config"``,` `"create"``,` `"help"``,` `"info"``,` `"setup"``,` `"status"``];  `
+logger.log(nodeappc.string.lpad(str1, 25, "$")); //> $$$$$$$$$$$$$$$$$saturday
 
-`logger.log(nodeappc.string.capitalize(str1));` `//> Saturday`
+logger.log(nodeappc.string.rpad(str2, 25, "$")); //> sunday$$$$$$$$$$$$$$$$$$$
 
-`logger.log(nodeappc.string.levenshtein(str1, str2));` `//> 3`
+logger.log(nodeappc.string.renderColumns([str1, str2], "Le weekend", 50)); //> Le weekend: saturday     sunday
 
-`logger.log(nodeappc.string.lpad(str1,` `25``,` `"$"``));` `//> $$$$$$$$$$$$$$$$$saturday`
+logger.log(nodeappc.string.suggest(cmd, commands, function(result){
+    logger.log(result);
+}, 5));
 
-`logger.log(nodeappc.string.rpad(str2,` `25``,` `"$"``));` `//> sunday$$$$$$$$$$$$$$$$$$$`
+/*
+Did you mean this?
+    config
+    info
+*/
 
-`logger.log(nodeappc.string.renderColumns([str1, str2],` `"Le weekend"``,` `50``));` `//> Le weekend: saturday sunday`
+logger.log(nodeappc.string.wrap("The quick brown fox jumps over the lazy dog.", 25));
 
-`logger.log(nodeappc.string.suggest(cmd, commands, function(result){`
-
-`logger.log(result);`
-
-`},` `5``));`
-
-`/*`
-
-`Did you mean this?`
-
-`config`
-
-`info`
-
-`*/`
-
-`logger.log(nodeappc.string.wrap(``"The quick brown fox jumps over the lazy dog."``,` `25``));`
-
-`/*`
-
-`The quick brown fox jumps`
-
-`over the lazy dog.`
-
-`*/`
+/*
+The quick brown fox jumps
+over the lazy dog.
+*/
+```
 
 #### subprocess
 
@@ -1846,9 +1702,11 @@ Namespace for the helper library to spawn subprocesses.
 
 Tries to locate the executable.
 
-Syntax
+*Syntax*
 
-`findExecutable (Array<String>/String files, Function callback):` `void`
+```
+findExecutable (Array<String>/String files, Function callback): void
+```
 
 **Parameters**:
 
@@ -1859,25 +1717,24 @@ Syntax
 
 **Example:**
 
-`var commands = [``"/usr/local/bin/grep"``,` `"/usr/bin/grep"``];`
-
-`nodeappc.subprocess.findExecutable(commands, function(err, res){`
-
-`if` `(res !=` `null``) {`
-
-`logger.info(``"Found grep command: "` `+ res);`
-
-`}`
-
-`})`
+```javascript
+var commands = ["/usr/local/bin/grep", "/usr/bin/grep"];
+nodeappc.subprocess.findExecutable(commands, function(err, res){
+    if (res != null) {
+        logger.info("Found grep command: " + res);
+    }
+})
+```
 
 ##### getRealName method
 
 Try to get the 8.3 formatted file name for Windows systems. Returns the original file name for Mac OS X.
 
-Syntax
+*Syntax*
 
-`getRealName (String file, Function callback):` `void`
+```
+getRealName (String file, Function callback): void
+```
 
 **Parameters**:
 
@@ -1890,9 +1747,11 @@ Syntax
 
 Spawns a new process.
 
-Syntax
+*Syntax*
 
-`run (String cmd, Array args, [Object options], Function callback):` `void`
+```
+run (String cmd, Array args, [Object options], Function callback): void
+```
 
 **Parameters**:
 
@@ -1905,25 +1764,18 @@ Syntax
 
 **Example:**
 
-`// Finds all the PNG images in the project`
-
-`nodeappc.subprocess.findExecutable(``"find"``, function(error, result){`
-
-`if` `(result) {`
-
-`nodeappc.subprocess.run(result, [``"."``,` `"-name"``,` `"\*.png"``], function(code, res, err){`
-
-`if` `(res) {`
-
-`logger.log(res);`
-
-`}`
-
-`});`
-
-`}`
-
-`});`
+```
+// Finds all the PNG images in the project
+nodeappc.subprocess.findExecutable("find", function(error, result){
+    if (result) {
+        nodeappc.subprocess.run(result, [".", "-name", "\*.png"], function(code, res, err){
+            if (res) {
+                logger.log(res);
+            }
+        });
+    }
+});
+```
 
 #### time
 
@@ -1933,9 +1785,11 @@ Namespace for the time-formatting helper library.
 
 Format the time difference between two JavaScript Date objects in to an easily readable format.
 
-Syntax
+*Syntax*
 
-`prettyDiff (Date from, Date to, Object options): String`
+```
+prettyDiff (Date from, Date to, Object options): String
+```
 
 **Parameters**:
 
@@ -1943,11 +1797,7 @@ Syntax
 | --- | --- | --- |
 | from | Date | First date. |
 | to | Date | Second date. |
-| options | Object | Options:<br /><br />| Name | Type | Description |<br />| --- | --- | --- | |
-
-| colorize | Boolean | If set to true, colorizes the output. False by default. |
-| hideMS | Boolean | If set to true, hides the millisecond results. False by default. |
-| showFullName | Boolean | If set to true, uses the full name rather than an abbreviation. False by default. |
+| options | Object | Options:<br /><br />| Name | Type | Description |<br />| --- | --- | --- |<br />| colorize | Boolean | If set to true, colorizes the output. False by default. |<br />| hideMS | Boolean | If set to true, hides the millisecond results. False by default. |<br />| showFullName | Boolean | If set to true, uses the full name rather than an abbreviation. False by default. | |
 
 **Returns**:
 
@@ -1955,21 +1805,23 @@ Formatted string describing the difference between the date.
 
 **Example:**
 
-`var date1 =` `new` `Date(``1980``,` `1``,` `21``,` `20``,` `41``,` `0``,` `0``),`
+```javascript
+var date1 = new Date(1980, 1, 21, 20, 41, 0, 0),
+    date2 = Date.now();
 
-`date2 = Date.now();`
-
-`var diff = nodeappc.time.prettyDiff(date1, date2, {hideMS:` `true``, showFullName:` `true``});`
-
-`logger.log(diff);` `//> 12445 days 18 hours 30 minutes 50 seconds`
+var diff = nodeappc.time.prettyDiff(date1, date2, {hideMS: true, showFullName: true});
+logger.log(diff); //> 12445 days 18 hours 30 minutes 50 seconds
+```
 
 ##### timestamp method
 
 Creates an ISO-like timestamp.
 
-Syntax
+*Syntax*
 
-`timestamp (``void``): String`
+```
+timestamp (void): String
+```
 
 **Returns** :
 
@@ -1977,7 +1829,9 @@ Timestamp.
 
 **Example:**
 
-`logger.log(nodeappc.time.timestamp());` `//> 2014-03-20T23:15:04.815+0000`
+```
+logger.log(nodeappc.time.timestamp()); //> 2014-03-20T23:15:04.815+0000
+```
 
 #### timodule
 
@@ -1987,9 +1841,11 @@ Namespace for Titanium module helper library.
 
 Scans the specified paths for Titanium module as well as all known Titanium SDK directories.
 
-Syntax
+*Syntax*
 
-`detect (Array<String> searchPaths, Object logger, Function callback):` `void`
+```
+detect (Array<String> searchPaths, Object logger, Function callback): void
+```
 
 **Parameters**:
 
@@ -2003,9 +1859,11 @@ Syntax
 
 Finds Titanium modules with the specified restrictions and groups them in to found, missing, incompatible and conflict categories.
 
-Syntax
+*Syntax*
 
-`find (Array<Object> modules, Array<String>/String platform, Array<String>/String deployType, String sdkVersion, Array<String> searchPaths, Object logger, Function callback):` `void`
+```
+find (Array<Object> modules, Array<String>/String platform, Array<String>/String deployType, String sdkVersion, Array<String> searchPaths, Object logger, Function callback): void
+```
 
 **Parameters**:
 
@@ -2023,9 +1881,11 @@ Syntax
 
 Only scans the specified paths for Titanium module.
 
-Syntax
+*Syntax*
 
-`scopedDetect (Array<String> searchPaths, Object config, Object logger, Function callback):` `void`
+```
+scopedDetect (Array<String> searchPaths, Object config, Object logger, Function callback): void
+```
 
 **Parameters**:
 
@@ -2044,9 +1904,11 @@ Namespace for Titanium plugin helper library.
 
 Scans the specified paths for Titanium plugins as well as any globally or user-configured search paths.
 
-Syntax
+*Syntax*
 
-`detect (String projectDir, Object config, Object logger, Function callback):` `void`
+```
+detect (String projectDir, Object config, Object logger, Function callback): void
+```
 
 **Parameters**:
 
@@ -2061,9 +1923,11 @@ Syntax
 
 Finds Titanium plugins with the specified restrictions and groups them in to found or missing categories.
 
-Syntax
+*Syntax*
 
-`find (Array<Object> plugins, Array<String> searchPaths, Object logger, Function callback):` `void`
+```
+find (Array<Object> plugins, Array<String> searchPaths, Object logger, Function callback): void
+```
 
 **Parameters**:
 
@@ -2079,9 +1943,11 @@ Syntax
 
 Only scans the specified paths for Titanium plugins.
 
-Syntax
+*Syntax*
 
-`scopedDetect (Array<String> searchPaths, Object config, Object logger, Function callback):` `void`
+```
+scopedDetect (Array<String> searchPaths, Object config, Object logger, Function callback): void
+```
 
 **Parameters**:
 
@@ -2100,9 +1966,11 @@ Namespace for the miscellaneous utility library.
 
 Mix multiple objects into a single object.
 
-Syntax
+*Syntax*
 
-`mix (Object obj1, ...): Object`
+```
+mix (Object obj1, ...): Object
+```
 
 **Parameters**:
 
@@ -2119,9 +1987,11 @@ Mixed object.
 
 Deep mixes multiple objects into a single object.
 
-Syntax
+*Syntax*
 
-`mixObj (Object obj1, ...): Object`
+```
+mixObj (Object obj1, ...): Object
+```
 
 **Parameters**:
 
@@ -2136,103 +2006,59 @@ Mixed object.
 
 ##### Example
 
-`var object1 = {`
+```javascript
+var object1 = {
+    foo: "bar",
+    colors: ["red", "green", "blue"],
+    car: {
+        make: "Ford",
+        model: "Fiesta"
+    }
+};
+var object2 = {
+    foo: "baz",
+    colors: ["cyan", "magenta", "yellow", "black"],
+    box: {
+        make: "Apple",
+        model: "MacBook Pro",
+        model_id: "MacBookPro9,1"
+    }
+};
+dump(nodeappc.util.mix(object1, object2));
+/*
+{ foo: 'baz',
+  colors:
+   [ 'cyan',
+     'magenta',
+     'yellow',
+     'black' ],
+  car: { make: 'Ford', model: 'Fiesta' },
+  box:
+   { make: 'Apple',
+     model: 'MacBook Pro',
+     model_id: 'MacBookPro9,1' } }
+*/
 
-`foo:` `"bar"``,`
+dump(nodeappc.util.mixObj(object1, object2));
 
-`colors: [``"red"``,` `"green"``,` `"blue"``],`
-
-`car: {`
-
-`make:` `"Ford"``,`
-
-`model:` `"Fiesta"`
-
-`}`
-
-`};`
-
-`var object2 = {`
-
-`foo:` `"baz"``,`
-
-`colors: [``"cyan"``,` `"magenta"``,` `"yellow"``,` `"black"``],`
-
-`box: {`
-
-`make:` `"Apple"``,`
-
-`model:` `"MacBook Pro"``,`
-
-`model_id:` `"MacBookPro9,1"`
-
-`}`
-
-`};`
-
-`dump(nodeappc.util.mix(object1, object2));`
-
-`/*`
-
-`{ foo: 'baz',`
-
-`colors:`
-
-`[ 'cyan',`
-
-`'magenta',`
-
-`'yellow',`
-
-`'black' ],`
-
-`car: { make: 'Ford', model: 'Fiesta' },`
-
-`box:`
-
-`{ make: 'Apple',`
-
-`model: 'MacBook Pro',`
-
-`model_id: 'MacBookPro9,1' } }`
-
-`*/`
-
-`dump(nodeappc.util.mixObj(object1, object2));`
-
-`/*`
-
-`{ foo: 'baz',`
-
-`colors:`
-
-`[ 'cyan',`
-
-`'magenta',`
-
-`'yellow',`
-
-`'black',`
-
-`'cyan',`
-
-`'magenta',`
-
-`'yellow',`
-
-`'black' ],`
-
-`car: { make: 'Ford', model: 'Fiesta' },`
-
-`box:`
-
-`{ make: 'Apple',`
-
-`model: 'MacBook Pro',`
-
-`model_id: 'MacBookPro9,1' } }`
-
-`*/`
+/*
+{ foo: 'baz',
+  colors:
+   [ 'cyan',
+     'magenta',
+     'yellow',
+     'black',
+     'cyan',
+     'magenta',
+     'yellow',
+     'black' ],
+  car: { make: 'Ford', model: 'Fiesta' },
+  box:
+   { make: 'Apple',
+     model: 'MacBook Pro',
+     model_id: 'MacBookPro9,1' } }
+*/
+```
 
 #### xcconfig
 
@@ -2240,7 +2066,9 @@ Loads an Xcode xcconfig file and converts it to JSON format. Pass the file as th
 
 **Example:**
 
-`var json_obj =` `new` `nodeappc.xcconfig(``'/path/to/file.xcconfig'``);`
+```javascript
+var json_obj = new nodeappc.xcconfig('/path/to/file.xcconfig');
+```
 
 #### xml
 
@@ -2250,9 +2078,11 @@ Namespace for the XML parsing utility library. Use the [xmldom](https://www.npmj
 
 Loops through the attributes for an XML DOM object and invokes the callback for each attribute found.
 
-Syntax
+*Syntax*
 
-`forEachAttr (Object node, Function callback):` `void`
+```
+forEachAttr (Object node, Function callback): void
+```
 
 **Parameters**:
 
@@ -2265,9 +2095,11 @@ Syntax
 
 Loops through the elements for an XML DOM object and invokes the callback for each element found.
 
-Syntax
+*Syntax*
 
-`forEachElement (Object node, Function callback):` `void`
+```
+forEachElement (Object node, Function callback): void
+```
 
 **Parameters**:
 
@@ -2280,9 +2112,11 @@ Syntax
 
 Retrieves and parses an attribute of an XML node. If the attribute does not exist, an empty string is returned.
 
-Syntax
+*Syntax*
 
-`getAttr (Object node, String attr): Primitive`
+```
+getAttr (Object node, String attr): Primitive
+```
 
 **Parameters**:
 
@@ -2299,9 +2133,11 @@ Returns the value of the attribute or an empty string if it does not exist.
 
 Determines if the XML node has a child node and returns it.
 
-Syntax
+*Syntax*
 
-`getValue (Object node): String`
+```
+getValue (Object node): String
+```
 
 **Parameters**:
 
@@ -2317,9 +2153,11 @@ Returns the value of the child node.
 
 Parse a XML value and coverts it to a JavaScript value.
 
-Syntax
+*Syntax*
 
-`parse (String value): Primitive`
+```
+parse (String value): Primitive
+```
 
 **Parameters**:
 
@@ -2333,57 +2171,36 @@ Returns the value of the node as a JavaScript primitive.
 
 ##### Example
 
-`var DOMParser = require(``'xmldom'``).DOMParser;`
+```javascript
+var DOMParser = require('xmldom').DOMParser;
+var doc = new DOMParser().parseFromString(
+    '<xml xmlns="a" xmlns:c="./lite">\n'+
+        '\t<child>test</child>\n'+
+        '\t<child>\n'+
+        '\t\t<grandchild>test</grandchild>\n'+
+        '\t</child>\n'+
+    '</xml>'
+    ,'text/xml');
+doc.documentElement.setAttribute('x','y');
+doc.documentElement.setAttributeNS('./lite','c:x','y2');
 
-`var doc =` `new` `DOMParser().parseFromString(`
+nodeappc.xml.forEachElement(doc, function(node){
+    if (node.attributes) {
+        nodeappc.xml.forEachAttr(node, function(attr){
+            var attr_val = nodeappc.xml.getAttr(node, attr.name);
+            logger.log (attr.name + " = " + attr_val);
+        });
+    }
+});
 
-`'<xml xmlns="a" xmlns:c="./lite">\n'``+`
-
-`'\t<child>test</child>\n'``+`
-
-`'\t<child>\n'``+`
-
-`'\t\t<grandchild>test</grandchild>\n'``+`
-
-`'\t</child>\n'``+`
-
-`'</xml>'`
-
-`,``'text/xml'``);`
-
-`doc.documentElement.setAttribute(``'x'``,``'y'``);`
-
-`doc.documentElement.setAttributeNS(``'./lite'``,``'c:x'``,``'y2'``);`
-
-`nodeappc.xml.forEachElement(doc, function(node){`
-
-`if` `(node.attributes) {`
-
-`nodeappc.xml.forEachAttr(node, function(attr){`
-
-`var attr_val = nodeappc.xml.getAttr(node, attr.name);`
-
-`logger.log (attr.name +` `" = "` `+ attr_val);`
-
-`});`
-
-`}`
-
-`});`
-
-`/*`
-
-`OUTPUTS:`
-
-`xmlns = a`
-
-`xmlns:c = ./lite`
-
-`x = y`
-
-`c:x = y2`
-
-`*/`
+/*
+OUTPUTS:
+xmlns = a
+xmlns:c = ./lite
+x = y
+c:x = y2
+*/
+```
 
 #### version
 
@@ -2393,7 +2210,9 @@ Namespace for a version helper library.
 
 Converts two versions to three segment format, then compares if they are equal.
 
-`eq(String version1, String version2): Boolean`
+```
+eq(String version1, String version2): Boolean
+```
 
 **Parameters:**
 
@@ -2410,7 +2229,9 @@ True is the versions are equal otherwise false.
 
 Formats a version based on the minimum or maximum number of segments.
 
-`format(String version, Number min, Number max, [Boolean chopDash]): String`
+```
+format(String version, Number min, Number max, [Boolean chopDash]): String
+```
 
 **Parameters:**
 
@@ -2429,7 +2250,9 @@ Formatted version string.
 
 Converts two versions to three segment format, then compares if the first one is greater than the second one.
 
-`gt(String version1, String version2): Boolean`
+```
+gt(String version1, String version2): Boolean
+```
 
 **Parameters:**
 
@@ -2446,7 +2269,9 @@ True is the first version is greater than the second version otherwise false.
 
 Converts two versions to three segment format, then compares if the first one is greater than or equal to the second one.
 
-`gte(String version1, String version2): Boolean`
+```
+gte(String version1, String version2): Boolean
+```
 
 **Parameters:**
 
@@ -2463,7 +2288,9 @@ True is the first version is greater than or equal to the second version otherwi
 
 Converts two versions to three segment format, then compares if the first one is less than the second one.
 
-`lt(String version1, String version2): Boolean`
+```
+lt(String version1, String version2): Boolean
+```
 
 **Parameters:**
 
@@ -2480,7 +2307,9 @@ True is the first version is less than the second version otherwise false.
 
 Converts two versions to three segment format, then compares if the first one is less than or equal to the second one.
 
-`lte(String version1, String version2): Boolean`
+```
+lte(String version1, String version2): Boolean
+```
 
 **Parameters:**
 
@@ -2497,7 +2326,9 @@ True is the first version is less than or equal to the second version otherwise 
 
 Determines the maximum possible version in the supplied range.
 
-`lte(String range): String`
+```
+lte(String range): String
+```
 
 **Parameters:**
 
@@ -2513,7 +2344,9 @@ Determined maximum version.
 
 Determines the minimum possible version in the supplied range.
 
-`lte(String range): String`
+```
+lte(String range): String
+```
 
 **Parameters:**
 
@@ -2529,7 +2362,9 @@ Determined minimum version.
 
 Determines if a version occurs in the supplied versions.
 
-`satisfies(String version, String range, [Boolean maybe]): Boolean`
+```
+satisfies(String version, String range, [Boolean maybe]): Boolean
+```
 
 **Parameters:**
 
@@ -2547,7 +2382,9 @@ Returns true if found or "maybe" if it meets the maybe property condition, other
 
 Sorts the array of versions from smallest to largest.
 
-`sort(Array<String> versions): Array<String>`
+```
+sort(Array<String> versions): Array<String>
+```
 
 **Parameters:**
 
@@ -2561,49 +2398,39 @@ Sorted array of versions from smallest to largest.
 
 ##### Example
 
-`var ver = nodeappc.version.format(``"3.3"``,` `3``,` `3``,` `true``);`
+```javascript
+var ver = nodeappc.version.format("3.3", 3, 3, true);
+logger.log(ver); //> 3.3.0
 
-`logger.log(ver);` `//> 3.3.0`
+ver = nodeappc.version.eq("3.2", "3.2.0");
+logger.log(ver); //> true
 
-`ver = nodeappc.version.eq(``"3.2"``,` `"3.2.0"``);`
+ver = nodeappc.version.lt("3.2.1.1", "3.2.1");
+logger.log(ver); //> false
 
-`logger.log(ver);` `//> true`
+ver = nodeappc.version.lte("3.2.1.1", "3.2.1");
+logger.log(ver); //> true
 
-`ver = nodeappc.version.lt(``"3.2.1.1"``,` `"3.2.1"``);`
+ver = nodeappc.version.gt("3.2.1.1", "3.2.1");
+logger.log(ver); //> false
 
-`logger.log(ver);` `//> false`
+ver = nodeappc.version.gte("3.2.1.1", "3.2.1");
+logger.log(ver); //> true
 
-`ver = nodeappc.version.lte(``"3.2.1.1"``,` `"3.2.1"``);`
+var range = ">2.1.4 || <3.2.0";
+ver = nodeappc.version.parseMax(range);
+logger.log(ver); //> 3.2.0
 
-`logger.log(ver);` `//> true`
+ver = nodeappc.version.parseMin(range);
+logger.log(ver); //> 2.1.4
 
-`ver = nodeappc.version.gt(``"3.2.1.1"``,` `"3.2.1"``);`
+ver = nodeappc.version.satisfies("3.1.3", range);
+logger.log(ver); //> true
 
-`logger.log(ver);` `//> false`
-
-`ver = nodeappc.version.gte(``"3.2.1.1"``,` `"3.2.1"``);`
-
-`logger.log(ver);` `//> true`
-
-`var range =` `">2.1.4 || <3.2.0"``;`
-
-`ver = nodeappc.version.parseMax(range);`
-
-`logger.log(ver);` `//> 3.2.0`
-
-`ver = nodeappc.version.parseMin(range);`
-
-`logger.log(ver);` `//> 2.1.4`
-
-`ver = nodeappc.version.satisfies(``"3.1.3"``, range);`
-
-`logger.log(ver);` `//> true`
-
-`var versions = [``"3.1.3"``,` `"3.3"``,` `"2.1.3"``,` `"3.2.1"``];`
-
-`ver = nodeappc.version.sort(versions);`
-
-`logger.log(ver);` `//> 2.1.3,3.1.3,3.2.1,3.3`
+var versions = ["3.1.3", "3.3", "2.1.3", "3.2.1"];
+ver = nodeappc.version.sort(versions);
+logger.log(ver); //> 2.1.3,3.1.3,3.2.1,3.3
+```
 
 #### zip
 
@@ -2613,9 +2440,11 @@ Namespace for the ZIP archive helper library built on top of the adm-zip library
 
 Decompresses a ZIP archive.
 
-Syntax
+*Syntax*
 
-`unzip(String file, String dest, Object opts, Function callback):` `void`
+```
+unzip(String file, String dest, Object opts, Function callback): void
+```
 
 **Parameters**:
 
@@ -2623,14 +2452,5 @@ Syntax
 | --- | --- | --- |
 | file | String | The file to extract |
 | dest | String | The destination to extract the files to |
-| opts | Object | Optional extract options:<br /><br />| Name | Type | Default | Description |<br />| --- | --- | --- | --- | |
-
-| visitor | Function |  | A function to call when visiting each file being extracted |
-| overwrite | Boolean | true | If true, overwrites files on extraction |
-| defaultPerm | Number | 0644 | The default file permissions; should be in octet format |
-
-callback
-
-Function
-
-A function to call when done extracting all files
+| opts | Object | Optional extract options:<br /><br />| Name | Type | Default | Description |<br />| --- | --- | --- | --- |<br />| visitor | Function |  | A function to call when visiting each file being extracted |<br />| overwrite | Boolean | true | If true, overwrites files on extraction |<br />| defaultPerm | Number | 0644 | The default file permissions; should be in octet format | |
+| callback | Function | A function to call when done extracting all files |

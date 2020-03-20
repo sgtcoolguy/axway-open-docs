@@ -66,35 +66,23 @@ In your Alloy project create a directory called i18n. Inside the i18n folder, cr
 
 You can also add a suffix to the language directories for variants of languages. However, if you don't plan on adding multiple suffix-ed directories omit the suffix completely. Suffix the folder name with a dash followed by the country's [ISO 3166-1](https://en.wikipedia.org/?title=ISO_3166-1) Alpha-2 code. For example, use en-US for American English, en-CA for Canadian English, en-GB for British English, etc. Note that the OS may not support all regional languages.
 
-`app`
-
-`├── controllers`
-
-`├── i18n`
-
-`│ ├── en-AU`
-
-`│ │ └── strings.xml`
-
-`│ ├── en-CA`
-
-`│ │ └── strings.xml`
-
-`│ ├── en-GB`
-
-`│ │ └── strings.xml`
-
-`│ ├── en-US`
-
-`│ │ └── strings.xml`
-
-`│ └── fr`
-
-`│ └── strings.xml`
-
-`├── styles`
-
-`└── views`
+```
+app
+├── controllers
+├── i18n
+│   ├── en-AU
+│   │   └── strings.xml
+│   ├── en-CA
+│   │   └── strings.xml
+│   ├── en-GB
+│   │   └── strings.xml
+│   ├── en-US
+│   │   └── strings.xml
+│   └── fr
+│       └── strings.xml
+├── styles
+└── views
+```
 
 **Titanium Classic Project Note**
 
@@ -104,29 +92,21 @@ For Titanium classic projects you should put the i18n directory inside the root 
 
 The string resource file closely mirrors the format of Android localization files, which have an XML-based format. The name attribute represents the key for the string, and the text inside the XML node represents the value. A typical strings.xml file would look like the following:
 
-strings.xml
+*strings.xml*
 
-`<``resources``>`
-
-`<``string`  `name``=``"welcome_message"``>Welcome to Kitchen Sink for Titanium</``string``>`
-
-`<``string`  `name``=``"user_agent_message"``>user agent set to</``string``>`
-
-`<``string`  `name``=``"format_test"``>Your name is %s</``string``>`
-
-`<``string`  `name``=``"base_ui_title"``>Base UI</``string``>`
-
-`<``string`  `name``=``"controls_win_title"``>Controls</``string``>`
-
-`<``string`  `name``=``"phone_win_title"``>Phone</``string``>`
-
-`<``string`  `name``=``"platform_win_title"``>Platform</``string``>`
-
-`<``string`  `name``=``"mashups_win_title"``>Mashups</``string``>`
-
-`<``string`  `name``=``"ordered"``>Hi %1$s, my name is %2$s</``string``>`
-
-`</``resources``>`
+```xml
+<resources>
+    <string name="welcome_message">Welcome to Kitchen Sink for Titanium</string>
+    <string name="user_agent_message">user agent set to</string>
+    <string name="format_test">Your name is %s</string>
+    <string name="base_ui_title">Base UI</string>
+    <string name="controls_win_title">Controls</string>
+    <string name="phone_win_title">Phone</string>
+    <string name="platform_win_title">Platform</string>
+    <string name="mashups_win_title">Mashups</string>
+    <string name="ordered">Hi %1$s, my name is %2$s</string>
+</resources>
+```
 
 Resource files are processed and included with your application at build time by our Titanium build scripts. This means that these strings won't be processed if you use Xcode or Eclipse to build your project natively.
 
@@ -144,45 +124,45 @@ String resource names (the "keys") must begin with a letter and can contain digi
 
 Titanium provides two functions for obtaining a localized string from your resource files. Both take the key of the string requested as their first parameter. The L() macro is a short form for [Ti.Locale.getString()](#!/api/Titanium.Locale-method-getString):
 
-`var` `str1 = L(``'welcome_message'``);`
-
-`var` `str2 = Ti.Locale.getString(``'welcome_message'``);`
-
-`// str1 === str2`
+```javascript
+var str1 = L('welcome_message');
+var str2 = Ti.Locale.getString('welcome_message');
+// str1 === str2
+```
 
 To handle situations where no key exists in the strings.xml file, the [L() macro](#!/api/Titanium.Locale-method-getString) accepts a second argument to provide default hint text:
 
-`var` `str1 = L(``'missingKey'``,` `'No translation available'``);`
+```javascript
+var str1 = L('missingKey', 'No translation available');
+```
 
 Additionally, you can use the titleid property of Titanium UI objects, such as labels or buttons, to directly reference a string resource without using the L() macro. For example:
 
-`var` `label = Ti.UI.createLabel({`
-
-`titleid:` `'welcome_message'`
-
-`});`
-
-`/*`
-
-`* is equivalent to`
-
-`* var label = Ti.UI.createLabel({`
-
-`* text: L('welcome_message')`
-
-`* });`
-
-`*/`
+```javascript
+var label = Ti.UI.createLabel({
+  titleid: 'welcome_message'
+});
+/*
+* is equivalent to
+*   var label = Ti.UI.createLabel({
+*   text: L('welcome_message')
+* });
+*/
+```
 
 #### Replacing values in a localized string
 
 You probably noticed the %1 and %2 placeholders in the sample strings.xml file above. The String object in Titanium contains a format function which formats strings according to the [IEEE printf specification](http://www.opengroup.org/onlinepubs/009695399/functions/printf.html). If your localization string contains replacement keys, as format\_test does in our example file above, you can replace values into your localized string like so:
 
-`var` `formatted = String.format(L(``'format_test'``),``'Kevin'``);` `// contains 'Your name is Kevin'`
+```javascript
+var formatted = String.format(L('format_test'),'Kevin'); // contains 'Your name is Kevin'
+```
 
 Using the other replacement values from the printf spec, you can also do ordered values:
 
-`var` `formatted = String.format(L(``'ordered'``),` `'Jeff'``,` `'Kevin'``);` `// contains 'Hi Jeff, my name is Kevin'`
+```javascript
+var formatted = String.format(L('ordered'), 'Jeff', 'Kevin'); // contains 'Hi Jeff, my name is Kevin'
+```
 
 #### iOS-specific localizations
 
@@ -192,75 +172,56 @@ On iOS applications, you can localize the names of system buttons, such as "Save
 
 To localize system buttons or submit your application to international iTunes App Stores, add the CFBundleLocalizations key to the iOS plist section of the project's tiapp.xml file. Assign the CFBundleLocalizations key an array of strings. Each string is the ISO 639-1 standard name of the language you want the application to support. For example, to support English, Spanish and French, add the following to the application's tiapp.xml file:
 
-tiapp.xml
+*tiapp.xml*
 
-`<``ti``:app>`
-
-`<``ios``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<``key``>CFBundleLocalizations</``key``>`
-
-`<``array``>`
-
-`<``string``>en</``string``>`
-
-`<``string``>fr</``string``>`
-
-`<``string``>es</``string``>`
-
-`</``array``>`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`</``ios``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    <ios>
+        <plist>
+            <dict>
+                <key>CFBundleLocalizations</key>
+                <array>
+                    <string>en</string>
+                    <string>fr</string>
+                    <string>es</string>
+                </array>
+            </dict>
+        </plist>
+    </ios>
+</ti:app>
+```
 
 ##### Localize property list keys
 
 To localize property list key values (Info.plist keys), add string elements to the app.xml file with the name attribute set to the property list key and the node text to the localized string to display. For example, the following file provides French versions of several dialog messages displayed to the user when asking for permission to use their location, contacts or calendar.
 
-i18n/fr/app.xml
+*i18n/fr/app.xml*
 
-`<?``xml`  `version``=``"1.0"`  `encoding``=``"UTF-8"``?>`
-
-`<``resources``>`
-
-`<``string`  `name``=``"NSLocationAlwaysUsageDescription"``>Où allez-vous?</``string``>`
-
-`<``string`  `name``=``"NSContactsUsageDescription"``>Avez-vous des amis?</``string``>`
-
-`<``string`  `name``=``"NSCalendarsUsageDescription"``>Bon voyage.</``string``>`
-
-`</``resources``>`
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="NSLocationAlwaysUsageDescription">Où allez-vous?</string>
+    <string name="NSContactsUsageDescription">Avez-vous des amis?</string>
+    <string name="NSCalendarsUsageDescription">Bon voyage.</string>
+</resources>
+```
 
 ##### Set default language
 
 The following key allows you to set the default language and region of your app which is very useful for the management of localization:
 
-CFBundleDevelopmentRegion
+*CFBundleDevelopmentRegion*
 
-`<``ios``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<``key``>CFBundleDevelopmentRegion</``key``>`
-
-`<``string``>it_IT</``string``>`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`</``ios``>`
+```xml
+<ios>
+  <plist>
+    <dict>
+      <key>CFBundleDevelopmentRegion</key>
+      <string>it_IT</string>
+    </dict>
+  </plist>
+</ios>
+```
 
 For more information about CFBundleDevelopmentRegion, please review [iOS Developer Library - Core Foundation Keys](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html) and [iOS Developer Library - Language IDs](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html#//apple_ref/doc/uid/10000171i-CH15-SW6).
 
@@ -284,29 +245,29 @@ For iOS applications and if you are using Titanium SDK 3.2.0 and greater to buil
 
 In each of your language directories under i18n, you'll include an app.xml file that includes the necessary XML structure for defining the localized name of your app. That structure will look like this for each file:
 
-i18n/en/app.xml
+*i18n/en/app.xml*
 
-`<``resources``>`
+```xml
+<resources>
+  <string name="appname">Cat</string>
+</resources>
+```
 
-`<``string`  `name``=``"appname"``>Cat</``string``>`
+*i18n/es/app.xml*
 
-`</``resources``>`
+```xml
+<resources>
+  <string name="appname">Gato</string>
+</resources>
+```
 
-i18n/es/app.xml
+*i18n/ja/app.xml*
 
-`<``resources``>`
-
-`<``string`  `name``=``"appname"``>Gato</``string``>`
-
-`</``resources``>`
-
-i18n/ja/app.xml
-
-`<``resources``>`
-
-`<``string`  `name``=``"appname"``>猫</``string``>`
-
-`</``resources``>`
+```xml
+<resources>
+  <string name="appname">猫</string>
+</resources>
+```
 
 And that's it. The next time you build your application, these localized strings will be used for your application name. If everything was configured correctly, you'll see the app name has changed based on the selected locale.
 
@@ -322,37 +283,28 @@ Aside from the strings.xml files, there's one more thing we need to add. To make
 
 Now open up platform/android/AndroidManifest.xml and change the android:label attributes of the <application> and <activity> elements from the defined value of your app name to the value @string/app\_name. Yeah, that was a lot of instructions all in one sentence, so here's an example to show you what I mean:
 
-AndroidManifest.xml
+*AndroidManifest.xml*
 
-`<!-- ... -->`
+```xml
+<!-- ... -->
 
-`<!-- TI_MANIFEST -->`
+<!-- TI_MANIFEST -->
+<application android:icon="@drawable/appicon"
+  android:label="@string/app_name" android:name="TestlocApplication"
+  android:debuggable="false">
 
-`<``application`  `android:icon``=``"@drawable/appicon"`
+  <!-- TI_APPLICATION -->
+  <activity android:name=".TestlocActivity"
+    android:label="@string/app_name" android:theme="@style/Theme.Titanium"
+    android:configChanges="keyboardHidden|orientation">
+    <intent-filter>
+      <action android:name="android.intent.action.MAIN" />
+              category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+  </activity>
 
-`android:label``=``"@string/app_name"`  `android:name``=``"TestlocApplication"`
-
-`android:debuggable``=``"false"``>`
-
-`<!-- TI_APPLICATION -->`
-
-`<``activity`  `android:name``=``".TestlocActivity"`
-
-`android:label``=``"@string/app_name"`  `android:theme``=``"@style/Theme.Titanium"`
-
-`android:configChanges``=``"keyboardHidden|orientation"``>`
-
-`<``intent``-filter>`
-
-`<``action`  `android:name``=``"android.intent.action.MAIN"` `/>`
-
-`category android:name="android.intent.category.LAUNCHER" />`
-
-`</``intent``-filter>`
-
-`</``activity``>`
-
-`<!-- The rest of your AndroidManifest.xml -->`
+<!-- The rest of your AndroidManifest.xml -->
+```
 
 With these changes in place, you can now rebuild your app (probably best to give it a clean first) and you'll have a successfully localized application name.
 
@@ -360,7 +312,7 @@ With these changes in place, you can now rebuild your app (probably best to give
 
 This is how your home screens might look on Android and iOS when Japanese is the selected language.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/29004892/Screen_Shot_2012_02_17_at_8_52_33_PM.png" alt="images/download/attachments/29004892/Screen_Shot_2012_02_17_at_8_52_33_PM.png" class="confluence-embedded-image confluence-content-image-border"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/29004892/image.png" alt="images/download/attachments/29004892/image.png" class="confluence-embedded-image confluence-content-image-border"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/29004892/Screen_Shot_2012_02_17_at_8_52_33_PM.png" alt="images/download/attachments/29004892/Screen_Shot_2012_02_17_at_8_52_33_PM.png" class="confluence-embedded-image confluence-content-image-border"></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/29004892/image.png" alt="images/download/attachments/29004892/image.png" class="confluence-embedded-image confluence-content-image-border"></p></td></tr></tbody></table>
 
 And just in case my description was clear as mud, check out a Titanium project with these localizations set up first hand. Just go to the [AppNameLocalization project repository](https://github.com/appcelerator-developer-relations/AppNameLocalization) on Github. It contains the _very_ basic project discussed here. With all this, you should be well-equipped to distribute your apps in as many languages as you wish to support.
 
@@ -376,19 +328,19 @@ Titanium does not provide built-in functions for internationalizing image and fi
 
 * Put the path and file name of each resource in the strings.xml file, then use that string in the imageproperty, like this:
 
-    `var` `img = Ti.UI.createImageView({`
-
-    `image: L(``'my_image'``)`
-
-    `});`
+    ```javascript
+    var img = Ti.UI.createImageView({
+      image: L('my_image')
+    });
+    ```
 
 * Put your images into a set of folders that match the 2-letter ISO codes, and include that directory in the path with Ti.Locale.currentCountry, like this:
 
-    `var` `img = Ti.UI.createImageView({`
-
-    `image:` `'images/'``+Ti.Locale.currentCountry+``'/my_image.png'`
-
-    `});`
+    ```javascript
+    var img = Ti.UI.createImageView({
+      image: 'images/'+Ti.Locale.currentCountry+'/my_image.png'
+    });
+    ```
 
 This technique won't work for the splash screen graphics. You should ideally avoid text that would need translation in your splash screen.
 
@@ -400,229 +352,171 @@ Titanium provides [string formatting functions](#!/api/Titanium) that you can us
 
 At the time of this writing, natively, Android does not format dates in accordance with the official [DateFormat](http://developer.android.com/reference/java/text/DateFormat.html) documentation. Consequently, this will affect the corresponding short, medium and long formats of Titanium String Formatting. Furthermore, when the device settings are set to certain languages, the translations can be wrong or fields in the incorrect order. For example, the following code is run on a device to demonstrate the issue:
 
-app.js
+*app.js*
 
-`Ti.API.info(``"Ti.Locale.currentLanguage = "` `+ Ti.Locale.currentLanguage);`
-
-`Ti.API.info(``"Ti.Locale.currentLocale = "` `+ Ti.Locale.currentLocale);`
-
-`Ti.API.info(``"thisDate = "` `+ thisDate);`
-
-`Ti.API.info(``"thisDate short = "` `+ String.formatDate(thisDate,``"short"``));`
-
-`Ti.API.info(``"thisDate medium = "` `+ String.formatDate(thisDate,``"medium"``));`
-
-`Ti.API.info(``"thisDate long = "` `+ String.formatDate(thisDate,``"long"``));`
+```javascript
+Ti.API.info("Ti.Locale.currentLanguage = " + Ti.Locale.currentLanguage);
+Ti.API.info("Ti.Locale.currentLocale = " + Ti.Locale.currentLocale);
+Ti.API.info("thisDate = " + thisDate);
+Ti.API.info("thisDate short = " + String.formatDate(thisDate,"short"));
+Ti.API.info("thisDate medium = " + String.formatDate(thisDate,"medium"));
+Ti.API.info("thisDate long = " + String.formatDate(thisDate,"long"));
+```
 
 This results in the following when the device is set to display in Polish:
 
-Log output (info)
+*Log output (info)*
 
-`TiAPI I (kroll$``1``: app:``//app.js) [4,603] Ti.Locale.currentLanguage = pl`
-
-`TiAPI I (kroll$``1``: app:``//app.js) [3,606] Ti.Locale.currentLocale = pl-PL`
-
-`TiAPI I (kroll$``1``: app:``//app.js) [7,613] thisDate = Mon May 23 2011 13:38:33 GMT-0000 (GMT+00:00)`
-
-`TiAPI I (kroll$``1``: app:``//app.js) [6,619] thisDate short = 23-05-2011`
-
-`TiAPI I (kroll$``1``: app:``//app.js) [6,625] thisDate medium = 23-05-2011`
-
-`TiAPI I (kroll$``1``: app:``//app.js) [4,629] thisDate long = 23 maja 2011`
+```
+TiAPI  I  (kroll$1: app://app.js) [4,603] Ti.Locale.currentLanguage = pl
+TiAPI  I  (kroll$1: app://app.js) [3,606] Ti.Locale.currentLocale = pl-PL
+TiAPI  I  (kroll$1: app://app.js) [7,613] thisDate = Mon May 23 2011 13:38:33 GMT-0000 (GMT+00:00)
+TiAPI  I  (kroll$1: app://app.js) [6,619] thisDate short = 23-05-2011
+TiAPI  I  (kroll$1: app://app.js) [6,625] thisDate medium = 23-05-2011
+TiAPI  I  (kroll$1: app://app.js) [4,629] thisDate long = 23 maja 2011
+```
 
 Here, maja is output for the month of May, whereas the Polish for May is actually _Maj_.
 
 Similarly, when the device is set to _English (United Kingdom)_, the month fields are incorrectly displayed before the dates:
 
-Log output (info)
+*Log output (info)*
 
-`TiAPI I (kroll$``3``: app:``//app.js) [2,1056] Ti.Locale.currentLanguage = en`
-
-`TiAPI I (kroll$``3``: app:``//app.js) [1,1057] Ti.Locale.currentLocale = en-GB`
-
-`TiAPI I (kroll$``3``: app:``//app.js) [9,1066] thisDate = Mon May 23 2011 14:09:28 GMT-0000 (GMT+00:00)`
-
-`TiAPI I (kroll$``3``: app:``//app.js) [258,1324] thisDate short = 5/23/11`
-
-`TiAPI I (kroll$``3``: app:``//app.js) [4,1328] thisDate medium = May 23, 2011`
-
-`TiAPI I (kroll$``3``: app:``//app.js) [13,1341] thisDate long = May 23, 2011`
+```
+TiAPI  I  (kroll$3: app://app.js) [2,1056] Ti.Locale.currentLanguage = en
+TiAPI  I  (kroll$3: app://app.js) [1,1057] Ti.Locale.currentLocale = en-GB
+TiAPI  I  (kroll$3: app://app.js) [9,1066] thisDate = Mon May 23 2011 14:09:28 GMT-0000 (GMT+00:00)
+TiAPI  I  (kroll$3: app://app.js) [258,1324] thisDate short = 5/23/11
+TiAPI  I  (kroll$3: app://app.js) [4,1328] thisDate medium = May 23, 2011
+TiAPI  I  (kroll$3: app://app.js) [13,1341] thisDate long = May 23, 2011
+```
 
 This issue may well be fixed by the time you read this but, nevertheless, it gives us an opportunity to employ some of Titanium's tools to provide a workaround that gives you full control over the date format and translations.
 
 We can use JavaScipt's [Date](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date) object to return the date, which provides methods such as getDate() and getFullYear() to individually retrieve some of the information that we need. Although it does not specifically provide a method for returning the name of the month, we can derive it, in English, from the space-separated string output from Date. To do so, we'll use the JavaScipt [String.split()](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String/split) function. This will give us a key to lookup in the string.xml files.
 
-app.js
+*app.js*
 
-`var` `thisDate =` `new` `Date();` `// will always return date in English`
+```javascript
+var thisDate = new Date(); // will always return date in English
 
-`Ti.API.info(``"Ti.Locale.currentLanguage = "` `+ Ti.Locale.currentLanguage);`
+Ti.API.info("Ti.Locale.currentLanguage = " + Ti.Locale.currentLanguage);
+Ti.API.info("Ti.Locale.currentLocale = " + Ti.Locale.currentLocale);
+Ti.API.info("thisDate = " + thisDate);
 
-`Ti.API.info(``"Ti.Locale.currentLocale = "` `+ Ti.Locale.currentLocale);`
-
-`Ti.API.info(``"thisDate = "` `+ thisDate);`
-
-`var` `thisMonth = thisDate.toString().split(``' '``,2)[1];`
-
-`Ti.API.info(``"The month contained in thisDate is: "` `+ thisMonth);`
-
-`Ti.API.info(``"Note: as thisMonth is always in the default language, English, it can be used to look up the localized string."``);`
-
-`Ti.API.info(``"Hence, the localized string, headingDate, in the language of "` `+ Ti.Locale.currentLanguage +` `" is:"``);`
-
-`Ti.API.info(String.format(L(``'headingDate'``),thisDate.getDate(),L(thisMonth),thisDate.getFullYear()));`
+var thisMonth = thisDate.toString().split(' ',2)[1];
+Ti.API.info("The month contained in thisDate is: " + thisMonth);
+Ti.API.info("Note: as thisMonth is always in the default language, English, it can be used to look up the localized string.");
+Ti.API.info("Hence, the localized string, headingDate, in the language of " + Ti.Locale.currentLanguage + " is:");
+Ti.API.info(String.format(L('headingDate'),thisDate.getDate(),L(thisMonth),thisDate.getFullYear()));
+```
 
 Using string substitution placeholders, dynamic values can be passed to the headingDate string. This enables each locale to display the fields in a different order. In the following string.xml files, Polish and English translations will return the date in the default order, whereas Spanish will result in a modified order.
 
-i18n/pl/strings.xml
+*i18n/pl/strings.xml*
 
-`<``resources``>`
+```xml
+<resources>
+  <string name="headingDate">%d %s %d</string>
+  <string name="January">Stycze?</string>
+  <string name="February">Luty</string>
+  <string name="March">Marzec</string>
+  <string name="April">Kwiecie?</string>
+  <string name="May">Maj</string>
+  <string name="June">Czerwiec</string>
+  <string name="July">Lipiec</string>
+  <string name="August">Sierpie?</string>
+  <string name="September">Wrzesie?</string>
+  <string name="October">Pa?dziernik</string>
+  <string name="November">Listopad</string>
+  <string name="December">Grudzie?</string>
+</resources>
+```
 
-`<``string`  `name``=``"headingDate"``>%d %s %d</``string``>`
+*i18n/en/strings.xml*
 
-`<``string`  `name``=``"January"``>Stycze?</``string``>`
+```xml
+<resources>
+  <string name="headingDate">%d %s %d</string> // Note: reordered keys not working on Android. Issue under investigation
+  <string name="January">January</string>
+  <string name="February">February</string>
+  <string name="March">March</string>
+  <string name="April">April</string>
+  <string name="May">May</string>
+  <string name="June">June</string>
+  <string name="July">July</string>
+  <string name="August">August</string>
+  <string name="September">September</string>
+  <string name="October">October</string>
+  <string name="November">November</string>
+  <string name="December">December</string>
+</resources>
+```
 
-`<``string`  `name``=``"February"``>Luty</``string``>`
+*i18n/es/strings.xml*
 
-`<``string`  `name``=``"March"``>Marzec</``string``>`
-
-`<``string`  `name``=``"April"``>Kwiecie?</``string``>`
-
-`<``string`  `name``=``"May"``>Maj</``string``>`
-
-`<``string`  `name``=``"June"``>Czerwiec</``string``>`
-
-`<``string`  `name``=``"July"``>Lipiec</``string``>`
-
-`<``string`  `name``=``"August"``>Sierpie?</``string``>`
-
-`<``string`  `name``=``"September"``>Wrzesie?</``string``>`
-
-`<``string`  `name``=``"October"``>Pa?dziernik</``string``>`
-
-`<``string`  `name``=``"November"``>Listopad</``string``>`
-
-`<``string`  `name``=``"December"``>Grudzie?</``string``>`
-
-`</``resources``>`
-
-i18n/en/strings.xml
-
-`<``resources``>`
-
-`<``string`  `name``=``"headingDate"``>%d %s %d</``string``> // Note: reordered keys not working on Android. Issue under investigation`
-
-`<``string`  `name``=``"January"``>January</``string``>`
-
-`<``string`  `name``=``"February"``>February</``string``>`
-
-`<``string`  `name``=``"March"``>March</``string``>`
-
-`<``string`  `name``=``"April"``>April</``string``>`
-
-`<``string`  `name``=``"May"``>May</``string``>`
-
-`<``string`  `name``=``"June"``>June</``string``>`
-
-`<``string`  `name``=``"July"``>July</``string``>`
-
-`<``string`  `name``=``"August"``>August</``string``>`
-
-`<``string`  `name``=``"September"``>September</``string``>`
-
-`<``string`  `name``=``"October"``>October</``string``>`
-
-`<``string`  `name``=``"November"``>November</``string``>`
-
-`<``string`  `name``=``"December"``>December</``string``>`
-
-`</``resources``>`
-
-i18n/es/strings.xml
-
-`<``resources``>`
-
-`<``string`  `name``=``"headingDate"``>%2$s %1$d, %3$d</``string``>`
-
-`<``string`  `name``=``"January"``>enero</``string``>`
-
-`<``string`  `name``=``"February"``>febrero</``string``>`
-
-`<``string`  `name``=``"March"``>marzo</``string``>`
-
-`<``string`  `name``=``"April"``>abril</``string``>`
-
-`<``string`  `name``=``"May"``>mayo</``string``>`
-
-`<``string`  `name``=``"June"``>junio</``string``>`
-
-`<``string`  `name``=``"July"``>julio</``string``>`
-
-`<``string`  `name``=``"August"``>agosto</``string``>`
-
-`<``string`  `name``=``"September"``>septiembre</``string``>`
-
-`<``string`  `name``=``"October"``>octubre</``string``>`
-
-`<``string`  `name``=``"November"``>noviembre</``string``>`
-
-`<``string`  `name``=``"December"``>diciembre</``string``>`
-
-`</``resources``>`
+```xml
+<resources>
+  <string name="headingDate">%2$s %1$d, %3$d</string>
+  <string name="January">enero</string>
+  <string name="February">febrero</string>
+  <string name="March">marzo</string>
+  <string name="April">abril</string>
+  <string name="May">mayo</string>
+  <string name="June">junio</string>
+  <string name="July">julio</string>
+  <string name="August">agosto</string>
+  <string name="September">septiembre</string>
+  <string name="October">octubre</string>
+  <string name="November">noviembre</string>
+  <string name="December">diciembre</string>
+</resources>
+```
 
 Using this code, the date in Polish is translated correctly:
 
-Log output (info)
+*Log output (info)*
 
-`TiAPI I (kroll$``3``: app:``//app.js) [1,1366] Ti.Locale.currentLanguage = pl`
+```
+TiAPI  I  (kroll$3: app://app.js) [1,1366]    Ti.Locale.currentLanguage = pl
+TiAPI  I  (kroll$3: app://app.js) [1,1367]    Ti.Locale.currentLocale = pl-PL
+TiAPI  I  (kroll$3: app://app.js) [33,1400]   thisDate = Mon May 23 2011 15:05:21 GMT-0000 (GMT+00:00)
 
-`TiAPI I (kroll$``3``: app:``//app.js) [1,1367] Ti.Locale.currentLocale = pl-PL`
-
-`TiAPI I (kroll$``3``: app:``//app.js) [33,1400] thisDate = Mon May 23 2011 15:05:21 GMT-0000 (GMT+00:00)`
-
-`TiAPI I (kroll$``3``: app:``//app.js) [38,1479] The month contained in thisDate is: May`
-
-`TiAPI I (kroll$``3``: app:``//app.js) [1,1480] Note: as thisMonth is always in the default language, English, it can be used to look up the localized string.`
-
-`TiAPI I (kroll$``3``: app:``//app.js) [12,1492] Hence, the localized string, headingDate, in the language of pl is:`
-
-`TiAPI I (kroll$``3``: app:``//app.js) [18,1510] 23 Maj 2011`
+TiAPI  I  (kroll$3: app://app.js) [38,1479]   The month contained in thisDate is: May
+TiAPI  I  (kroll$3: app://app.js) [1,1480]    Note: as thisMonth is always in the default language, English, it can be used to look up the localized string.
+TiAPI  I  (kroll$3: app://app.js) [12,1492]   Hence, the localized string, headingDate, in the language of pl is:
+TiAPI  I  (kroll$3: app://app.js) [18,1510]   23 Maj 2011
+```
 
 In addition, the recognized date format for the UK is produced:
 
-Log output (info)
+*Log output (info)*
 
-`TiAPI I (kroll$``1``: app:``//app.js) [2,577] Ti.Locale.currentLanguage = en`
+```
+TiAPI  I  (kroll$1: app://app.js) [2,577]     Ti.Locale.currentLanguage = en
+TiAPI  I  (kroll$1: app://app.js) [2,579]     Ti.Locale.currentLocale = en-GB
+TiAPI  I  (kroll$1: app://app.js) [2094,2673] thisDate = Mon May 23 2011 14:56:42 GMT-0000 (GMT+00:00)
 
-`TiAPI I (kroll$``1``: app:``//app.js) [2,579] Ti.Locale.currentLocale = en-GB`
-
-`TiAPI I (kroll$``1``: app:``//app.js) [2094,2673] thisDate = Mon May 23 2011 14:56:42 GMT-0000 (GMT+00:00)`
-
-`TiAPI I (kroll$``1``: app:``//app.js) [20,2707] The month contained in thisDate is: May`
-
-`TiAPI I (kroll$``1``: app:``//app.js) [1,2708] Note: as thisMonth is always in the default language, English, it can be used to look up the localized string.`
-
-`TiAPI I (kroll$``1``: app:``//app.js) [1,2709] Hence, the localized string, headingDate, in the language of en is:`
-
-`TiAPI I (kroll$``1``: app:``//app.js) [13,2722] 23 May 2011`
+TiAPI  I  (kroll$1: app://app.js) [20,2707]   The month contained in thisDate is: May
+TiAPI  I  (kroll$1: app://app.js) [1,2708]    Note: as thisMonth is always in the default language, English, it can be used to look up the localized string.
+TiAPI  I  (kroll$1: app://app.js) [1,2709]    Hence, the localized string, headingDate, in the language of en is:
+TiAPI  I  (kroll$1: app://app.js) [13,2722]   23 May 2011
+```
 
 Lastly, the date in Spanish has been reordered:
 
-Log output (info)
+*Log output (info)*
 
-`TiAPI I (kroll$``5``: app:``//app.js) [2,1066] Ti.Locale.currentLanguage = es`
+```
+TiAPI  I  (kroll$5: app://app.js) [2,1066]    Ti.Locale.currentLanguage = es
+TiAPI  I  (kroll$5: app://app.js) [6,1072]    Ti.Locale.currentLocale = es-US
+TiAPI  I  (kroll$5: app://app.js) [169,1241]  thisDate = Mon May 23 2011 16:23:17 GMT-0000 (GMT+00:00)
 
-`TiAPI I (kroll$``5``: app:``//app.js) [6,1072] Ti.Locale.currentLocale = es-US`
-
-`TiAPI I (kroll$``5``: app:``//app.js) [169,1241] thisDate = Mon May 23 2011 16:23:17 GMT-0000 (GMT+00:00)`
-
-`TiAPI I (kroll$``5``: app:``//app.js) [32,1440] The month contained in thisDate is: May`
-
-`TiAPI I (kroll$``5``: app:``//app.js) [2,1442] Note: as thisMonth is always in the default language, English, it can be used to look up the localized string.`
-
-`TiAPI I (kroll$``5``: app:``//app.js) [14,1456] Hence, the localized string, headingDate, in the language of es is:`
-
-`TiAPI I (kroll$``5``: app:``//app.js) [14,1470] mayo 23, 2011`
+TiAPI  I  (kroll$5: app://app.js) [32,1440]   The month contained in thisDate is: May
+TiAPI  I  (kroll$5: app://app.js) [2,1442]    Note: as thisMonth is always in the default language, English, it can be used to look up the localized string.
+TiAPI  I  (kroll$5: app://app.js) [14,1456]   Hence, the localized string, headingDate, in the language of es is:
+TiAPI  I  (kroll$5: app://app.js) [14,1470]   mayo 23, 2011
+```
 
 ### Other formatting and locale functions
 

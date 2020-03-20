@@ -16,45 +16,34 @@ In this recipe, we show how a Ruble command can output a snippet into the editor
 
 In the snippet below, we manipulate the currently selected text to split it across lines and then wrap each line in a template using mirrored variables (the $1s in the template).
 
-`require` `'ruble'`
+```
+require 'ruble'
 
-`command` `'Wrap Each Selected Line'`  `do` `|cmd|`
-
-`#cmd.key_binding =` `'SHIFT+CTRL+A'` `# uncomment` `for` `a key binding`
-
-`#cmd.scope =` `'text.html'` `# uncomment to limit the scope in which` `this` `appears`
-
-`cmd.output = :insert_as_snippet`
-
-`cmd.input = :selection, :line`
-
-`cmd.invoke` `do` `|context|`
-
-`input = STDIN.read`
-
-``input.gsub(/[\$`\\]/,`` `'\\1'``).gsub(/([ \t]*)(.+)/,` `'\1<${1:li}>\2</${1:li}>'``)`
-
-`end`
-
-`end`
+command 'Wrap Each Selected Line' do |cmd|
+  #cmd.key_binding = 'SHIFT+CTRL+A' # uncomment for a key binding
+  #cmd.scope = 'text.html' # uncomment to limit the scope in which this appears
+  cmd.output = :insert_as_snippet
+  cmd.input = :selection, :line
+  cmd.invoke do |context|
+    input = STDIN.read
+    input.gsub(/[\$`\\]/, '\\1').gsub(/([ \t]*)(.+)/, '\1<${1:li}>\2</${1:li}>')
+  end
+end
+```
 
 ## Adding it to a Menu
 
 If you do not choose a key binding, you should place the command in a menu. Otherwise, it will be difficult or impossible to access.
 
-`bundle` `do` `|bundle|`
-
-`# ...`
-
-`bundle.menu` `'My Ruble'`  `do` `|menu|`
-
-`menu.command` `'Wrap Each Selected Line'`
-
-`end`
-
-`# ...`
-
-`end`
+```
+bundle do |bundle|
+  # ...
+  bundle.menu 'My Ruble' do |menu|
+    menu.command 'Wrap Each Selected Line'
+  end
+  # ...
+end
+```
 
 ## Result
 

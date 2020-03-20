@@ -198,7 +198,9 @@ Also, the extra options mentioned in [Command options](#command-options) can be 
 
 If you get the following error, execute this command to set an environment: amplify config set env staging
 
-`404` `-` `"<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/packages/v1/-/search</pre>\n</body>\n</html>\n"`
+```
+404 - "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/packages/v1/-/search</pre>\n</body>\n</html>\n"
+```
 
 ### amplify pm uninstall
 

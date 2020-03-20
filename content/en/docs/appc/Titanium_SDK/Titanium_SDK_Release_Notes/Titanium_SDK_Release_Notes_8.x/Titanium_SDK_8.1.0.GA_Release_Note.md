@@ -62,43 +62,28 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
     * Added support for ListView.separatorStyle
 
-    * ListView.separatorStyle
+    * *ListView.separatorStyle*
 
-        `var` `win = Ti.UI.createWindow({ backgroundColor:` `'black'``, fullscreen:` `true` `});`
-
-        `var` `listView = Ti.UI.createListView({`
-
-        `separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE,`
-
-        `});`
-
-        `var` `section = Ti.UI.createListSection();`
-
-        `var` `sectionData = ;`
-
-        `var` `i = 25;`
-
-        `for` `(``var` `k = 0; k < 25; k++) {`
-
-        `sectionData.push({`
-
-        `properties: {`
-
-        `title:` `'Row '` `+ (k + 1)`
-
-        `}`
-
-        `});`
-
-        `}`
-
-        `section.setItems(sectionData);`
-
-        `listView.sections = section;`
-
-        `win.add(listView);`
-
-        `win.open();`
+        ```javascript
+        var win = Ti.UI.createWindow({ backgroundColor: 'black', fullscreen: true });
+        var listView = Ti.UI.createListView({
+            separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE,
+        });
+        var section = Ti.UI.createListSection();
+        var sectionData = ;
+        var i = 25;
+        for (var k = 0; k < 25; k++) {
+            sectionData.push({
+                properties: {
+                    title: 'Row ' + (k + 1)
+                }
+            });
+        }
+        section.setItems(sectionData);
+        listView.sections = section;
+        win.add(listView);
+        win.open();
+        ```
 
 * [TIMOB-14460](https://jira.appcelerator.org/browse/TIMOB-14460) - Android: Add Ti.Platform.canOpenURL() support
 
@@ -108,75 +93,44 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
     * Added support to use OptionDialog without radio buttons
 
-    * OptionDialog
+    * *OptionDialog*
 
-        `var` `win = Ti.UI.createWindow({`
-
-        `title:` `'Click window to test OptionDialog'``,`
-
-        `backgroundColor:` `'white'`
-
-        `});`
-
-        `var` `opts = {`
-
-        `title:` `'Select an option'``,`
-
-        `options:` `'Option 1'``,` `'Option 2'``,` `'Option 3'``,` `'Option 4'``,`
-
-        `buttonNames:` `'Cancel'`
-
-        `}`
-
-        `var` `dialog;`
-
-        `win.addEventListener(``'click'``,` `function``() {`
-
-        `dialog = Ti.UI.createOptionDialog(opts);`
-
-        `dialog.addEventListener(``'click'``, onSelectDialog);`
-
-        `dialog.addEventListener(``'cancel'``,` `function``(e) {`
-
-        `alert(``'Dialog canceled! e.cancel = '` `+ e.cancel +` `', e.index = '` `+ e.index);`
-
-        `})`
-
-        `dialog.show();`
-
-        `});`
-
-        `function` `onSelectDialog(e) {`
-
-        `console.log(e);`
-
-        `}`
-
-        `var` `btn = Ti.UI.createButton({`
-
-        `title:` `"toggle selected index"``,`
-
-        `bottom: 5`
-
-        `});`
-
-        `btn.addEventListener(``"click"``,` `function``() {`
-
-        `if` `(opts.selectedIndex == 0) {`
-
-        `opts.selectedIndex = -1;`
-
-        `}` `else` `{`
-
-        `opts.selectedIndex = 0;`
-
-        `}`
-
-        `});`
-
-        `win.add(btn);`
-
-        `win.open();`
+        ```javascript
+        var win = Ti.UI.createWindow({
+          title: 'Click window to test OptionDialog',
+          backgroundColor: 'white'
+        });
+        var opts = {
+          title: 'Select an option',
+          options: 'Option 1', 'Option 2', 'Option 3', 'Option 4',
+          buttonNames: 'Cancel'
+        }
+        var dialog;
+        win.addEventListener('click', function() {
+          dialog = Ti.UI.createOptionDialog(opts);
+          dialog.addEventListener('click', onSelectDialog);
+          dialog.addEventListener('cancel', function(e) {
+            alert('Dialog canceled! e.cancel = ' + e.cancel + ', e.index = ' + e.index);
+          })
+          dialog.show();
+        });
+        function onSelectDialog(e) {
+          console.log(e);
+        }
+        var btn = Ti.UI.createButton({
+          title: "toggle selected index",
+          bottom: 5
+        });
+        btn.addEventListener("click", function() {
+          if (opts.selectedIndex == 0) {
+            opts.selectedIndex = -1;
+          } else {
+            opts.selectedIndex = 0;
+          }
+        });
+        win.add(btn);
+        win.open();
+        ```
 
 ### iOS platform
 
@@ -188,67 +142,44 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
     * Added support for dynamic fonts in UIFontTextStyleLargeTitle
 
-    * UIFontTextStyleLargeTitle
+    * *UIFontTextStyleLargeTitle*
 
-        `var` `win = Ti.UI.createWindow({`
+        ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: '#fff',
+            extendSafeArea: false
+        });
 
-        `backgroundColor:` `'#fff'``,`
+        var scrollView = Ti.UI.createScrollView({ layout: 'vertical', top: 50 });
 
-        `extendSafeArea:` `false`
+        var textStyles =
+            Ti.UI.TEXT_STYLE_HEADLINE,
+            Ti.UI.TEXT_STYLE_SUBHEADLINE,
+            Ti.UI.TEXT_STYLE_BODY,
+            Ti.UI.TEXT_STYLE_FOOTNOTE,
+            Ti.UI.TEXT_STYLE_CAPTION1,
+            Ti.UI.TEXT_STYLE_CAPTION2,
+            Ti.UI.TEXT_STYLE_CALLOUT,
+            Ti.UI.TEXT_STYLE_TITLE1,
+            Ti.UI.TEXT_STYLE_TITLE2,
+            Ti.UI.TEXT_STYLE_TITLE3,
+            Ti.UI.TEXT_STYLE_LARGE_TITLE,
+        ;
 
-        `});`
+        for (var i = 0; i < textStyles.length; i++) {
+            var textStyle = textStylesi;
+            scrollView.add(Ti.UI.createLabel({
+                top: 20,
+                text: textStyle,
+                font: {
+                    textStyle: textStyle
+                }
+            }));
+        }
 
-        `var` `scrollView = Ti.UI.createScrollView({ layout:` `'vertical'``, top: 50 });`
-
-        `var` `textStyles =`
-
-        `Ti.UI.TEXT_STYLE_HEADLINE,`
-
-        `Ti.UI.TEXT_STYLE_SUBHEADLINE,`
-
-        `Ti.UI.TEXT_STYLE_BODY,`
-
-        `Ti.UI.TEXT_STYLE_FOOTNOTE,`
-
-        `Ti.UI.TEXT_STYLE_CAPTION1,`
-
-        `Ti.UI.TEXT_STYLE_CAPTION2,`
-
-        `Ti.UI.TEXT_STYLE_CALLOUT,`
-
-        `Ti.UI.TEXT_STYLE_TITLE1,`
-
-        `Ti.UI.TEXT_STYLE_TITLE2,`
-
-        `Ti.UI.TEXT_STYLE_TITLE3,`
-
-        `Ti.UI.TEXT_STYLE_LARGE_TITLE,`
-
-        `;`
-
-        `for` `(``var` `i = 0; i < textStyles.length; i++) {`
-
-        `var` `textStyle = textStylesi;`
-
-        `scrollView.add(Ti.UI.createLabel({`
-
-        `top: 20,`
-
-        `text: textStyle,`
-
-        `font: {`
-
-        `textStyle: textStyle`
-
-        `}`
-
-        `}));`
-
-        `}`
-
-        `win.add(scrollView);`
-
-        `win.open();`
+        win.add(scrollView);
+        win.open();
+        ```
 
 * [TIMOB-26599](https://jira.appcelerator.org/browse/TIMOB-26599) - iOS: Add "allowTranscoding" option to Ti.Media.openPhotoGallery()
 
@@ -532,35 +463,24 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
     * Implemented WebView.data
 
-    * WebView.data
+    * *WebView.data*
 
-        `var` `win = Ti.UI.createWindow({`
-
-        `backgroundColor:` `'green'`
-
-        `});`
-
-        `var` `blob = Ti.Filesystem.getFile(``'app.js'``).read();`
-
-        `var` `webview = Ti.UI.createWebView({`
-
-        `data: blob,`
-
-        `height: Ti.UI.FILL,`
-
-        `width: Ti.UI.FILL`
-
-        `});`
-
-        `webview.addEventListener(``'load'``,` `function` `() {`
-
-        `Ti.API.info(``typeof` `webview.data);`
-
-        `});`
-
-        `win.add(webview);`
-
-        `win.open();`
+        ```javascript
+        var win = Ti.UI.createWindow({
+            backgroundColor: 'green'
+        });
+        var blob = Ti.Filesystem.getFile('app.js').read();
+        var webview = Ti.UI.createWebView({
+            data: blob,
+            height: Ti.UI.FILL,
+            width: Ti.UI.FILL
+        });
+        webview.addEventListener('load', function () {
+            Ti.API.info(typeof webview.data);
+        });
+        win.add(webview);
+        win.open();
+        ```
 
 * [TIMOB-26575](https://jira.appcelerator.org/browse/TIMOB-26575) - Windows: Support async variants of Ti.Network.TCP #read and #write
 
@@ -574,39 +494,28 @@ With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. N
 
     * The httpClient instance is saved until onerror or onloadcallback is called
 
-    * `win.addEventListener(``'open'``,` `function` `() {`
+    * ```javascript
+        win.addEventListener('open', function () {
+            var _tmpURL = "https://docs.appcelerator.com/platform/latest/#!/api/"
+            var _tmpClient = Ti.Network.createHTTPClient({
 
-        `var` `_tmpURL =` `"https://docs.appcelerator.com/platform/latest/#!/api/"`
+                onload: function (e) {
+                    alert('Loaded');
+                },
+                onerror: function (e) {
+                    alert("Error:" + e.error);
+                },
+                timeout: 30000
+            });
 
-        `var` `_tmpClient = Ti.Network.createHTTPClient({`
+            _tmpClient.open("GET", _tmpURL);
+            _tmpClient.send();
+            // In this case _tmpClient may be garbage-collected as soon as this function is finished.
+            // We could think this as "logical" failure but I think Titanium developers tend to use HttpClient like this.
+        });
 
-        `onload:` `function` `(e) {`
-
-        `alert(``'Loaded'``);`
-
-        `},`
-
-        `onerror:` `function` `(e) {`
-
-        `alert(``"Error:"` `+ e.error);`
-
-        `},`
-
-        `timeout: 30000`
-
-        `});`
-
-        `_tmpClient.open(``"GET"``, _tmpURL);`
-
-        `_tmpClient.send();`
-
-        `// In this case _tmpClient may be garbage-collected as soon as this function is finished.`
-
-        `// We could think this as "logical" failure but I think Titanium developers tend to use HttpClient like this.`
-
-        `});`
-
-        `win.open();`
+        win.open();
+        ```
 
 ### Multiple platforms
 

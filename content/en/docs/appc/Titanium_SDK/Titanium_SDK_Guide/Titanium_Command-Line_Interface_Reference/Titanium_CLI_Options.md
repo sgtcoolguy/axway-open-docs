@@ -200,31 +200,29 @@ The CLI configuration options allow you to override or specify default values. Y
 
 1. Set, remove, or append values using the titanium config command.
 
-    `# Display current CLI options that are configured`
-
-    `ti config`
-
-    `# Set a new value for CLI log level`
-
-    `ti config cli.logLevel info`
-
-    `# Append a value to paths.hooks`
-
-    `ti config -a paths.hooks` `"/path/to/some/hook"`
-
-    `# Remove all Android options`
-
-    `ti config -r android`
+    ```
+    # Display current CLI options that are configured
+    ti config
+    # Set a new value for CLI log level
+    ti config cli.logLevel info
+    # Append a value to paths.hooks
+    ti config -a paths.hooks "/path/to/some/hook"
+    # Remove all Android options
+    ti config -r android
+    ```
 
 2. Pass in JSON string using the \--config option. Do not use this parameter with either the ti config or ti setup command. This may cause errors when the JSON object is written back to the filesystem.
 
-    `# Pass in CLI hooks for this build process`
-
-    `ti build -p ios --config` `"{ paths: { hooks: '/path/to/some/hook' } }"`
+    ```
+    # Pass in CLI hooks for this build process
+    ti build -p ios --config "{ paths: { hooks: '/path/to/some/hook' } }"
+    ```
 
 3. Pass in the location to a JSON file that specifies your CLI options using the \--config-file option.
 
-    `ti build -p ios --config-file` `"/Users/meMyselfAndI/customConfig.json"`
+    ```
+    ti build -p ios --config-file "/Users/meMyselfAndI/customConfig.json"
+    ```
 
 ## Options
 
@@ -364,7 +362,9 @@ Sets the maximum JVM heap size.
 
 Specifies the Java version of the source code. Overridable at the project level using tiapp.xml application properties, for example:
 
-`<property name=``"android.javac.source"` `type=``"string"``>``1.7``</property>`
+```xml
+<property name="android.javac.source" type="string">1.7</property>
+```
 
 **Default:** "1.6" (Java SE 6)
 
@@ -372,7 +372,9 @@ Specifies the Java version of the source code. Overridable at the project level 
 
 Specifies the target Java version of the generated class files. Overridable at the project level using tiapp.xml application properties, for example:
 
-`<property name=``"android.javac.target"` `type=``"string"``>``1.7``</property>`
+```xml
+<property name="android.javac.target" type="string">1.7</property>
+```
 
 **Default:** "1.6" (Java SE 6)
 

@@ -97,225 +97,123 @@ The number of records to fetch. The value must be greater than 0, and no greater
 
 query by id or \_id:
 
-`~ curl -d` `'where={"id":"54517c49dda09594270002da"}'` `-X GET "localhost:8082/v1/users/query.json?key=l1J36VuGo2eFMJ`
+```
+~ curl -d 'where={"id":"54517c49dda09594270002da"}' -X GET "localhost:8082/v1/users/query.json?key=l1J36VuGo2eFMJ
+~ curl -d 'where={"id":"54517c49dda09594270002da"}' -X GET
+"localhost:8082/v1/users/query.json?key=l1J36VuGo2eFMJKELNXdxAq8Z4MQIbYr&pretty_json=true"
+{
+    "meta": {
+        "code": 200,
+        "status": "ok",
+        "method_name": "queryUsers"
+    },
+    "response": {
+        "users": [{
+            "id": "54517c49dda09594270002da",
+            "created_at": "2014-10-29T23:46:17+0000",
+            "updated_at": "2014-10-29T23:46:17+0000",
+            "external_accounts": [],
+            "confirmed_at": "2014-10-29T23:46:17+0000",
+            "username": "hmm",
+            "email": "",
+            "admin": "false",
+            "stats": {
+                "photos": {
+                    "total_count": 0
+                },
+                "storage": {
+                    "used": 0
+                }
+            },
+            "custom_fields": {}
+        }]
+    }
+}
 
-`~ curl -d` `'where={"id":"54517c49dda09594270002da"}'` `-X GET`
-
-`"localhost:8082/v1/users/query.json?key=l1J36VuGo2eFMJKELNXdxAq8Z4MQIbYr&pretty_json=true"`
-
-`{`
-
-`"meta"``: {`
-
-`"code"``: 200,`
-
-`"status"``:` `"ok"``,`
-
-`"method_name"``:` `"queryUsers"`
-
-`},`
-
-`"response"``: {`
-
-`"users"``: [{`
-
-`"id"``:` `"54517c49dda09594270002da"``,`
-
-`"created_at"``:` `"2014-10-29T23:46:17+0000"``,`
-
-`"updated_at"``:` `"2014-10-29T23:46:17+0000"``,`
-
-`"external_accounts"``: [],`
-
-`"confirmed_at"``:` `"2014-10-29T23:46:17+0000"``,`
-
-`"username"``:` `"hmm"``,`
-
-`"email"``:` `""``,`
-
-`"admin"``:` `"false"``,`
-
-`"stats"``: {`
-
-`"photos"``: {`
-
-`"total_count"``: 0`
-
-`},`
-
-`"storage"``: {`
-
-`"used"``: 0`
-
-`}`
-
-`},`
-
-`"custom_fields"``: {}`
-
-`}]`
-
-`}`
-
-`}`
-
-`~ curl -d` `'where={"_id":"54517c49dda09594270002da"}'` `-X GET`
-
-`"localhost:8082/v1/users/query.json?key=l1J36VuGo2eFMJKELNXdxAq8Z4MQIbYr&pretty_json=true"`
-
-`{`
-
-`"meta"``: {`
-
-`"code"``: 200,`
-
-`"status"``:` `"ok"``,`
-
-`"method_name"``:` `"queryUsers"`
-
-`},`
-
-`"response"``: {`
-
-`"users"``: [{`
-
-`"id"``:` `"54517c49dda09594270002da"``,`
-
-`"created_at"``:` `"2014-10-29T23:46:17+0000"``,`
-
-`"updated_at"``:` `"2014-10-29T23:46:17+0000"``,`
-
-`"external_accounts"``: [],`
-
-`"confirmed_at"``:` `"2014-10-29T23:46:17+0000"``,`
-
-`"username"``:` `"hmm"``,`
-
-`"email"``:` `""``,`
-
-`"admin"``:` `"false"``,`
-
-`"stats"``: {`
-
-`"photos"``: {`
-
-`"total_count"``: 0`
-
-`},`
-
-`"storage"``: {`
-
-`"used"``: 0`
-
-`}`
-
-`},`
-
-`"custom_fields"``: {}`
-
-`}]`
-
-`}`
-
-`}`
+~ curl -d 'where={"_id":"54517c49dda09594270002da"}' -X GET
+"localhost:8082/v1/users/query.json?key=l1J36VuGo2eFMJKELNXdxAq8Z4MQIbYr&pretty_json=true"
+{
+    "meta": {
+        "code": 200,
+        "status": "ok",
+        "method_name": "queryUsers"
+    },
+    "response": {
+        "users": [{
+            "id": "54517c49dda09594270002da",
+            "created_at": "2014-10-29T23:46:17+0000",
+            "updated_at": "2014-10-29T23:46:17+0000",
+            "external_accounts": [],
+            "confirmed_at": "2014-10-29T23:46:17+0000",
+            "username": "hmm",
+            "email": "",
+            "admin": "false",
+            "stats": {
+                "photos": {
+                    "total_count": 0
+                },
+                "storage": {
+                    "used": 0
+                }
+            },
+            "custom_fields": {}
+        }]
+    }
+}
+```
 
 Query multiple objects by using $in:
 
-`~ curl -d` `'where={"_id":{"$in":["54517c49dda09594270002da","54517c33dda09594270002d5"]}}'` `-X GET`
-
-`"localhost:8082/v1/users/query.json?key=l1J36VuGo2eFMJKELNXdxAq8Z4MQIbYr&pretty_json=true"`
-
-`{`
-
-`"meta"``: {`
-
-`"code"``: 200,`
-
-`"status"``:` `"ok"``,`
-
-`"method_name"``:` `"queryUsers"`
-
-`},`
-
-`"response"``: {`
-
-`"users"``: [{`
-
-`"id"``:` `"54517c49dda09594270002da"``,`
-
-`"created_at"``:` `"2014-10-29T23:46:17+0000"``,`
-
-`"updated_at"``:` `"2014-10-29T23:46:17+0000"``,`
-
-`"external_accounts"``: [],`
-
-`"confirmed_at"``:` `"2014-10-29T23:46:17+0000"``,`
-
-`"username"``:` `"hmm"``,`
-
-`"email"``:` `""``,`
-
-`"admin"``:` `"false"``,`
-
-`"stats"``: {`
-
-`"photos"``: {`
-
-`"total_count"``: 0`
-
-`},`
-
-`"storage"``: {`
-
-`"used"``: 0`
-
-`}`
-
-`},`
-
-`"custom_fields"``: {}`
-
-`}, {`
-
-`"id"``:` `"54517c33dda09594270002d5"``,`
-
-`"created_at"``:` `"2014-10-29T23:45:55+0000"``,`
-
-`"updated_at"``:` `"2014-10-29T23:45:55+0000"``,`
-
-`"external_accounts"``: [],`
-
-`"confirmed_at"``:` `"2014-10-29T23:45:55+0000"``,`
-
-`"username"``:` `"test"``,`
-
-`"email"``:` `""``,`
-
-`"admin"``:` `"false"``,`
-
-`"stats"``: {`
-
-`"photos"``: {`
-
-`"total_count"``: 0`
-
-`},`
-
-`"storage"``: {`
-
-`"used"``: 0`
-
-`}`
-
-`},`
-
-`"custom_fields"``: {}`
-
-`}]`
-
-`}`
-
-`}`
+```
+~ curl -d 'where={"_id":{"$in":["54517c49dda09594270002da","54517c33dda09594270002d5"]}}' -X GET
+"localhost:8082/v1/users/query.json?key=l1J36VuGo2eFMJKELNXdxAq8Z4MQIbYr&pretty_json=true"
+{
+    "meta": {
+        "code": 200,
+        "status": "ok",
+        "method_name": "queryUsers"
+    },
+    "response": {
+        "users": [{
+            "id": "54517c49dda09594270002da",
+            "created_at": "2014-10-29T23:46:17+0000",
+            "updated_at": "2014-10-29T23:46:17+0000",
+            "external_accounts": [],
+            "confirmed_at": "2014-10-29T23:46:17+0000",
+            "username": "hmm",
+            "email": "",
+            "admin": "false",
+            "stats": {
+                "photos": {
+                    "total_count": 0
+                },
+                "storage": {
+                    "used": 0
+                }
+            },
+            "custom_fields": {}
+        }, {
+            "id": "54517c33dda09594270002d5",
+            "created_at": "2014-10-29T23:45:55+0000",
+            "updated_at": "2014-10-29T23:45:55+0000",
+            "external_accounts": [],
+            "confirmed_at": "2014-10-29T23:45:55+0000",
+            "username": "test",
+            "email": "",
+            "admin": "false",
+            "stats": {
+                "photos": {
+                    "total_count": 0
+                },
+                "storage": {
+                    "used": 0
+                }
+            },
+            "custom_fields": {}
+        }]
+    }
+}
+```
 
 #### new\_pagination
 
@@ -343,11 +241,15 @@ Currently, MBS does not support case insensitive queries. To perform a case-inse
 
 To perform an exact match on a field, for example, to search for users with first\_name matching "joe", use:
 
-`where={``"first_name"``:` `"joe"``}`
+```
+where={"first_name": "joe"}
+```
 
 You can add more search criteria by adding them together. For example, to search for users with first\_name matching "joe", favorite\_color matching "blue" and age of 28, use the following query:
 
-`where={``"age"``: 28,` `"favorite_color"``:` `"blue"``,` `"first_name"` `:` `"joe"``}`
+```
+where={"age": 28, "favorite_color": "blue", "first_name" : "joe"}
+```
 
 For non-exact matches, where supports these options:
 
@@ -384,51 +286,75 @@ For more information on constructing geographic coordinate queries, see [Geograp
 
 If you want to find users with age older than 28:
 
-`where={``"age"``: {``"$gt"``:28}}`
+```
+where={"age": {"$gt":28}}
+```
 
 If you want to find users at age 28 or 38:
 
-`where = {``"age"``: {``"$in"``:[28,38]}}`
+```
+where = {"age": {"$in":[28,38]}}
+```
 
 If you want to find users at age neither 28 nor 38:
 
-`where = {``"age"``: {``"$nin"``:[28,38]}}`
+```
+where = {"age": {"$nin":[28,38]}}
+```
 
 If you want to find a user whose email is "john@example.com" and type is User:
 
-`where={``"$and"``: [ {``"email"` `:` `"john@example.com"``}, {` `"_type"` `:` `"User"` `} ] }`
+```
+where={"$and": [ {"email" : "john@example.com"}, { "_type" : "User" } ] }
+```
 
 If you want to find users who have options are 2,3:
 
-`where={``"options"``: {``"$all"` `: [2,3] } }`
+```
+where={"options": {"$all" : [2,3] } }
+```
 
 If you want to find users who have location information:
 
-`where={``"location"``: {``"$exists"` `:` `true``} }`
+```
+where={"location": {"$exists" : true} }
+```
 
 If you want to find users who do not have location information:
 
-`where={``"location"``: {``"$exists"` `:` `false``} }`
+```
+where={"location": {"$exists" : false} }
+```
 
 If you have a custom array with your user object, such as a list of scores (scores: \[65, 86, 92'), you can search the elements in the array. For example, if you want to search for scores within a certain range:
 
-`where={``"scores"``:{` `"$elemMatch"``: {` `"$gte"``: 70,` `"$lt"``: 90 } }}`
+```
+where={"scores":{ "$elemMatch": { "$gte": 70, "$lt": 90 } }}
+```
 
 If you have a custom array of tags, such as tags: \[ 'employee', 'manager' \], you can use the $all operator to return objects that contain all the specified elements:
 
-`where={``"tags"``:{` `"$all"``: [` `'employee'``,` `'manager'` `] }`
+```
+where={"tags":{ "$all": [ 'employee', 'manager' ] }
+```
 
 If you have assigned custom coordinates to your user objects, you can search by users' coordinates. For example, if you want to find users named "joe" near longitude -122.1 and latitude 37.1:
 
-`where={``"first_name"``:``"joe"``,` `"coordinates"``:{``"$nearSphere"``:[-122.1, 37.1]}}`
+```
+where={"first_name":"joe", "coordinates":{"$nearSphere":[-122.1, 37.1]}}
+```
 
 To find users named "joe" near longitude -122.1 and latitude 37.1 with a maximum distance of 5 miles (convert 5 miles to radians, 5/3959 = 0.00126):
 
-`where={``"first_name"``:``"joe"``,` `"coordinates"``:{``"$nearSphere"``:[-122.1,37.1],` `"$maxDistance"` `: 0.00126}}`
+```
+where={"first_name":"joe", "coordinates":{"$nearSphere":[-122.1,37.1], "$maxDistance" : 0.00126}}
+```
 
 To search for the keywords javascript, ruby, or python, but not php:
 
-`where={``"$text"``: {` `"$search"``:` `"javascript,ruby,python,-php"` `}}`
+```
+where={"$text": { "$search": "javascript,ruby,python,-php" }}
+```
 
 #### order
 
@@ -436,7 +362,9 @@ Sort results by one or more fields. In general, you can sort based on any predef
 
 To reverse the sorting order, add order in front of a field. For example, to sort results by first\_name in ascending order then created\_at in descending order:
 
-`order=first_name,-created_at`
+```
+order=first_name,-created_at
+```
 
 #### sel
 
@@ -450,7 +378,9 @@ If you want to display a field from a nested object, then both the name of the n
 
 For example, if you want to return the first\_name field only:
 
-`sel={``"all"``:[``"first_name"``]}`
+```
+sel={"all":["first_name"]}
+```
 
 #### unsel
 
@@ -464,7 +394,9 @@ If you want to hide displaying a field from a nested object, then both the name 
 
 For example, if you want to return all fields except first\_name:
 
-`unsel={``"all"``:[``"first_name"``]}`
+```
+unsel={"all":["first_name"]}
+```
 
 ## Query pagination
 
@@ -476,27 +408,31 @@ Starting with Mobile Backend Services (ArrowDB) 1.1.5, we have made the followin
 
 For example, the following cURL uses a range-based query for Statuses whose custom field named score is less than 100 and sorts the results in ascending order on the score field:
 
-`$ curl -d` `'where={"score":{"$lt":100}}&order=score'` `-X GET`
-
-`"http://<HOST>/v1/statuses/query.json?key=<KEY>&count=true&pretty_json=true"`
+```
+$ curl -d 'where={"score":{"$lt":100}}&order=score' -X GET
+"http://<HOST>/v1/statuses/query.json?key=<KEY>&count=true&pretty_json=true"
+```
 
 Mobile Backend Services object IDs, represented by the \_id field, are based on object timestamps and machine IDs, which allows for range-based pagination. For example, suppose an application performs a query whose last object returned has an ID of "5418a8815a6919fde8cf1e4d". To get the set of objects created before the object, the application would query for those objects whose \_id field is less than that value:
 
-`$ curl -X GET -d` `'where={"_id":{"$lt":"5418a8815a6919fde8cf1e4d"}}'`
-
-`"http://<HOST>/v1/statuses/query.json?key=<KEY>&count=true&pretty_json=t&_session_id=<SESSION_ID>"`
+```
+$ curl -X GET -d 'where={"_id":{"$lt":"5418a8815a6919fde8cf1e4d"}}'
+"http://<HOST>/v1/statuses/query.json?key=<KEY>&count=true&pretty_json=t&_session_id=<SESSION_ID>"
+```
 
 Similarly, if the ID of the first object returned in a query was "5418a87f5a6919fde8cee391" the application would query on objects whose \_id field is greater than that value to retrieve the previous set of data:
 
-`$ curl -X GET -d` `'where={"_id":{"$gt":"5418a87f5a6919fde8cee391"}}'`
-
-`"http://<HOST>/v1/statuses/query.json?key=<KEY>&count=true&pretty_json=t&_session_id=<SESSION_ID>"`
+```
+$ curl -X GET -d 'where={"_id":{"$gt":"5418a87f5a6919fde8cee391"}}'
+"http://<HOST>/v1/statuses/query.json?key=<KEY>&count=true&pretty_json=t&_session_id=<SESSION_ID>"
+```
 
 To query objects between a range of object IDs, use together $gt and $lt together:
 
-`curl -X GET -d` `'where={"_id":{"$gt":"5418a87f5a6919fde8cee38f", "$lt":"5418a8815a6919fde8cf1e4d"}}'`
-
-`"http://<HOST>/v1/statuses/query.json?key=<KEY>&count=true&pretty_json=t&_session_id=<SESSION_ID>"`
+```
+curl -X GET -d 'where={"_id":{"$gt":"5418a87f5a6919fde8cee38f", "$lt":"5418a8815a6919fde8cf1e4d"}}'
+"http://<HOST>/v1/statuses/query.json?key=<KEY>&count=true&pretty_json=t&_session_id=<SESSION_ID>"
+```
 
 For additional examples, see [Range-based Query Pagination Examples](#Range-basedQueryPaginationExamples).
 
@@ -514,459 +450,245 @@ For additional examples, see [Range-based Query Pagination Examples](#Range-base
 
 In this example, the query returns Statuses objects whose custom score field is less than 100 and sorts results on the score in ascending order (&order=score). The query matches 100 total records.
 
-`~ curl -d` `'where={"score":{"$lt":100}}&order=score'` `-X GET`
-
-`"http://<HOST>:8082/v1/statuses/query.json?key=<KEY>&count=true&pretty_json=true"`
-
-`{`
-
-`"meta"``: {`
-
-`"code"``: 200,`
-
-`"status"``:` `"ok"``,`
-
-`"method_name"``:` `"queryStatuses"``,`
-
-`"count"``: 100`
-
-`},`
-
-`"response"``: {`
-
-`"statuses"``: [`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f675413a"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 0.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f675413b"``,`
-
-`"message"``:` `"status"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 1.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f675413c"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 2.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f675413d"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 3.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f675413e"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 4.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f675413f"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 5.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f6754140"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 6.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f6754141"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 7.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f6754142"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 8.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f6754143"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 9.0`
-
-`}, ...`
-
-`}`
-
-`]`
-
-`}`
-
-`}`
+```
+~ curl -d 'where={"score":{"$lt":100}}&order=score' -X GET
+"http://<HOST>:8082/v1/statuses/query.json?key=<KEY>&count=true&pretty_json=true"
+{
+  "meta": {
+    "code": 200,
+    "status": "ok",
+    "method_name": "queryStatuses",
+    "count": 100
+  },
+  "response": {
+    "statuses": [
+      {
+        "id": "53fe1c25759220e9f675413a",
+        "custom_fields": {
+          "score": 0.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f675413b",
+        "message": "status",
+        "custom_fields": {
+          "score": 1.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f675413c",
+        "custom_fields": {
+          "score": 2.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f675413d",
+        "custom_fields": {
+          "score": 3.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f675413e",
+        "custom_fields": {
+          "score": 4.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f675413f",
+        "custom_fields": {
+          "score": 5.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f6754140",
+        "custom_fields": {
+          "score": 6.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f6754141",
+        "custom_fields": {
+          "score": 7.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f6754142",
+        "custom_fields": {
+          "score": 8.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f6754143",
+        "custom_fields": {
+          "score": 9.0
+        }, ...
+      }
+    ]
+  }
+}
+```
 
 #### Query on a custom field with results in descending order
 
 In this example, status objects are queried whose custom score field is less than 100 and sorts results on score in descending order (&order=-score).
 
-`$ curl -d` `'where={"score":{"$lt":100}}&order=-score'` `-X GET`
-
-`"http://<HOST>/v1/statuses/query.json?key=<KEY>&count=true&pretty_json=true"`
-
-`{`
-
-`"meta"``: {`
-
-`"code"``: 200,`
-
-`"status"``:` `"ok"``,`
-
-`"method_name"``:` `"queryStatuses"``,`
-
-`"count"``: 100`
-
-`},`
-
-`"response"``: {`
-
-`"statuses"``: [`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f675419d"``,`
-
-`"custom_fields"``: {`
-
-`"score"` `99.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f675419c"``,`
-
-`"custom_fields"``: {`
-
-`"score"` `98.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f675419b"``,`
-
-`"custom_fields"``: {`
-
-`"score"` `97.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f675419a"``,`
-
-`"custom_fields"``: {`
-
-`"score"` `96.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f6754199"``,`
-
-`"custom_fields"``: {`
-
-`"score"` `95.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f6754198"``,`
-
-`"custom_fields"``: {`
-
-`"score"` `94.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f6754197"``,`
-
-`"custom_fields"``: {`
-
-`"score"` `93.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f6754196"``,`
-
-`"custom_fields"``: {`
-
-`"score"` `92.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f6754195"``,`
-
-`"custom_fields"``: {`
-
-`"score"` `91.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f6754194"``,`
-
-`"custom_fields"``: {`
-
-`"score"` `90.0`
-
-`}, ...`
-
-`}`
-
-`]`
-
-`}`
-
-`}`
+```
+$ curl -d 'where={"score":{"$lt":100}}&order=-score' -X GET
+"http://<HOST>/v1/statuses/query.json?key=<KEY>&count=true&pretty_json=true"
+{
+  "meta": {
+    "code": 200,
+    "status": "ok",
+    "method_name": "queryStatuses",
+    "count": 100
+  },
+  "response": {
+    "statuses": [
+      {
+        "id": "53fe1c25759220e9f675419d",
+        "custom_fields": {
+          "score" 99.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f675419c",
+        "custom_fields": {
+          "score" 98.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f675419b",
+        "custom_fields": {
+          "score" 97.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f675419a",
+        "custom_fields": {
+          "score" 96.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f6754199",
+        "custom_fields": {
+          "score" 95.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f6754198",
+        "custom_fields": {
+          "score" 94.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f6754197",
+        "custom_fields": {
+          "score" 93.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f6754196",
+        "custom_fields": {
+          "score" 92.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f6754195",
+        "custom_fields": {
+          "score" 91.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f6754194",
+        "custom_fields": {
+          "score" 90.0
+        }, ...
+      }
+    ]
+  }
+}
+```
 
 #### Query for the next page of results with results in ascending order
 
 In this example, the next page of status objects is queried whose \_id field is less than "53fe1c25759220e9f6754194" and sorted in descending order on the custom score field.
 
-`$ curl -d` `'where={"score":{"$lt":100},"_id":{"$lt":"53fe1c25759220e9f6754194"}}&order=-score'` `-X GET`
-
-`"http://<HOST>/v1/statuses/query.json?key=<KEY>&count=true&pretty_json=true"`
-
-`{`
-
-`"meta"``: {`
-
-`"code"``: 200,`
-
-`"status"``:` `"ok"``,`
-
-`"method_name"``:` `"queryStatuses"``,`
-
-`"count"``: 90`
-
-`},`
-
-`"response"``: {`
-
-`"statuses"``: [`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f6754193"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 89.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f6754192"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 88.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f6754191"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 87.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f6754190"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 86.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f675418f"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 85.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f675418e"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 84.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f675418d"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 83.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f675418c"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 82.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f675418b"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 81.0`
-
-`}, ...`
-
-`},`
-
-`{`
-
-`"id"``:` `"53fe1c25759220e9f675418a"``,`
-
-`"custom_fields"``: {`
-
-`"score"``: 80.0`
-
-`}, ...`
-
-`}`
-
-`]`
-
-`}`
-
-`}`
+```
+$ curl -d 'where={"score":{"$lt":100},"_id":{"$lt":"53fe1c25759220e9f6754194"}}&order=-score' -X GET
+"http://<HOST>/v1/statuses/query.json?key=<KEY>&count=true&pretty_json=true"
+{
+  "meta": {
+    "code": 200,
+    "status": "ok",
+    "method_name": "queryStatuses",
+    "count": 90
+  },
+  "response": {
+    "statuses": [
+      {
+        "id": "53fe1c25759220e9f6754193",
+        "custom_fields": {
+          "score": 89.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f6754192",
+        "custom_fields": {
+          "score": 88.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f6754191",
+        "custom_fields": {
+          "score": 87.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f6754190",
+        "custom_fields": {
+          "score": 86.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f675418f",
+        "custom_fields": {
+          "score": 85.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f675418e",
+        "custom_fields": {
+          "score": 84.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f675418d",
+        "custom_fields": {
+          "score": 83.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f675418c",
+        "custom_fields": {
+          "score": 82.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f675418b",
+        "custom_fields": {
+          "score": 81.0
+        }, ...
+      },
+      {
+        "id": "53fe1c25759220e9f675418a",
+        "custom_fields": {
+          "score": 80.0
+        }, ...
+      }
+    ]
+  }
+}
+```
 
 #### Query for the previous page of results
 
@@ -980,39 +702,29 @@ The first query request doesn't specify a range.
 
 Request:
 
-`curl -X GET` `"<HOST>/v1/users/query.json?key=<KEY>&new_pagination=true&pretty_json=true"`
+```
+curl -X GET "<HOST>/v1/users/query.json?key=<KEY>&new_pagination=true&pretty_json=true"
+```
 
 Response (abbreviated):
 
-`{`
-
-`"response"``: {`
-
-`"users"``: [`
-
-`{`
-
-`"id"``:` `"5447f04580e61e081e0002c6"``,`
-
-`...`
-
-`},`
-
-`...`
-
-`{`
-
-`"id"``:` `"5447eff680e61e08260002ed"``,`
-
-`...`
-
-`}`
-
-`]`
-
-`}`
-
-`}`
+```
+{
+  "response": {
+    "users": [
+      {
+        "id": "5447f04580e61e081e0002c6",
+        ...
+      },
+      ...
+      {
+        "id": "5447eff680e61e08260002ed",
+        ...
+      }
+    ]
+  }
+}
+```
 
 Note that the ID of the last object returned in the response ("5447eff680e61e08260002ed").
 
@@ -1022,41 +734,30 @@ To get Page 2 results, a where clause is added that limits the results to those 
 
 Request:
 
-`curl -X GET -d` `'where={"_id":{"$lt":"5447eff680e61e08260002ed"}}'`
-
-`"<HOST>/v1/users/query.json?key=<KEY>&new_pagination=true&pretty_json=true"`
+```
+curl -X GET -d 'where={"_id":{"$lt":"5447eff680e61e08260002ed"}}'
+"<HOST>/v1/users/query.json?key=<KEY>&new_pagination=true&pretty_json=true"
+```
 
 Response (abbreviated):
 
-`{`
-
-`"response"``: {`
-
-`"users"``: [`
-
-`{`
-
-`"id"``:` `"5447efed80e61e08260002ec"``,`
-
-`...`
-
-`},`
-
-`...`
-
-`{`
-
-`"id"``:` `"5447ef9f80e61e081e0002c1"``,`
-
-`...`
-
-`}`
-
-`]`
-
-`}`
-
-`}`
+```
+{
+  "response": {
+    "users": [
+      {
+        "id": "5447efed80e61e08260002ec",
+        ...
+      },
+        ...
+      {
+        "id": "5447ef9f80e61e081e0002c1",
+        ...
+      }
+    ]
+  }
+}
+```
 
 Note that the first and last IDs of objects returned on Page 2 are "5447efed80e61e08260002ec" and "5447ef9f80e61e081e0002c1", respectively. To get the previous page of results (Page 1) at this point, you could query for objects with IDs greater than the first object in the Page 2 results ("5447efed80e61e08260002ec"). In this case, however, the user requests the next page (Page 3) results, as shown below.
 
@@ -1064,33 +765,26 @@ Note that the first and last IDs of objects returned on Page 2 are "5447efed80e6
 
 To get Page 3 results, the where limits results to those objects whose \_id field is less the last object returned in Page 2 results ("5447ef9f80e61e081e0002c1").
 
-`$ curl -X GET -d` `'where={"_id":{"$lt":"5447ef9f80e61e081e0002c1"}}'`
-
-`"<HOST>/v1/users/query.json?key=<KEY>&new_pagination=true&pretty_json=true"`
+```
+$ curl -X GET -d 'where={"_id":{"$lt":"5447ef9f80e61e081e0002c1"}}'
+"<HOST>/v1/users/query.json?key=<KEY>&new_pagination=true&pretty_json=true"
+```
 
 Response (abbreviated):
 
-`{`
-
-`"response"``: {`
-
-`"users"``: [`
-
-`{`
-
-`"id"``:` `"5446d5d980e61e0826000093"``,`
-
-`...`
-
-`},`
-
-`...`
-
-`]`
-
-`}`
-
-`}`
+```
+{
+  "response": {
+    "users": [
+      {
+        "id": "5446d5d980e61e0826000093",
+        ...
+      },
+      ...
+    ]
+  }
+}
+```
 
 Note that the first object returned has the ID "5446d5d980e61e0826000093".
 
@@ -1100,71 +794,42 @@ At this point, if you query for objects with IDs greater than the first object r
 
 Continuing the example, the request and response (abbreviated) for these approaches are shown below:
 
-`$ curl -X GET -d` `'where={"_id":{"$gt":"5446d5d980e61e0826000093", "$lte":"5447efed80e61e08260002ec"}}'`
+```
+$ curl -X GET -d 'where={"_id":{"$gt":"5446d5d980e61e0826000093", "$lte":"5447efed80e61e08260002ec"}}'
+"<HOST>/v1/users/query.json?key=<KEY>&new_pagination=true&pretty_json=true"
+{
+  "response": {
+    "users": [
+      {
+        "id": "5447efed80e61e08260002ec",
+        ...
+      },
+      ...
+      {
+        "id": "5447ef9f80e61e081e0002c1",
+        ...
+    ]
+  }
+}
 
-`"<HOST>/v1/users/query.json?key=<KEY>&new_pagination=true&pretty_json=true"`
-
-`{`
-
-`"response"``: {`
-
-`"users"``: [`
-
-`{`
-
-`"id"``:` `"5447efed80e61e08260002ec"``,`
-
-`...`
-
-`},`
-
-`...`
-
-`{`
-
-`"id"``:` `"5447ef9f80e61e081e0002c1"``,`
-
-`...`
-
-`]`
-
-`}`
-
-`}`
-
-`$ curl -X GET -d` `'where={"_id":{"$gt":"5446d5d980e61e0826000093", "$lt":"5447eff680e61e08260002ed"}}'`
-
-`"<HOST>/v1/users/query.json?key=<KEY>&new_pagination=true&pretty_json=true"`
-
-`{`
-
-`"response"``: {`
-
-`"users"``: [`
-
-`{`
-
-`"id"``:` `"5447efed80e61e08260002ec"``,`
-
-`...`
-
-`},`
-
-`...`
-
-`{`
-
-`"id"``:` `"5447ef9f80e61e081e0002c1"``,`
-
-`...`
-
-`}`
-
-`]`
-
-`}`
-
-`}`
+$ curl -X GET -d 'where={"_id":{"$gt":"5446d5d980e61e0826000093", "$lt":"5447eff680e61e08260002ed"}}'
+"<HOST>/v1/users/query.json?key=<KEY>&new_pagination=true&pretty_json=true"
+{
+  "response": {
+    "users": [
+      {
+        "id": "5447efed80e61e08260002ec",
+        ...
+      },
+      ...
+      {
+        "id": "5447ef9f80e61e081e0002c1",
+        ...
+      }
+    ]
+  }
+}
+```
 
 ## Search API overview
 

@@ -2,7 +2,7 @@
 
 Demonstrates how to create a date/time picker using the Picker control.
 
-Example App Source Location
+*Example App Source Location*
 
 You can find this example app in the Alloy repository under [samples/apps/ui/datetime\_picker](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/datetime_picker). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
 
@@ -12,63 +12,42 @@ The Picker control is used to let a user select one or more fixed values. You ca
 
 The main index.xml view in the sample application sets the Picker element's type property to Ti.UI.PICKER\_TYPE\_DATE, and sets the minimum and maximum dates the control will display.
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<!--`
-
-`The text field is included to show that its value attribute`
-
-`will not be parsed as a date, which is how the Picker's value`
-
-`attribute will be treated.`
-
-`-->`
-
-`<``TextField`  `id``=``"txt"`  `value``=``"July 4, 2014"`  `top``=``"20"``/>`
-
-`<``Picker`  `id``=``"picker"`  `top``=``"50"`
-
-`type``=``"Ti.UI.PICKER_TYPE_DATE"`
-
-`minDate``=` `"2013-02-08 09:30:26 Z"`
-
-`maxDate``=``"2015,11,17"``>`
-
-`<!-- the value (selected date) is being set in the TSS -->`
-
-`</``Picker``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+  <Window>
+    <!--
+      The text field is included to show that its value attribute
+      will not be parsed as a date, which is how the Picker's value
+      attribute will be treated.
+    -->
+    <TextField id="txt" value="July 4, 2014" top="20"/>
+    <Picker id="picker" top="50"
+      type="Ti.UI.PICKER_TYPE_DATE"
+      minDate= "2013-02-08 09:30:26 Z"
+      maxDate="2015,11,17">
+      <!-- the value (selected date) is being set in the TSS -->
+    </Picker>
+  </Window>
+</Alloy>
+```
 
 The initial time displayed by the Picker control is set in the main view's TSS file. A Picker's value property can be any string that can parsed as a date by the [Moment.js](http://momentjs.com/docs/) library included with Alloy projects.
 
-`'#index'``: {`
-
-`backgroundColor:` `'#fff'``,`
-
-`fullscreen: false,`
-
-`exitOnClose: true`
-
-`}`
-
-`"#picker"``: {`
-
-`value:` `"December 17, 2013"`
-
-`}`
-
-`'#index[platform=android]'``: {`
-
-`backgroundColor:` `'#000'`
-
-`}`
+```
+'#index': {
+    backgroundColor: '#fff',
+    fullscreen: false,
+    exitOnClose: true
+}
+"#picker": {
+    value: "December 17, 2013"
+}
+'#index[platform=android]': {
+    backgroundColor: '#000'
+}
+```
 
 ## See Also
 

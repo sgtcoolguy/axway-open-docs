@@ -20,15 +20,13 @@ This command is executed immediately in a synchronous way.
 
 Launches a Project Wizard dialog for the given wizard id
 
-`dispatch($H({`
-
-`controller:` `'portal.commands'``,`
-
-`action:` `'execute'``,`
-
-`args: [``"org.eclipse.ui.newWizard"``, {``"newWizardId"` `:` `"<project wizard id>"``}].toJSON()`
-
-`}).toJSON());`
+```
+dispatch($H({
+  controller: 'portal.commands',
+  action: 'execute',
+  args: ["org.eclipse.ui.newWizard", {"newWizardId" : "<project wizard id>"}].toJSON()
+}).toJSON());
+```
 
 Sample wizard ids:
 
@@ -44,14 +42,12 @@ Sample wizard ids:
 
 Launches a Project Wizard dialog with the specified project template
 
-`dispatch($H({`
-
-`controller:` `'portal.commands'``,`
-
-`action:` `'execute'``,`
-
-`args: [``"com.aptana.portal.ui.command.newProjectFromTemplate"``, {``"newWizardId"``:` `"<project wizard id>"``,` `"projectTemplateId"``:` `"<project template id>"``}].toJSON()`
-
-`}).toJSON());`
+```
+dispatch($H({
+  controller: 'portal.commands',
+  action: 'execute',
+  args: ["com.aptana.portal.ui.command.newProjectFromTemplate", {"newWizardId": "<project wizard id>", "projectTemplateId": "<project template id>"}].toJSON()
+}).toJSON());
+```
 
 For Project template ids, see [Project Template Actions](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Portal_Framework/Controllers_and_Actions/Project_Template_Actions/).

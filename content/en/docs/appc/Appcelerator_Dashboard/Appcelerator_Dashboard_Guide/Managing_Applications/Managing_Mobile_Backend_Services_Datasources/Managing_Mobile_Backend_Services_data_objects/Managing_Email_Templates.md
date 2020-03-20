@@ -41,101 +41,56 @@ To create an email template:
 
 Below is the sample HTML used in the above screenshot:
 
-`<!DOCTYPE html>`
-
-`<``html`  `lang``=``"en"``>`
-
-`<``head``>`
-
-`<``meta`  `charset``=``"utf-8"``>`
-
-`<``title``>Email Template</``title``>`
-
-`<``style``>`
-
-`div#box {`
-
-`background: #f5f5f5;`
-
-`width: 400px;`
-
-`height: 200px;`
-
-`padding: 10px;`
-
-`border-radius: 10px;`
-
-`box-shadow: 0 0 4px rgba(0, 0, 0, .5);`
-
-`}`
-
-`span {`
-
-`font: 16px/20px Arial, sans-serif;`
-
-`color: #1c94c4;`
-
-`}`
-
-`p {`
-
-`font: 14px/20px Arial, sans-serif;`
-
-`color: #666;`
-
-`}`
-
-`p.foot {`
-
-`font: 14px/20px Arial, sans-serif;`
-
-`color: #666;`
-
-`text-align: right;`
-
-`margin: 0 50px 0 0;`
-
-`}`
-
-`span.green {`
-
-`font: 14px/20px Arial, sans-serif;`
-
-`color: #9C9;`
-
-`}`
-
-`</``style``>`
-
-`<``body``>`
-
-`<``div`  `id``=``"box"``>`
-
-`<``span``>Dear {{first_name}},</``span``>`
-
-`<``p``>`
-
-`Welcome to Mobile Backend Services! Build your mobile app without writing any server code.`
-
-`Use our REST API and we'll take care of the rest.`
-
-`</``p``>`
-
-`<``p`  `class``=``"foot"``>`
-
-`thanks,`
-
-`<``br` `/>`
-
-`<``span`  `class``=``"green"``>The Platform Team</``span``>`
-
-`</``p``>`
-
-`</``div``>`
-
-`</``body``>`
-
-`</``html``>`
+```xml
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Email Template</title>
+    <style>
+    div#box {
+        background: #f5f5f5;
+        width: 400px;
+        height: 200px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, .5);
+    }
+    span {
+        font: 16px/20px Arial, sans-serif;
+        color: #1c94c4;
+    }
+    p {
+        font: 14px/20px Arial, sans-serif;
+        color: #666;
+    }
+    p.foot {
+        font: 14px/20px Arial, sans-serif;
+        color: #666;
+        text-align: right;
+        margin: 0 50px 0 0;
+    }
+    span.green {
+        font: 14px/20px Arial, sans-serif;
+        color: #9C9;
+    }
+    </style>
+    <body>
+        <div id="box">
+            <span>Dear {{first_name}},</span>
+            <p>
+                Welcome to Mobile Backend Services! Build your mobile app without writing any server code.
+                Use our REST API and we'll take care of the rest.
+            </p>
+            <p class="foot">
+                thanks,
+                <br />
+                <span class="green">The Platform Team</span>
+            </p>
+        </div>
+    </body>
+</html>
+```
 
 ## Editing an email template
 
@@ -175,56 +130,41 @@ To delete an email template:
 
 To send an email based on a template, call the email\_from\_template MBS method from your application. For example, the following code example uses the Titanium.Cloud.Emails.send() method to send an email based on the 'welcome\_template' to a user.
 
-`Cloud.Emails.send({`
-
-`template:` `'welcome_template'``,`
-
-`recipients:` `'nobody@appcelerator.com'`
-
-`},` `function` `(e) {`
-
-`if` `(e.success) {`
-
-`alert(``'Success'``);`
-
-`}` `else` `{`
-
-`alert(``'Error:\n'` `+`
-
-`((e.error && e.message) || JSON.stringify(e)));`
-
-`}`
-
-`});`
+```javascript
+Cloud.Emails.send({
+    template: 'welcome_template',
+    recipients: 'nobody@appcelerator.com'
+}, function (e) {
+    if (e.success) {
+        alert('Success');
+    } else {
+        alert('Error:\n' +
+            ((e.error && e.message) || JSON.stringify(e)));
+    }
+});
+```
 
 ## Using placeholder fields
 
 The template's subject and body can contain placeholder fields delineated by double curly brackets ({{}}). When [sending an email](#se), you include a parameter for each placeholder field that specifies the value to insert. For example, suppose that your email template's subject field contains **Hi {{first\_name}}!**. When sending the email, you would include a first\_name parameter, as shown below:
 
-`curl -F` `"recipients=joe@company.com"` `-F` `"template=welcome"` `-F` `"first_name=Joe"` `https:``//api``.cloud.appcelerator.com``/v1/custom_mailer/email_from_template``.json?key=<YOUR APP APP KEY>`
+```
+curl -F "recipients=joe@company.com" -F "template=welcome" -F "first_name=Joe" https://api.cloud.appcelerator.com/v1/custom_mailer/email_from_template.json?key=<YOUR APP APP KEY>
+```
 
 In a Titanium application, you would add the placeholder field as another parameter to the send() method:
 
-`Cloud.Emails.send({`
-
-`template:` `'welcome_template'``,`
-
-`recipients:` `'jim@appcelerator.com'``,`
-
-`first_name:` `'Jim'`
-
-`},` `function` `(e) {`
-
-`if` `(e.success) {`
-
-`alert(``'Success'``);`
-
-`}` `else` `{`
-
-`alert(``'Error:\n'` `+`
-
-`((e.error && e.message) || JSON.stringify(e)));`
-
-`}`
-
-`});`
+```javascript
+Cloud.Emails.send({
+    template: 'welcome_template',
+    recipients: 'jim@appcelerator.com',
+  first_name: 'Jim'
+}, function (e) {
+    if (e.success) {
+        alert('Success');
+    } else {
+        alert('Error:\n' +
+            ((e.error && e.message) || JSON.stringify(e)));
+    }
+});
+```

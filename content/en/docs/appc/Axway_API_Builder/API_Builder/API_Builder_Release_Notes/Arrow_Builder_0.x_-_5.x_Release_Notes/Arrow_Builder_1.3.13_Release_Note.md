@@ -1,6 +1,6 @@
 {"title":"Arrow Builder 1.3.13 Release Note","weight":"40"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -28,13 +28,12 @@ Arrow Builder 1.3.13 is a minor release that includes new features, improvements
 
 * Fixed an issue using the Photo sync images parameter with Arrow. Use the following syntax to pass the parameter:
 
-    `{`
-
-    `'photo_sizes'``: {preview:` `'120x120#'``},`
-
-    `'photo_sync_sizes[]'``:` `'preview'`
-
-    `}`
+    ```
+    {
+      'photo_sizes': {preview: '120x120#'},
+      'photo_sync_sizes[]': 'preview'
+    }
+    ```
 
 * Fixed an issue where the Arrow application now throws a 504 error code if the request takes more than 60 seconds.
 

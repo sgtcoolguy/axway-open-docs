@@ -1,6 +1,6 @@
 {"title":"APS Analytics for iOS","weight":"30"}
 
-Pro or Enterprise Subscription Required
+*Pro or Enterprise Subscription Required*
 
 This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.
 
@@ -22,7 +22,7 @@ This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscrip
 
 This page describes how to use the AMPLIFY Appcelerator Services Analytics for native iOS applications, built with Objective-C and the iOS APIs.
 
-Not developing a native iOS application with Objective-C?
+*Not developing a native iOS application with Objective-C?*
 
 See the following topics to use the Appcelerator Analytics Service on other platforms:
 
@@ -76,23 +76,23 @@ To integrate the Performance service with a new or existing iOS application:
 
 10. In your application delegate implementation file, import Appcelerator/Appcelerator.h.
 
-    AppDelegate.m
+    *AppDelegate.m*
 
-    `#``import` `<Appcelerator/Appcelerator.h>`
+    ```objc
+    #import <Appcelerator/Appcelerator.h>
+    ```
 
 11. In the application delegate's application:didFinishLaunchingWithOptions method, enable the service by calling the APSServiceManager's enableWithAppKey: method.
 
-    AppDelegate.m
+    *AppDelegate.m*
 
-    `- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`
-
-    `{`
-
-    `[[APSServiceManager sharedInstance] enableWithAppKey:@``"APS_APP_KEY"``];`
-
-    `return` `YES;`
-
-    `}`
+    ```objc
+    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+    {
+        [[APSServiceManager sharedInstance] enableWithAppKey:@"APS_APP_KEY"];
+        return YES;
+    }
+    ```
 
     To get your APS App key:
 
@@ -114,9 +114,10 @@ The iOS application can now send user session events and make additional method 
 
 By default, after the application has been backgrounded for 30 seconds, the Analytics service ends the current user session and starts a new one when the application enters the foreground again. To adjust the timeout, use the sessionTimeout property.
 
-`// Sets the timeout to 15 seconds instead of 30 seconds.`
-
-`[APSAnalytics sharedInstance].sessionTimeout =` `15``;`
+```
+// Sets the timeout to 15 seconds instead of 30 seconds.
+[APSAnalytics sharedInstance].sessionTimeout = 15;
+```
 
 ## Creating Custom Events
 
@@ -134,36 +135,35 @@ Feature event names should be as generic as possible. For instance, if you want 
 
 For example, to track a user's menu selection, you might use the following code, where the ten-digit number uniquely identifies the selection in your code:
 
-Good Practice: Track the State with the Naming Syntax
+*Good Practice: Track the State with the Naming Syntax*
 
-`[[APSAnalytics sharedInstance] sendAppFeatureEvent:@``"select.item.12345678910"` `payload:nil];`
+```
+[[APSAnalytics sharedInstance] sendAppFeatureEvent:@"select.item.12345678910" payload:nil];
+```
 
 You should avoid using long, descriptive event names, as shown below:
 
-Bad Practice: Avoid Long Descriptions
+*Bad Practice: Avoid Long Descriptions*
 
-` [[APSAnalytics sharedInstance] sendAppFeatureEvent:@``"Select Item THIS IS THE DESCRIPTION OF THE EVENT -12345678910"` `payload:nil];`
+```
+[[APSAnalytics sharedInstance] sendAppFeatureEvent:@"Select Item THIS IS THE DESCRIPTION OF THE EVENT -12345678910" payload:nil];
+```
 
 ### Geo Events
 
 Use the sendAppGeoEvent to send real-time geographic data to the Analytics service. Pass the method a CLLocation object containing the location data. For example, you can use the locationManager: didUpdateLocations delegate method to send geo-events when the device receives new location data.
 
-GeoController.m
+*GeoController.m*
 
-`// Delegate method from the CLLocationManagerDelegate protocol`
+```objc
+// Delegate method from the CLLocationManagerDelegate protocol
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *newLocation = [locations lastObject];
+    [[APSAnalytics sharedInstance] sendAppGeoEvent:newLocation];
+    NSLog(@"%f, %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+}
 
-`- (``void``)locationManager:(CLLocationManager *)manager`
-
-`didUpdateLocations:(NSArray *)locations`
-
-`{`
-
-`CLLocation *newLocation = [locations lastObject];`
-
-`[[APSAnalytics sharedInstance] sendAppGeoEvent:newLocation];`
-
-`NSLog(@``"%f, %f"``, newLocation.coordinate.latitude, newLocation.coordinate.longitude);`
-
-`}`
-
-`@end`
+@end
+```

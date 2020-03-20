@@ -42,19 +42,15 @@ When writing JavaScript for your Titanium apps, you should strive to achieve the
 
 JavaScript has a limited notion of [scope](http://en.wikipedia.org/wiki/Scope_(computer_science)), with variables too often being dumped into one global context. In fact, the only [scope](http://eloquentjavascript.net/chapter3.html#key10) besides global that JavaScript supports is functional scope. This means that the scope of your variables and functions can be contained within other functions. For example, here's a simple case where functional scope is used to keep temporary variables from polluting the global scope. We make use of an immediate function to execute our code:
 
-`var sum = (function() {`
-
-`var tmpValue =` `0``;`
-
-`for` `(var i =` `0``; i <` `100``; i++) {`
-
-`tmpValue += i;`
-
-`}`
-
-`return` `tmpValue;`
-
-`})();`
+```javascript
+var sum = (function() {
+    var tmpValue = 0;
+    for (var i = 0; i < 100; i++) {
+        tmpValue += i;
+    }
+    return tmpValue;
+})();
+```
 
 Now we have the computed value in our sum variable, and the tmpValue and i variables are no longer part of the scope as they were contained within the functional scope of our immediate function.
 
@@ -64,59 +60,39 @@ We touched on protecting the global scope in the [JavaScript Development Primer]
 
 To refresh your memory on creating namespaces to protect the global scope, here's the example we gave back in the Primer chapter:
 
-`// Define a single namespace to hold all your variables, it's the only global variable`
+```javascript
+// Define a single namespace to hold all your variables, it's the only global variable
+var myapp = {};
+myapp.key = "value";
 
-`var myapp = {};`
+/* Or, define the namespace and a few variables all at once with
+var myapp = {
+    key: 'value',
+    foo: 'bar',
+    charlie: 'horse'
+};
+*/
 
-`myapp.key =` `"value"``;`
+// add a function to your namespace
+myapp.dosomething = function(foo) {
+    // do something
+};
 
-`/* Or, define the namespace and a few variables all at once with`
+// extend and encapsulate by using self-calling functions
+(function() {
+    function helper() {
+        // this is a private function not directly accessible from the global scope
+    }
 
-`var myapp = {`
-
-`key: 'value',`
-
-`foo: 'bar',`
-
-`charlie: 'horse'`
-
-`};`
-
-`*/`
-
-`// add a function to your namespace`
-
-`myapp.dosomething = function(foo) {`
-
-`// do something`
-
-`};`
-
-`// extend and encapsulate by using self-calling functions`
-
-`(function() {`
-
-`function helper() {`
-
-`// this is a private function not directly accessible from the global scope`
-
-`}`
-
-`myapp.info = function(msg) {`
-
-`// added to the app's namespace, so a public function`
-
-`helper(msg);`
-
-`Ti.API.info(msg)`
-
-`};`
-
-`})();`
-
-`// you could then call your function with`
-
-`myapp.info(``'Hello World'``);`
+    myapp.info = function(msg) {
+        // added to the app's namespace, so a public function
+        helper(msg);
+        Ti.API.info(msg)
+    };
+})();
+// you could then call your function with
+myapp.info('Hello World');
+```
 
 #### Stay DRY
 
@@ -128,11 +104,11 @@ If you've ever created web pages, you know that JavaScript variables on one page
 
 By default, a Titanium Mobile application has a single execution context in which it runs. Your application's app.js file bootstraps your application and serves as the root context. Your application can have multiple execution contexts (but as we'll show, you generally don't want it to). New execution contexts are typically created by opening a new window that points to an external URL in its url property:
 
-`Ti.UI.createWindow({`
-
-`url:``'window.js'`
-
-`}).open();`
+```
+Ti.UI.createWindow({
+  url:'window.js'
+}).open();
+```
 
 When the window is opened, the script window.js is immediately run in a new execution context. If the preceding code were run in app.js, any variables or function declarations made in app.js would be unavailable within window.js. Try it:
 
@@ -140,67 +116,58 @@ When the window is opened, the script window.js is immediately run in a new exec
 
 2. In app.js, cut the following text and paste it into a new file named win1.js:
 
-    `var label1 = Titanium.UI.createLabel({`
+    ```javascript
+    var label1 = Titanium.UI.createLabel({
+      color:'#999',
+      text:'I am Window 1',
+      font:{fontSize:20,fontFamily:'Helvetica Neue'},
+      textAlign:'center'
+    });
 
-    `color:``'#999'``,`
-
-    `text:``'I am Window 1'``,`
-
-    `font:{fontSize:``20``,fontFamily:``'Helvetica Neue'``},`
-
-    `textAlign:``'center'`
-
-    `});`
-
-    `win1.add(label1);`
+    win1.add(label1);
+    ```
 
 3. Then, update the code that defines win1, like this:
 
-    `var win1 = Titanium.UI.createWindow({`
-
-    `title:``'Tab 1'``,`
-
-    `backgroundColor:``'#fff'``,`
-
-    `url:``'win1.js'`
-
-    `});`
+    ```javascript
+    var win1 = Titanium.UI.createWindow({
+        title:'Tab 1',
+        backgroundColor:'#fff',
+      url:'win1.js'
+    });
+    ```
 
 4. Build your project for the simulator/emulator. You'll receive an error that win1 is undefined in the win1.js file. The win1 variable is defined in app.js, which is a separate context. Let's fix that.
 
 5. In win1.js, add this statement at the top:
 
-    `var win1 = Ti.UI.currentWindow;`
+    ```javascript
+    var win1 = Ti.UI.currentWindow;
+    ```
 
 6. Build your project for the simulator/emulator and this time it will run without errors. To pass data into a separate context, you can add custom properties to your window object.
 
 7. In app.js, update the code to read:
 
-    `var win1 = Titanium.UI.createWindow({`
-
-    `title:``'Tab 1'``,`
-
-    `backgroundColor:``'#fff'``,`
-
-    `url:``'win1.js'``,`
-
-    `mylabel:``'Hello from app.js'`
-
-    `});`
+    ```javascript
+    var win1 = Titanium.UI.createWindow({
+        title:'Tab 1',
+        backgroundColor:'#fff',
+      url:'win1.js',
+      mylabel:'Hello from app.js'
+    });
+    ```
 
 8. Then, in win1.js, update the code to read:
 
-    `var label1 = Titanium.UI.createLabel({`
-
-    `color:``'#999'``,`
-
-    `text:win1.mylabel,`
-
-    `font:{fontSize:``20``,fontFamily:``'Helvetica Neue'``},`
-
-    `textAlign:``'center'`
-
-    `});`
+    ```javascript
+    var label1 = Titanium.UI.createLabel({
+      color:'#999',
+      text:win1.mylabel,
+      font:{fontSize:20,fontFamily:'Helvetica Neue'},
+      textAlign:'center'
+    });
+    ```
 
 9. Build your project for the simulator/emulator. The custom window property you set in app.js is available within the win1.js context and is used as the label's text.
 
@@ -210,19 +177,19 @@ Let's modify the project you just used to demonstrate multiple contexts.
 
 1. In win1.js, add this code:
 
-    `label1.addEventListener(``'click'``, function() {`
-
-    `Ti.App.fireEvent(``'app:labelclicked'``, {newlabel:``'Sent from win1.js'``});`
-
-    `});`
+    ```
+    label1.addEventListener('click', function() {
+      Ti.App.fireEvent('app:labelclicked', {newlabel:'Sent from win1.js'});
+    });
+    ```
 
 2. Back in app.js, scroll down to find the label2 code. This code is in the app.js context, walled off from the win1.js context. We'll add an event listener here to update the text of label2 when label1 is clicked. Add this code after label2:
 
-    `Ti.App.addEventListener(``'app:labelclicked'``, function(e) {`
-
-    `label2.text = e.newlabel;`
-
-    `});`
+    ```
+    Ti.App.addEventListener('app:labelclicked', function(e) {
+      label2.text = e.newlabel;
+    });
+    ```
 
 3. Build your project for the simulator/emulator. Click the label on tab 1. Switch to tab 2 and the label should now read 'Sent from win1.js'.
 
@@ -250,55 +217,42 @@ Let's recap: keep your code DRY, don't pollute the global scope, and strive for 
 
 A technique we teach in our classroom training sessions involves breaking your app into modular pieces, each constructed using [self-calling functions](http://2007-2010.lovemikeg.com/2008/08/17/a-week-in-javascript-patterns-self-invocation/) which modify a single app namespace. (If you want to be semantically-correct, these are [Immediately Invoked Function Expressions](http://benalman.com/news/2010/11/immediately-invoked-function-expression/), or IIFEs.) This technique lets you divide code into multiple files, each focused on a discrete purpose. As each library is loaded, it modifies the app's namespace object, which is the only variable added to the global namespace. Let's demonstrate this with code:
 
-app.js
+*app.js*
 
-`// create an object literal to be your app's namespace`
+```javascript
+// create an object literal to be your app's namespace
+var myapp = {};
+// include necessary libraries
+Ti.include('ui.js');
 
-`var myapp = {};`
-
-`// include necessary libraries`
-
-`Ti.include(``'ui.js'``);`
-
-`// instantiate and open the main UI component of our app`
-
-`myapp.mainWindow = myapp.ui.createApplicationWindow();`
-
-`myapp.mainWindow.open();`
+// instantiate and open the main UI component of our app
+myapp.mainWindow = myapp.ui.createApplicationWindow();
+myapp.mainWindow.open();
+```
 
 The ui.js library file contains the code that constructs your app's user interface.
 
-ui.js
+*ui.js*
 
-`// create a self-calling function`
+```javascript
+// create a self-calling function
+(function(){
+  myapp.ui = {}; // this sub-namespace extends the app's namespace object
 
-`(function(){`
+  myapp.ui.createApplicationWindow = function() {
+    var win = Ti.UI.createWindow({
+      backgroundColor:'white'
+    });
 
-`myapp.ui = {};` `// this sub-namespace extends the app's namespace object`
-
-`myapp.ui.createApplicationWindow = function() {`
-
-`var win = Ti.UI.createWindow({`
-
-`backgroundColor:``'white'`
-
-`});`
-
-`var header = Ti.UI.createLabel({`
-
-`text:` `'My App Heading'``,`
-
-`top:` `10`
-
-`});`
-
-`win.add(header);`
-
-`return` `win;`
-
-`};`
-
-`})();`
+    var header = Ti.UI.createLabel({
+      text: 'My App Heading',
+      top: 10
+    });
+    win.add(header);
+    return win;
+  };
+})();
+```
 
 You would add other libraries, as necessary, to round out the functionality of your app. For example, you might put all your database code in a db.js file, your network code in a network.js, and so forth. You can include multiple libraries in a single include call, or make a separate call to include for each library. We recommend you keep namespace variable names short: you'll be typing them a lot. Use function names that describe their purpose and return value. Take createApplicationWindow() as an example. It "creates" a "window" and the middle part describes what type of window it's creating. The purpose of the function is clear just by reading its name.
 
@@ -326,73 +280,65 @@ Our specific implementation of the [CommonJS Module Specification](http://wiki.c
 
 In order to use a module within Titanium, you must use the require() function, which is built in to the global scope in every JavaScript context.
 
-`var myModule = require(``'/MyModule'``);` `// don't include the ".js" extension!`
+```javascript
+var myModule = require('/MyModule'); // don't include the ".js" extension!
+```
 
 The string passed to require() is the path to and base name of the JavaScript module to load. We recommend that you use absolute paths, where / corresponds to your app's Resources directory, to make sure Titanium can locate and load your module. The require() function returns a JavaScript object, with properties, functions, and other data assigned to it which form the public interface to the module. If the module we loaded into the application above exposed a function sayHello(), which would print a name and a welcome message to the console, it would be accessed in this way:
 
-`var myModule = require(``'/MyModule'``);`
-
-`myModule.sayHello(``'Kevin'``);`
-
-`//console output is "Hello Kevin!"`
+```javascript
+var myModule = require('/MyModule');
+myModule.sayHello('Kevin');
+//console output is "Hello Kevin!"
+```
 
 ##### JavaScript Module Composition
 
 As in the [CommonJS Module specification](http://wiki.commonjs.org/wiki/Modules/1.1), inside the module's JavaScript file, there will be a special variable called exports to which properties may be added for the public interface of the module. Anything assigned to it will be available in the calling context as a property of the returned object.
 
-MyModule.js
+*MyModule.js*
 
-`// variables defined in this files are private`
+```javascript
+// variables defined in this files are private
+var defaultMessage = "Hello world";
 
-`var defaultMessage =` `"Hello world"``;`
+// we make objects, variables, functions available to the
+// calling context by adding them to the exports object
+exports.sayHello = function(msg) {
+  Ti.API.info(msg);
+};
 
-`// we make objects, variables, functions available to the`
-
-`// calling context by adding them to the exports object`
-
-`exports.sayHello = function(msg) {`
-
-`Ti.API.info(msg);`
-
-`};`
-
-`// we can assign other objects, functions, and variables to`
-
-`// exports and they will be available to the calling context`
-
-`exports.helloWorld = function() {`
-
-`Ti.API.info(defaultMessage);`
-
-`}`
+// we can assign other objects, functions, and variables to
+// exports and they will be available to the calling context
+exports.helloWorld = function() {
+  Ti.API.info(defaultMessage);
+}
+```
 
 Alternately, if the module author wishes to make the exported value from the module an object of their own design and choosing, there is a non-standard (but common, as with Node.js) extension to the Module specification which allows for this. The module.exports object is available within the module file, and may be assigned any value which the developer would like to return from the require function for their module. This is most commonly used for functions which act as object constructors. The following would be a typical use case for this:
 
-`function Person(firstName,lastName) {`
+```javascript
+function Person(firstName,lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
 
-`this``.firstName = firstName;`
+Person.prototype.fullName = function() {
+    return this.firstName+' '+this.lastName;
+};
 
-`this``.lastName = lastName;`
-
-`}`
-
-`Person.prototype.fullName = function() {`
-
-`return`  `this``.firstName+``' '``+``this``.lastName;`
-
-`};`
-
-`module.exports = Person;`
+module.exports = Person;
+```
 
 Usage:
 
-Resources/app.js
+*Resources/app.js*
 
-`var Person = require(``'Person'``);`
-
-`var fred =` `new` `Person(``'Fred'``,``'Flintstone'``);`
-
-`var fredsName = fred.fullName();` `// "Fred Flinstone"`
+```javascript
+var Person = require('Person');
+var fred = new Person('Fred','Flintstone');
+var fredsName = fred.fullName(); // "Fred Flinstone"
+```
 
 (You should not mix and match usage of module.exports and exports.\*.)
 

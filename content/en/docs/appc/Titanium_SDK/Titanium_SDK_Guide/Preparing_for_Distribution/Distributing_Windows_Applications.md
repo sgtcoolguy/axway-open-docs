@@ -76,7 +76,7 @@ Titanium uses the settings in the tiapp.xml file to package your project. Some o
 
 5. Add the <id> element to the <windows> element. The node text of the element must match the Package/Identity/Name of the application, which was generated when you created the application in the Windows Dev Center Dashboard.
 
-Prior to Release 5.1.0
+*Prior to Release 5.1.0*
 
 Prior to Release 5.1.0, set the Package/Identity/Name of the application to the <id> element under the <ti:app> element rather than the <windows> element.
 
@@ -100,29 +100,21 @@ The publisher ID will be under the **Account details** section as the **Windows 
 
 4. Expand **App management** and click **App identity**.
 
-tiapp.xml
+*tiapp.xml*
 
-`<ti:app>`
-
-`<name>FooApp</name>`
-
-`<!-- Prior to Release` `5.1``.``0``, set the Package/Identity/Name of the application to the top-level id element -->`
-
-`<!-- <id>12345FooInc.FooApp</id> -->`
-
-`<publisher>FooInc</publisher>`
-
-`<property name=``"ti.windows.publishername"``>CN=``11111111``-``2222``-``3333``-``4444``-``555555555555``</property>`
-
-`<windows>`
-
-`<!-- Since Release` `5.1``.``0``, set the Package/Identity/Name of the application to the windows id element -->`
-
-`<id>12345FooInc.FooApp</id>`
-
-`</windows>`
-
-`</ti:app>`
+```xml
+<ti:app>
+  <name>FooApp</name>
+  <!-- Prior to Release 5.1.0, set the Package/Identity/Name of the application to the top-level id element -->
+  <!-- <id>12345FooInc.FooApp</id> -->
+  <publisher>FooInc</publisher>
+  <property name="ti.windows.publishername">CN=11111111-2222-3333-4444-555555555555</property>
+  <windows>
+    <!-- Since Release 5.1.0, set the Package/Identity/Name of the application to the windows id element -->
+    <id>12345FooInc.FooApp</id>
+  </windows>
+</ti:app>
+```
 
 ## Package for Windows Phone Store
 
@@ -150,7 +142,9 @@ Studio will prompt you to enter a location to copy the generated APPX file to.
 
 To package an APPX file for the Windows Phone Store, run:
 
-`appc run -p windows -T dist-phonestore -O <OUTPUT_DIRECTORY>`
+```bash
+appc run -p windows -T dist-phonestore -O <OUTPUT_DIRECTORY>
+```
 
 ## Package for Windows Store
 
@@ -182,15 +176,13 @@ To specify a certificate to use, select **Use Existing**, enter the location of 
 
 If you need to generate a certificate, run the following CLI command:
 
-`C:\Users\JoeUser\Documents\Appcelerator_Studio_Workspace\WindowsApp> appc run -p windows -T dist-winstore -O dist`
-
-`Appcelerator Command-Line Interface, version` `4.1``.``0`
-
-`Copyright (c)` `2014``-``2015``, Appcelerator, Inc. All Rights Reserved.`
-
-`Where is the pfx file used to sign the app? (leave blank to generate):`
-
-`What is (or will be) your PFX password?: ****`
+```bash
+C:\Users\JoeUser\Documents\Appcelerator_Studio_Workspace\WindowsApp> appc run -p windows -T dist-winstore -O dist
+Appcelerator Command-Line Interface, version 4.1.0
+Copyright (c) 2014-2015, Appcelerator, Inc.  All Rights Reserved.
+Where is the pfx file used to sign the app? (leave blank to generate):
+What is (or will be) your PFX password?: ****
+```
 
 The CLI will launch the Windows certificate tools in the background and prompt you to create a password for the certificate.
 
@@ -206,7 +198,9 @@ After the certificate is generated, the CLI will automatically create and sign t
 
 To package an APPX file for the Windows Store after you have generated the certificate, run:
 
-`appc run -p windows -T dist-winstore -R <PFX_CERTIFICATE_FILE> -P <PFX_PASSWORD> -O <OUTPUT_DIRECTORY>`
+```bash
+appc run -p windows -T dist-winstore -R <PFX_CERTIFICATE_FILE> -P <PFX_PASSWORD> -O <OUTPUT_DIRECTORY>
+```
 
 ## Submit an Application
 

@@ -62,9 +62,10 @@ A related issue or gotcha that the user should be aware about
 
 Surrounding your code with the code block macro code escapes all of the content, meaning that it will not interfere with the rest of the page. Furthermore, you can set the language used for syntax highlighting, by selecting the appropriate languages from the Syntax highlighting drop-down when editing the code block macro.
 
-`var window = Titanium.UI.createWindow();`
-
-`window.open();`
+```javascript
+var window = Titanium.UI.createWindow();
+window.open();
+```
 
 In addition to JavaScript, the XML, HTML, and SQL values are also available. If the language you wish to display is not supported, use the code macro without any arguments, or disable syntax highlighting altogether.
 
@@ -105,4 +106,4 @@ Don't iterate the names of the images, reattach, and repoint the page to use dif
 
 ## Labels
 
-<table class="sectionMacro conf-macro output-block"><colgroup><col> </colgroup><tbody><tr class="sectionMacroRow"><td class="columnMacro conf-macro output-block" rowspan="1" colspan="1"><p>Labels are key words or tags that you can add to pages. Adding labels to pages is important as it helps promote the page in the search index.</p><h4 id="src-30083166_ContributingDocumentation-Labelingtips" class="heading"><span>Labeling tips</span></h4><p></p><ul class=""><li><p>Don't use plurals (e.g. contributes, documents, uploads)</p></li><li><p>Only use key terms (e.g. contribute documentation)</p></li><li><p>Don't use past or active tense of a term (e.g contributed, contributing); only use the present tense (e.g. contribute, upload)</p></li></ul><h3 id="src-30083166_ContributingDocumentation-Commenting" class="heading"><span>Commenting</span></h3><p>Upon edit a page, add a comment as to what you changed and why. This helps everyone identify those changes in case of the need to revert the page back to a previous version.</p><h3 id="src-30083166_ContributingDocumentation-JIRALinking" class="heading"><span>JIRA Linking</span></h3><p></p><p>If you must use a JIRA ticket in your document, simply copy and paste the URL of the JIRA ticket. Confluence will handle the conversion of this link into a live JIRA link and present the JIRA link, status of ticket, and summary automatically. Don't include JIRA macros in public-facing documentation.</p></td></tr></tbody></table>
+<table class="sectionMacro conf-macro output-block"><colgroup><col> </colgroup><tbody class=" "><tr class="sectionMacroRow"><td class="columnMacro conf-macro output-block" rowspan="1" colspan="1"><p>Labels are key words or tags that you can add to pages. Adding labels to pages is important as it helps promote the page in the search index.</p><h4 id="src-30083166_ContributingDocumentation-Labelingtips" class="heading "><span>Labeling tips</span></h4><p></p><ul class=" "><li class=" "><p>Don't use plurals (e.g. contributes, documents, uploads)</p></li><li class=" "><p>Only use key terms (e.g. contribute documentation)</p></li><li class=" "><p>Don't use past or active tense of a term (e.g contributed, contributing); only use the present tense (e.g. contribute, upload)</p></li></ul><h3 id="src-30083166_ContributingDocumentation-Commenting" class="heading "><span>Commenting</span></h3><p>Upon edit a page, add a comment as to what you changed and why. This helps everyone identify those changes in case of the need to revert the page back to a previous version.</p><h3 id="src-30083166_ContributingDocumentation-JIRALinking" class="heading "><span>JIRA Linking</span></h3><p></p><p>If you must use a JIRA ticket in your document, simply copy and paste the URL of the JIRA ticket. Confluence will handle the conversion of this link into a live JIRA link and present the JIRA link, status of ticket, and summary automatically. Don't include JIRA macros in public-facing documentation.</p></td></tr></tbody></table>

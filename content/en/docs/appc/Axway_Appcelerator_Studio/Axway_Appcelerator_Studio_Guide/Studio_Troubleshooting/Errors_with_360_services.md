@@ -18,6 +18,8 @@ When a project has to be enabled for test module, the following steps are perfor
 
     * If the latest version is available, then the failure would have happened while enabling the app with soasta plugin. The Studio log contains a command similar to
 
-        `/System/Library/Java/JavaVirtualMachines/``1.6``.``0``.jdk/Contents/Home/bin/java``" "``-jar``" "``/Users/<user>/Library/Application Support/Titanium/plugins/com.appcelerator.test/versions/``6937.16``/MakeAppTouchTestable/MakeAppTouchTestable.jar``" "``-project``" "``/path/to/project``" "``-url``" "``https:``//appctest-2.appcelerator.com/concerto" "-username" "user@appcelerator.com/id" "-password" "**********" "-appobjectname" "project_guid" "-overwriteapp`
+        ```
+        /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/java" "-jar" "/Users/<user>/Library/Application Support/Titanium/plugins/com.appcelerator.test/versions/6937.16/MakeAppTouchTestable/MakeAppTouchTestable.jar" "-project" "/path/to/project" "-url" "https://appctest-2.appcelerator.com/concerto" "-username" "user@appcelerator.com/id" "-password" "**********" "-appobjectname" "project_guid" "-overwriteapp
+        ```
 
     * Copy the command from the Studio log and then fill in the password param with original password and get the output of that command on terminal. This would help us to determine the root cause of the failure.

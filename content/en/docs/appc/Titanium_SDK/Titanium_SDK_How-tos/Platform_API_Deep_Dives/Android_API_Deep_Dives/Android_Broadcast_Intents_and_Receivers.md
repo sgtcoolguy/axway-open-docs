@@ -34,19 +34,20 @@ The application can also create an explicit intent to send the broadcast to a sp
 
 The following example creates a broadcast intent and adds extra data to be passed on to the application or activity.
 
-`var` `intent = Ti.Android.createBroadcastIntent({`
-
-`action:` `'com.appcelerator.action.ALERT'`
-
-`});`
-
-`intent.putExtra(Ti.Android.EXTRA_TEXT,` `'Download update'``);`
+```javascript
+var intent = Ti.Android.createBroadcastIntent({
+    action: 'com.appcelerator.action.ALERT'
+});
+intent.putExtra(Ti.Android.EXTRA_TEXT, 'Download update');
+```
 
 ### Send a broadcast
 
 To send a broadcast, pass the Intent object to the current activity's sendBroadcast() method. Use the Titanium.Android.currentActivity property to get a reference to the application's current activity.
 
-`Ti.Android.currentActivity.sendBroadcast(intent);`
+```
+Ti.Android.currentActivity.sendBroadcast(intent);
+```
 
 Any application that has a registered broadcast receiver listening to com.appcelerator.action.ALERT action will be notified.
 
@@ -66,33 +67,26 @@ In order to receive the broadcast, the receiving application needs to declare th
 
 The example below takes the previous example and adds a permission to it.
 
-tiapp.xml
+*tiapp.xml*
 
-`<!-- Declare the permission -->`
+```xml
+<!-- Declare the permission -->
+<ti:app>
+    <android>
+        <manifest>
+          <permission android:name="com.appcelerator.action.ALERT"/>
+        </manifest>
+    </android>
+</ti:app>
+```
 
-`<``ti``:app>`
-
-`<``android``>`
-
-`<``manifest``>`
-
-`<``permission`  `android:name``=``"com.appcelerator.action.ALERT"``/>`
-
-`</``manifest``>`
-
-`</``android``>`
-
-`</``ti``:app>`
-
-`var` `intent = Ti.Android.createBroadcastIntent({`
-
-`action:` `'com.appcelerator.action.ALERT'`
-
-`});`
-
-`intent.putExtra(Ti.Android.EXTRA_TEXT,` `'Download update'``);`
-
-`Ti.Android.currentActivity.sendBroadcastWithPermission(intent,` `'com.appcelerator.action.ALERT'``);`
+```javascript
+var intent = Ti.Android.createBroadcastIntent({
+    action: 'com.appcelerator.action.ALERT'
+});
+intent.putExtra(Ti.Android.EXTRA_TEXT, 'Download update');
+Ti.Android.currentActivity.sendBroadcastWithPermission(intent, 'com.appcelerator.action.ALERT');
+```
 
 ## Monitor a broadcast
 
@@ -112,79 +106,53 @@ To monitor a broadcast, the application needs to create a broadcast receive and 
 
 The example below registers a broadcast receiver to monitor if the device's screen is turned on or off. The broadcast is a system event sent by the Android OS. If the screen is turned off then back on, the application displays an alert dialog.
 
-`var` `showAlert =` `false``;`
-
-`var` `broadcastReceiver = Ti.Android.createBroadcastReceiver({`
-
-`onReceived :` `function``(e) {`
-
-`switch` `(e.intent.action) {`
-
-`case` `Ti.Android.ACTION_SCREEN_OFF:`
-
-`showAlert =` `true``;`
-
-`break``;`
-
-`case` `Ti.Android.ACTION_SCREEN_ON:`
-
-`if` `(showAlert) {`
-
-`alert(``"Peek-a-boo!"``);`
-
-`showAlert =` `false``;`
-
-`}`
-
-`break``;`
-
-`}`
-
-`}`
-
-`});`
-
-`Ti.Android.registerBroadcastReceiver(broadcastReceiver, [Ti.Android.ACTION_SCREEN_OFF, Ti.Android.ACTION_SCREEN_ON]);`
+```javascript
+var showAlert = false;
+var broadcastReceiver = Ti.Android.createBroadcastReceiver({
+  onReceived : function(e) {
+    switch (e.intent.action) {
+            case Ti.Android.ACTION_SCREEN_OFF:
+                showAlert = true;
+                break;
+            case Ti.Android.ACTION_SCREEN_ON:
+                if (showAlert) {
+                    alert("Peek-a-boo!");
+                    showAlert = false;
+          }
+                break;
+        }
+    }
+});
+Ti.Android.registerBroadcastReceiver(broadcastReceiver, [Ti.Android.ACTION_SCREEN_OFF, Ti.Android.ACTION_SCREEN_ON]);
+```
 
 The example below registers a broadcast receiver to monitor the broadcast sent with permission from the example in _Send a Broadcast with a Permission._
 
-tiapp.xml
+*tiapp.xml*
 
-`<!-- Declare that the application uses the permission -->`
+```xml
+<!-- Declare that the application uses the permission -->
+<ti:app>
+    <android>
+        <manifest>
+          <uses-permission android:name="com.appcelerator.action.ALERT"/>
+        </manifest>
+    </android>
+</ti:app>
+```
 
-`<``ti``:app>`
-
-`<``android``>`
-
-`<``manifest``>`
-
-`<``uses``-permission` `android:name``=``"com.appcelerator.action.ALERT"``/>`
-
-`</``manifest``>`
-
-`</``android``>`
-
-`</``ti``:app>`
-
-`var` `broadcastReceiver = Ti.Android.createBroadcastReceiver({`
-
-`onReceived :` `function``(e) {`
-
-`var` `intent = e.intent,`
-
-`message;`
-
-`if` `(intent.hasExtra(Ti.Android.EXTRA_TEXT) && (message = intent.getStringExtra(Ti.Android.EXTRA_TEXT))) {`
-
-`alert(message);`
-
-`}`
-
-`}`
-
-`});`
-
-`Ti.Android.registerBroadcastReceiver(broadcastReceiver, [``'com.appcelerator.action.ALERT'``]);`
+```javascript
+var broadcastReceiver = Ti.Android.createBroadcastReceiver({
+    onReceived : function(e) {
+        var intent = e.intent,
+            message;
+        if (intent.hasExtra(Ti.Android.EXTRA_TEXT) && (message = intent.getStringExtra(Ti.Android.EXTRA_TEXT))) {
+            alert(message);
+        }
+    }
+});
+Ti.Android.registerBroadcastReceiver(broadcastReceiver, ['com.appcelerator.action.ALERT']);
+```
 
 ## Further reading
 

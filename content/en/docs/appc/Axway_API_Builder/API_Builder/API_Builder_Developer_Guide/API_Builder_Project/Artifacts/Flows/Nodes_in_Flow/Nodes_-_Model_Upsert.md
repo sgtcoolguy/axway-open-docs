@@ -1,6 +1,6 @@
 {"title":"Nodes - Model Upsert","weight":"130"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -26,152 +26,80 @@ This document describes the model upsert and provides instance configuration and
 
 ### Example
 
-`"model.upsert"``: {`
-
-`"type"``:` `"ModelUpsert"``,`
-
-`"config"``: {`
-
-`"model"``:` `"appc.arrowdb/acl"`
-
-`},`
-
-`"parameters"``: [`
-
-`{`
-
-`"name"``:` `"id"``,`
-
-`"value"``:` `"$.params[\"appc.arrowdb/acl\"].id"`
-
-`},`
-
-`{`
-
-`"name"``:` `"name"``,`
-
-`"value"``:` `"$.params[\"appc.arrowdb/acl\"].name"`
-
-`},`
-
-`{`
-
-`"name"``:` `"readers"``,`
-
-`"value"``:` `"$.params[\"appc.arrowdb/acl\"].readers"`
-
-`},`
-
-`{`
-
-`"name"``:` `"writers"``,`
-
-`"value"``:` `"$.params[\"appc.arrowdb/acl\"].writers"`
-
-`},`
-
-`{`
-
-`"name"``:` `"public_read"``,`
-
-`"value"``:` `"$.params[\"appc.arrowdb/acl\"].public_read"`
-
-`},`
-
-`{`
-
-`"name"``:` `"public_write"``,`
-
-`"value"``:` `"$.params[\"appc.arrowdb/acl\"].public_write"`
-
-`},`
-
-`{`
-
-`"name"``:` `"user"``,`
-
-`"value"``:` `"$.params[\"appc.arrowdb/acl\"].user"`
-
-`},`
-
-`{`
-
-`"name"``:` `"created_at"``,`
-
-`"value"``:` `"$.params[\"appc.arrowdb/acl\"].created_at"`
-
-`},`
-
-`{`
-
-`"name"``:` `"updated_at"``,`
-
-`"value"``:` `"$.params[\"appc.arrowdb/acl\"].updated_at"`
-
-`},`
-
-`{`
-
-`"name"``:` `"pretty_json"``,`
-
-`"value"``:` `"$.params[\"appc.arrowdb/acl\"].pretty_json"`
-
-`},`
-
-`{`
-
-`"name"``:` `"custom_fields"``,`
-
-`"value"``:` `"$.params[\"appc.arrowdb/acl\"].custom_fields"`
-
-`},`
-
-`{`
-
-`"name"``:` `"user_id"``,`
-
-`"value"``:` `"$.params[\"appc.arrowdb/acl\"].user_id"`
-
-`}`
-
-`],`
-
-`"response"``: {`
-
-`"context"``: {`
-
-`"$.model"``:` `"model"`
-
-`},`
-
-`"routes"``: [`
-
-`{`
-
-`"conditions"``: [`
-
-`{`
-
-`"key"``:` `"$.update"``,`
-
-`"eq"``:` `true`
-
-`}`
-
-`],`
-
-`"next"``:` `"response.success.update"`
-
-`},`
-
-`{`
-
-`"next"``:` `"response.success.create"`
-
-`}`
-
-`]`
-
-`}`
-
-`}`
+```
+"model.upsert": {
+ "type": "ModelUpsert",
+ "config": {
+   "model": "appc.arrowdb/acl"
+ },
+ "parameters": [
+   {
+     "name": "id",
+     "value": "$.params[\"appc.arrowdb/acl\"].id"
+   },
+   {
+     "name": "name",
+     "value": "$.params[\"appc.arrowdb/acl\"].name"
+   },
+   {
+     "name": "readers",
+     "value": "$.params[\"appc.arrowdb/acl\"].readers"
+   },
+   {
+     "name": "writers",
+     "value": "$.params[\"appc.arrowdb/acl\"].writers"
+   },
+   {
+     "name": "public_read",
+     "value": "$.params[\"appc.arrowdb/acl\"].public_read"
+   },
+   {
+     "name": "public_write",
+     "value": "$.params[\"appc.arrowdb/acl\"].public_write"
+   },
+   {
+     "name": "user",
+     "value": "$.params[\"appc.arrowdb/acl\"].user"
+   },
+   {
+     "name": "created_at",
+     "value": "$.params[\"appc.arrowdb/acl\"].created_at"
+   },
+   {
+     "name": "updated_at",
+     "value": "$.params[\"appc.arrowdb/acl\"].updated_at"
+   },
+   {
+     "name": "pretty_json",
+     "value": "$.params[\"appc.arrowdb/acl\"].pretty_json"
+   },
+   {
+     "name": "custom_fields",
+     "value": "$.params[\"appc.arrowdb/acl\"].custom_fields"
+   },
+   {
+     "name": "user_id",
+     "value": "$.params[\"appc.arrowdb/acl\"].user_id"
+   }
+ ],
+ "response": {
+   "context": {
+     "$.model": "model"
+   },
+   "routes": [
+     {
+       "conditions": [
+         {
+           "key": "$.update",
+           "eq": true
+         }
+       ],
+       "next": "response.success.update"
+     },
+     {
+       "next": "response.success.create"
+     }
+   ]
+ }
+}
+```

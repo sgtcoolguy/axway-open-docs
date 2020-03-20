@@ -14,26 +14,23 @@ The following code sample demonstrates how to gather device information and atta
 
 * location
 
-`aca.setMetadata(``'device'``, {`
-
-`orientation: Ti.Gesture.portrait ?` `'portrait'` `:` `'landscape'``,`
-
-`model: Ti.Platform.model,`
-
-`network_type: Ti.Network.networkTypeName,`
-
-`available_memory: Ti.Platform.availableMemory,`
-
-`total_memory: Ti.Platform.totalMemory,`
-
-`location: Ti.Geolocation.lastGeolocation`
-
-`});`
+```
+aca.setMetadata('device', {
+    orientation: Ti.Gesture.portrait ? 'portrait' : 'landscape',
+    model: Ti.Platform.model,
+    network_type: Ti.Network.networkTypeName,
+    available_memory: Ti.Platform.availableMemory,
+    total_memory: Ti.Platform.totalMemory,
+    location: Ti.Geolocation.lastGeolocation
+});
+```
 
 These data points can then be accessed through Query Builder by accessing the data.meta.device.<property>:
 
-obtaining device model
+*obtaining device model*
 
-`data.meta.device.model`
+```
+data.meta.device.model
+```
 
 ![Screen_Shot_2019-09-24_at_2.40.18_PM](/Images/appc/download/attachments/60148830/Screen_Shot_2019-09-24_at_2.40.18_PM.png)

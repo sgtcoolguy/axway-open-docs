@@ -20,45 +20,28 @@ You use popovers to present information temporarily, but in a way that does not 
 
 Popovers provide a way for you to display additional information associated with a particular UI component. This is shown in the picture above, in which event repetition options are shown as a row in a table. Within the popover, you can display a view or other component.
 
-`var button = Ti.UI.createButton({`
-
-`title:` `'Show popover'``,`
-
-`width:` `250``,`
-
-`height:` `50``,`
-
-`top:` `30``,`
-
-`right:` `5`
-
-`});`
-
-`var popover = Ti.UI.iPad.createPopover({`
-
-`width:` `300``,`
-
-`height:` `250``,`
-
-`title:` `'I\'m a Popover'``,`
-
-`arrowDirection: Ti.UI.iPad.POPOVER_ARROW_DIRECTION_RIGHT`
-
-`});`
-
-`button.addEventListener(``'click'``, function(e) {`
-
-`popover.show({`
-
-`view: button,`
-
-`animated:` `true`
-
-`});`
-
-`});`
-
-`win.add(button);`
+```javascript
+var button = Ti.UI.createButton({
+  title: 'Show popover',
+  width: 250,
+  height: 50,
+  top: 30,
+  right: 5
+});
+var popover = Ti.UI.iPad.createPopover({
+  width: 300,
+  height: 250,
+  title: 'I\'m a Popover',
+    arrowDirection: Ti.UI.iPad.POPOVER_ARROW_DIRECTION_RIGHT
+});
+button.addEventListener('click', function(e) {
+  popover.show({
+    view: button,
+    animated: true
+  });
+});
+win.add(button);
+```
 
 In the preceding code, line 16 creates the association between the button and the popover. It's this line that controls the placement of the popover. It will be placed automatically by iOS according to this association and the arrow direction. In this example, the arrow points to the right, which means the popover will be displayed to the left of the button. If you used POPOVER\_ARROW\_DIRECTION\_UP, the popover would be shown below the button.
 
@@ -70,71 +53,41 @@ A SplitWindow is a window that manages the presentation of two side-by-side view
 
 You cannot control the width of either of the view controllers, and the user cannot resize those "panes." A SplitWindow is a top-level container, which means you don't add it to a Ti.UI.Window. The SplitWindow inherits from the Window object.
 
-`// Window shown in narrower, left "pane"`
-
-`var masterWin = Ti.UI.createWindow({`
-
-`backgroundColor:` `'#fff'`
-
-`});`
-
-`masterWin.add(Ti.UI.createLabel({`
-
-`text:` `'Master View'``,`
-
-`top:` `10``,`
-
-`height:` `'Ti.UI.SIZE'``,`
-
-`font: {`
-
-`textAlign:` `'center'``,`
-
-`fontWeight:` `'bold'`
-
-`}`
-
-`}));`
-
-`// Window shown in wider, right "pane"`
-
-`var detailWin = Ti.UI.createWindow({`
-
-`backgroundColor:` `'#dfdfdf'`
-
-`});`
-
-`detailWin.add(Ti.UI.createLabel({`
-
-`text:` `'Detail View'``,`
-
-`top:` `10``,`
-
-`height:` `'Ti.UI.SIZE'``,`
-
-`font: {`
-
-`textAlign:` `'center'``,`
-
-`fontWeight:` `'bold'`
-
-`}`
-
-`}));`
-
-`// the split window`
-
-`var splitwin = Ti.UI.iPad.createSplitWindow({`
-
-`detailView: detailWin,`
-
-`masterView: masterWin,`
-
-`orientationModes: [ Titanium.UI.LANDSCAPE_LEFT,Titanium.UI.LANDSCAPE_RIGHT ]`
-
-`});`
-
-`splitwin.open();`
+```javascript
+// Window shown in narrower, left "pane"
+var masterWin = Ti.UI.createWindow({
+  backgroundColor: '#fff'
+});
+masterWin.add(Ti.UI.createLabel({
+  text: 'Master View',
+  top: 10,
+  height: 'Ti.UI.SIZE',
+  font: {
+    textAlign: 'center',
+    fontWeight: 'bold'
+  }
+}));
+// Window shown in wider, right "pane"
+var detailWin = Ti.UI.createWindow({
+  backgroundColor: '#dfdfdf'
+});
+detailWin.add(Ti.UI.createLabel({
+  text: 'Detail View',
+  top: 10,
+  height: 'Ti.UI.SIZE',
+  font: {
+    textAlign: 'center',
+    fontWeight: 'bold'
+  }
+}));
+// the split window
+var splitwin = Ti.UI.iPad.createSplitWindow({
+    detailView: detailWin,
+    masterView: masterWin,
+    orientationModes: [ Titanium.UI.LANDSCAPE_LEFT,Titanium.UI.LANDSCAPE_RIGHT ]
+});
+splitwin.open();
+```
 
 ### Badges
 
@@ -146,33 +99,24 @@ Tab and app badges are indicators of updates, new messages, and so forth. You ca
 
 To remove either a tab or app badge, set the corresponding property to null. Setting it to 0 would still display the badge, but with the number zero displayed.
 
-`// Sets the app's icon badge to 23`
+```javascript
+// Sets the app's icon badge to 23
+Ti.UI.iOS.appBadge = 23;
 
-`Ti.UI.iOS.appBadge =` `23``;`
+var tabGroup = Ti.UI.createTabGroup();
+var win1 = Ti.UI.createWindow({
+    title: 'Window 1',
+    backgroundColor: '#fff'
+});
 
-`var tabGroup = Ti.UI.createTabGroup();`
-
-`var win1 = Ti.UI.createWindow({`
-
-`title:` `'Window 1'``,`
-
-`backgroundColor:` `'#fff'`
-
-`});`
-
-`// Set the badge for this tab to 10`
-
-`var tab1 = Ti.UI.createTab({`
-
-`icon:` `'myIcon.png'``,`
-
-`title:` `'Tab 1'``,`
-
-`window: win1,`
-
-`badge:` `10`
-
-`});`
+// Set the badge for this tab to 10
+var tab1 = Ti.UI.createTab({
+    icon: 'myIcon.png',
+    title: 'Tab 1',
+    window: win1,
+    badge: 10
+});
+```
 
 ### Settings integration
 
@@ -210,7 +154,9 @@ In the Xcode Property List editor, you'll see the app's name defined in Item 0. 
 
 In your app, you can access the values of these app preferences by using Titanium's App Properties module with one minor tweak. The name of the app property you retrieve must match the value you set in the Identifier field in the Property List editor. You'll note that all the KitchenSink examples include the "\_preference" suffix, which you should also include with your identifiers.
 
-`Ti.API.info(Ti.App.Properties.getString(``'name_preference'``));` `// logs the name pref value from KitchenSink example`
+```
+Ti.API.info(Ti.App.Properties.getString('name_preference')); // logs the name pref value from KitchenSink example
+```
 
 ### Hands-on Practice
 

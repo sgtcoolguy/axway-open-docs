@@ -8,27 +8,23 @@ The 1.1.4 release of Appcelerator Cloud Services includes the following updates 
 
     * For example, the following shows an example cURL request and response for the number of Photos:
 
-        `$ curl -b cookies.txt -c cookies.txt` `"https://api.cloud.appcelerator.com/v1/photos/count.json?key=<YOUR_APP_KEY>&pretty_json=true"`
+        ```
+        $ curl -b cookies.txt -c cookies.txt "https://api.cloud.appcelerator.com/v1/photos/count.json?key=<YOUR_APP_KEY>&pretty_json=true"
+        ```
 
     * Example response:
 
-        `{`
-
-        `"meta"``: {`
-
-        `"code"``: 200,`
-
-        `"status"``:` `"ok"``,`
-
-        `},`
-
-        `"response"``: {`
-
-        `"photos"``: 10.0`
-
-        `}`
-
-        `}`
+        ```
+        {
+          "meta": {
+            "code": 200,
+            "status": "ok",
+          },
+          "response": {
+            "photos": 10.0
+          }
+        }
+        ```
 
 ## Bug fixes
 

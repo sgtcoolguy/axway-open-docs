@@ -62,13 +62,13 @@ Make sure the _rublename_ you choose below is unique to all your installed ruble
 
 5. Add a bundle.rb file with the following content:
 
-    `require` `'ruble'`
+    ```
+    require 'ruble'
 
-    `bundle` `do` `|bundle|`
-
-    `bundle.display_name =` `'My Ruble'`
-
-    `end`
+    bundle do |bundle|
+      bundle.display_name = 'My Ruble'
+    end
+    ```
 
 6. Save and close bundle.rb
 

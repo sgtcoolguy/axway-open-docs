@@ -132,15 +132,13 @@ Studio 3.1.0 and later supports content assistance with Alloy files. Currently, 
 
 For Alloy Controllers, if you type in an element referenced by an id attribute in the associated view file, a pop-up should appear providing assistance for that object. For example, if you have the following defined in markup:
 
-`<Alloy>`
-
-`<Window id=``"win"`  `class``=``"container"``>`
-
-`<Label id=``"label"``>Foo</Label>`
-
-`</Window>`
-
-`</Alloy>`
+```xml
+<Alloy>
+    <Window id="win" class="container">
+        <Label id="label">Foo</Label>
+    </Window>
+</Alloy>
+```
 
 In the associated controller file, if you type $.win. (with the trailing period), properties and methods for a Ti.UI.Window class pop-up, and if you type $.label., properties and methods for a Ti.UI.Label class pop-up. You need to type the entire name to receive assistance.
 

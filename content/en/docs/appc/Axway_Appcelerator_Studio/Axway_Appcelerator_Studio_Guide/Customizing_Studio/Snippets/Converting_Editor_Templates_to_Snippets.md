@@ -36,19 +36,15 @@ The editor template should be in an XML format. The top-level XML node should be
 
 Here is an example of an editor template with a single entry:
 
-`<?xml version=``"1.0"` `encoding=``"UTF-8"``?>`
-
-`<templates>`
-
-`<template autoinsert=``"true"` `context=``"com.aptana.ide.editors.contextType.text/javascript"` `deleted=``"false"` `description=``"Function"` `enabled=``"true"`
-
-`id=``"com.aptana.ide.editors.js.templates.function.tm"` `name=``"fun"``>function ${name} (${args}) {`
-
-`${cursor}`
-
-`}</template>`
-
-`</templates>`
+```javascript
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+<template autoinsert="true" context="com.aptana.ide.editors.contextType.text/javascript" deleted="false" description="Function" enabled="true"
+        id="com.aptana.ide.editors.js.templates.function.tm" name="fun">function ${name} (${args}) {
+  ${cursor}
+}</template>
+</templates>
+```
 
 ## Converting a template entry
 
@@ -66,14 +62,11 @@ The description attribute of "Function" also corresponds to the description of t
 
 The snippet for the template would look like:
 
-`snippet` `"Function"`  `do` `|s|`
-
-`s.trigger =` `"fun"`
-
-`s.expansion = "function ${``1``:name} (${``2``:args}) {`
-
-`${``3``:cursor}`
-
-`}"`
-
-`end`
+```javascript
+snippet "Function" do |s|
+  s.trigger = "fun"
+  s.expansion = "function ${1:name} (${2:args}) {
+  ${3:cursor}
+}"
+end
+```

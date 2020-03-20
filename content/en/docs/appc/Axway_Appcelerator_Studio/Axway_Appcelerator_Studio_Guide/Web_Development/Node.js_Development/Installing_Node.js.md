@@ -22,4 +22,6 @@ If you run into issues installing or configuring Node.js, below are some common 
 
 Studio installs a version of NPM (Node Package Manager) by default, but if you installed Node yourself, you might not have done so already. Execute the following command:
 
-`curl https:``//npmjs.org/install.sh | sh`
+```
+curl https://npmjs.org/install.sh | sh
+```

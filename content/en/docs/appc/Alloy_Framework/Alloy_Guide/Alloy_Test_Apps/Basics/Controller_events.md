@@ -2,7 +2,7 @@
 
 Demonstrates using [Backbone events](http://backbonejs.org/#Events) to communicate between view-controllers.
 
-App Folder Location
+*App Folder Location*
 
 alloy/test/apps/**basics/controller\_events**
 
@@ -10,35 +10,29 @@ alloy/test/apps/**basics/controller\_events**
 
 The main XML view consists of a TextField and two buttons, labeled "Fire Event" and "Remove Listener". When the user clicks "Fire Event" the required CustomView view-controller uses the Backbone library's trigger() method to generate an event named **someEvent.** The event object includes a field named message field that contains the text entered in the TextField.
 
-app/controllers/CustomView.js
+*app/controllers/CustomView.js*
 
-`function fireEvent(e) {`
-
-`$.trigger(``'someEvent'``, {`
-
-`message:$.text.value`
-
-`});`
-
-`}`
+```javascript
+function fireEvent(e) {
+  $.trigger('someEvent', {
+    message:$.text.value
+  });
+}
+```
 
 The main application view-controller binds a callback function named **handler** to the someEvent event, and displays the message enter in the TextField. It also provides a button that un-binds the handler from the same event.
 
-app/controllers/index.js
+*app/controllers/index.js*
 
-`function handler(e) {`
-
-`alert(``'got this from custom event: '``+e.message);`
-
-`}`
-
-`function removeListener() {`
-
-`$.requiredController.off(``'someEvent'``, handler);`
-
-`}`
-
-`$.requiredController.on(``'someEvent'``, handler);`
+```javascript
+function handler(e) {
+  alert('got this from custom event: '+e.message);
+}
+function removeListener() {
+  $.requiredController.off('someEvent', handler);
+}
+$.requiredController.on('someEvent', handler);
+```
 
 ## See Also
 

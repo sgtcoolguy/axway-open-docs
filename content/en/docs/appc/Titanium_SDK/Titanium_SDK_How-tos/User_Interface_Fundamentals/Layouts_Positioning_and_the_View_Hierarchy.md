@@ -92,25 +92,23 @@ Supported units are:
 
 You would use these units of measurement like this:
 
-`var` `view = Ti.UI.createView({`
-
-`/* You would not normally mix units like this */`
-
-`top:` `'10mm'``,`
-
-`left:` `'5px'``,`
-
-`width:` `'30%'``,`
-
-`height: 50` `/* default units are used here */`
-
-`});`
+```javascript
+var view = Ti.UI.createView({
+  /* You would not normally mix units like this */
+  top: '10mm',
+  left: '5px',
+  width: '30%',
+  height: 50 /* default units are used here */
+});
+```
 
 #### Setting default units in tiapp.xml
 
 You can specify the default unit type to use with untyped values. In the tiapp.xml file, you would add:
 
-`<property name=``"ti.ui.defaultunit"` `type=``"string"``>value</property>`
+```xml
+<property name="ti.ui.defaultunit" type="string">value</property>
+```
 
 Where value can be set to px, mm, cm, in, dp, dip, or system. The "system" value corresponds to the platform-dependent system unit as described above. If you do not specify this property in the tiapp.xml, then the units default to "system".
 
@@ -158,75 +156,44 @@ In the following example, the red view is positioned at the 20,20 point relative
 
 ![layout](/Images/appc/download/attachments/29004895/layout.png)
 
-Positioning
+*Positioning*
 
-`var` `win = Ti.UI.createWindow({`
-
-`backgroundColor:` `'#fff'`
-
-`});`
-
-`var` `redview = Ti.UI.createView({`
-
-`top: 20,`
-
-`left: 20,`
-
-`width: 10,`
-
-`height: 10,`
-
-`backgroundColor:` `"red"`
-
-`});`
-
-`win.add(redview);`
-
-`var` `yellowview = Ti.UI.createView({`
-
-`bottom: 100,`
-
-`right: 100,`
-
-`width: 10,`
-
-`height: 10,`
-
-`backgroundColor:` `"yellow"`
-
-`});`
-
-`win.add(yellowview);`
-
-`var` `blueview = Ti.UI.createView({`
-
-`center: {x: 160, y: 240},`
-
-`width: 50,`
-
-`height: 50,`
-
-`backgroundColor:` `"blue"`
-
-`});`
-
-`win.add(blueview);`
-
-`var` `greenview = Ti.UI.createView({`
-
-`top: -20,`
-
-`width: 10,`
-
-`height: 10,`
-
-`backgroundColor:` `"green"`
-
-`});`
-
-`win.add(greenview);`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow({
+  backgroundColor: '#fff'
+});
+var redview = Ti.UI.createView({
+    top: 20,
+  left: 20,
+    width: 10,
+    height: 10,
+    backgroundColor: "red"
+});
+win.add(redview);
+var yellowview = Ti.UI.createView({
+    bottom: 100,
+  right: 100,
+    width: 10,
+    height: 10,
+    backgroundColor: "yellow"
+});
+win.add(yellowview);
+var blueview = Ti.UI.createView({
+  center: {x: 160, y: 240},
+  width: 50,
+  height: 50,
+  backgroundColor: "blue"
+});
+win.add(blueview);
+var greenview = Ti.UI.createView({
+    top: -20,
+    width: 10,
+    height: 10,
+    backgroundColor: "green"
+});
+win.add(greenview);
+win.open();
+```
 
 ### Layout modes
 
@@ -241,71 +208,43 @@ Titanium Windows and Views can employ one of three layout modes by setting its l
 Here's an example of these layouts in action:
 ![vert_and_horiz](/Images/appc/download/attachments/29004895/vert_and_horiz.png)
 
-Layout modes
+*Layout modes*
 
-`var` `win = Ti.UI.createWindow({`
+```javascript
+var win = Ti.UI.createWindow({
+  backgroundColor:'#fff'
+});
+// uses grid-drawing module from https://gist.github.com/1187384
+// to draw grid lines every 20 points
+var grid = require('gridlines');
+grid.drawgrid(20,win);
+// draw a view that fills the window and set its layout property
+var view = Ti.UI.createView({
+  backgroundColor: 'transparent',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%',
+  layout: 'vertical'
+});
+// simple function for making colored boxes
+function makeView(color) {
+  return Ti.UI.createView({
+      top: 20,
+    left: 20,
+      width: 20,
+      height: 20,
+      backgroundColor: color
+  });
+}
+view.add(makeView('red'));
+view.add(makeView('yellow'));
+view.add(makeView('blue'));
+view.add(makeView('green'));
 
-`backgroundColor:``'#fff'`
-
-`});`
-
-`// uses grid-drawing module from https://gist.github.com/1187384`
-
-`// to draw grid lines every 20 points`
-
-`var` `grid = require(``'gridlines'``);`
-
-`grid.drawgrid(20,win);`
-
-`// draw a view that fills the window and set its layout property`
-
-`var` `view = Ti.UI.createView({`
-
-`backgroundColor:` `'transparent'``,`
-
-`top: 0,`
-
-`left: 0,`
-
-`width:` `'100%'``,`
-
-`height:` `'100%'``,`
-
-`layout:` `'vertical'`
-
-`});`
-
-`// simple function for making colored boxes`
-
-`function` `makeView(color) {`
-
-`return` `Ti.UI.createView({`
-
-`top: 20,`
-
-`left: 20,`
-
-`width: 20,`
-
-`height: 20,`
-
-`backgroundColor: color`
-
-`});`
-
-`}`
-
-`view.add(makeView(``'red'``));`
-
-`view.add(makeView(``'yellow'``));`
-
-`view.add(makeView(``'blue'``));`
-
-`view.add(makeView(``'green'``));`
-
-`win.add(view);`
-
-`win.open();`
+win.add(view);
+win.open();
+```
 
 ### Auto-size behaviors
 

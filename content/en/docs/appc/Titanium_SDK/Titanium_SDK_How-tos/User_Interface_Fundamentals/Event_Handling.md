@@ -42,15 +42,13 @@ In this chapter, you will learn how to capture and fire events. You'll also lear
 
 Events are actions that can be detected by JavaScript. Such actions might be user-initiated, like taps or swipes, or system-initiated, like when an app is paused. Your app can capture and react to any of these events. You specify which components in your app should "listen" for events with the addEventListener() function. Assigning an event listener follows this pattern:
 
-`element.addEventListener(``'event_type'``,` `function``(e) {`
-
-`// code here is run when the event is fired`
-
-`// properties of the event object 'e' describe the event and object that received it`
-
-`Ti.API.info(``'The '``+e.type+``' event happened'``);`
-
-`});`
+```
+element.addEventListener('event_type', function(e) {
+  // code here is run when the event is fired
+  // properties of the event object 'e' describe the event and object that received it
+  Ti.API.info('The '+e.type+' event happened');
+});
+```
 
 As seen above, the first parameter specifies the type of event for which we are listening. In this case, event\_type on the element component. The second parameter is a callback function that will be executed whenever the event is fired.
 
@@ -84,19 +82,16 @@ You can assign more than one event listener to a component. For example, a table
 
 While the general form above uses an anonymous (unnamed) function, you can use a named function as well. Typically, you would do so if you wanted to reuse the function in more than one event handler or in response to more than one type of event. Let's say you had two buttons that when clicked would perform identical operations. Rather than writing duplicate anonymous functions for each button, you could create a named function that is called instead.
 
-`function` `doSomething(e) {`
+```javascript
+function doSomething(e) {
+  // This function will be called by multiple handlers
+  // The event object is accessible within this function
+  Ti.API.info('The '+e.type+' event happened');
+}
 
-`// This function will be called by multiple handlers`
-
-`// The event object is accessible within this function`
-
-`Ti.API.info(``'The '``+e.type+``' event happened'``);`
-
-`}`
-
-`button1.addEventListener(``'click'``, doSomething);`
-
-`button2.addEventListener(``'click'``, doSomething)`
+button1.addEventListener('click', doSomething);
+button2.addEventListener('click', doSomething)
+```
 
 Tip: A UI element must have its touchEnabled property set to true for it to react to touch-related events (click, singletap, etc.). In most cases, UI components default to this value being true. However, if you find an element that won't respond to an event, try setting touchEnabled=true to see if that helps. If a view has touchEnabled set to false, touch events pass to the next view in the stack (for example, an underlying sibling view or parent view).
 
@@ -175,23 +170,29 @@ In addition, all views and view-like objects have a new bubbleParent property, w
 
 You can fire events rather than waiting around for the user or system to initiate them. For example, you could simulate a button press by firing that button's click event. You'd use code like this:
 
-`someButton.fireEvent(``'click'``);`
+```
+someButton.fireEvent('click');
+```
 
 or if you wanted to pass data along with the event:
 
-`someButton.fireEvent(``'click'``, {kitchen:` `'sink'``});`
+```
+someButton.fireEvent('click', {kitchen: 'sink'});
+```
 
 As shown, you can also pass JSON-serializable data when firing events. You simply include an object (without methods) as the second parameter of the fireEvent() function. That parameter is optional and can be omitted. Members of the passed object become available via the event object in the listener. For example, the following code:
 
-`someButton.addEventListener(``'click'``, function(e){`
-
-`Ti.APP.info(``'The value of kitchen is '``+e.kitchen);`
-
-`});`
+```
+someButton.addEventListener('click', function(e){
+  Ti.APP.info('The value of kitchen is '+e.kitchen);
+});
+```
 
 would output this to the Titanium console:
 
-`[INFO] The value of kitchen is sink`
+```
+[INFO] The value of kitchen is sink
+```
 
 ### Custom events
 
@@ -199,25 +200,18 @@ Manually firing a click event demonstrates the flexibility of Titanium's event s
 
 Do **NOT** name your events with spaces, for example, "my event". This may cause your events to fire multiple times with other JavaScript libraries, such as Backbone.js, which uses spaces to delimit events.
 
-`deleteButton.addEventListener(``'click'``,` `function``(e){`
-
-`// when something happens in your app`
-
-`database.doDelete(e.whichRecord);`
-
-`// fire an event so components can react`
-
-`theTable.fireEvent(``'db_updated'``);`
-
-`});`
-
-`// ... elsewhere in your code`
-
-`theTable.addEventListener(``'db_updated'``,` `function``(e){`
-
-`theTable.setData(database.getCurrentRecords());`
-
-`});`
+```
+deleteButton.addEventListener('click', function(e){
+  // when something happens in your app
+  database.doDelete(e.whichRecord);
+  // fire an event so components can react
+  theTable.fireEvent('db_updated');
+});
+// ... elsewhere in your code
+theTable.addEventListener('db_updated', function(e){
+  theTable.setData(database.getCurrentRecords());
+});
+```
 
 An event fired and listened for in this manner is associated with one particular component. Sometimes you'll want more than one component to be able to react to custom events. You could fire a whole bunch of component-level events. Or, you can use application-level events.
 
@@ -225,27 +219,19 @@ An event fired and listened for in this manner is associated with one particular
 
 App-level events are global to your app. They are accessible in all contexts, functional scopes, CommonJS modules, and so forth. You fire them and listen for them via the Ti.App module. They're tailor made for sending custom events across contexts. Updating the previous code sample to use app-level events gets us this:
 
-`deleteButton.addEventListener(``'click'``,` `function``(e){`
-
-`// when something happens in your app`
-
-`database.doDelete(e.whichRecord);`
-
-`// fire a global event so components can react`
-
-`Ti.App.fireEvent(``'db_updated'``);`
-
-`});`
-
-`// ... elsewhere in your code`
-
-`Ti.App.addEventListener(``'db_updated'``,` `function``(e){`
-
-`theTable.setData(database.getCurrentRecords());`
-
-`someOtherComponent.doSomethingElse();`
-
-`});`
+```
+deleteButton.addEventListener('click', function(e){
+  // when something happens in your app
+  database.doDelete(e.whichRecord);
+  // fire a global event so components can react
+  Ti.App.fireEvent('db_updated');
+});
+// ... elsewhere in your code
+Ti.App.addEventListener('db_updated', function(e){
+  theTable.setData(database.getCurrentRecords());
+  someOtherComponent.doSomethingElse();
+});
+```
 
 Keep in mind that app-level events are global, which means they remain in context the entire time your app is running (unless you remove them). This also means that any objects they reference will also remain in scope while your app runs. This could prevent those objects from being garbage collected. See the [Managing Memory and Finding Leaks](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Debugging_and_Profiling/Managing_Memory_and_Finding_Leaks/) chapter for more information.
 
@@ -255,19 +241,15 @@ You can remove an event listener, thereby preventing the associated component fr
 
 To remove an event listener, you have to pass a reference to the function that was specified when you added the event listener. In other words, the function signature passed to addEventListener() and removeEventListener() must match. The easiest way to do this is to use a named function in the addEventListener() statement so you can also pass that same function name to remove the listener.
 
-`function` `doSomething(e) {`
-
-`// do something`
-
-`}`
-
-`deleteButton.addEventListener(``'click'``, doSomething);`
-
-`// ... elsewhere in your code ...`
-
-`deleteButton.removeEventListener(``'click'``, doSomething);`
-
-`});`
+```javascript
+function doSomething(e) {
+  // do something
+}
+deleteButton.addEventListener('click', doSomething);
+// ... elsewhere in your code ...
+deleteButton.removeEventListener('click', doSomething);
+});
+```
 
 ### Special events
 

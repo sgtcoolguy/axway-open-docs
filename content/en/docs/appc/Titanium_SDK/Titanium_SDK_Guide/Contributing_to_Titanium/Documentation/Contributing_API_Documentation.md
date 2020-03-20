@@ -36,9 +36,10 @@ Python and some of its libraries must be installed to build the Titanium's API D
 
 You can build the basic HTML version of the Titanium docs using the docgen.py script, as follows:
 
-`cd /path/to/titanium_mobile/apidoc`
-
-`python ./docgen.py`
+```
+cd /path/to/titanium_mobile/apidoc
+python ./docgen.py
+```
 
 The HTML files are then output to the /path/to/titanium\_mobile/dist/apidoc directory, with the index page at dist/apidoc/index.html.
 
@@ -46,21 +47,25 @@ The HTML files are then output to the /path/to/titanium\_mobile/dist/apidoc dire
 
 After changes have been made to the API Doc source, it's important to verify that the code is free from errors using the validate.py script:
 
-`cd /path/to/titanium_mobile/apidoc`
-
-`python ./validate.py`
+```
+cd /path/to/titanium_mobile/apidoc
+python ./validate.py
+```
 
 ### Validating on Windows
 
 On Windows, as Command Line program cannot handle the UTF-8 characters of the validation report, the following error may be displayed:
 
-`UnicodeEncodeError:` `'charmap'` `codec can``'t encode character u'``\u2713' in position` `1``: character maps to <undefined>`
+```
+UnicodeEncodeError: 'charmap' codec can't encode character u'\u2713' in position 1: character maps to <undefined>
+```
 
 A workaround for this is to only display a simple report, using the following command:
 
-`cd /path/to/titanium_mobile/apidoc`
-
-`python validate.py --errors-only --style=simple`
+```
+cd /path/to/titanium_mobile/apidoc
+python validate.py --errors-only --style=simple
+```
 
 ## Submitting Contributions
 

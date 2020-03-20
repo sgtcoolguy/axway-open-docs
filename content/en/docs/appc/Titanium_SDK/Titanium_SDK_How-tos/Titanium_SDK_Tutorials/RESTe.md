@@ -22,47 +22,35 @@ The idea for RESTe came from a requirement Jason had when developing Titanium ap
 
 When developing apps before RESTe, Jason says he would use an api.js module that had basic GET, POST methods, then write specific code per project, like this:
 
-`exports.getPreviousLocations =` `function``(callback) {`
+```javascript
+exports.getPreviousLocations = function(callback) {
+    var Rest = new Api(Alloy.CFG.baseURL + “users/“ + token + “/previouslocations”);
 
-`var` `Rest =` `new` `Api(Alloy.CFG.baseURL + “users/“ + token + “/previouslocations”);`
-
-`Rest.get(``function``(e) {`
-
-`processResponse(e,` `function``() {`
-
-`callback(e.result);`
-
-`});`
-
-`});`
-
-`};`
+    Rest.get(function(e) {
+        processResponse(e, function() {
+            callback(e.result);
+        });
+    });
+};
+```
 
 or this:
 
-`exports.updateUser =` `function``(name, email, password, callback) {`
+```javascript
+exports.updateUser = function(name, email, password, callback) {
+    var Rest = new Api(Alloy.CFG.baseURL + “users/“ + token);
 
-`var` `Rest =` `new` `Api(Alloy.CFG.baseURL + “users/“ + token);`
-
-`Rest.post(JSON.stringify({`
-
-`“name” : name,`
-
-`“email” : email,`
-
-`“password” : password`
-
-`}),` `function``(e) {`
-
-`processResponse(e,` `function``( ) {`
-
-`callback(e);`
-
-`});`
-
-`});`
-
-`};`
+    Rest.post(JSON.stringify({
+        “name” : name,
+        “email” : email,
+        “password” : password
+    }), function(e) {
+        processResponse(e, function( ) {
+            callback(e);
+        });
+    });
+};
+```
 
 ## RESTe
 
@@ -72,129 +60,80 @@ Getting started is simple — run this in the root of your Alloy project: npm in
 
 Then, configuring a basic setup is a case of initializing a configuration in the alloy.js file, in this case:
 
-`var` `reste = require(``"reste"``);`
+```javascript
+var reste = require("reste");
+var api = new reste();
 
-`var` `api =` `new` `reste();`
+// now we can do our one-time configure
+api.config({
+    debug: true, // allows logging to console of ::REST:: messages
+    errorsAsObjects: true, // Default: false. New in 1.4.5, will break 1.4.4 apps that handle errors
+    autoValidateParams: false, // set to true to throw errors if url properties are not passed
+    validatesSecureCertificate: false, // Optional: If not specified, default behaviour from http://goo.gl/sJvxzS is kept.
+    timeout: 4000,
+    url: "https://api.parse.com/1/",
+    requestHeaders: {
+        “X-Parse-Application-Id”: “APPID”,
+        “X-Parse-REST-API-Key”: “RESTID”,
+        “Content-Type”: “application/json”
+    },
+    methods: [{
+        name: “courses”,
+        post: “functions/getCourses”,
+        onError: function(e, callback, globalOnError){
+          alert(“There was an error getting the courses!”);
+        }
+    }, {
+        name: “getVideos”,
+        get: “classes/videos”
+    }, {
+        name: “getVideoById”,
+        get: “classes/videos/”
+    }, {
+        name: “addVideo”,
+        post: “classes/videos”
+    }],
+    onError: function(e, retry) {
+        var dialog = Ti.UI.createAlertDialog({
+            title: “Connection error”,
+            message: “There was an error connecting to the server, check your network connection and  retry.”,
+            buttonNames: [‘Retry’]
+        });
 
-`// now we can do our one-time configure`
-
-`api.config({`
-
-`debug:` `true``,` `// allows logging to console of ::REST:: messages`
-
-`errorsAsObjects:` `true``,` `// Default: false. New in 1.4.5, will break 1.4.4 apps that handle errors`
-
-`autoValidateParams:` `false``,` `// set to true to throw errors if url properties are not passed`
-
-`validatesSecureCertificate:` `false``,` `// Optional: If not specified, default behaviour from http://goo.gl/sJvxzS is kept.`
-
-`timeout: 4000,`
-
-`url:` `"https://api.parse.com/1/"``,`
-
-`requestHeaders: {`
-
-`“X-Parse-Application-Id”: “APPID”,`
-
-`“X-Parse-REST-API-Key”: “RESTID”,`
-
-`“Content-Type”: “application/json”`
-
-`},`
-
-`methods: [{`
-
-`name: “courses”,`
-
-`post: “functions/getCourses”,`
-
-`onError:` `function``(e, callback, globalOnError){`
-
-`alert(“There was an error getting the courses!”);`
-
-`}`
-
-`}, {`
-
-`name: “getVideos”,`
-
-`get: “classes/videos”`
-
-`}, {`
-
-`name: “getVideoById”,`
-
-`get: “classes/videos/”`
-
-`}, {`
-
-`name: “addVideo”,`
-
-`post: “classes/videos”`
-
-`}],`
-
-`onError:` `function``(e, retry) {`
-
-`var` `dialog = Ti.UI.createAlertDialog({`
-
-`title: “Connection error”,`
-
-`message: “There was an error connecting to the server, check your network connection and retry.”,`
-
-`buttonNames: [‘Retry’]`
-
-`});`
-
-`dialog.addEventListener(“click”,` `function``() {`
-
-`retry();`
-
-`});`
-
-`dialog.show();`
-
-`},`
-
-`onLoad:` `function``(e, callback) {`
-
-`callback(e);`
-
-`}`
-
-`});`
+        dialog.addEventListener(“click”, function() {
+            retry();
+        });
+        dialog.show();
+    },
+    onLoad: function(e, callback) {
+        callback(e);
+    }
+});
+```
 
 Once you’ve setup the config, you have these auto generated methods you can call:
 
-`api.getVideoById({`
-
-`videoId: “fUAM4ZFj9X”`
-
-`},` `function``(video) {`
-
-`// do stuff with the video`
-
-`});`
+```
+api.getVideoById({
+    videoId: “fUAM4ZFj9X”
+}, function(video) {
+    // do stuff with the video
+});
+```
 
 and:
 
-`api.updateVideo({`
-
-`objectId: “123”,`
-
-`body: {`
-
-`categoryId: 2,`
-
-`name: “My Video2”`
-
-`}`
-
-`},` `function``(video) {`
-
-`// do stuff with the video`
-
-`});`
+```
+api.updateVideo({
+    objectId: “123”,
+    body: {
+        categoryId: 2,
+        name: “My Video2”
+    }
+}, function(video) {
+    // do stuff with the video
+});
+```
 
 RESTe allows you to make it work with almost any API no matter how it’s written — it doesn’t have to be a “pure” REST-based API.
 
@@ -206,79 +145,45 @@ One of the most powerful features of RESTe is its support for Backbone.js Models
 
 By adding some entries to the RESTe configuration, you can add full support for Backbone.js Models and Collections:
 
-` models: [{`
-
-`name:` `"location"``,`
-
-`id:` `"objectId"``,`
-
-`read:` `"getLocation"``,`
-
-`//content: "results" < - use this is your method returns an array object`
-
-`create:` `"createLocation"``,`
-
-`update:` `"updateLocation"``,`
-
-`delete``:` `"deleteLocation"``,`
-
-`collections: [{`
-
-`name:` `"locations"``,`
-
-`content:` `"results"``,`
-
-`read:` `"getLocations"`
-
-`}, {`
-
-`name:` `"locationsByName"``,`
-
-`content:` `"results"``,`
-
-`read:` `"getLocationsByName"`
-
-`}],`
-
-`}],`
-
-`methods: [{`
-
-`name:` `"getLocations"``,`
-
-`get:` `"classes/locations"`
-
-`}, {`
-
-`name:` `"getLocation"``,`
-
-`get:` `"classes/locations/"`
-
-`},{`
-
-`name:` `"getLocationsByName"``,`
-
-`get:` `'classes/locations?where={"name": ""}'`
-
-`}, {`
-
-`name:` `"updateLocation"``,`
-
-`put:` `"classes/locations/"`
-
-`}, {`
-
-`name:` `"createLocation"``,`
-
-`post:` `"classes/locations/"`
-
-`}, {`
-
-`name:` `"deleteLocation"``,`
-
-`delete``:` `"classes/locations/"`
-
-`}]`
+```
+models: [{
+   name: "location",
+   id: "objectId",
+   read: "getLocation",
+   //content: "results" < - use this is your method returns an array object
+   create: "createLocation",
+   update: "updateLocation",
+   delete: "deleteLocation",
+   collections: [{
+     name: "locations",
+     content: "results",
+     read: "getLocations"
+   }, {
+     name: "locationsByName",
+     content: "results",
+     read: "getLocationsByName"
+   }],
+ }],
+ methods: [{
+   name: "getLocations",
+   get: "classes/locations"
+ }, {
+   name: "getLocation",
+   get: "classes/locations/"
+ },{
+   name: "getLocationsByName",
+   get: 'classes/locations?where={"name": ""}'
+ }, {
+   name: "updateLocation",
+   put: "classes/locations/"
+ }, {
+   name: "createLocation",
+   post: "classes/locations/"
+ }, {
+   name: "deleteLocation",
+   delete: "classes/locations/"
+ }]
+```
 
 This includes support for fetching, data-binding, transformations and even Backbone.js events like sync, change, and so on.
 
@@ -288,17 +193,14 @@ So after configuring the example above, you can drop this into a controller:
 
 And the this into the View XML:
 
-`<``TableView` `dataCollection=“locations” onClick=“selectLocation”>`
-
-`<``TableViewRow` `id=“locationRow” model=“{objectId}” >`
-
-`<``Label` `class=“title” top=“10”left=“20” text=“{name}”/>`
-
-`<``Label` `class=“subTitle” bottom=“10” left=“20” text=“{address}”/>`
-
-`</``TableViewRow``>`
-
-`</``TableView``>`
+```xml
+<TableView dataCollection=“locations” onClick=“selectLocation”>
+  <TableViewRow id=“locationRow” model=“{objectId}” >
+    <Label class=“title” top=“10”left=“20” text=“{name}”/>
+    <Label class=“subTitle” bottom=“10” left=“20” text=“{address}”/>
+  </TableViewRow>
+</TableView>
+```
 
 You can even fetch based on parameters, or add sorting and much more.
 

@@ -32,21 +32,16 @@ You can also set variables into the same hash:
 
 * Example:
 
-    `template` `"XXX Template"`  `do` `|t|`
-
-    `t.filetype =` `"*.xxx"`
-
-    `t.invoke` `do` `|context|`
-
-    `ENV[``'TM_DATE'``] = Time.now.strftime(``"%Y-%m-%d"``)`
-
-    `raw_contents = IO.read(``"#{File.dirname(ENV['TM_BUNDLE_SUPPORT'])}/templates/yyy.xxx"``)`
-
-    `raw_contents.gsub(/\$\{([Creating a` `new` `template^}]*)\}/) {|match| ENV[match[``2``..-``2``]] }`
-
-    `end`
-
-    `end`
+    ```
+    template "XXX Template" do |t|
+      t.filetype = "*.xxx"
+      t.invoke do |context|
+        ENV['TM_DATE'] = Time.now.strftime("%Y-%m-%d")
+        raw_contents = IO.read("#{File.dirname(ENV['TM_BUNDLE_SUPPORT'])}/templates/yyy.xxx")
+        raw_contents.gsub(/\$\{([Creating a new template^}]*)\}/) {|match| ENV[match[2..-2]] }
+      end
+    end
+    ```
 
 ## TextMate Environment Variables
 

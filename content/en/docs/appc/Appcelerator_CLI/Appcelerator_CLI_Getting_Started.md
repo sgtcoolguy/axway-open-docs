@@ -46,11 +46,15 @@ For more information, see [Installing Node](/docs/appc/Titanium_SDK/Titanium_SDK
 
 1. Install the appc CLI. You many need to prepend the command with sudo.
 
-    `npm` `install` `appcelerator -g`
+    ```bash
+    npm install appcelerator -g
+    ```
 
 2. Setup the AMPLIFY Appcelerator Services environment. This process will download the latest updates, setup the CLI and verify your development environment.
 
-    `appc setup`
+    ```bash
+    appc setup
+    ```
 
 3. After getting the latest updates, you are prompted for your AMPLIFY Appcelerator Services credentials.
 
@@ -78,11 +82,12 @@ The CLI has two components: the NPM package and the Core package, which contains
 
 If you are using the Appcelerator CLI from behind a proxy, you need to configure your proxy server settings using the appc config set command to set the proxyServer variable to your proxy server settings.
 
-`appc config` `set` `proxyServer [http|https]:``//``<username>:<password>@<domain>:<port_number>`
+```bash
+appc config set proxyServer [http|https]://<username>:<password>@<domain>:<port_number>
 
-`## Example`
-
-`appc config` `set` `proxyServer https:``//admin``:password1234@foo.com:554`
+## Example
+appc config set proxyServer https://admin:password1234@foo.com:554
+```
 
 Note: We encourage you to use **appc config set cafile** as a security option over appc config set strictSSL false as the latter doesn’t do SSL key validation when making requests.
 
@@ -92,45 +97,28 @@ To use a specific version of the core package (which contains specific versions 
 
 To see a list of available versions, run the **appc use** command (without a version).
 
-`appc use`
-
-`The following versions are available:`
-
-`5.3.0`
-
-`5.3.1`
-
-`5.4.0`
-
-`5.5.0`
-
-`5.5.1`
-
-`6.0.0`
-
-`6.1.0`
-
-`6.1.2`
-
-`6.1.4`
-
-`6.2.0`
-
-`6.2.1`
-
-`6.2.2`
-
-`6.2.3`
-
-`6.2.4`
-
-`6.3.0`
-
-`7.0.0`
-
-`7.0.1`
-
-`7.0.2`
+```bash
+appc use
+The following versions are available:
+5.3.0
+5.3.1
+5.4.0
+5.5.0
+5.5.1
+6.0.0
+6.1.0
+6.1.2
+6.1.4
+6.2.0
+6.2.1
+6.2.2
+6.2.3
+6.2.4
+6.3.0
+7.0.0
+7.0.1
+7.0.2
+```
 
 ## Next steps
 

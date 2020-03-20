@@ -49,7 +49,7 @@ There are two ways to create a project:
 The PHP project wizard can be accessed through multiple locations in the workspace.
 A project can be created through the File->New->PHP Project, or by right-clicking the 'Project Explorer' or the 'App Explorer' and select New->PHP Project.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/php_project_wizard.jpg" alt="images/download/attachments/30083030/php_project_wizard.jpg" class="confluence-embedded-image image-center"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/php_project_wizard.jpg" alt="images/download/attachments/30083030/php_project_wizard.jpg" class="confluence-embedded-image image-center"></p></td></tr></tbody></table>
 
 #### Creating a project using the import wizard
 
@@ -101,11 +101,11 @@ The editor provides a smart code assist mechanism that displays suggestions by t
 
 * When inserting a function call item, any expected parameters are pre-populated into the code (excluding any optional parameters). It's possible to traverse the inserted parameters by clicking the 'Tab' key. Clicking 'Return' will jump to the 'green-marker' at the end of the inserted code.
 
-    <table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/php_ca_insertion.jpg" alt="images/download/attachments/30083030/php_ca_insertion.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
+    <table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/php_ca_insertion.jpg" alt="images/download/attachments/30083030/php_ca_insertion.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 * When the caret is located inside the parameters area, clicking Ctrl+Shift+Space will pop-up a small tool-tip helper that will indicate the available parameters and will **bold**the current position.
 
-    <table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/php_ca_parameters.jpg" alt="images/download/attachments/30083030/php_ca_parameters.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
+    <table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/php_ca_parameters.jpg" alt="images/download/attachments/30083030/php_ca_parameters.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 The content assist relies on an **indexing** process that is performed on the workspace and on the edited files. Inconsistent index state, like the one that may occur when turning off the 'Auto Building' option, may result in wrong or no accurate assistance.
 
@@ -120,27 +120,19 @@ The PHP code formatter provides control over the new-lines, indentation-levels, 
 As of version 3.0.4, the formatter also provides an ability to turn off and turn on formatting for a specific sections of code.
 For example:
 
-`function` `foo() {`
-
-`$a` `= 5;`
-
-`// @formatter:off`
-
-`$arr` `=` `array``(`
-
-`1,`
-
-`2,`
-
-`3`
-
-`);`
-
-`// @formatter:on`
-
-`$secondArr` `=` `array``(4, 5, 6);`
-
-`}`
+```javascript
+function foo() {
+  $a = 5;
+  // @formatter:off
+  $arr = array(
+   1,
+   2,
+   3
+  );
+  // @formatter:on
+  $secondArr = array(4, 5, 6);
+}
+```
 
 Note that the 'off' and 'on' tags are also customizable through the formatter preferences.
 
@@ -149,7 +141,7 @@ Note that the 'off' and 'on' tags are also customizable through the formatter pr
 When hovering over a PHP element, such as a function call, a class name, and so forth, a pop-up will appear and display any PHPDoc information for that element. The content for that pop-up is parsed from the PHPDoc block that is on top of the element's definition.
 The header of the proposal will indicate the source file that was detected as the element's origin.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/php_doc_hover.jpg" alt="images/download/attachments/30083030/php_doc_hover.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/php_doc_hover.jpg" alt="images/download/attachments/30083030/php_doc_hover.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 #### Occurrences Marking
 
@@ -157,7 +149,7 @@ When the 'Mark Occurrences' toggle button that appears at the toolbar is 'on', t
 Clicking on a variable element, for example, will highlight all the places in the edited code where the item is accessed (read-from or write-to as an assignment).
 Controlling the elements and structures that will display the occurrences markings is done through the Studio's preferences, under the PHP item node.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/mark_occurrences.jpg" alt="images/download/attachments/30083030/mark_occurrences.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/mark_occurrences.jpg" alt="images/download/attachments/30083030/mark_occurrences.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 ### Attaching PHP Resources
 
@@ -171,7 +163,7 @@ To attach one, go to the PHP preferences at Aptana -> Editors -> PHP -> Librarie
 By default, every PHP project will show content-assist proposals from that library, unless indicated differently in the project's properties.
 To specify a unique set of libraries for a specific project, right click the project, select 'Properties' and then select the '**Project Buildpath**' item. Click the '**Libraries**' tab and select the libraries you wish to see in your code-assist.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/build_path_1.jpg" alt="images/download/attachments/30083030/build_path_1.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/build_path_1.jpg" alt="images/download/attachments/30083030/build_path_1.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 Through that same property page, it's also possible to attach more external directories to be parsed for the content-assist proposals. To do so, click the '**External Directories**' tab and select a directory on your disk.
 

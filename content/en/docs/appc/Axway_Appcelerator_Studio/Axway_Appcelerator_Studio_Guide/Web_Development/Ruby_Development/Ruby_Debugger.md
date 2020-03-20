@@ -64,17 +64,14 @@ Here are the steps I followed:
 3\. Install DevKit to c:/DevKit
 4\. Open the Command Line
 
-`cd c:/DevKit`
-
-`ruby dk.rb init`
-
-`ruby dk.rb install`
-
-`gem install ruby-debug-ide19 --platform=ruby`
-
-`gem install sqlite3 # follow the post-install instructions to grab a sqlite3.dll and copy it into C:\Ruby192\bin`
-
-`gem install rails`
+```
+cd c:/DevKit
+ruby dk.rb init
+ruby dk.rb install
+gem install ruby-debug-ide19 --platform=ruby
+gem install sqlite3       # follow the post-install instructions to grab a sqlite3.dll and copy it into C:\Ruby192\bin
+gem install rails
+```
 
 The steps for installing DevKit, setting it up, and installing the gems came from the rubyinstaller.org docs at [https://github.com/oneclick/rubyinstaller/wiki/Development-Kit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit). You should be sure to check those docs for the latest instructions in case they have changed.
 
@@ -82,19 +79,15 @@ The steps for installing DevKit, setting it up, and installing the gems came fro
 
 A few users have reported issues with the debugger spitting out an error on starting the process, looking like:
 
-`Fast Debugger (ruby-debug-ide` `0.4``.``16``, ruby-debug-base` `0.11``) listens on` `127.0``.``0.1``:``55585`
-
-`Fatal exception in DebugThread loop: The requested service provider could not be loaded or initialized. - socket(``2``)`
-
-`Backtrace:`
-
-`c:/Ruby192/lib/ruby/gems/``1.9``.``1``/gems/ruby-debug-ide-``0.4``.``16``/lib/ruby-debug-ide.rb:``135``:in` `'initialize'` `from:`
-
-`c:/Ruby192/lib/ruby/gems/``1.9``.``1``/gems/ruby-debug-ide-``0.4``.``16``/lib/ruby-debug-ide.rb:``135``:in` `'new'` `from:`
-
-`c:/Ruby192/lib/ruby/gems/``1.9``.``1``/gems/ruby-debug-ide-``0.4``.``16``/lib/ruby-debug-ide.rb:``135``:in` `'block in start_control'`
-
-`...`
+```
+Fast Debugger (ruby-debug-ide 0.4.16, ruby-debug-base 0.11) listens on 127.0.0.1:55585
+Fatal exception in DebugThread loop: The requested service provider could not be loaded or initialized. - socket(2)
+Backtrace:
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/ruby-debug-ide-0.4.16/lib/ruby-debug-ide.rb:135:in 'initialize' from:
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/ruby-debug-ide-0.4.16/lib/ruby-debug-ide.rb:135:in 'new' from:
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/ruby-debug-ide-0.4.16/lib/ruby-debug-ide.rb:135:in 'block in start_control'
+...
+```
 
 A couple of things have been found to cause the issue:
 1\. Using RadRails/RDT 2.x versions along with Studio 3.x. Those old versions of the IDE try to install the 1.8 versions of the ruby-debug gems, which do not work with Ruby 1.8.
@@ -152,27 +145,21 @@ In the above screenshot, there is a variable barney of type person. The object i
 
 Assume the following code:
 
-`class` `Person`
+```
+class Person
+  def initialize(name)
+   @name = name
+  end
 
-`def initialize(name)`
+  def to_s()
+    return @name.to_s
+  end
+end
 
-`@name` `= name`
-
-`end`
-
-`def to_s()`
-
-`return`  `@name``.to_s`
-
-`end`
-
-`end`
-
-`persons = []`
-
-`persons &lt;&lt; Person.``new``(``'Barney'``)`
-
-`persons &lt;&lt; Person.``new``(``'Moe'``)`
+persons = []
+persons &lt;&lt; Person.new('Barney')
+persons &lt;&lt; Person.new('Moe')
+```
 
 After the last assignment, the variable view shows the content of the array. Note that the name appears as the description for the object, because to\_s is overridden.
 
@@ -182,9 +169,10 @@ After the last assignment, the variable view shows the content of the array. Not
 
 To show how hashes are presented in the variables view, a hash is created:
 
-`persons = Hash[ Person.``new``(``'Lisa'``) =&gt; Person.``new``(``'Marge'``),`
-
-`Person.``new``(``'Maggie'``) =&gt; Person.``new``(``'Marge'``)]`
+```
+persons = Hash[ Person.new('Lisa') =&gt; Person.new('Marge'),
+                            Person.new('Maggie') =&gt; Person.new('Marge')]
+```
 
 The view shows the name of the hash with the number of elements in the first place. If you expand the item, there will be a line for every key/value pair in the hash. Expanding a key/value pair will show the content of the value. If you want to know more about the key, select "Inspect key" from the context menu:
 

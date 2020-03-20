@@ -48,31 +48,30 @@ The main controller is called widget.js instead of index.js.
 
 To use another view-controller besides widget.js/widget.xml, use the Widget.createController(controller\_name, \[params\]) method to create a new instance of the controller and the getView() method to access the Titanium proxy object. For example, suppose you have a button view-controller in your foo widget. To add it to the main widget view:
 
-app/widgets/foo/controllers/widget.js
+*app/widgets/foo/controllers/widget.js*
 
-`var` `button = Widget.createController(``'button'``).getView();`
-
-`$.widget.add(button);`
+```javascript
+var button = Widget.createController('button').getView();
+$.widget.add(button);
+```
 
 All methods in the widget controller are private unless you prefix the method with $, which makes it accessible to the Alloy project and other widgets. For example, if the following code was defined in a widget controller:
 
-`$.init =` `function` `(args) {`
-
-`// Button object with id=button`
-
-`$.button.title = args.title ||` `'Si'``;`
-
-`$.button.color = args.color ||` `'black'``;`
-
-`// global variable`
-
-`message = args.message ||` `'Hola mundo'``;`
-
-`}`
+```javascript
+$.init = function (args) {
+    // Button object with id=button
+    $.button.title = args.title || 'Si';
+    $.button.color = args.color || 'black';
+    // global variable
+    message = args.message || 'Hola mundo';
+}
+```
 
 Then, in the Alloy project, call init prefixed with the widget ID specified in the Alloy project's view--in this example, the ID is foo:
 
-`$.foo.init({title:``'Yes'``, color:``'gray'``, message:``'I pity the foo.'``});`
+```
+$.foo.init({title:'Yes', color:'gray', message:'I pity the foo.'});
+```
 
 ### Models
 
@@ -90,65 +89,38 @@ To use a theme, in the project's config.json file, add the theme key with the na
 
 The following file structure shows the placement of the "mytheme" theme files in relation to the "mywidget" widget. The project below contains iOS-specific assets and styles for the widget.
 
-`app`
-
-`├── themes`
-
-`│ └── mytheme`
-
-`│ └── widgets`
-
-`│ └── mywidget`
-
-`│ ├── assets`
-
-`│ │ ├── ios`
-
-`│ │ │ └── star_half.png`
-
-`│ │ ├── star.png`
-
-`│ │ └── star_off.png`
-
-`│ └── styles`
-
-`│ ├── ios`
-
-`│ │ └── star.tss`
-
-`│ └── star.tss`
-
-`└── widgets`
-
-`└── mywidget`
-
-`├── assets`
-
-`│ ├── star.png`
-
-`│ ├── star_half.png`
-
-`│ └── star_off.png`
-
-`├── controllers`
-
-`│ ├── star.js`
-
-`│ └── widget.js`
-
-`├── styles`
-
-`│ ├── star.tss`
-
-`│ └── widget.tss`
-
-`├── views`
-
-`│ ├── star.xml`
-
-`│ └── widget.xml`
-
-`└── widget.json`
+```
+app
+├── themes
+│   └── mytheme
+│       └── widgets
+│           └── mywidget
+│               ├── assets
+│               │   ├── ios
+│               │   │   └── star_half.png
+│               │   ├── star.png
+│               │   └── star_off.png
+│               └── styles
+│                   ├── ios
+│                   │   └── star.tss
+│                   └── star.tss
+└── widgets
+    └── mywidget
+        ├── assets
+        │   ├── star.png
+        │   ├── star_half.png
+        │   └── star_off.png
+        ├── controllers
+        │   ├── star.js
+        │   └── widget.js
+        ├── styles
+        │   ├── star.tss
+        │   └── widget.tss
+        ├── views
+        │   ├── star.xml
+        │   └── widget.xml
+        └── widget.json
+```
 
 ### Views
 
@@ -156,21 +128,21 @@ The main view is called widget.xml instead of index.xml.
 
 Specifying the id attribute in the XML markup components will make it easier to access and override Titanium object properties. For example, suppose you have a Button object in a widget view that has its id assigned as button and in the Alloy project the widget id is foo. To access a Button property:
 
-`Ti.API.info(``"button state: "` `+ $.foo.button.enabled);`
+```
+Ti.API.info("button state: " + $.foo.button.enabled);
+```
 
 For widgets that have multiple view-controllers, to include a widget's view-controller in another widget's view, use the Widget tag and assign the name attribute with the name of the view-controller minus the file extension. Since Alloy 1.5.0, if you omit the src attribute, Alloy assumes you are referencing the current widget. For Alloy 1.4.x and prior, you need to assign the src attribute to the widget's name. For example, the following markup is analogous to the example in the Controller section:
 
-app/widgets/foo/views/widget.xml
+*app/widgets/foo/views/widget.xml*
 
-`<``Alloy``>`
-
-`<``View``>`
-
-`<``Widget`  `src``=``"foo"`  `name``=``"button"``/>`
-
-`</``View``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+  <View>
+    <Widget src="foo" name="button"/>
+  </View>
+</Alloy>
+```
 
 ### Widgets
 

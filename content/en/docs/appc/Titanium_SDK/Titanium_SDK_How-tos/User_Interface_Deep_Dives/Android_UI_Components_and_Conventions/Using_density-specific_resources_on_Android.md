@@ -36,11 +36,11 @@ The Android OS [divides the available screen densities into three groups](http:/
 
 Similarly to the iOS example, if we were creating a button in code (or referencing the image in a configuration file), we would just use myButton.png:
 
-`var myButton = Ti.UI.createButton({`
-
-`backgroundImage:` `'images/myButton.png'`
-
-`});`
+```javascript
+var myButton = Ti.UI.createButton({
+  backgroundImage: 'images/myButton.png'
+});
+```
 
 ## More control
 
@@ -119,47 +119,32 @@ To make dips the default unit for UI components in an Android application, it re
 
 In Titanium Mobile, typically we specify fontSize or height/width/top/bottom/left/right values as integer values. On iPhone, these values correspond to the 320x480 point system used to lay out UI components (even though the densities of iPhone handsets can be different). On Android in 1.7, raw integer values (unless the tiapp.xml configuration is changed) correspond to real pixels on the screen. Consider the following simple app.js:
 
-`var win = Ti.UI.createWindow({`
+```javascript
+var win = Ti.UI.createWindow({
+    backgroundColor: 'white',
+    layout: 'vertical'
+});
 
-`backgroundColor:` `'white'``,`
+win.add(Ti.UI.createLabel({
+    top: 10,
+    text: 'Hello World',
+    color: 'black',
+    height: Ti.UI.SIZE,
+    width: Ti.UI.FILL,
+    font: {
+        fontSize:18
+    }
+}));
 
-`layout:` `'vertical'`
+win.add(Ti.UI.createView({
+    top: 10,
+    height: 200,
+    width: 200,
+    backgroundColor: 'green'
+}));
 
-`});`
-
-`win.add(Ti.UI.createLabel({`
-
-`top:` `10``,`
-
-`text:` `'Hello World'``,`
-
-`color:` `'black'``,`
-
-`height: Ti.UI.SIZE,`
-
-`width: Ti.UI.FILL,`
-
-`font: {`
-
-`fontSize:``18`
-
-`}`
-
-`}));`
-
-`win.add(Ti.UI.createView({`
-
-`top:` `10``,`
-
-`height:` `200``,`
-
-`width:` `200``,`
-
-`backgroundColor:` `'green'`
-
-`}));`
-
-`win.open();`
+win.open();
+```
 
 On Android, on a medium density display (like the HVGA screen size in the emulator), the box and text show up at a pretty large size. On a high resolution, high density display like my Droid 2, the text and box are pretty small:
 
@@ -167,46 +152,31 @@ On Android, on a medium density display (like the HVGA screen size in the emulat
 
 In terms of proportions, I'd prefer to have the box and text show up at about the same size on the high density screen as well. I can fix my code by specifying my heights/widths/font sizes as density-independent pixels (DIPs) by specifying a 'dp' or 'dip' string rather than an integer value:
 
-`var win = Ti.UI.createWindow({`
+```javascript
+var win = Ti.UI.createWindow({
+    backgroundColor: 'white',
+    layout: 'vertical'
+});
 
-`backgroundColor:` `'white'``,`
+win.add(Ti.UI.createLabel({
+    top: '10dp',
+    text: 'Hello World',
+    color: 'black',
+    height: Ti.UI.SIZE,
+    width: Ti.UI.FILL,
+    font: {
+        fontSize:'18dp'
+    }
+}));
 
-`layout:` `'vertical'`
+win.add(Ti.UI.createView({
+    top: '10dp',
+    height: '200dp',
+    width: '200dp',
+    backgroundColor: 'green'
+}));
 
-`});`
-
-`win.add(Ti.UI.createLabel({`
-
-`top:` `'10dp'``,`
-
-`text:` `'Hello World'``,`
-
-`color:` `'black'``,`
-
-`height: Ti.UI.SIZE,`
-
-`width: Ti.UI.FILL,`
-
-`font: {`
-
-`fontSize:``'18dp'`
-
-`}`
-
-`}));`
-
-`win.add(Ti.UI.createView({`
-
-`top:` `'10dp'``,`
-
-`height:` `'200dp'``,`
-
-`width:` `'200dp'``,`
-
-`backgroundColor:` `'green'`
-
-`}));`
-
-`win.open();`
+win.open();
+```
 
 On the iOS side, the default unit is DIPs, so this doesn't change anything on iOS. The updated code produces something which is a little closer to what I'd expect on Android.

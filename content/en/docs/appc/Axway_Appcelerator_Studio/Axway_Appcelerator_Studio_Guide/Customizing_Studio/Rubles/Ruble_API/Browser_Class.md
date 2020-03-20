@@ -8,7 +8,9 @@ Examples of how you might interact with methods of the browser class.
 
 ### Instance:
 
-`context.browser.open(url, :browser => :``default``)`
+```
+context.browser.open(url, :browser => :default)
+```
 
 ## Browser Methods
 

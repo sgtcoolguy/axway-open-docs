@@ -1,6 +1,6 @@
 {"title":"C and C++ Coding Standards","weight":"10"}
 
-Contents
+*Contents*
 
 * [Synopsis](#Synopsis)
 
@@ -130,23 +130,19 @@ We do not enforce column width. However, you should make a best effort to keep y
 
 * Whitespace should be placed between function definitions.
 
-    Example
+    *Example*
 
-    `void` `f(x)`
+    ```
+    void f(x)
+    {
+    //....
+    }
 
-    `{`
-
-    `//....`
-
-    `}`
-
-    `void` `g(x)`
-
-    `{`
-
-    `//....`
-
-    `}`
+    void g(x)
+    {
+    //....
+    }
+    ```
 
 * Comments should be preceded by a line of whitespace, unless they are inline.
 
@@ -176,45 +172,31 @@ There are two types of comment styles: Comments formatted for internal documenta
 
     * Commented-out code is documented with /\* ... \*/
 
-Example
+*Example*
 
-`/*`
+```javascript
+/*
+ * Describe your function here
+ */
+void myfunctin()
+{
+    //
+    //
+    //
+    do something here
 
-`* Describe your function here`
+    //
+    //
+    //
+    do something else really complex
 
-`*/`
-
-`void` `myfunctin()`
-
-`{`
-
-`//`
-
-`//`
-
-`//`
-
-`do` `something here`
-
-`//`
-
-`//`
-
-`//`
-
-`do` `something` `else` `really complex`
-
-`/*`
-
-`* Why didn't we delete this?`
-
-`*`
-
-`dead_code()`
-
-`*/`
-
-`}`
+   /*
+    * Why didn't we delete this?
+    *
+        dead_code()
+    */
+}
+```
 
 #### Forbidden words
 
@@ -270,41 +252,28 @@ In addition it is expected that all of your comments will contain correct spelli
 
     * Opening braces should not be followed by whitespace.
 
-Example
+*Example*
 
-`void` `f(x)`
+```
+void f(x)
+{
+    if (x)
+    {
+      // ...
+      //
+      //
+      //
+    }
+    else
+    {
+      // ...
+    }
 
-`{`
-
-`if` `(x)`
-
-`{`
-
-`// ...`
-
-`//`
-
-`//`
-
-`//`
-
-`}`
-
-`else`
-
-`{`
-
-`// ...`
-
-`}`
-
-`while` `(``true``)`
-
-`{`
-
-`}`
-
-`}`
+  while (true)
+    {
+    }
+}
+```
 
 ### namespace
 
@@ -340,47 +309,38 @@ namespace-contents:
 
 When using a namespace in a implementation file, use the following style:
 
-`// this is what we want`
+```
+// this is what we want
+namespace
+{
+  MyType1 myFunc1(MyType2 x, MyType3 y)
+  {
+    // impl
+  }
+}
 
-`namespace`
-
-`{`
-
-`MyType1 myFunc1(MyType2 x, MyType3 y)`
-
-`{`
-
-`// impl`
-
-`}`
-
-`}`
-
-`//here is what we don't want (even worse if you have nested namespaces):`
-
-`namespace::MyType1 namespace::myFunc1(namespace::MyType2 x, namespace::MyType3 y)`
-
-`{`
-
-`// impl`
-
-`}`
+//here is what we don't want (even worse if you have nested namespaces):
+namespace::MyType1 namespace::myFunc1(namespace::MyType2 x, namespace::MyType3 y)
+{
+  // impl
+}
+```
 
 ### Headers
 
 * You are expected to include standard #ifndef / #define / #endif guards in your header files, where the macro is named: \[pe:file\_basename\]h\_
 
-    Example
+    *Example*
 
-    `// hello.h`
+    ```
+    // hello.h
+    #ifndef __hello_h__
+    #define __hello_h__
 
-    `#ifndef __hello_h__`
+    //your_header_here
 
-    `#define __hello_h__`
-
-    `//your_header_here`
-
-    `#endif`
+    #endif
+    ```
 
 * Headers must be extern "C" if intended to be interoperable with C code.
 
@@ -454,35 +414,29 @@ Do not define global constants with #define. Use const variables only, and ideal
 
 * #definestatements which perform any sort of inline operation must be enclosed in parenthesis
 
-    Example
+    *Example*
 
-    `#define ADD(x,y) (x+y)`
+    ```
+    #define ADD(x,y) (x+y)
+    ```
 
 * Multi-line #define statements are expected to be formatted according to the usual rules, with the first statement of the #definenot being indented.
 
-    Example
+    *Example*
 
-    `#define NAMED_PROPERTY(name) \`
-
-    `void``* name = NULL; \`
-
-    `void` `set_##name(``void``* value) \`
-
-    `{ \`
-
-    `name = value;`
-
-    `} \`
-
-    `\`
-
-    `void``* get_##name(``void``) \`
-
-    `{ \`
-
-    `return` `name;`
-
-    `}`
+    ```
+    #define NAMED_PROPERTY(name) \
+    void* name = NULL; \
+    void set_##name(void* value) \
+    { \
+      name = value;
+    } \
+    \
+    void* get_##name(void) \
+    { \
+      return name;
+    }
+    ```
 
 #### Conditionals
 
@@ -496,25 +450,19 @@ Do not define global constants with #define. Use const variables only, and ideal
 
 * Checking for validity of a pointer or value directly is allowed: if (ptr) and if (ptr != NULL)are both acceptable. Where clarity is a primary concern (such as compound conditionals) the latter is preferred.
 
-    Example
+    *Example*
 
-    `if` `(x)`
-
-    `{`
-
-    `// ...`
-
-    `}`
-
-    `else`  `if` `(y ||`
-
-    `z)`
-
-    `{`
-
-    `// ...`
-
-    `}`
+    ```
+    if (x)
+    {
+      // ...
+    }
+    else if (y ||
+             z)
+    {
+      // ...
+    }
+    ```
 
 #### switch/case
 
@@ -528,55 +476,36 @@ Do not define global constants with #define. Use const variables only, and ideal
 
 * case statements which early-return do not have to end with a breakstatement.
 
-    Example
+    *Example*
 
-    `char` `token;`
+    ```
+    char token;
+    int x;
+    int y;
+    // code
+    switch (token)
+    {
+      case '-':
+      {
+        y = -y;
+        // FALLTHROUGH
+      }
 
-    `int` `x;`
+      case '+':
+      {
+        return x + y;
+      }
 
-    `int` `y;`
-
-    `// code`
-
-    `switch` `(token)`
-
-    `{`
-
-    `case`  `'-'``:`
-
-    `{`
-
-    `y = -y;`
-
-    `// FALLTHROUGH`
-
-    `}`
-
-    `case`  `'+'``:`
-
-    `{`
-
-    `return` `x + y;`
-
-    `}`
-
-    `// TODO: Implement these ops`
-
-    `case`  `'*'``:` `// FALLTHROUGH`
-
-    `case`  `'/'``:` `// FALLTHROUGH`
-
-    `default``:`
-
-    `{`
-
-    `printf(``"Unknown operator"``);`
-
-    `break``;`
-
-    `}`
-
-    `}`
+      // TODO: Implement these ops
+      case '*': // FALLTHROUGH
+      case '/': // FALLTHROUGH
+      default:
+      {
+        printf("Unknown operator");
+        break;
+      }
+    }
+    ```
 
 #### goto
 
@@ -610,29 +539,23 @@ Whether or not to use inline variable declarations for any looping construct (bu
 
 * Functions should be named as "actions" rather than things (get\_x() vs. x())
 
-Example
+*Example*
 
-`void` `foo_bar(``int` `x,` `int` `y,`
+```
+void foo_bar(int x, int y,
+        int z);
+int f();
 
-`int` `z);`
+void foo_bar(int x, int y, int z)
+{
+  // func goes here
+}
 
-`int` `f();`
-
-`void` `foo_bar(``int` `x,` `int` `y,` `int` `z)`
-
-`{`
-
-`// func goes here`
-
-`}`
-
-`int` `f()`
-
-`{`
-
-`return`  `0``;`
-
-`}`
+int f()
+{
+  return 0;
+}
+```
 
 #### return
 
@@ -662,31 +585,28 @@ Functions which return a compound statement should have that expression wrapped 
 
     * Array types should be preferred over pointer types where the intended use of the object is as an array.
 
-Example
+*Example*
 
-`int` `x;`
-
-`int``* x_ptr;`
-
-`int``& x_ref;`
-
-`char``* argv[];`
+```
+int x;
+int* x_ptr;
+int& x_ref;
+char* argv[];
+```
 
 ### enum
 
 * Names of enumconstructs should be capitalized camel-case, and placed on the same line as the closing brace.
 
-    Example
+    *Example*
 
-    `enum` `{`
-
-    `ONE =` `1``,`
-
-    `TWO,`
-
-    `THREE`
-
-    `} FooValues;` `// name should be camelcase with leading cap`
+    ```
+    enum {
+        ONE = 1,
+        TWO,
+        THREE
+    } FooValues; // name should be camelcase with leading cap
+    ```
 
 ### typdef
 
@@ -702,25 +622,20 @@ Example
 
 * The name of the type associated with the construct should be on the same line as the closing brace, not on its own line.
 
-    Example
+    *Example*
 
-    `typedef struct`
+    ```
+    typedef struct
+    {
+        int x;
+    } X;
 
-    `{`
-
-    `int` `x;`
-
-    `} X;`
-
-    `typedef union`
-
-    `{`
-
-    `int` `x;`
-
-    `float` `y;`
-
-    `} Y;`
+    typedef union
+    {
+        int x;
+        float y;
+    } Y;
+    ```
 
 ### Operators
 
@@ -736,19 +651,16 @@ Example
 
 * Expressions spanning multiple lines should have their continuing lines indented to one tabstop beyond the initial \=or parenthesis.
 
-    Example
+    *Example*
 
-    `int` `x =` `1` `+` `2``;`
-
-    `int``* x_ptr = &x;`
-
-    `double` `d = (``float``)(*x_ptr) /` `2.0``;`
-
-    `++x;`
-
-    `long` `example = d /`
-
-    `(d+``1``);`
+    ```
+    int x = 1 + 2;
+    int* x_ptr = &x;
+    double d = (float)(*x_ptr) / 2.0;
+    ++x;
+    long example = d /
+            (d+1);
+    ```
 
 #### Prefix/postfix increment/decrement
 
@@ -768,87 +680,60 @@ Usage of ternary is discouraged, but it is often useful for certain cases (such 
 
 * Avoid obvious side-effects within ternary, unless they are intended.
 
-Example
+*Example*
 
-`int` `f(``boolean` `check)`
-
-`{`
-
-`return` `(check ? (``1``+``1``) :` `0``);`
-
-`}`
+```
+int f(boolean check)
+{
+  return (check ? (1+1) : 0);
+}
+```
 
 #### Operator overloading
 
 A special word on operator overloading for C++: **Avoid operator overloading.** Overloading operators leads to interesting scenarios such as this one:
 
-Counterexample
+*Counterexample*
 
-`class` `Vector`
+```
+class Vector
+{
+  inline double operator[](int i) {
+    // return something from impl
+  };
+};
 
-`{`
+// Don't you even dare think of making Matrix a base class for
+// RowMajorMatrix or ColumnMajorMatrix, because the problem below still
+// happens every time we abstract either to a Matrix.
+//
+// Adding a boolean row_major as part of the constructor (and a read-only property)
+// is ALSO not acceptable because then every time you read from a matrix, you have to
+// check it.
+class Matrix
+{
+  // constructor intentionally omitted
+  Vector representation[];
+  inline Vector operator[](int i) {
+    return representation[i];
+  }
+};
 
-`inline` `double` `operator[](``int` `i) {`
+Vector a(1,2,3);
+Vector b(4,5,6);
+Vector c(7,8,9);
 
-`// return something from impl`
+Matrix m(a, b, c);
+// Without looking at the definition of Matrix::Matrix(...),
+// this could be EITHER:
+// 3 (row major)
+// 7 (column major)
+double what = m[0][2];
 
-`};`
-
-`};`
-
-`// Don't you even dare think of making Matrix a base class for`
-
-`// RowMajorMatrix or ColumnMajorMatrix, because the problem below still`
-
-`// happens every time we abstract either to a Matrix.`
-
-`//`
-
-`// Adding a boolean row_major as part of the constructor (and a read-only property)`
-
-`// is ALSO not acceptable because then every time you read from a matrix, you have to`
-
-`// check it.`
-
-`class` `Matrix`
-
-`{`
-
-`// constructor intentionally omitted`
-
-`Vector representation[];`
-
-`inline Vector operator[](``int` `i) {`
-
-`return` `representation[i];`
-
-`}`
-
-`};`
-
-`Vector a(``1``,``2``,``3``);`
-
-`Vector b(``4``,``5``,``6``);`
-
-`Vector c(``7``,``8``,``9``);`
-
-`Matrix m(a, b, c);`
-
-`// Without looking at the definition of Matrix::Matrix(...),`
-
-`// this could be EITHER:`
-
-`// 3 (row major)`
-
-`// 7 (column major)`
-
-`double` `what = m[``0``][``2``];`
-
-`// Here's the better way to do it (although there's still an operator overload, it makes "more sense")`
-
-`double` `is3 = m.row(``0``)[``2``];`
-
-`double` `is7 = m.col(``0``)[``2``];`
+// Here's the better way to do it (although there's still an operator overload, it makes "more sense")
+double is3 = m.row(0)[2];
+double is7 = m.col(0)[2];
+```
 
 In the case where you **absolutely must** overload an operator (such as placement new(), incrementing enumerators, or creating a functor) then you are expected to provide ample documentation justifying your folly and make every effort possible to prevent other developers from committing crimes such as the above example.
 
@@ -872,19 +757,16 @@ These rules are to be applied on top of any C rules described above. If there is
 
 * Access identifiers within a class should be aligned with the "class" in the declaration. IE:
 
-    `class` `MyClass`
+    ```
+    class MyClass
+    {
+    public:
+      int x;
 
-    `{`
-
-    `public``:`
-
-    `int` `x;`
-
-    `private``:`
-
-    `int` `y;`
-
-    `}`
+    private:
+      int y;
+    }
+    ```
 
 * Permissions should be strict by default and opened up as needed
 

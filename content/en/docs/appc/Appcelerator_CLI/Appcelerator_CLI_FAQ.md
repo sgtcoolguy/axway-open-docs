@@ -62,23 +62,22 @@ In your Android SDK location, you will see the version number: /users/<user>/Lib
 
 Add the following code in your tiapp.xml file in the Android section then run it again:
 
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-`<``manifest`  `android:installLocation``=``"preferExternal"``>`
-
-`<``uses``-sdk` `android:minSdkVersion``=``"14"`  `android:targetSdkVersion``=``"23"``/>`
-
-`</``manifest``>`
-
-`</``android``>`
+```xml
+<android xmlns:android="http://schemas.android.com/apk/res/android">
+  <manifest android:installLocation="preferExternal">
+      <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
+  </manifest>
+</android>
+```
 
 ## Fixing npm permission for Mac
 
 Execute the following commands:
 
-`npm config set prefix /usr/local`
-
-``sudo chown -R `whoami` /usr/local/``
+```bash
+npm config set prefix /usr/local
+sudo chown -R `whoami` /usr/local/
+```
 
 See [Fixing npm permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions) for more details.
 
@@ -92,11 +91,11 @@ If the npm path hasn't been set, execut this command: SET PATH=%USERPROFILE%\\Ap
 
 With the npm prefix set, install Appcelerator and get the latest updates:
 
-`npm` `install` `-g appcelerator`
-
-`appc use latest`
-
-`appc setup`
+```bash
+npm install -g appcelerator
+appc use latest
+appc setup
+```
 
 **Mac**
 
@@ -110,15 +109,13 @@ With the npm prefix set, install Appcelerator and get the latest updates:
 
 3. With the npm prefix set, install Appcelerator and get the latest updates:
 
-`sudo` `npm` `install` `-g appcelerator`
-
-`appc use latest`
-
-`appc` `logout` `-D`
-
-`appc login`
-
-`appc setup`
+```bash
+sudo npm install -g appcelerator
+appc use latest
+appc logout -D
+appc login
+appc setup
+```
 
 ## How to build a module for iOS from command line?
 
@@ -128,13 +125,12 @@ Execute this command: build.py
 
 Execute the following commands:
 
-`sudo npm cache clean`
-
-`rm -rf .appcelerator`
-
-`sudo npm -g install appcelerator`
-
-`appc use latest`
+```bash
+sudo npm cache clean
+rm -rf .appcelerator
+sudo npm -g install appcelerator
+appc use latest
+```
 
 ## How to solve “Unable to connect to Xcode”?
 

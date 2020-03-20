@@ -8,31 +8,23 @@ Examples of how you might interact with methods of the Logger class.
 
 ### Static:
 
-`require` `'ruble'`
+```
+require 'ruble'
+require 'ruble/ui'
 
-`require` `'ruble/ui'`
+Ruble::Logger.log_level = :trace
 
-`Ruble::Logger.log_level = :trace`
-
-`command` `'Tidy'`  `do` `|cmd|`
-
-`cmd.output = :replace_document`
-
-`cmd.input = :document`
-
-`cmd.invoke` `do` `|context|`
-
-`Ruble::Logger.trace` `"trace"`
-
-`Ruble::Logger.log_info` `"Info"`
-
-`Ruble::Logger.log_warning` `"Warning"`
-
-`Ruble::Logger.log_error` `"Error"`
-
-`end`
-
-`end`
+command 'Tidy' do |cmd|
+  cmd.output = :replace_document
+  cmd.input = :document
+  cmd.invoke do |context|
+    Ruble::Logger.trace "trace"
+    Ruble::Logger.log_info "Info"
+    Ruble::Logger.log_warning "Warning"
+    Ruble::Logger.log_error "Error"
+  end
+end
+```
 
 ## Logger Methods
 

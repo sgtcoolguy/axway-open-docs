@@ -26,55 +26,33 @@ Let's see how you'd use tab groups, windows, and views to construct your app's U
 
 In a tab-based app, two or more tabs are contained within a [tab group](#!/api/Titanium.UI.TabGroup). Each tab contains a window. Each window contains the various controls and graphics of your app. The basic code for creating a two-tabbed app skeleton looks like this:
 
-`// create tab group`
-
-`var tabGroup = Titanium.UI.createTabGroup();`
-
-`var win1 = Titanium.UI.createWindow({`
-
-`title:` `'Tab 1'``,`
-
-`backgroundColor:` `'#fff'`
-
-`});`
-
-`var tab1 = Titanium.UI.createTab({`
-
-`icon:` `'tab1icon.png'``,`
-
-`title:` `'Tab 1'``,`
-
-`window: win1`
-
-`});`
-
-`var win2 = Titanium.UI.createWindow({`
-
-`title:` `'Tab 2'``,`
-
-`backgroundColor:` `'#fff'`
-
-`});`
-
-`var tab2 = Titanium.UI.createTab({`
-
-`icon:` `'tab2icon.png'``,`
-
-`title:` `'Tab 2'``,`
-
-`window: win2`
-
-`});`
-
-`// add tabs to the group`
-
-`tabGroup.addTab(tab1);`
-
-`tabGroup.addTab(tab2);`
-
-`// open tab group`
-
-`tabGroup.open();`
+```javascript
+// create tab group
+var tabGroup = Titanium.UI.createTabGroup();
+var win1 = Titanium.UI.createWindow({
+    title: 'Tab 1',
+    backgroundColor: '#fff'
+});
+var tab1 = Titanium.UI.createTab({
+    icon: 'tab1icon.png',
+    title: 'Tab 1',
+    window: win1
+});
+var win2 = Titanium.UI.createWindow({
+    title: 'Tab 2',
+    backgroundColor: '#fff'
+});
+var tab2 = Titanium.UI.createTab({
+    icon: 'tab2icon.png',
+    title: 'Tab 2',
+    window: win2
+});
+// add tabs to the group
+tabGroup.addTab(tab1);
+tabGroup.addTab(tab2);
+// open tab group
+tabGroup.open();
+```
 
 In the preceding code, the tab's title is the text shown on the tab "handle" while the window's title is shown in a title bar across the top of the window. On iOS, you can add navigation buttons (leftNavButton and rightNavButton) to the window's title bar. Also on iOS, a modal window opened within a tab will fill the entire screen, overlaying the tab group. A non-modal window will open within the tab. On Android, a window automatically fills the entire screen and inherits the Back button functionality. Tapping the Back button closes the window and returns you to the tab group's focused window.
 

@@ -54,7 +54,9 @@ The following can make Git a little easier to use:
 
 * by default, if a file's permissions change, Git will perceive it just the same as if its contents were changed, Thus, to ignore permissions changes, run:
 
-`git config core.filemode` `false`
+```
+git config core.filemode false
+```
 
 ### Committing Code with Git in 7 Easy Stages
 

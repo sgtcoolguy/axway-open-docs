@@ -82,7 +82,9 @@ Next, import the APSCloudExample project into Eclipse, copy the key from your cl
 
 5. Locate the following line of code and replace **<< YOUR APP KEY >>** with the application key you copied to your clipboard previously.
 
-    `APSServiceManager.getInstance().enable(getApplicationContext(),` `"<< YOUR APP KEY >>"``);;`
+    ```
+    APSServiceManager.getInstance().enable(getApplicationContext(), "<< YOUR APP KEY >>");;
+    ```
 
 6. Run the application on an Android device or emulator.
 
@@ -114,15 +116,21 @@ Once you've [registered an application in Dashboard](/docs/appc/Appcelerator_Das
 
 2. Add the following permission to your project's AndroidManifest.xml file:
 
-    `<``uses``-permission` `android:name``=``"android.permission.INTERNET"```/>` ``
+    ```xml
+    <uses-permission android:name="android.permission.INTERNET"/>`
+    ```
 
 3. Import the APSServiceManager class into the project's main Activity:
 
-    `import com.appcelerator.aps.APSServiceManager;`
+    ```
+    import com.appcelerator.aps.APSServiceManager;
+    ```
 
 4. Call APSServiceManager.getInstance().enable(), passing it the application context and the application key provided by Dashboard:
 
-    `APSServiceManager.getInstance().enable(getApplicationContext(),` `"<<YOUR APP KEY>>"``);`
+    ```
+    APSServiceManager.getInstance().enable(getApplicationContext(), "<<YOUR APP KEY>>");
+    ```
 
     At this point, your application can begin making API calls. Note that the application will need to import additional classes, depending on which APS APIs it uses.
 
@@ -138,129 +146,92 @@ All Cloud API calls must be made on the UI (main) thread, and callbacks are exec
 
 The first parameter of each Cloud API method is a HashMap object that contains the parameters to send with the request. For example, the APSPhotos.show() method takes a photo\_id parameter whose value is, naturally, the ID of the photo to show.
 
-`// Create dictionary of parameters to be passed with the request`
+```
+// Create dictionary of parameters to be passed with the request
+HashMap<String, Object> data = new HashMap<String, Object>();
+data.put("photo_id", photoId);
 
-`HashMap<String, Object> data =` `new` `HashMap<String, Object>();`
-
-`data.put(``"photo_id"``, photoId);`
-
-`APSPhotos.show(data,` `new` `APSResponseHandler() {`
-
-`...`
-
-`});`
+APSPhotos.show(data, new APSResponseHandler() {
+     ...
+});
+```
 
 ### Handling Responses
 
 The second parameter of each method call is an instance of [APSResponseHandler](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSResponseHandler.html), an interface that has the following signature:
 
-`public interface APSResponseHandler {`
-
-`void onResponse(final APSResponse e);`
-
-`void onException(final APSCloudException e);`
-
-`}`
+```
+public interface APSResponseHandler {
+    void onResponse(final APSResponse e);
+    void onException(final APSCloudException e);
+}
+```
 
 The instance you specify must override the onResponse and onException methods. The onResponse method is invoked upon completion of a Cloud API call, and the onException handler is invoked if there is an exception while communicating with the MBS server.
 
 The [APSResponse](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSResponse.html) object provides getter methods to access information about the response. For instance, the getSuccess() method returns a boolean indicating if the method call was successful or not; the getResponse() method returns a JSON-encoded object with the results of the method call.
 
-`@Override`
-
-`public void onResponse(final APSResponse e) {`
-
-`if` `(e.getSuccess()) {`
-
-`// Read JSON response`
-
-`JSONObject res = e.getResponse();`
-
-`}` `else` `{`
-
-`// Log error message:`
-
-`Log.e(``"LOGIN"``, e.getMessage());`
-
-`}`
-
-`}`
+```
+@Override
+public void onResponse(final APSResponse e) {
+    if (e.getSuccess()) {
+        // Read JSON response
+        JSONObject res = e.getResponse();
+    } else {
+        // Log error message:
+        Log.e("LOGIN", e.getMessage());
+    }
+}
+```
 
 The onException() handler is invoked for any exceptions that occur during communication with the MBS server.
 
-`@Override`
-
-`public void onException(APSCloudException e) {`
-
-`// Handle exception`
-
-`Log(e.getErrorType(), e.getErrorCode());`
-
-`}`
+```
+@Override
+public void onException(APSCloudException e) {
+    // Handle exception
+    Log(e.getErrorType(), e.getErrorCode());
+}
+```
 
 #### Example: APSUsers Login Call with Response Handler
 
 The following example logs in an existing MBS user by their username and password. After a successful login, the application updates a TextView object with the user's MBS username.
 
-`HashMap<String, Object> data =` `new` `HashMap<String, Object>();`
+```
+HashMap<String, Object> data = new HashMap<String, Object>();
+data.put("login", "username");
+data.put("password", "password");
 
-`data.put(``"login"``,` `"username"``);`
+try {
+    APSUsers.login(data, new APSResponseHandler() {
+        @Override
+        public void onResponse(final APSResponse e) {
+            if (e.getSuccess()) {
+                try {
+                    JSONObject res = e.getResponse();
+                    // Response returns an array containing a single user
+                    JSONArray payload = res.getJSONArray("users");
+                    res = payload.getJSONObject(0);
+                    loginTextView.setText(res.getString("username"));
+                } catch (Exception e) {
+                    Log.e("LOGIN", "Error parsing JSON object: " + e.toString());
+                }
+            }
+            else {
+                Log.e("LOGIN", e.getMessage());
+            }
 
-`data.put(``"password"``,` `"password"``);`
-
-`try` `{`
-
-`APSUsers.login(data,` `new` `APSResponseHandler() {`
-
-`@Override`
-
-`public void onResponse(final APSResponse e) {`
-
-`if` `(e.getSuccess()) {`
-
-`try` `{`
-
-`JSONObject res = e.getResponse();`
-
-`// Response returns an array containing a single user`
-
-`JSONArray payload = res.getJSONArray(``"users"``);`
-
-`res = payload.getJSONObject(0);`
-
-`loginTextView.setText(res.getString(``"username"``));`
-
-`}` `catch` `(Exception e) {`
-
-`Log.e(``"LOGIN"``,` `"Error parsing JSON object: "` `+ e.toString());`
-
-`}`
-
-`}`
-
-`else` `{`
-
-`Log.e(``"LOGIN"``, e.getMessage());`
-
-`}`
-
-`}`
-
-`@Override`
-
-`public void onException(APSCloudException e) {`
-
-`// Handle exception that occured`
-
-`}`
-
-`});`
-
-`}` `catch` `(APSClientError e) {`
-
-`Log.e(``"LOGIN"``, e.getErrorType());`
-
-`}`
+        }
+        @Override
+        public void onException(APSCloudException e) {
+            // Handle exception that occured
+        }
+    });
+} catch (APSClientError e) {
+    Log.e("LOGIN", e.getErrorType());
+}
+```
 
 ### Monitoring Request Progress
 
@@ -272,103 +243,62 @@ The following example uploads a file from the device (/res/raw/reference.pdf) to
 
 The progress callback calls the setProgress() method on a ProgressBar object, displaying the status of the upload. After the request completes, the application displays a toast notification.
 
-`HashMap<String, Object> data =` `new` `HashMap<String, Object>();`
+```javascript
+HashMap<String, Object> data = new HashMap<String, Object>();
+String filename = "reference.pdf";
 
-`String filename =` `"reference.pdf"``;`
+// Need to copy the resource to a read-write directory to upload it
+if (!createExternalStoragePrivateFile(R.raw.reference, filename)) return;
 
-`// Need to copy the resource to a read-write directory to upload it`
+File file = new File(currentActivity.getExternalFilesDir(null), filename);
+data.put("file", file);
+data.put("name", "Reference Manual");
 
-`if` `(!createExternalStoragePrivateFile(R.raw.reference, filename))` `return``;`
+try {
+    APSFiles.create(data, new APSClient.APSResponseHandler() {
+        @Override
+        public void onResponse(final APSResponse e) {
+            if (e.getSuccess()) {
+                APSCloud.log("PUSH", "Successfully subscribed to push!");
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(currentActivity, "File uploaded!", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Log.e("UPLOAD", e.getMessage());
+            }
+        }
+    },
+    new APSClient.APSProgressHandler() {
+        @Override
+        public void onProgress(final int percentProgress, final boolean upload) {
+            if (currentActivity != null) {
+                progressBar.setProgress(percentProgress);
+        }
+    });
+} catch (APSClientError e) {
+    Log.e("UPLOAD", e.getMessage());
+}
 
-`File file =` `new` `File(currentActivity.getExternalFilesDir(``null``), filename);`
+// Helper function to copy a resource to external storage, modified from:
+// http://developer.android.com/reference/android/content/Context.html#getExternalFilesDir(java.lang.String)
 
-`data.put(``"file"``, file);`
-
-`data.put(``"name"``,` `"Reference Manual"``);`
-
-`try` `{`
-
-`APSFiles.create(data,` `new` `APSClient.APSResponseHandler() {`
-
-`@Override`
-
-`public void onResponse(final APSResponse e) {`
-
-`if` `(e.getSuccess()) {`
-
-`APSCloud.log(``"PUSH"``,` `"Successfully subscribed to push!"``);`
-
-`progressBar.setVisibility(View.GONE);`
-
-`Toast.makeText(currentActivity,` `"File uploaded!"``, Toast.LENGTH_SHORT).show();`
-
-`}`
-
-`else` `{`
-
-`Log.e(``"UPLOAD"``, e.getMessage());`
-
-`}`
-
-`}`
-
-`},`
-
-`new` `APSClient.APSProgressHandler() {`
-
-`@Override`
-
-`public void onProgress(final int percentProgress, final boolean upload) {`
-
-`if` `(currentActivity !=` `null``) {`
-
-`progressBar.setProgress(percentProgress);`
-
-`}`
-
-`});`
-
-`}` `catch` `(APSClientError e) {`
-
-`Log.e(``"UPLOAD"``, e.getMessage());`
-
-`}`
-
-`// Helper function to copy a resource to external storage, modified from:`
-
-`// http://developer.android.com/reference/android/content/Context.html#getExternalFilesDir(java.lang.String)`
-
-`public static boolean createExternalStoragePrivateFile(int inputResource, String filename) {`
-
-`File file =` `new` `File(currentActivity.getExternalFilesDir(``null``), filename);`
-
-`try` `{`
-
-`InputStream is = currentActivity.getResources().openRawResource(inputResource);`
-
-`OutputStream os =` `new` `FileOutputStream(file);`
-
-`byte[] data =` `new` `byte[is.available()];`
-
-`is.read(data);`
-
-`os.write(data);`
-
-`is.close();`
-
-`os.close();`
-
-`return`  `true``;`
-
-`}` `catch` `(IOException e) {`
-
-`Log.w(``"ExternalStorage"``,` `"Error writing "` `+ file, e);`
-
-`return`  `false``;`
-
-`}`
-
-`}`
+public static boolean createExternalStoragePrivateFile(int inputResource, String filename) {
+    File file = new File(currentActivity.getExternalFilesDir(null), filename);
+    try {
+        InputStream is = currentActivity.getResources().openRawResource(inputResource);
+        OutputStream os = new FileOutputStream(file);
+        byte[] data = new byte[is.available()];
+        is.read(data);
+        os.write(data);
+        is.close();
+        os.close();
+        return true;
+    } catch (IOException e) {
+        Log.w("ExternalStorage", "Error writing " + file, e);
+        return false;
+    }
+}
+```
 
 ## Making Generic REST APIs Method Calls
 
@@ -392,53 +322,33 @@ For example, to [create a post](/arrowdb/latest/#!/api/Posts-method-create), pas
 
 The following uses the sendRequest() API to create a new Post object.
 
-`HashMap<String, Object> data =` `new` `HashMap<String, Object>();`
+```
+HashMap<String, Object> data = new HashMap<String, Object>();
+data.put("title", "What's up?");
+data.put("content", "The sun, the cloud, space...");
 
-`data.put(``"title"``,` `"What's up?"``);`
-
-`data.put(``"content"``,` `"The sun, the cloud, space..."``);`
-
-`try` `{`
-
-`APSCloud.getInstance().sendRequest(``"posts/create.json"``,` `"POST"``, data,` `new` `APSClient.APSResponseHandler() {`
-
-`public void onResponse(final APSResponse e) {`
-
-`if` `(e.getSuccess()) {`
-
-`try` `{`
-
-`JSONObject res = e.getResponse();`
-
-`JSONArray payload = res.getJSONArray(``"posts"``);`
-
-`res = payload.getJSONObject(0);`
-
-`latestPost.setText(res.getString(``"title"``));`
-
-`}` `catch` `(Exception err) {`
-
-`Log.e(``"REST"``,` `"JSON Error: "` `+ err.getMessage());`
-
-`}`
-
-`}`
-
-`else` `{`
-
-`Log.e(``"REST"``, e.getMessage());`
-
-`}`
-
-`}`
-
-`});`
-
-`}` `catch` `(APSClientError e) {`
-
-`Log.e(``"REST"``,` `"Error: "` `+ e.getMessage());`
-
-`}`
+try {
+    APSCloud.getInstance().sendRequest("posts/create.json", "POST", data, new APSClient.APSResponseHandler() {
+        public void onResponse(final APSResponse e) {
+            if (e.getSuccess()) {
+                try {
+                    JSONObject res = e.getResponse();
+                    JSONArray payload = res.getJSONArray("posts");
+                    res = payload.getJSONObject(0);
+                    latestPost.setText(res.getString("title"));
+                } catch (Exception err) {
+                    Log.e("REST", "JSON Error: " + err.getMessage());
+                }
+            }
+            else {
+                Log.e("REST", e.getMessage());
+            }
+        }
+    });
+} catch (APSClientError e) {
+    Log.e("REST", "Error: " + e.getMessage());
+}
+```
 
 ## Working with Push Notifications
 
@@ -466,19 +376,19 @@ APSCloudPush requires that Google Play services be included in your application.
 
 3. Add the following inside the **<application/>** element of your AndroidManifest.xml file:
 
-    `<``meta``-data` `android:name``=``"com.google.android.gms.version"`  `android:value``=``"@integer/google_play_services_version"` `/>`
+    ```xml
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+    ```
 
 For **Android Studio** projects, update the dependencies field of the build.gradle file, then save and sync the gradle file.
 
-`...`
-
-`dependencies {`
-
-`...`
-
-`compile` `'com.google.android.gms:play-services:6.5.87'`
-
-`}`
+```
+...
+dependencies {
+    ...
+    compile 'com.google.android.gms:play-services:6.5.87'
+}
+```
 
 For **Eclipse** projects:
 
@@ -488,7 +398,9 @@ For **Eclipse** projects:
 
 For other projects, update the project.properties file to reference the library project:
 
-`android.library.reference.1=../google-play-services_lib`
+```
+android.library.reference.1=../google-play-services_lib
+```
 
 For detailed directions, see [Android Developer: Setting Up Google Play Services](http://developer.android.com/google/play-services/setup.html).
 
@@ -498,83 +410,51 @@ The following changes must be added to your project's AndroidManifest.xml file t
 
 * Inside the <manifest/> element:
 
-    `<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.GET_ACCOUNTS"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.WAKE_LOCK"``/>`
-
-    `<``uses``-permission` `android:name``=``"com.google.android.c2dm.permission.RECEIVE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_NETWORK_STATE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.RECEIVE_BOOT_COMPLETED"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.READ_PHONE_STATE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.VIBRATE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.WRITE_EXTERNAL_STORAGE"`
-
-    `android:maxSdkVersion``=``"18"` `/>`
-
-    `<``permission`  `android:name``=``"YOURAPPSPACKAGENAME.permission.C2D_MESSAGE"`
-
-    `android:protectionLevel``=``"signature"``/>`
-
-    `<``uses``-permission` `android:name``=``"YOURAPPSPACKAGENAME.permission.C2D_MESSAGE"``/>`
+    ```xml
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+             android:maxSdkVersion="18" />
+    <permission android:name="YOURAPPSPACKAGENAME.permission.C2D_MESSAGE"
+                android:protectionLevel="signature"/>
+    <uses-permission android:name="YOURAPPSPACKAGENAME.permission.C2D_MESSAGE"/>
+    ```
 
 * Inside the <application/> element:
 
-    `<``receiver`  `android:name``=``"com.appcelerator.aps.IntentReceiver"``/>`
-
-    `<``receiver`
-
-    `android:name``=``"com.appcelerator.aps.GCMReceiver"`
-
-    `android:permission``=``"com.google.android.c2dm.permission.SEND"``>`
-
-    `<``intent``-filter>`
-
-    `<``action`  `android:name``=``"com.google.android.c2dm.intent.RECEIVE"``/>`
-
-    `<``category`  `android:name``=``"YOURAPPSPACKAGENAME"``/>`
-
-    `</``intent``-filter>`
-
-    `</``receiver``>`
-
-    `<``receiver`  `android:name``=``"com.appcelerator.aps.PushBroadcastReceiver"`
-
-    `android:permission``=``"com.google.android.c2dm.permission.SEND"``>`
-
-    `<``intent``-filter>`
-
-    `<``action`  `android:name``=``"android.intent.action.BOOT_COMPLETED"``/>`
-
-    `<``action`  `android:name``=``"com.google.android.c2dm.intent.REGISTRATION"` `/>`
-
-    `<``action`  `android:name``=``"com.appcelerator.aps.intent.DEL_GROUPED_MSG"` `/>`
-
-    `<``category`  `android:name``=``"YOURAPPSPACKAGENAME"` `/>`
-
-    `</``intent``-filter>`
-
-    `</``receiver``>`
-
-    `<``receiver`  `android:name``=``"com.appcelerator.aps.PushBroadcastReceiver"``>`
-
-    `<``intent``-filter>`
-
-    `<``action`  `android:name``=``"android.intent.action.PACKAGE_ADDED"``/>`
-
-    `<``action`  `android:name``=``"android.intent.action.PACKAGE_REPLACED"``/>`
-
-    `<``data`  `android:scheme``=``"package"`  `android:path``=``"YOURAPPSPACKAGENAME"` `/>`
-
-    `</``intent``-filter>`
-
-    `</``receiver``>`
+    ```xml
+    <receiver android:name="com.appcelerator.aps.IntentReceiver"/>
+    <receiver
+            android:name="com.appcelerator.aps.GCMReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+        <intent-filter>
+            <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            <category android:name="YOURAPPSPACKAGENAME"/>
+        </intent-filter>
+    </receiver>
+    <receiver android:name="com.appcelerator.aps.PushBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+        <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+            <action android:name="com.appcelerator.aps.intent.DEL_GROUPED_MSG" />
+            <category android:name="YOURAPPSPACKAGENAME" />
+        </intent-filter>
+    </receiver>
+    <receiver android:name="com.appcelerator.aps.PushBroadcastReceiver">
+        <intent-filter>
+            <action android:name="android.intent.action.PACKAGE_ADDED"/>
+            <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+            <data android:scheme="package" android:path="YOURAPPSPACKAGENAME" />
+        </intent-filter>
+    </receiver>
+    ```
 
 ### Subscribe to push notifications
 
@@ -586,67 +466,42 @@ Call [APSServiceManager.getInstance()](http://docs.appcelerator.com/aps-sdk-apid
 
 For example, the code below can be added to the main activity's onCreate() method to subscribe the device to the friend\_channel:
 
-`APSCloudPush.getInstance().retrieveDeviceToken(``new` `APSRetrieveDeviceTokenHandler() {`
+```
+APSCloudPush.getInstance().retrieveDeviceToken(new APSRetrieveDeviceTokenHandler() {
+    @Override
+    public void onError(String message) {
+        Log.e("APSCloudPush", "Could not retrieve device token: " + message);
+    }
 
-`@Override`
+    @Override
+    public void onSuccess(String deviceToken) {
+        HashMap<String, Object> data = new HashMap<String, Object>();
+        data.put("type", "android");
+        data.put("channel", "friend_channel");
+        data.put("device_token", deviceToken);
+        try {
+            APSPushNotifications.subscribeToken(data, new APSResponseHandler() {
 
-`public void onError(String message) {`
+                @Override
+                public void onResponse(final APSResponse e) {
+                    if (e.getSuccess()) {
+                        Log.i("APSPushNotifications", "Subscribed!");
+                    } else {
+                        Log.e("APSPushNotifications", "ERROR: " + e.getErrorMessage());
+                    }
+                }
 
-`Log.e(``"APSCloudPush"``,` `"Could not retrieve device token: "` `+ message);`
-
-`}`
-
-`@Override`
-
-`public void onSuccess(String deviceToken) {`
-
-`HashMap<String, Object> data =` `new` `HashMap<String, Object>();`
-
-`data.put(``"type"``,` `"android"``);`
-
-`data.put(``"channel"``,` `"friend_channel"``);`
-
-`data.put(``"device_token"``, deviceToken);`
-
-`try` `{`
-
-`APSPushNotifications.subscribeToken(data,` `new` `APSResponseHandler() {`
-
-`@Override`
-
-`public void onResponse(final APSResponse e) {`
-
-`if` `(e.getSuccess()) {`
-
-`Log.i(``"APSPushNotifications"``,` `"Subscribed!"``);`
-
-`}` `else` `{`
-
-`Log.e(``"APSPushNotifications"``,` `"ERROR: "` `+ e.getErrorMessage());`
-
-`}`
-
-`}`
-
-`@Override`
-
-`public void onException(final APSCloudException e) {`
-
-`Log.e(``"APSPushNotifications"``,` `"Exception throw: "` `+ e.toString());`
-
-`}`
-
-`});`
-
-`}` `catch` `(APSCloudException e) {`
-
-`Log.e(``"APSPushNotifications"``,` `"Exception thrown: "` `+ e.toString());`
-
-`}`
-
-`}`
-
-`});`
+                @Override
+                public void onException(final APSCloudException e) {
+                    Log.e("APSPushNotifications", "Exception throw: " + e.toString());
+                }
+            });
+        } catch (APSCloudException e) {
+            Log.e("APSPushNotifications", "Exception thrown: " + e.toString());
+        }
+    }
+});
+```
 
 Once push services have been configured, and you've obtained a device token by registering your application to receive push notifications, you can start calling methods of the APSCloudPush and APSPushNotifications classes.
 
@@ -666,6 +521,8 @@ The SDK includes the APSCloudPushExample application that demonstrates the use o
 
 5. In MainActivity.java, locate the following line and replace **<< YOUR APP KEY >>** with the application key generated by Dashboard:
 
-    `String appKey =` `"<< YOUR APP KEY >>"``;`
+    ```
+    String appKey = "<< YOUR APP KEY >>";
+    ```
 
 6. Run the application on an Android device or emulator.

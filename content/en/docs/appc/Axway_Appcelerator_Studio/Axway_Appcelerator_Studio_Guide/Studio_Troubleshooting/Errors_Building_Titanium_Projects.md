@@ -44,15 +44,13 @@ Sometimes your project fails to build, but it's not clear if it's an issue with 
 
 4. You should see an entry like:
 
-    `!ENTRY com.aptana.core` `1`  `0`  `2011``-``10``-``26`  `06``:``54``:``16.525`
-
-    `!MESSAGE (Build` `3.0``.``4``.qualifier) [INFO] com.aptana.core/debug/shell Running process:`
-
-    `Process:` `"/usr/bin/python"`  `"/Library/Application Support/Titanium/mobilesdk/osx/1.7.2/iphone/builder.py"`  `"simulator"`  `"4.3"`  `"/Users/ingo/Documents/Aptana Studio 3 Workspace/testmobil"`  `"com.app"`  `"testmobil"`  `"universal"`  `"iphone"`  `""`
-
-    `Working directory:` `null`
-
-    `Environment:` `null`
+    ```
+    !ENTRY com.aptana.core 1 0 2011-10-26 06:54:16.525
+    !MESSAGE (Build 3.0.4.qualifier) [INFO] com.aptana.core/debug/shell Running process:
+    Process: "/usr/bin/python" "/Library/Application Support/Titanium/mobilesdk/osx/1.7.2/iphone/builder.py" "simulator" "4.3" "/Users/ingo/Documents/Aptana Studio 3 Workspace/testmobil" "com.app" "testmobil" "universal" "iphone" ""
+    Working directory: null
+    Environment: null
+    ```
 
 5. Open a terminal window and paste in the first line (the whole line, starting with the reference to Python), as shown below:
 
@@ -72,9 +70,10 @@ This can be caused by a few different issues:
 
 When launching an Android application on the emulator, you may run into the following error:
 
-`[ERROR] Failed installing com.appcelerator.titanium: pkg: /data/local/tmp/app.apk`
-
-`Failure [INSTALL_FAILED_MISSING_SHARED_LIBRARY]`
+```
+[ERROR] Failed installing com.appcelerator.titanium:   pkg: /data/local/tmp/app.apk
+Failure [INSTALL_FAILED_MISSING_SHARED_LIBRARY]
+```
 
 There are a few possible fixes.
 
@@ -88,7 +87,9 @@ Studio reports that Xcode is not installed, even though you believe it is. This 
 
 You can double check the install location of Xcode by typing the following in Terminal:
 
-`xcode-select -print-path`
+```
+xcode-select -print-path
+```
 
 Which should print something like '/Developer'
 

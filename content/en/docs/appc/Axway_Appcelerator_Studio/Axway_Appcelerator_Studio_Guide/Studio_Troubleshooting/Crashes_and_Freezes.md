@@ -36,13 +36,12 @@ On Unix, you may need to run the following commands as "sudo"
 
 Example:
 
-`Machine$ jps -v`
-
-`9528` `Jps -Dapplication.home=/System/Library/Java/JavaVirtualMachines/``1.6``.``0``.jdk/Contents/Home -Xms8m`
-
-`8455` `-Dorg.eclipse.swt.internal.carbon.smallFonts -Xms40m -Xmx1024m -Declipse.p2.unsignedPolicy=allow -Declipse.log.size.max=``10000` `-Declipse.log.backup.max=``5` `-Xdock:icon=../Resources/titanium.icns -XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -XX:MaxPermSize=256m`
-
-`Machine$ jstack` `8455` `>> logfile.log`
+```
+Machine$ jps -v
+9528 Jps -Dapplication.home=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home -Xms8m
+8455  -Dorg.eclipse.swt.internal.carbon.smallFonts -Xms40m -Xmx1024m -Declipse.p2.unsignedPolicy=allow -Declipse.log.size.max=10000 -Declipse.log.backup.max=5 -Xdock:icon=../Resources/titanium.icns -XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -XX:MaxPermSize=256m
+Machine$ jstack 8455 >> logfile.log
+```
 
 ### Without JPS
 

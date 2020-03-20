@@ -32,21 +32,16 @@ This command is executed immediately in a synchronous way for the retrieval of t
 
 The following _dispatch_ call will get a _Map_ of all the available launch type IDs for a given project name and launch mode:
 
-`var launchTypes = dispatch($H({`
-
-`controller:` `'portal.launch'``,`
-
-`action:` `"getLaunchTypes"``,`
-
-`args: {`
-
-`"project"``:` `"MyProject"``,`
-
-`"mode"``:` `"run"`
-
-`}`
-
-`}).toJSON()).evalJSON();`
+```javascript
+var launchTypes = dispatch($H({
+  controller: 'portal.launch',
+  action: "getLaunchTypes",
+  args: {
+    "project": "MyProject",
+    "mode": "run"
+  }
+}).toJSON()).evalJSON();
+```
 
 **Conditions:**
 
@@ -62,23 +57,17 @@ The returned type ID should later be used with the _**launch**_ command-action.
 
 The following _dispatch_ call will launch a specified project.
 
-`var result = dispatch($H({`
-
-`controller:` `'portal.launch'``,`
-
-`action:` `"launch"``,`
-
-`args: {`
-
-`"project"``:` `"MyProject"``,`
-
-`"mode"``:` `"run"``,`
-
-`"type"``:` `"com.aptana.launch.type.id"`
-
-`}`
-
-`}).toJSON());`
+```javascript
+var result = dispatch($H({
+  controller: 'portal.launch',
+  action: "launch",
+  args: {
+    "project": "MyProject",
+    "mode": "run",
+    "type": "com.aptana.launch.type.id"
+  }
+}).toJSON());
+```
 
 **Conditions:**
 

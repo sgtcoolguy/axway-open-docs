@@ -48,13 +48,17 @@ To sell apps (charge, not give them for free), you'll need to register for a Goo
 
 You'll need to digitally sign your app before uploading it to Google Play. To do this, you'll need to generate a keypair and certificate. You'll do this once for each app you publish by using the keytool command, which is supplied with the JDK. In generic form, the syntax is:
 
-`keytool -genkeypair -v -keystore path/file_name -alias alias_name -keyalg RSA -sigalg SHA1withRSA -validity` `10000`
+```
+keytool -genkeypair -v -keystore path/file_name -alias alias_name -keyalg RSA -sigalg SHA1withRSA -validity 10000
+```
 
 There are two bits in that you'll need to supply. The first is the path/file\_name which you use to specify the keystore in which your keypair and certificate will be stored. Each keystore file can store many unrelated certificates. So typically, you'd put the keystore file in your home (your user) directory so that it's reasonably secure and backed up with the rest of your data. The alias\_name is the label that identifies which keys you're storing (and which you'll be retrieving later). Set that something specific to your app.
 
 For example, if you were to execute the keytool command from your home directory for an app named HelloWorld, you might enter:
 
-`keytool -genkeypair -v -keystore android.keystore -alias helloworld -keyalg RSA -sigalg SHA1withRSA -validity` `10000`
+```
+keytool -genkeypair -v -keystore android.keystore -alias helloworld -keyalg RSA -sigalg SHA1withRSA -validity 10000
+```
 
 The key algorithm (keyalg) must be RSA for Google Play and the validity period must be 10000 (days) or longer. That works out to 25 years or so, which is the validity period that Google Play system requires. They want to make sure you can provide upgrades to your app for a very long time.
 
@@ -66,7 +70,9 @@ You will be prompted for your name, company name, and locality information, whic
 
 Because the certificate is so crucial to publishing (and later updating) your app, we teach "verification" as a separate step. Once you've generated your keypair and certificate, you should verify your keystore to ensure that the algorithm is correct, validity period is sufficient, and that you remember your alias and password correctly. Again, you'll do so with the keytool command:
 
-`keytool -list -v -keystore path/file_name`
+```
+keytool -list -v -keystore path/file_name
+```
 
 You'll be prompted for your password. The command will list each of the aliases contained in the file and its associated certificate information. Make sure that contact info is correct and make sure the certificate is valid for 25 years or more from the date it was created.
 
@@ -94,7 +100,9 @@ After you publish an application for the first time, the next subsequent invocat
 
 To use the Titanium CLI to package your Android application, after you have created your keystore, run the following command:
 
-`appc run -p android -T dist-playstore [-K <KEYSTORE_FILE> -P <KEYSTORE_PASSWORD> -L <KEYSTORE_ALIAS> -O <OUTPUT_DIRECTORY>]`
+```bash
+appc run -p android -T dist-playstore [-K <KEYSTORE_FILE> -P <KEYSTORE_PASSWORD> -L <KEYSTORE_ALIAS> -O <OUTPUT_DIRECTORY>]
+```
 
 If you omit any of the optional parameters, you will be prompted by the CLI to enter these values.
 
@@ -102,7 +110,9 @@ If you omit any of the optional parameters, you will be prompted by the CLI to e
 
 You can verify that the APK file was created and digitally signed correctly. You'll do so with another Android SDK command-line tool. At the command prompt, enter:
 
-`jarsigner -verify -verbose path/yourapp.apk`
+```
+jarsigner -verify -verbose path/yourapp.apk
+```
 
 where path/yourapp.apk is the path and file name associated with your app's APK file. You should see the "jar verified" message at the end of a long list of APK file contents. Now you're ready to publish your app.
 

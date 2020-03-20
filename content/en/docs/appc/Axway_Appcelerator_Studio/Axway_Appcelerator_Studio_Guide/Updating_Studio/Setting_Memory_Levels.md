@@ -40,48 +40,32 @@ Find your configuration file by following the steps here: [Modifying Your Config
 
 ### Windows
 
-`--launcher.XXMaxPermSize`
-
-`256m`
-
-`--launcher.defaultAction`
-
-`openFile`
-
-`-vmargs`
-
-`-Xms40m`
-
-`-Xmx384m`
-
-`-Declipse.p2.unsignedPolicy=allow`
-
-`-Djava.awt.headless=``true`
+```
+--launcher.XXMaxPermSize
+256m
+--launcher.defaultAction
+openFile
+-vmargs
+-Xms40m
+-Xmx384m
+-Declipse.p2.unsignedPolicy=allow
+-Djava.awt.headless=true
+```
 
 ### OS X
 
-`-startup`
-
-`../../../plugins/org.eclipse.equinox.launcher_1.``1.1``.R36x_v20101122_1400.jar`
-
-`--launcher.XXMaxPermSize`
-
-`256m`
-
-`--launcher.defaultAction`
-
-`openFile`
-
-`-vmargs`
-
-`-Xms40m`
-
-`-Xmx384m`
-
-`-Declipse.p2.unsignedPolicy=allow`
-
-`-Xdock:icon=../Resources/aptana.icns`
-
-`-XstartOnFirstThread`
-
-`-Dorg.eclipse.swt.internal.carbon.smallFonts`
+```
+-startup
+../../../plugins/org.eclipse.equinox.launcher_1.1.1.R36x_v20101122_1400.jar
+--launcher.XXMaxPermSize
+256m
+--launcher.defaultAction
+openFile
+-vmargs
+-Xms40m
+-Xmx384m
+-Declipse.p2.unsignedPolicy=allow
+-Xdock:icon=../Resources/aptana.icns
+-XstartOnFirstThread
+-Dorg.eclipse.swt.internal.carbon.smallFonts
+```

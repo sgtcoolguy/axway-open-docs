@@ -22,33 +22,22 @@ One of the best reasons for leveraging WebViews, integration with social network
 
 Here is a basic example of how this module is used. We supply Ti.Facebook with an appid and an array of permissions, set up an event handler for the login, then call the Ti.Facebook.authorize() function. The WebView that is presented with the Facebook login screen handles the rest. Here's the code, followed by the interface that your users will see when they attempt to login.
 
-`var win = Ti.UI.createWindow();`
-
-`Titanium.Facebook.appid =` `'[YOUR APPID]'``;`
-
-`Titanium.Facebook.permissions = [``'publish_stream'``];`
-
-`Titanium.Facebook.addEventListener(``'login'``, function(e) {`
-
-`if` `(e.success) {`
-
-`alert(``'Logged In'``);`
-
-`}` `else`  `if` `(e.error) {`
-
-`alert(e.error);`
-
-`}` `else`  `if` `(e.cancelled) {`
-
-`alert(``"Cancelled"``);`
-
-`}`
-
-`});`
-
-`Titanium.Facebook.authorize();`
-
-`win.open();`
+```javascript
+var win = Ti.UI.createWindow();
+Titanium.Facebook.appid = '[YOUR APPID]';
+Titanium.Facebook.permissions = ['publish_stream'];
+Titanium.Facebook.addEventListener('login', function(e) {
+    if (e.success) {
+        alert('Logged In');
+    } else if (e.error) {
+        alert(e.error);
+    } else if (e.cancelled) {
+        alert("Cancelled");
+    }
+});
+Titanium.Facebook.authorize();
+win.open();
+```
 
 ![facebook](/Images/appc/download/attachments/29004920/facebook.png)
 

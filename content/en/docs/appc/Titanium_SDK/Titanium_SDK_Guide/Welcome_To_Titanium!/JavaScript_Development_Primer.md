@@ -114,181 +114,150 @@ There's a large number of good references on JavaScript best practices available
 
 In a JavaScript execution context, all variables are global by default. The only means of scoping variables is to place them inside of a function. (Within a function, if you don't include the var keyword, your variables will be treated as global variables.) A much better approach than global variables/functions is to enclose all your application's API functions and properties into a single variable (namespace). This will minimize the chances of your code colliding with other code or libraries you include in the context later.
 
-app.js
+*app.js*
 
-`// BAD - we put five variables in the global scope which could be clobbered`
+```javascript
+// BAD - we put five variables in the global scope which could be clobbered
+var key = 'value',
+    foo = 'bar',
+    charlie = 'horse';
 
-`var` `key =` `'value'``,`
+function helper() {
+    //help out
+}
 
-`foo =` `'bar'``,`
+function info(msg) {
+    helper(msg);
+    Ti.API.info(msg);
+}
 
-`charlie =` `'horse'``;`
+// Better - define a single namespace to hold all your variables
+var myapp = {}; // namespace and only global variable
+myapp.key = 'value';
 
-`function` `helper() {`
+/* Or, define the namespace and a few variables all at once with
+var myapp = {
+    key: 'value',
+    foo: 'bar',
+    charlie: 'horse'
+};
+*/
 
-`//help out`
+// add a function to your namespace
+myapp.dosomething = function(foo) {
+  // do something
+};
 
-`}`
+// extend and encapsulate by using self-calling functions
+(function() {
+    function helper() {
+        // this is a private function not directly accessible from the global scope
+    }
 
-`function` `info(msg) {`
-
-`helper(msg);`
-
-`Ti.API.info(msg);`
-
-`}`
-
-`// Better - define a single namespace to hold all your variables`
-
-`var` `myapp = {};` `// namespace and only global variable`
-
-`myapp.key =` `'value'``;`
-
-`/* Or, define the namespace and a few variables all at once with`
-
-`var myapp = {`
-
-`key: 'value',`
-
-`foo: 'bar',`
-
-`charlie: 'horse'`
-
-`};`
-
-`*/`
-
-`// add a function to your namespace`
-
-`myapp.dosomething =` `function``(foo) {`
-
-`// do something`
-
-`};`
-
-`// extend and encapsulate by using self-calling functions`
-
-`(``function``() {`
-
-`function` `helper() {`
-
-`// this is a private function not directly accessible from the global scope`
-
-`}`
-
-`myapp.info =` `function``(msg) {`
-
-`// added to the app's namespace, so a public function`
-
-`helper(msg);`
-
-`Ti.API.info(msg)`
-
-`};`
-
-`})();`
-
-`// you could then call your function with`
-
-`myapp.info(``'Hello World'``);`
+    myapp.info = function(msg) {
+    // added to the app's namespace, so a public function
+        helper(msg);
+        Ti.API.info(msg)
+    };
+})();
+// you could then call your function with
+myapp.info('Hello World');
+```
 
 ### Use === and !== instead of == and !=
 
 JavaScript will automatically convert values in a conditional test unless you tell it not to.
 
-`var` `testme =` `'1'``;`
+```javascript
+var testme = '1';
 
-`if` `(testme == 1) {`
-
-`// this will be executed because '1' is converted to an integer!`
-
-`}`
+if (testme == 1) {
+  // this will be executed because '1' is converted to an integer!
+}
+```
 
 Called by some the "Compare, damn it!" operator, \=== performs what a \== operator might in other languages. If the two operands are equal in _both_ type and value, \=== will return true and !== will return false, which is almost always what you mean. This is a common gotcha and fits nicely in the category of JavaScript language quirks.
 
-`var` `testme =` `'1'``;`
+```javascript
+var testme = '1';
 
-`if` `(testme === 1) {`
-
-`// this will not be executed`
-
-`}`
+if (testme === 1) {
+  // this will not be executed
+}
+```
 
 ### Ternary operator
 
 JavaScript ternary operator is a handy way of turning a conditional block into a single statement. This lets you conditionally assign a value to a variable or object property. The value after the ? is assigned if the conditional statement is true. The value after the : is assigned if the conditional statement is false.
 
-`// You could do this`
+```javascript
+// You could do this
+if (somecondition === somevalue) {
+  var xyz = 'abc';
+} else {
+  var xyz = '123';
+}
 
-`if` `(somecondition === somevalue) {`
-
-`var` `xyz =` `'abc'``;`
-
-`}` `else` `{`
-
-`var` `xyz =` `'123'``;`
-
-`}`
-
-`// but this is more compact`
-
-`var` `xyz = (somecondition === somevalue) ?` `'abc'` `:` `'123'``;`
+// but this is more compact
+var xyz = (somecondition === somevalue) ? 'abc' : '123';
+```
 
 ### Lots of variables? Use a comma
 
 You don't need to put var in front of every variable - you can use commas to replace:
 
-`var` `foo =` `true``;`
-
-`var` `me =` `'awesome'``;`
+```javascript
+var foo = true;
+var me = 'awesome';
+```
 
 with
 
-`var` `foo =` `true``, me =` `'awesome'``;`
+```javascript
+var foo = true, me = 'awesome';
+```
 
 ### Efficient loops
 
 In most situations, checking the length of an array during every iteration can be slow. Moreso when working with Titanium proxy objects (that represent some native structure). So rather than writing:
 
-`var` `names = [``'Jeff'``,``'Nolan'``,``'Marshall'``,``'Don'``];`
+```javascript
+var names = ['Jeff','Nolan','Marshall','Don'];
 
-`for` `(``var` `i=0; i < names.length; i++) {`
-
-`process(names[i]);`
-
-`}`
+for (var i=0; i < names.length; i++) {
+    process(names[i]);
+}
+```
 
 It is better to only get the length of the array only once, as in:
 
-`var` `names = [``'Jeff'``,``'Nolan'``,``'Marshall'``,``'Don'``];`
+```javascript
+var names = ['Jeff','Nolan','Marshall','Don'];
 
-`for` `(``var` `i=0,j=names.length; i<j; i++) {`
-
-`process(names[i]);`
-
-`}`
+for (var i=0,j=names.length; i<j; i++) {
+    process(names[i]);
+}
+```
 
 ### Wrap self-calling functions in parenthesis
 
 [Self-calling functions](http://2007-2010.lovemikeg.com/2008/08/17/a-week-in-javascript-patterns-self-invocation/) are a useful pattern for encapsulating private variables and functions in JavaScript. As you start to realize the utility of self-calling functions, you may be tempted to write a self-calling function as:
 
-`var` `myValue =` `function``() {`
-
-`//do stuff`
-
-`return` `someValue;`
-
-`}();`
+```javascript
+var myValue = function() {
+    //do stuff
+    return someValue;
+}();
+```
 
 While syntactically correct, someone reading this code (missing the () at the end of the function declaration) might think you are assigning a function to myValue, rather than the return value of the function. A better way to write this is with wrapping parentheses:
 
-`var` `myValue = (``function``() {`
-
-`//do stuff`
-
-`return` `someValue;`
-
-`})();`
+```javascript
+var myValue = (function() {
+    //do stuff
+    return someValue;
+})();
+```
 
 In this case, it is more clear that myValue is not a function, but the return value of the function.
 

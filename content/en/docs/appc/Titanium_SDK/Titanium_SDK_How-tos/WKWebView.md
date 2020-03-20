@@ -54,51 +54,42 @@ With Titanium SDK 8.0.0, we now use [WKWebView](#undefined) to implement Ti.UI.W
 
 Adding the following to your HTML will make a WKWebView scale its content the same was as the old UIWebView.
 
-WKWebView scaling
+*WKWebView scaling*
 
-`<``html``>`
-
-`<``head``>`
-
-`<``meta`  `name``=``"viewport"`  `content``=``"width=device-width, initial-scale=1.0"``>`
-
-`</``head``>`
-
-`</``html``>`
+```xml
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+</html>
+```
 
 WKWebView also has few restriction specially with local file accessing. For supporting custom-fonts with WKWebView a little modification is required in the HTML files:
 
-`<``style``>`
-
-`@font-face`
-
-`{`
-
-`font-family: 'Lato-Regular';`
-
-`src: url('fonts/Lato-Regular.ttf');`
-
-`}`
-
-`</``style``>`
+```xml
+<style>
+  @font-face
+    {
+      font-family: 'Lato-Regular';
+      src: url('fonts/Lato-Regular.ttf');
+    }
+</style>
+```
 
 Installation
 
 Download the [stable release](https://github.com/appcelerator-modules/ti.wkwebview/releases), unpack the module, and place it inside the modules/iphone directory of your project. Edit the iOS and modules section of your tiapp.xml file to include this module:
 
-tiapp.xml update
+*tiapp.xml update*
 
-`<``ios``>`
-
-`<``min``-ios-ver>9.0</``min``-ios-ver>`
-
-`</``ios``>`
-
-`<``modules``>`
-
-`<``module``>ti.wkwebview</``module``>`
-
-`</``modules``>`
+```xml
+<ios>
+  <min-ios-ver>9.0</min-ios-ver>
+</ios>
+<modules>
+  <module>ti.wkwebview</module>
+</modules>
+```
 
 ## Features
 
@@ -171,11 +162,11 @@ tiapp.xml update
 
 \*\* Since iOS 12.0, using evalJS in sync is not possible anymore, because the internal callback is now called on the main thread, causing a deadlock in the run-loop that is used to return the value synchronously. To fix this, use the asynchronous solution:
 
-`webView.evalJS(``'document.title'``,` `function` `(e) {`
-
-`alert(e.result);`
-
-`});`
+```javascript
+webView.evalJS('document.title', function (e) {
+  alert(e.result);
+});
+```
 
 #### Events
 
@@ -218,9 +209,11 @@ tiapp.xml update
 
 You can send data from the Web View to your native app by posting messages like this:
 
-Send data from the Web View
+*Send data from the Web View*
 
-`window.webkit.messageHandlers.Ti.postMessage({ message:` `'Titanium rocks!'` `},``'*'``);`
+```
+window.webkit.messageHandlers.Ti.postMessage({ message: 'Titanium rocks!' },'*');
+```
 
 Please note that you should use the Ti message handler to ensure the message event is triggered. This also ensures that your app does not receive unwanted messages by remote pages.
 
@@ -236,9 +229,11 @@ After sending the message from your HTML file, it will trigger the message event
 
 For sending messages from the app to the Web View, use evalJS to call your JS methods like this:
 
-Send messages from the app to the Web View
+*Send messages from the app to the Web View*
 
-`webView.evalJS(``'myJSMethod();'``);`
+```
+webView.evalJS('myJSMethod();');
+```
 
 Check out the [example file](https://github.com/appcelerator-modules/Ti.WKWebView/blob/master/example/app.js) for sending and receiving message back and forth.
 
@@ -254,51 +249,39 @@ Note 2: Since 2.4.0, this modules also supports Ti.App-like events that allows t
 
 Different to the Ti.App events, these ones are fired on the top-level module instance.
 
-Ti.App events
+*Ti.App events*
 
-`var` `WK = require(``'ti.wkwebview'``);`
+```javascript
+var WK = require('ti.wkwebview');
 
-`// Fire event`
+// Fire event
+WK.fireEvent('myEvent', { message: 'Titanium rocks!' });
 
-`WK.fireEvent(``'myEvent'``, { message:` `'Titanium rocks!'` `});`
-
-`// Listen to events`
-
-`WK.addEventListener(``'myEvent'``,` `function``(e) { ... });`
+// Listen to events
+WK.addEventListener('myEvent', function(e) { ... });
+```
 
 The above events can be used on the JavaScript side as well. The following is an example on how to use them in your HTML file (ensure that there is no concurring WK variable):
 
-Ti.App events in HTML
+*Ti.App events in HTML*
 
-`<!DOCTYPE html>`
-
-`<``html``>`
-
-`<``head``>`
-
-`<``title``>Local HTML</``title``>`
-
-`</``head``>`
-
-`<``body``>`
-
-`<``p``>Hello world!</``p``>`
-
-`<``script`  `type``=``"text/javascript"``>`
-
-`// Listen to the native Titanium event`
-
-`WK.addEventListener('testEvent', function(e) { // Fire back an event to the native Titanium app`
-
-`WK.fireEvent('testEventBack', { message: 'It worked!' });`
-
-`});`
-
-`</``script``>`
-
-`</``body``>`
-
-`</``html``>`
+```xml
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Local HTML</title>
+  </head>
+  <body>
+    <p>Hello world!</p>
+    <script type="text/javascript">
+      // Listen to the native Titanium event
+      WK.addEventListener('testEvent', function(e) { // Fire back an event to the native Titanium app
+        WK.fireEvent('testEventBack', { message: 'It worked!' });
+      });
+    </script>
+  </body>
+</html>
+```
 
 #### Saving Images
 
@@ -308,39 +291,37 @@ If you want to allow users to browse the internet (e.g. by using a remote site),
 
 For using the URL schemes mailto, tel, sms and itms-services you only have to set the allowedURLSchemes property. Other URL schemes (i.e. fb) additionally need the corresponding LSApplicationQueriesSchemes key in the iOS plist dictionary of your tiapp.xml:
 
-iOS plist dictionary
+*iOS plist dictionary*
 
-`<``key``>LSApplicationQueriesSchemes</``key``>`
-
-`<``array``>`
-
-`<``string``>fb</``string``>`
-
-`</``array``>`
+```xml
+<key>LSApplicationQueriesSchemes</key>
+<array>
+  <string>fb</string>
+</array>
+```
 
 #### Generic Property Observing
 
 You can listen to changes in some of the native properties (see the native KVO-capability).
 
-`// Start listening for changes`
-
-`webView.startListeningToProperties([` `'title'` `]);` `// Add an event listener for the change`
-
-`webView.addEventListener(` `'title'` `, function(e) {` `// Check for e.value }); // Remove listening to changes (remove the event listener as well to keep it more clean)`
-
-`webView.stopListeningToProperties([` `'title'` `]);`
+```
+// Start listening for changes
+webView.startListeningToProperties([ 'title' ]); // Add an event listener for the change
+webView.addEventListener( 'title' , function(e) { // Check for e.value }); // Remove listening to changes (remove the event listener as well to keep it more clean)
+webView.stopListeningToProperties([ 'title' ]);
+```
 
 ### Configuration
 
 Use the configuration API to configure the initial web-view. This property can only be set when creating the webview and will be ignored when set afterwards.
 
-Configuration API
+*Configuration API*
 
-`var` `WK = require(``'ti.wkwebview'``);`
-
-`var` `config = WK.createConfiguration({ allowsPictureInPictureMediaPlaback:` `true` `});`
-
-`var` `webView = WK.createWebView({ configuration: config });`
+```javascript
+var WK = require('ti.wkwebview');
+var config = WK.createConfiguration({ allowsPictureInPictureMediaPlaback: true });
+var webView = WK.createWebView({ configuration: config });
+```
 
 #### Properties
 
@@ -358,19 +339,16 @@ Configuration API
 
 Use process pools to share cookies between webviews. Process pools do not take arguments, just pass the same reference to multiple web views.
 
-Process pools
+*Process pools*
 
-`var` `WK = require(` `'ti.wkwebview'` `);`
-
-`var` `pool = WK.createProcessPool();`
-
-`var` `config1 = WK.createConfiguration({ processPool: pool });`
-
-`var` `config2 = WK.createConfiguration({ processPool: pool });`
-
-`var` `firstWebView = WK.createWebView({ configuration: config1 });`
-
-`var` `secondWebView = WK.createWebView({ configuration: config2 });`
+```javascript
+var WK = require( 'ti.wkwebview' );
+var pool = WK.createProcessPool();
+var config1 = WK.createConfiguration({ processPool: pool });
+var config2 = WK.createConfiguration({ processPool: pool });
+var firstWebView = WK.createWebView({ configuration: config1 });
+var secondWebView = WK.createWebView({ configuration: config2 });
+```
 
 ### Handle custom URL-schemes
 
@@ -380,14 +358,12 @@ Process pools
 
 * The event was introduced because iOS 10+ causes issues for some custom url-schemes and forwarding the url in an event is a simpler short term solution than implementing the WKURLSchemeHandler which is iOS 11+ only.
 
-`// Add an event listener to listen for a custom URL-scheme`
+```javascript
+// Add an event listener to listen for a custom URL-scheme
+webView.addEventListener('handleurl', function(e) {
+  var handler = e.handler;
 
-`webView.addEventListener(``'handleurl'``,` `function``(e) {`
-
-`var` `handler = e.handler;`
-
-`Ti.Platform.openURL(e.url);`
-
-`handler.invoke(WK.ACTION_POLICY_CANCEL);` `// ACTION_POLICY_CANCEL or ACTION_POLICY_ALLOW`
-
-`});`
+  Ti.Platform.openURL(e.url);
+  handler.invoke(WK.ACTION_POLICY_CANCEL); // ACTION_POLICY_CANCEL or ACTION_POLICY_ALLOW
+});
+```

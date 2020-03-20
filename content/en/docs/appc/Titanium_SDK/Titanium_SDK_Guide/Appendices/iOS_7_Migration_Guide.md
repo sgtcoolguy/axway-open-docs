@@ -184,61 +184,40 @@ You can also either set the fullscreen property to true to hide the status bar o
 
 ![LightWeight](/Images/appc/download/attachments/37533766/LightWeight.png)
 
-`// Function to test if device is iOS 7 or later`
+```javascript
+// Function to test if device is iOS 7 or later
+function isiOS7Plus() {
+  // iOS-specific test
+  if (Titanium.Platform.name == 'iPhone OS') {
+    var version = Titanium.Platform.version.split(".");
+    var major = parseInt(version[0],10);
 
-`function` `isiOS7Plus() {`
+    // Can only test this support on a 3.2+ device
+    if (major >= 7) {
+      return true;
+    }
+  }
+  return false;
+}
 
-`// iOS-specific test`
+var iOS7 = isIOS7Plus();
+var theTop = iOS7 ? 20 : 0
 
-`if` `(Titanium.Platform.name ==` `'iPhone OS'``) {`
+var window = Ti.UI.createWindow({top: theTop});
 
-`var` `version = Titanium.Platform.version.split(``"."``);`
-
-`var` `major = parseInt(version[0],10);`
-
-`// Can only test this support on a 3.2+ device`
-
-`if` `(major >= 7) {`
-
-`return`  `true``;`
-
-`}`
-
-`}`
-
-`return`  `false``;`
-
-`}`
-
-`var` `iOS7 = isIOS7Plus();`
-
-`var` `theTop = iOS7 ? 20 : 0`
-
-`var` `window = Ti.UI.createWindow({top: theTop});`
-
-`// Set the background color to non-black to see the status bar`
-
-`// Or set the Window statusBarStyle property to a non-default value`
-
-`Ti.UI.setBackgroundColor(``'purple'``);`
-
-`var` `win = Ti.UI.createWindow({`
-
-`// Remove the status bar`
-
-`// fullscreen: true`
-
-`// Moves the Window below the status bar`
-
-`top: theTop`
-
-`});`
-
-`var` `button = Ti.UI.createButton({top: 0, title:` `'BLAH BLAH BLAH'``});`
-
-`win.add(button);`
-
-`win.open();`
+// Set the background color to non-black to see the status bar
+// Or set the Window statusBarStyle property to a non-default value
+Ti.UI.setBackgroundColor('purple');
+var win = Ti.UI.createWindow({
+    // Remove the status bar
+    // fullscreen: true
+    // Moves the Window below the status bar
+    top: theTop
+});
+var button = Ti.UI.createButton({top: 0, title: 'BLAH BLAH BLAH'});
+win.add(button);
+win.open();
+```
 
 ### Status bar
 
@@ -250,21 +229,16 @@ On iOS 7, the status bar cannot be controlled on the fly with Titanium.UI.iOS.se
 
 iOS 7 also introduces a new light content status bar style that is exposed as the [Titanium.UI.iOS.StatusBar.LIGHT\_CONTENT](#!/api/Titanium.UI.iOS.StatusBar-property-LIGHT_CONTENT) constant in the Titanium SDK. Use this constant to specify a status bar for use with a dark background. If you want the entire application to use this style, add the following key to your tiapp.xml file:
 
-`<``ios``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<``key``>UIStatusBarStyle</``key``>`
-
-`<``string``>UIStatusBarStyleLightContent</``string``>`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`</``ios``>`
+```xml
+<ios>
+    <plist>
+        <dict>
+            <key>UIStatusBarStyle</key>
+      <string>UIStatusBarStyleLightContent</string>
+        </dict>
+    </plist>
+</ios>
+```
 
 On iOS 6 and prior, setting the statusBarStyle property to Titanium.UI.iOS.StatusBar.LIGHT\_CONTENT constant behaves the same as setting it to Titanium.UI.iOS.StatusBar.TRANSLUCENT\_BLACK.
 
@@ -276,33 +250,22 @@ The Window's translucent and barColor property no longer affects the appearance 
 
 Prior to Release 3.1.3, the Window's translucent and barColor property controlled the appearance of the toolbar.
 
-`var` `win = Ti.UI.createWindow({backgroundColor:` `'white'``, navBarHidden:` `true``});`
-
-`var` `button1 = Ti.UI.createButton({title:` `'Uno'``});`
-
-`var` `button2 = Ti.UI.createButton({title:` `'Dos'``});`
-
-`var` `button3 = Ti.UI.createButton({title:` `'Tres'``});`
-
-`win.setToolbar([button1, button2, button3],`
-
-`{`
-
-`animated:` `false``,` `// true by default`
-
-`translucent:` `false``,` `// true for iOS 7+, false otherwise`
-
-`barColor:` `'blue'``,`
-
-`tintColor:` `'orange'`  `// iOS 7+ only`
-
-`}`
-
-`);`
-
-`var` `navWin = Ti.UI.iOS.createNavigationWindow({window: win});`
-
-`navWin.open();`
+```javascript
+var win = Ti.UI.createWindow({backgroundColor: 'white', navBarHidden: true});
+var button1 = Ti.UI.createButton({title: 'Uno'});
+var button2 = Ti.UI.createButton({title: 'Dos'});
+var button3 = Ti.UI.createButton({title: 'Tres'});
+win.setToolbar([button1, button2, button3],
+    {
+        animated: false, // true by default
+        translucent: false, // true for iOS 7+, false otherwise
+        barColor: 'blue',
+        tintColor: 'orange' // iOS 7+ only
+    }
+);
+var navWin = Ti.UI.iOS.createNavigationWindow({window: win});
+navWin.open();
+```
 
 ### Orientation modes
 
@@ -316,31 +279,22 @@ For modal window orientation modes, see the Modal Windows section.
 
 In Release 3.1.3 and later, modal windows no longer provide a navigation bar by default. If you set any of the navigation bar properties on the modal window, such as leftNavButton, rightNavbutton and titleControl, you need to first create a NavigationWindow object with the modal property set to true (new API object for Release 3.1.3) and place a Window object, defining the navigation bar properties, inside the NavigationWindow object. For example, the code below creates a modal window with a custom title control.
 
-`var` `win = Ti.UI.createWindow({`
+```javascript
+var win = Ti.UI.createWindow({
+    backgroundColor: 'blue',
+    titleControl: Ti.UI.createLabel({
+        text: 'Enable feature?',
+        shadowColor: 'gray',
+        shadowOffset: {x: 2, y: 2}
+    })
+});
 
-`backgroundColor:` `'blue'``,`
-
-`titleControl: Ti.UI.createLabel({`
-
-`text:` `'Enable feature?'``,`
-
-`shadowColor:` `'gray'``,`
-
-`shadowOffset: {x: 2, y: 2}`
-
-`})`
-
-`});`
-
-`var` `navWin = Ti.UI.iOS.createNavigationWindow({`
-
-`modal:` `true``,`
-
-`window: win`
-
-`});`
-
-`navWin.open();`
+var navWin = Ti.UI.iOS.createNavigationWindow({
+    modal: true,
+  window: win
+});
+navWin.open();
+```
 
 Modal windows only support its own orientation modes. It does not inherit from orientation modes from its hosted windows. Prior to Release 3.1.3, modal windows would try to use the orientation modes from its hosted window.
 
@@ -406,63 +360,48 @@ The NavigationWindow can be used for the master and detail views of a SplitWindo
 
 The two code examples below compare and contrast how both the iOS NavigationWindow and iPhone NavigationGroup create and use the navigation controller.
 
-Example: New NavigationWindow
+*Example: New NavigationWindow*
 
-`// Works with Release 3.1.3 and later`
+```javascript
+// Works with Release 3.1.3 and later
+var rootWin = Ti.UI.createWindow({backgroundColor: 'red'});
+var navWin = Ti.UI.iOS.createNavigationWindow({window: rootWin});
+var secondWin = Ti.UI.createWindow({backgroundColor: 'blue'});
 
-`var` `rootWin = Ti.UI.createWindow({backgroundColor:` `'red'``});`
+var b1 = Ti.UI.createButton({title: 'PUSH'});
+rootWin.add(b1);
 
-`var` `navWin = Ti.UI.iOS.createNavigationWindow({window: rootWin});`
+var b2 = Ti.UI.createButton({title: 'POP'});
+secondWin.add(b2);
+// use openWindow and closeWindow rather than open and close
+b1.addEventListener('click',function(){ navWin.openWindow(secondWin); });
+b2.addEventListener('click',function(){ navWin.closeWindow(secondWin); });
 
-`var` `secondWin = Ti.UI.createWindow({backgroundColor:` `'blue'``});`
+navWin.open();
+```
 
-`var` `b1 = Ti.UI.createButton({title:` `'PUSH'``});`
+*Example: Old NavigationGroup*
 
-`rootWin.add(b1);`
+```javascript
+// Will no longer work after Release 3.2.0
+var topWin = Ti.UI.createWindow();
+var rootWin = Ti.UI.createWindow({backgroundColor: 'red'});
+var navGroup = Ti.UI.iOS.createNavigationGroup({window: rootWin});
+var secondWin = Ti.UI.createWindow({backgroundColor: 'blue'});
+// For NavigationGroup, you need to place it inside a top-level window
+topWin.add(navGroup);
 
-`var` `b2 = Ti.UI.createButton({title:` `'POP'``});`
+var b1 = Ti.UI.createButton({title: 'PUSH'});
+rootWin.add(b1);
 
-`secondWin.add(b2);`
+var b2 = Ti.UI.createButton({title: 'POP'});
+secondWin.add(b2);
+// open and close windows
+b1.addEventListener('click',function(){ navGroup.open(secondWin); });
+b2.addEventListener('click',function(){ navGroup.close(secondWin); });
 
-`// use openWindow and closeWindow rather than open and close`
-
-`b1.addEventListener(``'click'``,``function``(){ navWin.openWindow(secondWin); });`
-
-`b2.addEventListener(``'click'``,``function``(){ navWin.closeWindow(secondWin); });`
-
-`navWin.open();`
-
-Example: Old NavigationGroup
-
-`// Will no longer work after Release 3.2.0`
-
-`var` `topWin = Ti.UI.createWindow();`
-
-`var` `rootWin = Ti.UI.createWindow({backgroundColor:` `'red'``});`
-
-`var` `navGroup = Ti.UI.iOS.createNavigationGroup({window: rootWin});`
-
-`var` `secondWin = Ti.UI.createWindow({backgroundColor:` `'blue'``});`
-
-`// For NavigationGroup, you need to place it inside a top-level window`
-
-`topWin.add(navGroup);`
-
-`var` `b1 = Ti.UI.createButton({title:` `'PUSH'``});`
-
-`rootWin.add(b1);`
-
-`var` `b2 = Ti.UI.createButton({title:` `'POP'``});`
-
-`secondWin.add(b2);`
-
-`// open and close windows`
-
-`b1.addEventListener(``'click'``,``function``(){ navGroup.open(secondWin); });`
-
-`b2.addEventListener(``'click'``,``function``(){ navGroup.close(secondWin); });`
-
-`topWin.open();`
+topWin.open();
+```
 
 ### Extended view region
 
@@ -478,57 +417,40 @@ The example below creates a tab group with three different tabs. The first tab u
 
 ![TabEdges](/Images/appc/download/attachments/37533766/TabEdges.png)
 
-`var` `tabGrp = Ti.UI.createTabGroup({`
+```javascript
+var tabGrp = Ti.UI.createTabGroup({
+  backgroundColor: 'white',
+});
 
-`backgroundColor:` `'white'``,`
+var win1 = Ti.UI.createWindow({
+  backgroundImage: 'test_image.png',
+  title: 'EXTEND NONE',
+});
 
-`});`
+var win2 = Ti.UI.createWindow({
+  backgroundImage: 'test_image.png',
+  title: 'EXTEND TOP/BOTTOM',
+  extendEdges: [Ti.UI.EXTEND_EDGE_TOP, Ti.UI.EXTEND_EDGE_BOTTOM]
+});
 
-`var` `win1 = Ti.UI.createWindow({`
+var win3 = Ti.UI.createWindow({
+  backgroundImage: 'test_image.png',
+  title: 'EXTEND TOP/BOTTOM OPAQUE',
+  includeOpaqueBars: true,
+  translucent: false,
+  extendEdges: [Ti.UI.EXTEND_EDGE_BOTTOM, Ti.UI.EXTEND_EDGE_TOP],
+});
 
-`backgroundImage:` `'test_image.png'``,`
+var tab1 = Ti.UI.createTab({window:win1,title: 'TAB1'});
+var tab2 = Ti.UI.createTab({window:win2,title: 'TAB2'});
+var tab3 = Ti.UI.createTab({window:win3,title: 'TAB3'});
 
-`title:` `'EXTEND NONE'``,`
+tabGrp.addTab(tab1);
+tabGrp.addTab(tab2);
+tabGrp.addTab(tab3);
 
-`});`
-
-`var` `win2 = Ti.UI.createWindow({`
-
-`backgroundImage:` `'test_image.png'``,`
-
-`title:` `'EXTEND TOP/BOTTOM'``,`
-
-`extendEdges: [Ti.UI.EXTEND_EDGE_TOP, Ti.UI.EXTEND_EDGE_BOTTOM]`
-
-`});`
-
-`var` `win3 = Ti.UI.createWindow({`
-
-`backgroundImage:` `'test_image.png'``,`
-
-`title:` `'EXTEND TOP/BOTTOM OPAQUE'``,`
-
-`includeOpaqueBars:` `true``,`
-
-`translucent:` `false``,`
-
-`extendEdges: [Ti.UI.EXTEND_EDGE_BOTTOM, Ti.UI.EXTEND_EDGE_TOP],`
-
-`});`
-
-`var` `tab1 = Ti.UI.createTab({window:win1,title:` `'TAB1'``});`
-
-`var` `tab2 = Ti.UI.createTab({window:win2,title:` `'TAB2'``});`
-
-`var` `tab3 = Ti.UI.createTab({window:win3,title:` `'TAB3'``});`
-
-`tabGrp.addTab(tab1);`
-
-`tabGrp.addTab(tab2);`
-
-`tabGrp.addTab(tab3);`
-
-`tabGrp.open();`
+tabGrp.open();
+```
 
 ### Tint color
 
@@ -546,55 +468,42 @@ The example below sets the tintColor property for the NavigationWindow to black.
 
 ![TintColor](/Images/appc/download/attachments/37533766/TintColor.png)
 
-`var` `rootWin = Ti.UI.createWindow({backgroundColor:` `'red'``});`
+```javascript
+var rootWin = Ti.UI.createWindow({backgroundColor: 'red'});
+var navWin = Ti.UI.iOS.createNavigationWindow({
+  window: rootWin,
+  tintColor: 'black'
+});
+var secondWin = Ti.UI.createWindow({
+  backgroundColor: 'blue',
+  navTintColor: 'purple',
+});
 
-`var` `navWin = Ti.UI.iOS.createNavigationWindow({`
+var b1 = Ti.UI.createButton({title: 'PUSH'});
+rootWin.add(b1);
 
-`window: rootWin,`
+var b2 = Ti.UI.createButton({title: 'POP'});
+secondWin.add(b2);
 
-`tintColor:` `'black'`
+b1.addEventListener('click',function(){ navWin.push(secondWin); });
+b2.addEventListener('click',function(){ navWin.pop(secondWin); });
 
-`});`
-
-`var` `secondWin = Ti.UI.createWindow({`
-
-`backgroundColor:` `'blue'``,`
-
-`navTintColor:` `'purple'``,`
-
-`});`
-
-`var` `b1 = Ti.UI.createButton({title:` `'PUSH'``});`
-
-`rootWin.add(b1);`
-
-`var` `b2 = Ti.UI.createButton({title:` `'POP'``});`
-
-`secondWin.add(b2);`
-
-`b1.addEventListener(``'click'``,``function``(){ navWin.push(secondWin); });`
-
-`b2.addEventListener(``'click'``,``function``(){ navWin.pop(secondWin); });`
-
-`navWin.open();`
+navWin.open();
+```
 
 ### Request permission to record audio
 
 In iOS 7, the application needs to request permission to record audio. Use the [Titanium.Media.requestAuthorization](#!/api/Titanium.Media-method-requestAuthorization) method to make the request. iOS will prompt the user to either allow or deny the application to record audio. If the user denies recording permission but the application tries to record audio, the application only records silence.
 
-`Ti.Media.requestAuthorization(``function``(e){`
-
-`if` `(e.success) {`
-
-`startRecorder();`
-
-`}` `else` `{`
-
-`alert(``'Access to Recorder is not allowed'``);`
-
-`}`
-
-`});`
+```
+Ti.Media.requestAuthorization(function(e){
+    if (e.success) {
+        startRecorder();
+    } else {
+        alert('Access to Recorder is not allowed');
+    }
+});
+```
 
 ### Animated transitions
 
@@ -602,187 +511,114 @@ iOS 7 introduced new animation capabilities for transitioning Windows in a Navig
 
 In this example, the red window opens with a transition animation, while closing it uses the default behavior where it slides off screen. To add a transition animation when the red window closes, define a transition animation for the blue window.
 
-`var` `transition = Ti.UI.iOS.createTransitionAnimation({`
+```javascript
+var transition = Ti.UI.iOS.createTransitionAnimation({
+    duration: 300,
+    // The show transition makes the window opaque and rotates it correctly
+    transitionTo: {
+        opacity: 1,
+        duration: 300,
+        transform: Ti.UI.create2DMatrix()
+    },
+    // The hide transition makes the window transparent and rotates it upside down
+    transitionFrom: {
+        opacity: 0,
+        duration: 300 / 2,
+        transform: Ti.UI.create2DMatrix().rotate(180),
+    }
+});
 
-`duration: 300,`
+var win2 = Ti.UI.createWindow({
+    backgroundColor: 'red',
+    title: 'Red Window',
+    transitionAnimation: transition,
+    opacity: 0,
+    transform: Ti.UI.create2DMatrix().rotate(180)
+});
+var button2 = Ti.UI.createButton({
+    title: 'Close Red Window'
+});
+button2.addEventListener('click', function(){
+    nav.closeWindow(win2);
+    // In order to see the blue window again,
+    // need to reverse the transition animation
+    win1.opacity = 1;
+    win1.transform = Ti.UI.create2DMatrix().rotate(0);
+});
+win2.add(button2);
 
-`// The show transition makes the window opaque and rotates it correctly`
+var win1 = Ti.UI.createWindow({
+    backgroundColor: 'blue',
+    title: 'Blue Window',
+    // Uncomment to use a transition animation when the blue window is closed
+    // transitionAnimation: transition
+});
+var button1 = Ti.UI.createButton({title: 'Open Red Window'});
+button1.addEventListener('click', function(){
+    nav.openWindow(win2);
+});
+win1.add(button1);
 
-`transitionTo: {`
-
-`opacity: 1,`
-
-`duration: 300,`
-
-`transform: Ti.UI.create2DMatrix()`
-
-`},`
-
-`// The hide transition makes the window transparent and rotates it upside down`
-
-`transitionFrom: {`
-
-`opacity: 0,`
-
-`duration: 300 / 2,`
-
-`transform: Ti.UI.create2DMatrix().rotate(180),`
-
-`}`
-
-`});`
-
-`var` `win2 = Ti.UI.createWindow({`
-
-`backgroundColor:` `'red'``,`
-
-`title:` `'Red Window'``,`
-
-`transitionAnimation: transition,`
-
-`opacity: 0,`
-
-`transform: Ti.UI.create2DMatrix().rotate(180)`
-
-`});`
-
-`var` `button2 = Ti.UI.createButton({`
-
-`title:` `'Close Red Window'`
-
-`});`
-
-`button2.addEventListener(``'click'``,` `function``(){`
-
-`nav.closeWindow(win2);`
-
-`// In order to see the blue window again,`
-
-`// need to reverse the transition animation`
-
-`win1.opacity = 1;`
-
-`win1.transform = Ti.UI.create2DMatrix().rotate(0);`
-
-`});`
-
-`win2.add(button2);`
-
-`var` `win1 = Ti.UI.createWindow({`
-
-`backgroundColor:` `'blue'``,`
-
-`title:` `'Blue Window'``,`
-
-`// Uncomment to use a transition animation when the blue window is closed`
-
-`// transitionAnimation: transition`
-
-`});`
-
-`var` `button1 = Ti.UI.createButton({title:` `'Open Red Window'``});`
-
-`button1.addEventListener(``'click'``,` `function``(){`
-
-`nav.openWindow(win2);`
-
-`});`
-
-`win1.add(button1);`
-
-`var` `nav = Ti.UI.iOS.createNavigationWindow({`
-
-`window: win1`
-
-`});`
-
-`nav.open();`
+var nav = Ti.UI.iOS.createNavigationWindow({
+    window: win1
+});
+nav.open();
+```
 
 ### Predefined text styles
 
 iOS 7 introduces predefined font text style. The Font object supports a new property, [textStyle](#!/api/Font-property-textStyle) , available from Release 3.2.0 and later. Assign this property a Titanium.UI.TEXT\_STYLE\_\* constant to use a predefined text style. If this property is assigned a valid value, all other font properties are ignored.
 
-`var` `win = Ti.UI.createWindow({`
+```javascript
+var win = Ti.UI.createWindow({
+  backgroundColor: 'white',
+  layout: 'vertical'
+});
 
-`backgroundColor:` `'white'``,`
+var label1 = Ti.UI.createLabel({
+  top: 25,
+  text: 'Lorem Ipsum',
+  font: {textStyle: Ti.UI.TEXT_STYLE_HEADLINE}
+});
+win.add(label1);
 
-`layout:` `'vertical'`
+var label2 = Ti.UI.createLabel({
+  top: 25,
+  text: 'Lorem Ipsum',
+  font: {textStyle: Ti.UI.TEXT_STYLE_SUBHEADLINE}
+});
+win.add(label2);
 
-`});`
+var label3 = Ti.UI.createLabel({
+  top: 25,
+  text: 'Lorem Ipsum',
+  font: {textStyle: Ti.UI.TEXT_STYLE_BODY}
+});
+win.add(label3);
 
-`var` `label1 = Ti.UI.createLabel({`
+var label4 = Ti.UI.createLabel({
+  top: 25,
+  text: 'Lorem Ipsum',
+  font: {textStyle: Ti.UI.TEXT_STYLE_CAPTION1}
+});
+win.add(label4);
 
-`top: 25,`
+var label5 = Ti.UI.createLabel({
+  top: 25,
+  text: 'Lorem Ipsum',
+  font: {textStyle: Ti.UI.TEXT_STYLE_CAPTION2}
+});
+win.add(label5);
 
-`text:` `'Lorem Ipsum'``,`
+var label6 = Ti.UI.createLabel({
+  top: 25,
+  text: 'Lorem Ipsum',
+  font: {textStyle: Ti.UI.TEXT_STYLE_FOOTNOTE}
+});
+win.add(label6);
 
-`font: {textStyle: Ti.UI.TEXT_STYLE_HEADLINE}`
-
-`});`
-
-`win.add(label1);`
-
-`var` `label2 = Ti.UI.createLabel({`
-
-`top: 25,`
-
-`text:` `'Lorem Ipsum'``,`
-
-`font: {textStyle: Ti.UI.TEXT_STYLE_SUBHEADLINE}`
-
-`});`
-
-`win.add(label2);`
-
-`var` `label3 = Ti.UI.createLabel({`
-
-`top: 25,`
-
-`text:` `'Lorem Ipsum'``,`
-
-`font: {textStyle: Ti.UI.TEXT_STYLE_BODY}`
-
-`});`
-
-`win.add(label3);`
-
-`var` `label4 = Ti.UI.createLabel({`
-
-`top: 25,`
-
-`text:` `'Lorem Ipsum'``,`
-
-`font: {textStyle: Ti.UI.TEXT_STYLE_CAPTION1}`
-
-`});`
-
-`win.add(label4);`
-
-`var` `label5 = Ti.UI.createLabel({`
-
-`top: 25,`
-
-`text:` `'Lorem Ipsum'``,`
-
-`font: {textStyle: Ti.UI.TEXT_STYLE_CAPTION2}`
-
-`});`
-
-`win.add(label5);`
-
-`var` `label6 = Ti.UI.createLabel({`
-
-`top: 25,`
-
-`text:` `'Lorem Ipsum'``,`
-
-`font: {textStyle: Ti.UI.TEXT_STYLE_FOOTNOTE}`
-
-`});`
-
-`win.add(label6);`
-
-`win.open();`
+win.open();
+```
 
 ### Attributed strings
 

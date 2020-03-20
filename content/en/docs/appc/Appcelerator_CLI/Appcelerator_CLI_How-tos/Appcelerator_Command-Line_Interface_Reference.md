@@ -252,7 +252,9 @@ Manage a component's access rights.
 
 Retrieves the component's access rights.
 
-`appc access get <MODULE_NAME> <options>`
+```bash
+appc access get <MODULE_NAME> <options>
+```
 
 Example to get a module's access rights: $ appc access get connector/com.foo@1.0.0
 
@@ -260,7 +262,9 @@ Example to get a module's access rights: $ appc access get connector/com.foo@1.0
 
 Sets the component's access rights.
 
-`appc access` `set` `<MODULE_NAME> <ACCESS_RIGHTS> <options>`
+```bash
+appc access set <MODULE_NAME> <ACCESS_RIGHTS> <options>
+```
 
 Access rights can be either:
 
@@ -280,203 +284,267 @@ Example to set a module's access rights: $ appc access set connector/com.foo@1.0
 
 Run an Alloy CLI command. See the [Alloy Command-Line Interface Reference](/docs/appc/Alloy_Framework/Alloy_How-tos/Alloy_Reference_Guides/Alloy_Command-Line_Interface_Reference/) for more information.
 
-`appc alloy [``command``] [args] [options]`
+```bash
+appc alloy [command] [args] [options]
+```
 
 #### Alloy options
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-h, --help</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Output usage information</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--dashboard &lt;dashboard&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Dashboard url to use for logins</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-l, --log-level &lt;LOG_LEVEL&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Sets the log output level. Specify either: <tt class="">trace</tt>, <tt class="">debug</tt>, <tt class="">info</tt>, <tt class="">warn</tt> or <tt>error</tt>.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-o, --output &lt;format&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Format output (only "json" is supported)</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-v, --version</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Output the version of the cli (if -o "json", the version of npm will also be output)</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-a, --app &lt;app&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Test app folder for running "alloy test"</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-A, --apply</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Applies command changes [extract-i18n]</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-b, --noBanner</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Disable the banner</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-c, --config &lt;config&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Pass in compiler configuration</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-f, --force</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Force the command to execute</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-l, --logLevel &lt;logLevel&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Log level (default: 3 [DEBUG])</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-n, --no-colors</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Turn off colors</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-o, --outputPath &lt;outputPath&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Output path for generated code</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-p, --project-dir &lt;project-dir&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium project directory</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-q, --platform &lt;platform&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Target mobile platform [android,ios]</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-s, --spec &lt;spec&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Test spec to use with "alloy test"</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-w, --all</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Require flag for generate styles</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-x, --column &lt;column&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Column for source map query (default: 1)</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-y, --line &lt;line&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Line for source map query (default: 1)</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-z, --source &lt;source&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Source original file for source map query</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--widgetname &lt;name&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Widget name, used with generate command</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--testapp &lt;name&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Test app name to import, used with new command</p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-h, --help</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Output usage information</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--dashboard &lt;dashboard&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Dashboard url to use for logins</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-l, --log-level &lt;LOG_LEVEL&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Sets the log output level. Specify either: <tt class=" ">trace</tt>, <tt class=" ">debug</tt>, <tt class=" ">info</tt>, <tt class=" ">warn</tt> or <tt class=" ">error</tt>.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-o, --output &lt;format&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Format output (only "json" is supported)</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-v, --version</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Output the version of the cli (if -o "json", the version of npm will also be output)</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-a, --app &lt;app&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Test app folder for running "alloy test"</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-A, --apply</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Applies command changes [extract-i18n]</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-b, --noBanner</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Disable the banner</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-c, --config &lt;config&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Pass in compiler configuration</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-f, --force</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Force the command to execute</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-l, --logLevel &lt;logLevel&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Log level (default: 3 [DEBUG])</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-n, --no-colors</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Turn off colors</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-o, --outputPath &lt;outputPath&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Output path for generated code</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-p, --project-dir &lt;project-dir&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Titanium project directory</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-q, --platform &lt;platform&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Target mobile platform [android,ios]</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-s, --spec &lt;spec&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Test spec to use with "alloy test"</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-w, --all</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Require flag for generate styles</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-x, --column &lt;column&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Column for source map query (default: 1)</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-y, --line &lt;line&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Line for source map query (default: 1)</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-z, --source &lt;source&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Source original file for source map query</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--widgetname &lt;name&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Widget name, used with generate command</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--testapp &lt;name&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Test app name to import, used with new command</p></td></tr></tbody></table>
 
 #### alloy new
 
 Create a new alloy project.
 
-`appc alloy new [``dir``] [options]`
+```bash
+appc alloy new [dir] [options]
+```
 
 As of CLI 7.1.0, A custom template directory can be added via this commands:
 
-`appc alloy` `new` `. </path/to/template>`
+```bash
+appc alloy new . </path/to/template>
+```
 
 or
 
-`appc` `new` `--template </path/to/template>`
+```bash
+appc new --template </path/to/template>
+```
 
 #### alloy compile
 
 Compile into titanium source code.
 
-`appc alloy compile [``dir``] [options]`
+```bash
+appc alloy compile [dir] [options]
+```
 
 #### alloy extract-i18n
 
 Extracts i18n strings from the source code (js and tss files).
 
-`appc alloy extract-i18n [language] [options]`
+```bash
+appc alloy extract-i18n [language] [options]
+```
 
 #### alloy generate
 
 Generate a new alloy type such as a controller.
 
-`appc alloy generate [``type``] [name] [options]`
+```bash
+appc alloy generate [type] [name] [options]
+```
 
 #### alloy copy
 
 Copy the controller, view, and style files from <source> to <destination>.
 
-`appc alloy copy [``source``] [destination] [options]`
+```bash
+appc alloy copy [source] [destination] [options]
+```
 
 #### alloy move
 
 Move the controller, view, and style files from <source> to <destination>.
 
-`appc alloy copy [``source``] [destination] [options]`
+```bash
+appc alloy copy [source] [destination] [options]
+```
 
 #### alloy remove
 
 Remove the controller, view, and style files at <source>.
 
-`appc alloy copy [``source``] [options]`
+```bash
+appc alloy copy [source] [options]
+```
 
 ### Appc Daemon
 
 The Appcelerator Daemon is a server that hosts services which power the tooling for Axway products such as Titanium SDK.
 
-`appc appcd COMMAND [ARGS] [OPTIONS]`
+```bash
+appc appcd COMMAND [ARGS] [OPTIONS]
+```
 
 #### Daemon options
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-h, --help</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Display help</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-v, --version</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Outputs the appcd version</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--config=&lt;json&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Serialized JSON string to mix into the appcd config</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--config-file=&lt;file&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Path to a appcd JS config file</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--no-colors</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Disables colors</p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-h, --help</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Display help</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-v, --version</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Outputs the appcd version</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--config=&lt;json&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Serialized JSON string to mix into the appcd config</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--config-file=&lt;file&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Path to a appcd JS config file</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--no-colors</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Disables colors</p></td></tr></tbody></table>
 
 #### appcd config
 
 Get and set config options.
 
-`appc appcd config [options]`
+```bash
+appc appcd config [options]
+```
 
 #### appcd dump
 
 Dumps the config, status, health, and debug logs to a file.
 
-`appc appcd dump [options]`
+```bash
+appc appcd dump [options]
+```
 
 #### appcd exec
 
 Connects to the Appc Daemon and executes the request.
 
-`appc appcd` `exec` `[options]`
+```bash
+appc appcd exec [options]
+```
 
 #### appcd logcat
 
 Streams Appc Daemon debug log output.
 
-`appc appcd logcat [options]`
+```bash
+appc appcd logcat [options]
+```
 
 #### appcd restart
 
 Stops the Appc Daemon if running, then starts it.
 
-`appc appcd restart [options]`
+```bash
+appc appcd restart [options]
+```
 
 #### appcd start
 
 Starts the Appc Daemon if it's not already running.
 
-`appc appcd start [options]`
+```bash
+appc appcd start [options]
+```
 
 #### appcd status
 
 Displays the Appc Daemon status.
 
-`appc appcd status [options]`
+```bash
+appc appcd status [options]
+```
 
 #### appcd stop
 
 Stops the Appc Daemon if running.
 
-`appc appcd stop [options]`
+```bash
+appc appcd stop [options]
+```
 
 #### appcd help
 
 Displays the help screen.
 
-`appc appcd help [options]`
+```bash
+appc appcd help [options]
+```
 
 ### Cloud/ACS
 
 Manages Arrow Cloud applications by running an Arrow Cloud CLI command. See the [Arrow Cloud Command-Line Interface Reference](/docs/appc/AMPLIFY_Runtime_Services/AMPLIFY_Runtime_Services_Guide/AMPLIFY_Runtime_Services_Command-Line_Interface_Reference/) for more information.
 
-`appc cloud|acs [COMMAND] [COMMON OPTIONS] [COMMAND OPTIONS]`
+```bash
+appc cloud|acs [COMMAND] [COMMON OPTIONS] [COMMAND OPTIONS]
+```
 
 ### Cloud/ACS commands
 
 #### cloud/acs options
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-h, --help</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Output usage information</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--dashboard &lt;dashboard&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Dashboard url to use for logins</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-l, --log-level &lt;level&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Change log level</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-o, --output &lt;format&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Format output (only "json" is supported)</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-v, --version</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Output the version number</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-q, --quiet</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Reduce the amount of text output to the console</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--no-banner</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Turn off banner</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-n, --no-colors</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Turn off colors</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--no-services</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Disable services</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--no-progress, --no-progress-bars</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Disable progress bars</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--no-prompt</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Disable prompt</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--prompt-port &lt;promptPort&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Port to use socket-based prompting</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--prompt-type &lt;promptType&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Prompt type ["cli","socket","socket-bundle"], defaults to "cli"</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--username &lt;username&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Username for login</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--password &lt;password&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Password for login</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-e, --env &lt;environment&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Environment such as production, preproduction, development, etc</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-O, --org-id &lt;orgId&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Organization id for logins</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-P, --plugin-paths &lt;pluginPaths&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Comma-separated search paths for plugins</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-r, --registry &lt;registry&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Registry server url to use</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--vpc-env &lt;vpcEnv&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>VPC environment for logins</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>-d, --dir &lt;dir&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Directory to load app from</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>--dates</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Turn on dates in logging</p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-h, --help</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Output usage information</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--dashboard &lt;dashboard&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Dashboard url to use for logins</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-l, --log-level &lt;level&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Change log level</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-o, --output &lt;format&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Format output (only "json" is supported)</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-v, --version</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Output the version number</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-q, --quiet</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Reduce the amount of text output to the console</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--no-banner</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Turn off banner</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-n, --no-colors</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Turn off colors</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--no-services</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Disable services</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--no-progress, --no-progress-bars</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Disable progress bars</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--no-prompt</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Disable prompt</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--prompt-port &lt;promptPort&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Port to use socket-based prompting</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--prompt-type &lt;promptType&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Prompt type ["cli","socket","socket-bundle"], defaults to "cli"</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--username &lt;username&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Username for login</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--password &lt;password&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Password for login</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-e, --env &lt;environment&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Environment such as production, preproduction, development, etc</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-O, --org-id &lt;orgId&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Organization id for logins</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-P, --plugin-paths &lt;pluginPaths&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Comma-separated search paths for plugins</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-r, --registry &lt;registry&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Registry server url to use</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--vpc-env &lt;vpcEnv&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>VPC environment for logins</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">-d, --dir &lt;dir&gt;</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Directory to load app from</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">--dates</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Turn on dates in logging</p></td></tr></tbody></table>
 
 #### cloud/acs new
 
 Create a new cloud/acs app.
 
-`appc cloud``/acs` `new [options] <name>`
+```bash
+appc cloud/acs new [options] <name>
+```
 
 #### cloud/acs domain
 
 Set or remove domain of an existing app. If no appname provided it can run in app dir or with -d to specify an app dir.
 
-`appc cloud``/acs` `domain [options] [appname]`
+```bash
+appc cloud/acs domain [options] [appname]
+```
 
 #### cloud/acs list
 
 Show the status of all apps or the app specified by appname.
 
-`appc cloud``/acs` `list [options] [appname]`
+```bash
+appc cloud/acs list [options] [appname]
+```
 
 #### cloud/acs logcat
 
 Tail the log entries output from your app. If no appname provided it can run in app dir or with -d to specify an app dir. 'logcat -h' for more options.
 
-`appc cloud``/acs` `logcat [options] [appname]`
+```bash
+appc cloud/acs logcat [options] [appname]
+```
 
 #### cloud/acs loglist
 
 List the log entries during the specified start datetime and end datetime. If no appname provided it can run in app dir or with -d to specify an app dir. 'loglist -h' for more options.
 
-`appc cloud``/acs` `loglist [options] [appname]`
+```bash
+appc cloud/acs loglist [options] [appname]
+```
 
 #### cloud/acs accesslog
 
 List the user access logs during the specified start datetime and end datetime. If no appname provided it can run in app dir or with -d to specify an app dir. 'accesslog -h' for more options.
 
-`appc cloud``/acs` `accesslog [options] [appname]`
+```bash
+appc cloud/acs accesslog [options] [appname]
+```
 
 #### cloud/acs usage
 
 List the system resource usage logs during the specified start datetime and end datetime. If no appname provided it can run in app dir or with -d to specify an app dir. 'usage -h' for more options.
 
-`appc cloud``/acs` `usage [options] [appname]`
+```bash
+appc cloud/acs usage [options] [appname]
+```
 
 #### cloud/acs crt
 
 Manage the custom SSL certificates for accessing apps via https. SSL certificates are used for servers in cloud based on certificate names (SubjectAltName or CN). If no appname provided it can run in app dir or with -d to specify an app dir. 'crt -h' for more options. This feature is available to enterprise user only.
 
-`appc cloud``/acs` `crt [options] [appname]`
+```bash
+appc cloud/acs crt [options] [appname]
+```
 
 #### cloud/acs login
 
 Login to the ACS cloud.
 
-`appc cloud``/acs` `login [options] [username] [password]`
+```bash
+appc cloud/acs login [options] [username] [password]
+```
 
 #### cloud/acs logout
 
 Logout of the ACS cloud
 
-`appc cloud``/acs`  `logout`
+```bash
+appc cloud/acs logout
+```
 
 #### cloud/acs publish
 
 Publish an app to the ACS cloud. run in app dir or with -d to specify an app dir.
 
-`appc cloud``/acs` `publish [options] [npm_username] [npm_password]`
+```bash
+appc cloud/acs publish [options] [npm_username] [npm_password]
+```
 
 If acs cli complains that npm is not found even though npm is in the path, ensure that the directory containing npm is in the NODE\_PATH (for example, NODE\_PATH=/usr/lib/node\_modules).
 
@@ -484,77 +552,105 @@ If acs cli complains that npm is not found even though npm is in the path, ensur
 
 Un-publish an app from the ACS cloud. If no appname provided it can run in app dir or with -d to specify an app dir.
 
-`appc cloud``/acs` `unpublish [options] [appname]`
+```bash
+appc cloud/acs unpublish [options] [appname]
+```
 
 #### cloud/acs remove
 
 Remove an app from both ACS cloud side and local side. If no appname provided it can run in app dir or with -d to specify an app dir. To remove local dir at the same time -d should be used. In addition, --force must be used to indicate to remove local dir.
 
-`appc cloud``/acs` `remove [options] [appname]`
+```bash
+appc cloud/acs remove [options] [appname]
+```
 
 #### cloud/acs config
 
 Config how many app servers in cloud to use.
 
-`appc cloud``/acs` `config [options] [appname]`
+```bash
+appc cloud/acs config [options] [appname]
+```
 
 #### cloud/acs whoami
 
 Display current login user.
 
-`appc cloud``/acs`  `whoami` `[options]`
+```bash
+appc cloud/acs whoami [options]
+```
 
 #### cloud/acs server
 
 Set the server size for an app. If no appname provided it can run in app dir or with -d to specify an app dir. 'server -h' for more options.
 
-`appc cloud``/acs` `server [options] [appname]`
+```bash
+appc cloud/acs server [options] [appname]
+```
 
 #### cloud/acs download
 
 Download the app source file with specified app name and version. If no appname provided it can run in app dir or with -d to specify an app dir, and the currently deployed app version will be downloaded if no app version option provided. 'download -h' for more options.
 
-`appc cloud``/acs` `download [options] [appname]`
+```bash
+appc cloud/acs download [options] [appname]
+```
 
 #### cloud/acs transfer-domain
 
 Transfer a domain name from an app to another. 'transfer-domain -h' for more options.
 
-`appc cloud``/acs` `transfer-domain [options] <domain_name>`
+```bash
+appc cloud/acs transfer-domain [options] <domain_name>
+```
 
 #### cloud/acs restart
 
 Restart an app running in the API Runtime cloud. If no appname provided it can run in app dir or with -d to specify an app dir.
 
-`appc aloud``/acs` `restart [options] [appname]`
+```bash
+appc aloud/acs restart [options] [appname]
+```
 
 ### Config
 
 Get, set, or list configuration settings.
 
-`appc config <get,``set``,list> [<key>][<value>]`
+```bash
+appc config <get,set,list> [<key>][<value>]
+```
 
 #### Config examples
 
 Display the entire config:
 
-` $ appc config list`
+```bash
+$ appc config list
+```
 
 Get a configuration key's value:
 
-`$ appc config get username`
+```bash
+$ appc config get username
+```
 
 Set a configuration key's value to a string:
 
-`$ appc config` `set` `defaultEnvironment preproduction`
+```bash
+$ appc config set defaultEnvironment preproduction
+```
 
 Set a configuration key's value to an object:
 
-`$ appc config` `set` `devEnvironment` `'{"registry":"http://localhost:8082"}'`
+```bash
+$ appc config set devEnvironment '{"registry":"http://localhost:8082"}'
+```
 
 Set a deep configuration key's value:
 
-`$ appc config` `set` `devEnvironment.registry http:``//localhost``:8082`
+```bash
+$ appc config set devEnvironment.registry http://localhost:8082
+```
 
 Config commands
 
@@ -562,25 +658,33 @@ Config commands
 
 Retrieves a configuration setting.
 
-`appc config get <KEY_NAME>`
+```bash
+appc config get <KEY_NAME>
+```
 
 #### config list
 
 Lists configuration settings.
 
-`appc config list`
+```bash
+appc config list
+```
 
 #### config set
 
 Sets a configuration setting.
 
-`appc config` `set` `<KEY_NAME> <VALUE>`
+```bash
+appc config set <KEY_NAME> <VALUE>
+```
 
 ### Generate
 
 Generate an Appcelerator component.
 
-`appc generate [options]`
+```bash
+appc generate [options]
+```
 
 #### Generate options
 
@@ -594,19 +698,25 @@ Generate an Appcelerator component.
 
 Displays the help screen.
 
-`appc help [<COMMAND>]`
+```bash
+appc help [<COMMAND>]
+```
 
 ### Info
 
 **Since Release 5.0.0.** Gets the current system information.
 
-`appc info [options]`
+```bash
+appc info [options]
+```
 
 ### Install
 
 Installs Appcelerator component. If no component is specified, the command will install the dependencies specified in the project's package.json file.
 
-`appc` `install` `[<componentNames>] [options]`
+```bash
+appc install [<componentNames>] [options]
+```
 
 #### Install options
 
@@ -623,25 +733,35 @@ Installs Appcelerator component. If no component is specified, the command will 
 
 Install component dependencies for project (requires package.json):
 
-`$ appc` `install`
+```bash
+$ appc install
+```
 
 Install a component locally:
 
-`$ appc` `install` `connector``/appc``.arrowdb`
+```bash
+$ appc install connector/appc.arrowdb
+```
 
 Install a component globally:
 
-`$ appc` `install` `connector``/appc``.arrowdb -g`
+```bash
+$ appc install connector/appc.arrowdb -g
+```
 
 Install a titanium module
 
-`$ appc` `install` `-t module hyperloop`
+```bash
+$ appc install -t module hyperloop
+```
 
 ### Login
 
 Logs into the AMPLIFY Appcelerator Services.
 
-`appc login [options]`
+```bash
+appc login [options]
+```
 
 #### Login options
 
@@ -654,7 +774,9 @@ Logs into the AMPLIFY Appcelerator Services.
 
 Logout from the AMPLIFY Appcelerator Services.
 
-`appc` `logout` `[options]`
+```bash
+appc logout [options]
+```
 
 #### Logout options
 
@@ -666,7 +788,9 @@ Logout from the AMPLIFY Appcelerator Services.
 
 Create a new app and/or server project.
 
-`appc new [options]`
+```bash
+appc new [options]
+```
 
 #### New options
 
@@ -694,7 +818,9 @@ Create a new api project
 
 Manager registry organizations for a component. Only applicable if the component access rights are set to either org or user\_or\_org.
 
-`appc org <add, remove, list> [<orgID>] [<component>]`
+```bash
+appc org <add, remove, list> [<orgID>] [<component>]
+```
 
 ### Org commands
 
@@ -704,39 +830,53 @@ Manager registry organizations for a component. Only applicable if the component
 
 Add an organization to a component.
 
-`appc org add <ORGANIZATION_ID> [<COMPONENT>]`
+```bash
+appc org add <ORGANIZATION_ID> [<COMPONENT>]
+```
 
 #### org list
 
 Lists organizations for a component.
 
-`appc org list [<COMPONENT>]`
+```bash
+appc org list [<COMPONENT>]
+```
 
 #### org rm | remove
 
 Remove an organization from a component.
 
-`appc org` `rm` `<ORGANIZATION_ID> [<COMPONENT>]`
+```bash
+appc org rm <ORGANIZATION_ID> [<COMPONENT>]
+```
 
 ### Org examples
 
 List orgs for a component:
 
-`$ appc org list connector``/my``.connector`
+```bash
+$ appc org list connector/my.connector
+```
 
 A dd an org to a component:
 
-`$ appc org add 12345 connector``/my``.connector`
+```bash
+$ appc org add 12345 connector/my.connector
+```
 
 Remove an org from a component:
 
-`$ appc org remove 12345 connector``/my``.connector`
+```bash
+$ appc org remove 12345 connector/my.connector
+```
 
 ### Owner
 
 Manager registry owners for a component. Owners are specified by their AMPLIFY Appcelerator Services username or email.
 
-`appc owner <add, remove, list> [<owner>] [<component>]`
+```bash
+appc owner <add, remove, list> [<owner>] [<component>]
+```
 
 ### Owner commands
 
@@ -744,45 +884,61 @@ Manager registry owners for a component. Owners are specified by their AMPLIFY A
 
 Adds an owner to a component.
 
-`appc owner add <USERNAME> [<COMPONENT>]`
+```bash
+appc owner add <USERNAME> [<COMPONENT>]
+```
 
 #### owner list
 
 Lists owners of a component.
 
-`appc owner list [<COMPONENT>]`
+```bash
+appc owner list [<COMPONENT>]
+```
 
 #### owner rm | remove
 
 Removes an owner from a component.
 
-`appc owner` `rm` `<USERNAME> [<COMPONENT>]`
+```bash
+appc owner rm <USERNAME> [<COMPONENT>]
+```
 
 ### Owner examples
 
 Lists owners for a component:
 
-`$ appc owner list`
+```bash
+$ appc owner list
+```
 
 Removes an owner from a component:
 
-`$ appc owner remove user@domain.org`
+```bash
+$ appc owner remove user@domain.org
+```
 
 Add an owner to a component
 
-`$ appc owner add newowner@email.com`
+```bash
+$ appc owner add newowner@email.com
+```
 
 ### Platform
 
 Runs a specified API against AMPLIFY Appcelerator Services.
 
-`appc platform <api> [<args...>] [options]`
+```bash
+appc platform <api> [<args...>] [options]
+```
 
 ### Publish
 
 Publish a component to the registry. You should run this command from inside the project's directory.
 
-`appc publish [options]`
+```bash
+appc publish [options]
+```
 
 #### Publish options
 
@@ -798,7 +954,9 @@ Publish a component to the registry. You should run this command from inside the
 
 Remove installed Appcelerator CLI
 
-`appc remove [version]`
+```bash
+appc remove [version]
+```
 
 #### Remove options
 
@@ -809,7 +967,9 @@ Remove installed Appcelerator CLI
 
 Run a project–either build and run a Titanium application, or build and locally run an Arrow application.
 
-`appc run [options]`
+```bash
+appc run [options]
+```
 
 The following options only apply to Titanium applications:
 
@@ -894,7 +1054,9 @@ Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3
 
 Search for components in the registry.
 
-`appc search <QUERY_TERM> [options]`
+```bash
+appc search <QUERY_TERM> [options]
+```
 
 #### Search options
 
@@ -906,27 +1068,37 @@ Search for components in the registry.
 
 Runs the setup wizard and checks your environment.
 
-`appc setup [options]`
+```bash
+appc setup [options]
+```
 
 ### Switch
 
 **Since Release 5.0.0.** Switch organizations without logging in or out of the CLI.
 
-`appc switch <org> [options]`
+```bash
+appc switch <org> [options]
+```
 
 ### Titanium | ti
 
 Execute titanium commands. See the [Titanium Command-Line Interface Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_Command-Line_Interface_Reference/) for more information.
 
-`appc ti <``command``> [options]`
+```bash
+appc ti <command> [options]
+```
 
-`appc titanium <``command``> [options]`
+```bash
+appc titanium <command> [options]
+```
 
 ### Unpublish
 
 Unpublish a project or component. The component name is only required if the project is run outside the project directory.
 
-`appc unpublish [options] [component]`
+```bash
+appc unpublish [options] [component]
+```
 
 #### Unpublish options
 
@@ -939,7 +1111,9 @@ Unpublish a project or component. The component name is only required if the pro
 
 Selects the version of the CLI to use. Running the command with no options lists the available versions.
 
-`appc use [<add, remove, list>] [<user>] [<component>]`
+```bash
+appc use [<add, remove, list>] [<user>] [<component>]
+```
 
 #### Use options
 
@@ -952,17 +1126,23 @@ Selects the version of the CLI to use. Running the command with no options lists
 
 Manage registry users for a component. Only applicable if the component access rights are set to either user or user\_or\_org.
 
-`appc user <add,remove,list>[ <user>][ <component>]`
+```bash
+appc user <add,remove,list>[ <user>][ <component>]
+```
 
 #### User examples
 
 Remove a user:
 
-`$ appc user remove user@domain.org`
+```bash
+$ appc user remove user@domain.org
+```
 
 Add a user:
 
-`$ appc user add newowner@email.com`
+```bash
+$ appc user add newowner@email.com
+```
 
 ### User commands
 
@@ -970,19 +1150,25 @@ Add a user:
 
 Adds a user to a component.
 
-`appc user add <USERNAME> [<COMPONENT>]`
+```bash
+appc user add <USERNAME> [<COMPONENT>]
+```
 
 #### user rm | remove
 
 Removes a user from a component.
 
-`appc user` `rm` `<USERNAME> [<COMPONENT>]`
+```bash
+appc user rm <USERNAME> [<COMPONENT>]
+```
 
 ### Whoami
 
 Displays information about the currently logged-in user.
 
-`appc` `whoami` `[options]`
+```bash
+appc whoami [options]
+```
 
 #### Whoami options
 

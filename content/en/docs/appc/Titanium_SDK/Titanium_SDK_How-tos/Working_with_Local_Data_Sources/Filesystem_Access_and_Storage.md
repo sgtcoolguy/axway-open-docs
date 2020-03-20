@@ -82,251 +82,183 @@ In the upcoming sections, we'll look at the various ways you can interact with f
 
 To work with a file, you need a reference to it, otherwise known as a handle. You do this with the Ti.Filesystem.getFile() method, passing to it the path to and name of the file. What you get back is an instance of the Ti.Filesystem.File object. For example:
 
-`var f = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,``'yourfile.txt'``);`
+```javascript
+var f = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,'yourfile.txt');
+```
 
 #### Writing
 
 Again, writing to files is straightforward. Get a handle, call write(). Depending on your app, what comes before that call that might be a bit more involved. For example, when saving the state of a JavaScript object, you'll call JSON.stringify() first. Later, you can read in the file and rehydrate the object with JSON.parse().
 
-`var f = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,` `'emptyfile.txt'``);`
-
-`f.write(``'The file is no longer empty!'``);` `// write to the file`
+```javascript
+var f = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'emptyfile.txt');
+f.write('The file is no longer empty!'); // write to the file
+```
 
 #### Reading
 
 Reading from a file is simple enough: get a handle then call the read() method. Keep in mind that the read() method returns the contents of the file as a blob. That's great if your file contains binary data. But if you're working with a text file, grab the text property of that blob to get the plain text contents of the file. Or, you can use the mimeType property to determine the file's [MIME type](http://en.wikipedia.org/wiki/MIME_type). Like this:
 
-`var f = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,``'yourfile.txt'``);`
+```javascript
+var f = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,'yourfile.txt');
+f.write('The file is no longer empty!'); // write to the file
+var contents = f.read();
+Ti.API.info('Output as a blob: ' + contents); // useful if contents are binary
+Ti.API.info('Output text of the file: ' + contents.text);
+Ti.API.info('Output the file\'s MIME type: ' + contents.mimeType); // e.g. text/plain
 
-`f.write(``'The file is no longer empty!'``);` `// write to the file`
-
-`var contents = f.read();`
-
-`Ti.API.info(``'Output as a blob: '` `+ contents);` `// useful if contents are binary`
-
-`Ti.API.info(``'Output text of the file: '` `+ contents.text);`
-
-`Ti.API.info(``'Output the file\'s MIME type: '` `+ contents.mimeType);` `// e.g. text/plain`
-
-`// Will output`
-
-`// [INFO] Output as a blob: The file is no longer empty!`
-
-`// [INFO] Output text of the file: The file is no longer empty!`
-
-`// [INFO] Output the file's MIME type: text/plain`
+// Will output
+// [INFO]  Output as a blob: The file is no longer empty!
+// [INFO]  Output text of the file: The file is no longer empty!
+// [INFO]  Output the file's MIME type: text/plain
+```
 
 #### Appending
 
 To append the the file use the append() method, this takes a string, a Blob or a Ti.Filesystem.File object
 
-`var log = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,` `'logfile.txt'``);`
+```javascript
+var log = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'logfile.txt');
+log.write('My log file\n');
+for (var i = 0; i < 10; i++) {
+  log.append(i + ': new log statement\n');
+}
+var extraLog = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'extralogfile.txt');
+extraLog.write('You can also append files!');
+log.append(extraLog);
+Ti.API.info(log.read().text);
 
-`log.write(``'My log file\n'``);`
-
-`for` `(var i =` `0``; i <` `10``; i++) {`
-
-`log.append(i +` `': new log statement\n'``);`
-
-`}`
-
-`var extraLog = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,` `'extralogfile.txt'``);`
-
-`extraLog.write(``'You can also append files!'``);`
-
-`log.append(extraLog);`
-
-`Ti.API.info(log.read().text);`
-
-`// Will output`
-
-`// [INFO] My log file`
-
-`// [INFO] 0: new log statement`
-
-`// [INFO] 1: new log statement`
-
-`// [INFO] 2: new log statement`
-
-`// [INFO] 3: new log statement`
-
-`// [INFO] 4: new log statement`
-
-`// [INFO] 5: new log statement`
-
-`// [INFO] 6: new log statement`
-
-`// [INFO] 7: new log statement`
-
-`// [INFO] 8: new log statement`
-
-`// [INFO] 9: new log statement`
-
-`// [INFO] You can also append files!`
+// Will output
+// [INFO]  My log file
+// [INFO]  0: new log statement
+// [INFO]  1: new log statement
+// [INFO]  2: new log statement
+// [INFO]  3: new log statement
+// [INFO]  4: new log statement
+// [INFO]  5: new log statement
+// [INFO]  6: new log statement
+// [INFO]  7: new log statement
+// [INFO]  8: new log statement
+// [INFO]  9: new log statement
+// [INFO]  You can also append files!
+```
 
 #### Creating and copying
 
 Titanium makes it pretty easy to create a file. Grab a file handle, then write to the file. If it doesn't already exist, Titanium will create it for you. There are some specific methods you can use if you want to explicitly create the files. But you don't need to.
 
-`var f = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,``'nonexistent_file.txt'``);`
-
-`if` `(f.exists() ===` `false``) {`
-
-`// you don't need to do this, but you could...`
-
-`f.createFile();`
-
-`}`
-
-`f.write(``'writing to the file would be enough to create it'``);`
+```javascript
+var f = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,'nonexistent_file.txt');
+if (f.exists() === false) {
+  // you don't need to do this, but you could...
+  f.createFile();
+}
+f.write('writing to the file would be enough to create it');
+```
 
 On Android and Windows there is a specific copy method, it can be used like the below
 
-`var` `oldfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,``'old.txt'``);`
+```javascript
+var oldfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,'old.txt');
+oldfile.write('Copying files!');
+var newPath = Ti.Filesystem.applicationDataDirectory + 'new.txt';
+oldfile.copy(newPath); // both old.txt and new.txt exist now
+var newfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'new.txt');
 
-`oldfile.write(``'Copying files!'``);`
+Ti.API.info('oldfile exists at ' + oldfile.nativePath + ': ' + oldfile.exists());
+Ti.API.info('newfile exists at ' + newfile.nativePath + ': ' + newfile.exists());
 
-`var` `newPath = Ti.Filesystem.applicationDataDirectory +` `'new.txt'``;`
-
-`oldfile.copy(newPath);` `// both old.txt and new.txt exist now`
-
-`var` `newfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,` `'new.txt'``);`
-
-`Ti.API.info(``'oldfile exists at '` `+ oldfile.nativePath +` `': '` `+ oldfile.exists());`
-
-`Ti.API.info(``'newfile exists at '` `+ newfile.nativePath +` `': '` `+ newfile.exists());`
-
-`// Will log (paths are correct on Android)`
-
-`// [INFO] oldfile exists at file:///data/user/0/com.ti.app/app_appdata/old.txt: true`
-
-`// [INFO] newfile exists at file:///data/user/0/com.ti.capp/app_appdata/new.txt: true`
+// Will log (paths are correct on Android)
+// [INFO]  oldfile exists at file:///data/user/0/com.ti.app/app_appdata/old.txt: true
+// [INFO]  newfile exists at file:///data/user/0/com.ti.capp/app_appdata/new.txt: true
+```
 
 iOS doesn't have a copy method so you can copy a file like below.
 
-`var oldfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,``'old.txt'``);`
-
-`var newfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,` `'new.txt'``);`
-
-`newfile.write(oldfile.read());` `// both old.txt and new.txt exist now`
+```javascript
+var oldfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,'old.txt');
+var newfile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'new.txt');
+newfile.write(oldfile.read()); // both old.txt and new.txt exist now
+```
 
 #### Renaming files
 
 Renaming files follows the same format as above: get a handle, do the operation. But, we need to keep in mind how the file handles are, er, handled. After renaming the file, our file handle will still point to the old name. If you expect it to be automatically updated to point to the new file name, you could be in for some unexpected behaviour. To demonstrate rename() and this file handle behavior, the following code example previews directories and how you can output a directory listing.
 
-`// get a handle to the directory`
+```javascript
+// get a handle to the directory
+var dir = Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory);
+// create our starting file
+var f = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,'original_name.txt');
+f.write('foo');
+// rename the file
+var success = f.rename('fluffernutter.txt');
+if (success == true) {
+  Ti.API.info('File has been renamed');
+} else {
+  Ti.API.info('File has NOT been renamed');
+}
+// output a directory listing
+Ti.API.info('Dir list after rename = ' + dir.getDirectoryListing());
 
-`var dir = Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory);`
+// But f still points to the old, now non-existent file
+Ti.API.info('f.name = ' + f.name); // = 'original_name.txt'
+f.write('new information');
+Ti.API.info('f contains: ' + f.read());
+Ti.API.info('Dir list after writing to f again = ' + dir.getDirectoryListing());
 
-`// create our starting file`
-
-`var f = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,``'original_name.txt'``);`
-
-`f.write(``'foo'``);`
-
-`// rename the file`
-
-`var success = f.rename(``'fluffernutter.txt'``);`
-
-`if` `(success ==` `true``) {`
-
-`Ti.API.info(``'File has been renamed'``);`
-
-`}` `else` `{`
-
-`Ti.API.info(``'File has NOT been renamed'``);`
-
-`}`
-
-`// output a directory listing`
-
-`Ti.API.info(``'Dir list after rename = '` `+ dir.getDirectoryListing());`
-
-`// But f still points to the old, now non-existent file`
-
-`Ti.API.info(``'f.name = '` `+ f.name);` `// = 'original_name.txt'`
-
-`f.write(``'new information'``);`
-
-`Ti.API.info(``'f contains: '` `+ f.read());`
-
-`Ti.API.info(``'Dir list after writing to f again = '` `+ dir.getDirectoryListing());`
-
-`// grab a handle to the copy`
-
-`var newf = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,``'fluffernutter.txt'``);`
-
-`Ti.API.info(``'The copy is named '` `+ newf.name);` `// = 'fluffernutter.txt'`
-
-`Ti.API.info(newf.read());` `// = 'foo'`
+// grab a handle to the copy
+var newf = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,'fluffernutter.txt');
+Ti.API.info('The copy is named ' + newf.name); // = 'fluffernutter.txt'
+Ti.API.info(newf.read()); // = 'foo'
+```
 
 #### Deleting files
 
 We'll end our discussion of file with a look at deleting files. As before, grab a handle and do the operation. The deleteFile() returns a Boolean value indicating whether the operation succeed. This means it won't throw an error if the file doesn't exist or is read-only. You'll just get false back.
 
-`var f = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,` `'delete_me.txt'``);`
-
-`f.write(``'foo'``);` `// make sure there's content there so we're sure the file exists`
-
-`// Before deleting, maybe we could confirm the file exists and is writable`
-
-`// but we don't really need to as deleteFile() would just return false if it failed`
-
-`if` `(f.exists() && f.writable) {`
-
-`var success = f.deleteFile();`
-
-`Ti.API.info((success ==` `true``) ?` `'success'` `:` `'fail'``);` `// outputs 'success'`
-
-`Ti.API.info(f.exists());`
-
-`}`
+```javascript
+var f = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'delete_me.txt');
+f.write('foo'); // make sure there's content there so we're sure the file exists
+// Before deleting, maybe we could confirm the file exists and is writable
+// but we don't really need to as deleteFile() would just return false if it failed
+if (f.exists() && f.writable) {
+  var success = f.deleteFile();
+  Ti.API.info((success == true) ? 'success' : 'fail'); // outputs 'success'
+  Ti.API.info(f.exists());
+}
+```
 
 ### Directories
 
 We looked at how to list the files in a directory in the preceding section on renaming files. In this section, we'll look at how to create directories, delete directories, and move files into directories. Since the operations are pretty straightforward at this point, we'll do it all in one example:
 
-`// create our starting file`
+```javascript
+// create our starting file
+var f = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'myfile.txt');
+f.write('foo');
+// get a handle to the as-yet non-existent directory
+var dir = Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory, 'mysubdir');
+dir.createDirectory(); // this creates the directory
+Ti.API.info('Directory list to start: ' + dir.getDirectoryListing()); // it's empty
 
-`var f = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,` `'myfile.txt'``);`
+// let's move myfile.txt to our directory
+f.move('mysubdir/myfile.txt');
+// output a directory listing
+Ti.API.info('Dir list after move: ' + dir.getDirectoryListing());
 
-`f.write(``'foo'``);`
+// delete the directory
+if(dir.deleteDirectory() === false) {
+  Ti.API.info('You cannot delete a directory containing files');
+  dir.deleteDirectory(true); // force a recursive directory, which will delete contents
+}
+// if we try to list the directory, the output is null because the directory doesn't exist
+Ti.API.info('Dir list after deleteDirectory(true): ' + dir.getDirectoryListing());
 
-`// get a handle to the as-yet non-existent directory`
-
-`var dir = Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory,` `'mysubdir'``);`
-
-`dir.createDirectory();` `// this creates the directory`
-
-`Ti.API.info(``'Directory list to start: '` `+ dir.getDirectoryListing());` `// it's empty`
-
-`// let's move myfile.txt to our directory`
-
-`f.move(``'mysubdir/myfile.txt'``);`
-
-`// output a directory listing`
-
-`Ti.API.info(``'Dir list after move: '` `+ dir.getDirectoryListing());`
-
-`// delete the directory`
-
-`if``(dir.deleteDirectory() ===` `false``) {`
-
-`Ti.API.info(``'You cannot delete a directory containing files'``);`
-
-`dir.deleteDirectory(``true``);` `// force a recursive directory, which will delete contents`
-
-`}`
-
-`// if we try to list the directory, the output is null because the directory doesn't exist`
-
-`Ti.API.info(``'Dir list after deleteDirectory(true): '` `+ dir.getDirectoryListing());`
-
-`// clean the cache directory`
-
-`var cacheDir = Ti.Filesystem.getFile(Ti.Filesystem.applicationCacheDirectory,` `"/"``);`
-
-`cacheDir.deleteDirectory(``true``);`
+// clean the cache directory
+var cacheDir = Ti.Filesystem.getFile(Ti.Filesystem.applicationCacheDirectory, "/");
+cacheDir.deleteDirectory(true);
+```
 
 ### Case Sensitivity Note
 

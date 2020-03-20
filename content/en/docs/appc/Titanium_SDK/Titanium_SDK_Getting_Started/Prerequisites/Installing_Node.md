@@ -38,15 +38,21 @@ Before installing the CLI, you should decide where you want the Node Package Man
 
 * Make the /usr/local directory writable by all:
 
-    `sudo chmod` `777` `/usr/local`
+    ```bash
+    sudo chmod 777 /usr/local
+    ```
 
 * Set npm to install to your home directory, or another directory of your choosing by setting the npm prefix. For example, you can add the following to your .bash\_profile or other initialization file:
 
-    `export NPM_CONFIG_PREFIX=$HOME`
+    ```
+    export NPM_CONFIG_PREFIX=$HOME
+    ```
 
     Alternately, you can create a .npmrc file in your home directory with the following contents:
 
-    `prefix=/path/to/home`
+    ```
+    prefix=/path/to/home
+    ```
 
     Where _/path/to/home_ is the path to your home directory. Setting the npm prefix to your home directory causes the npm packages to be installed to $HOME/lib/node\_modules and launch scripts are installed in $HOME/bin. $HOME/bin must be in your PATH.
 
@@ -68,7 +74,9 @@ If you change your prefix after installing npm packages, you will have to reinst
 
 Usage of a package is like another module or library file. Using the to.imagecache example:
 
-`var` `imageCache = require(``'to.imagecache'``);`
+```javascript
+var imageCache = require('to.imagecache');
+```
 
 ### Dependencies
 
@@ -80,7 +88,9 @@ To install a package dependency,
 
 3. To use the dependency, for example a module called ImageView from the to.cacheimageview (sample extension of the to.imagecache package):
 
-    `<``ImageView`  `id``=``"myImage"`  `module``=``"to.cachedimageview"` `/>`
+    ```xml
+    <ImageView id="myImage" module="to.cachedimageview" />
+    ```
 
 ### Finding packages
 
@@ -94,7 +104,9 @@ A lot of Titanium packages are found using the **titanium** or **titanium-module
 
 The error message indicates the folder is missing. To resolve this issue, manually create the folder:
 
-`mkdir C:\Users\<USER_NAME>\AppData\Roaming\npm`
+```
+mkdir C:\Users\<USER_NAME>\AppData\Roaming\npm
+```
 
 ### Issues installing NPM packages
 
@@ -102,12 +114,16 @@ If you experience an issue installing any of the npm packages, try the following
 
 * Check permissions. If you originally ran npm using sudo, you may need to change the ownership of the npm cache folder.
 
-    `sudo`  `chown` `-R <username> ~/.npmrc`
+    ```bash
+    sudo chown -R <username> ~/.npmrc
+    ```
 
     On Windows, the npm cache defaults to npm-cache in the user's home folder.
 
 * Clear the npm package cache:
 
-    `npm cache clean`
+    ```bash
+    npm cache clean
+    ```
 
 * Remove your .npmrc file.

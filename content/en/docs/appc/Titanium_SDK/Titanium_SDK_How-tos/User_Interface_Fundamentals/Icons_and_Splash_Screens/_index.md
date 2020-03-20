@@ -98,43 +98,27 @@ Name the file default.9.png, place it in the Resources/android folder and remove
 
 To use multiple density-specific splash screen images, copy your nine-patch image(s) to . / platform/android/res/drawable\[-xdpi\]/ (Alloy: app/platform/android/...) in your project root directory (not the Resources folder), where xdpi can be a density group to specify more than one image for different screen densities or use the \-nodpi suffix to have it support all resolutions. Rename the file(s) to background.9.png. For example, the following project specifies splash images for multiple densities (note: For Alloy, it's relative to your app/ directory as described above):
 
-`SampleProjectClassic`
-
-`├── app`
-
-`├── platform`
-
-`│ └── android`
-
-`│ └── res`
-
-`│ ├── drawable-ldpi`
-
-`│ │ └─── background.``9``.png`
-
-`│ ├── drawable-mdpi`
-
-`│ │ └─── background.``9``.png`
-
-`│ ├── drawable-hdpi`
-
-`│ │ └─── background.``9``.png`
-
-`│ └── drawable-xhdpi`
-
-`│ │ └─── background.``9``.png`
-
-`│ └── drawable-xxhdpi`
-
-`│ │ └─── background.``9``.png`
-
-`│ └── drawable-xxxhdpi`
-
-`│ └─── background.``9``.png`
-
-`├── Resources`
-
-`└── tiapp.xml`
+```
+SampleProjectClassic
+├── app
+├── platform
+│   └── android
+│       └── res
+│           ├── drawable-ldpi
+│           │   └─── background.9.png
+│           ├── drawable-mdpi
+│           │   └─── background.9.png
+│           ├── drawable-hdpi
+│           │   └─── background.9.png
+│           └── drawable-xhdpi
+│           │   └─── background.9.png
+│           └── drawable-xxhdpi
+│           │   └─── background.9.png
+│           └── drawable-xxxhdpi
+│               └─── background.9.png
+├── Resources
+└── tiapp.xml
+```
 
 Do not place the splash screen image in the drawable folder (without a suffix). Android may scale the image improperly. If you want to use one image for the entire application, place it in the drawable-nodpi folder.
 
@@ -146,103 +130,68 @@ If you are using a custom theme to display the splash screen, override the defau
 
     Only add the windowBackground items only to the theme of the default root activity. If you add windowBackground items to other themes for other activities, the image may not be displayed properly.
 
-    platform/android/res/values/mytheme.xml
+    *platform/android/res/values/mytheme.xml*
 
-    `<?``xml`  `version``=``"1.0"`  `encoding``=``"utf-8"``?>`
-
-    `<``resources``>`
-
-    `<``style`  `name``=``"Theme.MyTheme"`  `parent``=``"Theme.AppCompat"``>`
-
-    `<``item`  `name``=``"windowBackground"``>@drawable/background</``item``>`
-
-    `<``item`  `name``=``"android:windowBackground"``>@drawable/background</``item``>`
-
-    `</``style``>`
-
-    `</``resources``>`
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+      <style name="Theme.MyTheme" parent="Theme.AppCompat">
+          <item name="windowBackground">@drawable/background</item>
+          <item name="android:windowBackground">@drawable/background</item>
+      </style>
+    </resources>
+    ```
 
 2. Build your application once to generate the build/android/AndroidManifest.xml. Open the file and copy the activity node that contains your default root activity. The android:name attribute will contain the name of your application.
 
-    build/android/AndroidManifest.xml
+    *build/android/AndroidManifest.xml*
 
-    `<``manifest`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"`  `package``=``"com.example.sample"`  `android:versionCode``=``"1"`  `android:versionName``=``"1.0"``>`
-
-    `<``uses``-sdk` `android:minSdkVersion``=``"17"`  `android:targetSdkVersion``=``"25"``/>`
-
-    `<``application`  `android:icon``=``"@drawable/appicon"`  `android:label``=``"AlloyNinePatch"`  `android:name``=``"AlloyninepatchApplication"`  `android:debuggable``=``"false"`  `android:theme``=``"@style/Theme.AppCompat"``>`
-
-    `<``activity`  `android:name``=``".YourapplicationnameActivity"`  `android:label``=``"@string/app_name"`  `android:theme``=``"@style/Theme.Titanium"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``>`
-
-    `<``intent``-filter>`
-
-    `<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
-
-    `<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
-
-    `</``intent``-filter>`
-
-    `</``activity``>`
-
-    `<``activity`  `android:name``=``"org.appcelerator.titanium.TiActivity"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``/>`
-
-    `<``activity`  `android:name``=``"org.appcelerator.titanium.TiTranslucentActivity"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"`  `android:theme``=``"@style/Theme.AppCompat.Translucent"``/>`
-
-    `<``activity`  `android:name``=``"ti.modules.titanium.ui.android.TiPreferencesActivity"`  `android:configChanges``=``"screenSize"``/>`
-
-    `</``application``>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_WIFI_STATE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_NETWORK_STATE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.WRITE_EXTERNAL_STORAGE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_COARSE_LOCATION"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_FINE_LOCATION"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_MOCK_LOCATION"``/>`
-
-    `</``manifest``>`
+    ```xml
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.sample" android:versionCode="1" android:versionName="1.0">
+      <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="25"/>
+      <application android:icon="@drawable/appicon" android:label="AlloyNinePatch" android:name="AlloyninepatchApplication" android:debuggable="false" android:theme="@style/Theme.AppCompat">
+        <activity android:name=".YourapplicationnameActivity" android:label="@string/app_name" android:theme="@style/Theme.Titanium" android:configChanges="keyboardHidden|orientation|screenSize">
+          <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.LAUNCHER"/>
+          </intent-filter>
+        </activity>
+        <activity android:name="org.appcelerator.titanium.TiActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="org.appcelerator.titanium.TiTranslucentActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@style/Theme.AppCompat.Translucent"/>
+        <activity android:name="ti.modules.titanium.ui.android.TiPreferencesActivity" android:configChanges="screenSize"/>
+      </application>
+      <uses-permission android:name="android.permission.INTERNET"/>
+      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+      <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+    </manifest>
+    ```
 
 3. Paste the default root activity into the Android section of your tiapp.xml file inside the <application> element. You may need to add the <manifest> and <application> elements to the <android> element of your tiapp.xml file. In the activity's android:theme attribute, replace Theme.Titanium with the name of your custom theme:
 
-    tiapp.xml
+    *tiapp.xml*
 
-    `<``ti``:app` `xmlns:ti``=``"http://ti.appcelerator.org"``>`
-
-    `...`
-
-    `<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-    `<``manifest``>`
-
-    `<``application``>`
-
-    `<``activity`  `android:name``=``".YourapplicationnameActivity"`  `android:label``=``"@string/app_name"`  `android:theme``=``"@style/Theme.MyTheme"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``>`
-
-    `<``intent``-filter>`
-
-    `<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
-
-    `<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
-
-    `</``intent``-filter>`
-
-    `</``activity``>`
-
-    `</``application``>`
-
-    `</``manifest``>`
-
-    `</``android``>`
-
-    `...`
-
-    `</``ti``:app>`
+    ```xml
+    <ti:app xmlns:ti="http://ti.appcelerator.org">
+        ...
+        <android xmlns:android="http://schemas.android.com/apk/res/android">
+            <manifest>
+                <application>
+                    <activity android:name=".YourapplicationnameActivity" android:label="@string/app_name" android:theme="@style/Theme.MyTheme" android:configChanges="keyboardHidden|orientation|screenSize">
+                        <intent-filter>
+                            <action android:name="android.intent.action.MAIN"/>
+                            <category android:name="android.intent.category.LAUNCHER"/>
+                        </intent-filter>
+                    </activity>
+                </application>
+            </manifest>
+        </android>
+        ...
+    </ti:app>
+    ```
 
 For additional information on themes, see [Android Themes](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/Android_Themes/).
 

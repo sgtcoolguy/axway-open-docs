@@ -118,13 +118,12 @@ As with DDMS, you can view the emulator or device log output using the adb logca
 
 (The following are terminal commands, and those "comments" would cause errors. We're just using a code-like means of annotating what's happening in each step. So don't enter the // or what follows.)
 
-`adb logcat` `//`  `if` `you have just one device connected or emulator running`
-
-`adb -d logcat` `//`  `for` `a USB-connected device`
-
-`adb -e logcat` `//`  `for` `the emulator`
-
-`adb -s emulator-5556 logcat` `//` `to target the emulator running on port 5556`
+```
+adb logcat     // if you have just one device connected or emulator running
+adb -d logcat  // for a USB-connected device
+adb -e logcat  // for the emulator
+adb -s emulator-5556 logcat  // to target the emulator running on port 5556
+```
 
 Use the adb devices command to get a list of connected devices or emulators that you could target. Use the resulting device labels with the adb -s command. In the examples below, we're omitting the device-targeting switches for simplicity's sake. You might need them in practice.
 
@@ -132,41 +131,47 @@ logcat outputs in a continuous manner, meaning that the command continues to run
 
 You can filter log output by using the grep command (OS X) or findstr command (Windows). Better yet, just use the built-in \-s argument of the logcat command. This technique works identically on both platforms. Titanium log statements are tagged with the "TiAPI" tag.
 
-`adb logcat |` `grep` `TiAPI`
-
-`adb logcat -s TiAPI`
+```
+adb logcat | grep TiAPI
+adb logcat -s TiAPI
+```
 
 Alternative, you can follow the Android docs which say to use the _tag_:_priority_ filtering option. This technique works just fine, but you need to include an extra argument that tells logcat to suppress all the other messages:
 
-Displaying only Titanium logging messages
+*Displaying only Titanium logging messages*
 
-`adb logcat TiAPI:I *:S` `//`  `if` `you leave off the *:S you'll output the whole log`
+```
+adb logcat TiAPI:I *:S  // if you leave off the *:S you'll output the whole log
+```
 
 #### Exploring the file system with adb
 
 You can copy files to and from an emulator or device using adb and its commands. There isn't a built-in option to list the files on the device, but you can open a command shell and use a Unix-like ls command.
 
-Listing files via the adb shell
+*Listing files via the adb shell*
 
-`adb shell`
-
-`# ls -la` `// enter Unix-like commands, with or without options`
-
-`# cd /some/path` `// to change directories`
-
-`# exit` `// to close the adb shell`
+```
+adb shell
+# ls -la  // enter Unix-like commands, with or without options
+# cd /some/path  // to change directories
+# exit    // to close the adb shell
+```
 
 When opening a shell on the emulator, you are logged in with root (superuser) permissions. On a device, you have limited permissions and will not be able to access the entire file system. If you have rooted your device and installed the su binary, you can gain full access to your device's file system. Be careful to not change or delete any critical files or you could cause your device to stop functioning.
 
 While you can "walk" the directory tree via the shell, you can't use it to copy files to and from the device/emulator. Instead, you'll need to use the push and pull commands.
 
-Pushing a file to the device/emulator
+*Pushing a file to the device/emulator*
 
-`adb push foo.txt` `/path_on_device/foo``.txt`
+```
+adb push foo.txt /path_on_device/foo.txt
+```
 
-Pulling a file from the device/emulator
+*Pulling a file from the device/emulator*
 
-`adb pull` `/path_on_device/foo``.txt` `/local_path/foo``.txt`
+```
+adb pull /path_on_device/foo.txt /local_path/foo.txt
+```
 
 #### Accessing SQLite databases with adb
 
@@ -174,15 +179,13 @@ On the emulator and rooted devices, you can open an adb shell and run sqlite3 to
 
 You'll need to know the path to your app's database. According to Google's documentation, the path is /data/data/com.example.yourapp/databases/yourdb.ext. The yourdb.ext must match the file name you gave with the Ti.Database.install() or Ti.Database.open() statements within your app.
 
-`adb shell`
-
-`# ls /data/data/com.example.yourapp/databases // to list the db files`
-
-`# sqlite3 /data/data/com.example.yourapp/databases/yourdb.sqlite`
-
-`sqlite> SELECT * FROM yourtable;`
-
-`sqlite> .``exit`
+```
+adb shell
+# ls /data/data/com.example.yourapp/databases    // to list the db files
+# sqlite3 /data/data/com.example.yourapp/databases/yourdb.sqlite
+sqlite> SELECT * FROM yourtable;
+sqlite> .exit
+```
 
 Keep in mind these points:
 
@@ -204,105 +207,63 @@ To create an emulator using the android command-line tool, run the command below
 
 After you run the command, you will be asked if you want to create a custom hardware profile. If you reply 'yes', you will be prompted to set additional advanced emulator options.
 
-`## Syntax`
+```
+## Syntax
+path_to_android_sdk/tools/android create avd -n <EMULATOR_NAME> -t <TARGET_ID> -s <SKIN> --abi x86 [-f -c <SD_CARD_IMAGE> -c <SDCARD_SIZE_IN_MB>M]
 
-`path_to_android_sdk``/tools/android` `create avd -n <EMULATOR_NAME> -t <TARGET_ID> -s <SKIN> --abi x86 [-f -c <SD_CARD_IMAGE> -c <SDCARD_SIZE_IN_MB>M]`
-
-`## Example`
-
-`android create avd -n my_avd_api_17 -t 1 -s WVGA800 --abi x86 -f -c ~/.titanium``/my_avd_api_17``.sdcard -c 1024M`
-
-`## Launch the emulator`
-
-`emulator -avd my_avd_api_17`
+## Example
+android create avd -n my_avd_api_17 -t 1 -s WVGA800 --abi x86 -f -c ~/.titanium/my_avd_api_17.sdcard -c 1024M
+## Launch the emulator
+emulator -avd my_avd_api_17
+```
 
 To retrieve a list of target IDs and emulator skins run then android list targets. This command lists the system images you have installed with a corresponding target ID and details about the system image. The target ID is required to create an emulator. For example, the output below shows that the ID 1 corresponds to Android API level 17 while 2 corresponds to Android API level 17 with the Google APIs. This list and the IDs vary depending on which Android SDKs you have installed. Each target supports a different list of emulator skins.
 
-`$ android list targets`
-
-`Available Android targets:`
-
-`----------`
-
-`id``: 1 or` `"android-17"`
-
-`Name: Android 4.2.2`
-
-`Type: Platform`
-
-`API level: 17`
-
-`Revision: 2`
-
-`Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in`
-
-`ABIs : armeabi-v7a`
-
-`----------`
-
-`id``: 2 or` `"Google Inc.:Google APIs:17"`
-
-`Name: Google APIs`
-
-`Type: Add-On`
-
-`Vendor: Google Inc.`
-
-`Revision: 3`
-
-`Description: Android + Google APIs`
-
-`Based on Android 4.2.2 (API level 17)`
-
-`Libraries:`
-
-`* com.google.android.media.effects (effects.jar)`
-
-`Collection of video effects`
-
-`* com.android.future.usb.accessory (usb.jar)`
-
-`API` `for` `USB Accessories`
-
-`* com.google.android.maps (maps.jar)`
-
-`API` `for` `Google Maps`
-
-`Skins: WVGA854, WQVGA400, WSVGA, WXGA800-7in, WXGA720, HVGA, WQVGA432, WVGA800 (default), QVGA, WXGA800`
-
-`ABIs : armeabi-v7a`
-
-`----------`
-
-`id``: 3 or` `"android-18"`
-
-`Name: Android 4.3`
-
-`Type: Platform`
-
-`API level: 18`
-
-`Revision: 2`
-
-`Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in`
-
-`ABIs : no ABIs.`
-
-`----------`
-
-`id``: 4 or` `"android-19"`
-
-`Name: Android 4.4.2`
-
-`Type: Platform`
-
-`API level: 19`
-
-`Revision: 2`
-
-`Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in`
-
-`ABIs : armeabi-v7a, x86`
+```
+$ android list targets
+Available Android targets:
+----------
+id: 1 or "android-17"
+     Name: Android 4.2.2
+     Type: Platform
+     API level: 17
+     Revision: 2
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in
+     ABIs : armeabi-v7a
+----------
+id: 2 or "Google Inc.:Google APIs:17"
+     Name: Google APIs
+     Type: Add-On
+     Vendor: Google Inc.
+     Revision: 3
+     Description: Android + Google APIs
+     Based on Android 4.2.2 (API level 17)
+     Libraries:
+      * com.google.android.media.effects (effects.jar)
+          Collection of video effects
+      * com.android.future.usb.accessory (usb.jar)
+          API for USB Accessories
+      * com.google.android.maps (maps.jar)
+          API for Google Maps
+     Skins: WVGA854, WQVGA400, WSVGA, WXGA800-7in, WXGA720, HVGA, WQVGA432, WVGA800 (default), QVGA, WXGA800
+     ABIs : armeabi-v7a
+----------
+id: 3 or "android-18"
+     Name: Android 4.3
+     Type: Platform
+     API level: 18
+     Revision: 2
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in
+     ABIs : no ABIs.
+----------
+id: 4 or "android-19"
+     Name: Android 4.4.2
+     Type: Platform
+     API level: 19
+     Revision: 2
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in
+     ABIs : armeabi-v7a, x86
+```
 
 #### Using the AVD manager
 
@@ -310,7 +271,9 @@ The AVD manager provides a GUI to create and manage your emulators.
 
 1. Launch the AVD manager from the console by running:
 
-    `path_to_android_sdk``/tools/android` `avd`
+    ```
+    path_to_android_sdk/tools/android avd
+    ```
 
 2. Once the AVD manager appears, click the **New** button on the right side. A dialog opens.
 
@@ -334,7 +297,9 @@ By default, when a new emulator is created, it only has enough space to install 
 
 2. Add or edit the following variable:
 
-    `disk.dataPartition.size=<size_in_MB>m`
+    ```
+    disk.dataPartition.size=<size_in_MB>m
+    ```
 
 #### Resize the emulator
 
@@ -354,25 +319,19 @@ By default, when a new emulator is created, it only has enough space to install 
 
 Once the emulator is launched, it can be scaled "on-the-fly" by connecting to the device using the **telnet** command. You will need the name and port of your emulator. You can get this information using the **adb devices** command.
 
-`$ adb devices`
+```
+$ adb devices
+List of devices attached
+emulator-5560 device
 
-`List of devices attached`
-
-`emulator-5560 device`
-
-`$ telnet localhost 5560`
-
-`Connected to localhost.`
-
-`Escape character is` `'^\]'``.`
-
-`Android Console:` `type`  `'help'`  `for` `a list of commands`
-
-`OK`
-
-`window scale 0.75`
-
-`OK`
+$ telnet localhost 5560
+Connected to localhost.
+Escape character is '^\]'.
+Android Console: type 'help' for a list of commands
+OK
+window scale 0.75
+OK
+```
 
 ### Note on Native Java debugging
 

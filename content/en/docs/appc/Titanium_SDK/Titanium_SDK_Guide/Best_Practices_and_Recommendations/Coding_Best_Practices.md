@@ -52,27 +52,22 @@ For these reasons, avoid defining variables in the global scope. Objects are pla
 
 The following code will cause a memory leak because the locally scoped variables are referenced in a global event listener. This is because the program will need to retain the locally scoped vars in order for the global event listener to use them. The global event listener will also persist until the app exits or the listener is explicitly removed.
 
-`var someFunction = function() {`
+```javascript
+var someFunction = function() {
+    var table = Ti.UI.createTableView(),
+        label = Ti.UI.createLabel(),
+        view = Ti.UI.createView();
 
-`var table = Ti.UI.createTableView(),`
+    Ti.App.addEventListener('bad:move', function(e) {
+        table.setData(e.data);
+    });
 
-`label = Ti.UI.createLabel(),`
+    view.add(table);
+    view.add(label);
 
-`view = Ti.UI.createView();`
-
-`Ti.App.addEventListener(``'bad:move'``, function(e) {`
-
-`table.setData(e.data);`
-
-`});`
-
-`view.add(table);`
-
-`view.add(label);`
-
-`return` `view;`
-
-`};`
+    return view;
+};
+```
 
 Global event listeners include those associated with Ti.App, Ti.Geolocation, Ti.Gesture, and so forth. The same problem is possible with non-global event listeners, like those you associate with a UI element. If that UI element remains valid in memory, any event listeners – and the objects they refer to – must also be kept in memory.
 
@@ -88,71 +83,51 @@ Using spaces to name custom events may cause issues with other JavaScript librar
 
 One of the bottlenecks of a Titanium application is JavaScript evaluation. For that reason, to speed the startup and responsiveness of your application, you should avoid loading scripts until they are absolutely needed. As in the following application, which has three windows to be opened in succession on a click (touch) event, note that the dependent JavaScript for each window is not loaded until absolutely necessary.
 
-Lazy script loading in app.js
+*Lazy script loading in app.js*
 
-`//muse be loaded at launch`
+```javascript
+//muse be loaded at launch
+var WindowOne = require('ui/WindowOne').WindowOne;
 
-`var` `WindowOne = require(``'ui/WindowOne'``).WindowOne;`
+var win1 = new WindowOne();
+win1.open();
 
-`var` `win1 =` `new` `WindowOne();`
-
-`win1.open();`
-
-`win1.addEventListener(``'click'``,` `function``() {`
-
-`//load window two JavaScript when needed...`
-
-`var` `WindowTwo = require(``'ui/WindowTwo'``).WindowTwo;`
-
-`var` `win2 =` `new` `WindowTwo();`
-
-`win2.open();`
-
-`win2.addEventListener(``'click'``,` `function``() {`
-
-`//load window three JavaScript when needed...`
-
-`var` `WindowThree = require(``'ui/WindowThree'``).WindowThree;`
-
-`var` `win3 =` `new` `WindowTwo();`
-
-`win3.open();`
-
-`});`
-
-`});`
+win1.addEventListener('click', function() {
+  //load window two JavaScript when needed...
+  var WindowTwo = require('ui/WindowTwo').WindowTwo;
+  var win2 = new WindowTwo();
+  win2.open();
+  win2.addEventListener('click', function() {
+    //load window three JavaScript when needed...
+    var WindowThree = require('ui/WindowThree').WindowThree;
+    var win3 = new WindowTwo();
+    win3.open();
+  });
+});
+```
 
 Or, if you're not using CommonJS but building out a namespace:
 
-Deferred loading to build a namespace
+*Deferred loading to build a namespace*
 
-`var` `someNameSpace =` `function``() {`
+```javascript
+var someNameSpace = function() {
+  var API = {
+    init: function() {
+      // create your UI here or do whatever
+    }
+    reset: function() {
+      // null objects, clean up, etc
+    }
+  };
 
-`var` `API = {`
+  // Construct anything you want outside the local 'API' object
 
-`init:` `function``() {`
-
-`// create your UI here or do whatever`
-
-`}`
-
-`reset:` `function``() {`
-
-`// null objects, clean up, etc`
-
-`}`
-
-`};`
-
-`// Construct anything you want outside the local 'API' object`
-
-`return` `API;`
-
-`};`
-
-`// And to use it`
-
-`var` `test =` `new` `someNameSpace();`
+  return API;
+};
+// And to use it
+var test = new someNameSpace();
+```
 
 ## Titanium-specific recommendations
 
@@ -188,17 +163,15 @@ You should not include sensitive data in non-JS files. Simply renaming files wit
 
 Each time you request the value of a device-related property, Titanium has to query the operating system for the value. For example, if you read from Ti.Platform.osname or Ti.Platform.displayCaps.platformHeight, Titanium must take a "trip across the bridge" to request the value from the operating system. Doing so takes a few cycles and if used too frequently could possibly slow your program. Something like the following would be more efficient:
 
-`var` `isAndroid = (Ti.Platform.osname==``'android'``) ?` `true` `:` `false``;`
+```javascript
+var isAndroid = (Ti.Platform.osname=='android') ? true : false;
 
-`if``(isAndroid) {`
-
-`// do Android specific stuff`
-
-`}` `else` `{`
-
-`// do iOS stuff`
-
-`}`
+if(isAndroid) {
+  // do Android specific stuff
+} else {
+  // do iOS stuff
+}
+```
 
 ## App architecture recommendations
 
@@ -206,37 +179,31 @@ Each time you request the value of a device-related property, Titanium has to qu
 
 Appcelerator's primary recommended architecture a modular app architecture constructed with CommonJS modules. In fact, we have a whole Best Practices section devoted to [CommonJS Modules in Titanium](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Best_Practices_and_Recommendations/CommonJS_Modules_in_Titanium/). CommonJS modules are discrete and independent building blocks, eliminating concerns about global variables and naming conflicts. In our testing, it is a highly performant architecture compared to some other solutions. This pattern is also used by other JavaScript-based environments, such as Node.js.
 
-MyModule.js
+*MyModule.js*
 
-`// variables defined in this file are private`
+```javascript
+// variables defined in this file are private
+var defaultMessage = "Hello world";
 
-`var` `defaultMessage =` `"Hello world"``;`
+// we make objects, variables, functions available to the
+// calling context by adding them to the exports object
+exports.sayHello = function(msg) {
+  Ti.API.info('Hello '+msg);
+};
 
-`// we make objects, variables, functions available to the`
+// we can assign other objects, functions, and variables to
+// exports and they will be available to the calling context
+exports.helloWorld = function() {
+  Ti.API.info(defaultMessage);
+}
+```
 
-`// calling context by adding them to the exports object`
+*app.js*
 
-`exports.sayHello =` `function``(msg) {`
-
-`Ti.API.info(``'Hello '``+msg);`
-
-`};`
-
-`// we can assign other objects, functions, and variables to`
-
-`// exports and they will be available to the calling context`
-
-`exports.helloWorld =` `function``() {`
-
-`Ti.API.info(defaultMessage);`
-
-`}`
-
-app.js
-
-`var myModule = require(``'/MyModule'``);`
-
-`myModule.sayHello(``'Kevin'``);` `//console output is "Hello Kevin!"`
+```javascript
+var myModule = require('/MyModule');
+myModule.sayHello('Kevin');  //console output is "Hello Kevin!"
+```
 
 Other architectures are valid and meet the needs of many developers. Which you choose is ultimately up to you and your experiences
 
@@ -246,79 +213,54 @@ Another popular pattern is one we teach in our training classes, that of custom 
 
 On the downside, this pattern is less performant than CommonJS modules. The rapid nature of this pattern can lead the developer to general, high-level bad practices and developer 'laziness'. Inheritance is vague or even non-existent. And critically, memory management can be difficult as object references can remain after they're no longer needed.
 
-`// create an object literal to be your app's namespace`
+```javascript
+// create an object literal to be your app's namespace
+var myapp = {};
 
-`var` `myapp = {};`
+// the following could be in a separate "ui.js" file and include()'d into your app.js
+(function() {
+  myapp.ui = {}; // this sub-namespace extends the app's namespace object
 
-`// the following could be in a separate "ui.js" file and include()'d into your app.js`
+  myapp.ui.createApplicationWindow = function() {
+    var win = Ti.UI.createWindow({
+      backgroundColor:'white'
+    });
 
-`(``function``() {`
-
-`myapp.ui = {};` `// this sub-namespace extends the app's namespace object`
-
-`myapp.ui.createApplicationWindow =` `function``() {`
-
-`var` `win = Ti.UI.createWindow({`
-
-`backgroundColor:``'white'`
-
-`});`
-
-`var` `header = Ti.UI.createLabel({`
-
-`text:` `'My App Heading'``,`
-
-`top: 10`
-
-`});`
-
-`win.add(header);`
-
-`return` `win;`
-
-`};`
-
-`})();`
+    var header = Ti.UI.createLabel({
+      text: 'My App Heading',
+      top: 10
+    });
+    win.add(header);
+    return win;
+  };
+})();
+```
 
 The same could be accomplished without the self-calling function, if you prefer:
 
-`// create an object literal to be your app's namespace`
+```javascript
+// create an object literal to be your app's namespace
+var myapp = {};
 
-`var` `myapp = {};`
+// the following could be in a separate "ui.js" file and include()'d into your app.js
+myapp.ui = function() {
+  var API = {
+    createApplicationWindow: function() {
+      var win = Ti.UI.createWindow({
+        backgroundColor:'white'
+      });
 
-`// the following could be in a separate "ui.js" file and include()'d into your app.js`
-
-`myapp.ui =` `function``() {`
-
-`var` `API = {`
-
-`createApplicationWindow:` `function``() {`
-
-`var` `win = Ti.UI.createWindow({`
-
-`backgroundColor:``'white'`
-
-`});`
-
-`var` `header = Ti.UI.createLabel({`
-
-`text:` `'My App Heading'``,`
-
-`top: 10`
-
-`});`
-
-`win.add(header);`
-
-`return` `win;`
-
-`}`
-
-`}`
-
-`return` `API;`
-
-`};`
+      var header = Ti.UI.createLabel({
+        text: 'My App Heading',
+        top: 10
+      });
+      win.add(header);
+      return win;
+    }
+  }
+  return API;
+};
+```
 
 #### Classical-based patterns
 
@@ -328,26 +270,20 @@ Classical inheritance is familiar for programmers coming from Java and other cla
 
 The code below is a fragment of this pattern:
 
-`var` `SomeUIClass =` `function``() {`
+```javascript
+var SomeUIClass = function() {
+  // ----- DEFINE PRIVATE PROPERTIES AND METHODS -----
+  var UIGroup = Ti.UI.createView({ zIndex:5 }),
+      UIBg = Ti.UI.createView({ borderRadius:10, opacity:0.2, width:150, height:150, backgroundColor:"#000" }),
+      UIInd = Ti.UI.createActivityIndicator({ height:50, width:50, bottom:175, style:Ti.UI.iPhone.ActivityIndicatorStyle.BIG });
 
-`// ----- DEFINE PRIVATE PROPERTIES AND METHODS -----`
+  // ----- DEFINE PUBLIC PROPERTIES AND METHODS -----
 
-`var` `UIGroup = Ti.UI.createView({ zIndex:5 }),`
+  // ----- Public Properties -----
+  this.somePublicProp = null;
 
-`UIBg = Ti.UI.createView({ borderRadius:10, opacity:0.2, width:150, height:150, backgroundColor:``"#000"` `}),`
-
-`UIInd = Ti.UI.createActivityIndicator({ height:50, width:50, bottom:175, style:Ti.UI.iPhone.ActivityIndicatorStyle.BIG });`
-
-`// ----- DEFINE PUBLIC PROPERTIES AND METHODS -----`
-
-`// ----- Public Properties -----`
-
-`this``.somePublicProp =` `null``;`
-
-`// ----- Public Methods -----`
-
-`this``.display =` `function``() {};`
-
-`this``.toggle =` `function``(toggle) {};`
-
-`};`
+  // ----- Public Methods -----
+  this.display = function() {};
+  this.toggle = function(toggle) {};
+};
+```

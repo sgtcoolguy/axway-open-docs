@@ -28,29 +28,21 @@ The repository for this tutorial can be found open-source on **[Github](https://
 
 9. In the tiapp.xml, include the following properties in the <ios> section of it:
 
-    tiapp.xml
+    *tiapp.xml*
 
-    `<``extensions``>`
-
-    `<``extension`  `projectPath``=``"extensions/TestApp/TestApp.xcodeproj"``>`
-
-    `<``target`  `name``=``"testapp"``> <!-- or "siriextension" if you name the target differently -->`
-
-    `<``provisioning``-profiles>`
-
-    `<``device``>INSERT YOUR EXTENSION PROVISIONING PROFILE ID HERE</``device``>`
-
-    `<``dist``-appstore/>`
-
-    `<``dist``-adhoc/>`
-
-    `</``provisioning``-profiles>`
-
-    `</``target``>`
-
-    `</``extension``>`
-
-    `</``extensions``>`
+    ```xml
+    <extensions>
+        <extension projectPath="extensions/TestApp/TestApp.xcodeproj">
+            <target name="testapp"> <!-- or "siriextension" if you name the target differently -->
+                <provisioning-profiles>
+                    <device>INSERT YOUR EXTENSION PROVISIONING PROFILE ID HERE</device>
+                    <dist-appstore/>
+                    <dist-adhoc/>
+                </provisioning-profiles>
+            </target>
+        </extension>
+    </extensions>
+    ```
 
 10. Create or edit your App-ID in the [iOS Developer Center](https://developer.apple.com/account/ios/identifier/bundle) to include the "SiriKit" capability, just like you would do with "Access Groups" or "Push Notifications" for other platform-services. Create one app with a wildcard identifier and one without (e.g. com.appc.testapp.\* and com.appc.testapp). The first one is linked in the <provisioning-profiles> section of the target, the latter one is used to build the main target (your app) to the device. Note that SiriKit is supported in the Simulator by Apple, because it doesn't support Siri so far (Status: iOS 10 / November 2016).
 
@@ -59,31 +51,27 @@ The repository for this tutorial can be found open-source on **[Github](https://
 
 12. Add the following to the plist-section of your tiapp.xml (<tiapp> > <ios> > <plist>):
 
-    tiapp.xml
+    *tiapp.xml*
 
-    `<``key``>NSSiriUsageDescription</``key``>`
-
-    `<``string``>Can we use Siri to do great stuff?</``string``> `
+    ```xml
+    <key>NSSiriUsageDescription</key>
+    <string>Can we use Siri to do great stuff?</string>
+    ```
 
 13. Create a file called TestApp.entitlements in your Titanium project root. Note: if you also use push-entitlements, copy those keys over there as well since it will override the CLI-generated key and paste the following into it:
 
-    TestApp.entitlements
+    *TestApp.entitlements*
 
-    `<?``xml`  `version``=``"1.0"`  `encoding``=``"UTF-8"``?>`
-
-    `<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "``http://www.apple.com/DTDs/PropertyList-1.0.dtd``">`
-
-    `<``plist`  `version``=``"1.0"``>`
-
-    `<``dict``>`
-
-    `<``key``>com.apple.developer.siri</``key``>`
-
-    `<``true``/>`
-
-    `</``dict``>`
-
-    `</``plist``>`
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+    <dict>
+        <key>com.apple.developer.siri</key>
+        <true/>
+    </dict>
+    </plist>
+    ```
 
 14. You made it!! Use appc run -p ios -T device or Appcelerator Studio to run your app on the device. Remember that iOS currently does not support Siri on the Simulator.
 

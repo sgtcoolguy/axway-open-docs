@@ -1,6 +1,6 @@
 {"title":"APS Analytics for Android","weight":"20"}
 
-Pro or Enterprise Subscription Required
+*Pro or Enterprise Subscription Required*
 
 This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.
 
@@ -24,7 +24,7 @@ This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscrip
 
 This page describes how to use the AMPLIFY Appcelerator Services Analytics for native Android applications, built with Java and the Android APIs.
 
-Not developing a native Android application with Java?
+*Not developing a native Android application with Java?*
 
 See the following topics to use the Appcelerator Analytics Service on other platforms:
 
@@ -70,63 +70,51 @@ To integrate the Analytics service with a new or existing Android application:
 
 5. Modify the project's AndroidManifest.xml file to include the following permissions and to add the APSAnalytics package as a service:
 
-    AndroidManifest.xml
+    *AndroidManifest.xml*
 
-    `<?``xml`  `version``=``"1.0"`  `encoding``=``"utf-8"``?>`
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.appcelerator.sample"
+        android:versionCode="1"
+        android:versionName="1.0" >
 
-    `<``manifest`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"`
+        <!-- Add these permissions to enable Analytics -->
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+        <uses-permission android:name="android.permission.INTERNET"/>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+                     android:maxSdkVersion="18" />
 
-    `package``=``"com.appcelerator.sample"`
+        <application>
+            <activity>
+                ...
+            </activity>
 
-    `android:versionCode``=``"1"`
+            <!-- Add this service to enable Analytics -->
+            <service android:name="com.appcelerator.aps.APSAnalyticsService"
+                android:exported="false" />
 
-    `android:versionName``=``"1.0"` `>`
-
-    `<!-- Add these permissions to enable Analytics -->`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_NETWORK_STATE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_WIFI_STATE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.WRITE_EXTERNAL_STORAGE"`
-
-    `android:maxSdkVersion``=``"18"` `/>`
-
-    `<``application``>`
-
-    `<``activity``>`
-
-    `...`
-
-    `</``activity``>`
-
-    `<!-- Add this service to enable Analytics -->`
-
-    `<``service`  `android:name``=``"com.appcelerator.aps.APSAnalyticsService"`
-
-    `android:exported``=``"false"` `/>`
-
-    `</``application``>`
-
-    `</``manifest``>`
+        </application>
+    </manifest>
+    ```
 
 6. Add the following import statements to the main Activity of the project:
 
-    MainActivity.java
+    *MainActivity.java*
 
-    `import` `com.appcelerator.aps.APSServiceManager;`
-
-    `import` `com.appcelerator.aps.APSAnalytics;`
+    ```java
+    import com.appcelerator.aps.APSServiceManager;
+    import com.appcelerator.aps.APSAnalytics;
+    ```
 
 7. In the main Activity's onCreate() method, enable the service by calling the APSServiceManager's enable method. Pass the method of the application context as the first argument and the APS application key as the second argument.
 
-    `public`  `void` `onCreate() {`
-
-    `APSServiceManager.getInstance().enable(getApplicationContext(),` `"APP_KEY"``);`
-
-    `}`
+    ```
+    public void onCreate() {
+        APSServiceManager.getInstance().enable(getApplicationContext(), "APP_KEY");
+    }
+    ```
 
     To get your APS App key:
 
@@ -150,9 +138,10 @@ For the Android platform, you need to set up the application to send [user sessi
 
 By default, after the application has been backgrounded for 30000 milliseconds (30 seconds), the Analytics service ends the current user session and starts a new one when the application enters the foreground again. To adjust the timeout, use the APSAnalytics's setSessionTimeout() method.
 
-`// Sets the timeout to 15000 milliseconds (15 seconds) instead of 30000 milliseconds.`
-
-`APSAnalytics.getInstance().setSessionTimeout(``15000``, TimeUnit.MILLISECONDS);`
+```
+// Sets the timeout to 15000 milliseconds (15 seconds) instead of 30000 milliseconds.
+APSAnalytics.getInstance().setSessionTimeout(15000, TimeUnit.MILLISECONDS);
+```
 
 ### Setup user session events
 
@@ -164,41 +153,30 @@ On the Android platform, user session events are not automatically sent, unlike 
 
 3. Call the sendAppBackgroundEvent() method inside the main Activity's onPause() method. The background event indicates when the application has been dismissed.
 
-MainActivity.java
+*MainActivity.java*
 
-`@Override`
+```java
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
 
-`protected`  `void` `onCreate(Bundle savedInstanceState) {`
+    APSServiceManager.getInstance().enable(getApplicationContext(), "APP_KEY");
+    APSAnalytics.getInstance().sendAppEnrollEvent();
+}
 
-`super``.onCreate(savedInstanceState);`
+@Override
+public void onPause(){
+    super.onPause();
+    APSAnalytics.getInstance().sendSessionBackgroundEvent();
+}
 
-`setContentView(R.layout.activity_main);`
-
-`APSServiceManager.getInstance().enable(getApplicationContext(),` `"APP_KEY"``);`
-
-`APSAnalytics.getInstance().sendAppEnrollEvent();`
-
-`}`
-
-`@Override`
-
-`public`  `void` `onPause(){`
-
-`super``.onPause();`
-
-`APSAnalytics.getInstance().sendSessionBackgroundEvent();`
-
-`}`
-
-`@Override`
-
-`public`  `void` `onResume(){`
-
-`super``.onResume();`
-
-`APSAnalytics.getInstance().sendSessionForegroundEvent();`
-
-`}`
+@Override
+public void onResume(){
+    super.onResume();
+    APSAnalytics.getInstance().sendSessionForegroundEvent();
+}
+```
 
 ## Creating custom events
 
@@ -212,15 +190,19 @@ Feature event names should be as generic as possible. For instance, if you want 
 
 For example, to track a user's menu selection, you might use the following code, where the ten-digit number uniquely identifies the selection in your code:
 
-Good Practice: Track the State with the Naming Syntax
+*Good Practice: Track the State with the Naming Syntax*
 
-`APSAnalytics.getInstance().sendAppFeatureEvent(``"select.item.12345678910"``,` `null``);`
+```
+APSAnalytics.getInstance().sendAppFeatureEvent("select.item.12345678910", null);
+```
 
 You should avoid using long, descriptive event names, as shown below:
 
-Bad Practice: Avoid Long Descriptions
+*Bad Practice: Avoid Long Descriptions*
 
-`APSAnalytics.getInstance().sendAppFeatureEvent(``"Select Item THIS IS THE DESCRIPTION OF THE EVENT -12345678910"``,` `null``);`
+```
+APSAnalytics.getInstance().sendAppFeatureEvent("Select Item THIS IS THE DESCRIPTION OF THE EVENT -12345678910", null);
+```
 
 ### Geo events
 
@@ -228,120 +210,73 @@ Use the APSAnalytics' sendAppGeoEvent() method to send real-time geographic data
 
 In the following example, the application uses a default location provider to get location information from the device. The application sends the location data to the Analytics service.
 
-MainActivity.java
+*MainActivity.java*
 
-`/*`
+```java
+/*
+ * Don't forget to add the ACCESS_COARSE_LOCATION and ACCESS_FINE_LOCATION permissions
+ * in the AndroidManifest.xml file.
+ */
+public class MainActivity extends Activity implements LocationListener{
+    private LocationManager locationManager;
+    private String provider;
 
-`* Don't forget to add the ACCESS_COARSE_LOCATION and ACCESS_FINE_LOCATION permissions`
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-`* in the AndroidManifest.xml file.`
+        // Initialize Analytics
+        APSServiceManager.getInstance().enable(getApplicationContext(), "APP_KEY");
+        APSAnalytics.getInstance().sendAppEnrollEvent();
 
-`*/`
+        // Get the location manager and use a default provider
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        Criteria criteria = new Criteria();
+        provider = locationManager.getBestProvider(criteria, false);
+        Location location = locationManager.getLastKnownLocation(provider);
 
-`public`  `class` `MainActivity` `extends` `Activity` `implements` `LocationListener{`
+        // Initialize the location
+        if (location != null) {
+            Log.i("GEO", "Provider " + provider + " has been selected.");
+            onLocationChanged(location);
+        }
+    }
 
-`private` `LocationManager locationManager;`
+    // Get location updates
+    public void onLocationChanged(Location location) {
+        APSAnalytics.getInstance().sendAppGeoEvent(location);
+        Log.i("GEO", location.getLatitude() + "," +  location.getLongitude());
+    }
 
-`private` `String provider;`
+    @Override
+    protected void onResume() {
+        super.onResume();
+        APSAnalytics.getInstance().sendAppForegroundEvent();
+        // Request location updates at least every 5 minutes
+        // and only if the location between updates is at least 1000 meters
+        locationManager.requestLocationUpdates(provider, 5 * 60 * 1000, 1000, this);
+    }
 
-`@Override`
+    @Override
+    protected void onPause() {
+        super.onPause();
+        APSAnalytics.getInstance().sendAppBackgroundEvent();
+        // Stop update requests
+        locationManager.removeUpdates(this);
+    }
 
-`protected`  `void` `onCreate(Bundle savedInstanceState) {`
-
-`super``.onCreate(savedInstanceState);`
-
-`setContentView(R.layout.activity_main);`
-
-`// Initialize Analytics`
-
-`APSServiceManager.getInstance().enable(getApplicationContext(),` `"APP_KEY"``);`
-
-`APSAnalytics.getInstance().sendAppEnrollEvent();`
-
-`// Get the location manager and use a default provider`
-
-`locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);`
-
-`Criteria criteria =` `new` `Criteria();`
-
-`provider = locationManager.getBestProvider(criteria,` `false``);`
-
-`Location location = locationManager.getLastKnownLocation(provider);`
-
-`// Initialize the location`
-
-`if` `(location !=` `null``) {`
-
-`Log.i(``"GEO"``,` `"Provider "` `+ provider +` `" has been selected."``);`
-
-`onLocationChanged(location);`
-
-`}`
-
-`}`
-
-`// Get location updates`
-
-`public`  `void` `onLocationChanged(Location location) {`
-
-`APSAnalytics.getInstance().sendAppGeoEvent(location);`
-
-`Log.i(``"GEO"``, location.getLatitude() +` `","` `+ location.getLongitude());`
-
-`}`
-
-`@Override`
-
-`protected`  `void` `onResume() {`
-
-`super``.onResume();`
-
-`APSAnalytics.getInstance().sendAppForegroundEvent();`
-
-`// Request location updates at least every 5 minutes`
-
-`// and only if the location between updates is at least 1000 meters`
-
-`locationManager.requestLocationUpdates(provider,` `5` `*` `60` `*` `1000``,` `1000``,` `this``);`
-
-`}`
-
-`@Override`
-
-`protected`  `void` `onPause() {`
-
-`super``.onPause();`
-
-`APSAnalytics.getInstance().sendAppBackgroundEvent();`
-
-`// Stop update requests`
-
-`locationManager.removeUpdates(``this``);`
-
-`}`
-
-`@Override`
-
-`public`  `void` `onStatusChanged(String s,` `int` `i, Bundle bundle) {`
-
-`// To be implemented`
-
-`}`
-
-`@Override`
-
-`public`  `void` `onProviderEnabled(String s) {`
-
-`// To be implemented`
-
-`}`
-
-`@Override`
-
-`public`  `void` `onProviderDisabled(String s) {`
-
-`// To be implemented`
-
-`}`
-
-`}`
+    @Override
+    public void onStatusChanged(String s, int i, Bundle bundle) {
+        // To be implemented
+    }
+    @Override
+    public void onProviderEnabled(String s) {
+        // To be implemented
+    }
+    @Override
+    public void onProviderDisabled(String s) {
+        // To be implemented
+    }
+}
+```

@@ -82,7 +82,9 @@ The choice of which method to use depends on the complexity of the database stru
 
 To open (or create and open) a database, use the Titanium.Database.open() method. If the database you specify to open doesn't exist, Titanium will create it for you. Whether the database exists or Titanium creates it for you, this call will return a database connection handle that you'll use in subsequent database operations.
 
-`var db = Ti.Database.open(``'weatherDB'``);`
+```javascript
+var db = Ti.Database.open('weatherDB');
+```
 
 There are a few platform specifics:
 
@@ -96,9 +98,10 @@ There are a few platform specifics:
 
 By default, database files will be included in iCloud backups (iOS 5.0.1+). Unless you are unable to recover or regenerate the data, it is recommended to remove database files from backups. Apps may be rejected by Apple for backing up unnecessary or inappropriate files. You can mark files and databases so that they're not backed up:
 
-`var db = Ti.Database.open(``'TiBountyHunter'``);`
-
-`db.file.setRemoteBackup(``false``);`
+```javascript
+var db = Ti.Database.open('TiBountyHunter');
+db.file.setRemoteBackup(false);
+```
 
 This value should only need to be set once by your app, but setting it multiple times will not cause problems. For files distributed with your app, this will need to be set on app startup. This flag will only affect iOS versions 5.0.1 and later, but is safe to set on earlier versions. Note that setting this property to false will also prevent the file identified by this object from being backed up to iTunes.
 
@@ -112,13 +115,12 @@ For more information, see:
 
 Titanium does not include abstraction an library for working with SQLite databases; working with databases requires standard SQL statements. (Don't know SQL? There are lots of tutorials available, such as this one, this one, or this Google search resultset.) Use the CREATE TABLE IF NOT EXISTS statement to safely create tables – if they already exist, the statement will be ignored.
 
-`//bootstrap the database`
-
-`var` `db = Ti.Database.open(``'TiBountyHunter'``);`
-
-`db.execute(``'CREATE TABLE IF NOT EXISTS fugitives(id INTEGER PRIMARY KEY, name TEXT, captured INTEGER, url TEXT, capturedLat REAL, capturedLong REAL);'``);`
-
-`db.close();`
+```javascript
+//bootstrap the database
+var db = Ti.Database.open('TiBountyHunter');
+db.execute('CREATE TABLE IF NOT EXISTS fugitives(id INTEGER PRIMARY KEY, name TEXT, captured INTEGER, url TEXT, capturedLat REAL, capturedLong REAL);');
+db.close();
+```
 
 You might notice that we closed the database when done. Closing database connections and resultsets is important to do for performance reasons. You're dealing with a single-user, memory constrained environment in which connection pooling is not important. The time to open/close connections is less of a hit that consuming memory by keeping connections open.
 
@@ -126,7 +128,9 @@ You might notice that we closed the database when done. Closing database connect
 
 If you choose to package a pre-existing database file with your app, it must be installed before use. Use the [Titanium.Database.install()](#!/api/Titanium.Database-method-install) method to copy the database file from the Resources directory and open it. This will return a reference to the open database. Note if the database already exists, the copy action will be ignored and the existing database will be opened.
 
-`var db = Ti.Database.install(``'/mydata/weatherDB'``,` `'weatherDB'``);`
+```javascript
+var db = Ti.Database.install('/mydata/weatherDB', 'weatherDB');
+```
 
 In this example weatherDB will be copied to the application's databases directory (see notes above on where that is). We recommend you specify the absolute path to the database file, with / corresponding to your app's Resources directory. If you do not, the source file might not be found. On Android, the system will create an empty database with the given name. But since it contains no tables, your app will crash on your first attempt at access the database.
 
@@ -138,13 +142,16 @@ SQLite (and by extension Titanium) supports a fairly complete list of SQL statem
 
 In order to insert records to a database, you should pass an SQL INSERT statement to the Titanium.Database.DB.execute() method. While you could use string concatenation to construct the INSERT statement, SQLite and Titanium's execute() method support the safer technique of using unnamed parameterized queries. I.e, you enter question marks as placemarkers where you would like each variable containing your data to be substituted, as follows:
 
-`db.execute(``'INSERT INTO city (name,continent,temp_f,temp_c,condition_id) VALUES (?,?,?,?,?)'``, importName, importContinent, importTempF, importTempC, dbConditionId);`
+```
+db.execute('INSERT INTO city (name,continent,temp_f,temp_c,condition_id) VALUES (?,?,?,?,?)', importName, importContinent, importTempF, importTempC, dbConditionId);
+```
 
 It's commonplace for tables to include an auto-incrementing primary key, representing a unique ID for each row. You would typically use such IDs to access individual rows to update them or delete them. You can obtain the row ID associated with a newly inserted row by examining the lastInsertRowId property:
 
-`db.execute(``'INSERT INTO city (name,continent,temp_f,temp_c,condition_id) VALUES (?,?,?,?,?)'``, importName, importContinent, importTempF, importTempC, dbConditionId);`
-
-`var lastID = db.lastInsertRowId;` ``// presumes `city` has an auto-increment column``
+```javascript
+db.execute('INSERT INTO city (name,continent,temp_f,temp_c,condition_id) VALUES (?,?,?,?,?)', importName, importContinent, importTempF, importTempC, dbConditionId);
+var lastID = db.lastInsertRowId; // presumes `city` has an auto-increment column
+```
 
 ### Retrieving data
 
@@ -154,71 +161,68 @@ You can retrieve data from the database using a typical SQL SELECT query, passed
 
 The result set data is available using the methods that the ResultSet object provides. In the following code, a loop is used to iterate through each row, and only ends when isValidRow() returns false. The fieldByName() method allows you to refer to each field by its database column name, or an alias you assign in the SQL statement. At each iteration of the loop, it is necessary to move the ResultSet row pointer to the next row, using the next() method.
 
-`var` `cityWeatherRS = db.execute(``'SELECT id,name,continent FROM city'``);`
-
-`while` `(cityWeatherRS.isValidRow()) {`
-
-`var` `cityId = cityWeatherRS.fieldByName(``'id'``);`
-
-`var` `cityName = cityWeatherRS.fieldByName(``'name'``);`
-
-`var` `cityContinent = cityWeatherRS.fieldByName(``'continent'``);`
-
-`Ti.API.info(cityId +` `' '` `+ cityName +` `' '` `+ cityContinent);`
-
-`cityWeatherRS.next();`
-
-`}`
-
-`cityWeatherRS.close();`
+```javascript
+var cityWeatherRS = db.execute('SELECT id,name,continent FROM city');
+while (cityWeatherRS.isValidRow()) {
+  var cityId = cityWeatherRS.fieldByName('id');
+  var cityName = cityWeatherRS.fieldByName('name');
+  var cityContinent = cityWeatherRS.fieldByName('continent');
+  Ti.API.info(cityId + ' ' + cityName + ' ' + cityContinent);
+  cityWeatherRS.next();
+}
+cityWeatherRS.close();
+```
 
 You may join related tables together, just as you would in standard SQL. The following returns all the city records and includes the weather conditions summary for each, if it exists.
 
-`db.execute(``'SELECT city.id,name,cond.id,cond.summary,cond.icon FROM city LEFT JOIN condition cond WHERE city.condition_id = cond.id'``);`
+```
+db.execute('SELECT city.id,name,cond.id,cond.summary,cond.icon FROM city LEFT JOIN condition cond WHERE city.condition_id = cond.id');
+```
 
 Of course, you can select subsets of data by providing conditions within your SELECT statements. For example, the following returns only those records where the weather summary is "Partly Cloudy":
 
-`var cityWeatherRS = db.execute(``'SELECT city.id AS city_id,name,cond.id AS cond_id,cond.summary,cond.icon FROM city LEFT JOIN condition cond WHERE city.condition_id = cond.id WHERE cond.summary=?'``,` `"Partly Cloudy"``);`
+```javascript
+var cityWeatherRS = db.execute('SELECT city.id AS city_id,name,cond.id AS cond_id,cond.summary,cond.icon FROM city LEFT JOIN condition cond WHERE city.condition_id = cond.id WHERE cond.summary=?', "Partly Cloudy");
+```
 
 Notice here that the city.id and cond.id columns have been aliased. This is because the fieldByName() method would not be able to distinguish between them if you simply passed their column name, fieldByName(id). Thus, the ResultSet code would look like this:
 
-`while` `(cityWeatherRS.isValidRow()) {`
-
-`var` `cityId = cityWeatherRS.fieldByName(``'city_id'``);`
-
-`var` `cityName = cityWeatherRS.fieldByName(``'name'``);`
-
-`var` `cityConditionId = cityWeatherRS.fieldByName(``'cond_id'``);`
-
-`var` `cityConditionSummary = cityWeatherRS.fieldByName(``'summary'``);`
-
-`var` `cityConditionIcon = cityWeatherRS.fieldByName(``'icon'``);`
-
-`Ti.API.info(cityId +` `' '` `+ cityName +` `' '` `+ cityConditionId +` `' '` `+ cityConditionSummary +` `' '` `+ cityConditionIcon);`
-
-`cityWeatherRS.next();`
-
-`}`
-
-`cityWeatherRS.close();`
+```javascript
+while (cityWeatherRS.isValidRow()) {
+  var cityId = cityWeatherRS.fieldByName('city_id');
+  var cityName = cityWeatherRS.fieldByName('name');
+  var cityConditionId = cityWeatherRS.fieldByName('cond_id');
+  var cityConditionSummary = cityWeatherRS.fieldByName('summary');
+  var cityConditionIcon = cityWeatherRS.fieldByName('icon');
+  Ti.API.info(cityId + ' ' + cityName + ' ' + cityConditionId + ' ' + cityConditionSummary + ' ' + cityConditionIcon);
+  cityWeatherRS.next();
+}
+cityWeatherRS.close();
+```
 
 ### Updating data
 
 To update a database row you would use the UPDATE statement along with parameterized queries as shown above for inserting data. For example:
 
-`db.execute(``'UPDATE condition SET icon=? WHERE id=?'``,importIcon,dbConditionId);`
+```
+db.execute('UPDATE condition SET icon=? WHERE id=?',importIcon,dbConditionId);
+```
 
 ### Deleting data
 
 You can delete one or more rows from a table using the DELETE statement. Make sure to supply a condition or all rows in the table will be deleted. SQLite also supports the DROP TABLE syntax to remove an entire table from the database.
 
-`db.execute(``'DELETE FROM city WHERE id=?'``,cityId);`
+```
+db.execute('DELETE FROM city WHERE id=?',cityId);
+```
 
 ### Truncating (emptying) a table
 
 You can empty a table of all its contents, but SQLite doesn't include the typical TRUNCATE command to do so. You use the DELETE command:
 
-`db.execute(``'DELETE FROM city'``);` `// would empty the table!`
+```
+db.execute('DELETE FROM city'); // would empty the table!
+```
 
 ## Manipulating the database's structure
 
@@ -228,7 +232,9 @@ SQLite supports various commands for modifying an existing database. These inclu
 
 Dropping a table removes it from the database. You can't recover it or undo your action once it's done. To prevent an error from being thrown if the table is already deleted, you can add the IF EXISTS clause:
 
-`db.execute(``'DROP TABLE IF EXISTS tablename'``);`
+```
+db.execute('DROP TABLE IF EXISTS tablename');
+```
 
 ### Altering a table
 
@@ -262,39 +268,31 @@ In a mobile app, you're dealing with a single-user, memory constrained environme
 
 Furthermore, SQLite enforces sequential write-access to the database (one process at a time). This makes it vital that you close the database connection when you have completed any INSERT or UPDATE operations. If you don't, you might receive "DatabaseObjectNotClosed" exceptions when your script next attempts to write to it.
 
-`cityWeatherRS.close();` `// close the resultset when you're done reading from it`
-
-`db.close();` `// and close the database connection`
+```
+cityWeatherRS.close(); // close the resultset when you're done reading from it
+db.close(); // and close the database connection
+```
 
 ### Use transactions to speed batch inserts
 
 Let's say you have a loop that does ten inserts or updates. By wrapping them in a transaction, you create a single insert operation against the database rather than ten operations. The single operation can be significantly faster than those individual updates. The downside is that if any of the updates fail, the entire batch is rolled back.
 
-`// you get a bunch of data, maybe from the network, to save in the db`
+```javascript
+// you get a bunch of data, maybe from the network, to save in the db
+var playlist = [];
+playlist.push({disc:'Leon Live', artist:'Leon Russell', comment:'Gospel, blues and rock rolled into one'});
+playlist.push({disc:'Animal Notes', artist:'Crack the Sky', rating:'Obscure but rocking'});
+// etc.
 
-`var` `playlist = [];`
-
-`playlist.push({disc:``'Leon Live'``, artist:``'Leon Russell'``, comment:``'Gospel, blues and rock rolled into one'``});`
-
-`playlist.push({disc:``'Animal Notes'``, artist:``'Crack the Sky'``, rating:``'Obscure but rocking'``});`
-
-`// etc.`
-
-`var` `db = Ti.Database.open(``'myDatabase'``);`
-
-`db.execute(``'BEGIN'``);` `// begin the transaction`
-
-`for` `(``var` `i=0,` `var` `j=playlist.length; i < j; i++) {`
-
-`var` `item = playlist[i];`
-
-`db.execute(``'INSERT INTO albums (disc, artist, rating) VALUES (?, ?, ?)'``, item.disc, item.artist, item.comment);`
-
-`}`
-
-`db.execute(``'COMMIT'``);`
-
-`db.close();`
+var db = Ti.Database.open('myDatabase');
+db.execute('BEGIN'); // begin the transaction
+for (var i=0, var j=playlist.length; i < j; i++) {
+  var item = playlist[i];
+  db.execute('INSERT INTO albums (disc, artist, rating) VALUES (?, ?, ?)', item.disc, item.artist, item.comment);
+}
+db.execute('COMMIT');
+db.close();
+```
 
 ### Use a minimal pre-populated database
 
@@ -302,41 +300,26 @@ Shipping a pre-populated database with your app increases the size of the app's 
 
 Rather than shipping a large pre-populated database, you can ship a "skeleton" database file instead. This would be a database with the minimum amount of data required for the application to run. Then, on first launch, ask the user's authorization to download a replacement from a remote source, using something like the following method:
 
-`var` `updateMyDatabase =` `function``(newdata) {`
-
-`// logic here to delete existing content and insert new data`
-
-`// maybe you've retrieved a bunch of JSON encoded data that you`
-
-`// rehydrate, loop through, and insert into your tables`
-
-`}`
-
-`buttonInstallRemote.addEventListener(``'click'``,` `function``(){`
-
-`var` `c = Ti.Network.createHTTPClient();`
-
-`c.setTimeout(10000);`
-
-`c.onload =` `function``(e){`
-
-`updateMyDatabase(``this``.responseData);`
-
-`Ti.UI.createAlertDialog({title:` `'Info'``, message:` `'Database installed'``, buttonNames: [``'OK'``]}).show();`
-
-`};`
-
-`c.onerror =` `function``(e){`
-
-`Ti.UI.createAlertDialog({title:` `'Error'``, message:` `'Error: '` `+ e.error, buttonNames: [``'OK'``]}).show();`
-
-`};`
-
-`c.open(``'GET'``,"http:``//example.com/getNewDatabaseData);`
-
-`c.send();`
-
-`});`
+```javascript
+var updateMyDatabase = function(newdata) {
+  // logic here to delete existing content and insert new data
+  // maybe you've retrieved a bunch of JSON encoded data that you
+  // rehydrate, loop through, and insert into your tables
+}
+buttonInstallRemote.addEventListener('click', function(){
+  var c = Ti.Network.createHTTPClient();
+  c.setTimeout(10000);
+  c.onload = function(e){
+      updateMyDatabase(this.responseData);
+      Ti.UI.createAlertDialog({title: 'Info', message: 'Database installed', buttonNames: ['OK']}).show();
+    };
+  c.onerror = function(e){
+      Ti.UI.createAlertDialog({title: 'Error', message: 'Error: ' + e.error, buttonNames: ['OK']}).show();
+    };
+    c.open('GET',"http://example.com/getNewDatabaseData);
+    c.send();
+});
+```
 
 ### Store a version number to ease database updates
 
@@ -344,36 +327,22 @@ By storing a version number within your database, you can detect which version i
 
 If you've failed to do this, you might be able to use a PRAGMA command like the following to detect if a certain column is present and by doing so differentiate between an old and new version of your database.
 
-`// ADD COLUMN TO A TABLE`
-
-`var` `addColumn =` `function``(dbname, tblName, newFieldName, colSpec) {`
-
-`var` `db = Ti.Database.open(dbname);`
-
-`var` `fieldExists =` `false``;`
-
-`resultSet = db.execute(``'PRAGMA TABLE_INFO('` `+ tblName +` `')'``);`
-
-`while` `(resultSet.isValidRow()) {`
-
-`if``(resultSet.field(1)==newFieldName) {`
-
-`fieldExists =` `true``;`
-
-`}`
-
-`resultSet.next();`
-
-`}` `// end while`
-
-`if``(!fieldExists) {`
-
-`// field does not exist, so add it`
-
-`db.execute(``'ALTER TABLE '` `+ tblName +` `' ADD COLUMN '``+newFieldName +` `' '` `+ colSpec);`
-
-`}`
-
-`db.close();`
-
-`};`
+```javascript
+// ADD COLUMN TO A TABLE
+var addColumn = function(dbname, tblName, newFieldName, colSpec) {
+  var db = Ti.Database.open(dbname);
+  var fieldExists = false;
+  resultSet = db.execute('PRAGMA TABLE_INFO(' + tblName + ')');
+  while (resultSet.isValidRow()) {
+    if(resultSet.field(1)==newFieldName) {
+      fieldExists = true;
+    }
+    resultSet.next();
+  } // end while
+  if(!fieldExists) {
+    // field does not exist, so add it
+    db.execute('ALTER TABLE ' + tblName + ' ADD COLUMN '+newFieldName + ' ' + colSpec);
+  }
+  db.close();
+};
+```

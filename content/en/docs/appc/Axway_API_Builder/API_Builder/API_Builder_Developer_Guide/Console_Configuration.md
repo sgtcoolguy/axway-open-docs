@@ -1,6 +1,6 @@
 {"title":"Console Configuration","weight":"20"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -58,67 +58,46 @@ You can override the configuration file settings with an environment variable. F
 
 ### Example
 
-./conf/foo.js
+*./conf/foo.js*
 
-`module.exports = {`
+```javascript
+module.exports = {
+    // These are generated when you create a new project
+    apikey_production: 'xxxxxxxxxxxxxxxxxxxxxxxxx',
+    apikey_development: 'yyyyyyyyyyyyyyyyyyyyyyyyy',
 
-`// These are generated when you create a new project`
+    // Selects the authorization type -- uses HTTP Basic Authorization by default
+    APIKeyAuthType: 'basic',
 
-`apikey_production:` `'xxxxxxxxxxxxxxxxxxxxxxxxx'``,`
+    // All API paths will be prefixed with '/foo'
+    apiPrefix: '/foo',
 
-`apikey_development:` `'yyyyyyyyyyyyyyyyyyyyyyyyy'``,`
+    // Sets body-parser middleware setting
+    bodyParser: {
+        limit: 1 * 1024 * 1024
+    },
 
-`// Selects the authorization type -- uses HTTP Basic Authorization by default`
+    // Sets busboy initialization settings
+    busboy: {
+        limit: {
+            fieldNameSize: 100,
+            fieldSize: 1 * 1024 * 1024
+        }
+    },
 
-`APIKeyAuthType:` `'basic'``,`
+    // Connector settings...
+    connectors: {
+        connector_name: {
+            collection: 'foobar'
+        },
+        another_connector: {
+            name: 'foobaz'
+        }
+    },
 
-`// All API paths will be prefixed with '/foo'`
-
-`apiPrefix:` `'/foo'``,`
-
-`// Sets body-parser middleware setting`
-
-`bodyParser: {`
-
-`limit: 1 * 1024 * 1024`
-
-`},`
-
-`// Sets busboy initialization settings`
-
-`busboy: {`
-
-`limit: {`
-
-`fieldNameSize: 100,`
-
-`fieldSize: 1 * 1024 * 1024`
-
-`}`
-
-`},`
-
-`// Connector settings...`
-
-`connectors: {`
-
-`connector_name: {`
-
-`collection:` `'foobar'`
-
-`},`
-
-`another_connector: {`
-
-`name:` `'foobaz'`
-
-`}`
-
-`},`
-
-`// et cetera`
-
-`}`
+    // et cetera
+}
+```
 
 ## Settings
 

@@ -33,11 +33,11 @@ In case you installed the Studio as a plugin to eclipse distribution, CVS is alr
 
 * Make sure that the main Eclipse update site is checked 'on'. In this example, the update site is the Eclipse 'Helios' site. Click 'OK' to commit any changes made to this page and exit.
 
-    <table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083196/update_sites.jpg" alt="images/download/attachments/30083196/update_sites.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
+    <table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083196/update_sites.jpg" alt="images/download/attachments/30083196/update_sites.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 * Click **Help** -> **Install New Software**and select the Eclipse update site. It may take a couple of minutes to populate the plugin options.
 
-    <table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083196/cvs_install.jpg" alt="images/download/attachments/30083196/cvs_install.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
+    <table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083196/cvs_install.jpg" alt="images/download/attachments/30083196/cvs_install.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 * Select the CVS plugin and follow the wizard's 'Next' or 'Finish' to complete the installation.
 

@@ -1,6 +1,6 @@
 {"title":"Objective-C and Objective-C++ Coding Standards","weight":"40"}
 
-Contents
+*Contents*
 
 * [Synopsis](#Synopsis)
 
@@ -104,17 +104,17 @@ Always @import (not #import) Objective-C headers, and #include C (or C++) header
 
     * Camelcase
 
-Example
+*Example*
 
-`@interface` `TiExampleClass : NSObject {`
+```
+@interface TiExampleClass : NSObject {
+// ivars
+}
 
-`// ivars`
+// properties
 
-`}`
-
-`// properties`
-
-`// methods`
+// methods
+```
 
 The @interface directive should not be indented, and neither should @property or method declarations.
 
@@ -128,13 +128,13 @@ Protocols follow the same naming conventions as classes, with the following exce
 
 * Protocols which are a _delegate_ should end with the word Delegate.
 
-Example
+*Example*
 
-`@protocol` `TiScrolling;` `// Gerund; behavior type is "this object scrolls"`
-
-`@protocol` `TiFocusable;` `// Action set; describes actions related to "focusing" and "TiFocusing" seems inappropraite ("this object focuses" vs. "this object performs actions related to focusing")`
-
-`@protocol` `TiScrollViewDelegate;` `// Delegate`
+```
+@protocol TiScrolling; // Gerund; behavior type is "this object scrolls"
+@protocol TiFocusable; // Action set; describes actions related to "focusing" and "TiFocusing" seems inappropraite ("this object focuses" vs. "this object performs actions related to focusing")
+@protocol TiScrollViewDelegate; // Delegate
+```
 
 Protocols must always include the @required directive explicitly.
 
@@ -174,47 +174,37 @@ Use the default synthesis property of ivars. You should rarely need @synthesize.
 
 * The opening brace of a method should be on its own line for implementations.
 
-Example
+*Example*
 
-`+(``void``)x:(``int``)y`
+```
++(void)x:(int)y
+{
+}
 
-`{`
-
-`}`
-
-`-(``void``)veryLongMethodName:(NSObject*)veryLongArgumentName`
-
-`arg2:(NSObject*)anotherArg`
-
-`arg3:(NSObject*)moreArg`
-
-`{`
-
-`}`
+-(void)veryLongMethodName:(NSObject*)veryLongArgumentName
+                     arg2:(NSObject*)anotherArg
+                     arg3:(NSObject*)moreArg
+{
+}
+```
 
 #### init
 
 Every class must have one, and only one, designated initializer that is identified as such in a comment. The following is an example of well-written designated initializer:
 
-Example
+*Example*
 
-`// Designated initializer.`
-
-`-(instancetype)init`
-
-`{`
-
-`self = [``super` `init];`
-
-`if` `(self) {`
-
-`// initialization code goes here...`
-
-`}`
-
-`return` `self;`
-
-`}`
+```
+// Designated initializer.
+-(instancetype)init
+{
+  self = [super init];
+    if (self) {
+        // initialization code goes here...
+    }
+    return self;
+}
+```
 
 Note the single braces. You may wish to turn off the "initializer not fully bracketed" clang warning in Xcode as a result.
 
@@ -232,15 +222,15 @@ Note the single braces. You may wish to turn off the "initializer not fully brac
 
 * \_\_block storage specifier objects should be used with care. Remember that if a \_\_block variable goes out of scope when a block tries to access it, there can be unpredictable and bad results.
 
-Example
+*Example*
 
-`typedef` `int` `^(intBlock)(``int``);`
+```
+typedef int ^(intBlock)(int);
 
-`intBlock foo = ^(``int` `foo) {`
-
-`return`  `2``*foo;`
-
-`};`
+intBlock foo = ^(int foo) {
+    return 2*foo;
+};
+```
 
 ### Fast enumeration ( for x in y )
 

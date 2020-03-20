@@ -72,19 +72,23 @@ As of this GA release, the previous Titanium SDK patch release is no longer supp
 
 When there is a Arrow version mismatch, you will be see the following error message:
 
-`ERROR | This connector requires at least version` `1.2``.``53` ``of Arrow; please run `appc use latest`.``
+```bash
+ERROR | This connector requires at least version 1.2.53 of Arrow; please run `appc use latest`.
+```
 
 CLI 5.2.1 now supports the creation of test applications without the need to create a classic project ([CLI-687](https://jira.appcelerator.org/browse/CLI-687)). You can now use the \--testapp flag with appc new to do the same thing in one step. Previously, you had to run the following steps:
 
-`appc` `new` `-t titanium --classic -i com.appc.picker -n AlloyPicker`
-
-`cd AlloyPicker`
-
-`appc alloy` `new` `--testapp ui/picker`
+```bash
+appc new -t titanium --classic -i com.appc.picker -n AlloyPicker
+cd AlloyPicker
+appc alloy new --testapp ui/picker
+```
 
 With this version, you can use this one command:
 
-`appc` `new` `-t titanium -i com.appc.picker -n AlloyPicker --testapp ui/picker`
+```bash
+appc new -t titanium -i com.appc.picker -n AlloyPicker --testapp ui/picker
+```
 
 ## API Changes
 

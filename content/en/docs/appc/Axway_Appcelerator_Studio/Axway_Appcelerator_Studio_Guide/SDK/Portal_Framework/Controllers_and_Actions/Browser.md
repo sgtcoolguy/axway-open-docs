@@ -26,29 +26,25 @@ This command is executed immediately in a synchronous way.
 
 When a page needs to be opened internally within Studio, use this JavaScript code to dispatch the appropriate action:
 
-`dispatch($H({`
-
-`controller:` `'portal.browser'``,`
-
-`action:` `"internalOpen"``,`
-
-`args: [``"http://www.appcelerator.com"``].toJSON()`
-
-`}).toJSON());`
+```
+dispatch($H({
+  controller: 'portal.browser',
+  action: "internalOpen",
+  args: ["http://www.appcelerator.com"].toJSON()
+}).toJSON());
+```
 
 ## Open a page externally
 
 When a page needs to be opened externally in the OS default browser, use this JavaScript code to dispatch the appropriate action:
 
-`dispatch($H({`
-
-`controller:` `'portal.browser'``,`
-
-`action:` `"externalOpen"``,`
-
-`args: [``"http://www.appcelerator.com"``].toJSON()`
-
-`}).toJSON());`
+```
+dispatch($H({
+  controller: 'portal.browser',
+  action: "externalOpen",
+  args: ["http://www.appcelerator.com"].toJSON()
+}).toJSON());
+```
 
 ## Configure Browsers
 
@@ -58,13 +54,12 @@ The call returns a Map for the newly added browsers. The map contains the mappin
 
 In case no browser was added, an empty map is returned.
 
-`var addedBrowsers = dispatch($H({`
-
-`controller:` `'portal.browser'``,`
-
-`action:` `"configureBrowsers"`
-
-`}).toJSON());`
+```javascript
+var addedBrowsers = dispatch($H({
+  controller: 'portal.browser',
+  action: "configureBrowsers"
+}).toJSON());
+```
 
 ## Get the currently configured browsers
 
@@ -74,36 +69,27 @@ The call returns a Map for the detected browsers. The map contains the mapping f
 
 "null" location in the result indicates the Eclipse default browser.
 
-`var browsers = dispatch($H({`
-
-`controller:` `'portal.browser'``,`
-
-`action:` `"getConfiguredBrowsers"`
-
-`}).toJSON());`
+```javascript
+var browsers = dispatch($H({
+  controller: 'portal.browser',
+  action: "getConfiguredBrowsers"
+}).toJSON());
+```
 
 ## Example
 
 You may place that dispatch code above inside a link listener, just like that:
 
-`myLink = $(``'my-link'``);`
-
-`myLink.observe(``'click'``, function(e) {`
-
-`if` `(typeof(dispatch) !==` `'undefined'``) {`
-
-`dispatch($H({`
-
-`controller:` `'portal.browser'``,`
-
-`action:` `"externalOpen"``,`
-
-`args: [``"http://www.appcelerator.com"``].toJSON()`
-
-`}).toJSON());`
-
-`}`
-
-`return`  `false``;`
-
-`});`
+```
+myLink = $('my-link');
+myLink.observe('click', function(e) {
+  if (typeof(dispatch) !== 'undefined') {
+    dispatch($H({
+      controller: 'portal.browser',
+      action: "externalOpen",
+      args: ["http://www.appcelerator.com"].toJSON()
+    }).toJSON());
+  }
+  return false;
+});
+```

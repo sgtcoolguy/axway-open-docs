@@ -42,7 +42,9 @@ When submitting a fix:
 
 * Include the ticket number and module name in each commit message
 
-    `[MOD-``1268``] UrbanAirship: open sourcing`
+    ```
+    [MOD-1268] UrbanAirship: open sourcing
+    ```
 
 * Increment the version of the module.
 
@@ -54,4 +56,6 @@ When submitting a fix:
 
 * Add a comment to the associated ticket with the pull request URL.
 
-    `PR: https:``//github.com/appcelerator/titanium_modules/pull/0`
+    ```
+    PR: https://github.com/appcelerator/titanium_modules/pull/0
+    ```

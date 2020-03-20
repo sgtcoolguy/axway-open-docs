@@ -36,7 +36,9 @@ This usually appears inside the **Preference** dialog inside Studio. Studio runs
 
 4. You should see a command line invocation of avd.py, for example:
 
-    `"/usr/bin/python"`  `"/Library/Application Support/Titanium/mobilesdk/osx/1.8.0.1/android/avd.py"`  `"/Users/username/Documents/android"`
+    ```
+    "/usr/bin/python" "/Library/Application Support/Titanium/mobilesdk/osx/1.8.0.1/android/avd.py" "/Users/username/Documents/android"
+    ```
 
 5. Copy and paste that complete command line into a terminal window and run it. Check the output. If it doesn't find minimum required Android SDK, the configuration will be marked as invalid.
 

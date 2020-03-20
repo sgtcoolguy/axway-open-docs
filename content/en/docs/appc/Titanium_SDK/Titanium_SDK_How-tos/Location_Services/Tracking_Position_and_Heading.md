@@ -70,33 +70,22 @@ Starting with iOS 8, to use location services, add either the NSLocationWhenInUs
 
 Starting with iOS 11, to request Always permission you must replace the NSLocationAlwaysUsageDescription with NSLocationAlwaysAndWhenInUseUsageDescription. This is because your users now have the ability to still choose "When in use" when the app is requesting the "Always" permission. In the flow of your app you need to take this into consideration.
 
-`<``ti``:app>`
-
-`<``ios``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<``key``>NSLocationAlwaysUsageDescription</``key``>`
-
-`<``string``>`
-
-`Specify the reason for accessing the user's location information.`
-
-`This appears in the alert dialog when asking the user for permission to`
-
-`access their location.`
-
-`</``string``>`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`</``ios``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    <ios>
+        <plist>
+            <dict>
+                <key>NSLocationAlwaysUsageDescription</key>
+                <string>
+                    Specify the reason for accessing the user's location information.
+                    This appears in the alert dialog when asking the user for permission to
+                    access their location.
+                </string>
+            </dict>
+        </plist>
+    </ios>
+</ti:app>
+```
 
 #### Android development considerations
 
@@ -110,31 +99,21 @@ Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3
 
 In order to enable location service for Windows Phone, you need to provide appropriate location Capability in your tiapp.xml. Windows Phone users are prompted to grant or deny permission when your application attempt to use geolocation information. In any cases Windows Phone user should enable location service on their device preliminarily (Settings -> location on Windows Phone, Settings -> Privacy -> Location on Windows 10 Mobile).
 
-`<ti:app>`
-
-`...`
-
-`<windows>`
-
-`...`
-
-`<manifest>`
-
-`<Capabilities>`
-
-`<DeviceCapability Name=``"location"` `/>`
-
-`</Capabilities>`
-
-`</manifest>`
-
-`...`
-
-`</windows>`
-
-`...`
-
-`</ti:app>`
+```xml
+<ti:app>
+  ...
+  <windows>
+    ...
+    <manifest>
+      <Capabilities>
+        <DeviceCapability Name="location" />
+      </Capabilities>
+    </manifest>
+    ...
+  </windows>
+  ...
+</ti:app>
+```
 
 For more information about geolocation configuration in tiapp.xml, see [Windows-specific section](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#tiapp.xmlandtimodule.xmlReference-Windows-specific) in [tiapp.xml and timodule.xml Reference](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/).
 
@@ -160,25 +139,18 @@ When you want to use Geolocation in your app you'll need to ask for permission o
 
 It is pretty straightforward to request permission. For iOS you need to configure your plist correctly as described at the iOS Development Considerations section. Before asking permission it is advised to check if the permission is already given. In the sample below you can see how to do all this, we're going to be requesting for permisson while the app is in use.
 
-`var` `hasLocationPermission = Ti.Geolocation.hasLocationPermissions(Ti.Geolocation.AUTHORIZATION_WHEN_IN_USE);`
-
-`if` `(!hasLocationPermission) {`
-
-`Ti.Geolocation.requestLocationPermissions(Ti.Geolocation.AUTHORIZATION_WHEN_IN_USE,` `function``(e) {`
-
-`if` `(e.success) {`
-
-`// permission granted`
-
-`}` `else` `{`
-
-`// permission refused`
-
-`}`
-
-`}`
-
-`}`
+```javascript
+var hasLocationPermission = Ti.Geolocation.hasLocationPermissions(Ti.Geolocation.AUTHORIZATION_WHEN_IN_USE);
+if (!hasLocationPermission) {
+  Ti.Geolocation.requestLocationPermissions(Ti.Geolocation.AUTHORIZATION_WHEN_IN_USE, function(e) {
+    if (e.success) {
+      // permission granted
+    } else {
+      // permission refused
+    }
+  }
+}
+```
 
 _Note: Only on iOS is the attribute Ti.Geolocation.AUTHORIZATION\_WHEN\_IN\_USE is required. The property is ignored on other platforms._
 
@@ -188,15 +160,13 @@ On iOS you can find out why the permission has been refused. A very thourough ex
 
 To determine whether or not location services will be available to you on the current mobile device, you simply need to check the boolean property Ti.Geolocation.locationServicesEnabled. Keep in mind, though, that on Android 2.2 and above, a low-precision "passive" location provider is enabled at all times, even when the user disables both the GPS and Network location providers. Therefore, this method always returns true on such devices. With this in mind, the base skeleton of a locations based app might look something like this.
 
-`if` `(Ti.Geolocation.locationServicesEnabled) {`
-
-`// perform other operations with Ti.Geolocation`
-
-`}` `else` `{`
-
-`alert(``'Please enable location services'``);`
-
-`}`
+```
+if (Ti.Geolocation.locationServicesEnabled) {
+    // perform other operations with Ti.Geolocation
+} else {
+    alert('Please enable location services');
+}
+```
 
 #### Configure the accuracy and frequency
 
@@ -244,37 +214,26 @@ Based on the accuracy you choose, iOS uses its own logic to select location prov
 
 Using the event-driven location example at the beginning of this chapter, let's modify it to use some of the above properties.
 
-Geolocation configuration on iOS
+*Geolocation configuration on iOS*
 
-`if` `(Ti.Geolocation.locationServicesEnabled) {`
+```
+if (Ti.Geolocation.locationServicesEnabled) {
+    Ti.Geolocation.purpose = 'Get Current Location';
+    Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_BEST;
+    Ti.Geolocation.distanceFilter = 10;
+    Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_GPS;
 
-`Ti.Geolocation.purpose =` `'Get Current Location'``;`
-
-`Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_BEST;`
-
-`Ti.Geolocation.distanceFilter = 10;`
-
-`Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_GPS;`
-
-`Ti.Geolocation.addEventListener(``'location'``,` `function``(e) {`
-
-`if` `(e.error) {`
-
-`alert(``'Error: '` `+ e.error);`
-
-`}` `else` `{`
-
-`Ti.API.info(e.coords);`
-
-`}`
-
-`});`
-
-`}` `else` `{`
-
-`alert(``'Please enable location services'``);`
-
-`}`
+    Ti.Geolocation.addEventListener('location', function(e) {
+        if (e.error) {
+            alert('Error: ' + e.error);
+        } else {
+            Ti.API.info(e.coords);
+        }
+    });
+} else {
+    alert('Please enable location services');
+}
+```
 
 ##### Android geo configuration
 
@@ -284,37 +243,24 @@ Since Android offers a much richer geolocation model, with multiple location pro
 
 * **Simple mode** provides a compromise mode that provides adequate support for undemanding location applications without requiring developers to write a lot of Android-specific code. Setting Ti.Geolocation.accuracy to either ACCURACY\_HIGH or ACCURACY\_LOW enables simple mode. In this mode the platform handles enabling and disabling location providers and filtering location updates.
 
-`// demonstrates manual mode:`
-
-`var` `providerGps = Ti.Geolocation.Android.createLocationProvider({`
-
-`name: Ti.Geolocation.PROVIDER_GPS,`
-
-`minUpdateDistance: 0.0,`
-
-`minUpdateTime: 0`
-
-`});`
-
-`Ti.Geolocation.Android.addLocationProvider(providerGps);`
-
-`Ti.Geolocation.Android.manualMode =` `true``;`
-
-`var` `locationCallback =` `function``(e) {`
-
-`if` `(!e.success || e.error) {`
-
-`Ti.API.info(``'error:'` `+ JSON.stringify(e.error));`
-
-`}` `else` `{`
-
-`Ti.API.info(``'coords: '` `+ JSON.stringify(e.coords));`
-
-`}`
-
-`};`
-
-`Titanium.Geolocation.addEventListener(``'location'``, locationCallback);`
+```javascript
+// demonstrates manual mode:
+var providerGps = Ti.Geolocation.Android.createLocationProvider({
+    name: Ti.Geolocation.PROVIDER_GPS,
+    minUpdateDistance: 0.0,
+    minUpdateTime: 0
+});
+Ti.Geolocation.Android.addLocationProvider(providerGps);
+Ti.Geolocation.Android.manualMode = true;
+var locationCallback = function(e) {
+    if (!e.success || e.error) {
+        Ti.API.info('error:' + JSON.stringify(e.error));
+    } else {
+    Ti.API.info('coords: ' + JSON.stringify(e.coords));
+  }
+};
+Titanium.Geolocation.addEventListener('location', locationCallback);
+```
 
 See the [https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Geolocation.Android](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Geolocation.Android) for further Android-specific information.
 
@@ -324,49 +270,34 @@ With your app configured to use the appropriate level of platform-specific geolo
 
 Let's take a look at a very basic example. After asserting that location services are enabled and permissions are requested, the Ti.Geolocation.getCurrentPosition() function is used to query for location information. This function takes a single parameter; a callback function whose event object contains the requested location in its coords property. This is an asynchronous call as the GPS functionality may take a moment to work, especially if this is the first time your app is accessing location. Also worth noting is that the location services might return a cached location (depending on the platform and the configuration choices you have made).
 
-`if` `(Ti.Geolocation.locationServicesEnabled) {`
-
-`Titanium.Geolocation.getCurrentPosition(``function``(e) {`
-
-`if` `(e.error) {`
-
-`Ti.API.error(``'Error: '` `+ e.error);`
-
-`}` `else` `{`
-
-`Ti.API.info(e.coords);`
-
-`}`
-
-`});`
-
-`}` `else` `{`
-
-`alert(``'Please enable location services'``);`
-
-`}`
+```
+if (Ti.Geolocation.locationServicesEnabled) {
+    Titanium.Geolocation.getCurrentPosition(function(e) {
+        if (e.error) {
+            Ti.API.error('Error: ' + e.error);
+        } else {
+            Ti.API.info(e.coords);
+        }
+    });
+} else {
+    alert('Please enable location services');
+}
+```
 
 The output for a successful execution of the above app would look something like this:
 
-`{`
-
-`"accuracy"``: 100,`
-
-`"altitude"``: 0,`
-
-`"altitudeAccuracy"``:` `null``,`
-
-`"heading"``: 0,`
-
-`"latitude"``: 40.493781233333333,`
-
-`"longitude"``: -80.056671`
-
-`"speed"``: 0,`
-
-`"timestamp"``: 1318426498331`
-
-`}`
+```
+{
+    "accuracy": 100,
+    "altitude": 0,
+    "altitudeAccuracy": null,
+    "heading": 0,
+    "latitude": 40.493781233333333,
+    "longitude": -80.056671
+    "speed": 0,
+    "timestamp": 1318426498331
+}
+```
 
 ### Continually monitor the GPS position
 
@@ -374,27 +305,19 @@ Often you will want to know where a mobile device is at all times. The most comm
 
 Here's a simple case showing how location data can be handled via event listener. You'll notice that the data is handled in a nearly identical manner to the Ti.Geolocation.getCurrentPosition() example.
 
-`if` `(Ti.Geolocation.locationServicesEnabled) {`
-
-`Ti.Geolocation.addEventListener(``'location'``,` `function``(e) {`
-
-`if` `(e.error) {`
-
-`alert(``'Error: '` `+ e.error);`
-
-`}` `else` `{`
-
-`Ti.API.info(e.coords);`
-
-`}`
-
-`});`
-
-`}` `else` `{`
-
-`alert(``'Please enable location services'``);`
-
-`}`
+```
+if (Ti.Geolocation.locationServicesEnabled) {
+    Ti.Geolocation.addEventListener('location', function(e) {
+        if (e.error) {
+            alert('Error: ' + e.error);
+        } else {
+            Ti.API.info(e.coords);
+        }
+    });
+} else {
+    alert('Please enable location services');
+}
+```
 
 As with the Ti.Geolocation.getCurrentPosition() example, the location data is returned in the event object's coords property. The listener callback will be executed every time your device detects a new location.
 
@@ -414,63 +337,39 @@ In order to manage our location events such that we only receive them while our 
 
 Below is a demonstration of how you would handle these events in order to only manage location events when your app is active. The key part to note is that pausing and resuming your location event handling is the responsibility of the Android Activity object accessible through the Titanium API as Ti.Android.currentActivity.
 
-`var` `locationAdded =` `false``;`
+```javascript
+var locationAdded = false;
+var handleLocation = function(e) {
+    if (!e.error) {
+        Ti.API.info(e.coords);
+    }
+};
+var addHandler = function() {
+    if (!locationAdded) {
+        Ti.Geolocation.addEventListener('location', handleLocation);
+        locationAdded = true;
+    }
+};
+var removeHandler = function() {
+    if (locationAdded) {
+        Ti.Geolocation.removeEventListener('location', handleLocation);
+        locationAdded = false;
+    }
+};
 
-`var` `handleLocation =` `function``(e) {`
+Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_BEST;
+Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_GPS;
+if (Ti.Geolocation.locationServicesEnabled) {
+    addHandler();
 
-`if` `(!e.error) {`
-
-`Ti.API.info(e.coords);`
-
-`}`
-
-`};`
-
-`var` `addHandler =` `function``() {`
-
-`if` `(!locationAdded) {`
-
-`Ti.Geolocation.addEventListener(``'location'``, handleLocation);`
-
-`locationAdded =` `true``;`
-
-`}`
-
-`};`
-
-`var` `removeHandler =` `function``() {`
-
-`if` `(locationAdded) {`
-
-`Ti.Geolocation.removeEventListener(``'location'``, handleLocation);`
-
-`locationAdded =` `false``;`
-
-`}`
-
-`};`
-
-`Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_BEST;`
-
-`Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_GPS;`
-
-`if` `(Ti.Geolocation.locationServicesEnabled) {`
-
-`addHandler();`
-
-`var` `activity = Ti.Android.currentActivity;`
-
-`activity.addEventListener(``'destroy'``, removeHandler);`
-
-`activity.addEventListener(``'pause'``, removeHandler);`
-
-`activity.addEventListener(``'resume'``, addHandler);`
-
-`}` `else` `{`
-
-`alert(``'Please enable location services'``);`
-
-`}`
+    var activity = Ti.Android.currentActivity;
+    activity.addEventListener('destroy', removeHandler);
+    activity.addEventListener('pause', removeHandler);
+    activity.addEventListener('resume', addHandler);
+} else {
+    alert('Please enable location services');
+}
+```
 
 ### Use the device's compass
 
@@ -480,125 +379,91 @@ Just as with location, Titanium has events and functions for both continual and 
 
 The below includes both of the methods for determining heading mentioned above.
 
-`if` `(Ti.Geolocation.locationServicesEnabled) {`
+```
+if (Ti.Geolocation.locationServicesEnabled) {
+    Ti.Geolocation.purpose = 'Get Current Heading';
 
-`Ti.Geolocation.purpose =` `'Get Current Heading'``;`
+    // make a single request for the current heading
+    Ti.Geolocation.getCurrentHeading(function(e) {
+        Ti.API.info(e.heading);
+    });
 
-`// make a single request for the current heading`
-
-`Ti.Geolocation.getCurrentHeading(``function``(e) {`
-
-`Ti.API.info(e.heading);`
-
-`});`
-
-`// Set 'heading' event for continual monitoring`
-
-`Ti.Geolocation.addEventListener(``'heading'``,` `function``(e) {`
-
-`if` `(e.error) {`
-
-`alert(``'Error: '` `+ e.error);`
-
-`}` `else` `{`
-
-`Ti.API.info(e.heading);`
-
-`}`
-
-`});`
-
-`}` `else` `{`
-
-`alert(``'Please enable location services'``);`
-
-`}`
+    // Set 'heading' event for continual monitoring
+    Ti.Geolocation.addEventListener('heading', function(e) {
+        if (e.error) {
+            alert('Error: ' + e.error);
+        } else {
+            Ti.API.info(e.heading);
+        }
+    });
+} else {
+    alert('Please enable location services');
+}
+```
 
 The console output of your program will contain the heading information, which will be sent continuously from the heading event. The data for each heading entry will be structured in the following manner.
 
-`{`
-
-`"accuracy"``: 3,`
-
-`"magneticHeading"``: 34.421875,` `// degrees east of magnetic north`
-
-`"timestamp"``: 1318447443692,`
-
-`"trueHeading"``: 43.595027923583984,` `// degrees east of true north`
-
-`"type"``:` `"heading"``,`
-
-`"x"``: 34.421875,`
-
-`"y"``: -69.296875,`
-
-`"z"``: -1.140625`
-
-`}`
+```
+{
+    "accuracy": 3,
+    "magneticHeading": 34.421875,      // degrees east of magnetic north
+    "timestamp": 1318447443692,
+    "trueHeading": 43.595027923583984, // degrees east of true north
+    "type": "heading",
+    "x": 34.421875,
+    "y": -69.296875,
+    "z": -1.140625
+}
+```
 
 ### Forward and reverse geocoding
 
 Another feature of location services that is built into the Titanium API is geocoding. This is the process of converting an address into a geographic location (forward geocoding), or vice versa (reverse geocoding). For example, let's say we wanted to know the latitude and longitude of the Appcelerator headquarters in Mountain View, California. All we need to do is use the Ti.Geolocation.forwardGeocoder() function, giving it the address and a callback as parameters. Here's the code:
 
-`Ti.Geolocation.forwardGeocoder(``'440 Bernardo Ave Mountain View CA'``,` `function``(e) {`
-
-`Ti.API.info(e);`
-
-`});`
+```
+Ti.Geolocation.forwardGeocoder('440 Bernardo Ave Mountain View CA', function(e) {
+    Ti.API.info(e);
+});
+```
 
 And here is the output of a forward geocoding of Appcelerator HQ. As you can see, it delivers the geographic location of the given address in latitude and longitude.
 
-`{`
-
-`"accuracy"``: 1,`
-
-`"latitude"``: 37.389071,`
-
-`"longitude"``: -122.050156,`
-
-`"success"``: 1`
-
-`}`
+```
+{
+    "accuracy": 1,
+    "latitude": 37.389071,
+    "longitude": -122.050156,
+    "success": 1
+}
+```
 
 Now let's say we just have latitude and longitude and we want to figure out what places of interest are in the area. This case can occur if you accept these coordinates from user input, or if you want to get further information in your location events. To do so, we use the Ti.Geolocation.reverseGeocoder() function. To this function we pass a latitude, longitude, and callback function. Let's see what we get when we use the random coordinates (50,50), as in the below sample.
 
-`Ti.Geolocation.reverseGeocoder(50, 50,` `function``(e) {`
-
-`Ti.API.info(e);`
-
-`});`
+```
+Ti.Geolocation.reverseGeocoder(50, 50, function(e) {
+    Ti.API.info(e);
+});
+```
 
 Here's the output:
 
-`{`
-
-`"places"``: [`
-
-`{`
-
-`"address"``:` `", 418020 Dzhany-Kuduk, , Kazakhstan"``,`
-
-`"city"``:` `"Oral"``,`
-
-`"country"``:` `"Kazakhstan"``,`
-
-`"country_code"``:` `"KZ"``,`
-
-`"latitude"``: 50.0,`
-
-`"longitude"``: 50.0,`
-
-`"street"``:` `""``,`
-
-`"zipcode"``: 418020`
-
-`}`
-
-`],`
-
-`"success"``: 1`
-
-`}`
+```
+{
+    "places": [
+        {
+            "address": ", 418020 Dzhany-Kuduk, , Kazakhstan",
+            "city": "Oral",
+            "country": "Kazakhstan",
+            "country_code": "KZ",
+            "latitude": 50.0,
+            "longitude": 50.0,
+            "street": "",
+            "zipcode": 418020
+        }
+    ],
+    "success": 1
+}
+```
 
 While the above output shows only one place, you'll notice that the places property is an array. This means that on any given call to Ti.Gelocation.reverseGeocoder() you may receive a number of entries in the places property, if multiple places are found in the area of your query.
 

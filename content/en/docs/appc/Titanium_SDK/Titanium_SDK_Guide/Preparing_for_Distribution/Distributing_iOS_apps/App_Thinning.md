@@ -34,17 +34,15 @@ If enabled, the Titanium SDK automatically adds all PNG and JPEG images to an As
 
 By default, slicing is disabled. To enable slicing, add the use-app-thinning element to the iOS element in the tiapp.xml file and set it to true.
 
-tiapp.xml
+*tiapp.xml*
 
-`<``ti``:app>`
-
-`<``ios``>`
-
-`<``use``-app-thinning>true</``use``-app-thinning>`
-
-`</``ios``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+  <ios>
+    <use-app-thinning>true</use-app-thinning>
+  </ios>
+</ti:app>
+```
 
 ## Bitcode
 

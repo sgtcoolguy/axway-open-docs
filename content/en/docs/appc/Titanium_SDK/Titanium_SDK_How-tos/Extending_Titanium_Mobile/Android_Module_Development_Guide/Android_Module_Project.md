@@ -84,7 +84,7 @@ If you want to use Studio, install:
 
 A number of files and directories work together to define our module and what it does. Let's take a quick look at each of them:
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="highlight-grey confluenceTd" rowspan="1" colspan="1"><p>File/Directory</p></td><td class="highlight-grey confluenceTd" rowspan="1" colspan="1"><p>Description</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>LICENSE</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The module's full license text; this will be distributed with the module to let other developers know how they can use and redistribute it.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>assets/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The directory where you can place module assets such as images. The files in this directory are added as JAR resources which you can be fetch in Java via the <a class="external-link external-link" href="https://developer.android.com/reference/java/lang/ClassLoader#getResourceAsStream(java.lang.String)" target="_blank">ClassLoader.getResourceAsStream()</a> method. They're also copied to the APK's "assets" folder.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>documentation/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The directory where you should place your module documentation for end-users. The file <tt class="">index.md</tt> is a Markdown-formatted template file that you should use when writing your module documentation. You may also write your documentation using the <a class="document-link" href="#!/guide/TDoc_Specification">TDoc Specification</a>. This is only required for module distributed in the Appcelerator Marketplace. You can safely ignore this directory if you do not intend to distribute your module.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>example/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The directory where your module example(s) should go. The file app.js will be generated to include a sample loading of your module in a test window. This file can be used for quickly testing your module as well as give an example to end-users on how to use your module. This directory is distributed with your module.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>Resources/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Supported as of Titanium 9.0.0. Files placed in this directory will be copied to the Android app's root "Resources" directory when built, making them accessible to the Titanium app's JavaScript files. These files are also accessible in Java via the <tt>AssetManager</tt> class.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>android/build.gradle</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>As of Titanium 9.0.0, this optional gradle file allows a module to define its dependencies.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>android/lib/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Place any third-party JAR dependencies here and they will be bundled up as a part of your module automatically.</p><p>As of Titanium 9.0.0, it is highly recommended to reference dependencies via "build.gradle" instead to avoid dependency collision with other modules.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>android/manifest</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>A special file that describes metadata about your module and used by the Titanium compiler. This file is required and is distributed with your module.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>android/platform/android/AndroidManifest.xml</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>As of Titanium 9.0.0, you can optionally specify the module's custom <tt class="">AndroidManfiest.xml</tt> here. Alternatively, you can do the same within the <tt>timodule.xml</tt> as documented below.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>android/platform/android/aidl/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>As of Titanium 9.0.0, you can add Java code generation templates here, as defined by the <a class="external-link external-link" href="https://developer.android.com/guide/components/aidl" target="_blank">Android Developer: AIDL</a> guide.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>android/platform/android/assets/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>As of Titanium 9.0.0, you can optionally provide files that will be copied to the APK's root "assets" folder here.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>android/platform/android/jniLibs/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>As of Titanium 9.0.0, you can add C/C++ <tt class="">*.so</tt> libraries to be bundled with the module. These libraries must placed under subdirectories named after their respective architecture such as <tt class="">armeabi-v7a</tt>, <tt class="">arm64-v8a</tt>, <tt class="">x86</tt>, and <tt>x86_64</tt>.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>android/platform/android/rs/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>As of Titanium 9.0.0, you can add RenderScript files here as defined by the <a class="external-link external-link" href="https://developer.android.com/guide/topics/renderscript/compute" target="_blank">Android Developer: RenderScript</a> guide.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>android/platform/android/res/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Optional folder where you can add Android resource files such as drawables, layouts, mipmaps, values, etc. as defined in the <a class="external-link external-link" href="http://developer.android.com/guide/topics/resources/providing-resources.html" target="_blank">Android Developer: Providing Resources</a> guide.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>android/src/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Folder containing your Java source files for the module. Can contain Kotlin source files as of Titanium 9.0.0. This directory is not distributed with your module.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt>android/timodule.xml</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>A place to put custom activities and general XML that will end up in the AndroidManifest.xml of apps. Read more about this file in the <a class="document-link" href="#!/guide/tiapp.xml_and_timodule.xml_Reference">tiapp.xml and timodule.xml reference</a>.</p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="highlight-grey confluenceTd" rowspan="1" colspan="1"><p>File/Directory</p></td><td class="highlight-grey confluenceTd" rowspan="1" colspan="1"><p>Description</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>LICENSE</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The module's full license text; this will be distributed with the module to let other developers know how they can use and redistribute it.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">assets/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The directory where you can place module assets such as images. The files in this directory are added as JAR resources which you can be fetch in Java via the <a class="external-link external-link" href="https://developer.android.com/reference/java/lang/ClassLoader#getResourceAsStream(java.lang.String)" target="_blank">ClassLoader.getResourceAsStream()</a> method. They're also copied to the APK's "assets" folder.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">documentation/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The directory where you should place your module documentation for end-users. The file <tt class=" ">index.md</tt> is a Markdown-formatted template file that you should use when writing your module documentation. You may also write your documentation using the <a class="document-link " href="#!/guide/TDoc_Specification">TDoc Specification</a>. This is only required for module distributed in the Appcelerator Marketplace. You can safely ignore this directory if you do not intend to distribute your module.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">example/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The directory where your module example(s) should go. The file app.js will be generated to include a sample loading of your module in a test window. This file can be used for quickly testing your module as well as give an example to end-users on how to use your module. This directory is distributed with your module.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">Resources/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Supported as of Titanium 9.0.0. Files placed in this directory will be copied to the Android app's root "Resources" directory when built, making them accessible to the Titanium app's JavaScript files. These files are also accessible in Java via the <tt class=" ">AssetManager</tt> class.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">android/build.gradle</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>As of Titanium 9.0.0, this optional gradle file allows a module to define its dependencies.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">android/lib/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Place any third-party JAR dependencies here and they will be bundled up as a part of your module automatically.</p><p>As of Titanium 9.0.0, it is highly recommended to reference dependencies via "build.gradle" instead to avoid dependency collision with other modules.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">android/manifest</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>A special file that describes metadata about your module and used by the Titanium compiler. This file is required and is distributed with your module.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">android/platform/android/AndroidManifest.xml</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>As of Titanium 9.0.0, you can optionally specify the module's custom <tt class=" ">AndroidManfiest.xml</tt> here. Alternatively, you can do the same within the <tt class=" ">timodule.xml</tt> as documented below.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">android/platform/android/aidl/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>As of Titanium 9.0.0, you can add Java code generation templates here, as defined by the <a class="external-link external-link" href="https://developer.android.com/guide/components/aidl" target="_blank">Android Developer: AIDL</a> guide.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">android/platform/android/assets/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>As of Titanium 9.0.0, you can optionally provide files that will be copied to the APK's root "assets" folder here.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">android/platform/android/jniLibs/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>As of Titanium 9.0.0, you can add C/C++ <tt class=" ">*.so</tt> libraries to be bundled with the module. These libraries must placed under subdirectories named after their respective architecture such as <tt class=" ">armeabi-v7a</tt>, <tt class=" ">arm64-v8a</tt>, <tt class=" ">x86</tt>, and <tt class=" ">x86_64</tt>.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">android/platform/android/rs/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>As of Titanium 9.0.0, you can add RenderScript files here as defined by the <a class="external-link external-link" href="https://developer.android.com/guide/topics/renderscript/compute" target="_blank">Android Developer: RenderScript</a> guide.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">android/platform/android/res/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Optional folder where you can add Android resource files such as drawables, layouts, mipmaps, values, etc. as defined in the <a class="external-link external-link" href="http://developer.android.com/guide/topics/resources/providing-resources.html" target="_blank">Android Developer: Providing Resources</a> guide.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">android/src/</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>Folder containing your Java source files for the module. Can contain Kotlin source files as of Titanium 9.0.0. This directory is not distributed with your module.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><tt class=" ">android/timodule.xml</tt></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>A place to put custom activities and general XML that will end up in the AndroidManifest.xml of apps. Read more about this file in the <a class="document-link " href="#!/guide/tiapp.xml_and_timodule.xml_Reference">tiapp.xml and timodule.xml reference</a>.</p></td></tr></tbody></table>
 
 The CLI creates a module project that contains multiple platforms. Each platform contains its own folder with platform-specific resources and common folders for assets, documentation, example, and Resources.
 
@@ -107,7 +107,7 @@ Titanium module metadata is described in a special text file named manifest. Thi
 
 Before you distribute your module, you must edit this manifest and change a few values. Some of the values are pre-generated and should not be edited. These are noted with the comment before them. In the manifest file, any line starting with a hash character (#) is ignored. The following are the descriptions of each entry in the manifest:
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Key</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong>Description/Purpose</strong></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>version</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is the version of your module. You should change this value each time you make major changes and distribute them. Version should be in the dotted notation (X.Y.Z) and must not con-tain any spaces or non-number characters.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>architectures</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The binary architectures the module supports as a delimited list. Example: x86 arm64-v8a</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>description</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable description of your module. It should be short and suitable for display next to your module name.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>author</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable author name you want to display next to your module. It can simply be your personal name, such as "Jon Doe" or an organizational name such as "Axway Appcelerator".</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>license</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable name of your license. You should use a short description such as "Apache Public License", "MIT" or "Commercial".</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>copyright</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable copyright string for your module. For example, "Copyright (c) 2020 by Axway Appcelerator, Inc."</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>name</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a read-only name of your module that is generated when you created your project. You must not edit this value.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>moduleid</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a read-only module id of your module that is generated when you created your project. You should not edit this value. NOTE: you must generate a unique id. We recommend using your reverse-DNS company name + module_name as a pattern to guarantee uniqueness. The Titanium Marketplace will only allow unique module ids when distributing modules. If you must edit this value, you must also edit the value in your module implementation file.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>guid</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a read-only unique module id for your module that is generated when you created your project. You must not edit this value.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>platform</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a read-only platform target of your module that is generated when you created your project. You must not edit this value.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>minsdk</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The is a generated value for the minimum Titanium SDK version that was used when creating your module. The current minimum version for new Android modules is 7.0.0.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>respackage</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This setting only applies to Titanium versions older than 9.0.0.</p><p>This is specific package name to generate a R.java. If you got exception like <i class=""><tt class="">java.lang.NoClassDefFoundError: com.example.mypackage.R$layout</tt> </i>then add the following entry to the your module manifest file: <i class="">respackage: <tt class="">com.example.mypackage</tt> </i>. This will generate a corresponding java R file <tt>com.example.mypackage.R.java</tt></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Key</strong></p></td><td class="confluenceTd" rowspan="1" colspan="1"><p><strong class=" ">Description/Purpose</strong></p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>version</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is the version of your module. You should change this value each time you make major changes and distribute them. Version should be in the dotted notation (X.Y.Z) and must not con-tain any spaces or non-number characters.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>architectures</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The binary architectures the module supports as a delimited list. Example: x86 arm64-v8a</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>description</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable description of your module. It should be short and suitable for display next to your module name.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>author</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable author name you want to display next to your module. It can simply be your personal name, such as "Jon Doe" or an organizational name such as "Axway Appcelerator".</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>license</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable name of your license. You should use a short description such as "Apache Public License", "MIT" or "Commercial".</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>copyright</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a human-readable copyright string for your module. For example, "Copyright (c) 2020 by Axway Appcelerator, Inc."</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>name</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a read-only name of your module that is generated when you created your project. You must not edit this value.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>moduleid</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a read-only module id of your module that is generated when you created your project. You should not edit this value. NOTE: you must generate a unique id. We recommend using your reverse-DNS company name + module_name as a pattern to guarantee uniqueness. The Titanium Marketplace will only allow unique module ids when distributing modules. If you must edit this value, you must also edit the value in your module implementation file.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>guid</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a read-only unique module id for your module that is generated when you created your project. You must not edit this value.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>platform</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This is a read-only platform target of your module that is generated when you created your project. You must not edit this value.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>minsdk</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>The is a generated value for the minimum Titanium SDK version that was used when creating your module. The current minimum version for new Android modules is 7.0.0.</p></td></tr><tr><td class="confluenceTd" rowspan="1" colspan="1"><p>respackage</p></td><td class="confluenceTd" rowspan="1" colspan="1"><p>This setting only applies to Titanium versions older than 9.0.0.</p><p>This is specific package name to generate a R.java. If you got exception like <i class=" "><tt class=" ">java.lang.NoClassDefFoundError: com.example.mypackage.R$layout</tt> </i>then add the following entry to the your module manifest file: <i class=" ">respackage: <tt class=" ">com.example.mypackage</tt> </i>. This will generate a corresponding java R file <tt class=" ">com.example.mypackage.R.java</tt></p></td></tr></tbody></table>
 
 ## CLI tasks
 
@@ -115,23 +115,18 @@ Before you distribute your module, you must edit this manifest and change a few 
 
 To create a new module project, run the following Appcelerator CLI command:
 
-`appc new -d` `/PATH/TO/WORKSPACE` `-n <MODULE NAME> --``id` `<MODULE ID>`
+```bash
+appc new -d /PATH/TO/WORKSPACE -n <MODULE NAME> --id <MODULE ID>
 
-`$ appc new -n <MODULE NAME> --``id` `<MODULE ID>`
-
-`Appcelerator Command-Line Interface, version 7.1.2`
-
-`Copyright (c) 2014-2018, Appcelerator, Inc. All Rights Reserved.`
-
-`? What` `type` `of project are you creating?`
-
-`Native App`
-
-`Arrow App`
-
-`❯ Titanium Module (timodule)`
-
-`Apple Watch App`
+$ appc new -n <MODULE NAME> --id <MODULE ID>
+Appcelerator Command-Line Interface, version 7.1.2
+Copyright (c) 2014-2018, Appcelerator, Inc.  All Rights Reserved.
+? What type of project are you creating?
+  Native App
+  Arrow App
+❯ Titanium Module (timodule)
+  Apple Watch App
+```
 
 If you omit any of the options, the CLI will prompt you to enter them.
 
@@ -139,13 +134,16 @@ If you omit any of the options, the CLI will prompt you to enter them.
 
 To build and package a module, run ti build in the android directory.
 
-`cd` `/<PATH_TO_MODULE_PROJECT>/<MODULE_NAME>``/android`
-
-`appc run -p android --build-only`
+```bash
+cd /<PATH_TO_MODULE_PROJECT>/<MODULE_NAME>/android
+appc run -p android --build-only
+```
 
 After the build completes, you should have a ZIP file in the android/dist directory and see the following message in the console:
 
-`** BUILD SUCCEEDED **`
+```
+** BUILD SUCCEEDED **
+```
 
 With the ZIP file, you can either:
 
@@ -217,17 +215,15 @@ To test a module:
 
 The best way to debug your Android modules right now is a bit old fashioned. When there is a problem or unexpected behavior in your module, use log statements to trace through your code's execution. The Java [Log](http://builds.appcelerator.com.s3.amazonaws.com/module-apidoc/2.0.0/android/org/appcelerator/kroll/common/Log.html) class offers several static methods for writing to the log. It is considered a best practice to define a LCAT or TAG variable at the top of your class, and to use that as the first parameter to all calls to Log.
 
-`private`  `static`  `final` `String TAG =` `"FooProxy"``;`
+```
+private static final String TAG = "FooProxy";
 
-`@Kroll``.method`
-
-`public`  `void` `fooFunction(String arg)`
-
-`{`
-
-`Log.i(TAG,` `"fooFunction received: "` `+ arg);`
-
-`}`
+@Kroll.method
+public void fooFunction(String arg)
+{
+    Log.i(TAG, "fooFunction received: " + arg);
+}
+```
 
 ## Adding 3rd party libraries
 
@@ -241,11 +237,11 @@ An example can be found here: [ti.map/android/build.gradle](https://github.com/a
 
 The below is an example build.gradle file which provides access to the Google "Material Components" library.
 
-`dependencies {`
-
-`implementation` `'com.google.android.material:material:1.1.0'`
-
-`}`
+```
+dependencies {
+    implementation 'com.google.android.material:material:1.1.0'
+}
+```
 
 ### Local Dependencies
 
@@ -269,7 +265,7 @@ To add a JAR as a dependency in Studio:
 
 With Titanium 6.1.1 - 8.3.1, you can also copy AAR (Android Archive) library files to the module's lib directory. However, this is not supported as of Titanium 9.0.0, which requires you to reference these AAR libraries via a build.gradle file instead.
 
-Where do i get .aar files?
+*Where do i get .aar files?*
 
 Most third-party libraries can be downloaded from either GitHub or from one of the popular repositories like [jCenter](https://bintray.com/bintray/jcenter) or [Maven Central](http://maven central/). Copies of the Android Support Libraries can be found inside your Android SDK directory under <andriod-sdk>/extras/android/m2repository/com/android
 
@@ -285,11 +281,11 @@ For Android modules, you can either add assets in the module's assets folder or 
 
 Files in the module's assets folder are added as JAR resources. To access these files, use the Android Class's getResource()method to retrieve a URL object or [getResourceAsStream()](http://developer.android.com/reference/java/lang/Class.html#getResourceAsStream(java.lang.String)) method to retrieve an InputStream object.
 
-`// original file was in assets/image.png`
-
-`URL url = getClass().getClassLoader().getResource(``'assets/image.png'``);`
-
-`Log.i(``'GETFILE'``, url.toString());`
+```
+// original file was in assets/image.png
+URL url = getClass().getClassLoader().getResource('assets/image.png');
+Log.i('GETFILE', url.toString());
+```
 
 The README file and JavaScript files (any file with a .js extension) in the assets folder are not added to the JAR library.
 
@@ -297,21 +293,16 @@ The README file and JavaScript files (any file with a .js extension) in the asse
 
 Add any of the resource directories defined in [Android Developer: Providing Resources](http://developer.android.com/guide/topics/resources/providing-resources.html) to add drawables, layouts, values, etc. to the built app. To access these files, you can use the Titanium SDK TiRHelperhelper class.
 
-`// original file was in android/platform/android/res/drawable/image.png`
-
-`int result = 0;`
-
-`try` `{`
-
-`result = TiRHelper.getApplicationResource(``'drawable.image'``);`
-
-`Log.i(``"GOODSTUFF"``,` `new` `Integer(result).toString());`
-
-`}` `catch` `(ResourceNotFoundException e) {`
-
-`Log.e(``'BADSTUFF'``,` `'[ERROR] EXCEPTION -- RESOURCE NOT FOUND'``);`
-
-`}`
+```
+// original file was in android/platform/android/res/drawable/image.png
+int result = 0;
+try {
+    result = TiRHelper.getApplicationResource('drawable.image');
+    Log.i("GOODSTUFF", new Integer(result).toString());
+} catch (ResourceNotFoundException e) {
+    Log.e('BADSTUFF', '[ERROR] EXCEPTION -- RESOURCE NOT FOUND');
+}
+```
 
 ## Format / Lint source-code
 
@@ -355,25 +346,19 @@ Once you have upload your module and completed the necessary submission steps, y
 
 When building an application that includes two or more modules that contains the same library, in particular, the google-play-services.jar, the JAR files may conflict indicating that each module is using a different version of the library.
 
-Error Log
+*Error Log*
 
-`[ERROR] Application Installer abnormal process termination. Process` `exit` `value was 1`
-
-`[ERROR] : Conflicting jar files detected:`
-
-`[ERROR] :`
-
-`[ERROR] : The following modules have different` `"google-play-services.jar"` `files`
-
-`[ERROR] : mymodule (version 3.0.3) (``hash``=8b95ece0c3ae132fb898ec8beef1cb2d)`
-
-`[ERROR] : ti.map (version 2.2.3) (``hash``=a9b753b4c63719e24d0022e341c57b2e)`
-
-`[ERROR] :`
-
-`[ERROR] : You can either` `select` `a version of these modules where the conflicting jar` `file` `is the same or you`
-
-`[ERROR] : can try copying the jar` `file` `from one module``'s "lib" folder to the other module'``s` `"lib"` `folder.`
+```
+[ERROR] Application Installer abnormal process termination. Process exit value was 1
+[ERROR] :  Conflicting jar files detected:
+[ERROR] :
+[ERROR] :  The following modules have different "google-play-services.jar" files
+[ERROR] :     mymodule   (version 3.0.3) (hash=8b95ece0c3ae132fb898ec8beef1cb2d)
+[ERROR] :     ti.map     (version 2.2.3) (hash=a9b753b4c63719e24d0022e341c57b2e)
+[ERROR] :
+[ERROR] :  You can either select a version of these modules where the conflicting jar file is the same or you
+[ERROR] :  can try copying the jar file from one module's "lib" folder to the other module's "lib" folder.
+```
 
 Prior to Titanium SDK 7.0.0, to resolve this issue, you can either delete one of the JAR files from one of the modules or copy the JAR file from one module's lib folder to the other's to make both versions the same. This solution only works on a per-application basis and is not a global solution. In Titanium 7.0.0 and later, use the t[i.playservices](https://github.com/appcelerator-modules/ti.playservices) module to handle play services dependencies centralized. Simply add it to your timodule.xml and users will be notified if they do not include the module in their project.
 

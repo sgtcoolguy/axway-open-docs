@@ -16,45 +16,37 @@ The 1.1.5 release of Appcelerator Cloud Services includes the following new feat
 
 * **Wildcard regular expressions** are now not allowed in [query operations](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Search_and_Query_APIs/). For example, the ACS query where="color": {"$regex" :"^.\*b"} will result in the following error:
 
-    `This regex query is not supported, regex expression should start` `with` `^letter or ^digit.`
+    ```
+    This regex query is not supported, regex expression should start with ^letter or ^digit.
+    ```
 
 * When [creating an ACL](/arrowdb/latest/#!/api/ACLs) the public\_read and public\_write parameters must now be strings
 
 * The **[CustomObjects.count](/arrowdb/latest/#!/api/CustomObjects-method-count)** method has been modified to include the object type in the request (objects/<object>/count.json, for example), and only returns the count for the specified type. The count field is returned in the meta JSON response object, and not in the response object.
 
-    `$ curl -X GET` `"http://${HOST}/v1/car/count.json?key=${KEY}&pretty_json=true"`
-
-    `{`
-
-    `"meta"``: {`
-
-    `"code"``:` `200``,`
-
-    `"status"``:` `"ok"``,`
-
-    `"method_name"``:` `"objectsCount"``,`
-
-    `"count"``:` `15`
-
-    `}`
+    ```
+    $ curl -X GET "http://${HOST}/v1/car/count.json?key=${KEY}&pretty_json=true"
+      {
+        "meta": {
+          "code": 200,
+          "status": "ok",
+          "method_name": "objectsCount",
+          "count": 15
+      }
+    ```
 
 * The response of count methods for all ACS objects now includes a method\_name field, and the count field is included in the meta object and not the response object.
 
-    `$ curl -X GET` `"http://${HOST}/v1/checkins/count.json?key=${KEY}&pretty_json=true"`
-
-    `{`
-
-    `"meta"``: {`
-
-    `"code"``:` `200``,`
-
-    `"status"``:` `"ok"``,`
-
-    `"method_name"``:` `"checkinsCount"``,`
-
-    `"count"``:` `15`
-
-    `}`
+    ```
+    $ curl -X GET "http://${HOST}/v1/checkins/count.json?key=${KEY}&pretty_json=true"
+    {
+      "meta": {
+        "code": 200,
+        "status": "ok",
+        "method_name": "checkinsCount",
+        "count": 15
+    }
+    ```
 
 ## Bug fix
 

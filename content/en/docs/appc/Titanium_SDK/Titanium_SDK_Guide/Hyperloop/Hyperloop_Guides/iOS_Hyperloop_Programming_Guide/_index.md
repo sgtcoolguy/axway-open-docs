@@ -38,7 +38,7 @@ This document provides information on iOS Hyperloop programming requirements, cl
 
 See [Hyperloop Requirements](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyperloop/Hyperloop_Guides/Hyperloop_Requirements/#requirements) for software requirements for using Hyperloop.
 
-Important notes about your Xcode location
+*Important notes about your Xcode location*
 
 It is important that your Xcode installation is under the default location in /Applications/Xcode.app. Hyperloop uses a bundled library from Xcode to inspect the available native APIs. This can lead to errors in the generated metadata if you have selected Xcode from a different location (either via xcode-select or in the Location settings in the Xcode preferences) but also have another installation in the default folder. Keep this in mind if you have more than one Xcode installation on your system.
 
@@ -46,7 +46,9 @@ It is important that your Xcode installation is under the default location in /A
 
 Classes in Hyperloop map to the underlying classes defined in Objective-C. For example, if you have a class such as UIView defined in the UIKit framework, you would reference it using a standard require such as:
 
-`var` `UIView = require(``'UIKit/UIView'``);`
+```javascript
+var UIView = require('UIKit/UIView');
+```
 
 This will return the UIView class object. Meaning, it’s not an instance of a UIView, but the UIView class itself (or in Objective-C parlance, the interface defined with @interface).
 
@@ -54,21 +56,29 @@ Once you have the Class reference returned from require, you can call normal Jav
 
 For example, you could get the layerClass of the UIView using the example:
 
-`var` `layerClass = UIView.layerClass;`
+```javascript
+var layerClass = UIView.layerClass;
+```
 
 ## Instantiation
 
 To instantiate a native Class and create an instance, you can use the normal alloc init style pattern from Objective-C:
 
-`var` `view = UIView.alloc().init();`
+```javascript
+var view = UIView.alloc().init();
+```
 
 Or, to simplify and make it more standard JavaScript convention, for default initializers you can use new:
 
-`var` `view =` `new` `UIView();`
+```javascript
+var view = new UIView();
+```
 
 This is the equivalent of the alloc init example above. When constructing an instance using new, it will always call the default initializer that is designated as init. If you have a special initializer that takes arguments, you can use the following as you would in Objective-C:
 
-`var` `view = UIView.alloc().initWithFrame(CGRectMake(0, 0, 100, 100));`
+```javascript
+var view = UIView.alloc().initWithFrame(CGRectMake(0, 0, 100, 100));
+```
 
 ## Methods and properties
 
@@ -76,61 +86,50 @@ Methods in Objective-C are mapped to JavaScript functions. Properties in Objecti
 
 For example:
 
-`@interface UIView : UIControl`
+```
+@interface UIView : UIControl
+@property UIColor * backgroundColor;
+- (void)addSubview:(UIView *)view;
+- (void)setColor:(UIColor *) forMyState:(MyState)state;
 
-`@property UIColor * backgroundColor;`
-
-`- (``void``)addSubview:(UIView *)view;`
-
-`- (``void``)setColor:(UIColor *) forMyState:(MyState)state;`
-
-`@end`
+@end
+```
 
 Would map to the following in JavaScript:
 
-`view.backgroundColor = UIColor.redColor;`
-
-`view.addSubview(label);`
-
-`view.setColorForMyState(UIColor.redColor, MyState.TestState);`
+```
+view.backgroundColor = UIColor.redColor;
+view.addSubview(label);
+view.setColorForMyState(UIColor.redColor, MyState.TestState);
+```
 
 You can also use auto-generated property-setters like view.setBackgroundColor(). Note that methods with multiple arguments are simply concatenated by their signature. More examples of that behavior:
 
-`/** -- Simple methods with two arguments -- **/`
+```javascript
+/** -- Simple methods with two arguments -- **/
 
-`// Native (Obj-C)`
+// Native (Obj-C)
+[myView insertSubview:anotherView atIndex: 0];
 
-`[myView insertSubview:anotherView atIndex: 0];`
+// Hyperloop (JavaScript)
+myView.insertSubViewAtIndex(anotherView, index);
 
-`// Hyperloop (JavaScript)`
+/** -- Complex methods with blocks -- **/
 
-`myView.insertSubViewAtIndex(anotherView, index);`
+// Native (Obj-C)
+[UIView.animateWithDuration:1000.0 animations:^{
+  // Do animation
+} completion:(BOOL finished)^{
+  // Finished animation
+}];
 
-`/** -- Complex methods with blocks -- **/`
-
-`// Native (Obj-C)`
-
-`[UIView.animateWithDuration:1000.0 animations:^{`
-
-`// Do animation`
-
-`} completion:(BOOL finished)^{`
-
-`// Finished animation`
-
-`}];`
-
-`// Hyperloop`
-
-`UIView.animateWithDurationAnimationsCompletion(1000.0,` `function` `animations () {`
-
-`// Do animation`
-
-`},` `function` `completion (finished) {`
-
-`// Finished animation`
-
-`});`
+// Hyperloop
+UIView.animateWithDurationAnimationsCompletion(1000.0, function animations () {
+  // Do animation
+}, function completion (finished) {
+  // Finished animation
+});
+```
 
 Note that for the animateWithDuration method in Hyperloop, you do not need to name the callbacks, but it improves the readability and is a well used JavaScript pattern.
 
@@ -142,9 +141,10 @@ If you have a selector with multiple parameters, the name of the function will b
 
 Constants, enumerations, and functions defined in the Framework are available in the Framework package. For example, to reference the enum UISemanticContentAttribute you would reference it such as:
 
-`var` `UISemanticContentAttributeUnspecified = require(``'UIKit'``).UISemanticContentAttributeUnspecified;`
-
-`view.semanticContentAttribute = UISemanticContentAttributeUnspecified;`
+```javascript
+var UISemanticContentAttributeUnspecified = require('UIKit').UISemanticContentAttributeUnspecified;
+view.semanticContentAttribute = UISemanticContentAttributeUnspecified;
+```
 
 The constants, enumerations, and functions are read-only properties of the UIKit framework.
 
@@ -152,21 +152,20 @@ The constants, enumerations, and functions are read-only properties of the UIKit
 
 Sometimes interfaces define generic return types such as NSObject or id and you will need to cast them to a different type to then reference methods and properties of the class. You can use the special class function cast on any Class to return a casted object. For example, suppose the result of the function returned an id but you know the implementation is actually a UIView. You could use the following:
 
-`var` `view = UIView.cast(object);`
-
-`view.backgroundColor = UIColor.redColor;`
+```javascript
+var view = UIView.cast(object);
+view.backgroundColor = UIColor.redColor;
+```
 
 **Be careful with casting**: If you cast an object which is actually something different, you will experience an error and likely a crash. You can also cast a Titanium UI-component into its equivalent. For example, this would work:
 
-`var` `tiView = Ti.UI.createView({`
-
-`backgroundColor :` `'red'`
-
-`});`
-
-`var` `nativeView = UIView.cast(tiView);`
-
-`console.log(``'color should be red'``, nativeView.backgroundColor);`
+```javascript
+var tiView = Ti.UI.createView({
+  backgroundColor : 'red'
+});
+var nativeView = UIView.cast(tiView);
+console.log('color should be red', nativeView.backgroundColor);
+```
 
 ## Blocks
 
@@ -174,15 +173,13 @@ Blocks in Hyperloop are translated into JavaScript callback-functions.
 
 For example, to animate a view which normally takes a block:
 
-`UIView.animateWithDurationAnimationsCompletion(1.0,` `function``() {`
-
-`view.layer.opacity = 0.0;`
-
-`},` `function``(done) {`
-
-`// The animation has been completed`
-
-`});`
+```
+UIView.animateWithDurationAnimationsCompletion(1.0, function() {
+  view.layer.opacity = 0.0;
+}, function(done) {
+    // The animation has been completed
+});
+```
 
 ## Function pointers
 
@@ -192,35 +189,35 @@ Currently, function pointers are not currently supported in the latest version.
 
 Hyperloop provides you the ability to dynamically create your own Objective-C classes at runtime. Once created, these classes can be used as normal in either Hyperloop or passed to native calls. Let’s create a simple custom UIView:
 
-`var` `MyClass = Hyperloop.defineClass(``'MyClass'``,` `'UIView'``);`
+```javascript
+var MyClass = Hyperloop.defineClass('MyClass', 'UIView');
+```
 
 This will create a new class in the Objective-C runtime named MyClass which will extend UIView which is equivalent to the following code:
 
-`@interface MyClass : UIView`
-
-`@end`
+```
+@interface MyClass : UIView
+@end
+```
 
 You can also pass an Array of Strings as the third argument which are the protocols to implement for the new class:
 
-`var` `MyView = Hyperloop.defineClass(``'MyClass'``,` `'UIView'``, [``'UIAppearance'``]);`
+```javascript
+var MyView = Hyperloop.defineClass('MyClass', 'UIView', ['UIAppearance']);
+```
 
 You can now add methods:
 
-`MyView.addMethod({`
-
-`selector:` `'drawRect:'``,`
-
-`instance:` `true``,`
-
-`arguments: [``'CGRect'``],`
-
-`callback:` `function``(rect) {`
-
-`// this code is executed when the drawRect: delegate is called`
-
-`}`
-
-`});`
+```
+MyView.addMethod({
+  selector: 'drawRect:',
+  instance: true,
+  arguments: ['CGRect'],
+  callback: function(rect) {
+    // this code is executed when the drawRect: delegate is called
+  }
+});
+```
 
 Hyperloop supports the following set of properties for adding methods:
 
@@ -230,27 +227,23 @@ Hyperloop supports the following set of properties for adding methods:
 
 Another example with multiple arguments using simplified types:
 
-`MyView.addMethod({`
-
-`selector:` `'foo:bar:hello:'``,`
-
-`instance:` `true``,`
-
-`returnType:` `'void'``,`
-
-`arguments: [``'int'``,` `'float'``,` `'id'``],`
-
-`callback:` `function``(a, b, c) {`
-
-`// Invoked when the method is called`
-
-`}`
-
-`});`
+```
+MyView.addMethod({
+  selector: 'foo:bar:hello:',
+  instance: true,
+  returnType: 'void',
+  arguments: ['int', 'float', 'id'],
+  callback: function(a, b, c) {
+        // Invoked when the method is called
+  }
+});
+```
 
 Once you have defined your class, you would just instantiate it as normal.
 
-`var` `view =` `new` `MyView();`
+```javascript
+var view = new MyView();
+```
 
 ## Using third-party libraries
 
@@ -266,21 +259,18 @@ You must first install CocoaPods if you do not already have it installed. You ca
 
 Once you have CocoaPods installed you can create a Podfile in your Titanium project directory such as:
 
-Podfile
+*Podfile*
 
-`# This is required for CocoaPods 1.x`
+```ruby
+# This is required for CocoaPods 1.x
+install! 'cocoapods',
+         :integrate_targets => false
 
-`install!` `'cocoapods'``,`
-
-`:integrate_targets` `=>` `false`
-
-`platform` `:ios``,` `'8.0'`
-
-`target` `'MyProject'`  `do`
-
-`pod` `'JBChartView'`
-
-`end`
+platform :ios, '8.0'
+target 'MyProject' do
+    pod 'JBChartView'
+end
+```
 
 Note that MyProject would be replaced with the name of your Titanium project. The above example will use the [JBChartView](https://github.com/Jawbone/JBChartView) framework as a dependency.
 
@@ -288,33 +278,27 @@ That’s it! CocoaPods and the Hyperloop compiler will do the rest to manage pul
 
 Let’s now use the imported project:
 
-`var` `JBBarChartView = require(``'JBChartView/JBBarChartView'``);`
-
-`var` `chart =` `new` `JBBarChartView();`
-
-`chart.minimumValue = 1;`
-
-`chart.maximumValue = 100;`
+```javascript
+var JBBarChartView = require('JBChartView/JBBarChartView');
+var chart = new JBBarChartView();
+chart.minimumValue = 1;
+chart.maximumValue = 100;
+```
 
 Note for Ad-Hoc builds: The build can fail if some frameworks importted via CocoaPods contain Bitcode and some not. You can fix this issue by disabling Bitcode for third-party frameworks in that case. Add the following snippet to your Podfile:
 
-Podfile
+*Podfile*
 
-`# Fix build error for mixed Bitcode frameworks in CocoaPods`
-
-`post_install` `do` `|installer|`
-
-`installer.pods_project.targets.``each`  `do` `|target|`
-
-`target.build_configurations.``each`  `do` `|config|`
-
-`config.build_settings[``'ENABLE_BITCODE'``] =` `'NO'`
-
-`end`
-
-`end`
-
-`end`
+```ruby
+# Fix build error for mixed Bitcode frameworks in CocoaPods
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
+  end
+end
+```
 
 ### Custom frameworks and libraries
 
@@ -322,33 +306,23 @@ The following functionality has been deprecated in Hyperloop 2.2.0 and will be r
 
 In addition to CocoaPods, you can include third-party or first-party custom code by including a reference in appc.js under the thirdparty property. For example, to include custom objective-c from the project’s src directory you could provide:
 
-appc.js
+*appc.js*
 
-`module.exports = {`
-
-`hyperloop: {`
-
-`ios: {`
-
-`thirdparty: {`
-
-`'MyFramework'``: {`
-
-`source: [``'src'``],`
-
-`header:` `'src'``,`
-
-`resource:` `'src'`
-
-`}`
-
-`}`
-
-`}`
-
-`}`
-
-`};`
+```javascript
+module.exports = {
+  hyperloop: {
+    ios: {
+      thirdparty: {
+        'MyFramework': {
+          source: ['src'],
+          header: 'src',
+          resource: 'src'
+        }
+      }
+    }
+  }
+};
+```
 
 * The source property can be either an Array or String of source directories to include in the compile. This is optional.
 
@@ -358,31 +332,22 @@ appc.js
 
 To provide additional compiler flags, you can add them in the xcodebuild property of ios such as:
 
-appc.js
+*appc.js*
 
-`module.exports = {`
-
-`hyperloop: {`
-
-`ios: {`
-
-`xcodebuild: {`
-
-`flags: {`
-
-`LIBRARY_SEARCH_PATHS:` `'../../src'``,`
-
-`OTHER_LDFLAGS:` `'-lMyLibrary'`
-
-`}`
-
-`}`
-
-`}`
-
-`}`
-
-`};`
+```javascript
+module.exports = {
+  hyperloop: {
+    ios: {
+      xcodebuild: {
+        flags: {
+          LIBRARY_SEARCH_PATHS: '../../src',
+          OTHER_LDFLAGS: '-lMyLibrary'
+        }
+      }
+    }
+  }
+};
+```
 
 Note that the "flags" key takes a relative path from the build/iphone directory.
 
@@ -398,29 +363,21 @@ You can further customize the Xcode build by defining an appc.js file in the roo
 
 For example:
 
-appc.js
+*appc.js*
 
-`module.exports = {`
-
-`hyperloop: {`
-
-`ios: {`
-
-`xcodebuild: {`
-
-`flags: {`
-
-`GCC_PREPROCESSOR_DEFINITIONS:` `'foo=bar'`
-
-`}`
-
-`}`
-
-`}`
-
-`}`
-
-`};`
+```javascript
+module.exports = {
+  hyperloop: {
+    ios: {
+      xcodebuild: {
+        flags: {
+          GCC_PREPROCESSOR_DEFINITIONS: 'foo=bar'
+        }
+      }
+    }
+  }
+};
+```
 
 Any flags added to the xcodebuild property will be passed to xcodebuild . Any frameworks in the array provided will be automatically added to the xcode project. _Note: Any referenced frameworks in your Hyperloop code are automatically added for you. However, this gives you even more control to custom your compile environment._
 

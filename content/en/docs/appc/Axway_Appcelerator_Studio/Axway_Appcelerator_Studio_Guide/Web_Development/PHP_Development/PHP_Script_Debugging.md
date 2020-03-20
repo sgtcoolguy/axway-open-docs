@@ -32,7 +32,7 @@ In order to attach an interpreter:
 
 3. The php.ini location is optional in that dialog, and when not specified, the system will look for one under the executable path.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083032/add-interpreter.png" alt="images/download/attachments/30083032/add-interpreter.png" class="confluence-embedded-image"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083032/add-interpreter.png" alt="images/download/attachments/30083032/add-interpreter.png" class="confluence-embedded-image"></p></td></tr></tbody></table>
 
 ### Attaching a PHP INI
 
@@ -46,7 +46,7 @@ When you attach a php.ini location to the interpreter settings, you will be able
 
 * Validate the settings
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083032/PhpIniEditor.jpg" alt="images/download/attachments/30083032/PhpIniEditor.jpg" class="confluence-embedded-image"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083032/PhpIniEditor.jpg" alt="images/download/attachments/30083032/PhpIniEditor.jpg" class="confluence-embedded-image"></p></td></tr></tbody></table>
 
 _A little bit on the validation process:_
 

@@ -74,31 +74,23 @@ The Appcelerator Daemon is a server that runs on the developer's computer and ho
 
     * The toImage method has changed for iOS with this release. Test case:
 
-        `var` `win = Ti.UI.createWindow();`
+        ```javascript
+        var win = Ti.UI.createWindow();
+        var view = Ti.UI.createView({backgroundColor: 'green', width: 150, height: 150, top: 100});
+        var content = Ti.UI.createView({backgroundColor: 'blue', width: 45, height: 45});
+        var imageView = Ti.UI.createImageView({width: 150, height: 150, top: 300});
 
-        `var` `view = Ti.UI.createView({backgroundColor:` `'green'``, width: 150, height: 150, top: 100});`
+        view.add(content);
+        win.add(view);
+        win.addEventListener('postlayout', function() {
+          view.toImage(function(blob) {
+            imageView.setImage(blob);
+          });
+        });
 
-        `var` `content = Ti.UI.createView({backgroundColor:` `'blue'``, width: 45, height: 45});`
-
-        `var` `imageView = Ti.UI.createImageView({width: 150, height: 150, top: 300});`
-
-        `view.add(content);`
-
-        `win.add(view);`
-
-        `win.addEventListener(``'postlayout'``,` `function``() {`
-
-        `view.toImage(``function``(blob) {`
-
-        `imageView.setImage(blob);`
-
-        `});`
-
-        `});`
-
-        `win.add(imageView);`
-
-        `win.open();`
+        win.add(imageView);
+        win.open();
+        ```
 
 * [TIMOB-23958](https://jira.appcelerator.org/browse/TIMOB-23958) - Remove deprecated Python and unused files
 

@@ -1,6 +1,6 @@
 {"title":"Axway Flow SDK","weight":"50"}
 
-API Builder 3.x is deprecated
+*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
@@ -34,19 +34,20 @@ The Axway Flow SDK has the following content:
 
 The following command installs the Axway Flow SDK.
 
-`npm` `install` `-g axway-flow-sdk`
+```bash
+npm install -g axway-flow-sdk
+```
 
 ## Use the Axway Flow SDK
 
 The following generates a new flow-node starter project in the current directory. You can customize the starter project to meet your requirements.
 
-`axway-flow -n <node name>`
-
-`cd` `<node name>`
-
-`npm` `install`
-
-`npm run build`
+```bash
+axway-flow -n <node name>
+cd <node name>
+npm install
+npm run build
+```
 
 The generated starter project name is prefixed with the required nodehandler- prefix.
 
@@ -58,87 +59,60 @@ As an example of how to write a flow-node, we will examine creating a flow-node 
 
 #### Create the project
 
-`axway-flow -n encodeuri -d “URI encoder.”`
-
-`cd` `nodehandler-encodeuri`
-
-`npm` `install`
-
-`npm run build`
+```bash
+axway-flow -n encodeuri -d “URI encoder.”
+cd nodehandler-encodeuri
+npm install
+npm run build
+```
 
 #### Customize the flow-node definition in the index.js file
 
-`const sdk = require(``'axway-flow-sdk'``);`
+```javascript
+const sdk = require('axway-flow-sdk');
+const action = require('./action');
 
-`const action = require(``'./action'``);`
+const flownodes = sdk.init(module);
 
-`const flownodes = sdk.init(module);`
-
-`flownodes`
-
-`.add(``'encodeuri'``, {`
-
-`name:` `'Encode URI'``,`
-
-`icon:` `'icon.svg'``,`
-
-`description:` `'URI encoder.'``,`
-
-`category:` `'utils'`
-
-`})`
-
-`.method(``'encode'``, {`
-
-`name:` `'Encode URI'``,`
-
-`description:` `'Encodes a URI by replacing each instance of certain characters with UTF-8 encodings.'`
-
-`})`
-
-`.parameter(``'uri'``, {`
-
-`description:` `'The URI to encode.'``,`
-
-`type:` `'string'`
-
-`})`
-
-`.output(``'next'``, {`
-
-`name:` `'Next'``,`
-
-`description:` `'The URI was encoded successfully.'``,`
-
-`context:` `'$.encodedURI'``,`
-
-`schema: {`
-
-`type:` `'string'`
-
-`}`
-
-`})`
-
-`.action(action);`
-
-`exports = module.exports = flownodes;`
+flownodes
+    .add('encodeuri', {
+        name: 'Encode URI',
+        icon: 'icon.svg',
+        description: 'URI encoder.',
+        category: 'utils'
+    })
+    .method('encode', {
+        name: 'Encode URI',
+        description: 'Encodes a URI by replacing each instance of certain characters with UTF-8 encodings.'
+    })
+    .parameter('uri', {
+        description: 'The URI to encode.',
+        type: 'string'
+    })
+    .output('next', {
+        name: 'Next',
+        description: 'The URI was encoded successfully.',
+        context: '$.encodedURI',
+        schema: {
+            type: 'string'
+        }
+    })
+    .action(action);
+exports = module.exports = flownodes;
+```
 
 To explain what occurs in the index.js file, we will break the file down piece by piece.
 
 1. Describe the flow-node, name, description, category, and icon:
 
-    `.add(``'encodeuri'``, {`
-
-    `name:` `'Encode URI'``,`
-
-    `icon:` `'icon.svg'``,`
-
-    `description:` `'URI encoder.'``,`
-
-    `category:` `'utils'`
-
-    `})`
+    ```
+    .add('encodeuri', {
+            name: 'Encode URI',
+            icon: 'icon.svg',
+            description: 'URI encoder.',
+            category: 'utils'
+    })
+    ```
 
     The name is the text that is displayed in the Flow Editor. The default icon is a placeholder (a star) that should be replaced with a graphic that represents the action of the flow-node. The icon is displayed at 28 pixels x 28 pixels. The category is the section in the Flow Editor tool panel where the flow-node is contained.
 
@@ -146,21 +120,16 @@ To explain what occurs in the index.js file, we will break the file down piece b
 
 2. Add a method to the flow-node and describe its parameters:
 
-    `.method(``'encode'``, {`
-
-    `name:` `'Encode URI'``,`
-
-    `description:` `'Encodes a URI by replacing each instance of certain characters with UTF-8 encodings.'`
-
-    `})`
-
-    `.parameter(``'uri'``, {`
-
-    `description:` `'The URI to encode.'``,`
-
-    `type:` `'string'`
-
-    `})`
+    ```
+    .method('encode', {
+            name: 'Encode URI',
+            description: 'Encodes a URI by replacing each instance of certain characters with UTF-8 encodings.'
+        })
+        .parameter('uri', {
+            description: 'The URI to encode.',
+            type: 'string'
+    })
+    ```
 
     A method called encode, that is displayed in the Flow Editor as **Encode URI**, was added. The encode method has a single parameter. If there was more than one parameter, we would repeat the .parameter(name, schema) block. The second value in the parameter method is a JSON Schema that describes the parameter type.
 
@@ -168,27 +137,24 @@ To explain what occurs in the index.js file, we will break the file down piece b
 
 3. Describe the possible outputs from the method:
 
-    `.output(``'next'``, {`
-
-    `name:` `'Next'``,`
-
-    `description:` `'The URI was encoded successfully.'``,`
-
-    `context:` `'$.encodedURI'``,`
-
-    `schema: {`
-
-    `type:` `'string'`
-
-    `}`
-
-    `})`
+    ```
+    .output('next', {
+        name: 'Next',
+        description: 'The URI was encoded successfully.',
+        context: '$.encodedURI',
+        schema: {
+            type: 'string'
+        }
+    })
+    ```
 
     The outputs section defines the possible outcomes of the flow-node. In this simple case there is just one output; however, flow-nodes can have multiple outputs with different return types. For example, this flow-node could have added an **error** output to indicate that encoding failed.
 
 4. Define the implementation:
 
-    `.action(action);`
+    ```
+    .action(action);
+    ```
 
     The action() expects a function that will be passed the request details parameter and a callback object parameter.
 
@@ -196,33 +162,30 @@ To explain what occurs in the index.js file, we will break the file down piece b
 
 To simplify the management of the code, the starter project puts the implementation of the methods in the action.js file. There is not a requirement to follow this pattern, you can structure your project how best suits your needs.
 
-`exports = module.exports =` `function` `(req, cb) {`
-
-`const uri = req.params.uri;`
-
-`if` `(!uri) {`
-
-`return` `cb(``'invalid argument'``);`
-
-`}`
-
-`cb.next(``null``, encodeURI(uri));`
-
-`};`
+```javascript
+exports = module.exports = function (req, cb) {
+        const uri = req.params.uri;
+        if (!uri) {
+                return cb('invalid argument');
+        }
+        cb.next(null, encodeURI(uri));
+};
+```
 
 This is a simple scenario, but it highlights the main features. The parameters for the flow-node method are accessed under the req.params parameter. In this example, the parameter for the encode method is defined as uri:
 
-`.parameter(``'uri'``, {`
-
-`description:` `'The URI to encode.'``,`
-
-`type:` `'string'`
-
-`})`
+```
+.parameter('uri', {
+        description: 'The URI to encode.',
+        type: 'string'
+    })
+```
 
 The logic checks that the parameter is set. If uri is not set, it fires a generic error callback.
 
-`return` `cb(``'invalid argument'``);`
+```
+return cb('invalid argument');
+```
 
 These errors are not handled and will abort the flow execution. In general, avoid doing this for any expected error scenarios. If there are known error situations, it is better to define an output for those scenarios and allow the flow designer the flexibility to specify what to do when an error occurs.
 
@@ -238,95 +201,77 @@ The starter project includes automatically generated unit tests in the ./test di
 
 This example uses mocha to check that the specification is defined well enough to pass the uri argument to the method. It also mocks the callback using the defined output of the specification and ensures that the method invokes the correct callback.
 
-`it(``'[TEST-2] should succeed'``, () => {`
-
-`return` `mocknode(specs).node(``'encodeuri'``)`
-
-`.invoke(``'encode'``, { uri:` `'some string'` `})`
-
-`.then((data) => {`
-
-`expect(data).to.deep.equal({`
-
-`next: [` `null``,` `'some%20string'` `]`
-
-`});`
-
-`});`
-
-`});`
+```
+it('[TEST-2] should succeed', () => {
+        return mocknode(specs).node('encodeuri')
+            .invoke('encode', { uri: 'some string' })
+            .then((data) => {
+                expect(data).to.deep.equal({
+                        next: [ null, 'some%20string' ]
+                });
+            });
+    });
+```
 
 ### Using mocknode to test error callback existence - invalid argument
 
 This example is similar to the previous example, except that the method will invoke a cb('invalid argument') when given an undefined parameter.
 
-`it(``'[TEST-3] should fail to with invalid argument'``, () => {`
-
-`return` `mocknode(specs).node(``'encodeuri'``)`
-
-`.invoke(``'encode'``, { uri:` `null` `})`
-
-`.then((data) => {`
-
-`expect(data).to.deep.equal(`
-
-`[` `'invalid argument'` `]`
-
-`);`
-
-`});`
-
-`});`
+```
+it('[TEST-3] should fail to with invalid argument', () => {
+        return mocknode(specs).node('encodeuri')
+            .invoke('encode', { uri: null })
+            .then((data) => {
+                expect(data).to.deep.equal(
+                [ 'invalid argument' ]
+            );
+            });
+    });
+```
 
 ### Testing that validity of the flow-node specification
 
 The Axway Flow SDK tries to prevent the creation of invalid flow-node specifications, but there are some edge cases where it may be possible to generate a flow-node specification that is invalid at runtime. To detect this, the generated specification should be validated as part of your unit tests.
 
-`it(``'[TEST-4] should define valid node specs'``, () => {`
-
-`expect(validate(specs)).to.not.``throw``;`
-
-`});`
+```
+it('[TEST-4] should define valid node specs', () => {
+        expect(validate(specs)).to.not.throw;
+    });
+```
 
 ## Local API Builder test
 
 While unit testing is important, it is also necessary to be able to install the custom flow-node into your local API Builder application for testing. This can be achieved by packing the module locally:
 
-`cd` `nodehandler-encodeuri`
-
-`npm` `install`
-
-`npm run build`
-
-`npm pack`
+```bash
+cd nodehandler-encodeuri
+npm install
+npm run build
+npm pack
+```
 
 This will create a tgz archive (nodehandler-encodeuri-1.0.0.tgz) that can then be installed into your Arrow application.
 
-`cd` `<app-folder>`
-
-`npm` `install` `<path to flow node project>``/nodehandler-encodeuri-1``.0.0.tgz`
-
-`appc run`
+```bash
+cd <app-folder>
+npm install <path to flow node project>/nodehandler-encodeuri-1.0.0.tgz
+appc run
+```
 
 ## Type references
 
 In [Axway API Builder](/docs/appc/Axway_API_Builder/API_Builder/), it is possible to reference other types. For example, types can be loaded from ./schemas, registered from [models](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/Artifacts/Models/), or registered from service connectors. Any registered schema can be referenced whenever a schema is required.
 
-`.parameter(``'greeting'``, {`
-
-`"$ref"``:` `"schema://model/appc.arrowdb/user"`
-
-`})`
-
-`.output(``'next'``, {`
-
-`schema: {`
-
-`"$ref"``:` `"schema://model/appc.arrowdb/user"`
-
-`}`
-
-`})`
+```
+.parameter('greeting', {
+    "$ref": "schema://model/appc.arrowdb/user"
+})
+.output('next', {
+    schema: {
+        "$ref": "schema://model/appc.arrowdb/user"
+    }
+})
+```
 
 ## API Reference
 
@@ -375,7 +320,9 @@ The icon option can be a bmp, jpeg, png, gif, tiff, or svg file. The .method opt
 
 Example:
 
-`sdk.init(module).add(``'encodeURI'``, { icon:` `'encode.svg'` `});`
+```
+sdk.init(module).add('encodeURI', { icon: 'encode.svg' });
+```
 
 ### nodeBuilder.method(key, \[options\])
 
@@ -403,9 +350,10 @@ The key uniquely identifies the method for the flow-node and will be used as the
 
 **Example**:
 
-`sdk.init(module).add(``'encodeURI'``, { icon:` `'encode.svg'` `})`
-
-`.method(``'encode'``, { name:` `'Encode URI'` `});`
+```
+sdk.init(module).add('encodeURI', { icon: 'encode.svg' })
+    .method('encode', { name: 'Encode URI' });
+```
 
 ### nodeBuilder.parameter(name, schema, \[required\])
 
@@ -429,11 +377,11 @@ The name uniquely identifies the parameter, and the schema is a valid JSON Schem
 
 **Example**:
 
-`sdk.init(module).add(``'encodeURI'``, { icon:` `'encode.svg'` `})`
-
-`.method(``'encode'``, { name:` `'Encode URI'` `})`
-
-`.parameter(``'uri'``, { type:` `'string'` `});`
+```
+sdk.init(module).add('encodeURI', { icon: 'encode.svg' })
+    .method('encode', { name: 'Encode URI' })
+    .parameter('uri', { type: 'string' });
+```
 
 ### nodeBuilder.output(key)
 
@@ -461,13 +409,12 @@ The context is a valid JSON Path and is used as the default by the flow editor. 
 
 **Example**:
 
-`sdk.init(module).add(``'encodeURI'``, { icon:` `'encode.svg'` `})`
-
-`.method(``'encode'``, { name:` `'Encode URI'` `})`
-
-`.parameter(``'uri'``, { type:` `'string'` `})`
-
-`.output(``'encoded'``, { context:` `'$.encodedURI'``, schema: { type:` `'string'` `} });`
+```
+sdk.init(module).add('encodeURI', { icon: 'encode.svg' })
+    .method('encode', { name: 'Encode URI' })
+    .parameter('uri', { type: 'string' })
+    .output('encoded', { context: '$.encodedURI', schema: { type: 'string' } });
+```
 
 ### nodeBuilder.action(handler)
 
@@ -485,15 +432,13 @@ Assigns an action handler to the current method. The method can only have one ac
 
 **Example**:
 
-`sdk.init(module).add(``'encodeURI'``, { icon:` `'encode.svg'` `})`
-
-`.method(``'encode'``, { name:` `'Encode URI'` `})`
-
-`.parameter(``'uri'``, { type:` `'string'` `})`
-
-`.output(``'encoded'``, { context:` `'$.encodedURI'``, schema: { type:` `'string'` `} })`
-
-`.action((req, cb) => cb.encoded(``null``, encodeURI(req.params.uri));`
+```
+sdk.init(module).add('encodeURI', { icon: 'encode.svg' })
+    .method('encode', { name: 'Encode URI' })
+    .parameter('uri', { type: 'string' })
+    .output('encoded', { context: '$.encodedURI', schema: { type: 'string' } })
+    .action((req, cb) => cb.encoded(null, encodeURI(req.params.uri));
+```
 
 ### axway-flow-sdk~init(module) - NodeBuilder
 
@@ -509,9 +454,10 @@ Axway API Builder SDK for creating custom flow-nodes to work with flows.
 
 **Example**:
 
-`const sdk = require(``'axway-node-sdk'``);`
-
-`exports = module.exports = sdk.init(module);`
+```javascript
+const sdk = require('axway-node-sdk');
+exports = module.exports = sdk.init(module);
+```
 
 ### axway-flow-sdk~handler: function
 
@@ -528,11 +474,15 @@ A handler function to perform the flow-node method's action. The function will r
 
 **Example**:
 
-`cb.encoded(``null``, uncodeURI(req.params.uri));`
+```
+cb.encoded(null, uncodeURI(req.params.uri));
+```
 
 **Example**:
 
-`cb(``'error!'``);`
+```
+cb('error!');
+```
 
 ### axway-flow-sdk~flowCallback: function
 

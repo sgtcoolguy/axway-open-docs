@@ -240,438 +240,252 @@ While not currently used in this proposal, the "options" property name would be 
 
 ## Pseudo Code Examples
 
-Create a socket to connect
-
-`/*`
-
-``* Assumes the existence of a `Ti.Blob Ti.createBlob(string text)` method``
-
-`*/`
-
-`var connectingSocket = Ti.Network.createTCP({`
-
-`host:` `'www.externalhost.com'``,`
-
-`port:` `4747``,`
-
-`connected:function(e) {`
-
-`e.socket.write(Ti.createBuffer({data:` `"Well, hello there!"``}));`
-
-`},`
-
-`error:function(e) {`
-
-`Ti.UI.createAlertDialog({`
-
-`title:` `"Socket error: "``+e.errorCode,`
-
-`message: e.error`
-
-`}).show();`
-
-`Ti.API.info(``"CONNECTION has been closed: "` `+ e.socket.host+``":"` `+ e.socket.port);`
-
-`}`
-
-`});`
-
-`connectingSocket.connect();`
-
-Create a socket to listen
-
-`// NOTE: Under iOS, Ti.Platform.address always resolves to wifi; Android`
-
-`// behavior may differ`
-
-`var hostWhitelist = [``'192.168.0.1'``,` `'192.168.0.2'``];`
-
-`var connections = [];`
-
-`var acceptedParams = {`
-
-`read: function(e) {`
-
-`// Do something with data`
-
-`},`
-
-`error: function(e) {`
-
-`// Do something with error`
-
-`}`
-
-`};`
-
-`var listeningSocket = Ti.Network.createTCP({`
-
-`host: Ti.Platform.address,`
-
-`port:` `4747``,`
-
-`listenQueueSize:` `10``,`
-
-`error: function(e) {`
-
-`Ti.UI.createAlertDialog({`
-
-`title:` `"Listener error: "` `+ e.errorCode,`
-
-`message: e.error`
-
-`}).show();`
-
-`Ti.API.info(``"CONNECTION has been closed: "` `+ e.socket.host +` `":"` `+ e.socket.port);`
-
-`},`
-
-`accepted:function(e) {`
-
-`var socket = e.inbound;`
-
-`// NOTE: We only have the host information after accept()ing the`
-
-`// connection`
-
-`var whitelisted = hostWhitelist.indexOf(socket.host);`
-
-`if` `(whitelisted == -``1``) {`
-
-`Ti.API.warn(``"Attempted connection from socket not on whitelist: "` `+ socket.host);`
-
-`socket.close();`
-
-`}`
-
-`else` `{`
-
-`Ti.API.info(``"Accepted connection from: "` `+ socket.host);`
-
-`connections.push(socket);`
-
-`}`
-
-`// Check for a maximum number of connections`
-
-`if` `(connections.length <` `10``) {`
-
-`listeningSocket.accept(acceptedParams);`
-
-`}`
-
-`}`
-
-`});`
-
-`try` `{`
-
-`listeningSocket.listen();`
-
-`Ti.API.info(``"Now listening on: "` `+ listeningSocket.host +` `":"` `+ listeningSocket.port);`
-
-`// NOTE: We do not block JS execution on 'accept', unlike BSD.`
-
-`// It is an asynch call which fires the 'accepted' callback when a`
-
-`// new inbound connection is available to be pulled off the queue.`
-
-`listeningSocket.accept(acceptedParams);`
-
-`}`
-
-`catch` `(e) {`
-
-`Ti.API.info(``"Error occured while configuring listener: "``+e);`
-
-`}`
-
-`// Maybe do something with connections somewhere...`
-
-Current KS->Platform->Sockets example, using new sockets
-
-`var win = Titanium.UI.currentWindow;`
-
-`var connectedSockets = [];`
-
-`var acceptedCallbacks = {`
-
-`read: function(e) {`
-
-`messageLabel.text =` `"Read from: "` `+ e.socket.host;`
-
-`readLabel.text = e.data.text;`
-
-`},`
-
-`error: function(e) {`
-
-`Ti.UI.createAlertDialog({`
-
-`title:` `"Socket error: "` `+ e.socket.host,`
-
-`message: e.error`
-
-`}).show();`
-
-`var index = connectedSockets.indexOf(e.socket);`
-
-`if` `(index != -``1``) {`
-
-`connectedSockets.splice(index,``1``);` `// Removes socket`
-
-`}`
-
-`}`
-
-`};`
-
-`var socket = Titanium.Network.createTCPSocket({`
-
-`hostName: Ti.Platform.address,`
-
-`port:` `40404``,`
-
-`type: Ti.Network.TCP,`
-
-`accepted: function(e) {`
-
-`var sock = e.connector;`
-
-`connectedSockets.push(sock);`
-
-`socket.accept(acceptedCallbacks);`
-
-`},`
-
-`closed: function(e) {`
-
-`messageLabel.text =` `"Closed listener"``;`
-
-`},`
-
-`error: function(e) {`
-
-`Ti.UI.createAlertDialog({`
-
-`title:` `"Listener error: "``+e.errorCode,`
-
-`message: e.error`
-
-`}).show();`
-
-`}`
-
-`});`
-
-`var messageLabel = Titanium.UI.createLabel({`
-
-`text:` `'Socket messages'``,`
-
-`font: {fontSize:` `14``},`
-
-`color:` `'#777'``,`
-
-`top:` `220``,`
-
-`left:` `10`
-
-`});`
-
-`win.add(messageLabel);`
-
-`var readLabel = Titanium.UI.createLabel({`
-
-`text:` `'Read data'``,`
-
-`font: {fontSize:` `14``},`
-
-`color:` `'#777'``,`
-
-`top:` `250``,`
-
-`left:` `10``,`
-
-`width:` `400`
-
-`});`
-
-`win.add(readLabel);`
-
-`var connectButton = Titanium.UI.createButton({`
-
-`title:` `'Listen on 40404'``,`
-
-`width:` `200``,`
-
-`height:` `40``,`
-
-`top:` `10`
-
-`});`
-
-`win.add(connectButton);`
-
-`connectButton.addEventListener(``'click'``, function() {`
-
-`try` `{`
-
-`socket.listen();`
-
-`messageLabel.text =` `"Listening on"` `+ e.socket.host +` `":"` `+ e.socket.port;`
-
-`e.socket.accept(acceptedCallbacks);`
-
-`}` `catch` `(e) {`
-
-`messageLabel.text =` `'Exception: '` `+ e;`
-
-`}`
-
-`});`
-
-`var closeButton = Titanium.UI.createButton({`
-
-`title:` `'Close'``,`
-
-`width:` `200``,`
-
-`height:` `40``,`
-
-`top:` `60`
-
-`});`
-
-`win.add(closeButton);`
-
-`closeButton.addEventListener(``'click'``, function() {`
-
-`try` `{`
-
-`socket.close();`
-
-`}` `catch` `(e) {`
-
-`messageLabel.text =` `'Exception: '` `+ e;`
-
-`}`
-
-`});`
-
-`var stateButton = Titanium.UI.createButton({`
-
-`title:` `'Socket state'``,`
-
-`width:` `200``,`
-
-`height:` `40``,`
-
-`top:` `110`
-
-`});`
-
-`win.add(validButton);`
-
-`validButton.addEventListener(``'click'``, function() {`
-
-`var stateString =` `"UNKNOWN"``;`
-
-`switch` `(socket.state) {`
-
-`case` `Ti.Network.SOCKET_INITIALIZED:`
-
-`stateString =` `"INITIALIZED"``;`
-
-`break``;`
-
-`case` `Ti.Network.SOCKET_CONNECTED:`
-
-`stateString =` `"CONNECTED"``;`
-
-`break``;`
-
-`case` `Ti.Network.SOCKET_LISTENING:`
-
-`stateString =` `"LISTENING"``;`
-
-`break``;`
-
-`case` `Ti.Network.SOCKET_CLOSED:`
-
-`stateString =` `"CLOSED"``;`
-
-`break``;`
-
-`case` `Ti.Network.SOCKET_ERROR:`
-
-`stateString =` `"ERROR"``;`
-
-`break``;`
-
-`}`
-
-`messageLabel.text =` `"State: "` `+ stateString;`
-
-`});`
-
-`var writeButton = Titanium.UI.createButton({`
-
-`title:` `"Write 'Paradise Lost'"``,`
-
-`width:` `200``,`
-
-`height:` `40``,`
-
-`top:` `160`
-
-`});`
-
-`win.add(writeButton);`
-
-`writeButton.addEventListener(``'click'``, function() {`
-
-`var plBlob = Titanium.Filesystem.getFile(Titanium.Filesystem.resourcesDirectory,` `'paradise_lost.txt'``).read();`
-
-`for` `(var sock in connectedSockets) {`
-
-`sock.write(plBlob);`
-
-`}`
-
-`messageLabel.text =` `"I'm a writer!"``;`
-
-`});`
-
-`// Cleanup`
-
-`win.addEventListener(``'close'``, function(e) {`
-
-`try` `{`
-
-`socket.close();`
-
-`}`
-
-`catch` `(e) {`
-
-`// Don't care about exceptions; just means the socket was already closed`
-
-`}`
-
-`for` `(var sock in connectedSockets) {`
-
-`try` `{`
-
-`sock.close();`
-
-`}`
-
-`catch` `(e) {`
-
-`// See above`
-
-`}`
-
-`}`
-
-`});`
+*Create a socket to connect*
+
+```javascript
+/*
+ * Assumes the existence of a `Ti.Blob Ti.createBlob(string text)` method
+ */
+
+var connectingSocket = Ti.Network.createTCP({
+  host: 'www.externalhost.com',
+  port: 4747,
+  connected:function(e) {
+    e.socket.write(Ti.createBuffer({data: "Well, hello there!"}));
+  },
+  error:function(e) {
+    Ti.UI.createAlertDialog({
+      title: "Socket error: "+e.errorCode,
+      message: e.error
+    }).show();
+    Ti.API.info("CONNECTION has been closed: " + e.socket.host+":" + e.socket.port);
+  }
+});
+connectingSocket.connect();
+```
+
+*Create a socket to listen*
+
+```javascript
+// NOTE: Under iOS, Ti.Platform.address always resolves to wifi; Android
+// behavior may differ
+
+var hostWhitelist = ['192.168.0.1', '192.168.0.2'];
+var connections = [];
+
+var acceptedParams = {
+  read: function(e) {
+    // Do something with data
+  },
+  error: function(e) {
+    // Do something with error
+  }
+};
+
+var listeningSocket = Ti.Network.createTCP({
+  host: Ti.Platform.address,
+  port: 4747,
+  listenQueueSize: 10,
+  error: function(e) {
+    Ti.UI.createAlertDialog({
+      title: "Listener error: " + e.errorCode,
+      message: e.error
+    }).show();
+    Ti.API.info("CONNECTION has been closed: " + e.socket.host + ":" + e.socket.port);
+  },
+  accepted:function(e) {
+    var socket = e.inbound;
+
+    // NOTE: We only have the host information after accept()ing the
+    // connection
+    var whitelisted = hostWhitelist.indexOf(socket.host);
+    if (whitelisted == -1) {
+      Ti.API.warn("Attempted connection from socket not on whitelist: " + socket.host);
+      socket.close();
+    }
+    else {
+      Ti.API.info("Accepted connection from: " + socket.host);
+      connections.push(socket);
+    }
+
+    // Check for a maximum number of connections
+    if (connections.length < 10) {
+      listeningSocket.accept(acceptedParams);
+    }
+  }
+});
+
+try {
+  listeningSocket.listen();
+  Ti.API.info("Now listening on: " + listeningSocket.host + ":" + listeningSocket.port);
+
+  // NOTE: We do not block JS execution on 'accept', unlike BSD.
+  // It is an asynch call which fires the 'accepted' callback when a
+  // new inbound connection is available to be pulled off the queue.
+  listeningSocket.accept(acceptedParams);
+}
+catch (e) {
+  Ti.API.info("Error occured while configuring listener: "+e);
+}
+
+// Maybe do something with connections somewhere...
+```
+
+*Current KS->Platform->Sockets example, using new sockets*
+
+```javascript
+var win = Titanium.UI.currentWindow;
+
+var connectedSockets = [];
+
+var acceptedCallbacks = {
+  read: function(e) {
+    messageLabel.text = "Read from: " + e.socket.host;
+    readLabel.text = e.data.text;
+  },
+  error: function(e) {
+    Ti.UI.createAlertDialog({
+      title: "Socket error: " + e.socket.host,
+      message: e.error
+    }).show();
+    var index = connectedSockets.indexOf(e.socket);
+    if (index != -1) {
+      connectedSockets.splice(index,1); // Removes socket
+    }
+  }
+};
+
+var socket = Titanium.Network.createTCPSocket({
+  hostName: Ti.Platform.address,
+  port: 40404,
+  type: Ti.Network.TCP,
+  accepted: function(e) {
+    var sock = e.connector;
+    connectedSockets.push(sock);
+    socket.accept(acceptedCallbacks);
+  },
+  closed: function(e) {
+    messageLabel.text = "Closed listener";
+  },
+  error: function(e) {
+    Ti.UI.createAlertDialog({
+      title: "Listener error: "+e.errorCode,
+      message: e.error
+    }).show();
+  }
+});
+
+var messageLabel = Titanium.UI.createLabel({
+  text: 'Socket messages',
+  font: {fontSize: 14},
+  color: '#777',
+  top: 220,
+  left: 10
+});
+win.add(messageLabel);
+
+var readLabel = Titanium.UI.createLabel({
+  text: 'Read data',
+  font: {fontSize: 14},
+  color: '#777',
+  top: 250,
+  left: 10,
+  width: 400
+});
+win.add(readLabel);
+
+var connectButton = Titanium.UI.createButton({
+  title: 'Listen on 40404',
+  width: 200,
+  height: 40,
+  top: 10
+});
+win.add(connectButton);
+connectButton.addEventListener('click', function() {
+  try {
+    socket.listen();
+    messageLabel.text = "Listening on" + e.socket.host + ":" + e.socket.port;
+    e.socket.accept(acceptedCallbacks);
+  } catch (e) {
+    messageLabel.text = 'Exception: ' + e;
+  }
+});
+
+var closeButton = Titanium.UI.createButton({
+  title: 'Close',
+  width: 200,
+  height: 40,
+  top: 60
+});
+win.add(closeButton);
+closeButton.addEventListener('click', function() {
+  try {
+    socket.close();
+  } catch (e) {
+    messageLabel.text = 'Exception: ' + e;
+  }
+});
+
+var stateButton = Titanium.UI.createButton({
+  title: 'Socket state',
+  width: 200,
+  height: 40,
+  top: 110
+});
+win.add(validButton);
+validButton.addEventListener('click', function() {
+  var stateString = "UNKNOWN";
+  switch (socket.state) {
+    case Ti.Network.SOCKET_INITIALIZED:
+      stateString = "INITIALIZED";
+      break;
+    case Ti.Network.SOCKET_CONNECTED:
+      stateString = "CONNECTED";
+      break;
+    case Ti.Network.SOCKET_LISTENING:
+      stateString = "LISTENING";
+      break;
+    case Ti.Network.SOCKET_CLOSED:
+      stateString = "CLOSED";
+      break;
+    case Ti.Network.SOCKET_ERROR:
+      stateString = "ERROR";
+      break;
+  }
+  messageLabel.text = "State: " + stateString;
+});
+
+var writeButton = Titanium.UI.createButton({
+  title: "Write 'Paradise Lost'",
+  width: 200,
+  height: 40,
+  top: 160
+});
+win.add(writeButton);
+writeButton.addEventListener('click', function() {
+  var plBlob = Titanium.Filesystem.getFile(Titanium.Filesystem.resourcesDirectory, 'paradise_lost.txt').read();
+
+  for (var sock in connectedSockets) {
+    sock.write(plBlob);
+  }
+  messageLabel.text = "I'm a writer!";
+});
+
+// Cleanup
+win.addEventListener('close', function(e) {
+  try {
+    socket.close();
+  }
+  catch (e) {
+    // Don't care about exceptions; just means the socket was already closed
+  }
+  for (var sock in connectedSockets) {
+    try {
+      sock.close();
+    }
+    catch (e) {
+      // See above
+    }
+  }
+});
+```

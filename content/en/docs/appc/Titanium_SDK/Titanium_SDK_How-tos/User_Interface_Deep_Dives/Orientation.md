@@ -76,47 +76,30 @@ Specify the orientation modes the application needs to support with the [UISuppo
 
 By default, Titanium sets iPhone applications to support upright portrait only and iPad application to support all orientation modes.
 
-tiapp.xml
+*tiapp.xml*
 
-`<?``xml`  `version``=``"1.0"`  `encoding``=``"UTF-8"``?>`
-
-`<``ti``:app` `xmlns:ti``=``"http://ti.appcelerator.org"``>`
-
-`<``ios``>`
-
-`<``plist``>`
-
-`<``dict``>`
-
-`<``key``>UISupportedInterfaceOrientations~iphone</``key``>`
-
-`<``array``>`
-
-`<``string``>UIInterfaceOrientationPortrait</``string``>`
-
-`</``array``>`
-
-`<``key``>UISupportedInterfaceOrientations~ipad</``key``>`
-
-`<``array``>`
-
-`<``string``>UIInterfaceOrientationPortrait</``string``>`
-
-`<``string``>UIInterfaceOrientationPortraitUpsideDown</``string``>`
-
-`<``string``>UIInterfaceOrientationLandscapeLeft</``string``>`
-
-`<``string``>UIInterfaceOrientationLandscapeRight</``string``>`
-
-`</``array``>`
-
-`</``dict``>`
-
-`</``plist``>`
-
-`</``ios``>`
-
-`</``ti``:app>`
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <ios>
+        <plist>
+            <dict>
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+                    <string>UIInterfaceOrientationLandscapeLeft</string>
+                    <string>UIInterfaceOrientationLandscapeRight</string>
+                </array>
+            </dict>
+        </plist>
+    </ios>
+</ti:app>
+```
 
 #### Limiting orientation modes on Android
 
@@ -138,55 +121,38 @@ Limiting orientation on Android can also be accomplished via the tiapp.xml file,
 
 5. Copy the <application> node, which contains all of the <activity> nodes from that file, for example:
 
-    AndroidManifest.xml
+    *AndroidManifest.xml*
 
-    `<?``xml`  `version``=``"1.0"`  `encoding``=``"UTF-8"``?>`
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.myapp.app" android:versionCode="1" android:versionName="1.0">
+      <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19"/>
 
-    `<``manifest`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"`  `package``=``"com.myapp.app"`  `android:versionCode``=``"1"`  `android:versionName``=``"1.0"``>`
+        <!-- Start Copying Here -->
 
-    `<``uses``-sdk` `android:minSdkVersion``=``"10"`  `android:targetSdkVersion``=``"19"``/>`
+      <application android:icon="@drawabe/appicon" android:label="MyApp" android:name="MyappApplication" android:debuggable="false" android:theme="@style/Theme.AppCompat">
+        <activity android:name=".MyappActivity" android:label"@string/app_name" android:theme="@style/Theme.Titanium" android:configChanges="keyboardHidden|orientation|screenSize">
+          <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.LAUNCHER"/>
+          </intent-filter>
+        </activity>
+        <activity android:name="org.appcelerator.titanium.TiActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="org.appcelerator.tianium.TiTranslucentActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@style/Theme.AppCompat.Translucent"/>
+        <activity android:name="ti.modules.titanium.ui.android.TiPreferencesActivity" android:configChanges="screenSize"/>
+      </application>
 
-    `<!-- Start Copying Here -->`
+        <!-- Stop Copying Here -->
 
-    `<``application`  `android:icon``=``"@drawabe/appicon"`  `android:label``=``"MyApp"`  `android:name``=``"MyappApplication"`  `android:debuggable``=``"false"`  `android:theme``=``"@style/Theme.AppCompat"``>`
-
-    `<``activity`  `android:name``=``".MyappActivity"` `android:label"@string/app_name"` `android:theme``=``"@style/Theme.Titanium"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``>`
-
-    `<``intent``-filter>`
-
-    `<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
-
-    `<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
-
-    `</``intent``-filter>`
-
-    `</``activity``>`
-
-    `<``activity`  `android:name``=``"org.appcelerator.titanium.TiActivity"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"``/>`
-
-    `<``activity`  `android:name``=``"org.appcelerator.tianium.TiTranslucentActivity"`  `android:configChanges``=``"keyboardHidden|orientation|screenSize"`  `android:theme``=``"@style/Theme.AppCompat.Translucent"``/>`
-
-    `<``activity`  `android:name``=``"ti.modules.titanium.ui.android.TiPreferencesActivity"`  `android:configChanges``=``"screenSize"``/>`
-
-    `</``application``>`
-
-    `<!-- Stop Copying Here -->`
-
-    `<``uses``-permission` `android:name``=``"android.permission.INTERNET"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_WIFI_STATE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_NETWORK_STATE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.WRITE_EXTERNAL_STORAGE"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_COARSE_LOCATION"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_FINE_LOCATION"``/>`
-
-    `<``uses``-permission` `android:name``=``"android.permission.ACCESS_MOCK_LOCATION"``/>`
-
-    `</``manifest``>`
+      <uses-permission android:name="android.permission.INTERNET"/>
+      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+      <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+    </manifest>
+    ```
 
 6. Paste them between the <manifest></manifest> tags you added to the tiapp.xml file. From now on, each time your app is built, Titanium will copy these activity tags to the Android Manifest file it generates. You're now ready to specify the UI orientation.
 
@@ -194,105 +160,67 @@ Limiting orientation on Android can also be accomplished via the tiapp.xml file,
 
 The final manifest section of your tiapp.xml file should look similar to the example below. If you need to debug the application, set the application element's android:debuggable attribute to true.
 
-tiapp.xml
+*tiapp.xml*
 
-`<?``xml`  `version``=``"1.0"`  `encoding``=``"UTF-8"``?>`
-
-`<``ti``:app` `xmlns:ti``=``"http://ti.appcelerator.org"``>`
-
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``/>`
-
-`<``manifest``>`
-
-`<``application`  `android:icon``=``"@drawable/appicon"`
-
-`android:label``=``"MyApp"`
-
-`android:name``=``"MyappApplication"`
-
-`android:debuggable``=``"false"`
-
-`android:theme``=``"@style/Theme.AppCompat"``>`
-
-`<``activity`  `android:screenOrientation``=``"nosensor"`
-
-`android:name``=``".MyappActivity"`
-
-`android:label``=``"@string/app_name"`
-
-`android:theme``=``"@style/Theme.Titanium"`
-
-`android:configChanges``=``"keyboardHidden|orientation|screenSize"``>`
-
-`<``intent``-filter>`
-
-`<``action`  `android:name``=``"android.intent.action.MAIN"``/>`
-
-`<``category`  `android:name``=``"android.intent.category.LAUNCHER"``/>`
-
-`</``intent``-filter>`
-
-`</``activity``>`
-
-`<``activity`  `android:screenOrientation``=``"nosensor"`
-
-`android:name``=``"org.appcelerator.titanium.TiActivity"`
-
-`android:configChanges``=``"keyboardHidden|orientation|screenSize"``/>`
-
-`<``activity`  `android:screenOrientation``=``"nosensor"`
-
-`android:name``=``"org.appcelerator.titanium.TiTranslucentActivity"`
-
-`android:configChanges``=``"keyboardHidden|orientation|screenSize"`
-
-`android:theme``=``"@style/Theme.AppCompat.Translucent"``/>`
-
-`<``activity`  `android:screenOrientation``=``"nosensor"`
-
-`android:name``=``"ti.modules.titanium.ui.android.TiPreferencesActivity"`
-
-`android:configChanges``=``"screenSize"``/>`
-
-`</``application``>`
-
-`</``manifest``>`
-
-`</``android``>`
-
-`</``ti``:app>`
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
+      <manifest>
+      <application android:icon="@drawable/appicon"
+                         android:label="MyApp"
+                         android:name="MyappApplication"
+                         android:debuggable="false"
+                         android:theme="@style/Theme.AppCompat">
+        <activity android:screenOrientation="nosensor"
+                          android:name=".MyappActivity"
+                          android:label="@string/app_name"
+                          android:theme="@style/Theme.Titanium"
+                          android:configChanges="keyboardHidden|orientation|screenSize">
+          <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.LAUNCHER"/>
+          </intent-filter>
+        </activity>
+        <activity android:screenOrientation="nosensor"
+                          android:name="org.appcelerator.titanium.TiActivity"
+                          android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:screenOrientation="nosensor"
+                          android:name="org.appcelerator.titanium.TiTranslucentActivity"
+                          android:configChanges="keyboardHidden|orientation|screenSize"
+                          android:theme="@style/Theme.AppCompat.Translucent"/>
+        <activity android:screenOrientation="nosensor"
+                          android:name="ti.modules.titanium.ui.android.TiPreferencesActivity"
+                          android:configChanges="screenSize"/>
+      </application>
+    </manifest>
+  </android>
+</ti:app>
+```
 
 #### Limiting orientation modes supported by a window
 
 The preceding techniques control the orientation modes supported by your entire app, including all its windows. But what if you want window A to be in portrait while window B is in landscape? You can limit the orientation modes supported by a specific window by setting the window's orientationModes property. This property accepts an array of Ti.UI constants that specify the window's permitted orientations. Remember, you must have enabled the various orientations in the tiapp.xml before setting a window to that orientation.
 
-iOS Platform Notes
+*iOS Platform Notes*
 
 Using the Window's orientationModes property to force the orientation of non-modal windows is considered a bad practice and will not be supported, including forcing the orientation of windows inside a NavigationWindow or TabGroup.
 
 Modal windows should not support orientation modes that the window they are opened over do not support. Doing otherwise **may** cause bad visual/redraw behavior after the modal is dismissed, due to how iOS manages modal transitions. If the orientationModes property of a modal window is undefined, then the orientations supported by this window would be the orientation modes specified in the tiapp.xml.
 
-`var` `win = Ti.UI.createWindow({`
-
-`/* on Android, it needs to be a "heavyweight" window */`
-
-`fullscreen:` `false``,`
-
-`/* This works on iOS */`
-
-`orientationModes: [`
-
-`Ti.UI.PORTRAIT,`
-
-`Ti.UI.UPSIDE_PORTRAIT`
-
-`]`
-
-`});`
-
-`// but for Android using Titanium prior to 2.1 you have to set it after creation`
-
-`win.orientationModes = [Ti.UI.PORTRAIT, Ti.UI.UPSIDE_PORTRAIT]`
+```javascript
+var win = Ti.UI.createWindow({
+  /* on Android, it needs to be a "heavyweight" window */
+  fullscreen: false,
+  /* This works on iOS */
+  orientationModes: [
+    Ti.UI.PORTRAIT,
+    Ti.UI.UPSIDE_PORTRAIT
+  ]
+});
+// but for Android using Titanium prior to 2.1 you have to set it after creation
+win.orientationModes = [Ti.UI.PORTRAIT, Ti.UI.UPSIDE_PORTRAIT]
+```
 
 #### Setting orientation summary
 
@@ -304,67 +232,47 @@ Modal windows should not support orientation modes that the window they are open
 
 The most powerful way to handle orientation is for your app to react to changes and update its UI. You'd reposition buttons, images, and so forth when the user turns their device. You detect orientation changes via the Ti.Gesture object.
 
-`Ti.Gesture.addEventListener(``'orientationchange'``,``function``(e) {`
+```
+Ti.Gesture.addEventListener('orientationchange',function(e) {
+  // get current device orientation from
+  // Titanium.Gesture.orientation
 
-`// get current device orientation from`
+  // get orientation from event object
+  // from e.orientation
 
-`// Titanium.Gesture.orientation`
+  // Ti.Gesture.orientation should match e.orientation
+  // but iOS and Android will report different values
 
-`// get orientation from event object`
-
-`// from e.orientation`
-
-`// Ti.Gesture.orientation should match e.orientation`
-
-`// but iOS and Android will report different values`
-
-`// two helper methods return a Boolean`
-
-`// e.source.isPortrait()`
-
-`// e.source.isLandscape()`
-
-`});`
+  // two helper methods return a Boolean
+  // e.source.isPortrait()
+  // e.source.isLandscape()
+});
+```
 
 If you've watched any of Kevin Whinnery's videos or read his Forging Titanium posts, you should be familiar with his recommendation to write "component-oriented apps." In such apps, your UI is divided into functional components that "know" how to update themselves. For example, if you look at the finished code for our [Local Data](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Working_with_Local_Data_Sources/) lab, you'll see that the table "knows" how to populate itself.
 
 Following his technique, in the orientationchange event handler, you'd fire an app-level event using Ti.App.fireEvent(). Within each of your UI components, you would have an app-level listener for that event which would update the component with new layout specifics.
 
-`Ti.Gesture.addEventListener(``'orientationchange'``,``function``(e) {`
-
-`Ti.App.fireEvent(``'orient'``, {portrait:e.source.isPortrait()});`
-
-`});`
-
-`// ... elsewhere ...`
-
-`var` `myCustomView =` `function``() {`
-
-`var` `view = Ti.UI.createView({`
-
-`top:10,`
-
-`left:10,`
-
-`/* etc */`
-
-`});`
-
-`Ti.App.addEventListener(``'orient'``,` `function``(evt) {`
-
-`if``(evt.portrait===``true``) {`
-
-`view.left = 10;`
-
-`}` `else` `{`
-
-`view.left = 50;`
-
-`}`
-
-`});`
-
-`}`
+```javascript
+Ti.Gesture.addEventListener('orientationchange',function(e) {
+  Ti.App.fireEvent('orient', {portrait:e.source.isPortrait()});
+});
+// ... elsewhere ...
+var myCustomView = function() {
+  var view = Ti.UI.createView({
+    top:10,
+    left:10,
+    /* etc */
+  });
+  Ti.App.addEventListener('orient', function(evt) {
+    if(evt.portrait===true) {
+      view.left = 10;
+    } else {
+      view.left = 50;
+    }
+  });
+}
+```
 
 **Don't use orientation event listeners to force orientation support**
 

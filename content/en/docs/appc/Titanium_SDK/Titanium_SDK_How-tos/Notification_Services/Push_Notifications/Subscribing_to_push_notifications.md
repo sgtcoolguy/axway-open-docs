@@ -54,45 +54,31 @@ To obtain a device token from GCM or FCM, you first need to add the CloudPush mo
 
 In your application code, require the ti.cloudpush module and call its retrieveDeviceToken() method, and register event handlers to respond to success and error events. Once a device token has been retrieved, your application can listen for the callback event to process incoming push notifications. Your application should save the device token for later use. The following code demonstrates the minimal code required to obtain a device token and setup event handlers:
 
-`// Require the module`
+```javascript
+// Require the module
+var CloudPush = require('ti.cloudpush');
+var deviceToken = null;
 
-`var` `CloudPush = require(``'ti.cloudpush'``);`
+// Initialize the module
+CloudPush.retrieveDeviceToken({
+    success: deviceTokenSuccess,
+    error: deviceTokenError
+});
 
-`var` `deviceToken =` `null``;`
+// Enable push notifications for this device
+// Save the device token for subsequent API calls
+function deviceTokenSuccess(e) {
+    deviceToken = e.deviceToken;
+}
+function deviceTokenError(e) {
+    alert('Failed to register for push notifications! ' + e.error);
+}
 
-`// Initialize the module`
-
-`CloudPush.retrieveDeviceToken({`
-
-`success: deviceTokenSuccess,`
-
-`error: deviceTokenError`
-
-`});`
-
-`// Enable push notifications for this device`
-
-`// Save the device token for subsequent API calls`
-
-`function` `deviceTokenSuccess(e) {`
-
-`deviceToken = e.deviceToken;`
-
-`}`
-
-`function` `deviceTokenError(e) {`
-
-`alert(``'Failed to register for push notifications! '` `+ e.error);`
-
-`}`
-
-`// Process incoming push notifications`
-
-`CloudPush.addEventListener(``'callback'``,` `function` `(evt) {`
-
-`alert(``"Notification received: "` `+ evt.payload);`
-
-`});`
+// Process incoming push notifications
+CloudPush.addEventListener('callback', function (evt) {
+    alert("Notification received: " + evt.payload);
+});
+```
 
 ### Obtaining a device token on iOS
 
@@ -100,65 +86,44 @@ To obtain a device token on iOS, call the Titanium.Network.registerForPushNotifi
 
 You need to register the user notification types you want to use with the Titanium.App.iOS.registerUserNotificationSettings()method before calling the registerForPushNotifications() method.
 
-`var` `deviceToken =` `null``;`
+```javascript
+var deviceToken = null;
 
-`// Wait for user settings to be registered before registering for push notifications`
+// Wait for user settings to be registered before registering for push notifications
+Ti.App.iOS.addEventListener('usernotificationsettings', function registerForPush() {
 
-`Ti.App.iOS.addEventListener(``'usernotificationsettings'``,` `function` `registerForPush() {`
+    // Remove event listener once registered for push notifications
+    Ti.App.iOS.removeEventListener('usernotificationsettings', registerForPush);
 
-`// Remove event listener once registered for push notifications`
+    Ti.Network.registerForPushNotifications({
+        success: deviceTokenSuccess,
+        error: deviceTokenError,
+        callback: receivePush
+    });
+});
 
-`Ti.App.iOS.removeEventListener(``'usernotificationsettings'``, registerForPush); `
+// Register notification types to use
+Ti.App.iOS.registerUserNotificationSettings({
+    types: [
+        Ti.App.iOS.USER_NOTIFICATION_TYPE_ALERT,
+        Ti.App.iOS.USER_NOTIFICATION_TYPE_SOUND,
+        Ti.App.iOS.USER_NOTIFICATION_TYPE_BADGE
+    ]
+});
 
-`Ti.Network.registerForPushNotifications({`
+// Process incoming push notifications
+function receivePush(e) {
+    alert('Received push: ' + JSON.stringify(e));
+}
+// Save the device token for subsequent API calls
+function deviceTokenSuccess(e) {
+    deviceToken = e.deviceToken;
+}
 
-`success: deviceTokenSuccess,`
-
-`error: deviceTokenError,`
-
-`callback: receivePush`
-
-`});`
-
-`});`
-
-`// Register notification types to use`
-
-`Ti.App.iOS.registerUserNotificationSettings({`
-
-`types: [`
-
-`Ti.App.iOS.USER_NOTIFICATION_TYPE_ALERT,`
-
-`Ti.App.iOS.USER_NOTIFICATION_TYPE_SOUND,`
-
-`Ti.App.iOS.USER_NOTIFICATION_TYPE_BADGE`
-
-`]`
-
-`});`
-
-`// Process incoming push notifications`
-
-`function` `receivePush(e) {`
-
-`alert(``'Received push: '` `+ JSON.stringify(e));`
-
-`}`
-
-`// Save the device token for subsequent API calls`
-
-`function` `deviceTokenSuccess(e) {`
-
-`deviceToken = e.deviceToken;`
-
-`}`
-
-`function` `deviceTokenError(e) {`
-
-`alert(``'Failed to register for push notifications! '` `+ e.error);`
-
-`}`
+function deviceTokenError(e) {
+    alert('Failed to register for push notifications! ' + e.error);
+}
+```
 
 ## Using the Titanium PushNotifications API
 
@@ -190,91 +155,57 @@ To subscribe your application to receive push notifications using only a device 
 
 The following example is functionally identical to the [token-based version](#subscribing-to-push-notifications-with-user-sessions), except that it includes functionality to log the user into MBS.
 
-`// You first need to get a device token (see previous section):`
+```javascript
+// You first need to get a device token (see previous section):
+var deviceToken = null;
 
-`var` `deviceToken =` `null``;`
+// Require the Cloud module
+var Cloud = require("ti.cloud");
+function subscribeToChannel () {
+    // Subscribes the device to the 'news_alerts' channel
+    // Specify the push type as either 'android' for Android or 'ios' for iOS
+    Cloud.PushNotifications.subscribeToken({
+        device_token: deviceToken,
+        channel: 'news_alerts',
+        type: Ti.Platform.name === 'android' ? 'android' : 'ios'
+    }, function (e) {
+        if (e.success) {
+            alert('Subscribed');
+        } else {
+            alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+        }
+    });
+}
 
-`// Require the Cloud module`
+function unsubscribeToChannel () {
+    // Unsubscribes the device from the 'test' channel
+    Cloud.PushNotifications.unsubscribeToken({
+        device_token: deviceToken,
+        channel: 'news_alerts',
+    }, function (e) {
+        if (e.success) {
+            alert('Unsubscribed');
+        } else {
+            alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+        }
+    });
+}
 
-`var` `Cloud = require(``"ti.cloud"``);`
+var win = Ti.UI.createWindow({
+    backgroundColor: 'white',
+    layout: 'vertical'
+});
 
-`function` `subscribeToChannel () {`
+var subscribe = Ti.UI.createButton({ title: 'Subscribe' });
+subscribe.addEventListener('click', subscribeToChannel);
+win.add(subscribe);
 
-`// Subscribes the device to the 'news_alerts' channel`
+var unsubscribe = Ti.UI.createButton({ title: 'Unsubscribe' });
+unsubscribe.addEventListener('click', unsubscribeToChannel);
+win.add(unsubscribe);
 
-`// Specify the push type as either 'android' for Android or 'ios' for iOS`
-
-`Cloud.PushNotifications.subscribeToken({`
-
-`device_token: deviceToken,`
-
-`channel:` `'news_alerts'``,`
-
-`type: Ti.Platform.name ===` `'android'` `?` `'android'` `:` `'ios'`
-
-`},` `function` `(e) {`
-
-`if` `(e.success) {`
-
-`alert(``'Subscribed'``);`
-
-`}` `else` `{`
-
-`alert(``'Error:\n'` `+ ((e.error && e.message) || JSON.stringify(e)));`
-
-`}`
-
-`});`
-
-`}`
-
-`function` `unsubscribeToChannel () {`
-
-`// Unsubscribes the device from the 'test' channel`
-
-`Cloud.PushNotifications.unsubscribeToken({`
-
-`device_token: deviceToken,`
-
-`channel:` `'news_alerts'``,`
-
-`},` `function` `(e) {`
-
-`if` `(e.success) {`
-
-`alert(``'Unsubscribed'``);`
-
-`}` `else` `{`
-
-`alert(``'Error:\n'` `+ ((e.error && e.message) || JSON.stringify(e)));`
-
-`}`
-
-`});`
-
-`}`
-
-`var` `win = Ti.UI.createWindow({`
-
-`backgroundColor:` `'white'``,`
-
-`layout:` `'vertical'`
-
-`});`
-
-`var` `subscribe = Ti.UI.createButton({ title:` `'Subscribe'` `});`
-
-`subscribe.addEventListener(``'click'``, subscribeToChannel);`
-
-`win.add(subscribe);`
-
-`var` `unsubscribe = Ti.UI.createButton({ title:` `'Unsubscribe'` `});`
-
-`unsubscribe.addEventListener(``'click'``, unsubscribeToChannel);`
-
-`win.add(unsubscribe);`
-
-`win.open();`
+win.open();
+```
 
 ### Subscribing to Push Notifications with User Sessions
 
@@ -282,123 +213,75 @@ You can subscribe to receive push notifications based the user's current MBS ses
 
 The following example is identical to the [token-based version](#subscribing-to-push-notifications-with-device-tokens), except that it includes functionality to log the user into API Builder.
 
-`// For this example to work, you need to get the device token. See the previous section.`
+```javascript
+// For this example to work, you need to get the device token. See the previous section.
+// You also need an ArrowDB user account.
 
-`// You also need an ArrowDB user account.`
+// Require in the Cloud module
+var Cloud = require("ti.cloud");
 
-`// Require in the Cloud module`
+function loginUser(){
+    // Log in to Arrow
+    Cloud.Users.login({
+        login: 'waldo',
+        password: 'password'
+    }, function (e) {
+        if (e.success) {
+            alert('Login successful');
+        } else {
+            alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+        }
+    });
+}
 
-`var` `Cloud = require(``"ti.cloud"``);`
+function subscribeToChannel(){
+    // Subscribe the user and device to the 'test' channel
+    // Specify the push type as either 'android' for Android or 'ios' for iOS
+    // Check if logged in:
+    Cloud.PushNotifications.subscribe({
+        channel: 'test',
+        device_token: deviceToken,
+        type: Ti.Platform.name === 'android' ? 'android' : 'ios'
+    }, function (e) {
+        if (e.success) {
+            alert('Subscribed');
+        } else {
+            alert('Error:\n' +
+                ((e.error && e.message) || JSON.stringify(e)));
+        }
+    });
+}
 
-`function` `loginUser(){`
+function unsubscribeToChannel ()
+    // Unsubscribes the user and device from the 'test' channel
+    Cloud.PushNotifications.unsubscribe({
+        channel: 'test',
+        device_token: deviceToken
+    }, function (e) {
+        if (e.success) {
+            alert('Unsubscribed');
+        } else {
+            alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+        }
+    });
+}
 
-`// Log in to Arrow`
+var win = Ti.UI.createWindow({
+    backgroundColor: 'white',
+    layout: 'vertical'
+});
 
-`Cloud.Users.login({`
+var subscribe = Ti.UI.createButton({ title: 'Subscribe' });
+subscribe.addEventListener('click', subscribeToChannel);
+win.add(subscribe);
 
-`login:` `'waldo'``,`
+var unsubscribe = Ti.UI.createButton({ title: 'Unsubscribe' });
+unsubscribe.addEventListener('click', unsubscribeToChannel);
+win.add(unsubscribe);
 
-`password:` `'password'`
-
-`},` `function` `(e) {`
-
-`if` `(e.success) {`
-
-`alert(``'Login successful'``);`
-
-`}` `else` `{`
-
-`alert(``'Error:\n'` `+ ((e.error && e.message) || JSON.stringify(e)));`
-
-`}`
-
-`});`
-
-`}`
-
-`function` `subscribeToChannel(){`
-
-`// Subscribe the user and device to the 'test' channel`
-
-`// Specify the push type as either 'android' for Android or 'ios' for iOS`
-
-`// Check if logged in:`
-
-`Cloud.PushNotifications.subscribe({`
-
-`channel:` `'test'``,`
-
-`device_token: deviceToken,`
-
-`type: Ti.Platform.name ===` `'android'` `?` `'android'` `:` `'ios'`
-
-`},` `function` `(e) {`
-
-`if` `(e.success) {`
-
-`alert(``'Subscribed'``);`
-
-`}` `else` `{`
-
-`alert(``'Error:\n'` `+`
-
-`((e.error && e.message) || JSON.stringify(e)));`
-
-`}`
-
-`});`
-
-`}`
-
-`function` `unsubscribeToChannel ()`
-
-`// Unsubscribes the user and device from the 'test' channel`
-
-`Cloud.PushNotifications.unsubscribe({`
-
-`channel:` `'test'``,`
-
-`device_token: deviceToken`
-
-`},` `function` `(e) {`
-
-`if` `(e.success) {`
-
-`alert(``'Unsubscribed'``);`
-
-`}` `else` `{`
-
-`alert(``'Error:\n'` `+ ((e.error && e.message) || JSON.stringify(e)));`
-
-`}`
-
-`});`
-
-`}`
-
-`var` `win = Ti.UI.createWindow({`
-
-`backgroundColor:` `'white'``,`
-
-`layout:` `'vertical'`
-
-`});`
-
-`var` `subscribe = Ti.UI.createButton({ title:` `'Subscribe'` `});`
-
-`subscribe.addEventListener(``'click'``, subscribeToChannel);`
-
-`win.add(subscribe);`
-
-`var` `unsubscribe = Ti.UI.createButton({ title:` `'Unsubscribe'` `});`
-
-`unsubscribe.addEventListener(``'click'``, unsubscribeToChannel);`
-
-`win.add(unsubscribe);`
-
-`win.open();`
-
-`loginUser();`
+win.open();
+loginUser();
+```
 
 ### Updating Subscriptions with Device Location
 
@@ -410,75 +293,46 @@ The [Ti.Geofence](#!/api/Modules.Geofence) module (**requires a Team or Enterpri
 
 When the device enters a defined geofence region, the application is notified and can obtain the device's current location and send it to API Builder. The following code demonstrates this approach.
 
-`var` `Cloud = require(``'ti.cloud'``);`
+```javascript
+var Cloud = require('ti.cloud');
+var Geofence = require('ti.geofence');
 
-`var` `Geofence = require(``'ti.geofence'``);`
+// Define a region to monitor:
+var region1 = Geofence.createRegion({
+    center: {
+        latitude: 37.389601,
+        longitude: -122.050169
+    },
+    radius: 500,
+    identifier: 'Appcelerator'
+});
 
-`// Define a region to monitor:`
+// Start monitoring for region entrances/exits:
+Geofence.startMonitoringForRegions(region1);
 
-`var` `region1 = Geofence.createRegion({`
-
-`center: {`
-
-`latitude: 37.389601,`
-
-`longitude: -122.050169`
-
-`},`
-
-`radius: 500,`
-
-`identifier:` `'Appcelerator'`
-
-`});`
-
-`// Start monitoring for region entrances/exits: `
-
-`Geofence.startMonitoringForRegions(region1);`
-
-`// Event listener invoked when device enters a region being monitored:`
-
-`Geofence.addEventListener(``"enterregions"``,` `function``(e) {`
-
-`// Get current location and update subscription with location:`
-
-`Titanium.Geolocation.getCurrentPosition(``function``(e) {`
-
-`if` `(e.error) {`
-
-`Ti.API.error(``'Error: '` `+ e.error);`
-
-`}` `else` `{`
-
-`var` `latitude = e.coords.latitude;`
-
-`var` `longitude = e.coords.longitude;`
-
-`Cloud.PushNotifications.updateSubscription({`
-
-`device_token : pushDeviceToken,`
-
-`loc : [longitude, latitude]`
-
-`},` `function``(e) {`
-
-`if` `(e.success) {`
-
-`alert(``'Subscription Updated.'``);`
-
-`}` `else` `{`
-
-`alert(e);`
-
-`}`
-
-`});`
-
-`}`
-
-`});`
-
-`});`
+// Event listener invoked when device enters a region being monitored:
+Geofence.addEventListener("enterregions", function(e) {
+    // Get current location and update subscription with location:
+    Titanium.Geolocation.getCurrentPosition(function(e) {
+      if (e.error) {
+        Ti.API.error('Error: ' + e.error);
+      } else {
+        var latitude = e.coords.latitude;
+        var longitude = e.coords.longitude;
+        Cloud.PushNotifications.updateSubscription({
+          device_token : pushDeviceToken,
+          loc : [longitude, latitude]
+        }, function(e) {
+          if (e.success) {
+            alert('Subscription Updated.');
+          } else {
+            alert(e);
+          }
+        });
+      }
+    });
+});
+```
 
 ## Parsing a notification payload
 
@@ -486,119 +340,81 @@ The notification payload that is delivered to the device is modified slightly st
 
 The original JSON payload:
 
-`{`
-
-`"title"``:` `"Example"``,`
-
-`"alert"``:` `"Sample alert"``,`
-
-`"icon"``:` `"little_star"``,`
-
-`"badge"``: 3,`
-
-`"sound"``:` `"door_bell"``,`
-
-`"vibrate"``:` `true``,`
-
-`"custom_field_1"``:` `"Appcelerator ArrowDB Rocks!"``,`
-
-`"custom_field_2"``:` `"Hi Push"`
-
-`}`
+```
+{
+    "title": "Example",
+    "alert": "Sample alert",
+    "icon": "little_star",
+    "badge": 3,
+    "sound": "door_bell",
+    "vibrate": true,
+    "custom_field_1": "Appcelerator ArrowDB Rocks!",
+    "custom_field_2": "Hi Push"
+}
+```
 
 iOS payload:
 
-`{`
-
-`"aps"``: {`
-
-`"alert"``:` `"Sample alert"``,`
-
-`"badge"``: 3,`
-
-`"sound"``:` `"door_bell"``,`
-
-`},`
-
-`"title"``:` `"Example"``,`
-
-`"icon"``:` `"little_star"``,`
-
-`"vibrate"``:` `true``,`
-
-`"custom_field_1"``:` `"Appcelerator ArrowDB Rocks!"``,`
-
-`"custom_field_2"``:` `"Hi Push"`
-
-`}`
+```
+{
+    "aps": {
+        "alert": "Sample alert",
+        "badge": 3,
+        "sound": "door_bell",
+    },
+    "title": "Example",
+    "icon": "little_star",
+    "vibrate": true,
+    "custom_field_1": "Appcelerator ArrowDB Rocks!",
+    "custom_field_2": "Hi Push"
+}
+```
 
 Android parsed payload:
 
-`{`
-
-`"android"``: {`
-
-`"title"``:` `"Example"``,`
-
-`"alert"``:` `"Sample alert"``,`
-
-`"icon"``:` `"little_star"``,`
-
-`"badge"``: 3,`
-
-`"sound"``:` `"door_bell"``,`
-
-`"vibrate"``:` `true``,`
-
-`},`
-
-`"custom_field_1"``:` `"Appcelerator ArrowDB Rocks!"``,`
-
-`"custom_field_2"``:` `"Hi Push"`
-
-`}`
+```
+{
+    "android": {
+        "title": "Example",
+        "alert": "Sample alert",
+        "icon": "little_star",
+        "badge": 3,
+        "sound": "door_bell",
+        "vibrate": true,
+    },
+    "custom_field_1": "Appcelerator ArrowDB Rocks!",
+    "custom_field_2": "Hi Push"
+}
+```
 
 For example, in the following example the receivePush() method was previously assigned to the notification callback handler. The following code parses the alert string from the notification payload, and assigns it to a variable named alertString.
 
-`var` `ostype = Titanium.Platform.osname;`
-
-`var` `alertString;`
-
-`function` `receivePush(e) {`
-
-`if``(ostype ===` `"android"``){`
-
-`alertString = JSON.parse(e.payload).android.alert;`
-
-`}`
-
-`if``(ostype ===` `"iphone"` `|| ostype ===` `"ipad"``){`
-
-`alertString = e.data.aps.alert;`
-
-`}`
-
-`}`
+```javascript
+var ostype = Titanium.Platform.osname;
+var alertString;
+function receivePush(e) {
+  if(ostype === "android"){
+      alertString = JSON.parse(e.payload).android.alert;
+  }
+  if(ostype === "iphone" || ostype === "ipad"){
+      alertString = e.data.aps.alert;
+  }
+}
+```
 
 Sample payload sent push notification in the multiline format on an Android device:
 
-`{`
-
-`"title"``:` `"myApp"``,`
-
-`"alert"``:` `"Here, I want to send the multiline push notification messages to the user for the \n details reports."``,`
-
-`"style"``: {`
-
-`"bigContentTitle"``:` `"myApp"``,`
-
-`"bigText"``:` `"Here, I want to send the multiline push notification messages to the user for the \n details reports."``,`
-
-`"summaryText"``:` `"Here, I want to send the multiline push notification messages"`
-
-`}`
-
-`}`
+```
+{
+   "title": "myApp",
+   "alert": "Here, I want to send the multiline push notification messages to the user for the \n details reports.",
+   "style": {
+      "bigContentTitle": "myApp",
+      "bigText": "Here, I want to send the multiline push notification messages to the user for the \n details reports.",
+      "summaryText": "Here, I want to send the multiline push notification messages"
+   }
+}
+```
 
 ## More examples
 

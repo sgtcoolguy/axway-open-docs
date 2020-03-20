@@ -8,9 +8,11 @@ Examples of how you might interact with methods of the UI class.
 
 ### Singleton:
 
-`require` `'ruble/ui'`
+```
+require 'ruble/ui'
 
-`Ruble::UI.alert(:info,` `'Title'``,` `'Message'``) # opens an info dialog box with title`
+Ruble::UI.alert(:info, 'Title', 'Message') # opens an info dialog box with title
+```
 
 ## UI Methods
 

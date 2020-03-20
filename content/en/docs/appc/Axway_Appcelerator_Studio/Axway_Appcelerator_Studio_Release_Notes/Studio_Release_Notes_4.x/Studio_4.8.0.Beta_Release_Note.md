@@ -140,7 +140,9 @@ This version of Studio adds support to create, build, and test Windows modules (
         ![_thumb_60015](/Images/appc/download/attachments/48431462/_thumb_60015.png)
     * If your default Java environment is set to 64-bit, then you need to add the following argument in the Appcelerator.ini file (found in the installation directory):
 
-        `C:\Program Files(x86)\Java\jdk1.``7``.0_71\bin\javaw.exe`
+        ```
+        C:\Program Files(x86)\Java\jdk1.7.0_71\bin\javaw.exe
+        ```
 
 * [TISTUD-8613](https://jira.appcelerator.org/browse/TISTUD-8613) - iOS Debugger: Breakpoint is not hit for the first time for a clean alloy project
 

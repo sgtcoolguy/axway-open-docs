@@ -92,9 +92,13 @@ To manually install the acs CLI, independent of the other tools:
 
 3. Login to AMPLIFY Runtime Services.
 
-    `[sudo] npm install acs -g`
+    ```bash
+    [sudo] npm install acs -g
+    ```
 
-    `acs login  `
+    ```
+    acs login
+    ```
 
 Most commands require you to be logged in. If you do not run commands in the project's directory, in most commands, you need to either specify the app name as the last parameter or specify the project's location with the \-d parameter.
 
@@ -104,7 +108,9 @@ Most commands require you to be logged in. If you do not run commands in the pro
 
 List application's access logs within a specified period. By default, a maximum of 100 log messages will be returned at a time.
 
-`accesslog [options] [appname]`
+```
+accesslog [options] [appname]
+```
 
 | Name | Description |
 | --- | --- |
@@ -125,13 +131,12 @@ Dates are specified as YYYY-MM-DD or "YYYY-MM-DD HH:MM". Note that if the time i
 
 The config command configures environment variables and the number of cloud servers for the application to use (auto-scaling).
 
-`### Environment variables`
-
-`acs config [--set <key>=<value>] [--unset <key>] [--env] [appname]`
-
-`### Auto-scaling`
-
-`acs config [--autoscaleup` `true``|``false``] [--autoscaledown` `true``|``false``] [--minsize N] [--maxsize N] [--maxqueuedrequests N] [--usagenotice` `true``|``false``] [appname]`
+```
+### Environment variables
+acs config [--set <key>=<value>] [--unset <key>] [--env] [appname]
+### Auto-scaling
+acs config [--autoscaleup true|false] [--autoscaledown true|false] [--minsize N] [--maxsize N] [--maxqueuedrequests N] [--usagenotice true|false] [appname]
+```
 
 | Name | Description |
 | --- | --- |
@@ -145,7 +150,7 @@ The config command configures environment variables and the number of cloud serv
 | \--maxconn <n> | Set the maximum per-server number of concurrent connections for the app. |
 | \--maxconnws <n> | Set the maximum per-server number of concurrent web socket connections for the app. |
 | \--autoshutdown <n> | Automatically deactivate non-development container after n seconds (value needs to be higher than 3600 or set to 0). If the value is not set or set to 0, the app will not deactivate if its type isn't development. Regardless, development containers will still be deactivated after seven days of inactivity. |
-| \--set <var> | Sets an environment variable.<br /><br />To set more than one variable, use comma-separated key-value pairs. For example:<br /><br />`acs config --set` `"extra_hosts=54.219.6.230 www.163.com;54.219.6.230 www.123.com"`<br /><br />To access the variable in the application, prefix the variable with the process.env namespace. |
+| \--set <var> | Sets an environment variable.<br /><br />To set more than one variable, use comma-separated key-value pairs. For example:<br /><br />```<br />acs config --set "extra_hosts=54.219.6.230 www.163.com;54.219.6.230 www.123.com"<br />```<br /><br />To access the variable in the application, prefix the variable with the process.env namespace. |
 | \--unset <var> | Unsets the specified environment variable. |
 | \--env \[appname\] | Lists set environment variables. |
 | \-h, \--help | Displays help information about the command. |
@@ -154,7 +159,9 @@ The config command configures environment variables and the number of cloud serv
 
 Manages custom SSL certificates for accessing your application via HTTPS.
 
-`acs crt [options] [appname]`
+```
+acs crt [options] [appname]
+```
 
 | Name | Description |
 | --- | --- |
@@ -168,7 +175,9 @@ Manages custom SSL certificates for accessing your application via HTTPS.
 
 Binds a domain to a published application, so that the application can be accessed using a custom domain as an alias for the application's cloud.appcelerator.com URL.
 
-`acs domain [ options ] [ appname ]`
+```
+acs domain [ options ] [ appname ]
+```
 
 | Name | Description |
 | --- | --- |
@@ -184,7 +193,9 @@ Binds a domain to a published application, so that the application can be access
 
 Download the app source file with a specified app name and version. If no app name is provided, specify the app directory with either dir or \-d. The currently deployed app version will be downloaded if no app version option provided.
 
-`acs download [options] [appname]`
+```
+acs download [options] [appname]
+```
 
 | Name | Description |
 | --- | --- |
@@ -198,7 +209,9 @@ Download the app source file with a specified app name and version. If no app na
 
 Use the inspect command to gather detailed information for published services.
 
-`acs inspect [options] [appname|ID]`
+```
+acs inspect [options] [appname|ID]
+```
 
 | Name | Description |
 | --- | --- |
@@ -211,7 +224,9 @@ Use the inspect command to gather detailed information for published services.
 
 Shows a list of applications owned by the current user. By default, data is listed for all applications. You can specify an application name to only show details for that application. The information returned by this command also includes error messages, if any, related to the application's deployment and execution.
 
-`acs list [options] [appname]`
+```
+acs list [options] [appname]
+```
 
 | Name | Description |
 | --- | --- |
@@ -225,7 +240,9 @@ Shows a list of applications owned by the current user. By default, data is list
 
 Retrieves and displays a published application's runtime logs continuously from AMPLIFY Runtime Services. It lets you see in real-time what's happening with an application running in the cloud. By default, runtime logs are retrieved every five seconds, and you can configure this interval with the \--interval parameter. The interval cannot be smaller than five seconds.
 
-`acs logcat [ options ] [ appname ]`
+```
+acs logcat [ options ] [ appname ]
+```
 
 | Name | Description |
 | --- | --- |
@@ -241,7 +258,9 @@ Retrieves and displays a published application's runtime logs continuously from 
 
 Command for logging in to AMPLIFY Runtime Services using your AMPLIFY Appcelerator Services account credentials.
 
-`acs login [options] [username],[password]`
+```
+acs login [options] [username],[password]
+```
 
 | Name | Description |
 | --- | --- |
@@ -255,7 +274,9 @@ Command for logging in to AMPLIFY Runtime Services using your AMPLIFY Appcelerat
 
 Lists the application's log messages within a specific period. By default, a maximum of 100 log messages is returned at a time.
 
-`acs loglist [options] [appname]`
+```
+acs loglist [options] [appname]
+```
 
 | Name | Description |
 | --- | --- |
@@ -276,7 +297,9 @@ Dates are specified as YYYY-MM-DD or "YYYY-MM-DD HH:MM". Note that if the time i
 
 Logout from AMPLIFY Runtime Services.
 
-`acs logout`
+```
+acs logout
+```
 
 | Name | Description |
 | --- | --- |
@@ -286,7 +309,9 @@ Logout from AMPLIFY Runtime Services.
 
 Starting with AMPLIFY Runtime Services (Arrow Cloud) 1.6.0, acs new creates a new app, and acs new --image creates a new app with a Dockerfile.
 
-`acs` `new` `[options] <name>`
+```
+acs new [options] <name>
+```
 
 | Name | Description |
 | --- | --- |
@@ -301,7 +326,9 @@ Starting with AMPLIFY Runtime Services (Arrow Cloud) 1.6.0, acs new creates a ne
 
 Lists the service tasks for the specified app.
 
-`acs ps [options] <appname>`
+```
+acs ps [options] <appname>
+```
 
 | Name | Description |
 | --- | --- |
@@ -315,7 +342,9 @@ Publishes and runs an application on the AMPLIFY Runtime Services. This command 
 
 Note that if an application is not listening on port 80, use acs config --set PORT=customport to publish work. Also, note that publishing an application now supports publishing Docker images directly.
 
-`acs publish [options] [npm_username],[npm_password],[appname]`
+```
+acs publish [options] [npm_username],[npm_password],[appname]
+```
 
 | Name | Description |
 | --- | --- |
@@ -343,7 +372,9 @@ For appc publish, you can include it in appc.json:
 
 Removes an application. If the application has been published, the command unpublishes the application first, then removes it. The local application directory is not deleted by default. Use the \--force option to delete it.
 
-`acs remove [options] [appname]`
+```
+acs remove [options] [appname]
+```
 
 | Name | Description |
 | --- | --- |
@@ -358,7 +389,9 @@ Released with Appcelerator CLI 6.0.0, this command allows you to restart an AMPL
 
 This command will restart all servers associated with your app.
 
-`acs restart [options] [appname]`
+```
+acs restart [options] [appname]
+```
 
 | Name | Description |
 | --- | --- |
@@ -370,7 +403,9 @@ This command will restart all servers associated with your app.
 
 Restores the specified app.
 
-`restore [options] [appkey]`
+```
+restore [options] [appkey]
+```
 
 | Name | Description |
 | --- | --- |
@@ -381,7 +416,9 @@ Restores the specified app.
 
 The server command configures the server container size of the application. If your application is already published after changing the container size, you will need to republish the application.
 
-`acs server [options] [appname]`
+```
+acs server [options] [appname]
+```
 
 | Name | Description |
 | --- | --- |
@@ -394,7 +431,9 @@ The server command configures the server container size of the application. If y
 
 Transfer a domain name from an app to another.
 
-`acs transfer-domain [options] <domain_name>`
+```
+acs transfer-domain [options] <domain_name>
+```
 
 | Name | Description |
 | --- | --- |
@@ -407,7 +446,9 @@ Transfer a domain name from an app to another.
 
 By default, unpublishes the currently deployed and active application, shutting the application down and deleting it from the AMPLIFY Runtime Services cloud. You can also unpublish a specific version with the \--ver option, regardless of whether it is deployed or not. The local application directory is not removed after an unpublish operation, so you can republish the application again with the publish command.
 
-`acs unpublish [options] [appname]`
+```
+acs unpublish [options] [appname]
+```
 
 | Name | Description |
 | --- | --- |
@@ -420,7 +461,9 @@ By default, unpublishes the currently deployed and active application, shutting 
 
 Check server system resource usage within a specific period. The server in cloud logs CPU/memory usage periodically. By default, a maximum of 100 log entries will be returned at a time.
 
-`acs usage [options] [appname]`
+```
+acs usage [options] [appname]
+```
 
 | Name | Description |
 | --- | --- |
@@ -438,7 +481,9 @@ Check server system resource usage within a specific period. The server in cloud
 
 Shows the currently logged-in user and organizations to which you belong.
 
-`acs whoami [options]`
+```
+acs whoami [options]
+```
 
 | Name | Description |
 | --- | --- |
@@ -451,7 +496,9 @@ Shows the currently logged-in user and organizations to which you belong.
 
 Upload or remove a certificate.
 
-`acs-stack crt [options] <add-or-rm>,[certificateFile]`
+```
+acs-stack crt [options] <add-or-rm>,[certificateFile]
+```
 
 | Name | Description |
 | --- | --- |
@@ -466,7 +513,9 @@ Upload or remove a certificate.
 
 Deploy a new stack.
 
-`acs-stack deploy [options] <stack-name>`
+```
+acs-stack deploy [options] <stack-name>
+```
 
 | Name | Description |
 | --- | --- |
@@ -479,7 +528,9 @@ Deploy a new stack.
 
 Inspect a service.
 
-`acs-stack inspect [options] <stack-name>,[service-name|ID]`
+```
+acs-stack inspect [options] <stack-name>,[service-name|ID]
+```
 
 | Name | Description |
 | --- | --- |
@@ -493,7 +544,9 @@ Inspect a service.
 
 Get logs for a stack service.
 
-`acs-stack log [options] <stack-name>,<service-name>`
+```
+acs-stack log [options] <stack-name>,<service-name>
+```
 
 | Name | Description |
 | --- | --- |
@@ -510,7 +563,9 @@ Get logs for a stack service.
 
 Get continuous logs for a stack service.
 
-`acs-stack logcat [options] <stack-name>,<service-name>`
+```
+acs-stack logcat [options] <stack-name>,<service-name>
+```
 
 | Name | Description |
 | --- | --- |
@@ -525,7 +580,9 @@ Get continuous logs for a stack service.
 
 List stacks.
 
-`acs-stack ls [options] [stack-name]`
+```
+acs-stack ls [options] [stack-name]
+```
 
 | Name | Description |
 | --- | --- |
@@ -538,7 +595,9 @@ List stacks.
 
 Check service tasks.
 
-`acs-stack ps [options] <stack-name>,[service-name|ID]`
+```
+acs-stack ps [options] <stack-name>,[service-name|ID]
+```
 
 | Name | Description |
 | --- | --- |
@@ -552,7 +611,9 @@ Check service tasks.
 
 Remove a stack.
 
-`acs-stack rm [options] <stack-name>`
+```
+acs-stack rm [options] <stack-name>
+```
 
 | Name | Description |
 | --- | --- |
@@ -564,7 +625,9 @@ Remove a stack.
 
 Rollback a service.
 
-`acs-stack rollback [options] <stack-name>,<service-name>`
+```
+acs-stack rollback [options] <stack-name>,<service-name>
+```
 
 | Name | Description |
 | --- | --- |
@@ -577,7 +640,9 @@ Rollback a service.
 
 Scale a service.
 
-`acs-stack scale [options] <stack-name>,<service-name>,<relicas>`
+```
+acs-stack scale [options] <stack-name>,<service-name>,<relicas>
+```
 
 | Name | Description |
 | --- | --- |
@@ -591,7 +656,9 @@ Scale a service.
 
 Check the services of a stack.
 
-`acs-stack services [options] <stack-name>`
+```
+acs-stack services [options] <stack-name>
+```
 
 | Name | Description |
 | --- | --- |
@@ -603,7 +670,9 @@ Check the services of a stack.
 
 Update a service.
 
-`acs-stack update [options] <stack-name>,<service-name>`
+```
+acs-stack update [options] <stack-name>,<service-name>
+```
 
 | Name | Description |
 | --- | --- |

@@ -77,7 +77,7 @@ Both PNG and JPG files are compressed formats. However, the tools typically used
 
 You can display both local and remote images in an ImageView. When loading remote images, you should set the defaultImage property to a local image, which will be displayed while the remote image is being downloaded. Remote images are cached automatically on the iOS-, Android- and Windows platform.
 
-Android Note
+*Android Note*
 
 Android 6 and later uses runtime permissions to secure the user's privacy. Therefore, you should call Ti.Filesystem.requestStoragePermissions() before attempting to load remote images.
 
@@ -87,97 +87,55 @@ On the Android platform, the cache can even be limited to 25 MB and data remains
 
 To manually cache remote images, below is a sample utility function that you can use to cache a remote images to the app's applicationDataDirectory. (In addition to below, you'll find this code at [https://gist.github.com/1901680](https://gist.github.com/1901680)).
 
-`var` `Utils = {`
+```javascript
+var Utils = {
+  /* modified version of https://gist.github.com/1243697 */
+  _getExtension: function(fn) {
+    // CREDITS: http://stackoverflow.com/a/680982/292947
+    var re = /(?:\.([^.]+))?$/;
+    var tmpext = re.exec(fn)[1];
+    return (tmpext) ? tmpext : '';
+  },
+  RemoteImage: function(a) {
+    a = a || {};
+    var md5;
+    var needsToSave = false;
+    var savedFile;
+    if (a.image !== null) {
+      md5 = Ti.Utils.md5HexDigest(a.image)+this._getExtension(a.image);
+      savedFile = Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory, md5);
+      if (savedFile.exists()) {
+        a.image = savedFile;
+      } else {
+        needsToSave = true;
+      }
+    }
+    var image = Ti.UI.createImageView(a);
+    if (needsToSave === true) {
+      function saveImage(e) {
+        image.removeEventListener('load', saveImage);
+        savedFile.write(
+          Ti.UI.createImageView({ image: image.image, width: Ti.UI.FILL, height: Ti.UI.FILL }).toImage()
+        );
+      }
+      image.addEventListener('load', saveImage);
+    }
+    return image;
+  }
+};
 
-`/* modified version of https://gist.github.com/1243697 */`
-
-`_getExtension:` `function``(fn) {`
-
-`// CREDITS: http://stackoverflow.com/a/680982/292947`
-
-`var` `re = /(?:\.([^.]+))?$/;`
-
-`var` `tmpext = re.exec(fn)[1];`
-
-`return` `(tmpext) ? tmpext :` `''``;`
-
-`},`
-
-`RemoteImage:` `function``(a) {`
-
-`a = a || {};`
-
-`var` `md5;`
-
-`var` `needsToSave =` `false``;`
-
-`var` `savedFile;`
-
-`if` `(a.image !==` `null``) {`
-
-`md5 = Ti.Utils.md5HexDigest(a.image)+``this``._getExtension(a.image);`
-
-`savedFile = Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory, md5);`
-
-`if` `(savedFile.exists()) {`
-
-`a.image = savedFile;`
-
-`}` `else` `{`
-
-`needsToSave =` `true``;`
-
-`}`
-
-`}`
-
-`var` `image = Ti.UI.createImageView(a);`
-
-`if` `(needsToSave ===` `true``) {`
-
-`function` `saveImage(e) {`
-
-`image.removeEventListener(``'load'``, saveImage);`
-
-`savedFile.write(`
-
-`Ti.UI.createImageView({ image: image.image, width: Ti.UI.FILL, height: Ti.UI.FILL }).toImage()`
-
-`);`
-
-`}`
-
-`image.addEventListener(``'load'``, saveImage);`
-
-`}`
-
-`return` `image;`
-
-`}`
-
-`};`
-
-`// Example usage`
-
-`var` `image = Utils.RemoteImage({`
-
-`image:` `'https://raw.githubusercontent.com/appcelerator/kitchensink-v2/master/app/assets/images/titanium-logo.png'``,`
-
-`defaultImage:``' myDefaultImage.png'``,`
-
-`width: 300,`
-
-`height: 200,`
-
-`top: 20`
-
-`});`
-
-`var` `win = Ti.UI.createWindow();`
-
-`win.add(image);`
-
-`win.open();`
+// Example usage
+var image = Utils.RemoteImage({
+  image: 'https://raw.githubusercontent.com/appcelerator/kitchensink-v2/master/app/assets/images/titanium-logo.png',
+  defaultImage:' myDefaultImage.png',
+  width: 300,
+  height: 200,
+  top: 20
+});
+var win = Ti.UI.createWindow();
+win.add(image);
+win.open();
+```
 
 ## Summary
 

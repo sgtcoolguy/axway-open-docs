@@ -26,49 +26,32 @@ And compounds them because SOAP is even more verbose (much more XML being transp
 
 The approach taken by a number of Titanium projects we have worked on is to stay very low-tech and POST manually-created SOAP envelopes (XML strings) to a web service endpoint. If you understand how HTTP and SOAP work together, you can manually construct a SOAP envelope to send to your server, with the appropriate contents:
 
-`var client = Ti.Network.createHTTPClient();`
+```javascript
+var client = Ti.Network.createHTTPClient();
+  client.onload = function() {
+  var doc = this.responseXML.documentElement;
+  //manually parse the SOAP XML document
+};
 
-`client.onload = function() {`
+var soapRequest = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> \n" +
+"<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" \n" +
+"xmlns:SOAP-ENC=\"http://schemas.xmlsoap.org/soap/encoding/\" \n" +
+"xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" \n" +
+"xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" \n" +
+"xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" \n" +
+"xmlns:wsse=\"http://schemas.xmlsoap.org/ws/2002/12/secext\"> \n" +
+"<SOAP-ENV:Body id=\"_0\"> \n" +
+"<GetUserDetailsReq> \n" +
+"<Request> \n" +
+"<SessionToken xsi:type=\"ns:IVRSessionToken\">XXXX</SessionToken> \n" +
+"</Request> \n" +
+"</GMGetUserDetailsReq> \n" +
+"</SOAP-ENV:Body> \n" +
+"</SOAP-ENV:Envelope>";
 
-`var doc =` `this``.responseXML.documentElement;`
-
-`//manually parse the SOAP XML document`
-
-`};`
-
-`var soapRequest =` `"<?xml version=\"1.0\" encoding=\"UTF-8\"?> \n"` `+`
-
-`"<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" \n"` `+`
-
-`"xmlns:SOAP-ENC=\"http://schemas.xmlsoap.org/soap/encoding/\" \n"` `+`
-
-`"xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" \n"` `+`
-
-`"xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" \n"` `+`
-
-`"xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" \n"` `+`
-
-`"xmlns:wsse=\"http://schemas.xmlsoap.org/ws/2002/12/secext\"> \n"` `+`
-
-`"<SOAP-ENV:Body id=\"_0\"> \n"` `+`
-
-`"<GetUserDetailsReq> \n"` `+`
-
-`"<Request> \n"` `+`
-
-`"<SessionToken xsi:type=\"ns:IVRSessionToken\">XXXX</SessionToken> \n"` `+`
-
-`"</Request> \n"` `+`
-
-`"</GMGetUserDetailsReq> \n"` `+`
-
-`"</SOAP-ENV:Body> \n"` `+`
-
-`"</SOAP-ENV:Envelope>"``;`
-
-`client.open(``'POST'``,` `'https://someserver.com/someendpoint.asmx'``);`
-
-`client.send({xml: soapRequest});`
+client.open('POST', 'https://someserver.com/someendpoint.asmx');
+client.send({xml: soapRequest});
+```
 
 Bear in mind the above SOAP envelope is completely made up and derived from another service. In order to use your own SOAP web services in this fashion, you will need to understand what the contents of a SOAP request to your server actually looks like as an HTTP request. Here, other third party tools can help, particularly ones that let you inspect the raw HTTP requests and responses for your web service. On the Mac, you might consider using [SOAP Client](http://ditchnet.org/soapclient/). The Eclipse Web Tools project also has a bit of SOAP [oriented tooling](http://www.eclipse.org/webtools/ws/).
 

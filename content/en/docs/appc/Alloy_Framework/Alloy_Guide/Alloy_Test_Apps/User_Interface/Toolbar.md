@@ -2,7 +2,7 @@
 
 Demonstrates adding a Toolbar control to an iOS or Android application.
 
-Example App Source Location
+*Example App Source Location*
 
 You can find this example app in the Alloy repository under [samples/apps/ui/toolbar](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/toolbar). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
 
@@ -14,31 +14,22 @@ A [Toolbar](#!/api/Titanium.UI.iOS.Toolbar) can contain Button controls and cert
 
 ## Example
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<``Toolbar``>`
-
-`<!-- These get added to the Toolbar "items" array -->`
-
-`<``Items``>`
-
-`<``Button``>Action 1</``Button``>`
-
-`<``FlexSpace`  `platform``=``"ios"` `/>`
-
-`<``Button``>Action 2</``Button``>`
-
-`</``Items``>`
-
-`</``Toolbar``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+  <Window>
+    <Toolbar>
+      <!-- These get added to the Toolbar "items" array -->
+      <Items>
+        <Button>Action 1</Button>
+        <FlexSpace platform="ios" />
+        <Button>Action 2</Button>
+      </Items>
+    </Toolbar>
+  </Window>
+</Alloy>
+```
 
 ## See also
 

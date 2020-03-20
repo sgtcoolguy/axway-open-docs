@@ -50,13 +50,13 @@ By default, PyDev will add a --noreload flag when creating a Django run configur
 
 To do that, edit the launch that PyDev created (run > run configurations > PyDev Django) and remove the noreload flag and edit your manage.py so that the lines:
 
-`#Add pydevd to the PYTHONPATH (may be skipped if that path is already added in the PyDev configurations)`
+```
+#Add pydevd to the PYTHONPATH (may be skipped if that path is already added in the PyDev configurations)
+import sys;sys.path.append(r'path_to\pydev\plugins\org.python.pydev.debug\pysrc')
 
-`import` `sys;sys.path.append(r``'path_to\pydev\plugins\org.python.pydev.debug\pysrc'``)`
-
-`import` `pydevd`
-
-`pydevd.patch_django_autoreload()`
+import pydevd
+pydevd.patch_django_autoreload()
+```
 
 are added **BEFORE** the **if \__name_\_ == "\__main_\_"**.
 

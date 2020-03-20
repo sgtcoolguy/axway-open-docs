@@ -70,45 +70,32 @@ If you use the attributedString or the attributedHintText property, do not set a
 
 The example below highlights the word "hyperloop" in the Label.
 
-app.js
+*app.js*
 
-`var` `win = Ti.UI.createWindow({`
+```javascript
+var win = Ti.UI.createWindow({
+    backgroundColor: '#ddd',
+});
 
-`backgroundColor:` `'#ddd'``,`
+var text = "Have you tried hyperloop yet?";
+var attr = Ti.UI.createAttributedString({
+    text: text,
+    attributes: [
+        {
+            type: Ti.UI.ATTRIBUTE_BACKGROUND_COLOR,
+            value: "yellow",
+            range: [text.indexOf('hyperloop'), ('hyperloop').length]
+        }
+    ]
+});
 
-`});`
+var label = Ti.UI.createLabel({
+    attributedString: attr
+});
 
-`var` `text =` `"Have you tried hyperloop yet?"``;`
-
-`var` `attr = Ti.UI.createAttributedString({`
-
-`text: text,`
-
-`attributes: [`
-
-`{`
-
-`type: Ti.UI.ATTRIBUTE_BACKGROUND_COLOR,`
-
-`value:` `"yellow"``,`
-
-`range: [text.indexOf(``'hyperloop'``), (``'hyperloop'``).length]`
-
-`}`
-
-`]`
-
-`});`
-
-`var` `label = Ti.UI.createLabel({`
-
-`attributedString: attr`
-
-`});`
-
-`win.add(label);`
-
-`win.open();`
+win.add(label);
+win.open();
+```
 
 ## Types of attributes
 
@@ -118,27 +105,19 @@ To specify a different font for part of your string, in the attribute dictionary
 
 ![Font](/Images/appc/download/attachments/37538231/Font.png)
 
-`var` `text =` `"Have you tried hyperloop yet?"``;`
-
-`var` `attr = Ti.UI.createAttributedString({`
-
-`text: text,`
-
-`attributes: [`
-
-`{`
-
-`type: Ti.UI.ATTRIBUTE_FONT,`
-
-`value: { fontSize: 24, fontFamily:` `'Didot'` `},`
-
-`range: [text.indexOf(``'hyperloop'``), (``'hyperloop'``).length]`
-
-`}`
-
-`]`
-
-`});`
+```javascript
+var text = "Have you tried hyperloop yet?";
+var attr = Ti.UI.createAttributedString({
+    text: text,
+    attributes: [
+        {
+            type: Ti.UI.ATTRIBUTE_FONT,
+            value: { fontSize: 24, fontFamily: 'Didot' },
+            range: [text.indexOf('hyperloop'), ('hyperloop').length]
+        }
+    ]
+});
+```
 
 ### Foreground color
 
@@ -146,27 +125,19 @@ To specify a different text color for part of your string, in the attribute dict
 
 ![ForegroundColor](/Images/appc/download/attachments/37538231/ForegroundColor.png)
 
-`var` `text =` `"Have you tried hyperloop yet?"``;`
-
-`var` `attr = Ti.UI.createAttributedString({`
-
-`text: text,`
-
-`attributes: [`
-
-`{`
-
-`type: Ti.UI.ATTRIBUTE_FOREGROUND_COLOR,`
-
-`value:` `'cyan'``,`
-
-`range: [text.indexOf(``'hyperloop'``), (``'hyperloop'``).length]`
-
-`}`
-
-`]`
-
-`});`
+```javascript
+var text = "Have you tried hyperloop yet?";
+var attr = Ti.UI.createAttributedString({
+    text: text,
+    attributes: [
+        {
+            type: Ti.UI.ATTRIBUTE_FOREGROUND_COLOR,
+            value: 'cyan',
+            range: [text.indexOf('hyperloop'), ('hyperloop').length]
+        }
+    ]
+});
+```
 
 ### Background color
 
@@ -174,27 +145,19 @@ To specify a different background color for part of your string, in the attribut
 
 ![BackgroundColor](/Images/appc/download/attachments/37538231/BackgroundColor.png)
 
-`var` `text =` `"Have you tried hyperloop yet?"``;`
-
-`var` `attr = Ti.UI.createAttributedString({`
-
-`text: text,`
-
-`attributes: [`
-
-`{`
-
-`type: Ti.UI.ATTRIBUTE_BACKGROUND_COLOR,`
-
-`value:` `"yellow"``,`
-
-`range: [text.indexOf(``'hyperloop'``), (``'hyperloop'``).length]`
-
-`}`
-
-`]`
-
-`});`
+```javascript
+var text = "Have you tried hyperloop yet?";
+var attr = Ti.UI.createAttributedString({
+    text: text,
+    attributes: [
+        {
+            type: Ti.UI.ATTRIBUTE_BACKGROUND_COLOR,
+            value: "yellow",
+            range: [text.indexOf('hyperloop'), ('hyperloop').length]
+        }
+    ]
+});
+```
 
 ### Underline
 
@@ -232,27 +195,19 @@ For iOS 7 and later, you can control the color of the horizontal line. Set the t
 
 ![Underline](/Images/appc/download/attachments/37538231/Underline.png)
 
-`var` `text =` `"Have you tried hyperloop yet?"``;`
-
-`var` `attr = Ti.UI.createAttributedString({`
-
-`text: text,`
-
-`attributes: [`
-
-`{`
-
-`type: Ti.UI.ATTRIBUTE_UNDERLINES_STYLE,`
-
-`value: Ti.UI.ATTRIBUTE_UNDERLINE_STYLE_DOUBLE | Ti.UI.ATTRIBUTE_UNDERLINE_PATTERN_DOT,` `// Ignored by Android only displays a single line`
-
-`range: [text.indexOf(``'hyperloop'``), (``'hyperloop'``).length]`
-
-`}`
-
-`]`
-
-`});`
+```javascript
+var text = "Have you tried hyperloop yet?";
+var attr = Ti.UI.createAttributedString({
+    text: text,
+    attributes: [
+        {
+            type: Ti.UI.ATTRIBUTE_UNDERLINES_STYLE,
+            value: Ti.UI.ATTRIBUTE_UNDERLINE_STYLE_DOUBLE | Ti.UI.ATTRIBUTE_UNDERLINE_PATTERN_DOT, // Ignored by Android only displays a single line
+            range: [text.indexOf('hyperloop'), ('hyperloop').length]
+        }
+    ]
+});
+```
 
 ### Strikethrough
 
@@ -266,27 +221,19 @@ For iOS 7 and later, you can control the color of the horizontal line. Set the t
 
 ![Strikethrough](/Images/appc/download/attachments/37538231/Strikethrough.png)
 
-`var` `text =` `"Have you tried hyperloop ti.next yet?"``;`
-
-`var` `attr = Ti.UI.createAttributedString({`
-
-`text: text,`
-
-`attributes: [`
-
-`{`
-
-`type: Ti.UI.ATTRIBUTE_STRIKETHROUGH_STYLE,`
-
-`value: Ti.UI.ATTRIBUTE_UNDERLINE_STYLE_THICK,` `// Ignored by Android only displays a single line`
-
-`range: [text.indexOf(``'hyperloop'``), (``'hyperloop'``).length]`
-
-`}`
-
-`]`
-
-`});`
+```javascript
+var text = "Have you tried hyperloop ti.next yet?";
+var attr = Ti.UI.createAttributedString({
+    text: text,
+    attributes: [
+        {
+            type: Ti.UI.ATTRIBUTE_STRIKETHROUGH_STYLE,
+            value: Ti.UI.ATTRIBUTE_UNDERLINE_STYLE_THICK, // Ignored by Android only displays a single line
+            range: [text.indexOf('hyperloop'), ('hyperloop').length]
+        }
+    ]
+});
+```
 
 ### Links
 
@@ -296,51 +243,35 @@ Listen for the link event to respond to a tap on linked text. Prior to Release 4
 
 ![Link](/Images/appc/download/attachments/37538231/Link.png)
 
-`var` `win = Ti.UI.createWindow({`
+```javascript
+var win = Ti.UI.createWindow({
+    backgroundColor: '#ddd',
+});
 
-`backgroundColor:` `'#ddd'``,`
+var text = "Have your tried hyperloop yet?";
+var attr = Ti.UI.createAttributedString({
+    text: text,
+    attributes: [
+        {
+            type: Titanium.UI.ATTRIBUTE_LINK,
+            value: "https://github.com/appcelerator/hyperloop",
+            range: [text.indexOf('hyperloop'), ('hyperloop').length]
+        }
+    ]
+});
 
-`});`
+var label = Ti.UI.createLabel({
+    attributedString: attr
+});
 
-`var` `text =` `"Have your tried hyperloop yet?"``;`
+// Only works for iOS
+label.addEventListener('link', function(e){
+  Ti.API.info(JSON.stringify(e));
+});
 
-`var` `attr = Ti.UI.createAttributedString({`
-
-`text: text,`
-
-`attributes: [`
-
-`{`
-
-`type: Titanium.UI.ATTRIBUTE_LINK,`
-
-`value:` `"https://github.com/appcelerator/hyperloop"``,`
-
-`range: [text.indexOf(``'hyperloop'``), (``'hyperloop'``).length]`
-
-`}`
-
-`]`
-
-`});`
-
-`var` `label = Ti.UI.createLabel({`
-
-`attributedString: attr`
-
-`});`
-
-`// Only works for iOS`
-
-`label.addEventListener(``'link'``,` `function``(e){`
-
-`Ti.API.info(JSON.stringify(e));`
-
-`});`
-
-`win.add(label);`
-
-`win.open();`
+win.add(label);
+win.open();
+```
 
 ## iOS attributes
 
@@ -352,37 +283,24 @@ A ligature combines two or more characters in to a special character. To enable 
 
 ![Ligatures](/Images/appc/download/attachments/37538231/Ligatures.png)
 
-`var` `text =` `"fee-fi-fo-fum\nfee-fi-fo-fum"``;`
-
-`var` `attr = Ti.UI.createAttributedString({`
-
-`text: text,`
-
-`attributes: [`
-
-`{`
-
-`type: Ti.UI.ATTRIBUTE_FONT,`
-
-`value: { fontSize: 24, fontFamily: Cochin-Italic' },`
-
-`range: [0, text.length]`
-
-`},`
-
-`{`
-
-`type: Titanium.UI.ATTRIBUTE_LIGATURE,`
-
-`value: 0,`
-
-`range: [4, 1]`
-
-`}`
-
-`]`
-
-`});`
+```javascript
+var text = "fee-fi-fo-fum\nfee-fi-fo-fum";
+var attr = Ti.UI.createAttributedString({
+    text: text,
+    attributes: [
+        {
+            type: Ti.UI.ATTRIBUTE_FONT,
+            value: { fontSize: 24, fontFamily: Cochin-Italic' },
+            range: [0, text.length]
+        },
+        {
+            type: Titanium.UI.ATTRIBUTE_LIGATURE,
+            value: 0,
+            range: [4, 1]
+        }
+    ]
+});
+```
 
 ### Kerning
 
@@ -390,27 +308,19 @@ Kerning adjusts the spacing between characters. To specify a different kerning f
 
 ![Kerning](/Images/appc/download/attachments/37538231/Kerning.png)
 
-`var` `text =` `"Have you tried hyperloop yet?"``;`
-
-`var` `attr = Ti.UI.createAttributedString({`
-
-`text: text,`
-
-`attributes: [`
-
-`{`
-
-`type: Ti.UI.ATTRIBUTE_KERN,`
-
-`value: 5.0,`
-
-`range: [text.indexOf(``'hyperloop'``), (``'hyperloop'``).length]`
-
-`}`
-
-`]`
-
-`});`
+```javascript
+var text = "Have you tried hyperloop yet?";
+var attr = Ti.UI.createAttributedString({
+    text: text,
+    attributes: [
+        {
+            type: Ti.UI.ATTRIBUTE_KERN,
+            value: 5.0,
+            range: [text.indexOf('hyperloop'), ('hyperloop').length]
+        }
+    ]
+});
+```
 
 ### Stroke text
 
@@ -420,37 +330,24 @@ To change the color of the text, set the type property to Titanium.UI.ATTRIBUTE\
 
 ![Outline](/Images/appc/download/attachments/37538231/Outline.png)
 
-`var` `text =` `"Have you tried hyperloop yet?"``;`
-
-`var` `attr = Ti.UI.createAttributedString({`
-
-`text: text,`
-
-`attributes: [`
-
-`{`
-
-`type: Ti.UI.ATTRIBUTE_STROKE_COLOR,`
-
-`value:` `'red'``,`
-
-`range: [text.indexOf(``'hyperloop'``), (``'hyperloop'``).length]`
-
-`},`
-
-`{`
-
-`type: Ti.UI.ATTRIBUTE_STROKE_WIDTH,`
-
-`value: 3.0,`
-
-`range: [text.indexOf(``'hyperloop'``), (``'hyperloop'``).length]`
-
-`}`
-
-`]`
-
-`});`
+```javascript
+var text = "Have you tried hyperloop yet?";
+var attr = Ti.UI.createAttributedString({
+    text: text,
+    attributes: [
+        {
+            type: Ti.UI.ATTRIBUTE_STROKE_COLOR,
+            value: 'red',
+            range: [text.indexOf('hyperloop'), ('hyperloop').length]
+        },
+        {
+            type: Ti.UI.ATTRIBUTE_STROKE_WIDTH,
+            value: 3.0,
+            range: [text.indexOf('hyperloop'), ('hyperloop').length]
+        }
+    ]
+});
+```
 
 ### Shadow
 
@@ -464,27 +361,19 @@ To add a shadow effect to part of your string, in the attribute dictionary, set 
 
 ![Shadow](/Images/appc/download/attachments/37538231/Shadow.png)
 
-`var` `text =` `"Have you tried hyperloop yet?"``;`
-
-`var` `attr = Ti.UI.createAttributedString({`
-
-`text: text,`
-
-`attributes: [`
-
-`{`
-
-`type: Ti.UI.ATTRIBUTE_SHADOW,`
-
-`value: {color:` `'green'``, offset: {width: 10, height: 5}},`
-
-`range: [0, text.length]`
-
-`}`
-
-`]`
-
-`});`
+```javascript
+var text = "Have you tried hyperloop yet?";
+var attr = Ti.UI.createAttributedString({
+    text: text,
+    attributes: [
+        {
+            type: Ti.UI.ATTRIBUTE_SHADOW,
+            value: {color: 'green', offset: {width: 10, height: 5}},
+            range: [0, text.length]
+        }
+    ]
+});
+```
 
 ### Letterpress effect
 
@@ -494,25 +383,18 @@ To add a letterpress effect to your text, in the attribute dictionary, set the t
 
 ![Letterpress](/Images/appc/download/attachments/37538231/Letterpress.png)
 
-`var` `text =` `"Have you tried hyperloop yet?"``;`
-
-`var` `attr = Ti.UI.createAttributedString({`
-
-`text: text,`
-
-`attributes: [`
-
-`{`
-
-`type: Ti.UI.ATTRIBUTE_TEXT_EFFECT,`
-
-`value: Ti.UI.ATTRIBUTE_LETTERPRESS_STYLE,`
-
-`range: [text.indexOf(``'hyperloop'``), (``'hyperloop'``).length]`
-
-`}`
-
-`});`
+```javascript
+var text = "Have you tried hyperloop yet?";
+var attr = Ti.UI.createAttributedString({
+    text: text,
+    attributes: [
+        {
+            type: Ti.UI.ATTRIBUTE_TEXT_EFFECT,
+            value: Ti.UI.ATTRIBUTE_LETTERPRESS_STYLE,
+            range: [text.indexOf('hyperloop'), ('hyperloop').length]
+        }
+});
+```
 
 ### Text direction
 
@@ -534,27 +416,19 @@ You can logically-OR the previous writing direction constants with one of the be
 
 ![Direction](/Images/appc/download/attachments/37538231/Direction.png)
 
-`var` `text =` `"Have you tried hyperloop yet?"``;`
-
-`var` `attr = Ti.UI.createAttributedString({`
-
-`text: text,`
-
-`attributes: [`
-
-`{`
-
-`type: Ti.UI.ATTRIBUTE_WRITING_DIRECTION,`
-
-`value: Ti.UI.ATTRIBUTE_WRITING_DIRECTION_RIGHT_TO_LEFT | Ti.UI.ATTRIBUTE_WRITING_DIRECTION_OVERRIDE,`
-
-`range: [text.indexOf(``'hyperloop'``), (``'hyperloop'``).length]`
-
-`}`
-
-`]`
-
-`});`
+```javascript
+var text = "Have you tried hyperloop yet?";
+var attr = Ti.UI.createAttributedString({
+    text: text,
+    attributes: [
+        {
+            type: Ti.UI.ATTRIBUTE_WRITING_DIRECTION,
+            value: Ti.UI.ATTRIBUTE_WRITING_DIRECTION_RIGHT_TO_LEFT | Ti.UI.ATTRIBUTE_WRITING_DIRECTION_OVERRIDE,
+            range: [text.indexOf('hyperloop'), ('hyperloop').length]
+        }
+    ]
+});
+```
 
 ### Baseline
 
@@ -564,27 +438,19 @@ To change the baseline (vertical position) of part of your string, in the attrib
 
 ![Baseline](/Images/appc/download/attachments/37538231/Baseline.png)
 
-`var` `text =` `"Have your tried hyperloop yet?"``;`
-
-`var` `attr = Ti.UI.createAttributedString({`
-
-`text: text,`
-
-`attributes: [`
-
-`{`
-
-`type: Ti.UI.ATTRIBUTE_BASELINE_OFFSET,`
-
-`value: 10,`
-
-`range: [text.indexOf(``'hyperloop'``), (``'hyperloop'``).length]`
-
-`}`
-
-`]`
-
-`});`
+```javascript
+var text = "Have your tried hyperloop yet?";
+var attr = Ti.UI.createAttributedString({
+    text: text,
+    attributes: [
+        {
+            type: Ti.UI.ATTRIBUTE_BASELINE_OFFSET,
+            value: 10,
+            range: [text.indexOf('hyperloop'), ('hyperloop').length]
+        }
+    ]
+});
+```
 
 ### Oblique
 
@@ -594,27 +460,19 @@ To skew part of your string, in the attribute dictionary, set the type property 
 
 ![Oblique](/Images/appc/download/attachments/37538231/Oblique.png)
 
-`var` `text =` `"Have your tried hyperloop yet?"``;`
-
-`var` `attr = Ti.UI.createAttributedString({`
-
-`text: text,`
-
-`attributes: [`
-
-`{`
-
-`type: Ti.UI.ATTRIBUTE_OBLIQUENESS,`
-
-`value: 0.25,`
-
-`range: [text.indexOf(``'hyperloop'``), (``'hyperloop'``).length]`
-
-`}`
-
-`]`
-
-`});`
+```javascript
+var text = "Have your tried hyperloop yet?";
+var attr = Ti.UI.createAttributedString({
+    text: text,
+    attributes: [
+        {
+            type: Ti.UI.ATTRIBUTE_OBLIQUENESS,
+            value: 0.25,
+            range: [text.indexOf('hyperloop'), ('hyperloop').length]
+        }
+    ]
+});
+```
 
 ### Stretch
 
@@ -624,24 +482,16 @@ To stretch part of your string horizontally but not vertically, in the attribute
 
 ![Expansion](/Images/appc/download/attachments/37538231/Expansion.png)
 
-`var` `text =` `"Have your tried hyperloop yet?"``;`
-
-`var` `attr = Ti.UI.createAttributedString({`
-
-`text: text,`
-
-`attributes: [`
-
-`{`
-
-`type: Titanium.UI.ATTRIBUTE_EXPANSION,`
-
-`value: 0.25,`
-
-`range: [text.indexOf(``'hyperloop'``), (``'hyperloop'``).length]`
-
-`}`
-
-`]`
-
-`});`
+```javascript
+var text = "Have your tried hyperloop yet?";
+var attr = Ti.UI.createAttributedString({
+    text: text,
+    attributes: [
+        {
+            type: Titanium.UI.ATTRIBUTE_EXPANSION,
+            value: 0.25,
+            range: [text.indexOf('hyperloop'), ('hyperloop').length]
+        }
+    ]
+});
+```

@@ -8,11 +8,15 @@ Examples of how you might interact with instance and static methods of the edito
 
 ### Instance:
 
-`caret_offset = context.editor.caret_offset`
+```
+caret_offset = context.editor.caret_offset
+```
 
 ### Static
 
-`Ruble::Editor.active.insert_as_snippet(text)`
+```
+Ruble::Editor.active.insert_as_snippet(text)
+```
 
 ## Editor Methods
 

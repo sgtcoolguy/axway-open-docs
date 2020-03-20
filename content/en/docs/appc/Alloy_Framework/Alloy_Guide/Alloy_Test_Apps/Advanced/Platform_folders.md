@@ -2,7 +2,7 @@
 
 Demonstrates how to structure an Alloy project with folders that contains platform-specific views.
 
-App folder location
+*App folder location*
 
 _alloy_/test/apps/**advanced/platform\_folders**
 
@@ -10,55 +10,44 @@ You can define platform-specific resources in an Alloy project, including contro
 
 The project structure looks as follows:
 
-App views folder
+*App views folder*
 
-`app/views/`
-
-`├──index.xml`
-
-`└──ios`
-
-`└──index.xml`
+```
+app/views/
+├──index.xml
+└──ios
+   └──index.xml
+```
 
 The views/index.xml file includes a ScrollView element:
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<``ScrollView`  `id``=``"scroll"`  `layout``=``"vertical"``>`
-
-`<``ImageView`  `image``=``"/appc1.png"``/>`
-
-`<``ImageView`  `image``=``"/appc2.png"``/>`
-
-`<``ImageView`  `image``=``"/appc3.png"``/>`
-
-`<``ImageView`  `image``=``"/appc4.png"``/>`
-
-`</``ScrollView``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window>
+        <ScrollView id="scroll" layout="vertical">
+            <ImageView image="/appc1.png"/>
+            <ImageView image="/appc2.png"/>
+            <ImageView image="/appc3.png"/>
+            <ImageView image="/appc4.png"/>
+        </ScrollView>
+    </Window>
+</Alloy>
+```
 
 And the views/ios/index.xml file includes the CoverFlowView component.
 
-app/views/ios/index.xml
+*app/views/ios/index.xml*
 
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<``CoverFlowView`  `id``=``"coverflow"``/>`
-
-`<``Label`  `id``=``"apilabel"``>Ti.UI.iOS.CoverFlowView</``Label``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window>
+        <CoverFlowView id="coverflow"/>
+        <Label id="apilabel">Ti.UI.iOS.CoverFlowView</Label>
+    </Window>
+</Alloy>
+```
 
 ## See also
 

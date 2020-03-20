@@ -34,33 +34,28 @@ Titanium has built-in support for JSON serialization in the JSON namespace. The 
 
 (Remember that in JavaScript, arrays are objects. So these methods work with both arrays and objects.)
 
-`var myObject = {`
+```javascript
+var myObject = {
+  foo: 'bar',
+  stuff: [1,2,3]
+};
 
-`foo:` `'bar'``,`
+//serialize
+var myObjectString = JSON.stringify(myObject);
+// returns '{"foo": "bar","stuff": [1,2,3]}'
 
-`stuff: [``1``,``2``,``3``]`
-
-`};`
-
-`//serialize`
-
-`var myObjectString = JSON.stringify(myObject);`
-
-`// returns '{"foo": "bar","stuff": [1,2,3]}'`
-
-`//deserialize...`
-
-`var myNewObject = JSON.parse(myObjectString);`
-
-`// myNewObject.stuff[1] === 2`
+//deserialize...
+var myNewObject = JSON.parse(myObjectString);
+// myNewObject.stuff[1] === 2
+```
 
 If you have a server-side resource (web service) that has a JSON response format, you can very easily serialize that response inside HTTPClient's onload function. The data returned from your web service will be stored as a property of the HTTPClient [object](#!/api/Titanium.Network.HTTPClient), so it is accessed and parsed like so:
 
-`xhr.onload = function(e) {`
-
-`var myData = JSON.parse(``this``.responseText);`
-
-`};`
+```javascript
+xhr.onload = function(e) {
+  var myData = JSON.parse(this.responseText);
+};
+```
 
 ### Methods cannot be stringified
 
@@ -70,53 +65,40 @@ JSON cannot represent methods. So, the stringify() method will not support conve
 
 You retrieve JSON data using the HTTPClient object. Within the onload callback, this.responseText contains the raw text response from the target URL. It is the property you should use when processing JSON or other plain text data.
 
-`var url =` `"http://example.com/json.txt"``;`
+```javascript
+var url = "http://example.com/json.txt";
+var json;
 
-`var json;`
-
-`var xhr = Ti.Network.createHTTPClient({`
-
-`onload: function() {`
-
-`// parse the retrieved data, turning it into a JavaScript object`
-
-`json = JSON.parse(``this``.responseText);`
-
-`// ...`
-
-`}`
-
-`});`
+var xhr = Ti.Network.createHTTPClient({
+    onload: function() {
+    // parse the retrieved data, turning it into a JavaScript object
+      json = JSON.parse(this.responseText);
+    // ...
+  }
+});
+```
 
 ### Sending JSON data
 
 The HTTPClient's send() method automatically stringifies data for you. So, you don't need to explicitly take this action before submitting data in a POST payload. Then again, since send() accepts null, dictionary, string, File object or Blob data, there's no harm in calling JSON.stringify() on the data first. Should you need to send object data in a GET querystring, you will need to stringify data first. You'll probably need to URL encode the resulting string to safely pass it as a querystring parameter. Use the JavaScript encodeURIComponent() function to do that.
 
-`var blogPost = {`
+```javascript
+var blogPost = {
+  title: 'My awesome blog',
+  body: 'Today I met Susy at the laundromat. Best day EVAR\!'
+};
 
-`title:` `'My awesome blog'``,`
+var xhr = Ti.Network.createHTTPClient({
+  onload: function() {
+    // handle the response
+  }
+});
 
-`body:` `'Today I met Susy at the laundromat. Best day EVAR\!'`
-
-`};`
-
-`var xhr = Ti.Network.createHTTPClient({`
-
-`onload: function() {`
-
-`// handle the response`
-
-`}`
-
-`});`
-
-`xhr.open(``'POST'``,``'http://www.myblog.com/post.php'``);`
-
-`// optional:`
-
-`// blogPost = JSON.stringify(blogPost);`
-
-`xhr.send(blogPost);`
+xhr.open('POST','http://www.myblog.com/post.php');
+// optional:
+// blogPost = JSON.stringify(blogPost);
+xhr.send(blogPost);
+```
 
 ### References and Further Reading
 

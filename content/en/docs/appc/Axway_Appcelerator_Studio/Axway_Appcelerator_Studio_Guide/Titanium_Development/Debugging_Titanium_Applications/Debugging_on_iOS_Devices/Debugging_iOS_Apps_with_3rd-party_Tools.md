@@ -10,23 +10,17 @@ With Titanium SDK 6.x, developers must add a tag to enable the iOS debugger in o
 
 The key is to enable the use-jscore-framework option in tiapp.xml:
 
-`<``tiapp``>`
-
-`...`
-
-`<``ios``>`
-
-`...`
-
-`<``use``-jscore-framework>true</``use``-jscore-framework>`
-
-`...`
-
-`</``ios``>`
-
-`...`
-
-`</``tiapp``>`
+```xml
+<tiapp>
+    ...
+    <ios>
+        ...
+        <use-jscore-framework>true</use-jscore-framework>
+        ...
+    </ios>
+    ...
+</tiapp>
+```
 
 Once enabled, this will force the SDK to use the pre-packaged JSCore framework/engine as the JavaScript engine internally (rather than our older TiCore framework).
 

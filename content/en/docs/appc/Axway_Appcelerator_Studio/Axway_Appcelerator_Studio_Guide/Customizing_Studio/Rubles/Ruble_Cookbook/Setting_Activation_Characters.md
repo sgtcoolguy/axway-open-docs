@@ -8,43 +8,31 @@ In this recipe, we show how it is possible to use a Ruble command to modify the 
 
 Below is a sample to change the activation characters for the CSS editor. The activation characters are set to '.', '#', and ':'. This happens to be the default, so you will not see any change; however, by altering the content of the string in the call to node.put, you can modify the set of characters that will cause content assist to appear automatically.
 
-`require` `'ruble'`
+```
+require 'ruble'
 
-`bundle` `do` `|bundle|`
+bundle do |bundle|
+  bundle.author = 'Kevin Lindsey'
+  bundle.copyright = "Copyright 2011 Appcelerator, Inc. Distributed under the MIT license."
+  bundle.display_name = 'CSS Prefs'
+  bundle.description = "A simple bundle showing how to set CSS preferences"
 
-`bundle.author =` `'Kevin Lindsey'`
+  bundle.menu "CSS Prefs" do |m|
+    m.command "Set Activation Characters" do |cmd|
+      cmd.invoke do |ctx|
+        pluginId = "com.aptana.editor.css"
+        prefKey = "CSS_ACTIVATION_CHARACTERS"
 
-`bundle.copyright =` `"Copyright 2011 Appcelerator, Inc. Distributed under the MIT license."`
+        node = org.eclipse.core.runtime.preferences.InstanceScope.new.getNode pluginId
+        node.put prefKey, ".#:"
+        node.flush
 
-`bundle.display_name =` `'CSS Prefs'`
-
-`bundle.description =` `"A simple bundle showing how to set CSS preferences"`
-
-`bundle.menu` `"CSS Prefs"`  `do` `|m|`
-
-`m.command` `"Set Activation Characters"`  `do` `|cmd|`
-
-`cmd.invoke` `do` `|ctx|`
-
-`pluginId =` `"com.aptana.editor.css"`
-
-`prefKey =` `"CSS_ACTIVATION_CHARACTERS"`
-
-`node = org.eclipse.core.runtime.preferences.InstanceScope.``new``.getNode pluginId`
-
-`node.put prefKey,` `".#:"`
-
-`node.flush`
-
-`CONSOLE.puts` `"CSS activation character preference has been updated"`
-
-`end`
-
-`end`
-
-`end`
-
-`end`
+        CONSOLE.puts "CSS activation character preference has been updated"
+      end
+    end
+  end
+end
+```
 
 ## Plugin Ids and Preference Keys
 

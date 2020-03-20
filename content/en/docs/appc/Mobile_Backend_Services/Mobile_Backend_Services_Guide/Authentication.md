@@ -20,7 +20,9 @@ To authenticate user access to individual MBS data objects within your applicati
 
 The easiest way to authenticate API requests to MBS is to supply an MBS app key with each request as a URL parameter, for example:
 
-`GET https:``//api.cloud.appcelerator.com/v1/places/search.json?key=<YOUR_APP_KEY>`
+```
+GET https://api.cloud.appcelerator.com/v1/places/search.json?key=<YOUR_APP_KEY>
+```
 
 MBS defaults to using the application key over SSL.
 
@@ -46,19 +48,15 @@ Over a non-SSL connection, OAuth is more secure than the application key approac
 
 Below is an example of an OAuth HTTP header:
 
-`Authorization: OAuth oauth_consumer_key=``"0685bd9184jfhq22"``,`
-
-`oauth_token=``""``,`
-
-`oauth_signature_method=``"HMAC-SHA1"``,`
-
-`oauth_signature=``"wOJIO9A2W5mFwDgiDvZbTSMK%2FPY%3D"``,`
-
-`oauth_timestamp=``"137131200"``,`
-
-`oauth_nonce=``"4572616e48616d6d65724c61686176"``,`
-
-`oauth_version=``"1.0"`
+```
+Authorization: OAuth oauth_consumer_key="0685bd9184jfhq22",
+        oauth_token="",
+        oauth_signature_method="HMAC-SHA1",
+        oauth_signature="wOJIO9A2W5mFwDgiDvZbTSMK%2FPY%3D",
+        oauth_timestamp="137131200",
+        oauth_nonce="4572616e48616d6d65724c61686176",
+        oauth_version="1.0"
+```
 
 **To locate your OAuth consumer key and secret in Dashboard**:
 
@@ -78,29 +76,24 @@ Below is an example of an OAuth HTTP header:
 
 Most OAuth libraries that support standard (3-Legged) OAuth—such as those used by Facebook, Twitter, and others—also supports 2-legged OAuth. The following is an example of making a 2-Legged OAuth request using Ruby. Provide your MBS OAuth consumer key and secret for the consumer\_key and consumer\_secret fields. Use an empty string ("") as both the Access Token and Secret.
 
-`require` `'rubygems'`
+```
+require 'rubygems'
+require 'oauth'
 
-`require` `'oauth'`
+# make the consumer out of your secret and key
+consumer_key = ""
+consumer_secret = ""
+consumer = OAuth::Consumer.new(consumer_key, consumer_secret, :site => "http://api.cloud.appcelerator.com")
 
-`# make the consumer out of your secret and key`
+# make the access token from your consumer
+access_token = OAuth::AccessToken.new consumer
 
-`consumer_key =` `""`
+# make a signed request!
+response = access_token.get("/v1/places/search.json")
 
-`consumer_secret =` `""`
-
-`consumer = OAuth::Consumer.``new``(consumer_key, consumer_secret, :site =>` `"http://api.cloud.appcelerator.com"``)`
-
-`# make the access token from your consumer`
-
-`access_token = OAuth::AccessToken.``new` `consumer`
-
-`# make a signed request!`
-
-`response = access_token.get(``"/v1/places/search.json"``)`
-
-`# show the response`
-
-`puts response.body`
+# show the response
+puts response.body
+```
 
 ## Access Control Lists (ACLs)
 

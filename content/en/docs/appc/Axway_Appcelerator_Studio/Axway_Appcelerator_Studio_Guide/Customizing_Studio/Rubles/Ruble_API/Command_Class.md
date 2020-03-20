@@ -8,7 +8,9 @@ Examples of how you might interact with methods of the Command class.
 
 ### Static:
 
-`command = Ruble::Command.``new``(name)`
+```
+command = Ruble::Command.new(name)
+```
 
 ## Command Methods
 

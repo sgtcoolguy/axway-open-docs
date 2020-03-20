@@ -122,19 +122,15 @@ Please open your terminal and type: **appc login.** Login with your credential a
 
 Execute the following commands:
 
-`sudo`  `rm` `-rf ~/.appcelerator`
-
-`sudo`  `rm` `-rf ~/.titanium`
-
-`sudo` `npm uninstall -g titanium`
-
-`sudo` `npm uninstall -g appcelerator`
-
-`sudo` `npm` `install` `-g appcelerator`
-
-`appc use latest`
-
-`appc setup`
+```bash
+sudo rm -rf ~/.appcelerator
+sudo rm -rf ~/.titanium
+sudo npm uninstall -g titanium
+sudo npm uninstall -g appcelerator
+sudo npm install -g appcelerator
+appc use latest
+appc setup
+```
 
 For Windows users, execute the same commands without the sudo command within the administrative command prompt.
 
@@ -160,13 +156,12 @@ For Windows users, execute the same commands without the sudo command within the
 
 2. Install **Appcelerator CLI** via the terminal:
 
-    `sudo` `npm` `install` `-g appcelerator`
-
-    `appc use latest`
-
-    `appc setup`
-
-    `appc login`
+    ```bash
+    sudo npm install -g appcelerator
+    appc use latest
+    appc setup
+    appc login
+    ```
 
 3. **Download and install [Studio](https://platform.appcelerator.com/#/product/studio)**. Installing Studio automatically installs all other prerequisite software.
 
@@ -210,13 +205,12 @@ If you download the Axway Appcelerator Studio and install it, the installation p
 
 3. Execute the following commands via the admin command prompt:
 
-    `npm install -g appcelerator`
-
-    `appc use latest`
-
-    `appc config set proxyServer` `null`
-
-    `appc setup`
+    ```bash
+    npm install -g appcelerator
+    appc use latest
+    appc config set proxyServer null
+    appc setup
+    ```
 
 4. **Download and install [Studio](https://platform.appcelerator.com/#/product/studio)** . Installing Studio automatically installs all other prerequisite software.
 
@@ -302,13 +296,12 @@ Setup Android SDK for Studio on Windows
 
 2. Install **Appcelerator CLI** via the terminal:
 
-    `sudo` `npm` `install` `-g appcelerator`
-
-    `appc use latest`
-
-    `appc setup`
-
-    `appc login`
+    ```bash
+    sudo npm install -g appcelerator
+    appc use latest
+    appc setup
+    appc login
+    ```
 
 3. **Download and install [Studio](https://platform.appcelerator.com/#/product/studio)** . Installing Studio automatically installs all other prerequisite software.
 
@@ -348,13 +341,12 @@ If you download the Appcelerator Studio and install it, the installation process
 
 3. Execute the following commands via the admin command prompt:
 
-    `npm install -g appcelerator`
-
-    `appc use latest`
-
-    `appc config set proxyServer` `null`
-
-    `appc setup`
+    ```bash
+    npm install -g appcelerator
+    appc use latest
+    appc config set proxyServer null
+    appc setup
+    ```
 
 4. **Download and install [Studio](https://platform.appcelerator.com/#/product/studio)** . Installing Studio automatically installs all other prerequisite software.
 
@@ -368,11 +360,11 @@ Linux systems require the GTK windowing system, Node.js, and the JDK to be insta
 
 2. Install CLI using the following commands:
 
-    `sudo` `npm` `install` `-g appcelerator`
-
-    `appc use latest`
-
-    `appc setup`
+    ```bash
+    sudo npm install -g appcelerator
+    appc use latest
+    appc setup
+    ```
 
 3. **Download and install [Studio](https://platform.appcelerator.com/#/product/studio)**.
 

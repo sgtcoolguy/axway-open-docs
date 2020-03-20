@@ -2,7 +2,7 @@
 
 Demonstrates how to preload a SQLite database for your Alloy appliccation using an external SQLite database file.
 
-App Folder Location
+*App Folder Location*
 
 alloy/test/apps/**models/sql\_preload**
 
@@ -20,67 +20,40 @@ The **config.adaptor** object in the Alloy application's model configuration fil
 
 * **db\_name** – The name to for the SQLite database name. If not specified, the database name is set to the base name of the .sqlite file.
 
-app/models/fighters.js
+*app/models/fighters.js*
 
-`exports.definition = {`
-
-`config: {`
-
-`// No need to define columns object, loading the db_file`
-
-`// below will do that for us.`
-
-`"adapter"``: {`
-
-`"type"``:` `"sql"``,`
-
-`// The table name inside the sqlite database to use for`
-
-`// models and collections based on this definition.`
-
-`"collection_name"``:` `"fighters"``,`
-
-`// db_file tells model to use myapp.sqlite file to install`
-
-`// database`
-
-`"db_file"``:` `"/myapp.sqlite"``,`
-
-`// db_name tells model to use the given name as the database`
-
-`// name instead of using the filename. In this case we'll be`
-
-`// using "fighters" instead of "myapp".`
-
-`"db_name"``:` `"fighters"``,`
-
-`// idAttribute tells Alloy/Backbone to use this column in`
-
-`// my table as its unique identifier field. Without`
-
-`// specifying this, Alloy's default behavior is to create`
-
-`// and "alloy_id" field which will uniquely identify your`
-
-`// rows in the table.`
-
-`"idAttribute"``:` `"id"``,`
-
-`// remoteBackup tells Alloy to set the value of the property`
-
-`// Ti.Filesystem.File.remoteBackup. This setting tells iOS`
-
-`// whether or not to allow your database to be backed up to`
-
-`// iCloud or in iTunes backups.`
-
-`"remoteBackup"``:` `false`
-
-`}`
-
-`}`
-
-`};`
+```javascript
+exports.definition = {
+  config: {
+    // No need to define columns object, loading the db_file
+    // below will do that for us.
+    "adapter": {
+      "type": "sql",
+      // The table name inside the sqlite database to use for
+      // models and collections based on this definition.
+      "collection_name": "fighters",
+      // db_file tells model to use myapp.sqlite file to install
+      // database
+      "db_file": "/myapp.sqlite",
+      // db_name tells model to use the given name as the database
+      // name instead of using the filename. In this case we'll be
+      // using "fighters" instead of "myapp".
+      "db_name": "fighters",
+      // idAttribute tells Alloy/Backbone to use this column in
+      // my table as its unique identifier field. Without
+      // specifying this, Alloy's default behavior is to create
+      // and "alloy_id" field which will uniquely identify your
+      // rows in the table.
+      "idAttribute": "id",
+      // remoteBackup tells Alloy to set the value of the property
+      // Ti.Filesystem.File.remoteBackup. This setting tells iOS
+      // whether or not to allow your database to be backed up to
+      // iCloud or in iTunes backups.
+      "remoteBackup": false
+    }
+  }
+};
+```
 
 ## See Also
 

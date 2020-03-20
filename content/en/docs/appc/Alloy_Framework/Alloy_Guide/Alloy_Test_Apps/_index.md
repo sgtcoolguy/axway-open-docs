@@ -30,7 +30,9 @@ Note that some samples demonstrate platform-specific features that only run on c
 
 To import one of the sample application, first clone the Alloy GitHub project locally:
 
-`git clone https:``//github.com/appcelerator/alloy`
+```
+git clone https://github.com/appcelerator/alloy
+```
 
 Once you've selected a test app to build and run, you first create a new "blank" Alloy project, and then copy the contents of the sample folder into the /app folder of the newly created Alloy project. You can do this either using Appcelerator Studio or on the command line using the CLI tools, as explained below.
 
@@ -40,23 +42,22 @@ You can generate a new Alloy project using a test application from the Alloy Git
 
 To create an Alloy application based on a test application, first create a skeleton Titanium project, then run the Alloy new command with the \--testapp <path\_to\_test\_app> option. Pass the option the relative path to the test application after the alloy/test/apps path.
 
-`appc new -t titanium --classic -i com.appc.picker -n AlloyPicker`
-
-`cd` `AlloyPicker`
-
-`appc alloy new --testapp ui``/picker`
+```bash
+appc new -t titanium --classic -i com.appc.picker -n AlloyPicker
+cd AlloyPicker
+appc alloy new --testapp ui/picker
+```
 
 Prior to Alloy 1.7.6, you need to manually copy the source code to the new Titanium project:.
 
-Creating a test project
+*Creating a test project*
 
-`appc` `new` `-t titanium -n picker_test --id com.yourdomain -d . -url yourdomain.com -p all`
-
-`cd picker_test/`
-
-`cp -r <alloy_repo>/test/apps/ui/picker/ app/`
-
-`appc run -p ios`
+```bash
+appc new -t titanium -n picker_test --id com.yourdomain -d . -url yourdomain.com -p all
+cd picker_test/
+cp -r <alloy_repo>/test/apps/ui/picker/ app/
+appc run -p ios
+```
 
 ### Using Appcelerator Studio
 

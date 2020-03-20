@@ -24,31 +24,25 @@ To distinguish between the Windows Phone OS and Windows OS, the Titanium.Platfor
 
 In Alloy, use the formFactor attribute to distinguish between a phone (set to handheld) or tablet (set to tablet).
 
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<``Button`  `formFactor``=``"tablet"`  `onClick``=``"closeWindow"``>Back</``Button``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window>
+        <Button formFactor="tablet" onClick="closeWindow">Back</Button>
+    </Window>
+</Alloy>
+```
 
 As of 5.0.0 of the SDK, you can create an event that can prevent accidental closure of the app due to hitting the back button to many times.
 
-`var` `win = Ti.UI.createWindow(`
-
-`{` `// some code... }`
-
-`);`
-
-`// more code`
-
-`win.addEventListener(``"windows:back"``,` `function``()`
-
-`{ alert(``"Back pressed"``); }`
-
-`);`
+```javascript
+var win = Ti.UI.createWindow(
+  { // some code... }
+);
+// more code
+win.addEventListener("windows:back", function()
+  { alert("Back pressed"); }
+);
+```
 
 ## Command Bar
 
@@ -72,35 +66,23 @@ To create a command bar:
 
 3. Add the command bar to a [Titanium.UI.Window](#!/api/Titanium.UI.Window) object.
 
-`var` `backButton = Ti.UI.Windows.createAppBarButton({`
-
-`icon: Ti.UI.Windows.SystemIcon.BACK`
-
-`}),`
-
-`likeButton = Ti.UI.Windows.createAppBarToggleButton({`
-
-`icon: Ti.UI.Windows.SystemIcon.LIKEDISLIKE`
-
-`}),`
-
-`forwardButton = Titanium.UI.Windows.createAppBarButton({`
-
-`icon: Ti.UI.Windows.SystemIcon.FORWARD`
-
-`}),`
-
-`commandBar = Ti.UI.Windows.createCommandBar({`
-
-`items: [backButton, likeButton, forwardButton]`
-
-`}),`
-
-`win = Ti.UI.createWindow();`
-
-`win.add(commandBar);`
-
-`win.open();`
+```javascript
+var backButton = Ti.UI.Windows.createAppBarButton({
+        icon: Ti.UI.Windows.SystemIcon.BACK
+    }),
+    likeButton = Ti.UI.Windows.createAppBarToggleButton({
+        icon: Ti.UI.Windows.SystemIcon.LIKEDISLIKE
+    }),
+    forwardButton = Titanium.UI.Windows.createAppBarButton({
+        icon: Ti.UI.Windows.SystemIcon.FORWARD
+    }),
+    commandBar = Ti.UI.Windows.createCommandBar({
+        items: [backButton, likeButton, forwardButton]
+    }),
+    win = Ti.UI.createWindow();
+win.add(commandBar);
+win.open();
+```
 
 ## Asset qualifiers
 

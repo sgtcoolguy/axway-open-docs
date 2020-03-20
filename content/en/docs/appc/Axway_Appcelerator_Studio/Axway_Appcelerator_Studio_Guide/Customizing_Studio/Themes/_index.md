@@ -16,11 +16,11 @@ Studio 3 uses a new "theming" system to define the coloring of the IDE across th
 
 Scopes are similar to CSS selectors in that they describe a pattern which is matched against the current location of the cursor in the document. Multiple scopes may apply simultaneously at different levels of specificity. As an example, if we take the following piece of CSS:
 
-`body {`
-
-`background``:` `#000000``;`
-
-`}`
+```
+body {
+    background: #000000;
+}
+```
 
 The entire snippet in a CSS file will have the scope 'source.css'. Individual tokens will have the following scopes applied:
 
@@ -59,35 +59,29 @@ See [Current Theme Scopes](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerat
 
 Rubles may contribute to themes. Use a hash from the token name to a string containing the fg, bg (optional), and font styles (optional). Place the theme addition in a file that will get loaded when the ruble does (for example, bundle.rb). The overall theme color keys of foreground, background, selection, caret, and line highlight are expected to be present as keys, as is the "name" key for the theme name. The rest of the keys are interpreted as token names (if using symbols, "\_" will be changed to "." under the hood for you). Here's an example:
 
-`require` `'ruble/theme'`
+```
+require 'ruble/theme'
 
-`Ruble::Theme.add({`
-
-`:name` `=>` `'example'``,`
-
-`:foreground` `=>` `'#ffffff'``,`
-
-`:background` `=>` `'#000000'``,`
-
-`:selection` `=>` `'#999999'``,`
-
-`:caret` `=>` `'#cccccc'``,`
-
-`:lineHighlight` `=>` `'#cccccc'``,`
-
-`:string_quoted_single` `=> [``'#ff0000'``,` `'#00ff00'``,` `'bold'``,` `'italic'``]`
-
-`})`
+Ruble::Theme.add({
+  :name => 'example',
+  :foreground => '#ffffff',
+  :background =>  '#000000',
+  :selection => '#999999',
+  :caret => '#cccccc',
+  :lineHighlight => '#cccccc',
+  :string_quoted_single => ['#ff0000', '#00ff00', 'bold', 'italic']
+})
+```
 
 ## Themes in Java
 
 In our Java code, we contribute themes via properties files. The key used is the token name, and the values are a list of colors and font styles with the order being significant. The first color in hex is the fg; the second (optional) is the background. We also then take optional font style names such as bold, italic, or underline. A few examples:
 
-`comment.line=#ffff00,#``333333``,italic`
-
-`string=#00ff00`
-
-`invalid.illegal=#521c93,#fffb00,bold`
+```
+comment.line=#ffff00,#333333,italic
+string=#00ff00
+invalid.illegal=#521c93,#fffb00,bold
+```
 
 ## Related topics
 

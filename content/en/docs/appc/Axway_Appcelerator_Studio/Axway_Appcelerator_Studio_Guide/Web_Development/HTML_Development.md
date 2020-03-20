@@ -30,7 +30,7 @@ A project can be created through the File->New->Web Project, or by right-clickin
 
 Once you type in a project name, a 'Next' button is enabled to allow you to select a project template in case you wish to do so.
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083084/html_project_templates.jpg" alt="images/download/attachments/30083084/html_project_templates.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083084/html_project_templates.jpg" alt="images/download/attachments/30083084/html_project_templates.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 Some of those templates will actually call a 'git clone' command to grab the latest project content from a remote site.
 
@@ -73,11 +73,11 @@ The editor provides a code-assist mechanism that displays suggestions by the con
 
 * Typing a letter or part of a word and then Ctrl+Space will bring up any possible completion proposals that start with the character's input. The content pop-up will show proposals for known HTML tags, and also for any HTML code snippets that were contributed by the [HTML Ruble](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Specification/).
 
-    <table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083084/html_template_completion.jpg" alt="images/download/attachments/30083084/html_template_completion.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
+    <table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083084/html_template_completion.jpg" alt="images/download/attachments/30083084/html_template_completion.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 * When inside a tag, the content assist will suggest the relevant options according to the edit-point context.
 
-    <table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083084/html_context_ca.jpg" alt="images/download/attachments/30083084/html_context_ca.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
+    <table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083084/html_context_ca.jpg" alt="images/download/attachments/30083084/html_context_ca.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 ### Auto Indentation & Code Formatting
 
@@ -90,13 +90,12 @@ The HTML code formatter provides control over the new-lines, indentation-levels,
 As of version 3.0.4, the formatter also provides an ability to turn off and turn on formatting for specific sections of code.
 For example:
 
-`<!-- @formatter:off -->`
-
-`<``tr``><``td``>row 1, cell 1</``td``></``tr``>`
-
-`<``tr``><``td``>row 2, cell 1</``td``></``tr``>`
-
-`<!-- @formatter:on -->`
+```xml
+<!-- @formatter:off -->
+<tr><td>row 1, cell 1</td></tr>
+<tr><td>row 2, cell 1</td></tr>
+<!-- @formatter:on -->
+```
 
 Note that the 'off' and 'on' tags are also customizable through the formatter preferences.
 
@@ -105,11 +104,11 @@ Note that the 'off' and 'on' tags are also customizable through the formatter pr
 Studio is bundled with a **Tidy** HTML validator that performs validation on the edited HTML and outputs any warnings and errors to the editor's annotations ruler and the 'Problems View'.
 It's possible to turn off the validation through the preferences, under the 'Validation' page:
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083084/html_validation_pref.jpg" alt="images/download/attachments/30083084/html_validation_pref.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083084/html_validation_pref.jpg" alt="images/download/attachments/30083084/html_validation_pref.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 You can hover over any warning or error that the validation output to see its details:
 
-<table class="confluenceTable"><thead class=""></thead><tfoot class=""></tfoot><tbody><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083084/html_validation.jpg" alt="images/download/attachments/30083084/html_validation.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
+<table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083084/html_validation.jpg" alt="images/download/attachments/30083084/html_validation.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
 ## Previewing
 

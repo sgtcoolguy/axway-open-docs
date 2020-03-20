@@ -44,141 +44,101 @@ Alloy does not support the CSS concept of child or descendent selectors, that is
 
 The following code defines a style sheet (index.tss):
 
-app/styles/index.tss
+*app/styles/index.tss*
 
-`// This is applied to any element with the class attribute assigned to` `"container"`
-
-`".container"``: {`
-
-`backgroundColor:``"white"`
-
-`},`
-
-`// This is applied to` `all` `Labels in the view`
-
-`"Label"``: {`
-
-`width``: Ti.UI.SIZE,`
-
-`height``: Ti.UI.SIZE,`
-
-`color``:` `"#000"``, //` `black`
-
-`transform: Alloy.Globals.rotateLeft // value is defined in the alloy.js file`
-
-`}, `
-
-`// This is only applied to an element with the id attribute assigned to` `"label"`
-
-`"#label"``: {`
-
-`color``:` `"#999"`  `/* gray */`
-
-`}`
+```
+// This is applied to any element with the class attribute assigned to "container"
+".container": {
+  backgroundColor:"white"
+},
+// This is applied to all Labels in the view
+"Label": {
+    width: Ti.UI.SIZE,
+    height: Ti.UI.SIZE,
+    color: "#000", // black
+    transform: Alloy.Globals.rotateLeft // value is defined in the alloy.js file
+},
+// This is only applied to an element with the id attribute assigned to "label"
+"#label": {
+    color: "#999" /* gray */
+}
+```
 
 which pairs to this view markup (index.xml):
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
-
-`<``Window`  `class``=``"container"``>`
-
-`<``Label`  `id``=``"label"`  `onClick``=``"doClick"``>Hello, World</``Label``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window class="container">
+        <Label id="label" onClick="doClick">Hello, World</Label>
+    </Window>
+</Alloy>
+```
 
 In the example code above, the Label object in the view inherits styles from both 'Label' and '#label'. Since '#label' is defined at the id level, the color of the label will be gray ('#999') instead of black ('#000'). For the Label's transform property, the TSS file is using a function assigned to the Alloy.Globals namespace defined in the initializer file:
 
-app/alloy.js
+*app/alloy.js*
 
-`Alloy.Globals.rotateLeft = Ti.UI.create2DMatrix().rotate(-``90``);`
+```javascript
+Alloy.Globals.rotateLeft = Ti.UI.create2DMatrix().rotate(-90);
+```
 
 ### Global styles
 
 You can create a global style file, called app.tss, which applies all styles defined inside it to all views, but does not override the non-global styles or property attributes in the markup. For example, suppose you have the following three files in your project:
 
-styles/app.tss
+*styles/app.tss*
 
-`"Window"``:{`
+```
+"Window":{
+    backgroundColor: 'white',
+    layout: 'vertical'
+}
+"Label":{
+    color: 'gray',
+    textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+    backgroundColor: 'transparent',
+    font: {
+        fontFamily:'Helvetica',
+        fontSize: '12dp',
+        fontStyle: 'normal',
+        fontWeight: 'normal'
+    }
+}
+```
 
-`backgroundColor:` `'white'``,`
+*styles/index.tss*
 
-`layout:` `'vertical'`
+```
+"Window":{
+    backgroundColor: 'blue'
+}
+"Label":{
+    top: 20,
+    left: '25dp',
+    right: '25dp'
+}
+"#subtitle":{
+    width: Ti.UI.FILL,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    font: {
+        fontSize: '16dp',
+        fontWeight: 'bold'
+    }
+}
+```
 
-`}`
+*views/index.xml*
 
-`"Label"``:{`
-
-`color``:` `'gray'``,`
-
-`textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,`
-
-`backgroundColor:` `'transparent'``,`
-
-`font``: {`
-
-`fontFamily:``'Helvetica'``,`
-
-`fontSize:` `'12dp'``,`
-
-`fontStyle:` `'normal'``,`
-
-`fontWeight:` `'normal'`
-
-`}`
-
-`}`
-
-styles/index.tss
-
-`"Window"``:{`
-
-`backgroundColor:` `'blue'`
-
-`}`
-
-`"Label"``:{`
-
-`top``:` `20``,`
-
-`left``:` `'25dp'``,`
-
-`right``:` `'25dp'`
-
-`}`
-
-`"#subtitle"``:{`
-
-`width``: Ti.UI.FILL,`
-
-`textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,`
-
-`font``: {`
-
-`fontSize:` `'16dp'``,`
-
-`fontWeight:` `'bold'`
-
-`}`
-
-`} `
-
-views/index.xml
-
-`<``Alloy``>`
-
-`<``Window`  `titleid``=``"story_title"`  `modal``=``"true"`  `exitOnClose``=``"true"``>`
-
-`<``Label`  `id``=``"subtitle"`  `color``=``"orange"`  `textid``=``"story_subtitle"` `/>`
-
-`<``Label`  `top``=``"25"`  `color``=``"white"`  `textid``=``"story_content"` `/>`
-
-`</``Window``>`
-
-`</``Alloy``> `
+```xml
+<Alloy>
+    <Window titleid="story_title" modal="true" exitOnClose="true">
+        <Label id="subtitle" color="orange" textid="story_subtitle" />
+        <Label top="25" color="white" textid="story_content" />
+    </Window>
+</Alloy>
+```
 
 By default, every view in the project will have white windows with a vertical layout and gray, left-justified, 12-dp Helvetica labels with a transparent background, as defined by the app.tss file.
 
@@ -208,55 +168,33 @@ Alternatively, you can create subfolders, named as the platform, in the styles d
 
 The sample style sheet below defines styles for iPhone, iPad, Android and mobile web devices.
 
-`// Default label`
-
-`"Label"``: {`
-
-`backgroundColor:` `"#000"``,`
-
-`text:` `'Another platform'`
-
-`},`
-
-`// iPhone`
-
-`"Label[platform=ios formFactor=handheld]"``: {`
-
-`backgroundColor:` `"#f00"``,`
-
-`text:` `'iPhone'`
-
-`},`
-
-`// iPad and iPad mini`
-
-`"Label[platform=ios formFactor=tablet]"``: {`
-
-`backgroundColor:` `"#0f0"``,`
-
-`text:` `'iPad'`
-
-`},`
-
-`// Android` `handheld` `and tablet devices`
-
-`"Label[platform=android]"``: {`
-
-`backgroundColor:` `"#00f"``,`
-
-`text:` `'Android'`
-
-`},`
-
-`// Any Mobile Web platform`
-
-`"Label[platform=mobileweb]"``: {`
-
-`backgroundColor:` `"#f0f"``,`
-
-`text:` `'Mobile Web'`
-
-`}`
+```
+// Default label
+"Label": {
+    backgroundColor: "#000",
+    text: 'Another platform'
+},
+// iPhone
+"Label[platform=ios formFactor=handheld]": {
+    backgroundColor: "#f00",
+    text: 'iPhone'
+},
+// iPad and iPad mini
+"Label[platform=ios formFactor=tablet]": {
+    backgroundColor: "#0f0",
+    text: 'iPad'
+},
+// Android handheld and tablet devices
+"Label[platform=android]": {
+    backgroundColor: "#00f",
+    text: 'Android'
+},
+// Any Mobile Web platform
+"Label[platform=mobileweb]": {
+    backgroundColor: "#f0f",
+    text: 'Mobile Web'
+}
+```
 
 ### Custom query styles
 
@@ -276,181 +214,125 @@ The application can pass custom Boolean properties to the Alloy.createController
 
 The controller below defines two functions that create and open an instance of the win2 controller, but each function passes a different property to the controller.
 
-apps/controllers/index.js
+*apps/controllers/index.js*
 
-`function` `openBar (e) {`
+```javascript
+function openBar (e) {
+  Alloy.createController('win2', {'fooBar': true}).getView().open();
+};
 
-`Alloy.createController(``'win2'``, {``'fooBar'``:` `true``}).getView().open();`
-
-`};`
-
-`function` `openBaz (e) {`
-
-`Alloy.createController(``'win2'``, {``'fooBaz'``:` `true``}).getView().open();`
-
-`};`
+function openBaz (e) {
+    Alloy.createController('win2', {'fooBaz': true}).getView().open();
+};
+```
 
 In the TSS file, add the conditional block and assign the if attribute to the property passed to the createController() method. Prefix the property name with the $.args namespace. Based on the property passed to the method, the application displays a different styled label.
 
-app/styles/win2.tss
+*app/styles/win2.tss*
 
-`"#label[if=$.args.fooBar]"``: {`
+```
+"#label[if=$.args.fooBar]": {
+  'text' : 'Foobar',
+  'color' : 'blue'
+}
 
-`'text'` `:` `'Foobar'``,`
-
-`'color'` `:` `'blue'`
-
-`}`
-
-`"#label[if=$.args.fooBaz]"``: {`
-
-`'text'` `:` `'Foobaz'``,`
-
-`'color'` `:` `'red'`
-
-`}`
+"#label[if=$.args.fooBaz]": {
+    'text' : 'Foobaz',
+    'color' : 'red'
+}
+```
 
 In the XML markup, add the if attribute to an element and assign it to the property passed to the createController() method. Prefix the property name with the $.args namespace. Based on the property passed to the method, the application displays a different label.
 
-app/views/win2.xml
+*app/views/win2.xml*
 
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<``Label`  `if``=``"$.args.fooBar"`  `color``=``"blue"``>Foobar</``Label``>`
-
-`<``Label`  `if``=``"$.args.fooBaz"`  `color``=``"red"``>Foobaz</``Label``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window>
+        <Label if="$.args.fooBar" color="blue">Foobar</Label>
+        <Label if="$.args.fooBaz" color="red">Foobaz</Label>
+    </Window>
+</Alloy>
+```
 
 #### Example using conditional statements
 
 In this example, the application defines conditional statements to determine the iPhone device the application is running on. This iPhone application displays a scrolling block of text with a title above it and a caption below it, as illustrated by this XML file:
 
-app/views/index.xml
+*app/views/index.xml*
 
-`<``Alloy``>`
-
-`<``Window``>`
-
-`<``Label`  `id``=``"title"`  `textid``=``"title"``/>`
-
-`<``ScrollView``>`
-
-`<``Label`  `id``=``"content"`  `textid``=``"content"``/>`
-
-`</``ScrollView``>`
-
-`<``Label`  `id``=``"info"``>TextViewer by BluthCo</``Label``>`
-
-`</``Window``>`
-
-`</``Alloy``>`
+```xml
+<Alloy>
+    <Window>
+        <Label id="title" textid="title"/>
+        <ScrollView>
+            <Label id="content" textid="content"/>
+        </ScrollView>
+        <Label id="info">TextViewer by BluthCo</Label>
+    </Window>
+</Alloy>
+```
 
 To take advantage of the various iPhone devices, we need to see if the device is running iOS 7 and above, and whether the iPhone is using the old regular or the latest tall form factor. We can define both of these query statements in the initializer file:
 
-app/alloy.js
+*app/alloy.js*
 
-`Alloy.Globals.isIos7Plus = (OS_IOS && parseInt(Ti.Platform.version.split(``"."``)[``0``]) >=` `7``);`
-
-`Alloy.Globals.iPhoneTall = (OS_IOS && Ti.Platform.osname ==` `"iphone"` `&& Ti.Platform.displayCaps.platformHeight ==` `568``); `
+```javascript
+Alloy.Globals.isIos7Plus = (OS_IOS && parseInt(Ti.Platform.version.split(".")[0]) >= 7);
+Alloy.Globals.iPhoneTall = (OS_IOS && Ti.Platform.osname == "iphone" && Ti.Platform.displayCaps.platformHeight == 568);
+```
 
 In the style file, use these conditional statements to create styles for specific devices. For example, since iOS 7, you can take advantage of the built-in text styles instead of defining all the attribute for a Font object, and since the iPhone 5 (and later) is taller, you need to make the ScrollView longer.
 
-app/styles/index.tss
+*app/styles/index.tss*
 
-`// Default Styles`
-
-`"#content"``: {`
-
-`color``:` `'gray'``,`
-
-`top``:` `'25dp'``,`
-
-`left``:` `'10dp'``,`
-
-`font``: {`
-
-`fontSize:` `'12dp'`
-
-`}`
-
-`},`
-
-`"#info"``: {`
-
-`color``:` `'gray'``,`
-
-`bottom``:` `'20dp'``,`
-
-`font``: {`
-
-`fontSize:` `'9dp'`
-
-`}`
-
-`},`
-
-`"#title"``: {`
-
-`color``:` `'black'``,`
-
-`top``:` `'15dp'``,`
-
-`font``: {`
-
-`fontSize:` `'14dp'``,`
-
-`fontWeight:` `'bold'`
-
-`}`
-
-`},`
-
-`"Window"``: {`
-
-`layout:` `'vertical'``,`
-
-`backgroundColor:` `'white'`
-
-`},`
-
-`"ScrollView"``: {`
-
-`height``:` `'415dp'`
-
-`},`
-
-`// Query styles`
-
-`"#info[if=Alloy.Globals.isIos7Plus]"``: {`
-
-`font``: { textStyle : Ti.UI.TEXT_STYLE_FOOTNOTE }`
-
-`},`
-
-`"#title[if=Alloy.Globals.isIos7Plus]"``: {`
-
-`top``:` `'25dp'``, // compensate for the status bar on iOS` `7`
-
-`font``: { textStyle : Ti.UI.TEXT_STYLE_HEADLINE }`
-
-`},`
-
-`"#content[if=Alloy.Globals.isIos7Plus]"``: {`
-
-`font``: { textStyle : Ti.UI.TEXT_STYLE_CAPTION``1` `}`
-
-`},`
-
-`"ScrollView[if=Alloy.Globals.iPhoneTall]"``: {`
-
-`height``:` `'500dp'`
-
-`}`
+```
+// Default Styles
+"#content": {
+    color: 'gray',
+    top: '25dp',
+    left: '10dp',
+    font: {
+        fontSize: '12dp'
+    }
+},
+"#info": {
+    color: 'gray',
+    bottom: '20dp',
+    font: {
+        fontSize: '9dp'
+    }
+},
+"#title": {
+    color: 'black',
+    top: '15dp',
+    font: {
+        fontSize: '14dp',
+        fontWeight: 'bold'
+    }
+},
+"Window": {
+    layout: 'vertical',
+    backgroundColor: 'white'
+},
+"ScrollView": {
+    height: '415dp'
+},
+// Query styles
+"#info[if=Alloy.Globals.isIos7Plus]": {
+    font: { textStyle : Ti.UI.TEXT_STYLE_FOOTNOTE }
+},
+"#title[if=Alloy.Globals.isIos7Plus]": {
+    top: '25dp', // compensate for the status bar on iOS 7
+    font: { textStyle : Ti.UI.TEXT_STYLE_HEADLINE }
+},
+"#content[if=Alloy.Globals.isIos7Plus]": {
+    font: { textStyle : Ti.UI.TEXT_STYLE_CAPTION1 }
+},
+"ScrollView[if=Alloy.Globals.iPhoneTall]": {
+    height: '500dp'
+}
+```
 
 ## Themes
 
@@ -471,35 +353,23 @@ To create a theme, create a folder called themes in your Alloy app directory. In
 
 To use a theme, add it to your config.json configuration file with "theme" as the key and the name of the theme folder as the value. For example:
 
-`{`
-
-`"global"``: {`
-
-`"theme"``:``"mytheme"`
-
-`},`
-
-`"env:development"``: {},`
-
-`"env:test"``: {},`
-
-`"env:production"``: {},`
-
-`"os:ios"``: {`
-
-`"theme"``:``"green"`
-
-`},`
-
-`"os:android"``: {`
-
-`"theme"``:``"blue"`
-
-`},`
-
-`"dependencies"``: {}`
-
-`}`
+```
+{
+    "global": {
+        "theme":"mytheme"
+    },
+    "env:development": {},
+    "env:test": {},
+    "env:production": {},
+    "os:ios": {
+        "theme":"green"
+    },
+    "os:android": {
+        "theme":"blue"
+    },
+    "dependencies": {}
+}
+```
 
 The theme changes based on the platform. Android uses the 'blue' theme, iOS uses the 'green' theme, and Mobile Web uses the 'mytheme' theme.
 

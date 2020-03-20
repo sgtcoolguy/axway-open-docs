@@ -2,7 +2,7 @@
 
 Demonstrates use of Alloy elements to proxy ListView and TableView controls and their properties.
 
-Example App Source Location
+*Example App Source Location*
 
 You can find this example app in the Alloy repository under [alloy/test/apps/ui/lists\_proxy\_properties](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/lists_proxy_properties). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
 
@@ -44,173 +44,97 @@ For properties that are assigned Titanium proxies, such as Views or Buttons, you
 
 The main application view, lists.xml, is loaded programmatically by the index.js view-controller.
 
-app/controllers/index.js
-
-`var` `major = parseInt(Ti.Platform.version.split(``"."``)[0], 10);`
-
-`if` `(OS_IOS || (OS_ANDROID && major >= 3)) {`
-
-`Alloy.Globals.top = OS_IOS && major >= 7 ? 20 : 0;`
-
-`Alloy.createController(``'lists'``).getView().open();`
-
-`}` `else` `{`
-
-`Alloy.createController(``'not_supported'``).getView().open();`
-
-`}`
-
-app/views/lists.xml
-
-`<``Alloy``>`
-
-`<``TabGroup``>`
-
-`<``Tab`  `title``=``"tableview"``>`
-
-`<``Window``>`
-
-`<``TitleControl``>`
-
-`<``Label`  `class``=``"titleControl"``>TableView</``Label``>`
-
-`</``TitleControl``>`
-
-`<``TableView``>`
-
-`<!-- header and footer views -->`
-
-`<``Require`  `src``=``"wrapper"``/>`
-
-`<!-- TIMOB-11994 prevents the searchbar from showing on iOS -->`
-
-`<!-- search, shorthand with Ti.UI.SearchBar -->`
-
-`<``SearchBar`  `class``=``"search"`  `platform``=``"ios"``/>`
-
-`<!-- search, shorthand with Ti.UI.Android.SearchView -->`
-
-`<``SearchView`  `ns``=``"Ti.UI.Android"`  `class``=``"search"`  `platform``=``"android"``/>`
-
-`<!-- headerPullView -->`
-
-`<``HeaderPullView`  `platform``=``"ios"``>`
-
-`<``View`  `class``=``"pull"``>`
-
-`<``Label`  `color``=``"#F2F4F4"`  `bottom``=``"25dp"``>headerPullView</``Label``>`
-
-`</``View``>`
-
-`</``HeaderPullView``>`
-
-`<``TableViewRow`  `title``=``"row 1"``/>`
-
-`<``TableViewRow`  `title``=``"row 2"``/>`
-
-`<``TableViewRow`  `title``=``"row 3"``/>`
-
-`<``TableViewRow`  `title``=``"row 4"``/>`
-
-`<!-- table section -->`
-
-`<``TableViewSection``>`
-
-`<!-- header and footer views -->`
-
-`<``Require`  `src``=``"wrapper"`  `isSection``=``"true"``/>`
-
-`<``TableViewRow`  `title``=``"row 1.1"``/>`
-
-`<``TableViewRow`  `title``=``"row 1.2"``/>`
-
-`<``TableViewRow`  `title``=``"row 1.3"``/>`
-
-`<``TableViewRow`  `title``=``"row 1.4"``/>`
-
-`</``TableViewSection``>`
-
-`</``TableView``>`
-
-`</``Window``>`
-
-`</``Tab``>`
-
-`<``Tab`  `title``=``"listview"``>`
-
-`<``Window``>`
-
-`<``TitleControl``>`
-
-`<``Label`  `class``=``"titleControl"``>ListView</``Label``>`
-
-`</``TitleControl``>`
-
-`<``ListView``>`
-
-`<!-- header and footer views -->`
-
-`<``Require`  `src``=``"wrapper"``/>`
-
-`<!-- search, shorthand with Ti.UI.SearchBar -->`
-
-`<``SearchBar`  `class``=``"search"`  `platform``=``"ios"``/>`
-
-`<!-- search, shorthand with Ti.UI.Android.SearchView -->`
-
-`<``SearchView`  `ns``=``"Ti.UI.Android"`  `class``=``"search"`  `platform``=``"android"``/>`
-
-`<!-- pullView -->`
-
-`<``PullView`  `platform``=``"ios"``>`
-
-`<``View`  `class``=``"pull"``>`
-
-`<``Label`  `color``=``"#F2F4F4"`  `bottom``=``"25dp"``>pullView</``Label``>`
-
-`</``View``>`
-
-`</``PullView``>`
-
-`<!-- plain section -->`
-
-`<``ListSection``>`
-
-`<``ListItem`  `title``=``"row 1"`  `searchableText``=``"row 1"``/>`
-
-`<``ListItem`  `title``=``"row 2"`  `searchableText``=``"row 2"``/>`
-
-`<``ListItem`  `title``=``"row 3"`  `searchableText``=``"row 3"``/>`
-
-`<``ListItem`  `title``=``"row 4"`  `searchableText``=``"row 4"``/>`
-
-`</``ListSection``>`
-
-`<``ListSection``>`
-
-`<!-- header and footer views -->`
-
-`<``Require`  `src``=``"wrapper"`  `isSection``=``"true"``/>`
-
-`<``ListItem`  `title``=``"row 1.1"`  `searchableText``=``"row 1.1"``/>`
-
-`<``ListItem`  `title``=``"row 1.2"`  `searchableText``=``"row 1.2"``/>`
-
-`<``ListItem`  `title``=``"row 1.3"`  `searchableText``=``"row 1.3"``/>`
-
-`<``ListItem`  `title``=``"row 1.4"`  `searchableText``=``"row 1.4"``/>`
-
-`</``ListSection``>`
-
-`</``ListView``>`
-
-`</``Window``>`
-
-`</``Tab``>`
-
-`</``TabGroup``>`
-
-`</``Alloy``>`
+*app/controllers/index.js*
+
+```javascript
+var major = parseInt(Ti.Platform.version.split(".")[0], 10);
+if (OS_IOS || (OS_ANDROID && major >= 3)) {
+    Alloy.Globals.top = OS_IOS && major >= 7 ? 20 : 0;
+    Alloy.createController('lists').getView().open();
+} else {
+    Alloy.createController('not_supported').getView().open();
+}
+```
+
+*app/views/lists.xml*
+
+```xml
+<Alloy>
+    <TabGroup>
+        <Tab title="tableview">
+            <Window>
+                <TitleControl>
+                    <Label class="titleControl">TableView</Label>
+                </TitleControl>
+                <TableView>
+                    <!-- header and footer views -->
+                    <Require src="wrapper"/>
+                    <!-- TIMOB-11994 prevents the searchbar from showing on iOS -->
+                    <!-- search, shorthand with Ti.UI.SearchBar -->
+                    <SearchBar class="search" platform="ios"/>
+                    <!-- search, shorthand with Ti.UI.Android.SearchView -->
+                    <SearchView ns="Ti.UI.Android" class="search" platform="android"/>
+                    <!-- headerPullView -->
+                    <HeaderPullView platform="ios">
+                        <View class="pull">
+                            <Label color="#F2F4F4" bottom="25dp">headerPullView</Label>
+                        </View>
+                    </HeaderPullView>
+                    <TableViewRow title="row 1"/>
+                    <TableViewRow title="row 2"/>
+                    <TableViewRow title="row 3"/>
+                    <TableViewRow title="row 4"/>
+                    <!-- table section -->
+                    <TableViewSection>
+                        <!-- header and footer views -->
+                        <Require src="wrapper" isSection="true"/>
+                        <TableViewRow title="row 1.1"/>
+                        <TableViewRow title="row 1.2"/>
+                        <TableViewRow title="row 1.3"/>
+                        <TableViewRow title="row 1.4"/>
+                    </TableViewSection>
+                </TableView>
+            </Window>
+        </Tab>
+        <Tab title="listview">
+            <Window>
+                <TitleControl>
+                    <Label class="titleControl">ListView</Label>
+                </TitleControl>
+                <ListView>
+                    <!-- header and footer views -->
+                    <Require src="wrapper"/>
+                    <!-- search, shorthand with Ti.UI.SearchBar -->
+                    <SearchBar class="search" platform="ios"/>
+                    <!-- search, shorthand with Ti.UI.Android.SearchView -->
+                    <SearchView ns="Ti.UI.Android" class="search" platform="android"/>
+                    <!-- pullView -->
+                    <PullView platform="ios">
+                        <View class="pull">
+                            <Label color="#F2F4F4" bottom="25dp">pullView</Label>
+                        </View>
+                    </PullView>
+                    <!-- plain section -->
+                    <ListSection>
+                        <ListItem title="row 1" searchableText="row 1"/>
+                        <ListItem title="row 2" searchableText="row 2"/>
+                        <ListItem title="row 3" searchableText="row 3"/>
+                        <ListItem title="row 4" searchableText="row 4"/>
+                    </ListSection>
+                    <ListSection>
+                        <!-- header and footer views -->
+                        <Require src="wrapper" isSection="true"/>
+                        <ListItem title="row 1.1" searchableText="row 1.1"/>
+                        <ListItem title="row 1.2" searchableText="row 1.2"/>
+                        <ListItem title="row 1.3" searchableText="row 1.3"/>
+                        <ListItem title="row 1.4" searchableText="row 1.4"/>
+                    </ListSection>
+                </ListView>
+            </Window>
+        </Tab>
+    </TabGroup>
+</Alloy>
+```
 
 ## See also
 

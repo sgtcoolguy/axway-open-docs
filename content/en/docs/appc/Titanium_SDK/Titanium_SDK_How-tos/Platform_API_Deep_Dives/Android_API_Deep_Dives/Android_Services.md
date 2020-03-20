@@ -114,67 +114,50 @@ To retrieve extras sent with the intent, call the intent's hasExtra() method and
 
 The example below checks for EXTRA\_TEXT data sent with the intent.
 
-`var` `extra;`
-
-`if` `(intent.hasExtra(Ti.Android.EXTRA_TEXT) && (extra = intent.getStringExtra(Ti.Android.EXTRA_TEXT))) {`
-
-`// Do something with the extra`
-
-`}`
+```javascript
+var extra;
+if (intent.hasExtra(Ti.Android.EXTRA_TEXT) && (extra = intent.getStringExtra(Ti.Android.EXTRA_TEXT))) {
+    // Do something with the extra
+}
+```
 
 The example below demonstrates the usage of some of the service APIs. The service monitors some of its events and stops itself after ten iterations.
 
-someService.js
+*someService.js*
 
-`// Grab a reference to the service and its intent`
+```javascript
+// Grab a reference to the service and its intent
+var service = Ti.Android.currentService;
+var serviceIntent = service.intent;
 
-`var` `service = Ti.Android.currentService;`
+Ti.API.info(service.serviceInstanceId);
 
-`var` `serviceIntent = service.intent;`
+// Bind event listeners to the service
+if (!Ti.App.Properties.getBool('bind')) {
 
-`Ti.API.info(service.serviceInstanceId);`
+    Ti.App.Properties.setInt('inc', 0);
 
-`// Bind event listeners to the service`
+    service.addEventListener('taskremoved', function(){
+        Ti.API.info('**************************** taskremoved fired');
+    });
+    service.addEventListener('pause', function(){
+        Ti.API.info('**************************** pause fired');
+    });
+    service.addEventListener('resume', function(){
+        Ti.API.info('**************************** resume fired');
+    });
 
-`if` `(!Ti.App.Properties.getBool(``'bind'``)) {`
+    Ti.App.Properties.setBool('bind', true);
+}
 
-`Ti.App.Properties.setInt(``'inc'``, 0);`
-
-`service.addEventListener(``'taskremoved'``,` `function``(){`
-
-`Ti.API.info(``'**************************** taskremoved fired'``);`
-
-`});`
-
-`service.addEventListener(``'pause'``,` `function``(){`
-
-`Ti.API.info(``'**************************** pause fired'``);`
-
-`});`
-
-`service.addEventListener(``'resume'``,` `function``(){`
-
-`Ti.API.info(``'**************************** resume fired'``);`
-
-`});`
-
-`Ti.App.Properties.setBool(``'bind'``,` `true``);`
-
-`}`
-
-`var` `count = Ti.App.Properties.getInt(``'inc'``) || 0;`
-
-`if` `(count >= 10) {`
-
-`// Stop the service`
-
-`service.stop(serviceIntent);`
-
-`}` `else` `{`
-
-`Ti.App.Properties.setInt(``'inc'``, ++count);`
-
-`}`
+var count = Ti.App.Properties.getInt('inc') || 0;
+if (count >= 10) {
+    // Stop the service
+    service.stop(serviceIntent);
+} else {
+    Ti.App.Properties.setInt('inc', ++count);
+}
+```
 
 ### Declare a service
 
@@ -186,21 +169,17 @@ For both started and bound services, you need to declare the JavaScript file as 
 
 2. For each service, add a <service> element as a child of the <services> element. Set the url attribute to the URL of the JavaScript file and the type attribute to interval. Currently, interval is the only supported type, which indicates the code will be run at intervals. The interval is set when creating the service intent.
 
-tiapp.xml
+*tiapp.xml*
 
-`<``ti``:app>`
-
-`<``android``>`
-
-`<``services``>`
-
-`<``service`  `url``=``'someService.js'`  `type``=``'interval'``/>`
-
-`</``services``>`
-
-`</``android``>`
-
-`</``ti``:app>`
+```xml
+<ti:app>
+    <android>
+        <services>
+            <service url='someService.js' type='interval'/>
+        </services>
+    </android>
+</ti:app>
+```
 
 ### Started services
 
@@ -220,21 +199,21 @@ To set the interval for the service, use the putExtra () method, and set the pro
 
 The example below creates an intent to call the service every ten seconds.
 
-`var` `SECONDS = 10;` `// every 10 seconds`
-
-`var` `intent = Titanium.Android.createServiceIntent({`
-
-`url:` `'someService.js'`
-
-`});`
-
-`intent.putExtra(``'interval'``, SECONDS * 1000);` `// Needs to be milliseconds `
+```javascript
+var SECONDS = 10; // every 10 seconds
+var intent = Titanium.Android.createServiceIntent({
+  url: 'someService.js'
+});
+intent.putExtra('interval', SECONDS * 1000); // Needs to be milliseconds
+```
 
 #### Start a started service
 
 To start a started service, pass the Titanium.Android.startService() method a service intent object.
 
-`Titanium.Android.startService(intent);`
+```
+Titanium.Android.startService(intent);
+```
 
 #### Stop a started service
 
@@ -242,9 +221,13 @@ To stop a started service from the application, pass the Titanium.Android.stopSe
 
 The service can stop itself by retrieving a reference to itself and calling its stop() method.
 
-`Ti.Android.currentService.stop();`
+```
+Ti.Android.currentService.stop();
+```
 
-`Titanium.Android.stopService(intent);`
+```
+Titanium.Android.stopService(intent);
+```
 
 #### Monitor started services
 
@@ -252,15 +235,13 @@ The application can see if the service is still running by calling the Titanium.
 
 The example below checks to see if the intent was used to start a service that is currently running. If not, it will start the service.
 
-`if` `(!Ti.Android.isServiceRunning(intent)) {`
-
-`Ti.Android.startService(intent);`
-
-`}` `else` `{`
-
-`Ti.API.info(``'Service is already running.'``);`
-
-`}`
+```
+if (!Ti.Android.isServiceRunning(intent)) {
+    Ti.Android.startService(intent);
+} else {
+    Ti.API.info('Service is already running.');
+}
+```
 
 ### Bound services
 
@@ -284,15 +265,13 @@ To set the interval for the service, use the putExtra () method, and set the pro
 
 The example below creates an intent to call the service every ten seconds, then creates the service object.
 
-`var` `intent = Ti.Android.createServiceIntent({`
-
-`url:` `'someService.js'`
-
-`});`
-
-`intent.putExtra(``'interval'``, SECONDS * 1000);`
-
-`var` `service = Ti.Android.createService(intent);`
+```javascript
+var intent = Ti.Android.createServiceIntent({
+  url: 'someService.js'
+});
+intent.putExtra('interval', SECONDS * 1000);
+var service = Ti.Android.createService(intent);
+```
 
 #### Manage the bound service
 
@@ -300,17 +279,18 @@ Use the Titanium.Android.Service API to manage some aspects of the bound service
 
 **To start or stop the service**, call the Service object's start() or stop() methods, respectively.
 
-`service.start();`
-
-`// Do stuff`
-
-`service.stop();`
+```
+service.start();
+// Do stuff
+service.stop();
+```
 
 **To monitor when the service starts or stops**, the application can bind event listeners to the start and stop events.
 
-`service.addEventListener(``'start'``, doSomething);`
-
-`service.addEventListener(``'stop'``, doSomethingElse);`
+```
+service.addEventListener('start', doSomething);
+service.addEventListener('stop', doSomethingElse);
+```
 
 ## Simple service example
 
@@ -320,7 +300,9 @@ This example shows a simple started service which does nothing other than write 
 
 Remember, these simple services execute code on an interval. The code that executes is defined by you in a JavaScript file, just like when you define other Titanium executable code. Create an application and add a file named (for this example) logservice.js into the app/lib folder for Alloy projects or Resources folder for classic Titanium projects. Open the logservice.js file in an editor and add the following code:
 
-`Titanium.API.info(``'Hello World, I am a Service'``);`
+```
+Titanium.API.info('Hello World, I am a Service');
+```
 
 You can do all sorts of things in that JavaScript file, and everything you put in it will run every **N** milliseconds.
 
@@ -332,23 +314,22 @@ You need to let the Titanium builder know that this Javascript file you just cre
 
 2. Next, add a <service> element under the <services> element. Assign the url attribute the name of the JavaScript file, which is logservice.js and assign the type attribute to interval
 
-`<``ti``:app>`
+```xml
+<ti:app>
+  <android xmlns:android="http://schemas.android.com/apk/res/android">
+    <services>
+      <service url="logservice.js" type="interval"/>
+    </services>
+  </android>
 
-`<``android`  `xmlns:android``=``"http://schemas.android.com/apk/res/android"``>`
-
-`<``services``>`
-
-`<``service`  `url``=``"logservice.js"`  `type``=``"interval"``/>`
-
-`</``services``>`
-
-`</``android``>`
-
-`</``ti``:app>`
+</ti:app>
+```
 
 At this point, you've successfully defined the service. If you were to build your app right now and check the generated AndroidManifest.xml in the build/android folder, you would see an entry for the service:
 
-`<``service`  `android:name``=``"com.billdawson.logservicedemo.LogserviceService"``/>`
+```xml
+<service android:name="com.billdawson.logservicedemo.LogserviceService"/>
+```
 
 ### Write some code to start the service
 
@@ -358,19 +339,19 @@ For purposes of this example, all of the code examples that follow can just be p
 
 First, create an intent in which we specify the JavaScript file to start using the url property, and the interval (in milliseconds) at which it should run the code in its JavaScript file. Use Ti.Android.createServiceIntent() to make the intent, then add the interval information to it using the intent's putExtra() method:
 
-`var` `SECONDS = 10;` `// every 10 seconds`
-
-`var` `intent = Titanium.Android.createServiceIntent({`
-
-`url:` `'logservice.js'`
-
-`});`
-
-`intent.putExtra(``'interval'``, SECONDS * 1000);` `// Needs to be milliseconds`
+```javascript
+var SECONDS = 10; // every 10 seconds
+var intent = Titanium.Android.createServiceIntent({
+  url: 'logservice.js'
+});
+intent.putExtra('interval', SECONDS * 1000); // Needs to be milliseconds
+```
 
 With the intent in hand, we need to tell Android to start the service defined by the intent:
 
-`Titanium.Android.startService(intent);`
+```
+Titanium.Android.startService(intent);
+```
 
 That's it! Go ahead and start your application in an emulator or on your phone.
 
@@ -378,13 +359,12 @@ That's it! Go ahead and start your application in an emulator or on your phone.
 
 Notice we did not write any code yet to actually **stop** the service once it's running. You can do that by calling Titanium.Android.stopService() by passing it an intent that has the same information (or even the same intent object). (You do not need to set the "interval" extra in the intent if you are just stopping the service.)
 
-`var` `intent = Titanium.Android.createServiceIntent({`
-
-`url:` `'logservice.js'`
-
-`});`
-
-`Titanium.Android.stopService(intent);`
+```javascript
+var intent = Titanium.Android.createServiceIntent({
+  url: 'logservice.js'
+});
+Titanium.Android.stopService(intent);
+```
 
 ### Testing notes
 

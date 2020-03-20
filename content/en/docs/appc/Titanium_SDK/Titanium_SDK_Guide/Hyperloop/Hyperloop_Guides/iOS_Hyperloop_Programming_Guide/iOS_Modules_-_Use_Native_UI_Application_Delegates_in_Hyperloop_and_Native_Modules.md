@@ -26,27 +26,24 @@ Say you want to configure an API when your application finished booting. The [ap
 
 ### Native Module
 
-`- (``void``)_configure`
-
-`{`
-
-`[``super` `_configure];`
-
-`[[TiApp app] registerApplicationDelegate:self];`
-
-`}`
+```
+- (void)_configure
+{
+  [super _configure];
+  [[TiApp app] registerApplicationDelegate:self];
+}
+```
 
 The \_configure selector is available in your module class, e.g. "FacebookModule.m" for [Ti.Facebook](#!/api/Titanium.Facebook). Please ensure to also call the super-class to avoid state glitches in your module.
 
 Now that you subscribed to the application delegate, you can use all delegate methods like you would do in a native application. Example for didFinishLaunchingWithOptions:
 
-`- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`
-
-`{`
-
-`NSLog(@``"[INFO] Hey there!"``);`
-
-`} `
+```
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  NSLog(@"[INFO] Hey there!");
+}
+```
 
 This will log a simple message with an INFO log-level (remember, there are _TRACE_, _INFO_, _WARN_ and _ERROR_). Here you would configure your native SDK and your module would be ready to go. And this is it! Update your modules today and make use of the new core-technologies. But please note that you need to bump the minimum SDK to 7.1.0 in case you are using this solution. Older SDK's will not crash but ignore the setting because the registerApplicationDelegate: selector will be nil.
 
@@ -54,54 +51,37 @@ This will log a simple message with an INFO log-level (remember, there are _TRAC
 
 To use the new feature in Hyperloop, subscribe with the registerApplicationDelegate method as well, create the delegate and configure the methods you need. This will likely also be handled internally in the future, so that you only need to require the utility and it does everything else for you.
 
-`var` `TiApp = require(``'Titanium/TiApp'``);`
+```javascript
+var TiApp = require('Titanium/TiApp');
+var UIApplicationDelegate = require('UIKit').UIApplicationDelegate;
 
-`var` `UIApplicationDelegate = require(``'UIKit'``).UIApplicationDelegate;`
+var TiAppApplicationDelegate = Hyperloop.defineClass('TiAppApplicationDelegate', 'NSObject', UIApplicationDelegate);
 
-`var` `TiAppApplicationDelegate = Hyperloop.defineClass(``'TiAppApplicationDelegate'``,` `'NSObject'``, UIApplicationDelegate);`
+TiAppApplicationDelegate.addMethod({
+  selector: 'application:didFinishLaunchingWithOptions:',
+  instance: true,
+  returnType: 'BOOL',
+  arguments: [
+    'UIApplication',
+    'NSDictionary'
+  ],
+  callback: function(application, options) {
+    if (this.didFinishLaunchingWithOptions) {
+      return this.didFinishLaunchingWithOptions(application, options);
+    }
+    return true;
+  }
+});
 
-`TiAppApplicationDelegate.addMethod({`
+var applicationDelegate = new TiAppApplicationDelegate();
 
-`selector:` `'application:didFinishLaunchingWithOptions:'``,`
+// Called when the application finished launching. Initialize SDK's here for example
+applicationDelegate.didFinishLaunchingWithOptions = function(application, options) {
+  Ti.API.info('Hey there!');
+  return true
+};
 
-`instance:` `true``,`
-
-`returnType:` `'BOOL'``,`
-
-`arguments: [`
-
-`'UIApplication'``,`
-
-`'NSDictionary'`
-
-`],`
-
-`callback:` `function``(application, options) {`
-
-`if` `(``this``.didFinishLaunchingWithOptions) {`
-
-`return`  `this``.didFinishLaunchingWithOptions(application, options);`
-
-`}`
-
-`return`  `true``;`
-
-`}`
-
-`});`
-
-`var` `applicationDelegate =` `new` `TiAppApplicationDelegate();`
-
-`// Called when the application finished launching. Initialize SDK's here for example`
-
-`applicationDelegate.didFinishLaunchingWithOptions =` `function``(application, options) {`
-
-`Ti.API.info(``'Hey there!'``);`
-
-`return`  `true`
-
-`};`
-
-`TiApp.app().registerApplicationDelegate(applicationDelegate);`
+TiApp.app().registerApplicationDelegate(applicationDelegate);
+```
 
 And that's it! If you have further questions, let us know!

@@ -6,7 +6,7 @@ One challenge that comes up from time to time is how to hide and show content in
 
 Here’s a simple example that shows a View that has two visual states — one where it shows the user is logged in and one when they’re not.
 
-In this example, there’s some additional TSS that’s used allowing views and windows to use a vertical layout and the View tag has been set to have a default height and width of Ti.UI.SIZE.
+{{% alert title="💡 Hint" color="info" %}}In this example, there’s some additional TSS that’s used allowing views and windows to use a vertical layout and the View tag has been set to have a default height and width of Ti.UI.SIZE.{{% /alert %}}
 
 ```xml
 <Alloy>

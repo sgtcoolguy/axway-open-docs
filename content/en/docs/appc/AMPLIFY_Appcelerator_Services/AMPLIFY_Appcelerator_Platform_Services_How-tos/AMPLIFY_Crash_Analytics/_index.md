@@ -20,9 +20,9 @@
 
 * [Known issue](#known-issue)
 
-*Subscription Required!*
+{{% alert title="❗️ Warning" color="danger" %}}*Subscription Required!*
 
-This AMPLIFY Service feature requires a Pro, Enterprise, or purchased subscription.
+This AMPLIFY Service feature requires a Pro, Enterprise, or purchased subscription.{{% /alert %}}
 
 ## Introduction
 
@@ -36,7 +36,7 @@ The AMPLIFY Crash Analytics (ACA) module provides you with real-time crash repor
 
 * Appcelerator Studio (Studio)
 
-ACA only supports the Android and iOS platforms.
+{{% alert title="⚠️ Warning" color="primary" %}}ACA only supports the Android and iOS platforms.{{% /alert %}}
 
 ## Installation and setup
 
@@ -76,7 +76,7 @@ var apm = require('com.appcelerator.apm');
 apm.init();
 ```
 
-You may need to do a thorough code update to replace the older variable apm with aca.
+{{% alert title="⚠️ Warning" color="primary" %}}You may need to do a thorough code update to replace the older variable apm with aca.{{% /alert %}}
 
 ### Create a Breadcrumb Trail
 
@@ -117,7 +117,7 @@ switch (state) {
 
 These breadcrumbs are collected and passed to the ACA.
 
-Breadcrumbs will only be reported in the case of a handled exception or a crash (they won't be found in the Dashboard). From ACA 1.4, breadcrumb events will be sent to the platform only when a crash occurs or when the crash event is sent to the platform.
+{{% alert title="⚠️ Warning" color="primary" %}}Breadcrumbs will only be reported in the case of a handled exception or a crash (they won't be found in the Dashboard). From ACA 1.4, breadcrumb events will be sent to the platform only when a crash occurs or when the crash event is sent to the platform.{{% /alert %}}
 
 ![breadcrumbs](/Images/appc/download/attachments/58726528/breadcrumbs.png)
 

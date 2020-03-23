@@ -57,7 +57,7 @@ This validation can be used to determine which of the extensions triggered warni
 Hovering over the extension line displays the error/warning message that the PHP process outputted when it was validating.
 In general, any fatal extension should be commented out to allow the PHP process function currently.
 
-This process is no a "100% bullet-proof", and in some cases where the PHP process fails to load, a deeper investigation might be needed to determine the cause.
+{{% alert title="⚠️ Warning" color="primary" %}}This process is no a "100% bullet-proof", and in some cases where the PHP process fails to load, a deeper investigation might be needed to determine the cause.{{% /alert %}}
 
 ## The Script Debugger
 

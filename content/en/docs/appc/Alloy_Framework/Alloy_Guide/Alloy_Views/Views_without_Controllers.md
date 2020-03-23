@@ -54,7 +54,7 @@ Then, the controller can use $.button1, $.button2 and $.button3 to access each i
 
 4. Use the add() method to add the view to a view component in the controller. Pass the instance of the controller-less view to the method. The view component that wants to add the controller-less view should call the method.
 
-Unlike other style dictionaries in Alloy, when using the updateViews() method, you can only apply styles using IDs. Class and view component styles do not work with this method.
+{{% alert title="⚠️ Warning" color="primary" %}}Unlike other style dictionaries in Alloy, when using the updateViews() method, you can only apply styles using IDs. Class and view component styles do not work with this method.{{% /alert %}}
 
 For example, the following view defines an image with a label below it:
 

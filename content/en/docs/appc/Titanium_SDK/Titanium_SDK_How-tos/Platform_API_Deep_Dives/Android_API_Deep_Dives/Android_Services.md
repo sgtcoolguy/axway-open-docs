@@ -110,7 +110,7 @@ Use the Titanium.Android.Service API to manage to the service. To get a referenc
 
 * Monitor the taskremoved event to know if the application that started the service is destroyed. Only used with started services.
 
-To retrieve extras sent with the intent, call the intent's hasExtra() method and pass it the property to retrieve to verify the data exists, then call one of the intent's get\*Extra() methods and pass it the same property name to retrieve the data.
+{{% alert title="💡 Hint" color="info" %}}To retrieve extras sent with the intent, call the intent's hasExtra() method and pass it the property to retrieve to verify the data exists, then call one of the intent's get\*Extra() methods and pass it the same property name to retrieve the data.
 
 The example below checks for EXTRA\_TEXT data sent with the intent.
 
@@ -119,7 +119,7 @@ var extra;
 if (intent.hasExtra(Ti.Android.EXTRA_TEXT) && (extra = intent.getStringExtra(Ti.Android.EXTRA_TEXT))) {
     // Do something with the extra
 }
-```
+```{{% /alert %}}
 
 The example below demonstrates the usage of some of the service APIs. The service monitors some of its events and stops itself after ten iterations.
 
@@ -219,11 +219,11 @@ Titanium.Android.startService(intent);
 
 To stop a started service from the application, pass the Titanium.Android.stopService() method the service intent object that was passed to the startService() method.
 
-The service can stop itself by retrieving a reference to itself and calling its stop() method.
+{{% alert title="💡 Hint" color="info" %}}The service can stop itself by retrieving a reference to itself and calling its stop() method.
 
 ```
 Ti.Android.currentService.stop();
-```
+```{{% /alert %}}
 
 ```
 Titanium.Android.stopService(intent);

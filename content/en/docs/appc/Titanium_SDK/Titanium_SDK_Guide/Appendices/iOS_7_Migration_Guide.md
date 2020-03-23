@@ -58,7 +58,7 @@ This guide discusses the changes since Release 3.1.3 to support iOS 7. Even thou
 
 Release 3.1.3 targets and supports 32-bit iOS apps, which will run correctly on all Apple iOS devices including the 64-bit iPhone 5S. A future SDK will provide support for 64-bit iOS apps.
 
-Unless otherwise noted, all new features and changes were introduced in Release 3.1.3.
+{{% alert title="⚠️ Warning" color="primary" %}}Unless otherwise noted, all new features and changes were introduced in Release 3.1.3.{{% /alert %}}
 
 ### Summary of changes to the Titanium SDK
 
@@ -170,7 +170,7 @@ For iOS 7, you need to supply the following icon files (if you are using the def
 | Universal non-retina | Spotlight & settings | 40 x 40 | 72 | appicon-Small-40.png | Resources or Resources/iphone |
 | Universal retina | Spotlight & settings | 80 x 80 | 72 | appicon-Small-40@2x.png | Resources or Resources/iphone |
 
-iOS 7 does not support non-retina iPhones and iPods.
+{{% alert title="⚠️ Warning" color="primary" %}}iOS 7 does not support non-retina iPhones and iPods.{{% /alert %}}
 
 ## New windows architecture
 

@@ -50,7 +50,7 @@ You might add this to the top of your file. With broader logging levels containi
 
 The output will be put to the Scripting Console and is theme-able as per the regular theme guidelines for "console" scopes.
 
-The logging level will persist at the newly set level until it is explicitly changed again.
+{{% alert title="⚠️ Warning" color="primary" %}}The logging level will persist at the newly set level until it is explicitly changed again.{{% /alert %}}
 
 ## Logging to the console
 

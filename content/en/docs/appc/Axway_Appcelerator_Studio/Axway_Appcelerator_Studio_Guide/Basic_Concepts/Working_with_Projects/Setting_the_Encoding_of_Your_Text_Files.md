@@ -14,7 +14,7 @@ Studio ships with UTF-8 encoding enabled by default, but you may wish to change 
 
 ## Setting the encoding of a specific file
 
-Some files, like XML, have an encoding setting at the top of the file. This value will take precedence over any other value set in preferences.
+{{% alert title="⚠️ Warning" color="primary" %}}Some files, like XML, have an encoding setting at the top of the file. This value will take precedence over any other value set in preferences.{{% /alert %}}
 
 1. Select the file you are interested in from the **Project Explorer** view
 

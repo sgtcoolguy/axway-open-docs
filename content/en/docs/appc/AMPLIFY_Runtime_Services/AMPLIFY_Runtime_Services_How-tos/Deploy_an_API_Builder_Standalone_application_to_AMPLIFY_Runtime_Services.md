@@ -84,9 +84,9 @@ $ acs new myproject --force
 $ acs config --set PORT=8080 myproject
 ```
 
-*Important*
+{{% alert title="⚠️ Warning" color="primary" %}}*Important*
 
-You may already have an existing project, "myproject". If you do, and you know that it is not being used and you wish to delete it, or if you want to delete this example project on ARS, you can execute: **acs remove myproject**.
+You may already have an existing project, "myproject". If you do, and you know that it is not being used and you wish to delete it, or if you want to delete this example project on ARS, you can execute: **acs remove myproject**.{{% /alert %}}
 
 ## Build a Docker image
 
@@ -109,9 +109,9 @@ To publish the Docker image of your project to the Platform, execute the followi
 $ acs publish myproject --delete_oldest --force --image demo-image --app_version 0.1
 ```
 
-*Important*
+{{% alert title="⚠️ Warning" color="primary" %}}*Important*
 
-It can take up to 10 minutes for your project to be deployed and your service to be accessible. You should [check the publish status](#checkpublishstatus) before trying to access your service in the cloud.
+It can take up to 10 minutes for your project to be deployed and your service to be accessible. You should [check the publish status](#checkpublishstatus) before trying to access your service in the cloud.{{% /alert %}}
 
 Once the image is written, note the URL, as you will use it to test your API, for example:
 

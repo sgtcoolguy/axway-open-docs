@@ -60,7 +60,7 @@ To manually install VirtualBox, see the following:
 
 * For Windows, Genymotion provides two installers: a ready-to-run installer that provides VirtualBox and a standard installer that does not. Genymotion recommends using the ready-to-run installer. If you want to manually install VirtualBox, g o to **[Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)** and get the **Windows .exe** file. Open the .exe file and follow the installation steps. When finished, reboot.
 
-If you have Intel Hardware Accelerated Execution Manager (HAXM) for Android installed, you may not be able to run VirtualBox. Previously, there have been conflicts with HAXM and VirtualBox.
+{{% alert title="⚠️ Warning" color="primary" %}}If you have Intel Hardware Accelerated Execution Manager (HAXM) for Android installed, you may not be able to run VirtualBox. Previously, there have been conflicts with HAXM and VirtualBox.{{% /alert %}}
 
 ### Genymotion Cloud account
 

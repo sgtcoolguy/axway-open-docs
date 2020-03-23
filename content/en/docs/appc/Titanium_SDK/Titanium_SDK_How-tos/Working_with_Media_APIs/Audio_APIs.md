@@ -156,7 +156,7 @@ To perform the steps in this activity, you will need two sound files. You can us
 
 ### Windows development considerations
 
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 In order to enable background audio for Windows Phone, you need to provide appropriate Capabilities in your tiapp.xml. Windows Phone users are prompted to grant or deny permission when your application attempt to use background audio. Note that background audio does not work on Windows 10 Mobile due to the system resource policy changes.
 

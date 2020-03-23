@@ -2,9 +2,9 @@
 
 Demonstrates how to conditionally apply TSS styles or include XML markup based on the form factor of the target device. Each XML element, or TSS style, can be assigned a formFactor attribute that can take a value of either **"handheld"** or **"tablet"**.
 
-*App folder location*
+{{% alert title="💡 Hint" color="info" %}}*App folder location*
 
-_alloy_/test/apps/**advanced/form\_factor**
+_alloy_/test/apps/**advanced/form\_factor**{{% /alert %}}
 
 | ![iphone](/Images/appc/download/attachments/41845659/iphone.png) | ![ipad](/Images/appc/download/attachments/41845659/ipad.png) | ![android_handheld](/Images/appc/download/attachments/41845659/android_handheld.png) |
 | --- | --- | --- |

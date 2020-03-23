@@ -95,7 +95,7 @@ Starting at [TiSDK 7.1.0.GA](https://docs.appcelerator.com/platform/latest/#!/gu
 
 #### Windows development considerations
 
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 In order to enable location service for Windows Phone, you need to provide appropriate location Capability in your tiapp.xml. Windows Phone users are prompted to grant or deny permission when your application attempt to use geolocation information. In any cases Windows Phone user should enable location service on their device preliminarily (Settings -> location on Windows Phone, Settings -> Privacy -> Location on Windows 10 Mobile).
 
@@ -321,7 +321,7 @@ if (Ti.Geolocation.locationServicesEnabled) {
 
 As with the Ti.Geolocation.getCurrentPosition() example, the location data is returned in the event object's coords property. The listener callback will be executed every time your device detects a new location.
 
-Continually monitoring the GPS for location will consume a mobile device's battery much faster than usual. Be sure that you actually need to be constantly handling the device's location before using this method. If you do, be sure to remove the location event listener via Ti.Geolocation.removeEventListener() when you are not actively using the location information.
+{{% alert title="⚠️ Warning" color="primary" %}}Continually monitoring the GPS for location will consume a mobile device's battery much faster than usual. Be sure that you actually need to be constantly handling the device's location before using this method. If you do, be sure to remove the location event listener via Ti.Geolocation.removeEventListener() when you are not actively using the location information.{{% /alert %}}
 
 #### Android lifecycle events
 

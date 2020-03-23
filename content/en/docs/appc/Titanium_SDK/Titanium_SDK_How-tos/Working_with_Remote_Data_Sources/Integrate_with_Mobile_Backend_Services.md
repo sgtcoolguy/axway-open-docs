@@ -28,11 +28,11 @@ We worry about the database, file storage, search engine and application stack s
 
 Over 25 APIs are available for immediate use in your app to provide the most popular network features. Writing, testing, and deploying server code is a thing of the past. Focus on your users and app features.
 
-*ACS API support*
+{{% alert title="💡 Hint" color="info" %}}*ACS API support*
 
 Note that when new APIs are added to MBS, they may not be immediately available in the Titanium Cloud module.
 The since version listed after some APIs indicates the Titanium Mobile SDK release that included support for
-that API. (Note that the Titanium Cloud module version is not always the same as the SDK version that it ships with.)
+that API. (Note that the Titanium Cloud module version is not always the same as the SDK version that it ships with.){{% /alert %}}
 
 MBS is open to all app publishers, regardless of the development technology used to build the app – Titanium, Objective-C, Java, or HTML5 via frameworks like Sencha Touch or PhoneGap – we’ve got you covered. MBS provide a complete REST API along with iOS, Android and JavaScript SDKs. Any device that can make HTTP requests over the Internet can securely use MBS as its server backend.
 

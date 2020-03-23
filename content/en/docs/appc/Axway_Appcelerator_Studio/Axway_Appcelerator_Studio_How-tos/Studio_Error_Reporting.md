@@ -28,7 +28,7 @@ If enabled, Studio will send errors as they occur by asking permission from the 
 
 Even the error messages hidden in the stack trace can be anonymized if needed. The Automated Error Reporting Configuration gives you the options to anonymize various report data. This dialog window will only appear once but it can be changed later from Studio's preferences.
 
-It is not required to anonymize the error report unless until it has some valuable information.
+{{% alert title="⚠️ Warning" color="primary" %}}It is not required to anonymize the error report unless until it has some valuable information.{{% /alert %}}
 
 ![2_2](/Images/appc/download/attachments/46254742/2_2.png)
 

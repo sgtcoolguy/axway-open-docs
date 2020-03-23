@@ -52,7 +52,7 @@ To change your preferences so that Studio asks you to choose your workspace on s
 
 5. Click **OK** to close the **Preferences** window.
 
-On Mac OS, **Preferences** is found under the **Aptana Studio**/**Titanium Studio** or **Eclipse** menu.
+{{% alert title="⚠️ Warning" color="primary" %}}On Mac OS, **Preferences** is found under the **Aptana Studio**/**Titanium Studio** or **Eclipse** menu.{{% /alert %}}
 
 ## Restoring preferences when switching workspaces
 

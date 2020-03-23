@@ -40,7 +40,7 @@ This document contains information on how to migrate Aptana Studio 2 to version 
 
 Aptana Studio 2 and Aptana Studio 3 have different workspaces so that you can use the two products simultaneously. To work with a project in Aptana Studio 3, you will want to import your project from one workspace to the other.
 
-It is not recommended to edit a project in both Studio 2 and Studio 3. Once you import a project, it is suggested you stick with Studio 3 for editing.
+{{% alert title="⚠️ Warning" color="primary" %}}It is not recommended to edit a project in both Studio 2 and Studio 3. Once you import a project, it is suggested you stick with Studio 3 for editing.{{% /alert %}}
 
 ### To migrate your projects from Studio 2 to Studio 3
 

@@ -58,13 +58,13 @@ When you install a module that's available to all projects, the module is instal
 | macOS | ~/Library/Application Support/Titanium |
 | Windows | %ProgramData%\\Titanium\\mobilesdk\\win32 |
 
-On macOS, the ~/Library folder is hidden by default. To permanently show it, run the following command from a terminal:
+{{% alert title="💡 Hint" color="info" %}}On macOS, the ~/Library folder is hidden by default. To permanently show it, run the following command from a terminal:
 
 chflags nohidden ~/Library/
 
 To open it once, run the following command from a terminal:
 
-open ~/Library
+open ~/Library{{% /alert %}}
 
 ### Configuring your app to use a module
 

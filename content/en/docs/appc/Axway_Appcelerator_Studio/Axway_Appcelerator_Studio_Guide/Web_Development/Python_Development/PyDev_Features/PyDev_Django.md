@@ -68,9 +68,7 @@ Run as Django/Debug as Django are available (note that they set the --noreload b
 
 This will create a default Run configuration so that you may edit it later through run > run configurations (or debug > debug configurations) if you want to change a parameter.
 
-To know how to rerun the last launch, see: Rerun Last Launch on Launching.
-
-If the --noreload is not passed, only the parent process will be killed from Eclipse, and the others will only be killed when they'd be reloaded (in other words, on a code-change).
+{{% alert title="⚠️ Warning" color="primary" %}}To know how to rerun the last launch, see: Rerun Last Launch on Launching.{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}If the --noreload is not passed, only the parent process will be killed from Eclipse, and the others will only be killed when they'd be reloaded (in other words, on a code-change).{{% /alert %}}
 
 ## Run/Debug as Django with auto-reload
 

@@ -174,9 +174,9 @@ myView.applyProperties({
 });
 ```
 
-The applyProperties method is new in Release 3.0. When working with 2.X releases of the Titanium SDK, [updateLayout](#!/api/Titanium.UI.View-method-updateLayout) can be used in place of applyProperties in the above code sample.
+{{% alert title="⚠️ Warning" color="primary" %}}The applyProperties method is new in Release 3.0. When working with 2.X releases of the Titanium SDK, [updateLayout](#!/api/Titanium.UI.View-method-updateLayout) can be used in place of applyProperties in the above code sample.
 
-The applyProperties method can be used to bulk-update properties on _any_ Titanium object, while updateLayout does the same thing, but only works on view objects. So updateLayout is deprecated in Release 3.0 in favor of the more general applyProperties.
+The applyProperties method can be used to bulk-update properties on _any_ Titanium object, while updateLayout does the same thing, but only works on view objects. So updateLayout is deprecated in Release 3.0 in favor of the more general applyProperties.{{% /alert %}}
 
 ### Control Size and Position and Post-Layout Event
 
@@ -247,7 +247,7 @@ With horizontalWrap set to true, if a child cannot fit in the width remaining th
 
 With horizontalWrap set to false, all children are placed in a single row.
 
-Prior to Release 2.1, horizontal layout behavior was not consistent across platforms. In particular:
+{{% alert title="⚠️ Warning" color="primary" %}}Prior to Release 2.1, horizontal layout behavior was not consistent across platforms. In particular:
 
 * Mobile Web did not wrap to a second row and aligned all children to the top of the parent view if no top or bottom pins were defined.
 
@@ -255,7 +255,7 @@ Prior to Release 2.1, horizontal layout behavior was not consistent across platf
 
 * iOS placed the first row against the top of the parent view if no top or bottom pins were defined.
 
-* On iOS **Prior to Release 2.0.1**, the sandbox height of a child was independent of its siblings.
+* On iOS **Prior to Release 2.0.1**, the sandbox height of a child was independent of its siblings.{{% /alert %}}
 
 ### Special Cases for Parent and Child Sizing
 

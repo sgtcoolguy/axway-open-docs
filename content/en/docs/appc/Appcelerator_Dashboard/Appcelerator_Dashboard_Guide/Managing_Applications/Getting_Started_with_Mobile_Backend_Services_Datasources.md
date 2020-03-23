@@ -33,7 +33,7 @@ For additional information on managing MBS datasources, refer to [Managing Mobil
 
 ## Creating a user
 
-When creating a user, the **Username**, **Email**, and **Password** fields must be completed. Entering information for the additional fields is optional.
+{{% alert title="⚠️ Warning" color="primary" %}}When creating a user, the **Username**, **Email**, and **Password** fields must be completed. Entering information for the additional fields is optional.{{% /alert %}}
 
 To create a user for the new MBS datasource:
 
@@ -48,8 +48,7 @@ To create a user for the new MBS datasource:
 
 5. At a minimum, enter the **Username**, **Email**, and **Password**.
 
-    Record the username and password. You need the username and the password to configure connectivity to an MBS connector. For additional MBS connector information, refer to [MBS Connector](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/mbs_connector.html).
-
+    {{% alert title="⚠️ Warning" color="primary" %}}Record the username and password. You need the username and the password to configure connectivity to an MBS connector. For additional MBS connector information, refer to [MBS Connector](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/mbs_connector.html).{{% /alert %}}
 6. Click **Save**.
 
 For additional information on managing MBS data objects, refer to [Managing Mobile Backend Services data objects](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Mobile_Backend_Services_Datasources/Managing_Mobile_Backend_Services_data_objects/).
@@ -65,6 +64,5 @@ To retrieve the App Key for the new MBS datasource:
 3. Click **Show** to display the App Key.
     ![app_key](/Images/appc/download/attachments/60151875/app_key.png)
 
-    Record the App Key. For additional MBS connector information, refer to [MBS Connector](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/mbs_connector.html).
-
+    {{% alert title="⚠️ Warning" color="primary" %}}Record the App Key. For additional MBS connector information, refer to [MBS Connector](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/mbs_connector.html).{{% /alert %}}
 4. Click **Hide** to hide the App Key.

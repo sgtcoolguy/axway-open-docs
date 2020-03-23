@@ -44,7 +44,7 @@ For those contributing to the Aptana source code base, we follow a few conventio
 
 ## Basic Coding Guidelines
 
-Above all, the code should be **elegant**. It should be well-spaced and easy to follow.
+{{% alert title="💡 Hint" color="info" %}}Above all, the code should be **elegant**. It should be well-spaced and easy to follow.{{% /alert %}}
 
 * There are no empty try/catch blocks
 
@@ -153,12 +153,10 @@ Our Java formatting conventions are relatively easy going, though we do add brac
 
 2. Do the externalization per-package, not per-plugin.
 
-    **Make sure you add the messages.properties file to the build.properties file.** You want to make sure that message.properties file is included in the binary build.
-
+    {{% alert title="❗️ Warning" color="danger" %}}**Make sure you add the messages.properties file to the build.properties file.** You want to make sure that message.properties file is included in the binary build.{{% /alert %}}
 3. Exclude _all_ strings in any unit testing plugins, or any case where it does not make sense to translate that piece of text.
 
-    **Use StringUtils.format() instead of "string " + variable.** Again, take a look at how we use this elsewhere. The easiest way to do this is to try and run the externalization wizard. Notice where you have "constructed" strings. Cancel out of the wizard, and then fix them. Then run the wizard again.
-
+    {{% alert title="❗️ Warning" color="danger" %}}**Use StringUtils.format() instead of "string " + variable.** Again, take a look at how we use this elsewhere. The easiest way to do this is to try and run the externalization wizard. Notice where you have "constructed" strings. Cancel out of the wizard, and then fix them. Then run the wizard again.{{% /alert %}}
 4. Make sure you add the messages.properties file to source control
 
 5. Also ensure that you comment all the methods in the messages file to remove any generated warnings

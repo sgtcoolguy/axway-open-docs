@@ -34,11 +34,7 @@ Code analysis provides error finding in python programs. It finds common errors 
 
 * It is **'very' fast** when compared to current alternatives.
 
-You may still configure PyDev to analyze your code only when you save a file if you want.
-
-You have to disable PyLint manually if you don't want to use it anymore.
-
-If you want information on how to configure PyLint, you can check [PyDev PyLint](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Features/PyDev_PyLint/).
+{{% alert title="⚠️ Warning" color="primary" %}}You may still configure PyDev to analyze your code only when you save a file if you want.{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}You have to disable PyLint manually if you don't want to use it anymore.{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}If you want information on how to configure PyLint, you can check [PyDev PyLint](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Features/PyDev_PyLint/).{{% /alert %}}
 
 ## Configuring it
 
@@ -60,11 +56,7 @@ You may also view the output in the 'problems view':
 
 ## Important notes to effectively use code-analysis
 
-The undefined variable errors produced are used as an input for a [content assistant](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Features/PyDev_Content_Assistants/) that allows you to fix it. Check the [PyDev Content Assistants](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Features/PyDev_Content_Assistants/) page for more information on that (it also explains how you can give 'notes' to the code analysis so that it ignores some error or warning).
-
-You are advised to leave the 'auto-build' turned on (in the menu: **project > build automatically**). If you, however, want to leave it off, you have to remember to make a build when you want your changes analyzed.
-
-When you change the interpreter or change your python path, your files are not automatically analyzed. If you want them analyzed after that, you have to manually do a 'clear' on the projects you want to be analyzed (in the menu: **project > clean...**).
+{{% alert title="❗️ Warning" color="danger" %}}The undefined variable errors produced are used as an input for a [content assistant](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Features/PyDev_Content_Assistants/) that allows you to fix it. Check the [PyDev Content Assistants](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Python_Development/PyDev_Features/PyDev_Content_Assistants/) page for more information on that (it also explains how you can give 'notes' to the code analysis so that it ignores some error or warning).{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}You are advised to leave the 'auto-build' turned on (in the menu: **project > build automatically**). If you, however, want to leave it off, you have to remember to make a build when you want your changes analyzed.{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}When you change the interpreter or change your python path, your files are not automatically analyzed. If you want them analyzed after that, you have to manually do a 'clear' on the projects you want to be analyzed (in the menu: **project > clean...**).{{% /alert %}}
 
 ## Passing info to code-analysis
 

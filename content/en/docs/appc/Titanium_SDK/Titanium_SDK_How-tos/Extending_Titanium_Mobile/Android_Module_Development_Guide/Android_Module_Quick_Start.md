@@ -60,7 +60,7 @@ If you want to use Studio, install:
 
 First, create a new module project.
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 From a terminal, change the current working directory to your workspace and run:
 
@@ -68,7 +68,7 @@ From a terminal, change the current working directory to your workspace and run:
 cd /PATH/TO/WORKSPACE
 appc new --n test --id com.example.test -p Android
 ## when prompted, select "Titanium Module"
-```
+```{{% /alert %}}
 
 In Studio:
 
@@ -88,7 +88,7 @@ Studio sets up a new folder called test that contains your module project.
 
 Next, build the module and package it. This process produces a ZIP file in the android /dist directory containing a binary library with unprocessed module assets, example code and documentation.
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 From a terminal, go to the module's android directory and run appc run -p android --build-only:
 
@@ -101,7 +101,7 @@ After the build completes, unzip the built module in the Titanium SDK home path:
 
 ```
 unzip -o com.example.test-android-1.0.0.zip -d ~/Library/Application\ Support/Titanium/
-```
+```{{% /alert %}}
 
 In Studio:
 
@@ -123,7 +123,7 @@ To test the module, create a test application and add the module as a dependency
 
 ### Create a test application
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 From a new terminal window, change the current working directory to your workspace and run the following commands:
 
@@ -131,7 +131,7 @@ From a new terminal window, change the current working directory to your workspa
 cd /PATH/TO/WORKSPACE
 appc new -t titanium -p android -d . -n Hello -u http:// --id com.example.hello
 cd Hello/
-```
+```{{% /alert %}}
 
 In Studio:
 
@@ -155,7 +155,7 @@ Studio sets up a new folder called Hello that contains the test application you 
 
 To load the module in the application, you need to add it as a dependency to the project.
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 Open the tiapp.xml and update the <modules/> element to include the module as a dependency to the project:
 
@@ -165,7 +165,7 @@ Open the tiapp.xml and update the <modules/> element to include the module as a 
         <module platform="android">com.example.test</module>
     </modules>
 </ti:app>
-```
+```{{% /alert %}}
 
 In Studio:
 
@@ -179,7 +179,7 @@ In Studio:
 
 ### Load the module and make module API calls
 
-The module can be loaded by passing the module ID to the require()method, which returns a reference to the module that API calls can be made on.
+{{% alert title="⚠️ Warning" color="primary" %}}The module can be loaded by passing the module ID to the require()method, which returns a reference to the module that API calls can be made on.{{% /alert %}}
 
 Open the app/alloy.js file and replace the code with the following, which invokes API calls to the module:
 
@@ -195,13 +195,13 @@ test.exampleProp = "This is a test value";
 
 ### Run the application
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 From a terminal that has the test app as its current working directory, run:
 
 ```bash
 appc run -p android
-```
+```{{% /alert %}}
 
 In the Studio toolbar, select **Run** in **Launch Modes** and select an Android emulator in **Launch Targets**.
 
@@ -394,7 +394,7 @@ private String foo;
 
 In the JavaScript code, the foo string can be accessed using the exampleProp property, and getExampleProp() and setExampleProp () methods.
 
-To create a property without a custom getter or setter, add the property name in the propertyAccessors element list of the @Kroll.proxy or @Kroll.module annotation type:
+{{% alert title="⚠️ Warning" color="primary" %}}To create a property without a custom getter or setter, add the property name in the propertyAccessors element list of the @Kroll.proxy or @Kroll.module annotation type:
 
 ```
 // package...
@@ -403,7 +403,7 @@ To create a property without a custom getter or setter, add the property name in
 public class TestModule extends KrollModule {
     // Class stuff...
 }
-```
+```{{% /alert %}}
 
 ### Test the module
 

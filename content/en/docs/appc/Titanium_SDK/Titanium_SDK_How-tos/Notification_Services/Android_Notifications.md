@@ -167,7 +167,7 @@ To use a custom layout for a notification:
 
 3. Assign the RemoteViews object to the Notification object's contentView property.
 
-If the application calls the setLatestEventInfo() method or sets either the contentTitle or contentText properties, the notification will use the default basic layout even if the contentView property is set.
+{{% alert title="⚠️ Warning" color="primary" %}}If the application calls the setLatestEventInfo() method or sets either the contentTitle or contentText properties, the notification will use the default basic layout even if the contentView property is set.{{% /alert %}}
 
 **Example**
 
@@ -379,7 +379,7 @@ notification.contentIntent = Ti.Android.createPendingIntent({intent: intent});
 
 To schedule a notification in the future, the application can create an Android service using a JavaScript context. The service runs in the background at a regular intervals. The service will need to wait for the appropriate time to create and send the notification allowing the notification to be sent while the application is in the background. For more information about Android Services, see [Android Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Services/).
 
-The service may stop if the application is killed by either backing out of the application or if the application is removed from the recent apps tray.
+{{% alert title="⚠️ Warning" color="primary" %}}The service may stop if the application is killed by either backing out of the application or if the application is removed from the recent apps tray.{{% /alert %}}
 
 To create a service that sends a notification at a specific time:
 

@@ -112,13 +112,13 @@ In this activity, you will write a simple app to stream a movie from a remote UR
 
 6. Build and test your app in the simulator/emulator or on device.
 
-*Simulator / emulator rotation*
+{{% alert title="💡 Hint" color="info" %}}*Simulator / emulator rotation*
 
-Rotate the iPhone simulator by pressing Command and either the left or right arrow key. Rotate the Android emulator by pressing Control+F12.
+Rotate the iPhone simulator by pressing Command and either the left or right arrow key. Rotate the Android emulator by pressing Control+F12.{{% /alert %}}
 
 ### Windows development considerations
 
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 In order to enable camera and audio recording for Windows Phone, you need to provide appropriate Capabilities in your tiapp.xml. Windows Phone users are prompted to grant or deny permission when your application attempt to use it.
 

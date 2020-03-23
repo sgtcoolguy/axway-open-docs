@@ -63,7 +63,7 @@ You can drill down via the [Browse Projects](https://jira.appcelerator.org/secur
 
 You will notice from the above table that only the Appcelerator Community project is open for ticket creation. All new tickets are created in the AC project so that our triage may check them for validity and completeness. Once a ticket is validated, it is moved to the appropriate project, ready to be reviewed and prioritized by the engineering teams.
 
-If you are new to Titanium, we understand if you are unfamiliar with the process of raising a well-defined ticket. Don't worry; we're here to help. Once you've gone through the process once or twice, the time it takes to write a good ticket drops considerably.
+{{% alert title="💡 Hint" color="info" %}}If you are new to Titanium, we understand if you are unfamiliar with the process of raising a well-defined ticket. Don't worry; we're here to help. Once you've gone through the process once or twice, the time it takes to write a good ticket drops considerably.{{% /alert %}}
 
 ## Submitting tickets
 
@@ -139,7 +139,7 @@ Assuming you have consulted the community via the Q&A, and you have your [test c
 
 The following table explains what information must be included in which fields in order for a ticket to be accepted.
 
-If you have been directed to this section after creating a ticket in JIRA, it likely means that you have omitted some information or not provided it in a suitable [format](http://wiki.appcelerator.org/renderer/notationhelp.action). Please correct the ticket using the instructions below, to enable us to pass it to our engineering teams.
+{{% alert title="💡 Hint" color="info" %}}If you have been directed to this section after creating a ticket in JIRA, it likely means that you have omitted some information or not provided it in a suitable [format](http://wiki.appcelerator.org/renderer/notationhelp.action). Please correct the ticket using the instructions below, to enable us to pass it to our engineering teams.{{% /alert %}}
 
 | Field | Required | Information to include |
 | --- | --- | --- |

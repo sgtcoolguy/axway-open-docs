@@ -12,7 +12,7 @@ Once you have a Ruby on Rails project opened in Studio, you should be able to de
 
 In the deployment wizard, select the Engine Yard option and follow the steps to login and deploy your project.
 
-After you have created an account/sign in, you will also need to log into the Engine Yard dashboard at [https://cloud.engineyard.com/dashboard](https://cloud.engineyard.com/dashboard) to set up an instance for your application. Then you should be able to proceed and run the 'deploy app' command from studio.
+{{% alert title="⚠️ Warning" color="primary" %}}After you have created an account/sign in, you will also need to log into the Engine Yard dashboard at [https://cloud.engineyard.com/dashboard](https://cloud.engineyard.com/dashboard) to set up an instance for your application. Then you should be able to proceed and run the 'deploy app' command from studio.{{% /alert %}}
 
 After you have finished running through the wizard, the "ey deploy" command will run in the Studio terminal, which deploys your project to Engine Yard. After you have done the initial deployment to Engine Yard, clicking on the box icon again will allow you to select several Engine Yard commands.
 

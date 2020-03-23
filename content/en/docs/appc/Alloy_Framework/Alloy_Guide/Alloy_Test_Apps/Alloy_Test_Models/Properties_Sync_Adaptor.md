@@ -2,9 +2,9 @@
 
 Demonstrates using Alloy's Titanium.App.Properties sync adaptor to save data.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**models/properties**
+alloy/test/apps/**models/properties**{{% /alert %}}
 
 The sample presents two tabs: Model and Collection. The modelTab.xml view provides buttons to create or destroy an instance of a model, and increment one a numeric model fields. The Collection tab provides UI to add items to a collection, which is bound to a TableView. Clicking a table row updates a field in the corresponding collection item. Long-pressing a table row deletes the corresponding item from the collection.
 

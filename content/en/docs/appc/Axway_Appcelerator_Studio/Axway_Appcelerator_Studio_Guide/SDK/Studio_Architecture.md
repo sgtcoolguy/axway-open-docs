@@ -12,7 +12,7 @@ As an example, Eclipse provides a "Team" infrastructure for source control provi
 
 Studio exists in layers, each piece building on the layer below. As shown in the diagram, Titanium Studio builds on top of Aptana Studio, which then builds on top of the generic Eclipse IDE platform.
 
-Though the Eclipse layer appears to be the largest here, Titanium Studio encompasses roughly 350 plugins, with about 150 in Aptana, another 150 for Eclipse, and the remainder Titanium-specific.
+{{% alert title="⚠️ Warning" color="primary" %}}Though the Eclipse layer appears to be the largest here, Titanium Studio encompasses roughly 350 plugins, with about 150 in Aptana, another 150 for Eclipse, and the remainder Titanium-specific.{{% /alert %}}
 
 ![Studio_Block_Diagram](/Images/appc/download/attachments/30083190/Studio_Block_Diagram.png)
 

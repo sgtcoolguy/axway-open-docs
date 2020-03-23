@@ -2,9 +2,9 @@
 
 Demonstrates using binding a data collection to a ListView and applying different list item templates to each list item using a data transformer.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**models/binding\_listview**
+alloy/test/apps/**models/binding\_listview**{{% /alert %}}
 
 The application defines three list item templates: one with just a title, one with a title and subtitle, and one with a title, subtitle and image.
 

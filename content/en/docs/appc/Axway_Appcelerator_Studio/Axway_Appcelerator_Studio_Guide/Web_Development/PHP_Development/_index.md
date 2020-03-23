@@ -107,7 +107,7 @@ The editor provides a smart code assist mechanism that displays suggestions by t
 
     <table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083030/php_ca_parameters.jpg" alt="images/download/attachments/30083030/php_ca_parameters.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
-The content assist relies on an **indexing** process that is performed on the workspace and on the edited files. Inconsistent index state, like the one that may occur when turning off the 'Auto Building' option, may result in wrong or no accurate assistance.
+{{% alert title="⚠️ Warning" color="primary" %}}The content assist relies on an **indexing** process that is performed on the workspace and on the edited files. Inconsistent index state, like the one that may occur when turning off the 'Auto Building' option, may result in wrong or no accurate assistance.{{% /alert %}}
 
 #### Auto Indentation & Code Formatting
 

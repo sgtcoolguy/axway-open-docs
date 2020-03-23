@@ -1,10 +1,10 @@
 {"title":"API Builder Getting Started Guide","weight":"10"}
 
-*API Builder 3.x is deprecated*
+{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
-Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
+Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
 * [Introduction](#introduction)
 
@@ -229,8 +229,7 @@ To deploy the project to the cloud:
 
     Let's quickly test the published application. In your browser, navigate to your published cloud application. You should see the API Builder Logo.
 
-    You may have to edit your Admin Console configuration to access the application documentation in the /apidoc path. If you have problems accessing the application documentation, set the enableAdminInProduction setting in the /conf/default.js file to **true**. For additional information, refer to [API Builder Console](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Console/).
-
+    {{% alert title="⚠️ Warning" color="primary" %}}You may have to edit your Admin Console configuration to access the application documentation in the /apidoc path. If you have problems accessing the application documentation, set the enableAdminInProduction setting in the /conf/default.js file to **true**. For additional information, refer to [API Builder Console](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Console/).{{% /alert %}}
 2. Next, go to the project's documentation. Add the /apidoc/swagger.json path to the end of the URL to retrieve the application documentation and endpoints. Retrieve the curl example of the query endpoint and execute it in the terminal. The command should return the same results when you tested the project locally.
 
 ## View analytics

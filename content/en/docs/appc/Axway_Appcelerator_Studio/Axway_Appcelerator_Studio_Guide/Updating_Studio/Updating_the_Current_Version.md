@@ -24,13 +24,13 @@ If there are none available, Studio will display a "No updates were found" messa
 
 6. Once the update is complete, you will be prompted to restart Studio for the changes to be applied.
 
-Note about upgrading to Studio 5.1.0: You cannot update to Studio 5.1.0.
+{{% alert title="⚠️ Warning" color="primary" %}}Note about upgrading to Studio 5.1.0: You cannot update to Studio 5.1.0.
 
 * With Appcelerator Studio 5.1.0 release, we have upgraded the Eclipse core from 4.4 to 4.7. This update brings a different directory structure to Studio for MacOS users.
 
 * Due to several internal changes, it is not possible to update from Studio 5.0.0 to 5.1.0. Users are advised to download and install a fresh copy of Studio 5.1.0 installer directly for both Windows and MacOS. Please review [Uninstalling Studio](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Updating_Studio/Uninstalling_Studio/) for removing Studio (as necessary for your setup).
 
-* You are advised to use the existing workspace directory when launching Studio 5.1.0 to get your old studio projects
+* You are advised to use the existing workspace directory when launching Studio 5.1.0 to get your old studio projects{{% /alert %}}
 
 ## Turn on automatic updates
 

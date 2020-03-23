@@ -2,9 +2,9 @@
 
 Demonstrates how to create a basic "Todos" application by binding a data collection to a TableView.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/models/todo
+alloy/test/apps/models/todo{{% /alert %}}
 
 The sample lets you add and delete items, mark items as complete, and filter the list to display all items, only active items, or just completed items.
 

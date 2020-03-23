@@ -44,7 +44,7 @@ Aptana creates the bookmark for you, which now appears in the Bookmarks View.
 
 To quickly jump to the bookmark, double-click the bookmark in the Bookmark View.
 
-You can also add a bookmark by right-clicking in the gray left margin of your editor (shown below) next to the line where you want to add the bookmark.
+{{% alert title="⚠️ Warning" color="primary" %}}You can also add a bookmark by right-clicking in the gray left margin of your editor (shown below) next to the line where you want to add the bookmark.{{% /alert %}}
 
 ![AddBookmark](/Images/appc/download/attachments/30083305/AddBookmark.png)
 

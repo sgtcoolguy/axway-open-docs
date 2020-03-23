@@ -2,11 +2,9 @@
 
 Demonstrates data binding with a CoverFlowView control, which presents images in carousel-like view.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**models/binding\_coverflow**
-
-![image](/Images/appc/download/attachments/41846559/image.png)
+alloy/test/apps/**models/binding\_coverflow**{{% /alert %}}![image](/Images/appc/download/attachments/41846559/image.png)
 
 A [CoverFlowView](#!/api/Titanium.UI.iOS.CoverFlowView) element's images property is an array of images to display in the carousel. In Alloy, this property is represented by an <Images/> element, which contains a single <Image/> element. The <Images/> element's dataCollection attribute is set to "images", the name of the Alloy collection that contains the actual images to display. When the "images" collection is updated, the images displayed by the CoverFlowView update accordingly.
 

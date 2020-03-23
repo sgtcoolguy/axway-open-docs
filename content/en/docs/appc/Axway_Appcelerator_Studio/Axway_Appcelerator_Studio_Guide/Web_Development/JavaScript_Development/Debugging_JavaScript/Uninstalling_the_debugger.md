@@ -4,7 +4,7 @@
 
 If you need to uninstall the Aptana debugger, you can do so directly from Firefox or Internet Explorer browser.
 
-To update the Firefox debugger extension, please choose the menu option Tools > Add-ons/Extensions, inside Firefox, and choose "Update".
+{{% alert title="💡 Hint" color="info" %}}To update the Firefox debugger extension, please choose the menu option Tools > Add-ons/Extensions, inside Firefox, and choose "Update".{{% /alert %}}
 
 ## Instructions
 

@@ -1,10 +1,10 @@
 {"title":"Console Configuration","weight":"20"}
 
-*API Builder 3.x is deprecated*
+{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
-Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
+Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
 * [Introduction](#introduction)
 
@@ -48,7 +48,7 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 API Builder uses the configuration files in the project's conf directory to initialize the application and its connectors. Each JavaScript file in the directory should expose an object of key-value pairs. You may add any arbitrary key-value pair beside the one described below. The values will be passed to any method that is passed the API Builder configuration object.
 
-API key values and session object are auto-generated when you create a new project.
+{{% alert title="⚠️ Warning" color="primary" %}}API key values and session object are auto-generated when you create a new project.{{% /alert %}}
 
 For environment-specific configuration files, add either .development or .production to the end of the filename. For example, foo.development.js will be used for the development environment, while foo.production.js will be used for the production environment.
 

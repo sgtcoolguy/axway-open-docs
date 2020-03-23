@@ -68,7 +68,7 @@ The decision about which of the three local storage options you choose is usuall
 
     * the data is an image file
 
-Although the local database has the capability to store images in blob (binary) format, this won't lead to optimal performance from your application. Instead, use Titanium.Database to store the image file path and name in the database, and Titanium.Filesystem to manage the physical files.
+{{% alert title="⚠️ Warning" color="primary" %}}Although the local database has the capability to store images in blob (binary) format, this won't lead to optimal performance from your application. Instead, use Titanium.Database to store the image file path and name in the database, and Titanium.Filesystem to manage the physical files.{{% /alert %}}
 
 ## References and Further Reading
 

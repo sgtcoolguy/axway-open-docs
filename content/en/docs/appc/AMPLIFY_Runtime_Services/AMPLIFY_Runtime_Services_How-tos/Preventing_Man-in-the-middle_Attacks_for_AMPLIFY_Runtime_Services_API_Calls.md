@@ -4,7 +4,7 @@ This info only applies to users who intend to do API calls to AMPLIFY Runtime Se
 
 You only need to generate your certificate if you are using the HTTPS module and NOT the ti.cloud modules.
 
-You will need the HTTPS module and the ti.cloud module to test this sample app.
+{{% alert title="⚠️ Warning" color="primary" %}}You will need the HTTPS module and the ti.cloud module to test this sample app.{{% /alert %}}
 
 ```javascript
 var Cloud = require('ti.cloud');

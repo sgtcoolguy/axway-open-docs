@@ -33,7 +33,7 @@ If you'd like to color something, which does not currently appear to be colored 
 
     5. Press **OK**.
 
-If it doesn't seem like your rule addition made a difference, it's likely that you are duplicating an existing rule. Look through the other rules to see if there is a matching item with an identical scope.
+{{% alert title="⚠️ Warning" color="primary" %}}If it doesn't seem like your rule addition made a difference, it's likely that you are duplicating an existing rule. Look through the other rules to see if there is a matching item with an identical scope.{{% /alert %}}
 
 ## Importing/Modifying an Existing TextMate theme
 

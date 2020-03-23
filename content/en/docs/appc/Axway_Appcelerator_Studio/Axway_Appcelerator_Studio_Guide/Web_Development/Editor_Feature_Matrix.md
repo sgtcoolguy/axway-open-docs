@@ -23,7 +23,7 @@ Level 3 editors are CSS, HTML, JS, Python, Ruby, PHP, and ERB. The editors below
 ![lightbulb](/Images/appc/download/attachments/30083127/lightbulb.png) Support planned, but not started
 ![error](/Images/appc/download/attachments/30083127/error.png) Not supported, not planned
 
-.\* for components indicate that there is a per-editor/language component associated, for example, editor.js, scripting.rubles.js.
+{{% alert title="⚠️ Warning" color="primary" %}}.\* for components indicate that there is a per-editor/language component associated, for example, editor.js, scripting.rubles.js.{{% /alert %}}
 
 ### Editing Features
 

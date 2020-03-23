@@ -2,9 +2,9 @@
 
 Demonstrates adding a Toolbar control to an iOS or Android application.
 
-*Example App Source Location*
+{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
 
-You can find this example app in the Alloy repository under [samples/apps/ui/toolbar](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/toolbar). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [samples/apps/ui/toolbar](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/toolbar). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 A [Toolbar](#!/api/Titanium.UI.iOS.Toolbar) can contain Button controls and certain other controls, such as TextFields and Labels. iOS notes: To provide spacing between items in the toolbar, you can insert a <FlexSpace/> element to fill the space between items (as seen in the example) or a <FixedSpace/> element whose width attribute specifies the spacer width to add.
 

@@ -84,9 +84,9 @@ app
 └── views
 ```
 
-**Titanium Classic Project Note**
+{{% alert title="⚠️ Warning" color="primary" %}}**Titanium Classic Project Note**
 
-For Titanium classic projects you should put the i18n directory inside the root of your project (which is the same level as tiapp.xml file), not in the app directory.
+For Titanium classic projects you should put the i18n directory inside the root of your project (which is the same level as tiapp.xml file), not in the app directory.{{% /alert %}}
 
 #### Resource file structure
 
@@ -110,13 +110,13 @@ The string resource file closely mirrors the format of Android localization file
 
 Resource files are processed and included with your application at build time by our Titanium build scripts. This means that these strings won't be processed if you use Xcode or Eclipse to build your project natively.
 
-**Android Platform Notes**
+{{% alert title="⚠️ Warning" color="primary" %}}**Android Platform Notes**
 
 1. If you have XML files in both the i18n and platform/android folders, the Titanium build scripts will try to merge the files together in the build folder. If there are any conflicts, the build fails. Currently, if modules contain any files in the platform/android folder, these files overwrite the build files.
 
 2. If you have strings using multiple substitutions, as demonstrated in the "ordered" string in the previous example, you may need to add the formatted="false" attribute to these string elements if the localized string is not created correctly when running the application.
 
-3. When editing the strings.xml file, be sure to clean your project before building it again.
+3. When editing the strings.xml file, be sure to clean your project before building it again.{{% /alert %}}
 
 String resource names (the "keys") must begin with a letter and can contain digits, English characters, and the underscore. The contents (values) of each string resource must be [UTF-8](http://en.wikipedia.org/wiki/UTF-8) compatible strings. While a given platform may not crash or throw an exception if you don't follow these rules, there's a good chance you will encounter some unexpected behavior.
 
@@ -342,9 +342,9 @@ Titanium does not provide built-in functions for internationalizing image and fi
     });
     ```
 
-This technique won't work for the splash screen graphics. You should ideally avoid text that would need translation in your splash screen.
+{{% alert title="⚠️ Warning" color="primary" %}}This technique won't work for the splash screen graphics. You should ideally avoid text that would need translation in your splash screen.
 
-See [Localized splash screens](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Icons_and_Splash_Screens/#localized-splash-screens) [](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Icons_and_Splash_Screens/#LocalizedSplashScreens) for more information.
+See [Localized splash screens](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Icons_and_Splash_Screens/#localized-splash-screens) [](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Fundamentals/Icons_and_Splash_Screens/#LocalizedSplashScreens) for more information.{{% /alert %}}
 
 ### Date and time formatting
 
@@ -538,7 +538,7 @@ To set the language on iOS:,
 
 Optionally, in Settings, tap General, Language & Region, Region Format to specify your locale format for dates and times.
 
-Localization is broken on the iOS 8.1 simulator.
+{{% alert title="⚠️ Warning" color="primary" %}}Localization is broken on the iOS 8.1 simulator.{{% /alert %}}
 
 To set the language on Android:
 

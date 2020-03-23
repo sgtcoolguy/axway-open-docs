@@ -2,9 +2,9 @@
 
 Demonstrates how to use data binding with a DashboardView, which provides an iOS Springboard-like view.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**models/binding\_dashboard**
+alloy/test/apps/**models/binding\_dashboard**{{% /alert %}}
 
 Items in a [DashboardView](#!/api/Titanium.UI.DashboardView) are represented by [DashboardItem](#!/api/Titanium.UI.DashboardItem)s, which can be deleted and re-arranged.
 

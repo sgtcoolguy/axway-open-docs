@@ -16,7 +16,7 @@
 
 Occasionally you may experience errors starting Studio. Here are some suggested solutions.
 
-See [Switching your Workspace](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Switching_your_Workspace/) to help find your current workspace location
+{{% alert title="⚠️ Warning" color="primary" %}}See [Switching your Workspace](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Switching_your_Workspace/) to help find your current workspace location{{% /alert %}}
 
 ## Workspace in use or cannot be created, choose a different one
 

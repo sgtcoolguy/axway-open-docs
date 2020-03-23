@@ -34,9 +34,9 @@ You can now use the module in your code by importing it as usual.
 import * as Map from 'ti.map';
 ```
 
-*Register third-party views as custom template elements*
+{{% alert title="💡 Hint" color="info" %}}*Register third-party views as custom template elements*
 
-In future versions of Titanium Angular it will be possible to register views from modules as custom elements so you can use them inside a template. For now, you have to configure and add third-party views programmatically in your component class.
+In future versions of Titanium Angular it will be possible to register views from modules as custom elements so you can use them inside a template. For now, you have to configure and add third-party views programmatically in your component class.{{% /alert %}}
 
 ## Can I use Hyperloop together with Titanium Angular?
 

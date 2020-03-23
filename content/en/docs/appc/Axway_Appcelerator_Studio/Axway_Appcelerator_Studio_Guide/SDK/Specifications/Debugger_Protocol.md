@@ -110,7 +110,7 @@ An argument could be split into sub-arguments:
 arg=subarg0|subarg1|subarg2|...subargN
 ```
 
-Requests with empty _request\_id_ should not be replied.
+{{% alert title="⚠️ Warning" color="primary" %}}Requests with empty _request\_id_ should not be replied.{{% /alert %}}
 
 ## Arguments encoding
 

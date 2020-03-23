@@ -22,4 +22,4 @@ When typing in the JavaScript editor, you can have Studio show you which API ite
 
 4. Press **OK**
 
-For more information and additional settings, see [Displaying Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/Displaying_Content_Assist/).
+{{% alert title="💡 Hint" color="info" %}}For more information and additional settings, see [Displaying Content Assist](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Content_Assist/Displaying_Content_Assist/).{{% /alert %}}

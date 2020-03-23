@@ -72,7 +72,7 @@ Before we get into the mechanics of accessing the file system, let's talk about 
 
     * For the Windows platform, there is not size limit, and the data stored here will be ignored when a users backs up their storage to the cloud.
 
-The Ti.Filesystem.resourcesDirectory is read-only on a device, but is read/write in the simulator/emulator.
+{{% alert title="⚠️ Warning" color="primary" %}}The Ti.Filesystem.resourcesDirectory is read-only on a device, but is read/write in the simulator/emulator.{{% /alert %}}
 
 ### File operations
 

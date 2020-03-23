@@ -104,7 +104,7 @@ To use an image in your custom Storyboard, simply set the Image property of an _
 
 ![image](/Images/appc/download/attachments/46245490/image.png)
 
-[Currently](https://jira.appcelerator.org/browse/TIMOB-20429) Titanium does not package the LaunchLogo\*.png file if you use a custom storyboard. You need to rename this image before you can use it.
+{{% alert title="💡 Hint" color="info" %}}[Currently](https://jira.appcelerator.org/browse/TIMOB-20429) Titanium does not package the LaunchLogo\*.png file if you use a custom storyboard. You need to rename this image before you can use it.{{% /alert %}}
 
 **Important**: If you have the [use-app-thinning](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Appendices/tiapp.xml_and_timodule.xml_Reference/#use-app-thinning) enabled, you will have to use the name of the generated asset catalog. This is a hash based on the image path. To find out the hash for your image build the app, look up the right \[hash\].imageset under build/iphone/Assets.xcassets/ and use the \[hash\] part.
 

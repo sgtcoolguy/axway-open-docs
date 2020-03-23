@@ -1,10 +1,10 @@
 {"title":"Manage Endpoints","weight":"10"}
 
-*API Builder 3.x is deprecated*
+{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
-Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
+Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
 * [Import endpoints](#import-endpoints)
 
@@ -18,7 +18,7 @@ An API endpoint provides a way for a client to access your application, such as 
 
 ## Import endpoints
 
-A Swagger API endpoint definition file (swagger.json) can only be imported once. If you attempt to import a Swagger file for the same API endpoint definition, you will receive a server error message.
+{{% alert title="⚠️ Warning" color="primary" %}}A Swagger API endpoint definition file (swagger.json) can only be imported once. If you attempt to import a Swagger file for the same API endpoint definition, you will receive a server error message.{{% /alert %}}
 
 To import API endpoints using the API Builder GUI:
 

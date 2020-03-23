@@ -176,7 +176,7 @@ An item template defines the structure and style of a data item as well as binds
 
     * Set the bindId to bind the template to a custom property in the list data item. The custom properties in the list data item contain key-value pairs of view properties and their values.
 
-Item templates only support the following view classes:
+{{% alert title="💡 Hint" color="info" %}}Item templates only support the following view classes:
 
 * Titanium.UI.ActivityIndicator
 
@@ -194,7 +194,7 @@ Item templates only support the following view classes:
 
 * Titanium.UI.TextArea
 
-* Titanium.UI.TextField
+* Titanium.UI.TextField{{% /alert %}}
 
 To bind the list data item to an item template, use the list view's templates property to map the template to a style name, then use the style name to either set the list view's defaultItemTemplate property to globally set the style for all items or set the template property of the list data item to override or individually set the style.
 

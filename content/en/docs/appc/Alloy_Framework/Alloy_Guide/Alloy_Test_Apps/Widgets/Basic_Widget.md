@@ -2,11 +2,9 @@
 
 Demonstrates how to create and use a basic widget.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**widgets/basic**
-
-![widget-basic](/Images/appc/download/attachments/41845783/widget-basic.png)
+alloy/test/apps/**widgets/basic**{{% /alert %}}![widget-basic](/Images/appc/download/attachments/41845783/widget-basic.png)
 
 Widgets have their own views/, controllers/, models/, styles/ and assets/ folders. These folders are organized in the same way as the top-level app/ directory in the Alloy project. By convention, widgets resides in the app/widgets folder. The sample application includes a widget named **com.foo.widget** in the app/widgets/ folder, as shown below.
 

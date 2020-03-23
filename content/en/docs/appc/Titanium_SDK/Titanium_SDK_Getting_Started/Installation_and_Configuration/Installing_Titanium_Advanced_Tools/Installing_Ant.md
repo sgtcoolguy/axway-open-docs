@@ -6,11 +6,11 @@
 
 ## Compatibility and download
 
-Titanium 9.0.0 and newer versions no longer use Apache Ant. The below only applies to older SDK versions.
+{{% alert title="❗️ Warning" color="danger" %}}Titanium 9.0.0 and newer versions no longer use Apache Ant. The below only applies to older SDK versions.{{% /alert %}}
 
 Apache Ant is the standard build tool for Java. It can be used to build Titanium native Android modules and to build the Titanium SDK for Android. Ant is not required for building, running, or distributing applications using the Titanium SDK.
 
-Java is a prerequisite for Ant, and should be installed first. See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for instructions.
+{{% alert title="⚠️ Warning" color="primary" %}}Java is a prerequisite for Ant, and should be installed first. See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for instructions.{{% /alert %}}
 
 Obtain the latest stable version of Apache Ant. Ant is supplied as a multi-platform archive. You can choose the archive format that's easiest for you to extract: all archives contain the same files.
 

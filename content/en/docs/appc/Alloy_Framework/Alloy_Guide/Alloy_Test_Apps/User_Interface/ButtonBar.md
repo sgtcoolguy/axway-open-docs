@@ -2,9 +2,9 @@
 
 Demonstrates basic use of the ButtonBar control, an iOS-only control that presents a set of buttons joined into a single control.
 
-*Example App Source Location*
+{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
 
-You can find this example app in the Alloy repository under [samples/apps/ui/buttonbar](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/buttonbar). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [samples/apps/ui/buttonbar](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/buttonbar). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 Each button in a ButtonBar can have a text label or an icon, but not both.
 

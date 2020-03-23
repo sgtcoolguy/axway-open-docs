@@ -16,7 +16,7 @@
 
     * [Configuring API Builder application for FCM service](#configuring-api-builder-application-for-fcm-service)
 
-Google has transitioned from Google Cloud Messaging (GCM) to [Firebase Cloud Messaging](http://firebase.google.com/docs/cloud-messaging/) (FCM) technology for push. We encourage developers to use FCM.
+{{% alert title="⚠️ Warning" color="primary" %}}Google has transitioned from Google Cloud Messaging (GCM) to [Firebase Cloud Messaging](http://firebase.google.com/docs/cloud-messaging/) (FCM) technology for push. We encourage developers to use FCM.{{% /alert %}}
 
 To send push notifications, Mobile Backend Services (MBS) relies on the FCM for Android applications, and the Apple Push Notification (APN) service for iOS applications. To use these services in your Titanium application, you first need to enable either FCM, or APN for your application, and then configure MBS with information about your push service. This guide walks you through the process of creating and configuring push services for your application.
 
@@ -44,8 +44,7 @@ You first need to register an App ID for your application.
 
 6. In the the **App ID Suffix** section, select **Explicit App ID** and enter your application's ID.
 
-    This is the value of the <id> element in your project's **tiapp.xml** file.
-
+    {{% alert title="✅" color="success" %}}This is the value of the <id> element in your project's **tiapp.xml** file.{{% /alert %}}
 7. Under **App Services**, check the **Push Notifications** checkbox.
 
 8. Click **Continue**, **Submit**, and **Done** to complete the process.

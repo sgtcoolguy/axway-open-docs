@@ -1,6 +1,6 @@
 {"title":"PyLint can be used with PyDev","weight":"180"}
 
-[PyLint](http://www.logilab.org/projects/pylint) is **disabled by default**, so, if you want to activate it, you should go to the pylint preferences page, **specify its location** (it MUST be installed in the site-packages) and activate it (after activating it, you can clean your project on the project menu so that the files are checked with pylint, or you can do it on deltas as you go and change your files).
+{{% alert title="⚠️ Warning" color="primary" %}}[PyLint](http://www.logilab.org/projects/pylint) is **disabled by default**, so, if you want to activate it, you should go to the pylint preferences page, **specify its location** (it MUST be installed in the site-packages) and activate it (after activating it, you can clean your project on the project menu so that the files are checked with pylint, or you can do it on deltas as you go and change your files).{{% /alert %}}
 
 ![pylint_prefs](/Images/appc/pydev.org/images/pylint/pylint_prefs.png)
 Well, moving on: The integration is done so that it is integrated with the eclipse builder. That means that whenever you change a file, it automatically passes pylint (if auto-build is on – check the menu Project > Build Automatically. If it is not, you can request a build when you want with Ctrl+B, so that the deltas are analyzed).

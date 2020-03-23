@@ -152,7 +152,7 @@ Be aware that any components notated as _Pre-release_ are not officially support
 | Latest Android SDK | macOS | 1.5 GB (contiguous) |
 | Latest Android SDK | Windows | 1 GB (contiguous) |
 
-Minimum system memory requirements is 8GB of RAM. 16GB is highly recommended.
+{{% alert title="⚠️ Warning" color="primary" %}}Minimum system memory requirements is 8GB of RAM. 16GB is highly recommended.{{% /alert %}}
 
 ### Operating system
 
@@ -163,15 +163,13 @@ Titanium is supported on the following Operating Systems:
 | macOS | 10.11.5 (Mavericks) and later |
 | Windows | Windows 7 and later(Android)  <br />Windows 8.1 and later (Windows Phone)  <br />Windows 10 and later (Windows 10 Mobile) |
 
-As of Titanium 9.0.0, building Windows apps is no longer supported.
-
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}As of Titanium 9.0.0, building Windows apps is no longer supported.{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 ## Java Development Kit
 
 Oracle's Java Development Kit (JDK) is required to be installed in order to work with Titanium.
 
-Be aware that no other flavors of JDK, such as OpenJDK, currently work with Titanium; only Oracle's will suffice.
+{{% alert title="⚠️ Warning" color="primary" %}}Be aware that no other flavors of JDK, such as OpenJDK, currently work with Titanium; only Oracle's will suffice.{{% /alert %}}
 
 Titanium supports the following versions of JDK for each respective Operating System:
 
@@ -209,7 +207,7 @@ We recommend the following as a guideline for estimating how much disk space is 
 | 5.1.3 - latest | 8.16.0 - 10.x |
 | 5.0.0 - 5.1.2 | 8.x |
 
-If you use any version of Node.js beyond 8.9.x, Studio will hang at launch time.
+{{% alert title="⚠️ Warning" color="primary" %}}If you use any version of Node.js beyond 8.9.x, Studio will hang at launch time.{{% /alert %}}
 
 ##### Not supported
 
@@ -314,7 +312,7 @@ See [Installing the Android SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_St
 
 Titanium requires the Android SDK Tools to be installed in order to allow you to develop Android applications.
 
-Remember that Oracle JDK is a prerequisite for Android development and should be installed first. You need at least JDK 8 installed. See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for instructions.
+{{% alert title="⚠️ Warning" color="primary" %}}Remember that Oracle JDK is a prerequisite for Android development and should be installed first. You need at least JDK 8 installed. See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for instructions.{{% /alert %}}
 
 ![download_02](/Images/appc/download/attachments/52297851/download_02.png)
 
@@ -332,11 +330,9 @@ For Titanium 8.x.x, you need to installed the following packages via the Android
 | Android SDK Build-tools | Rev 23 |
 | Android SDK Platform (API Level) | API Level 29 for Titanium 8.3.x<br /><br />API Level 28 for Titanium version older than 8.3.0 |
 
-Titanium SDK 7.0.0+ requires Android SDK Tools v25 or newer as a minimum requirement.
+{{% alert title="⚠️ Warning" color="primary" %}}Titanium SDK 7.0.0+ requires Android SDK Tools v25 or newer as a minimum requirement.{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}Take caution before upgrading these packages, as changes to the way they work has broken the Titanium toolchain a number of times in the past. Although these problems are often beyond our control, we always do our utmost to fix them as soon as we are made aware of them.
 
-Take caution before upgrading these packages, as changes to the way they work has broken the Titanium toolchain a number of times in the past. Although these problems are often beyond our control, we always do our utmost to fix them as soon as we are made aware of them.
-
-With this in mind, it's important to only upgrade these packages _between_ major projects, so that you have time to fix any problems that may result. Always consult the Android Tools [Release Notes](http://developer.android.com/sdk/tools-notes.html) and [Known Issues](http://tools.android.com/knownissues) first, and refer to our [Installation Troubleshooting](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installation_Troubleshooting/) guide to check whether there are any further actions that need to be taken to make the Titanium and the Android SDK compatible.
+With this in mind, it's important to only upgrade these packages _between_ major projects, so that you have time to fix any problems that may result. Always consult the Android Tools [Release Notes](http://developer.android.com/sdk/tools-notes.html) and [Known Issues](http://tools.android.com/knownissues) first, and refer to our [Installation Troubleshooting](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installation_Troubleshooting/) guide to check whether there are any further actions that need to be taken to make the Titanium and the Android SDK compatible.{{% /alert %}}
 
 #### Android SDK / Target Android platform
 
@@ -372,11 +368,11 @@ Each Titanium SDK supports building against a specific range of Android versions
 | 1.8.x | 2.2 (API 8) | 3.x.x (API 11) | 2.2 (API 8) |
 | 1.7.x | 2.1 (API 7) | 3.x.x (API 11) | 2.1 (API 7) |
 
-*Notes*
+{{% alert title="⚠️ Warning" color="primary" %}}*Notes*
 
 \* If you are building an Android module, you need to have Android SDK 6.0.x (API 23) installed if using Release 6.0.0 and greater.
 
-\*\* The Titanium SDK does not support the [Android 4.4W SDK](http://developer.android.com/wear/index.html) (API 20), also known as the Android Wear SDK.
+\*\* The Titanium SDK does not support the [Android 4.4W SDK](http://developer.android.com/wear/index.html) (API 20), also known as the Android Wear SDK.{{% /alert %}}
 
 Most mobile device manufacturers have been licensed to use Google's enhanced API, which provides support for Maps and other functionality. If this is the case for your target devices, you will need to install the relevant Google packages, listed as _Google APIs by Google Inc., Android API x..._ by the **Android SDK Manager** tool. In Studio, choose the SDKs with the naming format "Google APIs x.x" to use the enhanced APIs, or those without the "Google APIs" prefix otherwise.
 
@@ -471,7 +467,7 @@ Each Titanium SDK supports a specific range of iOS base SDKs and deployment targ
 
 ### Windows
 
-As of Titanium 9.0.0, building Windows apps is no longer supported.
+{{% alert title="❗️ Warning" color="danger" %}}As of Titanium 9.0.0, building Windows apps is no longer supported.{{% /alert %}}
 
 #### Visual Studio
 
@@ -676,11 +672,11 @@ See [Installing gperf](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Inst
 
 ### Ant
 
-Titanium 9.0.0 and newer versions no longer use Apache Ant. The below only applies to older SDK versions.
+{{% alert title="❗️ Warning" color="danger" %}}Titanium 9.0.0 and newer versions no longer use Apache Ant. The below only applies to older SDK versions.{{% /alert %}}
 
 Apache Ant is the standard build tool for Java. It can be used to build Titanium native Android modules and to build the Titanium SDK for Android. Ant is not required for building, running, or distributing applications using the Titanium SDK.
 
-Java is a prerequisite for Ant, and should be installed first. See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for instructions.
+{{% alert title="⚠️ Warning" color="primary" %}}Java is a prerequisite for Ant, and should be installed first. See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for instructions.{{% /alert %}}
 
 Obtain the latest stable version of Apache Ant. Ant is supplied as a multi-platform archive. You can choose the archive format that's easiest for you to extract: all archives contain the same files.
 

@@ -44,7 +44,7 @@ The paths shown are the locations on our running systems. As these configuration
 
 The paths shown are the locations on our running systems. As these configurations are tried and tested with Titanium, try to keep yours as similar as possible to this.
 
-Paths to these tools and project files should not contain spaces or special characters, such as dollar signs, ampersands, etc. Some of the development tools do not support having spaces in the path, such as scons if you want to build the Titainum SDK from source.
+{{% alert title="⚠️ Warning" color="primary" %}}Paths to these tools and project files should not contain spaces or special characters, such as dollar signs, ampersands, etc. Some of the development tools do not support having spaces in the path, such as scons if you want to build the Titainum SDK from source.{{% /alert %}}
 
 | Package | Environment Variable | Local Path | Notes |
 | --- | --- | --- | --- |
@@ -71,7 +71,7 @@ Be aware of the following environment variables that exist by default on Windows
 | %PROGRAMDATA% | C:\\ProgramData |  |
 | %USERPROFILE% |  | Path to the current user profile |
 
-Bear in mind the following caveats:
+{{% alert title="⚠️ Warning" color="primary" %}}Bear in mind the following caveats:
 
 * All Windows systems must have the following paths **at the beginning** of their PATH environment variable to function properly:
 
@@ -79,7 +79,7 @@ Bear in mind the following caveats:
     %SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;
     ```
 
-* Installing Appcelerator Studio to a common system location, such as %PROGRAMFILES%, is not currently recommended, due to [Eclipse Bug 249133](https://bugs.eclipse.org/bugs/show_bug.cgi?id=249133) and the complications it causes with updates.
+* Installing Appcelerator Studio to a common system location, such as %PROGRAMFILES%, is not currently recommended, due to [Eclipse Bug 249133](https://bugs.eclipse.org/bugs/show_bug.cgi?id=249133) and the complications it causes with updates.{{% /alert %}}
 
 #### Configuring Environment Variables on Windows
 
@@ -103,7 +103,7 @@ Configure system variables using the Control Panel
 
 Below is a summary of where Titanium-related components are typically stored and the system variables that should be configured.
 
-The paths shown are the locations on our running systems. As these configurations are tried and tested with Titanium, try to keep yours as similar as possible to this.
+{{% alert title="⚠️ Warning" color="primary" %}}The paths shown are the locations on our running systems. As these configurations are tried and tested with Titanium, try to keep yours as similar as possible to this.{{% /alert %}}
 
 | Package | Environment Variable | Local Path | Notes |
 | --- | --- | --- | --- |

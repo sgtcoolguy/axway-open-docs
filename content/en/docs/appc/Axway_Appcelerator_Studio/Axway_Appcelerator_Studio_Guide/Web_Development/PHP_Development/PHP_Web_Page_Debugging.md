@@ -161,7 +161,7 @@ To create a server configuration:
 
 * Create an Apache, or a Generic, server configuration.
 
-    **Make sure that the host name is without the _protocol_ part (for example, use localhost and not** http://localhost).
+    {{% alert title="⚠️ Warning" color="primary" %}}**Make sure that the host name is without the _protocol_ part (for example, use localhost and not** http://localhost).{{% /alert %}}
 
 Continue with these steps:
 

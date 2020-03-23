@@ -1,12 +1,10 @@
 {"title":"Flow Orchestration","weight":"20"}
 
-*API Builder 3.x is deprecated*
+{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
-Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
-
-The examples and configuration information in this topic use a model named simpleuser with the default endpoints generated.
+Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}The examples and configuration information in this topic use a model named simpleuser with the default endpoints generated.{{% /alert %}}
 
 The API Orchestration user interface is accessed from the APIs List page on the API Builder Console by selecting a **Flow** icon or a **Create Flow** icon for a generated or imported endpoint depending upon the current endpoint status. The API Orchestration user interface is divided into the following panels:
 

@@ -134,9 +134,9 @@ var img = Ti.UI.createImageView({
 
 On iOS, you can retrieve density-specific images from a remote URL as well. You will have to use Ti.Platform.displayCaps.logicalDensityFactor to build the URL to fetch the right image for the device. Then add the hires=true property to your ImageView to specify that the remote URL is a high-resolution image. Optionally, Set the img.defaultImage property equal to a _local_ image and it will be displayed while your remote image is being downloaded.
 
-*Asset Catalog*
+{{% alert title="💡 Hint" color="info" %}}*Asset Catalog*
 
-Starting with Release 5.1.0, PNG and JPEG images following this naming convention will be added to an Asset Catalog to support App Thinning. When a user installs the application to their device, only the relevant images will be included. Note that you will not be able to access images added to the Asset Catalog from the filesystem, that is, you cannot use the Ti.Filesystem APIs or equivalent to access the files with a URL or path.
+Starting with Release 5.1.0, PNG and JPEG images following this naming convention will be added to an Asset Catalog to support App Thinning. When a user installs the application to their device, only the relevant images will be included. Note that you will not be able to access images added to the Asset Catalog from the filesystem, that is, you cannot use the Ti.Filesystem APIs or equivalent to access the files with a URL or path.{{% /alert %}}
 
 #### Windows Platform
 
@@ -153,7 +153,7 @@ Use the qualifiers below to support devices with different DPIs or screen resolu
 
 For more details, see [Windows Asset Qualifiers](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Windows_UI_Components_and_Conventions/Windows_Asset_Qualifiers/).
 
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 In order to grant access to pictures library for Windows Phone, you need to provide appropriate Capabilities in your tiapp.xml. Windows Phone users are prompted to grant or deny permission when your application attempt to use it.
 

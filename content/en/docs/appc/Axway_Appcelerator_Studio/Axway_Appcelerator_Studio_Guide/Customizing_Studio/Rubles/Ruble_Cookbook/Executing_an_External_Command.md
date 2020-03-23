@@ -71,7 +71,7 @@ Often it is useful to select something in the editor and call an external tool b
 
 Here we take the current selection in the editor and echo it to the console.
 
-When using backticks, you need to assign the value of an environment variable to a temporary variable, and use that in the command.
+{{% alert title="⚠️ Warning" color="primary" %}}When using backticks, you need to assign the value of an environment variable to a temporary variable, and use that in the command.{{% /alert %}}
 
 ```
 require 'ruble'

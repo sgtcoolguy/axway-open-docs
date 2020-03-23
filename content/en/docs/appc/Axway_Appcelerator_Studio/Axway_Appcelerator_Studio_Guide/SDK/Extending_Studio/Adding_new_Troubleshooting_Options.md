@@ -10,7 +10,7 @@ At the simplest, the user can take a slider and switch debugging from Errors, to
 
 We create the notion of "Debug Scopes" which allows the user to more precisely filter the list of items that they see in the log file. To enable, a user selects the "Debug specific components" checkbox, and then selects the items in the list that apply.
 
-The log file is a poorly-discoverable option for the end user and directing the user to the log file should be seen as a method of last resort. It is, however, very useful to us when debugging, but please be careful when logging items under the **ERROR** severity. That is a true, blocker/critical error. We can always ask the user to modify the severity slider for log info, and capture the more detailed information as necessary.
+{{% alert title="⚠️ Warning" color="primary" %}}The log file is a poorly-discoverable option for the end user and directing the user to the log file should be seen as a method of last resort. It is, however, very useful to us when debugging, but please be careful when logging items under the **ERROR** severity. That is a true, blocker/critical error. We can always ask the user to modify the severity slider for log info, and capture the more detailed information as necessary.{{% /alert %}}
 
 ## Logging Best Practices
 
@@ -40,7 +40,7 @@ Performance-related debug options may also be created, though they don't current
 
 PLUGIN\_ID + "/perf" + name\_of\_scope
 
-We use the term "scope" a bit loosely here, as the scopes don't quite match the form of other scopes across Studio. However, to maintain compatibility with existing Eclipse infrastructure, we use the same form as they suggest
+{{% alert title="💡 Hint" color="info" %}}We use the term "scope" a bit loosely here, as the scopes don't quite match the form of other scopes across Studio. However, to maintain compatibility with existing Eclipse infrastructure, we use the same form as they suggest{{% /alert %}}
 
 ### To create a scope:
 

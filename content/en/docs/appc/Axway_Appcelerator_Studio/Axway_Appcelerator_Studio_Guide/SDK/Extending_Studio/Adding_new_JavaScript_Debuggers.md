@@ -67,9 +67,9 @@ But you will still need to have Firefox (any version) installed.
 
 You don't need to support all commands listed in the protocol spec, but you need to reply to all of them. So simply reply back with "!error message". At the bottom of this message is a sample message flow.
 
-* 'enable' request should turn on debugging, otherwise debug host should be in 'run' mode where only logging to IDE works.
+{{% alert title="⚠️ Warning" color="primary" %}}* 'enable' request should turn on debugging, otherwise debug host should be in 'run' mode where only logging to IDE works.
 
-* 'resumed\*start' reply should always be sent beck when debugger is fully set up. basically it is a feedback on 'enable' message.
+* 'resumed\*start' reply should always be sent beck when debugger is fully set up. basically it is a feedback on 'enable' message.{{% /alert %}}
 
 ## Sample Message Flow
 

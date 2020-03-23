@@ -2,9 +2,9 @@
 
 Demonstrates adding event attributes in the XML view and handling the event in the view-controller.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**basics/markup\_events**
+alloy/test/apps/**basics/markup\_events**{{% /alert %}}
 
 ![ios](/Images/appc/download/attachments/41845689/ios.png)
 

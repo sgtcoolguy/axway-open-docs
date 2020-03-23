@@ -20,8 +20,7 @@ To create an ACL:
 
 4. In the **Creator** field, click the **+** icon and select the object's owner from the list of application Users.
 
-    The object's owner always has read and write permission.
-
+    {{% alert title="⚠️ Warning" color="primary" %}}The object's owner always has read and write permission.{{% /alert %}}
 5. In the **Public Read** field, do one of the following:
 
     1. Select **Yes** to allow read access for all users.

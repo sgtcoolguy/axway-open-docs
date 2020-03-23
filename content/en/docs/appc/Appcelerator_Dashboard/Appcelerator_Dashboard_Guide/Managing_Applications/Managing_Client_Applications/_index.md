@@ -26,7 +26,7 @@ Native iOS and Android applications include the same basic information on the **
 
 For Titanium applications, you can click the **Action Menu** icon in the upper-right of the screen and select **Edit** to edit the Name, App ID, Copyright, URL, and Description of your application. Once you have completed your edits, click the **Save** button to save your edits. To return the **Overview** tab without saving your edits, click the **Cancel** button.
 
-Changes you make here will not affect your local application. Make sure to mirror the changes in your tiapp.xml file, or these will be overwritten the next time you build your app.
+{{% alert title="❗️ Warning" color="danger" %}}Changes you make here will not affect your local application. Make sure to mirror the changes in your tiapp.xml file, or these will be overwritten the next time you build your app.{{% /alert %}}
 
 ![edit_titanium_app](/Images/appc/download/attachments/60145239/edit_titanium_app.png)
 

@@ -36,7 +36,7 @@ Certain parameters in the AptanaStudio3.ini or TitaniumStudio.ini file are platf
 
 ## Configuration files across platforms
 
-Find your configuration file by following the steps here: [Modifying Your Configuration](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Updating_Studio/Modifying_Your_Configuration/)
+{{% alert title="⚠️ Warning" color="primary" %}}Find your configuration file by following the steps here: [Modifying Your Configuration](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Updating_Studio/Modifying_Your_Configuration/){{% /alert %}}
 
 ### Windows
 

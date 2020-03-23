@@ -120,7 +120,7 @@ SampleProjectClassic
 └── tiapp.xml
 ```
 
-Do not place the splash screen image in the drawable folder (without a suffix). Android may scale the image improperly. If you want to use one image for the entire application, place it in the drawable-nodpi folder.
+{{% alert title="⚠️ Warning" color="primary" %}}Do not place the splash screen image in the drawable folder (without a suffix). Android may scale the image improperly. If you want to use one image for the entire application, place it in the drawable-nodpi folder.{{% /alert %}}
 
 #### Splash screen with a custom theme
 
@@ -128,7 +128,7 @@ If you are using a custom theme to display the splash screen, override the defau
 
 1. Create a theme XML file in the ./platform/android/res/values/ (Alloy: app /platform/android/res/values/) folder. Do NOT name the file theme.xml. Titanium uses this name as its default theme file, which is required to build the application. If you create a file called theme.xml, it will overwrite the default Titanium one and break the build process. Add the windowBackground items to the custom theme referencing the background nine-patch image.
 
-    Only add the windowBackground items only to the theme of the default root activity. If you add windowBackground items to other themes for other activities, the image may not be displayed properly.
+    {{% alert title="⚠️ Warning" color="primary" %}}Only add the windowBackground items only to the theme of the default root activity. If you add windowBackground items to other themes for other activities, the image may not be displayed properly.{{% /alert %}}
 
     *platform/android/res/values/mytheme.xml*
 
@@ -201,7 +201,7 @@ Titanium provides default splash screen graphics of the appropriate size in each
 
 If you do not want to provide separate images for each density and orientation in your project, delete the folders. Then, provide a single default.png file in either Resources (Alloy: app/assets) or Resources/android (Alloy: app/assets/android) to match the dimensions that most closely match the device you expect most of your users to be running. Keep in mind that this could result in a splash screen that is stretched or compressed suboptimally for your users' devices.
 
-Do not use the <supports-screens/> element with the android:anyDensity attribute set to false to disable multiple density support. Google does not recommend [changing the default value](http://developer.android.com/guide/topics/manifest/supports-screens-element.html#any). Setting this attribute to false may cause undesired behavior.
+{{% alert title="❗️ Warning" color="danger" %}}Do not use the <supports-screens/> element with the android:anyDensity attribute set to false to disable multiple density support. Google does not recommend [changing the default value](http://developer.android.com/guide/topics/manifest/supports-screens-element.html#any). Setting this attribute to false may cause undesired behavior.{{% /alert %}}
 
 #### iOS splash screen considerations
 
@@ -300,7 +300,7 @@ The following table summarizes the graphic assets for devices no longer supporte
 
 ## Android graphic asset requirements and options
 
-To quickly generate Android icon assets for your application, use the [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) (this is not an Appcelerator product).
+{{% alert title="💡 Hint" color="info" %}}To quickly generate Android icon assets for your application, use the [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) (this is not an Appcelerator product).{{% /alert %}}
 
 ### Splash Screen
 
@@ -392,9 +392,7 @@ The following table lists the current file attributes created and used for a def
 
 ## Windows graphic asset requirements and options
 
-As of Titanium 9.0.0, building Windows apps is no longer supported.
-
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}As of Titanium 9.0.0, building Windows apps is no longer supported.{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 All Windows graphic assets must be in PNG format and may contain an alpha channel. Place all assets in the app/assets/windows folder for Alloy projects or Resources/windows folder for classic Titanium projects.
 

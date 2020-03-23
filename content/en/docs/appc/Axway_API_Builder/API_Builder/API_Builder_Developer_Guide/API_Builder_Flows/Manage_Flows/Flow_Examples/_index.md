@@ -1,10 +1,10 @@
 {"title":"Flow Examples","weight":"10"}
 
-*API Builder 3.x is deprecated*
+{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
-Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
+Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
 This topic provides examples of using the flow editor on the API Orchestration user interface to create flows and configure and connect the flow-nodes in a flow. The examples use the Swagger definition import of the simple user application endpoints. For additional information on importing endpoints, refer to the Importing endpoints section of [Manage Endpoints](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Flows/Manage_Endpoints/). The following flow examples are provided:
 

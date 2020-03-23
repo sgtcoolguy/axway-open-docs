@@ -2,9 +2,9 @@
 
 Demonstrates expressing properties of Titanium objects with Alloy proxy elements.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-You can find this example app in the Alloy repository under [samples/apps/ui/proxy\_properties](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [samples/apps/ui/proxy\_properties](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 Many Titanium UI objects and properties can be declared in Alloy as mark-up. These mark-up elements are considered proxies for the underlying Titanium APIs. For example, the [views/ios/index.xml](#ios) view, shown below, uses the following proxies.
 

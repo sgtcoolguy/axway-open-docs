@@ -1,8 +1,8 @@
 {"title":"AMPLIFY Runtime Services Release Notes","weight":"30"}
 
-*Monitor Published Applications!*
+{{% alert title="⚠️ Warning" color="primary" %}}*Monitor Published Applications!*
 
-The status of your applications that are published to a production environment should be monitored using Pingdom, New Relic, or a similar website performance monitoring program. For information on Pingdom, refer to the [Pingdom](https://www.pingdom.com/) website. For information on New Relic, refer to the [New Relic](https://newrelic.com/) website.
+The status of your applications that are published to a production environment should be monitored using Pingdom, New Relic, or a similar website performance monitoring program. For information on Pingdom, refer to the [Pingdom](https://www.pingdom.com/) website. For information on New Relic, refer to the [New Relic](https://newrelic.com/) website.{{% /alert %}}
 
 ## AMPLIFY Runtime Services 1.6.5 - 18 October 2019
 

@@ -14,9 +14,9 @@
 
 Demonstrates different approaches to [changing styles at runtime](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Dynamic_Styles/) in Alloy. The sample application displays a menu of options that discuss or demonstrate the different approaches and techniques for dynamic styling. See each section below for a discussion of each approach.
 
-*App folder location*
+{{% alert title="💡 Hint" color="info" %}}*App folder location*
 
-_alloy_/test/apps/**advanced/dynamic\_styling**
+_alloy_/test/apps/**advanced/dynamic\_styling**{{% /alert %}}
 
 ![dynamic_styling](/Images/appc/download/attachments/41845657/dynamic_styling.png)
 
@@ -256,7 +256,7 @@ As shown below, only the output for label2 includes a classes field, since it's 
 
 Autostyle is necessary to take full advantage of the [addClass()](#!/api/Alloy.Controller-method-addClass), [removeClass()](#!/api/Alloy.Controller-method-removeClass), and [resetClass()](#!/api/Alloy.Controller-method-resetClass) methods to properly update the view as classes are removed and added. For a better demonstration of the benefits of enabling auto-styling, see the discussion above for [Adding and Removing TSS Classes](#adding-and-removing-tss-classes).
 
-There is a small performance overhead associated with enabling auto-styling on components, which is why autoStyle is not disabled for all components by default. You should use autoStyle only on elements that will actually use the ability to add/remove classes at runtime.
+{{% alert title="⚠️ Warning" color="primary" %}}There is a small performance overhead associated with enabling auto-styling on components, which is why autoStyle is not disabled for all components by default. You should use autoStyle only on elements that will actually use the ability to add/remove classes at runtime.{{% /alert %}}
 
 ## See also
 

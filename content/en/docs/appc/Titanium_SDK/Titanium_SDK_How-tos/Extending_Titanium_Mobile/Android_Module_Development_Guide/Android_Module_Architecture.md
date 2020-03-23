@@ -105,11 +105,11 @@ public static void onAppCreate(TiApplication app)
 
 The module also provides callbacks that are invoked when the application's root activity is started, stopped, paused, or resumed.
 
-*Activity Lifecycle Events*
+{{% alert title="💡 Hint" color="info" %}}*Activity Lifecycle Events*
 
 Note that on Titanium applications, the root activity is the one that displays the splash screen. If the first UI component is a heavyweight Window (window with its own activity) or TabGroup, not all of the activity lifecycle events may fire for the root activity. Note that since Release 3.2.0, all Window objects are heavyweight and have their own activity associated with it.
 
-To have the module respond to the activity lifecycle events of a specific activity of a TabGroup or Window in the JavaScript application, override the activity lifecycle callbacks of a module proxy, then associate the proxy with the Window or TabGroup whose lifecycle events you want to monitor when you create the proxy in the JavaScript application. For details, see [Activity Lifecycle Events](#ActivityLifecycleEvents) below.
+To have the module respond to the activity lifecycle events of a specific activity of a TabGroup or Window in the JavaScript application, override the activity lifecycle callbacks of a module proxy, then associate the proxy with the Window or TabGroup whose lifecycle events you want to monitor when you create the proxy in the JavaScript application. For details, see [Activity Lifecycle Events](#ActivityLifecycleEvents) below.{{% /alert %}}
 
 ### Get the current activity
 
@@ -276,7 +276,7 @@ In this case, the proxy has two properties, hintText and value, each with corres
 
 When you define properties this way, you'll usually want to add a model listener to respond to property changes. When you set a property using the generated getter and setter methods, the model listener is automatically notified.
 
-If you define properties using the propertyAccessors element, you **cannot** override the accessors by defining custom accessor methods. Doing so causes module packaging to fail with a cryptic error. For each property, you must use _either_ propertyAccessors or custom accessors, but not both.
+{{% alert title="⚠️ Warning" color="primary" %}}If you define properties using the propertyAccessors element, you **cannot** override the accessors by defining custom accessor methods. Doing so causes module packaging to fail with a cryptic error. For each property, you must use _either_ propertyAccessors or custom accessors, but not both.{{% /alert %}}
 
 #### Handle property changes using the model listener
 

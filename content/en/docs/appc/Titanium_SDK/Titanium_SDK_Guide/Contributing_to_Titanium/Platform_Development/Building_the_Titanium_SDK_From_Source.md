@@ -52,7 +52,7 @@ Many of these items you may already have installed for developing Titanium appli
 
 To build the SDK for Android, you must have either Apache Ant or Eclipse and ADT installed. In most cases, you should probably have both--Ant for command-line builds, and Eclipse and ADT for interactive builds and debugging. Building the SDK using scons, as described here, requires Ant.
 
-ADT has been discontinued and we don't recommend using it.
+{{% alert title="❗️ Warning" color="danger" %}}ADT has been discontinued and we don't recommend using it.{{% /alert %}}
 
 ### Windows Notes
 
@@ -184,7 +184,7 @@ The default installation folder for SDKs varies by operating system:
 
 The process of compiling the [Titanium SDK source code](https://github.com/appcelerator/titanium_mobile) can be very time consuming if your environment is not primed to do so. Here's a short list of tips and tricks for getting that compile time down. In our testing so far, these tips can reduce compile time by as much as 80%!
 
-At this time, the instructions refer specifically to speeding up the Titanium SDK build on a macOS machine.
+{{% alert title="⚠️ Warning" color="primary" %}}At this time, the instructions refer specifically to speeding up the Titanium SDK build on a macOS machine.{{% /alert %}}
 
 ### Use ccache
 

@@ -473,7 +473,7 @@ function handleItemClick (e) {
 }
 ```
 
-The views that display each list data item are recycled as the user scrolls through the list. Therefore, when changing the content of a ListItem, do so by changing the the underlying list item data, not by modifying the source of the event.
+{{% alert title="⚠️ Warning" color="primary" %}}The views that display each list data item are recycled as the user scrolls through the list. Therefore, when changing the content of a ListItem, do so by changing the the underlying list item data, not by modifying the source of the event.
 
 ```javascript
 // Don't do this:
@@ -482,4 +482,4 @@ function handleItemClick(e) {
 }
 ```
 
-The above code can have unexpected consequences if the user scrolls past the item and then scrolls it back into view.
+The above code can have unexpected consequences if the user scrolls past the item and then scrolls it back into view.{{% /alert %}}

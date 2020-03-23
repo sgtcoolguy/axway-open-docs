@@ -212,7 +212,7 @@ The tiapp.xml file and its close cousin the timodule.xml file are XML configurat
 </ti:app>
 ```
 
-A note about encryption and tiapp.xml: tiapp.xml properties are encrypted when building the app for production.
+{{% alert title="⚠️ Warning" color="primary" %}}A note about encryption and tiapp.xml: tiapp.xml properties are encrypted when building the app for production.{{% /alert %}}
 
 ## Top level elements
 
@@ -246,7 +246,7 @@ In iOS, this ID must match the Bundle ID when generating an Explicit App ID in t
 <name>Fakeblock</name>
 ```
 
-On Android, if you change the name to a value that starts with a digit, you need to prefix the name in the activity with an undersore (\_) if you include activities in the Android section of the tiapp.xml file. For example, if you change the name to 2Foo the activity name will be \_2Foo.
+{{% alert title="⚠️ Warning" color="primary" %}}On Android, if you change the name to a value that starts with a digit, you need to prefix the name in the activity with an undersore (\_) if you include activities in the Android section of the tiapp.xml file. For example, if you change the name to 2Foo the activity name will be \_2Foo.{{% /alert %}}
 
 ### analytics
 
@@ -408,7 +408,7 @@ For iOS the version number is truncated to three dot-separated numbers. For exam
 
 tiapp.xml also supports ad-hoc properties that can be used by the application with [Titanium.App.Properties](#!/api/Titanium.App.Properties). These properties must be placed inside the root <ti:app> element.
 
-Any properties defined inside the tiapp.xml are read-only. Previously, you could overwrite these property values.
+{{% alert title="⚠️ Warning" color="primary" %}}Any properties defined inside the tiapp.xml are read-only. Previously, you could overwrite these property values.{{% /alert %}}
 
 Properties generally follow the form:
 
@@ -452,7 +452,7 @@ See [Ti.UI.View](#!/api/Titanium.UI.View) in the Titanium SDK API Reference for 
 
 ### intent-filter-new-task
 
-As of Titanium 8.0.0, tiapp.xml property intent-filter-new-task is no longer supported. If a Titanium app is currently in the background, then an intent will now resume it and fire a "newintent" event. All apps will now simulate "singleTask"-like behavior automatically
+{{% alert title="⚠️ Warning" color="primary" %}}As of Titanium 8.0.0, tiapp.xml property intent-filter-new-task is no longer supported. If a Titanium app is currently in the background, then an intent will now resume it and fire a "newintent" event. All apps will now simulate "singleTask"-like behavior automatically{{% /alert %}}
 
 Since launch modes cannot be used with Titanium Android, to offer similar behavior to android:launchMode="singleTask" when using intent filters, you can set the _intent-filter-new-task_ property in your tiapp.xml:
 
@@ -599,7 +599,7 @@ Android also supports a number of application properties for various internal se
 
 ### Properties to work around Android bugs 2373 and 5277
 
-As of Titanium 8.0.0, this has been deprecated. The new behavior is a data intent will resume a backgrounded app will be resumed and the fire a "newintent" event. Also, the restart dialog box has been removed.
+{{% alert title="⚠️ Warning" color="primary" %}}As of Titanium 8.0.0, this has been deprecated. The new behavior is a data intent will resume a backgrounded app will be resumed and the fire a "newintent" event. Also, the restart dialog box has been removed.{{% /alert %}}
 
 See [TIMOB-4941](http://jira.appcelerator.org/browse/TIMOB-4941), [TIMOB-1559](http://jira.appcelerator.org/browse/TIMOB-1559) and [TIMOB-9285](http://jira.appcelerator.org/browse/TIMOB-9285) for information about the Titanium workaround to Google issues [2373](http://code.google.com/p/android/issues/detail?id=2373) and [5277](http://code.google.com/p/android/issues/detail?id=5277). TIMOB-9285 in particular has a useful [explanation](https://jira.appcelerator.org/browse/TIMOB-9285?focusedCommentId=210304&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-210304) of the issue and of ti.android.bug2373.finishfalseroot, the newest of the properties listed below.
 
@@ -646,7 +646,7 @@ To indicate that your application supports any screen densities, which is a comm
 </android>
 ```
 
-Do not set the android:anyDensity attribute to false. Google does not recommend [changing the default value](http://developer.android.com/guide/topics/manifest/supports-screens-element.html#any). Setting this attribute to false may cause undesired behavior.
+{{% alert title="❗️ Warning" color="danger" %}}Do not set the android:anyDensity attribute to false. Google does not recommend [changing the default value](http://developer.android.com/guide/topics/manifest/supports-screens-element.html#any). Setting this attribute to false may cause undesired behavior.{{% /alert %}}
 
 #### Enabling the debugger by default
 
@@ -1079,9 +1079,9 @@ With some of the new security features of iOS9, SDK 5.1.2's **canOpenUrl** might
 
 **Since Release 5.1.0**. Determines whether to enable App Thinning for iOS applications by using an Asset Catalog. An Asset Catalog contains image assets for specific devices. When a user installs your application, only the resources that your device supports will be downloaded. The element is automatically added to new projects since Release 5.1.0. For details, see [App Thinning: Slicing](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_iOS_apps/App_Thinning/#slicing).
 
-*Filesystem Access*
+{{% alert title="⚠️ Warning" color="primary" %}}*Filesystem Access*
 
-Because images are store in the Asset Catalog, reading image files manually from the filesystem should be done using the Ti.Filesystem.getAsset() method.
+Because images are store in the Asset Catalog, reading image files manually from the filesystem should be done using the Ti.Filesystem.getAsset() method.{{% /alert %}}
 
 ```xml
 <ti:app>
@@ -1095,13 +1095,13 @@ Because images are store in the Asset Catalog, reading image files manually from
 
 **Since Release 5.1.0**. Enables the iOS [auto-layout engine](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/index.html#//apple_ref/doc/uid/TP40010853) to layout the children components of a view. Disabled by default.
 
-*Experimental Feature*
+{{% alert title="❗️ Warning" color="danger" %}}*Experimental Feature*
 
 This is an experimental feature with known issues:
 
 * [TIMOB-19806](https://jira.appcelerator.org/browse/TIMOB-19806)
 
-If you find any issue using this feature, file a bug in [JIRA](https://jira.appcelerator.org/).
+If you find any issue using this feature, file a bug in [JIRA](https://jira.appcelerator.org/).{{% /alert %}}
 
 ```xml
 <ti:app>
@@ -1150,7 +1150,7 @@ Under the top <ti:app> element, you may optionally have a <windows>element that 
 
 ### manifest
 
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 Add the **<manifest>** element as a child of the **<windows>** element to include [ad-hoc Windows appx.manifest XML elements](https://msdn.microsoft.com/en-us/library/windows/apps/br211453.aspx). You may optionally define the target attribute and set it to either phone or store to have Windows Phone or Windows Store specific manifests, respectively.
 
@@ -1366,7 +1366,7 @@ Users can define a target Windows version by configuring the tiapp.xml in the sa
 
 ### Handling differing capabilities between Windows 8.1 and 10
 
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 Windows Phone 8.1:
 

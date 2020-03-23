@@ -18,7 +18,7 @@
 
 To take advantage of bleeding edge functionality and the most recent bug fixes to the Titanium SDKs, without waiting for an official release, you can manually download and install a **Continuous Integration Build** (also known as _CI Build_ or _Continuous Build_). Continuous Builds are packages compiled and published automatically when [Titanium's open source repository](https://github.com/appcelerator/titanium_mobile) has received a new code commit.
 
-Be aware that only **major** releases of any of our software are officially supported and therefore, by the same token, we cannot accept Jira tickets or investigate problems that result from using a Continuous Build. That said, you may find discussions and workarounds for them in our [Jira bug-tracking system](http://jira.appcelerator.org).
+{{% alert title="❗️ Warning" color="danger" %}}Be aware that only **major** releases of any of our software are officially supported and therefore, by the same token, we cannot accept Jira tickets or investigate problems that result from using a Continuous Build. That said, you may find discussions and workarounds for them in our [Jira bug-tracking system](http://jira.appcelerator.org).{{% /alert %}}
 
 ## Obtaining the build
 
@@ -26,9 +26,9 @@ You can download the latest continuous builds from [http://builds.appcelerator.c
 
 Use the drop-down menu at the top of the page to select between the existing development branches. The _master_ branch is the branch currently in active development, and will ultimately become a major release. You can determine the version number associated with this branch by hovering over one of the download links and inspecting the name of the file.
 
-It's important to compare the SHA1 hash of the downloaded SDK archive with the one displayed on the download page, **before you attempt to install it**. Do not install the package if the SHA1 hashes don't match – this may indicate a corrupted package.
+{{% alert title="💡 Hint" color="info" %}}It's important to compare the SHA1 hash of the downloaded SDK archive with the one displayed on the download page, **before you attempt to install it**. Do not install the package if the SHA1 hashes don't match – this may indicate a corrupted package.
 
-If you discover a corrupt package, simply download each previous day's release until you find one that is valid. There is no need to report it to us.
+If you discover a corrupt package, simply download each previous day's release until you find one that is valid. There is no need to report it to us.{{% /alert %}}
 
 ## Installing the build
 
@@ -58,7 +58,7 @@ To install a Titanium SDK using Studio, follow these steps:
 
 ### Manual install
 
-We strongly recommend that you use Studio or the CLI to manage SDKs. Please see the previous section.
+{{% alert title="⚠️ Warning" color="primary" %}}We strongly recommend that you use Studio or the CLI to manage SDKs. Please see the previous section.{{% /alert %}}
 
 To manually install a Titanium SDK, follow these steps:
 

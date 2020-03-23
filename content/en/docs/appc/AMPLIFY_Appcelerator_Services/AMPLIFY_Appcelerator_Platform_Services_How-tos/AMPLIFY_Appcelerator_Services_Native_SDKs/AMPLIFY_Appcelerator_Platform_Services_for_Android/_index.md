@@ -1,8 +1,8 @@
 {"title":"AMPLIFY Appcelerator Platform Services for Android","weight":"10"}
 
-*Pro or Enterprise Subscription Required*
+{{% alert title="❗️ Warning" color="danger" %}}*Pro or Enterprise Subscription Required*
 
-This AMPLIFY Appcelerator Platform feature requires a Pro or Enterprise Subscription.
+This AMPLIFY Appcelerator Platform feature requires a Pro or Enterprise Subscription.{{% /alert %}}
 
 The following topics provide instructions on using AMPLIFY Appcelerator Platform Services for the Android platform.
 

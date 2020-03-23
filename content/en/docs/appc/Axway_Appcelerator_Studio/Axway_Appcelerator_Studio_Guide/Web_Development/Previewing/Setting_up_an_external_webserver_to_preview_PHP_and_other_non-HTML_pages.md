@@ -16,7 +16,7 @@ To preview PHP pages and have them rendered appropriately, you need a web server
 
 * [Preview your files](#preview-your-files)
 
-If you are currently running IIS (which runs on Port 80 by default), make sure you don't have a Port conflict when you set up the webserver. If your web server uses Port 80, you can stop IIS to use this port for your web server.
+{{% alert title="💡 Hint" color="info" %}}If you are currently running IIS (which runs on Port 80 by default), make sure you don't have a Port conflict when you set up the webserver. If your web server uses Port 80, you can stop IIS to use this port for your web server.{{% /alert %}}
 
 ## Install XAMPP
 
@@ -32,11 +32,11 @@ If you decide to use a different install location (or a different server), the a
 
 You can either create a new project to hold your content or move an existing project into the new location.
 
-We create a sub-folder under the **htdocs** root. This is to allow for multiple projects to be previewed with the same server. If you wish, you can place your project directly in the root of the webserver, but note that if you delete the project, and select to "delete files on disk" it will **delete the entire directory and all contents.**
+{{% alert title="❗️ Warning" color="danger" %}}We create a sub-folder under the **htdocs** root. This is to allow for multiple projects to be previewed with the same server. If you wish, you can place your project directly in the root of the webserver, but note that if you delete the project, and select to "delete files on disk" it will **delete the entire directory and all contents.**{{% /alert %}}
 
 ### Create a new project
 
-For this document, we will refer to a project named **myproject**. Replace this with the name of your actual project.
+{{% alert title="⚠️ Warning" color="primary" %}}For this document, we will refer to a project named **myproject**. Replace this with the name of your actual project.{{% /alert %}}
 
 1. From the **File** menu, select **New > Project... > Web Project** (or **PHP Project**) in the project wizard.
 

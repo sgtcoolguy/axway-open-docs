@@ -36,7 +36,7 @@ Note that currently, PyDev has a project (org.python.pydev.red\_core) which has 
 
 Important: Before doing any changes to the code, it's important to note that you should create a new branch (usually based on the development branch) for doing code changes. See: [http://book.git-scm.com/3\_basic\_branching\_and\_merging.html](http://book.git-scm.com/3_basic_branching_and_merging.html) and also [http://nvie.com/git-model](http://nvie.com/git-model) for details on creating and using branches.
 
-For running the tests, a file: org.python.pydev.core/tests/org.python.pydev.core/TestDependent.OS.properties must have the values set regarding to the computer that'll execute the tests.
+{{% alert title="⚠️ Warning" color="primary" %}}For running the tests, a file: org.python.pydev.core/tests/org.python.pydev.core/TestDependent.OS.properties must have the values set regarding to the computer that'll execute the tests.{{% /alert %}}
 
 If the head does not compile in git, send an e-mail to the pydev-code list at sourceforge to know what's happening.
 

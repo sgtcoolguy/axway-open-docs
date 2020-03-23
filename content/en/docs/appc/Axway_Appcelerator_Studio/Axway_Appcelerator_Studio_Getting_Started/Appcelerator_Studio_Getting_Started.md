@@ -1,6 +1,6 @@
 {"title":"Appcelerator Studio Getting Started","weight":"100"}
 
-This is the old Studio Getting Started page. Please visit [Axway Appcelerator Studio Getting Started](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/) page.
+{{% alert title="❗️ Warning" color="danger" %}}This is the old Studio Getting Started page. Please visit [Axway Appcelerator Studio Getting Started](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/) page.{{% /alert %}}
 
 This page will be redirected to [Axway Appcelerator Studio Getting Started](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/) in 3 seconds.
 

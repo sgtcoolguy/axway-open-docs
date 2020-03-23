@@ -4,7 +4,7 @@
 
 To make things easier, make sure that you are in the 'PyDev perspective' – it is 'automatically' opened when you create a PyDev project, but just in case, you can open it by going to the menu: window > open perspective > other > PyDev, as pointed in the picture below.
 
-If you had an earlier version of PyDev installed, you must close the perspective and open it again, like older versions of it may not have everything needed for this example (to do that, make the perspective active, then go to the menu: window > close perspective).
+{{% alert title="❗️ Warning" color="danger" %}}If you had an earlier version of PyDev installed, you must close the perspective and open it again, like older versions of it may not have everything needed for this example (to do that, make the perspective active, then go to the menu: window > close perspective).{{% /alert %}}
 
 ![open_perspective](/Images/appc/pydev.org/images/open_perspective.png)
 A perspective 'defines' what appears in your window and which actions are enabled... If you want to add something (even some menu), you can go to the menu: window > customize perspective. To create our first module, we will use the default PyDev perspective, as it already has the wizard shortcuts pre-defined in the **File > new** menu
@@ -16,7 +16,7 @@ So, let the 'src' folder selected and go to the menu: **File > new > PyDev packa
 ![new_package](/Images/appc/pydev.org/images/new_package.png)
 If everything goes ok, the structure below will be created (and the file /root/nested/\__init_\_.py will be opened).
 
-Check to see if the 'P' icon is appearing for your items (as in the picture below) and at the top of your editor after opening it. If it's not appearing, it may be that there's a problem with the file association, so, go to window > preferences > general > editors > file associations and make sure that the .py files are associated with the Python Editor (note that because of an eclipse bug, if it seems correct, you may have to remove the association and add it again)
+{{% alert title="⚠️ Warning" color="primary" %}}Check to see if the 'P' icon is appearing for your items (as in the picture below) and at the top of your editor after opening it. If it's not appearing, it may be that there's a problem with the file association, so, go to window > preferences > general > editors > file associations and make sure that the .py files are associated with the Python Editor (note that because of an eclipse bug, if it seems correct, you may have to remove the association and add it again){{% /alert %}}
 
 ![structure1](/Images/appc/pydev.org/images/structure1.png)
 Now, let's create the 'example' module. Let the folder /root/nested selected and go to the menu: **File > new > PyDev module** and fill the module name as below (again, the other fields should be automatically filled).
@@ -28,15 +28,13 @@ The file '/root/nested/example.py' should have been created, so, to finish this 
 
 ![codecompl1](/Images/appc/pydev.org/images/codecompl1.png)
 
-If the code-completion does not work, you should check:
+{{% alert title="⚠️ Warning" color="primary" %}}If the code-completion does not work, you should check:
 
 * If you do not have a firewall that is blocking communication from the shell.
 
-* If the timeout to connect to the shell is enough for your system (in the menu: window > preferences > PyDev > code completion).
+* If the timeout to connect to the shell is enough for your system (in the menu: window > preferences > PyDev > code completion).{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}*NOTE FOR JYTHON USERS*
 
-*NOTE FOR JYTHON USERS*
-
-If you are in **Jython**, the first activation might take a while. This usually happens when Jython has to do the processing of new jars. The next time you start it, if it takes the same time, it could be that your Jython 'cache-dir' is not writable, so, you can create a script with the code below to see where is the cache dir and check its permissions (or if there is no permission problem, you can try deleting the dir and seeing if it gets correctly recreated in the next Jython activation).
+If you are in **Jython**, the first activation might take a while. This usually happens when Jython has to do the processing of new jars. The next time you start it, if it takes the same time, it could be that your Jython 'cache-dir' is not writable, so, you can create a script with the code below to see where is the cache dir and check its permissions (or if there is no permission problem, you can try deleting the dir and seeing if it gets correctly recreated in the next Jython activation).{{% /alert %}}
 
 **Code:**
 

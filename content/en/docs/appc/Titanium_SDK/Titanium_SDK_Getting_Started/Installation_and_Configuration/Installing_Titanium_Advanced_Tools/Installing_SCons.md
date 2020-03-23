@@ -14,7 +14,7 @@
 
 Installing scons is required if you want to build the Titanium SDK from source. It is not required for building, running, or distributing applications using the Titanium SDK.
 
-Python is a prerequisite for SCons, and should be installed first. See [Installing Python](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Python/) for instructions.
+{{% alert title="⚠️ Warning" color="primary" %}}Python is a prerequisite for SCons, and should be installed first. See [Installing Python](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Titanium_Advanced_Tools/Installing_Python/) for instructions.{{% /alert %}}
 
 Obtain the SCons version listed below for your Operating System:
 

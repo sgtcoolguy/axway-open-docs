@@ -1,10 +1,10 @@
 {"title":"API Builder CLI","weight":"40"}
 
-*API Builder 3.x is deprecated*
+{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
-Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
+Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
 This document will walk you through the process of how to publish API Builder apps to a newly deployed cluster using Appcelerator CLI commands.
 
@@ -18,7 +18,7 @@ This document will walk you through the process of how to publish API Builder ap
 
 * [CLI commands](#cli-commands)
 
-The use of small containers should be avoided when publishing API Builder applications using the Appcelerator CLI commands. The minimum recommended container size for Arrow Apps is "Medium". Though you may be able to deploy to a "Dev" or "Small" container, for better memory usage and performance it is highly recommended that you use medium or bigger size containers.
+{{% alert title="⚠️ Warning" color="primary" %}}The use of small containers should be avoided when publishing API Builder applications using the Appcelerator CLI commands. The minimum recommended container size for Arrow Apps is "Medium". Though you may be able to deploy to a "Dev" or "Small" container, for better memory usage and performance it is highly recommended that you use medium or bigger size containers.{{% /alert %}}
 
 ## Setup
 
@@ -217,34 +217,32 @@ Alternatively, after preparing your Dockerfile and start\_app script, you can bu
     $ appc cloud config appcteest --minsize <size>
     ```
 
-    If you haven't set up your DNS yet, your app publish may fail with the following error:
+    {{% alert title="⚠️ Warning" color="primary" %}}If you haven't set up your DNS yet, your app publish may fail with the following error:
 
-    ```bash
-    $ appc cloud logcat appctest
-    ...
-    Uncaught Exception Error loading connector/appc.arrowdb. Error: getaddrinfo ENOTFOUND api.cloudapp-1.appctest.com api.cloudapp-1.appctest.com:443
-    2017-04-03T16:24:39-07:00 | Error: Error loading connector/appc.arrowdb. Error: getaddrinfo ENOTFOUND api.cloudapp-1.appctest.com api.cloudapp-1.appctest.com:443
-    ...
-    ```
+```bash
+$ appc cloud logcat appctest
+...
+Uncaught Exception Error loading connector/appc.arrowdb. Error: getaddrinfo ENOTFOUND api.cloudapp-1.appctest.com api.cloudapp-1.appctest.com:443
+2017-04-03T16:24:39-07:00 | Error: Error loading connector/appc.arrowdb. Error: getaddrinfo ENOTFOUND api.cloudapp-1.appctest.com api.cloudapp-1.appctest.com:443
+...
+```
 
-    In this case, you will need to execute the following command to configure the custom host info in the app container. Please note if you try to update /etc/hosts file in the Dockerfile with the custom hostname and IP. It will not work because the Docker swarm mode will override that information at the time of the container launch.
+In this case, you will need to execute the following command to configure the custom host info in the app container. Please note if you try to update /etc/hosts file in the Dockerfile with the custom hostname and IP. It will not work because the Docker swarm mode will override that information at the time of the container launch.
 
-    ```bash
-    $ appc cloud config --set "extra_hosts=54.212.208.81 api.cloudapp-1.appctest.com"
-    Appcelerator Command-Line Interface, version 7.0.0
-    Copyright (c) 2014-2017, Appcelerator, Inc.  All Rights Reserved.
-    Admin Hostname: https://admin.cloudapp-1.appctest.com
-    The variable has been saved successfully.
+```bash
+$ appc cloud config --set "extra_hosts=54.212.208.81 api.cloudapp-1.appctest.com"
+Appcelerator Command-Line Interface, version 7.0.0
+Copyright (c) 2014-2017, Appcelerator, Inc.  All Rights Reserved.
+Admin Hostname: https://admin.cloudapp-1.appctest.com
+The variable has been saved successfully.
 
-    # Confirm the env is set correctly
-    $ appc cloud config --env appctest
-    Appcelerator Command-Line Interface, version 7.0.0
-    Copyright (c) 2014-2017, Appcelerator, Inc.  All Rights Reserved.
-    Admin Hostname: https://admin.cloudapp-1.appctest.com
-    extra_hosts = 54.212.208.81 api.cloudapp-1.appctest.com
-    ```
-
-    Note about Docker image publish with Alpine: You will need to execute apk add --no-cache curl in the Docker file when publishing the Docker image.
+# Confirm the env is set correctly
+$ appc cloud config --env appctest
+Appcelerator Command-Line Interface, version 7.0.0
+Copyright (c) 2014-2017, Appcelerator, Inc.  All Rights Reserved.
+Admin Hostname: https://admin.cloudapp-1.appctest.com
+extra_hosts = 54.212.208.81 api.cloudapp-1.appctest.com
+```{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}Note about Docker image publish with Alpine: You will need to execute apk add --no-cache curl in the Docker file when publishing the Docker image.{{% /alert %}}
 
 ## CLI commands
 
@@ -266,7 +264,7 @@ Alternatively, after preparing your Dockerfile and start\_app script, you can bu
 | appc cloud cname | Set a CNAME for an application. |
 | appc cloud config | Configure the application. |
 | appc cloud crt | Manage SSL certificates for the application. |
-| appc cloud download | Download source files for the specified application and version.<br /><br />If you publish using a Docker image, this command won't work. |
+| appc cloud download | Download source files for the specified application and version.<br /><br />{{% alert title="⚠️ Warning" color="primary" %}}If you publish using a Docker image, this command won't work.{{% /alert %}} |
 | appc logout | Log out |
 | appc remove | Removes installed Appcelerator CLI. |
 | appc run | Run an application locally for dev. and/or testing. |

@@ -97,7 +97,7 @@ Modules can be globally installed in the following locations:
     * %APPDATA%\\Titanium
         %ALLUSERSPROFILE%\\Application Data\\Titanium\\
 
-On macOS, the ~/Library directory may be hidden. Press Shift+Command+G in the Finder to open a dialog allowing you to navigate to the folder directly to ~/Library/Application Support/Titanium.
+{{% alert title="💡 Hint" color="info" %}}On macOS, the ~/Library directory may be hidden. Press Shift+Command+G in the Finder to open a dialog allowing you to navigate to the folder directly to ~/Library/Application Support/Titanium.{{% /alert %}}
 
 ## Using Your Module
 

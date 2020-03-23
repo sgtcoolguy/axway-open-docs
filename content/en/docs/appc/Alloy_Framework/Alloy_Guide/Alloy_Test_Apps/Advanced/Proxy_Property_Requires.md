@@ -2,9 +2,9 @@
 
 Demonstrates using Require and Widget elements to create Titanium proxy properties.
 
-*App folder location*
+{{% alert title="💡 Hint" color="info" %}}*App folder location*
 
-_alloy_/test/apps/**advanced/proxy\_property\_requires**
+_alloy_/test/apps/**advanced/proxy\_property\_requires**{{% /alert %}}
 
 For example, as shown below, your main Alloy application can define a <Window/> element that uses a <Require/> element to include an external file that defines the Window element's [leftNavButton](#!/api/Titanium.UI.Window-property-rightNavButton) and [rightNavButton](#!/api/Titanium.UI.Window-property-rightNavButton) views.
 

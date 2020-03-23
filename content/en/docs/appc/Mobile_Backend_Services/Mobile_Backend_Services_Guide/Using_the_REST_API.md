@@ -197,7 +197,7 @@ GET https://api.cloud.appcelerator.com/v1/places/show/**4d6f13e96f70953608000012
 
 ## Response paging
 
-For [query](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Search_and_Query_APIs/) operations, the page and per\_page paging mechanism described below only applies to applications created before Mobile Backend Services 1.1.5. For applications created with Mobile Backend Services 1.1.5 and later, you must use range-based queries, as discussed in [Query Pagination](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Search_and_Query_APIs/).
+{{% alert title="⚠️ Warning" color="primary" %}}For [query](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Search_and_Query_APIs/) operations, the page and per\_page paging mechanism described below only applies to applications created before Mobile Backend Services 1.1.5. For applications created with Mobile Backend Services 1.1.5 and later, you must use range-based queries, as discussed in [Query Pagination](/docs/appc/Mobile_Backend_Services/Mobile_Backend_Services_Guide/Search_and_Query_APIs/).{{% /alert %}}
 
 API calls which return arrays of objects take optional page and per\_page arguments to specify the number of objects to return. By default, ten objects are returned on each page, and the request may specify up to 20 results per page. Page numbers start at 1; if unspecified, the page defaults to page 1.
 

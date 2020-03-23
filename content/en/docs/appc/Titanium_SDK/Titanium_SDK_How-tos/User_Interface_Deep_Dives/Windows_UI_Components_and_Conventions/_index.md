@@ -8,9 +8,7 @@
 
 * [Asset qualifiers](#asset-qualifiers)
 
-As of Titanium 9.0.0, building Windows apps is no longer supported.
-
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}As of Titanium 9.0.0, building Windows apps is no longer supported.{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 ## Introduction
 

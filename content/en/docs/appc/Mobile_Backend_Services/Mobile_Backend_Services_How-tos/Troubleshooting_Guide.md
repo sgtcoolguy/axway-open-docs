@@ -54,7 +54,7 @@ If you do have MBS keys, manually enter the MBS key information in the tiapp.xml
 
 The following table lists error messages reported by the MBS push notification dispatcher, which is responsible for sending push notifications to the Apple Push Notification Service (APNS) and Firebase Cloud Messaging (FCM).
 
-Firebase Cloud Messaging (FCM) is the new version of Google Cloud Messaging (GCM). For additional information, refer to [Firebase Cloud Messaging](https://developers.google.com/cloud-messaging/concept-options).
+{{% alert title="⚠️ Warning" color="primary" %}}Firebase Cloud Messaging (FCM) is the new version of Google Cloud Messaging (GCM). For additional information, refer to [Firebase Cloud Messaging](https://developers.google.com/cloud-messaging/concept-options).{{% /alert %}}
 
 ### Apple Push Notification Server (APNS) errors
 

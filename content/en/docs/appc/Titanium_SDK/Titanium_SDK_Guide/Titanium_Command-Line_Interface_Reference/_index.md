@@ -154,7 +154,7 @@ If you don't specify all of the required options, titanium prompts you for the m
 
 Builds and runs an application or module project.
 
-**SDK version setting precedence**
+{{% alert title="⚠️ Warning" color="primary" %}}**SDK version setting precedence**
 
 The CLI checks several settings to see which SDK version to use to build your application. The following is a list of locations in the order of precedence. If an SDK version is not defined in that location, the next location is checked.
 
@@ -167,7 +167,7 @@ The CLI checks several settings to see which SDK version to use to build your ap
     To check the version, run titanium config and to change the version, run titanium config app.sdk <sdk\_version>.
 
 4. SDK select version.
-    To check or change this version, run titanium sdk select.
+    To check or change this version, run titanium sdk select.{{% /alert %}}
 
 ```bash
 # Titanium CLI
@@ -233,9 +233,7 @@ appc run --platform <platform> [--build-only] [--force] [--project-dir <value>] 
 
 #### Windows build options
 
-As of Titanium 9.0.0, building Windows apps is no longer supported.
-
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}As of Titanium 9.0.0, building Windows apps is no longer supported.{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 | Options | Description |
 | --- | --- |
@@ -266,7 +264,7 @@ titanium clean [ --platform <platform> ] [--project-dir <value>] [--sdk <value>]
 appc ti clean [ --platform <platform> ] [--project-dir <value>] [--sdk <value>] [--log-level <level>]
 ```
 
-As of Titanium SDK 7.3.0 release, you need to keep historical version of your module in your dist folder in a safe place (e.g. source control). Running this updated command will wipe out anything in the dist folder.
+{{% alert title="⚠️ Warning" color="primary" %}}As of Titanium SDK 7.3.0 release, you need to keep historical version of your module in your dist folder in a safe place (e.g. source control). Running this updated command will wipe out anything in the dist folder.{{% /alert %}}
 
 **Best practice**: don't use releases as a means of archiving. Releases should be published in a stable location such as Github, S3, etc. But, if you wish to keep old releases in the module, you should consider using a different folder to archive your content in the dist folder and commit that zip to your source control before cleaning.
 

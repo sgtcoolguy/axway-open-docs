@@ -10,7 +10,7 @@
 
 * [Titanium Router](#titanium-router)
 
-Titanium Angular is currently in an early preview stage. This means that some features are still under development or already available features may still be buggy.
+{{% alert title="❗️ Warning" color="danger" %}}Titanium Angular is currently in an early preview stage. This means that some features are still under development or already available features may still be buggy.{{% /alert %}}
 
 ## TypeScript API
 

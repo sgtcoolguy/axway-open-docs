@@ -2,9 +2,9 @@
 
 Demonstrates how to use a SplitWindow control, an iPad-only control for managing the presentation of two views in a master-detail UI.
 
-*Example App Source Location*
+{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
 
-You can find this example app in the Alloy repository under [samples/apps/ui/splitwindow](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/splitwindow). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [samples/apps/ui/splitwindow](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/splitwindow). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 ![ipad](/Images/appc/download/attachments/41845771/ipad.png)
 

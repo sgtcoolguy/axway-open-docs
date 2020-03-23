@@ -16,7 +16,7 @@
 
 Users can create new samples that appear in the Samples view, where they could be imported into projects.
 
-We assume you've [created a new Ruble](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Creating_a_new_Ruble/) as a placeholder for the following content.
+{{% alert title="💡 Hint" color="info" %}}We assume you've [created a new Ruble](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Creating_a_new_Ruble/) as a placeholder for the following content.{{% /alert %}}
 
 ## Creating a new sample
 

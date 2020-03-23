@@ -149,7 +149,7 @@ If either package has a version number ending in \-alpha, \-beta, or \-cr, you s
 
   npm remove -g titanium  npm remove -g alloy
 
-You may need to use sudo before these terminal commands on OSX.
+{{% alert title="⚠️ Warning" color="primary" %}}You may need to use sudo before these terminal commands on OSX.{{% /alert %}}
 
 You will be prompted to install these components when you restart Studio or to manually check for updates, from the **Help** menu, select **Check for Titanium Updates** or **Check for Appcelerator Updates**.
 

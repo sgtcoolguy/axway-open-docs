@@ -10,9 +10,9 @@
 
 Demonstrate basic use of the ListView element to create vertically scrolling lists of items.
 
-*Example App Source Location*
+{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
 
-You can find this example app in the Alloy repository under [samples/apps/ui/listview](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/listview). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [samples/apps/ui/listview](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/listview). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 The sample demonstrates basic [ListView](#!/api/Titanium.UI.ListView) use with a single ListViewSection, using multiple ListViewSections with header and footer views, and using custom item templates to customize the content and layout of individual list items within the same ListView.
 
@@ -62,7 +62,7 @@ function onItemClick(e) {
 }
 ```
 
-You can also detect click events on views within an item template, as discussed in [Handling Events on Template Views](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/ListViews/Alloy_ListView_Guide/#handling-events-on-template-views).
+{{% alert title="💡 Hint" color="info" %}}You can also detect click events on views within an item template, as discussed in [Handling Events on Template Views](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/ListViews/Alloy_ListView_Guide/#handling-events-on-template-views).{{% /alert %}}
 
 ## Sections
 
@@ -147,7 +147,7 @@ The single <ListSection> element contains three <ListItem/> elements. The first 
 
 In addition to the <ListItem> elements declared in the XML, the templates.xml view-controller programmatically add items to the ListViewSection, conditionally applying either "requiredTemplate" or "template1" to each item.
 
-It's important to note that this code does not generate list items directly, but rather just updates the data [items](#!/api/Titanium.UI.ListSection-property-items) array of the ListViewSection. The actual rendering of list items is left to the native control, based on the current scroll position. In this way, a ListView can display very large number of items without compromising performance.
+{{% alert title="💡 Hint" color="info" %}}It's important to note that this code does not generate list items directly, but rather just updates the data [items](#!/api/Titanium.UI.ListSection-property-items) array of the ListViewSection. The actual rendering of list items is left to the native control, based on the current scroll position. In this way, a ListView can display very large number of items without compromising performance.{{% /alert %}}
 
 *app/controllers/templates.js*
 

@@ -21,7 +21,7 @@ We recommend the following as a guideline for estimating how much disk space is 
 | 5.1.3 - latest | 8.16.0 - 10.x |
 | 5.0.0 - 5.1.2 | 8.x |
 
-If you use any version of Node.js beyond 8.9.x, Studio will hang at launch time.
+{{% alert title="⚠️ Warning" color="primary" %}}If you use any version of Node.js beyond 8.9.x, Studio will hang at launch time.{{% /alert %}}
 
 ### Not supported
 

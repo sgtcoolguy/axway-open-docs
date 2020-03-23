@@ -2,11 +2,9 @@
 
 Demonstrates how to use localized strings in your Alloy project.
 
-*App folder location*
+{{% alert title="💡 Hint" color="info" %}}*App folder location*
 
-_alloy_/test/apps/**advanced/localization**
-
-![local](/Images/appc/download/attachments/41845663/local.png)
+_alloy_/test/apps/**advanced/localization**{{% /alert %}}![local](/Images/appc/download/attachments/41845663/local.png)
 
 The global L() function, which maps Titanium.Locale.getString(), can be invoked from an Alloy controller, XML view, or TSS file. Below is the sample application's main index.xml view.
 

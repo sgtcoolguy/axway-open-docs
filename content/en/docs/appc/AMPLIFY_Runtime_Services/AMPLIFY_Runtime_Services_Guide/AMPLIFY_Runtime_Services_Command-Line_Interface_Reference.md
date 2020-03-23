@@ -387,7 +387,7 @@ acs remove [options] [appname]
 
 Released with Appcelerator CLI 6.0.0, this command allows you to restart an AMPLIFY Runtime Services application without having to use acs publish --force.
 
-This command will restart all servers associated with your app.
+{{% alert title="⚠️ Warning" color="primary" %}}This command will restart all servers associated with your app.{{% /alert %}}
 
 ```
 acs restart [options] [appname]
@@ -423,7 +423,7 @@ acs server [options] [appname]
 | Name | Description |
 | --- | --- |
 | appname | The name of the app for which to configure cloud server resources. If omitted, the command needs to be run in the application's root directory, or specify the application's directory with the \-d or \--directory option. |
-| \--set <size> | Sets the server size. Values can be one of the following: \`Dev\`, \`Small\`, \`Medium\`, \`Large\`, or \`XLarge\`. See [API Builder Project](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/) for specifics on these sizes.<br /><br />The minimum recommended container size for Arrow Apps is "Medium". Though you may be able to deploy to a "Dev" or "Small" container for better memory usage and performance, it is highly recommended that you use medium or bigger size containers. |
+| \--set <size> | Sets the server size. Values can be one of the following: \`Dev\`, \`Small\`, \`Medium\`, \`Large\`, or \`XLarge\`. See [API Builder Project](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Project/) for specifics on these sizes.<br /><br />{{% alert title="⚠️ Warning" color="primary" %}}The minimum recommended container size for Arrow Apps is "Medium". Though you may be able to deploy to a "Dev" or "Small" container for better memory usage and performance, it is highly recommended that you use medium or bigger size containers.{{% /alert %}} |
 | \--org <orgid> | The ID of the organization the application belongs to. This parameter only is required if the target application has the same name as an application in another organization you belong to. |
 | \-h, \--help | Show help information for this command. |
 

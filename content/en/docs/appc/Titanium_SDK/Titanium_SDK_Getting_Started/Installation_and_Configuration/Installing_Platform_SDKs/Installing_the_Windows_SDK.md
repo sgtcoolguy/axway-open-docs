@@ -1,6 +1,6 @@
 {"title":"Installing the Windows SDK","weight":"30"}
 
-As of Titanium 9.0.0, building Windows apps is no longer supported.The below only applies to users of older Titanium versions.
+{{% alert title="❗️ Warning" color="danger" %}}As of Titanium 9.0.0, building Windows apps is no longer supported.The below only applies to users of older Titanium versions.{{% /alert %}}
 
 * [Overview](#overview)
 
@@ -44,11 +44,11 @@ To develop for Windows Platform, the following are the preferred requirements:
 
 * To use Windows Phone Emulators, Hyper-V must be enabled. For information on how to enable Hyper-V, see [this document from Microsoft.](https://msdn.microsoft.com/library/windows/apps/xaml/jj863509.aspx)
 
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 ## Compatibility
 
-As of Titanium 9.0.0, building Windows apps is no longer supported.
+{{% alert title="❗️ Warning" color="danger" %}}As of Titanium 9.0.0, building Windows apps is no longer supported.{{% /alert %}}
 
 ### Visual Studio
 

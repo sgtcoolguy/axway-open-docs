@@ -34,9 +34,7 @@ This guide walks through the steps to create, build and test an Windows module u
 
 ## Windows module prerequisites
 
-As of Titanium 9.0.0, building Windows apps is no longer supported.
-
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}As of Titanium 9.0.0, building Windows apps is no longer supported.{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 To develop an Windows-based Module, you'll need all of the software required to build a Titanium application for Windows:
 
@@ -52,7 +50,7 @@ Like Windows application development, Windows module development is only support
 
 First, create a new module project.
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 From a terminal, change the current working directory to your workspace and run:
 
@@ -60,7 +58,7 @@ From a terminal, change the current working directory to your workspace and run:
 cd /PATH/TO/WORKSPACE
 appc new -n test --id com.example.test
 ### when prompted for the project type, select "Titanium Module"
-```
+```{{% /alert %}}
 
 In Studio:
 
@@ -80,7 +78,7 @@ Studio sets up a new folder called test that contains your module project.
 
 Next, build the module and package it. This process produces a ZIP file containing a binary library with unprocessed module assets, example code and documentation.
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 From a terminal, go to the module's windows directory and run the appc run -p windows --build-only:
 
@@ -89,7 +87,7 @@ cd test/windows
 appc run -p windows --build-only
 ```
 
-After the build completes, unzip the built module in the Titanium SDK home path: (C:\\ProgramData\\Titanium).
+After the build completes, unzip the built module in the Titanium SDK home path: (C:\\ProgramData\\Titanium).{{% /alert %}}
 
 In Studio:
 
@@ -111,7 +109,7 @@ To test the module, create a test application and add the module as a dependency
 
 ### Create a test application
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 From a new terminal window, change the current working directory to your workspace and run the following commands:
 
@@ -119,7 +117,7 @@ From a new terminal window, change the current working directory to your workspa
 cd /PATH/TO/WORKSPACE
 appc new -t titanium -p windows -n Hello -u http:// --id com.example.hello
 cd Hello/
-```
+```{{% /alert %}}
 
 In Studio:
 
@@ -143,7 +141,7 @@ Studio sets up a new folder called Hello that contains the test application you 
 
 To load the module in the application, you need to add it as a dependency to the project.
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 Open the tiapp.xml and update the <modules/> element to include the module as a dependency to the project:
 
@@ -153,7 +151,7 @@ Open the tiapp.xml and update the <modules/> element to include the module as a 
         <module platform="windows">com.example.test</module>
     </modules>
 </ti:app>
-```
+```{{% /alert %}}
 
 In Studio:
 
@@ -167,7 +165,7 @@ In Studio:
 
 ### Load the module and make module API calls
 
-The module can be loaded by passing the module ID to the require() method, which returns a reference to the module that API calls can be made on.
+{{% alert title="⚠️ Warning" color="primary" %}}The module can be loaded by passing the module ID to the require() method, which returns a reference to the module that API calls can be made on.{{% /alert %}}
 
 Open the app/alloy.js file and replace the code with the following, which invokes API calls to the module:
 
@@ -183,13 +181,13 @@ test.exampleProp = "This is a test value";
 
 ### Run the application
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 From a terminal that has the test app as its current working directory, run:
 
 ```bash
 appc run -p windows
-```
+```{{% /alert %}}
 
 In the Studio toolbar, select **Run** in **Launch Modes** and select an Windows Phone simulator in **Launch Targets**.
 

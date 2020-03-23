@@ -62,7 +62,7 @@ The following code is an example of a view file:
 
 The Alloy tag is the root element for the XML markup and is required in all views. The Window element defines an instance of the Ti.UI.Window object and within that window instance is the Label element which defines an instance of a Ti.UI.Label object. Almost all of the Alloy XML tags are the class names of the Titanium UI components without the preceding namespace. Exceptions to this rule are listed in the Element table below.
 
-With the release of CLI 7.1.0, you can use platform as a prefix in the XML. For example: <Label ios:text="Hello iOS!" android:text="Hello Android!" />
+{{% alert title="⚠️ Warning" color="primary" %}}With the release of CLI 7.1.0, you can use platform as a prefix in the XML. For example: <Label ios:text="Hello iOS!" android:text="Hello Android!" />{{% /alert %}}
 
 Within a controller, a UI component can be referenced if its ID attribute is defined. For instance, the Label component in the above example has its ID defined as label and can be referenced in the controller using $.label.
 
@@ -532,7 +532,7 @@ For UI objects that belong to a specific platform, such as the navigation window
 <SplitWindow platform="ios"/>
 ```
 
-If you used <NavigationWindow platform="ios"/> prior to Titanium 8.0.0, you will need to specify the platform type.
+{{% alert title="⚠️ Warning" color="primary" %}}If you used <NavigationWindow platform="ios"/> prior to Titanium 8.0.0, you will need to specify the platform type.{{% /alert %}}
 
 Many of the Titanium view proxies not part of the Titanium.UI namespace do not require that the ns attribute be explicitly set. The following elements are implicitly mapped to a namespace if one is not defined:
 

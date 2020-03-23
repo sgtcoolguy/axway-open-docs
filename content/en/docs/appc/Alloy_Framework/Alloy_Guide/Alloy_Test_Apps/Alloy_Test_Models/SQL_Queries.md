@@ -2,11 +2,9 @@
 
 Demonstrates how to use a SQL query with a database fetch operation.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**models/sql\_queries**
-
-![sql_query](/Images/appc/download/attachments/41845731/sql_query.png)
+alloy/test/apps/**models/sql\_queries**{{% /alert %}}![sql_query](/Images/appc/download/attachments/41845731/sql_query.png)
 
 When using the SQLite sync adaptor included with Alloy, the fetch() method accepts a [SQL query as a parameter](https://docs.appcelerator.com/platform/latest/#!/guide/Alloy_Sync_Adapters_and_Migrations-section-src-36739597_AlloySyncAdaptersandMigrations-SQLiteSyncAdapter). You pass a dictionary to the fetch() method that contains a key named query. This value assigned to this key can either be a SQL query string, or a prepared SQL statement. For a prepared statement, set query.statement to your SQL statement template, and query.params to the parameter values to pass to the statement, as shown below.
 

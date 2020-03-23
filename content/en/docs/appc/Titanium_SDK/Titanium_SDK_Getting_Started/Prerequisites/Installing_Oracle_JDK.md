@@ -16,7 +16,7 @@
 
 Oracle's Java Development Kit (JDK) is required to be installed in order to work with Titanium.
 
-Be aware that no other flavors of JDK, such as OpenJDK, currently work with Titanium; only Oracle's will suffice.
+{{% alert title="⚠️ Warning" color="primary" %}}Be aware that no other flavors of JDK, such as OpenJDK, currently work with Titanium; only Oracle's will suffice.{{% /alert %}}
 
 Titanium supports the following versions of JDK for each respective Operating System:
 

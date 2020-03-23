@@ -2,9 +2,9 @@
 
 Demonstrates using data models with a widget.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**widgets/models**
+alloy/test/apps/**widgets/models**{{% /alert %}}
 
 The only difference when using models in a widget, compared to non-widget use, is that you use [Widget.createModel()](#!/api/Alloy.Widget-method-createModel) and [Widget.createCollection()](#!/api/Alloy.Widget-method-createCollection) methods to create models and collections, respectively. These methods are directly analogous to [Alloy.createModel()](#!/api/Alloy-method-createModel) and [Alloy.createCollection()](#!/api/Alloy-method-createCollection). You can also use the Model and Collection tags in widget views.
 

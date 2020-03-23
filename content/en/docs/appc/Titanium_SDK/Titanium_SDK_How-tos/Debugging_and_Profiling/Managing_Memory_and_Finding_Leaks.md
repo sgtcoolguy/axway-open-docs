@@ -26,9 +26,9 @@ In this section, you will learn how to monitor for and solve memory leaks in you
 
 ## Contents
 
-Let's start with a clarification: we're talking memory, _not_ storage in this section. Memory, sometimes called RAM, is the volatile location in which your app and its data are retained while they're being processed by the CPU. Storage is the long-term location where app data is retained while you're not using the app or device. In a desktop computer, the distinction is a bit easier: memory is done with chips; storage is done with the hard drive, floppy disk, or CD-ROM.
+{{% alert title="⚠️ Warning" color="primary" %}}Let's start with a clarification: we're talking memory, _not_ storage in this section. Memory, sometimes called RAM, is the volatile location in which your app and its data are retained while they're being processed by the CPU. Storage is the long-term location where app data is retained while you're not using the app or device. In a desktop computer, the distinction is a bit easier: memory is done with chips; storage is done with the hard drive, floppy disk, or CD-ROM.
 
-In a mobile device, both memory and storage are implemented as chips. Storage uses Flash memory chips, slow, but such chips don't lose their contents when power is removed. Memory uses RAM-style chips (DRAM, etc.), which are fast but volatile (contents lost when power removed).
+In a mobile device, both memory and storage are implemented as chips. Storage uses Flash memory chips, slow, but such chips don't lose their contents when power is removed. Memory uses RAM-style chips (DRAM, etc.), which are fast but volatile (contents lost when power removed).{{% /alert %}}
 
 CPUs in smartphones and tablets are amazingly advanced. The JavaScript Core and V8 interpreters that Titanium uses are quite fast and well-optimized for mobile apps. Computation speed is rarely an issue with apps these days. Memory is typically the largest bottleneck, a factor you'll need to actively manage as your apps grow in complexity.
 
@@ -36,11 +36,11 @@ In this section, we'll see what factors go into determining how much memory your
 
 Memory limits vary by operating system and device and are not clearly documented by the vendors. Based on our sleuthing, here are the limits you must be concerned with:
 
-*iOS notes*
+{{% alert title="❗️ Warning" color="danger" %}}*iOS notes*
 
 The numbers for iOS are rough estimates. Apple does not publish information about their app termination threshold, managed by processes called "watchdog" (responsible for monitoring) and "jetsam" (responsible for warnings/purging). App termination is controlled entirely at the discretion of these processes and their behavior may change at any time.
 
-The upside of this is that if you see a crash or device log referencing jetsam, this certainly indicates a memory issue.
+The upside of this is that if you see a crash or device log referencing jetsam, this certainly indicates a memory issue.{{% /alert %}}
 
 * iPhone: Limited to 10% of system memory
 
@@ -165,11 +165,11 @@ Lets continue! Apple's Instruments application is a handy tool for monitoring an
 
 If you make a change to your app, the most reliable way to gather new statistics in Instruments is to close it and start over.
 
-*Tracking memory more accurately*
+{{% alert title="⚠️ Warning" color="primary" %}}*Tracking memory more accurately*
 
 On iOS, the runtime and other systems may frequently allocate (or deallocate) objects which can't be managed directly through your javascript code. In general, when checking your app for memory leaks, you should be filtering for objects with the "Ti" prefix.
 
-Also note that by attaching the profiler after the app has started, you do not get any information on already-created objects until they are touched by the memory management system. To get more accurate information, you may need to open the Xcode project generated in your project's build/iphone folder, and choose **Product** \> **Profile**, then configure the resulting Instruments launch as described here.
+Also note that by attaching the profiler after the app has started, you do not get any information on already-created objects until they are touched by the memory management system. To get more accurate information, you may need to open the Xcode project generated in your project's build/iphone folder, and choose **Product** \> **Profile**, then configure the resulting Instruments launch as described here.{{% /alert %}}
 
 ![instruments](/Images/appc/download/attachments/29004941/instruments.png)
 

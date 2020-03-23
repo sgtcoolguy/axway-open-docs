@@ -72,7 +72,7 @@ confirmDialog.show().then((result: ConfirmResult) => {
 
 To prompt a user for some text input you can use the prompt dialog.
 
-**This has not yet been impletement with the current tech preview.**
+{{% alert title="❗️ Warning" color="danger" %}}**This has not yet been impletement with the current tech preview.**{{% /alert %}}
 
 #### Custom Dialogs
 

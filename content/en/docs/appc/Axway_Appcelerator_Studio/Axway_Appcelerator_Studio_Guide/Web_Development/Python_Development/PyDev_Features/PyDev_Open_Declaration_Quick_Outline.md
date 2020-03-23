@@ -20,4 +20,4 @@ It can also be activated from the menu:
 
 ![open_decl_menu](/Images/appc/pydev.org/images/open_decl_menu.png)
 
-If it is activated with a focus on the editor, it will bring the definitions from the current project and all referencing and referenced projects, and if it is activated from the menu, it will bring the definitions for all the projects in the workspace.
+{{% alert title="⚠️ Warning" color="primary" %}}If it is activated with a focus on the editor, it will bring the definitions from the current project and all referencing and referenced projects, and if it is activated from the menu, it will bring the definitions for all the projects in the workspace.{{% /alert %}}

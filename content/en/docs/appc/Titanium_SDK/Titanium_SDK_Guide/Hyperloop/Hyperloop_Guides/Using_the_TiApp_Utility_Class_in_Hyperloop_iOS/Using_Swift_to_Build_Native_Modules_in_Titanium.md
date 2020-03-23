@@ -10,7 +10,7 @@
 
 * [What's next?](#what's-next?)
 
-This document describes features available in Titanium SDK 8.0.0+.
+{{% alert title="💡 Hint" color="info" %}}This document describes features available in Titanium SDK 8.0.0+.{{% /alert %}}
 
 As a developer of native cross-platform apps, you may run into situations where you want to use a native API that is not exposed in Titanium. Luckily, there are two options available to integrate these functionalities into your app seamlessly:
 

@@ -2,9 +2,9 @@
 
 Demonstrates how Alloy combines several TSS styles based on their priority.
 
-*App folder location*
+{{% alert title="💡 Hint" color="info" %}}*App folder location*
 
-_alloy_/test/apps/advanced/complex\_styling
+_alloy_/test/apps/advanced/complex\_styling{{% /alert %}}
 
 [Styles](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/) can be defined on Alloy elements in variety of places: the global style sheet (app/app.tss), a view-controller's styles sheet (app/styles/index.tss, for example), or as attributes on an XML element, to name a few. In addition, styles can be applied conditionally based on the target platform or device form factor. Alloy defines a priority for each type of style, and styles are combined and mixed according to these priorities, as the sample app demonstrates. See [Style Priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#StylePriorities) for details.
 

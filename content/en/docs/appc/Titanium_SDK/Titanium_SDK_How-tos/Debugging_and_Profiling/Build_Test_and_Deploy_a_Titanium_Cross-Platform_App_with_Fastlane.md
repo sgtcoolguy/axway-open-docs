@@ -183,7 +183,7 @@ platform :ios do
 end
 ```
 
-The Fastfile file doesn't use file extensions.
+{{% alert title="⚠️ Warning" color="primary" %}}The Fastfile file doesn't use file extensions.{{% /alert %}}
 
 ### Configure Fastlane
 
@@ -209,7 +209,7 @@ The second lane, test has 2 actions:
 
 In this example, it uses different Appcelerator CLI commands so that the app is built to a specific simulator and \--build-only prevents it from launching (mocha will launch the simulator and attach to the correct session on its own). Then, the next step executes the mocha test file.
 
-The simulator defined in Fastlane MUST match the simulator defined in my mocha test file.
+{{% alert title="⚠️ Warning" color="primary" %}}The simulator defined in Fastlane MUST match the simulator defined in my mocha test file.{{% /alert %}}
 
 ### Execute Fastlane
 

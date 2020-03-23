@@ -1,10 +1,10 @@
 {"title":"Authentication Schemes","weight":"30"}
 
-*API Builder 3.x is deprecated*
+{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
-Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
+Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
 * [Introduction](#introduction)
 
@@ -34,7 +34,7 @@ To change the authentication mechanism, open the conf/default.js file and change
 
 * **plugin** : Use a custom or third-party authentication mechanism. Using the plugin strategy, you can extend the authentication to use any third-party or custom API authentication. To build your own plugin, set the value plugin for the key APIKeyAuthType to use this strategy, then set the key APIKeyAuthPlugin to the location of your plugin. The location can be a file path (relative to the current work directory of your server project directory) or the name of the module package available in the standard node\_modules location.
 
-Separate API keys are configured for each environment. For example, separate API keys are configured for the development environment and for the production environment. The API key for the current environment must be used for basic and apikey authentication. The development API key must be used for authentication in the development environment and the production API key must be used for authentication in the production environment.
+{{% alert title="⚠️ Warning" color="primary" %}}Separate API keys are configured for each environment. For example, separate API keys are configured for the development environment and for the production environment. The API key for the current environment must be used for basic and apikey authentication. The development API key must be used for authentication in the development environment and the production API key must be used for authentication in the production environment.{{% /alert %}}
 
 The following describes the authentication mechanisms.
 

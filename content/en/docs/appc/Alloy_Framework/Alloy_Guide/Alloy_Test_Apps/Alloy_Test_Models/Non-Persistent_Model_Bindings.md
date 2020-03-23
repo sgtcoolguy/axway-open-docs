@@ -2,9 +2,9 @@
 
 Demonstrates using a static, non-persistent data collection.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**models/binding\_no\_persistence**
+alloy/test/apps/**models/binding\_no\_persistence**{{% /alert %}}
 
 In the sample application, clicking the <Label> or <TableView> UI element causes the application to make trivial changes to the underlying model or collection data. To update the UI with the new model or collections data, it then calls the trigger() method on both model and collection objects. One difference between using a persistent and non-persistent model or collection is that you can't call the [model](http://docs.appcelerator.com/backbone/0.9.2/#Model-fetch) or [collection](http://docs.appcelerator.com/backbone/0.9.2/#Collection-fetch)'s fetch() method on a non-persistent collection, as this generates a runtime error. Instead, call the trigger() method on the model or collection, as demonstrated.
 

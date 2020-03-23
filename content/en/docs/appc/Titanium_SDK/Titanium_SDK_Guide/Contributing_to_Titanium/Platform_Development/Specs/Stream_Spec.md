@@ -30,7 +30,7 @@ Titanium mobile needs support for stream IO operations on appropriate objects su
 
 This document will outline the proposed additions for supporting stream operations within Titanium mobile, types that will support stream operations, API changes and source examples.
 
-A separate spec exists that outlines encoding support for numeric and string values. The [Encoding Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/Encoding_Spec/) enables the addition of reading and writing of numeric and string values along with support for specific encoding. In the future, we plan to support the ability for a developer to define their own stream types that can be used alongside the native Titanium streams.
+{{% alert title="💡 Hint" color="info" %}}A separate spec exists that outlines encoding support for numeric and string values. The [Encoding Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/Encoding_Spec/) enables the addition of reading and writing of numeric and string values along with support for specific encoding. In the future, we plan to support the ability for a developer to define their own stream types that can be used alongside the native Titanium streams.{{% /alert %}}
 
 ## Justification
 

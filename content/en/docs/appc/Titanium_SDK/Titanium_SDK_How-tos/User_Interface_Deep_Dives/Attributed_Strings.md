@@ -66,7 +66,7 @@ After you have created your AttributedString object, to use it, set the attribut
 
 You can also assign the AttributedString object to TextField's attributedHintText property, which is equivalent to setting the hintText property.
 
-If you use the attributedString or the attributedHintText property, do not set any other properties that modify the appearance of text, such as font, color, etc. If you use an attributed string, only use an attributed string. Titanium does not support using attributed strings with other text modifying properties.
+{{% alert title="⚠️ Warning" color="primary" %}}If you use the attributedString or the attributedHintText property, do not set any other properties that modify the appearance of text, such as font, color, etc. If you use an attributed string, only use an attributed string. Titanium does not support using attributed strings with other text modifying properties.{{% /alert %}}
 
 The example below highlights the word "hyperloop" in the Label.
 

@@ -20,7 +20,7 @@ The **Manage Data** tab in Dashboard provides a visual interface to the various 
 
 To manage MBS objects of a specific API, select the API from the Dashboard home page **Apps** tab whose data objects you want to manage. Then, select the **Manage Data** tab, as shown below. The main screen displays a table listing all MBS object types and the total number of each type.
 
-To manage Mobile Backend Services data objects, you must be an administrator or the application creator.
+{{% alert title="⚠️ Warning" color="primary" %}}To manage Mobile Backend Services data objects, you must be an administrator or the application creator.{{% /alert %}}
 
 ![manage_data_latest](/Images/appc/download/attachments/60148480/manage_data_latest.png)
 
@@ -77,7 +77,7 @@ Each rule consists of three parts:
 | Greater than | Date | Displays objects where the field value is greater than the inputted value. |
 | Less than | Date | Displays objects where the field value is less than the inputted value. |
 | Not equal to | Number, String | Displays objects where the field value is not the same as the inputted value. |
-| Regular expression | String | Displays objects where the field value matches the regular expression.<br /><br />Currently, only prefix matches are supported, that is, the regular expression must begin with an anchor (^) followed by a letter or digit. For example, '^a', '^a.\*', and '^a.\*$' are allowed, but not '^.\*a\*'. |
+| Regular expression | String | Displays objects where the field value matches the regular expression.<br /><br />{{% alert title="⚠️ Warning" color="primary" %}}Currently, only prefix matches are supported, that is, the regular expression must begin with an anchor (^) followed by a letter or digit. For example, '^a', '^a.\*', and '^a.\*$' are allowed, but not '^.\*a\*'.{{% /alert %}} |
 | Starts with | String | Displays objects where the field value starts with the inputted value. |
 
 For example, the Users table below has been filtered to display only those users whose username starts with the letter "t".
@@ -119,7 +119,7 @@ For a given export, if the total number of objects of a specific MBS type data i
     ![export_latest](/Images/appc/download/attachments/60148480/export_latest.png)
 3. Click **Export App Data.** When the export package is ready to download, an email will be sent to your Dashboard user's registered email address.
 
-You cannot export data if it has been exported in the past seven (7) days.
+{{% alert title="⚠️ Warning" color="primary" %}}You cannot export data if it has been exported in the past seven (7) days.{{% /alert %}}
 
 ## Creating Mobile Backend Services objects
 

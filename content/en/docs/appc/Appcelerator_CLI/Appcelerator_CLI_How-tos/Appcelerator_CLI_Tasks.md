@@ -104,7 +104,7 @@ To build an Alloy or Titanium project to test on a device, simulator or emulator
 
 Once the application is installed and launched, use native tools to test, debug and profile your application. See [Debugging and Profiling](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Debugging_and_Profiling/).
 
-**SDK version setting precedence**
+{{% alert title="⚠️ Warning" color="primary" %}}**SDK version setting precedence**
 
 The CLI checks several settings to see which SDK version to use to build your application. The following is a list of locations in the order of precedence. If an SDK version is not defined in that location, the next location is checked.
 
@@ -117,7 +117,7 @@ The CLI checks several settings to see which SDK version to use to build your ap
     To check the version, run appc ti config and to change the version, run appc ti config app.sdk <sdk\_version>.
 
 4. SDK select version.
-    To check or change this version, run appc ti sdk select.
+    To check or change this version, run appc ti sdk select.{{% /alert %}}
 
 #### Android emulator
 
@@ -178,9 +178,7 @@ If you omit the \-V and \-P options, the CLI will prompt you with options. You c
 
 #### Windows Phone emulator
 
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
-
-Windows Phone emulator requires CLI and SDK 4.1.0 or later.
+{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}Windows Phone emulator requires CLI and SDK 4.1.0 or later.{{% /alert %}}
 
 To build for a Windows Phone emulator, you need to obtain your Windows publisher ID. After you have created your Windows Dev Center account, log in to [https://dev.windowsphone.com/en-us/Account/Summary](https://dev.windowsphone.com/en-us/Account/Summary) to get your publish GUID.
 
@@ -194,15 +192,13 @@ appc run -p windows -C 8-1-1 -I "CN=00000000-0000-1000-8000-000000000000"
 
 If you omit any of the optional parameters, the CLI will prompt you with options.
 
-*Windows Phone Publisher GUID*
+{{% alert title="⚠️ Warning" color="primary" %}}*Windows Phone Publisher GUID*
 
-Prior to Release 5.0.0, you need to pass the \-G option with your Windows Phone Publisher GUID rather than using the \-I option with your Windows Publisher ID.
+Prior to Release 5.0.0, you need to pass the \-G option with your Windows Phone Publisher GUID rather than using the \-I option with your Windows Publisher ID.{{% /alert %}}
 
 #### Windows Phone device
 
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
-
-Windows Phone emulator requires CLI and SDK 4.1.0 or later.
+{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}Windows Phone emulator requires CLI and SDK 4.1.0 or later.{{% /alert %}}
 
 To build for a Windows Phone emulator, you need to obtain your Windows publisher ID. After you have created your Windows Dev Center account, log in to [https://dev.windowsphone.com/en-us/Account/Summary](https://dev.windowsphone.com/en-us/Account/Summary) to get your publish GUID.
 
@@ -216,15 +212,13 @@ appc run -p windows -T wp-device -C 0 -I "CN=00000000-0000-1000-8000-00000000000
 
 If you omit any of the optional parameters, the CLI will prompt you with options.
 
-*Windows Phone Publisher GUID*
+{{% alert title="⚠️ Warning" color="primary" %}}*Windows Phone Publisher GUID*
 
-Prior to Release 5.0.0, you need to pass the \-G option with your Windows Phone Publisher GUID rather than using the \-I option with your Windows Publisher ID.
+Prior to Release 5.0.0, you need to pass the \-G option with your Windows Phone Publisher GUID rather than using the \-I option with your Windows Publisher ID.{{% /alert %}}
 
 #### Windows computer
 
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
-
-Windows Phone emulator requires CLI and SDK 4.1.0 or later.
+{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}Windows Phone emulator requires CLI and SDK 4.1.0 or later.{{% /alert %}}
 
 To deploy the application to your local Windows machine, you will need a certificate. If you do not have a certificate, the CLI will launch the certificate maker for your to create one.
 
@@ -272,7 +266,7 @@ If you omit any of the optional parameters, the CLI will prompt you with options
 
 Before packaging for the iTunes Store, you need to generate a distribution certificate and distribution provisioning profile, and have an iTunes Connect account. See [Distributing iOS apps](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_iOS_apps/).
 
-If you are using Mac OS X 10.9 (Mavericks), make sure you grant CLI access to the computer as described in [Installing the iOS SDK: Note for Mavericks](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_iOS_SDK/#NoteforMavericks).
+{{% alert title="⚠️ Warning" color="primary" %}}If you are using Mac OS X 10.9 (Mavericks), make sure you grant CLI access to the computer as described in [Installing the iOS SDK: Note for Mavericks](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_iOS_SDK/#NoteforMavericks).{{% /alert %}}
 
 To package an APP bundle for the iTunes store, run:
 
@@ -288,9 +282,7 @@ If you omit any of the optional parameters, the CLI will prompt you with options
 
 #### Windows Phone Store
 
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
-
-Windows Phone emulator requires CLI and SDK 4.1.0 or later.
+{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}Windows Phone emulator requires CLI and SDK 4.1.0 or later.{{% /alert %}}
 
 To package for the Windows Phone Store (ARM architecture), you need to obtain your Windows publisher ID. After you have created your Windows Dev Center account, log in to [https://dev.windowsphone.com/en-us/Account/Summary](https://dev.windowsphone.com/en-us/Account/Summary) to get your publish GUID.
 
@@ -302,15 +294,13 @@ appc run -p windows -T dist-phonestore [-I <WINDOWS_PUBLISHER_ID> -O <OUTPUT_DIR
 
 If you omit any of the optionals parameters, the CLI will prompt you with options.
 
-*Windows Phone Publisher GUID*
+{{% alert title="⚠️ Warning" color="primary" %}}*Windows Phone Publisher GUID*
 
-Prior to Release 5.0.0, you need to pass the \-G option with your Windows Phone Publisher GUID rather than using the \-I option with your Windows Publisher ID.
+Prior to Release 5.0.0, you need to pass the \-G option with your Windows Phone Publisher GUID rather than using the \-I option with your Windows Publisher ID.{{% /alert %}}
 
 #### Windows Store
 
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
-
-Windows Phone emulator requires CLI and SDK 4.1.0 or later.
+{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}Windows Phone emulator requires CLI and SDK 4.1.0 or later.{{% /alert %}}
 
 To package for the Windows Store (x86 architecture), you will need a certificate. If you do not have a certificate, the CLI will launch the certificate maker for your to create one.
 

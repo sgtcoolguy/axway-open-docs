@@ -2,11 +2,9 @@
 
 Demonstrates best practices for data binding memory management.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**models/binding\_destroy**
-
-![destroy](/Images/appc/download/attachments/41846652/destroy.png)
+alloy/test/apps/**models/binding\_destroy**{{% /alert %}}![destroy](/Images/appc/download/attachments/41846652/destroy.png)
 
 To prevent memory leaks and ensure that bindings are properly released, you should always call destroy() on a controller that references a global data collection when you are done with that controller. Calling this method frees binding resources associated with this controller and its UI components. The sample app's main index.xml view, shown below, declares global references to the movies collection and info model.
 

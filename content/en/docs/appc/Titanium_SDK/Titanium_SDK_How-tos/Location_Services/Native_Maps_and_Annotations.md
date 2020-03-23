@@ -10,7 +10,7 @@
 
 * [Google Maps API Key for Android](#google-maps-api-key-for-android)
 
-Use [ti.map add-on module](#!/api/Modules.Map) to add native maps support for your application. Google is no longer issuing Google Maps API v1 keys. If you have an application that still uses the old keys, you can either transition to the new module or continue using the built-in Titanium.Maps module. For more information about the add-on module, refer to [Google Maps v2 for Android](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/).
+{{% alert title="⚠️ Warning" color="primary" %}}Use [ti.map add-on module](#!/api/Modules.Map) to add native maps support for your application. Google is no longer issuing Google Maps API v1 keys. If you have an application that still uses the old keys, you can either transition to the new module or continue using the built-in Titanium.Maps module. For more information about the add-on module, refer to [Google Maps v2 for Android](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Location_Services/Google_Maps_v2_for_Android/).{{% /alert %}}
 
 ## Objective
 
@@ -88,9 +88,9 @@ As seen above, those few lines of code generate native maps on both iOS and Andr
 
 * userLocation - A boolean that indicates if the map should show the user's current device location as a pin on the map
 
-*Android MapView Limitation*
+{{% alert title="⚠️ Warning" color="primary" %}}*Android MapView Limitation*
 
-On Android, only a **single** map view is supported per application. Adding a second map view to an application results in an exception being thrown.
+On Android, only a **single** map view is supported per application. Adding a second map view to an application results in an exception being thrown.{{% /alert %}}
 
 There are 2 more components that add a significant amount of functionality to your mapViews. They are annotations and routes. They allow us to add places of interest to our maps as well as plot paths between them. We'll address each in the following sections. But let's first discuss how we can handle events on our basic MapView.
 

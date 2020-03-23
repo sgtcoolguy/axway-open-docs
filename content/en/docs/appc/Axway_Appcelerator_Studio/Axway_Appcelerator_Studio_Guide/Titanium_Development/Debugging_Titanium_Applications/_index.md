@@ -16,9 +16,9 @@ Once the debug session is initiated, you can use all of the standard JavaScript 
 
 Currently, Mobile Web applications can't be debugged using Studio – you must use a browser with a built-in debugger (such as Chrome) or an add-on debugger (such as Firefox with Firebug).
 
-*LiveView and the Debugger*
+{{% alert title="⚠️ Warning" color="primary" %}}*LiveView and the Debugger*
 
-LiveView may cause conflicts with the Studio debugger, causing the debugger not suspend execution when breakpoints are encountered. When you are debugging, turn off LiveView.
+LiveView may cause conflicts with the Studio debugger, causing the debugger not suspend execution when breakpoints are encountered. When you are debugging, turn off LiveView.{{% /alert %}}
 
 ## Related Topics
 

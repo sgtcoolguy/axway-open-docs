@@ -262,7 +262,7 @@ To raise a Github pull request, follow these steps:
 
 At this point, your request is ready for review. In most cases a member of the Titanium core team should review your request within a few days. Reviews may take longer if there is a large volume of pull requests outstanding.
 
-A pull request is a request for the HEAD of the branch. Any commits that you push to your branch, up until the moment the pull request is merged, will be merged into the master branch.
+{{% alert title="💡 Hint" color="info" %}}A pull request is a request for the HEAD of the branch. Any commits that you push to your branch, up until the moment the pull request is merged, will be merged into the master branch.{{% /alert %}}
 
 ## Frequently Asked Questions
 

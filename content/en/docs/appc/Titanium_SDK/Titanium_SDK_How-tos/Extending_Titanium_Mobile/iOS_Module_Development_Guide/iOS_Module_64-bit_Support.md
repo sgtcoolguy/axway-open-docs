@@ -47,14 +47,14 @@ Add the architectures field to the manifest file with the architectures to suppo
 
 **Note:**
 
-Starting with Release 4.0.0, the build will fail if the architectures field is missing or the architectures do not match the architectures the Titanium SDK supports.
+{{% alert title="⚠️ Warning" color="primary" %}}Starting with Release 4.0.0, the build will fail if the architectures field is missing or the architectures do not match the architectures the Titanium SDK supports.
 
 For example, add the following lines to the respected manifest files:
 
 ```
 ios/manifest:
 architectures: armv7 arm64 i386 x86_64
-```
+```{{% /alert %}}
 
 ## Troubleshooting
 

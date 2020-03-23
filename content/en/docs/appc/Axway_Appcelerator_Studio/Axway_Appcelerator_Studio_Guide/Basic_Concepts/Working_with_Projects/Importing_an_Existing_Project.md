@@ -30,7 +30,7 @@ To import an existing project into Studio, from the menu bar, select **File** > 
 
 4. Click **Finish**.
 
-If you are importing an older Alloy or Titanium application that was not created on the AMPLIFY Appcelerator Services, the import process will generate a new app GUID for the application and attempt to activate AMPLIFY Appcelerator Services.
+{{% alert title="⚠️ Warning" color="primary" %}}If you are importing an older Alloy or Titanium application that was not created on the AMPLIFY Appcelerator Services, the import process will generate a new app GUID for the application and attempt to activate AMPLIFY Appcelerator Services.{{% /alert %}}
 
 **For a Github project:**
 
@@ -74,9 +74,9 @@ When the Link Projects option is selected, the files are not copied to the works
 
 ![DragNDropImport](/Images/appc/download/attachments/30083309/DragNDropImport.png)
 
-*Import Error*
+{{% alert title="⚠️ Warning" color="primary" %}}*Import Error*
 
-If you receive the error, "Invalid project, could not find .project file in the selected directory," the project was not created in Studio or Eclipse and did not contain a .project file, which tells Studio the nature of the project. Currently, only projects created in Studio or Eclipse support the drag-and-drop import process ([TISTUD-7233](https://jira.appcelerator.org/browse/TISTUD-7233)). Projects created with the CLI cannot be imported using the drag-and-drop mechanism. Use the Import Wizard instead.
+If you receive the error, "Invalid project, could not find .project file in the selected directory," the project was not created in Studio or Eclipse and did not contain a .project file, which tells Studio the nature of the project. Currently, only projects created in Studio or Eclipse support the drag-and-drop import process ([TISTUD-7233](https://jira.appcelerator.org/browse/TISTUD-7233)). Projects created with the CLI cannot be imported using the drag-and-drop mechanism. Use the Import Wizard instead.{{% /alert %}}
 
 ## Using promote to project
 

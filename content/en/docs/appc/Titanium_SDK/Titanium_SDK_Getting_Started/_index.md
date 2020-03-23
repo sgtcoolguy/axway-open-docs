@@ -34,7 +34,7 @@ Your system environment must meet the following requirements to run Studio:
 
 * **Node.js:** Required for the Titanium command-line tools like the CLI, Alloy and AMPLIFY Runtime Services
 
-For Windows, you can use either 32-bit or 64-bit versions of Java JDK. Please refer to [Studio Java Support](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/Studio_Java_Support/) for more information.
+{{% alert title="💡 Hint" color="info" %}}For Windows, you can use either 32-bit or 64-bit versions of Java JDK. Please refer to [Studio Java Support](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/Studio_Java_Support/) for more information.{{% /alert %}}
 
 For more details, please refer to [Prerequisites](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/) document.
 
@@ -60,11 +60,11 @@ The first time you launch Studio you need to select a workspace, or folder where
 
 ![workspace](/Images/appc/download/attachments/37538717/workspace.png)
 
-By default, upon each launch, Studio asks you to select a workspace. To hide this dialog on subsequent launches, select the **Use this as the default and do not ask again** option.
+{{% alert title="💡 Hint" color="info" %}}By default, upon each launch, Studio asks you to select a workspace. To hide this dialog on subsequent launches, select the **Use this as the default and do not ask again** option.{{% /alert %}}
 
 On the Studio launch screen, enter your AMPLIFY Appcelerator Services account credentials and click **Login**. Studio remembers your login credentials until you sign out of Studio.
 
-Studio requires an internet connection to authenticate the user to the Appcelerator cloud. If you are behind a proxy, click **Proxy Setup...** to configure your proxy settings.
+{{% alert title="💡 Hint" color="info" %}}Studio requires an internet connection to authenticate the user to the Appcelerator cloud. If you are behind a proxy, click **Proxy Setup...** to configure your proxy settings.{{% /alert %}}
 
 ### Installing the platform SDKs
 

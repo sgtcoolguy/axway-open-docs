@@ -135,7 +135,7 @@ function login(req, res) {
 
 The following example uses the standard MBS APIs to upload a photo or a file. It defines a custom upload() function that captures the fileName and fileObject, creates a file buffer for string and readable stream, and logs in the user. If the login is successful, the file is uploaded. If a login error occurs, the login error response is displayed. If a file upload error occurs, the upload error response is displayed.
 
-For increased file security, it is recommended that files be encrypted before uploading them.
+{{% alert title="⚠️ Warning" color="primary" %}}For increased file security, it is recommended that files be encrypted before uploading them.{{% /alert %}}
 
 ```javascript
 function upload(req, res) {

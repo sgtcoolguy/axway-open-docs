@@ -24,9 +24,9 @@ Bugs and feature requests need to be filed in two different locations, depending
 
 The following table explains what information must be included in which fields in order for a ticket to be accepted.
 
-If you have been directed to this section after creating a ticket in Jira, it probably means that you have omitted some vital information. If a field is omitted from the list below, you can leave it at the default value.
+{{% alert title="💡 Hint" color="info" %}}If you have been directed to this section after creating a ticket in Jira, it probably means that you have omitted some vital information. If a field is omitted from the list below, you can leave it at the default value.
 
-If the bug relates to the Titanium SDK rather than Studio, please follow the [Titanium Ticket Checklist](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/#jira-ticket-checklist) instead.
+If the bug relates to the Titanium SDK rather than Studio, please follow the [Titanium Ticket Checklist](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/How_to_Report_a_Bug_or_Make_a_Feature_Request/#jira-ticket-checklist) instead.{{% /alert %}}
 
 | Field | Required | Information to include |
 | --- | --- | --- |

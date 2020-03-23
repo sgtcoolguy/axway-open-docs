@@ -12,11 +12,11 @@
 
 In Aptana Studio 2, there was an option for users to have editor templates, which could be used to include multiple template tags. This functionality can be accomplished in Aptana Studio 3 through the use of snippets. This page will show how to convert existing editor templates to Aptana Studio 3.
 
-We assume you've read through our section on [creating snippets](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Snippets/Creating_a_New_Snippet/) before and have a basic understanding of how snippets work.
+{{% alert title="⚠️ Warning" color="primary" %}}We assume you've read through our section on [creating snippets](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Snippets/Creating_a_New_Snippet/) before and have a basic understanding of how snippets work.{{% /alert %}}
 
 ## Exporting Existing Editor Templates from Aptana Studio 2
 
-You can also use editor templates that other users have already exported. In that case, you may not need to export them from your installation of Studio 2.
+{{% alert title="⚠️ Warning" color="primary" %}}You can also use editor templates that other users have already exported. In that case, you may not need to export them from your installation of Studio 2.{{% /alert %}}
 
 The editor templates are located under Aptana Studio 2 preferences. For example, if you would like to export your javascript templates, try the following:
 

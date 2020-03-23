@@ -1,10 +1,10 @@
 {"title":"Arrow Builder 0.x - 5.x Release Notes","weight":"60"}
 
-*API Builder 3.x is deprecated*
+{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
-Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
+Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
 * [Arrow Builder 5.3.1 Release Note](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Release_Notes/Arrow_Builder_0.x_-_5.x_Release_Notes/Arrow_Builder_5.3.1_Release_Note/)
 

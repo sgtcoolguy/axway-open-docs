@@ -42,7 +42,7 @@
 
 Titanium Mobile is moving toward the adoption of the CommonJS module specification as the way in which end users of the platform structure their JavaScript code. While CommonJS Modules are a "standard" [specification](http://wiki.commonjs.org/wiki/Modules/1.1), there are differences in implementation across multiple technology stacks.
 
-Since Titanium SDK 7.1.0, you can also use ES6+ classes to export your modules instead, e.g. by using export default class MyClass and import statements. It will be transpiled down to ES5, so all native platforms can benefit from it today, without restricting certain functionalities to higher platform levels.
+{{% alert title="💡 Hint" color="info" %}}Since Titanium SDK 7.1.0, you can also use ES6+ classes to export your modules instead, e.g. by using export default class MyClass and import statements. It will be transpiled down to ES5, so all native platforms can benefit from it today, without restricting certain functionalities to higher platform levels.{{% /alert %}}
 
 ### Definitions
 

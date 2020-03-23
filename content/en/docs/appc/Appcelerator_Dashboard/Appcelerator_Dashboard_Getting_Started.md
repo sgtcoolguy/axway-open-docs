@@ -304,7 +304,7 @@ The AMPLIFY Platform My Capabilities page can include the following tiles based 
 
 * Syncplicity
 
-The available links on the My Capabilities tiles may vary based on your role and your organization's subscriptions.
+{{% alert title="⚠️ Warning" color="primary" %}}The available links on the My Capabilities tiles may vary based on your role and your organization's subscriptions.{{% /alert %}}
 
 #### Dashboard
 
@@ -398,7 +398,7 @@ Additionally, click **Runtime Services** to navigate to the **Apps** tab on the 
 
 #### Mesh Governance
 
-Mesh Governance is a beta feature.
+{{% alert title="⚠️ Warning" color="primary" %}}Mesh Governance is a beta feature.{{% /alert %}}
 
 Mesh Governance provides visibility and control of service meshes across multiple clouds.
 
@@ -414,7 +414,7 @@ Additionally, click **Mesh Governance** to navigate to the AMPLIFY Central user 
 
 #### Choreography
 
-Choreography is a beta feature.
+{{% alert title="⚠️ Warning" color="primary" %}}Choreography is a beta feature.{{% /alert %}}
 
 Choreography enables you to build resilient and adaptive integration architectures with lower coupling. The Choreography tile includes the following links:
 

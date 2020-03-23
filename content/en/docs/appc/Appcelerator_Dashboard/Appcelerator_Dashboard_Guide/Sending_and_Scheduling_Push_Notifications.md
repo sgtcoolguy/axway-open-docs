@@ -44,7 +44,7 @@ Appcelerator Dashboard provides two views for sending notifications, **Standard*
 
 If you prefer can use the [PushNotification.notify](/arrowdb/latest/#!/api/PushNotifications-method-notify) or [PushNotification.notify\_tokens](/arrowdb/latest/#!/api/PushNotifications-method-notify_token) REST APIs to send push notifications.
 
-A warning will be displayed if you attempt to perform a push with an expired or disabled iOS certificate.
+{{% alert title="⚠️ Warning" color="primary" %}}A warning will be displayed if you attempt to perform a push with an expired or disabled iOS certificate.{{% /alert %}}
 
 **To send push notifications from the Dashboard:**
 
@@ -70,8 +70,7 @@ A warning will be displayed if you attempt to perform a push with an expired or 
 
         3. In the **Channel Name** field, enter the name of the target channel subscription.
 
-            You must specify a channel when sending a notification to specific users.
-
+            {{% alert title="⚠️ Warning" color="primary" %}}You must specify a channel when sending a notification to specific users.{{% /alert %}}
     4. To send a notification to all users located within a geographic selection, select **Geographic Selection,** then:
 
         1. Click the add (**+**) button in the **Place** field and select an existing place. This defines the center points of the geographic selection. The selected Place must have a defined latitude and longitude.

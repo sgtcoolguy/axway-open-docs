@@ -36,7 +36,7 @@ The Appcelerator Studio Code Profiler collects detailed performance data of your
 
 The profiler works with classic mobile and Alloy projects only on the Android and iOS platforms. For Alloy projects, the profiler reports the methods from the generated Titanium files (inside the Resources directory), then maps them to the Alloy files (inside the app directory). You may see results for files not in the app directory.
 
-Code Profiler is an Enterprise feature. See [http://www.appcelerator.com/pricing/](http://www.appcelerator.com/pricing/) for pricing details.
+{{% alert title="⚠️ Warning" color="primary" %}}Code Profiler is an Enterprise feature. See [http://www.appcelerator.com/pricing/](http://www.appcelerator.com/pricing/) for pricing details.{{% /alert %}}
 
 ## Profiling an Application
 
@@ -154,9 +154,9 @@ The **Performance Profile** view contains a row of icon buttons in the top-right
 
 ![PerformanceProfileView](/Images/appc/download/attachments/43298671/PerformanceProfileView.png)
 
-On the Android platform, especially when profiling on device, you may not see all of your method calls. The profiler uses V8's built-in CPU sample profiler to monitor the stack frames over a small threshold of time. The interval for sampling is around 5 ms on Android devices, so methods that do not use too many CPU cycles may not show up in the results. However, the profiler is able to capture and identify CPU-intensive methods.
+{{% alert title="⚠️ Warning" color="primary" %}}On the Android platform, especially when profiling on device, you may not see all of your method calls. The profiler uses V8's built-in CPU sample profiler to monitor the stack frames over a small threshold of time. The interval for sampling is around 5 ms on Android devices, so methods that do not use too many CPU cycles may not show up in the results. However, the profiler is able to capture and identify CPU-intensive methods.
 
-On the iOS platform, the profilers uses the instrumentation method and is able to directly intercept the calls, allowing it to log all method calls.
+On the iOS platform, the profilers uses the instrumentation method and is able to directly intercept the calls, allowing it to log all method calls.{{% /alert %}}
 
 ## Improving Profiler Results
 

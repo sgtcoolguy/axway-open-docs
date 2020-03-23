@@ -101,7 +101,7 @@ The following table provides a matrix of available roles and capabilities:
 | AMPLIFY Central Admin | Use for all-encompassing access to Central |  |  |  | X | X |  |  |  |
 | Runtime Services Admin | Use for all-encompassing access to Runtime Services |  |  |  |  |  | X | X |  |
 
-The assignment of the AMPLIFY Central Admin and Runtime Service Admin roles is restricted to AMPLIFY Platform administrators.
+{{% alert title="⚠️ Warning" color="primary" %}}The assignment of the AMPLIFY Central Admin and Runtime Service Admin roles is restricted to AMPLIFY Platform administrators.{{% /alert %}}
 
 ### View Organization details, applications, and members
 
@@ -345,10 +345,10 @@ To brand the Dashboard per your organization's branding requirements:
 
 ## Troubleshooting
 
-#### I was recently promoted to Administrator, but I cannot see applications from other users
+{{% alert title="💡 Hint" color="info" %}}#### I was recently promoted to Administrator, but I cannot see applications from other users
 
 1. Sign out of the AMPLIFY Platform.
 
 2. Clear your browser's cache. You may need to restart the browser.
 
-3. Sign back into the AMPLIFY Platform.
+3. Sign back into the AMPLIFY Platform.{{% /alert %}}

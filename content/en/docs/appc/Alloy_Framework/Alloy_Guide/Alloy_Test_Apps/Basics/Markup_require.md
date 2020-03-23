@@ -2,9 +2,9 @@
 
 Demonstrates how to build modular views using the <Require/> element to include sub-views defined in external XML files.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**basics/markup\_require**
+alloy/test/apps/**basics/markup\_require**{{% /alert %}}
 
 In the sample application, the main **index.xml** view requires the view defined by **theRest.xml** that,  in turn, requires **middle.xml** and **bottom.xml**.
 

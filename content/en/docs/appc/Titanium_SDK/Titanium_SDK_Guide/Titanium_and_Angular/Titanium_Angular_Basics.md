@@ -74,9 +74,9 @@ Here is what those various files and folder do:
 
 * **webpack.config.json**: Configuration file for Webpack
 
-*Ahead-of-time compilation issue*
+{{% alert title="💡 Hint" color="info" %}}*Ahead-of-time compilation issue*
 
-Among those files, you will notice additional files with an .aot file extension. Those are for Angular's Ahead-of-time compilation that is used for faster load times in production builds. This is currently not yet supported in the current Tech Preview.
+Among those files, you will notice additional files with an .aot file extension. Those are for Angular's Ahead-of-time compilation that is used for faster load times in production builds. This is currently not yet supported in the current Tech Preview.{{% /alert %}}
 
 ## Titanium Angular startup
 
@@ -130,9 +130,9 @@ export class AppComponent implements AfterViewInit, OnInit {
 }
 ```
 
-*Component interaction with the template and Titanium views*
+{{% alert title="💡 Hint" color="info" %}}*Component interaction with the template and Titanium views*
 
-If you open the file in your editor, you'll notice that the file contains different examples that demonstrate how you can interact with Titanium views within the component. This follows the same pattern as in a default Angular web application. Visit Angular's [Components & Templates](https://angular.io/guide/displaying-data) guide for an in depth tutorial on this topic.
+If you open the file in your editor, you'll notice that the file contains different examples that demonstrate how you can interact with Titanium views within the component. This follows the same pattern as in a default Angular web application. Visit Angular's [Components & Templates](https://angular.io/guide/displaying-data) guide for an in depth tutorial on this topic.{{% /alert %}}
 
 In the above excerpt, the app.compoinent.ts defines it's template through the templateUrl property. In such a template you can make use of Titanium UI elements to create your app's user interface.
 
@@ -148,7 +148,7 @@ Let's take a look at some examples that will explain in detail how to use Titani
 <Button #demoButton title="Tap me!" (click)="increaseTapCount()"></Button>
 ```
 
-Note that all elements in an Angular template need to be closed by a matching tag. Self-closing elements, as you may know them from HTML, or maybe Alloy, are not allowed.
+{{% alert title="💡 Hint" color="info" %}}Note that all elements in an Angular template need to be closed by a matching tag. Self-closing elements, as you may know them from HTML, or maybe Alloy, are not allowed.{{% /alert %}}
 
 In this example, we create a button, setting a property and also setting up an event listener. We also set a [template reference variable](https://angular.io/guide/template-syntax#template-reference-variables--var-) that allows you to access a specific element in the corrosponding component.
 

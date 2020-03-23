@@ -47,7 +47,7 @@ To modify your key settings:
 
 ### Exporting and importing your keybindings
 
-To be able to export your keybindings, you will need to have made at least one modification to your key preferences (see directions above).
+{{% alert title="⚠️ Warning" color="primary" %}}To be able to export your keybindings, you will need to have made at least one modification to your key preferences (see directions above).{{% /alert %}}
 
 To export your keybindings:
 

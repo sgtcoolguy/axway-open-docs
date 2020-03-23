@@ -2,9 +2,9 @@
 
 Demonstrates how to use an OptionDialog control, a modal view that includes a message and one or more option items.
 
-*Example App Source Location*
+{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
 
-You can find this example app in the Alloy repository under [samples/apps/ui/optiondialog](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/optiondialog). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [samples/apps/ui/optiondialog](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/optiondialog). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 On Android an [OptionDialog](#!/api/Titanium.UI.OptionDialog) is centered on the screen, and at the bottom of the screen on iOS. On Android, you can add buttons below the options, or define a custom view to show in place of the options, as shown below. You can either the options or a custom view, but not both. On iPhone, a Cancel option is always displayed at the bottom of the dialog; on iPad, no cancel option is not displayed and the user can cancel the dialog by tapping outside the dialog.
 

@@ -26,7 +26,7 @@
 
 * [Related Topics](#related-topics)
 
-When using Safari Web Inspector to debug your Titanium iOS apps, see [Debugging iOS Apps with 3rd-party Tools](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_iOS_Devices/Debugging_iOS_Apps_with_3rd-party_Tools/) for details!
+{{% alert title="⚠️ Warning" color="primary" %}}When using Safari Web Inspector to debug your Titanium iOS apps, see [Debugging iOS Apps with 3rd-party Tools](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_iOS_Devices/Debugging_iOS_Apps_with_3rd-party_Tools/) for details!{{% /alert %}}
 
 ## Overview
 
@@ -44,7 +44,7 @@ Titanium SDK enables Studio to initiate a debug session on an iOS device. Debugg
 
 This page will guide you through the setup, and the launch, of a debug session.
 
-Debugging on iOS devices is only supported on macOS. You must already be set up to run applications on your iOS device, as documented in [Deploying to iOS devices](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Deploying_to_iOS_devices/).
+{{% alert title="⚠️ Warning" color="primary" %}}Debugging on iOS devices is only supported on macOS. You must already be set up to run applications on your iOS device, as documented in [Deploying to iOS devices](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Deploying_to_iOS_devices/).{{% /alert %}}
 
 ## Requirements
 
@@ -95,7 +95,7 @@ Before debugging, you must have created a Titanium project with an iPhone/iPad d
 
 5. Complete the wizard to initiate a debug session. Studio prompts you to pick the certificate, provisioning profile, and SDK version to use for the debug build.
 
-After you complete the wizard once, Studio creates a launch configuration for you, named **Titanium iOS Device - <AppName>**. You can select this launch configuration, after launching the **Debug Configuration** wizard by select **Debug Configurations** from the **Target** drop-down list, to skip the wizard and start a new debug session using the same parameters.
+{{% alert title="⚠️ Warning" color="primary" %}}After you complete the wizard once, Studio creates a launch configuration for you, named **Titanium iOS Device - <AppName>**. You can select this launch configuration, after launching the **Debug Configuration** wizard by select **Debug Configurations** from the **Target** drop-down list, to skip the wizard and start a new debug session using the same parameters.{{% /alert %}}
 
 ### iTunes Deployment
 
@@ -112,7 +112,7 @@ After the application finishes installing:
     ![ios_debugger_dialog](/Images/appc/download/attachments/33623072/ios_debugger_dialog.png)
 3. The device connects to Studio, and a debug session begins (and is visible in Studio's **Debug** perspective).
 
-In the unlikely case that you have the same debug version of the application installed on two devices at the same time, and you launch them at the same time, Studio prompts you to select which version to debug.
+{{% alert title="⚠️ Warning" color="primary" %}}In the unlikely case that you have the same debug version of the application installed on two devices at the same time, and you launch them at the same time, Studio prompts you to select which version to debug.{{% /alert %}}
 
 ## Troubleshooting iOS On-Device Debugging Problems
 

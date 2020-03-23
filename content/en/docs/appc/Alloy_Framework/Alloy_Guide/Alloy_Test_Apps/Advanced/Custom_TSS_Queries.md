@@ -2,9 +2,9 @@
 
 Demonstrates how to use custom TSS queries to style Alloy elements.
 
-*App folder location*
+{{% alert title="💡 Hint" color="info" %}}*App folder location*
 
-_alloy_/test/apps/**advanced/custom\_tss\_queries**
+_alloy_/test/apps/**advanced/custom\_tss\_queries**{{% /alert %}}
 
 You can define custom boolean values for use in your your TSS queries. These are useful for setting styles when running on a specific phone model (for example, on an iPhone 5). Custom TSS conditionals must be defined in the alloy.js file as properties of the Alloy.Globals object, so that they are available to the XML and TSS parsers.
 

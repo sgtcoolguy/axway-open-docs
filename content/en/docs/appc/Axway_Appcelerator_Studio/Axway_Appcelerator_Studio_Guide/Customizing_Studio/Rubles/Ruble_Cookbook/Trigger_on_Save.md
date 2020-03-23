@@ -28,7 +28,7 @@ command "Show Save Information" do |cmd|
 end
 ```
 
-To get an idea of what events are available, remove the "org.eclipse.ui.file.save" argument from the trigger assignment. This will cause the command to trigger for all execution listener events.
+{{% alert title="⚠️ Warning" color="primary" %}}To get an idea of what events are available, remove the "org.eclipse.ui.file.save" argument from the trigger assignment. This will cause the command to trigger for all execution listener events.{{% /alert %}}
 
 ## An Example
 

@@ -4,7 +4,7 @@ The App Preview functionality is now available on the Dashboard. Previously, thi
 
 ![App_Preview_01_new](/Images/appc/download/attachments/60145269/App_Preview_01_new.png)
 
-For first-time users of the App Preview feature, a description of the App Preview feature will be displayed when the **App Preview** tab is selected. To navigate to the application upload flow, click the **Go to App Preview** button. To prevent the description of the App Preview feature being displayed again, select **Do not show this page again**.
+{{% alert title="⚠️ Warning" color="primary" %}}For first-time users of the App Preview feature, a description of the App Preview feature will be displayed when the **App Preview** tab is selected. To navigate to the application upload flow, click the **Go to App Preview** button. To prevent the description of the App Preview feature being displayed again, select **Do not show this page again**.{{% /alert %}}
 
 Select the **App Preview** tab, or in the case of first-time users, click the **Go to App Preview** button to open the application upload navigation flow. The upload navigation flow will guide you through the steps to upload an application and make it available to the selected list of users. Applications can be uploaded as IPA or APK files.
 

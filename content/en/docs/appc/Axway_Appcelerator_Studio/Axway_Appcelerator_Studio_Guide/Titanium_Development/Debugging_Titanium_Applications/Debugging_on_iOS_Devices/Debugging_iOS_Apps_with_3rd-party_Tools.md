@@ -32,13 +32,12 @@ Be sure to turn on use-jscore-framework as listed in [Enable use-jscore-framewor
 
 1. Launch the app on the device or a simulator.
 
-    If using a device, make its connected by an USB cable before debugging.
-
+    {{% alert title="⚠️ Warning" color="primary" %}}If using a device, make its connected by an USB cable before debugging.{{% /alert %}}
     1. Launch you application via Studio or command-line: appc run -p ios
 
 2. Launch Safari and enable the **Develop** mode (**Safari** > **Preferences** > **Advanced** and enable **Show Develop menu in menu bar**).
 
-    It is important to have the Web Inspector enabled to allow connections for debugging. Otherwise, neither Studio nor Safari's debugger will be able to connect to the device using the web-inspector based protocol.
+    {{% alert title="⚠️ Warning" color="primary" %}}It is important to have the Web Inspector enabled to allow connections for debugging. Otherwise, neither Studio nor Safari's debugger will be able to connect to the device using the web-inspector based protocol.{{% /alert %}}
 
     ![enabled_develop_safari](/Images/appc/download/attachments/49160781/enabled_develop_safari.png)
 

@@ -15,16 +15,16 @@ Then, to run the file, you can:
 
 * Go to the menu: Alt + R + S + The number of the Run you wish (It can be Python, Jython, unit-test, and so forth).
 
-    If you were using **unit-tests**, you could use: **Ctrl+F9** to run the unit-tests from the module (and even selecting which tests should be run).
+    {{% alert title="⚠️ Warning" color="primary" %}}If you were using **unit-tests**, you could use: **Ctrl+F9** to run the unit-tests from the module (and even selecting which tests should be run).{{% /alert %}}
 
-External files may be launched, but an associated project must be available. So, a file may be dragged from the filesystem into Eclipse, and later, with the editor open, F9 may be pressed to run the file...It'll still ask for a project to resolve the PYTHONPATH and interpreter to be used (you can probably use any project you have that has the interpreter you want to use for the run or create a PyDev project as 'external\_projects' and bind those runs to it).– The configuration created may be changed later on in the menu: Run > Run configurations.
+{{% alert title="⚠️ Warning" color="primary" %}}External files may be launched, but an associated project must be available. So, a file may be dragged from the filesystem into Eclipse, and later, with the editor open, F9 may be pressed to run the file...It'll still ask for a project to resolve the PYTHONPATH and interpreter to be used (you can probably use any project you have that has the interpreter you want to use for the run or create a PyDev project as 'external\_projects' and bind those runs to it).– The configuration created may be changed later on in the menu: Run > Run configurations.{{% /alert %}}
 
 ![menu_run](/Images/appc/pydev.org/images/menu_run.png)
 Doing so, the console should be brought forward with the output of the code (if you had some exception raised, clicking on it would bring you to the code in the stack-trace).
 
 After the first run, if you type **Ctrl+F11**, the last file ran re-run. Or, if you type **F11**, a debug session is started with your last run. Let's test this...
 
-This behavior changed in Eclipse 3.3 – but it's generally recommended to restore it in the preferences at **window > preferences > Run/Debug > Launching** and set the Launch Operation to **Always launch the previously launched application**. This tutorial will always consider this as the default option.
+{{% alert title="⚠️ Warning" color="primary" %}}This behavior changed in Eclipse 3.3 – but it's generally recommended to restore it in the preferences at **window > preferences > Run/Debug > Launching** and set the Launch Operation to **Always launch the previously launched application**. This tutorial will always consider this as the default option.{{% /alert %}}
 
 First, you'll need to add a breakpoint in the "print 'Hello World'" line. To do so, go to the line and type **Ctrl+F10** and select 'Add breakpoint', then type **F11**. Doing so will trigger you to go to the 'debug perspective'. You should say **'yes'** to this dialog.
 

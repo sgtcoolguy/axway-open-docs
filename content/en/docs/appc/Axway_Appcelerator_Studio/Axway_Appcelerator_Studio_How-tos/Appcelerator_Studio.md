@@ -1,6 +1,6 @@
 {"title":"Appcelerator Studio","weight":"20"}
 
-This is the old Appcelerator Studio home page. This page has been replaced with [Axway Appcelerator Studio](/docs/appc/Axway_Appcelerator_Studio/).
+{{% alert title="❗️ Warning" color="danger" %}}This is the old Appcelerator Studio home page. This page has been replaced with [Axway Appcelerator Studio](/docs/appc/Axway_Appcelerator_Studio/).{{% /alert %}}
 
 This page will be redirected to [Axway Appcelerator Studio](/docs/appc/Axway_Appcelerator_Studio/) in 3 seconds.
 

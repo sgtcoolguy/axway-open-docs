@@ -58,7 +58,7 @@ Try disabling on-access antivirus scanning to determine whether it is the cause.
 
 As a quick check to verify that your environment has been configured correctly, you can use the code below.
 
-In order for this script to work as intended, the PATH variable of your system must be configured as described in [Installing and Updating Android SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_Android_SDK/#windows)
+{{% alert title="⚠️ Warning" color="primary" %}}In order for this script to work as intended, the PATH variable of your system must be configured as described in [Installing and Updating Android SDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_Android_SDK/#windows){{% /alert %}}
 
 You will need to run it **with the user account you use when working with Titanium**. These commands should execute without error, except SCons which is an optional component.
 
@@ -84,7 +84,7 @@ To copy your output, ready to paste into a text document or to share:
 
 * press **Enter** to copy
 
-Do not post your output directly into the [Q&A](http://developer.appcelerator.com/questions/created), as the formatting is likely to be messy making it difficult for others to interpret. Instead, create a new [GitHub Gist](https://gist.github.com/). To do this, paste the **unedited** output into the main Gist text area, click the **Create Public Gist** button at the bottom of the page and copy and share the resulting URL from your browser address bar.
+{{% alert title="❗️ Warning" color="danger" %}}Do not post your output directly into the [Q&A](http://developer.appcelerator.com/questions/created), as the formatting is likely to be messy making it difficult for others to interpret. Instead, create a new [GitHub Gist](https://gist.github.com/). To do this, paste the **unedited** output into the main Gist text area, click the **Create Public Gist** button at the bottom of the page and copy and share the resulting URL from your browser address bar.{{% /alert %}}
 
 ```
 cls

@@ -30,7 +30,7 @@
 
 In this section, we'll examine the Appcelerator recommended best-practices for coding style, including naming conventions, code formatting, and commenting.
 
-We'll also cover our recommendations for organizing the assets that comprise your project.
+{{% alert title="⚠️ Warning" color="primary" %}}We'll also cover our recommendations for organizing the assets that comprise your project.{{% /alert %}}
 
 ## Language rules
 
@@ -72,7 +72,7 @@ driveCarBlue, stopCarRed
 
 Both variables and functions (or properties and methods, respectively) start with a lowercase word so that they are easier to differentiate from major namespace objects or 'classes'.
 
-Appcelerator does not support the use of Hungarian Notation.
+{{% alert title="⚠️ Warning" color="primary" %}}Appcelerator does not support the use of Hungarian Notation.{{% /alert %}}
 
 #### Object and 'class' names
 
@@ -95,7 +95,7 @@ Here, convention is similar to 'class' naming.
 
 * App.Network.Request
 
-'app.ui' should be 'App.UI'
+{{% alert title="⚠️ Warning" color="primary" %}}'app.ui' should be 'App.UI'{{% /alert %}}
 
 #### Factories
 

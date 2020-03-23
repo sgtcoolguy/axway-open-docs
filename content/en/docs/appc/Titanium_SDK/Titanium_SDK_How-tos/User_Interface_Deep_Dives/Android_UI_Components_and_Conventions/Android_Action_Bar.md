@@ -58,7 +58,7 @@ Prior to Release 3.3.0, to enable the action bar features, applications must be 
 
 The tool-api-level identifies the version of the Android tools to use. If in doubt, use a recent version, such as 15. This does not have to correspond to the targetSdkVersion.
 
-Do not set the navBarHidden property to true for either the Window or TabGroup containing the activity used by the Action Bar. Setting this property to true disables the Action Bar since it is part of the navigation title bar.
+{{% alert title="⚠️ Warning" color="primary" %}}Do not set the navBarHidden property to true for either the Window or TabGroup containing the activity used by the Action Bar. Setting this property to true disables the Action Bar since it is part of the navigation title bar.{{% /alert %}}
 
 ## Hiding the action bar
 

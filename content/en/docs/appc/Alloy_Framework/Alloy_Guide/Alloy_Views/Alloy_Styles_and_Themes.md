@@ -40,7 +40,7 @@ You can use the following values and operators in your TSS file:
 
 You may also place single (//comment) and multiline comments (/\* comment \*/) in your TSS files unlike regular JSON files.
 
-Alloy does not support the CSS concept of child or descendent selectors, that is, specifying and applying styles based on the tag hierarchy.
+{{% alert title="⚠️ Warning" color="primary" %}}Alloy does not support the CSS concept of child or descendent selectors, that is, specifying and applying styles based on the tag hierarchy.{{% /alert %}}
 
 The following code defines a style sheet (index.tss):
 

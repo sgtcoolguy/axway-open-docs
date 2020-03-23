@@ -46,7 +46,7 @@ The files in question do not have to be part of a Studio project, but we illustr
 
 5. Click **OK** and **OK**.
 
-The above configuration does not copy files between the Studio project and the webroot - it is a direct link with both items mapping to the same place. Thus, when you save index.html inside Studio, you are editing the same file served by the webserver listed above. If you instead need to preview against a remote web server, you can use a similar setting as above, but you will want to set up a deployment option to "upload on save". See below.
+{{% alert title="⚠️ Warning" color="primary" %}}The above configuration does not copy files between the Studio project and the webroot - it is a direct link with both items mapping to the same place. Thus, when you save index.html inside Studio, you are editing the same file served by the webserver listed above. If you instead need to preview against a remote web server, you can use a similar setting as above, but you will want to set up a deployment option to "upload on save". See below.{{% /alert %}}
 
 Pressing the preview button will now preview a file against the selected server.
 

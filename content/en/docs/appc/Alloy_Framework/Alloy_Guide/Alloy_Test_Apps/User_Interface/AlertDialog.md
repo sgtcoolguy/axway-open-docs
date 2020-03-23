@@ -2,9 +2,9 @@
 
 Demonstrates basic use of an AlertDialog.
 
-*Example App Source Location*
+{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
 
-You can find this example app in the Alloy repository under [samples/apps/ui/alertdialog](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/alertdialog). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [samples/apps/ui/alertdialog](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/alertdialog). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 An [AlertDialog](#!/api/Titanium.UI.AlertDialog) presents a modal dialog with a title, message and one or more buttons. On Android, you add add a custom view to an AlertDialog, which replaces any declared buttons.
 

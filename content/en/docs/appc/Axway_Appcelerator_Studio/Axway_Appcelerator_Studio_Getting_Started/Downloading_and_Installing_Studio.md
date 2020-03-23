@@ -18,7 +18,7 @@ This page describes how to download and install the IDE if you do not already ha
 
 **Prerequisite:** Ensure your machine meets the [Studio System Requirements](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Setting_up_Studio/#system-requirements).
 
-On Windows Vista or Windows 7, you may need to set the **Run this program as an administrator** property to true.
+{{% alert title="⚠️ Warning" color="primary" %}}On Windows Vista or Windows 7, you may need to set the **Run this program as an administrator** property to true.{{% /alert %}}
 
 ## Installing Appcelerator Studio
 

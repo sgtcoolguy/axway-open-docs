@@ -33,7 +33,7 @@ end
 
 ## Adding it to a Menu
 
-If you do not choose a key binding, you should place the command in a menu. Otherwise, it will be difficult or impossible to access.
+{{% alert title="⚠️ Warning" color="primary" %}}If you do not choose a key binding, you should place the command in a menu. Otherwise, it will be difficult or impossible to access.{{% /alert %}}
 
 ```
 bundle do |bundle|

@@ -14,7 +14,7 @@
 
 This page describes how to install Aptana Studio into an existing Eclipse configuration.
 
-Currently, only Aptana Studio can be installed as a plugin into Eclipse. Appcelerator and Titanium Studio must be used as a standalone application.
+{{% alert title="⚠️ Warning" color="primary" %}}Currently, only Aptana Studio can be installed as a plugin into Eclipse. Appcelerator and Titanium Studio must be used as a standalone application.{{% /alert %}}
 
 ## Introduction
 

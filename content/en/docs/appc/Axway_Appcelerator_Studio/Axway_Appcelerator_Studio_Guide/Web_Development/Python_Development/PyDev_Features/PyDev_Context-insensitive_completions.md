@@ -4,7 +4,7 @@ The 'context-insensitive' code completion brings up completions with tokens foun
 
 It is shown only when the completion is requested for the globals, and three characters are already typed.
 
-You need to request the completions to show with **Ctrl+Space.**
+{{% alert title="⚠️ Warning" color="primary" %}}You need to request the completions to show with **Ctrl+Space.**{{% /alert %}}
 
 ![complnoctx](/Images/appc/pydev.org/images/completion/complnoctx.png)
 

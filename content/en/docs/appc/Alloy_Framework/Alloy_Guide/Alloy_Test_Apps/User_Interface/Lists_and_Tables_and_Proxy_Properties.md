@@ -2,9 +2,9 @@
 
 Demonstrates use of Alloy elements to proxy ListView and TableView controls and their properties.
 
-*Example App Source Location*
+{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
 
-You can find this example app in the Alloy repository under [alloy/test/apps/ui/lists\_proxy\_properties](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/lists_proxy_properties). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [alloy/test/apps/ui/lists\_proxy\_properties](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/lists_proxy_properties). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 ![screenshot](/Images/appc/download/attachments/41845748/screenshot.png)
 

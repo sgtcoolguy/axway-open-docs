@@ -20,9 +20,7 @@
 
     * [Install the package](#install-the-package)
 
-As of Titanium 9.0.0, building Windows apps is no longer supported.
-
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}As of Titanium 9.0.0, building Windows apps is no longer supported.{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 ## Introduction
 
@@ -38,7 +36,7 @@ Before deploying the application to a Windows Phone device, you will need to:
 
 * Connect the device to your computer with a USB cable
 
-Currently, only one Windows Phone device may be plugged in to your computer to deploy. If multiple devices are plugged in, the build process will fail with an error.
+{{% alert title="⚠️ Warning" color="primary" %}}Currently, only one Windows Phone device may be plugged in to your computer to deploy. If multiple devices are plugged in, the build process will fail with an error.{{% /alert %}}
 
 ### Set the publisher ID
 

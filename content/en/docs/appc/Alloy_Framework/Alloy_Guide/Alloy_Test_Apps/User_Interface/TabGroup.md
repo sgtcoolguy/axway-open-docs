@@ -2,9 +2,9 @@
 
 Demonstrates basic use of a TabbedGroup control to display a tabbed interface.
 
-*Example App Source Location*
+{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
 
-You can find this example app in the Alloy repository under [samples/apps/ui/tabgroup](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/tabgroup). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [samples/apps/ui/tabgroup](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/tabgroup). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 A [TabGroup](#!/api/Titanium.UI.TabGroup) contains one or more [Tab](#!/api/Titanium.UI.TabGroup) objects, each of which has an associated tab control that is used to bring it into focus.
 

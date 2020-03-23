@@ -2,9 +2,9 @@
 
 Demonstrates how to create a master-detail application that presents a list of items from which the user can select to view details about that item.
 
-*App folder location*
+{{% alert title="💡 Hint" color="info" %}}*App folder location*
 
-_alloy_/test/apps/**advanced/master\_detail**
+_alloy_/test/apps/**advanced/master\_detail**{{% /alert %}}
 
 The sample is designed to support handheld and tablet (iPad) form factors. On iPhone, a [NavigationWindow](#!/api/Titanium.UI.iOS.NavigationWindow) control is used to display the master and detail windows; on iPad, a [SplitWindow](#!/api/Titanium.UI.iPad.SplitWindow) is used; and on Android, a standard [Window](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window) control is used for both the master and detail views, as shown below.
 

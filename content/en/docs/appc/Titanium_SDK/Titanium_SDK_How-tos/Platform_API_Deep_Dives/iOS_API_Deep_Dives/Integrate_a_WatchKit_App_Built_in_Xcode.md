@@ -40,7 +40,7 @@ A WatchKit app contains a specialized app extension that runs on either the Appl
 
 * Paired iOS devices must run iOS 9.0 or greater
 
-As of SDK 6.0.0, the watchOS 1 template and all related code are no longer supported. See [TIMOB-20083](https://jira.appcelerator.org/browse/TIMOB-20083) for details.
+{{% alert title="⚠️ Warning" color="primary" %}}As of SDK 6.0.0, the watchOS 1 template and all related code are no longer supported. See [TIMOB-20083](https://jira.appcelerator.org/browse/TIMOB-20083) for details.{{% /alert %}}
 
 ## Create an Apple Watch Application
 
@@ -119,7 +119,7 @@ The Watch Connectivity framework provides a few different ways to exchange data 
     | \-sendMessage:replyHandler:errorHandler: | [Ti.WatchSession.sendMessage()](#!/api/Titanium.WatchSession-method-sendMessage) | Sends a message to the paired device. |
     | \-session:didReceiveMessage: | [Ti.WatchSession.receivemessage](#!/api/Titanium.WatchSession-event-receivemessage) | Called or fired when the device receives a message from the paired device. |
 
-    If you are using SDK 5.1.0 or earlier, you should form your request like this: Ti.WatchSession.sendMessage(message). If you are using SDK 5.1.0 and above, form your request like this: Ti.WatchSession.sendMessage(params).
+    {{% alert title="⚠️ Warning" color="primary" %}}If you are using SDK 5.1.0 or earlier, you should form your request like this: Ti.WatchSession.sendMessage(message). If you are using SDK 5.1.0 and above, form your request like this: Ti.WatchSession.sendMessage(params).{{% /alert %}}
 
 * **User Info Transfer**: pass a data object in the background. Queued and delivered later when the application is reachable again.
 

@@ -2,11 +2,9 @@
 
 Demonstrates a widget using another widget.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**widgets/complex**
-
-![search](/Images/appc/download/attachments/41845785/search.png)
+alloy/test/apps/**widgets/complex**{{% /alert %}}![search](/Images/appc/download/attachments/41845785/search.png)
 
 The application defines two widgets: **com.testing.searchForBooks** and **com.appcelerator.loading**. As their names imply, the first widget provides UI and logic to search for books by title (using the [Google Books API](https://developers.google.com/books/docs/v1/using#PerformingSearch)) , while the second widget displays a loading indicator while the search is in progress.
 
@@ -74,7 +72,7 @@ The searchForBooks widget includes a [TextField](#!/api/Titanium.UI.TextField) w
 </Alloy>
 ```
 
-A <Require/> element whose type attribute is set to "widget", as above, is equivalent to a <Widget/> element.
+{{% alert title="💡 Hint" color="info" %}}A <Require/> element whose type attribute is set to "widget", as above, is equivalent to a <Widget/> element.{{% /alert %}}
 
 The **loading** widget contains an ImageView whose [images](#!/api/Titanium.UI.ImageView-property-images) property is set to an array of images in the widget's TSS file. Initially, the loading widget's [opacity](#!/api/Titanium.UI.View-property-opacity) property is set to 0 by the loading widget's TSS file so that it's not visible. Once the user initiates the search, the search icon's opacity is set to 0, and the loading widget's opacity is set to 1, making it visible.
 

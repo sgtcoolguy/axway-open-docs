@@ -32,7 +32,7 @@ In this chapter, you will learn how to access and interact with remote servers v
 
 Your Titanium application can interact with remote servers over [HTTP](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) using the [Ti.Network.HTTPClient object](#!/api/Titanium.Network.HTTPClient). Titanium's HTTPClient API mirrors that of the XMLHTTPRequest object in the web browser, so if you have done any Ajax programming in the browser (outside of libraries like Dojo or jQuery, which use XMLHTTPRequest), HTTPClient will be familiar to you.
 
-With Mobile Web apps, in order to access cross-domain resources (resources not on the server that hosts your Mobile Web pages) you must either enable CORS header support on your web server or configure a proxy service on your web server and define a custom Ti.Network.httpURLFormatter. A good guide on CORS is available from [Mozilla.org](https://developer.mozilla.org/en/HTTP_access_control).
+{{% alert title="⚠️ Warning" color="primary" %}}With Mobile Web apps, in order to access cross-domain resources (resources not on the server that hosts your Mobile Web pages) you must either enable CORS header support on your web server or configure a proxy service on your web server and define a custom Ti.Network.httpURLFormatter. A good guide on CORS is available from [Mozilla.org](https://developer.mozilla.org/en/HTTP_access_control).{{% /alert %}}
 
 As shown in the code example below, you declare an HTTPClient object and pass to it a number of parameters. Of these, the most critical is the onload callback function. It is the function called when data is returned and available for use. The onerror callback function is called when there's a network error, such as a timeout.
 

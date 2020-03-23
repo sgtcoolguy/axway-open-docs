@@ -1,8 +1,8 @@
 {"title":"Quick Start Guide for Android APS SDK","weight":"10"}
 
-*Pro or Enterprise Subscription Required*
+{{% alert title="❗️ Warning" color="danger" %}}*Pro or Enterprise Subscription Required*
 
-This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.
+This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.{{% /alert %}}
 
 * [Introduction](#introduction)
 
@@ -66,7 +66,7 @@ This document assumes you have an existing Android application and are familiar 
 
 * Eclipse 3.6 or later with the ADT plug-in (see [Android Developers: ADT Plugin](http://developer.android.com/sdk/installing/installing-adt.html)), or the Apache Ant command-line tool (see [Apache Ant](http://ant.apache.org/)).
 
-ADT has been discontinued, and we don't recommend using it.
+{{% alert title="❗️ Warning" color="danger" %}}ADT has been discontinued, and we don't recommend using it.{{% /alert %}}
 
 ## Setup
 
@@ -592,9 +592,9 @@ Before testing the sample, you need to create user accounts for the application 
 
 8. Click **Save Changes**.
 
-To create a Cloud user account, you only need a username or e-mail address and a password.
+{{% alert title="💡 Hint" color="info" %}}To create a Cloud user account, you only need a username or e-mail address and a password.
 
-For more information about managing Cloud user accounts, see [Managing Organizations](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Organizations/).
+For more information about managing Cloud user accounts, see [Managing Organizations](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Organizations/).{{% /alert %}}
 
 After you have created a few Cloud user accounts, build the sample and launch it on either a device or emulator.
 

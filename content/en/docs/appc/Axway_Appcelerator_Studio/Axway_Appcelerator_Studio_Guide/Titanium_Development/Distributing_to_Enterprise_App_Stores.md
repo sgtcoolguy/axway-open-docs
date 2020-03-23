@@ -1,8 +1,8 @@
 {"title":"Distributing to Enterprise App Stores","weight":"70"}
 
-*Enterprise Subscription Required!*
+{{% alert title="❗️ Warning" color="danger" %}}*Enterprise Subscription Required!*
 
-This AMPLIFY Appcelerator Services feature requires an Enterprise Subscription.
+This AMPLIFY Appcelerator Services feature requires an Enterprise Subscription.{{% /alert %}}
 
 * [Introduction](#introduction)
 

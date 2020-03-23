@@ -28,7 +28,7 @@ The minimum memory requirement for Studio and the Titanium SDK is as follows:
 | Latest Android SDK | macOS | 1.5 GB (contiguous) |
 | Latest Android SDK | Windows | 1 GB (contiguous) |
 
-Minimum system memory requirements is 8GB of RAM. 16GB is highly recommended.
+{{% alert title="⚠️ Warning" color="primary" %}}Minimum system memory requirements is 8GB of RAM. 16GB is highly recommended.{{% /alert %}}
 
 ### Operating System
 
@@ -39,9 +39,7 @@ Titanium is supported on the following Operating Systems:
 | macOS | 10.11.5 (Mavericks) and later |
 | Windows | Windows 7 and later(Android)  <br />Windows 8.1 and later (Windows Phone)  <br />Windows 10 and later (Windows 10 Mobile) |
 
-As of Titanium 9.0.0, building Windows apps is no longer supported.
-
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}As of Titanium 9.0.0, building Windows apps is no longer supported.{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 ### Required Software
 
@@ -53,7 +51,7 @@ If you are using Studio for Mac OS X and Windows, Studio prompts you to install 
 
 Oracle's Java Development Kit (JDK) is required to be installed in order to work with Titanium.
 
-Be aware that no other flavors of JDK, such as OpenJDK, currently work with Titanium; only Oracle's will suffice.
+{{% alert title="⚠️ Warning" color="primary" %}}Be aware that no other flavors of JDK, such as OpenJDK, currently work with Titanium; only Oracle's will suffice.{{% /alert %}}
 
 Titanium supports the following versions of JDK for each respective Operating System:
 

@@ -2,11 +2,9 @@
 
 Demonstrates using the global style file to apply a set of default styles to an entire Alloy project.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**basics/global\_style**
-
-![ios](/Images/appc/download/attachments/41845687/ios.png)
+alloy/test/apps/**basics/global\_style**{{% /alert %}}![ios](/Images/appc/download/attachments/41845687/ios.png)
 
 An Alloy project can include a [global style file](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#global-styles) located at app/styles/app.tss. The styles defined by this file apply to all controls and views, but are over-ridden by "local" styles declared by the following:
 

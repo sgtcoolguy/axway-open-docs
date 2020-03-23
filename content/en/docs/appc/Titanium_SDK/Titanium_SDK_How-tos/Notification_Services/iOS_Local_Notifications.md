@@ -101,9 +101,7 @@ if (Ti.Platform.name == "iPhone OS" && parseInt(Ti.Platform.version.split(".")[0
 }
 ```
 
-If you are using interactive notifications, the application also needs to register the notification categories you want to use. Set the categories property of the dictionary passed to the registerUserNotificationSettings() method to an array of notification category objects that the application needs to use. For more details, see the [iOS Interactive Notifications](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/iOS_Interactive_Notifications/).
-
-Callbacks get called properly only when Liveview is enabled.
+{{% alert title="💡 Hint" color="info" %}}If you are using interactive notifications, the application also needs to register the notification categories you want to use. Set the categories property of the dictionary passed to the registerUserNotificationSettings() method to an array of notification category objects that the application needs to use. For more details, see the [iOS Interactive Notifications](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/iOS_Interactive_Notifications/).{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}Callbacks get called properly only when Liveview is enabled.{{% /alert %}}
 
 After the application registers for notification services, iOS will prompt the user to allow the application to send notifications or not. The user can re-configure the notification settings later from **Settings**.
 

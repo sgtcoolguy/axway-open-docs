@@ -1,10 +1,10 @@
 {"title":"API Builder Project","weight":"30"}
 
-*API Builder 3.x is deprecated*
+{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
-Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
+Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
 * [Overview](#overview)
 
@@ -58,7 +58,7 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
 An API Builder application is a standard Node.js application that runs in the AMPLIFY Runtime Services environment. This guide covers how to manage your project.
 
-You may also use Appcelerator Studio to manage your API Builder (formerly known as Arrow Builder) projects. For details, see [API Builder Development](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_How-tos/API_Builder_Development/).
+{{% alert title="💡 Hint" color="info" %}}You may also use Appcelerator Studio to manage your API Builder (formerly known as Arrow Builder) projects. For details, see [API Builder Development](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_How-tos/API_Builder_Development/).{{% /alert %}}
 
 ## Project structure
 
@@ -239,9 +239,9 @@ AMPLIFY Runtime Services allows you to install additional binaries before your a
 
 Starting with AMPLIFY Runtime Services 1.3.0, to install additional third-party tools, create a script called install.sh in the project's root folder, which installs the required packages.
 
-*ImageMagick and PhantomJS*
+{{% alert title="💡 Hint" color="info" %}}*ImageMagick and PhantomJS*
 
-Both ImageMagick and PhantomJS are pre-installed on the containers.
+Both ImageMagick and PhantomJS are pre-installed on the containers.{{% /alert %}}
 
 Below is a sample script located in the ./install.sh folder in the application's directory.
 
@@ -314,9 +314,9 @@ To unset an environment variable, use the appc cloud config --unset <key> comman
 
 To check the current environment variables, use the appc cloud config --env command.
 
-*Blacklist Variable Names*
+{{% alert title="💡 Hint" color="info" %}}*Blacklist Variable Names*
 
-Prior to AMPLIFY Runtime Services 1.2.0, you could not use the following names for environment variables: "appid", "basedir", "bodyParser", "customConfig", "dirname", "framework", "fullpath", "name", "serverId", "port", "version", "NODE", "NODE\_PATH", "PATH", "PWD", "PORT", "TMPDIR", and "USER".
+Prior to AMPLIFY Runtime Services 1.2.0, you could not use the following names for environment variables: "appid", "basedir", "bodyParser", "customConfig", "dirname", "framework", "fullpath", "name", "serverId", "port", "version", "NODE", "NODE\_PATH", "PATH", "PWD", "PORT", "TMPDIR", and "USER".{{% /alert %}}
 
 After changing an environment variable, you will be prompted to restart the application.
 
@@ -536,7 +536,7 @@ You can specify one of the following container sizes depending on your AMPLIFY A
 | Large | 8 | 1024MB | 4000 | After a week of inactivity |
 | XLarge | 16 | 2048MB | 8000 | After a week of inactivity |
 
-It is important to choose Dev (512MB) and Small (256MB) containers wisely. The minimum recommended container sizeis "Medium". Though you may be able to deploy to a "Dev" or "Small" container, for better memory usage and performance it is highly recommended that you use medium or bigger size containers.
+{{% alert title="⚠️ Warning" color="primary" %}}It is important to choose Dev (512MB) and Small (256MB) containers wisely. The minimum recommended container sizeis "Medium". Though you may be able to deploy to a "Dev" or "Small" container, for better memory usage and performance it is highly recommended that you use medium or bigger size containers.{{% /alert %}}
 
 If your application is archived, to reactivate the application, make a request to it. The first request will be slow, but subsequent requests will respond with normal speed.
 

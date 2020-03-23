@@ -1,8 +1,8 @@
 {"title":"APS Analytics for Android","weight":"20"}
 
-*Pro or Enterprise Subscription Required*
+{{% alert title="❗️ Warning" color="danger" %}}*Pro or Enterprise Subscription Required*
 
-This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.
+This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.{{% /alert %}}
 
 * [Introduction](#introduction)
 
@@ -38,7 +38,7 @@ For Titanium Applications, see [Appcelerator Analytics](/docs/appc/AMPLIFY_Appce
 
 Appcelerator Analytics collects real-time data about your application's usage, which can then be viewed in the **[Analytics dashboard](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Client_Applications/#viewing-real-time-and-aggregated-analytics)**. By default, the Analytics dashboard provides information about app installs, the number of sessions, and average app session length (organized by app name, platform, and geography). Your app can also utilize custom analytic events and event funnels.
 
-This document provides an overview of the features provided by Analytics and how to use them using the Titanium SDK. **If you are developing an iOS application with Objective-C or Swift or an Android application with Java**, see [APS Analytics for iOS](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_iOS/APS_Analytics_for_iOS/) or [APS Analytics for Android](#undefined) for details on using Analytics.
+{{% alert title="⚠️ Warning" color="primary" %}}This document provides an overview of the features provided by Analytics and how to use them using the Titanium SDK. **If you are developing an iOS application with Objective-C or Swift or an Android application with Java**, see [APS Analytics for iOS](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_iOS/APS_Analytics_for_iOS/) or [APS Analytics for Android](#undefined) for details on using Analytics.{{% /alert %}}
 
 For platform-specific details about how analytics captured, see [Analytics Architecture](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/Analytics_Architecture/).
 
@@ -116,17 +116,17 @@ To integrate the Analytics service with a new or existing Android application:
     }
     ```
 
-    To get your APS App key:
+    {{% alert title="✅" color="success" %}}To get your APS App key:
 
-    1. Go to the [Dashboard](https://platform.axway.com/).
+1. Go to the [Dashboard](https://platform.axway.com/).
 
-    2. Select your application from the **Apps** drop-down menu.
+2. Select your application from the **Apps** drop-down menu.
 
-    3. Click the **Overview** tab.
+3. Click the **Overview** tab.
 
-    4. Click the **Services** button.
+4. Click the **Services** button.
 
-    5. Click **Show Key** under the Analytics and Cloud section.
+5. Click **Show Key** under the Analytics and Cloud section.{{% /alert %}}
 
 The Android application can now make additional method calls using the [APSAnalytics class](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSAnalytics.html). Before making API calls to the APSAnalytics class, you need to retrieve a shared instance using the getInstance() method. Make APSAnalytics API calls using the shared instance.
 

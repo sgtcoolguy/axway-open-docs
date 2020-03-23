@@ -2,9 +2,9 @@
 
 Demonstrates how to create a date/time picker using the Picker control.
 
-*Example App Source Location*
+{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
 
-You can find this example app in the Alloy repository under [samples/apps/ui/datetime\_picker](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/datetime_picker). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [samples/apps/ui/datetime\_picker](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/datetime_picker). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 The Picker control is used to let a user select one or more fixed values. You can set the type property of a Picker to display different types of information including [PICKER\_TYPE\_DATE\_AND\_TIME](#!/api/Titanium.UI-property-PICKER_TYPE_DATE_AND_TIME) and [PICKER\_TYPE\_DATE](#!/api/Titanium.UI-property-PICKER_TYPE_DATE). Set the type attribute to one of the date/time picker types. Then, supply the date in the XML or TSS as a string that can be parsed by the moment.js library.
 

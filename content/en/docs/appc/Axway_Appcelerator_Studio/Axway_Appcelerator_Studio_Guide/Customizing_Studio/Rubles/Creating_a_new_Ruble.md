@@ -14,7 +14,7 @@
 
 If you want to extend the functionality of Studio, you can do so by creating a new Ruble or extending an existing one.
 
-Starting with Studio Release 3.1.0, the Ruby editor is no longer included as part of the Studio installer. To edit Rubles in Studio, install the Ruby plug-in as instructed in [Adding PHP Ruby or Python Support](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/Adding_PHP_Ruby_or_Python_Support/).
+{{% alert title="⚠️ Warning" color="primary" %}}Starting with Studio Release 3.1.0, the Ruby editor is no longer included as part of the Studio installer. To edit Rubles in Studio, install the Ruby plug-in as instructed in [Adding PHP Ruby or Python Support](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Getting_Started/Adding_PHP_Ruby_or_Python_Support/).{{% /alert %}}
 
 ## Creating a new Ruble Using the Wizard
 
@@ -36,7 +36,7 @@ The [Ruble Specification](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerato
 
 We list the steps to create a very simple ruble. Below these steps, we illustrate where you can place this Ruble for different effects.
 
-Make sure the _rublename_ you choose below is unique to all your installed rubles, or otherwise, you will end up overriding an existing Ruble's functionality. Also note this is a tiny bit more complicated than it ought to be--we'll make this easier in future versions.
+{{% alert title="⚠️ Warning" color="primary" %}}Make sure the _rublename_ you choose below is unique to all your installed rubles, or otherwise, you will end up overriding an existing Ruble's functionality. Also note this is a tiny bit more complicated than it ought to be--we'll make this easier in future versions.{{% /alert %}}
 
 1. You want to figure out first where your Application Rubles folder lives.
 
@@ -50,8 +50,7 @@ Make sure the _rublename_ you choose below is unique to all your installed ruble
 
 3. Name it _rublename_.ruble, and browse to put the location into the "Aptana Rubles" folder.
 
-    * **You need to create a new** **_rublename_** **.ruble folder in the above location.** Otherwise, it will create the project in the root of the "Aptana Rubles" folder.
-
+    * {{% alert title="⚠️ Warning" color="primary" %}}**You need to create a new** **_rublename_** **.ruble folder in the above location.** Otherwise, it will create the project in the root of the "Aptana Rubles" folder.{{% /alert %}}
     * As an example, the result on OS X might look like:
 
         * **Project name:** my.ruble
@@ -72,7 +71,7 @@ Make sure the _rublename_ you choose below is unique to all your installed ruble
 
 6. Save and close bundle.rb
 
-You've not added any content yet so that you won't see your Ruble show up in the UI. You'll need to add [templates](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Templates/Creating_a_new_template/) or commands to see a visible change. See below for checking to ensure your bundle loaded.
+{{% alert title="⚠️ Warning" color="primary" %}}You've not added any content yet so that you won't see your Ruble show up in the UI. You'll need to add [templates](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Templates/Creating_a_new_template/) or commands to see a visible change. See below for checking to ensure your bundle loaded.{{% /alert %}}
 
 ### Ruble file locations
 

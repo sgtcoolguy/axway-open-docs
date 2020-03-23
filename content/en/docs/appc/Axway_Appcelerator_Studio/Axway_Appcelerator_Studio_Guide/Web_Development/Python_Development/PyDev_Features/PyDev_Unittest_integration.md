@@ -10,7 +10,7 @@ The preferences page to configure the test runner is accessible from the PyUnit 
 
 ![py_unit_preferences](/Images/appc/pydev.org/images/py_unit/py_unit_preferences.png)
 
-The flags to choose the tests in the test runner should not be specified (they are properly managed by PyDev in each test run).
+{{% alert title="⚠️ Warning" color="primary" %}}The flags to choose the tests in the test runner should not be specified (they are properly managed by PyDev in each test run).{{% /alert %}}
 
 ## Configuring the PyDev test runner
 
@@ -32,7 +32,7 @@ An example of options that can be set in the preferences would be:
 
 ## Configuring the Nose test runner
 
-The integration was tested with version 1.0.
+{{% alert title="⚠️ Warning" color="primary" %}}The integration was tested with version 1.0.{{% /alert %}}
 
 The options that the nose test runner accepts can be found at [http://somethingaboutorange.com/mrl/projects/nose](http://somethingaboutorange.com/mrl/projects/nose).
 
@@ -46,7 +46,7 @@ An example of options that can be set in the preferences would be:
 
 ## Configuring the Py.test test runner
 
-The integration was tested with version 2.0.
+{{% alert title="⚠️ Warning" color="primary" %}}The integration was tested with version 2.0.{{% /alert %}}
 
 The options that the py.test test runner accepts can be found at [http://pytest.org.](http://pytest.org)
 
@@ -58,7 +58,7 @@ An example of options that can be set in the preferences would be:
 
 \--tb=native (will show tracebacks in the default standard library formatting)
 
-Currently, when using the xdist plugin, the results won't be properly shown in the PyUnit view.
+{{% alert title="⚠️ Warning" color="primary" %}}Currently, when using the xdist plugin, the results won't be properly shown in the PyUnit view.{{% /alert %}}
 
 ## PyUnit view
 

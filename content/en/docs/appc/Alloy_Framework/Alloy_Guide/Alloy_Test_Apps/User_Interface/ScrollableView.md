@@ -2,9 +2,9 @@
 
 Demonstrates basic use of ScrollableView control to present a horizontally-scrolling set of child views, called _pages._
 
-*Example App Source Location*
+{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
 
-You can find this example app in the Alloy repository under [samples/apps/ui/scrollableview](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/scrollableview). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [samples/apps/ui/scrollableview](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/scrollableview). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 A [ScrollableView](#!/api/Titanium.UI.ScrollableView) encapsulates a horizontally-scrolling set of child views, known as pages, navigable using its built-in horizontal swipe gestures.
 

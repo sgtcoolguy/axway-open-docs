@@ -30,4 +30,4 @@ If some text is selected in the editor, it will show information like the select
 
 ![EditorPropertiesView](/Images/appc/download/attachments/30083306/EditorPropertiesView.png)
 
-The scope shown is the same as the scope used in rubles development. This view can be used to determine which scope that you need to be used for a specific ruble command/snippet.
+{{% alert title="⚠️ Warning" color="primary" %}}The scope shown is the same as the scope used in rubles development. This view can be used to determine which scope that you need to be used for a specific ruble command/snippet.{{% /alert %}}

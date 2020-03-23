@@ -130,7 +130,7 @@ To build a Titanium project to test on a device, simulator or emulator, run the 
 
 Once the application is installed and launched, use native tools to test, debug and profile your application. See [Debugging and Profiling](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Debugging_and_Profiling/).
 
-**SDK version setting precedence**
+{{% alert title="⚠️ Warning" color="primary" %}}**SDK version setting precedence**
 
 The CLI checks several settings to see which SDK version to use to build your application. The following is a list of locations in the order of precedence. If an SDK version is not defined in that location, the next location is checked.
 
@@ -143,7 +143,7 @@ The CLI checks several settings to see which SDK version to use to build your ap
     To check the version, run titanium config and to change the version, run appc ti config app.sdk <sdk\_version>.
 
 4. SDK select version.
-    To check or change this version, run appc ti sdk select.
+    To check or change this version, run appc ti sdk select.{{% /alert %}}
 
 #### Android emulator
 
@@ -266,7 +266,7 @@ If you omit any of the optional parameters, the CLI will prompt you with options
 
 Before packaging for the iTunes Store, you need to generate a distribution certificate and distribution provisioning profile, and have an iTunes Connect account. See [Distributing iOS apps](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_iOS_apps/).
 
-If you are using Mac OS X 10.9 (Mavericks) or newer, make sure you grant CLI access to the computer as described in [Note for Mavericks (and later)](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_iOS_SDK/#note-for-mavericks-and-later).
+{{% alert title="⚠️ Warning" color="primary" %}}If you are using Mac OS X 10.9 (Mavericks) or newer, make sure you grant CLI access to the computer as described in [Note for Mavericks (and later)](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installing_Platform_SDKs/Installing_the_iOS_SDK/#note-for-mavericks-and-later).{{% /alert %}}
 
 To package an APP bundle for the iTunes store, run:
 

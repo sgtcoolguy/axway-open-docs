@@ -2,9 +2,9 @@
 
 Demonstrates how to preload a SQLite database for your Alloy appliccation using an external SQLite database file.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**models/sql\_preload**
+alloy/test/apps/**models/sql\_preload**{{% /alert %}}
 
 Rather than creating and populating your SQLite database with JavaScript or a migration file, your model configuration file can specify an external SQLite data file. The following image shows the contents of the myapp.sqlite included with the sample app.
 

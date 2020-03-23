@@ -1,8 +1,8 @@
 {"title":"Alloy Models","weight":"30"}
 
-IMPORTANT NOTE – PLEASE READ
+{{% alert title="⚠️ Warning" color="primary" %}}IMPORTANT NOTE – PLEASE READ
 
-Currently, Alloy is using Backbone version 0.9.2, which is not the most current version of Backbone. The documentation links in the Model guides link to version 0.9.2 of the Backbone documentation. If you go to the official Backbone site, the documentation might be out-of-sync with these guides.
+Currently, Alloy is using Backbone version 0.9.2, which is not the most current version of Backbone. The documentation links in the Model guides link to version 0.9.2 of the Backbone documentation. If you go to the official Backbone site, the documentation might be out-of-sync with these guides.{{% /alert %}}
 
 Alloy uses Backbone.js to provide support for its models and collections. Alloy also borrows the concepts of migrations and adapters from Rails for storage integration.
 

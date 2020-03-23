@@ -70,9 +70,9 @@ The event that the Studio sends contains these fields:
 | event.data.needsUpdate | A boolean indication that an update is available |
 | event.data.availableUpdateVersion | The available update version for Titanium Studio (non-empty when _'needsUpdate'_ is _'true'_) |
 
-When the _event.data.installedVersion_, for example, is _undefined_, the _event.data.status_ will indicate the stage of the command. The studio will fire multiple events after the dispatch call, and it's up to the JavaScript call to handle those and render the UI accordingly (for example, show a spinning wheel when the _processing_ status is received).
+{{% alert title="⚠️ Warning" color="primary" %}}When the _event.data.installedVersion_, for example, is _undefined_, the _event.data.status_ will indicate the stage of the command. The studio will fire multiple events after the dispatch call, and it's up to the JavaScript call to handle those and render the UI accordingly (for example, show a spinning wheel when the _processing_ status is received).
 
-The **_studio3\_sdk_** repository contains a complete example of handling these events and tunneling them to the UI (see _updates.js_)
+The **_studio3\_sdk_** repository contains a complete example of handling these events and tunneling them to the UI (see _updates.js_){{% /alert %}}
 
 ## Installing a Titanium Studio update
 

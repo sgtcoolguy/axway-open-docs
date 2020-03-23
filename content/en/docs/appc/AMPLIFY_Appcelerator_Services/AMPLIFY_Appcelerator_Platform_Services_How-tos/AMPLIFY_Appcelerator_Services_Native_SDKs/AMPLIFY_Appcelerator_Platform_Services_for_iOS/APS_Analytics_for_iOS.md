@@ -1,8 +1,8 @@
 {"title":"APS Analytics for iOS","weight":"30"}
 
-*Pro or Enterprise Subscription Required*
+{{% alert title="❗️ Warning" color="danger" %}}*Pro or Enterprise Subscription Required*
 
-This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.
+This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.{{% /alert %}}
 
 * [Introduction](#introduction)
 
@@ -34,7 +34,7 @@ For Titanium Applications, see [Appcelerator Analytics](/docs/appc/AMPLIFY_Appce
 
 Appcelerator Analytics collects real-time data about your application's usage, which can then be viewed in the **[Analytics dashboard](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Client_Applications/#viewing-real-time-and-aggregated-analytics)**. By default, the Analytics dashboard provides information about app installs, the number of sessions, and average app session length (organized by app name, platform, and geography). Your app can also utilize custom analytic events and event funnels.
 
-This document provides an overview of the features provided by Analytics and how to use them using the Titanium SDK. **If you are developing an iOS application with Objective-C or Swift or an Android application with Java**, see [APS Analytics for iOS](#undefined) or [APS Analytics for Android](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_Android/APS_Analytics_for_Android/) for details on using Analytics.
+{{% alert title="⚠️ Warning" color="primary" %}}This document provides an overview of the features provided by Analytics and how to use them using the Titanium SDK. **If you are developing an iOS application with Objective-C or Swift or an Android application with Java**, see [APS Analytics for iOS](#undefined) or [APS Analytics for Android](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_Android/APS_Analytics_for_Android/) for details on using Analytics.{{% /alert %}}
 
 For platform-specific details about how analytics captured, see [Analytics Architecture](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/Analytics_Architecture/).
 
@@ -94,17 +94,17 @@ To integrate the Performance service with a new or existing iOS application:
     }
     ```
 
-    To get your APS App key:
+    {{% alert title="✅" color="success" %}}To get your APS App key:
 
-    1. Go to the [Dashboard](https://platform.axway.com/).
+1. Go to the [Dashboard](https://platform.axway.com/).
 
-    2. Select your application from the **Apps** drop-down menu.
+2. Select your application from the **Apps** drop-down menu.
 
-    3. Click the **Overview** tab.
+3. Click the **Overview** tab.
 
-    4. Click the **Services** button.
+4. Click the **Services** button.
 
-    5. Click **Show Key** under the Analytics and Cloud section.
+5. Click **Show Key** under the Analytics and Cloud section.{{% /alert %}}
 
 The iOS application can now send user session events and make additional method calls using the [APSAnalytics class](http://docs.appcelerator.com/aps-sdk-apidoc/latest/ios/Classes/APSAnalytics.html).
 
@@ -123,7 +123,7 @@ By default, after the application has been backgrounded for 30 seconds, the Anal
 
 You use the [A](#!/api/Titanium.Analytics)[PSAnalytics API](http://docs.appcelerator.com/aps-sdk-apidoc/latest/ios/Classes/APSAnalytics.html) to log and report custom events. [Feature Events](#feature-events) are for capturing a user action, such as selecting a specific menu option or launching a video.
 
-Currently, the optional data parameter of the Titanium.Analytics methods, which are used for logging a dictionary object, cannot be accessed through the Dashboard.
+{{% alert title="⚠️ Warning" color="primary" %}}Currently, the optional data parameter of the Titanium.Analytics methods, which are used for logging a dictionary object, cannot be accessed through the Dashboard.{{% /alert %}}
 
 ### Feature Events
 

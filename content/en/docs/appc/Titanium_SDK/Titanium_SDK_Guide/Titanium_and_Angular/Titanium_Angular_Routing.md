@@ -74,9 +74,9 @@ export class AppRoutingModule { }
 
 This will setup a route for your previously created IntroComponent under the path /intro. It also instructs Angular to load this route upon the initial app launch by setting up a redirect for an empty path string.
 
-*Path routing in Titanium*
+{{% alert title="💡 Hint" color="info" %}}*Path routing in Titanium*
 
-You may be wondering how routing via paths is working inside a native app. The short answer is that we emulate the browsers [History API](https://developer.mozilla.org/en-US/docs/Web/API/History) and let Angular's router do its magic to load the configured components. We also make sure to properly handle native navigation events such the Android back button or the iOS swipe left-to-right gesture to trigger a back navigation.
+You may be wondering how routing via paths is working inside a native app. The short answer is that we emulate the browsers [History API](https://developer.mozilla.org/en-US/docs/Web/API/History) and let Angular's router do its magic to load the configured components. We also make sure to properly handle native navigation events such the Android back button or the iOS swipe left-to-right gesture to trigger a back navigation.{{% /alert %}}
 
 Finally, open up the app.module.ts and add imports for the AppRoutingModule and IntroComponent, add the module to the imports and the component to the declarations of the AppModule configuration. Your app.module.ts should look like this afterwards:
 

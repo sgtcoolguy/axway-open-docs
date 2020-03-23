@@ -1,8 +1,8 @@
 {"title":"Create an Organization","weight":"10"}
 
-*Enterprise Subscription Required!*
+{{% alert title="❗️ Warning" color="danger" %}}*Enterprise Subscription Required!*
 
-This AMPLIFY Appcelerator Services feature requires an Enterprise Subscription.
+This AMPLIFY Appcelerator Services feature requires an Enterprise Subscription.{{% /alert %}}
 
 If you are an administrator of your organization, you can create child organizations under your parent organization. Child organizations share the user and device resources with the parent organization and cannot be allotted more than what the parent has not used.
 
@@ -32,6 +32,5 @@ To create an organization:
 
 9. (New Org) To invite users to the new organization, click **Invite Members to this Organization.**
 
-    This button is disabled if the specified number of **Dashboard Users** is not greater than 1.
-
+    {{% alert title="⚠️ Warning" color="primary" %}}This button is disabled if the specified number of **Dashboard Users** is not greater than 1.{{% /alert %}}
 10. Click **Create**.

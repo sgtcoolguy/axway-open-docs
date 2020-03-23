@@ -300,7 +300,7 @@ Create a new alloy project.
 appc alloy new [dir] [options]
 ```
 
-As of CLI 7.1.0, A custom template directory can be added via this commands:
+{{% alert title="⚠️ Warning" color="primary" %}}As of CLI 7.1.0, A custom template directory can be added via this commands:
 
 ```bash
 appc alloy new . </path/to/template>
@@ -310,7 +310,7 @@ or
 
 ```bash
 appc new --template </path/to/template>
-```
+```{{% /alert %}}
 
 #### alloy compile
 
@@ -546,7 +546,7 @@ Publish an app to the ACS cloud. run in app dir or with -d to specify an app dir
 appc cloud/acs publish [options] [npm_username] [npm_password]
 ```
 
-If acs cli complains that npm is not found even though npm is in the path, ensure that the directory containing npm is in the NODE\_PATH (for example, NODE\_PATH=/usr/lib/node\_modules).
+{{% alert title="⚠️ Warning" color="primary" %}}If acs cli complains that npm is not found even though npm is in the path, ensure that the directory containing npm is in the NODE\_PATH (for example, NODE\_PATH=/usr/lib/node\_modules).{{% /alert %}}
 
 #### cloud/acs unpublish
 
@@ -1029,9 +1029,7 @@ The following options only apply to Titanium applications:
 
 #### Windows build options
 
-As of Titanium 9.0.0, building Windows apps is no longer supported.
-
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}As of Titanium 9.0.0, building Windows apps is no longer supported.{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 | Options | Description |
 | --- | --- |

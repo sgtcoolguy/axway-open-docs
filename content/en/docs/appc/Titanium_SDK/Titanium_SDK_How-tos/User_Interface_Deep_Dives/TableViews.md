@@ -96,7 +96,7 @@ table.appendRow(row);
 
 You can empty a table by setting its data property to an empty array.
 
-Do not set a TableView's data property to null or undefined as it will result un unexpected behavior.
+{{% alert title="⚠️ Warning" color="primary" %}}Do not set a TableView's data property to null or undefined as it will result un unexpected behavior.{{% /alert %}}
 
 ```
 table.setData([]);
@@ -202,7 +202,7 @@ win.open();
 
 This is just one very simple example of how you can create custom rows for your tables. You can literally embed almost any Titanium UI component in any visual configuration to create your rows.
 
-It is tempting to make heavy use of Titanium's flexibility with custom rows. You need to be aware, however, of the performance implications of making your rows overly complex. Each unique UI element you add to a row has resources requirements, and those requirements are magnified by the number of rows in your tables. Be sure to test both on simulator/emulator and device as you develop to ensure you are getting the app performance you expect, and scale back row complexity if necessary.
+{{% alert title="⚠️ Warning" color="primary" %}}It is tempting to make heavy use of Titanium's flexibility with custom rows. You need to be aware, however, of the performance implications of making your rows overly complex. Each unique UI element you add to a row has resources requirements, and those requirements are magnified by the number of rows in your tables. Be sure to test both on simulator/emulator and device as you develop to ensure you are getting the app performance you expect, and scale back row complexity if necessary.{{% /alert %}}
 
 ### Grouped rows
 

@@ -34,7 +34,7 @@ This guide introduces the Appcelerator Platform and walks through the steps of s
 
 If you are developing native Android application with Java or native iOS application with Objective-C, see the [AMPLIFY Appcelerator Services Native SDKs](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/) to get started with integrating Appcelerator Platform services with your application.
 
-Appcelerator Platform is available as a service referred as App Builder through the AMPLIFY platform.
+{{% alert title="⚠️ Warning" color="primary" %}}Appcelerator Platform is available as a service referred as App Builder through the AMPLIFY platform.{{% /alert %}}
 
 ## Appcelerator Platform
 
@@ -147,8 +147,7 @@ After the project is imported, run it.
 2. In the global toolbar, select **Run** from the **Launch Mode** drop-down and select a target to deploy to from the **Target** drop-down.
     ![launchmode](/Images/appc/download/attachments/43299610/launchmode.png)
 
-    The application will not run on a Genymotion emulator because it does not include the Google Play SDK required by the ti.map module.
-
+    {{% alert title="⚠️ Warning" color="primary" %}}The application will not run on a Genymotion emulator because it does not include the Google Play SDK required by the ti.map module.{{% /alert %}}
 3. Once the application launches, click on profiles to view the detailed information about the contact. Click on the Add to Bookmarks links and the icons below it.
     ![app](/Images/appc/download/attachments/43299610/app.png)
 

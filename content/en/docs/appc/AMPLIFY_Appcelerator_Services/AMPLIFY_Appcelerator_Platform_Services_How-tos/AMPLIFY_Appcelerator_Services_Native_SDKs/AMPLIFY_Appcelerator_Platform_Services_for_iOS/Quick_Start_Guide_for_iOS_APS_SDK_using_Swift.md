@@ -1,8 +1,8 @@
 {"title":"Quick Start Guide for iOS APS SDK using Swift","weight":"20"}
 
-*Pro or Enterprise Subscription Required*
+{{% alert title="❗️ Warning" color="danger" %}}*Pro or Enterprise Subscription Required*
 
-This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.
+This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.{{% /alert %}}
 
 * [Introduction](#introduction)
 
@@ -232,9 +232,7 @@ The following tutorial demonstrates the basic setup and usage of Analytics and C
 
     The iOS application is now ready to make method calls using the APS SDK APIs.
 
-If the application attempts to make APS SDK API calls without first setting the application key, the application will raise an exception and crash.
-
-*Bridging Header File*
+{{% alert title="❗️ Warning" color="danger" %}}If the application attempts to make APS SDK API calls without first setting the application key, the application will raise an exception and crash.{{% /alert %}}{{% alert title="💡 Hint" color="info" %}}*Bridging Header File*
 
 Alternatively, to have Xcode automatically create a bridging header file and add the build flag:
 
@@ -246,7 +244,7 @@ Alternatively, to have Xcode automatically create a bridging header file and add
 
 4. Xcode creates the header file and adds it to the build flag. Delete the Objective-C file you just created.
 
-5. Follow steps 10 and 11.
+5. Follow steps 10 and 11.{{% /alert %}}
 
 ### Modify the Application
 
@@ -440,9 +438,9 @@ Before testing the sample, you need to create user accounts for the application 
 
 8. Click **Save Changes**.
 
-To create a Cloud user account, you only need a username or e-mail address and a password.
+{{% alert title="💡 Hint" color="info" %}}To create a Cloud user account, you only need a username or e-mail address and a password.
 
-For more information about managing Cloud user accounts, see [Managing Organizations](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Organizations/).
+For more information about managing Cloud user accounts, see [Managing Organizations](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Organizations/).{{% /alert %}}
 
 After you have created a few Cloud user accounts, build the sample and launch it on either a device or emulator.
 

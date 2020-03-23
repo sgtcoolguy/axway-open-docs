@@ -70,7 +70,7 @@ With the release of [SDK 7.0.0](/docs/appc/Titanium_SDK/Titanium_SDK_Release_Not
 
 * Utilize the Atom Command Palette to initiate commands
 
-Atom 1.21 or later is required.
+{{% alert title="⚠️ Warning" color="primary" %}}Atom 1.21 or later is required.{{% /alert %}}
 
 ## Installation
 

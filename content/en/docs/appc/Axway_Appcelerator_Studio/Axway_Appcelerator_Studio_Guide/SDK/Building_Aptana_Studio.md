@@ -1,6 +1,6 @@
 {"title":"Building Aptana Studio","weight":"20"}
 
-Aptana Studio is licensed under the terms of the GNU Public License. See [http://www.aptana.com/legal/](http://www.aptana.com/legal/) for questions regarding using the Aptana Studio source in other open-source or commercial products. If you create and distribute a derivative work, you release it under the terms of the GPL. Appcelerator and Titanium Studio are released under a closed-source license, and the parts specific to Appcelerator and Titanium Studio are excepted out as part of the GPL exception. If you need to reuse code in other projects, please pay attention to the license and ensure it is compatible with what you are working on.
+{{% alert title="⚠️ Warning" color="primary" %}}Aptana Studio is licensed under the terms of the GNU Public License. See [http://www.aptana.com/legal/](http://www.aptana.com/legal/) for questions regarding using the Aptana Studio source in other open-source or commercial products. If you create and distribute a derivative work, you release it under the terms of the GPL. Appcelerator and Titanium Studio are released under a closed-source license, and the parts specific to Appcelerator and Titanium Studio are excepted out as part of the GPL exception. If you need to reuse code in other projects, please pay attention to the license and ensure it is compatible with what you are working on.{{% /alert %}}
 
 ## Getting the Sources
 

@@ -30,7 +30,7 @@ If you are going to be creating Android modules, you will need to install Java s
 
 You will need to install the Android NDK. Download the appropriate .zip file from [http://developer.android.com/sdk/ndk/index.html](http://developer.android.com/sdk/ndk/index.html) and extract it to some location on disk. Remember this location.
 
-As an additional note, you need to make sure the path to your Studio workspace does not contain spaces. See [Switching your Workspace](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Switching_your_Workspace/) for how to switch your workspace location. You can then import your projects from the old to the new workspace. This is a limitation of the Android NDK
+{{% alert title="❗️ Warning" color="danger" %}}As an additional note, you need to make sure the path to your Studio workspace does not contain spaces. See [Switching your Workspace](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Switching_your_Workspace/) for how to switch your workspace location. You can then import your projects from the old to the new workspace. This is a limitation of the Android NDK{{% /alert %}}
 
 ## Creating a New Module
 
@@ -54,7 +54,7 @@ Creating a new module is accomplished by running through a wizard. Below summari
 
 Your module is created. Note the two different folder structures, depending on the platform.
 
-You may need to refresh your project to show missing files. See related ticket [http://jira.appcelerator.org/browse/TISTUD-948](http://jira.appcelerator.org/browse/TISTUD-948). For Android, you may also need to manually add JARs to your build path. See related ticket [http://jira.appcelerator.org/browse/TIMOB-6839](http://jira.appcelerator.org/browse/TIMOB-6839) for the workaround.
+{{% alert title="⚠️ Warning" color="primary" %}}You may need to refresh your project to show missing files. See related ticket [http://jira.appcelerator.org/browse/TISTUD-948](http://jira.appcelerator.org/browse/TISTUD-948). For Android, you may also need to manually add JARs to your build path. See related ticket [http://jira.appcelerator.org/browse/TIMOB-6839](http://jira.appcelerator.org/browse/TIMOB-6839) for the workaround.{{% /alert %}}
 
 ## Building/Packaging a Module
 

@@ -642,7 +642,7 @@ As of this release, Titanium SDK 7.x will not be supported one calendar year (20
 
 ## Hyperloop
 
-Hyperloop 4.0.0 is only compatible with SDK 8.0.0 and newer.
+{{% alert title="⚠️ Warning" color="primary" %}}Hyperloop 4.0.0 is only compatible with SDK 8.0.0 and newer.{{% /alert %}}
 
 ### Android
 

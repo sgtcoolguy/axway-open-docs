@@ -2,9 +2,9 @@
 
 Demonstrates basic use of the CoverFlowView control, an iOS-only control that presents a list of scrollable images in a style consistent with that used for iPod, iTunes, and file browsing.
 
-*Example App Source Location*
+{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
 
-You can find this example app in the Alloy repository under [samples/apps/ui/coverflow](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/coverflow). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [samples/apps/ui/coverflow](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/coverflow). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 ![screenshot](/Images/appc/download/attachments/41845741/screenshot.png)
 

@@ -8,7 +8,7 @@
 
 This walkthrough will instruct you on how to create a new web project and get started with your coding using a pre-documented JavaScript library. For this example, we will use jQuery.
 
-The library you are using must have either a [JSCA 1.0 Specification](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/JSCA_1.0_Specification/) file, be documented using the [ScriptDoc](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/ScriptDoc_(SDOC)_2.0_Specification/) spec, be documented using [VSDoc](http://weblogs.asp.net/bleroy/archive/2007/04/23/the-format-for-javascript-doc-comments.aspx) for JavaScript, or have an [Aptana Studio 2.X](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/ScriptDoc_XML_(SDOCML)_2.0_Specification/) code assist XML file. If using the Studio 2.X XML code assist file, you need to change the file extension to .sdocml.
+{{% alert title="⚠️ Warning" color="primary" %}}The library you are using must have either a [JSCA 1.0 Specification](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/JSCA_1.0_Specification/) file, be documented using the [ScriptDoc](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/ScriptDoc_(SDOC)_2.0_Specification/) spec, be documented using [VSDoc](http://weblogs.asp.net/bleroy/archive/2007/04/23/the-format-for-javascript-doc-comments.aspx) for JavaScript, or have an [Aptana Studio 2.X](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/SDK/Specifications/ScriptDoc_XML_(SDOCML)_2.0_Specification/) code assist XML file. If using the Studio 2.X XML code assist file, you need to change the file extension to .sdocml.{{% /alert %}}
 
 ## Accessing your projects
 
@@ -39,7 +39,7 @@ This will create a new web project, but unlike Studio 2, most templates do not d
 
 2. Save it to your disk, and then drag it into your project. It does not matter where in the project it sits, so you can create a new folder for files like this if you like.
 
-The project must be some web project: Web, PHP, Python, Ruby, Rails. You can confirm that here by checking the project nature: [Importing an Existing Project](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Working_with_Projects/Importing_an_Existing_Project/)
+{{% alert title="⚠️ Warning" color="primary" %}}The project must be some web project: Web, PHP, Python, Ruby, Rails. You can confirm that here by checking the project nature: [Importing an Existing Project](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Basic_Concepts/Working_with_Projects/Importing_an_Existing_Project/){{% /alert %}}
 
 ## Viewing code assist (using jQuery as an example)
 

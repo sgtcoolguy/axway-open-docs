@@ -135,9 +135,9 @@ JavaScript is inherently single-threaded; it provides no mechanisms for synchron
 
 When performing a long-running task in native code, you can spawn a thread or use a native API that is asynchronous. You can deliver results back to the JavaScript runtime thread by calling a callback method or firing an event. Callback functions and event listeners are invoked on the JavaScript runtime thread.
 
-On the iOS platform, each JavaScript context operates in its own thread. If you create a Window using the url property, the window runs in a separate context _and in a separate thread_. For this reason, when communicating between JavaScript contexts on iOS, you should only pass serializable JavaScript objects, _not_ functions or proxy objects.
+{{% alert title="⚠️ Warning" color="primary" %}}On the iOS platform, each JavaScript context operates in its own thread. If you create a Window using the url property, the window runs in a separate context _and in a separate thread_. For this reason, when communicating between JavaScript contexts on iOS, you should only pass serializable JavaScript objects, _not_ functions or proxy objects.
 
-When calling a callback from a module, the callback is invoked on the appropriate JavaScript runtime thread. When you fire an event from your module, the event listener function is called on the thread where the listener was added. (Potentially, this means that the same event could be delivered on multiple threads if your application has multiple contexts, each with a listener defined for that event.)
+When calling a callback from a module, the callback is invoked on the appropriate JavaScript runtime thread. When you fire an event from your module, the event listener function is called on the thread where the listener was added. (Potentially, this means that the same event could be delivered on multiple threads if your application has multiple contexts, each with a listener defined for that event.){{% /alert %}}
 
 ### Packaged JavaScript and hybrid modules
 

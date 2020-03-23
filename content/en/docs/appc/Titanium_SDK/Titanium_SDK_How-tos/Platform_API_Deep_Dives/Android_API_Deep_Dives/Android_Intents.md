@@ -60,7 +60,7 @@ To create an intent, use the Titanium.Android.createIntent() method to create an
 
 * type: Optional MIME type for the intent.
 
-For the action, you can also define your own custom action name. Use a reverse domain scheme to name the action to avoid potential conflicts, for example, com.appcelerator.action.LINT . Custom actions are only useful to communicate between your applications and application activities using intents.
+{{% alert title="💡 Hint" color="info" %}}For the action, you can also define your own custom action name. Use a reverse domain scheme to name the action to avoid potential conflicts, for example, com.appcelerator.action.LINT . Custom actions are only useful to communicate between your applications and application activities using intents.{{% /alert %}}
 
 The following example creates an intent to view the data URI:
 
@@ -142,7 +142,7 @@ To add a category to an intent, use the Intent's addCategory() method. A categor
 
 * Titanium.Android.CATEGORY\_TEST: Activity is for testing purposes.
 
-For categories, you can also define your own custom category name. Use a reverse domain scheme to name the category to avoid potential conflicts, for example, org.foo.category.SUPER . Custom categories are only useful to communicate between your applications and application activities using intents.
+{{% alert title="💡 Hint" color="info" %}}For categories, you can also define your own custom category name. Use a reverse domain scheme to name the category to avoid potential conflicts, for example, org.foo.category.SUPER . Custom categories are only useful to communicate between your applications and application activities using intents.{{% /alert %}}
 
 ## Start an activity with an intent
 
@@ -152,7 +152,7 @@ To start an activity (application or application component), call the applicatio
 
 * The startActivityForResult() method starts an Activity by passing it an intent object and a callback function to handle the response returned by the activity when it finishes. Use this method if the application wants to communicate between two activities.
 
-Wait for the TabGroup or Window to open before invoking any methods on its activity.
+{{% alert title="⚠️ Warning" color="primary" %}}Wait for the TabGroup or Window to open before invoking any methods on its activity.{{% /alert %}}
 
 The following example starts an activity (another application) to view the data URI:
 

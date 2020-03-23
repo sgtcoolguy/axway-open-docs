@@ -24,7 +24,7 @@
 
 Users can create new templates or modify existing snippets to allow easy creation of default content.
 
-We assume you've [created a new Ruble](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Creating_a_new_Ruble/) as a placeholder for the following content
+{{% alert title="⚠️ Warning" color="primary" %}}We assume you've [created a new Ruble](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Creating_a_new_Ruble/) as a placeholder for the following content{{% /alert %}}
 
 ## Creating a new snippet
 

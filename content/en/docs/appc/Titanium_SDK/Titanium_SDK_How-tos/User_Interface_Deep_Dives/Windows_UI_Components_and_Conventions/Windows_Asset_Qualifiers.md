@@ -8,15 +8,13 @@
 
 * [Example](#example)
 
-As of Titanium 9.0.0, building Windows apps is no longer supported.
-
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}As of Titanium 9.0.0, building Windows apps is no longer supported.{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 ## Introduction
 
 Windows Phone OS and Windows OS have a set of qualifiers you can use to select which assets to use based on screen size, language, region, theme, etc. The qualifiers can either be used as a name for a folder or may be included in the name of the file. If you use the qualifier as part of the filename, place the qualifier between the name and extension, for example, filename.qualifier.ext. You may combine qualifiers by concatenating them together with an underscore (\_). In your project, reference the files without the qualifiers.
 
-Not all qualifiers are discussed in this topic, such as home region, direction layout, etc. For a complete list of qualifiers, refer to the [Windows Dev Center: How to name resources using qualifiers](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965324.aspx).
+{{% alert title="⚠️ Warning" color="primary" %}}Not all qualifiers are discussed in this topic, such as home region, direction layout, etc. For a complete list of qualifiers, refer to the [Windows Dev Center: How to name resources using qualifiers](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965324.aspx).{{% /alert %}}
 
 ## Scale
 

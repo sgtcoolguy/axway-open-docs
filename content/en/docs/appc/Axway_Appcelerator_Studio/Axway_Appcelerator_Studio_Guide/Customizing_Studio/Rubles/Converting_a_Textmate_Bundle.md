@@ -225,7 +225,7 @@ See [here](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/
 
 If you now choose File > New From Template > Bundle Name > ID.Title Template, it will allow you to create a new template of the type specified above.
 
-We had to switch TM\_USER to USER as "TM\_USER" is not a supported variable
+{{% alert title="⚠️ Warning" color="primary" %}}We had to switch TM\_USER to USER as "TM\_USER" is not a supported variable{{% /alert %}}
 
 ## Associating new file extensions with an existing editor
 

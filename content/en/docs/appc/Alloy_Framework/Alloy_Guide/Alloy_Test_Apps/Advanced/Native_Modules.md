@@ -2,9 +2,9 @@
 
 Demonstrates using a native module in an Alloy application, in this case the Paint module provided by Appcelerator.
 
-*App folder location*
+{{% alert title="💡 Hint" color="info" %}}*App folder location*
 
-_alloy_/test/apps/**advanced/native\_modules**
+_alloy_/test/apps/**advanced/native\_modules**{{% /alert %}}
 
 ![ti.paint](/Images/appc/download/attachments/41845669/ti.paint.png)
 

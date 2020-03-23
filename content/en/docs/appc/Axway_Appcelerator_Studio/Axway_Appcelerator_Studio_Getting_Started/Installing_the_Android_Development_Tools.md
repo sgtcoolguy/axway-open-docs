@@ -24,7 +24,7 @@ If you do not currently have Java tooling enabled, see the reference in [Install
 
 ## Install the ADT plugin
 
-ADT has been discontinued, and we don't recommend using it.
+{{% alert title="❗️ Warning" color="danger" %}}ADT has been discontinued, and we don't recommend using it.{{% /alert %}}
 
 * On Google's official Android Developers website, under the section [Downloading the ADT Plugin](http://developer.android.com/sdk/installing/installing-adt.html), copy the update URL to the clipboard.
 
@@ -98,7 +98,7 @@ ADT has been discontinued, and we don't recommend using it.
 
 * Click **OK** to save preference changes.
 
-As explained in the [Android SDK / Target Android Platform](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#android-sdk-/-target-android-platform), if you require advanced Android features, such as Maps, remember to choose a target that includes the enhanced Google APIs, listed as **Google APIs** in the **Default Android SDK** list.
+{{% alert title="⚠️ Warning" color="primary" %}}As explained in the [Android SDK / Target Android Platform](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#android-sdk-/-target-android-platform), if you require advanced Android features, such as Maps, remember to choose a target that includes the enhanced Google APIs, listed as **Google APIs** in the **Default Android SDK** list.{{% /alert %}}
 
 ## Launch the emulator and app
 
@@ -146,10 +146,10 @@ As explained in the [Android SDK / Target Android Platform](/docs/appc/Titanium_
 
 ![ADT_install_25](/Images/appc/download/attachments/30083134/ADT_install_25.png)
 
-The /data/data/yourAppId directory is equivalent to [Titanium.Filesystem.applicationDataDirectory](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Filesystem).
+{{% alert title="💡 Hint" color="info" %}}The /data/data/yourAppId directory is equivalent to [Titanium.Filesystem.applicationDataDirectory](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Filesystem).{{% /alert %}}
 
 ![ADT_install_26](/Images/appc/download/attachments/30083134/ADT_install_26.png)
 
-yourAppId was defined when the project was created, as shown in the **TiApp Editor** (see below).
+{{% alert title="💡 Hint" color="info" %}}yourAppId was defined when the project was created, as shown in the **TiApp Editor** (see below).{{% /alert %}}
 
 ![ADT_install_29](/Images/appc/download/attachments/30083134/ADT_install_29.png)

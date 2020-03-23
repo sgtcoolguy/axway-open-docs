@@ -24,7 +24,7 @@ A freeze is likely caused by either a deadlock in code or an infinite loop. To d
 
 ### Using JPS
 
-On Unix, you may need to run the following commands as "sudo"
+{{% alert title="⚠️ Warning" color="primary" %}}On Unix, you may need to run the following commands as "sudo"{{% /alert %}}
 
 1. Open a command prompt.
 
@@ -63,7 +63,7 @@ To use the command line:
 
 4. Copy and paste the resulting output information into a document, and attach it to the JIRA ticket
 
-If you have additional questions, you can see [http://wiki.eclipse.org/How\_to\_report\_a\_deadlock](http://wiki.eclipse.org/How_to_report_a_deadlock) for more information.
+{{% alert title="💡 Hint" color="info" %}}If you have additional questions, you can see [http://wiki.eclipse.org/How\_to\_report\_a\_deadlock](http://wiki.eclipse.org/How_to_report_a_deadlock) for more information.{{% /alert %}}
 
 ## JVM Terminated
 

@@ -1,10 +1,10 @@
 {"title":"API Builder Models","weight":"20"}
 
-*API Builder 3.x is deprecated*
+{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
-Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
+Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
 * [Introduction](#introduction)
 
@@ -72,8 +72,8 @@ Set the following keys in the object passed to the createModel() method to defin
 | metadata | false | Used to provide connector specific configuration (for example, mapping the model to a specific database table for the MySQL connector or defining the join properties). |
 | autogen | false | Used to determine whether to generate API endpoints directly from the model. The default value is true. If the endpoint is auto-generated, you do not need to create an API endpoint definition. |
 | actions | false | An array of data operations supported by the model. The valid values are: create, read, update, and delete. By default, all are supported by the model. |
-| plural | false | A string used as the property name when your API endpoint returns an array. By default, the plural value is the plural of the model name. For example, if your model is named **car**, the default plural would be **cars**.<br /><br />This value can be set on an API or a model. |
-| singular | false | A string used as the property name when your API endpoint returns a single record. By default, the singular value is the name of the model.<br /><br />This value can be set on an API or a model. |
+| plural | false | A string used as the property name when your API endpoint returns an array. By default, the plural value is the plural of the model name. For example, if your model is named **car**, the default plural would be **cars**.<br /><br />{{% alert title="⚠️ Warning" color="primary" %}}This value can be set on an API or a model.{{% /alert %}} |
+| singular | false | A string used as the property name when your API endpoint returns a single record. By default, the singular value is the name of the model.<br /><br />{{% alert title="⚠️ Warning" color="primary" %}}This value can be set on an API or a model.{{% /alert %}} |
 | before | false | One or more blocks to be executed before the request. Blocks are referenced by their name property. If you want to execute multiple blocks, you should specify them as an array of block names. If multiple blocks are specified, they are executed in the order specified. |
 | after | false | One or more blocks to be executed after the request. Blocks are referenced by their name property. If you want to execute multiple blocks, you should specify them as an array of block names. If multiple blocks are specified, they are executed in the order specified. |
 

@@ -22,7 +22,7 @@ You can import a cloud-enabled project into Firebase. Similarly, the result will
 
 5. Configure push service on the Dashboard by reviewing the information in [Configuring Push Services](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/Push_Notifications/Configuring_Push_Services/).
 
-Make sure your Appcelerator ID and package name are the same.
+{{% alert title="⚠️ Warning" color="primary" %}}Make sure your Appcelerator ID and package name are the same.{{% /alert %}}
 
 Further reading: [Generate a Google Server API Key](https://documentation.onesignal.com/docs/generate-a-google-server-api-key)
 

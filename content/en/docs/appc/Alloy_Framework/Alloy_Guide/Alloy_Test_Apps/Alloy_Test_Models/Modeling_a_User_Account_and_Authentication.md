@@ -2,9 +2,9 @@
 
 Demonstrates creating a user login and authentication flow using a data model.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**models/login**
+alloy/test/apps/**models/login**{{% /alert %}}
 
 The application initially presents a login form (username is **user** and password is **password**). Upon successful login, the application presents three tabs: Profile, About Us, and Settings. The first two tabs display information about the user persisted to a SQL database. The Settings tab lets the user change their email address, and set the application's background color and image.
 
@@ -22,7 +22,7 @@ if (OS_IOS) {
 }
 ```
 
-The sample's UI was designed for iOS devices only, but can easily be adapted to Android or other platforms.
+{{% alert title="💡 Hint" color="info" %}}The sample's UI was designed for iOS devices only, but can easily be adapted to Android or other platforms.{{% /alert %}}
 
 The home.xml view defines a TabGroup with the three tabs, "Profile", "About Us" and "Settings". Each tab contains UI elements that are bound to the user model data – for example, <Label text="{user.realname}" top="10"/> or <Window title="Settings" barColor="{user.themeBGColor}">.
 
@@ -88,7 +88,7 @@ The user.js model file defines the data schema used to represent the user model,
 
 The model's transform() function appends the themeBGColor and themeColor properties to the model data before it's sent to the view for rendering, based on the value of the theme model property.
 
-For purposes of demonstration, the authentication key, username and password are hard-coded into the application.
+{{% alert title="💡 Hint" color="info" %}}For purposes of demonstration, the authentication key, username and password are hard-coded into the application.{{% /alert %}}
 
 *app/models/user.js*
 

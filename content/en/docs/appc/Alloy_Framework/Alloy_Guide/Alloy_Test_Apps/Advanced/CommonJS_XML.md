@@ -2,9 +2,9 @@
 
 Demonstrates using CommonJS modules to create UI components in an Alloy XML view.
 
-*App folder location*
+{{% alert title="💡 Hint" color="info" %}}*App folder location*
 
-_alloy_/test/apps/advanced/commonjs\_xml
+_alloy_/test/apps/advanced/commonjs\_xml{{% /alert %}}
 
 ![common_js](/Images/appc/download/attachments/41845648/common_js.png)
 

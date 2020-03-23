@@ -2,9 +2,9 @@
 
 Demonstrates use of several built-in libraries included with Alloy that simplify certain functions, such as animations, string manipulation and display unit conversion.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-[alloy/samples/apps/**basics/builtins**](https://github.com/appcelerator/alloy/tree/master/samples/apps/basics/builtins)
+[alloy/samples/apps/**basics/builtins**](https://github.com/appcelerator/alloy/tree/master/samples/apps/basics/builtins){{% /alert %}}
 
 Alloy includes several [built-in libraries](#!/api/Alloy.builtins). To use these libraries in your project, you simply use the global require() function to include them. The sample demonstrates the [animation](#!/api/Alloy.builtins.animation) built-in's shake, flash, and flip features, and the [string](#!/api/Alloy.builtins.string) built-in's trim() function.
 

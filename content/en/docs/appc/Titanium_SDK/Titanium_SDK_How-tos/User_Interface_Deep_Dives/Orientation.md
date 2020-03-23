@@ -202,11 +202,11 @@ The final manifest section of your tiapp.xml file should look similar to the exa
 
 The preceding techniques control the orientation modes supported by your entire app, including all its windows. But what if you want window A to be in portrait while window B is in landscape? You can limit the orientation modes supported by a specific window by setting the window's orientationModes property. This property accepts an array of Ti.UI constants that specify the window's permitted orientations. Remember, you must have enabled the various orientations in the tiapp.xml before setting a window to that orientation.
 
-*iOS Platform Notes*
+{{% alert title="⚠️ Warning" color="primary" %}}*iOS Platform Notes*
 
 Using the Window's orientationModes property to force the orientation of non-modal windows is considered a bad practice and will not be supported, including forcing the orientation of windows inside a NavigationWindow or TabGroup.
 
-Modal windows should not support orientation modes that the window they are opened over do not support. Doing otherwise **may** cause bad visual/redraw behavior after the modal is dismissed, due to how iOS manages modal transitions. If the orientationModes property of a modal window is undefined, then the orientations supported by this window would be the orientation modes specified in the tiapp.xml.
+Modal windows should not support orientation modes that the window they are opened over do not support. Doing otherwise **may** cause bad visual/redraw behavior after the modal is dismissed, due to how iOS manages modal transitions. If the orientationModes property of a modal window is undefined, then the orientations supported by this window would be the orientation modes specified in the tiapp.xml.{{% /alert %}}
 
 ```javascript
 var win = Ti.UI.createWindow({
@@ -274,7 +274,7 @@ var myCustomView = function() {
 }
 ```
 
-**Don't use orientation event listeners to force orientation support**
+{{% alert title="⚠️ Warning" color="primary" %}}**Don't use orientation event listeners to force orientation support**
 
 Using events to limit supported orientations is not recommended. We've see community-contributed code that suggests you add an orientation event listener in your app; when it fires, you'd set the window's orientation to a specific direction. The rationale is that doing so provides a means to specify orientation without modifying the iOS or Android configuration files. We do not recommend this for a few reasons:
 
@@ -282,7 +282,7 @@ Using events to limit supported orientations is not recommended. We've see commu
 
 * Adding an unnecessary "super-global" event listener opens the possibility of creating a memory leak. See the [Managing Memory and Finding Leaks](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Debugging_and_Profiling/Managing_Memory_and_Finding_Leaks/) guide for further information.
 
-* And, why use a kludge when you could follow the proper technique to limit the orientation via settings in the configuration files?
+* And, why use a kludge when you could follow the proper technique to limit the orientation via settings in the configuration files?{{% /alert %}}
 
 ### Splash screen support for various orientations
 

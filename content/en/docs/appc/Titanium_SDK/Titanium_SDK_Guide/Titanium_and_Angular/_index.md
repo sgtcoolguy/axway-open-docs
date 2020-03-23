@@ -2,11 +2,11 @@
 
 This document will guide you on how to use Titanium and Angular together.
 
-*Techical Preview*
+{{% alert title="⚠️ Warning" color="primary" %}}*Techical Preview*
 
 Titanium and Angular is currently only available as a Technical Preview and is under ongoing development. Expect things to be broken or APIs to change. Titanium Angular is not yet ready for production use!
 
-If you run into problems read the [Titanium Angular - FAQ](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_and_Angular/Titanium_Angular_-_FAQ/) or check out [Titanium Angular - Limitations and Workarounds](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_and_Angular/Titanium_Angular_-_Limitations_and_Workarounds/) for more details about what features are already implemented and what is to come.
+If you run into problems read the [Titanium Angular - FAQ](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_and_Angular/Titanium_Angular_-_FAQ/) or check out [Titanium Angular - Limitations and Workarounds](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Titanium_and_Angular/Titanium_Angular_-_Limitations_and_Workarounds/) for more details about what features are already implemented and what is to come.{{% /alert %}}
 
 ## Prerequisites
 

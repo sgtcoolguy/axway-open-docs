@@ -8,7 +8,7 @@ Users can create new templates or modify existing templates to allow easy creati
 
 The instructions here are very similar to creating a new template--the only difference is in how you get the existing content.
 
-Generally, the Ruble for a particular language is the one that controls the templates for that language...as an example, the JavaScript ruble has the JavaScript templates, the HTML Ruble has the HTML templates. That said, note that you can also create a **new** Ruble and add more JavaScript templates to the existing list too, rather than editing the existing template
+{{% alert title="⚠️ Warning" color="primary" %}}Generally, the Ruble for a particular language is the one that controls the templates for that language...as an example, the JavaScript ruble has the JavaScript templates, the HTML Ruble has the HTML templates. That said, note that you can also create a **new** Ruble and add more JavaScript templates to the existing list too, rather than editing the existing template{{% /alert %}}
 
 1. See [modifying an existing Ruble](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Modifying_an_existing_Ruble/) to get the existing content. You may want to choose the "Edit this bundle" approach or find the original bundle source on Aptana's Github account ([http://www.github.com/aptana](http://www.github.com/aptana)).
 

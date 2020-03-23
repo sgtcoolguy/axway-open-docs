@@ -19,11 +19,9 @@ On **Mac** it's usually at someplace resembling the image below (so, if you want
 ![interpreter_mac](/Images/appc/pydev.org/images/interpreter_mac.png)
 3\. Select the paths that will be in your **SYSTEM PYTHONPATH**.
 
-Select only folders that will **NOT be used as source folders for any project** of yours (those should be later configured as source folders in the project).
+{{% alert title="❗️ Warning" color="danger" %}}Select only folders that will **NOT be used as source folders for any project** of yours (those should be later configured as source folders in the project).{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}*IMPORTANT for Mac users*
 
-*IMPORTANT for Mac users*
-
-The Python version that usually ships with Mac doesn't seem to have the .py source files available, which are required for PyDev, so using a different interpreter is recommended (for example, download it from [http://python.org](http://python.org)). If you don't want to use a different interpreter, get the source files for the Python '/Lib' folder and add those to the system installation.
+The Python version that usually ships with Mac doesn't seem to have the .py source files available, which are required for PyDev, so using a different interpreter is recommended (for example, download it from [http://python.org](http://python.org)). If you don't want to use a different interpreter, get the source files for the Python '/Lib' folder and add those to the system installation.{{% /alert %}}
 
 After those steps, you should have a screen as presented below:
 

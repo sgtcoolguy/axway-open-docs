@@ -32,7 +32,7 @@ Titanium SDK 8.2.0 is a minor release of the SDK, addressing high-priority issue
 
 As of this release, Titanium SDK 8.1.x.x will not receive updates more than six months after the release of 8.2.0 (current) (2020-03-06). Any needed fixes will be in 8.2.x or later supported releases within the 8.x branch. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
-With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. Node 10.13.0 will be the new minimum supported version with SDK 9.0.0.
+{{% alert title="❗️ Warning" color="danger" %}}With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. Node 10.13.0 will be the new minimum supported version with SDK 9.0.0.{{% /alert %}}
 
 ## Notice of feature and behavior Changes
 

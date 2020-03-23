@@ -191,7 +191,7 @@ Learn more about a native XML layouts in our [Native Layout Example](https://git
 
 ## Using 3rd party libraries
 
-As of Titanium 9.0.0, you can no longer use Google's deprecated Support libraries. You must use the AndroidX libraries instead.
+{{% alert title="⚠️ Warning" color="primary" %}}As of Titanium 9.0.0, you can no longer use Google's deprecated Support libraries. You must use the AndroidX libraries instead.{{% /alert %}}
 
 ### Gradle Dependencies
 

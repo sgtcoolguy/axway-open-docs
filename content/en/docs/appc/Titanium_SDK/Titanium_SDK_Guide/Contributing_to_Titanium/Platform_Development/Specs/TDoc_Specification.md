@@ -1,6 +1,6 @@
 {"title":"TDoc Specification","weight":"50"}
 
-To see an example of this spec in use, check out the documentation for Titanium.UI.View.
+{{% alert title="💡 Hint" color="info" %}}To see an example of this spec in use, check out the documentation for Titanium.UI.View.{{% /alert %}}
 
 **Contents**
 

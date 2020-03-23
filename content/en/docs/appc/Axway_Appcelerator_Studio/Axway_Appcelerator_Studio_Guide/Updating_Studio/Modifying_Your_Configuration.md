@@ -24,4 +24,4 @@ This guide explains the steps for modifying your configuration file.
 
 4. Save and close the file.
 
-You can follow the same procedures on Eclipse. The folder structure will be identical, but the file to edit is **eclipse.ini**.
+{{% alert title="⚠️ Warning" color="primary" %}}You can follow the same procedures on Eclipse. The folder structure will be identical, but the file to edit is **eclipse.ini**.{{% /alert %}}

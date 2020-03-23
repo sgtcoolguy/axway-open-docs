@@ -18,7 +18,7 @@ Let's see a simple 'step-by-step' example of how this works:
 
 **1\. Start the remote debugger server**: To start the remote debugger server, you have to click the green button pointed by '1' in the image below. After doing that, it will show a message in the console (indicated by '2') to confirm that the server is listening for incoming connections.
 
-Those buttons should be present at the debug perspective, and they can be enabled in other perspectives through Window > Customize perspective > Command groups availability > PyDev debug.
+{{% alert title="⚠️ Warning" color="primary" %}}Those buttons should be present at the debug perspective, and they can be enabled in other perspectives through Window > Customize perspective > Command groups availability > PyDev debug.{{% /alert %}}
 
 ![remotedebugger1](/Images/appc/pydev.org/images/debugger/remotedebugger1.png)
 
@@ -60,7 +60,7 @@ pydevd.patch_django_autoreload()
 
 are added **BEFORE** the **if \__name_\_ == "\__main_\_"**.
 
-This was added to PyDev 2.1.1.
+{{% alert title="⚠️ Warning" color="primary" %}}This was added to PyDev 2.1.1.{{% /alert %}}
 
 With that change, the breakpoints should be gotten whenever a run is done (note that from now on, launches should only be done in **'regular' mode** and the debug server must be already started in the Eclipse side).
 
@@ -70,10 +70,6 @@ An interesting thing to note is that when you kill the 'parent Django' process f
 
 ## Important Notes
 
-The settrace() function can have an optional parameter to specify the host where the remote debugger is listening. E.g.: **pydevd.settrace('10.0.0.1')**
-
-The settrace() function can have optional parameters to specify that all the messages printed to stdout or stderr should be passed to the server to show. E.g.: **pydevd.settrace(stdoutToServer=True, stderrToServer=True)**
-
-You can have the running program in one machine and PyDev on another machine, but if the paths are not the same, some adjustments have to be done in the target machine.
+{{% alert title="⚠️ Warning" color="primary" %}}The settrace() function can have an optional parameter to specify the host where the remote debugger is listening. E.g.: **pydevd.settrace('10.0.0.1')**{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}The settrace() function can have optional parameters to specify that all the messages printed to stdout or stderr should be passed to the server to show. E.g.: **pydevd.settrace(stdoutToServer=True, stderrToServer=True)**{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}You can have the running program in one machine and PyDev on another machine, but if the paths are not the same, some adjustments have to be done in the target machine.{{% /alert %}}
 
 Aside from passing the files in eclipse/plugins/org.python.pydev.debug\_x.x.x/pysrc to your target machine, the file **pydevd\_file\_utils.py** must be edited to make the path translations from the client machine to the server machine and vice-versa. See the comments on that file for detailed instructions on setting the path translations.

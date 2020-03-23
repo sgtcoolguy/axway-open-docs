@@ -6,7 +6,7 @@ The first thing to know about PyDev is that to use it to its 'full extent', you 
 
 You can add a new source folder in the menu: **File > new > other > PyDev > source folder**.
 
-You may use PyDev without configuring that, for quick scripts, but some features such as code analysis may not work at all (but you will still have syntax highlighting and the default editor actions).
+{{% alert title="⚠️ Warning" color="primary" %}}You may use PyDev without configuring that, for quick scripts, but some features such as code analysis may not work at all (but you will still have syntax highlighting and the default editor actions).{{% /alert %}}
 
 ![new_source_folder](/Images/appc/pydev.org/images/new_source_folder.png)
 When you add a source folder to an existing project, it will 'automatically' add the PyDev information to it (in Eclipse terms, it will add its nature to it).
@@ -47,4 +47,4 @@ Jython projects may reference Java (JDT) projects. To create a reference, it's n
 
 To do that, right-click the project and select **PyDev > Set as PyDev project** and add the **bin** folders as if they were regular **PyDev source folders** (the ones containing your .class files – the folders containing the .java classes shouldn't be referenced in the PyDev config).
 
-Before version **1.4.8**, PyDev did not handle a JDT project which had .py files correctly (even if the folders were properly configured).
+{{% alert title="⚠️ Warning" color="primary" %}}Before version **1.4.8**, PyDev did not handle a JDT project which had .py files correctly (even if the folders were properly configured).{{% /alert %}}

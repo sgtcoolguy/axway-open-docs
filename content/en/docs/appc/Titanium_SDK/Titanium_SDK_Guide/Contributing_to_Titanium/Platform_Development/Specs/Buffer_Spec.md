@@ -14,7 +14,7 @@
 
 Titanium mobile needs support for binary data operations. A new buffer type needs to be created that will be used for read / write operations on streams.
 
-A separate spec exists that outlines encoding support for numeric and string values. The [Encoding Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/Encoding_Spec/) enables the addition of reading and writing of numeric and string values along with support for specific encoding.
+{{% alert title="💡 Hint" color="info" %}}A separate spec exists that outlines encoding support for numeric and string values. The [Encoding Spec](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Specs/Encoding_Spec/) enables the addition of reading and writing of numeric and string values along with support for specific encoding.{{% /alert %}}
 
 ## Definitions
 

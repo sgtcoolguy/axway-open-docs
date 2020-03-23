@@ -72,7 +72,7 @@ When reporting a bug, the following information must be given:
 
 * What were you doing when the bug appeared
 
-If you have a bug where there's a **halting condition**, it's important to give the information on the available threads when that happens and whether there's a deadlock.
+{{% alert title="❗️ Warning" color="danger" %}}If you have a bug where there's a **halting condition**, it's important to give the information on the available threads when that happens and whether there's a deadlock.{{% /alert %}}
 
 To get that info, start eclipse with the **java executable (not javaw)** and add the **\-Dcom.sun.management.jmxremote** flag to vmargs (note that the sun java 1.6 should be used).
 
@@ -84,7 +84,7 @@ If no deadlock is found, the bug should have the info on all the threads running
 
 If you're on Windows, press **Ctrl** + **Break** to get a list of all the running threads (which should be attached to the bug). You may have to increase the buffer of the console to get all info (in the console open the properties menu (Alt + Space), select the 'properties', and in 'screen buffer size: height' raise it to something as high as 9999, and then press Ctrl + Break).
 
-The [Users Forum](http://sourceforge.net/forum/forum.php?forum_id=293649) may be used for some doubts, but if you have a bug, that's not the place to go (even though it might be useful searching it to see if what you have is not really a bug or if someone has already asked about it).
+{{% alert title="⚠️ Warning" color="primary" %}}The [Users Forum](http://sourceforge.net/forum/forum.php?forum_id=293649) may be used for some doubts, but if you have a bug, that's not the place to go (even though it might be useful searching it to see if what you have is not really a bug or if someone has already asked about it).{{% /alert %}}
 
 ## How do I Report a Feature Request?
 
@@ -161,7 +161,7 @@ Follow the same steps in the FAQ above to import a PyDev project, then right-cli
 **DJANGO\_MANAGE\_LOCATION** - the relative path to manage.py. For example: **src/my\_project/manage.py**
 **DJANGO\_SETTINGS\_MODULE** - the name of the settings module. For example: **my\_project.settings**
 
-If the .pydevproject file was created, those values could already be added to it in the entry org.python.pydev.PROJECT\_VARIABLE\_SUBSTITUTION:
+{{% alert title="⚠️ Warning" color="primary" %}}If the .pydevproject file was created, those values could already be added to it in the entry org.python.pydev.PROJECT\_VARIABLE\_SUBSTITUTION:
 
 ```xml
 <pydev_variables_property name="org.python.pydev.PROJECT_VARIABLE_SUBSTITUTION">
@@ -170,7 +170,7 @@ If the .pydevproject file was created, those values could already be added to it
     <key>DJANGO_SETTINGS_MODULE</key>
     <value>my_project.settings</value>
 </pydev_variables_property>
-```
+```{{% /alert %}}
 
 ## How do I configure my PYTHONPATH?
 
@@ -227,7 +227,7 @@ PyDev has an interactive console you can use. See the [PyDev Interactive Console
 Well, if you have PyLint active, you can disable it, as it is the process that takes the most time when building.
 Another alternative is disabling the builder altogether. To do it, you can go to window > preferences > PyDev > builder and disable it.
 
-Disabling the builders may have many side-effects, such as code completion not working, pylint, tasks, and so forth. If you want it, you can disable it, but do it with care.
+{{% alert title="⚠️ Warning" color="primary" %}}Disabling the builders may have many side-effects, such as code completion not working, pylint, tasks, and so forth. If you want it, you can disable it, but do it with care.{{% /alert %}}
 
 ## Why the PyDev properties do not show?
 
@@ -238,7 +238,7 @@ Also, note that you have to open a python file with PyDev in the project before 
 
 Usually, this means that you have some misconfiguration in the PyDev Package Explorer working set selection or filters.
 
-You can access the PyDev Package Explorer menu, with Ctrl + F10 or by clicking in the triangle that's upside down in the PyDev Package Explorer.
+{{% alert title="⚠️ Warning" color="primary" %}}You can access the PyDev Package Explorer menu, with Ctrl + F10 or by clicking in the triangle that's upside down in the PyDev Package Explorer.{{% /alert %}}
 
 The usual checks are:
 

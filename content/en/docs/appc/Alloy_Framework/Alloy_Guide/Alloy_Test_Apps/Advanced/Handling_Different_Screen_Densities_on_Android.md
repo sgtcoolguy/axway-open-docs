@@ -2,9 +2,9 @@
 
 Demonstrates how to package and use images for different screen densities on Android.
 
-*App folder location*
+{{% alert title="💡 Hint" color="info" %}}*App folder location*
 
-_alloy_/test/apps/**advanced/android\_density**
+_alloy_/test/apps/**advanced/android\_density**{{% /alert %}}
 
 In the sample app, is depending on the screen density of the device or emulator, a different image is displayed. For instance, the following screenshots show the sample running on HDPI and XHDPI Android emulators.
 

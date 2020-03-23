@@ -6,4 +6,4 @@ In Aptana Studio, instead of using **Alt+Tab** to navigate through a series of o
 
 * To return to the previous file open in your editor, use the shortcut key combination of **Ctrl+Shift+Tab** or click the **Back** button in the toolbar.
 
-You can also access this feature from the **Window** menu by selecting **Navigation > Next Editor** or **Navigation > Previous Editor**.
+{{% alert title="⚠️ Warning" color="primary" %}}You can also access this feature from the **Window** menu by selecting **Navigation > Next Editor** or **Navigation > Previous Editor**.{{% /alert %}}

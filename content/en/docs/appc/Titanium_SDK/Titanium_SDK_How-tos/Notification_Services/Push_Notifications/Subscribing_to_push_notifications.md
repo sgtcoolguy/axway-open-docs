@@ -135,7 +135,7 @@ Arrow Push provides two ways for an application to manage its push notification 
 
 The [Cloud.PushNotifications](#!/api/Modules.Cloud.PushNotifications-method-subscribe) API provides equivalent methods for using either of these approaches. For instance, you call the subscribe()method to subscribe the currently logged in API Builder Push user to a channel, or subscribeToken() to subscribe an application user with only the obtained token. Similarly, there are equivalent methods for unsubscribing from a channel (unsubscribe() and unsubscribeToken()) and sending notifications (notify() and notifyToken()).
 
-It's recommended that you use either session- or token-based subscriptions in your application, but not both together.
+{{% alert title="⚠️ Warning" color="primary" %}}It's recommended that you use either session- or token-based subscriptions in your application, but not both together.{{% /alert %}}
 
 ### Adding the Cloud module to your project
 

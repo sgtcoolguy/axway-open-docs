@@ -141,7 +141,7 @@ To improve the performance of add(), options.index will no longer be set in the 
 
 * While listening to a reset event, the list of previous models is now available in options.previousModels.
 
-The new Event methods listenTo and stopListening is meant for Backbone View objects to listen to Model and Collection events. These APIs will not work with an Alloy application.
+{{% alert title="⚠️ Warning" color="primary" %}}The new Event methods listenTo and stopListening is meant for Backbone View objects to listen to Model and Collection events. These APIs will not work with an Alloy application.{{% /alert %}}
 
 ### Model APIs
 
@@ -153,7 +153,7 @@ Validation occurs even during "silent" changes (passing {silent: true} to method
 
 Failed validations return the invalid event. Previously, a failed model validation would return the error event.
 
-To validate Model objects, implement the validate() method in the extendModel key of the model configuration file.
+{{% alert title="⚠️ Warning" color="primary" %}}To validate Model objects, implement the validate() method in the extendModel key of the model configuration file.{{% /alert %}}
 
 #### Other Changes
 

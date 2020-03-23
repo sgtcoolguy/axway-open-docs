@@ -79,13 +79,13 @@ To map model attributes, enclose the attribute with curly brackets or braces ('{
 
 In the controller code of the repeater object, you can use the special variable $model to reference the current model being iterated over. This variable is present only in data bound controllers and is a reference to the currently bound model. For example, to get the title attribute of the current model, use $model.title to access it.
 
-**IMPORTANT:** When using Alloy's data binding in a view-controller, you **MUST** call the $.destroy() function when closing a controller to prevent potential memory leaks. The destroy function unbinds the callbacks created by Alloy when the collection-view syntax is used. For example, the code below calls the destroy function when the Window's close event is triggered.
+{{% alert title="⚠️ Warning" color="primary" %}}**IMPORTANT:** When using Alloy's data binding in a view-controller, you **MUST** call the $.destroy() function when closing a controller to prevent potential memory leaks. The destroy function unbinds the callbacks created by Alloy when the collection-view syntax is used. For example, the code below calls the destroy function when the Window's close event is triggered.
 
 ```
 $.win.addEventListener("close", function(){
     $.destroy();
 }
-```
+```{{% /alert %}}
 
 #### Example
 
@@ -360,7 +360,7 @@ library.on('change:title', function(e){
 });
 ```
 
-This only works if the Backbone method fires the change event and does not enable {silent: true} as an option.
+{{% alert title="⚠️ Warning" color="primary" %}}This only works if the Backbone method fires the change event and does not enable {silent: true} as an option.{{% /alert %}}
 
 ## Bind deep object properties
 
@@ -425,7 +425,7 @@ if (_.isFunction(<dataTransform>) { // only for collection binding
 $.myLabel.text = t.author.name;
 ```
 
-This does mean that the transform method need to return all bound properties, not just the transformed ones. Until Alloy 1.8.1 simple collection data binding did not require this and automatically felt back to the model attributes.
+{{% alert title="⚠️ Warning" color="primary" %}}This does mean that the transform method need to return all bound properties, not just the transformed ones. Until Alloy 1.8.1 simple collection data binding did not require this and automatically felt back to the model attributes.{{% /alert %}}
 
 You’d extend a model with a transform() method as such:
 
@@ -509,7 +509,7 @@ $.current.fetch({
 $.index.open();
 ```
 
-With the release of CLI 7.1.0, values passed in at creation of a view can be used as values in TSS and XML. For example, if the **name** property was passed in at creation it can be used on a label:
+{{% alert title="⚠️ Warning" color="primary" %}}With the release of CLI 7.1.0, values passed in at creation of a view can be used as values in TSS and XML. For example, if the **name** property was passed in at creation it can be used on a label:
 
 ```xml
 <Alloy>
@@ -518,7 +518,7 @@ With the release of CLI 7.1.0, values passed in at creation of a view can be use
         <Label text="$.args.foo" />
     </Window>
 </Alloy>
-```
+```{{% /alert %}}
 
 #### Tracker as Example
 

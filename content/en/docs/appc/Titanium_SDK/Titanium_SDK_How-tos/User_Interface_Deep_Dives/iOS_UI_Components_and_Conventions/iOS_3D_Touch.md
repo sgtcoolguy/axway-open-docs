@@ -24,9 +24,9 @@ Titanium SDK supports the [Peek and Pop, and Quick Action features](https://deve
 
 * **Quick Action** provides application shortcuts when the user presses the application icon on the Home Screen. The shortcuts allow the user to quickly perform an action with your application without navigating through the application.
 
-*3D Touch != Force Touch*
+{{% alert title="⚠️ Warning" color="primary" %}}*3D Touch != Force Touch*
 
-Apple also has a feature called Force Touch for the Apple Watch, MacBook and Magic Trackpad, which should not be confused with 3D touch.
+Apple also has a feature called Force Touch for the Apple Watch, MacBook and Magic Trackpad, which should not be confused with 3D touch.{{% /alert %}}
 
 ## Quick Actions
 
@@ -52,11 +52,9 @@ To define static shortcuts, add the [UIApplicationShortcutItems](https://develop
 
 * UIApplicationShortcutItemUserInfo: custom dictionary that is passed to the event.
 
-*Localization*
+{{% alert title="⚠️ Warning" color="primary" %}}*Localization*
 
-Place localized strings for the title and subtitle of the quick actions in the app.xml file as opposed to the strings.xml file.
-
-*Custom Quick Action Icons*
+Place localized strings for the title and subtitle of the quick actions in the app.xml file as opposed to the strings.xml file.{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}*Custom Quick Action Icons*
 
 If you specify a custom quick action icon using the UIApplicationShortcutItemIconFile, you need to enable slicing, that is, adding images to the asset catalog. To enable slicing, add the use-app-thinning element to the ios element in the tiapp.xml file and set the value to true.
 
@@ -68,7 +66,7 @@ If you specify a custom quick action icon using the UIApplicationShortcutItemIco
     <use-app-thinning>true</use-app-thinning>
   </ios>
 </ti:app>
-```
+```{{% /alert %}}
 
 **Example:**
 

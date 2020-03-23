@@ -1,6 +1,6 @@
 {"title":"Windows Hyperloop Programming Guide","weight":"50"}
 
-As of Titanium 9.0.0, building Windows apps is no longer supported.The below only applies to users of older Titanium versions.
+{{% alert title="❗️ Warning" color="danger" %}}As of Titanium 9.0.0, building Windows apps is no longer supported.The below only applies to users of older Titanium versions.{{% /alert %}}
 
 * [Requirements](#requirements)
 

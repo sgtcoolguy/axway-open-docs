@@ -50,7 +50,7 @@
 
 ## Titanium SDK 8.0.0 release
 
-With Titanium SDK 8.0.0, we now use [WKWebView](#undefined) to implement Ti.UI.WebView (as Apple has deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview)).
+{{% alert title="⚠️ Warning" color="primary" %}}With Titanium SDK 8.0.0, we now use [WKWebView](#undefined) to implement Ti.UI.WebView (as Apple has deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview)).
 
 Adding the following to your HTML will make a WKWebView scale its content the same was as the old UIWebView.
 
@@ -74,7 +74,7 @@ WKWebView also has few restriction specially with local file accessing. For supp
       src: url('fonts/Lato-Regular.ttf');
     }
 </style>
-```
+```{{% /alert %}}
 
 Installation
 

@@ -4,6 +4,6 @@ The image below shows the preferences for the templates. You can see the current
 
 ![compltemplprefs](/Images/appc/pydev.org/images/completion/compltemplprefs.png)
 
-After you have the templates configured, they are brought up together with other completions through **Ctrl+Space**.
+{{% alert title="⚠️ Warning" color="primary" %}}After you have the templates configured, they are brought up together with other completions through **Ctrl+Space**.{{% /alert %}}
 
 ![compltempl](/Images/appc/pydev.org/images/completion/compltempl.png)

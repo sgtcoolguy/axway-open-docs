@@ -53,7 +53,7 @@ Any application that has a registered broadcast receiver listening to com.appcel
 
 ### Send a broadcast with a permission
 
-Instead of sending a broadcast with a permission, you can create an explicit intent (described in the _Create a Broadcast Intent_ section) to send the broadcast to a specific application if you know the package name and class name of the application.
+{{% alert title="💡 Hint" color="info" %}}Instead of sending a broadcast with a permission, you can create an explicit intent (described in the _Create a Broadcast Intent_ section) to send the broadcast to a specific application if you know the package name and class name of the application.{{% /alert %}}
 
 To restrict which application can receive the broadcast, send a broadcast with a permission:
 

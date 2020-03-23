@@ -6,7 +6,7 @@
 
 * [Related Topics](#related-topics)
 
-If you want to debug your Android app using Chrome DevTools, see [Debugging Android Apps with 3rd-party Tools](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_Android_Devices/Debugging_Android_Apps_with_3rd-party_Tools/) for details!
+{{% alert title="⚠️ Warning" color="primary" %}}If you want to debug your Android app using Chrome DevTools, see [Debugging Android Apps with 3rd-party Tools](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Debugging_Titanium_Applications/Debugging_on_Android_Devices/Debugging_Android_Apps_with_3rd-party_Tools/) for details!{{% /alert %}}
 
 ## Introduction
 
@@ -24,7 +24,7 @@ Titanium SDK enables Studio to initiate a debug session on an Android device. De
 
 This page will guide you through the setup, and the launch, of a debug session.
 
-You must already be set up to run applications on your Android device, as documented in [Deploying to Android Devices](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Deploying_to_Android_Devices/).
+{{% alert title="⚠️ Warning" color="primary" %}}You must already be set up to run applications on your Android device, as documented in [Deploying to Android Devices](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Deploying_to_Android_Devices/).{{% /alert %}}
 
 ## Starting a Debug Session
 

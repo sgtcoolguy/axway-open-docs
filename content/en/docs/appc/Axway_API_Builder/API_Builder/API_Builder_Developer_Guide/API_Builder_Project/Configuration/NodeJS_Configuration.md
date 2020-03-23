@@ -1,10 +1,10 @@
 {"title":"NodeJS Configuration","weight":"20"}
 
-*API Builder 3.x is deprecated*
+{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
-Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
+Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
 * [Dependencies](#dependencies)
 
@@ -54,11 +54,11 @@ You can specify which version of Node.js to run your application on. Use the eng
 
 You may specify any version of Node.js. Node.js 0.8.26, 0.10.22 and 0.12.4 are built in, but other versions will be downloaded from [https://nodejs.org/](https://nodejs.org/) when the application is built prior to running npm install. If you do not specify a Node.js version, the application will use 0.12.4 by default.
 
-*Deprecated Behavior*
+{{% alert title="💡 Hint" color="info" %}}*Deprecated Behavior*
 
 Prior to AMPLIFY Runtime Services 1.2.0, if this field is undefined when you publish your application, the application will use 0.10.22 by default.
 
-If this field is undefined when you republish your application and the latest supported Node.js version changed on the AMPLIFY Runtime Services servers, you will receive an error message when trying to publish your application. You must set the Node.js version to republish your application.
+If this field is undefined when you republish your application and the latest supported Node.js version changed on the AMPLIFY Runtime Services servers, you will receive an error message when trying to publish your application. You must set the Node.js version to republish your application.{{% /alert %}}
 
 ## Health check
 
@@ -114,7 +114,7 @@ When enabled, you must provide login credentials for the npm registry when calli
 $ appc cloud publish myuser mypwd
 ```
 
-If acs cli complains that npm is not found even though npm is in the path, ensure that the directory containing npm is in the NODE\_PATH (for example, NODE\_PATH=/usr/lib/node\_modules).
+{{% alert title="⚠️ Warning" color="primary" %}}If acs cli complains that npm is not found even though npm is in the path, ensure that the directory containing npm is in the NODE\_PATH (for example, NODE\_PATH=/usr/lib/node\_modules).{{% /alert %}}
 
 If no credentials are provided on the command line, the Appcelerator CLI will attempt to read the credentials from ~/.npmrc. If no ~/.npmrc file is found, or it does not contain any credentials, you are prompted for the npm username and password:
 
@@ -125,14 +125,14 @@ npm password: ***********
 Preparing application for publish... done
 ```
 
-If you use a private npm registry hosted by Nodejitsu, you must first synchronize your public npm user account with the private npm, otherwise you will get an "unauthorized" error. To do this, enter the following npm commands:
+{{% alert title="⚠️ Warning" color="primary" %}}If you use a private npm registry hosted by Nodejitsu, you must first synchronize your public npm user account with the private npm, otherwise you will get an "unauthorized" error. To do this, enter the following npm commands:
 
 ```bash
 $ npm config set strict-ssl true
 $ npm config set ca ""
 $ npm config set registry https://<your-subdomain>.registry.nodejitsu.com
 $ npm login
-```
+```{{% /alert %}}
 
 See [https://www.nodejitsu.com/documentation/npm/cli/](https://www.nodejitsu.com/documentation/npm/cli/) for more information.
 
@@ -165,7 +165,7 @@ Specifies a path to a script to execute before or after the application is built
 
 Prior to AMPLIFY Runtime Services 1.3.0, you could also use the script to install custom binaries outside the project directory.
 
-Do not name the script install.sh, located in the root folder of the project. The name is reserved to specify a script to install binaries to the container.
+{{% alert title="⚠️ Warning" color="primary" %}}Do not name the script install.sh, located in the root folder of the project. The name is reserved to specify a script to install binaries to the container.{{% /alert %}}
 
 ### Start
 

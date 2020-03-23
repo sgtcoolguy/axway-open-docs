@@ -37,7 +37,7 @@ To update your Ruble, do one of the following:
 
 ### Extend an existing Ruble
 
-You need to reference the _name_ of the Ruble, not the display name (which may be what you see in Menu items). You can find out the ruble name by opening up the Bundles View and expanding the node relevant to the Ruble of interest. You'll want to use the folder name of the Ruble, _minus_ ".ruble"; in other words, "html.ruble" => "html".
+{{% alert title="⚠️ Warning" color="primary" %}}You need to reference the _name_ of the Ruble, not the display name (which may be what you see in Menu items). You can find out the ruble name by opening up the Bundles View and expanding the node relevant to the Ruble of interest. You'll want to use the folder name of the Ruble, _minus_ ".ruble"; in other words, "html.ruble" => "html".{{% /alert %}}
 
 1. Create a folder named _rublename.ruble_ (replacing _rublename_ with the name you wish).
 

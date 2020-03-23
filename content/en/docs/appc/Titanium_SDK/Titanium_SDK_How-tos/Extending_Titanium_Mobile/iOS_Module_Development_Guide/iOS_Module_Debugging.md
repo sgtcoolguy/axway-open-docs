@@ -55,9 +55,9 @@ Now you need to add the module's library (Objective-C) or framework (Swift) to t
 
 ![Screenshot_2020-03-05_at_19.18.38](/Images/appc/download/attachments/60159823/Screenshot_2020-03-05_at_19.18.38.png)
 
-*Third-Party Dependencies*
+{{% alert title="💡 Hint" color="info" %}}*Third-Party Dependencies*
 
-If the module you are debugging contains third-party dependencies under its ios/platform folder, you need to add them here as well. In the dialog that pops up after pressing "+", select "Add Other..." > "Add files..." and select the dependencies of your module. You also need to adjust the header and/or framework search path under "Build Settings", so Xcode knows where to find your module's dependencies.
+If the module you are debugging contains third-party dependencies under its ios/platform folder, you need to add them here as well. In the dialog that pops up after pressing "+", select "Add Other..." > "Add files..." and select the dependencies of your module. You also need to adjust the header and/or framework search path under "Build Settings", so Xcode knows where to find your module's dependencies.{{% /alert %}}
 
 Switch over to the "Build Phases" tab and make sure to add the module project as a dependency so Xcode will build both the app and the module. Press the "+" under "Dependencies" and select the module's library (Objective-C) or framework (Swift) as a dependency.
 

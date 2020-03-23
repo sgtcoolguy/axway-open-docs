@@ -18,7 +18,7 @@ This document lists the various components (and the related scopes) inside Studi
 
 There are a few guidelines to observe when creating a new scope or using them in practice.
 
-.\* for components indicate that there is a per-editor/language component associated, i.e. editor.js, scripting.rubles.js.
+{{% alert title="⚠️ Warning" color="primary" %}}.\* for components indicate that there is a per-editor/language component associated, i.e. editor.js, scripting.rubles.js.{{% /alert %}}
 
 * If it has a view in studio, it is a root-level scope (i.e. validation, terminal)
 

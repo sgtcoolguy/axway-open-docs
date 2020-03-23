@@ -1,10 +1,10 @@
 {"title":"Models - Composite","weight":"20"}
 
-*API Builder 3.x is deprecated*
+{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
-Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
+Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
 * [Create a composite model](#create-a-composite-model)
 
@@ -14,7 +14,7 @@ Contact [support@axway.com](mailto:support@axway.com) if you require migration a
 
     * [Inner join example](#inner-join-example)
 
-Composite models require the **appc.composite connector** to be installed. This comes by default with all API Builder Projects. If you are missing this connector you can learn how to install it [here](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Connectors/Add_a_Connector/).
+{{% alert title="⚠️ Warning" color="primary" %}}Composite models require the **appc.composite connector** to be installed. This comes by default with all API Builder Projects. If you are missing this connector you can learn how to install it [here](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/API_Builder_Connectors/Add_a_Connector/).{{% /alert %}}
 
 ## Create a composite model
 

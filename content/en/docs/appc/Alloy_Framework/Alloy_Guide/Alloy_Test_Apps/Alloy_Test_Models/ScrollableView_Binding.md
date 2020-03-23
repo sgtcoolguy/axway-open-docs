@@ -2,11 +2,9 @@
 
 Demonstrates binding a data collection to a ScrollableView component.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**models/binding\_scrollableview**
-
-![scrollableview](/Images/appc/download/attachments/41845710/scrollableview.png)
+alloy/test/apps/**models/binding\_scrollableview**{{% /alert %}}![scrollableview](/Images/appc/download/attachments/41845710/scrollableview.png)
 
 The main index.xml view defines the ScrollableView element and sets its dataCollection attribute to the "articles" collection. The content of each ScrollableView screen is defined by the article.xml view, which is included via a <Require/> element.
 

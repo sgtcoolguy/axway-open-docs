@@ -34,7 +34,7 @@ Several tools and techniques require you to either pass options on the command l
 
 4. Save and close the file.
 
-You can follow the same procedures on Eclipse. The folder structure will be identical, but the file to edit is **eclipse.ini**.
+{{% alert title="⚠️ Warning" color="primary" %}}You can follow the same procedures on Eclipse. The folder structure will be identical, but the file to edit is **eclipse.ini**.{{% /alert %}}
 
 ## VM args vs. Launcher Arguments
 
@@ -60,7 +60,7 @@ openFile
 -Xms40m
 ```
 
-Note that launcher arguments always appear first, before the vmargs section. No matter which type of item you are specifying, generally the value goes on the _next_ line (see launcher.defaultAction above)
+{{% alert title="⚠️ Warning" color="primary" %}}Note that launcher arguments always appear first, before the vmargs section. No matter which type of item you are specifying, generally the value goes on the _next_ line (see launcher.defaultAction above){{% /alert %}}
 
 ## Specifying VM Arguments
 

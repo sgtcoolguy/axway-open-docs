@@ -207,7 +207,7 @@ Starting with Release 4.0.0, the Titanium SDK exposes the Material Theme color p
 
 To use the Material Theme with Titanium, you need to [create a custom theme](#CustomThemes) that extends one of the AppCompat themes, then set the color palette attributes you want to change from the default theme (see the attribute table below). You will need to build your application with Android SDK 5.0 (API 21) and greater. Note that some of the attributes will not be applied when the application is ran on devices running previous versions of Android (pre-Lollipop) (see the comparison table below).
 
-Do not set the parent attribute to @android:style/Theme.Material or one of its variants. The material theme is only supported on Android 5.0 and greater. Titanium uses the AppCompat library to provide support for the action bar to previous versions of Android and cannot directly inherit from the material theme.
+{{% alert title="⚠️ Warning" color="primary" %}}Do not set the parent attribute to @android:style/Theme.Material or one of its variants. The material theme is only supported on Android 5.0 and greater. Titanium uses the AppCompat library to provide support for the action bar to previous versions of Android and cannot directly inherit from the material theme.{{% /alert %}}
 
 ![MaterialThemeAnnotated](/Images/appc/download/attachments/34636181/MaterialThemeAnnotated.png)
 
@@ -297,7 +297,7 @@ As you can see in the previous examples, an application-wide theme can be specif
     android:theme="@android:style/Theme.Translucent" />
 ```
 
-The build folder is hidden by default in Studio's **App Explorer** and **Project Explorer** views, but visible in the **Navigator** view.
+{{% alert title="⚠️ Warning" color="primary" %}}The build folder is hidden by default in Studio's **App Explorer** and **Project Explorer** views, but visible in the **Navigator** view.{{% /alert %}}
 
 To override the theme for one of these activities, copy the activity definition into the tiapp.xml file, and place it inside the <android><manifest> element. The <activity> element must be nested inside an <application> element, as in the original AndroidManifest.xml file. The end result should look something like this:
 
@@ -323,7 +323,7 @@ To override the theme for one of these activities, copy the activity definition 
 </android>
 ```
 
-If you change the name of the application, you will need to copy the newly generated android:name value from the AndroidManifest.xml file and overwrite the old value in the tiapp.xml file.
+{{% alert title="⚠️ Warning" color="primary" %}}If you change the name of the application, you will need to copy the newly generated android:name value from the AndroidManifest.xml file and overwrite the old value in the tiapp.xml file.{{% /alert %}}
 
 ## Custom theme generator
 

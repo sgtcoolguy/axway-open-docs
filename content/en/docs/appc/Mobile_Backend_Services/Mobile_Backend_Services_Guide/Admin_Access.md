@@ -154,7 +154,7 @@ curl -b cookies.txt -c cookies.txt
 
 Mobile Backend Services provides an API endpoint named batch\_delete that allows application admins to delete multiple MBS objects in one operation. The method takes a where parameter that constrains the selection of objects to delete. If the where parameter is omitted, all objects are deleted. For performance reasons, the number of objects that can be deleted in a single batch delete operation is limited to 100,000. Objects are deleted asynchronously in a separate process, not immediately upon method invocation.
 
-If the where parameter is omitted, all objects are deleted. For example, if the where parameter is omitted from a batch delete of User objects, all users will be deleted.
+{{% alert title="⚠️ Warning" color="primary" %}}If the where parameter is omitted, all objects are deleted. For example, if the where parameter is omitted from a batch delete of User objects, all users will be deleted.{{% /alert %}}
 
 Certain MBS objects can have dependencies on other objects. For example, when you create a [Checkins](/arrowdb/latest/#!/api/Checkins-method-create) object, you can specify a [Places](/arrowdb/latest/#!/api/Places) or [Events](/arrowdb/latest/#!/api/Events) object to associate with it. In this case, the Checkins object is a dependency of the Places or Events object. If you delete the Places or Events object, the dependent Checkins object is **not** deleted.
 

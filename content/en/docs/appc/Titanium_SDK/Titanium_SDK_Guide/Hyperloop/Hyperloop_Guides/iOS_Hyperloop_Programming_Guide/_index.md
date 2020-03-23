@@ -38,9 +38,9 @@ This document provides information on iOS Hyperloop programming requirements, cl
 
 See [Hyperloop Requirements](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyperloop/Hyperloop_Guides/Hyperloop_Requirements/#requirements) for software requirements for using Hyperloop.
 
-*Important notes about your Xcode location*
+{{% alert title="💡 Hint" color="info" %}}*Important notes about your Xcode location*
 
-It is important that your Xcode installation is under the default location in /Applications/Xcode.app. Hyperloop uses a bundled library from Xcode to inspect the available native APIs. This can lead to errors in the generated metadata if you have selected Xcode from a different location (either via xcode-select or in the Location settings in the Xcode preferences) but also have another installation in the default folder. Keep this in mind if you have more than one Xcode installation on your system.
+It is important that your Xcode installation is under the default location in /Applications/Xcode.app. Hyperloop uses a bundled library from Xcode to inspect the available native APIs. This can lead to errors in the generated metadata if you have selected Xcode from a different location (either via xcode-select or in the Location settings in the Xcode preferences) but also have another installation in the default folder. Keep this in mind if you have more than one Xcode installation on your system.{{% /alert %}}
 
 ## Classes
 
@@ -249,7 +249,7 @@ var view = new MyView();
 
 You can use Third-Party libraries in Hyperloop that are available in the dependency-manager [CocoaPods](https://cocoapods.org/).
 
-As of Hyperloop 2.2.0, CocoaPods 0.39 and below will no longer be supported and we recommend that you use Cocoapods 1.x or the latest version.
+{{% alert title="⚠️ Warning" color="primary" %}}As of Hyperloop 2.2.0, CocoaPods 0.39 and below will no longer be supported and we recommend that you use Cocoapods 1.x or the latest version.{{% /alert %}}
 
 ### CocoaPods
 
@@ -285,7 +285,7 @@ chart.minimumValue = 1;
 chart.maximumValue = 100;
 ```
 
-Note for Ad-Hoc builds: The build can fail if some frameworks importted via CocoaPods contain Bitcode and some not. You can fix this issue by disabling Bitcode for third-party frameworks in that case. Add the following snippet to your Podfile:
+{{% alert title="❗️ Warning" color="danger" %}}Note for Ad-Hoc builds: The build can fail if some frameworks importted via CocoaPods contain Bitcode and some not. You can fix this issue by disabling Bitcode for third-party frameworks in that case. Add the following snippet to your Podfile:
 
 *Podfile*
 
@@ -298,11 +298,11 @@ post_install do |installer|
     end
   end
 end
-```
+```{{% /alert %}}
 
 ### Custom frameworks and libraries
 
-The following functionality has been deprecated in Hyperloop 2.2.0 and will be removed in future versions of Hyperloop. Since Hyperloop 2.2.0, you can drop your native iOS framework (static or dynamic) into your app/platform/ios (Alloy) or platform/ios (Classic Titanium) folder. The manual configuration via the hyperloop.ios.thirdparty object of the appc.js is not necessary anymore.
+{{% alert title="❗️ Warning" color="danger" %}}The following functionality has been deprecated in Hyperloop 2.2.0 and will be removed in future versions of Hyperloop. Since Hyperloop 2.2.0, you can drop your native iOS framework (static or dynamic) into your app/platform/ios (Alloy) or platform/ios (Classic Titanium) folder. The manual configuration via the hyperloop.ios.thirdparty object of the appc.js is not necessary anymore.{{% /alert %}}
 
 In addition to CocoaPods, you can include third-party or first-party custom code by including a reference in appc.js under the thirdparty property. For example, to include custom objective-c from the project’s src directory you could provide:
 
@@ -355,7 +355,7 @@ Note that the "flags" key takes a relative path from the build/iphone directory.
 
 In addition to Objective-C, you can import third-party libraries written in Swift. Any \*.swift files found in your src directories will automatically be compiled and available to use in your JavaScript just like Objective-C APIs.
 
-It is recommended to use CocoaPods and the use\_frameworks! flag to properly manage Swift frameworks.
+{{% alert title="💡 Hint" color="info" %}}It is recommended to use CocoaPods and the use\_frameworks! flag to properly manage Swift frameworks.{{% /alert %}}
 
 ### Customizing your Xcode build
 

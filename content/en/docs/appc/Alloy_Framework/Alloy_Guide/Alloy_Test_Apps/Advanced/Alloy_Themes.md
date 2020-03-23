@@ -2,11 +2,9 @@
 
 This document demonstrates how to use Alloy themes to easily style your entire application UI for different platforms.
 
-*App folder location*
+{{% alert title="💡 Hint" color="info" %}}*App folder location*
 
-[_alloy_/test/apps/**advanced/themes**](https://github.com/appcelerator/alloy/tree/master/samples/apps/advanced/themes/)
-
-![Example](/Images/appc/download/attachments/41845677/Example.png)
+[_alloy_/test/apps/**advanced/themes**](https://github.com/appcelerator/alloy/tree/master/samples/apps/advanced/themes/){{% /alert %}}![Example](/Images/appc/download/attachments/41845677/Example.png)
 
 The themes/ folder contains of three folders named "blue", "dark", and "green" that each contain **assets/** and **styles/** folders. These folders contain, respectively, image files and other theme assets, and TSS files that define the theme's custom styles.
 

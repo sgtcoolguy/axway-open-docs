@@ -87,7 +87,7 @@ Before declaring an intent filter, you need to copy the <activity> node containi
 
 Note that the <activity> node you just copied over already contains an <intent-filter> element. The elements inside the filter describe to the Android OS that this activity is the initial activity to launch for the application. Do not remove this intent filter or the application will not be available in the application launcher menu.
 
-If you change the name of the application, you will need to copy the newly generated android:name value from the AndroidManifest.xml file and overwrite the old value in the tiapp.xml file.
+{{% alert title="⚠️ Warning" color="primary" %}}If you change the name of the application, you will need to copy the newly generated android:name value from the AndroidManifest.xml file and overwrite the old value in the tiapp.xml file.{{% /alert %}}
 
 ### Declare intent filters
 
@@ -119,7 +119,7 @@ After adding an <intent-filter> tag, add the following children elements to it:
 
     * <data android:scheme="http" host="www.fakedomain.com"/>: Activity can accept URIs that start with http://www.fakedomain.com depending on the action.
 
-For the actions and categories, you can also define your own custom action and category names. Use a reverse domain scheme to name the actions and categories to avoid potential conflicts, for example, com.appcelerator.action.LINT or org.foo.category.SUPER. The custom actions and categories are only useful to communicate between your applications and application activities using intents.
+{{% alert title="💡 Hint" color="info" %}}For the actions and categories, you can also define your own custom action and category names. Use a reverse domain scheme to name the actions and categories to avoid potential conflicts, for example, com.appcelerator.action.LINT or org.foo.category.SUPER. The custom actions and categories are only useful to communicate between your applications and application activities using intents.{{% /alert %}}
 
 Additionally, you can overwrite the appearance of the option in the **Share** dialog by using the following <intent-filter> attributes:
 
@@ -200,7 +200,7 @@ if (intent.hasExtra(Ti.Android.EXTRA_TEXT) && (extra = intent.getStringExtra(Ti.
 
 To send a response back to the calling activity, the called activity needs to call its setResult() method, then call the finish() method to close the called activity in order to send the result.
 
-The calling activity needs to call the startActivityForResult() method instead of the startActivity() in order to process the result. See [Android Intents: Start an activity with an intent](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Intents/#start-an-activity-with-an-intent).
+{{% alert title="⚠️ Warning" color="primary" %}}The calling activity needs to call the startActivityForResult() method instead of the startActivity() in order to process the result. See [Android Intents: Start an activity with an intent](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Platform_API_Deep_Dives/Android_API_Deep_Dives/Android_Intents/#start-an-activity-with-an-intent).{{% /alert %}}
 
 Pass a Titanium.Android.RESULT\_\* constant to the setResult() method to indicate the result of the activity and an optional intent object as the second parameter. Use the intent object to send data back to the calling activity.
 

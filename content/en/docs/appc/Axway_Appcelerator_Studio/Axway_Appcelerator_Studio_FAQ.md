@@ -132,7 +132,7 @@ appc use latest
 appc setup
 ```
 
-For Windows users, execute the same commands without the sudo command within the administrative command prompt.
+{{% alert title="⚠️ Warning" color="primary" %}}For Windows users, execute the same commands without the sudo command within the administrative command prompt.{{% /alert %}}
 
 ## Setup Android SDK for Studio on Windows
 
@@ -152,8 +152,7 @@ For Windows users, execute the same commands without the sudo command within the
 
 1. **Download [node.js](https://nodejs.org/#download)** and install it.
 
-    Refer to [Node.js Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#node.js) for which version to install.
-
+    {{% alert title="⚠️ Warning" color="primary" %}}Refer to [Node.js Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#node.js) for which version to install.{{% /alert %}}
 2. Install **Appcelerator CLI** via the terminal:
 
     ```bash
@@ -201,8 +200,7 @@ If you download the Axway Appcelerator Studio and install it, the installation p
 
 2. **Download [node.js](https://nodejs.org/#download)** and install it.
 
-    Refer to [Node.js Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#node.js) for which version to install.
-
+    {{% alert title="⚠️ Warning" color="primary" %}}Refer to [Node.js Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#node.js) for which version to install.{{% /alert %}}
 3. Execute the following commands via the admin command prompt:
 
     ```bash
@@ -292,8 +290,7 @@ Setup Android SDK for Studio on Windows
 
 1. **Download [node.js](https://nodejs.org/#download)** and install it.
 
-    Refer to [Node.js Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#node.js) for which version to install.
-
+    {{% alert title="⚠️ Warning" color="primary" %}}Refer to [Node.js Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#node.js) for which version to install.{{% /alert %}}
 2. Install **Appcelerator CLI** via the terminal:
 
     ```bash
@@ -337,8 +334,7 @@ If you download the Appcelerator Studio and install it, the installation process
 
 2. **Download [node.js](https://nodejs.org/#download)** and install it.
 
-    Refer to [Node.js Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#node.js) for which version to install.
-
+    {{% alert title="⚠️ Warning" color="primary" %}}Refer to [Node.js Compatibility Matrix](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Titanium_Compatibility_Matrix/#node.js) for which version to install.{{% /alert %}}
 3. Execute the following commands via the admin command prompt:
 
     ```bash
@@ -368,7 +364,7 @@ Linux systems require the GTK windowing system, Node.js, and the JDK to be insta
 
 3. **Download and install [Studio](https://platform.appcelerator.com/#/product/studio)**.
 
-Appcelerator Axway doesn't officially support Linux installs.
+{{% alert title="⚠️ Warning" color="primary" %}}Appcelerator Axway doesn't officially support Linux installs.{{% /alert %}}
 
 ## Where can I find Titanium examples?
 

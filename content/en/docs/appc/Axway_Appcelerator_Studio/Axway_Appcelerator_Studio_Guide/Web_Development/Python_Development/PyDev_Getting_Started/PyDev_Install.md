@@ -28,7 +28,7 @@ Reference: [http://download.oracle.com/javase/1.4.2/docs/tooldocs/solaris/keytoo
 
 ## Installing with the update site
 
-**Instructions are targeted at Eclipse 3.5 and 3.6**
+{{% alert title="⚠️ Warning" color="primary" %}}**Instructions are targeted at Eclipse 3.5 and 3.6**{{% /alert %}}
 
 To install PyDev and PyDev Extensions using the Eclipse Update Manager, you need to use the **Help > Install New Software...**menu (note that in older versions, this would be the 'Find and Install' menu).
 

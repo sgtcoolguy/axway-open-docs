@@ -120,7 +120,7 @@ Network Link Conditioner might not be installed by default. To install it:
 
 5. Turn the link conditioner on.
 
-Once installed, you can access the Network Link Conditioner via the System Preferences application.
+{{% alert title="⚠️ Warning" color="primary" %}}Once installed, you can access the Network Link Conditioner via the System Preferences application.{{% /alert %}}
 
 Once you turn on link conditioning, your network speed will throttled to the level defined by the profile you selected. At this point, you can test your app in the Simulator under conditions that more realistically reflect the real world.
 

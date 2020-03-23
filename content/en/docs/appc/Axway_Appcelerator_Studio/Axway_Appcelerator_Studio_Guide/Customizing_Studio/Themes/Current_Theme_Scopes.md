@@ -30,7 +30,7 @@
 
 A list of all of the scopes currently available in Studio Themes.
 
-You can find out the current scope by place the cursor at a particular location and choosing "Commands > Bundle Development > Show Scope".
+{{% alert title="⚠️ Warning" color="primary" %}}You can find out the current scope by place the cursor at a particular location and choosing "Commands > Bundle Development > Show Scope".{{% /alert %}}
 
 ## General Tokens
 

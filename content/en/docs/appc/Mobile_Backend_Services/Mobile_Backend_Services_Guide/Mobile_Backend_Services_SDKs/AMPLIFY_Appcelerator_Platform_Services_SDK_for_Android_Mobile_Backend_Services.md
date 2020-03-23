@@ -140,7 +140,7 @@ The [com.appcelerator.aps](http://docs.appcelerator.com/aps-sdk-apidoc/latest/an
 
 Alternatively, you can use the generic [APSCloud.sendRequest()](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSCloud.html#sendRequest(java.lang.String, java.lang.String, java.util.Map, com.appcelerator.aps.APSResponseHandler)) method to make REST calls directly against the Cloud APIs. For more information, see [Making Generic REST API Calls](#making-generic-rest-apis-method-calls).
 
-All Cloud API calls must be made on the UI (main) thread, and callbacks are executed on the UI thread.
+{{% alert title="⚠️ Warning" color="primary" %}}All Cloud API calls must be made on the UI (main) thread, and callbacks are executed on the UI thread.{{% /alert %}}
 
 ### Building Request Parameters
 
@@ -462,7 +462,7 @@ Once the project is set up, the application needs to register with MBS to receiv
 
 To register push notifications, the application needs to retrieve the device token using the [APSCloudPush.getInstance.retrieveDeviceToken()](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSCloudPush.html#retrieveDeviceToken(com.appcelerator.aps.APSRetrieveDeviceTokenHandler)) method, then pass the token to either the [APSPushNotifications.subscribe()](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSPushNotifications.html#subscribe(java.util.Map,com.appcelerator.aps.APSResponseHandler)) or [APSPushNotifications.subscribeToken()](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSPushNotifications.html#subscribeToken(java.util.Map,com.appcelerator.aps.APSResponseHandler)) method to subscribe to a push channel.
 
-Call [APSServiceManager.getInstance()](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSServiceManager.html#getInstance()) before calling any methods on APSCloudPush; otherwise, an exception will be thrown.
+{{% alert title="⚠️ Warning" color="primary" %}}Call [APSServiceManager.getInstance()](http://docs.appcelerator.com/aps-sdk-apidoc/latest/android/com/appcelerator/aps/APSServiceManager.html#getInstance()) before calling any methods on APSCloudPush; otherwise, an exception will be thrown.{{% /alert %}}
 
 For example, the code below can be added to the main activity's onCreate() method to subscribe the device to the friend\_channel:
 

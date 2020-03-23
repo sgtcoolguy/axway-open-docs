@@ -8,8 +8,7 @@ To create a Google API Console project and client ID, follow these steps:
 
 2. From the project drop-down, select an existing [project](https://support.google.com/cloud/answer/6158853), or create a new one by selecting **Create a new project**.
 
-    Use a single project to hold all platform instances of your app (Android, iOS, web, etc.), each with a different Client ID.
-
+    {{% alert title="⚠️ Warning" color="primary" %}}Use a single project to hold all platform instances of your app (Android, iOS, web, etc.), each with a different Client ID.{{% /alert %}}
 3. In the sidebar under "API Manager", select **Credentials**, then select the **OAuth consent screen** tab.
 
     1. Choose an **Email Address**, specify a **Product Name**, and press **Save**.

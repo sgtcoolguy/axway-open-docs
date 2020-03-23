@@ -1,6 +1,6 @@
 {"title":"Building Queries","weight":"20"}
 
-As of the Dashboard 5.3.0 release, the Query Builder feature has been replaced with Custom Queries feature. For additional information, refer to [Creating Custom Queries](#undefined).
+{{% alert title="⚠️ Warning" color="primary" %}}As of the Dashboard 5.3.0 release, the Query Builder feature has been replaced with Custom Queries feature. For additional information, refer to [Creating Custom Queries](#undefined).{{% /alert %}}
 
 The Custom Query feature assists you in creating queries against the analytics data collected from your mobile application. You can create custom queries based on [featureEvents](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Analytics-method-featureEvent) in your Titanium SDK applications using the Custom Queries feature. If you have [featureEvents](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Analytics-method-featureEvent) enabled in your application, you can create queries like, "Show me how many times, in the last month, users on Android, tapped the login button".
 
@@ -24,7 +24,7 @@ The Custom Queries feature is accessible through the **Analytics** menu on the D
 
 ![query_builder_02_latest](/Images/appc/download/attachments/51250946/query_builder_02_latest.png)
 
-For first-time users of the Custom Queries feature, a description of the Custom Queries feature will be displayed when the **Custom Queries** tab is selected. To navigate to the Custom Queries feature, click the **Go to Custom Queries** button. To prevent the description of the Custom Queries feature being displayed again, select **Do not show this page again**.
+{{% alert title="⚠️ Warning" color="primary" %}}For first-time users of the Custom Queries feature, a description of the Custom Queries feature will be displayed when the **Custom Queries** tab is selected. To navigate to the Custom Queries feature, click the **Go to Custom Queries** button. To prevent the description of the Custom Queries feature being displayed again, select **Do not show this page again**.{{% /alert %}}
 
 To create a custom query, refer to [Creating Custom Queries](https://docs.axway.com/bundle/Appcelerator_Dashboard_allOS_en/page/creating_custom_queries.html).
 

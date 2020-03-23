@@ -40,7 +40,7 @@ This guide describes where to obtain and how to install the Google Android SDK a
 
 Titanium requires the Android SDK Tools to be installed in order to allow you to develop Android applications.
 
-Remember that Oracle JDK is a prerequisite for Android development and should be installed first. You need at least JDK 8 installed. See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for instructions.
+{{% alert title="⚠️ Warning" color="primary" %}}Remember that Oracle JDK is a prerequisite for Android development and should be installed first. You need at least JDK 8 installed. See [Installing Oracle JDK](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Prerequisites/Installing_Oracle_JDK/) for instructions.{{% /alert %}}
 
 ![download_02](/Images/appc/download/attachments/52297851/download_02.png)
 
@@ -58,11 +58,9 @@ For Titanium 8.x.x, you need to installed the following packages via the Android
 | Android SDK Build-tools | Rev 23 |
 | Android SDK Platform (API Level) | API Level 29 for Titanium 8.3.x<br /><br />API Level 28 for Titanium version older than 8.3.0 |
 
-Titanium SDK 7.0.0+ requires Android SDK Tools v25 or newer as a minimum requirement.
+{{% alert title="⚠️ Warning" color="primary" %}}Titanium SDK 7.0.0+ requires Android SDK Tools v25 or newer as a minimum requirement.{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}Take caution before upgrading these packages, as changes to the way they work has broken the Titanium toolchain a number of times in the past. Although these problems are often beyond our control, we always do our utmost to fix them as soon as we are made aware of them.
 
-Take caution before upgrading these packages, as changes to the way they work has broken the Titanium toolchain a number of times in the past. Although these problems are often beyond our control, we always do our utmost to fix them as soon as we are made aware of them.
-
-With this in mind, it's important to only upgrade these packages _between_ major projects, so that you have time to fix any problems that may result. Always consult the Android Tools [Release Notes](http://developer.android.com/sdk/tools-notes.html) and [Known Issues](http://tools.android.com/knownissues) first, and refer to our [Installation Troubleshooting](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installation_Troubleshooting/) guide to check whether there are any further actions that need to be taken to make the Titanium and the Android SDK compatible.
+With this in mind, it's important to only upgrade these packages _between_ major projects, so that you have time to fix any problems that may result. Always consult the Android Tools [Release Notes](http://developer.android.com/sdk/tools-notes.html) and [Known Issues](http://tools.android.com/knownissues) first, and refer to our [Installation Troubleshooting](/docs/appc/Titanium_SDK/Titanium_SDK_Getting_Started/Installation_and_Configuration/Installation_Troubleshooting/) guide to check whether there are any further actions that need to be taken to make the Titanium and the Android SDK compatible.{{% /alert %}}
 
 ### Android SDK / Target Android platform
 
@@ -98,11 +96,11 @@ Each Titanium SDK supports building against a specific range of Android versions
 | 1.8.x | 2.2 (API 8) | 3.x.x (API 11) | 2.2 (API 8) |
 | 1.7.x | 2.1 (API 7) | 3.x.x (API 11) | 2.1 (API 7) |
 
-*Notes*
+{{% alert title="⚠️ Warning" color="primary" %}}*Notes*
 
 \* If you are building an Android module, you need to have Android SDK 6.0.x (API 23) installed if using Release 6.0.0 and greater.
 
-\*\* The Titanium SDK does not support the [Android 4.4W SDK](http://developer.android.com/wear/index.html) (API 20), also known as the Android Wear SDK.
+\*\* The Titanium SDK does not support the [Android 4.4W SDK](http://developer.android.com/wear/index.html) (API 20), also known as the Android Wear SDK.{{% /alert %}}
 
 Most mobile device manufacturers have been licensed to use Google's enhanced API, which provides support for Maps and other functionality. If this is the case for your target devices, you will need to install the relevant Google packages, listed as _Google APIs by Google Inc., Android API x..._ by the **Android SDK Manager** tool. In Studio, choose the SDKs with the naming format "Google APIs x.x" to use the enhanced APIs, or those without the "Google APIs" prefix otherwise.
 

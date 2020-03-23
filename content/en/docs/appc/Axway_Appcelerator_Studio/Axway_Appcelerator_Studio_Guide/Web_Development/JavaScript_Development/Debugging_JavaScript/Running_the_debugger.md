@@ -16,7 +16,7 @@ To run the debugger:
 
 4. In the upper-right corner of the workbench, click the **Debug** perspective button ![IconDebug](/Images/appc/download/attachments/30083109/IconDebug.png) .
 
-    If this is your first time using the Debug perspective, click the **Perspective** button ![IconPerspective](/Images/appc/download/attachments/30083109/IconPerspective.png) in the upper-right corner of the workbench, then select **Other > Debug** from the pop-up menu. Studio will "remember" the Debug perspective and create a button for it after that.
+    {{% alert title="⚠️ Warning" color="primary" %}}If this is your first time using the Debug perspective, click the **Perspective** button ![IconPerspective](/Images/appc/download/attachments/30083109/IconPerspective.png) in the upper-right corner of the workbench, then select **Other > Debug** from the pop-up menu. Studio will "remember" the Debug perspective and create a button for it after that.{{% /alert %}}
 
 You can now start using the Debug perspective to start debugging your JavaScript code. See [About the Debug perspective](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/About_the_Debug_perspective/) for more information.
 

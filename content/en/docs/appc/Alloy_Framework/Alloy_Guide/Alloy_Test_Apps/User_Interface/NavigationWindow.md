@@ -2,9 +2,9 @@
 
 Demonstrates how to navigate a hierarchy of content using the NavigationWindow object.
 
-*Example App Source Location*
+{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
 
-You can find this example app in the Alloy repository under [samples/apps/ui/navwindow](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/navwindow). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [samples/apps/ui/navwindow](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/navwindow). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 A [NavigationWindow](#!/api/Titanium.UI.iOS.NavigationWindow) implements a specialized view that manages the navigation of hierarchical content. You call the NavigationWindow object's [openWindow()](#!/api/Titanium.UI.iOS.NavigationWindow-method-openWindow) method to open a new window in the navigation group, [closeWindow()](#!/api/Titanium.UI.iOS.NavigationWindow-method-closeWindow) to remove it.
 
@@ -25,7 +25,7 @@ The sample's main index.xml view declares a NavigationWindow element named navWi
 </Alloy>
 ```
 
-As of Titanium 8.0.0, you don't need to specify the platform type (e.g. <NavigationWindow platform="ios">).
+{{% alert title="⚠️ Warning" color="primary" %}}As of Titanium 8.0.0, you don't need to specify the platform type (e.g. <NavigationWindow platform="ios">).{{% /alert %}}
 
 When the "Push" button is clicked, it invokes the Alloy.Globals.openWindow() function. This function is defined in the application's alloy.js file, and calls the navWindow's [openWindow()](#!/api/Titanium.UI.iOS.NavigationWindow-method-openWindow) method, passing it a new window created from the app/views/win.xml view. It also initializes a global counter variable named ctr that's displayed by each window added to the navigation stack.
 

@@ -2,9 +2,9 @@
 
 Demonstrates basic use of TabbedBar control.
 
-*Example App Source Location*
+{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
 
-You can find this example app in the Alloy repository under [samples/apps/ui/tabbedbar](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/tabbedbar). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [samples/apps/ui/tabbedbar](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/tabbedbar). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 A [TabbedBar](#!/api/Titanium.UI.iOS.TabbedBar) is a [ButtonBar](#!/api/Titanium.UI.iOS.TabbedBar) that maintains its state, selected or unselected. See [ButtonBar](#!/api/Titanium.UI.ButtonBar) for information on styling both tabbed bars and buttons bars.
 

@@ -90,7 +90,7 @@ The CLI creates a module project that contains multiple platforms. Each platform
 
 ### Build properties file
 
-This was deprecated since 5.0.0.
+{{% alert title="⚠️ Warning" color="primary" %}}This was deprecated since 5.0.0.{{% /alert %}}
 
 The build.properties file contains build variables used by the Ant CLI. Using the build.properties is deprecated in favor of the unified build-command appc ti build -p android --build-only.
 
@@ -227,7 +227,7 @@ public void fooFunction(String arg)
 
 ## Adding 3rd party libraries
 
-As of Titanium 9.0.0, you can no longer use Google's deprecated Support libraries. You must use the AndroidX libraries instead.
+{{% alert title="⚠️ Warning" color="primary" %}}As of Titanium 9.0.0, you can no longer use Google's deprecated Support libraries. You must use the AndroidX libraries instead.{{% /alert %}}
 
 ### Gradle Dependencies
 
@@ -265,9 +265,9 @@ To add a JAR as a dependency in Studio:
 
 With Titanium 6.1.1 - 8.3.1, you can also copy AAR (Android Archive) library files to the module's lib directory. However, this is not supported as of Titanium 9.0.0, which requires you to reference these AAR libraries via a build.gradle file instead.
 
-*Where do i get .aar files?*
+{{% alert title="✅" color="success" %}}*Where do i get .aar files?*
 
-Most third-party libraries can be downloaded from either GitHub or from one of the popular repositories like [jCenter](https://bintray.com/bintray/jcenter) or [Maven Central](http://maven central/). Copies of the Android Support Libraries can be found inside your Android SDK directory under <andriod-sdk>/extras/android/m2repository/com/android
+Most third-party libraries can be downloaded from either GitHub or from one of the popular repositories like [jCenter](https://bintray.com/bintray/jcenter) or [Maven Central](http://maven central/). Copies of the Android Support Libraries can be found inside your Android SDK directory under <andriod-sdk>/extras/android/m2repository/com/android{{% /alert %}}
 
 ### Adding Android Libraries to Studio
 
@@ -287,7 +287,7 @@ URL url = getClass().getClassLoader().getResource('assets/image.png');
 Log.i('GETFILE', url.toString());
 ```
 
-The README file and JavaScript files (any file with a .js extension) in the assets folder are not added to the JAR library.
+{{% alert title="⚠️ Warning" color="primary" %}}The README file and JavaScript files (any file with a .js extension) in the assets folder are not added to the JAR library.{{% /alert %}}
 
 ### Module "platform/android/res" folder
 

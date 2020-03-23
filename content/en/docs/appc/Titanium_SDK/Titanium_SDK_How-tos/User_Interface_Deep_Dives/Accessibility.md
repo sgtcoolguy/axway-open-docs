@@ -157,7 +157,7 @@ Since win3, the blue window, is the top-level view container in the UI hierarchy
 
 Since an accessibilityHint is defined for win3, the blue window, VoiceOver does not provide spoken feedback for its children view elements, only the window, but TalkBack provides feedback for all elements as well as the window. Additionally, all children view elements are disabled or inaccessible by VoiceOver, so the user cannot double-click the button to close the window and are stuck in this application state.
 
-For the iOS platform, do not specify accessibility properties for container views, that is, views that contain other view elements, and design your UI so the user can return to the parent view if you are implementing a layered UI. If you define accessibility properties for container views, it will either block interaction with or override the accessibility properties of the view elements contained within it.
+{{% alert title="⚠️ Warning" color="primary" %}}For the iOS platform, do not specify accessibility properties for container views, that is, views that contain other view elements, and design your UI so the user can return to the parent view if you are implementing a layered UI. If you define accessibility properties for container views, it will either block interaction with or override the accessibility properties of the view elements contained within it.{{% /alert %}}
 
 The following table describes the responses based on accessibility property settings (if the win3.accessibilityHint is removed, which blocks most of the view elements from being spoken by VoiceOver).
 

@@ -2,9 +2,9 @@
 
 Demonstrates a basic Alloy application consisting of a single XML view file, JavaScript controller file, and Titanium Style Sheet (TSS) file.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**basics/simple**
+alloy/test/apps/**basics/simple**{{% /alert %}}
 
 ![ios](/Images/appc/download/attachments/41845694/ios.png)
 

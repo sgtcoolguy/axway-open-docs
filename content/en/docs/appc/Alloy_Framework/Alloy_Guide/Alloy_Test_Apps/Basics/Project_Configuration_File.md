@@ -2,9 +2,9 @@
 
 Demonstrates use of the Alloy configuration file.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**basics/config\_json**
+alloy/test/apps/**basics/config\_json**{{% /alert %}}
 
 The Alloy configuration file is named config.json and located in the Alloy project's app directory. It's used to specify global variables, conditional environment and platform values, and widget dependencies. For a list of supported configuration values, see [Project Configuration File](/docs/appc/Alloy_Framework/Alloy_How-tos/Alloy_Reference_Guides/Project_Configuration_File_(config.json)/).
 

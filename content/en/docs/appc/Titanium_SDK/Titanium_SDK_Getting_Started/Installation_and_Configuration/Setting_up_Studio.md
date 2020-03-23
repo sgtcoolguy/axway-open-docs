@@ -82,7 +82,7 @@ A system must satisfy the following requirements in order to run Studio.
 | Latest Android SDK | macOS | 1.5 GB (contiguous) |
 | Latest Android SDK | Windows | 1 GB (contiguous) |
 
-Minimum system memory requirements is 8GB of RAM. 16GB is highly recommended.
+{{% alert title="⚠️ Warning" color="primary" %}}Minimum system memory requirements is 8GB of RAM. 16GB is highly recommended.{{% /alert %}}
 
 #### Disk space
 
@@ -105,9 +105,7 @@ Titanium is supported on the following Operating Systems:
 | macOS | 10.11.5 (Mavericks) and later |
 | Windows | Windows 7 and later(Android)  <br />Windows 8.1 and later (Windows Phone)  <br />Windows 10 and later (Windows 10 Mobile) |
 
-As of Titanium 9.0.0, building Windows apps is no longer supported.
-
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}As of Titanium 9.0.0, building Windows apps is no longer supported.{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 #### Node.js
 
@@ -252,8 +250,7 @@ In addition to installing Studio, the installer for Windows also downloads and i
 
 2. Select the install location. By default, Studio is installed to %USERPROFILE%\\AppData\\Roaming\\Appcelerator\\Appcelerator Studio\\ folder.
 
-    Installing Studio to a common system location (such as %PROGRAMFILES%) is not currently recommended as it causes problems during the Studio software update process.
-
+    {{% alert title="⚠️ Warning" color="primary" %}}Installing Studio to a common system location (such as %PROGRAMFILES%) is not currently recommended as it causes problems during the Studio software update process.{{% /alert %}}
 3. Check the **I agree to the License terms and condition** checkbox.
     ![4](/Images/appc/download/attachments/37540095/4.JPG)
 
@@ -279,9 +276,9 @@ C:\Users\JDoe\Downloads>cd ..
 C:\Users\JDoe>"AppData\Roaming\Appcelerator\Appcelerator Studio\AppceleratorStudio.exe"
 ```
 
-Windows systems must have the following paths at the beginning of their PATH environment variable for Studio to function properly. Most modern Windows systems will already have these paths properly set.
+{{% alert title="⚠️ Warning" color="primary" %}}Windows systems must have the following paths at the beginning of their PATH environment variable for Studio to function properly. Most modern Windows systems will already have these paths properly set.
 
-%SystemRoot%\\system32;%SystemRoot%;%SystemRoot%\\System32\\Wbem;
+%SystemRoot%\\system32;%SystemRoot%;%SystemRoot%\\System32\\Wbem;{{% /alert %}}
 
 ## Launching Studio
 
@@ -295,7 +292,7 @@ The first time you launch Studio you need to select a **workspace**, or folder w
 
 3. Click **OK**.
 
-To select a different workspace folder at any time:
+{{% alert title="💡 Hint" color="info" %}}To select a different workspace folder at any time:
 
 1. Select **File > Switch Workspace** **\> Other...** to open the Workspace Launcher.
 
@@ -315,7 +312,7 @@ To re-enable the the workspace prompt on startup option:
 
 4. Click **OK**.
 
-5. Restart Studio, which will prompt you for a workspace upon launch.
+5. Restart Studio, which will prompt you for a workspace upon launch.{{% /alert %}}
 
 ### Logging in to Studio
 

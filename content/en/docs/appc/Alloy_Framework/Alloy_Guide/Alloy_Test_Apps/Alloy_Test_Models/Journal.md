@@ -2,11 +2,9 @@
 
 Demonstrates how to create a simple personal journal application using models and collections.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**models/journal**
-
-![add_entry](/Images/appc/download/attachments/41845717/add_entry.png)
+alloy/test/apps/**models/journal**{{% /alert %}}![add_entry](/Images/appc/download/attachments/41845717/add_entry.png)
 
 The application's model file (journal.js) defines the fields for each journal entry: title, text, mood (happy, angry, or neutral), and creation date.
 

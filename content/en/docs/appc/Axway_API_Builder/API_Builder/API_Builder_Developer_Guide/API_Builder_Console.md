@@ -1,10 +1,10 @@
 {"title":"API Builder Console","weight":"10"}
 
-*API Builder 3.x is deprecated*
+{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
-Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
+Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
 * [Introduction](#introduction)
 
@@ -131,7 +131,7 @@ See the _Create a new model_ section of [API Builder Getting Started Guide](/doc
 
 The Configurations tab displays the list of configuration files on the API Builder instance. You can edit the configuration files here.
 
-Edits to these files will trigger a server restart once the files have been saved.
+{{% alert title="⚠️ Warning" color="primary" %}}Edits to these files will trigger a server restart once the files have been saved.{{% /alert %}}
 
 See [Console Configuration](/docs/appc/Axway_API_Builder/API_Builder/API_Builder_Developer_Guide/Console_Configuration/) for an example and settings.
 

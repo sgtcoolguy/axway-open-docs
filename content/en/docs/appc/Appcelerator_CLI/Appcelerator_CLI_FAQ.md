@@ -40,7 +40,7 @@ If the **QuickEdit Mode** and\\or **Insert options** are checked within the Cons
 
 ![k8EVM](/Images/appc/download/attachments/50167951/k8EVM.jpg)
 
-This issue and fix also applies to Windows Command terminal.
+{{% alert title="⚠️ Warning" color="primary" %}}This issue and fix also applies to Windows Command terminal.{{% /alert %}}
 
 ## Errors
 

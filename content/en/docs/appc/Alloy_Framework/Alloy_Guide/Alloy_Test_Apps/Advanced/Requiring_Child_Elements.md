@@ -2,11 +2,9 @@
 
 Demonstrates how to use the <Require/> and <Widget/> elements to include external views and widgets. Also shows how to programmatically add child views declared inside a <Require/> or <Widget/> element to the parent.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**advanced\_require\_children**
-
-![require-proxy-1](/Images/appc/download/attachments/41845675/require-proxy-1.png)
+alloy/test/apps/**advanced\_require\_children**{{% /alert %}}![require-proxy-1](/Images/appc/download/attachments/41845675/require-proxy-1.png)
 
 The sample application's views/index.xml file includes a <[TabGroup](#!/api/Titanium.UI.TabGroup)/> element that contains two <[Tab](#!/api/Titanium.UI.TabGroup)/> elements titled "requires" and "widgets", respectively. The first Tab includes a <Require/> element whose source is the **views/requires/index.xml** view, as shown below.
 

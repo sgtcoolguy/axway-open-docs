@@ -30,9 +30,7 @@
 
     * [Description](#description)
 
-As of Titanium 9.0.0, building Windows apps is no longer supported.
-
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}As of Titanium 9.0.0, building Windows apps is no longer supported.{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 ## Introduction
 
@@ -76,9 +74,9 @@ Titanium uses the settings in the tiapp.xml file to package your project. Some o
 
 5. Add the <id> element to the <windows> element. The node text of the element must match the Package/Identity/Name of the application, which was generated when you created the application in the Windows Dev Center Dashboard.
 
-*Prior to Release 5.1.0*
+{{% alert title="⚠️ Warning" color="primary" %}}*Prior to Release 5.1.0*
 
-Prior to Release 5.1.0, set the Package/Identity/Name of the application to the <id> element under the <ti:app> element rather than the <windows> element.
+Prior to Release 5.1.0, set the Package/Identity/Name of the application to the <id> element under the <ti:app> element rather than the <windows> element.{{% /alert %}}
 
 **To retrieve your Windows publisher ID and Publisher display name:**
 

@@ -10,9 +10,7 @@ At some point, you may experience error message during installation of one or mo
 
 ## Permission denied to mkdir
 
-If you are using ACLI 1.1.0 and earlier, then you may encounter this issue. Later versions shouldn't have this problem.
-
-If you installed ACLI and did not have any issues with permissions, you may see the "Secure token store is not available" error message when any amplify auth login commands are issued.
+{{% alert title="⚠️ Warning" color="primary" %}}If you are using ACLI 1.1.0 and earlier, then you may encounter this issue. Later versions shouldn't have this problem.{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}If you installed ACLI and did not have any issues with permissions, you may see the "Secure token store is not available" error message when any amplify auth login commands are issued.{{% /alert %}}
 
 If you get an error message about permission being denied to create a directory (see below), you'll need to add the \--unsafe-perm=true flag to the above command.
 
@@ -57,7 +55,7 @@ Confirm that the package you're trying to install didn't fail to install.
 
 ## Keytar failed to install
 
-If you are using ACLI 1.1.0 and earlier, then you may encounter this issue. Later versions shouldn't have this problem.
+{{% alert title="⚠️ Warning" color="primary" %}}If you are using ACLI 1.1.0 and earlier, then you may encounter this issue. Later versions shouldn't have this problem.{{% /alert %}}
 
 If you encounter this error when trying, amplify auth login -u <user> -p <password>
 

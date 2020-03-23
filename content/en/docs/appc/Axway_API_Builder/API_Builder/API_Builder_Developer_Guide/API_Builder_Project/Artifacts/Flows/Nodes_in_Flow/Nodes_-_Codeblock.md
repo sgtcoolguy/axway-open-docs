@@ -1,10 +1,10 @@
 {"title":"Nodes - Codeblock","weight":"20"}
 
-*API Builder 3.x is deprecated*
+{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
-Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
+Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
 This document describes a Codeblock flow-node and provides information on Codeblock flow-node configuration, metadata, and functionality.
 
@@ -85,7 +85,7 @@ The functional part of a Codeblock should be a .js file which exports a function
 
     * response - The data to be returned as the flow-node response.
 
-Most of the time errors should be returned in the callback as a standard response. Using the first parameter to return errors is the same as throwing an error in the Codeblock and should rarely need to be used.
+{{% alert title="⚠️ Warning" color="primary" %}}Most of the time errors should be returned in the callback as a standard response. Using the first parameter to return errors is the same as throwing an error in the Codeblock and should rarely need to be used.{{% /alert %}}
 
 ### Functionality example
 

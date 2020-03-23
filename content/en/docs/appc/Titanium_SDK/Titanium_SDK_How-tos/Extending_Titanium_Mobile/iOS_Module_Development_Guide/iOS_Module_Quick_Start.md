@@ -56,7 +56,7 @@ Like iOS application development, iOS module development is only supported on OS
 
 First, create a new module project.
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 From a terminal, change the current working directory to your workspace and run:
 
@@ -64,7 +64,7 @@ From a terminal, change the current working directory to your workspace and run:
 cd /PATH/TO/WORKSPACE
 appc new -n test --id com.example.test
 ### when prompted for the project type, select "Titanium Module"
-```
+```{{% /alert %}}
 
 In Studio:
 
@@ -88,7 +88,7 @@ You should validate the used Titanium SDK version inside the titanium.xcconfig t
 
 Next, build the module and package it. This process produces a ZIP file containing a binary library with unprocessed module assets, example code and documentation.
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 From a terminal, go to the module's ios directory and run the appc run command:
 
@@ -101,7 +101,7 @@ Optional: After the build completes, either unzip the built module in the Titani
 
 ```
 unzip -o com.example.test-iphone-1.0.0.zip -d ~/Library/Application\ Support/Titanium/
-```
+```{{% /alert %}}
 
 In Studio:
 
@@ -123,7 +123,7 @@ To test the module, create a test application and add the module as a dependency
 
 ### Create a test application
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 From a new terminal window, change the current working directory to your workspace and run the following commands:
 
@@ -131,7 +131,7 @@ From a new terminal window, change the current working directory to your workspa
 cd /PATH/TO/WORKSPACE
 appc new -t titanium -p ios -n Hello -u http:// --id com.example.hello
 cd Hello/
-```
+```{{% /alert %}}
 
 In Studio:
 
@@ -155,7 +155,7 @@ Studio sets up a new folder called Hello that contains the test application you 
 
 To load the module in the application, you need to add it as a dependency to the project.
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 Open the tiapp.xml and update the <modules/> element to include the module as a dependency to the project:
 
@@ -165,7 +165,7 @@ Open the tiapp.xml and update the <modules/> element to include the module as a 
     <module platform="iphone">com.example.test</module>
   </modules>
 </ti:app>
-```
+```{{% /alert %}}
 
 In Studio:
 
@@ -179,8 +179,8 @@ In Studio:
 
 ### Load the module and make module API calls
 
-The module can be loaded by passing the module ID to the require() method, which returns a reference to the module that API calls can be made on.
-Since Titanium SDK 7.1.0 and later, you can also import it using the ES6+ import statements.
+{{% alert title="⚠️ Warning" color="primary" %}}The module can be loaded by passing the module ID to the require() method, which returns a reference to the module that API calls can be made on.
+Since Titanium SDK 7.1.0 and later, you can also import it using the ES6+ import statements.{{% /alert %}}
 
 Open the app/alloy.js file and replace the code with the following, which invokes API calls to the module:
 
@@ -212,13 +212,13 @@ test.exampleProp = "This is a test value";
 
 ### Run the application
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 From a terminal that has the test app as its current working directory, run:
 
 ```bash
 appc run -p ios
-```
+```{{% /alert %}}
 
 In the Studio toolbar, select **Run** in **Launch Modes** and select an iOS simulator in **Launch Targets**.
 
@@ -242,13 +242,13 @@ Let's modify the module code to create a view object and access a string propert
 
 Titanium creates a basic Xcode project, which is used to build the module. You can open this project in Xcode, the IDE used to develop iOS applications and used by the Titanium toolchain to build your iOS applications and modules.
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 From a terminal, run:
 
 ```
 open test/ios/test.xcodeproj
-```
+```{{% /alert %}}
 
 In Studio:
 
@@ -411,7 +411,7 @@ Next, modify the example setter and getter to actually set and get the variable 
 
 In the JavaScript code, the foo string can be accessed using the exampleProp property, and getExampleProp() and setExampleProp () methods.
 
-If you do not need a custom getter or setter, you can use the @property notation with the copy attribute to create a property.
+{{% alert title="⚠️ Warning" color="primary" %}}If you do not need a custom getter or setter, you can use the @property notation with the copy attribute to create a property.
 
 ```
 @interface ComExampleTestModule : TiModule
@@ -419,7 +419,7 @@ If you do not need a custom getter or setter, you can use the @property notation
 @property(copy) NSString *foo;
 
 @end
-```
+```{{% /alert %}}
 
 ### Test the module
 

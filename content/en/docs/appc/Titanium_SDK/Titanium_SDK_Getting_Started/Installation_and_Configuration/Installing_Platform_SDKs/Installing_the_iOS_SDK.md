@@ -32,7 +32,7 @@
 
 * [Note for Mavericks (and later)](#note-for-mavericks-and-later)
 
-Due to Apple's terms and conditions, the iOS SDK may only be installed on Apple products, hence only instructions for installing to Apple's macOS operating system are provided here.
+{{% alert title="⚠️ Warning" color="primary" %}}Due to Apple's terms and conditions, the iOS SDK may only be installed on Apple products, hence only instructions for installing to Apple's macOS operating system are provided here.{{% /alert %}}
 
 ## Overview
 

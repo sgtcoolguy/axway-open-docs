@@ -76,7 +76,7 @@ Code Assist does not automatically appear for Ruby, unlike HTML/CSS/JS. If you p
 The Ruby content assist is special in that it is implemented entirely in (J)Ruby code inside the ruby ruble: [https://github.com/aptana/ruby.ruble](https://github.com/aptana/ruby.ruble).
 We strongly encourage users to fork and contribute additions/bugfixes/etc. (For details on rubles, see [Ruble Specification](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Ruble_Specification/)).
 
-The content assist relies on an **indexing** process that is performed on the workspace and the edited files. Inconsistent index state, like the one that may occur when turning off the 'Auto Building' option, may result in wrong or no accurate assistance.
+{{% alert title="⚠️ Warning" color="primary" %}}The content assist relies on an **indexing** process that is performed on the workspace and the edited files. Inconsistent index state, like the one that may occur when turning off the 'Auto Building' option, may result in wrong or no accurate assistance.{{% /alert %}}
 
 ### Auto indentation and code formatting
 

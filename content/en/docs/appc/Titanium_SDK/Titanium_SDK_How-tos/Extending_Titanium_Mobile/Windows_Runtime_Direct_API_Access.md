@@ -14,13 +14,13 @@
 
     * [Mix WinRT APIs with Titanium APIs](#mix-winrt-apis-with-titanium-apis)
 
-WIndows Runtime Direct API Access was removed in Titanium SDK 6.1.0. Use [Hyperloop](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyperloop/) to access native APIs.
+{{% alert title="❗️ Warning" color="danger" %}}WIndows Runtime Direct API Access was removed in Titanium SDK 6.1.0. Use [Hyperloop](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyperloop/) to access native APIs.{{% /alert %}}
 
 ## Introduction
 
 For the Windows Platform, the Titanium SDK allows you to directly use the Windows Runtime (WinRT) C++ APIs in your project's JavaScript files. The Titanium SDK will scan your JavaScript files to see if it uses any of the WinRT APIs and will create C++ wrappers and add any dependencies. The Windows Runtime C#, VB and JavaScript APIs are not supported as well as the Windows 10 Mobile APIs.
 
-The first time you build a project that includes WinRT APIs, the first build will be slow (will take several minutes). Subsequent builds should be faster even if you add more WinRT classes.
+{{% alert title="⚠️ Warning" color="primary" %}}The first time you build a project that includes WinRT APIs, the first build will be slow (will take several minutes). Subsequent builds should be faster even if you add more WinRT classes.{{% /alert %}}
 
 ## Usage
 

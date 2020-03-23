@@ -18,7 +18,7 @@
 
 Users can create new templates or modify existing templates to allow easy creation of default content.
 
-We assume you've [created a new Ruble](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Creating_a_new_Ruble/) as a placeholder for the following content.
+{{% alert title="💡 Hint" color="info" %}}We assume you've [created a new Ruble](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Customizing_Studio/Rubles/Creating_a_new_Ruble/) as a placeholder for the following content.{{% /alert %}}
 
 ## Creating a new file template
 
@@ -91,7 +91,7 @@ If your content is hosted locally, you can reference a .zip file containing the 
 
 ### Remote content
 
-Note that this does not yet work for Titanium projects. See bug [http://jira.appcelerator.org/browse/TISTUD-640](http://jira.appcelerator.org/browse/TISTUD-640) for status on that feature.
+{{% alert title="⚠️ Warning" color="primary" %}}Note that this does not yet work for Titanium projects. See bug [http://jira.appcelerator.org/browse/TISTUD-640](http://jira.appcelerator.org/browse/TISTUD-640) for status on that feature.{{% /alert %}}
 
 If you instead have a project template hosted on a Git repo, you can reference that as well:
 
@@ -123,7 +123,7 @@ The [Ruble Specification](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerato
 
 It's possible to add template-variables in the project's template files. Those variables will be substituted with the appropriate content as the project is created.
 
-By default, variables are not replaced. If you need to turn this on, use "t.replace\_parameters = true" in the project template definition to enable substitution
+{{% alert title="⚠️ Warning" color="primary" %}}By default, variables are not replaced. If you need to turn this on, use "t.replace\_parameters = true" in the project template definition to enable substitution{{% /alert %}}
 
 The following variables are supported:
 

@@ -50,7 +50,7 @@ If you use automatically generated files, it might be useful to put that warning
 
 ### Create docstring
 
-Must be called in the 'def' line.
+{{% alert title="⚠️ Warning" color="primary" %}}Must be called in the 'def' line.{{% /alert %}}
 
 **Before**
 
@@ -82,7 +82,7 @@ Must be called in the 'def' line.
 
 ### Surround code with try..except or try..finally
 
-Must have some code selected.
+{{% alert title="⚠️ Warning" color="primary" %}}Must have some code selected.{{% /alert %}}
 
 **Before**
 

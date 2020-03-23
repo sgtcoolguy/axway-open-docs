@@ -2,9 +2,9 @@
 
 Demonstrates binding a data collection to a TableView using global and local collection references.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**models/binding\_tableview**
+alloy/test/apps/**models/binding\_tableview**{{% /alert %}}
 
 The <Collection/> element can also be used to create a global, singleton instance of the collection data available to all controllers, or a an instance available to a single controller. By default, a <Collection/> element creates a global object.
 

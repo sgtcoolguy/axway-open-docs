@@ -30,9 +30,7 @@ This guide covers how to manage your module project as well as how to add third-
 
 ## Prerequisite
 
-As of Titanium 9.0.0, building Windows apps is no longer supported.
-
-Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.
+{{% alert title="❗️ Warning" color="danger" %}}As of Titanium 9.0.0, building Windows apps is no longer supported.{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}Support for Windows 8.1 and Windows Phone SDKs has been deprecated as of SDK 6.3.0.GA and has be removed in SDK 7.0.0.GA.{{% /alert %}}
 
 To develop an Windows-based Module, you'll need all of the software required to build a Titanium application for Windows:
 
@@ -84,7 +82,7 @@ If you omit any of the options, the CLI will prompt you to enter them.
 
 Next, build the module and package it. This process produces a ZIP file containing a binary library with unprocessed module assets, example code and documentation.
 
-*CLI Instructions*
+{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
 
 From a terminal, go to the module's windows directory and run the appc ti build -p windows -T ws-local:
 
@@ -94,7 +92,7 @@ ti build -p windows -T ws-local
 ## When you build module for Windows 10, use "ti build -p windows -T ws-local --wp-sdk 10.0"
 ```
 
-After the build completes, unzip the built module in the Titanium SDK home path: (C:\\ProgramData\\Titanium).
+After the build completes, unzip the built module in the Titanium SDK home path: (C:\\ProgramData\\Titanium).{{% /alert %}}
 
 After the build completes, you should have a ZIP file in the windows directory and see the following message in the console:
 

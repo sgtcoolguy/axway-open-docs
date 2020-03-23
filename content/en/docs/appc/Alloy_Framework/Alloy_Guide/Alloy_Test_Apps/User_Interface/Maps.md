@@ -8,9 +8,9 @@
 
 Demonstrates how to use the Maps module and display annotations on iOS and Android.
 
-*Example App Source Location*
+{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
 
-You can find this example app in the Alloy repository under [samples/apps/ui/map](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [samples/apps/ui/map](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 Android and iOS applications use the [Ti.Maps](#!/api/Modules.Map) add-on module, which is included with Titanium SDK, but needs to be added as a dependency to your project's tiapp.xml file.
 

@@ -76,7 +76,7 @@ Common event object properties include:
 
 * source which is a reference to the object on which the event was fired
 
-globalPoint is an iOS only event property.
+{{% alert title="⚠️ Warning" color="primary" %}}globalPoint is an iOS only event property.{{% /alert %}}
 
 You can assign more than one event listener to a component. For example, a table could listen for taps, swipes, and scrolls.
 
@@ -198,7 +198,7 @@ would output this to the Titanium console:
 
 Manually firing a click event demonstrates the flexibility of Titanium's event system, but it's probably not something you'll do that often. You can (and probably will) fire your own custom events frequently. For example, you might fire a custom event when when the database is updated. Any components that depend on the database – a table, for example – could listen for that event and update themselves. This promotes loose coupling of our components and makes for more scalable and maintainable Javascript code.
 
-Do **NOT** name your events with spaces, for example, "my event". This may cause your events to fire multiple times with other JavaScript libraries, such as Backbone.js, which uses spaces to delimit events.
+{{% alert title="⚠️ Warning" color="primary" %}}Do **NOT** name your events with spaces, for example, "my event". This may cause your events to fire multiple times with other JavaScript libraries, such as Backbone.js, which uses spaces to delimit events.{{% /alert %}}
 
 ```
 deleteButton.addEventListener('click', function(e){
@@ -255,9 +255,9 @@ deleteButton.removeEventListener('click', doSomething);
 
 Android devices feature various "hardware" buttons, like Back, Home, Search, and Menu in addition to the volume up/down rocker and the camera button. With Titanium, you can monitor each of these buttons for presses with event listeners added to a heavy weight window.
 
-Prior to Release 3.0.0, these events were named with a colon right after the android name. For example, androidback was originally called android:back.
+{{% alert title="💡 Hint" color="info" %}}Prior to Release 3.0.0, these events were named with a colon right after the android name. For example, androidback was originally called android:back.
 
-Since Release 3.2.0, all windows are heavyweight by default and you cannot control the type of window created.
+Since Release 3.2.0, all windows are heavyweight by default and you cannot control the type of window created.{{% /alert %}}
 
 | **Event** | **Fired when ...** |
 | --- | --- |
@@ -271,9 +271,9 @@ Since Release 3.2.0, all windows are heavyweight by default and you cannot contr
 
 See the [Window](#!/api/Titanium.UI.Window) reference page for more information on these special events. The Menu button is handled specially as an event fired against the Android activity. See this [Kitchen Sink example](https://github.com/appcelerator-developer-relations/KitchenSink/blob/master/Resources/ui/handheld/android/baseui/android_menu_1.js) for sample code for creating and displaying a menu.
 
-With SDK 6.0.0+, we changed how the override of a default behavior for the back button on Android works. This change requires apps using this version to override the back button to update their code when using calls like this: win.addEventListener('androidback', onBack);
+{{% alert title="⚠️ Warning" color="primary" %}}With SDK 6.0.0+, we changed how the override of a default behavior for the back button on Android works. This change requires apps using this version to override the back button to update their code when using calls like this: win.addEventListener('androidback', onBack);
 
-See [TIMOB-19919](https://jira.appcelerator.org/browse/TIMOB-19919) for more details.
+See [TIMOB-19919](https://jira.appcelerator.org/browse/TIMOB-19919) for more details.{{% /alert %}}
 
 ### Considerations and best practices
 

@@ -16,7 +16,7 @@
 
     * [Subscribe to the UIApplicationDelegate](#subscribe-to-the-uiapplicationdelegate)
 
-This document describes technologies available in Hyperloop 3.1.0+ and Titanium 7.3.0+.
+{{% alert title="💡 Hint" color="info" %}}This document describes technologies available in Hyperloop 3.1.0+ and Titanium 7.3.0+.{{% /alert %}}
 
 When developing iOS modules with Hyperloop, there are situations where you want to present a new view controller from your current context or pass your current context to a new view controller. Natively, you would usually reference "self" as its represents your current UIViewController subclass. In Titanium, your "self" is usually a Ti.UI.Window instance, which is fine for Titanium development, but cannot be used in native development.
 
@@ -124,7 +124,7 @@ Ti.API.info('UUID: ' + remoteUUID);
 
 This example shows how to subscribe to the UIApplicationDelegate in order to use the application:didFinishLaunchingWithOptions: delegate method. For more infos, see [iOS Modules - Use Native UI Application Delegates in Hyperloop and Native Modules](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyperloop/Hyperloop_Guides/iOS_Hyperloop_Programming_Guide/iOS_Modules_-_Use_Native_UI_Application_Delegates_in_Hyperloop_and_Native_Modules/).
 
-Note: Many native SDK's recommend to initialize them in this delegate. In the Titanium world, you can also do this in the open event of your initial window, which effectively does the same and is more cross-platform fashioned way of implementing this.
+{{% alert title="💡 Hint" color="info" %}}Note: Many native SDK's recommend to initialize them in this delegate. In the Titanium world, you can also do this in the open event of your initial window, which effectively does the same and is more cross-platform fashioned way of implementing this.{{% /alert %}}
 
 ```javascript
 var TiApp = require('Titanium/TiApp');

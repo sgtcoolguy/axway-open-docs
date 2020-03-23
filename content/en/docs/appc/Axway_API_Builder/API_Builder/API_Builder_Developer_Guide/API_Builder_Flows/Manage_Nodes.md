@@ -1,10 +1,10 @@
 {"title":"Manage Nodes","weight":"40"}
 
-*API Builder 3.x is deprecated*
+{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
-Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
+Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
 * [Add flow-nodes](#add-flow-nodes)
 
@@ -60,7 +60,7 @@ When you edit a selector or an output parameter. any previously used or valid se
 
 ## Connect flow-nodes
 
-All API endpoint flows begin with a default Start flow-node.
+{{% alert title="⚠️ Warning" color="primary" %}}All API endpoint flows begin with a default Start flow-node.{{% /alert %}}
 
 Start flow-nodes can only be connected to one other flow-node in the flow. To connect the output of the Start flow-node to the input of another flow-node:
 

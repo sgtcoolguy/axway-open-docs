@@ -36,7 +36,7 @@ These applications can all be imported directly from the **Samples** view in Stu
 
 This expansive sample application showcases the majority of Titanium Mobile's APIs. Starting in Titanium Release 2.1.1, the Kitchen Sink has been completely refactored to use a more modern application structure. This version of the Kitchen Sink sample does not yet support the Nook or Kindle Fire (or other Android devices that lack support for Google APIs such as location services). For these devices, there is a legacy version of the Kitchen Sink.
 
-Prior to Release 2.1.1, the KitchenSink did not represent _best practices_ and therefore its structure should **not** be used for real-world applications.
+{{% alert title="⚠️ Warning" color="primary" %}}Prior to Release 2.1.1, the KitchenSink did not represent _best practices_ and therefore its structure should **not** be used for real-world applications.{{% /alert %}}
 
 [Kitchen Sink on GitHub](http://github.com/appcelerator/KitchenSink)
 

@@ -56,7 +56,7 @@
 
 Mobile Backend Services (MBS) provides APIs for querying and searching for MBS objects. The query APIs allow you to perform custom database-style searches, while search APIs perform a full-text search using the MBS search engine.
 
-The search API is deprecated since Release 1.3.0. Applications created before Arrow Cloud Release 1.3.0 can continue to use the deprecated search API, but new applications will need to use the query API with the $text query operator.
+{{% alert title="⚠️ Warning" color="primary" %}}The search API is deprecated since Release 1.3.0. Applications created before Arrow Cloud Release 1.3.0 can continue to use the deprecated search API, but new applications will need to use the query API with the $text query operator.{{% /alert %}}
 
 ## Query API overview
 
@@ -83,11 +83,11 @@ If the query includes count=true, the response's meta-object contains a count fi
 
 #### page
 
-Starting in Mobile Backend Services (ArrowDB) 1.1.5, page and per\_page are no longer supported in query operations. Applications should instead use **skip** and **limit** query parameters.
+{{% alert title="⚠️ Warning" color="primary" %}}Starting in Mobile Backend Services (ArrowDB) 1.1.5, page and per\_page are no longer supported in query operations. Applications should instead use **skip** and **limit** query parameters.{{% /alert %}}
 
 #### per\_page
 
-Starting in Mobile Backend Services (ArrowDB) 1.1.5, page and per\_page are no longer supported in query operations. Applications should instead use **skip** and **limit** query parameters.
+{{% alert title="⚠️ Warning" color="primary" %}}Starting in Mobile Backend Services (ArrowDB) 1.1.5, page and per\_page are no longer supported in query operations. Applications should instead use **skip** and **limit** query parameters.{{% /alert %}}
 
 #### limit
 
@@ -833,7 +833,7 @@ $ curl -X GET -d 'where={"_id":{"$gt":"5446d5d980e61e0826000093", "$lt":"5447eff
 
 ## Search API overview
 
-The search API is deprecated since Release 1.3.0. Applications created before Arrow Cloud Release 1.3.0 can continue to use the deprecated search API, but new applications will need to use the query API with the $text query operator.
+{{% alert title="⚠️ Warning" color="primary" %}}The search API is deprecated since Release 1.3.0. Applications created before Arrow Cloud Release 1.3.0 can continue to use the deprecated search API, but new applications will need to use the query API with the $text query operator.{{% /alert %}}
 
 Several MBS objects provide a search API that performs a case-insensitive, full-text search of the given keywords on a list of predefined fields. Please refer to individual object's API documentation for a list of searchable fields. For instance, the [Places.search](/arrowdb/latest/#!/api/Places-method-search) method will search within [Places.name](/arrowdb/latest/#!/api/Places-property-name) and [Places.tags](/arrowdb/latest/#!/api/Places-property-tags).
 

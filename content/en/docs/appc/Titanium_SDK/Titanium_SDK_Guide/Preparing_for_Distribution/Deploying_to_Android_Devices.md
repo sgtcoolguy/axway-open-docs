@@ -58,7 +58,7 @@ For Android 4.2 and later devices, you need to enable **Developer options** by o
 
 10. Back out of or close **Settings**.
 
-These configuration settings are the default Android settings. Some options may not appear or you may need to configure other manufacturer-specific settings.
+{{% alert title="⚠️ Warning" color="primary" %}}These configuration settings are the default Android settings. Some options may not appear or you may need to configure other manufacturer-specific settings.{{% /alert %}}
 
 ### Install the USB driver (Windows only)
 

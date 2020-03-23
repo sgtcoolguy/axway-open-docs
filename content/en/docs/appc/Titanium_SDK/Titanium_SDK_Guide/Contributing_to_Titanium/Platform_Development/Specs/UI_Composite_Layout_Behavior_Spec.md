@@ -270,7 +270,7 @@ Views are logically grouped into either SIZE or FILL for their auto behavior. Wi
 
 If layout parameter values are undefined, then this means that they need to be computed based on existing values if possible, and if not, then have some sensible default.
 
-**The layout parameters themselves will not actually change value, the dynamic APIs** rect **and** size **will contain the actual system values.**
+{{% alert title="⚠️ Warning" color="primary" %}}**The layout parameters themselves will not actually change value, the dynamic APIs** rect **and** size **will contain the actual system values.**{{% /alert %}}
 
 * width : implicit based on horizontal pins (left, center.x, right)
 

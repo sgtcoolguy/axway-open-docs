@@ -26,7 +26,7 @@ Alternatively, you can install the Android NDK to your own custom location by do
 
 If you've downloaded the Android NDK, simply expand the archive in the folder where you want to install it.
 
-The path to the NDK must not contain spaces or special characters, such as a dollar sign, ampersand, etc.
+{{% alert title="❗️ Warning" color="danger" %}}The path to the NDK must not contain spaces or special characters, such as a dollar sign, ampersand, etc.{{% /alert %}}
 
 After installing the NDK, define an environment variable identifying the path to the NDK. For example,
 on OS X, you might add the following to your .bash\_profile:

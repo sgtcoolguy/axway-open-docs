@@ -173,7 +173,7 @@ When downloading files, keep in mind the locations on the device you can access 
 
 * **Ti.Filesystem.externalStorageDirectory**: A read-write directory on the external storage device (SD card) accessible by your app, if such a location exists. Check first with Ti.Filesystem.isExternalStoragePresent() (which returns a Boolean).
 
-The Ti.Filesystem.resourcesDirectory is read-only on a device, but is read/write in the simulator/emulator.
+{{% alert title="⚠️ Warning" color="primary" %}}The Ti.Filesystem.resourcesDirectory is read-only on a device, but is read/write in the simulator/emulator.{{% /alert %}}
 
 #### Monitoring download progress
 

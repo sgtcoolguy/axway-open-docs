@@ -88,7 +88,7 @@ Session length is calculated based on the following user actions:
 
 * Resuming an application that was in the background, and closing it
 
-If the application was placed in the background and resumed within the timeout value (default is 30 seconds), both events are canceled, and the previous session remains active.
+{{% alert title="⚠️ Warning" color="primary" %}}If the application was placed in the background and resumed within the timeout value (default is 30 seconds), both events are canceled, and the previous session remains active.{{% /alert %}}
 
 In the Platform view:
 
@@ -192,7 +192,7 @@ The **Custom Queries** tab enables you to create and view queries. For additiona
 
 ![custom_queries_latest](/Images/appc/download/attachments/60145251/custom_queries_latest.png)
 
-Once custom queries are created for the application, the **Custom Queries** tab will display a preview for each created custom query.
+{{% alert title="⚠️ Warning" color="primary" %}}Once custom queries are created for the application, the **Custom Queries** tab will display a preview for each created custom query.{{% /alert %}}
 
 ## Analytics tab for Mobile Backend Services
 

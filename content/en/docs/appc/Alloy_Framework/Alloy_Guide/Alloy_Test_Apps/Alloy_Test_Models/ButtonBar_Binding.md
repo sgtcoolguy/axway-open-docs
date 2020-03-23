@@ -2,9 +2,9 @@
 
 Demonstrates how you can use data binding to populate the list of buttons in a ButtonBar or TabbedBar, or Toolbar component.
 
-*App Folder Location*
+{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
 
-alloy/test/apps/**models/binding\_bars**
+alloy/test/apps/**models/binding\_bars**{{% /alert %}}
 
 ![screenshot](/Images/appc/download/attachments/41846546/screenshot.png)
 

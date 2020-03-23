@@ -20,7 +20,7 @@
 
 Appcelerator Analytics collects real-time data about your application's usage, which can then be viewed in the **[Analytics dashboard](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Client_Applications/#viewing-real-time-and-aggregated-analytics)**. By default, the Analytics dashboard provides information about app installs, the number of sessions, and average app session length (organized by app name, platform, and geography). Your app can also utilize custom analytic events and event funnels.
 
-This document provides an overview of the features provided by Analytics and how to use them using the Titanium SDK. **If you are developing an iOS application with Objective-C or Swift or an Android application with Java**, see [APS Analytics for iOS](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_iOS/APS_Analytics_for_iOS/) or [APS Analytics for Android](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_Android/APS_Analytics_for_Android/) for details on using Analytics.
+{{% alert title="⚠️ Warning" color="primary" %}}This document provides an overview of the features provided by Analytics and how to use them using the Titanium SDK. **If you are developing an iOS application with Objective-C or Swift or an Android application with Java**, see [APS Analytics for iOS](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_iOS/APS_Analytics_for_iOS/) or [APS Analytics for Android](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_Android/APS_Analytics_for_Android/) for details on using Analytics.{{% /alert %}}
 
 For platform-specific details about how analytics captured, see [Analytics Architecture](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/Analytics_Architecture/).
 
@@ -61,7 +61,7 @@ Next steps
 
 * Create [event funnels](#CreatingandViewingEventFunnels) to analyze a specific process better
 
-Enabling Appcelerator Services modifies your project's tiapp.xml file and other application files. Do not modify these code changes as it may break your project. See [Platform Services](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Platform_Services/) for details on what changes are made to your code.
+{{% alert title="⚠️ Warning" color="primary" %}}Enabling Appcelerator Services modifies your project's tiapp.xml file and other application files. Do not modify these code changes as it may break your project. See [Platform Services](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Titanium_Development/Platform_Services/) for details on what changes are made to your code.{{% /alert %}}
 
 ## Creating custom events
 
@@ -142,8 +142,7 @@ When you create an event funnel in Dashboard, you select the events you want to 
 
 6. Drag two or more custom events from the left column to the right column. Enter the name of an event in the Custom Events text field to filter available events by name.
 
-    To get custom events to appear on this list, you must build your application and trigger each event to ensure that the events are registered with the analytics engine.
-
+    {{% alert title="⚠️ Warning" color="primary" %}}To get custom events to appear on this list, you must build your application and trigger each event to ensure that the events are registered with the analytics engine.{{% /alert %}}
 7. To re-order an event, drag its reorder control up or down in the event list. Keep in mind that the order of the events you include is significant in terms of how the event funnel data is analyzed and presented.
 
 8. Remove an event by clicking the '**X**'  next to its name.

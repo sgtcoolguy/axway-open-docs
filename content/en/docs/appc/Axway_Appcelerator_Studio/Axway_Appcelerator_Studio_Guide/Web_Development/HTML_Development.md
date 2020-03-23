@@ -32,7 +32,7 @@ Once you type in a project name, a 'Next' button is enabled to allow you to sele
 
 <table class="confluenceTable"><thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "><tr><td class="confluenceTd" rowspan="1" colspan="1"><p><img src="images/download/attachments/30083084/html_project_templates.jpg" alt="images/download/attachments/30083084/html_project_templates.jpg" class="confluence-embedded-image image-left"></p></td></tr></tbody></table>
 
-Some of those templates will actually call a 'git clone' command to grab the latest project content from a remote site.
+{{% alert title="⚠️ Warning" color="primary" %}}Some of those templates will actually call a 'git clone' command to grab the latest project content from a remote site.{{% /alert %}}
 
 ### Creating a project using the import wizard
 

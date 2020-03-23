@@ -18,9 +18,7 @@ Titanium SDK 8.2.1 is a patch release of the SDK, addressing high-priority issue
 
 As of this GA release, the previous Titanium SDK patch release is no longer supported. End of support for this version will be 2020-04-25 or until the next patch release. Note: major and minor releases continue to be supported according to their nominal lifetime. See [Axway Appcelerator Deprecation Policy](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Deprecation_Policy/) and [Nominal Lifetimes](/docs/appc/AMPLIFY_Appcelerator_Services_Overview/Axway_Appcelerator_Product_Lifecycle/#nominal-lifetimes) documents for details.
 
-The latest version of Xcode (11.2.1) has introduced a breaking change to our CLI, we recommend waiting with updating Xcode until we have solved that problem, or downgrade Xcode in case you already updated. You can download Xcode 11.1 from the [Apple Developer site](https://developer.apple.com).
-
-With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. Node 10.13.0 will be the new minimum supported version with SDK 9.0.0.
+{{% alert title="❗️ Warning" color="danger" %}}The latest version of Xcode (11.2.1) has introduced a breaking change to our CLI, we recommend waiting with updating Xcode until we have solved that problem, or downgrade Xcode in case you already updated. You can download Xcode 11.1 from the [Apple Developer site](https://developer.apple.com).{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}With the release of Titanium SDK 9.0.0, we will no longer support Node.js 8.X. Node 10.13.0 will be the new minimum supported version with SDK 9.0.0.{{% /alert %}}
 
 ## New features
 

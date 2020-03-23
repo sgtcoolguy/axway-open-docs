@@ -16,7 +16,7 @@ In this chapter, we'll dig deep into the Ti.App.Properties API. You'll learn how
 
 Both iOS and Android store app properties in special files on the filesystem. Natively, iOS properties are known as NSUserDefaults, which are stored in .plist files in the application's library directory. Android stores them in standard xml text files at /data/data/com.domainname.appname/shared\_prefs/titanium.xml. Titanium provides a uniform means to set and get app properties via the Titanium.App.Properties API.
 
-There isn't a specific limit on the amount of data you can store in properties. However, an application's property data is loaded into memory as the application launches, and exists there until it closes. This allows very rapid access to it, but at the cost of the increased baseline memory used by the application.
+{{% alert title="⚠️ Warning" color="primary" %}}There isn't a specific limit on the amount of data you can store in properties. However, an application's property data is loaded into memory as the application launches, and exists there until it closes. This allows very rapid access to it, but at the cost of the increased baseline memory used by the application.{{% /alert %}}
 
 ### Reading and Writing Properties
 

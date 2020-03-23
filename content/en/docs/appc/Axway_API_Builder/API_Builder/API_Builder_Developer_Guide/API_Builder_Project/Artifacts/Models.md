@@ -1,10 +1,10 @@
 {"title":"Models","weight":"10"}
 
-*API Builder 3.x is deprecated*
+{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
 
 Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
-Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.
+Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
 * [Introduction](#introduction)
 
@@ -66,8 +66,7 @@ To create a new model using the GUI:
 
 7. If the field isn't needed, you can remove it by clicking on the trashcan icon at the end of the field row.
 
-    There is no warning for deleting a field. Once you delete the field, you will not be prompted for a confirmation of the action.
-
+    {{% alert title="⚠️ Warning" color="primary" %}}There is no warning for deleting a field. Once you delete the field, you will not be prompted for a confirmation of the action.{{% /alert %}}
 8. Click the **Next >** button.
 
 9. Optional: on the endpoint generation page, select the methods that will be automatically generated for the API endpoints. When you click **Next**, you are brought to the API generation page where you can optionally generate an API definition for your new model, and choose the method(s) that you wish to generate. To generate API endpoints:

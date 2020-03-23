@@ -22,7 +22,7 @@
 
 The Studio .log file records most application exceptions that occur while you are using the Studio application, and is helpful to the Studio development team in troubleshooting bugs that you may encounter during normal usage.
 
-_Always_ file a Studio Log when reporting an issue in the bug tracker
+{{% alert title="💡 Hint" color="info" %}}_Always_ file a Studio Log when reporting an issue in the bug tracker{{% /alert %}}
 
 ## Accessing the Log
 

@@ -64,13 +64,13 @@ The **Cloud Capacity and Mobile Services** section provides the current usage of
 
 The _Choose Plan_ page provides the options to downgrade or upgrade your plan based on your team's development preferences. The Choose Plan page includes the **Application Development**, **Runtime Services**, **Mobile Backend Services**, and **Application Integration** tabs. As you make adjustments to your plan or select another plan, items and costs are added to your cart. To view your total additional costs or to check out, click the **View Cart** button.
 
-Enterprise organizations with child organizations cannot be downgraded.
+{{% alert title="⚠️ Warning" color="primary" %}}Enterprise organizations with child organizations cannot be downgraded.{{% /alert %}}
 
 ### Application Development
 
 The **Application Development** tab enables you to select a seat or seats that enable you to build, manage, and monitor cross-platform applications.
 
-The **Application Development** tab is displayed as the **Application Development** expandable section at lower screen resolutions.
+{{% alert title="⚠️ Warning" color="primary" %}}The **Application Development** tab is displayed as the **Application Development** expandable section at lower screen resolutions.{{% /alert %}}
 
 ![application_development](/Images/appc/download/attachments/60145220/application_development.png)
 
@@ -126,7 +126,7 @@ To compare the options between the Indie, Pro, and Enterprise plans, select **Co
 
 The **Runtime Services** tab includes the Run APIs and Microservices and Enterprise Cloud Capacity and Support sections.
 
-The **Runtime Services** tab is displayed as the **Runtime Services** expandable section at lower screen resolutions.
+{{% alert title="⚠️ Warning" color="primary" %}}The **Runtime Services** tab is displayed as the **Runtime Services** expandable section at lower screen resolutions.{{% /alert %}}
 
 ![runtime_services](/Images/appc/download/attachments/60145220/runtime_services.png)
 
@@ -158,7 +158,7 @@ To request additional information on enterprise plans or to customize your curre
 
 The **Mobile Backend Services** tab includes the Mobile Backend Services and Enterprise Cloud Capacity and Support sections.
 
-The **Mobile Backend Services** tab is displayed as the **Mobile Backend Services** expandable section at lower screen resolutions.
+{{% alert title="⚠️ Warning" color="primary" %}}The **Mobile Backend Services** tab is displayed as the **Mobile Backend Services** expandable section at lower screen resolutions.{{% /alert %}}
 
 ![mobile_backend_services](/Images/appc/download/attachments/60145220/mobile_backend_services.png)
 
@@ -198,7 +198,7 @@ To request additional information on enterprise plans or to customize your curre
 
 The **Application Integration** tab enables you to select a plan that provides everything you need to integrate cloud and on-premises systems.
 
-The **Application Integration** tab is displayed as the Application Integration  expandable section at lower screen resolutions.
+{{% alert title="⚠️ Warning" color="primary" %}}The **Application Integration** tab is displayed as the Application Integration  expandable section at lower screen resolutions.{{% /alert %}}
 
 ![application_integration](/Images/appc/download/attachments/60145220/application_integration.png)
 

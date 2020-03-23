@@ -6,7 +6,7 @@ This guide introduces the Appcelerator Platform and walks through the steps of s
 
 If you are developing native Android application with Java or native iOS application with Objective-C, see the [AMPLIFY Appcelerator Services Native SDKs](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/) to get started with integrating Appcelerator Platform services with your application.
 
-Appcelerator Platform is available as a service referred as App Builder through the AMPLIFY platform.
+{{% alert title="⚠️ Warning" color="primary" %}}Appcelerator Platform is available as a service referred as App Builder through the AMPLIFY platform.{{% /alert %}}
 
 ## Appcelerator Platform
 

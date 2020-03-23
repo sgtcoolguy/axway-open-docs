@@ -190,7 +190,7 @@ These steps will show you how to create a label element from the Outline view an
 
 We should now have a nicely positioned prominent title label for our app that reads App Designer. There are a bazillion properties, methods, and events you can apply to your elements. As you can see in the textAlign parameter, we used the text align property from the Titanium.UI.Label module. More UI label modules can be found in the [Titanium.UI](#!/api/Titanium.UI) documentation.
 
-If a change in a parameter's value doesn't trigger a change to the displayed element, you may need to complete the value change by hitting enter or by clicking onto a different part of the window.
+{{% alert title="⚠️ Warning" color="primary" %}}If a change in a parameter's value doesn't trigger a change to the displayed element, you may need to complete the value change by hitting enter or by clicking onto a different part of the window.{{% /alert %}}
 
 ![image2016-5-11_14_22_5](/Images/appc/download/attachments/46249378/image2016-5-11_14_22_5.png) Label element
 

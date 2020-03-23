@@ -1,6 +1,6 @@
 {"title":"Appcelerator Studio Release Notes","weight":"50"}
 
-This is the old page for the Appcelerator Studio Release Notes.
+{{% alert title="❗️ Warning" color="danger" %}}This is the old page for the Appcelerator Studio Release Notes.{{% /alert %}}
 
 This page will be redirected to [Axway Appcelerator Studio Release Notes](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Release_Notes/) in 3 seconds.
 

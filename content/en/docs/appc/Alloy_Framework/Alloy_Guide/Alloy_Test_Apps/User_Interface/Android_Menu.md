@@ -2,9 +2,9 @@
 
 Demonstrates basic use of Menu and MenuItem objects to display items in the Android action bar.
 
-*Example App Source Location*
+{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
 
-You can find this example app in the Alloy repository under [samples/apps/ui/android\_menu](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/android_menu). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [samples/apps/ui/android\_menu](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/android_menu). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 The [Menu](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Android.Menu) and [MenuItem](#!/api/Titanium.Android.Menu) elements let you add items to the Android [action bar](http://developer.android.com/guide/topics/ui/actionbar.html), a window feature that identifies the user location, and provides user actions and navigation modes.
 

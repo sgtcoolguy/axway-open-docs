@@ -2,9 +2,9 @@
 
 Demonstrates how to use a PopOver control iPad devices to present temporary information.
 
-*Example App Source Location*
+{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
 
-You can find this example app in the Alloy repository under [samples/apps/ui/popover](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/popover). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.
+You can find this example app in the Alloy repository under [samples/apps/ui/popover](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/popover). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 ![popover](/Images/appc/download/attachments/41845765/popover.gif)
 

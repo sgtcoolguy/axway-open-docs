@@ -14,7 +14,7 @@
 
 Before you can debug your JavaScript code in Studio, you will need to install the Debugger extension into your web browser. (Currently, the debugger is only available for Firefox and Internet Explorer. In the future, it will be available for other web browsers.)
 
-If you are having trouble updating or installing the debugger and have an old version of the Aptana debugger installed, try uninstalling your old debugger before installing the new version. See [Uninstalling the debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Uninstalling_the_debugger/) for instructions.
+{{% alert title="⚠️ Warning" color="primary" %}}If you are having trouble updating or installing the debugger and have an old version of the Aptana debugger installed, try uninstalling your old debugger before installing the new version. See [Uninstalling the debugger](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/JavaScript_Development/Debugging_JavaScript/Uninstalling_the_debugger/) for instructions.{{% /alert %}}
 
 ## Instructions for Firefox
 

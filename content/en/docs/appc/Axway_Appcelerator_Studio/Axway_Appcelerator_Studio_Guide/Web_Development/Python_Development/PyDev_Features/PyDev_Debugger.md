@@ -24,11 +24,11 @@ If everything goes ok, you'll have the breakpoint shown in your sidebar (as belo
 
 **Image:** Breakpoint added
 
-If you are putting the breakpoint in an external file (for example, some file in the site-packages), the left ruler will not appear, so you'll not see the breakpoint. That's an Eclipse bug in version 3.1. It appears to be fixed for Eclipse 3.2, but as Eclipse 3.2 currently only has only 'development' releases, it is unsupported.
+{{% alert title="⚠️ Warning" color="primary" %}}If you are putting the breakpoint in an external file (for example, some file in the site-packages), the left ruler will not appear, so you'll not see the breakpoint. That's an Eclipse bug in version 3.1. It appears to be fixed for Eclipse 3.2, but as Eclipse 3.2 currently only has only 'development' releases, it is unsupported.{{% /alert %}}
 
 Now, to run that file, you can right-click the file and choose to debug the file as a 'python run'.
 
-If you want to re-run the last executed file, you can click **F11** to debug it.
+{{% alert title="⚠️ Warning" color="primary" %}}If you want to re-run the last executed file, you can click **F11** to debug it.{{% /alert %}}
 
 ![debugger4](/Images/appc/pydev.org/images/debugger/debugger4.png)
 

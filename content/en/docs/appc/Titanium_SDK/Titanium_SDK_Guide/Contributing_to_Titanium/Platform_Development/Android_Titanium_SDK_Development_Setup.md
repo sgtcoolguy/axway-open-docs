@@ -36,7 +36,7 @@ This is a guide to setup the Android development environment to develop for Tita
 
 ## Getting started
 
-ADT has been discontinued and we don't recommend using it.
+{{% alert title="❗️ Warning" color="danger" %}}ADT has been discontinued and we don't recommend using it.{{% /alert %}}
 
 1. Make sure you have the environment setup to build Titanium Mobile: [Building the Titanium SDK From Source](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Contributing_to_Titanium/Platform_Development/Building_the_Titanium_SDK_From_Source/)
 

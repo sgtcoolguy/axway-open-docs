@@ -2,9 +2,9 @@
 
 Demonstrates how to structure an Alloy project with folders that contains platform-specific views.
 
-*App folder location*
+{{% alert title="💡 Hint" color="info" %}}*App folder location*
 
-_alloy_/test/apps/**advanced/platform\_folders**
+_alloy_/test/apps/**advanced/platform\_folders**{{% /alert %}}
 
 You can define platform-specific resources in an Alloy project, including controllers, views and styles. Simply create a folder named **android** or **ios** inside the app/controllers, app/views, or app/styles folders, and add your platform specific files. The sample application uses this feature to display a scrollable list of images using [CoverFlowView](#!/api/Titanium.UI.iOS.CoverFlowView) component for iOS builds, and a [ScrollView](#!/api/Titanium.UI.ScrollView) for other platform builds.
 

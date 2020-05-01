@@ -2,9 +2,7 @@
 
 Demonstrates use of several built-in libraries included with Alloy that simplify certain functions, such as animations, string manipulation and display unit conversion.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-[alloy/samples/apps/**basics/builtins**](https://github.com/appcelerator/alloy/tree/master/samples/apps/basics/builtins){{% /alert %}}
+{{% alert title="💡 App Folder Location" color="info" %}}[alloy/samples/apps/**basics/builtins**](https://github.com/appcelerator/alloy/tree/master/samples/apps/basics/builtins){{% /alert %}}
 
 Alloy includes several [built-in libraries](#!/api/Alloy.builtins). To use these libraries in your project, you simply use the global require() function to include them. The sample demonstrates the [animation](#!/api/Alloy.builtins.animation) built-in's shake, flash, and flip features, and the [string](#!/api/Alloy.builtins.string) built-in's trim() function.
 
@@ -12,7 +10,7 @@ Alloy includes several [built-in libraries](#!/api/Alloy.builtins). To use these
 
 The index.xml file defines the views to animate and assigns event handlers to their onClick handlers, which are defined in index.js.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -33,7 +31,7 @@ The index.xml file defines the views to animate and assigns event handlers to th
 
 The view-controller assigns the animation library to a local variable named animation and then calls its various function in response to user input.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 var animation = require('/alloy/animation'),
@@ -72,7 +70,7 @@ if (OS_IOS) {
 $.index.open();
 ```
 
-*app/styles/index.tss*
+**app/styles/index.tss**
 
 ```
 '#index': {

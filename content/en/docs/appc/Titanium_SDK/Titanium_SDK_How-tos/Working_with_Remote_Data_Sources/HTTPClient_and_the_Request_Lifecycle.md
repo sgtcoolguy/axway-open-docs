@@ -36,7 +36,7 @@ Your Titanium application can interact with remote servers over [HTTP](http://en
 
 As shown in the code example below, you declare an HTTPClient object and pass to it a number of parameters. Of these, the most critical is the onload callback function. It is the function called when data is returned and available for use. The onerror callback function is called when there's a network error, such as a timeout.
 
-*Ti.Network.HTTPClient skeleton*
+**Ti.Network.HTTPClient skeleton**
 
 ```javascript
 var url = 'https://www.appcelerator.com';
@@ -135,7 +135,7 @@ HTTPClient implements the [five XHR ready states](http://www.w3.org/TR/XMLHttpRe
 
 In code, it would look like this:
 
-*Monitoring ready state changes*
+**Monitoring ready state changes**
 
 ```javascript
 var xhr = Ti.Network.createHTTPClient({

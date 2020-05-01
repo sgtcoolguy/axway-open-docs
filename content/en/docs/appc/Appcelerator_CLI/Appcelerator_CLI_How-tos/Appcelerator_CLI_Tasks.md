@@ -192,9 +192,7 @@ appc run -p windows -C 8-1-1 -I "CN=00000000-0000-1000-8000-000000000000"
 
 If you omit any of the optional parameters, the CLI will prompt you with options.
 
-{{% alert title="⚠️ Warning" color="primary" %}}*Windows Phone Publisher GUID*
-
-Prior to Release 5.0.0, you need to pass the \-G option with your Windows Phone Publisher GUID rather than using the \-I option with your Windows Publisher ID.{{% /alert %}}
+{{% alert title="⚠️ Windows Phone Publisher GUID" color="primary" %}}Prior to Release 5.0.0, you need to pass the \-G option with your Windows Phone Publisher GUID rather than using the \-I option with your Windows Publisher ID.{{% /alert %}}
 
 #### Windows Phone device
 
@@ -212,9 +210,7 @@ appc run -p windows -T wp-device -C 0 -I "CN=00000000-0000-1000-8000-00000000000
 
 If you omit any of the optional parameters, the CLI will prompt you with options.
 
-{{% alert title="⚠️ Warning" color="primary" %}}*Windows Phone Publisher GUID*
-
-Prior to Release 5.0.0, you need to pass the \-G option with your Windows Phone Publisher GUID rather than using the \-I option with your Windows Publisher ID.{{% /alert %}}
+{{% alert title="⚠️ Windows Phone Publisher GUID" color="primary" %}}Prior to Release 5.0.0, you need to pass the \-G option with your Windows Phone Publisher GUID rather than using the \-I option with your Windows Publisher ID.{{% /alert %}}
 
 #### Windows computer
 
@@ -294,9 +290,7 @@ appc run -p windows -T dist-phonestore [-I <WINDOWS_PUBLISHER_ID> -O <OUTPUT_DIR
 
 If you omit any of the optionals parameters, the CLI will prompt you with options.
 
-{{% alert title="⚠️ Warning" color="primary" %}}*Windows Phone Publisher GUID*
-
-Prior to Release 5.0.0, you need to pass the \-G option with your Windows Phone Publisher GUID rather than using the \-I option with your Windows Publisher ID.{{% /alert %}}
+{{% alert title="⚠️ Windows Phone Publisher GUID" color="primary" %}}Prior to Release 5.0.0, you need to pass the \-G option with your Windows Phone Publisher GUID rather than using the \-I option with your Windows Publisher ID.{{% /alert %}}
 
 #### Windows Store
 

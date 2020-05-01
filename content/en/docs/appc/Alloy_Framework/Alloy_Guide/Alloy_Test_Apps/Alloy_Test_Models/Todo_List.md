@@ -2,9 +2,7 @@
 
 Demonstrates how to create a basic "Todos" application by binding a data collection to a TableView.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/models/todo{{% /alert %}}
+{{% alert title="App Folder Location" color="info" %}}alloy/test/apps/models/todo{{% /alert %}}
 
 The sample lets you add and delete items, mark items as complete, and filter the list to display all items, only active items, or just completed items.
 
@@ -20,7 +18,7 @@ The data model for each todo item consists of three fields:
 
 The todo.js model configuration file defines columns for these fields, and also extends the model with a custom validate() function that validates input, and a comparator function that's used to filter
 
-*app/models/todo.js*
+**app/models/todo.js**
 
 ```javascript
 var moment = require('alloy/moment');
@@ -71,7 +69,7 @@ exports.definition = {
 
 The main index.xml view declares the <TableView> element to display todo items, as well as UI elements to open the add item form (app/views/add.xml), and to filter the list items. The TableView's dataCollection attribute is set to the "todos" collection defined by the model configuration file. The TableViewRow used to display each row in the TableView is defined in another XML view file (app/views/rows.xml) and required by index.xml.
 
-*views/index.xml*
+**views/index.xml**
 
 ```xml
 <Alloy>
@@ -117,7 +115,7 @@ The function specified by the "dataFilter" attribute (whereFunction) filters the
 
 If whereIndex is 0 (that is, !whereIndex == true) the filter function returns all the models in the collection, represented by the Backbone [collection.models](http://backbonejs.org/#Collection-models) property. Otherwise, the Backbone [collection.where()](http://backbonejs.org/#Collection-where) function is used to only return those model items whose done value is 0 or 1, depending on the value of whereIndex.
 
-*controllers/index.js*
+**controllers/index.js**
 
 ```javascript
 function whereFunction(collection) {
@@ -137,7 +135,7 @@ function transformFunction(model) {
 
 New todo models are added to the todos collection via the addItem() method, and then saved to the SQL database. To keep the UI from updating twice, the add() method is passed silent=true in its options hash.
 
-*controllers/add.js*
+**controllers/add.js**
 
 ```javascript
 function addItem() {

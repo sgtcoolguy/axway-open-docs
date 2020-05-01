@@ -114,7 +114,7 @@ There's a large number of good references on JavaScript best practices available
 
 In a JavaScript execution context, all variables are global by default. The only means of scoping variables is to place them inside of a function. (Within a function, if you don't include the var keyword, your variables will be treated as global variables.) A much better approach than global variables/functions is to enclose all your application's API functions and properties into a single variable (namespace). This will minimize the chances of your code colliding with other code or libraries you include in the context later.
 
-*app.js*
+**app.js**
 
 ```javascript
 // BAD - we put five variables in the global scope which could be clobbered

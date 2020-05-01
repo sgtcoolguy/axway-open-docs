@@ -83,7 +83,7 @@ Using spaces to name custom events may cause issues with other JavaScript librar
 
 One of the bottlenecks of a Titanium application is JavaScript evaluation. For that reason, to speed the startup and responsiveness of your application, you should avoid loading scripts until they are absolutely needed. As in the following application, which has three windows to be opened in succession on a click (touch) event, note that the dependent JavaScript for each window is not loaded until absolutely necessary.
 
-*Lazy script loading in app.js*
+**Lazy script loading in app.js**
 
 ```javascript
 //muse be loaded at launch
@@ -108,7 +108,7 @@ win1.addEventListener('click', function() {
 
 Or, if you're not using CommonJS but building out a namespace:
 
-*Deferred loading to build a namespace*
+**Deferred loading to build a namespace**
 
 ```javascript
 var someNameSpace = function() {
@@ -179,7 +179,7 @@ if(isAndroid) {
 
 Appcelerator's primary recommended architecture a modular app architecture constructed with CommonJS modules. In fact, we have a whole Best Practices section devoted to [CommonJS Modules in Titanium](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Best_Practices_and_Recommendations/CommonJS_Modules_in_Titanium/). CommonJS modules are discrete and independent building blocks, eliminating concerns about global variables and naming conflicts. In our testing, it is a highly performant architecture compared to some other solutions. This pattern is also used by other JavaScript-based environments, such as Node.js.
 
-*MyModule.js*
+**MyModule.js**
 
 ```javascript
 // variables defined in this file are private
@@ -198,7 +198,7 @@ exports.helloWorld = function() {
 }
 ```
 
-*app.js*
+**app.js**
 
 ```javascript
 var myModule = require('/MyModule');

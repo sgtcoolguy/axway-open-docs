@@ -4,7 +4,7 @@ Alloy provides hooks to customize the compilation process using a special JavaSc
 
 Example of a JMK file:
 
-*alloy.jmk*
+**alloy.jmk**
 
 ```
 task('pre:compile', function(event, logger) {

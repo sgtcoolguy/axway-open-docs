@@ -2,9 +2,7 @@
 
 Demonstrates basic use of a DashboardView control in an Alloy application.
 
-{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
-
-You can find this example app in the Alloy repository under [samples/apps/ui/dashboard](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/dashboard). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="💡 Example App Source Location" color="info" %}}You can find this example app in the Alloy repository under [samples/apps/ui/dashboard](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/dashboard). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 The [DashboardView](#!/api/Titanium.UI.DashboardView) control presents a grid of icons, represented by [DashboardItem](#!/api/Titanium.UI.DashboardItem)s, that can reordered and deleted, similar to the iOS home screen (Springboard). Each grid icon can be assigned a numeric badge value displayed over the icon, and be assigned a select . You can configure the number of grid rows and columns. To start edit mode, a user can long-press on a icon, or the application can call the [startEditing()](#!/api/Titanium.UI.DashboardView-method-startEditing) method. The control generates several events as the user [enters](#!/api/Titanium.UI.DashboardView-event-edit) or [exits](#!/api/Titanium.UI.DashboardView-event-commit) edit mode, [deletes](#!/api/Titanium.UI.DashboardView-event-delete) or [moves](#!/api/Titanium.UI.DashboardView-event-move) an item, or [changes](#!/api/Titanium.UI.DashboardView-event-pagechanged) to another page.
 
@@ -12,7 +10,7 @@ The [DashboardView](#!/api/Titanium.UI.DashboardView) control presents a grid of
 
 The index.xml view declares a DashboardView, and defines event handlers for [click](#!/api/Titanium.UI.DashboardView-event-click), [edit](#!/api/Titanium.UI.DashboardView-event-edit) and [commit](#!/api/Titanium.UI.DashboardView-event-commit) events that are defined by the view-controller.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -39,7 +37,7 @@ The index.xml view declares a DashboardView, and defines event handlers for [cli
 
 The view-controller defines the event handler functions.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 var isEditable = false;

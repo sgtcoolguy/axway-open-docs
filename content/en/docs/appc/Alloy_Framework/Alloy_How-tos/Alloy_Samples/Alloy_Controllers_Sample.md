@@ -4,7 +4,7 @@ This document provides a sample of how to use an Alloy Controller.
 
 ## index.js
 
-*index.js*
+**index.js**
 
 ```javascript
 // These "builtin" requires will be detected by the alloy compile process.

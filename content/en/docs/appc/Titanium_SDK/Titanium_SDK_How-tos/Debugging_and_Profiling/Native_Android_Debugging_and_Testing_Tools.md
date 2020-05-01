@@ -138,7 +138,7 @@ adb logcat -s TiAPI
 
 Alternative, you can follow the Android docs which say to use the _tag_:_priority_ filtering option. This technique works just fine, but you need to include an extra argument that tells logcat to suppress all the other messages:
 
-*Displaying only Titanium logging messages*
+**Displaying only Titanium logging messages**
 
 ```
 adb logcat TiAPI:I *:S  // if you leave off the *:S you'll output the whole log
@@ -148,7 +148,7 @@ adb logcat TiAPI:I *:S  // if you leave off the *:S you'll output the whole log
 
 You can copy files to and from an emulator or device using adb and its commands. There isn't a built-in option to list the files on the device, but you can open a command shell and use a Unix-like ls command.
 
-*Listing files via the adb shell*
+**Listing files via the adb shell**
 
 ```
 adb shell
@@ -161,13 +161,13 @@ When opening a shell on the emulator, you are logged in with root (superuser) pe
 
 While you can "walk" the directory tree via the shell, you can't use it to copy files to and from the device/emulator. Instead, you'll need to use the push and pull commands.
 
-*Pushing a file to the device/emulator*
+**Pushing a file to the device/emulator**
 
 ```
 adb push foo.txt /path_on_device/foo.txt
 ```
 
-*Pulling a file from the device/emulator*
+**Pulling a file from the device/emulator**
 
 ```
 adb pull /path_on_device/foo.txt /local_path/foo.txt

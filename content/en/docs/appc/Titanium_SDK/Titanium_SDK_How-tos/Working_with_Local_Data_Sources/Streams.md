@@ -36,7 +36,7 @@ One use-case might be if you want to prepare a message in its entirety before op
 
 Here's a simple example of writing strings to a BufferStream and then reading them back.
 
-*ex01-bufferstream-create.js*
+**ex01-bufferstream-create.js**
 
 ```javascript
 // Create the buffer & stream
@@ -47,7 +47,7 @@ var stream = Titanium.Stream.createStream({
 });
 ```
 
-*ex02-bufferstream-write.js*
+**ex02-bufferstream-write.js**
 
 ```javascript
 // Write to stream in chunks, filling up "paragraph" buffer.
@@ -68,14 +68,14 @@ length += stream.write(Titanium.createBuffer({
 stream.close();
 ```
 
-*ex03-bufferstream-resetlength.js*
+**ex03-bufferstream-resetlength.js**
 
 ```javascript
 // Set the buffer length to the actual bytes written.
 paragraph.length = length;
 ```
 
-*ex04-bufferstream-create2.js*
+**ex04-bufferstream-create2.js**
 
 ```javascript
 // Read back the buffer in chunks.
@@ -88,7 +88,7 @@ stream = Titanium.Stream.createStream({
 });
 ```
 
-*ex05-bufferstream-readchunks.js*
+**ex05-bufferstream-readchunks.js**
 
 ```javascript
 // Read until end.
@@ -99,7 +99,7 @@ while ((length = stream.read(read_buffer, bytes_read, CHUNK_SIZE)) > 0) {
 };
 ```
 
-*ex07-bufferstream-decode.js*
+**ex07-bufferstream-decode.js**
 
 ```javascript
 // Get the read_buffer contents into a string.
@@ -126,7 +126,7 @@ The supported modes are Titanium.Filesystem.MODE\_READ, Titanium.Filesytem.MODE\
 
 This simple example reads and writes a file in 1K chunks rather than loading up the entirety of the file in memory. In this example we get streams by first getting <code>File</code> objects then calling their open() methods. However, in the case of the output file, we show the alternative openStream(...) method as well in a commented line.
 
-*ex01-filestream-getfile.js*
+**ex01-filestream-getfile.js**
 
 ```javascript
 // Get the source file (this one is in Resources).
@@ -137,14 +137,14 @@ if (!infile.exists()) {
 }
 ```
 
-*ex02-filestream-openread.js*
+**ex02-filestream-openread.js**
 
 ```javascript
 // Open for reading.
 var instream = infile.open(Titanium.Filesystem.MODE_READ);
 ```
 
-*ex03-filestream-getoutfile.js*
+**ex03-filestream-getoutfile.js**
 
 ```javascript
 // Get a file descriptor for output file. (Doesn't need to exist.)
@@ -152,14 +152,14 @@ var outfile =
   Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory, 'emmy_out.jpg');
 ```
 
-*ex04-filestream-openwrite.js*
+**ex04-filestream-openwrite.js**
 
 ```javascript
 // Open for writing.
 var outstream = outfile.open(Titanium.Filesystem.MODE_WRITE);
 ```
 
-*ex04a-filestream-openstream.js*
+**ex04a-filestream-openstream.js**
 
 ```javascript
 // The last two steps could have been combined into one using this code:
@@ -167,14 +167,14 @@ var outstream = outfile.open(Titanium.Filesystem.MODE_WRITE);
 // Titanium.Filesystem.openStream(Titanium.Filesystem.MODE_WRITE, Titanium.Filesystem.applicationDataDirectory, 'emmy_out.jpg');
 ```
 
-*ex05-filestream-buffer.js*
+**ex05-filestream-buffer.js**
 
 ```javascript
 // Create a 1K buffer for reading chunks.
 var buffer = Titanium.createBuffer({length: 1024});
 ```
 
-*ex06-filestream-loopreadwrite.js*
+**ex06-filestream-loopreadwrite.js**
 
 ```javascript
 // Read and write chunks.
@@ -185,7 +185,7 @@ while ((size = instream.read(buffer)) > -1) {
 }
 ```
 
-*ex07-filestream-cleanup.js*
+**ex07-filestream-cleanup.js**
 
 ```javascript
 // Cleanup.
@@ -201,7 +201,7 @@ The BlobStream is a read-only stream that provides you with the ability to read 
 
 In this example, we use [Titanium.Media.showCamera](#!/api/Titanium.Media-method-showCamera) to take a photo and stream its bytes to a file.
 
-*ex01-blobstream-full.js*
+**ex01-blobstream-full.js**
 
 ```javascript
 Ti.Media.showCamera({

@@ -58,4 +58,4 @@ To change your preferences so that Studio asks you to choose your workspace on s
 
 If you move your workspace folder, any changes made to preferences are lost but are easily restored by transferring the .metadata folder from your old workspace to the same place in your new workspace folder:
 
-\\Workspace\\.metadata\\.plugins\\org.eclipse.core.runtime\\.settings
+{{% alert color="info" %}}\\Workspace\\.metadata\\.plugins\\org.eclipse.core.runtime\\.settings{{% /alert %}}

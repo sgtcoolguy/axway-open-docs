@@ -2,15 +2,13 @@
 
 Demonstrates using a native module in an Alloy application, in this case the Paint module provided by Appcelerator.
 
-{{% alert title="💡 Hint" color="info" %}}*App folder location*
-
-_alloy_/test/apps/**advanced/native\_modules**{{% /alert %}}
+{{% alert title="💡 App folder location" color="info" %}}_alloy_/test/apps/**advanced/native\_modules**{{% /alert %}}
 
 ![ti.paint](/Images/appc/download/attachments/41845669/ti.paint.png)
 
 The native\_module sample app is configured to use the [Paint module](https://marketplace.axway.com/apps/4977#!overview) provided by Appcelerator. To use a module in an Alloy project, simply add it to an existing Alloy view using a <Module/> element, specifying the module's ID. The element's method parameter specifies the method that will be invoked on the module to initialize it. If no method is specified the module's createView() method will be invoked, by default. The ti.paint module's create method is called createPaintView().
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>

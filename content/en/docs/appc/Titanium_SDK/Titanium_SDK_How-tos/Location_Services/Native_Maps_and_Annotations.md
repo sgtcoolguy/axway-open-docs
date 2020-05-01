@@ -88,9 +88,7 @@ As seen above, those few lines of code generate native maps on both iOS and Andr
 
 * userLocation - A boolean that indicates if the map should show the user's current device location as a pin on the map
 
-{{% alert title="⚠️ Warning" color="primary" %}}*Android MapView Limitation*
-
-On Android, only a **single** map view is supported per application. Adding a second map view to an application results in an exception being thrown.{{% /alert %}}
+{{% alert title="⚠️ Android MapView Limitation" color="primary" %}}On Android, only a **single** map view is supported per application. Adding a second map view to an application results in an exception being thrown.{{% /alert %}}
 
 There are 2 more components that add a significant amount of functionality to your mapViews. They are annotations and routes. They allow us to add places of interest to our maps as well as plot paths between them. We'll address each in the following sections. But let's first discuss how we can handle events on our basic MapView.
 

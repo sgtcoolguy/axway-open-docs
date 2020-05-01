@@ -50,7 +50,7 @@ Giving your documents a logical structure in the form of section headings makes 
 
 The info, note, tip and warning panels are great for bringing the user's attention to something outside the main flow of the text.
 
-{{% alert title="💡 Hint" color="info" %}}A tangental point, related to the main text, that the reader may find useful{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}A related point that should be noted or emphasized{{% /alert %}}{{% alert title="✅" color="success" %}}A relevant suggestion that may make life easier for the user{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}A related issue or gotcha that the user should be aware about{{% /alert %}}
+{{% alert title="💡 Hint" color="info" %}}A tangental point, related to the main text, that the reader may find useful{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}A related point that should be noted or emphasized{{% /alert %}}{{% alert title="✅ " color="success" %}}A relevant suggestion that may make life easier for the user{{% /alert %}}{{% alert title="❗️ Warning" color="danger" %}}A related issue or gotcha that the user should be aware about{{% /alert %}}
 
 ## Use the code macro for syntax highlighting
 

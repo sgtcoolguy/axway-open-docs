@@ -259,9 +259,7 @@ To use a third-party framework in your module, add the framework to the module's
 
 9. **Build your project** in Xcode to verify it will compile and link correctly.
 
-{{% alert title="💡 Hint" color="info" %}}*Stripping unused architectures from dynamic frameworks*
-
-For a proper app store submission, all used dynamic frameowrks in the final app need to be stripped of unused architechtures. To do so, our SDK will automatically integrate Realm's popular [strip-frameworks.sh](https://github.com/realm/realm-cocoa/blob/master/scripts/strip-frameworks.sh) script into the Xcode project. If any of the frameworks used in your module needs additional handling or scripts, you can instruct your users to create a custom script under platform/ios/strip-frameworks.sh inside the app project. If this file is present, the pre-bundled script from Realm will be ignored and the script inside the project will be used instead.{{% /alert %}}
+{{% alert title="💡 Stripping unused architectures from dynamic frameworks" color="info" %}}For a proper app store submission, all used dynamic frameowrks in the final app need to be stripped of unused architechtures. To do so, our SDK will automatically integrate Realm's popular [strip-frameworks.sh](https://github.com/realm/realm-cocoa/blob/master/scripts/strip-frameworks.sh) script into the Xcode project. If any of the frameworks used in your module needs additional handling or scripts, you can instruct your users to create a custom script under platform/ios/strip-frameworks.sh inside the app project. If this file is present, the pre-bundled script from Realm will be ignored and the script inside the project will be used instead.{{% /alert %}}
 
 ## Bundle module assets
 

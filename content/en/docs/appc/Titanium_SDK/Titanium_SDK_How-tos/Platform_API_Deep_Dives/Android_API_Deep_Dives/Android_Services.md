@@ -123,7 +123,7 @@ if (intent.hasExtra(Ti.Android.EXTRA_TEXT) && (extra = intent.getStringExtra(Ti.
 
 The example below demonstrates the usage of some of the service APIs. The service monitors some of its events and stops itself after ten iterations.
 
-*someService.js*
+**someService.js**
 
 ```javascript
 // Grab a reference to the service and its intent
@@ -169,7 +169,7 @@ For both started and bound services, you need to declare the JavaScript file as 
 
 2. For each service, add a <service> element as a child of the <services> element. Set the url attribute to the URL of the JavaScript file and the type attribute to interval. Currently, interval is the only supported type, which indicates the code will be run at intervals. The interval is set when creating the service intent.
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <ti:app>

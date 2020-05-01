@@ -44,7 +44,7 @@ You first need to register an App ID for your application.
 
 6. In the the **App ID Suffix** section, select **Explicit App ID** and enter your application's ID.
 
-    {{% alert title="✅" color="success" %}}This is the value of the <id> element in your project's **tiapp.xml** file.{{% /alert %}}
+    {{% alert title="✅ " color="success" %}}This is the value of the <id> element in your project's **tiapp.xml** file.{{% /alert %}}
 7. Under **App Services**, check the **Push Notifications** checkbox.
 
 8. Click **Continue**, **Submit**, and **Done** to complete the process.

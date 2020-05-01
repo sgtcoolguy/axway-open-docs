@@ -2,9 +2,7 @@
 
 Demonstrates use of the Alloy configuration file.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**basics/config\_json**{{% /alert %}}
+{{% alert title="💡 App Folder Location" color="info" %}}alloy/test/apps/**basics/config\_json**{{% /alert %}}
 
 The Alloy configuration file is named config.json and located in the Alloy project's app directory. It's used to specify global variables, conditional environment and platform values, and widget dependencies. For a list of supported configuration values, see [Project Configuration File](/docs/appc/Alloy_Framework/Alloy_How-tos/Alloy_Reference_Guides/Project_Configuration_File_(config.json)/).
 
@@ -12,7 +10,7 @@ The Alloy configuration file is named config.json and located in the Alloy proje
 
 At runtime, you can access a configuration file property by its key name on the global Alloy.CFG object. For instance, in the sample app configuration file defines a global property named **someValue** that's defined for all environments and platforms, and for individual platforms.
 
-*apps/config.json*
+**apps/config.json**
 
 ```json
 {
@@ -27,7 +25,7 @@ At runtime, you can access a configuration file property by its key name on the 
 
 The main XML view contains a <Button/> element whose click handler displays the value of Alloy.CFG.someValue, whose value depends on the runtime platform.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 function showAlert(e) {

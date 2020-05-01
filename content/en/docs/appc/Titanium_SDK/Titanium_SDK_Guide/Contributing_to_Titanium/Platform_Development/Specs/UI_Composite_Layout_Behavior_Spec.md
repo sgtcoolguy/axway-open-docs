@@ -322,7 +322,7 @@ For clarity, scrollview contentWidth and contentHeight behave as if they were se
 
 Each of these examples contrast the way something is done today ("old") with the way it will be done with the new dynamic size / rect properties, and batch updating semantics ("new").
 
-*Updating Layout Parameters*
+**Updating Layout Parameters**
 
 ```
 // [old] changes the top and left of the view directly, re-layout twice
@@ -341,7 +341,7 @@ view.updateLayout({
 });
 ```
 
-*Get Native and Model parameters*
+**Get Native and Model parameters**
 
 ```
 view.width = 100;

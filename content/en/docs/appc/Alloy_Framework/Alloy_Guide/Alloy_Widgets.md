@@ -48,7 +48,7 @@ The main controller is called widget.js instead of index.js.
 
 To use another view-controller besides widget.js/widget.xml, use the Widget.createController(controller\_name, \[params\]) method to create a new instance of the controller and the getView() method to access the Titanium proxy object. For example, suppose you have a button view-controller in your foo widget. To add it to the main widget view:
 
-*app/widgets/foo/controllers/widget.js*
+**app/widgets/foo/controllers/widget.js**
 
 ```javascript
 var button = Widget.createController('button').getView();
@@ -134,7 +134,7 @@ Ti.API.info("button state: " + $.foo.button.enabled);
 
 For widgets that have multiple view-controllers, to include a widget's view-controller in another widget's view, use the Widget tag and assign the name attribute with the name of the view-controller minus the file extension. Since Alloy 1.5.0, if you omit the src attribute, Alloy assumes you are referencing the current widget. For Alloy 1.4.x and prior, you need to assign the src attribute to the widget's name. For example, the following markup is analogous to the example in the Controller section:
 
-*app/widgets/foo/views/widget.xml*
+**app/widgets/foo/views/widget.xml**
 
 ```xml
 <Alloy>

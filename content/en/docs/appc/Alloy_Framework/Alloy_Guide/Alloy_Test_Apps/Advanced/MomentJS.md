@@ -2,9 +2,7 @@
 
 Demonstrates how to use the built-in [Moment.js](http://momentjs.com/) library in your Alloy application to format a date for different locales. Moment.js is a full featured date library for parsing, validating, manipulating, and formatting dates.
 
-{{% alert title="💡 Hint" color="info" %}}*App folder location*
-
-_alloy_/test/apps/**advanced/momentjs**{{% /alert %}}
+{{% alert title="💡 App folder location" color="info" %}}_alloy_/test/apps/**advanced/momentjs**{{% /alert %}}
 
 ![moment](/Images/appc/download/attachments/41845667/moment.png)
 
@@ -32,7 +30,7 @@ To properly run the sample, in addition to importing the provided sample code, y
 
 The only view in the application just contains three Label elements. Clicking anywhere on the Window invokes the changeLanguage() function, defined by the view-controller.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -48,7 +46,7 @@ The main view-controller requires the Moment.js library (require('alloy/moment')
 
 To change the locale globally, the application calls the moment.lang() function, passing it the new language code.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 var moment = require('alloy/moment');

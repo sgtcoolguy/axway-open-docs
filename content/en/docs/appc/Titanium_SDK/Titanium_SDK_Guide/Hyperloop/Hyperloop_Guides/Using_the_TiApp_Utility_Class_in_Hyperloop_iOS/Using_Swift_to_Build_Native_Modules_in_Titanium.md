@@ -42,7 +42,7 @@ When it comes to method naming conventions, the concepts that you may be used to
 
 Important to know is that every Swift-based method that you want to call from your Titanium application needs to be annotated with the @objc() attribute:
 
-*TiTestModule.swift*
+**TiTestModule.swift**
 
 ```swift
 @objc(post:)
@@ -57,7 +57,7 @@ func post(args: [Any]?) {
 
 In the above example, we are writing a method named "post()" that can be accessed from the module (assuming it is called "ti.test") as the following:
 
-*index.js*
+**index.js**
 
 ```javascript
 import Test from 'ti.test'; // ES6+ imports!

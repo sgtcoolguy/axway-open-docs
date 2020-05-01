@@ -74,9 +74,7 @@ When the Link Projects option is selected, the files are not copied to the works
 
 ![DragNDropImport](/Images/appc/download/attachments/30083309/DragNDropImport.png)
 
-{{% alert title="⚠️ Warning" color="primary" %}}*Import Error*
-
-If you receive the error, "Invalid project, could not find .project file in the selected directory," the project was not created in Studio or Eclipse and did not contain a .project file, which tells Studio the nature of the project. Currently, only projects created in Studio or Eclipse support the drag-and-drop import process ([TISTUD-7233](https://jira.appcelerator.org/browse/TISTUD-7233)). Projects created with the CLI cannot be imported using the drag-and-drop mechanism. Use the Import Wizard instead.{{% /alert %}}
+{{% alert title="⚠️ Import Error" color="primary" %}}If you receive the error, "Invalid project, could not find .project file in the selected directory," the project was not created in Studio or Eclipse and did not contain a .project file, which tells Studio the nature of the project. Currently, only projects created in Studio or Eclipse support the drag-and-drop import process ([TISTUD-7233](https://jira.appcelerator.org/browse/TISTUD-7233)). Projects created with the CLI cannot be imported using the drag-and-drop mechanism. Use the Import Wizard instead.{{% /alert %}}
 
 ## Using promote to project
 

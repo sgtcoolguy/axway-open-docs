@@ -360,7 +360,7 @@ The NavigationWindow can be used for the master and detail views of a SplitWindo
 
 The two code examples below compare and contrast how both the iOS NavigationWindow and iPhone NavigationGroup create and use the navigation controller.
 
-*Example: New NavigationWindow*
+**Example: New NavigationWindow**
 
 ```javascript
 // Works with Release 3.1.3 and later
@@ -380,7 +380,7 @@ b2.addEventListener('click',function(){ navWin.closeWindow(secondWin); });
 navWin.open();
 ```
 
-*Example: Old NavigationGroup*
+**Example: Old NavigationGroup**
 
 ```javascript
 // Will no longer work after Release 3.2.0

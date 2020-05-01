@@ -6,7 +6,7 @@ Configure your modules as described in [Using Titanium Modules](/docs/appc/Axway
 
 First, add an entry in Webpack's [externals](https://webpack.js.org/configuration/externals/) configuration option to prevent it from trying to bundle any require statements of that native module. For example, if you want to use the [ti.map](https://docs.appcelerator.com/platform/latest/#!/api/Modules.Map) module, add the following to your project's webpack.config.js:
 
-*webpack.config.js*
+**webpack.config.js**
 
 ```javascript
 externals: {
@@ -34,9 +34,7 @@ You can now use the module in your code by importing it as usual.
 import * as Map from 'ti.map';
 ```
 
-{{% alert title="💡 Hint" color="info" %}}*Register third-party views as custom template elements*
-
-In future versions of Titanium Angular it will be possible to register views from modules as custom elements so you can use them inside a template. For now, you have to configure and add third-party views programmatically in your component class.{{% /alert %}}
+{{% alert title="💡 Register third-party views as custom template elements" color="info" %}}In future versions of Titanium Angular it will be possible to register views from modules as custom elements so you can use them inside a template. For now, you have to configure and add third-party views programmatically in your component class.{{% /alert %}}
 
 ## Can I use Hyperloop together with Titanium Angular?
 
@@ -54,7 +52,7 @@ You can setup a custom task in VS Code that uses the Appc CLI for a more comfort
 
 VS Code will then create and open the task.json file which you can modify to define your own task. For example, to create a task that will use the Appc CLI to build and run your app in the iOS simulator modify it to look like this.
 
-*task.json*
+**task.json**
 
 ```json
 {

@@ -96,7 +96,7 @@ myModel.fetch({query: 'select * from ... where id = ' + 123 });
 
 The columns values accept SQLite keywords, such as AUTOINCREMENT and PRIMARY KEY. For example, the Alloy model file below defines the book\_id to be an auto-incremented, primary key in the books table.
 
-*app/models/book.js*
+**app/models/book.js**
 
 ```javascript
 exports.definition = {
@@ -170,7 +170,7 @@ Currently, migrations are only used with the sql sync adapter.
 
 For example, the migration file below is the initial version of the database that preloads some data in the table.
 
-*app/migrations/20120610049877\_book.js*
+**app/migrations/20120610049877\_book.js**
 
 ```javascript
 var preload_data = [
@@ -202,7 +202,7 @@ migration.down = function(migrator) {
 
 Suppose later, you want to include some additional information for your books, such as an ISBN. The below migration file upgrades or rolls back the changes. Since SQLite does not support the DROP COLUMN operation, the migration needs to create a temporary table to hold the data, drop the new database, create the old database, then copy the data back to the regressed table. Note that if the Alloy Model file does not specify an idAttribute property, Alloy creates the alloy\_id column. This column needs to be copied over as part of the migration as shown below.
 
-*app/migrations/20130118069778\_book.js*
+**app/migrations/20130118069778\_book.js**
 
 ```javascript
 migration.up = function(migrator) {

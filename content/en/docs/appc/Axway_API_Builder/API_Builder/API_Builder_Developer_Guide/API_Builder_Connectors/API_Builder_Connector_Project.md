@@ -1,8 +1,6 @@
 {"title":"API Builder Connector Project","weight":"20"}
 
-{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
-
-Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
+{{% alert title="❗️ API Builder 3.x is deprecated" color="danger" %}}Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
@@ -116,7 +114,7 @@ The boilerplate index.js file exposes a create() method, which is passed the API
 
 To start developing your connector, run the project in one console window, then edit the files with the connector logic in another console or editor. As you save your files, API Builder will automatically update your connector and restart the server instance, allowing you to work on and test the connector incrementally.
 
-*lib/index.js*
+**lib/index.js**
 
 ```javascript
 /*
@@ -225,7 +223,7 @@ To have the Appcelerator CLI create a default configuration file for your connec
 
 For example, create a file called example.config.js in the conf directory and add the following content to it:
 
-*conf/example.config.js*
+**conf/example.config.js**
 
 ```javascript
 module.exports = {
@@ -241,7 +239,7 @@ module.exports = {
 
 Then reference the file in the connector logic using the defaultConfig property:
 
-*lib/index.js*
+**lib/index.js**
 
 ```javascript
 exports.create = function(Arrow) {
@@ -261,7 +259,7 @@ To allow an application to interact with the connector, you need to create a mod
 
 By default, when you install a connector, it will add its API endpoints to the application. If you do not want to generate these API endpoints, set the modelAutogen key to false in the connector's configuration file in the project.
 
-*conf/myconnector.default.js*
+**conf/myconnector.default.js**
 
 ```javascript
 module.exports = {
@@ -296,7 +294,7 @@ module.exports = {
 
 The application can import any third-party modules that are supported by standard Node.js applications. Before publishing the app to the cloud, make sure all dependencies are listed in the dependencies field in the application's package.json file. For example, to add support for MongoDB 1.2.0 or greater:
 
-*package.json*
+**package.json**
 
 ```json
 {

@@ -2,9 +2,7 @@
 
 Demonstrates basic use of TableView control.
 
-{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
-
-You can find this example app in the Alloy repository under [samples/apps/ui/tableview](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/tableview). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="💡 Example App Source Location" color="info" %}}You can find this example app in the Alloy repository under [samples/apps/ui/tableview](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/tableview). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 A [TableView](#!/api/Titanium.UI.TableView) is used to present vertically scrolling rows of information, optionally organized into sections. A TableView can include a SearchBar to let users search the table contents.
 
@@ -14,7 +12,7 @@ The main index.xml view displays two TableView controls in separate tabs. The se
 
 To create a table, you add a <TableView/> element that contains one or more <TableViewRow> elements, and optionally <HeaderView/> and <FooterView/> elements. Use <TableViewSection/> elements to organize rows into sections. To include a search bar in the table, include a <SearchBar/> element; to specify the field to search on, add a filterAttribute attribute to the <TableView/> element, as shown below.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>

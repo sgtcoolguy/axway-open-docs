@@ -352,7 +352,7 @@ As of this release, Titanium SDK 7.4.x will not receive updates more than six mo
 
     * Implemented feature that lets the user select which language to use at runtime
 
-    * *est-Setup (requires a hello\_world language file in i18n/de and i18n/en)*
+    * **est-Setup (requires a hello\_world language file in i18n/de and i18n/en)**
 
         ```javascript
         var win = Ti.UI.createWindow({

@@ -177,7 +177,7 @@ To create the following notification that displays a message with two buttons:
 
 1. Create an XML layout that uses a LinearLayout to display a TextView and two Button widgets:
 
-    */platform/android/res/layout/customview.xml*
+    **/platform/android/res/layout/customview.xml**
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -203,7 +203,7 @@ To create the following notification that displays a message with two buttons:
 
 2. In the application, create a RemoteViews object using the XML layout as a reference, then modify the RemoteViews by changing the default text and binding PendingIntents to the buttons:
 
-    */Resources/app.js*
+    **/Resources/app.js**
 
     ```javascript
     var customView = Ti.Android.createRemoteViews({
@@ -224,7 +224,7 @@ To create the following notification that displays a message with two buttons:
 
 3. Finally, assign the RemoteViews object to the Notification object's contentView property.
 
-    */Resources/app.js*
+    **/Resources/app.js**
 
     ```javascript
     var notification = Titanium.Android.createNotification({contentView: customView});
@@ -385,7 +385,7 @@ To create a service that sends a notification at a specific time:
 
 1. In a separate JavaScript file, code the creation of the notification. After the notification is sent, be sure to stop the service since it will no longer be needed and to stop it from sending the same notification again.
 
-    *Resources/ExampleService.js*
+    **Resources/ExampleService.js**
 
     ```javascript
     // Retrieves a reference to the service and its intent
@@ -410,7 +410,7 @@ To create a service that sends a notification at a specific time:
 
 2. Add the <services> tag to the <android> section of the tiapp.xml and add a <service> tag as a child of the <services> tag. In the <service> tag, assign the type attribute to interval to indicate the service runs at regular intervals and the url attribute to the JavaScript file the application needs to run as a service.
 
-    *tiapp.xml*
+    **tiapp.xml**
 
     ```xml
     <ti:app>
@@ -425,7 +425,7 @@ To create a service that sends a notification at a specific time:
 
 3. In the main application, create an intent by assigning the JavaScript file to the Intent's url property and start the service by passing the intent to the Titanium.Android.startService () method. The application needs to set the interval for the service by using the Intent object's putExtra() method. You can also use this method to pass in data to the service. Pass the method the property name as the first argument and a value as the second argument. To set the service interval, set the property name to interval and the value to how often to call the service in milliseconds.
 
-    *Resources/app.js*
+    **Resources/app.js**
 
     ```javascript
     // Create an intent using the JavaScript service file
@@ -447,7 +447,7 @@ To create a service that sends a notification at a specific time:
 
 In the following example, the main application passes the message and title of the notification to the service as well as when to send it. The service waits until the right moment to create and send the notification, then stops itself. Note that the service can only send one notification. The application can launch more service instances but all of them will be stopped when the first notification is sent.
 
-*Resources/app.js*
+**Resources/app.js**
 
 ```javascript
 var win = Ti.UI.createWindow();
@@ -470,7 +470,7 @@ win.add(btn);
 win.open();
 ```
 
-*Resources/ExampleService.js*
+**Resources/ExampleService.js**
 
 ```javascript
 var service = Ti.Android.currentService;
@@ -506,7 +506,7 @@ if (new Date() > timestamp) {
 }
 ```
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <ti:app>

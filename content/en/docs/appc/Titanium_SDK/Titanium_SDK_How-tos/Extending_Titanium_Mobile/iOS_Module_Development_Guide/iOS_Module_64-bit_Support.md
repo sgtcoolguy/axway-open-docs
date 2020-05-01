@@ -62,7 +62,7 @@ architectures: armv7 arm64 i386 x86_64
 
 If you see the following error:
 
-*Error Log*
+**Error Log**
 
 ```
 [ERROR] Script Error Couldn't find module: ti.barcode for architecture: arm64
@@ -82,7 +82,7 @@ This could happen if:
 
 See some log examples below.
 
-*Error Log*
+**Error Log**
 
 ```
 [TRACE] Undefined symbols for architecture x86_64:
@@ -145,7 +145,7 @@ This may happen if your module depends on a 3rd party library that does not incl
 
 * Rebuild the module with a new build of the library that includes the missing architecture (x86\_64 in this case).
 
-*Error Log*
+**Error Log**
 
 ```javascript
 [TRACE] Undefined symbols for architecture i386:
@@ -331,7 +331,7 @@ This log shows a number of linker errors referencing the "_std_" namespace. This
 
 * In the _module.xcconfig_, tell the compiler to link against the _libstdc++_ library by adding the following line as you would when including a framework.
 
-    *module.xcconfig*
+    **module.xcconfig**
 
     ```
     OTHER_LDFLAGS=$(inherited) -lstdc++.6.0.9
@@ -351,7 +351,7 @@ Here are two different ways to update the _build.py_:
 
     2. Search for "**\-arch i386**" if you find it, remove that text so that the line looks something like this
 
-        *build.py*
+        **build.py**
 
         ```python
         rc = os.system("xcodebuild -sdk iphonesimulator -configuration Release")

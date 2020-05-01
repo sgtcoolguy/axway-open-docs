@@ -2,13 +2,11 @@
 
 Demonstrates how an Alloy controller can inherit functionality from another controller.
 
-{{% alert title="💡 Hint" color="info" %}}*App folder location*
-
-_alloy_/test/apps/**advanced/inheritance**{{% /alert %}}![inheritance](/Images/appc/download/attachments/41845661/inheritance.png)
+{{% alert title="💡 App folder location" color="info" %}}_alloy_/test/apps/**advanced/inheritance**{{% /alert %}}![inheritance](/Images/appc/download/attachments/41845661/inheritance.png)
 
 The parent controller exports its inheritable properties or methods on its **exports** property. To inherit the parent's functionality, the child controller assigns the base name of parent controller to its exports.baseController property. For example, in the sample application t he **controllers/baseDialog.js** file defines the dialog's common functionality, including two methods named openDialog() and closeDialog().
 
-*app/controllers/baseDialog.js*
+**app/controllers/baseDialog.js**
 
 ```javascript
 var args = arguments[0] || {};

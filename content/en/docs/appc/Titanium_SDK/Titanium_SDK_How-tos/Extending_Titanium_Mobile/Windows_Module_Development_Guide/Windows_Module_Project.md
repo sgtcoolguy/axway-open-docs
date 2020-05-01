@@ -82,9 +82,7 @@ If you omit any of the options, the CLI will prompt you to enter them.
 
 Next, build the module and package it. This process produces a ZIP file containing a binary library with unprocessed module assets, example code and documentation.
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a terminal, go to the module's windows directory and run the appc ti build -p windows -T ws-local:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a terminal, go to the module's windows directory and run the appc ti build -p windows -T ws-local:
 
 ```
 cd test/windows

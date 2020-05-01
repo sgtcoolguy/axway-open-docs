@@ -29,7 +29,7 @@ Android developers can debug using Chrome DevTools with Titanium SDK 7.0.x and l
 
     1. After building, the console will log the required debugger information, e.g.
 
-*Console*
+**Console**
 
 ```
 [WARN]  JSDebugger: (main) [13,555] Debugger listening on ws://127.0.0.1:51388/6b8d130f-5a6c-7623-a760-ffc319010448
@@ -50,7 +50,7 @@ appc run -p android --debug-host /127.0.0.1:51388
 
 Once the app launches, it should stay on the "splash screen" and spit out some logs that it's waiting 60 seconds for the debugger as well as details on how to connect to it. Specifically it should spit out a URL you can open in Google Chrome browser to debug the app. The debugger should "pause" on the very first line of app.js.
 
-{{% alert title="✅" color="success" %}}For testing I find it useful to edit the app.js to add a click listener to the labels and have them open an alert, then set a breakpoint there.{{% /alert %}}
+{{% alert title="✅ " color="success" %}}For testing I find it useful to edit the app.js to add a click listener to the labels and have them open an alert, then set a breakpoint there.{{% /alert %}}
 
 You should be able to hit any breakpoint in app.js even on the first line.
 

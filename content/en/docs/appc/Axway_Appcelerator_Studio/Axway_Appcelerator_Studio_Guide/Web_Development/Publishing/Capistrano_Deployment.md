@@ -6,9 +6,7 @@ if you're unfamiliar with Capistrano, it's best to take a look at their document
 
 ## Capistrano Integration
 
-{{% alert title="⚠️ Warning" color="primary" %}}*Pre-requisites*
-
-We assume that you have installed the 'capistrano' gem on your own before running the wizard.{{% /alert %}}
+{{% alert title="⚠️ Pre-requisites" color="primary" %}}We assume that you have installed the 'capistrano' gem on your own before running the wizard.{{% /alert %}}
 
 Our Capistrano integration is bare-bones. We run you through a Web Deployment wizard, which will run "capacity ." in the project root. This process generates a "config/deploy.rb" inside the project, which you can then edit and to which you can add tasks. To access the Wizard, click the App Explorer's publish drop-down toolbar menu and select "Run Web Deployment Wizard..."
 ![deploy_menu](/Images/appc/download/attachments/30083199/deploy_menu.png)

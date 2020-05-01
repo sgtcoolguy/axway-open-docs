@@ -67,7 +67,7 @@ In order to receive the broadcast, the receiving application needs to declare th
 
 The example below takes the previous example and adds a permission to it.
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <!-- Declare the permission -->
@@ -128,7 +128,7 @@ Ti.Android.registerBroadcastReceiver(broadcastReceiver, [Ti.Android.ACTION_SCREE
 
 The example below registers a broadcast receiver to monitor the broadcast sent with permission from the example in _Send a Broadcast with a Permission._
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <!-- Declare that the application uses the permission -->

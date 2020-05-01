@@ -1,8 +1,6 @@
 {"title":"Models - Composite","weight":"20"}
 
-{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
-
-Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
+{{% alert title="❗️ API Builder 3.x is deprecated" color="danger" %}}Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
@@ -48,7 +46,7 @@ To define the join operation, set the metadata property to either the left\_join
 
 The example below combines the employee and managers models to create the employee\_manager model. The models are joined based on a match between the managers model's employee\_id and the employee model's auto-generated id.
 
-*models/employee\_manager.js*
+**models/employee\_manager.js**
 
 ```javascript
 var Arrow = require('arrow');
@@ -72,7 +70,7 @@ var employee_manager = Arrow.createModel('employee_manager',{
 module.exports = employee_manager;
 ```
 
-*models/employee.js*
+**models/employee.js**
 
 ```javascript
 var Arrow = require('arrow');
@@ -87,7 +85,7 @@ var employee = Arrow.Model.reduce('appc.mysql/employee','employee',{
 module.exports = employee;
 ```
 
-*models/managers.js*
+**models/managers.js**
 
 ```javascript
 var Arrow = require('arrow');

@@ -2,15 +2,13 @@
 
 Demonstrates using CommonJS modules to create UI components in an Alloy XML view.
 
-{{% alert title="💡 Hint" color="info" %}}*App folder location*
-
-_alloy_/test/apps/advanced/commonjs\_xml{{% /alert %}}
+{{% alert title="App folder location" color="info" %}}_alloy_/test/apps/advanced/commonjs\_xml{{% /alert %}}
 
 ![common_js](/Images/appc/download/attachments/41845648/common_js.png)
 
 The sample app's specialView.js file defines a CommonJS module that exports two functions: createView and createMassiveCreateView. Each of these functions return a View object.
 
-*app/lib/specialView.js*
+**app/lib/specialView.js**
 
 ```javascript
 var _ = require('alloy/underscore')._;
@@ -46,7 +44,7 @@ The application's main index.xml view shows the two ways to declaratively create
 
 By default, the module's **createView()** method is invoked on the module to get the desired view. You can also specify a custom function to invoke with the the method attribute of the <Module/> element.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>

@@ -2,15 +2,13 @@
 
 Demonstrates how to use a PopOver control iPad devices to present temporary information.
 
-{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
-
-You can find this example app in the Alloy repository under [samples/apps/ui/popover](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/popover). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="💡 Example App Source Location" color="info" %}}You can find this example app in the Alloy repository under [samples/apps/ui/popover](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/popover). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 ![popover](/Images/appc/download/attachments/41845765/popover.gif)
 
 [Popovers](#!/api/Titanium.UI.iPad.Popover) are used to present temporary information in a non-modal manner. The popover remains visible until the user taps outside of the popover window, or it is explicitly dismissed. The main index.xml view presents two buttons, "Popover" and "Popover with content view" that call the view-controller's openPopover() and openPopoverWithContentView(), respectively, when clicked.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -23,7 +21,7 @@ You can find this example app in the Alloy repository under [samples/apps/ui/pop
 
 The popover.xml and popover\_with\_window.xml views each declare a <Popover> element that, in turn, contains a <ContentView> element. The <ContentView> element contains the actual content that is displayed by the popup.
 
-*app/views/popover.xml*
+**app/views/popover.xml**
 
 ```xml
 <Alloy>
@@ -45,7 +43,7 @@ The popover.xml and popover\_with\_window.xml views each declare a <Popover> ele
 </Alloy>
 ```
 
-*app/views/popover\_with\_window.xml*
+**app/views/popover\_with\_window.xml**
 
 ```xml
 <Alloy>
@@ -66,7 +64,7 @@ The popover.xml and popover\_with\_window.xml views each declare a <Popover> ele
 
 When a button on the main view is clicked, the main view-controller gets a reference to a popover XML view, and calls its show() method, passing it a [PopoverParams](#!/api/PopoverParams) object whose view property that specifies the view to which the popover should be anchored.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 function openPopover() {

@@ -130,7 +130,7 @@ If you are using a custom theme to display the splash screen, override the defau
 
     {{% alert title="⚠️ Warning" color="primary" %}}Only add the windowBackground items only to the theme of the default root activity. If you add windowBackground items to other themes for other activities, the image may not be displayed properly.{{% /alert %}}
 
-    *platform/android/res/values/mytheme.xml*
+    **platform/android/res/values/mytheme.xml**
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -144,7 +144,7 @@ If you are using a custom theme to display the splash screen, override the defau
 
 2. Build your application once to generate the build/android/AndroidManifest.xml. Open the file and copy the activity node that contains your default root activity. The android:name attribute will contain the name of your application.
 
-    *build/android/AndroidManifest.xml*
+    **build/android/AndroidManifest.xml**
 
     ```xml
     <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.sample" android:versionCode="1" android:versionName="1.0">
@@ -172,7 +172,7 @@ If you are using a custom theme to display the splash screen, override the defau
 
 3. Paste the default root activity into the Android section of your tiapp.xml file inside the <application> element. You may need to add the <manifest> and <application> elements to the <android> element of your tiapp.xml file. In the activity's android:theme attribute, replace Theme.Titanium with the name of your custom theme:
 
-    *tiapp.xml*
+    **tiapp.xml**
 
     ```xml
     <ti:app xmlns:ti="http://ti.appcelerator.org">

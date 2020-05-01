@@ -2,13 +2,11 @@
 
 Demonstrates binding a data collection to a ScrollableView component.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**models/binding\_scrollableview**{{% /alert %}}![scrollableview](/Images/appc/download/attachments/41845710/scrollableview.png)
+{{% alert title="App Folder Location" color="info" %}}alloy/test/apps/**models/binding\_scrollableview**{{% /alert %}}![scrollableview](/Images/appc/download/attachments/41845710/scrollableview.png)
 
 The main index.xml view defines the ScrollableView element and sets its dataCollection attribute to the "articles" collection. The content of each ScrollableView screen is defined by the article.xml view, which is included via a <Require/> element.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -22,7 +20,7 @@ The main index.xml view defines the ScrollableView element and sets its dataColl
 
 The article.xml view defines a <ScrollView/> element containing an Image element and two Label elements. The content of each UI element is bound to the fields in the collection: **image**, **title,** and **content.**
 
-*app/views/article.xml*
+**app/views/article.xml**
 
 ```xml
 <Alloy>
@@ -36,7 +34,7 @@ The article.xml view defines a <ScrollView/> element containing an Image element
 
 The model configuration file, article.js, uses an external SQLite data file to provide the columns and initial data set provided by the app/assets/articles.sqlite file.
 
-*app/models/article.js*
+**app/models/article.js**
 
 ```javascript
 exports.definition = {

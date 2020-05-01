@@ -66,7 +66,7 @@ To create an Activity, use the Titanium.App.iOS.createUserActivity() method. Pas
 
 Once you are ready to share the activity, use the supported property to check if the user activity is supported by the application, then invoke its becomeCurrent() method to indicate that the activity is in use by the current device.
 
-*app.js*
+**app.js**
 
 ```javascript
 var activity =  Ti.App.iOS.createUserActivity({
@@ -86,7 +86,7 @@ if(!activity.supported){
 
 Before using the activity, you will need to register each activity type in the plist section of the tiapp.xml file. Under the <dict> element in the <ios><plist> elements, add the NSUserActivityTypes key with the value set to an array of strings, where each string is the activityType property that you want the application to support.
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <ti:app>
@@ -108,7 +108,7 @@ Before using the activity, you will need to register each activity type in the p
 
 Listen for the [useractivitywascontinued](#!/api/Titanium.App.iOS.UserActivity-event-useractivitywascontinued) event to determine when the user activity was handed off to another device. The event will be passed the activityType, title, userInfo and webpageURL properties that were set on the user activity.
 
-*app.js*
+**app.js**
 
 ```javascript
 activity.addEventListener('useractivitywascontinued', function(e) {
@@ -120,7 +120,7 @@ activity.addEventListener('useractivitywascontinued', function(e) {
 
 _Every time_ something happens that requires the activity's state to be updated before it could be handed off, set the UserActivity object's needsSave property to true. Listen for the useractivitywillsave event to actually update the activity state or content, such as saving changes to an API. This event is triggered at the discretion of iOS and when you call becomCurrent(). The event will be passed the current activityType, title, userInfo and webpageURL properties. After the event is fired, iOS will reset the needsSave property to false.
 
-*app.js*
+**app.js**
 
 ```javascript
 activity.addEventListener('useractivitywillsave', function(e) {
@@ -135,7 +135,7 @@ activity.needsSave = true;
 
 To continue the activity on another paired device, listen for the Ti.App.iOS module's continueactivityevent. The handoff event will be passed the activityType, title, userInfo and webpageURL properties that were set on the user activity. Use the passed information to continue the activity.
 
-*app.js*
+**app.js**
 
 ```javascript
 Ti.App.iOS.addEventListener('continueactivity', function(e){

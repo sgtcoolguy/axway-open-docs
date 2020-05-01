@@ -68,8 +68,8 @@ There is an error with your .ini file.
 
 2. Replace the following lines at the top of the file (we are replacing the 1.1.0 version with the 1.1.1 version):
 
-    \-startup
-    ../../../plugins/org.eclipse.equinox.launcher\_1.1.1.R36x\_v20101122\_1400.jar
+    {{% alert color="info" %}}\-startup
+../../../plugins/org.eclipse.equinox.launcher\_1.1.1.R36x\_v20101122\_1400.jar{{% /alert %}}
 
     Make sure that plugin exists in your plugins directory. If a different version exists, you may need to change the above line.
 

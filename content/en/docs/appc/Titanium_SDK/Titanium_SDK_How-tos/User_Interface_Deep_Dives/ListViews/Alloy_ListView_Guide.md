@@ -32,7 +32,7 @@ The ListView class lets you create high-performance, vertically scrolling lists.
 
 In Alloy, a ListView consists minimally of a < ListView/> element that contains one or more <ListSection/> elements, which in turn contain one or more of < ListItem/ > elements. You can declaratively populate a ListView (using the default list item template), as shown below.
 
-*index.xml*
+**index.xml**
 
 ```xml
 <Alloy>
@@ -62,7 +62,7 @@ For small data sets, it's convenient to declaratively create the ListItems in th
 
 The view controller (index.js) defines an array of ListDataItem objects, and then calls the setItems() method on the ListSection to populate it.
 
-*index.js*
+**index.js**
 
 ```javascript
 var items = [
@@ -79,7 +79,7 @@ $.elementsList.sections[0].setItems(items);
 
 In this case, the XML view (index.xml) can be reduced to a <ListView/> and <ListSection/> elements, without any <ListItem/> elements.
 
-*index.xml*
+**index.xml**
 
 ```xml
 <Alloy>
@@ -123,7 +123,7 @@ Each ListItem element has an associated _template_ that determines how the data 
 
 By default, a ListView uses the [default list item template](#!/api/Titanium.UI-property-LIST_ITEM_TEMPLATE_DEFAULT), which consists of an image view, a black, left-aligned title label, and an optional accessory icon. On Android, the image appears on the right side of the cell, and on iOS the image appears on the left side of the cell. This is the template used in the previous examples. For example, the following XML and TSS code adds an image and a disclosure icon accessory type to each list item.
 
-*index.xml*
+**index.xml**
 
 ```xml
 <Alloy>
@@ -144,7 +144,7 @@ By default, a ListView uses the [default list item template](#!/api/Titanium.UI-
 
 The template label's text and image source are bound to each <ListItem> element's title and image attributes. If an attribute is not set on the element, then that template element is not displayed. As with any Alloy element, you can specify an attribute value in a TSS file. The following associated TSS specifies the accessoryType for each ListItem.
 
-*index.tss*
+**index.tss**
 
 ```
 "ListItem": {
@@ -164,7 +164,7 @@ To declare a custom item template add a <Templates/> element to the <ListView/> 
 
 To the <ItemTemplate/> add any UI elements you want to appear in each list item. To enable data binding on a given view, assign a bindId attribute to the element. To apply the the custom template by default to all list items (rather than the built-in default item template) set the ListView defaultItemTemplate attribute to the value of the name attribute you assigned to the <ItemTemplate/>. If you have more than one custom template, you can override the default item template for a given list item by setting it's template property. See Below for more information.
 
-*Custom item template*
+**Custom item template**
 
 ```xml
 <ListView id="elementsList" defaultItemTemplate="elementTemplate">
@@ -195,7 +195,7 @@ As you can see above, to declaratively bind data to the proper view element in a
 
 Below is the TSS file used to style the elements in the custom template.
 
-*Custom item template TSS*
+**Custom item template TSS**
 
 ```
 "#symbol": {
@@ -246,7 +246,7 @@ The images below show the custom item template on iOS and Android.
 
 To programmatically bind data to view in a custom template, the object you pass to setItems() defines custom key-value pairs. The key for each pair must match the bindId of the child view, and its values are a dictionary of properties to bind the view. Using the elementTemplate from the previous example, the following code assigns data to the list view:
 
-*index.js*
+**index.js**
 
 ```javascript
 var items = [
@@ -280,7 +280,7 @@ As shown in previous examples, you can assign a custom template to all list item
 
 The following XML view defines the two templates.
 
-*index.xml*
+**index.xml**
 
 ```xml
 <ListView id="dynamicListView">
@@ -303,7 +303,7 @@ The following XML view defines the two templates.
 
 The following controller code programmatically assigns a template to each list item by setting its template property:
 
-*index.js*
+**index.js**
 
 ```javascript
 var items = [
@@ -347,7 +347,7 @@ $.infiniteList.setMarker({sectionIndex:0,itemIndex:100});
 
 The application loads the initial data set and sets the first marker. For the purposes of demonstration, this example use a for() loop to generate an "infinite" data source based on the value of a state variable. In practice, your application will likely consume data from a remote or local paginated data source.
 
-*Load initial data and set initial marker*
+**Load initial data and set initial marker**
 
 ```javascript
 // Variable that contains current marker value:
@@ -369,7 +369,7 @@ $.infiniteList.setMarker({sectionIndex:0,itemIndex:currentMarker-1});
 
 When the marker event is fired, a new set of data is generated and appended to the list view. Finally, a new marker point is set.
 
-*Marker event handler*
+**Marker event handler**
 
 ```javascript
 // Marker callback
@@ -395,7 +395,7 @@ var markerReached = function(e) {
 
 To handle click events on list items, you attach an onItemclick attribute to the <ListView/> that specifies the event function handler to invoke. The event handler is passed an itemclick event whose properties identify the clicked list item (by section and item index), as well as the bindId of of the control that generated the event, if any. For example:
 
-*index.xml*
+**index.xml**
 
 ```xml
 <ListView id="list" onItemclick="handleClick">
@@ -411,7 +411,7 @@ To handle click events on list items, you attach an onItemclick attribute to the
 
 The itemclick handler updates the title property of the list item and sets its color to red, before updating the item in the list.
 
-*index.js*
+**index.js**
 
 ```javascript
 function handleClick (e) {

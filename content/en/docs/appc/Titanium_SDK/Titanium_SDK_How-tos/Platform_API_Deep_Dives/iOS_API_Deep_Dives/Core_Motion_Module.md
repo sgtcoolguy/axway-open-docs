@@ -274,7 +274,7 @@ The Device Motion API uses five extra dictionaries to report the motion state of
 
 The sample below initializes the Device Motion API with the specified reference frame. If the frame is not available, the application falls back to the default frame or no frame. If the user shakes the device for about 3 s, the application determines the direction the user is shaking, based on the user acceleration data. The application outputs the attitude data to the display.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -289,7 +289,7 @@ The sample below initializes the Device Motion API with the specified reference 
 </Alloy>
 ```
 
-*app/styles/index.tss*
+**app/styles/index.tss**
 
 ```
 "ProgressBar" : {
@@ -307,7 +307,7 @@ The sample below initializes the Device Motion API with the specified reference 
 }
 ```
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 var accelX = accelY = accelZ = 0;
@@ -435,7 +435,7 @@ The first five properties indicate a possible motion-related activity that can b
 
 The following Alloy application captures the activity log of the device and displays it as a list to the user. The application checks the confidence level of the captured data and see if the activity changed. The application adds the activity data to the collection, which updates the list in the application.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -452,7 +452,7 @@ The following Alloy application captures the activity log of the device and disp
 </Alloy>
 ```
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 var activities = Alloy.Collections.activities;
@@ -493,7 +493,7 @@ function updateActivity(e) {
 $.index.open();
 ```
 
-*app/models/activities.js*
+**app/models/activities.js**
 
 ```javascript
 exports.definition = {

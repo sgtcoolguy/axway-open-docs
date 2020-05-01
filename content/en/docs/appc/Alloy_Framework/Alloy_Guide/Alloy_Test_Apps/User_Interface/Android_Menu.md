@@ -2,15 +2,13 @@
 
 Demonstrates basic use of Menu and MenuItem objects to display items in the Android action bar.
 
-{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
-
-You can find this example app in the Alloy repository under [samples/apps/ui/android\_menu](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/android_menu). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="💡 Example App Source Location" color="info" %}}You can find this example app in the Alloy repository under [samples/apps/ui/android\_menu](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/android_menu). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 The [Menu](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Android.Menu) and [MenuItem](#!/api/Titanium.Android.Menu) elements let you add items to the Android [action bar](http://developer.android.com/guide/topics/ui/actionbar.html), a window feature that identifies the user location, and provides user actions and navigation modes.
 
 ![screenshot](/Images/appc/download/attachments/41845737/screenshot.png)
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -31,7 +29,7 @@ The [Menu](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Android
 
 The "option 1" and "option 2" MenuItem elements contains onClick attributes that define functions, doClick() and openWin2(), that are invoked when selected.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 function doClick(e) {
@@ -43,7 +41,7 @@ function openWin2(e) {
 $.index.open();
 ```
 
-*app/views/menu.xml*
+**app/views/menu.xml**
 
 ```xml
 <Alloy>

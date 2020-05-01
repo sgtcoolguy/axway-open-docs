@@ -50,7 +50,7 @@ You have two ways to use Launch Files: with our builtin Storyboard or your own.
 
 Both need to be enabled in the <ios> section of your [tiapp.xml](https://github.com/appcelerator-developer-relations/appc-sample-ti520/blob/master/tiapp.xml#L28):
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
@@ -82,7 +82,7 @@ You can generate these images with TiCons [Web](http://ticons.fokkezb.nl/) or [C
 
 By default the background color is white. You can set a different color via the <ios> section of your [tiapp.xml](https://github.com/appcelerator-developer-relations/appc-sample-ti520/blob/master/tiapp.xml#L31):
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <default-background-color>#C7172C</default-background-color>

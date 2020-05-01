@@ -32,7 +32,7 @@ This topic covers how to write controller code as well as other JavaScript files
 
 In Alloy, controllers contain the application logic used to control the UI and communicate with the model. The following code contains the presentation logic (index.js) associated with the view (index.xml).
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 function doClick(e) {
@@ -42,7 +42,7 @@ function doClick(e) {
 $.index.open();
 ```
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -64,7 +64,7 @@ Controllers extend BackBone.Events and as such can dispatch events.
 
 For example, our index view could also require another controller to deliver the label and listen to an event:
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -76,7 +76,7 @@ For example, our index view could also require another controller to deliver the
 
 The view of the required label-controller would listen to the click event of the label itself:
 
-*app/views/label.xml*
+**app/views/label.xml**
 
 ```xml
 <Alloy>
@@ -86,7 +86,7 @@ The view of the required label-controller would listen to the click event of the
 
 And that label-controller would in turn fire the notify event on itself so the index controller will receive it:
 
-*app/controllers/label.js*
+**app/controllers/label.js**
 
 ```javascript
 function passClick(e) {
@@ -100,7 +100,7 @@ Controllers can inherit from other controllers by assigning them as a base (pare
 
 For example, the animal view-controller defines a label object with a speak method:
 
-*app/controllers/animal.js*
+**app/controllers/animal.js**
 
 ```javascript
 exports.speak = function() {
@@ -108,7 +108,7 @@ exports.speak = function() {
 };
 ```
 
-*app/views/animal.xml*
+**app/views/animal.xml**
 
 ```xml
 <Alloy>
@@ -118,7 +118,7 @@ exports.speak = function() {
 
 Then, the following code inherits from the animal view-controller and overrides the speak method and label text property to customize it for a dog controller.
 
-*app/controllers/dog.js*
+**app/controllers/dog.js**
 
 ```javascript
 exports.baseController = "animal";
@@ -175,7 +175,7 @@ When initializing an external controller, you can pass arguments to customize it
 
 For the TableViewRow object, called 'row', the view contains only the object, and the controller contains only a few lines of code to parse the arguments:
 
-*app/views/row.xml*
+**app/views/row.xml**
 
 ```xml
 <Alloy>
@@ -183,14 +183,14 @@ For the TableViewRow object, called 'row', the view contains only the object, an
 </Alloy>
 ```
 
-*app/controllers/row.js (Alloy 1.6+)*
+**app/controllers/row.js (Alloy 1.6+)**
 
 ```
 $.rowView.title = $.args.title || '';
 $.rowView.url = $.args.url || '';
 ```
 
-*app/controllers/row.js (Alloy <1.6)*
+**app/controllers/row.js (Alloy <1.6)**
 
 ```javascript
 var args = arguments[0] || {};
@@ -198,7 +198,7 @@ var args = arguments[0] || {};
 
 In a separate controller containing the TableView object, called 'tableView', the code is cycling through an array of data and creating new instances of 'row' to supply it to 'tableView.'
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 var data[];

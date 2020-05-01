@@ -1,8 +1,6 @@
 {"title":"APS Analytics for iOS","weight":"30"}
 
-{{% alert title="❗️ Warning" color="danger" %}}*Pro or Enterprise Subscription Required*
-
-This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.{{% /alert %}}
+{{% alert title="❗️ Pro or Enterprise Subscription Required" color="danger" %}}This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.{{% /alert %}}
 
 * [Introduction](#introduction)
 
@@ -22,19 +20,17 @@ This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscrip
 
 This page describes how to use the AMPLIFY Appcelerator Services Analytics for native iOS applications, built with Objective-C and the iOS APIs.
 
-*Not developing a native iOS application with Objective-C?*
-
-See the following topics to use the Appcelerator Analytics Service on other platforms:
+{{% alert title="Not developing a native iOS application with Objective-C?" color="info" %}}See the following topics to use the Appcelerator Analytics Service on other platforms:
 
 For native Android applications built with Java, see [APS Analytics for Android](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_Android/APS_Analytics_for_Android/).
 
-For Titanium Applications, see [Appcelerator Analytics](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/).
+For Titanium Applications, see [Appcelerator Analytics](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/).{{% /alert %}}
 
 ## Introduction
 
 Appcelerator Analytics collects real-time data about your application's usage, which can then be viewed in the **[Analytics dashboard](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Client_Applications/#viewing-real-time-and-aggregated-analytics)**. By default, the Analytics dashboard provides information about app installs, the number of sessions, and average app session length (organized by app name, platform, and geography). Your app can also utilize custom analytic events and event funnels.
 
-{{% alert title="⚠️ Warning" color="primary" %}}This document provides an overview of the features provided by Analytics and how to use them using the Titanium SDK. **If you are developing an iOS application with Objective-C or Swift or an Android application with Java**, see [APS Analytics for iOS](#undefined) or [APS Analytics for Android](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_Android/APS_Analytics_for_Android/) for details on using Analytics.{{% /alert %}}
+{{% alert title="Warning" color="primary" %}}This document provides an overview of the features provided by Analytics and how to use them using the Titanium SDK. **If you are developing an iOS application with Objective-C or Swift or an Android application with Java**, see [APS Analytics for iOS](#undefined) or [APS Analytics for Android](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_Android/APS_Analytics_for_Android/) for details on using Analytics.{{% /alert %}}
 
 For platform-specific details about how analytics captured, see [Analytics Architecture](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/Analytics_Architecture/).
 
@@ -76,7 +72,7 @@ To integrate the Performance service with a new or existing iOS application:
 
 10. In your application delegate implementation file, import Appcelerator/Appcelerator.h.
 
-    *AppDelegate.m*
+    **AppDelegate.m**
 
     ```objc
     #import <Appcelerator/Appcelerator.h>
@@ -84,7 +80,7 @@ To integrate the Performance service with a new or existing iOS application:
 
 11. In the application delegate's application:didFinishLaunchingWithOptions method, enable the service by calling the APSServiceManager's enableWithAppKey: method.
 
-    *AppDelegate.m*
+    **AppDelegate.m**
 
     ```objc
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -94,7 +90,7 @@ To integrate the Performance service with a new or existing iOS application:
     }
     ```
 
-    {{% alert title="✅" color="success" %}}To get your APS App key:
+    {{% alert title="✅ " color="success" %}}To get your APS App key:
 
 1. Go to the [Dashboard](https://platform.axway.com/).
 
@@ -135,7 +131,7 @@ Feature event names should be as generic as possible. For instance, if you want 
 
 For example, to track a user's menu selection, you might use the following code, where the ten-digit number uniquely identifies the selection in your code:
 
-*Good Practice: Track the State with the Naming Syntax*
+**Good Practice: Track the State with the Naming Syntax**
 
 ```
 [[APSAnalytics sharedInstance] sendAppFeatureEvent:@"select.item.12345678910" payload:nil];
@@ -143,7 +139,7 @@ For example, to track a user's menu selection, you might use the following code,
 
 You should avoid using long, descriptive event names, as shown below:
 
-*Bad Practice: Avoid Long Descriptions*
+**Bad Practice: Avoid Long Descriptions**
 
 ```
 [[APSAnalytics sharedInstance] sendAppFeatureEvent:@"Select Item THIS IS THE DESCRIPTION OF THE EVENT -12345678910" payload:nil];
@@ -153,7 +149,7 @@ You should avoid using long, descriptive event names, as shown below:
 
 Use the sendAppGeoEvent to send real-time geographic data to the Analytics service. Pass the method a CLLocation object containing the location data. For example, you can use the locationManager: didUpdateLocations delegate method to send geo-events when the device receives new location data.
 
-*GeoController.m*
+**GeoController.m**
 
 ```objc
 // Delegate method from the CLLocationManagerDelegate protocol

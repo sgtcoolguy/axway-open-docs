@@ -95,7 +95,7 @@ intent.flags |= Ti.Android.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED | Ti.Android.FLAG_
 
 If the application uses a JavaScript activity, add the activity to the tiapp.xml file in order to define the activity as part of the application. Create an <activities> element as a child of the <android> element, then create an <activity> element, as a child of the <activities> element, and assign the url attribute to the URL of the JavaScript file to define it as an Android activity.
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <ti:app>

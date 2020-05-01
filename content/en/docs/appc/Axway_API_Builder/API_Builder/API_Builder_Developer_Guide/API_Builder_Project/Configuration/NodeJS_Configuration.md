@@ -1,8 +1,6 @@
 {"title":"NodeJS Configuration","weight":"20"}
 
-{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
-
-Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
+{{% alert title="❗️ API Builder 3.x is deprecated" color="danger" %}}Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
@@ -54,9 +52,7 @@ You can specify which version of Node.js to run your application on. Use the eng
 
 You may specify any version of Node.js. Node.js 0.8.26, 0.10.22 and 0.12.4 are built in, but other versions will be downloaded from [https://nodejs.org/](https://nodejs.org/) when the application is built prior to running npm install. If you do not specify a Node.js version, the application will use 0.12.4 by default.
 
-{{% alert title="💡 Hint" color="info" %}}*Deprecated Behavior*
-
-Prior to AMPLIFY Runtime Services 1.2.0, if this field is undefined when you publish your application, the application will use 0.10.22 by default.
+{{% alert title="💡 Deprecated Behavior" color="info" %}}Prior to AMPLIFY Runtime Services 1.2.0, if this field is undefined when you publish your application, the application will use 0.10.22 by default.
 
 If this field is undefined when you republish your application and the latest supported Node.js version changed on the AMPLIFY Runtime Services servers, you will receive an error message when trying to publish your application. You must set the Node.js version to republish your application.{{% /alert %}}
 

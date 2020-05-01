@@ -93,7 +93,7 @@ The following example demonstrates how to add basic collection-view binding to a
 
 1. Add the <Collection> tag as a child of the <Alloy> tag.
 
-    *app/views/index.xml*
+    **app/views/index.xml**
 
     ```xml
     <Alloy>
@@ -103,7 +103,7 @@ The following example demonstrates how to add basic collection-view binding to a
 
 2. Next, add the view object(s) you want to bind the data to. In this example, data will be bound to a ScrollableView object.
 
-    *app/views/index.xml*
+    **app/views/index.xml**
 
     ```xml
     <Alloy>
@@ -116,7 +116,7 @@ The following example demonstrates how to add basic collection-view binding to a
 
 3. Add the dataCollection attribute to the appropriate view object. Assign this attribute to the collection you want to use. For a ScrollableView object, add the attribute to the <ScrollableView> tag. The element to add the attribute to depends on which view object you want to bind data to.
 
-    *app/views/index.xml*
+    **app/views/index.xml**
 
     ```xml
     <Alloy>
@@ -129,7 +129,7 @@ The following example demonstrates how to add basic collection-view binding to a
 
 4. Next, create your repeater object and add model attributes. Enclose the model attributes with curly brackets or braces ('{' and '}'). For a ScrollableView, the repeater object can be a View object with additional children objects. The repeater object depends on which view object you are using.
 
-    *app/views/index.xml*
+    **app/views/index.xml**
 
     ```xml
     <Alloy>
@@ -147,7 +147,7 @@ The following example demonstrates how to add basic collection-view binding to a
 
 5. In the controller, call the Collection's fetch() method to initialize the collection and sync any stored models to the view. Remember to call the $.destroy() method when you close the controller to prevent memory leaks.
 
-    *app/controllers/index.js*
+    **app/controllers/index.js**
 
     ```javascript
     $.index.open();
@@ -166,7 +166,7 @@ To bind a single model to a component, create a global singleton or controller-s
 
 To do complex transformations on the model attributes, extend the model prototype with a transform() function. It should return the modified model as a JSON object.
 
-*app/models/album.js*
+**app/models/album.js**
 
 ```javascript
 exports.definition = {
@@ -218,7 +218,7 @@ The example below demonstrates how to bind a model to view components in the XML
 
 The example below demonstrates how to display all book models in the collection by the author Mark Twain. It also demonstrates how to use each of the data binding attributes.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -236,7 +236,7 @@ The example below demonstrates how to display all book models in the collection 
 </Alloy>
 ```
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 $.index.open();
@@ -488,7 +488,7 @@ exports.definition = {
 
 When Alloy compiles your views and controllers, the [generated view code precedes your controller code](https://github.com/appcelerator/alloy/blob/master/Alloy/template/component.js#L45). Any models you define for data binding in the XML will also be created at that point. So how would you bind an already existing model? I’ve seen several _workarounds_ for this, but if you think about it it is actually not that much different from binding a collection, which also starts off empty. Just like you call fetch() to populate the collection, you do the exact same thing for the model. Depending on the sync adapter you either pass the query/ID as options or first set the model’s id-attribute and then call fetch().
 
-*index.xml*
+**index.xml**
 
 ```xml
 <Alloy>
@@ -499,7 +499,7 @@ When Alloy compiles your views and controllers, the [generated view code precede
 </Alloy>
 ```
 
-*index.js*
+**index.js**
 
 ```javascript
 $.current.fetch({

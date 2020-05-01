@@ -112,9 +112,7 @@ In this activity, you will write a simple app to stream a movie from a remote UR
 
 6. Build and test your app in the simulator/emulator or on device.
 
-{{% alert title="💡 Hint" color="info" %}}*Simulator / emulator rotation*
-
-Rotate the iPhone simulator by pressing Command and either the left or right arrow key. Rotate the Android emulator by pressing Control+F12.{{% /alert %}}
+{{% alert title="💡 Simulator / emulator rotation" color="info" %}}Rotate the iPhone simulator by pressing Command and either the left or right arrow key. Rotate the Android emulator by pressing Control+F12.{{% /alert %}}
 
 ### Windows development considerations
 

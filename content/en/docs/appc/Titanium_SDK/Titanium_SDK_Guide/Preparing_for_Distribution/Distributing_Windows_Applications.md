@@ -74,9 +74,7 @@ Titanium uses the settings in the tiapp.xml file to package your project. Some o
 
 5. Add the <id> element to the <windows> element. The node text of the element must match the Package/Identity/Name of the application, which was generated when you created the application in the Windows Dev Center Dashboard.
 
-{{% alert title="⚠️ Warning" color="primary" %}}*Prior to Release 5.1.0*
-
-Prior to Release 5.1.0, set the Package/Identity/Name of the application to the <id> element under the <ti:app> element rather than the <windows> element.{{% /alert %}}
+{{% alert title="⚠️ Prior to Release 5.1.0" color="primary" %}}Prior to Release 5.1.0, set the Package/Identity/Name of the application to the <id> element under the <ti:app> element rather than the <windows> element.{{% /alert %}}
 
 **To retrieve your Windows publisher ID and Publisher display name:**
 
@@ -98,7 +96,7 @@ The publisher ID will be under the **Account details** section as the **Windows 
 
 4. Expand **App management** and click **App identity**.
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <ti:app>

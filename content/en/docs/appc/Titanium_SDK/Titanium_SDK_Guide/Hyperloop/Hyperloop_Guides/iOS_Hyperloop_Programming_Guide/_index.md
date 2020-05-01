@@ -38,9 +38,7 @@ This document provides information on iOS Hyperloop programming requirements, cl
 
 See [Hyperloop Requirements](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Hyperloop/Hyperloop_Guides/Hyperloop_Requirements/#requirements) for software requirements for using Hyperloop.
 
-{{% alert title="💡 Hint" color="info" %}}*Important notes about your Xcode location*
-
-It is important that your Xcode installation is under the default location in /Applications/Xcode.app. Hyperloop uses a bundled library from Xcode to inspect the available native APIs. This can lead to errors in the generated metadata if you have selected Xcode from a different location (either via xcode-select or in the Location settings in the Xcode preferences) but also have another installation in the default folder. Keep this in mind if you have more than one Xcode installation on your system.{{% /alert %}}
+{{% alert title="💡 Important notes about your Xcode location" color="info" %}}It is important that your Xcode installation is under the default location in /Applications/Xcode.app. Hyperloop uses a bundled library from Xcode to inspect the available native APIs. This can lead to errors in the generated metadata if you have selected Xcode from a different location (either via xcode-select or in the Location settings in the Xcode preferences) but also have another installation in the default folder. Keep this in mind if you have more than one Xcode installation on your system.{{% /alert %}}
 
 ## Classes
 
@@ -259,7 +257,7 @@ You must first install CocoaPods if you do not already have it installed. You ca
 
 Once you have CocoaPods installed you can create a Podfile in your Titanium project directory such as:
 
-*Podfile*
+**Podfile**
 
 ```ruby
 # This is required for CocoaPods 1.x
@@ -287,7 +285,7 @@ chart.maximumValue = 100;
 
 {{% alert title="❗️ Warning" color="danger" %}}Note for Ad-Hoc builds: The build can fail if some frameworks importted via CocoaPods contain Bitcode and some not. You can fix this issue by disabling Bitcode for third-party frameworks in that case. Add the following snippet to your Podfile:
 
-*Podfile*
+**Podfile**
 
 ```ruby
 # Fix build error for mixed Bitcode frameworks in CocoaPods
@@ -306,7 +304,7 @@ end
 
 In addition to CocoaPods, you can include third-party or first-party custom code by including a reference in appc.js under the thirdparty property. For example, to include custom objective-c from the project’s src directory you could provide:
 
-*appc.js*
+**appc.js**
 
 ```javascript
 module.exports = {
@@ -332,7 +330,7 @@ module.exports = {
 
 To provide additional compiler flags, you can add them in the xcodebuild property of ios such as:
 
-*appc.js*
+**appc.js**
 
 ```javascript
 module.exports = {
@@ -363,7 +361,7 @@ You can further customize the Xcode build by defining an appc.js file in the roo
 
 For example:
 
-*appc.js*
+**appc.js**
 
 ```javascript
 module.exports = {

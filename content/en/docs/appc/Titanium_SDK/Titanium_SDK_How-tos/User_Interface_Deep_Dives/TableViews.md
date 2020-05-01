@@ -58,7 +58,7 @@ Table rows are represented by the Ti.UI.TableViewRow object. This object contain
 
 ![table](/Images/appc/download/attachments/29004930/table.png)
 
-*Object literals as rows*
+**Object literals as rows**
 
 ```javascript
 // create an array of anonymous objects
@@ -80,7 +80,7 @@ win.open();
 
 Creating object literals in this way is very handy when pulling data out of a database or across the network. By explicitly creating TableViewRow objects, you gain access to a few handy methods such as add() or fireEvent().
 
-*Explicit TableViewRow objects*
+**Explicit TableViewRow objects**
 
 ```javascript
 var row = Titanium.UI.createTableViewRow({

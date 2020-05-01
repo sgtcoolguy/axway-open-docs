@@ -77,9 +77,7 @@ Both PNG and JPG files are compressed formats. However, the tools typically used
 
 You can display both local and remote images in an ImageView. When loading remote images, you should set the defaultImage property to a local image, which will be displayed while the remote image is being downloaded. Remote images are cached automatically on the iOS-, Android- and Windows platform.
 
-{{% alert title="💡 Hint" color="info" %}}*Android Note*
-
-Android 6 and later uses runtime permissions to secure the user's privacy. Therefore, you should call Ti.Filesystem.requestStoragePermissions() before attempting to load remote images.{{% /alert %}}
+{{% alert title="💡 Android Note" color="info" %}}Android 6 and later uses runtime permissions to secure the user's privacy. Therefore, you should call Ti.Filesystem.requestStoragePermissions() before attempting to load remote images.{{% /alert %}}
 
 Caching remote images helps improves your application's performance by loading images more quickly, and won't re-download the images, which consumes users' data quotas unnecessarily.
 

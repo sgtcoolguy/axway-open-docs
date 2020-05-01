@@ -12,7 +12,7 @@
 
 With the latest nightly builds of Titanium SDK installed you have the option to create projects using the new Angular project template. Open your terminal and run the following command to create a new project that uses the Angular template:
 
-*Create a new Angular project*
+**Create a new Angular project**
 
 ```bash
 appc new -t app --ng
@@ -24,7 +24,7 @@ With the \--ng option, you instruct the Appc CLI to use the Angular template whe
 
 To build and run your Angular based project, use the following command as usual (from your project root directory):
 
-*Build and run Angular project*
+**Build and run Angular project**
 
 ```bash
 appc run -p [android|ios]
@@ -32,9 +32,7 @@ appc run -p [android|ios]
 
 There are no extra steps you need to do to build and run an Angular enabled project. Compilation of the TypeScript source and bundling is automatically done during Titaniums build steps.
 
-{{% alert title="💡 Hint" color="info" %}}*Titanium Angular debug output*
-
-You might notice a lot of additional debug information during the build and while the app is running. Since Titanium Angular is still under active development we make extensive use of logging. The number of messages should decline in later Preview versions. A lot of it is already limited to debug and trace log levels (which you may enable by appending \-l debug or \-l trace to the appc run command).{{% /alert %}}
+{{% alert title="💡 Titanium Angular debug output" color="info" %}}You might notice a lot of additional debug information during the build and while the app is running. Since Titanium Angular is still under active development we make extensive use of logging. The number of messages should decline in later Preview versions. A lot of it is already limited to debug and trace log levels (which you may enable by appending \-l debug or \-l trace to the appc run command).{{% /alert %}}
 
 ## Appendix and tips
 

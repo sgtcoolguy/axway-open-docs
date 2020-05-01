@@ -76,7 +76,7 @@ Specify the orientation modes the application needs to support with the [UISuppo
 
 By default, Titanium sets iPhone applications to support upright portrait only and iPad application to support all orientation modes.
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -121,7 +121,7 @@ Limiting orientation on Android can also be accomplished via the tiapp.xml file,
 
 5. Copy the <application> node, which contains all of the <activity> nodes from that file, for example:
 
-    *AndroidManifest.xml*
+    **AndroidManifest.xml**
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -160,7 +160,7 @@ Limiting orientation on Android can also be accomplished via the tiapp.xml file,
 
 The final manifest section of your tiapp.xml file should look similar to the example below. If you need to debug the application, set the application element's android:debuggable attribute to true.
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -202,9 +202,7 @@ The final manifest section of your tiapp.xml file should look similar to the exa
 
 The preceding techniques control the orientation modes supported by your entire app, including all its windows. But what if you want window A to be in portrait while window B is in landscape? You can limit the orientation modes supported by a specific window by setting the window's orientationModes property. This property accepts an array of Ti.UI constants that specify the window's permitted orientations. Remember, you must have enabled the various orientations in the tiapp.xml before setting a window to that orientation.
 
-{{% alert title="⚠️ Warning" color="primary" %}}*iOS Platform Notes*
-
-Using the Window's orientationModes property to force the orientation of non-modal windows is considered a bad practice and will not be supported, including forcing the orientation of windows inside a NavigationWindow or TabGroup.
+{{% alert title="⚠️ iOS Platform Notes" color="primary" %}}Using the Window's orientationModes property to force the orientation of non-modal windows is considered a bad practice and will not be supported, including forcing the orientation of windows inside a NavigationWindow or TabGroup.
 
 Modal windows should not support orientation modes that the window they are opened over do not support. Doing otherwise **may** cause bad visual/redraw behavior after the modal is dismissed, due to how iOS manages modal transitions. If the orientationModes property of a modal window is undefined, then the orientations supported by this window would be the orientation modes specified in the tiapp.xml.{{% /alert %}}
 

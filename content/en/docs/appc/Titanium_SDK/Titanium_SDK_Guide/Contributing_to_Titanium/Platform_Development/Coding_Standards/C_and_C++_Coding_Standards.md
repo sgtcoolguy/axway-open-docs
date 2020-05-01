@@ -1,8 +1,6 @@
 {"title":"C and C++ Coding Standards","weight":"10"}
 
-*Contents*
-
-* [Synopsis](#Synopsis)
+{{% alert title="Contents" color="info" %}}* [Synopsis](#Synopsis)
 
 * [Standards](#Standards)
 
@@ -100,7 +98,7 @@
 
         * [C++ FQA familiarity](#C++FQAfamiliarity)
 
-        * [Code clarity](#Codeclarity)
+        * [Code clarity](#Codeclarity){{% /alert %}}
 
 ## Synopsis
 
@@ -130,7 +128,7 @@ We do not enforce column width. However, you should make a best effort to keep y
 
 * Whitespace should be placed between function definitions.
 
-    *Example*
+    **Example**
 
     ```
     void f(x)
@@ -172,7 +170,7 @@ There are two types of comment styles: Comments formatted for internal documenta
 
     * Commented-out code is documented with /\* ... \*/
 
-*Example*
+**Example**
 
 ```javascript
 /*
@@ -252,7 +250,7 @@ In addition it is expected that all of your comments will contain correct spelli
 
     * Opening braces should not be followed by whitespace.
 
-*Example*
+**Example**
 
 ```
 void f(x)
@@ -330,7 +328,7 @@ namespace::MyType1 namespace::myFunc1(namespace::MyType2 x, namespace::MyType3 y
 
 * You are expected to include standard #ifndef / #define / #endif guards in your header files, where the macro is named: \[pe:file\_basename\]h\_
 
-    *Example*
+    **Example**
 
     ```
     // hello.h
@@ -414,7 +412,7 @@ Do not define global constants with #define. Use const variables only, and ideal
 
 * #definestatements which perform any sort of inline operation must be enclosed in parenthesis
 
-    *Example*
+    **Example**
 
     ```
     #define ADD(x,y) (x+y)
@@ -422,7 +420,7 @@ Do not define global constants with #define. Use const variables only, and ideal
 
 * Multi-line #define statements are expected to be formatted according to the usual rules, with the first statement of the #definenot being indented.
 
-    *Example*
+    **Example**
 
     ```
     #define NAMED_PROPERTY(name) \
@@ -450,7 +448,7 @@ Do not define global constants with #define. Use const variables only, and ideal
 
 * Checking for validity of a pointer or value directly is allowed: if (ptr) and if (ptr != NULL)are both acceptable. Where clarity is a primary concern (such as compound conditionals) the latter is preferred.
 
-    *Example*
+    **Example**
 
     ```
     if (x)
@@ -476,7 +474,7 @@ Do not define global constants with #define. Use const variables only, and ideal
 
 * case statements which early-return do not have to end with a breakstatement.
 
-    *Example*
+    **Example**
 
     ```
     char token;
@@ -539,7 +537,7 @@ Whether or not to use inline variable declarations for any looping construct (bu
 
 * Functions should be named as "actions" rather than things (get\_x() vs. x())
 
-*Example*
+**Example**
 
 ```
 void foo_bar(int x, int y,
@@ -585,7 +583,7 @@ Functions which return a compound statement should have that expression wrapped 
 
     * Array types should be preferred over pointer types where the intended use of the object is as an array.
 
-*Example*
+**Example**
 
 ```
 int x;
@@ -598,7 +596,7 @@ char* argv[];
 
 * Names of enumconstructs should be capitalized camel-case, and placed on the same line as the closing brace.
 
-    *Example*
+    **Example**
 
     ```
     enum {
@@ -622,7 +620,7 @@ char* argv[];
 
 * The name of the type associated with the construct should be on the same line as the closing brace, not on its own line.
 
-    *Example*
+    **Example**
 
     ```
     typedef struct
@@ -651,7 +649,7 @@ char* argv[];
 
 * Expressions spanning multiple lines should have their continuing lines indented to one tabstop beyond the initial \=or parenthesis.
 
-    *Example*
+    **Example**
 
     ```
     int x = 1 + 2;
@@ -680,7 +678,7 @@ Usage of ternary is discouraged, but it is often useful for certain cases (such 
 
 * Avoid obvious side-effects within ternary, unless they are intended.
 
-*Example*
+**Example**
 
 ```
 int f(boolean check)
@@ -693,7 +691,7 @@ int f(boolean check)
 
 A special word on operator overloading for C++: **Avoid operator overloading.** Overloading operators leads to interesting scenarios such as this one:
 
-*Counterexample*
+**Counterexample**
 
 ```
 class Vector

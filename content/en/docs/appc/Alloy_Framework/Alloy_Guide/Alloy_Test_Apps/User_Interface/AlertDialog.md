@@ -2,9 +2,7 @@
 
 Demonstrates basic use of an AlertDialog.
 
-{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
-
-You can find this example app in the Alloy repository under [samples/apps/ui/alertdialog](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/alertdialog). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="💡 Example App Source Location" color="info" %}}You can find this example app in the Alloy repository under [samples/apps/ui/alertdialog](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/alertdialog). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 An [AlertDialog](#!/api/Titanium.UI.AlertDialog) presents a modal dialog with a title, message and one or more buttons. On Android, you add add a custom view to an AlertDialog, which replaces any declared buttons.
 
@@ -12,7 +10,7 @@ An [AlertDialog](#!/api/Titanium.UI.AlertDialog) presents a modal dialog with a 
 
 The main index.xml view declares the AlertDialog element, and a Button that calls the showAlert() function defined by the main view-controller to show the dialog.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -43,7 +41,7 @@ The main index.xml view declares the AlertDialog element, and a Button that call
 </Alloy>
 ```
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 function showAlert(e) {

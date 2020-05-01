@@ -50,7 +50,7 @@ Alloy 1.10.12 adds support for Backbone 1.3.3. However, due to breaking changes 
 
 To use Backbone 1.3.3. Add following in config.json
 
-*config.json*
+**config.json**
 
 ```json
 "backbone": "1.3.3"
@@ -62,7 +62,7 @@ Supported versions of Backbone for Alloy 1.10.12 are 0.9.2, 1.1.2, 1.3.3.
 
 To use Backbone 1.1.2 to support Alloy Model and Collections objects, open the project's ./app/config.json file and add the backbone key to the to the file with the value set to 1.1.2. You may also set this value to 0.9.2 to force support of Backbone 0.9.2. In the example below, the boiler plate configuration file is modified to use Backbone 1.1.2.
 
-*app/config.json*
+**app/config.json**
 
 ```json
 {

@@ -168,7 +168,7 @@
 
 The tiapp.xml file and its close cousin the timodule.xml file are XML configuration files that the Titanium SDK uses to generate native resources and code. Many of the configuration that lives in tiapp.xml is cross-platform, but some is platform-specific as well. The timodule.xml file is meant for custom Titanium Modules, and generally **_only_** contains platform-specific configuration.
 
-*Example: tiapp.xml*
+**Example: tiapp.xml**
 
 ```xml
 <ti:app xmlns:ti="http://ti.appcelerator.org">
@@ -230,7 +230,7 @@ In Android, this ID is used to generate the package ID of the application, which
 
 In iOS, this ID must match the Bundle ID when generating an Explicit App ID in the [Apple Developer: Certificates, Identifiers & Profiles](https://developer.apple.com/account/overview.action) page.
 
-*Example*
+**Example**
 
 ```xml
 <id>com.mycompany.fakeblock</id>
@@ -240,7 +240,7 @@ In iOS, this ID must match the Bundle ID when generating an Explicit App ID in t
 
 **Required.** The application name. This is generally what is shown under the application icon on the end-user's mobile device.
 
-*Example*
+**Example**
 
 ```xml
 <name>Fakeblock</name>
@@ -252,7 +252,7 @@ In iOS, this ID must match the Bundle ID when generating an Explicit App ID in t
 
 Whether or not to automatically collect analytics for this application. Enabled by default. See [Analytics Architecture](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/Analytics_Architecture/).
 
-*Example: Enable Ti.Analytics*
+**Example: Enable Ti.Analytics**
 
 ```xml
 <analytics>true</analytics>
@@ -268,7 +268,7 @@ This element contains subelements of deployment targets used by Studio to determ
 
 * <target device="DEVICE">: Specifies if the target device is supported by the project. Must be placed inside the <deployment-targets> element.
 
-*Example: Specify the project only supports Android targets*
+**Example: Specify the project only supports Android targets**
 
 ```xml
 <deployment-targets>
@@ -297,7 +297,7 @@ Since Release 5.0.0, on Android, the theme will be set to Theme.AppCompat.NoTitl
 
 The application icon's filename. This file should be relative to the application's Resources directory, or alternatively, can also live under a platform-specific folder, such as Resources/iphone or Resources/android.
 
-*Example: Default icon in ./Resources or ./Resource/<platform>*
+**Example: Default icon in ./Resources or ./Resource/<platform>**
 
 ```xml
 <icon>appicon.png</icon>
@@ -315,7 +315,7 @@ This element includes subelements of modules to include with the project.
 
     Define the deploy-type attribute if you want to use the module in specific environments. To specify one or more environment, comma-separate the environment types. You may specify the following environments: development, test or production.
 
-*Example: Include the ti.cloud module*
+**Example: Include the ti.cloud module**
 
 ```xml
 <modules>
@@ -336,7 +336,7 @@ This element includes subelements of plugins to include with the project.
 
 * <plugin version="PLUGIN\_VERSION">: Defines a plugin to include with the project specified by the plugin's folder name. Place plugins in the plugins folder of the project (same level as the Resources folder). This element must be placed inside the <plugins>element. The version attribute is optional. Define it to include a specific version of the plugin.
 
-*Example: Include the Alloy plugin*
+**Example: Include the Alloy plugin**
 
 ```xml
 <plugins>
@@ -352,7 +352,7 @@ See [Application properties](#app_properties) below.
 
 The publisher of this application.
 
-*Example*
+**Example**
 
 ```xml
 <publisher>Bluth Company</publisher>
@@ -366,7 +366,7 @@ Only supported on Android. Set to true to set the theme to Theme.AppCompat.NoTit
 
 Specifies the SDK to build against or use for CLI commands.
 
-*Example: Use Titanium SDK 8.0.0 GA*
+**Example: Use Titanium SDK 8.0.0 GA**
 
 ```xml
 <sdk-version>8.0.0.GA</sdk-version>
@@ -376,7 +376,7 @@ Specifies the SDK to build against or use for CLI commands.
 
 The URL of this application.
 
-*Example*
+**Example**
 
 ```xml
 <url>http://www.bluthcompany.com/fakeblock</url>
@@ -388,7 +388,7 @@ The application version.
 
 For iOS the version number is truncated to three dot-separated numbers. For example, '2.1' remains as '2.1', but '2.1.0.1' will be converted to '2.1.0'.
 
-*Example*
+**Example**
 
 ```xml
 <version>3.1.4</version>
@@ -456,7 +456,7 @@ See [Ti.UI.View](#!/api/Titanium.UI.View) in the Titanium SDK API Reference for 
 
 Since launch modes cannot be used with Titanium Android, to offer similar behavior to android:launchMode="singleTask" when using intent filters, you can set the _intent-filter-new-task_ property in your tiapp.xml:
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <property name="intent-filter-new-task" type="bool">true</property>
@@ -591,7 +591,7 @@ Android also supports a number of application properties for various internal se
 | ti.android.debug | bool | false | Turn on detailed logging in the SDK |
 | ti.android.root.reappears.restart | bool | false | Restarts the application if the root task was destroyed by Android after a period of inactivity.<br /><br />**(As of Titanium 8.0.0, this property is no longer supported.)** |
 
-*Example: Disable Fastdev*
+**Example: Disable Fastdev**
 
 ```xml
 <property name="ti.android.fastdev">false</property>
@@ -723,7 +723,7 @@ Under the top <ti:app>element, you may optionally have iOS-specific elements.
 
 **Since Release 5.0.0**. Specifies the team ID to be used as a prefix for the app-id. This property is required when using app extensions (e.g. share extensions, watch extensions and siri extentions).
 
-*Example: Enable app-groups for app-extensions*
+**Example: Enable app-groups for app-extensions**
 
 ```xml
 <ti:app>
@@ -739,7 +739,7 @@ Under the top <ti:app>element, you may optionally have iOS-specific elements.
 
 Prior to this release, developers could already specify entitlements by using the "Entitlements.plist" in the project root that is merged with the internal entitlements (e.g. push-notifications). Starting in Titanium 6.1.0, developers can also specify entitlements in the central "tiapp.xml" project file. It will be merged with internal entitlements and is able to override existing entitlements keys.
 
-*Example: Enable app-groups for app-extensions*
+**Example: Enable app-groups for app-extensions**
 
 ```xml
 <ti:app>
@@ -773,7 +773,7 @@ In the target element, add a **<provisioning-profiles>** element, which determin
 
 * **<dist-adhoc/>**: Add to deploy for ad-hoc builds
 
-*Example: Include watchOS extensions*
+**Example: Include watchOS extensions**
 
 ```xml
 <ti:app>
@@ -804,7 +804,7 @@ In the target element, add a **<provisioning-profiles>** element, which determin
 
 Specifies the minimum iOS version supported by this application. The default value when not specified is "9.0".
 
-*Example: Set 9.0 as the minimum iOS version*
+**Example: Set 9.0 as the minimum iOS version**
 
 ```xml
 <ios>
@@ -817,7 +817,7 @@ Specifies the minimum iOS version supported by this application. The default val
 
 Specifies the minimum SDK (Xcode) version supported by this application. The default value when not specified is "8.0".
 
-*Example: Set Xcode 4.3 as the minimum SDK version*
+**Example: Set Xcode 4.3 as the minimum SDK version**
 
 ```xml
 <ios>
@@ -858,7 +858,7 @@ For device-specific configurations, use:
 
 * UISupportedInterfaceOrientations~ipod
 
-*Example: Limits iPhone orientation to portait and no limits for iPad*
+**Example: Limits iPhone orientation to portait and no limits for iPad**
 
 ```xml
 <ios>
@@ -886,7 +886,7 @@ A list of background modes this app supports. For a [BackgroundService](#!/api/T
 
 Replaces <backgroundModes>.
 
-*Example: Enables all background services*
+**Example: Enables all background services**
 
 ```xml
 <ios>
@@ -913,7 +913,7 @@ A list of features this app requires.
 
 Replaces <requires>.
 
-*Example: Require all device capabilities*
+**Example: Require all device capabilities**
 
 ```xml
 <ios>
@@ -968,7 +968,7 @@ Specifies whether the app’s icon already includes a shine effect.
 
 Replaces the top-level <prerendered-icon>element.
 
-*Example*
+**Example**
 
 ```xml
 <key>UIPrerenderedIcon</key><true/>
@@ -980,7 +980,7 @@ Specifies whether the status bar is initially hidden when the app launches.
 
 Replaces the top-level <statusbar-hidden>element.
 
-*Example: Hide the status bar*
+**Example: Hide the status bar**
 
 ```xml
 <key>UIStatusBarHidden</key><true/>
@@ -992,7 +992,7 @@ Specifies the style of the status bar as the app launches.
 
 Replaces the top-level <statusbar-style>element.
 
-*Example: Use the tranluscent style*
+**Example: Use the tranluscent style**
 
 ```xml
 <key>UIStatusBarStyle</key><string>UIStatusBarStyleBlackTranslucent</string>
@@ -1079,9 +1079,7 @@ With some of the new security features of iOS9, SDK 5.1.2's **canOpenUrl** might
 
 **Since Release 5.1.0**. Determines whether to enable App Thinning for iOS applications by using an Asset Catalog. An Asset Catalog contains image assets for specific devices. When a user installs your application, only the resources that your device supports will be downloaded. The element is automatically added to new projects since Release 5.1.0. For details, see [App Thinning: Slicing](/docs/appc/Titanium_SDK/Titanium_SDK_Guide/Preparing_for_Distribution/Distributing_iOS_apps/App_Thinning/#slicing).
 
-{{% alert title="⚠️ Warning" color="primary" %}}*Filesystem Access*
-
-Because images are store in the Asset Catalog, reading image files manually from the filesystem should be done using the Ti.Filesystem.getAsset() method.{{% /alert %}}
+{{% alert title="⚠️ Filesystem Access" color="primary" %}}Because images are store in the Asset Catalog, reading image files manually from the filesystem should be done using the Ti.Filesystem.getAsset() method.{{% /alert %}}
 
 ```xml
 <ti:app>
@@ -1095,9 +1093,7 @@ Because images are store in the Asset Catalog, reading image files manually from
 
 **Since Release 5.1.0**. Enables the iOS [auto-layout engine](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/index.html#//apple_ref/doc/uid/TP40010853) to layout the children components of a view. Disabled by default.
 
-{{% alert title="❗️ Warning" color="danger" %}}*Experimental Feature*
-
-This is an experimental feature with known issues:
+{{% alert title="❗️ Experimental Feature" color="danger" %}}This is an experimental feature with known issues:
 
 * [TIMOB-19806](https://jira.appcelerator.org/browse/TIMOB-19806)
 
@@ -1475,7 +1471,7 @@ In some cases, metadata defined in the timodule.xml file depends on application-
 
 To support this use case, the timodule.xml file allows token substitution, so you can specify variable values that will be replaced with application-specific values at build time. For example:
 
-*timodule.xml*
+**timodule.xml**
 
 ```xml
 <android xmlns:android="http://schemas.android.com/apk/res/android">

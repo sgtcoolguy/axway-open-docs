@@ -54,7 +54,7 @@ Firstly, it is important to have the required permissions to take photos and cap
 
 On Android you **must** define the required camera permissions in your _tiapp.xml_:
 
-*Android Camera Permissions*
+**Android Camera Permissions**
 
 ```xml
 <uses-permission android:name="android.permission.CAMERA" />
@@ -63,7 +63,7 @@ On Android you **must** define the required camera permissions in your _tiapp.xm
 
 Additionally, to capture audio; you **must** also define the required audio permissions in your _tiapp.xml_:
 
-*Android Audio Permission*
+**Android Audio Permission**
 
 ```xml
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -73,7 +73,7 @@ Additionally, to capture audio; you **must** also define the required audio perm
 
 For all platforms you must verify you have the correct permissions to capture media and request them from the user if they are not available. You can do this by using the provided _Titanium.Media_ APIs:
 
-*Requesting Permissions*
+**Requesting Permissions**
 
 ```javascript
 // check if we already have permissions to capture media
@@ -323,7 +323,7 @@ win.open();
 
 You open the native gallery by calling the [openPhotoGallery()](#!/api/Titanium.Media-method-openPhotoGallery) method. As with the camera, you define three callback functions that are called for the success, cancel, and error events:
 
-*Gallery*
+**Gallery**
 
 ```javascript
 var win = Ti.UI.createWindow(),

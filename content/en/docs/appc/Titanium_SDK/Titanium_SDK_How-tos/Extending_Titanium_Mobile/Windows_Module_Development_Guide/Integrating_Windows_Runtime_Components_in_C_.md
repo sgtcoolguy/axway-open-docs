@@ -34,7 +34,7 @@ This section we are going to create a basic Windows Runtime Component in C# that
 
 3. Then, changes the name of the namespace to MyComponent, and change the name of the class to Speaker.
 
-*MyComponent.cs*
+**MyComponent.cs**
 
 ```csharp
 using System;
@@ -48,7 +48,7 @@ namespace MyComponent
 
 Then, add one static method, one instance method and property for instance. That would be look like below.
 
-*MyComponent.cs*
+**MyComponent.cs**
 
 ```csharp
 using System;
@@ -97,7 +97,7 @@ Copy your Windows Runtime component files into **windows/lib** folder of your Ti
 
 ### Modify Titanium module to use MyComponent
 
-*ComExampleTest.hpp*
+**ComExampleTest.hpp**
 
 ```hpp
 #ifndef _COMEXAMPLETEST_HPP_
@@ -157,7 +157,7 @@ namespace Com
 
 Then your Titanium modules cpp will look like:
 
-*ComExampleTest.cpp*
+**ComExampleTest.cpp**
 
 ```cpp
 #include "ComExampleTest.hpp"

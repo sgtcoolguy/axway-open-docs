@@ -67,15 +67,14 @@ _A more detailed discussion of this step can be found at [Creating a Custom Prev
 
 4. Fill out the form:
 
-    * **Name:** Choose a descriptive name that describes the server uniquely.
+    {{% alert color="info" %}}* **Name:** Choose a descriptive name that describes the server uniquely.
 
-    * **Base URL:** The URL of the server up to the document root; in other words
-        http://localhost/myproject
+* **Base URL:** The URL of the server up to the document root; in other words
+    http://localhost/myproject
 
-        from above.
+    from above.
 
-    * **Document Root:** The path to the public root of the web site, in other words, **\\xampp\\htdocs\\myproject** from above.
-
+* **Document Root:** The path to the public root of the web site, in other words, **\\xampp\\htdocs\\myproject** from above.{{% /alert %}}
 5. Click **OK** and **OK.**
 
 ## Start the external server

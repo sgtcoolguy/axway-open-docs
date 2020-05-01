@@ -92,7 +92,7 @@ For Titanium classic projects you should put the i18n directory inside the root 
 
 The string resource file closely mirrors the format of Android localization files, which have an XML-based format. The name attribute represents the key for the string, and the text inside the XML node represents the value. A typical strings.xml file would look like the following:
 
-*strings.xml*
+**strings.xml**
 
 ```xml
 <resources>
@@ -172,7 +172,7 @@ On iOS applications, you can localize the names of system buttons, such as "Save
 
 To localize system buttons or submit your application to international iTunes App Stores, add the CFBundleLocalizations key to the iOS plist section of the project's tiapp.xml file. Assign the CFBundleLocalizations key an array of strings. Each string is the ISO 639-1 standard name of the language you want the application to support. For example, to support English, Spanish and French, add the following to the application's tiapp.xml file:
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <ti:app>
@@ -195,7 +195,7 @@ To localize system buttons or submit your application to international iTunes Ap
 
 To localize property list key values (Info.plist keys), add string elements to the app.xml file with the name attribute set to the property list key and the node text to the localized string to display. For example, the following file provides French versions of several dialog messages displayed to the user when asking for permission to use their location, contacts or calendar.
 
-*i18n/fr/app.xml*
+**i18n/fr/app.xml**
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -210,7 +210,7 @@ To localize property list key values (Info.plist keys), add string elements to t
 
 The following key allows you to set the default language and region of your app which is very useful for the management of localization:
 
-*CFBundleDevelopmentRegion*
+**CFBundleDevelopmentRegion**
 
 ```xml
 <ios>
@@ -245,7 +245,7 @@ For iOS applications and if you are using Titanium SDK 3.2.0 and greater to buil
 
 In each of your language directories under i18n, you'll include an app.xml file that includes the necessary XML structure for defining the localized name of your app. That structure will look like this for each file:
 
-*i18n/en/app.xml*
+**i18n/en/app.xml**
 
 ```xml
 <resources>
@@ -253,7 +253,7 @@ In each of your language directories under i18n, you'll include an app.xml file 
 </resources>
 ```
 
-*i18n/es/app.xml*
+**i18n/es/app.xml**
 
 ```xml
 <resources>
@@ -261,7 +261,7 @@ In each of your language directories under i18n, you'll include an app.xml file 
 </resources>
 ```
 
-*i18n/ja/app.xml*
+**i18n/ja/app.xml**
 
 ```xml
 <resources>
@@ -283,7 +283,7 @@ Aside from the strings.xml files, there's one more thing we need to add. To make
 
 Now open up platform/android/AndroidManifest.xml and change the android:label attributes of the <application> and <activity> elements from the defined value of your app name to the value @string/app\_name. Yeah, that was a lot of instructions all in one sentence, so here's an example to show you what I mean:
 
-*AndroidManifest.xml*
+**AndroidManifest.xml**
 
 ```xml
 <!-- ... -->
@@ -352,7 +352,7 @@ Titanium provides [string formatting functions](#!/api/Titanium) that you can us
 
 At the time of this writing, natively, Android does not format dates in accordance with the official [DateFormat](http://developer.android.com/reference/java/text/DateFormat.html) documentation. Consequently, this will affect the corresponding short, medium and long formats of Titanium String Formatting. Furthermore, when the device settings are set to certain languages, the translations can be wrong or fields in the incorrect order. For example, the following code is run on a device to demonstrate the issue:
 
-*app.js*
+**app.js**
 
 ```javascript
 Ti.API.info("Ti.Locale.currentLanguage = " + Ti.Locale.currentLanguage);
@@ -365,7 +365,7 @@ Ti.API.info("thisDate long = " + String.formatDate(thisDate,"long"));
 
 This results in the following when the device is set to display in Polish:
 
-*Log output (info)*
+**Log output (info)**
 
 ```
 TiAPI  I  (kroll$1: app://app.js) [4,603] Ti.Locale.currentLanguage = pl
@@ -380,7 +380,7 @@ Here, maja is output for the month of May, whereas the Polish for May is actuall
 
 Similarly, when the device is set to _English (United Kingdom)_, the month fields are incorrectly displayed before the dates:
 
-*Log output (info)*
+**Log output (info)**
 
 ```
 TiAPI  I  (kroll$3: app://app.js) [2,1056] Ti.Locale.currentLanguage = en
@@ -395,7 +395,7 @@ This issue may well be fixed by the time you read this but, nevertheless, it giv
 
 We can use JavaScipt's [Date](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date) object to return the date, which provides methods such as getDate() and getFullYear() to individually retrieve some of the information that we need. Although it does not specifically provide a method for returning the name of the month, we can derive it, in English, from the space-separated string output from Date. To do so, we'll use the JavaScipt [String.split()](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String/split) function. This will give us a key to lookup in the string.xml files.
 
-*app.js*
+**app.js**
 
 ```javascript
 var thisDate = new Date(); // will always return date in English
@@ -413,7 +413,7 @@ Ti.API.info(String.format(L('headingDate'),thisDate.getDate(),L(thisMonth),thisD
 
 Using string substitution placeholders, dynamic values can be passed to the headingDate string. This enables each locale to display the fields in a different order. In the following string.xml files, Polish and English translations will return the date in the default order, whereas Spanish will result in a modified order.
 
-*i18n/pl/strings.xml*
+**i18n/pl/strings.xml**
 
 ```xml
 <resources>
@@ -433,7 +433,7 @@ Using string substitution placeholders, dynamic values can be passed to the head
 </resources>
 ```
 
-*i18n/en/strings.xml*
+**i18n/en/strings.xml**
 
 ```xml
 <resources>
@@ -453,7 +453,7 @@ Using string substitution placeholders, dynamic values can be passed to the head
 </resources>
 ```
 
-*i18n/es/strings.xml*
+**i18n/es/strings.xml**
 
 ```xml
 <resources>
@@ -475,7 +475,7 @@ Using string substitution placeholders, dynamic values can be passed to the head
 
 Using this code, the date in Polish is translated correctly:
 
-*Log output (info)*
+**Log output (info)**
 
 ```
 TiAPI  I  (kroll$3: app://app.js) [1,1366]    Ti.Locale.currentLanguage = pl
@@ -490,7 +490,7 @@ TiAPI  I  (kroll$3: app://app.js) [18,1510]   23 Maj 2011
 
 In addition, the recognized date format for the UK is produced:
 
-*Log output (info)*
+**Log output (info)**
 
 ```
 TiAPI  I  (kroll$1: app://app.js) [2,577]     Ti.Locale.currentLanguage = en
@@ -505,7 +505,7 @@ TiAPI  I  (kroll$1: app://app.js) [13,2722]   23 May 2011
 
 Lastly, the date in Spanish has been reordered:
 
-*Log output (info)*
+**Log output (info)**
 
 ```
 TiAPI  I  (kroll$5: app://app.js) [2,1066]    Ti.Locale.currentLanguage = es

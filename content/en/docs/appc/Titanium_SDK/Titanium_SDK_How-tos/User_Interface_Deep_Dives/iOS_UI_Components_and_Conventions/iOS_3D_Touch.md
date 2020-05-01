@@ -24,9 +24,7 @@ Titanium SDK supports the [Peek and Pop, and Quick Action features](https://deve
 
 * **Quick Action** provides application shortcuts when the user presses the application icon on the Home Screen. The shortcuts allow the user to quickly perform an action with your application without navigating through the application.
 
-{{% alert title="⚠️ Warning" color="primary" %}}*3D Touch != Force Touch*
-
-Apple also has a feature called Force Touch for the Apple Watch, MacBook and Magic Trackpad, which should not be confused with 3D touch.{{% /alert %}}
+{{% alert title="⚠️ 3D Touch != Force Touch" color="primary" %}}Apple also has a feature called Force Touch for the Apple Watch, MacBook and Magic Trackpad, which should not be confused with 3D touch.{{% /alert %}}
 
 ## Quick Actions
 
@@ -52,13 +50,9 @@ To define static shortcuts, add the [UIApplicationShortcutItems](https://develop
 
 * UIApplicationShortcutItemUserInfo: custom dictionary that is passed to the event.
 
-{{% alert title="⚠️ Warning" color="primary" %}}*Localization*
+{{% alert title="⚠️ Localization" color="primary" %}}Place localized strings for the title and subtitle of the quick actions in the app.xml file as opposed to the strings.xml file.{{% /alert %}}{{% alert title="⚠️ Custom Quick Action Icons" color="primary" %}}If you specify a custom quick action icon using the UIApplicationShortcutItemIconFile, you need to enable slicing, that is, adding images to the asset catalog. To enable slicing, add the use-app-thinning element to the ios element in the tiapp.xml file and set the value to true.
 
-Place localized strings for the title and subtitle of the quick actions in the app.xml file as opposed to the strings.xml file.{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}*Custom Quick Action Icons*
-
-If you specify a custom quick action icon using the UIApplicationShortcutItemIconFile, you need to enable slicing, that is, adding images to the asset catalog. To enable slicing, add the use-app-thinning element to the ios element in the tiapp.xml file and set the value to true.
-
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <ti:app>
@@ -70,7 +64,7 @@ If you specify a custom quick action icon using the UIApplicationShortcutItemIco
 
 **Example:**
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <ti:app>
@@ -139,7 +133,7 @@ To create a dynamic shortcut:
 
 To remove a dynamic shortcut, invoke the ApplicationShortcut instance's removeDynamicShortcut() method and pass it the itemtype identifier of the dynamic shortcut to remove or invoke the removeAllDynamicShortcuts() method to remove all dynamic shortcuts.
 
-*app.js*
+**app.js**
 
 ```javascript
 if (Ti.UI.iOS.forceTouchSupported) {
@@ -202,7 +196,7 @@ To enable Peek and Pop:
 
 The following example shows how to attach a PreviewContext to an ImageView in an Alloy view. Note that the example omits the preview and pop views referenced in the controller code.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -212,7 +206,7 @@ The following example shows how to attach a PreviewContext to an ImageView in an
 </Alloy>
 ```
 
-*app/controllers.index.js*
+**app/controllers.index.js**
 
 ```javascript
 function popView() {

@@ -2,13 +2,11 @@
 
 Demonstrates how to use localized strings in your Alloy project.
 
-{{% alert title="💡 Hint" color="info" %}}*App folder location*
-
-_alloy_/test/apps/**advanced/localization**{{% /alert %}}![local](/Images/appc/download/attachments/41845663/local.png)
+{{% alert title="💡 App folder location" color="info" %}}_alloy_/test/apps/**advanced/localization**{{% /alert %}}![local](/Images/appc/download/attachments/41845663/local.png)
 
 The global L() function, which maps Titanium.Locale.getString(), can be invoked from an Alloy controller, XML view, or TSS file. Below is the sample application's main index.xml view.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -28,13 +26,13 @@ The global L() function, which maps Titanium.Locale.getString(), can be invoked 
 
 Notice that in the XML view the second Label element's text property is assigned the value L('hello\_world'). Similarly, the JavaScript controller and TSS file contain the same function call:
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 $.viaController.text = L('hello_world');
 ```
 
-*app/styles/index.css*
+**app/styles/index.css**
 
 ```css
 '#viaTss': {

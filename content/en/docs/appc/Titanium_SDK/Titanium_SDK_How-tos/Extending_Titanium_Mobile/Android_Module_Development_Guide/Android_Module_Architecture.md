@@ -105,9 +105,7 @@ public static void onAppCreate(TiApplication app)
 
 The module also provides callbacks that are invoked when the application's root activity is started, stopped, paused, or resumed.
 
-{{% alert title="💡 Hint" color="info" %}}*Activity Lifecycle Events*
-
-Note that on Titanium applications, the root activity is the one that displays the splash screen. If the first UI component is a heavyweight Window (window with its own activity) or TabGroup, not all of the activity lifecycle events may fire for the root activity. Note that since Release 3.2.0, all Window objects are heavyweight and have their own activity associated with it.
+{{% alert title="💡 Activity Lifecycle Events" color="info" %}}Note that on Titanium applications, the root activity is the one that displays the splash screen. If the first UI component is a heavyweight Window (window with its own activity) or TabGroup, not all of the activity lifecycle events may fire for the root activity. Note that since Release 3.2.0, all Window objects are heavyweight and have their own activity associated with it.
 
 To have the module respond to the activity lifecycle events of a specific activity of a TabGroup or Window in the JavaScript application, override the activity lifecycle callbacks of a module proxy, then associate the proxy with the Window or TabGroup whose lifecycle events you want to monitor when you create the proxy in the JavaScript application. For details, see [Activity Lifecycle Events](#ActivityLifecycleEvents) below.{{% /alert %}}
 
@@ -452,7 +450,7 @@ Starting with Titanium SDK 4.0.0, a proxy can respond to [activity lifecycle eve
 
 First, in the module proxy, override the activity lifecycle callbacks you want to respond to, such as onCreate, onStart, onRestart, onResume, onPause, onStop or onDestroy.
 
-*ExampleProxy.java*
+**ExampleProxy.java**
 
 ```java
 @Override
@@ -470,7 +468,7 @@ First, in the module proxy, override the activity lifecycle callbacks you want t
 
 Then, in the JavaScript application, when you create the module proxy, assign its lifecycleContainer property to either a Window or TabGroup object to listen for that object's lifecycle events to trigger the module proxy's activity lifecycle callbacks.
 
-*app.js*
+**app.js**
 
 ```javascript
 var win = Ti.UI.createWindow();
@@ -536,7 +534,7 @@ private class ExampleView extends TiUIView
 
 To set a property or invoke a method on a View, the View Proxy acts as an intermediary between the JavaScript and View. The View Proxy exposes APIs to the JavaScript, then invokes APIs on the View. However, the application must be running on the UI thread. The code below checks to see if the application is running on the UI thread. If it is not, it sends a blocking message until it is back on the UI thread.
 
-*FooProxy.java*
+**FooProxy.java**
 
 ```java
 private static final int MSG_SET_COLOR = 70000;

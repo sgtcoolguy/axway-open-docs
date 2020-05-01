@@ -54,7 +54,7 @@
 
 Adding the following to your HTML will make a WKWebView scale its content the same was as the old UIWebView.
 
-*WKWebView scaling*
+**WKWebView scaling**
 
 ```xml
 <html>
@@ -80,7 +80,7 @@ Installation
 
 Download the [stable release](https://github.com/appcelerator-modules/ti.wkwebview/releases), unpack the module, and place it inside the modules/iphone directory of your project. Edit the iOS and modules section of your tiapp.xml file to include this module:
 
-*tiapp.xml update*
+**tiapp.xml update**
 
 ```xml
 <ios>
@@ -209,7 +209,7 @@ webView.evalJS('document.title', function (e) {
 
 You can send data from the Web View to your native app by posting messages like this:
 
-*Send data from the Web View*
+**Send data from the Web View**
 
 ```
 window.webkit.messageHandlers.Ti.postMessage({ message: 'Titanium rocks!' },'*');
@@ -229,7 +229,7 @@ After sending the message from your HTML file, it will trigger the message event
 
 For sending messages from the app to the Web View, use evalJS to call your JS methods like this:
 
-*Send messages from the app to the Web View*
+**Send messages from the app to the Web View**
 
 ```
 webView.evalJS('myJSMethod();');
@@ -249,7 +249,7 @@ Note 2: Since 2.4.0, this modules also supports Ti.App-like events that allows t
 
 Different to the Ti.App events, these ones are fired on the top-level module instance.
 
-*Ti.App events*
+**Ti.App events**
 
 ```javascript
 var WK = require('ti.wkwebview');
@@ -263,7 +263,7 @@ WK.addEventListener('myEvent', function(e) { ... });
 
 The above events can be used on the JavaScript side as well. The following is an example on how to use them in your HTML file (ensure that there is no concurring WK variable):
 
-*Ti.App events in HTML*
+**Ti.App events in HTML**
 
 ```xml
 <!DOCTYPE html>
@@ -291,7 +291,7 @@ If you want to allow users to browse the internet (e.g. by using a remote site),
 
 For using the URL schemes mailto, tel, sms and itms-services you only have to set the allowedURLSchemes property. Other URL schemes (i.e. fb) additionally need the corresponding LSApplicationQueriesSchemes key in the iOS plist dictionary of your tiapp.xml:
 
-*iOS plist dictionary*
+**iOS plist dictionary**
 
 ```xml
 <key>LSApplicationQueriesSchemes</key>
@@ -315,7 +315,7 @@ webView.stopListeningToProperties([ 'title' ]);
 
 Use the configuration API to configure the initial web-view. This property can only be set when creating the webview and will be ignored when set afterwards.
 
-*Configuration API*
+**Configuration API**
 
 ```javascript
 var WK = require('ti.wkwebview');
@@ -339,7 +339,7 @@ var webView = WK.createWebView({ configuration: config });
 
 Use process pools to share cookies between webviews. Process pools do not take arguments, just pass the same reference to multiple web views.
 
-*Process pools*
+**Process pools**
 
 ```javascript
 var WK = require( 'ti.wkwebview' );

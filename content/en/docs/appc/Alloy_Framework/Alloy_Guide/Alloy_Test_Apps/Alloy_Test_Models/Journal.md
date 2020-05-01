@@ -2,13 +2,11 @@
 
 Demonstrates how to create a simple personal journal application using models and collections.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**models/journal**{{% /alert %}}![add_entry](/Images/appc/download/attachments/41845717/add_entry.png)
+{{% alert title="App Folder Location" color="info" %}}alloy/test/apps/**models/journal**{{% /alert %}}![add_entry](/Images/appc/download/attachments/41845717/add_entry.png)
 
 The application's model file (journal.js) defines the fields for each journal entry: title, text, mood (happy, angry, or neutral), and creation date.
 
-*app/models/journal.js*
+**app/models/journal.js**
 
 ```javascript
 exports.definition = {
@@ -29,7 +27,7 @@ exports.definition = {
 
 The samples uses the Alloy convention to define unique views for iOS, Android and MobileWeb.
 
-*Application view structure*
+**Application view structure**
 
 ```
 app/views/
@@ -43,7 +41,7 @@ app/views/
 
 Each view, like app/views/android/index.xml shown below, creates a global reference to the journal collection, which is assigned to a ScrollView element's dataCollection attribute.
 
-*app/views/android/index.xml*
+**app/views/android/index.xml**
 
 ```xml
 <Alloy>
@@ -67,7 +65,7 @@ The ScrollView element also specifies a dataTransform function to transform each
 
 * Uses the built-in moment.js library's [fromNow()](http://momentjs.com/docs/#/displaying/fromnow/) method to transform the entry's dateCreated value into dateSince.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 // Require built-in moment.js library for working with dates/times.
@@ -100,7 +98,7 @@ Alloy.Collections.journal.fetch();
 
 A Backbone [comparator](http://backbonejs.org/#Collection-comparator) sorts the items according to their dateCreated fields. Lastly, each entry displayed by the ScrollView is a View element that binds the transformed fields to the text properties of Labels and the borderColor of the View.
 
-*views/entry.xml*
+**views/entry.xml**
 
 ```xml
 <Alloy>

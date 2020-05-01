@@ -2,15 +2,13 @@
 
 Demonstrates how to use a SplitWindow control, an iPad-only control for managing the presentation of two views in a master-detail UI.
 
-{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
-
-You can find this example app in the Alloy repository under [samples/apps/ui/splitwindow](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/splitwindow). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="💡 Example App Source Location" color="info" %}}You can find this example app in the Alloy repository under [samples/apps/ui/splitwindow](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/splitwindow). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 ![ipad](/Images/appc/download/attachments/41845771/ipad.png)
 
 The <SplitWindow/> element expects two <Window/> elements as children. The first declared <Window/> is the "master" view and the second is the "detail" view. If a <Require> element is used to insert a Window, as in the sample, the required XML view must contain only one top-level element under the <Alloy> tag and that element must be a [Ti.UI.Window](#!/api/Titanium.UI.Window) object.
 
-*views/index.xml*
+**views/index.xml**
 
 ```xml
 <Alloy>
@@ -28,7 +26,7 @@ The <SplitWindow/> element expects two <Window/> elements as children. The first
 
 The "master" view consists of <TabGroup/> element with two <Tab/> child elements.
 
-*views/master.xml*
+**views/master.xml**
 
 ```xml
 <Alloy>

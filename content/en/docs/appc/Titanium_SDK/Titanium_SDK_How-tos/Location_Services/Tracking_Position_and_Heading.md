@@ -214,7 +214,7 @@ Based on the accuracy you choose, iOS uses its own logic to select location prov
 
 Using the event-driven location example at the beginning of this chapter, let's modify it to use some of the above properties.
 
-*Geolocation configuration on iOS*
+**Geolocation configuration on iOS**
 
 ```
 if (Ti.Geolocation.locationServicesEnabled) {

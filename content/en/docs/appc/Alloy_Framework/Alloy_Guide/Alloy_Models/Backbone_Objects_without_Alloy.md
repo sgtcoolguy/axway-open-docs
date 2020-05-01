@@ -2,7 +2,7 @@
 
 You can use plain Backbone Collection and Model objects in place of the Alloy versions. This does not require any special Alloy or Titanium code. Use the [Backbone API](http://docs.appcelerator.com/backbone/0.9.2/) to create and control Backbone objects instead of using the createCollection and createModel methods. Backbone models also do not require a model configuration file. For example:
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 // Initialize a collection class and implement the comparator method for sorting
@@ -39,7 +39,7 @@ These Backbone objects cannot persist to external storage without implementing t
 
 You can use Alloy's Model-View binding mechanism to keep the local Backbone Models and Collections in sync with an Alloy view-controller. Follow the same directions in the [Alloy Model-View Binding](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Models/Alloy_Data_Binding/#model-view-binding) section except instead of using the Model or Collections XML tag, you need to first initialize your model or collection in the alloy.js initializer file and add it to the Alloy.Models or Alloy.Collections namespace. For example:
 
-*app/alloy.js*
+**app/alloy.js**
 
 ```javascript
 // Initialize a collection class and implement the comparator method for sorting
@@ -64,7 +64,7 @@ var library = new collection([
 Alloy.Collections.book = library;
 ```
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <!-- Markup the view the same except there is no Collection tag -->
@@ -77,7 +77,7 @@ Alloy.Collections.book = library;
 </Alloy>
 ```
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 $.index.open();

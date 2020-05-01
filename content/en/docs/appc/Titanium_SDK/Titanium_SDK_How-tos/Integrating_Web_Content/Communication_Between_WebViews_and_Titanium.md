@@ -42,7 +42,7 @@ You can use the Ti.API logging methods within HTML content loaded from the devic
 
 These functions are great for adding logging to our native Titanium code, but they can also be used to add logging to web content in WebViews. Let's take a look at a simple example. Here will we add Titanium logging to a WebView to let us know when the <body> element of the web content has loaded.
 
-*logging.html*
+**logging.html**
 
 ```html
 <html>
@@ -50,7 +50,7 @@ These functions are great for adding logging to our native Titanium code, but th
 </html>
 ```
 
-*app.js*
+**app.js**
 
 ```javascript
 var win = Ti.UI.createWindow();
@@ -135,7 +135,7 @@ You cannot use any Titanium statements within HTML content loaded from a remote 
 
 Let's see an example. The following loads a remote web page, then uses evalJS() to retrieve the cookies set by that server:
 
-*app.js*
+**app.js**
 
 ```javascript
 var webView = Ti.UI.createWebView({

@@ -2,9 +2,7 @@
 
 Demonstrates using a static, non-persistent data collection.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**models/binding\_no\_persistence**{{% /alert %}}
+{{% alert title="App Folder Location" color="info" %}}alloy/test/apps/**models/binding\_no\_persistence**{{% /alert %}}
 
 In the sample application, clicking the <Label> or <TableView> UI element causes the application to make trivial changes to the underlying model or collection data. To update the UI with the new model or collections data, it then calls the trigger() method on both model and collection objects. One difference between using a persistent and non-persistent model or collection is that you can't call the [model](http://docs.appcelerator.com/backbone/0.9.2/#Model-fetch) or [collection](http://docs.appcelerator.com/backbone/0.9.2/#Collection-fetch)'s fetch() method on a non-persistent collection, as this generates a runtime error. Instead, call the trigger() method on the model or collection, as demonstrated.
 
@@ -12,7 +10,7 @@ In the sample application, clicking the <Label> or <TableView> UI element causes
 
 The **appState** model models the application state with a counter and hexadecimal color value, and the **heroes** collection contains a list of super heroes. The sample uses the [Backbone.Model()](http://docs.appcelerator.com/backbone/0.9.2/#Model) and [Backbone.Collection()](http://docs.appcelerator.com/backbone/0.9.2/#Collection) methods to create the model and collection directly, instead of the [Alloy.createModel(](#!/api/Alloy-method-createModel)) and [Alloy.createCollection()](#!/api/Alloy-method-createCollection) methods.
 
-*app/alloy.js*
+**app/alloy.js**
 
 ```javascript
 Alloy.Models.appState = new Backbone.Model({
@@ -36,7 +34,7 @@ Alloy.Collections.heroes.reset([
 
 The model data is updated by the modifyHero() and updateState() functions, called when the user clicks the Label or TableView elements on their respective tabs.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 // Contrived update function to modify the model

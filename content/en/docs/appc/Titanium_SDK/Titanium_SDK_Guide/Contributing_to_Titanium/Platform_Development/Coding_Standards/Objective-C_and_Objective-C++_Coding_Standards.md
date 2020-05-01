@@ -1,8 +1,6 @@
 {"title":"Objective-C and Objective-C++ Coding Standards","weight":"40"}
 
-*Contents*
-
-* [Synopsis](#Synopsis)
+{{% alert title="Contents" color="info" %}}* [Synopsis](#Synopsis)
 
 * [Basis for this document](#Basisforthisdocument)
 
@@ -60,7 +58,7 @@
 
         * [@compatibility\_alias](#@compatibility_alias)
 
-        * [pragma mark](#pragmamark)
+        * [pragma mark](#pragmamark){{% /alert %}}
 
 ## Synopsis
 
@@ -104,7 +102,7 @@ Always @import (not #import) Objective-C headers, and #include C (or C++) header
 
     * Camelcase
 
-*Example*
+**Example**
 
 ```
 @interface TiExampleClass : NSObject {
@@ -128,7 +126,7 @@ Protocols follow the same naming conventions as classes, with the following exce
 
 * Protocols which are a _delegate_ should end with the word Delegate.
 
-*Example*
+**Example**
 
 ```
 @protocol TiScrolling; // Gerund; behavior type is "this object scrolls"
@@ -174,7 +172,7 @@ Use the default synthesis property of ivars. You should rarely need @synthesize.
 
 * The opening brace of a method should be on its own line for implementations.
 
-*Example*
+**Example**
 
 ```
 +(void)x:(int)y
@@ -192,7 +190,7 @@ Use the default synthesis property of ivars. You should rarely need @synthesize.
 
 Every class must have one, and only one, designated initializer that is identified as such in a comment. The following is an example of well-written designated initializer:
 
-*Example*
+**Example**
 
 ```
 // Designated initializer.
@@ -222,7 +220,7 @@ Note the single braces. You may wish to turn off the "initializer not fully brac
 
 * \_\_block storage specifier objects should be used with care. Remember that if a \_\_block variable goes out of scope when a block tries to access it, there can be unpredictable and bad results.
 
-*Example*
+**Example**
 
 ```
 typedef int ^(intBlock)(int);

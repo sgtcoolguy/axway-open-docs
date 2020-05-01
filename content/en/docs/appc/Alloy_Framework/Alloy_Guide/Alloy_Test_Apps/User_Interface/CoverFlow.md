@@ -2,15 +2,13 @@
 
 Demonstrates basic use of the CoverFlowView control, an iOS-only control that presents a list of scrollable images in a style consistent with that used for iPod, iTunes, and file browsing.
 
-{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
-
-You can find this example app in the Alloy repository under [samples/apps/ui/coverflow](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/coverflow). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="💡 Example App Source Location" color="info" %}}You can find this example app in the Alloy repository under [samples/apps/ui/coverflow](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/coverflow). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 ![screenshot](/Images/appc/download/attachments/41845741/screenshot.png)
 
 To define the images displayed by a [CoverFlowView](#!/api/Titanium.UI.iOS.CoverFlowView), insert an <Images> element to which you add one or more <Image/> elements.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>

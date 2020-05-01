@@ -2,13 +2,11 @@
 
 Demonstrates a widget using another widget.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**widgets/complex**{{% /alert %}}![search](/Images/appc/download/attachments/41845785/search.png)
+{{% alert title="App Folder Location" color="info" %}}alloy/test/apps/**widgets/complex**{{% /alert %}}![search](/Images/appc/download/attachments/41845785/search.png)
 
 The application defines two widgets: **com.testing.searchForBooks** and **com.appcelerator.loading**. As their names imply, the first widget provides UI and logic to search for books by title (using the [Google Books API](https://developers.google.com/books/docs/v1/using#PerformingSearch)) , while the second widget displays a loading indicator while the search is in progress.
 
-*App directory structure*
+**App directory structure**
 
 ```
 app
@@ -44,7 +42,7 @@ app
 
 The application's main index.xml view includes the **searchForBooks** widget and a <Table/> element to display search results.
 
-*app/views/index.ml*
+**app/views/index.ml**
 
 ```xml
 <Alloy>
@@ -57,7 +55,7 @@ The application's main index.xml view includes the **searchForBooks** widget and
 
 The searchForBooks widget includes a [TextField](#!/api/Titanium.UI.TextField) where the user enters the search term, an [ImageView](#!/api/Titanium.UI.ImageView) that displays a search icon, and a <Require/> element that includes the **loading** widget.
 
-*app/widgets/com.testing.searchForBooks/views/widget.xml*
+**app/widgets/com.testing.searchForBooks/views/widget.xml**
 
 ```xml
 <Alloy>

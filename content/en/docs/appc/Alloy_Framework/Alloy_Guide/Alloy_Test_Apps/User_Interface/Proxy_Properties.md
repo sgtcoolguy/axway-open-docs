@@ -2,9 +2,7 @@
 
 Demonstrates expressing properties of Titanium objects with Alloy proxy elements.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-You can find this example app in the Alloy repository under [samples/apps/ui/proxy\_properties](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="App Folder Location" color="info" %}}You can find this example app in the Alloy repository under [samples/apps/ui/proxy\_properties](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 Many Titanium UI objects and properties can be declared in Alloy as mark-up. These mark-up elements are considered proxies for the underlying Titanium APIs. For example, the [views/ios/index.xml](#ios) view, shown below, uses the following proxies.
 
@@ -34,7 +32,7 @@ Many Titanium UI objects and properties can be declared in Alloy as mark-up. The
 
 Proxies that represent properties of objects are nested inside the parent element. For example, a <Window/> element's [leftNavProperty](#!/api/Titanium.UI.Window-property-leftNavButton) is represented by a <LeftNavButton/> child element. Proxies can nest multiple levels, as shown with the Toolbar element in the XML view below.
 
-*views/ios/index.xml*
+**views/ios/index.xml**
 
 ```xml
 <Alloy>
@@ -78,7 +76,7 @@ Proxies that represent properties of objects are nested inside the parent elemen
 
 The views/table.xml view defines a <TableView/> element and various properties of the TableView such as its footerView and headerView, as well as [TableViewSection](#!/api/Titanium.UI.TableViewSection) and TableViewRow elements.
 
-*views/table.xml*
+**views/table.xml**
 
 ```xml
 <Alloy>

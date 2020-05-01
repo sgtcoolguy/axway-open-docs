@@ -1,8 +1,6 @@
 {"title":"Authentication Schemes","weight":"30"}
 
-{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
-
-Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
+{{% alert title="❗️ API Builder 3.x is deprecated" color="danger" %}}Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
@@ -104,7 +102,7 @@ To use the plugin, you need to pass your LDAP settings to the ldap object in the
 
 **Example:**
 
-*conf/default.js*
+**conf/default.js**
 
 ```javascript
 module.exports = {
@@ -139,7 +137,7 @@ In the conf/default.js file, set the APIKeyAuthPlugin key to the location of the
 
 For example, if your client applications send a custom header, called X-Secret, for each request and you want to check the value sent with the request against one stored in your configuration file, you can use the plugin below.
 
-*conf/default.js*
+**conf/default.js**
 
 ```javascript
 module.exports = {
@@ -151,7 +149,7 @@ module.exports = {
 }
 ```
 
-*lib/plugin.js*
+**lib/plugin.js**
 
 ```javascript
 // Constructor to get a reference to the config object

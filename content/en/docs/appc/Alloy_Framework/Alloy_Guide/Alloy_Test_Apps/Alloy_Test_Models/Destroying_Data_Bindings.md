@@ -2,13 +2,11 @@
 
 Demonstrates best practices for data binding memory management.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**models/binding\_destroy**{{% /alert %}}![destroy](/Images/appc/download/attachments/41846652/destroy.png)
+{{% alert title="App Folder Location" color="info" %}}alloy/test/apps/**models/binding\_destroy**{{% /alert %}}![destroy](/Images/appc/download/attachments/41846652/destroy.png)
 
 To prevent memory leaks and ensure that bindings are properly released, you should always call destroy() on a controller that references a global data collection when you are done with that controller. Calling this method frees binding resources associated with this controller and its UI components. The sample app's main index.xml view, shown below, declares global references to the movies collection and info model.
 
-*views/index.xml*
+**views/index.xml**
 
 ```xml
 <Alloy>
@@ -23,7 +21,7 @@ To prevent memory leaks and ensure that bindings are properly released, you shou
 
 This info model and movies collection are bound to the info.xml and movies.xml views, respectively.
 
-*app/views/info.xml*
+**app/views/info.xml**
 
 ```xml
 <Alloy>
@@ -35,7 +33,7 @@ This info model and movies collection are bound to the info.xml and movies.xml v
 </Alloy>
 ```
 
-*app/views/movie.xml*
+**app/views/movie.xml**
 
 ```xml
 <Alloy>
@@ -49,7 +47,7 @@ This info model and movies collection are bound to the info.xml and movies.xml v
 
 The view-controllers for the movies and info views call $.destroy() from their close event handlers to properly dispose of allocated memory.
 
-*app/controllers/info.js*
+**app/controllers/info.js**
 
 ```javascript
 $.info.addEventListener('close', function() {
@@ -57,7 +55,7 @@ $.info.addEventListener('close', function() {
 });
 ```
 
-*app/controllers/movies.js*
+**app/controllers/movies.js**
 
 ```javascript
 $.movies.addEventListener('close', function() {

@@ -20,7 +20,7 @@ Before reading this guide, review [Alloy Styles and Themes](/docs/appc/Alloy_Fra
 
 Before using either method, you need to create class styles in the TSS files, either in the global style file or in the individual TSS files. For example, suppose you have the following styles defined:
 
-*app/styles/app.tss*
+**app/styles/app.tss**
 
 ```
 ".bluetext" : {
@@ -82,7 +82,7 @@ You can use the controller's UI.create method to create a view component that is
 
 For example, suppose that the following view-controller is defined in an Alloy project.
 
-*app/views/dialog.xml*
+**app/views/dialog.xml**
 
 ```xml
 <Alloy>
@@ -92,7 +92,7 @@ For example, suppose that the following view-controller is defined in an Alloy p
 </Alloy>
 ```
 
-*app/controllers/dialog.js*
+**app/controllers/dialog.js**
 
 ```javascript
 function doClick(e) {
@@ -126,7 +126,7 @@ if (args.label) {
 
 Then, create an instance of this view-controller:
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 var args = {};
@@ -143,7 +143,7 @@ In this example, the index view-controller passes specific classes for the dialo
 
 In this example, the dialog controller code is not necessary. The dialog can be generated and styled outside the view-controller. The following code using only the previous XML markup is equivalent to what the previous two controllers are doing:
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 var dialog = Alloy.createController('dialog');
@@ -175,7 +175,7 @@ Note that code outside of the dialog view-controller is using the instance varia
 
 To modify the TSS classes of an object that has already been created, use the controller's addClass, removeClass and resetClass methods, which adds, removes or resets the TSS classes of a view object, respectively. Pass a reference to the view object as the first parameter, then pass the classes to add or remove as an array or space-separated string as the second parameter. You can optionally specify inline properties related to the component to modify as an optional third parameter. As the classes are modified using these API calls, the view is automatically updated. For example, the following code is equivalent to the previous example:
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 var dialog = Alloy.createController('dialog');
@@ -204,7 +204,7 @@ A view component with autostyle enabled has its TSS classes stored with the view
 
 To better understand when and why this feature is useful, consider the following XML view, TSS file and view-controller code:
 
-*app/styles/index.tss*
+**app/styles/index.tss**
 
 ```
 ".coloronly" : {
@@ -222,7 +222,7 @@ To better understand when and why this feature is useful, consider the following
 
 The view-controller calls $.addClass() to add two classes to the label object, then calls removeClass() twice, removing a class each time. The result of each method call is show as a comment next to the associated line of code.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 $.addClass($.label, "coloronly colorsize"); // --> appears blue and 24dp
@@ -242,7 +242,7 @@ To enable autostyle, set the autoStyle attribute to true either in the XML marku
 
 * To enable autostyle for all controllers in an Alloy project, set the **autoStyle** field to true in the config.json file, for example:
 
-    *app/config.json*
+    **app/config.json**
 
     ```json
     {

@@ -70,7 +70,7 @@ You can also assign the AttributedString object to TextField's attributedHintTex
 
 The example below highlights the word "hyperloop" in the Label.
 
-*app.js*
+**app.js**
 
 ```javascript
 var win = Ti.UI.createWindow({

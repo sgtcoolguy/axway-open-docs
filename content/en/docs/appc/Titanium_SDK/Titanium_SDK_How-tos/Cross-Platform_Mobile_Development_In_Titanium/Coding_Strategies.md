@@ -217,7 +217,7 @@ Let's recap: keep your code DRY, don't pollute the global scope, and strive for 
 
 A technique we teach in our classroom training sessions involves breaking your app into modular pieces, each constructed using [self-calling functions](http://2007-2010.lovemikeg.com/2008/08/17/a-week-in-javascript-patterns-self-invocation/) which modify a single app namespace. (If you want to be semantically-correct, these are [Immediately Invoked Function Expressions](http://benalman.com/news/2010/11/immediately-invoked-function-expression/), or IIFEs.) This technique lets you divide code into multiple files, each focused on a discrete purpose. As each library is loaded, it modifies the app's namespace object, which is the only variable added to the global namespace. Let's demonstrate this with code:
 
-*app.js*
+**app.js**
 
 ```javascript
 // create an object literal to be your app's namespace
@@ -232,7 +232,7 @@ myapp.mainWindow.open();
 
 The ui.js library file contains the code that constructs your app's user interface.
 
-*ui.js*
+**ui.js**
 
 ```javascript
 // create a self-calling function
@@ -296,7 +296,7 @@ myModule.sayHello('Kevin');
 
 As in the [CommonJS Module specification](http://wiki.commonjs.org/wiki/Modules/1.1), inside the module's JavaScript file, there will be a special variable called exports to which properties may be added for the public interface of the module. Anything assigned to it will be available in the calling context as a property of the returned object.
 
-*MyModule.js*
+**MyModule.js**
 
 ```javascript
 // variables defined in this files are private
@@ -332,7 +332,7 @@ module.exports = Person;
 
 Usage:
 
-*Resources/app.js*
+**Resources/app.js**
 
 ```javascript
 var Person = require('Person');

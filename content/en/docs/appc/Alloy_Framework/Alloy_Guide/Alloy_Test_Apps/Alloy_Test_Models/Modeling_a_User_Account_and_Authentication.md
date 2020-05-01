@@ -2,15 +2,13 @@
 
 Demonstrates creating a user login and authentication flow using a data model.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**models/login**{{% /alert %}}
+{{% alert title="App Folder Location" color="info" %}}alloy/test/apps/**models/login**{{% /alert %}}
 
 The application initially presents a login form (username is **user** and password is **password**). Upon successful login, the application presents three tabs: Profile, About Us, and Settings. The first two tabs display information about the user persisted to a SQL database. The Settings tab lets the user change their email address, and set the application's background color and image.
 
 The main index.js view-controller uses the [Alloy.createController()](#!/api/Alloy-method-createController) method to conditionally display the app/views/login.xml or app/views/home.xml view depending on whether the model's validateAuth() method returns "true" or "false".
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 if (OS_IOS) {
@@ -26,7 +24,7 @@ if (OS_IOS) {
 
 The home.xml view defines a TabGroup with the three tabs, "Profile", "About Us" and "Settings". Each tab contains UI elements that are bound to the user model data – for example, <Label text="{user.realname}" top="10"/> or <Window title="Settings" barColor="{user.themeBGColor}">.
 
-*app/views/home.xml*
+**app/views/home.xml**
 
 ```xml
 <Alloy>
@@ -66,7 +64,7 @@ The home.xml view defines a TabGroup with the three tabs, "Profile", "About Us" 
 </Alloy>
 ```
 
-*app/views/login.xml*
+**app/views/login.xml**
 
 ```xml
 <Alloy>
@@ -90,7 +88,7 @@ The model's transform() function appends the themeBGColor and themeColor propert
 
 {{% alert title="💡 Hint" color="info" %}}For purposes of demonstration, the authentication key, username and password are hard-coded into the application.{{% /alert %}}
 
-*app/models/user.js*
+**app/models/user.js**
 
 ```javascript
 var moment = require('alloy/moment');

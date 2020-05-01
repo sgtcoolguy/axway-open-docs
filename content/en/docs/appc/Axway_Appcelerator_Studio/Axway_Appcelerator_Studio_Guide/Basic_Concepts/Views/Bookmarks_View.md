@@ -20,9 +20,9 @@ Double-click any bookmark in the Bookmarks View to immediately jump to that spot
 
 To display the Bookmarks View:
 
-* From the **Window** menu, select **Show View > Other...**, and in the Show View window, select **General > Bookmarks**.
+{{% alert color="info" %}}* From the **Window** menu, select **Show View > Other...**, and in the Show View window, select **General > Bookmarks**.
 
-* To close the **Bookmarks View**, click the Close button (**X**) in the upper right of the tab.
+* To close the **Bookmarks View**, click the Close button (**X**) in the upper right of the tab.{{% /alert %}}
 
 Studio displays the **Bookmark View** as a tab at the bottom of your screen, shown in the image below.
 

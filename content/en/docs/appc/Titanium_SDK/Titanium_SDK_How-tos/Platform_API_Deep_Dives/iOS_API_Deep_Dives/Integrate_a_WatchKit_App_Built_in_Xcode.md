@@ -177,7 +177,7 @@ After you create your provisioning profiles and add them to Xcode, you need to a
 
 The example below add the development provisioning profiles to the file.
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <ti:app>

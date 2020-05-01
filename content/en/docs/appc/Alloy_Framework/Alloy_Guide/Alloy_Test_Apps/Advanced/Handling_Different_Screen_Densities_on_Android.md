@@ -2,9 +2,7 @@
 
 Demonstrates how to package and use images for different screen densities on Android.
 
-{{% alert title="💡 Hint" color="info" %}}*App folder location*
-
-_alloy_/test/apps/**advanced/android\_density**{{% /alert %}}
+{{% alert title="💡 App folder location" color="info" %}}_alloy_/test/apps/**advanced/android\_density**{{% /alert %}}
 
 In the sample app, is depending on the screen density of the device or emulator, a different image is displayed. For instance, the following screenshots show the sample running on HDPI and XHDPI Android emulators.
 
@@ -12,7 +10,7 @@ In the sample app, is depending on the screen density of the device or emulator,
 
 To use density-specific images, simply place the desired image in a properly named folder, as explained in [Using density-specific resources on Android](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/User_Interface_Deep_Dives/Android_UI_Components_and_Conventions/Using_density-specific_resources_on_Android/). At runtime, the appropriate image is displayed. The sample app contains the following folder structure and images:
 
-*App folder structure*
+**App folder structure**
 
 ```
 app

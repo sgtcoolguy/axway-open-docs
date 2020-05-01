@@ -1,8 +1,6 @@
 {"title":"API Builder APIs","weight":"50"}
 
-{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
-
-Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
+{{% alert title="❗️ API Builder 3.x is deprecated" color="danger" %}}Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
@@ -54,7 +52,7 @@ Set the following keys in the object passed to the API.extend() method to define
 
 The following API definition file creates an endpoint that can be accessed by a client using GET <HOST\_ADDRESS>/api/test/:id. Before the request is initiated by the server, the formatRequestBlock is executed, then the server performs the request (executes the action logic). The action logic tries to find the user model with the specified ID. After the logic executes, the cachingBlock and analyticsBlocks are executed.
 
-*apis/test.js*
+**apis/test.js**
 
 ```javascript
 var Arrow = require('arrow');
@@ -96,7 +94,7 @@ To invoke an API endpoint:
 
 The Route below is invoking the GET <SERVER\_ADDRESS>/api/car method programmatically.
 
-*web/routes/testroute.js*
+**web/routes/testroute.js**
 
 ```javascript
 var TestRoute = Arrow.Router.extend({

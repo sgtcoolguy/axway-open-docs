@@ -2,15 +2,13 @@
 
 Demonstrates how to use the WPATH() macro to easily map image and library paths to the widget folder.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**widgets/wpath**{{% /alert %}}
+{{% alert title="App Folder Location" color="info" %}}alloy/test/apps/**widgets/wpath**{{% /alert %}}
 
 By default, image paths and JavaScript libraries referenced by a widget are resolved relative to the Alloy project's app/ folder, rather than to the widget folder. To easily map paths relative to the widget's root folder, wrap the specified path in the WPATH() macro.
 
 In the sample application, the WPATH() macro is used in widget's TSS file and controller file.
 
-*app/widgets/com.test.hellobutton/styles/widget.tss*
+**app/widgets/com.test.hellobutton/styles/widget.tss**
 
 ```
 "#helloButton": {
@@ -20,7 +18,7 @@ In the sample application, the WPATH() macro is used in widget's TSS file and co
 }
 ```
 
-*app/widgets/com.test.hellobutton/controllers/widget.js*
+**app/widgets/com.test.hellobutton/controllers/widget.js**
 
 ```javascript
 function sayHello() {
@@ -38,7 +36,7 @@ You could accomplish the same things without using WPATH() as shown below:
 }
 ```
 
-*app/widgets/com.test.hellobutton/controllers/widget.js*
+**app/widgets/com.test.hellobutton/controllers/widget.js**
 
 ```javascript
 function sayHello() {

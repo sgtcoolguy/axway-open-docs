@@ -2,9 +2,7 @@
 
 Demonstrates use of Alloy elements to proxy ListView and TableView controls and their properties.
 
-{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
-
-You can find this example app in the Alloy repository under [alloy/test/apps/ui/lists\_proxy\_properties](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/lists_proxy_properties). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="💡 Example App Source Location" color="info" %}}You can find this example app in the Alloy repository under [alloy/test/apps/ui/lists\_proxy\_properties](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/lists_proxy_properties). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 ![screenshot](/Images/appc/download/attachments/41845748/screenshot.png)
 
@@ -44,7 +42,7 @@ For properties that are assigned Titanium proxies, such as Views or Buttons, you
 
 The main application view, lists.xml, is loaded programmatically by the index.js view-controller.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 var major = parseInt(Ti.Platform.version.split(".")[0], 10);
@@ -56,7 +54,7 @@ if (OS_IOS || (OS_ANDROID && major >= 3)) {
 }
 ```
 
-*app/views/lists.xml*
+**app/views/lists.xml**
 
 ```xml
 <Alloy>

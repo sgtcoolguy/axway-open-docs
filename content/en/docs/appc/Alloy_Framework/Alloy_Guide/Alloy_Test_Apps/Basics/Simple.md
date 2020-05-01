@@ -2,15 +2,13 @@
 
 Demonstrates a basic Alloy application consisting of a single XML view file, JavaScript controller file, and Titanium Style Sheet (TSS) file.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**basics/simple**{{% /alert %}}
+{{% alert title="App Folder Location" color="info" %}}alloy/test/apps/**basics/simple**{{% /alert %}}
 
 ![ios](/Images/appc/download/attachments/41845694/ios.png)
 
 The main XML view contains a <Window/> element that, in turn, contains a <Label/> element.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -22,7 +20,7 @@ The main XML view contains a <Window/> element that, in turn, contains a <Label/
 
 The main controller file is responsible for opening the main Window. The $ variable refers to the current controller.
 
-*apps/controllers/index.js*
+**apps/controllers/index.js**
 
 ```javascript
 $.index.open();
@@ -30,7 +28,7 @@ $.index.open();
 
 A TSS file define styles and properties of UI elements defined in the main view.
 
-*app/styles/index.tss*
+**app/styles/index.tss**
 
 ```
 "#index": {

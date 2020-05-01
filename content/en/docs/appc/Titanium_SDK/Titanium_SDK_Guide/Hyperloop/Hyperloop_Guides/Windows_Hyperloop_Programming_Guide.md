@@ -237,7 +237,7 @@ You can use Third-party libraries in Hyperloop such as winmd, lib and DLL.
 
 Let say you have Windows Runtime Component named WindowsRuntimeComponent1. The C# code looks like below.
 
-*WindowsRuntimeComponent1.cs*
+**WindowsRuntimeComponent1.cs**
 
 ```csharp
 using System;
@@ -263,7 +263,7 @@ namespace WindowsRuntimeComponent1
 
 When you compile your Windows Runtime component in Visual Studio, you should get .winmd file. Then place the winmd files into the lib /windows/(phone|store|win10)/(x86|ARM)/ folder of your app. Hyperloop will pick up the winmd files and will generate necessary bindings and include the winmd in your app. Then place appc.js directly under your Titanium project folder. Make sure it contains names of your Windows Runtime component under hyperloop.windows.thirdparty key. It should look like below.
 
-*appc.js*
+**appc.js**
 
 ```javascript
 /**
@@ -294,7 +294,7 @@ module.exports = {
 
 You should be able to use your Windows Runtime component in your Titanium app like below.
 
-*app.js*
+**app.js**
 
 ```javascript
 var Test = require('WindowsRuntimeComponent1.Test'),

@@ -16,7 +16,7 @@ In XML markup, use the Require tag to add controller-less views into another vie
 
 For instance, a button view could be reused repeatedly in a view-controller to construct a dialog box. For example, the following view can be defined without a controller:
 
-*app/views/foo.xml*
+**app/views/foo.xml**
 
 ```xml
 <Alloy>
@@ -26,7 +26,7 @@ For instance, a button view could be reused repeatedly in a view-controller to c
 
 This view can be inserted into another view multiple times by using the Require tag and assigning it an unique ID. For example,
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -58,7 +58,7 @@ Then, the controller can use $.button1, $.button2 and $.button3 to access each i
 
 For example, the following view defines an image with a label below it:
 
-*app/views/profile.xml*
+**app/views/profile.xml**
 
 ```xml
 <Alloy>
@@ -71,7 +71,7 @@ For example, the following view defines an image with a label below it:
 
 The controller code creates an instance of the controller-less view and adds the instance to main view in the controller.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 var profile = Alloy.createController('profile');
@@ -101,7 +101,7 @@ $.index.open();
 
 4. Use the add() method to add the view to a view component in the controller. Pass the instance of the controller-less view to the method. The view component that wants to add the controller-less view should call the method.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 // Create an instance of the controller

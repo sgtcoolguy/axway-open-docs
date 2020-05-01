@@ -2,9 +2,7 @@
 
 Demonstrates how to navigate a hierarchy of content using the NavigationWindow object.
 
-{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
-
-You can find this example app in the Alloy repository under [samples/apps/ui/navwindow](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/navwindow). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="💡 Example App Source Location" color="info" %}}You can find this example app in the Alloy repository under [samples/apps/ui/navwindow](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/navwindow). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 A [NavigationWindow](#!/api/Titanium.UI.iOS.NavigationWindow) implements a specialized view that manages the navigation of hierarchical content. You call the NavigationWindow object's [openWindow()](#!/api/Titanium.UI.iOS.NavigationWindow-method-openWindow) method to open a new window in the navigation group, [closeWindow()](#!/api/Titanium.UI.iOS.NavigationWindow-method-closeWindow) to remove it.
 
@@ -12,7 +10,7 @@ A [NavigationWindow](#!/api/Titanium.UI.iOS.NavigationWindow) implements a speci
 
 The sample's main index.xml view declares a NavigationWindow element named navWindow.
 
-*app/views/ios/index.xml*
+**app/views/ios/index.xml**
 
 ```xml
 <Alloy>
@@ -29,7 +27,7 @@ The sample's main index.xml view declares a NavigationWindow element named navWi
 
 When the "Push" button is clicked, it invokes the Alloy.Globals.openWindow() function. This function is defined in the application's alloy.js file, and calls the navWindow's [openWindow()](#!/api/Titanium.UI.iOS.NavigationWindow-method-openWindow) method, passing it a new window created from the app/views/win.xml view. It also initializes a global counter variable named ctr that's displayed by each window added to the navigation stack.
 
-*app/alloy.js*
+**app/alloy.js**
 
 ```javascript
 Alloy.Globals = {
@@ -43,7 +41,7 @@ Alloy.Globals = {
 
 Each newly created window displays left and right navigation buttons that let you push a new window on the navigation stack, or pop the current window off the stack. The "Push" button calls the same global openWindow() function, and the "Pop" button calls the view-controller's closeWindow() function, which calls calls closeWindow() on the navWindow object.
 
-*app/views/ios/win.xml*
+**app/views/ios/win.xml**
 
 ```xml
 <Alloy>
@@ -62,7 +60,7 @@ Each newly created window displays left and right navigation buttons that let yo
 
 The view-controller for each window pushed onto the navigation stack displays the value of the global ctr in a Label, as well as property in the window's title.
 
-*app/controllers/ios/win.js*
+**app/controllers/ios/win.js**
 
 ```javascript
 function closeWindow(e) {

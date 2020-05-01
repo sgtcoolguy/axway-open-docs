@@ -61,9 +61,9 @@ SQL Explorer generates the SELECT statement for you.
 
 The following list includes additional links for SQL Explorer documentation:
 
-\***SQL Explorer web site and documentation** - [http://eclipsesql.sourceforge.net/](http://eclipsesql.sourceforge.net/)
+{{% alert color="info" %}}\***SQL Explorer web site and documentation** - [http://eclipsesql.sourceforge.net/](http://eclipsesql.sourceforge.net/)
 \***MySQL 5.1 Reference** - [http://dev.mysql.com/doc/refman/5.1/en/index.html](http://dev.mysql.com/doc/refman/5.1/en/index.html)
-\***Configuring SQLExplorer Access** - [http://www.onjava.com/pub/a/onjava/2005/05/11/sqlexplorer.html?page=2](http://www.onjava.com/pub/a/onjava/2005/05/11/sqlexplorer.html?page=2)
+\***Configuring SQLExplorer Access** - [http://www.onjava.com/pub/a/onjava/2005/05/11/sqlexplorer.html?page=2](http://www.onjava.com/pub/a/onjava/2005/05/11/sqlexplorer.html?page=2){{% /alert %}}
 
 ## Related Topics
 

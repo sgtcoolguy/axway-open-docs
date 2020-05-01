@@ -44,7 +44,7 @@ You may also place single (//comment) and multiline comments (/\* comment \*/) i
 
 The following code defines a style sheet (index.tss):
 
-*app/styles/index.tss*
+**app/styles/index.tss**
 
 ```
 // This is applied to any element with the class attribute assigned to "container"
@@ -66,7 +66,7 @@ The following code defines a style sheet (index.tss):
 
 which pairs to this view markup (index.xml):
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -78,7 +78,7 @@ which pairs to this view markup (index.xml):
 
 In the example code above, the Label object in the view inherits styles from both 'Label' and '#label'. Since '#label' is defined at the id level, the color of the label will be gray ('#999') instead of black ('#000'). For the Label's transform property, the TSS file is using a function assigned to the Alloy.Globals namespace defined in the initializer file:
 
-*app/alloy.js*
+**app/alloy.js**
 
 ```javascript
 Alloy.Globals.rotateLeft = Ti.UI.create2DMatrix().rotate(-90);
@@ -88,7 +88,7 @@ Alloy.Globals.rotateLeft = Ti.UI.create2DMatrix().rotate(-90);
 
 You can create a global style file, called app.tss, which applies all styles defined inside it to all views, but does not override the non-global styles or property attributes in the markup. For example, suppose you have the following three files in your project:
 
-*styles/app.tss*
+**styles/app.tss**
 
 ```
 "Window":{
@@ -108,7 +108,7 @@ You can create a global style file, called app.tss, which applies all styles def
 }
 ```
 
-*styles/index.tss*
+**styles/index.tss**
 
 ```
 "Window":{
@@ -129,7 +129,7 @@ You can create a global style file, called app.tss, which applies all styles def
 }
 ```
 
-*views/index.xml*
+**views/index.xml**
 
 ```xml
 <Alloy>
@@ -214,7 +214,7 @@ The application can pass custom Boolean properties to the Alloy.createController
 
 The controller below defines two functions that create and open an instance of the win2 controller, but each function passes a different property to the controller.
 
-*apps/controllers/index.js*
+**apps/controllers/index.js**
 
 ```javascript
 function openBar (e) {
@@ -228,7 +228,7 @@ function openBaz (e) {
 
 In the TSS file, add the conditional block and assign the if attribute to the property passed to the createController() method. Prefix the property name with the $.args namespace. Based on the property passed to the method, the application displays a different styled label.
 
-*app/styles/win2.tss*
+**app/styles/win2.tss**
 
 ```
 "#label[if=$.args.fooBar]": {
@@ -244,7 +244,7 @@ In the TSS file, add the conditional block and assign the if attribute to the pr
 
 In the XML markup, add the if attribute to an element and assign it to the property passed to the createController() method. Prefix the property name with the $.args namespace. Based on the property passed to the method, the application displays a different label.
 
-*app/views/win2.xml*
+**app/views/win2.xml**
 
 ```xml
 <Alloy>
@@ -259,7 +259,7 @@ In the XML markup, add the if attribute to an element and assign it to the prope
 
 In this example, the application defines conditional statements to determine the iPhone device the application is running on. This iPhone application displays a scrolling block of text with a title above it and a caption below it, as illustrated by this XML file:
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -275,7 +275,7 @@ In this example, the application defines conditional statements to determine the
 
 To take advantage of the various iPhone devices, we need to see if the device is running iOS 7 and above, and whether the iPhone is using the old regular or the latest tall form factor. We can define both of these query statements in the initializer file:
 
-*app/alloy.js*
+**app/alloy.js**
 
 ```javascript
 Alloy.Globals.isIos7Plus = (OS_IOS && parseInt(Ti.Platform.version.split(".")[0]) >= 7);
@@ -284,7 +284,7 @@ Alloy.Globals.iPhoneTall = (OS_IOS && Ti.Platform.osname == "iphone" && Ti.Platf
 
 In the style file, use these conditional statements to create styles for specific devices. For example, since iOS 7, you can take advantage of the built-in text styles instead of defining all the attribute for a Font object, and since the iPhone 5 (and later) is taller, you need to make the ScrollView longer.
 
-*app/styles/index.tss*
+**app/styles/index.tss**
 
 ```
 // Default Styles

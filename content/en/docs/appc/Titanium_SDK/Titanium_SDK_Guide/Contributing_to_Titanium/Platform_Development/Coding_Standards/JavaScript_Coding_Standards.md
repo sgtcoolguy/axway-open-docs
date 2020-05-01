@@ -1,8 +1,6 @@
 {"title":"JavaScript Coding Standards","weight":"30"}
 
-*Contents*
-
-* [General](#general)
+{{% alert title="Contents" color="info" %}}* [General](#general)
 
 * [Files](#files)
 
@@ -34,7 +32,7 @@
 
 * [Documentation](#documentation)
 
-* [Exception Handling](#exception-handling)
+* [Exception Handling](#exception-handling){{% /alert %}}
 
 ## General
 

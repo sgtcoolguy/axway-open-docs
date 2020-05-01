@@ -36,7 +36,7 @@ Before declaring an intent filter, you need to copy the <activity> node containi
 
 2. Open the build/android/AndroidManifest.xml file and and copy the <activity> node that contains your default root activity. The android:name attribute will contain the name of your application.
 
-    *android/build/AndroidManifest.xml*
+    **android/build/AndroidManifest.xml**
 
     ```xml
     <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.sample" android:versionCode="1" android:versionName="1.0">
@@ -66,7 +66,7 @@ Before declaring an intent filter, you need to copy the <activity> node containi
 
 3. Paste the default root activity into the Android section of your tiapp.xml file inside the <application> element. You may need to add the <manifest> and <application> elements to the <android> element of your tiapp.xml file:
 
-    *tiapp.xml*
+    **tiapp.xml**
 
     ```xml
     <ti:app xmlns:ti="http://ti.appcelerator.org">
@@ -129,7 +129,7 @@ Additionally, you can overwrite the appearance of the option in the **Share** di
 
 * android:priority: Integer used to determine the priority to give to the application. By default, set to 0. Can be assigned a value between \-1000 and 1000, inclusive.
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <!-- slimmed down some of the nodes for example -->
@@ -206,7 +206,7 @@ Pass a Titanium.Android.RESULT\_\* constant to the setResult() method to indicat
 
 The example below returns a string once the activity is created.
 
-*someactivity.js*
+**someactivity.js**
 
 ```javascript
 // Get a reference to this activity
@@ -233,7 +233,7 @@ This example creates an Alloy application that will accept a string from an exte
 
 The view code for the application displays a text area and button.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -244,7 +244,7 @@ The view code for the application displays a text area and button.
 </Alloy>
 ```
 
-*app/styles/index.tss*
+**app/styles/index.tss**
 
 ```
 "Window" : {
@@ -262,7 +262,7 @@ The view code for the application displays a text area and button.
 
 The controller code retrieves the text string sent to the application if an external application used an intent to start it.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 $.index.open();
@@ -296,7 +296,7 @@ Next, declare the intent filter in the tiapp.xml file.
 
 Note that the activity already had an intent filter declared indicating that the application should be available in the application launcher.
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <ti:app>
@@ -331,7 +331,7 @@ This example creates a very simple application that will make itself available t
 
 The code for the application simply displays a label to the user that tells them we know they just clicked on a link to www.appcelerator.com.
 
-*Resources/app.js*
+**Resources/app.js**
 
 ```javascript
 Ti.UI.backgroundColor = '#fff';
@@ -370,7 +370,7 @@ Next, declare the intent filter in the tiapp.xml.
 
 Note that the activity already had an intent filter declared indicating that the application should be available in the application launcher.
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <ti:app>

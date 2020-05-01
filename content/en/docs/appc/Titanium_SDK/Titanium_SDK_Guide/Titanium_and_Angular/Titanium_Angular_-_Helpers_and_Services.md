@@ -34,7 +34,7 @@ To ease the creation of dialogs, Titanium Angular comes with several predefined 
 
 The AlertDialog helper allows you to display a simple alert with a single button. Besides the dialog's title and message you can also specify an optional okButtonText.
 
-*AlertDialog*
+**AlertDialog**
 
 ```javascript
 import { AlertDialog } from 'titanium-angular';
@@ -50,7 +50,7 @@ alertDialog.show().then(() => console.log(`Alert closed`));
 
 A confirm dialog will display a dialog using the title and message properties. You can also change the button text through the okButtonText and cancelButtonText options.
 
-*ConfirmDialog*
+**ConfirmDialog**
 
 ```javascript
 import { ConfirmDialog, ConfirmResult } from 'titanium-angular';
@@ -78,7 +78,7 @@ To prompt a user for some text input you can use the prompt dialog.
 
 Besides those predefined dialogs you can also completely customize your dialogs using the BaseDialog class. A base dialog accepts the title and message options. You can then add multiple DialogAction to your dialog which represent a button of the dialog with a title and an optional handler function to call if that button is pressed.
 
-*BaseDialog*
+**BaseDialog**
 
 ```javascript
 import { BaseDialog, DialogAction } from 'titanium-angular';
@@ -109,7 +109,7 @@ Handle the common use case of date and time pickers presented as modals with the
 
 A simple time picker can be created with a minDate, maxValue, and value options. All of those options are optional and will accept a Date object. Passing an empty options object results in no restrictions on the selectable time frame and the current time will be pre-selected.
 
-*TimePicker*
+**TimePicker**
 
 ```javascript
 const timePicker = new TimePicker({});
@@ -124,7 +124,7 @@ const timePicker = new TimePicker({});
 
 Selecting both the date and a time can be achieved with the date picker. It accepts the minDate, maxValue and value options. All of those options are optional and will accept a Date object. Passing an empty options object results in no restrictions on the selectable dates and the current date and time will be pre-selected.
 
-*DatePicker*
+**DatePicker**
 
 ```javascript
 const datePicker = new DatePicker({});

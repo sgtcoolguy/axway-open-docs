@@ -2,9 +2,7 @@
 
 Demonstrates using binding a data collection to a ListView and applying different list item templates to each list item using a data transformer.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**models/binding\_listview**{{% /alert %}}
+{{% alert title="App Folder Location" color="info" %}}alloy/test/apps/**models/binding\_listview**{{% /alert %}}
 
 The application defines three list item templates: one with just a title, one with a title and subtitle, and one with a title, subtitle and image.
 
@@ -12,7 +10,7 @@ The application defines three list item templates: one with just a title, one wi
 
 The main index.xml view defines three <ItemTemplate/> elements – "fullItem", "titleAndSub", and "title" – that define the various UI elements. The bindId attribute assigned to each UI element specifies the name used to assign data to it at runtime. The <ListSection/> element contains a single <ListItem/> element whose template attribute is set to the value "{{ template }}". It includes attributes whose names correspond to the three possible template UI elements: "title", "subtitle" and "image". The ListSection element is bound to the info collection and specifies a dataTransform function named doTransform().
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <ListView id="list" defaultItemTemplate="title">
@@ -38,7 +36,7 @@ The main index.xml view defines three <ItemTemplate/> elements – "fullItem", "
 
 When the user clicks a toolbar button, the doButtonClick() is called, which adds a new model to the info collection, and persists it to the SQLite database. The model is initialized with a unique data object, depending on which button was clicked. The doTransform() then assigns the correct template to the model depending on its data structure, and returns the updated model for display.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 // assign a ListItem template based on the contents of the model
@@ -80,7 +78,7 @@ function doButtonClick(e) {
 
 The application models/info.js defines a a data model with four fields: id, title, subtitle, and image. It also specifies SQL as the persistence adaptor, and the collection name as "info".
 
-*app/models/info.js*
+**app/models/info.js**
 
 ```javascript
 exports.definition = {

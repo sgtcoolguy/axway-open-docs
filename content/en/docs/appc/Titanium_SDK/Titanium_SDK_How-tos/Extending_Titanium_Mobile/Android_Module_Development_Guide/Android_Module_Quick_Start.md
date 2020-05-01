@@ -60,9 +60,7 @@ If you want to use Studio, install:
 
 First, create a new module project.
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a terminal, change the current working directory to your workspace and run:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a terminal, change the current working directory to your workspace and run:
 
 ```bash
 cd /PATH/TO/WORKSPACE
@@ -88,9 +86,7 @@ Studio sets up a new folder called test that contains your module project.
 
 Next, build the module and package it. This process produces a ZIP file in the android /dist directory containing a binary library with unprocessed module assets, example code and documentation.
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a terminal, go to the module's android directory and run appc run -p android --build-only:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a terminal, go to the module's android directory and run appc run -p android --build-only:
 
 ```bash
 cd test/android
@@ -123,9 +119,7 @@ To test the module, create a test application and add the module as a dependency
 
 ### Create a test application
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a new terminal window, change the current working directory to your workspace and run the following commands:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a new terminal window, change the current working directory to your workspace and run the following commands:
 
 ```bash
 cd /PATH/TO/WORKSPACE
@@ -155,9 +149,7 @@ Studio sets up a new folder called Hello that contains the test application you 
 
 To load the module in the application, you need to add it as a dependency to the project.
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-Open the tiapp.xml and update the <modules/> element to include the module as a dependency to the project:
+{{% alert title="💡 CLI Instructions" color="info" %}}Open the tiapp.xml and update the <modules/> element to include the module as a dependency to the project:
 
 ```xml
 <ti:app>
@@ -183,7 +175,7 @@ In Studio:
 
 Open the app/alloy.js file and replace the code with the following, which invokes API calls to the module:
 
-*app/alloy.js*
+**app/alloy.js**
 
 ```javascript
 var test = require('com.example.test');
@@ -195,9 +187,7 @@ test.exampleProp = "This is a test value";
 
 ### Run the application
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a terminal that has the test app as its current working directory, run:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a terminal that has the test app as its current working directory, run:
 
 ```bash
 appc run -p android
@@ -209,7 +199,7 @@ Studio builds and launches the application on the selected Android simulator. Mo
 
 The console lines seen below show us that the module is working as expected.
 
-*Console*
+**Console**
 
 ```
 [INFO]  module is => [object Object]
@@ -231,7 +221,7 @@ First, look at some of the default files created by the Titanium SDK. Expand the
 
 To display any UI with a module, create a view proxy and view class in pairs. Open the ExampleProxy.java file and replace its contents with the following:
 
-*ExampleProxy.java*
+**ExampleProxy.java**
 
 ```java
 package com.example.test;
@@ -356,7 +346,7 @@ Notice the @Kroll.proxy(creatableInModule=TestModule.class) annotation before th
 
 Below is an example of calling createExample(), and passing dimensions and color properties to the method.
 
-*Example*
+**Example**
 
 ```javascript
 var view = test.createExample({
@@ -373,7 +363,7 @@ A Proxy is a key/value store like an Object. Without any modification, you can s
 
 Modify the default module class file to store and retrieve a string value. Add a private variable to store the string value, then modify the example setter and getter to actually set and get the variable you just declared. These methods are already declared in the ComExampleTestModule.m file but not implemented. Titanium requires that all setter methods be declared with the method name starting with set and being passed an id datatype.
 
-*TestModule.java*
+**TestModule.java**
 
 ```java
 private String foo;
@@ -409,7 +399,7 @@ public class TestModule extends KrollModule {
 
 Open the app/views/index.xml file and replace the code with the following, which loads the module and displays a red square:
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -422,7 +412,7 @@ Open the app/views/index.xml file and replace the code with the following, which
 
 Open the app/controllers/index.js file and replace the code with the following, which invokes API calls to the module:
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 $.index.open();
@@ -435,7 +425,7 @@ Build and install your module, then run the example app.
 
 When the application starts running, you see should a red square in the middle of the screen and see the log output below, which means the application successfully loaded the module and called its APIs.
 
-*Console*
+**Console**
 
 ```
 [INFO] :   TestModule: (KrollRuntimeThread) [1,165] In Module - the new value for exampleProp:foobar

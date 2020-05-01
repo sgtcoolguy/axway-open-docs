@@ -2,9 +2,7 @@
 
 Demonstrates basic use of the Picker control to let a user select one or more fixed values.
 
-{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
-
-You can find this example app in the Alloy repository under [samples/apps/ui/picker](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/picker). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="💡 Example App Source Location" color="info" %}}You can find this example app in the Alloy repository under [samples/apps/ui/picker](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/picker). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 The sample application demonstrates creating single- and multi-column [Picker](#!/api/Titanium.UI.Picker), as well as Alloy short-hand for declaring columns and rows. Note that, on Android, the Picker's useSpinner property must be set to true to enable multi-column pickers.
 
@@ -12,7 +10,7 @@ The sample application demonstrates creating single- and multi-column [Picker](#
 
 To declare columns and rows you can use <PickerRow/> and <PickerColumn/> elements, or the shorthand <Row/> and <Column/> elements.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -73,7 +71,7 @@ To declare columns and rows you can use <PickerRow/> and <PickerColumn/> element
 
 The index.tss file sets the Picker object's [selectionIndicator](#!/api/Titanium.UI.Picker-property-selectionIndicator) property to true, and sets useSpinner to true on Android devices.
 
-*app/styles/index.tss*
+**app/styles/index.tss**
 
 ```
 "Window": {

@@ -34,7 +34,7 @@ A Module is a class that provides an API point with a particular ID. That ID can
 
 All modules must extend the Titanium::Module and JSExport class .
 
-*ComExampleTest.hpp*
+**ComExampleTest.hpp**
 
 ```hpp
 #include "Titanium/Module.hpp"
@@ -48,7 +48,7 @@ public:
 
 Module constructor should call Titanium::Module constructor with module id that specifies the identifier used with require to import the module.
 
-*ComExampleTest.cpp*
+**ComExampleTest.cpp**
 
 ```cpp
 #include "ComExampleTest.hpp"
@@ -76,7 +76,7 @@ Use postInitialize method to declare a method to be called when the module objec
 
 Declare postInitialize with override specifier in the header:
 
-*ComExampleTest.hpp*
+**ComExampleTest.hpp**
 
 ```hpp
 #include "Titanium/Module.hpp"
@@ -91,7 +91,7 @@ public:
 
 Override postInitialize in the implementation:
 
-*ComExampleTest.cpp*
+**ComExampleTest.cpp**
 
 ```cpp
 void Test::postInitialize(JSObject& js_object)
@@ -109,7 +109,7 @@ If you only need to hook JavaScript constructor, use postCallAsConstructor metho
 
 Declare postCallAsConstructor with override specifier in the header:
 
-*ComExampleTest.hpp*
+**ComExampleTest.hpp**
 
 ```hpp
 #include "Titanium/Module.hpp"
@@ -124,7 +124,7 @@ public:
 
 Override postCallAsConstructor in the implementation. Note that the arguments that is given to the constructor are passed as arguments parameter.
 
-*ComExampleTest.cpp*
+**ComExampleTest.cpp**
 
 ```cpp
 void Test::postCallAsConstructor(const JSContext& js_context, const std::vector<JSValue>& arguments)
@@ -144,7 +144,7 @@ Methods are exposed via TITANIUM\_ADD\_FUNCTION and TITANIUM\_FUNCTION\_DEF C++ 
 
 First, declare method using TITANIUM\_FUNCTION\_DEF in header:
 
-*ComExampleTest.hpp*
+**ComExampleTest.hpp**
 
 ```hpp
 #include "Titanium/Module.hpp"
@@ -159,7 +159,7 @@ public:
 
 Second, implement example method with TITANIUM\_FUNCTION and then register in JSExportInitialize with TITANIUM\_ADD\_FUNCTION:
 
-*ComExampleTest.cpp*
+**ComExampleTest.cpp**
 
 ```cpp
 void Test::JSExportInitialize()
@@ -212,7 +212,7 @@ There are variables expanded from TITANIUM\_FUNCTION macro here: arguments as st
 
 Note that in this macro example OUT is a variable name, and INDEX is a index in the arguments. For example:
 
-*ComExampleTest.cpp*
+**ComExampleTest.cpp**
 
 ```cpp
 TITANIUM_FUNCTION(Test, example)
@@ -240,7 +240,7 @@ Properties are exposed via TITANIUM\_ADD\_PROPERTY and TITANIUM\_PROPERTY\_DEF C
 
 First, declare method using TITANIUM\_FUNCTION\_DEF in header:
 
-*ComExampleTest.hpp*
+**ComExampleTest.hpp**
 
 ```hpp
 #include "Titanium/Module.hpp"
@@ -255,7 +255,7 @@ public:
 
 Second, implement exampleProp property getter/setter with TITANIUM\_PROPERTY\_GETTER/ TITANIUM\_PROPERTY\_SETTER and then register in JSExportInitialize with TITANIUM\_ADD\_PROPERTY:
 
-*ComExampleTest.cpp*
+**ComExampleTest.cpp**
 
 ```cpp
 void Test::JSExportInitialize()
@@ -305,7 +305,7 @@ TITANIUM_PROPERTY_SETTER(Test, exampleProp)
 
 Inside setter, there's a variable that you can use: argument as JSValue. For typicasting property values, you can just use C++11 static\_cast<TYPE>.
 
-*ComExampleTest.cpp*
+**ComExampleTest.cpp**
 
 ```cpp
 TITANIUM_PROPERTY_SETTER(Test, exampleProp)
@@ -329,7 +329,7 @@ TITANIUM_PROPERTY_SETTER(Test, exampleProp)
 
 Modules automatically handle firing events and managing event listeners. Internally, when you call addEventListener() or removeEventListener() from JavaScript against a module instance, the module will automatically handle the code for managing the event listeners. If you want to be notified upon an add or remove, you should override the methods:
 
-*ComExampleTest.hpp*
+**ComExampleTest.hpp**
 
 ```hpp
 virtual void enableEvent(const std::string& event_name) TITANIUM_NOEXCEPT override;
@@ -342,7 +342,7 @@ The disableEvent method will be invoked when event is enabled with given name. T
 
 To send an event to any event listener, you use the convenience method:
 
-*Titanium/Module.hpp*
+**Titanium/Module.hpp**
 
 ```hpp
 virtual void fireEvent(const std::string& name) TITANIUM_NOEXCEPT final;

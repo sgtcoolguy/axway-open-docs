@@ -28,9 +28,7 @@ We worry about the database, file storage, search engine and application stack s
 
 Over 25 APIs are available for immediate use in your app to provide the most popular network features. Writing, testing, and deploying server code is a thing of the past. Focus on your users and app features.
 
-{{% alert title="💡 Hint" color="info" %}}*ACS API support*
-
-Note that when new APIs are added to MBS, they may not be immediately available in the Titanium Cloud module.
+{{% alert title="💡 ACS API support" color="info" %}}Note that when new APIs are added to MBS, they may not be immediately available in the Titanium Cloud module.
 The since version listed after some APIs indicates the Titanium Mobile SDK release that included support for
 that API. (Note that the Titanium Cloud module version is not always the same as the SDK version that it ships with.){{% /alert %}}
 
@@ -81,7 +79,7 @@ Your app must prove that it is allowed to talk to MBS. This keeps your data secu
 
 If you add MBS support to your application when you create it in Studio, Studio adds the authentication keys to your tiapp.xml file:
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <property name="acs-api-key" type="string">ARROW_APP_KEY</property>
@@ -91,7 +89,7 @@ If you add MBS support to your application when you create it in Studio, Studio 
 
 Add cloud services to your app using the MBS APIs. With over 25 APIs available for you to use, we obviously can't cover them all here. But let's take a look at a couple of examples.
 
-*Create a user*
+**Create a user**
 
 ```javascript
 // example assumes you have a set of text fields named username, password, etc.
@@ -110,7 +108,7 @@ Cloud.Users.create({
 });
 ```
 
-*Post a photo*
+**Post a photo**
 
 ```javascript
 // assumes you've obtained a photo from the camera or gallery, with blob data stored in an object named photo
@@ -130,7 +128,7 @@ Cloud.Photos.create({
 });
 ```
 
-*Linking a Facebook login with your app*
+**Linking a Facebook login with your app**
 
 ```javascript
 // Not shown is the code to implement the Facebook module in your app

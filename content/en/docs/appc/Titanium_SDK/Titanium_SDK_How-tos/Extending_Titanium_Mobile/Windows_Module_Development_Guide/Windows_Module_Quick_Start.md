@@ -50,9 +50,7 @@ Like Windows application development, Windows module development is only support
 
 First, create a new module project.
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a terminal, change the current working directory to your workspace and run:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a terminal, change the current working directory to your workspace and run:
 
 ```bash
 cd /PATH/TO/WORKSPACE
@@ -78,9 +76,7 @@ Studio sets up a new folder called test that contains your module project.
 
 Next, build the module and package it. This process produces a ZIP file containing a binary library with unprocessed module assets, example code and documentation.
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a terminal, go to the module's windows directory and run the appc run -p windows --build-only:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a terminal, go to the module's windows directory and run the appc run -p windows --build-only:
 
 ```bash
 cd test/windows
@@ -109,9 +105,7 @@ To test the module, create a test application and add the module as a dependency
 
 ### Create a test application
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a new terminal window, change the current working directory to your workspace and run the following commands:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a new terminal window, change the current working directory to your workspace and run the following commands:
 
 ```bash
 cd /PATH/TO/WORKSPACE
@@ -141,9 +135,7 @@ Studio sets up a new folder called Hello that contains the test application you 
 
 To load the module in the application, you need to add it as a dependency to the project.
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-Open the tiapp.xml and update the <modules/> element to include the module as a dependency to the project:
+{{% alert title="💡 CLI Instructions" color="info" %}}Open the tiapp.xml and update the <modules/> element to include the module as a dependency to the project:
 
 ```xml
 <ti:app>
@@ -169,7 +161,7 @@ In Studio:
 
 Open the app/alloy.js file and replace the code with the following, which invokes API calls to the module:
 
-*app/alloy.js*
+**app/alloy.js**
 
 ```javascript
 var test = require('com.example.test');
@@ -181,9 +173,7 @@ test.exampleProp = "This is a test value";
 
 ### Run the application
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a terminal that has the test app as its current working directory, run:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a terminal that has the test app as its current working directory, run:
 
 ```bash
 appc run -p windows
@@ -195,7 +185,7 @@ Studio builds and launches the application on the select Windows Phone simulator
 
 The console lines seen below show us that the module is working as expected.
 
-*Console*
+**Console**
 
 ```
 [INFO]  module is => [object ComExampleTestModule]
@@ -217,7 +207,7 @@ First, look at some of the default files created by the Titanium SDK. Expand the
 
 A Module is a key/value store like an Object. Without any modification, you can set properties on a Module and then read them back at will as if they were properties. You can also override the getters and setters to add some custom logic. Modify the default module class files to store and retrieve a string value. First, modify the ComExampleTestModule.hpp file to declare a variable to hold the string:
 
-*ComExampleTest.hpp*
+**ComExampleTest.hpp**
 
 ```hpp
 class COMEXAMPLETEST_EXPORT Test : public Titanium::Module, public JSExport<Test>
@@ -233,7 +223,7 @@ class COMEXAMPLETEST_EXPORT Test : public Titanium::Module, public JSExport<Test
 
 Next, modify the example setter and getter to actually set and get the variable you just declared. These methods are already declared in the ComExampleTestModule.cpp file but not implemented. TitaniumKit provides useful macro to declare setter and getter, which is TITANIUM\_PROPERTY\_GETTER and TITANIUM\_PROPERTY\_GETTER . TitaniumKit requires property value being treated as an JSValue datatype. Once you implement the method, register it using TITANIUM\_ADD\_FUNCTION in JSExportInitialize.
 
-*ComExampleTest.cpp*
+**ComExampleTest.cpp**
 
 ```cpp
 TITANIUM_PROPERTY_GETTER(Test, exampleProp)
@@ -289,7 +279,7 @@ void Test::JSExportInitialize()
 
 In order to add JavaScript function to Module, modify the default module class files to return JavaScript value First, modify the ComExampleTestModule.hpp file to declare a JavaScript function using TITANIUM\_FUNCTION\_DEF:
 
-*ComExampleTest.hpp*
+**ComExampleTest.hpp**
 
 ```hpp
 class COMEXAMPLETEST_EXPORT Test : public Titanium::Module, public JSExport<Test>
@@ -303,7 +293,7 @@ class COMEXAMPLETEST_EXPORT Test : public Titanium::Module, public JSExport<Test
 
 Next, modify the example function to actually return variable you just declared. These methods are already declared in the ComExampleTestModule.cpp file but not implemented. TitaniumKit provides useful macro to declare JavaScript function, which is TITANIUM\_FUNCTION. TITANIUM\_FUNCTION should return JSValue datatype. Once you implement the method, register it using TITANIUM\_ADD\_PROPERTY in JSExportInitialize.
 
-*ComExampleTest.cpp*
+**ComExampleTest.cpp**
 
 ```cpp
 TITANIUM_FUNCTION(Test, example)
@@ -349,7 +339,7 @@ void Test::JSExportInitialize()
 There are multiple way to fire JavaScript functions as a callback. First, the easiest way to fire callback is leveraging Titanium's event mechanics such as addEventListener.
 So let say you are listening somethingfired event. In this case you can add listener in JavaScript like below.
 
-*app.js*
+**app.js**
 
 ```javascript
 test.addEventListener('somethingfired', function(e) {
@@ -359,7 +349,7 @@ test.addEventListener('somethingfired', function(e) {
 
 In this case, you can fire this callback from the module by executing fireEvent like below.
 
-*ComExampleTest.cpp*
+**ComExampleTest.cpp**
 
 ```cpp
 TITANIUM_FUNCTION(YourModule, doTheMyNumberEvent)
@@ -373,7 +363,7 @@ TITANIUM_FUNCTION(YourModule, doTheMyNumberEvent)
 
 There is another way to do the callback, by calling JSObject as a function directly. This is basic functionality on HAL framework.
 
-*app.js*
+**app.js**
 
 ```javascript
 test.doTheCallbackImmediately(function(str) {
@@ -383,7 +373,7 @@ test.doTheCallbackImmediately(function(str) {
 
 Since HAL JSObject is callable, you can just execute it with arguments like below.
 
-*ComExampleTest.cpp*
+**ComExampleTest.cpp**
 
 ```cpp
 TITANIUM_FUNCTION(YourModule, doTheCallbackImmediately)

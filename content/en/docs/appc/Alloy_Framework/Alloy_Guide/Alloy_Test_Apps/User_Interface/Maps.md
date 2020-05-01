@@ -8,9 +8,7 @@
 
 Demonstrates how to use the Maps module and display annotations on iOS and Android.
 
-{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
-
-You can find this example app in the Alloy repository under [samples/apps/ui/map](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="💡 Example App Source Location" color="info" %}}You can find this example app in the Alloy repository under [samples/apps/ui/map](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 Android and iOS applications use the [Ti.Maps](#!/api/Modules.Map) add-on module, which is included with Titanium SDK, but needs to be added as a dependency to your project's tiapp.xml file.
 
@@ -18,7 +16,7 @@ Android and iOS applications use the [Ti.Maps](#!/api/Modules.Map) add-on module
 
 To use the Ti.Map module in your iOS or Android project you need to declare your module in the tiapp.xml file:
 
-*app/tiapp.xml*
+**app/tiapp.xml**
 
 ```xml
 <modules>
@@ -49,7 +47,7 @@ Once these steps are complete, using the Map module is the same on Android or iO
 
 As shown in the sample, app to use the Map module on iOS or Android, add a <Module/> element to your XML view with its **module** attribute set to "**ti.map**". The sample app also declares several <Annotation/> elements with named "id" attributes.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -77,7 +75,7 @@ As shown in the sample, app to use the Map module on iOS or Android, add a <Modu
 
 The index.tss file assigns values to properties of the Map object, and to the Annotation objects defined in the XML view.
 
-*app/styles/index.tss*
+**app/styles/index.tss**
 
 ```
 ".container": {

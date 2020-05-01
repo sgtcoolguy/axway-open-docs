@@ -2,9 +2,7 @@
 
 Demonstrates how to create a master-detail application that presents a list of items from which the user can select to view details about that item.
 
-{{% alert title="💡 Hint" color="info" %}}*App folder location*
-
-_alloy_/test/apps/**advanced/master\_detail**{{% /alert %}}
+{{% alert title="💡 App folder location" color="info" %}}_alloy_/test/apps/**advanced/master\_detail**{{% /alert %}}
 
 The sample is designed to support handheld and tablet (iPad) form factors. On iPhone, a [NavigationWindow](#!/api/Titanium.UI.iOS.NavigationWindow) control is used to display the master and detail windows; on iPad, a [SplitWindow](#!/api/Titanium.UI.iPad.SplitWindow) is used; and on Android, a standard [Window](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window) control is used for both the master and detail views, as shown below.
 
@@ -12,7 +10,7 @@ The sample is designed to support handheld and tablet (iPad) form factors. On iP
 
 The main index.xml view defines this view structure using platform and formFactor condition attributes on each top-level window control, as shown below.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -32,7 +30,7 @@ The main index.xml view defines this view structure using platform and formFacto
 
 The master.xml view is used for all for all platforms and includes a [TableView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableView) element to display the master list of items. An onClick handler named **openDetail** is assigned to the TableView, which is invoked when an item in the table is selected. For Android builds, a [headerView](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableViewSection-property-headerView) is conditionally added to the TableView to display the table name.
 
-*app/views/master.xml*
+**app/views/master.xml**
 
 ```xml
 <Alloy>
@@ -50,7 +48,7 @@ The index.js controller is responsible for opening the right top-level window de
 
 The controller uses the [Alloy.isHandheld](#!/api/Alloy-property-isHandheld), [Alloy.isTablet](#!/api/Alloy-property-isHandheld) and [OS\_IOS](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Controllers/#conditional-code) conditionals in the "detail" event handler to determine whether it needs to create a controller to display the details for the selected item (on iPhone) or simply use the existing view in the SplitWindow.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 if (OS_IOS && Alloy.isHandheld) {
@@ -78,7 +76,7 @@ if (OS_ANDROID) {
 
 The master.js view-controller, shown below, populates the TableView with [TableViewRow](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.TableViewRow) objects. It uses the included Underscore library's [each()](http://underscorejs.org/#each) function to iterate over each member of Alloy.Globals.data collection (defined in app/alloy.js) and creates a new TableViewRow from the app/views/row.xml view. The first argument passed to the [Alloy.createController()](#!/api/Alloy-method-createController) is the view-controller's base name ("row") followed by the specific data for that row to display. Each new view-controller is pushed onto a local array named data, which is finally passed to the TableView object's [setData()](#!/api/Titanium.UI.TableView-method-setData) method.
 
-*app/controllers/master.js*
+**app/controllers/master.js**
 
 ```javascript
 function openDetail(e) {
@@ -96,7 +94,7 @@ $.table.setData(data);
 
 The row.xml view defines the layout and content of each TableViewRow.
 
-*app/views/row.xml*
+**app/views/row.xml**
 
 ```xml
 <Alloy>

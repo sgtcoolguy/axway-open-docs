@@ -12,7 +12,7 @@
 
 Let's take a closer look at the directory structure of an Titanium Angular project;
 
-*Titanium Angular project structure*
+**Titanium Angular project structure**
 
 ```
 .
@@ -74,15 +74,13 @@ Here is what those various files and folder do:
 
 * **webpack.config.json**: Configuration file for Webpack
 
-{{% alert title="💡 Hint" color="info" %}}*Ahead-of-time compilation issue*
-
-Among those files, you will notice additional files with an .aot file extension. Those are for Angular's Ahead-of-time compilation that is used for faster load times in production builds. This is currently not yet supported in the current Tech Preview.{{% /alert %}}
+{{% alert title="💡 Ahead-of-time compilation issue" color="info" %}}Among those files, you will notice additional files with an .aot file extension. Those are for Angular's Ahead-of-time compilation that is used for faster load times in production builds. This is currently not yet supported in the current Tech Preview.{{% /alert %}}
 
 ## Titanium Angular startup
 
 The files in the app/src folder are almost identical to the files in an [Angular web application](https://angular.io/guide/quickstart#the-src-folder). Let's take a closer look at those files to point out the differences, starting with the main.ts.
 
-*main.ts*
+**main.ts**
 
 ```typescript
 import { platformTitaniumDynamic } from 'titanium-angular';
@@ -95,7 +93,7 @@ Through an import statement, we pull in the platformTitaniumDynamic function and
 
 The following bootstrapModule function is the same as in an Angular web application. It expects an Angular module that is responsible for providing the main configuration of your app.
 
-*app.module.ts*
+**app.module.ts**
 
 ```typescript
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
@@ -115,7 +113,7 @@ The two important things here to note are the bootstrap and imports properties. 
 
 The bootstrap property defines that, after Angular is done with its internal bootstrap process, it loads the AppComponent. You can see an excerpt of the file bellow.
 
-*app.component.ts*
+**app.component.ts**
 
 ```typescript
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
@@ -130,9 +128,7 @@ export class AppComponent implements AfterViewInit, OnInit {
 }
 ```
 
-{{% alert title="💡 Hint" color="info" %}}*Component interaction with the template and Titanium views*
-
-If you open the file in your editor, you'll notice that the file contains different examples that demonstrate how you can interact with Titanium views within the component. This follows the same pattern as in a default Angular web application. Visit Angular's [Components & Templates](https://angular.io/guide/displaying-data) guide for an in depth tutorial on this topic.{{% /alert %}}
+{{% alert title="💡 Component interaction with the template and Titanium views" color="info" %}}If you open the file in your editor, you'll notice that the file contains different examples that demonstrate how you can interact with Titanium views within the component. This follows the same pattern as in a default Angular web application. Visit Angular's [Components & Templates](https://angular.io/guide/displaying-data) guide for an in depth tutorial on this topic.{{% /alert %}}
 
 In the above excerpt, the app.compoinent.ts defines it's template through the templateUrl property. In such a template you can make use of Titanium UI elements to create your app's user interface.
 

@@ -16,7 +16,7 @@
 
 The TypeScript type definitions are generated from our API documentation. They are brand new and Titanium Angular is the first project to makes uses of those typings. We couldn't possibly test all available APIs for the first preview release so you may encounter some typings that are just wrong or they behave differently than you may know it from JavaScript. In those cases the easiest workaround is to explicitly cast the variable to the any type, so you can do whatever you want with it.
 
-*Casting Titanium types to any*
+**Casting Titanium types to any**
 
 ```javascript
 const view = Titanium.UI.createView();

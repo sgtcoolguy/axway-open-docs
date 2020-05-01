@@ -32,9 +32,7 @@ The file '/root/nested/example.py' should have been created, so, to finish this 
 
 * If you do not have a firewall that is blocking communication from the shell.
 
-* If the timeout to connect to the shell is enough for your system (in the menu: window > preferences > PyDev > code completion).{{% /alert %}}{{% alert title="⚠️ Warning" color="primary" %}}*NOTE FOR JYTHON USERS*
-
-If you are in **Jython**, the first activation might take a while. This usually happens when Jython has to do the processing of new jars. The next time you start it, if it takes the same time, it could be that your Jython 'cache-dir' is not writable, so, you can create a script with the code below to see where is the cache dir and check its permissions (or if there is no permission problem, you can try deleting the dir and seeing if it gets correctly recreated in the next Jython activation).{{% /alert %}}
+* If the timeout to connect to the shell is enough for your system (in the menu: window > preferences > PyDev > code completion).{{% /alert %}}{{% alert title="⚠️ NOTE FOR JYTHON USERS" color="primary" %}}If you are in **Jython**, the first activation might take a while. This usually happens when Jython has to do the processing of new jars. The next time you start it, if it takes the same time, it could be that your Jython 'cache-dir' is not writable, so, you can create a script with the code below to see where is the cache dir and check its permissions (or if there is no permission problem, you can try deleting the dir and seeing if it gets correctly recreated in the next Jython activation).{{% /alert %}}
 
 **Code:**
 

@@ -156,7 +156,7 @@ In the following example, the red view is positioned at the 20,20 point relative
 
 ![layout](/Images/appc/download/attachments/29004895/layout.png)
 
-*Positioning*
+**Positioning**
 
 ```javascript
 var win = Ti.UI.createWindow({
@@ -208,7 +208,7 @@ Titanium Windows and Views can employ one of three layout modes by setting its l
 Here's an example of these layouts in action:
 ![vert_and_horiz](/Images/appc/download/attachments/29004895/vert_and_horiz.png)
 
-*Layout modes*
+**Layout modes**
 
 ```javascript
 var win = Ti.UI.createWindow({

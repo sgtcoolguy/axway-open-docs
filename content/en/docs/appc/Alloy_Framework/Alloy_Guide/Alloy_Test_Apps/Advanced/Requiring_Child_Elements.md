@@ -2,13 +2,11 @@
 
 Demonstrates how to use the <Require/> and <Widget/> elements to include external views and widgets. Also shows how to programmatically add child views declared inside a <Require/> or <Widget/> element to the parent.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**advanced\_require\_children**{{% /alert %}}![require-proxy-1](/Images/appc/download/attachments/41845675/require-proxy-1.png)
+{{% alert title="💡 App Folder Location" color="info" %}}alloy/test/apps/**advanced\_require\_children**{{% /alert %}}![require-proxy-1](/Images/appc/download/attachments/41845675/require-proxy-1.png)
 
 The sample application's views/index.xml file includes a <[TabGroup](#!/api/Titanium.UI.TabGroup)/> element that contains two <[Tab](#!/api/Titanium.UI.TabGroup)/> elements titled "requires" and "widgets", respectively. The first Tab includes a <Require/> element whose source is the **views/requires/index.xml** view, as shown below.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -29,7 +27,7 @@ The sample application's views/index.xml file includes a <[TabGroup](#!/api/Tita
 
 The views/requires/index.xml view, in turn, includes three more Require elements that contain child elements.
 
-*views/requires/index.xml*
+**views/requires/index.xml**
 
 ```xml
 <Alloy>
@@ -51,7 +49,7 @@ The views/requires/index.xml view, in turn, includes three more Require elements
 
 The first two <Require/> elements include the same file, **views/requires/simple.xml**, that simply defines a single empty <View/> element:
 
-*app/views/requires/simple.xml*
+**app/views/requires/simple.xml**
 
 ```xml
 <Alloy>
@@ -61,7 +59,7 @@ The first two <Require/> elements include the same file, **views/requires/simple
 
 The child elements declared inside the the <Require/> element are added programmatically to the parent view by the view-controller. The child elements are passed in the children array passed to the view-controller on the arguments object. The simple.js view-controller adds the child views of the <Require/> element to the parent view, referenced by $.simple.
 
-*controllers/requires/simple.js*
+**controllers/requires/simple.js**
 
 ```javascript
 // add children to simple container, if there are any
@@ -76,7 +74,7 @@ _.each($.args.children || [], function(child) {
 
 The other <Tab/> element requires **views/widgets/index.xml**, which contains a <Widget/> element. The <Widget/> element's src attribute specifies the name of the widget folder, relative to the app/widgets, folder to include. The <Widget/> element contains the following child views: a Label, an ImageView and a Button.
 
-*views/widgets/index.xml*
+**views/widgets/index.xml**
 
 ```xml
 <Alloy>

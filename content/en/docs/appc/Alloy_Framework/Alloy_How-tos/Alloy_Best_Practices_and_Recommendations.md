@@ -24,7 +24,7 @@ This guide provides recommendations for writing Alloy applications. This guide s
 
 Not unless you want to. If you have a pre-existing set of functionality that you want to make available globally throughout your app, there is no reason to further sub-categorize it unless it serves you in terms of organization or scalability. There is nothing preventing you from requiring your pre-existing modules in all your Alloy controllers, or even making a single global reference to your module that can be referenced throughout your app. For example:
 
-*apps/alloy.js*
+**apps/alloy.js**
 
 ```javascript
 // Alloy.Globals.refToYourModule will be available in all controllers

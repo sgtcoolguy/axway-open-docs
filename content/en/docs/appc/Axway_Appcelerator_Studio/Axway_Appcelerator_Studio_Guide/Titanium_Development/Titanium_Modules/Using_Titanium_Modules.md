@@ -123,10 +123,9 @@ Switching a SDK will re-validate the modules based on their compatibility with t
 
 1. Open the module's .zip file, and look at the folder structure. The path will look like the following:
 
-    * **Folder Structure:** modules/<platform>/<module-id>/<version>
+    {{% alert color="info" %}}* **Folder Structure:** modules/<platform>/<module-id>/<version>
 
-    * **Example:** modules/ios/ti.greystripe/1.1
-
+* **Example:** modules/ios/ti.greystripe/1.1{{% /alert %}}
 2. Open Studio, and the tiapp.xml file for the project in question.
 
 3. Switch to the tiapp.xml tab.

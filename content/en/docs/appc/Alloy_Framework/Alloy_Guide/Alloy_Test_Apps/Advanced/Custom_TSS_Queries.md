@@ -2,9 +2,7 @@
 
 Demonstrates how to use custom TSS queries to style Alloy elements.
 
-{{% alert title="💡 Hint" color="info" %}}*App folder location*
-
-_alloy_/test/apps/**advanced/custom\_tss\_queries**{{% /alert %}}
+{{% alert title="App folder location" color="info" %}}_alloy_/test/apps/**advanced/custom\_tss\_queries**{{% /alert %}}
 
 You can define custom boolean values for use in your your TSS queries. These are useful for setting styles when running on a specific phone model (for example, on an iPhone 5). Custom TSS conditionals must be defined in the alloy.js file as properties of the Alloy.Globals object, so that they are available to the XML and TSS parsers.
 
@@ -12,7 +10,7 @@ You can define custom boolean values for use in your your TSS queries. These are
 
 The sample defines the following boolean properties in alloy.js:
 
-*app/alloy.js*
+**app/alloy.js**
 
 ```javascript
 Alloy.Globals.someProperty = true;
@@ -22,7 +20,7 @@ Alloy.Globals.isTalliPhone = (OS_IOS && Ti.Platform.displayCaps.platformHeight =
 
 The app/styles/index.tss file uses the Alloy.Globals.someProperty boolean to conditionally apply styles to various elements.
 
-*app/styles/index.tss*
+**app/styles/index.tss**
 
 ```
 "Window": {
@@ -79,7 +77,7 @@ You can test for multiple values by separating them with a comma, which are trea
 
 To use AND conditions, or for more complex logic, process the conditions in alloy.js assigning a single Boolean value in the end:
 
-*app/alloy.js*
+**app/alloy.js**
 
 ```javascript
 Alloy.Globals.customVar = ( (OS_IOS && parseInt(Ti.Platform.version, 10) >= 7) || (OS_ANDROID && parseFloat(Ti.Platform.version,10) >= 4.0.3) );

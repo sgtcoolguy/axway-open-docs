@@ -2,9 +2,7 @@
 
 Demonstrates basic use of the ButtonBar control, an iOS-only control that presents a set of buttons joined into a single control.
 
-{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
-
-You can find this example app in the Alloy repository under [samples/apps/ui/buttonbar](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/buttonbar). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="💡 Example App Source Location" color="info" %}}You can find this example app in the Alloy repository under [samples/apps/ui/buttonbar](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/buttonbar). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 Each button in a ButtonBar can have a text label or an icon, but not both.
 
@@ -12,7 +10,7 @@ Each button in a ButtonBar can have a text label or an icon, but not both.
 
 You specify the labels with a nested <Labels> element that contains one or more <Label> elements. Each Label element can specify any of the properties defined by [BarItemType](#!/api/BarItemType), such as image or enabled, as shown in the main index.xml view shown below.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -44,7 +42,7 @@ You specify the labels with a nested <Labels> element that contains one or more 
 
 To determine which button in the ButtonBar was clicked, you can check the index property of the event object:
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 function sayHi(e) {

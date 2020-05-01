@@ -159,7 +159,7 @@ This plugin will be executed each time the project is built. Note that only hook
 
 To add a command to the CLI, you need to create a JavaScript file in your plugin's commands folder and add the path of the file to the paths.commands CLI configuration setting. The name of the JavaScript file is used as the command name. This command file registers with the CLI help command to output your commands options based on the exported properties defined in the command file and the object returned by the command's exported config method. The CLI automatically performs validation against the options you specify in the command file.
 
-*myplugin/1.0/commands/mycommand.js*
+**myplugin/1.0/commands/mycommand.js**
 
 ```javascript
 // Indicates supported CLI version for the command
@@ -247,7 +247,7 @@ Title to display in the help menu. If not specified, the filename is used (witho
 
 Use the config method to define the command-line options and flags for the command. The CLI uses the information returned by this method to output information to the help command and provide basic validation of the command-line options.
 
-*Syntax*
+**Syntax**
 
 ```
 config (Object logger, Object config, Object cli): Object
@@ -276,7 +276,7 @@ Returns an object specifying the commands configurable options. All properties a
 
 Use the validate method to execute code after the command is invoked but before actually running the command. This method can be used to provide advance validation of the command-line options.
 
-*Syntax*
+**Syntax**
 
 ```
 validate (Object logger, Object config, Object cli): void
@@ -294,7 +294,7 @@ validate (Object logger, Object config, Object cli): void
 
 Use the run method to execute the command when it is invoked.
 
-*Syntax*
+**Syntax**
 
 ```
 run (Object logger, Object config, Object cli): void
@@ -519,7 +519,7 @@ Specify which version(s) of the CLI the command supports. For example, "3.2.0" s
 
 Use the init method to initialize the hook. Implement the hook listeners, which hook into the CLI commands, inside this function.
 
-*Syntax*
+**Syntax**
 
 ```
 init (Object logger, Object config, Object cli, [Object nodeappc]): void
@@ -823,7 +823,7 @@ Log levels.
 
 Outputs a debug-level message to the console.
 
-*Syntax*
+**Syntax**
 
 ```
 debug(String message): void
@@ -839,7 +839,7 @@ debug(String message): void
 
 Outputs a error-level message to the console.
 
-*Syntax*
+**Syntax**
 
 ```
 error(String message): void
@@ -855,7 +855,7 @@ error(String message): void
 
 Outputs a JavaScript error object to the console. Outputs the error message and stack trace.
 
-*Syntax*
+**Syntax**
 
 ```
 exception(Error e): void
@@ -871,7 +871,7 @@ exception(Error e): void
 
 Retrieves the settable log levels.
 
-*Syntax*
+**Syntax**
 
 ```
 getLevels(void): Array<Strings>
@@ -885,7 +885,7 @@ Array of strings indicating the possible settable log levels.
 
 Outputs an info-level message to the console.
 
-*Syntax*
+**Syntax**
 
 ```
 info(String message): void
@@ -901,7 +901,7 @@ info(String message): void
 
 Outputs a generic log message to the console. This message does not have a log level associated with it.
 
-*Syntax*
+**Syntax**
 
 ```
 log(String message): void
@@ -917,7 +917,7 @@ log(String message): void
 
 Sets the highest log level to display. Pass one of the the logger's levels property as the argument, for example, logger.levels.info.
 
-*Syntax*
+**Syntax**
 
 ```
 setLevel(Number logLevel): void
@@ -933,7 +933,7 @@ setLevel(Number logLevel): void
 
 Set to true to disable console output or false to enable console output.
 
-*Syntax*
+**Syntax**
 
 ```
 silence(Boolean val): void
@@ -949,7 +949,7 @@ silence(Boolean val): void
 
 Outputs a trace-level message to the console.
 
-*Syntax*
+**Syntax**
 
 ```
 trace(String message): void
@@ -965,7 +965,7 @@ trace(String message): void
 
 Outputs a warning-level message to the console.
 
-*Syntax*
+**Syntax**
 
 ```
 warn(String message): void
@@ -989,7 +989,7 @@ Namespace for helper library built on top of the async library.
 
 Run multiple tasks in parallel.
 
-*Syntax*
+**Syntax**
 
 ```
 parallel (Object context, Array<Functions> tasks, Function callback): void
@@ -1007,7 +1007,7 @@ parallel (Object context, Array<Functions> tasks, Function callback): void
 
 Run multiple tasks in series.
 
-*Syntax*
+**Syntax**
 
 ```
 series (Object context, Array<Functions> tasks, Function callback): void
@@ -1068,7 +1068,7 @@ Namespace for Mac OS X command-line tools helper library.
 
 Detects if the Mac OS X command-line tools are installed.
 
-*Syntax*
+**Syntax**
 
 ```
 detect ([Object cli], Function callback): void
@@ -1089,7 +1089,7 @@ Namespace for string encoding/decoding helper library.
 
 Decodes a string with octals to a UTF-8 string.
 
-*Syntax*
+**Syntax**
 
 ```
 decodeOctalUTF8 (String input): String
@@ -1120,7 +1120,7 @@ Namespace for OS and Titanium SDK environment helper library.
 
 Retrieves OS and Node.js information.
 
-*Syntax*
+**Syntax**
 
 ```
 getOSInfo (Function callback): void
@@ -1144,7 +1144,7 @@ nodeappc.environ.getOSInfo(function(result){
 
 Retrieves information about the specified SDK.
 
-*Syntax*
+**Syntax**
 
 ```
 getSDK (String version): Object
@@ -1250,7 +1250,7 @@ Namespace for Intel HAXM helper library.
 
 Detects if HAXM is installed.
 
-*Syntax*
+**Syntax**
 
 ```
 detect ([Object config,] [Object options,] Function callback): void
@@ -1280,7 +1280,7 @@ Namespace for the image helper library built on top of the imgscalr library.
 
 Resizes the source image according to the destination parameters.
 
-*Syntax*
+**Syntax**
 
 ```
 resize (String src, Array<Object> dest, [Function callback], [Object logger]): void
@@ -1316,7 +1316,7 @@ Namespace for the Java helper library.
 
 Detects if Java and the JDK are installed.
 
-*Syntax*
+**Syntax**
 
 ```
 detect ([Object config], [Object options], Function callback): void
@@ -1346,7 +1346,7 @@ Namespace for the network helper library.
 
 Detects all network interfaces.
 
-*Syntax*
+**Syntax**
 
 ```
 interfaces (Function callback): void
@@ -1370,7 +1370,7 @@ nodeappc.net.interfaces(function(result){
 
 Detects if the current computer is online.
 
-*Syntax*
+**Syntax**
 
 ```
 interfaces (Function callback): void
@@ -1396,7 +1396,7 @@ nodeappc.net.online(function(err, result){
 
 Converts an object into an escaped URL-safe string.
 
-*Syntax*
+**Syntax**
 
 ```
 urlEncode (Object obj): String
@@ -1431,7 +1431,7 @@ CLI plist class. Create an instance of this class by passing it a file (or nothi
 
 Constructor method.
 
-*Syntax*
+**Syntax**
 
 ```
 new plist ([String file]): Object
@@ -1455,7 +1455,7 @@ CLI progress bar class. Create an instance of this class by passing it a format 
 
 Constructor method.
 
-*Syntax*
+**Syntax**
 
 ```
 new progress (String format, Object options): Object
@@ -1472,7 +1472,7 @@ new progress (String format, Object options): Object
 
 Increments the progress and redraws the progress bar.
 
-*Syntax*
+**Syntax**
 
 ```
 tick ([Number len]): void
@@ -1515,7 +1515,7 @@ Namespace for the string helper library.
 
 Capitalizes the string.
 
-*Syntax*
+**Syntax**
 
 ```
 capitalize (String str): String
@@ -1535,7 +1535,7 @@ Capitalized string.
 
 Calculates the [Levenshtein distance](http://en.wikipedia.org/wiki/Levenshtein_distance) of two strings.
 
-*Syntax*
+**Syntax**
 
 ```
 levenshtein (String str1, String str2): Number
@@ -1556,7 +1556,7 @@ The distance between the two strings.
 
 Pads the left side of a string so that the total length equals the specified length. If the string is longer than the length, the string is not padded.
 
-*Syntax*
+**Syntax**
 
 ```
 lpad (String str, Number len, [String pad]): String
@@ -1578,7 +1578,7 @@ Padded string.
 
 Renders an array of items into columns.
 
-*Syntax*
+**Syntax**
 
 ```
 renderColumns (Array<String> items, Number margin, Number maxwidth): String
@@ -1600,7 +1600,7 @@ Formatted string.
 
 Pads the right side of a string so that the total length equals the specified length. If the string is longer than the length, the string is not padded.
 
-*Syntax*
+**Syntax**
 
 ```
 lpad (String str, Number len, [String pad]): String
@@ -1622,7 +1622,7 @@ Padded string.
 
 Compares a string to an array of options and suggests close matches based on a given threshold.
 
-*Syntax*
+**Syntax**
 
 ```
 suggest (String str, Array<Strings> options, Function logger, [Number threshold]): void
@@ -1641,7 +1641,7 @@ suggest (String str, Array<Strings> options, Function logger, [Number threshold]
 
 Inserts line breaks into a string so that the text does not exceed the specified width.
 
-*Syntax*
+**Syntax**
 
 ```
 wrap (String str, [Number width]): String
@@ -1702,7 +1702,7 @@ Namespace for the helper library to spawn subprocesses.
 
 Tries to locate the executable.
 
-*Syntax*
+**Syntax**
 
 ```
 findExecutable (Array<String>/String files, Function callback): void
@@ -1730,7 +1730,7 @@ nodeappc.subprocess.findExecutable(commands, function(err, res){
 
 Try to get the 8.3 formatted file name for Windows systems. Returns the original file name for Mac OS X.
 
-*Syntax*
+**Syntax**
 
 ```
 getRealName (String file, Function callback): void
@@ -1747,7 +1747,7 @@ getRealName (String file, Function callback): void
 
 Spawns a new process.
 
-*Syntax*
+**Syntax**
 
 ```
 run (String cmd, Array args, [Object options], Function callback): void
@@ -1785,7 +1785,7 @@ Namespace for the time-formatting helper library.
 
 Format the time difference between two JavaScript Date objects in to an easily readable format.
 
-*Syntax*
+**Syntax**
 
 ```
 prettyDiff (Date from, Date to, Object options): String
@@ -1817,7 +1817,7 @@ logger.log(diff); //> 12445 days 18 hours 30 minutes 50 seconds
 
 Creates an ISO-like timestamp.
 
-*Syntax*
+**Syntax**
 
 ```
 timestamp (void): String
@@ -1841,7 +1841,7 @@ Namespace for Titanium module helper library.
 
 Scans the specified paths for Titanium module as well as all known Titanium SDK directories.
 
-*Syntax*
+**Syntax**
 
 ```
 detect (Array<String> searchPaths, Object logger, Function callback): void
@@ -1859,7 +1859,7 @@ detect (Array<String> searchPaths, Object logger, Function callback): void
 
 Finds Titanium modules with the specified restrictions and groups them in to found, missing, incompatible and conflict categories.
 
-*Syntax*
+**Syntax**
 
 ```
 find (Array<Object> modules, Array<String>/String platform, Array<String>/String deployType, String sdkVersion, Array<String> searchPaths, Object logger, Function callback): void
@@ -1881,7 +1881,7 @@ find (Array<Object> modules, Array<String>/String platform, Array<String>/String
 
 Only scans the specified paths for Titanium module.
 
-*Syntax*
+**Syntax**
 
 ```
 scopedDetect (Array<String> searchPaths, Object config, Object logger, Function callback): void
@@ -1904,7 +1904,7 @@ Namespace for Titanium plugin helper library.
 
 Scans the specified paths for Titanium plugins as well as any globally or user-configured search paths.
 
-*Syntax*
+**Syntax**
 
 ```
 detect (String projectDir, Object config, Object logger, Function callback): void
@@ -1923,7 +1923,7 @@ detect (String projectDir, Object config, Object logger, Function callback): voi
 
 Finds Titanium plugins with the specified restrictions and groups them in to found or missing categories.
 
-*Syntax*
+**Syntax**
 
 ```
 find (Array<Object> plugins, Array<String> searchPaths, Object logger, Function callback): void
@@ -1943,7 +1943,7 @@ find (Array<Object> plugins, Array<String> searchPaths, Object logger, Function 
 
 Only scans the specified paths for Titanium plugins.
 
-*Syntax*
+**Syntax**
 
 ```
 scopedDetect (Array<String> searchPaths, Object config, Object logger, Function callback): void
@@ -1966,7 +1966,7 @@ Namespace for the miscellaneous utility library.
 
 Mix multiple objects into a single object.
 
-*Syntax*
+**Syntax**
 
 ```
 mix (Object obj1, ...): Object
@@ -1987,7 +1987,7 @@ Mixed object.
 
 Deep mixes multiple objects into a single object.
 
-*Syntax*
+**Syntax**
 
 ```
 mixObj (Object obj1, ...): Object
@@ -2078,7 +2078,7 @@ Namespace for the XML parsing utility library. Use the [xmldom](https://www.npmj
 
 Loops through the attributes for an XML DOM object and invokes the callback for each attribute found.
 
-*Syntax*
+**Syntax**
 
 ```
 forEachAttr (Object node, Function callback): void
@@ -2095,7 +2095,7 @@ forEachAttr (Object node, Function callback): void
 
 Loops through the elements for an XML DOM object and invokes the callback for each element found.
 
-*Syntax*
+**Syntax**
 
 ```
 forEachElement (Object node, Function callback): void
@@ -2112,7 +2112,7 @@ forEachElement (Object node, Function callback): void
 
 Retrieves and parses an attribute of an XML node. If the attribute does not exist, an empty string is returned.
 
-*Syntax*
+**Syntax**
 
 ```
 getAttr (Object node, String attr): Primitive
@@ -2133,7 +2133,7 @@ Returns the value of the attribute or an empty string if it does not exist.
 
 Determines if the XML node has a child node and returns it.
 
-*Syntax*
+**Syntax**
 
 ```
 getValue (Object node): String
@@ -2153,7 +2153,7 @@ Returns the value of the child node.
 
 Parse a XML value and coverts it to a JavaScript value.
 
-*Syntax*
+**Syntax**
 
 ```
 parse (String value): Primitive
@@ -2440,7 +2440,7 @@ Namespace for the ZIP archive helper library built on top of the adm-zip library
 
 Decompresses a ZIP archive.
 
-*Syntax*
+**Syntax**
 
 ```
 unzip(String file, String dest, Object opts, Function callback): void

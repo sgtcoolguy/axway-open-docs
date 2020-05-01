@@ -12,7 +12,7 @@ Hyperloop 2.2.0 is a feature release that includes new features, improvements, a
 
     * Added support to hooks scripts into the application build phase. This can be configured via the appc.js file with the following example:
 
-        *Run Script phase*
+        **Run Script phase**
 
         ```
         hyperloop: {

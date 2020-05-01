@@ -16,9 +16,9 @@ The Properties View displays information depending on where your cursor is in th
 
 Studio does not display the Properties View in the Web Perspective by default. To open the view manually:
 
-* From the **Window** menu, select **Show View > Other...**. Then search for **properties** in the search box that appears.
+{{% alert color="info" %}}* From the **Window** menu, select **Show View > Other...**. Then search for **properties** in the search box that appears.
 
-* To close the **Properties View**, click the Close button (**X**) in the upper right of the tab.
+* To close the **Properties View**, click the Close button (**X**) in the upper right of the tab.{{% /alert %}}
 
 ## Using the View
 

@@ -2,15 +2,13 @@
 
 Demonstrates using Require and Widget elements to create Titanium proxy properties.
 
-{{% alert title="💡 Hint" color="info" %}}*App folder location*
-
-_alloy_/test/apps/**advanced/proxy\_property\_requires**{{% /alert %}}
+{{% alert title="💡 App folder location" color="info" %}}_alloy_/test/apps/**advanced/proxy\_property\_requires**{{% /alert %}}
 
 For example, as shown below, your main Alloy application can define a <Window/> element that uses a <Require/> element to include an external file that defines the Window element's [leftNavButton](#!/api/Titanium.UI.Window-property-rightNavButton) and [rightNavButton](#!/api/Titanium.UI.Window-property-rightNavButton) views.
 
 ![proxy_properties_1](/Images/appc/download/attachments/41845673/proxy_properties_1.png)
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Window id="windowWindow" title="window">
@@ -19,7 +17,7 @@ For example, as shown below, your main Alloy application can define a <Window/> 
 </Window>
 ```
 
-*app/views/window.xml*
+**app/views/window.xml**
 
 ```xml
 <Alloy>
@@ -36,7 +34,7 @@ Similarly, you can use a <Widget/> element to add TableViewSection and TableView
 
 ![proxy_properties_2](/Images/appc/download/attachments/41845673/proxy_properties_2.png)
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Window id="staticWindow" title="static">
@@ -52,7 +50,7 @@ Similarly, you can use a <Widget/> element to add TableViewSection and TableView
 </Window>
 ```
 
-*app/views/com.foo.widget/section.xml*
+**app/views/com.foo.widget/section.xml**
 
 ```xml
 <Alloy>

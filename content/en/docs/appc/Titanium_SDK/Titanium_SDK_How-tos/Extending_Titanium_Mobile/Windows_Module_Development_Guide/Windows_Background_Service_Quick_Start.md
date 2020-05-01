@@ -42,9 +42,7 @@ Like Windows application development, Windows module development is only support
 
 First, create a new module project.
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a terminal, change the current working directory to your workspace and run:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a terminal, change the current working directory to your workspace and run:
 
 ```bash
 cd /PATH/TO/WORKSPACE
@@ -70,9 +68,7 @@ Studio sets up a new folder called test that contains your module project.
 
 Next, build the module and package it. This process produces a ZIP file containing a binary library with unprocessed module assets, example code and documentation.
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a terminal, go to the module's windows directory and run the appc run -p windows --build-only
+{{% alert title="💡 CLI Instructions" color="info" %}}From a terminal, go to the module's windows directory and run the appc run -p windows --build-only
 
 ```bash
 cd test/windows
@@ -101,9 +97,7 @@ To test the module, create a test application and add the module as a dependency
 
 ### Create a test application
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a new terminal window, change the current working directory to your workspace and run the following commands:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a new terminal window, change the current working directory to your workspace and run the following commands:
 
 ```bash
 cd /PATH/TO/WORKSPACE
@@ -133,9 +127,7 @@ Studio sets up a new folder called Hello that contains the test application you 
 
 To load the module in the application, you need to add it as a dependency to the project.
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-Open the tiapp.xml and update the <modules/> element to include the module as a dependency to the project. In addition to that Windows background module requires Extension element with EntryPoint specified. In EntryPoint you need to specify a background service class name, which is named "camel-cased module identifier" plus "BackgroundServiceTask". In this example since we uses "com.example.test" as an module id, background task entry point goes to "ComExampleTest.BackgroundServiceTask".
+{{% alert title="💡 CLI Instructions" color="info" %}}Open the tiapp.xml and update the <modules/> element to include the module as a dependency to the project. In addition to that Windows background module requires Extension element with EntryPoint specified. In EntryPoint you need to specify a background service class name, which is named "camel-cased module identifier" plus "BackgroundServiceTask". In this example since we uses "com.example.test" as an module id, background task entry point goes to "ComExampleTest.BackgroundServiceTask".
 
 ```xml
 <ti:app>
@@ -160,7 +152,7 @@ Open the tiapp.xml and update the <modules/> element to include the module as a 
 
 Open the app.js file and replace the code with the following, which invokes background service API calls to the module. In this example we use registerTimerTask to register [Windows::ApplicationModel::Background::TimeTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.timetrigger.aspx) which is invoked for each 15 minutes interval.
 
-*app.js*
+**app.js**
 
 ```javascript
 var win = Ti.UI.createWindow();
@@ -184,9 +176,7 @@ win.open();
 
 ### Run the application
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a terminal that has the test app as its current working directory, run:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a terminal that has the test app as its current working directory, run:
 
 ```bash
 appc run -p windows
@@ -198,7 +188,7 @@ Studio builds and launches the application on the select Windows Phone simulator
 
 The console lines seen below show us that the module is working as expected.
 
-*Console*
+**Console**
 
 ```
 [INFO]  Background task is registered: task id=0
@@ -218,7 +208,7 @@ First, look at some of the default files created by the Titanium SDK. Expand the
 
 In ComExampleTestModule.cpp file you'll find BackgroundServiceTask class inside namespace ComExampleTest.
 
-*ComExampleTest.cpp*
+**ComExampleTest.cpp**
 
 ```cpp
 namespace ComExampleTest
@@ -260,7 +250,7 @@ namespace ComExampleTest
 
 BackgroundServiceTask implements Windows Background Service [IBackgroundTask](https://msdn.microsoft.com/library/windows/apps/br224794) interface so you can implement a task that works in the background. The implementation for background task should be inside BackgroundServiceTask::Run function:
 
-*ComExampleTest.cpp*
+**ComExampleTest.cpp**
 
 ```cpp
 /*
@@ -281,7 +271,7 @@ void BackgroundServiceTask::Run(IBackgroundTaskInstance^ taskInstance)
 
 Let's implement something useful here: let say we want a number to count how many times background task is executed. Important thing you need to know here is that BackgroundServiceTask doesn't have a state because background task is executed and finished on each invocation. So you need a way to save a state: in this case we can use ApplicationData::Current->LocalSettings or local file storage to store values. In this example let's use LocalSettings for now:
 
-*ComExampleTest.cpp*
+**ComExampleTest.cpp**
 
 ```cpp
 using namespace Windows::Foundation;
@@ -320,7 +310,7 @@ void BackgroundServiceTask::Run(IBackgroundTaskInstance^ taskInstance)
 
 In this example we saves count value to "ComExampleTest.BackgroundServiceTask.count" local setting. Good new is that you can actually get the value from JavaScript using Ti.App.Properties with same key "ComExampleTest.BackgroundServiceTask.count". Because we save the state in the local settings, count value is still saved even when app is finished or even all background tasks are unregistered.
 
-*app.js*
+**app.js**
 
 ```javascript
 var win = Ti.UI.createWindow();

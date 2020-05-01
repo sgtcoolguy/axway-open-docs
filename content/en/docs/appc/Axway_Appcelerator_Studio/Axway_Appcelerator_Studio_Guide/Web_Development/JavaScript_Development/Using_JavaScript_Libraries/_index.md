@@ -31,7 +31,7 @@ This walkthrough will instruct you on how to create a new web project and get st
 
     7. Click the **Finish** button. Studio creates a new web project, with several files, depending on the project template you selected.
 
-This will create a new web project, but unlike Studio 2, most templates do not drop in a default set of JavaScript files for library support, as they quickly become outdated. Instead, download the library you are interested in using and drag and drop the files into your project as appropriate.
+{{% alert color="info" %}}This will create a new web project, but unlike Studio 2, most templates do not drop in a default set of JavaScript files for library support, as they quickly become outdated. Instead, download the library you are interested in using and drag and drop the files into your project as appropriate.{{% /alert %}}
 
 ## Adding a documented library for code assist
 

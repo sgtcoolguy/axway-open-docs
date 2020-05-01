@@ -88,7 +88,7 @@ Module's can also expose properties and methods to JavaScript. See the Proxy sec
 
 To create a Module, the class name and filename is the module ID in camel case notation and suffixed with Module. The class must extend the TiModule class. Note that when you create a new module, you already have a boilerplate module class.
 
-*ComExampleTestModule.h*
+**ComExampleTestModule.h**
 
 ```objc
 #import "TiModule.h"
@@ -134,7 +134,7 @@ A Proxy can expose methods and properties to JavaScript. Each of these can be an
 
 To declare a Proxy, the class name and filename must be prefixed with the module ID in camel case notation and suffixed with Proxy. The class must extend the TiProxy class.
 
-*ComExampleTestFooProxy.h*
+**ComExampleTestFooProxy.h**
 
 ```objc
 #import "TiProxy.h"
@@ -142,7 +142,7 @@ To declare a Proxy, the class name and filename must be prefixed with the module
 @end
 ```
 
-*ComExampleTestFooProxy.m*
+**ComExampleTestFooProxy.m**
 
 ```objc
 #import "ComExampleTestFooProxy.h"
@@ -234,7 +234,7 @@ TiColor *bgcolor = [TiUtils colorValue:arg];
 
 To expose a JavaScript property in a Proxy, you can define a property using the Objective-C @property notation with the copy attribute:
 
-*SomeProxy.h*
+**SomeProxy.h**
 
 ```objc
 @interface SomeProxy: TiUIView {
@@ -248,7 +248,7 @@ To expose a JavaScript property in a Proxy, you can define a property using the 
 
 To expose a property in a Proxy with a custom setter or getter, declare the variable in the class's header file and implement the setter and getter methods:
 
-*SomeProxy.h*
+**SomeProxy.h**
 
 ```objc
 @interface SomeProxy: TiUIView {
@@ -257,7 +257,7 @@ To expose a property in a Proxy with a custom setter or getter, declare the vari
 @end
 ```
 
-*SomeProxy.m*
+**SomeProxy.m**
 
 ```objc
 - (void)setPropertyName:(id)value
@@ -539,7 +539,7 @@ For Alloy projects, you can also use the Module element. Set the module attribut
 
 To declare a View Proxy, the class name and filename must be prefixed with the module ID in camel case notation and suffixed with ViewProxy. The class must extend the [TiViewProxy](http://docs.appcelerator.com/module-apidoc/latest/ios/Classes/TiViewProxy.html) class.
 
-*ComExampleTestFooViewProxy.h*
+**ComExampleTestFooViewProxy.h**
 
 ```objc
 #import "TiViewProxy.h"
@@ -549,7 +549,7 @@ To declare a View Proxy, the class name and filename must be prefixed with the m
 @end
 ```
 
-*ComExampleTestMyViewProxy.m*
+**ComExampleTestMyViewProxy.m**
 
 ```objc
 #import "ComExampleTestFooViewProxy.h"
@@ -567,7 +567,7 @@ UIView *view = [self view];
 
 To declare a View Proxy, the class name and filename must be prefixed with the module ID in camel case notation and suffixed with View. The class must extend the TiUIView class. The TiUIView class extends UIView and provides Titanium specific functionality.
 
-*ComExampleTestFooView.h*
+**ComExampleTestFooView.h**
 
 ```objc
 #import "TiUIView.h"
@@ -576,7 +576,7 @@ To declare a View Proxy, the class name and filename must be prefixed with the m
 }@end
 ```
 
-*ComExampleTestFooView.m*
+**ComExampleTestFooView.m**
 
 ```objc
 #import "ComExampleTestFooView.h"
@@ -594,7 +594,7 @@ The view property setters are named using a special required convention.
 
 To define a property in a **View**, capitalize the first character of the property, then prefix it with set and suffix it with an underscore (\_).
 
-*ComExampleTestView.m*
+**ComExampleTestView.m**
 
 ```objc
 - (void)setFoo_:(id)value
@@ -605,7 +605,7 @@ To define a property in a **View**, capitalize the first character of the proper
 
 To define a property in a **View Proxy**, capitalize the first character of the property, then prefix it with set. Do **NOT** add an underscore to the end.
 
-*ComExampleTestViewProxy.m*
+**ComExampleTestViewProxy.m**
 
 ```objc
 - (void)setFoo:(id)value

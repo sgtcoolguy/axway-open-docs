@@ -22,7 +22,7 @@ When developing iOS modules with Hyperloop, there are situations where you want 
 
 That's why Hyperloop includes a number of utility methods that solve these kind of problems. They are exposed in the "TiApp" class that can be required as the following:
 
-*indes.js*
+**indes.js**
 
 ```javascript
 // ES5

@@ -24,11 +24,11 @@ If the error is caused by a configuration issue in Studio, the UI should present
 
 The error message in the log file should be descriptive enough that the user could reasonably file a bug and we could understand the context. **e.getLocalizedMessage() is rarely the right message to display.**
 
-* If the user is **not** in "Specific components" mode, all components are logged, regardless of scope, but filtered by severity slider
+{{% alert color="info" %}}* If the user is **not** in "Specific components" mode, all components are logged, regardless of scope, but filtered by severity slider
 
 * If a user **is** in "Specific components" mode only components where the scope is null or matches the toggled options will log, filtered by severity slider
 
-* If a user is in **debug mode** (-debug, tracing tab in run configurations), those settings override the "Specific components" setting. If desired, the user can then later turn on those specific options manually while in the process of debugging by using the "Troubleshooting" page.
+* If a user is in **debug mode** (-debug, tracing tab in run configurations), those settings override the "Specific components" setting. If desired, the user can then later turn on those specific options manually while in the process of debugging by using the "Troubleshooting" page.{{% /alert %}}
 
 ## Scopes
 

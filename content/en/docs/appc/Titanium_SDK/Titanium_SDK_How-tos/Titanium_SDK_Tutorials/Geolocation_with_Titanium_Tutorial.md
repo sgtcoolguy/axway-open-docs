@@ -24,7 +24,7 @@ Let's start out with creating a fresh Titanium app and start setting up the tiap
 
 For iOS users, use this:
 
-*tiapp.xml - iOS*
+**tiapp.xml - iOS**
 
 ```xml
 <ios>
@@ -41,7 +41,7 @@ For iOS users, use this:
 
 For Android:
 
-*tiapp.xml - Android*
+**tiapp.xml - Android**
 
 ```xml
 <android xmlns:android=“http://schemas.android.com/apk/res/android”>
@@ -64,7 +64,7 @@ Titanium SDK 7.1.0 introduced support for FusedLocationProvider on Android. To e
 
 Assuming the user will approve the request to track location, the device's position can be obtained via this code (works on both Android and iOS):
 
-*Geolocate: get current position*
+**Geolocate: get current position**
 
 ```javascript
 function getLocation( ) {
@@ -82,7 +82,7 @@ Keep in mind that if the user denied the permission request from the OS, this co
 
 To check for permissions, our Geolocation service code should be wrapped with a permission check:
 
-*Geolocation permission check*
+**Geolocation permission check**
 
 ```javascript
 if (Ti.Geolocation.hasLocationPermissions()) {
@@ -100,7 +100,7 @@ if (Ti.Geolocation.hasLocationPermissions()) {
 
 Here, we are checking for AUTHORIZATION\_WHEN\_IN\_USE because the app is currently focused on getting the location. Note: this code is just obtaining the location once. It should include a timer to run every so often. It should also avoid wasting checks if the device's position hasn't changed after a period of time. We can solve this by using the location event by modifying the getLocation function so it will listen for changes based on location.
 
-*Listen for location changes*
+**Listen for location changes**
 
 ```javascript
 function getLocation( ) {
@@ -116,7 +116,7 @@ This updated code will execute at the start of the app and whenever the device's
 
 The data sent back looks something like this:
 
-*Location data*
+**Location data**
 
 ```
 {
@@ -152,7 +152,7 @@ To adjust the accuracy, tweak the Ti.Geolocation.accuracy property to set this t
 
 To fine tune the settings for Android, set up the Ti.Geolocation.Android.LocationRule. The following code will tell the device to skip location update unless the accuracy is less than 20m and at least 10 seconds has lapsed.
 
-*Location rule*
+**Location rule**
 
 ```
 Ti.Geolocation.Android.addLocationRule({accuracy: 20, minAge: 10000});

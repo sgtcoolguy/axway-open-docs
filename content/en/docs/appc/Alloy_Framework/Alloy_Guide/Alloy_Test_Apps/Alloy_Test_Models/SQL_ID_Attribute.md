@@ -2,13 +2,11 @@
 
 This example demonstrates how you can use a custom model identifier with the idAttribute field in the model definition file.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**models/sql\_idAttribute**{{% /alert %}}![screenshot](/Images/appc/download/attachments/41845723/screenshot.png)
+{{% alert title="App Folder Location" color="info" %}}alloy/test/apps/**models/sql\_idAttribute**{{% /alert %}}![screenshot](/Images/appc/download/attachments/41845723/screenshot.png)
 
 By default, a Alloy model's unique identifier is stored under the alloy\_id attribute. To use a custom identifier, in the model configuration file, add the custom field to the "columns" object and also, in the "adaptor" object, set the idAttribute field to the name of the custom field. The example's fighters.js model configuration file demonstrates this.
 
-*app/models/fighters.js*
+**app/models/fighters.js**
 
 ```javascript
 exports.definition = {
@@ -29,7 +27,7 @@ exports.definition = {
 
 The alloy.js file populates the fighters collection with models that use the custom ID:
 
-*alloy.js*
+**alloy.js**
 
 ```javascript
 Alloy.Collections.fighters = Alloy.createCollection('fighters');

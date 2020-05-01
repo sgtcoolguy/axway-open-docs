@@ -62,7 +62,7 @@ As of this release, Titanium SDK 8.0.x will not receive updates more than six mo
 
     * Added support for ListView.separatorStyle
 
-    * *ListView.separatorStyle*
+    * **ListView.separatorStyle**
 
         ```javascript
         var win = Ti.UI.createWindow({ backgroundColor: 'black', fullscreen: true });
@@ -93,7 +93,7 @@ As of this release, Titanium SDK 8.0.x will not receive updates more than six mo
 
     * Added support to use OptionDialog without radio buttons
 
-    * *OptionDialog*
+    * **OptionDialog**
 
         ```javascript
         var win = Ti.UI.createWindow({
@@ -142,7 +142,7 @@ As of this release, Titanium SDK 8.0.x will not receive updates more than six mo
 
     * Added support for dynamic fonts in UIFontTextStyleLargeTitle
 
-    * *UIFontTextStyleLargeTitle*
+    * **UIFontTextStyleLargeTitle**
 
         ```javascript
         var win = Ti.UI.createWindow({
@@ -463,7 +463,7 @@ As of this release, Titanium SDK 8.0.x will not receive updates more than six mo
 
     * Implemented WebView.data
 
-    * *WebView.data*
+    * **WebView.data**
 
         ```javascript
         var win = Ti.UI.createWindow({

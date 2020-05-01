@@ -2,9 +2,7 @@
 
 Demonstrates how to use an OptionDialog control, a modal view that includes a message and one or more option items.
 
-{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
-
-You can find this example app in the Alloy repository under [samples/apps/ui/optiondialog](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/optiondialog). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="💡 Example App Source Location" color="info" %}}You can find this example app in the Alloy repository under [samples/apps/ui/optiondialog](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/optiondialog). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 On Android an [OptionDialog](#!/api/Titanium.UI.OptionDialog) is centered on the screen, and at the bottom of the screen on iOS. On Android, you can add buttons below the options, or define a custom view to show in place of the options, as shown below. You can either the options or a custom view, but not both. On iPhone, a Cancel option is always displayed at the bottom of the dialog; on iPad, no cancel option is not displayed and the user can cancel the dialog by tapping outside the dialog.
 
@@ -12,7 +10,7 @@ On Android an [OptionDialog](#!/api/Titanium.UI.OptionDialog) is centered on the
 
 The main index.xml view defines the OptionDialog options for Android and iOS. Individual options are defined by an <Options> element that contains one or more <Option> elements. On iOS, you should use the [destructive](#!/api/Titanium.UI.OptionDialog-property-destructive) attribute to specify the index of an option that is destructive or irreversible (like deleting a contact or photo, for example). Destructive options are colored red, as shown above.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>

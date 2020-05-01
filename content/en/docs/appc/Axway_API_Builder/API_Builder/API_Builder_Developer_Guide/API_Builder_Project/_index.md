@@ -1,8 +1,6 @@
 {"title":"API Builder Project","weight":"30"}
 
-{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
-
-Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
+{{% alert title="❗️ API Builder 3.x is deprecated" color="danger" %}}Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
@@ -96,7 +94,7 @@ The app.js file contains code that initializes the server instance. You can hook
 
 For example, the following server.app.use call forces the client to use a secure connection by redirecting any unsecured connections to the HTTPS URL.
 
-*app.js*
+**app.js**
 
 ```javascript
 var Arrow = require('arrow');
@@ -205,7 +203,7 @@ Starting with AMPLIFY Runtime Services 1.2.0, you may specify any version of Nod
 
 To specify a Node.js version, in the package.json file, set the engines.node key to the version of Node.js you want to use. DO NOT SPECIFY A RANGE. If you do not specify a Node.js version, the application will use 4.4.7 by default (as of SDK 6.0.0).
 
-*package.json*
+**package.json**
 
 ```json
 {
@@ -219,7 +217,7 @@ To specify a Node.js version, in the package.json file, set the engines.node key
 
 Starting with AMPLIFY Runtime Services 1.2.0, you may explicitly set the port the application listens on. Set the cloud.environment.PORT key in the appc.json file. or use the appc cloud config --set "PORT=<PORT\_NUMBER>" command to set the special environment variable PORT. If you do not set PORT explicitly before publishing your application, AMPLIFY Runtime Services sets it to 80 by default.
 
-*appc.json*
+**appc.json**
 
 ```json
 {
@@ -239,13 +237,11 @@ AMPLIFY Runtime Services allows you to install additional binaries before your a
 
 Starting with AMPLIFY Runtime Services 1.3.0, to install additional third-party tools, create a script called install.sh in the project's root folder, which installs the required packages.
 
-{{% alert title="💡 Hint" color="info" %}}*ImageMagick and PhantomJS*
-
-Both ImageMagick and PhantomJS are pre-installed on the containers.{{% /alert %}}
+{{% alert title="💡 ImageMagick and PhantomJS" color="info" %}}Both ImageMagick and PhantomJS are pre-installed on the containers.{{% /alert %}}
 
 Below is a sample script located in the ./install.sh folder in the application's directory.
 
-*install.sh*
+**install.sh**
 
 ```bash
 #!/bin/bash
@@ -266,7 +262,7 @@ echo "---"
 
 Prior to Release 1.3.0, you needed to create a script in your project folder (no name restrictions) and add the script to the package.json file. In the package.json file, set the scripts.preinstall or scripts.postinstall field to the path to the script:
 
-*package.json*
+**package.json**
 
 ```json
 "scripts": {
@@ -280,7 +276,7 @@ Note that from AMPLIFY Runtime Services 1.3.0 and later, you can still use the a
 
 The application can import any third-party modules that are supported by standard Node.js applications. Before publishing the app to the cloud, make sure all dependencies are listed in the dependencies field in the application's package.json file. For example, to add support for MongoDB 1.2.0 or greater:
 
-*package.json*
+**package.json**
 
 ```json
 {
@@ -292,7 +288,7 @@ The application can import any third-party modules that are supported by standar
 
 To set environment variables, add them to the cloud.environment object in the project's appc.json file.
 
-*appc.json*
+**appc.json**
 
 ```json
 {
@@ -314,9 +310,7 @@ To unset an environment variable, use the appc cloud config --unset <key> comman
 
 To check the current environment variables, use the appc cloud config --env command.
 
-{{% alert title="💡 Hint" color="info" %}}*Blacklist Variable Names*
-
-Prior to AMPLIFY Runtime Services 1.2.0, you could not use the following names for environment variables: "appid", "basedir", "bodyParser", "customConfig", "dirname", "framework", "fullpath", "name", "serverId", "port", "version", "NODE", "NODE\_PATH", "PATH", "PWD", "PORT", "TMPDIR", and "USER".{{% /alert %}}
+{{% alert title="💡 Blacklist Variable Names" color="info" %}}Prior to AMPLIFY Runtime Services 1.2.0, you could not use the following names for environment variables: "appid", "basedir", "bodyParser", "customConfig", "dirname", "framework", "fullpath", "name", "serverId", "port", "version", "NODE", "NODE\_PATH", "PATH", "PWD", "PORT", "TMPDIR", and "USER".{{% /alert %}}
 
 After changing an environment variable, you will be prompted to restart the application.
 
@@ -334,7 +328,7 @@ To customize the number of cloud servers the application can enable the auto-sca
 
 The following example enables autoscaling, using a maximum of five servers when there are at least 20 queued requests. The application is also configured to automatically scale down the number of servers when the number of queued requests drops below 20.
 
-*appc.json*
+**appc.json**
 
 ```json
 {
@@ -375,7 +369,7 @@ The alias to set should be a valid domain name that has been already configured 
 
 To set a custom domain, set the cloud.domain field in the appc.json file. You can optionally set the cloud.domainPath field to assign a path to the application. The following example sets a domain and path on the application that can be accessed from www.foo.com/v2:
 
-*appc.json*
+**appc.json**
 
 ```json
 {
@@ -460,7 +454,7 @@ cat customapp.com.crt gd_bundle.crt customapp.com.key > customapp.com.pem
 
 Once you have created the PEM file, set the cloud.certificate field to the path of the certificate file.
 
-*appc.json*
+**appc.json**
 
 ```json
 {
@@ -484,7 +478,7 @@ To use this feature, your application uses [cluster.setupMaster()](http://nodejs
 
 **Example**:
 
-*app.js*
+**app.js**
 
 ```javascript
 var cluster = require('cluster');
@@ -499,7 +493,7 @@ for (var i = 0; i < numCPUs; i++) {
 }
 ```
 
-*child.js*
+**child.js**
 
 ```javascript
 var http = require('http');

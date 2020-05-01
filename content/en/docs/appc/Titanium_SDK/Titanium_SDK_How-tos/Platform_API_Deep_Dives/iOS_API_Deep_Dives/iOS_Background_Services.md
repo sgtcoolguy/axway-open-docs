@@ -70,7 +70,7 @@ Before using this module, you need to add it to your project. This module is par
 
 Open the tiapp.xml file and add the following under the modules element:
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 ...
@@ -278,7 +278,7 @@ You need to modify your application to:
 
 To use the background fetch functionality, modify your tiapp.xml file to add the UIBackgroundMode s fetch key in the plist section:
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 ...
@@ -433,7 +433,7 @@ Once your application is prepared, you can test it by sending a push notificatio
 
 To use the silent push functionality, modify your tiapp.xml file to add the UIBackgroundMode s remote-notification key in plist section:
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 ...
@@ -530,7 +530,7 @@ In the following example, the user needs to launch the application at least once
 
 This example requires that push notifications are setup for the project. For directions, see [Push Notifications](/docs/appc/Titanium_SDK/Titanium_SDK_How-tos/Notification_Services/Push_Notifications/).
 
-*app.js*
+**app.js**
 
 ```javascript
 // Send the following push notification to this example:

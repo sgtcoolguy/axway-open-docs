@@ -14,9 +14,7 @@
 
 Demonstrates different approaches to [changing styles at runtime](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Dynamic_Styles/) in Alloy. The sample application displays a menu of options that discuss or demonstrate the different approaches and techniques for dynamic styling. See each section below for a discussion of each approach.
 
-{{% alert title="💡 Hint" color="info" %}}*App folder location*
-
-_alloy_/test/apps/**advanced/dynamic\_styling**{{% /alert %}}
+{{% alert title="App folder location" color="info" %}}_alloy_/test/apps/**advanced/dynamic\_styling**{{% /alert %}}
 
 ![dynamic_styling](/Images/appc/download/attachments/41845657/dynamic_styling.png)
 
@@ -24,7 +22,7 @@ _alloy_/test/apps/**advanced/dynamic\_styling**{{% /alert %}}
 
 Although not often needed, you can access the raw style data used in the Alloy project, you can require() the styles, as shown below:
 
-*app/controllers/features/rawStyle.js*
+**app/controllers/features/rawStyle.js**
 
 ```javascript
 var rawStyles = JSON.stringify(require('alloy/styles/features/rawStyle');
@@ -150,7 +148,7 @@ console.log(rawStyles);
 
 This section uses an Alloy view-controller's [createStyle()](#!/api/Alloy.Controller-method-createStyle) method to create a new style object, which is then passed as a parameter to the [Ti.UI.createLabel()](#!/api/Titanium.UI-method-createLabel) method. The following code is representative of that used in the sample app.
 
-*app/controllers/features/createStyle.js*
+**app/controllers/features/createStyle.js**
 
 ```javascript
 var styleArgs = {
@@ -169,7 +167,7 @@ $.container.add(testLabel);
 
 The "blue", "shadow", and "large" styles are defined in the project's global TSS file.
 
-*app/app.tss*
+**app/app.tss**
 
 ```
 '.blue': {
@@ -195,7 +193,7 @@ In the sample view, click the label to cycle through a variety of styles applied
 
 This sample view is functionally identical to the previous "Creating Style Objects" sample (click the label to cycle it through a series of different styles). The difference is that it uses the [Alloy.Controller.UI.create()](#!/api/Alloy.Controller.UI-method-create) method to create and style the Label object in a single method call, rather than making [createStyle()](#!/api/Alloy.Controller-method-createStyle) and [Ti.UI.createLabel()](#!/api/Titanium.UI-method-createLabel) calls. The [create()](#!/api/Alloy.Controller.UI-method-create) method takes as its first parameter the API name of the object to create, which can either be the full class name ("Titanium.UI.Button") or the Alloy XML element name ("Button"). It's second parameter is a object hash whose fields specify the styles to apply to the new object.
 
-*app/controller/createStyle.js*
+**app/controller/createStyle.js**
 
 ```javascript
 var styleArgs = {
@@ -216,7 +214,7 @@ The "Add/Remove Classes" sample app section demonstrates using [addClass()](#!/a
 
 This affects the result of adding and removing TSS classes at runtime, as shown below. The two Label elements are both styled with same classes ("medium shadow") but the top Label element has autoStyle set to true, while the bottom Label element does not.
 
-*app/views/classes.xml*
+**app/views/classes.xml**
 
 ```xml
 <Label id="label1" class="medium shadow">autoStyle="true"</Label>
@@ -233,7 +231,7 @@ A XML view component whose autostyle attribute is set to true has its assigned c
 
 As shown below, only the output for label2 includes a classes field, since it's the only element with auto-styling enabled.
 
-*Console output*
+**Console output**
 
 ```
 [INFO]  ******** label1 ********

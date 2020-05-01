@@ -28,7 +28,7 @@ Studio ships with UTF-8 encoding enabled by default, but you may wish to change 
 
 ## If you do not see your encoding in the list...
 
-A complete list of Java encodings is available here: [http://www.oracle.com/technetwork/java/archive-139210.html](http://www.oracle.com/technetwork/java/archive-139210.html). Select the Java encoding you want from the list.
+{{% alert color="info" %}}A complete list of Java encodings is available here: [http://www.oracle.com/technetwork/java/archive-139210.html](http://www.oracle.com/technetwork/java/archive-139210.html). Select the Java encoding you want from the list.{{% /alert %}}
 
 You can manually specify one of the supported encodings from the above web page
 

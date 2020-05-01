@@ -27,7 +27,7 @@ aca.setMetadata('device', {
 
 These data points can then be accessed through Query Builder by accessing the data.meta.device.<property>:
 
-*obtaining device model*
+**obtaining device model**
 
 ```
 data.meta.device.model

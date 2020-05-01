@@ -20,15 +20,15 @@ A [nice one-page cheat sheet](http://www.scribd.com/doc/10040039/ScriptDoc-Cheat
 
 * Enclose each documentation block within a slash-asterisk-asterisk
 
-    ```
-    (/**)
-    ```
+    {{% alert color="info" %}}```
+(/**)
+```{{% /alert %}}
 
     and asterisk-slash
 
-    ```
+    {{% alert color="info" %}}```
     (*/)
-    ```
+    ```{{% /alert %}}
 
     comment set.
 

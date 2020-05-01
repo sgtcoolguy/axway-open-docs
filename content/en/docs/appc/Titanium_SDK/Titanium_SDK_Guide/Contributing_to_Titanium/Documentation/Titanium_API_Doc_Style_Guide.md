@@ -92,11 +92,11 @@ Defining a constant: Need a consistent style here. We should describe both what 
 
 Using inline links: Inline links are very useful, but excessive use detracts from readability. Use them where they add information not already supplied by the YAML markup. For example, if the return type of a method is Titanium.Blob, the description text can just use code style – \`Blob\` – instead of an inline link.
 
-```
+{{% alert color="info" %}}```
 summary: Returns the image as a `Blob`.
 returns:
     type: Titanium.Blob
-```
+```{{% /alert %}}
 
 When referring to a given type multiple times in the same description, only one reference (usually the first) should be an inline link.
 
@@ -105,24 +105,24 @@ the link so users know why they should follow the link. Avoid anonymous inline l
 
 Preferred:
 
-```
+{{% alert color="info" %}}```
 Titanium binding for an Android activity. For more information on Android activities, see the
 [Activity Reference Page](http://developer.android.com/reference/android/app/Activity.html) on the Android Developer site.
-```
+```{{% /alert %}}
 
 Preferred:
 
-```
+{{% alert color="info" %}}```
 For more information on Android Activity, see:
 
 -  [developer.android.com/reference/android/app/Activity.html](http://developer.android.com/reference/android/app/Activity.html)}} (preferred)
-```
+```{{% /alert %}}
 
 Avoid:
 
-```
+{{% alert color="info" %}}```
 Titanium binding for an an [Android Activity](http://developer.android.com/reference/android/app/Activity.html).
-```
+```{{% /alert %}}
 
 ## Formatting
 
@@ -130,7 +130,7 @@ For ease of reviewing pull requests on GitHub, TDoc files should be line-wrapped
 
 For legibility, vertical whitespace may be added before a YAML key that introduces a YAML array, and before each array element:
 
-```
+{{% alert color="info" %}}```
 
 properties:
 
@@ -141,44 +141,44 @@ properties:
   - name: enabled
     summary: Indicates whether the view is enabled.
     type: Boolean
-```
+```{{% /alert %}}
 
 Vertical whitespace should not be used _inside_ a YAML array element:
 
-```
+{{% alert color="info" %}}```
 
   # Avoid this format
   - name: enabled
 
     summary: Indicates whether the view is enabled.
     type: Boolean
-```
+```{{% /alert %}}
 
 JSON-style arrays. Where JSON-style arrays are used (for example, in "platforms:" or when listing multiple types a property can hold), whitespace between items is desirable for ease of reading:
 
-```
+{{% alert color="info" %}}```
 
 platforms: [android, iphone, ipad]
-```
+```{{% /alert %}}
 
 ## Links
 
 When linking to guides or videos on docs.appcelerator.com from the API docs, use the full URL for the doc site, with the version replaced with \`latest\` and \`index.html\` removed from the path. When generating the JSDuck version of the docs for the doc site, these links are translated to local links. For other formats, the link will work as written. Entering the URL in a browser should redirect you to the latest version of the guide.
 
-```
+{{% alert color="info" %}}```
 
 [Quick Start](http://docs.appcelerator.com/platform/latest/#!/guide/Quick_Start)
-```
+```{{% /alert %}}
 
 Do not use the versioned link, which will get outdated, or include \`index.html\`, which breaks the redirection mechanism.
 
 Avoid:
 
-```
+{{% alert color="info" %}}```
 
 [Quick Start](http://docs.appcelerator.com/platform/2.1/index.html#!/guide/Quick_Start)
 [Quick Start](http://docs.appcelerator.com/platform/latest/index.html#!/guide/Quick_Start)
-```
+```{{% /alert %}}
 
 ## Inline HTML
 
@@ -217,31 +217,31 @@ Removed APIs should stay in the docs (marked as removed) for a full deprecation 
 
 Colon (:) characters won't pass validation in normal YAML text fields, and YAML text fields can't start with a backtick (\`) character. To include one of these characters in a summary or description field, use the YAML chunking operator (|) to add free-form markdown text:
 
-```
+{{% alert color="info" %}}```
 - description: |
       Specify one of: <Titanium.Beverage.WHISKY_ISLAY>, <Titanium.Beverage.WHISKY_HIGHLAND>, <Titanium.Beverage.WHISKY_LOWLAND>.
 
 - summary: |
       `true` if the current view is awesome.
-```
+```{{% /alert %}}
 
 Optional parameters: specify optional method parameters by specifying "optional: true" and adding a default value.
 
-```
+{{% alert color="info" %}}```
 parameters:
   - name: cubes
     summary: Number of ice cubes.
     type: Number
     optional: true
     default: 0
-```
+```{{% /alert %}}
 
 Platform-specific parameters: TDoc (and JSCA) don't allow for a parameter to be platform-specific. If one platform adds a parameter,
 other platforms must accept or ignore that parameter. Describe platform limitations in the summary.
 
-```
+{{% alert color="info" %}}```
   - name: glass
     summary: Glass type, one of <Titanium.Beverage.GLASS_ROCKS> or <Titanium.Beverage.GLASS_COCKTAIL>. Only used on Android.
     optional: true
     default: Titanium.Beverage.GLASS_ROCKS
-```
+```{{% /alert %}}

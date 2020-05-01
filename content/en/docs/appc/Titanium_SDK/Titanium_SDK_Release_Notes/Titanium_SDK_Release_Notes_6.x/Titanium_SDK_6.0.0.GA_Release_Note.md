@@ -156,7 +156,7 @@ Ti.include has been deprecated since version 3.3.0. With the release of 6.0.0, w
 
 As a last resort, consider using this workaround:
 
-*Ti.include workaround*
+**Ti.include workaround**
 
 ```javascript
 function include(file) {

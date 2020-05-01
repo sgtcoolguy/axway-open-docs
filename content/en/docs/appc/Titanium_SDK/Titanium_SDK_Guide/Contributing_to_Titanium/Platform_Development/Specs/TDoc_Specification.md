@@ -276,7 +276,7 @@ Types shall be documented in a YAML "document". YAML marks the beginning of a do
 
 Throughout this document we will add to an example .yml file that adheres to our specification. The example will document the fictitious Titanium.Do.Hicky type. So far, we have the following:
 
-*Hicky.yml*
+**Hicky.yml**
 
 ```yml
 # Documentation of Titanium.Do.Hicky
@@ -306,7 +306,7 @@ These are the keys (i.e., YAML properties/members) which are valid in the docume
 
 Our running example so far:
 
-*Hicky.yml*
+**Hicky.yml**
 
 ```yml
 # Documentation of Titanium.Do.Hicky
@@ -408,7 +408,7 @@ As the example shows, a sequence that is a value of a key is indented, and a das
 
 Our running example so far:
 
-*Hicky.yml*
+**Hicky.yml**
 
 ```yml
 # Documentation of Titanium.Do.Hicky
@@ -495,7 +495,7 @@ Multiple property documentation definitions can be put together into a YAML sequ
 
 Our running example so far, which includes a sequence of property definitions:
 
-*Hicky.yml*
+**Hicky.yml**
 
 ```yml
 # Documentation of Titanium.Do.Hicky
@@ -591,7 +591,7 @@ Multiple event documentation definitions can be put together into a YAML sequenc
 
 Our running example so far, which includes a sequence of event definitions:
 
-*Hicky.yml*
+**Hicky.yml**
 
 ```yml
 # Documentation of Titanium.Do.Hicky
@@ -955,7 +955,7 @@ The real-world example documentation for Titanium.UI.View also contains some pse
 
 If a _pseudo-type_ is useful in multiple modules, it should go in a common/ folder which is at the root of the documentation directories, i.e., as a sibling to Titanium/. One example of this is the documentation definition for the Stream interface described in [#Interfaces](#interfaces) above. In that case, a file in common/ should exist – perhaps common/TiStream.yml – with contents similar to this example:
 
-*TiStream.yml*
+**TiStream.yml**
 
 ```yml
 # TiStream.yml - Documents common Stream interface used

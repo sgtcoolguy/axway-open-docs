@@ -20,10 +20,9 @@ Import the portal samples project from the [studio3-sdk](https://github.com/apta
 
 * edit the **\-vmargs** part by adding:
 
-    ```
-    -Dtitanium.dashboardUrl=file:///C:/studio3-sdk/portal/sample/dashboard.html
-    ```
-
+    {{% alert color="info" %}}```
+-Dtitanium.dashboardUrl=file:///C:/studio3-sdk/portal/sample/dashboard.html
+```{{% /alert %}}
 * re-launch Studio.
 
 The loaded portal will now be the local one.

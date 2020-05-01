@@ -56,9 +56,7 @@ Like iOS application development, iOS module development is only supported on OS
 
 First, create a new module project.
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a terminal, change the current working directory to your workspace and run:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a terminal, change the current working directory to your workspace and run:
 
 ```bash
 cd /PATH/TO/WORKSPACE
@@ -88,9 +86,7 @@ You should validate the used Titanium SDK version inside the titanium.xcconfig t
 
 Next, build the module and package it. This process produces a ZIP file containing a binary library with unprocessed module assets, example code and documentation.
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a terminal, go to the module's ios directory and run the appc run command:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a terminal, go to the module's ios directory and run the appc run command:
 
 ```bash
 cd test/ios
@@ -123,9 +119,7 @@ To test the module, create a test application and add the module as a dependency
 
 ### Create a test application
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a new terminal window, change the current working directory to your workspace and run the following commands:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a new terminal window, change the current working directory to your workspace and run the following commands:
 
 ```bash
 cd /PATH/TO/WORKSPACE
@@ -155,9 +149,7 @@ Studio sets up a new folder called Hello that contains the test application you 
 
 To load the module in the application, you need to add it as a dependency to the project.
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-Open the tiapp.xml and update the <modules/> element to include the module as a dependency to the project:
+{{% alert title="💡 CLI Instructions" color="info" %}}Open the tiapp.xml and update the <modules/> element to include the module as a dependency to the project:
 
 ```xml
 <ti:app>
@@ -188,7 +180,7 @@ Open the app/alloy.js file and replace the code with the following, which invoke
 
 Before SDK 7.1.0, modules are imported as the following:
 
-*app/alloy.js*
+**app/alloy.js**
 
 ```javascript
 var test = require('com.example.test');
@@ -200,7 +192,7 @@ test.exampleProp = 'This is a test value';
 
 Since SDK 7.1.0, you can use import statements and template strings, see the following:
 
-*app/alloy.js*
+**app/alloy.js**
 
 ```javascript
 import test from 'com.example.test';
@@ -212,9 +204,7 @@ test.exampleProp = "This is a test value";
 
 ### Run the application
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a terminal that has the test app as its current working directory, run:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a terminal that has the test app as its current working directory, run:
 
 ```bash
 appc run -p ios
@@ -226,7 +216,7 @@ Studio builds and launches the application on the select iOS simulator. Monitor 
 
 The console lines seen below show us that the module is working as expected.
 
-*Console*
+**Console**
 
 ```
 [INFO] module is => [object ComExampleTestModule]
@@ -242,9 +232,7 @@ Let's modify the module code to create a view object and access a string propert
 
 Titanium creates a basic Xcode project, which is used to build the module. You can open this project in Xcode, the IDE used to develop iOS applications and used by the Titanium toolchain to build your iOS applications and modules.
 
-{{% alert title="💡 Hint" color="info" %}}*CLI Instructions*
-
-From a terminal, run:
+{{% alert title="💡 CLI Instructions" color="info" %}}From a terminal, run:
 
 ```
 open test/ios/test.xcodeproj
@@ -288,7 +276,7 @@ In Xcode, for each file:
 
 7. Click **Create**.
 
-*ComExampleTestViewProxy.h*
+**ComExampleTestViewProxy.h**
 
 ```objc
 #import "TiViewProxy.h"
@@ -298,7 +286,7 @@ In Xcode, for each file:
 @end
 ```
 
-*ComExampleTestViewProxy.m*
+**ComExampleTestViewProxy.m**
 
 ```objc
 #import "ComExampleTestViewProxy.h"
@@ -307,7 +295,7 @@ In Xcode, for each file:
 @end
 ```
 
-*ComExampleTestView.h*
+**ComExampleTestView.h**
 
 ```objc
 #import "TiUIView.h"
@@ -317,7 +305,7 @@ In Xcode, for each file:
 @end
 ```
 
-*ComExampleTestView.m*
+**ComExampleTestView.m**
 
 ```objc
 #import "ComExampleTestView.h"
@@ -364,7 +352,7 @@ To call the method to create the view from JavaScript, call the module's createV
 
 Below is an example of calling createView(), and passing dimensions and color properties to the method.
 
-*Example*
+**Example**
 
 ```javascript
 var view = test.createView({
@@ -425,7 +413,7 @@ In the JavaScript code, the foo string can be accessed using the exampleProp pro
 
 Open the app/views/index.xml file and replace the code with the following, which loads the module and displays a red square:
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -438,7 +426,7 @@ Open the app/views/index.xml file and replace the code with the following, which
 
 Open the app/controllers/index.js file and replace the code with the following, which invokes API calls to the module:
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 $.index.open();
@@ -452,7 +440,7 @@ Build and install your module, then run the example app.
 
 When the application starts running, you see should a red square in the middle of the screen and see the log output below, which means the application successfully loaded the module and called its APIs.
 
-*Console*
+**Console**
 
 ```
 [INFO] In Module - the new value for exampleProp => foobar

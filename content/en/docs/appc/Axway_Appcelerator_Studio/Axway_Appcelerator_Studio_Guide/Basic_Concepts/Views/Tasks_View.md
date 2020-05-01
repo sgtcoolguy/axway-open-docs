@@ -18,9 +18,9 @@ The Tasks View provides a "to-do" list for you of tasks for the projects in your
 
 ## Opening the view
 
-* From the _Window_ menu, select _Show View > Tasks_.
+{{% alert color="info" %}}* From the _Window_ menu, select _Show View > Tasks_.
 
-* To close the _Tasks View_, click the Close button (**X**) in the upper right of the tab.
+* To close the _Tasks View_, click the Close button (**X**) in the upper right of the tab.{{% /alert %}}
 
 Studio will display the **Tasks View** as a tab at the bottom of your screen, as shown in the image below.
 

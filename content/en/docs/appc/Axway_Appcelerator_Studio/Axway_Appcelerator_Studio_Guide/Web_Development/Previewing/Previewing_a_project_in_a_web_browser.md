@@ -22,11 +22,11 @@ By default, the current web page opens in Internet Explorer on Windows or Safari
 
 To preview a project in a web browser:
 
-* To use the default configuration or the last configuration that you used to view the project, click the **Run** button ![run](/Images/appc/download/attachments/30083122/run.png) .
+{{% alert color="info" %}}* To use the default configuration or the last configuration that you used to view the project, click the **Run** button ![run](/Images/appc/download/attachments/30083122/run.png) .
 
 * To switch configurations, click the downward-pointing arrow just to the right of the **Run** button ![run](/Images/appc/download/attachments/30083122/run.png) , and select a configuration from the menu.
 
-* If the default behavior opens the wrong URL, you will need to create a new configuration. To learn how to set up additional configurations, see [Setting up your web browser configuration](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Previewing/Setting_up_your_web_browser_configuration/).
+* If the default behavior opens the wrong URL, you will need to create a new configuration. To learn how to set up additional configurations, see [Setting up your web browser configuration](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Web_Development/Previewing/Setting_up_your_web_browser_configuration/).{{% /alert %}}
 
 Studio opens your project in a new web browser window.
 

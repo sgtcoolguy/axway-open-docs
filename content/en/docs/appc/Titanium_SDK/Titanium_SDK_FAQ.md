@@ -115,7 +115,7 @@ You can change the build tools version using this command: appc ti config androi
 
 You can add localization support in the plist file. Here is an example for Japanese language for camera permission:
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <ti:app>

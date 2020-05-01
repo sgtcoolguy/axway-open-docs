@@ -118,7 +118,7 @@ var win = Ti.UI.createWindow({
 
 Keep in mind the growing list of supported platforms and don't fall prey to coding in an if/else relationship that won't support new platforms. For example, don't do the following:
 
-*Anti-pattern!*
+**Anti-pattern!**
 
 ```javascript
 var osname = Ti.Platform.osname;

@@ -241,9 +241,9 @@ Use the @example tag when you want to show an example of how to use the code tha
 
 This example shows a documentation block for a "move" function that takes the arguments "layerID" and "direction" and includes an @example tag with code example. Use HTML tags to format your descriptions. Use the
 
-```
+{{% alert color="info" %}}```
 {code}{code}
-```
+```{{% /alert %}}
 
 tag set to format the example as code. (This example uses the @remarks tag to give more information about the function.)
 

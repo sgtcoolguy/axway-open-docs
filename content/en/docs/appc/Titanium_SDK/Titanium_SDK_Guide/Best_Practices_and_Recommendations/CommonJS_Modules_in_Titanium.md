@@ -116,7 +116,7 @@ Relative paths may be specified as well. Assume we have modules located in the f
 
 Now assume we are writing code inside the SomeCustomView.js module file. The following are valid require statements:
 
-*SomeCustomView.js*
+**SomeCustomView.js**
 
 ```javascript
 var myModule = require('../lib/myModule');
@@ -155,7 +155,7 @@ module.exports = Person;
 
 Usage:
 
-*Resources/app.js*
+**Resources/app.js**
 
 ```javascript
 var Person = require('Person');
@@ -207,7 +207,7 @@ As in the [CommonJS Module specification](http://wiki.commonjs.org/wiki/Modules/
 
 All modules in Titanium are created once, and then passed by reference on subsequent occasions when the module is required. Because of this, modules themselves may have state variables, which are properties of the "singleton" object represented by the module.
 
-*app.js*
+**app.js**
 
 ```javascript
 var stateful = require('statefulModule');
@@ -244,7 +244,7 @@ window.addEventListener('click', function() {
 window.open();
 ```
 
-*scoreModule.js*
+**scoreModule.js**
 
 ```javascript
 var appStateful = require('statefulModule'); // a reference to the "stateful" variable in app.js that contains the stateful module
@@ -263,7 +263,7 @@ exports.latestScore = function() {
 };
 ```
 
-*statefulModule.js*
+**statefulModule.js**
 
 ```javascript
 var _stepVal = 5; // default
@@ -291,7 +291,7 @@ Here are some examples of modules we expect developers to implement:
 
 ### Utility libraries
 
-*logger.js*
+**logger.js**
 
 ```javascript
 exports.info = function(str) {
@@ -312,7 +312,7 @@ logger.info('some log statement I wanted with a timestamp');
 
 ### Packages of related functionality
 
-*geo.js*
+**geo.js**
 
 ```javascript
 function Point(x,y) {
@@ -352,7 +352,7 @@ var slopeValue = line.slope();
 
 ### Instantiable objects
 
-*Person.js*
+**Person.js**
 
 ```javascript
 function Person(firstName, lastName) {

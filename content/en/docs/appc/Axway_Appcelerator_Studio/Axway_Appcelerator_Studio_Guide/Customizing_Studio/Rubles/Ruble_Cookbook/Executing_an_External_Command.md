@@ -59,13 +59,13 @@ end
 
 Often it is useful to select something in the editor and call an external tool based on that value. **cmd.output** can take a variety of options. Some of the most common are:
 
-* **:selection:** selected text in the editor
+{{% alert color="info" %}}* **:selection:** selected text in the editor
 
 * **:line:** the line containing the caret
 
 * **:document:** the entire current document
 
-* **:clipboard:** the contents of the clipboard
+* **:clipboard:** the contents of the clipboard{{% /alert %}}
 
 ### Using the selection in the executed command
 

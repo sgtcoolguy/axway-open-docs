@@ -2,9 +2,7 @@
 
 Demonstrates how Alloy combines several TSS styles based on their priority.
 
-{{% alert title="💡 Hint" color="info" %}}*App folder location*
-
-_alloy_/test/apps/advanced/complex\_styling{{% /alert %}}
+{{% alert title="App folder location" color="info" %}}_alloy_/test/apps/advanced/complex\_styling{{% /alert %}}
 
 [Styles](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/) can be defined on Alloy elements in variety of places: the global style sheet (app/app.tss), a view-controller's styles sheet (app/styles/index.tss, for example), or as attributes on an XML element, to name a few. In addition, styles can be applied conditionally based on the target platform or device form factor. Alloy defines a priority for each type of style, and styles are combined and mixed according to these priorities, as the sample app demonstrates. See [Style Priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#StylePriorities) for details.
 
@@ -12,7 +10,7 @@ _alloy_/test/apps/advanced/complex\_styling{{% /alert %}}
 
 The main index.xml view declares a several different UI elements some with defined IDs, some with specified class attributes, some that are specific to certain platforms or device form factors. In addional, some views are required from external XML files that define their own TSS styles.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -39,7 +37,7 @@ The main index.xml view declares a several different UI elements some with defin
 
 The app.tss file defines global styles; each view-controller defines its own TSS file (anotherLabel.tss or index.tss, for example); a number of themes define their own styles and controller styles; finally, the XML views define styles as attributes on various XML elements.
 
-*App Folder Structure*
+**App Folder Structure**
 
 ```
 ├── app
@@ -78,7 +76,7 @@ The app.tss file defines global styles; each view-controller defines its own TSS
 
 As an example, the app.tss file defines the following global styles:
 
-*app/styles/app.tss*
+**app/styles/app.tss**
 
 ```
 "Window": {

@@ -42,7 +42,7 @@ To use a custom font in an Alloy project, place the font file in a "fonts" folde
 
 Create a text-based UI element, such as a [Label](#!/api/Titanium.UI.Label) element, and optionally assign it an ID or class, as shown below.
 
-*View - index.xml*
+**View - index.xml**
 
 ```xml
 <Alloy>
@@ -85,7 +85,7 @@ The PostScript name for Burnstown Dam is **BurnstownDam-Regular**, so for an iOS
 
 One way to handle cross-platform font differences easier is to rename the base name of the font file to match the font's PostScript name. You can then use that same value for fontFamily for both iOS and Android. To apply this to the previous example, rename "burnstown\_dam.otf" to **BurnstownDam-Regular.otf** (the PostScript name). Then you can use a single style rule for both platforms.
 
-*Font file renamed to match PostScript name*
+**Font file renamed to match PostScript name**
 
 ```
 "#burnstowndam": {
@@ -101,7 +101,7 @@ This is the approach taken in the [CustomFonts](./attachments_37685705_2_Custom_
 
 You can also use platform-specific styles in your TSS file (see [Alloy Styles and Themes](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#platform-specific-styles)) to assign the proper fontFamily name. At build time, only those settings appropriate to your target platform are included in the build.
 
-*Platform-specific font styling*
+**Platform-specific font styling**
 
 ```
 "#burnstowndam[platform=ios]": {

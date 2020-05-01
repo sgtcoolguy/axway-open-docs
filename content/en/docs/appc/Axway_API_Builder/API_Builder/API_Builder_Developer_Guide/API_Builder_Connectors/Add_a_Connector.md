@@ -1,8 +1,6 @@
 {"title":"Add a Connector","weight":"30"}
 
-{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
-
-Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
+{{% alert title="❗️ API Builder 3.x is deprecated" color="danger" %}}Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
@@ -103,7 +101,7 @@ Installed:  connector/appc.mysql
 
 Depending on the connector you installed, you may need to modify the configuration settings of the connector. Open the project's conf/<CONNECTOR\_NAME>.js file to modify its settings. Some connectors have multiple files for different deployment environments, such as the appc.arrowdb connector. For example, the MySQL connector's configuration file contains keys for you to define the database host URL, port number, admin user, admin password, and database name as well as additional database access settings.
 
-*conf/appc.mysql.default.js*
+**conf/appc.mysql.default.js**
 
 ```javascript
 module.exports = {
@@ -127,7 +125,7 @@ module.exports = {
 
 By default, when you install a connector, it will add its API endpoints to the application, for example, api/myconnector/model. If you do not want to generate these API endpoints, set the modelAutogen key to false in the connector's configuration file in the project.
 
-*conf/myconnector.default.js*
+**conf/myconnector.default.js**
 
 ```javascript
 module.exports = {
@@ -146,7 +144,7 @@ module.exports = {
 
 To use the connector, simply assign the connector key in a Model file to the name of the connector. For example, the model file below is using the employee table (or model) accessed by the MySQL connector.
 
-*models/employee.js*
+**models/employee.js**
 
 ```javascript
 var Arrow = require('arrow');

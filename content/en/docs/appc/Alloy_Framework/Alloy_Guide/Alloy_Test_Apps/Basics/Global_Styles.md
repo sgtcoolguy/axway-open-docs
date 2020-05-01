@@ -2,9 +2,7 @@
 
 Demonstrates using the global style file to apply a set of default styles to an entire Alloy project.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**basics/global\_style**{{% /alert %}}![ios](/Images/appc/download/attachments/41845687/ios.png)
+{{% alert title="💡 App Folder Location" color="info" %}}alloy/test/apps/**basics/global\_style**{{% /alert %}}![ios](/Images/appc/download/attachments/41845687/ios.png)
 
 An Alloy project can include a [global style file](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#global-styles) located at app/styles/app.tss. The styles defined by this file apply to all controls and views, but are over-ridden by "local" styles declared by the following:
 
@@ -14,7 +12,7 @@ An Alloy project can include a [global style file](/docs/appc/Alloy_Framework/Al
 
 In this example, the main **index.xml** view requires **item.xml.**
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -26,7 +24,7 @@ In this example, the main **index.xml** view requires **item.xml.**
 
 The item.xml view contains a <View/> element whose "class" attribute is set to "container".
 
-*app/views/item.xml*
+**app/views/item.xml**
 
 ```xml
 <Alloy>
@@ -38,7 +36,7 @@ The item.xml view contains a <View/> element whose "class" attribute is set to "
 
 The global style file defines a blue backgroundColor to the "container" class, and a color, font size and weight, and text alignment for all Label objects.
 
-*styles/app.tss*
+**styles/app.tss**
 
 ```
 ".container": {

@@ -2,9 +2,7 @@
 
 Demonstrates how to combine platform and formFactor attribute selectors to apply different styles and properties on different platforms and device types.
 
-{{% alert title="💡 Hint" color="info" %}}*App folder location*
-
-_alloy_/test/apps/**advanced/device\_query**{{% /alert %}}![queries](/Images/appc/download/attachments/41845654/queries.png)
+{{% alert title="App folder location" color="info" %}}_alloy_/test/apps/**advanced/device\_query**{{% /alert %}}![queries](/Images/appc/download/attachments/41845654/queries.png)
 
 The main index.xml view simply defines a Window and a Label, assigned IDs of "win" and "osLabel", respectively.
 

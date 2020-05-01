@@ -18,13 +18,13 @@ When running into issues with the Appcelerator CLI, there are some simple steps 
 
 Refer to [Reporting Bugs or Requesting Features](/docs/appc/Axway_Appcelerator_Studio/Axway_Appcelerator_Studio_Guide/Studio_Troubleshooting/Reporting_Bugs_or_Requesting_Features/) for more information. Check [JIRA](https://jira.appcelerator.org/projects/CLI/issues) first as the issue may already have been reported with a fix or workaround. When submitting a bug, it is often helpful to provide a stack trace and debug log. You can do so by running the CLI with an extra parameter of DEBUG=\* before the regular command and a trace flag after the regular command. For example (replace <command> with the actual command):
 
-*OS X/Linux*
+**OS X/Linux**
 
 ```bash
 DEBUG=* appc <command> -l trace
 ```
 
-*Windows*
+**Windows**
 
 ```bash
 cmd /C "set DEBUG=* && appc <command> -l trace"
@@ -61,14 +61,14 @@ This error manifests items in several different ways, such as:
 
 This is often best solved by two options: reinstalling the appcelerator command line via NPM or logging out with -D:
 
-*Reinstall*
+**Reinstall**
 
 ```bash
 [sudo] npm install -g appcelerator
 appc use latest
 ```
 
-*Log out -D*
+**Log out -D**
 
 ```bash
 appc logout -D

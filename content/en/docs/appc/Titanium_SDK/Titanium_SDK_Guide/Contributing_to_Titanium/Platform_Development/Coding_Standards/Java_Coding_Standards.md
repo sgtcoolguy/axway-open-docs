@@ -72,7 +72,7 @@ int httpGetFired = 0; // this is good
 
 12) Use meaningful class, method and variable names. The goal here is for the role of a method or variable to be clear when reading the name (not after reading to source to see what a method does or how a variable is used). For example:
 
-*Bad Variable Names*
+**Bad Variable Names**
 
 ```
 int myVar; // glad you have a var, why does it exist?

@@ -12,7 +12,7 @@ _Full sprite sheet_
 
 The Alloy setup is rather easy – a View with the whole image and one View around it that displays only one frame:
 
-*index.xml*
+**index.xml**
 
 ```xml
 <Alloy>
@@ -24,7 +24,7 @@ The Alloy setup is rather easy – a View with the whole image and one View arou
 </Alloy>
 ```
 
-*index.tss*
+**index.tss**
 
 ```
 "#frameView" : {

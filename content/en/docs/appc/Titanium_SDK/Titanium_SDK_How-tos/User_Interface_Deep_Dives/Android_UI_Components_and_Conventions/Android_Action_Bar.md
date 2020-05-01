@@ -76,7 +76,7 @@ win.activity.actionBar.hide();
 
 1\. Add a custom theme file to your project, and set the android:windowActionBar item to false and android:windowNoTitle to true.
 
-*platform/android/res/values/custom\_theme.xml*
+**platform/android/res/values/custom\_theme.xml**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -251,7 +251,7 @@ To change the style of the action bar, create a custom theme to override the [Ac
 
 5. Modify your tiapp.xml file to use the custom theme:
 
-    *tiapp.xml*
+    **tiapp.xml**
 
     ```xml
     <android xmlns:android="http://schemas.android.com/apk/res/android">
@@ -265,7 +265,7 @@ To change the style of the action bar, create a custom theme to override the [Ac
 
 The example below modifies the Action Bar's background color and title text color.
 
-*platform/android/res/values/mytheme.xml*
+**platform/android/res/values/mytheme.xml**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

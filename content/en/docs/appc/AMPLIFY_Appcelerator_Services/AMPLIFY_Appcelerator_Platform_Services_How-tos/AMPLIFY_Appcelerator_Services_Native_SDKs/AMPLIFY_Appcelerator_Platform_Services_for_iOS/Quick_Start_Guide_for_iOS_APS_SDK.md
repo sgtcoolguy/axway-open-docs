@@ -1,8 +1,6 @@
 {"title":"Quick Start Guide for iOS APS SDK","weight":"10"}
 
-{{% alert title="❗️ Warning" color="danger" %}}*Pro or Enterprise Subscription Required*
-
-This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.{{% /alert %}}
+{{% alert title="❗️ Pro or Enterprise Subscription Required" color="danger" %}}This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.{{% /alert %}}
 
 * [Introduction](#introduction)
 
@@ -40,15 +38,13 @@ This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscrip
 
 This guide walks through the setup of the AMPLIFY Appcelerator Services for iOS applications. The AMPLIFY Appcelerator Services SDK gives you access to the Appcelerator Analytics and Cloud services. To enable the Appcelerator Test for a project, run the appceletator-test utility against either the project or the IPA file.
 
-*Not developing a native iOS application with Objective-C?*
-
-See the following topics to use the AMPLIFY Appcelerator Services on other platforms:
+{{% alert title="Not developing a native iOS application with Objective-C?" color="info" %}}See the following topics to use the AMPLIFY Appcelerator Services on other platforms:
 
 For native Android applications built with Java, see [Quick Start Guide for Android APS SDK](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_Android/Quick_Start_Guide_for_Android_APS_SDK/).
 
 For native iOS applications built with Swift, see [Quick Start Guide for iOS APS SDK using Swift](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_iOS/Quick_Start_Guide_for_iOS_APS_SDK_using_Swift/).
 
-For Titanium Applications, see [Quick Start](/docs/appc/Quick_Start/).
+For Titanium Applications, see [Quick Start](/docs/appc/Quick_Start/).{{% /alert %}}
 
 ## Requirements
 
@@ -249,7 +245,7 @@ Customize the application's UI to display a picker, text field and button, and a
 
 7. In the ViewController.h file, declare the View Controller to implement the UIPickerViewDelegate, UIPickerViewDataSource, and UITextFieldDelegate protocols. Add an NSArray property called usernames to keep track of the Picker View's data source and an NSString property called username to reference the current selection. The final header file should look like:
 
-    *ViewController.h*
+    **ViewController.h**
 
     ```objc
     #import <UIKit/UIKit.h>
@@ -266,7 +262,7 @@ Customize the application's UI to display a picker, text field and button, and a
 
 8. In the ViewController.m file, create an IBAction for the button named doClick. In the following sections, you will add code to this handler that calls Cloud and Analytics services. The View Controller needs to implement the methods of UIPickerViewDelegate, UIPickerViewDataSource and UITextFieldDelegate protocols. Add the following code to the file:
 
-    *ViewController.m*
+    **ViewController.m**
 
     ```objc
     #import "ViewController.h"
@@ -351,7 +347,7 @@ To use the APS Cloud component, most of the methods require a user to be logged 
 
 Every APS Cloud method includes a withBlock parameter that specifies the callback to handle the server response. The callback is passed an APSResponse object that contains response metadata (such as success or failure) and the response payload.
 
-*ViewController.m*
+**ViewController.m**
 
 ```objc
 - (void)viewDidLoad
@@ -379,7 +375,7 @@ Every APS Cloud method includes a withBlock parameter that specifies the callbac
 
 To log in to a Cloud account, you need the username and password. Since the application was modified to get all available user accounts and populate the Picker View, the application needs to get the current value of the picker and the text entered in the Text Field. These values are passed to the login:withBlock: method. Modify the doClick method to login to a Cloud user account.
 
-*ViewController.m*
+**ViewController.m**
 
 ```objc
 - (IBAction)doClick:(id)sender {
@@ -426,7 +422,7 @@ For example, you can replace the Log calls in the catch statements with logHandl
 
 To help differentiate crash logs, use the username property. When the application successfully logs in to the Cloud user account, the application sets the username property.
 
-*ViewController.m*
+**ViewController.m**
 
 ```objc
 - (IBAction)doClick:(id)sender {

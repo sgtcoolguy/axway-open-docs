@@ -2,13 +2,11 @@
 
 Demonstrates binding a data collection to a TableView using global and local collection references.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**models/binding\_tableview**{{% /alert %}}
+{{% alert title="App Folder Location" color="info" %}}alloy/test/apps/**models/binding\_tableview**{{% /alert %}}
 
 The <Collection/> element can also be used to create a global, singleton instance of the collection data available to all controllers, or a an instance available to a single controller. By default, a <Collection/> element creates a global object.
 
-*Create a global, singleton Collection object*
+**Create a global, singleton Collection object**
 
 ```xml
 <Collection src="myModel"/>
@@ -36,7 +34,7 @@ var myModels = $.myModelId;
 
 The sample application contains four tabs that each contain a <TableView/> element. The first two reference the same global Collection instance, while the second two each reference their own, locally-scoped Collection objects. Consequently, any items added to the first tab appear on the second, and vice versa. In contrast, any items added to either the third or fourth tabs only appear on those tabs.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -51,7 +49,7 @@ The sample application contains four tabs that each contain a <TableView/> eleme
 
 The first tab, titled "global/<Require/>", declares a <Collection/> element, which creates a global singleton instance of the "myModel" collection, or returns an existing singleton if it's already been created. The <TableView/> element's dataCollection references the same global singleton object.
 
-*app/views/tab\_1.xml*
+**app/views/tab\_1.xml**
 
 ```xml
 <Alloy>
@@ -72,7 +70,7 @@ The first tab, titled "global/<Require/>", declares a <Collection/> element, whi
 
 The view-controller for the tab\_1.xml view reference the same global myModel singleton on the Alloy.Collections object, and adds to it a new item when the user clicks the Add button. When changes occur in the global collection reference, they will be reflected in tab\_2.xml, which also references the same global collection.
 
-*app/controllers/tab\_1.js*
+**app/controllers/tab\_1.js**
 
 ```javascript
 var myModels = Alloy.Collections.myModel;

@@ -2,9 +2,7 @@
 
 Demonstrates using Alloy's Titanium.App.Properties sync adaptor to save data.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**models/properties**{{% /alert %}}
+{{% alert title="App Folder Location" color="info" %}}alloy/test/apps/**models/properties**{{% /alert %}}
 
 The sample presents two tabs: Model and Collection. The modelTab.xml view provides buttons to create or destroy an instance of a model, and increment one a numeric model fields. The Collection tab provides UI to add items to a collection, which is bound to a TableView. Clicking a table row updates a field in the corresponding collection item. Long-pressing a table row deletes the corresponding item from the collection.
 
@@ -12,7 +10,7 @@ The sample presents two tabs: Model and Collection. The modelTab.xml view provid
 
 The application includes two model configuration files, one used by each tab view. Note that the adaptor type in each configuration file is set to "properties".
 
-*app/models/modelTab.js*
+**app/models/modelTab.js**
 
 ```javascript
 exports.definition = {
@@ -33,7 +31,7 @@ exports.definition = {
 };
 ```
 
-*app/models/collectionTab.js*
+**app/models/collectionTab.js**
 
 ```javascript
 exports.definition = {
@@ -56,7 +54,7 @@ exports.definition = {
 
 The modelTab.js view-controller creates an instance of the **modelTab** model, and binds a callback function to the change event on the count field, which updates the label in the corresponding view with a JSON representation of the model's [attributes](http://backbonejs.org/#Model-attributes). The same handler responds to model fetch events. It also defined event handlers for the Create, Destroy, and Increment buttons defined the app/views/modelTab.xml file (not shown).
 
-*app/controllers/modelTab.js*
+**app/controllers/modelTab.js**
 
 ```javascript
 var ID = 'instance';
@@ -88,7 +86,7 @@ function increment(e) {
 
 The Collection tab provides UI to add items to the collection, which is bound to the TableView element's dataCollection attribute. Clicking a table row updates the corresponding collection item's "score" field, which is displayed in the row. Whenever a model is added or destroyed (by long-pressing on a TableView row), the new collection data is fetched, which fires the fetch event. The resetTableData() function re-populates the TableView with new instances of the **controllers/collection/row.js** controller, passing each the ID, name, and score to display.
 
-*app/controllers/collection/collectionTab.js*
+**app/controllers/collection/collectionTab.js**
 
 ```javascript
 var items = Alloy.createCollection('collectionTab'),

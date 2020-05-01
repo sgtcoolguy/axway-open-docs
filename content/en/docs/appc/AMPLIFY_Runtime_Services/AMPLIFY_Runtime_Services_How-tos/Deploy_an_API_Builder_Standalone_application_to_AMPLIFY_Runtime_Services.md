@@ -42,7 +42,7 @@ The installation of Docker is via a dedicated installer for your specific operat
 
 The API Builder CLI is a node module published in the [npm public repository](https://www.npmjs.com/package/@axway/api-builder). To install, execute the following command:
 
-*Install API Builder CLI*
+**Install API Builder CLI**
 
 ```bash
 $ npm install -g @axway/api-builder
@@ -54,7 +54,7 @@ For additional API Builder CLI installation information, refer to the [API Build
 
 The AMPLIFY Cloud Services CLI (ACS) is a node module published in the [npm public repository](https://www.npmjs.com/package/@axway/api-builder). To install, execute the following command:
 
-*Install ACS*
+**Install ACS**
 
 ```bash
 $ npm install -g acs
@@ -66,7 +66,7 @@ For additional AMPLIFY Cloud Services CLI information, refer to the [AMPLIFY Run
 
 API Builder CLI usage can be found [here](https://www.npmjs.com/package/@axway/api-builder). The setup found in the [API Builder Getting Started Guide](https://wiki.appcelerator.org/display/AB4/API+Builder+Getting+Started+Guide) will create a "myproject" sub-directory.
 
-*Create an API Builder project*
+**Create an API Builder project**
 
 ```
 $ api-builder init myproject
@@ -76,7 +76,7 @@ $ api-builder init myproject
 
 Log in to the AMPLIFY Platform using your [https://platform.axway.com](https://platform.axway.com/) username and password. Create a project in the cloud with the same name as your "myproject" sub-directory. Then, configure your project to use PORT 8080. The project should be configured to use PORT 8080 because the container is built with PORT 8080 by default.
 
-*Create an API Builder project*
+**Create an API Builder project**
 
 ```
 $ acs login
@@ -84,15 +84,13 @@ $ acs new myproject --force
 $ acs config --set PORT=8080 myproject
 ```
 
-{{% alert title="⚠️ Warning" color="primary" %}}*Important*
-
-You may already have an existing project, "myproject". If you do, and you know that it is not being used and you wish to delete it, or if you want to delete this example project on ARS, you can execute: **acs remove myproject**.{{% /alert %}}
+{{% alert title="⚠️ Important" color="primary" %}}You may already have an existing project, "myproject". If you do, and you know that it is not being used and you wish to delete it, or if you want to delete this example project on ARS, you can execute: **acs remove myproject**.{{% /alert %}}
 
 ## Build a Docker image
 
 To build a Docker image of your project, execute the following commands.
 
-*Build Docker image*
+**Build Docker image**
 
 ```
 $ cd ./myproject
@@ -103,19 +101,17 @@ $ docker build --tag demo-image ./
 
 To publish the Docker image of your project to the Platform, execute the following command.
 
-*Publish image*
+**Publish image**
 
 ```
 $ acs publish myproject --delete_oldest --force --image demo-image --app_version 0.1
 ```
 
-{{% alert title="⚠️ Warning" color="primary" %}}*Important*
-
-It can take up to 10 minutes for your project to be deployed and your service to be accessible. You should [check the publish status](#checkpublishstatus) before trying to access your service in the cloud.{{% /alert %}}
+{{% alert title="⚠️ Important" color="primary" %}}It can take up to 10 minutes for your project to be deployed and your service to be accessible. You should [check the publish status](#checkpublishstatus) before trying to access your service in the cloud.{{% /alert %}}
 
 Once the image is written, note the URL, as you will use it to test your API, for example:
 
-*URL*
+**URL**
 
 ```
 App will be available at https://<guid>.cloudapp-enterprise.appcelerator.com

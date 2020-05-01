@@ -2,9 +2,7 @@
 
 Demonstrates how to apply themes to widgets. Theme settings override default styles and assets defined within the widget itself.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**advanced/theming\_widgets**{{% /alert %}}
+{{% alert title="💡 App Folder Location" color="info" %}}alloy/test/apps/**advanced/theming\_widgets**{{% /alert %}}
 
 To create a widget them, inside your Alloy project's themes/ folder create a new folder named "widgets". With that folder, create a new folder whose name matches the widget ID, such as com.somecompany.widgetname. Within that folder, create assets/ and styles/ folders that contain assets and TSS files, as usual. The contents of these folder override the assets and styles declared by the original widget.
 
@@ -12,7 +10,7 @@ To create a widget them, inside your Alloy project's themes/ folder create a new
 
 For example, the sample application defines a widget named "starrating" whose and assets and styles are overridden by those found in the app/themes/widgets/assets and app/themes/widgets/assets folders, respectively. The sample also specifies a theme named "plusminus" that is specified as the global style by the application's config.json file. The global styles, theme styles, and widget styles are combined during compilation according to well-defined style priorities (see [Style Priorities](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Views/Alloy_Styles_and_Themes/#style-priorities)).
 
-*App folder structure*
+**App folder structure**
 
 ```
 app

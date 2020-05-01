@@ -1,8 +1,6 @@
 {"title":"APS Analytics for Android","weight":"20"}
 
-{{% alert title="❗️ Warning" color="danger" %}}*Pro or Enterprise Subscription Required*
-
-This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.{{% /alert %}}
+{{% alert title="❗️ Pro or Enterprise Subscription Required" color="danger" %}}This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.{{% /alert %}}
 
 * [Introduction](#introduction)
 
@@ -24,21 +22,19 @@ This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscrip
 
 This page describes how to use the AMPLIFY Appcelerator Services Analytics for native Android applications, built with Java and the Android APIs.
 
-*Not developing a native Android application with Java?*
-
-See the following topics to use the Appcelerator Analytics Service on other platforms:
+{{% alert title="Not developing a native Android application with Java?" color="info" %}}See the following topics to use the Appcelerator Analytics Service on other platforms:
 
 ![ios_icon](/Images/appc/download/attachments/43298722/ios_icon.png)
 
 For native iOS applications built with Objective-C, see [APS Analytics for iOS](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_iOS/APS_Analytics_for_iOS/).
 
-For Titanium Applications, see [Appcelerator Analytics](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/).
+For Titanium Applications, see [Appcelerator Analytics](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/).{{% /alert %}}
 
 ## Introduction
 
 Appcelerator Analytics collects real-time data about your application's usage, which can then be viewed in the **[Analytics dashboard](/docs/appc/Appcelerator_Dashboard/Appcelerator_Dashboard_Guide/Managing_Applications/Managing_Client_Applications/#viewing-real-time-and-aggregated-analytics)**. By default, the Analytics dashboard provides information about app installs, the number of sessions, and average app session length (organized by app name, platform, and geography). Your app can also utilize custom analytic events and event funnels.
 
-{{% alert title="⚠️ Warning" color="primary" %}}This document provides an overview of the features provided by Analytics and how to use them using the Titanium SDK. **If you are developing an iOS application with Objective-C or Swift or an Android application with Java**, see [APS Analytics for iOS](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_iOS/APS_Analytics_for_iOS/) or [APS Analytics for Android](#undefined) for details on using Analytics.{{% /alert %}}
+{{% alert title="Warning" color="primary" %}}This document provides an overview of the features provided by Analytics and how to use them using the Titanium SDK. **If you are developing an iOS application with Objective-C or Swift or an Android application with Java**, see [APS Analytics for iOS](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_iOS/APS_Analytics_for_iOS/) or [APS Analytics for Android](#undefined) for details on using Analytics.{{% /alert %}}
 
 For platform-specific details about how analytics captured, see [Analytics Architecture](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Services_Guide/Appcelerator_Analytics/Analytics_Architecture/).
 
@@ -70,7 +66,7 @@ To integrate the Analytics service with a new or existing Android application:
 
 5. Modify the project's AndroidManifest.xml file to include the following permissions and to add the APSAnalytics package as a service:
 
-    *AndroidManifest.xml*
+    **AndroidManifest.xml**
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -101,7 +97,7 @@ To integrate the Analytics service with a new or existing Android application:
 
 6. Add the following import statements to the main Activity of the project:
 
-    *MainActivity.java*
+    **MainActivity.java**
 
     ```java
     import com.appcelerator.aps.APSServiceManager;
@@ -116,7 +112,7 @@ To integrate the Analytics service with a new or existing Android application:
     }
     ```
 
-    {{% alert title="✅" color="success" %}}To get your APS App key:
+    {{% alert title="✅ " color="success" %}}To get your APS App key:
 
 1. Go to the [Dashboard](https://platform.axway.com/).
 
@@ -153,7 +149,7 @@ On the Android platform, user session events are not automatically sent, unlike 
 
 3. Call the sendAppBackgroundEvent() method inside the main Activity's onPause() method. The background event indicates when the application has been dismissed.
 
-*MainActivity.java*
+**MainActivity.java**
 
 ```java
 @Override
@@ -190,7 +186,7 @@ Feature event names should be as generic as possible. For instance, if you want 
 
 For example, to track a user's menu selection, you might use the following code, where the ten-digit number uniquely identifies the selection in your code:
 
-*Good Practice: Track the State with the Naming Syntax*
+**Good Practice: Track the State with the Naming Syntax**
 
 ```
 APSAnalytics.getInstance().sendAppFeatureEvent("select.item.12345678910", null);
@@ -198,7 +194,7 @@ APSAnalytics.getInstance().sendAppFeatureEvent("select.item.12345678910", null);
 
 You should avoid using long, descriptive event names, as shown below:
 
-*Bad Practice: Avoid Long Descriptions*
+**Bad Practice: Avoid Long Descriptions**
 
 ```
 APSAnalytics.getInstance().sendAppFeatureEvent("Select Item THIS IS THE DESCRIPTION OF THE EVENT -12345678910", null);
@@ -210,7 +206,7 @@ Use the APSAnalytics' sendAppGeoEvent() method to send real-time geographic data
 
 In the following example, the application uses a default location provider to get location information from the device. The application sends the location data to the Analytics service.
 
-*MainActivity.java*
+**MainActivity.java**
 
 ```java
 /*

@@ -10,9 +10,7 @@
 
 Demonstrate basic use of the ListView element to create vertically scrolling lists of items.
 
-{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
-
-You can find this example app in the Alloy repository under [samples/apps/ui/listview](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/listview). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="💡 Example App Source Location" color="info" %}}You can find this example app in the Alloy repository under [samples/apps/ui/listview](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/listview). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 The sample demonstrates basic [ListView](#!/api/Titanium.UI.ListView) use with a single ListViewSection, using multiple ListViewSections with header and footer views, and using custom item templates to customize the content and layout of individual list items within the same ListView.
 
@@ -22,7 +20,7 @@ The sample demonstrates basic [ListView](#!/api/Titanium.UI.ListView) use with a
 
 A basic list view consists of <ListView> element that containing one or more <ListSection> elements that, in turn, contain one or more <ListItem> elements, as shown below. To handle events, you define an onClick handler on the ListView itself.
 
-*app/views/basic.xml*
+**app/views/basic.xml**
 
 ```xml
 <Alloy>
@@ -49,7 +47,7 @@ A basic list view consists of <ListView> element that containing one or more <Li
 
 To determine which item is selected in a ListView, the view-controller first determines which ListViewSection contains the selected item from the itemclick event's sectionIndex property. To get the selected item, it then calls the corresponding section's getItemAt() method, passing it the itemclick event's itemIndex property.
 
-*app/controllers/basic.js*
+**app/controllers/basic.js**
 
 ```javascript
 function onItemClick(e) {
@@ -149,7 +147,7 @@ In addition to the <ListItem> elements declared in the XML, the templates.xml vi
 
 {{% alert title="💡 Hint" color="info" %}}It's important to note that this code does not generate list items directly, but rather just updates the data [items](#!/api/Titanium.UI.ListSection-property-items) array of the ListViewSection. The actual rendering of list items is left to the native control, based on the current scroll position. In this way, a ListView can display very large number of items without compromising performance.{{% /alert %}}
 
-*app/controllers/templates.js*
+**app/controllers/templates.js**
 
 ```javascript
 var IMAGES = [

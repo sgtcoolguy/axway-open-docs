@@ -20,9 +20,7 @@
 
 * [Known issue](#known-issue)
 
-{{% alert title="❗️ Warning" color="danger" %}}*Subscription Required!*
-
-This AMPLIFY Service feature requires a Pro, Enterprise, or purchased subscription.{{% /alert %}}
+{{% alert title="❗️ Subscription Required!" color="danger" %}}This AMPLIFY Service feature requires a Pro, Enterprise, or purchased subscription.{{% /alert %}}
 
 ## Introduction
 
@@ -60,7 +58,7 @@ Once com.appcelerator.aca has been added to the tiapp.xml file, the module will 
 
 To access module methods, you will need to require the module:
 
-*Require and initialize ACA*
+**Require and initialize ACA**
 
 ```javascript
 const aca = require('com.appcelerator.aca');
@@ -68,7 +66,7 @@ const aca = require('com.appcelerator.aca');
 
 If you are upgrading from a previous version of ACA, you no longer need the init statement (just the requirement statement will do). For example, the following code should be replaced with the code directly above:
 
-*Older version of requiring and initializing ACA*
+**Older version of requiring and initializing ACA**
 
 ```javascript
 var apm = require('com.appcelerator.apm');

@@ -50,7 +50,7 @@ appc alloy new --testapp ui/picker
 
 Prior to Alloy 1.7.6, you need to manually copy the source code to the new Titanium project:.
 
-*Creating a test project*
+**Creating a test project**
 
 ```bash
 appc new -t titanium -n picker_test --id com.yourdomain -d . -url yourdomain.com -p all

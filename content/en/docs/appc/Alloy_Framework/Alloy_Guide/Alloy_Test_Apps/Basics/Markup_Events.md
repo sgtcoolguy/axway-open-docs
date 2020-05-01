@@ -2,15 +2,13 @@
 
 Demonstrates adding event attributes in the XML view and handling the event in the view-controller.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**basics/markup\_events**{{% /alert %}}
+{{% alert title="💡 App Folder Location" color="info" %}}alloy/test/apps/**basics/markup\_events**{{% /alert %}}
 
 ![ios](/Images/appc/download/attachments/41845689/ios.png)
 
 To declare an event handler on an element in an XML view, create an element attribute whose name is the event name to handle, with its first character capitalized, and prefixed with "on". The value assigned to the attribute is the name of the function handler defined in the view-controller. For example, in the sample application a <Label/> element defines an "onClick" attribute whose value is "doClick".
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -22,7 +20,7 @@ To declare an event handler on an element in an XML view, create an element attr
 
 And the view-controller defines the doClick() function:
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 function doClick(e) {

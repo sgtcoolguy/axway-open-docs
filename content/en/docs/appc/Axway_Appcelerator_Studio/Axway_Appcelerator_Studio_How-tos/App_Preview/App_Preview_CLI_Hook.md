@@ -6,7 +6,7 @@
 
 The most common usage of the CLI are as follows:
 
-*iOS*
+**iOS**
 
 ```bash
 appc run -p ios -T dist-adhoc --app-preview
@@ -14,7 +14,7 @@ appc run -p ios -T dist-adhoc --app-preview
 
 or
 
-*Android*
+**Android**
 
 ```bash
 appc run -p android -b --app-preview

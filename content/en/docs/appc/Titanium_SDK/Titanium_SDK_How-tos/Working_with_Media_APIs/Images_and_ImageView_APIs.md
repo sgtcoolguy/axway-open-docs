@@ -134,9 +134,7 @@ var img = Ti.UI.createImageView({
 
 On iOS, you can retrieve density-specific images from a remote URL as well. You will have to use Ti.Platform.displayCaps.logicalDensityFactor to build the URL to fetch the right image for the device. Then add the hires=true property to your ImageView to specify that the remote URL is a high-resolution image. Optionally, Set the img.defaultImage property equal to a _local_ image and it will be displayed while your remote image is being downloaded.
 
-{{% alert title="💡 Hint" color="info" %}}*Asset Catalog*
-
-Starting with Release 5.1.0, PNG and JPEG images following this naming convention will be added to an Asset Catalog to support App Thinning. When a user installs the application to their device, only the relevant images will be included. Note that you will not be able to access images added to the Asset Catalog from the filesystem, that is, you cannot use the Ti.Filesystem APIs or equivalent to access the files with a URL or path.{{% /alert %}}
+{{% alert title="💡 Asset Catalog" color="info" %}}Starting with Release 5.1.0, PNG and JPEG images following this naming convention will be added to an Asset Catalog to support App Thinning. When a user installs the application to their device, only the relevant images will be included. Note that you will not be able to access images added to the Asset Catalog from the filesystem, that is, you cannot use the Ti.Filesystem APIs or equivalent to access the files with a URL or path.{{% /alert %}}
 
 #### Windows Platform
 

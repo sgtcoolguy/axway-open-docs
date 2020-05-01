@@ -26,7 +26,7 @@ To display the tips provided by content assist:
 
 * Content Assist automatically pops up a context menu or yellow tip box as you type the name of an object or function to which Content Assist applies.
 
-To display a longer Tool Tip, press **F2** while your cursor is on the function or object. (You can also select **ShowToolTip** from the **Edit** menu while your cursor is on the function or object.)
+{{% alert color="info" %}}To display a longer Tool Tip, press **F2** while your cursor is on the function or object. (You can also select **ShowToolTip** from the **Edit** menu while your cursor is on the function or object.){{% /alert %}}
 
 ## Understanding what browser/user agents enable which features
 

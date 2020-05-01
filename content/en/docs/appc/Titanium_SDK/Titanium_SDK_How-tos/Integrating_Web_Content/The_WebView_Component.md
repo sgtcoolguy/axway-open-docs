@@ -92,7 +92,7 @@ local.html refers to a local HTML file included in our project. The path used by
 
 Let's say you not only want to show a local HTML file, but you also want that HTML file to have access to local CSS and Javascript files. All you need to do is remember that all local web content is available relative to your project's Resources directory for Titanium projects, or app/assets and app/lib directories for Alloy project.. You can think of the directory almost as a local web server root path. To illustrate this point, let's take the prior example and expand it to use local CSS and Javascript files.
 
-*local.html*
+**local.html**
 
 ```html
 <html>
@@ -111,7 +111,7 @@ Let's say you not only want to show a local HTML file, but you also want that HT
 </html>
 ```
 
-*local.css*
+**local.css**
 
 ```css
 p {
@@ -121,7 +121,7 @@ p {
 }
 ```
 
-*local.js*
+**local.js**
 
 ```javascript
 function addParagraphAlert() {

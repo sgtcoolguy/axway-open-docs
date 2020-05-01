@@ -42,7 +42,7 @@ Appcelerator Studio injects code in to the tiapp.xml file to enable these servic
 
 The following changes are made to the tiapp.xml file to enable Appcelerator Services for both classic mobile and Alloy projects.
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <!-- Crittercism Application ID for Appcelerator Performance service -->

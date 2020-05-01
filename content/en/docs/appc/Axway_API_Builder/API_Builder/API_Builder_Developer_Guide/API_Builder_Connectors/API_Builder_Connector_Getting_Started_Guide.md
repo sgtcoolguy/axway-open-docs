@@ -1,8 +1,6 @@
 {"title":"API Builder Connector Getting Started Guide","weight":"10"}
 
-{{% alert title="❗️ Warning" color="danger" %}}*API Builder 3.x is deprecated*
-
-Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
+{{% alert title="❗️ API Builder 3.x is deprecated" color="danger" %}}Support for API Builder 3.x will cease on 30 April 2020. Use the [v3 to v4 upgrade guide](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_v3_to_v4_upgrade_guide.html) to migrate all your applications to [API Builder 4.x](https://docs.axway.com/bundle/API_Builder_4x_allOS_en/page/api_builder_getting_started_guide.html).
 
 Contact [support@axway.com](mailto:support@axway.com) if you require migration assistance.{{% /alert %}}
 
@@ -58,7 +56,7 @@ Copyright (c) 2014-2015, Appcelerator, Inc. All Rights Reserved.
 
 As with all NPM modules, add your dependencies to the dependencies object in the package.json file. This example connector will be utilizing the twitter NPM module to make calls to Twitter. Add the twitter key with a ~1.2.5 value to the dependencies object.
 
-*package.json*
+**package.json**
 
 ```json
 { ...
@@ -74,7 +72,7 @@ As with all NPM modules, add your dependencies to the dependencies object in the
 
 The boilerplate sample contains the conf/default.js configuration file. This file is used for testing the connector. You will also need to create a configuration file called example.config.js. When you install the connector, this file is copied to the project's conf directory. You need to add settings to configure your connector in these files, specifically add the settings to the connectors object. For the Twitter connector, it will need the app keys, OAuth tokens, and an account name of the Twitter feed to access. Create the conf/example.config.js file, then add the content below to it. You will also need to add the following keys to the connectors object in the conf/default.js file and add your Twitter app information to it for testing purposes.
 
-*./conf/example.config.js*
+**./conf/example.config.js**
 
 ```javascript
 module.exports = {
@@ -94,7 +92,7 @@ module.exports = {
 
 The app.js file contains code that initializes the connector when it is used as a server for testing. You can hook into the lifecycle events of the server. The boilerplate file contains logic that is used to create a model. Update the code to let the application create a connector and access the tweet's text response parameter as the status parameter. Later on, you will add logic to automatically create a model when a connector is installed on an application.
 
-*app.js*
+**app.js**
 
 ```javascript
 var Arrow = require('arrow'),
@@ -134,7 +132,7 @@ Let's start with connecting to a datasource.
 
 3. Add the postCreate() function to attach a helper function to the connector instance that can be used by other connector methods.
 
-    *./lib/index.js*
+    **./lib/index.js**
 
     ```javascript
     ...
@@ -204,7 +202,7 @@ To allow the connector to retrieve model data, implement the CanRetrieve capabil
 
 2. Remove the distinct.js and query.js files. We will not be implementing these for the example.
 
-    *./lib/lifecycle/connect.js*
+    **./lib/lifecycle/connect.js**
 
     ```javascript
     var Twitter = require('twitter');
@@ -224,7 +222,7 @@ To allow the connector to retrieve model data, implement the CanRetrieve capabil
 
 3. Open ./lib/methods/findAll.js and replace the contents of the file with the following. The findAll.js file implements the connector's findAll() method, which retrieves all tweets from the user's Twitter account, or at least, as many tweets as Twitter will allow us to fetch.
 
-    *./lib/methods/findAll.js*
+    **./lib/methods/findAll.js**
 
     ```javascript
     var Arrow = require('arrow'),
@@ -251,7 +249,7 @@ To allow the connector to retrieve model data, implement the CanRetrieve capabil
 
 4. Open ./lib/methods/findById.js and replace the contents of the file with the following. The findById.js file implements the connector's findById() method, which retrieves one specific tweet, identified by its ID, from the datasource.
 
-    *./lib/methods/findById.js*
+    **./lib/methods/findById.js**
 
     ```javascript
     var Arrow = require('arrow'),
@@ -297,7 +295,7 @@ To allow the connector to create data, implement the CanCreate capability.
 
 2. Open ./lib/methods/create.js and replace the contents of the file with the following. The create.js file implements the connector's create() method, which allows the connector to post a tweet on the user's Twitter feed.
 
-    *./lib/methods/create.js*
+    **./lib/methods/create.js**
 
     ```javascript
     var Arrow = require('arrow'),
@@ -345,7 +343,7 @@ To allow the connector to remove data, implement the CanDelete capability.
 
 3. Open ./lib/methods/delete.js and replace the contents of the file with the following. The delete.js file implements the connector's delete() method, which allows the connector to delete a specific tweet, specified by its ID, from the user's Twitter feed.
 
-    *./lib/methods/delete.js*
+    **./lib/methods/delete.js**
 
     ```javascript
     var Arrow = require('arrow'),
@@ -389,7 +387,7 @@ To have a model included with your connector, implement the ContainModel capabil
 
 4. Open ./models/tweet.js and replace the contents of the file with the following:
 
-    *./models/tweet.js*
+    **./models/tweet.js**
 
     ```javascript
     var Arrow = require('arrow');

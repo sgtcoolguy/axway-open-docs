@@ -20,7 +20,7 @@ In Alloy, models inherit from the [Backbone.Model](http://docs.appcelerator.com/
 
 The JavaScript file exports a definition object comprised of three different objects. The first object, called config, defines the table schema and adapter information. The next two objects extendModel and extendCollection define functions to extend, override or implement the Backbone.Model and Backbone.Collection classes, respectively.
 
-*Example of the anatomy of a model file*
+**Example of the anatomy of a model file**
 
 ```
 exports.definition = {
@@ -43,7 +43,7 @@ exports.definition = {
 
 To access a model locally in a controller, use the Alloy.createModel method. The first required parameter is the name of the JavaScript file minus the '.js' extension. The second optional parameter is the attributes for initializing the model object. For example, the following code creates a model object initialized with the specified title and author, retrieves the title and author fields from the model, then sets the label to the book title and author:
 
-*Basic model usage*
+**Basic model usage**
 
 ```javascript
 var book = Alloy.createModel('book', {title:'Green Eggs and Ham', author:'Dr. Seuss'});
@@ -58,7 +58,7 @@ The book model object is a Backbone object wrapped by Alloy, so it can be treate
 
 You can also create a global singleton instance of a model, either in markup or in the controller, which may be accessed in all controllers. Use the Alloy.Models.instance method with the name of the model file minus the extension as the only parameter to create or access the singleton. For example:
 
-*Working with globally registered models*
+**Working with globally registered models**
 
 ```javascript
 // This will create a singleton if it has not been previously created,
@@ -80,7 +80,7 @@ The adapter object defines how to access persistent storage. It contains two key
 
 For example, suppose there is a model object called book (book.js) defined as:
 
-*book.js*
+**book.js**
 
 ```javascript
 exports.definition = {
@@ -113,7 +113,7 @@ For example, the validate method is left unimplemented by Backbone.js. The model
 
 In the example code book.js below, the JavaScript file implements the validate method, and adds a custom property and function.
 
-*Extending a model*
+**Extending a model**
 
 ```javascript
 exports.definition = {
@@ -169,7 +169,7 @@ For more details, see the [Backbone.Model API](http://docs.appcelerator.com/back
 
 Collections are ordered sets of models and inherit from the Backbone.Collection class. Alloy Collections are automatically defined and available in the controller scope as the name of the model. To access a collection in the controller locally, use the Alloy.createCollection method with the name of the JavaScript file minus the '.js' extension as the required parameter. The second optional parameter can be an array of model objects for initialization. For example, the code below creates a collection using the previously defined model and reads data from persistent storage:
 
-*Creating collections*
+**Creating collections**
 
 ```javascript
 var library = Alloy.createCollection('book');
@@ -180,7 +180,7 @@ The library collection object is a Backbone object wrapped by Alloy, so it can b
 
 You can also create a global singleton instance, either in markup or in the controller, which may be accessed in all controllers. Use the Alloy.Collections.instance method with the name of the model file minus the extension as the only parameter to create or access the singleton. For example:
 
-*Working with globally registered collections*
+**Working with globally registered collections**
 
 ```javascript
 // This will create a singleton if it has not been previously created,
@@ -194,7 +194,7 @@ For examples using markup, see [Alloy XML Markup: Collection Element](/docs/appc
 
 Like the Backbone.Model class, the Backbone.Collection class can be similarly extended in the model JavaScript file. For example, the comparator method is left unimplemented in Backbone.js. The code below sorts the library by book title:
 
-*Extending a collection*
+**Extending a collection**
 
 ```
 exports.definition = {
@@ -221,7 +221,7 @@ exports.definition = {
 
 Additionally, the Backbone.Collection class inherits some functionality from [Underscore.js](https://underscorejs.org/), which can help simplify iterative functions. For example, to add the title of each book object in the library collection to a table, you could use the map function to set the table:
 
-*Iterating over a collection with underscore*
+**Iterating over a collection with underscore**
 
 ```javascript
 var data = library.map(function(book) {
@@ -240,7 +240,7 @@ For more details, see the [Backbone.Collection API](http://docs.appcelerator.com
 
 When working with Alloy Models and Collections, use the Backbone.Events on, off and trigger methods. For example:
 
-*Using events with collections*
+**Using events with collections**
 
 ```javascript
 var library = Alloy.createCollection('book');

@@ -2,9 +2,7 @@
 
 Demonstrates basic use of TabbedBar control.
 
-{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
-
-You can find this example app in the Alloy repository under [samples/apps/ui/tabbedbar](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/tabbedbar). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="💡 Example App Source Location" color="info" %}}You can find this example app in the Alloy repository under [samples/apps/ui/tabbedbar](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/tabbedbar). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 A [TabbedBar](#!/api/Titanium.UI.iOS.TabbedBar) is a [ButtonBar](#!/api/Titanium.UI.iOS.TabbedBar) that maintains its state, selected or unselected. See [ButtonBar](#!/api/Titanium.UI.ButtonBar) for information on styling both tabbed bars and buttons bars.
 
@@ -12,7 +10,7 @@ A [TabbedBar](#!/api/Titanium.UI.iOS.TabbedBar) is a [ButtonBar](#!/api/Titanium
 
 The main index.xml view defines a TabbedBar that contains five <Label/> elements.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -44,7 +42,7 @@ The main index.xml view defines a TabbedBar that contains five <Label/> elements
 
 The view-controller displays an alert dialog that indicates the index of the item that was clicked in the TabbedBar.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 function sayHi(e) {

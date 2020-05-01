@@ -126,7 +126,7 @@ By default, your application is installed to the device's internal storage. To c
 
 * **internalOnly** - which specifies that your app cannot be installed to the SD card. See the [Android docs](http://developer.android.com/guide/appendix/install-location.html#ShouldNot) for the various reasons why you might choose this option.
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <android xmlns:android="http://schemas.android.com/apk/res/android">
@@ -142,7 +142,7 @@ To change the version of the application, add the following attributes to the ma
 
 * **android:versionName** - The version name string can be anything you want.
 
-*tiapp.xml*
+**tiapp.xml**
 
 ```xml
 <android xmlns:android="http://schemas.android.com/apk/res/android">

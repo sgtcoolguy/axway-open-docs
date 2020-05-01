@@ -1,8 +1,6 @@
 {"title":"Quick Start Guide for iOS APS SDK using Swift","weight":"20"}
 
-{{% alert title="❗️ Warning" color="danger" %}}*Pro or Enterprise Subscription Required*
-
-This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.{{% /alert %}}
+{{% alert title="❗️ Pro or Enterprise Subscription Required" color="danger" %}}This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.{{% /alert %}}
 
 * [Introduction](#introduction)
 
@@ -38,15 +36,13 @@ This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscrip
 
 This guide walks through the setup of the AMPLIFY Appcelerator Services for iOS applications. The AMPLIFY Appcelerator Services SDK gives you access to the Appcelerator Analytics and Cloud services. Note that the Appcelerator Test service does not currently work with Swift projects.
 
-*Not developing a native iOS application with Swift?*
-
-See the following topics to use the AMPLIFY Appcelerator Services on other platforms:
+{{% alert title="Not developing a native iOS application with Swift?" color="info" %}}See the following topics to use the AMPLIFY Appcelerator Services on other platforms:
 
 For native Android applications built with Java, see [Quick Start Guide for Android APS SDK](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_Android/Quick_Start_Guide_for_Android_APS_SDK/).
 
 For native iOS applications built with Objective-C, see [Quick Start Guide for iOS APS SDK](/docs/appc/AMPLIFY_Appcelerator_Services/AMPLIFY_Appcelerator_Platform_Services_How-tos/AMPLIFY_Appcelerator_Services_Native_SDKs/AMPLIFY_Appcelerator_Platform_Services_for_iOS/Quick_Start_Guide_for_iOS_APS_SDK/).
 
-For Titanium Applications, see [Quick Start](/docs/appc/Quick_Start/).
+For Titanium Applications, see [Quick Start](/docs/appc/Quick_Start/).{{% /alert %}}
 
 ## Requirements
 
@@ -232,9 +228,7 @@ The following tutorial demonstrates the basic setup and usage of Analytics and C
 
     The iOS application is now ready to make method calls using the APS SDK APIs.
 
-{{% alert title="❗️ Warning" color="danger" %}}If the application attempts to make APS SDK API calls without first setting the application key, the application will raise an exception and crash.{{% /alert %}}{{% alert title="💡 Hint" color="info" %}}*Bridging Header File*
-
-Alternatively, to have Xcode automatically create a bridging header file and add the build flag:
+{{% alert title="❗️ Warning" color="danger" %}}If the application attempts to make APS SDK API calls without first setting the application key, the application will raise an exception and crash.{{% /alert %}}{{% alert title="💡 Bridging Header File" color="info" %}}Alternatively, to have Xcode automatically create a bridging header file and add the build flag:
 
 1. Skip steps 2 and 9 in the previous directions.
 
@@ -276,7 +270,7 @@ Customize the application's UI to display a picker, text field and button, and a
 
     4. Implement the methods of UIPickerViewDelegate, UIPickerViewDataSource and UITextFieldDelegate protocols. Add the following code to the file:
 
-    *ViewController.swift*
+    **ViewController.swift**
 
     ```swift
     import UIKit
@@ -345,7 +339,7 @@ The Analytics library automatically captures and sends application life-cycle ev
 
 In the doClick method, add a APSAnalytics.sharedInstance().sendAppFeatureEvent() method call to send a feature event with the string "sample.feature.login". The optional payload parameter is set to nil for this example, but it lets you send additional data along with the event.
 
-*ViewController.swift*
+**ViewController.swift**
 
 ```swift
 APSAnalytics.sharedInstance().sendAppFeatureEvent("sample.feature.login", payload: nil)
@@ -357,7 +351,7 @@ To use the APS Cloud component, most of the methods require a user to be logged 
 
 Every APS Cloud method includes a withBlock parameter that specifies the callback to handle the server response. The callback is passed an APSResponse object that contains response metadata (such as success or failure) and the response payload.
 
-*ViewController.swift*
+**ViewController.swift**
 
 ```swift
 APSUsers.query(nil, {(e: APSResponse!) -> Void in
@@ -375,7 +369,7 @@ APSUsers.query(nil, {(e: APSResponse!) -> Void in
 
 To log in to a Cloud account, you need the username and password. Since the application was modified to get all available user accounts and populate the Picker View, the application needs to get the current value of the picker and the text entered in the Text Field. These values are passed to the APSUsers.login() method. Modify the doClick method to login to a Cloud user account.
 
-*ViewController.swift*
+**ViewController.swift**
 
 ```swift
 @IBAction func onClick(sender: UIButton) {
@@ -401,7 +395,7 @@ To log in to a Cloud account, you need the username and password. Since the appl
 
 To help differentiate crash logs, use the username property. When the application successfully logs in to the Cloud user account, the application sets the username property.
 
-*ViewController.swift*
+**ViewController.swift**
 
 ```swift
 @IBAction func onClick(sender: UIButton) {

@@ -88,7 +88,7 @@ Event handling follows the JavaScript syntax by adding and removing event handle
 
 In C++, you would create an event handler and assign it to an event property of a Windows object or class.
 
-*DO NOT USE C++ Syntax*
+**DO NOT USE C++ Syntax**
 
 ```
 click_event_ = component->Tapped += ref new TappedEventHandler([this, ctx](Platform::Object^ sender, TappedRoutedEventArgs^ e) {
@@ -98,7 +98,7 @@ click_event_ = component->Tapped += ref new TappedEventHandler([this, ctx](Platf
 
 In JavaScript, invoke the addEventListener() method on the Windows object or class, and pass the event name and event handler to the method.
 
-*Use JavaScript Syntax*
+**Use JavaScript Syntax**
 
 ```
 component.addEventListener('Tapped', function(e) {

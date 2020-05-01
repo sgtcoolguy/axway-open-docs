@@ -124,7 +124,7 @@ As of this release, Titanium SDK 8.1.x.x will not receive updates more than six 
 
     * Added multiple row selection support in ListView and TableView
 
-    * *Ti.UI.ListView*
+    * **Ti.UI.ListView**
 
         ```javascript
         var win = Ti.UI.createWindow({

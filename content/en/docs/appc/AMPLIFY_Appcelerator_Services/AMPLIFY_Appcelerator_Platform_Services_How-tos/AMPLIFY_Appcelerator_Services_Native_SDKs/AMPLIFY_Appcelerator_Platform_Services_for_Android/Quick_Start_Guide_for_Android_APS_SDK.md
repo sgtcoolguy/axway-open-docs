@@ -1,8 +1,6 @@
 {"title":"Quick Start Guide for Android APS SDK","weight":"10"}
 
-{{% alert title="❗️ Warning" color="danger" %}}*Pro or Enterprise Subscription Required*
-
-This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.{{% /alert %}}
+{{% alert title="❗️ Pro or Enterprise Subscription Required" color="danger" %}}This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscription.{{% /alert %}}
 
 * [Introduction](#introduction)
 
@@ -44,9 +42,7 @@ This AMPLIFY Appcelerator Services feature requires a Pro or Enterprise Subscrip
 
 This guide walks through the setup of the AMPLIFY Appcelerator Services for Android applications. The AMPLIFY Appcelerator Services SDK gives you access to the Appcelerator Analytics and Cloud services. To enable the Appcelerator Test for a project, run the AppceletatorTest utility against either the project or APK file.
 
-*Not developing a native Android application with Java?*
-
-See the following topics to use the AMPLIFY Appcelerator Services on other platforms:
+{{% alert title="Not developing a native Android application with Java?" color="info" %}}See the following topics to use the AMPLIFY Appcelerator Services on other platforms:
 
 ![ios_icon](/Images/appc/download/attachments/43298718/ios_icon.png)
 
@@ -54,7 +50,7 @@ For native iOS applications built with Objective-C, see [Quick Start Guide for i
 
 ![titanium_icon](/Images/appc/download/attachments/43298718/titanium_icon.png)
 
-For Titanium Applications, see [Quick Start](/docs/appc/Quick_Start/).
+For Titanium Applications, see [Quick Start](/docs/appc/Quick_Start/).{{% /alert %}}
 
 ## Requirements
 
@@ -216,7 +212,7 @@ The following tutorial demonstrates basic setup and usage of Analytics and Cloud
 
 4. Modify the project's AndroidManifest.xml file to include the ACCESS\_NETWORK\_STATE, ACCESS\_WIFI\_STATE, GET\_TASKS, INTERNET, READ\_LOGS, and WRITER\_EXTERNAL\_STORAGE user permissions and declare the com.appcelerator.aps.AnalyticsService as a Service class, which allows the APS library to send analytic events to the APS servers while the application is in the background:
 
-    *AndroidManifest.xml*
+    **AndroidManifest.xml**
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -246,7 +242,7 @@ The following tutorial demonstrates basic setup and usage of Analytics and Cloud
 
 5. Add the following import statement to the main Activity of the project:
 
-    *MainActivity.java*
+    **MainActivity.java**
 
     ```java
     import com.appcelerator.aps.APSServiceManager;
@@ -254,7 +250,7 @@ The following tutorial demonstrates basic setup and usage of Analytics and Cloud
 
 6. In the main Activity's onCreate() method, add the following method call to enable the APS services.
 
-    *MainActivity.java*
+    **MainActivity.java**
 
     ```java
     APSServiceManager.getInstance().enable(getApplicationContext(), "APP_KEY");
@@ -274,7 +270,7 @@ Customize the application's UI to display a spinner, text field and button, and 
 
 4. In the MainActivity.java file, modify the code to save an instance of the current activity, Spinner and EditText widgets. Modify the application to bind a doClick method to the Button's onClick listener and create an empty function called populateSpinner. You also need to import additional packages. In the following sections, you will add code to these handlers that call the Cloud and Analytics services.
 
-    *MainActivity.java*
+    **MainActivity.java**
 
     ```java
     // Import the following packages
@@ -369,7 +365,7 @@ mvn install:install-file -Dfile=appcelerator-sdk-android-1.0.0/appcelerator-sdk-
 
 Next, add the following lines of code to your Maven or Gradle POMs:
 
-*Gradle*
+**Gradle**
 
 ```
 dependencies {
@@ -377,7 +373,7 @@ dependencies {
 }
 ```
 
-*Maven*
+**Maven**
 
 ```xml
 <dependencies>
@@ -431,7 +427,7 @@ Besides user session events, you can also send custom analytics events, as shown
 
 In the doClick() function, add an APSAnalytics' sendAppFeatureEvent() method call to send a feature event with the string "sample.feature.login". The optional second parameter is set to null for this example, but you can send additional data as a JSON object with the event.
 
-*MainActivity.java*
+**MainActivity.java**
 
 ```java
 public void doClick(View view){
@@ -445,7 +441,7 @@ To use the APS Cloud component, most of the methods require a user to be logged 
 
 Every APS Cloud method includes a handler parameter that specifies the callback to handle the server response. The callback is passed an APSResponse object that contains response metadata (such as success or failure) and the response payload.
 
-*MainActivity.java*
+**MainActivity.java**
 
 ```java
 public void populateSpinner() {
@@ -535,7 +531,7 @@ Before making API calls to the APSPerformance class, you need to retrieve a shar
 
 To the doClick method, add the following new code:
 
-*MainActivity.java*
+**MainActivity.java**
 
 ```java
 public void doClick(){
@@ -553,7 +549,7 @@ public void doClick(){
 
 To help differentiate crash logs, use the APSPerformance's setUsername() method. When the application successfully logs in to the Cloud user account, the application calls APSPerformance's setUsername() method.
 
-*MainActivity.java*
+**MainActivity.java**
 
 ```java
 APSUsers.login(data, new APSResponseHandler() {

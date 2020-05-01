@@ -91,7 +91,7 @@ This release also includes the following iOS changes:
 
 To log in using Facebook on iOS Simulator, you now must include an entitlements file that enables Keychain Sharing Capabilities. While the entitlement file is not necessary for device builds (it is self-generated), it won't affect anything in your build. To do this, create a /platform/ios/<name>.entitlements file (replace <name> with the name element in tiapp.xml) with this content:
 
-*Facebook login with iOS 10 and Xcode 8*
+**Facebook login with iOS 10 and Xcode 8**
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

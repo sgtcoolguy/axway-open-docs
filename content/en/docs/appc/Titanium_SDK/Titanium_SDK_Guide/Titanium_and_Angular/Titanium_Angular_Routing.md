@@ -18,7 +18,7 @@ If you followed our [Titanium Angular Getting Started Guide](/docs/appc/Titanium
 
 First, open app/src/app.component.ts and copy its content to app/src/intro.component.ts. Do the same for app/src/app.component.html and copy it over to app/src/intro.component.html. Open intro.component.ts again and change the component name and its template to reflect those recent changes.
 
-*intro.component.ts*
+**intro.component.ts**
 
 ```typescript
 @Component({
@@ -43,7 +43,7 @@ export class AppComponent { }
 
 After that, open app.component.html and replace its content with the Titanium router outlet directive.
 
-*app.component.html*
+**app.component.html**
 
 ```html
 <ti-router-outlet></ti-router-outlet>
@@ -74,9 +74,7 @@ export class AppRoutingModule { }
 
 This will setup a route for your previously created IntroComponent under the path /intro. It also instructs Angular to load this route upon the initial app launch by setting up a redirect for an empty path string.
 
-{{% alert title="💡 Hint" color="info" %}}*Path routing in Titanium*
-
-You may be wondering how routing via paths is working inside a native app. The short answer is that we emulate the browsers [History API](https://developer.mozilla.org/en-US/docs/Web/API/History) and let Angular's router do its magic to load the configured components. We also make sure to properly handle native navigation events such the Android back button or the iOS swipe left-to-right gesture to trigger a back navigation.{{% /alert %}}
+{{% alert title="💡 Path routing in Titanium" color="info" %}}You may be wondering how routing via paths is working inside a native app. The short answer is that we emulate the browsers [History API](https://developer.mozilla.org/en-US/docs/Web/API/History) and let Angular's router do its magic to load the configured components. We also make sure to properly handle native navigation events such the Android back button or the iOS swipe left-to-right gesture to trigger a back navigation.{{% /alert %}}
 
 Finally, open up the app.module.ts and add imports for the AppRoutingModule and IntroComponent, add the module to the imports and the component to the declarations of the AppModule configuration. Your app.module.ts should look like this afterwards:
 
@@ -109,7 +107,7 @@ You can now build your app again and routing will be enabled. But the app won't 
 
 Now that routing is in place, it is time to add a new component and navigate to it using the Angular Router. Create app/src/home.component.ts and paste the following code.
 
-*home.component.ts*
+**home.component.ts**
 
 ```typescript
 import { Component } from '@angular/core';
@@ -124,7 +122,7 @@ export class HomeComponent {
 
 Since we focus on the routing aspect here, we just use a very simple template. Create app/src/home.component.html and create the following user interface.
 
-*home.component.html*
+**home.component.html**
 
 ```html
 <Window backgroundColor="#fafafa">

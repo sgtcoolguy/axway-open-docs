@@ -240,7 +240,7 @@ While not currently used in this proposal, the "options" property name would be 
 
 ## Pseudo Code Examples
 
-*Create a socket to connect*
+**Create a socket to connect**
 
 ```javascript
 /*
@@ -264,7 +264,7 @@ var connectingSocket = Ti.Network.createTCP({
 connectingSocket.connect();
 ```
 
-*Create a socket to listen*
+**Create a socket to listen**
 
 ```javascript
 // NOTE: Under iOS, Ti.Platform.address always resolves to wifi; Android
@@ -331,7 +331,7 @@ catch (e) {
 // Maybe do something with connections somewhere...
 ```
 
-*Current KS->Platform->Sockets example, using new sockets*
+**Current KS->Platform->Sockets example, using new sockets**
 
 ```javascript
 var win = Titanium.UI.currentWindow;

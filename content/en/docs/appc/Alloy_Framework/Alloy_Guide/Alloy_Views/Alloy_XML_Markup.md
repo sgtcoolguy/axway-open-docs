@@ -50,7 +50,7 @@ In Alloy, the XML markup abstracts the Titanium SDK UI components, so you do not
 
 The following code is an example of a view file:
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -70,7 +70,7 @@ If the top-level UI component does not have an ID defined, it can be referenced 
 
 The following code is how you would traditionally code the markup example using the Titanium SDK:
 
-*Resources/app.js*
+**Resources/app.js**
 
 ```javascript
 var win = Ti.UI.createWindow();
@@ -225,7 +225,7 @@ You can require a CommonJS module in an Alloy view using the module attribute of
 
 For example, the following CommonJS module, called foo.js, exposes the createFoo method, which returns a Label object inside a View object. In the Alloy view, to include this object, add the Foo tag and set the module attribute to foo.
 
-*app/lib/foo.js*
+**app/lib/foo.js**
 
 ```javascript
 // XML attributes are passed to the function
@@ -248,7 +248,7 @@ exports.createFoo = function (args) {
 };
 ```
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -275,7 +275,7 @@ You can also include a view from a native module using the Module XML element. T
 
 For example, to use the [Paint Module](https://marketplace.appcelerator.com/apps/4977?790167903), first download and add the module to your project. The Paint Module creates a Titanium View, which can be drawn on, using the createPaintView method. To use this view in the index view-controller, you need to add it as a child of a window (or similar parent view object). In the code below, the Module tag is used to add the Paint Module to the window and passes properties inline that are specific to the module. You may also pass any Titanium.UI.View properties to the module since it extends a Titanium View.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -288,7 +288,7 @@ For example, to use the [Paint Module](https://marketplace.appcelerator.com/apps
 
 If you can call methods on the created object, then you can invoke those methods in the controller using the assigned ID from the view as a reference to the object. For example, the PaintView object created earlier has a method called clear that erases all content in the Titanium View. The view in the previous example contains a button with the eraseMe function bound to a click event, and since the module has an id defined, the controller can invoke the clear method:
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 function eraseMe() {
@@ -390,7 +390,7 @@ app
 
 Then, add the <Widget> tag in the XML. Specify the src attribute as mywidget. Additionally, define the id and name attributes. Since the name attribute is defined, the foo view-controller is used instead of the widget view-controller.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -402,7 +402,7 @@ Then, add the <Widget> tag in the XML. Specify the src attribute as mywidget. Ad
 
 Since the id attribute is defined, the widget can be accessed from the controller.
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 $.index.open();
@@ -422,7 +422,7 @@ Finally, update the dependencies object in the config.json file by adding a key/
 
 You can add any custom attributes to the markup to initialize a widget or controller. For example, consider the following mark-up:
 
-*apps/views/index.xml*
+**apps/views/index.xml**
 
 ```xml
 <Require id="foobar" src="foo" customTitle="Hello" customImage="hello.png"/>
@@ -430,7 +430,7 @@ You can add any custom attributes to the markup to initialize a widget or contro
 
 This is equivalent to the following JavaScript:
 
-*apps/controllers/index.js*
+**apps/controllers/index.js**
 
 ```javascript
 var foobar = Alloy.createController('foo', {
@@ -442,7 +442,7 @@ var foobar = Alloy.createController('foo', {
 
 In the required view's controller, the custom properties can be referenced using the $.args variable, for example:
 
-*apps/controllers/foo.js*
+**apps/controllers/foo.js**
 
 ```javascript
 var title = $.args.customTitle || 'Foobar';
@@ -487,7 +487,7 @@ If your Require element is a parent view, you can add children elements to it. T
 
 In the example below, you have the index view which is using the Require element to include another view called info. The required view is a yellow box with a brown border. Its controller adds the label view element passed in as the first element of the $.args.children array.
 
-*app/views/info.xml*
+**app/views/info.xml**
 
 ```xml
 <Alloy>
@@ -495,7 +495,7 @@ In the example below, you have the index view which is using the Require element
 </Alloy>
 ```
 
-*controllers/info.js*
+**controllers/info.js**
 
 ```javascript
 // add children if there are any
@@ -506,7 +506,7 @@ _.each($.args.children || [], function(child) {
 $.info.height = Ti.UI.SIZE;
 ```
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -635,7 +635,7 @@ Currently, the following Titanium proxies and properties implemented using this 
 
 You can set [ActionBar properties](https://docs.appcelerator.com/platform/latest/#!/api/Titanium.Android.ActionBar) in the ActionBar element to modify the application's action bar. Add the ActionBar element as a child of either a Window or TabGroup, then set ActionBar attributes in the XML or TSS file. To add action items to the action bar, add the Menu element as a child of either a Window or TabGroup , then add MenuItem elements as children of the Menu element. S et MenuItem attributes in either the XML or TSS file.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -650,7 +650,7 @@ You can set [ActionBar properties](https://docs.appcelerator.com/platform/latest
 </Alloy>
 ```
 
-*app/styles/index.tss*
+**app/styles/index.tss**
 
 ```
 "MenuItem": {
@@ -671,7 +671,7 @@ You can set [ActionBar properties](https://docs.appcelerator.com/platform/latest
 
 When specifying either the LeftNavButton or RightNavButton element with a Window or iPad Popover object, you do not need to create a separate Button object inside these elements in the XML file. Instead, you can define the Button attributes with the LeftNavButton and RightNavButton elements. Note that you cannot use node text to define the button title. It must be specified as the title attribute. For example:
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>

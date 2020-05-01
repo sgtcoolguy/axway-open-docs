@@ -2,9 +2,7 @@
 
 Demonstrates basic use of ScrollableView control to present a horizontally-scrolling set of child views, called _pages._
 
-{{% alert title="💡 Hint" color="info" %}}*Example App Source Location*
-
-You can find this example app in the Alloy repository under [samples/apps/ui/scrollableview](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/scrollableview). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
+{{% alert title="💡 Example App Source Location" color="info" %}}You can find this example app in the Alloy repository under [samples/apps/ui/scrollableview](https://github.com/appcelerator/alloy/tree/master/samples/apps/ui/scrollableview). Check the [instructions](/docs/appc/Alloy_Framework/Alloy_Guide/Alloy_Test_Apps/) how to run these sample projects.{{% /alert %}}
 
 A [ScrollableView](#!/api/Titanium.UI.ScrollableView) encapsulates a horizontally-scrolling set of child views, known as pages, navigable using its built-in horizontal swipe gestures.
 
@@ -12,7 +10,7 @@ A [ScrollableView](#!/api/Titanium.UI.ScrollableView) encapsulates a horizontall
 
 The main index.xml view declares a <ScrollableView/> named scroller that contains three <View/> elements. Clicking the label on the first view creates a new View object and appends it to the ScrollableView object's views array property.
 
-*app/views/index.xml*
+**app/views/index.xml**
 
 ```xml
 <Alloy>
@@ -32,7 +30,7 @@ The main index.xml view declares a <ScrollableView/> named scroller that contain
 </Alloy>
 ```
 
-*app/controllers/index.js*
+**app/controllers/index.js**
 
 ```javascript
 function addView() {

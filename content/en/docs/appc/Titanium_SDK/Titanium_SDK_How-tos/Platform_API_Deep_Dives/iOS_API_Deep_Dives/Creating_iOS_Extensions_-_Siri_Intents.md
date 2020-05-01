@@ -28,7 +28,7 @@ The repository for this tutorial can be found open-source on **[Github](https://
 
 9. In the tiapp.xml, include the following properties in the <ios> section of it:
 
-    *tiapp.xml*
+    **tiapp.xml**
 
     ```xml
     <extensions>
@@ -51,7 +51,7 @@ The repository for this tutorial can be found open-source on **[Github](https://
 
 12. Add the following to the plist-section of your tiapp.xml (<tiapp> > <ios> > <plist>):
 
-    *tiapp.xml*
+    **tiapp.xml**
 
     ```xml
     <key>NSSiriUsageDescription</key>
@@ -60,7 +60,7 @@ The repository for this tutorial can be found open-source on **[Github](https://
 
 13. Create a file called TestApp.entitlements in your Titanium project root. Note: if you also use push-entitlements, copy those keys over there as well since it will override the CLI-generated key and paste the following into it:
 
-    *TestApp.entitlements*
+    **TestApp.entitlements**
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>

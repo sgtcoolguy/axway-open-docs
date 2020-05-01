@@ -56,7 +56,7 @@ In the theme XML file, add the theme you want to use. Themes defined by the Andr
 
 The Titanium SDK uses the [appcompat library](http://developer.android.com/tools/support-library/features.html#v7-appcompat) to provide support for themes. A benefit of using the appcompat library is that it provides ActionBar support on devices running Android 2.1.x and later. Prior to the usage of the appcompat library, the ActionBar was only available to devices running Android 3.x and later. Note that applications can only use the AppCompat themes.
 
-*platform/android/res/values/builtin\_themes.xml*
+**platform/android/res/values/builtin\_themes.xml**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -124,7 +124,7 @@ Note that you can also define version-specific themes by adding a values-v<versi
 
 For example, if you want your theme to be based on the Light theme, create the following theme file:
 
-*platform/android/res/values/mytheme.xml*
+**platform/android/res/values/mytheme.xml**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -154,7 +154,7 @@ For example, if you want your theme to be based on the Light theme, create the f
 </resources>
 ```
 
-*platform/android/res/values/colors.xml*
+**platform/android/res/values/colors.xml**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -166,7 +166,7 @@ For example, if you want your theme to be based on the Light theme, create the f
 </resources>
 ```
 
-*platform/android/res/values/dimens.xml*
+**platform/android/res/values/dimens.xml**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -229,7 +229,7 @@ To use the Material Theme with Titanium, you need to [create a custom theme](#Cu
 
 The following XML file below defines a theme that uses the default AppCompat theme and applies additional color palette attributes. This theme was applied to the application in the previous screen shot.
 
-*platform/android/res/values/custom\_theme.xml*
+**platform/android/res/values/custom\_theme.xml**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

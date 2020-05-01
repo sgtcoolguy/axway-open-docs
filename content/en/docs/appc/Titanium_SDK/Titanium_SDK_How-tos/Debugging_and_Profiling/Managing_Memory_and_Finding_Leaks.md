@@ -36,9 +36,7 @@ In this section, we'll see what factors go into determining how much memory your
 
 Memory limits vary by operating system and device and are not clearly documented by the vendors. Based on our sleuthing, here are the limits you must be concerned with:
 
-{{% alert title="❗️ Warning" color="danger" %}}*iOS notes*
-
-The numbers for iOS are rough estimates. Apple does not publish information about their app termination threshold, managed by processes called "watchdog" (responsible for monitoring) and "jetsam" (responsible for warnings/purging). App termination is controlled entirely at the discretion of these processes and their behavior may change at any time.
+{{% alert title="❗️ iOS notes" color="danger" %}}The numbers for iOS are rough estimates. Apple does not publish information about their app termination threshold, managed by processes called "watchdog" (responsible for monitoring) and "jetsam" (responsible for warnings/purging). App termination is controlled entirely at the discretion of these processes and their behavior may change at any time.
 
 The upside of this is that if you see a crash or device log referencing jetsam, this certainly indicates a memory issue.{{% /alert %}}
 
@@ -107,7 +105,7 @@ Memory leaks occur when your app allocates memory but doesn't release it. Leaks 
 
 * Declaring objects within a "global" event listener means those objects will remain in scope as long as the event listener exists. Global event listeners include those set on Ti.App, Ti.Geolocation, Ti.Gesture, and so forth.
 
-*Creating and fixing a memory leak in a global event listener*
+**Creating and fixing a memory leak in a global event listener**
 
 ```javascript
 function doSomething(_event) {
@@ -165,9 +163,7 @@ Lets continue! Apple's Instruments application is a handy tool for monitoring an
 
 If you make a change to your app, the most reliable way to gather new statistics in Instruments is to close it and start over.
 
-{{% alert title="⚠️ Warning" color="primary" %}}*Tracking memory more accurately*
-
-On iOS, the runtime and other systems may frequently allocate (or deallocate) objects which can't be managed directly through your javascript code. In general, when checking your app for memory leaks, you should be filtering for objects with the "Ti" prefix.
+{{% alert title="⚠️ Tracking memory more accurately" color="primary" %}}On iOS, the runtime and other systems may frequently allocate (or deallocate) objects which can't be managed directly through your javascript code. In general, when checking your app for memory leaks, you should be filtering for objects with the "Ti" prefix.
 
 Also note that by attaching the profiler after the app has started, you do not get any information on already-created objects until they are touched by the memory management system. To get more accurate information, you may need to open the Xcode project generated in your project's build/iphone folder, and choose **Product** \> **Profile**, then configure the resulting Instruments launch as described here.{{% /alert %}}
 

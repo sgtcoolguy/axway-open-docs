@@ -2,9 +2,7 @@
 
 Demonstrates how to use data binding with a DashboardView, which provides an iOS Springboard-like view.
 
-{{% alert title="💡 Hint" color="info" %}}*App Folder Location*
-
-alloy/test/apps/**models/binding\_dashboard**{{% /alert %}}
+{{% alert title="App Folder Location" color="info" %}}alloy/test/apps/**models/binding\_dashboard**{{% /alert %}}
 
 Items in a [DashboardView](#!/api/Titanium.UI.DashboardView) are represented by [DashboardItem](#!/api/Titanium.UI.DashboardItem)s, which can be deleted and re-arranged.
 
@@ -24,7 +22,7 @@ The model file, shown below, defines the columns (fields) for each DashboardItem
 
 The model file also defines a [Backbone comparator](http://backbonejs.org/#Collection-comparator) function to keep the items sorted according to the value of their **weight** field. When the user rearranges the items in the DashboardView, their respective weights are updated to reflect their new position (see below).
 
-*app/model/icon.js*
+**app/model/icon.js**
 
 ```javascript
 exports.definition = {

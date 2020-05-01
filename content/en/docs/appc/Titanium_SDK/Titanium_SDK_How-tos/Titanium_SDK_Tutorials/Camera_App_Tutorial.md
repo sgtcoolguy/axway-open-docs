@@ -116,7 +116,7 @@ exports.getPermissions = function(opt) {
 
 Now that we can ask for the permission, it is time to open the camera! We add a simple button to our view and add a click event to it, so we can open the camera.
 
-*Simple button*
+**Simple button**
 
 ```xml
 <Alloy>
@@ -126,7 +126,7 @@ Now that we can ask for the permission, it is time to open the camera! We add a 
 </Alloy>
 ```
 
-*Click event*
+**Click event**
 
 ```javascript
 function onClickRecord(e) {}
@@ -155,7 +155,7 @@ Ti.Media.showCamera({});
 
 Complete code should look something like this:
 
-*Complete click event*
+**Complete click event**
 
 ```javascript
 var helper = require("/helper");
